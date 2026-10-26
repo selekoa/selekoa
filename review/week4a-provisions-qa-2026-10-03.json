@@ -1,0 +1,1166 @@
+{
+  "id": "week4a-provisions-qa-2026-10-03",
+  "scope": "Week 4a: framework provisions for seven framework families (the five existing families plus Meta and Microsoft), recorded absences, provision-level changes, the first contested records, and the three week-3 stop cases (recorded separately in review/week4a-stop-case-decisions-2026-10-03.json). Schema 2.8. All new records are seeds with machine-checked evidence; no editorial state changed.",
+  "proposingPass": {
+    "agents": "Four fresh-context extraction subagents (Claude Opus 5.5, claude-opus-5-5), one per family group, proposing provisions, absences and changes from local UTF-8 text of each cited edition; the curator (the Claude Code session, same model) verified every quote mechanically, applied curated decisions and ingested.",
+    "date": "2026-10-03",
+    "method": "Quote verification removes invisible format characters and collapses whitespace; words, punctuation, quote marks and dashes must match. Quotes found only after ignoring spaces were accepted for four RSP sentences whose text layers drop word spaces, each noted in its evidence. The quotation policy (at most about five quotes and 250 words per document) bounded provisions per edition."
+  },
+  "counts": {
+    "provisions": 85,
+    "provisionsByFamily": {
+      "anthropic-rsp": 30,
+      "deepmind-fsf": 17,
+      "openai-preparedness": 6,
+      "openai-frontier-governance": 5,
+      "xai-faif": 7,
+      "meta-frontier-ai": 10,
+      "microsoft-frontier-governance": 10
+    },
+    "absences": 14,
+    "provisionChanges": 17,
+    "contested": [
+      "rsp-v2-0-assessed-weakening",
+      "rsp-v3-0-assessed-weakening",
+      "prov-preparedness-v2-high-deployment-restriction"
+    ],
+    "unresolved": ["supersedes-pf-2"],
+    "newFamilies": ["meta-frontier-ai", "microsoft-frontier-governance"]
+  },
+  "qa": {
+    "design": "Two fresh-context readers checked every provision-change claim independently and blind to each other; a third fresh-context agent adjudicated the disputed claims and two flagged by one reader. Both readers also checked targeted risky records (contested records, stop-case decisions, new family records) and each checked a different seeded random sample of other new records.",
+    "independence": "All agents were subagents of the proposing session using the same model family on the same machine; execution independence is not established. Readers received records and sources but not the proposer’s verification notes on what matched, nor each other’s results.",
+    "selection": {
+      "seed": 202610042,
+      "method": "mulberry32 PRNG, draws without replacement from ID-sorted pools; provisions exclude the contested provision (targeted)",
+      "provisionPool": 84,
+      "absencePool": 14,
+      "provisionSample": [
+        "prov-faif-2025-mask-acceptance-criterion",
+        "prov-rsp-v3-1-marginal-risk-board-ltbt-approval",
+        "prov-rsp-2023-policy-change-approval",
+        "prov-rsp-v3-0-competitor-lead-delay",
+        "prov-rsp-v2-1-ceo-rso-decision-board-ltbt-informed",
+        "prov-rsp-v3-3-ceo-rso-decision-board-ltbt-informed",
+        "prov-meta-faf-v1-1-critical-development-measure",
+        "prov-rsp-2023-no-train-deploy-without-safeguards",
+        "prov-meta-faf-v1-1-critical-threshold",
+        "prov-frontier-governance-2026-residual-risk-deployment-gate",
+        "prov-fsf-2024-alert-threshold",
+        "prov-fsf-2024-evaluation-interval",
+        "prov-fsf-v3-0-government-disclosure",
+        "prov-meta-aasf-v2-0-high-deployment-measure",
+        "prov-meta-aasf-v2-0-critical-threshold",
+        "prov-fsf-2024-autonomy-ccl"
+      ],
+      "absenceSample": [
+        "absent-faif-2026-benefits-may-outweigh-benchmark-risks",
+        "absent-faif-2026-bio-chem-acceptance-criterion",
+        "absent-rsp-v3-3-no-train-deploy-without-safeguards",
+        "absent-rsp-v3-2-no-train-deploy-without-safeguards"
+      ],
+      "readerA": [
+        "prov-faif-2025-mask-acceptance-criterion",
+        "prov-rsp-v3-1-marginal-risk-board-ltbt-approval",
+        "prov-rsp-2023-policy-change-approval",
+        "prov-rsp-v3-0-competitor-lead-delay",
+        "prov-rsp-v2-1-ceo-rso-decision-board-ltbt-informed",
+        "prov-rsp-v3-3-ceo-rso-decision-board-ltbt-informed",
+        "prov-meta-faf-v1-1-critical-development-measure",
+        "prov-rsp-2023-no-train-deploy-without-safeguards",
+        "absent-faif-2026-benefits-may-outweigh-benchmark-risks",
+        "absent-faif-2026-bio-chem-acceptance-criterion"
+      ],
+      "readerB": [
+        "prov-meta-faf-v1-1-critical-threshold",
+        "prov-frontier-governance-2026-residual-risk-deployment-gate",
+        "prov-fsf-2024-alert-threshold",
+        "prov-fsf-2024-evaluation-interval",
+        "prov-fsf-v3-0-government-disclosure",
+        "prov-meta-aasf-v2-0-high-deployment-measure",
+        "prov-meta-aasf-v2-0-critical-threshold",
+        "prov-fsf-2024-autonomy-ccl",
+        "absent-rsp-v3-3-no-train-deploy-without-safeguards",
+        "absent-rsp-v3-2-no-train-deploy-without-safeguards"
+      ],
+      "changes": [
+        "provchange-rsp-v2-0-misuse-uplift-threshold",
+        "provchange-rsp-v2-1-ceo-rso-decision-board-ltbt-informed",
+        "provchange-rsp-v3-0-misuse-uplift-threshold",
+        "provchange-rsp-v3-0-ceo-rso-decision-board-ltbt-informed",
+        "provchange-rsp-v3-1-automated-rd-threshold",
+        "provchange-rsp-v3-3-novel-cb-threshold",
+        "provchange-fsf-v2-0-hold-pending-mitigations",
+        "provchange-fsf-v3-0-alert-threshold",
+        "provchange-fsf-v3-1-alert-threshold",
+        "provchange-fsf-v3-0-pre-deployment-review",
+        "provchange-fsf-v3-1-pre-deployment-review",
+        "provchange-preparedness-v2-high-deployment-restriction",
+        "provchange-meta-aasf-v2-0-critical-threshold",
+        "provchange-meta-aasf-v2-0-critical-development-measure",
+        "provchange-meta-aasf-v2-0-high-threshold",
+        "provchange-meta-aasf-v2-0-high-deployment-measure",
+        "provchange-meta-aasf-v2-0-approval-decision-authority"
+      ],
+      "targeted": [
+        "rsp-v2-0-assessed-weakening",
+        "rsp-v3-0-assessed-weakening",
+        "prov-preparedness-v2-high-deployment-restriction",
+        "supersedes-pf-2",
+        "eval-i-rsp-christiano-credit",
+        "rsp-credits-arc-2023",
+        "issued-meta-faf-v1-1",
+        "issued-meta-aasf-v2-0",
+        "supersedes-meta-aasf-v2-0",
+        "issued-ms-fgf-2025",
+        "issued-ms-fgf-2026",
+        "supersedes-ms-fgf-2026"
+      ]
+    },
+    "readers": [
+      {
+        "reader": "reader-a",
+        "agent": "reader-a: Claude Code subagent, model Claude Opus 5.5 (claude-opus-5-5)",
+        "executedAt": "2026-10-03T18:11:00Z",
+        "verdicts": {
+          "changes": {
+            "agree": 15,
+            "disagree": 2
+          },
+          "targeted": {
+            "agree": 11,
+            "disagree": 1
+          },
+          "sample": {
+            "agree": 10
+          }
+        },
+        "nonAgree": [
+          {
+            "claimId": "provchange-rsp-v3-3-novel-cb-threshold",
+            "list": "changes",
+            "verdict": "disagree",
+            "finding": "Omits v3.3's severity element while stating v3.2's. v3.3 keeps 'with potential for catastrophic harm', and fn 4 sets it at 'consequences comparable to or worse than those of COVID-19' (v3.2: 'far beyond those of past catastrophes such as COVID-19'). As written, v3.3 appears to have no severity qualifier. Also 'end-to-end development' paraphrases 'end-to-end agent design and deployment'."
+          },
+          {
+            "claimId": "provchange-fsf-v3-0-alert-threshold",
+            "list": "changes",
+            "verdict": "disagree",
+            "finding": "Incomplete. v3.0 also adds, in its Note on Machine Learning R&D CCLs, that 'our alert threshold may be defined based on these sources of information [own ML R&D progress], rather than on evaluation scores'. v2.0 has no such allowance (searched). The record's own v3.1-vs-v3.0 change treats this note as part of v3.0's provision, so its introduction in v3.0 should be stated here."
+          },
+          {
+            "claimId": "rsp-v3-0-assessed-weakening",
+            "list": "targeted",
+            "verdict": "disagree",
+            "finding": "Misattribution: the GovAI post (by Sophie Williams and Jonas Freund) says 'GovAI research blog posts represent the views of their authors rather than the views of the organization', so 'GovAI's stated concern/concludes' is wrong. 'On balance…' is the first sentence of the Summary's last (7th) bullet, not its 'second paragraph'. Painter also called the change 'understandable', and his concern is hedged ('might enable')."
+          }
+        ],
+        "retrievalFailures": [
+          {
+            "claimId": "edition-identity checks (all PDF editions except meta-faf-v1-1)",
+            "url": "https://web.archive.org/web/20230919161730id_/https://www-files.anthropic.com/production/files/responsible-scaling-policy-1.0.pdf (and the other archivedUrl PDF captures)",
+            "error": "HTTP 429 from the Wayback Machine on repeated attempts. I compared each local PDF with the live publisher sourceUrl instead (all 19 byte-identical) and did not compare against the archived captures."
+          },
+          {
+            "claimId": "rsp-credits-arc-2023 / issued-meta-faf-v1-1",
+            "url": "https://web.archive.org/web/20230919161716id_/..., 20230919201512id_/..., 20240118134120id_/..., 20250203200742id_/https://about.fb.com/news/2025/02/meta-approach-frontier-ai/",
+            "error": "HTTP 429 via curl; retrieved instead in a separate in-app browser tab (raw id_ pages, read via DOM text). Resolved."
+          }
+        ],
+        "limits": "I worked only from my packet, the edition texts and PDFs, and sources I retrieved myself; I opened nothing in the repository and no other reader's files. I re-extracted every cited edition with pdftotext (UTF-8) and checked quotes with my own whitespace-normalised script, plus layout/table mode where tables were ambiguous. I verified edition identity against live publisher files (md5) and, for Meta FAF v1.1, against the 2025-02-13 capture. I did not compare the archived PDF captures of the other editions, and checked the FSF/PF second copies (fsf2-wb, pf2-wb) by text only. Meta FAF CDX payloads from 2025-02-15 and 2025-04-19 were not examined. For the Coggins paper I checked the abstract and the 'requests/demands' wording only. Source competence was judged only at the level of identity and authorship."
+      },
+      {
+        "reader": "reader-b",
+        "agent": "Claude Code subagent (Claude Opus 5.5, model id claude-opus-5-5), fresh context; tools: pdftotext 4.06 (xpdf) with -enc UTF-8, Node scripts, curl, Wayback CDX/id_ captures",
+        "executedAt": "2026-10-03T18:17:08.888Z",
+        "verdicts": {
+          "changes": {
+            "agree": 15,
+            "disagree": 2
+          },
+          "targeted": {
+            "agree": 11,
+            "disagree": 1
+          },
+          "sample": {
+            "agree": 10
+          }
+        },
+        "nonAgree": [
+          {
+            "claimId": "provchange-rsp-v3-3-novel-cb-threshold",
+            "list": "changes",
+            "verdict": "disagree",
+            "finding": "Omits the changed severity bar. In v3.2 the bar is damages far beyond past catastrophes such as COVID-19. v3.3 says potential for catastrophic harm, and fn 4 (inside the cited locator) sets it at consequences comparable to or worse than COVID-19. The statement mentions COVID-19 only for v3.2. It also renders end-to-end agent design and deployment (including dissemination) as end-to-end development."
+          },
+          {
+            "claimId": "provchange-fsf-v3-0-alert-threshold",
+            "list": "changes",
+            "verdict": "disagree",
+            "finding": "Incomplete. v3.0 also newly allows the ML R&D alert threshold to be defined from information on Google DeepMind's own ML R&D progress rather than from evaluation scores (Note, pp5-6). FSF v2.0 has no such allowance. The dataset's own v3.1 change record treats this note as part of v3.0's alert-threshold provision, so this v3.0-versus-v2.0 statement omits a material difference."
+          },
+          {
+            "claimId": "rsp-v3-0-assessed-weakening",
+            "list": "targeted",
+            "verdict": "disagree",
+            "finding": "(1) The GovAI post is by Williams and Freund; GovAI says its blog posts give authors' views, not the organization's. (2) The On balance quote does not contradict weakening: the same post says future security commitments were weakened. (3) Painter's view is mixed (understandable, might enable frog-boiling, praises reporting), not that it weakens safeguards. (4) That quote is the last Summary bullet, not the second paragraph."
+          }
+        ],
+        "retrievalFailures": [
+          {
+            "claimId": "issued-meta-aasf-v2-0",
+            "url": "https://ai.meta.com/blog/scaling-how-we-build-test-advanced-ai/",
+            "error": "Live URL returned HTTP 400 to curl; the quote was verified in the 2026-04-08 Wayback capture instead."
+          },
+          {
+            "claimId": "issued-meta-faf-v1-1",
+            "url": "https://web.archive.org/web/20250215004405id_/https://ai.meta.com/static-resource/meta-frontier-ai-framework/",
+            "error": "The 2025-02-15 and 2025-04-19 captures of the FAF PDF are truncated (about 1 MB and 5 MB of a 14 MB file) and unparseable; there is no PDF capture before 2025-02-13."
+          },
+          {
+            "claimId": "(provenance check)",
+            "url": "https://web.archive.org/cdx/search/cdx",
+            "error": "The Internet Archive CDX was intermittently offline (HTTP 502 and a Temporarily Offline page) and some queries timed out; all were completed on retry. Provenance result: the cited Wayback captures match the local edition PDFs by SHA-1 digest for RSP v1.0, v2.0, v2.1, v2.2, v3.1, v3.2 and v3.3, FSF v1.0, v2.0 (archived copy), v3.0 and v3.1, PF Beta, PF v2 (archived copy), and MS FGF 2025 and 2026. For OpenAI FGF 2026, Meta FAF v1.1 (2025-02-13) and Meta AASF v2 the captures are gzip-encoded, and after decompression they are byte-identical to the local PDFs. The RSP v3.0 capture is a 307 redirect; the live URL redirects to a PDF whose length equals the local file."
+          }
+        ],
+        "limits": "I worked only from my packet, SP\\pdf (re-extracted myself, default and -layout modes) and web sources I fetched (live pages plus Wayback id_ captures). I did not open the repository or any other reader's files. Quote checks normalize whitespace and invisible format characters; Anthropic text-layer spacing was judged leniently. I did not render pages visually, so table cells were placed by pdftotext layout mode. Absence searches were term-based, plus a full reading of the Introduction, section 1 and Appendix A; they were not a line-by-line reading of every page. Change statements were judged against each provision's surrounding section, not against every other provision of the edition."
+      }
+    ],
+    "agreementBetweenReaders": "Identical verdicts on all 17 change claims (15 agree, the same 2 disagree) and on the targeted list (the same contested record disputed).",
+    "adjudication": {
+      "agent": "Fresh-context adjudicator agent, Claude Opus 5.5 (model id claude-opus-5-5); worked only from the scratchpad packet, text layers and PDFs; no repository or dataset access",
+      "executedAt": "2026-10-03",
+      "results": [
+        {
+          "claimId": "provchange-rsp-v3-3-novel-cb-threshold",
+          "decision": "correct-with-edit",
+          "reasoning": "Read v3.3 PDF p. 7, row ‘Novel chemical/biological weapons production’, left column with fns 4–7; v3.2 PDF p. 7, same row (no footnotes in that cell); and the v3.3 change log at PDF p. 20 (printed p. 19), item (1), which says the update ‘revises our threshold for novel chemical/biological weapons production to better track the threat model of concern’. Both compared-provision quotes are exact and the changelog basis is right. The record correctly identifies the reframing (functional substitution for scarce expertise in v3.3; significant help to threat actors in v3.2), so it is not incorrect. I agree with both readers that the statement describes v3.3 asymmetrically. It gives v3.2's severity bar (‘far beyond those of past catastrophes such as COVID-19’) but drops v3.3's own: ‘with potential for catastrophic harm’, with fn 4 ‘In particular, weapons with the potential to cause events with consequences comparable to or worse than those of COVID-19’. As stored, v3.3 appears to have no severity qualifier and no COVID-19 reference. It also renders ‘end-to-end agent design and deployment (including, as relevant, agent design, verification and validation, formulation, and dissemination)’ as ‘end-to-end development’. Set against v3.2's ‘create/obtain and deploy’, this suggests a narrowing to development that the text does not make. Minor: ‘currently’ is dropped, and ‘operationalized as’ replaces the source's ‘That is’. Fn 4 qualifies the very element the statement contrasts, so it belongs in the statement. Fns 5–7 are illustrative (‘For example’, ‘E.g.’) and can stay in the evidence. Companion edit: update the ‘later’ evidence paraphrase to match the v3.3 half of the replacement. Its locator already covers fns 4–7. Basis and derivation need no change.",
+          "edit": {
+            "field": "statement",
+            "replacement": "v3.3's threshold covers AI systems that can functionally substitute for the scarce human expertise that is currently the primary barrier to novel development of chemical and biological weapons with potential for catastrophic harm (footnote: “In particular, weapons with the potential to cause events with consequences comparable to or worse than those of COVID-19”); that is, a well-resourced team could, using the model, accomplish the end-to-end agent design and deployment (including, as relevant, agent design, verification and validation, formulation, and dissemination) that would otherwise require recruiting one of a small number of world-leading specialists. v3.2's threshold covered AI systems with the ability to significantly help threat actors (for example, moderately resourced expert-backed teams) create/obtain and deploy chemical and/or biological weapons with potential for catastrophic damages far beyond those of past catastrophes such as COVID-19."
+          }
+        },
+        {
+          "claimId": "provchange-fsf-v3-0-alert-threshold",
+          "decision": "correct-with-edit",
+          "reasoning": "Read v3.0 PDF p. 5, §1.3 ‘Analysis’ bullet, and the Note on Machine Learning R&D CCLs (PDF pp. 5–6); and v2.0 PDF p. 3 in both copies. Both quotes are exact and the stored contrast (‘before the evaluations are run again’ to ‘before a risk assessment is conducted again’) is accurate. The neighbouring sentence on running early warning evaluations more frequently or adjusting the alert threshold is identical in both editions, so it is not a difference. The readers are right that the record is incomplete. v3.0's Note ends ‘Similarly, our alert threshold may be defined based on these sources of information, rather than on evaluation scores’. ‘These sources’ are information about Google DeepMind's own progress at accelerating ML R&D. Full-text searches of both v2.0 text copies found no counterpart: no ‘evaluation scores’, ‘sources of information’ or ‘own progress’. v2.0 lists ML R&D among its misuse domains with no such note. The dataset's v3.1-vs-v3.0 change record, as reproduced in the reader packet, treats this note as part of v3.0's alert-threshold provision. Without this edit, the version chain shows the note in v3.0 but never records its introduction. Companion edits are needed for the new clause to be evidenced. Extend the ‘later’ evidence locator to ‘PDF pp. 5–6, §1.3 Outline of Our Risk Assessment Process, “Analysis” bullet, second sentence; Note on Machine Learning R&D CCLs, last sentence’ and update its paraphrase. Add the Note and the v2.0 full-text check to the inferenceRationale premises. Derivation (inferred) and basis (document_comparison) stay as they are.",
+          "edit": {
+            "field": "statement",
+            "replacement": "v3.0’s alert thresholds for its early warning evaluations are designed to flag when a CCL may be reached before a risk assessment is conducted again, and its Note on Machine Learning R&D CCLs adds that the alert threshold may be defined based on sources of information about Google DeepMind’s own progress at accelerating ML R&D, rather than on evaluation scores; v2.0’s alert threshold flagged when a CCL may be reached before the evaluations are run again, and v2.0 contains no such note."
+          }
+        },
+        {
+          "claimId": "provchange-meta-aasf-v2-0-critical-development-measure",
+          "decision": "correct",
+          "reasoning": "Read AASF v2 PDF pp. 15–17: Table 1 and §3.3; the cited sentence is exact at p. 17. Read FAF v1.1 PDF p. 12, §3.3; the sentence is exact, also appears in the executive summary at p. 4, and is identical in the 2025-02-13 and 2025-03-28 expressions. Also read FAF Table 1 (p. 13) and the v2 change log at PDF p. 44 (‘Critical threshold changed from “Stop” to “Develop with Mitigations.”’). The statement is accurate to both operative sentences and to the changelog. Reader A's point is real. Table 1's critical measures are: pause development while investigating whether barriers remain; mitigate to moderate levels ‘to the extent possible’; run threat modelling, with possible reassignment to another threshold; and otherwise ‘do not further develop the model until such a time as adequate mitigations have been identified’. So v1.1's stop was conditional. But the statement keeps both of v1.1's own qualifiers: ‘cannot be mitigated’ and the cross-reference to the Table 1 measures. It does not call the stop unconditional or permanent. The Table 1 process elaborates the statement rather than contradicting it, and the contrast drawn is the one the changelog itself draws. v1.1's resumption condition (‘adequate mitigations have been identified’) also differs in wording from v2's (‘risk assessments are complete and safeguards are defined, implemented and validated to reduce risk to the moderate or lower risk threshold’), so the contrast is a genuine textual one. The high-threshold record differs: there the v1.1 measure is not referenced at all. No edit required. Non-blocking: ‘reaches the critical threshold’ compresses v1.1's ‘is assessed to have reached the critical risk threshold’. If the editor wants parallel treatment with the high-threshold record, a faithful optional addition to the v1.1 half is ‘…, Table 1 listing a pause in development, mitigation to moderate levels to the extent possible, and no further development until adequate mitigations have been identified’.",
+          "edit": null
+        },
+        {
+          "claimId": "provchange-meta-aasf-v2-0-high-deployment-measure",
+          "decision": "correct-with-edit",
+          "reasoning": "Read the AASF v2 Table 1 High row (PDF p. 15; quote exact) and FAF v1.1 §4.2 (PDF p. 17). The FAF quote is exact in the 2025-02-13 expression only; the 2025-03-28 expression reads ‘threat scenario’ for ‘catastrophic outcome’, as the compared provision already records. Also read the FAF Table 1 High row (PDF p. 13, checked in both expressions) and the change log at PDF p. 44 (‘High threshold measure changed from “Do not release” to “Deploy with mitigations.”’). The contrast is accurate and matches the changelog, so it is not incorrect. Both readers noted, and I confirm, that v1.1's Table 1 High row pairs the ‘Do not release’ label with the Measures-column entry ‘Implement mitigations to reduce risk to moderate levels.’ The stored statement uses mitigation to moderate as the v2 side of the contrast and omits v1.1's own measure in the same table the record cites. A reader would therefore take the mitigation element to be new in v2. That is a material omission for a change record keyed to this measure. Unlike the critical-measure record, this statement does not even point to the Table 1 measure. The replacement adds it without interpreting whether v1.1 permitted release once risk was reduced; the text does not say. Companion edit: extend the ‘earlier’ evidence locator's parenthesis to ‘Table 1, PDF p. 13, High row: label “Do not release”; Measures column “Implement mitigations to reduce risk to moderate levels”’ and update its paraphrase. Table 1 is identical in both v1.1 expressions, so no new expression qualification is needed.",
+          "edit": {
+            "field": "statement",
+            "replacement": "v2's high-threshold measure (“Deploy with mitigations”) is to proceed with deployment of the Frontier AI only if sufficient mitigations are defined, implemented and validated to reduce risk to that of a moderate or lower model, whereas v1.1 states that a frontier AI at the high risk threshold will not be released externally, and its Table 1 pairs the high threshold's “Do not release” label with the measure “Implement mitigations to reduce risk to moderate levels.”"
+          }
+        }
+      ],
+      "limits": "Single fresh-context adjudicator. Inputs were only the scratchpad: the packet, including both readers' findings; the txt/ text layers, plain and layout; and fresh pdftotext extractions from pdf/ for FAF Table 1 and p. 17, and AASF Table 1. No page images were rendered, so cell and footnote attachment rests on text extraction; layout and raw extractions agreed. The repository and dataset were not read. The FSF v3.1-vs-v3.0 record was consulted only as reproduced in the reader packet. Live and archived URLs were not re-fetched. The absence of an ML R&D note in FSF v2.0 rests on full-text search of both v2.0 text copies. The single ‘edit’ field carries the statement. The companion locator, evidence-paraphrase and rationale changes described under each edit are needed for the three edited statements to stay fully evidenced. The replacement wordings have not been checked by a second reader. Out of scope but noticed: the FSF v3.1-vs-v3.0 record cites the Note in its v3.0 evidence locator, but neither that evidence's paraphrase nor the v3.0 compared-provision quote contains the Note's sentence. No change is characterised here as strengthening or weakening."
+    },
+    "correctionsApplied": [
+      {
+        "id": "provchange-rsp-v3-3-novel-cb-threshold",
+        "field": "statement, later evidence",
+        "why": "Adjudicated (both readers disputed): the statement omitted v3.3’s own severity element and narrowed end-to-end agent design and deployment to development."
+      },
+      {
+        "id": "provchange-fsf-v3-0-alert-threshold",
+        "field": "statement, later evidence, earlier evidence, inference rationale",
+        "why": "Adjudicated (both readers disputed): the statement omitted v3.0’s new note on ML R&D alert thresholds."
+      },
+      {
+        "id": "provchange-fsf-v3-1-alert-threshold",
+        "field": "earlier evidence",
+        "why": "Adjudicator’s side note: the description cites v3.0’s ML R&D note, so the v3.0 evidence now states it."
+      },
+      {
+        "id": "provchange-meta-aasf-v2-0-high-deployment-measure",
+        "field": "statement, earlier evidence",
+        "why": "Adjudicated (reader A flagged): the statement omitted v1.1’s own Table 1 measure of mitigation to moderate levels."
+      },
+      {
+        "id": "prov-rsp-v3-1-ceo-rso-decision-board-ltbt-informed",
+        "field": "quote, statement",
+        "why": "QA reader A: quote the full decision sentence, as in v3.0 and v3.2, so an unchanged provision does not look changed; the text layer drops one word space, restored and noted."
+      },
+      {
+        "id": "prov-rsp-v3-3-ceo-rso-decision-board-ltbt-informed",
+        "field": "quote, statement",
+        "why": "QA reader A: quote the full decision sentence, as in v3.0 and v3.2, so an unchanged provision does not look changed; the text layer drops one word space, restored and noted."
+      },
+      {
+        "id": "prov-rsp-v3-4-ceo-rso-decision-board-ltbt-informed",
+        "field": "quote, statement",
+        "why": "QA reader A: quote the full decision sentence, as in v3.0 and v3.2, so an unchanged provision does not look changed; the text layer drops one word space, restored and noted."
+      },
+      {
+        "id": "evidence-prov-preparedness-v2-high-deployment-restriction-coggins",
+        "field": "locator",
+        "why": "QA readers A and B: the quoted sentence is the fifth of the abstract, not the fourth."
+      },
+      {
+        "id": "rsp-v3-0-assessed-weakening",
+        "field": "qualification",
+        "why": "QA readers A and B: authors’ views, Painter’s hedge, and the authors’ own judgement that future commitments were weakened."
+      },
+      {
+        "id": "evidence-rsp-v3-0-assessed-weakening-govai-concern",
+        "field": "note",
+        "why": "QA readers A and B: attribution to the authors."
+      },
+      {
+        "id": "evidence-rsp-v3-0-assessed-weakening-govai-future",
+        "field": "added",
+        "why": "QA reader B: the authors themselves judge that future security commitments were weakened."
+      },
+      {
+        "id": "evidence-rsp-v3-0-assessed-weakening-govai-balance",
+        "field": "support",
+        "why": "QA reader B: a net judgement about honest commitments, not a denial of weakening."
+      },
+      {
+        "id": "evidence-rsp-v3-0-assessed-weakening-govai-balance",
+        "field": "locator",
+        "why": "QA readers A and B: locator."
+      },
+      {
+        "id": "evidence-rsp-v3-0-assessed-weakening-govai-balance",
+        "field": "note",
+        "why": "QA readers A and B: attribution and role."
+      },
+      {
+        "id": "evidence-rsp-v3-0-assessed-weakening-govai-mitigations",
+        "field": "added",
+        "why": "Context surfaced during QA re-verification."
+      },
+      {
+        "id": "evidence-rsp-v3-0-assessed-weakening-time",
+        "field": "note",
+        "why": "QA readers A and B: hedge and fuller context."
+      },
+      {
+        "id": "evidence-rsp-v3-0-assessed-weakening-kaplan",
+        "field": "added",
+        "why": "Contradicting side made explicit after the GovAI items were reclassified as support and context."
+      },
+      {
+        "id": "source-govai-rsp-v3",
+        "field": "version",
+        "why": "QA readers A and B: attribution to the authors."
+      },
+      {
+        "id": "source-rsp-announcement-capture-1415",
+        "field": "title",
+        "why": "QA reader A: the 2023 captures carry this title; “Introducing …” is the later page title."
+      },
+      {
+        "id": "source-pf-v2-update",
+        "field": "title",
+        "why": "QA readers A and B: the page heading and title read “Our updated Preparedness Framework”."
+      },
+      {
+        "id": "evidence-issued-ms-fgf-2025",
+        "field": "passage",
+        "why": "QA readers A and B: the cover and contents pages carry no footer."
+      },
+      {
+        "id": "issued-meta-aasf-v2-0",
+        "field": "qualification",
+        "why": "QA reader B: the change-log date."
+      },
+      {
+        "id": "source-anthropic-rsp-officers-2024",
+        "field": "archivedUrl",
+        "why": "QA readers A and B: an existing capture five days after publication."
+      },
+      {
+        "id": "source-anthropic-rsp-officers-2024",
+        "field": "archivedAt",
+        "why": "QA readers A and B: capture date."
+      },
+      {
+        "id": "evidence-rsp-v2-0-assessed-weakening-anthropic",
+        "field": "note",
+        "why": "Capture added after QA."
+      }
+    ]
+  },
+  "stops": {
+    "note": "Stopped and listed, not resolved: provisions left out because the per-document quotation limit would be exceeded, provisions whose meaning would depend on interpretation beyond the text, passages that could not be quoted verifiably, and comparisons that could not rest on two quoted texts.",
+    "counts": {
+      "over the 50-word limit": 3,
+      "quotation limit": 82,
+      "curator decision: no change recorded": 1,
+      "outside the four provision kinds": 6,
+      "text not inspectable or verifiable": 4,
+      "meaning would depend on interpretation": 4,
+      "information only": 6
+    },
+    "items": [
+      {
+        "family": "anthropic-rsp",
+        "edition": "rsp-2023",
+        "key": "rsp-emergency-loosening",
+        "category": "over the 50-word limit",
+        "issue": "Exception in 'Procedural Commitments' item 1, third sub-bullet (PDF p. 10): in an extreme emergency (e.g. a reckless rogue-state actor), a substantial loosening of restrictions, only in consultation with governmental authorities. The shortest passage carryi…"
+      },
+      {
+        "family": "anthropic-rsp",
+        "edition": "rsp-2023",
+        "key": "rsp-autonomy-threshold",
+        "category": "quotation limit",
+        "issue": "ASL-3 'Autonomous replication in the lab' capability (50% aggregate success on appendix tasks), PDF p. 7, item 2: quotation limit."
+      },
+      {
+        "family": "anthropic-rsp",
+        "edition": "rsp-2023",
+        "key": "rsp-asl3-required-measures",
+        "category": "quotation limit",
+        "issue": "ASL-3 Containment Measures (security hardening before training, PDF pp. 7–8) and Deployment Measures (expert red-teaming before deployment, PDF pp. 8–9; summary on PDF p. 5): quotation limit."
+      },
+      {
+        "family": "anthropic-rsp",
+        "edition": "rsp-2023",
+        "key": "rsp-pause-training",
+        "category": "quotation limit",
+        "issue": "Training-specific pause commitments: Initial Commitments item 4 (PDF p. 4) and Evaluation Protocol response policy steps (2)–(2b) (PDF p. 13): quotation limit; the broader pause/delay commitment is proposed under rsp-no-train-deploy-without-safeguards."
+      },
+      {
+        "family": "anthropic-rsp",
+        "edition": "rsp-2023",
+        "key": "rsp-board-ltbt-informed",
+        "category": "quotation limit",
+        "issue": "Procedural Commitments items 6–7 (PDF p. 10): ASL evaluation results shared with the board and LTBT; Responsible Scaling Officer reports quarterly to the board and LTBT: quotation limit."
+      },
+      {
+        "family": "anthropic-rsp",
+        "edition": "rsp-2023",
+        "key": "rsp-weights-deletion-decision",
+        "category": "quotation limit",
+        "issue": "Response policy step (2c) (PDF p. 13): CISO and CEO convened to decide whether to delete weights if the next ASL was surpassed during training: quotation limit."
+      },
+      {
+        "family": "anthropic-rsp",
+        "edition": "rsp-2023",
+        "key": "rsp-define-next-asl",
+        "category": "quotation limit",
+        "issue": "Initial Commitments item 3 (PDF p. 4): define ASL-4 evaluations before first training ASL-3 models: quotation limit."
+      },
+      {
+        "family": "anthropic-rsp",
+        "edition": "rsp-v2-0",
+        "key": "rsp-no-train-deploy-without-safeguards",
+        "category": "curator decision: no change recorded",
+        "issue": "No change proposed against v1.0: v2.0's passage characterizes the policy released in September 2023 and its changelog (PDF p. 21) says the update maintains the commitment, while v1.0's own formulation (pause scaling/delay deployment when unable to comply wi…"
+      },
+      {
+        "family": "anthropic-rsp",
+        "edition": "rsp-v2-0",
+        "key": "rsp-required-safeguards-cbrn",
+        "category": "quotation limit",
+        "issue": "Required Safeguards for the CBRN threshold (ASL-3 Deployment and Security Standards), §2 table (PDF p. 7): quotation limit."
+      },
+      {
+        "family": "anthropic-rsp",
+        "edition": "rsp-v2-0",
+        "key": "rsp-ai-rd-threshold",
+        "category": "quotation limit",
+        "issue": "Autonomous AI R&D Capability Threshold and its Required Safeguards, §2 table (PDF p. 7): quotation limit (v2.1 split recorded elsewhere)."
+      },
+      {
+        "family": "anthropic-rsp",
+        "edition": "rsp-v2-0",
+        "key": "rsp-restrict-and-pause",
+        "category": "quotation limit",
+        "issue": "Operative forms of the commitment: §4.3 final sentence, restrict model deployment and further scaling (PDF p. 14), and §6.2 'Monitoring pretraining', pause training until the ASL-3 Security Standard is implemented (PDF p. 15): quotation limit. Same in v2.1 …"
+      },
+      {
+        "family": "anthropic-rsp",
+        "edition": "rsp-v2-0",
+        "key": "rsp-may-proceed-with-safeguards",
+        "category": "quotation limit",
+        "issue": "'May proceed' clause, §4.3 first paragraph (PDF p. 13): may deploy and train above the threshold once Required Safeguards are met and a follow-up capability assessment is done: quotation limit. Same in v2.1 and v2.2 (PDF p. 14)."
+      },
+      {
+        "family": "anthropic-rsp",
+        "edition": "rsp-v2-0",
+        "key": "rsp-lower-safeguards-if-others-pass",
+        "category": "over the 50-word limit",
+        "issue": "Exception in footnote 18 (PDF p. 16; footnote 17 at PDF p. 17 in v2.1 and v2.2): Required Safeguards might be lowered if another actor passes a Capability Threshold without equivalent measures. Carrying the condition needs two sentences (about 62 words), ov…"
+      },
+      {
+        "family": "anthropic-rsp",
+        "edition": "rsp-v2-0",
+        "key": "rsp-security-alone-continue-training",
+        "category": "quotation limit",
+        "issue": "Exception in footnote 14 (PDF p. 15; footnote 13 in v2.1 and v2.2): ASL-3 Security Standard alone suffices to continue training: quotation limit."
+      },
+      {
+        "family": "anthropic-rsp",
+        "edition": "rsp-v2-0",
+        "key": "rsp-policy-change-approval",
+        "category": "quotation limit",
+        "issue": "§7.1 item 7 (PDF p. 16): changes proposed by the CEO and RSO and approved by the Board in consultation with the LTBT. Present in v2.0–v3.4 (v2.1/v2.2 PDF p. 17; v3.0 PDF p. 15; v3.1–v3.4 PDF p. 16); quotation limit, and spacing-only text in v2.2, v3.1, v3.3…"
+      },
+      {
+        "family": "anthropic-rsp",
+        "edition": "rsp-v2-0",
+        "key": "rsp-trusted-user-access",
+        "category": "quotation limit",
+        "issue": "§4.1 item 6 'Trusted users' (PDF p. 12; same page in v2.1 and v2.2): quotation limit."
+      },
+      {
+        "family": "anthropic-rsp",
+        "edition": "rsp-v2-1",
+        "key": "rsp-cbrn-4-threshold",
+        "category": "quotation limit",
+        "issue": "New CBRN-4 threshold (uplift to moderately resourced state programs), §2 table (PDF p. 8; same in v2.2): quotation limit."
+      },
+      {
+        "family": "anthropic-rsp",
+        "edition": "rsp-v2-1",
+        "key": "rsp-safeguards-before-new-thresholds",
+        "category": "quotation limit",
+        "issue": "New sentence after the §2 table (PDF p. 8; same in v2.2): Required Safeguards for each threshold to be identified and described at minimum before training or deploying any model that reaches it: quotation limit."
+      },
+      {
+        "family": "anthropic-rsp",
+        "edition": "rsp-v3-0",
+        "key": "rsp-marginal-risk-board-ltbt-approval",
+        "category": "quotation limit",
+        "issue": "§3.4 item 5 (PDF p. 12): quotation limit; proposed for v3.1 and v3.3. Also present in v3.2 (PDF p. 13) and v3.4 (PDF p. 14)."
+      },
+      {
+        "family": "anthropic-rsp",
+        "edition": "rsp-v3-0",
+        "key": "rsp-novel-cb-threshold",
+        "category": "quotation limit",
+        "issue": "Novel chemical/biological weapons production threshold (PDF p. 7; same wording in v3.1): quotation limit; proposed for v3.2 and v3.3."
+      },
+      {
+        "family": "anthropic-rsp",
+        "edition": "rsp-v3-0",
+        "key": "rsp-sabotage-threshold",
+        "category": "quotation limit",
+        "issue": "'High-stakes sabotage opportunities' threshold (PDF p. 7; renamed 'Misaligned AI systems in high-stakes settings' in v3.3): quotation limit in all v3.x editions."
+      },
+      {
+        "family": "anthropic-rsp",
+        "edition": "rsp-v3-0",
+        "key": "rsp-industry-commitment-limit",
+        "category": "quotation limit",
+        "issue": "§1 (PDF p. 4, all v3.x editions): Anthropic cannot unilaterally and unconditionally commit to its industry-wide recommendations: quotation limit; cited in the absence records."
+      },
+      {
+        "family": "anthropic-rsp",
+        "edition": "rsp-v3-0",
+        "key": "rsp-competitor-parity-and-upleveling",
+        "category": "quotation limit",
+        "issue": "Appendix A rows 'Competitors have strong safety measures' (delay until meeting competitors' risk-reduction posture) and 'General upleveling' (no necessary delay), PDF p. 16 (p. 17 in v3.1–v3.4): quotation limit."
+      },
+      {
+        "family": "anthropic-rsp",
+        "edition": "rsp-v3-0",
+        "key": "rsp-company-asl3-protections",
+        "category": "quotation limit",
+        "issue": "Company plan for the non-novel chemical/biological row (maintain or improve ASL-3 protections), PDF p. 6: the sentence is 52 words, over the limit, and quotation limit."
+      },
+      {
+        "family": "anthropic-rsp",
+        "edition": "rsp-v3-1",
+        "key": "rsp-misuse-uplift-threshold",
+        "category": "quotation limit",
+        "issue": "Present and unchanged from v3.0 in v3.1–v3.4 (PDF p. 6): quotation limit."
+      },
+      {
+        "family": "anthropic-rsp",
+        "edition": "rsp-v3-1",
+        "key": "rsp-pause-consideration",
+        "category": "outside the four provision kinds",
+        "issue": "New Appendix A introduction sentences (PDF p. 16; p. 17 in v3.2–v3.4): commitments do not preclude cautionary action such as refraining from training or deploying, and Anthropic would strongly consider pausing even in uncovered cases. Not proposed: non-bind…"
+      },
+      {
+        "family": "anthropic-rsp",
+        "edition": "rsp-v3-1",
+        "key": "rsp-risk-report-process",
+        "category": "outside the four provision kinds",
+        "issue": "Risk Report scope for internal models (§3.1, PDF p. 11) and use of internal feedback (§3.4 item 2, PDF p. 13; changelog item (2)): procedural Risk Report provisions, not keyed."
+      },
+      {
+        "family": "anthropic-rsp",
+        "edition": "rsp-v3-2",
+        "key": "rsp-ltbt-review-request",
+        "category": "quotation limit",
+        "issue": "New: LTBT may request a public or private external review of a Risk Report (§3.6, PDF p. 14) and must be regularly briefed (§4, PDF p. 16): quotation limit (LTBT reviewer approval recorded elsewhere)."
+      },
+      {
+        "family": "anthropic-rsp",
+        "edition": "rsp-v3-2",
+        "key": "rsp-automated-rd-threshold",
+        "category": "quotation limit",
+        "issue": "Present and unchanged from v3.1 (PDF pp. 8–9, same page split): quotation limit."
+      },
+      {
+        "family": "anthropic-rsp",
+        "edition": "rsp-v3-3",
+        "key": "rsp-automated-rd-threshold",
+        "category": "text not inspectable or verifiable",
+        "issue": "Threshold text on PDF p. 9 is interleaved line by line with the other two table columns in the text layer, so no contiguous quote verifies; substance unchanged from v3.2. Not proposed."
+      },
+      {
+        "family": "anthropic-rsp",
+        "edition": "rsp-v3-3",
+        "key": "rsp-off-cycle-risk-analyses",
+        "category": "outside the four provision kinds",
+        "issue": "Off-cycle model risk analyses (§3.1, PDF p. 11; changelog item (2), PDF p. 20) and terminology changes (changelog item (3)): procedural or naming changes, not keyed."
+      },
+      {
+        "family": "anthropic-rsp",
+        "edition": "rsp-v3-4",
+        "key": "rsp-automated-rd-threshold",
+        "category": "text not inspectable or verifiable",
+        "issue": "Revised threshold (PDF pp. 9–10; changelog item 1, PDF p. 20) cannot be quoted because the text layer interleaves the table columns on PDF p. 9; the v3.4-versus-v3.3 change is proposed from inspection with locators but has no provision record in either edit…"
+      },
+      {
+        "family": "anthropic-rsp",
+        "edition": "rsp-v3-4",
+        "key": "rsp-novel-cb-threshold",
+        "category": "quotation limit",
+        "issue": "Present and unchanged from v3.3 (PDF p. 7), as are rsp-misuse-uplift-threshold (PDF p. 6) and rsp-marginal-risk-board-ltbt-approval (PDF p. 14): quotation limit (2 slots)."
+      },
+      {
+        "family": "anthropic-rsp",
+        "edition": "rsp-v3-4",
+        "key": "rsp-risk-report-process",
+        "category": "outside the four provision kinds",
+        "issue": "Redaction disclosure (§3.5, PDF p. 14) and multi-reviewer external review (§3.6.1, PDF p. 15), changelog items 4–5 (PDF p. 21): procedural, not keyed. Internal sharing (at least 200 employees) and coverage date are recorded elsewhere."
+      },
+      {
+        "family": "deepmind-fsf",
+        "edition": "fsf-2024",
+        "key": "fsf-government-disclosure",
+        "category": "meaning would depend on interpretation",
+        "issue": "Not proposed: v1.0 mentions alerting relevant stakeholder bodies (e.g. when evaluation thresholds are met) only under Future work, “Involving external authorities and experts” (PDF p. 6), as internal policies being explored; treating it as a decision_author…"
+      },
+      {
+        "family": "deepmind-fsf",
+        "edition": "fsf-2024",
+        "key": "fsf-pre-deployment-review",
+        "category": "meaning would depend on interpretation",
+        "issue": "Not proposed: Deployment Level 2 (PDF p. 4 table) has deployment take place only after safeguards meet a robustness target, but v1.0 calls its mitigation options illustrative and leaves mapping CCLs to levels to future work (PDF p. 6, “Mitigation plans”), s…"
+      },
+      {
+        "family": "deepmind-fsf",
+        "edition": "fsf-2024",
+        "key": "fsf-ccls-other",
+        "category": "quotation limit",
+        "issue": "Quotation limit: the other v1.0 CCLs (Bio amateur and expert enablement level 1, Cyber autonomy and enablement level 1, Machine Learning R&D levels 1–2; PDF pp. 5–6) are not proposed."
+      },
+      {
+        "family": "deepmind-fsf",
+        "edition": "fsf-v2-0",
+        "key": "fsf-response-plan",
+        "category": "quotation limit",
+        "issue": "Quotation limit: present at PDF p. 3, component “3 - Applying Mitigations”, first paragraph (on reaching an alert threshold, proximity and risk are assessed with internal and external experts as needed, informing a response plan). Not proposed, so its chang…"
+      },
+      {
+        "family": "deepmind-fsf",
+        "edition": "fsf-v2-0",
+        "key": "fsf-government-disclosure",
+        "category": "text not inspectable or verifiable",
+        "issue": "Not proposed: the Disclosure sentence (PDF p. 8 in the 2025-02-05 capture) is split by a page break and footnote in the served copy (PDF pp. 7–8), so it cannot verify in both copies, and ending before the break would drop its limiting clause about facilitat…"
+      },
+      {
+        "family": "deepmind-fsf",
+        "edition": "fsf-v2-0",
+        "key": "fsf-implementation-review",
+        "category": "quotation limit",
+        "issue": "Quotation limit: the Google DeepMind AGI Safety Council’s periodic review of Framework implementation (PDF p. 7, Governance, second sentence) is not proposed."
+      },
+      {
+        "family": "deepmind-fsf",
+        "edition": "fsf-v2-0",
+        "key": "fsf-security-level-adjustment",
+        "category": "quotation limit",
+        "issue": "Quotation limit: the clause that recommended security levels may be adjusted, e.g. for models not meaningfully different from other widely available models or where open-release benefits outweigh risks (PDF p. 5, paragraph beginning “These recommended secur…"
+      },
+      {
+        "family": "deepmind-fsf",
+        "edition": "fsf-v2-0",
+        "key": "fsf-field-wide-security",
+        "category": "quotation limit",
+        "issue": "Quotation limit: the RAND SL 4 recommendation for Machine Learning R&D autonomy level 1 with the statement that it must be taken on by the frontier AI field as a whole (PDF p. 6, Table 1) is not proposed."
+      },
+      {
+        "family": "deepmind-fsf",
+        "edition": "fsf-v2-0",
+        "key": "fsf-instrumental-reasoning-ccl",
+        "category": "quotation limit",
+        "issue": "Quotation limit: the deceptive alignment CCLs (Instrumental Reasoning Levels 1–2) and automated-monitoring mitigation (PDF p. 7, Table 2) are not proposed."
+      },
+      {
+        "family": "deepmind-fsf",
+        "edition": "fsf-v2-0",
+        "key": "fsf-alert-threshold",
+        "category": "information only",
+        "issue": "No change proposed against v1.0: apart from “alert threshold” replacing the “pass” condition, the quoted sentence is worded identically."
+      },
+      {
+        "family": "deepmind-fsf",
+        "edition": "fsf-v3-0",
+        "key": "fsf-response-plan",
+        "category": "quotation limit",
+        "issue": "Quotation limit: present in §1.4 (PDF p. 6) with wording identical to v2.0’s response-plan sentences; not proposed."
+      },
+      {
+        "family": "deepmind-fsf",
+        "edition": "fsf-v3-0",
+        "key": "fsf-ml-rd-deployment-review",
+        "category": "quotation limit",
+        "issue": "Quotation limit: §3.1.2 step 2 (PDF pp. 12–13; spans a page break) extends the pre-deployment review to large scale internal deployments of models reaching ML R&D CCLs; not proposed."
+      },
+      {
+        "family": "deepmind-fsf",
+        "edition": "fsf-v3-0",
+        "key": "fsf-deployment-mitigation-scope",
+        "category": "quotation limit",
+        "issue": "Quotation limit: §1.6 (PDF p. 7) states the deployment-mitigation condition is required only for external deployment (ML R&D: also large scale internal deployment), not further development; not proposed."
+      },
+      {
+        "family": "deepmind-fsf",
+        "edition": "fsf-v3-0",
+        "key": "fsf-misalignment-acceptance-criteria",
+        "category": "quotation limit",
+        "issue": "Quotation limit: the statement that exploratory misalignment CCLs carry no explicit risk acceptance criteria (§1.2, PDF p. 4; §1.6, PDF p. 7) is not proposed."
+      },
+      {
+        "family": "deepmind-fsf",
+        "edition": "fsf-v3-0",
+        "key": "fsf-framework-update-review",
+        "category": "quotation limit",
+        "issue": "Quotation limit: §5.1 (PDF p. 16) — Framework updated at least once a year, with the updated version and framework assessment reviewed by appropriate corporate governance bodies — is not proposed."
+      },
+      {
+        "family": "deepmind-fsf",
+        "edition": "fsf-v3-0",
+        "key": "fsf-security-level-adjustment",
+        "category": "quotation limit",
+        "issue": "Quotation limit: §2.2 (PDF p. 9) keeps the adjustable-security-level clause (now citing publicly available models with weaker security applied); the sentence is 52 words and is not proposed."
+      },
+      {
+        "family": "deepmind-fsf",
+        "edition": "fsf-v3-1",
+        "key": "fsf-government-disclosure",
+        "category": "quotation limit",
+        "issue": "Quotation limit: §5.2 (PDF p. 17) is worded identically to v3.0 §5.2; not proposed, and no change."
+      },
+      {
+        "family": "deepmind-fsf",
+        "edition": "fsf-v3-1",
+        "key": "fsf-alternative-security-adequacy",
+        "category": "quotation limit",
+        "issue": "Quotation limit: §1.3.5 (PDF p. 7) keeps the alternative and adds a reference to mitigations already in place; not proposed, so no change proposed."
+      },
+      {
+        "family": "deepmind-fsf",
+        "edition": "fsf-v3-1",
+        "key": "fsf-response-plan",
+        "category": "quotation limit",
+        "issue": "Quotation limit: §1.3.3 (PDF p. 6) adds that, if risks remain acceptable and capabilities remain distant from a CCL, the response plan may include updating the alert threshold; not proposed."
+      },
+      {
+        "family": "deepmind-fsf",
+        "edition": "fsf-v3-1",
+        "key": "fsf-governance-structure",
+        "category": "meaning would depend on interpretation",
+        "issue": "Not proposed: §4.1 Governance structure (PDF p. 16) describes allocated responsibilities with legal, compliance and safety reviews and escalation procedures but names no decision-maker or role; a decision_authority record would need interpretation."
+      },
+      {
+        "family": "deepmind-fsf",
+        "edition": "fsf-v3-1",
+        "key": "fsf-security-level-2-plus",
+        "category": "quotation limit",
+        "issue": "Quotation limit: Security level 2+ for the CBRN, cyber and harmful manipulation CCLs (§2.1.1 PDF p. 9; tables PDF pp. 11–12; changelog PDF p. 17) is not proposed, so the change from v3.0’s Security level 2 is not proposed."
+      },
+      {
+        "family": "deepmind-fsf",
+        "edition": "fsf-v3-1",
+        "key": "fsf-stealth-tcl",
+        "category": "quotation limit",
+        "issue": "Quotation limit: the Stealth and Situational Awareness TCL and its residual-risk assessment and safeguards for high-risk internal deployment (§3.2.1, PDF p. 14) are not proposed."
+      },
+      {
+        "family": "deepmind-fsf",
+        "edition": "fsf-v3-1",
+        "key": "fsf-insider-misuse",
+        "category": "quotation limit",
+        "issue": "Quotation limit: the statement that insider-misuse risks of the misuse T/CCLs are addressed by baseline controls and need no additional mitigations at this stage (PDF p. 11) is not proposed."
+      },
+      {
+        "family": "deepmind-fsf",
+        "edition": "fsf-v3-1",
+        "key": "fsf-framework-update-review",
+        "category": "quotation limit",
+        "issue": "Quotation limit: §5.1 (PDF p. 17) says the Framework will be reviewed at least once a year (v3.0: updated); not proposed."
+      },
+      {
+        "family": "deepmind-fsf",
+        "edition": "fsf-v3-1",
+        "key": "fsf-hold-pending-mitigations",
+        "category": "information only",
+        "issue": "Information only: also not found in v3.1 (PDF pp. 1–20; same reading and search terms as the v3.0 absence). No absence proposed because v3.0 already lacks it."
+      },
+      {
+        "family": "deepmind-fsf",
+        "edition": "fsf-v3-1",
+        "key": "fsf-response-plan-approval",
+        "category": "information only",
+        "issue": "Information only: also not found in v3.1 (PDF pp. 1–20, incl. §4.1 and the Glossary entry “Response Plans”; searched “Council”, “approv”). No absence proposed because v3.0 already lacks it."
+      },
+      {
+        "family": "deepmind-fsf",
+        "edition": "fsf-v3-1",
+        "key": "fsf-adoption-conditional-on-industry",
+        "category": "information only",
+        "issue": "Information only: also not found in v3.1 (Overview, PDF p. 2, keeps the same effectiveness clause as v3.0; searched “depend”, “adopt”, “across the field”). No absence proposed because v3.0 already lacks it."
+      },
+      {
+        "family": "openai-xai",
+        "edition": "preparedness-beta-2023",
+        "key": "pf-high-security-controls",
+        "category": "quotation limit",
+        "issue": "Quotation limit. required_action: Asset Protection baseline, PDF p. 20 (printed p. 20), Governance › Safety baselines › “Asset Protection”, first sentence — on reaching or being forecast to reach at least “high” pre-mitigation risk in any category, security…"
+      },
+      {
+        "family": "openai-xai",
+        "edition": "preparedness-beta-2023",
+        "key": "pf-category-trigger",
+        "category": "quotation limit",
+        "issue": "Quotation limit. threshold: PDF p. 6 (printed p. 6), first paragraph, fourth sentence — procedural commitments are triggered when any tracked risk category increases in severity, not only when all increase together (23 words)."
+      },
+      {
+        "family": "openai-xai",
+        "edition": "preparedness-beta-2023",
+        "key": "pf-critical-alignment-evidence",
+        "category": "quotation limit",
+        "issue": "Quotation limit. required_action: PDF p. 21 (printed p. 21), “Restricting development”, final sentence — protecting against “critical” pre-mitigation risk needs dependable evidence that the model is sufficiently aligned not to initiate “critical”-risk-level…"
+      },
+      {
+        "family": "openai-xai",
+        "edition": "preparedness-beta-2023",
+        "key": "pf-capabilities-development-condition",
+        "category": "quotation limit",
+        "issue": "Quotation limit. exception/condition: PDF p. 21 (printed p. 21), “Restricting development”, fourth sentence — OpenAI would only continue capabilities-enhancing development if it can reasonably assure itself, via the operationalization processes, that it is …"
+      },
+      {
+        "family": "openai-xai",
+        "edition": "preparedness-beta-2023",
+        "key": "pf-leadership-without-sag",
+        "category": "quotation limit",
+        "issue": "Quotation limit. decision_authority: PDF p. 24 (printed p. 24), “Decision process”, fourth item — Leadership can also make decisions without the SAG’s participation; the SAG cannot “filibuster”. (Board reversal, third item, is reflected in the recorded pf-f…"
+      },
+      {
+        "family": "openai-xai",
+        "edition": "preparedness-v2",
+        "key": "pf-risk-level-scale",
+        "category": "quotation limit",
+        "issue": "Quotation limit. threshold: PDF p. 5 (printed p. 4), §2.2 Tracked Categories, second paragraph, first and third sentences — High capability thresholds “significantly increase existing risk vectors for severe harm”; Critical thresholds present “a meaningful …"
+      },
+      {
+        "family": "openai-xai",
+        "edition": "preparedness-v2",
+        "key": "pf-critical-development-restriction",
+        "category": "quotation limit",
+        "issue": "Quotation limit. required_action: PDF p. 4 (printed p. 3), §1 Introduction, third bullet, third sentence — a model under development that reaches a Critical capability threshold requires safeguards that sufficiently minimize the associated risks during deve…"
+      },
+      {
+        "family": "openai-xai",
+        "edition": "preparedness-v2",
+        "key": "pf-final-decision-authority",
+        "category": "quotation limit",
+        "issue": "Quotation limit. decision_authority: PDF p. 4 (printed p. 3), §1, final paragraph, second sentence — OpenAI Leadership can approve or reject SAG recommendations and the Board’s Safety and Security Committee provides oversight; Appendix B, PDF p. 16 (printed…"
+      },
+      {
+        "family": "openai-xai",
+        "edition": "preparedness-v2",
+        "key": "pf-high-security-controls",
+        "category": "quotation limit",
+        "issue": "Quotation limit. required_action: Table 1, PDF p. 6 (printed p. 5), “Require security controls meeting High standard (Appendix C.3)”; Appendix C.3, PDF p. 21 (printed p. 20), “We will require the following practices for High capability models:”. Beta counte…"
+      },
+      {
+        "family": "openai-xai",
+        "edition": "preparedness-v2",
+        "key": "pf-marginal-risk-adjustment",
+        "category": "quotation limit",
+        "issue": "Quotation limit. exception: §4.3 Marginal risk, PDF p. 13 (printed p. 12) — if OpenAI rigorously confirms that another developer released a High or Critical system without comparable safeguards, it could adjust the level of safeguards it requires in that ca…"
+      },
+      {
+        "family": "openai-xai",
+        "edition": "preparedness-v2",
+        "key": "pf-sag-determinations",
+        "category": "quotation limit",
+        "issue": "Quotation limit. decision_authority: §3.2, PDF p. 10 (printed p. 9) — SAG makes the final determination when coverage is ambiguous; §3.3, same page — SAG reviews the Capabilities Report and decides on next steps; §4.2, PDF pp. 11–12 (printed pp. 10–11) — SA…"
+      },
+      {
+        "family": "openai-xai",
+        "edition": "preparedness-v2",
+        "key": "pf-misalignment-safeguards-report",
+        "category": "quotation limit",
+        "issue": "Quotation limit. required_action: Table 2 Research Categories, PDF p. 8 (printed p. 7) — if a model has High or Critical capabilities in any Tracked Category, require a “misalignment” safeguards report (Long-range Autonomy) and a Safeguards case robust to t…"
+      },
+      {
+        "family": "openai-xai",
+        "edition": "frontier-governance-2026",
+        "key": "fgf-legal-entity-responsibility",
+        "category": "quotation limit",
+        "issue": "Quotation limit. decision_authority: §6, PDF p. 20 (printed p. 18) — OpenAI OpCo LLC is responsible for TFAIA compliance for covered models in the United States; OpenAI Ireland Limited is the EU provider responsible for the EU Code of Practice, and its boar…"
+      },
+      {
+        "family": "openai-xai",
+        "edition": "frontier-governance-2026",
+        "key": "fgf-update-proposal-process",
+        "category": "quotation limit",
+        "issue": "Quotation limit. decision_authority: §7.1, PDF p. 21 (printed p. 19), first sentence (32 words) and second sentence (33 words) — updates may be proposed by the Safety Advisory Group, Head of Safety Systems, Head of Preparedness, CISO, Chief Compliance Offic…"
+      },
+      {
+        "family": "openai-xai",
+        "edition": "frontier-governance-2026",
+        "key": "fgf-risk-tiers",
+        "category": "quotation limit",
+        "issue": "Quotation limit. threshold: §2.4 Risk tiers, PDF pp. 9–12 (printed pp. 07–10) — three-tier systems for cyber offense, CBRN and loss of control; harmful manipulation described as exploratory. The CBRN tier table’s text layer interleaves the Description and E…"
+      },
+      {
+        "family": "openai-xai",
+        "edition": "frontier-governance-2026",
+        "key": "fgf-precautionary-threshold-treatment",
+        "category": "quotation limit",
+        "issue": "Quotation limit. threshold: §2.3, PDF p. 8 (printed p. 06), first paragraph, final sentence — out of an abundance of caution OpenAI has treated models as crossing a capability threshold where it could not rule out that a new threshold had been reached. Fram…"
+      },
+      {
+        "family": "openai-xai",
+        "edition": "frontier-governance-2026",
+        "key": "fgf-model-report-update-exceptions",
+        "category": "quotation limit",
+        "issue": "Quotation limit. exception: §4 Model reporting, “Model report updates”, second paragraph, PDF p. 18 (printed p. 16) — six-monthly determination whether to update the Model Report for the most capable models; an update is not considered necessary in three li…"
+      },
+      {
+        "family": "openai-xai",
+        "edition": "faif-2025",
+        "key": "faif-heightened-safeguards",
+        "category": "quotation limit",
+        "issue": "Quotation limit. required_action: PDF p. 3, “Addressing Risks of Malicious Use”, second paragraph, first sentence (47 words) — heightened safeguards for user prompts posing “a foreseeable and non-trivial risk” of large-scale violence, terrorism, use/develop…"
+      },
+      {
+        "family": "openai-xai",
+        "edition": "faif-2025",
+        "key": "faif-trusted-user-exception",
+        "category": "quotation limit",
+        "issue": "Quotation limit. exception: PDF p. 3, third paragraph — xAI may selectively allow its models to respond to such requests from vetted, highly trusted users (e.g. third-party safety auditors, large enterprise customers under contract), or where the informatio…"
+      },
+      {
+        "family": "openai-xai",
+        "edition": "faif-2025",
+        "key": "faif-security-standard",
+        "category": "quotation limit",
+        "issue": "Quotation limit. required_action: PDF p. 9, “Operational and Societal Risks” › “3. Information Security”, first sentence — security standards “sufficient to prevent its critical model information from being stolen by a motivated non-state actor”. If recorde…"
+      },
+      {
+        "family": "openai-xai",
+        "edition": "faif-2025",
+        "key": "faif-temporary-shutdown",
+        "category": "quotation limit",
+        "issue": "Not proposed (kind and quotation limit): PDF p. 9, “4. Governance Approach”, item 3 — if allowing a system to keep running would materially and unjustifiably increase the likelihood of “a catastrophic event”, xAI “may” temporarily fully shut it down. Permis…"
+      },
+      {
+        "family": "openai-xai",
+        "edition": "faif-2025",
+        "key": "faif-decision-authority",
+        "category": "information only",
+        "issue": "Not proposed (no decision-maker named): neither edition names who decides deployment or can overrule. December 2025 “4. Governance Approach” (PDF p. 9) assigns risk owners responsibility for mitigation, periodic audits and monitoring; June 2026 §3 (PDF p. 8…"
+      },
+      {
+        "family": "openai-xai",
+        "edition": "faif-2026",
+        "key": "faif-reassessment-triggers",
+        "category": "quotation limit",
+        "issue": "Quotation limit. threshold/trigger: §2 Risk Management Framework, PDF p. 2, second paragraph — full systemic risk assessment at least once a year; smaller-scale evaluations at trigger points (updated model release, serious incident, materially increased ris…"
+      },
+      {
+        "family": "openai-xai",
+        "edition": "faif-2026",
+        "key": "faif-release-precondition",
+        "category": "quotation limit",
+        "issue": "Quotation limit. required_action: §2.3 (first section so numbered), PDF p. 6, opening lines — the acceptance evaluations are performed before wider deployment and are a precondition for release for public use. Largely covered by the recorded faif-proceed-on…"
+      },
+      {
+        "family": "openai-xai",
+        "edition": "faif-2026",
+        "key": "faif-risk-tier-review",
+        "category": "meaning would depend on interpretation",
+        "issue": "Not proposed (interpretation): §2.3, PDF p. 6, second paragraph, final sentence — in assessing whether to accept residual risk xAI reviews “the risk tiers for each systemic risk category”, but the edition defines no risk tiers. This sentence and the one bef…"
+      },
+      {
+        "family": "meta-microsoft",
+        "edition": "meta-faf-v1-1",
+        "key": "meta-critical-pause-investigation",
+        "category": "quotation limit",
+        "issue": "Quotation limit. Table 1 Critical row, Measures column (PDF p. 13): pause development while investigating whether barriers to the catastrophic outcome remain; if none exist, do not further develop the model until adequate mitigations are identified. No pass…"
+      },
+      {
+        "family": "meta-microsoft",
+        "edition": "meta-faf-v1-1",
+        "key": "meta-critical-reassignment-to-high",
+        "category": "quotation limit",
+        "issue": "Quotation limit. Exception-type clause, §4.2 (PDF p. 17): if threat modelling shows additional threat scenarios remain a barrier, the Framework is updated and the model can move to the High threshold in the new iteration (47 words). No corresponding passage…"
+      },
+      {
+        "family": "meta-microsoft",
+        "edition": "meta-faf-v1-1",
+        "key": "meta-threshold-security-access",
+        "category": "quotation limit",
+        "issue": "Quotation limit. Table 1 Security Mitigations column (PDF p. 13): Critical, access strictly limited to a small number of experts; High, access limited to a core research team. v2's Table 1 (PDF p. 15) has 'heightened access controls' rows, the Critical one …"
+      },
+      {
+        "family": "meta-microsoft",
+        "edition": "meta-faf-v1-1",
+        "key": "meta-moderate-threshold",
+        "category": "quotation limit",
+        "issue": "Quotation limit. Table 1 Moderate row, measure 'Release' (PDF p. 13); v2's counterpart is 'Moderate or lower', measure 'Deploy' (PDF p. 15), a change the v2 change log states."
+      },
+      {
+        "family": "meta-microsoft",
+        "edition": "meta-faf-v1-1",
+        "key": "meta-uplift-assessment-approval",
+        "category": "quotation limit",
+        "issue": "Quotation limit. Footnote 7 (PDF p. 13): a final assessment of uplift is approved by senior-level decision-makers through the AI Risk process."
+      },
+      {
+        "family": "meta-microsoft",
+        "edition": "meta-aasf-v2-0",
+        "key": "meta-threshold-assignment-authority",
+        "category": "quotation limit",
+        "issue": "Quotation limit. §2.1.2 (PDF p. 6): the Chief AI Officer and Director of Alignment and Risk assign a risk threshold from the pre-mitigation assessment; the text layer joins a footnote marker to 'Risk' ('Risk2')."
+      },
+      {
+        "family": "meta-microsoft",
+        "edition": "meta-aasf-v2-0",
+        "key": "meta-accountability-oversight",
+        "category": "quotation limit",
+        "issue": "Quotation limit. §2.3 Accountability (PDF p. 10): deployment follows consultation with relevant teams and the approval of the Chief AI Officer; the Board of Directors provides oversight of product and regulatory compliance. §5.1 (PDF p. 40): Framework updat…"
+      },
+      {
+        "family": "meta-microsoft",
+        "edition": "meta-aasf-v2-0",
+        "key": "meta-cb-high-external-deployment-exception",
+        "category": "quotation limit",
+        "issue": "Quotation limit. Exception clause, §4.2.2 (PDF p. 32): a model that crossed the high threshold is not deployed externally unless strong additional evidence shows mitigations reduce it to moderate or lower levels (49 words)."
+      },
+      {
+        "family": "meta-microsoft",
+        "edition": "meta-aasf-v2-0",
+        "key": "meta-cyber-provisional-high",
+        "category": "quotation limit",
+        "issue": "Quotation limit. §4.2.1 Thresholds and Escalation (PDF p. 29): a model meeting the simple-suite threshold is provisionally rated 'high' for the deployment scenario and such deployment will not be implemented until complex-suite evaluation is completed."
+      },
+      {
+        "family": "meta-microsoft",
+        "edition": "meta-aasf-v2-0",
+        "key": "meta-controlled-deployment-precheck",
+        "category": "quotation limit",
+        "issue": "Quotation limit. §2.2.1 (PDF p. 8): preliminary preparedness assessments before controlled deployments; materially elevated risk requires sufficient mitigations before proceeding."
+      },
+      {
+        "family": "meta-microsoft",
+        "edition": "ms-fgf-2025",
+        "key": "msfgf-other-capability-thresholds",
+        "category": "quotation limit",
+        "issue": "Quotation limit. Appendix I (PDF pp. 12–14): CBRN Critical, offensive cyberoperations and advanced autonomy thresholds (High and Critical rows: 'Further review and mitigations required'). Same wording in the 2026 edition (PDF pp. 12–14)."
+      },
+      {
+        "family": "meta-microsoft",
+        "edition": "ms-fgf-2025",
+        "key": "msfgf-high-risk-security",
+        "category": "quotation limit",
+        "issue": "Quotation limit. §4 Security measures (PDF p. 8): high-risk models get security protective against most cybercrime groups and insider threats; critical-risk models the highest level. 2026 (PDF p. 8) states the same requirements, worded as 'tracked high-risk…"
+      },
+      {
+        "family": "meta-microsoft",
+        "edition": "ms-fgf-2025",
+        "key": "msfgf-deployment-recommendation-case",
+        "category": "over the 50-word limit",
+        "issue": "Length. §5 (PDF p. 10): the deployment recommendation must make the case that the model is mitigated to low or medium risk, its marginal benefits outweigh residual risk, and mitigations and documentation allow secure deployment; the sentence exceeds 50 word…"
+      },
+      {
+        "family": "meta-microsoft",
+        "edition": "ms-fgf-2025",
+        "key": "msfgf-framework-update-review",
+        "category": "quotation limit",
+        "issue": "Quotation limit. §5 (PDF p. 10): updates reviewed by the Chief Responsible AI Officer before adoption; framework subject to independent internal audit and board oversight. Same in 2026, except the update discussion moves from every six months to at least ev…"
+      },
+      {
+        "family": "meta-microsoft",
+        "edition": "ms-fgf-2025",
+        "key": "msfgf-leading-indicator-trigger",
+        "category": "outside the four provision kinds",
+        "issue": "Outside the four provision kinds (assessment scope trigger, not a risk threshold). 2025 §3 (PDF p. 5): models optimised for, or expected to have, frontier capabilities and any model pre-trained with more than 10^26 FLOPs receive leading indicator assessment…"
+      },
+      {
+        "family": "meta-microsoft",
+        "edition": "ms-fgf-2026",
+        "key": "msfgf-external-evaluator-decision",
+        "category": "quotation limit",
+        "issue": "Quotation limit. §3 Capability evaluation (PDF p. 7), not found in 2025: the decision to involve qualified external evaluators is made by internal experts independent from the model development team."
+      },
+      {
+        "family": "meta-microsoft",
+        "edition": "ms-fgf-2026",
+        "key": "msfgf-incident-reporting",
+        "category": "quotation limit",
+        "issue": "Quotation limit. §4 Safety mitigations (PDF p. 9), not found in 2025: for serious or critical incidents, reports to regulatory authorities and impacted customers as appropriate; §5 (PDF p. 10): reporting on tracked high-risk capabilities as required by regu…"
+      },
+      {
+        "family": "meta-microsoft",
+        "edition": "ms-fgf-2026",
+        "key": "msfgf-new-capability-thresholds",
+        "category": "information only",
+        "issue": "No threshold stated. Appendix I (PDF p. 15) adds loss of control and harmful manipulation as tracked high-risk capabilities but says evaluation approaches and risk acceptance criteria are still being researched; no capability thresholds are given."
+      },
+      {
+        "family": "meta-microsoft",
+        "edition": "ms-fgf-2026",
+        "key": "msfgf-deeper-assessment-cadence",
+        "category": "outside the four provision kinds",
+        "issue": "Outside the four provision kinds (reassessment cadence). §3 (PDF p. 7): repeat deeper capability assessment on material changes to the deployed model's risk profile; 2025 (PDF p. 7) said at least once every six months. Change log (PDF p. 16): 'Adjusting the…"
+      },
+      {
+        "family": "anthropic-rsp",
+        "edition": "rsp-v3-4",
+        "key": "rsp-automated-rd-threshold",
+        "category": "text not inspectable or verifiable",
+        "issue": "Proposed v3.4-versus-v3.3 change not recorded: neither edition carries a quoted Automated R&D provision because on PDF p. 9 of both editions the text layer interleaves the table’s columns, so no contiguous quote verifies. The v3.4 change log states a change…"
+      }
+    ]
+  },
+  "proposerRetrievalFailures": [
+    {
+      "detail": "The Internet Archive was offline (“Temporarily Offline”) for part of the session and answered HTTP 429 or 000 to scripted requests at times; archive checks were retried later or made through the in-app browser."
+    },
+    {
+      "detail": "Meta’s Frontier AI Framework, Version 1.1 is no longer served at its original address (HTTP 500 since April 2026); it was inspected through Internet Archive captures. The 2025-02-15 and 2025-04-19 captures are truncated."
+    },
+    {
+      "detail": "No publication date was established for Microsoft’s February 2026 edition: the file was last modified 2026-03-24 and first captured 2026-04-24."
+    }
+  ],
+  "limits": "A bounded sample does not certify unsampled records. Provisions are a quoted selection bounded by the quotation policy, not a digest of each framework. Absences are bounded by their stated scope and search method. Machine agreement is neither historical certainty nor human review; no evidence verification or editorial state changed."
+}

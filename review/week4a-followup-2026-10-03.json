@@ -1,0 +1,1474 @@
+{
+  "id": "week4a-followup-2026-10-03",
+  "scope": "Follow-up to week 4a on the same branch: the revised quotation rule, the stop list re-run under it, the Preparedness Version 2 provision separated from the dispute about it, both RSP weakening assessments checked for a shared proposition, and a packet for a different-model reader.",
+  "quotationRule": {
+    "decidedBy": "maintainer",
+    "date": "2026-10-03",
+    "rule": "At most 50 words per quote; at most 400 quoted words per source document across the dataset; for a document under about 2,000 words, quoted text should not exceed about 10% of the document; no count cap.",
+    "replaces": "At most about five quotes and about 250 quoted words per source document.",
+    "supersededDraft": "A first version of the instruction also capped quotes at about 3% of a document. It was withdrawn by the maintainer before any data change; no quote was trimmed under it, so nothing needed reverting.",
+    "existingQuotes": "Every quote admitted under the earlier cap complies with the revised rule; none was trimmed.",
+    "enforcement": "Schema 2.8 validation: each source with quoted evidence records documentWords (count and basis), each quote is at most 50 words, and quoted words stay within 400, or 10% of a document under 2,000 words. Earlier schema versions stay readable without documentWords.",
+    "lengthMethod": {
+      "pdf": "Whitespace-separated words in the UTF-8 text layer of the inspected PDF (pdftotext), including tables, notes and page furniture.",
+      "web": "Words in text blocks of ten or more words on the inspected page, which excludes navigation, menus and footers; a conservative approximation of article length."
+    },
+    "usage": [
+      {
+        "sourceId": "source-openai-launch",
+        "documentWords": 664,
+        "quotedWords": 14,
+        "limit": 66
+      },
+      {
+        "sourceId": "source-microsoft-partnership",
+        "documentWords": 500,
+        "quotedWords": 10,
+        "limit": 50
+      },
+      {
+        "sourceId": "source-anthropic-series-a",
+        "documentWords": 434,
+        "quotedWords": 6,
+        "limit": 43
+      },
+      {
+        "sourceId": "source-amazon-partnership",
+        "documentWords": 765,
+        "quotedWords": 16,
+        "limit": 76
+      },
+      {
+        "sourceId": "source-xai-series-b",
+        "documentWords": 241,
+        "quotedWords": 8,
+        "limit": 24
+      },
+      {
+        "sourceId": "source-nvidia-colossus",
+        "documentWords": 1350,
+        "quotedWords": 5,
+        "limit": 135
+      },
+      {
+        "sourceId": "source-rsp-announcement",
+        "documentWords": 1013,
+        "quotedWords": 32,
+        "limit": 101
+      },
+      {
+        "sourceId": "source-fsf-announcement",
+        "documentWords": 1085,
+        "quotedWords": 8,
+        "limit": 108
+      },
+      {
+        "sourceId": "source-iem",
+        "documentWords": 43596,
+        "quotedWords": 10,
+        "limit": 400
+      },
+      {
+        "sourceId": "source-good",
+        "documentWords": 26287,
+        "quotedWords": 8,
+        "limit": 400
+      },
+      {
+        "sourceId": "source-o1-card",
+        "documentWords": 14878,
+        "quotedWords": 8,
+        "limit": 400
+      },
+      {
+        "sourceId": "source-rsp-archive",
+        "documentWords": 3262,
+        "quotedWords": 6,
+        "limit": 400
+      },
+      {
+        "sourceId": "source-fsf-v2-update",
+        "documentWords": 1343,
+        "quotedWords": 23,
+        "limit": 134
+      },
+      {
+        "sourceId": "source-fsf-v3-update",
+        "documentWords": 807,
+        "quotedWords": 36,
+        "limit": 80
+      },
+      {
+        "sourceId": "source-pf-v2-update",
+        "documentWords": 916,
+        "quotedWords": 21,
+        "limit": 91
+      },
+      {
+        "sourceId": "source-fgf-release",
+        "documentWords": 204,
+        "quotedWords": 20,
+        "limit": 20
+      },
+      {
+        "sourceId": "source-rsp-1-0",
+        "documentWords": 10538,
+        "quotedWords": 320,
+        "limit": 400
+      },
+      {
+        "sourceId": "source-rsp-2-0",
+        "documentWords": 9495,
+        "quotedWords": 283,
+        "limit": 400
+      },
+      {
+        "sourceId": "source-rsp-2-1",
+        "documentWords": 9755,
+        "quotedWords": 283,
+        "limit": 400
+      },
+      {
+        "sourceId": "source-rsp-2-2",
+        "documentWords": 9609,
+        "quotedWords": 240,
+        "limit": 400
+      },
+      {
+        "sourceId": "source-rsp-3-0",
+        "documentWords": 7889,
+        "quotedWords": 267,
+        "limit": 400
+      },
+      {
+        "sourceId": "source-rsp-3-1",
+        "documentWords": 7914,
+        "quotedWords": 158,
+        "limit": 400
+      },
+      {
+        "sourceId": "source-rsp-3-2",
+        "documentWords": 8315,
+        "quotedWords": 248,
+        "limit": 400
+      },
+      {
+        "sourceId": "source-rsp-3-3",
+        "documentWords": 8210,
+        "quotedWords": 220,
+        "limit": 400
+      },
+      {
+        "sourceId": "source-rsp-3-4",
+        "documentWords": 8756,
+        "quotedWords": 263,
+        "limit": 400
+      },
+      {
+        "sourceId": "source-fsf-1-0",
+        "documentWords": 2865,
+        "quotedWords": 140,
+        "limit": 400
+      },
+      {
+        "sourceId": "source-fsf-2-0",
+        "documentWords": 4092,
+        "quotedWords": 259,
+        "limit": 400
+      },
+      {
+        "sourceId": "source-fsf-3-0",
+        "documentWords": 6054,
+        "quotedWords": 298,
+        "limit": 400
+      },
+      {
+        "sourceId": "source-fsf-3-1",
+        "documentWords": 8025,
+        "quotedWords": 284,
+        "limit": 400
+      },
+      {
+        "sourceId": "source-pf-beta",
+        "documentWords": 6620,
+        "quotedWords": 172,
+        "limit": 400
+      },
+      {
+        "sourceId": "source-pf-2",
+        "documentWords": 10260,
+        "quotedWords": 220,
+        "limit": 400
+      },
+      {
+        "sourceId": "source-fgf-2026",
+        "documentWords": 4279,
+        "quotedWords": 261,
+        "limit": 400
+      },
+      {
+        "sourceId": "source-faif-2025",
+        "documentWords": 4169,
+        "quotedWords": 147,
+        "limit": 400
+      },
+      {
+        "sourceId": "source-faif-2026",
+        "documentWords": 3294,
+        "quotedWords": 132,
+        "limit": 400
+      },
+      {
+        "sourceId": "source-rsp-v3-release",
+        "documentWords": 2289,
+        "quotedWords": 123,
+        "limit": 400
+      },
+      {
+        "sourceId": "source-levy-cv",
+        "documentWords": 871,
+        "quotedWords": 8,
+        "limit": 87
+      },
+      {
+        "sourceId": "source-meta-faf-v1-1",
+        "documentWords": 6459,
+        "quotedWords": 234,
+        "limit": 400
+      },
+      {
+        "sourceId": "source-meta-aasf-v2",
+        "documentWords": 13570,
+        "quotedWords": 271,
+        "limit": 400
+      },
+      {
+        "sourceId": "source-meta-faf-announcement",
+        "documentWords": 592,
+        "quotedWords": 31,
+        "limit": 59
+      },
+      {
+        "sourceId": "source-meta-aasf-announcement",
+        "documentWords": 887,
+        "quotedWords": 23,
+        "limit": 88
+      },
+      {
+        "sourceId": "source-ms-fgf-2025",
+        "documentWords": 4224,
+        "quotedWords": 181,
+        "limit": 400
+      },
+      {
+        "sourceId": "source-ms-fgf-2026",
+        "documentWords": 5085,
+        "quotedWords": 251,
+        "limit": 400
+      },
+      {
+        "sourceId": "source-saferai-rsp-2024",
+        "documentWords": 502,
+        "quotedWords": 36,
+        "limit": 50
+      },
+      {
+        "sourceId": "source-govai-rsp-v3",
+        "documentWords": 3487,
+        "quotedWords": 53,
+        "limit": 400
+      },
+      {
+        "sourceId": "source-time-rsp-v3",
+        "documentWords": 1640,
+        "quotedWords": 91,
+        "limit": 164
+      },
+      {
+        "sourceId": "source-coggins-pf-v2",
+        "documentWords": 6853,
+        "quotedWords": 38,
+        "limit": 400
+      }
+    ],
+    "reuseNotes": "All source reuse notes that stated the earlier cap now state the revised rule; they describe Selekoa practice, not publisher terms."
+  },
+  "contestedRecords": {
+    "decisions": [
+      {
+        "claimId": "prov-preparedness-v2-high-deployment-restriction",
+        "decision": "Resolution set to supported; only its own quote from the edition remains as evidence. A provision records what the text says, and no evidence contradicts that.",
+        "moved": [
+          "The Coggins et al. abstract quote and OpenAI’s update-post quote were removed from this record."
+        ]
+      },
+      {
+        "claimId": "assessed-preparedness-v2-high-deployment-mitigation",
+        "decision": "New provision_assessed record, contested. Proposition: the rule does not bind OpenAI to risk mitigation in practice. Coggins et al. hold it (their conclusion sentence and key result 3, quoted from the v2 PDF); OpenAI’s statement that Version 2 sets stronger requirements for what it means to sufficiently minimize risks in practice disputes it. OpenAI’s statement predates the analysis and is not a reply to it, which the qualification says."
+      },
+      {
+        "claimId": "rsp-v2-0-assessed-weakening",
+        "decision": "The proposition was narrowed from weakened verifiability to weakened commitments, because Anthropic’s side (a paraphrase of its announcement) addresses whether the commitments were maintained and improved, not verifiability. SaferAI’s headline judgement was added as supporting evidence; its verifiability sentence stays as a reason."
+      },
+      {
+        "claimId": "rsp-v3-0-assessed-weakening",
+        "decision": "The proposition was reduced to whether v3.0 weakened Anthropic’s safety commitments relative to v2.2; the mechanism (pause-backed thresholds replaced by nonbinding goals) is agreed by both sides and recorded as context, not as part of the dispute. Supporting: TIME’s own assessment (added) and the GovAI authors’ judgement. Disputing: Kaplan’s “U-turn” denial (added), his renewed-commitment framing and Anthropic’s release. Painter’s hedged concern and the GovAI authors’ consequence statement were reclassified as context, as they address consequences rather than whether the commitments were weakened; Anthropic’s descriptions of “more realistic unilateral commitments” and of roadmap goals as not hard commitments were added as context."
+      }
+    ],
+    "crossModelPacket": "review/week4a-contested-for-cross-model.md, generated from the stored records; the different-model reader has not been run."
+  },
+  "stopsRerun": {
+    "earlierStops": 106,
+    "recorded": 45,
+    "stillListed": 61,
+    "priority": [
+      {
+        "index": 0,
+        "edition": "rsp-2023",
+        "key": "rsp-emergency-loosening",
+        "earlierCategory": "over the 50-word limit",
+        "outcome": "recorded",
+        "recordedAs": ["prov-rsp-2023-emergency-loosening"]
+      },
+      {
+        "index": 12,
+        "edition": "rsp-v2-0",
+        "key": "rsp-lower-safeguards-if-others-pass",
+        "earlierCategory": "over the 50-word limit",
+        "outcome": "recorded",
+        "recordedAs": ["prov-rsp-v2-0-lower-safeguards-if-others-pass"]
+      },
+      {
+        "index": 38,
+        "edition": "fsf-v2-0",
+        "key": "fsf-government-disclosure",
+        "earlierCategory": "text not inspectable or verifiable",
+        "outcome": "recorded",
+        "recordedAs": ["prov-fsf-v2-0-government-disclosure"]
+      },
+      {
+        "index": 29,
+        "edition": "rsp-v3-3",
+        "key": "rsp-automated-rd-threshold",
+        "earlierCategory": "text not inspectable or verifiable",
+        "outcome": "recorded",
+        "recordedAs": ["prov-rsp-v3-3-automated-rd-threshold"]
+      },
+      {
+        "index": 31,
+        "edition": "rsp-v3-4",
+        "key": "rsp-automated-rd-threshold",
+        "earlierCategory": "text not inspectable or verifiable",
+        "outcome": "recorded",
+        "recordedAs": ["prov-rsp-v3-4-automated-rd-threshold"]
+      },
+      {
+        "index": 105,
+        "edition": "rsp-v3-4",
+        "key": "rsp-automated-rd-threshold",
+        "earlierCategory": "text not inspectable or verifiable",
+        "outcome": "recorded",
+        "recordedAs": ["provchange-rsp-v3-4-automated-rd-threshold"]
+      }
+    ],
+    "selection": "After the four priority items named by the maintainer, 40 quotation-limit stops were re-examined in order of importance: decision authority and exceptions first, then core pause and restriction commitments, then thresholds. Stops outside the four provision kinds, information-only items and items needing interpretation were not re-examined and remain listed with their original reasons.",
+    "items": [
+      {
+        "index": 0,
+        "edition": "rsp-2023",
+        "key": "rsp-emergency-loosening",
+        "earlierCategory": "over the 50-word limit",
+        "outcome": "recorded",
+        "recordedAs": ["prov-rsp-2023-emergency-loosening"]
+      },
+      {
+        "index": 1,
+        "edition": "rsp-2023",
+        "key": "rsp-autonomy-threshold",
+        "earlierCategory": "quotation limit",
+        "outcome": "still listed",
+        "recordedAs": []
+      },
+      {
+        "index": 2,
+        "edition": "rsp-2023",
+        "key": "rsp-asl3-required-measures",
+        "earlierCategory": "quotation limit",
+        "outcome": "still listed",
+        "recordedAs": []
+      },
+      {
+        "index": 3,
+        "edition": "rsp-2023",
+        "key": "rsp-pause-training",
+        "earlierCategory": "quotation limit",
+        "outcome": "recorded",
+        "recordedAs": ["prov-rsp-2023-pause-training"]
+      },
+      {
+        "index": 4,
+        "edition": "rsp-2023",
+        "key": "rsp-board-ltbt-informed",
+        "earlierCategory": "quotation limit",
+        "outcome": "recorded",
+        "recordedAs": ["prov-rsp-2023-board-ltbt-informed"]
+      },
+      {
+        "index": 5,
+        "edition": "rsp-2023",
+        "key": "rsp-weights-deletion-decision",
+        "earlierCategory": "quotation limit",
+        "outcome": "recorded",
+        "recordedAs": ["prov-rsp-2023-weights-deletion-decision"]
+      },
+      {
+        "index": 6,
+        "edition": "rsp-2023",
+        "key": "rsp-define-next-asl",
+        "earlierCategory": "quotation limit",
+        "outcome": "still listed",
+        "recordedAs": []
+      },
+      {
+        "index": 7,
+        "edition": "rsp-v2-0",
+        "key": "rsp-no-train-deploy-without-safeguards",
+        "earlierCategory": "curator decision: no change recorded",
+        "outcome": "still listed",
+        "recordedAs": []
+      },
+      {
+        "index": 8,
+        "edition": "rsp-v2-0",
+        "key": "rsp-required-safeguards-cbrn",
+        "earlierCategory": "quotation limit",
+        "outcome": "still listed",
+        "recordedAs": []
+      },
+      {
+        "index": 9,
+        "edition": "rsp-v2-0",
+        "key": "rsp-ai-rd-threshold",
+        "earlierCategory": "quotation limit",
+        "outcome": "still listed",
+        "recordedAs": []
+      },
+      {
+        "index": 10,
+        "edition": "rsp-v2-0",
+        "key": "rsp-restrict-and-pause",
+        "earlierCategory": "quotation limit",
+        "outcome": "recorded",
+        "recordedAs": ["prov-rsp-v2-0-restrict-and-pause"]
+      },
+      {
+        "index": 11,
+        "edition": "rsp-v2-0",
+        "key": "rsp-may-proceed-with-safeguards",
+        "earlierCategory": "quotation limit",
+        "outcome": "recorded",
+        "recordedAs": ["prov-rsp-v2-0-may-proceed-with-safeguards"]
+      },
+      {
+        "index": 12,
+        "edition": "rsp-v2-0",
+        "key": "rsp-lower-safeguards-if-others-pass",
+        "earlierCategory": "over the 50-word limit",
+        "outcome": "recorded",
+        "recordedAs": ["prov-rsp-v2-0-lower-safeguards-if-others-pass"]
+      },
+      {
+        "index": 13,
+        "edition": "rsp-v2-0",
+        "key": "rsp-security-alone-continue-training",
+        "earlierCategory": "quotation limit",
+        "outcome": "recorded",
+        "recordedAs": ["prov-rsp-v2-0-security-alone-continue-training"]
+      },
+      {
+        "index": 14,
+        "edition": "rsp-v2-0",
+        "key": "rsp-policy-change-approval",
+        "earlierCategory": "quotation limit",
+        "outcome": "recorded",
+        "recordedAs": ["prov-rsp-v2-0-policy-change-approval"]
+      },
+      {
+        "index": 15,
+        "edition": "rsp-v2-0",
+        "key": "rsp-trusted-user-access",
+        "earlierCategory": "quotation limit",
+        "outcome": "still listed",
+        "recordedAs": []
+      },
+      {
+        "index": 16,
+        "edition": "rsp-v2-1",
+        "key": "rsp-cbrn-4-threshold",
+        "earlierCategory": "quotation limit",
+        "outcome": "still listed",
+        "recordedAs": []
+      },
+      {
+        "index": 17,
+        "edition": "rsp-v2-1",
+        "key": "rsp-safeguards-before-new-thresholds",
+        "earlierCategory": "quotation limit",
+        "outcome": "still listed",
+        "recordedAs": []
+      },
+      {
+        "index": 18,
+        "edition": "rsp-v3-0",
+        "key": "rsp-marginal-risk-board-ltbt-approval",
+        "earlierCategory": "quotation limit",
+        "outcome": "recorded",
+        "recordedAs": ["prov-rsp-v3-0-marginal-risk-board-ltbt-approval"]
+      },
+      {
+        "index": 19,
+        "edition": "rsp-v3-0",
+        "key": "rsp-novel-cb-threshold",
+        "earlierCategory": "quotation limit",
+        "outcome": "still listed",
+        "recordedAs": []
+      },
+      {
+        "index": 20,
+        "edition": "rsp-v3-0",
+        "key": "rsp-sabotage-threshold",
+        "earlierCategory": "quotation limit",
+        "outcome": "still listed",
+        "recordedAs": []
+      },
+      {
+        "index": 21,
+        "edition": "rsp-v3-0",
+        "key": "rsp-industry-commitment-limit",
+        "earlierCategory": "quotation limit",
+        "outcome": "recorded",
+        "recordedAs": ["prov-rsp-v3-0-industry-commitment-limit"]
+      },
+      {
+        "index": 22,
+        "edition": "rsp-v3-0",
+        "key": "rsp-competitor-parity-and-upleveling",
+        "earlierCategory": "quotation limit",
+        "outcome": "recorded",
+        "recordedAs": [
+          "prov-rsp-v3-0-competitor-parity",
+          "prov-rsp-v3-0-competitor-upleveling"
+        ]
+      },
+      {
+        "index": 23,
+        "edition": "rsp-v3-0",
+        "key": "rsp-company-asl3-protections",
+        "earlierCategory": "quotation limit",
+        "outcome": "still listed",
+        "recordedAs": []
+      },
+      {
+        "index": 24,
+        "edition": "rsp-v3-1",
+        "key": "rsp-misuse-uplift-threshold",
+        "earlierCategory": "quotation limit",
+        "outcome": "still listed",
+        "recordedAs": []
+      },
+      {
+        "index": 25,
+        "edition": "rsp-v3-1",
+        "key": "rsp-pause-consideration",
+        "earlierCategory": "outside the four provision kinds",
+        "outcome": "still listed",
+        "recordedAs": []
+      },
+      {
+        "index": 26,
+        "edition": "rsp-v3-1",
+        "key": "rsp-risk-report-process",
+        "earlierCategory": "outside the four provision kinds",
+        "outcome": "still listed",
+        "recordedAs": []
+      },
+      {
+        "index": 27,
+        "edition": "rsp-v3-2",
+        "key": "rsp-ltbt-review-request",
+        "earlierCategory": "quotation limit",
+        "outcome": "recorded",
+        "recordedAs": ["prov-rsp-v3-2-ltbt-review-request"]
+      },
+      {
+        "index": 28,
+        "edition": "rsp-v3-2",
+        "key": "rsp-automated-rd-threshold",
+        "earlierCategory": "quotation limit",
+        "outcome": "still listed",
+        "recordedAs": []
+      },
+      {
+        "index": 29,
+        "edition": "rsp-v3-3",
+        "key": "rsp-automated-rd-threshold",
+        "earlierCategory": "text not inspectable or verifiable",
+        "outcome": "recorded",
+        "recordedAs": ["prov-rsp-v3-3-automated-rd-threshold"]
+      },
+      {
+        "index": 30,
+        "edition": "rsp-v3-3",
+        "key": "rsp-off-cycle-risk-analyses",
+        "earlierCategory": "outside the four provision kinds",
+        "outcome": "still listed",
+        "recordedAs": []
+      },
+      {
+        "index": 31,
+        "edition": "rsp-v3-4",
+        "key": "rsp-automated-rd-threshold",
+        "earlierCategory": "text not inspectable or verifiable",
+        "outcome": "recorded",
+        "recordedAs": ["prov-rsp-v3-4-automated-rd-threshold"]
+      },
+      {
+        "index": 32,
+        "edition": "rsp-v3-4",
+        "key": "rsp-novel-cb-threshold",
+        "earlierCategory": "quotation limit",
+        "outcome": "still listed",
+        "recordedAs": []
+      },
+      {
+        "index": 33,
+        "edition": "rsp-v3-4",
+        "key": "rsp-risk-report-process",
+        "earlierCategory": "outside the four provision kinds",
+        "outcome": "still listed",
+        "recordedAs": []
+      },
+      {
+        "index": 34,
+        "edition": "fsf-2024",
+        "key": "fsf-government-disclosure",
+        "earlierCategory": "meaning would depend on interpretation",
+        "outcome": "still listed",
+        "recordedAs": []
+      },
+      {
+        "index": 35,
+        "edition": "fsf-2024",
+        "key": "fsf-pre-deployment-review",
+        "earlierCategory": "meaning would depend on interpretation",
+        "outcome": "still listed",
+        "recordedAs": []
+      },
+      {
+        "index": 36,
+        "edition": "fsf-2024",
+        "key": "fsf-ccls-other",
+        "earlierCategory": "quotation limit",
+        "outcome": "still listed",
+        "recordedAs": []
+      },
+      {
+        "index": 37,
+        "edition": "fsf-v2-0",
+        "key": "fsf-response-plan",
+        "earlierCategory": "quotation limit",
+        "outcome": "recorded",
+        "recordedAs": ["prov-fsf-v2-0-response-plan"]
+      },
+      {
+        "index": 38,
+        "edition": "fsf-v2-0",
+        "key": "fsf-government-disclosure",
+        "earlierCategory": "text not inspectable or verifiable",
+        "outcome": "recorded",
+        "recordedAs": ["prov-fsf-v2-0-government-disclosure"]
+      },
+      {
+        "index": 39,
+        "edition": "fsf-v2-0",
+        "key": "fsf-implementation-review",
+        "earlierCategory": "quotation limit",
+        "outcome": "still listed",
+        "recordedAs": []
+      },
+      {
+        "index": 40,
+        "edition": "fsf-v2-0",
+        "key": "fsf-security-level-adjustment",
+        "earlierCategory": "quotation limit",
+        "outcome": "recorded",
+        "recordedAs": ["prov-fsf-v2-0-security-level-adjustment"]
+      },
+      {
+        "index": 41,
+        "edition": "fsf-v2-0",
+        "key": "fsf-field-wide-security",
+        "earlierCategory": "quotation limit",
+        "outcome": "still listed",
+        "recordedAs": []
+      },
+      {
+        "index": 42,
+        "edition": "fsf-v2-0",
+        "key": "fsf-instrumental-reasoning-ccl",
+        "earlierCategory": "quotation limit",
+        "outcome": "still listed",
+        "recordedAs": []
+      },
+      {
+        "index": 43,
+        "edition": "fsf-v2-0",
+        "key": "fsf-alert-threshold",
+        "earlierCategory": "information only",
+        "outcome": "still listed",
+        "recordedAs": []
+      },
+      {
+        "index": 44,
+        "edition": "fsf-v3-0",
+        "key": "fsf-response-plan",
+        "earlierCategory": "quotation limit",
+        "outcome": "recorded",
+        "recordedAs": ["prov-fsf-v3-0-response-plan"]
+      },
+      {
+        "index": 45,
+        "edition": "fsf-v3-0",
+        "key": "fsf-ml-rd-deployment-review",
+        "earlierCategory": "quotation limit",
+        "outcome": "still listed",
+        "recordedAs": []
+      },
+      {
+        "index": 46,
+        "edition": "fsf-v3-0",
+        "key": "fsf-deployment-mitigation-scope",
+        "earlierCategory": "quotation limit",
+        "outcome": "recorded",
+        "recordedAs": ["prov-fsf-v3-0-deployment-mitigation-scope"]
+      },
+      {
+        "index": 47,
+        "edition": "fsf-v3-0",
+        "key": "fsf-misalignment-acceptance-criteria",
+        "earlierCategory": "quotation limit",
+        "outcome": "still listed",
+        "recordedAs": []
+      },
+      {
+        "index": 48,
+        "edition": "fsf-v3-0",
+        "key": "fsf-framework-update-review",
+        "earlierCategory": "quotation limit",
+        "outcome": "recorded",
+        "recordedAs": ["prov-fsf-v3-0-framework-update-review"]
+      },
+      {
+        "index": 49,
+        "edition": "fsf-v3-0",
+        "key": "fsf-security-level-adjustment",
+        "earlierCategory": "quotation limit",
+        "outcome": "recorded",
+        "recordedAs": ["prov-fsf-v3-0-security-level-adjustment"]
+      },
+      {
+        "index": 50,
+        "edition": "fsf-v3-1",
+        "key": "fsf-government-disclosure",
+        "earlierCategory": "quotation limit",
+        "outcome": "recorded",
+        "recordedAs": ["prov-fsf-v3-1-government-disclosure"]
+      },
+      {
+        "index": 51,
+        "edition": "fsf-v3-1",
+        "key": "fsf-alternative-security-adequacy",
+        "earlierCategory": "quotation limit",
+        "outcome": "still listed",
+        "recordedAs": []
+      },
+      {
+        "index": 52,
+        "edition": "fsf-v3-1",
+        "key": "fsf-response-plan",
+        "earlierCategory": "quotation limit",
+        "outcome": "recorded",
+        "recordedAs": ["prov-fsf-v3-1-response-plan"]
+      },
+      {
+        "index": 53,
+        "edition": "fsf-v3-1",
+        "key": "fsf-governance-structure",
+        "earlierCategory": "meaning would depend on interpretation",
+        "outcome": "still listed",
+        "recordedAs": []
+      },
+      {
+        "index": 54,
+        "edition": "fsf-v3-1",
+        "key": "fsf-security-level-2-plus",
+        "earlierCategory": "quotation limit",
+        "outcome": "still listed",
+        "recordedAs": []
+      },
+      {
+        "index": 55,
+        "edition": "fsf-v3-1",
+        "key": "fsf-stealth-tcl",
+        "earlierCategory": "quotation limit",
+        "outcome": "still listed",
+        "recordedAs": []
+      },
+      {
+        "index": 56,
+        "edition": "fsf-v3-1",
+        "key": "fsf-insider-misuse",
+        "earlierCategory": "quotation limit",
+        "outcome": "still listed",
+        "recordedAs": []
+      },
+      {
+        "index": 57,
+        "edition": "fsf-v3-1",
+        "key": "fsf-framework-update-review",
+        "earlierCategory": "quotation limit",
+        "outcome": "recorded",
+        "recordedAs": ["prov-fsf-v3-1-framework-update-review"]
+      },
+      {
+        "index": 58,
+        "edition": "fsf-v3-1",
+        "key": "fsf-hold-pending-mitigations",
+        "earlierCategory": "information only",
+        "outcome": "still listed",
+        "recordedAs": []
+      },
+      {
+        "index": 59,
+        "edition": "fsf-v3-1",
+        "key": "fsf-response-plan-approval",
+        "earlierCategory": "information only",
+        "outcome": "still listed",
+        "recordedAs": []
+      },
+      {
+        "index": 60,
+        "edition": "fsf-v3-1",
+        "key": "fsf-adoption-conditional-on-industry",
+        "earlierCategory": "information only",
+        "outcome": "still listed",
+        "recordedAs": []
+      },
+      {
+        "index": 61,
+        "edition": "preparedness-beta-2023",
+        "key": "pf-high-security-controls",
+        "earlierCategory": "quotation limit",
+        "outcome": "still listed",
+        "recordedAs": []
+      },
+      {
+        "index": 62,
+        "edition": "preparedness-beta-2023",
+        "key": "pf-category-trigger",
+        "earlierCategory": "quotation limit",
+        "outcome": "still listed",
+        "recordedAs": []
+      },
+      {
+        "index": 63,
+        "edition": "preparedness-beta-2023",
+        "key": "pf-critical-alignment-evidence",
+        "earlierCategory": "quotation limit",
+        "outcome": "still listed",
+        "recordedAs": []
+      },
+      {
+        "index": 64,
+        "edition": "preparedness-beta-2023",
+        "key": "pf-capabilities-development-condition",
+        "earlierCategory": "quotation limit",
+        "outcome": "recorded",
+        "recordedAs": [
+          "prov-preparedness-beta-2023-capabilities-development-condition"
+        ]
+      },
+      {
+        "index": 65,
+        "edition": "preparedness-beta-2023",
+        "key": "pf-leadership-without-sag",
+        "earlierCategory": "quotation limit",
+        "outcome": "recorded",
+        "recordedAs": ["prov-preparedness-beta-2023-leadership-without-sag"]
+      },
+      {
+        "index": 66,
+        "edition": "preparedness-v2",
+        "key": "pf-risk-level-scale",
+        "earlierCategory": "quotation limit",
+        "outcome": "still listed",
+        "recordedAs": []
+      },
+      {
+        "index": 67,
+        "edition": "preparedness-v2",
+        "key": "pf-critical-development-restriction",
+        "earlierCategory": "quotation limit",
+        "outcome": "recorded",
+        "recordedAs": ["prov-preparedness-v2-critical-development-restriction"]
+      },
+      {
+        "index": 68,
+        "edition": "preparedness-v2",
+        "key": "pf-final-decision-authority",
+        "earlierCategory": "quotation limit",
+        "outcome": "recorded",
+        "recordedAs": ["prov-preparedness-v2-final-decision-authority"]
+      },
+      {
+        "index": 69,
+        "edition": "preparedness-v2",
+        "key": "pf-high-security-controls",
+        "earlierCategory": "quotation limit",
+        "outcome": "still listed",
+        "recordedAs": []
+      },
+      {
+        "index": 70,
+        "edition": "preparedness-v2",
+        "key": "pf-marginal-risk-adjustment",
+        "earlierCategory": "quotation limit",
+        "outcome": "recorded",
+        "recordedAs": ["prov-preparedness-v2-marginal-risk-adjustment"]
+      },
+      {
+        "index": 71,
+        "edition": "preparedness-v2",
+        "key": "pf-sag-determinations",
+        "earlierCategory": "quotation limit",
+        "outcome": "recorded",
+        "recordedAs": ["prov-preparedness-v2-sag-determinations"]
+      },
+      {
+        "index": 72,
+        "edition": "preparedness-v2",
+        "key": "pf-misalignment-safeguards-report",
+        "earlierCategory": "quotation limit",
+        "outcome": "still listed",
+        "recordedAs": []
+      },
+      {
+        "index": 73,
+        "edition": "frontier-governance-2026",
+        "key": "fgf-legal-entity-responsibility",
+        "earlierCategory": "quotation limit",
+        "outcome": "still listed",
+        "recordedAs": []
+      },
+      {
+        "index": 74,
+        "edition": "frontier-governance-2026",
+        "key": "fgf-update-proposal-process",
+        "earlierCategory": "quotation limit",
+        "outcome": "recorded",
+        "recordedAs": ["prov-frontier-governance-2026-update-proposal-process"]
+      },
+      {
+        "index": 75,
+        "edition": "frontier-governance-2026",
+        "key": "fgf-risk-tiers",
+        "earlierCategory": "quotation limit",
+        "outcome": "still listed",
+        "recordedAs": []
+      },
+      {
+        "index": 76,
+        "edition": "frontier-governance-2026",
+        "key": "fgf-precautionary-threshold-treatment",
+        "earlierCategory": "quotation limit",
+        "outcome": "recorded",
+        "recordedAs": [
+          "prov-frontier-governance-2026-precautionary-threshold-treatment"
+        ]
+      },
+      {
+        "index": 77,
+        "edition": "frontier-governance-2026",
+        "key": "fgf-model-report-update-exceptions",
+        "earlierCategory": "quotation limit",
+        "outcome": "still listed",
+        "recordedAs": []
+      },
+      {
+        "index": 78,
+        "edition": "faif-2025",
+        "key": "faif-heightened-safeguards",
+        "earlierCategory": "quotation limit",
+        "outcome": "still listed",
+        "recordedAs": []
+      },
+      {
+        "index": 79,
+        "edition": "faif-2025",
+        "key": "faif-trusted-user-exception",
+        "earlierCategory": "quotation limit",
+        "outcome": "recorded",
+        "recordedAs": ["prov-faif-2025-trusted-user-exception"]
+      },
+      {
+        "index": 80,
+        "edition": "faif-2025",
+        "key": "faif-security-standard",
+        "earlierCategory": "quotation limit",
+        "outcome": "still listed",
+        "recordedAs": []
+      },
+      {
+        "index": 81,
+        "edition": "faif-2025",
+        "key": "faif-temporary-shutdown",
+        "earlierCategory": "quotation limit",
+        "outcome": "still listed",
+        "recordedAs": []
+      },
+      {
+        "index": 82,
+        "edition": "faif-2025",
+        "key": "faif-decision-authority",
+        "earlierCategory": "information only",
+        "outcome": "still listed",
+        "recordedAs": []
+      },
+      {
+        "index": 83,
+        "edition": "faif-2026",
+        "key": "faif-reassessment-triggers",
+        "earlierCategory": "quotation limit",
+        "outcome": "still listed",
+        "recordedAs": []
+      },
+      {
+        "index": 84,
+        "edition": "faif-2026",
+        "key": "faif-release-precondition",
+        "earlierCategory": "quotation limit",
+        "outcome": "still listed",
+        "recordedAs": []
+      },
+      {
+        "index": 85,
+        "edition": "faif-2026",
+        "key": "faif-risk-tier-review",
+        "earlierCategory": "meaning would depend on interpretation",
+        "outcome": "still listed",
+        "recordedAs": []
+      },
+      {
+        "index": 86,
+        "edition": "meta-faf-v1-1",
+        "key": "meta-critical-pause-investigation",
+        "earlierCategory": "quotation limit",
+        "outcome": "recorded",
+        "recordedAs": ["prov-meta-faf-v1-1-critical-pause-investigation"]
+      },
+      {
+        "index": 87,
+        "edition": "meta-faf-v1-1",
+        "key": "meta-critical-reassignment-to-high",
+        "earlierCategory": "quotation limit",
+        "outcome": "still listed",
+        "recordedAs": []
+      },
+      {
+        "index": 88,
+        "edition": "meta-faf-v1-1",
+        "key": "meta-threshold-security-access",
+        "earlierCategory": "quotation limit",
+        "outcome": "still listed",
+        "recordedAs": []
+      },
+      {
+        "index": 89,
+        "edition": "meta-faf-v1-1",
+        "key": "meta-moderate-threshold",
+        "earlierCategory": "quotation limit",
+        "outcome": "recorded",
+        "recordedAs": ["prov-meta-faf-v1-1-moderate-threshold"]
+      },
+      {
+        "index": 90,
+        "edition": "meta-faf-v1-1",
+        "key": "meta-uplift-assessment-approval",
+        "earlierCategory": "quotation limit",
+        "outcome": "recorded",
+        "recordedAs": ["prov-meta-faf-v1-1-uplift-assessment-approval"]
+      },
+      {
+        "index": 91,
+        "edition": "meta-aasf-v2-0",
+        "key": "meta-threshold-assignment-authority",
+        "earlierCategory": "quotation limit",
+        "outcome": "recorded",
+        "recordedAs": ["prov-meta-aasf-v2-0-threshold-assignment-authority"]
+      },
+      {
+        "index": 92,
+        "edition": "meta-aasf-v2-0",
+        "key": "meta-accountability-oversight",
+        "earlierCategory": "quotation limit",
+        "outcome": "recorded",
+        "recordedAs": ["prov-meta-aasf-v2-0-accountability-oversight"]
+      },
+      {
+        "index": 93,
+        "edition": "meta-aasf-v2-0",
+        "key": "meta-cb-high-external-deployment-exception",
+        "earlierCategory": "quotation limit",
+        "outcome": "recorded",
+        "recordedAs": [
+          "prov-meta-aasf-v2-0-cb-high-external-deployment-exception"
+        ]
+      },
+      {
+        "index": 94,
+        "edition": "meta-aasf-v2-0",
+        "key": "meta-cyber-provisional-high",
+        "earlierCategory": "quotation limit",
+        "outcome": "still listed",
+        "recordedAs": []
+      },
+      {
+        "index": 95,
+        "edition": "meta-aasf-v2-0",
+        "key": "meta-controlled-deployment-precheck",
+        "earlierCategory": "quotation limit",
+        "outcome": "still listed",
+        "recordedAs": []
+      },
+      {
+        "index": 96,
+        "edition": "ms-fgf-2025",
+        "key": "msfgf-other-capability-thresholds",
+        "earlierCategory": "quotation limit",
+        "outcome": "still listed",
+        "recordedAs": []
+      },
+      {
+        "index": 97,
+        "edition": "ms-fgf-2025",
+        "key": "msfgf-high-risk-security",
+        "earlierCategory": "quotation limit",
+        "outcome": "recorded",
+        "recordedAs": ["prov-ms-fgf-2025-high-risk-security"]
+      },
+      {
+        "index": 98,
+        "edition": "ms-fgf-2025",
+        "key": "msfgf-deployment-recommendation-case",
+        "earlierCategory": "over the 50-word limit",
+        "outcome": "still listed",
+        "recordedAs": []
+      },
+      {
+        "index": 99,
+        "edition": "ms-fgf-2025",
+        "key": "msfgf-framework-update-review",
+        "earlierCategory": "quotation limit",
+        "outcome": "recorded",
+        "recordedAs": ["prov-ms-fgf-2025-framework-update-review"]
+      },
+      {
+        "index": 100,
+        "edition": "ms-fgf-2025",
+        "key": "msfgf-leading-indicator-trigger",
+        "earlierCategory": "outside the four provision kinds",
+        "outcome": "still listed",
+        "recordedAs": []
+      },
+      {
+        "index": 101,
+        "edition": "ms-fgf-2026",
+        "key": "msfgf-external-evaluator-decision",
+        "earlierCategory": "quotation limit",
+        "outcome": "recorded",
+        "recordedAs": ["prov-ms-fgf-2026-external-evaluator-decision"]
+      },
+      {
+        "index": 102,
+        "edition": "ms-fgf-2026",
+        "key": "msfgf-incident-reporting",
+        "earlierCategory": "quotation limit",
+        "outcome": "recorded",
+        "recordedAs": ["prov-ms-fgf-2026-incident-reporting"]
+      },
+      {
+        "index": 103,
+        "edition": "ms-fgf-2026",
+        "key": "msfgf-new-capability-thresholds",
+        "earlierCategory": "information only",
+        "outcome": "still listed",
+        "recordedAs": []
+      },
+      {
+        "index": 104,
+        "edition": "ms-fgf-2026",
+        "key": "msfgf-deeper-assessment-cadence",
+        "earlierCategory": "outside the four provision kinds",
+        "outcome": "still listed",
+        "recordedAs": []
+      },
+      {
+        "index": 105,
+        "edition": "rsp-v3-4",
+        "key": "rsp-automated-rd-threshold",
+        "earlierCategory": "text not inspectable or verifiable",
+        "outcome": "recorded",
+        "recordedAs": ["provchange-rsp-v3-4-automated-rd-threshold"]
+      }
+    ],
+    "newStops": [
+      {
+        "family": "anthropic-rsp",
+        "edition": "rsp-2023",
+        "key": "rsp-rso-quarterly-report",
+        "issue": "Procedural Commitments item 7 (PDF p. 10): the Responsible Scaling Officer shares a quarterly implementation-status report with the board and LTBT. The reporting sentence refers to the RSO only as 'they', so a self-contained quote needs the item's first two sentences (about 41 words); not proposed in this bounded pass to keep v1.0's additions modest. Item 6 is proposed as rsp-board-ltbt-informed."
+      },
+      {
+        "family": "anthropic-rsp",
+        "edition": "rsp-v2-0",
+        "key": "rsp-board-ltbt-informed",
+        "issue": "No record and no absence proposed. v2.0 has no item matching v1.0's 'share results of ASL evaluations' wording, but the substance continues in other forms: the CEO and RSO share their decisions with the underlying Capability Report and feedback with the Board and LTBT (§3.3, PDF p. 10, and §4.3, PDF p. 13; recorded under rsp-ceo-rso-decision-board-ltbt-informed), and the Glossary entry 'Long-Term Benefit Trust (LTBT)' (PDF p. 18) says the Board receives and the LTBT is provided with Capability Reports and Safeguards Reports. Whether to align the keys is a curator decision."
+      },
+      {
+        "family": "deepmind-fsf",
+        "edition": "fsf-v3-0",
+        "key": "fsf-framework-update-review",
+        "issue": "The §5.1 sentence “The updated version and framework assessment will be reviewed by the appropriate corporate governance bodies.” (PDF p. 16; identical in v3.1 PDF p. 17) is not contiguous with the cadence sentence and is not recorded: ‘reviewed by’ does not specify approval, so mapping it to a parties role (decides/consulted) would go beyond the text. The curator may record it as a separate decision_authority key if a role mapping is agreed."
+      },
+      {
+        "family": "openai-xai",
+        "edition": "faif-2026",
+        "key": "faif-release-precondition",
+        "issue": "Not proposed (interpretation): PDF p. 6, opening lines (continuing §2.3 Systemic risk acceptance determination from PDF p. 5), “These evaluations are performed precedent to the wider deployment of our models, and are a precondition for release of our models for public use.” The preceding sentence describes applying systemic risk acceptance criteria and names no evaluations, so the referent of “These evaluations” would have to be inferred. Substance largely covered by the recorded faif-proceed-only-if-acceptable."
+      },
+      {
+        "family": "openai-xai",
+        "edition": "faif-2026",
+        "key": "faif-trusted-user-exception",
+        "issue": "Absence not proposed: no “selectively allow”/“readily and easily available” passage was found in the June 2026 text, but §2.3 (PDF p. 6), item (1), states that full model functionality may be available only to a limited set of trusted parties, partners and government agencies as a mitigation. Whether that is the same provision is a matter of interpretation."
+      }
+    ]
+  },
+  "proposingPass": {
+    "date": "2026-10-03",
+    "agents": "The curating session (Claude Opus 5.5) proposed the four priority items; four fresh-context extraction subagents (Claude Opus 5.5) proposed the rest from local UTF-8 text layers and PDFs, verified with the same quote verifier as week 4a.",
+    "curatorAcceptance": [
+      "FSF v2.0 disclosure sentence: contiguous in the 2025-02-05 capture; in the served file a page break and footnote 14 interrupt it after “facilitate the”; the words are identical.",
+      "RSP v3.3 and v3.4 Automated R&D quotes: verified against the table’s left column extracted on its own (pdftotext -marginr 572), as the plain layer interleaves the three columns; the layer lacks the space between “expect” and “double”.",
+      "FSF v3.1 disclosure provision: parties aligned with the identically worded v3.0 record (Google DeepMind decides; appropriate government authorities are informed).",
+      "Meta moderate-threshold change recorded as an inferred document comparison: the change log states only the measure label change (Release to Deploy)."
+    ],
+    "added": {
+      "provisions": 67,
+      "absences": 6,
+      "provisionChanges": 12,
+      "assessments": 1
+    }
+  },
+  "qa": {
+    "design": "Two fresh-context readers checked all 12 new provision changes and 12 targeted records independently and blind to each other, and each checked a different half of a seeded random sample of 20 other new records. A third agent would have adjudicated any disagreement between them; there was none.",
+    "independence": "All agents were subagents of the proposing session using the same model family on the same machine; execution independence is not established. The contested records were deliberately left out of this QA for a different-model reader.",
+    "selection": {
+      "seed": 202610043,
+      "method": "mulberry32 PRNG, draws without replacement from the ID-sorted pool of new provisions and absences not otherwise read by both readers",
+      "pool": 44,
+      "changes": [
+        "provchange-fsf-v3-0-government-disclosure",
+        "provchange-rsp-v3-4-automated-rd-threshold",
+        "provchange-rsp-v2-0-pause-training",
+        "provchange-rsp-v2-0-policy-change-approval",
+        "provchange-fsf-v2-0-response-plan",
+        "provchange-fsf-v3-1-response-plan-distant-from-ccl",
+        "provchange-fsf-v3-0-security-level-adjustment",
+        "provchange-fsf-v3-1-deployment-mitigation-scope",
+        "provchange-fsf-v3-1-framework-update-review",
+        "provchange-preparedness-v2-critical-development-restriction",
+        "provchange-preparedness-v2-final-decision-authority",
+        "provchange-meta-aasf-v2-0-moderate-threshold"
+      ],
+      "targeted": [
+        "prov-rsp-2023-emergency-loosening",
+        "prov-rsp-v2-0-lower-safeguards-if-others-pass",
+        "prov-fsf-v2-0-government-disclosure",
+        "absent-rsp-v3-0-pause-training",
+        "absent-rsp-v3-0-restrict-and-pause",
+        "absent-rsp-v3-0-may-proceed-with-safeguards",
+        "absent-rsp-v2-0-weights-deletion-decision",
+        "absent-meta-aasf-v2-0-critical-pause-investigation",
+        "absent-meta-aasf-v2-0-uplift-assessment-approval",
+        "prov-preparedness-v2-final-decision-authority",
+        "prov-preparedness-v2-marginal-risk-adjustment",
+        "prov-rsp-v3-0-marginal-risk-board-ltbt-approval"
+      ],
+      "sample": [
+        "prov-ms-fgf-2026-high-risk-security",
+        "prov-rsp-2023-weights-deletion-decision",
+        "prov-rsp-v2-2-may-proceed-with-safeguards",
+        "prov-preparedness-beta-2023-leadership-without-sag",
+        "prov-rsp-v3-2-ltbt-review-request",
+        "prov-rsp-v2-1-restrict-and-pause",
+        "prov-rsp-2023-board-ltbt-informed",
+        "prov-frontier-governance-2026-update-legal-oversight",
+        "prov-fsf-v3-0-response-plan",
+        "prov-rsp-v2-2-restrict-and-pause",
+        "prov-rsp-v2-0-restrict-and-pause",
+        "prov-rsp-v3-0-competitor-parity",
+        "prov-rsp-v2-1-lower-safeguards-if-others-pass",
+        "prov-ms-fgf-2026-external-evaluator-decision",
+        "prov-fsf-v3-1-government-disclosure",
+        "prov-rsp-v3-0-competitor-upleveling",
+        "prov-preparedness-beta-2023-capabilities-development-condition",
+        "prov-rsp-v2-0-security-alone-continue-training",
+        "prov-fsf-v3-1-response-plan",
+        "prov-ms-fgf-2026-framework-update-review"
+      ],
+      "readerC": [
+        "prov-ms-fgf-2026-high-risk-security",
+        "prov-rsp-v2-2-may-proceed-with-safeguards",
+        "prov-rsp-v3-2-ltbt-review-request",
+        "prov-rsp-2023-board-ltbt-informed",
+        "prov-fsf-v3-0-response-plan",
+        "prov-rsp-v2-0-restrict-and-pause",
+        "prov-rsp-v2-1-lower-safeguards-if-others-pass",
+        "prov-fsf-v3-1-government-disclosure",
+        "prov-preparedness-beta-2023-capabilities-development-condition",
+        "prov-fsf-v3-1-response-plan"
+      ],
+      "readerD": [
+        "prov-rsp-2023-weights-deletion-decision",
+        "prov-preparedness-beta-2023-leadership-without-sag",
+        "prov-rsp-v2-1-restrict-and-pause",
+        "prov-frontier-governance-2026-update-legal-oversight",
+        "prov-rsp-v2-2-restrict-and-pause",
+        "prov-rsp-v3-0-competitor-parity",
+        "prov-ms-fgf-2026-external-evaluator-decision",
+        "prov-rsp-v3-0-competitor-upleveling",
+        "prov-rsp-v2-0-security-alone-continue-training",
+        "prov-ms-fgf-2026-framework-update-review"
+      ]
+    },
+    "readers": [
+      {
+        "reader": "reader-c",
+        "agent": "Claude Code subagent (Claude Opus 5.5, claude-opus-5-5), fresh context",
+        "executedAt": "2026-10-03",
+        "verdicts": {
+          "changes": {
+            "agree": 12,
+            "disagree": 0,
+            "unable": 0
+          },
+          "targeted": {
+            "agree": 10,
+            "disagree": 2,
+            "unable": 0
+          },
+          "sample": {
+            "agree": 10,
+            "disagree": 0,
+            "unable": 0
+          }
+        },
+        "nonAgree": [
+          {
+            "claimId": "prov-rsp-2023-emergency-loosening",
+            "list": "targeted",
+            "verdict": "disagree",
+            "finding": "Locator error: item 1 has two sub-bullets (\"We expect most updates…\" and \"However, in a situation of extreme emergency…\"); the passage is the second sub-bullet, not the third. Content otherwise correct. Minor: the statement drops \"if not stopped\" and \"(and where AI itself is helpful in such defense)\"; the record's paraphrase evidence includes the latter."
+          },
+          {
+            "claimId": "prov-preparedness-v2-marginal-risk-adjustment",
+            "list": "targeted",
+            "verdict": "disagree",
+            "finding": "The statement's gloss of \"such a scenario\" says another developer \"releasing\" a High or Critical capability system; the source says another developer \"might develop or release\" such a system without comparable safeguards. Omitting \"develop\" narrows the trigger. Fix: \"developing or releasing\". Otherwise faithful."
+          }
+        ],
+        "retrievalFailures": [],
+        "limits": "Worked from the local pdftotext layers (SP\\txt) and local PDFs (pdftotext -layout, and -marginr 572 for the RSP v3.3/v3.4 table column). No web retrieval was attempted; Internet Archive byte-identity claims and archived URLs were not independently re-checked. Absence searches were keyword searches plus targeted reading of the named sections, not a full read of every page. Printed-page numbers were not systematically verified."
+      },
+      {
+        "reader": "reader-d",
+        "agent": "Claude Opus 5.5 (claude-opus-5-5), fresh-context subagent in Claude Code",
+        "executedAt": "2026-10-03T20:18:50.892Z",
+        "verdicts": {
+          "changes": {
+            "agree": 12,
+            "disagree": 0,
+            "unable": 0
+          },
+          "targeted": {
+            "agree": 10,
+            "disagree": 2,
+            "unable": 0
+          },
+          "sample": {
+            "agree": 10,
+            "disagree": 0,
+            "unable": 0
+          }
+        },
+        "nonAgree": [
+          {
+            "claimId": "prov-rsp-2023-emergency-loosening",
+            "list": "targeted",
+            "verdict": "disagree",
+            "finding": "Quote verbatim, but the locator is wrong: item 1 has two sub-bullets, and the passage is the second (\"However, in a situation…\"), not the third. The statement also drops part of the condition, \"if not stopped (and where AI itself is helpful in such defense)\"; the paraphrase evidence keeps it."
+          },
+          {
+            "claimId": "prov-preparedness-v2-marginal-risk-adjustment",
+            "list": "targeted",
+            "verdict": "disagree",
+            "finding": "Quote verbatim, but the statement’s gloss of \"such a scenario\" narrows the source. §4.3 says another developer \"might develop or release\" a High or Critical capability system without comparable safeguards; the statement says only \"releasing\". It should read \"develops or releases\"."
+          }
+        ],
+        "retrievalFailures": [],
+        "limits": "Worked from the local edition text layers in SP\\txt, running verify-quotes findQuote on every quote, plus pdftotext left-column extraction and full-page diffs for RSP v3.3/v3.4 pp.9–10. No web retrieval was done, so claims that the PDFs are byte-identical to the Internet Archive captures were not re-verified; for FSF v2.0 and PF v2 the local capture text files were used. The extraction-note remarks about the Feb 2025 MS FGF and Beta counterparts were not checked. Absence checks combined keyword searches with reading the relevant sections; not every page was read in full."
+      }
+    ],
+    "agreementBetweenReaders": "Identical verdicts on every list: all 12 changes agreed; the same two targeted records disputed with the same findings (the RSP v1.0 emergency clause’s sub-bullet number and omitted condition; the Preparedness v2 marginal-risk trigger narrowed to releasing).",
+    "adjudication": "Not needed: the readers did not disagree with each other.",
+    "correctionsApplied": [
+      {
+        "id": "prov-rsp-2023-emergency-loosening",
+        "field": "statement, locators",
+        "why": "Both readers: item 1 has two sub-bullets, and the statement now carries the whole condition (“if not stopped”, and where AI itself helps in such defence)."
+      },
+      {
+        "id": "prov-preparedness-v2-marginal-risk-adjustment",
+        "field": "statement",
+        "why": "Both readers: §4.3 says another developer “might develop or release” such a system."
+      },
+      {
+        "id": "provchange-rsp-v3-4-automated-rd-threshold",
+        "field": "statement",
+        "why": "Both readers’ notes: the text says “where”, not “only if”. The change log states the revision and its intent; the detailed difference is read from the two texts, as for the v3.1 change."
+      },
+      {
+        "id": "provchange-rsp-v2-0-pause-training",
+        "field": "statement",
+        "why": "Reader C’s note: the v2.0 pause sits in §6.2, which applies where a model requires the ASL-3 Required Safeguards but they cannot be implemented immediately."
+      }
+    ],
+    "notesNotActedOn": [
+      "Role labels that approximate the text (“informed” for the Safety and Security Committee’s oversight; “decides” for the LTBT’s request trigger) are explained in the records’ extraction notes.",
+      "provchange-preparedness-v2-critical-development-restriction compares v2’s introduction summary with the Beta’s operative rule; v2’s Table 1 and §4.4 also state an operative halt, which the provision’s extraction note records."
+    ],
+    "retrievalFailures": []
+  },
+  "limits": "A bounded sample does not certify unsampled records. Document lengths are approximate and counted from the inspected text layers. Provisions remain a quoted selection, not a digest of each framework; stops still listed are not findings. The contested records await a different-model reader."
+}

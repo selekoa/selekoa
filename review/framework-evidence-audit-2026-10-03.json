@@ -1,0 +1,198 @@
+{
+  "id": "framework-evidence-audit-2026-10-03",
+  "scope": "Frontier safety frameworks collection (version 2): archive captures recorded for 27 sources (26 sources cited by the collection's 49 claims plus edition source source-fsf-1-0), source language tags (all 181 sources), and the one evidence passage changed from paraphrase to quote. No claim, ID, claim date or editorial state changed.",
+  "proposingPass": {
+    "agent": "Claude Code session, Claude Opus 5.5 (claude-opus-5-5)",
+    "date": "2026-10-03",
+    "method": "Wayback CDX listing of status-200 captures of each recorded evidence URL; nearest capture to the edition's effective, else publication, else revision date (source publication date for announcements; recorded access date for mutable index pages with no publication date). No snapshot was created. PDF captures compared with currently served bytes (SHA-1 digest, then pdftotext text diff where different). Quote candidates limited to sources whose reuse note permits minimal attributed excerpts."
+  },
+  "auditor": {
+    "agent": "Fresh-context subagent, Claude Opus 5.5 (claude-opus-5-5), launched from the proposing session",
+    "date": "2026-10-03",
+    "method": "Given only a bounded packet of records (no proposer verdicts or byte comparisons); retrieved live originals and archive captures itself (curl, CDX, id_ replay, pdftotext, text and byte comparison). Did not read the repository and created no snapshots.",
+    "independence": "Same model family and machine as the proposing pass; execution independence is not established."
+  },
+  "selection": {
+    "random": {
+      "method": "mulberry32 PRNG, seed 20261003, draws without replacement from ID-sorted pools",
+      "archive": [
+        "source-rsp-3-3",
+        "source-rsp-2-0",
+        "source-rsp-2-1",
+        "source-pf-beta",
+        "source-rsp-3-0",
+        "source-fgf-2026",
+        "source-rsp-1-0",
+        "source-rsp-2-2"
+      ],
+      "evidence": [
+        "evidence-issued-fgf-2026-2",
+        "evidence-issued-rsp-3-0",
+        "evidence-supersedes-rsp-3-4",
+        "evidence-supersedes-rsp-3-3",
+        "evidence-rsp-v3-4-coverage-date",
+        "evidence-rsp-v2-1-rd-thresholds",
+        "evidence-issued-pf-beta",
+        "evidence-eval-i-rsp-christiano-credit"
+      ],
+      "language": [
+        "source-human-preferences-paper-v1",
+        "source-fsf-announcement",
+        "source-faif-2026",
+        "source-atlas-chinchilla-release",
+        "source-cn-r1",
+        "source-atlas-openai-preferences",
+        "source-anthropic-google-2023",
+        "source-eval-i-bis-comment",
+        "source-clark-bio",
+        "source-xm-series-e",
+        "source-xai-series-c-2024",
+        "source-xai-grok4-2025"
+      ]
+    },
+    "targeted": {
+      "archive": [
+        "source-fsf-2-0",
+        "source-pf-2",
+        "source-fsf-v3-update",
+        "source-fsf-announcement",
+        "source-rsp-archive",
+        "source-fsf-archive",
+        "source-faif-2025",
+        "source-faif-2026",
+        "source-rsp-announcement"
+      ],
+      "evidence": [
+        "evidence-rsp-credits-arc-2023",
+        "evidence-anthropic-rsp-2023",
+        "evidence-deepmind-fsf-2024",
+        "evidence-faif-2026-compliance-sentence-2",
+        "evidence-pf-v2-threshold-terms"
+      ],
+      "language": [
+        "source-cn-liang-interview",
+        "source-cn-alibaba-budget",
+        "source-cn-qwen3",
+        "source-cn-zhipu-profile",
+        "source-cn-keg-search",
+        "source-cn-zhipu-education",
+        "source-cn-zhipu-prospectus",
+        "source-cn-glm45-readme",
+        "source-xm-fair-paris",
+        "source-cn-alibaba-qwen3",
+        "source-cn-qwen25"
+      ],
+      "reasons": "Byte differences between capture and current file, redirect-only capture, captures long after publication, mutable index pages, date-label ambiguity, the changed and existing quotes, an inferred comparison claim, and every non-English or bilingual-risk source."
+    }
+  },
+  "coverage": {
+    "archiveRecords": "17 of 27 audited (8 random, 9 targeted); the proposing pass compared all 17 archived PDFs with current bytes",
+    "evidence": "13 of the collection's 65 evidence records audited (8 random, 5 targeted), including the one changed record",
+    "language": "23 of 181 source tags audited (12 random, 11 targeted), including all 10 non-English sources",
+    "quotes": "3 of 65 collection evidence records cite sources whose reuse note permits excerpts; 2 were already quotes and 1 paraphrase was upgraded. The other 62 keep paraphrases because their reuse notes do not permit excerpts."
+  },
+  "results": {
+    "agree": 53,
+    "disagree": 0,
+    "unable": 0
+  },
+  "disagreements": [],
+  "findings": [
+    {
+      "ids": ["evidence-rsp-credits-arc-2023", "rsp-credits-arc-2023"],
+      "issue": "Mutable source. The ARC Evals acknowledgement paragraph is absent from the 14:15 and 16:17 UTC captures of 2023-09-19 at the page's earlier /index/ address and present from 20:15 UTC.",
+      "checked": "Auditor finding reproduced by the proposing pass: six publication-day and next-day captures replayed.",
+      "disposition": "The quote is verbatim and does not contradict the claim or the prior paraphrase. The timing is recorded in the evidence verification note. Claim unchanged; maintainer triage on whether the qualification should state that the credit was added on the day of publication."
+    },
+    {
+      "ids": ["source-fsf-2-0"],
+      "issue": "The current file differs from the 2025-02-05 capture. It adds a publisher-documented link correction (21 March 2025), corrects a surname spelling and moves a footnote.",
+      "checked": "Proposer and auditor text diffs agree.",
+      "disposition": "Archive keeps the original text. Evidence was inspected on the current file; the cited title and date passage are unaffected."
+    },
+    {
+      "ids": ["source-pf-2"],
+      "issue": "The current file was silently copy-edited under the same date label. It removes a duplicated 'Value alignment' sentence in C.2 and adds commas after 'e.g.'.",
+      "checked": "Proposer and auditor text diffs agree; cited p. 15 changelog text is identical.",
+      "disposition": "Recorded; no evidence passage affected."
+    },
+    {
+      "ids": ["source-fgf-2026"],
+      "issue": "CDX digests differ only through stored gzip transfer encoding; decompressed bytes are identical to the current file. The PDF itself shows no date or edition label.",
+      "checked": "SHA-1 after decompression (proposer); auditor concurs.",
+      "disposition": "Recorded."
+    },
+    {
+      "ids": ["source-rsp-3-0"],
+      "issue": "The recorded URL has only redirect captures. The stored capture (2026-02-24 20:30:46 UTC) replays to the RSP v3.0 PDF captured five seconds later, byte-identical to the current redirect target.",
+      "checked": "Proposer and auditor.",
+      "disposition": "Redirect capture retained as the archive link; maintainer decision invited."
+    },
+    {
+      "ids": [
+        "source-rsp-announcement",
+        "source-fsf-announcement",
+        "source-fsf-v3-update",
+        "source-rsp-1-0",
+        "source-rsp-2-0"
+      ],
+      "issue": "Earlier captures exist at predecessor addresses (anthropic.com/index/..., deepmind.google/discover/blog/..., www-files.anthropic.com, assets.anthropic.com), closer to publication than any capture of the recorded URL. Identical bytes were confirmed for rsp-1-0 (2023-09-19) and rsp-2-0 (2024-10-22).",
+      "checked": "Auditor CDX and replay; proposer CDX for the DeepMind announcement.",
+      "disposition": "Not substituted: the stored link stays a capture of the recorded URL. Maintainer decision invited."
+    },
+    {
+      "ids": [
+        "evidence-supersedes-rsp-3-4",
+        "evidence-supersedes-rsp-3-3",
+        "evidence-eval-i-rsp-christiano-credit"
+      ],
+      "issue": "Auditor agreed but suggested closer paraphrase wording. The changelog entries do not name the predecessor version; the RSP v1.0 text says 'in the spirit of' rather than 'draw on'.",
+      "checked": "Auditor.",
+      "disposition": "Not changed in this task (paraphrase-only sources); candidates for a later wording pass."
+    }
+  ],
+  "retrievalFailures": [
+    {
+      "id": "source-fgf-release",
+      "detail": "HTTP 403 to a minimal user agent; succeeded with browser headers."
+    },
+    {
+      "id": "source-cn-zhipu-prospectus",
+      "detail": "pdftotext could not extract text (Adobe-CNS1 fonts); the auditor judged the script from embedded ToUnicode maps instead."
+    },
+    {
+      "id": "source-pf-2",
+      "detail": "One alternate-digest capture (2026-04-08) replays as Wayback HTML, not a PDF; not examined."
+    }
+  ],
+  "noSnapshot": [],
+  "limits": "A bounded sample does not certify unsampled records. Capture dates are UTC Wayback timestamps. The Internet Archive was taken as a faithful witness of what it retrieved. Not every byte-variant capture was replayed. Script judgements for Chinese use character inventories, not a classifier. Machine agreement is neither historical certainty nor human review; no evidence verification or editorial state changed.",
+  "followUp": {
+    "date": "2026-10-03",
+    "authorisedBy": "maintainer follow-up task",
+    "archiveChanges": [
+      {
+        "id": "source-rsp-1-0",
+        "archivedUrl": "https://web.archive.org/web/20230919161730/https://www-files.anthropic.com/production/files/responsible-scaling-policy-1.0.pdf",
+        "archivedAt": "2023-09-19",
+        "previous": {
+          "archivedUrl": "https://web.archive.org/web/20240304173919/https://www-cdn.anthropic.com/1adf000c8f675958c2ee23805d91aaade1cd4613/responsible-scaling-policy.pdf",
+          "archivedAt": "2024-03-04"
+        },
+        "basis": "Capture made at the file’s earlier address (www-files.anthropic.com) on the effective date. Its bytes are identical to the inspected file (SHA-1 1adf000c8f675958c2ee23805d91aaade1cd4613, matching the recorded URL’s path)."
+      },
+      {
+        "id": "source-rsp-2-0",
+        "archivedUrl": "https://web.archive.org/web/20241022154907/https://assets.anthropic.com/m/24a47b00f10301cd/original/Anthropic-Responsible-Scaling-Policy-2024-10-15.pdf",
+        "archivedAt": "2024-10-22",
+        "previous": {
+          "archivedUrl": "https://web.archive.org/web/20250401073019/https://www-cdn.anthropic.com/616dee633636e5bd309cb73aed8622e80fe47839.pdf",
+          "archivedAt": "2025-04-01"
+        },
+        "basis": "Capture made at the file’s earlier address (assets.anthropic.com) seven days after the effective date. Its bytes are identical to the inspected file (SHA-1 616dee633636e5bd309cb73aed8622e80fe47839). Later captures at that address (from 2024-11-01) hold a different variant, which is not linked."
+      }
+    ],
+    "unchanged": "The RSP v3.0 redirect capture and the announcement pages’ links to captures of their recorded URLs are kept.",
+    "quotePass": "review/framework-evidence-quotes-2026-10-03.json"
+  }
+}

@@ -1,0 +1,174 @@
+/* Control-structure timelines and the external-commitments page. */
+.control-summary,
+.control-timeline,
+.commit-matrix {
+  margin-top: var(--space-7);
+}
+.control-summary > h2,
+.control-timeline > h2,
+.commit-matrix > h2 {
+  font: var(--heading-section) / 1.25 var(--font-serif);
+  margin: 0 0 4px;
+}
+.control-summary .small-note,
+.control-timeline > .small-note,
+.commit-matrix .small-note {
+  color: var(--color-text-muted);
+  max-width: 85ch;
+}
+.control-table,
+.commit-table {
+  border-collapse: collapse;
+  font-size: var(--text-sm);
+  min-width: 100%;
+}
+.control-table th,
+.control-table td,
+.commit-table th,
+.commit-table td {
+  border-bottom: 1px solid var(--color-border);
+  padding: 6px 8px;
+  text-align: left;
+  vertical-align: top;
+}
+.control-table thead th,
+.commit-table thead th {
+  font-weight: 600;
+  color: var(--color-text-muted);
+  white-space: nowrap;
+}
+.control-table td:first-child {
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+/* Equal text columns; below 42rem the table scrolls inside its box. */
+.commit-table {
+  table-layout: fixed;
+  width: 100%;
+  min-width: 42rem;
+}
+.commit-table thead th {
+  white-space: normal;
+  vertical-align: bottom;
+}
+.commit-table thead th:first-child {
+  width: 7.5rem;
+}
+.commit-table tbody th {
+  font-weight: 500;
+  color: var(--color-text);
+}
+.commit-table td {
+  font-variant-numeric: tabular-nums;
+}
+.commit-date,
+.commit-table .doc-inspect > span[aria-hidden='true'] {
+  white-space: nowrap;
+}
+.commit-scope {
+  color: var(--color-text-muted);
+}
+.control-year {
+  border-left: 2px solid var(--color-governance);
+  margin: 18px 0 0 2px;
+  padding: 0 0 6px 18px;
+}
+.control-year > h3 {
+  font: var(--heading-sub) / 1.3 var(--font-serif);
+  margin: 0 0 4px;
+}
+.control-rows,
+.commit-rows {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.control-kind {
+  display: block;
+  font-size: var(--text-2xs);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  margin-bottom: 2px;
+}
+.control-stage {
+  display: inline-block;
+  margin-left: 8px;
+  padding: 0 5px;
+  border: 1px solid var(--color-border);
+  font-weight: 650;
+}
+.control-stage-effective {
+  border-color: var(--color-governance);
+  color: var(--color-text);
+}
+.control-stage-provisional {
+  border-style: dashed;
+}
+.control-route {
+  display: block;
+  font-weight: 600;
+  color: var(--color-text);
+}
+.control-instrument {
+  display: block;
+  font-size: var(--text-sm);
+  color: var(--color-text);
+  margin: 2px 0 4px;
+}
+.control-party-list {
+  list-style: none;
+  margin: 8px 0 0;
+  padding: 0;
+  display: grid;
+  gap: 6px;
+  font-size: var(--text-md);
+}
+.control-stops ul {
+  margin: 8px 0 0;
+  padding-left: 18px;
+  display: grid;
+  gap: 8px;
+  font-size: var(--text-md);
+  max-width: 85ch;
+}
+.control-stops .control-kind {
+  display: inline;
+}
+.commit-toc ol {
+  margin: 16px 0 0;
+  padding-left: 18px;
+  display: grid;
+  gap: 4px;
+  font-size: var(--text-base);
+}
+.commit-block {
+  margin-top: 16px;
+}
+.commit-block > h3 {
+  font-size: var(--text-base);
+  font-weight: 650;
+  margin: 0 0 2px;
+}
+@media (max-width: 640px) {
+  .control-year {
+    padding-left: 12px;
+  }
+}
+.control-related {
+  font-size: var(--text-md);
+  margin-top: 10px;
+}
+.landing-control {
+  list-style: none;
+  margin: 8px 0 12px;
+  padding: 0;
+  display: grid;
+  gap: 4px;
+}
+.commit-toc .text-button,
+.control-related .text-button,
+.landing-control .text-button {
+  white-space: normal;
+  text-align: left;
+}

@@ -1,0 +1,323 @@
+.path-entry {
+  border-left: 3px solid var(--color-accent);
+  padding: 2px 0 4px 16px;
+  margin-bottom: 26px;
+}
+.path-entry > p:nth-child(2) {
+  font: 20px/1.5 var(--font-serif);
+  margin: 10px 0;
+}
+.path-entry small {
+  display: block;
+  color: var(--color-text-muted);
+  font-size: var(--text-xs);
+  margin-top: 8px;
+}
+.path-entry button,
+.path-exits button,
+.path-resume,
+.path-evidence,
+.path-back {
+  color: var(--color-accent);
+  padding: 9px 12px;
+  border: 1px solid var(--color-border);
+  background: var(--color-sunken);
+  text-align: left;
+  font-size: var(--text-sm);
+}
+.path-resume {
+  margin: 0 24px 18px;
+}
+.research-path {
+  min-width: 0;
+}
+.path-overview,
+.path-branch,
+.path-contexts {
+  padding: 22px 24px;
+}
+.path-overview {
+  border-block: 1px solid var(--color-border);
+}
+.path-overview h2 {
+  font: 23px/1.4 var(--font-serif);
+  margin: 12px 0;
+  max-width: 52ch;
+}
+.path-status,
+.path-gap,
+.path-contexts > p {
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+  line-height: 1.7;
+}
+.path-exits {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 16px;
+}
+.path-branch-heading,
+.path-contexts h3 {
+  font: 25px/1.4 var(--font-serif);
+  margin: 5px 0 10px;
+  scroll-margin-top: 20px;
+}
+.path-back {
+  margin-bottom: 20px;
+}
+.path-record {
+  border-top: 1px solid var(--color-border);
+  padding: 20px 0;
+  scroll-margin-top: 24px;
+}
+.path-record:first-child {
+  margin-top: 20px;
+}
+.path-statement {
+  font: 21px/1.45 var(--font-serif);
+  margin: 0 0 9px;
+  max-width: 58ch;
+  scroll-margin-top: 24px;
+}
+.path-statement:focus-visible,
+.path-branch-heading:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 4px;
+}
+.path-dates {
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+  line-height: 1.7;
+  font-variant-numeric: tabular-nums;
+}
+.path-record-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  margin: 12px 0 9px;
+}
+.path-record-actions > span {
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+}
+.path-details {
+  font-size: var(--text-sm);
+  line-height: 1.7;
+}
+.path-details summary {
+  cursor: pointer;
+  color: var(--color-accent);
+}
+.path-details p {
+  margin-top: 10px;
+}
+.path-source {
+  padding: 12px 0;
+  border-bottom: 1px solid var(--color-border);
+}
+.research-path code {
+  overflow-wrap: anywhere;
+}
+.path-warning {
+  border-left: 3px solid var(--color-people);
+  padding-left: 12px;
+  margin-top: 14px;
+  font-size: var(--text-md);
+  line-height: 1.7;
+}
+.path-contexts {
+  border-top: 1px solid var(--color-border);
+  background: var(--color-sunken);
+}
+.path-branch-options {
+  margin-top: 15px;
+  display: grid;
+  gap: 10px;
+}
+.path-branch-options button {
+  text-align: left;
+  border: 1px solid var(--color-border);
+  padding: 13px 15px;
+  background: var(--color-surface);
+}
+.path-branch-options button > strong {
+  display: block;
+  font: 19px/1.4 var(--font-serif);
+}
+.path-branch-options button > span,
+.path-branch-options button > small {
+  display: block;
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+  margin-top: 5px;
+}
+.path-branch-options button[aria-pressed='true'] {
+  border-color: var(--color-accent);
+}
+.workspace:has(.research-path) > .inspector {
+  position: sticky;
+  top: 12px;
+  align-self: start;
+  max-height: calc(100vh - 24px);
+}
+@media (max-width: 940px) {
+  .workspace:has(.research-path) > .inspector {
+    position: static;
+    max-height: none;
+  }
+}
+@media (max-width: 600px) {
+  .path-overview,
+  .path-branch,
+  .path-contexts {
+    padding: 20px 15px;
+  }
+  .path-overview h2 {
+    font-size: 21px;
+  }
+  .path-statement {
+    font-size: 19px;
+  }
+}
+
+.path-prose > p {
+  font: 18px/1.65 var(--font-serif);
+  max-width: 68ch;
+  margin: 14px 0 6px;
+}
+.path-passage-basis {
+  margin-bottom: 16px;
+}
+.path-passage-basis ul {
+  padding-left: 20px;
+}
+.path-reference {
+  color: var(--color-accent);
+  background: none;
+  border: 0;
+  text-align: left;
+  padding: 7px 0;
+  font: inherit;
+}
+.path-reference code {
+  display: block;
+  color: var(--color-text-muted);
+  font-size: var(--text-xs);
+}
+.path-group-heading {
+  font: 20px/1.4 var(--font-serif);
+  margin: 26px 0 10px;
+}
+.path-compact .path-record {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 190px;
+  column-gap: 20px;
+  row-gap: 4px;
+  padding: 13px 0;
+}
+.path-compact .path-statement {
+  font-size: 17px;
+  margin: 0;
+}
+.path-compact .path-record-actions {
+  grid-column: 2;
+  grid-row: 1;
+  margin: 0;
+  align-self: start;
+}
+.path-compact .path-dates {
+  grid-column: 1;
+  grid-row: 2;
+}
+.path-compact .path-dates p {
+  margin: 0;
+}
+.path-compact .path-details {
+  grid-column: 2;
+  grid-row: 2;
+}
+.path-compact .path-details[open] {
+  grid-column: 1 / -1;
+  grid-row: 3;
+}
+@media (max-width: 600px) {
+  .path-prose > p {
+    font-size: 17px;
+  }
+  .path-compact .path-record {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    column-gap: 10px;
+    row-gap: 8px;
+  }
+  .path-compact .path-statement,
+  .path-compact .path-dates {
+    grid-column: 1 / -1;
+  }
+  .path-compact .path-record-actions {
+    grid-column: 1;
+    grid-row: 3;
+  }
+  .path-compact .path-details {
+    grid-column: 2;
+    grid-row: 3;
+    align-self: center;
+  }
+  .path-compact .path-details[open] {
+    grid-column: 1 / -1;
+    grid-row: 4;
+  }
+}
+
+/* Question page: disputes and open questions, computed from the selection. */
+.path-questions {
+  padding: 22px 24px;
+  border-top: 1px solid var(--color-border);
+}
+.path-questions h3 {
+  font: 21px/1.4 var(--font-serif);
+  margin: 5px 0 8px;
+}
+.path-questions h3 + p,
+.path-questions-note {
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+  line-height: 1.7;
+  max-width: 85ch;
+}
+.path-questions > ul {
+  list-style: none;
+  margin: 0 0 22px;
+  padding: 0;
+}
+.path-questions > ul > li {
+  border-top: 1px solid var(--color-border);
+  padding: 10px 0;
+  max-width: 85ch;
+}
+.path-questions > ul > li.path-question-warning {
+  border-top-style: dotted;
+  padding-left: 16px;
+}
+
+/* Question page as a standalone reading page. */
+.reading-main .path-overview,
+.reading-main .path-branch,
+.reading-main .path-contexts,
+.reading-main .path-questions {
+  padding-inline: 0;
+}
+.reading-main .path-overview {
+  border-top: 0;
+}
+.path-title {
+  font-size: var(--heading-page);
+  line-height: 1.2;
+  margin: 0 0 12px;
+}
+@media (max-width: 720px) {
+  .path-title {
+    font-size: 30px;
+  }
+}

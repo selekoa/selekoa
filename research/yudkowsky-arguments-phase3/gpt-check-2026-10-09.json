@@ -1,0 +1,1606 @@
+{
+  "audit": "Cross-family GPT check of candidate pack 2",
+  "requestedFileDate": "2026-10-09",
+  "performedDate": "2026-10-08",
+  "dateNote": "The requested filename is retained; the client calendar date of this execution is 2026-10-08. Retrieval timestamps below are UTC.",
+  "checker": {
+    "family": "GPT (OpenAI)",
+    "environment": "Codex session",
+    "exactModelVersion": "not supplied",
+    "priorPreparer": "Claude Opus 5.5, as attributed in audit.md",
+    "method": "Full-coverage, unblinded cross-family review. Read the supplied scope and Claude audit; independently re-fetched the referenced sources and inspected source contexts. This is not a blind audit, human review, or an exhaustive earliest-expression search."
+  },
+  "baseline": {
+    "commit": "d62d898",
+    "packSha256": "4b2a1899df72b4bcc71a49059e3bb1f0455591b9611922fe89d3340f2a0382f2",
+    "comparedClaimsSha256": "52fd52684cb82171358ec1d50637280ceee13dc264a89ea899618df67bbc4b96",
+    "scope": "All 18 passages; all seven takes with earliest-located roles; both named disputes. Stored admitted baseline dates were compared, but the baseline sources and later correction texts were not independently re-fetched."
+  },
+  "coverage": {
+    "passages": 18,
+    "originalExpressionsInspected": 15,
+    "quotesMatchingOriginalExpressions": 15,
+    "quotesMatchingOnlyLaterExpressions": 2,
+    "missingQuoteInspections": 1,
+    "verdicts": {
+      "agree": 10,
+      "disagree": 5,
+      "cannot verify": 3
+    }
+  },
+  "agreementByPackRelation": {
+    "said-it": {
+      "total": 2,
+      "agree": 2,
+      "disagree": 0,
+      "cannotVerify": 0
+    },
+    "answered-it": {
+      "total": 8,
+      "agree": 4,
+      "disagree": 2,
+      "cannotVerify": 2
+    },
+    "related": {
+      "total": 8,
+      "agree": 5,
+      "disagree": 2,
+      "cannotVerify": 1
+    },
+    "disagrees": {
+      "total": 0,
+      "agree": 0,
+      "disagree": 0,
+      "cannotVerify": 0
+    },
+    "earlier-self": {
+      "total": 0,
+      "agree": 0,
+      "disagree": 0,
+      "cannotVerify": 0
+    }
+  },
+  "disagreements": [
+    {
+      "id": "T09-r1",
+      "proposedRelation": "related",
+      "reason": "Keep related, but add context-only: the excerpt omits its proposal attribution and hypothetical-failure framing.",
+      "contextOnly": true,
+      "voice": "author",
+      "earliestRole": "none"
+    },
+    {
+      "id": "T09-r2",
+      "proposedRelation": "related",
+      "reason": "Imitating a planning human is not the specified next-token prediction task; the step connecting them is absent from this section.",
+      "contextOnly": false,
+      "voice": "author",
+      "earliestRole": "remove earliest-located; the admitted 2022-02-28 contest remains earliest under the unchanged criterion."
+    },
+    {
+      "id": "T14-w1",
+      "proposedRelation": "answered-it",
+      "reason": "Footnote 107 gives a causal reason against retrying after a goal-system failure: the AI can lose the desire to correct errors.",
+      "contextOnly": true,
+      "voice": "author",
+      "earliestRole": "propose earliest contesting: 2000-08-17, before the admitted 2000-09-05; requires disposition, not an automatic pack edit."
+    },
+    {
+      "id": "T24-p2",
+      "proposedRelation": "answered-it",
+      "reason": "The same Why is alignment hard section explains why a builder loses control as the AI becomes smarter; P1 does not require naming a rival.",
+      "contextOnly": true,
+      "voice": "author",
+      "earliestRole": "none; 2018 attestation is later than both the admitted contest and T24-p1."
+    },
+    {
+      "id": "T30-w1",
+      "proposedRelation": "related",
+      "reason": "This quotation retrospectively revises his interpretation of ethical; the surrounding text stays agnostic about human survival and still expects objective moral goals.",
+      "contextOnly": true,
+      "voice": "retrospective",
+      "earliestRole": "remove earliest-located; retain the admitted 2000-11-13 contest."
+    }
+  ],
+  "results": [
+    {
+      "id": "T03-w1",
+      "take": "T03",
+      "premise": "T03-P1",
+      "source": "wb-sm-tmol_faq_logic_ext_html",
+      "packRelation": "said-it",
+      "packRoles": ["earliest-located"],
+      "packVoice": "author",
+      "packContextOnly": true,
+      "verdict": "agree",
+      "proposedRelation": "said-it",
+      "relationAgreement": true,
+      "reason": "The same paragraph links understanding intended desires to fulfilling them inside the explicitly conditional arbitrary-goals fallback.",
+      "checks": {
+        "quote": {
+          "status": "verified",
+          "method": "Case-sensitive word sequence after whitespace, Unicode ligature, typographic quotation-mark and dash normalisation; explicit ellipses checked as ordered fragments; no case-folding or word substitution."
+        },
+        "locator": {
+          "status": "verified",
+          "detail": "Section 2.8 and its paragraph opening are correct. The independently retrieved 2000-09-02 expression lacks section 2.8. This verifies absence in that expression only, not every intermediate capture. No proposition-specific later rejection was verified; do not promote to earlier-self."
+        },
+        "date": {
+          "status": "verified-for-specified-expression",
+          "claimedDate": "page notice '(c)1999 and (c)2000'",
+          "packAttestedDate": "2001-01-25",
+          "returnedCapture": "20010125110200",
+          "earliestMatchingImportedRevision": null
+        },
+        "voice": {
+          "status": "verified-or-proposed-correction",
+          "proposed": "author"
+        },
+        "relation": {
+          "status": "evaluated",
+          "proposed": "said-it"
+        },
+        "contextOnly": {
+          "proposed": true
+        },
+        "earliestRole": {
+          "recommendation": "keep: earliest articulating expression in the stored baseline comparison; not earlier than the admitted 2000-12-10 contest."
+        }
+      },
+      "inspectedOriginalExpression": true,
+      "detail": "Section 2.8 and its paragraph opening are correct. The independently retrieved 2000-09-02 expression lacks section 2.8. This verifies absence in that expression only, not every intermediate capture. No proposition-specific later rejection was verified; do not promote to earlier-self."
+    },
+    {
+      "id": "T09-r1",
+      "take": "T09",
+      "premise": "T09-P1",
+      "source": "arb-rw2mpDBLSBEkFsHFG",
+      "packRelation": "related",
+      "packRoles": [],
+      "packVoice": "author",
+      "packContextOnly": false,
+      "verdict": "disagree",
+      "proposedRelation": "related",
+      "relationAgreement": true,
+      "reason": "Keep related, but add context-only: the excerpt omits its proposal attribution and hypothetical-failure framing.",
+      "checks": {
+        "quote": {
+          "status": "verified",
+          "method": "Case-sensitive word sequence after whitespace, Unicode ligature, typographic quotation-mark and dash normalisation; explicit ellipses checked as ordered fragments; no case-folding or word substitution."
+        },
+        "locator": {
+          "status": "verified",
+          "detail": "The third bullet is explicitly a hypothetical example; arguendo is not an established prediction. It concerns imitating human actions, not next-token prediction. Its context paraphrase should preserve that conditional framing."
+        },
+        "date": {
+          "status": "verified-for-specified-expression",
+          "claimedDate": null,
+          "packAttestedDate": "2016-06-08",
+          "returnedCapture": null,
+          "earliestMatchingImportedRevision": {
+            "version": "1.1.0",
+            "editedAt": "2016-06-08T08:32:32.000Z",
+            "userId": "nmk3nLpQE89dMRzzN"
+          }
+        },
+        "voice": {
+          "status": "verified-or-proposed-correction",
+          "proposed": "author"
+        },
+        "relation": {
+          "status": "evaluated",
+          "proposed": "related"
+        },
+        "contextOnly": {
+          "proposed": true
+        },
+        "earliestRole": {
+          "recommendation": "none"
+        }
+      },
+      "inspectedOriginalExpression": true,
+      "detail": "The third bullet is explicitly a hypothetical example; arguendo is not an established prediction. It concerns imitating human actions, not next-token prediction. Its context paraphrase should preserve that conditional framing."
+    },
+    {
+      "id": "T09-r2",
+      "take": "T09",
+      "premise": "T09-P1",
+      "source": "arb-npFNciEAc2sEwoDgu",
+      "packRelation": "answered-it",
+      "packRoles": ["earliest-located"],
+      "packVoice": "author",
+      "packContextOnly": false,
+      "verdict": "disagree",
+      "proposedRelation": "related",
+      "relationAgreement": false,
+      "reason": "Imitating a planning human is not the specified next-token prediction task; the step connecting them is absent from this section.",
+      "checks": {
+        "quote": {
+          "status": "verified",
+          "method": "Case-sensitive word sequence after whitespace, Unicode ligature, typographic quotation-mark and dash normalisation; explicit ellipses checked as ordered fragments; no case-folding or word substitution."
+        },
+        "locator": {
+          "status": "verified",
+          "detail": "The quotation and section are exact, but it does not state or contest T09-P1 about next-token prediction. Treating human-behaviour imitation as that task silently broadens the premise. The 2016-06-10 date authenticates this different argument, not an earlier answer to the specified take."
+        },
+        "date": {
+          "status": "verified-for-specified-expression",
+          "claimedDate": null,
+          "packAttestedDate": "2016-06-10",
+          "returnedCapture": null,
+          "earliestMatchingImportedRevision": {
+            "version": "1.6.0",
+            "editedAt": "2016-06-10T06:55:39.000Z",
+            "userId": "nmk3nLpQE89dMRzzN"
+          }
+        },
+        "voice": {
+          "status": "verified-or-proposed-correction",
+          "proposed": "author"
+        },
+        "relation": {
+          "status": "evaluated",
+          "proposed": "related"
+        },
+        "contextOnly": {
+          "proposed": false
+        },
+        "earliestRole": {
+          "recommendation": "remove earliest-located; the admitted 2022-02-28 contest remains earliest under the unchanged criterion."
+        }
+      },
+      "inspectedOriginalExpression": true,
+      "detail": "The quotation and section are exact, but it does not state or contest T09-P1 about next-token prediction. Treating human-behaviour imitation as that task silently broadens the premise. The 2016-06-10 date authenticates this different argument, not an earlier answer to the specified take."
+    },
+    {
+      "id": "T12-w1",
+      "take": "T12",
+      "premise": "T12-P1",
+      "source": "wb-si-CaTAI_friendly_design_seed_html",
+      "packRelation": "answered-it",
+      "packRoles": ["earliest-located"],
+      "packVoice": "author",
+      "packContextOnly": false,
+      "verdict": "cannot verify",
+      "proposedRelation": null,
+      "relationAgreement": null,
+      "reason": "All fresh routes to the recorded 2001-04-28 capture redirect to an archived 2021-04-18 HTTP 404; its quotation and flight-recorder locator were not inspected.",
+      "checks": {
+        "quote": {
+          "status": "cannot-verify",
+          "method": "Case-sensitive word sequence after whitespace, Unicode ligature, typographic quotation-mark and dash normalisation; explicit ellipses checked as ordered fragments; no case-folding or word substitution."
+        },
+        "locator": {
+          "status": "unverified-for-recorded-capture",
+          "detail": "The contents page independently attributes the work to Yudkowsky, but that cannot verify the absent seed-page expression. The relation would require the actual flight-recorder passage; neither Claude verification nor the admitted later quotation substitutes for retrieval."
+        },
+        "date": {
+          "status": "cannot-verify-recorded-capture",
+          "claimedDate": "Page footer: 'Coding a Transhuman AI is ©2001 by Singularity Institute for Artificial Intelligence, Inc.'; the section's contents page (si-CaTAI_friendly_contents_html, captured 2001-04-21) adds 'Written by Eliezer S. Yudkowsky.'",
+          "packAttestedDate": "2001-04-28",
+          "returnedCapture": "20210418212110",
+          "earliestMatchingImportedRevision": null
+        },
+        "voice": {
+          "status": "cannot-verify",
+          "proposed": null
+        },
+        "relation": {
+          "status": "provisional-or-unverified",
+          "proposed": null
+        },
+        "contextOnly": {
+          "proposed": null
+        },
+        "earliestRole": {
+          "recommendation": "unverified; do not certify the April attestation."
+        }
+      },
+      "inspectedOriginalExpression": false,
+      "detail": "The contents page independently attributes the work to Yudkowsky, but that cannot verify the absent seed-page expression. The relation would require the actual flight-recorder passage; neither Claude verification nor the admitted later quotation substitutes for retrieval."
+    },
+    {
+      "id": "T13-w1",
+      "take": "T13",
+      "premise": "T13-P2",
+      "source": "wb-si-CaTAI_friendly_policy_html",
+      "packRelation": "answered-it",
+      "packRoles": ["earliest-located"],
+      "packVoice": "author",
+      "packContextOnly": false,
+      "verdict": "agree",
+      "proposedRelation": "answered-it",
+      "relationAgreement": true,
+      "reason": "The same computing-power section explains why postponement compresses AI development while not reducing the difficulty of Friendliness.",
+      "checks": {
+        "quote": {
+          "status": "verified",
+          "method": "Case-sensitive word sequence after whitespace, Unicode ligature, typographic quotation-mark and dash normalisation; explicit ellipses checked as ordered fragments; no case-folding or word substitution."
+        },
+        "locator": {
+          "status": "verified",
+          "detail": "Both elided fragments match in order. Section 4.4.1.2 and the named paragraph opening are correct. The contents capture establishes authorship; March 2001 and the footer are claimed dates, not dates of these sentences. This engages P2, not P1."
+        },
+        "date": {
+          "status": "verified-for-specified-expression",
+          "claimedDate": "Page footer: 'Coding a Transhuman AI is ©2001 by Singularity Institute for Artificial Intelligence, Inc.'; the section states computing power 'currently (Mar 2001)'; contents page captured 2001-04-21 says 'Written by Eliezer S. Yudkowsky.'",
+          "packAttestedDate": "2001-04-29",
+          "returnedCapture": "20010429022056",
+          "earliestMatchingImportedRevision": null
+        },
+        "voice": {
+          "status": "verified-or-proposed-correction",
+          "proposed": "author"
+        },
+        "relation": {
+          "status": "evaluated",
+          "proposed": "answered-it"
+        },
+        "contextOnly": {
+          "proposed": false
+        },
+        "earliestRole": {
+          "recommendation": "keep: 2001-04-29 is earlier than the admitted 2006 draft/capture."
+        }
+      },
+      "inspectedOriginalExpression": true,
+      "detail": "Both elided fragments match in order. Section 4.4.1.2 and the named paragraph opening are correct. The contents capture establishes authorship; March 2001 and the footer are claimed dates, not dates of these sentences. This engages P2, not P1."
+    },
+    {
+      "id": "T14-w1",
+      "take": "T14",
+      "premise": "T14-P1",
+      "source": "wb-si-singularitarian_plan_html",
+      "packRelation": "related",
+      "packRoles": [],
+      "packVoice": "author",
+      "packContextOnly": false,
+      "verdict": "disagree",
+      "proposedRelation": "answered-it",
+      "relationAgreement": false,
+      "reason": "Footnote 107 gives a causal reason against retrying after a goal-system failure: the AI can lose the desire to correct errors.",
+      "checks": {
+        "quote": {
+          "status": "verified",
+          "method": "Case-sensitive word sequence after whitespace, Unicode ligature, typographic quotation-mark and dash normalisation; explicit ellipses checked as ordered fragments; no case-folding or word substitution."
+        },
+        "locator": {
+          "status": "verified",
+          "detail": "The exact footnote and its anchor in 2.2.11 are verified. The same footnote calls the requirement a Singularity precaution and discusses self-modifying code, so this is more than an unrelated design remark. Keep its scope explicit: nonrecoverable goal-system errors, not every AI failure; adjacent text positively recommends recovery from other errors. No named interlocutor is required by the engagement rule."
+        },
+        "date": {
+          "status": "verified-for-specified-expression",
+          "claimedDate": "Version 1.0.8; '©1999 and © 2000 by Eliezer S. Yudkowsky'; latest version-history entry Mar 23, 2000",
+          "packAttestedDate": "2000-08-17",
+          "returnedCapture": "20000817022243",
+          "earliestMatchingImportedRevision": null
+        },
+        "voice": {
+          "status": "verified-or-proposed-correction",
+          "proposed": "author"
+        },
+        "relation": {
+          "status": "evaluated",
+          "proposed": "answered-it"
+        },
+        "contextOnly": {
+          "proposed": true
+        },
+        "earliestRole": {
+          "recommendation": "propose earliest contesting: 2000-08-17, before the admitted 2000-09-05; requires disposition, not an automatic pack edit."
+        }
+      },
+      "inspectedOriginalExpression": true,
+      "detail": "The exact footnote and its anchor in 2.2.11 are verified. The same footnote calls the requirement a Singularity precaution and discusses self-modifying code, so this is more than an unrelated design remark. Keep its scope explicit: nonrecoverable goal-system errors, not every AI failure; adjacent text positively recommends recovery from other errors. No named interlocutor is required by the engagement rule."
+    },
+    {
+      "id": "T17-w1",
+      "take": "T17",
+      "premise": "T17-P1",
+      "source": "wb-sm-sing_principles_ext_html",
+      "packRelation": "related",
+      "packRoles": [],
+      "packVoice": "author",
+      "packContextOnly": true,
+      "verdict": "agree",
+      "proposedRelation": "related",
+      "relationAgreement": true,
+      "reason": "This rejects deferring the Singularity to another generation, not the sufficiency of a fixed AI-safety pause.",
+      "checks": {
+        "quote": {
+          "status": "verified",
+          "method": "Case-sensitive word sequence after whitespace, Unicode ligature, typographic quotation-mark and dash normalisation; explicit ellipses checked as ordered fragments; no case-folding or word substitution."
+        },
+        "locator": {
+          "status": "verified",
+          "detail": "The Solidarity paragraph is exact. Its anti-delay reasoning invokes ageing, technological competition and a historical stance on superintelligence. Do not present it as his later view on an AI-safety halt. Claimed version date 2000-01-01 is distinct from capture 2001-02-13."
+        },
+        "date": {
+          "status": "verified-for-specified-expression",
+          "claimedDate": "Version 1.0.1, 01/01/2000; '©1999 and ©2000 by Eliezer S. Yudkowsky'",
+          "packAttestedDate": "2001-02-13",
+          "returnedCapture": "20010213233956",
+          "earliestMatchingImportedRevision": null
+        },
+        "voice": {
+          "status": "verified-or-proposed-correction",
+          "proposed": "author"
+        },
+        "relation": {
+          "status": "evaluated",
+          "proposed": "related"
+        },
+        "contextOnly": {
+          "proposed": true
+        },
+        "earliestRole": {
+          "recommendation": "none"
+        }
+      },
+      "inspectedOriginalExpression": true,
+      "detail": "The Solidarity paragraph is exact. Its anti-delay reasoning invokes ageing, technological competition and a historical stance on superintelligence. Do not present it as his later view on an AI-safety halt. Claimed version date 2000-01-01 is distinct from capture 2001-02-13."
+    },
+    {
+      "id": "T17-w2",
+      "take": "T17",
+      "premise": "T17-P2",
+      "source": "wb-si-CaTAI_friendly_policy_html",
+      "packRelation": "answered-it",
+      "packRoles": [],
+      "packVoice": "author",
+      "packContextOnly": true,
+      "verdict": "agree",
+      "proposedRelation": "answered-it",
+      "relationAgreement": true,
+      "reason": "The same relinquishment section argues that partial bans move development to noncompliant states or factions instead of preventing it.",
+      "checks": {
+        "quote": {
+          "status": "verified",
+          "method": "Case-sensitive word sequence after whitespace, Unicode ligature, typographic quotation-mark and dash normalisation; explicit ellipses checked as ordered fragments; no case-folding or word substitution."
+        },
+        "locator": {
+          "status": "verified",
+          "detail": "Section 4.4.2.2 and the named paragraph match. It addresses P2 and distinguishes development from deployment. Retain the historical qualification and the pointer to his later halt position; that later text was not independently re-fetched in this check."
+        },
+        "date": {
+          "status": "verified-for-specified-expression",
+          "claimedDate": "Page footer: 'Coding a Transhuman AI is ©2001 by Singularity Institute for Artificial Intelligence, Inc.'; contents page captured 2001-04-21 says 'Written by Eliezer S. Yudkowsky.'",
+          "packAttestedDate": "2001-04-29",
+          "returnedCapture": "20010429022056",
+          "earliestMatchingImportedRevision": null
+        },
+        "voice": {
+          "status": "verified-or-proposed-correction",
+          "proposed": "author"
+        },
+        "relation": {
+          "status": "evaluated",
+          "proposed": "answered-it"
+        },
+        "contextOnly": {
+          "proposed": true
+        },
+        "earliestRole": {
+          "recommendation": "none; later than the admitted 1998 contest."
+        }
+      },
+      "inspectedOriginalExpression": true,
+      "detail": "Section 4.4.2.2 and the named paragraph match. It addresses P2 and distinguishes development from deployment. Retain the historical qualification and the pointer to his later halt position; that later text was not independently re-fetched in this check."
+    },
+    {
+      "id": "T24-r1",
+      "take": "T24",
+      "premise": "T24-P1",
+      "source": "arb-Zzq3SniSJjDACATr5",
+      "packRelation": "answered-it",
+      "packRoles": [],
+      "packVoice": "fiction",
+      "packContextOnly": true,
+      "verdict": "agree",
+      "proposedRelation": "answered-it",
+      "relationAgreement": true,
+      "reason": "The same fictional turn explicitly discusses rival builders and explains that none can yet aim the rocket at the intended destination.",
+      "checks": {
+        "quote": {
+          "status": "verified",
+          "method": "Case-sensitive word sequence after whitespace, Unicode ligature, typographic quotation-mark and dash normalisation; explicit ellipses checked as ordered fragments; no case-folding or word substitution."
+        },
+        "locator": {
+          "status": "verified",
+          "detail": "The earliest matching imported revision is his 1.11.0, 2015-12-05T08:54:52Z. The line is Alpha's, not a direct authorial statement. Its attribution is not borrowed from the 2018 edit that changed speaker names and added the ill-intentioned-people question."
+        },
+        "date": {
+          "status": "verified-for-specified-expression",
+          "claimedDate": null,
+          "packAttestedDate": "2015-12-05",
+          "returnedCapture": null,
+          "earliestMatchingImportedRevision": {
+            "version": "1.11.0",
+            "editedAt": "2015-12-05T08:54:52.000Z",
+            "userId": "nmk3nLpQE89dMRzzN"
+          }
+        },
+        "voice": {
+          "status": "verified-or-proposed-correction",
+          "proposed": "fiction"
+        },
+        "relation": {
+          "status": "evaluated",
+          "proposed": "answered-it"
+        },
+        "contextOnly": {
+          "proposed": true
+        },
+        "earliestRole": {
+          "recommendation": "none; later than the admitted 2007 contest."
+        }
+      },
+      "inspectedOriginalExpression": true,
+      "detail": "The earliest matching imported revision is his 1.11.0, 2015-12-05T08:54:52Z. The line is Alpha's, not a direct authorial statement. Its attribution is not borrowed from the 2018 edit that changed speaker names and added the ill-intentioned-people question."
+    },
+    {
+      "id": "T24-w1",
+      "take": "T24",
+      "premise": "T24-P2",
+      "source": "wb-si-singularitarian_PtS_navigation_crns_html",
+      "packRelation": "related",
+      "packRoles": [],
+      "packVoice": "author",
+      "packContextOnly": true,
+      "verdict": "cannot verify",
+      "proposedRelation": "related",
+      "relationAgreement": null,
+      "reason": "The recorded 2000-07-11 capture redirects to 2000-08-29; the quotation matches that later copy, not an independently retrieved July expression.",
+      "checks": {
+        "quote": {
+          "status": "matches-later-expression-only",
+          "method": "Case-sensitive word sequence after whitespace, Unicode ligature, typographic quotation-mark and dash normalisation; explicit ellipses checked as ordered fragments; no case-folding or word substitution."
+        },
+        "locator": {
+          "status": "unverified-for-recorded-capture",
+          "detail": "Provisional relation agrees: this is AI versus nanotechnology, not a race between rival AI builders. The later copy's paragraph and both elided fragments match; its raw-byte hash also matches the pack's recorded hash. A matching hash supplied by the pack does not authenticate the claimed July capture. The monolithic Plan separately contains the passage in the verified 2000-08-17 capture."
+        },
+        "date": {
+          "status": "cannot-verify-recorded-capture",
+          "claimedDate": "©1999 and ©2000 (The Plan to Singularity); monolithic version 1.0.8 last modified 2000-03-23",
+          "packAttestedDate": "2000-07-11",
+          "returnedCapture": "20000829065223",
+          "earliestMatchingImportedRevision": null
+        },
+        "voice": {
+          "status": "provisional-from-later-copy",
+          "proposed": "author"
+        },
+        "relation": {
+          "status": "provisional-or-unverified",
+          "proposed": "related"
+        },
+        "contextOnly": {
+          "proposed": true
+        },
+        "earliestRole": {
+          "recommendation": "none; do not certify July."
+        }
+      },
+      "inspectedOriginalExpression": false,
+      "detail": "Provisional relation agrees: this is AI versus nanotechnology, not a race between rival AI builders. The later copy's paragraph and both elided fragments match; its raw-byte hash also matches the pack's recorded hash. A matching hash supplied by the pack does not authenticate the claimed July capture. The monolithic Plan separately contains the passage in the verified 2000-08-17 capture."
+    },
+    {
+      "id": "T24-w2",
+      "take": "T24",
+      "premise": "T24-P1",
+      "source": "wb-si-singularitarian_plan_html",
+      "packRelation": "related",
+      "packRoles": [],
+      "packVoice": "author",
+      "packContextOnly": true,
+      "verdict": "agree",
+      "proposedRelation": "related",
+      "relationAgreement": true,
+      "reason": "It assigns authority over initial programming within his proposed project; it does not establish that building AI gives effective control over it.",
+      "checks": {
+        "quote": {
+          "status": "verified",
+          "method": "Case-sensitive word sequence after whitespace, Unicode ligature, typographic quotation-mark and dash normalisation; explicit ellipses checked as ordered fragments; no case-folding or word substitution."
+        },
+        "locator": {
+          "status": "verified",
+          "detail": "The quotation is in the paragraph beginning There are deep policy questions in 3.2.4, before 3.2.4.1; the locator's reference to continuing into 3.2.4.2 is unnecessary for finding the excerpt. Preserve the joking opening and its immediate qualification."
+        },
+        "date": {
+          "status": "verified-for-specified-expression",
+          "claimedDate": "Version 1.0.8, ©1999 and ©2000; last modified 2000-03-23",
+          "packAttestedDate": "2000-08-17",
+          "returnedCapture": "20000817022243",
+          "earliestMatchingImportedRevision": null
+        },
+        "voice": {
+          "status": "verified-or-proposed-correction",
+          "proposed": "author"
+        },
+        "relation": {
+          "status": "evaluated",
+          "proposed": "related"
+        },
+        "contextOnly": {
+          "proposed": true
+        },
+        "earliestRole": {
+          "recommendation": "none"
+        }
+      },
+      "inspectedOriginalExpression": true,
+      "detail": "The quotation is in the paragraph beginning There are deep policy questions in 3.2.4, before 3.2.4.1; the locator's reference to continuing into 3.2.4.2 is unnecessary for finding the excerpt. Preserve the joking opening and its immediate qualification."
+    },
+    {
+      "id": "T24-w3",
+      "take": "T24",
+      "premise": "T24-P1",
+      "source": "wb-si-singularitarian_plan_html",
+      "packRelation": "related",
+      "packRoles": [],
+      "packVoice": "author",
+      "packContextOnly": true,
+      "verdict": "agree",
+      "proposedRelation": "related",
+      "relationAgreement": true,
+      "reason": "The footnote explores a conditional hypothesis about determined morality and Asimov constraints rather than asserting an actual builder-control outcome.",
+      "checks": {
+        "quote": {
+          "status": "verified",
+          "method": "Case-sensitive word sequence after whitespace, Unicode ligature, typographic quotation-mark and dash normalisation; explicit ellipses checked as ordered fragments; no case-folding or word substitution."
+        },
+        "locator": {
+          "status": "verified",
+          "detail": "Footnote 211 and its link from 3.2.4 are verified. The missing condition is crucial: the outcome must be determined, a hypothesis the footnote leaves open against constrained and open alternatives. It does not establish that all constraints fail or a particular rival race is futile."
+        },
+        "date": {
+          "status": "verified-for-specified-expression",
+          "claimedDate": "footnote dated in text 'as of Wednesday the 15th of December, 1999'; document ©1999 and ©2000",
+          "packAttestedDate": "2000-08-17",
+          "returnedCapture": "20000817022243",
+          "earliestMatchingImportedRevision": null
+        },
+        "voice": {
+          "status": "verified-or-proposed-correction",
+          "proposed": "author"
+        },
+        "relation": {
+          "status": "evaluated",
+          "proposed": "related"
+        },
+        "contextOnly": {
+          "proposed": true
+        },
+        "earliestRole": {
+          "recommendation": "none"
+        }
+      },
+      "inspectedOriginalExpression": true,
+      "detail": "Footnote 211 and its link from 3.2.4 are verified. The missing condition is crucial: the outcome must be determined, a hypothesis the footnote leaves open against constrained and open alternatives. It does not establish that all constraints fail or a particular rival race is futile."
+    },
+    {
+      "id": "T24-w4",
+      "take": "T24",
+      "premise": "T24-P1",
+      "source": "wb-si-friendly_collective_volition_html",
+      "packRelation": "answered-it",
+      "packRoles": [],
+      "packVoice": "author",
+      "packContextOnly": false,
+      "verdict": "cannot verify",
+      "proposedRelation": "answered-it",
+      "relationAgreement": null,
+      "reason": "The recorded 2004-06-23 capture redirects to 2004-08-14; quote and guideline match the later copy, but June wording was not retrieved.",
+      "checks": {
+        "quote": {
+          "status": "matches-later-expression-only",
+          "method": "Case-sensitive word sequence after whitespace, Unicode ligature, typographic quotation-mark and dash normalisation; explicit ellipses checked as ordered fragments; no case-folding or word substitution."
+        },
+        "locator": {
+          "status": "unverified-for-recorded-capture",
+          "detail": "Provisional relation agrees: guideline 5 gives a reason why builder identity does not secure a different outcome without Friendliness. The later copy is attributed to Yudkowsky. Its date does not replace or certify the pack's June attestation; no negative quotation verdict is inferred from the failed original replay."
+        },
+        "date": {
+          "status": "cannot-verify-recorded-capture",
+          "claimedDate": "May 2004 (byline 'Eliezer S. Yudkowsky, Singularity Institute for Artificial Intelligence, May 2004')",
+          "packAttestedDate": "2004-06-23",
+          "returnedCapture": "20040814174713",
+          "earliestMatchingImportedRevision": null
+        },
+        "voice": {
+          "status": "provisional-from-later-copy",
+          "proposed": "author"
+        },
+        "relation": {
+          "status": "provisional-or-unverified",
+          "proposed": "answered-it"
+        },
+        "contextOnly": {
+          "proposed": false
+        },
+        "earliestRole": {
+          "recommendation": "none; do not certify June."
+        }
+      },
+      "inspectedOriginalExpression": false,
+      "detail": "Provisional relation agrees: guideline 5 gives a reason why builder identity does not secure a different outcome without Friendliness. The later copy is attributed to Yudkowsky. Its date does not replace or certify the pack's June attestation; no negative quotation verdict is inferred from the failed original replay."
+    },
+    {
+      "id": "T24-p1",
+      "take": "T24",
+      "premise": "T24-P2",
+      "source": "wb-si-friendly_why_friendly_html",
+      "packRelation": "answered-it",
+      "packRoles": ["earliest-located"],
+      "packVoice": "author",
+      "packContextOnly": false,
+      "verdict": "agree",
+      "proposedRelation": "answered-it",
+      "relationAgreement": true,
+      "reason": "The same paragraph says good-versus-bad builder advantage cannot rescue a race when neither can build Friendly AI.",
+      "checks": {
+        "quote": {
+          "status": "verified",
+          "method": "Case-sensitive word sequence after whitespace, Unicode ligature, typographic quotation-mark and dash normalisation; explicit ellipses checked as ordered fragments; no case-folding or word substitution."
+        },
+        "locator": {
+          "status": "verified",
+          "detail": "The capture identifies this as an edited transcript of his 2003 speech. The named paragraph and quote are exact. The paragraph permits being first with a Friendly AI; this contests racing without the technical capability, not being first under every condition."
+        },
+        "date": {
+          "status": "verified-for-specified-expression",
+          "claimedDate": "2003 (talk at the Foresight Senior Associates Gathering; no day given)",
+          "packAttestedDate": "2004-05-07",
+          "returnedCapture": "20040507231731",
+          "earliestMatchingImportedRevision": null
+        },
+        "voice": {
+          "status": "verified-or-proposed-correction",
+          "proposed": "author"
+        },
+        "relation": {
+          "status": "evaluated",
+          "proposed": "answered-it"
+        },
+        "contextOnly": {
+          "proposed": false
+        },
+        "earliestRole": {
+          "recommendation": "keep: verified 2004-05-07 is earlier than the admitted 2007-11-24 contest."
+        }
+      },
+      "inspectedOriginalExpression": true,
+      "detail": "The capture identifies this as an edited transcript of his 2003 speech. The named paragraph and quote are exact. The paragraph permits being first with a Friendly AI; this contests racing without the technical capability, not being first under every condition."
+    },
+    {
+      "id": "T24-p2",
+      "take": "T24",
+      "premise": "T24-P1",
+      "source": "wb-pdf-alignment-hard-start",
+      "packRelation": "related",
+      "packRoles": [],
+      "packVoice": "author",
+      "packContextOnly": true,
+      "verdict": "disagree",
+      "proposedRelation": "answered-it",
+      "relationAgreement": false,
+      "reason": "The same Why is alignment hard section explains why a builder loses control as the AI becomes smarter; P1 does not require naming a rival.",
+      "checks": {
+        "quote": {
+          "status": "verified",
+          "method": "Case-sensitive word sequence after whitespace, Unicode ligature, typographic quotation-mark and dash normalisation; explicit ellipses checked as ordered fragments; no case-folding or word substitution."
+        },
+        "locator": {
+          "status": "verified",
+          "detail": "PDF page 10 (printed and file page) contains the quoted expectation; pages 10–13 supply the rebuttal through concealed goal preservation, widened policy search and failed patches. The short quotation voices an expectation he then challenges, so context-only remains essential. The talk's claimed 2016-05-05 date is not authenticated for this wording by the 2018 PDF capture."
+        },
+        "date": {
+          "status": "verified-for-specified-expression",
+          "claimedDate": "2016-05-05 (talk date on the MIRI transcript)",
+          "packAttestedDate": "2018-09-10",
+          "returnedCapture": "20180910210613",
+          "earliestMatchingImportedRevision": null
+        },
+        "voice": {
+          "status": "verified-or-proposed-correction",
+          "proposed": "author"
+        },
+        "relation": {
+          "status": "evaluated",
+          "proposed": "answered-it"
+        },
+        "contextOnly": {
+          "proposed": true
+        },
+        "earliestRole": {
+          "recommendation": "none; 2018 attestation is later than both the admitted contest and T24-p1."
+        }
+      },
+      "inspectedOriginalExpression": true,
+      "detail": "PDF page 10 (printed and file page) contains the quoted expectation; pages 10–13 supply the rebuttal through concealed goal preservation, widened policy search and failed patches. The short quotation voices an expectation he then challenges, so context-only remains essential. The talk's claimed 2016-05-05 date is not authenticated for this wording by the 2018 PDF capture."
+    },
+    {
+      "id": "T28-w1",
+      "take": "T28",
+      "premise": "T28-P2",
+      "source": "wb-si-CaTAI_friendly_policy_html",
+      "packRelation": "said-it",
+      "packRoles": ["earliest-located"],
+      "packVoice": "author",
+      "packContextOnly": true,
+      "verdict": "agree",
+      "proposedRelation": "said-it",
+      "relationAgreement": true,
+      "reason": "The regulation section explicitly says the most advanced projects have researchers most capable of handling Friendliness.",
+      "checks": {
+        "quote": {
+          "status": "verified",
+          "method": "Case-sensitive word sequence after whitespace, Unicode ligature, typographic quotation-mark and dash normalisation; explicit ellipses checked as ordered fragments; no case-folding or word substitution."
+        },
+        "locator": {
+          "status": "verified",
+          "detail": "Section 4.4.2.1, first paragraph, and quote match. The contents page establishes authorship. Keep the later contrary texts attached as the pack requires; they were not re-fetched here, and this check does not certify a proposition-specific earlier-self pairing."
+        },
+        "date": {
+          "status": "verified-for-specified-expression",
+          "claimedDate": "©2001 by Singularity Institute for Artificial Intelligence, Inc. (page footer of the pre-release Friendly AI section of Coding a Transhuman AI)",
+          "packAttestedDate": "2001-04-29",
+          "returnedCapture": "20010429022056",
+          "earliestMatchingImportedRevision": null
+        },
+        "voice": {
+          "status": "verified-or-proposed-correction",
+          "proposed": "author"
+        },
+        "relation": {
+          "status": "evaluated",
+          "proposed": "said-it"
+        },
+        "contextOnly": {
+          "proposed": true
+        },
+        "earliestRole": {
+          "recommendation": "keep: 2001-04-29 precedes the admitted articulation attested 2001-06-17."
+        }
+      },
+      "inspectedOriginalExpression": true,
+      "detail": "Section 4.4.2.1, first paragraph, and quote match. The contents page establishes authorship. Keep the later contrary texts attached as the pack requires; they were not re-fetched here, and this check does not certify a proposition-specific earlier-self pairing."
+    },
+    {
+      "id": "T28-w2",
+      "take": "T28",
+      "premise": "T28-P2",
+      "source": "wb-si-singularitarian_plan_html",
+      "packRelation": "related",
+      "packRoles": [],
+      "packVoice": "author",
+      "packContextOnly": true,
+      "verdict": "agree",
+      "proposedRelation": "related",
+      "relationAgreement": true,
+      "reason": "It trusts the engineer closest to one proposed AI, not the most advanced labs or projects as a class.",
+      "checks": {
+        "quote": {
+          "status": "verified",
+          "method": "Case-sensitive word sequence after whitespace, Unicode ligature, typographic quotation-mark and dash normalisation; explicit ellipses checked as ordered fragments; no case-folding or word substitution."
+        },
+        "locator": {
+          "status": "verified",
+          "detail": "The sentence is in the same 3.2.4 paragraph as T24-w2, before 3.2.4.1. It has a narrow non-suicidal-decision threshold and an internal-governance setting. The context-only qualification prevents it becoming a generic assurance about labs."
+        },
+        "date": {
+          "status": "verified-for-specified-expression",
+          "claimedDate": "Version 1.0.8, ©1999 and ©2000; last modified 2000-03-23",
+          "packAttestedDate": "2000-08-17",
+          "returnedCapture": "20000817022243",
+          "earliestMatchingImportedRevision": null
+        },
+        "voice": {
+          "status": "verified-or-proposed-correction",
+          "proposed": "author"
+        },
+        "relation": {
+          "status": "evaluated",
+          "proposed": "related"
+        },
+        "contextOnly": {
+          "proposed": true
+        },
+        "earliestRole": {
+          "recommendation": "none"
+        }
+      },
+      "inspectedOriginalExpression": true,
+      "detail": "The sentence is in the same 3.2.4 paragraph as T24-w2, before 3.2.4.1. It has a narrow non-suicidal-decision threshold and an internal-governance setting. The context-only qualification prevents it becoming a generic assurance about labs."
+    },
+    {
+      "id": "T30-w1",
+      "take": "T30",
+      "premise": "T30-P1",
+      "source": "wb-si-sing_analysis_html",
+      "packRelation": "answered-it",
+      "packRoles": ["earliest-located"],
+      "packVoice": "author",
+      "packContextOnly": true,
+      "verdict": "disagree",
+      "proposedRelation": "related",
+      "relationAgreement": false,
+      "reason": "This quotation retrospectively revises his interpretation of ethical; the surrounding text stays agnostic about human survival and still expects objective moral goals.",
+      "checks": {
+        "quote": {
+          "status": "verified",
+          "method": "Case-sensitive word sequence after whitespace, Unicode ligature, typographic quotation-mark and dash normalisation; explicit ellipses checked as ordered fragments; no case-folding or word substitution."
+        },
+        "locator": {
+          "status": "correction-required",
+          "detail": "The quote exactly matches the 2000-08-17 expression. Correct locator: Superintelligent Motivations, subsection heading No, your pet motivation isn't going to make it, following text beginning Most discussions of SI motivations. The pack calls the heading a paragraph opening. Agnosticism alone would not disqualify an answer, but this quoted self-report is not a current assertion that the default outcome is bad and falls under the pack's retrospective rule. It may document revision of anthropomorphic ethics; it does not establish rejection of the later technical proposition that Friendly AI must be deliberately engineered. Do not certify an earlier-self rejection pairing from it without separately checking the earlier proposition."
+        },
+        "date": {
+          "status": "verified-for-specified-expression",
+          "claimedDate": "©1998 (page header 'Copyright ©1998 by Eliezer S. Yudkowsky'; listed as 'New in '98!' on the tezcat index captured 1998-12-05, but no capture of this page before 2000-08-17 is in the cache)",
+          "packAttestedDate": "2000-08-17",
+          "returnedCapture": "20000817022324",
+          "earliestMatchingImportedRevision": null
+        },
+        "voice": {
+          "status": "verified-or-proposed-correction",
+          "proposed": "retrospective"
+        },
+        "relation": {
+          "status": "evaluated",
+          "proposed": "related"
+        },
+        "contextOnly": {
+          "proposed": true
+        },
+        "earliestRole": {
+          "recommendation": "remove earliest-located; retain the admitted 2000-11-13 contest."
+        }
+      },
+      "inspectedOriginalExpression": true,
+      "detail": "The quote exactly matches the 2000-08-17 expression. Correct locator: Superintelligent Motivations, subsection heading No, your pet motivation isn't going to make it, following text beginning Most discussions of SI motivations. The pack calls the heading a paragraph opening. Agnosticism alone would not disqualify an answer, but this quoted self-report is not a current assertion that the default outcome is bad and falls under the pack's retrospective rule. It may document revision of anthropomorphic ethics; it does not establish rejection of the later technical proposition that Friendly AI must be deliberately engineered. Do not certify an earlier-self rejection pairing from it without separately checking the earlier proposition."
+    }
+  ],
+  "sources": [
+    {
+      "id": "arb-Zzq3SniSJjDACATr5",
+      "title": "The rocket alignment problem",
+      "url": "https://www.lesswrong.com/w/the-rocket-alignment-problem",
+      "method": "direct HTTP POST to LessWrong GraphQL revisionsOnDocument",
+      "requestedCapture": null,
+      "returnedCapture": null,
+      "exactCapture": null,
+      "attempts": [
+        {
+          "requestedUrl": "https://www.lesswrong.com/graphql",
+          "finalUrl": "https://www.lesswrong.com/graphql",
+          "retrievedAt": "2026-10-08T20:14:18.350Z",
+          "httpStatus": 200,
+          "sha256": "cfbebd83e3c443aec862d70590970824c033dfeb3ed0a86a5fb3f7625c16d165",
+          "error": null
+        }
+      ],
+      "rawHashMatchesPack": null,
+      "hashNote": "The fresh hash covers the entire GraphQL response. The pack hashes one revision HTML body, so those digests are not compared."
+    },
+    {
+      "id": "arb-npFNciEAc2sEwoDgu",
+      "title": "Consequentialist cognition",
+      "url": "https://www.lesswrong.com/w/consequentialist-cognition",
+      "method": "direct HTTP POST to LessWrong GraphQL revisionsOnDocument",
+      "requestedCapture": null,
+      "returnedCapture": null,
+      "exactCapture": null,
+      "attempts": [
+        {
+          "requestedUrl": "https://www.lesswrong.com/graphql",
+          "finalUrl": "https://www.lesswrong.com/graphql",
+          "retrievedAt": "2026-10-08T20:14:23.666Z",
+          "httpStatus": 200,
+          "sha256": "ebd5964b90529a8546113666c4575f9e29028a778753c4aebb30b83e0ae65437",
+          "error": null
+        }
+      ],
+      "rawHashMatchesPack": null,
+      "hashNote": "The fresh hash covers the entire GraphQL response. The pack hashes one revision HTML body, so those digests are not compared."
+    },
+    {
+      "id": "arb-rw2mpDBLSBEkFsHFG",
+      "title": "Advanced nonagent",
+      "url": "https://www.lesswrong.com/w/advanced-nonagent",
+      "method": "direct HTTP POST to LessWrong GraphQL revisionsOnDocument",
+      "requestedCapture": null,
+      "returnedCapture": null,
+      "exactCapture": null,
+      "attempts": [
+        {
+          "requestedUrl": "https://www.lesswrong.com/graphql",
+          "finalUrl": "https://www.lesswrong.com/graphql",
+          "retrievedAt": "2026-10-08T20:14:28.201Z",
+          "httpStatus": 200,
+          "sha256": "09a973000abc0045320a1c03c4db23cac15f747aa61f972e9920586f609cbd8a",
+          "error": null
+        }
+      ],
+      "rawHashMatchesPack": null,
+      "hashNote": "The fresh hash covers the entire GraphQL response. The pack hashes one revision HTML body, so those digests are not compared."
+    },
+    {
+      "id": "wb-pdf-alignment-hard-start",
+      "title": "The AI Alignment Problem: Why It's Hard, and Where to Start (MIRI transcript of a 2016-05-05 talk)",
+      "url": "https://web.archive.org/web/20180910210613/https://intelligence.org/files/AlignmentHardStart.pdf",
+      "method": "direct HTTP GET of Wayback raw replay",
+      "requestedCapture": "20180910210613",
+      "returnedCapture": "20180910210613",
+      "exactCapture": true,
+      "attempts": [
+        {
+          "requestedUrl": "https://web.archive.org/web/20180910210613id_/https://intelligence.org/files/AlignmentHardStart.pdf",
+          "finalUrl": "https://web.archive.org/web/20180910210613id_/https://intelligence.org/files/AlignmentHardStart.pdf",
+          "retrievedAt": "2026-10-08T20:14:36.806Z",
+          "httpStatus": 200,
+          "sha256": "146617e0ebfb03b5eced5899450c47036093da27565b28fafb01b3d93c71cdf5",
+          "error": null
+        }
+      ],
+      "rawHashMatchesPack": true
+    },
+    {
+      "id": "wb-si-CaTAI_friendly_design_seed_html",
+      "title": "Coding a Transhuman AI, section 4: Friendly AI (pre-release of Creating Friendly AI): Seed AI goal systems",
+      "url": "https://web.archive.org/web/20010428192009/http://singinst.org:80/CaTAI/friendly/design/seed.html",
+      "method": "direct HTTP GET of Wayback raw replay",
+      "requestedCapture": "20010428192009",
+      "returnedCapture": "20210418212110",
+      "exactCapture": false,
+      "attempts": [
+        {
+          "requestedUrl": "https://web.archive.org/web/20010428192009id_/http://singinst.org:80/CaTAI/friendly/design/seed.html",
+          "finalUrl": "https://web.archive.org/web/20210418212110id_/http://singinst.org/CaTAI/friendly/design/seed.html",
+          "retrievedAt": "2026-10-08T20:14:48.863Z",
+          "httpStatus": 404,
+          "sha256": "d5a89e26beae0bc03ad18a0b0d1d3d75f87c32047879d25da11970cb5c4662a3",
+          "error": null
+        },
+        {
+          "requestedUrl": "https://web.archive.org/web/20010428192009id_/http://singinst.org:80/CaTAI/friendly/design/seed.html",
+          "finalUrl": "https://web.archive.org/web/20210418212110id_/http://singinst.org/CaTAI/friendly/design/seed.html",
+          "retrievedAt": "2026-10-08T20:15:16.061Z",
+          "httpStatus": 404,
+          "sha256": "d5a89e26beae0bc03ad18a0b0d1d3d75f87c32047879d25da11970cb5c4662a3",
+          "error": null
+        }
+      ],
+      "rawHashMatchesPack": false
+    },
+    {
+      "id": "wb-si-CaTAI_friendly_policy_html",
+      "title": "Coding a Transhuman AI, section 4: Friendly AI (pre-release of Creating Friendly AI): Policy implications",
+      "url": "https://web.archive.org/web/20010429022056/http://singinst.org:80/CaTAI/friendly/policy.html",
+      "method": "direct HTTP GET of Wayback raw replay",
+      "requestedCapture": "20010429022056",
+      "returnedCapture": "20010429022056",
+      "exactCapture": true,
+      "attempts": [
+        {
+          "requestedUrl": "https://web.archive.org/web/20010429022056id_/http://singinst.org:80/CaTAI/friendly/policy.html",
+          "finalUrl": "https://web.archive.org/web/20010429022056id_/http://singinst.org:80/CaTAI/friendly/policy.html",
+          "retrievedAt": "2026-10-08T20:15:27.551Z",
+          "httpStatus": 200,
+          "sha256": "6a2918bb3e49f0b7d6bd7d858e5eea0c84bd733f2ce5c78beedf49c73da134ea",
+          "error": null
+        }
+      ],
+      "rawHashMatchesPack": true
+    },
+    {
+      "id": "wb-si-friendly_collective_volition_html",
+      "title": "Collective Volition",
+      "url": "https://web.archive.org/web/20040623153032/http://www.singinst.org:80/friendly/collective-volition.html",
+      "method": "direct HTTP GET of Wayback raw replay",
+      "requestedCapture": "20040623153032",
+      "returnedCapture": "20040814174713",
+      "exactCapture": false,
+      "attempts": [
+        {
+          "requestedUrl": "https://web.archive.org/web/20040623153032id_/http://www.singinst.org:80/friendly/collective-volition.html",
+          "finalUrl": "https://web.archive.org/web/20040814174713id_/http://singinst.org/friendly/collective-volition.html",
+          "retrievedAt": "2026-10-08T20:15:40.262Z",
+          "httpStatus": 200,
+          "sha256": "0816b57ffe728051b0e7b4e75acfdde36d1b66d4d989759b45aa113e0d3893af",
+          "error": null
+        }
+      ],
+      "rawHashMatchesPack": false
+    },
+    {
+      "id": "wb-si-friendly_why_friendly_html",
+      "title": "Why We Need Friendly AI (edited transcript of a 2003 Foresight speech)",
+      "url": "https://web.archive.org/web/20040507231731/http://www.singinst.org:80/friendly/why-friendly.html",
+      "method": "direct HTTP GET of Wayback raw replay",
+      "requestedCapture": "20040507231731",
+      "returnedCapture": "20040507231731",
+      "exactCapture": true,
+      "attempts": [
+        {
+          "requestedUrl": "https://web.archive.org/web/20040507231731id_/http://www.singinst.org:80/friendly/why-friendly.html",
+          "finalUrl": "https://web.archive.org/web/20040507231731id_/http://www.singinst.org:80/friendly/why-friendly.html",
+          "retrievedAt": "2026-10-08T20:15:57.852Z",
+          "httpStatus": 200,
+          "sha256": "55e802f437d6775c9fb5207df8309f3e46988128f0fa5763ef54a580470d04f0",
+          "error": null
+        }
+      ],
+      "rawHashMatchesPack": true
+    },
+    {
+      "id": "wb-si-sing_analysis_html",
+      "title": "Singularity Analysis",
+      "url": "https://web.archive.org/web/20000817022324/http://singinst.org:80/sing_analysis.html",
+      "method": "direct HTTP GET of Wayback raw replay",
+      "requestedCapture": "20000817022324",
+      "returnedCapture": "20000817022324",
+      "exactCapture": true,
+      "attempts": [
+        {
+          "requestedUrl": "https://web.archive.org/web/20000817022324id_/http://singinst.org:80/sing_analysis.html",
+          "finalUrl": "https://web.archive.org/web/20000817022324id_/http://singinst.org:80/sing_analysis.html",
+          "retrievedAt": "2026-10-08T20:16:10.153Z",
+          "httpStatus": 200,
+          "sha256": "92da4f3c35701607266f6da47e426d947cf9a1114c5398f20616754202ccaedb",
+          "error": null
+        }
+      ],
+      "rawHashMatchesPack": true
+    },
+    {
+      "id": "wb-si-singularitarian_PtS_navigation_crns_html",
+      "title": "Navigation: CRNS Time",
+      "url": "https://web.archive.org/web/20000711052247/http://www.singinst.org:80/singularitarian/PtS/navigation/crns.html",
+      "method": "direct HTTP GET of Wayback raw replay",
+      "requestedCapture": "20000711052247",
+      "returnedCapture": "20000829065223",
+      "exactCapture": false,
+      "attempts": [
+        {
+          "requestedUrl": "https://web.archive.org/web/20000711052247id_/http://www.singinst.org:80/singularitarian/PtS/navigation/crns.html",
+          "finalUrl": "https://web.archive.org/web/20000829065223id_/http://singinst.org/singularitarian/PtS/navigation/crns.html",
+          "retrievedAt": "2026-10-08T20:16:22.119Z",
+          "httpStatus": 200,
+          "sha256": "8a7eb65f96efc2450c6d0bc1dcba5a913669f921120bbb88382f10e5fe9bb36e",
+          "error": null
+        }
+      ],
+      "rawHashMatchesPack": true
+    },
+    {
+      "id": "wb-si-singularitarian_plan_html",
+      "title": "The Plan to Singularity",
+      "url": "https://web.archive.org/web/20000817022243/http://singinst.org:80/singularitarian/plan.html",
+      "method": "direct HTTP GET of Wayback raw replay",
+      "requestedCapture": "20000817022243",
+      "returnedCapture": "20000817022243",
+      "exactCapture": true,
+      "attempts": [
+        {
+          "requestedUrl": "https://web.archive.org/web/20000817022243id_/http://singinst.org:80/singularitarian/plan.html",
+          "finalUrl": "https://web.archive.org/web/20000817022243id_/http://singinst.org:80/singularitarian/plan.html",
+          "retrievedAt": "2026-10-08T20:16:38.819Z",
+          "httpStatus": 200,
+          "sha256": "f0fa86603280b7a5cc847db76ec8d247b482b7b31ad54207a1e09defe3109dd7",
+          "error": null
+        }
+      ],
+      "rawHashMatchesPack": true
+    },
+    {
+      "id": "wb-sm-sing_principles_ext_html",
+      "title": "Singularitarian Principles 1.0 (Extended)",
+      "url": "https://web.archive.org/web/20010213233956/http://sysopmind.com:80/sing/principles.ext.html",
+      "method": "direct HTTP GET of Wayback raw replay",
+      "requestedCapture": "20010213233956",
+      "returnedCapture": "20010213233956",
+      "exactCapture": true,
+      "attempts": [
+        {
+          "requestedUrl": "https://web.archive.org/web/20010213233956id_/http://sysopmind.com:80/sing/principles.ext.html",
+          "finalUrl": "https://web.archive.org/web/20010213233956id_/http://sysopmind.com:80/sing/principles.ext.html",
+          "retrievedAt": "2026-10-08T20:16:50.637Z",
+          "httpStatus": 200,
+          "sha256": "ca73250b29ba8e997e8ee439b4c40f98fc2ef32ba9c8c1028338c76c3dd4dce8",
+          "error": null
+        }
+      ],
+      "rawHashMatchesPack": true
+    },
+    {
+      "id": "wb-sm-tmol_faq_logic_ext_html",
+      "title": "Meaning of Life FAQ: Logic",
+      "url": "https://web.archive.org/web/20010125110200/http://sysopmind.com:80/tmol-faq/logic.ext.html",
+      "method": "direct HTTP GET of Wayback raw replay",
+      "requestedCapture": "20010125110200",
+      "returnedCapture": "20010125110200",
+      "exactCapture": true,
+      "attempts": [
+        {
+          "requestedUrl": "https://web.archive.org/web/20010125110200id_/http://sysopmind.com:80/tmol-faq/logic.ext.html",
+          "finalUrl": "https://web.archive.org/web/20010125110200id_/http://sysopmind.com:80/tmol-faq/logic.ext.html",
+          "retrievedAt": "2026-10-08T20:17:01.735Z",
+          "httpStatus": 200,
+          "sha256": "13b5703a8dd19265c0ffe0e5a645a96a4c2555eadb8f069a0fbaaebd7724b629",
+          "error": null
+        }
+      ],
+      "rawHashMatchesPack": true
+    }
+  ],
+  "retrievalAttempts": [
+    {
+      "id": "arb-npFNciEAc2sEwoDgu",
+      "requestedUrl": "https://www.lesswrong.com/graphql",
+      "finalUrl": "https://www.lesswrong.com/graphql",
+      "retrievedAt": "2026-10-08T20:14:23.666Z",
+      "httpStatus": 200,
+      "sha256": "ebd5964b90529a8546113666c4575f9e29028a778753c4aebb30b83e0ae65437",
+      "error": null
+    },
+    {
+      "id": "arb-rw2mpDBLSBEkFsHFG",
+      "requestedUrl": "https://www.lesswrong.com/graphql",
+      "finalUrl": "https://www.lesswrong.com/graphql",
+      "retrievedAt": "2026-10-08T20:14:28.201Z",
+      "httpStatus": 200,
+      "sha256": "09a973000abc0045320a1c03c4db23cac15f747aa61f972e9920586f609cbd8a",
+      "error": null
+    },
+    {
+      "id": "arb-Zzq3SniSJjDACATr5",
+      "requestedUrl": "https://www.lesswrong.com/graphql",
+      "finalUrl": "https://www.lesswrong.com/graphql",
+      "retrievedAt": "2026-10-08T20:14:18.350Z",
+      "httpStatus": 200,
+      "sha256": "cfbebd83e3c443aec862d70590970824c033dfeb3ed0a86a5fb3f7625c16d165",
+      "error": null
+    },
+    {
+      "id": "arbital-editor-account",
+      "requestedUrl": "https://www.lesswrong.com/graphql",
+      "finalUrl": "https://www.lesswrong.com/graphql",
+      "retrievedAt": "2026-10-08T20:22:13.581Z",
+      "httpStatus": 200,
+      "sha256": "0655a9583163b78c71a536a9bfd8afa1e64a9ed41499106b8d09212b7a19660a",
+      "error": null
+    },
+    {
+      "id": "attribution-catai-contents",
+      "requestedUrl": "https://web.archive.org/web/20010421013244id_/http://singinst.org:80/CaTAI/friendly/contents.html",
+      "finalUrl": "https://web.archive.org/web/20010421195546id_/http://singinst.org/CaTAI/friendly/contents.html",
+      "retrievedAt": "2026-10-08T20:17:13.369Z",
+      "httpStatus": 200,
+      "sha256": "273cba62a719ca85fe35eaf1f7c2f6195c0685a59dc59ef1b03165792606ceeb",
+      "error": null
+    },
+    {
+      "id": "attribution-catai-exact",
+      "requestedUrl": "https://web.archive.org/web/20010421195546id_/http://singinst.org:80/CaTAI/friendly/contents.html",
+      "finalUrl": "https://web.archive.org/web/20010421195546id_/http://singinst.org:80/CaTAI/friendly/contents.html",
+      "retrievedAt": "2026-10-08T20:20:53.615Z",
+      "httpStatus": 200,
+      "sha256": "273cba62a719ca85fe35eaf1f7c2f6195c0685a59dc59ef1b03165792606ceeb",
+      "error": null
+    },
+    {
+      "id": "retry-crns-portless",
+      "requestedUrl": "https://web.archive.org/web/20000711052247id_/http://www.singinst.org/singularitarian/PtS/navigation/crns.html",
+      "finalUrl": "https://web.archive.org/web/20000829065223id_/http://singinst.org/singularitarian/PtS/navigation/crns.html",
+      "retrievedAt": "2026-10-08T20:20:38.366Z",
+      "httpStatus": 200,
+      "sha256": "8a7eb65f96efc2450c6d0bc1dcba5a913669f921120bbb88382f10e5fe9bb36e",
+      "error": null
+    },
+    {
+      "id": "retry-crns-recorded",
+      "requestedUrl": "https://web.archive.org/web/20000711052247/http://www.singinst.org:80/singularitarian/PtS/navigation/crns.html",
+      "finalUrl": "https://web.archive.org/web/20000829065223/http://singinst.org/singularitarian/PtS/navigation/crns.html",
+      "retrievedAt": "2026-10-08T20:19:33.815Z",
+      "httpStatus": 200,
+      "sha256": "1ae65e592ea3622d7f0594ce8f371c898eb4215a1190fe7272e70d6fab36eda3",
+      "error": null
+    },
+    {
+      "id": "retry-cv-portless",
+      "requestedUrl": "https://web.archive.org/web/20040623153032id_/http://www.singinst.org/friendly/collective-volition.html",
+      "finalUrl": "https://web.archive.org/web/20040814174713id_/http://singinst.org/friendly/collective-volition.html",
+      "retrievedAt": "2026-10-08T20:20:21.682Z",
+      "httpStatus": 200,
+      "sha256": "0816b57ffe728051b0e7b4e75acfdde36d1b66d4d989759b45aa113e0d3893af",
+      "error": null
+    },
+    {
+      "id": "retry-cv-recorded",
+      "requestedUrl": "https://web.archive.org/web/20040623153032/http://www.singinst.org:80/friendly/collective-volition.html",
+      "finalUrl": "https://web.archive.org/web/20040814174713/http://singinst.org/friendly/collective-volition.html",
+      "retrievedAt": "2026-10-08T20:19:17.148Z",
+      "httpStatus": 200,
+      "sha256": "18ae8757bbd1bcc9d7dc4a35dfd8c509576a8f98f4884e14c1b61d7da0b8770f",
+      "error": null
+    },
+    {
+      "id": "retry-seed-portless",
+      "requestedUrl": "https://web.archive.org/web/20010428192009id_/http://singinst.org/CaTAI/friendly/design/seed.html",
+      "finalUrl": "https://web.archive.org/web/20210418212110id_/http://singinst.org/CaTAI/friendly/design/seed.html",
+      "retrievedAt": "2026-10-08T20:19:46.882Z",
+      "httpStatus": 404,
+      "sha256": "d5a89e26beae0bc03ad18a0b0d1d3d75f87c32047879d25da11970cb5c4662a3",
+      "error": null
+    },
+    {
+      "id": "retry-seed-portless",
+      "requestedUrl": "https://web.archive.org/web/20010428192009id_/http://singinst.org/CaTAI/friendly/design/seed.html",
+      "finalUrl": "https://web.archive.org/web/20210418212110id_/http://singinst.org/CaTAI/friendly/design/seed.html",
+      "retrievedAt": "2026-10-08T20:20:11.199Z",
+      "httpStatus": 404,
+      "sha256": "d5a89e26beae0bc03ad18a0b0d1d3d75f87c32047879d25da11970cb5c4662a3",
+      "error": null
+    },
+    {
+      "id": "retry-seed-recorded",
+      "requestedUrl": "https://web.archive.org/web/20010428192009/http://singinst.org:80/CaTAI/friendly/design/seed.html",
+      "finalUrl": "https://web.archive.org/web/20210418212110/http://singinst.org/CaTAI/friendly/design/seed.html",
+      "retrievedAt": "2026-10-08T20:18:40.935Z",
+      "httpStatus": 404,
+      "sha256": "d8cea9181d883224bb5da4925d382f561c43ee09a4d40cea0405b3a86731b926",
+      "error": null
+    },
+    {
+      "id": "retry-seed-recorded",
+      "requestedUrl": "https://web.archive.org/web/20010428192009/http://singinst.org:80/CaTAI/friendly/design/seed.html",
+      "finalUrl": "https://web.archive.org/web/20210418212110/http://singinst.org/CaTAI/friendly/design/seed.html",
+      "retrievedAt": "2026-10-08T20:19:08.149Z",
+      "httpStatus": 404,
+      "sha256": "d8cea9181d883224bb5da4925d382f561c43ee09a4d40cea0405b3a86731b926",
+      "error": null
+    },
+    {
+      "id": "tmol-earlier-comparison",
+      "requestedUrl": "https://web.archive.org/web/20000902202242id_/http://singinst.org:80/tmol-faq/logic.ext.html",
+      "finalUrl": "https://web.archive.org/web/20000902202242id_/http://singinst.org:80/tmol-faq/logic.ext.html",
+      "retrievedAt": "2026-10-08T20:21:04.082Z",
+      "httpStatus": 200,
+      "sha256": "79d01ea728a83a57df50367411a33bef0f5e978f5b6c6cf35ddd1e92290a4dc4",
+      "error": null
+    },
+    {
+      "id": "wb-pdf-alignment-hard-start",
+      "requestedUrl": "https://web.archive.org/web/20180910210613id_/https://intelligence.org/files/AlignmentHardStart.pdf",
+      "finalUrl": "https://web.archive.org/web/20180910210613id_/https://intelligence.org/files/AlignmentHardStart.pdf",
+      "retrievedAt": "2026-10-08T20:14:36.806Z",
+      "httpStatus": 200,
+      "sha256": "146617e0ebfb03b5eced5899450c47036093da27565b28fafb01b3d93c71cdf5",
+      "error": null
+    },
+    {
+      "id": "wb-si-CaTAI_friendly_design_seed_html",
+      "requestedUrl": "https://web.archive.org/web/20010428192009id_/http://singinst.org:80/CaTAI/friendly/design/seed.html",
+      "finalUrl": "https://web.archive.org/web/20210418212110id_/http://singinst.org/CaTAI/friendly/design/seed.html",
+      "retrievedAt": "2026-10-08T20:14:48.863Z",
+      "httpStatus": 404,
+      "sha256": "d5a89e26beae0bc03ad18a0b0d1d3d75f87c32047879d25da11970cb5c4662a3",
+      "error": null
+    },
+    {
+      "id": "wb-si-CaTAI_friendly_design_seed_html",
+      "requestedUrl": "https://web.archive.org/web/20010428192009id_/http://singinst.org:80/CaTAI/friendly/design/seed.html",
+      "finalUrl": "https://web.archive.org/web/20210418212110id_/http://singinst.org/CaTAI/friendly/design/seed.html",
+      "retrievedAt": "2026-10-08T20:15:16.061Z",
+      "httpStatus": 404,
+      "sha256": "d5a89e26beae0bc03ad18a0b0d1d3d75f87c32047879d25da11970cb5c4662a3",
+      "error": null
+    },
+    {
+      "id": "wb-si-CaTAI_friendly_policy_html",
+      "requestedUrl": "https://web.archive.org/web/20010429022056id_/http://singinst.org:80/CaTAI/friendly/policy.html",
+      "finalUrl": "https://web.archive.org/web/20010429022056id_/http://singinst.org:80/CaTAI/friendly/policy.html",
+      "retrievedAt": "2026-10-08T20:15:27.551Z",
+      "httpStatus": 200,
+      "sha256": "6a2918bb3e49f0b7d6bd7d858e5eea0c84bd733f2ce5c78beedf49c73da134ea",
+      "error": null
+    },
+    {
+      "id": "wb-si-friendly_collective_volition_html",
+      "requestedUrl": "https://web.archive.org/web/20040623153032id_/http://www.singinst.org:80/friendly/collective-volition.html",
+      "finalUrl": "https://web.archive.org/web/20040814174713id_/http://singinst.org/friendly/collective-volition.html",
+      "retrievedAt": "2026-10-08T20:15:40.262Z",
+      "httpStatus": 200,
+      "sha256": "0816b57ffe728051b0e7b4e75acfdde36d1b66d4d989759b45aa113e0d3893af",
+      "error": null
+    },
+    {
+      "id": "wb-si-friendly_why_friendly_html",
+      "requestedUrl": "https://web.archive.org/web/20040507231731id_/http://www.singinst.org:80/friendly/why-friendly.html",
+      "finalUrl": "https://web.archive.org/web/20040507231731id_/http://www.singinst.org:80/friendly/why-friendly.html",
+      "retrievedAt": "2026-10-08T20:15:57.852Z",
+      "httpStatus": 200,
+      "sha256": "55e802f437d6775c9fb5207df8309f3e46988128f0fa5763ef54a580470d04f0",
+      "error": null
+    },
+    {
+      "id": "wb-si-singularitarian_plan_html",
+      "requestedUrl": "https://web.archive.org/web/20000817022243id_/http://singinst.org:80/singularitarian/plan.html",
+      "finalUrl": "https://web.archive.org/web/20000817022243id_/http://singinst.org:80/singularitarian/plan.html",
+      "retrievedAt": "2026-10-08T20:16:38.819Z",
+      "httpStatus": 200,
+      "sha256": "f0fa86603280b7a5cc847db76ec8d247b482b7b31ad54207a1e09defe3109dd7",
+      "error": null
+    },
+    {
+      "id": "wb-si-singularitarian_PtS_navigation_crns_html",
+      "requestedUrl": "https://web.archive.org/web/20000711052247id_/http://www.singinst.org:80/singularitarian/PtS/navigation/crns.html",
+      "finalUrl": "https://web.archive.org/web/20000829065223id_/http://singinst.org/singularitarian/PtS/navigation/crns.html",
+      "retrievedAt": "2026-10-08T20:16:22.119Z",
+      "httpStatus": 200,
+      "sha256": "8a7eb65f96efc2450c6d0bc1dcba5a913669f921120bbb88382f10e5fe9bb36e",
+      "error": null
+    },
+    {
+      "id": "wb-si-sing_analysis_html",
+      "requestedUrl": "https://web.archive.org/web/20000817022324id_/http://singinst.org:80/sing_analysis.html",
+      "finalUrl": "https://web.archive.org/web/20000817022324id_/http://singinst.org:80/sing_analysis.html",
+      "retrievedAt": "2026-10-08T20:16:10.153Z",
+      "httpStatus": 200,
+      "sha256": "92da4f3c35701607266f6da47e426d947cf9a1114c5398f20616754202ccaedb",
+      "error": null
+    },
+    {
+      "id": "wb-sm-sing_principles_ext_html",
+      "requestedUrl": "https://web.archive.org/web/20010213233956id_/http://sysopmind.com:80/sing/principles.ext.html",
+      "finalUrl": "https://web.archive.org/web/20010213233956id_/http://sysopmind.com:80/sing/principles.ext.html",
+      "retrievedAt": "2026-10-08T20:16:50.637Z",
+      "httpStatus": 200,
+      "sha256": "ca73250b29ba8e997e8ee439b4c40f98fc2ef32ba9c8c1028338c76c3dd4dce8",
+      "error": null
+    },
+    {
+      "id": "wb-sm-tmol_faq_logic_ext_html",
+      "requestedUrl": "https://web.archive.org/web/20010125110200id_/http://sysopmind.com:80/tmol-faq/logic.ext.html",
+      "finalUrl": "https://web.archive.org/web/20010125110200id_/http://sysopmind.com:80/tmol-faq/logic.ext.html",
+      "retrievedAt": "2026-10-08T20:17:01.735Z",
+      "httpStatus": 200,
+      "sha256": "13b5703a8dd19265c0ffe0e5a645a96a4c2555eadb8f069a0fbaaebd7724b629",
+      "error": null
+    }
+  ],
+  "retrievalFailures": [
+    {
+      "id": "attribution-catai-contents",
+      "requestedUrl": "https://web.archive.org/web/20010421013244id_/http://singinst.org:80/CaTAI/friendly/contents.html",
+      "finalUrl": "https://web.archive.org/web/20010421195546id_/http://singinst.org/CaTAI/friendly/contents.html",
+      "retrievedAt": "2026-10-08T20:17:13.369Z",
+      "httpStatus": 200,
+      "sha256": "273cba62a719ca85fe35eaf1f7c2f6195c0685a59dc59ef1b03165792606ceeb",
+      "error": null
+    },
+    {
+      "id": "retry-crns-portless",
+      "requestedUrl": "https://web.archive.org/web/20000711052247id_/http://www.singinst.org/singularitarian/PtS/navigation/crns.html",
+      "finalUrl": "https://web.archive.org/web/20000829065223id_/http://singinst.org/singularitarian/PtS/navigation/crns.html",
+      "retrievedAt": "2026-10-08T20:20:38.366Z",
+      "httpStatus": 200,
+      "sha256": "8a7eb65f96efc2450c6d0bc1dcba5a913669f921120bbb88382f10e5fe9bb36e",
+      "error": null
+    },
+    {
+      "id": "retry-crns-recorded",
+      "requestedUrl": "https://web.archive.org/web/20000711052247/http://www.singinst.org:80/singularitarian/PtS/navigation/crns.html",
+      "finalUrl": "https://web.archive.org/web/20000829065223/http://singinst.org/singularitarian/PtS/navigation/crns.html",
+      "retrievedAt": "2026-10-08T20:19:33.815Z",
+      "httpStatus": 200,
+      "sha256": "1ae65e592ea3622d7f0594ce8f371c898eb4215a1190fe7272e70d6fab36eda3",
+      "error": null
+    },
+    {
+      "id": "retry-cv-portless",
+      "requestedUrl": "https://web.archive.org/web/20040623153032id_/http://www.singinst.org/friendly/collective-volition.html",
+      "finalUrl": "https://web.archive.org/web/20040814174713id_/http://singinst.org/friendly/collective-volition.html",
+      "retrievedAt": "2026-10-08T20:20:21.682Z",
+      "httpStatus": 200,
+      "sha256": "0816b57ffe728051b0e7b4e75acfdde36d1b66d4d989759b45aa113e0d3893af",
+      "error": null
+    },
+    {
+      "id": "retry-cv-recorded",
+      "requestedUrl": "https://web.archive.org/web/20040623153032/http://www.singinst.org:80/friendly/collective-volition.html",
+      "finalUrl": "https://web.archive.org/web/20040814174713/http://singinst.org/friendly/collective-volition.html",
+      "retrievedAt": "2026-10-08T20:19:17.148Z",
+      "httpStatus": 200,
+      "sha256": "18ae8757bbd1bcc9d7dc4a35dfd8c509576a8f98f4884e14c1b61d7da0b8770f",
+      "error": null
+    },
+    {
+      "id": "retry-seed-portless",
+      "requestedUrl": "https://web.archive.org/web/20010428192009id_/http://singinst.org/CaTAI/friendly/design/seed.html",
+      "finalUrl": "https://web.archive.org/web/20210418212110id_/http://singinst.org/CaTAI/friendly/design/seed.html",
+      "retrievedAt": "2026-10-08T20:19:46.882Z",
+      "httpStatus": 404,
+      "sha256": "d5a89e26beae0bc03ad18a0b0d1d3d75f87c32047879d25da11970cb5c4662a3",
+      "error": null
+    },
+    {
+      "id": "retry-seed-portless",
+      "requestedUrl": "https://web.archive.org/web/20010428192009id_/http://singinst.org/CaTAI/friendly/design/seed.html",
+      "finalUrl": "https://web.archive.org/web/20210418212110id_/http://singinst.org/CaTAI/friendly/design/seed.html",
+      "retrievedAt": "2026-10-08T20:20:11.199Z",
+      "httpStatus": 404,
+      "sha256": "d5a89e26beae0bc03ad18a0b0d1d3d75f87c32047879d25da11970cb5c4662a3",
+      "error": null
+    },
+    {
+      "id": "retry-seed-recorded",
+      "requestedUrl": "https://web.archive.org/web/20010428192009/http://singinst.org:80/CaTAI/friendly/design/seed.html",
+      "finalUrl": "https://web.archive.org/web/20210418212110/http://singinst.org/CaTAI/friendly/design/seed.html",
+      "retrievedAt": "2026-10-08T20:18:40.935Z",
+      "httpStatus": 404,
+      "sha256": "d8cea9181d883224bb5da4925d382f561c43ee09a4d40cea0405b3a86731b926",
+      "error": null
+    },
+    {
+      "id": "retry-seed-recorded",
+      "requestedUrl": "https://web.archive.org/web/20010428192009/http://singinst.org:80/CaTAI/friendly/design/seed.html",
+      "finalUrl": "https://web.archive.org/web/20210418212110/http://singinst.org/CaTAI/friendly/design/seed.html",
+      "retrievedAt": "2026-10-08T20:19:08.149Z",
+      "httpStatus": 404,
+      "sha256": "d8cea9181d883224bb5da4925d382f561c43ee09a4d40cea0405b3a86731b926",
+      "error": null
+    },
+    {
+      "id": "wb-si-CaTAI_friendly_design_seed_html",
+      "requestedUrl": "https://web.archive.org/web/20010428192009id_/http://singinst.org:80/CaTAI/friendly/design/seed.html",
+      "finalUrl": "https://web.archive.org/web/20210418212110id_/http://singinst.org/CaTAI/friendly/design/seed.html",
+      "retrievedAt": "2026-10-08T20:14:48.863Z",
+      "httpStatus": 404,
+      "sha256": "d5a89e26beae0bc03ad18a0b0d1d3d75f87c32047879d25da11970cb5c4662a3",
+      "error": null
+    },
+    {
+      "id": "wb-si-CaTAI_friendly_design_seed_html",
+      "requestedUrl": "https://web.archive.org/web/20010428192009id_/http://singinst.org:80/CaTAI/friendly/design/seed.html",
+      "finalUrl": "https://web.archive.org/web/20210418212110id_/http://singinst.org/CaTAI/friendly/design/seed.html",
+      "retrievedAt": "2026-10-08T20:15:16.061Z",
+      "httpStatus": 404,
+      "sha256": "d5a89e26beae0bc03ad18a0b0d1d3d75f87c32047879d25da11970cb5c4662a3",
+      "error": null
+    },
+    {
+      "id": "wb-si-friendly_collective_volition_html",
+      "requestedUrl": "https://web.archive.org/web/20040623153032id_/http://www.singinst.org:80/friendly/collective-volition.html",
+      "finalUrl": "https://web.archive.org/web/20040814174713id_/http://singinst.org/friendly/collective-volition.html",
+      "retrievedAt": "2026-10-08T20:15:40.262Z",
+      "httpStatus": 200,
+      "sha256": "0816b57ffe728051b0e7b4e75acfdde36d1b66d4d989759b45aa113e0d3893af",
+      "error": null
+    },
+    {
+      "id": "wb-si-singularitarian_PtS_navigation_crns_html",
+      "requestedUrl": "https://web.archive.org/web/20000711052247id_/http://www.singinst.org:80/singularitarian/PtS/navigation/crns.html",
+      "finalUrl": "https://web.archive.org/web/20000829065223id_/http://singinst.org/singularitarian/PtS/navigation/crns.html",
+      "retrievedAt": "2026-10-08T20:16:22.119Z",
+      "httpStatus": 200,
+      "sha256": "8a7eb65f96efc2450c6d0bc1dcba5a913669f921120bbb88382f10e5fe9bb36e",
+      "error": null
+    }
+  ],
+  "limits": [
+    "Failed or redirected replays were never counted as inspection of the recorded capture. Two later captures were inspected as later expressions only.",
+    "Arbital authorship and dates were checked against LessWrong imported revisions and an independent account lookup, not original Arbital servers.",
+    "No passage was proposed as earlier-self; no independently verified earlier-text/later-explicit-rejection pair was established.",
+    "No judgement of whether the author's arguments are correct, no named later-interlocutor search, and no human acceptance.",
+    "Additional source quotation in prose is paraphrased; the report does not redistribute source bodies or repeat pack quotations."
+  ],
+  "validation": {
+    "structural": "18 unique passage IDs match the unchanged pack; all verdicts and source links checked",
+    "format": "passed: Prettier on the two report files",
+    "focusedTests": "passed: src/editorial/seed-review.test.ts and src/domain/yudkowsky-arguments.test.ts; 2 files, 24 tests",
+    "privacy": "passed: pnpm check:privacy, 464 indexed files; rerun after this validation-note update before commit"
+  }
+}

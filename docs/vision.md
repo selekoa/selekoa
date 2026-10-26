@@ -1,0 +1,17 @@
+# Vision
+
+Selekoa is **a source-critical institutional memory and research base for machine intelligence**. “The biography of machine intelligence” is its north star; a substantial historical encyclopedia is the longer-term ambition.
+
+Preserve and make explorable the documentary history of people and institutional diaspora, ideas and intellectual lineages, institutions and organizational change, capital, governance, consequential infrastructure, and the human thought, debate and institutional movements surrounding machine intelligence. The immediate purpose is to accelerate rigorous academic research, serious journalism, books, policy research and historical investigation.
+
+Machine-first research execution supplies a sourced, inspectable, qualified bootstrap layer for human work. Machine-generated output is not an end in itself. Exploratory material remains distinct from human-curated interpretations and encyclopedia material under the [editorial policy](editorial-policy.md).
+
+The durable asset is the evidence-backed historical corpus and its research semantics. Maps and graphs are one interface alongside dossiers, person views, document/version histories, timelines, research starters, source inspection and exports. Future query interfaces may serve other questions. Graph functionality may be reduced or omitted when it does not improve historical understanding.
+
+Three current research directions are deep, durable spines using the same evidence and ontology: **Frontier AI Governance**, a likely flagship emphasizing versioned documentary history; **human thought and institutions around machine intelligence**, including documented ideas, communities and disagreements without inferred ideological labels; and **Chinese frontier-AI institutional history**, beginning with the existing bounded collection and preserving distinct actors and Chinese-language expressions. These are programmes to develop, not finished products. See [positioning](project-positioning.md).
+
+The initial institutional anchors are entry points, not ontology boundaries. Supporting institutions, communities, documents, infrastructure and concepts belong wherever evidence warrants them. The existing atlas and [research-corpus prototype](research-corpus.md) provide complementary paths into sparse, historical coverage, not a current sector inventory. Investigated propositions, contradictions and unresolved questions need not become graph edges.
+
+The next phase should make the experience immediately legible, open researcher entry points through people, topics, documents and historical questions, deepen flagship paths, and improve exportable research starters before treating corpus expansion as the main deliverable. Continue targeted research additions; every major increment should deepen documentary history or improve researcher usefulness.
+
+Non-goals include a comprehensive ecosystem census, model benchmarking or pricing catalogues, ideological classification, indiscriminate machine-generated content, and automatic claims of causality. A reciprocal commercial relationship does not establish circular funding. Monetisation is not a present design target. Historical knowledge/as-of queries, an API and reviewed monitoring remain potential future capabilities; no crawler, backend, accounts, alerts or public deployment is authorized by this vision. Privacy and pseudonymity remain project constraints.

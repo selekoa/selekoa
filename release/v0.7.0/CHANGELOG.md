@@ -1,0 +1,51 @@
+# Selekoa dataset v0.7.0 (2026-10-25)
+
+Compared with v0.6.0. A changed record is one whose released JSON differs in any field.
+
+| Record type | Added | Changed | Removed | In this release |
+| --- | ---: | ---: | ---: | ---: |
+| Entities | 3 | 1 | 0 | 850 |
+| Claims | 6 | 37 | 0 | 2,038 |
+| Evidence | 10 | 3 | 0 | 2,633 |
+| Sources | 3 | 0 | 0 | 780 |
+| Collections | 0 | 1 | 0 | 8 |
+
+## Added
+
+### Entities (3)
+
+`agrawal-gans-goldfarb-2016-simple-economics-of-machine-intelligence`, `diebold-1955-automation-condensation`, `reuther-1955-automation-hearings-statement`
+
+### Claims (6)
+
+`ec-g01-davidson-2021-explosive-economic-growth-a`, `ec-g03-hanson-1998-is-a-singularity-just-around-the-corner-a`, `ec-m04-agrawal-gans-goldfarb-2016-simple-economics-of-machine-intelligence-a`, `ec-m06a-diebold-1955-automation-condensation-a`, `ec-m06b-diebold-1955-automation-condensation-a`, `ec-m06b-reuther-1955-automation-hearings-statement-a`
+
+### Evidence (10)
+
+`evidence-ec-g01-davidson-a`, `evidence-ec-g03-hanson-1998-a`, `evidence-ec-m04-hbr-a`, `evidence-ec-m04-hbr-b`, `evidence-ec-m06a-diebold-a`, `evidence-ec-m06b-diebold-a`, `evidence-ec-m06b-reuther-a`, `evidence-ec-m08-apr-a`, `evidence-ec-m08-apr-b`, `evidence-prov-rsp-v3-0-competitor-parity-delay`
+
+### Sources (3)
+
+`source-agrawal-gans-goldfarb-2016-simple-economics-of-machine-intelligence`, `source-diebold-1955-automation-condensation`, `source-reuther-1955-automation-hearings-statement`
+
+## Changed
+
+### Entities (1)
+
+`explosive-growth-estimates`
+
+### Claims (37)
+
+`absent-rsp-v3-0-pause-training`, `cm-eu-code-intent-anthropic`, `cm-eu-code-intent-google`, `cm-eu-code-intent-openai`, `cs-anthropic-legal-form-2021`, `ec-g01-erdil-besiroglu-2023-explosive-growth-review-a`, `ec-g01-hanson-economic-growth-given-machine-intelligence-a`, `ec-g02-aghion-jones-jones-2017-ai-and-economic-growth-a`, `ec-g02-aghion-jones-jones-2017-ai-and-economic-growth-c`, `ec-g02-davidson-2021-explosive-economic-growth-a`, `ec-g03-hanson-economic-growth-given-machine-intelligence-a`, `ec-g04-erdil-besiroglu-2023-explosive-growth-review-c`, `ec-g04-nordhaus-2015-economic-singularity-a`, `ec-g05-davidson-2021-explosive-economic-growth-c`, `ec-g05-erdil-besiroglu-2023-explosive-growth-review-c`, `ec-g06-nordhaus-2015-economic-singularity-b`, `ec-g07-hanson-1994-if-uploads-come-first-a`, `ec-g07-hanson-economic-growth-given-machine-intelligence-a`, `ec-g08-acemoglu-2024-simple-macroeconomics-of-ai-a`, `ec-g09-clancy-besiroglu-2023-great-inflection-a`, `ec-g09-davidson-2021-explosive-economic-growth-a`, `ec-g09-erdil-besiroglu-2023-explosive-growth-review-a`, `ec-g09-hanson-2000-long-term-growth-exponential-modes-a`, `ec-g09-hanson-economic-growth-given-machine-intelligence-a`, `ec-m01-nourse-1955-automation-hearings-statement-b`, `ec-m04-agrawal-gans-goldfarb-2018-prediction-judgment-complexity-a`, `ec-m06a-technology-and-the-american-economy-1966-a`, `ec-m06b-technology-and-the-american-economy-1966-a`, `ec-m08-acemoglu-2024-simple-macroeconomics-of-ai-a`, `ec-m09-agrawal-gans-goldfarb-2019-economics-of-ai-introduction-a`, `prov-rsp-v3-0-competitor-parity`, `sb-link-openai-fgf`, `yk-y02-sl4-2000-11-13-yudkowsky-0011-0181-c`, `yk-y05-extropians-1999-08-04-yudkowsky-1587-c`, `yk-y08-lw-2022-miri-announces-new-death-with-dignity-c`, `yk-y28-extropians-2000-09-29-yudkowsky-6073-b`, `yk-y30-lw-2022-miri-announces-new-death-with-dignity-c`
+
+### Evidence (3)
+
+`evidence-absent-rsp-v3-0-pause-training`, `evidence-ec-g02-e2`, `evidence-prov-rsp-v3-0-competitor-parity`
+
+### Collections (1)
+
+`propositions/economics-of-machine-intelligence`
+
+## Removed
+
+None.

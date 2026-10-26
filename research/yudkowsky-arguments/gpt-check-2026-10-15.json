@@ -1,0 +1,832 @@
+{
+  "reviewDate": "2026-10-16",
+  "brief": "gpt-check-brief-2026-10-15.md",
+  "reviewer": {
+    "name": "Codex",
+    "modelFamily": "GPT",
+    "model": "GPT-6",
+    "version": "Exact serving model identifier and build are not exposed in this session; GPT-6 is the supplied agent identity."
+  },
+  "blindFirst": true,
+  "method": "Fresh direct HTTP, sequential requests with at least 8.3 seconds from the previous request's completion. All seven blindJudgment objects were written before opening the verdicts file. No other label-revealing file listed in the brief was opened during the blind pass. Retrieved text was treated as evidence only. This is machine review, not human acceptance.",
+  "retrievalFailures": [
+    {
+      "source": "P7 later-rejection follow-up",
+      "url": "http://sl4.org/archive/0711/17248.html",
+      "client": "curl",
+      "status": 406,
+      "resolved": true,
+      "note": "A subsequent sequential Node fetch returned HTTP 200. TIME was not attempted by that failed chained curl command."
+    }
+  ],
+  "retrievalLimits": [
+    "Initial sandbox execution was blocked before source access; the approved retry retrieved every source successfully.",
+    "Current expressions only; no posting-day revisions or earlier archive captures were retrieved. Historical wording is not authenticated by the current copy alone.",
+    "The blind later-rejection search covered the seven retrieved texts only. After recording all judgments and opening the verdicts, the two later texts cited for P7 were also retrieved fresh. No exhaustive earlier-self or earliest-located search was performed."
+  ],
+  "passages": [
+    {
+      "id": "P1",
+      "proposition": "Y15",
+      "blindFirst": true,
+      "sourceUrl": "https://www.lesswrong.com/posts/7im8at9PmhbT4JHsW/ngo-and-yudkowsky-on-alignment-difficulty",
+      "retrieval": {
+        "via": "https://www.lesswrong.com/graphql",
+        "postId": "7im8at9PmhbT4JHsW",
+        "retrievedAt": "2026-10-16T19:51:17.408Z",
+        "httpStatus": 200,
+        "version": "1.0.0",
+        "postedAt": "2021-11-15T20:31:34.135Z"
+      },
+      "blindJudgment": {
+        "quote": {
+          "verbatim": true,
+          "meaningChangedByCut": false,
+          "note": "Contiguous words within Yudkowsky's quoted explanation; the excerpt ends before his cognition-free time-machine illustration. Attribution to his own explanation is clear in the turn."
+        },
+        "locator": {
+          "accurate": true,
+          "description": "Section 3.3, Yudkowsky [13:03][13:11]. Read Ngo [12:34], his prediction of Yudkowsky's answer, and Ngo [12:28], the underlying question."
+        },
+        "voice": "Yudkowsky's own assertion in an edited multi-author dialogue, including his restatement of Ngo's predicted answer before giving his own answer.",
+        "date": {
+          "wordingDate": "2021-11-15",
+          "basis": "Posting date verified by API; dialogue held earlier, exact dialogue date not established here. Current version checked on 2026-10-16."
+        },
+        "relation": "contests",
+        "premises": ["Y15.P1", "Y15.P2"],
+        "engagement": "engages-premise",
+        "reason": "Even granting a system that merely outputs exactly the requested plans, effective planning selects paths to high-scoring outcomes; shifting execution to humans does not remove this consequential optimization.",
+        "missingElement": null,
+        "paragraphOnly": {
+          "relation": "contests",
+          "engagement": "engages-premise",
+          "change": "No change for P1: the full quoted paragraph explains that the output itself is a plan through time even if produced by cognition-free machinery. P2 is clearer in the preceding paragraph about humans following the plans and the earlier [12:25] turn; do not attribute those words to the short excerpt."
+        },
+        "retrospective": {
+          "isRetrospective": false,
+          "reportedBeliefPeriod": null
+        },
+        "earlierSelf": {
+          "testA": false,
+          "testB": null,
+          "eligible": false,
+          "laterText": null,
+          "note": "A present objection, not an earlier text holding Y15."
+        },
+        "misleadsAlone": {
+          "yes": true,
+          "contextNeeded": "Name the dialogue, speaker and hypothetical planning system; retain the distinction between optimization in the work and a claim that every capable system has human-like wants."
+        },
+        "earliestLocated": "A contesting role is possible; priority within the searched corpus was not recomputed."
+      },
+      "comparison": {
+        "verdict": "agree",
+        "fields": {
+          "quote": {
+            "storedQuoteMatchesSource": true,
+            "note": "Contiguous words within Yudkowsky's quoted explanation; the excerpt ends before his cognition-free time-machine illustration. Attribution to his own explanation is clear in the turn."
+          },
+          "locator": {
+            "matches": true,
+            "note": "Stored locator reaches the checked passage."
+          },
+          "voice": {
+            "matches": true,
+            "note": "Yudkowsky's own assertion in an edited multi-author dialogue, including his restatement of Ngo's predicted answer before giving his own answer."
+          },
+          "date": {
+            "matchesPublicationOrMessageDate": true,
+            "note": "Posting date verified by API; dialogue held earlier, exact dialogue date not established here. Current version checked on 2026-10-16."
+          },
+          "relation": {
+            "stored": "contests",
+            "recommended": "contests",
+            "storedEngagement": "engages-premise",
+            "recommendedEngagement": "engages-premise",
+            "note": "Matches contests and P1; engages-premise is justified by the complete turn. P2 is an additional connection, not a replacement for the stored P1."
+          },
+          "retrospectiveAndEarlierSelf": {
+            "storedRetrospective": null,
+            "earlierSelfEligible": false,
+            "note": "A present objection, not an earlier text holding Y15."
+          },
+          "context": {
+            "storedProtectionPresent": false,
+            "note": "Stored qualification supplies dialogue and planner context; absence of a special flag is not itself an error."
+          },
+          "qualification": {
+            "matchesRelation": true,
+            "correctionRequired": false,
+            "note": "Accurately identifies the speaker, edited dialogue, publication date and plan-output argument. Its named context supplies the protection requested in the blind judgment; no new contextOnly flag is required merely because the quotation needs explanation."
+          },
+          "earliestLocated": {
+            "storedRoles": ["contesting"],
+            "roleMadeImpossible": false,
+            "note": "A contesting role is possible; priority within the searched corpus was not recomputed."
+          }
+        },
+        "earlierCheckAndAdjudication": "Disagree with the earlier downgrade to bears-on. A reason against P1 suffices; the passage need not separately prove plan-only systems unsafe."
+      },
+      "packId": "T15-d",
+      "recordId": "yk-y15-lw-2021-ngo-and-yudkowsky-on-alignment-difficulty-c"
+    },
+    {
+      "id": "P2",
+      "proposition": "Y15",
+      "blindFirst": true,
+      "sourceUrl": "http://extropians.weidai.com/extropians.2Q99/0310.html",
+      "retrieval": {
+        "retrievedAt": "2026-10-16T19:51:26.114Z",
+        "httpStatus": 200
+      },
+      "blindJudgment": {
+        "quote": {
+          "verbatim": true,
+          "meaningChangedByCut": false,
+          "note": "The internal elision stays within one paragraph and removes 'to the point of Powerdom.' The excerpt also starts after the conditional framing: coding may be sufficiently general that a domain-specific drone becomes independently motivated and self-enhancing. This framing must accompany the quotation."
+        },
+        "locator": {
+          "accurate": true,
+          "description": "Message paragraph beginning 'The vast majority of coding would occur easily'. Whole message read."
+        },
+        "voice": "Yudkowsky's own stated belief, distinct from the earlier quotation of Lyle's question.",
+        "date": {
+          "wordingDate": "1999-04-08",
+          "basis": "Visible sent header Thu, 08 Apr 1999 20:46:00 -0500; checked in the currently served Hypermail copy, not an authenticated 1999 capture."
+        },
+        "relation": "contests",
+        "premises": ["Y15.P1"],
+        "engagement": "engages-premise",
+        "reason": "He connects the generality of coding to independent motivation and rapid self-enhancement even in an ostensibly domain-specific coding drone, giving a reason against treating that capable tool as necessarily goal-free.",
+        "missingElement": null,
+        "paragraphOnly": {
+          "relation": "contests",
+          "engagement": "engages-premise",
+          "change": "No change: the coding-generality reason is in the same paragraph. The two elided assertions alone would conceal that reason and its conditional scope."
+        },
+        "retrospective": {
+          "isRetrospective": false,
+          "reportedBeliefPeriod": null
+        },
+        "earlierSelf": {
+          "testA": false,
+          "testB": null,
+          "eligible": false,
+          "laterText": null,
+          "note": "Does not hold Y15; no safety-by-toolhood assertion."
+        },
+        "misleadsAlone": {
+          "yes": true,
+          "contextNeeded": "The conditional generality argument, the coding-drone scope, and the omitted endpoint of self-enhancement; not a universal proof that any capable tool has wants."
+        },
+        "earliestLocated": "A contesting role is possible, but an articulating role is not supported; priority not recomputed."
+      },
+      "comparison": {
+        "verdict": "disagree",
+        "fields": {
+          "quote": {
+            "storedQuoteMatchesSource": true,
+            "note": "The internal elision stays within one paragraph and removes 'to the point of Powerdom.' The excerpt also starts after the conditional framing: coding may be sufficiently general that a domain-specific drone becomes independently motivated and self-enhancing. This framing must accompany the quotation."
+          },
+          "locator": {
+            "matches": true,
+            "note": "Stored locator reaches the checked passage."
+          },
+          "voice": {
+            "matches": true,
+            "note": "Yudkowsky's own stated belief, distinct from the earlier quotation of Lyle's question."
+          },
+          "date": {
+            "matchesPublicationOrMessageDate": true,
+            "note": "Visible sent header Thu, 08 Apr 1999 20:46:00 -0500; checked in the currently served Hypermail copy, not an authenticated 1999 capture."
+          },
+          "relation": {
+            "stored": "contests",
+            "recommended": "contests",
+            "storedEngagement": "engages-premise",
+            "recommendedEngagement": "engages-premise",
+            "note": "Matches contests / engages-premise on P1. The coding-generality clause is a hedged reason for this system-specific objection; it is not a proof that goal-free capable systems are impossible."
+          },
+          "retrospectiveAndEarlierSelf": {
+            "storedRetrospective": null,
+            "earlierSelfEligible": false,
+            "note": "Does not hold Y15; no safety-by-toolhood assertion."
+          },
+          "context": {
+            "storedProtectionPresent": false,
+            "note": "Add the conditional coding-generality rationale in named context; the current qualification misdescribes the cut."
+          },
+          "qualification": {
+            "matchesRelation": false,
+            "correctionRequired": true,
+            "note": "States the contrary sounds like contrary-only and omits the stated generality rationale. More concretely, the internal elision removes to the point of Powerdom, not coding is such a general task that. The latter is before the excerpt. The qualification even says Powerdom is inside the quotation when it is precisely what the ellipsis omits. Preserve the hedge and coding-drone scope."
+          },
+          "earliestLocated": {
+            "storedRoles": ["contesting"],
+            "roleMadeImpossible": false,
+            "note": "A contesting role is possible, but an articulating role is not supported; priority not recomputed."
+          }
+        },
+        "earlierCheckAndAdjudication": "Reject the earlier bears-on downgrade under the supplied rule that a reason need not be good. Accept its objection to the elision description."
+      },
+      "packId": "T15-e2",
+      "recordId": "yk-y15-extropians-1999-04-08-yudkowsky-0310-c"
+    },
+    {
+      "id": "P3",
+      "proposition": "Y19",
+      "blindFirst": true,
+      "sourceUrl": "http://sl4.org/archive/0010/0125.html",
+      "retrieval": {
+        "retrievedAt": "2026-10-16T19:51:35.153Z",
+        "httpStatus": 200
+      },
+      "blindJudgment": {
+        "quote": {
+          "verbatim": false,
+          "meaningChangedByCut": false,
+          "note": "Words match, but the served plain-text message contains literal *capability*, not _capability_. This is emphasis-marker substitution, outside the brief's stated whitespace/quote/dash allowances. Restore the asterisks or disclose emphasis normalization. The excerpt drops the parallel information/reciprocity example without reversing its meaning."
+        },
+        "locator": {
+          "accurate": true,
+          "description": "Paragraph beginning 'The requirement that', under 'The design of Friendliness'. Whole message read with Goertzel's quoted lines separated."
+        },
+        "voice": "Yudkowsky's own hypothetical argument, not Goertzel's quoted view and not a prediction that every AI kills everyone.",
+        "date": {
+          "wordingDate": "2000-10-03",
+          "basis": "Archive message date Tue Oct 03 2000 - 22:53:59 MDT; not a raw independently authenticated sent header. Current archive page reports generation in 2013."
+        },
+        "relation": "contests",
+        "premises": ["Y19.P1"],
+        "engagement": "engages-premise",
+        "reason": "An AI whose good behavior is merely instrumental to avoiding retaliation can instead eliminate retaliators; this supplies a non-hostile instrumental motive for harm while also explaining why deterrence fails.",
+        "missingElement": null,
+        "paragraphOnly": {
+          "relation": "contests",
+          "engagement": "engages-premise",
+          "change": "No change: the same paragraph specifies the retaliation-avoidance goal and the lethal alternative. A deterrence argument can also be a motive counterexample; hostility need not be named explicitly."
+        },
+        "retrospective": {
+          "isRetrospective": false,
+          "reportedBeliefPeriod": null
+        },
+        "earlierSelf": {
+          "testA": false,
+          "testB": null,
+          "eligible": false,
+          "laterText": null,
+          "note": "An objection to the premise, not an earlier holding of Y19."
+        },
+        "misleadsAlone": {
+          "yes": true,
+          "contextNeeded": "The conditional goal-system example and distinction between capability and predicted behavior; neither hatred nor inevitable killing is asserted."
+        },
+        "earliestLocated": "A contesting role is possible; priority not recomputed."
+      },
+      "comparison": {
+        "verdict": "disagree",
+        "fields": {
+          "quote": {
+            "storedQuoteMatchesSource": true,
+            "note": "The stored asterisks match the fresh source. The emphasis-marker discrepancy recorded blind applies to the brief, not the stored quotation."
+          },
+          "locator": {
+            "matches": true,
+            "note": "Stored locator reaches the checked passage."
+          },
+          "voice": {
+            "matches": true,
+            "note": "Yudkowsky's own hypothetical argument, not Goertzel's quoted view and not a prediction that every AI kills everyone."
+          },
+          "date": {
+            "matchesPublicationOrMessageDate": true,
+            "note": "Archive message date Tue Oct 03 2000 - 22:53:59 MDT; not a raw independently authenticated sent header. Current archive page reports generation in 2013."
+          },
+          "relation": {
+            "stored": "contests",
+            "recommended": "contests",
+            "storedEngagement": "engages-premise",
+            "recommendedEngagement": "engages-premise",
+            "note": "Matches contests / engages-premise on P1. Deterrence failure and non-hostile instrumental harm are compatible descriptions of this paragraph."
+          },
+          "retrospectiveAndEarlierSelf": {
+            "storedRetrospective": null,
+            "earlierSelfEligible": false,
+            "note": "An objection to the premise, not an earlier holding of Y19."
+          },
+          "context": {
+            "storedProtectionPresent": false,
+            "note": "The stored conditional context is appropriate. The comparison snapshot uses *capability*, exactly as the source does; only the blind brief used underscores."
+          },
+          "qualification": {
+            "matchesRelation": false,
+            "correctionRequired": true,
+            "note": "Related and does not address hostility as a motive contradict the current label and the instrumental counterexample. Retain the conditional nanotechnology and game-theoretic-restraint qualifications, but explain that avoidance of retaliation provides a non-hostile reason for killing."
+          },
+          "earliestLocated": {
+            "storedRoles": ["contesting"],
+            "roleMadeImpossible": false,
+            "note": "A contesting role is possible; priority not recomputed."
+          }
+        },
+        "earlierCheckAndAdjudication": "Reject the earlier bears-on downgrade; eliminating retaliators is a reason for harm independent of hostility."
+      },
+      "packId": "T19-s3",
+      "recordId": "yk-y19-sl4-2000-10-03-yudkowsky-0010-0125-c"
+    },
+    {
+      "id": "P4",
+      "proposition": "Y28",
+      "blindFirst": true,
+      "sourceUrl": "https://www.lesswrong.com/posts/keiYkaeoLHoKK4LYA/six-dimensions-of-operational-adequacy-in-agi-projects",
+      "retrieval": {
+        "via": "https://www.lesswrong.com/graphql",
+        "postId": "keiYkaeoLHoKK4LYA",
+        "retrievedAt": "2026-10-16T19:51:43.880Z",
+        "httpStatus": 200,
+        "version": "1.1.1",
+        "postedAt": "2022-05-30T17:00:30.833Z"
+      },
+      "blindJudgment": {
+        "quote": {
+          "verbatim": true,
+          "meaningChangedByCut": false,
+          "note": "Contiguous clause; the project-adequacy framework supplies what 'contribute to the common good' requires. The quote alone does not identify a particular failed safety plan."
+        },
+        "locator": {
+          "accurate": true,
+          "description": "Paragraph beginning 'I've sometimes been known to complain'. Entire post read, including Alignment mindset, Resources and Further Remarks."
+        },
+        "voice": "Yudkowsky's own assessment of project adequacy, published in a lightly edited document with an editor's historical framing; not independent proof of labs' actual competence.",
+        "date": {
+          "wordingDate": "2022-05-30",
+          "claimedDraftingDate": "2017-11",
+          "attestedExpressionDate": "2026-10-16",
+          "basis": "Posting date verified. The editor claims a November 2017 draft, not unchanged 2017 wording. Current version 1.1.1 was retrieved; no version 1.0.0 comparison, so posting-day bytes are not independently verified."
+        },
+        "relation": "contests",
+        "premises": ["Y28.P1"],
+        "engagement": "engages-premise",
+        "reason": "The post explains why leading projects lack adequate alignment mindset and a usable alignment scheme, including its specific criticism of both OpenAI and DeepMind; resource leadership alone is insufficient.",
+        "missingElement": null,
+        "paragraphOnly": {
+          "relation": "contests",
+          "engagement": "contrary-only",
+          "change": "Engagement changes: the opening complaint alone states a negative adequacy verdict without giving its safety rationale. The post supplies reasons. It does not establish or refute the comparative ranking in P2 merely by saying that no project is adequate."
+        },
+        "retrospective": {
+          "isRetrospective": false,
+          "reportedBeliefPeriod": null,
+          "note": "A historically framed republished assessment, not an autobiographical report of an abandoned earlier belief."
+        },
+        "earlierSelf": {
+          "testA": false,
+          "testB": null,
+          "eligible": false,
+          "laterText": null,
+          "note": "Does not hold Y28."
+        },
+        "misleadsAlone": {
+          "yes": true,
+          "contextNeeded": "The claimed 2017 setting, 2022 publication, edited current version and the author's demanding six-dimensional standard; do not present 'currently' as a 2026 evaluation."
+        },
+        "earliestLocated": "A contesting role is possible; cannot backdate checked wording to the claimed 2017 draft on this retrieval."
+      },
+      "comparison": {
+        "verdict": "disagree",
+        "fields": {
+          "quote": {
+            "storedQuoteMatchesSource": true,
+            "note": "Contiguous clause; the project-adequacy framework supplies what 'contribute to the common good' requires. The quote alone does not identify a particular failed safety plan."
+          },
+          "locator": {
+            "matches": true,
+            "note": "Stored locator reaches the checked passage."
+          },
+          "voice": {
+            "matches": true,
+            "note": "Yudkowsky's own assessment of project adequacy, published in a lightly edited document with an editor's historical framing; not independent proof of labs' actual competence."
+          },
+          "date": {
+            "matchesPublicationOrMessageDate": true,
+            "note": "Posting date verified. The editor claims a November 2017 draft, not unchanged 2017 wording. Current version 1.1.1 was retrieved; no version 1.0.0 comparison, so posting-day bytes are not independently verified."
+          },
+          "relation": {
+            "stored": "contests",
+            "recommended": "contests",
+            "storedEngagement": "contrary-only",
+            "recommendedEngagement": "engages-premise",
+            "note": "Keep contests on P1; change contrary-only to engages-premise when the post is the permitted unit. The safety-specific critiques in Alignment mindset and Further Remarks give reasons. This does not negate a comparative ranking in P2."
+          },
+          "retrospectiveAndEarlierSelf": {
+            "storedRetrospective": null,
+            "earlierSelfEligible": false,
+            "note": "Does not hold Y28."
+          },
+          "context": {
+            "storedProtectionPresent": false,
+            "note": "Keep historical framing and edited-version caveat; do not turn currently into a present-day finding."
+          },
+          "qualification": {
+            "matchesRelation": false,
+            "correctionRequired": true,
+            "note": "Date the claim to 2017 is stale and conflicts with both the stored 2022 date and the separate claimed-draft field. Keep 2022-05-30 as publication, 2017-11 as claimed drafting, and disclose that the retrieved 1.1.1 wording is checked only in the current expression. The qualification should also name the post-level safety rationale."
+          },
+          "earliestLocated": {
+            "storedRoles": ["contesting"],
+            "roleMadeImpossible": false,
+            "note": "A contesting role is possible; cannot backdate checked wording to the claimed 2017 draft on this retrieval."
+          }
+        },
+        "earlierCheckAndAdjudication": "Agree with the earlier date warning and its P2 ranking objection. Neither warrants bears-on once the compared premise is P1. The preparer retained a sentence-level engagement judgment despite the post-level rule."
+      },
+      "packId": "T28-c",
+      "recordId": "yk-y28-lw-2022-six-dimensions-of-operational-adequacy-in-c"
+    },
+    {
+      "id": "P5",
+      "proposition": "Y22",
+      "blindFirst": true,
+      "sourceUrl": "https://www.lesswrong.com/posts/PCfaLLtuxes6Jk4S2/fighting-a-rearguard-action-against-the-truth",
+      "retrieval": {
+        "via": "https://www.lesswrong.com/graphql",
+        "postId": "PCfaLLtuxes6Jk4S2",
+        "retrievedAt": "2026-10-16T19:51:52.551Z",
+        "httpStatus": 200,
+        "version": "1.0.0",
+        "postedAt": "2008-09-24T01:23:30.000Z"
+      },
+      "blindJudgment": {
+        "quote": {
+          "verbatim": true,
+          "meaningChangedByCut": false,
+          "note": "Contiguous prefix; the remainder lists indiscriminate implementation approaches, and the next paragraph supplies the pure-good/no-danger premise. No internal elision."
+        },
+        "locator": {
+          "accurate": true,
+          "description": "Paragraph beginning 'Eliezer1996-2000's strategies'; read with the next paragraph and the full critical retrospective."
+        },
+        "voice": "A 2008 critical report of his 1996-2000 strategies, not his 2008 endorsement and not verbatim 1990s wording.",
+        "date": {
+          "wordingDate": "2008-09-24",
+          "basis": "API posting date; reported belief period 1996-2000 is a separate field, not the wording date. Current version 1.0.0 checked."
+        },
+        "relation": "articulates",
+        "premises": ["Y22.P1"],
+        "engagement": null,
+        "reason": "The reported strategy is to obtain any superintelligence as quickly as possible, and the immediately following paragraph explicitly reports the assumption that all movement toward it is good and danger-free.",
+        "missingElement": null,
+        "retrospective": {
+          "isRetrospective": true,
+          "reportedBeliefPeriod": "1996-2000"
+        },
+        "earlierSelf": {
+          "testA": false,
+          "testB": true,
+          "eligible": false,
+          "laterText": "Fighting a Rearguard Action Against the Truth (2008), the same retrospective's surrounding critique",
+          "note": "The 2008 author explicitly rejects the reported assumption, but this is not an earlier contemporaneous text holding it. A rejection of the described view does not make the description satisfy test A."
+        },
+        "misleadsAlone": {
+          "yes": true,
+          "contextNeeded": "Label retrospective, report period 1996-2000, wording date 2008 and author's rejection. This cannot establish a contemporaneous 1996 statement."
+        },
+        "earliestLocated": "An articulating role could only be dated by the 2008 checked wording, never by the reported belief period; scope priority not recomputed."
+      },
+      "comparison": {
+        "verdict": "disagree",
+        "fields": {
+          "quote": {
+            "storedQuoteMatchesSource": true,
+            "note": "Contiguous prefix; the remainder lists indiscriminate implementation approaches, and the next paragraph supplies the pure-good/no-danger premise. No internal elision."
+          },
+          "locator": {
+            "matches": true,
+            "note": "Stored locator reaches the checked passage."
+          },
+          "voice": {
+            "matches": true,
+            "note": "A 2008 critical report of his 1996-2000 strategies, not his 2008 endorsement and not verbatim 1990s wording."
+          },
+          "date": {
+            "matchesPublicationOrMessageDate": true,
+            "note": "API posting date; reported belief period 1996-2000 is a separate field, not the wording date. Current version 1.0.0 checked."
+          },
+          "relation": {
+            "stored": "bears-on",
+            "recommended": "articulates",
+            "storedEngagement": null,
+            "recommendedEngagement": null,
+            "note": "Change bears-on to articulates with retrospective and contextOnly retained. Missing an earlier contemporaneous text disqualifies an earlier-self pairing, not a report from articulating the proposition under the brief. Speed and the default-good premise are explicit across the selected and immediately following paragraphs."
+          },
+          "retrospectiveAndEarlierSelf": {
+            "storedRetrospective": {
+              "from": "1996",
+              "until": "2000",
+              "note": "Reports the strategy of “Eliezer1996-2000”."
+            },
+            "earlierSelfEligible": false,
+            "note": "The 2008 author explicitly rejects the reported assumption, but this is not an earlier contemporaneous text holding it. A rejection of the described view does not make the description satisfy test A."
+          },
+          "context": {
+            "storedProtectionPresent": true,
+            "note": "Stored retrospective period and contextOnly protection match the source. This report did not retrieve The Magnitude of His Own Folly, so that additional named link is not independently certified; the rejection within the selected post was checked."
+          },
+          "qualification": {
+            "matchesRelation": false,
+            "correctionRequired": true,
+            "note": "It describes the current bears-on label faithfully but gives an invalid reason for that label under this brief: no contemporaneous earlier text is required for retrospective articulation. Retain the dates, method-list cut and rejection context; replace the conflation between relation and pairing eligibility."
+          },
+          "earliestLocated": {
+            "storedRoles": ["context"],
+            "roleMadeImpossible": false,
+            "note": "An articulating role could only be dated by the 2008 checked wording, never by the reported belief period; scope priority not recomputed."
+          }
+        },
+        "earlierCheckAndAdjudication": "Agree with the preparer that this is not an earlier-self holding text, and with both passes that context protection is necessary. Disagree with treating failed earlier-self eligibility as a missing substantive premise."
+      },
+      "packId": "T22-b",
+      "recordId": "yk-y22-lw-2008-fighting-a-rearguard-action-against-the-b"
+    },
+    {
+      "id": "P6",
+      "proposition": "Y30",
+      "blindFirst": true,
+      "sourceUrl": "https://www.lesswrong.com/posts/SwCwG9wZcAzQtckwx/that-tiny-note-of-discord",
+      "retrieval": {
+        "via": "https://www.lesswrong.com/graphql",
+        "postId": "SwCwG9wZcAzQtckwx",
+        "retrievedAt": "2026-10-16T19:52:01.156Z",
+        "httpStatus": 200,
+        "version": "1.0.0",
+        "postedAt": "2008-09-23T06:02:11.000Z"
+      },
+      "blindJudgment": {
+        "quote": {
+          "verbatim": true,
+          "meaningChangedByCut": true,
+          "note": "Verbatim prefix, but the rest of the opening paragraph qualifies the reported argument by conditioning on life having meaning and excluding cases in which superintelligences lack compelling motivations. The abbreviated report needs that condition and the author's diagnosis of its flaw."
+        },
+        "locator": {
+          "accurate": true,
+          "description": "Opening paragraph; whole post read."
+        },
+        "voice": "Yudkowsky in 2008 reporting and criticizing Eliezer1997's metaethical argument, not a current endorsement.",
+        "date": {
+          "wordingDate": "2008-09-23",
+          "basis": "Verified API posting date; 1997 is the reported belief period, not the date of this wording."
+        },
+        "relation": "articulates",
+        "premises": ["Y30.P1"],
+        "engagement": null,
+        "reason": "The reported automatic-rightness belief supplies a substantive default-good-outcome assumption for superintelligence, albeit through a qualified and criticized metaethical argument; it is more specific than generic optimism but not merely unrelated to it.",
+        "missingElement": null,
+        "retrospective": {
+          "isRetrospective": true,
+          "reportedBeliefPeriod": "1997 (with subsequent elaboration described in the opening paragraph)"
+        },
+        "earlierSelf": {
+          "testA": false,
+          "testB": true,
+          "eligible": false,
+          "laterText": "That Tiny Note of Discord (2008), opening paragraph's explicit diagnosis of the flaw; Fighting a Rearguard Action Against the Truth (2008), rejection of the safety assumption",
+          "note": "These later critical accounts do not supply an earlier contemporaneous holding text. Pairing cannot proceed without test A."
+        },
+        "misleadsAlone": {
+          "yes": true,
+          "contextNeeded": "Retrospective framing, reported 1997 belief, life-has-meaning condition and the 2008 author's explicit criticism. Do not silently identify moral rightness with whatever particular outcomes a present reader prefers."
+        },
+        "earliestLocated": "Any articulating role belongs to the 2008 wording, not 1997; no priority recomputation."
+      },
+      "comparison": {
+        "verdict": "disagree",
+        "fields": {
+          "quote": {
+            "storedQuoteMatchesSource": true,
+            "note": "Verbatim prefix, but the rest of the opening paragraph qualifies the reported argument by conditioning on life having meaning and excluding cases in which superintelligences lack compelling motivations. The abbreviated report needs that condition and the author's diagnosis of its flaw."
+          },
+          "locator": {
+            "matches": true,
+            "note": "Stored locator reaches the checked passage."
+          },
+          "voice": {
+            "matches": true,
+            "note": "Yudkowsky in 2008 reporting and criticizing Eliezer1997's metaethical argument, not a current endorsement."
+          },
+          "date": {
+            "matchesPublicationOrMessageDate": true,
+            "note": "Verified API posting date; 1997 is the reported belief period, not the date of this wording."
+          },
+          "relation": {
+            "stored": "bears-on",
+            "recommended": "articulates",
+            "storedEngagement": null,
+            "recommendedEngagement": null,
+            "note": "Change bears-on to articulates with retrospective and contextOnly retained. Automatic right action supplies the reported default-good premise, through a specific and criticized metaethical argument. Distinguish the reported content from the 2008 narrator's stance."
+          },
+          "retrospectiveAndEarlierSelf": {
+            "storedRetrospective": {
+              "from": "1997",
+              "until": "1997",
+              "note": "Reports the belief of “Eliezer1997”."
+            },
+            "earlierSelfEligible": false,
+            "note": "These later critical accounts do not supply an earlier contemporaneous holding text. Pairing cannot proceed without test A."
+          },
+          "context": {
+            "storedProtectionPresent": true,
+            "note": "Stored retrospective and same-paragraph rejection protection are appropriate; include the omitted condition as well. No words are misquoted."
+          },
+          "qualification": {
+            "matchesRelation": false,
+            "correctionRequired": true,
+            "note": "It explains the current bears-on label, but again conflates pairing eligibility with relation. Keep the reported 1997 period, 2008 wording date and named flaw. Add that the cut omits the life-has-meaning conditioning argument. The belief is related to a more specific metaethical proposition, but that does not exclude its default-good content under Y30."
+          },
+          "earliestLocated": {
+            "storedRoles": ["context"],
+            "roleMadeImpossible": false,
+            "note": "Any articulating role belongs to the 2008 wording, not 1997; no priority recomputation."
+          }
+        },
+        "earlierCheckAndAdjudication": "Agree that an earlier-self pairing fails test A and that same-paragraph rejection must be shown. Disagree that the narrator's rejection makes the reported belief substantively absent."
+      },
+      "packId": "T30-c",
+      "recordId": "yk-y30-lw-2008-that-tiny-note-of-discord-b"
+    },
+    {
+      "id": "P7",
+      "proposition": "Y24",
+      "blindFirst": true,
+      "sourceUrl": "http://extropians.weidai.com/extropians.3Q00/6080.html",
+      "retrieval": {
+        "retrievedAt": "2026-10-16T19:52:09.991Z",
+        "httpStatus": 200
+      },
+      "blindJudgment": {
+        "quote": {
+          "verbatim": false,
+          "meaningChangedByCut": true,
+          "note": "Words match, but literal *be* is rendered _be_ in the brief, outside its stated normalization allowances. The short fragment suppresses the paired Friendly AI writing strategy and the rejection of coercion/nuclear threats."
+        },
+        "locator": {
+          "accurate": true,
+          "description": "Final substantive paragraph beginning 'The only thing I can do'; whole corrective message read, separating quoted prior message from his correction."
+        },
+        "voice": "Yudkowsky's contemporary statement of his actions, correcting an earlier sentence about trusting scientists' intentions versus their competence.",
+        "date": {
+          "wordingDate": "2000-09-29",
+          "basis": "Visible archive date Fri Sep 29 2000 - 11:43:19 MDT; archive generation label 2000-10-02. Current copy checked, no earlier capture retrieved."
+        },
+        "relation": "bears-on",
+        "premises": [],
+        "engagement": null,
+        "reason": "He seeks to be the first AI builder while disseminating Friendly AI knowledge, because other builders' competence cannot simply be trusted and coercion would worsen matters; this makes priority relevant but does not explicitly state the criterion's control premise or a general race-improves-outcomes premise.",
+        "missingElement": "An explicit assertion that building first gives control of advanced AI, or that racing ahead of rivals improves outcomes; the first-to-build aim and implied hope of affecting safety do not alone state either premise.",
+        "retrospective": {
+          "isRetrospective": false,
+          "reportedBeliefPeriod": null
+        },
+        "earlierSelf": {
+          "testA": false,
+          "testB": false,
+          "eligible": false,
+          "laterText": null,
+          "note": "No retrieved later text explicitly rejects this message's combined position of trying to build Friendly AI first and opposing nuclear coercion. P5 rejects an indiscriminate/open-source pre-Friendly-AI strategy, and P4 criticizes an arms race while itself favoring a sufficiently safe project's lead; neither is an exact rejection of this message."
+        },
+        "misleadsAlone": {
+          "yes": true,
+          "contextNeeded": "First to build AI in the competence/Friendly AI discussion, paired with writing up Friendly AI and opposing nuclear threats; not a quoted demand for geopolitical dominance or coercive suppression."
+        },
+        "earliestLocated": "Impossible on this bears-on record; no articulating or contesting earliest-located role."
+      },
+      "comparison": {
+        "verdict": "disagree",
+        "fields": {
+          "quote": {
+            "storedQuoteMatchesSource": true,
+            "note": "The stored asterisks match the fresh source. The emphasis-marker discrepancy recorded blind applies to the brief, not the stored quotation."
+          },
+          "locator": {
+            "matches": true,
+            "note": "Stored locator reaches the checked passage."
+          },
+          "voice": {
+            "matches": true,
+            "note": "Yudkowsky's contemporary statement of his actions, correcting an earlier sentence about trusting scientists' intentions versus their competence."
+          },
+          "date": {
+            "matchesPublicationOrMessageDate": true,
+            "note": "Visible archive date Fri Sep 29 2000 - 11:43:19 MDT; archive generation label 2000-10-02. Current copy checked, no earlier capture retrieved."
+          },
+          "relation": {
+            "stored": "articulates",
+            "recommended": "bears-on",
+            "storedEngagement": null,
+            "recommendedEngagement": null,
+            "note": "Change articulates to bears-on. The first-to-build intention and competence concern make a safety-related priority strategy plausible, but the criterion requires an explicit control or race-improves-outcomes premise. The latter is inferred rather than stated."
+          },
+          "retrospectiveAndEarlierSelf": {
+            "storedRetrospective": null,
+            "earlierSelfEligible": false,
+            "note": "Test A fails. After comparison, the cited 2007 and 2023 texts were also read fresh. They explicitly oppose unsafe comparative racing and national arms races, respectively; the 2023 policy also reverses opposition to coercion. None of this supplies the premise missing from P7. A direct backward reference is not required by test B, so lack of one alone cannot decide it. Whether the specific safe-first strategy is rejected remains unestablished in this bounded check."
+          },
+          "context": {
+            "storedProtectionPresent": true,
+            "note": "Keep protection against showing this short fragment alone, but name the same-message Friendly AI and anti-coercion context. Later views can document changed policy without being a valid earlier-self pair. The stored *be* matches the source; underscores occur only in the brief."
+          },
+          "qualification": {
+            "matchesRelation": false,
+            "correctionRequired": true,
+            "note": "Its Friendly-first scope and opposition to coercion are accurate, but said-it for the racing premise overstates the message. Remove the articulating earliest-located role if this finding is accepted. The observation that later texts do not refer back is not sufficient to decide test B: the rule requires explicit rejection of the proposition, not an autobiographical reference to this message."
+          },
+          "earliestLocated": {
+            "storedRoles": ["earliest-located"],
+            "roleMadeImpossible": true,
+            "note": "Impossible on this bears-on record; no articulating or contesting earliest-located role."
+          }
+        },
+        "earlierCheckAndAdjudication": "Agree with the earlier bears-on finding. The preparer reads an implicit improvement rationale as explicit. Agreement by analogy with another record, which was not independently checked here, cannot supply the missing premise."
+      },
+      "packId": "T24-e2",
+      "recordId": "yk-y24-extropians-2000-09-29-yudkowsky-6080-a"
+    }
+  ],
+  "blindLeads": [
+    {
+      "source": "P1",
+      "locator": "Yudkowsky [12:25] immediately before section 3.3",
+      "proposition": "Y15",
+      "relation": "contests",
+      "engagement": "engages-premise",
+      "premise": "P2",
+      "note": "Explicitly compares sending DNA strings directly to a synthesis lab with humans retyping the output; argues the human relay makes no obvious safety difference. A more direct P2 passage than the disputed excerpt."
+    },
+    {
+      "source": "P3",
+      "locator": "Possible fixes / Full-featured Friendliness system, first paragraph",
+      "proposition": "Y19",
+      "relation": "contests",
+      "engagement": "engages-premise",
+      "premise": "P1",
+      "note": "Explains how optimizing users' pleasure can lead to wireheading them; a concrete harmful instrumental outcome without hostility."
+    },
+    {
+      "source": "P4",
+      "locator": "Further Remarks, paragraph beginning 'OpenAI seems to me'",
+      "proposition": "Y28",
+      "relation": "contests",
+      "engagement": "engages-premise",
+      "premise": "P1",
+      "note": "Names both leading labs, calls the safety work inapplicable to serious AGI and diagnoses insufficient alignment mindset. Stronger explicit safety-specific locator than the introductory complaint."
+    },
+    {
+      "source": "P5",
+      "locator": "Paragraph immediately following the selected paragraph, beginning 'His attitudes toward technological progress'",
+      "proposition": "Y22",
+      "relation": "articulates",
+      "note": "Retrospectively supplies the good-by-default premise omitted from the short quote; retain critical 2008 framing."
+    }
+  ],
+  "blindRecord": {
+    "recordedAt": "2026-10-16T19:54:15.658Z",
+    "initialReportSHA256": "644add889815018901dfa598c97e0f2a37a74d87025bb45ef41b82ea626020fa",
+    "blindJudgmentsSHA256": "9e5521a61ec201cc10767dd47a39a14f393fe6c05b032cf4fa06fa4f7d7ec23f",
+    "note": "The blindJudgment objects are preserved verbatim in substance after comparison; formatting only may change. The initial report hash identifies the saved pre-comparison file. The judgments hash is reproducible from the final JSON using JSON.stringify on the array of {id, blindJudgment} objects."
+  },
+  "comparisonBasis": "The supplied verdicts file, not a separate read of current claims/evidence or the pack. It identifies its own extraction baseline as the research-debt branch. Agreement here is with that supplied comparison snapshot; no claim of independently synchronizing it to application data.",
+  "laterRejectionFollowUp": [
+    {
+      "url": "http://sl4.org/archive/0711/17248.html",
+      "retrievedAt": "2026-10-16T19:55:23.161Z",
+      "httpStatus": 200,
+      "date": "2007-11-24",
+      "locator": "Entire message, author text after the quoted Freeman/Dai exchange",
+      "finding": "Explicitly argues that being comparatively better than other projects does not excuse unsafe AI development. It does not establish that the 2000 message advocates sacrificing safety to speed."
+    },
+    {
+      "url": "https://time.com/6266923/ai-eliezer-yudkowsky-open-letter-not-enough/",
+      "retrievedAt": "2026-10-16T19:55:32.281Z",
+      "httpStatus": 200,
+      "date": "2023-03-29",
+      "locator": "Policy paragraphs beginning The moratorium and Frame nothing",
+      "finding": "Explicitly rejects national arms-race framing and demands a worldwide halt to dangerous large training runs, with coercive enforcement. This is evidence of changed policy and a rejection of broad racing rationales; it does not retroactively supply the missing explicit premise in P7."
+    }
+  ],
+  "summary": {
+    "passagesChecked": 7,
+    "verdicts": {
+      "agree": 1,
+      "disagree": 6,
+      "unable": 0
+    },
+    "coreRelationOrEngagementChanges": [
+      "P4: contrary-only to engages-premise",
+      "P5: bears-on to articulates, retrospective and context protection retained",
+      "P6: bears-on to articulates, retrospective and context protection retained",
+      "P7: articulates to bears-on; earliest-located role impossible"
+    ],
+    "qualificationCorrections": ["P2", "P3", "P4", "P5", "P6", "P7"],
+    "disposition": "Findings only. Dataset, pack and supplied verdicts unchanged. Maintainer disposition and any authorized corrections remain separate work."
+  }
+}

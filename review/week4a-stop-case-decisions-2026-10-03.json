@@ -1,0 +1,299 @@
+{
+  "id": "week4a-stop-case-decisions-2026-10-03",
+  "description": "Decisions on the three stop cases listed in review/framework-evidence-quotes-2026-10-03.json, made in the week 4a task authorised by the maintainer. Each entry keeps the stored records before and after the change. Claim IDs are unchanged because each proposition keeps its subject, predicate and object; only resolution, derivation, wording scope or qualification changed. Git history keeps the earlier commits.",
+  "decidedAt": "2026-10-03",
+  "agent": "Claude Code session, Claude Opus 5.5 (claude-opus-5-5); machine decision under an explicit maintainer instruction, not human editorial review",
+  "decisions": [
+    {
+      "claimId": "supersedes-pf-2",
+      "decision": "Downgraded from supported to unresolved; derivation changed from explicit to inferred with stated premises; evidence reduced to context only.",
+      "rationale": "No inspected OpenAI text names the December 2023 Beta as the edition Version 2 replaces. Searched: the April 2025 update page (live and 2025-04-16 capture), the Version 2 PDF (all pages, including section 1.1 and the change log), the Frontier Governance Framework PDF and release page, OpenAI’s safety pages (the former preparedness URL now redirects to the general safety page) and the o3/o4-mini system card, which calls itself the first launch under the updated framework without naming the earlier edition. Secondary accounts that describe a replacement are not publisher documentation. The overstated paraphrase (an update to a framework first released in 2023) was replaced by a verbatim context quote.",
+      "searched": [
+        "https://openai.com/index/updating-our-preparedness-framework/",
+        "https://cdn.openai.com/pdf/18a02b5d-6b67-4cec-ab64-68cdfbddebcd/preparedness-framework-v2.pdf",
+        "https://cdn.openai.com/pdf/e37d949b-8c9f-4d76-b99e-4272f4631a7e/openai-frontier-governance-framework.pdf",
+        "https://openai.com/index/openai-frontier-governance-framework/",
+        "https://openai.com/preparedness/ (redirects to https://openai.com/safety/)",
+        "https://cdn.openai.com/pdf/2221c875-02dc-4789-800b-e7758f3722c1/o3-and-o4-mini-system-card.pdf"
+      ],
+      "before": {
+        "claim": {
+          "id": "supersedes-pf-2",
+          "subject": "preparedness-v2",
+          "predicate": "supersedes_document",
+          "object": {
+            "kind": "entity",
+            "entityId": "preparedness-beta-2023"
+          },
+          "topic": "governance",
+          "statement": "Preparedness Framework Version 2 replaces Beta in the publisher’s documented framework version sequence.",
+          "time": {
+            "kind": "event",
+            "date": "2025-04-15",
+            "basis": "revision",
+            "note": "Cover last-updated date and dated publication announcement both identify April 15, 2025; no distinct effective date is asserted."
+          },
+          "derivation": "explicit",
+          "resolution": "supported",
+          "editorialState": "seed",
+          "qualification": "This records replacement in the public policy version sequence, supported by the publisher’s update history. It does not retire historical claims or prove implementation.",
+          "evidenceIds": ["evidence-supersedes-pf-2"],
+          "recordedAt": "2026-09-18"
+        },
+        "evidence": [
+          {
+            "id": "evidence-supersedes-pf-2",
+            "claimId": "supersedes-pf-2",
+            "sourceId": "source-pf-v2-update",
+            "sourceRole": "primary",
+            "support": "supports",
+            "locator": "Opening paragraphs describing the first update since the 2023 framework",
+            "passage": "OpenAI describes Version 2 as an update to its framework first released in 2023.",
+            "passageType": "paraphrase",
+            "verification": "machine_checked",
+            "checkedAt": "2026-09-18",
+            "note": "Official source inspected by machine; passage is an editorial paraphrase. Human review pending."
+          }
+        ]
+      },
+      "after": {
+        "claim": {
+          "id": "supersedes-pf-2",
+          "subject": "preparedness-v2",
+          "predicate": "supersedes_document",
+          "object": {
+            "kind": "entity",
+            "entityId": "preparedness-beta-2023"
+          },
+          "topic": "governance",
+          "statement": "Preparedness Framework Version 2 replaces Beta in the publisher’s documented framework version sequence.",
+          "time": {
+            "kind": "event",
+            "date": "2025-04-15",
+            "basis": "revision",
+            "note": "Cover last-updated date and dated publication announcement both identify April 15, 2025; no distinct effective date is asserted."
+          },
+          "derivation": "inferred",
+          "resolution": "unresolved",
+          "editorialState": "seed",
+          "qualification": "Unresolved. The publisher’s update page and the Version 2 change log describe an update without naming the edition updated; secondary accounts that describe a replacement are not publisher documentation. Downgraded on 2026-10-03 from supported, which rested on an overstated paraphrase. It does not retire historical claims or prove implementation.",
+          "evidenceIds": [
+            "evidence-supersedes-pf-2",
+            "evidence-supersedes-pf-2-changelog"
+          ],
+          "recordedAt": "2026-09-18",
+          "inferenceRationale": "Premises: OpenAI calls the April 2025 document an update to its Preparedness Framework; the Version 2 change log lists changes made in that version, including removal of the low and medium levels that the December 2023 Beta used; the Beta is the only earlier edition identified. These make replacement plausible, but no inspected OpenAI text names the Beta as the edition Version 2 replaces, so the replacement is not established as publisher-documented."
+        },
+        "evidence": [
+          {
+            "id": "evidence-supersedes-pf-2",
+            "claimId": "supersedes-pf-2",
+            "sourceId": "source-pf-v2-update",
+            "sourceRole": "primary",
+            "support": "context",
+            "locator": "Opening paragraph, first sentence (opening words)",
+            "passage": "We’re releasing an update to our Preparedness Framework",
+            "passageType": "quote",
+            "verification": "machine_checked",
+            "checkedAt": "2026-10-03",
+            "note": "Verbatim excerpt checked by an automated research assistant on 2026-10-03 against the live page and the Internet Archive capture of 2025-04-16. The page names no earlier edition; the previous paraphrase (an update to a framework first released in 2023) overstated it and was replaced. Human editorial review is pending."
+          },
+          {
+            "id": "evidence-supersedes-pf-2-changelog",
+            "claimId": "supersedes-pf-2",
+            "sourceId": "source-pf-2",
+            "sourceRole": "primary",
+            "support": "context",
+            "locator": "PDF p. 15 (printed p. 14), Appendix A “Change log”, opening sentence and item 2",
+            "passage": "The change log lists the updates made in this version, including removal of the low and medium levels, without naming the edition it updates.",
+            "passageType": "paraphrase",
+            "verification": "machine_checked",
+            "checkedAt": "2026-10-03",
+            "note": "Paraphrase checked by an automated research assistant on 2026-10-03 against the Internet Archive capture of 2025-04-15 and the current file; this page is identical in both. Context only: it implies an earlier edition but does not identify it. Human editorial review is pending."
+          }
+        ]
+      }
+    },
+    {
+      "claimId": "eval-i-rsp-christiano-credit",
+      "decision": "Requalified: statement and qualification now follow the source (designed in the spirit of the framework being developed by Christiano and ARC Evals); evidence became the verbatim whole sentence. ID and explicitly_credits relation kept.",
+      "rationale": "explicitly_credits covers an express attribution of intellectual contribution with the scope retained in the claim. The sentence expressly attributes development of the RSP framework to Christiano and ARC Evals and scopes the relation as “in the spirit of”, alongside government proposals; the narrower scope is now in the statement and qualification rather than implied by “credits”.",
+      "before": {
+        "claim": {
+          "id": "eval-i-rsp-christiano-credit",
+          "subject": "rsp-2023",
+          "predicate": "explicitly_credits",
+          "object": {
+            "kind": "entity",
+            "entityId": "paul-christiano"
+          },
+          "topic": "ideas",
+          "statement": "Anthropic RSP v1.0 credits a framework being developed by Paul Christiano.",
+          "time": {
+            "kind": "event",
+            "date": "2023-09-19",
+            "basis": "publication",
+            "note": "Version publication/effective date."
+          },
+          "derivation": "explicit",
+          "resolution": "supported",
+          "editorialState": "seed",
+          "qualification": "Co-credit with ARC Evals; not sole authorship or proof that every policy commitment was implemented. Existing rsp-credits-arc-2023 remains unchanged.",
+          "evidenceIds": ["evidence-eval-i-rsp-christiano-credit"],
+          "recordedAt": "2026-09-27"
+        },
+        "evidence": [
+          {
+            "id": "evidence-eval-i-rsp-christiano-credit",
+            "claimId": "eval-i-rsp-christiano-credit",
+            "sourceId": "source-rsp-1-0",
+            "sourceRole": "primary",
+            "support": "supports",
+            "locator": "Printed page 1, introductory acknowledgement.",
+            "passage": "The policy says its commitments are designed in the spirit of the Responsible Scaling Policy framework being developed by Paul Christiano and ARC Evals.",
+            "passageType": "paraphrase",
+            "verification": "machine_checked",
+            "checkedAt": "2026-10-03",
+            "note": "Paraphrase re-checked by an automated research assistant on 2026-10-03 against the inspected PDF, byte-identical to the Internet Archive capture of 2023-09-19 (earlier www-files.anthropic.com address) and reworded to follow the source's \"in the spirit of\". This is not human review or independent reproduction of the reported activity."
+          }
+        ]
+      },
+      "after": {
+        "claim": {
+          "id": "eval-i-rsp-christiano-credit",
+          "subject": "rsp-2023",
+          "predicate": "explicitly_credits",
+          "object": {
+            "kind": "entity",
+            "entityId": "paul-christiano"
+          },
+          "topic": "ideas",
+          "statement": "Anthropic RSP v1.0 says its commitments are designed in the spirit of the Responsible Scaling Policy framework being developed by Paul Christiano and ARC Evals.",
+          "time": {
+            "kind": "event",
+            "date": "2023-09-19",
+            "basis": "publication",
+            "note": "Version publication/effective date."
+          },
+          "derivation": "explicit",
+          "resolution": "supported",
+          "editorialState": "seed",
+          "qualification": "Scoped attribution: the policy names Christiano, with ARC Evals, as developing the RSP framework and says its commitments are designed in that framework’s spirit, alongside emerging government proposals. It does not say the commitments were derived from, adopted from or endorsed by Christiano; the paragraph’s explicit thanks go to ARC Evals only. Not sole authorship or proof that every commitment was implemented. Requalified on 2026-10-03 from “credits a framework”. Distinct from rsp-credits-arc-2023.",
+          "evidenceIds": ["evidence-eval-i-rsp-christiano-credit"],
+          "recordedAt": "2026-09-27"
+        },
+        "evidence": [
+          {
+            "id": "evidence-eval-i-rsp-christiano-credit",
+            "claimId": "eval-i-rsp-christiano-credit",
+            "sourceId": "source-rsp-1-0",
+            "sourceRole": "primary",
+            "support": "supports",
+            "locator": "PDF p. 1, introduction, fourth paragraph, first sentence",
+            "passage": "Our commitments are designed in the spirit of the Responsible Scaling Policy (RSP) framework being developed by Paul Christiano and ARC Evals, as well as emerging government policy proposals on responsible AI development in the UK, EU, and US.",
+            "passageType": "quote",
+            "verification": "machine_checked",
+            "checkedAt": "2026-10-03",
+            "note": "Verbatim excerpt checked by an automated research assistant on 2026-10-03 against the inspected PDF, byte-identical to the Internet Archive capture of 2023-09-19 (earlier www-files.anthropic.com address); the whole sentence is quoted so its second limb is not lost. This is not human review or independent reproduction of the reported activity."
+          }
+        ]
+      }
+    },
+    {
+      "claimId": "rsp-credits-arc-2023",
+      "decision": "Qualification extended with the publication-day timing; a context evidence record and a source for the 14:15 UTC capture added. Statement, resolution and existing evidence unchanged.",
+      "rationale": "Captures of the original /index/ address at 14:15 and 16:17 UTC on 2023-09-19 end before the footnotes without the acknowledgement paragraph; the 20:15 UTC capture contains it. The announcement did credit ARC Evals on its publication day, so the claim stands, but the credit was not in the earliest captured text.",
+      "before": {
+        "claim": {
+          "id": "rsp-credits-arc-2023",
+          "subject": "rsp-2023",
+          "predicate": "explicitly_credits",
+          "object": {
+            "kind": "entity",
+            "entityId": "arc-evals"
+          },
+          "topic": "ideas",
+          "statement": "The RSP announcement explicitly credited ARC Evals’ framework as inspiring Anthropic’s approach.",
+          "time": {
+            "kind": "event",
+            "date": "2023-09-19",
+            "note": "The date identifies this documented announcement or publication; it does not establish a continuing state."
+          },
+          "editorialState": "seed",
+          "qualification": "The credit is specific to this policy approach. It does not imply a shared ideology or prove a broader causal account.",
+          "evidenceIds": ["evidence-rsp-credits-arc-2023"],
+          "recordedAt": "2026-09-17",
+          "derivation": "explicit",
+          "resolution": "supported"
+        },
+        "evidence": []
+      },
+      "after": {
+        "claim": {
+          "id": "rsp-credits-arc-2023",
+          "subject": "rsp-2023",
+          "predicate": "explicitly_credits",
+          "object": {
+            "kind": "entity",
+            "entityId": "arc-evals"
+          },
+          "topic": "ideas",
+          "statement": "The RSP announcement explicitly credited ARC Evals’ framework as inspiring Anthropic’s approach.",
+          "time": {
+            "kind": "event",
+            "date": "2023-09-19",
+            "note": "The date identifies this documented announcement or publication; it does not establish a continuing state."
+          },
+          "editorialState": "seed",
+          "qualification": "The credit is specific to this policy approach. It does not imply a shared ideology or prove a broader causal account. Internet Archive captures of the announcement’s original address show the acknowledgement paragraph absent at 14:15 and 16:17 UTC on 2023-09-19 and present from about 20:15 UTC: the credit was added within hours of first publication and is not in the earliest captured text. Timing qualification added 2026-10-03.",
+          "evidenceIds": [
+            "evidence-rsp-credits-arc-2023",
+            "evidence-rsp-credits-arc-2023-timing"
+          ],
+          "recordedAt": "2026-09-17",
+          "derivation": "explicit",
+          "resolution": "supported"
+        },
+        "evidence": [
+          {
+            "id": "evidence-rsp-credits-arc-2023-timing",
+            "claimId": "rsp-credits-arc-2023",
+            "sourceId": "source-rsp-announcement-capture-1415",
+            "sourceRole": "primary",
+            "support": "context",
+            "locator": "Whole announcement text; the last paragraph before Footnotes ends “similar deployment decisions.”",
+            "passage": "In this 14:15 UTC capture, as in the 16:17 UTC capture, the announcement reaches its footnotes without the italic acknowledgement paragraph; the 20:15 UTC capture of the same address contains it.",
+            "passageType": "paraphrase",
+            "verification": "machine_checked",
+            "checkedAt": "2026-10-03",
+            "note": "Compared by an automated research assistant on 2026-10-03 across three Internet Archive captures of the original address made on 2023-09-19 (14:15, 16:17 and 20:15 UTC; the later two at web.archive.org/web/20230919161716/ and /20230919201512/). A capture shows what the archive retrieved at that moment; it cannot date the change more precisely. Human editorial review is pending."
+          }
+        ],
+        "sources": [
+          {
+            "id": "source-rsp-announcement-capture-1415",
+            "title": "Anthropic’s Responsible Scaling Policy",
+            "authors": ["Anthropic"],
+            "publisher": "Anthropic",
+            "publisherId": "anthropic",
+            "publicationDate": "2023-09-19",
+            "version": "Internet Archive capture of the announcement’s original address (/index/anthropics-responsible-scaling-policy), 2023-09-19 14:15:18 UTC, the earliest capture located; compared with the same day’s 16:17 and 20:15 UTC captures.",
+            "versionDate": "2023-09-19",
+            "canonicalUrl": "https://www.anthropic.com/news/anthropics-responsible-scaling-policy",
+            "evidenceUrl": "https://web.archive.org/web/20230919141518/https://www.anthropic.com/index/anthropics-responsible-scaling-policy",
+            "language": "en",
+            "archivedUrl": "https://web.archive.org/web/20230919141518/https://www.anthropic.com/index/anthropics-responsible-scaling-policy",
+            "archivedAt": "2023-09-19",
+            "kind": "announcement",
+            "accessedAt": "2026-10-03",
+            "reuse": {
+              "attribution": "Anthropic, Introducing Anthropic’s Responsible Scaling Policy (2023-09-19), as captured by the Internet Archive.",
+              "licence": "No open redistribution licence asserted",
+              "note": "Selekoa practice: metadata, attributed paraphrases and short attributed quotations under the editorial policy (at most 50 words each; about five quotes and 250 quoted words per document across the dataset). Documents are linked externally, not redistributed. Publisher terms that forbid quotation override this practice."
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

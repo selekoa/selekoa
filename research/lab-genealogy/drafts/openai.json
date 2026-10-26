@@ -1,0 +1,4261 @@
+{
+  "group": "openai",
+  "searched": "OpenAI’s own news feed (openai.com/news/rss.xml, 1,294 items, retrieved directly on 2026-10-15) was used to discover every company post from 2015 to October 2026 on boards, executives, safety teams, acquisitions and structure, and to date posts whose reader-relay text carries no date. openai.com pages were read through the reader relay (openai.com refuses direct retrieval); several returned HTTP 401 on first attempt and succeeded on retry. People’s own posts were found through web search and through status links embedded in TechCrunch, Gigazine, Decrypt, techstartups.com and TechNews articles (used for discovery only), then read through X’s syndication endpoint; long-form note posts come back truncated and image notes cannot be read, so Mira Murati’s and Bob McGrew’s September 2024 notes and Sam Altman’s 26 September 2024 transition note could not be machine-checked: TechCrunch reporting is cited for the Murati and McGrew departures and for Mark Chen’s SVP title. The reader relay refused x.com (abuse block), so no X post was read through it. Checked against existing records: the 2015 launch roster and co-chairs, Musk’s 2018 board departure, Dario Amodei’s 2020 departure, the 2019 LP, the November 2023 board events, Sutskever’s 2024 departure and Pachocki’s appointment, the Superalignment co-leads, the 2025 recapitalization and Christiano’s 2026 board appointment; none is duplicated. Not drafted: Greg Brockman’s August–November 2024 sabbatical and return (his posts were retrieved, but no predicate fits a leave of absence; the sabbatical post is used only for his self-description as co-founder); Aleksander Madry’s July 2024 reassignment and the interim preparedness leads (Altman’s post could not be located; only secondary aggregators were found); Lilian Weng’s reported 2026 return to OpenAI (reporting only); Kevin Weil’s 2025 move to OpenAI for Science as a dated event (his post was not located; his April 2026 post describes it retrospectively); Fidji Simo’s board status after May 2025 (no source states when she left the board); Mira Murati’s founding of Thinking Machines Lab (outside this group); Matt Knight, Srinivas Narayanan, Chris Clark, Anna Makanju and other Foundation staff (outside scope); OpenAI’s ‘OpenAI and Elon Musk’ posts (litigation material). The Internet Archive was not used.",
+  "existingUsed": [
+    "altman-openai-2015",
+    "musk-openai-2015",
+    "sutskever-openai-2015",
+    "brockman-openai-cto-2015",
+    "john-schulman-openai-founding-2015",
+    "wojciech-zaremba-openai-founding-2015",
+    "durk-kingma-openai-founding-2015",
+    "musk-openai-board-departure-2018",
+    "dario-openai-departure-announced-2020",
+    "cs-openai-lp-announced-2019",
+    "atlas-altman-departure",
+    "atlas-altman-return",
+    "atlas-murati-interim",
+    "cs-altman-board-departure-2023",
+    "cs-brockman-chair-departure-2023",
+    "cs-taylor-chair-initial-board-2023",
+    "cs-summers-initial-board-2023",
+    "cs-dangelo-initial-board-2023",
+    "cs-sutskever-board-departure-2023",
+    "cs-altman-board-return-2024",
+    "jan-leike-openai-superalignment-2023",
+    "ilya-sutskever-openai-superalignment-2023",
+    "sutskever-openai-departure-announced-2024",
+    "pachocki-openai-chief-scientist-2024",
+    "karpathy-openai-return-2023-2024",
+    "schulman-openai-posttraining-2022-2024",
+    "leike-anthropic-alignment-science",
+    "cs-openai-nonprofit-retains-control-2025",
+    "cs-openai-foundation-elects-pbc-directors",
+    "cs-christiano-openai-foundation-board-2026"
+  ],
+  "entities": [
+    {
+      "id": "openai",
+      "existing": true
+    },
+    {
+      "id": "openai-inc",
+      "existing": true
+    },
+    {
+      "id": "openai-group-pbc",
+      "existing": true
+    },
+    {
+      "id": "anthropic",
+      "existing": true
+    },
+    {
+      "id": "sam-altman",
+      "existing": true
+    },
+    {
+      "id": "greg-brockman",
+      "existing": true
+    },
+    {
+      "id": "ilya-sutskever",
+      "existing": true
+    },
+    {
+      "id": "mira-murati",
+      "existing": true
+    },
+    {
+      "id": "john-schulman",
+      "existing": true
+    },
+    {
+      "id": "jan-leike",
+      "existing": true
+    },
+    {
+      "id": "andrej-karpathy",
+      "existing": true
+    },
+    {
+      "id": "wojciech-zaremba",
+      "existing": true
+    },
+    {
+      "id": "jakub-pachocki",
+      "existing": true
+    },
+    {
+      "id": "bret-taylor",
+      "existing": true
+    },
+    {
+      "id": "adam-dangelo",
+      "existing": true
+    },
+    {
+      "id": "trevor-blackwell",
+      "type": "person",
+      "name": "Trevor Blackwell",
+      "sortName": "Blackwell, Trevor",
+      "subtype": "Institutional actor",
+      "aliases": [],
+      "description": "Named among OpenAI’s founding members in its December 2015 launch announcement.",
+      "sourceIds": ["lg-src-oai-launch-2015"]
+    },
+    {
+      "id": "vicki-cheung",
+      "type": "person",
+      "name": "Vicki Cheung",
+      "sortName": "Cheung, Vicki",
+      "subtype": "Institutional actor",
+      "aliases": [],
+      "description": "Named among OpenAI’s founding members in its December 2015 launch announcement.",
+      "sourceIds": ["lg-src-oai-launch-2015"]
+    },
+    {
+      "id": "pamela-vagata",
+      "type": "person",
+      "name": "Pamela Vagata",
+      "sortName": "Vagata, Pamela",
+      "subtype": "Institutional actor",
+      "aliases": [],
+      "description": "Named among OpenAI’s founding members in its December 2015 launch announcement.",
+      "sourceIds": ["lg-src-oai-launch-2015"]
+    },
+    {
+      "id": "pieter-abbeel",
+      "type": "person",
+      "name": "Pieter Abbeel",
+      "sortName": "Abbeel, Pieter",
+      "subtype": "Researcher",
+      "aliases": [],
+      "description": "UC Berkeley robotics professor; named an OpenAI advisor at launch and announced in April 2016 as working with OpenAI full-time.",
+      "sourceIds": ["lg-src-oai-launch-2015", "lg-src-oai-abbeel-zilis-2016"]
+    },
+    {
+      "id": "shivon-zilis",
+      "type": "person",
+      "name": "Shivon Zilis",
+      "sortName": "Zilis, Shivon",
+      "subtype": "Institutional actor",
+      "aliases": [],
+      "description": "Announced as an official OpenAI advisor in April 2016; listed on the OpenAI Nonprofit board in March 2019.",
+      "sourceIds": ["lg-src-oai-abbeel-zilis-2016", "lg-src-oai-lp-2019"]
+    },
+    {
+      "id": "holden-karnofsky",
+      "type": "person",
+      "name": "Holden Karnofsky",
+      "sortName": "Karnofsky, Holden",
+      "subtype": "Institutional actor",
+      "aliases": [],
+      "description": "Listed as a non-employee member of the OpenAI Nonprofit board in March 2019.",
+      "sourceIds": ["lg-src-oai-lp-2019"]
+    },
+    {
+      "id": "reid-hoffman",
+      "type": "person",
+      "name": "Reid Hoffman",
+      "sortName": "Hoffman, Reid",
+      "subtype": "Institutional actor",
+      "aliases": [],
+      "description": "Named as an OpenAI donor at its 2015 launch, listed as a non-employee member of the OpenAI Nonprofit board in March 2019, and named as a co-founder of Inflection AI in 2022.",
+      "sourceIds": [
+        "lg-src-oai-launch-2015",
+        "lg-src-oai-lp-2019",
+        "lg-src-deal-greylock-inflection-2022",
+        "lg-src-deal-inflection-labs-2026"
+      ]
+    },
+    {
+      "id": "tasha-mccauley",
+      "type": "person",
+      "name": "Tasha McCauley",
+      "sortName": "McCauley, Tasha",
+      "subtype": "Institutional actor",
+      "aliases": [],
+      "description": "Listed as a member of the OpenAI Nonprofit board in March 2019 and as an independent director in November 2023.",
+      "sourceIds": [
+        "lg-src-oai-lp-2019",
+        "lg-src-oai-leadership-transition-2023"
+      ]
+    },
+    {
+      "id": "will-hurd",
+      "type": "person",
+      "name": "Will Hurd",
+      "sortName": "Hurd, Will",
+      "subtype": "Institutional actor",
+      "aliases": [],
+      "description": "Former US congressman announced as joining OpenAI’s board of directors in May 2021.",
+      "sourceIds": ["lg-src-oai-hurd-2021"]
+    },
+    {
+      "id": "helen-toner",
+      "type": "person",
+      "name": "Helen Toner",
+      "sortName": "Toner, Helen",
+      "subtype": "Institutional actor",
+      "aliases": [],
+      "description": "Georgetown CSET strategy director appointed to OpenAI’s board in September 2021 and listed as an independent director in November 2023.",
+      "sourceIds": [
+        "lg-src-oai-toner-2021",
+        "lg-src-oai-leadership-transition-2023"
+      ]
+    },
+    {
+      "id": "brad-lightcap",
+      "type": "person",
+      "name": "Brad Lightcap",
+      "sortName": "Lightcap, Brad",
+      "subtype": "Institutional actor",
+      "aliases": [],
+      "description": "Announced as OpenAI’s Chief Operating Officer in May 2022.",
+      "sourceIds": ["lg-src-oai-leadership-2022"]
+    },
+    {
+      "id": "aleksander-madry",
+      "type": "person",
+      "name": "Aleksander Madry",
+      "sortName": "Madry, Aleksander",
+      "subtype": "Researcher",
+      "aliases": [],
+      "description": "Named as leader of OpenAI’s Preparedness team in October 2023 and as Head of Preparedness in May 2024.",
+      "sourceIds": ["lg-src-oai-preparedness-2023", "lg-src-oai-ssc-2024"]
+    },
+    {
+      "id": "emmett-shear",
+      "type": "person",
+      "name": "Emmett Shear",
+      "sortName": "Shear, Emmett",
+      "subtype": "Institutional actor",
+      "aliases": [],
+      "description": "Former Twitch CEO who announced in November 2023 that he had accepted the role of interim CEO of OpenAI.",
+      "sourceIds": ["lg-src-oai-shear-x-2023"]
+    },
+    {
+      "id": "sue-desmond-hellmann",
+      "type": "person",
+      "name": "Sue Desmond-Hellmann",
+      "sortName": "Desmond-Hellmann, Sue",
+      "subtype": "Institutional actor",
+      "aliases": [],
+      "description": "Former CEO of the Bill & Melinda Gates Foundation announced as an OpenAI board member in March 2024.",
+      "sourceIds": ["lg-src-oai-board-2024"]
+    },
+    {
+      "id": "nicole-seligman",
+      "type": "person",
+      "name": "Nicole Seligman",
+      "sortName": "Seligman, Nicole",
+      "subtype": "Institutional actor",
+      "aliases": [],
+      "description": "Former Sony general counsel announced as an OpenAI board member in March 2024 and named to its Safety and Security Committee.",
+      "sourceIds": ["lg-src-oai-board-2024", "lg-src-oai-ssc-2024"]
+    },
+    {
+      "id": "fidji-simo",
+      "type": "person",
+      "name": "Fidji Simo",
+      "sortName": "Simo, Fidji",
+      "subtype": "Institutional actor",
+      "aliases": [],
+      "description": "Instacart CEO announced as an OpenAI board member in March 2024 and as OpenAI’s CEO of Applications in May 2025.",
+      "sourceIds": ["lg-src-oai-board-2024", "lg-src-oai-simo-2025"]
+    },
+    {
+      "id": "lilian-weng",
+      "type": "person",
+      "name": "Lilian Weng",
+      "sortName": "Weng, Lilian",
+      "subtype": "Researcher",
+      "aliases": [],
+      "description": "Listed as OpenAI’s Head of Safety Systems in May 2024; announced her departure from OpenAI in November 2024.",
+      "sourceIds": ["lg-src-oai-ssc-2024", "lg-src-oai-weng-x-2024"]
+    },
+    {
+      "id": "sarah-friar",
+      "type": "person",
+      "name": "Sarah Friar",
+      "sortName": "Friar, Sarah",
+      "subtype": "Institutional actor",
+      "aliases": [],
+      "description": "Former Nextdoor CEO announced as OpenAI’s Chief Financial Officer in June 2024.",
+      "sourceIds": ["lg-src-oai-cfo-cpo-2024"]
+    },
+    {
+      "id": "kevin-weil",
+      "type": "person",
+      "name": "Kevin Weil",
+      "sortName": "Weil, Kevin",
+      "subtype": "Institutional actor",
+      "aliases": [],
+      "description": "Announced as OpenAI’s Chief Product Officer in June 2024; later started OpenAI for Science and announced his last day at OpenAI in April 2026.",
+      "sourceIds": ["lg-src-oai-cfo-cpo-2024", "lg-src-oai-weil-x-2026"]
+    },
+    {
+      "id": "paul-nakasone",
+      "type": "person",
+      "name": "Paul M. Nakasone",
+      "sortName": "Nakasone, Paul M.",
+      "subtype": "Institutional actor",
+      "aliases": [],
+      "description": "Retired US Army general and former NSA director announced as an OpenAI board member in June 2024.",
+      "sourceIds": ["lg-src-oai-nakasone-2024"]
+    },
+    {
+      "id": "zico-kolter",
+      "type": "person",
+      "name": "Zico Kolter",
+      "sortName": "Kolter, Zico",
+      "subtype": "Researcher",
+      "aliases": [],
+      "description": "Carnegie Mellon machine-learning department head appointed to OpenAI’s board in August 2024 and named chair of its Safety and Security Committee in September 2024.",
+      "sourceIds": ["lg-src-oai-kolter-2024", "lg-src-oai-ssc-update-2024"]
+    },
+    {
+      "id": "bob-mcgrew",
+      "type": "person",
+      "name": "Bob McGrew",
+      "sortName": "McGrew, Bob",
+      "subtype": "Institutional actor",
+      "aliases": [],
+      "description": "Reported as OpenAI’s chief research officer when he left the company in September 2024.",
+      "sourceIds": ["lg-src-oai-tc-mcgrew-2024"]
+    },
+    {
+      "id": "barret-zoph",
+      "type": "person",
+      "name": "Barret Zoph",
+      "sortName": "Zoph, Barret",
+      "subtype": "Researcher and executive",
+      "aliases": [],
+      "description": "Announced his departure from OpenAI, where he was reported as a research VP, in September 2024; reported as co-founder and chief technology officer of Thinking Machines Lab, whose separation from him and his return to OpenAI were announced in January 2026.",
+      "sourceIds": [
+        "lg-src-oai-zoph-x-2024",
+        "lg-src-oai-tc-mcgrew-2024",
+        "lg-src-new-tc-tml-2025",
+        "lg-src-new-tc-tml-2026",
+        "lg-src-new-murati-x-2026",
+        "lg-src-new-simo-x-2026"
+      ]
+    },
+    {
+      "id": "mark-chen",
+      "type": "person",
+      "name": "Mark Chen",
+      "sortName": "Chen, Mark",
+      "subtype": "Researcher",
+      "aliases": [],
+      "description": "Stated in September 2024 that he would lead research at OpenAI with Jakub Pachocki; announced as Chief Research Officer in March 2025.",
+      "sourceIds": ["lg-src-oai-markchen-x-2024", "lg-src-oai-leadership-2025"]
+    },
+    {
+      "id": "adebayo-ogunlesi",
+      "type": "person",
+      "name": "Adebayo Ogunlesi",
+      "sortName": "Ogunlesi, Adebayo",
+      "subtype": "Institutional actor",
+      "aliases": ["Bayo Ogunlesi"],
+      "description": "Global Infrastructure Partners chair and CEO announced as an OpenAI board member in January 2025.",
+      "sourceIds": ["lg-src-oai-ogunlesi-2025"]
+    },
+    {
+      "id": "jony-ive",
+      "type": "person",
+      "name": "Jony Ive",
+      "sortName": "Ive, Jony",
+      "subtype": "Institutional actor",
+      "aliases": [],
+      "description": "Designer and io founder; OpenAI stated in July 2025 that he and LoveFrom had assumed design and creative responsibilities across OpenAI.",
+      "sourceIds": ["lg-src-oai-io-2025"]
+    },
+    {
+      "id": "vijaye-raji",
+      "type": "person",
+      "name": "Vijaye Raji",
+      "sortName": "Raji, Vijaye",
+      "subtype": "Institutional actor",
+      "aliases": [],
+      "description": "Statsig founder and CEO announced in September 2025 as OpenAI’s CTO of Applications.",
+      "sourceIds": ["lg-src-oai-statsig-2025"]
+    },
+    {
+      "id": "dylan-scandinaro",
+      "type": "person",
+      "name": "Dylan Scandinaro",
+      "sortName": "Scandinaro, Dylan",
+      "subtype": "Institutional actor",
+      "aliases": [],
+      "description": "Announced in February 2026 as OpenAI’s Head of Preparedness, joining from Anthropic.",
+      "sourceIds": [
+        "lg-src-oai-sama-scandinaro-x-2026",
+        "lg-src-oai-scandinaro-x-2026"
+      ]
+    },
+    {
+      "id": "david-velez",
+      "type": "person",
+      "name": "David Vélez",
+      "sortName": "Vélez, David",
+      "subtype": "Institutional actor",
+      "aliases": [],
+      "description": "Nubank founder and CEO announced in July 2026 as a member of the boards of the OpenAI Foundation and OpenAI Group PBC.",
+      "sourceIds": ["lg-src-oai-velez-vince-2026"]
+    },
+    {
+      "id": "robin-vince",
+      "type": "person",
+      "name": "Robin Vince",
+      "sortName": "Vince, Robin",
+      "subtype": "Institutional actor",
+      "aliases": [],
+      "description": "BNY chair and CEO announced in July 2026 as a member of the boards of the OpenAI Foundation and OpenAI Group PBC.",
+      "sourceIds": ["lg-src-oai-velez-vince-2026"]
+    },
+    {
+      "id": "julia-villagra",
+      "type": "person",
+      "name": "Julia Villagra",
+      "sortName": "Villagra, Julia",
+      "subtype": "Institutional actor",
+      "aliases": [],
+      "description": "Announced in March 2025 as having assumed the role of OpenAI’s Chief People Officer.",
+      "sourceIds": ["lg-src-oai-leadership-2025"]
+    },
+    {
+      "id": "denise-dresser",
+      "type": "person",
+      "name": "Denise Dresser",
+      "sortName": "Dresser, Denise",
+      "subtype": "Institutional actor",
+      "aliases": [],
+      "description": "Former Slack CEO announced as OpenAI’s Chief Revenue Officer in December 2025; OpenAI announced her departure in August 2026.",
+      "sourceIds": ["lg-src-oai-dresser-2025", "lg-src-oai-rajic-2026"]
+    },
+    {
+      "id": "arvind-kc",
+      "type": "person",
+      "name": "Arvind KC",
+      "sortName": "KC, Arvind",
+      "subtype": "Institutional actor",
+      "aliases": [],
+      "description": "Announced as OpenAI’s Chief People Officer in February 2026.",
+      "sourceIds": ["lg-src-oai-kc-2026"]
+    },
+    {
+      "id": "dali-rajic",
+      "type": "person",
+      "name": "Dali Rajic",
+      "sortName": "Rajic, Dali",
+      "subtype": "Institutional actor",
+      "aliases": [],
+      "description": "Announced in August 2026 as joining OpenAI as Chief Revenue Officer.",
+      "sourceIds": ["lg-src-oai-rajic-2026"]
+    },
+    {
+      "id": "openai-safety-security-committee",
+      "type": "organisation",
+      "name": "OpenAI Safety and Security Committee",
+      "subtype": "Board committee",
+      "aliases": [],
+      "description": "Board committee formed by OpenAI’s board in May 2024; described in 2026 as a committee of the OpenAI Foundation.",
+      "sourceIds": ["lg-src-oai-ssc-2024", "lg-src-oai-our-structure"]
+    },
+    {
+      "id": "io-products",
+      "type": "organisation",
+      "name": "io Products, Inc.",
+      "subtype": "Hardware company",
+      "aliases": ["io"],
+      "description": "Company founded by Jony Ive with Scott Cannon, Evans Hankey and Tang Tan whose team OpenAI stated had merged with it in July 2025.",
+      "sourceIds": ["lg-src-oai-io-2025"]
+    },
+    {
+      "id": "statsig",
+      "type": "organisation",
+      "name": "Statsig",
+      "subtype": "Software company",
+      "aliases": [],
+      "description": "Experimentation-platform company whose acquisition by OpenAI was announced in September 2025.",
+      "sourceIds": ["lg-src-oai-statsig-2025"]
+    }
+  ],
+  "sources": [
+    {
+      "id": "lg-src-oai-launch-2015",
+      "cacheKey": "oai-launch",
+      "title": "Introducing OpenAI",
+      "authors": ["Greg Brockman", "Ilya Sutskever", "OpenAI"],
+      "publisher": "OpenAI",
+      "publicationDate": "2015-12-11",
+      "kind": "announcement",
+      "url": "https://openai.com/index/introducing-openai/",
+      "route": "relay",
+      "language": "en",
+      "sourceClass": "primary",
+      "datasetSourceId": "source-openai-launch"
+    },
+    {
+      "id": "lg-src-oai-abbeel-zilis-2016",
+      "cacheKey": "oai-pieter-shivon-2016",
+      "title": "Welcome, Pieter and Shivon!",
+      "authors": [],
+      "publisher": "OpenAI",
+      "publicationDate": "2016-04-26",
+      "kind": "announcement",
+      "url": "https://openai.com/index/welcome-pieter-and-shivon/",
+      "route": "relay",
+      "language": "en",
+      "sourceClass": "primary"
+    },
+    {
+      "id": "lg-src-oai-lp-2019",
+      "cacheKey": "oai-lp-2019",
+      "title": "OpenAI LP",
+      "authors": ["Greg Brockman", "Ilya Sutskever", "OpenAI"],
+      "publisher": "OpenAI",
+      "publicationDate": "2019-03-11",
+      "kind": "announcement",
+      "url": "https://openai.com/index/openai-lp/",
+      "route": "relay",
+      "language": "en",
+      "sourceClass": "primary",
+      "datasetSourceId": "source-atlas-openai-lp"
+    },
+    {
+      "id": "lg-src-oai-hurd-2021",
+      "cacheKey": "oai-hurd-2021",
+      "title": "Will Hurd joins OpenAI’s board of directors",
+      "authors": [],
+      "publisher": "OpenAI",
+      "publicationDate": "2021-05-03",
+      "kind": "announcement",
+      "url": "https://openai.com/index/will-hurd-joins/",
+      "route": "relay",
+      "language": "en",
+      "sourceClass": "primary"
+    },
+    {
+      "id": "lg-src-oai-toner-2021",
+      "cacheKey": "oai-toner-2021",
+      "title": "Helen Toner joins OpenAI’s board of directors",
+      "authors": [],
+      "publisher": "OpenAI",
+      "publicationDate": "2021-09-08",
+      "kind": "announcement",
+      "url": "https://openai.com/index/helen-toner-joins/",
+      "route": "relay",
+      "language": "en",
+      "sourceClass": "primary"
+    },
+    {
+      "id": "lg-src-oai-leadership-2022",
+      "cacheKey": "oai-leadership-2022",
+      "title": "OpenAI leadership team update",
+      "authors": ["Sam Altman"],
+      "publisher": "OpenAI",
+      "publicationDate": "2022-05-05",
+      "kind": "announcement",
+      "url": "https://openai.com/index/leadership-team-update/",
+      "route": "relay",
+      "language": "en",
+      "sourceClass": "primary"
+    },
+    {
+      "id": "lg-src-oai-preparedness-2023",
+      "cacheKey": "oai-preparedness-2023",
+      "title": "Frontier risk and preparedness",
+      "authors": [],
+      "publisher": "OpenAI",
+      "publicationDate": "2023-10-26",
+      "kind": "announcement",
+      "url": "https://openai.com/index/frontier-risk-and-preparedness/",
+      "route": "relay",
+      "language": "en",
+      "sourceClass": "primary"
+    },
+    {
+      "id": "lg-src-oai-leadership-transition-2023",
+      "cacheKey": "oai-leadership-2023",
+      "title": "OpenAI announces leadership transition",
+      "authors": [],
+      "publisher": "OpenAI",
+      "publicationDate": "2023-11-17",
+      "kind": "announcement",
+      "url": "https://openai.com/index/openai-announces-leadership-transition/",
+      "route": "relay",
+      "language": "en",
+      "sourceClass": "primary",
+      "datasetSourceId": "source-openai-leadership-transition-2023"
+    },
+    {
+      "id": "lg-src-oai-shear-x-2023",
+      "cacheKey": "oai-shear-x-2023",
+      "title": "Post of 20 November 2023 on becoming interim CEO of OpenAI",
+      "authors": ["Emmett Shear"],
+      "publisher": "X",
+      "publicationDate": "2023-11-20",
+      "kind": "post",
+      "url": "https://x.com/eshear/status/1726526112019382275",
+      "route": "x",
+      "language": "en",
+      "sourceClass": "primary",
+      "note": "Read through X’s syndication endpoint (text only). Publication date is the post’s UTC timestamp."
+    },
+    {
+      "id": "lg-src-oai-return-2023",
+      "cacheKey": "oai-return-2023",
+      "title": "Sam Altman returns as CEO, OpenAI has a new initial board",
+      "authors": ["Sam Altman", "Bret Taylor"],
+      "publisher": "OpenAI",
+      "publicationDate": "2023-11-29",
+      "kind": "announcement",
+      "url": "https://openai.com/index/sam-altman-returns-as-ceo-openai-has-a-new-initial-board/",
+      "route": "relay",
+      "language": "en",
+      "sourceClass": "primary",
+      "datasetSourceId": "source-openai-new-initial-board-2023"
+    },
+    {
+      "id": "lg-src-oai-karpathy-x-2024",
+      "cacheKey": "oai-karpathy-x-2024",
+      "title": "Post of 14 February 2024 (UTC) on leaving OpenAI",
+      "authors": ["Andrej Karpathy"],
+      "publisher": "X",
+      "publicationDate": "2024-02-14",
+      "kind": "post",
+      "url": "https://x.com/karpathy/status/1757600075281547344",
+      "route": "x",
+      "language": "en",
+      "sourceClass": "primary",
+      "note": "Read through X’s syndication endpoint (text only). Publication date is the post’s UTC timestamp."
+    },
+    {
+      "id": "lg-src-oai-board-2024",
+      "cacheKey": "oai-board-mar2024",
+      "title": "OpenAI announces new members to board of directors",
+      "authors": [],
+      "publisher": "OpenAI",
+      "publicationDate": "2024-03-08",
+      "kind": "announcement",
+      "url": "https://openai.com/index/openai-announces-new-members-to-board-of-directors/",
+      "route": "relay",
+      "language": "en",
+      "sourceClass": "primary"
+    },
+    {
+      "id": "lg-src-oai-review-2024",
+      "cacheKey": "oai-review-2024",
+      "title": "Review completed & Altman, Brockman to continue to lead OpenAI",
+      "authors": [],
+      "publisher": "OpenAI",
+      "publicationDate": "2024-03-08",
+      "kind": "announcement",
+      "url": "https://openai.com/index/review-completed-altman-brockman-to-continue-to-lead-openai/",
+      "route": "relay",
+      "language": "en",
+      "sourceClass": "primary",
+      "datasetSourceId": "source-openai-review-completed-2024"
+    },
+    {
+      "id": "lg-src-oai-leike-x-2024",
+      "cacheKey": "oai-leike-x-2024",
+      "title": "Post of 17 May 2024 on his last day at OpenAI (first post of a thread)",
+      "authors": ["Jan Leike"],
+      "publisher": "X",
+      "publicationDate": "2024-05-17",
+      "kind": "post",
+      "url": "https://x.com/janleike/status/1791498174659715494",
+      "route": "x",
+      "language": "en",
+      "sourceClass": "primary",
+      "note": "Read through X’s syndication endpoint (text only). Publication date is the post’s UTC timestamp."
+    },
+    {
+      "id": "lg-src-oai-leike-priorities-x-2024",
+      "cacheKey": "oai-leike-priorities-x-2024",
+      "title": "Post of 17 May 2024 (second post of the thread on leaving OpenAI)",
+      "authors": ["Jan Leike"],
+      "publisher": "X",
+      "publicationDate": "2024-05-17",
+      "kind": "post",
+      "url": "https://x.com/janleike/status/1791498178346549382",
+      "route": "x",
+      "language": "en",
+      "sourceClass": "primary",
+      "note": "Read through X’s syndication endpoint (text only). Publication date is the post’s UTC timestamp."
+    },
+    {
+      "id": "lg-src-oai-ssc-2024",
+      "cacheKey": "oai-ssc-2024",
+      "title": "OpenAI Board Forms Safety and Security Committee",
+      "authors": [],
+      "publisher": "OpenAI",
+      "publicationDate": "2024-05-28",
+      "kind": "announcement",
+      "url": "https://openai.com/index/openai-board-forms-safety-and-security-committee/",
+      "route": "relay",
+      "language": "en",
+      "sourceClass": "primary",
+      "note": "The inspected text carries an update of 18 June 2024 above the original announcement."
+    },
+    {
+      "id": "lg-src-oai-cfo-cpo-2024",
+      "cacheKey": "oai-cfo-cpo",
+      "title": "OpenAI welcomes Sarah Friar (CFO) and Kevin Weil (CPO)",
+      "authors": [],
+      "publisher": "OpenAI",
+      "publicationDate": "2024-06-10",
+      "kind": "announcement",
+      "url": "https://openai.com/index/openai-welcomes-cfo-cpo/",
+      "route": "relay",
+      "language": "en",
+      "sourceClass": "primary"
+    },
+    {
+      "id": "lg-src-oai-nakasone-2024",
+      "cacheKey": "oai-nakasone",
+      "title": "OpenAI appoints Retired U.S. Army General Paul M. Nakasone to Board of Directors",
+      "authors": [],
+      "publisher": "OpenAI",
+      "publicationDate": "2024-06-13",
+      "kind": "announcement",
+      "url": "https://openai.com/index/openai-appoints-retired-us-army-general/",
+      "route": "relay",
+      "language": "en",
+      "sourceClass": "primary"
+    },
+    {
+      "id": "lg-src-oai-schulman-x-2024",
+      "cacheKey": "oai-schulman-x-2024",
+      "title": "Post of 6 August 2024 (UTC) sharing his note on leaving OpenAI",
+      "authors": ["John Schulman"],
+      "publisher": "X",
+      "publicationDate": "2024-08-06",
+      "kind": "post",
+      "url": "https://x.com/johnschulman2/status/1820610863499509855",
+      "route": "x",
+      "language": "en",
+      "sourceClass": "primary",
+      "note": "Read through X’s syndication endpoint (text only; the long note is truncated in that text). Publication date is the post’s UTC timestamp (5 August in US Pacific time)."
+    },
+    {
+      "id": "lg-src-oai-brockman-x-2024",
+      "cacheKey": "oai-brockman-sabbatical-x-2024",
+      "title": "Post of 6 August 2024 (UTC) on taking a sabbatical",
+      "authors": ["Greg Brockman"],
+      "publisher": "X",
+      "publicationDate": "2024-08-06",
+      "kind": "post",
+      "url": "https://x.com/gdb/status/1820644694264791459",
+      "route": "x",
+      "language": "en",
+      "sourceClass": "primary",
+      "note": "Read through X’s syndication endpoint (text only). Publication date is the post’s UTC timestamp."
+    },
+    {
+      "id": "lg-src-oai-kolter-2024",
+      "cacheKey": "oai-kolter",
+      "title": "Zico Kolter Joins OpenAI’s Board of Directors",
+      "authors": [],
+      "publisher": "OpenAI",
+      "publicationDate": "2024-08-08",
+      "kind": "announcement",
+      "url": "https://openai.com/index/zico-kolter-joins-openais-board-of-directors/",
+      "route": "relay",
+      "language": "en",
+      "sourceClass": "primary"
+    },
+    {
+      "id": "lg-src-oai-ssc-update-2024",
+      "cacheKey": "oai-ssc-update",
+      "title": "An update on our safety & security practices",
+      "authors": [],
+      "publisher": "OpenAI",
+      "publicationDate": "2024-09-16",
+      "kind": "announcement",
+      "url": "https://openai.com/index/update-on-safety-and-security-practices/",
+      "route": "relay",
+      "language": "en",
+      "sourceClass": "primary",
+      "datasetSourceId": "source-openai-ssc-update-2024"
+    },
+    {
+      "id": "lg-src-oai-tc-murati-2024",
+      "cacheKey": "oai-tc-murati-2024",
+      "title": "OpenAI CTO Mira Murati says she’s leaving the company",
+      "authors": ["Maxwell Zeff", "Kyle Wiggers"],
+      "publisher": "TechCrunch",
+      "publicationDate": "2024-09-25",
+      "kind": "article",
+      "url": "https://techcrunch.com/2024/09/25/openai-cto-mira-murati-says-shes-leaving-the-company/",
+      "route": "direct",
+      "language": "en",
+      "sourceClass": "reporting",
+      "note": "Reporting used because Murati’s own note was posted on X as an image, which cannot be machine-checked."
+    },
+    {
+      "id": "lg-src-oai-tc-mcgrew-2024",
+      "cacheKey": "oai-tc-mcgrew-2024",
+      "title": "OpenAI’s chief research officer has left following CTO Mira Murati’s exit",
+      "authors": ["Kyle Wiggers"],
+      "publisher": "TechCrunch",
+      "publicationDate": "2024-09-25",
+      "kind": "article",
+      "url": "https://techcrunch.com/2024/09/25/openais-chief-research-officer-has-left/",
+      "route": "direct",
+      "language": "en",
+      "sourceClass": "reporting",
+      "note": "Reporting used because Altman’s and McGrew’s notes were posted on X as long-form or image posts whose full text could not be retrieved."
+    },
+    {
+      "id": "lg-src-oai-zoph-x-2024",
+      "cacheKey": "oai-zoph-x-2024",
+      "title": "Post of 26 September 2024 (UTC) sharing his note on leaving OpenAI",
+      "authors": ["Barret Zoph"],
+      "publisher": "X",
+      "publicationDate": "2024-09-26",
+      "kind": "post",
+      "url": "https://x.com/barret_zoph/status/1839095143397515452",
+      "route": "x",
+      "language": "en",
+      "sourceClass": "primary",
+      "note": "Read through X’s syndication endpoint (text only; the note is truncated in that text). Publication date is the post’s UTC timestamp (25 September in US Pacific time)."
+    },
+    {
+      "id": "lg-src-oai-markchen-x-2024",
+      "cacheKey": "oai-markchen-x-2024",
+      "title": "Post of 26 September 2024 (UTC) on leading research at OpenAI",
+      "authors": ["Mark Chen"],
+      "publisher": "X",
+      "publicationDate": "2024-09-26",
+      "kind": "post",
+      "url": "https://x.com/markchen90/status/1839147190486446277",
+      "route": "x",
+      "language": "en",
+      "sourceClass": "primary",
+      "note": "Read through X’s syndication endpoint (text only). Publication date is the post’s UTC timestamp (25 September in US Pacific time)."
+    },
+    {
+      "id": "lg-src-oai-weng-x-2024",
+      "cacheKey": "oai-weng-x-2024",
+      "title": "Post of 8 November 2024 on leaving OpenAI",
+      "authors": ["Lilian Weng"],
+      "publisher": "X",
+      "publicationDate": "2024-11-08",
+      "kind": "post",
+      "url": "https://x.com/lilianweng/status/1855031273690984623",
+      "route": "x",
+      "language": "en",
+      "sourceClass": "primary",
+      "note": "Read through X’s syndication endpoint (text only). Publication date is the post’s UTC timestamp."
+    },
+    {
+      "id": "lg-src-oai-ogunlesi-2025",
+      "cacheKey": "oai-ogunlesi",
+      "title": "Adebayo Ogunlesi joins OpenAI’s Board of Directors",
+      "authors": [],
+      "publisher": "OpenAI",
+      "publicationDate": "2025-01-14",
+      "kind": "announcement",
+      "url": "https://openai.com/index/adebayo-ogunlesi-joins-openais-board-of-directors/",
+      "route": "relay",
+      "language": "en",
+      "sourceClass": "primary"
+    },
+    {
+      "id": "lg-src-oai-leadership-2025",
+      "cacheKey": "oai-leadership-mar2025",
+      "title": "Leadership updates",
+      "authors": ["Sam Altman"],
+      "publisher": "OpenAI",
+      "publicationDate": "2025-03-24",
+      "kind": "announcement",
+      "url": "https://openai.com/index/leadership-updates-march-2025/",
+      "route": "relay",
+      "language": "en",
+      "sourceClass": "primary"
+    },
+    {
+      "id": "lg-src-oai-simo-2025",
+      "cacheKey": "oai-simo-2025",
+      "title": "OpenAI Expands Leadership with Fidji Simo",
+      "authors": ["Sam Altman"],
+      "publisher": "OpenAI",
+      "publicationDate": "2025-05-07",
+      "kind": "announcement",
+      "url": "https://openai.com/index/leadership-expansion-with-fidji-simo/",
+      "route": "relay",
+      "language": "en",
+      "sourceClass": "primary"
+    },
+    {
+      "id": "lg-src-oai-io-2025",
+      "cacheKey": "oai-io",
+      "title": "Sam & Jony introduce io",
+      "authors": ["Sam Altman", "Jony Ive"],
+      "publisher": "OpenAI",
+      "publicationDate": "2025-05-21",
+      "kind": "announcement",
+      "url": "https://openai.com/sam-and-jony/",
+      "route": "relay",
+      "language": "en",
+      "sourceClass": "primary",
+      "note": "The inspected page carries an update dated 9 July 2025 above the signed letter of 21 May 2025."
+    },
+    {
+      "id": "lg-src-oai-statsig-2025",
+      "cacheKey": "oai-statsig",
+      "title": "Vijaye Raji to become CTO of Applications with acquisition of Statsig",
+      "authors": [],
+      "publisher": "OpenAI",
+      "publicationDate": "2025-09-02",
+      "kind": "announcement",
+      "url": "https://openai.com/index/vijaye-raji-to-become-cto-of-applications-with-acquisition-of-statsig/",
+      "route": "relay",
+      "language": "en",
+      "sourceClass": "primary"
+    },
+    {
+      "id": "lg-src-oai-dresser-2025",
+      "cacheKey": "oai-dresser-2025",
+      "title": "OpenAI appoints Denise Dresser as Chief Revenue Officer",
+      "authors": [],
+      "publisher": "OpenAI",
+      "publicationDate": "2025-12-09",
+      "kind": "announcement",
+      "url": "https://openai.com/index/openai-appoints-denise-dresser/",
+      "route": "relay",
+      "language": "en",
+      "sourceClass": "primary"
+    },
+    {
+      "id": "lg-src-oai-kc-2026",
+      "cacheKey": "oai-kc-2026",
+      "title": "Arvind KC appointed Chief People Officer",
+      "authors": [],
+      "publisher": "OpenAI",
+      "publicationDate": "2026-02-24",
+      "kind": "announcement",
+      "url": "https://openai.com/index/arvind-kc-chief-people-officer/",
+      "route": "relay",
+      "language": "en",
+      "sourceClass": "primary"
+    },
+    {
+      "id": "lg-src-oai-rajic-2026",
+      "cacheKey": "oai-rajic-2026",
+      "title": "OpenAI appoints Dali Rajic as Chief Revenue Officer",
+      "authors": [],
+      "publisher": "OpenAI",
+      "publicationDate": "2026-08-13",
+      "kind": "announcement",
+      "url": "https://openai.com/index/dali-rajic-chief-revenue-officer/",
+      "route": "relay",
+      "language": "en",
+      "sourceClass": "primary"
+    },
+    {
+      "id": "lg-src-oai-recapitalization-2025",
+      "cacheKey": "oai-built-to-benefit",
+      "title": "Built to benefit everyone",
+      "authors": [],
+      "publisher": "OpenAI",
+      "publicationDate": "2025-10-28",
+      "kind": "announcement",
+      "url": "https://openai.com/index/built-to-benefit-everyone/",
+      "route": "relay",
+      "language": "en",
+      "sourceClass": "primary",
+      "datasetSourceId": "source-atlas-openai-recapitalization"
+    },
+    {
+      "id": "lg-src-oai-our-structure",
+      "cacheKey": "oai-our-structure",
+      "title": "Our structure",
+      "authors": [],
+      "publisher": "OpenAI",
+      "publicationDate": null,
+      "kind": "announcement",
+      "url": "https://openai.com/our-structure/",
+      "route": "relay",
+      "language": "en",
+      "sourceClass": "primary",
+      "datasetSourceId": "source-openai-our-structure",
+      "note": "Undated, revised web page; the inspected expression was retrieved on 2026-10-15 and lists board members appointed up to September 2026."
+    },
+    {
+      "id": "lg-src-oai-sama-scandinaro-x-2026",
+      "cacheKey": "oai-sama-scandinaro-x-2026",
+      "title": "Post of 3 February 2026 welcoming OpenAI’s Head of Preparedness",
+      "authors": ["Sam Altman"],
+      "publisher": "X",
+      "publicationDate": "2026-02-03",
+      "kind": "post",
+      "url": "https://x.com/sama/status/2018813527780463027",
+      "route": "x",
+      "language": "en",
+      "sourceClass": "primary",
+      "note": "Read through X’s syndication endpoint (text only). Publication date is the post’s UTC timestamp."
+    },
+    {
+      "id": "lg-src-oai-scandinaro-x-2026",
+      "cacheKey": "oai-scandinaro-x-2026",
+      "title": "Post of 3 February 2026 on joining OpenAI as Head of Preparedness",
+      "authors": ["Dylan Scandinaro"],
+      "publisher": "X",
+      "publicationDate": "2026-02-03",
+      "kind": "post",
+      "url": "https://x.com/dylanscand/status/2018805998350455143",
+      "route": "x",
+      "language": "en",
+      "sourceClass": "primary",
+      "note": "Read through X’s syndication endpoint (text only). Publication date is the post’s UTC timestamp."
+    },
+    {
+      "id": "lg-src-oai-foundation-2026",
+      "cacheKey": "oai-foundation-update-2026",
+      "title": "Update on the OpenAI Foundation",
+      "authors": [],
+      "publisher": "OpenAI",
+      "publicationDate": "2026-03-24",
+      "kind": "announcement",
+      "url": "https://openai.com/index/update-on-the-openai-foundation/",
+      "route": "relay",
+      "language": "en",
+      "sourceClass": "primary"
+    },
+    {
+      "id": "lg-src-oai-weil-x-2026",
+      "cacheKey": "oai-weil-x-2026",
+      "title": "Post of 17 April 2026 on his last day at OpenAI",
+      "authors": ["Kevin Weil"],
+      "publisher": "X",
+      "publicationDate": "2026-04-17",
+      "kind": "post",
+      "url": "https://x.com/kevinweil/status/2045230426210648348",
+      "route": "x",
+      "language": "en",
+      "sourceClass": "primary",
+      "note": "Read through X’s syndication endpoint (text only). Publication date is the post’s UTC timestamp."
+    },
+    {
+      "id": "lg-src-oai-simo-x-2026",
+      "cacheKey": "oai-simo-x-2026",
+      "title": "Post of 9 July 2026 on leaving her full-time role at OpenAI",
+      "authors": ["Fidji Simo"],
+      "publisher": "X",
+      "publicationDate": "2026-07-09",
+      "kind": "post",
+      "url": "https://x.com/fidjissimo/status/2075353170927304861",
+      "route": "x",
+      "language": "en",
+      "sourceClass": "primary",
+      "note": "Read through X’s syndication endpoint (text only). Publication date is the post’s UTC timestamp."
+    },
+    {
+      "id": "lg-src-oai-velez-vince-2026",
+      "cacheKey": "oai-velez-vince-2026",
+      "title": "David Vélez and Robin Vince join the boards of the OpenAI Foundation and OpenAI Group PBC",
+      "authors": [],
+      "publisher": "OpenAI",
+      "publicationDate": "2026-07-21",
+      "kind": "announcement",
+      "url": "https://openai.com/index/david-velez-robin-vince-join-openai-boards/",
+      "route": "relay",
+      "language": "en",
+      "sourceClass": "primary"
+    }
+  ],
+  "events": [
+    {
+      "id": "ev-2015-12-openai-launch",
+      "date": "2015-12-11",
+      "title": "OpenAI launches as a nonprofit research company",
+      "labs": ["openai"]
+    },
+    {
+      "id": "ev-2016-04-openai-abbeel-zilis",
+      "date": "2016-04-26",
+      "title": "OpenAI announces Pieter Abbeel joining full-time and Shivon Zilis as an advisor",
+      "labs": ["openai"]
+    },
+    {
+      "id": "ev-2019-03-openai-lp",
+      "date": "2019-03-11",
+      "title": "OpenAI announces OpenAI LP and lists the OpenAI Nonprofit board",
+      "labs": ["openai"]
+    },
+    {
+      "id": "ev-2021-05-hurd-board",
+      "date": "2021-05-03",
+      "title": "Will Hurd joins OpenAI’s board",
+      "labs": ["openai"]
+    },
+    {
+      "id": "ev-2021-09-toner-board",
+      "date": "2021-09-08",
+      "title": "Helen Toner joins OpenAI’s board",
+      "labs": ["openai"]
+    },
+    {
+      "id": "ev-2022-05-openai-leadership",
+      "date": "2022-05-05",
+      "title": "OpenAI leadership team update: President, COO and CTO roles",
+      "labs": ["openai"]
+    },
+    {
+      "id": "ev-2023-10-openai-preparedness",
+      "date": "2023-10-26",
+      "title": "OpenAI announces a Preparedness team led by Aleksander Madry",
+      "labs": ["openai"]
+    },
+    {
+      "id": "ev-2023-11-openai-board-events",
+      "date": "2023-11-17",
+      "title": "OpenAI board announces Sam Altman’s departure as CEO; Altman returns with a new initial board",
+      "labs": ["openai"]
+    },
+    {
+      "id": "ev-2024-02-karpathy-departure",
+      "date": "2024-02-14",
+      "title": "Andrej Karpathy announces that he has left OpenAI",
+      "labs": ["openai"]
+    },
+    {
+      "id": "ev-2024-03-openai-board-expansion",
+      "date": "2024-03-08",
+      "title": "OpenAI board completes review and adds three directors",
+      "labs": ["openai"]
+    },
+    {
+      "id": "ev-2024-05-leike-departure",
+      "date": "2024-05-17",
+      "title": "Jan Leike announces his last day at OpenAI",
+      "labs": ["openai"]
+    },
+    {
+      "id": "ev-2024-05-openai-ssc",
+      "date": "2024-05-28",
+      "title": "OpenAI board forms a Safety and Security Committee",
+      "labs": ["openai"]
+    },
+    {
+      "id": "ev-2024-06-openai-cfo-cpo",
+      "date": "2024-06-10",
+      "title": "OpenAI names Sarah Friar CFO and Kevin Weil CPO",
+      "labs": ["openai"]
+    },
+    {
+      "id": "ev-2024-06-nakasone-board",
+      "date": "2024-06-13",
+      "title": "Paul Nakasone joins OpenAI’s board",
+      "labs": ["openai"]
+    },
+    {
+      "id": "ev-2024-08-schulman-departure",
+      "date": "2024-08-06",
+      "title": "John Schulman announces he is leaving OpenAI",
+      "labs": ["openai"]
+    },
+    {
+      "id": "ev-2024-08-kolter-board",
+      "date": "2024-08-08",
+      "title": "Zico Kolter joins OpenAI’s board",
+      "labs": ["openai"]
+    },
+    {
+      "id": "ev-2024-09-ssc-independent",
+      "date": "2024-09-16",
+      "title": "OpenAI announces an independent Safety and Security Committee chaired by Zico Kolter",
+      "labs": ["openai"]
+    },
+    {
+      "id": "ev-2024-09-openai-leadership-departures",
+      "date": "2024-09-25",
+      "title": "Mira Murati, Bob McGrew and Barret Zoph announce departures; Mark Chen to lead research",
+      "labs": ["openai"]
+    },
+    {
+      "id": "ev-2024-11-weng-departure",
+      "date": "2024-11-08",
+      "title": "Lilian Weng announces she is leaving OpenAI",
+      "labs": ["openai"]
+    },
+    {
+      "id": "ev-2025-01-ogunlesi-board",
+      "date": "2025-01-14",
+      "title": "Adebayo Ogunlesi joins OpenAI’s board",
+      "labs": ["openai"]
+    },
+    {
+      "id": "ev-2025-03-openai-leadership",
+      "date": "2025-03-24",
+      "title": "OpenAI leadership updates: Mark Chen Chief Research Officer",
+      "labs": ["openai"]
+    },
+    {
+      "id": "ev-2025-05-simo-applications",
+      "date": "2025-05-07",
+      "title": "Fidji Simo announced as OpenAI CEO of Applications",
+      "labs": ["openai"]
+    },
+    {
+      "id": "ev-2025-07-io-merger",
+      "date": "2025-07-09",
+      "title": "io Products team merges with OpenAI",
+      "labs": ["openai"]
+    },
+    {
+      "id": "ev-2025-09-statsig",
+      "date": "2025-09-02",
+      "title": "OpenAI announces acquisition of Statsig; Vijaye Raji to become CTO of Applications",
+      "labs": ["openai"]
+    },
+    {
+      "id": "ev-2025-12-dresser-cro",
+      "date": "2025-12-09",
+      "title": "Denise Dresser announced as OpenAI Chief Revenue Officer",
+      "labs": ["openai"]
+    },
+    {
+      "id": "ev-2025-10-openai-recapitalization",
+      "date": "2025-10-28",
+      "title": "OpenAI completes its recapitalization into the OpenAI Foundation and OpenAI Group PBC",
+      "labs": ["openai"]
+    },
+    {
+      "id": "ev-2026-02-head-of-preparedness",
+      "date": "2026-02-03",
+      "title": "Dylan Scandinaro joins OpenAI as Head of Preparedness",
+      "labs": ["openai"]
+    },
+    {
+      "id": "ev-2026-02-kc-cpo",
+      "date": "2026-02-24",
+      "title": "Arvind KC announced as OpenAI Chief People Officer",
+      "labs": ["openai"]
+    },
+    {
+      "id": "ev-2026-03-openai-foundation-update",
+      "date": "2026-03-24",
+      "title": "OpenAI Foundation announces programme leads",
+      "labs": ["openai"]
+    },
+    {
+      "id": "ev-2026-04-weil-departure",
+      "date": "2026-04-17",
+      "title": "Kevin Weil announces his last day at OpenAI",
+      "labs": ["openai"]
+    },
+    {
+      "id": "ev-2026-07-simo-transition",
+      "date": "2026-07-09",
+      "title": "Fidji Simo announces she is leaving her full-time role at OpenAI",
+      "labs": ["openai"]
+    },
+    {
+      "id": "ev-2026-08-openai-cro",
+      "date": "2026-08-13",
+      "title": "Dali Rajic announced as Chief Revenue Officer; Denise Dresser to leave OpenAI",
+      "labs": ["openai"]
+    },
+    {
+      "id": "ev-2026-07-velez-vince-boards",
+      "date": "2026-07-21",
+      "title": "David Vélez and Robin Vince join the OpenAI Foundation and OpenAI Group PBC boards",
+      "labs": ["openai"]
+    }
+  ],
+  "claims": [
+    {
+      "id": "lg-oai-trevor-blackwell-founding-member-2015",
+      "event": "ev-2015-12-openai-launch",
+      "subject": "trevor-blackwell",
+      "predicate": "co_founded",
+      "object": {
+        "kind": "entity",
+        "entityId": "openai"
+      },
+      "topic": "people",
+      "statement": "OpenAI’s launch announcement of 11 December 2015 names Trevor Blackwell among the group’s founding members.",
+      "time": {
+        "kind": "event",
+        "date": "2015",
+        "note": "Founding participation documented by the December 2015 launch announcement; year precision does not assert an incorporation date."
+      },
+      "attributes": {
+        "role": "Founding member"
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "The predicate means participation in founding; the source wording is “founding members”, a group of research engineers and scientists, not a statement of legal founder status.",
+      "relatedExisting": ["john-schulman-openai-founding-2015"],
+      "evidence": [
+        {
+          "id": "lg-ev-oai-trevor-blackwell-founding-member-2015",
+          "sourceId": "lg-src-oai-launch-2015",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Body, paragraph naming the research director, CTO and other founding members",
+          "passageType": "paraphrase",
+          "passage": "The announcement lists Trevor Blackwell among “the group’s other founding members”, described as research engineers and scientists.",
+          "anchor": "Trevor Blackwell"
+        }
+      ]
+    },
+    {
+      "id": "lg-oai-vicki-cheung-founding-member-2015",
+      "event": "ev-2015-12-openai-launch",
+      "subject": "vicki-cheung",
+      "predicate": "co_founded",
+      "object": {
+        "kind": "entity",
+        "entityId": "openai"
+      },
+      "topic": "people",
+      "statement": "OpenAI’s launch announcement of 11 December 2015 names Vicki Cheung among the group’s founding members.",
+      "time": {
+        "kind": "event",
+        "date": "2015",
+        "note": "Founding participation documented by the December 2015 launch announcement; year precision does not assert an incorporation date."
+      },
+      "attributes": {
+        "role": "Founding member"
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "The predicate means participation in founding; the source wording is “founding members”, a group of research engineers and scientists, not a statement of legal founder status.",
+      "relatedExisting": ["john-schulman-openai-founding-2015"],
+      "evidence": [
+        {
+          "id": "lg-ev-oai-vicki-cheung-founding-member-2015",
+          "sourceId": "lg-src-oai-launch-2015",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Body, paragraph naming the research director, CTO and other founding members",
+          "passageType": "paraphrase",
+          "passage": "The announcement lists Vicki Cheung among “the group’s other founding members”, described as research engineers and scientists.",
+          "anchor": "Vicki Cheung"
+        }
+      ]
+    },
+    {
+      "id": "lg-oai-andrej-karpathy-founding-member-2015",
+      "event": "ev-2015-12-openai-launch",
+      "subject": "andrej-karpathy",
+      "predicate": "co_founded",
+      "object": {
+        "kind": "entity",
+        "entityId": "openai"
+      },
+      "topic": "people",
+      "statement": "OpenAI’s launch announcement of 11 December 2015 names Andrej Karpathy among the group’s founding members.",
+      "time": {
+        "kind": "event",
+        "date": "2015",
+        "note": "Founding participation documented by the December 2015 launch announcement; year precision does not assert an incorporation date."
+      },
+      "attributes": {
+        "role": "Founding member"
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "The predicate means participation in founding; the source wording is “founding members”, a group of research engineers and scientists, not a statement of legal founder status.",
+      "relatedExisting": [
+        "karpathy-openai-research-2015-2017",
+        "john-schulman-openai-founding-2015"
+      ],
+      "evidence": [
+        {
+          "id": "lg-ev-oai-andrej-karpathy-founding-member-2015",
+          "sourceId": "lg-src-oai-launch-2015",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Body, paragraph naming the research director, CTO and other founding members",
+          "passageType": "paraphrase",
+          "passage": "The announcement lists Andrej Karpathy among “the group’s other founding members”, described as research engineers and scientists.",
+          "anchor": "Andrej Karpathy"
+        }
+      ]
+    },
+    {
+      "id": "lg-oai-pamela-vagata-founding-member-2015",
+      "event": "ev-2015-12-openai-launch",
+      "subject": "pamela-vagata",
+      "predicate": "co_founded",
+      "object": {
+        "kind": "entity",
+        "entityId": "openai"
+      },
+      "topic": "people",
+      "statement": "OpenAI’s launch announcement of 11 December 2015 names Pamela Vagata among the group’s founding members.",
+      "time": {
+        "kind": "event",
+        "date": "2015",
+        "note": "Founding participation documented by the December 2015 launch announcement; year precision does not assert an incorporation date."
+      },
+      "attributes": {
+        "role": "Founding member"
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "The predicate means participation in founding; the source wording is “founding members”, a group of research engineers and scientists, not a statement of legal founder status.",
+      "relatedExisting": ["john-schulman-openai-founding-2015"],
+      "evidence": [
+        {
+          "id": "lg-ev-oai-pamela-vagata-founding-member-2015",
+          "sourceId": "lg-src-oai-launch-2015",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Body, paragraph naming the research director, CTO and other founding members",
+          "passageType": "paraphrase",
+          "passage": "The announcement lists Pamela Vagata among “the group’s other founding members”, described as research engineers and scientists.",
+          "anchor": "Pamela Vagata"
+        }
+      ]
+    },
+    {
+      "id": "lg-oai-brockman-cofounded-openai",
+      "subject": "greg-brockman",
+      "predicate": "co_founded",
+      "object": {
+        "kind": "entity",
+        "entityId": "openai"
+      },
+      "topic": "people",
+      "statement": "Greg Brockman posted on X on 6 August 2024 (UTC) that he had co-founded OpenAI nine years earlier.",
+      "time": {
+        "kind": "unknown",
+        "note": "The post gives no founding date; “9 years ago” in a post of August 2024 is the author’s approximation and is not converted into a date here."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "A retrospective self-description. OpenAI’s 2015 launch announcement names Brockman as CTO (existing record); the post does not establish a legal founder status.",
+      "relatedExisting": ["brockman-openai-cto-2015"],
+      "evidence": [
+        {
+          "id": "lg-ev-oai-brockman-cofounded-openai",
+          "sourceId": "lg-src-oai-brockman-x-2024",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Post text, second sentence",
+          "passageType": "paraphrase",
+          "passage": "Brockman’s post refers to his co-founding OpenAI nine years earlier.",
+          "anchor": "since co-founding OpenAI"
+        }
+      ]
+    },
+    {
+      "id": "lg-oai-founding-stated-2015",
+      "event": "ev-2015-12-openai-launch",
+      "subject": "openai",
+      "predicate": "founding_stated",
+      "object": {
+        "kind": "literal",
+        "value": "2015, as a nonprofit"
+      },
+      "topic": "institutions",
+      "statement": "OpenAI stated in its recapitalization announcement of 28 October 2025 that it was founded in 2015 as a nonprofit.",
+      "time": {
+        "kind": "event",
+        "date": "2015",
+        "note": "Founding year as the source states it (year precision); the launch announcement is dated 11 December 2015."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "A retrospective statement by the organisation. It does not give an incorporation date or name the founders.",
+      "relatedExisting": [
+        "atlas-openai-launch",
+        "cs-openai-inc-legal-form-2024"
+      ],
+      "evidence": [
+        {
+          "id": "lg-ev-oai-founding-stated-2015",
+          "sourceId": "lg-src-oai-recapitalization-2025",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Section “Mission at the center”, first sentence",
+          "passageType": "quote",
+          "passage": "OpenAI was founded in 2015 as a nonprofit"
+        }
+      ]
+    },
+    {
+      "id": "lg-oai-abbeel-openai-2016",
+      "event": "ev-2016-04-openai-abbeel-zilis",
+      "subject": "pieter-abbeel",
+      "predicate": "held_role",
+      "object": {
+        "kind": "entity",
+        "entityId": "openai"
+      },
+      "topic": "people",
+      "statement": "OpenAI announced on 26 April 2016 that Pieter Abbeel was taking leave from UC Berkeley to work with OpenAI full-time.",
+      "time": {
+        "kind": "snapshot",
+        "date": "2016-04-26",
+        "note": "Announcement date; not a start date."
+      },
+      "attributes": {
+        "role": "Full-time work with OpenAI on leave from UC Berkeley (title not stated)"
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "The announcement gives no title, start date or end date.",
+      "relatedExisting": [],
+      "evidence": [
+        {
+          "id": "lg-ev-oai-abbeel-openai-2016",
+          "sourceId": "lg-src-oai-abbeel-zilis-2016",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Paragraph beginning “Pieter Abbeel.”",
+          "passageType": "paraphrase",
+          "passage": "The announcement says Abbeel, who had advised OpenAI before its launch, is taking leave from Berkeley to work with OpenAI full-time.",
+          "anchor": "taking a leave from Berkeley"
+        }
+      ]
+    },
+    {
+      "id": "lg-oai-zilis-openai-advisor-2016",
+      "event": "ev-2016-04-openai-abbeel-zilis",
+      "subject": "shivon-zilis",
+      "predicate": "held_role",
+      "object": {
+        "kind": "entity",
+        "entityId": "openai"
+      },
+      "topic": "people",
+      "statement": "OpenAI announced on 26 April 2016 that Shivon Zilis was becoming an official advisor to OpenAI.",
+      "time": {
+        "kind": "snapshot",
+        "date": "2016-04-26",
+        "note": "Announcement date; not a start date."
+      },
+      "attributes": {
+        "role": "Official advisor"
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "An advisory role as announced; no end date is recorded.",
+      "relatedExisting": [],
+      "evidence": [
+        {
+          "id": "lg-ev-oai-zilis-openai-advisor-2016",
+          "sourceId": "lg-src-oai-abbeel-zilis-2016",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Paragraph beginning “Shivon Zilis.”",
+          "passageType": "quote",
+          "passage": "she’s becoming an official advisor to OpenAI"
+        }
+      ]
+    },
+    {
+      "id": "lg-oai-greg-brockman-nonprofit-board-2019",
+      "event": "ev-2019-03-openai-lp",
+      "subject": "greg-brockman",
+      "predicate": "held_role",
+      "object": {
+        "kind": "entity",
+        "entityId": "openai-inc"
+      },
+      "topic": "governance",
+      "statement": "OpenAI’s OpenAI LP announcement of 11 March 2019 lists Greg Brockman as a member of the OpenAI Nonprofit board and as an OpenAI LP employee with the designation Chairman & CTO.",
+      "time": {
+        "kind": "snapshot",
+        "date": "2019-03-11",
+        "note": "Board as of 11 March 2019, as the source’s footnote states."
+      },
+      "attributes": {
+        "role": "Board member; listed as Chairman & CTO"
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "A board list as of 11 March 2019 (the source’s footnote); it does not establish when the person joined or left the board. The source gives the nonprofit’s legal name as OpenAI Inc.",
+      "relatedExisting": ["cs-brockman-chair-departure-2023"],
+      "evidence": [
+        {
+          "id": "lg-ev-oai-greg-brockman-nonprofit-board-2019",
+          "sourceId": "lg-src-oai-lp-2019",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Section “Who’s involved”, board list (footnote A: board as of 11 March 2019)",
+          "passageType": "paraphrase",
+          "passage": "The board list names Greg Brockman among the OpenAI LP employees on OpenAI Nonprofit’s board, with the designation Chairman & CTO.",
+          "anchor": "Greg Brockman (Chairman & CTO)"
+        },
+        {
+          "checkedAt": "2026-10-15",
+          "id": "lg-ev-oai-greg-brockman-nonprofit-board-2019-inc",
+          "sourceId": "lg-src-oai-lp-2019",
+          "sourceRole": "primary",
+          "support": "context",
+          "locator": "Paragraph defining the general partner",
+          "passageType": "paraphrase",
+          "passage": "OpenAI’s 2019 note gives the legal name of OpenAI Nonprofit as OpenAI Inc.",
+          "anchor": "whose legal name is “OpenAI Inc”"
+        }
+      ]
+    },
+    {
+      "id": "lg-oai-ilya-sutskever-nonprofit-board-2019",
+      "event": "ev-2019-03-openai-lp",
+      "subject": "ilya-sutskever",
+      "predicate": "held_role",
+      "object": {
+        "kind": "entity",
+        "entityId": "openai-inc"
+      },
+      "topic": "governance",
+      "statement": "OpenAI’s OpenAI LP announcement of 11 March 2019 lists Ilya Sutskever as a member of the OpenAI Nonprofit board and as an OpenAI LP employee with the designation Chief Scientist.",
+      "time": {
+        "kind": "snapshot",
+        "date": "2019-03-11",
+        "note": "Board as of 11 March 2019, as the source’s footnote states."
+      },
+      "attributes": {
+        "role": "Board member; listed as Chief Scientist"
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "A board list as of 11 March 2019 (the source’s footnote); it does not establish when the person joined or left the board. The source gives the nonprofit’s legal name as OpenAI Inc.",
+      "relatedExisting": [],
+      "evidence": [
+        {
+          "id": "lg-ev-oai-ilya-sutskever-nonprofit-board-2019",
+          "sourceId": "lg-src-oai-lp-2019",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Section “Who’s involved”, board list (footnote A: board as of 11 March 2019)",
+          "passageType": "paraphrase",
+          "passage": "The board list names Ilya Sutskever among the OpenAI LP employees on OpenAI Nonprofit’s board, with the designation Chief Scientist.",
+          "anchor": "Ilya Sutskever (Chief Scientist)"
+        },
+        {
+          "checkedAt": "2026-10-15",
+          "id": "lg-ev-oai-ilya-sutskever-nonprofit-board-2019-inc",
+          "sourceId": "lg-src-oai-lp-2019",
+          "sourceRole": "primary",
+          "support": "context",
+          "locator": "Paragraph defining the general partner",
+          "passageType": "paraphrase",
+          "passage": "OpenAI’s 2019 note gives the legal name of OpenAI Nonprofit as OpenAI Inc.",
+          "anchor": "whose legal name is “OpenAI Inc”"
+        }
+      ]
+    },
+    {
+      "id": "lg-oai-sam-altman-nonprofit-board-2019",
+      "event": "ev-2019-03-openai-lp",
+      "subject": "sam-altman",
+      "predicate": "held_role",
+      "object": {
+        "kind": "entity",
+        "entityId": "openai-inc"
+      },
+      "topic": "governance",
+      "statement": "OpenAI’s OpenAI LP announcement of 11 March 2019 lists Sam Altman as a member of the OpenAI Nonprofit board and as an OpenAI LP employee with the designation CEO.",
+      "time": {
+        "kind": "snapshot",
+        "date": "2019-03-11",
+        "note": "Board as of 11 March 2019, as the source’s footnote states."
+      },
+      "attributes": {
+        "role": "Board member; listed as CEO"
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "A board list as of 11 March 2019 (the source’s footnote); it does not establish when the person joined or left the board. The source gives the nonprofit’s legal name as OpenAI Inc.",
+      "relatedExisting": [],
+      "evidence": [
+        {
+          "id": "lg-ev-oai-sam-altman-nonprofit-board-2019",
+          "sourceId": "lg-src-oai-lp-2019",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Section “Who’s involved”, board list (footnote A: board as of 11 March 2019)",
+          "passageType": "paraphrase",
+          "passage": "The board list names Sam Altman among the OpenAI LP employees on OpenAI Nonprofit’s board, with the designation CEO.",
+          "anchor": "Sam Altman (CEO)"
+        },
+        {
+          "checkedAt": "2026-10-15",
+          "id": "lg-ev-oai-sam-altman-nonprofit-board-2019-inc",
+          "sourceId": "lg-src-oai-lp-2019",
+          "sourceRole": "primary",
+          "support": "context",
+          "locator": "Paragraph defining the general partner",
+          "passageType": "paraphrase",
+          "passage": "OpenAI’s 2019 note gives the legal name of OpenAI Nonprofit as OpenAI Inc.",
+          "anchor": "whose legal name is “OpenAI Inc”"
+        }
+      ]
+    },
+    {
+      "id": "lg-oai-adam-dangelo-nonprofit-board-2019",
+      "event": "ev-2019-03-openai-lp",
+      "subject": "adam-dangelo",
+      "predicate": "held_role",
+      "object": {
+        "kind": "entity",
+        "entityId": "openai-inc"
+      },
+      "topic": "governance",
+      "statement": "OpenAI’s OpenAI LP announcement of 11 March 2019 lists Adam D’Angelo as a non-employee member of the OpenAI Nonprofit board.",
+      "time": {
+        "kind": "snapshot",
+        "date": "2019-03-11",
+        "note": "Board as of 11 March 2019, as the source’s footnote states."
+      },
+      "attributes": {
+        "role": "Board member (non-employee)"
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "A board list as of 11 March 2019 (the source’s footnote); it does not establish when the person joined or left the board. The source gives the nonprofit’s legal name as OpenAI Inc.",
+      "relatedExisting": ["cs-dangelo-initial-board-2023"],
+      "evidence": [
+        {
+          "id": "lg-ev-oai-adam-dangelo-nonprofit-board-2019",
+          "sourceId": "lg-src-oai-lp-2019",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Section “Who’s involved”, board list (footnote A: board as of 11 March 2019)",
+          "passageType": "paraphrase",
+          "passage": "The board list names Adam D’Angelo among the non-employee members of OpenAI Nonprofit’s board.",
+          "anchor": "non-employees Adam D’Angelo"
+        },
+        {
+          "checkedAt": "2026-10-15",
+          "id": "lg-ev-oai-adam-dangelo-nonprofit-board-2019-inc",
+          "sourceId": "lg-src-oai-lp-2019",
+          "sourceRole": "primary",
+          "support": "context",
+          "locator": "Paragraph defining the general partner",
+          "passageType": "paraphrase",
+          "passage": "OpenAI’s 2019 note gives the legal name of OpenAI Nonprofit as OpenAI Inc.",
+          "anchor": "whose legal name is “OpenAI Inc”"
+        }
+      ]
+    },
+    {
+      "id": "lg-oai-holden-karnofsky-nonprofit-board-2019",
+      "event": "ev-2019-03-openai-lp",
+      "subject": "holden-karnofsky",
+      "predicate": "held_role",
+      "object": {
+        "kind": "entity",
+        "entityId": "openai-inc"
+      },
+      "topic": "governance",
+      "statement": "OpenAI’s OpenAI LP announcement of 11 March 2019 lists Holden Karnofsky as a non-employee member of the OpenAI Nonprofit board.",
+      "time": {
+        "kind": "snapshot",
+        "date": "2019-03-11",
+        "note": "Board as of 11 March 2019, as the source’s footnote states."
+      },
+      "attributes": {
+        "role": "Board member (non-employee)"
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "A board list as of 11 March 2019 (the source’s footnote); it does not establish when the person joined or left the board. The source gives the nonprofit’s legal name as OpenAI Inc.",
+      "relatedExisting": [],
+      "evidence": [
+        {
+          "id": "lg-ev-oai-holden-karnofsky-nonprofit-board-2019",
+          "sourceId": "lg-src-oai-lp-2019",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Section “Who’s involved”, board list (footnote A: board as of 11 March 2019)",
+          "passageType": "paraphrase",
+          "passage": "The board list names Holden Karnofsky among the non-employee members of OpenAI Nonprofit’s board.",
+          "anchor": "Holden Karnofsky"
+        },
+        {
+          "checkedAt": "2026-10-15",
+          "id": "lg-ev-oai-holden-karnofsky-nonprofit-board-2019-inc",
+          "sourceId": "lg-src-oai-lp-2019",
+          "sourceRole": "primary",
+          "support": "context",
+          "locator": "Paragraph defining the general partner",
+          "passageType": "paraphrase",
+          "passage": "OpenAI’s 2019 note gives the legal name of OpenAI Nonprofit as OpenAI Inc.",
+          "anchor": "whose legal name is “OpenAI Inc”"
+        }
+      ]
+    },
+    {
+      "id": "lg-oai-reid-hoffman-nonprofit-board-2019",
+      "event": "ev-2019-03-openai-lp",
+      "subject": "reid-hoffman",
+      "predicate": "held_role",
+      "object": {
+        "kind": "entity",
+        "entityId": "openai-inc"
+      },
+      "topic": "governance",
+      "statement": "OpenAI’s OpenAI LP announcement of 11 March 2019 lists Reid Hoffman as a non-employee member of the OpenAI Nonprofit board.",
+      "time": {
+        "kind": "snapshot",
+        "date": "2019-03-11",
+        "note": "Board as of 11 March 2019, as the source’s footnote states."
+      },
+      "attributes": {
+        "role": "Board member (non-employee)"
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "A board list as of 11 March 2019 (the source’s footnote); it does not establish when the person joined or left the board. The source gives the nonprofit’s legal name as OpenAI Inc.",
+      "relatedExisting": [],
+      "evidence": [
+        {
+          "id": "lg-ev-oai-reid-hoffman-nonprofit-board-2019",
+          "sourceId": "lg-src-oai-lp-2019",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Section “Who’s involved”, board list (footnote A: board as of 11 March 2019)",
+          "passageType": "paraphrase",
+          "passage": "The board list names Reid Hoffman among the non-employee members of OpenAI Nonprofit’s board.",
+          "anchor": "Reid Hoffman, Shivon Zilis"
+        },
+        {
+          "checkedAt": "2026-10-15",
+          "id": "lg-ev-oai-reid-hoffman-nonprofit-board-2019-inc",
+          "sourceId": "lg-src-oai-lp-2019",
+          "sourceRole": "primary",
+          "support": "context",
+          "locator": "Paragraph defining the general partner",
+          "passageType": "paraphrase",
+          "passage": "OpenAI’s 2019 note gives the legal name of OpenAI Nonprofit as OpenAI Inc.",
+          "anchor": "whose legal name is “OpenAI Inc”"
+        }
+      ]
+    },
+    {
+      "id": "lg-oai-shivon-zilis-nonprofit-board-2019",
+      "event": "ev-2019-03-openai-lp",
+      "subject": "shivon-zilis",
+      "predicate": "held_role",
+      "object": {
+        "kind": "entity",
+        "entityId": "openai-inc"
+      },
+      "topic": "governance",
+      "statement": "OpenAI’s OpenAI LP announcement of 11 March 2019 lists Shivon Zilis as a non-employee member of the OpenAI Nonprofit board.",
+      "time": {
+        "kind": "snapshot",
+        "date": "2019-03-11",
+        "note": "Board as of 11 March 2019, as the source’s footnote states."
+      },
+      "attributes": {
+        "role": "Board member (non-employee)"
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "A board list as of 11 March 2019 (the source’s footnote); it does not establish when the person joined or left the board. The source gives the nonprofit’s legal name as OpenAI Inc.",
+      "relatedExisting": [],
+      "evidence": [
+        {
+          "id": "lg-ev-oai-shivon-zilis-nonprofit-board-2019",
+          "sourceId": "lg-src-oai-lp-2019",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Section “Who’s involved”, board list (footnote A: board as of 11 March 2019)",
+          "passageType": "paraphrase",
+          "passage": "The board list names Shivon Zilis among the non-employee members of OpenAI Nonprofit’s board.",
+          "anchor": "Reid Hoffman, Shivon Zilis"
+        },
+        {
+          "checkedAt": "2026-10-15",
+          "id": "lg-ev-oai-shivon-zilis-nonprofit-board-2019-inc",
+          "sourceId": "lg-src-oai-lp-2019",
+          "sourceRole": "primary",
+          "support": "context",
+          "locator": "Paragraph defining the general partner",
+          "passageType": "paraphrase",
+          "passage": "OpenAI’s 2019 note gives the legal name of OpenAI Nonprofit as OpenAI Inc.",
+          "anchor": "whose legal name is “OpenAI Inc”"
+        }
+      ]
+    },
+    {
+      "id": "lg-oai-tasha-mccauley-nonprofit-board-2019",
+      "event": "ev-2019-03-openai-lp",
+      "subject": "tasha-mccauley",
+      "predicate": "held_role",
+      "object": {
+        "kind": "entity",
+        "entityId": "openai-inc"
+      },
+      "topic": "governance",
+      "statement": "OpenAI’s OpenAI LP announcement of 11 March 2019 lists Tasha McCauley as a non-employee member of the OpenAI Nonprofit board.",
+      "time": {
+        "kind": "snapshot",
+        "date": "2019-03-11",
+        "note": "Board as of 11 March 2019, as the source’s footnote states."
+      },
+      "attributes": {
+        "role": "Board member (non-employee)"
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "A board list as of 11 March 2019 (the source’s footnote); it does not establish when the person joined or left the board. The source gives the nonprofit’s legal name as OpenAI Inc.",
+      "relatedExisting": [],
+      "evidence": [
+        {
+          "id": "lg-ev-oai-tasha-mccauley-nonprofit-board-2019",
+          "sourceId": "lg-src-oai-lp-2019",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Section “Who’s involved”, board list (footnote A: board as of 11 March 2019)",
+          "passageType": "paraphrase",
+          "passage": "The board list names Tasha McCauley among the non-employee members of OpenAI Nonprofit’s board.",
+          "anchor": "and Tasha McCauley"
+        },
+        {
+          "checkedAt": "2026-10-15",
+          "id": "lg-ev-oai-tasha-mccauley-nonprofit-board-2019-inc",
+          "sourceId": "lg-src-oai-lp-2019",
+          "sourceRole": "primary",
+          "support": "context",
+          "locator": "Paragraph defining the general partner",
+          "passageType": "paraphrase",
+          "passage": "OpenAI’s 2019 note gives the legal name of OpenAI Nonprofit as OpenAI Inc.",
+          "anchor": "whose legal name is “OpenAI Inc”"
+        }
+      ]
+    },
+    {
+      "id": "lg-oai-hurd-board-2021",
+      "event": "ev-2021-05-hurd-board",
+      "subject": "will-hurd",
+      "predicate": "held_role",
+      "object": {
+        "kind": "entity",
+        "entityId": "openai-inc"
+      },
+      "topic": "governance",
+      "statement": "OpenAI announced on 3 May 2021 that Will Hurd had joined its board of directors.",
+      "time": {
+        "kind": "snapshot",
+        "date": "2021-05-03",
+        "note": "Announcement date; the source says he “has joined”, without a start date."
+      },
+      "attributes": {
+        "role": "Board member"
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "The announcement does not name the legal entity; the record assigns the board to OpenAI, Inc., the nonprofit that OpenAI’s 2019 note names as OpenAI Inc and that, according to OpenAI’s structure page, has always governed and controlled the for-profit (context evidence). No end date is recorded here.",
+      "relatedExisting": [],
+      "evidence": [
+        {
+          "id": "lg-ev-oai-hurd-board-2021",
+          "sourceId": "lg-src-oai-hurd-2021",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Opening paragraph",
+          "passageType": "quote",
+          "passage": "we’re delighted to announce that Congressman Will Hurd has joined our board of directors"
+        },
+        {
+          "checkedAt": "2026-10-15",
+          "id": "lg-ev-oai-hurd-board-2021-inc",
+          "sourceId": "lg-src-oai-lp-2019",
+          "sourceRole": "primary",
+          "support": "context",
+          "locator": "Paragraph defining the general partner",
+          "passageType": "paraphrase",
+          "passage": "OpenAI’s 2019 note gives the legal name of OpenAI Nonprofit as OpenAI Inc.",
+          "anchor": "whose legal name is “OpenAI Inc”"
+        },
+        {
+          "checkedAt": "2026-10-15",
+          "id": "lg-ev-oai-hurd-board-2021-governed",
+          "sourceId": "lg-src-oai-our-structure",
+          "sourceRole": "primary",
+          "support": "context",
+          "locator": "Opening section (page retrieved on 15 October 2026)",
+          "passageType": "paraphrase",
+          "passage": "The structure page states that the for-profit created in 2019 has always been governed and controlled by the nonprofit, now the OpenAI Foundation.",
+          "anchor": "governed and controlled by the nonprofit"
+        }
+      ]
+    },
+    {
+      "id": "lg-oai-toner-board-2021",
+      "event": "ev-2021-09-toner-board",
+      "subject": "helen-toner",
+      "predicate": "held_role",
+      "object": {
+        "kind": "entity",
+        "entityId": "openai-inc"
+      },
+      "topic": "governance",
+      "statement": "OpenAI announced on 8 September 2021 the appointment of Helen Toner to its board of directors.",
+      "time": {
+        "kind": "snapshot",
+        "date": "2021-09-08",
+        "note": "Announcement date; not a start date."
+      },
+      "attributes": {
+        "role": "Board member"
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "The announcement does not name the legal entity; the record assigns the board to OpenAI, Inc., the nonprofit that OpenAI’s 2019 note names as OpenAI Inc and that, according to OpenAI’s structure page, has always governed and controlled the for-profit (context evidence). No end date is recorded here.",
+      "relatedExisting": [],
+      "evidence": [
+        {
+          "id": "lg-ev-oai-toner-board-2021",
+          "sourceId": "lg-src-oai-toner-2021",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Opening sentence",
+          "passageType": "quote",
+          "passage": "we’re excited to announce the appointment of Helen Toner to our board of directors"
+        },
+        {
+          "checkedAt": "2026-10-15",
+          "id": "lg-ev-oai-toner-board-2021-inc",
+          "sourceId": "lg-src-oai-lp-2019",
+          "sourceRole": "primary",
+          "support": "context",
+          "locator": "Paragraph defining the general partner",
+          "passageType": "paraphrase",
+          "passage": "OpenAI’s 2019 note gives the legal name of OpenAI Nonprofit as OpenAI Inc.",
+          "anchor": "whose legal name is “OpenAI Inc”"
+        },
+        {
+          "checkedAt": "2026-10-15",
+          "id": "lg-ev-oai-toner-board-2021-governed",
+          "sourceId": "lg-src-oai-our-structure",
+          "sourceRole": "primary",
+          "support": "context",
+          "locator": "Opening section (page retrieved on 15 October 2026)",
+          "passageType": "paraphrase",
+          "passage": "The structure page states that the for-profit created in 2019 has always been governed and controlled by the nonprofit, now the OpenAI Foundation.",
+          "anchor": "governed and controlled by the nonprofit"
+        }
+      ]
+    },
+    {
+      "id": "lg-oai-murati-cto-2022",
+      "event": "ev-2022-05-openai-leadership",
+      "subject": "mira-murati",
+      "predicate": "held_role",
+      "object": {
+        "kind": "entity",
+        "entityId": "openai"
+      },
+      "topic": "people",
+      "statement": "OpenAI announced on 5 May 2022 that Mira Murati was taking on the role of Chief Technology Officer.",
+      "time": {
+        "kind": "snapshot",
+        "date": "2022-05-05",
+        "note": "Announcement date; not a start date."
+      },
+      "attributes": {
+        "role": "Chief Technology Officer"
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "The announcement does not give an exact start date. It says she had led research, product and partnership functions over the previous 18 months.",
+      "relatedExisting": ["atlas-murati-interim"],
+      "evidence": [
+        {
+          "id": "lg-ev-oai-murati-cto-2022",
+          "sourceId": "lg-src-oai-leadership-2022",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Paragraph beginning “Mira Murati”",
+          "passageType": "quote",
+          "passage": "Mira is taking on the role of Chief Technology Officer"
+        },
+        {
+          "checkedAt": "2026-10-15",
+          "support": "context",
+          "sourceRole": "primary",
+          "id": "lg-ev-oai-murati-cto-2022-18-months",
+          "sourceId": "lg-src-oai-leadership-2022",
+          "locator": "Paragraph on Mira Murati",
+          "passageType": "paraphrase",
+          "passage": "The announcement says Murati had led OpenAI’s research, product and partnership functions over the past 18 months.",
+          "anchor": "past 18 months"
+        }
+      ]
+    },
+    {
+      "id": "lg-oai-brockman-president-2022",
+      "event": "ev-2022-05-openai-leadership",
+      "subject": "greg-brockman",
+      "predicate": "held_role",
+      "object": {
+        "kind": "entity",
+        "entityId": "openai"
+      },
+      "topic": "people",
+      "statement": "OpenAI announced on 5 May 2022 that Greg Brockman was becoming President, a new role.",
+      "time": {
+        "kind": "snapshot",
+        "date": "2022-05-05",
+        "note": "Announcement date; not a start date."
+      },
+      "attributes": {
+        "role": "President"
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "The announcement does not give an exact start date or establish a continuing role.",
+      "relatedExisting": ["brockman-openai-cto-2015"],
+      "evidence": [
+        {
+          "id": "lg-ev-oai-brockman-president-2022",
+          "sourceId": "lg-src-oai-leadership-2022",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Paragraph beginning “Greg Brockman”",
+          "passageType": "quote",
+          "passage": "Greg Brockman is becoming President, a new role"
+        }
+      ]
+    },
+    {
+      "id": "lg-oai-lightcap-coo-2022",
+      "event": "ev-2022-05-openai-leadership",
+      "subject": "brad-lightcap",
+      "predicate": "held_role",
+      "object": {
+        "kind": "entity",
+        "entityId": "openai"
+      },
+      "topic": "people",
+      "statement": "OpenAI announced on 5 May 2022 that Brad Lightcap would become Chief Operating Officer.",
+      "time": {
+        "kind": "snapshot",
+        "date": "2022-05-05",
+        "note": "Announcement date; not a start date."
+      },
+      "attributes": {
+        "role": "Chief Operating Officer",
+        "stage": "announced"
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "An announced appointment. OpenAI’s March 2025 leadership update refers to him as Chief Operating Officer with an expanded remit.",
+      "relatedExisting": [],
+      "evidence": [
+        {
+          "id": "lg-ev-oai-lightcap-coo-2022-1",
+          "sourceId": "lg-src-oai-leadership-2022",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Paragraph beginning “Brad Lightcap”",
+          "passageType": "quote",
+          "passage": "He will become Chief Operating Officer"
+        },
+        {
+          "id": "lg-ev-oai-lightcap-coo-2022-2",
+          "sourceId": "lg-src-oai-leadership-2025",
+          "sourceRole": "primary",
+          "support": "context",
+          "locator": "Paragraph beginning “Brad Lightcap”",
+          "passageType": "paraphrase",
+          "passage": "The March 2025 update says Lightcap, as Chief Operating Officer, is expanding his role to oversee business and day-to-day operations.",
+          "anchor": "Brad Lightcap, as Chief Operating Officer"
+        }
+      ]
+    },
+    {
+      "id": "lg-oai-madry-preparedness-2023",
+      "event": "ev-2023-10-openai-preparedness",
+      "subject": "aleksander-madry",
+      "predicate": "held_role",
+      "object": {
+        "kind": "entity",
+        "entityId": "openai"
+      },
+      "topic": "people",
+      "statement": "OpenAI announced on 26 October 2023 a new Preparedness team led by Aleksander Madry.",
+      "time": {
+        "kind": "snapshot",
+        "date": "2023-10-26",
+        "note": "Announcement date of the team; not a start date."
+      },
+      "attributes": {
+        "role": "Leader of the Preparedness team"
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "The announcement records the team’s formation and leader. OpenAI’s May 2024 committee announcement lists him as Head of Preparedness; no end date is recorded here.",
+      "relatedExisting": [],
+      "evidence": [
+        {
+          "id": "lg-ev-oai-madry-preparedness-2023-1",
+          "sourceId": "lg-src-oai-preparedness-2023",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Section “Our new Preparedness team”",
+          "passageType": "quote",
+          "passage": "Led by Aleksander Madry, the Preparedness team will tightly connect capability assessment, evaluations, and internal red teaming for frontier models"
+        },
+        {
+          "id": "lg-ev-oai-madry-preparedness-2023-2",
+          "sourceId": "lg-src-oai-ssc-2024",
+          "sourceRole": "primary",
+          "support": "context",
+          "locator": "Paragraph listing OpenAI technical and policy experts on the committee",
+          "passageType": "paraphrase",
+          "passage": "The May 2024 announcement lists Madry as Head of Preparedness.",
+          "anchor": "Madry (Head of Preparedness)"
+        }
+      ]
+    },
+    {
+      "id": "lg-oai-tasha-mccauley-board-2023",
+      "event": "ev-2023-11-openai-board-events",
+      "subject": "tasha-mccauley",
+      "predicate": "held_role",
+      "object": {
+        "kind": "entity",
+        "entityId": "openai-inc"
+      },
+      "topic": "governance",
+      "statement": "OpenAI’s announcement of 17 November 2023 lists Tasha McCauley as an independent director on the board of OpenAI, Inc.",
+      "time": {
+        "kind": "snapshot",
+        "date": "2023-11-17",
+        "note": "Board composition as stated in the announcement of that date."
+      },
+      "attributes": {
+        "role": "Independent director"
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "A dated board list. It does not establish when the director joined or left; the new initial board announced on 29 November 2023 did not include her.",
+      "relatedExisting": [
+        "cs-altman-board-departure-2023",
+        "cs-taylor-chair-initial-board-2023"
+      ],
+      "evidence": [
+        {
+          "id": "lg-ev-oai-tasha-mccauley-board-2023",
+          "sourceId": "lg-src-oai-leadership-transition-2023",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Paragraph beginning “OpenAI’s board of directors consists of”",
+          "passageType": "paraphrase",
+          "passage": "The board list names Tasha McCauley as one of three independent directors; chief scientist Ilya Sutskever is the fourth board member listed.",
+          "anchor": "technology entrepreneur Tasha McCauley"
+        },
+        {
+          "checkedAt": "2026-10-15",
+          "id": "lg-ev-oai-tasha-mccauley-board-2023-new-board",
+          "sourceId": "lg-src-oai-return-2023",
+          "sourceRole": "primary",
+          "support": "context",
+          "locator": "Altman’s message, opening paragraph (29 November 2023)",
+          "passageType": "quote",
+          "passage": "The new initial board will consist of Bret Taylor (Chair), Larry Summers, and Adam D’Angelo."
+        }
+      ]
+    },
+    {
+      "id": "lg-oai-helen-toner-board-2023",
+      "event": "ev-2023-11-openai-board-events",
+      "subject": "helen-toner",
+      "predicate": "held_role",
+      "object": {
+        "kind": "entity",
+        "entityId": "openai-inc"
+      },
+      "topic": "governance",
+      "statement": "OpenAI’s announcement of 17 November 2023 lists Helen Toner as an independent director on the board of OpenAI, Inc.",
+      "time": {
+        "kind": "snapshot",
+        "date": "2023-11-17",
+        "note": "Board composition as stated in the announcement of that date."
+      },
+      "attributes": {
+        "role": "Independent director"
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "A dated board list. It does not establish when the director joined or left; the new initial board announced on 29 November 2023 did not include her.",
+      "relatedExisting": [
+        "cs-altman-board-departure-2023",
+        "cs-taylor-chair-initial-board-2023"
+      ],
+      "evidence": [
+        {
+          "id": "lg-ev-oai-helen-toner-board-2023",
+          "sourceId": "lg-src-oai-leadership-transition-2023",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Paragraph beginning “OpenAI’s board of directors consists of”",
+          "passageType": "paraphrase",
+          "passage": "The board list names Helen Toner as one of three independent directors; chief scientist Ilya Sutskever is the fourth board member listed.",
+          "anchor": "Emerging Technology’s Helen Toner"
+        },
+        {
+          "checkedAt": "2026-10-15",
+          "id": "lg-ev-oai-helen-toner-board-2023-new-board",
+          "sourceId": "lg-src-oai-return-2023",
+          "sourceRole": "primary",
+          "support": "context",
+          "locator": "Altman’s message, opening paragraph (29 November 2023)",
+          "passageType": "quote",
+          "passage": "The new initial board will consist of Bret Taylor (Chair), Larry Summers, and Adam D’Angelo."
+        }
+      ]
+    },
+    {
+      "id": "lg-oai-shear-interim-ceo-2023",
+      "event": "ev-2023-11-openai-board-events",
+      "subject": "emmett-shear",
+      "predicate": "held_role",
+      "object": {
+        "kind": "entity",
+        "entityId": "openai"
+      },
+      "topic": "people",
+      "statement": "Emmett Shear posted on X on 20 November 2023 that he had accepted the role of interim CEO of OpenAI.",
+      "time": {
+        "kind": "snapshot",
+        "date": "2023-11-20",
+        "note": "Date of the post (UTC); not a start or end date."
+      },
+      "attributes": {
+        "role": "Interim CEO"
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "A first-person announcement of acceptance. The record does not establish start or end dates; OpenAI announced Altman’s return as CEO on 29 November 2023, in which Altman thanked “Emmett” for his role.",
+      "relatedExisting": ["atlas-altman-return", "atlas-murati-interim"],
+      "evidence": [
+        {
+          "id": "lg-ev-oai-shear-interim-ceo-2023-1",
+          "sourceId": "lg-src-oai-shear-x-2023",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Post text, first two sentences",
+          "passageType": "paraphrase",
+          "passage": "Shear writes that he was invited to consider becoming interim CEO of OpenAI and that he accepted.",
+          "anchor": "interim CEO of @OpenAI"
+        },
+        {
+          "id": "lg-ev-oai-shear-interim-ceo-2023-2",
+          "sourceId": "lg-src-oai-return-2023",
+          "sourceRole": "primary",
+          "support": "context",
+          "locator": "Altman’s message, paragraph of thanks",
+          "passageType": "paraphrase",
+          "passage": "Altman thanks Emmett for a key and constructive role in reaching the outcome.",
+          "anchor": "Thank you also to Emmett"
+        }
+      ]
+    },
+    {
+      "id": "lg-oai-murati-cto-return-2023",
+      "event": "ev-2023-11-openai-board-events",
+      "subject": "mira-murati",
+      "predicate": "held_role",
+      "object": {
+        "kind": "entity",
+        "entityId": "openai"
+      },
+      "topic": "people",
+      "statement": "Sam Altman’s message of 29 November 2023, published by OpenAI, stated that Mira Murati would return to her role as CTO.",
+      "time": {
+        "kind": "snapshot",
+        "date": "2023-11-29",
+        "note": "Announcement date; not a start date."
+      },
+      "attributes": {
+        "role": "CTO",
+        "stage": "announced"
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "An announced return to a prior role after her interim CEO appointment; no end date is recorded here.",
+      "relatedExisting": ["atlas-murati-interim", "atlas-altman-return"],
+      "evidence": [
+        {
+          "id": "lg-ev-oai-murati-cto-return-2023",
+          "sourceId": "lg-src-oai-return-2023",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Altman’s message, opening paragraph",
+          "passageType": "quote",
+          "passage": "Mira will return to her role as CTO."
+        }
+      ]
+    },
+    {
+      "id": "lg-oai-karpathy-departure-2024",
+      "event": "ev-2024-02-karpathy-departure",
+      "subject": "andrej-karpathy",
+      "predicate": "departure_announced",
+      "object": {
+        "kind": "entity",
+        "entityId": "openai"
+      },
+      "topic": "people",
+      "statement": "Andrej Karpathy announced in a post dated 14 February 2024 (UTC) that he had left OpenAI the previous day.",
+      "time": {
+        "kind": "event",
+        "date": "2024-02-14",
+        "note": "UTC date of the post (13 February in US Pacific time); the post says he left “yesterday”."
+      },
+      "attributes": {
+        "role": "Not stated in the post"
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "A first-person announcement. The post does not name his role; his own career account describes the 2023–2024 return (existing record).",
+      "relatedExisting": ["karpathy-openai-return-2023-2024"],
+      "evidence": [
+        {
+          "id": "lg-ev-oai-karpathy-departure-2024",
+          "sourceId": "lg-src-oai-karpathy-x-2024",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Post text, first sentence",
+          "passageType": "paraphrase",
+          "passage": "Karpathy writes that he left OpenAI the day before the post.",
+          "anchor": "I left OpenAI yesterday"
+        }
+      ]
+    },
+    {
+      "id": "lg-oai-sue-desmond-hellmann-board-2024",
+      "event": "ev-2024-03-openai-board-expansion",
+      "subject": "sue-desmond-hellmann",
+      "predicate": "held_role",
+      "object": {
+        "kind": "entity",
+        "entityId": "openai-inc"
+      },
+      "topic": "governance",
+      "statement": "OpenAI announced on 8 March 2024 that Sue Desmond-Hellmann was one of three new members of its board of directors.",
+      "time": {
+        "kind": "snapshot",
+        "date": "2024-03-08",
+        "note": "Announcement date; the review announcement of the same day calls it an election of new members."
+      },
+      "attributes": {
+        "role": "Board member"
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "Announced board membership; no end date is recorded here.",
+      "relatedExisting": ["cs-altman-board-return-2024"],
+      "evidence": [
+        {
+          "id": "lg-ev-oai-sue-desmond-hellmann-board-2024-1",
+          "sourceId": "lg-src-oai-board-2024",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Opening paragraph",
+          "passageType": "paraphrase",
+          "passage": "The announcement names Sue Desmond-Hellmann among three new members of OpenAI’s Board of Directors.",
+          "anchor": "three new members to our Board of Directors"
+        },
+        {
+          "id": "lg-ev-oai-sue-desmond-hellmann-board-2024-2",
+          "sourceId": "lg-src-oai-review-2024",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Paragraph beginning “The OpenAI Board also announced today”",
+          "passageType": "paraphrase",
+          "passage": "The Board announced the election of three new members, the first named being Desmond-Hellmann.",
+          "anchor": "the election of three new Board members"
+        }
+      ]
+    },
+    {
+      "id": "lg-oai-nicole-seligman-board-2024",
+      "event": "ev-2024-03-openai-board-expansion",
+      "subject": "nicole-seligman",
+      "predicate": "held_role",
+      "object": {
+        "kind": "entity",
+        "entityId": "openai-inc"
+      },
+      "topic": "governance",
+      "statement": "OpenAI announced on 8 March 2024 that Nicole Seligman, former EVP and General Counsel at Sony Corporation, was one of three new members of its board of directors.",
+      "time": {
+        "kind": "snapshot",
+        "date": "2024-03-08",
+        "note": "Announcement date; the review announcement of the same day calls it an election of new members."
+      },
+      "attributes": {
+        "role": "Board member"
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "Announced board membership; no end date is recorded here.",
+      "relatedExisting": ["cs-altman-board-return-2024"],
+      "evidence": [
+        {
+          "id": "lg-ev-oai-nicole-seligman-board-2024",
+          "sourceId": "lg-src-oai-board-2024",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Opening paragraph",
+          "passageType": "paraphrase",
+          "passage": "The announcement names Nicole Seligman among three new members of OpenAI’s Board of Directors.",
+          "anchor": "Nicole Seligman, former EVP and General Counsel at Sony Corporation"
+        }
+      ]
+    },
+    {
+      "id": "lg-oai-fidji-simo-board-2024",
+      "event": "ev-2024-03-openai-board-expansion",
+      "subject": "fidji-simo",
+      "predicate": "held_role",
+      "object": {
+        "kind": "entity",
+        "entityId": "openai-inc"
+      },
+      "topic": "governance",
+      "statement": "OpenAI announced on 8 March 2024 that Fidji Simo, CEO and Chair of Instacart, was one of three new members of its board of directors.",
+      "time": {
+        "kind": "snapshot",
+        "date": "2024-03-08",
+        "note": "Announcement date; the review announcement of the same day calls it an election of new members."
+      },
+      "attributes": {
+        "role": "Board member"
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "Announced board membership; no end date is recorded here.",
+      "relatedExisting": ["cs-altman-board-return-2024"],
+      "evidence": [
+        {
+          "id": "lg-ev-oai-fidji-simo-board-2024",
+          "sourceId": "lg-src-oai-board-2024",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Opening paragraph",
+          "passageType": "paraphrase",
+          "passage": "The announcement names Fidji Simo among three new members of OpenAI’s Board of Directors.",
+          "anchor": "Fidji Simo, CEO and Chair of Instacart"
+        }
+      ]
+    },
+    {
+      "id": "lg-oai-leike-departure-2024",
+      "event": "ev-2024-05-leike-departure",
+      "subject": "jan-leike",
+      "predicate": "departure_announced",
+      "object": {
+        "kind": "entity",
+        "entityId": "openai"
+      },
+      "topic": "people",
+      "statement": "Jan Leike posted on X on 17 May 2024 that the previous day had been his last day at OpenAI as head of alignment, superalignment lead and executive; he stated that he had been disagreeing with OpenAI leadership about the company’s core priorities for quite some time, until a breaking point was reached.",
+      "time": {
+        "kind": "event",
+        "date": "2024-05-17",
+        "note": "Date of the post; his last working day is stated as the previous day."
+      },
+      "attributes": {
+        "role": "Head of alignment, superalignment lead and executive"
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "A first-person announcement. The stated reason is his own account in the same thread and is attributed, not adopted.",
+      "relatedExisting": ["jan-leike-openai-superalignment-2023"],
+      "statedReason": {
+        "by": "jan-leike",
+        "text": "Leike stated that he had been disagreeing with OpenAI leadership about the company’s core priorities for quite some time, until a breaking point was reached.",
+        "evidenceId": "lg-ev-oai-leike-departure-2024-2"
+      },
+      "evidence": [
+        {
+          "id": "lg-ev-oai-leike-departure-2024-1",
+          "sourceId": "lg-src-oai-leike-x-2024",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Post text (first post of the thread)",
+          "passageType": "paraphrase",
+          "passage": "Leike writes that the previous day was his last as head of alignment, superalignment lead and executive at OpenAI.",
+          "anchor": "Yesterday"
+        },
+        {
+          "id": "lg-ev-oai-leike-departure-2024-2",
+          "sourceId": "lg-src-oai-leike-priorities-x-2024",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Post text (second post of the thread)",
+          "passageType": "paraphrase",
+          "passage": "Leike writes that he had long disagreed with OpenAI leadership about the company’s core priorities until they reached a breaking point.",
+          "anchor": "core priorities"
+        }
+      ]
+    },
+    {
+      "id": "lg-oai-ssc-formed-2024",
+      "event": "ev-2024-05-openai-ssc",
+      "subject": "openai-safety-security-committee",
+      "predicate": "unit_of",
+      "object": {
+        "kind": "entity",
+        "entityId": "openai-inc"
+      },
+      "topic": "governance",
+      "statement": "OpenAI announced on 28 May 2024 that its board had formed a Safety and Security Committee to make recommendations to the full board on critical safety and security decisions.",
+      "time": {
+        "kind": "snapshot",
+        "date": "2024-05-28",
+        "note": "Announcement date of the committee’s formation."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "The announcement does not name the legal entity; the record assigns the board to OpenAI, Inc., the nonprofit that OpenAI’s 2019 note names as OpenAI Inc and that, according to OpenAI’s structure page, has always governed and controlled the for-profit (context evidence). A recommending committee as announced, not evidence of how it has operated.",
+      "relatedExisting": ["prov-delaware-ag-ssc-authority"],
+      "evidence": [
+        {
+          "id": "lg-ev-oai-ssc-formed-2024",
+          "sourceId": "lg-src-oai-ssc-2024",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Paragraph beginning “Today, the OpenAI Board formed”",
+          "passageType": "paraphrase",
+          "passage": "The announcement says the OpenAI Board formed the committee to make recommendations to the full Board on critical safety and security decisions.",
+          "anchor": "Board formed a Safety and Security Committee"
+        },
+        {
+          "checkedAt": "2026-10-15",
+          "id": "lg-ev-oai-ssc-formed-2024-inc",
+          "sourceId": "lg-src-oai-lp-2019",
+          "sourceRole": "primary",
+          "support": "context",
+          "locator": "Paragraph defining the general partner",
+          "passageType": "paraphrase",
+          "passage": "OpenAI’s 2019 note gives the legal name of OpenAI Nonprofit as OpenAI Inc.",
+          "anchor": "whose legal name is “OpenAI Inc”"
+        },
+        {
+          "checkedAt": "2026-10-15",
+          "id": "lg-ev-oai-ssc-formed-2024-governed",
+          "sourceId": "lg-src-oai-our-structure",
+          "sourceRole": "primary",
+          "support": "context",
+          "locator": "Opening section (page retrieved on 15 October 2026)",
+          "passageType": "paraphrase",
+          "passage": "The structure page states that the for-profit created in 2019 has always been governed and controlled by the nonprofit, now the OpenAI Foundation.",
+          "anchor": "governed and controlled by the nonprofit"
+        }
+      ]
+    },
+    {
+      "id": "lg-oai-taylor-ssc-chair-2024",
+      "event": "ev-2024-05-openai-ssc",
+      "subject": "bret-taylor",
+      "predicate": "held_role",
+      "object": {
+        "kind": "entity",
+        "entityId": "openai-safety-security-committee"
+      },
+      "topic": "governance",
+      "statement": "OpenAI announced on 28 May 2024 that its Safety and Security Committee would be led by four directors, with Bret Taylor as Chair.",
+      "time": {
+        "kind": "snapshot",
+        "date": "2024-05-28",
+        "note": "Announcement date."
+      },
+      "attributes": {
+        "role": "Chair, Safety and Security Committee",
+        "stage": "announced"
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "Committee chair as announced in May 2024; OpenAI announced in September 2024 that Zico Kolter would chair the committee.",
+      "relatedExisting": [],
+      "evidence": [
+        {
+          "id": "lg-ev-oai-taylor-ssc-chair-2024",
+          "sourceId": "lg-src-oai-ssc-2024",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Paragraph beginning “Today, the OpenAI Board formed”",
+          "passageType": "paraphrase",
+          "passage": "The committee is led by four directors, with Taylor named as Chair.",
+          "anchor": "Bret Taylor (Chair)"
+        },
+        {
+          "checkedAt": "2026-10-15",
+          "id": "lg-ev-oai-taylor-ssc-chair-2024-kolter",
+          "sourceId": "lg-src-oai-ssc-update-2024",
+          "sourceRole": "primary",
+          "support": "context",
+          "locator": "First recommendation (16 September 2024)",
+          "passageType": "quote",
+          "passage": "The Safety and Security Committee will become an independent Board oversight committee focused on safety and security, to be chaired by Zico Kolter"
+        }
+      ]
+    },
+    {
+      "id": "lg-oai-weng-head-of-safety-systems-2024",
+      "event": "ev-2024-05-openai-ssc",
+      "subject": "lilian-weng",
+      "predicate": "held_role",
+      "object": {
+        "kind": "entity",
+        "entityId": "openai"
+      },
+      "topic": "people",
+      "statement": "OpenAI’s announcement of 28 May 2024 identifies Lilian Weng as Head of Safety Systems.",
+      "time": {
+        "kind": "snapshot",
+        "date": "2024-05-28",
+        "note": "Role as shown in the announcement of that date."
+      },
+      "attributes": {
+        "role": "Head of Safety Systems"
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "A dated title on an announcement; it does not establish when the role began or ended.",
+      "relatedExisting": [],
+      "evidence": [
+        {
+          "id": "lg-ev-oai-weng-head-of-safety-systems-2024",
+          "sourceId": "lg-src-oai-ssc-2024",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Paragraph listing OpenAI technical and policy experts on the committee",
+          "passageType": "paraphrase",
+          "passage": "The committee list identifies Lilian Weng by the title Head of Safety Systems.",
+          "anchor": "Weng (Head of Safety Systems)"
+        }
+      ]
+    },
+    {
+      "id": "lg-oai-schulman-head-of-alignment-science-2024",
+      "event": "ev-2024-05-openai-ssc",
+      "subject": "john-schulman",
+      "predicate": "held_role",
+      "object": {
+        "kind": "entity",
+        "entityId": "openai"
+      },
+      "topic": "people",
+      "statement": "OpenAI’s announcement of 28 May 2024 identifies John Schulman as Head of Alignment Science.",
+      "time": {
+        "kind": "snapshot",
+        "date": "2024-05-28",
+        "note": "Role as shown in the announcement of that date."
+      },
+      "attributes": {
+        "role": "Head of Alignment Science"
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "A dated title on an announcement; it does not establish when the role began or ended.",
+      "relatedExisting": ["schulman-openai-posttraining-2022-2024"],
+      "evidence": [
+        {
+          "id": "lg-ev-oai-schulman-head-of-alignment-science-2024",
+          "sourceId": "lg-src-oai-ssc-2024",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Paragraph listing OpenAI technical and policy experts on the committee",
+          "passageType": "paraphrase",
+          "passage": "The committee list identifies John Schulman by the title Head of Alignment Science.",
+          "anchor": "Schulman (Head of Alignment Science)"
+        }
+      ]
+    },
+    {
+      "id": "lg-oai-friar-cfo-2024",
+      "event": "ev-2024-06-openai-cfo-cpo",
+      "subject": "sarah-friar",
+      "predicate": "held_role",
+      "object": {
+        "kind": "entity",
+        "entityId": "openai"
+      },
+      "topic": "people",
+      "statement": "OpenAI announced on 10 June 2024 that Sarah Friar was joining as Chief Financial Officer.",
+      "time": {
+        "kind": "snapshot",
+        "date": "2024-06-10",
+        "note": "Announcement date; not a start date."
+      },
+      "attributes": {
+        "role": "Chief Financial Officer",
+        "stage": "announced"
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "An announced appointment; no start date or continuing role is established.",
+      "relatedExisting": [],
+      "evidence": [
+        {
+          "id": "lg-ev-oai-friar-cfo-2024",
+          "sourceId": "lg-src-oai-cfo-cpo-2024",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "List of the two leaders, first item",
+          "passageType": "quote",
+          "passage": "Sarah Friar is joining as Chief Financial Officer"
+        }
+      ]
+    },
+    {
+      "id": "lg-oai-weil-cpo-2024",
+      "event": "ev-2024-06-openai-cfo-cpo",
+      "subject": "kevin-weil",
+      "predicate": "held_role",
+      "object": {
+        "kind": "entity",
+        "entityId": "openai"
+      },
+      "topic": "people",
+      "statement": "OpenAI announced on 10 June 2024 that Kevin Weil was joining as Chief Product Officer.",
+      "time": {
+        "kind": "snapshot",
+        "date": "2024-06-10",
+        "note": "Announcement date; not a start date."
+      },
+      "attributes": {
+        "role": "Chief Product Officer",
+        "stage": "announced"
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "An announced appointment; the record does not establish a start date or how long he held the title. His own later account of his roles is recorded with his departure (lg-oai-weil-departure-2026).",
+      "relatedExisting": [],
+      "evidence": [
+        {
+          "id": "lg-ev-oai-weil-cpo-2024",
+          "sourceId": "lg-src-oai-cfo-cpo-2024",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "List of the two leaders, second item",
+          "passageType": "quote",
+          "passage": "Kevin Weil is joining as Chief Product Officer"
+        }
+      ]
+    },
+    {
+      "id": "lg-oai-nakasone-board-2024",
+      "event": "ev-2024-06-nakasone-board",
+      "subject": "paul-nakasone",
+      "predicate": "held_role",
+      "object": {
+        "kind": "entity",
+        "entityId": "openai-inc"
+      },
+      "topic": "governance",
+      "statement": "OpenAI announced on 13 June 2024 that Paul M. Nakasone had joined its board of directors.",
+      "time": {
+        "kind": "snapshot",
+        "date": "2024-06-13",
+        "note": "Announcement date; the source says he joined “today”."
+      },
+      "attributes": {
+        "role": "Board member"
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "The announcement does not name the legal entity; the record assigns the board to OpenAI, Inc., the nonprofit that OpenAI’s 2019 note names as OpenAI Inc and that, according to OpenAI’s structure page, has always governed and controlled the for-profit (context evidence). No end date is recorded here.",
+      "relatedExisting": [],
+      "evidence": [
+        {
+          "id": "lg-ev-oai-nakasone-board-2024",
+          "sourceId": "lg-src-oai-nakasone-2024",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Opening sentence",
+          "passageType": "quote",
+          "passage": "Paul M. Nakasone has joined our Board of Directors"
+        },
+        {
+          "checkedAt": "2026-10-15",
+          "id": "lg-ev-oai-nakasone-board-2024-inc",
+          "sourceId": "lg-src-oai-lp-2019",
+          "sourceRole": "primary",
+          "support": "context",
+          "locator": "Paragraph defining the general partner",
+          "passageType": "paraphrase",
+          "passage": "OpenAI’s 2019 note gives the legal name of OpenAI Nonprofit as OpenAI Inc.",
+          "anchor": "whose legal name is “OpenAI Inc”"
+        },
+        {
+          "checkedAt": "2026-10-15",
+          "id": "lg-ev-oai-nakasone-board-2024-governed",
+          "sourceId": "lg-src-oai-our-structure",
+          "sourceRole": "primary",
+          "support": "context",
+          "locator": "Opening section (page retrieved on 15 October 2026)",
+          "passageType": "paraphrase",
+          "passage": "The structure page states that the for-profit created in 2019 has always been governed and controlled by the nonprofit, now the OpenAI Foundation.",
+          "anchor": "governed and controlled by the nonprofit"
+        }
+      ]
+    },
+    {
+      "id": "lg-oai-nakasone-ssc-2024",
+      "event": "ev-2024-06-nakasone-board",
+      "subject": "paul-nakasone",
+      "predicate": "held_role",
+      "object": {
+        "kind": "entity",
+        "entityId": "openai-safety-security-committee"
+      },
+      "topic": "governance",
+      "statement": "OpenAI announced on 13 June 2024 that Paul M. Nakasone would join the board’s Safety and Security Committee.",
+      "time": {
+        "kind": "snapshot",
+        "date": "2024-06-13",
+        "note": "Announcement date."
+      },
+      "attributes": {
+        "role": "Committee member",
+        "stage": "announced"
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "Committee membership as announced; OpenAI’s September 2024 update lists him on the reconstituted committee.",
+      "relatedExisting": [],
+      "evidence": [
+        {
+          "id": "lg-ev-oai-nakasone-ssc-2024",
+          "sourceId": "lg-src-oai-nakasone-2024",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Second paragraph",
+          "passageType": "quote",
+          "passage": "Nakasone will join the Board’s Safety and Security Committee"
+        },
+        {
+          "checkedAt": "2026-10-15",
+          "id": "lg-ev-oai-nakasone-ssc-2024-update",
+          "sourceId": "lg-src-oai-ssc-update-2024",
+          "sourceRole": "primary",
+          "support": "context",
+          "locator": "First recommendation (16 September 2024)",
+          "passageType": "paraphrase",
+          "passage": "OpenAI’s update of 16 September 2024 names Nakasone among the members of the committee to be chaired by Kolter.",
+          "anchor": "retired US Army General Paul Nakasone"
+        }
+      ]
+    },
+    {
+      "id": "lg-oai-schulman-departure-2024",
+      "event": "ev-2024-08-schulman-departure",
+      "subject": "john-schulman",
+      "predicate": "departure_announced",
+      "object": {
+        "kind": "entity",
+        "entityId": "openai"
+      },
+      "topic": "people",
+      "statement": "John Schulman posted on X on 6 August 2024 (UTC; 5 August in US Pacific time) a note saying that he had decided to leave OpenAI; he stated that the choice stemmed from his wish to deepen his focus on AI alignment and to return to hands-on technical work.",
+      "time": {
+        "kind": "event",
+        "date": "2024-08-06",
+        "note": "UTC date of the post (5 August in US Pacific time); not a last working day."
+      },
+      "attributes": {
+        "role": "Head of Alignment Science (title from lg-src-oai-ssc-2024, 28 May 2024; not stated in the post)"
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "A first-person announcement. The retrieved text of the note is truncated, so his statement about where he would go is not used; his biography records research on Anthropic’s Alignment Science team (existing record).",
+      "relatedExisting": [
+        "schulman-anthropic-alignment-prior",
+        "schulman-openai-posttraining-2022-2024",
+        "john-schulman-openai-founding-2015"
+      ],
+      "statedReason": {
+        "by": "john-schulman",
+        "text": "Schulman stated that the choice stemmed from his wish to deepen his focus on AI alignment and to return to hands-on technical work.",
+        "evidenceId": "lg-ev-oai-schulman-departure-2024"
+      },
+      "evidence": [
+        {
+          "id": "lg-ev-oai-schulman-departure-2024",
+          "sourceId": "lg-src-oai-schulman-x-2024",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Post text, note to colleagues, first two sentences",
+          "passageType": "paraphrase",
+          "passage": "Schulman writes that he has decided to leave OpenAI and that the choice stems from his wish to deepen his focus on AI alignment and return to hands-on technical work.",
+          "anchor": "decision to leave OpenAI"
+        },
+        {
+          "checkedAt": "2026-10-15",
+          "id": "lg-ev-oai-schulman-departure-2024-title",
+          "sourceId": "lg-src-oai-ssc-2024",
+          "sourceRole": "primary",
+          "support": "context",
+          "locator": "Paragraph listing the technical and policy experts on the committee (28 May 2024)",
+          "passageType": "paraphrase",
+          "passage": "OpenAI’s committee announcement of 28 May 2024 identifies Schulman as Head of Alignment Science.",
+          "anchor": "Schulman (Head of Alignment Science)"
+        }
+      ]
+    },
+    {
+      "id": "lg-oai-kolter-board-2024",
+      "event": "ev-2024-08-kolter-board",
+      "subject": "zico-kolter",
+      "predicate": "held_role",
+      "object": {
+        "kind": "entity",
+        "entityId": "openai-inc"
+      },
+      "topic": "governance",
+      "statement": "OpenAI announced on 8 August 2024 the appointment of Zico Kolter to its board of directors.",
+      "time": {
+        "kind": "snapshot",
+        "date": "2024-08-08",
+        "note": "Announcement date; not a start date."
+      },
+      "attributes": {
+        "role": "Board member"
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "The announcement does not name the legal entity; the record assigns the board to OpenAI, Inc., the nonprofit that OpenAI’s 2019 note names as OpenAI Inc and that, according to OpenAI’s structure page, has always governed and controlled the for-profit (context evidence).",
+      "relatedExisting": [],
+      "evidence": [
+        {
+          "id": "lg-ev-oai-kolter-board-2024",
+          "sourceId": "lg-src-oai-kolter-2024",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Opening sentence",
+          "passageType": "quote",
+          "passage": "the appointment of Zico Kolter to OpenAI’s Board of Directors"
+        },
+        {
+          "checkedAt": "2026-10-15",
+          "id": "lg-ev-oai-kolter-board-2024-inc",
+          "sourceId": "lg-src-oai-lp-2019",
+          "sourceRole": "primary",
+          "support": "context",
+          "locator": "Paragraph defining the general partner",
+          "passageType": "paraphrase",
+          "passage": "OpenAI’s 2019 note gives the legal name of OpenAI Nonprofit as OpenAI Inc.",
+          "anchor": "whose legal name is “OpenAI Inc”"
+        },
+        {
+          "checkedAt": "2026-10-15",
+          "id": "lg-ev-oai-kolter-board-2024-governed",
+          "sourceId": "lg-src-oai-our-structure",
+          "sourceRole": "primary",
+          "support": "context",
+          "locator": "Opening section (page retrieved on 15 October 2026)",
+          "passageType": "paraphrase",
+          "passage": "The structure page states that the for-profit created in 2019 has always been governed and controlled by the nonprofit, now the OpenAI Foundation.",
+          "anchor": "governed and controlled by the nonprofit"
+        }
+      ]
+    },
+    {
+      "id": "lg-oai-kolter-ssc-chair-2024",
+      "event": "ev-2024-09-ssc-independent",
+      "subject": "zico-kolter",
+      "predicate": "held_role",
+      "object": {
+        "kind": "entity",
+        "entityId": "openai-safety-security-committee"
+      },
+      "topic": "governance",
+      "statement": "OpenAI announced on 16 September 2024 that the Safety and Security Committee would become an independent board oversight committee chaired by Zico Kolter.",
+      "time": {
+        "kind": "snapshot",
+        "date": "2024-09-16",
+        "note": "Announcement date."
+      },
+      "attributes": {
+        "role": "Chair, Safety and Security Committee",
+        "stage": "announced"
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "An announced chair. OpenAI’s structure page, as retrieved on 15 October 2026, names Kolter as chair of the committee.",
+      "relatedExisting": ["prov-delaware-ag-ssc-authority"],
+      "evidence": [
+        {
+          "id": "lg-ev-oai-kolter-ssc-chair-2024-1",
+          "sourceId": "lg-src-oai-ssc-update-2024",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Section 1, “Establishing Independent Governance for Safety & Security”",
+          "passageType": "quote",
+          "passage": "The Safety and Security Committee will become an independent Board oversight committee focused on safety and security, to be chaired by Zico Kolter"
+        },
+        {
+          "id": "lg-ev-oai-kolter-ssc-chair-2024-2",
+          "sourceId": "lg-src-oai-our-structure",
+          "sourceRole": "primary",
+          "support": "context",
+          "locator": "Section “Our Board”, paragraph on the Safety and Security Committee",
+          "passageType": "paraphrase",
+          "passage": "The structure page names Kolter as the chair of the committee.",
+          "anchor": "chair of the SSC"
+        }
+      ]
+    },
+    {
+      "id": "lg-oai-murati-departure-2024",
+      "event": "ev-2024-09-openai-leadership-departures",
+      "subject": "mira-murati",
+      "predicate": "departure_announced",
+      "object": {
+        "kind": "entity",
+        "entityId": "openai"
+      },
+      "topic": "people",
+      "statement": "TechCrunch reported on 25 September 2024 that OpenAI’s CTO Mira Murati had posted on X that she was leaving the company.",
+      "time": {
+        "kind": "event",
+        "date": "2024-09-25",
+        "note": "The Wednesday of TechCrunch’s report of 25 September 2024 (a Wednesday), the date of the announcement as reported; not a last working day."
+      },
+      "attributes": {
+        "role": "Chief Technology Officer"
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "The record rests on reporting: TechCrunch relays Murati’s post on X, whose note was posted as an image and could not be machine-checked. The record does not establish her last working day.",
+      "relatedExisting": ["atlas-murati-interim"],
+      "evidence": [
+        {
+          "id": "lg-ev-oai-murati-departure-2024",
+          "sourceId": "lg-src-oai-tc-murati-2024",
+          "sourceRole": "secondary",
+          "support": "supports",
+          "locator": "Opening paragraph",
+          "passageType": "quote",
+          "passage": "OpenAI’s CTO Mira Murati posted on X on Wednesday saying she is leaving the company"
+        }
+      ]
+    },
+    {
+      "id": "lg-oai-mcgrew-departure-2024",
+      "event": "ev-2024-09-openai-leadership-departures",
+      "subject": "bob-mcgrew",
+      "predicate": "departure_announced",
+      "object": {
+        "kind": "entity",
+        "entityId": "openai"
+      },
+      "topic": "people",
+      "statement": "TechCrunch reported on 25 September 2024 that OpenAI’s chief research officer, Bob McGrew, had left the company, according to a post on X by Sam Altman.",
+      "time": {
+        "kind": "event",
+        "date": "2024-09-25",
+        "note": "Date as reported; not a last working day."
+      },
+      "attributes": {
+        "role": "Chief research officer"
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "The record rests on reporting: TechCrunch relays a post on X by Sam Altman; Altman’s and McGrew’s own notes were posted in forms whose text could not be retrieved.",
+      "relatedExisting": [],
+      "evidence": [
+        {
+          "id": "lg-ev-oai-mcgrew-departure-2024",
+          "sourceId": "lg-src-oai-tc-mcgrew-2024",
+          "sourceRole": "secondary",
+          "support": "supports",
+          "locator": "Opening paragraph",
+          "passageType": "quote",
+          "passage": "OpenAI’s chief research officer, Bob McGrew, and a research VP, Barret Zoph, left the company on Wednesday"
+        }
+      ]
+    },
+    {
+      "id": "lg-oai-zoph-departure-2024",
+      "event": "ev-2024-09-openai-leadership-departures",
+      "subject": "barret-zoph",
+      "predicate": "departure_announced",
+      "object": {
+        "kind": "entity",
+        "entityId": "openai"
+      },
+      "topic": "people",
+      "statement": "Barret Zoph posted on X on 26 September 2024 (UTC) a note to OpenAI saying that he had decided to leave the company.",
+      "time": {
+        "kind": "event",
+        "date": "2024-09-26",
+        "note": "UTC date of the post (25 September in US Pacific time)."
+      },
+      "attributes": {
+        "role": "Research VP (as reported; not stated in the retrieved post text)"
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "A first-person announcement. The title rests on TechCrunch’s reporting of Sam Altman’s post. The retrieved text of the note is truncated.",
+      "relatedExisting": [],
+      "evidence": [
+        {
+          "id": "lg-ev-oai-zoph-departure-2024-1",
+          "sourceId": "lg-src-oai-zoph-x-2024",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Post text, note to OpenAI, first sentence",
+          "passageType": "paraphrase",
+          "passage": "Zoph writes in a note to OpenAI that he has decided to leave the company.",
+          "anchor": "to leave OpenAI"
+        },
+        {
+          "id": "lg-ev-oai-zoph-departure-2024-2",
+          "sourceId": "lg-src-oai-tc-mcgrew-2024",
+          "sourceRole": "secondary",
+          "support": "supports",
+          "locator": "Opening paragraph",
+          "passageType": "quote",
+          "passage": "OpenAI’s chief research officer, Bob McGrew, and a research VP, Barret Zoph, left the company on Wednesday"
+        }
+      ]
+    },
+    {
+      "id": "lg-oai-markchen-research-lead-2024",
+      "event": "ev-2024-09-openai-leadership-departures",
+      "subject": "mark-chen",
+      "predicate": "held_role",
+      "object": {
+        "kind": "entity",
+        "entityId": "openai"
+      },
+      "topic": "people",
+      "statement": "Mark Chen posted on X on 26 September 2024 (UTC) that he would lead research at OpenAI alongside the account @merettm; TechCrunch reported on 25 September 2024 that Sam Altman had said Chen was being promoted to SVP of research and would lead the research organisation in partnership with Jakub Pachocki.",
+      "time": {
+        "kind": "snapshot",
+        "date": "2024-09-26",
+        "note": "UTC date of the post (25 September in US Pacific time)."
+      },
+      "attributes": {
+        "role": "Research lead with Jakub Pachocki; reported as SVP of research",
+        "stage": "announced"
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "The post names no title; the title and the partnership with Pachocki rest on TechCrunch’s reporting of Altman’s post, whose full text could not be retrieved.",
+      "relatedExisting": ["pachocki-openai-chief-scientist-2024"],
+      "evidence": [
+        {
+          "id": "lg-ev-oai-markchen-research-lead-2024-1",
+          "sourceId": "lg-src-oai-markchen-x-2024",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Post text, first sentence",
+          "passageType": "paraphrase",
+          "passage": "Chen writes that he is honoured to lead research at OpenAI alongside @merettm.",
+          "anchor": "lead research at @OpenAI"
+        },
+        {
+          "id": "lg-ev-oai-markchen-research-lead-2024-2",
+          "sourceId": "lg-src-oai-tc-mcgrew-2024",
+          "sourceRole": "secondary",
+          "support": "supports",
+          "locator": "Paragraph on the new research leadership",
+          "passageType": "quote",
+          "passage": "VP of research Mark Chen is being promoted to OpenAI’s new SVP of research and will lead the company’s research org in partnership with Jakub Pachocki"
+        }
+      ]
+    },
+    {
+      "id": "lg-oai-weng-departure-2024",
+      "event": "ev-2024-11-weng-departure",
+      "subject": "lilian-weng",
+      "predicate": "departure_announced",
+      "object": {
+        "kind": "entity",
+        "entityId": "openai"
+      },
+      "topic": "people",
+      "statement": "Lilian Weng posted on X on 8 November 2024 that she had decided to leave OpenAI after almost seven years.",
+      "time": {
+        "kind": "event",
+        "date": "2024-11-08",
+        "note": "Date of the post (UTC); not a last working day."
+      },
+      "attributes": {
+        "role": "Not stated in the post (title Head of Safety Systems from lg-src-oai-ssc-2024, 28 May 2024)"
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "A first-person announcement; the note she shared with her team was posted as an image and is not used. Her later movements are not recorded here.",
+      "relatedExisting": [],
+      "evidence": [
+        {
+          "id": "lg-ev-oai-weng-departure-2024",
+          "sourceId": "lg-src-oai-weng-x-2024",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Post text, first sentence",
+          "passageType": "paraphrase",
+          "passage": "Weng writes that after almost seven years at OpenAI she has decided to leave.",
+          "anchor": "decide to leave"
+        },
+        {
+          "checkedAt": "2026-10-15",
+          "id": "lg-ev-oai-weng-departure-2024-title",
+          "sourceId": "lg-src-oai-ssc-2024",
+          "sourceRole": "primary",
+          "support": "context",
+          "locator": "Paragraph listing the technical and policy experts on the committee (28 May 2024)",
+          "passageType": "paraphrase",
+          "passage": "OpenAI’s committee announcement of 28 May 2024 identifies Weng as Head of Safety Systems.",
+          "anchor": "Weng (Head of Safety Systems)"
+        }
+      ]
+    },
+    {
+      "id": "lg-oai-ogunlesi-board-2025",
+      "event": "ev-2025-01-ogunlesi-board",
+      "subject": "adebayo-ogunlesi",
+      "predicate": "held_role",
+      "object": {
+        "kind": "entity",
+        "entityId": "openai-inc"
+      },
+      "topic": "governance",
+      "statement": "OpenAI announced on 14 January 2025 that Adebayo Ogunlesi had joined its board of directors.",
+      "time": {
+        "kind": "snapshot",
+        "date": "2025-01-14",
+        "note": "Announcement date; not a start date."
+      },
+      "attributes": {
+        "role": "Board member"
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "The announcement does not name the legal entity. OpenAI’s structure page, as retrieved on 15 October 2026, lists him among the directors of the OpenAI Foundation board (context).",
+      "relatedExisting": [],
+      "evidence": [
+        {
+          "id": "lg-ev-oai-ogunlesi-board-2025",
+          "sourceId": "lg-src-oai-ogunlesi-2025",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Opening sentence",
+          "passageType": "quote",
+          "passage": "Ogunlesi has joined our Board of Directors"
+        },
+        {
+          "checkedAt": "2026-10-15",
+          "id": "lg-ev-oai-ogunlesi-board-2025-structure",
+          "sourceId": "lg-src-oai-our-structure",
+          "sourceRole": "primary",
+          "support": "context",
+          "locator": "Section “Our Board” (page retrieved on 15 October 2026)",
+          "passageType": "paraphrase",
+          "passage": "The board list names Adebayo Ogunlesi among the independent directors of the OpenAI Foundation.",
+          "anchor": "Adebayo Ogunlesi"
+        }
+      ]
+    },
+    {
+      "id": "lg-oai-markchen-cro-2025",
+      "event": "ev-2025-03-openai-leadership",
+      "subject": "mark-chen",
+      "predicate": "held_role",
+      "object": {
+        "kind": "entity",
+        "entityId": "openai"
+      },
+      "topic": "people",
+      "statement": "OpenAI announced on 24 March 2025 that Mark Chen had stepped into an expanded role as Chief Research Officer.",
+      "time": {
+        "kind": "snapshot",
+        "date": "2025-03-24",
+        "note": "Announcement date. Publication date from OpenAI’s own news feed (openai.com/news/rss.xml, retrieved 2026-10-15); the reader-relay text does not carry it."
+      },
+      "attributes": {
+        "role": "Chief Research Officer"
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "The announcement does not give an exact start date or establish a continuing role.",
+      "relatedExisting": [],
+      "evidence": [
+        {
+          "id": "lg-ev-oai-markchen-cro-2025",
+          "sourceId": "lg-src-oai-leadership-2025",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Paragraph beginning “Mark Chen”",
+          "passageType": "quote",
+          "passage": "Mark Chen has stepped into an expanded role as Chief Research Officer"
+        }
+      ]
+    },
+    {
+      "id": "lg-oai-simo-ceo-applications-2025",
+      "event": "ev-2025-05-simo-applications",
+      "subject": "fidji-simo",
+      "predicate": "held_role",
+      "object": {
+        "kind": "entity",
+        "entityId": "openai"
+      },
+      "topic": "people",
+      "statement": "OpenAI published on 7 May 2025 Sam Altman’s message announcing that Fidji Simo would join as CEO of Applications, reporting directly to him.",
+      "time": {
+        "kind": "snapshot",
+        "date": "2025-05-07",
+        "note": "Announcement date. Publication date from OpenAI’s own news feed (openai.com/news/rss.xml, retrieved 2026-10-15); the reader-relay text does not carry it."
+      },
+      "attributes": {
+        "role": "CEO of Applications",
+        "stage": "announced"
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "An announced appointment: the message says she would transition from Instacart over the next few months and join later in the year. Altman stated that he remained CEO of OpenAI.",
+      "relatedExisting": [],
+      "evidence": [
+        {
+          "id": "lg-ev-oai-simo-ceo-applications-2025",
+          "sourceId": "lg-src-oai-simo-2025",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Altman’s message, paragraph beginning “To strengthen our execution”",
+          "passageType": "quote",
+          "passage": "Fidji Simo is joining as our CEO of Applications, reporting directly to me"
+        },
+        {
+          "checkedAt": "2026-10-15",
+          "support": "context",
+          "sourceRole": "primary",
+          "id": "lg-ev-oai-simo-ceo-applications-2025-transition",
+          "sourceId": "lg-src-oai-simo-2025",
+          "locator": "Altman’s message, paragraph on the Applications group",
+          "passageType": "quote",
+          "passage": "She will transition from her role at Instacart over the next few months and join OpenAI later this year."
+        },
+        {
+          "checkedAt": "2026-10-15",
+          "support": "context",
+          "sourceRole": "primary",
+          "id": "lg-ev-oai-simo-ceo-applications-2025-remain",
+          "sourceId": "lg-src-oai-simo-2025",
+          "locator": "Altman’s message, paragraph beginning “To strengthen our execution”",
+          "passageType": "quote",
+          "passage": "I remain the CEO of OpenAI"
+        }
+      ]
+    },
+    {
+      "id": "lg-oai-io-merged-2025",
+      "event": "ev-2025-07-io-merger",
+      "subject": "io-products",
+      "predicate": "combined_into",
+      "object": {
+        "kind": "entity",
+        "entityId": "openai"
+      },
+      "topic": "institutions",
+      "statement": "OpenAI stated in an update dated 9 July 2025 that the io Products, Inc. team had officially merged with OpenAI, as announced on 21 May 2025.",
+      "time": {
+        "kind": "event",
+        "date": "2025-07-09",
+        "note": "Date of the update on the announcement page; the merger was first announced on 21 May 2025."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "The source speaks of the io team merging with OpenAI; it does not give transaction terms or name the acquiring legal entity.",
+      "relatedExisting": [],
+      "evidence": [
+        {
+          "id": "lg-ev-oai-io-merged-2025",
+          "sourceId": "lg-src-oai-io-2025",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Update of 9 July 2025, first sentence",
+          "passageType": "quote",
+          "passage": "the io Products, Inc. team has officially merged with OpenAI"
+        }
+      ]
+    },
+    {
+      "id": "lg-oai-ive-design-2025",
+      "event": "ev-2025-07-io-merger",
+      "subject": "jony-ive",
+      "predicate": "held_role",
+      "object": {
+        "kind": "entity",
+        "entityId": "openai"
+      },
+      "topic": "people",
+      "statement": "OpenAI stated on 9 July 2025 that Jony Ive and LoveFrom remained independent and had assumed deep design and creative responsibilities across OpenAI.",
+      "time": {
+        "kind": "snapshot",
+        "date": "2025-07-09",
+        "note": "Date of the update on the announcement page."
+      },
+      "attributes": {
+        "role": "Deep design and creative responsibilities across OpenAI (with LoveFrom, which remains independent)"
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "The source states that Ive and LoveFrom remain independent; the record does not establish employment or a title.",
+      "relatedExisting": [],
+      "evidence": [
+        {
+          "id": "lg-ev-oai-ive-design-2025",
+          "sourceId": "lg-src-oai-io-2025",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Update of 9 July 2025, second sentence",
+          "passageType": "paraphrase",
+          "passage": "The update says Ive and LoveFrom remain independent and have taken on design and creative responsibilities across OpenAI.",
+          "anchor": "assumed deep design and creative responsibilities across OpenAI"
+        }
+      ]
+    },
+    {
+      "id": "lg-oai-statsig-acquisition-2025",
+      "event": "ev-2025-09-statsig",
+      "subject": "openai",
+      "predicate": "acquired",
+      "object": {
+        "kind": "entity",
+        "entityId": "statsig"
+      },
+      "topic": "institutions",
+      "statement": "OpenAI announced on 2 September 2025 that it was acquiring Statsig, subject to customary closing conditions including regulatory approval.",
+      "time": {
+        "kind": "event",
+        "date": "2025-09-02",
+        "note": "Announcement date. Publication date from OpenAI’s own news feed (openai.com/news/rss.xml, retrieved 2026-10-15); the reader-relay text does not carry it."
+      },
+      "attributes": {
+        "stage": "announced"
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "An announced acquisition subject to closing conditions; completion was not checked.",
+      "relatedExisting": [],
+      "evidence": [
+        {
+          "id": "lg-ev-oai-statsig-acquisition-2025",
+          "sourceId": "lg-src-oai-statsig-2025",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Section “Statsig joins OpenAI”, first paragraph",
+          "passageType": "quote",
+          "passage": "we’re acquiring Statsig"
+        }
+      ]
+    },
+    {
+      "id": "lg-oai-raji-cto-applications-2025",
+      "event": "ev-2025-09-statsig",
+      "subject": "vijaye-raji",
+      "predicate": "held_role",
+      "object": {
+        "kind": "entity",
+        "entityId": "openai"
+      },
+      "topic": "people",
+      "statement": "OpenAI announced on 2 September 2025 that Vijaye Raji would step into a new role as CTO of Applications.",
+      "time": {
+        "kind": "snapshot",
+        "date": "2025-09-02",
+        "note": "Announcement date. Publication date from OpenAI’s own news feed (openai.com/news/rss.xml, retrieved 2026-10-15); the reader-relay text does not carry it."
+      },
+      "attributes": {
+        "role": "CTO of Applications",
+        "stage": "announced"
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "An announced appointment tied to the acquisition; no start date is established.",
+      "relatedExisting": [],
+      "evidence": [
+        {
+          "id": "lg-ev-oai-raji-cto-applications-2025",
+          "sourceId": "lg-src-oai-statsig-2025",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Second paragraph",
+          "passageType": "quote",
+          "passage": "Vijaye Raji will step into a new role as CTO of Applications"
+        }
+      ]
+    },
+    {
+      "id": "lg-oai-simo-ceo-applications-snapshot-2025",
+      "event": "ev-2025-09-statsig",
+      "subject": "fidji-simo",
+      "predicate": "held_role",
+      "object": {
+        "kind": "entity",
+        "entityId": "openai"
+      },
+      "topic": "people",
+      "statement": "OpenAI’s announcement of 2 September 2025 attributes a statement to Fidji Simo as CEO of Applications, OpenAI.",
+      "time": {
+        "kind": "snapshot",
+        "date": "2025-09-02",
+        "note": "Title as shown on the announcement of that date. Publication date from OpenAI’s own news feed (openai.com/news/rss.xml, retrieved 2026-10-15); the reader-relay text does not carry it."
+      },
+      "attributes": {
+        "role": "CEO of Applications"
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "A dated title on a document; it does not establish when the role began.",
+      "relatedExisting": [],
+      "evidence": [
+        {
+          "id": "lg-ev-oai-simo-ceo-applications-snapshot-2025",
+          "sourceId": "lg-src-oai-statsig-2025",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Attribution of the quotation following the second paragraph",
+          "passageType": "quote",
+          "passage": "Fidji Simo, CEO of Applications, OpenAI"
+        }
+      ]
+    },
+    {
+      "id": "lg-oai-villagra-cpo-2025",
+      "event": "ev-2025-03-openai-leadership",
+      "subject": "julia-villagra",
+      "predicate": "held_role",
+      "object": {
+        "kind": "entity",
+        "entityId": "openai"
+      },
+      "topic": "people",
+      "statement": "OpenAI announced on 24 March 2025 that Julia Villagra had assumed the role of Chief People Officer.",
+      "time": {
+        "kind": "snapshot",
+        "date": "2025-03-24",
+        "note": "Announcement date. Publication date from OpenAI’s own news feed (openai.com/news/rss.xml, retrieved 2026-10-15); the reader-relay text does not carry it."
+      },
+      "attributes": {
+        "role": "Chief People Officer"
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "The announcement gives no start date. OpenAI announced Arvind KC as Chief People Officer on 24 February 2026; no end date for Villagra is recorded here.",
+      "relatedExisting": [],
+      "evidence": [
+        {
+          "id": "lg-ev-oai-villagra-cpo-2025",
+          "sourceId": "lg-src-oai-leadership-2025",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Paragraph beginning “Julia Villagra”",
+          "passageType": "quote",
+          "passage": "Julia Villagra has assumed the role of Chief People Officer"
+        },
+        {
+          "checkedAt": "2026-10-15",
+          "id": "lg-ev-oai-villagra-cpo-2025-kc",
+          "sourceId": "lg-src-oai-kc-2026",
+          "sourceRole": "primary",
+          "support": "context",
+          "locator": "Opening sentence (24 February 2026)",
+          "passageType": "quote",
+          "passage": "welcome Arvind KC to OpenAI as our Chief People Officer"
+        }
+      ]
+    },
+    {
+      "id": "lg-oai-dresser-cro-2025",
+      "event": "ev-2025-12-dresser-cro",
+      "subject": "denise-dresser",
+      "predicate": "held_role",
+      "object": {
+        "kind": "entity",
+        "entityId": "openai"
+      },
+      "topic": "people",
+      "statement": "OpenAI announced on 9 December 2025 that Denise Dresser was joining as Chief Revenue Officer.",
+      "time": {
+        "kind": "snapshot",
+        "date": "2025-12-09",
+        "note": "Announcement date. Publication date from OpenAI’s own news feed (openai.com/news/rss.xml, retrieved 2026-10-15); the reader-relay text does not carry it."
+      },
+      "attributes": {
+        "role": "Chief Revenue Officer",
+        "stage": "announced"
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "An announced appointment; no start date is given.",
+      "relatedExisting": [],
+      "evidence": [
+        {
+          "id": "lg-ev-oai-dresser-cro-2025",
+          "sourceId": "lg-src-oai-dresser-2025",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Opening sentence",
+          "passageType": "quote",
+          "passage": "Denise Dresser is joining as Chief Revenue Officer"
+        }
+      ]
+    },
+    {
+      "id": "lg-oai-ssc-foundation-committee",
+      "event": "ev-2025-10-openai-recapitalization",
+      "subject": "openai-safety-security-committee",
+      "predicate": "unit_of",
+      "object": {
+        "kind": "entity",
+        "entityId": "openai-inc"
+      },
+      "topic": "governance",
+      "statement": "OpenAI’s structure page, as retrieved on 15 October 2026, states that the Safety and Security Committee will remain a committee of the OpenAI Foundation.",
+      "time": {
+        "kind": "snapshot",
+        "date": "2026-10-15",
+        "note": "Arrangement as shown on the page when retrieved on 15 October 2026; the page is undated. Not a start date. The page describes the structure announced on 28 October 2025."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "A company description of governance; it does not evidence how the committee has exercised its role.",
+      "relatedExisting": [
+        "prov-delaware-ag-ssc-authority",
+        "cs-openai-foundation-elects-pbc-directors"
+      ],
+      "evidence": [
+        {
+          "id": "lg-ev-oai-ssc-foundation-committee",
+          "sourceId": "lg-src-oai-our-structure",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Section “Our Board”, paragraph on the Safety and Security Committee",
+          "passageType": "paraphrase",
+          "passage": "The page states that the Safety and Security Committee will remain a committee of the OpenAI Foundation and continue to provide governance over the safety and security practices of OpenAI, including OpenAI Group.",
+          "anchor": "remain a committee of the OpenAI Foundation"
+        }
+      ]
+    },
+    {
+      "id": "lg-oai-kolter-pbc-observer",
+      "event": "ev-2025-10-openai-recapitalization",
+      "subject": "zico-kolter",
+      "predicate": "held_role",
+      "object": {
+        "kind": "entity",
+        "entityId": "openai-group-pbc"
+      },
+      "topic": "governance",
+      "statement": "OpenAI’s structure page, as retrieved on 15 October 2026, states that Zico Kolter will serve as a non-voting observer to the OpenAI Group board.",
+      "time": {
+        "kind": "snapshot",
+        "date": "2026-10-15",
+        "note": "Role as shown on the page when retrieved on 15 October 2026; the page is undated. Not a start date. The page describes the arrangement as part of the structure announced on 28 October 2025."
+      },
+      "attributes": {
+        "role": "Non-voting observer to the board"
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "A company description of the arrangement; the page also says a second Foundation director would make the same transition within one year of the recapitalization, without naming that director.",
+      "relatedExisting": ["cs-openai-foundation-elects-pbc-directors"],
+      "evidence": [
+        {
+          "id": "lg-ev-oai-kolter-pbc-observer",
+          "sourceId": "lg-src-oai-our-structure",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Section “Our Board”, paragraph beginning “To ensure the mission”",
+          "passageType": "paraphrase",
+          "passage": "The page states that all current OpenAI Foundation directors will also serve on OpenAI Group’s board, other than Kolter, who will serve as a non-voting observer.",
+          "anchor": "non-voting observer"
+        },
+        {
+          "checkedAt": "2026-10-15",
+          "support": "context",
+          "sourceRole": "primary",
+          "id": "lg-ev-oai-kolter-pbc-observer-second",
+          "sourceId": "lg-src-oai-our-structure",
+          "locator": "Section on the boards (page retrieved on 15 October 2026)",
+          "passageType": "paraphrase",
+          "passage": "The page states that within one year of the recapitalization a second Foundation director will also become a non-voting observer to the Group board, without naming that director.",
+          "anchor": "second Foundation director"
+        }
+      ]
+    },
+    {
+      "id": "lg-oai-scandinaro-preparedness-2026",
+      "event": "ev-2026-02-head-of-preparedness",
+      "subject": "dylan-scandinaro",
+      "predicate": "held_role",
+      "object": {
+        "kind": "entity",
+        "entityId": "openai"
+      },
+      "topic": "people",
+      "statement": "Sam Altman and Dylan Scandinaro each posted on X on 3 February 2026 that Scandinaro was joining OpenAI as its Head of Preparedness.",
+      "time": {
+        "kind": "snapshot",
+        "date": "2026-02-03",
+        "note": "Date of both posts; not a start date."
+      },
+      "attributes": {
+        "role": "Head of Preparedness",
+        "stage": "announced"
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "An announced appointment; neither post gives a start date. Scandinaro’s post refers to his time at Anthropic without naming a role there.",
+      "relatedExisting": [],
+      "evidence": [
+        {
+          "id": "lg-ev-oai-scandinaro-preparedness-2026-1",
+          "sourceId": "lg-src-oai-sama-scandinaro-x-2026",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Post text, first sentence",
+          "passageType": "paraphrase",
+          "passage": "Altman welcomes Scandinaro to OpenAI as its Head of Preparedness.",
+          "anchor": "our Head of Preparedness"
+        },
+        {
+          "id": "lg-ev-oai-scandinaro-preparedness-2026-2",
+          "sourceId": "lg-src-oai-scandinaro-x-2026",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Post text, first two sentences",
+          "passageType": "paraphrase",
+          "passage": "Scandinaro writes that he is joining OpenAI as Head of Preparedness and thanks colleagues from his time at Anthropic.",
+          "anchor": "joining OpenAI as Head of Preparedness"
+        }
+      ]
+    },
+    {
+      "id": "lg-oai-kc-cpo-2026",
+      "event": "ev-2026-02-kc-cpo",
+      "subject": "arvind-kc",
+      "predicate": "held_role",
+      "object": {
+        "kind": "entity",
+        "entityId": "openai"
+      },
+      "topic": "people",
+      "statement": "OpenAI announced on 24 February 2026 that Arvind KC was joining as its Chief People Officer.",
+      "time": {
+        "kind": "snapshot",
+        "date": "2026-02-24",
+        "note": "Announcement date. Publication date from OpenAI’s own news feed (openai.com/news/rss.xml, retrieved 2026-10-15); the reader-relay text does not carry it."
+      },
+      "attributes": {
+        "role": "Chief People Officer",
+        "stage": "announced"
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "An announced appointment; no start date is given.",
+      "relatedExisting": [],
+      "evidence": [
+        {
+          "id": "lg-ev-oai-kc-cpo-2026",
+          "sourceId": "lg-src-oai-kc-2026",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Opening sentence",
+          "passageType": "quote",
+          "passage": "welcome Arvind KC to OpenAI as our Chief People Officer"
+        }
+      ]
+    },
+    {
+      "id": "lg-oai-zaremba-foundation-resilience-2026",
+      "event": "ev-2026-03-openai-foundation-update",
+      "subject": "wojciech-zaremba",
+      "predicate": "held_role",
+      "object": {
+        "kind": "entity",
+        "entityId": "openai-inc"
+      },
+      "topic": "people",
+      "statement": "OpenAI announced on 24 March 2026 that Wojciech Zaremba, a co-founder of OpenAI, was joining the OpenAI Foundation as Head of AI Resilience.",
+      "time": {
+        "kind": "snapshot",
+        "date": "2026-03-24",
+        "note": "Announcement date. Publication date from OpenAI’s own news feed (openai.com/news/rss.xml, retrieved 2026-10-15); the reader-relay text does not carry it."
+      },
+      "attributes": {
+        "role": "Head of AI Resilience, OpenAI Foundation",
+        "stage": "announced"
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "An announced role at the Foundation (OpenAI, Inc.); no start date is given.",
+      "relatedExisting": ["wojciech-zaremba-openai-founding-2015"],
+      "evidence": [
+        {
+          "id": "lg-ev-oai-zaremba-foundation-resilience-2026",
+          "sourceId": "lg-src-oai-foundation-2026",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Section on AI Resilience",
+          "passageType": "quote",
+          "passage": "Wojciech Zaremba, a co-founder of OpenAI, is joining the Foundation as Head of AI Resilience to lead this work"
+        }
+      ]
+    },
+    {
+      "id": "lg-oai-weil-departure-2026",
+      "event": "ev-2026-04-weil-departure",
+      "subject": "kevin-weil",
+      "predicate": "departure_announced",
+      "object": {
+        "kind": "entity",
+        "entityId": "openai"
+      },
+      "topic": "people",
+      "statement": "Kevin Weil posted on X on 17 April 2026 that it was his last day at OpenAI; he stated that OpenAI for Science was being decentralized into other research teams.",
+      "time": {
+        "kind": "event",
+        "date": "2026-04-17",
+        "note": "Date of the post; he describes it as his last day."
+      },
+      "attributes": {
+        "role": "Not stated as a title; he describes moving from Chief Product Officer to the research team and starting OpenAI for Science"
+      },
+      "statedReason": {
+        "by": "kevin-weil",
+        "text": "Weil wrote that his last day came as OpenAI for Science was being decentralized into other research teams.",
+        "evidenceId": "lg-ev-oai-weil-departure-2026"
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "A first-person announcement. The organisational change he mentions is his statement, not independently checked.",
+      "relatedExisting": [],
+      "evidence": [
+        {
+          "id": "lg-ev-oai-weil-departure-2026",
+          "sourceId": "lg-src-oai-weil-x-2026",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Post text, first two sentences",
+          "passageType": "paraphrase",
+          "passage": "Weil writes that it is his last day at OpenAI as OpenAI for Science is decentralized into other research teams, and that he went from Chief Product Officer to the research team and started OpenAI for Science.",
+          "anchor": "last day at OpenAI"
+        }
+      ]
+    },
+    {
+      "id": "lg-oai-simo-departure-2026",
+      "event": "ev-2026-07-simo-transition",
+      "subject": "fidji-simo",
+      "predicate": "departure_announced",
+      "object": {
+        "kind": "entity",
+        "entityId": "openai"
+      },
+      "topic": "people",
+      "statement": "Fidji Simo posted on X on 9 July 2026 that she had decided to leave her full-time role at OpenAI and transition to being a part-time advisor.",
+      "time": {
+        "kind": "event",
+        "date": "2026-07-09",
+        "note": "Date of the post; not a last working day."
+      },
+      "attributes": {
+        "role": "Full-time role not named in the post (title CEO of Applications from lg-src-oai-simo-2025)"
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "A first-person announcement of leaving a full-time role while continuing as a part-time advisor; it is not an end to every association.",
+      "relatedExisting": [],
+      "evidence": [
+        {
+          "id": "lg-ev-oai-simo-departure-2026",
+          "sourceId": "lg-src-oai-simo-x-2026",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Post text, first sentence",
+          "passageType": "paraphrase",
+          "passage": "Simo writes that she told the OpenAI team she had decided to leave her full-time role and transition to being a part-time advisor.",
+          "anchor": "leave my full-time role"
+        },
+        {
+          "checkedAt": "2026-10-15",
+          "id": "lg-ev-oai-simo-departure-2026-title",
+          "sourceId": "lg-src-oai-simo-2025",
+          "sourceRole": "primary",
+          "support": "context",
+          "locator": "Altman’s message, paragraph beginning “To strengthen our execution” (7 May 2025)",
+          "passageType": "quote",
+          "passage": "Fidji Simo is joining as our CEO of Applications, reporting directly to me"
+        }
+      ]
+    },
+    {
+      "id": "lg-oai-rajic-cro-2026",
+      "event": "ev-2026-08-openai-cro",
+      "subject": "dali-rajic",
+      "predicate": "held_role",
+      "object": {
+        "kind": "entity",
+        "entityId": "openai"
+      },
+      "topic": "people",
+      "statement": "OpenAI announced on 13 August 2026 that Dali Rajic would be joining as Chief Revenue Officer.",
+      "time": {
+        "kind": "snapshot",
+        "date": "2026-08-13",
+        "note": "Announcement date. Publication date from OpenAI’s own news feed (openai.com/news/rss.xml, retrieved 2026-10-15); the reader-relay text does not carry it."
+      },
+      "attributes": {
+        "role": "Chief Revenue Officer",
+        "stage": "announced"
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "An announced appointment; no start date is given.",
+      "relatedExisting": [],
+      "evidence": [
+        {
+          "id": "lg-ev-oai-rajic-cro-2026",
+          "sourceId": "lg-src-oai-rajic-2026",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Opening sentence",
+          "passageType": "quote",
+          "passage": "Dali Rajic will be joining as Chief Revenue Officer"
+        }
+      ]
+    },
+    {
+      "id": "lg-oai-dresser-departure-2026",
+      "event": "ev-2026-08-openai-cro",
+      "subject": "denise-dresser",
+      "predicate": "departure_announced",
+      "object": {
+        "kind": "entity",
+        "entityId": "openai"
+      },
+      "topic": "people",
+      "statement": "OpenAI announced on 13 August 2026 that Denise Dresser would leave OpenAI following a transition period.",
+      "time": {
+        "kind": "event",
+        "date": "2026-08-13",
+        "note": "Announcement date. Publication date from OpenAI’s own news feed (openai.com/news/rss.xml, retrieved 2026-10-15); the reader-relay text does not carry it. Not a last working day."
+      },
+      "attributes": {
+        "role": "Chief Revenue Officer (title from lg-src-oai-dresser-2025, December 2025; not named in this passage)"
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "An announced future departure after a transition period; the last working day is not established.",
+      "relatedExisting": [],
+      "evidence": [
+        {
+          "id": "lg-ev-oai-dresser-departure-2026",
+          "sourceId": "lg-src-oai-rajic-2026",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Third paragraph",
+          "passageType": "paraphrase",
+          "passage": "OpenAI says Dresser will leave after a transition period during which she will work with the business team.",
+          "anchor": "Denise will leave OpenAI"
+        },
+        {
+          "checkedAt": "2026-10-15",
+          "id": "lg-ev-oai-dresser-departure-2026-title",
+          "sourceId": "lg-src-oai-dresser-2025",
+          "sourceRole": "primary",
+          "support": "context",
+          "locator": "Opening sentence (December 2025 announcement)",
+          "passageType": "quote",
+          "passage": "Denise Dresser is joining as Chief Revenue Officer"
+        }
+      ]
+    },
+    {
+      "id": "lg-oai-david-velez-foundation-board-2026",
+      "event": "ev-2026-07-velez-vince-boards",
+      "subject": "david-velez",
+      "predicate": "held_role",
+      "object": {
+        "kind": "entity",
+        "entityId": "openai-inc"
+      },
+      "topic": "governance",
+      "statement": "OpenAI announced on 21 July 2026 the appointment of David Vélez to the board of the OpenAI Foundation.",
+      "time": {
+        "kind": "snapshot",
+        "date": "2026-07-21",
+        "note": "Announcement date. Publication date from OpenAI’s own news feed (openai.com/news/rss.xml, retrieved 2026-10-15); the reader-relay text does not carry it."
+      },
+      "attributes": {
+        "role": "Board member"
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "One of two simultaneous appointments to the boards of the OpenAI Foundation and OpenAI Group PBC; no start date is given.",
+      "relatedExisting": ["cs-christiano-openai-foundation-board-2026"],
+      "evidence": [
+        {
+          "id": "lg-ev-oai-david-velez-foundation-board-2026",
+          "sourceId": "lg-src-oai-velez-vince-2026",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Opening sentence",
+          "passageType": "quote",
+          "passage": "the appointment of David Vélez and Robin Vince to the boards of the OpenAI Foundation and OpenAI Group PBC"
+        }
+      ]
+    },
+    {
+      "id": "lg-oai-david-velez-pbc-board-2026",
+      "event": "ev-2026-07-velez-vince-boards",
+      "subject": "david-velez",
+      "predicate": "held_role",
+      "object": {
+        "kind": "entity",
+        "entityId": "openai-group-pbc"
+      },
+      "topic": "governance",
+      "statement": "OpenAI announced on 21 July 2026 the appointment of David Vélez to the board of the OpenAI Group PBC.",
+      "time": {
+        "kind": "snapshot",
+        "date": "2026-07-21",
+        "note": "Announcement date. Publication date from OpenAI’s own news feed (openai.com/news/rss.xml, retrieved 2026-10-15); the reader-relay text does not carry it."
+      },
+      "attributes": {
+        "role": "Board member"
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "One of two simultaneous appointments to the boards of the OpenAI Foundation and OpenAI Group PBC; no start date is given.",
+      "relatedExisting": ["cs-openai-foundation-elects-pbc-directors"],
+      "evidence": [
+        {
+          "id": "lg-ev-oai-david-velez-pbc-board-2026",
+          "sourceId": "lg-src-oai-velez-vince-2026",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Opening sentence",
+          "passageType": "quote",
+          "passage": "the appointment of David Vélez and Robin Vince to the boards of the OpenAI Foundation and OpenAI Group PBC"
+        }
+      ]
+    },
+    {
+      "id": "lg-oai-robin-vince-foundation-board-2026",
+      "event": "ev-2026-07-velez-vince-boards",
+      "subject": "robin-vince",
+      "predicate": "held_role",
+      "object": {
+        "kind": "entity",
+        "entityId": "openai-inc"
+      },
+      "topic": "governance",
+      "statement": "OpenAI announced on 21 July 2026 the appointment of Robin Vince to the board of the OpenAI Foundation.",
+      "time": {
+        "kind": "snapshot",
+        "date": "2026-07-21",
+        "note": "Announcement date. Publication date from OpenAI’s own news feed (openai.com/news/rss.xml, retrieved 2026-10-15); the reader-relay text does not carry it."
+      },
+      "attributes": {
+        "role": "Board member"
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "One of two simultaneous appointments to the boards of the OpenAI Foundation and OpenAI Group PBC; no start date is given.",
+      "relatedExisting": ["cs-christiano-openai-foundation-board-2026"],
+      "evidence": [
+        {
+          "id": "lg-ev-oai-robin-vince-foundation-board-2026",
+          "sourceId": "lg-src-oai-velez-vince-2026",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Opening sentence",
+          "passageType": "quote",
+          "passage": "the appointment of David Vélez and Robin Vince to the boards of the OpenAI Foundation and OpenAI Group PBC"
+        }
+      ]
+    },
+    {
+      "id": "lg-oai-robin-vince-pbc-board-2026",
+      "event": "ev-2026-07-velez-vince-boards",
+      "subject": "robin-vince",
+      "predicate": "held_role",
+      "object": {
+        "kind": "entity",
+        "entityId": "openai-group-pbc"
+      },
+      "topic": "governance",
+      "statement": "OpenAI announced on 21 July 2026 the appointment of Robin Vince to the board of the OpenAI Group PBC.",
+      "time": {
+        "kind": "snapshot",
+        "date": "2026-07-21",
+        "note": "Announcement date. Publication date from OpenAI’s own news feed (openai.com/news/rss.xml, retrieved 2026-10-15); the reader-relay text does not carry it."
+      },
+      "attributes": {
+        "role": "Board member"
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "One of two simultaneous appointments to the boards of the OpenAI Foundation and OpenAI Group PBC; no start date is given.",
+      "relatedExisting": ["cs-openai-foundation-elects-pbc-directors"],
+      "evidence": [
+        {
+          "id": "lg-ev-oai-robin-vince-pbc-board-2026",
+          "sourceId": "lg-src-oai-velez-vince-2026",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Opening sentence",
+          "passageType": "quote",
+          "passage": "the appointment of David Vélez and Robin Vince to the boards of the OpenAI Foundation and OpenAI Group PBC"
+        }
+      ]
+    },
+    {
+      "id": "lg-oai-taylor-pbc-chair-2026",
+      "event": "ev-2026-07-velez-vince-boards",
+      "subject": "bret-taylor",
+      "predicate": "held_role",
+      "object": {
+        "kind": "entity",
+        "entityId": "openai-group-pbc"
+      },
+      "topic": "governance",
+      "statement": "OpenAI’s announcement of 21 July 2026 identifies Bret Taylor as Chair of the OpenAI Foundation and OpenAI Group PBC boards.",
+      "time": {
+        "kind": "snapshot",
+        "date": "2026-07-21",
+        "note": "Title as shown on the announcement of that date. Publication date from OpenAI’s own news feed (openai.com/news/rss.xml, retrieved 2026-10-15); the reader-relay text does not carry it."
+      },
+      "attributes": {
+        "role": "Chair of the board"
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "A dated title; it does not establish when he became chair of the OpenAI Group PBC board.",
+      "relatedExisting": ["cs-taylor-chair-initial-board-2023"],
+      "evidence": [
+        {
+          "id": "lg-ev-oai-taylor-pbc-chair-2026",
+          "sourceId": "lg-src-oai-velez-vince-2026",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Attribution of Taylor’s statement",
+          "passageType": "quote",
+          "passage": "Bret Taylor, Chair of the OpenAI Foundation and OpenAI Group PBC Boards"
+        }
+      ]
+    }
+  ]
+}

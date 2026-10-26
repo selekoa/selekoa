@@ -1,0 +1,73 @@
+# Network Cartography I — implementation and evaluation
+
+This increment evolves the canonical visual system from `c323d50`. It changes presentation and navigation only. The repository data, ontology, evidence, review states, reference format and exports remain unchanged.
+
+## Grammar and implementation
+
+Entity symbols share one path definition between Map, its legend and the Evidence Inspector: a lined institutional block for organisations, a head-and-shoulders silhouette for people, a folded sheet for documents, a diamond for concepts and a two-tier rack for infrastructure. Secondary types have distinct marks: a faceted hexagon for models, a pediment and columns for public bodies, and an inset octagon for funds. All are monochrome outlines of equal size; focus adds an outline and anchor labels receive typographic emphasis. Colour never establishes entity type or importance.
+
+| Relation family                          | Line treatment |
+| ---------------------------------------- | -------------- |
+| Personnel and organisational             | Solid          |
+| Authorship, citation and intellectual    | Dotted         |
+| Governance documents and version changes | Long dash      |
+| Capital                                  | Double line    |
+| Compute and commercial                   | Dash-dot       |
+
+Restrained family colours use the existing light/dark theme tokens. Predicate mapping is explicit, including research support and reported method use; governance publication is distinguished from other publication by the record's topic. These are display families, not ontology changes. Exact predicates appear on single-line hover and in the compact chooser and Inspector.
+
+Direction always follows the claim's subject to its object. Transaction stage is independent: an open circle denotes announced/planned/committed intent, a square denotes contracted, a question mark denotes undisclosed, and a filled dot denotes reported realisation/deployment. Provisional or undisclosed transactions also have hollow arrowheads. Exact stages remain in hover, the group index and the Inspector. An unmarked ordinary relationship asserts no transaction stage. These marks neither verify a source's account nor imply policy implementation or current continuity.
+
+React, Graphology and Sigma remain. Graphology contains one directed edge keyed by each original claim ID. Sigma owns graph projection, camera interaction and lifecycle. An SVG annotation layer, synchronised after Sigma rendering, supplies the shared silhouettes, stroke grammar, arrowheads and 16px line targets. This avoids custom shaders for each presentation distinction. The SVG is hidden from assistive technology; the existing complete Claims alternative and a new HTML connection index provide keyboard navigation. No essential information depends on SVG or WebGL. The extra layer is appropriate to this bounded sample; large-scale suitability has not been established.
+
+## Spatial and density rules
+
+The full repository supplies a deterministic reference atlas. Four labs are fixed orientation landmarks. Equal-spacing repulsion and springs between unique endpoint pairs spread nodes; ten parallel claims exert the same positional force as one. Distances, apparent clusters and centrality are navigation devices, not measurements of affiliation, importance or influence. There are no region boundaries, invented nodes or inferred edges.
+
+Filtered and focused views start from atlas positions. Focus holds its entity's atlas position while relaxing its actual filtered neighbourhood. Bearings usually persist, but this is not a guarantee of identical screen coordinates: fitting and collision spacing can move neighbours. Theme and claim selection retain the camera. No force animation, inertia or zoom animation is used, including with reduced motion enabled.
+
+A separate deterministic arrangement applies only when the visible version records form one complete, unbranched, explicit supersession chain. It uses alternating rows from oldest to newest; arrows still run newer to predecessor. Publication curves bend away from the central version column. Missing links, mixed families or branches fall back to the atlas layout. Dates alone cannot activate or complete a chain. This rule is explained in the view.
+
+Labels receive collision-checked placements in this order: hovered entity, focus, anchor labs, selected endpoints, then other entities in stable ID order. Additional labels can appear as zoom provides space. Long titles are bounded with an ellipsis; full titles remain in hover, search, the connection index and Inspector. A label can be omitted when all placements collide or leave the viewport, including at extreme zoom.
+
+Compact paths group only claims with identical **ordered endpoints, relation family and exact transaction stage**. Counts are display summaries, never graph edges or exported claims. Reciprocal relations and different stages get separate paths. Selecting a single-claim line opens its exact evidence. Selecting a multi-claim line/count opens a bounded, scrollable chooser with every statement, predicate, time and stable ID. Each row opens that exact claim and restores keyboard focus when the Inspector closes. The connection index offers the same route without pointing at a curve. Literal amounts remain exclusively in the existing non-edge routes.
+
+## Evaluation against the existing checklist
+
+Developer inspection and automated interaction checks, not a study with unfamiliar readers. Windows, installed Edge 154.0.4258.37, production Vite preview. Desktop 1440 × 1000; ordinary-desktop selection regression 1265 × 744; mobile 390 × 844. The 200% reflow check uses an equivalent 720 × 500 CSS viewport at device scale 2; native browser zoom was not separately exercised. Only actual repository records were used.
+
+The unchanged application was opened in Edge before implementation. Its Anthropic view had 25 entities and 46 relationships, circle-letter placeholders, universally forced labels and visually similar grey curves. No baseline runtime errors were observed.
+
+| Checklist item / task               | Result                              | Observable outcome or limit                                                                                                                                                                                                                                                            |
+| ----------------------------------- | ----------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| First-glance orientation            | Partial                             | All four lab labels are visible at desktop overview. Their positions persist across theme changes. Comprehension by a new lay reader is not tested.                                                                                                                                    |
+| Entity types                        | Pass for inspected sample           | Distinct outlines survive greyscale. Full long document titles can be read on hover or in the Inspector; secondary shapes are covered by definition tests rather than populated research fixtures.                                                                                     |
+| Relation families                   | Pass for implemented encoding       | Five distinct line patterns; inspection in light, dark and greyscale. Exact predicates are available on demand. No separate colour-vision simulation or user study.                                                                                                                    |
+| Four-lab overview                   | Pass with density limit             | 22 entities, 53 relationships and 3 literal claims. Relationships draw as 36 directed groups; 20 labels fit at the inspected desktop size. All anchor labels remain visible.                                                                                                           |
+| Anthropic full focus                | Partial                             | All 25 entities and 46 claims retained; 32 directed groups and 22 labels at desktop fit. People, governance publications, capital and compute can be distinguished. The centre still has intersecting paths and three suppressed labels; zoom, hover and the chooser remain necessary. |
+| OpenAI capital and compute          | Pass                                | Structural focus gives 6 entities, 17 claims and 7 groups. Microsoft → OpenAI capital and OpenAI → Microsoft cloud directions remain distinct. Both January 2025 cloud terms open their individual statements and exact reference IDs through the chooser.                             |
+| Personnel paths                     | Pass                                | Dario Amodei's OpenAI roles/announcement, Anthropic role/co-founding and authorship stay distinct. Chris Olah's institutional neighbourhood was also inspected. No OpenAI → Anthropic transfer edge is fabricated.                                                                     |
+| RSP succession and parallel changes | Pass with crossing limit            | 9 version documents plus publisher; 26 claims in 17 groups. Explicit succession produces readable rows. All four v3.0 → v2.2 claims, including replacement and scoped changes, open individually. Publication curves still intersect other lines.                                      |
+| Temporal readability                | Pass for preservation               | Stage symbols differ from relation patterns. Precise stages, time kinds, bounds and qualifications remain in individual evidence; cumulative through-year wording remains visible. No current-at-date interpretation was introduced.                                                   |
+| Evidence and expert drill-down      | Pass in tested paths                | Real rendered curve clicks open exact evidence; chooser rows retain stable IDs and deep links. Existing dossier, research-path and export regressions are included in the full Edge suite.                                                                                             |
+| Accessibility                       | Partial                             | Keyboard connection index → chooser → evidence → same row works. Complete Claims list remains available. Axe reports no violations in inspected mobile light/dark states and existing overview/evidence tests. Native screen-reader testing has not been performed.                    |
+| Mobile                              | Partial                             | No horizontal overflow at 390px; all 10 RSP labels fit after sequence ordering. Controls and chooser rows work by keyboard. Dense Anthropic touch targeting is easier through the connection index than through small symbols; the stacked Inspector still creates a long page.        |
+| Reduced motion and reflow           | Pass for tested modes               | Reduced-motion media emulation active; camera operations are immediate, without inertia or transitions. Equivalent 200% reflow retains access to claims/evidence without horizontal overflow.                                                                                          |
+| Restrained visual character         | Pass for inspection                 | Equal-size semantic marks, restrained theme colours, explanatory legends; no decorative animation, glow, gradients or invented analytical regions.                                                                                                                                     |
+| Scale                               | Not tested beyond repository sample | No 1,000/several-thousand-node synthetic benchmark, memory study or broad hardware claim. SVG redraws and quadratic layout need measurement before expanding scope.                                                                                                                    |
+
+Semantic checks: claim grouping is lossless and direction-sensitive; literal totals never become graph nodes; amount allocation, bounds, internal/external context and evidence distinctions remain untouched. Layout force tests demonstrate that repeated claims do not inflate attraction. Sequence tests reject missing explicit succession links. No factual records or review decisions were changed.
+
+## Validation and captures
+
+Final validation on 2026-09-27: `pnpm check` passed formatting, lint, TypeScript, all 165 tests, data validation and the production build. `pnpm test:browser` passed all 46 installed-Edge tests. The full test run initially identified an obsolete expectation that every singleton starts at the origin; it now checks that a singleton lab retains the same atlas coordinates. The existing large-bundle build warning remains. The final staged contents also undergo `pnpm check:privacy` before commit.
+
+Focused coverage includes six grammar/layout tests plus the existing claim-edge invariant test, and five new Edge scenarios. The existing reciprocal-edge regression now clicks actual rendered curve points instead of relying on coordinates from the old layout.
+
+App-only captures are ignored local artifacts, not committed research content. Inspected captures cover overview light/dark, Anthropic light/dark/greyscale, OpenAI capital/compute, Dario Amodei, Chris Olah, RSP desktop and mobile light/dark, mobile chooser/evidence return and equivalent 200% reflow. Their local names begin `cartography-`. Console/runtime checks on the five-fixture capture pass reported no errors.
+
+## Remaining work
+
+The map now makes it possible to distinguish a person's institutional records from documentary connections, recognise capital versus compute arrangements and their direction, and select each statement inside a dense pair without hunting overlapping curves. It also makes RSP succession traversable without reading publication dates as inferred replacement claims.
+
+The next useful work is measured label and curve collision handling in dense neighbourhoods, larger touch targets, a shorter mobile evidence-return path and real reader/screen-reader evaluation. More advanced bundling, animated spatial transitions, analytical clustering and large-graph optimisation remain follow-up work. The current implementation intentionally uses a dependable claim chooser and explicit layout rules.

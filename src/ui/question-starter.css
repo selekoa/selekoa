@@ -1,0 +1,80 @@
+/* Research question page: a dated list and record rows with their
+   qualifications and original sources kept in view. */
+.qs-chronology {
+  list-style: none;
+  margin: 12px 0 0;
+  padding: 0;
+}
+.qs-chronology > li {
+  display: grid;
+  grid-template-columns: 13rem minmax(0, 1fr);
+  gap: 4px 16px;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--color-border);
+  font-size: var(--text-base);
+}
+.qs-date {
+  color: var(--color-text-muted);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+.qs-event {
+  font-size: var(--text-md);
+}
+.qs-event .text-button.qs-document {
+  font-size: inherit;
+  white-space: normal;
+  text-align: left;
+  color: var(--color-text);
+  text-decoration: underline;
+  text-decoration-color: var(--color-border);
+}
+.qs-link-kind {
+  color: var(--color-text-muted);
+}
+.qs-entry-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 16px;
+  margin-top: 2px;
+  font-size: var(--text-sm);
+}
+.qs-rows > li {
+  padding-bottom: 8px;
+}
+.qs-qualification {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  max-width: 85ch;
+  margin: 0 0 4px;
+}
+.qs-sources {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-size: var(--text-sm);
+  display: grid;
+  gap: 2px;
+}
+.qs-sources a {
+  color: var(--color-accent);
+  overflow-wrap: anywhere;
+}
+.qs-source-meta {
+  color: var(--color-text-muted);
+}
+.qs-gaps {
+  margin: 12px 0 0;
+  padding-left: 18px;
+  display: grid;
+  gap: 12px;
+  max-width: 85ch;
+}
+.qs-gaps p {
+  margin: 0;
+}
+@media (max-width: 640px) {
+  .qs-chronology > li {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

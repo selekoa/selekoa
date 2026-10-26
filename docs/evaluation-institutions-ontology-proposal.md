@@ -1,0 +1,11 @@
+# Evaluation Institutions I: bounded ontology proposal
+
+Status: historical candidate proposal, partially resolved by the separately authorised [Evaluation Ontology I](evaluation-ontology-i.md). Evaluation engagement was implemented with mandatory activity/system scope. The successor-directed spin-off candidate was replaced by parent-directed separation announcement and a separate narrow naming announcement. Research partnerships, funding commitments, policy submissions and public-body extensions remain deferred. The original candidate text below is retained as proposal history, not the implemented specification.
+
+The research needs to distinguish a completed evaluation engagement from a promised one, a team spin-off announcement from incorporation, and philanthropic support from equity investment. Existing `reports_evaluation_of` describes a document's evaluation category; `combined_into` describes a combination; `investment_announced` describes investment. Reusing those predicates would misstate the evidence.
+
+Proposed additions are `evaluation_engagement` (evaluator to developer, with a mandatory activity stage and named evaluated system), `spin_off_announced` (historical team to intended successor, announcement only), `research_partnership` (a scoped institutional research arrangement, with a mandatory activity stage), `funding_commitment` (funding initiative to recipient, commitment only, never disbursement or equity), and `submitted_comment_to` (organisation to public body, a dated policy submission, never adoption).
+
+Permit public bodies as endpoints of existing `held_role`, `unit_of`, and `published` relations where their existing meaning applies. Public bodies should use the existing institutional dossier presentation. Do not introduce a generic influence, affiliation or ideology relation. Do not infer membership of a consortium as employment or an internal unit.
+
+An implementation would require explicit endpoint constraints, stage validation, unchanged historical records, focused invalid-record tests and existing map relation families. It would not redesign the interface. If declined, preserve these connections as sourced research notes outside the graph and state that limitation.

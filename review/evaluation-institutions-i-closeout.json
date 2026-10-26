@@ -1,0 +1,124 @@
+{
+  "baselineCommit": "15eb9d632950cf2792067ccf841acff37cb91e55",
+  "recordedAt": "2026-09-27",
+  "scope": "User-authorised reconciliation of supplied machine reports; no human decisions applied.",
+  "reports": [
+    {
+      "attribution": "Claude",
+      "path": "review/evaluation-institutions-i-claude-audit.md",
+      "decisions": {
+        "YES": 17,
+        "EDIT": 2,
+        "REJECT": 0,
+        "RESEARCH MORE": 0
+      },
+      "method": "Not specified in supplied report.",
+      "executionDate": null,
+      "modelVersion": null
+    },
+    {
+      "attribution": "Grok",
+      "path": "review/evaluation-institutions-i-grok-audit.md",
+      "decisions": {
+        "YES": 19,
+        "EDIT": 0,
+        "REJECT": 0,
+        "RESEARCH MORE": 0
+      },
+      "method": "Report asserts verification against cited primary sources; no execution trace supplied.",
+      "executionDate": null,
+      "modelVersion": null
+    }
+  ],
+  "limitations": "User-supplied model attributions; exact prompts, source access, execution dates, versions and independence cannot be authenticated. Neither report is human acceptance.",
+  "documentChronology": {
+    "claimId": "eval-i-metr-bis-publication",
+    "documentDate": "2024-10-11",
+    "publicPostingDate": null,
+    "docketReceiptDate": null,
+    "locator": "Author-hosted BIS comment, PDF page 1, date line."
+  },
+  "before": {
+    "claims": [
+      {
+        "id": "eval-i-claude-arc-credit",
+        "subject": "claude2-model-card",
+        "predicate": "explicitly_credits",
+        "object": {
+          "kind": "entity",
+          "entityId": "alignment-research-center"
+        },
+        "topic": "governance",
+        "statement": "Anthropic’s Claude 2 model card acknowledges work with ARC on safety audits, including a fine-tuned Claude snapshot.",
+        "time": {
+          "kind": "unknown",
+          "note": "The text says collaboration began in fall 2022; no exact evaluation or inspected-expression publication date established."
+        },
+        "derivation": "explicit",
+        "resolution": "supported",
+        "editorialState": "seed",
+        "qualification": "The source names ARC rather than its Evals unit. This reports work performed, unlike future evaluation-design promises in RSP v1.0.",
+        "evidenceIds": ["evidence-eval-i-claude-arc-credit"],
+        "recordedAt": "2026-09-27"
+      },
+      {
+        "id": "eval-i-metr-bis-publication",
+        "subject": "metr",
+        "predicate": "published",
+        "object": {
+          "kind": "entity",
+          "entityId": "metr-bis-comment-2024"
+        },
+        "topic": "governance",
+        "statement": "METR published a dated comment responding to BIS’s proposed AI reporting requirements.",
+        "time": {
+          "kind": "unknown",
+          "note": "Comment dated October 11, 2024; public posting date and docket receipt date are not established."
+        },
+        "derivation": "explicit",
+        "resolution": "supported",
+        "editorialState": "seed",
+        "qualification": "Author-hosted comment; direct retrieval of the government docket failed. This does not establish receipt, adoption or causal policy influence.",
+        "evidenceIds": ["evidence-eval-i-metr-bis-publication"],
+        "recordedAt": "2026-09-27"
+      }
+    ],
+    "evidence": [
+      {
+        "id": "evidence-eval-i-claude-arc-credit",
+        "claimId": "eval-i-claude-arc-credit",
+        "sourceId": "source-eval-i-claude2-card",
+        "sourceRole": "primary",
+        "support": "supports",
+        "locator": "Printed p2, Evaluations and Red Teaming, paragraph beginning “We have been working”.",
+        "passage": "Anthropic says its engineers worked with ARC to fine-tune a Claude snapshot for safety evaluation.",
+        "passageType": "paraphrase",
+        "verification": "machine_checked",
+        "checkedAt": "2026-09-27",
+        "note": "Original publisher passage machine-inspected. This is not human review or independent reproduction of the reported activity."
+      },
+      {
+        "id": "evidence-eval-i-metr-bis-publication",
+        "claimId": "eval-i-metr-bis-publication",
+        "sourceId": "source-eval-i-bis-comment",
+        "sourceRole": "primary",
+        "support": "supports",
+        "locator": "PDF page 1, date, addressee, response title and opening paragraph.",
+        "passage": "METR addresses its recommendations to BIS in a dated comment.",
+        "passageType": "paraphrase",
+        "verification": "machine_checked",
+        "checkedAt": "2026-09-27",
+        "note": "Original publisher passage machine-inspected. This is not human review or independent reproduction of the reported activity."
+      }
+    ]
+  },
+  "preservedReviewStatesSha256": "aeefda3fc460284168dfdcf61afdffe3965b85efb5a3fe5fe38c3438c4d684c4",
+  "historicalPackSha256": "90e61e5803dc753257399ba8d59f870ab837684521884e4ff7ea8a3712b66731",
+  "pendingHumanSample": [
+    "eval-i-anthropic-claude-card",
+    "eval-i-arc-incubation",
+    "eval-i-o1-method",
+    "eval-i-funding-credit",
+    "eval-i-uk-metr-demonstrations"
+  ]
+}

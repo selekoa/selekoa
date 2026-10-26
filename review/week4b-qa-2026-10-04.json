@@ -1,0 +1,1022 @@
+{
+  "id": "week4b-qa-2026-10-04",
+  "scope": "Week 4b, work in progress: schema 2.9 (control structures and external commitments) with the first topic integrated — California SB 53 as chaptered. The other five topics (OpenAI and Anthropic control structures, the White House voluntary commitments, the Frontier AI Safety Commitments and the EU General-Purpose AI Code of Practice) were researched and partly verified but are not in the dataset; see unfinishedTopics. All new records are seeds with machine-checked evidence; no editorial state changed.",
+  "agents": {
+    "model": "All proposing, verifying, adjudicating and critic agents and the integrating session were Claude Opus 5.5 (claude-opus-5-5): one model family, on the same machine. Agreement among them is not independent corroboration and is not human review; the five most consequential contested records are to be marked for a different-model check when contested records are admitted (none are admitted in this commit).",
+    "orchestration": "Three parallel workflows of two topics each. Per topic: one research agent proposing claims with sources, quotes of at most 50 words, locators, archive captures, language and dated precision; for every proposed claim, two independent verifier agents in batches of five, each told to refute (one with a source-text lens, one with a proposition lens) and each retrieving the sources itself; a third adjudicating agent for every claim the two did not both uphold, deciding keep, keep with corrections, drop or move to stops on the source text; a completeness critic; and one extra round of research and verification for the gaps it found.",
+    "independence": "Verifiers received the proposed claims and source references but not each other’s verdicts; the adjudicator received both reports. Execution independence is not established.",
+    "retrievalRule": "Direct HTTP retrieval (curl or scripts) was prescribed; the in-app browser was used only as a fallback after direct retrieval failed for a page. The maintainer restated this rule on 2026-10-04 during the run."
+  },
+  "sb53": {
+    "date": "2026-10-04",
+    "round1": {
+      "proposed": 30,
+      "bothVerifiersUpheld": 9,
+      "adjudicated": {
+        "keep": 0,
+        "keepWithCorrections": 21,
+        "drop": 0,
+        "moveToStops": 0
+      },
+      "claims": [
+        {
+          "key": "sb-enactment-2025-09-29",
+          "recordType": "statute_enactment",
+          "verifierSourceText": {
+            "verdict": "upheld",
+            "quoteVerbatim": "yes",
+            "locatorCorrect": "yes",
+            "datesCorrect": "yes",
+            "issues": "I could not reach the live leginfo pages from this machine, and the Internet Archive would not serve capture contents (details under retrieval failures). I checked the proposition against the Legislative Counsel's official bulk database instead (pubinfo_2025.zip, data as of 2026-09-27). BILL_TBL lists 202520260SB53 as Chaptered, chapter 138, 2025. The chaptered version 20250SB5390CHP (BILL_VERSION_TBL_8965.lob) is dated 2025-09-29, and its CAML history has CHAPTERED, APPROVED and FILED actions all dated 2025-09-29, ChapterNum 138, lead author Wiener and coauthor Senator Rubio. Section 22757.10 says the chapter 'shall be known as the Transparency in Frontier Artificial Intelligence Act'.\n\nBILL_HISTORY_TBL has '2025-09-23 Enrolled and presented to the Governor at  2 p.m.', '2025-09-29 Approved by the Governor.' and '2025-09-29 Chaptered by Secretary of State.  Chapter 138, Statutes of 2025.' The double spaces are whitespace only, so the history quote is verbatim.\n\nThe press-release quote is verbatim in the live gov.ca.gov page (datePublished 2025-09-29T20:15:02Z). The signing message is scanned with no text layer. I decoded its images: a 'SEP 29 2025' stamp on page 1, and the paraphrase is faithful (the letter says the Act 'will establish state-level oversight of the use, assessment, and governance of advanced artificial intelligence (AI) systems').\n\nCDX confirms the signing-PDF capture 20250929205408 has digest FY7JNSTJ3LCHKHUSJXNLDR2KDX46QQD2, which is the base32 SHA-1 of the live file. The live file is therefore byte-identical to the capture, as the claim says. CDX also confirms that the captures 20250930154105 (bill text), 20251211233017 (history) and 20250929205357 (press release) exist, as does the 20250929220723 bill-text capture mentioned in the note. I could not inspect their contents.\n\nPoints I could not verify: (a) the exact rendering of the header string 'Approved by Governor September 29, 2025. Filed with Secretary of State September 29, 2025.' on the HTML page. Its substance (APPROVED and FILED, both 2025-09-29) is confirmed in the underlying official XML. (b) The 'Date Published: 09/29/2025 09:00 PM' line. (c) The claim that the 2025-09-29 22:07 capture still shows the enrolled text.\n\nMinor locator point: on the press release, 'What you need to know:' is an inline label opening the summary paragraph. The quoted sentence opens the next paragraph, the first news-body paragraph after the 'SACRAMENTO –' dateline. The stated locator is defensible but could be more precise. The documentWords figures are plausible: my XML-to-text count is 6,672 words for the chaptered bill, and about 960–1,080 words for the press release depending on how much navigation is included."
+          },
+          "verifierProposition": {
+            "verdict": "upheld",
+            "quoteVerbatim": "yes",
+            "locatorCorrect": "yes",
+            "datesCorrect": "yes",
+            "issues": "No material problem. Chaptered header quote matches the 2025-09-30 capture apart from line breaks (header shows 'Senate Bill No. 53 / CHAPTER 138', 'Date Published: 09/29/2025 09:00 PM', version 'Chaptered 09/29/25'). Bill history quote matches the 2025-12-11 capture character for character. The same capture shows 'Approved by the Governor.' on 09/29/25 and 'Enrolled and presented to the Governor at 2 p.m.' on 09/23/25. The 2025-12-07 status capture repeats both 09/29/25 entries and gives Wiener (S) as lead author. The Governor's release quote matches both the live page and the 2025-09-29 capture. The signing message was rendered with headless Edge and read visually: it is dated SEP 29 2025 and says the bill 'will establish state-level oversight of the use, assessment, and governance of advanced artificial intelligence (AI) systems', so the paraphrase is fair. Limits: the live leginfo pages could not be reached from this environment, so the 'inspected live 2026-10-04' claims for leginfo were not independently confirmed; the signing PDF capture returned HTTP 429, so byte-identity with the live file (live SHA-1 2e3e96ca69dac4751e924ddab1c74a1df9e8407a) was not checked; the researcher's note that the 2025-09-29 22:07 capture still shows the enrolled text was not checked (429)."
+          },
+          "adjudication": null,
+          "disposition": "admitted as sb-enactment-2025-09-29"
+        },
+        {
+          "key": "sb-effective-2026-01-01",
+          "recordType": "statute_enactment",
+          "verifierSourceText": {
+            "verdict": "requalify",
+            "quoteVerbatim": "yes",
+            "locatorCorrect": "yes",
+            "datesCorrect": "yes",
+            "issues": "The core proposition is upheld. In the Legislative Counsel's LAW_SECTION_TBL (pubinfo_2025, rows updated 2026-09-26), every code section added by Ch. 138 has effective date 2026-01-01. The history note reads 'Added by Stats. 2025, Ch. 138, Sec. N.   (SB 53)   Effective January 1, 2026.' That covers 11 sections: BPC 22757.10, 22757.11, 22757.12, 22757.13, 22757.14, 22757.15 and 22757.16 (Sec. 2); GOV 11546.8 (Sec. 3, plus 'Conditionally operative as prescribed by its own provisions.'); and LAB 1107, 1107.1 and 1107.2 (Sec. 4). No row shows an amendment. The BPC quote matches the history text; the leginfo display adds the enclosing parentheses. The LAB 1107.1 paraphrase is faithful.\n\nThe Constitution quote is verbatim in art. IV § 8(c)(1) as last amended by Prop. 54 (2016). The urgency flag is NO in both the chaptered XML (<caml:Urgency>NO) and BILL_VERSION_TBL.\n\nCDX confirms that the captures 20260130083758 (BPC 22757.12), 20260130141825 (LAB 1107.1), 20240406054907 (CONS art. IV § 8; HTTP 200) and 20251207190542 (status page) exist.\n\nProblems:\n(1) The record presents the constitutional rule as a supporting premise and lists 'Cal. Const. art. IV, § 8(c)(1)' in the instrument field. It also says the date is consistent with § 8(c)(1) and that 'the constitutional default applies'. Choosing which paragraph of § 8(c) governs is legal interpretation, which falls under stop category (a). It is also arguably the wrong paragraph. Section 8(c)(2) covers a bill passed on or before the Legislature adjourns for the joint recess and in the Governor's possession after that date. SB 53 had final passage on 2025-09-13, at the end of the 2025 floor session, and was presented on 2025-09-23. Both paragraphs yield 1 January 2026, but the record should not assert which one applies. The explicit Legislative Counsel history notes are sufficient and decisive.\n(2) 'The other added sections were not checked individually' is now out of date: all 11 added code sections carry the same effective-date note (see above).\n(3) The list of later duties is accurate: OES report § 22757.13(g)(1), Attorney General report LAB 1107.1(d)... Correction: the Attorney General report is in BPC § 22757.13(d)(1)/LAB chapter as enacted; in the chaptered text the 'Beginning January 1, 2027' Attorney General report appears in the BPC chapter. Other duties: Department of Technology § 22757.14(a), on or before 2027-01-01; CalCompute report GOV 11546.8(f)(1), on or before 2027-01-01. These are due dates, not later effective dates, as the record says."
+          },
+          "verifierProposition": {
+            "verdict": "requalify",
+            "quoteVerbatim": "yes",
+            "locatorCorrect": "yes",
+            "datesCorrect": "yes",
+            "issues": "The quotes and the date check out. The § 22757.12 history note matches the 2026-01-30 capture exactly. The Lab. Code § 1107.1 capture (2026-01-30) reads '(Added by Stats. 2025, Ch. 138, Sec. 4. (SB 53) Effective January 1, 2026.)', so the paraphrase is accurate. The art. IV § 8(c)(1) quote matches the 2024-04-06 capture, which shows the text as amended in 2016 by Prop. 54. The status-page paraphrase ('Non-Urgency', 'Non-Appropriation', chaptered 09/29/25) matches the 2025-12-07 capture.\n\nProblem: the record says that because the bill is non-urgency, 'the constitutional default applies'. That is a legal interpretation, and it may be incomplete. Art. IV § 8(c)(2) separately covers a statute passed on or before the date the Legislature adjourns for a joint recess and held by the Governor after that date; such a statute takes effect on the January 1 after enactment. Per the bill history, SB 53 passed on 09/13/25 (Senate concurrence) and was presented to the Governor on 09/23/25. Whether (c)(1) or (c)(2) governs is interpretation and must not be resolved here. Both yield 2026-01-01, so the date stands, but the constitutional premise should be context only.\n\nSecond, the statement extends the date to every added code section. The checked history notes state it explicitly only for the sections examined. I confirmed § 22757.11 (2026-06-16 capture), § 22757.12 and Lab. Code § 1107.1. I could not confirm §§ 22757.13, 22757.15 or Gov. Code § 11546.8 because live leginfo was unreachable and no capture was fetched or exists."
+          },
+          "adjudication": {
+            "decision": "keep_with_corrections",
+            "rationale": "Upheld on the source text. On 2026-10-04 I fetched all eleven code sections added by Ch. 138 live from leginfo: Bus. & Prof. Code §§ 22757.10–22757.16 (Sec. 2), Gov. Code § 11546.8 (Sec. 3) and Lab. Code §§ 1107, 1107.1 and 1107.2 (Sec. 4). Each carries the history note 'Added by Stats. 2025, Ch. 138, Sec. N. (SB 53) Effective January 1, 2026.' None has an amendment note. § 11546.8 adds 'Conditionally operative as prescribed by its own provisions.' The § 22757.12 quote matches the live page and the 2026-01-30 capture, ignoring whitespace. CDX confirms all cited captures exist.\n\nBoth verifiers are right on one point. Treating Cal. Const. art. IV, § 8(c)(1) as the governing premise ('the constitutional default applies') is legal interpretation. § 8(c)(1) is expressly subject to (c)(2), which concerns statutes passed on or before the joint-recess adjournment and in the Governor's possession afterwards. The status page records SB 53 as concurred 09/13/25 and presented 09/23/25. So I removed the constitution from the instrument field, downgraded that evidence item to context and stated that this record does not determine which paragraph governs. The Legislative Counsel's explicit history notes decide the date.\n\nI replaced 'other added sections were not checked individually' with my own check of all eleven sections. I verified the later-dated duties in the chaptered text: OES report § 22757.13(g)(1), Attorney General report § 22757.14(d)(1), Department of Technology § 22757.14(a) and CalCompute report Gov. Code § 11546.8(f)(1). The verifiers' locations for the Attorney General report were imprecise; the record does not cite one. I added a paraphrase evidence item for Gov. Code § 11546.8. It has no Internet Archive capture."
+          },
+          "disposition": "Merged: its sources are context evidence on sb-enactment-2025-09-29 and its date is the edition’s recorded effective date (no separate record type for an effective date)."
+        },
+        {
+          "key": "sb-calcompute-conditional-operation",
+          "recordType": "statute_provision",
+          "verifierSourceText": {
+            "verdict": "upheld",
+            "quoteVerbatim": "yes",
+            "locatorCorrect": "yes",
+            "datesCorrect": "yes",
+            "issues": "I verified both quotes against the Legislative Counsel's official data: the chaptered XML (20250SB5390CHP) and the LAW_SECTION_TBL row for GOV 11546.8. § 11546.8(k) reads in full: 'This section shall become operative only upon an appropriation in a budget act, or other measure, for the purposes of this section.' The quoted fragment is a verbatim substring at SEC. 3, § 11546.8(k).\n\nThe codified history field for GOV 11546.8 reads: 'Added by Stats. 2025, Ch. 138, Sec. 3.   (SB 53)   Effective January 1, 2026.   Conditionally operative as prescribed by its own provisions.' So the second quote is verbatim, whitespace aside.\n\n§ 11546.8(a) establishes, within the Government Operations Agency, a consortium to develop a framework for a public cloud computing cluster known as 'CalCompute', so the description is faithful. Its live page could not be fetched (leginfo unreachable), but the bulk-data row is the same Legislative Counsel source. CDX returned no capture for the GOV 11546.8 codified page, consistent with the claim. CDX confirms the cited bill-text capture 20250930154105 exists; I could not inspect its contents. The qualification appropriately declines to say whether an appropriation exists."
+          },
+          "verifierProposition": {
+            "verdict": "upheld",
+            "quoteVerbatim": "yes",
+            "locatorCorrect": "yes",
+            "datesCorrect": "yes",
+            "issues": "The bill-text quote is an exact substring of § 11546.8(k) in the 2025-09-30 capture. The full sentence reads: 'This section shall become operative only upon an appropriation in a budget act, or other measure, for the purposes of this section.' The statement's description is accurate: § 11546.8(a) establishes a consortium within the Government Operations Agency to develop a framework for a public cloud computing cluster called 'CalCompute'. The section nowhere mentions frontier developers, so the qualification holds.\n\nI could not verify the second evidence item, the codified note 'Conditionally operative as prescribed by its own provisions.': live leginfo was unreachable, and the CDX query returned no capture (empty result), confirming the researcher's note. The proposition does not depend on it. Minor schema point: an operative condition is not an 'exception'. Use a 'condition' provision kind if the schema has one."
+          },
+          "adjudication": null,
+          "disposition": "admitted as sb-calcompute-conditional-operation"
+        },
+        {
+          "key": "sb-frontier-model-threshold",
+          "recordType": "statute_provision",
+          "verifierSourceText": {
+            "verdict": "requalify",
+            "quoteVerbatim": "yes",
+            "locatorCorrect": "yes",
+            "datesCorrect": "yes",
+            "issues": "The (i)(1) quote matches the chaptered XML exactly, including the curly quotes, and the XML itself contains the literal '10^26'. The (i)(2) paraphrase is faithful. The source text reads: 'shall include computing for the original training run and for any subsequent fine-tuning, reinforcement learning, or other material modifications the developer applies to a preceding foundation model.' LAW_SECTION_TBL shows BPC 22757.11 with only the Ch. 138 'Added' note, so no amendment as of 2026-09-26.\n\nThe qualification has two problems:\n(a) 'requires the Department of Technology to recommend annually, from 1 January 2027' is imprecise. § 22757.14(a) says 'On or before January 1, 2027, and annually thereafter'. It requires the Department to assess developments and recommend 'whether and how to update' three definitions: frontier model, frontier developer and large frontier developer.\n(b) 'The Legislature, not the Department, would have to change it' is an unsourced statement about legal effect: whether the Department has power to alter the definition. That is stop category (a). The text supports only the narrower statement that § 22757.14(c) requires the Department to submit its recommendations to the Legislature in a report."
+          },
+          "verifierProposition": {
+            "verdict": "requalify",
+            "quoteVerbatim": "yes",
+            "locatorCorrect": "yes",
+            "datesCorrect": "yes",
+            "issues": "The § 22757.11(i)(1) quote matches the 2025-09-30 chaptered capture exactly, including curly quotes and the literal '10^26'. The codified section in the 2026-06-16 capture has the same text and only the 'Added by Stats. 2025, Ch. 138, Sec. 2' note, with no amendment. The (i)(2) paraphrase is accurate.\n\nThe qualification has two problems:\n(a) It says the Department of Technology must recommend 'annually, from 1 January 2027'. § 22757.14(a) actually says 'On or before January 1, 2027, and annually thereafter'.\n(b) 'The Legislature, not the Department, would have to change it' is a statement of legal effect, namely who has power to amend the definition. It needs interpretation and is not stated in the cited text. Under the stop rule it must be removed. The text only provides for recommendations and a report to the Legislature (§ 22757.14(a), (c))."
+          },
+          "adjudication": {
+            "decision": "keep_with_corrections",
+            "rationale": "The statement and evidence are upheld. The (i)(1) quote matches character for character, including the curly quotes (U+201C/U+201D) and the literal '10^26', in three texts: the live chaptered text (2026-10-04), the 2025-09-30 capture and the codified § 22757.11 (live and in the 2026-06-16 capture). The (i)(2) paraphrase is faithful to 'shall include computing for the original training run and for any subsequent fine-tuning, reinforcement learning, or other material modifications the developer applies to a preceding foundation model.' Codified § 22757.11 shows only the Ch. 138 'Added' note, both live and in the 2026-06-16 capture.\n\nBoth verifiers correctly flagged two problems in the qualification. First, § 22757.14(a) says 'On or before January 1, 2027, and annually thereafter', not 'annually, from 1 January 2027'. Second, 'The Legislature, not the Department, would have to change it' interprets who has power to amend the definition. That is legal effect, which the text does not state. I removed it. The text supports only that the Department recommends and, under § 22757.14(c), reports to the Legislature."
+          },
+          "disposition": "admitted as sb-frontier-model-threshold"
+        },
+        {
+          "key": "sb-frontier-developer-definition",
+          "recordType": "statute_provision",
+          "verifierSourceText": {
+            "verdict": "upheld",
+            "quoteVerbatim": "yes",
+            "locatorCorrect": "yes",
+            "datesCorrect": "yes",
+            "issues": "The quote is verbatim at § 22757.11(h) in the chaptered XML. The full text reads: '“Frontier developer” means a person who has trained, or initiated the training of, a frontier model, with respect to which the person has used, or intends to use, at least as much computing power to train the frontier model as would meet the technical specifications found in subdivision (i).' The statement's paraphrase of the compute condition is faithful.\n\nI checked the qualification on how duties are allocated against the text, and it is accurate:\n- Duties on every 'frontier developer': transparency report (§ 22757.12(c)(1)), critical-safety-incident reporting (§ 22757.13(c)(1)), and the whistleblower prohibitions and notice duty (Lab. Code § 1107.1(a), (b), (d)).\n- Duties on a 'large frontier developer' only: the frontier AI framework (§ 22757.12(a)), internal-use catastrophic-risk summaries to OES (§ 22757.12(d)), and the anonymous internal disclosure process (Lab. Code § 1107.1(e)).\nThe record correctly declines to apply the definition to named companies."
+          },
+          "verifierProposition": {
+            "verdict": "requalify",
+            "quoteVerbatim": "yes",
+            "locatorCorrect": "yes",
+            "datesCorrect": "yes",
+            "issues": "The statement and the quote match § 22757.11(h) in the chaptered text (2025-09-30 capture) and in the codified section (2026-06-16 capture, unamended).\n\nThe qualification's summary of who carries which duty is imprecise. It also uses 'apply to', which moves from statute text to applicability. Specifically:\n- The transparency report is not wholly a duty of all frontier developers. Only paragraph (c)(1) is; the catastrophic-risk summaries under § 22757.12(c)(2) are addressed only to large frontier developers.\n- § 22757.12(e)(1) splits the bar on false statements: (A) covers all frontier developers, (B) only large frontier developers.\n- The civil penalty in § 22757.15(a) is stated only for large frontier developers, which matters for any reading of 'duties apply'."
+          },
+          "adjudication": {
+            "decision": "keep_with_corrections",
+            "rationale": "The statement and quote are upheld. 'has trained, or initiated the training of, a frontier model' is verbatim in § 22757.11(h) in the live chaptered text, the 2025-09-30 capture and the codified § 22757.11. The statement's paraphrase of the compute condition is faithful; I added 'to train it' to match the text.\n\nI side with verifier 2 on the qualification, having checked the duty addressees myself. 'The transparency-report ... duties apply to all frontier developers' is imprecise. Only § 22757.12(c)(1) is addressed to frontier developers; § 22757.12(c)(2) summaries are addressed to large frontier developers. § 22757.12(e)(1) is also split: (A) covers frontier developers, (B) large frontier developers. 'Apply to' also drifts from the statute's text toward applicability, so I rephrased it as 'addressed to'.\n\nVerifier 2's '§ 1107.1(a)–(d)' is slightly wrong. Subdivision (c) is a permission for covered employees ('may use the hotline'), not a developer duty. The corrected list is (a), (b) and (d). I verified that § 22757.15(a)'s civil-penalty sentence names only large frontier developers.\n\nThe 'large frontier developer' definition (§ 22757.11(j), more than $500,000,000 in annual gross revenues with affiliates in the preceding calendar year) has no record of its own. That is a completeness gap for the critic, not a defect in this record."
+          },
+          "disposition": "admitted as sb-frontier-developer-definition"
+        },
+        {
+          "key": "sb-large-frontier-developer-threshold",
+          "recordType": "statute_provision",
+          "verifierSourceText": {
+            "verdict": "requalify",
+            "quoteVerbatim": "yes",
+            "locatorCorrect": "yes",
+            "datesCorrect": "no",
+            "issues": "Core proposition upheld. In the 2025-09-30 capture, the quote matches § 22757.11(j) of SEC. 2 character for character. The affiliate paraphrase in the qualification is faithful to § 22757.11(a). The capture's header shows 'CHAPTER 138', 'Approved by Governor September 29, 2025', 'Filed with Secretary of State September 29, 2025' and 'Date Published: 09/29/2025 09:00 PM', so the 2025-09-29 enactment date (day precision) is correct. The capture exists in CDX, and the choice of capture is right: the nearer capture 20250929220723 still shows the enrolled version ('Date Published: 09/17/2025'), so 20250930154105 is the first capture of the chaptered text. documentWords 6898 matches exactly: I counted 6898 whitespace-separated words from 'Senate Bill' to the end of the bill body. Problem 1: the time note's 'effective 2026-01-01' is not stated anywhere in the cited chaptered bill text. The bill contains no effective or operative clause for Chapter 25.1. The only operative clause is for Gov. Code § 11546.8 (CalCompute), which takes effect upon appropriation. Problem 2: the effective date is documented by the codified section's history note, which no evidence item cites. Problem 3: I could not reproduce 'inspected live 2026-10-04' because leginfo was unreachable from this environment. 'kind: filing' is the closest value the schema enum allows for a statute, so it is acceptable."
+          },
+          "verifierProposition": {
+            "verdict": "upheld",
+            "quoteVerbatim": "yes",
+            "locatorCorrect": "yes",
+            "datesCorrect": "yes",
+            "issues": "None material. The quote occurs once, at SEC. 2, § 22757.11(j), in both the live text and the 2025-09-30 capture, and the statement follows the definition ('collectively', 'in excess of', 'preceding calendar year'). The affiliate definition in the qualification matches § 22757.11(a) verbatim in substance. No company's status is asserted, so no applicability stop arises. The time note's 'effective 2026-01-01' is accurate but the cited bill text does not state it; only the codified section's annotation does."
+          },
+          "adjudication": {
+            "decision": "keep_with_corrections",
+            "rationale": "Re-checked against the live chaptered bill text (fetched 2026-10-04; header 'Date Published: 09/29/2025 09:00 PM', CHAPTER 138, approved by the Governor and filed with the Secretary of State on September 29, 2025) and the 20250930154105 capture. The quote appears once, verbatim apart from whitespace, at § 22757.11(j) in both. The affiliate definition at § 22757.11(a) matches the qualification. The bill has 6898 words from 'Senate Bill' to the end, which confirms documentWords. Only defect: the bill text never states 'effective 2026-01-01'. I searched for 'effective', 'operative' and 'January 1, 2026', and the only operative clause is the CalCompute one in Gov. Code § 11546.8(k). The effective date comes from the Legislative Counsel's history note on codified § 22757.11, which I confirmed on the live page (2026-10-04) and in the 20260130082633 capture. I added it as a separate evidence item and rewrote the time note to keep the enactment and effective dates distinct."
+          },
+          "disposition": "admitted as sb-large-frontier-developer-threshold"
+        },
+        {
+          "key": "sb-catastrophic-risk-threshold",
+          "recordType": "statute_provision",
+          "verifierSourceText": {
+            "verdict": "requalify",
+            "quoteVerbatim": "yes",
+            "locatorCorrect": "yes",
+            "datesCorrect": "no",
+            "issues": "Core proposition upheld. The quote 'more than 50 people or more than one billion dollars ($1,000,000,000)' is a verbatim contiguous substring of § 22757.11(c)(1), in both the chaptered capture and the 2026-01-30 capture of the codified section. The note is correct that the identical phrase recurs in Lab. Code § 1107(a)(1); there the definition refers to 'deployment of a foundation model', so 'parallel definition for foundation models' is fair. The paraphrase of (c)(1)(A)–(C) and (c)(2)(A)–(C) is faithful. The qualification's exclusions match (c)(2)(A)–(C). § 22757.16 reads 'The loss of value of equity does not count as damage to or loss of property for the purposes of this chapter', which the qualification paraphrases faithfully. Minor statement looseness: item (a) says 'expert-level assistance with ... weapons', while the statute says 'in the creation or release of' such a weapon (the evidence paraphrase has this right). 'More than 50 deaths or serious injuries' compresses 'the death of, or serious injury to, more than 50 people'; that is acceptable but less exact. The effective-date note has the same problem as in the threshold claim: the cited bill text does not state it."
+          },
+          "verifierProposition": {
+            "verdict": "requalify",
+            "quoteVerbatim": "yes",
+            "locatorCorrect": "yes",
+            "datesCorrect": "yes",
+            "issues": "The quote is verbatim at § 22757.11(c)(1) and recurs at Lab. Code § 1107(a)(1), as the note says. The exclusions, the equity-value rule (§ 22757.16) and the Labor Code parallel in the qualification are accurate. Two parts of the statement claim more than the text. (1) The statement says the model 'provides expert-level assistance with chemical, biological, radiological or nuclear weapons'. The statute limits this to 'expert-level assistance in the creation or release of' such a weapon, so the statement's wording is broader. In a legal definition that difference is material, for example for assistance with detection or disarmament. (2) The oversight limb reads 'with no meaningful human oversight, intervention, or supervision', and the theft limb includes 'theft by false pretense'; the statement and the paraphrase evidence shorten both. The paraphrase evidence itself correctly says 'create or release'."
+          },
+          "adjudication": {
+            "decision": "keep_with_corrections",
+            "rationale": "The quote appears verbatim at § 22757.11(c)(1) in the live chaptered text and the 2025-09-30 capture, and recurs in Lab. Code § 1107(a)(1), which refers to a 'foundation model'. The exclusions (c)(2)(A)–(C) and the § 22757.16 equity-value rule are confirmed. Both verifiers were right that the statement went beyond the source text in two places. Limb (A) of the statute is 'expert-level assistance in the creation or release of' a CBRN weapon, not assistance 'with' such weapons. Limb (B) reads 'with no meaningful human oversight, intervention, or supervision' and includes 'theft by false pretense'. I corrected the statement, the harm clause ('the death of, or serious injury to, more than 50 people'), the object literal and the paraphrase evidence against the text. I also added the codified-section history note for the effective date (live 2026-10-04; 20260130082633 capture)."
+          },
+          "disposition": "admitted as sb-catastrophic-risk-threshold"
+        },
+        {
+          "key": "sb-framework-duty",
+          "recordType": "statute_provision",
+          "verifierSourceText": {
+            "verdict": "requalify",
+            "quoteVerbatim": "yes",
+            "locatorCorrect": "yes",
+            "datesCorrect": "no",
+            "issues": "Core proposition upheld. The quote matches the opening clause of § 22757.12(a) verbatim, in both the chaptered capture and the 2026-01-30 codified capture. The § 22757.11(g) definition and the § 22757.15(a) penalty ground ('fails to comply with its own frontier AI framework shall be subject to a civil penalty') are faithfully stated. § 22757.15(b) adds that the penalty is recoverable only in a civil action by the Attorney General. Paraphrase item (6) is loose. 'What counts as substantial modification' can be read as modification of the framework. The statute instead refers to 'how the large frontier developer determines when its frontier models are substantially modified enough to require disclosures pursuant to subdivision (c)', which is about models and transparency reports. The other nine items are faithful. Time note: 'effective 2026-01-01' is not in the cited bill text. 'The codified § 22757.12 (checked 2026-10-04) shows no amendment note' has no evidence item or archive behind it, and I could not reproduce the live check because leginfo timed out. The latest available capture of the codified section, 20260130073345, shows only '(Added by Stats. 2025, Ch. 138, Sec. 2. (SB 53) Effective January 1, 2026.)'. That establishes no amendment as of 2026-01-30 only."
+          },
+          "verifierProposition": {
+            "verdict": "upheld",
+            "quoteVerbatim": "yes",
+            "locatorCorrect": "yes",
+            "datesCorrect": "yes",
+            "issues": "None material. The quote is verbatim (once) at § 22757.12(a) in both the live text and the capture. I compared the paraphrase of (a)(1)–(10) item by item with the codified text and found it accurate, with no item added or dropped. The qualification is accurate: the definition at § 22757.11(g), and the penalty ground at § 22757.15(a) for failing to comply with one's own framework (civil penalty up to $1,000,000 per violation, recoverable only by the Attorney General under § 22757.15(b)). The codified § 22757.12 shows no amendment note, as stated. One point for the integrator: the Legislative Counsel's Digest summarises the duty as 'write, implement, and clearly and conspicuously publish' and omits 'comply with'. The record correctly relies on the operative text, so the Digest should not be used as evidence for this record."
+          },
+          "adjudication": {
+            "decision": "keep_with_corrections",
+            "rationale": "The quote appears verbatim, once, in § 22757.12(a) in the live chaptered text and the 2025-09-30 capture. The qualification's § 22757.11(g) definition and the § 22757.15(a) penalty ground ('fails to comply with its own frontier AI framework') are confirmed, as is § 22757.15(b) (penalty recoverable only by the Attorney General). Verifier 1 was right that paraphrase item (6) misdescribes the text. The statute refers to how the developer determines when its frontier models are substantially modified enough to require disclosures under subdivision (c), the transparency report, not to modifications of the framework. Item (4) was also loose ('adequacy of mitigations'; deploy vs. extensive internal use), and I tightened it. I reproduced the amendment check myself: the live codified § 22757.12 on 2026-10-04 shows only '(Added by Stats. 2025, Ch. 138, Sec. 2. (SB 53) Effective January 1, 2026.)' and no amendment note. I added the codified page as evidence. The Digest omits 'comply with', which I confirmed and noted in the qualification."
+          },
+          "disposition": "admitted as sb-framework-duty"
+        },
+        {
+          "key": "sb-framework-annual-review",
+          "recordType": "statute_provision",
+          "verifierSourceText": {
+            "verdict": "requalify",
+            "quoteVerbatim": "yes",
+            "locatorCorrect": "yes",
+            "datesCorrect": "no",
+            "issues": "Core proposition upheld. The quote 'review and, as appropriate, update its frontier AI framework at least once per year.' matches § 22757.12(b)(1) verbatim, and the subject is 'A large frontier developer shall'. The statement and qualification are faithful, and the statement correctly avoids implying that any review happened. The only problem is the uncited 'effective 2026-01-01' in time.note, as in the other claims."
+          },
+          "verifierProposition": {
+            "verdict": "upheld",
+            "quoteVerbatim": "yes",
+            "locatorCorrect": "yes",
+            "datesCorrect": "yes",
+            "issues": "None material. The quote is verbatim (once) at § 22757.12(b)(1), whose sentence begins 'A large frontier developer shall'. The statement matches the text, and the qualification correctly states that the record is not evidence that any review occurred."
+          },
+          "adjudication": {
+            "decision": "keep_with_corrections",
+            "rationale": "The quote appears verbatim, once, at § 22757.12(b)(1) ('A large frontier developer shall review and, as appropriate, update its frontier AI framework at least once per year.') in the live chaptered text and the 2025-09-30 capture. The statement and qualification are faithful. The only defect is the uncited effective date in the time note. I confirmed it from the history note on the live codified § 22757.12 page (2026-10-04), added that page as an evidence item, and rewrote the time note to keep the enactment and effective dates separate. No change to the statement."
+          },
+          "disposition": "admitted as sb-framework-annual-review"
+        },
+        {
+          "key": "sb-framework-modification-30-days",
+          "recordType": "statute_provision",
+          "verifierSourceText": {
+            "verdict": "requalify",
+            "quoteVerbatim": "yes",
+            "locatorCorrect": "yes",
+            "datesCorrect": "no",
+            "issues": "Core proposition upheld. The quote 'publish the modified frontier AI framework and a justification for that modification within 30 days.' matches § 22757.12(b)(2) verbatim. The paraphrased condition ('If a large frontier developer makes a material modification to its frontier AI framework') and 'clearly and conspicuously' are faithful. The statute does not say what the 30 days run from, and the statement rightly does not supply a starting point. The qualification is accurate but understated: the § 22757.11 definitions, (a) to (l), contain no definition of 'material modification' at all. The only other use of the phrase, § 22757.11(i)(2) 'other material modifications the developer applies to a preceding foundation model', concerns models, not frameworks. The time note's effective date is uncited, as in the other claims."
+          },
+          "verifierProposition": {
+            "verdict": "upheld",
+            "quoteVerbatim": "yes",
+            "locatorCorrect": "yes",
+            "datesCorrect": "yes",
+            "issues": "None material. The quote is verbatim (once) at § 22757.12(b)(2). The statement, including the condition and 'clearly and conspicuously', matches the full sentence. The qualification is correct and errs on the narrow side: 'material modification' is undefined both in (b)(2) and in the chapter's definitions (§ 22757.11). § 22757.11(i)(2) uses 'material modifications' only in the compute-counting context. The text also does not say from what event the 30 days run. The record does not resolve that question and should not."
+          },
+          "adjudication": {
+            "decision": "keep_with_corrections",
+            "rationale": "The quote appears verbatim, once, at § 22757.12(b)(2) in the live chaptered text and the 2025-09-30 capture. The full sentence, 'If a large frontier developer makes a material modification to its frontier AI framework, the large frontier developer shall clearly and conspicuously publish ... within 30 days', supports the paraphrased condition and 'clearly and conspicuously'. Both verifiers' qualification points are confirmed. § 22757.11 (a)–(l) contains no definition of 'material modification'. Its only other use of the phrase, § 22757.11(i)(2), concerns computing power applied to models. Subdivision (b)(2) also does not expressly state the event from which the 30 days are counted. I tightened the qualification so it states these textual facts without interpreting them, added the codified-section history note for the effective date, and rewrote the time note."
+          },
+          "disposition": "admitted as sb-framework-modification-30-days"
+        },
+        {
+          "key": "sb-transparency-report",
+          "recordType": "statute_provision",
+          "verifierSourceText": {
+            "verdict": "requalify",
+            "quoteVerbatim": "yes",
+            "locatorCorrect": "yes",
+            "datesCorrect": "yes",
+            "issues": "I found the quote verbatim at § 22757.12(c)(1) in three places: the live chaptered bill text (CHAPTER 138, '09/29/25 - Chaptered'), the 20250930154105 capture and the codified section BPC § 22757.12. The capture exists with status 200. It is the first capture that holds the chaptered text, because the 20250929220723 capture still shows the enrolled version. documentWords is exact: 6,898 in my own whitespace count of the bill_all text, including the Digest. Instrument and SEC. 2 are correct. The enactment date is correct: approved by the Governor and filed with the Secretary of State on 2025-09-29. Problems: (1) The qualification 'Disclosures beyond the minimum are encouraged, not required (§ 22757.12(c)(4))' misreads the text. (c)(4) encourages disclosures under this subdivision 'that are consistent with, or superior to, industry best practices'. It does not encourage disclosures beyond the minimum. (2) The paraphrase 'general restrictions on use' drops 'or conditions'. The text of (G) is 'Any generally applicable restrictions or conditions on uses'. (3) The bill text does not state 'effective 2026-01-01'. The codified section's history note does: '(Added by Stats. 2025, Ch. 138, Sec. 2. (SB 53) Effective January 1, 2026.)'. (4) Omission: the qualification leaves out the redaction allowance in § 22757.12(f), which applies directly to the transparency report."
+          },
+          "verifierProposition": {
+            "verdict": "requalify",
+            "quoteVerbatim": "yes",
+            "locatorCorrect": "yes",
+            "datesCorrect": "yes",
+            "issues": "Quote matches the live chaptered text character for character (34 words, § 22757.12(c)(1)). Statement is accurate to the text. Problems: (1) The paraphrase of item (G) narrows it. The statute says 'Any generally applicable restrictions or conditions on uses of the frontier model'; the paraphrase says 'general restrictions on use' and drops 'or conditions'. (2) The qualification leaves out that 'substantially modified' is not defined in the statute: § 22757.12(a)(6) makes a large frontier developer's framework describe how it decides when a model is substantially modified enough to require disclosures. The redaction rule in § 22757.12(f) also applies to these published documents. Both limit what the duty means in practice. (3) The time note's 'effective 2026-01-01' is not in the bill text. It is confirmed by the codified BPC § 22757.12 page, checked live on 2026-10-04: '(Added by Stats. 2025, Ch. 138, Sec. 2. (SB 53) Effective January 1, 2026.)'. That page shows no amendment. It should be cited unless another record already carries the effective date. Enactment date is right: the Governor approved the bill and it was filed with the Secretary of State on September 29, 2025. The documentWords count (6,898) reproduces exactly from 'Senate Bill No. 53' to the end of the bill. I could not open the 2025-09-30 archive capture, so the claim that the quote matches it is unverified by me. The capture itself exists in CDX (status 200)."
+          },
+          "adjudication": {
+            "decision": "keep_with_corrections",
+            "rationale": "The quote is verbatim at § 22757.12(c)(1). I checked it against the live chaptered text ('09/29/25 - Chaptered', CHAPTER 138) and against a copy of the 20250930154105 capture whose SHA-1 equals the CDX digest. The word count of 6,898 reproduces from 'Senate Bill No. 53' to the end of the bill. Both verifiers are right, and I confirmed their points in the text. (1) The qualification misread (c)(4): it encourages disclosures 'consistent with, or superior to, industry best practices', not disclosures beyond the minimum. (2) The paraphrase of (G) dropped 'or conditions'. (3) The bill text states no effective date; the codified BPC § 22757.12 history note gives 'Effective January 1, 2026'. (4) The § 22757.12(f) redaction allowance and the absence of a definition of 'substantially modified' (§ 22757.11 has no such term; § 22757.12(a)(6) leaves it to the large developer's framework) both bear directly on this duty. I also added § 22757.12(c)(3), the larger-document / system-card deeming clause, which the text states. I tightened 'mainly' to the statute's 'primary purpose' in the deploy exclusion."
+          },
+          "disposition": "admitted as sb-transparency-report"
+        },
+        {
+          "key": "sb-system-card-deemed-compliance",
+          "recordType": "statute_provision",
+          "verifierSourceText": {
+            "verdict": "upheld",
+            "quoteVerbatim": "yes",
+            "locatorCorrect": "yes",
+            "datesCorrect": "yes",
+            "issues": "The quote is verbatim at § 22757.12(c)(3) in the live chaptered text, the 20250930154105 capture and the codified BPC § 22757.12. The full sentence reads: 'A frontier developer that publishes the information described in paragraph (1) or (2) as part of a larger document, including a system card or model card, shall be deemed in compliance with the applicable paragraph.' The statement is faithful. Whether this deeming also satisfies the timing and 'clearly and conspicuously publish' conditions of (c)(1)–(2) is a matter of interpretation. The claim correctly does not assert it. documentWords and archive are as verified under sb-transparency-report. Minor: the effective date is not in the bill text; it is in the codified history note."
+          },
+          "verifierProposition": {
+            "verdict": "upheld",
+            "quoteVerbatim": "yes",
+            "locatorCorrect": "yes",
+            "datesCorrect": "yes",
+            "issues": "Quote matches § 22757.12(c)(3) verbatim (16 words). The full sentence reads: 'A frontier developer that publishes the information described in paragraph (1) or (2) as part of a larger document, including a system card or model card, shall be deemed in compliance with the applicable paragraph.' The statement's 'such as' fairly renders 'including'. The record states the rule without resolving its legal reach. One interpretive question is not recorded, correctly: whether deemed compliance also covers the 'before, or concurrently with' timing and the 'clearly and conspicuously' manner of publication. The provision kind 'exception' is the closest of the four ontology kinds (threshold, required_action, decision_authority, exception). Minor point: the effective-date note needs a source, as for the other records. The codified § 22757.12 page shows 'Effective January 1, 2026' and no amendment. I could not open the archive capture (HTTP 429). CDX confirms it exists."
+          },
+          "adjudication": null,
+          "disposition": "admitted as sb-system-card-deemed-compliance"
+        },
+        {
+          "key": "sb-internal-use-risk-summaries",
+          "recordType": "statute_provision",
+          "verifierSourceText": {
+            "verdict": "upheld",
+            "quoteVerbatim": "yes",
+            "locatorCorrect": "yes",
+            "datesCorrect": "yes",
+            "issues": "The quote is verbatim at § 22757.12(d) in the live text, the capture and the codified section. The statement faithfully paraphrases the duty: 'transmit to the Office of Emergency Services a summary of any assessment of catastrophic risk resulting from internal use of its frontier models'. It omits the trailing words 'with written updates, as appropriate', which is not material. The qualification's citations are correct. § 22757.13(b)(1) requires a confidential submission mechanism, (b)(2) limits access to personnel with a specific need to know, and (f) exempts these reports from the CPRA. Weakness: the phrase 'so whether anyone has submitted them is not publicly verifiable from the statute' is an editorial inference. No statute can show whether anyone complied, and a CPRA exemption does not bar voluntary disclosure."
+          },
+          "verifierProposition": {
+            "verdict": "requalify",
+            "quoteVerbatim": "yes",
+            "locatorCorrect": "yes",
+            "datesCorrect": "yes",
+            "issues": "Quote matches § 22757.12(d) verbatim (25 words). It stops before the closing words 'with written updates, as appropriate', which the statement also leaves out. That is a minor omission. The duty is correctly stated as applying only to a large frontier developer. The qualification's description of § 22757.13(b) is accurate: OES must establish a mechanism for confidential submission and take all necessary precautions to limit access to personnel with a specific need to know. But the qualification draws its own inference: 'so whether anyone has submitted them is not publicly verifiable from the statute'. That does not follow from the Public Records Act exemption in § 22757.13(f), which covers report contents under the PRA. Whether a submission happened could become known by other means. And no statute verifies conduct anyway. The record should say only what the text says and disclaim compliance directly. Party actor: the statute names the 'Office of Emergency Services'. The integrator should map this to one consistent entity ID rather than a bare string. The effective-date note needs a source: the codified § 22757.12 page shows 'Effective January 1, 2026'."
+          },
+          "adjudication": {
+            "decision": "keep_with_corrections",
+            "rationale": "The quote is verbatim at § 22757.12(d) in the live chaptered text and in the digest-verified capture copy. The duty and the large-developer scope are stated correctly. Both verifiers flagged the qualification's closing inference, 'so whether anyone has submitted them is not publicly verifiable from the statute'. The text does not say this, and a CPRA exemption says nothing about whether submissions occurred, so I replaced it with a direct compliance disclaimer. I added the omitted closing words 'with written updates, as appropriate', confirmed in the text, to the statement. I stated the § 22757.13(b)(1)–(2) access rule as the text gives it, and gave the basis of the effective date. The object now says 'every three months', the statute's wording, instead of 'Quarterly'. The 'Office of Emergency Services' party is kept as proposed; the integrator should map it to one consistent entity ID."
+          },
+          "disposition": "admitted as sb-internal-use-risk-summaries"
+        },
+        {
+          "key": "sb-critical-incident-15-days",
+          "recordType": "statute_provision",
+          "verifierSourceText": {
+            "verdict": "requalify",
+            "quoteVerbatim": "yes",
+            "locatorCorrect": "yes",
+            "datesCorrect": "yes",
+            "issues": "The quote is verbatim at § 22757.13(c)(1) in the live text, the capture and the codified section. The codified BPC § 22757.13, checked 2026-10-04, shows only '(Added by Stats. 2025, Ch. 138, Sec. 2. (SB 53) Effective January 1, 2026.)', with no amendment note, which confirms the time note. The paraphrase of the definition in § 22757.11(d)(1)–(4) is faithful. Problems in the qualification: (1) 'OES must publish annual anonymised, aggregated incident reports (§ 22757.13(g))' is wrong. The statute says OES 'shall produce a report' covering incidents it has reviewed since the preceding report, and (g)(3) says it shall 'transmit' the report to the Legislature and the Governor. The statute does not require publication. (2) Calling the 15-day rule 'subject to ... the federal-equivalence pathway' compresses § 22757.13(h)–(j) in an interpretive way. Under (i), a developer that declares its intent is 'deemed in compliance with this section to the extent' it meets the designated federal standards. That should be stated as the text says it, without characterising how it overrides (c)(1). Whether the 24-hour disclosure replaces or supplements the 15-day OES report is not settled by the text, which says only 'Subject to paragraph (2)'. It must not be resolved here."
+          },
+          "verifierProposition": {
+            "verdict": "requalify",
+            "quoteVerbatim": "yes",
+            "locatorCorrect": "yes",
+            "datesCorrect": "yes",
+            "issues": "Quote matches § 22757.13(c)(1) verbatim (29 words). The paraphrase of the § 22757.11(d) definition is accurate on all four limbs. The time note's claim holds: the live codified § 22757.13 shows only '(Added by Stats. 2025, Ch. 138, Sec. 2. (SB 53) Effective January 1, 2026.)', with no amendment. One error in the qualification: 'From 1 January 2027, OES must publish annual anonymised, aggregated incident reports'. The statute does not say 'publish'. § 22757.13(g)(1) says OES 'shall produce a report with anonymized and aggregated information about critical safety incidents that have been reviewed by the Office of Emergency Services since the preceding report', and (g)(3) says OES shall transmit it to the Legislature (under Section 9795) and to the Governor. Two smaller problems. (a) 'Incident reports are exempt from the Public Records Act' should be narrowed to reports of critical safety incidents submitted to OES under this section (§ 22757.13(f)). (b) The 'federal-equivalence pathway' works only if OES adopts regulations designating a federal law, regulation or guidance document (§ 22757.13(h)) and the developer declares its intent to OES (§ 22757.13(i)). Calling the 15-day rule simply 'subject to' it overstates the pathway as if it were in force. The qualification should say it is conditional and must not imply that any designation exists."
+          },
+          "adjudication": {
+            "decision": "keep_with_corrections",
+            "rationale": "The quote is verbatim at § 22757.13(c)(1) in the live text and in the digest-verified capture copy. The paraphrase of the § 22757.11(d) definition is faithful on all four limbs. The codified § 22757.13 shows only the 'Added by Stats. 2025, Ch. 138 ... Effective January 1, 2026' note. Both verifiers caught an error in the qualification, and I confirmed it in the text. § 22757.13(g)(1) says OES 'shall produce a report', and (g)(3) says it shall transmit that report to the Legislature (per Section 9795) and to the Governor. Nothing in the text requires publication. Other corrections: the CPRA exemption is narrowed to incident reports submitted under § 22757.13 (§ 22757.13(f)). The federal pathway is restated as the text gives it: it needs an OES regulation under (h) and a developer declaration under (i), and the developer is 'deemed in compliance ... to the extent' it meets the standard. It is not presented as in force. For the relation to the 24-hour rule, the record now keeps only the statute's 'Subject to paragraph (2)'. Whether the 24-hour disclosure replaces or adds to the 15-day OES report needs legal interpretation. The integrator should list it as a stop and not resolve it."
+          },
+          "disposition": "admitted as sb-critical-incident-15-days"
+        },
+        {
+          "key": "sb-critical-incident-24-hours",
+          "recordType": "statute_provision",
+          "verifierSourceText": {
+            "verdict": "requalify",
+            "quoteVerbatim": "yes",
+            "locatorCorrect": "yes",
+            "datesCorrect": "yes",
+            "issues": "The quote is verbatim at § 22757.13(c)(2) in the live text, the capture and the codified section. The statement faithfully gives the trigger, 'poses an imminent risk of death or serious physical injury', and the authority: 'an authority, including any law enforcement agency or public safety agency with jurisdiction, that is appropriate based on the nature of that incident and as required by law'. Problem: the qualification 'The authority need not be OES' is an inference the statute does not state. The text neither names nor excludes OES, and the rule of recording legal effect only where the text states it calls for that inference to be dropped. How (c)(2) relates to the 15-day OES duty in (c)(1) ('Subject to paragraph (2)') is also interpretive and should not be asserted."
+          },
+          "verifierProposition": {
+            "verdict": "requalify",
+            "quoteVerbatim": "yes",
+            "locatorCorrect": "yes",
+            "datesCorrect": "yes",
+            "issues": "Quote matches § 22757.13(c)(2) verbatim (13 words). It stops exactly where the precise wording matters: which authority counts. That is the 'named parties / who' case where the quotation rule favours the exact words. The statement's 'an appropriate authority, including any law enforcement or public safety agency with jurisdiction' slightly misreads the text. The statute says 'to an authority, including any law enforcement agency or public safety agency with jurisdiction, that is appropriate based on the nature of that incident and as required by law'. The appropriateness condition and 'as required by law' qualify which authority. The statement can be read as making any agency with jurisdiction acceptable. The qualification 'The authority need not be OES' is an interpretive gloss. The text simply does not name OES. A separate question needs legal interpretation and must not be resolved in the record: whether a 24-hour disclosure under (c)(2) satisfies, replaces or adds to the 15-day OES report under (c)(1), which begins 'Subject to paragraph (2)'. If the integrator wants to say anything about that relationship, it is a stop. Effective-date note: same codified-page source as the other records."
+          },
+          "adjudication": {
+            "decision": "keep_with_corrections",
+            "rationale": "The original 13-word quote is verbatim at § 22757.13(c)(2). It stops before the words that say which authority counts, which is a who/condition case under the quotation rule. The statement's 'an appropriate authority, including any law enforcement or public safety agency with jurisdiction' drops the condition 'that is appropriate based on the nature of that incident and as required by law'. It can be read as making any agency with jurisdiction sufficient. I extended the quote to 39 words, verified verbatim in the live chaptered text and the digest-verified capture copy, and aligned the statement with it. Both verifiers objected to 'The authority need not be OES'. The text neither names nor excludes OES, so I replaced that sentence. The relation of (c)(2) to the 15-day OES duty in (c)(1), which begins 'Subject to paragraph (2)', needs legal interpretation and is left unresolved. The integrator should list it as a stop. Quotation budget: the four quotes in this batch total 127 words from the bill text (34+25+29+39). The integrator must check the 400-word cap for this document across all SB 53 records."
+          },
+          "disposition": "admitted as sb-critical-incident-24-hours"
+        },
+        {
+          "key": "sb-false-statement-prohibition",
+          "recordType": "statute_provision",
+          "verifierSourceText": {
+            "verdict": "requalify",
+            "quoteVerbatim": "yes",
+            "locatorCorrect": "yes",
+            "datesCorrect": "yes",
+            "issues": "The quote matches § 22757.12(e)(1)(B) character for character in both the live chaptered text (Version 09/29/25 - Chaptered) and the 20250930154105 capture. The paraphrase of (e)(1)(A) and (e)(2) is faithful. On dates, the bill header reads 'Approved by Governor September 29, 2025. Filed with Secretary of State September 29, 2025.' The codified § 22757.12 note reads 'Added by Stats. 2025, Ch. 138, Sec. 2. (SB 53) Effective January 1, 2026.' and records no amendment. The documentWords figure of 6898 reproduces exactly: I counted from 'Senate Bill No. 53' to the end of SEC. 6. The problem is the first sentence of the qualification, which is legal interpretation. Subdivision (e)(1)(B) covers statements about a developer's implementation of, or compliance with, its OWN frontier AI framework. The xAI FAIF sentence asserts compliance with TFAIA, the statute. Whether a statement of statutory compliance falls under (e)(1)(B), or under (e)(1)(A), is a legal-effect question. Saying it 'bears directly on' such statements resolves that question by implication. It belongs in the stops list."
+          },
+          "verifierProposition": {
+            "verdict": "requalify",
+            "quoteVerbatim": "yes",
+            "locatorCorrect": "yes",
+            "datesCorrect": "yes",
+            "issues": "The statement, quote ((e)(1)(B)), paraphrase ((e)(1)(A) and (e)(2)) and locators match the chaptered text. I checked them in the 2025-09-30 capture and in the live codified Bus. & Prof. Code § 22757.12 (2026-10-04). The good-faith exception is conjunctive (good faith AND reasonable), and the statement keeps that correctly. The enactment date 2025-09-29 is supported: the page says 'Approved by Governor September 29, 2025. Filed with Secretary of State September 29, 2025.' The effective date 2026-01-01 does not appear in the cited bill text. The live codified section's history note does give it ('Added by Stats. 2025, Ch. 138, Sec. 2. (SB 53) Effective January 1, 2026.'). MATERIAL PROBLEM in the qualification. It says the provision 'bears directly on company statements that a framework \"complies\" with TFAIA, such as xAI's December 2025 FAIF.' That is an applicability and legal-effect interpretation tied to a named company, and it misdescribes the text. Subdivision (e)(1)(B) covers statements about a large frontier developer's implementation of, or compliance with, ITS OWN frontier AI framework. It does not on its face cover statements that the framework complies with the statute. Two further questions are stop matters under (a), not something a qualification may assert: whether xAI's sentence falls within (e) at all, and whether xAI is a 'large frontier developer'."
+          },
+          "adjudication": {
+            "decision": "keep_with_corrections",
+            "rationale": "I re-checked the source text. Two captures and one live fetch agree: the saved 20250930154105 capture (its SHA-1 matches the CDX digest) and my own live re-fetch of the chaptered text on 2026-10-04 match from 'Senate Bill' onward. The quote is verbatim at § 22757.12(e)(1)(B), and the paraphrase of (e)(1)(A) and (e)(2) is faithful. The header reads 'Approved by Governor September 29, 2025. Filed with Secretary of State September 29, 2025.' My live fetch of codified § 22757.12 gives the effective date: 'Added by Stats. 2025, Ch. 138, Sec. 2. (SB 53) Effective January 1, 2026.' No amendment is listed. Both verifiers are right that the qualification's first sentence is a legal-effect interpretation tied to a named company. (e)(1)(B) covers statements about a developer's implementation of, or compliance with, its OWN frontier AI framework. Whether it reaches a statement that a framework complies with the statute, and whether xAI is a large frontier developer, are stop matters, so I replaced that sentence. Minor fidelity fixes to the statement: 'its frontier models' and 'under the circumstances'. I added the codified section as evidence for the effective date in the time note. The stop below exists so the qualification's reference to it is real."
+          },
+          "disposition": "admitted as sb-false-statement-prohibition"
+        },
+        {
+          "key": "sb-federal-equivalence-pathway",
+          "recordType": "statute_provision",
+          "verifierSourceText": {
+            "verdict": "requalify",
+            "quoteVerbatim": "yes",
+            "locatorCorrect": "no",
+            "datesCorrect": "yes",
+            "issues": "The bill-text quote is verbatim at § 22757.13(i)(1) in the live text and in the capture. The codified § 22757.13(h)-(j) is identical to the chaptered text and records no amendment (Effective January 1, 2026). There are three problems. (1) The statement drops the second designation condition in (h)(2): the federal instrument must be 'intended to assess, detect, or mitigate the catastrophic risk'. It also says 'the statute's' where the comparison is with 'those required by this section' (§ 22757.13 only). It omits that deemed compliance runs only until the developer declares revocation or OES revokes the regulation. (2) The signing-message locator is incomplete. The encouragement to the Legislature is in page 2, second paragraph, not page 1 last paragraph or page 2 first paragraph. (3) The signing-message paraphrase is slightly loose. The letter says 'the federal government or Congress', not 'federal authorities', and 'duplicative or conflicting requirements across jurisdictions', not only 'duplicative'. The encouragement is conditioned on 'To the degree that additional clarification is required' and paired with maintaining 'the high bar established by SB 53'. Archive identity: the live PDF's SHA-1 in base32 (FY7JNSTJ3LCHKHUSJXNLDR2KDX46QQD2) equals the CDX digest of the 20250929205408 capture, so 'byte-identical' holds. I could not download the archived bytes directly because the Wayback Machine served a bot-block page. The PDF has no text layer. I read it visually in a browser and it is dated 'SEP 29 2025'. The estimate of about 380 words is plausible; my visual estimate is roughly 370-420."
+          },
+          "verifierProposition": {
+            "verdict": "requalify",
+            "quoteVerbatim": "yes",
+            "locatorCorrect": "no",
+            "datesCorrect": "yes",
+            "issues": "Checked against the 2025-09-30 capture and the live codified Bus. & Prof. Code § 22757.13 (history note: Added by Stats. 2025, Ch. 138, Sec. 2, effective January 1, 2026; no amendment). The quote from § 22757.13(i)(1) is verbatim. The statement matches § 22757.13(h)–(j), except that it leaves out two things. The first is the (h)(2) condition, which the paraphrase softens: the statute says the designated instrument must be 'intended to assess, detect, or mitigate the catastrophic risk', while the paraphrase says 'intended to address catastrophic risk'. The second is that the deemed compliance lasts only until the developer declares revocation of its intent or OES revokes the regulation. The paraphrase says only 'until revocation'. Signing message (live PDF, byte-identical to the 2025-09-29 capture, SHA-256 e3a8cd75...; no text layer, read in a browser render). The Governor's paragraph does begin on page 1 ('At the same time, SB 53 also recognizes...') and continues into the first paragraph of page 2. But the paraphrase's final element, encouraging the Legislature to ensure alignment if federal standards are adopted, is in page 2's SECOND paragraph ('To the degree that additional clarification is required, I encourage the Legislature...'). The locator is therefore incomplete. The paraphrase also narrows 'duplicative or conflicting requirements across jurisdictions' to 'duplicative requirements'. No legal-effect interpretation is asserted. The record correctly treats the pathway as contingent on an OES regulation."
+          },
+          "adjudication": {
+            "decision": "keep_with_corrections",
+            "rationale": "I re-checked § 22757.13(h) to (j) in the capture and in my live fetches of the bill and the codified section. The fetches are identical, and the codified section reads 'Effective January 1, 2026' with no amendment. The quote from (i)(1) is verbatim. Both verifiers are right on four points. The statement drops the (h)(2) condition, which says the instrument must be 'intended to assess, detect, or mitigate the catastrophic risk'. It compares with 'the statute's' standards, but the text compares with 'those required by this section'. It drops the end of deemed compliance: until the developer declares revocation or OES revokes the regulation under (j). And (i)(2)(B) makes failure 'a violation of this chapter'. I rendered the signing message with pypdfium2 and read it. The fetched file's SHA-1 in base32 is FY7JNSTJ3LCHKHUSJXNLDR2KDX46QQD2, which equals the CDX digest of the 20250929205408 capture. The encouragement to the Legislature is in the second paragraph of page 2, so the locator was incomplete. The paraphrase had narrowed 'the federal government or Congress' and 'duplicative or conflicting requirements across jurisdictions', and had left out the conditional framing. I corrected the statement, the statute paraphrase, the signing-message locator and paraphrase, and the qualification wording. I added the codified section as evidence for the effective date."
+          },
+          "disposition": "admitted as sb-federal-equivalence-pathway"
+        },
+        {
+          "key": "sb-civil-penalty-cap",
+          "recordType": "statute_provision",
+          "verifierSourceText": {
+            "verdict": "upheld",
+            "quoteVerbatim": "yes",
+            "locatorCorrect": "yes",
+            "datesCorrect": "yes",
+            "issues": "No material problem. The quote matches § 22757.15(a) in the live text and in the 2025-09-30 capture. The statement's paraphrase of the four violation grounds and of 'an amount dependent upon the severity of the violation' is faithful. The penalty provision is limited to large frontier developers, as the qualification says. The codified § 22757.15 confirms the time note: 'Added by Stats. 2025, Ch. 138, Sec. 2. (SB 53) Effective January 1, 2026.', with no amendment note. One limit: the code display may not yet show later-enacted amendments that are not yet effective. Enactment date 2025-09-29 is confirmed by the bill header. documentWords of 6898 is confirmed."
+          },
+          "verifierProposition": {
+            "verdict": "upheld",
+            "quoteVerbatim": "yes",
+            "locatorCorrect": "yes",
+            "datesCorrect": "yes",
+            "issues": "The quote 'does not exceed one million dollars ($1,000,000) per violation.' is verbatim in § 22757.15(a) in both the 2025-09-30 capture and the live codified section. The four violation grounds in the statement match the text: failure to publish or transmit a compliant required document; a statement in violation of § 22757.12(e); failure to report an incident as required by § 22757.13; and failure to comply with its own framework. So do the severity-dependent amount and the restriction to large frontier developers. The codified history note reads 'Added by Stats. 2025, Ch. 138, Sec. 2. (SB 53) Effective January 1, 2026.', which confirms both the effective date and that there has been no amendment. The qualification correctly says a cap is not enforcement. The documentWords count of 6898 reproduced exactly on my own extraction (from 'Senate Bill No. 53' through the end of SEC. 6)."
+          },
+          "adjudication": null,
+          "disposition": "admitted as sb-civil-penalty-cap"
+        },
+        {
+          "key": "sb-attorney-general-enforcement",
+          "recordType": "statute_provision",
+          "verifierSourceText": {
+            "verdict": "requalify",
+            "quoteVerbatim": "yes",
+            "locatorCorrect": "yes",
+            "datesCorrect": "yes",
+            "issues": "The quote is verbatim at § 22757.15(b) in the live text, the capture and the codified section. There are two scope and wording problems. (1) The statement says 'its civil penalties', which reads as all SB 53 penalties. The statute limits the AG-only rule to 'A civil penalty described in this section', meaning § 22757.15. Lab. Code § 1107.1(j)(2) separately makes that chapter's remedies cumulative with penalties under other laws. (2) The qualification says the whistleblower chapter 'provides employee civil actions'. The text does not create an action in those words. It refers to 'a civil action brought pursuant to this section' (§ 1107.1(g)) and authorises attorney's fees to 'a plaintiff who brings a successful action' (§ 1107.1(f)). Characterising this as a grant of a private right of action is legal interpretation. The rest of the cited range is accurate: injunctive-relief petitions in (h) and no stay pending appeal in (i)."
+          },
+          "verifierProposition": {
+            "verdict": "requalify",
+            "quoteVerbatim": "yes",
+            "locatorCorrect": "yes",
+            "datesCorrect": "yes",
+            "issues": "The quote from § 22757.15(b) is verbatim (capture and live codified section). The Legislative Counsel's Digest agrees with it ('civil penalty ... to be enforced by the Attorney General'). Problem 1, the provision party role. The record gives the Attorney General the role 'decides'. The text gives the Attorney General exclusive standing to bring the civil action. It does not make the AG the decision-maker on liability or amount. The penalty is recovered 'in a civil action', and its amount depends on the severity of the violation, so a court determines it. Labelling the AG 'decides' could be read as the AG imposing penalties. Problem 2, the statement's 'its civil penalties'. This should be tied to § 22757.15, which is the only civil-penalty provision SB 53 adds. Problem 3, the qualification. It says Lab. Code § 1107.1(f)–(i) 'provides employee civil actions'. That slightly overstates the text, which presupposes 'a civil action brought pursuant to this section' and then sets out four mechanics: (f) attorney's fees for a successful plaintiff; (g) burden shifting; (h) temporary injunctive relief on a covered employee's petition, 'in a civil action or administrative proceeding'; and (i) no stay pending appeal. Whether the section creates a private right of action is interpretive."
+          },
+          "adjudication": {
+            "decision": "keep_with_corrections",
+            "rationale": "The quote is verbatim at § 22757.15(b) in the capture, in my live fetch of the bill and in my live fetch of codified § 22757.15. The codified note reads 'Effective January 1, 2026' with no amendment. Both verifiers are right on two points. First, the AG-only rule covers 'A civil penalty described in this section', meaning § 22757.15, so 'its civil penalties' is too broad. A grep of the bill finds no other civil-penalty section, but the statement should follow the text. Second, the qualification's 'provides employee civil actions' overstates Lab. Code § 1107.1(f) to (i). Those subdivisions refer to a civil action or administrative proceeding 'brought pursuant to this section' and set out fees, a burden of proof, injunctive relief and a no-stay rule. Whether that creates a private right of action is interpretive, so it becomes a stop. On the party role, I keep 'decides' because the vocabulary is fixed (decides, recommends, can overrule, informed, consulted). The qualification now says it records only the Attorney General's sole standing to bring the action, not a power to impose or set the penalty. § 22757.15(a) ties the amount to the severity of the violation, capped at $1,000,000 per violation. I added codified § 22757.15 as evidence for the effective date. It is paraphrased because the page is only 116 words."
+          },
+          "disposition": "admitted as sb-attorney-general-enforcement"
+        },
+        {
+          "key": "sb-whistleblower-anti-retaliation",
+          "recordType": "statute_provision",
+          "verifierSourceText": {
+            "verdict": "requalify",
+            "quoteVerbatim": "yes",
+            "locatorCorrect": "yes",
+            "datesCorrect": "yes",
+            "issues": "The quote is verbatim at Lab. Code § 1107.1(a) in the live text, the capture and the codified section. The codified section confirms 'Added by Stats. 2025, Ch. 138, Sec. 4. (SB 53) Effective January 1, 2026.' with no amendment note, and SEC. 4 is the correct section. The qualification is accurate: the covered-employee definition is § 1107(b) and the rights notice is § 1107.1(d). The statement's paraphrase is broader and looser than the text in two places. (1) 'a supervisor' replaces 'a person with authority over the covered employee', which is not the same category. (2) The protected information must concern 'the frontier developer's activities', which must 'pose a specific and substantial danger to the public health or safety resulting from a catastrophic risk', or must show that 'the frontier developer has violated' Chapter 25.1. The statement drops 'the frontier developer's' in both limbs, which widens the protection beyond the statute. TFAIA is correct as the name of Chapter 25.1 (§ 22757.10)."
+          },
+          "verifierProposition": {
+            "verdict": "requalify",
+            "quoteVerbatim": "yes",
+            "locatorCorrect": "yes",
+            "datesCorrect": "yes",
+            "issues": "The quote is verbatim from Lab. Code § 1107.1(a) (capture and live codified section; history note: Added by Stats. 2025, Ch. 138, Sec. 4, effective January 1, 2026; no amendment). The qualification's covered-employee definition matches § 1107(b), and the § 1107.1(d) notice duty is correct (the text says 'rights and responsibilities'). The statement's paraphrase of § 1107.1(a) loosens the text in three places. (1) 'a supervisor' stands in for the statutory 'a person with authority over the covered employee'. (2) The danger ground leaves out that it must be 'the frontier developer's activities' that pose a specific and substantial danger to the public health or safety 'resulting from a catastrophic risk'. (3) The second ground is that 'the frontier developer has violated' Chapter 25.1 of Division 8 of the Business and Professions Code (TFAIA), not any TFAIA violation. In § 1107.1(a), 'catastrophic risk' is the separately defined Labor Code term (§ 1107(a)). The statement mirrors the statute's structure correctly: the prohibition targets a rule, regulation, policy or contract that prevents disclosure or retaliates."
+          },
+          "adjudication": {
+            "decision": "keep_with_corrections",
+            "rationale": "The quote is verbatim at Lab. Code § 1107.1(a) in the capture, in my live fetch of the bill and in my live fetch of codified § 1107.1. The codified note reads 'Added by Stats. 2025, Ch. 138, Sec. 4. (SB 53) Effective January 1, 2026.' with no amendment. Both verifiers are right that the statement loosens the text in four places. 'A supervisor' should be 'a person with authority over the covered employee'. The other covered employee must have authority to 'investigate, discover, or correct the reported issue'. The danger ground requires that 'the frontier developer's activities pose a specific and substantial danger to the public health or safety resulting from a catastrophic risk'. The second ground is that 'the frontier developer has violated' Chapter 25.1, not any TFAIA violation. I corrected the statement to match. In the qualification, the § 1107.1(d) notice covers 'rights and responsibilities', and I added that 'catastrophic risk' here is the Labor Code definition in § 1107(a). I checked both in the text. I added the codified section as evidence for the effective date."
+          },
+          "disposition": "admitted as sb-whistleblower-anti-retaliation"
+        },
+        {
+          "key": "sb-anonymous-internal-reporting",
+          "recordType": "statute_provision",
+          "verifierSourceText": {
+            "verdict": "requalify",
+            "quoteVerbatim": "yes",
+            "locatorCorrect": "yes",
+            "datesCorrect": "no",
+            "issues": "The quote is verbatim in the live chaptered text (Version 09/29/25 – Chaptered; CHAPTER 138; 'Approved by Governor September 29, 2025. Filed with Secretary of State September 29, 2025.') at SEC. 4, Lab. Code § 1107.1(e)(1). It also matches in the 2025-09-30 capture, which shows the chaptered version. The CDX capture from 2025-09-29 22:07 still shows a pre-chaptered version (no 'CHAPTER 138'), so 2025-09-30 is the correct earliest chaptered capture. Enactment on 2025-09-29 at day precision is correct. 'TFAIA violation' is correct: § 22757.10 names Bus. & Prof. Code ch. 25.1 the Transparency in Frontier Artificial Intelligence Act, and § 1107.1(e)(1) refers to violations of that chapter. documentWords 6898 reproduced exactly (whitespace words from 'Senate Bill No. 53' to the end of SEC. 6). Problems: (1) The time note says 'effective 2026-01-01', but the cited chaptered text gives no effective date. The date rests on Cal. Const. art. IV, § 8(c)(1) (the 90-day rule; I could not retrieve it, leginfo timed out) or on third-party statements such as Anthropic's post, so the record has no evidence for it. (2) Small paraphrase drifts. The statute says the employee anonymously discloses information that the employee believes in good faith indicates the danger or violation, not that the employee reports a belief. It also limits the danger to 'the public health or safety resulting from a catastrophic risk'. The exclusion applies to an officer or director against whom wrongdoing is alleged 'in a disclosure or response', not only 'in the disclosure'. (3) 'Covered employee' has a narrow definition in § 1107(b), and a reader may assume all employees are covered."
+          },
+          "verifierProposition": {
+            "verdict": "requalify",
+            "quoteVerbatim": "yes",
+            "locatorCorrect": "yes",
+            "datesCorrect": "yes",
+            "issues": "I tried to refute this and could not; the substance holds. The quote matches the chaptered text of Lab. Code § 1107.1(e)(1) apart from whitespace (the source breaks lines inside 'through which a covered employee'). It also matches the 2025-09-30 capture, which I fetched with HTTP 200 and checked myself. The enactment date is correct: the bill was approved by the Governor and filed with the Secretary of State on 29 September 2025, as Chapter 138. Chapter 25.1, the violation the statement refers to, is named 'Transparency in Frontier Artificial Intelligence Act' by B&P § 22757.10, so 'TFAIA violation' is accurate. My word count of 6,898 matches. There are three small precision problems. (1) The time note says 'effective 2026-01-01', but the cited chaptered text gives no effective date and has no urgency clause. The date is correct, but it comes from the default rule in the California Constitution, art. IV, § 8(c), not from the evidence cited. (2) The exclusion in § 1107.1(e)(2)(B) is triggered when wrongdoing by an officer or director is alleged 'in a disclosure or response', not only in the disclosure. Its effect is that the quarterly-sharing requirement 'shall not apply with respect to that officer or director'. That removes an obligation; it is not a stated ban on sharing. 'Excluding any officer or director accused in the disclosure' leaves out 'or response' and reads slightly broader. (3) The statute speaks of disclosing information that the employee believes in good faith indicates a danger 'to the public health or safety'. 'Report a good-faith belief' loosely compresses this and drops the public-health-or-safety element. Also, 'covered employee' is narrowly defined in § 1107(b), but nothing says so. Minor: evidence kind 'filing' is a poor fit for a chaptered statute; use a statute or legislation kind if the schema has one."
+          },
+          "adjudication": {
+            "decision": "keep_with_corrections",
+            "rationale": "I re-checked the live chaptered text (Version 09/29/25 – Chaptered; CHAPTER 138; approved by the Governor and filed with the Secretary of State on 29 September 2025) and the 2025-09-30 Wayback capture, which also shows CHAPTER 138. Both are saved in verify/adjudicate-sb-r1b5. The quote matches § 1107.1(e)(1) apart from whitespace in both. The locator, the instrument, the enactment date, the archive fields and the 6,898-word count all reproduce. § 22757.10 confirms the 'Transparency in Frontier Artificial Intelligence Act' short title. I upheld three corrections: (1) The time note claimed 'effective 2026-01-01'. The chaptered text states no effective date and has no urgency clause, so the cited evidence does not support that date. I removed it rather than derive it from Cal. Const. art. IV § 8(c), which I did not inspect. (2) I made the paraphrase match the statute. The employee discloses information that the employee believes in good faith indicates a danger 'to the public health or safety resulting from a catastrophic risk' or a TFAIA violation; the employee does not 'report a belief'. The monthly update covers the status of the investigation and the actions taken. The quarterly-sharing exception applies where wrongdoing by an officer or director is alleged 'in a disclosure or response', and it only lifts the sharing requirement for that person. (3) 'Covered employee' has a narrow definition in § 1107(b). I added it as a second quoted evidence item from the same chaptered text and noted it in the qualification. I also adjusted the object literal and the informed party to reflect the exception. The evidence kind 'filing' stays because the schema has no statute kind."
+          },
+          "disposition": "admitted as sb-anonymous-internal-reporting"
+        },
+        {
+          "key": "sb-findings-voluntary-frameworks",
+          "recordType": "other",
+          "verifierSourceText": {
+            "verdict": "upheld",
+            "quoteVerbatim": "yes",
+            "locatorCorrect": "yes",
+            "datesCorrect": "yes",
+            "issues": "The quote is verbatim at SEC. 1(l) in the live chaptered text and in the 2025-09-30 capture. The paraphrase of the rest of (l) is faithful: 'not all developers are providing reporting that is consistent and sufficient to ensure necessary transparency and protection of the public. Mandatory, standardized, and objective reporting by frontier developers is required...'. It drops 'objective', which is not material. The qualification's reading of SEC. 1(c) (Joint California Policy Working Group on AI Frontier Models) and SEC. 1(o) (Governor's California Report on Frontier AI Policy) is accurate. Enactment 2025-09-29 is correct. SEC. 1 is uncodified findings, as the note says. documentWords is the same verified count of 6898. Only nit: 'major AI developers' in the statement stands for the statute's 'the major artificial intelligence developers'. That is acceptable."
+          },
+          "verifierProposition": {
+            "verdict": "upheld",
+            "quoteVerbatim": "yes",
+            "locatorCorrect": "yes",
+            "datesCorrect": "yes",
+            "issues": "No material problem. SEC. 1(l) of the chaptered text reads: 'While the major artificial intelligence developers have already voluntarily established the creation, use, and publication of frontier AI frameworks as an industry best practice, not all developers are providing reporting that is consistent and sufficient...' The quoted fragment matches exactly, live and in the 2025-09-30 capture. The paraphrase of the second sentence is faithful. It leaves out 'objective' from 'Mandatory, standardized, and objective reporting', which is acceptable but could be restored. SEC. 1 is the Legislature's findings and is not added to any code, so 'uncodified findings' is right. The qualification is accurate: the finding names no developer, (c) refers to the Joint California Policy Working Group's recommended principles, and (o) refers to the Governor's California Report on Frontier AI Policy. The qualification correctly says this is not independent evidence about industry practice."
+          },
+          "adjudication": null,
+          "disposition": "Verified but not admitted: an uncodified legislative finding fits none of the provision kinds; listed for a later decision."
+        },
+        {
+          "key": "sb-link-openai-fgf",
+          "recordType": "framework_commitment_link",
+          "verifierSourceText": {
+            "verdict": "upheld",
+            "quoteVerbatim": "yes",
+            "locatorCorrect": "yes",
+            "datesCorrect": "yes",
+            "issues": "The quote, with its curly apostrophe, is verbatim in Section 1 'Introduction' on PDF page 3, which carries printed page '01'. The live PDF (inspected 2026-10-04) and the 2026-05-29 Internet Archive capture are byte-identical, sha256 33e4e118…fcfffc after gunzip of the capture. pdftotext word count is 4279, as stated. The context paraphrase is faithful: Section 4 says Model Reports are 'referred to as “Transparency Reports” under the TFAIA'; Section 2.6 says the AIRP covers incidents 'including critical safety incidents under the TFAIA'; Section 7.2 commits to a Framework Assessment 'at least once every 12 months from the Effective Dates of the TFAIA and the EU Code of Practice'. The EU CoP sentence in the qualification is accurate. Publication date 2026-05-28 is independently confirmed by OpenAI's announcement page, which is dated May 28, 2026 and says 'Today we’re publishing OpenAI’s Frontier Governance Framework'. The earliest CDX capture of the PDF is 2026-05-29. The PDF carries no date and no 'May 2026 edition' label; the title suffix is the dataset's edition label, which the time note acknowledges. I confirmed that Preparedness v2 and the Beta edition contain no TFAIA, SB 53 or 'Transparency in Frontier' reference, so 'the only OpenAI framework edition in the dataset that names TFAIA' holds for the OpenAI editions listed. Minor: the qualification phrase 'between 2026-01-01 and 2026-05-28' rests on an unsourced TFAIA effective date (see sb-anonymous-internal-reporting)."
+          },
+          "verifierProposition": {
+            "verdict": "upheld",
+            "quoteVerbatim": "yes",
+            "locatorCorrect": "yes",
+            "datesCorrect": "yes",
+            "issues": "No material problem. The quote matches the pdftotext extraction character for character, including the curly apostrophe. It sits in Section 1 'Introduction' under 'Our FGF is designed to meet the baseline legal requirements of various frontier AI laws', on PDF p. 3 (printed '01'). The context paraphrase is accurate. Section 4 'Model reporting' (PDF p. 18, printed 16) says model reports are 'referred to as \"Transparency Reports\" under the TFAIA'. Section 2.6 (printed 12) says the AIRP covers incidents reportable as 'critical safety incidents under the TFAIA'. Section 7.2 (PDF p. 22, printed 20) commits to a Framework Assessment at least every 12 months from the 'Effective Dates of the TFAIA and the EU Code of Practice'. The PDF contains no date or version string, which confirms the time note. The archive capture of 2026-05-29 (CDX status 200) decompresses from gzip to a file byte-identical to the live PDF I downloaded on 2026-10-04. So the differing CDX digests across captures reflect transfer encoding, not changed content. My word count of 4,279 matches. The publication date of 2026-05-28 rests on the dataset's existing record; it fits the 2026-05-29 capture and contemporaneous reporting. The qualification avoids any compliance inference. One soft point: the open question 'between 2026-01-01 and 2026-05-28' assumes TFAIA's effective date, which this record does not source. See the effective-date correction under sb-anonymous-internal-reporting."
+          },
+          "adjudication": null,
+          "disposition": "admitted as sb-link-openai-fgf"
+        },
+        {
+          "key": "sb-openai-opco-tfaia-responsibility",
+          "recordType": "other",
+          "verifierSourceText": {
+            "verdict": "upheld",
+            "quoteVerbatim": "yes",
+            "locatorCorrect": "yes",
+            "datesCorrect": "yes",
+            "issues": "The quote is verbatim in Section 6 'Allocation of responsibility for risk management' on PDF page 20, printed page 18, of the byte-verified live PDF and its 2026-05-29 capture. The qualification is accurate: the same section names OpenAI Ireland Limited as 'the provider of OpenAI’s GPAI-SR models in the EU and responsible for compliance with the EU Code of Practice'. Section 7.1 says material updates go 'to the Safety and Security Committee of the board of directors of the OpenAI Foundation and to the board of directors of OpenAI Ireland Limited for oversight'. The claim correctly avoids reading statutory 'frontier developer' status or control into the sentence. Publication date confirmed as for sb-link-openai-fgf."
+          },
+          "verifierProposition": {
+            "verdict": "upheld",
+            "quoteVerbatim": "yes",
+            "locatorCorrect": "yes",
+            "datesCorrect": "yes",
+            "issues": "No material problem. The quote 'OpenAI OpCo LLC is responsible for compliance with the TFAIA for covered models in the United States.' matches exactly. It is in Section 6 'Allocation of responsibility for risk management', on PDF p. 20 (printed 18), and the archived copy is byte-identical. The claim records only the company's own allocation. It explicitly declines to infer the statute's 'frontier developer' or 'large frontier developer' status, or OpCo's ownership or control, so no legal effect is asserted. The qualification is accurate. Section 6 names OpenAI Ireland Limited as the EU provider responsible for the EU Code of Practice, with its board exercising systemic risk oversight for EU purposes. Section 7.1 says material updates go for oversight to the Safety and Security Committee of the OpenAI Foundation board and to the OpenAI Ireland Limited board. Integration note: the object ID 'openai-opco-llc' is not among the existing entity IDs, so the integrator must create it as a distinct legal entity and not equate it with the umbrella 'openai'."
+          },
+          "adjudication": null,
+          "disposition": "Verified but deferred: it names an OpenAI operating entity, which belongs with the OpenAI control-structure records (week 4c)."
+        },
+        {
+          "key": "sb-anthropic-fcf-published",
+          "recordType": "commitment_document_published",
+          "verifierSourceText": {
+            "verdict": "upheld",
+            "quoteVerbatim": "yes",
+            "locatorCorrect": "yes",
+            "datesCorrect": "yes",
+            "issues": "The quote is verbatim in the third body paragraph of the live page and of the 2025-12-28 capture (20251228124116 exists in CDX with status 200 and was fetched after several 429 retries). Both show 'Dec 19, 2025' and the 'here' link to trust.anthropic.com/resources?...&name=anthropic-frontier-compliance-framework. Word count from headline to before 'Related content' reproduced as 706. The page title is 'Our compliance framework for California's SB 53 \\ Anthropic'; the claim uses the on-page headline, which is acceptable. I also could not retrieve the FCF: the trust portal is a JavaScript Vanta app, and app.vanta.com/doc?s=eorilovp4wxk38nxbi7k3 returned 404. The qualification is therefore right that the FCF text is uninspected. The statement is correctly limited to what was announced. Completeness note, not a correction: the same post says the FCF 'will serve as our compliance framework for SB 53 and other regulatory requirements' and the RSP 'will remain our voluntary safety policy'. That could support a separate Anthropic framework–commitment link record, which would also be the company's own statement. The post's 'On January 1 ... will go into effect' is a company statement, not decisive evidence of the effective date."
+          },
+          "verifierProposition": {
+            "verdict": "upheld",
+            "quoteVerbatim": "yes",
+            "locatorCorrect": "yes",
+            "datesCorrect": "yes",
+            "issues": "The statement holds on the live page. The page is dated 'Dec 19, 2025', and its third body paragraph contains 'Our Frontier Compliance Framework (FCF) is now available to the public, here.' The 'here' link points to trust.anthropic.com/resources?...&name=anthropic-frontier-compliance-framework. Stage 'announced' and the qualification are appropriate. I confirmed independently that the trust portal is JavaScript-gated: it returns a 7.5 KB shell titled 'Anthropic Trust Center' with no document text. So the FCF's own text, version and dates remain uninspected, as the claim says. CDX confirms that the earliest capture under this URL key is 20251228124116, with status 200. I could not download that capture to re-check the quote (see retrieval failures), so the claim's 'quote also matched in the 2025-12-28 capture' rests on the proposer alone. My count of the article text, from headline to end of body, is 701 words, against the claimed 706; within rounding for the stated basis. Completeness note, not a defect: the same post states 'the FCF will serve as our compliance framework for SB 53 and other regulatory requirements' and that the RSP 'will remain our voluntary safety policy'. That is an explicit FCF-to-SB 53 link analogous to sb-link-openai-fgf and is not yet recorded. The post also states that SB 53 goes into effect on 1 January, but only as Anthropic's statement."
+          },
+          "adjudication": null,
+          "disposition": "admitted as sb-anthropic-fcf-published"
+        },
+        {
+          "key": "sb-link-anthropic-fcf",
+          "recordType": "framework_commitment_link",
+          "verifierSourceText": {
+            "verdict": "upheld",
+            "quoteVerbatim": "yes",
+            "locatorCorrect": "yes",
+            "datesCorrect": "yes",
+            "issues": "No material problem. Both quotes appear character for character in the live page (fetched 2026-10-04) and in the cited capture 20251228124116. The capture exists (CDX status 200, text/html) and is the earliest one the Archive holds. Both quotes sit in the final paragraph of the section 'What’s in our Frontier Compliance Framework'; that paragraph begins 'Moving forward,' and the RSP quote is its second sentence. The page is dated 'Dec 19, 2025'. My count of the article text from headline to before 'Related content' is 701 words, against the claimed 706, which is plausible. The paraphrased statement is faithful. The stage 'announced' and the forward-looking note are appropriate, and the qualification correctly says the FCF itself was not inspected and that a designation is not compliance."
+          },
+          "verifierProposition": {
+            "verdict": "upheld",
+            "quoteVerbatim": "yes",
+            "locatorCorrect": "yes",
+            "datesCorrect": "yes",
+            "issues": "Both quotes match the live page character for character, including the curly apostrophe in the section heading 'What’s in our Frontier Compliance Framework'. The locators are right: the 'Moving forward, the FCF will serve…' paragraph is the final paragraph of that section, and 'The RSP will remain…' is its second sentence. The page is dated 'Dec 19, 2025'. I fetched the 2025-12-28 capture (20251228124116, the earliest in CDX, so no capture is closer to the publication date) and both quotes appear in it. Article word count is 706 by my own count from headline to before 'Related content', which matches the claim. The quote budget is fine: 22 quoted words in a 706-word document, under the roughly 10% ceiling. The stage, the 'announcement' basis and the forward-looking note are right. The FCF itself could not be fetched: the trust.anthropic.com resource link is a JavaScript application that returns only a shell to curl. The qualification already says this. Minor: the statement says the RSP 'remains' its voluntary safety policy, while the source says 'will remain'. This is not material, but for tense consistency the statement could say 'will remain'."
+          },
+          "adjudication": null,
+          "disposition": "Merged into sb-anthropic-fcf-published: the quoted purpose comes from Anthropic’s announcement, not from the framework’s own text, so no references_commitment record is made until the framework text is inspected."
+        },
+        {
+          "key": "sb-link-rsp-v3-0",
+          "recordType": "framework_commitment_link",
+          "verifierSourceText": {
+            "verdict": "requalify",
+            "quoteVerbatim": "yes",
+            "locatorCorrect": "yes",
+            "datesCorrect": "yes",
+            "issues": "(1) Quote and locator are correct. The SB 53 sentence matches the pdftotext extraction of the v3.0 PDF exactly, in footnote 1 on PDF p. 4; the footnote marker is in the Introduction. The cover reads 'Version 3.0 Effective February 24, 2026'. The pdftotext word count is 7,750, an exact match. (2) Minor faithfulness slip. The source says 'We use this term in its plain meaning rather than adopting any specific statutory definition.' The statement and the paraphrase both drop the word 'specific'. (3) Archive. The cited capture 20260224203046 of the www URL is a 307 redirect record, not the PDF. It redirects to https://www-cdn.anthropic.com/e670587677525f28df69b59e5fb4c22cc5461a17.pdf, which the Archive captured at 20260224203051 with SHA-1 digest 4ZYFQ5TXKJPSRX3JWWPF7NGCFTCUMGQX. That digest is identical to the live PDF I downloaded on 2026-10-04 (the live canonical URL also 301/307-redirects to the same CDN file). So replay should work, but the direct PDF capture is the stronger authentication. (4) The qualification says the footnote persists in later editions. I confirmed this: after whitespace and zero-width normalisation, the SB 53 sentence appears exactly once in each of v3.1, v3.2, v3.3 and v3.4, fetched from the dataset URLs. The v3.4 capture 20260710234036 exists, and its digest (BOWNZBCA5KLOMKUHM3MZ5PQ5J3VG2XZ2) is identical to the live v3.4 file."
+          },
+          "verifierProposition": {
+            "verdict": "upheld",
+            "quoteVerbatim": "yes",
+            "locatorCorrect": "yes",
+            "datesCorrect": "yes",
+            "issues": "The quote matches the pdftotext extraction of the PDF served at the canonical URL. That URL redirects 301 to www.anthropic.com, then 307 to https://www-cdn.anthropic.com/e670587677525f28df69b59e5fb4c22cc5461a17.pdf. The footnote is on PDF p. 4, and the footnote marker is in the Introduction. The cover reads 'Version 3.0 Effective February 24, 2026'. My pdftotext word count is 7,750, which matches the claim. The paraphrase is faithful; the source says 'rather than adopting any specific statutory definition'. I confirmed the persistence claim myself: a whitespace-normalised search finds the identical footnote sentence in v3.1 (effective April 2, 2026), v3.2 (April 29, 2026), v3.3 (May 26, 2026) and v3.4 (July 8, 2026), and in v3.4 it is also on PDF p. 4. On archives: the cited capture 20260224203046 is the 307 redirect page, not the PDF. It matches the dataset's existing source record, so I accept it. However, the CDX entry for the target PDF at 20260224203051 has a SHA-1 digest (4ZYFQ5TXKJPSRX3JWWPF7NGCFTCUMGQX) identical to the live file I downloaded, so it is a more direct capture. The v3.4 capture 20260710234036 is likewise byte-identical to the live file (BOWNZBCA…). Narrowing context the qualification could carry: the Introduction body also says the RSP 'may serve some regulatory requirements, but it is not designed to be comprehensive', and that regulatory requirements that exceed or differ from the RSP will be addressed 'through separate documents'. This does not contradict the statement."
+          },
+          "adjudication": {
+            "decision": "keep_with_corrections",
+            "rationale": "I checked the source text myself: the live PDF (SHA-1 e670587677525f28df69b59e5fb4c22cc5461a17), the cover, PDF p. 4 and the pdftotext count of 7,750 words. The quote matches exactly once, and the footnote 1 marker closes the Introduction on PDF p. 4. Correction 1: the source says 'rather than adopting any specific statutory definition', and both the statement and the paraphrase had dropped 'specific'. Correction 2: the cited capture 20260224203046 is a 307 redirect record, so I substituted the direct PDF capture 20260224203051. Its CDX digest 4ZYFQ5TXKJPSRX3JWWPF7NGCFTCUMGQX is identical to the live file. I added the Introduction's own statement about separate documents to the qualification as a paraphrase; this is verified context. I confirmed independently that the footnote sentence persists in v3.1, v3.2, v3.3 and v3.4: one exact match in each live PDF, after normalising whitespace and zero-width characters. The v3.4 capture digest BOWNZBCA… is identical to the live file."
+          },
+          "disposition": "admitted as sb-link-rsp-v3-0"
+        },
+        {
+          "key": "sb-link-faif-2025",
+          "recordType": "framework_commitment_link",
+          "verifierSourceText": {
+            "verdict": "requalify",
+            "quoteVerbatim": "yes",
+            "locatorCorrect": "no",
+            "datesCorrect": "yes",
+            "issues": "The quote matches the pdftotext extraction byte for byte. That includes the straight apostrophe in California's, the curly quotation marks around TFAIA and the § sign. The printed 'Last updated: December 30, 2025' supports the revision date. Footnote 1 does quote the TFAIA catastrophic-risk definition. The pdftotext word count is 4,146, an exact match. The cited capture 20260102171656 exists (application/pdf, status 200), and its digest (6SOPRODXTO5JCXMZUGDC6XBGHWRD5K35) is identical to the live file. The qualification's cross-reference is accurate: in the SB 53 chaptered text, § 22757.12(e)(1)(B) bars a large frontier developer from making a materially false or misleading statement about its implementation of, or compliance with, its frontier AI framework. Locator error: the sentence is not in the opening paragraph. Page 1 opens with the paragraph beginning 'xAI seriously considers safety and security…'. The quoted sentence is a separate one-sentence second paragraph, immediately before the 'Scope' heading."
+          },
+          "verifierProposition": {
+            "verdict": "requalify",
+            "quoteVerbatim": "yes",
+            "locatorCorrect": "no",
+            "datesCorrect": "yes",
+            "issues": "The quote matches exactly: straight apostrophe in 'California's', curly quotation marks around TFAIA, and '§ 22757.10 et seq.'. The live PDF is byte-identical to the cited 2026-01-02 capture (CDX digest 6SOPRODX… equals the live SHA-1). 'Last updated: December 30, 2025' supports the 2025-12-30 revision date. My pdftotext word count is 4,146, which matches. The proposition is distinct from the existing record faif-2026-compliance-sentence, which covers the June 2026 edition's omission, so this is not a duplicate. Note that the existing evidence evidence-faif-2026-compliance-sentence-2 already quotes the sentence's opening words from the same source, so the integrator should count the overlap against the per-document quote budget. Problem 1, the locator: the sentence is not the 'opening paragraph'. It is a standalone second paragraph on p. 1, after the opening 'xAI seriously considers safety…' paragraph and immediately before the 'Scope' heading. The existing dataset evidence locates it as 'PDF p. 1, Introduction, sentence before Scope'. Problem 2, the qualification's pointer to '§ 22757.12(e)(1)(B)': I checked the chaptered text, and that subsection does exist. It reads 'A large frontier developer shall not make a materially false or misleading statement about its implementation of, or compliance with, its frontier AI framework.' Citing it here invites a legal interpretation, because it applies only to a 'large frontier developer', and xAI's status under the Act is not established. It also concerns statements about compliance with the developer's own framework, which is not what this sentence asserts: the sentence says the framework document complies with the Act. Under the stop rule, the pointer should go. Minor: the statement's 'it' is the FAIF, so the assertion is about the document, not about xAI's compliance. Wording that makes this explicit avoids misreading."
+          },
+          "adjudication": {
+            "decision": "keep_with_corrections",
+            "rationale": "The quote is correct; it matches the pdftotext extraction of the live PDF exactly, including the straight apostrophe in California's, the curly quotation marks around TFAIA and the § sign. 'Last updated: December 30, 2025' and the 4,146-word count are confirmed. The 20260102171656 capture digest 6SOPRODX… is identical to the live file. Both verifiers found a locator error, and I confirmed it: the sentence is not the opening paragraph but a standalone second paragraph, directly before the 'Scope' heading. I removed the qualification's pointer to § 22757.12(e)(1)(B). That provision binds a 'large frontier developer', and it concerns statements about compliance with the developer's own framework. Citing it implicitly frames xAI's status under the Act, which is a legal-effect question for the stop list. I reworded the statement to make clear that the asserted subject is the FAIF document."
+          },
+          "disposition": "admitted as sb-link-faif-2025"
+        },
+        {
+          "key": "sb-link-ms-fgf-2026",
+          "recordType": "framework_commitment_link",
+          "verifierSourceText": {
+            "verdict": "requalify",
+            "quoteVerbatim": "yes",
+            "locatorCorrect": "no",
+            "datesCorrect": "yes",
+            "issues": "Both quotes match the pdftotext extraction exactly; the leading-indicator quote keeps the curly apostrophe in California’s. The 'two places' statement is accurate: the PDF mentions California, TFAIA or SB 53 only on these two lines. The paraphrases and the qualification about the change-log bullets are faithful. The pdftotext word count is 5,050, an exact match. The cited capture 20260424000716 exists (application/pdf, status 200), and its digest (VDGBEYB3PYQUWOBETOY6FI4HE5LIMJV5) is identical to the live file. Both printed page numbers are off by one. Checked against the layout extraction, the footers read: PDF p. 5 'Frontier Governance Framework 4', PDF p. 6 '… 5', PDF p. 15 '… 14' and PDF p. 16 '… 15'. The heading 'Monitoring for leading indicators of tracked high-risk capabilities' is on printed p. 4 (PDF p. 5). The quoted sentence ('A leading indicator assessment is run on any model that is in scope…') opens printed p. 5 (PDF p. 6). 'Appendix II – Change log' is on printed p. 15 (PDF p. 16)."
+          },
+          "verifierProposition": {
+            "verdict": "requalify",
+            "quoteVerbatim": "yes",
+            "locatorCorrect": "no",
+            "datesCorrect": "yes",
+            "issues": "Both quotes match the pdftotext extraction, including the curly apostrophe in 'California’s'. A whitespace-normalised search finds exactly two TFAIA references in the document, so 'in two places' is correct. The live PDF is byte-identical to the 2026-04-24 capture (CDX digest VDGBEYB3… equals the live SHA-1), and that is the earliest capture in CDX. My pdftotext word count is 5,050, which matches. The statement and qualification claim no more than the text: 'following finalization of' is chronological, and the qualification rightly declines to infer that this is Microsoft's TFAIA framework or that Microsoft is a large frontier developer. Problem, the printed page numbers: I extracted each page separately and read the footers. The change-log entry is on PDF p. 16, whose footer reads 'February 2026 Frontier Governance Framework 15', so it is printed p. 15, not 14; the table of contents also lists 'Appendix II – Change log 15'. The leading-indicator sentence is on PDF p. 6, whose footer reads '…Framework 5', so it is printed p. 5, not 4. The section 'Monitoring for leading indicators of high-risk capabilities' begins on printed p. 4, but the quoted sentence falls on p. 5. The PDF page numbers in the claim are correct."
+          },
+          "adjudication": {
+            "decision": "keep_with_corrections",
+            "rationale": "Both quotes match the pdftotext extraction of the live PDF, including the curly apostrophe in California’s. Normalised search confirms exactly two TFAIA references, the 5,050-word count and the qualification's change-log bullets. The 20260424000716 capture digest VDGBEYB3… is identical to the live file. Both verifiers found the printed page numbers off by one, and I confirmed this from the page footers. The change log is on PDF p. 16, whose footer reads 'Frontier Governance Framework 15', so it is printed p. 15. The leading-indicator sentence opens PDF p. 6, whose footer reads '5', so it is printed p. 5. The subsection heading is on printed p. 4 / PDF p. 5 and reads 'Monitoring for leading indicators of tracked high-risk capabilities'; the contents page shortens it to '…of high-risk capabilities'. No change to substance."
+          },
+          "disposition": "admitted as sb-link-ms-fgf-2026"
+        },
+        {
+          "key": "sb-sb1047-veto",
+          "recordType": "other",
+          "verifierSourceText": {
+            "verdict": "requalify",
+            "quoteVerbatim": "yes",
+            "locatorCorrect": "yes",
+            "datesCorrect": "yes",
+            "issues": "The substance is fully supported. Veto message: the text layer is OCR, but 'I am returning Senate Bill 1047 without my signature.' matches exactly as the first sentence after the salutation 'To the Members of the California State Senate:'. It matches in both the live file and the 20240929204633 capture. The two files differ bytewise (live digest PBJB6FMP…, capture digest Z5V75PAJ…), as the claim states. The date stamp reads 'SEP 2 9 2024' (OCR spacing) and the letterhead reads 'GOVERNOR GAVIN NEWSOM'. The pdftotext count is 809 words, against the claimed 811, which is plausible. Bill history: the live page and the 20241123001907 capture both show 09/29/24 'Vetoed by the Governor.' and 09/29/24 'In Senate. Consideration of Governor's veto pending.'. The live page also shows 11/30/24 'Last day to consider Governor's veto pursuant to Joint Rule 58.5.', which postdates the 2024-11-23 capture, consistent with the claim. Provenance gap: the qualification asserts, with a quoted phrase ('last fall'), what the SB 53 signing message says, but that document is not among the evidence. I inspected it: https://www.gov.ca.gov/wp-content/uploads/2025/09/SB-53-Signing-Message.pdf is an image-only scan with no text layer, stamped SEP 29 2025, which I viewed rendered in a browser. It does say that 'last fall' the Governor called on AI experts to prepare a report on frontier AI capabilities and risks, and I did not see SB 1047 named. So the assertion is accurate but unsourced in the record. I could not verify the version note that the 2024-09-30 bill-history capture lacks the veto entry; see retrieval failures. The note is not material to the claim."
+          },
+          "verifierProposition": {
+            "verdict": "upheld",
+            "quoteVerbatim": "yes",
+            "locatorCorrect": "yes",
+            "datesCorrect": "yes",
+            "issues": "The veto letter's text layer, which appears to be OCR (e.g. 'Al' for 'AI'), contains 'I am returning Senate Bill 1047 without my signature.' as the first sentence after the salutation 'To the Members of the California State Senate:'. The date stamp reads 'SEP 2 9 2024'. I fetched the cited capture 20240929204633. Its SHA-1 equals the CDX digest Z5V75PAJ…, and the quoted sentence is present in it. The live file's digest is PBJB6FMP…, so the claim's note that the live file differs bytewise is correct. My pdftotext word count is 809, against the claim's 811; the difference is immaterial. The live bill history shows, under the 09/29/24 date, both 'Vetoed by the Governor.' and 'In Senate. Consideration of Governor's veto pending.', followed by the 11/30/24 entry 'Last day to consider Governor's veto pursuant to Joint Rule 58.5.' I fetched the 2024-11-23 capture (20241123001907); it contains both 09/29/24 entries and, as expected, not yet the 11/30/24 one. The title 'SB-1047 Safe and Secure Innovation for Frontier Artificial Intelligence Models Act.' and the 2023–2024 session (bill_id 202320240SB1047) are confirmed. Naming Gavin Newsom as Governor records a documented official act in his role and goes no further, so it is not a living-person stop. The record does not claim that the veto was sustained or that SB 53 is SB 1047's successor. I checked the qualification's reference to the SB 53 signing message by decoding its image-only pages (the PDF has no text layer). It does say 'last fall, I called on world-leading AI experts to prepare a report', and it does not name SB 1047. Not verified: the note that the 2024-09-30 capture (20240930193020) predates the history entry. Playback returned HTTP 429 on repeated attempts. That note is incidental to the proposition. Minor: 'kind: announcement' is a loose fit for a veto message, which is an official act addressed to the Senate; if the schema has a better fit (letter or official record), use it."
+          },
+          "adjudication": {
+            "decision": "keep_with_corrections",
+            "rationale": "The substance is supported. The live veto letter and the 20240929204633 capture both contain the quoted sentence as the first sentence after the salutation. The capture's SHA-1 equals the CDX digest Z5V75PAJ…; the live file differs, digest PBJB6FMP…. The letter is stamped SEP 29 2024 and the letterhead names Governor Gavin Newsom. The live bill history and the 20241123001907 capture both show the 09/29/24 entries 'Vetoed by the Governor.' and 'In Senate. Consideration of Governor's veto pending.' Correction 1: the qualification quoted the SB 53 signing message, which was not in the evidence. I rendered the image-only scan, confirmed the 'last fall' passage and confirmed that SB 1047 is not named. I added the scan as a paraphrased context evidence item and removed the quoted phrase from the qualification. The scan has no text layer, so no character-exact quote can be copied. Correction 2: the version note '(the 2024-09-30 capture predates the entry)' could not be verified, because Wayback playback returned HTTP 429. I removed it. Correction 3: the word-count basis now names the method. Naming the Governor records a documented official act in his role, so it is not a living-person stop."
+          },
+          "disposition": "Verified but not admitted: context outside the scope of SB 53 as enacted, and no veto record type exists."
+        }
+      ]
+    },
+    "round2": {
+      "proposed": 34,
+      "disposition": "The critic’s gaps produced extra-round claims (among them the Frontier Compliance Framework’s own designation sentence, the legislative history and further framework links). Their verification had not finished at the stop, so none is admitted; listed for week 4c.",
+      "critic": {
+        "missing": [
+          {
+            "item": "Anthropic's Frontier Compliance Framework documents themselves, in three editions: 'December 2025', 'March 2026', and 'Version 2, Effective 24th July 2026'. Each edition carries the explicit designation sentence. The December 2025 text reads: 'In the United States, the FCF serves as our Frontier AI Framework under California's Transparency in Frontier AI Act (TFAIA), documenting Anthropic PBC's technical and organizational protocols to manage, assess, and mitigate catastrophic risks.' The documents also refer to critical safety incidents 'in pursuant to Section 22757.13' of the TFAIA. The March 2026 edition adds a scope sentence tied to the TFAIA 'catastrophic risk' definition, a changelog, and a 12-month Framework Assessment 'from the Effective Dates of the TFAIA and the EU Code'.",
+            "why": "Both surviving Anthropic records (sb-anthropic-fcf-published, sb-link-anthropic-fcf) rest only on the 2025-12-19 announcement, which is forward-looking ('will serve'). The closest source is the instrument itself. It names the legal entity (Anthropic PBC), which parallels the OpenAI OpCo LLC record. The three editions and the changelog give dated edition records for the framework family, which matters for the annual-review and 30-day modification provisions. Record these as company statements only. Whether they satisfy § 22757.12 stays a stop. The 'December 2025' edition label is not a publication date. The live trust.anthropic.com page is a JavaScript shell (Vanta) that previously failed to retrieve. I retrieved all three PDFs from Internet Archive captures and extracted text with pdftotext: December 2025 is 4,233 words, March 2026 is 4,353 and Version 2 is 4,711.",
+            "category": "instrument",
+            "suggestedSources": [
+              "https://web.archive.org/web/20260106195759/https://trust.anthropic.com/doc/trust?rid=6945b96bed5877c43526a197&r=iz673w96495gyjer8h78n&view=true",
+              "https://web.archive.org/web/20260305132455/https://trust.anthropic.com/doc/trust?rid=69a610f04f45e4e758282a86&r=iz673w96495gyjer8h78n&view=true",
+              "https://web.archive.org/web/20260930043905/https://trust.anthropic.com/doc/trust?rid=6a637f7ac13a333cf66a4fbf&r=iz673w96495gyjer8h78n&view=true",
+              "https://www.anthropic.com/news/compliance-framework-SB53"
+            ]
+          },
+          {
+            "item": "Definitions of 'critical safety incident' (§ 22757.11(d)) and 'deploy' (§ 22757.11(e)) in Bus. & Prof. Code. The critical safety incident definition has four limbs: (1) unauthorised access to, modification of, or exfiltration of frontier-model weights that results in death or bodily injury; (2) harm from the materialisation of a catastrophic risk; (3) loss of control of a frontier model causing death or bodily injury; (4) deceptive techniques against the developer to subvert its controls or monitoring, outside an evaluation, in a manner demonstrating materially increased catastrophic risk. 'Deploy' excludes making a model available to a third party for the primary purpose of developing or evaluating it.",
+            "why": "The incident-reporting claims (sb-critical-incident-15-days, sb-critical-incident-24-hours, sb-federal-equivalence-pathway) and the transparency-report trigger (sb-transparency-report) cannot be read without these definitions. Their thresholds and exclusions are the operative scope. The text is already in the chaptered bill the researcher extracted, at sb53_body.txt lines 48–57. The chaptered-text quote budget is nearly spent (372 of 400 words), so record these as labelled paraphrases.",
+            "category": "provision",
+            "suggestedSources": [
+              "https://leginfo.legislature.ca.gov/faces/billTextClient.xhtml?bill_id=202520260SB53",
+              "https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=BPC&sectionNum=22757.11"
+            ]
+          },
+          {
+            "item": "Lab. Code § 1107 contains a separate set of whistleblower definitions, plus remaining § 1107.1 duties. 'Covered employee' (§ 1107(b)) means an employee responsible for assessing, managing or addressing the risk of critical safety incidents. The § 1107 definitions of 'catastrophic risk' and 'critical safety incident' are keyed to 'foundation model', not 'frontier model'. In § 1107(c)(1), the weights limb also covers 'damage to, or loss of, property'. Lab. Code § 1107.2 adds that loss of equity value is not property damage. The remaining § 1107.1 duties are: a notice to covered employees of their rights, posted at all times or given in writing annually and acknowledged (§ 1107.1(d)); no contract may block disclosures protected by § 1102.5 (§ 1107.1(b)); attorney's fees; a burden shift to clear and convincing evidence once the employee shows a contributing factor; temporary injunctive relief not stayed pending appeal (§ 1107.1(f)–(i)).",
+            "why": "The surviving whistleblower records quote 'covered employee' and 'catastrophic risk' without the Labor Code definitions that govern them. They therefore implicitly import the Bus. & Prof. Code definitions, which differ textually: foundation model rather than frontier model, and the property limb. A researcher would treat the whistleblower scope as materially different. Record the textual difference only. What it means legally is a stop.",
+            "category": "provision",
+            "suggestedSources": [
+              "https://leginfo.legislature.ca.gov/faces/billTextClient.xhtml?bill_id=202520260SB53",
+              "https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=LAB&sectionNum=1107",
+              "https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=LAB&sectionNum=1107.1"
+            ]
+          },
+          {
+            "item": "Legislative history of SB 53, from introduction to enactment. Introduced 2025-01-07 by Senator Wiener. According to the author's 2025-07-09 release and the committee analyses, the introduced bill covered only CalCompute and whistleblower protection. Author's amendments of 2025-07-08 turned it into a transparency measure. Floor votes: Senate 2025-05-28 (Ayes 37, Noes 0); Assembly 2025-09-12 (Ayes 59, Noes 7); Senate concurrence 2025-09-13 (Ayes 29, Noes 8). The Assembly Privacy and Consumer Protection Committee analysis of the bill as amended 2025-09-05 (hearing 2025-09-11) lists what those amendments changed: the maximum civil penalty fell from $10 million to $1 million; the $500 million large-developer tier was added; the Attorney General's power to adjust scoping definitions by regulation was replaced with annual Department of Technology recommendations; contractors were removed from whistleblower protection; local preemption was added; internal-use assessments moved from public disclosure to confidential summaries for OES.",
+            "why": "The dataset has enactment and effective dates but nothing on how the enacted thresholds and penalty came about. Bill versions and official committee analyses are the closest sources for dated, version-specific claims, such as that the $1M cap replaced an earlier $10M figure. Without them, the record cannot separate the enacted text from earlier versions. The vote counts are in hist.txt, which the researcher already retrieved. I retrieved the committee analysis (13,102 words, pdftotext). Note that it misnames OES as the 'Office of Emergency Management'. Record bill version, actions and votes. Do not attribute motives to any person.",
+            "category": "date",
+            "suggestedSources": [
+              "https://leginfo.legislature.ca.gov/faces/billHistoryClient.xhtml?bill_id=202520260SB53",
+              "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202520260SB53",
+              "https://apcp.assembly.ca.gov/system/files/2025-09/sb-53-wiener-apcp-analysis-9.11.pdf",
+              "https://apcp.assembly.ca.gov/system/files/2025-07/sb-53-wiener-apcp-analysis_0.pdf",
+              "https://sd11.senate.ca.gov/news/senator-wiener-expands-ai-bill-landmark-transparency-measure-based-recommendations-governors"
+            ]
+          },
+          {
+            "item": "An explicit statutory link to the Joint California Policy Working Group on AI Frontier Models: SB 53 SEC. 1(c) states that the group 'has recommended sound principles for policy in artificial intelligence.' The group's final report, 'The California Report on Frontier AI Policy' (dated June 17, 2025), is still live on the Governor's official site and was captured by the Internet Archive on 2025-06-17. The March 2025 draft is captured at cafrontieraigov.org (first capture 2025-03-18).",
+            "why": "The researcher left the report out because its domain 'has lapsed'. That retrieval failure can be fixed: the final PDF is hosted at gov.ca.gov (HTTP 200 on 2026-10-04; pdftotext count 27,692 words) and has a same-day capture. The SEC. 1(c) finding is an explicit textual link inside the enacted instrument, so no causal inference is needed. Record the finding and the report's publication. Do not infer which provisions derive from it beyond what official analyses say.",
+            "category": "link",
+            "suggestedSources": [
+              "https://www.gov.ca.gov/wp-content/uploads/2025/06/June-17-2025-%E2%80%93-The-California-Report-on-Frontier-AI-Policy.pdf",
+              "https://web.archive.org/web/20250617163743/https://www.gov.ca.gov/wp-content/uploads/2025/06/June-17-2025-%E2%80%93-The-California-Report-on-Frontier-AI-Policy.pdf",
+              "https://web.archive.org/web/20250318195008/https://www.cafrontieraigov.org/wp-content/uploads/2025/03/Draft_Report_of_the_Joint_California_Policy_Working_Group_on_AI_Frontier_Models.pdf",
+              "https://leginfo.legislature.ca.gov/faces/billTextClient.xhtml?bill_id=202520260SB53"
+            ]
+          },
+          {
+            "item": "Anthropic publicly endorsed SB 53 on 2025-09-08, before final passage. The post is titled 'Anthropic is endorsing SB 53' and is dated 'Sep 8, 2025'. It describes the bill as implementing the Working Group's 'trust but verify' principle, and states a preference for federal regulation over a patchwork of state rules.",
+            "why": "This is the only dated, explicit company position on the bill itself in the topic. It is primary evidence of what Anthropic said, and it precedes the FCF designation. It is not evidence of compliance or influence. Record it as a statement and do not infer causation on the legislation. Internet Archive captures exist from 2025-09-08 (12:22:51 UTC). By contrast, OpenAI's 2025-08-12 letter to Governor Newsom on harmonised regulation, which I checked, does not name SB 53, so it is no explicit link.",
+            "category": "link",
+            "suggestedSources": [
+              "https://www.anthropic.com/news/anthropic-is-endorsing-sb-53",
+              "https://web.archive.org/web/20250908122251/https://www.anthropic.com/news/anthropic-is-endorsing-sb-53"
+            ]
+          },
+          {
+            "item": "Official state implementation records. (a) Cal OES has a 'Transparency in Frontier AI Act Reporting' page linking to a portal where frontier developers and members of the public can confidentially submit critical safety incidents and internal-use risk-assessment summaries. The page was live on 2026-10-04. Its Internet Archive captures return 404 on 2026-03-25 and 200 on 2026-05-09, which shows only that the page existed by that date. (b) The California Department of Technology's TFAIA page invites public input on the three scoping definitions under § 22757.14. Input was due by 2026-06-01, and information sessions were held on 2026-04-09, 04-16, 05-05 and 05-26.",
+            "why": "These are official records of the statutory mechanisms, the § 22757.13 portal and the § 22757.14 definition review. They concern the very thresholds recorded in sb-frontier-model-threshold and sb-large-frontier-developer-threshold. The researcher deliberately left implementation facts out as 'not checked'. They are now checked and can be documented from the agencies' own pages. They show that a channel exists and that a consultation was held. They say nothing about any developer's compliance, and nothing about whether recommendations or regulations followed. Retrieval failure: the Internet Archive CDX query for the CDT page returned 504, so it has no capture date yet.",
+            "category": "instrument",
+            "suggestedSources": [
+              "https://www.caloes.ca.gov/office-of-the-director/operations/homeland-security/california-cybersecurity-integration-center/transparency-in-frontier-ai-act-reporting/",
+              "https://web.archive.org/web/20260509200243/https://www.caloes.ca.gov/office-of-the-director/operations/homeland-security/california-cybersecurity-integration-center/transparency-in-frontier-ai-act-reporting/",
+              "https://www.cdt.ca.gov/technology-innovation/transparency-in-frontier-ai-act/"
+            ]
+          },
+          {
+            "item": "The ten matters a large frontier developer's framework must describe, § 22757.12(a)(1)–(10), as a labelled paraphrase: (1) incorporating national, international and industry-consensus standards; (2) capability thresholds for catastrophic risk; (3) mitigations; (4) reviewing assessments as part of the decision to deploy or use extensively internally; (5) third-party assessment; (6) revisiting the framework, including how 'substantially modified' is determined; (7) cybersecurity for unreleased model weights; (8) responding to critical safety incidents; (9) internal governance; (10) internal-use catastrophic risk, including a model circumventing oversight mechanisms.",
+            "why": "sb-framework-duty only counts the 'ten listed matters'. Researchers comparing frameworks such as the FCF, the OpenAI FGF and the xAI FAIF with the statute need the list itself. It is the content standard against which the company documents that name SB 53 can be compared, without any compliance judgement. Only paraphrase is possible because the chaptered-text quote budget has 28 words left.",
+            "category": "provision",
+            "suggestedSources": [
+              "https://leginfo.legislature.ca.gov/faces/billTextClient.xhtml?bill_id=202520260SB53",
+              "https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=BPC&sectionNum=22757.12"
+            ]
+          }
+        ],
+        "notes": "The most important gap is item 1. The FCF documents (Dec 2025, Mar 2026, and v2 effective 2026-07-24) can be retrieved from Internet Archive captures of trust.anthropic.com. I extracted them to scratch: sb/crit_fcfA.txt, sb/crit_fcfB.txt and sb/crit_fcfC.txt. Use them instead of relying only on the announcement.\n\nOther material I retrieved to the scratch sb/ folder:\n- sb/crit_wg_report.pdf/.txt: the Working Group final report, from gov.ca.gov.\n- sb/crit_apcp_911.pdf/.txt: the Assembly committee analysis.\n- sb/crit_anth_endorse.html: Anthropic's endorsement post.\n- sb/crit_oai_letter.html: OpenAI's letter, which does not name SB 53.\n- sb/oes_tfaia.html and sb/cdt_tfaia.html: the OES and CDT pages.\n- crit_code_*.html: codified section pages.\n\nChecks with no item:\n- Codified sections BPC 22757.10, 22757.14 and 22757.16, Gov 11546.8 and Lab 1107 show only the 'Added by Stats. 2025, Ch. 138' note, checked 2026-10-04. Nothing has been amended. The Lab 1107.2 fetch did not complete.\n- No DOJ lawsuit against SB 53 was found.\n- I could not confirm whether the Commerce evaluation under EO 14365 (2025-12-11) named SB 53. Federal preemption is already a stop, so I did not pursue it.\n- Sheppard Mullin and NatLawReview write that SB 53 took effect on signature. That conflicts with the codified 'Effective January 1, 2026' notes. It is not a genuine contested record, because a decisive source exists.\n\nRetrieval failures and unverified leads:\n- The Internet Archive CDX query for the CDT page returned 504.\n- My web search budget ran out (200/200), so explicit SB 53/TFAIA statements by Google, Amazon or Meta outside the inspected framework editions, and system cards labelled as TFAIA transparency reports, are unverified. Both are worth a targeted curl check in the extra round.\n\nBudget: the chaptered-text quote budget has 28 words left, so items 2, 3 and 8 must be paraphrased unless existing quotes are shortened.\n\nAlso covered by the stops: no item states that any company is a frontier developer or a large frontier developer, and no item states or implies compliance."
+      }
+    },
+    "admitted": {
+      "claims": 25,
+      "evidence": 58,
+      "sources": 13,
+      "entities": 4,
+      "byType": {
+        "states_provision": 19,
+        "enacted": 1,
+        "references_commitment": 4,
+        "published": 1
+      },
+      "integratorEdits": "Provision dates use the chaptered text’s publication date (2025-09-29, basis publication) instead of the proposed “enactment” basis; codified history-note quotes on provision records became context evidence; four statements were shortened to the 800-character limit and three paraphrases to the 700-character limit without changing their substance; link kinds were assigned from each edition’s quoted wording (designated_under, names, complies_with, responds_to)."
+    },
+    "mechanicalQuoteCheck": {
+      "method": "Every admitted quote was matched after removing invisible format characters and collapsing whitespace; words, punctuation, quote marks and dashes must match. Texts came from the integrator’s own direct HTTP fetches (chaptered bill text, bill history, codified sections 22757.11, 22757.12 and 11546.8), or, where those fetches had not completed because the legislature’s code pages returned errors or timed out, from the research agents’ direct fetches (Governor’s release, Anthropic announcement, codified sections 22757.13, 22757.15 and 1107.1, the Constitution page and the four framework PDFs).",
+      "quotes": 42,
+      "matched": 42,
+      "viaIntegratorFetch": 30,
+      "viaResearchAgentFetch": 12
+    },
+    "stops": [
+      {
+        "category": "legal_effect",
+        "issue": "METR's 'Frontier AI safety regulations: A reference for lab staff' (2026-01-29) states that developers such as OpenAI, Google, Anthropic and xAI are governed by SB 53 obligations. Whether the statute applies to a named company is legal application and is not recorded. No record states that any company is a frontier developer or large frontier developer.",
+        "urls": [
+          "https://metr.org/notes/2026-01-29-frontier-ai-safety-regulations/"
+        ]
+      },
+      {
+        "category": "legal_effect",
+        "issue": "The Midas Project has alleged that OpenAI violated SB 53: over GPT-5.3-Codex (reported February 2026) and over later system cards (reported September 2026). OpenAI disputes this, partly by contesting how its Preparedness Framework wording should be read. Whether a developer violated or complied with SB 53, and how framework wording is construed for SB 53 purposes, are legal determinations. Not recorded. Seen only in search-result summaries; the articles were not retrieved or inspected.",
+        "urls": [
+          "https://fortune.com/2026/02/10/openai-violated-californias-ai-safety-law-gpt-5-3-codex-ai-model-watchdog-claims/",
+          "https://fortune.com/2026/09/14/openai-may-have-violated-californias-ai-safety-law-with-astra-model-releases-ai-watchdog-says/"
+        ]
+      },
+      {
+        "category": "legal_effect",
+        "issue": "Company designations recorded as statements only, never as legal fact: OpenAI's statement that OpenAI OpCo LLC is responsible for TFAIA compliance; xAI's statement that its December 2025 FAIF 'complies' with TFAIA; Anthropic's designation of the FCF (not the RSP) as its SB 53 compliance framework. Whether any of these satisfies § 22757.12, and whether those entities are the legally responsible developers, needs interpretation.",
+        "urls": [
+          "https://cdn.openai.com/pdf/e37d949b-8c9f-4d76-b99e-4272f4631a7e/openai-frontier-governance-framework.pdf",
+          "https://data.x.ai/2025-12-31-xai-frontier-artificial-intelligence-framework.pdf",
+          "https://www.anthropic.com/news/compliance-framework-SB53"
+        ]
+      },
+      {
+        "category": "legal_effect",
+        "issue": "Federal preemption and federal-contract carve-outs: SB 53 SEC. 5(d) (no application to the extent of strict conflict with a federal government contract), SEC. 5(e) (no application to the extent preempted by federal law) and SEC. 5(f) (preemption of local rules adopted on or after 2025-01-01). Whether any federal law or action preempts or limits SB 53 is legal interpretation and was not examined.",
+        "urls": [
+          "https://leginfo.legislature.ca.gov/faces/billTextClient.xhtml?bill_id=202520260SB53"
+        ]
+      },
+      {
+        "category": "legal_effect",
+        "issue": "What 'comply with' one's own framework (§ 22757.12(a); penalty ground in § 22757.15(a)) means when a framework uses discretionary or hedged language, and what counts as a 'material modification' (§ 22757.12(b)(2)) or a 'substantially modified' model (§ 22757.12(c)), are questions of statutory interpretation. Not resolved.",
+        "urls": [
+          "https://leginfo.legislature.ca.gov/faces/billTextClient.xhtml?bill_id=202520260SB53"
+        ]
+      }
+    ],
+    "retrievalFailures": {
+      "research": [
+        {
+          "url": "https://trust.anthropic.com/resources?s=eorilovp4wxk38nxbi7k3&name=anthropic-frontier-compliance-framework",
+          "error": "JavaScript-gated trust portal. curl returned a 7.5 KB shell page with no document link or text, and web searches found no direct PDF.",
+          "workaround": "Recorded only what Anthropic's 2025-12-19 announcement says about the FCF. The FCF's own text, version and dates remain uninspected."
+        },
+        {
+          "url": "https://www.cafrontieraigov.org/",
+          "error": "The Joint California Policy Working Group's former domain now serves unrelated German-language online-casino content.",
+          "workaround": "Not used. The Working Group and its report are referenced only through SB 53's own findings (SEC. 1(c), (o)) in a qualification. A Governor-hosted copy of the report was not sought, to keep the topic bounded."
+        },
+        {
+          "url": "https://leginfo.legislature.ca.gov/faces/codes_displayText.xhtml?lawCode=BPC&division=8.&title=&part=&chapter=25.1.&article=",
+          "error": "502 Proxy Error (whole-chapter display). Individual section pages also timed out or returned 502 intermittently.",
+          "workaround": "Retried individual sections. Fetched BPC §§ 22757.11, 22757.12, 22757.13 and 22757.15, Lab. Code § 1107.1 and Gov. Code § 11546.8 successfully."
+        },
+        {
+          "url": "https://web.archive.org/cdx/search/cdx",
+          "error": "Intermittent 504 Gateway Time-out and 'Internet Archive: Temporarily Offline' responses.",
+          "workaround": "Waited and retried. All captures cited were found, and quoted passages were checked in the capture where noted."
+        },
+        {
+          "url": "https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=GOV&sectionNum=11546.8.",
+          "error": "No Internet Archive capture found (CDX returned an empty list).",
+          "workaround": "Cited the live page, inspected 2026-10-04, without an archive URL."
+        },
+        {
+          "url": "https://ai.meta.com/static-resource/Meta_Advanced-AI-Scaling-Framework-v2",
+          "error": "The live URL returned an HTML error page instead of the PDF.",
+          "workaround": "Used the 2026-04-08 Internet Archive capture (20260408210600) for a text search. No SB 53 or TFAIA reference was found."
+        },
+        {
+          "url": "https://web.archive.org/web/20240930193020/https://leginfo.legislature.ca.gov/faces/billHistoryClient.xhtml?bill_id=202320240SB1047",
+          "error": "This capture predates the posting of the 2024-09-29 veto entry.",
+          "workaround": "Used the 2024-11-23 capture, which contains the entry."
+        },
+        {
+          "url": "https://www.gov.ca.gov/wp-content/uploads/2025/09/SB-53-Signing-Message.pdf",
+          "error": "Scanned PDF with no text layer (pdftotext returned 0 words).",
+          "workaround": "Read visually and paraphrased only, with no quotation. The live file is byte-identical to the 2025-09-29 capture."
+        }
+      ]
+    },
+    "browserFallback": [
+      {
+        "agent": "verify-src:sb:r1b4",
+        "url": "https://www.gov.ca.gov/wp-content/uploads/2025/09/SB-53-Signing-Message.pdf",
+        "precedingDirectFailure": "timeouts / HTTP 000"
+      },
+      {
+        "agent": "verify-src:sb:r1b4",
+        "url": "https://www.gov.ca.gov/wp-content/uploads/2025/09/SB-53-Signing-Message.pdf#page=1&zoom=250,0,450",
+        "precedingDirectFailure": "direct retrieval failed (see agent transcript)"
+      },
+      {
+        "agent": "verify-src:sb:r1b6",
+        "url": "https://www.gov.ca.gov/wp-content/uploads/2025/09/SB-53-Signing-Message.pdf",
+        "precedingDirectFailure": "direct retrieval failed (see agent transcript)"
+      },
+      {
+        "agent": "verify-prop:sb:r1b4",
+        "url": "https://www.gov.ca.gov/wp-content/uploads/2025/09/SB-53-Signing-Message.pdf",
+        "precedingDirectFailure": "timeouts / HTTP 000"
+      }
+    ]
+  },
+  "browserFallbackAllTopics": {
+    "navigations": 104,
+    "byTopic": {
+      "an": 35,
+      "eu": 5,
+      "oa": 15,
+      "sb": 4,
+      "se": 42,
+      "wh": 3
+    },
+    "note": "Pages the agents opened in the in-app browser after direct retrieval failed: chiefly Internet Archive captures (HTTP 429 “suspected abusive bot traffic” blocks while many agents fetched concurrently), Google Drive and DocumentCloud copies of filings, and scanned PDFs without a text layer. The preceding-failure labels are classified from the transcripts by a heuristic and are approximate. Week 4c should cache archive fetches and reuse captures already saved."
+  },
+  "unfinishedTopics": [
+    {
+      "topic": "A. OpenAI control structures",
+      "rounds": {
+        "round1": {
+          "proposed": 34,
+          "verifiedAndKept": 34,
+          "dropped": 0,
+          "movedToStops": 0,
+          "unverifiedAtStop": 0,
+          "keptWithCorrections": 27
+        },
+        "round2": {
+          "proposed": 39,
+          "verifiedAndKept": 4,
+          "dropped": 0,
+          "movedToStops": 0,
+          "unverifiedAtStop": 35,
+          "keptWithCorrections": 0
+        }
+      },
+      "admitted": 0,
+      "disposition": "Not integrated. Research, first-round verification, adjudication and the completeness critic had finished; the extra round was stopped unfinished at the maintainer’s request. The reconstructed outcomes are kept in an ignored local folder (review/.local/week4b-research/), not in tracked files. Listed for week 4c, which should integrate only verified results, review the adjudicators’ corrections critically and repeat the mechanical quote check."
+    },
+    {
+      "topic": "A. Anthropic control structures",
+      "rounds": {
+        "round1": {
+          "proposed": 32,
+          "verifiedAndKept": 32,
+          "dropped": 0,
+          "movedToStops": 0,
+          "unverifiedAtStop": 0,
+          "keptWithCorrections": 28
+        }
+      },
+      "admitted": 0,
+      "disposition": "Not integrated. Research, first-round verification, adjudication and the completeness critic had finished; the extra round was stopped unfinished at the maintainer’s request. The reconstructed outcomes are kept in an ignored local folder (review/.local/week4b-research/), not in tracked files. Listed for week 4c, which should integrate only verified results, review the adjudicators’ corrections critically and repeat the mechanical quote check."
+    },
+    {
+      "topic": "B. White House voluntary commitments",
+      "rounds": {
+        "round1": {
+          "proposed": 42,
+          "verifiedAndKept": 42,
+          "dropped": 0,
+          "movedToStops": 0,
+          "unverifiedAtStop": 0,
+          "keptWithCorrections": 29
+        }
+      },
+      "admitted": 0,
+      "disposition": "Not integrated. Research, first-round verification, adjudication and the completeness critic had finished; the extra round was stopped unfinished at the maintainer’s request. The reconstructed outcomes are kept in an ignored local folder (review/.local/week4b-research/), not in tracked files. Listed for week 4c, which should integrate only verified results, review the adjudicators’ corrections critically and repeat the mechanical quote check."
+    },
+    {
+      "topic": "B. Frontier AI Safety Commitments (Seoul)",
+      "rounds": {
+        "round1": {
+          "proposed": 36,
+          "verifiedAndKept": 36,
+          "dropped": 0,
+          "movedToStops": 0,
+          "unverifiedAtStop": 0,
+          "keptWithCorrections": 26
+        },
+        "round2": {
+          "proposed": 36,
+          "verifiedAndKept": 0,
+          "dropped": 0,
+          "movedToStops": 0,
+          "unverifiedAtStop": 36,
+          "keptWithCorrections": 0
+        }
+      },
+      "admitted": 0,
+      "disposition": "Not integrated. Research, first-round verification, adjudication and the completeness critic had finished; the extra round was stopped unfinished at the maintainer’s request. The reconstructed outcomes are kept in an ignored local folder (review/.local/week4b-research/), not in tracked files. Listed for week 4c, which should integrate only verified results, review the adjudicators’ corrections critically and repeat the mechanical quote check."
+    },
+    {
+      "topic": "B. EU General-Purpose AI Code of Practice",
+      "rounds": {
+        "round1": {
+          "proposed": 31,
+          "verifiedAndKept": 31,
+          "dropped": 0,
+          "movedToStops": 0,
+          "unverifiedAtStop": 0,
+          "keptWithCorrections": 26
+        },
+        "round2": {
+          "proposed": 31,
+          "verifiedAndKept": 9,
+          "dropped": 0,
+          "movedToStops": 0,
+          "unverifiedAtStop": 22,
+          "keptWithCorrections": 0
+        }
+      },
+      "admitted": 0,
+      "disposition": "Not integrated. Research, first-round verification, adjudication and the completeness critic had finished; the extra round was stopped unfinished at the maintainer’s request. The reconstructed outcomes are kept in an ignored local folder (review/.local/week4b-research/), not in tracked files. Listed for week 4c, which should integrate only verified results, review the adjudicators’ corrections critically and repeat the mechanical quote check."
+    }
+  ],
+  "caveats": [
+    "No first-round claim was dropped in any topic: where the two verifiers did not both uphold a claim, the adjudicators kept it with corrections in nearly every case. Machine adjudication favoured correction over rejection; the corrections are recorded per claim and an integrator must review them, not accept them as settled.",
+    "The workflows were stopped at the maintainer’s request before the extra rounds finished; the agents running then were terminated and their partial work is not used."
+  ],
+  "limits": "A bounded machine pass does not certify unsampled or unadmitted material. Provisions are a quoted selection bounded by the quotation policy, not a digest of the statute. No record states that the statute applies to a named company or that anyone complies; those questions are listed as stops. Machine agreement is neither historical certainty nor human review; no evidence verification or editorial state changed."
+}

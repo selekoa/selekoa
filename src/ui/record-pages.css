@@ -1,0 +1,271 @@
+/* Person and document reading pages; shares the reading layout. */
+.record-identity {
+  margin-top: 10px;
+  font-size: var(--text-md);
+  color: var(--color-text-muted);
+  overflow-wrap: anywhere;
+}
+.record-identity a,
+.record-facts a {
+  color: var(--color-accent);
+}
+.text-button.record-explore {
+  color: var(--color-accent);
+  text-decoration: underline;
+  white-space: normal;
+  text-align: left;
+  padding: 0;
+  font-size: var(--text-md);
+}
+.record-page .path-resume {
+  margin: 24px 0 0;
+}
+.record-tabs {
+  display: flex;
+  gap: 4px;
+  margin-top: 28px;
+  border-bottom: 1px solid var(--color-border);
+}
+.record-tabs [role='tab'] {
+  padding: 8px 12px;
+  font-size: var(--text-md);
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
+  color: var(--color-text-muted);
+}
+.record-tabs [role='tab'][aria-selected='true'] {
+  border-color: var(--color-accent);
+  color: var(--color-text);
+  font-weight: 650;
+}
+.record-tabs [role='tab']:hover {
+  background: var(--color-hover);
+}
+.record-section {
+  margin-top: var(--space-7);
+}
+.record-section > h2 {
+  font: var(--heading-section) / 1.25 var(--font-serif);
+  scroll-margin-top: 16px;
+}
+.record-subheading {
+  font-size: 15px;
+  font-weight: 650;
+  margin: 22px 0 2px;
+}
+.record-subheading span {
+  font-weight: 400;
+  color: var(--color-text-muted);
+}
+.record-note {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  margin: 6px 0 6px;
+  max-width: 85ch;
+}
+.record-rows,
+.person-path,
+.record-versions,
+.record-dates {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.record-rows > li {
+  border-bottom: 1px solid var(--color-border);
+}
+.record-row-heading {
+  display: block;
+  font-size: var(--text-xs);
+  font-weight: 650;
+  letter-spacing: 0.04em;
+  color: var(--color-text-muted);
+  margin-bottom: 2px;
+}
+.text-button.record-row-link {
+  color: var(--color-accent);
+  text-decoration: underline;
+  white-space: normal;
+  text-align: left;
+  font-size: var(--text-sm);
+  padding: 0 0 8px;
+}
+
+/* Documented path: a dated list, not a connected line. */
+.person-path-row {
+  display: grid;
+  grid-template-columns: 170px minmax(0, 1fr);
+  gap: 4px 18px;
+  border-bottom: 1px solid var(--color-border);
+  padding: 4px 0;
+}
+.person-path-row .stated-reason {
+  grid-column: -2;
+  margin: 0 0 8px;
+}
+.person-path-date {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding-top: 10px;
+  font-size: var(--text-md);
+  font-variant-numeric: tabular-nums;
+}
+.person-path-kind {
+  font-size: var(--text-2xs);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+.person-path-row[data-time-kind='interval'] .person-path-date > :first-child {
+  border-left: 2px solid var(--color-people);
+  padding-left: 6px;
+}
+.person-path-row[data-time-kind='snapshot'] .person-path-date > :first-child,
+.person-path-row[data-time-kind='event'] .person-path-date > :first-child {
+  border-left: 2px dotted var(--color-people);
+  padding-left: 6px;
+}
+.person-path-row[data-time-kind='unknown'] .person-path-date > :first-child {
+  font-style: italic;
+  color: var(--color-text-muted);
+}
+
+.record-limits ul {
+  margin: 8px 0 0;
+  padding: 14px 16px 14px 34px;
+  background: var(--color-sunken);
+  border: 1px solid var(--color-border);
+  display: grid;
+  gap: 10px;
+  max-width: 90ch;
+}
+
+.record-facts {
+  display: grid;
+  grid-template-columns: 130px minmax(0, 1fr);
+  gap: 8px 16px;
+  margin: 18px 0 0;
+  font-size: var(--text-md);
+}
+.record-facts dt {
+  font-weight: 650;
+}
+.record-facts dd {
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+.record-facts .small-note {
+  color: var(--color-text-muted);
+}
+.record-versions {
+  margin: 10px 0 14px;
+  border-left: 2px solid var(--color-governance);
+  padding-left: 14px;
+  display: grid;
+  gap: 4px;
+  font-size: var(--text-md);
+}
+.record-versions li {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2px 12px;
+  align-items: baseline;
+}
+.record-version-date {
+  min-width: 150px;
+  font-variant-numeric: tabular-nums;
+  color: var(--color-text-muted);
+}
+.record-versions .text-button {
+  white-space: normal;
+  text-align: left;
+  color: var(--color-accent);
+  text-decoration: underline;
+  padding: 0;
+}
+.record-relation + .record-relation {
+  margin-top: 8px;
+}
+.record-absent {
+  margin-top: 18px;
+}
+.record-map .network-wrap {
+  min-height: 420px;
+}
+
+@media (max-width: 720px) {
+  .person-path-row {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0;
+  }
+  .record-facts {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 2px;
+  }
+  .record-facts dd {
+    margin-bottom: 10px;
+  }
+  .record-section > h2 {
+    font-size: var(--heading-sub);
+  }
+}
+
+/* Entry points to the reading pages from the explorer and dossiers. */
+.search-results .search-page-link {
+  border-top: 0;
+  padding: 0 4px 8px;
+  color: var(--color-accent);
+  text-decoration: underline;
+  font-size: var(--text-xs);
+}
+.text-button.entity-page-link,
+.text-button.dossier-page-link {
+  color: var(--color-accent);
+  text-decoration: underline;
+  white-space: normal;
+  text-align: left;
+  padding: 0;
+  font-size: var(--text-md);
+  margin: 4px 0 10px;
+}
+.record-date-kind {
+  display: inline-block;
+  min-width: 72px;
+  color: var(--color-text-muted);
+}
+.record-date-evidence .doc-inspect {
+  font-size: var(--text-sm);
+}
+.record-archive {
+  display: block;
+  margin-top: 2px;
+}
+.record-appears {
+  margin-top: var(--space-5);
+}
+.record-appears h2 {
+  font-size: var(--text-sm);
+  font-family: var(--font-sans);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--color-text-muted);
+  margin: 0 0 var(--space-2);
+}
+.record-appears ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: var(--space-2);
+}
+.record-appears li {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0 var(--space-3);
+}
+.record-appears-count {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+}

@@ -1,0 +1,1963 @@
+{
+  "id": "week4c-qa-2026-10-04",
+  "scope": "Week 4c: integration of the week 4b research leads that were not admitted in week 4b. Part 1 covers the OpenAI and Anthropic control structures; part 2 the White House voluntary commitments, the Frontier AI Safety Commitments and the EU General-Purpose AI Code of Practice. All new records are seeds with machine-checked evidence; no editorial state changed.",
+  "integrator": {
+    "model": "One session of Claude Opus 5.5 (claude-opus-5-5), the same model family that produced the week 4b leads. No subagents were used in week 4c. Its checks are not independent corroboration and are not human review.",
+    "method": "The week 4b outcome files (research claims, two verifier reports and an adjudication per claim) were treated as leads. For every admitted claim the integrating session retrieved each cited source itself, read the passage in context, checked the quote, locator, dates, date precision, language and archive copy, and rewrote statements and qualifications where its reading differed. Leads were admitted, merged, narrowed or left out by the dispositions listed per part.",
+    "retrievalRule": "Direct HTTP retrieval only, sequentially with pauses of 2.5 seconds between sources and 4 to 9 seconds between Internet Archive requests; archive captures were found through the CDX API and fetched in raw (id_) mode only where a publication-period expression was needed. The in-app browser was used only to inspect the built application, never to retrieve a source.",
+    "independence": "The week 4b verifiers and adjudicators did not see this session’s checks, and this session read their reports. Agreement between them is one model’s agreement with itself."
+  },
+  "part1": {
+    "date": "2026-10-04",
+    "topics": [
+      "A. OpenAI control structures",
+      "A. Anthropic control structures"
+    ],
+    "admitted": {
+      "claims": 45,
+      "byType": {
+        "changes_from": 1,
+        "control_assessed": 2,
+        "converted_into": 1,
+        "departure_announced": 3,
+        "formed_entity": 1,
+        "has_legal_form": 4,
+        "held_role": 9,
+        "holds_control_right": 13,
+        "published": 3,
+        "states_provision": 8
+      },
+      "evidence": 96,
+      "newSources": 32,
+      "updatedSources": [
+        "source-atlas-openai-lp",
+        "source-atlas-openai-pbc-plan"
+      ],
+      "newEntities": 25
+    },
+    "retrieval": {
+      "fetched": [
+        {
+          "key": "oa-990-2024",
+          "url": "https://projects.propublica.org/nonprofits/full_text/202513219349328476/IRS990",
+          "status": 200,
+          "bytes": 529035,
+          "sha1": "39a510cefe956c29362f1f67026ebcb3e0697653",
+          "at": "2026-10-04T14:27:04.890Z"
+        },
+        {
+          "key": "oa-990-2024-schedO",
+          "url": "https://projects.propublica.org/nonprofits/full_text/202513219349328476/IRS990ScheduleO",
+          "status": 200,
+          "bytes": 34088,
+          "sha1": "36f20cbc8faf1d1a129aecc3e685124fbc4254f2",
+          "at": "2026-10-04T14:27:08.504Z"
+        },
+        {
+          "key": "oa-990-2024-schedR",
+          "url": "https://projects.propublica.org/nonprofits/full_text/202513219349328476/IRS990ScheduleR",
+          "status": 200,
+          "bytes": 170421,
+          "sha1": "1be073f0a8d317cc84b95bb8cbf4ac5715c1d41e",
+          "at": "2026-10-04T14:27:11.922Z"
+        },
+        {
+          "key": "oa-990-2019-schedR",
+          "url": "https://projects.propublica.org/nonprofits/full_text/202003219349325305/IRS990ScheduleR",
+          "status": 200,
+          "bytes": 126441,
+          "sha1": "9b4a02b689babce7e4647c404a775a897d642ce0",
+          "at": "2026-10-04T14:27:15.263Z"
+        },
+        {
+          "key": "oa-lp-current",
+          "url": "https://openai.com/index/openai-lp/",
+          "status": 200,
+          "bytes": 435559,
+          "sha1": "6d1bef30049492e5dac5b785948606fee98f8eed",
+          "at": "2026-10-04T14:27:19.027Z"
+        },
+        {
+          "key": "oa-ecf111-tremblay",
+          "url": "https://storage.courtlistener.com/recap/gov.uscourts.cand.403220/gov.uscourts.cand.403220.111.0.pdf",
+          "status": 200,
+          "bytes": 93562,
+          "sha1": "0a9def45eec650cffe7f3e196b00282ff21ab03b",
+          "at": "2026-10-04T14:27:22.720Z"
+        },
+        {
+          "key": "oa-cma-decision",
+          "url": "https://assets.publishing.service.gov.uk/media/67fe26ef712bf73dea135449/____Full_text_decision__.pdf",
+          "status": 200,
+          "bytes": 306709,
+          "sha1": "57d298ff8899204d7ceae64167ce3f359524c3a0",
+          "at": "2026-10-04T14:27:25.915Z"
+        },
+        {
+          "key": "oa-leadership-2023-11-17",
+          "url": "https://openai.com/index/openai-announces-leadership-transition/",
+          "status": 200,
+          "bytes": 348743,
+          "sha1": "3103961e6d190ad06430e59a754abb66a33e6bf2",
+          "at": "2026-10-04T14:27:29.244Z"
+        },
+        {
+          "key": "oa-returns-2023-11-29",
+          "url": "https://openai.com/index/sam-altman-returns-as-ceo-openai-has-a-new-initial-board/",
+          "status": 200,
+          "bytes": 390152,
+          "sha1": "a9e089abd6b8a0b2be72066bc95455c9fb413a1d",
+          "at": "2026-10-04T14:27:32.970Z"
+        },
+        {
+          "key": "oa-review-2024-03-08",
+          "url": "https://openai.com/index/review-completed-altman-brockman-to-continue-to-lead-openai/",
+          "status": 200,
+          "bytes": 370301,
+          "sha1": "79747fa2980b6fb8bb370223b234f2f945e878c9",
+          "at": "2026-10-04T14:27:36.050Z"
+        },
+        {
+          "key": "oa-evolve-2024-12-27",
+          "url": "https://openai.com/index/why-our-structure-must-evolve-to-advance-our-mission/",
+          "status": 200,
+          "bytes": 366269,
+          "sha1": "b1036019c40ad41f4d48bf2c1dd3de3b6976a859",
+          "at": "2026-10-04T14:27:39.648Z"
+        },
+        {
+          "key": "oa-evolving-2025-05-05",
+          "url": "https://openai.com/index/evolving-our-structure/",
+          "status": 200,
+          "bytes": 350746,
+          "sha1": "6db519707d7f61be1954773d15fda591f66d7c53",
+          "at": "2026-10-04T14:27:42.697Z"
+        },
+        {
+          "key": "oa-pbc-certificate",
+          "url": "https://s3.documentcloud.org/documents/26205026/openai-pbc-articles-of-incorporation.pdf",
+          "status": 200,
+          "bytes": 3436774,
+          "sha1": "33477328e80d0a966951987315bcd7dc1d85ef90",
+          "at": "2026-10-04T14:27:45.711Z"
+        },
+        {
+          "key": "oa-deag-statement",
+          "url": "https://news.delaware.gov/files/2025/10/2025-10-28-OpenAI-DEAG-Statement-of-Nonobjection.pdf",
+          "status": 200,
+          "bytes": 316476,
+          "sha1": "ecb1e99b4ba0c0e26f302e566273af7a66311b33",
+          "at": "2026-10-04T14:27:50.706Z"
+        },
+        {
+          "key": "oa-caag-mou",
+          "url": "https://oag.ca.gov/system/files/attachments/press-docs/Final%20Executed%20MOU%20Between%20OpenAI%20and%20California%20AG%20re%20Notice%20of%20Conditions%20of%20Non-Objection%20%2810.27.2025%29%20%28Signed%20by%20OpenAI%29%20%28Signed%20by%20CA%20DOJ%29.pdf",
+          "status": 200,
+          "bytes": 184302,
+          "sha1": "b9cabd8212ed36c766d2fdd46d2753e6969d2038",
+          "at": "2026-10-04T14:27:55.369Z"
+        },
+        {
+          "key": "oa-our-structure",
+          "url": "https://openai.com/our-structure/",
+          "status": 200,
+          "bytes": 309133,
+          "sha1": "87c301590eecc21bbbead94f338e7b18916f6693",
+          "at": "2026-10-04T14:27:58.577Z"
+        },
+        {
+          "key": "oa-christiano-2026-09-09",
+          "url": "https://openai.com/index/paul-christiano-joins-openai-foundation-board/",
+          "status": 200,
+          "bytes": 412431,
+          "sha1": "ec7227ca6bf38d5cc46c6d36b41df412d3227bda",
+          "at": "2026-10-04T14:28:02.171Z"
+        },
+        {
+          "key": "oa-ssc-2024-09-16",
+          "url": "https://openai.com/index/update-on-safety-and-security-practices/",
+          "status": 200,
+          "bytes": 367688,
+          "sha1": "61868af9ee8f5fdfba87cb636944016a0a7226b0",
+          "at": "2026-10-04T14:28:05.233Z"
+        },
+        {
+          "key": "oa-nfpg-nov",
+          "url": "https://notforprivategain.org/november-update",
+          "status": 200,
+          "bytes": 311149,
+          "sha1": "de7b1c2a6f08d6dc23208c6c90e208634f0966d5",
+          "at": "2026-10-04T14:28:08.092Z"
+        },
+        {
+          "key": "oa-calmatters",
+          "url": "https://calmatters.org/economy/technology/2025/10/openai-restructuring-deal-full-of-holes-critics-say/",
+          "status": 200,
+          "bytes": 273490,
+          "sha1": "a94c84c102715eee58535fd85b05e34c0669488b",
+          "at": "2026-10-04T14:28:10.975Z"
+        },
+        {
+          "key": "oa-fortune-2026-07-22",
+          "url": "https://fortune.com/2026/07/22/openai-foundation-class-n-stock-board-control-ipo/",
+          "status": 200,
+          "bytes": 451314,
+          "sha1": "00c5d742e4493ef4f03a1384a3e34b857983f592",
+          "at": "2026-10-04T14:28:13.673Z"
+        },
+        {
+          "key": "wb-oa-lp-20190311161512",
+          "url": "https://web.archive.org/web/20190311161512id_/https://openai.com/blog/openai-lp/",
+          "status": 200,
+          "bytes": 24541,
+          "sha1": "5e45b3029fd88b784acf04622f7e28f2c38d523f",
+          "at": "2026-10-04T14:37:31.947Z"
+        },
+        {
+          "key": "wb-oa-leadership-20231117203025",
+          "url": "https://web.archive.org/web/20231117203025id_/https://openai.com/blog/openai-announces-leadership-transition",
+          "status": 200,
+          "bytes": 80594,
+          "sha1": "058b5d540d025cd141b7b704497d01899e8d07f4",
+          "at": "2026-10-04T14:37:42.557Z"
+        },
+        {
+          "key": "wb-oa-returns-20231130020514",
+          "url": "https://web.archive.org/web/20231130020514id_/https://openai.com/blog/sam-altman-returns-as-ceo-openai-has-a-new-initial-board",
+          "status": 200,
+          "bytes": 88296,
+          "sha1": "657ffc5f78f641dfa15da1b290399c74e02a5836",
+          "at": "2026-10-04T14:37:53.916Z"
+        },
+        {
+          "key": "wb-oa-review-20240308231408",
+          "url": "https://web.archive.org/web/20240308231408id_/https://openai.com/blog/review-completed-altman-brockman-to-continue-to-lead-openai",
+          "status": 200,
+          "bytes": 88041,
+          "sha1": "5599a56d0673a142e9821f77524f92e4f7671818",
+          "at": "2026-10-04T14:38:04.160Z"
+        },
+        {
+          "key": "wb-oa-evolve-20241227133453",
+          "url": "https://web.archive.org/web/20241227133453id_/https://openai.com/index/why-our-structure-must-evolve-to-advance-our-mission/",
+          "status": 200,
+          "bytes": 2219748,
+          "sha1": "ae9962a258864c1999544793d98eb442b02dfc9d",
+          "at": "2026-10-04T14:38:15.643Z"
+        },
+        {
+          "key": "wb-oa-evolving-20250505183006",
+          "url": "https://web.archive.org/web/20250505183006id_/https://openai.com/index/evolving-our-structure/",
+          "status": 200,
+          "bytes": 237568,
+          "sha1": "507ecb019790621c0eea17dc84a9d26673a7cff7",
+          "at": "2026-10-04T14:38:26.892Z"
+        },
+        {
+          "key": "wb-oa-structure-20251029172207",
+          "url": "https://web.archive.org/web/20251029172207id_/https://openai.com/our-structure/",
+          "status": 200,
+          "bytes": 230177,
+          "sha1": "ab5d8be4f4ea8c2ddb7afb5f2fa4756ace3332c7",
+          "at": "2026-10-04T14:38:37.352Z"
+        },
+        {
+          "key": "an-coi-2021-01-26",
+          "url": "https://drive.google.com/uc?export=download&id=1f7mYsm4px4pPdIzYo64wGePVNEHPZ0Ye",
+          "status": 200,
+          "bytes": 963980,
+          "sha1": "c45de4e748f36a4a99f46f44f50947b446dc881e",
+          "at": "2026-10-04T14:44:50.443Z"
+        },
+        {
+          "key": "an-coi-2021-05-24",
+          "url": "https://drive.google.com/uc?export=download&id=174JdAEuDR6L1IhvMJ_UiYD_ORQhxXlBw",
+          "status": 200,
+          "bytes": 1692380,
+          "sha1": "5b565871a32d94c2da6339e1fafecf69d7f4c068",
+          "at": "2026-10-04T14:44:55.445Z"
+        },
+        {
+          "key": "an-coi-2022-10-20",
+          "url": "https://drive.google.com/uc?export=download&id=1e-qh7KVciIpXQtYbZNiRJka_jybg9-1K",
+          "status": 200,
+          "bytes": 1705543,
+          "sha1": "047b2265d993628fe769979858afeda399b1cdf7",
+          "at": "2026-10-04T14:45:00.414Z"
+        },
+        {
+          "key": "an-coi-2023-03-31",
+          "url": "https://drive.google.com/uc?export=download&id=1i8Itsv7v7t32lQgzNRqiiO9j5HqSMUVj",
+          "status": 200,
+          "bytes": 2315371,
+          "sha1": "3444c23003aa8cdc10030ed422b465cf4a58ea81",
+          "at": "2026-10-04T14:45:05.172Z"
+        },
+        {
+          "key": "an-coi-2023-09-21",
+          "url": "https://drive.google.com/uc?export=download&id=1keKQ1bSWMICL9VbYa2llQRXO0tBc0YKd",
+          "status": 200,
+          "bytes": 2320417,
+          "sha1": "fb95f8bd3ad6b7077ca4666b81a6e344ae3be061",
+          "at": "2026-10-04T14:45:10.436Z"
+        },
+        {
+          "key": "an-coi-2024-01-29",
+          "url": "https://drive.google.com/uc?export=download&id=1TDPOkwshy__4eRVofr5LDyD_osoKusve",
+          "status": 200,
+          "bytes": 2477096,
+          "sha1": "02207c62ea83104a0ba7a99ef59693c3f2d23fcb",
+          "at": "2026-10-04T14:45:15.741Z"
+        },
+        {
+          "key": "an-coi-2024-05-20",
+          "url": "https://drive.google.com/uc?export=download&id=17szwAHptolxaQcmrSZL_uuYn5p-N6pex",
+          "status": 200,
+          "bytes": 435480,
+          "sha1": "b19c88556e89707ef920abe76aafd0d6b70eb046",
+          "at": "2026-10-04T14:45:20.063Z"
+        },
+        {
+          "key": "an-coi-2025-07-03",
+          "url": "https://drive.google.com/uc?export=download&id=1yeFKDaHN-3o7Zruvd-72De1H1K20Crsh",
+          "status": 200,
+          "bytes": 2616564,
+          "sha1": "267d723c557322c2bffbeb482655aacc59b72d10",
+          "at": "2026-10-04T14:45:24.973Z"
+        },
+        {
+          "key": "an-ltbt-current",
+          "url": "https://www.anthropic.com/news/the-long-term-benefit-trust",
+          "status": 200,
+          "bytes": 286656,
+          "sha1": "fd53320e84ea6dacdc82301fb70bb149f4d606a6",
+          "at": "2026-10-04T14:45:27.984Z"
+        },
+        {
+          "key": "an-hls-2023",
+          "url": "https://corpgov.law.harvard.edu/2023/10/28/anthropic-long-term-benefit-trust/",
+          "status": 200,
+          "bytes": 107492,
+          "sha1": "643c798a60a1197a935f1027b07a85ad154a71d2",
+          "at": "2026-10-04T14:45:31.117Z"
+        },
+        {
+          "key": "an-kreps",
+          "url": "https://www.anthropic.com/news/jay-kreps-appointed-to-board-of-directors",
+          "status": 200,
+          "bytes": 102937,
+          "sha1": "6024ed7fd7549df063e4669f6bb0301cc25e41af",
+          "at": "2026-10-04T14:45:34.037Z"
+        },
+        {
+          "key": "an-hastings",
+          "url": "https://www.anthropic.com/news/reed-hastings",
+          "status": 200,
+          "bytes": 103022,
+          "sha1": "c4f7b83eeec0b8105609117cb840ddc26af4ea7e",
+          "at": "2026-10-04T14:45:36.878Z"
+        },
+        {
+          "key": "an-narasimhan",
+          "url": "https://www.anthropic.com/news/narasimhan-board",
+          "status": 200,
+          "bytes": 106363,
+          "sha1": "7eddc1859dbf7e7a52d9fa53524456952046bd2f",
+          "at": "2026-10-04T14:45:39.754Z"
+        },
+        {
+          "key": "an-alw-powerless",
+          "url": "https://ailabwatch.org/blog/anthropic-trust-powerless",
+          "status": 200,
+          "bytes": 47581,
+          "sha1": "8e12888d89b3bab2349404f6ff02b5eb6ba42daa",
+          "at": "2026-10-04T14:45:42.956Z"
+        },
+        {
+          "key": "an-hls-2026",
+          "url": "https://corpgov.law.harvard.edu/2026/05/11/ai-corporate-governance-and-ben-jerrys-risk/",
+          "status": 200,
+          "bytes": 105754,
+          "sha1": "3f3d2966564a1685047f0cf075ea5aedd711ee8c",
+          "at": "2026-10-04T14:45:46.194Z"
+        },
+        {
+          "key": "an-time-2024",
+          "url": "https://time.com/6983420/anthropic-structure-openai-incentives/",
+          "status": 406,
+          "bytes": 0,
+          "sha1": "da39a3ee5e6b4b0d3255bfef95601890afd80709",
+          "at": "2026-10-04T14:45:49.043Z"
+        },
+        {
+          "key": "an-bernanke",
+          "url": "https://www.anthropic.com/news/ben-bernanke",
+          "status": 200,
+          "bytes": 105853,
+          "sha1": "0c0f73056bc9a8188aa6d4ebaf71e27235c7a172",
+          "at": "2026-10-04T14:45:51.907Z"
+        },
+        {
+          "key": "an-company",
+          "url": "https://www.anthropic.com/company",
+          "status": 200,
+          "bytes": 138262,
+          "sha1": "76644043b5158186ea67370666aba9a80b2da21b",
+          "at": "2026-10-04T14:45:54.884Z"
+        },
+        {
+          "key": "an-alw-folder",
+          "url": "https://drive.google.com/drive/folders/1ImqXYv9_H2FTNAujZfu3EPtYFD4xIlHJ",
+          "status": 200,
+          "bytes": 499329,
+          "sha1": "5acf873f2ffa6ca6b7079ff0ef959c3fbd24c96c",
+          "at": "2026-10-04T14:45:58.329Z"
+        },
+        {
+          "key": "an-alw-coi-post",
+          "url": "https://ailabwatch.org/blog/anthropic-certificate-of-incorporation",
+          "status": 200,
+          "bytes": 60916,
+          "sha1": "4d7583ab4a06287cfedac6019b990ebe8cb2c634",
+          "at": "2026-10-04T14:46:01.196Z"
+        },
+        {
+          "key": "wb-an-ltbt-20230925170803",
+          "url": "https://web.archive.org/web/20230925170803id_/https://www.anthropic.com/index/the-long-term-benefit-trust",
+          "status": 200,
+          "bytes": 39748,
+          "sha1": "8c3799bd6ef4ffa11323eaf0472ff0788b875a92",
+          "at": "2026-10-04T14:54:03.168Z"
+        },
+        {
+          "key": "wb-deag-20251028180042",
+          "url": "https://web.archive.org/web/20251028180042id_/https://news.delaware.gov/files/2025/10/2025-10-28-OpenAI-DEAG-Statement-of-Nonobjection.pdf",
+          "status": 200,
+          "bytes": 328257,
+          "sha1": "42544eae000c7568f39f5ea1c5944586de48f37a",
+          "at": "2026-10-04T14:57:50.134Z"
+        },
+        {
+          "key": "wb-deag-20251031110818",
+          "url": "https://web.archive.org/web/20251031110818id_/https://news.delaware.gov/files/2025/10/2025-10-28-OpenAI-DEAG-Statement-of-Nonobjection.pdf",
+          "status": 200,
+          "bytes": 316476,
+          "sha1": "ecb1e99b4ba0c0e26f302e566273af7a66311b33",
+          "at": "2026-10-04T14:58:00.496Z"
+        }
+      ],
+      "ok": 50,
+      "failed": 1,
+      "failures": [
+        {
+          "url": "https://time.com/6983420/anthropic-structure-openai-incentives/",
+          "error": "HTTP 406 to direct retrieval",
+          "workaround": "Not used; its phase-in report is replaced by a conflicting-dates stop citing AI Lab Watch and Anthropic."
+        },
+        {
+          "url": "https://x.com/OpenAI/status/1727206187077370115",
+          "error": "Not attempted: the post requires a signed-in client",
+          "workaround": "The 29 November 2023 OpenAI post is used for the new board."
+        }
+      ],
+      "browserFallback": []
+    },
+    "archives": {
+      "cdxLookups": 34,
+      "lookups": [
+        {
+          "key": "oa-lp-2019",
+          "url": "openai.com/blog/openai-lp/",
+          "captures": 5,
+          "first": "20190311161512"
+        },
+        {
+          "key": "oa-leadership-2023",
+          "url": "openai.com/blog/openai-announces-leadership-transition",
+          "captures": 5,
+          "first": "20231117203025"
+        },
+        {
+          "key": "oa-returns-2023",
+          "url": "openai.com/blog/sam-altman-returns-as-ceo-openai-has-a-new-initial-board",
+          "captures": 5,
+          "first": "20231130011001"
+        },
+        {
+          "key": "oa-review-2024",
+          "url": "openai.com/blog/review-completed-altman-brockman-to-continue-to-lead-openai",
+          "captures": 5,
+          "first": "20240308231408"
+        },
+        {
+          "key": "oa-evolve-2024",
+          "url": "openai.com/index/why-our-structure-must-evolve-to-advance-our-mission/",
+          "captures": 5,
+          "first": "20241227130529"
+        },
+        {
+          "key": "oa-evolving-2025",
+          "url": "openai.com/index/evolving-our-structure/",
+          "captures": 5,
+          "first": "20250505183006"
+        },
+        {
+          "key": "oa-structure-2025",
+          "url": "openai.com/our-structure/",
+          "captures": 5,
+          "first": "20251028235653"
+        },
+        {
+          "key": "oa-christiano-2026",
+          "url": "openai.com/index/paul-christiano-joins-openai-foundation-board/",
+          "captures": 5,
+          "first": "20260909212746"
+        },
+        {
+          "key": "oa-ssc-2024",
+          "url": "openai.com/index/update-on-safety-and-security-practices/",
+          "captures": 5,
+          "first": "20240916213802"
+        },
+        {
+          "key": "oa-cma",
+          "url": "assets.publishing.service.gov.uk/media/67fe26ef712bf73dea135449/____Full_text_decision__.pdf",
+          "captures": 5,
+          "first": "20250516110911"
+        },
+        {
+          "key": "oa-ecf111",
+          "url": "storage.courtlistener.com/recap/gov.uscourts.cand.403220/gov.uscourts.cand.403220.111.0.pdf",
+          "captures": 2,
+          "first": "20240102010146"
+        },
+        {
+          "key": "oa-pbc-cert",
+          "url": "s3.documentcloud.org/documents/26205026/openai-pbc-articles-of-incorporation.pdf",
+          "captures": 5,
+          "first": "20251029204930"
+        },
+        {
+          "key": "oa-deag",
+          "url": "news.delaware.gov/files/2025/10/2025-10-28-OpenAI-DEAG-Statement-of-Nonobjection.pdf",
+          "captures": 5,
+          "first": "20251028180042"
+        },
+        {
+          "key": "oa-caag",
+          "url": "oag.ca.gov/system/files/attachments/press-docs/Final%20Executed%20MOU%20Between%20OpenAI%20and%20California%20AG%20re%20Notice%20of%20Conditions%20of%20Non-Objection%20%2810.27.2025%29%20%28Signed%20by%20OpenAI%29%20%28Signed%20by%20CA%20DOJ%29.pdf",
+          "captures": 5,
+          "first": "20251028172022"
+        },
+        {
+          "key": "oa-990-2024",
+          "url": "projects.propublica.org/nonprofits/full_text/202513219349328476/IRS990",
+          "captures": 2,
+          "first": "20260210135859"
+        },
+        {
+          "key": "oa-990-2019r",
+          "url": "projects.propublica.org/nonprofits/full_text/202003219349325305/IRS990ScheduleR",
+          "captures": 4,
+          "first": "20231010151632"
+        },
+        {
+          "key": "oa-nfpg-nov",
+          "url": "notforprivategain.org/november-update",
+          "captures": 5,
+          "first": "20251103161256"
+        },
+        {
+          "key": "oa-calmatters",
+          "url": "calmatters.org/economy/technology/2025/10/openai-restructuring-deal-full-of-holes-critics-say/",
+          "captures": 5,
+          "first": "20251030124144"
+        },
+        {
+          "key": "an-ltbt-2023",
+          "url": "anthropic.com/index/the-long-term-benefit-trust",
+          "captures": 5,
+          "first": "20230925170803"
+        },
+        {
+          "key": "an-ltbt-news",
+          "url": "anthropic.com/news/the-long-term-benefit-trust",
+          "captures": 3,
+          "first": "20240120053142"
+        },
+        {
+          "key": "an-kreps",
+          "url": "anthropic.com/news/jay-kreps-appointed-to-board-of-directors",
+          "captures": 3,
+          "first": "20240529183159"
+        },
+        {
+          "key": "an-hastings",
+          "url": "anthropic.com/news/reed-hastings",
+          "captures": 3,
+          "first": "20250528163732"
+        },
+        {
+          "key": "an-narasimhan",
+          "url": "anthropic.com/news/narasimhan-board",
+          "captures": 3,
+          "first": "20260414173745"
+        },
+        {
+          "key": "an-hls-2023",
+          "url": "corpgov.law.harvard.edu/2023/10/28/anthropic-long-term-benefit-trust/",
+          "captures": 3,
+          "first": "20231028213321"
+        },
+        {
+          "key": "an-hls-2026",
+          "url": "corpgov.law.harvard.edu/2026/05/11/ai-corporate-governance-and-ben-jerrys-risk/",
+          "captures": 3,
+          "first": "20260511134402"
+        },
+        {
+          "key": "an-alw-powerless",
+          "url": "ailabwatch.org/blog/anthropic-trust-powerless",
+          "captures": 3,
+          "first": "20240529002837"
+        },
+        {
+          "key": "an-bernanke",
+          "url": "anthropic.com/news/ben-bernanke",
+          "captures": 3,
+          "first": "20260709163737"
+        },
+        {
+          "key": "an-drive-2021-01-26",
+          "url": "drive.google.com/file/d/1f7mYsm4px4pPdIzYo64wGePVNEHPZ0Ye/*",
+          "captures": 0,
+          "first": null
+        },
+        {
+          "key": "an-drive-2021-05-24",
+          "url": "drive.google.com/file/d/174JdAEuDR6L1IhvMJ_UiYD_ORQhxXlBw/*",
+          "captures": 0,
+          "first": null
+        },
+        {
+          "key": "an-drive-2023-03-31",
+          "url": "drive.google.com/file/d/1i8Itsv7v7t32lQgzNRqiiO9j5HqSMUVj/*",
+          "captures": 0,
+          "first": null
+        },
+        {
+          "key": "an-drive-2023-09-21",
+          "url": "drive.google.com/file/d/1keKQ1bSWMICL9VbYa2llQRXO0tBc0YKd/*",
+          "captures": 0,
+          "first": null
+        },
+        {
+          "key": "an-drive-2024-01-29",
+          "url": "drive.google.com/file/d/1TDPOkwshy__4eRVofr5LDyD_osoKusve/*",
+          "captures": 0,
+          "first": null
+        },
+        {
+          "key": "an-drive-2025-07-03",
+          "url": "drive.google.com/file/d/1yeFKDaHN-3o7Zruvd-72De1H1K20Crsh/*",
+          "captures": 0,
+          "first": null
+        },
+        {
+          "key": "oa-review-cdx",
+          "url": "openai.com/index/review-completed-altman-brockman-to-continue-to-lead-openai/",
+          "captures": 2,
+          "first": "20240507102735"
+        }
+      ],
+      "notes": [
+        "No Internet Archive capture exists for the ProPublica Form 990 renders (redirect captures only) or for the Google Drive copies of the Anthropic certificates; none was requested.",
+        "Captures were fetched and compared for the OpenAI posts of 2019-03-11, 2023-11-17, 2023-11-29, 2024-03-08, 2024-12-27 and 2025-05-05, the structure page of 2025-10-29, the Anthropic Trust page of 2023-09-25 and the Delaware letter of 2025-10-28 and 2025-10-31.",
+        "The CMA decision, the 2023 court disclosure, the OpenAI Group PBC certificate and the California memorandum were compared by SHA-1 with the CDX digests and are byte-identical to the cited captures."
+      ]
+    },
+    "quoteCheck": {
+      "method": "Every admitted quote was matched by the integrating session against its own direct fetch of the cited expression after removing invisible format characters, joining PDF line breaks after a dash or inside a hyphenated word, and collapsing whitespace; words, punctuation, quote marks and dashes must match. Quotes from scanned certificates without a reliable text layer were transcribed from the page images and compared visually; for the OpenAI Group PBC certificate the transcriptions were also compared with its OCR layer, where every difference was an OCR error. The text layer of Anthropic’s RSP v2.2 splits runs with direction marks and no spaces; two quotes from it were matched after also removing spaces, as their evidence notes say.",
+      "quotes": 55,
+      "mechanical": 41,
+      "spaceInsensitive": 0,
+      "matched": 41,
+      "visual": 14,
+      "failures": 0,
+      "alsoMatchedInArchiveCapture": 24
+    },
+    "leads": [
+      {
+        "lead": "oa-openai-inc-legal-form",
+        "disposition": "admitted as cs-openai-inc-legal-form-2024; the rename is the filer’s Schedule O statement, and the members-elect-directors explanation is context"
+      },
+      {
+        "lead": "oa-2019-lp-controlled-by-nonprofit-board",
+        "disposition": "admitted as cs-openai-lp-board-control-2019 (announced); the 2019 Schedule R relations are separate records, and the post’s caption naming OpenAI Nonprofit as general partner is kept as context beside them"
+      },
+      {
+        "lead": "oa-2019-capped-returns",
+        "disposition": "merged into cs-openai-lp-announced-2019, which records the announced creation of OpenAI LP with its cap"
+      },
+      {
+        "lead": "oa-2019-board-stake-voting-rule",
+        "disposition": "merged into cs-openai-lp-board-control-2019 as a quoted rule"
+      },
+      {
+        "lead": "oa-990-ty2019-gp-llc-controlled-by-openai-inc",
+        "disposition": "admitted as cs-openai-990-2019-inc-controls-gp-llc"
+      },
+      {
+        "lead": "oa-990-ty2019-lp-controlled-by-gp-llc",
+        "disposition": "admitted as cs-openai-990-2019-gp-llc-controls-lp; the general-or-managing-partner column (“Yes”) was added from the render markup"
+      },
+      {
+        "lead": "oa-microsoft-director-appointment-right",
+        "disposition": "not admitted: an unexercised right reported by the CMA, outside this bounded control timeline; the CMA decision is cited for other records"
+      },
+      {
+        "lead": "oa-lp-reestablished-as-opco-llc",
+        "disposition": "admitted as cs-openai-lp-to-opco-2023; the X.AI complaint’s formation and conversion dates were left out as a litigant’s pleading"
+      },
+      {
+        "lead": "oa-gp-llc-manager-of-opco",
+        "disposition": "admitted as cs-openai-gp-llc-manages-opco"
+      },
+      {
+        "lead": "oa-2023-11-17-altman-leaves-board",
+        "disposition": "admitted as cs-altman-board-departure-2023"
+      },
+      {
+        "lead": "oa-2023-11-17-brockman-ceases-chair",
+        "disposition": "admitted as cs-brockman-chair-departure-2023; the March 2024 summary’s reference to his removal is context"
+      },
+      {
+        "lead": "oa-2023-11-22-agreement-in-principle",
+        "disposition": "not admitted: the X post is not retrievable by direct HTTP; the 29 November 2023 post is used for the new board"
+      },
+      {
+        "lead": "oa-2023-11-29-new-initial-board",
+        "disposition": "admitted as cs-taylor-chair-initial-board-2023, cs-summers-initial-board-2023, cs-dangelo-initial-board-2023 and cs-sutskever-board-departure-2023"
+      },
+      {
+        "lead": "oa-microsoft-board-observer-right",
+        "disposition": "not admitted as a right: an observer seat is not a control right; the post’s sentence is context on the board record and an open question"
+      },
+      {
+        "lead": "oa-2024-03-08-board-changes",
+        "disposition": "admitted as cs-altman-board-return-2024; the three newly elected members were not added as people"
+      },
+      {
+        "lead": "oa-2024-09-ssc-release-delay-authority",
+        "disposition": "not admitted separately: the 2024 announcement is context on prov-delaware-ag-ssc-authority"
+      },
+      {
+        "lead": "oa-2024-12-27-planned-pbc",
+        "disposition": "admitted as cs-openai-structure-plan-2024 (a publication record of the plan)"
+      },
+      {
+        "lead": "oa-2025-05-05-nonprofit-to-retain-control",
+        "disposition": "admitted as cs-openai-nonprofit-retains-control-2025 (announced)"
+      },
+      {
+        "lead": "oa-cma-material-influence-not-control",
+        "disposition": "not admitted as a record: a regulator’s finding about influence is neither a control right nor a dispute between sources; cited in qualifications and an open question"
+      },
+      {
+        "lead": "oa-de-ag-statement-of-no-objection",
+        "disposition": "admitted as cs-delaware-ag-openai-statement-2025, with two quoted representations as provisions"
+      },
+      {
+        "lead": "oa-ca-ag-mou-notice-right",
+        "disposition": "not admitted: the California memorandum is context on the Delaware letter record"
+      },
+      {
+        "lead": "oa-group-pbc-incorporation",
+        "disposition": "admitted as cs-openai-group-pbc-legal-form-2025"
+      },
+      {
+        "lead": "oa-renamed-openai-foundation",
+        "disposition": "merged into cs-openai-inc-legal-form-2024"
+      },
+      {
+        "lead": "oa-class-n-director-election-right",
+        "disposition": "admitted as cs-openai-foundation-elects-pbc-directors and the provision prov-openai-group-pbc-cert-class-n-elections"
+      },
+      {
+        "lead": "oa-pbc-director-removal",
+        "disposition": "admitted as cs-openai-foundation-removes-pbc-directors and the provision prov-openai-group-pbc-cert-director-removal"
+      },
+      {
+        "lead": "oa-nfp-prior-approval-rights",
+        "disposition": "admitted as cs-openai-foundation-pre-approval-pbc and prov-openai-group-pbc-cert-class-n-pre-approval, based on the certificate’s five rights; the representation’s sixth right is context"
+      },
+      {
+        "lead": "oa-ssc-halt-authority-post-recap",
+        "disposition": "admitted as prov-delaware-ag-ssc-authority"
+      },
+      {
+        "lead": "oa-pbc-safety-mission-primacy",
+        "disposition": "admitted as prov-openai-group-pbc-cert-safety-mission"
+      },
+      {
+        "lead": "oa-kolter-ssc-chair",
+        "disposition": "not admitted: no person record was added for this role; the committee chair is named in the Christiano record"
+      },
+      {
+        "lead": "oa-microsoft-stake-group-pbc",
+        "disposition": "not admitted: an equity stake is not control"
+      },
+      {
+        "lead": "oa-990-ty2024-global-llc-controlled-by-gp-llc",
+        "disposition": "admitted as cs-openai-990-2024-gp-llc-controls-global"
+      },
+      {
+        "lead": "oa-foundation-members-elect-directors",
+        "disposition": "merged into cs-openai-inc-legal-form-2024 as context"
+      },
+      {
+        "lead": "oa-christiano-foundation-board",
+        "disposition": "admitted as cs-christiano-openai-foundation-board-2026"
+      },
+      {
+        "lead": "oa-assessment-recap-preserved-nonprofit-control",
+        "disposition": "admitted as cs-assessed-openai-recapitalization-control; the Fortune opinion article and the September 2026 update were left out as context"
+      },
+      {
+        "lead": "oa-x-microsoft-financial-interest-global-llc",
+        "disposition": "not admitted: a financial interest is not a control right"
+      },
+      {
+        "lead": "oa-x-softbank-10pct-interest-group-pbc",
+        "disposition": "not admitted: a financial interest is not a control right"
+      },
+      {
+        "lead": "oa-x-microsoft-openai-nonbinding-mou-2025-09",
+        "disposition": "not admitted: a commercial agreement outside this control timeline"
+      },
+      {
+        "lead": "oa-x-microsoft-openai-definitive-agreement-2025-10",
+        "disposition": "not admitted: a commercial agreement outside this control timeline"
+      },
+      {
+        "lead": "oa-x (35 pending)",
+        "disposition": "not admitted: never verified in week 4b and not re-researched in week 4c"
+      },
+      {
+        "lead": "an-pbc-incorporation-2021",
+        "disposition": "admitted as cs-anthropic-legal-form-2021"
+      },
+      {
+        "lead": "an-public-benefit-purpose-amended-2021",
+        "disposition": "merged into cs-anthropic-legal-form-2025, which records the 2021–2025 wording and its first appearance in the restated certificate of May 2021"
+      },
+      {
+        "lead": "an-ltbc-director-approval-2021",
+        "disposition": "admitted as cs-anthropic-ltbc-director-approval-2021 (recorded as a veto over director candidates)"
+      },
+      {
+        "lead": "an-class-t-authorized-2023-03-31",
+        "disposition": "merged into cs-anthropic-ltbt-elects-directors; the absence of the committee article from the 2023 certificate was not re-checked and is not stated"
+      },
+      {
+        "lead": "an-ltbt-announced-2023",
+        "disposition": "admitted as cs-anthropic-ltbt-described-2023 (a publication record; the Trust’s formation date is not recorded)"
+      },
+      {
+        "lead": "an-ltbt-class-t-elect-remove-directors",
+        "disposition": "admitted as cs-anthropic-ltbt-elects-directors and cs-anthropic-ltbt-removes-directors, based on the certificates"
+      },
+      {
+        "lead": "an-class-t-phase-in-2023",
+        "disposition": "admitted as prov-anthropic-coi-2023-09-21-class-t-phase-in"
+      },
+      {
+        "lead": "an-class-t-phase-in-amended-2024",
+        "disposition": "admitted as prov-anthropic-coi-2024-01-29-class-t-phase-in and the inferred comparison provchange-anthropic-coi-2024-01-29-class-t-phase-in"
+      },
+      {
+        "lead": "an-class-t-phase-in-dates-reported-2024",
+        "disposition": "not admitted: TIME returned HTTP 406 to direct retrieval; the dates are a conflicting-dates stop"
+      },
+      {
+        "lead": "an-electing-preferred-director-seat",
+        "disposition": "not admitted: investor seat outside this bounded selection"
+      },
+      {
+        "lead": "an-class-t-protective-consent",
+        "disposition": "admitted as cs-anthropic-ltbt-class-t-consent (read in the certificate filed 2025-07-03)"
+      },
+      {
+        "lead": "an-class-t-notice-right",
+        "disposition": "not admitted: bounded selection"
+      },
+      {
+        "lead": "an-class-t-no-dividends-limited-vote",
+        "disposition": "not admitted: bounded selection"
+      },
+      {
+        "lead": "an-class-t-amendment-threshold",
+        "disposition": "not admitted: whether stockholders can change the Trust is a legal-effect stop"
+      },
+      {
+        "lead": "an-ceo-deadlock-vote",
+        "disposition": "not admitted: bounded selection"
+      },
+      {
+        "lead": "an-electing-preferred-61pct-2024",
+        "disposition": "not admitted: whether the clause is a veto is a legal-effect stop"
+      },
+      {
+        "lead": "an-ltbt-stockholder-failsafe",
+        "disposition": "merged into cs-anthropic-ltbt-described-2023 as Anthropic’s description; its legal effect is a stop"
+      },
+      {
+        "lead": "an-ltbt-enforcement-stockholders",
+        "disposition": "context on cs-assessed-anthropic-ltbt-independence"
+      },
+      {
+        "lead": "an-ltbt-trustee-selection",
+        "disposition": "merged into cs-anthropic-ltbt-described-2023"
+      },
+      {
+        "lead": "an-kreps-board-2024",
+        "disposition": "admitted as cs-kreps-anthropic-board-2024"
+      },
+      {
+        "lead": "an-hastings-board-2025",
+        "disposition": "admitted as cs-hastings-anthropic-board-2025"
+      },
+      {
+        "lead": "an-liddell-board-2026",
+        "disposition": "not admitted: the announcement does not say which body appointed him; named in the Narasimhan record"
+      },
+      {
+        "lead": "an-trust-majority-2026",
+        "disposition": "merged into cs-narasimhan-anthropic-board-2026"
+      },
+      {
+        "lead": "an-ltbt-initial-trustees-2023",
+        "disposition": "merged into cs-anthropic-ltbt-described-2023; Paul Christiano’s term is cs-christiano-anthropic-ltbt-trustee"
+      },
+      {
+        "lead": "an-fontaine-trustee-2025",
+        "disposition": "not admitted: later Trustees not already in the dataset were not added"
+      },
+      {
+        "lead": "an-cuellar-trustee-2026",
+        "disposition": "not admitted: later Trustees not already in the dataset were not added"
+      },
+      {
+        "lead": "an-bernanke-trustee-2026",
+        "disposition": "not admitted as a role; the announcement is supporting evidence in cs-assessed-anthropic-ltbt-independence"
+      },
+      {
+        "lead": "an-cma-alphabet-no-material-influence-2024",
+        "disposition": "not admitted: investor-rights findings outside this bounded selection"
+      },
+      {
+        "lead": "an-google-no-board-or-voting-rights",
+        "disposition": "not admitted: investor rights outside this bounded selection"
+      },
+      {
+        "lead": "an-cma-amazon-material-influence-not-decided-2024",
+        "disposition": "not admitted: investor-rights findings outside this bounded selection"
+      },
+      {
+        "lead": "an-amazon-nonvoting-holdings",
+        "disposition": "not admitted: investor holdings outside this bounded selection"
+      },
+      {
+        "lead": "an-assess-ltbt-independent-check",
+        "disposition": "admitted as cs-assessed-anthropic-ltbt-independence; TIME (not retrievable) was replaced by Anthropic’s Bernanke announcement on the supporting side and the Fried and Reiter post on the disputing side"
+      }
+    ],
+    "corrections": [
+      "The 2023 OpenAI OpCo disclosure is identified as Doe v. GitHub, Inc., N.D. Cal. No. 4:22-cv-06823-JST, ECF No. 111, filed 2023-06-29.",
+      "The tax year 2019 Schedule R answers “Yes” in the general-or-managing-partner column for OpenAI LP; the 2019 post’s caption names OpenAI Nonprofit as the paperwork’s general partner. Both are kept, and an open question records that neither settles the entity in law.",
+      "The Schedule R legal-domicile code for OpenAI GP LLC and OpenAI LP is CA, while the 2023 court filing calls both Delaware entities; the code is noted and not used.",
+      "The tax year 2024 schedule names the GP LLC’s controlling entity “OpenAI Foundation”, the post-tax-year name.",
+      "The Delaware letter served on 2026-10-04 is byte-identical to the 2025-10-31 capture; the 2025-10-28 capture differs only by the recipient’s e-mail address.",
+      "The Delaware representation lists six prior-approval rights; the filed certificate has five. Both are recorded with the difference stated.",
+      "The 2019 capture of the OpenAI LP post uses straight quotation marks and a different standfirst; only passages identical in both expressions are quoted.",
+      "CalMatters shows two dates (29 and 30 October 2025); the source is dated to the month.",
+      "The certificate quotes for OpenAI Group PBC and Anthropic were re-transcribed from page images; differences from the OCR layer (for example “OpenAl”, “Ill”) are OCR errors.",
+      "The Anthropic phase-in change is placed between the certificates of 2023-09-21 and 2024-01-29, each read from its page image; the 2023-03-31 certificate has the same wording as 2023-09-21.",
+      "Anthropic’s April 2026 announcement names seven directors while the latest inspected certificate fixes five; recorded as an open question, not resolved."
+    ],
+    "contested": {
+      "records": [
+        "cs-assessed-openai-recapitalization-control",
+        "cs-assessed-anthropic-ltbt-independence"
+      ],
+      "packet": "review/week4c-contested-for-cross-model.md",
+      "status": "Different-model check pending; required by the editorial policy before merge to main."
+    }
+  },
+  "part2": {
+    "date": "2026-10-04",
+    "topics": [
+      "B. White House voluntary AI commitments (July and September 2023)",
+      "B. Frontier AI Safety Commitments (AI Seoul Summit, 2024)",
+      "B. EU General-Purpose AI Code of Practice (2025)"
+    ],
+    "admitted": {
+      "claims": 84,
+      "byType": {
+        "changes_from": 1,
+        "declined_commitment": 1,
+        "published": 4,
+        "references_commitment": 13,
+        "signed_commitment": 48,
+        "states_provision": 17
+      },
+      "evidence": 112,
+      "newSources": 19,
+      "updatedSources": [],
+      "newEntities": 22
+    },
+    "retrieval": {
+      "fetched": [
+        {
+          "key": "wh-text-2023-07",
+          "url": "https://bidenwhitehouse.archives.gov/wp-content/uploads/2023/07/Ensuring-Safe-Secure-and-Trustworthy-AI.pdf",
+          "status": 200,
+          "bytes": 138097,
+          "sha1": "b81b1d0a80b9832eeefa81b1e431179a90c41d96",
+          "at": "2026-10-04T15:45:46.465Z"
+        },
+        {
+          "key": "wh-factsheet-2023-07",
+          "url": "https://bidenwhitehouse.archives.gov/briefing-room/statements-releases/2023/07/21/fact-sheet-biden-harris-administration-secures-voluntary-commitments-from-leading-artificial-intelligence-companies-to-manage-the-risks-posed-by-ai/",
+          "status": 200,
+          "bytes": 147239,
+          "sha1": "dbc99b9c7343799fb612ba72797e01453e3625bc",
+          "at": "2026-10-04T15:45:49.102Z"
+        },
+        {
+          "key": "wh-text-2023-09",
+          "url": "https://bidenwhitehouse.archives.gov/wp-content/uploads/2023/09/Voluntary-AI-Commitments-September-2023.pdf",
+          "status": 200,
+          "bytes": 194408,
+          "sha1": "dfb3dcd8e08b9a6767bc7aa1e4169181e56217e6",
+          "at": "2026-10-04T15:45:51.913Z"
+        },
+        {
+          "key": "wh-factsheet-2023-09",
+          "url": "https://bidenwhitehouse.archives.gov/briefing-room/statements-releases/2023/09/12/fact-sheet-biden-harris-administration-secures-voluntary-commitments-from-eight-additional-artificial-intelligence-companies-to-manage-the-risks-posed-by-ai/",
+          "status": 200,
+          "bytes": 147825,
+          "sha1": "60fb34fb4f6a4974ca5af6899a852389d6c161cc",
+          "at": "2026-10-04T15:45:54.880Z"
+        },
+        {
+          "key": "wh-factsheet-2024-07-26",
+          "url": "https://bidenwhitehouse.archives.gov/briefing-room/statements-releases/2024/07/26/fact-sheet-biden-harris-administration-announces-new-ai-actions-and-receives-additional-major-voluntary-commitment-on-ai/",
+          "status": 200,
+          "bytes": 159250,
+          "sha1": "d745cebee30fcf5266f232d74d6ef5e82e2625a6",
+          "at": "2026-10-04T15:45:58.094Z"
+        },
+        {
+          "key": "fw-rsp-1-0",
+          "url": "https://www-cdn.anthropic.com/1adf000c8f675958c2ee23805d91aaade1cd4613/responsible-scaling-policy.pdf",
+          "status": 200,
+          "bytes": 527694,
+          "sha1": "1adf000c8f675958c2ee23805d91aaade1cd4613",
+          "at": "2026-10-04T15:46:00.872Z"
+        },
+        {
+          "key": "fw-rsp-2-0",
+          "url": "https://www-cdn.anthropic.com/616dee633636e5bd309cb73aed8622e80fe47839.pdf",
+          "status": 200,
+          "bytes": 336390,
+          "sha1": "616dee633636e5bd309cb73aed8622e80fe47839",
+          "at": "2026-10-04T15:46:03.447Z"
+        },
+        {
+          "key": "fw-rsp-2-1",
+          "url": "https://www-cdn.anthropic.com/17310f6d70ae5627f55313ed067afc1a762a4068.pdf",
+          "status": 200,
+          "bytes": 625648,
+          "sha1": "17310f6d70ae5627f55313ed067afc1a762a4068",
+          "at": "2026-10-04T15:46:06.026Z"
+        },
+        {
+          "key": "fw-rsp-2-2",
+          "url": "https://www-cdn.anthropic.com/872c653b2d0501d6ab44cf87f43e1dc4853e4d37.pdf",
+          "status": 200,
+          "bytes": 342638,
+          "sha1": "872c653b2d0501d6ab44cf87f43e1dc4853e4d37",
+          "at": "2026-10-04T15:46:08.630Z"
+        },
+        {
+          "key": "se-text",
+          "url": "https://www.gov.uk/government/publications/frontier-ai-safety-commitments-ai-seoul-summit-2024/frontier-ai-safety-commitments-ai-seoul-summit-2024",
+          "status": 200,
+          "bytes": 81551,
+          "sha1": "e94733277491eb081f2ce3d64b2ae1e846d02691",
+          "at": "2026-10-04T15:46:11.543Z"
+        },
+        {
+          "key": "se-landing",
+          "url": "https://www.gov.uk/government/publications/frontier-ai-safety-commitments-ai-seoul-summit-2024",
+          "status": 200,
+          "bytes": 69313,
+          "sha1": "96c40789792031b9d07c7420ca93b855e20bbef4",
+          "at": "2026-10-04T15:46:14.255Z"
+        },
+        {
+          "key": "se-api",
+          "url": "https://www.gov.uk/api/content/government/publications/frontier-ai-safety-commitments-ai-seoul-summit-2024",
+          "status": 200,
+          "bytes": 13078,
+          "sha1": "cf2d808f9f9c1c0e6a5c23998e6cb06966b21703",
+          "at": "2026-10-04T15:46:16.848Z"
+        },
+        {
+          "key": "se-press",
+          "url": "https://www.gov.uk/government/news/historic-first-as-companies-spanning-north-america-asia-europe-and-middle-east-agree-safety-commitments-on-development-of-ai",
+          "status": 200,
+          "bytes": 123307,
+          "sha1": "c20d915f6b2e7bc233c95d12ab115406ad355782",
+          "at": "2026-10-04T15:46:19.497Z"
+        },
+        {
+          "key": "fw-ms-fgf-2025",
+          "url": "https://cdn-dynmedia-1.microsoft.com/is/content/microsoftcorp/microsoft/final/en-us/microsoft-brand/documents/Microsoft-Frontier-Governance-Framework.pdf",
+          "status": 200,
+          "bytes": 304300,
+          "sha1": "2c65381fd2aa1f7c9181e7918c3c0721dc94b4cb",
+          "at": "2026-10-04T15:46:22.344Z"
+        },
+        {
+          "key": "fw-ms-fgf-2026",
+          "url": "https://cdn-dynmedia-1.microsoft.com/is/content/microsoftcorp/microsoft/msc/documents/presentations/CSR/Frontier-Governance-Framework-Feb-2026.pdf",
+          "status": 200,
+          "bytes": 831043,
+          "sha1": "a8cc12603b7e214b38249bb1e2a38727568626bd",
+          "at": "2026-10-04T15:46:24.987Z"
+        },
+        {
+          "key": "eu-news-2025-07-10",
+          "url": "https://digital-strategy.ec.europa.eu/en/news/general-purpose-ai-code-practice-now-available",
+          "status": 200,
+          "bytes": 48595,
+          "sha1": "1df2d1d463f04f2bc756556eb47944e44b975081",
+          "at": "2026-10-04T15:46:28.004Z"
+        },
+        {
+          "key": "eu-contents",
+          "url": "https://digital-strategy.ec.europa.eu/en/policies/contents-code-gpai",
+          "status": 200,
+          "bytes": 60275,
+          "sha1": "f888528f64b8bc39a9fb86b40a6db67108e162bd",
+          "at": "2026-10-04T15:46:30.608Z"
+        },
+        {
+          "key": "eu-ss-chapter",
+          "url": "https://ec.europa.eu/newsroom/dae/redirection/document/118119",
+          "status": 200,
+          "bytes": 1050925,
+          "sha1": "adadc0ed0c6fe0a3b4626c59b8ee76a55cbea03d",
+          "at": "2026-10-04T15:46:34.440Z"
+        },
+        {
+          "key": "eu-signing-faq",
+          "url": "https://digital-strategy.ec.europa.eu/en/faqs/signing-general-purpose-ai-code-practice",
+          "status": 200,
+          "bytes": 57037,
+          "sha1": "980e33e1c385e0f5bd8f0265f46ea30c9b71935d",
+          "at": "2026-10-04T15:46:37.112Z"
+        },
+        {
+          "key": "eu-opinion",
+          "url": "https://ec.europa.eu/newsroom/dae/redirection/document/118688",
+          "status": 200,
+          "bytes": 292516,
+          "sha1": "9c3e8d3c9b15c02a3dc36333ea4726102c60fbd2",
+          "at": "2026-10-04T15:46:40.689Z"
+        },
+        {
+          "key": "eu-openai-intent",
+          "url": "https://openai.com/global-affairs/eu-code-of-practice/",
+          "status": 200,
+          "bytes": 438204,
+          "sha1": "e83798f65eaa0c90a9db60c4b4a61f4eaf03a4da",
+          "at": "2026-10-04T15:46:44.701Z"
+        },
+        {
+          "key": "eu-anthropic-intent",
+          "url": "https://www.anthropic.com/news/eu-code-practice",
+          "status": 200,
+          "bytes": 107394,
+          "sha1": "bb45c85a6b58a5a2d804185ce2d4aa5e07a332c8",
+          "at": "2026-10-04T15:46:47.694Z"
+        },
+        {
+          "key": "eu-google-intent",
+          "url": "https://blog.google/around-the-globe/google-europe/eu-ai-code-practice/",
+          "status": 200,
+          "bytes": 389859,
+          "sha1": "73eeb14e375ef40d4ce8db8803115fc03c75537c",
+          "at": "2026-10-04T15:46:51.074Z"
+        },
+        {
+          "key": "eu-xai-oembed",
+          "url": "https://publish.twitter.com/oembed?url=https://x.com/xai/status/1950828488405254268",
+          "status": 200,
+          "bytes": 947,
+          "sha1": "e1af2890accc5d859f5ad671b952729dcb8c99fa",
+          "at": "2026-10-04T15:46:54.270Z"
+        },
+        {
+          "key": "eu-meta-cnbc",
+          "url": "https://www.cnbc.com/2025/07/18/meta-europe-ai-code.html",
+          "status": 200,
+          "bytes": 808293,
+          "sha1": "290ae9bd2b7670635308094523272df919b63fdd",
+          "at": "2026-10-04T15:46:57.747Z"
+        },
+        {
+          "key": "eu-meta-linkedin",
+          "url": "https://www.linkedin.com/posts/joel-kaplan-63905618_europe-is-heading-down-the-wrong-path-on-activity-7351928745668055042-XuF7/",
+          "status": 200,
+          "bytes": 258013,
+          "sha1": "c6667ae23ff010aae86c9db9e22133a2807031d3",
+          "at": "2026-10-04T15:47:01.546Z"
+        },
+        {
+          "key": "fw-fgf-2026",
+          "url": "https://cdn.openai.com/pdf/e37d949b-8c9f-4d76-b99e-4272f4631a7e/openai-frontier-governance-framework.pdf",
+          "status": 200,
+          "bytes": 6136955,
+          "sha1": "4bae214518afcf75b32a79ae3fa7b6c5e580ff81",
+          "at": "2026-10-04T15:47:06.897Z"
+        },
+        {
+          "key": "fw-faif-2026",
+          "url": "https://media.x.ai/v1/website/xai-frontier-artificial-intelligence-framework-30-june-2026-99c40684.pdf",
+          "status": 200,
+          "bytes": 203142,
+          "sha1": "c09343408589337f5a321f55b5201ef423c805ea",
+          "at": "2026-10-04T15:47:09.636Z"
+        },
+        {
+          "key": "wb-fw-meta-faf-v1-1-20250213105620",
+          "url": "https://web.archive.org/web/20250213105620id_/https://ai.meta.com/static-resource/meta-frontier-ai-framework/",
+          "status": 200,
+          "bytes": 14652734,
+          "sha1": "f9f1ba77e43c1ea5282f0e7e4a1f9887f3d9e105",
+          "at": "2026-10-04T15:47:29.148Z"
+        },
+        {
+          "key": "wb-eu-contents-20250731152731",
+          "url": "https://web.archive.org/web/20250731152731id_/https://digital-strategy.ec.europa.eu/en/policies/contents-code-gpai",
+          "status": 200,
+          "bytes": 52821,
+          "sha1": "41ae8c1811af18fa6095e7d49c5df5d5a8f34a3d",
+          "at": "2026-10-04T15:57:30.959Z"
+        },
+        {
+          "key": "wb-eu-contents-20250801130439",
+          "url": "https://web.archive.org/web/20250801130439id_/https://digital-strategy.ec.europa.eu/en/policies/contents-code-gpai",
+          "status": 200,
+          "bytes": 56800,
+          "sha1": "90f6b1d166ea14ac7f57c5cf3ab1388a45c0dc8b",
+          "at": "2026-10-04T15:57:40.958Z"
+        },
+        {
+          "key": "wb-se-text-20240521110530",
+          "url": "https://web.archive.org/web/20240521110530id_/https://www.gov.uk/government/publications/frontier-ai-safety-commitments-ai-seoul-summit-2024/frontier-ai-safety-commitments-ai-seoul-summit-2024",
+          "status": 200,
+          "bytes": 92975,
+          "sha1": "4fd8591d446401f134b84c878f94eb459094a9f5",
+          "at": "2026-10-04T15:57:51.040Z"
+        },
+        {
+          "key": "wb-se-text-20250209184608",
+          "url": "https://web.archive.org/web/20250209184608id_/https://www.gov.uk/government/publications/frontier-ai-safety-commitments-ai-seoul-summit-2024/frontier-ai-safety-commitments-ai-seoul-summit-2024",
+          "status": 200,
+          "bytes": 81298,
+          "sha1": "34fd0c03a6fab1836cb5804c0cb6ee1bcc49806f",
+          "at": "2026-10-04T15:58:01.376Z"
+        },
+        {
+          "key": "wb-wh-fs-2023-07-20230721105339",
+          "url": "https://web.archive.org/web/20230721105339id_/https://www.whitehouse.gov/briefing-room/statements-releases/2023/07/21/fact-sheet-biden-harris-administration-secures-voluntary-commitments-from-leading-artificial-intelligence-companies-to-manage-the-risks-posed-by-ai/",
+          "status": 200,
+          "bytes": 137539,
+          "sha1": "b91fe8256b39894c179be3deaea73bda66141583",
+          "at": "2026-10-04T15:58:11.994Z"
+        },
+        {
+          "key": "wb-wh-fs-2023-09-20230912103413",
+          "url": "https://web.archive.org/web/20230912103413id_/https://www.whitehouse.gov/briefing-room/statements-releases/2023/09/12/fact-sheet-biden-harris-administration-secures-voluntary-commitments-from-eight-additional-artificial-intelligence-companies-to-manage-the-risks-posed-by-ai/",
+          "status": 200,
+          "bytes": 183208,
+          "sha1": "5824ea0a2a83aea4dba65bdcadd0d4185830a815",
+          "at": "2026-10-04T15:58:23.644Z"
+        },
+        {
+          "key": "wb-wh-fs-2024-07-20240726154325",
+          "url": "https://web.archive.org/web/20240726154325id_/https://www.whitehouse.gov/briefing-room/statements-releases/2024/07/26/fact-sheet-biden-harris-administration-announces-new-ai-actions-and-receives-additional-major-voluntary-commitment-on-ai/",
+          "status": 200,
+          "bytes": 137033,
+          "sha1": "64bc3928f20ce6dfefe54e1fc4551741efbfb135",
+          "at": "2026-10-04T15:58:33.831Z"
+        },
+        {
+          "key": "wb-eu-ss-chapter-20250710105829",
+          "url": "https://web.archive.org/web/20250710105829id_/https://ec.europa.eu/newsroom/dae/redirection/document/118119",
+          "status": 200,
+          "bytes": 795519,
+          "sha1": "fdf362151a3fbb134b8044f767f85ddf9e703bc3",
+          "at": "2026-10-04T15:59:00.918Z"
+        }
+      ],
+      "ok": 37,
+      "failed": 0,
+      "failures": [
+        {
+          "url": "https://x.com/xai/status/1950828488405254268",
+          "error": "Not fetched: the post page requires a signed-in client",
+          "workaround": "Read through the public oEmbed endpoint (publish.twitter.com); recorded as a paraphrase."
+        }
+      ],
+      "browserFallback": []
+    },
+    "archives": {
+      "cdxLookups": 18,
+      "lookups": [
+        {
+          "key": "eu-contents-aug25",
+          "url": "digital-strategy.ec.europa.eu/en/policies/contents-code-gpai",
+          "captures": 4,
+          "first": "20250731152731"
+        },
+        {
+          "key": "eu-ss-chapter",
+          "url": "ec.europa.eu/newsroom/dae/redirection/document/118119",
+          "captures": 5,
+          "first": "20250710105829"
+        },
+        {
+          "key": "eu-opinion",
+          "url": "ec.europa.eu/newsroom/dae/redirection/document/118688",
+          "captures": 5,
+          "first": "20250813092236"
+        },
+        {
+          "key": "eu-news-2025-07-10",
+          "url": "digital-strategy.ec.europa.eu/en/news/general-purpose-ai-code-practice-now-available",
+          "captures": 3,
+          "first": "20250710132112"
+        },
+        {
+          "key": "eu-signing-faq",
+          "url": "digital-strategy.ec.europa.eu/en/faqs/signing-general-purpose-ai-code-practice",
+          "captures": 3,
+          "first": "20250717162926"
+        },
+        {
+          "key": "eu-openai-intent",
+          "url": "openai.com/global-affairs/eu-code-of-practice/",
+          "captures": 3,
+          "first": "20250713214150"
+        },
+        {
+          "key": "eu-anthropic-intent",
+          "url": "anthropic.com/news/eu-code-practice",
+          "captures": 3,
+          "first": "20250721093914"
+        },
+        {
+          "key": "eu-google-intent",
+          "url": "blog.google/around-the-globe/google-europe/eu-ai-code-practice/",
+          "captures": 3,
+          "first": "20250730084135"
+        },
+        {
+          "key": "eu-meta-cnbc",
+          "url": "cnbc.com/2025/07/18/meta-europe-ai-code.html",
+          "captures": 3,
+          "first": "20250718155313"
+        },
+        {
+          "key": "se-text-cdx",
+          "url": "gov.uk/government/publications/frontier-ai-safety-commitments-ai-seoul-summit-2024/frontier-ai-safety-commitments-ai-seoul-summit-2024",
+          "captures": 4,
+          "first": "20240521110530"
+        },
+        {
+          "key": "se-text-cdx-2025",
+          "url": "gov.uk/government/publications/frontier-ai-safety-commitments-ai-seoul-summit-2024/frontier-ai-safety-commitments-ai-seoul-summit-2024",
+          "captures": 3,
+          "first": "20250209184608"
+        },
+        {
+          "key": "se-press-cdx",
+          "url": "gov.uk/government/news/historic-first-as-companies-spanning-north-america-asia-europe-and-middle-east-agree-safety-commitments-on-development-of-ai",
+          "captures": 3,
+          "first": "20240521100652"
+        },
+        {
+          "key": "wh-text-2023-07-cdx",
+          "url": "bidenwhitehouse.archives.gov/wp-content/uploads/2023/07/Ensuring-Safe-Secure-and-Trustworthy-AI.pdf",
+          "captures": 3,
+          "first": "20250122014825"
+        },
+        {
+          "key": "wh-text-2023-07-orig",
+          "url": "whitehouse.gov/wp-content/uploads/2023/07/Ensuring-Safe-Secure-and-Trustworthy-AI.pdf",
+          "captures": 3,
+          "first": "20230721141250"
+        },
+        {
+          "key": "wh-text-2023-09-orig",
+          "url": "whitehouse.gov/wp-content/uploads/2023/09/Voluntary-AI-Commitments-September-2023.pdf",
+          "captures": 2,
+          "first": "20230912193016"
+        },
+        {
+          "key": "wh-fs-2023-07-orig",
+          "url": "whitehouse.gov/briefing-room/statements-releases/2023/07/21/fact-sheet-biden-harris-administration-secures-voluntary-commitments-from-leading-artificial-intelligence-companies-to-manage-the-risks-posed-by-ai/",
+          "captures": 3,
+          "first": "20230721105339"
+        },
+        {
+          "key": "wh-fs-2023-09-orig",
+          "url": "whitehouse.gov/briefing-room/statements-releases/2023/09/12/fact-sheet-biden-harris-administration-secures-voluntary-commitments-from-eight-additional-artificial-intelligence-companies-to-manage-the-risks-posed-by-ai/",
+          "captures": 3,
+          "first": "20230912103413"
+        },
+        {
+          "key": "wh-fs-2024-07-orig",
+          "url": "whitehouse.gov/briefing-room/statements-releases/2024/07/26/fact-sheet-biden-harris-administration-announces-new-ai-actions-and-receives-additional-major-voluntary-commitment-on-ai/",
+          "captures": 3,
+          "first": "20240726154325"
+        }
+      ],
+      "notes": [
+        "Captures were fetched and compared for the three White House fact sheets (2023-07-21, 2023-09-12, 2024-07-26), the GOV.UK commitments text (2024-05-21 and 2025-02-09), the Commission signatory page (2025-07-31 and 2025-08-01), the Safety and Security chapter (2025-07-10) and Meta’s Frontier AI Framework v1.1 (2025-02-13).",
+        "No capture is cited for the LinkedIn post or the X post."
+      ]
+    },
+    "quoteCheck": {
+      "method": "Every admitted quote was matched by the integrating session against its own direct fetch of the cited expression after removing invisible format characters, joining PDF line breaks after a dash or inside a hyphenated word, and collapsing whitespace; words, punctuation, quote marks and dashes must match. Quotes from scanned certificates without a reliable text layer were transcribed from the page images and compared visually; for the OpenAI Group PBC certificate the transcriptions were also compared with its OCR layer, where every difference was an OCR error. The text layer of Anthropic’s RSP v2.2 splits runs with direction marks and no spaces; two quotes from it were matched after also removing spaces, as their evidence notes say.",
+      "quotes": 55,
+      "mechanical": 55,
+      "spaceInsensitive": 2,
+      "matched": 55,
+      "visual": 0,
+      "failures": 0,
+      "alsoMatchedInArchiveCapture": 30
+    },
+    "addedWithoutLead": [
+      "cm-eu-code-cohere, cm-eu-code-ibm and cm-eu-code-mistral-ai: listings of organisations already in the dataset, read from the same Commission list.",
+      "provchange-wh-2023-09-scope: the inferred comparison of the two scope clauses.",
+      "The two intent records cm-eu-code-intent-anthropic and cm-eu-code-intent-google, split from context evidence of the week 4b listing leads."
+    ],
+    "leads": [
+      {
+        "lead": "wh-doc-2023-07-published",
+        "disposition": "admitted as cm-wh-2023-07-published"
+      },
+      {
+        "lead": "wh-doc-2023-09-published",
+        "disposition": "admitted as cm-wh-2023-09-published; the PDF is undated and is dated by the fact sheet that linked it"
+      },
+      {
+        "lead": "wh-2023-07-scope",
+        "disposition": "admitted as prov-wh-2023-07-scope"
+      },
+      {
+        "lead": "wh-2023-07-duration",
+        "disposition": "admitted as prov-wh-2023-07-duration"
+      },
+      {
+        "lead": "wh-2023-07-c1-red-teaming",
+        "disposition": "admitted as prov-wh-2023-07-red-teaming"
+      },
+      {
+        "lead": "wh-2023-07-c2-information-sharing",
+        "disposition": "not admitted: bounded selection of provisions; not re-verified"
+      },
+      {
+        "lead": "wh-2023-07-c3-model-weights",
+        "disposition": "admitted as prov-wh-2023-07-model-weights"
+      },
+      {
+        "lead": "wh-2023-07-c4-vulnerability-reporting",
+        "disposition": "not admitted: bounded selection of provisions; not re-verified"
+      },
+      {
+        "lead": "wh-2023-07-c5-provenance",
+        "disposition": "not admitted: bounded selection of provisions; not re-verified"
+      },
+      {
+        "lead": "wh-2023-07-c6-public-reporting",
+        "disposition": "admitted as prov-wh-2023-07-public-reporting"
+      },
+      {
+        "lead": "wh-2023-09-scope",
+        "disposition": "admitted as prov-wh-2023-09-scope, with the inferred comparison provchange-wh-2023-09-scope added by the integrating session"
+      },
+      {
+        "lead": "wh-signatory-amazon",
+        "disposition": "admitted as cm-wh-2023-07-amazon (listed, dated by the White House fact sheet); company announcements cited in week 4b were not used"
+      },
+      {
+        "lead": "wh-signatory-anthropic",
+        "disposition": "admitted as cm-wh-2023-07-anthropic (listed, dated by the White House fact sheet); company announcements cited in week 4b were not used"
+      },
+      {
+        "lead": "wh-signatory-google",
+        "disposition": "admitted as cm-wh-2023-07-google (listed, dated by the White House fact sheet); company announcements cited in week 4b were not used"
+      },
+      {
+        "lead": "wh-signatory-inflection",
+        "disposition": "admitted as cm-wh-2023-07-inflection-ai (listed, dated by the White House fact sheet); company announcements cited in week 4b were not used"
+      },
+      {
+        "lead": "wh-signatory-meta",
+        "disposition": "admitted as cm-wh-2023-07-meta (listed, dated by the White House fact sheet); company announcements cited in week 4b were not used"
+      },
+      {
+        "lead": "wh-signatory-microsoft",
+        "disposition": "admitted as cm-wh-2023-07-microsoft (listed, dated by the White House fact sheet); company announcements cited in week 4b were not used"
+      },
+      {
+        "lead": "wh-signatory-openai",
+        "disposition": "admitted as cm-wh-2023-07-openai (listed, dated by the White House fact sheet); company announcements cited in week 4b were not used"
+      },
+      {
+        "lead": "wh-signatory-adobe",
+        "disposition": "admitted as cm-wh-2023-09-adobe (listed, dated by the White House fact sheet)"
+      },
+      {
+        "lead": "wh-signatory-cohere",
+        "disposition": "admitted as cm-wh-2023-09-cohere (listed, dated by the White House fact sheet)"
+      },
+      {
+        "lead": "wh-signatory-ibm",
+        "disposition": "admitted as cm-wh-2023-09-ibm (listed, dated by the White House fact sheet)"
+      },
+      {
+        "lead": "wh-signatory-nvidia",
+        "disposition": "admitted as cm-wh-2023-09-nvidia (listed, dated by the White House fact sheet)"
+      },
+      {
+        "lead": "wh-signatory-palantir",
+        "disposition": "admitted as cm-wh-2023-09-palantir (listed, dated by the White House fact sheet)"
+      },
+      {
+        "lead": "wh-signatory-salesforce",
+        "disposition": "admitted as cm-wh-2023-09-salesforce (listed, dated by the White House fact sheet)"
+      },
+      {
+        "lead": "wh-signatory-scale-ai",
+        "disposition": "admitted as cm-wh-2023-09-scale-ai (listed, dated by the White House fact sheet)"
+      },
+      {
+        "lead": "wh-signatory-stability-ai",
+        "disposition": "admitted as cm-wh-2023-09-stability-ai (listed, dated by the White House fact sheet)"
+      },
+      {
+        "lead": "wh-signatory-apple",
+        "disposition": "not admitted: the 2024 fact sheet does not say whether Apple took up the July or the September 2023 text; an open question on the commitments page"
+      },
+      {
+        "lead": "wh-link-rsp-2023",
+        "disposition": "admitted as cm-link-rsp-2023-wh (names)"
+      },
+      {
+        "lead": "wh-link-rsp-v2-0",
+        "disposition": "admitted as cm-link-rsp-v2-0-wh (fulfils, scope “helps satisfy”)"
+      },
+      {
+        "lead": "wh-link-rsp-v2-1",
+        "disposition": "admitted as cm-link-rsp-v2-1-wh (fulfils, scope “helps satisfy”)"
+      },
+      {
+        "lead": "wh-link-rsp-v2-2",
+        "disposition": "admitted as cm-link-rsp-v2-2-wh (fulfils, scope “helps satisfy”); matched space-insensitively because the PDF text layer splits runs without spaces"
+      },
+      {
+        "lead": "wh-rsp-v3-no-reference",
+        "disposition": "not admitted: the absence of a reference across RSP v3.0 to v3.4 was not re-checked against the full texts by this session; no absence is recorded"
+      },
+      {
+        "lead": "wh-link-anthropic-tracking-page-2024",
+        "disposition": "not admitted: a company web page, not a framework edition; links are recorded only where a framework says so"
+      },
+      {
+        "lead": "wh-link-anthropic-hub-2025",
+        "disposition": "not admitted: a company web page, not a framework edition"
+      },
+      {
+        "lead": "wh-anthropic-hub-removal-2025",
+        "disposition": "not admitted: a removal inferred from captures of a company web page"
+      },
+      {
+        "lead": "wh-link-gpt-4o-system-card",
+        "disposition": "not admitted: a system card is not a framework edition"
+      },
+      {
+        "lead": "wh-link-openai-frontier-risk-2023",
+        "disposition": "not admitted: a company progress report, not a framework edition"
+      },
+      {
+        "lead": "wh-openai-fmf-commitment-2",
+        "disposition": "not admitted: a company’s statement that it met a commitment; fulfilment is not recorded"
+      },
+      {
+        "lead": "wh-openai-dalle3-in-scope",
+        "disposition": "not admitted: a company’s statement applying the scope clause to one of its models; fulfilment and scope application are not recorded"
+      },
+      {
+        "lead": "wh-link-ms-rait-2024-red-teaming",
+        "disposition": "not admitted: a transparency report is not a framework edition"
+      },
+      {
+        "lead": "wh-link-ms-rait-2024-annual-report",
+        "disposition": "not admitted: a transparency report is not a framework edition"
+      },
+      {
+        "lead": "wh-assessment-c3-model-weights",
+        "disposition": "not admitted: both week 4b verifiers rejected it; a compliance assessment is outside the commitments page, and the two cited assessments share an author"
+      },
+      {
+        "lead": "se-signatory-amazon",
+        "disposition": "admitted as cm-seoul-amazon (listed on 21 May 2024)"
+      },
+      {
+        "lead": "se-signatory-anthropic",
+        "disposition": "admitted as cm-seoul-anthropic (listed on 21 May 2024)"
+      },
+      {
+        "lead": "se-signatory-cohere",
+        "disposition": "admitted as cm-seoul-cohere (listed on 21 May 2024)"
+      },
+      {
+        "lead": "se-signatory-google",
+        "disposition": "admitted as cm-seoul-google (listed on 21 May 2024)"
+      },
+      {
+        "lead": "se-signatory-g42",
+        "disposition": "admitted as cm-seoul-g42 (listed on 21 May 2024)"
+      },
+      {
+        "lead": "se-signatory-ibm",
+        "disposition": "admitted as cm-seoul-ibm (listed on 21 May 2024)"
+      },
+      {
+        "lead": "se-signatory-inflection-ai",
+        "disposition": "admitted as cm-seoul-inflection-ai (listed on 21 May 2024)"
+      },
+      {
+        "lead": "se-signatory-meta",
+        "disposition": "admitted as cm-seoul-meta (listed on 21 May 2024)"
+      },
+      {
+        "lead": "se-signatory-microsoft",
+        "disposition": "admitted as cm-seoul-microsoft (listed on 21 May 2024)"
+      },
+      {
+        "lead": "se-signatory-mistral-ai",
+        "disposition": "admitted as cm-seoul-mistral-ai (listed on 21 May 2024)"
+      },
+      {
+        "lead": "se-signatory-naver",
+        "disposition": "admitted as cm-seoul-naver (listed on 21 May 2024)"
+      },
+      {
+        "lead": "se-signatory-openai",
+        "disposition": "admitted as cm-seoul-openai (listed on 21 May 2024)"
+      },
+      {
+        "lead": "se-signatory-samsung-electronics",
+        "disposition": "admitted as cm-seoul-samsung-electronics (listed on 21 May 2024)"
+      },
+      {
+        "lead": "se-signatory-technology-innovation-institute",
+        "disposition": "admitted as cm-seoul-technology-innovation-institute (listed on 21 May 2024)"
+      },
+      {
+        "lead": "se-signatory-xai",
+        "disposition": "admitted as cm-seoul-xai (listed on 21 May 2024)"
+      },
+      {
+        "lead": "se-signatory-zhipu",
+        "disposition": "admitted as cm-seoul-zhipu (listed on 21 May 2024)"
+      },
+      {
+        "lead": "se-signatory-magic-ai",
+        "disposition": "admitted as cm-seoul-magic-ai (listed in the revision of 7 February 2025)"
+      },
+      {
+        "lead": "se-signatory-minimax",
+        "disposition": "admitted as cm-seoul-minimax (listed in the revision of 7 February 2025)"
+      },
+      {
+        "lead": "se-signatory-01-ai",
+        "disposition": "admitted as cm-seoul-zero-one-ai (listed in the revision of 7 February 2025)"
+      },
+      {
+        "lead": "se-signatory-nvidia",
+        "disposition": "admitted as cm-seoul-nvidia (listed in the revision of 7 February 2025)"
+      },
+      {
+        "lead": "se-fasc-published",
+        "disposition": "admitted as cm-seoul-published, with DSIT as publisher; the UK press release is context"
+      },
+      {
+        "lead": "se-seoul-declaration-notes-fasc",
+        "disposition": "not admitted: the Seoul Declaration is a separate leaders’ instrument outside this bounded selection"
+      },
+      {
+        "lead": "se-prov-publish-safety-framework",
+        "disposition": "admitted as prov-fasc-2024-publish-framework"
+      },
+      {
+        "lead": "se-prov-intolerable-risk-thresholds",
+        "disposition": "admitted as prov-fasc-2024-intolerable-thresholds"
+      },
+      {
+        "lead": "se-prov-threshold-input-home-governments",
+        "disposition": "admitted as prov-fasc-2024-threshold-input"
+      },
+      {
+        "lead": "se-prov-no-development-or-deployment-above-thresholds",
+        "disposition": "admitted as prov-fasc-2024-no-development"
+      },
+      {
+        "lead": "se-prov-transparency-exception",
+        "disposition": "admitted as prov-fasc-2024-transparency-exception"
+      },
+      {
+        "lead": "se-link-rsp-v2-0",
+        "disposition": "admitted as cm-link-rsp-v2-0-seoul"
+      },
+      {
+        "lead": "se-link-rsp-v2-1",
+        "disposition": "admitted as cm-link-rsp-v2-1-seoul"
+      },
+      {
+        "lead": "se-link-rsp-v2-2",
+        "disposition": "admitted as cm-link-rsp-v2-2-seoul; matched space-insensitively, as for the White House link"
+      },
+      {
+        "lead": "se-link-ms-fgf-2025",
+        "disposition": "admitted as cm-link-ms-fgf-2025-seoul"
+      },
+      {
+        "lead": "se-link-ms-fgf-2026",
+        "disposition": "admitted as cm-link-ms-fgf-2026-seoul"
+      },
+      {
+        "lead": "se-link-meta-faf-v1-1",
+        "disposition": "admitted as cm-link-meta-faf-v1-1-seoul, quoted from the Internet Archive capture of 2025-02-13 that the source record cites"
+      },
+      {
+        "lead": "se-link-fsf-v2-0-announcement",
+        "disposition": "not admitted: the reference is in Google DeepMind’s announcement post, not in the framework edition"
+      },
+      {
+        "lead": "se-metr-tracker-2025-02",
+        "disposition": "not admitted: a tracker of which companies published frameworks; fulfilment is not recorded"
+      },
+      {
+        "lead": "se-metr-common-elements-2025-12",
+        "disposition": "not admitted: a tracker of which companies published frameworks; fulfilment is not recorded"
+      },
+      {
+        "lead": "se-x (36 round-2 leads)",
+        "disposition": "not admitted: never verified in week 4b and not re-researched in week 4c"
+      },
+      {
+        "lead": "eu-cop-final-published",
+        "disposition": "admitted as cm-eu-code-published"
+      },
+      {
+        "lead": "eu-cop-ss-scope",
+        "disposition": "admitted as prov-eu-code-ss-scope"
+      },
+      {
+        "lead": "eu-cop-ss-objective-not-conclusive",
+        "disposition": "admitted as prov-eu-code-ss-adherence-not-conclusive"
+      },
+      {
+        "lead": "eu-cop-commission-adequacy-opinion",
+        "disposition": "not admitted as a record: its conclusion is quoted as context on cm-eu-code-published and named in a legal-effect stop"
+      },
+      {
+        "lead": "eu-cop-ai-board-adequacy-conclusion",
+        "disposition": "not admitted: an adequacy conclusion bears on legal effect, which is set aside"
+      },
+      {
+        "lead": "eu-aiact-chapter-v-application",
+        "disposition": "not admitted: AI Act provisions are a separate statute outside this bounded selection"
+      },
+      {
+        "lead": "eu-aiact-gpai-enforcement-2026",
+        "disposition": "not admitted: AI Act provisions are a separate statute outside this bounded selection"
+      },
+      {
+        "lead": "eu-aiact-art111-3-existing-models",
+        "disposition": "not admitted: AI Act provisions are a separate statute outside this bounded selection"
+      },
+      {
+        "lead": "eu-aiact-art55-1-obligations",
+        "disposition": "not admitted: AI Act provisions are a separate statute outside this bounded selection"
+      },
+      {
+        "lead": "eu-aiact-art56-6-amended-2026",
+        "disposition": "not admitted: AI Act provisions are a separate statute outside this bounded selection"
+      },
+      {
+        "lead": "eu-cop-ss-c1-framework",
+        "disposition": "admitted as prov-eu-code-ss-framework"
+      },
+      {
+        "lead": "eu-cop-ss-m1-1-confirmation-deadline",
+        "disposition": "not admitted: bounded selection of provisions; not re-verified"
+      },
+      {
+        "lead": "eu-cop-ss-m4-2-proceed-only-if-acceptable",
+        "disposition": "admitted as prov-eu-code-ss-proceed-only-if-acceptable"
+      },
+      {
+        "lead": "eu-cop-ss-c7-model-report",
+        "disposition": "not admitted: bounded selection of provisions; not re-verified"
+      },
+      {
+        "lead": "eu-cop-ss-m9-3-incident-timelines",
+        "disposition": "admitted as prov-eu-code-ss-incident-reporting-deadlines"
+      },
+      {
+        "lead": "eu-cop-ss-m10-2-public-summaries",
+        "disposition": "not admitted: bounded selection of provisions; not re-verified"
+      },
+      {
+        "lead": "eu-cop-ss-app1-4-specified-risks",
+        "disposition": "admitted as prov-eu-code-ss-specified-systemic-risks"
+      },
+      {
+        "lead": "eu-signatory-openai",
+        "disposition": "admitted as cm-eu-code-openai (listed 2025-08-01)"
+      },
+      {
+        "lead": "eu-signatory-anthropic",
+        "disposition": "admitted as cm-eu-code-anthropic; the Anthropic post cited as context became the separate intent record cm-eu-code-intent-anthropic"
+      },
+      {
+        "lead": "eu-signatory-google",
+        "disposition": "admitted as cm-eu-code-google; the Google post cited as context became the separate intent record cm-eu-code-intent-google, with a shorter quote"
+      },
+      {
+        "lead": "eu-signatory-microsoft",
+        "disposition": "admitted as cm-eu-code-microsoft"
+      },
+      {
+        "lead": "eu-signatory-amazon",
+        "disposition": "admitted as cm-eu-code-amazon"
+      },
+      {
+        "lead": "eu-signatory-xai-safety-security-only",
+        "disposition": "admitted as cm-eu-code-xai (scope: Safety and Security chapter only)"
+      },
+      {
+        "lead": "eu-intent-openai-conditional",
+        "disposition": "admitted as cm-eu-code-intent-openai"
+      },
+      {
+        "lead": "eu-intent-xai-safety-security",
+        "disposition": "admitted as cm-eu-code-intent-xai as a paraphrase: the post was read through X’s oEmbed endpoint and is too short to quote within the 10% limit"
+      },
+      {
+        "lead": "eu-declined-meta",
+        "disposition": "admitted as cm-eu-code-declined-meta"
+      },
+      {
+        "lead": "eu-signatory-list-changes",
+        "disposition": "not admitted as a record: an open question on the commitments page, with the counts re-derived by this session"
+      },
+      {
+        "lead": "eu-link-openai-fgf-eu-cop-summary",
+        "disposition": "admitted as cm-link-frontier-governance-2026-eu-code"
+      },
+      {
+        "lead": "eu-link-openai-ireland-provider",
+        "disposition": "not admitted: which entity is the provider under the AI Act is a question of legal application"
+      },
+      {
+        "lead": "eu-link-xai-faif-2026-risk-domains",
+        "disposition": "admitted as cm-link-faif-2026-eu-code"
+      },
+      {
+        "lead": "eu-link-ms-fgf-2026-changelog",
+        "disposition": "admitted as cm-link-ms-fgf-2026-eu-code"
+      },
+      {
+        "lead": "eu-x-aiact-art51-1-criteria",
+        "disposition": "not admitted: AI Act provisions are outside this bounded selection"
+      },
+      {
+        "lead": "eu-x-aiact-art52-1-notification",
+        "disposition": "not admitted: AI Act provisions are outside this bounded selection"
+      },
+      {
+        "lead": "eu-x-aiact-art52-6-list",
+        "disposition": "not admitted: AI Act provisions are outside this bounded selection"
+      },
+      {
+        "lead": "eu-x-aiact-art56-9-ready-by",
+        "disposition": "not admitted: AI Act provisions are outside this bounded selection"
+      },
+      {
+        "lead": "eu-x-ir-2026-1755-adopted",
+        "disposition": "not admitted: an implementing regulation outside this bounded selection"
+      },
+      {
+        "lead": "eu-x-ir-2026-1755-model-access",
+        "disposition": "not admitted: an implementing regulation outside this bounded selection"
+      },
+      {
+        "lead": "eu-x-ir-2026-1755-limitation-periods",
+        "disposition": "not admitted: an implementing regulation outside this bounded selection"
+      },
+      {
+        "lead": "eu-x-link-xai-faif-2026-terminology",
+        "disposition": "not admitted: a second footnote in the same edition; the edition’s link to the chapter is cm-link-faif-2026-eu-code"
+      },
+      {
+        "lead": "eu-x-cop-review-two-years",
+        "disposition": "not admitted: bounded selection"
+      },
+      {
+        "lead": "eu-x (22 round-2 leads)",
+        "disposition": "not admitted: never verified in week 4b and not re-researched in week 4c"
+      }
+    ],
+    "corrections": [
+      "The White House PDFs are now served from bidenwhitehouse.archives.gov; the copies fetched on 2026-10-04 are byte-identical (SHA-1) to the 2023 Internet Archive captures at whitehouse.gov. The September 2023 PDF is undated and is dated by the fact sheet of 12 September 2023.",
+      "The GOV.UK content API gives first publication on 2024-05-21 and the list update on 2025-02-07 (11:34 UTC); these dates are used for the two listing groups. The text names “Google”, the press release of the same day “Google / Google DeepMind”.",
+      "The Commission does not date its signatory list. It is absent from the Internet Archive capture of 2025-07-31 (15:27 UTC) and present, with 26 names and the xAI sentence, in the capture of 2025-08-01 (13:04 UTC); listings are dated 2025-08-01 on that basis.",
+      "The live page (last update 31 July 2026) lists 21 names: eight of the first 26 are absent and three are new. Every organisation recorded here is still listed.",
+      "The Safety and Security chapter PDF served on 2026-10-04 is not byte-identical to the 2025-07-10 capture, but both text layers have 15,392 words and all six quotes match in both. Locators give both PDF page numbers where the printed and PDF pages differ.",
+      "The X post announcing xAI’s intent was read through X’s oEmbed endpoint; the account now displays as SpaceXAI. The record names xAI, the entity in the dataset.",
+      "Meta’s refusal is quoted from Joel Kaplan’s LinkedIn post (marked as edited; publication time from the page metadata); Kaplan’s role is attributed to CNBC.",
+      "Of the 198 evidence notes built in part 1 and part 2 that said a passage was first proposed in the week 4b research pass, 92 did not repeat a week 4b passage: the integrating session had rewritten or reselected it. Their notes now say so, including 43 rows already pushed with part 1. Ten rows remain marked as added by the integrating session."
+    ],
+    "contested": {
+      "records": [],
+      "packet": "review/week4c-contested-for-cross-model.md",
+      "status": "Part 2 adds no contested or assessment record: no two competent sources were found to disagree on the same proposition. The packet is unchanged."
+    }
+  },
+  "caveats": [
+    "Every admitted record was re-verified by the same model family that produced the leads. A bounded machine pass does not certify unsampled or unadmitted material.",
+    "Leads that were not admitted stay outside the dataset; their week 4b reports remain in the ignored local folder and in the earlier session’s transcripts."
+  ]
+}

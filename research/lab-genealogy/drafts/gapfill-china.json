@@ -1,0 +1,1654 @@
+{
+  "group": "gapfill-china",
+  "searched": "Searched 2026-10-15 for gap-filling records on DeepSeek, ByteDance Seed, Alibaba Qwen/Tongyi, Moonshot AI co-founders, Tencent Hunyuan, Baidu ERNIE and Shanghai AI Laboratory (2023–2026), avoiding the earlier China pass’s failed routes. Primary sources retrieved and used: Alibaba’s FY2026 Form 20-F (SEC EDGAR, through the reader relay because SEC refuses the tool’s user agent; located with EDGAR full-text search), Baidu’s 20-F filings of 28 March 2025 and 17 March 2026 (same route), Alizila (Alibaba) 23 January 2025, ByteDance Seed’s pinned Seed-OSS model card on Hugging Face and its Alignment & Preparedness post of 14 October 2026, Yuxin Wu’s and Shunyu Yao’s personal sites, and Zhou Bowen’s Tsinghua faculty page. Reporting used only where no primary text could be retrieved: MIT Technology Review 2025-01-24 (DeepSeek founding month), Jiemian 2025-02-21 and 2026-03-05, 科创板日报 (Cailian Press) 2025-12-17, 2026-03-05 and 2026-07-24, Caixin Global 2026-04-08 (subscriber article; opening only), The Paper 2025-11-25 and 2026-06-14, 36Kr 2025-11-11, Guancha 2026-07-01. Not retrievable or not usable: DeepSeek gives no founding date or named leaders beyond Liang Wenfeng on any retrieved page; a 17 July 2023 registration date appears only in aggregator or user-uploaded pages (快科技 via ifeng 大风号) and was not used; Seed’s web pages (seed.bytedance.com zh/en, career page) and its Hugging Face organisation page give no founding year; ByteDance made no retrievable announcement of Wu Yonghui’s hire or of Zhu Wenjia’s role; Tencent’s and Baidu’s reorganisations were internal announcements known only through reporting; Baidu’s IR management page (relay) lists only Robin Li and Haijian He; Shanghai AI Laboratory’s site is script-rendered (about page and news pages gave no leadership text); SCMP’s Tencent article is paywalled; Google’s research profile for Yonghui Wu returned 404; Reddit (Moonshot AMA, November 2025) refused retrieval; The Paper’s mobile page was blocked by a WAF (desktop URL worked); a Moonshot HKEX prospectus does not exist publicly (confidential filing reported). Left out: Zhou Chang’s reported 2024 move from Alibaba’s Tongyi team to ByteDance (reporting centres on an employment dispute and compensation); a 2024 The Paper report naming Moonshot co-founders (its subject is personal shareholdings); Alibaba’s March 2026 foundation-model support group (reports differ on its members); Tencent Hunyuan hires below department-head level; ByteDance Seed personnel reports based on an opinion column (澎湃号·湃客); Alibaba’s denial of Zhou Jingren’s resignation (kept only in a qualification); DeepSeek’s reported 2026 financing (capital, not leadership).",
+  "existingUsed": [
+    "cn-liang-deepseek",
+    "cn-liang-high-flyer",
+    "cn-qwen-alibaba",
+    "cn-junyang-lin-alibaba",
+    "cn-jingren-zhou-alibaba",
+    "cn-alibaba-cloud-unit"
+  ],
+  "entities": [
+    {
+      "id": "deepseek",
+      "existing": true
+    },
+    {
+      "id": "liang-wenfeng",
+      "existing": true
+    },
+    {
+      "id": "alibaba-group",
+      "existing": true
+    },
+    {
+      "id": "alibaba-cloud-intelligence",
+      "existing": true
+    },
+    {
+      "id": "jingren-zhou",
+      "existing": true
+    },
+    {
+      "id": "google-deepmind",
+      "existing": true
+    },
+    {
+      "id": "google-brain",
+      "existing": true
+    },
+    {
+      "id": "openai",
+      "existing": true
+    },
+    {
+      "id": "meta",
+      "existing": true
+    },
+    {
+      "id": "bytedance",
+      "type": "organisation",
+      "name": "ByteDance / 字节跳动",
+      "subtype": "Technology company",
+      "aliases": ["字节跳动"],
+      "description": "Technology company whose Seed team develops its foundation models.",
+      "sourceIds": ["lg-src-gc-jiemian-wu-2025"]
+    },
+    {
+      "id": "bytedance-seed",
+      "type": "organisation",
+      "name": "ByteDance Seed / 字节跳动 Seed",
+      "subtype": "Research team",
+      "aliases": ["Seed", "ByteDance Seed Team", "字节跳动Seed团队"],
+      "description": "ByteDance's foundation-model team, which states that it was founded in 2023.",
+      "sourceIds": ["lg-src-gc-seed-oss-readme", "lg-src-gc-jiemian-wu-2025"]
+    },
+    {
+      "id": "seed-alignment-preparedness",
+      "type": "organisation",
+      "name": "Seed Alignment & Preparedness",
+      "subtype": "Research department",
+      "aliases": [],
+      "description": "Safety and alignment department that ByteDance Seed announced in October 2026 it had recently formed.",
+      "sourceIds": ["lg-src-gc-seed-ap-2026"]
+    },
+    {
+      "id": "tencent",
+      "type": "organisation",
+      "name": "Tencent / 腾讯",
+      "subtype": "Technology company",
+      "aliases": ["腾讯", "Tencent Holdings"],
+      "description": "Technology company that develops the Hunyuan (混元) models.",
+      "sourceIds": ["lg-src-gc-cls-tencent-2025"]
+    },
+    {
+      "id": "baidu",
+      "type": "organisation",
+      "name": "Baidu / 百度",
+      "subtype": "Technology company",
+      "aliases": ["百度", "Baidu, Inc."],
+      "description": "Technology company that develops the ERNIE (文心) models.",
+      "sourceIds": ["lg-src-gc-baidu-20f-2025", "lg-src-gc-thepaper-baidu-2025"]
+    },
+    {
+      "id": "shanghai-ai-lab",
+      "type": "organisation",
+      "name": "Shanghai Artificial Intelligence Laboratory / 上海人工智能实验室",
+      "subtype": "Research institution",
+      "aliases": ["上海人工智能实验室", "上海AI实验室", "Shanghai AI Lab"],
+      "description": "Chinese AI research institution that develops the InternLM (书生) models.",
+      "sourceIds": ["lg-src-gc-tsinghua-zhou-bowen"]
+    },
+    {
+      "id": "tongyi-foundation-model-division",
+      "type": "organisation",
+      "name": "Tongyi Foundation Model Division / 通义大模型事业部",
+      "subtype": "Business division",
+      "aliases": ["通义大模型事业部"],
+      "description": "Alibaba Group division named in its 2026 annual report; reported in June 2026 to be merged into a new Token Foundry division.",
+      "sourceIds": [
+        "lg-src-gc-alibaba-20f-2026",
+        "lg-src-gc-thepaper-alibaba-2026-06"
+      ]
+    },
+    {
+      "id": "alibaba-token-foundry",
+      "type": "organisation",
+      "name": "Token Foundry / Token Foundry事业部",
+      "subtype": "Business division",
+      "aliases": ["Token Foundry事业部"],
+      "description": "Alibaba Group division reported in June 2026 as formed from the Tongyi Foundation Model Division and the Future Life Laboratory.",
+      "sourceIds": ["lg-src-gc-thepaper-alibaba-2026-06"]
+    },
+    {
+      "id": "wu-yonghui",
+      "type": "person",
+      "name": "Wu Yonghui",
+      "sortName": "Wu, Yonghui",
+      "subtype": "Institutional actor",
+      "aliases": ["吴永辉", "Yonghui Wu"],
+      "description": "Reported as Google DeepMind vice president of research before joining ByteDance in 2025 to head foundational research in its Seed team.",
+      "sourceIds": [
+        "lg-src-gc-jiemian-wu-2025",
+        "lg-src-gc-cls-alibaba-2026-03"
+      ]
+    },
+    {
+      "id": "zhu-wenjia",
+      "type": "person",
+      "name": "Zhu Wenjia",
+      "sortName": "Zhu, Wenjia",
+      "subtype": "Institutional actor",
+      "aliases": ["朱文佳"],
+      "description": "Reported as the head of ByteDance's first large-model team from 2023.",
+      "sourceIds": ["lg-src-gc-jiemian-wu-2025"]
+    },
+    {
+      "id": "yao-shunyu",
+      "type": "person",
+      "name": "Yao Shunyu",
+      "sortName": "Yao, Shunyu",
+      "subtype": "Institutional actor",
+      "aliases": ["姚顺雨", "Shunyu Yao", "Vinces Yao"],
+      "description": "Former OpenAI researcher reported as Tencent's Chief AI Scientist from December 2025.",
+      "sourceIds": ["lg-src-gc-cls-tencent-2025", "lg-src-gc-yao-shunyu-home"]
+    },
+    {
+      "id": "li-feifei-alibaba",
+      "type": "person",
+      "name": "Li Feifei (Alibaba Cloud)",
+      "sortName": "Li, Feifei",
+      "subtype": "Institutional actor",
+      "aliases": ["李飞飞"],
+      "description": "Alibaba executive reported in April 2026 as the new chief technology officer of Alibaba's cloud unit; not the Stanford computer scientist Fei-Fei Li.",
+      "sourceIds": ["lg-src-gc-caixin-alibaba-2026-04"]
+    },
+    {
+      "id": "zhou-xinyu",
+      "type": "person",
+      "name": "Zhou Xinyu",
+      "sortName": "Zhou, Xinyu",
+      "subtype": "Institutional actor",
+      "aliases": ["周昕宇", "Xinyu Zhou"],
+      "description": "Reported as a co-founder of Moonshot AI.",
+      "sourceIds": ["lg-src-gc-36kr-moonshot-2025"]
+    },
+    {
+      "id": "wu-yuxin",
+      "type": "person",
+      "name": "Wu Yuxin",
+      "sortName": "Wu, Yuxin",
+      "subtype": "Institutional actor",
+      "aliases": ["吴育昕", "Yuxin Wu"],
+      "description": "Reported as a co-founder of Moonshot AI; his personal page states earlier work at Google Brain and Facebook AI Research.",
+      "sourceIds": ["lg-src-gc-36kr-moonshot-2025", "lg-src-gc-yuxin-wu-home"]
+    },
+    {
+      "id": "wang-haifeng",
+      "type": "person",
+      "name": "Wang Haifeng",
+      "sortName": "Wang, Haifeng",
+      "subtype": "Institutional actor",
+      "aliases": ["王海峰", "Haifeng Wang"],
+      "description": "Chief technology officer of Baidu since May 2019 according to its 2025 annual report.",
+      "sourceIds": ["lg-src-gc-baidu-20f-2025", "lg-src-gc-thepaper-baidu-2025"]
+    },
+    {
+      "id": "wu-tian",
+      "type": "person",
+      "name": "Wu Tian",
+      "sortName": "Wu, Tian",
+      "subtype": "Institutional actor",
+      "aliases": ["吴甜"],
+      "description": "Reported in November 2025 as head of Baidu's new foundation-model R&D department.",
+      "sourceIds": ["lg-src-gc-thepaper-baidu-2025"]
+    },
+    {
+      "id": "jia-lei",
+      "type": "person",
+      "name": "Jia Lei",
+      "sortName": "Jia, Lei",
+      "subtype": "Institutional actor",
+      "aliases": ["贾磊"],
+      "description": "Reported in November 2025 as head of Baidu's new application-model R&D department.",
+      "sourceIds": ["lg-src-gc-thepaper-baidu-2025"]
+    },
+    {
+      "id": "sun-tianxiang",
+      "type": "person",
+      "name": "Sun Tianxiang",
+      "sortName": "Sun, Tianxiang",
+      "subtype": "Institutional actor",
+      "aliases": ["孙天祥"],
+      "description": "Reported in July 2026 as head of Baidu's foundation-model R&D department (BMU).",
+      "sourceIds": ["lg-src-gc-guancha-baidu-2026"]
+    },
+    {
+      "id": "zhou-bowen",
+      "type": "person",
+      "name": "Zhou Bowen",
+      "sortName": "Zhou, Bowen",
+      "subtype": "Institutional actor",
+      "aliases": ["周伯文", "Bowen Zhou"],
+      "description": "Director and chief scientist of Shanghai AI Laboratory from April 2024 according to his Tsinghua faculty page.",
+      "sourceIds": ["lg-src-gc-tsinghua-zhou-bowen"]
+    }
+  ],
+  "sources": [
+    {
+      "id": "lg-src-gc-mittr-deepseek-2025",
+      "cacheKey": "gc-mittr-deepseek-2025",
+      "title": "How Chinese company DeepSeek released a top AI reasoning model despite US sanctions",
+      "authors": ["Caiwei Chen"],
+      "publisher": "MIT Technology Review",
+      "publicationDate": "2025-01-24",
+      "kind": "article",
+      "url": "https://www.technologyreview.com/2025/01/24/1110526/china-deepseek-top-ai-despite-sanctions/",
+      "route": "direct",
+      "language": "en",
+      "sourceClass": "reporting"
+    },
+    {
+      "id": "lg-src-gc-seed-oss-readme",
+      "cacheKey": "gc-seed-oss-readme-pin",
+      "title": "Seed-OSS-36B-Instruct model card (README.md, revision 497f1dca)",
+      "authors": ["ByteDance Seed Team"],
+      "publisher": "ByteDance Seed (Hugging Face organisation ByteDance-Seed)",
+      "publicationDate": "2025-08-26",
+      "kind": "announcement",
+      "url": "https://huggingface.co/ByteDance-Seed/Seed-OSS-36B-Instruct/raw/497f1dca95ebdec98e41d517b9f060ee753c902f/README.md",
+      "route": "direct",
+      "language": "en",
+      "sourceClass": "primary"
+    },
+    {
+      "id": "lg-src-gc-seed-ap-2026",
+      "cacheKey": "gc-seed-ap-2026",
+      "title": "Seed Alignment & Preparedness 全球顶尖人才招募启动",
+      "authors": ["ByteDance Seed"],
+      "publisher": "ByteDance Seed (字节跳动 Seed)",
+      "publicationDate": "2026-10-14",
+      "kind": "announcement",
+      "url": "https://seed.bytedance.com/zh/blog/seed-alignment-preparedness-team-looking-for-global-talents",
+      "route": "direct",
+      "language": "zh",
+      "sourceClass": "primary"
+    },
+    {
+      "id": "lg-src-gc-jiemian-wu-2025",
+      "cacheKey": "gc-jiemian-wu-2025",
+      "title": "吴永辉入职字节Seed引发权力更迭？知情人士：其与朱文佳分工不同",
+      "authors": ["宋佳楠"],
+      "publisher": "界面新闻 (Jiemian)",
+      "publicationDate": "2025-02-21",
+      "kind": "article",
+      "url": "https://m.jiemian.com/article/12379597.html",
+      "route": "direct",
+      "language": "zh",
+      "sourceClass": "reporting"
+    },
+    {
+      "id": "lg-src-gc-cls-alibaba-2026-03",
+      "cacheKey": "gc-cls-alibaba-2026-03",
+      "title": "林俊旸自宣离场，阿里千问迎变局？内部会议回应外界猜测",
+      "authors": ["黄心怡"],
+      "publisher": "科创板日报 (财联社 / Cailian Press)",
+      "publicationDate": "2026-03-05",
+      "kind": "article",
+      "url": "https://www.cls.cn/detail/2303341",
+      "route": "direct",
+      "language": "zh",
+      "sourceClass": "reporting"
+    },
+    {
+      "id": "lg-src-gc-cls-tencent-2025",
+      "cacheKey": "gc-cls-tencent-yao-2025",
+      "title": "前OpenAI研究员姚顺雨加入腾讯 出任首席AI科学家",
+      "authors": ["李佳怡"],
+      "publisher": "科创板日报 (财联社 / Cailian Press)",
+      "publicationDate": "2025-12-17",
+      "kind": "article",
+      "url": "https://www.cls.cn/detail/2232576",
+      "route": "direct",
+      "language": "zh",
+      "sourceClass": "reporting"
+    },
+    {
+      "id": "lg-src-gc-cls-tencent-2026",
+      "cacheKey": "gc-cls-tencent-2026",
+      "title": "腾讯混元整合成立基础模型部 姚顺雨掌舵",
+      "authors": ["李佳怡"],
+      "publisher": "科创板日报 (财联社 / Cailian Press)",
+      "publicationDate": "2026-07-24",
+      "kind": "article",
+      "url": "https://www.cls.cn/detail/2436439",
+      "route": "direct",
+      "language": "zh",
+      "sourceClass": "reporting"
+    },
+    {
+      "id": "lg-src-gc-yao-shunyu-home",
+      "cacheKey": "gc-yao-shunyu-home",
+      "title": "About – Shunyu Yao – 姚顺雨 (personal website)",
+      "authors": ["Shunyu Yao"],
+      "publisher": "Shunyu Yao (ysymyth.github.io)",
+      "publicationDate": null,
+      "kind": "post",
+      "url": "https://ysymyth.github.io/",
+      "route": "direct",
+      "language": "en",
+      "sourceClass": "primary"
+    },
+    {
+      "id": "lg-src-gc-alizila-zhou-2025",
+      "cacheKey": "gc-alizila-zhou-acm",
+      "title": "Jingren Zhou Recognized as ACM Fellow for Pioneering Contributions to Cloud Computing and Query Processing",
+      "authors": ["Selina Zhang"],
+      "publisher": "Alizila (Alibaba Group)",
+      "publicationDate": "2025-01-23",
+      "kind": "announcement",
+      "url": "https://alizila.com/?p=64628",
+      "route": "direct",
+      "language": "en",
+      "sourceClass": "primary"
+    },
+    {
+      "id": "lg-src-gc-jiemian-alibaba-2026",
+      "cacheKey": "gc-jiemian-alibaba-2026-03",
+      "title": "阿里批准林俊旸离职后，谷歌DeepMind高管“隔空喊话”千问团队加盟",
+      "authors": ["界面新闻"],
+      "publisher": "界面新闻 (Jiemian)",
+      "publicationDate": "2026-03-05",
+      "kind": "article",
+      "url": "https://m.jiemian.com/article/14074415.html",
+      "route": "direct",
+      "language": "zh",
+      "sourceClass": "reporting"
+    },
+    {
+      "id": "lg-src-gc-alibaba-20f-2026",
+      "cacheKey": "gc-alibaba-20f-2026",
+      "title": "Alibaba Group Holding Limited annual report on Form 20-F for the fiscal year ended March 31, 2026",
+      "authors": ["Alibaba Group Holding Limited"],
+      "publisher": "U.S. Securities and Exchange Commission (EDGAR)",
+      "publicationDate": "2026-05-20",
+      "kind": "filing",
+      "url": "https://www.sec.gov/Archives/edgar/data/1577552/000119312526231755/baba-20260331.htm",
+      "route": "relay",
+      "language": "en",
+      "sourceClass": "primary"
+    },
+    {
+      "id": "lg-src-gc-caixin-alibaba-2026-04",
+      "cacheKey": "gc-caixin-alibaba-2026-04",
+      "title": "Alibaba Revamps AI Structure With New Tech Committee",
+      "authors": ["Bao Yunhong", "Gu Zhaowei"],
+      "publisher": "Caixin Global",
+      "publicationDate": "2026-04-08",
+      "kind": "article",
+      "url": "https://www.caixinglobal.com/2026-04-08/alibaba-revamps-ai-structure-with-new-tech-committee-102431852.html",
+      "route": "direct",
+      "language": "en",
+      "sourceClass": "reporting"
+    },
+    {
+      "id": "lg-src-gc-thepaper-alibaba-2026-06",
+      "cacheKey": "gc-thepaper-alibaba-2026-06",
+      "title": "阿里巴巴：“首席科学家周靖人辞职”纯属谣言",
+      "authors": ["吴雨欣"],
+      "publisher": "澎湃新闻 (The Paper)",
+      "publicationDate": "2026-06-14",
+      "kind": "article",
+      "url": "https://www.thepaper.cn/newsDetail_forward_33377692",
+      "route": "direct",
+      "language": "zh",
+      "sourceClass": "reporting"
+    },
+    {
+      "id": "lg-src-gc-36kr-moonshot-2025",
+      "cacheKey": "gc-36kr-moonshot-ama-2025",
+      "title": "K2 Thinking再炸场，杨植麟凌晨回答了21个问题",
+      "authors": ["邓咏仪"],
+      "publisher": "36氪 (36Kr)",
+      "publicationDate": "2025-11-11",
+      "kind": "article",
+      "url": "https://www.36kr.com/p/3548523752173447",
+      "route": "direct",
+      "language": "zh",
+      "sourceClass": "reporting"
+    },
+    {
+      "id": "lg-src-gc-yuxin-wu-home",
+      "cacheKey": "gc-yuxin-wu-home",
+      "title": "Yuxin's Homepage (personal website)",
+      "authors": ["Yuxin Wu"],
+      "publisher": "Yuxin Wu (ppwwyyxx.com)",
+      "publicationDate": null,
+      "kind": "post",
+      "url": "https://ppwwyyxx.com/",
+      "route": "direct",
+      "language": "en",
+      "sourceClass": "primary"
+    },
+    {
+      "id": "lg-src-gc-baidu-20f-2025",
+      "cacheKey": "gc-baidu-20f-2025",
+      "title": "Baidu, Inc. annual report on Form 20-F for the fiscal year ended December 31, 2024",
+      "authors": ["Baidu, Inc."],
+      "publisher": "U.S. Securities and Exchange Commission (EDGAR)",
+      "publicationDate": "2025-03-28",
+      "kind": "filing",
+      "url": "https://www.sec.gov/Archives/edgar/data/1329099/000119312525066199/d853848d20f.htm",
+      "route": "relay",
+      "language": "en",
+      "sourceClass": "primary"
+    },
+    {
+      "id": "lg-src-gc-baidu-20f-2026",
+      "cacheKey": "gc-baidu-20f-2026",
+      "title": "Baidu, Inc. annual report on Form 20-F for the fiscal year ended December 31, 2025",
+      "authors": ["Baidu, Inc."],
+      "publisher": "U.S. Securities and Exchange Commission (EDGAR)",
+      "publicationDate": "2026-03-17",
+      "kind": "filing",
+      "url": "https://www.sec.gov/Archives/edgar/data/1329099/000119312526109289/d38065d20f.htm",
+      "route": "relay",
+      "language": "en",
+      "sourceClass": "primary"
+    },
+    {
+      "id": "lg-src-gc-thepaper-baidu-2025",
+      "cacheKey": "gc-thepaper-baidu-2025-11",
+      "title": "百度新设基础模型和应用模型研发部，直接向李彦宏汇报",
+      "authors": ["吴雨欣"],
+      "publisher": "澎湃新闻 (The Paper)",
+      "publicationDate": "2025-11-25",
+      "kind": "article",
+      "url": "https://www.thepaper.cn/newsDetail_forward_32041037",
+      "route": "direct",
+      "language": "zh",
+      "sourceClass": "reporting"
+    },
+    {
+      "id": "lg-src-gc-guancha-baidu-2026",
+      "cacheKey": "gc-guancha-baidu-sun-2026",
+      "title": "百度引入97年大模型技术专家孙天祥",
+      "authors": ["观察者网"],
+      "publisher": "观察者网 (Guancha)",
+      "publicationDate": "2026-07-01",
+      "kind": "article",
+      "url": "https://www.guancha.cn/economy/2026_07_01_822273.shtml",
+      "route": "direct",
+      "language": "zh",
+      "sourceClass": "reporting"
+    },
+    {
+      "id": "lg-src-gc-tsinghua-zhou-bowen",
+      "cacheKey": "gc-tsinghua-zhoubowen",
+      "title": "周伯文 — 清华大学电子工程系教师个人主页",
+      "authors": ["Tsinghua University Department of Electronic Engineering"],
+      "publisher": "清华大学电子工程系 (Tsinghua University)",
+      "publicationDate": null,
+      "kind": "report",
+      "url": "https://web.ee.tsinghua.edu.cn/zhoubowen/zh_CN/index.htm",
+      "route": "direct",
+      "language": "zh",
+      "sourceClass": "primary"
+    }
+  ],
+  "events": [
+    {
+      "id": "ev-2023-07-deepseek-founded",
+      "date": "2023-07",
+      "title": "DeepSeek founded (month as reported)",
+      "labs": ["deepseek"]
+    },
+    {
+      "id": "ev-2023-bytedance-seed-founded",
+      "date": "2023",
+      "title": "ByteDance Seed team founded (year as stated by the team)",
+      "labs": ["bytedance-seed"]
+    },
+    {
+      "id": "ev-2025-02-wu-yonghui-bytedance",
+      "date": "2025-02",
+      "title": "Wu Yonghui reported to join ByteDance Seed as head of foundational research",
+      "labs": ["bytedance-seed", "google-deepmind"]
+    },
+    {
+      "id": "ev-2025-12-tencent-yao-shunyu",
+      "date": "2025-12-17",
+      "title": "Tencent reorganises large-model R&D; Yao Shunyu reported as Chief AI Scientist",
+      "labs": ["tencent"]
+    },
+    {
+      "id": "ev-2026-07-tencent-foundation-model-dept",
+      "date": "2026-07",
+      "title": "Tencent reported to merge Hunyuan multimodal and language-model departments under Yao Shunyu",
+      "labs": ["tencent"]
+    },
+    {
+      "id": "ev-2026-03-alibaba-tongyi-lead",
+      "date": "2026-03-05",
+      "title": "Alibaba CEO's internal e-mail on Tongyi Lab leadership reported",
+      "labs": ["alibaba-group", "qwen-team"]
+    },
+    {
+      "id": "ev-2026-04-alibaba-ai-committee",
+      "date": "2026-04-08",
+      "title": "Alibaba reported to form a group-level AI technology committee and name a new cloud CTO",
+      "labs": ["alibaba-group"]
+    },
+    {
+      "id": "ev-2026-06-alibaba-token-foundry",
+      "date": "2026-06-14",
+      "title": "The Paper reports Alibaba’s Token Foundry reorganisation (learned of on 8 June) and Zhou Jingren’s move to Chief Scientist",
+      "labs": ["alibaba-group"]
+    },
+    {
+      "id": "ev-2025-11-baidu-model-depts",
+      "date": "2025-11-25",
+      "title": "Baidu reported to create foundation-model and application-model R&D departments",
+      "labs": ["baidu"]
+    },
+    {
+      "id": "ev-2026-07-baidu-sun-tianxiang",
+      "date": "2026-07-01",
+      "title": "Sun Tianxiang reported to join Baidu as head of its foundation-model R&D department",
+      "labs": ["baidu"]
+    },
+    {
+      "id": "ev-2026-10-seed-alignment-preparedness",
+      "date": "2026-10-14",
+      "title": "ByteDance Seed announces its Alignment & Preparedness department",
+      "labs": ["bytedance-seed"]
+    }
+  ],
+  "claims": [
+    {
+      "id": "lg-gc-deepseek-founded-2023-07",
+      "event": "ev-2023-07-deepseek-founded",
+      "subject": "deepseek",
+      "predicate": "founding_stated",
+      "object": {
+        "kind": "literal",
+        "value": "2023-07"
+      },
+      "topic": "institutions",
+      "statement": "MIT Technology Review reported on 24 January 2025 that DeepSeek was founded in July 2023 by Liang Wenfeng.",
+      "time": {
+        "kind": "event",
+        "date": "2023-07",
+        "note": "Month as reported; no day given. Not a registration record."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "The record rests on reporting; it relays the founding month without citing a registration record, and no DeepSeek page or filing giving a founding date was retrieved. The exact registration date and legal entity are not established here. Liang Wenfeng’s own account of establishing the company is the existing record cn-liang-deepseek.",
+      "relatedExisting": ["cn-liang-deepseek", "cn-liang-high-flyer"],
+      "evidence": [
+        {
+          "id": "lg-ev-gc-deepseek-founded-2023-07",
+          "sourceId": "lg-src-gc-mittr-deepseek-2025",
+          "sourceRole": "secondary",
+          "support": "supports",
+          "locator": "Paragraph beginning “Despite the buzz around R1”",
+          "passageType": "quote",
+          "passage": "Based in Hangzhou, China, it was founded in July 2023 by Liang Wenfeng"
+        }
+      ]
+    },
+    {
+      "id": "lg-gc-bytedance-seed-founded-2023",
+      "event": "ev-2023-bytedance-seed-founded",
+      "subject": "bytedance-seed",
+      "predicate": "founding_stated",
+      "object": {
+        "kind": "literal",
+        "value": "2023"
+      },
+      "topic": "institutions",
+      "statement": "The ByteDance Seed Team states in its Seed-OSS model card (revision of 26 August 2025) that it was founded in 2023.",
+      "time": {
+        "kind": "event",
+        "date": "2023",
+        "note": "Year as stated; no month or day given."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "A self-description in a model card, not a registration or reorganisation record; the team’s relation to earlier ByteDance AI units is not established here.",
+      "relatedExisting": [],
+      "evidence": [
+        {
+          "id": "lg-ev-gc-bytedance-seed-founded-2023",
+          "sourceId": "lg-src-gc-seed-oss-readme",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Section “About ByteDance Seed Team”",
+          "passageType": "quote",
+          "passage": "Founded in 2023, ByteDance Seed Team is dedicated to crafting the industry's most advanced AI foundation models."
+        }
+      ]
+    },
+    {
+      "id": "lg-gc-seed-alignment-preparedness-2026",
+      "event": "ev-2026-10-seed-alignment-preparedness",
+      "subject": "seed-alignment-preparedness",
+      "predicate": "unit_of",
+      "object": {
+        "kind": "entity",
+        "entityId": "bytedance-seed"
+      },
+      "topic": "institutions",
+      "statement": "ByteDance Seed announced on 14 October 2026 that it had recently formed an Alignment & Preparedness department.",
+      "time": {
+        "kind": "snapshot",
+        "date": "2026-10-14",
+        "note": "Announcement date; the post says only “近日” (recently) for the formation."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "A recruitment announcement; it names no head and gives no formation date. Staffing, scope in practice and implementation are not established. English rendering of the Chinese passage is a machine translation; no human translation review.",
+      "relatedExisting": [],
+      "evidence": [
+        {
+          "id": "lg-ev-gc-seed-alignment-preparedness-2026",
+          "sourceId": "lg-src-gc-seed-ap-2026",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Opening paragraphs of the post",
+          "passageType": "quote",
+          "passage": "Seed 近日成立了 Alignment & Preparedness 部门。"
+        }
+      ]
+    },
+    {
+      "id": "lg-gc-wu-yonghui-bytedance-seed-2025",
+      "event": "ev-2025-02-wu-yonghui-bytedance",
+      "subject": "wu-yonghui",
+      "predicate": "held_role",
+      "object": {
+        "kind": "entity",
+        "entityId": "bytedance-seed"
+      },
+      "topic": "people",
+      "statement": "Jiemian reported on 21 February 2025, repeating its report of 17 February, that Wu Yonghui had joined ByteDance as head of foundational research of its large-model team Seed.",
+      "time": {
+        "kind": "snapshot",
+        "date": "2025-02-17",
+        "note": "Date of Jiemian’s first report; not a start date."
+      },
+      "attributes": {
+        "role": "Seed基础研究负责人 (head of foundational research, Seed)"
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "The record rests on reporting; it relays the appointment from unnamed sources and gives no ByteDance announcement or start date. Wu’s reporting line and division of work with Zhu Wenjia rest on an unnamed person close to ByteDance. English rendering of the Chinese passage is a machine translation; no human translation review.",
+      "relatedExisting": [],
+      "evidence": [
+        {
+          "id": "lg-ev-gc-wu-yonghui-bytedance-seed-2025",
+          "sourceId": "lg-src-gc-jiemian-wu-2025",
+          "sourceRole": "secondary",
+          "support": "supports",
+          "locator": "Paragraph beginning “此时距离吴永辉加入字节消息被曝出”",
+          "passageType": "quote",
+          "passage": "Google Fellow吴永辉加入字节跳动，担任大模型团队Seed基础研究负责人"
+        },
+        {
+          "id": "lg-ev-gc-wu-yonghui-bytedance-seed-2025-cls",
+          "sourceId": "lg-src-gc-cls-alibaba-2026-03",
+          "sourceRole": "secondary",
+          "support": "supports",
+          "locator": "Section “AI一号位的调整并不少见”",
+          "passageType": "paraphrase",
+          "passage": "A March 2026 report states that Wu joined ByteDance in February 2025.",
+          "anchor": "吴永辉于2025年2月加入字节跳动后"
+        }
+      ]
+    },
+    {
+      "id": "lg-gc-wu-yonghui-google-deepmind-2023",
+      "subject": "wu-yonghui",
+      "predicate": "held_role",
+      "object": {
+        "kind": "entity",
+        "entityId": "google-deepmind"
+      },
+      "topic": "people",
+      "statement": "Jiemian reported on 21 February 2025 that Google promoted Wu Yonghui in 2023 to Google Fellow and vice president of research at Google DeepMind.",
+      "time": {
+        "kind": "interval",
+        "from": "2023",
+        "note": "Promotion year as reported; end not stated (Jiemian reports his move to ByteDance in February 2025)."
+      },
+      "attributes": {
+        "role": "研究副总裁 (vice president of research), Google DeepMind"
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "The record rests on reporting (background paragraph citing public information); no Google announcement was retrieved. Month of promotion and last working day are not established. English rendering of the Chinese passage is a machine translation; no human translation review.",
+      "relatedExisting": [],
+      "evidence": [
+        {
+          "id": "lg-ev-gc-wu-yonghui-google-deepmind-2023",
+          "sourceId": "lg-src-gc-jiemian-wu-2025",
+          "sourceRole": "secondary",
+          "support": "supports",
+          "locator": "Background paragraphs: the one beginning “公开资料显示” and the next, beginning “2023年”",
+          "passageType": "paraphrase",
+          "passage": "The report states that in 2023 Google promoted Wu to Google Fellow and vice president of research at Google DeepMind.",
+          "anchor": "被谷歌晋升为 “Google Fellow” 和谷歌DeepMind的研究副总裁"
+        }
+      ]
+    },
+    {
+      "id": "lg-gc-zhu-wenjia-bytedance-llm-2023",
+      "subject": "zhu-wenjia",
+      "predicate": "held_role",
+      "object": {
+        "kind": "entity",
+        "entityId": "bytedance"
+      },
+      "topic": "people",
+      "statement": "Jiemian reported on 21 February 2025 that Zhu Wenjia led the creation of ByteDance’s first large-model R&D team in 2023 and became its head.",
+      "time": {
+        "kind": "interval",
+        "from": "2023",
+        "note": "Year as reported; end not stated."
+      },
+      "attributes": {
+        "role": "负责人 (head), 字节跳动首个大模型研发团队 (ByteDance’s first large-model R&D team)"
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "The record rests on reporting (background paragraph); no ByteDance announcement was retrieved. The report does not name the 2023 team, and its identity with the later Seed team is not established here. English rendering of the Chinese passage is a machine translation; no human translation review.",
+      "relatedExisting": [],
+      "evidence": [
+        {
+          "id": "lg-ev-gc-zhu-wenjia-bytedance-llm-2023",
+          "sourceId": "lg-src-gc-jiemian-wu-2025",
+          "sourceRole": "secondary",
+          "support": "supports",
+          "locator": "Background paragraph on Zhu Wenjia",
+          "passageType": "paraphrase",
+          "passage": "The report states that in 2023 Zhu led the founding of ByteDance’s first large-model R&D team and served as its head.",
+          "anchor": "主导成立字节跳动首个大模型研发团队并担任负责人"
+        }
+      ]
+    },
+    {
+      "id": "lg-gc-wu-yonghui-bytedance-lead-2025-10",
+      "subject": "wu-yonghui",
+      "predicate": "held_role",
+      "object": {
+        "kind": "entity",
+        "entityId": "bytedance-seed"
+      },
+      "topic": "people",
+      "statement": "Science and Technology Innovation Board Daily (科创板日报) reported on 5 March 2026 that from October 2025 Wu Yonghui became the lead of ByteDance’s large-model team.",
+      "time": {
+        "kind": "interval",
+        "from": "2025-10",
+        "note": "Month as reported; no announcement date or end."
+      },
+      "attributes": {
+        "role": "团队一号位 (lead) of 字节跳动大模型团队 (ByteDance’s large-model team, named in the preceding sentence)"
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "The record rests on reporting in a background paragraph that gives no source; no ByteDance announcement was retrieved. The report’s term “一号位” (top position) is informal and is not a title. English rendering of the Chinese passage is a machine translation; no human translation review.",
+      "relatedExisting": [],
+      "evidence": [
+        {
+          "id": "lg-ev-gc-wu-yonghui-bytedance-lead-2025-10",
+          "sourceId": "lg-src-gc-cls-alibaba-2026-03",
+          "sourceRole": "secondary",
+          "support": "supports",
+          "locator": "Section “AI一号位的调整并不少见”",
+          "passageType": "quote",
+          "passage": "之后2025年10月起，吴永辉升任团队一号位并主导AGI研究与团队重组"
+        },
+        {
+          "checkedAt": "2026-10-15",
+          "id": "lg-ev-gc-wu-yonghui-bytedance-lead-2025-10-team",
+          "sourceId": "lg-src-gc-cls-alibaba-2026-03",
+          "sourceRole": "secondary",
+          "support": "context",
+          "locator": "Section “AI一号位的调整并不少见”, sentence preceding the quoted one",
+          "passageType": "paraphrase",
+          "passage": "The preceding sentence names the team: ByteDance’s large-model team, originally led by Zhu Wenjia.",
+          "anchor": "字节跳动大模型团队原本由朱文佳带队"
+        }
+      ]
+    },
+    {
+      "id": "lg-gc-yao-shunyu-tencent-chief-ai-scientist-2025",
+      "event": "ev-2025-12-tencent-yao-shunyu",
+      "subject": "yao-shunyu",
+      "predicate": "held_role",
+      "object": {
+        "kind": "entity",
+        "entityId": "tencent"
+      },
+      "topic": "people",
+      "statement": "Science and Technology Innovation Board Daily (科创板日报) reported on 17 December 2025 that Tencent had announced a reorganisation of its large-model R&D under which Yao Shunyu became Chief AI Scientist in the “CEO/President’s Office”, reporting to President Martin Lau.",
+      "time": {
+        "kind": "snapshot",
+        "date": "2025-12-17",
+        "note": "Date of the report and of the reported announcement; not a start date."
+      },
+      "attributes": {
+        "role": "首席AI科学家 (Chief AI Scientist), “CEO/总裁办公室” (CEO/President’s Office)"
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "The record rests on reporting; it relays Tencent’s internal announcement, which was not retrieved, and a Tencent statement to the paper on the reorganisation. A continuing role is not established. English rendering of the Chinese passage is a machine translation; no human translation review.",
+      "relatedExisting": [],
+      "evidence": [
+        {
+          "id": "lg-ev-gc-yao-shunyu-tencent-chief-ai-scientist-2025",
+          "sourceId": "lg-src-gc-cls-tencent-2025",
+          "sourceRole": "secondary",
+          "support": "supports",
+          "locator": "Second paragraph of the article body",
+          "passageType": "quote",
+          "passage": "姚顺雨（Vinces Yao）出任“CEO/总裁办公室”首席AI科学家，向腾讯总裁刘炽平汇报"
+        }
+      ]
+    },
+    {
+      "id": "lg-gc-yao-shunyu-tencent-llm-head-2025",
+      "event": "ev-2025-12-tencent-yao-shunyu",
+      "subject": "yao-shunyu",
+      "predicate": "held_role",
+      "object": {
+        "kind": "entity",
+        "entityId": "tencent"
+      },
+      "topic": "people",
+      "statement": "Science and Technology Innovation Board Daily (科创板日报) reported on 17 December 2025 that Yao Shunyu also became head of Tencent’s AI Infra Department and Large Language Model Department.",
+      "time": {
+        "kind": "snapshot",
+        "date": "2025-12-17",
+        "note": "Date of the report; not a start date."
+      },
+      "attributes": {
+        "role": "负责人 (head), AI Infra部 and 大语言模型部 (AI Infra Department; Large Language Model Department)"
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "The record rests on reporting of Tencent’s internal announcement, which was not retrieved. The departments’ staffing and the end of the role are not established. English rendering of the Chinese passage is a machine translation; no human translation review.",
+      "relatedExisting": [],
+      "evidence": [
+        {
+          "id": "lg-ev-gc-yao-shunyu-tencent-llm-head-2025",
+          "sourceId": "lg-src-gc-cls-tencent-2025",
+          "sourceRole": "secondary",
+          "support": "supports",
+          "locator": "Second paragraph of the article body",
+          "passageType": "quote",
+          "passage": "其还兼任AI Infra部、大语言模型部负责人，向技术工程事业群总裁卢山汇报"
+        }
+      ]
+    },
+    {
+      "id": "lg-gc-yao-shunyu-tencent-foundation-model-2026",
+      "event": "ev-2026-07-tencent-foundation-model-dept",
+      "subject": "yao-shunyu",
+      "predicate": "held_role",
+      "object": {
+        "kind": "entity",
+        "entityId": "tencent"
+      },
+      "topic": "people",
+      "statement": "Science and Technology Innovation Board Daily (科创板日报) reported on 24 July 2026 that Tencent had announced the merger of its Hunyuan multimodal-model and large-language-model departments into a Foundation Model Department managed by Yao Shunyu.",
+      "time": {
+        "kind": "snapshot",
+        "date": "2026-07-24",
+        "note": "Date of the report; the announcement is dated only “近日” (recently)."
+      },
+      "attributes": {
+        "role": "manager, 基础模型部 (Foundation Model Department)"
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "The record rests on reporting of a Tencent announcement that was not retrieved; the report also relays a Tencent statement on the purpose of the merger, which is not recorded here. Reported further personnel changes in the Hunyuan teams are left out. English rendering of the Chinese passage is a machine translation; no human translation review.",
+      "relatedExisting": [],
+      "evidence": [
+        {
+          "id": "lg-ev-gc-yao-shunyu-tencent-foundation-model-2026",
+          "sourceId": "lg-src-gc-cls-tencent-2026",
+          "sourceRole": "secondary",
+          "support": "supports",
+          "locator": "Summary point ① at the head of the article",
+          "passageType": "quote",
+          "passage": "将混元多模态模型部门与大语言模型部门合并，成立“基础模型部”，统一由腾讯首席AI科学家姚顺雨管理"
+        }
+      ]
+    },
+    {
+      "id": "lg-gc-yao-shunyu-openai-2024",
+      "subject": "yao-shunyu",
+      "predicate": "held_role",
+      "object": {
+        "kind": "entity",
+        "entityId": "openai"
+      },
+      "topic": "people",
+      "statement": "Science and Technology Innovation Board Daily (科创板日报) reported on 17 December 2025 that Yao Shunyu joined OpenAI in 2024; his undated personal website describes him as a researcher at OpenAI.",
+      "time": {
+        "kind": "interval",
+        "from": "2024",
+        "note": "Year as reported; end not stated. The personal page is undated."
+      },
+      "attributes": {
+        "role": "researcher"
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "The start year rests on reporting. The personal page still described him as an OpenAI researcher when retrieved on 15 October 2026, after his reported Tencent appointment; it is not evidence of a current role. No OpenAI announcement or departure date was retrieved. English rendering of the Chinese passage is a machine translation; no human translation review.",
+      "relatedExisting": [],
+      "evidence": [
+        {
+          "id": "lg-ev-gc-yao-shunyu-openai-2024",
+          "sourceId": "lg-src-gc-cls-tencent-2025",
+          "sourceRole": "secondary",
+          "support": "supports",
+          "locator": "Background paragraph on Yao Shunyu",
+          "passageType": "quote",
+          "passage": "2024年，姚顺雨加入OpenAI"
+        },
+        {
+          "id": "lg-ev-gc-yao-shunyu-openai-home",
+          "sourceId": "lg-src-gc-yao-shunyu-home",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "About",
+          "passageType": "quote",
+          "passage": "I am a researcher at OpenAI."
+        }
+      ]
+    },
+    {
+      "id": "lg-gc-jingren-zhou-alibaba-cloud-cto-2025",
+      "subject": "jingren-zhou",
+      "predicate": "held_role",
+      "object": {
+        "kind": "entity",
+        "entityId": "alibaba-cloud-intelligence"
+      },
+      "topic": "people",
+      "statement": "Alibaba’s news site Alizila identified Jingren Zhou on 23 January 2025 as Chief Technology Officer of Alibaba Cloud Intelligence.",
+      "time": {
+        "kind": "snapshot",
+        "date": "2025-01-23",
+        "note": "Date of the article; not a start date."
+      },
+      "attributes": {
+        "role": "Chief Technology Officer, Alibaba Cloud Intelligence"
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "A dated company identification; it does not give the start of the role. Later records show other titles (lg-gc-jingren-zhou-chief-ai-architect-2026).",
+      "relatedExisting": ["cn-jingren-zhou-alibaba", "cn-alibaba-cloud-unit"],
+      "evidence": [
+        {
+          "id": "lg-ev-gc-jingren-zhou-alibaba-cloud-cto-2025",
+          "sourceId": "lg-src-gc-alizila-zhou-2025",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "First paragraph",
+          "passageType": "quote",
+          "passage": "Jingren Zhou, Chief Technology Officer of Alibaba Cloud Intelligence"
+        }
+      ]
+    },
+    {
+      "id": "lg-gc-jingren-zhou-alibaba-joined-2015",
+      "subject": "jingren-zhou",
+      "predicate": "held_role",
+      "object": {
+        "kind": "entity",
+        "entityId": "alibaba-group"
+      },
+      "topic": "people",
+      "statement": "Alibaba’s news site Alizila stated on 23 January 2025 that Jingren Zhou joined Alibaba Group in 2015.",
+      "time": {
+        "kind": "interval",
+        "from": "2015",
+        "note": "Year of joining as stated; no month."
+      },
+      "attributes": {
+        "role": "joined Alibaba Group (no title given)"
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "Records the year of joining only; the article’s account of his earlier roles is not recorded.",
+      "relatedExisting": ["cn-jingren-zhou-alibaba"],
+      "evidence": [
+        {
+          "id": "lg-ev-gc-jingren-zhou-alibaba-joined-2015",
+          "sourceId": "lg-src-gc-alizila-zhou-2025",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Paragraph beginning “Before joining Alibaba Cloud”",
+          "passageType": "quote",
+          "passage": "In 2015, Jingren Zhou joined Alibaba Group"
+        }
+      ]
+    },
+    {
+      "id": "lg-gc-jingren-zhou-tongyi-lab-2026-03",
+      "event": "ev-2026-03-alibaba-tongyi-lead",
+      "subject": "jingren-zhou",
+      "predicate": "held_role",
+      "object": {
+        "kind": "entity",
+        "entityId": "alibaba-group"
+      },
+      "topic": "people",
+      "statement": "Jiemian reported on 5 March 2026 that Alibaba CEO Wu Yongming’s internal e-mail, which approved Junyang Lin’s resignation, stated that Zhou Jingren would continue to lead Tongyi Lab.",
+      "time": {
+        "kind": "snapshot",
+        "date": "2026-03-05",
+        "note": "Date of the reported e-mail; not a start date."
+      },
+      "attributes": {
+        "role": "负责人 (head), 通义实验室 (Tongyi Lab)"
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "The record rests on reporting of an internal e-mail that was not retrieved. The foundation-model support group the e-mail is reported to have set up is left out. Lin’s own departure post is recorded separately (lg-cn-junyang-lin-qwen-departure-2026). English rendering of the Chinese passage is a machine translation; no human translation review.",
+      "relatedExisting": [
+        "cn-qwen-alibaba",
+        "cn-junyang-lin-alibaba",
+        "cn-jingren-zhou-alibaba"
+      ],
+      "evidence": [
+        {
+          "id": "lg-ev-gc-jingren-zhou-tongyi-lab-2026-03",
+          "sourceId": "lg-src-gc-jiemian-alibaba-2026",
+          "sourceRole": "secondary",
+          "support": "supports",
+          "locator": "Paragraph beginning “针对外界关切”",
+          "passageType": "quote",
+          "passage": "通义实验室将由负责人周靖人继续带队"
+        }
+      ]
+    },
+    {
+      "id": "lg-gc-jingren-zhou-chief-ai-architect-2026",
+      "subject": "jingren-zhou",
+      "predicate": "held_role",
+      "object": {
+        "kind": "entity",
+        "entityId": "alibaba-group"
+      },
+      "topic": "people",
+      "statement": "Alibaba Group’s annual report on Form 20-F, filed on 20 May 2026, lists Jingren Zhou’s current position as Senior Vice President, Chief AI Architect and Head of Tongyi Foundation Model Division.",
+      "time": {
+        "kind": "snapshot",
+        "date": "2026-05-20",
+        "note": "Position as of the date of the annual report (filing date)."
+      },
+      "attributes": {
+        "role": "Senior Vice President, Chief AI Architect, Head of Tongyi Foundation Model Division"
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "A filing snapshot; it does not give when the titles began. A June 2026 reorganisation was later reported (lg-gc-jingren-zhou-chief-scientist-2026).",
+      "relatedExisting": ["cn-jingren-zhou-alibaba"],
+      "evidence": [
+        {
+          "id": "lg-ev-gc-jingren-zhou-chief-ai-architect-2026",
+          "sourceId": "lg-src-gc-alibaba-20f-2026",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Item 6, “Current Partners” table, row for Jingren ZHOU (周靖人), column “Current position with Alibaba Group”",
+          "passageType": "quote",
+          "passage": "Senior Vice President, Chief AI Architect, Head of Tongyi Foundation Model Division"
+        }
+      ]
+    },
+    {
+      "id": "lg-gc-jingren-zhou-alibaba-partner-2026",
+      "subject": "jingren-zhou",
+      "predicate": "held_role",
+      "object": {
+        "kind": "entity",
+        "entityId": "alibaba-group"
+      },
+      "topic": "governance",
+      "statement": "Alibaba Group’s annual report on Form 20-F, filed on 20 May 2026, lists Jingren Zhou among the current partners of the Alibaba Partnership.",
+      "time": {
+        "kind": "snapshot",
+        "date": "2026-05-20",
+        "note": "Partner list as of the date of the annual report; the report does not give his election date."
+      },
+      "attributes": {
+        "role": "partner, Alibaba Partnership"
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "A filing snapshot of membership; it does not establish when he became a partner or his part in the partnership’s board nominations.",
+      "relatedExisting": [],
+      "evidence": [
+        {
+          "id": "lg-ev-gc-jingren-zhou-alibaba-partner-2026",
+          "sourceId": "lg-src-gc-alibaba-20f-2026",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Item 6, “Current Partners” table and its introductory sentence",
+          "passageType": "paraphrase",
+          "passage": "The table of current partners of the Alibaba Partnership as of the date of the annual report includes a row for Jingren Zhou.",
+          "anchor": "Jingren ZHOU (周靖人)"
+        }
+      ]
+    },
+    {
+      "id": "lg-gc-li-feifei-alibaba-cloud-cto-2026",
+      "event": "ev-2026-04-alibaba-ai-committee",
+      "subject": "li-feifei-alibaba",
+      "predicate": "held_role",
+      "object": {
+        "kind": "entity",
+        "entityId": "alibaba-cloud-intelligence"
+      },
+      "topic": "people",
+      "statement": "Caixin Global reported on 8 April 2026 that Alibaba CEO Eddie Wu had announced a reshuffle naming Li Feifei to lead cloud technology and AI infrastructure as the cloud unit’s new chief technology officer.",
+      "time": {
+        "kind": "snapshot",
+        "date": "2026-04-08",
+        "note": "Date of the report; the announcement was made the same day according to the report."
+      },
+      "attributes": {
+        "role": "chief technology officer, cloud unit (as reported)",
+        "stage": "announced"
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "The record rests on reporting (subscriber article; only the opening is available) of an announcement that was not retrieved. Start date and continuing role are not established. Not the Stanford computer scientist Fei-Fei Li.",
+      "relatedExisting": ["cn-alibaba-cloud-unit"],
+      "evidence": [
+        {
+          "id": "lg-ev-gc-li-feifei-alibaba-cloud-cto-2026",
+          "sourceId": "lg-src-gc-caixin-alibaba-2026-04",
+          "sourceRole": "secondary",
+          "support": "supports",
+          "locator": "Opening paragraphs (text available before the subscription barrier)",
+          "passageType": "quote",
+          "passage": "named a new chief technology officer for its cloud computing unit"
+        },
+        {
+          "id": "lg-ev-gc-li-feifei-alibaba-cloud-cto-2026-b",
+          "sourceId": "lg-src-gc-caixin-alibaba-2026-04",
+          "sourceRole": "secondary",
+          "support": "supports",
+          "locator": "Opening paragraphs (text available before the subscription barrier)",
+          "passageType": "quote",
+          "passage": "tapping Li Feifei to lead cloud technology and AI infrastructure"
+        }
+      ]
+    },
+    {
+      "id": "lg-gc-jingren-zhou-chief-scientist-2026",
+      "event": "ev-2026-06-alibaba-token-foundry",
+      "subject": "jingren-zhou",
+      "predicate": "held_role",
+      "object": {
+        "kind": "entity",
+        "entityId": "alibaba-group"
+      },
+      "topic": "people",
+      "statement": "The Paper reported on 14 June 2026 that, according to its information (据了解), the reorganisation its reporter had learned of on 8 June included Zhou Jingren becoming Alibaba’s Chief Scientist and leading the establishment of an Alibaba AI Future Research Institute.",
+      "time": {
+        "kind": "snapshot",
+        "date": "2026-06-14",
+        "note": "Date of the report. The report links the appointment to the reorganisation its reporter learned of on 8 June 2026; the date of Alibaba’s announcement is not given. Not a start date."
+      },
+      "attributes": {
+        "role": "首席科学家 (Chief Scientist), Alibaba",
+        "stage": "announced"
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "The record rests on reporting of an announcement that was not retrieved; the appointment is given as the reporter’s information (据了解), not quoted from the announcement. An announced appointment; start date and continuing role are not established. The report’s headline relays Alibaba’s statement that rumours of his resignation were untrue; commentary characterising the change is not recorded. English rendering of the Chinese passage is a machine translation; no human translation review.",
+      "relatedExisting": [],
+      "evidence": [
+        {
+          "id": "lg-ev-gc-jingren-zhou-chief-scientist-2026",
+          "sourceId": "lg-src-gc-thepaper-alibaba-2026-06",
+          "sourceRole": "secondary",
+          "support": "supports",
+          "locator": "Fourth paragraph",
+          "passageType": "quote",
+          "passage": "周靖人将担任阿里巴巴首席科学家，牵头成立阿里巴巴AI未来研究院"
+        }
+      ]
+    },
+    {
+      "id": "lg-gc-tongyi-division-token-foundry-2026",
+      "event": "ev-2026-06-alibaba-token-foundry",
+      "subject": "tongyi-foundation-model-division",
+      "predicate": "combined_into",
+      "object": {
+        "kind": "entity",
+        "entityId": "alibaba-token-foundry"
+      },
+      "topic": "institutions",
+      "statement": "The Paper reported on 14 June 2026 that its reporter had learned (获悉) on 8 June 2026 that Alibaba had announced the merger of the Tongyi Foundation Model Division and the Future Life Laboratory into a new Token Foundry division.",
+      "time": {
+        "kind": "unknown",
+        "note": "The announcement was made on or before 8 June 2026, the date on which the reporter learned of it; the report (published 14 June 2026) does not give the announcement’s own date. Completion date not given."
+      },
+      "attributes": {
+        "stage": "announced"
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "The record rests on reporting of an announcement that was not retrieved; the report dates when its reporter learned of the announcement, not the announcement itself. An announced reorganisation; its implementation and the placement of the Qwen team within it are not established. The Future Life Laboratory is not recorded as a separate entity. English rendering of the Chinese passage is a machine translation; no human translation review.",
+      "relatedExisting": [],
+      "evidence": [
+        {
+          "id": "lg-ev-gc-tongyi-division-token-foundry-2026",
+          "sourceId": "lg-src-gc-thepaper-alibaba-2026-06",
+          "sourceRole": "secondary",
+          "support": "supports",
+          "locator": "Third paragraph",
+          "passageType": "quote",
+          "passage": "6月8日，澎湃新闻记者获悉，阿里巴巴宣布合并通义大模型事业部和未来生活实验室，成立Token Foundry"
+        }
+      ]
+    },
+    {
+      "id": "lg-gc-zhou-xinyu-moonshot-cofounder",
+      "subject": "zhou-xinyu",
+      "predicate": "co_founded",
+      "object": {
+        "kind": "entity",
+        "entityId": "moonshot-ai"
+      },
+      "topic": "people",
+      "statement": "36Kr reported on 11 November 2025 that Zhou Xinyu is a co-founder of Moonshot AI.",
+      "time": {
+        "kind": "unknown",
+        "note": "The report gives no founding date; see lg-cn-moonshot-founded-2023."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "The record rests on reporting; no Moonshot AI page naming its co-founders was retrieved. English rendering of the Chinese passage is a machine translation; no human translation review.",
+      "relatedExisting": [],
+      "evidence": [
+        {
+          "id": "lg-ev-gc-zhou-xinyu-moonshot-cofounder",
+          "sourceId": "lg-src-gc-36kr-moonshot-2025",
+          "sourceRole": "secondary",
+          "support": "supports",
+          "locator": "Section on the Reddit AMA, caption and quotation attribution",
+          "passageType": "paraphrase",
+          "passage": "The report attributes a remark to “Moonshot AI co-founder Zhou Xinyu”.",
+          "anchor": "月之暗面联合创始人周昕宇表示"
+        }
+      ]
+    },
+    {
+      "id": "lg-gc-wu-yuxin-moonshot-cofounder",
+      "subject": "wu-yuxin",
+      "predicate": "co_founded",
+      "object": {
+        "kind": "entity",
+        "entityId": "moonshot-ai"
+      },
+      "topic": "people",
+      "statement": "36Kr reported on 11 November 2025 that Wu Yuxin is a co-founder of Moonshot AI.",
+      "time": {
+        "kind": "unknown",
+        "note": "The report gives no founding date; see lg-cn-moonshot-founded-2023."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "The record rests on reporting; no Moonshot AI page naming its co-founders was retrieved, and Wu’s personal page does not call him a founder. English rendering of the Chinese passage is a machine translation; no human translation review.",
+      "relatedExisting": [],
+      "evidence": [
+        {
+          "id": "lg-ev-gc-wu-yuxin-moonshot-cofounder",
+          "sourceId": "lg-src-gc-36kr-moonshot-2025",
+          "sourceRole": "secondary",
+          "support": "supports",
+          "locator": "Section “话唠的K2 Thinking，是为了更好做任务”, quotation attribution",
+          "passageType": "paraphrase",
+          "passage": "The report attributes a remark to “Moonshot AI co-founder Wu Yuxin”.",
+          "anchor": "月之暗面联合创始人吴育昕说"
+        }
+      ]
+    },
+    {
+      "id": "lg-gc-wu-yuxin-moonshot-2026",
+      "subject": "wu-yuxin",
+      "predicate": "held_role",
+      "object": {
+        "kind": "entity",
+        "entityId": "moonshot-ai"
+      },
+      "topic": "people",
+      "statement": "Yuxin Wu’s personal website, retrieved on 15 October 2026, states that he is building foundation models at Moonshot AI (Kimi).",
+      "time": {
+        "kind": "snapshot",
+        "date": "2026-10-15",
+        "note": "Role as shown on the page when retrieved on 15 October 2026; the page is undated."
+      },
+      "attributes": {
+        "role": "building foundation models (as worded; no title)"
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "A self-description on an undated personal page; it gives no title or start date.",
+      "relatedExisting": [],
+      "evidence": [
+        {
+          "id": "lg-ev-gc-wu-yuxin-moonshot-2026",
+          "sourceId": "lg-src-gc-yuxin-wu-home",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Home page introduction",
+          "passageType": "quote",
+          "passage": "I’m building foundation models at Moonshot AI (Kimi)."
+        }
+      ]
+    },
+    {
+      "id": "lg-gc-wu-yuxin-google-brain-prior",
+      "subject": "wu-yuxin",
+      "predicate": "held_role",
+      "object": {
+        "kind": "entity",
+        "entityId": "google-brain"
+      },
+      "topic": "people",
+      "statement": "Yuxin Wu’s personal website states that before Moonshot AI he worked at Google Brain on foundation models.",
+      "time": {
+        "kind": "unknown",
+        "note": "The undated page gives no dates for this role."
+      },
+      "attributes": {
+        "role": "worked on foundation models (as worded; no title)"
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "A self-description on an undated personal page; dates and title are not established.",
+      "relatedExisting": [],
+      "evidence": [
+        {
+          "id": "lg-ev-gc-wu-yuxin-google-brain-prior",
+          "sourceId": "lg-src-gc-yuxin-wu-home",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Home page introduction",
+          "passageType": "quote",
+          "passage": "Prior to this, I worked at Google Brain on foundation models"
+        }
+      ]
+    },
+    {
+      "id": "lg-gc-wu-yuxin-fair-prior",
+      "subject": "wu-yuxin",
+      "predicate": "held_role",
+      "object": {
+        "kind": "entity",
+        "entityId": "meta"
+      },
+      "topic": "people",
+      "statement": "Yuxin Wu’s personal website states that he earlier worked at Facebook AI Research on computer vision.",
+      "time": {
+        "kind": "unknown",
+        "note": "The undated page gives no dates for this role."
+      },
+      "attributes": {
+        "role": "worked at Facebook AI Research on computer vision (as worded; no title)"
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "A self-description on an undated personal page; dates and title are not established.",
+      "relatedExisting": [],
+      "evidence": [
+        {
+          "id": "lg-ev-gc-wu-yuxin-fair-prior",
+          "sourceId": "lg-src-gc-yuxin-wu-home",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Home page introduction",
+          "passageType": "quote",
+          "passage": "and at Facebook AI Research on computer vision"
+        }
+      ]
+    },
+    {
+      "id": "lg-gc-wang-haifeng-baidu-cto-2019",
+      "subject": "wang-haifeng",
+      "predicate": "held_role",
+      "object": {
+        "kind": "entity",
+        "entityId": "baidu"
+      },
+      "topic": "people",
+      "statement": "Baidu’s annual report on Form 20-F, filed on 28 March 2025, states that Haifeng Wang has served as its chief technology officer since May 2019.",
+      "time": {
+        "kind": "interval",
+        "from": "2019-05",
+        "note": "Start as stated in the filing of 28 March 2025; no end stated there."
+      },
+      "attributes": {
+        "role": "chief technology officer"
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "A filing snapshot; it does not establish a current role. Baidu’s 20-F filed on 17 March 2026 does not list him in its table of directors and executive officers; that omission alone does not establish a change of role, and a November 2025 report states that he continued as CTO (lg-gc-wang-haifeng-baidu-cto-2025-11).",
+      "relatedExisting": [],
+      "evidence": [
+        {
+          "id": "lg-ev-gc-wang-haifeng-baidu-cto-2019",
+          "sourceId": "lg-src-gc-baidu-20f-2025",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Item 6.A, Directors and Senior Management, biography of Haifeng Wang",
+          "passageType": "quote",
+          "passage": "Haifeng Wang has served as our chief technology officer since May 2019."
+        },
+        {
+          "id": "lg-ev-gc-wang-haifeng-baidu-cto-2019-2026",
+          "sourceId": "lg-src-gc-baidu-20f-2026",
+          "sourceRole": "primary",
+          "support": "context",
+          "locator": "Item 6.A, table of directors and executive officers",
+          "passageType": "paraphrase",
+          "passage": "The table of directors and executive officers as of the date of the 2026 annual report lists Robin Yanhong Li, the independent directors and Haijian He; Haifeng Wang is not listed.",
+          "anchor": "The following table sets forth information regarding our directors and executive officers as of the date of this annual report."
+        }
+      ]
+    },
+    {
+      "id": "lg-gc-wang-haifeng-baidu-cto-2025-11",
+      "event": "ev-2025-11-baidu-model-depts",
+      "subject": "wang-haifeng",
+      "predicate": "held_role",
+      "object": {
+        "kind": "entity",
+        "entityId": "baidu"
+      },
+      "topic": "people",
+      "statement": "The Paper reported on 25 November 2025 that its reporter had learned that day of a Baidu announcement creating two model R&D departments, and that Wang Haifeng continued as Baidu’s CTO, chair of its Technology Steering Committee (TSC) and head of Baidu Research.",
+      "time": {
+        "kind": "snapshot",
+        "date": "2025-11-25",
+        "note": "Date of the report (published 25 November 2025 at 22:25). The reporter learned (获悉) that day of Baidu’s announcement; the announcement’s own date is not given."
+      },
+      "attributes": {
+        "role": "CTO、TSC主席、百度研究院院长 (CTO; TSC chair; head of Baidu Research)"
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "The record rests on reporting of a Baidu announcement that was not retrieved. A continuing role after that date is not established. English rendering of the Chinese passage is a machine translation; no human translation review.",
+      "relatedExisting": [],
+      "evidence": [
+        {
+          "id": "lg-ev-gc-wang-haifeng-baidu-cto-2025-11",
+          "sourceId": "lg-src-gc-thepaper-baidu-2025",
+          "sourceRole": "secondary",
+          "support": "supports",
+          "locator": "Second paragraph",
+          "passageType": "quote",
+          "passage": "王海峰继续担任CTO、TSC主席、百度研究院院长"
+        }
+      ]
+    },
+    {
+      "id": "lg-gc-wu-tian-baidu-foundation-model-2025",
+      "event": "ev-2025-11-baidu-model-depts",
+      "subject": "wu-tian",
+      "predicate": "held_role",
+      "object": {
+        "kind": "entity",
+        "entityId": "baidu"
+      },
+      "topic": "people",
+      "statement": "The Paper reported on 25 November 2025 that its reporter had learned that day of a Baidu announcement creating a new Foundation Model R&D Department, responsible for general-purpose large models, headed by Wu Tian.",
+      "time": {
+        "kind": "snapshot",
+        "date": "2025-11-25",
+        "note": "Date of the report (published 25 November 2025 at 22:25). The reporter learned (获悉) that day that Baidu had issued the announcement; the announcement’s own date is not given. Not a start date."
+      },
+      "attributes": {
+        "role": "负责人 (head), 基础模型研发部 (Foundation Model R&D Department)"
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "The record rests on reporting of a Baidu announcement that was not retrieved. The report’s headline says the new departments report directly to Robin Li (李彦宏). A continuing role is not established; a July 2026 report names another head of this department (lg-gc-sun-tianxiang-baidu-bmu-2026). English rendering of the Chinese passage is a machine translation; no human translation review.",
+      "relatedExisting": [],
+      "evidence": [
+        {
+          "id": "lg-ev-gc-wu-tian-baidu-foundation-model-2025",
+          "sourceId": "lg-src-gc-thepaper-baidu-2025",
+          "sourceRole": "secondary",
+          "support": "supports",
+          "locator": "Second paragraph",
+          "passageType": "quote",
+          "passage": "新设基础模型研发部，负责研发高智能可扩展的通用人工智能大模型，由吴甜负责"
+        }
+      ]
+    },
+    {
+      "id": "lg-gc-jia-lei-baidu-application-model-2025",
+      "event": "ev-2025-11-baidu-model-depts",
+      "subject": "jia-lei",
+      "predicate": "held_role",
+      "object": {
+        "kind": "entity",
+        "entityId": "baidu"
+      },
+      "topic": "people",
+      "statement": "The Paper reported on 25 November 2025 that its reporter had learned that day of a Baidu announcement creating a new Application Model R&D Department headed by Jia Lei.",
+      "time": {
+        "kind": "snapshot",
+        "date": "2025-11-25",
+        "note": "Date of the report (published 25 November 2025 at 22:25). The reporter learned (获悉) that day that Baidu had issued the announcement; the announcement’s own date is not given. Not a start date."
+      },
+      "attributes": {
+        "role": "负责人 (head), 应用模型研发部 (Application Model R&D Department)"
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "The record rests on reporting of a Baidu announcement that was not retrieved. A continuing role is not established. English rendering of the Chinese passage is a machine translation; no human translation review.",
+      "relatedExisting": [],
+      "evidence": [
+        {
+          "id": "lg-ev-gc-jia-lei-baidu-application-model-2025",
+          "sourceId": "lg-src-gc-thepaper-baidu-2025",
+          "sourceRole": "secondary",
+          "support": "supports",
+          "locator": "Second paragraph",
+          "passageType": "quote",
+          "passage": "新设应用模型研发部，负责业务应用场景需要的专精模型调优和探索，由贾磊负责"
+        }
+      ]
+    },
+    {
+      "id": "lg-gc-sun-tianxiang-baidu-bmu-2026",
+      "event": "ev-2026-07-baidu-sun-tianxiang",
+      "subject": "sun-tianxiang",
+      "predicate": "held_role",
+      "object": {
+        "kind": "entity",
+        "entityId": "baidu"
+      },
+      "topic": "people",
+      "statement": "Guancha reported on 1 July 2026 that Sun Tianxiang had recently joined Baidu as head of its Foundation Model R&D Department (BMU) and joined its model committee (BMC).",
+      "time": {
+        "kind": "snapshot",
+        "date": "2026-07-01",
+        "note": "Date of the report; the report dates the move only “近日” (recently)."
+      },
+      "attributes": {
+        "role": "负责人 (head), 基础模型研发部 (BMU)"
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "The record rests on reporting (“观察者网获悉”, information obtained by the outlet); no Baidu announcement was retrieved. What became of the department’s earlier head is not stated and is not inferred. English rendering of the Chinese passage is a machine translation; no human translation review.",
+      "relatedExisting": [],
+      "evidence": [
+        {
+          "id": "lg-ev-gc-sun-tianxiang-baidu-bmu-2026",
+          "sourceId": "lg-src-gc-guancha-baidu-2026",
+          "sourceRole": "secondary",
+          "support": "supports",
+          "locator": "First paragraph",
+          "passageType": "quote",
+          "passage": "近日大模型领域技术专家孙天祥加入百度，就任基础模型研发部（BMU）负责人"
+        }
+      ]
+    },
+    {
+      "id": "lg-gc-zhou-bowen-shanghai-ai-lab-2024",
+      "subject": "zhou-bowen",
+      "predicate": "held_role",
+      "object": {
+        "kind": "entity",
+        "entityId": "shanghai-ai-lab"
+      },
+      "topic": "people",
+      "statement": "Zhou Bowen’s Tsinghua University faculty page, retrieved on 15 October 2026, lists him as director and chief scientist of Shanghai Artificial Intelligence Laboratory from April 2024.",
+      "time": {
+        "kind": "interval",
+        "from": "2024-04",
+        "note": "Start as stated on the undated page (“2024.4 至今”, April 2024 to present); the page mentions data “as of August 2026”. Role as shown on the page when retrieved on 15 October 2026; the page is undated."
+      },
+      "attributes": {
+        "role": "主任、首席科学家 (director and chief scientist)"
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "A university biography page, not a Shanghai AI Laboratory announcement; no laboratory page naming its leadership could be retrieved (its site is script-rendered). The “至今” (to present) is as of the page’s undated last update. English rendering of the Chinese passage is a machine translation; no human translation review.",
+      "relatedExisting": [],
+      "evidence": [
+        {
+          "id": "lg-ev-gc-zhou-bowen-shanghai-ai-lab-2024",
+          "sourceId": "lg-src-gc-tsinghua-zhou-bowen",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "工作经历 (Work Experience), first entry",
+          "passageType": "quote",
+          "passage": "2024.4 至今 上海人工智能实验室 主任 首席科学家"
+        },
+        {
+          "id": "lg-ev-gc-zhou-bowen-shanghai-ai-lab-2024-profile",
+          "sourceId": "lg-src-gc-tsinghua-zhou-bowen",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "个人简介 (Personal Profile), first sentence",
+          "passageType": "quote",
+          "passage": "上海人工智能实验室主任、首席科学家"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,2336 @@
+{
+  "checkedWith": "research/frontier-framework-comparison/tools.mjs verify",
+  "note": "Each quote is matched against the cached copy of its edition retrieved from the publisher on the recorded date (normalised for whitespace, quotes, dashes, Unicode compatibility forms, invisible bidi and zero-width characters, a space before punctuation and PDF line-break hyphenation; … separates fragments that must occur in order). pdfPages are the PDF pages of the pdftotext layer on which the quote occurs; each locator is checked against them. carried-unverified quotes were not re-checked in this run because the edition could not be retrieved.",
+  "problems": [],
+  "quotedWordsPerEdition": {
+    "rsp-2023": 312,
+    "rsp-v2-0": 368,
+    "rsp-v2-1": 359,
+    "rsp-v2-2": 357,
+    "rsp-v3-0": 313,
+    "rsp-v3-1": 347,
+    "rsp-v3-2": 365,
+    "rsp-v3-3": 390,
+    "rsp-v3-4": 382,
+    "fsf-2024": 279,
+    "fsf-v2-0": 316,
+    "fsf-v3-0": 322,
+    "fsf-v3-1": 359,
+    "preparedness-beta-2023": 327,
+    "preparedness-v2": 393,
+    "frontier-governance-2026": 361,
+    "faif-2025": 317,
+    "faif-2026": 328,
+    "meta-faf-v1-1": 193,
+    "meta-aasf-v2-0": 317,
+    "ms-fgf-2025": 305,
+    "ms-fgf-2026": 335
+  },
+  "quotedWordsWithDataset": {
+    "rsp-2023": {
+      "pack": 308,
+      "dataset": 346,
+      "union": 512
+    },
+    "rsp-v2-0": {
+      "pack": 363,
+      "dataset": 300,
+      "union": 535
+    },
+    "rsp-v2-1": {
+      "pack": 354,
+      "dataset": 300,
+      "union": 528
+    },
+    "rsp-v2-2": {
+      "pack": 352,
+      "dataset": 257,
+      "union": 532
+    },
+    "rsp-v3-0": {
+      "pack": 311,
+      "dataset": 290,
+      "union": 491
+    },
+    "rsp-v3-1": {
+      "pack": 345,
+      "dataset": 158,
+      "union": 433
+    },
+    "rsp-v3-2": {
+      "pack": 363,
+      "dataset": 248,
+      "union": 481
+    },
+    "rsp-v3-3": {
+      "pack": 387,
+      "dataset": 220,
+      "union": 539
+    },
+    "rsp-v3-4": {
+      "pack": 378,
+      "dataset": 263,
+      "union": 554
+    },
+    "fsf-2024": {
+      "pack": 276,
+      "dataset": 140,
+      "union": 337
+    },
+    "fsf-v2-0": {
+      "pack": 315,
+      "dataset": 259,
+      "union": 459
+    },
+    "fsf-v3-0": {
+      "pack": 322,
+      "dataset": 298,
+      "union": 510
+    },
+    "fsf-v3-1": {
+      "pack": 358,
+      "dataset": 284,
+      "union": 545
+    },
+    "preparedness-beta-2023": {
+      "pack": 326,
+      "dataset": 171,
+      "union": 408
+    },
+    "preparedness-v2": {
+      "pack": 385,
+      "dataset": 220,
+      "union": 481
+    },
+    "frontier-governance-2026": {
+      "pack": 360,
+      "dataset": 302,
+      "union": 561
+    },
+    "faif-2025": {
+      "pack": 312,
+      "dataset": 158,
+      "union": 391
+    },
+    "faif-2026": {
+      "pack": 328,
+      "dataset": 150,
+      "union": 396
+    },
+    "meta-faf-v1-1": {
+      "pack": 193,
+      "dataset": 261,
+      "union": 454
+    },
+    "meta-aasf-v2-0": {
+      "pack": 313,
+      "dataset": 271,
+      "union": 500
+    },
+    "ms-fgf-2025": {
+      "pack": 301,
+      "dataset": 204,
+      "union": 409
+    },
+    "ms-fgf-2026": {
+      "pack": 331,
+      "dataset": 323,
+      "union": 558
+    }
+  },
+  "overCapIfAdmitted": [
+    "rsp-2023: pack 308 + dataset 346 distinct quoted words = 512 (over 400 if admitted)",
+    "rsp-v2-0: pack 363 + dataset 300 distinct quoted words = 535 (over 400 if admitted)",
+    "rsp-v2-1: pack 354 + dataset 300 distinct quoted words = 528 (over 400 if admitted)",
+    "rsp-v2-2: pack 352 + dataset 257 distinct quoted words = 532 (over 400 if admitted)",
+    "rsp-v3-0: pack 311 + dataset 290 distinct quoted words = 491 (over 400 if admitted)",
+    "rsp-v3-1: pack 345 + dataset 158 distinct quoted words = 433 (over 400 if admitted)",
+    "rsp-v3-2: pack 363 + dataset 248 distinct quoted words = 481 (over 400 if admitted)",
+    "rsp-v3-3: pack 387 + dataset 220 distinct quoted words = 539 (over 400 if admitted)",
+    "rsp-v3-4: pack 378 + dataset 263 distinct quoted words = 554 (over 400 if admitted)",
+    "fsf-v2-0: pack 315 + dataset 259 distinct quoted words = 459 (over 400 if admitted)",
+    "fsf-v3-0: pack 322 + dataset 298 distinct quoted words = 510 (over 400 if admitted)",
+    "fsf-v3-1: pack 358 + dataset 284 distinct quoted words = 545 (over 400 if admitted)",
+    "preparedness-beta-2023: pack 326 + dataset 171 distinct quoted words = 408 (over 400 if admitted)",
+    "preparedness-v2: pack 385 + dataset 220 distinct quoted words = 481 (over 400 if admitted)",
+    "frontier-governance-2026: pack 360 + dataset 302 distinct quoted words = 561 (over 400 if admitted)",
+    "meta-faf-v1-1: pack 193 + dataset 261 distinct quoted words = 454 (over 400 if admitted)",
+    "meta-aasf-v2-0: pack 313 + dataset 271 distinct quoted words = 500 (over 400 if admitted)",
+    "ms-fgf-2025: pack 301 + dataset 204 distinct quoted words = 409 (over 400 if admitted)",
+    "ms-fgf-2026: pack 331 + dataset 323 distinct quoted words = 558 (over 400 if admitted)"
+  ],
+  "quotes": {
+    "rsp-2023.D1.cbrn.1": {
+      "words": 19,
+      "match": "match",
+      "pdfPages": [20, 20]
+    },
+    "rsp-2023.D1.cyber.1": {
+      "words": 19,
+      "match": "match",
+      "pdfPages": [20, 20]
+    },
+    "rsp-2023.D1.autonomy.1": {
+      "words": 14,
+      "match": "match",
+      "pdfPages": [7, 7]
+    },
+    "rsp-2023.D1.other.1": {
+      "words": 13,
+      "match": "match",
+      "pdfPages": [3, 3]
+    },
+    "rsp-2023.D2.levels.1": {
+      "words": 13,
+      "match": "match",
+      "pdfPages": [2, 2]
+    },
+    "rsp-2023.D2.definition.1": {
+      "words": 22,
+      "match": "match",
+      "pdfPages": [6, 6]
+    },
+    "rsp-2023.D3.safeguards.1": {
+      "words": 23,
+      "match": "match",
+      "pdfPages": [3, 3]
+    },
+    "rsp-2023.D3.halt.1": {
+      "words": 31,
+      "match": "match",
+      "pdfPages": [2, 2]
+    },
+    "rsp-2023.D4.determination.1": {
+      "words": 22,
+      "match": "match",
+      "pdfPages": [13, 13]
+    },
+    "rsp-2023.D4.oversight.1": {
+      "words": 17,
+      "match": "match",
+      "pdfPages": [10, 10]
+    },
+    "rsp-2023.D5.cadence.1": {
+      "words": 26,
+      "match": "match",
+      "pdfPages": [12, 12]
+    },
+    "rsp-2023.D6.competitor.1": {
+      "words": 19,
+      "match": "match",
+      "pdfPages": [5, 5]
+    },
+    "rsp-2023.D6.competitor.2": {
+      "words": 26,
+      "match": "match",
+      "pdfPages": [10, 10]
+    },
+    "rsp-2023.D6.discretion.1": {
+      "words": 21,
+      "match": "match",
+      "pdfPages": [9, 9]
+    },
+    "rsp-2023.D7.internal.1": {
+      "words": 15,
+      "match": "match",
+      "pdfPages": [10, 10]
+    },
+    "rsp-2023.D7.external.1": {
+      "words": 9,
+      "match": "match",
+      "pdfPages": [10, 10]
+    },
+    "rsp-2023.D8.process.1": {
+      "words": 22,
+      "match": "match",
+      "pdfPages": [10, 10]
+    },
+    "rsp-v2-0.D1.cbrn.1": {
+      "words": 18,
+      "match": "match",
+      "pdfPages": [7, 7]
+    },
+    "rsp-v2-0.D1.cyber.1": {
+      "words": 13,
+      "match": "match",
+      "pdfPages": [8, 8]
+    },
+    "rsp-v2-0.D1.autonomy.1": {
+      "words": 21,
+      "match": "match",
+      "pdfPages": [7, 7]
+    },
+    "rsp-v2-0.D1.persuasion.1": {
+      "words": 19,
+      "match": "match",
+      "pdfPages": [8, 8]
+    },
+    "rsp-v2-0.D1.other.1": {
+      "words": 14,
+      "match": "match",
+      "pdfPages": [6, 6]
+    },
+    "rsp-v2-0.D2.levels.1": {
+      "words": 17,
+      "match": "match",
+      "pdfPages": [7, 7]
+    },
+    "rsp-v2-0.D2.definition.1": {
+      "words": 19,
+      "match": "match",
+      "pdfPages": [7, 7]
+    },
+    "rsp-v2-0.D3.safeguards.1": {
+      "words": 12,
+      "match": "match",
+      "pdfPages": [7, 7]
+    },
+    "rsp-v2-0.D3.halt.1": {
+      "words": 17,
+      "match": "match",
+      "pdfPages": [14, 14]
+    },
+    "rsp-v2-0.D3.halt.2": {
+      "words": 29,
+      "match": "match",
+      "pdfPages": [15, 15]
+    },
+    "rsp-v2-0.D4.determination.1": {
+      "words": 20,
+      "match": "match",
+      "pdfPages": [13, 13]
+    },
+    "rsp-v2-0.D4.oversight.1": {
+      "words": 26,
+      "match": "match",
+      "pdfPages": [13, 13]
+    },
+    "rsp-v2-0.D5.cadence.1": {
+      "words": 17,
+      "match": "match",
+      "pdfPages": [9, 9]
+    },
+    "rsp-v2-0.D6.competitor.1": {
+      "words": 37,
+      "match": "match",
+      "pdfPages": [16, 16]
+    },
+    "rsp-v2-0.D6.discretion.1": {
+      "words": 19,
+      "match": "match",
+      "pdfPages": [15, 15]
+    },
+    "rsp-v2-0.D7.internal.1": {
+      "words": 14,
+      "match": "match",
+      "pdfPages": [16, 16]
+    },
+    "rsp-v2-0.D7.external.1": {
+      "words": 15,
+      "match": "match",
+      "pdfPages": [16, 16]
+    },
+    "rsp-v2-0.D8.process.1": {
+      "words": 23,
+      "match": "match",
+      "pdfPages": [16, 16]
+    },
+    "rsp-v2-0.D8.changes.1": {
+      "words": 18,
+      "match": "match",
+      "pdfPages": [21, 21]
+    },
+    "rsp-v2-1.D1.cbrn.1": {
+      "words": 19,
+      "match": "match",
+      "pdfPages": [8, 8]
+    },
+    "rsp-v2-1.D1.cyber.1": {
+      "words": 13,
+      "match": "match",
+      "pdfPages": [9, 9]
+    },
+    "rsp-v2-1.D1.autonomy.1": {
+      "words": 30,
+      "match": "match",
+      "pdfPages": [20, 20]
+    },
+    "rsp-v2-1.D1.persuasion.1": {
+      "words": 19,
+      "match": "match",
+      "pdfPages": [9, 9]
+    },
+    "rsp-v2-1.D1.other.1": {
+      "words": 14,
+      "match": "match",
+      "pdfPages": [6, 6]
+    },
+    "rsp-v2-1.D2.levels.1": {
+      "words": 19,
+      "match": "match",
+      "pdfPages": [8, 8]
+    },
+    "rsp-v2-1.D2.levels.2": {
+      "words": 30,
+      "match": "match",
+      "pdfPages": [20, 20]
+    },
+    "rsp-v2-1.D2.definition.1": {
+      "words": 19,
+      "match": "match",
+      "pdfPages": [7, 7]
+    },
+    "rsp-v2-1.D3.safeguards.1": {
+      "words": 12,
+      "match": "match",
+      "pdfPages": [8, 8]
+    },
+    "rsp-v2-1.D3.halt.1": {
+      "words": 17,
+      "match": "match",
+      "pdfPages": [14, 14]
+    },
+    "rsp-v2-1.D3.halt.2": {
+      "words": 29,
+      "match": "match",
+      "pdfPages": [15, 15]
+    },
+    "rsp-v2-1.D4.determination.1": {
+      "words": 20,
+      "match": "match",
+      "pdfPages": [14, 14]
+    },
+    "rsp-v2-1.D4.oversight.1": {
+      "words": 26,
+      "match": "match",
+      "pdfPages": [14, 14]
+    },
+    "rsp-v2-1.D5.cadence.1": {
+      "words": 17,
+      "match": "match",
+      "pdfPages": [10, 10]
+    },
+    "rsp-v2-1.D6.competitor.1": {
+      "words": 37,
+      "match": "match",
+      "pdfPages": [17, 17]
+    },
+    "rsp-v2-1.D6.discretion.1": {
+      "words": 19,
+      "match": "match",
+      "pdfPages": [16, 16]
+    },
+    "rsp-v2-1.D7.internal.1": {
+      "words": 14,
+      "match": "match",
+      "pdfPages": [16, 16]
+    },
+    "rsp-v2-1.D7.external.1": {
+      "words": 15,
+      "match": "match",
+      "pdfPages": [17, 17]
+    },
+    "rsp-v2-1.D8.process.1": {
+      "words": 23,
+      "match": "match",
+      "pdfPages": [17, 17]
+    },
+    "rsp-v2-1.D8.changes.1": {
+      "words": 16,
+      "match": "match",
+      "pdfPages": [22, 22]
+    },
+    "rsp-v2-2.D1.cbrn.1": {
+      "words": 19,
+      "match": "match",
+      "pdfPages": [8, 8]
+    },
+    "rsp-v2-2.D1.cyber.1": {
+      "words": 13,
+      "match": "match",
+      "pdfPages": [9, 9]
+    },
+    "rsp-v2-2.D1.autonomy.1": {
+      "words": 30,
+      "match": "match",
+      "pdfPages": [20, 20]
+    },
+    "rsp-v2-2.D1.persuasion.1": {
+      "words": 19,
+      "match": "match",
+      "pdfPages": [9, 9]
+    },
+    "rsp-v2-2.D1.other.1": {
+      "words": 14,
+      "match": "match",
+      "pdfPages": [6, 6]
+    },
+    "rsp-v2-2.D2.levels.1": {
+      "words": 19,
+      "match": "match",
+      "pdfPages": [8, 8]
+    },
+    "rsp-v2-2.D2.levels.2": {
+      "words": 30,
+      "match": "match",
+      "pdfPages": [20, 20]
+    },
+    "rsp-v2-2.D2.definition.1": {
+      "words": 19,
+      "match": "match",
+      "pdfPages": [7, 7]
+    },
+    "rsp-v2-2.D3.safeguards.1": {
+      "words": 12,
+      "match": "match",
+      "pdfPages": [8, 8]
+    },
+    "rsp-v2-2.D3.halt.1": {
+      "words": 17,
+      "match": "match",
+      "pdfPages": [14, 14]
+    },
+    "rsp-v2-2.D3.halt.2": {
+      "words": 29,
+      "match": "match",
+      "pdfPages": [15, 15]
+    },
+    "rsp-v2-2.D4.determination.1": {
+      "words": 20,
+      "match": "match",
+      "pdfPages": [14, 14]
+    },
+    "rsp-v2-2.D4.oversight.1": {
+      "words": 26,
+      "match": "match",
+      "pdfPages": [14, 14]
+    },
+    "rsp-v2-2.D5.cadence.1": {
+      "words": 17,
+      "match": "match",
+      "pdfPages": [10, 10]
+    },
+    "rsp-v2-2.D6.competitor.1": {
+      "words": 37,
+      "match": "match",
+      "pdfPages": [17, 17]
+    },
+    "rsp-v2-2.D6.discretion.1": {
+      "words": 19,
+      "match": "match",
+      "pdfPages": [16, 16]
+    },
+    "rsp-v2-2.D7.internal.1": {
+      "words": 14,
+      "match": "match",
+      "pdfPages": [16, 16]
+    },
+    "rsp-v2-2.D7.external.1": {
+      "words": 15,
+      "match": "match",
+      "pdfPages": [17, 17]
+    },
+    "rsp-v2-2.D8.process.1": {
+      "words": 23,
+      "match": "match",
+      "pdfPages": [17, 17]
+    },
+    "rsp-v2-2.D8.changes.1": {
+      "words": 14,
+      "match": "match",
+      "pdfPages": [23, 23]
+    },
+    "rsp-v3-0.D1.cbrn.1": {
+      "words": 4,
+      "match": "match",
+      "pdfPages": [6, 6]
+    },
+    "rsp-v3-0.D1.cbrn.2": {
+      "words": 14,
+      "match": "match",
+      "pdfPages": [7, 7]
+    },
+    "rsp-v3-0.D1.autonomy.1": {
+      "words": 5,
+      "match": "match",
+      "pdfPages": [8, 8]
+    },
+    "rsp-v3-0.D1.other.1": {
+      "words": 3,
+      "match": "match",
+      "pdfPages": [7, 7]
+    },
+    "rsp-v3-0.D2.levels.1": {
+      "words": 12,
+      "match": "match",
+      "pdfPages": [4, 4]
+    },
+    "rsp-v3-0.D2.definition.1": {
+      "words": 18,
+      "match": "match",
+      "pdfPages": [4, 4]
+    },
+    "rsp-v3-0.D2.definition.2": {
+      "words": 16,
+      "match": "match",
+      "pdfPages": [8, 8]
+    },
+    "rsp-v3-0.D3.safeguards.1": {
+      "words": 22,
+      "match": "match",
+      "pdfPages": [6, 6]
+    },
+    "rsp-v3-0.D3.halt.1": {
+      "words": 24,
+      "match": "match",
+      "pdfPages": [16, 16]
+    },
+    "rsp-v3-0.D4.determination.1": {
+      "words": 22,
+      "match": "match",
+      "pdfPages": [12, 12]
+    },
+    "rsp-v3-0.D4.oversight.1": {
+      "words": 33,
+      "match": "match",
+      "pdfPages": [12, 12]
+    },
+    "rsp-v3-0.D5.cadence.1": {
+      "words": 9,
+      "match": "match",
+      "pdfPages": [10, 10]
+    },
+    "rsp-v3-0.D6.competitor.1": {
+      "words": 13,
+      "match": "match",
+      "pdfPages": [16, 16]
+    },
+    "rsp-v3-0.D6.competitor.2": {
+      "words": 26,
+      "match": "match",
+      "pdfPages": [16, 16]
+    },
+    "rsp-v3-0.D6.discretion.1": {
+      "words": 9,
+      "match": "match",
+      "pdfPages": [3, 3]
+    },
+    "rsp-v3-0.D6.discretion.2": {
+      "words": 8,
+      "match": "match",
+      "pdfPages": [15, 15]
+    },
+    "rsp-v3-0.D7.internal.1": {
+      "words": 11,
+      "match": "match",
+      "pdfPages": [15, 15]
+    },
+    "rsp-v3-0.D7.external.1": {
+      "words": 8,
+      "match": "match",
+      "pdfPages": [13, 13]
+    },
+    "rsp-v3-0.D8.process.1": {
+      "words": 22,
+      "match": "match",
+      "pdfPages": [15, 15]
+    },
+    "rsp-v3-0.D8.changes.1": {
+      "words": 9,
+      "match": "match",
+      "pdfPages": [19, 19]
+    },
+    "rsp-v3-0.D8.changes.2": {
+      "words": 25,
+      "match": "match",
+      "pdfPages": [3, 3]
+    },
+    "rsp-v3-1.D1.cbrn.1": {
+      "words": 12,
+      "match": "match",
+      "pdfPages": [6, 6]
+    },
+    "rsp-v3-1.D1.autonomy.1": {
+      "words": 19,
+      "match": "match",
+      "pdfPages": [8, 8]
+    },
+    "rsp-v3-1.D1.other.1": {
+      "words": 3,
+      "match": "match",
+      "pdfPages": [9, 9]
+    },
+    "rsp-v3-1.D2.levels.1": {
+      "words": 12,
+      "match": "match",
+      "pdfPages": [4, 4]
+    },
+    "rsp-v3-1.D2.definition.1": {
+      "words": 18,
+      "match": "match",
+      "pdfPages": [4, 4]
+    },
+    "rsp-v3-1.D2.definition.2": {
+      "words": 15,
+      "match": "match",
+      "pdfPages": [8, 8]
+    },
+    "rsp-v3-1.D3.safeguards.1": {
+      "words": 22,
+      "match": "match",
+      "pdfPages": [6, 6]
+    },
+    "rsp-v3-1.D3.halt.1": {
+      "words": 24,
+      "match": "match",
+      "pdfPages": [17, 17]
+    },
+    "rsp-v3-1.D3.halt.2": {
+      "words": 22,
+      "match": "match",
+      "pdfPages": [16, 16]
+    },
+    "rsp-v3-1.D4.determination.1": {
+      "words": 22,
+      "match": "match",
+      "pdfPages": [13, 13]
+    },
+    "rsp-v3-1.D4.oversight.1": {
+      "words": 33,
+      "match": "match",
+      "pdfPages": [13, 13]
+    },
+    "rsp-v3-1.D5.cadence.1": {
+      "words": 9,
+      "match": "match",
+      "pdfPages": [11, 11]
+    },
+    "rsp-v3-1.D6.competitor.1": {
+      "words": 13,
+      "match": "match",
+      "pdfPages": [17, 17]
+    },
+    "rsp-v3-1.D6.competitor.2": {
+      "words": 26,
+      "match": "match",
+      "pdfPages": [17, 17]
+    },
+    "rsp-v3-1.D6.discretion.1": {
+      "words": 9,
+      "match": "match",
+      "pdfPages": [3, 3]
+    },
+    "rsp-v3-1.D6.discretion.2": {
+      "words": 8,
+      "match": "match",
+      "pdfPages": [16, 16]
+    },
+    "rsp-v3-1.D7.internal.1": {
+      "words": 11,
+      "match": "match",
+      "pdfPages": [16, 16]
+    },
+    "rsp-v3-1.D7.external.1": {
+      "words": 8,
+      "match": "match",
+      "pdfPages": [14, 14]
+    },
+    "rsp-v3-1.D8.process.1": {
+      "words": 22,
+      "match": "match",
+      "pdfPages": [16, 16]
+    },
+    "rsp-v3-1.D8.changes.1": {
+      "words": 39,
+      "match": "match",
+      "pdfPages": [20, 20]
+    },
+    "rsp-v3-2.D1.cbrn.1": {
+      "words": 4,
+      "match": "match",
+      "pdfPages": [6, 6]
+    },
+    "rsp-v3-2.D1.cbrn.2": {
+      "words": 14,
+      "match": "match",
+      "pdfPages": [7, 7]
+    },
+    "rsp-v3-2.D1.autonomy.1": {
+      "words": 5,
+      "match": "match",
+      "pdfPages": [8, 8]
+    },
+    "rsp-v3-2.D1.other.1": {
+      "words": 3,
+      "match": "match",
+      "pdfPages": [7, 7]
+    },
+    "rsp-v3-2.D2.levels.1": {
+      "words": 12,
+      "match": "match",
+      "pdfPages": [4, 4]
+    },
+    "rsp-v3-2.D2.definition.1": {
+      "words": 18,
+      "match": "match",
+      "pdfPages": [4, 4]
+    },
+    "rsp-v3-2.D2.definition.2": {
+      "words": 15,
+      "match": "match",
+      "pdfPages": [8, 8]
+    },
+    "rsp-v3-2.D3.safeguards.1": {
+      "words": 22,
+      "match": "match",
+      "pdfPages": [6, 6]
+    },
+    "rsp-v3-2.D3.halt.1": {
+      "words": 24,
+      "match": "match",
+      "pdfPages": [17, 17]
+    },
+    "rsp-v3-2.D3.halt.2": {
+      "words": 22,
+      "match": "match",
+      "pdfPages": [17, 17]
+    },
+    "rsp-v3-2.D4.determination.1": {
+      "words": 22,
+      "match": "match",
+      "pdfPages": [13, 13]
+    },
+    "rsp-v3-2.D4.oversight.1": {
+      "words": 33,
+      "match": "match",
+      "pdfPages": [13, 13]
+    },
+    "rsp-v3-2.D4.oversight.2": {
+      "words": 13,
+      "match": "match",
+      "pdfPages": [14, 14]
+    },
+    "rsp-v3-2.D5.cadence.1": {
+      "words": 9,
+      "match": "match",
+      "pdfPages": [11, 11]
+    },
+    "rsp-v3-2.D6.competitor.1": {
+      "words": 13,
+      "match": "match",
+      "pdfPages": [17, 17]
+    },
+    "rsp-v3-2.D6.competitor.2": {
+      "words": 26,
+      "match": "match",
+      "pdfPages": [17, 17]
+    },
+    "rsp-v3-2.D6.discretion.1": {
+      "words": 9,
+      "match": "match",
+      "pdfPages": [3, 3]
+    },
+    "rsp-v3-2.D6.discretion.2": {
+      "words": 8,
+      "match": "match",
+      "pdfPages": [16, 16]
+    },
+    "rsp-v3-2.D7.internal.1": {
+      "words": 11,
+      "match": "match",
+      "pdfPages": [16, 16]
+    },
+    "rsp-v3-2.D7.internal.2": {
+      "words": 16,
+      "match": "match",
+      "pdfPages": [16, 16]
+    },
+    "rsp-v3-2.D7.external.1": {
+      "words": 8,
+      "match": "match",
+      "pdfPages": [14, 14]
+    },
+    "rsp-v3-2.D8.process.1": {
+      "words": 22,
+      "match": "match",
+      "pdfPages": [16, 16]
+    },
+    "rsp-v3-2.D8.changes.1": {
+      "words": 36,
+      "match": "match",
+      "pdfPages": [20, 20]
+    },
+    "rsp-v3-3.D1.cbrn.1": {
+      "words": 12,
+      "match": "match",
+      "pdfPages": [6, 6]
+    },
+    "rsp-v3-3.D1.autonomy.1": {
+      "words": 19,
+      "match": "match",
+      "pdfPages": [8, 8]
+    },
+    "rsp-v3-3.D1.other.1": {
+      "words": 6,
+      "match": "match",
+      "pdfPages": [9, 9]
+    },
+    "rsp-v3-3.D2.levels.1": {
+      "words": 12,
+      "match": "match",
+      "pdfPages": [4, 4]
+    },
+    "rsp-v3-3.D2.definition.1": {
+      "words": 18,
+      "match": "match",
+      "pdfPages": [4, 4]
+    },
+    "rsp-v3-3.D2.definition.2": {
+      "words": 29,
+      "match": "match",
+      "pdfPages": [9, 9]
+    },
+    "rsp-v3-3.D3.safeguards.1": {
+      "words": 22,
+      "match": "match",
+      "pdfPages": [6, 6]
+    },
+    "rsp-v3-3.D3.halt.1": {
+      "words": 24,
+      "match": "match",
+      "pdfPages": [17, 17]
+    },
+    "rsp-v3-3.D3.halt.2": {
+      "words": 22,
+      "match": "match",
+      "pdfPages": [17, 17]
+    },
+    "rsp-v3-3.D4.determination.1": {
+      "words": 22,
+      "match": "match",
+      "pdfPages": [13, 13]
+    },
+    "rsp-v3-3.D4.oversight.1": {
+      "words": 33,
+      "match": "match",
+      "pdfPages": [13, 13]
+    },
+    "rsp-v3-3.D4.oversight.2": {
+      "words": 13,
+      "match": "match",
+      "pdfPages": [14, 14]
+    },
+    "rsp-v3-3.D5.cadence.1": {
+      "words": 9,
+      "match": "match",
+      "pdfPages": [11, 11]
+    },
+    "rsp-v3-3.D6.competitor.1": {
+      "words": 13,
+      "match": "match",
+      "pdfPages": [17, 17]
+    },
+    "rsp-v3-3.D6.competitor.2": {
+      "words": 26,
+      "match": "match",
+      "pdfPages": [17, 17]
+    },
+    "rsp-v3-3.D6.discretion.1": {
+      "words": 9,
+      "match": "match",
+      "pdfPages": [3, 3]
+    },
+    "rsp-v3-3.D6.discretion.2": {
+      "words": 8,
+      "match": "match",
+      "pdfPages": [16, 16]
+    },
+    "rsp-v3-3.D7.internal.1": {
+      "words": 11,
+      "match": "match",
+      "pdfPages": [16, 16]
+    },
+    "rsp-v3-3.D7.internal.2": {
+      "words": 16,
+      "match": "match",
+      "pdfPages": [16, 16]
+    },
+    "rsp-v3-3.D7.external.1": {
+      "words": 8,
+      "match": "match",
+      "pdfPages": [14, 14]
+    },
+    "rsp-v3-3.D8.process.1": {
+      "words": 22,
+      "match": "match",
+      "pdfPages": [16, 16]
+    },
+    "rsp-v3-3.D8.changes.1": {
+      "words": 36,
+      "match": "match",
+      "pdfPages": [20, 20]
+    },
+    "rsp-v3-4.D1.cbrn.1": {
+      "words": 12,
+      "match": "match",
+      "pdfPages": [6, 6]
+    },
+    "rsp-v3-4.D1.autonomy.1": {
+      "words": 19,
+      "match": "match",
+      "pdfPages": [8, 8]
+    },
+    "rsp-v3-4.D1.other.1": {
+      "words": 6,
+      "match": "match",
+      "pdfPages": [9, 9]
+    },
+    "rsp-v3-4.D2.levels.1": {
+      "words": 12,
+      "match": "match",
+      "pdfPages": [4, 4]
+    },
+    "rsp-v3-4.D2.definition.1": {
+      "words": 18,
+      "match": "match",
+      "pdfPages": [4, 4]
+    },
+    "rsp-v3-4.D2.definition.2": {
+      "words": 20,
+      "match": "match",
+      "pdfPages": [9, 9]
+    },
+    "rsp-v3-4.D3.safeguards.1": {
+      "words": 22,
+      "match": "match",
+      "pdfPages": [6, 6]
+    },
+    "rsp-v3-4.D3.halt.1": {
+      "words": 24,
+      "match": "match",
+      "pdfPages": [17, 17]
+    },
+    "rsp-v3-4.D3.halt.2": {
+      "words": 22,
+      "match": "match",
+      "pdfPages": [17, 17]
+    },
+    "rsp-v3-4.D4.determination.1": {
+      "words": 22,
+      "match": "match",
+      "pdfPages": [13, 13]
+    },
+    "rsp-v3-4.D4.oversight.1": {
+      "words": 33,
+      "match": "match",
+      "pdfPages": [14, 14]
+    },
+    "rsp-v3-4.D4.oversight.2": {
+      "words": 13,
+      "match": "match",
+      "pdfPages": [14, 14]
+    },
+    "rsp-v3-4.D5.cadence.1": {
+      "words": 9,
+      "match": "match",
+      "pdfPages": [11, 11]
+    },
+    "rsp-v3-4.D6.competitor.1": {
+      "words": 13,
+      "match": "match",
+      "pdfPages": [17, 17]
+    },
+    "rsp-v3-4.D6.competitor.2": {
+      "words": 26,
+      "match": "match",
+      "pdfPages": [17, 17]
+    },
+    "rsp-v3-4.D6.discretion.1": {
+      "words": 7,
+      "match": "match",
+      "pdfPages": [3, 3]
+    },
+    "rsp-v3-4.D6.discretion.2": {
+      "words": 8,
+      "match": "match",
+      "pdfPages": [16, 16]
+    },
+    "rsp-v3-4.D7.internal.1": {
+      "words": 15,
+      "match": "match",
+      "pdfPages": [16, 16]
+    },
+    "rsp-v3-4.D7.internal.2": {
+      "words": 16,
+      "match": "match",
+      "pdfPages": [16, 16]
+    },
+    "rsp-v3-4.D7.external.1": {
+      "words": 8,
+      "match": "match",
+      "pdfPages": [14, 14]
+    },
+    "rsp-v3-4.D7.external.2": {
+      "words": 6,
+      "match": "match",
+      "pdfPages": [14, 14]
+    },
+    "rsp-v3-4.D8.process.1": {
+      "words": 22,
+      "match": "match",
+      "pdfPages": [16, 16]
+    },
+    "rsp-v3-4.D8.changes.1": {
+      "words": 10,
+      "match": "match",
+      "pdfPages": [20, 20]
+    },
+    "rsp-v3-4.D8.changes.2": {
+      "words": 19,
+      "match": "match",
+      "pdfPages": [21, 21]
+    },
+    "fsf-2024.D1.cbrn.1": {
+      "words": 20,
+      "match": "match",
+      "pdfPages": [1, 1]
+    },
+    "fsf-2024.D1.cbrn.2": {
+      "words": 29,
+      "match": "match",
+      "pdfPages": [6, 6]
+    },
+    "fsf-2024.D1.cyber.1": {
+      "words": 20,
+      "match": "match",
+      "pdfPages": [1, 1]
+    },
+    "fsf-2024.D1.autonomy.1": {
+      "words": 20,
+      "match": "match",
+      "pdfPages": [1, 1]
+    },
+    "fsf-2024.D1.autonomy.2": {
+      "words": 25,
+      "match": "match",
+      "pdfPages": [2, 2]
+    },
+    "fsf-2024.D1.other.1": {
+      "words": 17,
+      "match": "match",
+      "pdfPages": [6, 6]
+    },
+    "fsf-2024.D2.levels.1": {
+      "words": 11,
+      "match": "match",
+      "pdfPages": [2, 2]
+    },
+    "fsf-2024.D2.definition.1": {
+      "words": 31,
+      "match": "match",
+      "pdfPages": [2, 2]
+    },
+    "fsf-2024.D3.safeguards.1": {
+      "words": 30,
+      "match": "match",
+      "pdfPages": [2, 2]
+    },
+    "fsf-2024.D3.safeguards.2": {
+      "words": 16,
+      "match": "match",
+      "pdfPages": [6, 6]
+    },
+    "fsf-2024.D3.halt.1": {
+      "words": 29,
+      "match": "match",
+      "pdfPages": [2, 2]
+    },
+    "fsf-2024.D5.cadence.1": {
+      "words": 21,
+      "match": "match",
+      "pdfPages": [2, 2]
+    },
+    "fsf-2024.D6.discretion.1": {
+      "words": 19,
+      "match": "match",
+      "pdfPages": [4, 4]
+    },
+    "fsf-2024.D8.process.1": {
+      "words": 24,
+      "match": "match",
+      "pdfPages": [1, 1]
+    },
+    "fsf-2024.D8.process.2": {
+      "words": 7,
+      "match": "match",
+      "pdfPages": [6, 6]
+    },
+    "fsf-v2-0.D1.cbrn.1": {
+      "words": 24,
+      "match": "match",
+      "pdfPages": [4, 4]
+    },
+    "fsf-v2-0.D1.cyber.1": {
+      "words": 24,
+      "match": "match",
+      "pdfPages": [4, 4]
+    },
+    "fsf-v2-0.D1.autonomy.1": {
+      "words": 24,
+      "match": "match",
+      "pdfPages": [4, 4]
+    },
+    "fsf-v2-0.D1.autonomy.2": {
+      "words": 18,
+      "match": "match",
+      "pdfPages": [5, 5]
+    },
+    "fsf-v2-0.D1.other.1": {
+      "words": 10,
+      "match": "match",
+      "pdfPages": [1, 1]
+    },
+    "fsf-v2-0.D2.levels.1": {
+      "words": 25,
+      "match": "match",
+      "pdfPages": [2, 2]
+    },
+    "fsf-v2-0.D2.definition.1": {
+      "words": 20,
+      "match": "match",
+      "pdfPages": [2, 2]
+    },
+    "fsf-v2-0.D3.safeguards.1": {
+      "words": 13,
+      "match": "match",
+      "pdfPages": [4, 4]
+    },
+    "fsf-v2-0.D3.safeguards.2": {
+      "words": 10,
+      "match": "match",
+      "pdfPages": [4, 4]
+    },
+    "fsf-v2-0.D3.halt.1": {
+      "words": 21,
+      "match": "match",
+      "pdfPages": [3, 3]
+    },
+    "fsf-v2-0.D4.determination.1": {
+      "words": 21,
+      "match": "match",
+      "pdfPages": [7, 7]
+    },
+    "fsf-v2-0.D4.determination.2": {
+      "words": 30,
+      "match": "match",
+      "pdfPages": [4, 4]
+    },
+    "fsf-v2-0.D5.cadence.1": {
+      "words": 20,
+      "match": "match",
+      "pdfPages": [3, 3]
+    },
+    "fsf-v2-0.D6.competitor.1": {
+      "words": 21,
+      "match": "match",
+      "pdfPages": [1, 1]
+    },
+    "fsf-v2-0.D6.competitor.2": {
+      "words": 23,
+      "match": "match",
+      "pdfPages": [5, 5]
+    },
+    "fsf-v2-0.D6.discretion.1": {
+      "words": 17,
+      "match": "match",
+      "pdfPages": [5, 5]
+    },
+    "fsf-v2-0.D7.internal.1": {
+      "words": 21,
+      "match": "match",
+      "pdfPages": [7, 7]
+    },
+    "fsf-v2-0.D7.external.1": {
+      "words": 30,
+      "match": "match",
+      "pdfPages": [7, 7]
+    },
+    "fsf-v2-0.D8.process.1": {
+      "words": 13,
+      "match": "match",
+      "pdfPages": [1, 1]
+    },
+    "fsf-v2-0.D8.changes.1": {
+      "words": 18,
+      "match": "match",
+      "pdfPages": [5, 5]
+    },
+    "fsf-v3-0.D1.cbrn.1": {
+      "words": 22,
+      "match": "match",
+      "pdfPages": [5, 5]
+    },
+    "fsf-v3-0.D1.cyber.1": {
+      "words": 22,
+      "match": "match",
+      "pdfPages": [5, 5]
+    },
+    "fsf-v3-0.D1.autonomy.1": {
+      "words": 22,
+      "match": "match",
+      "pdfPages": [5, 5]
+    },
+    "fsf-v3-0.D1.persuasion.1": {
+      "words": 22,
+      "match": "match",
+      "pdfPages": [5, 5]
+    },
+    "fsf-v3-0.D1.persuasion.2": {
+      "words": 18,
+      "match": "match",
+      "pdfPages": [10, 10]
+    },
+    "fsf-v3-0.D1.other.1": {
+      "words": 8,
+      "match": "match",
+      "pdfPages": [4, 4]
+    },
+    "fsf-v3-0.D1.other.2": {
+      "words": 14,
+      "match": "match",
+      "pdfPages": [5, 5]
+    },
+    "fsf-v3-0.D2.levels.1": {
+      "words": 15,
+      "match": "match",
+      "pdfPages": [4, 4]
+    },
+    "fsf-v3-0.D2.definition.1": {
+      "words": 21,
+      "match": "match",
+      "pdfPages": [4, 4]
+    },
+    "fsf-v3-0.D3.safeguards.1": {
+      "words": 16,
+      "match": "match",
+      "pdfPages": [8, 8]
+    },
+    "fsf-v3-0.D3.safeguards.2": {
+      "words": 17,
+      "match": "match",
+      "pdfPages": [12, 12]
+    },
+    "fsf-v3-0.D3.halt.1": {
+      "words": 27,
+      "match": "match",
+      "pdfPages": [9, 9]
+    },
+    "fsf-v3-0.D3.halt.2": {
+      "words": 10,
+      "match": "match",
+      "pdfPages": [7, 7]
+    },
+    "fsf-v3-0.D4.determination.1": {
+      "words": 27,
+      "match": "match",
+      "pdfPages": [9, 9]
+    },
+    "fsf-v3-0.D4.determination.2": {
+      "words": 13,
+      "match": "match",
+      "pdfPages": [5, 5]
+    },
+    "fsf-v3-0.D5.cadence.1": {
+      "words": 16,
+      "match": "match",
+      "pdfPages": [4, 4]
+    },
+    "fsf-v3-0.D6.competitor.1": {
+      "words": 18,
+      "match": "match",
+      "pdfPages": [9, 9]
+    },
+    "fsf-v3-0.D6.competitor.2": {
+      "words": 21,
+      "match": "match",
+      "pdfPages": [7, 7]
+    },
+    "fsf-v3-0.D6.discretion.1": {
+      "words": 12,
+      "match": "match",
+      "pdfPages": [7, 7]
+    },
+    "fsf-v3-0.D7.internal.1": {
+      "words": 16,
+      "match": "match",
+      "pdfPages": [9, 13]
+    },
+    "fsf-v3-0.D7.external.1": {
+      "words": 31,
+      "match": "match",
+      "pdfPages": [16, 16]
+    },
+    "fsf-v3-0.D8.process.1": {
+      "words": 12,
+      "match": "match",
+      "pdfPages": [16, 16]
+    },
+    "fsf-v3-0.D8.process.2": {
+      "words": 15,
+      "match": "match",
+      "pdfPages": [16, 16]
+    },
+    "fsf-v3-1.D1.cbrn.1": {
+      "words": 22,
+      "match": "match",
+      "pdfPages": [5, 5]
+    },
+    "fsf-v3-1.D1.cyber.1": {
+      "words": 22,
+      "match": "match",
+      "pdfPages": [5, 5]
+    },
+    "fsf-v3-1.D1.autonomy.1": {
+      "words": 22,
+      "match": "match",
+      "pdfPages": [5, 5]
+    },
+    "fsf-v3-1.D1.persuasion.1": {
+      "words": 22,
+      "match": "match",
+      "pdfPages": [5, 5]
+    },
+    "fsf-v3-1.D1.persuasion.2": {
+      "words": 18,
+      "match": "match",
+      "pdfPages": [12, 12]
+    },
+    "fsf-v3-1.D1.other.1": {
+      "words": 22,
+      "match": "match",
+      "pdfPages": [5, 5]
+    },
+    "fsf-v3-1.D2.levels.1": {
+      "words": 26,
+      "match": "match",
+      "pdfPages": [2, 2]
+    },
+    "fsf-v3-1.D2.levels.2": {
+      "words": 14,
+      "match": "match",
+      "pdfPages": [4, 4]
+    },
+    "fsf-v3-1.D2.definition.1": {
+      "words": 21,
+      "match": "match",
+      "pdfPages": [4, 4]
+    },
+    "fsf-v3-1.D2.definition.2": {
+      "words": 27,
+      "match": "match",
+      "pdfPages": [18, 18]
+    },
+    "fsf-v3-1.D3.safeguards.1": {
+      "words": 16,
+      "match": "match",
+      "pdfPages": [10, 10]
+    },
+    "fsf-v3-1.D3.safeguards.2": {
+      "words": 8,
+      "match": "match",
+      "pdfPages": [11, 11]
+    },
+    "fsf-v3-1.D3.halt.1": {
+      "words": 20,
+      "match": "match",
+      "pdfPages": [10, 10]
+    },
+    "fsf-v3-1.D4.determination.1": {
+      "words": 20,
+      "match": "match",
+      "pdfPages": [10, 10]
+    },
+    "fsf-v3-1.D5.cadence.1": {
+      "words": 19,
+      "match": "match",
+      "pdfPages": [5, 5]
+    },
+    "fsf-v3-1.D6.competitor.1": {
+      "words": 22,
+      "match": "match",
+      "pdfPages": [7, 7]
+    },
+    "fsf-v3-1.D6.competitor.2": {
+      "words": 18,
+      "match": "match",
+      "pdfPages": [11, 11]
+    },
+    "fsf-v3-1.D6.discretion.1": {
+      "words": 20,
+      "match": "match",
+      "pdfPages": [5, 5]
+    },
+    "fsf-v3-1.D7.internal.1": {
+      "words": 16,
+      "match": "match",
+      "pdfPages": [10, 14]
+    },
+    "fsf-v3-1.D7.external.1": {
+      "words": 39,
+      "match": "match",
+      "pdfPages": [17, 17]
+    },
+    "fsf-v3-1.D8.process.1": {
+      "words": 12,
+      "match": "match",
+      "pdfPages": [17, 17]
+    },
+    "fsf-v3-1.D8.process.2": {
+      "words": 15,
+      "match": "match",
+      "pdfPages": [17, 17]
+    },
+    "fsf-v3-1.D8.changes.1": {
+      "words": 10,
+      "match": "match",
+      "pdfPages": [17, 17]
+    },
+    "fsf-v3-1.D8.changes.2": {
+      "words": 16,
+      "match": "match",
+      "pdfPages": [17, 17]
+    },
+    "preparedness-beta-2023.D1.cbrn.1": {
+      "words": 16,
+      "match": "match",
+      "pdfPages": [9, 9]
+    },
+    "preparedness-beta-2023.D1.cyber.1": {
+      "words": 13,
+      "match": "match",
+      "pdfPages": [8, 8]
+    },
+    "preparedness-beta-2023.D1.autonomy.1": {
+      "words": 15,
+      "match": "match",
+      "pdfPages": [12, 12]
+    },
+    "preparedness-beta-2023.D1.persuasion.1": {
+      "words": 16,
+      "match": "match",
+      "pdfPages": [10, 10]
+    },
+    "preparedness-beta-2023.D1.other.1": {
+      "words": 14,
+      "match": "match",
+      "pdfPages": [12, 12]
+    },
+    "preparedness-beta-2023.D2.levels.1": {
+      "words": 31,
+      "match": "match",
+      "pdfPages": [5, 5]
+    },
+    "preparedness-beta-2023.D2.definition.1": {
+      "words": 25,
+      "match": "match",
+      "pdfPages": [2, 2]
+    },
+    "preparedness-beta-2023.D3.safeguards.1": {
+      "words": 25,
+      "match": "match",
+      "pdfPages": [20, 20]
+    },
+    "preparedness-beta-2023.D3.halt.1": {
+      "words": 13,
+      "match": "match",
+      "pdfPages": [21, 21]
+    },
+    "preparedness-beta-2023.D3.halt.2": {
+      "words": 14,
+      "match": "match",
+      "pdfPages": [21, 21]
+    },
+    "preparedness-beta-2023.D4.determination.1": {
+      "words": 20,
+      "match": "match",
+      "pdfPages": [23, 23]
+    },
+    "preparedness-beta-2023.D4.oversight.1": {
+      "words": 15,
+      "match": "match",
+      "pdfPages": [24, 24]
+    },
+    "preparedness-beta-2023.D5.cadence.1": {
+      "words": 31,
+      "match": "match",
+      "pdfPages": [13, 13]
+    },
+    "preparedness-beta-2023.D6.discretion.1": {
+      "words": 8,
+      "match": "match",
+      "pdfPages": [21, 21]
+    },
+    "preparedness-beta-2023.D6.discretion.2": {
+      "words": 24,
+      "match": "match",
+      "pdfPages": [24, 24]
+    },
+    "preparedness-beta-2023.D7.internal.1": {
+      "words": 19,
+      "match": "match",
+      "pdfPages": [23, 23]
+    },
+    "preparedness-beta-2023.D8.process.1": {
+      "words": 28,
+      "match": "match",
+      "pdfPages": [23, 23]
+    },
+    "preparedness-v2.D1.cbrn.1": {
+      "words": 18,
+      "match": "match",
+      "pdfPages": [2, 2]
+    },
+    "preparedness-v2.D1.cbrn.2": {
+      "words": 9,
+      "match": "match",
+      "pdfPages": [9, 9]
+    },
+    "preparedness-v2.D1.cyber.1": {
+      "words": 15,
+      "match": "match",
+      "pdfPages": [2, 2]
+    },
+    "preparedness-v2.D1.autonomy.1": {
+      "words": 16,
+      "match": "match",
+      "pdfPages": [2, 2]
+    },
+    "preparedness-v2.D1.persuasion.1": {
+      "words": 10,
+      "match": "match",
+      "pdfPages": [9, 9]
+    },
+    "preparedness-v2.D1.other.1": {
+      "words": 16,
+      "match": "match",
+      "pdfPages": [8, 8]
+    },
+    "preparedness-v2.D2.levels.1": {
+      "words": 38,
+      "match": "match",
+      "pdfPages": [5, 5]
+    },
+    "preparedness-v2.D2.definition.1": {
+      "words": 16,
+      "match": "match",
+      "pdfPages": [5, 5]
+    },
+    "preparedness-v2.D3.safeguards.1": {
+      "words": 28,
+      "match": "match",
+      "pdfPages": [5, 5]
+    },
+    "preparedness-v2.D3.halt.1": {
+      "words": 21,
+      "match": "match",
+      "pdfPages": [4, 4]
+    },
+    "preparedness-v2.D3.halt.2": {
+      "words": 26,
+      "match": "match",
+      "pdfPages": [4, 4]
+    },
+    "preparedness-v2.D4.determination.1": {
+      "words": 20,
+      "match": "match",
+      "pdfPages": [4, 4]
+    },
+    "preparedness-v2.D4.oversight.1": {
+      "words": 20,
+      "match": "match",
+      "pdfPages": [4, 4]
+    },
+    "preparedness-v2.D4.oversight.2": {
+      "words": 15,
+      "match": "match",
+      "pdfPages": [16, 16]
+    },
+    "preparedness-v2.D5.cadence.1": {
+      "words": 12,
+      "match": "match",
+      "pdfPages": [10, 10]
+    },
+    "preparedness-v2.D6.competitor.1": {
+      "words": 21,
+      "match": "match",
+      "pdfPages": [13, 13]
+    },
+    "preparedness-v2.D6.competitor.2": {
+      "words": 32,
+      "match": "match",
+      "pdfPages": [13, 13]
+    },
+    "preparedness-v2.D6.discretion.1": {
+      "words": 10,
+      "match": "match",
+      "pdfPages": [16, 16]
+    },
+    "preparedness-v2.D7.internal.1": {
+      "words": 15,
+      "match": "match",
+      "pdfPages": [13, 13]
+    },
+    "preparedness-v2.D7.external.1": {
+      "words": 13,
+      "match": "match",
+      "pdfPages": [13, 13]
+    },
+    "preparedness-v2.D8.process.1": {
+      "words": 17,
+      "match": "match",
+      "pdfPages": [16, 16]
+    },
+    "preparedness-v2.D8.changes.1": {
+      "words": 25,
+      "match": "match",
+      "pdfPages": [15, 15]
+    },
+    "frontier-governance-2026.D1.cbrn.1": {
+      "words": 19,
+      "match": "match",
+      "pdfPages": [3, 3]
+    },
+    "frontier-governance-2026.D1.cbrn.2": {
+      "words": 9,
+      "match": "match",
+      "pdfPages": [10, 10]
+    },
+    "frontier-governance-2026.D1.cyber.1": {
+      "words": 19,
+      "match": "match",
+      "pdfPages": [3, 3]
+    },
+    "frontier-governance-2026.D1.autonomy.1": {
+      "words": 19,
+      "match": "match",
+      "pdfPages": [3, 3]
+    },
+    "frontier-governance-2026.D1.autonomy.2": {
+      "words": 16,
+      "match": "match",
+      "pdfPages": [12, 12]
+    },
+    "frontier-governance-2026.D1.persuasion.1": {
+      "words": 19,
+      "match": "match",
+      "pdfPages": [3, 3]
+    },
+    "frontier-governance-2026.D1.persuasion.2": {
+      "words": 7,
+      "match": "match",
+      "pdfPages": [11, 11]
+    },
+    "frontier-governance-2026.D1.other.1": {
+      "words": 17,
+      "match": "match",
+      "pdfPages": [12, 12]
+    },
+    "frontier-governance-2026.D2.levels.1": {
+      "words": 19,
+      "match": "match",
+      "pdfPages": [9, 9]
+    },
+    "frontier-governance-2026.D2.definition.1": {
+      "words": 33,
+      "match": "match",
+      "pdfPages": [7, 7]
+    },
+    "frontier-governance-2026.D3.safeguards.1": {
+      "words": 22,
+      "match": "match",
+      "pdfPages": [13, 13]
+    },
+    "frontier-governance-2026.D3.halt.1": {
+      "words": 26,
+      "match": "match",
+      "pdfPages": [13, 13]
+    },
+    "frontier-governance-2026.D4.determination.1": {
+      "words": 43,
+      "match": "match",
+      "pdfPages": [13, 13]
+    },
+    "frontier-governance-2026.D4.determination.2": {
+      "words": 15,
+      "match": "match",
+      "pdfPages": [20, 20]
+    },
+    "frontier-governance-2026.D4.oversight.1": {
+      "words": 18,
+      "match": "match",
+      "pdfPages": [20, 20]
+    },
+    "frontier-governance-2026.D5.cadence.1": {
+      "words": 14,
+      "match": "match",
+      "pdfPages": [8, 8]
+    },
+    "frontier-governance-2026.D6.discretion.1": {
+      "words": 12,
+      "match": "match",
+      "pdfPages": [8, 8]
+    },
+    "frontier-governance-2026.D6.discretion.2": {
+      "words": 20,
+      "match": "match",
+      "pdfPages": [18, 18]
+    },
+    "frontier-governance-2026.D7.internal.1": {
+      "words": 43,
+      "match": "match",
+      "pdfPages": [13, 13]
+    },
+    "frontier-governance-2026.D7.external.1": {
+      "words": 18,
+      "match": "match",
+      "pdfPages": [18, 18]
+    },
+    "frontier-governance-2026.D7.external.2": {
+      "words": 9,
+      "match": "match",
+      "pdfPages": [15, 15]
+    },
+    "frontier-governance-2026.D8.process.1": {
+      "words": 32,
+      "match": "match",
+      "pdfPages": [21, 21]
+    },
+    "frontier-governance-2026.D8.process.2": {
+      "words": 12,
+      "match": "match",
+      "pdfPages": [22, 22]
+    },
+    "faif-2025.D1.cbrn.1": {
+      "words": 11,
+      "match": "match",
+      "pdfPages": [4, 4]
+    },
+    "faif-2025.D1.cbrn.2": {
+      "words": 10,
+      "match": "match",
+      "pdfPages": [5, 5]
+    },
+    "faif-2025.D1.cyber.1": {
+      "words": 21,
+      "match": "match",
+      "pdfPages": [5, 6]
+    },
+    "faif-2025.D1.autonomy.1": {
+      "words": 14,
+      "match": "match",
+      "pdfPages": [1, 1]
+    },
+    "faif-2025.D1.other.1": {
+      "words": 21,
+      "match": "match",
+      "pdfPages": [7, 7]
+    },
+    "faif-2025.D2.levels.1": {
+      "words": 22,
+      "match": "match",
+      "pdfPages": [6, 6]
+    },
+    "faif-2025.D2.definition.1": {
+      "words": 21,
+      "match": "match",
+      "pdfPages": [10, 10]
+    },
+    "faif-2025.D3.safeguards.1": {
+      "words": 17,
+      "match": "match",
+      "pdfPages": [6, 6]
+    },
+    "faif-2025.D3.safeguards.2": {
+      "words": 18,
+      "match": "match",
+      "pdfPages": [9, 9]
+    },
+    "faif-2025.D3.halt.1": {
+      "words": 27,
+      "match": "match",
+      "pdfPages": [9, 9]
+    },
+    "faif-2025.D5.cadence.1": {
+      "words": 25,
+      "match": "match",
+      "pdfPages": [10, 10]
+    },
+    "faif-2025.D6.discretion.1": {
+      "words": 17,
+      "match": "match",
+      "pdfPages": [3, 3]
+    },
+    "faif-2025.D6.discretion.2": {
+      "words": 20,
+      "match": "match",
+      "pdfPages": [10, 10]
+    },
+    "faif-2025.D7.internal.1": {
+      "words": 15,
+      "match": "match",
+      "pdfPages": [8, 8]
+    },
+    "faif-2025.D7.internal.2": {
+      "words": 12,
+      "match": "match",
+      "pdfPages": [9, 9]
+    },
+    "faif-2025.D7.external.1": {
+      "words": 10,
+      "match": "match",
+      "pdfPages": [8, 8]
+    },
+    "faif-2025.D7.external.2": {
+      "words": 14,
+      "match": "match",
+      "pdfPages": [8, 8]
+    },
+    "faif-2025.D8.process.1": {
+      "words": 22,
+      "match": "match",
+      "pdfPages": [10, 10]
+    },
+    "faif-2026.D1.cbrn.1": {
+      "words": 32,
+      "match": "match",
+      "pdfPages": [2, 2]
+    },
+    "faif-2026.D1.cyber.1": {
+      "words": 32,
+      "match": "match",
+      "pdfPages": [2, 2]
+    },
+    "faif-2026.D1.cyber.2": {
+      "words": 11,
+      "match": "match",
+      "pdfPages": [4, 4]
+    },
+    "faif-2026.D1.autonomy.1": {
+      "words": 32,
+      "match": "match",
+      "pdfPages": [2, 2]
+    },
+    "faif-2026.D1.autonomy.2": {
+      "words": 15,
+      "match": "match",
+      "pdfPages": [1, 1]
+    },
+    "faif-2026.D1.persuasion.1": {
+      "words": 32,
+      "match": "match",
+      "pdfPages": [2, 2]
+    },
+    "faif-2026.D1.persuasion.2": {
+      "words": 10,
+      "match": "match",
+      "pdfPages": [1, 1]
+    },
+    "faif-2026.D1.other.1": {
+      "words": 14,
+      "match": "match",
+      "pdfPages": [1, 1]
+    },
+    "faif-2026.D1.other.2": {
+      "words": 12,
+      "match": "match",
+      "pdfPages": [1, 1]
+    },
+    "faif-2026.D2.levels.1": {
+      "words": 22,
+      "match": "match",
+      "pdfPages": [6, 6]
+    },
+    "faif-2026.D2.definition.1": {
+      "words": 30,
+      "match": "match",
+      "pdfPages": [5, 5]
+    },
+    "faif-2026.D3.safeguards.1": {
+      "words": 14,
+      "match": "match",
+      "pdfPages": [6, 6]
+    },
+    "faif-2026.D3.safeguards.2": {
+      "words": 20,
+      "match": "match",
+      "pdfPages": [7, 7]
+    },
+    "faif-2026.D3.halt.1": {
+      "words": 32,
+      "match": "match",
+      "pdfPages": [6, 6]
+    },
+    "faif-2026.D5.cadence.1": {
+      "words": 20,
+      "match": "match",
+      "pdfPages": [2, 2]
+    },
+    "faif-2026.D5.cadence.2": {
+      "words": 12,
+      "match": "match",
+      "pdfPages": [6, 6]
+    },
+    "faif-2026.D6.discretion.1": {
+      "words": 14,
+      "match": "match",
+      "pdfPages": [6, 6]
+    },
+    "faif-2026.D6.discretion.2": {
+      "words": 15,
+      "match": "match",
+      "pdfPages": [7, 7]
+    },
+    "faif-2026.D7.internal.1": {
+      "words": 14,
+      "match": "match",
+      "pdfPages": [2, 2]
+    },
+    "faif-2026.D7.external.1": {
+      "words": 24,
+      "match": "match",
+      "pdfPages": [9, 9]
+    },
+    "faif-2026.D8.process.1": {
+      "words": 17,
+      "match": "match",
+      "pdfPages": [2, 2]
+    },
+    "meta-faf-v1-1.D2.levels.1": {
+      "words": 13,
+      "match": "not retrieved"
+    },
+    "meta-faf-v1-1.D2.definition.1": {
+      "words": 26,
+      "match": "not retrieved"
+    },
+    "meta-faf-v1-1.D2.definition.2": {
+      "words": 27,
+      "match": "not retrieved"
+    },
+    "meta-faf-v1-1.D3.halt.1": {
+      "words": 29,
+      "match": "not retrieved"
+    },
+    "meta-faf-v1-1.D3.halt.2": {
+      "words": 25,
+      "match": "not retrieved"
+    },
+    "meta-faf-v1-1.D3.halt.3": {
+      "words": 28,
+      "match": "not retrieved"
+    },
+    "meta-faf-v1-1.D4.determination.1": {
+      "words": 27,
+      "match": "not retrieved"
+    },
+    "meta-faf-v1-1.D4.determination.2": {
+      "words": 18,
+      "match": "not retrieved"
+    },
+    "meta-aasf-v2-0.D1.cbrn.1": {
+      "words": 18,
+      "match": "match",
+      "pdfPages": [1, 1]
+    },
+    "meta-aasf-v2-0.D1.cbrn.2": {
+      "words": 14,
+      "match": "match",
+      "pdfPages": [36, 36]
+    },
+    "meta-aasf-v2-0.D1.cyber.1": {
+      "words": 18,
+      "match": "match",
+      "pdfPages": [1, 1]
+    },
+    "meta-aasf-v2-0.D1.autonomy.1": {
+      "words": 18,
+      "match": "match",
+      "pdfPages": [1, 1]
+    },
+    "meta-aasf-v2-0.D1.other.1": {
+      "words": 12,
+      "match": "match",
+      "pdfPages": [36, 36]
+    },
+    "meta-aasf-v2-0.D2.levels.1": {
+      "words": 17,
+      "match": "match",
+      "pdfPages": [8, 8]
+    },
+    "meta-aasf-v2-0.D2.definition.1": {
+      "words": 24,
+      "match": "match",
+      "pdfPages": [3, 3]
+    },
+    "meta-aasf-v2-0.D3.safeguards.1": {
+      "words": 27,
+      "match": "match",
+      "pdfPages": [15, 15]
+    },
+    "meta-aasf-v2-0.D3.halt.1": {
+      "words": 22,
+      "match": "match",
+      "pdfPages": [17, 17]
+    },
+    "meta-aasf-v2-0.D4.determination.1": {
+      "words": 16,
+      "match": "match",
+      "pdfPages": [6, 6]
+    },
+    "meta-aasf-v2-0.D4.determination.2": {
+      "words": 21,
+      "match": "match",
+      "pdfPages": [7, 7]
+    },
+    "meta-aasf-v2-0.D4.oversight.1": {
+      "words": 13,
+      "match": "match",
+      "pdfPages": [10, 10]
+    },
+    "meta-aasf-v2-0.D5.cadence.1": {
+      "words": 13,
+      "match": "match",
+      "pdfPages": [26, 26]
+    },
+    "meta-aasf-v2-0.D6.discretion.1": {
+      "words": 14,
+      "match": "match",
+      "pdfPages": [15, 15]
+    },
+    "meta-aasf-v2-0.D7.internal.1": {
+      "words": 22,
+      "match": "match",
+      "pdfPages": [10, 10]
+    },
+    "meta-aasf-v2-0.D7.external.1": {
+      "words": 23,
+      "match": "match",
+      "pdfPages": [7, 7]
+    },
+    "meta-aasf-v2-0.D8.process.1": {
+      "words": 29,
+      "match": "match",
+      "pdfPages": [40, 40]
+    },
+    "meta-aasf-v2-0.D8.changes.1": {
+      "words": 11,
+      "match": "match",
+      "pdfPages": [44, 44]
+    },
+    "meta-aasf-v2-0.D8.changes.2": {
+      "words": 21,
+      "match": "match",
+      "pdfPages": [44, 44]
+    },
+    "ms-fgf-2025.D1.cbrn.1": {
+      "words": 15,
+      "match": "match",
+      "pdfPages": [4, 4]
+    },
+    "ms-fgf-2025.D1.cyber.1": {
+      "words": 16,
+      "match": "match",
+      "pdfPages": [4, 4]
+    },
+    "ms-fgf-2025.D1.autonomy.1": {
+      "words": 15,
+      "match": "match",
+      "pdfPages": [4, 4]
+    },
+    "ms-fgf-2025.D2.levels.1": {
+      "words": 11,
+      "match": "match",
+      "pdfPages": [4, 4]
+    },
+    "ms-fgf-2025.D2.definition.1": {
+      "words": 19,
+      "match": "match",
+      "pdfPages": [12, 12]
+    },
+    "ms-fgf-2025.D3.safeguards.1": {
+      "words": 18,
+      "match": "match",
+      "pdfPages": [8, 8]
+    },
+    "ms-fgf-2025.D3.halt.1": {
+      "words": 21,
+      "match": "match",
+      "pdfPages": [9, 9]
+    },
+    "ms-fgf-2025.D4.determination.1": {
+      "words": 22,
+      "match": "match",
+      "pdfPages": [10, 10]
+    },
+    "ms-fgf-2025.D4.oversight.1": {
+      "words": 17,
+      "match": "match",
+      "pdfPages": [10, 10]
+    },
+    "ms-fgf-2025.D5.cadence.1": {
+      "words": 16,
+      "match": "match",
+      "pdfPages": [6, 6]
+    },
+    "ms-fgf-2025.D5.cadence.2": {
+      "words": 18,
+      "match": "match",
+      "pdfPages": [7, 7]
+    },
+    "ms-fgf-2025.D6.competitor.1": {
+      "words": 11,
+      "match": "match",
+      "pdfPages": [7, 7]
+    },
+    "ms-fgf-2025.D6.discretion.1": {
+      "words": 20,
+      "match": "match",
+      "pdfPages": [6, 6]
+    },
+    "ms-fgf-2025.D6.discretion.2": {
+      "words": 10,
+      "match": "match",
+      "pdfPages": [10, 10]
+    },
+    "ms-fgf-2025.D7.internal.1": {
+      "words": 20,
+      "match": "match",
+      "pdfPages": [10, 10]
+    },
+    "ms-fgf-2025.D7.external.1": {
+      "words": 20,
+      "match": "match",
+      "pdfPages": [10, 10]
+    },
+    "ms-fgf-2025.D8.process.1": {
+      "words": 18,
+      "match": "match",
+      "pdfPages": [10, 10]
+    },
+    "ms-fgf-2025.D8.process.2": {
+      "words": 18,
+      "match": "match",
+      "pdfPages": [10, 10]
+    },
+    "ms-fgf-2026.D1.cbrn.1": {
+      "words": 15,
+      "match": "match",
+      "pdfPages": [4, 4]
+    },
+    "ms-fgf-2026.D1.cyber.1": {
+      "words": 16,
+      "match": "match",
+      "pdfPages": [4, 4]
+    },
+    "ms-fgf-2026.D1.autonomy.1": {
+      "words": 15,
+      "match": "match",
+      "pdfPages": [4, 4]
+    },
+    "ms-fgf-2026.D1.autonomy.2": {
+      "words": 11,
+      "match": "match",
+      "pdfPages": [4, 4]
+    },
+    "ms-fgf-2026.D1.persuasion.1": {
+      "words": 14,
+      "match": "match",
+      "pdfPages": [4, 4]
+    },
+    "ms-fgf-2026.D2.levels.1": {
+      "words": 11,
+      "match": "match",
+      "pdfPages": [4, 4]
+    },
+    "ms-fgf-2026.D2.definition.1": {
+      "words": 19,
+      "match": "match",
+      "pdfPages": [12, 12]
+    },
+    "ms-fgf-2026.D3.safeguards.1": {
+      "words": 18,
+      "match": "match",
+      "pdfPages": [8, 8]
+    },
+    "ms-fgf-2026.D3.halt.1": {
+      "words": 21,
+      "match": "match",
+      "pdfPages": [9, 9]
+    },
+    "ms-fgf-2026.D4.determination.1": {
+      "words": 22,
+      "match": "match",
+      "pdfPages": [10, 10]
+    },
+    "ms-fgf-2026.D4.oversight.1": {
+      "words": 17,
+      "match": "match",
+      "pdfPages": [10, 10]
+    },
+    "ms-fgf-2026.D5.cadence.1": {
+      "words": 13,
+      "match": "match",
+      "pdfPages": [6, 6]
+    },
+    "ms-fgf-2026.D5.cadence.2": {
+      "words": 18,
+      "match": "match",
+      "pdfPages": [7, 7]
+    },
+    "ms-fgf-2026.D6.competitor.1": {
+      "words": 11,
+      "match": "match",
+      "pdfPages": [7, 7]
+    },
+    "ms-fgf-2026.D6.discretion.1": {
+      "words": 10,
+      "match": "match",
+      "pdfPages": [10, 10]
+    },
+    "ms-fgf-2026.D7.internal.1": {
+      "words": 20,
+      "match": "match",
+      "pdfPages": [10, 10]
+    },
+    "ms-fgf-2026.D7.external.1": {
+      "words": 20,
+      "match": "match",
+      "pdfPages": [10, 10]
+    },
+    "ms-fgf-2026.D7.external.2": {
+      "words": 12,
+      "match": "match",
+      "pdfPages": [10, 10]
+    },
+    "ms-fgf-2026.D8.process.1": {
+      "words": 11,
+      "match": "match",
+      "pdfPages": [10, 10]
+    },
+    "ms-fgf-2026.D8.process.2": {
+      "words": 18,
+      "match": "match",
+      "pdfPages": [10, 10]
+    },
+    "ms-fgf-2026.D8.process.3": {
+      "words": 12,
+      "match": "match",
+      "pdfPages": [10, 10]
+    },
+    "ms-fgf-2026.D8.changes.1": {
+      "words": 11,
+      "match": "match",
+      "pdfPages": [16, 16]
+    }
+  }
+}

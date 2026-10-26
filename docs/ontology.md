@@ -1,0 +1,216 @@
+# Ontology v2
+
+## Four records, one dataset
+
+| Record   | Purpose                                    | Required core                                                                                                                 |
+| -------- | ------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------- |
+| Entity   | Stable referent                            | ID, canonical name, type, aliases, neutral description, identity source IDs                                                   |
+| Claim    | One scoped assertion                       | ID, subject, predicate, entity or literal object, topic, temporal record, derivation, resolution, qualification, evidence IDs |
+| Source   | Bibliographic object and inspected version | ID, authors/publisher, publication date, canonical and evidence URLs, version, access date, reuse notes                       |
+| Evidence | Source passage used for one claim          | ID, claim/source IDs, source and support roles, quote/paraphrase, locator, verification state, check date                     |
+
+Separate JSON files store these records. Metadata records schema version, scope, update date and configurable research anchors. Zod validates shapes and cross-record integrity at build time and loading. Definitions live in `src/domain/schema.ts`; relation semantics and endpoint constraints live in `src/domain/predicates.ts`.
+
+Entity types include organisations, people, concepts, documents, infrastructure, models, public bodies and funds. A document node identifies a work or version; its Source record identifies the inspected bibliographic expression. Concepts denote propositions or vocabulary, not endorsement.
+
+## Predicates and direction
+
+Arrows run from subject to object. There is no generic related-to or influenced-by edge. Authorship, publication, explicit citation, intellectual credit, organisational combination and role snapshots remain distinct.
+
+A directed multigraph permits multiple claims between the same endpoints. Microsoft’s announced investment in OpenAI and OpenAI’s cloud provision through Microsoft are separately inspectable claims. Literal objects, such as a round total, appear in lists and inspection instead of becoming fabricated entity nodes.
+
+Discussion does not establish earliest use. Citation does not imply agreement. Explicit credit has a narrower scope than a general influence claim. Comparable language without transmission evidence must not become an unlabeled influence edge.
+
+## Time
+
+Dates retain precision: `1965`, `2023-09` or `2023-09-25`. Calendar values are validated. Interval ordering rejects only impossible chronology: a month-specific start and year-only end within that same year remain possible.
+
+- **Event:** dated publication, announcement or transaction.
+- **Snapshot:** state reported at a date, without inferred start or end.
+- **Interval:** at least one known validity boundary. An omitted end means unknown, not still active.
+- **Unknown:** no defensible temporal boundary.
+
+Source publication/version dates, evidence checks and record creation dates are separate. An accession date does not become a publication date. A mutable page does not authenticate an earlier version by itself.
+
+**Through year** accumulates claims by event/snapshot date or the earliest supplied interval boundary. It does not answer which relationships were active then. Unknown dates remain included, labelled and sorted last. Temporal overlap and as-of queries should be separate functions when introduced.
+
+## Epistemics, evidence and review
+
+These dimensions answer different questions. None is a numeric confidence score.
+
+| Dimension               | Values and meaning                                                                                                                                                                                                                                                                                                   |
+| ----------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Claim `derivation`      | `explicit`: a source states the proposition. `inferred`: reasoning from evidence; `inferenceRationale` must state the premises and reasoning. `posed` (schema 2.10): Selekoa frames the proposition as a question that sources take positions on or give context for; no source is recorded as stating it as framed. |
+| Claim `resolution`      | `supported`: recorded evidence supports the scoped proposition. `contested`: an open dispute with both supporting and contradictory evidence. `unresolved`: the available evidence does not settle the question.                                                                                                     |
+| Evidence `support`      | `supports`, `contradicts` or `context`: the passage's relationship to this proposition.                                                                                                                                                                                                                              |
+| Evidence `sourceRole`   | `primary` or `secondary`, relative to this particular claim.                                                                                                                                                                                                                                                         |
+| Claim `editorialState`  | `seed` or `accepted`: whether a human editor has accepted this record for inclusion.                                                                                                                                                                                                                                 |
+| Evidence `verification` | `machine_checked` or `human_reviewed`: how the evidence record was checked. Human review requires an identified pseudonymous reviewer.                                                                                                                                                                               |
+
+An explicit claim can be supported by excellent secondary scholarship. A corporate primary announcement can support the proposition that a commitment was announced without establishing payment, implementation, effectiveness or continuity. Source role is neither a truth rank nor a restriction on claim resolution.
+
+Supported is a scoped assessment of the recorded evidence, not objective truth or a statement that no contradiction exists. Resolution is an assessment, not a count: addressed counterevidence can remain attached to a supported claim, with the reasoning explained in its qualification. An open dispute is contested. Do not hide counterevidence to obtain a label.
+
+Supported and contested records require at least one supporting evidence item, of either source role. Contested also requires contradictory evidence. Unresolved records still require linked evidence, and all of it must be context; validation rejects supporting or contradicting evidence on an unresolved record. Derivation remains independent: an inference can be supported, contested or unresolved. From schema 2.10 an unresolved record cannot be explicit, because no linked passage states it, and a posed question is never supported. Only inferred records carry an inference rationale.
+
+Editorial acceptance is a separate human decision; human-reviewed linked evidence is a necessary validation condition, never automatic approval. Reviewed contested or unresolved records can be accepted as representations of disputes or open questions. Evidence checking alone never changes editorial state. Genesis records remain seeds with machine checks only.
+
+The Inspector derives labels and unique-source counts from these fields. It does not store redundant display labels or equate multiple sources with independent corroboration.
+
+### Foundation migration
+
+Schema 2.0 replaces the mixed claim-status field with derivation and resolution. All 28 genesis claims migrate to `explicit` / `supported` while remaining `seed`. No proposition, qualification, predicate, entity, date, source or evidence record changes. `pnpm check:migration` compares these invariants with the immutable genesis commit; it is a historical migration check, not a gate for future authorised editorial corrections.
+
+## Transactions and revisions
+
+### Personnel continuity extension (schema 2.1)
+
+Source publication dates may explicitly be `null` when unknown. Access dates and website copyright years must not substitute for a biography's publication date. The inspector and review pack label this uncertainty. Existing 2.0 records remain readable.
+
+Five predicates distinguish the new propositions: `co_founded` (founding participation), `departure_announced` (role-specific announcement, not an inferred last working day), `launched` (public debut, not incorporation), `acquired` (acquisition), and `unit_of` (internal organisational membership). No transition or influence relation is derived from two roles. A departure announcement requires an event date and role; founding, launch and acquisition records use event or unknown time.
+
+The personnel slice includes an explicitly sourced 2011–2012 role interval, historical snapshots, announcement events and undated prior roles. “Through year” includes unknown dates and accumulates interval records from their earliest supplied boundary; it never computes current employment. A role spanning units does not merge their identities.
+
+The genesis review pack remains a historical working copy with 28 YES decisions and attributed machine-audit notes. Those decisions did not promote claims or evidence. Each increment has a separate explicit order manifest. The personnel working pack now records 29 YES decisions and one pending EDIT; governance review fields remain empty.
+
+Optional attributes record roles, transaction stage, amounts with ISO currency, exact/upper/lower/approximate bounds, amount scope, and quantities with units. Investment, round participation, funding total, cloud selection and infrastructure use are separate predicates. Never infer ownership from use, payment from an announcement, or one investor's contribution from a round total.
+
+Debt, chip purchase, revenue share and capacity ownership can extend the registry with explicit endpoint constraints. Parallel directed records and transaction stages support later cycle analysis without implying circular funding.
+
+Use `supersedes` when a corrected proposition requires a new stable ID. Git records editorial history. Introduce Event objects only when multi-party events earn shared identity beyond existing dates.
+
+Dataset imports additionally require upstream dataset/version, retrieval date, record locator, terms URL and attribution. Migrations must preserve stable IDs and explicit mappings.
+
+## Governance version extension (schema 2.2)
+
+Document versions retain family, publisher, label and independent publication/effective/revision dates. Event time may name its date basis. Sources can identify their exact document expression through documentId. Family keys group versions; a framework-family concept is introduced only when a claim needs a version-unspecified referent.
+
+supersedes_document points from a publisher-documented replacement to its predecessor and is distinct from the claim-correction supersedes field. changes_from records one scoped delta with publisher_statement, changelog or document_comparison evidence mode. applies_framework records partial application without implying succession.
+
+Validation rejects duplicate version identities, conflicting family publishers, cross-family replacement/change edges, reversed chronology and supersession cycles. A document comparison must be inferred, carry a rationale and cite supporting evidence linked to both exact versions. See [governance methodology](governance-versioning.md) for source and temporal limits.
+
+## Capital and compute extension (schema 2.3)
+
+New typed transaction records distinguish plans, announcements, commitments, contracts, realised investments, delivery and operation. Amounts retain strict and inclusive bounds; typed quantities require bounds and units. Internal resource use is separate from external transactions. See [capital and compute methodology](capital-compute.md) for the stage vocabulary, predicates, time semantics and validation limits. Existing records and review states are unchanged.
+
+## Intellectual lineage extension (schema 2.4)
+
+`uses_method_from` records a document's explicit report of using an identified method or architecture from another work in its own study. It requires document endpoints, explicit derivation, a named `attributes.method`, and supporting primary evidence belonging to the reporting document. It does not establish independent implementation, effectiveness or institutional adoption. Citation, credit to actors, concept discussion, reformulation, criticism and unresolved similarity remain distinct; see [the lineage methodology](intellectual-lineage.md).
+
+Research-paper entities identify works; source records identify inspected expressions. An unversioned citation does not establish which revision was read. This increment reuses existing predicates and framework-version semantics without creating generic influence edges. Similarity records remain outside application data. All new records remain seeds with machine checks only.
+
+## Evaluation ontology extension (schema 2.5)
+
+`evaluation_engagement` records a scoped evaluator-to-developer activity with mandatory system, activity scope and proposed/announced/reported_performed stage. `separation_announced` points from a separating unit to its parent; `name_transition_announced` points from an earlier named referent to the announced new-name referent. Both are announcement-only and do not establish legal succession. All identities and earlier claims remain separate. See [Evaluation Ontology I](evaluation-ontology-i.md) for evidence gates, temporal uncertainty, audit coverage and deferred decisions.
+
+## Name sorting (schema 2.6)
+
+Every person entity carries a `sortName` in "Family, Given" form, for example `Liang, Wenfeng` or `LeCun, Yann`. It follows library indexing practice — IFLA _Names of Persons_, RDA and _The Chicago Manual of Style_ indexing guidance: each person is filed under the element that their own naming tradition treats as the family name, and particles follow that person's national practice. The displayed `name` is unchanged.
+
+`sortName` is a cataloguing convention for navigation, not an evidenced claim about a person's legal name, identity or preferred order; it has no evidence record and is not reviewed as a claim. Validation requires it for every person and rejects it on other entity types.
+
+The People list uses one collation for every name (`Intl.Collator`, base sensitivity: case and diacritics ignored at the first level) and groups by the first letter of `sortName`. National alphabet orders, such as Hungarian digraphs or Spanish compound-surname conventions beyond the stored form, are not applied.
+
+## Source language and archive captures (schema 2.7)
+
+Every source records `language`, the canonical BCP 47 tag of the inspected expression, for example `en`, `fr`, `zh-Hans` or `zh-Hant`. Chinese sources distinguish script. The tag describes the document as inspected, not a translation or summary. Validation requires it from schema 2.7; earlier datasets remain readable without it.
+
+`archivedUrl` points to an existing archive copy and the optional `archivedAt` records its capture date. A capture date requires an archive URL, and for Internet Archive links it must match the URL's timestamp. A capture shows only what the archive retrieved on that date. It does not authenticate earlier bytes, and it can differ from the expression inspected for the evidence. Archive, publication, version, access and check dates remain separate.
+
+The first archive pass covers the frontier safety frameworks collection: its 27 sources record the existing Internet Archive capture nearest each edition's effective, publication or revision date (for mutable index pages, the recorded access date). RSP v1.0 and v2.0 instead link publication-period captures made at the files' earlier addresses, each byte-identical to the inspected file. No new snapshot was requested. The 27 sources' reuse notes follow the editorial policy's short-quotation rule, and selected framework passages are now checked verbatim quotes; see the [quote-pass record](../review/framework-evidence-quotes-2026-10-03.json). The audit record is [`review/framework-evidence-audit-2026-10-03.json`](../review/framework-evidence-audit-2026-10-03.json). Historical baselines and review packs are checked against a test-only pre-2.7 view that removes these fields and restores the one upgraded evidence row.
+
+## Framework provisions and contested assessments (schema 2.8)
+
+A provision is one claim, not a new entity. `states_provision` records that an exact framework edition states one provision, with a literal label as its object and `attributes.provision` giving its kind (`threshold`, `required_action`, `decision_authority` or `exception`), a family-scoped key that lines the same provision up across editions, and, for decision authority, the named parties and their roles (decides, recommends, can overrule, informed, consulted). Validation requires an explicit claim on an exact edition, dated by one of that edition’s own dates, with a supporting primary quotation of at most 50 words from the cited edition. A provision describes what the edition says, not implementation, compliance or effectiveness, and is therefore always `supported`: its quote is the text. Provisions are a bounded selection limited by the quotation policy; an edition without a recorded provision has not been shown to lack it.
+
+`provision_not_found` records an absence: within a stated locator scope of an exact edition, and by a stated method, no passage stating the keyed provision was found. It is inferred, carries its premises, and is never a deletion claim. A `changes_from` claim may name a provision key only when both editions carry a `states_provision` claim with that key, so a provision change always rests on two inspected texts. Changes stated in a publisher’s change log are explicit; textual comparisons are inferred with their premises.
+
+`changeBasis: assessment` records a competent source’s characterisation of a change’s effect, such as a weakening. `provision_assessed` records competent sources’ assessment of one stated provision, such as whether its wording obliges the publisher to mitigate risks; it names the provision by kind and key, and validation requires that provision to be stated in the same edition. Both kinds of assessment are never `supported`: they are `contested` when competent sources disagree, with evidence on both sides of one proposition, or `unresolved`, with context evidence only. Each requires sources from at least two publishers, and evidence about adjacent questions (consequences, motives, facts both sides accept) is context, not a side. Secondary commentary is admissible as evidence of the disagreement, not as proof of what a framework’s text says. No record resolves a dispute by choosing a side.
+
+Sources with quoted evidence record `documentWords`: the approximate length of the inspected document and how it was counted (the PDF text layer, or the article text of a web page). From schema 2.8, validation enforces the quotation policy against it: at most 50 words per quote, and per document the length-scaled limit of the [editorial policy](editorial-policy.md#short-quotation) (from 2026-10-15: 400 words or 5%, whichever is larger, at most 800; about 10% under 2,000 words, or one complete sentence of up to 25 words). Earlier schema versions remain readable without it.
+
+Historical baselines and review packs are checked against a test-only pre-2.8 view, itself built on the pre-2.9 view below, that removes the week 4a additions and restores changed rows from [`review/week4a-before-2026-10-03.json`](../review/week4a-before-2026-10-03.json). Stop-case decisions are recorded in [`review/week4a-stop-case-decisions-2026-10-03.json`](../review/week4a-stop-case-decisions-2026-10-03.json).
+
+## Control structures and external commitments (schema 2.9)
+
+`holds_control_right` records one documented right of one organisation over another — controlling it, acting as sole member or general partner, holding its voting control, or electing, appointing or removing its directors, approving amendments or holding a veto — with `attributes.control` naming the right, the instrument it operates through and its stage: planned, announced, agreed in principle or effective. A planned, announced or agreed arrangement carries its announcement date (or an unknown date); an effective one is never dated by its announcement. A control right is not an ownership share, and an equity stake, observer seat or board seat is not control; none is inferred from another, and separate records are never joined into a chain of control. `has_legal_form` records a documented legal form at a date, `formed_entity` the formation of a new entity, and `converted_into` a conversion or restructuring with its stage. `control_assessed` records competent sources' disagreement about one proposition on how an entity is controlled; like other assessments it is contested or unresolved, never supported, and needs sources from at least two publishers.
+
+`signed_commitment` records an organisation documented as a signatory of a commitment text, with `attributes.commitment.stage` separating announced intent, signature and appearance on a published list, and any stated scope (for example a single chapter). A listing is dated by the publication of the list, or by the revision that added the name; it never stands in for a signature date. `declined_commitment` records a public statement that an organisation would not sign, dated by its announcement. `references_commitment` points from a framework or company document to a commitment text or law that the document explicitly links itself to; `attributes.commitment.link` states how (fulfils, implements, responds to, serves as its framework under, complies with, or names), and validation requires a supporting quote from the linking document itself. All three are explicit and supported by evidence. None is evidence of compliance. `enacted` records a public body's enactment or approval of a legal instrument as an event; a new `signature` date basis distinguishes signature from publication or effect.
+
+Document versions may now be published by public bodies, so commitment texts, statutes and codes of practice carry exact editions, dates and quoted provisions with the same rules as frameworks: a statute provision is quoted from the cited (for SB 53, chaptered) expression and dated by one of that edition's own dates. A provision states what the text requires of the categories it defines; whether a named company falls within a category is legal application and is stopped, not recorded.
+
+Governing documents, such as filed certificates of incorporation and a regulator’s letter, can be recorded the same way: as document versions published by the company or the public body, dated by their filing or letter date, with quoted provisions and, between two filed versions, an inferred textual comparison. A provision of a regulator’s letter that records a company’s representation is the letter’s statement, not evidence that the representation binds anyone or was carried out. Control timelines show these provisions and changes when the document is listed on the page.
+
+Historical baselines and review packs are checked against a test-only pre-2.9 view that removes the week 4b additions listed in [`review/week4b-before-2026-10-04.json`](../review/week4b-before-2026-10-04.json); week 4b changed no stored row. That view now starts from a pre-4c view, which removes the week 4c additions and restores the two source rows it changed, listed in [`review/week4c-before-2026-10-04.json`](../review/week4c-before-2026-10-04.json). See [control structures and external commitments](control-commitments.md).
+
+## Posed questions and assessment dates (schema 2.10)
+
+Assessments (`changeBasis: assessment`, `provision_assessed`, `control_assessed`) are questions Selekoa poses, not propositions a source states: competent sources take positions on them, or give context. From schema 2.10 they are recorded with derivation `posed`, which the interface labels “Question posed by Selekoa”; validation rejects an explicit assessment or unresolved record and a supported posed record.
+
+An interval is a validity period. An assessment is dated by what it assesses, such as an edition's date or the date of the arrangement in question, or left undated with a note; validation rejects an interval on an assessment. The publication dates of the sources that discuss a question are source dates, recorded on the sources and, where useful, in the time note, never as the claim's interval. The 2026-10-05 fix pass applied these rules to the five assessment records and re-dated the two control assessments, whose source-publication windows had been stored as intervals. The earlier rows are kept in [`review/fix-pass-before-2026-10-05.json`](../review/fix-pass-before-2026-10-05.json), and the test-only historical views (`src/editorial/historical-views.ts`) reproduce the earlier dataset from it.
+
+## Propositions and texts that articulate them (schema 2.11)
+
+A proposition is a concept entity with a `proposition` block: a code within its collection (`A1`, `B3`), the one `criterion` that texts are classified against, and its usual names (`terms`), possibly none. The concept records the proposition, not its truth. The existing concepts `intelligence-explosion` and `deceptive-alignment` now carry the blocks of A1 and B3.
+
+Three predicates point from a document to a proposition. `articulates_proposition`: a passage of the document meets the criterion. `contests_proposition`: a passage disputes the proposition or a premise it depends on. `bears_on_proposition`: a passage bears on the proposition without meeting the criterion, and the record names the missing element. Each record is one claim with its own evidence: a quotation of at most 50 words where the source's reuse note permits short quotations, otherwise a labelled paraphrase. A record documents what the text says; it is explicit and supported, and dated as an event by the work it comes from.
+
+`attributes.thought` carries what the predicate cannot:
+
+| Field      | Meaning                                                                                                                                                                                                                            |
+| ---------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `roles`    | `earliest-located`, `earliest-located-term`, `articulation` or `most-developed` for an articulation; `contesting`; `context`. Earliest located, earliest located term and most developed are assigned across the whole collection. |
+| `register` | `nonfiction`, `fiction` (a novel or story, or a speech or treatise inside one), `satirical`, `dream` (framed by its author as a dream) or `relay` (a report of another author's argument). Fiction records what the work says.     |
+| `term`     | For the earliest-located-term role: the usual name the passage uses. A title can carry it without meeting the criterion.                                                                                                           |
+| `missing`  | For a context record: the element of the criterion the passage lacks.                                                                                                                                                              |
+| `claimed`  | An earlier date given for the work that does not date the checked wording, such as a lecture, talk, symposium or draft.                                                                                                            |
+| `attested` | The later date from which the quoted wording is known, when it survives only in a later copy: an archive capture, a reprint marked as changed, a later electronic edition or a relay. It can be undated.                           |
+
+Earliest located is decided by the date of the wording: the attested date where one is recorded, otherwise the record's own date. A record known only from an undated later copy cannot be earliest located. Validation requires, per proposition, exactly one earliest-located articulation with no articulation dated definitely before it, at most one most-developed record, and, when any record's evidence uses a usual name, exactly one earliest-located-term record whose evidence contains that name and before which no such use is dated. A claimed date is not after the record's date and an attested date is not before it. Each text has at most one record per proposition and stance; several passages are several evidence items. "Earliest located" means earliest among the texts the collection's recorded searches found; it is never a claim of first use, coinage or origin, and a text found later that is earlier becomes the earliest located record, with the change recorded.
+
+No relation runs from one text to another through a proposition. Two texts that articulate the same proposition are not thereby linked: shared wording, dates, citations or credits do not establish influence, lineage or causation, and the existing `cites` and `explicitly_credits` records stay separate. The map leaves proposition records out; they appear in the propositions collection and on document pages.
+
+Sources gain the kinds `book`, `message` (mailing-list and newsgroup messages) and `post` (forum and blog posts). Schema 2.11 makes explicit that a passage quoted for several claims counts once towards its source's quotation limit. Historical baselines and review packs are checked against a test-only pre-2.11 view that removes the admission's additions and restores the two concepts it changed, listed in [`review/thought-spine-before-2026-10-06.json`](../review/thought-spine-before-2026-10-06.json). The admission's decisions, the fixes from both machine checks and its verification are in [`review/thought-spine-admission-2026-10-06.json`](../review/thought-spine-admission-2026-10-06.json).
+
+## Contesting records, retrospectives and context-only passages (schema 2.12)
+
+Schema 2.12 extends the proposition records for collections that follow one author's arguments over time. The first is the Yudkowsky argument collection (codes `Y01`…), admitted from the candidate pack in `research/yudkowsky-arguments/`.
+
+- **Earliest located contesting record.** A `contests_proposition` record may hold the role `earliest-located`, beside `contesting`. The rule is the one for articulations: it is decided by the date of the wording (the attested date where recorded), a record known only from an undated later copy cannot hold it, no other contesting record on the proposition may be dated definitely before it, and it means earliest within the collection's recorded searches, never first. A proposition has at most one. Context records cannot hold it.
+- **Later restatement.** The role `later-restatement`, allowed on any proposition record, marks a text in which the author restates a point already made in an earlier located text of their own. It is not a ranking. The selection role "strongest" of the candidate pack is not carried over.
+- **Engagement.** `attributes.thought.engagement` on a contesting record states how it contests the proposition. `engages-premise`: the passage's message or dialogue turn gives a reason against a premise of the proposition. `contrary-only`: it states the contrary conclusion without giving such a reason. The unit is the message or dialogue turn the passage belongs to, not only its paragraph (maintainer decision, 2026-10-08). A one-sentence `rationale` names the premise. Engagement is optional, so the 2.11 contesting records of the human-thought collection were valid without it; all 26 were backfilled on 2026-10-15 ([record](../review/engagement-backfill-2026-10-15.md)).
+- **Retrospective self-report.** `attributes.thought.retrospective` flags a record whose passage reports an earlier belief of the same author. `from` and `until` date the reported belief where the text dates it, and `note` describes it. The record stays dated by the retrospective text, the reported dates are never after it, and they never decide earliest located. A retrospective reports a belief; it is not that belief's wording. A retrospective may articulate the proposition it reports, but an articulation flagged as retrospective never holds earliest located and does not decide which record does, and its passage is shown only with the rejection that accompanies it (maintainer decision, 2026-10-17; [record](../review/cross-family-dispositions-2026-10-17.md)).
+- **Context-only passages.** An evidence item may carry `contextOnly`: the `reason` its quotation misleads when shown alone, the context it `requires`, and, where records supply that context, their `claimIds`. The interface and exports never show such a passage without that context. It is a property of the passage, not of a consuming application.
+- **Earlier views and later rejections.** An author's earlier text that held a proposition is an `articulates_proposition` record; a later text by the same author that rejects it is its own `contests_proposition` record. The pairing is derived when the records are read (same author, contesting record dated later) and never stored as a relation between texts.
+
+Selection roles such as "strongest" stay with consuming applications and are not stored. Earliest located remains unavailable to context records, so the pack's earliest-located roles on related passages were not carried over. The admission's mapping, decisions and self-audit are in [`review/yudkowsky-admission-2026-10-08.md`](../review/yudkowsky-admission-2026-10-08.md), and the rows it added are listed in [`review/yudkowsky-admission-before-2026-10-08.json`](../review/yudkowsky-admission-before-2026-10-08.json), from which the test-only historical view reproduces the earlier dataset.
+
+## Source tiers, model conditions and estimates (schema 2.13)
+
+Schema 2.13 extends the proposition records for a collection that sorts its texts into tiers. The first is the economics of machine intelligence collection (codes `G01`… and `M01`…), admitted on 2026-10-14 from the candidate packs in `research/economics-growth/` and `research/economics-mainstream/`.
+
+- **Tier.** `attributes.thought.tier` gives the text's tier, `1` or `2`, under the collection's own rule, with a one-line `basis` that applies the rule to the text. For the economics collection the rule is the maintainer's of 2026-10-11 and 2026-10-12: tier 1 is scholarly work by economists in any venue, with an author's standing judged at the time of writing, plus core economics venues; tier 2 is texts by non-economists and short-form commentary. A tier says who wrote a text and in which form. It is not a ranking of quality or truth.
+- **Earliest located within a tier.** In a tiered collection, `earliest-located` is decided among tier-1 records only, under the rule of schema 2.11 and 2.12. The new role `earliest-located-tier-2` is decided by the same rule among tier-2 records, and is shown beside the tier-1 role, never instead of it. Validation applies each rule within its tier: per proposition, exactly one earliest located articulation and at most one earliest located contesting record in each tier that has such records. A tier-2 text cannot hold `earliest-located`, and only a tier-2 text can hold `earliest-located-tier-2`. Records without a tier keep the earlier rules.
+- **Conditions.** `attributes.thought.conditions` records the model assumptions or stated conditions under which a passage holds. A conditional model result is never shown as an unconditional forecast.
+- **Estimates.** `attributes.thought.estimates` lists each estimate a text states, as worded: its `holder`, `value`, `horizon`, the text's own `definition`, whether it is `conditional`, and its `conditions`. Estimates from different texts are never converted to a common threshold or combined.
+- **Split codes.** A proposition code may end in a lower-case letter, so that one proposition can be split (`M06a`, `M06b`).
+
+A model scenario that the collection counts as articulating a proposition carries the qualifier “A model scenario under stated conditions, not the author’s own claim” and is shown only with its context. The admission's mapping, decisions and checks are in [`review/economics-admission-2026-10-14.md`](../review/economics-admission-2026-10-14.md), and the rows it added are listed in [`review/economics-admission-before-2026-10-14.json`](../review/economics-admission-before-2026-10-14.json), from which the test-only historical view reproduces the earlier dataset.
+
+## Withheld earliest located roles (schema 2.16)
+
+Schema 2.16 lets a proposition record, in `proposition.withheld`, that an earliest located role (`earliest-located` or `earliest-located-tier-2`) is left unassigned for now by a recorded decision, with the `reason` and the date it was recorded (`recordedAt`). The reason names the lead that would decide the role. Validation then expects no articulation in that tier to hold the role, instead of exactly one; the other rules of schema 2.11 to 2.13 are unchanged. The interface and the research starter show the headline as "Not assigned" with the reason, never as "no located text meets the criterion", because located texts do meet it. The first use is G09 in the economics collection, after the maintainer's adjudication of 2026-10-25 of two machine re-checks; the corrections and the rows they added and changed are in [`review/recheck-corrections-2026-10-25.md`](../review/recheck-corrections-2026-10-25.md) and [`review/recheck-corrections-before-2026-10-25.json`](../review/recheck-corrections-before-2026-10-25.json), from which the test-only historical view reproduces the earlier dataset.
+
+## Lab genealogy: founding dates, agreements, disbanded units and stated reasons (schema 2.15)
+
+Schema 2.15 adds what the lab genealogy needs to record who founded, led and moved between frontier AI labs, admitted on 2026-10-17 from the candidate pack in `research/lab-genealogy/`.
+
+- **`founding_stated`** (organisation → literal): a source states the organisation's founding date or year. The literal gives the date as the source words it (`2015`, `late 2013`, `April 2023`); the event date carries it at the precision stated, in the year the wording names. Neither legal incorporation nor a complete founder roster is implied.
+- **`licensing_hiring_agreement`** (organisation → organisation): an announced arrangement under which the subject licenses the object's technology and hires some of its staff. It is not an acquisition; which staff moved and the terms are not established. It is explicit and dated by its announcement, or undated.
+- **`unit_disbanded`** (unit → parent organisation): a source documents that a team or unit ceased to exist as a separate unit within its parent. Where its members or work went is not established. A report that the unit no longer exists is a snapshot at the report's date, not an effective date.
+- **Announced stage.** `attributes.activityStage: announced` may now mark a prospective appointment, founding credit, departure or organisational change (`held_role`, `co_founded`, `departure_announced`, `unit_of`, `acquired`, `combined_into` and the two new organisational predicates). Announced stays announced: no start or completion is inferred.
+- **Stated reasons.** `attributes.statedReason` records a reason only where the person or organisation concerned stated it in a cited source: `by` names the entity that stated it, `text` is a neutral paraphrase attributed to it, and `evidenceId` is the passage of the same record it rests on. A reason is never inferred and never taken from a journalist's account; where the statement of the event mentions it, it is attributed in the same words; an organisation's explanation is attributed to the organisation, not to the person it concerns.
+- **Retrieval route.** Evidence may record `retrievalRoute`: `direct`, `reader_relay` (a third-party reader service rendering the publisher's current page, used where the publisher refused direct retrieval; not an archive copy) or `x_syndication` (X's own syndication text of a post, which truncates long notes). The route is shown with the passage.
+- **Resting on reporting.** A claim whose supporting evidence is all secondary rests on reporting; the application marks it so. This is derived from the evidence, not stored.
+
+Lab families group an organisation with its parent and units (Google with DeepMind, Google Brain and Google DeepMind; OpenAI with its committees and teams) so that a move between a parent and its unit is not read as a move between labs; the grouping is the pack's and is used for counting only. Snapshots from undated company pages are dated to the retrieval day. The admission's mapping, dispositions and held-back records are in [`review/genealogy-admission-2026-10-17.md`](../review/genealogy-admission-2026-10-17.md), and the rows it added and changed are listed in [`review/genealogy-admission-before-2026-10-17.json`](../review/genealogy-admission-before-2026-10-17.json), from which the test-only historical view reproduces the earlier dataset.

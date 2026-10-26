@@ -1,0 +1,625 @@
+{
+  "description": "Authored inputs for admitting the Yudkowsky argument pack (research/yudkowsky-arguments/pack.json, merged in #15) as schema 2.12 proposition records. scripts/yudkowsky-admission.ts reads the pack and this map and writes the records. Takes become propositions Y01–Y30 (codes follow the pack's take numbers; the pack has no T23, so Y23 is unused). Everything not listed here is carried over from the pack unchanged: quotations, locators, contexts, qualifications, dates and date bases, check dates and search notes.",
+  "authorised": "Maintainer, 2026-10-08: admit the pack as propositions and cut v0.4.0. Engagement uses the message-level rule (maintainer, 2026-10-08).",
+  "propositions": {
+    "T01": {
+      "id": "switch-off-if-dangerous",
+      "name": "Switching it off if it becomes dangerous",
+      "criterion": "An explicit claim that an advanced AI system that became dangerous could simply be switched off or corrected, on the premise that a capable goal-directed system would not act against its own shutdown or modification, so that a shutdown or correction mechanism can be added to it, or that people would recognise in time when it had become dangerous enough to use one."
+    },
+    "T02": {
+      "id": "intelligence-brings-benevolence",
+      "name": "Sufficient intelligence brings good values",
+      "criterion": "An explicit claim that a sufficiently intelligent system will work out ethics and act well, on the premise that greater intelligence by itself brings benevolent goals, or that a sufficiently intelligent mind would discover a true or universally compelling morality and be bound to act on it."
+    },
+    "T03": {
+      "id": "understanding-implies-compliance",
+      "name": "A superintelligence will do what we mean",
+      "criterion": "An explicit claim that a superintelligent system will act on what its makers actually mean, on the premise that an AI that understands what people intend will act on that understanding."
+    },
+    "T04": {
+      "id": "short-instruction-suffices",
+      "name": "A short instruction such as making everyone happy",
+      "criterion": "An explicit claim that an advanced AI can safely be given a short goal such as making everyone happy, on the premise that such an instruction specifies what people want."
+    },
+    "T05": {
+      "id": "feedback-instils-values",
+      "name": "Training on human feedback instils human values",
+      "criterion": "An explicit claim that training an AI system on human feedback will make it learn human values, on the premise that optimising a system for human approval or reward produces internalised human values, or that training instils values as upbringing instils morals in children."
+    },
+    "T06": {
+      "id": "confinement-keeps-it-safe",
+      "name": "Confinement without network access keeps it safe",
+      "criterion": "An explicit claim that an advanced AI kept confined, without network access, poses no danger, on the premise that a smarter-than-human mind confined to a channel with its human operators cannot get out through those operators."
+    },
+    "T07": {
+      "id": "ai-solves-alignment",
+      "name": "AI systems will solve alignment for us",
+      "criterion": "An explicit claim that AI systems can be relied on to solve the alignment problem, on the premise that an AI weak enough to be safe is strong enough to solve alignment, or that its alignment output can be verified."
+    },
+    "T08": {
+      "id": "warning-signs-in-time",
+      "name": "Clear warning signs will come before danger",
+      "criterion": "An explicit claim that clear warning signs will appear before advanced AI becomes dangerous, on the premise that a recognisable, consensus-forming signal will come in time to act, that dangerous failure modes will first appear in weaker systems where they can be observed and fixed, or that a warning sign, once seen, will lead to effective action."
+    },
+    "T09": {
+      "id": "next-word-prediction-is-shallow",
+      "name": "Next-word prediction is only autocomplete",
+      "criterion": "An explicit claim that a system trained to predict the next word is only autocomplete, on the premise that next-token prediction is a shallow task that cannot require deep cognition, or that a system trained to predict human text is capped at imitating the people who wrote it."
+    },
+    "T10": {
+      "id": "diminishing-returns-to-intelligence",
+      "name": "Diminishing returns rule out a runaway",
+      "criterion": "An explicit claim that intelligence has diminishing returns, so that no runaway rise in machine intelligence will occur, on the premise that returns to reinvesting cognitive gains in further cognitive improvement diminish."
+    },
+    "T11": {
+      "id": "slow-takeoff-time-to-adjust",
+      "name": "A slow takeoff will leave time to adjust",
+      "criterion": "An explicit claim that advanced AI will arrive slowly enough to leave time to adjust, on the premise that capability gains will be gradual and visible, or that slightly weaker predecessor systems will give time and experience before the decisive one."
+    },
+    "T12": {
+      "id": "evaluations-catch-danger",
+      "name": "Safety evaluations would catch a dangerous system",
+      "criterion": "An explicit claim that safety evaluations would detect a dangerous AI system, on the premise that a dangerous system would behave dangerously while it is being tested, or that tests on systems that cannot yet cause a catastrophe show how more capable systems will behave."
+    },
+    "T13": {
+      "id": "agi-decades-away",
+      "name": "AGI is decades away, so the problem can wait",
+      "criterion": "An explicit claim that the risks of AGI can be left until later because AGI is decades away, on the premise that it can be known that AGI is decades away, or that long timelines mean there is no need to act now."
+    },
+    "T14": {
+      "id": "fix-problems-as-they-arise",
+      "name": "Problems can be fixed as they arise",
+      "criterion": "An explicit claim that problems with advanced AI can be fixed as they arise, as with other technologies, on the premise that people get to learn from failures with powerful AI and try again."
+    },
+    "T15": {
+      "id": "tool-without-goals",
+      "name": "A tool that wants nothing",
+      "criterion": "An explicit claim that an advanced AI system is a tool without wants and is therefore safe, on the premise that a system can be highly capable without having goals or optimising for outcomes, or that a system that only outputs answers or plans, leaving people to act on them, is safe."
+    },
+    "T16": {
+      "id": "give-it-human-values",
+      "name": "Giving it good human values",
+      "criterion": "An explicit claim that an advanced AI will be safe if it is given good human values, on the premise that human values can be written down or taught as a ready, compact specification, or that present-day values, or its programmers', are settled enough to fix permanently in an AI."
+    },
+    "T17": {
+      "id": "pause-or-regulation-suffices",
+      "name": "A pause or regulation will handle it",
+      "criterion": "An explicit claim that a pause in AI development or regulation will handle the risks of advanced AI, on the premise that a short pause, of six months for example, is enough, that regulation that is national, partial or not universally enforced can stop dangerous development, or that law can prevent the danger."
+    },
+    "T18": {
+      "id": "earth-not-worth-taking",
+      "name": "A superintelligence would leave Earth alone",
+      "criterion": "An explicit claim that a superintelligence would not bother to take Earth or its resources because the universe is large, on the premise that it would leave people a small share because sparing Earth would cost it very little, or that people could trade with it for what they need."
+    },
+    "T19": {
+      "id": "harm-requires-hostility",
+      "name": "Without hatred it will not harm us",
+      "criterion": "An explicit claim that an AI with no reason to hate people would not harm them, on the premise that an AI would harm people only out of hostility."
+    },
+    "T20": {
+      "id": "risk-is-film-fiction",
+      "name": "AI risk as film science fiction",
+      "criterion": "An explicit claim that concern about AI risk is science fiction of the Terminator kind, on the premise that the concern is about robots that come to hate or rebel against people, or that film scenarios are a fair guide to what the risk would look like."
+    },
+    "T21": {
+      "id": "human-data-humanlike-mind",
+      "name": "Trained on human data, so humanlike",
+      "criterion": "An explicit claim that an AI trained on human data will think and want as people do, on the premise that training on human text or behaviour yields human-like thought and motives."
+    },
+    "T22": {
+      "id": "build-superintelligence-fast",
+      "name": "Build superintelligence as fast as possible",
+      "criterion": "An explicit claim that superintelligence should be reached as fast as possible because its arrival will be good, on the premise that reaching superintelligence is good by default, so that speed is what matters."
+    },
+    "T24": {
+      "id": "build-it-before-rivals",
+      "name": "Build it before rivals do",
+      "criterion": "An explicit claim that advanced AI must be built first, before a rival builds it, on the premise that whoever builds it controls it, or that racing to be first improves the outcome."
+    },
+    "T25": {
+      "id": "interpretability-reads-its-mind",
+      "name": "Interpretability will let us read its mind",
+      "criterion": "An explicit claim that interpretability will make AI systems safe by showing what they think, on the premise that people can see what an AI system is thinking, or that seeing what it thinks is enough to make it safe."
+    },
+    "T26": {
+      "id": "no-body-no-danger",
+      "name": "Without a body it cannot do much",
+      "criterion": "An explicit claim that even a superintelligence could do little without a body, on the premise that intelligence without physical actuators of its own is not dangerous, or that to act in the physical world it would need human help that people would not give."
+    },
+    "T27": {
+      "id": "experiment-and-see",
+      "name": "Run experiments and see what happens",
+      "criterion": "An explicit claim that advanced AI can be handled by running experiments and seeing what happens, on the premise that alignment can be learned by trial and error at the frontier, or that results from safe experiments on weaker systems will carry over to dangerous ones."
+    },
+    "T28": {
+      "id": "developers-know-what-they-are-doing",
+      "name": "The developers know what they are doing",
+      "criterion": "An explicit claim that the organisations building advanced AI can be relied on to handle its safety, on the premise that a credible safety plan exists, or that the most advanced projects are the most competent to handle safety."
+    },
+    "T29": {
+      "id": "many-ais-balance",
+      "name": "Many AIs will keep each other in check",
+      "criterion": "An explicit claim that many AI systems will keep one another in check, on the premise that several superintelligences would balance one another in people's favour."
+    },
+    "T30": {
+      "id": "default-outcome-good",
+      "name": "It will probably turn out fine",
+      "criterion": "An explicit claim that the development of advanced AI will probably turn out well, on the premise that the default outcome is good."
+    }
+  },
+  "documents": {
+    "doc-aibox": {
+      "entity": "ai-box-experiment-page",
+      "name": "The AI-Box Experiment",
+      "subtype": "Web page",
+      "kind": "article",
+      "publisher": "Eliezer Yudkowsky (personal website, yudkowsky.net)",
+      "licence": "The current page states a Creative Commons BY-ND 3.0 licence",
+      "words": {
+        "count": 2398,
+        "basis": "Approximate page length: words in text blocks of ten or more words on the page retrieved 2026-10-06 (SHA-256 recorded in the pack); counted 2026-10-08."
+      },
+      "attested": {
+        "date": "2021-07-02",
+        "note": "The page states ©2002, but the copy retrieved is a 2020 re-hosting (posted 2020-09-04, updated 2021-07-02) with a later licence and footer; the 2002 wording was not compared."
+      }
+    },
+    "doc-aipnf": {
+      "entity": "ai-positive-negative-factor-global-risk",
+      "source": "source-aipnfgr-miri-reprint",
+      "draft": {
+        "source": "source-aipnfgr-2006-draft",
+        "date": "2006-02-05",
+        "note": "Date of the SIAI draft (\"Draft of 5 February, 2006\"), whose capture of 2006-07-08 contains the quoted wording; the chapter was published in 2008. As for the human-thought collection's records of this chapter."
+      }
+    },
+    "doc-arbital-instrumental-convergence": {
+      "entity": "arbital-instrumental-convergence",
+      "name": "Instrumental convergence",
+      "subtype": "Wiki page",
+      "kind": "article",
+      "publisher": "Arbital (read through the GreaterWrong viewer)",
+      "words": {
+        "count": 5614,
+        "basis": "Approximate page length: words in text blocks of ten or more words on the viewer page retrieved 2026-10-06 (SHA-256 recorded in the pack); counted 2026-10-08."
+      },
+      "attested": {
+        "note": "Arbital pages could be edited after creation; the viewer shows a page date, and the quoted wording is known only from the page as retrieved in 2026."
+      }
+    },
+    "doc-arbital-orthogonality": {
+      "entity": "arbital-orthogonality",
+      "name": "Orthogonality Thesis",
+      "subtype": "Wiki page",
+      "kind": "article",
+      "publisher": "Arbital (read through the GreaterWrong viewer)",
+      "words": {
+        "count": 6938,
+        "basis": "Approximate page length: words in text blocks of ten or more words on the viewer page retrieved 2026-10-06 (SHA-256 recorded in the pack); counted 2026-10-08."
+      },
+      "attested": {
+        "note": "Arbital pages could be edited after creation; the viewer shows a page date, and the quoted wording is known only from the page as retrieved in 2026."
+      }
+    },
+    "doc-arbital-programmer-deception": {
+      "entity": "arbital-programmer-deception",
+      "source": "source-arbital-programmer-deception",
+      "attested": {
+        "note": "Arbital pages could be edited after creation; the viewer shows a page date, and the quoted wording is known only from the page as retrieved in 2026."
+      }
+    },
+    "doc-cev": {
+      "entity": "coherent-extrapolated-volition-2004",
+      "name": "Coherent Extrapolated Volition",
+      "subtype": "Report",
+      "kind": "report",
+      "publisher": "Singularity Institute for Artificial Intelligence (MIRI reprint)",
+      "words": {
+        "count": 16774,
+        "basis": "Approximate length: words in text blocks of ten or more words in the PDF text layer of the reprint retrieved 2026-10-06 (SHA-256 recorded in the pack); counted 2026-10-08."
+      },
+      "attested": {
+        "note": "Known only from MIRI's later, undated PDF reprint of the May 2004 document; the wording was not compared with a 2004 copy."
+      }
+    },
+    "doc-cfai": {
+      "entity": "creating-friendly-ai-2001",
+      "newSource": "source-cfai-miri-reprint",
+      "name": "Creating Friendly AI 1.0 (MIRI reprint)",
+      "kind": "report",
+      "publisher": "Singularity Institute for Artificial Intelligence (MIRI reprint)",
+      "words": {
+        "count": 120637,
+        "basis": "Approximate length: words in text blocks of ten or more words in the PDF text layer of the reprint retrieved 2026-10-06 (SHA-256 recorded in the pack); counted 2026-10-08."
+      },
+      "attested": {
+        "note": "Known only from MIRI's later, undated PDF reprint; the wording was not found in the 2001 HTML pages compared."
+      },
+      "captures": {
+        "challenge": {
+          "source": "source-cfai-2001-challenge-html",
+          "title": "Creating Friendly AI 1.0, section 2: Challenges of Friendly AI (2001 HTML edition)",
+          "canonicalUrl": "http://singinst.org/CFAI/challenge.html",
+          "archivedUrl": "https://web.archive.org/web/20010626231122/http://singinst.org/CFAI/challenge.html",
+          "archivedAt": "2001-06-26",
+          "sha256": "e910a4f4aec9673a1dc69d006a40d44315acb6279f10fc9e6e3d79f5701dc603"
+        },
+        "anthro": {
+          "source": "source-cfai-2001-anthro-html",
+          "title": "Creating Friendly AI 1.0, section 4: Beyond anthropomorphism (2001 HTML edition)",
+          "canonicalUrl": "http://singinst.org/CFAI/anthro.html",
+          "archivedUrl": "https://web.archive.org/web/20010810101656/http://singinst.org/CFAI/anthro.html",
+          "archivedAt": "2001-08-10",
+          "sha256": "bb3cdcc34934a50b9a404600d9a0f412eae00f0a66f390d8110b0ad56cbd965a"
+        },
+        "policy": {
+          "source": "source-cfai-2001-policy-html",
+          "title": "Creating Friendly AI 1.0, section 6: Policy implications (2001 HTML edition)",
+          "canonicalUrl": "http://singinst.org/CFAI/policy.html",
+          "archivedUrl": "https://web.archive.org/web/20010617021043/http://singinst.org/CFAI/policy.html",
+          "archivedAt": "2001-06-17",
+          "sha256": "7cb989b7408e084950daf9cb6f758b79eb5bb85e3d5c652e0bca7aa746b632ca"
+        },
+        "seed": {
+          "source": "source-cfai-2001-seed-html",
+          "canonicalUrl": "http://singinst.org/CFAI/design/seed.html",
+          "archivedAt": "2001-06-17"
+        }
+      },
+      "passageCaptures": {
+        "T01-a": "challenge",
+        "T11-a": "challenge",
+        "T12-a": "seed",
+        "T14-a": "challenge",
+        "T17-c": "policy",
+        "T20-b": "anthro",
+        "T27-b": "challenge",
+        "T28-d": "policy"
+      }
+    },
+    "doc-iem": {
+      "entity": "iem-2013",
+      "source": "source-iem"
+    },
+    "doc-sits-2000-capture": {
+      "entity": "staring-into-the-singularity",
+      "source": "source-sits-2000-capture",
+      "date": "1996-11-18",
+      "dateNote": "The page states \"Created: 11/18/1996\"; the essay was announced on the Extropians list on 1996-11-19. As for the human-thought collection's records of this essay.",
+      "attested": {
+        "date": "2000-12-04",
+        "note": "The quoted wording is that of version 1.2.1 (\"Updated: 08/31/2000\") as captured on 2000-12-04; no capture of the 1996–1999 page holds the text."
+      }
+    },
+    "ext-extropians.96-3124": {
+      "entity": "staring-into-the-singularity",
+      "source": "source-extropians-1996-11-19-yudkowsky",
+      "date": "1996-11-18",
+      "dateNote": "The page states \"Created: 11/18/1996\"; the essay was announced on the Extropians list on 1996-11-19. As for the human-thought collection's records of this essay.",
+      "attested": {
+        "date": "1996-11-19",
+        "note": "The slogan is attested by Yudkowsky's announcement of the essay on the Extropians list, sent 1996-11-19, which the dataset already records as a source for this essay. A longer passage of the essay is known only from version 1.2.1, captured on 2000-12-04."
+      }
+    },
+    "doc-time-2023": {
+      "entity": "time-2023-shut-it-all-down",
+      "name": "Pausing AI Developments Isn't Enough. We Need to Shut it All Down",
+      "subtype": "Magazine article",
+      "kind": "article",
+      "publisher": "TIME",
+      "words": {
+        "count": 2282,
+        "basis": "Approximate length: words in text blocks of ten or more words in the article page retrieved 2026-10-06 (SHA-256 recorded in the pack); counted 2026-10-08. The count may include page furniture."
+      }
+    },
+    "ext-extropians.96-5142": {
+      "entity": "extropians-1996-12-31-yudkowsky-5142",
+      "source": "source-extropians-1996-12-31-yudkowsky-5142"
+    },
+    "ext-extropians.96-5159": {
+      "entity": "extropians-1996-12-31-yudkowsky-5159",
+      "source": "source-extropians-1996-12-31-yudkowsky-5159"
+    },
+    "lw-JBadX7rwdcRFzGuju": {
+      "entity": "yudkowsky-2008-recursive-self-improvement",
+      "source": "source-yudkowsky-2008-recursive-self-improvement"
+    },
+    "lw-tjH8XPxAnr6JRbh7k": {
+      "entity": "yudkowsky-2008-hard-takeoff",
+      "source": "source-yudkowsky-2008-hard-takeoff"
+    },
+    "lw-uMQ3cqWDPHhjtiesc": {
+      "entity": "agi-ruin-2022",
+      "source": "source-agi-ruin-2022"
+    }
+  },
+  "coauthors": {
+    "lw-7im8at9PmhbT4JHsW": ["Eliezer Yudkowsky", "Richard Ngo"],
+    "lw-CpvyhFy9WvCNsifkY": ["Rob Bensinger", "Eliezer Yudkowsky"],
+    "lw-rwkkcgSpnAyE8oNo3": ["Scott Alexander", "Eliezer Yudkowsky"],
+    "lw-tcCxPLBrEXdxN5HCQ": ["Rohin Shah", "Eliezer Yudkowsky"]
+  },
+  "missing": {
+    "T01-a": "A design assumption that an AI cannot be forcibly constrained; it does not argue that shutdown or an added correction mechanism would fail.",
+    "T01-s4": "A conditional failure scenario in which detection of a fast ascent fails; it does not predict that dangerous capability will go unrecognised.",
+    "T02-c": "A comparative and uncertain chance that superintelligence finds and implements what is right; it does not claim that intelligence brings or compels benevolence.",
+    "T03-b": "It denies an inner interpreter of instructions; it does not address whether an AI that understands intentions acts on them.",
+    "T04-e2": "About goal drift from a happiness goal assumed to be sufficiently specified; it does not address whether a short instruction specifies what people want.",
+    "T04-e3": "It dismisses a perverse means of pursuing human happiness; it does not claim that a short instruction specifies what people want.",
+    "T05-c": "About evolution and human desires, not about training AI on human feedback.",
+    "T05-s3": "About autonomy and the responsibility of creators, not about training AI on human feedback.",
+    "T05-e2": "About an internal indicator of goal achievement, not about human feedback or approval.",
+    "T08-s1": "Confidence in a future understanding of AI motivations; it does not claim that dangerous failure modes first appear in weaker systems.",
+    "T11-s3": "About understanding AI motivations before AI is a threat, not about takeoff speed or time to adjust.",
+    "T11-s5": "A strategy statement that a slow Singularity carries other technological risks; it makes no claim about takeoff speed or time to adjust to AI.",
+    "T13-s1": "About which Friendly AI work can be done in advance, not about AGI timelines.",
+    "T13-s2": "A report of his earlier belief about advance knowledge of Friendly AI, not about AGI timelines.",
+    "T13-s3": "About the stage of an AI's development at which Friendliness work must start, not about calendar timelines.",
+    "T14-a": "A conservative design assumption in a table, not a forecast that failures with powerful AI will be unrecoverable.",
+    "T14-s3": "A later description of a plan to build AI and Friendliness in parallel; it does not address learning from failures with powerful AI.",
+    "T17-b": "It presents an enforced, indefinite and worldwide halt as what would need to be done, not a pause or regulation that will handle the risk.",
+    "T17-f": "It says that only lawful, state-backed and universal force could stop superintelligence being built; it does not claim that some regulation will handle the risk.",
+    "T18-e2": "About benevolent upgrading of revived people, not about a superintelligence leaving Earth a small share.",
+    "T19-e2": "It makes harm conditional on a threat and on human life having no meaning; it does not claim that harm requires hostility.",
+    "T20-c": "It rejects hostile emotions arising in AI in order to reassure; it does not argue that the risk is film fiction or that films are a fair guide.",
+    "T20-d": "It rejects storybook predictions, good or bad; it does not address hatred or rebellion as the concern.",
+    "T20-e2": "It explains fear of a Singularity as fiction-fed xenophobia while conceding a risk; it does not hold that films are a fair guide to the risk.",
+    "T22-b": "A 2008 report of his 1996–2000 aim; it is not an earlier text that holds the proposition.",
+    "T24-d": "A first-mover view about whether the first AI is Friendly; it does not claim that a builder or nation controls the AI or that racing improves the outcome.",
+    "T24-s1": "About national military use and escalation of AI, not about a race to build the first superintelligence.",
+    "T24-s2": "Being first matters here only through whether the builder understands Friendliness; it does not claim that the builder controls the result.",
+    "T25-a": "A worst-case design assumption that an AI could hide unfriendly cognition; it does not address whether reading an AI's thoughts makes it safe.",
+    "T26-e2": "A passing list item that protein synthesis machines may be reachable over the Internet; it does not argue the point.",
+    "T27-b": "A conservative design assumption in a table, not a forecast about learning alignment by trial and error.",
+    "T28-e": "About the absence of any entry bar to starting an AGI project, not about the competence of the most advanced projects.",
+    "T28-e1": "Deference conditional on builders who have worked hard on Friendliness; it does not claim that the leading projects in general can handle safety.",
+    "T30-b": "It denies that hostile extinction is inevitable; it does not assert that the default outcome is good.",
+    "T30-c": "A 2008 report of his late-1990s belief that names its flaw; it does not hold that the default outcome is good."
+  },
+  "contextOnly": {
+    "T01-e1": {
+      "requires": "His later texts rejecting the 1996 view, on which this argument rests, that an unconstrained Power would be ethical.",
+      "passages": ["T02-e3", "T02-s1", "T02-e"]
+    },
+    "T01-s4": {
+      "requires": "The condition stated in the record's qualification: one of four possible ways Friendly AI might fail, conditional on seed AI being much easier than expected."
+    },
+    "T02-c": {
+      "requires": "His later texts rejecting this earlier view.",
+      "passages": ["T02-d", "T02-e"]
+    },
+    "T02-e1": {
+      "requires": "His later texts that reject this view and refer back to it.",
+      "passages": ["T02-e3", "T02-s1", "T02-e"]
+    },
+    "T02-e2": {
+      "requires": "His later texts that reject this view and refer back to it.",
+      "passages": ["T02-e3", "T02-s1", "T02-e"]
+    },
+    "T02-e3": {
+      "requires": "The unquoted continuation, given in the qualification, which keeps a conditional form of the earlier view, and his later texts rejecting that form.",
+      "passages": ["T02-s1", "T02-e"]
+    },
+    "T04-e3": {
+      "requires": "His later explicit rejections of a happiness goal, which do not refer back to this message.",
+      "passages": ["T04-s1", "T04-d"]
+    },
+    "T07-a": {
+      "requires": "The same post's concession, given in the qualification, that an Oracle AI built to full Friendly AI standards could be a pragmatically safer starting point."
+    },
+    "T07-f": {
+      "requires": "The preceding block quote, his paraphrase of plans to use earlier AIs to align later ones, as described in the record's statement."
+    },
+    "T08-s1": {
+      "requires": "His later text rejecting extrapolation from observed good behaviour, which does not refer back to this message.",
+      "passages": ["T08-s5"]
+    },
+    "T10-e2": {
+      "requires": "His 1998 statement that the recursive Moore's Law scenario was an illustration and not a plausible situation.",
+      "passages": ["T10-e3"]
+    },
+    "T11-s3": {
+      "requires": "His later texts rejecting the view that experience with AI before it is a threat will be enough, which do not refer back to this message.",
+      "passages": ["T11-s4", "T11-e", "T11-d"]
+    },
+    "T13-d": {
+      "requires": "Its framing as a line spoken by the character “Eliezer” in an imagined dialogue he wrote."
+    },
+    "T13-s3": {
+      "requires": "The opening of the sentence, given in the qualification, which ties the point to the stage of the AI's development, not to calendar time."
+    },
+    "T14-s3": {
+      "requires": "The following paragraph of the same message, described in the record's statement, in which he says he realised in 2002 that almost every AI design would kill him."
+    },
+    "T15-a": {
+      "requires": "The same paragraph's concession, given in the qualification, that an Oracle AI built to full Friendly AI standards could be a pragmatically safer starting point."
+    },
+    "T16-e1": {
+      "requires": "His later rejection of the view that a Power finds ethics by itself, on which these reasons rest, and his later texts against fixing values permanently, which give other reasons.",
+      "passages": ["T02-s1", "T16-s1", "T16-b"]
+    },
+    "T17-b": {
+      "requires": "Its framing as what would actually need to be done to have a chance, in a much stronger form than a pause or some regulation."
+    },
+    "T17-s1": {
+      "requires": "His 2023 call for an enforced, indefinite worldwide halt, which rests on the opposite reasons.",
+      "passages": ["T17-b"]
+    },
+    "T17-e1": {
+      "requires": "His later call for an enforced, indefinite worldwide halt, which reverses this argument against slowing down.",
+      "passages": ["T17-b", "T17-f"]
+    },
+    "T17-e2": {
+      "requires": "His later call for an enforced, indefinite worldwide halt, which reverses this argument that prevention is impossible.",
+      "passages": ["T17-b", "T17-f"]
+    },
+    "T18-e2": {
+      "requires": "His later texts rejecting the 1996 assurance, one of which refers back to it.",
+      "passages": ["T19-e1", "T18-e1", "T18-c", "T18-b"]
+    },
+    "T19-e2": {
+      "requires": "His later texts rejecting this view, the first of which refers back to it.",
+      "passages": ["T19-e1", "T19-s1", "T19-b"]
+    },
+    "T20-e2": {
+      "requires": "His later texts that treat AI risk as real but not as film fiction; none refers back to this message.",
+      "passages": ["T19-e1", "T20-e1", "T20-s2", "T20-a"]
+    },
+    "T22-a": {
+      "requires": "His later texts rejecting the full-speed strategy.",
+      "passages": ["T22-c", "T22-s2"]
+    },
+    "T22-b": {
+      "requires": "The rejection that follows in the next paragraphs of the same post and in a later post of the same series.",
+      "passages": ["T22-c"]
+    },
+    "T22-e1": {
+      "requires": "His later texts rejecting the full-speed strategy and referring back to his earlier position; neither cites this message.",
+      "passages": ["T22-b", "T22-c", "T22-s2"]
+    },
+    "T22-e2": {
+      "requires": "His later texts rejecting the full-speed strategy and referring back to his earlier position; neither cites this message.",
+      "passages": ["T22-b", "T22-c", "T22-s2"]
+    },
+    "T24-d": {
+      "requires": "His 2023 statement that anyone talking of arms races is a fool.",
+      "passages": ["T24-a"]
+    },
+    "T24-s2": {
+      "requires": "His 2023 statement that anyone talking of arms races is a fool, which does not refer back to this message.",
+      "passages": ["T24-a"]
+    },
+    "T24-s3": {
+      "requires": "His 2023 statement that anyone talking of arms races is a fool, which does not refer back to this message.",
+      "passages": ["T24-a"]
+    },
+    "T24-e2": {
+      "requires": "His later texts on racing, which do not refer back to this message.",
+      "passages": ["T24-s4", "T24-a"]
+    },
+    "T25-s1": {
+      "requires": "His 2022 view on reading the thoughts of systems built in a different architecture.",
+      "passages": ["T25-b"]
+    },
+    "T27-b": {
+      "requires": "Its place in a table of conservative design assumptions; it is not a forecast."
+    },
+    "T28-d": {
+      "requires": "His later texts on AGI researchers and projects, which do not cite this sentence.",
+      "passages": ["T28-e", "T28-c"]
+    },
+    "T28-e1": {
+      "requires": "His correction 53 minutes later in the same thread, that good intentions are not enough.",
+      "passages": ["T24-e2"]
+    },
+    "T30-b": {
+      "requires": "His later texts rejecting this earlier reassurance.",
+      "passages": ["T30-c", "T30-d"]
+    },
+    "T30-c": {
+      "requires": "The flaw he names in the same paragraph, quoted in the record of the same post under Y02.",
+      "passages": ["T02-e"]
+    },
+    "T30-e": {
+      "requires": "The post's own framing, given in the qualification: posted on 1 April in US time zones, it calls itself a preview of what might need saying later."
+    },
+    "T30-e1": {
+      "requires": "His later texts that reject this view and refer back to it.",
+      "passages": ["T30-s1", "T30-c"]
+    }
+  },
+  "retrospective": {
+    "T02-d": {
+      "note": "Reports a belief he says he held from the age of sixteen until he recognised it as a problem at about twenty."
+    },
+    "T02-e": {
+      "from": "1997",
+      "until": "1997",
+      "note": "Reports the belief of “Eliezer1997”."
+    },
+    "T02-s1": {
+      "note": "Reports a belief he “used to have”."
+    },
+    "T02-s2": {
+      "note": "Reports a view he held about a year before the message."
+    },
+    "T02-s3": {
+      "note": "Reports a time when he thought superintelligence implied supermorality."
+    },
+    "T02-e3": {
+      "note": "Reports the view of his old Extropians posts and the old version of Staring into the Singularity."
+    },
+    "T13-s2": {
+      "note": "Reports a belief he held about a year before the message."
+    },
+    "T14-s3": {
+      "from": "2001",
+      "until": "2002",
+      "note": "Reports the plan of Creating Friendly AI (2001), which he says he gave up after realising in 2002 that almost every AI design would kill him."
+    },
+    "T22-b": {
+      "from": "1996",
+      "until": "2000",
+      "note": "Reports the strategy of “Eliezer1996-2000”."
+    },
+    "T22-c": {
+      "note": "Reports his earlier plan to proceed at full speed."
+    },
+    "T28-e": {
+      "note": "Reports an undated meeting after which he stopped assuming that AGI researchers met the standard the problem required."
+    },
+    "T30-c": {
+      "from": "1997",
+      "until": "1997",
+      "note": "Reports the belief of “Eliezer1997”."
+    }
+  },
+  "quoteChanges": {
+    "T06-a": {
+      "quote": "a Power will know *exactly* what to say",
+      "reason": "The dataset already quotes this source for the human-thought collection; together the quotations would exceed the per-document quotation limit. Shortened to a verbatim fragment of the pack's quotation; the condition it omits is in the record's statement."
+    },
+    "T26-e1": {
+      "quote": "a Power will know *exactly* what to say",
+      "reason": "The dataset already quotes this source for the human-thought collection; together the quotations would exceed the per-document quotation limit. Shortened to a verbatim fragment of the pack's quotation; the condition it omits is in the record's statement."
+    },
+    "T06-b": {
+      "paraphrase": "He asks the reader to imagine a billion simulated copies of themselves, each tested until the words that work are found.",
+      "reason": "The dataset already quotes this source for the human-thought collection; together the quotations would exceed the per-document quotation limit. No useful fragment fits, so the passage is a labelled paraphrase."
+    },
+    "T12-b": {
+      "quote": "you could currently be observing a non-nice AI that is smart and trying to fool you.",
+      "reason": "The dataset already quotes this source for the human-thought collection; together the quotations would exceed the per-document quotation limit. Shortened to the part of the pack's quotation that the existing quotation does not hold."
+    },
+    "T12-c": {
+      "quote": "A strategically aware intelligence can choose its visible outputs to have the consequence of deceiving you, including about such matters as whether the intelligence has acquired strategic awareness; you can't rely on behavioral inspection to determine facts about an AI which that AI might want to deceive you about.",
+      "reason": "The dataset already quotes this source for the human-thought collection; together the quotations would exceed the per-document quotation limit. Replaced by the dataset's existing verbatim quotation of the same item, which contains both parts of the pack's quotation and counts once."
+    },
+    "T01-c": {
+      "quote": "We (MIRI) tried and failed to find a coherent formula for an agent that would let itself be shut down (without that agent actively trying to get shut down).",
+      "reason": "The dataset already quotes this source for the human-thought collection; together the quotations would exceed the per-document quotation limit. Shortened to the second sentence of the pack's quotation; the first is paraphrased in the record's statement."
+    },
+    "T20-d": {
+      "paraphrase": "He writes that the critical challenge is not to predict that AIs will attack humanity with robot armies, or that they will cure cancer.",
+      "reason": "The dataset already quotes this source for the human-thought collection; together the quotations would exceed the per-document quotation limit. Converted to a labelled paraphrase."
+    },
+    "T24-d": {
+      "paraphrase": "He writes that Friendly AI has to be got right only in one place and once, but that someone must get it right on the first try, before anyone else builds AI to a lower standard.",
+      "reason": "The dataset already quotes this source for the human-thought collection; together the quotations would exceed the per-document quotation limit. Converted to a labelled paraphrase."
+    },
+    "T26-b": {
+      "paraphrase": "The third step of his example pathway is to find one person connected to the Internet who can be paid, blackmailed or deceived into receiving mailed vials and mixing them in a specified environment.",
+      "reason": "The dataset already quotes this source for the human-thought collection; together the quotations would exceed the per-document quotation limit. Converted to a labelled paraphrase."
+    }
+  },
+  "sourcePatches": {
+    "source-extropians-1996-11-19-yudkowsky": {
+      "documentWords": {
+        "count": 117,
+        "basis": "Approximate words of the message body including quoted lines, without archive headers, navigation or signature, as counted by the Yudkowsky argument pack (2026-10-07)."
+      },
+      "reason": "The admission quotes this message, so its length is recorded for the quotation limit."
+    }
+  }
+}

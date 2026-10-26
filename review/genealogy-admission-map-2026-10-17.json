@@ -1,0 +1,413 @@
+{
+  "description": "Authored map for the admission of the lab genealogy pack (research/lab-genealogy) on 2026-10-17, read by scripts/genealogy-admission.ts. It records the records held back, the disposition of every 'partly' finding of the two cross-family checks (C001–C032 and C033–C213), the widened applications of those findings, subtypes the pack left out, and the updates to existing records touched by new evidence (maintainer decision 9). Text changes name the field, the exact text replaced and its replacement; the script fails if a replaced text is not found.",
+  "holdBack": {
+    "lg-deal-luan-cofounded-adept": "Adept's launch post (2022-04-26) matched in the drafting retrieval but the fresh retrieval of 2026-10-15 got a block page, and the cross-family check (C170) could not retrieve it by either route. Decision 8: admitted only if both retrievals matched.",
+    "lg-deal-luan-google-prior": "Rests only on Adept's launch post, which the fresh retrieval of 2026-10-15 could not read (block page); the same rule as C170 applied.",
+    "lg-deal-luan-openai-engineering-prior": "Rests only on Adept's launch post, which the fresh retrieval of 2026-10-15 could not read (block page); the same rule as C170 applied.",
+    "lg-deal-parmar-cofounded-adept": "Rests only on Adept's launch post, which the fresh retrieval of 2026-10-15 could not read (block page); the same rule as C170 applied.",
+    "lg-deal-vaswani-cofounded-adept": "Rests only on Adept's launch post, which the fresh retrieval of 2026-10-15 could not read (block page); the same rule as C170 applied."
+  },
+  "entitySubtypes": {
+    "gdm-agi-safety-council": "Safety council",
+    "openai-agi-readiness-team": "Research team",
+    "openai-mission-alignment-team": "Research team",
+    "openai-superalignment-team": "Research team"
+  },
+  "claimChanges": {
+    "lg-oai-founding-stated-2015": {
+      "item": "C003",
+      "text": [
+        {
+          "field": "time.note",
+          "from": "Founding year as the source states it (year precision); the launch announcement is dated 11 December 2015.",
+          "to": "Founding year as the source states it (year precision)."
+        }
+      ]
+    },
+    "lg-new-mensch-deepmind-2022": {
+      "item": "C019",
+      "text": [
+        {
+          "field": "qualification",
+          "from": "No Mistral or first-person statement of Mensch’s DeepMind role was retrieved.",
+          "to": "No Mistral or first-person statement of Mensch’s DeepMind role was retrieved, and no title is inferred. The currently served v1 PDF carries the 29 March 2022 version margin and also a 2023 copyright line, so the copy read is not authenticated as the 2022 file. The quotation joins non-adjacent fragments of the title page; the ellipses mark the omissions."
+        }
+      ]
+    },
+    "lg-gc-wu-yonghui-google-deepmind-2023": {
+      "item": "C021",
+      "time": {
+        "kind": "snapshot",
+        "date": "2023",
+        "note": "Year of the promotion as reported; its month, the start of the role and its end are not established (Jiemian reports his move to ByteDance in February 2025)."
+      }
+    },
+    "lg-gc-zhu-wenjia-bytedance-llm-2023": {
+      "item": "C022",
+      "time": {
+        "kind": "snapshot",
+        "date": "2023",
+        "note": "Year in which, as reported, the team was created and Zhu became its head; month and end not established."
+      }
+    },
+    "lg-gs-hendrycks-xai-adviser-2023": {
+      "item": "C034",
+      "text": [
+        {
+          "field": "qualification",
+          "from": " A Singapore Conference on AI participant page of April 2025 describes him as AI Safety Advisor, xAI; it is not recorded separately.",
+          "to": ""
+        }
+      ]
+    },
+    "lg-oai-murati-cto-return-2023": {
+      "item": "C040",
+      "text": [
+        {
+          "field": "qualification",
+          "from": "An announced return to a prior role after her interim CEO appointment; no end date is recorded here.",
+          "to": "An announced return to a prior role; no end date is recorded here."
+        }
+      ]
+    },
+    "lg-gc-yao-shunyu-openai-2024": {
+      "item": "C042",
+      "time": {
+        "kind": "snapshot",
+        "date": "2024",
+        "note": "Year of joining as reported; start month and end not established. The personal page is undated."
+      }
+    },
+    "lg-oai-fidji-simo-board-2024": {
+      "item": "C044",
+      "text": [
+        {
+          "field": "time.note",
+          "from": "Announcement date; the review announcement of the same day calls it an election of new members.",
+          "to": "Announcement date."
+        }
+      ]
+    },
+    "lg-gs-superalignment-team-absorbed-2024": {
+      "item": "C049",
+      "time": {
+        "kind": "snapshot",
+        "date": "2024-05-17",
+        "note": "Date of the report, by which OpenAI had confirmed that the team was no more. No OpenAI statement with its own date was retrieved, and no effective date is given."
+      }
+    },
+    "lg-gs-mission-alignment-team-disbanded-2026": {
+      "item": "C049 (widened)",
+      "time": {
+        "kind": "snapshot",
+        "date": "2026-02-11",
+        "note": "Date of the report. No effective date is given."
+      }
+    },
+    "lg-gc-wang-haifeng-baidu-cto-2025-11": {
+      "item": "C115",
+      "text": [
+        {
+          "field": "statement",
+          "from": "chair of its Technology Steering Committee (TSC) and head of Baidu Research.",
+          "to": "chair of its TSC and head of Baidu Research."
+        },
+        {
+          "field": "qualification",
+          "from": "A continuing role after that date is not established.",
+          "to": "A continuing role after that date is not established. The report names the committee only as TSC; its full name is not recorded."
+        }
+      ]
+    },
+    "lg-cn-yun-yeyi-minimax-coo-2025": {
+      "item": "C121",
+      "text": [
+        {
+          "field": "qualification",
+          "from": "A role shown on a dated filing; it does not establish a start date for the COO title or a current role.",
+          "to": "A role shown in the prospectus biography at the filing date. The record takes no start date for the COO title from other parts of the filing, and does not establish a current role."
+        }
+      ]
+    },
+    "lg-mx-wu-xai-departure-2026": {
+      "item": "C131",
+      "text": [
+        {
+          "field": "qualification",
+          "from": "First-person post; it does not name his title or a next position.",
+          "to": "First-person post; it does not name his title or a next position. The date is the post’s UTC date, and “today” is read relative to it; the author’s time zone is not known (in US Pacific time the post falls on 9 February)."
+        }
+      ]
+    },
+    "lg-gc-li-feifei-alibaba-cloud-cto-2026": {
+      "item": "C137",
+      "derivation": "inferred",
+      "inferenceRationale": "Premises: (1) the report’s readable opening says that Alibaba named a new chief technology officer for its cloud computing unit; (2) the same opening says that the reshuffle taps Li Feifei to lead cloud technology and AI infrastructure. Reasoning: the two sentences are read together as naming Li Feifei as that officer; the readable text does not put the title next to the name.",
+      "attributes": {
+        "role": "chief technology officer, cloud unit (as read from the report’s opening)"
+      },
+      "text": [
+        {
+          "field": "statement",
+          "from": "had announced a reshuffle naming Li Feifei to lead cloud technology and AI infrastructure as the cloud unit’s new chief technology officer.",
+          "to": "had announced a reshuffle that named a new chief technology officer for the cloud computing unit and tapped Li Feifei to lead cloud technology and AI infrastructure."
+        },
+        {
+          "field": "qualification",
+          "from": "Start date and continuing role are not established.",
+          "to": "Start date and continuing role are not established. The link between the title and Li Feifei is an editorial reading of the opening sentences; a summary lower on the page, marked as machine-generated, was not used."
+        }
+      ]
+    },
+    "lg-gc-sun-tianxiang-baidu-bmu-2026": {
+      "item": "C142",
+      "text": [
+        {
+          "field": "statement",
+          "from": " and joined its model committee (BMC).",
+          "to": "."
+        }
+      ]
+    },
+    "lg-gs-jain-openai-interim-safety-systems-2026": {
+      "item": "C147",
+      "text": [
+        {
+          "field": "qualification",
+          "from": " Engadget reported on 18 August 2026 that an OpenAI spokesperson called Jain “our head of safety”; that later statement is not recorded separately.",
+          "to": ""
+        }
+      ]
+    },
+    "lg-goo-le-cofounded-discovery-loop": {
+      "item": "C175",
+      "text": [
+        {
+          "field": "time.note",
+          "from": "Announced 2026-08-05 (Google's note); no founding or incorporation date is given.",
+          "to": "No founding or incorporation date is given."
+        }
+      ]
+    },
+    "lg-gc-jingren-zhou-alibaba-joined-2015": {
+      "item": "C021/C022/C042 (widened)",
+      "time": {
+        "kind": "snapshot",
+        "date": "2015",
+        "note": "Year of joining as stated; no month. A start, not a stated service interval."
+      }
+    },
+    "lg-gw-cloix-h-company-ceo": {
+      "item": "C021/C022/C042 (widened)",
+      "time": {
+        "kind": "snapshot",
+        "date": "2025",
+        "note": "Year in which the company’s milestones list has him becoming CEO; no end is stated. The team page retrieved on 15 October 2026 shows him as Chief Executive Officer."
+      }
+    }
+  },
+  "evidenceChanges": {
+    "lg-ev-new-dautume-reka-cto-2023": {
+      "item": "C030",
+      "locator": "Paragraph beginning “CTO Cyprien de Masson d'Autume”"
+    },
+    "lg-ev-new-tay-reka-chief-scientist-2023": {
+      "item": "C031",
+      "locator": "Paragraph beginning “Co-founder and Chief Scientist Yi Tay”"
+    },
+    "lg-ev-new-tay-reka-cofounder-b": {
+      "item": "C031 (same passage)",
+      "locator": "Paragraph beginning “Co-founder and Chief Scientist Yi Tay”"
+    },
+    "lg-ev-new-yogatama-reka-ceo-2023": {
+      "item": "C032",
+      "locator": "Paragraph beginning “CEO Dani Yogatama”"
+    },
+    "lg-ev-gs-candela-openai-preparedness-2024-obsolete": {
+      "item": "C053",
+      "locator": "Paragraph beginning “Joaquin Quiñonero Candela, who took over” (the second paragraph)"
+    },
+    "lg-ev-gs-candela-preparedness-stepdown-2025-name": {
+      "item": "C085",
+      "locator": "Paragraph beginning “Joaquin Quiñonero Candela, who took over” (the second paragraph)"
+    },
+    "lg-ev-gs-madry-openai-reassigned-2024": {
+      "item": "C055",
+      "passage": {
+        "from": "one of OpenAI’s top safety executives",
+        "to": "one of OpenAI's top safety executives"
+      }
+    },
+    "lg-ev-gs-madry-openai-reassigned-2024-statement": {
+      "item": "C055",
+      "locator": "Paragraph beginning “Madry will still work”"
+    },
+    "lg-ev-deal-chen-windsurf-departure-2025": {
+      "item": "C105",
+      "locator": "Paragraph beginning “We’re excited to announce” (the third body paragraph of the current copy)"
+    },
+    "lg-ev-deal-google-windsurf-agreement-windsurf": {
+      "item": "C106",
+      "locator": "Paragraph beginning “We’re excited to announce” (the third body paragraph of the current copy)"
+    },
+    "lg-ev-deal-mohan-windsurf-departure-2025": {
+      "item": "C105/C106 (same passage)",
+      "locator": "Paragraph beginning “We’re excited to announce” (the third body paragraph of the current copy)"
+    },
+    "lg-ev-gw-weng-openai-return-2026-b": {
+      "item": "C151",
+      "locator": "Paragraph beginning “According to a company spokesperson”"
+    },
+    "lg-ev-gw-kantor-cofounded-h-company": {
+      "item": "C186",
+      "locator": "Paragraph beginning “It has managed to raise”"
+    },
+    "lg-ev-gw-cloix-h-company-ceo-kantor": {
+      "item": "C186 (same passage)",
+      "locator": "Paragraph beginning “It has managed to raise”"
+    },
+    "lg-ev-gw-h-company-founding-2023-tc-kantor": {
+      "item": "C186 (same passage)",
+      "locator": "Paragraph beginning “It has managed to raise”"
+    },
+    "lg-ev-mx-nordeen-cofounded-xai": {
+      "item": "C201",
+      "locator": "Paragraph on Nordeen’s background, containing “followed Musk from Tesla”"
+    },
+    "lg-ev-new-metz-tml-cofounder": {
+      "item": "C208",
+      "locator": "Paragraph 5"
+    },
+    "lg-ev-new-metz-tml-cofounder-b": {
+      "item": "C208",
+      "locator": "Paragraph 6 (beginning “Zoph previously worked for OpenAI”)"
+    },
+    "lg-ev-ant-fontaine-ltbt-trustee-2": {
+      "item": "quotation limit",
+      "shorten": {
+        "anchor": "joined the LTBT in May 2025",
+        "paraphrase": "Anthropic’s Trust page states that Richard Fontaine, CEO of the Center for a New American Security, joined the LTBT in May 2025."
+      }
+    },
+    "lg-ev-ant-cuellar-ltbt-trustee-1": {
+      "item": "quotation limit",
+      "shorten": {
+        "anchor": "joined in January 2026",
+        "paraphrase": "Anthropic’s Trust page states that Mariano-Florentino (Tino) Cuéllar, President of the Carnegie Endowment for International Peace, joined in January 2026."
+      }
+    },
+    "lg-ev-ant-shah-ltbt-chair-2023": {
+      "item": "quotation limit",
+      "shorten": {
+        "anchor": "Clinton Health Access Initiative (Chair)"
+      }
+    },
+    "lg-ev-ant-bahl-ltbt-trustee-1": {
+      "item": "quotation limit",
+      "shorten": {
+        "anchor": "CEO & President of Evidence Action"
+      }
+    },
+    "lg-ev-ant-bahl-ltbt-departure-2026-initial": {
+      "item": "quotation limit",
+      "shorten": {
+        "anchor": "CEO & President of Evidence Action"
+      }
+    },
+    "lg-ev-ant-robinson-ltbt-trustee-1": {
+      "item": "quotation limit",
+      "shorten": {
+        "anchor": "Interim CEO of Effective Ventures US"
+      }
+    },
+    "lg-ev-ant-robinson-ltbt-departure-2026-initial": {
+      "item": "quotation limit",
+      "shorten": {
+        "anchor": "Interim CEO of Effective Ventures US"
+      }
+    },
+    "lg-ev-gc-jia-lei-baidu-application-model-2025": {
+      "item": "quotation limit",
+      "shorten": {
+        "anchor": "由贾磊负责",
+        "paraphrase": "The report states that Baidu set up a new Application Model R&D Department, responsible for tuning and exploring the specialised models that business applications need, headed by Jia Lei."
+      }
+    },
+    "lg-ev-gc-jingren-zhou-chief-scientist-2026": {
+      "item": "quotation limit",
+      "shorten": {
+        "anchor": "周靖人将担任阿里巴巴首席科学家",
+        "paraphrase": "The report states, as its information, that Zhou Jingren would become Alibaba’s Chief Scientist and lead the establishment of an Alibaba AI Future Research Institute."
+      }
+    }
+  },
+  "checkNotes": {
+    "lg-ev-mx-fergus-fair-head-2025": "The cross-family check of 2026-10-17 could not retrieve the page (HTTP 403 directly; the reader relay returned a challenge page) and did not assess the quotation.",
+    "lg-ev-mx-fergus-fair-head-2025-b": "The cross-family check of 2026-10-17 could not retrieve the page (HTTP 403 directly; the reader relay returned a challenge page) and did not assess the quotation.",
+    "lg-ev-oai-raji-cto-applications-2025": "The cross-family check of 2026-10-17 could not retrieve the page by either route; it confirmed the announced title and the publication date from OpenAI’s news feed."
+  },
+  "dispositions": {
+    "C003": "Ancillary launch date removed from the time note.",
+    "C019": "Version and copyright limit added to the qualification; elided quotation kept with its ellipses, which the qualification and evidence note now name.",
+    "C021": "Open interval from 2023 replaced by a year snapshot of the reported promotion.",
+    "C022": "Open interval from 2023 replaced by a year snapshot of the reported role.",
+    "C030": "Locator changed to a text locator.",
+    "C031": "Locator changed to a text locator (and on the second record quoting the same passage).",
+    "C032": "Locator changed to a text locator.",
+    "C034": "Uncited conference-page sentence removed from the qualification.",
+    "C040": "Uncited interim-CEO clause removed from the qualification.",
+    "C042": "Open interval from 2024 replaced by a year snapshot of the reported joining.",
+    "C044": "Uncited same-day election clause removed from the time note.",
+    "C049": "Event at the report date replaced by a snapshot at the report date; widened to the Mission Alignment record, also dated only by its report.",
+    "C053": "Obsolete passage given a text locator; elided Engadget quotation kept and its evidence note names the elision.",
+    "C055": "Apostrophe in the CNBC quotation set to the source's straight form; statement passage given a text locator.",
+    "C085": "Obsolete naming passage given a text locator.",
+    "C087": "Admitted: the drafting and fresh retrievals of 2026-10-15 both matched both quotations (verification.json). The evidence notes record that the cross-family check could not retrieve the page.",
+    "C105": "Windsurf passage given a text locator (and on the Mohan record quoting the same passage).",
+    "C106": "Windsurf passage given a text locator.",
+    "C109": "Admitted: the drafting and fresh retrievals of 2026-10-15 both matched the quotation (verification.json). The evidence note records that the cross-family check could not retrieve the page and confirmed title and date from OpenAI's news feed.",
+    "C115": "TSC left unexpanded in the statement; the qualification says the full name is not recorded.",
+    "C121": "Qualification narrowed to the biography it cites; it no longer says the filing gives no start date.",
+    "C131": "UTC date kept; qualification says “today” is read relative to it and the time zone is unknown.",
+    "C137": "Recorded as inferred, with premises; statement no longer puts the title next to the name; the machine-generated page summary is noted as unused.",
+    "C142": "Model-committee (BMC) membership removed from the statement: no passage of its own was cited.",
+    "C147": "Uncited Engadget sentence removed from the qualification.",
+    "C151": "Second TechCrunch passage given a text locator.",
+    "C170": "Held back with the four other records resting only on Adept's launch post: the fresh retrieval of 2026-10-15 got a block page.",
+    "C175": "Uncited exact announcement date removed from the time note.",
+    "C186": "Kantor passage given a text locator (on the three records quoting it).",
+    "C201": "Locator changed to the paragraph on Nordeen's background.",
+    "C208": "Both locators corrected to paragraphs 5 and 6."
+  },
+  "existing": {
+    "claims": {
+      "cs-kreps-anthropic-board-2024": {
+        "text": [
+          {
+            "field": "qualification",
+            "from": "Anthropic’s list of directors of 14 April 2026 still names him; later changes are not recorded.",
+            "to": "Anthropic’s list of directors of 14 April 2026 still names him. The board list on Anthropic’s Company page as retrieved on 15 October 2026 does not include him; no statement of a departure was found, and none is inferred."
+          }
+        ],
+        "evidence": {
+          "id": "evidence-cs-kreps-anthropic-board-2024-company-2026",
+          "fromPackEvidence": "lg-ev-ant-razavi-board-2023-3",
+          "support": "context",
+          "passage": "The board list on Anthropic’s Company page retrieved on 2026-10-15 names Dario Amodei, Daniela Amodei, Yasmin Razavi, Reed Hastings, Chris Liddell and Vas Narasimhan; Jay Kreps is not among them."
+        }
+      }
+    },
+    "entities": {
+      "tang-jie": {
+        "text": [
+          {
+            "field": "description",
+            "from": "Tsinghua professor identified at an August 2024 event and named ChatGLM report author. No corporate founding role inferred from either record.",
+            "to": "Tsinghua professor identified at an August 2024 event and named ChatGLM report author. Zhipu’s Hong Kong prospectus of 30 December 2025 describes Tang Jie as a co-founder of the company, recorded separately; the earlier records infer no corporate role."
+          }
+        ],
+        "addSources": ["source-cn-zhipu-prospectus"]
+      }
+    }
+  }
+}
