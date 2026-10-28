@@ -41,6 +41,18 @@ a {
   color: var(--color-accent);
   text-underline-offset: 3px;
 }
+/*
+ * Internal links that open a page in place look like the controls they
+ * replaced; any class-based rule for the control still applies.
+ */
+a:where(.nav-link) {
+  display: inline-block;
+  color: inherit;
+  text-decoration: none;
+}
+a:where(.nav-link):hover {
+  color: var(--color-accent);
+}
 button:focus-visible,
 a:focus-visible,
 input:focus-visible,
@@ -242,7 +254,7 @@ h2 {
   font-size: var(--text-sm);
 }
 .view-nav > button:hover,
-.anchor-nav > button:hover {
+.anchor-nav > :is(button, a):hover {
   background: var(--color-hover);
 }
 .view-nav > button[aria-current='page'] {
@@ -256,7 +268,7 @@ h2 {
   font-variant-numeric: tabular-nums;
   color: var(--color-text-muted);
 }
-.anchor-nav button {
+.anchor-nav :is(button, a) {
   display: flex;
   align-items: center;
   gap: 8px;
@@ -264,11 +276,12 @@ h2 {
   padding: 8px 6px;
   font-size: var(--text-sm);
 }
-.anchor-nav button > span:last-child {
+.anchor-nav :is(button, a) > span:last-child {
   margin-left: auto;
   color: var(--color-text-muted);
 }
-.anchor-nav button[aria-pressed='true'] {
+.anchor-nav button[aria-pressed='true'],
+.anchor-nav a[aria-current='page'] {
   background: var(--color-selected);
   font-weight: 650;
 }
@@ -367,12 +380,13 @@ h2 {
   border-radius: var(--radius-lg);
   flex-shrink: 0;
 }
-.view-switch button {
+.view-switch :is(button, a) {
   font-size: var(--text-xs);
   padding: 5px 9px;
   border-radius: var(--radius-sm);
 }
-.view-switch button[aria-pressed='true'] {
+.view-switch button[aria-pressed='true'],
+.view-switch a[aria-current='page'] {
   background: var(--color-raised);
   box-shadow: 0 1px 3px var(--color-shadow);
   color: var(--color-accent);
@@ -735,7 +749,7 @@ h2 {
   flex-direction: column;
   gap: 7px;
 }
-.claim-endpoints button {
+.claim-endpoints :is(button, a) {
   text-align: left;
   padding: 0;
   font-size: var(--text-md);
@@ -1855,4 +1869,34 @@ h2 {
   background: var(--color-raised);
   border-color: var(--color-border-strong);
   color: var(--color-text-subtle);
+}
+
+/*
+ * On narrow screens the claim panel opens directly below the record or table
+ * row that opened it (see inspectorSlot in Workspace.tsx).
+ */
+.inspector-slot {
+  list-style: none;
+  margin: 12px 0;
+  text-align: left;
+  white-space: normal;
+  font-size: var(--text-base);
+  font-weight: 400;
+}
+.inspector-slot > .inspector {
+  border: 1px solid var(--color-border-strong);
+  max-height: none;
+  padding: 20px 16px;
+  scroll-margin-top: 72px;
+}
+.inspector-slot-row > td {
+  padding: 0;
+  border: 0;
+  background: none;
+}
+.inspector-slot-row .inspector-slot {
+  position: sticky;
+  left: 0;
+  z-index: 3;
+  max-width: 100vw;
 }

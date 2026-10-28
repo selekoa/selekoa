@@ -1,5 +1,6 @@
 import { Fragment } from 'react';
 import { restsOnReporting, retrievalRouteLabels } from '../domain/genealogy';
+import { RecordLink } from './NavLink';
 import { StatedReason } from './RecordMarks';
 import { quoted } from './quote';
 import {
@@ -143,10 +144,14 @@ export function Inspector({
           </button>
         </div>
         <div className="claim-endpoints">
-          <button onClick={() => onEntity(subject.id)}>{subject.name}</button>
+          <RecordLink id={subject.id} onOpen={() => onEntity(subject.id)}>
+            {subject.name}
+          </RecordLink>
           <span>{predicates[claim.predicate].label} ↓</span>
           {object ? (
-            <button onClick={() => onEntity(object.id)}>{object.name}</button>
+            <RecordLink id={object.id} onOpen={() => onEntity(object.id)}>
+              {object.name}
+            </RecordLink>
           ) : (
             <strong>
               {claim.object.kind === 'literal'
@@ -366,6 +371,18 @@ export function Inspector({
                   </dd>
                 </Fragment>
               ))}
+            </>
+          )}
+          {attributes?.listing && (
+            <>
+              <dt>Entries listed</dt>
+              <dd>
+                {attributes.listing.count.toLocaleString('en-US')} (
+                {attributes.listing.countBasis === 'stated'
+                  ? 'number stated by the source'
+                  : 'counted by Selekoa'}
+                )
+              </dd>
             </>
           )}
           {attributes?.activityStage && (
@@ -663,14 +680,15 @@ export function Inspector({
         <h2>{entity.name}</h2>
         <p className="entity-description">{entity.description}</p>
         {onPage && (entity.type === 'person' || entity.type === 'document') && (
-          <button
+          <RecordLink
             className="text-button entity-page-link"
-            onClick={() => onPage(entity.id)}
+            id={entity.id}
+            onOpen={() => onPage(entity.id)}
           >
             {entity.type === 'person'
               ? 'Read the person page: documented path and works →'
               : 'Read the document page: versions and relations →'}
-          </button>
+          </RecordLink>
         )}
         {(entity.documentVersion || entity.subtype === 'Framework family') && (
           <section aria-label="Framework version history">
@@ -678,16 +696,17 @@ export function Inspector({
               <>
                 <p className="small-note">{versionDescription(entity)}</p>
                 <p className="small-note">{entity.documentVersion.dateNote}</p>
-                <button
+                <RecordLink
                   className="text-button"
-                  onClick={() => onEntity(entity.documentVersion!.publisherId)}
+                  id={entity.documentVersion!.publisherId}
+                  onOpen={() => onEntity(entity.documentVersion!.publisherId)}
                 >
                   Publisher:{' '}
                   {
                     repository.entities.get(entity.documentVersion.publisherId)!
                       .name
                   }
-                </button>
+                </RecordLink>
                 {(['predecessors', 'successors'] as const).map((direction) => {
                   const links = versionNeighbours(
                     repository.data.claims,
@@ -710,12 +729,13 @@ export function Inspector({
                                 : '';
                           return (
                             <p key={c.id}>
-                              <button
+                              <RecordLink
                                 className="text-button"
-                                onClick={() => onEntity(target)}
+                                id={target}
+                                onOpen={() => onEntity(target)}
                               >
                                 {repository.entities.get(target)!.name}
-                              </button>{' '}
+                              </RecordLink>{' '}
                               <button
                                 className="text-button"
                                 onClick={() => onClaim(c.id)}
@@ -743,12 +763,13 @@ export function Inspector({
                   entity.documentVersion?.family ?? entity.id,
                 ).map((v) => (
                   <li key={v.id}>
-                    <button
+                    <RecordLink
                       className="text-button"
-                      onClick={() => onEntity(v.id)}
+                      id={v.id}
+                      onOpen={() => onEntity(v.id)}
                     >
                       {v.name}
-                    </button>
+                    </RecordLink>
                   </li>
                 ))}
               </ul>
@@ -770,6 +791,17 @@ export function Inspector({
         )}
         {entity.aliases.length > 0 && (
           <p className="aliases">Also known as {entity.aliases.join(', ')}</p>
+        )}
+        {entity.datedNames && (
+          <p className="aliases">
+            Names, as their sources date them:{' '}
+            {entity.datedNames
+              .map(
+                (n) =>
+                  `${n.name} (${[n.from && `from ${n.from}`, n.until && `until ${n.until}`].filter(Boolean).join(', ')})`,
+              )
+              .join('; ')}
+          </p>
         )}
         <h3 className="section-heading">
           Relationships{' '}
@@ -830,14 +862,14 @@ export function Inspector({
       </p>
       <div className="reading-guide">
         <span className="eyebrow">Start with a question</span>
-        <button onClick={() => onEntity('anthropic')}>
+        <RecordLink id={'anthropic'} onOpen={() => onEntity('anthropic')}>
           <span>01</span>
           <span>
             How is Anthropic connected?
             <small>People, cloud provision, policy</small>
           </span>
           <span>↗</span>
-        </button>
+        </RecordLink>
         <button onClick={() => onTopic('ideas')}>
           <span>02</span>
           <span>

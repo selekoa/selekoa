@@ -1,4 +1,4 @@
-import { test, expect, type Page } from '@playwright/test';
+import { test, expect, type Page } from './fixtures';
 import AxeBuilder from '@axe-core/playwright';
 import { readFileSync } from 'node:fs';
 import { datasetSchema } from '../../src/domain/schema';
@@ -66,11 +66,11 @@ test('People A–Z reaches Jan Leike’s documented path and OpenAI evidence qui
   page,
 }) => {
   const errors = collectErrors(page);
-  await page.goto('/#/institutions');
+  await page.goto('/institutions');
   const started = Date.now();
   const entry = page
     .locator('.people-az')
-    .getByRole('button', { name: 'Jan Leike', exact: true });
+    .getByRole('link', { name: 'Jan Leike', exact: true });
   await entry.focus();
   await page.keyboard.press('Enter');
   const person = page.getByRole('article', { name: 'Jan Leike: person page' });
@@ -94,7 +94,7 @@ test('People A–Z reaches Jan Leike’s documented path and OpenAI evidence qui
   // Well inside the 30-second budget for a person, including page loads.
   expect(Date.now() - started).toBeLessThan(10000);
   await expect(page).toHaveURL(
-    new RegExp(`#/person/jan-leike\\?inspect=${leikeOpenAI}$`),
+    new RegExp(`/person/jan-leike\\?inspect=${leikeOpenAI}$`),
   );
   await inspector.getByRole('button', { name: 'Close ×' }).click();
   await expect(row).toBeFocused();
@@ -106,7 +106,7 @@ test('person page keeps snapshots, undated roles and computed limits distinct', 
 }) => {
   const errors = collectErrors(page);
   const profile = personProfile(data, 'jan-leike')!;
-  await page.goto('/#/person/jan-leike');
+  await page.goto('/person/jan-leike');
   const person = page.getByRole('article', { name: 'Jan Leike: person page' });
   await expect(person.getByRole('heading', { level: 1 })).toHaveText(
     'Jan Leike',
@@ -152,18 +152,18 @@ test('person page keeps snapshots, undated roles and computed limits distinct', 
     );
   }
   await works
-    .getByRole('button', {
+    .getByRole('link', {
       name: 'Deep reinforcement learning from human preferences: document page →',
     })
     .click();
-  await expect(page).toHaveURL(/#\/document\/human-preferences-paper$/);
+  await expect(page).toHaveURL(/\/document\/human-preferences-paper$/);
   expect(errors).toEqual([]);
 });
 
 test('person starter downloads match the deterministic domain export', async ({
   page,
 }) => {
-  await page.goto('/#/person/jan-leike');
+  await page.goto('/person/jan-leike');
   await page.getByText('Download research starter', { exact: true }).click();
   const starter = await personStarter(data, 'jan-leike');
   for (const [label, extension, expected] of [
@@ -184,7 +184,7 @@ test('neighbourhood map is a secondary, keyboard-reachable tab', async ({
   page,
 }) => {
   const errors = collectErrors(page);
-  await page.goto('/#/person/sam-altman');
+  await page.goto('/person/sam-altman');
   const tabs = page.getByRole('tablist', { name: 'Person page views' });
   const record = tabs.getByRole('tab', { name: 'Documented record' });
   await expect(record).toHaveAttribute('aria-selected', 'true');
@@ -208,7 +208,7 @@ test('document page separates citation, credit and reported method use', async (
 }) => {
   const errors = collectErrors(page);
   const record = documentRecord(data, 'human-preferences-paper')!;
-  await page.goto('/#/document/human-preferences-paper');
+  await page.goto('/document/human-preferences-paper');
   const article = page.getByRole('article', {
     name: record.document.name + ': document page',
   });
@@ -235,7 +235,7 @@ test('document page separates citation, credit and reported method use', async (
   await expect(
     page.getByRole('complementary', { name: 'Evidence inspector' }),
   ).toContainText('Citation alone is neither agreement');
-  await page.goto('/#/document/rsp-v2-0');
+  await page.goto('/document/rsp-v2-0');
   const versions = page.getByRole('region', { name: 'Versions' });
   await expect(versions.locator('[aria-current="true"]')).toContainText(
     'v2.0 (this version)',
@@ -247,8 +247,8 @@ test('document page separates citation, credit and reported method use', async (
   ]);
   await expect(versions).toContainText('Replaces');
   await expect(versions).toContainText('Replaced by');
-  await versions.getByRole('button', { name: 'v2.1', exact: true }).click();
-  await expect(page).toHaveURL(/#\/document\/rsp-v2-1$/);
+  await versions.getByRole('link', { name: 'v2.1', exact: true }).click();
+  await expect(page).toHaveURL(/\/document\/rsp-v2-1$/);
   expect(errors).toEqual([]);
 });
 
@@ -288,13 +288,13 @@ test('every person and document entity has a page that lists all its claims', as
 test('person links from search, dossiers and the inspector open person pages', async ({
   page,
 }) => {
-  await page.goto('/#/explore');
+  await page.goto('/explore');
   await page.getByRole('searchbox').fill('Jan Leike');
   await page
-    .getByRole('button', { name: 'Jan Leike: person page', exact: true })
+    .getByRole('link', { name: 'Jan Leike: person page', exact: true })
     .click();
-  await expect(page).toHaveURL(/#\/person\/jan-leike$/);
-  await page.goto('/#/dossier/anthropic');
+  await expect(page).toHaveURL(/\/person\/jan-leike$/);
+  await page.goto('/dossier/anthropic');
   await page
     .getByRole('group', { name: 'Dossier sections' })
     .getByRole('button', { name: /People/ })
@@ -304,17 +304,17 @@ test('person links from search, dossiers and the inspector open person pages', a
   });
   await group.evaluate((d) => ((d as HTMLDetailsElement).open = true));
   await group
-    .getByRole('button', {
+    .getByRole('link', {
       name: 'Dario Amodei: person page →',
     })
     .click();
-  await expect(page).toHaveURL(/#\/person\/dario-amodei$/);
-  await page.goto('/#/claim/' + leikeOpenAI);
+  await expect(page).toHaveURL(/\/person\/dario-amodei$/);
+  await page.goto('/claim/' + leikeOpenAI);
   await page
     .getByRole('complementary', { name: 'Evidence inspector' })
-    .getByRole('button', { name: 'Jan Leike', exact: true })
+    .getByRole('link', { name: 'Jan Leike', exact: true })
     .click();
-  await expect(page).toHaveURL(/#\/person\/jan-leike$/);
+  await expect(page).toHaveURL(/\/person\/jan-leike$/);
   await page
     .getByRole('button', {
       name: 'See Jan Leike’s connections in the explorer →',
@@ -326,9 +326,9 @@ test('person links from search, dossiers and the inspector open person pages', a
   );
   await page
     .getByRole('complementary', { name: 'Entity inspector' })
-    .getByRole('button', { name: /Read the person page/ })
+    .getByRole('link', { name: /Read the person page/ })
     .click();
-  await expect(page).toHaveURL(/#\/person\/jan-leike$/);
+  await expect(page).toHaveURL(/\/person\/jan-leike$/);
 });
 
 test('question page computes disputes and open questions; reading links still resolve', async ({
@@ -336,9 +336,9 @@ test('question page computes disputes and open questions; reading links still re
 }) => {
   const errors = collectErrors(page);
   const question = questionPath(data, 'anthropic-formation')!;
-  await page.goto('/#/reading/anthropic-formation?section=personnel');
+  await page.goto('/reading/anthropic-formation?section=personnel');
   await expect(page).toHaveURL(
-    /#\/question\/anthropic-formation\?section=personnel&claim=/,
+    /\/question\/anthropic-formation\?section=personnel&claim=/,
   );
   await expect(page.locator('[data-branch-id]')).toHaveAttribute(
     'data-branch-id',
@@ -352,7 +352,7 @@ test('question page computes disputes and open questions; reading links still re
     await expect(page.locator(`[data-open-question="${q.id}"]`)).toContainText(
       q.text,
     );
-  await page.goto('/#/question/anthropic-formation');
+  await page.goto('/question/anthropic-formation');
   await expect(
     page.getByRole('article', { name: 'Anthropic guided research path' }),
   ).toBeVisible();
@@ -378,13 +378,13 @@ for (const width of [1440, 390])
       await page.setViewportSize({ width, height: 1000 });
       await page.emulateMedia({ reducedMotion: 'reduce' });
       for (const hash of [
-        '#/person/jan-leike',
-        '#/person/durk-kingma',
-        '#/document/human-preferences-paper',
-        '#/document/rsp-v3-0',
-        '#/question/anthropic-formation',
+        '/person/jan-leike',
+        '/person/durk-kingma',
+        '/document/human-preferences-paper',
+        '/document/rsp-v3-0',
+        '/question/anthropic-formation',
       ]) {
-        await page.goto('/' + hash);
+        await page.goto(hash);
         await setTheme(page, theme);
         await expect(page.getByRole('article')).toBeVisible();
         expect(await fitsViewport(page)).toBe(true);
@@ -394,7 +394,7 @@ for (const width of [1440, 390])
           fullPage: true,
         });
       }
-      await page.goto('/#/person/jan-leike?inspect=' + leikeOpenAI);
+      await page.goto('/person/jan-leike?inspect=' + leikeOpenAI);
       await setTheme(page, theme);
       expect(await fitsViewport(page)).toBe(true);
       await noViolations(page);
@@ -407,7 +407,7 @@ test('person page sources keep the original address and add the archived copy', 
   const profile = personProfile(data, 'jay-kreps')!;
   const archived = profile.identitySources.filter((s) => s.archivedUrl);
   expect(archived.length).toBeGreaterThan(0);
-  await page.goto('/#/person/jay-kreps');
+  await page.goto('/person/jay-kreps');
   const identity = page.locator('.record-identity');
   for (const s of archived) {
     await expect(

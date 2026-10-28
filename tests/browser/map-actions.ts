@@ -1,4 +1,4 @@
-import { expect, type Page } from '@playwright/test';
+import { expect, type Page } from './fixtures';
 
 // Click a real, unobscured point on the rendered curve, not a historical pixel.
 export async function clickMapClaim(page: Page, id: string) {

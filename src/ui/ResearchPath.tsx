@@ -1,5 +1,7 @@
 import { useLayoutEffect, useRef } from 'react';
 import './research-path.css';
+import { referencePath } from '../domain/addresses';
+import { NavLink } from './NavLink';
 import type {
   ReadingPassage,
   ResearchPath as Path,
@@ -171,9 +173,15 @@ export function ResearchPath({
         {(onDossier || onMap) && (
           <div className="path-exits">
             {onDossier && (
-              <button onClick={onDossier}>
+              <NavLink
+                href={referencePath({
+                  kind: 'dossier',
+                  id: path.institution!.id,
+                })}
+                onOpen={onDossier}
+              >
                 Full dossier · {path.totalClaims} claims ↗
-              </button>
+              </NavLink>
             )}
             {onMap && <button onClick={onMap}>Institution map ↗</button>}
           </div>

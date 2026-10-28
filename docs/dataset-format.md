@@ -2,8 +2,8 @@
 
 A Selekoa dataset release is a fixed, versioned copy of the application records in a
 public record format: `selekoa-dataset`, format version 1.2. `pnpm release <version>`
-writes it to `release/v<version>/`. Nothing is published or hosted; the About & method
-page links to a local download built from the release files.
+writes it to `release/v<version>/`. The site build publishes the latest release under
+`data/` and every release as a ZIP archive (see [Reproducibility](#reproducibility)).
 
 The format is the contract for anyone who reads a release. The internal schema
 (`src/domain/schema.ts`, [ontology](ontology.md)) can change between releases; the
@@ -39,12 +39,18 @@ field is not recorded.
 Release versions are `MAJOR.MINOR.PATCH`, written `v0.1.0` in directory names and
 citations.
 
-- **Major:** a stable field is removed, renamed or changes meaning, or the file layout
-  changes. Before 1.0.0 the format is still settling, but such a change will still raise
-  the minor version and be listed in the changelog.
-- **Minor:** records are added, a provisional field changes, a field or an enumeration
-  value is added, or the schema version rises.
-- **Patch:** corrections to existing records without additions.
+- **Major:** 1.0.0 is released only under the [version policy](roadmap.md#version-policy-recorded-2026-10-05):
+  when Selekoa has real outside users. Before 1.0.0, a change that removes, renames or
+  changes the meaning of a stable field, or changes the file layout, raises the minor
+  version and is listed in the changelog.
+- **Minor:** a new collection, or a schema change (the schema version rises, a field or
+  an enumeration value is added, or a provisional field changes).
+- **Patch:** corrections to existing records, and small additions within existing
+  collections.
+
+This rule was revised on 2026-10-26 ([decision record](../review/archive-admissions-2026-10-26.md));
+earlier releases were numbered under the previous rule, in which any added record raised
+the minor version.
 
 Format 1.1 (dataset schema 2.11) adds the entity field `proposition` with its three CSV
 columns, the claim attribute `thought` and the source kinds `book`, `message` and `post`.
@@ -64,7 +70,27 @@ can now be `announced` on personnel and organisational records. Dataset schema 2
 adds, inside `proposition`, `withheld`: an earliest located role left unassigned by a
 recorded decision, with its reason and date. It is a provisional nested value, so
 format 1.6 carries it unchanged in the JSON files; the entity CSV columns do not
-include it.
+include it. Dataset schema 2.17 adds, inside `attributes.provision`, `facet`:
+the framework comparison question a provision record answers (`id`) and, for a stated
+cell, its `status` (`stated`, `partly` or `recorded`). It is a provisional nested value,
+so format 1.6 carries it unchanged.
+Dataset schema 2.18 adds the `attributes.provision.kind` values `risk_domain`,
+`evaluation_timing`, `reporting` and `revision`, used only by framework comparison
+cells, whose stated cells for those questions and for thresholds are supported by
+paraphrases instead of quotations. Format 1.6 carries them unchanged.
+Format 1.7 (dataset schema 2.19, 2026-10-28) adds the entity type `country`, keyed by
+its ISO 3166-1 alpha-2 code in the new field `countryCode` (the entity ID is `country-`
+and the code in lower case), and the field `datedNames`: the names an organisation or
+public body bore, each with its dates, a note and the sources that give it, so that a
+renaming keeps one entity. Their CSV columns are `country_code` and
+`dated_names_json`. Schema 2.19 also adds the predicates `lists_participants`,
+`introduced`, `passed`, `vetoed` and `revoked`; inside `attributes`, `listing` (the
+`count` of a participant list and its `countBasis`, `stated` by the source or
+`counted` by Selekoa); and inside `attributes.provision`, `computed`: a date that a
+text's rule fixes without stating it, recorded as an inferred provision dated by the
+computed date. `attributes.activityStage` can be `announced` on a `revoked` record, for
+an announced revocation not yet formalised. `signed_commitment` may have a public body
+or a country as its subject.
 Releases written in earlier formats stay as they are. The generator still writes formats
 1.1 to 1.5, so the tests can reproduce those releases byte for byte.
 
@@ -128,7 +154,7 @@ also contains `LICENSE-DATA.txt` and `LICENSING.md`, outside the checksummed fil
 | Field             | Meaning                                                                                                                                                               | Class         | Stability   |
 | ----------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------- | ----------- |
 | `id`              | Stable entity ID                                                                                                                                                      | structured    | stable      |
-| `type`            | `organisation`, `person`, `concept`, `document`, `infrastructure`, `model`, `public_body` or `fund`                                                                   | structured    | stable      |
+| `type`            | `organisation`, `person`, `concept`, `document`, `infrastructure`, `model`, `public_body`, `fund` or, from schema 2.19, `country`                                     | structured    | stable      |
 | `subtype`         | Finer descriptive label, such as “Framework family”                                                                                                                   | selekoa       | provisional |
 | `name`            | Canonical name                                                                                                                                                        | bibliographic | stable      |
 | `shortName`       | Short display name                                                                                                                                                    | bibliographic | stable      |
@@ -139,12 +165,14 @@ also contains `LICENSE-DATA.txt` and `LICENSING.md`, outside the checksummed fil
 | `externalIds`     | Identifiers in other systems, by system name                                                                                                                          | structured    | provisional |
 | `documentVersion` | For a document edition: `family`, `label`, `publisherId`, `publishedAt`, `effectiveAt`, `revisedAt` (each only if sourced) and `dateNote`                             | selekoa       | stable      |
 | `proposition`     | For a proposition concept (schema 2.11): `code`, the one `criterion` texts are classified against, `terms`, its usual names, and from schema 2.16 any `withheld` role | selekoa       | provisional |
+| `countryCode`     | For a country (schema 2.19): its ISO 3166-1 alpha-2 code                                                                                                              | structured    | stable      |
+| `datedNames`      | For an organisation or public body that was renamed (schema 2.19): each `name` with `from` and `until` dates as its sources give them, a `note` and `sourceIds`       | selekoa       | provisional |
 
 CSV: `id`, `type`, `subtype`, `name`, `short_name`, `sort_name`, `aliases`,
 `description`, `source_ids`, `external_ids_json`, `document_family`, `document_label`,
 `document_publisher_id`, `document_published_at`, `document_effective_at`,
 `document_revised_at`, `document_date_note`, `proposition_code`, `proposition_criterion`,
-`proposition_terms`.
+`proposition_terms` and, from format 1.7, `country_code` and `dated_names_json`.
 
 ## Claims
 
@@ -390,3 +418,10 @@ version:
 The download offered on the About & method page is a ZIP archive of one release
 directory, built from the tracked release files when the application is built. It is not
 tracked and adds no content.
+
+The built site also serves the files of the latest release one by one, unchanged, under
+`data/` (`https://selekoa.org/data/manifest.json`, `…/data/claims.json` and so on), with
+`LICENSE-DATA.txt` and `LICENSING.md` as in the archive, and lists them in `/llms.txt`.
+These addresses always hold the latest release; read its version from
+`data/manifest.json`. A fixed release is reached through its archive,
+`release/selekoa-dataset-vX.Y.Z.zip`.

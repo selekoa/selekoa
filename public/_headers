@@ -1,0 +1,122 @@
+# Cloudflare Pages response headers for selekoa.org (copied to dist/ by the
+# build). See docs/launch-readiness.md, "Static hosting".
+
+# Two headers browsers apply on their own terms. They match Cloudflare Pages'
+# defaults and are stated so a change of host keeps them. No Content-Security-
+# Policy: the analytics beacon is added by site.config.json and a policy would
+# have to follow it.
+/*
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+
+# Every page is HTML written by the build (the start page, the not-found page
+# and one file per record or collection page, served without .html):
+# revalidate on every load, so a deploy reaches readers at once. A unit test
+# checks that each built page matches exactly one of these rules.
+/
+  Cache-Control: no-cache
+/index.html
+  Cache-Control: no-cache
+/404.html
+  Cache-Control: no-cache
+/about
+  Cache-Control: no-cache
+/search
+  Cache-Control: no-cache
+/explore
+  Cache-Control: no-cache
+/governance
+  Cache-Control: no-cache
+/ideas
+  Cache-Control: no-cache
+/institutions
+  Cache-Control: no-cache
+/claim/*
+  Cache-Control: no-cache
+/person/*
+  Cache-Control: no-cache
+/document/*
+  Cache-Control: no-cache
+/dossier/*
+  Cache-Control: no-cache
+/documents/*
+  Cache-Control: no-cache
+/compare/*
+  Cache-Control: no-cache
+/control/*
+  Cache-Control: no-cache
+/commitments/*
+  Cache-Control: no-cache
+/propositions/*
+  Cache-Control: no-cache
+/question/*
+  Cache-Control: no-cache
+
+# Build output with a content hash in the file name: never changes.
+/assets/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Dataset archives. A release's records never change, but the archive also
+# carries the current licence files, so it is cached long but not immutable.
+/release/*
+  Cache-Control: public, max-age=2592000
+
+# Rewritten by each build that changes the launch settings.
+/robots.txt
+  Cache-Control: public, max-age=3600
+/sitemap.xml
+  Cache-Control: public, max-age=3600
+
+# The latest dataset release's files under their own names, and llms.txt.
+# Cached for a day: a new release replaces them under the same names. Any
+# origin may read them, so browser-based tools can fetch the records; they are
+# public files, sent without cookies or credentials.
+/data/*
+  Cache-Control: public, max-age=86400
+  Access-Control-Allow-Origin: *
+/llms.txt
+  Cache-Control: public, max-age=86400
+  Access-Control-Allow-Origin: *
+  Content-Type: text/plain; charset=utf-8
+
+# Content types for the files under data/. Every file is UTF-8; without a
+# charset a browser may read Markdown or CSV as Latin-1, and CITATION.cff
+# would be offered as a binary download. One rule per file, because a header
+# set by two matching rules is sent with both values joined. A unit test checks
+# that every published file has its rule (src/site/machine-readable.ts).
+/data/CHANGELOG.md
+  Content-Type: text/plain; charset=utf-8
+/data/CITATION.cff
+  Content-Type: text/plain; charset=utf-8
+/data/LICENSE-DATA.txt
+  Content-Type: text/plain; charset=utf-8
+/data/LICENSING.md
+  Content-Type: text/plain; charset=utf-8
+/data/README.md
+  Content-Type: text/plain; charset=utf-8
+/data/changes.json
+  Content-Type: application/json; charset=utf-8
+/data/claims.csv
+  Content-Type: text/csv; charset=utf-8
+/data/claims.json
+  Content-Type: application/json; charset=utf-8
+/data/collections.csv
+  Content-Type: text/csv; charset=utf-8
+/data/collections.json
+  Content-Type: application/json; charset=utf-8
+/data/entities.csv
+  Content-Type: text/csv; charset=utf-8
+/data/entities.json
+  Content-Type: application/json; charset=utf-8
+/data/evidence.csv
+  Content-Type: text/csv; charset=utf-8
+/data/evidence.json
+  Content-Type: application/json; charset=utf-8
+/data/manifest.json
+  Content-Type: application/json; charset=utf-8
+/data/sources.csl.json
+  Content-Type: application/json; charset=utf-8
+/data/sources.csv
+  Content-Type: text/csv; charset=utf-8
+/data/sources.json
+  Content-Type: application/json; charset=utf-8

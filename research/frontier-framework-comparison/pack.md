@@ -4,7 +4,7 @@ Candidate research pack outside application data. Machine-prepared and machine-a
 
 ## Overview
 
-This pack sets 22 editions of 7 frontier safety frameworks from 6 developers against 8 comparison dimensions (18 facets). Each of the 396 cells holds either verbatim quotations from that edition with their locations (334 cells), a recorded search that found no such passage (38), or a note that the facet does not apply (20). 4 cells carry passages already in Selekoa's dataset for an edition that could not be retrieved in this run.
+This pack sets 22 editions of 7 frontier safety frameworks from 6 developers against 8 comparison dimensions (18 facets). Each of the 396 cells holds either verbatim quotations from that edition with their locations (348 cells), a recorded search that found no such passage (41), or a note that the facet does not apply (7).
 
 How to read it:
 
@@ -44,21 +44,21 @@ How to read it:
 
 ### Latest edition of each framework, at a glance
 
-S = stated (quoted below), S~ = stated but only partly meets the facet's criterion (see the mapping note), NF = not found within the recorded search, – = not applicable, R = recorded in the dataset, not re-checked.
+S = stated (quoted below), S~ = stated, partly: the edition has what the criterion asks for only in a weaker form than its words (see the mapping note), NF = not found within the recorded search, – = not applicable.
 
 | Facet                                                        | Anthropic · RSP · v3.4 | Google DeepMind · FSF · v3.1 | OpenAI · Preparedness · Version 2 | OpenAI · FGF · May 2026 edition | xAI · FAIF · June 2026 edition | Meta · AASF · v2 | Microsoft · FGF · Feb 2026 |
 | ------------------------------------------------------------ | ---------------------- | ---------------------------- | --------------------------------- | ------------------------------- | ------------------------------ | ---------------- | -------------------------- |
 | D1 Chemical, biological, radiological or nuclear weapons     | S                      | S                            | S                                 | S                               | S                              | S                | S                          |
 | D1 Cyber operations                                          | NF                     | S                            | S                                 | S                               | S                              | S                | S                          |
 | D1 Autonomy, self-improvement or AI research and development | S                      | S                            | S                                 | S                               | S                              | S                | S                          |
-| D1 Persuasion or manipulation                                | NF                     | S                            | S~                                | S~                              | S                              | NF               | S~                         |
-| D1 Other named domains                                       | S                      | S                            | S~                                | S~                              | S~                             | S~               | NF                         |
+| D1 Persuasion or manipulation                                | NF                     | S                            | S~                                | S                               | S                              | NF               | S                          |
+| D1 Other named domains                                       | S                      | S                            | S                                 | S~                              | S~                             | S                | S                          |
 | D2 Named levels or thresholds                                | S                      | S                            | S                                 | S                               | S~                             | S                | S                          |
 | D2 How a threshold is defined                                | S~                     | S                            | S                                 | S                               | S~                             | S                | S~                         |
 | D3 Safeguards required                                       | S                      | S                            | S                                 | S                               | S~                             | S                | S                          |
-| D3 Pause, non-deployment or non-training                     | S~                     | S~                           | S                                 | S                               | S                              | S                | S                          |
+| D3 Pause, non-deployment or non-training                     | S                      | S                            | S                                 | S                               | S                              | S                | S                          |
 | D4 Determination of capability or safeguard adequacy         | S                      | S                            | S                                 | S~                              | NF                             | S                | S                          |
-| D4 Board or external oversight                               | S~                     | NF                           | S                                 | S                               | NF                             | S~               | S~                         |
+| D4 Board or external oversight                               | S                      | NF                           | S                                 | S                               | NF                             | S~               | S~                         |
 | D5 Evaluation timing                                         | S~                     | S                            | S                                 | S                               | S                              | S                | S                          |
 | D6 Provisions conditioned on other developers                | S                      | S                            | S                                 | NF                              | NF                             | NF               | S~                         |
 | D6 Other exceptions or discretion                            | S                      | S                            | S                                 | S                               | S                              | S                | S                          |
@@ -73,17 +73,17 @@ S = stated (quoted below), S~ = stated but only partly meets the facet's criteri
 
 | Facet                                                        | v1.0 | v2.0 | v2.1 | v2.2 | v3.0 | v3.1 | v3.2 | v3.3 | v3.4 |
 | ------------------------------------------------------------ | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- |
-| D1 Chemical, biological, radiological or nuclear weapons     | S~   | S    | S    | S    | S    | S    | S    | S    | S    |
-| D1 Cyber operations                                          | S~   | S~   | S~   | S~   | NF   | NF   | NF   | NF   | NF   |
+| D1 Chemical, biological, radiological or nuclear weapons     | S    | S    | S    | S    | S    | S    | S    | S    | S    |
+| D1 Cyber operations                                          | S    | S    | S    | S    | NF   | NF   | NF   | NF   | NF   |
 | D1 Autonomy, self-improvement or AI research and development | S    | S    | S    | S    | S    | S    | S    | S    | S    |
 | D1 Persuasion or manipulation                                | NF   | S~   | S~   | S~   | NF   | NF   | NF   | NF   | NF   |
 | D1 Other named domains                                       | S~   | S~   | S~   | S~   | S    | S    | S    | S    | S    |
 | D2 Named levels or thresholds                                | S    | S    | S    | S    | S    | S    | S    | S    | S    |
-| D2 How a threshold is defined                                | S~   | S    | S    | S    | S~   | S~   | S~   | S~   | S~   |
+| D2 How a threshold is defined                                | S    | S    | S    | S    | S~   | S~   | S~   | S~   | S~   |
 | D3 Safeguards required                                       | S    | S    | S    | S    | S    | S    | S    | S    | S    |
-| D3 Pause, non-deployment or non-training                     | S    | S~   | S~   | S~   | S~   | S~   | S~   | S~   | S~   |
+| D3 Pause, non-deployment or non-training                     | S    | S    | S    | S    | S    | S    | S    | S    | S    |
 | D4 Determination of capability or safeguard adequacy         | S~   | S    | S    | S    | S    | S    | S    | S    | S    |
-| D4 Board or external oversight                               | S~   | S~   | S~   | S~   | S~   | S~   | S~   | S~   | S~   |
+| D4 Board or external oversight                               | S~   | S~   | S~   | S~   | S    | S    | S    | S    | S    |
 | D5 Evaluation timing                                         | S    | S    | S    | S    | S~   | S~   | S~   | S~   | S~   |
 | D6 Provisions conditioned on other developers                | S~   | S    | S    | S    | S    | S    | S    | S    | S    |
 | D6 Other exceptions or discretion                            | S    | S    | S    | S    | S    | S    | S    | S    | S    |
@@ -104,7 +104,7 @@ S = stated (quoted below), S~ = stated but only partly meets the facet's criteri
 | D2 Named levels or thresholds                                | S    | S    | S    | S    |
 | D2 How a threshold is defined                                | S    | S    | S    | S    |
 | D3 Safeguards required                                       | S~   | S    | S    | S    |
-| D3 Pause, non-deployment or non-training                     | S    | S    | S~   | S~   |
+| D3 Pause, non-deployment or non-training                     | S    | S    | S    | S    |
 | D4 Determination of capability or safeguard adequacy         | NF   | S    | S    | S    |
 | D4 Board or external oversight                               | NF   | NF   | NF   | NF   |
 | D5 Evaluation timing                                         | S    | S    | S    | S    |
@@ -113,7 +113,7 @@ S = stated (quoted below), S~ = stated but only partly meets the facet's criteri
 | D7 Internal reporting                                        | NF   | S~   | S~   | S~   |
 | D7 Public or external reporting                              | NF   | S    | S    | S    |
 | D8 Revision process and approval                             | S    | S    | S    | S    |
-| D8 Stated changes from the previous edition                  | –    | S~   | NF   | S    |
+| D8 Stated changes from the previous edition                  | –    | S    | NF   | S    |
 
 **OpenAI · Preparedness Framework**
 
@@ -123,7 +123,7 @@ S = stated (quoted below), S~ = stated but only partly meets the facet's criteri
 | D1 Cyber operations                                          | S    | S         |
 | D1 Autonomy, self-improvement or AI research and development | S    | S         |
 | D1 Persuasion or manipulation                                | S    | S~        |
-| D1 Other named domains                                       | S~   | S~        |
+| D1 Other named domains                                       | S~   | S         |
 | D2 Named levels or thresholds                                | S    | S         |
 | D2 How a threshold is defined                                | S    | S         |
 | D3 Safeguards required                                       | S    | S         |
@@ -145,7 +145,7 @@ S = stated (quoted below), S~ = stated but only partly meets the facet's criteri
 | D1 Chemical, biological, radiological or nuclear weapons     | S                |
 | D1 Cyber operations                                          | S                |
 | D1 Autonomy, self-improvement or AI research and development | S                |
-| D1 Persuasion or manipulation                                | S~               |
+| D1 Persuasion or manipulation                                | S                |
 | D1 Other named domains                                       | S~               |
 | D2 Named levels or thresholds                                | S                |
 | D2 How a threshold is defined                                | S                |
@@ -166,7 +166,7 @@ S = stated (quoted below), S~ = stated but only partly meets the facet's criteri
 | Facet                                                        | December 2025 edition | June 2026 edition |
 | ------------------------------------------------------------ | --------------------- | ----------------- |
 | D1 Chemical, biological, radiological or nuclear weapons     | S                     | S                 |
-| D1 Cyber operations                                          | S~                    | S                 |
+| D1 Cyber operations                                          | S                     | S                 |
 | D1 Autonomy, self-improvement or AI research and development | S~                    | S                 |
 | D1 Persuasion or manipulation                                | NF                    | S                 |
 | D1 Other named domains                                       | S                     | S~                |
@@ -188,23 +188,23 @@ S = stated (quoted below), S~ = stated but only partly meets the facet's criteri
 
 | Facet                                                        | v1.1 | v2.0 |
 | ------------------------------------------------------------ | ---- | ---- |
-| D1 Chemical, biological, radiological or nuclear weapons     | –    | S    |
-| D1 Cyber operations                                          | –    | S    |
-| D1 Autonomy, self-improvement or AI research and development | –    | S    |
-| D1 Persuasion or manipulation                                | –    | NF   |
-| D1 Other named domains                                       | –    | S~   |
-| D2 Named levels or thresholds                                | R    | S    |
-| D2 How a threshold is defined                                | R    | S    |
-| D3 Safeguards required                                       | –    | S    |
-| D3 Pause, non-deployment or non-training                     | R    | S    |
-| D4 Determination of capability or safeguard adequacy         | R    | S    |
-| D4 Board or external oversight                               | –    | S~   |
-| D5 Evaluation timing                                         | –    | S    |
-| D6 Provisions conditioned on other developers                | –    | NF   |
-| D6 Other exceptions or discretion                            | –    | S    |
-| D7 Internal reporting                                        | –    | S    |
-| D7 Public or external reporting                              | –    | S    |
-| D8 Revision process and approval                             | –    | S    |
+| D1 Chemical, biological, radiological or nuclear weapons     | S    | S    |
+| D1 Cyber operations                                          | S    | S    |
+| D1 Autonomy, self-improvement or AI research and development | S    | S    |
+| D1 Persuasion or manipulation                                | NF   | NF   |
+| D1 Other named domains                                       | NF   | S    |
+| D2 Named levels or thresholds                                | S    | S    |
+| D2 How a threshold is defined                                | S    | S    |
+| D3 Safeguards required                                       | S    | S    |
+| D3 Pause, non-deployment or non-training                     | S    | S    |
+| D4 Determination of capability or safeguard adequacy         | S    | S    |
+| D4 Board or external oversight                               | NF   | S~   |
+| D5 Evaluation timing                                         | S    | S    |
+| D6 Provisions conditioned on other developers                | NF   | NF   |
+| D6 Other exceptions or discretion                            | S    | S    |
+| D7 Internal reporting                                        | S    | S    |
+| D7 Public or external reporting                              | S    | S    |
+| D8 Revision process and approval                             | S    | S    |
 | D8 Stated changes from the previous edition                  | –    | S    |
 
 **Microsoft · Frontier Governance Framework**
@@ -214,8 +214,8 @@ S = stated (quoted below), S~ = stated but only partly meets the facet's criteri
 | D1 Chemical, biological, radiological or nuclear weapons     | S                    | S        |
 | D1 Cyber operations                                          | S                    | S        |
 | D1 Autonomy, self-improvement or AI research and development | S                    | S        |
-| D1 Persuasion or manipulation                                | NF                   | S~       |
-| D1 Other named domains                                       | NF                   | NF       |
+| D1 Persuasion or manipulation                                | NF                   | S        |
+| D1 Other named domains                                       | NF                   | S        |
 | D2 Named levels or thresholds                                | S                    | S        |
 | D2 How a threshold is defined                                | S~                   | S~       |
 | D3 Safeguards required                                       | S                    | S        |
@@ -238,9 +238,9 @@ _Which risk domains does the edition name as within its scope?_
 
 **Criterion:** The edition names any of chemical, biological, radiological or nuclear weapons (alone or combined) as a domain it tracks or sets a threshold for.
 
-- **Anthropic · RSP · 2023** (effective 2023-09-19): stated, partly meets the criterion
+- **Anthropic · RSP · 2023** (effective 2023-09-19): stated
   - “Our ongoing project is focused on defining three factors sequentially for each domain of interest (CBRN and cyber risks)” (PDF p. 20 (printed p. 20), Appendices, 'ASL-3 Evaluations for Misuse Risks', second paragraph, first sentence). _The three factors are threat models, capabilities and evaluations._
-  - Mapping note: The ASL-3 misuse capability (PDF p. 6) is defined in domain-general terms (deliberately-caused catastrophic harm); CBRN is named as a domain of interest for threat models and evaluations. Bioweapons risks are stated as the first area of effort (PDF p. 7, ASL-3 item 1).
+  - Mapping note: CBRN is named as a domain of interest for threat models and evaluations, and the ASL-3 red-teaming measure says misuse domains 'should at a minimum include causes of extreme CBRN risks, and cybersecurity' (PDF p. 8). The ASL-3 misuse capability itself (PDF p. 6) is defined in domain-general terms (deliberately-caused catastrophic harm); no CBRN-specific threshold is set. Bioweapons risks are stated as the first area of effort (PDF p. 20).
 - **Anthropic · RSP · v2.0** (effective 2024-10-15): stated
   - “The ability to significantly help individuals or groups with basic technical backgrounds … create/obtain and deploy CBRN weapons.” (PDF p. 7 (printed p. 3), §2 Capability Thresholds and Required Safeguards, table row 'Chemical, Biological, Radiological, and Nuclear (CBRN) weapons', Capability Thresholds column). _The omitted words give 'undergraduate STEM degrees' as an example of basic technical backgrounds._
 - **Anthropic · RSP · v2.1** (effective 2025-03-31): stated
@@ -295,7 +295,9 @@ _Which risk domains does the edition name as within its scope?_
 - **xAI · FAIF · June 2026 edition** (effective 2026-06-30): stated
   - “four primary risk domains where significant or severe outcomes are most likely to emerge in current and future systems: CBRN Risks, Offensive Cybersecurity Risks, Loss of Control Risks and Harmful Manipulation Risks.” (PDF p. 2, §2.1 Risk Identification, third paragraph, first sentence)
   - Mapping note: Detailed in §2.1(a) 'Addressing CBRN Risks' (PDF pp. 3–4); no numeric threshold is stated.
-- **Meta · FAF · v1.1** (published 2025-02-03): n/a. _Edition not retrieved in this run; no passage recorded in the dataset for this facet._
+- **Meta · FAF · v1.1** (published 2025-02-03): stated
+  - “Proliferation of known medium-impact biological and chemical weapons for low and moderate skill actors.” (PDF p. 15 (printed p. 15), §3.4.2, outcome CB 1)
+  - Mapping note: Chemical and biological weapons are named; the cell does not extend this to radiological or nuclear weapons.
 - **Meta · AASF · v2** (published 2026-04-08): stated
   - “The Framework currently focuses on catastrophic risks in three areas: Chemical & Biological, Cybersecurity, and Loss of Control.” (PDF p. 1 (unnumbered opening page), second paragraph, second sentence)
   - “Radiological and nuclear risks have also been identified as other potential sources of risk” (PDF p. 36 (printed p. 36), §4.2.4 Emerging Evaluations and Outcomes, 'Radiological and nuclear', first sentence)
@@ -311,18 +313,18 @@ _Which risk domains does the edition name as within its scope?_
 
 **Criterion:** The edition names cyber attacks, cyber offence or cybersecurity uplift as a tracked domain.
 
-- **Anthropic · RSP · 2023** (effective 2023-09-19): stated, partly meets the criterion
+- **Anthropic · RSP · 2023** (effective 2023-09-19): stated
   - “Our ongoing project is focused on defining three factors sequentially for each domain of interest (CBRN and cyber risks)” (PDF p. 20 (printed p. 20), Appendices, 'ASL-3 Evaluations for Misuse Risks', second paragraph, first sentence). _The ASL-3 deployment red-teaming measure (PDF p. 8) also names cybersecurity as a minimum misuse domain._
-  - Mapping note: Cyber is named as a misuse domain of interest under the domain-general ASL-3 misuse capability; no cyber-specific threshold is defined.
-- **Anthropic · RSP · v2.0** (effective 2024-10-15): stated, partly meets the criterion
+  - Mapping note: Cyber is named as a misuse domain of interest under the domain-general ASL-3 misuse capability; no cyber-specific threshold is set.
+- **Anthropic · RSP · v2.0** (effective 2024-10-15): stated
   - “Cyber Operations: The ability to significantly enhance or automate sophisticated destructive cyber attacks” (PDF p. 8 (printed p. 4), §2, table 'Capabilities / Ongoing Assessment', row 'Cyber Operations')
-  - Mapping note: Named as a capability that 'may require stronger safeguards than ASL-2' and is under ongoing assessment; no Capability Threshold or Required Safeguards are set for it.
-- **Anthropic · RSP · v2.1** (effective 2025-03-31): stated, partly meets the criterion
+  - Mapping note: Named under 'Ongoing Assessment' as a capability that may require stronger safeguards than ASL-2; the edition sets no Capability Threshold or Required Safeguards for it and says these will be determined 'in a future iteration of this policy'.
+- **Anthropic · RSP · v2.1** (effective 2025-03-31): stated
   - “Cyber Operations: The ability to significantly enhance or automate sophisticated destructive cyber attacks” (PDF p. 9 (printed p. 5), §2, table 'Capabilities / Ongoing Assessment', row 'Cyber Operations')
-  - Mapping note: Named as a capability under ongoing assessment that may require stronger safeguards than ASL-2; no Capability Threshold or Required Safeguards are set for it.
-- **Anthropic · RSP · v2.2** (effective 2025-05-14): stated, partly meets the criterion
+  - Mapping note: Named under 'Ongoing Assessment' as a capability that may require stronger safeguards than ASL-2; the edition sets no Capability Threshold or Required Safeguards for it and says these will be determined 'in a future iteration of this policy'.
+- **Anthropic · RSP · v2.2** (effective 2025-05-14): stated
   - “Cyber Operations: The ability to significantly enhance or automate sophisticated destructive cyber attacks” (PDF p. 9 (printed p. 5), §2, table 'Capabilities / Ongoing Assessment', row 'Cyber Operations')
-  - Mapping note: Named as a capability under ongoing assessment that may require stronger safeguards than ASL-2; no Capability Threshold or Required Safeguards are set for it.
+  - Mapping note: Named under 'Ongoing Assessment' as a capability that may require stronger safeguards than ASL-2; the edition sets no Capability Threshold or Required Safeguards for it and says these will be determined 'in a future iteration of this policy'.
 - **Anthropic · RSP · v3.0** (effective 2026-02-24): **not found** within the recorded search.
   - Inspected: Whole text layer, PDF pp. 1–19 (all sections, appendices and changelog read).
   - Searched for: “cyber”, “hack”, “intrusion”, “exploit”, “offens”, “vulnerab”, “security”
@@ -363,13 +365,16 @@ _Which risk domains does the edition name as within its scope?_
 - **OpenAI · FGF · May 2026 edition** (published 2026-05-28): stated
   - “across key risk categories, including cybersecurity, CBRN (chemical, biological, radiological, and nuclear), harmful manipulation, and loss of control risks.” (PDF p. 3 (printed p. 01), §1 Introduction, second paragraph, second sentence)
   - Mapping note: Listed as 'Cyber offense' among the systemic risk categories (PDF p. 6), with a three-tier table (PDF p. 9).
-- **xAI · FAIF · December 2025 edition** (revised 2025-12-30): stated, partly meets the criterion
+- **xAI · FAIF · December 2025 edition** (revised 2025-12-30): stated
   - “Cyber Attacks on Critical Infrastructure: … Thus, xAI currently relies on our basic refusal policy to prevent misuse for cyber attacks.” (PDF pp. 5–6, 'Addressing Risks of Malicious Use' › '2. Risk Assessment', paragraph 'Cyber Attacks on Critical Infrastructure', heading and second sentence)
-  - Mapping note: Named as a risk-assessment heading with listed cyber benchmarks (e.g. Cybench, WMDP-Cyber, PDF p. 4); the edition states it is still working on identifying critical steps for cyber and sets no cyber threshold.
+  - Mapping note: Named as a risk-assessment heading with listed cyber benchmarks (e.g. Cybench, WMDP-Cyber, PDF p. 4) and a commitment to 're-assess the cyber misuse risks in future releases' (PDF p. 6); the edition says it is still working on identifying enforceable critical steps for cyber and sets no cyber threshold.
 - **xAI · FAIF · June 2026 edition** (effective 2026-06-30): stated
   - “four primary risk domains where significant or severe outcomes are most likely to emerge in current and future systems: CBRN Risks, Offensive Cybersecurity Risks, Loss of Control Risks and Harmful Manipulation Risks.” (PDF p. 2, §2.1 Risk Identification, third paragraph, first sentence)
   - “xAI treats AI-accelerated malicious cyber offense as a core risk domain.” (PDF p. 4, §2.1(c) 'Addressing Risks of Malicious Offensive Cybersecurity Usage', second paragraph, first sentence)
-- **Meta · FAF · v1.1** (published 2025-02-03): n/a. _Edition not retrieved in this run; no passage recorded in the dataset for this facet._
+- **Meta · FAF · v1.1** (published 2025-02-03): stated
+  - “Automated discovery and reliable exploitation of critical zero-day vulnerabilities” (PDF p. 14 (printed p. 14), §3.4.1, outcome Cyber 2 (opening of the outcome))
+    - Paraphrase check: Cross-family paraphrase check of 2026-10-28 (codex-paraphrases-2026-10-28.md): drift; the paraphrase left out the software the outcome concerns (current, popular software that follows security best practices) and its timing (before defenders can find and patch the vulnerabilities). Corrected on 2026-10-28 by the maintainer’s decision of that day; the cell’s status is unchanged.
+  - Mapping note: Cyber operations are a named domain, with outcomes and threat scenarios.
 - **Meta · AASF · v2** (published 2026-04-08): stated
   - “The Framework currently focuses on catastrophic risks in three areas: Chemical & Biological, Cybersecurity, and Loss of Control.” (PDF p. 1 (unnumbered opening page), second paragraph, second sentence)
   - Mapping note: Outcomes Cyber 1–3 (§3.4.1, PDF pp. 18–20) include large-scale compromise, zero-day discovery and exploitation, and scaled fraud, extortion and scams; operational thresholds in §4.2.1.
@@ -382,30 +387,36 @@ _Which risk domains does the edition name as within its scope?_
 
 ### D1.autonomy Autonomy, self-improvement or AI research and development
 
-**Criterion:** The edition names autonomous operation, replication, self-improvement, AI research and development automation, or loss of control through such capabilities as a tracked domain.
+**Criterion:** The edition names autonomous operation, replication, self-improvement, AI research and development automation, or loss of control through such capabilities as a tracked domain. Overlap rule: autonomy, self-replication and AI research and development are recorded here; loss of control or misalignment defined through deception or undermining human oversight is recorded under D1.other.
 
 - **Anthropic · RSP · 2023** (effective 2023-09-19): stated
   - “Autonomous replication in the lab: The model shows early signs of autonomous self-replication ability” (PDF p. 7 (printed p. 7), 'ASL-3 Commitments' › 'ASL-3 Capabilities and Threat Models', numbered item 2, first sentence). _The same sentence defines the trigger as a 50% aggregate success rate on the tasks in the autonomy-evaluations appendix (PDF pp. 15–20)._
+    - Paraphrase check: Cross-family paraphrase check of 2026-10-28 (codex-paraphrases-2026-10-28.md): drift; the paraphrase left out the definition of early signs as a 50% aggregate success rate on the appendix tasks. Corrected on 2026-10-28 by the maintainer’s decision of that day; the cell’s status is unchanged.
 - **Anthropic · RSP · v2.0** (effective 2024-10-15): stated
   - “fully automate the work of an entry-level remote-only Researcher at Anthropic, or cause dramatic acceleration in the rate of effective scaling” (PDF p. 7 (printed p. 3), §2, table row 'Autonomous AI Research and Development (AI R&D)', Capability Thresholds column). _A 'Model Autonomy checkpoint' (2–8 hour software engineering tasks) is used to rule out this threshold and is described as a checkpoint towards AI R&D and autonomous replication (PDF p. 8; Appendix C, PDF p. 20)._
 - **Anthropic · RSP · v2.1** (effective 2025-03-31): stated
   - “AI R&D-4: The ability to fully automate the work of an entry-level, remote-only Researcher at Anthropic. AI R&D-5: The ability to cause dramatic acceleration in the rate of effective scaling.” (PDF p. 20 (printed p. 16), Appendix C Detailed Capability Thresholds, 'Autonomous AI Research and Development', entries 'AI R&D-4' and 'AI R&D-5' (first sentence)). _The same two thresholds appear in the §2 table (PDF p. 8); a Model Autonomy checkpoint is used to rule them out and is linked to autonomous replication (PDF pp. 8–9, 20)._
+    - Paraphrase check: Cross-family paraphrase check of 2026-10-28 (codex-paraphrases-2026-10-28.md): drift; the paraphrase left out the second sentence of AI R&D-5, which defines dramatic acceleration as a one-year rise in effective training compute equal to two years of the average rate of early 2018 to early 2024. Corrected on 2026-10-28 by the maintainer’s decision of that day; the cell’s status is unchanged.
 - **Anthropic · RSP · v2.2** (effective 2025-05-14): stated
   - “AI R&D-4: The ability to fully automate the work of an entry-level, remote-only Researcher at Anthropic. AI R&D-5: The ability to cause dramatic acceleration in the rate of effective scaling.” (PDF p. 20 (printed p. 16), Appendix C Detailed Capability Thresholds, 'Autonomous AI Research and Development', entries 'AI R&D-4' and 'AI R&D-5' (first sentence)). _The same two thresholds appear in the §2 table (PDF p. 8); a Model Autonomy checkpoint is used to rule them out and is linked to autonomous replication (PDF pp. 8–9, 20)._
+    - Paraphrase check: Cross-family paraphrase check of 2026-10-28 (codex-paraphrases-2026-10-28.md): drift; the paraphrase left out the second sentence of AI R&D-5, which defines dramatic acceleration as a one-year rise in effective training compute equal to two years of the average rate of early 2018 to early 2024. Corrected on 2026-10-28 by the maintainer’s decision of that day; the cell’s status is unchanged.
 - **Anthropic · RSP · v3.0** (effective 2026-02-24): stated
   - “Automated R&D in key domains.” (PDF p. 8, §1, threshold table, row title, left column). _The row covers AI systems that can fully automate or dramatically accelerate the work of large, top-tier research teams in domains such as energy, robotics, weapons development and AI itself._
   - Mapping note: Named as a threshold for automated R&D in key domains, with evaluations currently focused on AI R&D. Autonomous, goal-directed operation appears as a component of the high-stakes sabotage opportunities row (see D1.other). There is no separate autonomous replication threshold.
 - **Anthropic · RSP · v3.1** (effective 2026-04-02): stated
   - “AI systems that can fully automate, or otherwise dramatically accelerate, the work of large, top-tier teams of human researchers” (PDF p. 8, §1, threshold table, row 'Automated R&D in key domains', left column, first sentence). _The sentence continues: in domains where fast progress could cause threats to international security or rapid disruptions to the global balance of power._
+    - Paraphrase check: Cross-family paraphrase check of 2026-10-28 (codex-paraphrases-2026-10-28.md): drift; the paraphrase left out the restriction to domains where fast progress could threaten international security or the global balance of power. Corrected on 2026-10-28 by the maintainer’s decision of that day; the cell’s status is unchanged.
   - Mapping note: Named as a threshold for automated R&D in key domains, with evaluations currently focused on AI R&D. Autonomous, goal-directed operation appears as a component of the high-stakes sabotage opportunities row (see D1.other). There is no separate autonomous replication threshold.
 - **Anthropic · RSP · v3.2** (effective 2026-04-29): stated
   - “Automated R&D in key domains.” (PDF p. 8, §1, threshold table, row title, left column). _The row covers AI systems that can fully automate or dramatically accelerate the work of large, top-tier research teams in domains such as energy, robotics, weapons development and AI itself._
   - Mapping note: Named as a threshold for automated R&D in key domains, with evaluations currently focused on AI R&D. Autonomous, goal-directed operation appears as a component of the high-stakes sabotage opportunities row (see D1.other). There is no separate autonomous replication threshold.
 - **Anthropic · RSP · v3.3** (effective 2026-05-26): stated
   - “AI systems that can fully automate, or otherwise dramatically accelerate, the work of large, top-tier teams of human researchers” (PDF p. 8, §1, threshold table, row 'Automated R&D in key domains', left column, first sentence). _The sentence continues: in domains where fast progress could cause threats to international security or rapid disruptions to the global balance of power._
+    - Paraphrase check: Cross-family paraphrase check of 2026-10-28 (codex-paraphrases-2026-10-28.md): drift; the paraphrase left out the restriction to domains where fast progress could threaten international security or the global balance of power. Corrected on 2026-10-28 by the maintainer’s decision of that day; the cell’s status is unchanged.
   - Mapping note: Named as a threshold for automated R&D in key domains, with evaluations currently focused on AI R&D. Autonomous, goal-directed operation appears as a component of the misaligned AI systems in high-stakes settings row (see D1.other). There is no separate autonomous replication threshold.
 - **Anthropic · RSP · v3.4** (effective 2026-07-08): stated
   - “AI systems that can fully automate, or otherwise dramatically accelerate, the work of large, top-tier teams of human researchers” (PDF p. 8, §1, threshold table, row 'Automated R&D in key domains', left column, first sentence). _The sentence continues: in domains where fast progress could cause threats to international security or rapid disruptions to the global balance of power._
+    - Paraphrase check: Cross-family paraphrase check of 2026-10-28 (codex-paraphrases-2026-10-28.md): drift; the paraphrase left out the restriction to domains where fast progress could threaten international security or the global balance of power. Corrected on 2026-10-28 by the maintainer’s decision of that day; the cell’s status is unchanged.
   - Mapping note: Named as a threshold for automated R&D in key domains, with evaluations currently focused on AI R&D. Autonomous, goal-directed operation appears as a component of the misaligned AI systems in high-stakes settings row (see D1.other). There is no separate autonomous replication threshold.
 - **Google DeepMind · FSF · 2024** (published 2024-05-17): stated
   - “We are starting with an initial set of CCLs in the domains of Autonomy, Biosecurity, Cybersecurity, and Machine Learning R&D.” (PDF p. 1 (printed p. 1), opening section, second paragraph, third sentence)
@@ -431,24 +442,27 @@ _Which risk domains does the edition name as within its scope?_
   - “across key risk categories, including cybersecurity, CBRN (chemical, biological, radiological, and nuclear), harmful manipulation, and loss of control risks.” (PDF p. 3 (printed p. 01), §1 Introduction, second paragraph, second sentence)
   - “Outside of risks related to AI selfimprovement, these risk tiers remain exploratory and may evolve substantially.” (PDF p. 12 (printed p. 10), §2.4 Risk tiers › 'Loss of control', first paragraph, final sentence)
   - Mapping note: The domain is framed as loss of control, with a three-tier table; self-improvement is named within it rather than as its own category.
-- **xAI · FAIF · December 2025 edition** (revised 2025-12-30): stated, partly meets the criterion
+- **xAI · FAIF · December 2025 edition** (revised 2025-12-30): stated, partly (a weaker form than the criterion’s words)
   - “This FAIF discusses two major categories of AI risk—malicious use and loss of control.” (PDF p. 1, 'Scope', first sentence)
   - Mapping note: Loss of control is a named risk category, but it is assessed through propensities (deception, sycophancy; MASK threshold, see D1.other) rather than autonomy, replication or AI R&D capability thresholds. The edition says replication or shutdown-prevention scenarios assume offensive cyber capabilities it also tracks (PDF p. 2); AI R&D automation appears only as a metric it may publish (PDF p. 8).
 - **xAI · FAIF · June 2026 edition** (effective 2026-06-30): stated
   - “four primary risk domains where significant or severe outcomes are most likely to emerge in current and future systems: CBRN Risks, Offensive Cybersecurity Risks, Loss of Control Risks and Harmful Manipulation Risks.” (PDF p. 2, §2.1 Risk Identification, third paragraph, first sentence)
   - “risks from humans losing the ability to reliably direct, modify, or shut down a model” (PDF p. 1, §1 Introduction, third paragraph, third sentence)
   - Mapping note: The domain is framed as loss of control (defined by the quoted clause); autonomy, replication or AI R&D automation are not named as separate tracked capabilities. §2.1(b) (PDF p. 4) describes oversight, training against deception and sycophancy, and sandboxed agent evaluation.
-- **Meta · FAF · v1.1** (published 2025-02-03): n/a. _Edition not retrieved in this run; no passage recorded in the dataset for this facet._
+- **Meta · FAF · v1.1** (published 2025-02-03): stated
+  - “Autonomous cyber operations” (PDF p. 14 (printed p. 14), §3.4.1, cyber outcomes table, enabling capabilities column)
+  - Mapping note: Named as an enabling capability within the cyber domain, not as a domain with thresholds of its own. The same table names autonomous execution of multi-step tasks, and §4.2 (PDF p. 17) takes account of automated AI research and development that enhances capabilities. No autonomous replication threshold is named.
 - **Meta · AASF · v2** (published 2026-04-08): stated
   - “The Framework currently focuses on catastrophic risks in three areas: Chemical & Biological, Cybersecurity, and Loss of Control.” (PDF p. 1 (unnumbered opening page), second paragraph, second sentence)
-  - Mapping note: Loss of Control outcomes are framed as failures of control mechanisms (evaluation before deployment; monitoring during operation); 'Autonomous AI R&D', evaluation awareness and monitor evasion are listed as example enabling capabilities (PDF pp. 22–24), with capability checkpoints in §4.2.3. Self-exfiltration and autonomous replication appear only as illustrative emerging threat scenarios (PDF p. 38).
+  - “TS.1.1 AI development accelerates such that new capabilities and behaviors emerge faster than the … organization's evaluation processes.” (PDF pp. 22–23, §3.4.3 Loss of Control, table row 'Loss of Control 1', Potential Threat Scenario column). _The table cell continues across the page break; in the text layer the adjacent cells and the footnotes fall between its two parts, which '…' marks. No words of the cell are omitted. The outcome is 'Loss of Control 1: Loss of ability to evaluate AI safety before deployment'._
+  - “Autonomous AI R&D: Ability to autonomously and consistently complete tasks which are … representative of the work of a researcher to progress AI development.” (PDF pp. 22–23, §3.4.3 Loss of Control, table row 'Loss of Control 1', Example Enabling Capabilities column). _As in entry 2, '…' marks only the page break; no words of the cell are omitted._
+  - Mapping note: Meta names one domain, Loss of Control, defined through 'failures of critical control mechanisms' (PDF p. 22). Its outcome Loss of Control 1 rests on autonomous AI R&D and evaluation awareness, framed as example enabling capabilities of a control failure rather than as a domain of their own (PDF pp. 22–23), with capability checkpoints in §4.2.3; it is recorded here. Its outcome Loss of Control 2, AI undermining monitoring, is recorded under D1.other under the D1 overlap rule. Self-exfiltration and autonomous replication appear only as illustrative emerging threat scenarios (PDF p. 38).
 - **Microsoft · FGF · Feb 2025** (published 2025-02): stated
   - “Advanced autonomy. A model’s ability to complete expert-level tasks autonomously, including AI research and development.” (PDF p. 4 (printed p. 3), §2 Capabilities and risks, 'Tracked high-risk capabilities', third bullet)
   - Mapping note: Capability thresholds in Appendix I (PDF p. 14); the critical level is full automation of the AI R&D pipeline. Loss of control is not named.
 - **Microsoft · FGF · Feb 2026** (revised 2026-02): stated
   - “Advanced autonomy. A model’s ability to complete expert-level tasks autonomously, including AI research and development.” (PDF p. 4 (printed p. 3), §2 Capabilities and risks, 'Tracked high-risk capabilities', third bullet)
-  - “Loss of control. A model’s ability to undermine effective human control” (PDF p. 4 (printed p. 3), §2 Capabilities and risks, 'Tracked high-risk capabilities', fourth bullet)
-  - Mapping note: Advanced autonomy has capability thresholds in Appendix I (PDF p. 14). Loss of control is a tracked high-risk capability without thresholds: Appendix I says Microsoft is 'researching approaches to evaluating models for loss of control risk' and setting risk acceptance criteria (PDF p. 15).
+  - Mapping note: Advanced autonomy has capability thresholds in Appendix I (PDF p. 14). Loss of control, a separately named tracked capability defined through 'adaptive, deceptive, or self-reinforcing mechanisms' (PDF p. 4), is recorded under D1.other under the D1 overlap rule.
 
 ### D1.persuasion Persuasion or manipulation
 
@@ -458,13 +472,13 @@ _Which risk domains does the edition name as within its scope?_
   - Inspected: Whole text layer, PDF pp. 1–22 (all sections read, including tables, footnotes and appendices).
   - Searched for: “persua”, “manipulat”, “influenc”, “decei|decept”, “misinformation”, “propaganda|election|politic”, “fraud”
   - Hits set aside: No hits for persua, manipulat, influenc, decei/decept or propaganda/election/politic. 'misinformation' (PDF p. 1, opening statement, second paragraph): listed among harms addressed by Anthropic's other AI-safety work, described as complementary to and outside these commitments. 'fraud' (PDF p. 15, appendix 'ASL-3 Evaluations for Autonomous Capabilities'): an example of resource accumulation within the autonomy threat model, not a persuasion domain.
-- **Anthropic · RSP · v2.0** (effective 2024-10-15): stated, partly meets the criterion
+- **Anthropic · RSP · v2.0** (effective 2024-10-15): stated, partly (a weaker form than the criterion’s words)
   - “the potential risks of highly persuasive AI models … not yet sufficiently understood to include in our current commitments.” (PDF p. 8 (printed p. 4), §2, footnote 3). _The omitted words state that Anthropic is actively consulting experts and believes this capability is not yet sufficiently understood._
   - Mapping note: Persuasion is named and explicitly excluded from current commitments; it is not a tracked domain in this edition.
-- **Anthropic · RSP · v2.1** (effective 2025-03-31): stated, partly meets the criterion
+- **Anthropic · RSP · v2.1** (effective 2025-03-31): stated, partly (a weaker form than the criterion’s words)
   - “the potential risks of highly persuasive AI models … not yet sufficiently understood to include in our current commitments.” (PDF p. 9 (printed p. 5), §2, footnote 2). _The omitted words state that Anthropic is actively consulting experts and believes this capability is not yet sufficiently understood._
   - Mapping note: Persuasion is named and explicitly excluded from current commitments; it is not a tracked domain in this edition.
-- **Anthropic · RSP · v2.2** (effective 2025-05-14): stated, partly meets the criterion
+- **Anthropic · RSP · v2.2** (effective 2025-05-14): stated, partly (a weaker form than the criterion’s words)
   - “the potential risks of highly persuasive AI models … not yet sufficiently understood to include in our current commitments.” (PDF p. 9 (printed p. 5), §2, footnote 2). _The omitted words state that Anthropic is actively consulting experts and believes this capability is not yet sufficiently understood._
   - Mapping note: Persuasion is named and explicitly excluded from current commitments; it is not a tracked domain in this edition.
 - **Anthropic · RSP · v3.0** (effective 2026-02-24): **not found** within the recorded search.
@@ -506,13 +520,13 @@ _Which risk domains does the edition name as within its scope?_
 - **OpenAI · Preparedness · Beta** (published 2023-12-18): stated
   - “Persuasion is focused on risks related to convincing people to change their beliefs (or act on)” (PDF p. 10, Tracked Risk Categories › 'Persuasion', opening sentence)
   - Mapping note: Named as a Tracked Risk Category with a Low–Critical table (PDF p. 10).
-- **OpenAI · Preparedness · Version 2** (published 2025-04-15): stated, partly meets the criterion
+- **OpenAI · Preparedness · Version 2** (published 2025-04-15): stated, partly (a weaker form than the criterion’s words)
   - “Persuasion category risks do not fit the criteria for inclusion.” (PDF p. 9 (printed p. 8), §2.3, box 'Changes to Tracked Categories in version 2', 'Persuasion' paragraph, final sentence)
   - Mapping note: Named only as excluded: the passage states that persuasion risks fall outside the Framework's criteria and describes other measures (Model Spec, misuse monitoring) outside the Framework.
-- **OpenAI · FGF · May 2026 edition** (published 2026-05-28): stated, partly meets the criterion
+- **OpenAI · FGF · May 2026 edition** (published 2026-05-28): stated
   - “across key risk categories, including cybersecurity, CBRN (chemical, biological, radiological, and nuclear), harmful manipulation, and loss of control risks.” (PDF p. 3 (printed p. 01), §1 Introduction, second paragraph, second sentence)
   - “OpenAI’s approach to harmful manipulation remains exploratory” (PDF p. 11 (printed p. 09), §2.4 Risk tiers › 'Harmful manipulation', first sentence)
-  - Mapping note: Named as a systemic risk category; no tier table is given, and §2.2 states that risks are estimated for CBRN, cyber offense and loss of control (PDF p. 7).
+  - Mapping note: Named as one of the key risk categories and given its own section under §2.4 Risk tiers, without a tier table; the edition says its approach is 'exploratory' and the tier 'subject to further research'. §2.2 says risks are currently estimated for CBRN, cyber offense and loss of control, and that an approach for harmful manipulation is in early stages (PDF p. 7).
 - **xAI · FAIF · December 2025 edition** (revised 2025-12-30): **not found** within the recorded search.
   - Inspected: Whole text layer, PDF pp. 1–11 (p. 12 blank): all sections read
   - Searched for: “persua”, “manipul”, “influenc”, “sycophan”, “disinform/misinform”
@@ -520,8 +534,12 @@ _Which risk domains does the edition name as within its scope?_
 - **xAI · FAIF · June 2026 edition** (effective 2026-06-30): stated
   - “four primary risk domains where significant or severe outcomes are most likely to emerge in current and future systems: CBRN Risks, Offensive Cybersecurity Risks, Loss of Control Risks and Harmful Manipulation Risks.” (PDF p. 2, §2.1 Risk Identification, third paragraph, first sentence)
   - “risks of models with high manipulative capabilities potentially being misused” (PDF p. 1, §1 Introduction, third paragraph, fourth sentence)
+    - Paraphrase check: Cross-family paraphrase check of 2026-10-28 (codex-paraphrases-2026-10-28.md): drift; the paraphrase left out that the misuse is misuse that could reasonably result in large-scale harm. Corrected on 2026-10-28 by the maintainer’s decision of that day; the cell’s status is unchanged.
   - Mapping note: Named as 'Harmful Manipulation Risks' (footnote 1 attributes the term to the EU General-Purpose AI Code of Practice); unlike the other three domains it has no dedicated subsection in §2.1.
-- **Meta · FAF · v1.1** (published 2025-02-03): n/a. _Edition not retrieved in this run; no passage recorded in the dataset for this facet._
+- **Meta · FAF · v1.1** (published 2025-02-03): **not found** within the recorded search.
+  - Inspected: Whole edition, PDF pp. 1–21, read in the text layer of the decoded PDF of the Internet Archive capture of 2025-02-13; cover and PDF pp. 12–13 and 19 inspected visually
+  - Searched for: “persua”, “manipul”, “scam”, “groom”, “influence”
+  - Hits set aside: PDF p. 14, §3.4.1, outcome Cyber 3 and threat scenario TS.3.1: scams and grooming are grouped as cyber-enabled economic harm, not named as a persuasion or manipulation domain. PDF p. 18: influence concerns variables that affect the benefits of research. No persuasion or manipulation stems found.
 - **Meta · AASF · v2** (published 2026-04-08): **not found** within the recorded search.
   - Inspected: Whole text layer, PDF pp. 1–44 (p. 45 blank): all sections, tables, footnotes and both appendices read
   - Searched for: “persua”, “manipul”, “influenc”, “decept/deceiv”, “scam/phish”, “social engineering”
@@ -530,24 +548,24 @@ _Which risk domains does the edition name as within its scope?_
   - Inspected: Whole text layer, PDF pp. 1–15 (p. 16 blank): all sections, both appendices read
   - Searched for: “persua”, “manipul”, “influenc”, “decept”, “disinform/misinform”, “social engineering”
   - Hits set aside: PDF p. 13 Appendix I, Offensive cyberoperations table, Medium row mentions 'low-level spoofing, phishing, or social engineering attacks' as part of the cyber capability threshold, not as a persuasion or manipulation domain. No other hits.
-- **Microsoft · FGF · Feb 2026** (revised 2026-02): stated, partly meets the criterion
+- **Microsoft · FGF · Feb 2026** (revised 2026-02): stated
   - “Harmful manipulation. A model’s ability to strategically distort human behavior or beliefs at scale.” (PDF p. 4 (printed p. 3), §2 Capabilities and risks, 'Tracked high-risk capabilities', fifth bullet)
-  - Mapping note: Tracked high-risk capability without thresholds: Appendix I says Microsoft is researching evaluation approaches and risk acceptance criteria for manipulation risk, and prohibits use of its generative AI services to manipulate users (PDF p. 15).
+  - Mapping note: Named as a tracked high-risk capability. No thresholds are set: Appendix I says Microsoft is researching evaluation approaches and risk acceptance criteria for manipulation risk (PDF p. 15). Appendix I also prohibits use of its generative AI services to manipulate users (PDF p. 15).
 
 ### D1.other Other named domains
 
-**Criterion:** Any further domain the edition names as tracked (for example misalignment, deceptive behaviour, sabotage of oversight). Research categories or monitored-only domains are recorded with their status as worded.
+**Criterion:** Any further domain the edition names as tracked (for example misalignment, deceptive behaviour, sabotage of oversight). Research categories or monitored-only domains are recorded with their status as worded. Overlap rule: loss of control or misalignment defined through deception or undermining human oversight is recorded here; autonomy, self-replication and AI research and development go under D1.autonomy.
 
-- **Anthropic · RSP · 2023** (effective 2023-09-19): stated, partly meets the criterion
+- **Anthropic · RSP · 2023** (effective 2023-09-19): stated, partly (a weaker form than the criterion’s words)
   - “potentially behave in ways contrary to the intent of their designers or users” (PDF p. 3 (printed p. 3), Framework › 'Sources of Catastrophic Risk', second bullet ('Autonomy and replication'), first sentence). _The clause describes systems that, through increased autonomy and imperfect steering methods, may act against their designers' intent._
   - Mapping note: Behaviour contrary to designers' intent is named inside the 'Autonomy and replication' risk source, not as a separate tracked domain. Only two risk sources are named (misuse; autonomy and replication). Undermining of safety measures appears only in the speculative ASL-4 section (PDF p. 15).
-- **Anthropic · RSP · v2.0** (effective 2024-10-15): stated, partly meets the criterion
+- **Anthropic · RSP · v2.0** (effective 2024-10-15): stated, partly (a weaker form than the criterion’s words)
   - “the risk that an AI system attempts to subvert the goals of its operators” (PDF p. 6 (printed p. 2), §1 Background, paragraph after the Deployment/Security Standards bullets). _Given as an example of future risks in response to which the framework may be refined._
   - Mapping note: Named as a possible future risk, not a tracked domain. Misaligned goals also appear within the AI R&D Required Safeguards, which expect an affirmative case about the risk of models pursuing misaligned goals (PDF p. 7).
-- **Anthropic · RSP · v2.1** (effective 2025-03-31): stated, partly meets the criterion
+- **Anthropic · RSP · v2.1** (effective 2025-03-31): stated, partly (a weaker form than the criterion’s words)
   - “the risk that an AI system attempts to subvert the goals of its operators” (PDF p. 6 (printed p. 2), §1 Background, paragraph after the Deployment/Security Standards bullets). _Given as an example of future risks in response to which the framework may be refined._
   - Mapping note: Named as a possible future risk, not a tracked domain. Misaligned goals appear within the AI R&D-4 Required Safeguards, which require an affirmative case identifying risks from models pursuing misaligned goals (PDF p. 8).
-- **Anthropic · RSP · v2.2** (effective 2025-05-14): stated, partly meets the criterion
+- **Anthropic · RSP · v2.2** (effective 2025-05-14): stated, partly (a weaker form than the criterion’s words)
   - “the risk that an AI system attempts to subvert the goals of its operators” (PDF p. 6 (printed p. 2), §1 Background, paragraph after the Deployment/Security Standards bullets). _Given as an example of future risks in response to which the framework may be refined._
   - Mapping note: Named as a possible future risk, not a tracked domain. Misaligned goals appear within the AI R&D-4 Required Safeguards (PDF p. 8); the v2.2 changelog describes AI R&D-4 threat models as entailing autonomous internal sabotage (PDF p. 23).
 - **Anthropic · RSP · v3.0** (effective 2026-02-24): stated
@@ -565,7 +583,7 @@ _Which risk domains does the edition name as within its scope?_
 - **Anthropic · RSP · v3.4** (effective 2026-07-08): stated
   - ““Misaligned AI systems in high-stakes settings”” (PDF p. 9, §1, threshold table, row 'Automated R&D in key domains', right column, where the row title is cited (the title in the row itself, PDF p. 7, cannot be matched in this text layer)). _The row covers AI systems that are highly relied on, with extensive access to sensitive assets and moderate capacity for autonomous, goal-directed operation and subterfuge, that could carry out sabotage leading to irreversibly and substantially higher odds of a later global catastrophe._
   - Mapping note: A threshold row on sabotage by AI systems; the right column asks for compartmentalization, monitoring, capability assessments and evidence about models' propensity to deceive, manipulate or sabotage users. The row was retitled from 'High-stakes sabotage opportunities' in v3.3. The row title is not in the text layer as a separate line; the quotation is the next row's cross-reference to it, which gives the title verbatim.
-- **Google DeepMind · FSF · 2024** (published 2024-05-17): stated, partly meets the criterion
+- **Google DeepMind · FSF · 2024** (published 2024-05-17): stated, partly (a weaker form than the criterion’s words)
   - “Misaligned AI: protection against the risk of systems acting adversarially against humans may require additional Framework components” (PDF p. 6 (printed p. 6), Future work, bullet 'Updated set of risks and mitigations', first sub-bullet)
   - Mapping note: Named only in Future work as a possible addition ('possible examples'), with no CCL or threshold in this edition. No further tracked domain beyond the four in D1.cbrn–D1.autonomy.
 - **Google DeepMind · FSF · v2.0** (published 2025-02-04): stated
@@ -578,34 +596,37 @@ _Which risk domains does the edition name as within its scope?_
 - **Google DeepMind · FSF · v3.1** (published 2026-04-17): stated
   - “risks may be most likely to arise from future models: CBRN, cyber, harmful manipulation, as well as machine learning R&D and misalignment.” (PDF p. 5 (printed p. 5), §1.3.1 Risk Identification, fourth sentence). _The edition counts misalignment within one combined 'ML R&D and Misalignment' risk domain, not as a separate domain._
   - Mapping note: Misalignment is no longer a separate exploratory section; it is part of the combined 'ML R&D and Misalignment' domain, tracked through the Stealth and Situational Awareness TCL, described (PDF p. 14) as a baseline capability level 'above which misalignment risks may begin to arise'.
-- **OpenAI · Preparedness · Beta** (published 2023-12-18): stated, partly meets the criterion
+- **OpenAI · Preparedness · Beta** (published 2023-12-18): stated, partly (a weaker form than the criterion’s words)
   - “we include deception and social engineering evaluations as part of the persuasion risk category” (PDF p. 12, Tracked Risk Categories › 'Unknown unknowns', second paragraph, final sentence)
   - Mapping note: No fifth tracked domain is named. Deception is evaluated within the persuasion category rather than as its own domain. The edition also describes an 'unknown unknowns' process for identifying new categories (PDF pp. 5, 12), and the illustrative Scorecard lists 'Unknown Unknowns' as a row (PDF p. 15); this is a process, not a named domain.
-- **OpenAI · Preparedness · Version 2** (published 2025-04-15): stated, partly meets the criterion
+- **OpenAI · Preparedness · Version 2** (published 2025-04-15): stated
   - “Undermining Safeguards: ability and propensity for the model to act to undermine safeguards placed on it” (PDF p. 8 (printed p. 7), Table 2 'Research Categories', fourth row)
-  - Mapping note: Named as a Research Category without thresholds. Table 2 also names Sandbagging as a Research Category; deception appears as an example within Undermining Safeguards.
-- **OpenAI · FGF · May 2026 edition** (published 2026-05-28): stated, partly meets the criterion
+  - Mapping note: Named as a Research Category, not a Tracked Category: the edition sets no thresholds for it. Table 2 also names Sandbagging as a Research Category; deception appears as an example within Undermining Safeguards.
+- **OpenAI · FGF · May 2026 edition** (published 2026-05-28): stated, partly (a weaker form than the criterion’s words)
   - “Such risks may emerge from misalignment with human intent or values, selfimprovement, model deception, or autonomous self-improvement.” (PDF p. 12 (printed p. 10), §2.4 Risk tiers › 'Loss of control', first paragraph, second sentence)
   - Mapping note: No fifth category is named; misalignment and deception are named as sources of loss-of-control risk, not as separate categories.
 - **xAI · FAIF · December 2025 edition** (revised 2025-12-30): stated
   - “Our risk acceptance criteria for system deployment is maintaining a dishonesty rate of less than 1 out of 2 on MASK.” (PDF p. 7, 'Addressing Risks of Loss of Control' › '2. Risk Assessment', paragraph beginning 'Thresholds:', first sentence)
   - Mapping note: Dishonesty (deception) is tracked as a concerning propensity within the loss-of-control category, with this numeric criterion; sycophancy is measured without a stated threshold (PDF p. 7).
-- **xAI · FAIF · June 2026 edition** (effective 2026-06-30): stated, partly meets the criterion
+- **xAI · FAIF · June 2026 edition** (effective 2026-06-30): stated, partly (a weaker form than the criterion’s words)
   - “xAI particularly focuses on the risks of malicious use and safeguard circumvention (e.g., jailbreaks)” (PDF p. 1, §1 Introduction, third paragraph, first sentence)
   - “Within our risk management framework, we may identify and assess other risks.” (PDF p. 1, §1 Introduction, third paragraph, final sentence)
   - Mapping note: No domain beyond the four is named as tracked; safeguard circumvention is named as a focus alongside malicious use, and other risks only as a possibility.
-- **Meta · FAF · v1.1** (published 2025-02-03): n/a. _Edition not retrieved in this run; no passage recorded in the dataset for this facet._
-- **Meta · AASF · v2** (published 2026-04-08): stated, partly meets the criterion
+- **Meta · FAF · v1.1** (published 2025-02-03): **not found** within the recorded search.
+  - Inspected: Whole edition, PDF pp. 1–21, read in the text layer of the decoded PDF of the Internet Archive capture of 2025-02-13; cover and PDF pp. 12–13 and 19 inspected visually
+  - Searched for: “decep”, “misalign”, “sabot”, “oversight”, “domain”
+  - Hits set aside: PDF p. 16, §4.1: deception concerns the reliability of evaluations; no deceptive-behaviour or loss-of-control outcome or monitored domain is named. Domain hits on PDF pp. 3, 7, 8, 10, 14, 16 and 21 refer to the two named domains, expert disciplines, possible future domains not yet named, or the glossary.
+- **Meta · AASF · v2** (published 2026-04-08): stated
+  - “Loss of Control 2: Loss of ability to monitor AI behavior during operation TS.2.1* AI disables or corrupts monitors to reduce oversight and accomplish its objectives.” (PDF p. 23, §3.4.3 Loss of Control, table row 'Loss of Control 2', Outcome and Potential Threat Scenario columns). _Example enabling capabilities in the same row are monitor awareness and monitor interference._
   - “Physical autonomy has emerged as another nascent outcome arising from Frontier AI.” (PDF p. 36 (printed p. 36), §4.2.4 Emerging Evaluations and Outcomes, 'Physical autonomy', first sentence)
-  - Mapping note: Listed under 'Emerging Evaluations and Outcomes' with a sample outcome and threat scenario, not incorporated into the thresholds.
+  - Mapping note: Meta names one domain, Loss of Control, one of the three areas the Framework 'currently focuses on' (PDF p. 1). Under the D1 overlap rule its outcome Loss of Control 2, defined through AI undermining monitoring, is recorded here; Loss of Control 1 (autonomous AI R&D) is recorded under D1.autonomy. Physical autonomy (entry 1) is listed under 'Emerging Evaluations and Outcomes' with a sample outcome and threat scenario, not incorporated into the thresholds.
 - **Microsoft · FGF · Feb 2025** (published 2025-02): **not found** within the recorded search.
   - Inspected: Whole text layer, PDF pp. 1–15 (p. 16 blank): all sections, both appendices read
   - Searched for: “speculative”, “potential capability-related risks”, “bias”, “misalign”, “loss of control”, “broader set of risks”
   - Hits set aside: PDF p. 3 'Longer-term or more speculative capabilities are the subject of ongoing research' names no domain; PDF p. 4 'We continue to study a range of potential capability-related risks' names none; PDF p. 5 'broader set of risks' refers to the broader AI governance program; PDF p. 9 'bias or discrimination' are residual risks for deployers to address, not tracked domains. No match for 'misalign' or 'loss of control'.
-- **Microsoft · FGF · Feb 2026** (revised 2026-02): **not found** within the recorded search.
-  - Inspected: Whole text layer, PDF pp. 1–16 (p. 17 blank): all sections, both appendices read
-  - Searched for: “speculative”, “potential capability-related risks”, “bias”, “misalign”, “broader set of risks”, “not included”
-  - Hits set aside: PDF p. 3 'Longer-term or more speculative capabilities are the subject of ongoing research' names no domain; PDF p. 4 'Identifying tracked high-risk capabilities' describes how new risks are studied and says risks not threatening national security or at-scale public safety go to the broader AI governance framework, naming none; PDF p. 5 'broader set of risks' refers to the broader governance program; PDF p. 9 'bias or discrimination' are residual risks for deployers to address, not tracked domains. Loss of control is recorded under D1.autonomy.
+- **Microsoft · FGF · Feb 2026** (revised 2026-02): stated
+  - “Loss of control. A model’s ability to undermine effective human control through adaptive, deceptive, or self-reinforcing mechanisms such that, when deployed, a model can no longer be reliably directed, modified, or shut down.” (PDF p. 4 (printed p. 3), §2 Capabilities and risks, 'Tracked high-risk capabilities', fourth bullet)
+  - Mapping note: Separately named tracked capability, recorded here under the D1 overlap rule because it is defined through deceptive mechanisms that undermine human control. No thresholds are set: Appendix I says Microsoft is researching evaluation approaches and risk acceptance criteria for loss of control risk (PDF p. 15).
 
 ## D2. Thresholds and triggers
 
@@ -623,10 +644,12 @@ _What capability levels does the edition define, and how is a level defined?_
 - **Anthropic · RSP · v2.1** (effective 2025-03-31): stated
   - “CBRN-3: The ability to significantly help individuals or groups with basic technical backgrounds … create/obtain and deploy CBRN weapons.” (PDF p. 8 (printed p. 4), §2 Capability Thresholds and Required Safeguards, table row 'Chemical, Biological, Radiological, and Nuclear (CBRN) weapons', entry 'CBRN-3', Capability Thresholds column). _One of four labelled Capability Thresholds (CBRN-3, CBRN-4, AI R&D-4, AI R&D-5; table PDF p. 8)._
   - “AI R&D-4: The ability to fully automate the work of an entry-level, remote-only Researcher at Anthropic. AI R&D-5: The ability to cause dramatic acceleration in the rate of effective scaling.” (PDF p. 20 (printed p. 16), Appendix C Detailed Capability Thresholds, 'Autonomous AI Research and Development', entries 'AI R&D-4' and 'AI R&D-5' (first sentence)). _CBRN-4 (substantial uplift to moderately resourced state programs) is the fourth labelled threshold. A Model Autonomy checkpoint sits below the AI R&D thresholds (PDF pp. 8–9)._
+    - Paraphrase check: Cross-family paraphrase check of 2026-10-28 (codex-paraphrases-2026-10-28.md): drift; the paraphrase left out the second sentence of AI R&D-5, which defines dramatic acceleration as a one-year rise in effective training compute equal to two years of the average rate of early 2018 to early 2024. Corrected on 2026-10-28 by the maintainer’s decision of that day; the cell’s status is unchanged.
   - Mapping note: Levels are split into labelled Capability Thresholds (capabilities) and ASL Standards (safeguards); §1 (PDF p. 7) describes a Capability Threshold as a trigger for shifting from an ASL-N Standard to an ASL-N+1 Standard or higher. ASL-2 and ASL-3 Standards are specified; ASL-4 Standards are referenced as expected requirements to be detailed later.
 - **Anthropic · RSP · v2.2** (effective 2025-05-14): stated
   - “CBRN-3: The ability to significantly help individuals or groups with basic technical backgrounds … create/obtain and deploy CBRN weapons.” (PDF p. 8 (printed p. 4), §2 Capability Thresholds and Required Safeguards, table row 'Chemical, Biological, Radiological, and Nuclear (CBRN) weapons', entry 'CBRN-3', Capability Thresholds column). _One of four labelled Capability Thresholds (CBRN-3, CBRN-4, AI R&D-4, AI R&D-5; table PDF p. 8)._
   - “AI R&D-4: The ability to fully automate the work of an entry-level, remote-only Researcher at Anthropic. AI R&D-5: The ability to cause dramatic acceleration in the rate of effective scaling.” (PDF p. 20 (printed p. 16), Appendix C Detailed Capability Thresholds, 'Autonomous AI Research and Development', entries 'AI R&D-4' and 'AI R&D-5' (first sentence)). _CBRN-4 (substantial uplift to moderately resourced state programs) is the fourth labelled threshold. A Model Autonomy checkpoint sits below the AI R&D thresholds (PDF pp. 8–9)._
+    - Paraphrase check: Cross-family paraphrase check of 2026-10-28 (codex-paraphrases-2026-10-28.md): drift; the paraphrase left out the second sentence of AI R&D-5, which defines dramatic acceleration as a one-year rise in effective training compute equal to two years of the average rate of early 2018 to early 2024. Corrected on 2026-10-28 by the maintainer’s decision of that day; the cell’s status is unchanged.
   - Mapping note: Levels are split into labelled Capability Thresholds (capabilities) and ASL Standards (safeguards); §1 (PDF p. 7) describes a Capability Threshold as a trigger for shifting from an ASL-N Standard to an ASL-N+1 Standard or higher. ASL-2 and ASL-3 Standards are specified; ASL-4 Standards are referenced as expected requirements to be detailed later.
 - **Anthropic · RSP · v3.0** (effective 2026-02-24): stated
   - “The left column identifies capability thresholds that would call for heightened mitigations.” (PDF p. 4, §1 Our Recommendations for Industry-Wide Safety, first paragraph)
@@ -664,15 +687,15 @@ _What capability levels does the edition define, and how is a level defined?_
 - **OpenAI · FGF · May 2026 edition** (published 2026-05-28): stated
   - “For cyber offense systemic risks, we have established a tier system … The system consists of the following tiers:” (PDF p. 9 (printed p. 07), §2.4 Risk tiers › 'Cyber offense', introductory paragraph)
   - Mapping note: Tiers 1–3 are tabulated for cyber offense, CBRN and loss of control (PDF pp. 9–12); harmful manipulation has no tier table.
-- **xAI · FAIF · December 2025 edition** (revised 2025-12-30): stated, partly meets the criterion
+- **xAI · FAIF · December 2025 edition** (revised 2025-12-30): stated, partly (a weaker form than the criterion’s words)
   - “Our risk acceptance criteria for system deployment is maintaining an answer rate of less than 1 out of 20 on restricted queries.” (PDF p. 6, 'Addressing Risks of Malicious Use' › '2. Risk Assessment', paragraph beginning 'Thresholds:', second sentence). _The restricted queries are biology and chemistry queries developed with SecureBio (same paragraph). The second numeric criterion, a MASK dishonesty rate, is quoted under D1 Other named domains._
   - Mapping note: No named or tiered capability levels. The edition states two numeric 'risk acceptance criteria for system deployment' (this one and the MASK criterion in D1.other) and says it plans to add thresholds tied to other benchmarks.
-- **xAI · FAIF · June 2026 edition** (effective 2026-06-30): stated, partly meets the criterion
+- **xAI · FAIF · June 2026 edition** (effective 2026-06-30): stated, partly (a weaker form than the criterion’s words)
   - “In assessing whether to accept residual risk, we review the risk tiers for each systemic risk category and incorporate appropriate safety margins.” (PDF p. 6, first §2.3 'Systemic risk acceptance determination', second paragraph, third sentence)
   - Mapping note: 'Risk tiers' are mentioned but not named or described. The edition states no numeric thresholds; the December 2025 benchmark acceptance criteria (bio/chem answer rate, MASK) do not appear.
-- **Meta · FAF · v1.1** (published 2025-02-03): recorded (not re-checked)
+- **Meta · FAF · v1.1** (published 2025-02-03): stated
   - “The model would not provide significant uplift towards execution of a threat scenario.” (PDF p. 13 (printed p. 13), §3.3 Risk thresholds, Table 1: Risk thresholds for frontier AI, Moderate row, Risk Threshold column (text below the measure label 'Release'))
-  - Mapping note: The recorded locators show Table 1 rows Critical, High and Moderate, with measure labels 'Stop development', 'Do not release' and 'Release'; quotes for the High and Critical rows are in D2.definition.
+  - Mapping note: Table 1 has three rows, Critical, High and Moderate, with measure labels ‘Stop development’, ‘Do not release’ and ‘Release’; quotes for the High and Critical rows are in D2.definition.
 - **Meta · AASF · v2** (published 2026-04-08): stated
   - “We report risk assessments for the model in plausible deployment contexts (critical, high, or moderate or lower)” (PDF p. 8 (printed p. 8), §2.2.1 Preparedness Reports, fourth paragraph, second sentence (opening))
   - Mapping note: Table 1 (PDF p. 15) has three rows (Critical, High, Moderate or lower) with measures 'Develop with Mitigations', 'Deploy with mitigations' and 'Deploy'; the High row reads 'Deployment of the Frontier AI could substantially contribute to any threat scenario associated with a catastrophic outcome' (dataset evidence evidence-prov-meta-aasf-v2-0-high-threshold).
@@ -681,40 +704,44 @@ _What capability levels does the edition define, and how is a level defined?_
   - Mapping note: Each tracked capability is scored on these four risk levels, defined per capability in Appendix I; low and medium carry 'Deployment allowed in line with Responsible AI Program requirements', high and critical 'Further review and mitigations required'.
 - **Microsoft · FGF · Feb 2026** (revised 2026-02): stated
   - “whether the capability poses a low, medium, high, or critical risk” (PDF p. 4 (printed p. 3), §2 Capabilities and risks, paragraph after the tracked-capabilities list, first sentence)
-  - Mapping note: Each tracked capability is scored on these four risk levels, defined per capability in Appendix I; low and medium carry 'Deployment allowed in line with Responsible AI Program requirements', high and critical 'Further review and mitigations required'.
+  - Mapping note: Low, medium, high and critical levels are defined in Appendix I for three of the five tracked capabilities: CBRN weapons, offensive cyberoperations and advanced autonomy (PDF pp. 12–14). For loss of control and harmful manipulation, Appendix I states that evaluation approaches and risk acceptance criteria are being researched (PDF p. 15). Low and medium carry 'Deployment allowed in line with Responsible AI Program requirements', high and critical 'Further review and mitigations required'.
 
 ### D2.definition How a threshold is defined
 
 **Criterion:** The edition’s general definition of what reaching a threshold means (for example uplift relative to a baseline, or a capability that could cause severe harm).
 
-- **Anthropic · RSP · 2023** (effective 2023-09-19): stated, partly meets the criterion
+- **Anthropic · RSP · 2023** (effective 2023-09-19): stated
   - “Access to the model would substantially increase the risk of deliberately-caused catastrophic harm … measured relative to today’s baseline level of risk” (PDF p. 6 (printed p. 6), 'ASL-3 Commitments' › 'ASL-3 Capabilities and Threat Models', numbered item 1, first and second sentences). _An ASL-3 model is one that meets this or the autonomy criterion either immediately or with post-training costing under 1% of total training cost (PDF p. 6); the baseline is illustrated as access to search engines and textbooks._
-  - Mapping note: The quotation gives the misuse criterion only. The edition defines an ASL-3 model as one meeting this or an autonomous-replication criterion, immediately or with post-training costing under 1% of total training cost (PDF pp. 6–7).
+  - Mapping note: The quotation gives the misuse criterion. The edition's general definition of an ASL-3 model is one meeting this or an autonomous-replication criterion, immediately or with post-training costing under 1% of total training cost (PDF pp. 6–7).
 - **Anthropic · RSP · v2.0** (effective 2024-10-15): stated
   - “a prespecified level of AI capability that, if reached, signals (1) a meaningful increase in the level of risk” (PDF p. 7 (printed p. 3), §1 Background, final paragraph, second sentence). _The sentence continues: if the model remains under the existing safeguards, together with a corresponding need to upgrade to a higher ASL Standard. The CBRN threshold is assessed against 2023-level online resources (Appendix C, PDF p. 20)._
 - **Anthropic · RSP · v2.1** (effective 2025-03-31): stated
   - “a prespecified level of AI capability that, if reached, signals (1) a meaningful increase in the level of risk” (PDF p. 7 (printed p. 3), first paragraph (continuing §1 Background), second sentence). _The sentence continues: if the model remains under the existing safeguards, and a corresponding need to upgrade to a higher ASL Standard. CBRN-3 is assessed against 2023-level online resources (Appendix C, PDF p. 20)._
 - **Anthropic · RSP · v2.2** (effective 2025-05-14): stated
   - “a prespecified level of AI capability that, if reached, signals (1) a meaningful increase in the level of risk” (PDF p. 7 (printed p. 3), first paragraph (continuing §1 Background), second sentence). _The sentence continues: if the model remains under the existing safeguards, and a corresponding need to upgrade to a higher ASL Standard. CBRN-3 is assessed against 2023-level online resources (Appendix C, PDF p. 20)._
-- **Anthropic · RSP · v3.0** (effective 2026-02-24): stated, partly meets the criterion
+- **Anthropic · RSP · v3.0** (effective 2026-02-24): stated, partly (a weaker form than the criterion’s words)
   - “cannot presently give highly specific advance detail on what evaluations will determine whether risk thresholds have been passed” (PDF p. 4, §1, third paragraph, first sentence)
   - “a model could compress two years of 2018 – 2024 AI progress into a single year” (PDF p. 8, §1, threshold table, row 'Automated R&D in key domains', left column, paragraph beginning 'Our working operationalization'). _Stated as the 'working operationalization' that triggers the Automated R&D threshold._
   - Mapping note: No general definition of reaching a threshold: each row describes a capability that would call for heightened mitigations, and the industry-wide recommendations rely on arguments making a strong case for safety. Only the Automated R&D row has an operationalization, which also defines 'highly capable' (§3.6).
-- **Anthropic · RSP · v3.1** (effective 2026-04-02): stated, partly meets the criterion
+- **Anthropic · RSP · v3.1** (effective 2026-04-02): stated, partly (a weaker form than the criterion’s words)
   - “cannot presently give highly specific advance detail on what evaluations will determine whether risk thresholds have been passed” (PDF p. 4, §1, third paragraph, first sentence)
   - “fully substitute for our entire set of Research Scientists and Research Engineers, at competitive costs” (PDF p. 8, §1, threshold table, row 'Automated R&D in key domains', left column, paragraph beginning 'We will consider this threshold'). _Condition (1) for considering the threshold met (models would be able to do this); the sentence continues '(i.e., within a factor of 5)' and gives alternative (2), 'dramatic acceleration' of AI progress, defined as double the rate of progress plausibly attributable to automated research._
+    - Paraphrase check: Cross-family paraphrase check of 2026-10-28 (codex-paraphrases-2026-10-28.md): drift; the paraphrase left out the gloss of competitive cost as within a factor of five, and its locator stopped before the continuation on PDF p. 9. Corrected on 2026-10-28 by the maintainer’s decision of that day; the cell’s status is unchanged.
   - Mapping note: No general definition of reaching a threshold: each row describes a capability that would call for heightened mitigations. Only the Automated R&D row has an operationalization (two alternative conditions); from v3.1 'highly capable' in §3.6 refers to this threshold.
-- **Anthropic · RSP · v3.2** (effective 2026-04-29): stated, partly meets the criterion
+- **Anthropic · RSP · v3.2** (effective 2026-04-29): stated, partly (a weaker form than the criterion’s words)
   - “cannot presently give highly specific advance detail on what evaluations will determine whether risk thresholds have been passed” (PDF p. 4, §1, third paragraph, first sentence)
   - “fully substitute for our entire set of Research Scientists and Research Engineers, at competitive costs” (PDF p. 8, §1, threshold table, row 'Automated R&D in key domains', left column, paragraph beginning 'We will consider this threshold'). _Condition (1) for considering the threshold met (models would be able to do this); the sentence continues '(i.e., within a factor of 5)' and gives alternative (2), 'dramatic acceleration' of AI progress, defined as double the rate of progress plausibly attributable to automated research._
+    - Paraphrase check: Cross-family paraphrase check of 2026-10-28 (codex-paraphrases-2026-10-28.md): drift; the paraphrase left out the gloss of competitive cost as within a factor of five, and its locator stopped before the continuation on PDF p. 9. Corrected on 2026-10-28 by the maintainer’s decision of that day; the cell’s status is unchanged.
   - Mapping note: No general definition of reaching a threshold: each row describes a capability that would call for heightened mitigations. Only the Automated R&D row has an operationalization (two alternative conditions); from v3.1 'highly capable' in §3.6 refers to this threshold.
-- **Anthropic · RSP · v3.3** (effective 2026-05-26): stated, partly meets the criterion
+- **Anthropic · RSP · v3.3** (effective 2026-05-26): stated, partly (a weaker form than the criterion’s words)
   - “cannot presently give highly specific advance detail on what evaluations will determine whether risk thresholds have been passed” (PDF p. 4, §1, third paragraph, first sentence)
   - “observe or expect double the rate of progress … in AI aggregate capabilities compared to the rate we’d expect in the absence of significant AI contributions to AI R&D” (PDF p. 9, §1, threshold table, row 'Automated R&D in key domains', left column, paragraph beginning 'We would consider scenario (2)', condition (a)). _Condition (a) of scenario (2), 'dramatic acceleration'; the spaced ellipsis after 'progress' omits only a footnote marker. Measured against the rate expected without significant AI contributions to AI R&D. Condition (b) requires the doubling to be plausibly attributable to automated research or engineering; scenario (1) is that models could fully substitute for all Research Scientists and Research Engineers at competitive costs._
+    - Paraphrase check: Cross-family paraphrase check of 2026-10-28 (codex-paraphrases-2026-10-28.md): drift; the paraphrase gave condition (a) as if sufficient alone, leaving out condition (b), that the doubling plausibly be substantially attributable to automated research or engineering such that the trend could bring further acceleration. Corrected on 2026-10-28 by the maintainer’s decision of that day; the cell’s status is unchanged.
   - Mapping note: No general definition of reaching a threshold: each row describes a capability that would call for heightened mitigations. Only the Automated R&D row has an operationalization (two alternative scenarios).
-- **Anthropic · RSP · v3.4** (effective 2026-07-08): stated, partly meets the criterion
+- **Anthropic · RSP · v3.4** (effective 2026-07-08): stated, partly (a weaker form than the criterion’s words)
   - “cannot presently give highly specific advance detail on what evaluations will determine whether risk thresholds have been passed” (PDF p. 4, §1, third paragraph, first sentence)
   - “double the rate of progress … compared to both the rate we’d expect and the fastest rate of extended progress” (PDF p. 9, §1, threshold table, row 'Automated R&D in key domains', left column, paragraph beginning 'We would consider scenario (2)', condition (a)). _Condition (a) of scenario (2), 'dramatic acceleration'; the spaced ellipsis after 'progress' omits a footnote marker and 'in AI aggregate capabilities'. Measured in AI aggregate capabilities, with footnote 9 defining extended progress as over at least three model generations. Condition (b) requires the doubling to be plausibly attributable to automated research or engineering; scenario (1) is that models could fully substitute for all Research Scientists and Research Engineers at competitive costs._
+    - Paraphrase check: Cross-family paraphrase check of 2026-10-28 (codex-paraphrases-2026-10-28.md): drift; the paraphrase gave condition (a) as if sufficient alone, leaving out condition (b), that the doubling plausibly be substantially attributable to automated research or engineering such that continued progress seems likely to bring further acceleration. Corrected on 2026-10-28 by the maintainer’s decision of that day; the cell’s status is unchanged.
   - Mapping note: No general definition of reaching a threshold: each row describes a capability that would call for heightened mitigations. Only the Automated R&D row has an operationalization (two alternative scenarios). v3.4 compares the doubling against both the expected rate and the fastest observed extended rate.
 - **Google DeepMind · FSF · 2024** (published 2024-05-17): stated
   - “These are capability levels at which, absent mitigation measures, models may pose heightened risk. … define the CCLs as the minimal set of capabilities a model must possess to do so.” (PDF p. 2 (printed p. 2), Framework, component '1 - Critical Capability Levels', second and third sentences)
@@ -737,22 +764,24 @@ _What capability levels does the edition define, and how is a level defined?_
 - **OpenAI · FGF · May 2026 edition** (published 2026-05-28): stated
   - “risk tiers that concretely describe things an AI system might be able to help someone do or might be able to do on its own that could meaningfully increase risk of severe harm” (PDF p. 7 (printed p. 05), §2.2 Systemic risk analysis)
   - Mapping note: Tiers are defined per risk category in §2.4 (PDF pp. 9–12). Separately, §2.1 defines systemic risk by severity, including risks that a model will materially contribute to more than 50 fatalities or $1 billion of damage from a single incident (PDF p. 6).
-- **xAI · FAIF · December 2025 edition** (revised 2025-12-30): stated, partly meets the criterion
+- **xAI · FAIF · December 2025 edition** (revised 2025-12-30): stated, partly (a weaker form than the criterion’s words)
   - “The necessity and extent of deployment of certain safeguards and mitigations may depend on how a model performs on relevant benchmarks.” (PDF p. 10, 'Operational and Societal Risks' › '5. Deployment Decisions', second paragraph, second sentence)
   - Mapping note: No general definition of what reaching a threshold means; thresholds are expressed only as benchmark acceptance criteria (D2.levels). The Scope cross-refers to the TFAIA definition of Catastrophic Risk (PDF p. 1, footnote 1) as risk scope, not as a threshold definition.
-- **xAI · FAIF · June 2026 edition** (effective 2026-06-30): stated, partly meets the criterion
+- **xAI · FAIF · June 2026 edition** (effective 2026-06-30): stated, partly (a weaker form than the criterion’s words)
   - “xAI applies a systemic risk acceptance criteria to each identified risk, incorporating a margin of security, to determine whether each identified systemic risk and the overall systemic risk are acceptable” (PDF p. 5, first §2.3 'Systemic risk acceptance determination', first sentence, up to 'acceptable')
   - Mapping note: The edition defines acceptability of systemic risk rather than a capability threshold; the acceptance criteria themselves are not stated. Residual risk is said to take account of the scale and probability of harm (PDF p. 6).
-- **Meta · FAF · v1.1** (published 2025-02-03): recorded (not re-checked)
-  - “The model provides significant uplift towards execution of a threat scenario (i.e. significantly enhances performance on key capabilities or tasks needed to produce a catastrophic outcome)” (PDF p. 13 (printed p. 13), §3.3 Risk thresholds, Table 1: Risk thresholds for frontier AI, High row, Risk Threshold column (text below the measure label 'Do not release'))
-  - “The model would uniquely enable the execution of at least one of the threat scenarios that have been identified as potentially sufficient to produce a catastrophic outcome” (PDF p. 13 (printed p. 13), §3.3 Risk thresholds, Table 1: Risk thresholds for frontier AI, Critical row, Risk Threshold column (text below the measure label 'Stop development'))
+- **Meta · FAF · v1.1** (published 2025-02-03): stated
+  - “The model provides significant uplift towards execution of a threat scenario (i.e. significantly enhances performance on key capabilities or tasks needed to produce a catastrophic outcome) but does not enable execution of any threat scenario that has been identified as potentially sufficient to produce a catastrophic outcome.” (PDF p. 13 (printed p. 13), §3.3 Risk thresholds, Table 1: Risk thresholds for frontier AI, High row, Risk Threshold column (text below the measure label 'Do not release'))
+  - “The model would uniquely enable the execution of at least one of the threat scenarios that have been identified as potentially sufficient to produce a catastrophic outcome and that risk cannot be mitigated in the proposed deployment context.” (PDF p. 13 (printed p. 13), §3.3 Risk thresholds, Table 1: Risk thresholds for frontier AI, Critical row, Risk Threshold column (text below the measure label 'Stop development'))
+  - “Our high and moderate risk thresholds are defined in terms of the level of uplift a frontier AI provides towards realising a threat scenario.” (PDF p. 12 (printed p. 12), §3.3 Risk thresholds)
+  - Mapping note: The Critical row is defined by uniquely enabling a threat scenario whose risk cannot be mitigated in the proposed deployment context; the High and Moderate rows by the level of uplift (PDF p. 12).
 - **Meta · AASF · v2** (published 2026-04-08): stated
   - “We define our thresholds based on the extent to which Frontier AI would substantially contribute to the execution of any of the threat scenarios” (PDF p. 3 (printed p. 3), §1.1 Scope, third paragraph, first sentence (opening))
   - Mapping note: Appendix I defines 'substantially contribute' as the model being 'a material factor in a given outcome' (PDF p. 42). The critical threshold additionally covers models that 'could uniquely enable' a threat scenario where risk cannot be mitigated (PDF p. 26); 'uniquely enabling' is defined as 'an essential controlling factor' (PDF p. 42).
-- **Microsoft · FGF · Feb 2025** (published 2025-02): stated, partly meets the criterion
+- **Microsoft · FGF · Feb 2025** (published 2025-02): stated, partly (a weaker form than the criterion’s words)
   - “The model provides a meaningful uplift to an expert’s … ability to develop and deliver a novel CBRN threat.” (PDF p. 12 (printed p. 11), Appendix I – Capability thresholds, CBRN weapons table, High row, Capability threshold column (first statement))
   - Mapping note: No single general definition of reaching a threshold; the quotation is the High row of the CBRN table, one example. Thresholds are qualitative, per-capability descriptions (§3, PDF p. 6; Appendix I). CBRN and cyber levels are framed as uplift to actors of given skill; autonomy levels by task length and AI R&D automation.
-- **Microsoft · FGF · Feb 2026** (revised 2026-02): stated, partly meets the criterion
+- **Microsoft · FGF · Feb 2026** (revised 2026-02): stated, partly (a weaker form than the criterion’s words)
   - “The model provides a meaningful uplift to an expert’s … ability to develop and deliver a novel CBRN threat.” (PDF p. 12 (printed p. 11), Appendix I – Capability thresholds, CBRN weapons table, High row, Capability threshold column (first statement))
   - Mapping note: No single general definition of reaching a threshold; the quotation is the High row of the CBRN table, one example. Thresholds are qualitative, per-capability descriptions (§3, PDF p. 6; Appendix I). CBRN and cyber levels are framed as uplift to actors of given skill; autonomy levels by task length and AI R&D automation.
 
@@ -787,7 +816,7 @@ _What does the edition say must happen when a model reaches a threshold?_
 - **Anthropic · RSP · v3.4** (effective 2026-07-08): stated
   - “We will maintain or improve on our ASL-3 protections, which include classifier guards at least as robust as our initial Constitutional Classifiers” (PDF p. 6, §1, threshold table, row 'Non-novel chemical/biological weapons production', middle column ('Mitigations—our plan as a company')). _The cell opens by stating that Anthropic will maintain or improve on its ASL-3 protections, which include these guards._
   - Mapping note: Company plans (middle column) are separated from industry-wide recommendations (right column), which the edition says it cannot unilaterally and unconditionally commit to. For the novel chemical/biological row the company column extends protections at least as strong as ASL-3 to more use cases; for the misaligned AI systems in high-stakes settings and Automated R&D rows it lists Risk Report disclosure, security and alignment projects rather than a named standard.
-- **Google DeepMind · FSF · 2024** (published 2024-05-17): stated, partly meets the criterion
+- **Google DeepMind · FSF · 2024** (published 2024-05-17): stated, partly (a weaker form than the criterion’s words)
   - “When a model reaches evaluation thresholds (i.e. passes a set of early warning evaluations), we will formulate a response plan based on the analysis of the CCL and evaluation results.” (PDF p. 2 (printed p. 2), Framework, component '3 - Applying mitigations', first paragraph, first sentence)
   - “we will develop mitigation plans that map the CCLs to the security and deployment levels described.” (PDF p. 6 (printed p. 6), Future work, bullet 'Mitigation plans', last sentence)
   - Mapping note: The edition defines Security Levels 0–4 and Deployment Levels 0–3 (PDF pp. 3–4) but does not assign a level to any CCL; the mapping is stated as future work. Reaching a threshold leads to a response plan; the edition's provision for holding deployment or development when mitigations are not ready is quoted under D3 Pause, non-deployment or non-training.
@@ -816,11 +845,13 @@ _What does the edition say must happen when a model reaches a threshold?_
   - “we continue to design and deploy the following safeguards into our models: … Input and output filters” (PDF p. 6, 'Addressing Risks of Malicious Use' › '3. Safeguard Implementation', second paragraph lead-in and third bullet). _The list also names safety training and system prompts._
   - “information security standards sufficient to prevent its critical model information from being stolen by a motivated non-state actor.” (PDF p. 9, 'Operational and Societal Risks' › '3. Information Security', first sentence)
   - Mapping note: Safeguards are stated for deployed models generally and are not keyed to a capability threshold; heightened safeguards are triggered by prompts posing a foreseeable risk of mass-casualty or WMD use (PDF p. 3).
-- **xAI · FAIF · June 2026 edition** (effective 2026-06-30): stated, partly meets the criterion
+- **xAI · FAIF · June 2026 edition** (effective 2026-06-30): stated, partly (a weaker form than the criterion’s words)
   - “xAI implements appropriate safety mitigations to address the systemic risks stemming from our models” (PDF p. 6, second §2.3 'Safety mitigations', first sentence (opening))
   - “xAI will maintain a documented Security Goal that identifies the threat actors against which mitigations are designed to protect against” (PDF p. 7, §2.4 Security mitigations, first paragraph, first sentence (opening))
   - Mapping note: Mitigations are not keyed to named thresholds; the closest threshold-linked provision is the risk-acceptance condition quoted under D3 Pause, non-deployment or non-training. CBRN-specific heightened safeguards are triggered by prompts demonstrating intent (PDF p. 3).
-- **Meta · FAF · v1.1** (published 2025-02-03): n/a. _Edition not retrieved in this run; no passage recorded in the dataset for this facet._
+- **Meta · FAF · v1.1** (published 2025-02-03): stated
+  - “Access is limited to a core research team, alongside security protections to prevent hacking or exfiltration.” (PDF p. 13 (printed p. 13), §3.3 Risk thresholds, Table 1: Risk thresholds for frontier AI, High row, Measures column, security mitigations)
+  - Mapping note: The High row also requires mitigations that reduce risk to moderate levels. The Critical row limits access further, with security protections qualified by feasibility and commercial practicability (see “Other exceptions or discretion”); measures at the moderate level depend on evaluations and the release strategy.
 - **Meta · AASF · v2** (published 2026-04-08): stated
   - “Proceed with deployment of the Frontier AI only if sufficient mitigations are defined, implemented and validated to reduce risk to that of a moderate or lower model.” (PDF p. 15 (printed p. 15), §3.3 Risk Thresholds, Table 1, High row, Measures column, under the label 'Deploy with mitigations')
   - Mapping note: Table 1 also assigns security measures: heightened access controls to model weights for High and Critical (for Critical 'as overseen by the Chief AI Officer and/or Director of Alignment and Risk … insofar as is technically feasible and commercially practicable').
@@ -837,34 +868,34 @@ _What does the edition say must happen when a model reaches a threshold?_
 
 - **Anthropic · RSP · 2023** (effective 2023-09-19): stated
   - “we commit to pause the scaling … and/or delay the deployment of new models whenever our scaling ability outstrips our ability to comply with the safety procedures for the corresponding ASL” (PDF p. 2 (printed p. 2), Framework, paragraph beginning 'Complying with higher ASLs', second sentence). _The ellipsis omits a footnote marker. The Evaluation Protocol response policy (PDF p. 13, step 2) also requires pausing training when an evaluation triggers and sufficient Containment Measures are not yet implemented._
-- **Anthropic · RSP · v2.0** (effective 2024-10-15): stated, partly meets the criterion
+- **Anthropic · RSP · v2.0** (effective 2024-10-15): stated
   - “we are unable to make the showing required above, we will restrict model deployment and further scaling.” (PDF p. 14 (printed p. 10), §4.3 Safeguards Decision, final sentence). _§4.3: the showing is that the Required Safeguards are implemented. 'Restrict' is the edition's word; §6 describes interim measures and, failing those, further restrictions._
   - “If the pretraining model’s capabilities are comparable or greater, we will pause training until we have implemented the ASL-3 Security Standard and established it is sufficient for the model.” (PDF p. 15 (printed p. 11), §6.2 Restrict Deployment and Further Scaling, bullet 'Monitoring pretraining', third sentence). _'The pretraining model' is compared with the model that required the ASL-3 Security Standard (same paragraph); footnote treats the Security Standard alone as sufficient to continue training._
   - Mapping note: Deployment and further scaling are 'restricted' (not stated as paused) if the Required Safeguards showing cannot be made; training pauses in the stated pretraining case.
-- **Anthropic · RSP · v2.1** (effective 2025-03-31): stated, partly meets the criterion
+- **Anthropic · RSP · v2.1** (effective 2025-03-31): stated
   - “we are unable to make the showing required above, we will restrict model deployment and further scaling.” (PDF p. 14 (printed p. 10), §4.3 Safeguards Decision, final sentence). _§4.3: the showing is that the Required Safeguards are implemented. 'Restrict' is the edition's word; §6 describes interim measures and, failing those, further restrictions._
   - “If the pretraining model’s capabilities are comparable or greater, we will pause training until we have implemented the ASL-3 Security Standard and established it is sufficient for the model.” (PDF p. 15 (printed p. 11), §6.2 Restrict Deployment and Further Scaling, bullet 'Monitoring pretraining', third sentence). _'The pretraining model' is compared with the model that required the ASL-3 Security Standard (same paragraph); footnote treats the Security Standard alone as sufficient to continue training._
   - Mapping note: Deployment and further scaling are 'restricted' (not stated as paused) if the Required Safeguards showing cannot be made; training pauses in the stated pretraining case.
-- **Anthropic · RSP · v2.2** (effective 2025-05-14): stated, partly meets the criterion
+- **Anthropic · RSP · v2.2** (effective 2025-05-14): stated
   - “we are unable to make the showing required above, we will restrict model deployment and further scaling.” (PDF p. 14 (printed p. 10), §4.3 Safeguards Decision, final sentence). _§4.3: the showing is that the Required Safeguards are implemented. 'Restrict' is the edition's word; §6 describes interim measures and, failing those, further restrictions._
   - “If the pretraining model’s capabilities are comparable or greater, we will pause training until we have implemented the ASL-3 Security Standard and established it is sufficient for the model.” (PDF p. 15 (printed p. 11), §6.2 Restrict Deployment and Further Scaling, bullet 'Monitoring pretraining', third sentence). _'The pretraining model' is compared with the model that required the ASL-3 Security Standard (same paragraph); footnote treats the Security Standard alone as sufficient to continue training._
   - Mapping note: Deployment and further scaling are 'restricted' (not stated as paused) if the Required Safeguards showing cannot be made; training pauses in the stated pretraining case.
-- **Anthropic · RSP · v3.0** (effective 2026-02-24): stated, partly meets the criterion
+- **Anthropic · RSP · v3.0** (effective 2026-02-24): stated
   - “We will delay AI development and deployment as needed to achieve this, until and unless we no longer believe we have a significant lead.” (PDF p. 16, Appendix A: Commitments Related to Competitors, table row 'Anthropic in the lead', Commitment column, second sentence). _Applies only in Appendix A's 'Anthropic in the lead' scenario. 'This' refers to a strong argument that catastrophic risk is contained, along the lines of the industry-wide recommendations._
   - Mapping note: The only delay commitments are in Appendix A and are tied to competitor scenarios (Anthropic in the lead; competitors with strong safety measures); see D6.competitor. No passage commits to not training or deploying a model without adequate safeguards (the dataset records that provision as not found in this edition).
-- **Anthropic · RSP · v3.1** (effective 2026-04-02): stated, partly meets the criterion
+- **Anthropic · RSP · v3.1** (effective 2026-04-02): stated
   - “We will delay AI development and deployment as needed to achieve this, until and unless we no longer believe we have a significant lead.” (PDF p. 17 (printed p. 16), Appendix A: Commitments Related to Competitors, table row 'Anthropic in the lead', Commitment column, second sentence). _Applies only in Appendix A's 'Anthropic in the lead' scenario. 'This' refers to a strong argument that catastrophic risk is contained, along the lines of the industry-wide recommendations._
   - “the commitments below do not preclude us from taking cautionary action, such as refraining from training or deploying models, in other circumstances.” (PDF p. 16 (printed p. 15), Appendix A: Commitments Related to Competitors, introductory paragraph, second-to-last sentence). _The next sentence says Anthropic 'would strongly consider pausing development and/or deployment' to improve the safety profiles of its models._
   - Mapping note: Delay commitments are tied to Appendix A competitor scenarios (see D6.competitor); outside them the edition says it would 'strongly consider' pausing (conditional wording, added in v3.1). No passage commits to not training or deploying a model without adequate safeguards (the dataset records that provision as not found in this edition).
-- **Anthropic · RSP · v3.2** (effective 2026-04-29): stated, partly meets the criterion
+- **Anthropic · RSP · v3.2** (effective 2026-04-29): stated
   - “We will delay AI development and deployment as needed to achieve this, until and unless we no longer believe we have a significant lead.” (PDF p. 17 (printed p. 16), Appendix A: Commitments Related to Competitors, table row 'Anthropic in the lead', Commitment column, second sentence). _Applies only in Appendix A's 'Anthropic in the lead' scenario. 'This' refers to a strong argument that catastrophic risk is contained, along the lines of the industry-wide recommendations._
   - “the commitments below do not preclude us from taking cautionary action, such as refraining from training or deploying models, in other circumstances.” (PDF p. 17 (printed p. 16), Appendix A: Commitments Related to Competitors, introductory paragraph, second-to-last sentence). _The next sentence says Anthropic 'would strongly consider pausing development and/or deployment' to improve the safety profiles of its models._
   - Mapping note: Delay commitments are tied to Appendix A competitor scenarios (see D6.competitor); outside them the edition says it would 'strongly consider' pausing (conditional wording, added in v3.1). No passage commits to not training or deploying a model without adequate safeguards (the dataset records that provision as not found in this edition).
-- **Anthropic · RSP · v3.3** (effective 2026-05-26): stated, partly meets the criterion
+- **Anthropic · RSP · v3.3** (effective 2026-05-26): stated
   - “We will delay AI development and deployment as needed to achieve this, until and unless we no longer believe we have a significant lead.” (PDF p. 17 (printed p. 16), Appendix A: Commitments Related to Competitors, table row 'Anthropic in the lead', Commitment column, second sentence). _Applies only in Appendix A's 'Anthropic in the lead' scenario. 'This' refers to a strong argument that catastrophic risk is contained, along the lines of the industry-wide recommendations._
   - “the commitments below do not preclude us from taking cautionary action, such as refraining from training or deploying models, in other circumstances.” (PDF p. 17 (printed p. 16), Appendix A: Commitments Related to Competitors, introductory paragraph, second-to-last sentence). _The next sentence says Anthropic 'would strongly consider pausing development and/or deployment' to improve the safety profiles of its models._
   - Mapping note: Delay commitments are tied to Appendix A competitor scenarios (see D6.competitor); outside them the edition says it would 'strongly consider' pausing (conditional wording, added in v3.1). No passage commits to not training or deploying a model without adequate safeguards (the dataset records that provision as not found in this edition).
-- **Anthropic · RSP · v3.4** (effective 2026-07-08): stated, partly meets the criterion
+- **Anthropic · RSP · v3.4** (effective 2026-07-08): stated
   - “We will delay AI development and deployment as needed to achieve this, until and unless we no longer believe we have a significant lead.” (PDF p. 17, Appendix A: Commitments Related to Competitors, table row 'Anthropic in the lead', Commitment column, second sentence). _Applies only in Appendix A's 'Anthropic in the lead' scenario. 'This' refers to a strong argument that catastrophic risk is contained, along the lines of the industry-wide recommendations._
   - “the commitments below do not preclude us from taking cautionary action, such as refraining from training or deploying models, in other circumstances.” (PDF p. 17 (printed p. 17), Appendix A: Commitments Related to Competitors, introductory paragraph, second-to-last sentence). _The next sentence says Anthropic 'would strongly consider pausing development and/or deployment' to improve the safety profiles of its models._
   - Mapping note: Delay commitments are tied to Appendix A competitor scenarios (see D6.competitor); outside them the edition says it would 'strongly consider' pausing (conditional wording, added in v3.1). No passage commits to not training or deploying a model without adequate safeguards (the dataset records that provision as not found in this edition).
@@ -873,13 +904,13 @@ _What does the edition say must happen when a model reaches a threshold?_
 - **Google DeepMind · FSF · v2.0** (published 2025-02-04): stated
   - “If this happens, the response plan may involve putting deployment or further development on hold until adequate mitigations can be applied.” (PDF p. 3 (printed p. 3), Framework, component '3 - Applying Mitigations', third paragraph, second sentence). _'This' is a model flagged by an alert threshold being assessed to pose risks for which readily available mitigations may not be sufficient._
   - Mapping note: Conditional wording ('may involve'). Deployment is also conditioned on safety-case approval (see D4.determination).
-- **Google DeepMind · FSF · v3.0** (published 2025-09-22): stated, partly meets the criterion
+- **Google DeepMind · FSF · v3.0** (published 2025-09-22): stated
   - “external deployments of a model take place only after the appropriate governance function determines the safety case regarding each CCL the model has reached to be adequate.” (PDF p. 9 (printed p. 9), §2.1.2 Deployment Mitigations, numbered step 2, first sentence)
   - “This is required only for external deployment, not further development.” (PDF p. 7 (printed p. 7), §1.6 Summary of Risk Acceptance Criteria, misuse CCL bullet, first sub-bullet, final sentence). _Refers to the deployment-mitigation acceptance criterion for misuse CCLs._
-  - Mapping note: No explicit statement that development or deployment will be put on hold (the v2.0 'on hold' sentence is absent). The closest provisions condition external deployment, and for ML R&D CCLs also large scale internal deployment (PDF p. 12), on governance approval of a safety case.
-- **Google DeepMind · FSF · v3.1** (published 2026-04-17): stated, partly meets the criterion
+  - Mapping note: A deployment gate: external deployment, and for ML R&D CCLs also large scale internal deployment (PDF p. 12), takes place only after governance approval of a safety case. The misuse deployment-mitigation criterion applies 'only for external deployment, not further development'. No passage states that development will be put on hold (the v2.0 'on hold' sentence is absent).
+- **Google DeepMind · FSF · v3.1** (published 2026-04-17): stated
   - “external deployments of a model take place only after the appropriate governance function determines the residual risk to be acceptable” (PDF p. 10 (printed p. 10), §2.1.2 Deployment Mitigations, numbered step 2, first sentence). _The sentence continues '(including a safety case where a CCL has been reached)'._
-  - Mapping note: No explicit statement that development or deployment will be put on hold. The closest provision conditions external deployment (and, under §3.1.2, high-risk internal deployment) on a governance determination. The misuse deployment-mitigation acceptance criterion is stated as 'required only for external deployment, not internal deployment or further development' (PDF p. 7).
+  - Mapping note: A deployment gate: external deployment (and, under §3.1.2, high-risk internal deployment) takes place only after a governance determination that residual risk is acceptable. The misuse deployment-mitigation acceptance criterion is 'required only for external deployment, not internal deployment or further development' (PDF p. 7). No passage states that development will be put on hold.
 - **OpenAI · Preparedness · Beta** (published 2023-12-18): stated
   - “Only models with a post-mitigation score of "medium" or below can be deployed.” (PDF p. 21, Governance › Safety baselines › 'Restricting deployment', first sentence)
   - “Only models with a post-mitigation score of "high" or below can be developed further.” (PDF p. 21, Governance › Safety baselines › 'Restricting development', first sentence)
@@ -890,12 +921,12 @@ _What does the edition say must happen when a model reaches a threshold?_
 - **OpenAI · FGF · May 2026 edition** (published 2026-05-28): stated
   - “If residual risks associated with the model exceed acceptable risk levels, the model is not deployed unless additional mitigation measures are implemented that sufficiently minimize risk.” (PDF p. 13 (printed p. 11), §2.5 Safety mitigations, first paragraph, third sentence)
   - Mapping note: The condition is residual risk relative to acceptable levels, not a named tier; the statement concerns deployment, not training.
-- **xAI · FAIF · December 2025 edition** (revised 2025-12-30): stated, partly meets the criterion
+- **xAI · FAIF · December 2025 edition** (revised 2025-12-30): stated, partly (a weaker form than the criterion’s words)
   - “If we determine that allowing a system to continue running would materially and unjustifiably increase the likelihood of a catastrophic event, we may temporarily fully shut down” (PDF p. 9, 'Operational and Societal Risks' › '4. Governance Approach', numbered list item 3). _An incident-response provision for an imminent threat (Governance Approach, item 4); the shutdown is optional ('may')._
   - Mapping note: This is an incident-response option ('may') in the event of an imminent threat, not a stated consequence of reaching a threshold. The deployment acceptance criteria (D2.levels) are not accompanied by an explicit statement that deployment will not proceed if they are not met.
 - **xAI · FAIF · June 2026 edition** (effective 2026-06-30): stated
   - “xAI will only proceed with the development, the making available on the market, and/or the use of the model, if the systemic risks stemming from the model are determined to be acceptable.” (PDF p. 6, first §2.3 'Systemic risk acceptance determination', fourth paragraph, first sentence)
-- **Meta · FAF · v1.1** (published 2025-02-03): recorded (not re-checked)
+- **Meta · FAF · v1.1** (published 2025-02-03): stated
   - “If a frontier AI is assessed to have reached the critical risk threshold and cannot be mitigated, we will stop development and implement the measures outlined in Table 1.” (PDF p. 12 (printed p. 12), §3.3 Risk thresholds, first paragraph, third sentence)
   - “If the results of our evaluations indicate that a frontier AI has a “high” risk threshold … we will not release the frontier AI externally.” (PDF p. 17 (printed p. 17), §4.2 Evaluation and mitigation, paragraph beginning 'We may take into account monetary costs', second sentence)
   - “If a model appears to uniquely enable the execution of a threat scenario we will pause development while we investigate whether barriers to realizing the catastrophic outcome remain.” (PDF p. 13 (printed p. 13), §3.3 Risk thresholds, Table 1: Risk thresholds for frontier AI, Critical row, Measures column, first bullet, second sentence)
@@ -917,7 +948,7 @@ _Who determines thresholds and safeguard adequacy, and who oversees those decisi
 
 **Criterion:** The person, office or body the edition names as making or approving the determination that a threshold is reached, that safeguards are adequate, or that a model may be deployed.
 
-- **Anthropic · RSP · 2023** (effective 2023-09-19): stated, partly meets the criterion
+- **Anthropic · RSP · 2023** (effective 2023-09-19): stated, partly (a weaker form than the criterion’s words)
   - “Stakeholders including the CISO and CEO should be immediately convened to determine whether the level of danger merits deletion of the weights.” (PDF p. 13 (printed p. 13), Evaluation Protocol, bullet 'Response policy', step (2c), second sentence). _Applies where a model has already surpassed the next ASL during training._
   - Mapping note: The edition does not name who determines that an ASL threshold has been reached or that safeguards are adequate; analyses in the response policy are stated without a named decision-maker. The named determination concerns weight deletion. A designated Responsible Scaling Officer is responsible for ensuring commitments are executed (PDF p. 10, item 7).
 - **Anthropic · RSP · v2.0** (effective 2024-10-15): stated
@@ -961,7 +992,7 @@ _Who determines thresholds and safeguard adequacy, and who oversees those decisi
 - **OpenAI · Preparedness · Version 2** (published 2025-04-15): stated
   - “OpenAI Leadership can approve or reject these recommendations, and our Board’s Safety and Security Committee provides oversight of these decisions.” (PDF p. 4 (printed p. 3), §1 Introduction, final paragraph, second sentence). _'These recommendations' are those of the Safety Advisory Group (SAG)._
   - Mapping note: The SAG reviews the Capabilities Report and decides on next steps (§3.3, PDF p. 10) and assesses whether safeguards sufficiently minimize risk (§4.2, PDF p. 11); Appendix B gives OpenAI Leadership (the CEO or a designee) all final decisions, including deployment go/no-go (PDF p. 16).
-- **OpenAI · FGF · May 2026 edition** (published 2026-05-28): stated, partly meets the criterion
+- **OpenAI · FGF · May 2026 edition** (published 2026-05-28): stated, partly (a weaker form than the criterion’s words)
   - “We document a justification for why the systemic risks stemming from the model are acceptable, including reasonably foreseeable conditions under which the justification may no longer hold, as informed by recommendations from OpenAI’s Safety Advisory Group and external experts, as available and appropriate.” (PDF p. 13 (printed p. 11), §2.5 Safety mitigations, second paragraph, second sentence)
   - “Additional detail about our deployment governance can be found in Appendix B of the PF.” (PDF p. 20 (printed p. 18), §6 Allocation of responsibility for risk management, final sentence)
   - Mapping note: The edition does not itself name who makes the acceptance or deployment determination; it names advisers and refers to the Preparedness Framework's Appendix B.
@@ -973,7 +1004,8 @@ _Who determines thresholds and safeguard adequacy, and who oversees those decisi
   - Inspected: Whole text layer, PDF pp. 1–9 (p. 10 blank): all sections read
   - Searched for: “decid/decision”, “approv”, “risk owner”, “leadership”, “officer”, “determin”
   - Hits set aside: PDF p. 6 'The final decision also reflects an overall judgment based on all the available evidence' does not name who decides (recorded under D6.discretion); PDF pp. 2, 5, 6 'determine/determination' refer to xAI generically; PDF p. 8 §3 designates risk owners for mitigating risks and monitoring incidents, not for threshold, safeguard or deployment determinations; PDF p. 9 §4 refers to 'internal governance structures' without naming a body.
-- **Meta · FAF · v1.1** (published 2025-02-03): recorded (not re-checked)
+  - Archive check: Confirmed not found on 2026-10-26 by a cross-family archive check of the Internet Archive capture of 2026-07-16 (https://web.archive.org/web/20260716003429/https://media.x.ai/v1/website/xai-frontier-artificial-intelligence-framework-30-june-2026-99c40684.pdf), whose SHA-256 matches the recorded publisher copy; see research/archive-checks-2026-10-26/codex-report.md.
+- **Meta · FAF · v1.1** (published 2025-02-03): stated
   - “Informed by this analysis, a leadership team will either request further testing or information, require additional mitigations or improvements, or they will approve the model for release.” (PDF p. 8 (printed p. 8), §2.1.3 Decide, 'Make a decision on release', second sentence)
   - “A final assessment of uplift is approved by senior-level decision-makers through our AI Risk process (see Section 2.1).” (PDF p. 13 (printed p. 13), §3.3 Risk thresholds, footnote 7 (attached to Table 1, High row, Risk Threshold column), third and final sentence)
 - **Meta · AASF · v2** (published 2026-04-08): stated
@@ -991,33 +1023,33 @@ _Who determines thresholds and safeguard adequacy, and who oversees those decisi
 
 **Criterion:** A role the edition gives to a board, board committee, trust, or external party in overseeing or reviewing those decisions.
 
-- **Anthropic · RSP · 2023** (effective 2023-09-19): stated, partly meets the criterion
+- **Anthropic · RSP · 2023** (effective 2023-09-19): stated, partly (a weaker form than the criterion’s words)
   - “Share results of ASL evaluations promptly with Anthropic's governing bodies, including the board of directors and LTBT” (PDF p. 10 (printed p. 10), Procedural Commitments, numbered item 6)
   - Mapping note: The board and LTBT are given an information role for evaluation results and quarterly implementation reports; the board approves policy updates after LTBT consultation (item 1, recorded under D8.process). Evaluation-related policy changes must pass that Update Process before training resumes (PDF p. 13, step 2a). External audits are mentioned only in the speculative ASL-4 sketch (PDF p. 15).
-- **Anthropic · RSP · v2.0** (effective 2024-10-15): stated, partly meets the criterion
+- **Anthropic · RSP · v2.0** (effective 2024-10-15): stated, partly (a weaker form than the criterion’s words)
   - “decide to proceed with deployment and training, they will share their decision … with the Board of Directors and the Long-Term Benefit Trust before moving forward.” (PDF p. 13 (printed p. 9), §4.3 Safeguards Decision, fourth bullet). _The omitted words list the underlying Capability Report, internal feedback and any external feedback._
   - Mapping note: The Board and LTBT are informed before deployment or training proceeds; no approval role on the decision is stated. The edition also commits to an approximately annual third-party review of procedural compliance (§7.2 item 4, PDF p. 17) and to escalating noncompliance reports about the RSO to Board members (§7.1 item 5, PDF p. 16).
-- **Anthropic · RSP · v2.1** (effective 2025-03-31): stated, partly meets the criterion
+- **Anthropic · RSP · v2.1** (effective 2025-03-31): stated, partly (a weaker form than the criterion’s words)
   - “decide to proceed with deployment and training, they will share their decision … with the Board of Directors and the Long-Term Benefit Trust before moving forward.” (PDF p. 14 (printed p. 10), §4.3 Safeguards Decision, numbered item 4). _The omitted words list the underlying Safeguards Report (v2.0 named the Capability Report here), internal feedback and any external feedback._
   - Mapping note: The Board and LTBT are informed before deployment or training proceeds; no approval role on the decision is stated. An approximately annual third-party procedural compliance review is also committed (§7.2 item 4, PDF p. 17).
-- **Anthropic · RSP · v2.2** (effective 2025-05-14): stated, partly meets the criterion
+- **Anthropic · RSP · v2.2** (effective 2025-05-14): stated, partly (a weaker form than the criterion’s words)
   - “decide to proceed with deployment and training, they will share their decision … with the Board of Directors and the Long-Term Benefit Trust before moving forward.” (PDF p. 14 (printed p. 10), §4.3 Safeguards Decision, numbered item 4). _The omitted words list the underlying Safeguards Report, internal feedback and any external feedback._
   - Mapping note: The Board and LTBT are informed before deployment or training proceeds; no approval role on the decision is stated. An approximately annual third-party procedural compliance review is also committed (§7.2 item 4, PDF p. 17).
-- **Anthropic · RSP · v3.0** (effective 2026-02-24): stated, partly meets the criterion
+- **Anthropic · RSP · v3.0** (effective 2026-02-24): stated
   - “In the event that marginal risk analysis … plays a major role in a decision to move forward, explicit approval of the Risk Report by the Board and LTBT … will be required.” (PDF p. 12, §3.4 Procedures, item 5 ('Modified process when marginal risk analysis is important to our case')). _Otherwise the Board and LTBT are informed after the CEO and RSO approve a Risk Report._
   - Mapping note: Otherwise the CEO and RSO share their decision(s), the Risk Report and internal feedback with the Board and LTBT after approval (§3.4 item 4). External reviewers of Risk Reports are selected in consultation with the Board and LTBT and asked to publish commentary (§3.6); an approximately annual third-party review of procedural compliance is commissioned (§4).
-- **Anthropic · RSP · v3.1** (effective 2026-04-02): stated, partly meets the criterion
+- **Anthropic · RSP · v3.1** (effective 2026-04-02): stated
   - “In the event that marginal risk analysis … plays a major role in a decision to move forward, explicit approval of the Risk Report by the Board and LTBT … will be required.” (PDF p. 13 (printed p. 12), §3.4 Procedures, item 5 ('Modified process when marginal risk analysis is important to our case')). _Otherwise the Board and LTBT are informed after the CEO and RSO approve a Risk Report._
   - Mapping note: Otherwise the CEO and RSO share their decision(s), the Risk Report and internal feedback with the Board and LTBT after approval (§3.4 item 4). External reviewers of Risk Reports are selected in consultation with the Board and LTBT and asked to publish commentary (§3.6); an approximately annual third-party review of procedural compliance is commissioned (§4).
-- **Anthropic · RSP · v3.2** (effective 2026-04-29): stated, partly meets the criterion
+- **Anthropic · RSP · v3.2** (effective 2026-04-29): stated
   - “In the event that marginal risk analysis … plays a major role in a decision to move forward, explicit approval of the Risk Report by the Board and LTBT … will be required.” (PDF p. 13 (printed p. 12), §3.4 Procedures, item 5 ('Modified process when marginal risk analysis is important to our case')). _Otherwise the Board and LTBT are informed after the CEO and RSO approve a Risk Report._
   - “upon the LTBT’s request, we will conduct a public or private external review” (PDF p. 14 (printed p. 13), §3.6 External Review, final paragraph before §3.6.1)
   - Mapping note: Otherwise the CEO and RSO share their decision(s), the Risk Report and internal feedback with the Board and LTBT after approval (§3.4 item 4). External reviewers of Risk Reports are selected with the Board consulted and LTBT approval required (from v3.2) and asked to publish commentary (§3.6); an approximately annual third-party review of procedural compliance is commissioned (§4).
-- **Anthropic · RSP · v3.3** (effective 2026-05-26): stated, partly meets the criterion
+- **Anthropic · RSP · v3.3** (effective 2026-05-26): stated
   - “In the event that marginal risk analysis … plays a major role in a decision to move forward, explicit approval of the Risk Report by the Board and LTBT … will be required.” (PDF p. 13 (printed p. 12), §3.4 Procedures, item 5 ('Modified process when marginal risk analysis is important to our case')). _Otherwise the Board and LTBT are informed after the CEO and RSO approve a Risk Report._
   - “upon the LTBT’s request, we will conduct a public or private external review” (PDF p. 14 (printed p. 13), §3.6 External Review, final paragraph before §3.6.1)
   - Mapping note: Otherwise the CEO and RSO share their decision(s), the Risk Report and internal feedback with the Board and LTBT after approval (§3.4 item 4). External reviewers of Risk Reports are selected with the Board consulted and LTBT approval required (from v3.2) and asked to publish commentary (§3.6); an approximately annual third-party review of procedural compliance is commissioned (§4).
-- **Anthropic · RSP · v3.4** (effective 2026-07-08): stated, partly meets the criterion
+- **Anthropic · RSP · v3.4** (effective 2026-07-08): stated
   - “In the event that marginal risk analysis … plays a major role in a decision to move forward, explicit approval of the Risk Report by the Board and LTBT … will be required.” (PDF p. 14, §3.4 Procedures, item 5 ('Modified process when marginal risk analysis is important to our case')). _Otherwise the Board and LTBT are informed after the CEO and RSO approve a Risk Report._
   - “upon the LTBT’s request, we will conduct a public or private external review” (PDF p. 14, §3.6 External Review, final paragraph before §3.6.1)
   - Mapping note: Otherwise the CEO and RSO share their decision(s), the Risk Report and internal feedback with the Board and LTBT after approval (§3.4 item 4). External reviewers of Risk Reports are selected with the Board consulted and LTBT approval required (from v3.2) and asked to publish commentary (§3.6); an approximately annual third-party review of procedural compliance is commissioned (§4).
@@ -1057,14 +1089,19 @@ _Who determines thresholds and safeguard adequacy, and who oversees those decisi
   - Inspected: Whole text layer, PDF pp. 1–9 (p. 10 blank): all sections read
   - Searched for: “board”, “director”, “external/third”, “independ”, “audit”, “oversight”, “authorit”
   - Hits set aside: No board or director is mentioned. PDF p. 2 'relevant external research' is an input to risk identification; PDF p. 4 'scalable model oversight' concerns oversight of models; PDF p. 8 feedback from 'other third parties' is an incident channel; PDF p. 9 incident reports to 'relevant authorities' when legally reportable (recorded in D7.external) and 'ongoing legal and compliance reviews' (internal) do not give an external party or board a role in reviewing decisions.
-- **Meta · FAF · v1.1** (published 2025-02-03): n/a. _Edition not retrieved in this run; no passage recorded in the dataset for this facet._
-- **Meta · AASF · v2** (published 2026-04-08): stated, partly meets the criterion
+  - Archive check: Confirmed not found on 2026-10-26 by a cross-family archive check of the Internet Archive capture of 2026-07-16 (https://web.archive.org/web/20260716003429/https://media.x.ai/v1/website/xai-frontier-artificial-intelligence-framework-30-june-2026-99c40684.pdf), whose SHA-256 matches the recorded publisher copy; see research/archive-checks-2026-10-26/codex-report.md.
+- **Meta · FAF · v1.1** (published 2025-02-03): **not found** within the recorded search.
+  - Inspected: Whole edition, PDF pp. 1–21, read in the text layer of the decoded PDF of the Internet Archive capture of 2025-02-13; cover and PDF pp. 12–13 and 19 inspected visually
+  - Searched for: “board”, “trust”, “oversight”, “external”, “third”, “review”
+  - Hits set aside: PDF p. 13, Table 1, footnote 7: the final assessment of uplift involves numerous experts, “including third parties where appropriate”; this is involvement in an assessment, not a role in overseeing or reviewing decisions. No board or oversight stems. Trust hits (PDF pp. 8–9, 21) concern trustworthiness or trusted release partners. External hits (PDF pp. 6–8, 10–11, 17–18, 21) concern reference models, expertise, threat modelling or the release context. Review hits (PDF pp. 5, 8) describe centralised, internal review. No board or external party is given a role in reviewing decisions.
+  - Mapping note: The edition involves third parties “where appropriate” in the assessment of uplift (Table 1, footnote 7, PDF p. 13); this is recorded as context, not as a role in overseeing or reviewing decisions.
+- **Meta · AASF · v2** (published 2026-04-08): stated, partly (a weaker form than the criterion’s words)
   - “Meta’s Board of Directors provides oversight of the company’s product and regulatory compliance” (PDF p. 10 (printed p. 10), §2.3 Accountability, third paragraph, final sentence)
   - Mapping note: The board role is stated as general product and regulatory compliance oversight, not a specific role in framework decisions. An internal governance function periodically reviews risk management practices (same paragraph).
-- **Microsoft · FGF · Feb 2025** (published 2025-02): stated, partly meets the criterion
+- **Microsoft · FGF · Feb 2025** (published 2025-02): stated, partly (a weaker form than the criterion’s words)
   - “This framework is subject to Microsoft’s broader corporate governance procedures, including independent internal audit and board oversight.” (PDF p. 10 (printed p. 9), §5 Governance, 'Oversight and reporting channels', first sentence)
   - Mapping note: The board role is stated through general corporate governance; no specific board review of framework decisions is described.
-- **Microsoft · FGF · Feb 2026** (revised 2026-02): stated, partly meets the criterion
+- **Microsoft · FGF · Feb 2026** (revised 2026-02): stated, partly (a weaker form than the criterion’s words)
   - “This framework is subject to Microsoft’s broader corporate governance procedures, including independent internal audit and board oversight.” (PDF p. 10 (printed p. 9), §5 Governance, 'Oversight and reporting channels', first sentence)
   - Mapping note: The board role is stated through general corporate governance; no specific board review of framework decisions is described.
 
@@ -1080,23 +1117,26 @@ _When, or how often, does the edition say models are evaluated?_
   - “Anthropic will conduct an evaluation of its models for next-ASL capabilities both (1) after every 4x jump in effective compute … and (2) every 3 months” (PDF p. 12 (printed p. 12), Evaluation Protocol, bullet 'Timing', first sentence). _The omitted words extend the 4x trigger to mid-training. The 3-month evaluation is stated as monitoring fine-tuning, tooling and similar improvements; a 6x 'safety buffer' is set against the 4x interval (PDF p. 11)._
 - **Anthropic · RSP · v2.0** (effective 2024-10-15): stated
   - “notably more performant on automated tests in risk-relevant domains (defined as 4x or more in Effective Compute” (PDF p. 9 (printed p. 5), §3.1 Preliminary Assessment, numbered item 1). _This and a second criterion (six months' accumulated finetuning and elicitation improvements, item 2) define 'notably more capable', which triggers a comprehensive assessment; the RSO may also require one at their discretion._
+    - Paraphrase check: Cross-family paraphrase check of 2026-10-28 (codex-paraphrases-2026-10-28.md): locator wrong; its locator named only item 1, while the six-month alternative is item 2. Corrected on 2026-10-28 by the maintainer’s decision of that day; the cell’s status is unchanged.
 - **Anthropic · RSP · v2.1** (effective 2025-03-31): stated
   - “notably more performant on automated tests in risk-relevant domains (defined as 4x or more in Effective Compute” (PDF p. 10 (printed p. 6), §3.1 Preliminary Assessment, numbered item 1). _This and a second criterion (six months' accumulated finetuning and elicitation improvements, item 2) define 'notably more capable', which triggers a comprehensive assessment; the RSO may also require one at their discretion._
+    - Paraphrase check: Cross-family paraphrase check of 2026-10-28 (codex-paraphrases-2026-10-28.md): locator wrong; its locator named only item 1, while the six-month alternative is item 2. Corrected on 2026-10-28 by the maintainer’s decision of that day; the cell’s status is unchanged.
 - **Anthropic · RSP · v2.2** (effective 2025-05-14): stated
   - “notably more performant on automated tests in risk-relevant domains (defined as 4x or more in Effective Compute” (PDF p. 10 (printed p. 6), §3.1 Preliminary Assessment, numbered item 1). _This and a second criterion (six months' accumulated finetuning and elicitation improvements, item 2) define 'notably more capable', which triggers a comprehensive assessment; the RSO may also require one at their discretion._
-- **Anthropic · RSP · v3.0** (effective 2026-02-24): stated, partly meets the criterion
+    - Paraphrase check: Cross-family paraphrase check of 2026-10-28 (codex-paraphrases-2026-10-28.md): locator wrong; its locator named only item 1, while the six-month alternative is item 2. Corrected on 2026-10-28 by the maintainer’s decision of that day; the cell’s status is unchanged.
+- **Anthropic · RSP · v3.0** (effective 2026-02-24): stated, partly (a weaker form than the criterion’s words)
   - “We will publish a Risk Report every 3-6 months.” (PDF p. 10, §3.1 Scope and Timing, paragraph 'Timing')
   - Mapping note: The edition sets a publication cadence for Risk Reports, which contain capability and alignment evaluation results, not a schedule for running evaluations. It adds interim discussions when a publicly deployed model is significantly more capable than those in the latest Risk Report, and within 30 days of determining that an internally deployed model is in scope. No compute- or capability-interval trigger is stated.
-- **Anthropic · RSP · v3.1** (effective 2026-04-02): stated, partly meets the criterion
+- **Anthropic · RSP · v3.1** (effective 2026-04-02): stated, partly (a weaker form than the criterion’s words)
   - “We will publish a Risk Report every 3-6 months.” (PDF p. 11 (printed p. 10), §3.1 Scope and Timing, paragraph 'Timing')
   - Mapping note: The edition sets a publication cadence for Risk Reports, which contain capability and alignment evaluation results, not a schedule for running evaluations. It adds interim discussions when a publicly deployed model is significantly more capable than those in the latest Risk Report, and within 30 days of determining that an internally deployed model is in scope. No compute- or capability-interval trigger is stated.
-- **Anthropic · RSP · v3.2** (effective 2026-04-29): stated, partly meets the criterion
+- **Anthropic · RSP · v3.2** (effective 2026-04-29): stated, partly (a weaker form than the criterion’s words)
   - “We will publish a Risk Report every 3-6 months.” (PDF p. 11 (printed p. 10), §3.1 Scope and Timing, paragraph 'Timing')
   - Mapping note: The edition sets a publication cadence for Risk Reports, which contain capability and alignment evaluation results, not a schedule for running evaluations. It adds interim discussions when a publicly deployed model is significantly more capable than those in the latest Risk Report, and within 30 days of determining that an internally deployed model is in scope. No compute- or capability-interval trigger is stated.
-- **Anthropic · RSP · v3.3** (effective 2026-05-26): stated, partly meets the criterion
+- **Anthropic · RSP · v3.3** (effective 2026-05-26): stated, partly (a weaker form than the criterion’s words)
   - “We will publish a Risk Report every 3-6 months.” (PDF p. 11 (printed p. 10), §3.1 Scope and Timing, paragraph 'Timing')
   - Mapping note: The edition sets a publication cadence for Risk Reports, which contain capability and alignment evaluation results, not a schedule for running evaluations. 'Off-cycle updates' analyse an individual model when a publicly deployed model is significantly more capable than all models for which certain risks were publicly analysed, or within 30 days for qualifying internal models. No compute- or capability-interval trigger is stated.
-- **Anthropic · RSP · v3.4** (effective 2026-07-08): stated, partly meets the criterion
+- **Anthropic · RSP · v3.4** (effective 2026-07-08): stated, partly (a weaker form than the criterion’s words)
   - “We will publish a Risk Report every 3-6 months.” (PDF p. 11, §3.1 Scope and Timing, paragraph 'Timing')
   - Mapping note: The edition sets a publication cadence for Risk Reports, which contain capability and alignment evaluation results, not a schedule for running evaluations. 'Off-cycle updates' analyse an individual model when a publicly deployed model is significantly more capable than all models for which certain risks were publicly analysed, or within 30 days for qualifying internal models. Risk Reports cover a coverage date no more than 30 days before publication. No compute- or capability-interval trigger is stated.
 - **Google DeepMind · FSF · 2024** (published 2024-05-17): stated
@@ -1109,6 +1149,7 @@ _When, or how often, does the edition say models are evaluated?_
   - Mapping note: The next sentence (PDF pp. 4–5) adds a further risk assessment for subsequent versions 'if the model has meaningful new capabilities or a material increase in performance'. Capability evaluations that decide whether a risk assessment is needed 'may be triggered, for example, upon the completion of a pre-training or post-training run' (PDF p. 5). No compute or calendar interval is stated.
 - **Google DeepMind · FSF · v3.1** (published 2026-04-17): stated
   - “We conduct a critical capability assessment prior to the first external deployment … of a new frontier AI model.” (PDF p. 5 (printed p. 5), §1.3.2 Inherent Risk Assessment, first paragraph, second sentence). _Footnote marker 4 omitted at the ellipsis._
+    - Paraphrase check: Cross-family paraphrase check of 2026-10-28 (codex-paraphrases-2026-10-28.md): drift; the paraphrase left out footnote 4, attached to the same sentence, under which the assessment may not be conducted for low-risk external deployments. Corrected on 2026-10-28 by the maintainer’s decision of that day; the cell’s status is unchanged.
   - Mapping note: Material capability change assessments are run 'on various checkpoints upon the completion of a post-training run' (PDF p. 5). For subsequent versions, a further critical capability assessment follows if the model has meaningful new capabilities or material performance increases that could undermine the risk-acceptance justification. No compute or calendar interval is stated.
 - **OpenAI · Preparedness · Beta** (published 2023-12-18): stated
   - “as often as needed to catch any non-trivial capability change, including before, during, and after training. This would include whenever there is a >2x effective compute increase or major algorithmic breakthrough.” (PDF p. 13, Scorecard › 'Evaluating pre-mitigation risk', final two sentences)
@@ -1124,7 +1165,9 @@ _When, or how often, does the edition say models are evaluated?_
   - “xAI will conduct a full systemic risk assessment and mitigation process of our frontier models at least once a year.” (PDF p. 2, §2 Risk Management Framework, second paragraph, first sentence)
   - “These evaluations are performed precedent to the wider deployment of our models” (PDF p. 6, first §2.3 'Systemic risk acceptance determination', first paragraph (continued from PDF p. 5), second sentence)
   - Mapping note: Smaller-scale evaluations 'may' also be run at listed trigger points: an updated model release, a serious incident, materially increased risk from use or integration, or a material change in the basis for acceptability (PDF p. 2).
-- **Meta · FAF · v1.1** (published 2025-02-03): n/a. _Edition not retrieved in this run; no passage recorded in the dataset for this facet._
+- **Meta · FAF · v1.1** (published 2025-02-03): stated
+  - “We typically repeat evaluations as a frontier AI nears or completes training.” (PDF p. 18 (printed p. 18), §4.2 Evaluation and mitigation)
+  - Mapping note: “Typically” is the edition’s word. Evaluations also run at an initial checkpoint (PDF p. 16), as follow-ups triggered by the capabilities found (PDF p. 17), and in the assessment before release (§2.1.2, PDF pp. 7–8).
 - **Meta · AASF · v2** (published 2026-04-08): stated
   - “We typically repeat evaluations as a Frontier AI model nears or completes training.” (PDF p. 26 (printed p. 26), §4.2 Evaluation and mitigation, sixth paragraph, first sentence)
   - Mapping note: Evaluations are also triggered by monitored indicators during development (PDF p. 5), preliminary assessments precede controlled deployments (PDF p. 8), and residual risk is assessed before deployment (PDF p. 6).
@@ -1143,9 +1186,9 @@ _Where does the edition allow departures from its own procedures?_
 
 ### D6.competitor Provisions conditioned on other developers
 
-**Criterion:** A provision that changes what the developer will do depending on what other developers do or have (often called a “race” or “marginal risk” clause).
+**Criterion:** A provision that relaxes, adjusts or conditions the developer’s safeguards or commitments on what other developers do or have (often called a “race” or “marginal risk” clause). Scope tests that decide whether a model is covered by the framework are recorded as context, not counted.
 
-- **Anthropic · RSP · 2023** (effective 2023-09-19): stated, partly meets the criterion
+- **Anthropic · RSP · 2023** (effective 2023-09-19): stated, partly (a weaker form than the criterion’s words)
   - “to avoid a “race to the bottom”, the latter should not include the effects of other companies’ language models” (PDF p. 5 (printed p. 5), ASL-2 Commitments, footnote 5, third sentence). _'The latter' refers to lowering a model's ASL because dangerous information has become more widely available; the footnote excludes other companies' models from that consideration._
   - “a clearly bad actor (such as a rogue state) is scaling in so reckless a manner … we could envisage a substantial loosening of these restrictions” (PDF p. 10 (printed p. 10), Procedural Commitments, item 1 ('Update Process'), second sub-bullet, first sentence). _The condition is a situation of extreme emergency in which such scaling is likely to lead to imminent global catastrophe and AI itself helps in defence; the loosening is described as an emergency response, to be taken only in consultation with governmental authorities, with the case presented publicly to the extent possible._
   - Mapping note: The first entry declines to condition ASL classification on other developers' models; the second conditions a possible loosening on another actor's (not necessarily a developer's) reckless scaling.
@@ -1199,7 +1242,8 @@ _Where does the edition allow departures from its own procedures?_
 - **OpenAI · FGF · May 2026 edition** (published 2026-05-28): **not found** within the recorded search.
   - Inspected: Whole text layer, PDF pp. 1–22 (all sections read).
   - Searched for: “other developer”, “competit”, “race”, “marginal”, “industry”, “peer”, “comparable”, “similarly safe”, “other deployed”
-  - Hits set aside: PDF p. 4, §1: draws on RSPs and 'industry best practices' (not a conditional provision). PDF p. 5, §2.1: 'industry bodies such as the Frontier Model Forum' as feedback sources. PDF p. 7, §2.2: 'insights from other deployed models' as a risk-assessment input, not a provision that changes OpenAI's actions. PDF p. 18, §4: no Model Report update needed if 'the model is considered similarly safe or safer (under Appendix 2.2 of the Code of Practice)'; the FGF does not say this compares with other developers' models and it governs report updates only, so it is not counted (uncertain). PDF p. 22, §7.2: 'other incidents affecting the industry' as an assessment factor. 'developer' hits (PDF pp. 6, 12) concern a model evading its developer's controls. No hits for 'competit', 'race', 'marginal' or 'peer'.
+  - Hits set aside: PDF p. 4, §1: draws on RSPs and 'industry best practices' (not a conditional provision). PDF p. 5, §2.1: 'industry bodies such as the Frontier Model Forum' as feedback sources. PDF p. 7, §2.2: 'insights from other deployed models' as a risk-assessment input, not a provision that changes OpenAI's actions. PDF p. 18, §4: no Model Report update needed if 'the model is considered similarly safe or safer (under Appendix 2.2 of the Code of Practice)'; it governs report updates only, not safeguards, so it is not counted (see the mapping note). PDF p. 22, §7.2: 'other incidents affecting the industry' as an assessment factor. 'developer' hits (PDF pp. 6, 12) concern a model evading its developer's controls. No hits for 'competit', 'race', 'marginal' or 'peer'.
+  - Mapping note: Exemption from Model Report updates by reference to the EU Code of Practice's similarly-safe-or-safer test, whose safe reference model may be another provider's model (Code, Appendix 2.1); governs reporting only, not safeguards.
 - **xAI · FAIF · December 2025 edition** (revised 2025-12-30): **not found** within the recorded search.
   - Inspected: Whole text layer, PDF pp. 1–11 (p. 12 blank): all sections read
   - Searched for: “other developers”, “competitor”, “industry/peer”, “readily available”, “frontier developer”, “race”
@@ -1208,16 +1252,20 @@ _Where does the edition allow departures from its own procedures?_
   - Inspected: Whole text layer, PDF pp. 1–9 (p. 10 blank): all sections read
   - Searched for: “other developers”, “competitor”, “industry/peer”, “readily available”, “market”, “race”
   - Hits set aside: PDF pp. 2, 5, 6 'market' occurs in 'post-market monitoring', 'market analysis' and 'making available on the market', none conditioned on other developers; PDF p. 8 distillation of reasoning traces concerns security against extraction. The December 2025 'readily and easily available' clause does not appear.
-- **Meta · FAF · v1.1** (published 2025-02-03): n/a. _Edition not retrieved in this run; no passage recorded in the dataset for this facet._
+  - Archive check: Confirmed not found on 2026-10-26 by a cross-family archive check of the Internet Archive capture of 2026-07-16 (https://web.archive.org/web/20260716003429/https://media.x.ai/v1/website/xai-frontier-artificial-intelligence-framework-30-june-2026-99c40684.pdf), whose SHA-256 matches the recorded publisher copy; see research/archive-checks-2026-10-26/codex-report.md.
+- **Meta · FAF · v1.1** (published 2025-02-03): **not found** within the recorded search.
+  - Inspected: Whole edition, PDF pp. 1–21, read in the text layer of the decoded PDF of the Internet Archive capture of 2025-02-13; cover and PDF pp. 12–13 and 19 inspected visually
+  - Searched for: “compet”, “race”, “marginal”, “other”, “existing”, “reference”
+  - Hits set aside: No competitor, race or marginal stems. PDF p. 4: scope relative to the most advanced models, recorded as context under the scope-test rule; p. 6: external reference-class comparisons; p. 8: existing mitigations; p. 9: other frameworks; p. 12: net new and existing resources; p. 15: novel biological capabilities; p. 17: other barriers and cost constraints; p. 18: other discoveries and variables; p. 19: engagement with peers; p. 21: existing resources in the definition of uplift studies. These are scope, evaluation baselines, barriers or update inputs, not provisions that relax safeguards on what other developers do. Table 1 (p. 13): the route through other barriers tests whether a catastrophic outcome remains feasible, not other developers’ commitments.
 - **Meta · AASF · v2** (published 2026-04-08): **not found** within the recorded search.
   - Inspected: Whole text layer, PDF pp. 1–44 (p. 45 blank): all sections, tables, footnotes and both appendices read
   - Searched for: “other developer / other compan”, “competit”, “race”, “marginal”, “industry”, “most advanced models”, “open source / widely available / publicly available”
-  - Hits set aside: No hits for 'other developer', 'other compan', 'race' or 'marginal'. 'competition' (PDF pp. 28–29) names capture-the-flag competitions used as cyber benchmarks. 'industry' (PDF pp. 7, 8, 41) refers to evolving industry practices as a reason to re-evaluate mitigations, update the Framework or revise definitions. 'the most advanced models' (Appendix I, PDF p. 41; change log, PDF p. 44) is part of the scope criterion for which models count as Frontier AI: a model 'reasonably likely to be more capable … than our existing models or the most advanced models'. It decides which models the Framework covers, not what Meta does depending on other developers' conduct. 'open-source' and 'widely used' (PDF pp. 5, 8, 31) concern evaluations and defender access. No provision changes required measures depending on what other developers do or have.
-  - Mapping note: The scope criterion in Appendix I compares a model with 'the most advanced models' (not limited to Meta's) to decide whether it is Frontier AI; it is recorded here as context, not as a provision conditioned on other developers.
-- **Microsoft · FGF · Feb 2025** (published 2025-02): stated, partly meets the criterion
+  - Hits set aside: No hits for 'other developer', 'other compan', 'race' or 'marginal'. 'competition' (PDF pp. 28–29) names capture-the-flag competitions used as cyber benchmarks. 'industry' (PDF pp. 7, 8, 41) refers to evolving industry practices as a reason to re-evaluate mitigations, update the Framework or revise definitions. 'the most advanced models' (Appendix I, PDF p. 41; change log, PDF p. 44) is part of the scope criterion for which models count as Frontier AI: a model 'reasonably likely to be more capable … than our existing models or the most advanced models'. It decides which models the Framework covers, not what Meta does depending on other developers' conduct. PDF p. 4, §2.1.1: 'We compare these various factors against our own models and those available externally' identifies a 'reference class' of comparable models for tracking performance and anticipating risks and required assessments; it does not relax, adjust or condition Meta's safeguards or commitments. 'open-source' and 'widely used' (PDF pp. 5, 8, 31) concern evaluations and defender access. No provision relaxes, adjusts or conditions Meta's safeguards or commitments on what other developers do or have.
+  - Mapping note: Comparative scope and reference-class provisions, not a waiver of safeguards conditional on other developers. Appendix I compares a model with 'the most advanced models' (not limited to Meta's) to decide whether it is Frontier AI (PDF p. 41); §2.1.1 compares a planned model 'against our own models and those available externally' to identify a 'reference class' used to anticipate risks and required assessments (PDF p. 4). Both are recorded here as context.
+- **Microsoft · FGF · Feb 2025** (published 2025-02): stated, partly (a weaker form than the criterion’s words)
   - “considers the marginal capability uplift … including currently available open-weights models.” (PDF p. 7 (printed p. 6), §3, Deeper capability assessment, 'Holistic risk assessment' bullet, final sentence). _Part of the holistic risk assessment whose results 'then inform a determination' of whether a model has a tracked capability and at what level._
   - Mapping note: A marginal-uplift consideration in the risk determination, measured against available tools and open-weights models; it does not state that measures change depending on other developers’ actions.
-- **Microsoft · FGF · Feb 2026** (revised 2026-02): stated, partly meets the criterion
+- **Microsoft · FGF · Feb 2026** (revised 2026-02): stated, partly (a weaker form than the criterion’s words)
   - “considers the marginal capability uplift … including currently available open-weights models.” (PDF p. 7 (printed p. 6), §3, Deeper capability assessment, 'Holistic risk assessment' bullet, final sentence). _In this edition the holistic risk assessment, of which this is part, 'may also inform' the determination of a model's risk level; the February 2025 edition says such results 'then inform' it._
   - Mapping note: A marginal-uplift consideration in the risk determination, measured against available tools and open-weights models; it does not state that measures change depending on other developers’ actions.
 
@@ -1282,7 +1330,9 @@ _Where does the edition allow departures from its own procedures?_
   - “The final decision also reflects an overall judgment based on all the available evidence” (PDF p. 6, first §2.3 'Systemic risk acceptance determination', third paragraph, third sentence)
   - “xAI may change its approach from that listed above in order to make additional improvements.” (PDF p. 7, second §2.3 'Safety mitigations', paragraph following the safeguards list, second sentence)
   - Mapping note: The December 2025 trusted-user and benefits-outweigh-benchmark clauses do not appear in this edition.
-- **Meta · FAF · v1.1** (published 2025-02-03): n/a. _Edition not retrieved in this run; no passage recorded in the dataset for this facet._
+- **Meta · FAF · v1.1** (published 2025-02-03): stated
+  - “insofar as is technically feasible and commercially practicable” (PDF p. 13 (printed p. 13), §3.3 Risk thresholds, Table 1: Risk thresholds for frontier AI, Critical row, Measures column, security mitigations (qualifying clause))
+  - Mapping note: Qualifies the Critical row’s security protections against hacking and exfiltration. The edition also leaves to judgement whether further barriers justify revised threat scenarios (Table 1; §4.2, PDF p. 17) and whether to re-evaluate after a revision (§5.1, PDF p. 19). No general power to override the framework is stated.
 - **Meta · AASF · v2** (published 2026-04-08): stated
   - “Final deployment decisions may also consider additional factors beyond those covered in this Framework.” (PDF p. 15 (printed p. 15), §3.3 Risk Thresholds, Table 1, note below the Measures column, second sentence)
   - Mapping note: Other stated room for judgement: cyber capabilities may be made available 'to qualified and trusted customers where appropriate' (PDF p. 30); chemical and biological capabilities may be offered to trusted researchers 'with reduced mitigations via structured access controls' (PDF p. 33, research area), and non-material modifications are presumed to inherit the underlying model's threshold (PDF p. 17).
@@ -1332,31 +1382,36 @@ _To whom does the edition say it reports, internally and externally?_
   - Inspected: Whole text layer, PDF pp. 1–7 (all sections, both tables, footnotes and acknowledgements read)
   - Searched for: “report”, “record”, “log”, “inform”, “notif/alert”, “review”, “council”
   - Hits set aside: PDF p. 3 'enhanced logging' and PDF p. 4 'automated monitoring and logging of large-scale internal deployments' are security/deployment mitigation measures, not reporting to leadership or a compliance function. PDF p. 6 'exploring internal policies around alerting relevant stakeholder bodies' concerns external bodies (counted under D7.external). 'inform' hits (PDF pp. 1, 6) concern the Framework being informed by external discussion or forecasting to inform preparations. No 'report' or 'record' hits.
-- **Google DeepMind · FSF · v2.0** (published 2025-02-04): stated, partly meets the criterion
+- **Google DeepMind · FSF · v2.0** (published 2025-02-04): stated, partly (a weaker form than the criterion’s words)
   - “the response plan will be reviewed and approved by appropriate corporate governance bodies such as the Google DeepMind AGI Safety Council” (PDF p. 7 (printed p. 7), Governance and Accountability, 'Governance', first sentence)
   - Mapping note: No separate internal reporting or record-keeping requirement is stated; the closest provision is that response plans go to corporate governance bodies for review and approval.
-- **Google DeepMind · FSF · v3.0** (published 2025-09-22): stated, partly meets the criterion
+- **Google DeepMind · FSF · v3.0** (published 2025-09-22): stated, partly (a weaker form than the criterion’s words)
   - “Material updates to a safety case will be submitted to the appropriate governance function for review.” (PDF pp. 9–13 (printed pp. 9 and 13), §2.1.2 and §3.1.2 Deployment Mitigations, numbered step 3, second sentence (identical in both))
   - Mapping note: Submission for review of safety-case updates; no other internal reporting or record requirement is stated.
-- **Google DeepMind · FSF · v3.1** (published 2026-04-17): stated, partly meets the criterion
+- **Google DeepMind · FSF · v3.1** (published 2026-04-17): stated, partly (a weaker form than the criterion’s words)
   - “Material updates to a safety case will be submitted to the appropriate governance function for review” (PDF pp. 10–14 (printed pp. 10 and 14), §2.1.2 and §3.1.2 Deployment Mitigations, numbered step 3, second sentence (identical in both))
   - Mapping note: Submission for review of safety-case updates. §4.1 (PDF p. 16) describes escalation procedures in general terms; no other internal reporting or record requirement is stated.
 - **OpenAI · Preparedness · Beta** (published 2023-12-18): stated
   - “providing a monthly report (sent to the SAG, Leadership and BoD) synthesizing the above with any potential protective actions” (PDF p. 23, Governance › Operations › 'Process', Preparedness team responsibilities, fifth item)
+    - Paraphrase check: Cross-family paraphrase check of 2026-10-28 (codex-paraphrases-2026-10-28.md): drift; the paraphrase left out that the SAG Chair, OpenAI Leadership and/or the Board can adjust the monthly cadence as needed. Corrected on 2026-10-28 by the maintainer’s decision of that day; the cell’s status is unchanged.
   - Mapping note: The edition also states that the Framework, reports and decisions will be documented and visible to the Board and within OpenAI, with redactions as needed (PDF p. 24, 'Internal visibility').
 - **OpenAI · Preparedness · Version 2** (published 2025-04-15): stated
   - “We will document relevant reports made to the SAG and of SAG’s decision and reasoning.” (PDF p. 13 (printed p. 12), §5.1 Internal governance, 'Internal Transparency', first sentence)
-- **OpenAI · FGF · May 2026 edition** (published 2026-05-28): stated, partly meets the criterion
+- **OpenAI · FGF · May 2026 edition** (published 2026-05-28): stated, partly (a weaker form than the criterion’s words)
   - “We document a justification for why the systemic risks stemming from the model are acceptable, including reasonably foreseeable conditions under which the justification may no longer hold, as informed by recommendations from OpenAI’s Safety Advisory Group and external experts, as available and appropriate.” (PDF p. 13 (printed p. 11), §2.5 Safety mitigations, second paragraph, second sentence)
+    - Paraphrase check: Cross-family paraphrase check of 2026-10-28 (codex-paraphrases-2026-10-28.md): drift; the paraphrase attached the qualifier “as available and appropriate” to the external experts alone, where the passage places it after the whole clause; the correction keeps the passage’s ambiguity and does not resolve it. Corrected on 2026-10-28 by the maintainer’s decision of that day; the cell’s status is unchanged.
   - Mapping note: The passage records a documented justification but does not name its internal recipients. §2.6 states that the incident response plan includes notifying appropriate internal teams (PDF p. 14).
-- **xAI · FAIF · December 2025 edition** (revised 2025-12-30): stated, partly meets the criterion
+- **xAI · FAIF · December 2025 edition** (revised 2025-12-30): stated, partly (a weaker form than the criterion’s words)
   - “Internally, we allow xAI employees to anonymously report concerns about nonadherence, with protections from retaliation.” (PDF p. 8, 'Operational and Societal Risks' › '1. Public transparency and third-party review', numbered item 1 ('Frontier AI Framework adherence'), second sentence)
   - “Risk owners are also responsible for periodic audits to enforce framework implementation.” (PDF p. 9, 'Operational and Societal Risks' › '4. Governance Approach', first paragraph, second sentence)
   - Mapping note: No internal recipient (leadership, board or compliance function) is named for reports or audit results.
 - **xAI · FAIF · June 2026 edition** (effective 2026-06-30): stated
   - “Results of our systemic risk assessment and mitigation processes and measures will be documented.” (PDF p. 2, §2 Risk Management Framework, third paragraph)
   - Mapping note: No internal recipient is named. 'Employee escalation' is listed as an incident-identification channel (PDF p. 8).
-- **Meta · FAF · v1.1** (published 2025-02-03): n/a. _Edition not retrieved in this run; no passage recorded in the dataset for this facet._
+- **Meta · FAF · v1.1** (published 2025-02-03): stated
+  - “documenting mitigation strategies and residual risks across a set of applicable risk categories.” (PDF p. 7 (printed p. 7), §2.1.2 (risk assessment process))
+    - Paraphrase check: Cross-family paraphrase check of 2026-10-28 (codex-paraphrases-2026-10-28.md): drift; the paraphrase said the records cover each risk category that applies, where the passage says they cover a set of applicable risk categories. Corrected on 2026-10-28 by the maintainer’s decision of that day; the cell’s status is unchanged.
+  - Mapping note: §2.1.3 (PDF p. 8) passes the assessment of remaining risk to research and product teams, then to multidisciplinary review and leadership. These are internal records; no schedule of reports to a board is stated.
 - **Meta · AASF · v2** (published 2026-04-08): stated
   - “all reports will be ultimately submitted to the internal governance function, the Chief AI Officer, and the Director of Alignment and Risk” (PDF p. 10 (printed p. 10), §2.3.1 Reporting, second sentence)
   - Mapping note: Refers to employee non-compliance reports under a protocol the edition says Meta 'is developing'.
@@ -1369,7 +1424,7 @@ _To whom does the edition say it reports, internally and externally?_
 
 ### D7.external Public or external reporting
 
-**Criterion:** Disclosure the edition says it will make to the public, to governments, or to other external parties.
+**Criterion:** Disclosure the edition says it will make to the public, to governments, or to other external parties, excluding publication of the framework itself (recorded under D8 Revision).
 
 - **Anthropic · RSP · 2023** (effective 2023-09-19): stated
   - “Publicly share evaluation results after model deployment where possible” (PDF p. 10 (printed p. 10), Procedural Commitments, numbered item 5). _The item continues: in some cases in the initial model card, in other cases with a delay if it serves a broad safety interest. ASL-3 deployment measures add a vulnerability and incident disclosure process with other labs, subject to security or legal constraints (PDF p. 9); ASL-2 measures include publishing model cards (PDF p. 6)._
@@ -1381,30 +1436,32 @@ _To whom does the edition say it reports, internally and externally?_
   - “We will publicly release key information related to the evaluation and deployment of our models” (PDF p. 17 (printed p. 13), §7.2 Transparency and External Input, numbered item 1 ('Public disclosures'), first sentence). _The sentence continues: not including sensitive details. §7.2 item 3 commits to notifying a relevant U.S. Government entity if a model requires stronger protections than ASL-2; footnote 18 expects evaluation details to go to a U.S. Government entity where a model is not deployed publicly._
 - **Anthropic · RSP · v3.0** (effective 2026-02-24): stated
   - “publish a public version of our Risk Report” (PDF p. 13, §3.5 Publication and Redactions, first sentence). _The section adds that Anthropic will aim to minimize redactions._
-  - Mapping note: Also: the Frontier Safety Roadmap is published in redacted form (§2); external reviewers are asked to publish commentary within 30 days (§3.6.2); for the high-stakes sabotage opportunities row the company column says threat-pathway content and policy recommendations will be shared with policymakers; substantiated noncompliance involving a material safety risk 'may' be publicly noticed (§4).
+  - Mapping note: Also: the Frontier Safety Roadmap is published in redacted form (§2); external reviewers are asked to publish commentary within 30 days (§3.6.2); for the novel chemical/biological weapons production row (PDF p. 7) the company column says threat-pathway content and policy recommendations will be shared with policymakers; substantiated noncompliance involving a material safety risk 'may' be publicly noticed (§4).
 - **Anthropic · RSP · v3.1** (effective 2026-04-02): stated
   - “publish a public version of our Risk Report” (PDF p. 14 (printed p. 13), §3.5 Publication and Redactions, first sentence). _The section adds that Anthropic will aim to minimize redactions._
-  - Mapping note: Also: the Frontier Safety Roadmap is published in redacted form (§2); external reviewers are asked to publish commentary within 30 days (§3.6.2); for the high-stakes sabotage opportunities row the company column says threat-pathway content and policy recommendations will be shared with policymakers; substantiated noncompliance involving a material safety risk 'may' be publicly noticed (§4).
+  - Mapping note: Also: the Frontier Safety Roadmap is published in redacted form (§2); external reviewers are asked to publish commentary within 30 days (§3.6.2); for the novel chemical/biological weapons production row (PDF p. 7) the company column says threat-pathway content and policy recommendations will be shared with policymakers; substantiated noncompliance involving a material safety risk 'may' be publicly noticed (§4).
 - **Anthropic · RSP · v3.2** (effective 2026-04-29): stated
   - “publish a public version of our Risk Report” (PDF p. 14 (printed p. 13), §3.5 Publication and Redactions, first sentence). _The section adds that Anthropic will aim to minimize redactions._
-  - Mapping note: Also: the Frontier Safety Roadmap is published in redacted form (§2); external reviewers are asked to publish commentary within 30 days (§3.6.2); for the high-stakes sabotage opportunities row the company column says threat-pathway content and policy recommendations will be shared with policymakers; substantiated noncompliance involving a material safety risk 'may' be publicly noticed (§4).
+  - Mapping note: Also: the Frontier Safety Roadmap is published in redacted form (§2); external reviewers are asked to publish commentary within 30 days (§3.6.2); for the novel chemical/biological weapons production row (PDF p. 7) the company column says threat-pathway content and policy recommendations will be shared with policymakers; substantiated noncompliance involving a material safety risk 'may' be publicly noticed (§4).
 - **Anthropic · RSP · v3.3** (effective 2026-05-26): stated
   - “publish a public version of our Risk Report” (PDF p. 14 (printed p. 13), §3.5 Publication and Redactions, first sentence). _The section adds that Anthropic will aim to minimize redactions._
-  - Mapping note: Also: the Frontier Safety Roadmap is published in redacted form (§2); external reviewers are asked to publish commentary within 30 days (§3.6.2); for the misaligned AI systems in high-stakes settings row the company column says threat-pathway content and policy recommendations will be shared with policymakers; substantiated noncompliance involving a material safety risk 'may' be publicly noticed (§4).
+  - Mapping note: Also: the Frontier Safety Roadmap is published in redacted form (§2); external reviewers are asked to publish commentary within 30 days (§3.6.2); for the novel chemical/biological weapons production row (PDF p. 7) the company column says threat-pathway content and policy recommendations will be shared with policymakers; substantiated noncompliance involving a material safety risk 'may' be publicly noticed (§4).
 - **Anthropic · RSP · v3.4** (effective 2026-07-08): stated
   - “publish a public version of our Risk Report” (PDF p. 14, §3.5 Publication and Redactions, first sentence). _The section adds that Anthropic will aim to minimize redactions._
-  - “disclose the existence of each redaction” (PDF p. 14, §3.5 Publication and Redactions, paragraph after the list of redaction reasons). _The sentence continues: made in the public version of the report, with a brief, possibly very high-level justification._
-  - Mapping note: Also: the Frontier Safety Roadmap is published in redacted form (§2); external reviewers are asked to publish commentary within 30 days (§3.6.2); for the misaligned AI systems in high-stakes settings row the company column says threat-pathway content and policy recommendations will be shared with policymakers; substantiated noncompliance involving a material safety risk 'may' be publicly noticed (§4).
+  - “disclose the existence of each redaction” (PDF p. 14, §3.5 Publication and Redactions, paragraph after the list of redaction reasons). _The sentence continues: 'made in the public version of the report and aim to give a brief justification for such redactions', adding that in many cases this will necessarily be very high-level. The disclosure of each redaction is stated as a commitment; the justification is an aim._
+  - Mapping note: Also: the Frontier Safety Roadmap is published in redacted form (§2); external reviewers are asked to publish commentary within 30 days (§3.6.2); for the novel chemical/biological weapons production row (PDF p. 7) the company column says threat-pathway content and policy recommendations will be shared with policymakers; substantiated noncompliance involving a material safety risk 'may' be publicly noticed (§4).
 - **Google DeepMind · FSF · 2024** (published 2024-05-17): **not found** within the recorded search.
   - Inspected: Whole text layer, PDF pp. 1–7 (all sections read).
   - Searched for: “publish”, “disclos”, “share”, “government”, “authorit”, “stakeholder”, “alert”, “external”
-  - Hits set aside: PDF p. 6 (Future work): 'We are exploring internal policies around alerting relevant stakeholder bodies when, for example, evaluation thresholds are met' describes a policy under exploration, not a disclosure the edition says it will make. PDF p. 6: 'we will publish substantive revisions as appropriate' concerns the Framework itself (recorded under D8 Revision). No commitment to disclose evaluation results, threshold determinations or mitigations to the public or governments was found.
+  - Hits set aside: PDF p. 6 (Future work): 'We are exploring internal policies around alerting relevant stakeholder bodies when, for example, evaluation thresholds are met' describes a policy under exploration, not a disclosure the edition says it will make. PDF p. 6 (Future work): 'we will publish substantive revisions as appropriate' was considered; it is publication of the Framework itself, which the criterion excludes (recorded under D8 Revision). No commitment to disclose evaluation results, threshold determinations or mitigations to the public or governments was found.
   - Mapping note: The edition says it is exploring policies on alerting stakeholder bodies (PDF p. 6); recorded as context.
 - **Google DeepMind · FSF · v2.0** (published 2025-02-04): stated
   - “If we assess that a model has reached a CCL that poses an unmitigated and material risk to overall public safety, we aim to share information with appropriate government authorities” (PDF p. 7 (printed p. 7), Governance and Accountability, 'Disclosure', first sentence (continues on PDF p. 8)). _The sentence continues 'where it will facilitate the development of safe AI'; the edition adds it 'may also consider disclosing information to other external organizations' (PDF p. 8)._
+    - Paraphrase check: Cross-family paraphrase check of 2026-10-28 (codex-paraphrases-2026-10-28.md): drift; the paraphrase left out the condition that sharing will facilitate the development of safe AI. Corrected on 2026-10-28 by the maintainer’s decision of that day; the cell’s status is unchanged.
   - Mapping note: Conditional wording ('aim to'). This served copy splits the sentence across PDF pp. 7–8; the 2025-02-05 archive capture has it on PDF p. 8.
 - **Google DeepMind · FSF · v3.0** (published 2025-09-22): stated
   - “If we assess that a model has reached a CCL that poses an unmitigated and material risk to overall public safety, we aim to share relevant information with appropriate government authorities” (PDF p. 16 (printed p. 16), §5.2 Disclosures, first paragraph, first sentence). _The sentence continues 'where it will facilitate safety of frontier AI'; the section adds the developer 'may also consider disclosing information to other external organisations'._
+    - Paraphrase check: Cross-family paraphrase check of 2026-10-28 (codex-paraphrases-2026-10-28.md): drift; the paraphrase left out the condition that sharing will facilitate the safety of frontier AI. Corrected on 2026-10-28 by the maintainer’s decision of that day; the cell’s status is unchanged.
   - Mapping note: Conditional wording ('aim to').
 - **Google DeepMind · FSF · v3.1** (published 2026-04-17): stated
   - “If we assess that a model has reached a CCL that poses an unmitigated and material risk to overall public safety, we aim to share relevant information with appropriate government authorities where it will facilitate safety of frontier AI.” (PDF p. 17 (printed p. 17), §5.2 Disclosures, first sentence). _Condition (same sentence): if the developer assesses that a model has reached a CCL that poses an unmitigated and material risk to overall public safety. The section adds the developer 'may also consider disclosing information to other external organizations'._
@@ -1412,15 +1469,16 @@ _To whom does the edition say it reports, internally and externally?_
 - **OpenAI · Preparedness · Beta** (published 2023-12-18): **not found** within the recorded search.
   - Inspected: Whole text layer, PDF pp. 1–27 (all sections read).
   - Searched for: “publish”, “public”, “disclos”, “government”, “report”, “system card”, “share”, “external”
-  - Hits set aside: 'publishing Responsible Scaling Policies' (PDF p. 3) describes other organisations. 'public' (PDF p. 9 and elsewhere) occurs in threshold definitions ('disrupt public life'). 'report' hits concern internal reports to the SAG, Leadership and Board (recorded under D7 Internal reporting). System cards are named only as an existing safety process (PDF p. 20). 'External access' (PDF p. 25): 'We will also continue to enable external research and government access for model releases' concerns access to models for red-teaming and testing, not disclosure of reports, evaluations or decisions. No commitment to disclose Scorecard results, decisions or reports to the public or to governments was found.
+  - Hits set aside: 'publishing Responsible Scaling Policies' (PDF p. 3) describes other organisations. 'public' (PDF p. 9 and elsewhere) occurs in threshold definitions ('disrupt public life'). 'report' hits concern internal reports to the SAG, Leadership and Board (recorded under D7 Internal reporting). System cards are named only as an existing safety process (PDF p. 20). 'External access' (PDF p. 25): 'We will also continue to enable external research and government access for model releases' concerns access to models for red-teaming and testing, not disclosure of reports, evaluations or decisions. Adjacent passages recorded as context: 'alerting distribution partners' (PDF p. 14, Mitigations, first paragraph) is a conditional mitigation option, and 'Scorecard evaluations (and corresponding mitigations) will be audited by qualified, independent third-parties to ensure accurate reporting of results' (PDF p. 25, Accountability, Audits) is a third-party audit; neither is a disclosure commitment. No commitment to disclose Scorecard results, decisions or reports to the public or to governments was found.
   - Mapping note: Access for external researchers and government to test model releases (PDF p. 25) is external engagement but not disclosure; it is recorded here as context.
 - **OpenAI · Preparedness · Version 2** (published 2025-04-15): stated
   - “We will release information about our Preparedness Framework results … for major deployments.” (PDF p. 13 (printed p. 12), §5.2 Transparency and external participation, 'Public disclosures', first sentence)
   - Mapping note: §4.3 also requires public acknowledgement of a marginal-risk adjustment (PDF p. 13).
 - **OpenAI · FGF · May 2026 edition** (published 2026-05-28): stated
   - “We also publish details of these assessments in system cards or in other reporting when a model launches.” (PDF p. 18 (printed p. 16), §4 Model reporting, first paragraph, second sentence)
+    - Paraphrase check: Cross-family paraphrase check of 2026-10-28 (codex-paraphrases-2026-10-28.md): drift; the paraphrase left out the boundary set by the preceding sentence, which limits the assessments to models in scope of the Framework. Corrected on 2026-10-28 by the maintainer’s decision of that day; the cell’s status is unchanged.
   - “for reporting to appropriate authorities within the required deadlines” (PDF p. 15 (printed p. 13), §2.6 › 'External reporting', second sentence). _The sentence is conditional on an incident being determined reportable under applicable laws._
-  - Mapping note: The first paragraph of §4 also names a Safety and Security Model Report ('Transparency Reports' under the TFAIA); §7.1 states that changelogs for material updates are published within 30 days (PDF p. 21).
+  - Mapping note: The first paragraph of §4 also names a Safety and Security Model Report ('Transparency Reports' under the TFAIA); §7.1 states that changelogs for material updates are published within 30 days (PDF p. 21); as publication of the framework itself, that is recorded under D8 Revision, not here.
 - **xAI · FAIF · December 2025 edition** (revised 2025-12-30): stated
   - “we may publish the following types of information listed below.” (PDF p. 8, 'Operational and Societal Risks' › '1. Public transparency and third-party review', second paragraph, first sentence)
   - “Benchmark results: Share with relevant audiences leading benchmark results … upon new major releases.” (PDF p. 8, same section, numbered item 2). _An item in the list introduced by 'we may publish'._
@@ -1428,15 +1486,19 @@ _To whom does the edition say it reports, internally and externally?_
 - **xAI · FAIF · June 2026 edition** (effective 2026-06-30): stated
   - “When reportable under applicable laws and regulations, xAI will provide the relevant authorities with a copy of the incident report within the required deadlines” (PDF p. 9, §3 Incident reporting, numbered item 4 (continued from PDF p. 8))
   - Mapping note: External reporting is stated only for legally reportable incidents; the December 2025 list of information xAI may publish does not appear.
-- **Meta · FAF · v1.1** (published 2025-02-03): n/a. _Edition not retrieved in this run; no passage recorded in the dataset for this facet._
+- **Meta · FAF · v1.1** (published 2025-02-03): stated
+  - “We also plan to continue sharing relevant information about how we develop and evaluate our models responsibly” (PDF p. 9 (printed p. 9), §2.2)
+  - Mapping note: Conditional wording (“plan to”). The channels named are model cards, research papers and guidance on responsible use; no deadline, recipient or mandatory incident report is stated.
 - **Meta · AASF · v2** (published 2026-04-08): stated
   - “We will publish a preparedness report for each closed or open Frontier AI release in a timely manner in connection with the deployment” (PDF p. 7 (printed p. 7), §2.2.1 Preparedness Reports, first sentence)
   - Mapping note: Meta will also 'as appropriate, provide relevant authorities' with an internal-use risk report (PDF p. 9). A model spec and adherence results are also to be published (§2.2.3, PDF p. 9).
 - **Microsoft · FGF · Feb 2025** (published 2025-02): stated
   - “Information about the capabilities and limitations of the model, relevant evaluations, and the model’s risk classification will be shared publicly” (PDF p. 10 (printed p. 9), §5 Governance, Risk-informed deployment decision, third paragraph, first sentence)
+    - Paraphrase check: Cross-family paraphrase check of 2026-10-28 (codex-paraphrases-2026-10-28.md): drift; the paraphrase left out the care to minimise information hazards and to protect commercially sensitive information, which qualifies the same sentence. Corrected on 2026-10-28 by the maintainer’s decision of that day; the cell’s status is unchanged.
   - Mapping note: Public sharing is qualified by care to minimise information hazards and protect commercially sensitive information.
 - **Microsoft · FGF · Feb 2026** (revised 2026-02): stated
   - “Information about the capabilities and limitations of the model, relevant evaluations, and the model’s risk classification will be shared publicly” (PDF p. 10 (printed p. 9), §5 Governance, Risk-informed deployment decision, third paragraph, first sentence)
+    - Paraphrase check: Cross-family paraphrase check of 2026-10-28 (codex-paraphrases-2026-10-28.md): drift; the paraphrase left out the care to minimise information hazards and to protect commercially sensitive information, which qualifies the same sentence. Corrected on 2026-10-28 by the maintainer’s decision of that day; the cell’s status is unchanged.
   - “We will report information about tracked high-risk capabilities as required by regulation” (PDF p. 10 (printed p. 9), §5 Governance, Risk-informed deployment decision, third paragraph, second sentence)
   - Mapping note: Public sharing is qualified by care to minimise information hazards and protect commercially sensitive information. Reports on serious or critical incidents go to regulatory authorities and impacted customers 'as appropriate' (PDF p. 9).
 
@@ -1493,6 +1555,7 @@ _How is the edition revised, and what does it say changed from the previous edit
 - **OpenAI · FGF · May 2026 edition** (published 2026-05-28): stated
   - “Material updates will be presented to the Safety and Security Committee of the board of directors of the OpenAI Foundation and to the board of directors of OpenAI Ireland Limited for oversight” (PDF p. 21 (printed p. 19), §7.1 Update and approval process, fourth (final) sentence, up to 'for oversight')
   - “OpenAI will complete a Framework Assessment at least once every 12 months” (PDF p. 22 (printed p. 20), §7.2 Framework assessment, first sentence)
+    - Paraphrase check: Cross-family paraphrase check of 2026-10-28 (codex-paraphrases-2026-10-28.md): drift; the paraphrase left out that the 12 months run from the effective dates of the TFAIA and the EU Code of Practice. Corrected on 2026-10-28 by the maintainer’s decision of that day; the cell’s status is unchanged.
   - Mapping note: 'Presented … for oversight' is not stated as approval: the edition names no approver. §7.1 states that updates may be proposed by named officers, that the Legal function oversees the update process, and that changelogs for material updates are published within 30 days (PDF p. 21). The edition describes itself as overlapping with the Preparedness Framework, which OpenAI continues to use and evolve (PDF p. 4).
 - **xAI · FAIF · December 2025 edition** (revised 2025-12-30): stated
   - “this FAIF will be continually adapted and updated as circumstances change, before major new capabilities are launched, and in response to incidents.” (PDF p. 10, 'Operational and Societal Risks' › '5. Deployment Decisions', second paragraph, fifth sentence (closing clause))
@@ -1500,7 +1563,9 @@ _How is the edition revised, and what does it say changed from the previous edit
 - **xAI · FAIF · June 2026 edition** (effective 2026-06-30): stated
   - “We will review this Framework periodically, and expect significant changes as the capabilities of our models expand.” (PDF p. 2, §1 Introduction, final paragraph, final sentence)
   - Mapping note: No review interval or approval body for framework revisions is stated; the Security Goal is to be reviewed at least every year (PDF p. 7).
-- **Meta · FAF · v1.1** (published 2025-02-03): n/a. _Edition not retrieved in this run; no passage recorded in the dataset for this facet._
+- **Meta · FAF · v1.1** (published 2025-02-03): stated
+  - “We will update our Framework based on these observations.” (PDF p. 19 (printed p. 19), §5.1)
+  - Mapping note: The observations are of deployed models and the wider ecosystem; technical developments and engagement with peers and the community also inform revisions (§5.1, PDF p. 19). No approval body or interval for revisions is named.
 - **Meta · AASF · v2** (published 2026-04-08): stated
   - “We will update our Framework … at least every twelve months, whichever is sooner. … have it confirmed by our Director of Alignment and Risk and Chief AI Officer” (PDF p. 40 (printed p. 40), §5.1 Updates to our Framework, first paragraph, fourth to sixth sentences)
   - Mapping note: Updates are also triggered when Meta has 'reasonable grounds to believe either its adequacy or our adherence to it has been materially undermined' (same sentence); published updates are to include a justification recorded in the change log.
@@ -1540,8 +1605,8 @@ _How is the edition revised, and what does it say changed from the previous edit
   - “fully unredacted Risk Reports be shared with at least 200 Anthropic employees, rather than with all regular-clearance Anthropic staff.” (PDF p. 21, Changelog, entry 'July 8, 2026 (RSP v3.4)', item 2, first sentence)
   - Mapping note: Items 3–5 (not quoted) set a Risk Report coverage date up to 30 days before publication, require high-level public disclosure of redactions, and allow external review to be split across reviewers so long as every unredacted part is reviewed by at least one.
 - **Google DeepMind · FSF · 2024** (published 2024-05-17): n/a. _First edition in this framework sequence._
-- **Google DeepMind · FSF · v2.0** (published 2025-02-04): stated, partly meets the criterion
-  - “Note that we have removed the Autonomy risk domain, which was included in Frontier Safety Framework version 1.0.” (PDF p. 5 (printed p. 5), Table 1, footnote 9, first sentence)
+- **Google DeepMind · FSF · v2.0** (published 2025-02-04): stated
+  - “Note that we have removed the Autonomy risk domain, which was included in Frontier Safety Framework version 1.0.” (PDF p. 5 (printed p. 5), Table 1, footnote 9, first sentence). _The footnote continues: 'Most of the advanced risk that was captured by this CCL is now covered by our misalignment section.'_
   - Mapping note: No consolidated changelog: the 'Updates and changes' page (PDF p. 9) lists only Version 1.0 and a corrected link (21 March 2025). Changes from v1.0 are stated in passing: Future Work (PDF p. 8) says 'we have updated our CCLs and underlying threat models from version 1.0', and footnote 6 (PDF p. 4) also says the deployment mitigation process 'is derived from that required by Deployment Level 2' in v1.0.
 - **Google DeepMind · FSF · v3.0** (published 2025-09-22): **not found** within the recorded search.
   - Inspected: Whole text layer, PDF pp. 1–16 (all sections, tables, footnotes and §5.3 read)
@@ -1561,7 +1626,8 @@ _How is the edition revised, and what does it say changed from the previous edit
   - Inspected: Whole text layer, PDF pp. 1–9 (p. 10 blank): all sections read
   - Searched for: “previous”, “December”, “version”, “revis”, “chang”, “replace”
   - Hits set aside: The edition has no change log or summary of changes and does not mention the December 2025 edition. PDF p. 2 'We may change our approach over time' and PDF p. 7 'xAI may change its approach' describe possible future change; PDF p. 2 'versions of a model' and 'materially changed' concern models; PDF p. 8 'changes to systemic factors' concerns incident post-mortems.
-- **Meta · FAF · v1.1** (published 2025-02-03): n/a. _First edition in this framework sequence._
+  - Archive check: Confirmed not found on 2026-10-26 by a cross-family archive check of the Internet Archive capture of 2026-07-16 (https://web.archive.org/web/20260716003429/https://media.x.ai/v1/website/xai-frontier-artificial-intelligence-framework-30-june-2026-99c40684.pdf), whose SHA-256 matches the recorded publisher copy; see research/archive-checks-2026-10-26/codex-report.md. That check notes that its blindness for this cell was compromised, because the edition notes stating that no change log exists had been shown to it.
+- **Meta · FAF · v1.1** (published 2025-02-03): n/a. _First edition in this framework sequence (“This is the first iteration of our Frontier AI Framework”, Introduction, PDF p. 5, confirmed by the re-check of 2026-10-27)._
 - **Meta · AASF · v2** (published 2026-04-08): stated
   - “Replaced "uniquely enable" with "substantially contribute to" as the primary standard” (PDF p. 44 (printed p. 44), Appendix II – Change log, entry 'April 7, 2026 (Advanced AI Scaling Framework v2.0)', sub-bullet 'Updated risk threshold language')
   - “Critical threshold changed from "Stop" to "Develop with Mitigations." High threshold measure changed from "Do not release" to "Deploy with mitigations."” (PDF p. 44, same entry, sub-bullet 'Revised thresholds', first and second sentences)
@@ -1739,9 +1805,9 @@ _How is the edition revised, and what does it say changed from the previous edit
 
 - Meta Frontier AI Framework — Version 1.1; published 2025-02-03. Publication date from Meta’s dated announcement of February 3, 2025; Meta’s v2 change log also dates the initial version February 3, 2025. The earliest archive capture of the file is 2025-02-13; a revised expression under the same label followed by 2025-03-28.
 - Edition document: https://ai.meta.com/static-resource/meta-frontier-ai-framework/ (expression checked in the dataset: https://web.archive.org/web/20250213105620/https://ai.meta.com/static-resource/meta-frontier-ai-framework/); archived copy recorded in the dataset: https://web.archive.org/web/20250213105620/https://ai.meta.com/static-resource/meta-frontier-ai-framework/
-- Checked: Not retrieved in this run: the publisher address returns HTTP 500 and the Internet Archive refused connections from this environment. Cells carry passages recorded in the application dataset, not re-checked.
-- Inspected: Not retrieved in this run. Cells carry seed passages from Selekoa's dataset verbatim with their recorded locators; quotes not re-checked against the edition.
-- Reading note: Only threshold, required-action and decision-authority provisions are recorded in the seeds; facets without a seed passage are not-applicable, not evidence of absence.
+- Checked: Not retrieved in the 2026-10-15 run (publisher address HTTP 500; Internet Archive unreachable). Re-checked blind by a reviewer from a different model family on 2026-10-27 (codex-meta-v1-1-2026-10-27.md): the raw replay of the 2025-02-13 capture was retrieved (HTTP 200, application/pdf; decoded PDF 14,652,734 bytes, SHA-256 9fa301dfb67bf8d392abda13a2466358ffde756f14a9d55e4fe2d95f7cfecc21), all 21 pages read, and all eight carried quotations matched on their recorded pages.
+- Inspected: Whole edition, PDF pp. 1–21, read in the text layer of the decoded PDF of the Internet Archive capture of 2025-02-13; cover and PDF pp. 12–13 and 19 inspected visually, by the cross-family re-check of 2026-10-27. Cells applied on 2026-10-28 by the maintainer’s decisions of 2026-10-27 and 2026-10-28.
+- Reading note: Cells carried from the dataset were confirmed by the re-check; the other cells are its findings, quoted and located by the re-check, with the comparison’s mapping notes. Three findings that differed from the stored status in a way that needed judgement (D4.oversight, D7.external, D8.process) were decided by the maintainer on 2026-10-28; see review/followups-2026-10-28.md.
 
 ### Meta · AASF · v2
 

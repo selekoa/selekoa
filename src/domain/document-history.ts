@@ -1,3 +1,4 @@
+import { isComparisonCell } from './framework-comparison';
 import type { Claim, Dataset, Entity } from './schema';
 import { frameworkLabels, frameworkVersions } from './versions';
 
@@ -35,6 +36,11 @@ export const provisionKinds = [
   'required_action',
   'decision_authority',
   'exception',
+  // Schema 2.18: kinds used only by paraphrased comparison cells.
+  'risk_domain',
+  'evaluation_timing',
+  'reporting',
+  'revision',
 ] as const;
 export type ProvisionKind = (typeof provisionKinds)[number];
 export const provisionKindLabels: Record<ProvisionKind, string> = {
@@ -42,6 +48,10 @@ export const provisionKindLabels: Record<ProvisionKind, string> = {
   required_action: 'Required action',
   decision_authority: 'Who decides',
   exception: 'Exception',
+  risk_domain: 'Risk domain',
+  evaluation_timing: 'Evaluation timing',
+  reporting: 'Reporting',
+  revision: 'Revision',
 };
 export const partyRoleLabels = {
   decides: 'Decides',
@@ -82,8 +92,13 @@ export function familyHistory(
       .sort(relationOrder);
     const replaces = about('supersedes_document');
     const changes = about('changes_from');
-    const provisions = about('states_provision').sort(provisionOrder);
-    const absences = about('provision_not_found').sort(provisionOrder);
+    // Comparison cells appear on the comparison page, not in these lists.
+    const provisions = about('states_provision')
+      .filter((c) => !isComparisonCell(c))
+      .sort(provisionOrder);
+    const absences = about('provision_not_found')
+      .filter((c) => !isComparisonCell(c))
+      .sort(provisionOrder);
     // Disputed assessments of a stated provision, kept apart from its text.
     const assessments = about('provision_assessed').sort(provisionOrder);
     const gaps: EditionGap[] = [];

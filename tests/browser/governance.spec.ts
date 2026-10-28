@@ -1,4 +1,4 @@
-import { test, expect } from '@playwright/test';
+import { test, expect } from './fixtures';
 
 test('version Inspector exposes predecessor, successor, publisher and family timeline', async ({
   page,
@@ -8,7 +8,7 @@ test('version Inspector exposes predecessor, successor, publisher and family tim
   page.on('console', (m) => {
     if (m.type() === 'error') errors.push(m.text());
   });
-  await page.goto('/#/explore');
+  await page.goto('/explore');
   await page.getByRole('searchbox').fill('RSP v2.0');
   await page.getByRole('searchbox').press('Enter');
   const inspector = page.getByRole('complementary', {
@@ -20,13 +20,13 @@ test('version Inspector exposes predecessor, successor, publisher and family tim
     inspector.getByRole('button', { name: 'Publisher: Anthropic' }),
   ).toBeVisible();
   await expect(
-    inspector.getByRole('button', {
+    inspector.getByRole('link', {
       name: 'Responsible Scaling Policy (2023)',
       exact: true,
     }),
   ).toBeVisible();
   await expect(
-    inspector.getByRole('button', {
+    inspector.getByRole('link', {
       name: 'Anthropic Responsible Scaling Policy — v2.1',
       exact: true,
     }),
@@ -46,8 +46,11 @@ test('version Inspector exposes predecessor, successor, publisher and family tim
   // recorded when the stop list was re-run under the revised quotation rule,
   // plus RSP v3.0's quoted reference to California SB 53 (week 4b),
   // plus seven quoted references in v1.0 to v2.2 to the White House and
-  // Seoul commitments (week 4c).
-  await expect(timeline.locator('[data-claim-id]')).toHaveCount(115);
+  // Seoul commitments (week 4c), plus six framework comparison cells for each
+  // of the nine editions (2026-10-27), plus 107 cells for the paraphrased
+  // questions (schema 2.18; first editions have no stated-changes cell),
+  // plus the links of v3.1 to v3.4 to California SB 53 (2026-10-28).
+  await expect(timeline.locator('[data-claim-id]')).toHaveCount(280);
   const dates = await timeline.locator('.timeline-date').allTextContents();
   expect(dates.map((s) => s.slice(0, 10))).toEqual(
     dates.map((s) => s.slice(0, 10)).sort(),
@@ -66,7 +69,7 @@ test('version Inspector exposes predecessor, successor, publisher and family tim
 test('DeepMind and OpenAI histories retain their separate framework semantics', async ({
   page,
 }) => {
-  await page.goto('/#/explore');
+  await page.goto('/explore');
   await page
     .getByRole('navigation', { name: 'Explore the dataset' })
     .getByRole('button', { name: /^Governance/ })
@@ -100,7 +103,7 @@ test('mobile xAI comparison is clearly inferred and presents both exact source e
   page,
 }) => {
   await page.setViewportSize({ width: 390, height: 844 });
-  await page.goto('/#/explore');
+  await page.goto('/explore');
   await page
     .getByRole('navigation', { name: 'Explore the dataset' })
     .getByRole('button', { name: /^Governance/ })
@@ -111,8 +114,10 @@ test('mobile xAI comparison is clearly inferred and presents both exact source e
   // Plus the December 2025 trusted-user exception (follow-up), and the
   // December 2025 edition's statement that it complies with SB 53 (week 4b),
   // and the June 2026 edition's footnote naming the EU Code's Safety and
-  // Security chapter (week 4c).
-  await expect(timeline.locator('[data-claim-id]')).toHaveCount(16);
+  // Security chapter (week 4c), plus six framework comparison cells for each
+  // edition (2026-10-27), plus 23 cells for the paraphrased questions
+  // (schema 2.18; the December 2025 edition has no stated-changes cell).
+  await expect(timeline.locator('[data-claim-id]')).toHaveCount(51);
   await timeline
     .locator('[data-claim-id="faif-2026-compliance-sentence"]')
     .click();

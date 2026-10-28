@@ -1,0 +1,25 @@
+# Selekoa dataset v0.10.2 (2026-10-28)
+
+Compared with v0.10.1. A changed record is one whose released JSON differs in any field.
+
+| Record type | Added | Changed | Removed | In this release |
+| --- | ---: | ---: | ---: | ---: |
+| Entities | 0 | 0 | 0 | 1,009 |
+| Claims | 0 | 0 | 0 | 2,864 |
+| Evidence | 0 | 27 | 0 | 3,664 |
+| Sources | 0 | 0 | 0 | 844 |
+| Collections | 0 | 0 | 0 | 9 |
+
+## Added
+
+None.
+
+## Changed
+
+### Evidence (27)
+
+`ev-cmp-faif-2026-d1-persuasion-2`, `ev-cmp-frontier-governance-2026-d7-external-1`, `ev-cmp-frontier-governance-2026-d7-internal-1`, `ev-cmp-frontier-governance-2026-d8-process-2`, `ev-cmp-fsf-v2-0-d7-external-1`, `ev-cmp-fsf-v3-0-d7-external-1`, `ev-cmp-fsf-v3-1-d5-cadence-1`, `ev-cmp-meta-faf-v1-1-d1-cyber-1`, `ev-cmp-meta-faf-v1-1-d7-internal-1`, `ev-cmp-ms-fgf-2025-d7-external-1`, `ev-cmp-ms-fgf-2026-d7-external-1`, `ev-cmp-preparedness-beta-2023-d7-internal-1`, `ev-cmp-rsp-2023-d1-autonomy-1`, `ev-cmp-rsp-v2-0-d5-cadence-1`, `ev-cmp-rsp-v2-1-d1-autonomy-1`, `ev-cmp-rsp-v2-1-d2-levels-2`, `ev-cmp-rsp-v2-1-d5-cadence-1`, `ev-cmp-rsp-v2-2-d1-autonomy-1`, `ev-cmp-rsp-v2-2-d2-levels-2`, `ev-cmp-rsp-v2-2-d5-cadence-1`, `ev-cmp-rsp-v3-1-d1-autonomy-1`, `ev-cmp-rsp-v3-1-d2-definition-2`, `ev-cmp-rsp-v3-2-d2-definition-2`, `ev-cmp-rsp-v3-3-d1-autonomy-1`, `ev-cmp-rsp-v3-3-d2-definition-2`, `ev-cmp-rsp-v3-4-d1-autonomy-1`, `ev-cmp-rsp-v3-4-d2-definition-2`
+
+## Removed
+
+None.

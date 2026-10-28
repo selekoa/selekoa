@@ -1,4 +1,4 @@
-import { test, expect, type Page } from '@playwright/test';
+import { test, expect, type Page } from './fixtures';
 import AxeBuilder from '@axe-core/playwright';
 
 function collectErrors(page: Page) {
@@ -29,7 +29,7 @@ test('frameworks page shows quoted provisions, alignment and plain dispute statu
   page,
 }) => {
   const errors = collectErrors(page);
-  await page.goto('/#/documents/frontier-safety-frameworks');
+  await page.goto('/documents/frontier-safety-frameworks');
   const pf = page.locator('#family-openai-preparedness');
   const v2 = pf.locator('[data-edition="preparedness-v2"]');
   await expect(
@@ -88,7 +88,7 @@ test('document page lists the edition’s provisions and recorded absences', asy
   page,
 }) => {
   const errors = collectErrors(page);
-  await page.goto('/#/document/faif-2026');
+  await page.goto('/document/faif-2026');
   await expect(page.locator('#document-provisions')).toContainText(
     'Provisions in this version',
   );
@@ -97,7 +97,7 @@ test('document page lists the edition’s provisions and recorded absences', asy
       .locator('.provision-rows')
       .getByText('Not found in the inspected text'),
   ).toHaveCount(3);
-  await page.goto('/#/claim/supersedes-pf-2');
+  await page.goto('/claim/supersedes-pf-2');
   await expect(page.locator('.dispute-note')).toContainText('Unresolved');
   expect(errors).toEqual([]);
 });
@@ -109,7 +109,7 @@ for (const width of [1440, 390])
     }) => {
       const errors = collectErrors(page);
       await page.setViewportSize({ width, height: 1000 });
-      await page.goto('/#/documents/frontier-safety-frameworks');
+      await page.goto('/documents/frontier-safety-frameworks');
       await setTheme(page, theme);
       for (const id of ['anthropic-rsp', 'meta-frontier-ai']) {
         const family = page.locator('#family-' + id);
@@ -124,7 +124,7 @@ for (const width of [1440, 390])
             .analyze()
         ).violations,
       ).toEqual([]);
-      await page.goto('/#/document/meta-aasf-v2-0');
+      await page.goto('/document/meta-aasf-v2-0');
       await setTheme(page, theme);
       expect(await fitsViewport(page)).toBe(true);
       expect(errors).toEqual([]);

@@ -10,6 +10,7 @@ import {
 } from './query';
 import { networkLayout } from '../ui/layout';
 import { relationshipClaims } from './query';
+import authorPersons from '../../review/author-persons-before-2026-10-27.json';
 
 const filters: Filters = {
   topic: 'all',
@@ -47,10 +48,14 @@ describe('exploration queries', () => {
     // 33 before week 4c, plus its six Anthropic control records through
     // 2024 and its listings for the July 2023 White House and the 2024 Seoul
     // commitments.
-    // commitments. The 2026-10-17 lab genealogy adds its Anthropic records.
-    expect(result.claims.filter((c) => !c.id.startsWith('lg-')).length).toBe(
-      41,
-    );
+    // commitments. The 2026-10-17 lab genealogy adds its Anthropic records,
+    // and the 2026-10-28 frameworks-to-law admission its records naming
+    // Anthropic; both are excluded here.
+    expect(
+      result.claims.filter(
+        (c) => !c.id.startsWith('lg-') && !c.id.startsWith('fl-'),
+      ).length,
+    ).toBe(41);
     expect(result.claims.map((c) => c.id)).toContain(
       'eval-ontology-i-arc-anthropic',
     );
@@ -62,14 +67,22 @@ describe('exploration queries', () => {
       ...filters,
       throughYear: 1965,
     });
+    // Authorship records of the 2026-10-27 author-person admission aside.
+    const later = new Set(authorPersons.added.claims);
     expect(
       result.claims
-        .filter((c) => c.time.kind !== 'unknown')
+        .filter((c) => c.time.kind !== 'unknown' && !later.has(c.id))
         .map((c) => c.id)
         .sort(),
     ).toEqual(['good-authorship-1965', 'good-discusses-explosion-1965']);
-    expect(result.claims.filter((c) => c.time.kind === 'unknown')).toEqual(
-      repository.data.claims.filter((c) => c.time.kind === 'unknown'),
+    expect(
+      result.claims.filter(
+        (c) => c.time.kind === 'unknown' && !later.has(c.id),
+      ),
+    ).toEqual(
+      repository.data.claims.filter(
+        (c) => c.time.kind === 'unknown' && !later.has(c.id),
+      ),
     );
   });
   it('retains standalone literal claims with their subject', () => {

@@ -1,16 +1,24 @@
 // Build-time site facts: a small virtual module for the interface, the launch
-// settings applied to index.html, robots.txt, sitemap.xml and the licence
-// files served beside the site. Derived on every build and dev load; never
-// tracked.
+// settings applied to index.html, robots.txt, llms.txt, the licence files and
+// the latest release's data files served beside the site. The pages and
+// sitemap.xml are written after the build (scripts/prerender.ts).
+// Derived on every build and dev load; never tracked.
 import { readdirSync, readFileSync } from 'node:fs';
+import path from 'node:path';
 import type { Plugin } from 'vite';
+import {
+  contentType,
+  dataLicenceFiles,
+  dataPaths,
+  llmsTxt,
+  type ReleaseManifest,
+} from '../src/site/machine-readable.ts';
 import {
   hasContact,
   isPublic,
   launchProblems,
   robotsTxt,
   siteConfigSchema,
-  sitemapXml,
   transformHtml,
   type SiteConfig,
 } from '../src/site/site-config.ts';
@@ -48,6 +56,38 @@ export const legalFiles: Record<string, string> = {
   'legal/THIRD-PARTY-NOTICES.txt': 'THIRD-PARTY-NOTICES.md',
 };
 
+/**
+ * The latest release's files, published under data/ byte for byte, with the
+ * licence files from the repository root as in the dataset archive. Empty
+ * before the first release.
+ */
+export function publishedDataFiles(root = 'release') {
+  const version = latestReleaseVersion(root);
+  if (!version) return { manifest: null, files: [] };
+  const dir = path.join(root, `v${version}`);
+  const manifest = JSON.parse(
+    readFileSync(path.join(dir, 'manifest.json'), 'utf8'),
+  ) as ReleaseManifest;
+  const files = dataPaths(manifest).map((fileName) => {
+    const name = fileName.slice('data/'.length);
+    const source = dataLicenceFiles.includes(name)
+      ? name
+      : path.join(dir, name);
+    return { fileName, source: readFileSync(source) };
+  });
+  return { manifest, files };
+}
+
+/** Plain files at the site root and under data/, by published path. */
+export function machineReadableFiles(config: SiteConfig, root = 'release') {
+  const { manifest, files } = publishedDataFiles(root);
+  if (!manifest) return [];
+  return [
+    { fileName: 'llms.txt', source: Buffer.from(llmsTxt(config, manifest)) },
+    ...files,
+  ];
+}
+
 export function siteModule(): Plugin {
   const config = readSiteConfig();
   let building = false;
@@ -81,17 +121,15 @@ export function siteModule(): Plugin {
     },
     transformIndexHtml: (html) => transformHtml(html, config),
     generateBundle() {
+      // The page renderer's bundle carries no site files.
+      if (this.environment?.config.consumer === 'server') return;
+      const plain = machineReadableFiles(config);
       this.emitFile({
         type: 'asset',
         fileName: 'robots.txt',
         source: robotsTxt(config),
       });
-      if (config.indexing)
-        this.emitFile({
-          type: 'asset',
-          fileName: 'sitemap.xml',
-          source: sitemapXml(config),
-        });
+      for (const file of plain) this.emitFile({ type: 'asset', ...file });
       for (const [fileName, source] of Object.entries(legalFiles))
         this.emitFile({
           type: 'asset',
@@ -101,7 +139,15 @@ export function siteModule(): Plugin {
     },
     configureServer(server) {
       server.middlewares.use((req, res, next) => {
-        const source = legalFiles[(req.url ?? '').replace(/^\//, '')];
+        const url = (req.url ?? '').replace(/^\//, '');
+        const plain = machineReadableFiles(config).find(
+          (f) => f.fileName === url,
+        );
+        if (plain) {
+          res.setHeader('Content-Type', contentType(url));
+          return res.end(plain.source);
+        }
+        const source = legalFiles[url];
         if (!source) return next();
         res.setHeader('Content-Type', 'text/plain; charset=utf-8');
         res.end(readFileSync(source, 'utf8'));

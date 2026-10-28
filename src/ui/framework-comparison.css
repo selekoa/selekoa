@@ -1,0 +1,213 @@
+/* Framework comparison. Every status uses the same neutral style: the page
+   compares what editions state and never marks a cell as better or worse. */
+.cmp-scope {
+  max-width: 75ch;
+  font-weight: 500;
+}
+.cmp-legend {
+  margin-top: var(--space-5);
+}
+.cmp-legend h2 {
+  font-size: var(--heading-sub);
+}
+.cmp-legend dl {
+  display: grid;
+  gap: var(--space-2);
+  margin: var(--space-2) 0 0;
+  max-width: 85ch;
+}
+.cmp-legend dt {
+  font-weight: 600;
+}
+.cmp-legend dd {
+  margin: 0 0 0 var(--space-4);
+  color: var(--color-text-muted);
+}
+.cmp-controls {
+  display: grid;
+  gap: var(--space-4);
+  margin: var(--space-5) 0 var(--space-4);
+}
+.cmp-editions-box > summary {
+  cursor: pointer;
+  color: var(--color-accent);
+}
+.cmp-editions {
+  margin-top: var(--space-2);
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
+  gap: var(--space-2) var(--space-4);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-3) var(--space-4);
+  min-width: 0;
+}
+.cmp-editions legend {
+  font-weight: 600;
+  padding: 0 var(--space-1);
+}
+.cmp-editions label,
+.cmp-question-pick {
+  display: grid;
+  gap: 2px;
+  font-size: var(--text-sm);
+  min-width: 0;
+}
+.cmp-editions select,
+.cmp-question-pick select {
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+  font: inherit;
+  padding: 4px 6px;
+  color: var(--color-text);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border-strong);
+  border-radius: var(--radius-sm);
+}
+.cmp-controls .view-switch {
+  justify-self: start;
+  flex-wrap: wrap;
+}
+.cmp-question-pick {
+  max-width: 32rem;
+}
+.cmp-question h2 {
+  margin-top: var(--space-4);
+}
+.cmp-dimension {
+  display: block;
+  font-size: var(--text-2xs);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+.cmp-criterion {
+  max-width: 75ch;
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+}
+.cmp-rows {
+  list-style: none;
+  padding: 0;
+  margin: var(--space-4) 0 0;
+  display: grid;
+  gap: var(--space-5);
+}
+.cmp-rows > li {
+  border-top: 1px solid var(--color-border);
+  padding-top: var(--space-3);
+}
+.cmp-rows h3 {
+  margin: 0;
+  font-size: var(--text-md);
+}
+.cmp-edition {
+  display: block;
+  font-weight: 400;
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+}
+.cmp-edition-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-1) var(--space-3);
+  margin: 2px 0 var(--space-2);
+  font-size: var(--text-sm);
+  font-weight: 400;
+}
+.cmp-status {
+  margin: 0;
+  font-size: var(--text-2xs);
+  font-weight: 650;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-text);
+}
+.cmp-passages {
+  list-style: none;
+  padding: 0;
+  margin: var(--space-2) 0 0;
+  display: grid;
+  gap: var(--space-2);
+}
+.cmp-passages blockquote {
+  margin: 0;
+  padding-left: var(--space-3);
+  border-left: 2px solid var(--color-quote-rule);
+  color: var(--color-quote-text);
+  font-family: var(--font-serif);
+}
+/* A paraphrase is Selekoa's wording, so it is set as body text, not as a
+   quotation, and labelled. */
+.cmp-paraphrase {
+  margin: 0;
+  padding-left: var(--space-3);
+  border-left: 2px dotted var(--color-border-strong);
+}
+.cmp-paraphrase-label {
+  font-weight: 600;
+}
+.cmp-locator,
+.cmp-note {
+  margin: 4px 0 0;
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  overflow-wrap: anywhere;
+}
+.cmp-note-label {
+  font-weight: 600;
+}
+.cmp-cell .doc-inspect {
+  margin-top: var(--space-2);
+}
+.cmp-scroll {
+  overflow-x: auto;
+  /* Clips the visually hidden button labels inside cells, too. */
+  position: relative;
+}
+.cmp-table table {
+  border-collapse: collapse;
+  font-size: var(--text-sm);
+}
+.cmp-table th,
+.cmp-table td {
+  border-bottom: 1px solid var(--color-border);
+  padding: var(--space-2) var(--space-3);
+  text-align: left;
+  vertical-align: top;
+}
+.cmp-table td {
+  min-width: 17rem;
+  max-width: 22rem;
+}
+.cmp-table thead th {
+  min-width: 17rem;
+  font-weight: 600;
+}
+/* The question column stays in view while the frameworks scroll. */
+.cmp-table thead th:first-child,
+.cmp-table tbody th[scope='row'] {
+  position: sticky;
+  left: 0;
+  z-index: 1;
+  background: var(--color-page);
+  box-shadow: inset -1px 0 0 var(--color-border);
+  min-width: 13rem;
+  max-width: 15rem;
+}
+.cmp-table tbody th[scope='row'] {
+  font-weight: 600;
+}
+.cmp-table tbody th .cmp-criterion {
+  display: block;
+  font-weight: 400;
+  margin-top: 4px;
+}
+.cmp-dimension-row th {
+  background: var(--color-sunken);
+  font-size: var(--text-2xs);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}

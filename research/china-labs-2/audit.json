@@ -1,0 +1,893 @@
+{
+  "auditor": "fresh-context machine audit, same model family as the drafting passes",
+  "model": "same family as the drafting passes",
+  "date": "2026-10-27",
+  "method": "The auditor read docs/editorial-policy.md, scope.md and drafting-brief.md, then the 51 claims with their evidence, sources and object entities from pack.json, without reading the drafts' 'searched' notes or any coordinator commentary. Every cited source was retrieved again, sequentially, into the auditor's own cache (LG_CACHE=audit, keys audit-<source id>), and each passage was located with tools.mjs text/grep. Chinese PDF text layers were NFKC-normalised for matching. Versions and dates were checked independently of the pack's notes: blobless git clones of MoonshotAI/Kimi-K2 and Kimi-k1.5, MiniMax-AI/MiniMax-01 and MiniMax-M2, and ByteDance-Seed/seed-oss, plus the Hugging Face commits and tree APIs for Kimi-K2-Thinking, Kimi-K3, MiniMax-M3, Seed-OSS-36B-Instruct, Seed-Coder-8B-Instruct and ERNIE-4.5-300B-A47B-PT. The image-only AIIA commitment text and signatory list (the CAICT WeChat post's 1000x9898 px image) was downloaded and viewed in slices by the auditor. The cover, Commitment II and the 17-name list were read; the other commitments were not checked visually. Machine translations were compared with the Chinese originals. Same-family check: it does not satisfy the policy's cross-family requirement.",
+  "sample": {
+    "seed": 20261027,
+    "percent": 20,
+    "command": "node research/china-labs-2/tools.mjs sample 20 20261027",
+    "ids": [
+      "c2-baidu-ernie-3-report",
+      "c2-baidu-wang-haifeng-ernie-2",
+      "c2-bytedance-seed-20-model-card",
+      "c2-bytedance-seed-coder-report",
+      "c2-bytedance-seed-doubao-15-pro",
+      "c2-bytedance-seed-oss-licence",
+      "c2-governance-aiia-aisc-signatory-minimax",
+      "c2-governance-aiia-aisc-signatory-qihoo-360",
+      "c2-governance-aiia-aisc-signatory-sensetime",
+      "c2-governance-aiia-aisc-signatory-tencent",
+      "c2-governance-aiia-aisc-signatory-zhipu",
+      "c2-governance-tc260-asgf-v1-end-use-traceability",
+      "c2-governance-tc260-asgf-v1-published",
+      "c2-governance-tc260-asgf-v1-registration",
+      "c2-governance-tc260-asgf-v2-cncert-named",
+      "c2-governance-tc260-asgf-v2-loss-of-control-testing",
+      "c2-minimax-01-licence-military",
+      "c2-minimax-01-readme",
+      "c2-moonshot-k15-author-zhou",
+      "c2-moonshot-k2-author-yang",
+      "c2-moonshot-k2-author-zhou",
+      "c2-moonshot-k2-licence",
+      "c2-moonshot-k2-thinking-card",
+      "c2-moonshot-k2-thinking-licence"
+    ]
+  },
+  "targeted": [
+    "c2-minimax-investor-alibaba",
+    "c2-minimax-investor-hillhouse",
+    "c2-minimax-investor-hongshan",
+    "c2-minimax-investor-idg",
+    "c2-minimax-investor-mihoyo",
+    "c2-minimax-investor-tencent",
+    "c2-minimax-prospectus-abab1",
+    "c2-minimax-prospectus-safety-assessment",
+    "c2-minimax-01-licence",
+    "c2-minimax-m2-licence-oct",
+    "c2-minimax-m2-licence-nov",
+    "c2-minimax-m3-licence",
+    "c2-moonshot-k3-licence",
+    "c2-moonshot-k3-blog",
+    "c2-moonshot-k15-api-access",
+    "c2-bytedance-seed-coder-licence",
+    "c2-bytedance-seed-unit-of-bytedance",
+    "c2-bytedance-seed-ap-announcement",
+    "c2-baidu-ernie-45-licence",
+    "c2-baidu-ernie-bot-launch",
+    "c2-baidu-20f-fy2023-genai-filing",
+    "c2-baidu-ernie-3-titan-pcl",
+    "c2-governance-aiia-aisc-published",
+    "c2-governance-aiia-aisc-pre-release-red-teaming",
+    "c2-governance-tc260-asgf-v3-published",
+    "c2-governance-sail-frmf-v1-concordia",
+    "c2-governance-sail-frmf-v1-cites-tc260"
+  ],
+  "counts": {
+    "ok": 45,
+    "minor": 6,
+    "material": 0
+  },
+  "records": [
+    {
+      "claimId": "c2-baidu-ernie-3-report",
+      "why": "random",
+      "verdict": "ok",
+      "findings": "arXiv 2107.02137v1 PDF stamp '5 Jul 2021' and author block ending 'Hua Wu Haifeng Wang Baidu Inc.' match verbatim (e-mail line correctly omitted). Version and date kind correct.",
+      "proposedFix": null,
+      "sourcesRetrieved": [
+        {
+          "sourceId": "c2-src-ernie3-arxiv-v1",
+          "route": "direct",
+          "ok": true
+        }
+      ]
+    },
+    {
+      "claimId": "c2-baidu-wang-haifeng-ernie-2",
+      "why": "random",
+      "verdict": "ok",
+      "findings": "arXiv 1907.12412v1 title page: seven authors, Haifeng Wang last, single affiliation Baidu Inc.; stamp 29 Jul 2019. Identity rests on name plus affiliation, as the qualification says.",
+      "proposedFix": null,
+      "sourcesRetrieved": [
+        {
+          "sourceId": "c2-src-ernie2-arxiv-v1",
+          "route": "direct",
+          "ok": true
+        }
+      ]
+    },
+    {
+      "claimId": "c2-bytedance-seed-20-model-card",
+      "why": "random",
+      "verdict": "ok",
+      "findings": "PDF of 2607.00248v1 opens with the quoted title, stamp '30 Jun 2026' and 'Bytedance Seed'; §7 Contributors sentence on alphabetical order and internal aliases is verbatim (source uses a typographic apostrophe). Abstract page not separately fetched.",
+      "proposedFix": null,
+      "sourcesRetrieved": [
+        {
+          "sourceId": "c2-src-seed-20-arxiv-v1",
+          "route": "direct",
+          "ok": true
+        }
+      ]
+    },
+    {
+      "claimId": "c2-bytedance-seed-coder-report",
+      "why": "random",
+      "verdict": "ok",
+      "findings": "Abstract page reads 'Submitted on 4 Jun 2025 (this version), latest version 5 Jun 2025 (v2)'; PDF title page 'Seed-Coder: Let the Code Model Curate Data for Itself ByteDance Seed'.",
+      "proposedFix": null,
+      "sourcesRetrieved": [
+        {
+          "sourceId": "c2-src-seed-coder-arxiv-v1-abs",
+          "route": "direct",
+          "ok": true
+        },
+        {
+          "sourceId": "c2-src-seed-coder-arxiv-v1-pdf",
+          "route": "direct",
+          "ok": true
+        }
+      ]
+    },
+    {
+      "claimId": "c2-bytedance-seed-doubao-15-pro",
+      "why": "random",
+      "verdict": "ok",
+      "findings": "Page title 'Doubao 1.5pro - Doubao Team', date 2025.01.22 and the MoE sentence are present as quoted on the page read 2026-10-27 (mutable). Machine translation faithful. The qualification correctly limits the 'Doubao Team'/Seed relation to hosting.",
+      "proposedFix": null,
+      "sourcesRetrieved": [
+        {
+          "sourceId": "c2-src-seed-doubao15pro",
+          "route": "direct",
+          "ok": true
+        }
+      ]
+    },
+    {
+      "claimId": "c2-bytedance-seed-oss-licence",
+      "why": "random",
+      "verdict": "minor",
+      "findings": "Model-card sentence and Apache 2.0 heading verified at HF 497f1dca and Git 3dc77576. But the time note and the source version note say the LICENSE 'entered the Git repository on 21 August 2025' in commit 26e45ea4. In a blobless clone, LICENSE is already present, with an identical blob (5a200054), in the initial commit 79f8ca3 of 20 August 2025; commit 26e45ea 'add license' changes only inference/vllm_output_parser.py.",
+      "proposedFix": "Change the time note and the c2-src-seed-oss-gh-license version note to: the LICENSE file is present from the initial commit 79f8ca3 of 20 August 2025, unchanged to 3dc77576; drop the reference to 26e45ea4.",
+      "sourcesRetrieved": [
+        {
+          "sourceId": "c2-src-seed-oss-hf-readme",
+          "route": "direct",
+          "ok": true
+        },
+        {
+          "sourceId": "c2-src-seed-oss-gh-license",
+          "route": "direct",
+          "ok": true
+        }
+      ]
+    },
+    {
+      "claimId": "c2-governance-aiia-aisc-signatory-minimax",
+      "why": "random",
+      "verdict": "ok",
+      "findings": "Embedded image (1000x9898 px) downloaded from the post and viewed in slices by the auditor: list headed 首批签署《人工智能安全承诺》企业名单 with 17 names, '(按单位名称首字母排序)', includes 上海稀宇科技有限公司. Text-layer anchor and itcloudbd final paragraph (阿里巴巴…稀宇科技、腾讯、电信AI、中国移动已完成承诺签署) verified. Stage 'listed' and post date 2024-12-24 (create_time 1735030800) correct.",
+      "proposedFix": null,
+      "sourcesRetrieved": [
+        {
+          "sourceId": "c2-src-caict-wx-aisc-2024",
+          "route": "direct",
+          "ok": true
+        },
+        {
+          "sourceId": "c2-src-itcloudbd-aisc-2024",
+          "route": "direct",
+          "ok": true
+        }
+      ]
+    },
+    {
+      "claimId": "c2-governance-aiia-aisc-signatory-qihoo-360",
+      "why": "random",
+      "verdict": "ok",
+      "findings": "Embedded image (1000x9898 px) downloaded from the post and viewed in slices by the auditor: list includes 三六零安全科技股份有限公司; itcloudbd passage verified.",
+      "proposedFix": null,
+      "sourcesRetrieved": [
+        {
+          "sourceId": "c2-src-caict-wx-aisc-2024",
+          "route": "direct",
+          "ok": true
+        },
+        {
+          "sourceId": "c2-src-itcloudbd-aisc-2024",
+          "route": "direct",
+          "ok": true
+        }
+      ]
+    },
+    {
+      "claimId": "c2-governance-aiia-aisc-signatory-sensetime",
+      "why": "random",
+      "verdict": "ok",
+      "findings": "Embedded image (1000x9898 px) downloaded from the post and viewed in slices by the auditor: list includes 上海商汤智能科技有限公司; itcloudbd passage verified.",
+      "proposedFix": null,
+      "sourcesRetrieved": [
+        {
+          "sourceId": "c2-src-caict-wx-aisc-2024",
+          "route": "direct",
+          "ok": true
+        },
+        {
+          "sourceId": "c2-src-itcloudbd-aisc-2024",
+          "route": "direct",
+          "ok": true
+        }
+      ]
+    },
+    {
+      "claimId": "c2-governance-aiia-aisc-signatory-tencent",
+      "why": "random",
+      "verdict": "ok",
+      "findings": "Embedded image (1000x9898 px) downloaded from the post and viewed in slices by the auditor: list includes 深圳市腾讯计算机系统有限公司; itcloudbd passage verified. The qualification rightly avoids group-structure inference.",
+      "proposedFix": null,
+      "sourcesRetrieved": [
+        {
+          "sourceId": "c2-src-caict-wx-aisc-2024",
+          "route": "direct",
+          "ok": true
+        },
+        {
+          "sourceId": "c2-src-itcloudbd-aisc-2024",
+          "route": "direct",
+          "ok": true
+        }
+      ]
+    },
+    {
+      "claimId": "c2-governance-aiia-aisc-signatory-zhipu",
+      "why": "random",
+      "verdict": "ok",
+      "findings": "Embedded image (1000x9898 px) downloaded from the post and viewed in slices by the auditor: list includes 北京智谱华章科技有限公司; itcloudbd passage verified.",
+      "proposedFix": null,
+      "sourcesRetrieved": [
+        {
+          "sourceId": "c2-src-caict-wx-aisc-2024",
+          "route": "direct",
+          "ok": true
+        },
+        {
+          "sourceId": "c2-src-itcloudbd-aisc-2024",
+          "route": "direct",
+          "ok": true
+        }
+      ]
+    },
+    {
+      "claimId": "c2-governance-tc260-asgf-v1-end-use-traceability",
+      "why": "random",
+      "verdict": "ok",
+      "findings": "CAC-hosted V1.0 PDF §4.2.2 (b) reads 提高人工智能系统最终用途追溯能力，防止被用于核生化导等大规模杀伤性武器制造等高危场景. The quote uses an ASCII comma for the full-width comma: punctuation only. Translation faithful.",
+      "proposedFix": null,
+      "sourcesRetrieved": [
+        {
+          "sourceId": "c2-src-tc260-asgf-v1-pdf",
+          "route": "direct",
+          "ok": true
+        }
+      ]
+    },
+    {
+      "claimId": "c2-governance-tc260-asgf-v1-published",
+      "why": "random",
+      "verdict": "ok",
+      "findings": "TC260 news item (发布时间 2024-09-10) opens 9月9日，在2024年国家网络安全宣传周主论坛上，全国网络安全标准化技术委员会（以下简称“网安标委”）发布《人工智能安全治理框架》1.0版; the ellipsis covers only the abbreviation. The PDF cover reads 全国网络安全标准化技术委员会 2024年9月.",
+      "proposedFix": null,
+      "sourcesRetrieved": [
+        {
+          "sourceId": "c2-src-tc260-asgf-v1-news",
+          "route": "direct",
+          "ok": true
+        },
+        {
+          "sourceId": "c2-src-tc260-asgf-v1-pdf",
+          "route": "direct",
+          "ok": true
+        }
+      ]
+    },
+    {
+      "claimId": "c2-governance-tc260-asgf-v1-registration",
+      "why": "random",
+      "verdict": "ok",
+      "findings": "§5.1 实施人工智能应用分类分级管理 contains the quoted sentence verbatim. 'Proposes' is a fair rendering of a framework measure; the qualification notes the thresholds are not quantified.",
+      "proposedFix": null,
+      "sourcesRetrieved": [
+        {
+          "sourceId": "c2-src-tc260-asgf-v1-pdf",
+          "route": "direct",
+          "ok": true
+        }
+      ]
+    },
+    {
+      "claimId": "c2-governance-tc260-asgf-v2-cncert-named",
+      "why": "random",
+      "verdict": "ok",
+      "findings": "The 2.0 PDF cover names TC260 and, beneath it, 国家计算机网络应急技术处理协调中心, with 2025年9月. The CAC item (9月15日17:23) says 在国家网信办指导下，由国家互联网应急中心牵头组织…联合制定 and calls it 全国网安标委技术文件. Observation: the predicate 'published' for CNCERT/CC rests on cover co-naming; the qualification keeps its role distinct.",
+      "proposedFix": null,
+      "sourcesRetrieved": [
+        {
+          "sourceId": "c2-src-tc260-asgf-v2-pdf",
+          "route": "direct",
+          "ok": true
+        },
+        {
+          "sourceId": "c2-src-cac-asgf-v2-release",
+          "route": "direct",
+          "ok": true
+        }
+      ]
+    },
+    {
+      "claimId": "c2-governance-tc260-asgf-v2-loss-of-control-testing",
+      "why": "random",
+      "verdict": "ok",
+      "findings": "After NFKC normalisation, §5.11 增进协同应对人工智能失控风险的共识 contains 开发者定期进行测试，判断模型是否可能带来潜在技术失控风险. The ' ... ' marks a control character, as the source note says. The 'no modal verb' qualification is accurate.",
+      "proposedFix": null,
+      "sourcesRetrieved": [
+        {
+          "sourceId": "c2-src-tc260-asgf-v2-pdf",
+          "route": "direct",
+          "ok": true
+        }
+      ]
+    },
+    {
+      "claimId": "c2-minimax-01-licence-military",
+      "why": "random",
+      "verdict": "minor",
+      "findings": "Item 2, 'Assist with, engage in or in any way associate with any military purpose.', is verbatim, and the list has nine items. The locator 'Prohibited uses, item 2' names a heading that does not exist in the file. The list is unheaded, follows Section 8 (Governing Law), and is introduced by 'You agree you will not use, or allow others to use, MiniMaxText01 or MiniMaxVL01 to:'. Section 2.b.iii incorporates a 'Prohibited Uses Policy' by reference.",
+      "proposedFix": "Locator: 'Unheaded list after Section 8 (\"You agree you will not use, or allow others to use, MiniMaxText01 or MiniMaxVL01 to:\"), item 2; presumably the Prohibited Uses Policy incorporated by Section 2.b.iii'.",
+      "sourcesRetrieved": [
+        {
+          "sourceId": "c2-src-minimax-01-license",
+          "route": "direct",
+          "ok": true
+        }
+      ]
+    },
+    {
+      "claimId": "c2-minimax-01-readme",
+      "why": "random",
+      "verdict": "ok",
+      "findings": "README at d9539f73 (2025-01-15 'Update README.md'; initial commit 2025-01-14 confirmed) introduces MiniMax-Text-01 and MiniMax-VL-01; quoted sentence verbatim. Prospectus milestone quote verified (context role appropriate).",
+      "proposedFix": null,
+      "sourcesRetrieved": [
+        {
+          "sourceId": "c2-src-minimax-01-readme",
+          "route": "direct",
+          "ok": true
+        },
+        {
+          "sourceId": "c2-src-minimax-prospectus",
+          "route": "direct",
+          "ok": true
+        }
+      ]
+    },
+    {
+      "claimId": "c2-moonshot-k15-author-zhou",
+      "why": "random",
+      "verdict": "ok",
+      "findings": "The v1 abstract page (Submitted 22 Jan 2025; v4 3 Jun 2025) lists 'Xinxing Zu, Xinyu Zhou, Xuehai Pan'. The identity with the existing co-founder entity rests on the printed name only, as the qualification says.",
+      "proposedFix": null,
+      "sourcesRetrieved": [
+        {
+          "sourceId": "c2-src-kimi-k15-abs-v1",
+          "route": "direct",
+          "ok": true
+        }
+      ]
+    },
+    {
+      "claimId": "c2-moonshot-k2-author-yang",
+      "why": "random",
+      "verdict": "ok",
+      "findings": "The v1 abstract page (Submitted 28 Jul 2025; v2 3 Feb 2026) lists 'Zhen Yang, Zhilin Yang, Zonghan Yang'. The page shows only part of the list (69 more not shown); the quoted names are visible.",
+      "proposedFix": null,
+      "sourcesRetrieved": [
+        {
+          "sourceId": "c2-src-kimi-k2-abs-v1",
+          "route": "direct",
+          "ok": true
+        }
+      ]
+    },
+    {
+      "claimId": "c2-moonshot-k2-author-zhou",
+      "why": "random",
+      "verdict": "ok",
+      "findings": "The v1 abstract page lists 'Jianren Zhou, Xinyu Zhou, Zaida Zhou'. The name-only identity is qualified.",
+      "proposedFix": null,
+      "sourcesRetrieved": [
+        {
+          "sourceId": "c2-src-kimi-k2-abs-v1",
+          "route": "direct",
+          "ok": true
+        }
+      ]
+    },
+    {
+      "claimId": "c2-moonshot-k2-licence",
+      "why": "random",
+      "verdict": "ok",
+      "findings": "The LICENSE at d778e270 (the 'initial commit' of 2025-07-11; the file's only commit in a blobless clone) begins 'Modified MIT License' / 'Copyright (c) 2025 Moonshot AI'. README '## 6. License' sentence verbatim.",
+      "proposedFix": null,
+      "sourcesRetrieved": [
+        {
+          "sourceId": "c2-src-kimi-k2-license",
+          "route": "direct",
+          "ok": true
+        },
+        {
+          "sourceId": "c2-src-kimi-k2-readme-0711",
+          "route": "direct",
+          "ok": true
+        }
+      ]
+    },
+    {
+      "claimId": "c2-moonshot-k2-thinking-card",
+      "why": "random",
+      "verdict": "ok",
+      "findings": "The card at HF 357b94ae ('Update LICENSE', 2025-11-06 15:41 UTC; initial commit 2025-11-04 confirmed) contains the quoted sentence. The date note correctly disclaims public availability.",
+      "proposedFix": null,
+      "sourcesRetrieved": [
+        {
+          "sourceId": "c2-src-kimi-k2t-readme",
+          "route": "direct",
+          "ok": true
+        }
+      ]
+    },
+    {
+      "claimId": "c2-moonshot-k2-thinking-licence",
+      "why": "random",
+      "verdict": "ok",
+      "findings": "The LICENSE at 357b94ae matches the Kimi-K2 licence text (diff: trailing newline only), including the 'Kimi K2' display requirement. Card '## 7. License' sentence verbatim.",
+      "proposedFix": null,
+      "sourcesRetrieved": [
+        {
+          "sourceId": "c2-src-kimi-k2t-license",
+          "route": "direct",
+          "ok": true
+        },
+        {
+          "sourceId": "c2-src-kimi-k2t-readme",
+          "route": "direct",
+          "ok": true
+        }
+      ]
+    },
+    {
+      "claimId": "c2-minimax-investor-alibaba",
+      "why": "targeted",
+      "verdict": "ok",
+      "findings": "Prospectus (dated December 31, 2025; HKEXnews 2025123100025.pdf) §'4. Information relating to our key Pre-IPO Investors', Alisoft China paragraph: both quotes verbatim (15.66% → 15.04% at listing application). No amount attributed; subsidiary/parent distinction kept.",
+      "proposedFix": null,
+      "sourcesRetrieved": [
+        {
+          "sourceId": "c2-src-minimax-prospectus",
+          "route": "direct",
+          "ok": true
+        }
+      ]
+    },
+    {
+      "claimId": "c2-minimax-investor-hillhouse",
+      "why": "targeted",
+      "verdict": "ok",
+      "findings": "Miheng Holdings Limited is 'wholly controlled by' Beijing Miheng (a limited partnership), 'controlled by Zhuhai Gao Ling Private Fund Management'; its general partner Wuxi Ningjun 'is controlled by Hillhouse Capital'. The statement is accurate. It omits the Zhuhai Gao Ling control line, which the qualification could mention, but it is not wrong.",
+      "proposedFix": null,
+      "sourcesRetrieved": [
+        {
+          "sourceId": "c2-src-minimax-prospectus",
+          "route": "direct",
+          "ok": true
+        }
+      ]
+    },
+    {
+      "claimId": "c2-minimax-investor-hongshan",
+      "why": "targeted",
+      "verdict": "ok",
+      "findings": "HSG paragraph: sole shareholders HongShan Capital Growth Fund VII, L.P. and Fund VI, L.P.; quote verbatim.",
+      "proposedFix": null,
+      "sourcesRetrieved": [
+        {
+          "sourceId": "c2-src-minimax-prospectus",
+          "route": "direct",
+          "ok": true
+        }
+      ]
+    },
+    {
+      "claimId": "c2-minimax-investor-idg",
+      "why": "targeted",
+      "verdict": "ok",
+      "findings": "IDG SIIs paragraph: both quotes verbatim. The statement's wording 'subsidiaries of IDG China funds managed by IDG Capital Fund Management Ltd.' matches the text.",
+      "proposedFix": null,
+      "sourcesRetrieved": [
+        {
+          "sourceId": "c2-src-minimax-prospectus",
+          "route": "direct",
+          "ok": true
+        }
+      ]
+    },
+    {
+      "claimId": "c2-minimax-investor-mihoyo",
+      "why": "targeted",
+      "verdict": "ok",
+      "findings": "Both quotes verbatim ('irrevocably and fully settled their investment in the Company on September 3, 2024'; 'first investment into the Company in 2021'). Realised settlement is stated by the filing, so stage 'invested' is supported.",
+      "proposedFix": null,
+      "sourcesRetrieved": [
+        {
+          "sourceId": "c2-src-minimax-prospectus",
+          "route": "direct",
+          "ok": true
+        }
+      ]
+    },
+    {
+      "claimId": "c2-minimax-investor-tencent",
+      "why": "targeted",
+      "verdict": "ok",
+      "findings": "Image Frame paragraph: 'wholly owned subsidiary of Tencent Holdings Limited (“Tencent”)'; 2.96% → 2.84% verified.",
+      "proposedFix": null,
+      "sourcesRetrieved": [
+        {
+          "sourceId": "c2-src-minimax-prospectus",
+          "route": "direct",
+          "ok": true
+        }
+      ]
+    },
+    {
+      "claimId": "c2-minimax-prospectus-abab1",
+      "why": "targeted",
+      "verdict": "ok",
+      "findings": "'Our Key Milestones' table (p. 201–202) begins 2022 April 'Our first text model abab1 was launched.'; 2023 May line verbatim. 'First' is the filing's own word, quoted, not the pack's.",
+      "proposedFix": null,
+      "sourcesRetrieved": [
+        {
+          "sourceId": "c2-src-minimax-prospectus",
+          "route": "direct",
+          "ok": true
+        }
+      ]
+    },
+    {
+      "claimId": "c2-minimax-prospectus-safety-assessment",
+      "why": "targeted",
+      "verdict": "minor",
+      "findings": "The sentence is verbatim, and the statement's paraphrase of the next sentence (inappropriate-output rate, user feedback, manual review) is faithful. The locator 'Business, content safety' names no heading in the filing. The passage is in Business, p. 277, at the end of the AI safety and alignment measures, just before the heading 'Preventing Inappropriate or Harmful Outputs and User Misuse'.",
+      "proposedFix": "Locator: 'Business, AI safety and alignment measures, p. 277'.",
+      "sourcesRetrieved": [
+        {
+          "sourceId": "c2-src-minimax-prospectus",
+          "route": "direct",
+          "ok": true
+        }
+      ]
+    },
+    {
+      "claimId": "c2-minimax-01-licence",
+      "why": "targeted",
+      "verdict": "ok",
+      "findings": "Heading 'MINIMAX MODEL LICENSE AGREEMENT' and the Section 1 definition excerpt are verbatim at d9539f73. Observation: the same LICENSE is already in the initial commit of 14 January 2025 (no change until the 20 February 2025 LICENSE-MODEL/LICENSE-CODE split), so 15 January is the cited commit, not the earliest. The time note's 'Date of the cited commit' is accurate.",
+      "proposedFix": null,
+      "sourcesRetrieved": [
+        {
+          "sourceId": "c2-src-minimax-01-license",
+          "route": "direct",
+          "ok": true
+        }
+      ]
+    },
+    {
+      "claimId": "c2-minimax-m2-licence-oct",
+      "why": "targeted",
+      "verdict": "minor",
+      "findings": "The text at e27aac41 (2025-10-27, 'update LICENSE and readme') is 'MIT License' / 'Copyright 2025 MiniMax AI.' as quoted. However, the repository's initial commit 31725c89 of 26 October 2025 carried an Apache License 2.0 LICENSE, which the 27 October commit replaced. The record and its qualification present the 27 October MIT text as the start of the file history ('The file was changed on 13 November 2025'), which omits a licence change one day earlier.",
+      "proposedFix": "Add to the qualification: 'The repository's initial commit of 26 October 2025 carried the Apache License 2.0 text; the MIT text replaced it on 27 October 2025.' Optionally record the 26 October state as its own snapshot.",
+      "sourcesRetrieved": [
+        {
+          "sourceId": "c2-src-minimax-m2-license-1027",
+          "route": "direct",
+          "ok": true
+        }
+      ]
+    },
+    {
+      "claimId": "c2-minimax-m2-licence-nov",
+      "why": "targeted",
+      "verdict": "ok",
+      "findings": "The 13 November 2025 commits 8bbd67e8 'Update LICENSE' and a01f06af 'Reformat license' are confirmed. The final paragraph ('Our only modification is that…' 100 million MAU or 30 million US dollars in annual recurring revenue, display “MiniMax M2”) matches the paraphrase.",
+      "proposedFix": null,
+      "sourcesRetrieved": [
+        {
+          "sourceId": "c2-src-minimax-m2-license-1113",
+          "route": "direct",
+          "ok": true
+        }
+      ]
+    },
+    {
+      "claimId": "c2-minimax-m3-licence",
+      "why": "targeted",
+      "verdict": "minor",
+      "findings": "The heading and the grant phrase are verbatim at HF 81b23f9a. But the statement's summary, 'grants permission to deal in the software for non-commercial purposes', narrows the licence's scope as a whole. Condition 2 regulates Commercial Use: display 'Built with MiniMax M3', a one-time notice, and prior written authorisation above 20 million US dollars of yearly revenue. A reader could take the record to mean that commercial use is excluded. Also, the identical LICENSE is present at the initial commit 3a41b311 of 12 June 2026, so 13 June is not the earliest commit carrying it.",
+      "proposedFix": "Qualification: 'The grant is for non-commercial purposes; condition 2 sets terms for commercial use (attribution display; notice, or prior written authorisation above 20 million US dollars yearly revenue). An appended list prohibits uses including military purposes.' Time note: 'Cited commit of 13 June 2026; the same text is present at the initial commit of 12 June 2026.'",
+      "sourcesRetrieved": [
+        {
+          "sourceId": "c2-src-minimax-m3-license",
+          "route": "direct",
+          "ok": true
+        }
+      ]
+    },
+    {
+      "claimId": "c2-moonshot-k3-licence",
+      "why": "targeted",
+      "verdict": "ok",
+      "findings": "The LICENSE at 2496450e (2026-07-27 15:14 UTC) is headed 'Kimi K3 License' / 'Copyright (c) 2026 Moonshot AI'. The HF tree at that commit includes LICENSE and 96 safetensors shards, so 'weights and code' is supported, and the initial commit of the same day already carries both. The licence's Model-as-a-Service condition (a separate agreement above 20 million US dollars over 12 months) is not mentioned; the record does not claim otherwise.",
+      "proposedFix": null,
+      "sourcesRetrieved": [
+        {
+          "sourceId": "c2-src-kimi-k3-license",
+          "route": "direct",
+          "ok": true
+        }
+      ]
+    },
+    {
+      "claimId": "c2-moonshot-k3-blog",
+      "why": "targeted",
+      "verdict": "ok",
+      "findings": "Blog (mutable, read 2026-10-27) contains 'The full model weights will be released by July 27, 2026.'; moonshot.cn homepage list shows '2026-07-16Kimi K3'. Stage 'announced' correct; date kind and mutability properly qualified.",
+      "proposedFix": null,
+      "sourcesRetrieved": [
+        {
+          "sourceId": "c2-src-kimi-k3-blog",
+          "route": "direct",
+          "ok": true
+        },
+        {
+          "sourceId": "c2-src-moonshot-home",
+          "route": "direct",
+          "ok": true
+        }
+      ]
+    },
+    {
+      "claimId": "c2-moonshot-k15-api-access",
+      "why": "targeted",
+      "verdict": "ok",
+      "findings": "README at 617e7c2d (2025-01-22 03:04 UTC 'Update README.md and Report'; initial commit 2025-01-20) contains the quoted 'Test Model by API' text. The tree at that commit holds only Kimi_k1.5.pdf, README.md and images, so the negative 'no model weights' is confirmed for this commit.",
+      "proposedFix": null,
+      "sourcesRetrieved": [
+        {
+          "sourceId": "c2-src-kimi-k15-readme",
+          "route": "direct",
+          "ok": true
+        }
+      ]
+    },
+    {
+      "claimId": "c2-bytedance-seed-coder-licence",
+      "why": "targeted",
+      "verdict": "ok",
+      "findings": "'license: mit' and 'This project is licensed under the MIT License.' verified at 1c5af72a (2025-06-06). 'license: apache-2.0' at f80ca53f (2025-04-30) and at 23ffcece (2025-05-06 03:27 UTC); 'license: mit' at 9cc504ad (2025-05-06 14:42 UTC). The change point stated in the time note is confirmed against the HF commit list.",
+      "proposedFix": null,
+      "sourcesRetrieved": [
+        {
+          "sourceId": "c2-src-seed-coder-hf-readme-1c5af72a",
+          "route": "direct",
+          "ok": true
+        },
+        {
+          "sourceId": "c2-src-seed-coder-hf-readme-f80ca53f",
+          "route": "direct",
+          "ok": true
+        }
+      ]
+    },
+    {
+      "claimId": "c2-bytedance-seed-unit-of-bytedance",
+      "why": "targeted",
+      "verdict": "ok",
+      "findings": "Card at 497f1dca: 'Seed-OSS is a series of open-source large language models developed by ByteDance's Seed Team' verbatim; card also opens 'We are ByteDance Seed Team.' Qualification appropriately limits the relation.",
+      "proposedFix": null,
+      "sourcesRetrieved": [
+        {
+          "sourceId": "c2-src-seed-oss-hf-readme",
+          "route": "direct",
+          "ok": true
+        }
+      ]
+    },
+    {
+      "claimId": "c2-bytedance-seed-ap-announcement",
+      "why": "targeted",
+      "verdict": "ok",
+      "findings": "The page (日期 2026-10-14, 分类 招聘信息) lists the work under 你将与我们共同开展以下工作. Both quotes are verbatim under the item headings 完善安全基础体系和工作流程 and 与外部伙伴共同验证并提升模型安全能力. The 'planned work' framing and the renderings of 制定 and 推动 are faithful and not widened.",
+      "proposedFix": null,
+      "sourcesRetrieved": [
+        {
+          "sourceId": "c2-src-seed-ap-2026",
+          "route": "direct",
+          "ok": true
+        }
+      ]
+    },
+    {
+      "claimId": "c2-baidu-ernie-45-licence",
+      "why": "targeted",
+      "verdict": "minor",
+      "findings": "The card's License paragraph and the LICENSE heading are verbatim at 049f3d9b (2025-06-29 09:15 UTC). The source version note says 049f3d9b was the 'latest commit on main at retrieval'. That is false: the HF commit list shows 28 commits, and those after 049f3d9b run to 47bbaf1c of 26 November 2025 (the licence wording is unchanged at current main). The statement also calls the card 'for ERNIE-4.5-300B-A47B', while the repository is baidu/ERNIE-4.5-300B-A47B-PT (the card's own heading omits -PT).",
+      "proposedFix": "Version note: 'README.md at HF commit 049f3d9b of 29 June 2025; repository created 28 June 2025; later commits exist (to at least 26 November 2025), with the licence paragraph unchanged at main on 2026-10-27.' Statement: name the repository baidu/ERNIE-4.5-300B-A47B-PT.",
+      "sourcesRetrieved": [
+        {
+          "sourceId": "c2-src-ernie45-hf-readme",
+          "route": "direct",
+          "ok": true
+        },
+        {
+          "sourceId": "c2-src-ernie45-hf-license",
+          "route": "direct",
+          "ok": true
+        }
+      ]
+    },
+    {
+      "claimId": "c2-baidu-ernie-bot-launch",
+      "why": "targeted",
+      "verdict": "ok",
+      "findings": "PR Newswire page ('News provided by Baidu, Inc.', Mar 16, 2023, 10:20 ET) bullets verbatim; 20-F 'AI Capabilities' sentence verbatim. Invitation-stage scoping correct.",
+      "proposedFix": null,
+      "sourcesRetrieved": [
+        {
+          "sourceId": "c2-src-baidu-erniebot-prn-2023",
+          "route": "direct",
+          "ok": true
+        },
+        {
+          "sourceId": "c2-src-baidu-20f-fy2023",
+          "route": "relay (direct HTTP 403)",
+          "ok": true
+        }
+      ]
+    },
+    {
+      "claimId": "c2-baidu-20f-fy2023-genai-filing",
+      "why": "targeted",
+      "verdict": "ok",
+      "findings": "The 20-F (relay; the signature block is dated March 15, 2024) contains the sentence verbatim in the Regulation section. 'Required under' slightly paraphrases 'necessary … in accordance with', and the quote carries the exact wording. The direct SEC fetch returned 403, and the EDGAR index (for the formal filing date) was not retrieved.",
+      "proposedFix": null,
+      "sourcesRetrieved": [
+        {
+          "sourceId": "c2-src-baidu-20f-fy2023",
+          "route": "relay (direct HTTP 403)",
+          "ok": true
+        }
+      ]
+    },
+    {
+      "claimId": "c2-baidu-ernie-3-titan-pcl",
+      "why": "targeted",
+      "verdict": "ok",
+      "findings": "Title page of 2112.12731v1 (23 Dec 2021) marks Yang Xiang, Wei Zeng, Ge Li and Wen Gao with § Peng Cheng Laboratory and the rest with † Baidu Inc. The paraphrase is accurate. Observation: the predicate 'published' from PCL to the paper encodes co-affiliation only. The qualification says so, but the maintainer may prefer a predicate that does not suggest publisher status.",
+      "proposedFix": null,
+      "sourcesRetrieved": [
+        {
+          "sourceId": "c2-src-ernie3-titan-arxiv-v1",
+          "route": "direct",
+          "ok": true
+        }
+      ]
+    },
+    {
+      "claimId": "c2-governance-aiia-aisc-published",
+      "why": "targeted",
+      "verdict": "ok",
+      "findings": "The CAICT post text layer contains 中国人工智能产业发展联盟积极践行…起草发布《人工智能安全承诺》. Embedded image (1000x9898 px) downloaded from the post and viewed in slices by the auditor: the cover shows the AIIA logo with 'Artificial Intelligence Industry Alliance', the bilingual title, and 中国人工智能产业发展联盟 2024年12月, matching the visual paraphrase. create_time is 2024-12-24 17:00.",
+      "proposedFix": null,
+      "sourcesRetrieved": [
+        {
+          "sourceId": "c2-src-caict-wx-aisc-2024",
+          "route": "direct",
+          "ok": true
+        }
+      ]
+    },
+    {
+      "claimId": "c2-governance-aiia-aisc-pre-release-red-teaming",
+      "why": "targeted",
+      "verdict": "ok",
+      "findings": "Embedded image (1000x9898 px) downloaded from the post and viewed in slices by the auditor: 承诺二 reads 通过专业性的仿真测试团队，在发布、更新人工智能模型之前对其进行红队测试. The English text reads 'Through dedicated simulation and red-teaming experts to rigorously test AI models prior to their release or update.' The itcloudbd text matches with 红队测试; the People's Daily raw HTML reads 之前对其进行测试 (no 红队), as the qualification says.",
+      "proposedFix": null,
+      "sourcesRetrieved": [
+        {
+          "sourceId": "c2-src-caict-wx-aisc-2024",
+          "route": "direct",
+          "ok": true
+        },
+        {
+          "sourceId": "c2-src-itcloudbd-aisc-2024",
+          "route": "direct",
+          "ok": true
+        },
+        {
+          "sourceId": "c2-src-people-aisc-2024",
+          "route": "direct",
+          "ok": true
+        }
+      ]
+    },
+    {
+      "claimId": "c2-governance-tc260-asgf-v3-published",
+      "why": "targeted",
+      "verdict": "ok",
+      "findings": "TC260 news item (发布时间 2026-09-14): 9月14日，在2026年国家网络安全宣传周开幕式上，全国网络安全标准化技术委员会（以下简称“网安标委”）发布《人工智能安全治理框架3.0》. The preface sentence is verbatim, and 'under the guidance of' the CAC is in the same sentence. No 替代/废止 (replace/repeal) wording was found, so treating it as not superseding is correct.",
+      "proposedFix": null,
+      "sourcesRetrieved": [
+        {
+          "sourceId": "c2-src-tc260-asgf-v3-news",
+          "route": "direct",
+          "ok": true
+        },
+        {
+          "sourceId": "c2-src-tc260-asgf-v3-pdf",
+          "route": "direct",
+          "ok": true
+        }
+      ]
+    },
+    {
+      "claimId": "c2-governance-sail-frmf-v1-concordia",
+      "why": "targeted",
+      "verdict": "ok",
+      "findings": "'How to cite this report: Shanghai AI Lab and Concordia AI, “Frontier AI Risk Management Framework (v1.0),” July 2025.' verbatim; executive summary 'Shanghai AI Laboratory, in collaboration with Concordia AI'. Hosted on concordia-ai.com only, as the source notes.",
+      "proposedFix": null,
+      "sourcesRetrieved": [
+        {
+          "sourceId": "c2-src-sail-frmf-v1-en",
+          "route": "direct",
+          "ok": true
+        }
+      ]
+    },
+    {
+      "claimId": "c2-governance-sail-frmf-v1-cites-tc260",
+      "why": "targeted",
+      "verdict": "ok",
+      "findings": "§1.1 'Our Framework builds upon the International AI Safety Report (January 2025)5 and AI Safety Governance Framework v1.06' (the ellipsis drops footnote marker 5 only); footnote 6 'National Technical Committee 260 on Cybersecurity of SAC, \"AI Safety Governance Framework,\" 2024' verified. Predicate 'cites' exists in src/domain/predicates.ts.",
+      "proposedFix": null,
+      "sourcesRetrieved": [
+        {
+          "sourceId": "c2-src-sail-frmf-v1-en",
+          "route": "direct",
+          "ok": true
+        }
+      ]
+    }
+  ],
+  "retrievalFailures": [
+    {
+      "sourceId": "c2-src-baidu-20f-fy2023",
+      "url": "https://www.sec.gov/Archives/edgar/data/1329099/000119312524068527/d584913d20f.htm",
+      "issue": "Direct retrieval returned HTTP 403; retrieved through the r.jina.ai relay (text layer, not the original bytes). The EDGAR filing index was not retrieved, so the filing date rests on the signature date (March 15, 2024) and the pack's accession record."
+    },
+    {
+      "sourceId": "(all mutable pages)",
+      "issue": "web.archive.org refuses connections from this environment (HTTP 403), so it was not attempted. No archive capture was checked, so earlier wording of mutable pages (Kimi K3 blog, moonshot.cn, the Seed pages, PR Newswire, the CAICT post, itcloudbd, People's Daily, the TC260 and CAC news items) is not authenticated."
+    }
+  ]
+}

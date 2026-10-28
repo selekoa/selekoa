@@ -142,8 +142,43 @@ export const predicates = {
   signed_commitment: {
     label: 'is documented as a signatory of',
     description:
-      'An organisation is documented as having signed, joined or made a commitment text, with the date basis (announcement, signature or listing) and any stated scope. Signing is not compliance, implementation or effectiveness.',
-    subjects: ['organisation'],
+      'An organisation, a public body or a country is documented as having signed, joined or made a commitment text, with the date basis (announcement, signature or listing) and any stated scope. Signing is not compliance, implementation or effectiveness.',
+    subjects: ['organisation', 'public_body', 'country'],
+    objects: ['document'],
+  },
+  lists_participants: {
+    label: 'lists as participants',
+    description:
+      'A document lists the participants in a text or process, such as signatories, endorsers, attendees or reporting organisations, at a stated date (schema 2.19). The record gives the list and how many entries it has, stated by the source or counted by Selekoa. Lists of the same text at different dates are separate records. Being listed is not a signature, ratification or compliance, and absence from a list is not a refusal.',
+    subjects: ['document'],
+    objects: ['literal'],
+  },
+  introduced: {
+    label: 'introduced',
+    description:
+      'A legislative chamber records the introduction of a bill on the stated date (schema 2.19). Introduction is not passage or enactment.',
+    subjects: ['public_body'],
+    objects: ['document'],
+  },
+  passed: {
+    label: 'passed',
+    description:
+      'A legislative chamber passed a bill on the stated date, as the cited record says (schema 2.19). The statement names the chamber. Passage by one chamber is not enactment.',
+    subjects: ['public_body'],
+    objects: ['document'],
+  },
+  vetoed: {
+    label: 'vetoed',
+    description:
+      'An executive returned a bill without signature on the stated date (schema 2.19). Stated reasons are attributed to the executive, not adopted.',
+    subjects: ['public_body'],
+    objects: ['document'],
+  },
+  revoked: {
+    label: 'revoked',
+    description:
+      'An instrument or a public body revoked or rescinded another instrument on the stated date (schema 2.19). An announced revocation not yet formalised carries the activity stage announced and is dated by its announcement. Revocation does not erase the revoked text or its history, and says nothing about measures taken under it.',
+    subjects: ['document', 'public_body'],
     objects: ['document'],
   },
   declined_commitment: {

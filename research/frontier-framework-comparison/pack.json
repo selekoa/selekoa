@@ -27,7 +27,7 @@
         {
           "id": "autonomy",
           "label": "Autonomy, self-improvement or AI research and development",
-          "criterion": "The edition names autonomous operation, replication, self-improvement, AI research and development automation, or loss of control through such capabilities as a tracked domain."
+          "criterion": "The edition names autonomous operation, replication, self-improvement, AI research and development automation, or loss of control through such capabilities as a tracked domain. Overlap rule: autonomy, self-replication and AI research and development are recorded here; loss of control or misalignment defined through deception or undermining human oversight is recorded under D1.other."
         },
         {
           "id": "persuasion",
@@ -37,7 +37,7 @@
         {
           "id": "other",
           "label": "Other named domains",
-          "criterion": "Any further domain the edition names as tracked (for example misalignment, deceptive behaviour, sabotage of oversight). Research categories or monitored-only domains are recorded with their status as worded."
+          "criterion": "Any further domain the edition names as tracked (for example misalignment, deceptive behaviour, sabotage of oversight). Research categories or monitored-only domains are recorded with their status as worded. Overlap rule: loss of control or misalignment defined through deception or undermining human oversight is recorded here; autonomy, self-replication and AI research and development go under D1.autonomy."
         }
       ]
     },
@@ -112,7 +112,7 @@
         {
           "id": "competitor",
           "label": "Provisions conditioned on other developers",
-          "criterion": "A provision that changes what the developer will do depending on what other developers do or have (often called a “race” or “marginal risk” clause)."
+          "criterion": "A provision that relaxes, adjusts or conditions the developer’s safeguards or commitments on what other developers do or have (often called a “race” or “marginal risk” clause). Scope tests that decide whether a model is covered by the framework are recorded as context, not counted."
         },
         {
           "id": "discretion",
@@ -134,7 +134,7 @@
         {
           "id": "external",
           "label": "Public or external reporting",
-          "criterion": "Disclosure the edition says it will make to the public, to governments, or to other external parties."
+          "criterion": "Disclosure the edition says it will make to the public, to governments, or to other external parties, excluding publication of the framework itself (recorded under D8 Revision)."
         }
       ]
     },
@@ -850,9 +850,9 @@
       },
       "cacheKey": "meta-faf-v1-1",
       "retrieval": null,
-      "checked": "Not retrieved in this run: the publisher address returns HTTP 500 and the Internet Archive refused connections from this environment. Cells carry passages recorded in the application dataset, not re-checked.",
-      "inspected": "Not retrieved in this run. Cells carry seed passages from Selekoa's dataset verbatim with their recorded locators; quotes not re-checked against the edition.",
-      "notes": "Only threshold, required-action and decision-authority provisions are recorded in the seeds; facets without a seed passage are not-applicable, not evidence of absence."
+      "checked": "Not retrieved in the 2026-10-15 run (publisher address HTTP 500; Internet Archive unreachable). Re-checked blind by a reviewer from a different model family on 2026-10-27 (codex-meta-v1-1-2026-10-27.md): the raw replay of the 2025-02-13 capture was retrieved (HTTP 200, application/pdf; decoded PDF 14,652,734 bytes, SHA-256 9fa301dfb67bf8d392abda13a2466358ffde756f14a9d55e4fe2d95f7cfecc21), all 21 pages read, and all eight carried quotations matched on their recorded pages.",
+      "inspected": "Whole edition, PDF pp. 1–21, read in the text layer of the decoded PDF of the Internet Archive capture of 2025-02-13; cover and PDF pp. 12–13 and 19 inspected visually, by the cross-family re-check of 2026-10-27. Cells applied on 2026-10-28 by the maintainer’s decisions of 2026-10-27 and 2026-10-28.",
+      "notes": "Cells carried from the dataset were confirmed by the re-check; the other cells are its findings, quoted and located by the re-check, with the comparison’s mapping notes. Three findings that differed from the stored status in a way that needed judgement (D4.oversight, D7.external, D8.process) were decided by the maintainer on 2026-10-28; see review/followups-2026-10-28.md."
     },
     {
       "id": "meta-aasf-v2-0",
@@ -974,8 +974,7 @@
           "note": "The three factors are threat models, capabilities and evaluations."
         }
       ],
-      "mappingNote": "The ASL-3 misuse capability (PDF p. 6) is defined in domain-general terms (deliberately-caused catastrophic harm); CBRN is named as a domain of interest for threat models and evaluations. Bioweapons risks are stated as the first area of effort (PDF p. 7, ASL-3 item 1).",
-      "partial": true
+      "mappingNote": "CBRN is named as a domain of interest for threat models and evaluations, and the ASL-3 red-teaming measure says misuse domains 'should at a minimum include causes of extreme CBRN risks, and cybersecurity' (PDF p. 8). The ASL-3 misuse capability itself (PDF p. 6) is defined in domain-general terms (deliberately-caused catastrophic harm); no CBRN-specific threshold is set. Bioweapons risks are stated as the first area of effort (PDF p. 20)."
     },
     {
       "edition": "rsp-2023",
@@ -990,8 +989,7 @@
           "note": "The ASL-3 deployment red-teaming measure (PDF p. 8) also names cybersecurity as a minimum misuse domain."
         }
       ],
-      "mappingNote": "Cyber is named as a misuse domain of interest under the domain-general ASL-3 misuse capability; no cyber-specific threshold is defined.",
-      "partial": true
+      "mappingNote": "Cyber is named as a misuse domain of interest under the domain-general ASL-3 misuse capability; no cyber-specific threshold is set."
     },
     {
       "edition": "rsp-2023",
@@ -1003,7 +1001,8 @@
           "quote": "Autonomous replication in the lab: The model shows early signs of autonomous self-replication ability",
           "locator": "PDF p. 7 (printed p. 7), 'ASL-3 Commitments' › 'ASL-3 Capabilities and Threat Models', numbered item 2, first sentence",
           "reusesEvidence": null,
-          "note": "The same sentence defines the trigger as a 50% aggregate success rate on the tasks in the autonomy-evaluations appendix (PDF pp. 15–20)."
+          "note": "The same sentence defines the trigger as a 50% aggregate success rate on the tasks in the autonomy-evaluations appendix (PDF pp. 15–20).",
+          "paraphraseCheck": "Cross-family paraphrase check of 2026-10-28 (codex-paraphrases-2026-10-28.md): drift; the paraphrase left out the definition of early signs as a 50% aggregate success rate on the appendix tasks. Corrected on 2026-10-28 by the maintainer’s decision of that day; the cell’s status is unchanged."
         }
       ]
     },
@@ -1069,8 +1068,7 @@
           "note": "An ASL-3 model is one that meets this or the autonomy criterion either immediately or with post-training costing under 1% of total training cost (PDF p. 6); the baseline is illustrated as access to search engines and textbooks."
         }
       ],
-      "partial": true,
-      "mappingNote": "The quotation gives the misuse criterion only. The edition defines an ASL-3 model as one meeting this or an autonomous-replication criterion, immediately or with post-training costing under 1% of total training cost (PDF pp. 6–7)."
+      "mappingNote": "The quotation gives the misuse criterion. The edition's general definition of an ASL-3 model is one meeting this or an autonomous-replication criterion, immediately or with post-training costing under 1% of total training cost (PDF pp. 6–7)."
     },
     {
       "edition": "rsp-2023",
@@ -1257,8 +1255,7 @@
           "reusesEvidence": null
         }
       ],
-      "mappingNote": "Named as a capability that 'may require stronger safeguards than ASL-2' and is under ongoing assessment; no Capability Threshold or Required Safeguards are set for it.",
-      "partial": true
+      "mappingNote": "Named under 'Ongoing Assessment' as a capability that may require stronger safeguards than ASL-2; the edition sets no Capability Threshold or Required Safeguards for it and says these will be determined 'in a future iteration of this policy'."
     },
     {
       "edition": "rsp-v2-0",
@@ -1369,7 +1366,6 @@
           "note": "'The pretraining model' is compared with the model that required the ASL-3 Security Standard (same paragraph); footnote treats the Security Standard alone as sufficient to continue training."
         }
       ],
-      "partial": true,
       "mappingNote": "Deployment and further scaling are 'restricted' (not stated as paused) if the Required Safeguards showing cannot be made; training pauses in the stated pretraining case."
     },
     {
@@ -1412,7 +1408,8 @@
           "quote": "notably more performant on automated tests in risk-relevant domains (defined as 4x or more in Effective Compute",
           "locator": "PDF p. 9 (printed p. 5), §3.1 Preliminary Assessment, numbered item 1",
           "reusesEvidence": null,
-          "note": "This and a second criterion (six months' accumulated finetuning and elicitation improvements, item 2) define 'notably more capable', which triggers a comprehensive assessment; the RSO may also require one at their discretion."
+          "note": "This and a second criterion (six months' accumulated finetuning and elicitation improvements, item 2) define 'notably more capable', which triggers a comprehensive assessment; the RSO may also require one at their discretion.",
+          "paraphraseCheck": "Cross-family paraphrase check of 2026-10-28 (codex-paraphrases-2026-10-28.md): locator wrong; its locator named only item 1, while the six-month alternative is item 2. Corrected on 2026-10-28 by the maintainer’s decision of that day; the cell’s status is unchanged."
         }
       ]
     },
@@ -1526,8 +1523,7 @@
           "reusesEvidence": null
         }
       ],
-      "mappingNote": "Named as a capability under ongoing assessment that may require stronger safeguards than ASL-2; no Capability Threshold or Required Safeguards are set for it.",
-      "partial": true
+      "mappingNote": "Named under 'Ongoing Assessment' as a capability that may require stronger safeguards than ASL-2; the edition sets no Capability Threshold or Required Safeguards for it and says these will be determined 'in a future iteration of this policy'."
     },
     {
       "edition": "rsp-v2-1",
@@ -1539,7 +1535,8 @@
           "quote": "AI R&D-4: The ability to fully automate the work of an entry-level, remote-only Researcher at Anthropic. AI R&D-5: The ability to cause dramatic acceleration in the rate of effective scaling.",
           "locator": "PDF p. 20 (printed p. 16), Appendix C Detailed Capability Thresholds, 'Autonomous AI Research and Development', entries 'AI R&D-4' and 'AI R&D-5' (first sentence)",
           "reusesEvidence": null,
-          "note": "The same two thresholds appear in the §2 table (PDF p. 8); a Model Autonomy checkpoint is used to rule them out and is linked to autonomous replication (PDF pp. 8–9, 20)."
+          "note": "The same two thresholds appear in the §2 table (PDF p. 8); a Model Autonomy checkpoint is used to rule them out and is linked to autonomous replication (PDF pp. 8–9, 20).",
+          "paraphraseCheck": "Cross-family paraphrase check of 2026-10-28 (codex-paraphrases-2026-10-28.md): drift; the paraphrase left out the second sentence of AI R&D-5, which defines dramatic acceleration as a one-year rise in effective training compute equal to two years of the average rate of early 2018 to early 2024. Corrected on 2026-10-28 by the maintainer’s decision of that day; the cell’s status is unchanged."
         }
       ]
     },
@@ -1592,7 +1589,8 @@
           "quote": "AI R&D-4: The ability to fully automate the work of an entry-level, remote-only Researcher at Anthropic. AI R&D-5: The ability to cause dramatic acceleration in the rate of effective scaling.",
           "locator": "PDF p. 20 (printed p. 16), Appendix C Detailed Capability Thresholds, 'Autonomous AI Research and Development', entries 'AI R&D-4' and 'AI R&D-5' (first sentence)",
           "reusesEvidence": null,
-          "note": "CBRN-4 (substantial uplift to moderately resourced state programs) is the fourth labelled threshold. A Model Autonomy checkpoint sits below the AI R&D thresholds (PDF pp. 8–9)."
+          "note": "CBRN-4 (substantial uplift to moderately resourced state programs) is the fourth labelled threshold. A Model Autonomy checkpoint sits below the AI R&D thresholds (PDF pp. 8–9).",
+          "paraphraseCheck": "Cross-family paraphrase check of 2026-10-28 (codex-paraphrases-2026-10-28.md): drift; the paraphrase left out the second sentence of AI R&D-5, which defines dramatic acceleration as a one-year rise in effective training compute equal to two years of the average rate of early 2018 to early 2024. Corrected on 2026-10-28 by the maintainer’s decision of that day; the cell’s status is unchanged."
         }
       ],
       "mappingNote": "Levels are split into labelled Capability Thresholds (capabilities) and ASL Standards (safeguards); §1 (PDF p. 7) describes a Capability Threshold as a trigger for shifting from an ASL-N Standard to an ASL-N+1 Standard or higher. ASL-2 and ASL-3 Standards are specified; ASL-4 Standards are referenced as expected requirements to be detailed later."
@@ -1645,7 +1643,6 @@
           "note": "'The pretraining model' is compared with the model that required the ASL-3 Security Standard (same paragraph); footnote treats the Security Standard alone as sufficient to continue training."
         }
       ],
-      "partial": true,
       "mappingNote": "Deployment and further scaling are 'restricted' (not stated as paused) if the Required Safeguards showing cannot be made; training pauses in the stated pretraining case."
     },
     {
@@ -1688,7 +1685,8 @@
           "quote": "notably more performant on automated tests in risk-relevant domains (defined as 4x or more in Effective Compute",
           "locator": "PDF p. 10 (printed p. 6), §3.1 Preliminary Assessment, numbered item 1",
           "reusesEvidence": null,
-          "note": "This and a second criterion (six months' accumulated finetuning and elicitation improvements, item 2) define 'notably more capable', which triggers a comprehensive assessment; the RSO may also require one at their discretion."
+          "note": "This and a second criterion (six months' accumulated finetuning and elicitation improvements, item 2) define 'notably more capable', which triggers a comprehensive assessment; the RSO may also require one at their discretion.",
+          "paraphraseCheck": "Cross-family paraphrase check of 2026-10-28 (codex-paraphrases-2026-10-28.md): locator wrong; its locator named only item 1, while the six-month alternative is item 2. Corrected on 2026-10-28 by the maintainer’s decision of that day; the cell’s status is unchanged."
         }
       ]
     },
@@ -1802,8 +1800,7 @@
           "reusesEvidence": null
         }
       ],
-      "mappingNote": "Named as a capability under ongoing assessment that may require stronger safeguards than ASL-2; no Capability Threshold or Required Safeguards are set for it.",
-      "partial": true
+      "mappingNote": "Named under 'Ongoing Assessment' as a capability that may require stronger safeguards than ASL-2; the edition sets no Capability Threshold or Required Safeguards for it and says these will be determined 'in a future iteration of this policy'."
     },
     {
       "edition": "rsp-v2-2",
@@ -1815,7 +1812,8 @@
           "quote": "AI R&D-4: The ability to fully automate the work of an entry-level, remote-only Researcher at Anthropic. AI R&D-5: The ability to cause dramatic acceleration in the rate of effective scaling.",
           "locator": "PDF p. 20 (printed p. 16), Appendix C Detailed Capability Thresholds, 'Autonomous AI Research and Development', entries 'AI R&D-4' and 'AI R&D-5' (first sentence)",
           "reusesEvidence": null,
-          "note": "The same two thresholds appear in the §2 table (PDF p. 8); a Model Autonomy checkpoint is used to rule them out and is linked to autonomous replication (PDF pp. 8–9, 20)."
+          "note": "The same two thresholds appear in the §2 table (PDF p. 8); a Model Autonomy checkpoint is used to rule them out and is linked to autonomous replication (PDF pp. 8–9, 20).",
+          "paraphraseCheck": "Cross-family paraphrase check of 2026-10-28 (codex-paraphrases-2026-10-28.md): drift; the paraphrase left out the second sentence of AI R&D-5, which defines dramatic acceleration as a one-year rise in effective training compute equal to two years of the average rate of early 2018 to early 2024. Corrected on 2026-10-28 by the maintainer’s decision of that day; the cell’s status is unchanged."
         }
       ]
     },
@@ -1868,7 +1866,8 @@
           "quote": "AI R&D-4: The ability to fully automate the work of an entry-level, remote-only Researcher at Anthropic. AI R&D-5: The ability to cause dramatic acceleration in the rate of effective scaling.",
           "locator": "PDF p. 20 (printed p. 16), Appendix C Detailed Capability Thresholds, 'Autonomous AI Research and Development', entries 'AI R&D-4' and 'AI R&D-5' (first sentence)",
           "reusesEvidence": null,
-          "note": "CBRN-4 (substantial uplift to moderately resourced state programs) is the fourth labelled threshold. A Model Autonomy checkpoint sits below the AI R&D thresholds (PDF pp. 8–9)."
+          "note": "CBRN-4 (substantial uplift to moderately resourced state programs) is the fourth labelled threshold. A Model Autonomy checkpoint sits below the AI R&D thresholds (PDF pp. 8–9).",
+          "paraphraseCheck": "Cross-family paraphrase check of 2026-10-28 (codex-paraphrases-2026-10-28.md): drift; the paraphrase left out the second sentence of AI R&D-5, which defines dramatic acceleration as a one-year rise in effective training compute equal to two years of the average rate of early 2018 to early 2024. Corrected on 2026-10-28 by the maintainer’s decision of that day; the cell’s status is unchanged."
         }
       ],
       "mappingNote": "Levels are split into labelled Capability Thresholds (capabilities) and ASL Standards (safeguards); §1 (PDF p. 7) describes a Capability Threshold as a trigger for shifting from an ASL-N Standard to an ASL-N+1 Standard or higher. ASL-2 and ASL-3 Standards are specified; ASL-4 Standards are referenced as expected requirements to be detailed later."
@@ -1921,7 +1920,6 @@
           "note": "'The pretraining model' is compared with the model that required the ASL-3 Security Standard (same paragraph); footnote treats the Security Standard alone as sufficient to continue training."
         }
       ],
-      "partial": true,
       "mappingNote": "Deployment and further scaling are 'restricted' (not stated as paused) if the Required Safeguards showing cannot be made; training pauses in the stated pretraining case."
     },
     {
@@ -1964,7 +1962,8 @@
           "quote": "notably more performant on automated tests in risk-relevant domains (defined as 4x or more in Effective Compute",
           "locator": "PDF p. 10 (printed p. 6), §3.1 Preliminary Assessment, numbered item 1",
           "reusesEvidence": null,
-          "note": "This and a second criterion (six months' accumulated finetuning and elicitation improvements, item 2) define 'notably more capable', which triggers a comprehensive assessment; the RSO may also require one at their discretion."
+          "note": "This and a second criterion (six months' accumulated finetuning and elicitation improvements, item 2) define 'notably more capable', which triggers a comprehensive assessment; the RSO may also require one at their discretion.",
+          "paraphraseCheck": "Cross-family paraphrase check of 2026-10-28 (codex-paraphrases-2026-10-28.md): locator wrong; its locator named only item 1, while the six-month alternative is item 2. Corrected on 2026-10-28 by the maintainer’s decision of that day; the cell’s status is unchanged."
         }
       ]
     },
@@ -2204,8 +2203,7 @@
           "note": "Applies only in Appendix A's 'Anthropic in the lead' scenario. 'This' refers to a strong argument that catastrophic risk is contained, along the lines of the industry-wide recommendations."
         }
       ],
-      "mappingNote": "The only delay commitments are in Appendix A and are tied to competitor scenarios (Anthropic in the lead; competitors with strong safety measures); see D6.competitor. No passage commits to not training or deploying a model without adequate safeguards (the dataset records that provision as not found in this edition).",
-      "partial": true
+      "mappingNote": "The only delay commitments are in Appendix A and are tied to competitor scenarios (Anthropic in the lead; competitors with strong safety measures); see D6.competitor. No passage commits to not training or deploying a model without adequate safeguards (the dataset records that provision as not found in this edition)."
     },
     {
       "edition": "rsp-v3-0",
@@ -2234,8 +2232,7 @@
           "note": "Otherwise the Board and LTBT are informed after the CEO and RSO approve a Risk Report."
         }
       ],
-      "mappingNote": "Otherwise the CEO and RSO share their decision(s), the Risk Report and internal feedback with the Board and LTBT after approval (§3.4 item 4). External reviewers of Risk Reports are selected in consultation with the Board and LTBT and asked to publish commentary (§3.6); an approximately annual third-party review of procedural compliance is commissioned (§4).",
-      "partial": true
+      "mappingNote": "Otherwise the CEO and RSO share their decision(s), the Risk Report and internal feedback with the Board and LTBT after approval (§3.4 item 4). External reviewers of Risk Reports are selected in consultation with the Board and LTBT and asked to publish commentary (§3.6); an approximately annual third-party review of procedural compliance is commissioned (§4)."
     },
     {
       "edition": "rsp-v3-0",
@@ -2322,7 +2319,7 @@
           "note": "The section adds that Anthropic will aim to minimize redactions."
         }
       ],
-      "mappingNote": "Also: the Frontier Safety Roadmap is published in redacted form (§2); external reviewers are asked to publish commentary within 30 days (§3.6.2); for the high-stakes sabotage opportunities row the company column says threat-pathway content and policy recommendations will be shared with policymakers; substantiated noncompliance involving a material safety risk 'may' be publicly noticed (§4)."
+      "mappingNote": "Also: the Frontier Safety Roadmap is published in redacted form (§2); external reviewers are asked to publish commentary within 30 days (§3.6.2); for the novel chemical/biological weapons production row (PDF p. 7) the company column says threat-pathway content and policy recommendations will be shared with policymakers; substantiated noncompliance involving a material safety risk 'may' be publicly noticed (§4)."
     },
     {
       "edition": "rsp-v3-0",
@@ -2403,7 +2400,8 @@
           "quote": "AI systems that can fully automate, or otherwise dramatically accelerate, the work of large, top-tier teams of human researchers",
           "locator": "PDF p. 8, §1, threshold table, row 'Automated R&D in key domains', left column, first sentence",
           "reusesEvidence": null,
-          "note": "The sentence continues: in domains where fast progress could cause threats to international security or rapid disruptions to the global balance of power."
+          "note": "The sentence continues: in domains where fast progress could cause threats to international security or rapid disruptions to the global balance of power.",
+          "paraphraseCheck": "Cross-family paraphrase check of 2026-10-28 (codex-paraphrases-2026-10-28.md): drift; the paraphrase left out the restriction to domains where fast progress could threaten international security or the global balance of power. Corrected on 2026-10-28 by the maintainer’s decision of that day; the cell’s status is unchanged."
         }
       ],
       "mappingNote": "Named as a threshold for automated R&D in key domains, with evaluations currently focused on AI R&D. Autonomous, goal-directed operation appears as a component of the high-stakes sabotage opportunities row (see D1.other). There is no separate autonomous replication threshold."
@@ -2472,7 +2470,8 @@
           "quote": "fully substitute for our entire set of Research Scientists and Research Engineers, at competitive costs",
           "locator": "PDF p. 8, §1, threshold table, row 'Automated R&D in key domains', left column, paragraph beginning 'We will consider this threshold'",
           "reusesEvidence": "evidence-prov-rsp-v3-1-automated-rd-threshold",
-          "note": "Condition (1) for considering the threshold met (models would be able to do this); the sentence continues '(i.e., within a factor of 5)' and gives alternative (2), 'dramatic acceleration' of AI progress, defined as double the rate of progress plausibly attributable to automated research."
+          "note": "Condition (1) for considering the threshold met (models would be able to do this); the sentence continues '(i.e., within a factor of 5)' and gives alternative (2), 'dramatic acceleration' of AI progress, defined as double the rate of progress plausibly attributable to automated research.",
+          "paraphraseCheck": "Cross-family paraphrase check of 2026-10-28 (codex-paraphrases-2026-10-28.md): drift; the paraphrase left out the gloss of competitive cost as within a factor of five, and its locator stopped before the continuation on PDF p. 9. Corrected on 2026-10-28 by the maintainer’s decision of that day; the cell’s status is unchanged."
         }
       ],
       "mappingNote": "No general definition of reaching a threshold: each row describes a capability that would call for heightened mitigations. Only the Automated R&D row has an operationalization (two alternative conditions); from v3.1 'highly capable' in §3.6 refers to this threshold.",
@@ -2513,8 +2512,7 @@
           "note": "The next sentence says Anthropic 'would strongly consider pausing development and/or deployment' to improve the safety profiles of its models."
         }
       ],
-      "mappingNote": "Delay commitments are tied to Appendix A competitor scenarios (see D6.competitor); outside them the edition says it would 'strongly consider' pausing (conditional wording, added in v3.1). No passage commits to not training or deploying a model without adequate safeguards (the dataset records that provision as not found in this edition).",
-      "partial": true
+      "mappingNote": "Delay commitments are tied to Appendix A competitor scenarios (see D6.competitor); outside them the edition says it would 'strongly consider' pausing (conditional wording, added in v3.1). No passage commits to not training or deploying a model without adequate safeguards (the dataset records that provision as not found in this edition)."
     },
     {
       "edition": "rsp-v3-1",
@@ -2543,8 +2541,7 @@
           "note": "Otherwise the Board and LTBT are informed after the CEO and RSO approve a Risk Report."
         }
       ],
-      "mappingNote": "Otherwise the CEO and RSO share their decision(s), the Risk Report and internal feedback with the Board and LTBT after approval (§3.4 item 4). External reviewers of Risk Reports are selected in consultation with the Board and LTBT and asked to publish commentary (§3.6); an approximately annual third-party review of procedural compliance is commissioned (§4).",
-      "partial": true
+      "mappingNote": "Otherwise the CEO and RSO share their decision(s), the Risk Report and internal feedback with the Board and LTBT after approval (§3.4 item 4). External reviewers of Risk Reports are selected in consultation with the Board and LTBT and asked to publish commentary (§3.6); an approximately annual third-party review of procedural compliance is commissioned (§4)."
     },
     {
       "edition": "rsp-v3-1",
@@ -2631,7 +2628,7 @@
           "note": "The section adds that Anthropic will aim to minimize redactions."
         }
       ],
-      "mappingNote": "Also: the Frontier Safety Roadmap is published in redacted form (§2); external reviewers are asked to publish commentary within 30 days (§3.6.2); for the high-stakes sabotage opportunities row the company column says threat-pathway content and policy recommendations will be shared with policymakers; substantiated noncompliance involving a material safety risk 'may' be publicly noticed (§4)."
+      "mappingNote": "Also: the Frontier Safety Roadmap is published in redacted form (§2); external reviewers are asked to publish commentary within 30 days (§3.6.2); for the novel chemical/biological weapons production row (PDF p. 7) the company column says threat-pathway content and policy recommendations will be shared with policymakers; substantiated noncompliance involving a material safety risk 'may' be publicly noticed (§4)."
     },
     {
       "edition": "rsp-v3-1",
@@ -2780,7 +2777,8 @@
           "quote": "fully substitute for our entire set of Research Scientists and Research Engineers, at competitive costs",
           "locator": "PDF p. 8, §1, threshold table, row 'Automated R&D in key domains', left column, paragraph beginning 'We will consider this threshold'",
           "reusesEvidence": null,
-          "note": "Condition (1) for considering the threshold met (models would be able to do this); the sentence continues '(i.e., within a factor of 5)' and gives alternative (2), 'dramatic acceleration' of AI progress, defined as double the rate of progress plausibly attributable to automated research."
+          "note": "Condition (1) for considering the threshold met (models would be able to do this); the sentence continues '(i.e., within a factor of 5)' and gives alternative (2), 'dramatic acceleration' of AI progress, defined as double the rate of progress plausibly attributable to automated research.",
+          "paraphraseCheck": "Cross-family paraphrase check of 2026-10-28 (codex-paraphrases-2026-10-28.md): drift; the paraphrase left out the gloss of competitive cost as within a factor of five, and its locator stopped before the continuation on PDF p. 9. Corrected on 2026-10-28 by the maintainer’s decision of that day; the cell’s status is unchanged."
         }
       ],
       "mappingNote": "No general definition of reaching a threshold: each row describes a capability that would call for heightened mitigations. Only the Automated R&D row has an operationalization (two alternative conditions); from v3.1 'highly capable' in §3.6 refers to this threshold.",
@@ -2821,8 +2819,7 @@
           "note": "The next sentence says Anthropic 'would strongly consider pausing development and/or deployment' to improve the safety profiles of its models."
         }
       ],
-      "mappingNote": "Delay commitments are tied to Appendix A competitor scenarios (see D6.competitor); outside them the edition says it would 'strongly consider' pausing (conditional wording, added in v3.1). No passage commits to not training or deploying a model without adequate safeguards (the dataset records that provision as not found in this edition).",
-      "partial": true
+      "mappingNote": "Delay commitments are tied to Appendix A competitor scenarios (see D6.competitor); outside them the edition says it would 'strongly consider' pausing (conditional wording, added in v3.1). No passage commits to not training or deploying a model without adequate safeguards (the dataset records that provision as not found in this edition)."
     },
     {
       "edition": "rsp-v3-2",
@@ -2857,8 +2854,7 @@
           "reusesEvidence": "evidence-prov-rsp-v3-2-ltbt-review-request"
         }
       ],
-      "mappingNote": "Otherwise the CEO and RSO share their decision(s), the Risk Report and internal feedback with the Board and LTBT after approval (§3.4 item 4). External reviewers of Risk Reports are selected with the Board consulted and LTBT approval required (from v3.2) and asked to publish commentary (§3.6); an approximately annual third-party review of procedural compliance is commissioned (§4).",
-      "partial": true
+      "mappingNote": "Otherwise the CEO and RSO share their decision(s), the Risk Report and internal feedback with the Board and LTBT after approval (§3.4 item 4). External reviewers of Risk Reports are selected with the Board consulted and LTBT approval required (from v3.2) and asked to publish commentary (§3.6); an approximately annual third-party review of procedural compliance is commissioned (§4)."
     },
     {
       "edition": "rsp-v3-2",
@@ -2951,7 +2947,7 @@
           "note": "The section adds that Anthropic will aim to minimize redactions."
         }
       ],
-      "mappingNote": "Also: the Frontier Safety Roadmap is published in redacted form (§2); external reviewers are asked to publish commentary within 30 days (§3.6.2); for the high-stakes sabotage opportunities row the company column says threat-pathway content and policy recommendations will be shared with policymakers; substantiated noncompliance involving a material safety risk 'may' be publicly noticed (§4)."
+      "mappingNote": "Also: the Frontier Safety Roadmap is published in redacted form (§2); external reviewers are asked to publish commentary within 30 days (§3.6.2); for the novel chemical/biological weapons production row (PDF p. 7) the company column says threat-pathway content and policy recommendations will be shared with policymakers; substantiated noncompliance involving a material safety risk 'may' be publicly noticed (§4)."
     },
     {
       "edition": "rsp-v3-2",
@@ -3024,7 +3020,8 @@
           "quote": "AI systems that can fully automate, or otherwise dramatically accelerate, the work of large, top-tier teams of human researchers",
           "locator": "PDF p. 8, §1, threshold table, row 'Automated R&D in key domains', left column, first sentence",
           "reusesEvidence": null,
-          "note": "The sentence continues: in domains where fast progress could cause threats to international security or rapid disruptions to the global balance of power."
+          "note": "The sentence continues: in domains where fast progress could cause threats to international security or rapid disruptions to the global balance of power.",
+          "paraphraseCheck": "Cross-family paraphrase check of 2026-10-28 (codex-paraphrases-2026-10-28.md): drift; the paraphrase left out the restriction to domains where fast progress could threaten international security or the global balance of power. Corrected on 2026-10-28 by the maintainer’s decision of that day; the cell’s status is unchanged."
         }
       ],
       "mappingNote": "Named as a threshold for automated R&D in key domains, with evaluations currently focused on AI R&D. Autonomous, goal-directed operation appears as a component of the misaligned AI systems in high-stakes settings row (see D1.other). There is no separate autonomous replication threshold."
@@ -3093,7 +3090,8 @@
           "quote": "observe or expect double the rate of progress … in AI aggregate capabilities compared to the rate we’d expect in the absence of significant AI contributions to AI R&D",
           "locator": "PDF p. 9, §1, threshold table, row 'Automated R&D in key domains', left column, paragraph beginning 'We would consider scenario (2)', condition (a)",
           "reusesEvidence": "evidence-prov-rsp-v3-3-automated-rd-threshold",
-          "note": "Condition (a) of scenario (2), 'dramatic acceleration'; the spaced ellipsis after 'progress' omits only a footnote marker. Measured against the rate expected without significant AI contributions to AI R&D. Condition (b) requires the doubling to be plausibly attributable to automated research or engineering; scenario (1) is that models could fully substitute for all Research Scientists and Research Engineers at competitive costs."
+          "note": "Condition (a) of scenario (2), 'dramatic acceleration'; the spaced ellipsis after 'progress' omits only a footnote marker. Measured against the rate expected without significant AI contributions to AI R&D. Condition (b) requires the doubling to be plausibly attributable to automated research or engineering; scenario (1) is that models could fully substitute for all Research Scientists and Research Engineers at competitive costs.",
+          "paraphraseCheck": "Cross-family paraphrase check of 2026-10-28 (codex-paraphrases-2026-10-28.md): drift; the paraphrase gave condition (a) as if sufficient alone, leaving out condition (b), that the doubling plausibly be substantially attributable to automated research or engineering such that the trend could bring further acceleration. Corrected on 2026-10-28 by the maintainer’s decision of that day; the cell’s status is unchanged."
         }
       ],
       "mappingNote": "No general definition of reaching a threshold: each row describes a capability that would call for heightened mitigations. Only the Automated R&D row has an operationalization (two alternative scenarios).",
@@ -3134,8 +3132,7 @@
           "note": "The next sentence says Anthropic 'would strongly consider pausing development and/or deployment' to improve the safety profiles of its models."
         }
       ],
-      "mappingNote": "Delay commitments are tied to Appendix A competitor scenarios (see D6.competitor); outside them the edition says it would 'strongly consider' pausing (conditional wording, added in v3.1). No passage commits to not training or deploying a model without adequate safeguards (the dataset records that provision as not found in this edition).",
-      "partial": true
+      "mappingNote": "Delay commitments are tied to Appendix A competitor scenarios (see D6.competitor); outside them the edition says it would 'strongly consider' pausing (conditional wording, added in v3.1). No passage commits to not training or deploying a model without adequate safeguards (the dataset records that provision as not found in this edition)."
     },
     {
       "edition": "rsp-v3-3",
@@ -3170,8 +3167,7 @@
           "reusesEvidence": "evidence-prov-rsp-v3-3-ltbt-review-request"
         }
       ],
-      "mappingNote": "Otherwise the CEO and RSO share their decision(s), the Risk Report and internal feedback with the Board and LTBT after approval (§3.4 item 4). External reviewers of Risk Reports are selected with the Board consulted and LTBT approval required (from v3.2) and asked to publish commentary (§3.6); an approximately annual third-party review of procedural compliance is commissioned (§4).",
-      "partial": true
+      "mappingNote": "Otherwise the CEO and RSO share their decision(s), the Risk Report and internal feedback with the Board and LTBT after approval (§3.4 item 4). External reviewers of Risk Reports are selected with the Board consulted and LTBT approval required (from v3.2) and asked to publish commentary (§3.6); an approximately annual third-party review of procedural compliance is commissioned (§4)."
     },
     {
       "edition": "rsp-v3-3",
@@ -3264,7 +3260,7 @@
           "note": "The section adds that Anthropic will aim to minimize redactions."
         }
       ],
-      "mappingNote": "Also: the Frontier Safety Roadmap is published in redacted form (§2); external reviewers are asked to publish commentary within 30 days (§3.6.2); for the misaligned AI systems in high-stakes settings row the company column says threat-pathway content and policy recommendations will be shared with policymakers; substantiated noncompliance involving a material safety risk 'may' be publicly noticed (§4)."
+      "mappingNote": "Also: the Frontier Safety Roadmap is published in redacted form (§2); external reviewers are asked to publish commentary within 30 days (§3.6.2); for the novel chemical/biological weapons production row (PDF p. 7) the company column says threat-pathway content and policy recommendations will be shared with policymakers; substantiated noncompliance involving a material safety risk 'may' be publicly noticed (§4)."
     },
     {
       "edition": "rsp-v3-3",
@@ -3339,7 +3335,8 @@
           "quote": "AI systems that can fully automate, or otherwise dramatically accelerate, the work of large, top-tier teams of human researchers",
           "locator": "PDF p. 8, §1, threshold table, row 'Automated R&D in key domains', left column, first sentence",
           "reusesEvidence": null,
-          "note": "The sentence continues: in domains where fast progress could cause threats to international security or rapid disruptions to the global balance of power."
+          "note": "The sentence continues: in domains where fast progress could cause threats to international security or rapid disruptions to the global balance of power.",
+          "paraphraseCheck": "Cross-family paraphrase check of 2026-10-28 (codex-paraphrases-2026-10-28.md): drift; the paraphrase left out the restriction to domains where fast progress could threaten international security or the global balance of power. Corrected on 2026-10-28 by the maintainer’s decision of that day; the cell’s status is unchanged."
         }
       ],
       "mappingNote": "Named as a threshold for automated R&D in key domains, with evaluations currently focused on AI R&D. Autonomous, goal-directed operation appears as a component of the misaligned AI systems in high-stakes settings row (see D1.other). There is no separate autonomous replication threshold."
@@ -3408,7 +3405,8 @@
           "quote": "double the rate of progress … compared to both the rate we’d expect and the fastest rate of extended progress",
           "locator": "PDF p. 9, §1, threshold table, row 'Automated R&D in key domains', left column, paragraph beginning 'We would consider scenario (2)', condition (a)",
           "reusesEvidence": "evidence-prov-rsp-v3-4-automated-rd-threshold",
-          "note": "Condition (a) of scenario (2), 'dramatic acceleration'; the spaced ellipsis after 'progress' omits a footnote marker and 'in AI aggregate capabilities'. Measured in AI aggregate capabilities, with footnote 9 defining extended progress as over at least three model generations. Condition (b) requires the doubling to be plausibly attributable to automated research or engineering; scenario (1) is that models could fully substitute for all Research Scientists and Research Engineers at competitive costs."
+          "note": "Condition (a) of scenario (2), 'dramatic acceleration'; the spaced ellipsis after 'progress' omits a footnote marker and 'in AI aggregate capabilities'. Measured in AI aggregate capabilities, with footnote 9 defining extended progress as over at least three model generations. Condition (b) requires the doubling to be plausibly attributable to automated research or engineering; scenario (1) is that models could fully substitute for all Research Scientists and Research Engineers at competitive costs.",
+          "paraphraseCheck": "Cross-family paraphrase check of 2026-10-28 (codex-paraphrases-2026-10-28.md): drift; the paraphrase gave condition (a) as if sufficient alone, leaving out condition (b), that the doubling plausibly be substantially attributable to automated research or engineering such that continued progress seems likely to bring further acceleration. Corrected on 2026-10-28 by the maintainer’s decision of that day; the cell’s status is unchanged."
         }
       ],
       "mappingNote": "No general definition of reaching a threshold: each row describes a capability that would call for heightened mitigations. Only the Automated R&D row has an operationalization (two alternative scenarios). v3.4 compares the doubling against both the expected rate and the fastest observed extended rate.",
@@ -3449,8 +3447,7 @@
           "note": "The next sentence says Anthropic 'would strongly consider pausing development and/or deployment' to improve the safety profiles of its models."
         }
       ],
-      "mappingNote": "Delay commitments are tied to Appendix A competitor scenarios (see D6.competitor); outside them the edition says it would 'strongly consider' pausing (conditional wording, added in v3.1). No passage commits to not training or deploying a model without adequate safeguards (the dataset records that provision as not found in this edition).",
-      "partial": true
+      "mappingNote": "Delay commitments are tied to Appendix A competitor scenarios (see D6.competitor); outside them the edition says it would 'strongly consider' pausing (conditional wording, added in v3.1). No passage commits to not training or deploying a model without adequate safeguards (the dataset records that provision as not found in this edition)."
     },
     {
       "edition": "rsp-v3-4",
@@ -3485,8 +3482,7 @@
           "reusesEvidence": "evidence-prov-rsp-v3-4-ltbt-review-request"
         }
       ],
-      "mappingNote": "Otherwise the CEO and RSO share their decision(s), the Risk Report and internal feedback with the Board and LTBT after approval (§3.4 item 4). External reviewers of Risk Reports are selected with the Board consulted and LTBT approval required (from v3.2) and asked to publish commentary (§3.6); an approximately annual third-party review of procedural compliance is commissioned (§4).",
-      "partial": true
+      "mappingNote": "Otherwise the CEO and RSO share their decision(s), the Risk Report and internal feedback with the Board and LTBT after approval (§3.4 item 4). External reviewers of Risk Reports are selected with the Board consulted and LTBT approval required (from v3.2) and asked to publish commentary (§3.6); an approximately annual third-party review of procedural compliance is commissioned (§4)."
     },
     {
       "edition": "rsp-v3-4",
@@ -3584,10 +3580,10 @@
           "quote": "disclose the existence of each redaction",
           "locator": "PDF p. 14, §3.5 Publication and Redactions, paragraph after the list of redaction reasons",
           "reusesEvidence": null,
-          "note": "The sentence continues: made in the public version of the report, with a brief, possibly very high-level justification."
+          "note": "The sentence continues: 'made in the public version of the report and aim to give a brief justification for such redactions', adding that in many cases this will necessarily be very high-level. The disclosure of each redaction is stated as a commitment; the justification is an aim."
         }
       ],
-      "mappingNote": "Also: the Frontier Safety Roadmap is published in redacted form (§2); external reviewers are asked to publish commentary within 30 days (§3.6.2); for the misaligned AI systems in high-stakes settings row the company column says threat-pathway content and policy recommendations will be shared with policymakers; substantiated noncompliance involving a material safety risk 'may' be publicly noticed (§4)."
+      "mappingNote": "Also: the Frontier Safety Roadmap is published in redacted form (§2); external reviewers are asked to publish commentary within 30 days (§3.6.2); for the novel chemical/biological weapons production row (PDF p. 7) the company column says threat-pathway content and policy recommendations will be shared with policymakers; substantiated noncompliance involving a material safety risk 'may' be publicly noticed (§4)."
     },
     {
       "edition": "rsp-v3-4",
@@ -3897,7 +3893,7 @@
           "alert",
           "external"
         ],
-        "hitsNotCounted": "PDF p. 6 (Future work): 'We are exploring internal policies around alerting relevant stakeholder bodies when, for example, evaluation thresholds are met' describes a policy under exploration, not a disclosure the edition says it will make. PDF p. 6: 'we will publish substantive revisions as appropriate' concerns the Framework itself (recorded under D8 Revision). No commitment to disclose evaluation results, threshold determinations or mitigations to the public or governments was found."
+        "hitsNotCounted": "PDF p. 6 (Future work): 'We are exploring internal policies around alerting relevant stakeholder bodies when, for example, evaluation thresholds are met' describes a policy under exploration, not a disclosure the edition says it will make. PDF p. 6 (Future work): 'we will publish substantive revisions as appropriate' was considered; it is publication of the Framework itself, which the criterion excludes (recorded under D8 Revision). No commitment to disclose evaluation results, threshold determinations or mitigations to the public or governments was found."
       }
     },
     {
@@ -4181,7 +4177,8 @@
           "quote": "If we assess that a model has reached a CCL that poses an unmitigated and material risk to overall public safety, we aim to share information with appropriate government authorities",
           "locator": "PDF p. 7 (printed p. 7), Governance and Accountability, 'Disclosure', first sentence (continues on PDF p. 8)",
           "reusesEvidence": "evidence-prov-fsf-v2-0-government-disclosure",
-          "note": "The sentence continues 'where it will facilitate the development of safe AI'; the edition adds it 'may also consider disclosing information to other external organizations' (PDF p. 8)."
+          "note": "The sentence continues 'where it will facilitate the development of safe AI'; the edition adds it 'may also consider disclosing information to other external organizations' (PDF p. 8).",
+          "paraphraseCheck": "Cross-family paraphrase check of 2026-10-28 (codex-paraphrases-2026-10-28.md): drift; the paraphrase left out the condition that sharing will facilitate the development of safe AI. Corrected on 2026-10-28 by the maintainer’s decision of that day; the cell’s status is unchanged."
         }
       ],
       "mappingNote": "Conditional wording ('aim to'). This served copy splits the sentence across PDF pp. 7–8; the 2025-02-05 archive capture has it on PDF p. 8."
@@ -4209,11 +4206,11 @@
           "id": "fsf-v2-0.D8.changes.1",
           "quote": "Note that we have removed the Autonomy risk domain, which was included in Frontier Safety Framework version 1.0.",
           "locator": "PDF p. 5 (printed p. 5), Table 1, footnote 9, first sentence",
-          "reusesEvidence": null
+          "reusesEvidence": null,
+          "note": "The footnote continues: 'Most of the advanced risk that was captured by this CCL is now covered by our misalignment section.'"
         }
       ],
-      "mappingNote": "No consolidated changelog: the 'Updates and changes' page (PDF p. 9) lists only Version 1.0 and a corrected link (21 March 2025). Changes from v1.0 are stated in passing: Future Work (PDF p. 8) says 'we have updated our CCLs and underlying threat models from version 1.0', and footnote 6 (PDF p. 4) also says the deployment mitigation process 'is derived from that required by Deployment Level 2' in v1.0.",
-      "partial": true
+      "mappingNote": "No consolidated changelog: the 'Updates and changes' page (PDF p. 9) lists only Version 1.0 and a corrected link (21 March 2025). Changes from v1.0 are stated in passing: Future Work (PDF p. 8) says 'we have updated our CCLs and underlying threat models from version 1.0', and footnote 6 (PDF p. 4) also says the deployment mitigation process 'is derived from that required by Deployment Level 2' in v1.0."
     },
     {
       "edition": "fsf-v3-0",
@@ -4364,8 +4361,7 @@
           "note": "Refers to the deployment-mitigation acceptance criterion for misuse CCLs."
         }
       ],
-      "mappingNote": "No explicit statement that development or deployment will be put on hold (the v2.0 'on hold' sentence is absent). The closest provisions condition external deployment, and for ML R&D CCLs also large scale internal deployment (PDF p. 12), on governance approval of a safety case.",
-      "partial": true
+      "mappingNote": "A deployment gate: external deployment, and for ML R&D CCLs also large scale internal deployment (PDF p. 12), takes place only after governance approval of a safety case. The misuse deployment-mitigation criterion applies 'only for external deployment, not further development'. No passage states that development will be put on hold (the v2.0 'on hold' sentence is absent)."
     },
     {
       "edition": "fsf-v3-0",
@@ -4481,7 +4477,8 @@
           "quote": "If we assess that a model has reached a CCL that poses an unmitigated and material risk to overall public safety, we aim to share relevant information with appropriate government authorities",
           "locator": "PDF p. 16 (printed p. 16), §5.2 Disclosures, first paragraph, first sentence",
           "reusesEvidence": "evidence-prov-fsf-v3-0-government-disclosure",
-          "note": "The sentence continues 'where it will facilitate safety of frontier AI'; the section adds the developer 'may also consider disclosing information to other external organisations'."
+          "note": "The sentence continues 'where it will facilitate safety of frontier AI'; the section adds the developer 'may also consider disclosing information to other external organisations'.",
+          "paraphraseCheck": "Cross-family paraphrase check of 2026-10-28 (codex-paraphrases-2026-10-28.md): drift; the paraphrase left out the condition that sharing will facilitate the safety of frontier AI. Corrected on 2026-10-28 by the maintainer’s decision of that day; the cell’s status is unchanged."
         }
       ],
       "mappingNote": "Conditional wording ('aim to')."
@@ -4676,8 +4673,7 @@
           "note": "The sentence continues '(including a safety case where a CCL has been reached)'."
         }
       ],
-      "mappingNote": "No explicit statement that development or deployment will be put on hold. The closest provision conditions external deployment (and, under §3.1.2, high-risk internal deployment) on a governance determination. The misuse deployment-mitigation acceptance criterion is stated as 'required only for external deployment, not internal deployment or further development' (PDF p. 7).",
-      "partial": true
+      "mappingNote": "A deployment gate: external deployment (and, under §3.1.2, high-risk internal deployment) takes place only after a governance determination that residual risk is acceptable. The misuse deployment-mitigation acceptance criterion is 'required only for external deployment, not internal deployment or further development' (PDF p. 7). No passage states that development will be put on hold."
     },
     {
       "edition": "fsf-v3-1",
@@ -4726,7 +4722,8 @@
           "quote": "We conduct a critical capability assessment prior to the first external deployment … of a new frontier AI model.",
           "locator": "PDF p. 5 (printed p. 5), §1.3.2 Inherent Risk Assessment, first paragraph, second sentence",
           "reusesEvidence": null,
-          "note": "Footnote marker 4 omitted at the ellipsis."
+          "note": "Footnote marker 4 omitted at the ellipsis.",
+          "paraphraseCheck": "Cross-family paraphrase check of 2026-10-28 (codex-paraphrases-2026-10-28.md): drift; the paraphrase left out footnote 4, attached to the same sentence, under which the assessment may not be conducted for low-risk external deployments. Corrected on 2026-10-28 by the maintainer’s decision of that day; the cell’s status is unchanged."
         }
       ],
       "mappingNote": "Material capability change assessments are run 'on various checkpoints upon the completion of a post-training run' (PDF p. 5). For subsequent versions, a further critical capability assessment follows if the model has meaningful new capabilities or material performance increases that could undermine the risk-acceptance justification. No compute or calendar interval is stated."
@@ -5059,7 +5056,8 @@
           "id": "preparedness-beta-2023.D7.internal.1",
           "quote": "providing a monthly report (sent to the SAG, Leadership and BoD) synthesizing the above with any potential protective actions",
           "locator": "PDF p. 23, Governance › Operations › 'Process', Preparedness team responsibilities, fifth item",
-          "reusesEvidence": null
+          "reusesEvidence": null,
+          "paraphraseCheck": "Cross-family paraphrase check of 2026-10-28 (codex-paraphrases-2026-10-28.md): drift; the paraphrase left out that the SAG Chair, OpenAI Leadership and/or the Board can adjust the monthly cadence as needed. Corrected on 2026-10-28 by the maintainer’s decision of that day; the cell’s status is unchanged."
         }
       ],
       "mappingNote": "The edition also states that the Framework, reports and decisions will be documented and visible to the Board and within OpenAI, with redactions as needed (PDF p. 24, 'Internal visibility')."
@@ -5082,7 +5080,7 @@
           "share",
           "external"
         ],
-        "hitsNotCounted": "'publishing Responsible Scaling Policies' (PDF p. 3) describes other organisations. 'public' (PDF p. 9 and elsewhere) occurs in threshold definitions ('disrupt public life'). 'report' hits concern internal reports to the SAG, Leadership and Board (recorded under D7 Internal reporting). System cards are named only as an existing safety process (PDF p. 20). 'External access' (PDF p. 25): 'We will also continue to enable external research and government access for model releases' concerns access to models for red-teaming and testing, not disclosure of reports, evaluations or decisions. No commitment to disclose Scorecard results, decisions or reports to the public or to governments was found."
+        "hitsNotCounted": "'publishing Responsible Scaling Policies' (PDF p. 3) describes other organisations. 'public' (PDF p. 9 and elsewhere) occurs in threshold definitions ('disrupt public life'). 'report' hits concern internal reports to the SAG, Leadership and Board (recorded under D7 Internal reporting). System cards are named only as an existing safety process (PDF p. 20). 'External access' (PDF p. 25): 'We will also continue to enable external research and government access for model releases' concerns access to models for red-teaming and testing, not disclosure of reports, evaluations or decisions. Adjacent passages recorded as context: 'alerting distribution partners' (PDF p. 14, Mitigations, first paragraph) is a conditional mitigation option, and 'Scorecard evaluations (and corresponding mitigations) will be audited by qualified, independent third-parties to ensure accurate reporting of results' (PDF p. 25, Accountability, Audits) is a third-party audit; neither is a disclosure commitment. No commitment to disclose Scorecard results, decisions or reports to the public or to governments was found."
       }
     },
     {
@@ -5179,8 +5177,7 @@
           "reusesEvidence": null
         }
       ],
-      "mappingNote": "Named as a Research Category without thresholds. Table 2 also names Sandbagging as a Research Category; deception appears as an example within Undermining Safeguards.",
-      "partial": true
+      "mappingNote": "Named as a Research Category, not a Tracked Category: the edition sets no thresholds for it. Table 2 also names Sandbagging as a Research Category; deception appears as an example within Undermining Safeguards."
     },
     {
       "edition": "preparedness-v2",
@@ -5453,8 +5450,7 @@
           "reusesEvidence": null
         }
       ],
-      "mappingNote": "Named as a systemic risk category; no tier table is given, and §2.2 states that risks are estimated for CBRN, cyber offense and loss of control (PDF p. 7).",
-      "partial": true
+      "mappingNote": "Named as one of the key risk categories and given its own section under §2.4 Risk tiers, without a tier table; the edition says its approach is 'exploratory' and the tier 'subject to further research'. §2.2 says risks are currently estimated for CBRN, cyber offense and loss of control, and that an approach for harmful manipulation is in early stages (PDF p. 7)."
     },
     {
       "edition": "frontier-governance-2026",
@@ -5581,6 +5577,7 @@
       "facet": "D6.competitor",
       "status": "not-found",
       "entries": [],
+      "mappingNote": "Exemption from Model Report updates by reference to the EU Code of Practice's similarly-safe-or-safer test, whose safe reference model may be another provider's model (Code, Appendix 2.1); governs reporting only, not safeguards.",
       "notFound": {
         "inspected": "Whole text layer, PDF pp. 1–22 (all sections read).",
         "searchTerms": [
@@ -5594,7 +5591,7 @@
           "similarly safe",
           "other deployed"
         ],
-        "hitsNotCounted": "PDF p. 4, §1: draws on RSPs and 'industry best practices' (not a conditional provision). PDF p. 5, §2.1: 'industry bodies such as the Frontier Model Forum' as feedback sources. PDF p. 7, §2.2: 'insights from other deployed models' as a risk-assessment input, not a provision that changes OpenAI's actions. PDF p. 18, §4: no Model Report update needed if 'the model is considered similarly safe or safer (under Appendix 2.2 of the Code of Practice)'; the FGF does not say this compares with other developers' models and it governs report updates only, so it is not counted (uncertain). PDF p. 22, §7.2: 'other incidents affecting the industry' as an assessment factor. 'developer' hits (PDF pp. 6, 12) concern a model evading its developer's controls. No hits for 'competit', 'race', 'marginal' or 'peer'."
+        "hitsNotCounted": "PDF p. 4, §1: draws on RSPs and 'industry best practices' (not a conditional provision). PDF p. 5, §2.1: 'industry bodies such as the Frontier Model Forum' as feedback sources. PDF p. 7, §2.2: 'insights from other deployed models' as a risk-assessment input, not a provision that changes OpenAI's actions. PDF p. 18, §4: no Model Report update needed if 'the model is considered similarly safe or safer (under Appendix 2.2 of the Code of Practice)'; it governs report updates only, not safeguards, so it is not counted (see the mapping note). PDF p. 22, §7.2: 'other incidents affecting the industry' as an assessment factor. 'developer' hits (PDF pp. 6, 12) concern a model evading its developer's controls. No hits for 'competit', 'race', 'marginal' or 'peer'."
       }
     },
     {
@@ -5626,7 +5623,8 @@
           "id": "frontier-governance-2026.D7.internal.1",
           "quote": "We document a justification for why the systemic risks stemming from the model are acceptable, including reasonably foreseeable conditions under which the justification may no longer hold, as informed by recommendations from OpenAI’s Safety Advisory Group and external experts, as available and appropriate.",
           "locator": "PDF p. 13 (printed p. 11), §2.5 Safety mitigations, second paragraph, second sentence",
-          "reusesEvidence": "evidence-prov-frontier-governance-2026-risk-acceptance-recommendations"
+          "reusesEvidence": "evidence-prov-frontier-governance-2026-risk-acceptance-recommendations",
+          "paraphraseCheck": "Cross-family paraphrase check of 2026-10-28 (codex-paraphrases-2026-10-28.md): drift; the paraphrase attached the qualifier “as available and appropriate” to the external experts alone, where the passage places it after the whole clause; the correction keeps the passage’s ambiguity and does not resolve it. Corrected on 2026-10-28 by the maintainer’s decision of that day; the cell’s status is unchanged."
         }
       ],
       "mappingNote": "The passage records a documented justification but does not name its internal recipients. §2.6 states that the incident response plan includes notifying appropriate internal teams (PDF p. 14).",
@@ -5641,7 +5639,8 @@
           "id": "frontier-governance-2026.D7.external.1",
           "quote": "We also publish details of these assessments in system cards or in other reporting when a model launches.",
           "locator": "PDF p. 18 (printed p. 16), §4 Model reporting, first paragraph, second sentence",
-          "reusesEvidence": null
+          "reusesEvidence": null,
+          "paraphraseCheck": "Cross-family paraphrase check of 2026-10-28 (codex-paraphrases-2026-10-28.md): drift; the paraphrase left out the boundary set by the preceding sentence, which limits the assessments to models in scope of the Framework. Corrected on 2026-10-28 by the maintainer’s decision of that day; the cell’s status is unchanged."
         },
         {
           "id": "frontier-governance-2026.D7.external.2",
@@ -5651,7 +5650,7 @@
           "note": "The sentence is conditional on an incident being determined reportable under applicable laws."
         }
       ],
-      "mappingNote": "The first paragraph of §4 also names a Safety and Security Model Report ('Transparency Reports' under the TFAIA); §7.1 states that changelogs for material updates are published within 30 days (PDF p. 21)."
+      "mappingNote": "The first paragraph of §4 also names a Safety and Security Model Report ('Transparency Reports' under the TFAIA); §7.1 states that changelogs for material updates are published within 30 days (PDF p. 21); as publication of the framework itself, that is recorded under D8 Revision, not here."
     },
     {
       "edition": "frontier-governance-2026",
@@ -5668,7 +5667,8 @@
           "id": "frontier-governance-2026.D8.process.2",
           "quote": "OpenAI will complete a Framework Assessment at least once every 12 months",
           "locator": "PDF p. 22 (printed p. 20), §7.2 Framework assessment, first sentence",
-          "reusesEvidence": null
+          "reusesEvidence": null,
+          "paraphraseCheck": "Cross-family paraphrase check of 2026-10-28 (codex-paraphrases-2026-10-28.md): drift; the paraphrase left out that the 12 months run from the effective dates of the TFAIA and the EU Code of Practice. Corrected on 2026-10-28 by the maintainer’s decision of that day; the cell’s status is unchanged."
         }
       ],
       "mappingNote": "'Presented … for oversight' is not stated as approval: the edition names no approver. §7.1 states that updates may be proposed by named officers, that the Legal function oversees the update process, and that changelogs for material updates are published within 30 days (PDF p. 21). The edition describes itself as overlapping with the Preparedness Framework, which OpenAI continues to use and evolve (PDF p. 4)."
@@ -5712,8 +5712,7 @@
           "reusesEvidence": null
         }
       ],
-      "mappingNote": "Named as a risk-assessment heading with listed cyber benchmarks (e.g. Cybench, WMDP-Cyber, PDF p. 4); the edition states it is still working on identifying critical steps for cyber and sets no cyber threshold.",
-      "partial": true
+      "mappingNote": "Named as a risk-assessment heading with listed cyber benchmarks (e.g. Cybench, WMDP-Cyber, PDF p. 4) and a commitment to 're-assess the cyber misuse risks in future releases' (PDF p. 6); the edition says it is still working on identifying enforceable critical steps for cyber and sets no cyber threshold."
     },
     {
       "edition": "faif-2025",
@@ -6052,7 +6051,8 @@
           "id": "faif-2026.D1.persuasion.2",
           "quote": "risks of models with high manipulative capabilities potentially being misused",
           "locator": "PDF p. 1, §1 Introduction, third paragraph, fourth sentence",
-          "reusesEvidence": null
+          "reusesEvidence": null,
+          "paraphraseCheck": "Cross-family paraphrase check of 2026-10-28 (codex-paraphrases-2026-10-28.md): drift; the paraphrase left out that the misuse is misuse that could reasonably result in large-scale harm. Corrected on 2026-10-28 by the maintainer’s decision of that day; the cell’s status is unchanged."
         }
       ],
       "mappingNote": "Named as 'Harmful Manipulation Risks' (footnote 1 attributes the term to the EU General-Purpose AI Code of Practice); unlike the other three domains it has no dedicated subsection in §2.1."
@@ -6157,7 +6157,8 @@
           "officer",
           "determin"
         ],
-        "hitsNotCounted": "PDF p. 6 'The final decision also reflects an overall judgment based on all the available evidence' does not name who decides (recorded under D6.discretion); PDF pp. 2, 5, 6 'determine/determination' refer to xAI generically; PDF p. 8 §3 designates risk owners for mitigating risks and monitoring incidents, not for threshold, safeguard or deployment determinations; PDF p. 9 §4 refers to 'internal governance structures' without naming a body."
+        "hitsNotCounted": "PDF p. 6 'The final decision also reflects an overall judgment based on all the available evidence' does not name who decides (recorded under D6.discretion); PDF pp. 2, 5, 6 'determine/determination' refer to xAI generically; PDF p. 8 §3 designates risk owners for mitigating risks and monitoring incidents, not for threshold, safeguard or deployment determinations; PDF p. 9 §4 refers to 'internal governance structures' without naming a body.",
+        "archiveCheck": "Confirmed not found on 2026-10-26 by a cross-family archive check of the Internet Archive capture of 2026-07-16 (https://web.archive.org/web/20260716003429/https://media.x.ai/v1/website/xai-frontier-artificial-intelligence-framework-30-june-2026-99c40684.pdf), whose SHA-256 matches the recorded publisher copy; see research/archive-checks-2026-10-26/codex-report.md."
       }
     },
     {
@@ -6176,7 +6177,8 @@
           "oversight",
           "authorit"
         ],
-        "hitsNotCounted": "No board or director is mentioned. PDF p. 2 'relevant external research' is an input to risk identification; PDF p. 4 'scalable model oversight' concerns oversight of models; PDF p. 8 feedback from 'other third parties' is an incident channel; PDF p. 9 incident reports to 'relevant authorities' when legally reportable (recorded in D7.external) and 'ongoing legal and compliance reviews' (internal) do not give an external party or board a role in reviewing decisions."
+        "hitsNotCounted": "No board or director is mentioned. PDF p. 2 'relevant external research' is an input to risk identification; PDF p. 4 'scalable model oversight' concerns oversight of models; PDF p. 8 feedback from 'other third parties' is an incident channel; PDF p. 9 incident reports to 'relevant authorities' when legally reportable (recorded in D7.external) and 'ongoing legal and compliance reviews' (internal) do not give an external party or board a role in reviewing decisions.",
+        "archiveCheck": "Confirmed not found on 2026-10-26 by a cross-family archive check of the Internet Archive capture of 2026-07-16 (https://web.archive.org/web/20260716003429/https://media.x.ai/v1/website/xai-frontier-artificial-intelligence-framework-30-june-2026-99c40684.pdf), whose SHA-256 matches the recorded publisher copy; see research/archive-checks-2026-10-26/codex-report.md."
       }
     },
     {
@@ -6214,7 +6216,8 @@
           "market",
           "race"
         ],
-        "hitsNotCounted": "PDF pp. 2, 5, 6 'market' occurs in 'post-market monitoring', 'market analysis' and 'making available on the market', none conditioned on other developers; PDF p. 8 distillation of reasoning traces concerns security against extraction. The December 2025 'readily and easily available' clause does not appear."
+        "hitsNotCounted": "PDF pp. 2, 5, 6 'market' occurs in 'post-market monitoring', 'market analysis' and 'making available on the market', none conditioned on other developers; PDF p. 8 distillation of reasoning traces concerns security against extraction. The December 2025 'readily and easily available' clause does not appear.",
+        "archiveCheck": "Confirmed not found on 2026-10-26 by a cross-family archive check of the Internet Archive capture of 2026-07-16 (https://web.archive.org/web/20260716003429/https://media.x.ai/v1/website/xai-frontier-artificial-intelligence-framework-30-june-2026-99c40684.pdf), whose SHA-256 matches the recorded publisher copy; see research/archive-checks-2026-10-26/codex-report.md."
       }
     },
     {
@@ -6294,48 +6297,87 @@
           "chang",
           "replace"
         ],
-        "hitsNotCounted": "The edition has no change log or summary of changes and does not mention the December 2025 edition. PDF p. 2 'We may change our approach over time' and PDF p. 7 'xAI may change its approach' describe possible future change; PDF p. 2 'versions of a model' and 'materially changed' concern models; PDF p. 8 'changes to systemic factors' concerns incident post-mortems."
+        "hitsNotCounted": "The edition has no change log or summary of changes and does not mention the December 2025 edition. PDF p. 2 'We may change our approach over time' and PDF p. 7 'xAI may change its approach' describe possible future change; PDF p. 2 'versions of a model' and 'materially changed' concern models; PDF p. 8 'changes to systemic factors' concerns incident post-mortems.",
+        "archiveCheck": "Confirmed not found on 2026-10-26 by a cross-family archive check of the Internet Archive capture of 2026-07-16 (https://web.archive.org/web/20260716003429/https://media.x.ai/v1/website/xai-frontier-artificial-intelligence-framework-30-june-2026-99c40684.pdf), whose SHA-256 matches the recorded publisher copy; see research/archive-checks-2026-10-26/codex-report.md. That check notes that its blindness for this cell was compromised, because the edition notes stating that no change log exists had been shown to it."
       }
     },
     {
       "edition": "meta-faf-v1-1",
       "facet": "D1.cbrn",
-      "status": "not-applicable",
-      "entries": [],
-      "reason": "Edition not retrieved in this run; no passage recorded in the dataset for this facet."
+      "status": "stated",
+      "entries": [
+        {
+          "id": "meta-faf-v1-1.D1.cbrn.1",
+          "quote": "Proliferation of known medium-impact biological and chemical weapons for low and moderate skill actors.",
+          "locator": "PDF p. 15 (printed p. 15), §3.4.2, outcome CB 1",
+          "reusesEvidence": null,
+          "source": "research/frontier-framework-comparison/codex-meta-v1-1-2026-10-27.md"
+        }
+      ],
+      "mappingNote": "Chemical and biological weapons are named; the cell does not extend this to radiological or nuclear weapons.",
+      "recheck": "Re-checked blind by a reviewer from a different model family on 2026-10-27 (codex-meta-v1-1-2026-10-27.md); applied on 2026-10-28 by the maintainer’s decision of 2026-10-27."
     },
     {
       "edition": "meta-faf-v1-1",
       "facet": "D1.cyber",
-      "status": "not-applicable",
-      "entries": [],
-      "reason": "Edition not retrieved in this run; no passage recorded in the dataset for this facet."
+      "status": "stated",
+      "entries": [
+        {
+          "id": "meta-faf-v1-1.D1.cyber.1",
+          "quote": "Automated discovery and reliable exploitation of critical zero-day vulnerabilities",
+          "locator": "PDF p. 14 (printed p. 14), §3.4.1, outcome Cyber 2 (opening of the outcome)",
+          "reusesEvidence": null,
+          "source": "research/frontier-framework-comparison/codex-meta-v1-1-2026-10-27.md",
+          "paraphraseCheck": "Cross-family paraphrase check of 2026-10-28 (codex-paraphrases-2026-10-28.md): drift; the paraphrase left out the software the outcome concerns (current, popular software that follows security best practices) and its timing (before defenders can find and patch the vulnerabilities). Corrected on 2026-10-28 by the maintainer’s decision of that day; the cell’s status is unchanged."
+        }
+      ],
+      "mappingNote": "Cyber operations are a named domain, with outcomes and threat scenarios.",
+      "recheck": "Re-checked blind by a reviewer from a different model family on 2026-10-27 (codex-meta-v1-1-2026-10-27.md); applied on 2026-10-28 by the maintainer’s decision of 2026-10-27."
     },
     {
       "edition": "meta-faf-v1-1",
       "facet": "D1.autonomy",
-      "status": "not-applicable",
-      "entries": [],
-      "reason": "Edition not retrieved in this run; no passage recorded in the dataset for this facet."
+      "status": "stated",
+      "entries": [
+        {
+          "id": "meta-faf-v1-1.D1.autonomy.1",
+          "quote": "Autonomous cyber operations",
+          "locator": "PDF p. 14 (printed p. 14), §3.4.1, cyber outcomes table, enabling capabilities column",
+          "reusesEvidence": null,
+          "source": "research/frontier-framework-comparison/codex-meta-v1-1-2026-10-27.md"
+        }
+      ],
+      "mappingNote": "Named as an enabling capability within the cyber domain, not as a domain with thresholds of its own. The same table names autonomous execution of multi-step tasks, and §4.2 (PDF p. 17) takes account of automated AI research and development that enhances capabilities. No autonomous replication threshold is named.",
+      "recheck": "Re-checked blind by a reviewer from a different model family on 2026-10-27 (codex-meta-v1-1-2026-10-27.md); applied on 2026-10-28 by the maintainer’s decision of 2026-10-27."
     },
     {
       "edition": "meta-faf-v1-1",
       "facet": "D1.persuasion",
-      "status": "not-applicable",
+      "status": "not-found",
       "entries": [],
-      "reason": "Edition not retrieved in this run; no passage recorded in the dataset for this facet."
+      "notFound": {
+        "inspected": "Whole edition, PDF pp. 1–21, read in the text layer of the decoded PDF of the Internet Archive capture of 2025-02-13; cover and PDF pp. 12–13 and 19 inspected visually",
+        "searchTerms": ["persua", "manipul", "scam", "groom", "influence"],
+        "hitsNotCounted": "PDF p. 14, §3.4.1, outcome Cyber 3 and threat scenario TS.3.1: scams and grooming are grouped as cyber-enabled economic harm, not named as a persuasion or manipulation domain. PDF p. 18: influence concerns variables that affect the benefits of research. No persuasion or manipulation stems found."
+      },
+      "recheck": "Re-checked blind by a reviewer from a different model family on 2026-10-27 (codex-meta-v1-1-2026-10-27.md); applied on 2026-10-28 by the maintainer’s decision of 2026-10-27."
     },
     {
       "edition": "meta-faf-v1-1",
       "facet": "D1.other",
-      "status": "not-applicable",
+      "status": "not-found",
       "entries": [],
-      "reason": "Edition not retrieved in this run; no passage recorded in the dataset for this facet."
+      "notFound": {
+        "inspected": "Whole edition, PDF pp. 1–21, read in the text layer of the decoded PDF of the Internet Archive capture of 2025-02-13; cover and PDF pp. 12–13 and 19 inspected visually",
+        "searchTerms": ["decep", "misalign", "sabot", "oversight", "domain"],
+        "hitsNotCounted": "PDF p. 16, §4.1: deception concerns the reliability of evaluations; no deceptive-behaviour or loss-of-control outcome or monitored domain is named. Domain hits on PDF pp. 3, 7, 8, 10, 14, 16 and 21 refer to the two named domains, expert disciplines, possible future domains not yet named, or the glossary."
+      },
+      "recheck": "Re-checked blind by a reviewer from a different model family on 2026-10-27 (codex-meta-v1-1-2026-10-27.md); applied on 2026-10-28 by the maintainer’s decision of 2026-10-27."
     },
     {
       "edition": "meta-faf-v1-1",
       "facet": "D2.levels",
-      "status": "carried-unverified",
+      "status": "stated",
       "entries": [
         {
           "id": "meta-faf-v1-1.D2.levels.1",
@@ -6344,38 +6386,57 @@
           "reusesEvidence": "evidence-prov-meta-faf-v1-1-moderate-threshold"
         }
       ],
-      "mappingNote": "The recorded locators show Table 1 rows Critical, High and Moderate, with measure labels 'Stop development', 'Do not release' and 'Release'; quotes for the High and Critical rows are in D2.definition."
+      "mappingNote": "Table 1 has three rows, Critical, High and Moderate, with measure labels ‘Stop development’, ‘Do not release’ and ‘Release’; quotes for the High and Critical rows are in D2.definition.",
+      "recheck": "Re-checked blind by a reviewer from a different model family on 2026-10-27 (codex-meta-v1-1-2026-10-27.md): the carried quotations match the 2025-02-13 capture on their recorded pages."
     },
     {
       "edition": "meta-faf-v1-1",
       "facet": "D2.definition",
-      "status": "carried-unverified",
+      "status": "stated",
       "entries": [
         {
           "id": "meta-faf-v1-1.D2.definition.1",
-          "quote": "The model provides significant uplift towards execution of a threat scenario (i.e. significantly enhances performance on key capabilities or tasks needed to produce a catastrophic outcome)",
+          "quote": "The model provides significant uplift towards execution of a threat scenario (i.e. significantly enhances performance on key capabilities or tasks needed to produce a catastrophic outcome) but does not enable execution of any threat scenario that has been identified as potentially sufficient to produce a catastrophic outcome.",
           "locator": "PDF p. 13 (printed p. 13), §3.3 Risk thresholds, Table 1: Risk thresholds for frontier AI, High row, Risk Threshold column (text below the measure label 'Do not release')",
           "reusesEvidence": "evidence-prov-meta-faf-v1-1-high-threshold"
         },
         {
           "id": "meta-faf-v1-1.D2.definition.2",
-          "quote": "The model would uniquely enable the execution of at least one of the threat scenarios that have been identified as potentially sufficient to produce a catastrophic outcome",
+          "quote": "The model would uniquely enable the execution of at least one of the threat scenarios that have been identified as potentially sufficient to produce a catastrophic outcome and that risk cannot be mitigated in the proposed deployment context.",
           "locator": "PDF p. 13 (printed p. 13), §3.3 Risk thresholds, Table 1: Risk thresholds for frontier AI, Critical row, Risk Threshold column (text below the measure label 'Stop development')",
           "reusesEvidence": "evidence-prov-meta-faf-v1-1-critical-threshold"
+        },
+        {
+          "id": "meta-faf-v1-1.D2.definition.3",
+          "quote": "Our high and moderate risk thresholds are defined in terms of the level of uplift a frontier AI provides towards realising a threat scenario.",
+          "locator": "PDF p. 12 (printed p. 12), §3.3 Risk thresholds",
+          "reusesEvidence": null,
+          "source": "research/frontier-framework-comparison/codex-meta-v1-1-2026-10-27.md"
         }
-      ]
+      ],
+      "recheck": "Re-checked blind by a reviewer from a different model family on 2026-10-27 (codex-meta-v1-1-2026-10-27.md): the carried quotations match the 2025-02-13 capture on their recorded pages.",
+      "mappingNote": "The Critical row is defined by uniquely enabling a threat scenario whose risk cannot be mitigated in the proposed deployment context; the High and Moderate rows by the level of uplift (PDF p. 12)."
     },
     {
       "edition": "meta-faf-v1-1",
       "facet": "D3.safeguards",
-      "status": "not-applicable",
-      "entries": [],
-      "reason": "Edition not retrieved in this run; no passage recorded in the dataset for this facet."
+      "status": "stated",
+      "entries": [
+        {
+          "id": "meta-faf-v1-1.D3.safeguards.1",
+          "quote": "Access is limited to a core research team, alongside security protections to prevent hacking or exfiltration.",
+          "locator": "PDF p. 13 (printed p. 13), §3.3 Risk thresholds, Table 1: Risk thresholds for frontier AI, High row, Measures column, security mitigations",
+          "reusesEvidence": null,
+          "source": "research/frontier-framework-comparison/codex-meta-v1-1-2026-10-27.md"
+        }
+      ],
+      "mappingNote": "The High row also requires mitigations that reduce risk to moderate levels. The Critical row limits access further, with security protections qualified by feasibility and commercial practicability (see “Other exceptions or discretion”); measures at the moderate level depend on evaluations and the release strategy.",
+      "recheck": "Re-checked blind by a reviewer from a different model family on 2026-10-27 (codex-meta-v1-1-2026-10-27.md); applied on 2026-10-28 by the maintainer’s decision of 2026-10-27."
     },
     {
       "edition": "meta-faf-v1-1",
       "facet": "D3.halt",
-      "status": "carried-unverified",
+      "status": "stated",
       "entries": [
         {
           "id": "meta-faf-v1-1.D3.halt.1",
@@ -6395,12 +6456,13 @@
           "locator": "PDF p. 13 (printed p. 13), §3.3 Risk thresholds, Table 1: Risk thresholds for frontier AI, Critical row, Measures column, first bullet, second sentence",
           "reusesEvidence": "evidence-prov-meta-faf-v1-1-critical-pause-investigation"
         }
-      ]
+      ],
+      "recheck": "Re-checked blind by a reviewer from a different model family on 2026-10-27 (codex-meta-v1-1-2026-10-27.md): the carried quotations match the 2025-02-13 capture on their recorded pages."
     },
     {
       "edition": "meta-faf-v1-1",
       "facet": "D4.determination",
-      "status": "carried-unverified",
+      "status": "stated",
       "entries": [
         {
           "id": "meta-faf-v1-1.D4.determination.1",
@@ -6414,63 +6476,135 @@
           "locator": "PDF p. 13 (printed p. 13), §3.3 Risk thresholds, footnote 7 (attached to Table 1, High row, Risk Threshold column), third and final sentence",
           "reusesEvidence": "evidence-prov-meta-faf-v1-1-uplift-assessment-approval"
         }
-      ]
+      ],
+      "recheck": "Re-checked blind by a reviewer from a different model family on 2026-10-27 (codex-meta-v1-1-2026-10-27.md): the carried quotations match the 2025-02-13 capture on their recorded pages."
     },
     {
       "edition": "meta-faf-v1-1",
       "facet": "D4.oversight",
-      "status": "not-applicable",
+      "status": "not-found",
       "entries": [],
-      "reason": "Edition not retrieved in this run; no passage recorded in the dataset for this facet."
+      "notFound": {
+        "inspected": "Whole edition, PDF pp. 1–21, read in the text layer of the decoded PDF of the Internet Archive capture of 2025-02-13; cover and PDF pp. 12–13 and 19 inspected visually",
+        "searchTerms": [
+          "board",
+          "trust",
+          "oversight",
+          "external",
+          "third",
+          "review"
+        ],
+        "hitsNotCounted": "PDF p. 13, Table 1, footnote 7: the final assessment of uplift involves numerous experts, “including third parties where appropriate”; this is involvement in an assessment, not a role in overseeing or reviewing decisions. No board or oversight stems. Trust hits (PDF pp. 8–9, 21) concern trustworthiness or trusted release partners. External hits (PDF pp. 6–8, 10–11, 17–18, 21) concern reference models, expertise, threat modelling or the release context. Review hits (PDF pp. 5, 8) describe centralised, internal review. No board or external party is given a role in reviewing decisions."
+      },
+      "mappingNote": "The edition involves third parties “where appropriate” in the assessment of uplift (Table 1, footnote 7, PDF p. 13); this is recorded as context, not as a role in overseeing or reviewing decisions.",
+      "recheck": "Re-checked blind by a reviewer from a different model family on 2026-10-27 (codex-meta-v1-1-2026-10-27.md), which proposed “stated, partly”; applied on 2026-10-28 as “not found” by the maintainer’s decision of 2026-10-28."
     },
     {
       "edition": "meta-faf-v1-1",
       "facet": "D5.cadence",
-      "status": "not-applicable",
-      "entries": [],
-      "reason": "Edition not retrieved in this run; no passage recorded in the dataset for this facet."
+      "status": "stated",
+      "entries": [
+        {
+          "id": "meta-faf-v1-1.D5.cadence.1",
+          "quote": "We typically repeat evaluations as a frontier AI nears or completes training.",
+          "locator": "PDF p. 18 (printed p. 18), §4.2 Evaluation and mitigation",
+          "reusesEvidence": null,
+          "source": "research/frontier-framework-comparison/codex-meta-v1-1-2026-10-27.md"
+        }
+      ],
+      "mappingNote": "“Typically” is the edition’s word. Evaluations also run at an initial checkpoint (PDF p. 16), as follow-ups triggered by the capabilities found (PDF p. 17), and in the assessment before release (§2.1.2, PDF pp. 7–8).",
+      "recheck": "Re-checked blind by a reviewer from a different model family on 2026-10-27 (codex-meta-v1-1-2026-10-27.md); applied on 2026-10-28 by the maintainer’s decision of 2026-10-27."
     },
     {
       "edition": "meta-faf-v1-1",
       "facet": "D6.competitor",
-      "status": "not-applicable",
+      "status": "not-found",
       "entries": [],
-      "reason": "Edition not retrieved in this run; no passage recorded in the dataset for this facet."
+      "notFound": {
+        "inspected": "Whole edition, PDF pp. 1–21, read in the text layer of the decoded PDF of the Internet Archive capture of 2025-02-13; cover and PDF pp. 12–13 and 19 inspected visually",
+        "searchTerms": [
+          "compet",
+          "race",
+          "marginal",
+          "other",
+          "existing",
+          "reference"
+        ],
+        "hitsNotCounted": "No competitor, race or marginal stems. PDF p. 4: scope relative to the most advanced models, recorded as context under the scope-test rule; p. 6: external reference-class comparisons; p. 8: existing mitigations; p. 9: other frameworks; p. 12: net new and existing resources; p. 15: novel biological capabilities; p. 17: other barriers and cost constraints; p. 18: other discoveries and variables; p. 19: engagement with peers; p. 21: existing resources in the definition of uplift studies. These are scope, evaluation baselines, barriers or update inputs, not provisions that relax safeguards on what other developers do. Table 1 (p. 13): the route through other barriers tests whether a catastrophic outcome remains feasible, not other developers’ commitments."
+      },
+      "recheck": "Re-checked blind by a reviewer from a different model family on 2026-10-27 (codex-meta-v1-1-2026-10-27.md); applied on 2026-10-28 by the maintainer’s decision of 2026-10-27."
     },
     {
       "edition": "meta-faf-v1-1",
       "facet": "D6.discretion",
-      "status": "not-applicable",
-      "entries": [],
-      "reason": "Edition not retrieved in this run; no passage recorded in the dataset for this facet."
+      "status": "stated",
+      "entries": [
+        {
+          "id": "meta-faf-v1-1.D6.discretion.1",
+          "quote": "insofar as is technically feasible and commercially practicable",
+          "locator": "PDF p. 13 (printed p. 13), §3.3 Risk thresholds, Table 1: Risk thresholds for frontier AI, Critical row, Measures column, security mitigations (qualifying clause)",
+          "reusesEvidence": null,
+          "source": "research/frontier-framework-comparison/codex-meta-v1-1-2026-10-27.md"
+        }
+      ],
+      "mappingNote": "Qualifies the Critical row’s security protections against hacking and exfiltration. The edition also leaves to judgement whether further barriers justify revised threat scenarios (Table 1; §4.2, PDF p. 17) and whether to re-evaluate after a revision (§5.1, PDF p. 19). No general power to override the framework is stated.",
+      "recheck": "Re-checked blind by a reviewer from a different model family on 2026-10-27 (codex-meta-v1-1-2026-10-27.md); applied on 2026-10-28 by the maintainer’s decision of 2026-10-27."
     },
     {
       "edition": "meta-faf-v1-1",
       "facet": "D7.internal",
-      "status": "not-applicable",
-      "entries": [],
-      "reason": "Edition not retrieved in this run; no passage recorded in the dataset for this facet."
+      "status": "stated",
+      "entries": [
+        {
+          "id": "meta-faf-v1-1.D7.internal.1",
+          "quote": "documenting mitigation strategies and residual risks across a set of applicable risk categories.",
+          "locator": "PDF p. 7 (printed p. 7), §2.1.2 (risk assessment process)",
+          "reusesEvidence": null,
+          "source": "research/frontier-framework-comparison/codex-meta-v1-1-2026-10-27.md",
+          "paraphraseCheck": "Cross-family paraphrase check of 2026-10-28 (codex-paraphrases-2026-10-28.md): drift; the paraphrase said the records cover each risk category that applies, where the passage says they cover a set of applicable risk categories. Corrected on 2026-10-28 by the maintainer’s decision of that day; the cell’s status is unchanged."
+        }
+      ],
+      "mappingNote": "§2.1.3 (PDF p. 8) passes the assessment of remaining risk to research and product teams, then to multidisciplinary review and leadership. These are internal records; no schedule of reports to a board is stated.",
+      "recheck": "Re-checked blind by a reviewer from a different model family on 2026-10-27 (codex-meta-v1-1-2026-10-27.md); applied on 2026-10-28 by the maintainer’s decision of 2026-10-27."
     },
     {
       "edition": "meta-faf-v1-1",
       "facet": "D7.external",
-      "status": "not-applicable",
-      "entries": [],
-      "reason": "Edition not retrieved in this run; no passage recorded in the dataset for this facet."
+      "status": "stated",
+      "entries": [
+        {
+          "id": "meta-faf-v1-1.D7.external.1",
+          "quote": "We also plan to continue sharing relevant information about how we develop and evaluate our models responsibly",
+          "locator": "PDF p. 9 (printed p. 9), §2.2",
+          "reusesEvidence": null,
+          "source": "research/frontier-framework-comparison/codex-meta-v1-1-2026-10-27.md"
+        }
+      ],
+      "mappingNote": "Conditional wording (“plan to”). The channels named are model cards, research papers and guidance on responsible use; no deadline, recipient or mandatory incident report is stated.",
+      "recheck": "Re-checked blind by a reviewer from a different model family on 2026-10-27 (codex-meta-v1-1-2026-10-27.md), which proposed “stated, partly”; applied on 2026-10-28 as “stated” by the maintainer’s decision of 2026-10-28."
     },
     {
       "edition": "meta-faf-v1-1",
       "facet": "D8.process",
-      "status": "not-applicable",
-      "entries": [],
-      "reason": "Edition not retrieved in this run; no passage recorded in the dataset for this facet."
+      "status": "stated",
+      "entries": [
+        {
+          "id": "meta-faf-v1-1.D8.process.1",
+          "quote": "We will update our Framework based on these observations.",
+          "locator": "PDF p. 19 (printed p. 19), §5.1",
+          "reusesEvidence": null,
+          "source": "research/frontier-framework-comparison/codex-meta-v1-1-2026-10-27.md"
+        }
+      ],
+      "mappingNote": "The observations are of deployed models and the wider ecosystem; technical developments and engagement with peers and the community also inform revisions (§5.1, PDF p. 19). No approval body or interval for revisions is named.",
+      "recheck": "Re-checked blind by a reviewer from a different model family on 2026-10-27 (codex-meta-v1-1-2026-10-27.md), which proposed “stated, partly”; applied on 2026-10-28 as “stated” by the maintainer’s decision of 2026-10-28."
     },
     {
       "edition": "meta-faf-v1-1",
       "facet": "D8.changes",
       "status": "not-applicable",
       "entries": [],
-      "reason": "First edition in this framework sequence."
+      "reason": "First edition in this framework sequence (“This is the first iteration of our Frontier AI Framework”, Introduction, PDF p. 5, confirmed by the re-check of 2026-10-27)."
     },
     {
       "edition": "meta-aasf-v2-0",
@@ -6516,9 +6650,23 @@
           "quote": "The Framework currently focuses on catastrophic risks in three areas: Chemical & Biological, Cybersecurity, and Loss of Control.",
           "locator": "PDF p. 1 (unnumbered opening page), second paragraph, second sentence",
           "reusesEvidence": null
+        },
+        {
+          "id": "meta-aasf-v2-0.D1.autonomy.2",
+          "quote": "TS.1.1 AI development accelerates such that new capabilities and behaviors emerge faster than the … organization's evaluation processes.",
+          "locator": "PDF pp. 22–23, §3.4.3 Loss of Control, table row 'Loss of Control 1', Potential Threat Scenario column",
+          "reusesEvidence": null,
+          "note": "The table cell continues across the page break; in the text layer the adjacent cells and the footnotes fall between its two parts, which '…' marks. No words of the cell are omitted. The outcome is 'Loss of Control 1: Loss of ability to evaluate AI safety before deployment'."
+        },
+        {
+          "id": "meta-aasf-v2-0.D1.autonomy.3",
+          "quote": "Autonomous AI R&D: Ability to autonomously and consistently complete tasks which are … representative of the work of a researcher to progress AI development.",
+          "locator": "PDF pp. 22–23, §3.4.3 Loss of Control, table row 'Loss of Control 1', Example Enabling Capabilities column",
+          "reusesEvidence": null,
+          "note": "As in entry 2, '…' marks only the page break; no words of the cell are omitted."
         }
       ],
-      "mappingNote": "Loss of Control outcomes are framed as failures of control mechanisms (evaluation before deployment; monitoring during operation); 'Autonomous AI R&D', evaluation awareness and monitor evasion are listed as example enabling capabilities (PDF pp. 22–24), with capability checkpoints in §4.2.3. Self-exfiltration and autonomous replication appear only as illustrative emerging threat scenarios (PDF p. 38)."
+      "mappingNote": "Meta names one domain, Loss of Control, defined through 'failures of critical control mechanisms' (PDF p. 22). Its outcome Loss of Control 1 rests on autonomous AI R&D and evaluation awareness, framed as example enabling capabilities of a control failure rather than as a domain of their own (PDF pp. 22–23), with capability checkpoints in §4.2.3; it is recorded here. Its outcome Loss of Control 2, AI undermining monitoring, is recorded under D1.other under the D1 overlap rule. Self-exfiltration and autonomous replication appear only as illustrative emerging threat scenarios (PDF p. 38)."
     },
     {
       "edition": "meta-aasf-v2-0",
@@ -6544,14 +6692,20 @@
       "status": "stated",
       "entries": [
         {
+          "id": "meta-aasf-v2-0.D1.other.2",
+          "quote": "Loss of Control 2: Loss of ability to monitor AI behavior during operation TS.2.1* AI disables or corrupts monitors to reduce oversight and accomplish its objectives.",
+          "locator": "PDF p. 23, §3.4.3 Loss of Control, table row 'Loss of Control 2', Outcome and Potential Threat Scenario columns",
+          "reusesEvidence": null,
+          "note": "Example enabling capabilities in the same row are monitor awareness and monitor interference."
+        },
+        {
           "id": "meta-aasf-v2-0.D1.other.1",
           "quote": "Physical autonomy has emerged as another nascent outcome arising from Frontier AI.",
           "locator": "PDF p. 36 (printed p. 36), §4.2.4 Emerging Evaluations and Outcomes, 'Physical autonomy', first sentence",
           "reusesEvidence": null
         }
       ],
-      "mappingNote": "Listed under 'Emerging Evaluations and Outcomes' with a sample outcome and threat scenario, not incorporated into the thresholds.",
-      "partial": true
+      "mappingNote": "Meta names one domain, Loss of Control, one of the three areas the Framework 'currently focuses on' (PDF p. 1). Under the D1 overlap rule its outcome Loss of Control 2, defined through AI undermining monitoring, is recorded here; Loss of Control 1 (autonomous AI R&D) is recorded under D1.autonomy. Physical autonomy (entry 1) is listed under 'Emerging Evaluations and Outcomes' with a sample outcome and threat scenario, not incorporated into the thresholds."
     },
     {
       "edition": "meta-aasf-v2-0",
@@ -6664,7 +6818,7 @@
       "facet": "D6.competitor",
       "status": "not-found",
       "entries": [],
-      "mappingNote": "The scope criterion in Appendix I compares a model with 'the most advanced models' (not limited to Meta's) to decide whether it is Frontier AI; it is recorded here as context, not as a provision conditioned on other developers.",
+      "mappingNote": "Comparative scope and reference-class provisions, not a waiver of safeguards conditional on other developers. Appendix I compares a model with 'the most advanced models' (not limited to Meta's) to decide whether it is Frontier AI (PDF p. 41); §2.1.1 compares a planned model 'against our own models and those available externally' to identify a 'reference class' used to anticipate risks and required assessments (PDF p. 4). Both are recorded here as context.",
       "notFound": {
         "inspected": "Whole text layer, PDF pp. 1–44 (p. 45 blank): all sections, tables, footnotes and both appendices read",
         "searchTerms": [
@@ -6676,7 +6830,7 @@
           "most advanced models",
           "open source / widely available / publicly available"
         ],
-        "hitsNotCounted": "No hits for 'other developer', 'other compan', 'race' or 'marginal'. 'competition' (PDF pp. 28–29) names capture-the-flag competitions used as cyber benchmarks. 'industry' (PDF pp. 7, 8, 41) refers to evolving industry practices as a reason to re-evaluate mitigations, update the Framework or revise definitions. 'the most advanced models' (Appendix I, PDF p. 41; change log, PDF p. 44) is part of the scope criterion for which models count as Frontier AI: a model 'reasonably likely to be more capable … than our existing models or the most advanced models'. It decides which models the Framework covers, not what Meta does depending on other developers' conduct. 'open-source' and 'widely used' (PDF pp. 5, 8, 31) concern evaluations and defender access. No provision changes required measures depending on what other developers do or have."
+        "hitsNotCounted": "No hits for 'other developer', 'other compan', 'race' or 'marginal'. 'competition' (PDF pp. 28–29) names capture-the-flag competitions used as cyber benchmarks. 'industry' (PDF pp. 7, 8, 41) refers to evolving industry practices as a reason to re-evaluate mitigations, update the Framework or revise definitions. 'the most advanced models' (Appendix I, PDF p. 41; change log, PDF p. 44) is part of the scope criterion for which models count as Frontier AI: a model 'reasonably likely to be more capable … than our existing models or the most advanced models'. It decides which models the Framework covers, not what Meta does depending on other developers' conduct. PDF p. 4, §2.1.1: 'We compare these various factors against our own models and those available externally' identifies a 'reference class' of comparable models for tracking performance and anticipating risks and required assessments; it does not relax, adjust or condition Meta's safeguards or commitments. 'open-source' and 'widely used' (PDF pp. 5, 8, 31) concern evaluations and defender access. No provision relaxes, adjusts or conditions Meta's safeguards or commitments on what other developers do or have."
       }
     },
     {
@@ -6999,7 +7153,8 @@
           "id": "ms-fgf-2025.D7.external.1",
           "quote": "Information about the capabilities and limitations of the model, relevant evaluations, and the model’s risk classification will be shared publicly",
           "locator": "PDF p. 10 (printed p. 9), §5 Governance, Risk-informed deployment decision, third paragraph, first sentence",
-          "reusesEvidence": null
+          "reusesEvidence": null,
+          "paraphraseCheck": "Cross-family paraphrase check of 2026-10-28 (codex-paraphrases-2026-10-28.md): drift; the paraphrase left out the care to minimise information hazards and to protect commercially sensitive information, which qualifies the same sentence. Corrected on 2026-10-28 by the maintainer’s decision of that day; the cell’s status is unchanged."
         }
       ],
       "mappingNote": "Public sharing is qualified by care to minimise information hazards and protect commercially sensitive information."
@@ -7069,15 +7224,9 @@
           "quote": "Advanced autonomy. A model’s ability to complete expert-level tasks autonomously, including AI research and development.",
           "locator": "PDF p. 4 (printed p. 3), §2 Capabilities and risks, 'Tracked high-risk capabilities', third bullet",
           "reusesEvidence": null
-        },
-        {
-          "id": "ms-fgf-2026.D1.autonomy.2",
-          "quote": "Loss of control. A model’s ability to undermine effective human control",
-          "locator": "PDF p. 4 (printed p. 3), §2 Capabilities and risks, 'Tracked high-risk capabilities', fourth bullet",
-          "reusesEvidence": null
         }
       ],
-      "mappingNote": "Advanced autonomy has capability thresholds in Appendix I (PDF p. 14). Loss of control is a tracked high-risk capability without thresholds: Appendix I says Microsoft is 'researching approaches to evaluating models for loss of control risk' and setting risk acceptance criteria (PDF p. 15)."
+      "mappingNote": "Advanced autonomy has capability thresholds in Appendix I (PDF p. 14). Loss of control, a separately named tracked capability defined through 'adaptive, deceptive, or self-reinforcing mechanisms' (PDF p. 4), is recorded under D1.other under the D1 overlap rule."
     },
     {
       "edition": "ms-fgf-2026",
@@ -7091,26 +7240,21 @@
           "reusesEvidence": null
         }
       ],
-      "mappingNote": "Tracked high-risk capability without thresholds: Appendix I says Microsoft is researching evaluation approaches and risk acceptance criteria for manipulation risk, and prohibits use of its generative AI services to manipulate users (PDF p. 15).",
-      "partial": true
+      "mappingNote": "Named as a tracked high-risk capability. No thresholds are set: Appendix I says Microsoft is researching evaluation approaches and risk acceptance criteria for manipulation risk (PDF p. 15). Appendix I also prohibits use of its generative AI services to manipulate users (PDF p. 15)."
     },
     {
       "edition": "ms-fgf-2026",
       "facet": "D1.other",
-      "status": "not-found",
-      "entries": [],
-      "notFound": {
-        "inspected": "Whole text layer, PDF pp. 1–16 (p. 17 blank): all sections, both appendices read",
-        "searchTerms": [
-          "speculative",
-          "potential capability-related risks",
-          "bias",
-          "misalign",
-          "broader set of risks",
-          "not included"
-        ],
-        "hitsNotCounted": "PDF p. 3 'Longer-term or more speculative capabilities are the subject of ongoing research' names no domain; PDF p. 4 'Identifying tracked high-risk capabilities' describes how new risks are studied and says risks not threatening national security or at-scale public safety go to the broader AI governance framework, naming none; PDF p. 5 'broader set of risks' refers to the broader governance program; PDF p. 9 'bias or discrimination' are residual risks for deployers to address, not tracked domains. Loss of control is recorded under D1.autonomy."
-      }
+      "status": "stated",
+      "entries": [
+        {
+          "id": "ms-fgf-2026.D1.other.1",
+          "quote": "Loss of control. A model’s ability to undermine effective human control through adaptive, deceptive, or self-reinforcing mechanisms such that, when deployed, a model can no longer be reliably directed, modified, or shut down.",
+          "locator": "PDF p. 4 (printed p. 3), §2 Capabilities and risks, 'Tracked high-risk capabilities', fourth bullet",
+          "reusesEvidence": null
+        }
+      ],
+      "mappingNote": "Separately named tracked capability, recorded here under the D1 overlap rule because it is defined through deceptive mechanisms that undermine human control. No thresholds are set: Appendix I says Microsoft is researching evaluation approaches and risk acceptance criteria for loss of control risk (PDF p. 15)."
     },
     {
       "edition": "ms-fgf-2026",
@@ -7124,7 +7268,7 @@
           "reusesEvidence": null
         }
       ],
-      "mappingNote": "Each tracked capability is scored on these four risk levels, defined per capability in Appendix I; low and medium carry 'Deployment allowed in line with Responsible AI Program requirements', high and critical 'Further review and mitigations required'."
+      "mappingNote": "Low, medium, high and critical levels are defined in Appendix I for three of the five tracked capabilities: CBRN weapons, offensive cyberoperations and advanced autonomy (PDF pp. 12–14). For loss of control and harmful manipulation, Appendix I states that evaluation approaches and risk acceptance criteria are being researched (PDF p. 15). Low and medium carry 'Deployment allowed in line with Responsible AI Program requirements', high and critical 'Further review and mitigations required'."
     },
     {
       "edition": "ms-fgf-2026",
@@ -7272,7 +7416,8 @@
           "id": "ms-fgf-2026.D7.external.1",
           "quote": "Information about the capabilities and limitations of the model, relevant evaluations, and the model’s risk classification will be shared publicly",
           "locator": "PDF p. 10 (printed p. 9), §5 Governance, Risk-informed deployment decision, third paragraph, first sentence",
-          "reusesEvidence": null
+          "reusesEvidence": null,
+          "paraphraseCheck": "Cross-family paraphrase check of 2026-10-28 (codex-paraphrases-2026-10-28.md): drift; the paraphrase left out the care to minimise information hazards and to protect commercially sensitive information, which qualifies the same sentence. Corrected on 2026-10-28 by the maintainer’s decision of that day; the cell’s status is unchanged."
         },
         {
           "id": "ms-fgf-2026.D7.external.2",

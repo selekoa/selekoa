@@ -1,5 +1,8 @@
 import type { ReactNode } from 'react';
 import type { DocumentRecord } from '../domain/document-record';
+import { startHref } from './SiteChrome';
+import { startIds } from './start-ids';
+import { NavLink, RecordLink } from './NavLink';
 import { editionAnchorDate, editionGapText } from '../domain/document-history';
 import { predicates } from '../domain/predicates';
 import { CopyLink } from './ReferenceActions';
@@ -54,6 +57,7 @@ export function DocumentPage({
       return {
         label: `${entity.name}: propositions page →`,
         onClick: () => onProposition(id),
+        id,
       };
     return {
       label: `${entity.shortName ?? entity.name}: ${
@@ -66,6 +70,7 @@ export function DocumentPage({
               : 'records'
       } →`,
       onClick: () => onEntity(id),
+      id,
     };
   };
   const version = document.documentVersion;
@@ -340,24 +345,26 @@ export function DocumentPage({
                         {e.entity.documentVersion!.label} (this version)
                       </strong>
                     ) : (
-                      <button
+                      <RecordLink
                         className="text-button"
-                        onClick={() => onEntity(e.entity.id)}
+                        id={e.entity.id}
+                        onOpen={() => onEntity(e.entity.id)}
                       >
                         {e.entity.documentVersion!.label}
-                      </button>
+                      </RecordLink>
                     )}
                   </li>
                 );
               })}
             </ol>
             {onHistory && (
-              <button
+              <NavLink
                 className="text-button record-explore"
-                onClick={onHistory}
+                href={startHref({ kind: 'documents' }, startIds)}
+                onOpen={onHistory}
               >
                 Read the full document history of these frameworks →
-              </button>
+              </NavLink>
             )}
             <h3 className="record-subheading">This version</h3>
             <ul className="record-rows">
@@ -524,6 +531,38 @@ export function DocumentPage({
           </p>
         )}
       </section>
+      {record.comparison.length > 0 && (
+        <section
+          className="record-section"
+          aria-labelledby="document-comparison"
+        >
+          <h2 id="document-comparison">Comparison questions</h2>
+          <p className="small-note">
+            What this edition states on the questions the comparison page puts
+            to every framework. A shared question does not make two provisions
+            equivalent.
+          </p>
+          <ul className="record-rows">
+            {record.comparison.map((claim) => (
+              <ClaimRow
+                key={claim.id}
+                claim={claim}
+                heading={
+                  claim.predicate === 'provision_not_found'
+                    ? 'Not found in the recorded search'
+                    : claim.attributes!.provision!.facet!.status === 'partly'
+                      ? 'Stated, partly'
+                      : claim.attributes!.provision!.facet!.status ===
+                          'recorded'
+                        ? 'Recorded, not re-checked'
+                        : 'Stated'
+                }
+                {...props}
+              />
+            ))}
+          </ul>
+        </section>
+      )}
       {record.other.length > 0 && (
         <section className="record-section" aria-labelledby="document-other">
           <h2 id="document-other">Other recorded relations</h2>

@@ -7,6 +7,11 @@ export type Filters = {
   entityType: Entity['type'] | 'all' | 'structural';
   focusId: string | null;
   frameworkFamily?: string | null;
+  /**
+   * Keep proposition records. A search's timeline and map show every claim its
+   * list shows, proposition records included.
+   */
+  propositions?: boolean;
 };
 export function dateOf(claim: Claim): string | undefined {
   return claim.time.kind === 'event' || claim.time.kind === 'snapshot'
@@ -72,7 +77,7 @@ export function queryDataset(data: Dataset, filters: Filters) {
   let claims = data.claims.filter((c) => {
     const date = dateOf(c);
     return (
-      !isPropositionRecord(c) &&
+      (filters.propositions || !isPropositionRecord(c)) &&
       (filters.topic === 'all' || c.topic === filters.topic) &&
       (!familyIds ||
         familyIds.has(c.subject) ||

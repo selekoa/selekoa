@@ -1,9 +1,12 @@
 # Launch readiness
 
-For the maintainer. This records a readiness pass on the application and
-documents, and lists the decisions only the maintainer can take. Nothing here
-publishes, deploys or contacts anything. Current counts are not
-copied here; the About & method page and the latest release manifest carry them.
+For the maintainer. This records the readiness pass on the application and
+documents before launch, and the decisions taken. The site launched on
+2026-10-26 at https://selekoa.org; the sections below keep what was true when
+they were written, and [Status after launch](#status-after-launch) records
+what changed. Current hosting and settings are in the
+[launch runbook](launch-runbook.md). Current counts are not copied here; the
+About & method page and the latest release manifest carry them.
 
 ## What was checked
 
@@ -47,18 +50,46 @@ dossier and several person pages, plus two addresses that match no record.
 
 ## Static hosting
 
-- Addresses are hash-based (`#/about`, `#/person/...`). A host needs no rewrite
-  rules and no 404 fallback page.
-- The build used an absolute asset base, so it worked only from a host root.
-  `vite.config.ts` now sets a relative base. A build served from the root and
-  from a nested path (`/a/b/`) both load every page with no failed request. The
-  dataset download link is relative too.
-- A host needs to: serve `dist/` as-is over HTTPS; send correct types for
+- Addresses are real paths (`/about`, `/person/<id>`; see
+  `docs/architecture.md`, "Addresses and pre-rendered pages"; changed
+  2026-10-27). The build writes one HTML file per page,
+  `person/<id>.html` for `/person/<id>`, which Cloudflare Pages serves at the
+  path without `.html` and without a redirect, and a `404.html` that the host
+  sends for any other path. Earlier `#/…` addresses are moved to their paths
+  in the browser.
+- The build uses an absolute asset base (`/`), so it must be served from a
+  host root. (Before 2026-10-27 it used a relative base and also worked from
+  a sub-path.)
+- A host needs to: serve `dist/` as-is over HTTPS from the root; serve
+  `x.html` at `/x`; send `404.html` for unknown paths; send correct types for
   `.js`, `.css`, `.svg` and `.zip`; compress text (the records bundle is about
-  3 MB raw and roughly 0.5 MB compressed); cache hashed files under `assets/`
-  for a long time and `index.html` briefly; and, for a sub-path, redirect the
-  path without a trailing slash to the one with it, because asset URLs are
-  relative to the page.
+  3 MB raw and roughly 0.5 MB compressed); and cache hashed files under
+  `assets/` for a long time and the pages briefly.
+- Caching on Cloudflare Pages (added 2026-10-27): `public/_headers`, copied
+  to `dist/`, caches `/assets/*` for a year as immutable, `/release/*` for 30
+  days (not immutable, because each archive also carries the current licence
+  files), and `robots.txt` and `sitemap.xml` for an hour, and sends
+  `no-cache` for every page (`/`, `/index.html`, `/404.html`, the hubs,
+  About, Search, the explorer and one splat rule per page prefix such as
+  `/person/*`) so a deploy reaches readers at once; a unit test checks that
+  each built page matches exactly one rule.
+  It also states `X-Content-Type-Options: nosniff` and
+  `Referrer-Policy: strict-origin-when-cross-origin`, which match the host's
+  defaults and do not affect the analytics beacon or the system fonts. It sets
+  no Content-Security-Policy, which would have to follow the analytics
+  setting. A unit test checks the rules.
+- Machine-readable addresses (added 2026-10-27): the build copies the latest
+  release directory's files, byte for byte, with `manifest.json` and the two
+  licence files, to `dist/data/` (`/data/claims.json`, `/data/README.md` and
+  so on), and writes `/llms.txt` from `site.config.json` and the release
+  manifest (`src/site/machine-readable.ts`). With indexing on, `sitemap.xml`
+  lists both; `robots.txt` allows them. `_headers` caches `/data/*` and
+  `/llms.txt` for a day, sends `Access-Control-Allow-Origin: *` on them so
+  browser-based tools can fetch the public records (no cookies or credentials
+  are involved), and gives each data file a UTF-8 `Content-Type`, one rule per
+  file because two matching rules would join their values. Earlier releases
+  are not copied file by file (about 80 MB more per build); their ZIP archives
+  under `/release/` are the versioned route.
 - Dataset ZIP archives are built into `dist/release/` from the `release/`
   directories. The first load fetches the records bundle only when a page other
   than the start page is opened.
@@ -67,7 +98,7 @@ dossier and several person pages, plus two addresses that match no record.
   `site.config.json` removes `noindex`, adds the canonical address and social
   preview tags and writes an allowing `robots.txt` and a `sitemap.xml` (see
   the [launch runbook](launch-runbook.md)).
-- Nothing was configured, deployed or contacted.
+- Nothing was configured, deployed or contacted during this pass.
 
 ## What was fixed
 
@@ -246,3 +277,29 @@ Still the maintainer's: register the domains, set up mail routing, connect the
 host, register with the analytics provider, optionally review publisher terms,
 publish the source, decide the structure proposal, and flip the switches in the
 runbook.
+
+## Status after launch
+
+Recorded 2026-10-27. The site launched on 2026-10-26.
+
+- **Hosting:** Cloudflare Pages builds `main` of
+  `futurelightcone/selekoa-dev` (`pnpm build`, output `dist`,
+  `PNPM_VERSION=11.19.0`, preview deployments off). Merging to `main`
+  deploys.
+- **Domains:** `selekoa.org` serves the site; `selekoa.com` and the `www`
+  addresses redirect to it.
+- **Analytics:** Cloudflare Web Analytics through the snippet added by
+  `site.config.json` (manual install, not automatic injection).
+- **Search engines:** Google Search Console and Bing Webmaster Tools verified
+  through DNS; the sitemap is submitted.
+- **Contact:** `maintainer@selekoa.org` through Cloudflare Email Routing. The
+  "What remains" item on the contact address is done; the provisional address
+  became the real one.
+- **Source:** the public repository `selekoa/selekoa` holds snapshot commits
+  of the source; the routine is in [publishing](publishing.md).
+- Still open from "What remains": a takedown and correction policy beyond the
+  About page and a response time, if wanted; the publisher terms still to be
+  read by hand ([source terms](source-terms.md)); licence links for
+  open-licence sources; the "inspected by Codex" notes; and tests on real
+  phones, screen readers, print and slow connections. This record does not
+  say whether the live site was checked after deployment.

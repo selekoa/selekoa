@@ -1,6 +1,6 @@
 import type { Claim, Dataset, Source } from './schema';
 import type { PathSelection } from './research-path';
-import { referenceHash } from './deep-links';
+import { referencePath } from './deep-links';
 import { timeLabel } from './query';
 
 /** Sorted object keys, original array ordering, no clock or locale dependency. */
@@ -188,7 +188,7 @@ export function packetMarkdown(packet: ResearchPacket) {
       '',
       `Evidence references: ${claim.evidenceIds.join(', ')}.`,
       '',
-      `Application link (relative to an installed Selekoa): ${referenceHash({ kind: 'claim', id: claim.id })}`,
+      `Application link (relative to an installed Selekoa): ${referencePath({ kind: 'claim', id: claim.id })}`,
       '',
     );
     if (claim.inferenceRationale)

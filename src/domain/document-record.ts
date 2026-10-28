@@ -1,3 +1,4 @@
+import { comparisonFacets, isComparisonCell } from './framework-comparison';
 import type { Claim, Dataset } from './schema';
 import type { Predicate } from './predicates';
 import { dateOf, relatedTo } from './query';
@@ -173,7 +174,18 @@ export function documentRecord(data: Dataset, documentId: string) {
       ...familyClaims,
     ].map((c) => c.id),
   );
-  const other = related.filter((c) => !shown.has(c.id)).sort(byDate);
+  // Comparison cells (schema 2.17) have their own section.
+  const facetOrder = comparisonFacets.map((f) => f.id);
+  const comparison = related
+    .filter((c) => !shown.has(c.id) && isComparisonCell(c))
+    .sort(
+      (a, b) =>
+        facetOrder.indexOf(a.attributes!.provision!.facet!.id) -
+        facetOrder.indexOf(b.attributes!.provision!.facet!.id),
+    );
+  const other = related
+    .filter((c) => !shown.has(c.id) && !isComparisonCell(c))
+    .sort(byDate);
   /** Distinct dated bases from issuing and authorship claims, never inferred. */
   const claimDates = [...issued, ...authored].reduce<
     { date: string; basis: string; claimIds: string[] }[]
@@ -201,6 +213,7 @@ export function documentRecord(data: Dataset, documentId: string) {
     edition,
     laterChanges,
     relations,
+    comparison,
     other,
   };
 }

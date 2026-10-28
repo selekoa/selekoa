@@ -27,6 +27,9 @@ import {
 } from './ReadingRows';
 import { ArchiveLink, SourceLanguage } from './SourceArchive';
 import { nonEnglishLanguage } from '../domain/source-archive';
+import { NavLink } from './NavLink';
+import { referencePath } from '../domain/addresses';
+import { frameworkComparison } from '../reading/framework-comparison';
 import './reading-first.css';
 
 const timelineYears = [2023, 2024, 2025, 2026];
@@ -456,11 +459,14 @@ export function DocumentHistory({
   repository,
   selectedClaimId,
   onClaim,
+  onCompare,
 }: {
   history: History;
   repository: Repository;
   selectedClaimId: string | null;
   onClaim: (id: string) => void;
+  /** Opens the comparison of the same frameworks across developers. */
+  onCompare?: () => void;
 }) {
   const { collection, families } = history;
   const editions = families.reduce((n, f) => n + f.editions.length, 0);
@@ -487,6 +493,20 @@ export function DocumentHistory({
             label="Copy link to this history"
           />
         </div>
+        {onCompare && (
+          <p className="doc-compare">
+            <NavLink
+              className="landing-action"
+              href={referencePath({
+                kind: 'compare',
+                id: frameworkComparison.id,
+              })}
+              onOpen={onCompare}
+            >
+              Compare the frameworks question by question →
+            </NavLink>
+          </p>
+        )}
       </header>
       <Timeline history={history} />
       <details className="doc-limits-box">

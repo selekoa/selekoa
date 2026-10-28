@@ -1,4 +1,4 @@
-import { test, expect, type Page } from '@playwright/test';
+import { test, expect, type Page } from './fixtures';
 import AxeBuilder from '@axe-core/playwright';
 import { readFileSync } from 'node:fs';
 import { datasetSchema } from '../../src/domain/schema';
@@ -24,7 +24,7 @@ const data = datasetSchema.parse(
   ),
 );
 const view = questionStarterView(data, definition);
-const address = '/#/question/' + definition.id;
+const address = '/question/' + definition.id;
 
 function collectErrors(page: Page) {
   const errors: string[] = [];
@@ -54,11 +54,11 @@ test('question page lists records with qualifications, sources and gaps', async 
   page,
 }) => {
   const errors = collectErrors(page);
-  await page.goto('/#/governance');
+  await page.goto('/governance');
   await page
-    .getByRole('button', { name: 'Open the research question →' })
+    .getByRole('link', { name: 'Open the research question →' })
     .click();
-  await expect(page).toHaveURL(new RegExp('#/question/' + definition.id));
+  await expect(page).toHaveURL(new RegExp('/question/' + definition.id));
   await expect(page.getByRole('heading', { level: 1 })).toHaveText(
     definition.title,
   );

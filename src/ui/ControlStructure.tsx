@@ -1,4 +1,8 @@
 import type { Repository } from '../domain/repository';
+import { NavLink, RecordLink } from './NavLink';
+import { referencePath } from '../domain/addresses';
+import { startHref } from './SiteChrome';
+import { startIds } from './start-ids';
 import {
   controlEntryLabels,
   controlRightLabels,
@@ -174,15 +178,23 @@ export function ControlStructure({
           Related:{' '}
           {others.map((o) => (
             <span key={o.id}>
-              <button className="text-button" onClick={() => onOther(o.id)}>
+              <NavLink
+                className="text-button"
+                href={referencePath({ kind: 'control', id: o.id })}
+                onOpen={() => onOther(o.id)}
+              >
                 {o.title}
-              </button>
+              </NavLink>
               {' · '}
             </span>
           ))}
-          <button className="text-button" onClick={onCommitments}>
+          <NavLink
+            className="text-button"
+            href={startHref({ kind: 'commitments' }, startIds)}
+            onOpen={onCommitments}
+          >
             External commitments and obligations
-          </button>
+          </NavLink>
         </p>
       </header>
       <ControlSummary structure={structure} {...props} />
@@ -242,12 +254,13 @@ export function ControlStructure({
         <ul className="control-party-list">
           {parties.map(({ entity, legalForms }) => (
             <li key={entity.id}>
-              <button
+              <RecordLink
                 className="text-button"
-                onClick={() => onEntity(entity.id)}
+                id={entity.id}
+                onOpen={() => onEntity(entity.id)}
               >
                 {entity.name}
-              </button>{' '}
+              </RecordLink>{' '}
               <span className="small-note">{entity.subtype}</span>
               {legalForms.map((c) => (
                 <span key={c.id}>

@@ -80,6 +80,7 @@ export function readingDates(data: Dataset, claim: Claim) {
       .sort((a, b) => a.id.localeCompare(b.id))
       .map((s) => ({
         sourceId: s.id,
+        title: s.title,
         date: s.publicationDate,
         retrospective:
           !!date &&

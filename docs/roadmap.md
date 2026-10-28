@@ -72,8 +72,9 @@ project document with phased scopes and "How we searched" notes.
   retrieval-route marks and attributed stated reasons. Next, after the site
   restructure: the "who went where" reading page, a "People and founding" section on
   lab dossiers and next/previous organisation links on person pages
-  ([app proposal](../research/lab-genealogy/app-proposal.md)); recheck Adept's launch
-  post for the five held-back records.
+  ([app proposal](../research/lab-genealogy/app-proposal.md)). The five records held
+  back for Adept's launch post were admitted on 2026-10-26
+  ([record](../review/archive-admissions-2026-10-26.md)).
 
 ## Maintainer decisions (2026-10-15)
 
@@ -102,8 +103,8 @@ a milestone of features, coverage or time.
 ## Publication decisions (recorded 2026-10-04; licences and launch preparation 2026-10-10)
 
 The licence choices below were confirmed on 2026-10-10 and the licence files are in the
-repository (`LICENSE`, `LICENSE-DATA.txt`, `LICENSING.md`). Nothing is published yet.
-Launch preparation and the maintainer's launch-day steps are in
+repository (`LICENSE`, `LICENSE-DATA.txt`, `LICENSING.md`). The site launched on
+2026-10-26 at https://selekoa.org. Launch preparation, hosting and routine steps are in
 [launch-readiness](launch-readiness.md) and [launch-runbook](launch-runbook.md).
 
 - **Code:** MIT licence.
@@ -118,9 +119,10 @@ Launch preparation and the maintainer's launch-day steps are in
   requests and questions (the earlier provisional address is superseded). It is one
   setting in `site.config.json`; a placeholder stays until it is chosen, and a public
   build refuses the placeholder.
-- **Publication route:** publish later from a separate GitHub organisation, as a
-  public repository with fresh history. This private repository and its history are
-  not made public.
+- **Publication route:** a separate GitHub organisation holds the public repository
+  `selekoa/selekoa`, with fresh history and snapshot commits only
+  ([publishing](publishing.md)). This private repository and its history are not made
+  public.
 - **Citation formatting licence (decided 2026-10-10):** "Copy APA" stays. citeproc-js
   is used under CPAL-1.0 (it offers CPAL-1.0 or AGPL-1.0), which has no attribution
   display requirement here but asks for a source-availability notice and a copy of the
@@ -144,6 +146,33 @@ Launch preparation and the maintainer's launch-day steps are in
 Dataset releases ([format](dataset-format.md), `release/`) carry the field classes and
 the separate quote field these decisions rely on. Releases before format 1.4 say that no
 licence is granted and stay unchanged; `LICENSING.md` states the terms for them.
+
+## Findability and scaling (decided 2026-10-27)
+
+An external test on 2026-10-27 found that search engines and LLM/agent tools see only
+the start page: every page is a hash route rendered in the browser.
+
+1. **Phase 1, data at stable URLs:** the current release's files under `/data/`,
+   an `llms.txt`, both in the sitemap.
+2. **Phase 2, pre-rendered pages:** real paths (`/person/…`, `/document/…`,
+   `/dossier/…`, `/claim/…`, collections and hubs), each built as plain HTML with its
+   text present without scripts, listed in the sitemap; old `#/…` addresses redirect.
+   Covers every existing record, not only new ones. Design constraint: URLs and page
+   templates must be renderable by the same code either at build time or on request,
+   so phase 3 changes nothing for readers or links.
+   **Status (2026-10-27): built on branch `prerender-pages`, awaiting review and
+   merge.** Every page type has a path; the build renders the app's own React
+   components for every page with a renderer that runs in Node or a worker; the
+   browser hydrates the built HTML; old hash links redirect; the sitemap lists every
+   page. Design, URL scheme, sizes and open questions:
+   [review/prerender-pages-2026-10-27.md](../review/prerender-pages-2026-10-27.md).
+3. **Phase 3, on-demand rendering (when needed):** a Cloudflare Worker renders a page
+   on its first request from the release data and caches it at the edge; search moves
+   to the server (a database with full-text search, or a chunked static index).
+   **Triggers:** about 10,000 pre-rendered pages, builds slow enough to hinder
+   work, a deployment approaching the host's file limit (20,000 files per deployment
+   on the free Pages plan), or the browser data bundle (about 6 MB in October 2026)
+   becoming too heavy for phones. Check these at each dataset release.
 
 ## Next major development phase
 
@@ -173,9 +202,11 @@ The [research spines](project-positioning.md#flagship-research-spines) are curre
 strategic directions, not finished products. Alongside governance, deepen the
 documented history of human thought, institutions and disagreement around machine
 intelligence without inferred ideological classification. Retain the bounded
-Chinese collection as the start of enduring Chinese frontier-AI institutional
-history, preserving distinct organizations, researchers and original-language
-expressions.
+Chinese collections (the first of 2026-09-29 and the second of 2026-10-27) as the
+start of enduring Chinese frontier-AI institutional history, preserving distinct
+organizations, researchers and original-language expressions. StepFun, 01.AI and
+Tencent Hunyuan were deferred from the second collection; the second collection's
+open leads are in its [admission record](../review/china-labs-2-admission-2026-10-27.md#open-leads).
 
 The corpus and its research semantics are the durable asset. The graph is one
 interface, with no obligation to compete visually with adjacent network projects;
@@ -200,6 +231,30 @@ and paid infrastructure require separate decisions.
   names of schema 2.14. Open: six sources without them (unsigned, anonymous, edited or
   unnamed contributors), two group credits that hide named chairs, and an editor role
   for edited books; see `review/citation-authors-2026-10-15.md`.
+
+### Backlog
+
+- **AGI term provenance:** earliest located uses of 'artificial general intelligence' /
+  'AGI' (candidate leads: Gubrud 1997; Goertzel and Pennachin (eds.) 2007, _Artificial
+  General Intelligence_; Goertzel's account of Shane Legg suggesting the term).
+  Admitting a Goertzel text gives him a person record; Shane Legg needs one too.
+  Wording: earliest located, never first.
+- **(B, next in line) Compute, power and orbit:** the documented build-out of AI
+  compute — data-centre projects, power deals, chip supply, and orbital compute plans
+  and the arguments for them (announced stays announced; arguments as propositions
+  with earliest located sources).
+- **(C) AI and biosecurity:** how frameworks treat biological risk, published
+  bio-uplift evaluations, gene-synthesis screening rules and government measures.
+- **Kinds of AI and technical history:** the families of machine intelligence (not
+  only large language models) and a technical timeline, as a documentary subproject.
+- **Key papers and publications on AI (maintainer note, 2026-10-28).** Papers and
+  other publications that the record's own documents rely on — the quintessential
+  example is “Attention Is All You Need” (2017). Belongs mainly to the
+  technical-history strand, with links into the thought spine where a paper shaped a
+  debate. Selection needs a stated basis that is not a judgement of importance (for
+  example: cited by dataset documents or frameworks, or a stated citation count with
+  its date and source); record what a paper states and its publication facts, never
+  “first” or “landmark”.
 
 ### Parked work
 
@@ -237,3 +292,10 @@ and paid infrastructure require separate decisions.
   forecasts (M08); a key for the audit letters in economics qualifications; the stale
   retrieval note on Davidson's G06 record; re-read the passages added from captures
   when web.archive.org answers.
+  Data fixes of 2026-10-26 (dataset v0.7.1;
+  [record](../review/data-fixes-2026-10-26.md)). Open from them: a person-page
+  date line that does not say which source it dates (UI).
+  Archive admissions of 2026-10-26 (dataset v0.7.2;
+  [record](../review/archive-admissions-2026-10-26.md)): the five held-back Adept
+  records and the Stargate capacity quotation. Versioning rule revised the same day
+  (patch for small additions within existing collections).

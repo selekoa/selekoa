@@ -20,6 +20,10 @@ export const chineseHistories = [
   ['deepseek', 'DeepSeek'],
   ['alibaba-group', 'Alibaba / Qwen'],
   ['zhipu', 'Zhipu AI'],
+  ['moonshot-ai', 'Moonshot AI'],
+  ['minimax', 'MiniMax'],
+  ['baidu', 'Baidu / ERNIE'],
+  ['bytedance-seed', 'ByteDance Seed'],
 ] as const;
 
 /** Institutions with a dossier, as the start page and explorer list them. */

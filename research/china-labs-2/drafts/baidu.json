@@ -1,0 +1,994 @@
+{
+  "group": "baidu",
+  "searched": "Searched on 2026-10-27: arXiv (abstract pages and PDFs, version 1) and the arXiv API for ERNIE titles (ERNIE 1904.09223, ERNIE 2.0 1907.12412, ERNIE 3.0 2107.02137, ERNIE 3.0 Titan 2112.12731, ERNIE 5.0 Technical Report 2602.04705; the API also lists an ERNIE-Image Technical Report, not used); SEC EDGAR filing index for Baidu (CIK 1329099) and the Form 20-F filed 15 March 2024 and 17 March 2026, retrieved through the r.jina.ai relay; ir.baidu.com (press-release list reachable only through the relay, and its date filter did not apply; a guessed ERNIE Bot release URL returned 404); Baidu's PR Newswire releases of 16 March 2023 (ERNIE Bot) and 16 March 2025 (ERNIE 4.5 and ERNIE X1), found through web search and retrieved directly; the PaddlePaddle/ERNIE Git repository (blob-less clone, README.md and LICENSE pinned at commit a95ef9dc of 30 June 2025); Hugging Face baidu/ERNIE-4.5-300B-A47B-PT (commit list, README.md and LICENSE at commit 049f3d9b of 29 June 2025) and the baidu model listing. Retrieval failures: the ERNIE 4.5 technical report PDF at yiyan.baidu.com timed out directly (HTTP/2 errors) and the relay returned only the ERNIE assistant's application shell, so the report is not cited; no arXiv version of the ERNIE 4.5 report was found by the arXiv API. No Chinese-language Baidu original for the ERNIE Bot (文心一言) launch was located on home.baidu.com or ir.baidu.com by search; the English releases are cited instead. The Internet Archive was not consulted (refused from this environment).",
+  "existingUsed": ["lg-gc-wang-haifeng-baidu-cto-2019"],
+  "entities": [
+    {
+      "id": "baidu",
+      "existing": true
+    },
+    {
+      "id": "wang-haifeng",
+      "existing": true
+    },
+    {
+      "id": "peng-cheng-laboratory",
+      "type": "organisation",
+      "name": "Peng Cheng Laboratory",
+      "subtype": "Research laboratory",
+      "aliases": [],
+      "description": "Research laboratory named as the affiliation of four authors of the ERNIE 3.0 Titan report (arXiv version 1, December 2021).",
+      "sourceIds": ["c2-src-ernie3-titan-arxiv-v1"]
+    },
+    {
+      "id": "ernie-2019-report",
+      "type": "document",
+      "documentKind": "technical-report",
+      "name": "ERNIE: Enhanced Representation through Knowledge Integration",
+      "subtype": "Research paper",
+      "aliases": ["ERNIE 1.0"],
+      "description": "Paper by Baidu researchers introducing the ERNIE language representation model; cited at arXiv version 1 of 19 April 2019.",
+      "sourceIds": ["c2-src-ernie-arxiv-v1"]
+    },
+    {
+      "id": "ernie-2-report",
+      "type": "document",
+      "documentKind": "technical-report",
+      "name": "ERNIE 2.0: A Continual Pre-training Framework for Language Understanding",
+      "subtype": "Research paper",
+      "aliases": [],
+      "description": "Paper by Baidu researchers describing ERNIE 2.0; cited at arXiv version 1 of 29 July 2019.",
+      "sourceIds": ["c2-src-ernie2-arxiv-v1"]
+    },
+    {
+      "id": "ernie-3-report",
+      "type": "document",
+      "documentKind": "technical-report",
+      "name": "ERNIE 3.0: Large-scale Knowledge Enhanced Pre-training for Language Understanding and Generation",
+      "subtype": "Research paper",
+      "aliases": [],
+      "description": "Paper by Baidu researchers describing ERNIE 3.0; cited at arXiv version 1 of 5 July 2021.",
+      "sourceIds": ["c2-src-ernie3-arxiv-v1"]
+    },
+    {
+      "id": "ernie-3-titan-report",
+      "type": "document",
+      "documentKind": "technical-report",
+      "name": "ERNIE 3.0 Titan: Exploring Larger-scale Knowledge Enhanced Pre-training for Language Understanding and Generation",
+      "subtype": "Research paper",
+      "aliases": [],
+      "description": "Paper by authors at Baidu and Peng Cheng Laboratory describing ERNIE 3.0 Titan; cited at arXiv version 1 of 23 December 2021.",
+      "sourceIds": ["c2-src-ernie3-titan-arxiv-v1"]
+    },
+    {
+      "id": "ernie-bot-launch-2023",
+      "type": "document",
+      "documentKind": "announcement",
+      "name": "Baidu Unveils ERNIE Bot, the Latest Generative AI Mastering Chinese Language and Multi-Modal Generation",
+      "subtype": "Press release",
+      "aliases": ["文心一言 launch"],
+      "description": "Baidu press release of 16 March 2023, distributed through PR Newswire, announcing ERNIE Bot and invitation-based access; read as the page stood on 27 October 2026.",
+      "sourceIds": ["c2-src-baidu-erniebot-prn-2023"]
+    },
+    {
+      "id": "ernie-45-x1-launch-2025",
+      "type": "document",
+      "documentKind": "announcement",
+      "name": "Baidu Unveils ERNIE 4.5 and Reasoning Model ERNIE X1, Makes ERNIE Bot Free Ahead of Schedule",
+      "subtype": "Press release",
+      "aliases": [],
+      "description": "Baidu press release of 16 March 2025, distributed through PR Newswire, announcing ERNIE 4.5 and ERNIE X1; read as the page stood on 27 October 2026.",
+      "sourceIds": ["c2-src-baidu-ernie45-x1-prn-2025"]
+    },
+    {
+      "id": "ernie-45-repository-readme",
+      "type": "document",
+      "documentKind": "model-card",
+      "name": "PaddlePaddle/ERNIE repository README (ERNIE 4.5), commit a95ef9dc",
+      "subtype": "Repository README",
+      "aliases": [],
+      "description": "README of the PaddlePaddle/ERNIE Git repository introducing the ERNIE 4.5 model family, cited at commit a95ef9dc of 30 June 2025.",
+      "sourceIds": ["c2-src-ernie45-github-readme"]
+    },
+    {
+      "id": "ernie-45-licence",
+      "type": "document",
+      "documentKind": "licence",
+      "name": "ERNIE-4.5-300B-A47B-PT licence statement and LICENSE file, revision 049f3d9b",
+      "subtype": "Model licence",
+      "aliases": [],
+      "description": "Licence section of the Hugging Face model card for baidu/ERNIE-4.5-300B-A47B-PT and the LICENSE file in the same repository, both at revision 049f3d9b of 29 June 2025.",
+      "sourceIds": ["c2-src-ernie45-hf-readme", "c2-src-ernie45-hf-license"]
+    },
+    {
+      "id": "baidu-20f-fy2023",
+      "type": "document",
+      "documentKind": "filing",
+      "name": "Baidu, Inc. annual report on Form 20-F for the fiscal year ended December 31, 2023",
+      "subtype": "Annual report (Form 20-F)",
+      "aliases": [],
+      "description": "Baidu's annual report on Form 20-F filed with the US SEC on 15 March 2024 (accession 0001193125-24-068527).",
+      "sourceIds": ["c2-src-baidu-20f-fy2023"]
+    },
+    {
+      "id": "baidu-20f-fy2025",
+      "type": "document",
+      "documentKind": "filing",
+      "name": "Baidu, Inc. annual report on Form 20-F for the fiscal year ended December 31, 2025",
+      "subtype": "Annual report (Form 20-F)",
+      "aliases": [],
+      "description": "Baidu's annual report on Form 20-F filed with the US SEC on 17 March 2026 (accession 0001193125-26-109289).",
+      "sourceIds": ["c2-src-baidu-20f-fy2025"]
+    },
+    {
+      "id": "ernie-5-report",
+      "type": "document",
+      "documentKind": "technical-report",
+      "name": "ERNIE 5.0 Technical Report",
+      "subtype": "Technical report",
+      "aliases": [],
+      "description": "Technical report by Baidu's ERNIE Team describing ERNIE 5.0; cited at arXiv version 1 of 4 February 2026.",
+      "sourceIds": ["c2-src-ernie5-arxiv-v1"]
+    }
+  ],
+  "sources": [
+    {
+      "id": "c2-src-ernie-arxiv-v1",
+      "cacheKey": "baidu-ernie1-pdf",
+      "title": "ERNIE: Enhanced Representation through Knowledge Integration",
+      "originalTitle": null,
+      "authors": [
+        "Yu Sun",
+        "Shuohuan Wang",
+        "Yukun Li",
+        "Shikun Feng",
+        "Xuyi Chen",
+        "Han Zhang",
+        "Xin Tian",
+        "Danxiang Zhu",
+        "Hao Tian",
+        "Hua Wu"
+      ],
+      "publisher": "arXiv",
+      "publicationDate": "2019-04-19",
+      "kind": "paper",
+      "url": "https://arxiv.org/pdf/1904.09223v1",
+      "route": "direct",
+      "language": "en",
+      "sourceClass": "primary",
+      "version": {
+        "kind": "arxiv",
+        "id": "1904.09223v1",
+        "note": "Version 1 as submitted on 19 April 2019; the only version listed on the abstract page."
+      }
+    },
+    {
+      "id": "c2-src-ernie2-arxiv-v1",
+      "cacheKey": "baidu-ernie2-pdf",
+      "title": "ERNIE 2.0: A Continual Pre-training Framework for Language Understanding",
+      "originalTitle": null,
+      "authors": [
+        "Yu Sun",
+        "Shuohuan Wang",
+        "Yukun Li",
+        "Shikun Feng",
+        "Hao Tian",
+        "Hua Wu",
+        "Haifeng Wang"
+      ],
+      "publisher": "arXiv",
+      "publicationDate": "2019-07-29",
+      "kind": "paper",
+      "url": "https://arxiv.org/pdf/1907.12412v1",
+      "route": "direct",
+      "language": "en",
+      "sourceClass": "primary",
+      "version": {
+        "kind": "arxiv",
+        "id": "1907.12412v1",
+        "note": "Version 1 as submitted on 29 July 2019; version 2 (21 November 2019) not inspected."
+      }
+    },
+    {
+      "id": "c2-src-ernie3-arxiv-v1",
+      "cacheKey": "baidu-ernie3-pdf",
+      "title": "ERNIE 3.0: Large-scale Knowledge Enhanced Pre-training for Language Understanding and Generation",
+      "originalTitle": null,
+      "authors": ["Yu Sun", "Shuohuan Wang", "Shikun Feng", "et al. (Baidu)"],
+      "publisher": "arXiv",
+      "publicationDate": "2021-07-05",
+      "kind": "paper",
+      "url": "https://arxiv.org/pdf/2107.02137v1",
+      "route": "direct",
+      "language": "en",
+      "sourceClass": "primary",
+      "version": {
+        "kind": "arxiv",
+        "id": "2107.02137v1",
+        "note": "Version 1 as submitted on 5 July 2021."
+      }
+    },
+    {
+      "id": "c2-src-ernie3-titan-arxiv-v1",
+      "cacheKey": "baidu-titan-pdf",
+      "title": "ERNIE 3.0 Titan: Exploring Larger-scale Knowledge Enhanced Pre-training for Language Understanding and Generation",
+      "originalTitle": null,
+      "authors": [
+        "Shuohuan Wang",
+        "Yu Sun",
+        "Yang Xiang",
+        "et al. (Baidu; Peng Cheng Laboratory)"
+      ],
+      "publisher": "arXiv",
+      "publicationDate": "2021-12-23",
+      "kind": "paper",
+      "url": "https://arxiv.org/pdf/2112.12731v1",
+      "route": "direct",
+      "language": "en",
+      "sourceClass": "primary",
+      "version": {
+        "kind": "arxiv",
+        "id": "2112.12731v1",
+        "note": "Version 1 as submitted on 23 December 2021."
+      }
+    },
+    {
+      "id": "c2-src-baidu-erniebot-prn-2023",
+      "cacheKey": "baidu-erniebot-prn",
+      "title": "Baidu Unveils ERNIE Bot, the Latest Generative AI Mastering Chinese Language and Multi-Modal Generation",
+      "originalTitle": null,
+      "authors": ["Baidu, Inc."],
+      "publisher": "Baidu, Inc. (distributed by PR Newswire)",
+      "publicationDate": "2023-03-16",
+      "kind": "announcement",
+      "url": "https://www.prnewswire.com/news-releases/baidu-unveils-ernie-bot-the-latest-generative-ai-mastering-chinese-language-and-multi-modal-generation-301774240.html",
+      "route": "direct",
+      "language": "en",
+      "sourceClass": "primary",
+      "version": {
+        "kind": "mutable-page",
+        "id": null,
+        "note": "Distributor page marked 'News provided by Baidu, Inc.', dated 16 March 2023, read as it stood on 27 October 2026; earlier wording not authenticated."
+      }
+    },
+    {
+      "id": "c2-src-baidu-ernie45-x1-prn-2025",
+      "cacheKey": "baidu-ernie45-x1-prn",
+      "title": "Baidu Unveils ERNIE 4.5 and Reasoning Model ERNIE X1, Makes ERNIE Bot Free Ahead of Schedule",
+      "originalTitle": null,
+      "authors": ["Baidu, Inc."],
+      "publisher": "Baidu, Inc. (distributed by PR Newswire)",
+      "publicationDate": "2025-03-16",
+      "kind": "announcement",
+      "url": "https://www.prnewswire.com/news-releases/baidu-unveils-ernie-4-5-and-reasoning-model-ernie-x1--makes-ernie-bot-free-ahead-of-schedule-302402490.html",
+      "route": "direct",
+      "language": "en",
+      "sourceClass": "primary",
+      "version": {
+        "kind": "mutable-page",
+        "id": null,
+        "note": "Distributor page marked 'News provided by Baidu, Inc.', dated 16 March 2025, read as it stood on 27 October 2026; earlier wording not authenticated."
+      }
+    },
+    {
+      "id": "c2-src-ernie45-github-readme",
+      "cacheKey": "baidu-ernie-gh-readme",
+      "title": "PaddlePaddle/ERNIE README.md",
+      "originalTitle": null,
+      "authors": ["PaddlePaddle (Baidu)"],
+      "publisher": "PaddlePaddle/ERNIE Git repository (GitHub)",
+      "publicationDate": "2025-06-30",
+      "kind": "announcement",
+      "url": "https://raw.githubusercontent.com/PaddlePaddle/ERNIE/a95ef9dc7ef56c8546ca2f171e8bbd1f0ee6e0fa/README.md",
+      "route": "direct",
+      "language": "en",
+      "sourceClass": "primary",
+      "version": {
+        "kind": "git-commit",
+        "id": "a95ef9dc7ef56c8546ca2f171e8bbd1f0ee6e0fa",
+        "note": "README.md at commit 'Update ERNIE 4.5 Introduction (#930)', committed 30 June 2025."
+      }
+    },
+    {
+      "id": "c2-src-ernie45-hf-readme",
+      "cacheKey": "baidu-ernie45-hf-readme",
+      "title": "ERNIE-4.5-300B-A47B model card (README.md, revision 049f3d9b)",
+      "originalTitle": null,
+      "authors": ["Baidu"],
+      "publisher": "Baidu (Hugging Face organisation baidu)",
+      "publicationDate": "2025-06-29",
+      "kind": "announcement",
+      "url": "https://huggingface.co/baidu/ERNIE-4.5-300B-A47B-PT/raw/049f3d9bce0f9dee47b83d4e42dc76f95e473e43/README.md",
+      "route": "direct",
+      "language": "en",
+      "sourceClass": "primary",
+      "version": {
+        "kind": "hf-commit",
+        "id": "049f3d9bce0f9dee47b83d4e42dc76f95e473e43",
+        "note": "README.md at the Hugging Face commit 'Update README.md' of 29 June 2025; repository created 28 June 2025."
+      }
+    },
+    {
+      "id": "c2-src-ernie45-hf-license",
+      "cacheKey": "baidu-ernie45-hf-license",
+      "title": "ERNIE-4.5-300B-A47B-PT LICENSE (revision 049f3d9b)",
+      "originalTitle": null,
+      "authors": ["Baidu"],
+      "publisher": "Baidu (Hugging Face organisation baidu)",
+      "publicationDate": "2025-06-29",
+      "kind": "announcement",
+      "url": "https://huggingface.co/baidu/ERNIE-4.5-300B-A47B-PT/raw/049f3d9bce0f9dee47b83d4e42dc76f95e473e43/LICENSE",
+      "route": "direct",
+      "language": "en",
+      "sourceClass": "primary",
+      "version": {
+        "kind": "hf-commit",
+        "id": "049f3d9bce0f9dee47b83d4e42dc76f95e473e43",
+        "note": "LICENSE file as it stands at the Hugging Face revision of 29 June 2025."
+      }
+    },
+    {
+      "id": "c2-src-baidu-20f-fy2023",
+      "cacheKey": "baidu-20f-2024",
+      "title": "Baidu, Inc. annual report on Form 20-F for the fiscal year ended December 31, 2023",
+      "originalTitle": null,
+      "authors": ["Baidu, Inc."],
+      "publisher": "U.S. Securities and Exchange Commission (EDGAR)",
+      "publicationDate": "2024-03-15",
+      "kind": "filing",
+      "url": "https://www.sec.gov/Archives/edgar/data/1329099/000119312524068527/d584913d20f.htm",
+      "route": "relay",
+      "language": "en",
+      "sourceClass": "primary",
+      "version": {
+        "kind": "filing",
+        "id": "0001193125-24-068527",
+        "note": "Filed document d584913d20f.htm, filing date 15 March 2024; retrieved through the r.jina.ai relay after direct retrieval failed (HTTP/2 stream errors)."
+      }
+    },
+    {
+      "id": "c2-src-baidu-20f-fy2025",
+      "cacheKey": "baidu-20f-2026",
+      "datasetSourceId": "lg-src-gc-baidu-20f-2026",
+      "title": "Baidu, Inc. annual report on Form 20-F for the fiscal year ended December 31, 2025",
+      "originalTitle": null,
+      "authors": ["Baidu, Inc."],
+      "publisher": "U.S. Securities and Exchange Commission (EDGAR)",
+      "publicationDate": "2026-03-17",
+      "kind": "filing",
+      "url": "https://www.sec.gov/Archives/edgar/data/1329099/000119312526109289/d38065d20f.htm",
+      "route": "relay",
+      "language": "en",
+      "sourceClass": "primary",
+      "version": {
+        "kind": "filing",
+        "id": "0001193125-26-109289",
+        "note": "Filed document d38065d20f.htm, filing date 17 March 2026; retrieved through the r.jina.ai relay. Already in data/sources.json as lg-src-gc-baidu-20f-2026."
+      }
+    },
+    {
+      "id": "c2-src-ernie5-arxiv-v1",
+      "cacheKey": "baidu-ernie5-pdf",
+      "title": "ERNIE 5.0 Technical Report",
+      "originalTitle": null,
+      "authors": ["ERNIE Team, Baidu"],
+      "publisher": "arXiv",
+      "publicationDate": "2026-02-04",
+      "kind": "paper",
+      "url": "https://arxiv.org/pdf/2602.04705v1",
+      "route": "direct",
+      "language": "en",
+      "sourceClass": "primary",
+      "version": {
+        "kind": "arxiv",
+        "id": "2602.04705v1",
+        "note": "Version 1 as submitted on 4 February 2026."
+      }
+    }
+  ],
+  "claims": [
+    {
+      "id": "c2-baidu-ernie-2019-report",
+      "subject": "baidu",
+      "predicate": "published",
+      "object": {
+        "kind": "entity",
+        "entityId": "ernie-2019-report"
+      },
+      "topic": "ideas",
+      "statement": "Ten Baidu researchers posted the paper introducing ERNIE (Enhanced Representation through kNowledge IntEgration) to arXiv on 19 April 2019 (version 1).",
+      "time": {
+        "kind": "event",
+        "date": "2019-04-19",
+        "basis": "publication",
+        "note": "Submission date of arXiv version 1; not a model or code release date."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "Attribution to Baidu rests on the single affiliation 'Baidu Inc.' given for all authors on the title page. The record does not establish the model's performance, a release of code or weights, or the paper's later peer-reviewed form.",
+      "evidence": [
+        {
+          "id": "c2-ev-baidu-ernie-2019-report",
+          "sourceId": "c2-src-ernie-arxiv-v1",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Title page (author block without e-mail line) and arXiv stamp",
+          "passageType": "quote",
+          "passage": "ERNIE: Enhanced Representation through Knowledge Integration Yu Sun, Shuohuan Wang, Yukun Li, Shikun Feng Xuyi Chen, Han Zhang, Xin Tian, Danxiang Zhu, Hao Tian, Hua Wu Baidu Inc.",
+          "translation": null
+        }
+      ]
+    },
+    {
+      "id": "c2-baidu-ernie-2-report",
+      "subject": "baidu",
+      "predicate": "published",
+      "object": {
+        "kind": "entity",
+        "entityId": "ernie-2-report"
+      },
+      "topic": "ideas",
+      "statement": "Baidu researchers posted the ERNIE 2.0 paper, which describes a continual pre-training framework, to arXiv on 29 July 2019 (version 1).",
+      "time": {
+        "kind": "event",
+        "date": "2019-07-29",
+        "basis": "publication",
+        "note": "Submission date of arXiv version 1; a version 2 is dated 21 November 2019. Not a model release date."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "Attribution to Baidu rests on the affiliation 'Baidu Inc.' on the title page. The record does not establish performance claims made in the paper or the date any code or model was released.",
+      "evidence": [
+        {
+          "id": "c2-ev-baidu-ernie-2-report",
+          "sourceId": "c2-src-ernie2-arxiv-v1",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Title page and arXiv stamp",
+          "passageType": "quote",
+          "passage": "ERNIE 2.0: A CONTINUAL PRE - TRAINING FRAMEWORK FOR LANGUAGE UNDERSTANDING arXiv:1907.12412v1 [cs.CL] 29 Jul 2019",
+          "translation": null
+        }
+      ]
+    },
+    {
+      "id": "c2-baidu-wang-haifeng-ernie-2",
+      "subject": "wang-haifeng",
+      "predicate": "authored",
+      "object": {
+        "kind": "entity",
+        "entityId": "ernie-2-report"
+      },
+      "topic": "people",
+      "statement": "Haifeng Wang is listed, with the affiliation Baidu Inc., as the last of seven authors of the ERNIE 2.0 paper (arXiv version 1, 29 July 2019).",
+      "time": {
+        "kind": "event",
+        "date": "2019-07-29",
+        "basis": "publication",
+        "note": "Date of arXiv version 1."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "The person is matched to the existing record for Baidu's CTO by name and the Baidu affiliation; the paper does not state his title. Author order is not interpreted as a statement of role or contribution.",
+      "evidence": [
+        {
+          "id": "c2-ev-baidu-wang-haifeng-ernie-2",
+          "sourceId": "c2-src-ernie2-arxiv-v1",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Title page author block (e-mail line omitted)",
+          "passageType": "quote",
+          "passage": "Yu Sun, Shuohuan Wang, Yukun Li, Shikun Feng, Hao Tian, Hua Wu, Haifeng Wang Baidu Inc.",
+          "translation": null
+        }
+      ]
+    },
+    {
+      "id": "c2-baidu-ernie-3-report",
+      "subject": "baidu",
+      "predicate": "published",
+      "object": {
+        "kind": "entity",
+        "entityId": "ernie-3-report"
+      },
+      "topic": "ideas",
+      "statement": "Baidu researchers posted the ERNIE 3.0 paper on large-scale knowledge-enhanced pre-training to arXiv on 5 July 2021 (version 1).",
+      "time": {
+        "kind": "event",
+        "date": "2021-07-05",
+        "basis": "publication",
+        "note": "Submission date of arXiv version 1; not a model release date."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "Attribution to Baidu rests on the affiliation 'Baidu Inc.' on the title page. Parameter counts and benchmark results stated in the paper are not recorded here.",
+      "evidence": [
+        {
+          "id": "c2-ev-baidu-ernie-3-report",
+          "sourceId": "c2-src-ernie3-arxiv-v1",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Title page and arXiv stamp",
+          "passageType": "quote",
+          "passage": "arXiv:2107.02137v1 [cs.CL] 5 Jul 2021",
+          "translation": null
+        },
+        {
+          "id": "c2-ev-baidu-ernie-3-report-affil",
+          "sourceId": "c2-src-ernie3-arxiv-v1",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Title page, end of author block (e-mail line omitted)",
+          "passageType": "quote",
+          "passage": "Hua Wu Haifeng Wang Baidu Inc.",
+          "translation": null
+        }
+      ]
+    },
+    {
+      "id": "c2-baidu-wang-haifeng-ernie-3",
+      "subject": "wang-haifeng",
+      "predicate": "authored",
+      "object": {
+        "kind": "entity",
+        "entityId": "ernie-3-report"
+      },
+      "topic": "people",
+      "statement": "Haifeng Wang is listed among the authors, all affiliated with Baidu Inc., of the ERNIE 3.0 paper (arXiv version 1, 5 July 2021).",
+      "time": {
+        "kind": "event",
+        "date": "2021-07-05",
+        "basis": "publication",
+        "note": "Date of arXiv version 1."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "The person is matched to the existing record for Baidu's CTO by name and the Baidu affiliation; the paper does not state his title or contribution.",
+      "evidence": [
+        {
+          "id": "c2-ev-baidu-wang-haifeng-ernie-3",
+          "sourceId": "c2-src-ernie3-arxiv-v1",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Title page author block (e-mail line omitted)",
+          "passageType": "quote",
+          "passage": "Peng Sun Hua Wu Haifeng Wang Baidu Inc.",
+          "translation": null
+        }
+      ]
+    },
+    {
+      "id": "c2-baidu-ernie-3-titan-report",
+      "subject": "baidu",
+      "predicate": "published",
+      "object": {
+        "kind": "entity",
+        "entityId": "ernie-3-titan-report"
+      },
+      "topic": "ideas",
+      "statement": "Authors at Baidu and Peng Cheng Laboratory posted the ERNIE 3.0 Titan paper to arXiv on 23 December 2021 (version 1); Baidu's 20-F filed in March 2024 dates the release of ERNIE 3.0 Titan to 2022.",
+      "time": {
+        "kind": "event",
+        "date": "2021-12-23",
+        "basis": "publication",
+        "note": "Submission date of arXiv version 1. Baidu's annual report filed on 15 March 2024 states that Baidu released ERNIE 3.0 Titan in 2022; the paper date and the filing's release year are kept apart and not reconciled here."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "Most authors are marked with Baidu Inc. and four with Peng Cheng Laboratory; the joint affiliation is recorded separately and implies nothing about direction or control. The paper's statements about model scale and performance are not recorded.",
+      "evidence": [
+        {
+          "id": "c2-ev-baidu-ernie-3-titan-report",
+          "sourceId": "c2-src-ernie3-titan-arxiv-v1",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Title page and arXiv stamp",
+          "passageType": "quote",
+          "passage": "arXiv:2112.12731v1 [cs.CL] 23 Dec 2021",
+          "translation": null
+        },
+        {
+          "id": "c2-ev-baidu-ernie-3-titan-20f",
+          "sourceId": "c2-src-baidu-20f-fy2023",
+          "sourceRole": "primary",
+          "support": "context",
+          "locator": "Item 4.B, Business overview, 'AI Capabilities'",
+          "passageType": "quote",
+          "passage": "In 2022, Baidu released ERNIE 3.0 Titan, a pre-training language model with 260 billion parameters.",
+          "translation": null
+        }
+      ]
+    },
+    {
+      "id": "c2-baidu-ernie-3-titan-pcl",
+      "subject": "peng-cheng-laboratory",
+      "predicate": "published",
+      "object": {
+        "kind": "entity",
+        "entityId": "ernie-3-titan-report"
+      },
+      "topic": "institutions",
+      "statement": "Peng Cheng Laboratory is the second institutional affiliation named in the ERNIE 3.0 Titan paper (arXiv version 1, 23 December 2021), marked for four of its authors.",
+      "time": {
+        "kind": "event",
+        "date": "2021-12-23",
+        "basis": "publication",
+        "note": "Date of arXiv version 1."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "An author affiliation, recorded as the earlier China collection recorded joint reports. It does not establish the laboratory's role in training, compute provision or funding, or any relation between the two institutions beyond co-authorship.",
+      "evidence": [
+        {
+          "id": "c2-ev-baidu-ernie-3-titan-pcl",
+          "sourceId": "c2-src-ernie3-titan-arxiv-v1",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Title page, affiliation markers († Baidu Inc., § Peng Cheng Laboratory); e-mail lines omitted",
+          "passageType": "paraphrase",
+          "passage": "The title page marks most authors with the affiliation Baidu Inc. and Yang Xiang, Wei Zeng, Ge Li and Wen Gao with Peng Cheng Laboratory.",
+          "anchor": "Peng Cheng Laboratory",
+          "translation": null
+        }
+      ]
+    },
+    {
+      "id": "c2-baidu-wang-haifeng-ernie-3-titan",
+      "subject": "wang-haifeng",
+      "predicate": "authored",
+      "object": {
+        "kind": "entity",
+        "entityId": "ernie-3-titan-report"
+      },
+      "topic": "people",
+      "statement": "Haifeng Wang is listed, with the Baidu affiliation marker, as the last author of the ERNIE 3.0 Titan paper (arXiv version 1, 23 December 2021).",
+      "time": {
+        "kind": "event",
+        "date": "2021-12-23",
+        "basis": "publication",
+        "note": "Date of arXiv version 1."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "The person is matched to the existing record for Baidu's CTO by name and the Baidu affiliation; the paper does not state his title or contribution.",
+      "evidence": [
+        {
+          "id": "c2-ev-baidu-wang-haifeng-ernie-3-titan",
+          "sourceId": "c2-src-ernie3-titan-arxiv-v1",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Title page author block (e-mail lines omitted)",
+          "passageType": "quote",
+          "passage": "Hao Tian† Haifeng Wang† † Baidu Inc.",
+          "translation": null
+        }
+      ]
+    },
+    {
+      "id": "c2-baidu-ernie-bot-launch",
+      "subject": "baidu",
+      "predicate": "published",
+      "object": {
+        "kind": "entity",
+        "entityId": "ernie-bot-launch-2023"
+      },
+      "topic": "ideas",
+      "statement": "Baidu announced ERNIE Bot on 16 March 2023, stating that it would be accessible to invited users from that day and that its API would be available on application to enterprise clients through Baidu AI Cloud.",
+      "time": {
+        "kind": "event",
+        "date": "2023-03-16",
+        "basis": "announcement",
+        "note": "Dateline and distribution date of the press release. Baidu's 20-F filed on 15 March 2024 places the ERNIE Bot launch in the quarter from January to March 2023; the date of general public availability is not established by these sources."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "Invitation-based access is the stage the release states; it is not general public availability. The release's capability descriptions and enterprise application figures are Baidu's own statements and are not recorded as facts. The Chinese product name 文心一言 does not appear in the cited English release.",
+      "evidence": [
+        {
+          "id": "c2-ev-baidu-ernie-bot-launch",
+          "sourceId": "c2-src-baidu-erniebot-prn-2023",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Release summary bullets",
+          "passageType": "quote",
+          "passage": "Starting March 16, 2023, ERNIE Bot will be accessible to invited users, and the API will be available upon application to enterprise clients via Baidu AI Cloud.",
+          "translation": null
+        },
+        {
+          "id": "c2-ev-baidu-ernie-bot-launch-dev",
+          "sourceId": "c2-src-baidu-erniebot-prn-2023",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Release summary, first bullet",
+          "passageType": "quote",
+          "passage": "ERNIE Bot is a new-generation large language model (LLM) and generative AI product developed by Baidu.",
+          "translation": null
+        },
+        {
+          "id": "c2-ev-baidu-ernie-bot-launch-20f",
+          "sourceId": "c2-src-baidu-20f-fy2023",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Item 4.B, Business overview, 'AI Capabilities'",
+          "passageType": "quote",
+          "passage": "Baidu released ERNIE Bot, our conversational AI bot powered by ERNIE, our in-house foundation model in the first quarter of 2023.",
+          "translation": null
+        }
+      ]
+    },
+    {
+      "id": "c2-baidu-20f-fy2023-genai-filing",
+      "subject": "baidu",
+      "predicate": "published",
+      "object": {
+        "kind": "entity",
+        "entityId": "baidu-20f-fy2023"
+      },
+      "topic": "governance",
+      "statement": "Baidu's annual report on Form 20-F, filed on 15 March 2024, states that Baidu completed the security assessment and algorithm filing required under the Generative AI Services Measures and other applicable rules before launching ERNIE Bot to the public.",
+      "time": {
+        "kind": "event",
+        "date": "2024-03-15",
+        "basis": "filing",
+        "note": "Filing date of the annual report; the filing does not date the assessment or the algorithm filing."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "Baidu's own statement in a securities filing; the record does not establish the content or outcome of any regulator's review, or that this statement was independently verified. The filing's own term 'Generative AI Services Measures' is kept as written.",
+      "evidence": [
+        {
+          "id": "c2-ev-baidu-20f-fy2023-genai-filing",
+          "sourceId": "c2-src-baidu-20f-fy2023",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Item 4.B, Regulations, section on generative AI",
+          "passageType": "quote",
+          "passage": "We had completed the necessary security assessment and algorithm filing in accordance with the Generative AI Services Measures and other applicable laws and regulations before we launched Ernie Bot to the public.",
+          "translation": null
+        }
+      ]
+    },
+    {
+      "id": "c2-baidu-ernie-45-x1-launch",
+      "subject": "baidu",
+      "predicate": "published",
+      "object": {
+        "kind": "entity",
+        "entityId": "ernie-45-x1-launch-2025"
+      },
+      "topic": "ideas",
+      "statement": "Baidu announced ERNIE 4.5 and the reasoning model ERNIE X1 on 16 March 2025, stating that both were accessible to individual users free of charge through ERNIE Bot.",
+      "time": {
+        "kind": "event",
+        "date": "2025-03-16",
+        "basis": "announcement",
+        "note": "Dateline and distribution date of the press release. The release says ERNIE X1 was 'set to be available' on the Qianfan platform for enterprise users at a later date."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "This is access through Baidu's service, not a release of weights; the open-weight release of ERNIE 4.5 models in June 2025 is recorded separately. The release's comparative performance and pricing statements are not recorded.",
+      "evidence": [
+        {
+          "id": "c2-ev-baidu-ernie-45-x1-launch",
+          "sourceId": "c2-src-baidu-ernie45-x1-prn-2025",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Opening paragraph (dateline BEIJING, March 16, 2025)",
+          "passageType": "quote",
+          "passage": "today launched its latest foundation models, including native multimodal foundation model ERNIE 4.5 and deep-thinking reasoning model ERNIE X1. Both models are now freely accessible to individual users through ERNIE Bot's official website",
+          "translation": null
+        }
+      ]
+    },
+    {
+      "id": "c2-baidu-ernie-45-repository",
+      "subject": "baidu",
+      "predicate": "published",
+      "object": {
+        "kind": "entity",
+        "entityId": "ernie-45-repository-readme"
+      },
+      "topic": "ideas",
+      "statement": "The PaddlePaddle/ERNIE repository README at its commit of 30 June 2025 introduces ERNIE 4.5 as a family of ten model variants and states that the models, including pre-trained weights and inference code, have been released on Hugging Face and AI Studio.",
+      "time": {
+        "kind": "event",
+        "date": "2025-06-30",
+        "basis": "revision",
+        "note": "Commit date of the cited README revision. Baidu's 20-F filed on 17 March 2026 states that Baidu open-sourced the ERNIE 4.5 series in June 2025; the Hugging Face repositories were created on 28 and 29 June 2025, but the date they became public is not established."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "Attribution of the repository to Baidu rests on Baidu's 20-F, which describes PaddlePaddle as Baidu's in-house deep learning framework, and on the Hugging Face model card's Baidu copyright line; the repository's own LICENSE names 'PaddlePaddle Authors'. 'Open-sourced' is Baidu's term; the record makes no judgement of openness beyond the stated licence.",
+      "evidence": [
+        {
+          "id": "c2-ev-baidu-ernie-45-repository",
+          "sourceId": "c2-src-ernie45-github-readme",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Introduction to ERNIE 4.5",
+          "passageType": "quote",
+          "passage": "We introduce ERNIE 4.5, a new family of large-scale multimodal models comprising 10 distinct variants.",
+          "translation": null
+        },
+        {
+          "id": "c2-ev-baidu-ernie-45-repository-note",
+          "sourceId": "c2-src-ernie45-github-readme",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Note below the model table",
+          "passageType": "quote",
+          "passage": "All models (including pre-trained weights and inference code) have been released on [Hugging Face](https://huggingface.co/baidu), and [AI Studio]",
+          "translation": null
+        },
+        {
+          "id": "c2-ev-baidu-ernie-45-repository-20f",
+          "sourceId": "c2-src-baidu-20f-fy2025",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Item 4.B, Business overview, 'AI Capabilities'",
+          "passageType": "quote",
+          "passage": "Baidu open-sourced the ERNIE 4.5 series, its latest and most advanced family of foundation models comprising ten models of different architectures and sizes, in June 2025.",
+          "translation": null
+        }
+      ]
+    },
+    {
+      "id": "c2-baidu-ernie-45-licence",
+      "subject": "baidu",
+      "predicate": "published",
+      "object": {
+        "kind": "entity",
+        "entityId": "ernie-45-licence"
+      },
+      "topic": "governance",
+      "statement": "Baidu's Hugging Face model card for ERNIE-4.5-300B-A47B-PT, at its revision of 29 June 2025, states that the ERNIE 4.5 models are provided under the Apache License 2.0, and the repository's LICENSE file at that revision is the Apache License, Version 2.0.",
+      "time": {
+        "kind": "snapshot",
+        "date": "2025-06-29",
+        "basis": "revision",
+        "note": "State of the model card and LICENSE file at Hugging Face revision 049f3d9b; the repository has later revisions (the audit found the licence wording unchanged in them)."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "The licence statement is read from one of the ten model repositories; the other nine were not each inspected, although the card's wording refers to 'The ERNIE 4.5 models'. The record does not establish the licensing of training data or of other Baidu models.",
+      "evidence": [
+        {
+          "id": "c2-ev-baidu-ernie-45-licence",
+          "sourceId": "c2-src-ernie45-hf-readme",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Section 'License'",
+          "passageType": "quote",
+          "passage": "The ERNIE 4.5 models are provided under the Apache License 2.0. This license permits commercial use, subject to its terms and conditions. Copyright (c) 2025 Baidu, Inc. All Rights Reserved.",
+          "translation": null
+        },
+        {
+          "id": "c2-ev-baidu-ernie-45-licence-file",
+          "sourceId": "c2-src-ernie45-hf-license",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "LICENSE, heading",
+          "passageType": "quote",
+          "passage": "Apache License Version 2.0, January 2004",
+          "translation": null
+        }
+      ]
+    },
+    {
+      "id": "c2-baidu-20f-fy2025-ernie-5",
+      "subject": "baidu",
+      "predicate": "published",
+      "object": {
+        "kind": "entity",
+        "entityId": "baidu-20f-fy2025"
+      },
+      "topic": "ideas",
+      "statement": "Baidu's annual report on Form 20-F, filed on 17 March 2026, states that Baidu unveiled ERNIE 5.0 at Baidu World 2025 in November 2025 and released an updated version of ERNIE 5.0 in January 2026.",
+      "time": {
+        "kind": "event",
+        "date": "2026-03-17",
+        "basis": "filing",
+        "note": "Filing date. The events it reports are dated by the filing to month precision only (November 2025; January 2026)."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "Baidu's own account in a securities filing. The filing's descriptions of ERNIE 5.0's capabilities are not recorded. No Baidu announcement of the November 2025 event was retrieved for this pack.",
+      "evidence": [
+        {
+          "id": "c2-ev-baidu-20f-fy2025-ernie-5",
+          "sourceId": "c2-src-baidu-20f-fy2025",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Item 4.B, Business overview, 'AI Capabilities'",
+          "passageType": "quote",
+          "passage": "In November 2025, we unveiled ERNIE 5.0, our first native omni-modal foundation model at Baidu World 2025.",
+          "translation": null
+        },
+        {
+          "id": "c2-ev-baidu-20f-fy2025-ernie-5-update",
+          "sourceId": "c2-src-baidu-20f-fy2025",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Item 4.B, Business overview, 'AI Capabilities'",
+          "passageType": "quote",
+          "passage": "In January 2026, we released an updated version of ERNIE 5.0.",
+          "translation": null
+        }
+      ]
+    },
+    {
+      "id": "c2-baidu-ernie-5-report",
+      "subject": "baidu",
+      "predicate": "published",
+      "object": {
+        "kind": "entity",
+        "entityId": "ernie-5-report"
+      },
+      "topic": "ideas",
+      "statement": "Baidu's ERNIE Team posted the ERNIE 5.0 Technical Report to arXiv on 4 February 2026 (version 1).",
+      "time": {
+        "kind": "event",
+        "date": "2026-02-04",
+        "basis": "publication",
+        "note": "Submission date of arXiv version 1; Baidu's 20-F dates the unveiling of ERNIE 5.0 to November 2025 and an updated version to January 2026."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "The report's architecture, scale and performance statements, including its own priority claim, are not recorded. The record does not establish a release of weights for ERNIE 5.0.",
+      "evidence": [
+        {
+          "id": "c2-ev-baidu-ernie-5-report",
+          "sourceId": "c2-src-ernie5-arxiv-v1",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Title page (e-mail address omitted) and arXiv stamp",
+          "passageType": "quote",
+          "passage": "ERNIE 5.0 Technical Report ERNIE Team, Baidu",
+          "translation": null
+        },
+        {
+          "id": "c2-ev-baidu-ernie-5-report-stamp",
+          "sourceId": "c2-src-ernie5-arxiv-v1",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "arXiv stamp, page 1",
+          "passageType": "quote",
+          "passage": "arXiv:2602.04705v1 [cs.CL] 4 Feb 2026",
+          "translation": null
+        }
+      ]
+    },
+    {
+      "id": "c2-baidu-wang-haifeng-ernie-5",
+      "subject": "wang-haifeng",
+      "predicate": "authored",
+      "object": {
+        "kind": "entity",
+        "entityId": "ernie-5-report"
+      },
+      "topic": "people",
+      "statement": "Haifeng Wang heads the list in the Contributors section of the ERNIE 5.0 Technical Report (arXiv version 1, 4 February 2026).",
+      "time": {
+        "kind": "event",
+        "date": "2026-02-04",
+        "basis": "publication",
+        "note": "Date of arXiv version 1."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "The report is credited to 'ERNIE Team, Baidu' with a Contributors list; the person is matched to the existing record for Baidu's CTO by name and the Baidu attribution. The list's order is not interpreted as a statement of role. 'Tian Wu' also appears in the list; no link to the existing record for Wu Tian is made, as the report gives no title or affiliation that would confirm identity.",
+      "evidence": [
+        {
+          "id": "c2-ev-baidu-wang-haifeng-ernie-5",
+          "sourceId": "c2-src-ernie5-arxiv-v1",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Section 8, Contributors",
+          "passageType": "quote",
+          "passage": "8 Contributors Haifeng Wang, Hua Wu, Tian Wu, Yu Sun",
+          "translation": null
+        }
+      ]
+    }
+  ]
+}

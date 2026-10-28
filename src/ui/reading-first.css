@@ -4,13 +4,13 @@
   gap: 4px;
   margin-left: 8px;
 }
-.header-nav button {
+.header-nav :is(button, a) {
   font-size: var(--text-sm);
   padding: 6px 8px;
   border-bottom: 2px solid transparent;
   white-space: nowrap;
 }
-.header-nav button[aria-current='page'] {
+.header-nav a[aria-current='page'] {
   border-color: var(--color-accent);
   color: var(--color-accent);
 }
@@ -84,6 +84,19 @@
   font-size: var(--heading-display);
   line-height: 1.2;
   margin: 12px 0 18px;
+}
+.hub .landing-lede h1 {
+  margin-bottom: 6px;
+}
+.hub-subtitle {
+  font: 600 17px/1.4 var(--font-sans);
+  margin: 0 0 18px;
+}
+.hub-scope-note {
+  color: var(--color-text-muted);
+  font-size: 15px;
+  max-width: 66ch;
+  margin: -10px 0 18px;
 }
 .landing-deck {
   font: 19px/1.6 var(--font-serif);
@@ -570,7 +583,7 @@
     margin: 0 -8px;
     padding-bottom: 4px;
   }
-  .header-nav button {
+  .header-nav :is(button, a) {
     padding: 8px 8px;
   }
   .landing,
@@ -786,11 +799,27 @@
   outline-offset: 2px;
 }
 
-/* Start page: the opening sentence, the search box and the hub cards. */
-.landing-lede h1.landing-opening {
-  font-size: var(--heading-section);
-  line-height: 1.35;
-  max-width: 34em;
+/* Start page: the tagline, the search box, the featured question and the
+   hub cards. */
+.landing-featured {
+  margin: 0 0 var(--space-5);
+}
+.landing-featured p {
+  margin: 0;
+}
+.landing-featured .eyebrow {
+  margin-bottom: var(--space-2);
+}
+.landing-featured .landing-featured-map {
+  margin-top: var(--space-3);
+}
+.landing-featured .text-button {
+  padding: 0;
+  white-space: normal;
+  text-align: left;
+  font: var(--heading-minor) / 1.3 var(--font-serif);
+  color: var(--color-accent);
+  text-decoration: underline;
 }
 .landing-search {
   display: flex;
@@ -878,10 +907,5 @@
 @media (max-width: 940px) {
   .hub-cards {
     grid-template-columns: minmax(0, 1fr);
-  }
-}
-@media (max-width: 600px) {
-  .landing-lede h1.landing-opening {
-    font-size: var(--heading-minor);
   }
 }

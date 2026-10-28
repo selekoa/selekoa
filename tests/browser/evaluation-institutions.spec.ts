@@ -1,4 +1,4 @@
-import { expect, test } from '@playwright/test';
+import { expect, test } from './fixtures';
 
 test('evaluation institution records retain evidence and limits in map and dossiers', async ({
   page,
@@ -8,7 +8,7 @@ test('evaluation institution records retain evidence and limits in map and dossi
   page.on('console', (msg) => {
     if (msg.type() === 'error') errors.push(msg.text());
   });
-  await page.goto('/#/claim/eval-i-arc-incubation');
+  await page.goto('/claim/eval-i-arc-incubation');
   const inspector = page.getByRole('complementary', {
     name: 'Evidence inspector',
   });
@@ -29,13 +29,13 @@ test('evaluation institution records retain evidence and limits in map and dossi
       '.map-edge.is-selected[data-claim-ids~="eval-i-arc-incubation"]',
     ),
   ).toBeVisible();
-  await expect(page).toHaveURL(/#\/claim\/eval-i-arc-incubation$/);
+  await expect(page).toHaveURL(/\/claim\/eval-i-arc-incubation$/);
   await page.screenshot({
     path: testInfo.outputPath('map.png'),
     fullPage: true,
   });
 
-  await page.goto('/#/dossier/metr');
+  await page.goto('/dossier/metr');
   const dossier = page.getByRole('article', {
     name: 'Model Evaluation & Threat Research institutional dossier',
   });
@@ -49,7 +49,7 @@ test('evaluation institution records retain evidence and limits in map and dossi
     fullPage: true,
   });
 
-  await page.goto('/#/claim/eval-i-uk-metr-demonstrations');
+  await page.goto('/claim/eval-i-uk-metr-demonstrations');
   await expect(inspector).toContainText('2023-11');
   await expect(inspector).toContainText('2024-02-09');
   await expect(inspector).toContainText('Case study 3: autonomous systems');
@@ -61,13 +61,13 @@ test('evaluation institution records retain evidence and limits in map and dossi
     fullPage: true,
   });
 
-  await page.goto('/#/dossier/alignment-research-center');
+  await page.goto('/dossier/alignment-research-center');
   await expect(
     page.getByRole('article', {
       name: 'Alignment Research Center institutional dossier',
     }),
   ).toBeVisible();
-  await page.goto('/#/claim/eval-i-claude-arc-credit');
+  await page.goto('/claim/eval-i-claude-arc-credit');
   await expect(inspector).toContainText('what Anthropic calls “safety audits”');
   await expect(inspector).toContainText(
     'not an assertion of independent certification',
@@ -77,7 +77,7 @@ test('evaluation institution records retain evidence and limits in map and dossi
     path: testInfo.outputPath('closeout-credit.png'),
     fullPage: true,
   });
-  await page.goto('/#/claim/eval-i-metr-bis-publication');
+  await page.goto('/claim/eval-i-metr-bis-publication');
   await expect(inspector).toContainText('dated October 11, 2024');
   await expect(inspector).toContainText(
     'government docket-receipt date are unknown',

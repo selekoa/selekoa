@@ -1,4 +1,4 @@
-import { test, expect, type Page } from '@playwright/test';
+import { test, expect, type Page } from './fixtures';
 import { readFileSync } from 'node:fs';
 
 const sources = JSON.parse(
@@ -23,7 +23,7 @@ test('frameworks page links each edition to its dated archive copy', async ({
   page,
 }) => {
   const errors = collectErrors(page);
-  await page.goto('/#/documents/frontier-safety-frameworks');
+  await page.goto('/documents/frontier-safety-frameworks');
   const rsp = source('source-rsp-1-0');
   const link = page.getByRole('link', {
     name: new RegExp(`Archived copy, captured ${rsp.archivedAt}`),
@@ -46,7 +46,7 @@ test('Inspector shows the archive capture and a non-English source language', as
   page,
 }) => {
   const errors = collectErrors(page);
-  await page.goto('/#/claim/rsp-credits-arc-2023');
+  await page.goto('/claim/rsp-credits-arc-2023');
   const card = page.locator('.evidence-card').first();
   const announcement = source('source-rsp-announcement');
   await expect(
@@ -57,7 +57,7 @@ test('Inspector shows the archive capture and a non-English source language', as
   await expect(card.locator('blockquote')).toContainText(
     'which inspired our approach.',
   );
-  await page.goto('/#/claim/cn-alibaba-budget');
+  await page.goto('/claim/cn-alibaba-budget');
   await expect(
     page.locator('.evidence-card .source-byline').first(),
   ).toContainText('In Traditional Chinese (zh-Hant)');
@@ -67,7 +67,7 @@ test('Inspector shows the archive capture and a non-English source language', as
 test('document page shows the capture date and what it cannot authenticate', async ({
   page,
 }) => {
-  await page.goto('/#/document/rsp-v2-0');
+  await page.goto('/document/rsp-v2-0');
   const rsp = source('source-rsp-2-0');
   const note = page.locator('.record-archive');
   await expect(note).toContainText(`captured ${rsp.archivedAt}`);

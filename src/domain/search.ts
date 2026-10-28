@@ -538,6 +538,20 @@ export function searchRecords(
 }
 
 /** Organisations named in at least one claim, by name, for filtering. */
+/**
+ * The claims a search's timeline and map show. `listed` holds every claim the
+ * result list shows as a claim or through one of its passages; `matched`
+ * holds the people, organisations, documents and other records it lists by
+ * name, whose claims the timeline and map add.
+ */
+export function searchClaims(index: SearchIndex, query: string) {
+  const hits = searchRecords(index, query).groups.flatMap((g) => g.hits);
+  return {
+    listed: new Set(hits.flatMap((h) => (h.claimId ? [h.claimId] : []))),
+    matched: new Set(hits.filter((h) => h.type === 'entity').map((h) => h.id)),
+  };
+}
+
 export function searchOrganisations(data: Dataset) {
   const named = new Set(data.claims.flatMap(endpoints));
   return data.entities

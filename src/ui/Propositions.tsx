@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import type { Repository } from '../domain/repository';
+import { RecordLink } from './NavLink';
 import {
   engagementLabels,
   laterContests,
@@ -111,12 +112,13 @@ function PropositionRow({
           </ul>
         </div>
       )}
-      <button
+      <RecordLink
         className="text-button record-row-link"
-        onClick={() => onDocument(r.document.id)}
+        id={r.document.id}
+        onOpen={() => onDocument(r.document.id)}
       >
         Document page →
-      </button>
+      </RecordLink>
     </li>
   );
 }

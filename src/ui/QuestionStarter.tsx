@@ -1,5 +1,8 @@
 import { Fragment, useLayoutEffect } from 'react';
 import type { Repository } from '../domain/repository';
+import { startHref } from './SiteChrome';
+import { startIds } from './start-ids';
+import { NavLink, RecordLink } from './NavLink';
 import type { Claim } from '../domain/schema';
 import { timeLabel } from '../domain/query';
 import { derivationLabels, resolutionLabels } from '../domain/epistemics';
@@ -224,13 +227,21 @@ export function QuestionStarter({
         </div>
         <p className="control-related">
           Related:{' '}
-          <button className="text-button" onClick={onDocuments}>
+          <NavLink
+            className="text-button"
+            href={startHref({ kind: 'documents' }, startIds)}
+            onOpen={onDocuments}
+          >
             Frontier safety frameworks
-          </button>
+          </NavLink>
           {' · '}
-          <button className="text-button" onClick={onCommitments}>
+          <NavLink
+            className="text-button"
+            href={startHref({ kind: 'commitments' }, startIds)}
+            onOpen={onCommitments}
+          >
             External commitments and obligations
-          </button>
+          </NavLink>
         </p>
       </header>
       <nav className="commit-toc" aria-label="Parts of this page">
@@ -294,12 +305,13 @@ export function QuestionStarter({
                   <span className="control-kind">
                     {chronologyKindLabels[entry.kind]}
                   </span>{' '}
-                  <button
+                  <RecordLink
                     className="text-button qs-document"
-                    onClick={() => onEntity(entry.documentId)}
+                    id={entry.documentId}
+                    onOpen={() => onEntity(entry.documentId)}
                   >
                     {entry.label}
-                  </button>
+                  </RecordLink>
                   {entry.kind === 'link' &&
                     entry.claim.attributes?.commitment?.link && (
                       <span className="qs-link-kind">

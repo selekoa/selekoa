@@ -214,13 +214,13 @@ describe('the propositions collection page and its starter', () => {
 
   it('resolves the page address and lists the collection in releases', () => {
     expect(
-      resolveReference('#/propositions/superintelligence', data).target,
+      resolveReference('/propositions/superintelligence', data).target,
     ).toEqual({
       kind: 'propositions',
       id: 'superintelligence',
       inspect: undefined,
     });
-    expect(resolveReference('#/propositions/unknown', data).target).toBeNull();
+    expect(resolveReference('/propositions/unknown', data).target).toBeNull();
     const release = applicationCollections.find(
       (c) => c.kind === 'propositions',
     )!;

@@ -1,4 +1,4 @@
-import { expect, test } from '@playwright/test';
+import { expect, test } from './fixtures';
 
 test('Capital II shows dated contract conditions without human-review promotion', async ({
   page,
@@ -8,7 +8,7 @@ test('Capital II shows dated contract conditions without human-review promotion'
   page.on('console', (message) => {
     if (message.type() === 'error') errors.push(message.text());
   });
-  await page.goto('/#/explore');
+  await page.goto('/explore');
   const nav = page.getByRole('navigation', { name: 'Explore the dataset' });
   await nav.getByRole('button', { name: 'OpenAI', exact: true }).click();
   await nav.getByRole('button', { name: 'Compute', exact: false }).click();

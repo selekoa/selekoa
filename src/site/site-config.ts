@@ -110,6 +110,19 @@ export const robotsTxt = (c: SiteConfig) =>
     ? `User-agent: *\nAllow: /\n\nSitemap: ${c.baseUrl}sitemap.xml\n`
     : 'User-agent: *\nDisallow: /\n';
 
-/** The site has hash addresses, so the start page is the one indexable URL. */
-export const sitemapXml = (c: SiteConfig) =>
-  `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n  <url><loc>${escape(c.baseUrl)}</loc></url>\n</urlset>\n`;
+/**
+ * Every pre-rendered page, by path from the site root (`/`, `/person/x`), then
+ * the plain files beside them (llms.txt, the data files), by their paths
+ * relative to the base address.
+ */
+export const sitemapXml = (
+  c: SiteConfig,
+  pages: string[] = ['/'],
+  files: string[] = [],
+) =>
+  `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${[
+    ...pages.map((path) => path.slice(1)),
+    ...files,
+  ]
+    .map((path) => `  <url><loc>${escape(c.baseUrl + path)}</loc></url>\n`)
+    .join('')}</urlset>\n`;

@@ -69,7 +69,8 @@ it('separates announced capital and planned compute from reported realisation', 
   ).toBe('intellectual');
 });
 it('gives every primary and secondary entity type a distinct non-letter silhouette', () => {
-  expect(new Set(Object.values(entityStyle).map((s) => s.path)).size).toBe(8);
+  // Nine types since schema 2.19 added countries.
+  expect(new Set(Object.values(entityStyle).map((s) => s.path)).size).toBe(9);
 });
 // Four full force layouts: CPU-bound, and slow while test files run in parallel.
 it('keeps the four atlas landmarks pinned and layouts independent of input order or parallel counts', () => {

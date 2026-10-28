@@ -1,4 +1,6 @@
 import { releaseVersion } from 'virtual:site';
+import { referencePath } from '../domain/addresses';
+import { NavLink } from './NavLink';
 
 /** Pages the primary navigation opens. The wordmark opens the start page. */
 export type NavTarget =
@@ -11,17 +13,58 @@ export type NavTarget =
 export type StartAction =
   | { kind: 'hub'; id: 'governance' | 'ideas' | 'institutions' }
   | { kind: 'documents' }
+  | { kind: 'compare'; id: string }
   | { kind: 'commitments' }
   | { kind: 'propositions'; id: string }
   | { kind: 'control'; id: string }
   | { kind: 'reading' }
   | { kind: 'question'; id: string }
-  | { kind: 'dossier'; id: string }
+  | { kind: 'dossier'; id: string; view?: 'map' }
   | { kind: 'person'; id: string }
   | { kind: 'claim'; id: string }
   | { kind: 'search'; q?: string }
   | { kind: 'about' }
-  | { kind: 'how-checked' };
+  | { kind: 'how-checked' }
+  | { kind: 'not-covered' };
+
+/** The address of each primary navigation item. */
+export const navHref: Record<NavTarget, string> = {
+  home: '/',
+  governance: '/governance',
+  ideas: '/ideas',
+  institutions: '/institutions',
+  search: '/search',
+  about: '/about',
+};
+
+/** The ids a start-page action needs that the action itself leaves out. */
+type StartIds = {
+  history: { id: string };
+  commitments: { id: string };
+  reading: { id: string };
+};
+
+/** The address a start-page action opens, so that it can be a real link. */
+export function startHref(action: StartAction, ids: StartIds): string {
+  switch (action.kind) {
+    case 'hub':
+      return referencePath({ kind: 'hub', id: action.id });
+    case 'documents':
+      return referencePath({ kind: 'documents', id: ids.history.id });
+    case 'commitments':
+      return referencePath({ kind: 'commitments', id: ids.commitments.id });
+    case 'reading':
+      return referencePath({ kind: 'question', id: ids.reading.id });
+    case 'search':
+      return referencePath({ kind: 'search', q: action.q });
+    case 'about':
+    case 'how-checked':
+    case 'not-covered':
+      return referencePath({ kind: 'about' });
+    default:
+      return referencePath(action);
+  }
+}
 
 export function SkipLink({ target, label }: { target: string; label: string }) {
   return (
@@ -53,25 +96,32 @@ export function SiteHeader({
   onHowChecked: () => void;
 }) {
   const item = (target: NavTarget, label: string) => (
-    <button
-      onClick={() => onNavigate(target)}
+    <NavLink
+      href={navHref[target]}
+      onOpen={() => onNavigate(target)}
       aria-current={current === target ? 'page' : undefined}
     >
       {label}
-    </button>
+    </NavLink>
   );
   return (
     <header className="site-banner">
       <div className="site-header">
-        <button
+        <NavLink
           className="wordmark"
-          onClick={() => onNavigate('home')}
+          href={navHref.home}
+          onOpen={() => onNavigate('home')}
           aria-label="Selekoa start page"
         >
           selekoa<span aria-hidden="true">.</span>
-        </button>
-        <div className="header-rule" aria-hidden="true" />
-        <p>A documentary history of machine intelligence.</p>
+        </NavLink>
+        {/* The start page's own heading carries the tagline. */}
+        {current !== 'home' && (
+          <>
+            <div className="header-rule" aria-hidden="true" />
+            <p>A documentary history of machine intelligence.</p>
+          </>
+        )}
         <nav className="header-nav" aria-label="Primary">
           {item('governance', 'Governance')}
           {item('ideas', 'Ideas & debates')}
@@ -93,9 +143,13 @@ export function SiteHeader({
           record states its own status in the Evidence Inspector. */}
       <p className="site-status">
         Records found and checked by machines, not reviewed by an editor ·{' '}
-        <button className="text-button" onClick={onHowChecked}>
+        <NavLink
+          className="text-button"
+          href={navHref.about}
+          onOpen={onHowChecked}
+        >
           What this means →
-        </button>
+        </NavLink>
       </p>
     </header>
   );
@@ -109,9 +163,9 @@ export function SiteFooter({ onAbout }: { onAbout: () => void }) {
         {releaseVersion && ` · dataset release v${releaseVersion}`}
       </span>
       <span>Exploratory records, checked by machines.</span>
-      <button className="text-button" onClick={onAbout}>
+      <NavLink className="text-button" href={navHref.about} onOpen={onAbout}>
         About & method
-      </button>
+      </NavLink>
     </footer>
   );
 }

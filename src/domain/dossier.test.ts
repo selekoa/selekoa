@@ -4,6 +4,7 @@ import { repository } from './repository';
 import week4b from '../../review/week4b-before-2026-10-04.json';
 import week4c from '../../review/week4c-before-2026-10-04.json';
 import genealogy from '../../review/genealogy-admission-before-2026-10-17.json';
+import frameworksToLaw2 from '../../review/frameworks-to-law-2-before-2026-10-28.json';
 
 const data = repository.data;
 const dossier = institutionalDossier(data, 'anthropic')!;
@@ -179,8 +180,12 @@ describe('institutional dossier projection', () => {
     // California SB 53 joins the RSP v3.0 records.
     const added = new Set(week4b.added.claims);
     const added4c = new Set(week4c.added.claims);
-    // Board records of the 2026-10-17 lab genealogy form their own groups.
-    const addedGenealogy = new Set(genealogy.added.claims);
+    // Board records of the 2026-10-17 lab genealogy, and part 2 of the
+    // 2026-10-28 frameworks-to-law admission, form their own groups.
+    const addedGenealogy = new Set([
+      ...genealogy.added.claims,
+      ...frameworksToLaw2.added.claims,
+    ]);
     expect(
       dossier.sections.governance.filter((g) =>
         g.claims.some(

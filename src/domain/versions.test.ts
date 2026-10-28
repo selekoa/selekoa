@@ -10,6 +10,15 @@ import economics from '../../review/economics-admission-before-2026-10-14.json';
 import researchDebt from '../../review/research-debt-before-2026-10-15.json';
 import esoteric from '../../review/esoteric-admission-before-2026-10-16.json';
 import genealogy from '../../review/genealogy-admission-before-2026-10-17.json';
+import archiveAdmissions from '../../review/archive-admissions-before-2026-10-26.json';
+import frameworkComparison from '../../review/framework-comparison-before-2026-10-27.json';
+import chinaLabs2 from '../../review/china-labs-2-before-2026-10-27.json';
+import followups from '../../review/followups-before-2026-10-28.json';
+import frameworksToLaw1 from '../../review/frameworks-to-law-1-before-2026-10-28.json';
+import frameworksToLaw2 from '../../review/frameworks-to-law-2-before-2026-10-28.json';
+import paraphraseCorrections from '../../review/paraphrase-corrections-before-2026-10-28.json';
+import compareMoreFacets from '../../review/compare-more-facets-before-2026-10-27.json';
+import authorPersons from '../../review/author-persons-before-2026-10-27.json';
 import recheckCorrections from '../../review/recheck-corrections-before-2026-10-25.json';
 import chinaOrder from '../../review/china-atlas-order.json';
 import ontology from '../../review/evaluation-ontology-i-increment.json';
@@ -225,6 +234,13 @@ describe('governance version history', () => {
       ...frontierGovernance.added.claims,
       ...frontierGovernance2.added.claims,
       ...economics.added.claims,
+      ...frameworkComparison.added.claims,
+      ...chinaLabs2.added.claims,
+      ...followups.added.claims,
+      ...frameworksToLaw1.added.claims,
+      ...frameworksToLaw2.added.claims,
+      ...paraphraseCorrections.added.claims,
+      ...compareMoreFacets.added.claims,
     ]);
     const prior = (claims: typeof data.claims) =>
       claims.filter((c) => !added.has(c.id));
@@ -277,6 +293,15 @@ describe('governance version history', () => {
         ...esoteric.added.claims,
         ...genealogy.added.claims,
         ...recheckCorrections.added.claims,
+        ...archiveAdmissions.added.claims,
+        ...frameworkComparison.added.claims,
+        ...chinaLabs2.added.claims,
+        ...followups.added.claims,
+        ...frameworksToLaw1.added.claims,
+        ...frameworksToLaw2.added.claims,
+        ...paraphraseCorrections.added.claims,
+        ...compareMoreFacets.added.claims,
+        ...authorPersons.added.claims,
       ]).size,
     ).toBe(data.claims.length);
     expect(newClaims.every((c) => c.editorialState === 'seed')).toBe(true);

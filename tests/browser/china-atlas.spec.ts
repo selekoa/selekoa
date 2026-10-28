@@ -1,4 +1,4 @@
-import { expect, test } from '@playwright/test';
+import { expect, test } from './fixtures';
 import AxeBuilder from '@axe-core/playwright';
 import { readFileSync } from 'node:fs';
 import type { Claim, Evidence, Source } from '../../src/domain/schema';
@@ -75,16 +75,16 @@ for (const sample of samples)
       });
       await page.setViewportSize({ width, height: width === 390 ? 844 : 1000 });
       await page.emulateMedia({ reducedMotion: 'reduce' });
-      await page.goto('/#/explore');
+      await page.goto('/explore');
       await page.locator('.collection-nav > summary').click();
       await expect(page.locator('.collection-nav')).toContainText(
         'no shared ownership, strategy or lineage',
       );
       await page
         .locator('.collection-nav')
-        .getByRole('button', { name: sample.label, exact: true })
+        .getByRole('link', { name: sample.label, exact: true })
         .click();
-      await expect(page).toHaveURL(new RegExp('/#/dossier/' + sample.id + '$'));
+      await expect(page).toHaveURL(new RegExp('/dossier/' + sample.id + '$'));
       const dossier = page.getByRole('article', {
         name: sample.name + ' institutional dossier',
       });

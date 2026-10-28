@@ -1,4 +1,4 @@
-import { expect, test } from '@playwright/test';
+import { expect, test } from './fixtures';
 
 for (const mobile of [false, true]) {
   test(`lineage evidence separates citation and reported use (${mobile ? 'mobile' : 'desktop'})`, async ({
@@ -10,7 +10,7 @@ for (const mobile of [false, true]) {
       if (m.type() === 'error') errors.push(m.text());
     });
     if (mobile) await page.setViewportSize({ width: 390, height: 844 });
-    await page.goto('/#/explore');
+    await page.goto('/explore');
     await page
       .getByRole('searchbox')
       .fill('Training language models to follow instructions');

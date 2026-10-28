@@ -7,7 +7,7 @@ import {
 } from './document-history';
 import { canonicalJson, fingerprint, md, sourceReference } from './references';
 import { reviewStatus, reviewStatusSentences } from './review-status';
-import { referenceHash } from './deep-links';
+import { referencePath } from './deep-links';
 import { timeLabel } from './query';
 import { versionDescription } from './versions';
 import { personProfile } from './person-profile';
@@ -257,7 +257,7 @@ export function claimBlockLines(
   if (claim.inferenceRationale)
     lines.push(`- Inference rationale: ${md(claim.inferenceRationale)}`);
   lines.push(
-    `- Application link (relative to an installed Selekoa): ${referenceHash({ kind: 'claim', id: claim.id })}`,
+    `- Application link (relative to an installed Selekoa): ${referencePath({ kind: 'claim', id: claim.id })}`,
     '',
   );
   for (const e of starter.evidence.filter((e) => e.claimId === claim.id)) {

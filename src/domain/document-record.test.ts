@@ -34,6 +34,7 @@ describe('document record projection', () => {
             ]
           : []),
         ...record.laterChanges,
+        ...record.comparison,
         ...record.other,
       ];
       for (const c of shown) expect(c).toBe(repository.claims.get(c.id));
@@ -91,16 +92,16 @@ describe('document record projection', () => {
   });
 
   it('resolves person and document addresses only for entities of that type', () => {
-    expect(resolveReference('#/document/rsp-v2-0', data).target).toEqual({
+    expect(resolveReference('/document/rsp-v2-0', data).target).toEqual({
       kind: 'document',
       id: 'rsp-v2-0',
     });
     for (const hash of [
-      '#/document/jan-leike',
-      '#/person/rsp-v2-0',
-      '#/person/missing',
-      '#/person/jan-leike?section=a',
-      '#/person/jan-leike?inspect=missing',
+      '/document/jan-leike',
+      '/person/rsp-v2-0',
+      '/person/missing',
+      '/person/jan-leike?section=a',
+      '/person/jan-leike?inspect=missing',
     ])
       expect(resolveReference(hash, data).notice).toContain(
         'does not match any record',

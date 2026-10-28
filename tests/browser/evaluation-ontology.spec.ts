@@ -1,4 +1,4 @@
-import { expect, test } from '@playwright/test';
+import { expect, test } from './fixtures';
 import { clickMapClaim } from './map-actions';
 const claims = [
   'eval-ontology-i-arc-openai',
@@ -16,7 +16,7 @@ for (const theme of ['light', 'dark']) {
       page.on('console', (m) => {
         if (m.type() === 'error') errors.push(m.text());
       });
-      await page.goto('/#/claim/' + claims[0]);
+      await page.goto('/claim/' + claims[0]);
       if (theme === 'dark')
         await page
           .getByRole('button', { name: 'Dark mode', exact: true })
@@ -29,7 +29,7 @@ for (const theme of ['light', 'dark']) {
         name: 'Evidence inspector',
       });
       for (const [index, id] of claims.entries()) {
-        await page.goto('/#/claim/' + id);
+        await page.goto('/claim/' + id);
         await expect(inspector).toContainText('Activity stage');
         await expect(inspector).toContainText(
           index < 2 ? 'reported performed' : 'announced',
@@ -40,8 +40,7 @@ for (const theme of ['light', 'dark']) {
           await expect(inspector).toContainText('Evaluated system');
         else await expect(inspector).toContainText('Transition scope');
         await page.goto(
-          '/#/dossier/' +
-            (index < 2 ? 'alignment-research-center' : 'arc-evals'),
+          '/dossier/' + (index < 2 ? 'alignment-research-center' : 'arc-evals'),
         );
         await page.getByRole('button', { name: 'Map', exact: true }).click();
         await expect(
@@ -63,7 +62,7 @@ for (const theme of ['light', 'dark']) {
         ['anthropic', claims[1]],
         ['openai', claims[0]],
       ]) {
-        await page.goto('/#/dossier/' + entityId);
+        await page.goto('/dossier/' + entityId);
         const dossier = page.getByRole('article', {
           name: /institutional dossier$/,
         });

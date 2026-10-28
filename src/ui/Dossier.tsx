@@ -1,4 +1,6 @@
 import { useState } from 'react';
+import { NavLink, RecordLink } from './NavLink';
+import { referencePath } from '../domain/addresses';
 import {
   dossierSections,
   type DossierSection,
@@ -71,7 +73,12 @@ export function Dossier({
               main claims
             </p>
             <p>{path.question}</p>
-            <button onClick={onRead}>Open the guided reading →</button>
+            <NavLink
+              href={referencePath({ kind: 'question', id: path.id })}
+              onOpen={onRead}
+            >
+              Open the guided reading →
+            </NavLink>
             <small>
               Selected by machine · no human review of the framing recorded
             </small>
@@ -145,9 +152,12 @@ export function Dossier({
             <ul>
               {dossier.institutionLinks.map(({ entity, claim }) => (
                 <li key={claim.id}>
-                  <button onClick={() => onInstitution(entity.id)}>
+                  <RecordLink
+                    id={entity.id}
+                    onOpen={() => onInstitution(entity.id)}
+                  >
                     Open {entity.name} dossier →
-                  </button>
+                  </RecordLink>
                   <button
                     className="dossier-connection-evidence"
                     onClick={() => onClaim(claim.id)}
@@ -234,14 +244,15 @@ export function Dossier({
             {onRecordPage &&
               (group.entity?.type === 'person' ||
                 group.entity?.type === 'document') && (
-                <button
+                <RecordLink
                   className="text-button dossier-page-link"
-                  onClick={() => onRecordPage(group.entity!.id)}
+                  id={group.entity!.id}
+                  onOpen={() => onRecordPage(group.entity!.id)}
                 >
                   {group.entity.type === 'person'
                     ? `${group.entity.name}: person page →`
                     : `${group.entity.name}: document page →`}
-                </button>
+                </RecordLink>
               )}
             {group.entity?.documentVersion && (
               <p className="dossier-version">

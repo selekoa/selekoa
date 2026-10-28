@@ -128,25 +128,23 @@ describe('frameworks-to-obligations question', () => {
 
   it('resolves its address and part links, and rejects unknown parts', () => {
     expect(
-      resolveReference('#/question/frameworks-to-obligations', data),
+      resolveReference('/question/frameworks-to-obligations', data),
     ).toMatchObject({
       target: { kind: 'question', id: 'frameworks-to-obligations' },
     });
     expect(
       resolveReference(
-        '#/question/frameworks-to-obligations?section=law-and-code&inspect=sb-framework-duty',
+        '/question/frameworks-to-obligations?section=law-and-code&inspect=sb-framework-duty',
         data,
       ).target,
     ).toMatchObject({ section: 'law-and-code', inspect: 'sb-framework-duty' });
     expect(
-      resolveReference(
-        '#/question/frameworks-to-obligations?section=nope',
-        data,
-      ).target,
+      resolveReference('/question/frameworks-to-obligations?section=nope', data)
+        .target,
     ).toBeNull();
     expect(
       resolveReference(
-        '#/question/frameworks-to-obligations?claim=sb-framework-duty',
+        '/question/frameworks-to-obligations?claim=sb-framework-duty',
         data,
       ).target,
     ).toBeNull();

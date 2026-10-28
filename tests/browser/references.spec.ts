@@ -1,8 +1,8 @@
-import { test, expect } from '@playwright/test';
+import { test, expect } from './fixtures';
 import { readFileSync } from 'node:fs';
 import { datasetSchema } from '../../src/domain/schema';
 import { researchPaths } from '../../src/domain/research-path';
-import { referenceHash } from '../../src/domain/deep-links';
+import { referencePath } from '../../src/domain/deep-links';
 import {
   packetJson,
   packetMarkdown,
@@ -25,7 +25,7 @@ const data = datasetSchema.parse(
 );
 const selection = researchPaths[0];
 const item = selection.items.at(-1)!;
-const reading = referenceHash({
+const reading = referencePath({
   kind: 'reading',
   id: selection.id,
   section: item.sectionId,
@@ -38,7 +38,7 @@ test('claim, dossier and reading links restore on fresh navigation and reload; h
   context,
 }) => {
   await context.grantPermissions(['clipboard-read', 'clipboard-write']);
-  await page.goto('/' + referenceHash({ kind: 'claim', id: item.claimId }));
+  await page.goto(referencePath({ kind: 'claim', id: item.claimId }));
   const inspector = page.getByRole('complementary', {
     name: 'Evidence inspector',
   });
@@ -51,14 +51,14 @@ test('claim, dossier and reading links restore on fresh navigation and reload; h
     .getByRole('button', { name: 'Copy claim link', exact: true })
     .click();
   const copied = await page.evaluate(() => navigator.clipboard.readText());
-  expect(copied).toContain(referenceHash({ kind: 'claim', id: item.claimId }));
+  expect(copied).toContain(referencePath({ kind: 'claim', id: item.claimId }));
   const fresh = await context.newPage();
   await fresh.goto(copied);
   await expect(
     fresh.getByRole('complementary', { name: 'Evidence inspector' }),
   ).toContainText(item.claimId);
   await fresh.close();
-  await page.goto('/#/dossier/anthropic');
+  await page.goto('/dossier/anthropic');
   await page.reload();
   await expect(
     page.getByRole('article', { name: 'Anthropic institutional dossier' }),
@@ -112,14 +112,14 @@ test('invalid references recover visibly, and source citation fallback preserves
   }
   await page.getByRole('button', { name: 'Dismiss notice' }).click();
   // Dismissal leaves the explorer overview at its stable address.
-  await expect(page).toHaveURL(/#\/explore$/);
+  await expect(page).toHaveURL(/\/explore$/);
   await page.addInitScript(() =>
     Object.defineProperty(navigator, 'clipboard', {
       value: { writeText: () => Promise.reject(new Error('denied')) },
       configurable: true,
     }),
   );
-  await page.goto('/#/claim/' + item.claimId);
+  await page.goto('/claim/' + item.claimId);
   await page.reload(); // Run the injected clipboard denial after same-document hash navigation.
   const claim = data.claims.find((c) => c.id === item.claimId)!;
   const evidence = data.evidence.find((e) => e.id === claim.evidenceIds[0])!;
@@ -142,7 +142,7 @@ test('invalid references recover visibly, and source citation fallback preserves
 test('downloaded Markdown and JSON match deterministic domain exports', async ({
   page,
 }) => {
-  await page.goto('/#/reading/' + selection.id);
+  await page.goto('/reading/' + selection.id);
   await page.getByText('Export this reading', { exact: true }).click();
   const packet = await researchPacket(data, selection);
   for (const [label, extension, expected] of [
@@ -170,7 +170,7 @@ for (const width of [1440, 390])
         if (message.type() === 'error') errors.push(message.text());
       });
       await page.setViewportSize({ width, height: 1000 });
-      await page.goto('/#/reading/' + selection.id);
+      await page.goto('/reading/' + selection.id);
       if (
         (await page
           .getByRole('button', { name: 'Dark mode' })
@@ -191,7 +191,7 @@ for (const width of [1440, 390])
         ),
       ).toBe(true);
       await page.screenshot({ path: testInfo.outputPath('reading.png') });
-      await page.goto('/' + reading);
+      await page.goto(reading);
       if (
         (await page
           .getByRole('button', { name: 'Dark mode' })
@@ -223,13 +223,12 @@ test('skip link preserves the research URL and reading while moving keyboard foc
   page,
 }) => {
   await page.goto(
-    '/' +
-      referenceHash({
-        kind: 'reading',
-        id: selection.id,
-        section: selection.items[0].sectionId,
-        claim: selection.items[0].claimId,
-      }),
+    referencePath({
+      kind: 'reading',
+      id: selection.id,
+      section: selection.items[0].sectionId,
+      claim: selection.items[0].claimId,
+    }),
   );
   await expect(
     page.getByRole('article', { name: 'Anthropic guided research path' }),

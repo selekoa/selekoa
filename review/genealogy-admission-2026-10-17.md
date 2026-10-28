@@ -108,6 +108,8 @@ The stated-reason quotations (Matheny, Bahl, Robinson) keep their full wording. 
 
 ## Held back
 
+**Later admitted (2026-10-26).** The five records below were admitted by the maintainer's decision of 2026-10-26, after a blind cross-family check read the launch post in a Wayback Machine capture of 2022-04-26 and found all five supported: see [`archive-admissions-2026-10-26.md`](archive-admissions-2026-10-26.md). The table and reasons are kept as they were at this admission.
+
 | Record                                  | Item | Reason                                                                                                                            |
 | --------------------------------------- | ---- | --------------------------------------------------------------------------------------------------------------------------------- |
 | `lg-deal-luan-cofounded-adept`          | C170 | Adept's launch post: the fresh retrieval of 2026-10-15 got a block page, and the cross-family check could not retrieve it either. |

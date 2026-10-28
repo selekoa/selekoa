@@ -1,5 +1,7 @@
 import { Fragment } from 'react';
 import type { Repository } from '../domain/repository';
+import { referencePath } from '../domain/addresses';
+import { NavLink, RecordLink } from './NavLink';
 import {
   commitmentLinkLabels,
   commitmentStageLabels,
@@ -192,9 +194,13 @@ function CommitmentSection({
             {nonEnglishLanguage(s) && <SourceLanguage source={s} />}
           </Fragment>
         ))}
-        <button className="text-button" onClick={() => onEntity(entity.id)}>
+        <RecordLink
+          className="text-button"
+          id={entity.id}
+          onOpen={() => onEntity(entity.id)}
+        >
           Document page
-        </button>
+        </RecordLink>
       </p>
       {statute ? (
         <p className="small-note commit-block">
@@ -264,6 +270,7 @@ function CommitmentSection({
                   link={{
                     label: `Open ${linking.documentVersion?.label ?? linking.name}`,
                     onClick: () => onEntity(linking.id),
+                    id: linking.id,
                   }}
                   {...props}
                 />
@@ -382,9 +389,13 @@ export function Commitments({
             {controls.map((c, i) => (
               <span key={c.id}>
                 {i > 0 && ' · '}
-                <button className="text-button" onClick={() => onControl(c.id)}>
+                <NavLink
+                  className="text-button"
+                  href={referencePath({ kind: 'control', id: c.id })}
+                  onOpen={() => onControl(c.id)}
+                >
                   {c.title}
-                </button>
+                </NavLink>
               </span>
             ))}
           </p>

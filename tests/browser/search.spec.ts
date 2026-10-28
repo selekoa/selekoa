@@ -1,4 +1,4 @@
-import { test, expect, type Page } from '@playwright/test';
+import { test, expect, type Page } from './fixtures';
 import AxeBuilder from '@axe-core/playwright';
 
 function collectErrors(page: Page) {
@@ -28,7 +28,7 @@ test('the start page renders without the records, which load on demand', async (
   await expect(
     page.getByRole('heading', {
       level: 1,
-      name: /machine-first starting point/,
+      name: 'A documentary history of machine intelligence.',
     }),
   ).toBeVisible();
   await expect(page.getByText(/^Current coverage: \d+ claims/)).toBeVisible();
@@ -37,14 +37,14 @@ test('the start page renders without the records, which load on demand', async (
   expect(loaded.some((p) => /\/Workspace-/.test(p))).toBe(false);
   // A start-page link carries over to the page it names once records load.
   await page
-    .getByRole('button', {
+    .getByRole('link', {
       name: 'How did each developer’s safety framework change between editions?',
     })
     .click();
   await expect(
     page.getByRole('heading', { level: 1, name: 'Frontier safety frameworks' }),
   ).toBeVisible();
-  await expect(page).toHaveURL(/#\/documents\/frontier-safety-frameworks$/);
+  await expect(page).toHaveURL(/\/documents\/frontier-safety-frameworks$/);
   expect(loaded.some((p) => /\/records-/.test(p))).toBe(true);
   expect(errors).toEqual([]);
 });
@@ -56,14 +56,14 @@ test('search finds claims and passages, groups them and opens the evidence', asy
   await page.goto('/');
   await page
     .getByRole('navigation', { name: 'Primary' })
-    .getByRole('button', { name: 'Search' })
+    .getByRole('link', { name: 'Search' })
     .click();
   const field = page.getByRole('searchbox', { name: 'Search terms' });
   await expect(field).toBeFocused();
   await field.fill('whistleblower');
   const status = page.locator('#search-status');
   await expect(status).toContainText('records match “whistleblower”');
-  await expect(page).toHaveURL(/#\/search\?q=whistleblower$/);
+  await expect(page).toHaveURL(/\/search#q=whistleblower$/);
   const claims = page.getByRole('region', { name: /^Claims/ });
   const passages = page.getByRole('region', { name: /^Evidence passages/ });
   await expect(
@@ -82,7 +82,7 @@ test('search finds claims and passages, groups them and opens the evidence', asy
   await expect(page.locator('.search-hit').first()).toBeFocused();
   await page.keyboard.press('Enter');
   await expect(page.locator('#inspector')).toBeFocused();
-  await expect(page).toHaveURL(/#\/search\?q=whistleblower&inspect=/);
+  await expect(page).toHaveURL(/\/search#q=whistleblower&inspect=/);
   expect(
     (
       await new AxeBuilder({ page })
@@ -96,7 +96,7 @@ test('search finds claims and passages, groups them and opens the evidence', asy
 test('search covers an ASL term and a decision-maker, with filters and a names mode', async ({
   page,
 }) => {
-  await page.goto('/#/search?q=ASL-3');
+  await page.goto('/search#q=ASL-3');
   const status = page.locator('#search-status');
   await expect(status).toContainText(/claims? and \d+ evidence passages?/);
   await page
@@ -132,15 +132,15 @@ test('search covers an ASL term and a decision-maker, with filters and a names m
   await expect(status).toHaveText(
     '1 record matches “Altman” by name or alias.',
   );
-  await expect(page).toHaveURL(/#\/search\?q=Altman&mode=names$/);
-  await page.getByRole('button', { name: 'Sam Altman: person page' }).click();
+  await expect(page).toHaveURL(/\/search#q=Altman&mode=names$/);
+  await page.getByRole('link', { name: 'Sam Altman: person page' }).click();
   await expect(page.locator('#record-page')).toBeFocused();
 });
 
 test('the explorer lookup says what it searched and links to full search', async ({
   page,
 }) => {
-  await page.goto('/#/explore');
+  await page.goto('/explore');
   const lookup = page.getByRole('searchbox');
   await lookup.fill('whistleblower');
   const results = page.locator('#search-results');
@@ -156,7 +156,7 @@ test('the explorer lookup says what it searched and links to full search', async
       name: 'Search claims, passages and sources for “MIRI” →',
     })
     .click();
-  await expect(page).toHaveURL(/#\/search\?q=MIRI$/);
+  await expect(page).toHaveURL(/\/search#q=MIRI$/);
   await expect(
     page.getByRole('searchbox', { name: 'Search terms' }),
   ).toHaveValue('MIRI');
@@ -165,7 +165,7 @@ test('the explorer lookup says what it searched and links to full search', async
 test('a source whose original address is dead shows its capture in results', async ({
   page,
 }) => {
-  await page.goto('/#/search?q=Staring%20into%20the%20Singularity');
+  await page.goto('/search#q=Staring%20into%20the%20Singularity');
   const hit = page
     .getByRole('region', { name: /^Sources/ })
     .locator('.search-hit')

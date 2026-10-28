@@ -1,3 +1,4 @@
+import { isComparisonCell } from './framework-comparison';
 import { describe, expect, it } from 'vitest';
 import { repository } from './repository';
 import {
@@ -12,7 +13,7 @@ import {
   starterJson,
   starterMarkdown,
 } from './starter';
-import { referenceHash, resolveReference } from './deep-links';
+import { referencePath, resolveReference } from './deep-links';
 import { frontierSafetyFrameworks as collection } from '../reading/frontier-safety-frameworks';
 
 const data = repository.data;
@@ -86,10 +87,12 @@ describe('frontier safety framework document history', () => {
         ...(f.referent ? [f.referent.id] : []),
       ]),
     );
+    // Comparison cells (schema 2.17) belong to the comparison page.
     const touching = data.claims.filter(
       (c) =>
-        versionIds.has(c.subject) ||
-        (c.object.kind === 'entity' && versionIds.has(c.object.entityId)),
+        !isComparisonCell(c) &&
+        (versionIds.has(c.subject) ||
+          (c.object.kind === 'entity' && versionIds.has(c.object.entityId))),
     );
     expect([...history.claimIds].sort()).toEqual(
       touching.map((c) => c.id).sort(),
@@ -178,17 +181,17 @@ describe('document history references', () => {
       id: collection.id,
       inspect: 'issued-rsp-2-0',
     };
-    expect(resolveReference(referenceHash(target), data).target).toEqual(
+    expect(resolveReference(referencePath(target), data).target).toEqual(
       target,
     );
-    expect(resolveReference('#/explore', data).target).toEqual({
+    expect(resolveReference('/explore', data).target).toEqual({
       kind: 'explore',
     });
     expect(resolveReference('', data)).toEqual({ target: null, notice: null });
     for (const hash of [
-      '#/documents/missing',
-      '#/documents/' + collection.id + '?inspect=missing',
-      '#/documents/' + collection.id + '?section=a',
+      '/documents/missing',
+      '/documents/' + collection.id + '?inspect=missing',
+      '/documents/' + collection.id + '?section=a',
     ])
       expect(resolveReference(hash, data).notice).toContain(
         'does not match any record',

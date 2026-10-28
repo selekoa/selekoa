@@ -1,4 +1,4 @@
-import { test, expect } from '@playwright/test';
+import { test, expect } from './fixtures';
 import AxeBuilder from '@axe-core/playwright';
 import { readFileSync } from 'node:fs';
 import { datasetSchema } from '../../src/domain/schema';
@@ -31,7 +31,7 @@ test('no whole-dataset map; the full Anthropic focus retains topology, labels, o
   page.on('console', (m) => {
     if (m.type() === 'error') errors.push(m.text());
   });
-  await page.goto('/#/explore');
+  await page.goto('/explore');
   // The whole dataset is never drawn; the list stands in for the map.
   await expect(page.locator('.map-withheld')).toContainText(
     'The map is drawn for a search, a topic or an institution.',
@@ -98,7 +98,7 @@ test('no whole-dataset map; the full Anthropic focus retains topology, labels, o
 test('OpenAI investment and cloud directions remain distinct and every January 2025 term opens its exact evidence', async ({
   page,
 }) => {
-  await page.goto('/#/explore');
+  await page.goto('/explore');
   await page
     .getByRole('navigation', { name: 'Explore the dataset' })
     .getByRole('button', { name: 'OpenAI', exact: true })
@@ -146,7 +146,7 @@ test('OpenAI investment and cloud directions remain distinct and every January 2
 test('RSP succession and all parallel v3.0 claims are independently selectable', async ({
   page,
 }) => {
-  await page.goto('/#/explore');
+  await page.goto('/explore');
   await page
     .getByRole('navigation', { name: 'Explore the dataset' })
     .getByRole('button', { name: /Governance/ })
@@ -177,7 +177,7 @@ test('RSP succession and all parallel v3.0 claims are independently selectable',
 test('personnel navigation follows real historical roles and founding claims', async ({
   page,
 }) => {
-  await page.goto('/#/explore');
+  await page.goto('/explore');
   await page.getByRole('searchbox').fill('Dario Amodei');
   await page.getByRole('searchbox').press('Enter');
   await expect(
@@ -207,7 +207,7 @@ test('mobile reduced-motion keyboard route returns to the exact chooser and pass
 }) => {
   await page.setViewportSize({ width: 390, height: 844 });
   await page.emulateMedia({ reducedMotion: 'reduce' });
-  await page.goto('/#/explore');
+  await page.goto('/explore');
   await page
     .getByRole('navigation', { name: 'Explore the dataset' })
     .getByRole('button', { name: 'Anthropic', exact: true })
@@ -253,10 +253,13 @@ test('mobile reduced-motion keyboard route returns to the exact chooser and pass
   await expect(
     page
       .getByLabel('Claims list')
-      .locator('[data-claim-id]:not([data-claim-id^="lg-"])'),
+      .locator(
+        '[data-claim-id]:not([data-claim-id^="lg-"]):not([data-claim-id^="fl-"])',
+      ),
     // 48 before week 4b, plus Anthropic's Frontier Compliance Framework
     // announcement, plus week 4c's eleven Anthropic control-structure
     // records and its four commitment listings and announced intent. The
-    // 2026-10-17 lab genealogy records (lg-) are left out of this count.
+    // 2026-10-17 lab genealogy records (lg-) and the 2026-10-28
+    // frameworks-to-law records (fl-) are left out of this count.
   ).toHaveCount(64);
 });

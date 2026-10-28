@@ -211,8 +211,11 @@ describe('external commitments (week 4c)', () => {
   it('links framework editions to a text only in their own quoted words', () => {
     const pairs = (id: string) =>
       doc(id).links.map((c) => [c.subject, c.attributes!.commitment!.link]);
+    // The frameworks-to-law admission (2026-10-28) adds the Preparedness
+    // Framework (Beta), which says it is one more way of meeting them.
     expect(pairs('wh-voluntary-ai-commitments-2023-07')).toEqual([
       ['rsp-2023', 'names'],
+      ['preparedness-beta-2023', 'fulfils'],
       ['rsp-v2-0', 'fulfils'],
       ['rsp-v2-1', 'fulfils'],
       ['rsp-v2-2', 'fulfils'],

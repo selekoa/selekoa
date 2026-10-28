@@ -1,0 +1,2455 @@
+{
+  "description": "Authored decisions for the admission of the frameworks-to-law pack (research/frameworks-to-law), read by scripts/frameworks-to-law-admission.ts. Part 1 admits the EU, China and links-back records; part 2 the international, UK and US records. Keys of `evidence` are a pack claim ID and the zero-based index of its evidence item.",
+  "kindMap": {
+    "definition": "threshold",
+    "date": "threshold",
+    "enforcement": "decision_authority",
+    "names_framework": "required_action",
+    "principle": "required_action"
+  },
+  "parts": {
+    "1": {
+      "groups": ["eu-china", "links"],
+      "date": "2026-10-28",
+      "baseCommit": "9667cbb",
+      "hold": {
+        "fl-cn-gb45438-scope": "A provision record must quote the edition itself. The standard's own text was not retrieved; the record rests on SAMR's description of it in a news item, so it is held until the standard's text is read.",
+        "fl-eu-aia-art113-entry-into-force": "Moved to part 2. Decision 4 admits it as an inferred record with its rule quoted, but the schema allows a provision record only as explicit; part 2 makes the schema change."
+      },
+      "merge": {
+        "fl-link-fgf-2026-eu-code-appendix-2-2": "cm-link-frontier-governance-2026-eu-code"
+      },
+      "scope": "On 2026-10-28, by the maintainer’s decisions of that date, the first part of a machine-prepared, machine-audited and cross-family-checked candidate pack on how frontier-AI frameworks meet law was admitted: further provisions of the EU AI Act on general-purpose AI models, the initial draft of the EU Code of Practice (14 November 2024) with two comparisons with the final Code, the Commission’s Opinion on the Code, further provisions of China’s Interim Measures on generative AI, the Measures for Labelling AI-Generated Synthetic Content, two national standards, the 2025 amendment of the Cybersecurity Law and two filing announcements, and nine links from framework editions to the laws and commitments they name in their own words. A legal text states duties, not compliance; a filing or a listing is not an assessment of safety. All records remain seeds.",
+      "snapshotDescription": "Records as stored before part 1 of the frameworks-to-law admission on 2026-10-28 (schema 2.18, no schema change; review/frameworks-to-law-admission-1-2026-10-28.md): the earlier metadata, the IDs part 1 added and the stored rows it changed, as they were. Changed rows: the link of OpenAI’s May 2026 Frontier Governance Framework to the EU Code of Practice, which gained a provision-level evidence item, and the source of the Commission’s Opinion on the Code, which gained its document. The test-only historical view removes the added rows and restores the earlier metadata and rows."
+    },
+    "2": {
+      "groups": ["international-uk", "us-federal", "us-states"],
+      "include": ["fl-eu-aia-art113-entry-into-force"],
+      "date": "2026-10-28",
+      "baseCommit": "e234f85",
+      "schemaVersion": "2.19",
+      "adoptedPredicates": [
+        "lists_participants",
+        "introduced",
+        "passed",
+        "vetoed",
+        "revoked"
+      ],
+      "normaliseProvisions": true,
+      "hold": {},
+      "fold": {
+        "fl-intl-paris-uk-not-listed": {
+          "into": [
+            "fl-intl-paris-statement-signatories-web",
+            "fl-intl-paris-statement-signatories-pdf"
+          ],
+          "why": "Decision 2 adds no predicate for absence from a list. The absence is recorded in the two listing records, with their evidence, and is not a refusal.",
+          "bySubject": true
+        },
+        "fl-intl-paris-us-not-listed": {
+          "into": [
+            "fl-intl-paris-statement-signatories-web",
+            "fl-intl-paris-statement-signatories-pdf"
+          ],
+          "why": "As for the United Kingdom.",
+          "bySubject": true
+        },
+        "fl-us-mi-hb4668-status-2026": {
+          "into": ["fl-us-mi-hb4668-introduced"],
+          "why": "Decision 2 adds no legislative-status predicate, and the status is recorded only as of the archive capture of 23 March 2026; it is part of the introduction record's qualification and evidence."
+        },
+        "fl-us-aisi-renamed-caisi": {
+          "into": [],
+          "datedNames": "us-ai-safety-institute",
+          "why": "Decision 2: a renaming is a dated name on one entity. The U.S. AI Safety Institute's record now carries both names with their dates and source."
+        }
+      },
+      "split": {
+        "fl-intl-new-delhi-endorser-counts": [
+          "fl-intl-new-delhi-endorsers-88",
+          "fl-intl-new-delhi-endorsers-91"
+        ],
+        "fl-us-caisi-security-work-openai-anthropic": [
+          "fl-us-caisi-security-work-openai",
+          "fl-us-caisi-security-work-anthropic"
+        ]
+      },
+      "scope": "On 2026-10-28, by the maintainer’s decisions of that date, the second part of the frameworks-to-law candidate pack was admitted with schema 2.19. Schema 2.19 adds countries keyed by their ISO 3166 code, the predicates introduced, passed, vetoed and revoked, document-level participant lists that say whether their count is stated by the source or counted by Selekoa, an announced stage for a revocation, a provision date computed from a rule the text states, and dated names on one entity for a renaming. The records concern summit texts from Bletchley Park to New Delhi with their participant lists as dated snapshots, the G7 Hiroshima code and the OECD reporting framework, UK memoranda with AI developers and the AI Security Institute’s renaming, US executive orders and their revocation, Commerce rules and NIST drafts, the AI Action Plan, and California, New York, Illinois and Michigan bills and statutes, together with the EU AI Act’s computed entry into force. Listing is not signature or compliance, absence from a list is not refusal, and a stated duty is not implementation. All records remain seeds.",
+      "snapshotDescription": "Records as stored before part 2 of the frameworks-to-law admission on 2026-10-28 (schema 2.18 to 2.19; review/frameworks-to-law-admission-2-2026-10-28.md): the earlier metadata, the IDs part 2 added and the stored rows it changed, as they were. Changed rows: the U.S. AI Safety Institute, which gained its dated names. The test-only historical view removes the added rows and restores the earlier metadata and rows.",
+      "changedEntities": true
+    }
+  },
+  "basisMap": {
+    "fl-cn-": {
+      "signature": "publication",
+      "adoption": null
+    },
+    "fl-eu-opinion-": {
+      "adoption": "signature"
+    }
+  },
+  "sharedLimits": [
+    [
+      "source-cn-generative-ai-measures-2023",
+      "source-cn-generative-ai-measures-2023-govcn"
+    ]
+  ],
+  "claims": {
+    "fl-eu-aia-art3-gpai-model-definition": {
+      "time": {
+        "note": "Provision as published in the Official Journal on 2024-07-12 (the Regulation is dated 13 June 2024). Article 3 is in Chapter I, which in the 2024 text applies from 2 February 2025 (Article 113, third paragraph, point (a)); the duties that use the definition are in Chapter V, which applies from 2 August 2025 (point (b); recorded separately). Whether Regulation (EU) 2026/1744 changed point (a) is not recorded here."
+      }
+    },
+    "fl-eu-aia-art53-1-b-downstream": {
+      "qualification": "Subject to Article 53(2): points (a) and (b) of Article 53(1) do not apply to providers of AI models released under a free and open-source licence that allows access, usage, modification and distribution of the model, and whose parameters, including the weights, model architecture and usage information, are made publicly available; that exception does not apply to general-purpose AI models with systemic risk (the exception is recorded separately). States what the Regulation requires of the categories it defines. Whether any named developer's model falls within a category, and whether any developer complies, is legal application and is not recorded. A statutory duty is not evidence of implementation or enforcement. Regulation (EU) 2026/1744, inspected 2026-10-27, does not list this article among its amendments (its Article 1 amends Articles 1-6, 10, 11, 17, 25, 27-30, 40, 42, 43, 50, 56(6), 57, 58, 60, 63, 64, 69, 70, 72, 75-77, 95-97, 99, 111, 113 and Annexes I and VIII)."
+    },
+    "fl-eu-aia-art55-1-chapeau": {
+      "kind": "required_action",
+      "qualification": "States what the Regulation requires of the categories it defines. Whether any named developer's model falls within a category, and whether any developer complies, is legal application and is not recorded. A statutory duty is not evidence of implementation or enforcement. Regulation (EU) 2026/1744, inspected 2026-10-27, does not list this article among its amendments (its Article 1 amends Articles 1-6, 10, 11, 17, 25, 27-30, 40, 42, 43, 50, 56(6), 57, 58, 60, 63, 64, 69, 70, 72, 75-77, 95-97, 99, 111, 113 and Annexes I and VIII). The four duties of Article 55(1) are recorded separately."
+    },
+    "fl-eu-aia-art92-3-access": {
+      "qualification": "States a power; no access request is recorded. Article 92(1) limits evaluations to assessing compliance where information gathered under Article 91 is insufficient, or to investigating systemic risks at Union level; Article 92(4) requires the request to state its legal basis, purpose, reasons, time limit and the fines for failing to provide access. Failure to provide access is subject to the fines in Article 101 (recorded separately)."
+    },
+    "fl-eu-aia-art92-evaluations": {
+      "qualification": "States a power; no evaluation is recorded. Article 92(6) requires implementing acts on the arrangements; the Commission's March 2026 draft implementing regulation is recorded separately. Not amended by Regulation (EU) 2026/1744 in the inspected text."
+    },
+    "fl-eu-cop-draft1-light-detail": {
+      "statement": "The initial draft's opening statement presents it as a foundation for further refinement in which Measures may be added, removed or modified, says that it is light in detail and that Sub-Measures and Key Performance Indicators are still being deliberated, and includes open questions for feedback.",
+      "qualification": "The authors' own characterisation of the draft, which they wrote as the Chairs and Vice-Chairs of the four working groups. A draft binds no one.",
+      "time": {
+        "date": "2024-11-14",
+        "note": "Dated by the Commission’s publication of the initial draft on 14 November 2024."
+      },
+      "published": true
+    },
+    "fl-eu-cop-draft1-published": {
+      "subject": "european-commission",
+      "statement": "The European Commission published the initial draft of the General-Purpose AI Code of Practice on 14 November 2024. The draft is presented by the Chairs and Vice-Chairs of the four working groups, who invited written feedback from Plenary participants and observers by Thursday, 28 November, 12:00 CET.",
+      "time": {
+        "kind": "event",
+        "date": "2024-11-14",
+        "basis": "publication",
+        "note": "The Commission's library page gives the publication date 14 November 2024, as read by the cross-family check (2026-10-28). The draft itself is undated; its feedback deadline names Thursday, 28 November, and its PDF metadata gives creation on 14 November 2024."
+      },
+      "derivation": "explicit",
+      "inferenceRationale": null,
+      "qualification": "Records the draft as the Commission published it and as its authors present it. The Commission's library page, read by the cross-family check, could not be retrieved at admission (HTTP 403); the draft PDF from the Commission's newsroom was retrieved and its text matched. The copy of the draft held by the Dutch Senate (Eerste Kamer), from which the candidate pack originally read it, has the same extracted text on all 36 pages. A draft binds no one."
+    },
+    "fl-eu-cop-draft1-risk-types": {
+      "kind": "threshold",
+      "statement": "Measure 6.1 of the initial draft commits signatories to treat six types as systemic risks: cyber offence; chemical, biological, radiological and nuclear risks; loss of control; automated use of models for AI research and development; persuasion and manipulation; and large-scale discrimination.",
+      "time": {
+        "date": "2024-11-14",
+        "note": "Dated by the Commission’s publication of the initial draft on 14 November 2024."
+      }
+    },
+    "fl-eu-cop-draft1-ssf": {
+      "statement": "Measure 7 of the initial draft commits signatories to adopting, implementing and making available a Safety and Security Framework detailing the risk management policies they adhere to in order to assess and mitigate systemic risks from their general-purpose AI models with systemic risks.",
+      "qualification": "A draft commitment; no one signed the draft. The draft continues by relating the Framework's comprehensiveness to the expected severity of systemic risks.",
+      "time": {
+        "date": "2024-11-14",
+        "note": "Dated by the Commission’s publication of the initial draft on 14 November 2024."
+      }
+    },
+    "fl-eu-cop-draft1-ssr-before-market": {
+      "statement": "Sub-Measure 20.3 of the initial draft commits signatories to send the AI Office their Safety and Security Reports ahead of the decisions they pertain to, in particular before placing a new general-purpose AI model with systemic risk on the market.",
+      "time": {
+        "date": "2024-11-14",
+        "note": "Dated by the Commission’s publication of the initial draft on 14 November 2024."
+      }
+    },
+    "fl-eu-cop-final-changes-from-draft1-risk-types": {
+      "statement": "The final Code's Appendix 1.4 specifies four systemic risks (CBRN, loss of control, cyber offence, harmful manipulation), where the initial draft's Measure 6.1 listed six types, including automated use of models for AI research and development and large-scale discrimination, which are not among the final four.",
+      "time": {
+        "kind": "event",
+        "date": "2025-07-10",
+        "basis": "publication",
+        "note": "Dated by the final Code (10 July 2025); compared with the initial draft (14 November 2024)."
+      },
+      "qualification": "Compares the headings of the two lists. The two types are not deleted from the final Code: its description of loss of control includes autonomously creating or improving AI models (Appendix 1.4(2)); Appendix 1.3 lists capabilities to automate AI research and development as a source of systemic risk; Appendix 1.1 lists risks to non-discrimination among the types of risk to draw on. The record says only that the two types are not among the four specified risks. The intermediate drafts were not retrieved.",
+      "attributes": {
+        "changeBasis": "document_comparison"
+      }
+    },
+    "fl-eu-cop-final-changes-from-draft1-ssf": {
+      "statement": "The final Code's Safety and Security chapter opens Commitment 1 by committing signatories to a three-step Framework adoption process (creating, implementing and updating a “state-of-the-art” Framework) and to notifying the AI Office of it, where the initial draft's Measure 7 opened by committing signatories to adopting, implementing and making available a Safety and Security Framework.",
+      "time": {
+        "kind": "event",
+        "date": "2025-07-10",
+        "basis": "publication",
+        "note": "Dated by the final Code's publication on 10 July 2025; the inspected Safety and Security chapter PDF carries no date (its metadata gives 2025-08-01). Compared with the initial draft (14 November 2024)."
+      },
+      "inferenceRationale": "Both passages are quoted; the comparison lists wording present in the final Commitment 1 (state-of-the-art; creating, implementing, updating; notification) and absent from draft Measure 7, and the draft's \"making available\", which the final paragraph does not use.",
+      "qualification": "A textual comparison of the two opening commitments only. The initial draft already provided for updating the Framework (Sub-Measure 11.1) and for notifying it to the AI Office (Measure 20), so neither element is new in the final Code. The intermediate drafts were not retrieved, so the stage at which the wording changed is unknown. No inference about reasons.",
+      "attributes": {
+        "changeBasis": "document_comparison"
+      }
+    },
+    "fl-eu-opinion-board-separate": {
+      "kind": "decision_authority"
+    },
+    "fl-eu-opinion-chapter-coverage": {
+      "kind": "decision_authority",
+      "qualification": "The Commission's assessment of the Code's text by chapter, not of any signatory. Adequacy of the Code is not compliance by any provider. Signatories by chapter are not recorded (the Commission's list was not retrieved)."
+    },
+    "fl-eu-opinion-conclusion": {
+      "kind": "decision_authority",
+      "qualification": "The Commission's assessment of the Code, not of any signatory. Adequacy of the Code is not compliance by any provider. The dataset already quotes this paragraph as evidence for the Code's publication record; this record states the conclusion itself."
+    },
+    "fl-eu-opinion-drafting-process": {
+      "published": true,
+      "statement": "The Commission's Opinion on the Code of Practice states that the Code was prepared in an iterative drafting process that started with the Plenary kick-off event on 30 September 2024, involving nearly 1,000 participants who responded to a call launched by the AI Office on 30 July 2024, with four working groups of independent chairs and vice-chairs.",
+      "qualification": "The Commission's account of the process, dated by the Opinion; the process dates are as the Opinion states them. It does not date the individual drafts."
+    },
+    "fl-eu-opinion-no-kpis": {
+      "published": true,
+      "statement": "The Commission's Opinion on the Code of Practice states that the Code contains no key performance indicators to measure the implementation and outcome of its commitments and that the Commission, in line with the drafters' assessment, considers such indicators currently not appropriate.",
+      "qualification": "The Commission's statement, dated by the Opinion. The initial draft had said that KPIs were still being deliberated (recorded separately); the record does not say why the final Code has none."
+    },
+    "fl-eu-opinion-issued": {
+      "qualification": "An opinion, not an implementing act; no implementing act approving the Code was found. The Opinion's paragraph 3 says that it does not prejudge future enforcement and does not bind the Commission's interpretation (recorded separately). The AI Board's separate assessment was not retrieved."
+    },
+    "fl-cn-genai-art12-labelling": {
+      "qualification": "Cross-reference only; the Deep Synthesis Provisions were not retrieved. The 2025 Labelling Measures set later labelling rules (recorded separately). Whether any named developer or service falls within the category is set aside."
+    },
+    "fl-cn-genai-scope-non-public-rd": {
+      "time": {
+        "kind": "event",
+        "date": "2023-07-10",
+        "basis": "publication",
+        "note": "Dated by the order issuing the Measures (Order No. 15 of 2023-07-10); in force from 2023-08-15."
+      }
+    },
+    "fl-cn-labelling-filing-materials": {
+      "qualification": "Links the labelling rules to the filing and security-assessment procedures of the Interim Measures (Article 17, recorded separately). Whether any named developer or service falls within the category is set aside."
+    },
+    "fl-cn-labelling-standards": {
+      "qualification": "The Measures do not name a standard; the CAC news item names GB 45438-2025 as the accompanying mandatory standard (its publication is recorded separately)."
+    },
+    "fl-cn-labelling-issued": {
+      "time": {
+        "kind": "event",
+        "date": "2025-03-07",
+        "basis": "publication",
+        "note": "Issue date: the notice's document date (成文日期) and its closing date line, 7 March 2025. The notice shows no separate signing event. The gov.cn news item reporting the release is dated 2025-03-15; the Measures take effect on 1 September 2025."
+      },
+      "qualification": "Records issuance by the four departments named in the notice, on the notice's own date; it does not record a signature. The other three departments are not dataset entities and are named in the statement only."
+    },
+    "fl-cn-csl-amendment-adopted": {
+      "time": {
+        "kind": "event",
+        "date": "2025-10-28",
+        "note": "Date of adoption stated beneath the decision's title and in Presidential Order No. 61. Promulgation (the same day), the gov.cn posting of the decision (29 October 2025) and the effective date (1 January 2026) are separate."
+      }
+    },
+    "fl-cn-csl-art20-ai": {
+      "kind": "required_action",
+      "object": {
+        "kind": "literal",
+        "value": "New Article 20: the state supports AI research, training data and compute infrastructure, AI ethics norms, risk monitoring and assessment, and safety supervision"
+      }
+    },
+    "fl-link-preparedness-beta-wh-2023-07": {
+      "qualification": "The framework's own statement that it is a way of meeting the commitments. The text does not name the White House or a specific commitment; the July 2023 date and wording match the July 2023 commitments text, to which OpenAI is listed as a party (recorded separately). Not evidence that any commitment was met."
+    },
+    "fl-link-ms-fgf-2026-eu-ai-act": {
+      "qualification": "The framework names the AI Act to set when an assessment runs. Which Microsoft models are in scope of the Act is legal application and is not recorded. Not evidence of compliance. The same sentence also names California's and New York's laws; its link to SB 53 is recorded separately."
+    },
+    "fl-link-ms-fgf-2026-ny-raise": {
+      "qualification": "The framework's own statements. The change log states a sequence, not a reason the Act required; no causal claim is recorded. Not evidence of compliance. The object is the RAISE Act as announced by the Governor, not Chapter 96 of 2026."
+    },
+    "fl-link-fgf-2026-eu-ai-act": {
+      "time": {
+        "kind": "event",
+        "date": "2026-05-28",
+        "basis": "publication",
+        "note": "Dated by OpenAI's release announcement, which gives the publication date 28 May 2026. The framework PDF itself carries no date, so it cannot establish the day (cross-family check, 2026-10-28)."
+      },
+      "qualification": "The framework names the AI Act to set its own scope. Whether any OpenAI model is a general-purpose AI model with systemic risk is legal application and is not recorded. Not evidence of compliance. The copy checked carries no edition date and may be a later expression of the May 2026 edition."
+    },
+    "fl-link-rsp-v3-1-sb53": {
+      "qualification": "The edition’s own statement about SB 53, quoted from it. It names SB 53 and points to separate compliance frameworks; it does not say that the RSP is a framework under the Act. It is not evidence that the edition satisfies the statute, that its publisher is a frontier developer under it, or of implementation or compliance. The record on v3.0 notes the same footnote in the later editions; this record gives v3.1 its own link, as the dataset does for the White House and Seoul links."
+    },
+    "fl-link-rsp-v3-2-sb53": {
+      "qualification": "The edition’s own statement about SB 53, quoted from it. It names SB 53 and points to separate compliance frameworks; it does not say that the RSP is a framework under the Act. It is not evidence that the edition satisfies the statute, that its publisher is a frontier developer under it, or of implementation or compliance. The record on v3.0 notes the same footnote in the later editions; this record gives v3.2 its own link, as the dataset does for the White House and Seoul links."
+    },
+    "fl-link-rsp-v3-3-sb53": {
+      "qualification": "The edition’s own statement about SB 53, quoted from it. It names SB 53 and points to separate compliance frameworks; it does not say that the RSP is a framework under the Act. It is not evidence that the edition satisfies the statute, that its publisher is a frontier developer under it, or of implementation or compliance. The record on v3.0 notes the same footnote in the later editions; this record gives v3.3 its own link, as the dataset does for the White House and Seoul links."
+    },
+    "fl-link-rsp-v3-4-sb53": {
+      "qualification": "The edition’s own statement about SB 53, quoted from it. It names SB 53 and points to separate compliance frameworks; it does not say that the RSP is a framework under the Act. It is not evidence that the edition satisfies the statute, that its publisher is a frontier developer under it, or of implementation or compliance. The record on v3.0 notes the same footnote in the later editions; this record gives v3.4 its own link, as the dataset does for the White House and Seoul links."
+    },
+    "fl-eu-aia-art53-1-d-training-summary": {
+      "qualification": "States what the Regulation requires of the categories it defines. Whether any named developer's model falls within a category, and whether any developer complies, is legal application and is not recorded. A statutory duty is not evidence of implementation or enforcement. Regulation (EU) 2026/1744, inspected 2026-10-27, does not list this article among its amendments (its Article 1 amends Articles 1-6, 10, 11, 17, 25, 27-30, 40, 42, 43, 50, 56(6), 57, 58, 60, 63, 64, 69, 70, 72, 75-77, 95-97, 99, 111, 113 and Annexes I and VIII). The AI Office’s template is recorded separately. The open-source exception in Article 53(2) does not cover point (d)."
+    },
+    "fl-eu-aia-art113-entry-into-force": {
+      "replaceAttributes": true,
+      "statement": "Article 113 provides, in its opening paragraph, that the Regulation enters into force on the twentieth day following its publication in the Official Journal; with publication on 12 July 2024 that day is 1 August 2024.",
+      "attributes": {
+        "provision": {
+          "kind": "threshold",
+          "key": "aia-entry-into-force",
+          "computed": true
+        }
+      },
+      "time": {
+        "kind": "event",
+        "date": "2024-08-01",
+        "basis": "effective",
+        "note": "Computed from the Article 113 rule and the Official Journal date 12.7.2024; Article 113 states no calendar date (decision 4). Entry into force is distinct from the dates of application, recorded separately."
+      },
+      "object": {
+        "kind": "literal",
+        "value": "Entry into force: the twentieth day following publication (computed: 1 August 2024)"
+      },
+      "qualification": "The calendar date is computed, not stated in Article 113. Article 97(2) dates the delegated powers from 1 August 2024, and the initial draft of the Code of Practice says that the Act came into force on 1 August 2024; both agree with the computation but are not the Article 113 rule. Entry into force is not application."
+    },
+    "fl-intl-g7-haip-leaders-welcome": {
+      "predicate": "cites",
+      "replaceAttributes": true
+    },
+    "fl-intl-bletchley-participants": {
+      "attributes": {
+        "listing": {
+          "count": 29,
+          "countBasis": "counted"
+        }
+      },
+      "replaceAttributes": true,
+      "time": {
+        "note": "The list under that heading is the summit list; the text records New Zealand's later joining below the list, which is recorded separately. Checked against the text as served on 2026-10-27."
+      }
+    },
+    "fl-intl-bletchley-chair-testing-participants": {
+      "attributes": {
+        "listing": {
+          "count": 21,
+          "countBasis": "counted"
+        }
+      },
+      "replaceAttributes": true
+    },
+    "fl-intl-seoul-declaration-participants": {
+      "attributes": {
+        "listing": {
+          "count": 11,
+          "countBasis": "counted"
+        }
+      },
+      "replaceAttributes": true
+    },
+    "fl-intl-seoul-ministerial-participants": {
+      "attributes": {
+        "listing": {
+          "count": 28,
+          "countBasis": "counted"
+        }
+      },
+      "replaceAttributes": true
+    },
+    "fl-intl-seoul-ministerial-proposals-for-paris": {
+      "kind": "required_action"
+    },
+    "fl-intl-paris-notes-voluntary-commitments": {
+      "published": true,
+      "qualification": "Recorded as what the statement states, not as a link to a commitment text, because the statement names no commitment document."
+    },
+    "fl-intl-bletchley-new-zealand": {
+      "subject": "country-nz",
+      "time": {
+        "kind": "event",
+        "date": "2025-02-13",
+        "basis": "revision",
+        "note": "Dated by the GOV.UK update of 13 February 2025 that added New Zealand; the joining date of 23 October 2024 is as the text states it."
+      }
+    },
+    "fl-intl-paris-statement-signatories-pdf": {
+      "attributes": {
+        "listing": {
+          "count": 64,
+          "countBasis": "counted"
+        }
+      },
+      "replaceAttributes": true,
+      "statement": "The Élysée PDF of the Paris statement lists 64 numbered entries under 'Signatory countries and organisations': 62 countries, the African Union Commission and the European Union. Zimbabwe, listed on the web page, is not among them, and neither are the United Kingdom and the United States.",
+      "qualification": "The two Élysée expressions differ by one entry, Zimbabwe; neither states when or why the list changed. The date is the PDF's embedded file creation date, not a stated publication date. Not a record that any country signed on a particular date. Absence from the list is not a refusal: no government statement of refusal was inspected. The United Kingdom is named in footnote 2 among members of the Paris Pact for People and the Planet, a different instrument. Being listed is not a signature, ratification, legal obligation or compliance."
+    },
+    "fl-intl-paris-statement-signatories-web": {
+      "attributes": {
+        "listing": {
+          "count": 65,
+          "countBasis": "counted"
+        }
+      },
+      "replaceAttributes": true,
+      "statement": "As served on 2026-10-27, the Élysée web page of the Paris statement lists 65 entries under 'Signatory countries:': 63 countries, the African Union Commission and the European Union (count made by Selekoa). Neither the United Kingdom nor the United States is listed.",
+      "qualification": "A listing, not ratification or implementation. It differs from the PDF list by one entry, Zimbabwe (recorded separately). Absence from the list is not a refusal: Hansard, where press summaries indicate a UK ministerial explanation, refused retrieval, and no official US statement was located in a bounded search, so no statement of refusal is recorded. The cross-family check of 2026-10-28 counted the same 65 entries."
+    },
+    "fl-intl-haip-first-round-listed": {
+      "attributes": {
+        "listing": {
+          "count": 20,
+          "countBasis": "stated"
+        }
+      },
+      "replaceAttributes": true,
+      "qualification": "A list of report submitters, not of organisations found to apply the code. Google DeepMind is not listed as a separate submitter; 'Google' is. The object list is taken from the acknowledgements because the annex table extracts imperfectly (one row's name is missing in the text layer). Other official counts have different coverage and are not reconciled: the Japanese ministry's Hiroshima AI Process page says responses from 19 companies were published on the OECD website in April 2025, and the OECD.AI overview says the opening round resulted in 25 reports."
+    },
+    "fl-intl-new-delhi-no-frontier-terms": {
+      "attributes": {
+        "provision": {
+          "kind": "required_action",
+          "key": "new-delhi-frontier-terms"
+        }
+      },
+      "time": {
+        "kind": "event",
+        "date": "2026-02-21",
+        "basis": "publication",
+        "note": "Absence recorded for this expression, dated by the release's posting on 21 February 2026; the annexed text says participants gathered on 19 February 2026. The release as served on 2026-10-27 annexes an endorser list dated 5 March 2026, so it was revised after posting."
+      }
+    },
+    "fl-intl-new-delhi-endorsers": {
+      "attributes": {
+        "listing": {
+          "count": 92,
+          "countBasis": "counted"
+        }
+      },
+      "replaceAttributes": true
+    },
+    "fl-intl-haip-v2-responses": {
+      "attributes": {
+        "listing": {
+          "count": 31,
+          "countBasis": "stated"
+        }
+      },
+      "replaceAttributes": true,
+      "object": {
+        "kind": "literal",
+        "value": "31 companies, not named on the page (Reporting Framework 2.0, responses published 2 October 2026)"
+      }
+    },
+    "fl-intl-new-delhi-endorsers-88": {
+      "from": "fl-intl-new-delhi-endorser-counts",
+      "attributes": {
+        "listing": {
+          "count": 88,
+          "countBasis": "stated"
+        }
+      },
+      "replaceAttributes": true,
+      "object": {
+        "kind": "literal",
+        "value": "88 countries and international organisations, as on 21 February 2026 (not named)"
+      },
+      "statement": "A PIB release of 24 February 2026 states that, as on 21 February 2026, 88 countries and international organisations had endorsed the New Delhi Declaration.",
+      "time": {
+        "kind": "snapshot",
+        "date": "2026-02-21",
+        "note": "The count's own date, as stated in the release of 24 February 2026."
+      },
+      "qualification": "A count stated by the release for 21 February 2026; it names no endorser. The counts of 88 (21 February), 91 (24 February) and 92 (the list dated 5 March 2026) are dated snapshots, each recorded separately, and are not reconciled further. Endorsement implies no signature or legal effect."
+    },
+    "fl-intl-new-delhi-endorsers-91": {
+      "from": "fl-intl-new-delhi-endorser-counts",
+      "attributes": {
+        "listing": {
+          "count": 91,
+          "countBasis": "stated"
+        }
+      },
+      "replaceAttributes": true,
+      "object": {
+        "kind": "literal",
+        "value": "91 countries and organisations after Bangladesh, Costa Rica and Guatemala joined (not otherwise named)"
+      },
+      "statement": "A PIB release of 24 February 2026 states that, after 21 February 2026, Bangladesh, Costa Rica and Guatemala joined the New Delhi Declaration, taking the total to 91 countries and organisations.",
+      "time": {
+        "kind": "snapshot",
+        "date": "2026-02-24",
+        "note": "The release's date; it gives no date for each joining."
+      },
+      "qualification": "A count stated by the release at its own date; it names only the three countries that joined after 21 February. The counts of 88 (21 February), 91 (24 February) and 92 (the list dated 5 March 2026) are dated snapshots, each recorded separately. Endorsement implies no signature or legal effect."
+    },
+    "fl-us-bis-reporting-nprm-quarterly-notification": {
+      "dropAttributes": ["scope"]
+    },
+    "fl-us-ai-action-plan-caisi-frontier-evaluations": {
+      "dropAttributes": ["scope"]
+    },
+    "fl-us-ai-action-plan-state-funding": {
+      "dropAttributes": ["scope"]
+    },
+    "fl-us-legislative-recommendations-ai-development": {
+      "dropAttributes": ["scope"]
+    },
+    "fl-us-mi-hb4668-def-large-developer": {
+      "dropAttributes": ["scope"]
+    },
+    "fl-us-aisi-agreement-anthropic-announced": {
+      "predicate": "evaluation_engagement",
+      "object": {
+        "kind": "entity",
+        "entityId": "anthropic"
+      },
+      "replaceAttributes": true,
+      "attributes": {
+        "activityStage": "announced",
+        "evaluatedSystem": "The company's major new models, before and after their public release (as announced)",
+        "activityScope": "Formal collaboration on AI safety research, testing and evaluation under a memorandum of understanding (its text not inspected)"
+      }
+    },
+    "fl-us-aisi-agreement-openai-announced": {
+      "predicate": "evaluation_engagement",
+      "object": {
+        "kind": "entity",
+        "entityId": "openai"
+      },
+      "replaceAttributes": true,
+      "attributes": {
+        "activityStage": "announced",
+        "evaluatedSystem": "The company's major new models, before and after their public release (as announced)",
+        "activityScope": "Formal collaboration on AI safety research, testing and evaluation under a memorandum of understanding (its text not inspected)"
+      }
+    },
+    "fl-us-nist-ai-800-1-2pd-changes": {
+      "attributes": {
+        "changeBasis": "publisher_statement"
+      }
+    },
+    "fl-us-eo14110-revoked": {
+      "time": {
+        "kind": "event",
+        "date": "2025-01-20",
+        "basis": "signature",
+        "note": "Dated by the revoking order's signature; its Federal Register publication followed on 28 January 2025."
+      }
+    },
+    "fl-us-bis-ai-diffusion-rescission-announced": {
+      "predicate": "revoked",
+      "attributes": {
+        "activityStage": "announced"
+      },
+      "replaceAttributes": true,
+      "statement": "On 13 May 2025 the Department of Commerce announced a rescission of the AI Diffusion Rule and said that BIS planned to publish a regulation formalising the rescission. The linked release PDF, dated 12 May 2025, says that the Department initiated a rescission.",
+      "qualification": "Announced, not a completed formal rescission: no Federal Register rule formalising the rescission was inspected. The web page and the PDF are dated 13 and 12 May 2025 respectively and are recorded as separate sources. The release also states that enforcement officials were instructed not to enforce the rule. The page and the PDF as served in October 2026 write “SI” for “AI” in places and add a bullet on Malaysia and Thailand; the quotations are from the release-period expressions the cross-family check opened."
+    },
+    "fl-us-bis-ai-diffusion-ifr-model-weights": {
+      "qualification": "States the control as published. Its scope has further exclusions: Note 1 excludes the parameters of models that have been published, and of models whose additional training on published parameters is no more than 2x10^25 operations or 25 percent of the training operations, whichever is higher; Note 2 excludes models trained with fewer operations than were needed to train a model as capable as the most advanced published model, by an aggregate of widely used benchmarks. Not every unpublished model at or above the compute threshold is controlled. The rule's rescission was announced on 13 May 2025 (recorded separately); this record does not say whether the control remained operative."
+    },
+    "fl-us-ny-2025-civil-penalty": {
+      "kind": "threshold",
+      "statement": "S6953-B allows the attorney general to recover, for a violation of § 1421, a civil penalty not exceeding ten million dollars for a “first violation” and thirty million dollars for “any subsequent violation”.",
+      "qualification": "Text of print B. Chapter 96 of 2026 provides different amounts (recorded separately: up to one million and three million dollars); recorded here as two quoted texts without an inferred comparison record. Section 1422(1) has the amount determined based on the severity of the violation (cross-family check, 2026-10-28, item 80)."
+    },
+    "fl-us-ny-2025-def-frontier-model": {
+      "statement": "S6953-B defines a \"frontier model\" as either an AI model trained using more than 10^26 computational operations whose compute cost exceeds one hundred million dollars, or a model produced by applying knowledge distillation to such a frontier model whose own compute cost exceeds five million dollars.",
+      "qualification": "Text of print B as passed; replaced by Chapter 96 of 2026 before the act took effect (recorded separately). The knowledge-distillation limb, with its five-million-dollar compute-cost condition, is paraphrased."
+    },
+    "fl-us-ny-2025-def-large-developer": {
+      "qualification": "Text of print B. The subdivision continues: accredited colleges and universities are not large developers to the extent that they are engaging in academic research; and if a person transfers full intellectual property rights in the frontier model to another person, including the right to resell it, and retains none, the receiving person is considered the large developer after the transfer. The duties apply to the defined category; whether any named developer falls in it is set aside."
+    },
+    "fl-us-ny-ch96-changes-frontier-model": {
+      "attributes": {
+        "changeBasis": "document_comparison"
+      },
+      "time": {
+        "kind": "event",
+        "date": "2026-03-27",
+        "basis": "signature",
+        "note": "Chapter 96 was signed on 27 March 2026; its replacement provisions apply from 1 January 2027, not from the signature."
+      },
+      "statement": "Chapter 96 of 2026 replaces the 2025 definition of \"frontier model\" (a model trained with more than 10^26 operations whose compute cost exceeds one hundred million dollars, or a distillation of one whose own compute cost exceeds five million dollars) with a foundation model trained using more than 10^26 integer or floating-point operations, without the compute-cost condition.",
+      "qualification": "A comparison of two quoted definitions only; other subdivisions, including any distillation rule in Chapter 96, were not compared. Neither text had taken effect at the check date: Chapter 96's replacement provisions apply from 1 January 2027."
+    },
+    "fl-us-ny-ch96-changes-large-developer": {
+      "attributes": {
+        "changeBasis": "document_comparison"
+      },
+      "time": {
+        "kind": "event",
+        "date": "2026-03-27",
+        "basis": "signature",
+        "note": "Chapter 96 was signed on 27 March 2026; its replacement provisions apply from 1 January 2027, not from the signature."
+      }
+    },
+    "fl-us-mi-hb4668-introduced": {
+      "qualification": "Introduction only. The bill's status is recorded only as of the Internet Archive capture of 23 March 2026, the latest the cross-family check opened: the history's last actions, of 19 March 2026, discharge a committee, place the bill on second reading and refer it to the Committee on Communications and Technology, and no passage by either chamber is listed. A later action would not appear in that capture.",
+      "time": {
+        "note": "Date of introduction in the bill history (House Journal 60, p. 740)."
+      }
+    },
+    "fl-uk-aisi-launch-chair-statement": {
+      "published": true
+    },
+    "fl-uk-us-aisi-mou-signed": {
+      "attributes": {
+        "commitment": {
+          "stage": "signed",
+          "scope": "UK–US cooperation between the AI Safety Institutes"
+        }
+      },
+      "replaceAttributes": true
+    },
+    "fl-uk-aisi-focus": {
+      "published": true
+    },
+    "fl-uk-aisi-renamed": {
+      "predicate": "published",
+      "object": {
+        "kind": "entity",
+        "entityId": "uk-aisi-rename-press-release-2025"
+      },
+      "statement": "A GOV.UK press release of 14 February 2025 announces that the UK's AI Safety Institute becomes the 'UK AI Security Institute'.",
+      "qualification": "Records the announcement; the Institute's two names, with their dates, are given on its own record. No instrument changing the body's legal form was inspected, and the release's phrase “from today (Friday 14 February)” attaches to the founding principles of the UK's approach, not expressly to the new name."
+    },
+    "fl-uk-csr-bill-ai-incidents": {
+      "published": true
+    },
+    "fl-uk-gdm-mou-term": {
+      "kind": "threshold"
+    },
+    "fl-us-caisi-security-work-openai": {
+      "from": "fl-us-caisi-security-work-openai-anthropic",
+      "predicate": "evaluation_engagement",
+      "object": {
+        "kind": "entity",
+        "entityId": "openai"
+      },
+      "replaceAttributes": true,
+      "attributes": {
+        "activityStage": "reported_performed",
+        "evaluatedSystem": "OpenAI's advanced AI systems (not named)",
+        "activityScope": "Identifying security issues and improving the measurement of AI security, in partnership with the UK AI Security Institute (as reported by NIST)"
+      },
+      "statement": "On 25 September 2025 NIST stated that CAISI had worked with OpenAI to identify security issues with its advanced AI systems, with research and evaluations completed in partnership with the UK AI Security Institute.",
+      "qualification": "NIST's statement only; the dates of the work are not given. The company's blog post it cites was not inspected; no finding, fix or compliance is recorded. Whether the 2024 agreement was renewed or renegotiated is not stated on the page. The same statement concerns Anthropic (recorded separately)."
+    },
+    "fl-us-caisi-security-work-anthropic": {
+      "from": "fl-us-caisi-security-work-openai-anthropic",
+      "predicate": "evaluation_engagement",
+      "object": {
+        "kind": "entity",
+        "entityId": "anthropic"
+      },
+      "replaceAttributes": true,
+      "attributes": {
+        "activityStage": "reported_performed",
+        "evaluatedSystem": "Anthropic's advanced AI systems (not named)",
+        "activityScope": "Identifying security issues and improving the measurement of AI security, in partnership with the UK AI Security Institute (as reported by NIST)"
+      },
+      "statement": "On 25 September 2025 NIST stated that CAISI had worked with Anthropic to identify security issues with its advanced AI systems, with research and evaluations completed in partnership with the UK AI Security Institute.",
+      "qualification": "NIST's statement only; the dates of the work are not given. The company's blog post it cites was not inspected; no finding, fix or compliance is recorded. Whether the 2024 agreement was renewed or renegotiated is not stated on the page. The same statement concerns OpenAI (recorded separately)."
+    },
+    "fl-uk-kings-speech-2026-no-frontier-bill": {
+      "attributes": {
+        "provision": {
+          "kind": "required_action",
+          "key": "uk-kings-speech-2026-frontier-bill"
+        }
+      }
+    },
+    "fl-us-legislative-recommendations-published": {
+      "time": {
+        "note": "Month from the cover. The file name begins 03.20.26, which is not a dated release statement; no day is recorded."
+      }
+    },
+    "fl-us-ny-s6953b-passed-assembly": {
+      "time": {
+        "note": "Date of the action in the Assembly's bill record for S06953."
+      }
+    },
+    "fl-us-ny-s6953b-passed-senate": {
+      "time": {
+        "note": "Date of the action in the Assembly's bill record for S06953."
+      }
+    },
+    "fl-us-ny-s6953b-signed-chapter-699": {
+      "qualification": "Signature and chapter number from the legislature’s record; the session-law print of Chapter 699 and the approval memo were not inspected. The Governor’s announcement of the same day is recorded separately."
+    },
+    "fl-intl-seoul-declaration-hiroshima": {
+      "predicate": "cites",
+      "replaceAttributes": true
+    },
+    "fl-intl-seoul-declaration-notes-fasc": {
+      "predicate": "cites",
+      "replaceAttributes": true
+    },
+    "fl-us-eo14409-voluntary-access-framework": {
+      "qualification": "A direction to design a voluntary framework; participation by any developer is not recorded and would not be compliance with a duty. The elided words make the access subject to appropriate confidentiality, cybersecurity, insider-risk and intellectual-property protection, use and nondisclosure requirements (cross-family check, 2026-10-28, item 70)."
+    }
+  },
+  "evidence": {
+    "fl-eu-cop-draft1-published:0": {
+      "note": "The PDF's text layer drops the hyphen of “General-Purpose”, which is broken across a line; the printed line ends “General-”."
+    },
+    "fl-eu-cop-draft1-published:2": {
+      "locator": "PDF metadata",
+      "passage": "The Commission's PDF gives creation and modification on 14 November 2024, 10:55 UTC, in its metadata.",
+      "note": "The copy held by the Dutch Senate gives the same times and names the Eerste Kamer as author."
+    },
+    "fl-eu-cop-final-changes-from-draft1-ssf:1": {
+      "passage": "The three steps are creating (Measure 1.1), implementing (Measure 1.2) and updating (Measure 1.3) the Framework; signatories further commit to notifying the AI Office of it (Measure 1.4). The first paragraph's “state-of-the-art” wording is quoted in a separate record."
+    },
+    "fl-eu-aia-art53-4-code-reliance:1": {
+      "note": "The Regulation's wording “approved”; the Commission's 2025 act on the Code is an opinion (recorded separately)."
+    },
+    "fl-eu-opinion-drafting-process:0": {
+      "locator": "Paragraph (5), PDF p. 2 (printed p. 1), continuing onto PDF p. 3"
+    },
+    "fl-eu-opinion-drafting-process:1": {
+      "locator": "Paragraphs (5)-(6), PDF p. 3 (printed p. 2)"
+    },
+    "fl-cn-genai-scope-non-public-rd:0": {
+      "note": "Read in the gov.cn posting; the dataset's source for the Measures is the CAC's own posting of the same text."
+    },
+    "fl-link-ms-fgf-2026-eu-ai-act:0": {
+      "note": "Part of the passage already quoted for the edition's link to SB 53."
+    },
+    "fl-link-ms-fgf-2026-ny-raise:0": {
+      "note": "Continues the sentence quoted for the edition's link to the AI Act."
+    },
+    "fl-link-ms-fgf-2026-ny-raise:1": {
+      "note": "Already quoted in the dataset for the edition's links to the EU Code and to SB 53."
+    },
+    "fl-link-fgf-2026-eu-ai-act:1": {
+      "passage": "Paraphrase: the sentence on the EU Code of Practice (quoted in the edition's link to the Code) ends by naming the models covered under Regulation (EU) 2024/1689, the EU AI Act."
+    },
+    "fl-cn-csl-art20-ai:0": {
+      "shorten": "国家支持人工智能基础理论研究和算法等关键技术研发，推进训练数据资源、算力等基础设施建设",
+      "translation": "The state supports basic theoretical research on artificial intelligence and R&D of key technologies such as algorithms, and advances the building of infrastructure such as training-data resources and computing power",
+      "locator": "Point 3 (三), added Article 20, first paragraph, first two clauses"
+    },
+    "fl-cn-csl-amendment-promulgated:0": {
+      "shorten": "现予公布",
+      "translation": "is hereby promulgated",
+      "note": "The order is short (119 Chinese characters), so only these words are quoted, within 10% of its length; the order goes on to state the effective date, 1 January 2026."
+    },
+    "fl-eu-opinion-conclusion:0": {
+      "note": "The paragraph’s wording is also quoted in a further item of this record."
+    },
+    "fl-us-bis-ai-diffusion-ifr-model-weights:1": {
+      "correctQuote": "ECCN 4E091 excludes from the control any open-weight models",
+      "note": "The quotation keeps the source's hyphen in “open-weight”, which the PDF text layer drops at a line break (cross-family check, 2026-10-28, item 51). The threshold is read from the ECCN heading at 90 FR 4578 (“trained utilizing 10^26 or more operations”; superscript lost in the text layer)."
+    },
+    "fl-us-ai-action-plan-caisi-frontier-evaluations:0": {
+      "locator": "Pillar III, “Ensure that the U.S. Government is at the Forefront of Evaluating National Security Risks in Frontier Models”, Recommended Policy Actions, PDF p. 25 (printed p. 22)",
+      "note": "Locator corrected from Pillar II to Pillar III (cross-family check, 2026-10-28, item 60)."
+    },
+    "fl-intl-haip-first-round-listed:2": {
+      "passage": "Paraphrase: the initial responses, from 19 companies, were published on the OECD website in April 2025."
+    },
+    "fl-uk-aisi-launch-chair-statement:0": {
+      "passage": "Paraphrase: as chair of the AI Safety Summit on 1-2 November 2023, the UK has launched the AI Safety Institute to build public sector capability to conduct safety testing and to research AI safety; its initial milestone is to build an evaluations process in time to assess the next generation of models."
+    },
+    "fl-intl-bletchley-new-zealand:1": {
+      "toParaphrase": "The page's change history records, on 13 February 2025, an update to include New Zealand as a signatory of the declaration.",
+      "note": "Given by paraphrase: the page's own text is about 60 words long, and its publication date is already quoted."
+    },
+    "fl-us-mi-hb4668-status-2026:0": {
+      "shorten": "referred to Committee on Communications and Technology",
+      "shortenNote": "Shortened at admission to the words the Internet Archive capture of 23 March 2026 shows; the cross-family check read “referred to Committee on Communications and Technology” there, and the live page now reads “re-referred”."
+    }
+  },
+  "newEvidence": [
+    {
+      "id": "evidence-fl-eu-aia-art53-1-b-downstream-3",
+      "claimId": "fl-eu-aia-art53-1-b-downstream",
+      "sourceId": "source-eu-ai-act-2024",
+      "packSource": "eu-ai-act-cellar-html",
+      "sourceRole": "primary",
+      "support": "context",
+      "locator": "Article 53(2), opening",
+      "passage": "The obligations set out in paragraph 1, points (a) and (b), shall not apply",
+      "passageType": "quote",
+      "reason": "Added at admission on the cross-family check's finding (2026-10-28, item 32) that the duty needs the Article 53(2) exception beside it; the check quoted this passage, and it was matched at admission in a fresh retrieval of the Publications Office copy whose SHA-256 equals the pack's."
+    },
+    {
+      "id": "evidence-fl-eu-cop-draft1-published-4",
+      "claimId": "fl-eu-cop-draft1-published",
+      "sourceId": "source-eu-code-draft1-page",
+      "sourceRole": "primary",
+      "support": "supports",
+      "locator": "Publication field",
+      "passage": "The Commission's library page for the draft gives the publication date 14 November 2024.",
+      "passageType": "paraphrase",
+      "reason": "Added at admission under decision 5. The cross-family check (2026-10-28, item 24) read the page (HTTP 200) and quoted its field “Publication 14 November 2024”; this admission's own retrieval was refused (HTTP 403), so the passage rests on the check's reading."
+    },
+    {
+      "id": "evidence-fl-link-fgf-2026-eu-ai-act-3",
+      "claimId": "fl-link-fgf-2026-eu-ai-act",
+      "sourceId": "source-fgf-release",
+      "sourceRole": "primary",
+      "support": "context",
+      "locator": "Date and opening paragraph",
+      "passage": "OpenAI announces publication of the FGF on May 28, 2026.",
+      "passageType": "paraphrase",
+      "reason": "Added at admission so that the link is dated by a source that states the date (cross-family check, 2026-10-28, item 118). The paraphrase is the dataset's existing reading of the release announcement (checked 2026-09-18; Internet Archive capture of 2026-05-28)."
+    },
+    {
+      "id": "evidence-fl-cn-csl-art20-ai-2",
+      "claimId": "fl-cn-csl-art20-ai",
+      "sourceId": "source-cn-csl-amendment-2025",
+      "sourceRole": "primary",
+      "support": "supports",
+      "locator": "Point 3 (三), added Article 20, first paragraph, remainder",
+      "passage": "The paragraph continues: the state improves AI ethics norms, strengthens risk monitoring and assessment and safety supervision, and promotes the application and healthy development of AI.",
+      "passageType": "paraphrase",
+      "reason": "Added at admission: the pack quoted the whole paragraph (77 Chinese characters), over the 50-word limit when each CJK character counts as a word, so the quotation was shortened to its first two clauses and the remainder is paraphrased from the pack's matched passage and its machine translation."
+    },
+    {
+      "id": "evidence-fl-eu-aia-art52-4-designation-2",
+      "claimId": "fl-eu-aia-art52-4-designation",
+      "sourceId": "source-eu-ai-act-2024",
+      "packSource": "eu-ai-act-cellar-html",
+      "sourceRole": "primary",
+      "support": "supports",
+      "locator": "Article 52(4), first sentence",
+      "passage": "The Commission may designate a general-purpose AI model as presenting systemic risks",
+      "passageType": "quote",
+      "reason": "Added at admission: the schema requires a provision record to quote the edition, and the pack gave this provision by paraphrase only. The passage was read from a fresh retrieval at admission whose SHA-256 equals the pack’s, and is within the source’s quotation limit."
+    },
+    {
+      "id": "evidence-fl-eu-aia-art54-3-tasks-2",
+      "claimId": "fl-eu-aia-art54-3-tasks",
+      "sourceId": "source-eu-ai-act-2024",
+      "packSource": "eu-ai-act-cellar-html",
+      "sourceRole": "primary",
+      "support": "supports",
+      "locator": "Article 54(3), point (b)",
+      "passage": "for a period of 10 years after the general-purpose AI model has been placed on the market",
+      "passageType": "quote",
+      "reason": "Added at admission: the schema requires a provision record to quote the edition, and the pack gave this provision by paraphrase only. The passage was read from a fresh retrieval at admission whose SHA-256 equals the pack’s, and is within the source’s quotation limit."
+    },
+    {
+      "id": "evidence-fl-eu-opinion-conclusion-2",
+      "claimId": "fl-eu-opinion-conclusion",
+      "sourceId": "source-eu-commission-opinion-2025",
+      "packSource": "eu-commission-opinion-2025",
+      "sourceRole": "primary",
+      "support": "supports",
+      "locator": "Section 5 “Conclusion”, paragraph (57)",
+      "passage": "the Commission concludes that the General-Purpose AI Code of Practice adequately covers the obligations provided for in Articles 53 and 55 of the AI Act",
+      "passageType": "quote",
+      "reason": "Added at admission: the schema requires a provision record to quote the edition. The passage is the one the dataset already quotes from paragraph (57) for the Code’s publication record, so it adds no quoted words; it was matched at admission in a fresh retrieval whose SHA-256 equals the pack’s."
+    },
+    {
+      "id": "evidence-fl-cn-genai-art12-labelling-2",
+      "claimId": "fl-cn-genai-art12-labelling",
+      "sourceId": "source-cn-generative-ai-measures-2023-govcn",
+      "packSource": "cn-genai-govcn",
+      "sourceRole": "primary",
+      "support": "supports",
+      "locator": "Article 12 (第十二条)",
+      "passage": "对图片、视频等生成内容进行标识",
+      "passageType": "quote",
+      "reason": "Added at admission: the schema requires a provision record to quote the edition, and the pack gave this provision by paraphrase only. The passage was read from a fresh retrieval at admission whose SHA-256 equals the pack’s, and is within the source’s quotation limit.",
+      "translation": "label generated content such as pictures and videos"
+    },
+    {
+      "id": "evidence-fl-cn-genai-art21-penalties-2",
+      "claimId": "fl-cn-genai-art21-penalties",
+      "sourceId": "source-cn-generative-ai-measures-2023-govcn",
+      "packSource": "cn-genai-govcn",
+      "sourceRole": "primary",
+      "support": "supports",
+      "locator": "Article 21 (第二十一条), first paragraph, closing words",
+      "passage": "责令暂停提供相关服务",
+      "passageType": "quote",
+      "reason": "Added at admission: the schema requires a provision record to quote the edition, and the pack gave this provision by paraphrase only. The passage was read from a fresh retrieval at admission whose SHA-256 equals the pack’s, and is within the source’s quotation limit.",
+      "translation": "order suspension of the provision of the relevant services"
+    },
+    {
+      "id": "evidence-fl-cn-genai-art7-ip-personal-quality-2",
+      "claimId": "fl-cn-genai-art7-ip-personal-quality",
+      "sourceId": "source-cn-generative-ai-measures-2023-govcn",
+      "packSource": "cn-genai-govcn",
+      "sourceRole": "primary",
+      "support": "supports",
+      "locator": "Article 7 (第七条), point (2)",
+      "passage": "不得侵害他人依法享有的知识产权",
+      "passageType": "quote",
+      "reason": "Added at admission: the schema requires a provision record to quote the edition, and the pack gave this provision by paraphrase only. The passage was read from a fresh retrieval at admission whose SHA-256 equals the pack’s, and is within the source’s quotation limit.",
+      "translation": "must not infringe intellectual property rights that others lawfully enjoy"
+    },
+    {
+      "id": "evidence-fl-cn-labelling-explicit-implicit-2",
+      "claimId": "fl-cn-labelling-explicit-implicit",
+      "sourceId": "source-cn-labelling-measures-2025",
+      "packSource": "cn-labelling-govcn",
+      "sourceRole": "primary",
+      "support": "supports",
+      "locator": "Article 3 (第三条), second paragraph",
+      "passage": "人工智能生成合成内容标识包括显式标识和隐式标识",
+      "passageType": "quote",
+      "reason": "Added at admission: the schema requires a provision record to quote the edition, and the pack gave this provision by paraphrase only. The passage was read from a fresh retrieval at admission whose SHA-256 equals the pack’s, and is within the source’s quotation limit.",
+      "translation": "labels for AI-generated synthetic content comprise explicit labels and implicit labels"
+    },
+    {
+      "id": "evidence-fl-cn-labelling-scope-2",
+      "claimId": "fl-cn-labelling-scope",
+      "sourceId": "source-cn-labelling-measures-2025",
+      "packSource": "cn-labelling-govcn",
+      "sourceRole": "primary",
+      "support": "supports",
+      "locator": "Article 2 (第二条), closing words",
+      "passage": "开展人工智能生成合成内容标识活动，适用本办法",
+      "passageType": "quote",
+      "reason": "Added at admission: the schema requires a provision record to quote the edition, and the pack gave this provision by paraphrase only. The passage was read from a fresh retrieval at admission whose SHA-256 equals the pack’s, and is within the source’s quotation limit.",
+      "translation": "[for service providers] carrying out AI-generated synthetic content labelling activities, these Measures apply"
+    },
+    {
+      "id": "evidence-fl-link-fgf-2026-eu-ai-act-4",
+      "claimId": "fl-link-fgf-2026-eu-ai-act",
+      "sourceId": "source-fgf-2026",
+      "packSource": "src-fgf-2026",
+      "sourceRole": "primary",
+      "support": "supports",
+      "locator": "Section 1 “Introduction”, scope paragraph, PDF p. 4 (printed p. 2)",
+      "passage": "“general-purpose models with systemic risk” under the EU AI Act",
+      "passageType": "quote",
+      "reason": "Added at admission: a commitment link requires a quotation from the linking document. The cross-family check (2026-10-28, item 118) quoted the sentence; these words of it were matched at admission in a fresh retrieval whose SHA-256 equals the pack’s. To keep the edition within its quotation limit, the provision-level reference to Appendix 2.2 of the Code is given by paraphrase on the edition’s link to the Code."
+    },
+    {
+      "id": "evidence-fl-us-bis-ai-diffusion-rescission-announced-3",
+      "claimId": "fl-us-bis-ai-diffusion-rescission-announced",
+      "sourceId": "source-us-bis-diffusion-rescission-pdf-2025",
+      "sourceRole": "primary",
+      "support": "supports",
+      "locator": "PDF p. 1, release date and opening paragraph",
+      "passage": "The release PDF is dated May 12, 2025, and says that the Department of Commerce initiated a rescission of the AI Diffusion Rule.",
+      "passageType": "paraphrase",
+      "reason": "Added at admission: the cross-family check (2026-10-28, item 42) read the PDF's date and its words “initiated a rescission” in the Internet Archive capture of 13 May 2025, and found that it is a separate release text with its own date (decision: each with its own date). This admission could not reach the archive."
+    },
+    {
+      "id": "evidence-fl-intl-g7-haip-leaders-welcome-2",
+      "claimId": "fl-intl-g7-haip-leaders-welcome",
+      "sourceId": "source-g7-leaders-statement-haip-2023",
+      "packSource": "g7-haip-leaders",
+      "sourceRole": "primary",
+      "support": "supports",
+      "locator": "PDF p. 1, opening paragraph",
+      "passage": "the Hiroshima Process International Code of Conduct for Organizations Developing Advanced AI Systems (Attached)",
+      "passageType": "quote",
+      "reason": "Added at admission: a link to a commitment text requires a quotation from the linking document. The cross-family check (2026-10-28, item 2) quoted the sentence; these words of it were matched at admission in a fresh retrieval whose SHA-256 equals the pack’s."
+    },
+    {
+      "id": "evidence-fl-uk-anthropic-mou-aisi-2",
+      "claimId": "fl-uk-anthropic-mou-aisi",
+      "sourceId": "source-uk-anthropic-mou-2025",
+      "packSource": "uk-mou-anthropic",
+      "sourceRole": "primary",
+      "support": "supports",
+      "locator": "Section (II), third paragraph",
+      "passage": "will continue their research collaboration to understand the capabilities and security risks of AI systems",
+      "passageType": "quote",
+      "reason": "Added at admission: the schema requires a provision record to quote the edition, and the pack gave this provision by paraphrase only. The passage was read from a fresh retrieval at admission and is within the source’s quotation limit."
+    },
+    {
+      "id": "evidence-fl-uk-openai-mou-not-binding-2",
+      "claimId": "fl-uk-openai-mou-not-binding",
+      "sourceId": "source-uk-openai-mou-2025",
+      "packSource": "uk-mou-openai",
+      "sourceRole": "primary",
+      "support": "supports",
+      "locator": "Final paragraph",
+      "passage": "This memorandum is voluntary, not legally binding, and without prejudice to any binding agreements.",
+      "passageType": "quote",
+      "reason": "Added at admission: the schema requires a provision record to quote the edition, and the pack gave this provision by paraphrase only. The passage was read from a fresh retrieval at admission and is within the source’s quotation limit. The cross-family check (2026-10-28, item 67) quoted the same sentence."
+    }
+  ],
+  "mergedEvidence": {
+    "fl-link-fgf-2026-eu-code-appendix-2-2": {
+      "into": "cm-link-frontier-governance-2026-eu-code",
+      "id": "evidence-cm-link-frontier-governance-2026-eu-code-2",
+      "statement": "OpenAI’s Frontier Governance Framework (May 2026 edition) states that, under the EU General-Purpose AI Code of Practice, it serves as OpenAI’s publicly available summary of its Safety & Security Framework. It also lists, among the cases in which it will not consider an update of a Model Report necessary, a model considered similarly safe or safer under Appendix 2.2 of the Code of Practice.",
+      "qualificationAppend": "The reference to Appendix 2.2, a provision-level reference added as a second evidence item on 2026-10-28, records what the framework says it will use, not how the appendix was applied to any model.",
+      "timeNote": "The edition’s publication date, given by OpenAI’s release announcement; the framework PDF itself carries no date.",
+      "passage": "Paraphrase: among three cases in which no update of a Model Report may be needed (capabilities not materially changed; a more capable model planned within a month; a model considered similarly safe or safer), the third names Appendix 2.2 of the Code of Practice as the basis for considering a model similarly safe or safer.",
+      "note": "Given by paraphrase, not by the pack’s short quotation of the reference (matched by the pack and at admission and confirmed by the cross-family check, item 119), to keep the edition within its quotation limit."
+    }
+  },
+  "documents": {
+    "gpai-code-of-practice-draft1-2024": {
+      "name": "General-Purpose AI Code of Practice, initial draft (14 November 2024)",
+      "shortName": "EU GPAI Code of Practice, initial draft",
+      "subtype": "Draft code of practice (under the EU AI Act)",
+      "aliases": ["First Draft General-Purpose AI Code of Practice"],
+      "description": "The initial draft of the EU General-Purpose AI Code of Practice, presented by the Chairs and Vice-Chairs of its four working groups and published by the European Commission on 14 November 2024. Every page is marked as a draft document. A draft binds no one; the final Code of 10 July 2025 is a separate record.",
+      "sourceIds": ["source-eu-code-draft1-2024"],
+      "documentVersion": {
+        "family": "eu-gpai-code-of-practice",
+        "label": "Initial draft (14 November 2024)",
+        "publisherId": "european-commission",
+        "publishedAt": "2024-11-14",
+        "dateNote": "Publication date given by the Commission's library page, as read by the cross-family check of 2026-10-28; the draft itself is undated, and its PDF metadata gives creation on 14 November 2024. The second and third drafts were not retrieved."
+      }
+    },
+    "eu-commission-opinion-code-2025": {
+      "name": "Commission Opinion C(2025) 5361 final on the assessment of the General-Purpose AI Code of Practice",
+      "shortName": "Commission Opinion on the GPAI Code (2025)",
+      "subtype": "Commission opinion (assessment under Article 56 of the AI Act)",
+      "aliases": ["C(2025) 5361 final"],
+      "description": "The European Commission's opinion of 1 August 2025 assessing the General-Purpose AI Code of Practice under Article 56 of the AI Act. It is an opinion, not an implementing act. Records state what the Opinion says about the Code, not about any signatory.",
+      "sourceIds": ["source-eu-commission-opinion-2025"],
+      "documentVersion": {
+        "family": "eu-gpai-code-assessment",
+        "label": "Opinion of 1 August 2025",
+        "publisherId": "european-commission",
+        "publishedAt": "2025-08-01",
+        "dateNote": "The Opinion's own date (“Brussels, 1.8.2025” and “Done at Brussels, 1.8.2025”), recorded as its date of issue; the day it was posted online was not recorded."
+      }
+    },
+    "cn-ai-content-labelling-measures-2025": {
+      "name": "Measures for Labelling Artificial Intelligence-Generated Synthetic Content (人工智能生成合成内容标识办法)",
+      "shortName": "China AI-generated content labelling measures (2025)",
+      "subtype": "Departmental normative document (China), issued by notice",
+      "aliases": ["人工智能生成合成内容标识办法", "国信办通字〔2025〕2号"],
+      "description": "Measures issued by the Cyberspace Administration of China with the Ministry of Industry and Information Technology, the Ministry of Public Security and the National Radio and Television Administration by a notice dated 7 March 2025, in force from 1 September 2025. The Chinese text is the inspected expression; English renderings in Selekoa records are machine translations.",
+      "sourceIds": ["source-cn-labelling-measures-2025"],
+      "documentVersion": {
+        "family": "cn-ai-content-labelling-measures",
+        "label": "As issued with notice 国信办通字〔2025〕2号 of 7 March 2025",
+        "publisherId": "cyberspace-administration-of-china",
+        "publishedAt": "2025-03-07",
+        "effectiveAt": "2025-09-01",
+        "dateNote": "Issue date: the notice's document date (成文日期) and date line, 7 March 2025, recorded as its date of issue; no signing event is shown. Effective date: Article 14. The gov.cn news item reporting the release is dated 2025-03-15."
+      }
+    },
+    "cn-gb-45438-2025": {
+      "name": "GB 45438-2025 Cybersecurity technology — Labeling method for content generated by artificial intelligence (网络安全技术 人工智能生成合成内容标识方法)",
+      "shortName": "GB 45438-2025",
+      "subtype": "Mandatory national standard (China)",
+      "aliases": ["GB 45438-2025"],
+      "description": "A Chinese mandatory national standard on labelling methods for AI-generated synthetic content, listed in the national standards catalogue as published on 28 February 2025 and implemented from 1 September 2025. Only its catalogue entry and official descriptions were read; its text was not retrieved.",
+      "sourceIds": ["source-cn-gb-45438-2025-catalogue"]
+    },
+    "cn-gbt-45654-2025": {
+      "name": "GB/T 45654-2025 Cybersecurity technology — Basic security requirements for generative artificial intelligence service (网络安全技术 生成式人工智能服务安全基本要求)",
+      "shortName": "GB/T 45654-2025",
+      "subtype": "Recommended national standard (China)",
+      "aliases": ["GB/T 45654-2025"],
+      "description": "A Chinese recommended national standard on basic security requirements for generative AI services, listed in the national standards catalogue as published on 25 April 2025 and implemented from 1 November 2025. Only its catalogue entry was read; none of its requirements is recorded.",
+      "sourceIds": ["source-cn-gbt-45654-2025-catalogue"]
+    },
+    "cn-cybersecurity-law-amendment-2025": {
+      "name": "Decision of the NPC Standing Committee on Amending the Cybersecurity Law of the People's Republic of China (全国人民代表大会常务委员会关于修改《中华人民共和国网络安全法》的决定)",
+      "shortName": "Cybersecurity Law amendment decision (2025)",
+      "subtype": "Amending decision of the NPC Standing Committee",
+      "aliases": ["关于修改《中华人民共和国网络安全法》的决定"],
+      "description": "The decision adopted by the Standing Committee of the 14th National People's Congress on 28 October 2025, promulgated by Presidential Order No. 61 the same day and in force from 1 January 2026. It adds an article on artificial intelligence to the Cybersecurity Law. The inspected text is Xinhua's, as posted on gov.cn; the republished Law was not retrieved.",
+      "sourceIds": ["source-cn-csl-amendment-2025"],
+      "documentVersion": {
+        "family": "cn-cybersecurity-law",
+        "label": "As adopted on 28 October 2025 (Xinhua text on gov.cn)",
+        "publisherId": "cn-npc-standing-committee",
+        "publishedAt": "2025-10-28",
+        "effectiveAt": "2026-01-01",
+        "dateNote": "Adopted and promulgated on 28 October 2025 (the decision's heading and Presidential Order No. 61); recorded as its date of issue. Effective 1 January 2026 (the decision's closing sentence and the order). The gov.cn posting of the decision text is dated 29 October 2025."
+      }
+    },
+    "cn-cac-genai-filings-announcement-2024": {
+      "name": "CAC announcement publishing information on filed generative AI services (国家互联网信息办公室关于发布生成式人工智能服务已备案信息的公告), April 2024",
+      "shortName": "CAC generative AI filings announcement (April 2024)",
+      "subtype": "Regulatory announcement (China)",
+      "aliases": [
+        "国家互联网信息办公室关于发布生成式人工智能服务已备案信息的公告"
+      ],
+      "description": "The Cyberspace Administration of China's announcement of generative AI services that completed filing under the Interim Measures, as posted on gov.cn on 3 April 2024. Its attached list was not retrieved. A filing is a regulatory procedure, not an assessment of safety.",
+      "sourceIds": ["source-cn-cac-genai-filings-2024"]
+    },
+    "cn-cac-genai-filings-announcement-2025": {
+      "name": "CAC announcement publishing 2024 information on filed generative AI services (国家互联网信息办公室关于发布2024年生成式人工智能服务已备案信息的公告), January 2025",
+      "shortName": "CAC generative AI filings announcement (January 2025)",
+      "subtype": "Regulatory announcement (China)",
+      "aliases": [
+        "国家互联网信息办公室关于发布2024年生成式人工智能服务已备案信息的公告"
+      ],
+      "description": "The Cyberspace Administration of China's announcement of generative AI services filed in 2024, as posted on gov.cn on 10 January 2025, with counts as of 31 December 2024. Its attachments were not retrieved. A filing is a regulatory procedure, not an assessment of safety.",
+      "sourceIds": ["source-cn-cac-genai-filings-2025"]
+    },
+    "bletchley-declaration-2023": {
+      "name": "The Bletchley Declaration by Countries Attending the AI Safety Summit, 1–2 November 2023",
+      "shortName": "Bletchley Declaration (2023)",
+      "subtype": "Intergovernmental declaration",
+      "aliases": ["Bletchley Declaration"],
+      "description": "The declaration of the countries attending the AI Safety Summit at Bletchley Park, 1–2 November 2023, as published on GOV.UK. It is not legally binding. The GOV.UK text was updated on 13 February 2025 to record New Zealand's later joining. Records state what the text says, not implementation or compliance.",
+      "sourceIds": ["source-bletchley-declaration-2023"],
+      "documentVersion": {
+        "family": "bletchley-declaration",
+        "label": "GOV.UK text (as updated 13 February 2025)",
+        "publisherId": "dsit",
+        "publishedAt": "2023-11-01",
+        "dateNote": "Published on GOV.UK on 1 November 2023 and updated on 13 February 2025 (the page's change history). The page names the Prime Minister's Office, the Foreign, Commonwealth & Development Office and DSIT; DSIT is recorded as publisher. The wording was checked in the text as served in October 2026; the 2023 bytes were not inspected."
+      }
+    },
+    "bletchley-chair-safety-testing-2023": {
+      "name": "Safety Testing: Chair's Statement of Session Outcomes, 2 November 2023",
+      "shortName": "Bletchley chair's statement on safety testing (2023)",
+      "subtype": "Chair's statement (AI Safety Summit)",
+      "aliases": [],
+      "description": "The UK chair's statement of the outcomes of the AI Safety Summit session on safety testing, 2 November 2023, as published on GOV.UK. It reports what participants acknowledged; it is not a text signed by them. Records state what the text says, not implementation or compliance.",
+      "sourceIds": ["source-bletchley-chair-safety-testing-2023"],
+      "documentVersion": {
+        "family": "bletchley-chair-statement-safety-testing",
+        "label": "GOV.UK text (published 2 November 2023)",
+        "publisherId": "dsit",
+        "publishedAt": "2023-11-02",
+        "dateNote": "GOV.UK header “Published 2 November 2023”."
+      }
+    },
+    "seoul-declaration-2024": {
+      "name": "Seoul Declaration for safe, innovative and inclusive AI (AI Seoul Summit, 21 May 2024)",
+      "shortName": "Seoul Declaration (2024)",
+      "subtype": "Intergovernmental declaration",
+      "aliases": ["Seoul Declaration"],
+      "description": "The declaration of world leaders at the Leaders' Session of the AI Seoul Summit, 21 May 2024, with its annexed Statement of Intent on AI safety science, as published on GOV.UK. It is not legally binding. Records state what the text says, not implementation or compliance.",
+      "sourceIds": ["source-seoul-declaration-2024"],
+      "documentVersion": {
+        "family": "seoul-declaration",
+        "label": "GOV.UK text (published 21 May 2024)",
+        "publisherId": "dsit",
+        "publishedAt": "2024-05-21",
+        "dateNote": "GOV.UK publication page “Published: 21 May 2024”; the Korean government's publication was not inspected."
+      }
+    },
+    "seoul-ministerial-statement-2024": {
+      "name": "Seoul Ministerial Statement for advancing AI safety, innovation and inclusivity (22 May 2024)",
+      "shortName": "Seoul Ministerial Statement (2024)",
+      "subtype": "Ministerial statement (AI Seoul Summit)",
+      "aliases": [],
+      "description": "The statement of ministers at the Ministers' Session of the AI Seoul Summit, 22 May 2024, as published on GOV.UK. It is not legally binding. Records state what the text says, not implementation or compliance.",
+      "sourceIds": ["source-seoul-ministerial-statement-2024"],
+      "documentVersion": {
+        "family": "seoul-ministerial-statement",
+        "label": "GOV.UK text (published 22 May 2024)",
+        "publisherId": "dsit",
+        "publishedAt": "2024-05-22",
+        "dateNote": "GOV.UK header “Published 22 May 2024”."
+      }
+    },
+    "paris-ai-action-statement-2025-web": {
+      "name": "Statement on Inclusive and Sustainable Artificial Intelligence for People and the Planet (Élysée web page)",
+      "shortName": "Paris AI Action Summit statement (web page)",
+      "subtype": "Summit statement (web expression)",
+      "aliases": [],
+      "description": "The statement of the AI Action Summit in Paris, 10–11 February 2025, in the English web page of the French presidency, posted on 11 February 2025. Its signatory list differs by one entry from the PDF expression, recorded separately. A listing is not a signature date or compliance.",
+      "sourceIds": ["source-paris-ai-action-statement-2025-web"],
+      "publisherId": "elysee"
+    },
+    "paris-ai-action-statement-2025-pdf": {
+      "name": "Statement on Inclusive and Sustainable Artificial Intelligence for People and the Planet (Élysée PDF)",
+      "shortName": "Paris AI Action Summit statement (PDF)",
+      "subtype": "Summit statement (PDF expression)",
+      "aliases": [],
+      "description": "The PDF expression of the Paris AI Action Summit statement served by the French presidency. It states no publication date; its file metadata gives creation on 19 February 2025. Its signatory list differs by one entry from the web page, recorded separately.",
+      "sourceIds": ["source-paris-ai-action-statement-2025-pdf"],
+      "publisherId": "elysee"
+    },
+    "new-delhi-declaration-2026": {
+      "name": "AI Impact Summit Declaration (New Delhi Declaration on AI Impact), February 2026",
+      "shortName": "New Delhi Declaration (2026)",
+      "subtype": "Summit declaration",
+      "aliases": ["New Delhi Declaration on AI Impact"],
+      "description": "The declaration adopted at the AI Impact Summit in New Delhi, 18–19 February 2026, as annexed to a Press Information Bureau release of India's Ministry of Electronics and IT posted on 21 February 2026. The release was revised after posting: its endorser list is dated 5 March 2026. Records state what the text says, not implementation or compliance.",
+      "sourceIds": ["source-pib-new-delhi-declaration-2026"],
+      "documentVersion": {
+        "family": "new-delhi-declaration",
+        "label": "As annexed to the PIB release of 21 February 2026 (list as of 5 March 2026)",
+        "publisherId": "india-meity",
+        "publishedAt": "2026-02-21",
+        "dateNote": "The release, posted on 21 February 2026, says the summit held on 18–19 February concluded with the declaration's adoption, and the annexed text says participants gathered on 19 February 2026. The release as served in October 2026 annexes an endorser list dated 5 March 2026."
+      }
+    },
+    "g7-leaders-statement-haip-2023": {
+      "name": "G7 Leaders' Statement on the Hiroshima AI Process (30 October 2023)",
+      "shortName": "G7 Leaders' Statement on the Hiroshima AI Process",
+      "subtype": "Leaders' statement (G7)",
+      "aliases": [],
+      "description": "The statement of the G7 leaders of 30 October 2023 welcoming the Hiroshima Process International Guiding Principles and Code of Conduct for organisations developing advanced AI systems, as served by Japan's Ministry of Internal Affairs and Communications. Records state what the text says, not implementation or compliance.",
+      "sourceIds": ["source-g7-leaders-statement-haip-2023"],
+      "documentVersion": {
+        "family": "g7-leaders-statement-haip",
+        "label": "Dated 30 October 2023",
+        "publisherId": "g7",
+        "publishedAt": "2023-10-30",
+        "dateNote": "Date printed beneath the title."
+      }
+    },
+    "g7-hiroshima-code-of-conduct-2023": {
+      "name": "Hiroshima Process International Code of Conduct for Organizations Developing Advanced AI Systems",
+      "shortName": "Hiroshima Process Code of Conduct (2023)",
+      "subtype": "Voluntary code of conduct (G7)",
+      "aliases": ["Hiroshima Code of Conduct"],
+      "description": "The G7's voluntary code of conduct for organisations developing the most advanced AI systems, welcomed by the G7 leaders on 30 October 2023, as served by Japan's Ministry of Internal Affairs and Communications. It provides voluntary guidance. Records state what the text says, not implementation or compliance.",
+      "sourceIds": ["source-g7-hiroshima-code-of-conduct-2023"],
+      "documentVersion": {
+        "family": "g7-hiroshima-code-of-conduct",
+        "label": "As welcomed by the G7 leaders on 30 October 2023",
+        "publisherId": "g7",
+        "publishedAt": "2023-10-30",
+        "dateNote": "The PDF is undated; the date is that of the G7 Leaders' Statement, which welcomes the code as attached."
+      }
+    },
+    "haip-reporting-framework-2025": {
+      "name": "Hiroshima AI Process Reporting Framework",
+      "shortName": "HAIP Reporting Framework",
+      "subtype": "Voluntary reporting framework (OECD)",
+      "aliases": ["HAIP Reporting Framework"],
+      "description": "The OECD's voluntary framework, launched on 7 February 2025, through which organisations report on their alignment with the Hiroshima Process Code of Conduct. A report is the organisation's own account and is not a finding of alignment.",
+      "sourceIds": ["source-oecd-haip-overview"],
+      "publisherId": "oecd"
+    },
+    "oecd-how-are-ai-developers-managing-risks-2025": {
+      "name": "How are AI developers managing risks? (OECD Artificial Intelligence Papers, No. 45)",
+      "shortName": "OECD, How are AI developers managing risks? (2025)",
+      "subtype": "Report (OECD)",
+      "aliases": [],
+      "description": "An OECD paper of September 2025 on the reports submitted under the Hiroshima AI Process Reporting Framework between 7 February and 15 June 2025, with the names of the reporting entities in Annex A. Being listed is not a finding that an organisation applies the code.",
+      "sourceIds": ["source-oecd-haip-managing-risks-2025"],
+      "publisherId": "oecd"
+    },
+    "uk-aisi-rename-press-release-2025": {
+      "name": "Tackling AI security risks to unleash growth and deliver Plan for Change (GOV.UK press release, 14 February 2025)",
+      "shortName": "UK AI Security Institute renaming release (2025)",
+      "subtype": "Press release (UK government)",
+      "aliases": [],
+      "description": "The UK government's press release of 14 February 2025 announcing that the AI Safety Institute becomes the AI Security Institute, with its stated focus. A press release states intentions; it is not a statutory remit.",
+      "sourceIds": ["source-uk-aisi-rename-release-2025"],
+      "publisherId": "dsit"
+    },
+    "uk-us-ai-safety-mou-2024": {
+      "name": "UK–US Memorandum of Understanding on the science of AI safety (April 2024), as announced",
+      "shortName": "UK–US AI safety memorandum (2024)",
+      "subtype": "Memorandum of understanding (text not inspected)",
+      "aliases": [],
+      "description": "The memorandum between the UK and the US on cooperation between their AI Safety Institutes, as announced by the UK government on 2 April 2024, which states that it was signed on 1 April 2024. The memorandum's own text was not located.",
+      "sourceIds": ["source-uk-us-ai-safety-mou-release-2024"],
+      "publisherId": "dsit"
+    },
+    "uk-anthropic-mou-2025": {
+      "name": "Memorandum of Understanding between the UK and Anthropic on AI opportunities",
+      "shortName": "UK–Anthropic memorandum (2025)",
+      "subtype": "Memorandum of understanding (UK government)",
+      "aliases": [],
+      "description": "The memorandum between the UK government (DSIT) and Anthropic, dated 13 February 2025 and published on GOV.UK on 14 February 2025. It states that it is voluntary and not legally binding. Records state what the text says, not implementation or compliance.",
+      "sourceIds": ["source-uk-anthropic-mou-2025"],
+      "documentVersion": {
+        "family": "uk-anthropic-mou",
+        "label": "GOV.UK text (published 14 February 2025)",
+        "publisherId": "dsit",
+        "publishedAt": "2025-02-14",
+        "dateNote": "Published on GOV.UK on 14 February 2025; the signatories block is dated 13 February 2025."
+      }
+    },
+    "uk-cohere-mou-2025": {
+      "name": "Memorandum of Understanding between the UK and Cohere on AI opportunities",
+      "shortName": "UK–Cohere memorandum (2025)",
+      "subtype": "Memorandum of understanding (UK government)",
+      "aliases": [],
+      "description": "The memorandum between the UK government and Cohere, published on GOV.UK on 16 June 2025. The published text has no signatory block or signing date and states that it is voluntary and not legally binding. Records state what the text says, not implementation or compliance.",
+      "sourceIds": ["source-uk-cohere-mou-2025"],
+      "documentVersion": {
+        "family": "uk-cohere-mou",
+        "label": "GOV.UK text (published 16 June 2025)",
+        "publisherId": "dsit",
+        "publishedAt": "2025-06-16",
+        "dateNote": "Published on GOV.UK on 16 June 2025; no signing date is given."
+      }
+    },
+    "uk-openai-mou-2025": {
+      "name": "Memorandum of Understanding between the UK and OpenAI on AI opportunities",
+      "shortName": "UK–OpenAI memorandum (2025)",
+      "subtype": "Memorandum of understanding (UK government)",
+      "aliases": [],
+      "description": "The memorandum between DSIT and OpenAI, published on GOV.UK on 21 July 2025. The published text has no signatory block or signing date and states that it is voluntary and not legally binding. Records state what the text says, not implementation or compliance.",
+      "sourceIds": ["source-uk-openai-mou-2025"],
+      "documentVersion": {
+        "family": "uk-openai-mou",
+        "label": "GOV.UK text (published 21 July 2025)",
+        "publisherId": "dsit",
+        "publishedAt": "2025-07-21",
+        "dateNote": "Published on GOV.UK on 21 July 2025; no signing date is given."
+      }
+    },
+    "uk-google-deepmind-mou-2025": {
+      "name": "Memorandum of Understanding between the UK and Google DeepMind on AI opportunities and security",
+      "shortName": "UK–Google DeepMind memorandum (2025)",
+      "subtype": "Memorandum of understanding (UK government)",
+      "aliases": [],
+      "description": "The memorandum between the Secretary of State for DSIT and Google LLC (Google DeepMind), published on GOV.UK on 11 December 2025. It names its signatories without a date, takes effect from the last signature and states that it is voluntary and not legally binding. Records state what the text says, not implementation or compliance.",
+      "sourceIds": ["source-uk-google-deepmind-mou-2025"],
+      "documentVersion": {
+        "family": "uk-google-deepmind-mou",
+        "label": "GOV.UK text (published 11 December 2025)",
+        "publisherId": "dsit",
+        "publishedAt": "2025-12-11",
+        "dateNote": "Published on GOV.UK on 11 December 2025. The date of the last signature, from which the memorandum takes effect, is not given."
+      }
+    },
+    "uk-kings-speech-2024": {
+      "name": "The King's Speech 2024",
+      "shortName": "King's Speech (2024)",
+      "subtype": "Speech from the Throne (UK)",
+      "aliases": [],
+      "description": "The speech setting out the UK government's legislative programme, delivered on 17 July 2024, as published on GOV.UK. A stated intention to legislate is not a bill.",
+      "sourceIds": ["source-uk-kings-speech-2024"],
+      "documentVersion": {
+        "family": "uk-kings-speech-2024-text",
+        "label": "GOV.UK text (delivered 17 July 2024)",
+        "publisherId": "uk-prime-ministers-office",
+        "publishedAt": "2024-07-17",
+        "dateNote": "GOV.UK “Delivered on: 17 July 2024”, recorded as its date of publication."
+      }
+    },
+    "uk-kings-speech-2026-notes": {
+      "name": "The King's Speech 2026: background briefing notes",
+      "shortName": "King's Speech 2026 briefing notes",
+      "subtype": "Briefing notes (UK government)",
+      "aliases": [],
+      "description": "The UK government's background briefing notes on the bills of the King's Speech 2026, dated 13 May 2026. Records here concern only what a bounded search of the notes found.",
+      "sourceIds": ["source-uk-kings-speech-2026-notes"],
+      "documentVersion": {
+        "family": "uk-kings-speech-2026-briefing",
+        "label": "PDF dated 13 May 2026",
+        "publisherId": "uk-prime-ministers-office",
+        "publishedAt": "2026-05-13",
+        "dateNote": "Date on the PDF cover."
+      }
+    },
+    "uk-ai-defences-press-release-2026": {
+      "name": "Britain steps up national defences against growing AI risks (GOV.UK press release, 12 October 2026)",
+      "shortName": "UK AI defences release (2026)",
+      "subtype": "Press release (UK government)",
+      "aliases": [],
+      "description": "The UK government's press release of 12 October 2026 on measures against AI risks, including proposals to be considered under the Cyber Security and Resilience Bill. A press release states intentions; it is not a bill's text.",
+      "sourceIds": ["source-uk-ai-defences-release-2026"],
+      "publisherId": "uk-cabinet-office"
+    },
+    "us-eo-14110-2023": {
+      "name": "Executive Order 14110: Safe, Secure, and Trustworthy Development and Use of Artificial Intelligence",
+      "shortName": "EO 14110 (2023)",
+      "subtype": "Executive order (United States)",
+      "aliases": ["Executive Order 14110"],
+      "description": "The US executive order signed on 30 October 2023 and published in the Federal Register on 1 November 2023. It was revoked by Executive Order 14148 of 20 January 2025; its text and history remain recorded. Records state what the text says, not implementation or compliance.",
+      "sourceIds": ["source-us-eo-14110-fr"],
+      "documentVersion": {
+        "family": "us-eo-14110",
+        "label": "As published in the Federal Register (1 November 2023)",
+        "publisherId": "us-white-house",
+        "publishedAt": "2023-11-01",
+        "dateNote": "Signed on 30 October 2023 (heading and signature line); published in the Federal Register of 1 November 2023. Revoked by Executive Order 14148, signed on 20 January 2025."
+      }
+    },
+    "us-eo-14148-2025": {
+      "name": "Executive Order 14148: Initial Rescissions of Harmful Executive Orders and Actions",
+      "shortName": "EO 14148 (2025)",
+      "subtype": "Executive order (United States)",
+      "aliases": ["Executive Order 14148"],
+      "description": "The US executive order signed on 20 January 2025 and published in the Federal Register on 28 January 2025, which revokes a list of earlier executive actions, among them Executive Order 14110.",
+      "sourceIds": ["source-us-eo-14148-fr"],
+      "publisherId": "us-white-house"
+    },
+    "us-eo-14179-2025": {
+      "name": "Executive Order 14179: Removing Barriers to American Leadership in Artificial Intelligence",
+      "shortName": "EO 14179 (2025)",
+      "subtype": "Executive order (United States)",
+      "aliases": ["Executive Order 14179"],
+      "description": "The US executive order signed on 23 January 2025 and published in the Federal Register on 31 January 2025. It directs a review of actions taken under the revoked Executive Order 14110. Records state what the text says, not implementation or compliance.",
+      "sourceIds": ["source-us-eo-14179-fr"],
+      "documentVersion": {
+        "family": "us-eo-14179",
+        "label": "As published in the Federal Register (31 January 2025)",
+        "publisherId": "us-white-house",
+        "publishedAt": "2025-01-31",
+        "dateNote": "Signed on 23 January 2025; published in the Federal Register of 31 January 2025."
+      }
+    },
+    "us-ai-action-plan-2025": {
+      "name": "Winning the Race: America’s AI Action Plan",
+      "shortName": "America's AI Action Plan (2025)",
+      "subtype": "Policy plan (United States)",
+      "aliases": ["America's AI Action Plan"],
+      "description": "The White House policy plan released on 23 July 2025, with recommended policy actions. A recommended action is not an obligation on developers. Records state what the text says, not implementation or compliance.",
+      "sourceIds": ["source-us-ai-action-plan-2025"],
+      "documentVersion": {
+        "family": "us-ai-action-plan",
+        "label": "As released on 23 July 2025",
+        "publisherId": "us-white-house",
+        "publishedAt": "2025-07-23",
+        "dateNote": "Day from the White House release page; the PDF cover gives July 2025."
+      }
+    },
+    "us-eo-14365-2025": {
+      "name": "Executive Order 14365: Ensuring a National Policy Framework for Artificial Intelligence",
+      "shortName": "EO 14365 (2025)",
+      "subtype": "Executive order (United States)",
+      "aliases": ["Executive Order 14365"],
+      "description": "The US executive order signed on 11 December 2025 and published in the Federal Register on 16 December 2025, on state AI laws and a national policy framework. Records state what the text says, not implementation or compliance.",
+      "sourceIds": ["source-us-eo-14365-fr"],
+      "documentVersion": {
+        "family": "us-eo-14365",
+        "label": "As published in the Federal Register (16 December 2025)",
+        "publisherId": "us-white-house",
+        "publishedAt": "2025-12-16",
+        "dateNote": "Signed on 11 December 2025; published in the Federal Register of 16 December 2025."
+      }
+    },
+    "us-national-ai-legislative-recommendations-2026": {
+      "name": "Legislative Recommendations: A National Policy Framework for Artificial Intelligence",
+      "shortName": "US AI legislative recommendations (2026)",
+      "subtype": "Legislative recommendations (United States)",
+      "aliases": [],
+      "description": "The White House's recommendations to Congress for a national AI policy framework, dated March 2026 on the cover. Recommendations are not law.",
+      "sourceIds": ["source-us-ai-legislative-recommendations-2026"],
+      "documentVersion": {
+        "family": "us-national-ai-legislative-recommendations",
+        "label": "As published in March 2026",
+        "publisherId": "us-white-house",
+        "publishedAt": "2026-03",
+        "dateNote": "Month from the PDF cover. The file name begins 03.20.26, which is not a dated release statement; the White House release page was not retrieved, so no day is recorded."
+      }
+    },
+    "us-eo-14409-2026": {
+      "name": "Executive Order 14409: Promoting Advanced Artificial Intelligence Innovation and Security",
+      "shortName": "EO 14409 (2026)",
+      "subtype": "Executive order (United States)",
+      "aliases": ["Executive Order 14409"],
+      "description": "The US executive order signed on 2 June 2026 and published in the Federal Register on 5 June 2026, on benchmarking frontier models' cyber capabilities and voluntary pre-release access. Records state what the text says, not implementation or compliance.",
+      "sourceIds": ["source-us-eo-14409-fr"],
+      "documentVersion": {
+        "family": "us-eo-14409",
+        "label": "As published in the Federal Register (5 June 2026)",
+        "publisherId": "us-white-house",
+        "publishedAt": "2026-06-05",
+        "dateNote": "Signed on 2 June 2026; published in the Federal Register of 5 June 2026."
+      }
+    },
+    "us-bis-ai-reporting-nprm-2024": {
+      "name": "Establishment of Reporting Requirements for the Development of Advanced Artificial Intelligence Models and Computing Clusters (proposed rule)",
+      "shortName": "BIS AI reporting proposed rule (2024)",
+      "subtype": "Proposed rule (United States)",
+      "aliases": [],
+      "description": "The Bureau of Industry and Security's proposed rule, published in the Federal Register on 11 September 2024 with comments due by 11 October 2024. No final rule was located. A proposed rule binds no one.",
+      "sourceIds": ["source-us-bis-ai-reporting-nprm-fr"],
+      "documentVersion": {
+        "family": "us-bis-ai-reporting-rule",
+        "label": "Proposed rule as published in the Federal Register (11 September 2024)",
+        "publisherId": "us-bureau-of-industry-and-security",
+        "publishedAt": "2024-09-11",
+        "dateNote": "Federal Register of 11 September 2024. No final rule was located."
+      }
+    },
+    "us-bis-ai-diffusion-ifr-2025": {
+      "name": "Framework for Artificial Intelligence Diffusion (interim final rule)",
+      "shortName": "BIS AI diffusion rule (2025)",
+      "subtype": "Interim final rule (United States)",
+      "aliases": ["AI Diffusion Rule"],
+      "description": "The Bureau of Industry and Security's interim final rule, published in the Federal Register on 15 January 2025 with a stated effective date of 13 January 2025. On 13 May 2025 the Department of Commerce announced its rescission; a rule formalising the rescission was not inspected. Records state what the text says, not implementation or compliance.",
+      "sourceIds": ["source-us-bis-ai-diffusion-ifr-fr"],
+      "documentVersion": {
+        "family": "us-bis-ai-diffusion-rule",
+        "label": "Interim final rule as published in the Federal Register (15 January 2025)",
+        "publisherId": "us-bureau-of-industry-and-security",
+        "publishedAt": "2025-01-15",
+        "effectiveAt": "2025-01-13",
+        "dateNote": "Federal Register of 15 January 2025, which states the rule effective on 13 January 2025 (printed “January 13. 2025”) and a general compliance date of 15 May 2025."
+      }
+    },
+    "nist-ai-800-1-ipd-2024": {
+      "name": "NIST AI 800-1 (initial public draft): Managing Misuse Risk for Dual-Use Foundation Models",
+      "shortName": "NIST AI 800-1, initial public draft (2024)",
+      "subtype": "Draft guidance (United States)",
+      "aliases": [],
+      "description": "The initial public draft of voluntary guidance from the U.S. AI Safety Institute at NIST, dated July 2024. A draft of voluntary guidance binds no one; no final version was located.",
+      "sourceIds": ["source-nist-ai-800-1-ipd"],
+      "documentVersion": {
+        "family": "nist-ai-800-1",
+        "label": "Initial public draft (July 2024)",
+        "publisherId": "us-ai-safety-institute",
+        "publishedAt": "2024-07",
+        "dateNote": "Month from the title page."
+      }
+    },
+    "nist-ai-800-1-2pd-2025": {
+      "name": "NIST AI 800-1 (second public draft): Managing Misuse Risk for Dual-Use Foundation Models",
+      "shortName": "NIST AI 800-1, second public draft (2025)",
+      "subtype": "Draft guidance (United States)",
+      "aliases": [],
+      "description": "The second public draft of the U.S. AI Safety Institute's voluntary guidance, released on 15 January 2025 for comment until 15 March 2025. No final version was located.",
+      "sourceIds": [
+        "source-nist-ai-800-1-2pd",
+        "source-nist-ai-800-1-2pd-release"
+      ],
+      "documentVersion": {
+        "family": "nist-ai-800-1",
+        "label": "Second public draft (January 2025)",
+        "publisherId": "us-ai-safety-institute",
+        "publishedAt": "2025-01-15",
+        "dateNote": "Day from the NIST release (“Released January 15, 2025”); the title page gives January 2025."
+      }
+    },
+    "us-uk-aisi-preeval-claude-35-sonnet-2024": {
+      "name": "Pre-Deployment Evaluation of Anthropic’s Upgraded Claude 3.5 Sonnet (US AISI and UK AISI)",
+      "shortName": "US–UK AISI evaluation of Claude 3.5 Sonnet (2024)",
+      "subtype": "Evaluation summary (United States)",
+      "aliases": [],
+      "description": "NIST's summary, released on 19 November 2024, of a joint pre-deployment evaluation by the US and UK AI Safety Institutes. Its findings are not recorded here and are not evidence of the model's safety or of compliance.",
+      "sourceIds": ["source-nist-preeval-claude-35-sonnet-2024"],
+      "publisherId": "us-ai-safety-institute"
+    },
+    "us-uk-aisi-preeval-o1-2024": {
+      "name": "Pre-Deployment Evaluation of OpenAI’s o1 Model (US AISI and UK AISI)",
+      "shortName": "US–UK AISI evaluation of o1 (2024)",
+      "subtype": "Evaluation summary (United States)",
+      "aliases": [],
+      "description": "NIST's summary, released on 18 December 2024, of a joint pre-deployment evaluation by the US and UK AI Safety Institutes. Its findings are not recorded here and are not evidence of the model's safety or of compliance.",
+      "sourceIds": ["source-nist-preeval-o1-2024"],
+      "publisherId": "us-ai-safety-institute"
+    },
+    "ca-sb1047-2024": {
+      "name": "California SB 1047 (2023–2024 session)",
+      "shortName": "California SB 1047 (2024)",
+      "subtype": "Bill (vetoed)",
+      "aliases": ["SB 1047"],
+      "description": "A California bill on frontier AI models, passed by the Legislature in 2024 and vetoed by the Governor on 29 September 2024. The passage records rest on the author's office's releases, not the legislative journals; the bill text was not inspected.",
+      "sourceIds": ["source-ca-sb1047-veto-2024"],
+      "publisherId": "california-legislature"
+    },
+    "ca-frontier-ai-policy-report-2025": {
+      "name": "The California Report on Frontier AI Policy",
+      "shortName": "California Report on Frontier AI Policy (2025)",
+      "subtype": "Policy report",
+      "aliases": [],
+      "description": "The final report of the Joint California Policy Working Group on AI Frontier Models, released on 17 June 2025. It is a policy report, not legislation; its recommendations are not recorded here.",
+      "sourceIds": ["source-ca-frontier-ai-policy-report-2025"],
+      "publisherId": "joint-california-policy-working-group-ai-frontier-models"
+    },
+    "ny-raise-act-chapter-699-2025": {
+      "name": "New York S6953-B (2025), the RAISE Act, signed as Chapter 699 of 2025",
+      "shortName": "NY RAISE Act, Chapter 699 (2025)",
+      "subtype": "Bill (chaptered)",
+      "aliases": ["S6953-B", "A6453-B"],
+      "description": "New York's 2025 text of the RAISE Act, print S6953-B, passed by both chambers on 12 June 2025 and signed as Chapter 699 on 19 December 2025. Chapter 96 of 2026, recorded separately, replaced its provisions before they took effect. Records state what the text says, not implementation or compliance.",
+      "sourceIds": ["source-ny-s6953b-2025", "source-ny-s6953-assembly-record"],
+      "documentVersion": {
+        "family": "ny-raise-act",
+        "label": "S6953-B as passed, signed as Chapter 699 (19 December 2025)",
+        "publisherId": "new-york-state-legislature",
+        "publishedAt": "2025-12-19",
+        "dateNote": "The Assembly's bill record lists passage by both chambers on 12 June 2025, delivery to the Governor on 9 December 2025 and signing as Chapter 699 on 19 December 2025, recorded as its date of issue."
+      }
+    },
+    "il-ai-safety-measures-act": {
+      "name": "Illinois AI Safety Measures Act",
+      "shortName": "Illinois AI Safety Measures Act",
+      "subtype": "Statute (as described by the Governor)",
+      "aliases": [],
+      "description": "An Illinois act on AI safety, recorded only as the Governor describes it in Executive Order 2026-07 of 22 September 2026. The legislature's record could not be retrieved, so its bill number, dates and text are not recorded.",
+      "sourceIds": ["source-il-eo-2026-07"],
+      "publisherId": "illinois-general-assembly"
+    },
+    "mi-hb-4668-2025": {
+      "name": "Michigan House Bill 4668 (2025), the artificial intelligence safety and security transparency act",
+      "shortName": "Michigan HB 4668 (2025)",
+      "subtype": "Bill (introduced)",
+      "aliases": ["HB 4668"],
+      "description": "A Michigan bill introduced in the House of Representatives on 24 June 2025. Its status is recorded only as of an archive capture of 23 March 2026. An introduced bill is not law.",
+      "sourceIds": ["source-mi-hb4668-introduced", "source-mi-hb4668-history"],
+      "documentVersion": {
+        "family": "mi-hb-4668",
+        "label": "As introduced (24 June 2025)",
+        "publisherId": "michigan-house-of-representatives",
+        "publishedAt": "2025-06-24",
+        "dateNote": "Introduced on 24 June 2025 (the bill history), recorded as the date of the introduced text."
+      }
+    }
+  },
+  "entities": {
+    "cn-samr-sac": {
+      "name": "State Administration for Market Regulation and Standardization Administration of China (国家市场监督管理总局、国家标准化管理委员会)",
+      "shortName": "SAMR and SAC",
+      "type": "public_body",
+      "subtype": "National standards authorities (China), as joint publisher",
+      "aliases": [
+        "国家市场监督管理总局",
+        "国家标准化管理委员会",
+        "SAMR",
+        "SAC"
+      ],
+      "description": "The two Chinese authorities named jointly as publisher (发布单位) of national standards in the national standards catalogue. Recorded as one publishing pair because the catalogue names them together; records here concern only their publication of two standards.",
+      "sourceIds": [
+        "source-cn-gb-45438-2025-catalogue",
+        "source-cn-gbt-45654-2025-catalogue"
+      ]
+    },
+    "cn-npc-standing-committee": {
+      "name": "Standing Committee of the National People's Congress (全国人民代表大会常务委员会)",
+      "shortName": "NPC Standing Committee",
+      "type": "public_body",
+      "subtype": "Legislature (China), standing body",
+      "aliases": ["全国人民代表大会常务委员会", "全国人大常委会", "NPCSC"],
+      "description": "The standing body of China's National People's Congress, which enacts and amends laws between the Congress's sessions. Records here concern its adoption of the 2025 decision amending the Cybersecurity Law.",
+      "sourceIds": ["source-cn-csl-amendment-2025"]
+    },
+    "cn-president-prc": {
+      "name": "President of the People's Republic of China (中华人民共和国主席), as an office",
+      "shortName": "President of the PRC (office)",
+      "type": "public_body",
+      "subtype": "Head of state (China), as an office",
+      "aliases": ["中华人民共和国主席"],
+      "description": "The office that promulgates laws adopted by the National People's Congress and its Standing Committee by presidential order. Recorded as the office, not as a person.",
+      "sourceIds": ["source-cn-csl-presidential-order-61"]
+    },
+    "country-nz": {
+      "name": "New Zealand",
+      "type": "country",
+      "subtype": "Country",
+      "countryCode": "NZ",
+      "aliases": [],
+      "description": "New Zealand as a state, recorded only where a claim needs it: its joining the Bletchley Declaration, as GOV.UK records it.",
+      "sourceIds": ["source-bletchley-declaration-2023"]
+    },
+    "elysee": {
+      "name": "Présidence de la République française (Élysée)",
+      "shortName": "Élysée",
+      "type": "public_body",
+      "subtype": "Head of state's office (France)",
+      "aliases": ["Élysée"],
+      "description": "The office of the President of France, which published the statement of the Paris AI Action Summit of February 2025 on elysee.fr.",
+      "sourceIds": ["source-paris-ai-action-statement-2025-web"]
+    },
+    "india-meity": {
+      "name": "Ministry of Electronics and Information Technology, Government of India",
+      "shortName": "MeitY (India)",
+      "type": "public_body",
+      "subtype": "Government ministry (India)",
+      "aliases": ["MeitY"],
+      "description": "The Indian ministry under which the Press Information Bureau issued the releases on the AI Impact Summit of February 2026 and its declaration.",
+      "sourceIds": ["source-pib-new-delhi-declaration-2026"]
+    },
+    "g7": {
+      "name": "Group of Seven (G7)",
+      "shortName": "G7",
+      "type": "public_body",
+      "subtype": "Intergovernmental forum",
+      "aliases": ["G7"],
+      "description": "The intergovernmental forum of seven states, with the European Union taking part, whose leaders welcomed the Hiroshima Process Code of Conduct in October 2023. Typed as a public body with an intergovernmental subtype (decision of 2026-10-28); no legal personality is asserted.",
+      "sourceIds": ["source-g7-leaders-statement-haip-2023"]
+    },
+    "oecd": {
+      "name": "Organisation for Economic Co-operation and Development (OECD)",
+      "shortName": "OECD",
+      "type": "public_body",
+      "subtype": "Intergovernmental organisation",
+      "aliases": ["OECD"],
+      "description": "The intergovernmental organisation that administers the Hiroshima AI Process Reporting Framework. Typed as a public body with an intergovernmental subtype (decision of 2026-10-28).",
+      "sourceIds": ["source-oecd-haip-overview"]
+    },
+    "uk-ai-security-institute": {
+      "name": "AI Security Institute (UK)",
+      "shortName": "UK AI Security Institute",
+      "type": "public_body",
+      "subtype": "Government AI safety institute (UK)",
+      "aliases": ["AI Safety Institute (UK)", "UK AISI"],
+      "description": "The UK government's institute for AI safety and security research, launched as the AI Safety Institute in November 2023 and announced as the AI Security Institute on 14 February 2025. One record carries both names; no change of legal form is recorded.",
+      "sourceIds": [
+        "source-bletchley-chair-safety-testing-2023",
+        "source-uk-aisi-rename-release-2025"
+      ],
+      "datedNames": [
+        {
+          "name": "AI Safety Institute",
+          "from": "2023-11-02",
+          "until": "2025-02-14",
+          "note": "Launched under this name, as the chair's statement of 2 November 2023 reports; used until the announcement of 14 February 2025.",
+          "sourceIds": [
+            "source-bletchley-chair-safety-testing-2023",
+            "source-uk-aisi-rename-release-2025"
+          ]
+        },
+        {
+          "name": "AI Security Institute",
+          "from": "2025-02-14",
+          "note": "As announced in the GOV.UK release of 14 February 2025 (“UK’s AI Safety Institute becomes ‘UK AI Security Institute’”); the release gives no separate effective date for the name.",
+          "sourceIds": ["source-uk-aisi-rename-release-2025"]
+        }
+      ],
+      "keep": "2"
+    },
+    "uk-prime-ministers-office": {
+      "name": "Prime Minister's Office, 10 Downing Street",
+      "shortName": "Prime Minister's Office (UK)",
+      "type": "public_body",
+      "subtype": "UK government office",
+      "aliases": [],
+      "description": "The UK government office under which the King's Speech and its briefing notes are published on GOV.UK.",
+      "sourceIds": ["source-uk-kings-speech-2024"]
+    },
+    "uk-cabinet-office": {
+      "name": "Cabinet Office (UK)",
+      "shortName": "Cabinet Office",
+      "type": "public_body",
+      "subtype": "UK government department",
+      "aliases": [],
+      "description": "The UK government department that issued the press release of 12 October 2026 on national defences against AI risks.",
+      "sourceIds": ["source-uk-ai-defences-release-2026"]
+    },
+    "us-bureau-of-industry-and-security": {
+      "name": "Bureau of Industry and Security, U.S. Department of Commerce",
+      "shortName": "BIS",
+      "type": "public_body",
+      "subtype": "US federal agency",
+      "aliases": ["BIS"],
+      "description": "The US Commerce Department bureau that issued the 2024 proposed AI reporting rule and the 2025 AI diffusion interim final rule, whose rescission the Department announced in May 2025.",
+      "sourceIds": ["source-us-bis-ai-reporting-nprm-fr"]
+    },
+    "us-office-of-the-federal-register": {
+      "name": "Office of the Federal Register (National Archives and Records Administration)",
+      "shortName": "Office of the Federal Register",
+      "type": "public_body",
+      "subtype": "US federal agency",
+      "aliases": [],
+      "description": "The US agency that publishes the Federal Register. Recorded only as the publisher of Federal Register issues.",
+      "sourceIds": ["source-us-eo-14110-fr"]
+    },
+    "joint-california-policy-working-group-ai-frontier-models": {
+      "name": "Joint California Policy Working Group on AI Frontier Models",
+      "shortName": "California working group on AI frontier models",
+      "type": "public_body",
+      "subtype": "State policy working group (California)",
+      "aliases": [],
+      "description": "The working group, convened at the Governor of California's request, that released The California Report on Frontier AI Policy on 17 June 2025. Its members are not recorded.",
+      "sourceIds": ["source-ca-frontier-ai-policy-report-2025"]
+    },
+    "governor-of-illinois": {
+      "name": "Governor of Illinois",
+      "shortName": "Governor of Illinois",
+      "type": "public_body",
+      "subtype": "State executive office",
+      "aliases": [],
+      "description": "The office of the Governor of Illinois, recorded as the office, not the person.",
+      "sourceIds": ["source-il-eo-2026-07"]
+    },
+    "illinois-general-assembly": {
+      "name": "Illinois General Assembly",
+      "shortName": "Illinois General Assembly",
+      "type": "public_body",
+      "subtype": "State legislature",
+      "aliases": [],
+      "description": "The legislature of the State of Illinois.",
+      "sourceIds": ["source-il-eo-2026-07"]
+    },
+    "michigan-house-of-representatives": {
+      "name": "Michigan House of Representatives",
+      "shortName": "Michigan House",
+      "type": "public_body",
+      "subtype": "State legislative chamber",
+      "aliases": [],
+      "description": "The lower chamber of the Michigan Legislature.",
+      "sourceIds": ["source-mi-hb4668-history"]
+    }
+  },
+  "sources": {
+    "eu-ai-act-cellar-html": {
+      "datasetSource": "source-eu-ai-act-2024",
+      "route": "the Publications Office's Cellar repository (the same Official Journal expression as the dataset's EUR-Lex source; EUR-Lex returned empty responses)"
+    },
+    "eu-omnibus-cellar-html": {
+      "datasetSource": "source-eu-digital-omnibus-ai-2026",
+      "route": "the Publications Office's Cellar repository (the same Official Journal expression as the dataset's EUR-Lex source; EUR-Lex returned empty responses)"
+    },
+    "eu-commission-opinion-2025": {
+      "datasetSource": "source-eu-commission-opinion-2025",
+      "documentId": "eu-commission-opinion-code-2025"
+    },
+    "eu-cop-final-ss": {
+      "datasetSource": "source-eu-code-safety-security"
+    },
+    "src-rsp-v3-1": {
+      "datasetSource": "source-rsp-3-1"
+    },
+    "src-rsp-v3-2": {
+      "datasetSource": "source-rsp-3-2"
+    },
+    "src-rsp-v3-3": {
+      "datasetSource": "source-rsp-3-3"
+    },
+    "src-rsp-v3-4": {
+      "datasetSource": "source-rsp-3-4"
+    },
+    "src-pf-beta": {
+      "datasetSource": "source-pf-beta"
+    },
+    "src-fgf-2026": {
+      "datasetSource": "source-fgf-2026"
+    },
+    "src-ms-fgf-2026": {
+      "datasetSource": "source-ms-fgf-2026"
+    },
+    "nl-eerstekamer-draft1": {
+      "id": "source-eu-code-draft1-2024",
+      "documentId": "gpai-code-of-practice-draft1-2024",
+      "title": "First Draft General-Purpose AI Code of Practice",
+      "authors": [
+        "Chairs and Vice-Chairs of the Working Groups of the General-Purpose AI Code of Practice"
+      ],
+      "publisher": "European Commission",
+      "publisherId": "european-commission",
+      "publicationDate": "2024-11-14",
+      "url": "https://ec.europa.eu/newsroom/dae/redirection/document/109946",
+      "sha256": "e7522e16b0dd05f368592ff19cd2e4af1f1208be88015bfa0059cdb5f6a32354",
+      "retrievedAt": "2026-10-28",
+      "documentWords": {
+        "count": 12739,
+        "basis": "Whitespace-separated words of the PDF text layer (36 pages), counted at admission on 2026-10-28"
+      },
+      "kind": "report",
+      "versionNote": "The PDF served by the Commission's newsroom (document 109946), 36 pages, every page marked “DRAFT DOCUMENT”; its metadata gives creation on 14 November 2024, 10:55 UTC. Decision 5 of 2026-10-28: the Commission's own file is cited. The candidate pack first read the copy held by the Dutch Senate (Eerste Kamer der Staten-Generaal, https://www.eerstekamer.nl/9370000/1/j4nvi0xeni9vr2l_j9vvkyblr2b3ny8/vmidr7qz6qv4/f=/vmidr9wfudtt.pdf, SHA-256 605816c07298146ec981fb46929518ee09d3072ea49994d2b1b032366555ba87); the cross-family check of 2026-10-28 found the two files' extracted text identical on all 36 pages, although the raw files differ.",
+      "route": "directly from the Commission's newsroom",
+      "paraphraseNote": "The paraphrase is Selekoa’s, written from the copy held by the Dutch Senate, whose extracted text is identical to the Commission’s file; it is not a quotation and was not machine-matched."
+    },
+    "cn-genai-govcn": {
+      "id": "source-cn-generative-ai-measures-2023-govcn",
+      "documentId": "cn-generative-ai-interim-measures-2023",
+      "authors": [
+        "国家互联网信息办公室 (Cyberspace Administration of China) and six other departments"
+      ],
+      "publicationDate": "2023-07-10",
+      "kind": "filing",
+      "versionNote": "A second posting of the text of the dataset's source for the Measures (the CAC's posting of 13 July 2023): the gov.cn State Council policy library page, which gives its source as 国家网信办网站 and its document date (成文日期) as 2023-07-10. The page body repeats the text twice (a print copy). The two postings were not compared word for word; every passage cited from this source was matched in this copy. The quotation limit is applied to this source and the CAC posting together."
+    },
+    "cn-labelling-govcn": {
+      "id": "source-cn-labelling-measures-2025",
+      "authors": [
+        "国家互联网信息办公室 (Cyberspace Administration of China)",
+        "工业和信息化部 (Ministry of Industry and Information Technology)",
+        "公安部 (Ministry of Public Security)",
+        "国家广播电视总局 (National Radio and Television Administration)"
+      ],
+      "publicationDate": "2025-03-07",
+      "kind": "filing"
+    },
+    "cn-labelling-news-govcn": {
+      "id": "source-cn-labelling-news-2025",
+      "authors": ["国家互联网信息办公室 (Cyberspace Administration of China)"],
+      "publicationDate": "2025-03-15",
+      "kind": "announcement"
+    },
+    "cn-standards-0901-govcn": {
+      "id": "source-cn-samr-standards-2025-09",
+      "authors": [
+        "国家市场监督管理总局 (State Administration for Market Regulation)"
+      ],
+      "publicationDate": "2025-09-02",
+      "kind": "announcement"
+    },
+    "cn-gb45438-openstd": {
+      "id": "source-cn-gb-45438-2025-catalogue",
+      "authors": ["国家市场监督管理总局 国家标准化管理委员会"],
+      "publicationDate": null,
+      "kind": "dataset",
+      "versionNote": "The catalogue entry is a dynamic page: its bytes differed when the cross-family check retrieved it on 2026-10-28, and again at admission; the date fields read by both are unchanged."
+    },
+    "cn-gbt45654-openstd": {
+      "id": "source-cn-gbt-45654-2025-catalogue",
+      "authors": ["国家市场监督管理总局 国家标准化管理委员会"],
+      "publicationDate": null,
+      "kind": "dataset",
+      "versionNote": "The catalogue entry is a dynamic page: its bytes differed when the cross-family check retrieved it on 2026-10-28, and again at admission; the date fields read by both are unchanged."
+    },
+    "cn-csl-decision-govcn": {
+      "id": "source-cn-csl-amendment-2025",
+      "authors": [
+        "全国人民代表大会常务委员会 (Standing Committee of the National People's Congress)"
+      ],
+      "publicationDate": "2025-10-29",
+      "kind": "filing"
+    },
+    "cn-csl-order61-govcn": {
+      "id": "source-cn-csl-presidential-order-61",
+      "authors": [
+        "中华人民共和国主席 (President of the People's Republic of China)"
+      ],
+      "publicationDate": "2025-10-28",
+      "kind": "filing"
+    },
+    "cn-filings-2024-04-govcn": {
+      "id": "source-cn-cac-genai-filings-2024",
+      "authors": ["国家互联网信息办公室 (Cyberspace Administration of China)"],
+      "publicationDate": "2024-04-03",
+      "kind": "announcement"
+    },
+    "cn-filings-2025-01-govcn": {
+      "id": "source-cn-cac-genai-filings-2025",
+      "authors": ["国家互联网信息办公室 (Cyberspace Administration of China)"],
+      "publicationDate": "2025-01-10",
+      "kind": "announcement"
+    },
+    "bletchley-declaration": {
+      "id": "source-bletchley-declaration-2023",
+      "kind": "report",
+      "publicationDate": "2023-11-01",
+      "authors": ["Countries attending the AI Safety Summit"],
+      "documentId": "bletchley-declaration-2023",
+      "publisherId": "dsit"
+    },
+    "bletchley-page": {
+      "id": "source-bletchley-declaration-page",
+      "kind": "announcement",
+      "publicationDate": "2023-11-01",
+      "authors": ["UK government"],
+      "documentId": null,
+      "publisherId": "dsit"
+    },
+    "bletchley-chair-testing": {
+      "id": "source-bletchley-chair-safety-testing-2023",
+      "kind": "report",
+      "publicationDate": "2023-11-02",
+      "authors": ["Chair of the AI Safety Summit (UK government)"],
+      "documentId": "bletchley-chair-safety-testing-2023",
+      "publisherId": "dsit"
+    },
+    "seoul-declaration": {
+      "id": "source-seoul-declaration-2024",
+      "kind": "report",
+      "publicationDate": "2024-05-21",
+      "authors": ["Leaders attending the AI Seoul Summit"],
+      "documentId": "seoul-declaration-2024",
+      "publisherId": "dsit"
+    },
+    "seoul-declaration-page": {
+      "id": "source-seoul-declaration-page",
+      "kind": "announcement",
+      "publicationDate": "2024-05-21",
+      "authors": ["UK government"],
+      "documentId": null,
+      "publisherId": "dsit"
+    },
+    "seoul-ministerial": {
+      "id": "source-seoul-ministerial-statement-2024",
+      "kind": "report",
+      "publicationDate": "2024-05-22",
+      "authors": ["Ministers attending the AI Seoul Summit"],
+      "documentId": "seoul-ministerial-statement-2024",
+      "publisherId": "dsit"
+    },
+    "paris-statement": {
+      "id": "source-paris-ai-action-statement-2025-web",
+      "kind": "announcement",
+      "publicationDate": "2025-02-11",
+      "authors": ["Présidence de la République française (Élysée)"],
+      "documentId": "paris-ai-action-statement-2025-web",
+      "publisherId": "elysee"
+    },
+    "paris-statement-pdf": {
+      "id": "source-paris-ai-action-statement-2025-pdf",
+      "kind": "report",
+      "publicationDate": null,
+      "authors": ["Présidence de la République française (Élysée)"],
+      "documentId": "paris-ai-action-statement-2025-pdf",
+      "publisherId": "elysee"
+    },
+    "pib-new-delhi-declaration": {
+      "id": "source-pib-new-delhi-declaration-2026",
+      "kind": "announcement",
+      "publicationDate": "2026-02-21",
+      "authors": [
+        "Press Information Bureau, Ministry of Electronics & IT, Government of India"
+      ],
+      "documentId": "new-delhi-declaration-2026",
+      "publisherId": "india-meity"
+    },
+    "pib-new-delhi-more-countries": {
+      "id": "source-pib-new-delhi-endorsers-2026-02-24",
+      "kind": "announcement",
+      "publicationDate": "2026-02-24",
+      "authors": ["Press Information Bureau, Government of India"],
+      "documentId": null,
+      "publisherId": "india-meity"
+    },
+    "g7-haip-leaders": {
+      "id": "source-g7-leaders-statement-haip-2023",
+      "kind": "report",
+      "publicationDate": "2023-10-30",
+      "authors": ["G7 Leaders"],
+      "documentId": "g7-leaders-statement-haip-2023",
+      "publisherId": "g7"
+    },
+    "g7-haip-code": {
+      "id": "source-g7-hiroshima-code-of-conduct-2023",
+      "kind": "report",
+      "publicationDate": null,
+      "authors": ["G7"],
+      "documentId": "g7-hiroshima-code-of-conduct-2023",
+      "publisherId": "g7"
+    },
+    "g7-haip-report-page": {
+      "id": "source-mic-haip-reporting-page",
+      "kind": "announcement",
+      "publicationDate": null,
+      "authors": ["Ministry of Internal Affairs and Communications, Japan"],
+      "documentId": null
+    },
+    "oecd-haip-overview": {
+      "id": "source-oecd-haip-overview",
+      "kind": "announcement",
+      "publicationDate": null,
+      "authors": ["OECD"],
+      "documentId": null,
+      "publisherId": "oecd"
+    },
+    "oecd-haip-managing-risks": {
+      "id": "source-oecd-haip-managing-risks-2025",
+      "kind": "report",
+      "publicationDate": "2025-09",
+      "authors": ["OECD"],
+      "documentId": "oecd-how-are-ai-developers-managing-risks-2025",
+      "publisherId": "oecd"
+    },
+    "uk-aisi-rename-news": {
+      "id": "source-uk-aisi-rename-release-2025",
+      "kind": "announcement",
+      "publicationDate": "2025-02-14",
+      "authors": ["Department for Science, Innovation and Technology"],
+      "documentId": "uk-aisi-rename-press-release-2025",
+      "publisherId": "dsit"
+    },
+    "uk-us-aisi-mou-news": {
+      "id": "source-uk-us-ai-safety-mou-release-2024",
+      "kind": "announcement",
+      "publicationDate": "2024-04-02",
+      "authors": ["Department for Science, Innovation and Technology"],
+      "documentId": null,
+      "publisherId": "dsit"
+    },
+    "uk-mou-anthropic": {
+      "id": "source-uk-anthropic-mou-2025",
+      "kind": "filing",
+      "publicationDate": "2025-02-14",
+      "authors": [
+        "Department for Science, Innovation and Technology",
+        "Anthropic"
+      ],
+      "documentId": "uk-anthropic-mou-2025",
+      "publisherId": "dsit"
+    },
+    "uk-mou-anthropic-page": {
+      "id": "source-uk-anthropic-mou-page",
+      "kind": "announcement",
+      "publicationDate": "2025-02-14",
+      "authors": ["Department for Science, Innovation and Technology"],
+      "documentId": null,
+      "publisherId": "dsit"
+    },
+    "uk-mou-cohere": {
+      "id": "source-uk-cohere-mou-2025",
+      "kind": "filing",
+      "publicationDate": "2025-06-16",
+      "authors": ["Department for Science, Innovation and Technology"],
+      "documentId": "uk-cohere-mou-2025",
+      "publisherId": "dsit"
+    },
+    "uk-mou-openai": {
+      "id": "source-uk-openai-mou-2025",
+      "kind": "filing",
+      "publicationDate": "2025-07-21",
+      "authors": ["Department for Science, Innovation and Technology"],
+      "documentId": "uk-openai-mou-2025",
+      "publisherId": "dsit"
+    },
+    "uk-mou-gdm": {
+      "id": "source-uk-google-deepmind-mou-2025",
+      "kind": "filing",
+      "publicationDate": "2025-12-11",
+      "authors": ["Department for Science, Innovation and Technology"],
+      "documentId": "uk-google-deepmind-mou-2025",
+      "publisherId": "dsit"
+    },
+    "uk-mou-gdm-page": {
+      "id": "source-uk-google-deepmind-mou-page",
+      "kind": "announcement",
+      "publicationDate": "2025-12-11",
+      "authors": ["Department for Science, Innovation and Technology"],
+      "documentId": null,
+      "publisherId": "dsit"
+    },
+    "uk-kings-speech-2024": {
+      "id": "source-uk-kings-speech-2024",
+      "kind": "announcement",
+      "publicationDate": "2024-07-17",
+      "authors": ["Prime Minister's Office, 10 Downing Street"],
+      "documentId": "uk-kings-speech-2024",
+      "publisherId": "uk-prime-ministers-office"
+    },
+    "uk-kings-speech-2026-notes": {
+      "id": "source-uk-kings-speech-2026-notes",
+      "kind": "report",
+      "publicationDate": "2026-05-13",
+      "authors": ["Prime Minister's Office, 10 Downing Street"],
+      "documentId": "uk-kings-speech-2026-notes",
+      "publisherId": "uk-prime-ministers-office"
+    },
+    "uk-ai-defences-news": {
+      "id": "source-uk-ai-defences-release-2026",
+      "kind": "announcement",
+      "publicationDate": "2026-10-12",
+      "authors": ["Cabinet Office"],
+      "documentId": "uk-ai-defences-press-release-2026",
+      "publisherId": "uk-cabinet-office"
+    },
+    "eo-14110-fr": {
+      "id": "source-us-eo-14110-fr",
+      "kind": "filing",
+      "publicationDate": "2023-11-01",
+      "authors": ["The White House"],
+      "documentId": "us-eo-14110-2023",
+      "publisherId": "us-white-house"
+    },
+    "eo-14148-fr": {
+      "id": "source-us-eo-14148-fr",
+      "kind": "filing",
+      "publicationDate": "2025-01-28",
+      "authors": ["The White House"],
+      "documentId": "us-eo-14148-2025",
+      "publisherId": "us-white-house"
+    },
+    "eo-14179-fr": {
+      "id": "source-us-eo-14179-fr",
+      "kind": "filing",
+      "publicationDate": "2025-01-31",
+      "authors": ["The White House"],
+      "documentId": "us-eo-14179-2025",
+      "publisherId": "us-white-house"
+    },
+    "ai-action-plan-2025": {
+      "id": "source-us-ai-action-plan-2025",
+      "kind": "report",
+      "publicationDate": "2025-07",
+      "authors": ["The White House"],
+      "documentId": "us-ai-action-plan-2025",
+      "publisherId": "us-white-house"
+    },
+    "wh-action-plan-article-2025": {
+      "id": "source-us-ai-action-plan-release-2025",
+      "kind": "announcement",
+      "publicationDate": "2025-07-23",
+      "authors": ["The White House"],
+      "documentId": null,
+      "publisherId": "us-white-house"
+    },
+    "eo-14365-fr": {
+      "id": "source-us-eo-14365-fr",
+      "kind": "filing",
+      "publicationDate": "2025-12-16",
+      "authors": ["The White House"],
+      "documentId": "us-eo-14365-2025",
+      "publisherId": "us-white-house"
+    },
+    "wh-legislative-framework-2026": {
+      "id": "source-us-ai-legislative-recommendations-2026",
+      "kind": "report",
+      "publicationDate": "2026-03",
+      "authors": ["The White House"],
+      "documentId": "us-national-ai-legislative-recommendations-2026",
+      "publisherId": "us-white-house"
+    },
+    "eo-14409-fr": {
+      "id": "source-us-eo-14409-fr",
+      "kind": "filing",
+      "publicationDate": "2026-06-05",
+      "authors": ["The White House"],
+      "documentId": "us-eo-14409-2026",
+      "publisherId": "us-white-house"
+    },
+    "bis-reporting-nprm-fr": {
+      "id": "source-us-bis-ai-reporting-nprm-fr",
+      "kind": "filing",
+      "publicationDate": "2024-09-11",
+      "authors": [
+        "Bureau of Industry and Security, U.S. Department of Commerce"
+      ],
+      "documentId": "us-bis-ai-reporting-nprm-2024",
+      "publisherId": "us-bureau-of-industry-and-security",
+      "archivedUrl": "https://web.archive.org/web/20240911095744/https://www.govinfo.gov/content/pkg/FR-2024-09-11/pdf/2024-20529.pdf",
+      "archivedAt": "2024-09-11",
+      "versionNote": "The cross-family check of 2026-10-28 opened the Internet Archive capture linked here and matched the quoted wording in it, the release-period expression (decision 9); a capture shows only what the archive retrieved that day."
+    },
+    "bis-ai-diffusion-ifr-fr": {
+      "id": "source-us-bis-ai-diffusion-ifr-fr",
+      "kind": "filing",
+      "publicationDate": "2025-01-15",
+      "authors": [
+        "Bureau of Industry and Security, U.S. Department of Commerce"
+      ],
+      "documentId": "us-bis-ai-diffusion-ifr-2025",
+      "publisherId": "us-bureau-of-industry-and-security",
+      "archivedUrl": "https://web.archive.org/web/20250115182627/https://www.govinfo.gov/content/pkg/FR-2025-01-15/pdf/2025-00636.pdf",
+      "archivedAt": "2025-01-15",
+      "versionNote": "The cross-family check of 2026-10-28 opened the Internet Archive capture linked here and matched the quoted wording in it, the release-period expression (decision 9); a capture shows only what the archive retrieved that day."
+    },
+    "bis-rescission-press-2025": {
+      "id": "source-us-bis-diffusion-rescission-release-2025",
+      "kind": "announcement",
+      "publicationDate": "2025-05-13",
+      "authors": [
+        "Bureau of Industry and Security, U.S. Department of Commerce"
+      ],
+      "documentId": null,
+      "publisherId": "us-bureau-of-industry-and-security",
+      "archivedUrl": "https://web.archive.org/web/20250807104850/https://www.bis.gov/press-release/department-commerce-announces-rescission-biden-era-artificial-intelligence-diffusion-rule-strengthens",
+      "archivedAt": "2025-08-07",
+      "versionNote": "The cross-family check of 2026-10-28 opened the Internet Archive capture linked here, the nearest located to the release (86 days after it), and matched the quoted wording in it. The page as served in October 2026 differs from that capture: it writes “SI” for “AI” in places and adds a bullet on Malaysia and Thailand. The release links a separate PDF dated 12 May 2025, recorded as its own source. A capture shows only what the archive retrieved that day."
+    },
+    "nist-aisi-agreements-2024": {
+      "id": "source-nist-aisi-agreements-2024",
+      "kind": "announcement",
+      "publicationDate": "2024-08-29",
+      "authors": [
+        "National Institute of Standards and Technology (U.S. AI Safety Institute)"
+      ],
+      "documentId": null,
+      "publisherId": "us-ai-safety-institute",
+      "archivedUrl": "https://web.archive.org/web/20240829235035/https://www.nist.gov/news-events/news/2024/08/us-ai-safety-institute-signs-agreements-regarding-ai-safety-research",
+      "archivedAt": "2024-08-29",
+      "versionNote": "The cross-family check of 2026-10-28 opened the Internet Archive capture linked here and matched the quoted wording in it, the release-period expression (decision 9); a capture shows only what the archive retrieved that day."
+    },
+    "nist-aisi-taskforce-2024": {
+      "id": "source-nist-aisi-taskforce-2024",
+      "kind": "announcement",
+      "publicationDate": "2024-11-20",
+      "authors": [
+        "National Institute of Standards and Technology (U.S. AI Safety Institute)"
+      ],
+      "documentId": null,
+      "publisherId": "us-ai-safety-institute",
+      "archivedUrl": "https://web.archive.org/web/20260505125654/https://www.nist.gov/news-events/news/2024/11/us-ai-safety-institute-establishes-new-us-government-taskforce-collaborate",
+      "archivedAt": "2026-05-05",
+      "versionNote": "The page is NIST's release of 20 November 2024, which now carries a later editorial note. The cross-family check of 2026-10-28 opened two Internet Archive captures: that of 20 November 2024 lacks the note, and that of 5 May 2026, linked here, contains it. A capture shows only what the archive retrieved that day."
+    },
+    "nist-ai-800-1-ipd": {
+      "id": "source-nist-ai-800-1-ipd",
+      "kind": "report",
+      "publicationDate": "2024-07",
+      "authors": ["U.S. AI Safety Institute (NIST)"],
+      "documentId": "nist-ai-800-1-ipd-2024",
+      "publisherId": "us-ai-safety-institute",
+      "archivedUrl": "https://web.archive.org/web/20240727085850/https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.800-1.ipd.pdf",
+      "archivedAt": "2024-07-27",
+      "versionNote": "The cross-family check of 2026-10-28 opened the Internet Archive capture linked here and matched the quoted wording in it, the release-period expression (decision 9); a capture shows only what the archive retrieved that day."
+    },
+    "nist-ai-800-1-ipd2": {
+      "id": "source-nist-ai-800-1-2pd",
+      "kind": "report",
+      "publicationDate": "2025-01",
+      "authors": ["U.S. AI Safety Institute (NIST)"],
+      "documentId": "nist-ai-800-1-2pd-2025",
+      "publisherId": "us-ai-safety-institute",
+      "archivedUrl": "https://web.archive.org/web/20250115183155/https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.800-1.ipd2.pdf",
+      "archivedAt": "2025-01-15",
+      "versionNote": "The cross-family check of 2026-10-28 opened the Internet Archive capture linked here and matched the quoted wording in it, the release-period expression (decision 9); a capture shows only what the archive retrieved that day."
+    },
+    "nist-ai-800-1-2pd-news": {
+      "id": "source-nist-ai-800-1-2pd-release",
+      "kind": "announcement",
+      "publicationDate": "2025-01-15",
+      "authors": [
+        "National Institute of Standards and Technology (U.S. AI Safety Institute)"
+      ],
+      "documentId": null,
+      "publisherId": "us-ai-safety-institute",
+      "archivedUrl": "https://web.archive.org/web/20250115224211/https://www.nist.gov/news-events/news/2025/01/updated-guidelines-managing-misuse-risk-dual-use-foundation-models",
+      "archivedAt": "2025-01-15",
+      "versionNote": "The cross-family check of 2026-10-28 opened the Internet Archive capture linked here and matched the quoted wording in it, the release-period expression (decision 9); a capture shows only what the archive retrieved that day."
+    },
+    "nist-preeval-claude35-2024": {
+      "id": "source-nist-preeval-claude-35-sonnet-2024",
+      "kind": "report",
+      "publicationDate": "2024-11-19",
+      "authors": [
+        "National Institute of Standards and Technology (U.S. AI Safety Institute)"
+      ],
+      "documentId": "us-uk-aisi-preeval-claude-35-sonnet-2024",
+      "publisherId": "us-ai-safety-institute",
+      "archivedUrl": "https://web.archive.org/web/20241119153906/https://www.nist.gov/news-events/news/2024/11/pre-deployment-evaluation-anthropics-upgraded-claude-35-sonnet",
+      "archivedAt": "2024-11-19",
+      "versionNote": "The cross-family check of 2026-10-28 opened the Internet Archive capture linked here and matched the quoted wording in it, the release-period expression (decision 9); a capture shows only what the archive retrieved that day."
+    },
+    "nist-preeval-o1-2024": {
+      "id": "source-nist-preeval-o1-2024",
+      "kind": "report",
+      "publicationDate": "2024-12-18",
+      "authors": [
+        "National Institute of Standards and Technology (U.S. AI Safety Institute)"
+      ],
+      "documentId": "us-uk-aisi-preeval-o1-2024",
+      "publisherId": "us-ai-safety-institute",
+      "archivedUrl": "https://web.archive.org/web/20241219084256/https://www.nist.gov/news-events/news/2024/12/pre-deployment-evaluation-openais-o1-model",
+      "archivedAt": "2024-12-19",
+      "versionNote": "The cross-family check of 2026-10-28 opened the Internet Archive capture linked here and matched the quoted wording in it, the release-period expression (decision 9); a capture shows only what the archive retrieved that day."
+    },
+    "nist-caisi-openai-anthropic-2025": {
+      "id": "source-nist-caisi-openai-anthropic-2025",
+      "kind": "announcement",
+      "publicationDate": "2025-09-25",
+      "authors": [
+        "National Institute of Standards and Technology (Center for AI Standards and Innovation)"
+      ],
+      "documentId": null,
+      "publisherId": "us-ai-safety-institute",
+      "archivedUrl": "https://web.archive.org/web/20250926141301/https://www.nist.gov/news-events/news/2025/09/caisi-works-openai-and-anthropic-promote-secure-ai-innovation",
+      "archivedAt": "2025-09-26",
+      "versionNote": "The cross-family check of 2026-10-28 opened the Internet Archive capture linked here and matched the quoted wording in it, the release-period expression (decision 9); a capture shows only what the archive retrieved that day."
+    },
+    "ca-sb1047-veto-2024": {
+      "id": "source-ca-sb1047-veto-2024",
+      "kind": "filing",
+      "publicationDate": "2024-09-29",
+      "authors": ["Governor of California"],
+      "documentId": null,
+      "publisherId": "governor-of-california"
+    },
+    "ca-sb1047-wiener-senate": {
+      "id": "source-ca-sb1047-author-senate-2024",
+      "kind": "announcement",
+      "publicationDate": "2024-05-21",
+      "authors": ["Office of Senator Scott Wiener, California State Senate"],
+      "documentId": null
+    },
+    "ca-sb1047-wiener-assembly": {
+      "id": "source-ca-sb1047-author-assembly-2024",
+      "kind": "announcement",
+      "publicationDate": "2024-08-28",
+      "authors": ["Office of Senator Scott Wiener, California State Senate"],
+      "documentId": null
+    },
+    "ca-sb1047-wiener-governor": {
+      "id": "source-ca-sb1047-author-final-2024",
+      "kind": "announcement",
+      "publicationDate": "2024-08-29",
+      "authors": ["Office of Senator Scott Wiener, California State Senate"],
+      "documentId": null
+    },
+    "ca-frontier-report-2025": {
+      "id": "source-ca-frontier-ai-policy-report-2025",
+      "kind": "report",
+      "publicationDate": "2025-06-17",
+      "authors": [
+        "Joint California Policy Working Group on AI Frontier Models"
+      ],
+      "documentId": "ca-frontier-ai-policy-report-2025",
+      "publisherId": "joint-california-policy-working-group-ai-frontier-models"
+    },
+    "ca-gov-frontier-report-release-2025": {
+      "id": "source-ca-frontier-report-release-2025",
+      "kind": "announcement",
+      "publicationDate": "2025-06-17",
+      "authors": ["Office of the Governor of California"],
+      "documentId": null,
+      "publisherId": "governor-of-california"
+    },
+    "ny-s6953b-pdf": {
+      "id": "source-ny-s6953b-2025",
+      "kind": "filing",
+      "publicationDate": null,
+      "authors": ["New York State Senate"],
+      "documentId": "ny-raise-act-chapter-699-2025",
+      "publisherId": "new-york-state-legislature"
+    },
+    "ny-s6953-assembly-record": {
+      "id": "source-ny-s6953-assembly-record",
+      "kind": "dataset",
+      "publicationDate": null,
+      "authors": ["New York State Assembly"],
+      "documentId": null,
+      "publisherId": "new-york-state-legislature"
+    },
+    "il-eo-2026-07": {
+      "id": "source-il-eo-2026-07",
+      "kind": "filing",
+      "publicationDate": "2026-09-22",
+      "authors": ["Governor of Illinois"],
+      "documentId": null,
+      "publisherId": "governor-of-illinois"
+    },
+    "mi-hb4668-introduced": {
+      "id": "source-mi-hb4668-introduced",
+      "kind": "filing",
+      "publicationDate": "2025-06-24",
+      "authors": ["Michigan House of Representatives"],
+      "documentId": "mi-hb-4668-2025",
+      "publisherId": "michigan-house-of-representatives",
+      "archivedUrl": "https://web.archive.org/web/20251005092832/https://www.legislature.mi.gov/documents/2025-2026/billintroduced/House/htm/2025-HIB-4668.htm",
+      "archivedAt": "2025-10-05",
+      "versionNote": "The cross-family check of 2026-10-28 could not reach the live page and read the Internet Archive capture linked here; this admission's retrieval of the live page on 2026-10-28 matched the quoted passages. A capture shows only what the archive retrieved that day."
+    },
+    "mi-hb4668-status": {
+      "id": "source-mi-hb4668-history",
+      "kind": "dataset",
+      "publicationDate": null,
+      "authors": ["Michigan Legislature"],
+      "documentId": null,
+      "publisherId": "michigan-house-of-representatives",
+      "archivedUrl": "https://web.archive.org/web/20260323041007/https://legislature.mi.gov/Bills/Bill?ObjectName=2025-HB-4668",
+      "archivedAt": "2026-03-23",
+      "versionNote": "The bill's status is recorded as of the Internet Archive capture of 23 March 2026 linked here, the latest one the cross-family check of 2026-10-28 opened (decision of 2026-10-28). The page is updated as the bill moves; this admission's retrieval of the live page on 2026-10-28 showed the same last actions, of 19 March 2026. A capture shows only what the archive retrieved that day."
+    }
+  },
+  "extraSources": [
+    {
+      "id": "source-eu-code-draft1-page",
+      "title": "First Draft of the General-Purpose AI Code of Practice (Commission library page)",
+      "authors": ["European Commission"],
+      "publisher": "European Commission",
+      "publisherId": "european-commission",
+      "publicationDate": "2024-11-14",
+      "version": "The Commission's digital-strategy library page for the initial draft. Read by the cross-family check on 2026-10-28 (HTTP 200, SHA-256 c1871f389eb6a6afbaaa5aaf455f8472ef3256e3a22edd961f6a1ff461261210); this admission's own retrieval was refused (HTTP 403), so the record rests on the check's reading. The title is given as the page's address names it; its heading was not read at admission. Its wording can change; earlier wording is not authenticated.",
+      "canonicalUrl": "https://digital-strategy.ec.europa.eu/en/library/first-draft-general-purpose-ai-code-practice-published-written-independent-experts",
+      "language": "en",
+      "kind": "announcement",
+      "accessedAt": "2026-10-28"
+    },
+    {
+      "id": "source-us-bis-diffusion-rescission-pdf-2025",
+      "title": "Department of Commerce Announces Rescission of Biden-Era Artificial Intelligence Diffusion Rule, Strengthens Chip-Related Export Controls (release PDF)",
+      "authors": [
+        "Bureau of Industry and Security, U.S. Department of Commerce"
+      ],
+      "publisher": "Bureau of Industry and Security, U.S. Department of Commerce",
+      "publisherId": "us-bureau-of-industry-and-security",
+      "publicationDate": "2025-05-12",
+      "version": "The PDF linked from the BIS release page, dated 12 May 2025. The cross-family check of 2026-10-28 opened its Internet Archive capture of 13 May 2025, linked here, and read “initiated a rescission” in it. The file as served in October 2026 writes “SI” for “AI” in places and adds a bullet on Malaysia and Thailand. A capture shows only what the archive retrieved that day.",
+      "canonicalUrl": "https://media.bis.gov/sites/default/files/documents/05.07%20Recission%20of%20AI%20Diffusion%20Press%20Release.pdf",
+      "archivedUrl": "https://web.archive.org/web/20250513143416/https://media.bis.gov/sites/default/files/documents/05.07%20Recission%20of%20AI%20Diffusion%20Press%20Release.pdf",
+      "archivedAt": "2025-05-13",
+      "language": "en",
+      "kind": "announcement",
+      "accessedAt": "2026-10-28",
+      "documentWords": {
+        "count": 330,
+        "basis": "Approximate: whitespace-separated words of the PDF text layer as retrieved at admission on 2026-10-28"
+      }
+    }
+  ],
+  "changedEntities": {
+    "us-ai-safety-institute": {
+      "datedNames": [
+        {
+          "name": "U.S. AI Safety Institute",
+          "until": "2025-06",
+          "note": "Its name until June 2025, as NIST's later editorial note dates the change.",
+          "sourceIds": ["source-nist-aisi-taskforce-2024"]
+        },
+        {
+          "name": "Center for AI Standards and Innovation (CAISI)",
+          "from": "2025-06",
+          "note": "NIST's editorial note, added in or after May 2026 to its release of 20 November 2024, says: “In June 2025, AISI was re-established as the Center for AI Standards and Innovation (CAISI)”. Month precision; the Commerce statement was not retrieved, and legal continuity is not recorded.",
+          "sourceIds": ["source-nist-aisi-taskforce-2024"]
+        }
+      ],
+      "addSourceIds": ["source-nist-aisi-taskforce-2024"]
+    }
+  }
+}

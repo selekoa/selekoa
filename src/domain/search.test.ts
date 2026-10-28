@@ -5,6 +5,7 @@ import {
   foldText,
   highlight,
   parseQuery,
+  searchClaims,
   searchOrganisations,
   searchRecords,
   searchYears,
@@ -14,7 +15,7 @@ import {
   applicationCollections,
   collectionClaimIds,
 } from '../release/collections';
-import { relatedTo } from './query';
+import { isPropositionRecord, queryDataset, relatedTo } from './query';
 
 const index = createSearchIndex(repository.data);
 const ids = (results: SearchResults, type: string) =>
@@ -240,5 +241,37 @@ describe('search filters', () => {
     const years = searchYears(repository.data);
     expect(years).toEqual([...years].sort((a, b) => a - b));
     expect(years).toContain(2023);
+  });
+});
+
+describe('searchClaims: what a search timeline and map show', () => {
+  it('keeps every claim the list shows, proposition records included', () => {
+    for (const q of ['Yudkowsky', 'Hanson', 'Acemoglu', 'Anthropic']) {
+      const { listed } = searchClaims(index, q);
+      const hits = searchRecords(index, q).groups.flatMap((g) => g.hits);
+      for (const hit of hits)
+        if (hit.type === 'claim' || hit.type === 'passage')
+          expect(listed.has(hit.claimId!)).toBe(true);
+      const shown = queryDataset(repository.data, {
+        topic: 'all',
+        throughYear: 9999,
+        entityType: 'all',
+        focusId: null,
+        propositions: true,
+      }).claims.filter((c) => listed.has(c.id));
+      expect(shown.length).toBe(listed.size);
+    }
+    // A search on an economist finds proposition records, which the explorer
+    // leaves out without the flag, and the authorship records of the author's
+    // texts.
+    const hanson = searchClaims(index, 'Hanson').listed;
+    expect(hanson.size).toBeGreaterThan(0);
+    expect(
+      [...hanson].every(
+        (id) =>
+          isPropositionRecord(repository.claims.get(id)!) ||
+          repository.claims.get(id)!.predicate === 'authored',
+      ),
+    ).toBe(true);
   });
 });

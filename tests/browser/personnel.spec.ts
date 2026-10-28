@@ -1,4 +1,4 @@
-import { expect, test } from '@playwright/test';
+import { expect, test } from './fixtures';
 
 test('personnel search, distinct roles and source uncertainty are inspectable', async ({
   page,
@@ -8,7 +8,7 @@ test('personnel search, distinct roles and source uncertainty are inspectable', 
   page.on('console', (message) => {
     if (message.type() === 'error') errors.push(message.text());
   });
-  await page.goto('/#/explore');
+  await page.goto('/explore');
   await page
     .getByRole('navigation', { name: 'Explore the dataset' })
     .getByRole('button', { name: /^People/ })
@@ -78,7 +78,7 @@ test('institutional acquisition and combination remain distinct direct claims', 
   page.on('console', (message) => {
     if (message.type() === 'error') errors.push(message.text());
   });
-  await page.goto('/#/explore');
+  await page.goto('/explore');
   await page
     .getByRole('navigation', { name: 'Explore the dataset' })
     .getByRole('button', { name: /^Institutions/ })

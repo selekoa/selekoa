@@ -1,3 +1,4 @@
+import { isComparisonCell } from './framework-comparison';
 import type { Claim, Dataset, Entity, Evidence, Source } from './schema';
 import type { Predicate } from './predicates';
 import { dateOf } from './query';
@@ -79,7 +80,9 @@ function matches(claim: Claim, m: RecordMatch) {
     (!m.subjects || m.subjects.includes(claim.subject)) &&
     (!m.objects || targets(claim, m.objects)) &&
     (!m.resolutions || m.resolutions.includes(claim.resolution)) &&
-    !m.except?.includes(claim.id)
+    !m.except?.includes(claim.id) &&
+    // Comparison cells belong to the comparison page.
+    !isComparisonCell(claim)
   );
 }
 

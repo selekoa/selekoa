@@ -1,0 +1,733 @@
+{
+  "description": "Authored map for the admission of the second Chinese frontier-AI institutions collection (research/china-labs-2) on 2026-10-27, applied by scripts/china-labs-2-admission.ts. It records the maintainer's decisions of 2026-10-27, the corrections of the cross-family check (research/china-labs-2/codex-check-2026-10-27.md) and the admission's own checks. Every passage added or changed here is a part of a passage the pack matched twice, or was re-read at admission from a direct retrieval whose SHA-256 equals the pack's retrieval of the same file.",
+  "providers": {
+    "c2-minimax-01-licence-mau": "minimax",
+    "c2-minimax-01-licence-military": "minimax",
+    "c2-minimax-01-licence-no-improve": "minimax",
+    "c2-moonshot-k2-licence-display": "moonshot-ai",
+    "c2-moonshot-k2-report-redteam": "moonshot-ai",
+    "c2-minimax-prospectus-abab1": "minimax",
+    "c2-minimax-prospectus-moderation": "minimax",
+    "c2-minimax-prospectus-safety-assessment": "minimax",
+    "c2-minimax-m3-licence-commercial": "minimax",
+    "c2-moonshot-k3-licence-maas": "moonshot-ai"
+  },
+  "claims": {
+    "c2-baidu-ernie-3-titan-pcl": {
+      "subject": "ernie-3-titan-report",
+      "predicate": "explicitly_credits",
+      "object": { "kind": "entity", "entityId": "peng-cheng-laboratory" },
+      "statement": "The ERNIE 3.0 Titan paper (arXiv version 1, 23 December 2021) names Peng Cheng Laboratory as the affiliation of four of its authors; the other authors are marked with Baidu Inc.",
+      "qualification": "An author affiliation printed on the title page, recorded as the paper’s credit to the laboratory, not as publication. It does not establish the laboratory’s role in training, compute provision or funding, or any relation between the two institutions beyond the shared paper."
+    },
+    "c2-baidu-ernie-3-titan-report": {
+      "qualification": "Most authors are marked with Baidu Inc. and four with Peng Cheng Laboratory; the paper’s credit to the laboratory is recorded separately and implies nothing about direction or control. The paper’s statements about model scale and performance are not recorded."
+    },
+    "c2-baidu-ernie-2019-report": {
+      "qualification": "Attribution to Baidu rests on the single affiliation “Baidu Inc.” given for all authors on the title page. The record does not establish the model’s performance, a release of code or weights, or the paper’s later peer-reviewed form."
+    },
+    "c2-governance-tc260-asgf-v2-cncert-named": {
+      "subject": "tc260-asgf-v2-0",
+      "predicate": "explicitly_credits",
+      "object": { "kind": "entity", "entityId": "cncert" },
+      "statement": "The AI Safety Governance Framework 2.0 (September 2025) names CNCERT/CC (国家计算机网络应急技术处理协调中心) beneath TC260 on its cover, and its preface says that TC260 organised CNCERT/CC and other professional bodies, research institutes and companies to prepare it.",
+      "qualification": "What the document states about who prepared it. TC260 is recorded as the publisher; CNCERT/CC is not recorded as a publisher, and its role is not equated with TC260’s. The CAC news item of the release says that the work was led and organised by CNCERT/CC (国家互联网应急中心); that is CAC’s statement and is kept as context."
+    },
+    "c2-governance-sail-frmf-v1-concordia": {
+      "subject": "sail-frontier-ai-risk-management-framework-v1-0",
+      "predicate": "explicitly_credits",
+      "object": { "kind": "entity", "entityId": "concordia-ai" },
+      "statement": "The Frontier AI Risk Management Framework (v1.0), July 2025, names Concordia AI with Shanghai AI Laboratory in its citation line, and its executive summary says that Shanghai AI Laboratory introduced the framework in collaboration with Concordia AI.",
+      "qualification": "The document’s own credit. Shanghai AI Laboratory is recorded as the publisher; Concordia AI is not recorded as a publisher. The division of work is not recorded."
+    },
+    "c2-governance-aiia-aisc-published": {
+      "qualification": "CAICT’s post says that AIIA drafted and issued the text, and the cover names AIIA. The text and the signatory list are published only as an image in the post; the records quote or describe a transcription of that image. People’s Daily Online’s text reproduction (29 December 2024) omits 红队 (red-team) in Commitment II; the image and the itcloudbd reproduction include it. The text describes itself as industry self-discipline; it is not a law or regulation, and this record does not establish its effect."
+    },
+    "c2-governance-aiia-aisc-safety-team": {
+      "qualification": "What the commitment text says. The primary expression is an image; the quotation is a transcription of it, and the same wording is machine-matched in a text reproduction. Not evidence that any signatory has such a team."
+    },
+    "c2-governance-aiia-aisc-pre-release-red-teaming": {
+      "qualification": "What the commitment text says. The primary expression is an image; the quotation is a transcription of it. People’s Daily Online’s reproduction (29 December 2024) reads 进行测试 (testing) without 红队 (red-team); the image and the itcloudbd reproduction both read 红队测试. That copy is context for its own wording and does not support the red-team term. Not evidence that any signatory carried out such tests."
+    },
+    "c2-governance-aiia-aisc-frontier-research": {
+      "qualification": "What the commitment text says. The primary expression is an image; the quotation is a transcription of it. 不可控 is rendered as uncontrollability. Not evidence that any signatory carried out or published such research."
+    },
+    "c2-moonshot-k2-readme": {
+      "statement": "The README of Moonshot AI’s Kimi-K2 GitHub repository, at the repository’s initial commit dated 11 July 2025, introduced two model variants, Kimi-K2-Base and Kimi-K2-Instruct, and pointed to their checkpoints on Hugging Face.",
+      "time": {
+        "kind": "event",
+        "date": "2025-07-11",
+        "basis": "publication",
+        "note": "Date of the repository’s initial commit, which contains the README (11 July 2025, 14:28 UTC). The cross-family check found that GitHub’s repository record gives a creation time of 3 July 2025; a commit date and a repository creation date are different kinds of date, and neither establishes when the repository or the weights became public. The Hugging Face repository moonshotai/Kimi-K2-Instruct also shows commits from 11 July 2025."
+      }
+    },
+    "c2-moonshot-k2-licence": {
+      "statement": "Moonshot AI’s Kimi-K2 repository states that both the code repository and the model weights are released under a licence headed “Modified MIT License”; the README and the LICENSE file are present at the repository’s initial commit of 11 July 2025.",
+      "time": {
+        "kind": "event",
+        "date": "2025-07-11",
+        "basis": "publication",
+        "note": "Date of the repository’s initial commit, which contains the LICENSE file and the README’s licence section; it does not establish when the repository became public."
+      }
+    },
+    "c2-moonshot-k2-report-redteam": {
+      "qualification": "What the report states about its own evaluation; the results and their adequacy are not recorded. The report states that, to minimise subjectivity, it conducted multiple rounds of human review and assigned the same reviewer to all cases in a given test set. Not evidence of compliance with any commitment."
+    },
+    "c2-moonshot-k3-licence": {
+      "statement": "The LICENSE file in Moonshot AI’s Kimi-K3 Hugging Face repository, at a commit of 27 July 2026, is headed “Kimi K3 License” and defines the licensed software to include the model weights, parameters, configuration files, and inference and training code.",
+      "time": {
+        "kind": "snapshot",
+        "date": "2026-07-27",
+        "note": "State of the LICENSE file at the cited commit (27 July 2026, 15:14 UTC). The commit dates this expression of the licence; it does not establish when the weights or code were first released or became public."
+      },
+      "qualification": "The licence is described as the text describes itself; no judgement is made whether it meets any definition of open source. Its grant is subject to numbered conditions; the condition for Model-as-a-Service businesses is recorded separately."
+    },
+    "c2-moonshot-k3-licence-maas": {
+      "statement": "The Kimi K3 License states that if the licensee or any of its affiliates operates a “Model as a Service” business, as the licence defines it, and the aggregate revenue of the licensee and its affiliates exceeds 20 million US dollars (or the equivalent) over any consecutive 12 months, the licensee must enter into a separate agreement with Moonshot AI before using the software or its derivative works for any commercial purpose.",
+      "time": {
+        "kind": "snapshot",
+        "date": "2026-07-27",
+        "note": "Statement of the LICENSE file at the cited commit of 27 July 2026; the commit does not date the licence’s first publication."
+      },
+      "qualification": "What the licence text states. Section 2 defines Model as a Service as giving a third party access to model inference or fine-tuning with meaningful control over inputs, parameters or training data, and excludes end-user products whose model capabilities are embedded in specific features or harnesses, and the mere relaying of requests to models hosted by others. Section 4 exempts internal use, and use through Moonshot AI’s official products or certified inference partners, from Sections 2 and 3. The condition is not one on every commercial user. Whether it applies to any named business, and enforcement, are not recorded."
+    },
+    "c2-moonshot-k3-card": {
+      "statement": "The Kimi-K3 model card on Moonshot AI’s moonshotai Hugging Face account, at a commit of 27 July 2026, states that the full Kimi K3 model weights are released under the Kimi K3 License.",
+      "time": {
+        "kind": "event",
+        "date": "2026-07-27",
+        "basis": "publication",
+        "note": "Date of the cited Hugging Face commit; the commit list begins with an initial commit on the same day. The commit date does not establish the moment the weights became public."
+      },
+      "qualification": "The card’s statement as the developer makes it. Repository commit dates do not establish when the repository became public."
+    },
+    "c2-minimax-m3-licence": {
+      "statement": "The MiniMax-M3 Hugging Face repository carries a licence headed “MINIMAX COMMUNITY LICENSE” at a commit of 13 June 2026; its grant covers dealing in the software for non-commercial purposes, and its conditions set terms for commercial use.",
+      "qualification": "The licence is described as the text describes itself; no judgement is made whether it meets any definition of open source. The commercial-use conditions are recorded separately. The same licence text is present in the repository’s initial commit of 12 June 2026."
+    },
+    "c2-minimax-m2-licence-oct": {
+      "qualification": "The licence is described as the text describes itself. The file was changed on 13 November 2025 (recorded separately). The repository’s initial commit, dated 25 October 2025 at 21:28 UTC (26 October in UTC+8), carried the Apache License 2.0 text, which the MIT text replaced on 27 October 2025; the same-family audit found this in a Git clone and the cross-family check confirmed the initial text and its date."
+    },
+    "c2-bytedance-seed-15-vl-report": {
+      "time": {
+        "kind": "event",
+        "date": "2025-05-11",
+        "basis": "publication",
+        "note": "Submission date of arXiv version 1, from the arXiv stamp and submission history. The same version 1 PDF prints an internal date, “Date: June 13, 2025”, on its first page. The two dates are of different kinds and are kept apart; no explanation of the difference is inferred, and neither is the model’s release or API availability date."
+      },
+      "qualification": "The report’s architecture and benchmark statements are not recorded. The record does not establish a release of weights; the report says the model is accessible on Volcano Engine, which is hosted access."
+    },
+    "c2-bytedance-seed-oss-release": {
+      "qualification": "The card’s benchmark statements are not recorded. An existing record already uses this card for Seed’s stated founding year."
+    },
+    "c2-bytedance-seed-ap-announcement": {
+      "time": {
+        "kind": "event",
+        "date": "2026-10-14",
+        "basis": "publication",
+        "note": "Date printed on the page; read on 27 October 2026. The formation of the department is recorded separately."
+      }
+    },
+    "c2-governance-aiia-aisc-signatory-deepseek": {
+      "extraQualification": "In the post’s logo panel DeepSeek appears as a whale logo without a wordmark; the name comes from the list."
+    }
+  },
+  "evidence": {
+    "c2-ev-baidu-ernie-2019-report": {
+      "split": [
+        {
+          "id": "c2-ev-baidu-ernie-2019-report",
+          "locator": "Title page, title",
+          "passage": "ERNIE: Enhanced Representation through Knowledge Integration"
+        },
+        {
+          "id": "c2-ev-baidu-ernie-2019-report-authors",
+          "locator": "Title page, author block and affiliation (e-mail line omitted)",
+          "passage": "Yu Sun, Shuohuan Wang, Yukun Li, Shikun Feng Xuyi Chen, Han Zhang, Xin Tian, Danxiang Zhu, Hao Tian, Hua Wu Baidu Inc."
+        }
+      ]
+    },
+    "c2-ev-baidu-ernie-2-report": {
+      "split": [
+        {
+          "id": "c2-ev-baidu-ernie-2-report",
+          "locator": "Title page, title (the text layer spaces the hyphen of PRE-TRAINING)",
+          "passage": "ERNIE 2.0: A CONTINUAL PRE-TRAINING FRAMEWORK FOR LANGUAGE UNDERSTANDING"
+        },
+        {
+          "id": "c2-ev-baidu-ernie-2-report-stamp",
+          "locator": "Page 1, arXiv stamp",
+          "passage": "arXiv:1907.12412v1 [cs.CL] 29 Jul 2019"
+        }
+      ]
+    },
+    "c2-ev-baidu-wang-haifeng-ernie-3-titan": {
+      "split": [
+        {
+          "id": "c2-ev-baidu-wang-haifeng-ernie-3-titan",
+          "locator": "Title page, author block (e-mail lines omitted)",
+          "passage": "Hao Tian† Haifeng Wang†"
+        },
+        {
+          "id": "c2-ev-baidu-wang-haifeng-ernie-3-titan-affiliation",
+          "locator": "Title page, affiliation legend",
+          "passage": "† Baidu Inc."
+        }
+      ]
+    },
+    "c2-ev-baidu-ernie-45-licence": {
+      "split": [
+        {
+          "id": "c2-ev-baidu-ernie-45-licence",
+          "locator": "Section “License”",
+          "passage": "The ERNIE 4.5 models are provided under the Apache License 2.0. This license permits commercial use, subject to its terms and conditions."
+        },
+        {
+          "id": "c2-ev-baidu-ernie-45-licence-copyright",
+          "locator": "Section “License”, copyright line",
+          "passage": "Copyright (c) 2025 Baidu, Inc. All Rights Reserved."
+        }
+      ]
+    },
+    "c2-ev-baidu-ernie-5-report": {
+      "split": [
+        {
+          "id": "c2-ev-baidu-ernie-5-report",
+          "locator": "Title page, title",
+          "passage": "ERNIE 5.0 Technical Report"
+        },
+        {
+          "id": "c2-ev-baidu-ernie-5-report-credit",
+          "locator": "Title page, author credit (e-mail address omitted)",
+          "passage": "ERNIE Team, Baidu"
+        }
+      ]
+    },
+    "c2-ev-baidu-wang-haifeng-ernie-5": {
+      "split": [
+        {
+          "id": "c2-ev-baidu-wang-haifeng-ernie-5",
+          "locator": "Section 8, Contributors, opening of the list",
+          "passage": "Haifeng Wang, Hua Wu, Tian Wu, Yu Sun"
+        }
+      ]
+    },
+    "c2-ev-minimax-01-report": {
+      "split": [
+        {
+          "id": "c2-ev-minimax-01-report",
+          "locator": "arXiv abstract page, submission line",
+          "passage": "Submitted on 14 Jan 2025"
+        },
+        {
+          "id": "c2-ev-minimax-01-report-title",
+          "locator": "arXiv abstract page, title",
+          "passage": "MiniMax-01: Scaling Foundation Models with Lightning Attention"
+        },
+        {
+          "id": "c2-ev-minimax-01-report-author",
+          "locator": "arXiv abstract page, author list, first entry",
+          "passage": "MiniMax"
+        }
+      ]
+    },
+    "c2-ev-minimax-m1-report": {
+      "split": [
+        {
+          "id": "c2-ev-minimax-m1-report",
+          "locator": "arXiv abstract page, submission line",
+          "passage": "Submitted on 16 Jun 2025"
+        }
+      ]
+    },
+    "c2-ev-bytedance-seed-thinking-v15-report": {
+      "split": [
+        {
+          "id": "c2-ev-bytedance-seed-thinking-v15-report",
+          "locator": "Title page, title",
+          "passage": "Seed-Thinking-v1.5: Advancing Superb Reasoning Models with Reinforcement Learning"
+        },
+        {
+          "id": "c2-ev-bytedance-seed-thinking-v15-report-credit",
+          "locator": "Title page, author credit",
+          "passage": "ByteDance Seed"
+        },
+        {
+          "id": "c2-ev-bytedance-seed-thinking-v15-report-stamp",
+          "locator": "Page 1, arXiv stamp",
+          "passage": "arXiv:2504.13914v1 [cs.CL] 10 Apr 2025"
+        }
+      ]
+    },
+    "c2-ev-bytedance-seed-15-vl-report": {
+      "split": [
+        {
+          "id": "c2-ev-bytedance-seed-15-vl-report",
+          "locator": "Title page, title",
+          "passage": "Seed1.5-VL Technical Report"
+        },
+        {
+          "id": "c2-ev-bytedance-seed-15-vl-report-credit",
+          "locator": "Title page, author credit",
+          "passage": "ByteDance Seed"
+        },
+        {
+          "id": "c2-ev-bytedance-seed-15-vl-report-stamp",
+          "locator": "Page 1, arXiv stamp",
+          "passage": "arXiv:2505.07062v1 [cs.CV] 11 May 2025"
+        }
+      ]
+    },
+    "c2-ev-bytedance-seed-coder-report": {
+      "split": [
+        {
+          "id": "c2-ev-bytedance-seed-coder-report",
+          "locator": "arXiv abstract page, submission line",
+          "passage": "Submitted on 4 Jun 2025 (this version), latest version 5 Jun 2025 (v2)"
+        }
+      ]
+    },
+    "c2-ev-bytedance-seed-coder-report-pdf": {
+      "split": [
+        {
+          "id": "c2-ev-bytedance-seed-coder-report-pdf",
+          "locator": "Title page, title",
+          "passage": "Seed-Coder: Let the Code Model Curate Data for Itself"
+        },
+        {
+          "id": "c2-ev-bytedance-seed-coder-report-credit",
+          "locator": "Title page, author credit",
+          "passage": "ByteDance Seed"
+        }
+      ]
+    },
+    "c2-ev-bytedance-seed-x-report": {
+      "split": [
+        {
+          "id": "c2-ev-bytedance-seed-x-report",
+          "locator": "arXiv abstract page, submission line",
+          "passage": "Submitted on 18 Jul 2025 (this version), latest version 21 Aug 2025 (v4)"
+        }
+      ]
+    },
+    "c2-ev-bytedance-seed-x-report-pdf": {
+      "split": [
+        {
+          "id": "c2-ev-bytedance-seed-x-report-pdf",
+          "locator": "Title page, title",
+          "passage": "Seed-X: Building Strong Multilingual Translation LLM with 7B Parameters"
+        },
+        {
+          "id": "c2-ev-bytedance-seed-x-report-credit",
+          "locator": "Title page, author credit",
+          "passage": "ByteDance Seed"
+        }
+      ]
+    },
+    "c2-ev-bytedance-seed-18-model-card": {
+      "split": [
+        {
+          "id": "c2-ev-bytedance-seed-18-model-card",
+          "locator": "Title page, title",
+          "passage": "Seed1.8 Model Card: Towards Generalized Real-World Agency"
+        },
+        {
+          "id": "c2-ev-bytedance-seed-18-model-card-stamp",
+          "locator": "Page 1, arXiv stamp",
+          "passage": "arXiv:2603.20633v1 [cs.AI] 21 Mar 2026"
+        },
+        {
+          "id": "c2-ev-bytedance-seed-18-model-card-credit",
+          "locator": "Title page, author credit",
+          "passage": "Bytedance Seed"
+        }
+      ]
+    },
+    "c2-ev-bytedance-seed-20-model-card": {
+      "split": [
+        {
+          "id": "c2-ev-bytedance-seed-20-model-card",
+          "locator": "Title page, title",
+          "passage": "Seed2.0 Model Card: Towards Intelligence Frontier for Real-World Complexity"
+        },
+        {
+          "id": "c2-ev-bytedance-seed-20-model-card-stamp",
+          "locator": "Page 1, arXiv stamp",
+          "passage": "arXiv:2607.00248v1 [cs.AI] 30 Jun 2026"
+        },
+        {
+          "id": "c2-ev-bytedance-seed-20-model-card-credit",
+          "locator": "Title page, author credit",
+          "passage": "Bytedance Seed"
+        }
+      ]
+    },
+    "c2-ev-bytedance-seed-doubao-15-pro": {
+      "split": [
+        {
+          "id": "c2-ev-bytedance-seed-doubao-15-pro",
+          "locator": "Page header, date line",
+          "passage": "2025.01.22"
+        },
+        {
+          "id": "c2-ev-bytedance-seed-doubao-15-pro-opening",
+          "locator": "Opening paragraph, below the heading “Doubao-1.5-pro”",
+          "passage": "模型使用 MoE 架构，并通过训练-推理一体化设计",
+          "translation": "The model uses an MoE architecture and, through an integrated training–inference design,"
+        }
+      ]
+    },
+    "c2-ev-moonshot-kimi-vl-card": {
+      "split": [
+        {
+          "id": "c2-ev-moonshot-kimi-vl-card",
+          "locator": "Model card front-matter metadata, field license",
+          "passage": "license: mit"
+        }
+      ]
+    },
+    "c2-ev-minimax-m3-card": {
+      "split": [
+        {
+          "id": "c2-ev-minimax-m3-card",
+          "locator": "Model card front-matter metadata, field license",
+          "passage": "license: other"
+        },
+        {
+          "id": "c2-ev-minimax-m3-card-name",
+          "locator": "Model card front-matter metadata, field license_name",
+          "passage": "license_name: minimax-community"
+        }
+      ]
+    },
+    "c2-ev-moonshot-k2-licence": {
+      "split": [
+        {
+          "id": "c2-ev-moonshot-k2-licence",
+          "locator": "LICENSE, heading",
+          "passage": "Modified MIT License"
+        },
+        {
+          "id": "c2-ev-moonshot-k2-licence-copyright",
+          "locator": "LICENSE, copyright line",
+          "passage": "Copyright (c) 2025 Moonshot AI"
+        }
+      ]
+    },
+    "c2-ev-moonshot-k2-thinking-licence": {
+      "split": [
+        {
+          "id": "c2-ev-moonshot-k2-thinking-licence",
+          "locator": "LICENSE, heading",
+          "passage": "Modified MIT License"
+        },
+        {
+          "id": "c2-ev-moonshot-k2-thinking-licence-copyright",
+          "locator": "LICENSE, copyright line",
+          "passage": "Copyright (c) 2025 Moonshot AI"
+        }
+      ]
+    },
+    "c2-ev-moonshot-k3-licence": {
+      "split": [
+        {
+          "id": "c2-ev-moonshot-k3-licence",
+          "locator": "LICENSE, heading",
+          "passage": "Kimi K3 License"
+        },
+        {
+          "id": "c2-ev-moonshot-k3-licence-copyright",
+          "locator": "LICENSE, copyright line",
+          "passage": "Copyright (c) 2026 Moonshot AI"
+        }
+      ]
+    },
+    "c2-ev-minimax-m2-licence-oct": {
+      "split": [
+        {
+          "id": "c2-ev-minimax-m2-licence-oct",
+          "locator": "LICENSE, heading",
+          "passage": "MIT License"
+        },
+        {
+          "id": "c2-ev-minimax-m2-licence-oct-copyright",
+          "locator": "LICENSE, copyright line",
+          "passage": "Copyright 2025 MiniMax AI."
+        }
+      ]
+    },
+    "c2-ev-minimax-m3-licence": {
+      "split": [
+        {
+          "id": "c2-ev-minimax-m3-licence",
+          "locator": "LICENSE, heading",
+          "passage": "MINIMAX COMMUNITY LICENSE"
+        },
+        {
+          "id": "c2-ev-minimax-m3-licence-copyright",
+          "locator": "LICENSE, copyright line",
+          "passage": "Copyright (c) 2026 MiniMax"
+        }
+      ]
+    },
+    "c2-ev-minimax-prospectus-abab1": {
+      "split": [
+        {
+          "id": "c2-ev-minimax-prospectus-abab1",
+          "locator": "History, “Our Key Milestones”, 2022, row “April”",
+          "passage": "Our first text model abab1 was launched."
+        }
+      ]
+    },
+    "c2-ev-minimax-prospectus-abab1-2": {
+      "split": [
+        {
+          "id": "c2-ev-minimax-prospectus-abab1-2",
+          "locator": "History, “Our Key Milestones”, 2023, row “May”",
+          "passage": "We entered into agreement with our first API customer. Our text model abab5.5 was launched."
+        }
+      ]
+    },
+    "c2-ev-minimax-01-readme-pros": {
+      "split": [
+        {
+          "id": "c2-ev-minimax-01-readme-pros",
+          "locator": "History, “Our Key Milestones”, 2025, row “January”",
+          "passage": "Our open-source text model MiniMax-Text-01 with proprietary “Linear Attention” mechanism was launched."
+        }
+      ]
+    },
+    "c2-ev-governance-tc260-asgf-v1-published-2": {
+      "split": [
+        {
+          "id": "c2-ev-governance-tc260-asgf-v1-published-2",
+          "locator": "Cover, issuing body",
+          "passage": "全国网络安全标准化技术委员会",
+          "translation": "National Cybersecurity Standardization Technical Committee"
+        },
+        {
+          "id": "c2-ev-governance-tc260-asgf-v1-published-3",
+          "locator": "Cover, date line",
+          "passage": "2024年9月",
+          "translation": "September 2024"
+        }
+      ]
+    },
+    "c2-ev-governance-tc260-asgf-v2-cncert-named-1": {
+      "split": [
+        {
+          "id": "c2-ev-governance-tc260-asgf-v2-cncert-named-1",
+          "locator": "Cover, beneath the committee’s Chinese and English names",
+          "passage": "国家计算机网络应急技术处理协调中心",
+          "translation": "National Computer Network Emergency Response Technical Team/Coordination Center of China"
+        }
+      ]
+    },
+    "c2-ev-governance-tc260-asgf-v2-cncert-named-2": {
+      "support": "context",
+      "locator": "CAC news item of the release, second paragraph"
+    },
+    "c2-ev-governance-tc260-asgf-v2-classification-grading-1": {
+      "transcribedPdf": true,
+      "passage": "探索提出具有共识的安全风险分级原则（附件1），从应用场景、智能化水平、应用规模等维度入手"
+    },
+    "c2-ev-governance-tc260-asgf-v2-loss-of-control-testing-1": {
+      "transcribedPdf": true,
+      "passage": "开发者定期进行测试，判断模型是否可能带来潜在技术失控风险"
+    },
+    "c2-ev-governance-tc260-asgf-v2-open-source-prohibited-uses-1": {
+      "transcribedPdf": true,
+      "passage": "明确开源模型下载使用的“禁止性”行为，防范模型滥用或恶意使用"
+    },
+    "c2-ev-governance-tc260-asgf-v2-registration-1": {
+      "transcribedPdf": true,
+      "passage": "对在关键信息基础设施应用的人工智能系统进行登记备案，要求其具备与安全需求相匹配的安全防护能力"
+    },
+    "c2-ev-governance-tc260-asgf-v2-training-data-cbrn-1": {
+      "transcribedPdf": true,
+      "passage": "对训练数据进行严格筛选，过滤虚假、偏见、失效、错误数据，确保不包含核生化导武器等高危领域敏感数据",
+      "translation": "strictly screen training data, filtering out false, biased, invalid and erroneous data, and ensure that it contains no sensitive data from high-risk fields such as nuclear, biological, chemical and missile weapons"
+    },
+    "c2-ev-governance-tc260-asgf-v2-published-3": {
+      "transcribedPdf": true,
+      "passage": "全国网络安全标准化技术委员会组织国家计算机网络应急技术处理协调中心等专业机构、科研院所、行业企业"
+    },
+    "c2-ev-governance-aiia-aisc-safety-team-1": {
+      "transcription": "commitment",
+      "items": "Commitment I",
+      "passageType": "quote",
+      "locator": "Embedded image, Commitment I (承诺一), body text (transcribed from the image; not in the page’s text layer)",
+      "passage": "内部设有专业团队负责开展人工智能风险评估、安全治理等工作，明确安全负责人",
+      "translation": "an internal professional team is responsible for AI risk assessment, safety governance and related work, and a person responsible for safety is designated"
+    },
+    "c2-ev-governance-aiia-aisc-pre-release-red-teaming-1": {
+      "transcription": "commitment",
+      "items": "Commitment II",
+      "passageType": "quote",
+      "locator": "Embedded image, Commitment II (承诺二), body text (transcribed from the image; not in the page’s text layer)",
+      "passage": "通过专业性的仿真测试团队，在发布、更新人工智能模型之前对其进行红队测试",
+      "translation": "through a professional simulation testing team, conduct red-team testing on AI models before releasing or updating them"
+    },
+    "c2-ev-governance-aiia-aisc-frontier-research-1": {
+      "transcription": "commitment",
+      "items": "Commitment VI",
+      "passageType": "quote",
+      "locator": "Embedded image, Commitment VI (承诺六), body text (transcribed from the image; not in the page’s text layer)",
+      "passage": "针对智能体、具身智能等前沿应用可能存在的偏见歧视、不可控等方面进行风险研判，向公众披露研究成果",
+      "translation": "carry out risk assessment of possible bias, discrimination, uncontrollability and other aspects in frontier applications such as agents and embodied intelligence, and disclose research results to the public"
+    },
+    "c2-ev-governance-aiia-aisc-published-2": {
+      "transcription": "cover",
+      "items": "the cover",
+      "locator": "Embedded image, cover (transcribed from the image; not in the page’s text layer)",
+      "passage": "Transcription of the cover in the image: the AIIA logo, the title 人工智能安全承诺 / ARTIFICIAL INTELLIGENCE SAFETY COMMITMENTS, and the imprint 中国人工智能产业发展联盟 2024年12月."
+    }
+  },
+  "newEvidence": [
+    {
+      "id": "c2-ev-baidu-ernie-2019-report-stamp",
+      "claimId": "c2-baidu-ernie-2019-report",
+      "sourceId": "c2-src-ernie-arxiv-v1",
+      "sourceRole": "primary",
+      "support": "supports",
+      "locator": "Page 1, arXiv stamp",
+      "passageType": "quote",
+      "passage": "arXiv:1904.09223v1 [cs.CL] 19 Apr 2019",
+      "reason": "The pack’s locator named the arXiv stamp but its passage did not contain it. The stamp was read at admission from a direct retrieval of the version 1 PDF whose SHA-256 equals the pack’s retrieval."
+    },
+    {
+      "id": "c2-ev-bytedance-seed-15-vl-report-internal-date",
+      "claimId": "c2-bytedance-seed-15-vl-report",
+      "sourceId": "c2-src-seed-vl-arxiv-v1",
+      "sourceRole": "primary",
+      "support": "context",
+      "locator": "Page 1, below the abstract",
+      "passageType": "quote",
+      "passage": "Date: June 13, 2025",
+      "reason": "The cross-family check (K034) found this internal date in the same version 1 PDF. It was read at admission from a direct retrieval whose SHA-256 equals the pack’s retrieval. It is a date printed in the document, not the arXiv submission date."
+    },
+    {
+      "id": "c2-ev-moonshot-k3-licence-definition",
+      "claimId": "c2-moonshot-k3-licence",
+      "sourceId": "c2-src-kimi-k3-license",
+      "sourceRole": "primary",
+      "support": "supports",
+      "locator": "LICENSE, grant paragraph, definition of “Software”",
+      "passageType": "quote",
+      "passage": "including the model weights, parameters, configuration files, inference and training code",
+      "reason": "The cross-family check (K061) read this definition. It was read at admission from a direct retrieval of the pinned file whose SHA-256 equals the pack’s retrieval."
+    },
+    {
+      "id": "c2-ev-moonshot-k3-licence-maas-trigger",
+      "claimId": "c2-moonshot-k3-licence-maas",
+      "sourceId": "c2-src-kimi-k3-license",
+      "sourceRole": "primary",
+      "support": "supports",
+      "locator": "LICENSE, Section 2, second paragraph, with the definition in its first paragraph and the exemptions of Section 4",
+      "passageType": "paraphrase",
+      "passage": "Section 2 applies if the Licensee or any of its affiliates operates a Model as a Service business and the aggregate revenue of the Licensee and its affiliates exceeds 20 million US dollars, or the equivalent in other currencies, in total over any consecutive 12 months; Section 4 exempts internal use and use through Moonshot AI’s official products or certified inference partners.",
+      "anchor": "aggregate revenue of the Licensee and its affiliates",
+      "reason": "The cross-family check (K062) found that the pack’s record left out the affiliates and the parties whose revenue is aggregated. Section 2 and Section 4 were read at admission from a direct retrieval of the pinned file whose SHA-256 equals the pack’s retrieval."
+    },
+    {
+      "id": "c2-ev-governance-tc260-asgf-v2-cncert-named-3",
+      "claimId": "c2-governance-tc260-asgf-v2-cncert-named",
+      "copyOf": "c2-ev-governance-tc260-asgf-v2-published-3",
+      "support": "supports"
+    },
+    {
+      "id": "c2-ev-governance-sail-frmf-v1-concordia-2",
+      "claimId": "c2-governance-sail-frmf-v1-concordia",
+      "copyOf": "c2-ev-governance-sail-frmf-v1-published-1",
+      "support": "supports"
+    }
+  ],
+  "shorten": {
+    "c2-ev-moonshot-k3-licence-maas": {
+      "locator": "LICENSE, Section 2, second paragraph, end",
+      "passage": "the Licensee must enter into a separate agreement with Moonshot AI"
+    }
+  },
+  "locators": {
+    "c2-ev-minimax-prospectus-safety-assessment": "Business, AI safety and alignment measures, printed p. 279 (PDF p. 289), immediately before “Our R&D Team”"
+  },
+  "entities": {
+    "aiia": {
+      "name": "Artificial Intelligence Industry Alliance (AIIA) / 中国人工智能产业发展联盟",
+      "subtype": "Industry alliance"
+    },
+    "aiia-ai-safety-commitments-2024": {
+      "subtype": "Voluntary commitment text",
+      "description": "Six voluntary industry commitments in Chinese and English, drafted and issued by AIIA, cover dated December 2024. The inspected expression is the image of the text and the initial signatory list in CAICT’s WeChat post of 24 December 2024; the records quote a transcription of it. People’s Daily Online’s reproduction omits 红队 (red-team) in Commitment II. What the text states is not evidence of compliance."
+    },
+    "ant-group": { "subtype": "Technology company" },
+    "baidu-20f-fy2023": { "subtype": "Annual report (Form 20-F)" },
+    "baidu-20f-fy2025": { "subtype": "Annual report (Form 20-F)" },
+    "china-mobile": { "subtype": "Telecommunications group" },
+    "china-telecom-ai": { "subtype": "AI company" },
+    "cncert": {
+      "type": "organisation",
+      "subtype": "Cybersecurity emergency response centre",
+      "description": "Chinese cybersecurity emergency response and coordination centre named, beneath TC260, on the cover of the AI Safety Governance Framework 2.0; English and Chinese names as printed there. Typed as an organisation for cataloguing; no legal status is asserted."
+    },
+    "concordia-ai": {
+      "subtype": "AI safety and governance organisation",
+      "description": "Organisation named in the Frontier AI Risk Management Framework (v1.0) as Shanghai AI Laboratory’s collaborator; the framework’s PDF was retrieved from its website."
+    },
+    "fourth-paradigm": { "subtype": "AI software company" },
+    "hillhouse-capital": { "subtype": "Investment firm" },
+    "hongshan-capital": { "subtype": "Investment firm" },
+    "huawei": { "subtype": "Technology company" },
+    "idg-capital": { "subtype": "Investment firm" },
+    "iflytek": { "subtype": "AI company" },
+    "megvii": { "subtype": "AI company" },
+    "mihoyo": {
+      "subtype": "Video game company",
+      "description": "Companies named in MiniMax’s December 2025 prospectus, as miHoYo Limited and Shanghai Mihoyo Argo Technology Co., Ltd, among its key Pre-IPO Investors."
+    },
+    "qihoo-360": { "subtype": "Internet security company" },
+    "tc260": { "subtype": "Standardisation technical committee" },
+    "volcano-engine": { "subtype": "Cloud and AI services company" }
+  },
+  "sources": {
+    "c2-src-tc260-asgf-v1-pdf": { "documentId": "tc260-asgf-v1-0" },
+    "c2-src-tc260-asgf-v2-pdf": {
+      "documentId": "tc260-asgf-v2-0",
+      "versionNote": "Bilingual PDF (Chinese text followed by the publisher’s English text) linked from the CAC news item of 15 September 2025. Quotes are from the Chinese text, transcribed as printed: the text layer contains control characters (U+0001) and compatibility forms (Kangxi radicals, ⻛ for 风, ⻅ for 见), which are normalised in the quotations. No copy on tc260.org.cn was located."
+    },
+    "c2-src-tc260-asgf-v3-pdf": { "documentId": "tc260-asgf-v3-0" },
+    "c2-src-sail-frmf-v1-en": {
+      "documentId": "sail-frontier-ai-risk-management-framework-v1-0"
+    },
+    "c2-src-caict-wx-aisc-2024": {
+      "documentId": "aiia-ai-safety-commitments-2024",
+      "archivedUrl": "https://web.archive.org/web/20260724145912/https://mp.weixin.qq.com/s/s-XFKQCWhu0uye4opgb3Ng",
+      "archivedAt": "2026-07-24",
+      "versionNote": "The commitment text (Chinese and English) and the initial signatory list are a single embedded image (1000 × 9898 pixels, SHA-256 7e9145350d1b882d22ab3f7fc4d4c0226f06194f94264d92291ee065fbf4aa27), not in the page’s text layer; quotations from it are transcriptions. The cross-family check found the same image in an Internet Archive capture of 4 March 2026 with the same SHA-256.",
+      "documentWords": {
+        "count": 1485,
+        "basis": "Approximate and a lower bound: 429 words in text blocks of ten or more words in the post’s text layer, plus the image’s Chinese text, counted with each CJK character as one word: 852 for the preamble and six commitments (counted from the itcloudbd reproduction, which matches the image) and 204 for the 17 listed names. The image’s English text is not counted."
+      }
+    },
+    "c2-src-itcloudbd-aisc-2024": {
+      "archivedUrl": "https://web.archive.org/web/20260712204752/https://itcloudbd.com/rengongzhineng/13352.html",
+      "archivedAt": "2026-07-12"
+    },
+    "c2-src-people-aisc-2024": {
+      "archivedUrl": "https://web.archive.org/web/20260513191136/http://finance.people.com.cn/n1/2024/1229/c1004-40391586.html",
+      "archivedAt": "2026-05-13"
+    },
+    "c2-src-baidu-erniebot-prn-2023": {
+      "archivedUrl": "https://web.archive.org/web/20260830135957/https://www.prnewswire.com/news-releases/baidu-unveils-ernie-bot-the-latest-generative-ai-mastering-chinese-language-and-multi-modal-generation-301774240.html",
+      "archivedAt": "2026-08-30"
+    },
+    "c2-src-baidu-ernie45-x1-prn-2025": {
+      "archivedUrl": "https://web.archive.org/web/20260813105925/https://www.prnewswire.com/news-releases/baidu-unveils-ernie-4-5-and-reasoning-model-ernie-x1--makes-ernie-bot-free-ahead-of-schedule-302402490.html",
+      "archivedAt": "2026-08-13"
+    },
+    "c2-src-cac-asgf-v2-release": {
+      "archivedUrl": "https://web.archive.org/web/20261016143309/https://www.cac.gov.cn/2025-09/15/c_1759653448369123.htm",
+      "archivedAt": "2026-10-16"
+    }
+  }
+}

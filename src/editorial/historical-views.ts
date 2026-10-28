@@ -11,6 +11,16 @@ import entities from '../../data/entities.json';
 import claims from '../../data/claims.json';
 import sources from '../../data/sources.json';
 import evidence from '../../data/evidence.json';
+import frameworksToLaw2 from '../../review/frameworks-to-law-2-before-2026-10-28.json';
+import frameworksToLaw1 from '../../review/frameworks-to-law-1-before-2026-10-28.json';
+import paraphraseCorrections from '../../review/paraphrase-corrections-before-2026-10-28.json';
+import followups from '../../review/followups-before-2026-10-28.json';
+import chinaLabs2 from '../../review/china-labs-2-before-2026-10-27.json';
+import compareMoreFacets from '../../review/compare-more-facets-before-2026-10-27.json';
+import authorPersons from '../../review/author-persons-before-2026-10-27.json';
+import frameworkComparison from '../../review/framework-comparison-before-2026-10-27.json';
+import archiveAdmissions from '../../review/archive-admissions-before-2026-10-26.json';
+import dataFixes from '../../review/data-fixes-before-2026-10-26.json';
 import recheckCorrections from '../../review/recheck-corrections-before-2026-10-25.json';
 import genealogy from '../../review/genealogy-admission-before-2026-10-17.json';
 import y24Followup from '../../review/y24-followup-before-2026-10-17.json';
@@ -68,8 +78,49 @@ export function revert<R extends Raw>(raw: R, snapshot: Snapshot): R {
 
 const current = { meta, entities, claims, sources, evidence };
 
+/** Raw stored rows at schema 2.18 as released in v0.10.3, before part 2 of the 2026-10-28 frameworks-to-law admission (schema 2.19). */
+export const preFrameworksToLaw2Raw = revert(current, frameworksToLaw2);
+/** Raw stored rows at schema 2.18 as released in v0.10.2, before part 1 of the 2026-10-28 frameworks-to-law admission. */
+export const preFrameworksToLaw1Raw = revert(
+  preFrameworksToLaw2Raw,
+  frameworksToLaw1,
+);
+/** Raw stored rows at schema 2.18 as released in v0.10.1, before the 2026-10-28 paraphrase corrections. */
+export const preParaphraseCorrectionsRaw = revert(
+  preFrameworksToLaw1Raw,
+  paraphraseCorrections,
+);
+/** Raw stored rows at schema 2.18 as released in v0.10.0, before the 2026-10-28 follow-ups. */
+export const preFollowupsRaw = revert(preParaphraseCorrectionsRaw, followups);
+/** Raw stored rows at schema 2.18, before the 2026-10-27 admission of the second Chinese institutions collection. */
+export const preChinaLabs2Raw = revert(preFollowupsRaw, chinaLabs2);
+/** Raw stored rows at schema 2.17 with the author persons, before the 2026-10-27 admission of the paraphrased comparison questions (schema 2.18). */
+export const preCompareMoreFacetsRaw = revert(
+  preChinaLabs2Raw,
+  compareMoreFacets,
+);
+/** Raw stored rows at schema 2.17, before the 2026-10-27 author-person admission. */
+export const preAuthorPersonsRaw = revert(
+  preCompareMoreFacetsRaw,
+  authorPersons,
+);
+/** Raw stored rows at schema 2.16, before the 2026-10-27 framework comparison admission (schema 2.17). */
+export const preFrameworkComparisonRaw = revert(
+  preAuthorPersonsRaw,
+  frameworkComparison,
+);
+/** Raw stored rows at schema 2.16, before the 2026-10-26 archive admissions. */
+export const preArchiveAdmissionsRaw = revert(
+  preFrameworkComparisonRaw,
+  archiveAdmissions,
+);
+/** Raw stored rows at schema 2.16, before the 2026-10-26 data fixes. */
+export const preDataFixesRaw = revert(preArchiveAdmissionsRaw, dataFixes);
 /** Raw stored rows at schema 2.15, before the 2026-10-25 re-check corrections (schema 2.16). */
-export const preRecheckCorrectionsRaw = revert(current, recheckCorrections);
+export const preRecheckCorrectionsRaw = revert(
+  preDataFixesRaw,
+  recheckCorrections,
+);
 /** Raw stored rows at schema 2.14, before the 2026-10-17 lab genealogy admission (schema 2.15). */
 export const preGenealogyRaw = revert(preRecheckCorrectionsRaw, genealogy);
 /** Raw stored rows at schema 2.14, before the 2026-10-17 follow-up recheck of the remaining Y24 articulation. */
@@ -129,6 +180,32 @@ export const preProvisionsRaw = revert(preControlRaw, week4a);
  * pre-4a view, which restores the corrected rows and is exact.
  */
 export const historicalViews = [
+  { snapshot: frameworksToLaw2, view: preFrameworksToLaw2Raw, exact: true },
+  { snapshot: frameworksToLaw1, view: preFrameworksToLaw1Raw, exact: true },
+  {
+    snapshot: paraphraseCorrections,
+    view: preParaphraseCorrectionsRaw,
+    exact: true,
+  },
+  { snapshot: followups, view: preFollowupsRaw, exact: true },
+  { snapshot: chinaLabs2, view: preChinaLabs2Raw, exact: true },
+  {
+    snapshot: compareMoreFacets,
+    view: preCompareMoreFacetsRaw,
+    exact: true,
+  },
+  { snapshot: authorPersons, view: preAuthorPersonsRaw, exact: true },
+  {
+    snapshot: frameworkComparison,
+    view: preFrameworkComparisonRaw,
+    exact: true,
+  },
+  {
+    snapshot: archiveAdmissions,
+    view: preArchiveAdmissionsRaw,
+    exact: true,
+  },
+  { snapshot: dataFixes, view: preDataFixesRaw, exact: true },
   { snapshot: recheckCorrections, view: preRecheckCorrectionsRaw, exact: true },
   { snapshot: genealogy, view: preGenealogyRaw, exact: true },
   { snapshot: y24Followup, view: preY24FollowupRaw, exact: true },

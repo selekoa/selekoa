@@ -1,4 +1,4 @@
-import { test, expect, type Page } from '@playwright/test';
+import { test, expect, type Page } from './fixtures';
 import AxeBuilder from '@axe-core/playwright';
 import { readFileSync } from 'node:fs';
 import { datasetSchema } from '../../src/domain/schema';
@@ -66,8 +66,18 @@ test('start page leads with search, three hubs and one review-status line', asyn
   const errors = collectErrors(page);
   await page.goto('/');
   await expect(page.getByRole('heading', { level: 1 })).toHaveText(
+    'A documentary history of machine intelligence.',
+  );
+  await expect(page.locator('.landing-lede .landing-deck')).toHaveText(
     'Selekoa is a machine-first starting point for research on the history of machine intelligence: machines find and check the records, and every one links to its source, for you to verify and build on.',
   );
+  // The heading carries the tagline, so the header omits it on this page.
+  await expect(
+    page
+      .locator('.site-header')
+      .getByText('A documentary history of machine intelligence.'),
+  ).toHaveCount(0);
+  await expect(page.getByText(/machine-first/i)).toHaveCount(1);
   await expect(page).toHaveTitle(
     'Selekoa · A documentary history of machine intelligence',
   );
@@ -96,8 +106,8 @@ test('start page leads with search, three hubs and one review-status line', asyn
   await expect(page.getByTestId('network')).toHaveCount(0);
   await noViolations(page);
   // The line links to "How this was checked" on the About & method page.
-  await line.getByRole('button', { name: 'What this means →' }).click();
-  await expect(page).toHaveURL(/#\/about$/);
+  await line.getByRole('link', { name: 'What this means →' }).click();
+  await expect(page).toHaveURL(/\/about$/);
   await expect(page.locator('#about-method')).toBeFocused();
   await expect(page.locator('#about-method')).toHaveText(
     'How this was checked',
@@ -127,30 +137,30 @@ test('start page leads with search, three hubs and one review-status line', asyn
   });
   await expect(inspector).toContainText('Editorially accepted');
   await expect(page).toHaveURL(
-    new RegExp('#/claim/' + status.acceptedClaimIds[0] + '$'),
+    new RegExp('/claim/' + status.acceptedClaimIds[0] + '$'),
   );
   // Inner pages carry the same header line once, and no notice of their own.
   await expect(page.getByRole('banner').locator('.site-status')).toHaveCount(1);
   await expect(page.locator('.site-status')).toHaveCount(1);
   await page
     .getByRole('banner')
-    .getByRole('button', { name: 'What this means →' })
+    .getByRole('link', { name: 'What this means →' })
     .click();
   await expect(page.locator('#about-method')).toBeFocused();
-  await page.getByRole('button', { name: 'Selekoa start page' }).click();
-  await expect(page).not.toHaveURL(/#/);
+  await page.getByRole('link', { name: 'Selekoa start page' }).click();
+  await expect(page).toHaveURL(/:4173\/$/);
   // The start page's search box opens Search; its map is a view of the results.
   await page.getByRole('searchbox').fill('Anthropic');
   await page
     .getByRole('search')
     .getByRole('button', { name: 'Search' })
     .click();
-  await expect(page).toHaveURL(/#\/search\?q=Anthropic$/);
+  await expect(page).toHaveURL(/\/search#q=Anthropic$/);
   await page
     .getByRole('group', { name: 'Show search results as' })
-    .getByRole('button', { name: 'Map' })
+    .getByRole('link', { name: 'Map' })
     .click();
-  await expect(page).toHaveURL(/#\/explore\?q=Anthropic$/);
+  await expect(page).toHaveURL(/\/explore#q=Anthropic$/);
   await expect(page.locator('.exploration-heading h2')).toHaveText(
     'Search: Anthropic',
   );
@@ -163,14 +173,12 @@ test('start page leads with search, three hubs and one review-status line', asyn
   );
   await expect(page.getByTestId('network')).toHaveCount(0);
   await expect(page.getByLabel('Claims list')).toBeVisible();
-  await page.goto('/#/explore?q=Microsoft');
+  await page.goto('/explore#q=Microsoft');
   await expect(page.getByTestId('network').locator('canvas')).not.toHaveCount(
     0,
   );
   await expect(
-    page
-      .getByRole('banner')
-      .getByRole('button', { name: 'Search', exact: true }),
+    page.getByRole('banner').getByRole('link', { name: 'Search', exact: true }),
   ).toHaveAttribute('aria-current', 'page');
   expect(errors).toEqual([]);
 });
@@ -179,11 +187,11 @@ test('document history lists editions, labels inference and gaps, and restores i
   page,
 }) => {
   const errors = collectErrors(page);
-  await page.goto('/#/governance');
+  await page.goto('/governance');
   await page
-    .getByRole('button', { name: 'Read the document histories →' })
+    .getByRole('link', { name: 'Read the document histories →' })
     .click();
-  await expect(page).toHaveURL(/#\/documents\/frontier-safety-frameworks$/);
+  await expect(page).toHaveURL(/\/documents\/frontier-safety-frameworks$/);
   const history = page.getByRole('article', { name: collection.title });
   const editions = data.entities.filter(
     (e) =>
@@ -211,7 +219,7 @@ test('document history lists editions, labels inference and gaps, and restores i
   await inspector.getByRole('button', { name: 'Close ×' }).click();
   await expect(change).toBeFocused();
   await page.goto(
-    '/#/documents/frontier-safety-frameworks?inspect=issued-rsp-2-0',
+    '/documents/frontier-safety-frameworks?inspect=issued-rsp-2-0',
   );
   await expect(
     page.getByRole('complementary', { name: 'Evidence inspector' }),
@@ -226,7 +234,7 @@ test('frameworks page reads cleanly: timeline jump, changes and source in a few 
   page,
 }) => {
   const errors = collectErrors(page);
-  await page.goto('/#/documents/' + collection.id);
+  await page.goto('/documents/' + collection.id);
   // A reading layout, not the explorer.
   await expect(page.getByRole('heading', { level: 1 })).toHaveText(
     collection.title,
@@ -310,12 +318,12 @@ test('frameworks page reads cleanly: timeline jump, changes and source in a few 
 test('Institutions & people lists people A–Z, each opening their person page', async ({
   page,
 }) => {
-  await page.goto('/#/institutions');
+  await page.goto('/institutions');
   const people = data.entities.filter((e) => e.type === 'person');
   const entry = page.locator('.people-az');
-  await expect(entry.getByRole('button')).toHaveCount(people.length);
+  await expect(entry.getByRole('link')).toHaveCount(people.length);
   // Filed under "Family, Given" sortName; displayed under the stored name.
-  const names = await entry.getByRole('button').allTextContents();
+  const names = await entry.getByRole('link').allTextContents();
   const collator = new Intl.Collator('en', { sensitivity: 'base' });
   expect(names).toEqual(
     [...people]
@@ -327,8 +335,8 @@ test('Institutions & people lists people A–Z, each opening their person page',
       has: page.getByRole('heading', { name: 'L', exact: true }),
     }),
   ).toContainText('Liang Wenfeng / 梁文锋');
-  await entry.getByRole('button', { name: 'Jan Leike', exact: true }).click();
-  await expect(page).toHaveURL(/#\/person\/jan-leike$/);
+  await entry.getByRole('link', { name: 'Jan Leike', exact: true }).click();
+  await expect(page).toHaveURL(/\/person\/jan-leike$/);
   await expect(
     page.getByRole('article', { name: 'Jan Leike: person page' }),
   ).toBeVisible();
@@ -337,7 +345,7 @@ test('Institutions & people lists people A–Z, each opening their person page',
 test('research starter downloads match deterministic domain exports', async ({
   page,
 }) => {
-  await page.goto('/#/documents/' + collection.id);
+  await page.goto('/documents/' + collection.id);
   await page.getByText('Download research starter', { exact: true }).click();
   const starter = await documentHistoryStarter(data, collection);
   for (const [label, extension, expected] of [
@@ -369,7 +377,7 @@ for (const width of [1440, 390])
         path: testInfo.outputPath('start.png'),
         fullPage: true,
       });
-      await page.goto('/#/documents/' + collection.id);
+      await page.goto('/documents/' + collection.id);
       await setTheme(page, theme);
       await page
         .locator('[data-claim-id="faif-2026-compliance-sentence"]')

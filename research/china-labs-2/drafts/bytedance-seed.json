@@ -1,0 +1,990 @@
+{
+  "group": "bytedance-seed",
+  "searched": "Searched on 2026-10-27: arXiv abstract pages and PDFs (version 1) and the arXiv API for Seed reports (Seed-Thinking-v1.5 / Seed1.5-Thinking 2504.13914, Seed1.5-VL 2505.07062, Seed-Coder 2506.03524, Seed-X 2507.13618, Seed1.8 Model Card 2603.20633, Seed2.0 Model Card 2607.00248); the Hugging Face ByteDance-Seed organisation listing (licence tags of about sixty repositories) and pinned README and LICENSE files for Seed-OSS-36B-Instruct, Seed-Coder-8B-Instruct (every revision's licence metadata compared) and Seed-X-Instruct-7B; the ByteDance-Seed/seed-oss Git repository (blob-less clone; LICENSE at commit 3dc77576); seed.bytedance.com in Chinese (home page, the Doubao-1.5-pro page, and the Alignment & Preparedness announcement of 14 October 2026). The seed.bytedance.com blog index is a JavaScript shell with no text, so other Seed blog posts (for example release posts for Seed1.5-VL, Seed1.6 or Seed2.0) were not located; no Seed2.1 document was cited although the home page lists it. No ByteDance corporate filing exists for this purpose (ByteDance is not listed), so no backer records are drafted. The Internet Archive was not consulted (refused from this environment). Coordinator: a drafted record crediting Wu Yonghui as team lead on the Seed-Thinking report was removed before merging, because the identification rests on name and timing alone.",
+  "existingUsed": [
+    "lg-gc-bytedance-seed-founded-2023",
+    "lg-gc-seed-alignment-preparedness-2026",
+    "lg-gc-wu-yonghui-bytedance-seed-2025",
+    "lg-gc-wu-yonghui-bytedance-lead-2025-10",
+    "lg-gc-zhu-wenjia-bytedance-llm-2023"
+  ],
+  "entities": [
+    {
+      "id": "bytedance",
+      "existing": true
+    },
+    {
+      "id": "bytedance-seed",
+      "existing": true
+    },
+    {
+      "id": "seed-alignment-preparedness",
+      "existing": true
+    },
+    {
+      "id": "wu-yonghui",
+      "existing": true
+    },
+    {
+      "id": "doubao-15-pro-page",
+      "type": "document",
+      "documentKind": "announcement",
+      "name": "Doubao-1.5-pro (Seed model page)",
+      "subtype": "Model page",
+      "aliases": ["Doubao 1.5pro"],
+      "description": "Chinese-language page on seed.bytedance.com, dated 22 January 2025 and titled 'Doubao 1.5pro - Doubao Team', describing the Doubao-1.5-pro model; read as it stood on 27 October 2026.",
+      "sourceIds": ["c2-src-seed-doubao15pro"]
+    },
+    {
+      "id": "seed-thinking-v15-report",
+      "type": "document",
+      "documentKind": "technical-report",
+      "name": "Seed-Thinking-v1.5: Advancing Superb Reasoning Models with Reinforcement Learning",
+      "subtype": "Technical report",
+      "aliases": ["Seed1.5-Thinking"],
+      "description": "Technical report by ByteDance Seed on a reasoning model; cited at arXiv version 1 of 10 April 2025, whose title reads Seed-Thinking-v1.5 (the arXiv listing gives later versions the title Seed1.5-Thinking).",
+      "sourceIds": ["c2-src-seed-thinking-arxiv-v1"]
+    },
+    {
+      "id": "seed-15-vl-report",
+      "type": "document",
+      "documentKind": "technical-report",
+      "name": "Seed1.5-VL Technical Report",
+      "subtype": "Technical report",
+      "aliases": [],
+      "description": "Technical report by ByteDance Seed on a vision-language model; cited at arXiv version 1 of 11 May 2025.",
+      "sourceIds": ["c2-src-seed-vl-arxiv-v1"]
+    },
+    {
+      "id": "seed-coder-report",
+      "type": "document",
+      "documentKind": "technical-report",
+      "name": "Seed-Coder: Let the Code Model Curate Data for Itself",
+      "subtype": "Technical report",
+      "aliases": [],
+      "description": "Technical report by ByteDance Seed on the Seed-Coder 8B code models; cited at arXiv version 1 of 4 June 2025.",
+      "sourceIds": [
+        "c2-src-seed-coder-arxiv-v1-abs",
+        "c2-src-seed-coder-arxiv-v1-pdf"
+      ]
+    },
+    {
+      "id": "seed-coder-licence",
+      "type": "document",
+      "documentKind": "licence",
+      "name": "Seed-Coder-8B-Instruct licence statement, revision 1c5af72a",
+      "subtype": "Model licence",
+      "aliases": [],
+      "description": "Licence metadata and section of the Hugging Face model card for ByteDance-Seed/Seed-Coder-8B-Instruct at revision 1c5af72a of 6 June 2025.",
+      "sourceIds": ["c2-src-seed-coder-hf-readme-1c5af72a"]
+    },
+    {
+      "id": "seed-x-report",
+      "type": "document",
+      "documentKind": "technical-report",
+      "name": "Seed-X: Building Strong Multilingual Translation LLM with 7B Parameters",
+      "subtype": "Technical report",
+      "aliases": [],
+      "description": "Technical report by ByteDance Seed on the Seed-X translation models; cited at arXiv version 1 of 18 July 2025.",
+      "sourceIds": ["c2-src-seed-x-arxiv-v1-abs", "c2-src-seed-x-arxiv-v1-pdf"]
+    },
+    {
+      "id": "seed-x-licence",
+      "type": "document",
+      "documentKind": "licence",
+      "name": "Seed-X-Instruct-7B licence (OpenMDW-1.0), revision a41af5ab",
+      "subtype": "Model licence",
+      "aliases": [],
+      "description": "Licence section of the Hugging Face model card for ByteDance-Seed/Seed-X-Instruct-7B and the LICENSE file (OpenMDW License Agreement, version 1.0) at revision a41af5ab of 28 July 2025.",
+      "sourceIds": ["c2-src-seed-x-hf-readme", "c2-src-seed-x-hf-license"]
+    },
+    {
+      "id": "seed-oss-model-card",
+      "type": "document",
+      "documentKind": "model-card",
+      "name": "Seed-OSS-36B-Instruct model card, revision 497f1dca",
+      "subtype": "Model card",
+      "aliases": ["Seed-OSS Open-Source Models"],
+      "description": "Hugging Face model card (README.md) for ByteDance-Seed/Seed-OSS-36B-Instruct at revision 497f1dca of 26 August 2025, announcing the Seed-OSS-36B models.",
+      "sourceIds": ["c2-src-seed-oss-hf-readme"]
+    },
+    {
+      "id": "seed-oss-licence",
+      "type": "document",
+      "documentKind": "licence",
+      "name": "Seed-OSS licence statement (Apache-2.0)",
+      "subtype": "Model licence",
+      "aliases": [],
+      "description": "The Seed-OSS model card's licence statement at Hugging Face revision 497f1dca and the LICENSE file of the ByteDance-Seed/seed-oss Git repository at commit 3dc77576 of 25 August 2025.",
+      "sourceIds": ["c2-src-seed-oss-hf-readme", "c2-src-seed-oss-gh-license"]
+    },
+    {
+      "id": "seed-18-model-card",
+      "type": "document",
+      "documentKind": "model-card",
+      "name": "Seed1.8 Model Card: Towards Generalized Real-World Agency",
+      "subtype": "Model card (report)",
+      "aliases": [],
+      "description": "Model card by ByteDance Seed for Seed1.8; cited at arXiv version 1 of 21 March 2026.",
+      "sourceIds": ["c2-src-seed-18-arxiv-v1"]
+    },
+    {
+      "id": "seed-20-model-card",
+      "type": "document",
+      "documentKind": "model-card",
+      "name": "Seed2.0 Model Card: Towards Intelligence Frontier for Real-World Complexity",
+      "subtype": "Model card (report)",
+      "aliases": [],
+      "description": "Model card by ByteDance Seed for the Seed2.0 model series; cited at arXiv version 1 of 30 June 2026.",
+      "sourceIds": ["c2-src-seed-20-arxiv-v1"]
+    },
+    {
+      "id": "seed-ap-announcement-2026",
+      "type": "document",
+      "documentKind": "announcement",
+      "name": "Seed Alignment & Preparedness 全球顶尖人才招募启动",
+      "subtype": "Announcement",
+      "aliases": ["Seed Alignment & Preparedness recruitment announcement"],
+      "description": "ByteDance Seed's Chinese-language announcement of 14 October 2026 of its Alignment & Preparedness department and a recruitment drive; read as the page stood on 27 October 2026.",
+      "sourceIds": ["c2-src-seed-ap-2026"]
+    }
+  ],
+  "sources": [
+    {
+      "id": "c2-src-seed-doubao15pro",
+      "cacheKey": "seed-doubao15pro",
+      "title": "Doubao-1.5-pro",
+      "originalTitle": "Doubao 1.5pro - Doubao Team",
+      "authors": ["Doubao Team"],
+      "publisher": "ByteDance Seed (字节跳动 Seed), seed.bytedance.com",
+      "publicationDate": "2025-01-22",
+      "kind": "announcement",
+      "url": "https://seed.bytedance.com/zh/special/doubao_1_5_pro",
+      "route": "direct",
+      "language": "zh-Hans",
+      "sourceClass": "primary",
+      "version": {
+        "kind": "mutable-page",
+        "id": null,
+        "note": "Page dated 2025.01.22 on its face, read as it stood on 27 October 2026; earlier wording not authenticated."
+      }
+    },
+    {
+      "id": "c2-src-seed-thinking-arxiv-v1",
+      "cacheKey": "seed-thinking-pdf",
+      "title": "Seed-Thinking-v1.5: Advancing Superb Reasoning Models with Reinforcement Learning",
+      "originalTitle": null,
+      "authors": ["ByteDance Seed"],
+      "publisher": "arXiv",
+      "publicationDate": "2025-04-10",
+      "kind": "paper",
+      "url": "https://arxiv.org/pdf/2504.13914v1",
+      "route": "direct",
+      "language": "en",
+      "sourceClass": "primary",
+      "version": {
+        "kind": "arxiv",
+        "id": "2504.13914v1",
+        "note": "Version 1 as submitted on 10 April 2025; version 3 (29 April 2025) not inspected."
+      }
+    },
+    {
+      "id": "c2-src-seed-vl-arxiv-v1",
+      "cacheKey": "seed-vl-pdf",
+      "title": "Seed1.5-VL Technical Report",
+      "originalTitle": null,
+      "authors": ["ByteDance Seed"],
+      "publisher": "arXiv",
+      "publicationDate": "2025-05-11",
+      "kind": "paper",
+      "url": "https://arxiv.org/pdf/2505.07062v1",
+      "route": "direct",
+      "language": "en",
+      "sourceClass": "primary",
+      "version": {
+        "kind": "arxiv",
+        "id": "2505.07062v1",
+        "note": "Version 1 as submitted on 11 May 2025."
+      }
+    },
+    {
+      "id": "c2-src-seed-coder-arxiv-v1-abs",
+      "cacheKey": "seed-coder-abs",
+      "title": "Seed-Coder: Let the Code Model Curate Data for Itself (arXiv abstract page)",
+      "originalTitle": null,
+      "authors": ["ByteDance Seed"],
+      "publisher": "arXiv",
+      "publicationDate": "2025-06-04",
+      "kind": "paper",
+      "url": "https://arxiv.org/abs/2506.03524v1",
+      "route": "direct",
+      "language": "en",
+      "sourceClass": "primary",
+      "version": {
+        "kind": "arxiv",
+        "id": "2506.03524v1",
+        "note": "Abstract page of version 1 (submitted 4 June 2025); version 2 dated 5 June 2025 not inspected."
+      }
+    },
+    {
+      "id": "c2-src-seed-coder-arxiv-v1-pdf",
+      "cacheKey": "seed-coder-pdf",
+      "title": "Seed-Coder: Let the Code Model Curate Data for Itself",
+      "originalTitle": null,
+      "authors": ["ByteDance Seed"],
+      "publisher": "arXiv",
+      "publicationDate": "2025-06-04",
+      "kind": "paper",
+      "url": "https://arxiv.org/pdf/2506.03524v1",
+      "route": "direct",
+      "language": "en",
+      "sourceClass": "primary",
+      "version": {
+        "kind": "arxiv",
+        "id": "2506.03524v1",
+        "note": "PDF of version 1."
+      }
+    },
+    {
+      "id": "c2-src-seed-coder-hf-readme-1c5af72a",
+      "cacheKey": "seed-coder-hf-readme-0606",
+      "title": "Seed-Coder-8B-Instruct model card (README.md, revision 1c5af72a)",
+      "originalTitle": null,
+      "authors": ["ByteDance Seed"],
+      "publisher": "ByteDance Seed (Hugging Face organisation ByteDance-Seed)",
+      "publicationDate": "2025-06-06",
+      "kind": "announcement",
+      "url": "https://huggingface.co/ByteDance-Seed/Seed-Coder-8B-Instruct/raw/1c5af72afa21c22c9272a0b60a3a404195e88fcd/README.md",
+      "route": "direct",
+      "language": "en",
+      "sourceClass": "primary",
+      "version": {
+        "kind": "hf-commit",
+        "id": "1c5af72afa21c22c9272a0b60a3a404195e88fcd",
+        "note": "README.md at the Hugging Face commit of 6 June 2025 (latest on main at retrieval)."
+      }
+    },
+    {
+      "id": "c2-src-seed-coder-hf-readme-f80ca53f",
+      "cacheKey": "seed-coder-hf-readme",
+      "title": "Seed-Coder-8B-Instruct model card (README.md, revision f80ca53f)",
+      "originalTitle": null,
+      "authors": ["ByteDance Seed"],
+      "publisher": "ByteDance Seed (Hugging Face organisation ByteDance-Seed)",
+      "publicationDate": "2025-04-30",
+      "kind": "announcement",
+      "url": "https://huggingface.co/ByteDance-Seed/Seed-Coder-8B-Instruct/raw/f80ca53f4789f6eb8e73e1bf633291d875dd56d1/README.md",
+      "route": "direct",
+      "language": "en",
+      "sourceClass": "primary",
+      "version": {
+        "kind": "hf-commit",
+        "id": "f80ca53f4789f6eb8e73e1bf633291d875dd56d1",
+        "note": "Earlier README.md revision of 30 April 2025; whether the repository was public at that date is not established."
+      }
+    },
+    {
+      "id": "c2-src-seed-x-arxiv-v1-abs",
+      "cacheKey": "seed-x-abs",
+      "title": "Seed-X: Building Strong Multilingual Translation LLM with 7B Parameters (arXiv abstract page)",
+      "originalTitle": null,
+      "authors": ["ByteDance Seed"],
+      "publisher": "arXiv",
+      "publicationDate": "2025-07-18",
+      "kind": "paper",
+      "url": "https://arxiv.org/abs/2507.13618v1",
+      "route": "direct",
+      "language": "en",
+      "sourceClass": "primary",
+      "version": {
+        "kind": "arxiv",
+        "id": "2507.13618v1",
+        "note": "Abstract page of version 1 (submitted 18 July 2025); version 4 dated 21 August 2025 not inspected."
+      }
+    },
+    {
+      "id": "c2-src-seed-x-arxiv-v1-pdf",
+      "cacheKey": "seed-x-pdf",
+      "title": "Seed-X: Building Strong Multilingual Translation LLM with 7B Parameters",
+      "originalTitle": null,
+      "authors": ["ByteDance Seed"],
+      "publisher": "arXiv",
+      "publicationDate": "2025-07-18",
+      "kind": "paper",
+      "url": "https://arxiv.org/pdf/2507.13618v1",
+      "route": "direct",
+      "language": "en",
+      "sourceClass": "primary",
+      "version": {
+        "kind": "arxiv",
+        "id": "2507.13618v1",
+        "note": "PDF of version 1."
+      }
+    },
+    {
+      "id": "c2-src-seed-x-hf-readme",
+      "cacheKey": "seed-x-hf-readme",
+      "title": "Seed-X-Instruct-7B model card (README.md, revision a41af5ab)",
+      "originalTitle": null,
+      "authors": ["ByteDance Seed"],
+      "publisher": "ByteDance Seed (Hugging Face organisation ByteDance-Seed)",
+      "publicationDate": "2025-07-28",
+      "kind": "announcement",
+      "url": "https://huggingface.co/ByteDance-Seed/Seed-X-Instruct-7B/raw/a41af5abee0fc5acbd5370c8dda9d0feb6cb7103/README.md",
+      "route": "direct",
+      "language": "en",
+      "sourceClass": "primary",
+      "version": {
+        "kind": "hf-commit",
+        "id": "a41af5abee0fc5acbd5370c8dda9d0feb6cb7103",
+        "note": "README.md at the Hugging Face commit of 28 July 2025 (latest on main at retrieval); repository created 16 July 2025."
+      }
+    },
+    {
+      "id": "c2-src-seed-x-hf-license",
+      "cacheKey": "seed-x-hf-license",
+      "title": "Seed-X-Instruct-7B LICENSE (revision a41af5ab)",
+      "originalTitle": null,
+      "authors": ["ByteDance Seed"],
+      "publisher": "ByteDance Seed (Hugging Face organisation ByteDance-Seed)",
+      "publicationDate": "2025-07-28",
+      "kind": "announcement",
+      "url": "https://huggingface.co/ByteDance-Seed/Seed-X-Instruct-7B/raw/a41af5abee0fc5acbd5370c8dda9d0feb6cb7103/LICENSE",
+      "route": "direct",
+      "language": "en",
+      "sourceClass": "primary",
+      "version": {
+        "kind": "hf-commit",
+        "id": "a41af5abee0fc5acbd5370c8dda9d0feb6cb7103",
+        "note": "LICENSE file as it stands at the revision of 28 July 2025."
+      }
+    },
+    {
+      "id": "c2-src-seed-oss-hf-readme",
+      "cacheKey": "seed-oss-hf-readme",
+      "datasetSourceId": "lg-src-gc-seed-oss-readme",
+      "title": "Seed-OSS-36B-Instruct model card (README.md, revision 497f1dca)",
+      "originalTitle": null,
+      "authors": ["ByteDance Seed Team"],
+      "publisher": "ByteDance Seed (Hugging Face organisation ByteDance-Seed)",
+      "publicationDate": "2025-08-26",
+      "kind": "announcement",
+      "url": "https://huggingface.co/ByteDance-Seed/Seed-OSS-36B-Instruct/raw/497f1dca95ebdec98e41d517b9f060ee753c902f/README.md",
+      "route": "direct",
+      "language": "en",
+      "sourceClass": "primary",
+      "version": {
+        "kind": "hf-commit",
+        "id": "497f1dca95ebdec98e41d517b9f060ee753c902f",
+        "note": "README.md at the Hugging Face commit 'Update readme, chat_template (#16)' of 26 August 2025 (latest on main at retrieval); repository's initial commit 20 August 2025. Already in data/sources.json as lg-src-gc-seed-oss-readme."
+      }
+    },
+    {
+      "id": "c2-src-seed-oss-gh-license",
+      "cacheKey": "seed-oss-gh-license",
+      "title": "ByteDance-Seed/seed-oss LICENSE",
+      "originalTitle": null,
+      "authors": ["ByteDance Seed"],
+      "publisher": "ByteDance-Seed/seed-oss Git repository (GitHub)",
+      "publicationDate": "2025-08-25",
+      "kind": "announcement",
+      "url": "https://raw.githubusercontent.com/ByteDance-Seed/seed-oss/3dc7757688bcfe3742e0ff9e393936ec5383a22b/LICENSE",
+      "route": "direct",
+      "language": "en",
+      "sourceClass": "primary",
+      "version": {
+        "kind": "git-commit",
+        "id": "3dc7757688bcfe3742e0ff9e393936ec5383a22b",
+        "note": "LICENSE at commit 'Update README.md' of 25 August 2025; the file is present, unchanged, from the initial commit 79f8ca3 of 20 August 2025."
+      }
+    },
+    {
+      "id": "c2-src-seed-18-arxiv-v1",
+      "cacheKey": "seed-18-pdf",
+      "title": "Seed1.8 Model Card: Towards Generalized Real-World Agency",
+      "originalTitle": null,
+      "authors": ["Bytedance Seed"],
+      "publisher": "arXiv",
+      "publicationDate": "2026-03-21",
+      "kind": "paper",
+      "url": "https://arxiv.org/pdf/2603.20633v1",
+      "route": "direct",
+      "language": "en",
+      "sourceClass": "primary",
+      "version": {
+        "kind": "arxiv",
+        "id": "2603.20633v1",
+        "note": "Version 1 as submitted on 21 March 2026; version 3 (17 April 2026) not inspected."
+      }
+    },
+    {
+      "id": "c2-src-seed-20-arxiv-v1",
+      "cacheKey": "seed-20-pdf",
+      "title": "Seed2.0 Model Card: Towards Intelligence Frontier for Real-World Complexity",
+      "originalTitle": null,
+      "authors": ["Bytedance Seed"],
+      "publisher": "arXiv",
+      "publicationDate": "2026-06-30",
+      "kind": "paper",
+      "url": "https://arxiv.org/pdf/2607.00248v1",
+      "route": "direct",
+      "language": "en",
+      "sourceClass": "primary",
+      "version": {
+        "kind": "arxiv",
+        "id": "2607.00248v1",
+        "note": "Version 1 as submitted on 30 June 2026."
+      }
+    },
+    {
+      "id": "c2-src-seed-ap-2026",
+      "cacheKey": "seed-ap-2026",
+      "datasetSourceId": "lg-src-gc-seed-ap-2026",
+      "title": "Seed Alignment & Preparedness global top-talent recruitment launched",
+      "originalTitle": "Seed Alignment & Preparedness 全球顶尖人才招募启动",
+      "authors": ["ByteDance Seed"],
+      "publisher": "ByteDance Seed (字节跳动 Seed)",
+      "publicationDate": "2026-10-14",
+      "kind": "announcement",
+      "url": "https://seed.bytedance.com/zh/blog/seed-alignment-preparedness-team-looking-for-global-talents",
+      "route": "direct",
+      "language": "zh-Hans",
+      "sourceClass": "primary",
+      "version": {
+        "kind": "mutable-page",
+        "id": null,
+        "note": "Page dated 2026-10-14 on its face, read as it stood on 27 October 2026. Already in data/sources.json as lg-src-gc-seed-ap-2026 (retrieved 2026-10-15)."
+      }
+    }
+  ],
+  "claims": [
+    {
+      "id": "c2-bytedance-seed-unit-of-bytedance",
+      "subject": "bytedance-seed",
+      "predicate": "unit_of",
+      "object": {
+        "kind": "entity",
+        "entityId": "bytedance"
+      },
+      "topic": "institutions",
+      "statement": "The Seed-OSS model card (Hugging Face revision of 26 August 2025) describes the Seed Team as ByteDance's, stating that the Seed-OSS models were developed by ByteDance's Seed Team.",
+      "time": {
+        "kind": "snapshot",
+        "date": "2025-08-26",
+        "basis": "revision",
+        "note": "State shown in the model card at the cited revision; the card does not date when the team became part of ByteDance, and the existing record gives its stated founding year as 2023."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "The card states the possessive relation ('ByteDance's Seed Team'); it does not describe the team's internal reporting line, legal entity or headcount.",
+      "evidence": [
+        {
+          "id": "c2-ev-bytedance-seed-unit-of-bytedance",
+          "sourceId": "c2-src-seed-oss-hf-readme",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Section 'Introduction'",
+          "passageType": "quote",
+          "passage": "Seed-OSS is a series of open-source large language models developed by ByteDance's Seed Team",
+          "translation": null
+        }
+      ]
+    },
+    {
+      "id": "c2-bytedance-seed-doubao-15-pro",
+      "subject": "bytedance-seed",
+      "predicate": "published",
+      "object": {
+        "kind": "entity",
+        "entityId": "doubao-15-pro-page"
+      },
+      "topic": "ideas",
+      "statement": "A Chinese-language page on ByteDance Seed's website, dated 22 January 2025 and titled 'Doubao 1.5pro - Doubao Team', describes the Doubao-1.5-pro model as using a mixture-of-experts architecture.",
+      "time": {
+        "kind": "event",
+        "date": "2025-01-22",
+        "basis": "publication",
+        "note": "Date printed on the page; the page is mutable and was read on 27 October 2026, so the date and wording as originally published are not authenticated."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "The page names 'Doubao Team' as its author and is hosted on seed.bytedance.com; the relation between that name and the Seed team in January 2025 is not established beyond the hosting. The page's performance and cost statements are not recorded. Doubao-1.5-pro is described, not released as weights.",
+      "evidence": [
+        {
+          "id": "c2-ev-bytedance-seed-doubao-15-pro",
+          "sourceId": "c2-src-seed-doubao15pro",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Page header and opening paragraph",
+          "passageType": "quote",
+          "passage": "2025.01.22 Doubao-1.5-pro 模型使用 MoE 架构，并通过训练-推理一体化设计",
+          "translation": {
+            "text": "2025.01.22 Doubao-1.5-pro. The model uses an MoE architecture and, through an integrated training–inference design,",
+            "method": "machine",
+            "humanVerified": false
+          }
+        },
+        {
+          "id": "c2-ev-bytedance-seed-doubao-15-pro-title",
+          "sourceId": "c2-src-seed-doubao15pro",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Page title",
+          "passageType": "quote",
+          "passage": "Doubao 1.5pro - Doubao Team",
+          "translation": null
+        }
+      ]
+    },
+    {
+      "id": "c2-bytedance-seed-thinking-v15-report",
+      "subject": "bytedance-seed",
+      "predicate": "published",
+      "object": {
+        "kind": "entity",
+        "entityId": "seed-thinking-v15-report"
+      },
+      "topic": "ideas",
+      "statement": "ByteDance Seed posted the Seed-Thinking-v1.5 reasoning-model report to arXiv on 10 April 2025 (version 1); later arXiv versions are titled Seed1.5-Thinking.",
+      "time": {
+        "kind": "event",
+        "date": "2025-04-10",
+        "basis": "publication",
+        "note": "Submission date of arXiv version 1; not a model release or API availability date. Version 3 is dated 29 April 2025."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "The report is credited to 'ByteDance Seed' with a contributions list. Benchmark figures in the abstract are not recorded. The renaming is read from the arXiv listing, not from a Seed statement.",
+      "evidence": [
+        {
+          "id": "c2-ev-bytedance-seed-thinking-v15-report",
+          "sourceId": "c2-src-seed-thinking-arxiv-v1",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Title page and arXiv stamp",
+          "passageType": "quote",
+          "passage": "Seed-Thinking-v1.5: Advancing Superb Reasoning Models with Reinforcement Learning ByteDance Seed arXiv:2504.13914v1 [cs.CL] 10 Apr 2025",
+          "translation": null
+        }
+      ]
+    },
+    {
+      "id": "c2-bytedance-seed-15-vl-report",
+      "subject": "bytedance-seed",
+      "predicate": "published",
+      "object": {
+        "kind": "entity",
+        "entityId": "seed-15-vl-report"
+      },
+      "topic": "ideas",
+      "statement": "ByteDance Seed posted the Seed1.5-VL vision-language model technical report to arXiv on 11 May 2025 (version 1).",
+      "time": {
+        "kind": "event",
+        "date": "2025-05-11",
+        "basis": "publication",
+        "note": "Submission date of arXiv version 1; not a model release or API availability date."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "The report's architecture and benchmark statements are not recorded. The record does not establish a release of weights.",
+      "evidence": [
+        {
+          "id": "c2-ev-bytedance-seed-15-vl-report",
+          "sourceId": "c2-src-seed-vl-arxiv-v1",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Title page and arXiv stamp",
+          "passageType": "quote",
+          "passage": "Seed1.5-VL Technical Report ByteDance Seed arXiv:2505.07062v1 [cs.CV] 11 May 2025",
+          "translation": null
+        }
+      ]
+    },
+    {
+      "id": "c2-bytedance-seed-coder-report",
+      "subject": "bytedance-seed",
+      "predicate": "published",
+      "object": {
+        "kind": "entity",
+        "entityId": "seed-coder-report"
+      },
+      "topic": "ideas",
+      "statement": "ByteDance Seed posted the Seed-Coder technical report to arXiv on 4 June 2025 (version 1).",
+      "time": {
+        "kind": "event",
+        "date": "2025-06-04",
+        "basis": "publication",
+        "note": "Submission date of arXiv version 1. The Hugging Face repositories for the Seed-Coder-8B models were created on 27 April 2025; the date they became public is not established."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "The report's comparative performance statements are not recorded.",
+      "evidence": [
+        {
+          "id": "c2-ev-bytedance-seed-coder-report",
+          "sourceId": "c2-src-seed-coder-arxiv-v1-abs",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Abstract page header",
+          "passageType": "quote",
+          "passage": "arXiv:2506.03524v1 (cs) [Submitted on 4 Jun 2025 (this version), latest version 5 Jun 2025 (v2)]",
+          "translation": null
+        },
+        {
+          "id": "c2-ev-bytedance-seed-coder-report-pdf",
+          "sourceId": "c2-src-seed-coder-arxiv-v1-pdf",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Title page",
+          "passageType": "quote",
+          "passage": "Seed-Coder: Let the Code Model Curate Data for Itself ByteDance Seed",
+          "translation": null
+        }
+      ]
+    },
+    {
+      "id": "c2-bytedance-seed-coder-licence",
+      "subject": "bytedance-seed",
+      "predicate": "published",
+      "object": {
+        "kind": "entity",
+        "entityId": "seed-coder-licence"
+      },
+      "topic": "governance",
+      "statement": "The Seed-Coder-8B-Instruct model card at its revision of 6 June 2025 states that the project is licensed under the MIT License; its revisions up to 6 May 2025 had carried the licence metadata apache-2.0.",
+      "time": {
+        "kind": "snapshot",
+        "date": "2025-06-06",
+        "basis": "revision",
+        "note": "State at Hugging Face revision 1c5af72a. Comparing every revision's metadata, the change from apache-2.0 to mit occurs at revision 9cc504ad of 6 May 2025; whether the repository was public before that change is not established."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "Read from the Instruct repository only; the Base and Reasoning repositories carry the mit tag in the Hugging Face listing but their card histories were not compared. The record makes no judgement about the earlier metadata beyond stating it; no Seed statement explaining the change was found.",
+      "evidence": [
+        {
+          "id": "c2-ev-bytedance-seed-coder-licence",
+          "sourceId": "c2-src-seed-coder-hf-readme-1c5af72a",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Section 'License' and front-matter metadata",
+          "passageType": "quote",
+          "passage": "This project is licensed under the MIT License.",
+          "translation": null
+        },
+        {
+          "id": "c2-ev-bytedance-seed-coder-licence-meta",
+          "sourceId": "c2-src-seed-coder-hf-readme-1c5af72a",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Front-matter metadata",
+          "passageType": "quote",
+          "passage": "license: mit",
+          "translation": null
+        },
+        {
+          "id": "c2-ev-bytedance-seed-coder-licence-earlier",
+          "sourceId": "c2-src-seed-coder-hf-readme-f80ca53f",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Front-matter metadata of the revision of 30 April 2025",
+          "passageType": "quote",
+          "passage": "license: apache-2.0",
+          "translation": null
+        }
+      ]
+    },
+    {
+      "id": "c2-bytedance-seed-x-report",
+      "subject": "bytedance-seed",
+      "predicate": "published",
+      "object": {
+        "kind": "entity",
+        "entityId": "seed-x-report"
+      },
+      "topic": "ideas",
+      "statement": "ByteDance Seed posted the Seed-X multilingual translation model report to arXiv on 18 July 2025 (version 1).",
+      "time": {
+        "kind": "event",
+        "date": "2025-07-18",
+        "basis": "publication",
+        "note": "Submission date of arXiv version 1; the Seed-X Hugging Face repositories were created on 16 July 2025. Neither date is established as the public release date of the weights."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "Translation-quality statements in the report are not recorded.",
+      "evidence": [
+        {
+          "id": "c2-ev-bytedance-seed-x-report",
+          "sourceId": "c2-src-seed-x-arxiv-v1-abs",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Abstract page header",
+          "passageType": "quote",
+          "passage": "arXiv:2507.13618v1 (cs) [Submitted on 18 Jul 2025 (this version), latest version 21 Aug 2025 (v4)]",
+          "translation": null
+        },
+        {
+          "id": "c2-ev-bytedance-seed-x-report-pdf",
+          "sourceId": "c2-src-seed-x-arxiv-v1-pdf",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Title page",
+          "passageType": "quote",
+          "passage": "Seed-X: Building Strong Multilingual Translation LLM with 7B Parameters ByteDance Seed",
+          "translation": null
+        }
+      ]
+    },
+    {
+      "id": "c2-bytedance-seed-x-licence",
+      "subject": "bytedance-seed",
+      "predicate": "published",
+      "object": {
+        "kind": "entity",
+        "entityId": "seed-x-licence"
+      },
+      "topic": "governance",
+      "statement": "The Seed-X-Instruct-7B model card at its revision of 28 July 2025 states that the project is licensed under OpenMDW, and the repository's LICENSE file is the OpenMDW License Agreement, version 1.0.",
+      "time": {
+        "kind": "snapshot",
+        "date": "2025-07-28",
+        "basis": "revision",
+        "note": "State at Hugging Face revision a41af5ab; earlier revisions not compared."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "Read from the Instruct repository; the PPO and RM repositories carry the same 'other' licence tag in the Hugging Face listing but were not opened. The licence is described in its own words; no classification of it is made.",
+      "evidence": [
+        {
+          "id": "c2-ev-bytedance-seed-x-licence",
+          "sourceId": "c2-src-seed-x-hf-readme",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Section 'License'",
+          "passageType": "quote",
+          "passage": "This project is licensed under OpenMDW.",
+          "translation": null
+        },
+        {
+          "id": "c2-ev-bytedance-seed-x-licence-file",
+          "sourceId": "c2-src-seed-x-hf-license",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "LICENSE, heading and grant clause",
+          "passageType": "quote",
+          "passage": "OpenMDW License Agreement, version 1.0 (OpenMDW-1.0) … permission is hereby granted, free of charge, to deal in the Model Materials without restriction",
+          "translation": null
+        }
+      ]
+    },
+    {
+      "id": "c2-bytedance-seed-oss-release",
+      "subject": "bytedance-seed",
+      "predicate": "published",
+      "object": {
+        "kind": "entity",
+        "entityId": "seed-oss-model-card"
+      },
+      "topic": "ideas",
+      "statement": "ByteDance Seed's Seed-OSS model card states that on 20 August 2025 it released Seed-OSS-36B-Base, in versions with and without synthetic data, and Seed-OSS-36B-Instruct.",
+      "time": {
+        "kind": "event",
+        "date": "2025-08-20",
+        "basis": "announcement",
+        "note": "Release date as given in the card's News line, read at the revision of 26 August 2025; the Hugging Face repository's initial commit is also dated 20 August 2025."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "The card's benchmark statements are not recorded. The existing record lg-gc-bytedance-seed-founded-2023 already uses this card for Seed's founding year.",
+      "evidence": [
+        {
+          "id": "c2-ev-bytedance-seed-oss-release",
+          "sourceId": "c2-src-seed-oss-hf-readme",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Section 'News'",
+          "passageType": "quote",
+          "passage": "[2025/08/20]🔥We release `Seed-OSS-36B-Base` (both with and without synthetic data versions) and `Seed-OSS-36B-Instruct`.",
+          "translation": null
+        }
+      ]
+    },
+    {
+      "id": "c2-bytedance-seed-oss-licence",
+      "subject": "bytedance-seed",
+      "predicate": "published",
+      "object": {
+        "kind": "entity",
+        "entityId": "seed-oss-licence"
+      },
+      "topic": "governance",
+      "statement": "The Seed-OSS model card (revision of 26 August 2025) states that the Seed-OSS series is released under the Apache-2.0 license, and the seed-oss Git repository's LICENSE file at its commit of 25 August 2025 is the Apache License, Version 2.0.",
+      "time": {
+        "kind": "snapshot",
+        "date": "2025-08-26",
+        "basis": "revision",
+        "note": "State at Hugging Face revision 497f1dca and Git commit 3dc77576; the LICENSE file is present, unchanged, from the repository's initial commit of 20 August 2025."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "Read from the Instruct model card and the code repository; the two Base repositories carry the apache-2.0 tag in the Hugging Face listing but their cards were not opened. 'Open-source' is Seed's term.",
+      "evidence": [
+        {
+          "id": "c2-ev-bytedance-seed-oss-licence",
+          "sourceId": "c2-src-seed-oss-hf-readme",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Section 'Introduction'",
+          "passageType": "quote",
+          "passage": "We release this series of models to the open-source community under the Apache-2.0 license.",
+          "translation": null
+        },
+        {
+          "id": "c2-ev-bytedance-seed-oss-licence-file",
+          "sourceId": "c2-src-seed-oss-gh-license",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "LICENSE, heading",
+          "passageType": "quote",
+          "passage": "Apache License Version 2.0, January 2004",
+          "translation": null
+        }
+      ]
+    },
+    {
+      "id": "c2-bytedance-seed-18-model-card",
+      "subject": "bytedance-seed",
+      "predicate": "published",
+      "object": {
+        "kind": "entity",
+        "entityId": "seed-18-model-card"
+      },
+      "topic": "ideas",
+      "statement": "ByteDance Seed posted the Seed1.8 model card to arXiv on 21 March 2026 (version 1).",
+      "time": {
+        "kind": "event",
+        "date": "2026-03-21",
+        "basis": "publication",
+        "note": "Submission date of arXiv version 1; the model's own release date is not established here. Version 3 is dated 17 April 2026."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "The card's capability and benchmark statements are not recorded. Its short 'Safety' section states that Seed has established guidelines for refusing harmful content; this is Seed's description, not evidence of implementation.",
+      "evidence": [
+        {
+          "id": "c2-ev-bytedance-seed-18-model-card",
+          "sourceId": "c2-src-seed-18-arxiv-v1",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Title page and arXiv stamp",
+          "passageType": "quote",
+          "passage": "Seed1.8 Model Card: Towards Generalized Real-World Agency arXiv:2603.20633v1 [cs.AI] 21 Mar 2026 Bytedance Seed",
+          "translation": null
+        },
+        {
+          "id": "c2-ev-bytedance-seed-18-model-card-safety",
+          "sourceId": "c2-src-seed-18-arxiv-v1",
+          "sourceRole": "primary",
+          "support": "context",
+          "locator": "Section 4, Safety",
+          "passageType": "quote",
+          "passage": "We have established strict guidelines to ensure our models refuse harmful content and comply with ethical and legal standards.",
+          "translation": null
+        }
+      ]
+    },
+    {
+      "id": "c2-bytedance-seed-20-model-card",
+      "subject": "bytedance-seed",
+      "predicate": "published",
+      "object": {
+        "kind": "entity",
+        "entityId": "seed-20-model-card"
+      },
+      "topic": "ideas",
+      "statement": "ByteDance Seed posted the Seed2.0 model card to arXiv on 30 June 2026 (version 1).",
+      "time": {
+        "kind": "event",
+        "date": "2026-06-30",
+        "basis": "publication",
+        "note": "Submission date of arXiv version 1; the model series' own release date is not established here."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "The card's comparisons with other developers' models are not recorded. Its contributors are listed alphabetically and, as the card states, some names are internal aliases, so no individual authorship is drawn from the list.",
+      "evidence": [
+        {
+          "id": "c2-ev-bytedance-seed-20-model-card",
+          "sourceId": "c2-src-seed-20-arxiv-v1",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Title page and arXiv stamp",
+          "passageType": "quote",
+          "passage": "Seed2.0 Model Card: Towards Intelligence Frontier for Real-World Complexity arXiv:2607.00248v1 [cs.AI] 30 Jun 2026 Bytedance Seed",
+          "translation": null
+        },
+        {
+          "id": "c2-ev-bytedance-seed-20-model-card-aliases",
+          "sourceId": "c2-src-seed-20-arxiv-v1",
+          "sourceRole": "primary",
+          "support": "context",
+          "locator": "Section 7, Contributors",
+          "passageType": "quote",
+          "passage": "The authors are listed in alphabetical order by their first names. Some names refer to the authors' internal aliases at the company.",
+          "translation": null
+        }
+      ]
+    },
+    {
+      "id": "c2-bytedance-seed-ap-announcement",
+      "subject": "bytedance-seed",
+      "predicate": "published",
+      "object": {
+        "kind": "entity",
+        "entityId": "seed-ap-announcement-2026"
+      },
+      "topic": "governance",
+      "statement": "ByteDance Seed's announcement of 14 October 2026 lists among the planned work of its Alignment & Preparedness department drafting model behaviour specifications and safety guidelines, building a safety evaluation system, and promoting third-party professional testing.",
+      "time": {
+        "kind": "event",
+        "date": "2026-10-14",
+        "basis": "publication",
+        "note": "Date printed on the page; read on 27 October 2026. The formation of the department is recorded in the existing claim lg-gc-seed-alignment-preparedness-2026."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "Planned work stated in a recruitment announcement; nothing here establishes that any specification, evaluation system or third-party test exists or has been carried out. 制定 is rendered 'draft/formulate' and 推动 'promote'.",
+      "evidence": [
+        {
+          "id": "c2-ev-bytedance-seed-ap-announcement",
+          "sourceId": "c2-src-seed-ap-2026",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "List of work areas, item 'Improve the safety foundation and workflows'",
+          "passageType": "quote",
+          "passage": "制定模型行为规范和安全准则，建立科学的安全评估体系",
+          "translation": {
+            "text": "Formulate model behaviour specifications and safety guidelines, and establish a scientific safety evaluation system",
+            "method": "machine",
+            "humanVerified": false
+          }
+        },
+        {
+          "id": "c2-ev-bytedance-seed-ap-announcement-third-party",
+          "sourceId": "c2-src-seed-ap-2026",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "List of work areas, item 'Verify and improve model safety with external partners'",
+          "passageType": "quote",
+          "passage": "推动第三方专业测试，与高校和研究机构共同推进前沿安全能力研究",
+          "translation": {
+            "text": "Promote third-party professional testing, and advance frontier safety-capability research together with universities and research institutions",
+            "method": "machine",
+            "humanVerified": false
+          }
+        }
+      ]
+    }
+  ]
+}

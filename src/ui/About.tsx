@@ -53,6 +53,7 @@ const typeNouns: Record<Entity['type'], [string, string]> = {
   model: ['model', 'models'],
   public_body: ['public body', 'public bodies'],
   fund: ['fund', 'funds'],
+  country: ['country', 'countries'],
 };
 
 export function About({
@@ -249,6 +250,11 @@ export function About({
                 JSON and CSV, with a manifest, changelog and citation file.
                 Selekoa’s own records and text are licensed CC BY 4.0. Quoted
                 source passages remain the publishers’ text and are excluded.
+                The same files are published one by one under{' '}
+                <a href="data/README.md">data/</a>, such as{' '}
+                <a href="data/claims.json">data/claims.json</a>, and always
+                serve the latest release. <a href="llms.txt">llms.txt</a> lists
+                them for programs and language-model tools.
                 {changedSinceRelease(data, latestRelease) &&
                   ' The records on these pages have changed since this release.'}
               </>
@@ -260,9 +266,20 @@ export function About({
         <p>
           Institutional coverage centres on Anthropic, OpenAI, DeepMind and
           Google DeepMind, xAI and Meta, with earlier material on MIRI and the
-          history of AI alignment research. A first Chinese collection covers
-          DeepSeek, Alibaba and its Qwen models, and Zhipu AI. Related
-          institutions keep separate records.
+          history of AI alignment research. Two Chinese collections cover
+          DeepSeek, Alibaba and its Qwen models, Zhipu AI, Moonshot AI, MiniMax,
+          Baidu and its ERNIE models, and ByteDance Seed, with three Chinese AI
+          governance texts. Related institutions keep separate records.
+        </p>
+        <h3 id="about-not-covered" tabIndex={-1}>
+          Not yet covered
+        </h3>
+        <p>
+          Whether developers followed their own frameworks, model capabilities
+          and benchmark results, chip export controls, and most AI developers
+          other than those named above. Economics is covered only through the
+          propositions in its collection under Ideas & debates. Coverage is
+          selective throughout, and a missing record is a gap in coverage.
         </p>
       </section>
 
@@ -271,7 +288,7 @@ export function About({
           How this was checked
         </h2>
         <dl className="about-terms">
-          <dt>Machine-first research</dt>
+          <dt>Automated research</dt>
           <dd>
             An automated research process finds sources, reads them and proposes
             claims. Each claim must rest on direct evidence from the closest

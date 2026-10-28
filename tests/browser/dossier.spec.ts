@@ -1,4 +1,4 @@
-import { expect, test } from '@playwright/test';
+import { expect, test } from './fixtures';
 import AxeBuilder from '@axe-core/playwright';
 import { dossierCount } from './dossier-count';
 
@@ -7,7 +7,7 @@ test('institution dossier connects chronology, people and exact evidence by keyb
 }) => {
   const errors: string[] = [];
   page.on('pageerror', (error) => errors.push(error.message));
-  await page.goto('/#/explore');
+  await page.goto('/explore');
   await page
     .getByRole('navigation', { name: 'Explore the dataset' })
     .getByRole('button', { name: 'Anthropic', exact: true })
@@ -78,7 +78,7 @@ test('capital and governance preserve bounds and dates in both modes on mobile',
 }) => {
   await page.setViewportSize({ width: 390, height: 844 });
   await page.emulateMedia({ reducedMotion: 'reduce' });
-  await page.goto('/#/explore');
+  await page.goto('/explore');
   await page
     .getByRole('navigation', { name: 'Explore the dataset' })
     .getByRole('button', { name: 'Anthropic', exact: true })

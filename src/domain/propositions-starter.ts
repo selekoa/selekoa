@@ -1,7 +1,7 @@
 import type { Claim, Dataset } from './schema';
 import { canonicalJson, fingerprint, md } from './references';
 import { reviewStatus, reviewStatusSentences } from './review-status';
-import { referenceHash } from './deep-links';
+import { referencePath } from './deep-links';
 import {
   cell,
   closingLines,
@@ -77,7 +77,7 @@ export async function propositionsStarter(
         claimId: claim.id,
         evidenceIds: items.map((e) => e.id),
         sourceIds: items.map((e) => e.sourceId),
-        applicationLink: referenceHash({ kind: 'claim', id: claim.id }),
+        applicationLink: referencePath({ kind: 'claim', id: claim.id }),
       },
     };
   });

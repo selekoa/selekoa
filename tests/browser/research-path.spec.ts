@@ -1,4 +1,4 @@
-import { expect, test, type Page } from '@playwright/test';
+import { expect, test, type Page } from './fixtures';
 import AxeBuilder from '@axe-core/playwright';
 import { dossierCount } from './dossier-count';
 import { researchPath } from '../../src/domain/research-path';
@@ -27,14 +27,14 @@ const repository = {
 
 const selection = researchPath(repository.data, 'anthropic')!;
 async function enter(page: Page) {
-  await page.goto('/#/explore');
+  await page.goto('/explore');
   await page
     .getByRole('navigation', { name: 'Explore the dataset' })
     .getByRole('button', { name: 'Anthropic', exact: true })
     .click();
   await page.getByRole('button', { name: 'Dossier', exact: true }).click();
   await page
-    .getByRole('button', { name: 'Open the guided reading →', exact: true })
+    .getByRole('link', { name: 'Open the guided reading →', exact: true })
     .click();
   return page.getByRole('article', { name: 'Anthropic guided research path' });
 }
@@ -120,13 +120,13 @@ test('principal reading groups seven founders and two leaders; optional branches
   const saved = 'lineage-scaling-uses-batch';
   const anthropicCount = dossierCount('anthropic', 156);
   await reader
-    .getByRole('button', { name: `Full dossier · ${anthropicCount} claims ↗` })
+    .getByRole('link', { name: `Full dossier · ${anthropicCount} claims ↗` })
     .click();
   await expect(
     page.getByRole('article', { name: 'Anthropic institutional dossier' }),
   ).toContainText(`${anthropicCount} claims ·`);
   await page
-    .getByRole('button', {
+    .getByRole('link', {
       name: 'Resume the Anthropic reading · Scaling publications',
       exact: true,
     })
@@ -136,7 +136,7 @@ test('principal reading groups seven founders and two leaders; optional branches
   ).toHaveAttribute('data-bookmarked', 'true');
   await reader.getByRole('button', { name: 'Institution map ↗' }).click();
   await page
-    .getByRole('button', {
+    .getByRole('link', {
       name: 'Resume the Anthropic reading · Scaling publications',
       exact: true,
     })
@@ -149,11 +149,11 @@ test('principal reading groups seven founders and two leaders; optional branches
   );
   await founder.locator('[data-claim-id]').click();
   await inspector
-    .getByRole('button', { name: 'Jared Kaplan', exact: true })
+    .getByRole('link', { name: 'Jared Kaplan', exact: true })
     .click();
   await expect(reader).not.toBeVisible();
   await page
-    .getByRole('button', {
+    .getByRole('link', {
       name: 'Resume the Anthropic reading · Founding & early leadership',
       exact: true,
     })
@@ -281,7 +281,7 @@ test('OpenAI remains a complete dossier and does not inherit the Anthropic branc
 }) => {
   const reader = await enter(page);
   // The question page is a reading page; reach the explorer by its exit.
-  await reader.getByRole('button', { name: /^Full dossier/ }).click();
+  await reader.getByRole('link', { name: /^Full dossier/ }).click();
   await page
     .getByRole('navigation', { name: 'Explore the dataset' })
     .getByRole('button', { name: 'OpenAI', exact: true })
@@ -298,10 +298,10 @@ test('OpenAI remains a complete dossier and does not inherit the Anthropic branc
     `${dossierCount('openai', 181)} claims ·`,
   );
   await expect(
-    dossier.getByRole('button', { name: 'Open the guided reading →' }),
+    dossier.getByRole('link', { name: 'Open the guided reading →' }),
   ).toHaveCount(0);
   await page
-    .getByRole('button', {
+    .getByRole('link', {
       name: 'Resume the Anthropic reading · Founding & early leadership',
       exact: true,
     })

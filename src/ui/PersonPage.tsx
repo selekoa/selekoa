@@ -1,5 +1,4 @@
 import {
-  lazy,
   Suspense,
   useMemo,
   useRef,
@@ -7,7 +6,12 @@ import {
   type KeyboardEvent,
   type ReactNode,
 } from 'react';
-import type { PathEntry, PersonProfile } from '../domain/person-profile';
+import { pages } from './page-modules';
+import {
+  publicationPhrases,
+  type PathEntry,
+  type PersonProfile,
+} from '../domain/person-profile';
 import { predicates } from '../domain/predicates';
 import { mapReadable, mapSize, queryDataset } from '../domain/query';
 import { derivationLabels, resolutionLabels } from '../domain/epistemics';
@@ -17,12 +21,14 @@ import { ReviewMarkers } from './ReviewMarkers';
 import { RecordMarks, StatedReason } from './RecordMarks';
 import { ArchiveLink } from './SourceArchive';
 import { AppearsIn } from './AppearsIn';
-import type { CollectionTarget } from '../domain/appearances';
+import {
+  appearanceTotals,
+  type AppearanceTotals,
+  type CollectionTarget,
+} from '../domain/appearances';
 import './record-pages.css';
 
-const Network = lazy(() =>
-  import('./Network').then((module) => ({ default: module.Network })),
-);
+const { Network } = pages;
 
 const kindLabels = {
   event: 'Event',
@@ -61,13 +67,15 @@ function PathRow({
         </span>
         <span className="dossier-statement">{claim.statement}</span>
         <span className="dossier-relation">
-          {dates.publications.map((p, i) => (
-            <span key={p.sourceId}>
+          {publicationPhrases(dates.publications).map((p, i) => (
+            <span key={p.sourceId} data-source-id={p.sourceId}>
               {i > 0 && ' · '}
-              {p.date
-                ? 'Source published ' + p.date
-                : 'Source publication date unknown'}
-              {p.retrospective ? ' · retrospective source' : ''}
+              {p.title && (
+                <>
+                  <cite>{p.title}</cite>:{' '}
+                </>
+              )}
+              {p.text}
             </span>
           ))}{' '}
           · {derivationLabels[claim.derivation]} ·{' '}
@@ -91,6 +99,35 @@ const counterpartOf = (
   claim.object.kind === 'entity' && claim.subject === personId
     ? claim.object.entityId
     : claim.subject;
+
+const count = (n: number, one: string, many: string) =>
+  `${n} ${n === 1 ? one : many}`;
+
+/**
+ * The page's header line. It leads with the records on the person's texts,
+ * where there are any, so an author with few claims about them does not read
+ * as barely recorded.
+ */
+export function personLine(claims: number, reach: AppearanceTotals) {
+  return [
+    'Person',
+    reach.texts > 0 &&
+      count(
+        reach.texts,
+        'record on texts by this author',
+        'records on texts by this author',
+      ),
+    count(
+      claims,
+      'recorded claim about this person',
+      'recorded claims about this person',
+    ),
+    reach.collections > 0 &&
+      `appears in ${count(reach.collections, 'collection', 'collections')}`,
+  ]
+    .filter(Boolean)
+    .join(' · ');
+}
 
 export function PersonPage({
   profile,
@@ -130,9 +167,14 @@ export function PersonPage({
       ? {
           label: `${entity.shortName ?? entity.name}: ${entity.type} page →`,
           onClick: () => onEntity(id),
+          id,
         }
       : undefined;
   };
+  const reach = useMemo(
+    () => appearanceTotals(repository.data, person.id),
+    [repository.data, person.id],
+  );
   const switchTab = (event: KeyboardEvent) => {
     if (event.key !== 'ArrowLeft' && event.key !== 'ArrowRight') return;
     const next = tab === 'record' ? 'map' : 'record';
@@ -146,7 +188,7 @@ export function PersonPage({
     >
       <header className="doc-lede">
         <span className="eyebrow">
-          Person · {profile.claimIds.length} recorded claims
+          {personLine(profile.claimIds.length, reach)}
         </span>
         <h1>{person.name}</h1>
         <p className="landing-deck">{person.description}</p>

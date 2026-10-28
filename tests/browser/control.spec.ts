@@ -1,4 +1,4 @@
-import { test, expect, type Page } from '@playwright/test';
+import { test, expect, type Page } from './fixtures';
 import AxeBuilder from '@axe-core/playwright';
 
 function collectErrors(page: Page) {
@@ -29,16 +29,16 @@ test('control-structure pages list rights with instrument and stage, and set leg
   page,
 }) => {
   const errors = collectErrors(page);
-  await page.goto('/#/governance');
+  await page.goto('/governance');
   await expect(
     page
       .getByRole('navigation', { name: 'Primary' })
-      .getByRole('button', { name: 'Governance' }),
+      .getByRole('link', { name: 'Governance' }),
   ).toHaveAttribute('aria-current', 'page');
   await page
-    .getByRole('button', { name: 'OpenAI’s control structure, 2015–2026' })
+    .getByRole('link', { name: 'OpenAI’s control structure, 2015–2026' })
     .click();
-  await expect(page).toHaveURL(/#\/control\/openai$/);
+  await expect(page).toHaveURL(/\/control\/openai$/);
   const table = page.locator('.control-table');
   await expect(table).toContainText('OpenAI Group PBC');
   await expect(table).toContainText('Elects directors');
@@ -76,9 +76,9 @@ test('control-structure pages list rights with instrument and stage, and set leg
   );
   // The Anthropic page is one step away and keeps its amendment record.
   await page
-    .getByRole('button', { name: 'Anthropic’s control structure, 2021–2026' })
+    .getByRole('link', { name: 'Anthropic’s control structure, 2021–2026' })
     .click();
-  await expect(page).toHaveURL(/#\/control\/anthropic/);
+  await expect(page).toHaveURL(/\/control\/anthropic/);
   await expect(page.locator('.control-table')).toContainText(
     'Long-Term Benefit Trust',
   );
@@ -96,7 +96,7 @@ for (const id of ['openai', 'anthropic'])
       }) => {
         const errors = collectErrors(page);
         await page.setViewportSize({ width, height: 1000 });
-        await page.goto(`/#/control/${id}`);
+        await page.goto(`/control/${id}`);
         await setTheme(page, theme);
         await page.locator('.control-stops summary').click();
         await page.locator('.doc-limits-box summary').click();

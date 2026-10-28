@@ -1,4 +1,4 @@
-import { test, expect, type Page } from '@playwright/test';
+import { test, expect, type Page } from './fixtures';
 import AxeBuilder from '@axe-core/playwright';
 
 function collectErrors(page: Page) {
@@ -29,11 +29,9 @@ test('commitments page shows who signed which text, SB 53 provisions and the fra
   page,
 }) => {
   const errors = collectErrors(page);
-  await page.goto('/#/governance');
-  await page
-    .getByRole('button', { name: /^Read external commitments/ })
-    .click();
-  await expect(page).toHaveURL(/#\/commitments\/external-commitments$/);
+  await page.goto('/governance');
+  await page.getByRole('link', { name: /^Read external commitments/ }).click();
+  await expect(page).toHaveURL(/\/commitments\/external-commitments$/);
   const sb53 = page.locator('#commitment-california-sb-53');
   await expect(sb53.getByRole('heading', { level: 2 })).toContainText(
     'California SB 53',
@@ -103,14 +101,14 @@ test('commitments page shows who signed which text, SB 53 provisions and the fra
     'Needs legal interpretation',
   );
   // An edition's history shows its link to the statute.
-  await page.goto('/#/documents/frontier-safety-frameworks');
+  await page.goto('/documents/frontier-safety-frameworks');
   await expect(
     page.locator(
       '[data-edition="faif-2025"] .doc-commitment-links [data-claim-id="sb-link-faif-2025"]',
     ),
   ).toHaveCount(1);
   // An unlisted control timeline is not routed.
-  await page.goto('/#/control/xai');
+  await page.goto('/control/xai');
   await expect(
     page.getByText('This link does not match any record'),
   ).toBeVisible();
@@ -124,7 +122,7 @@ for (const width of [1440, 390])
     }) => {
       const errors = collectErrors(page);
       await page.setViewportSize({ width, height: 1000 });
-      await page.goto('/#/commitments/external-commitments');
+      await page.goto('/commitments/external-commitments');
       await setTheme(page, theme);
       await page.locator('details.doc-provisions summary').first().click();
       await page.locator('.control-stops summary').click();
@@ -137,7 +135,7 @@ for (const width of [1440, 390])
             .analyze()
         ).violations,
       ).toEqual([]);
-      await page.goto('/#/document/california-sb-53');
+      await page.goto('/document/california-sb-53');
       await setTheme(page, theme);
       expect(await fitsViewport(page)).toBe(true);
       expect(errors).toEqual([]);

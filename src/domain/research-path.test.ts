@@ -10,9 +10,21 @@ import {
 import { repository } from './repository';
 import { institutionalDossier } from './dossier';
 import genealogy from '../../review/genealogy-admission-before-2026-10-17.json';
+import archiveAdmissions from '../../review/archive-admissions-before-2026-10-26.json';
+import authorPersons from '../../review/author-persons-before-2026-10-27.json';
+import frameworksToLaw1 from '../../review/frameworks-to-law-1-before-2026-10-28.json';
+import frameworksToLaw2 from '../../review/frameworks-to-law-2-before-2026-10-28.json';
 const data = repository.data;
 // Records of the 2026-10-17 lab genealogy, left out of the earlier counts.
-const fromGenealogy = new Set(genealogy.added.claims);
+// The genealogy records, including the five admitted on 2026-10-26, and the
+// authorship records of the 2026-10-27 author-person admission.
+const fromGenealogy = new Set([
+  ...genealogy.added.claims,
+  ...archiveAdmissions.added.claims,
+  ...authorPersons.added.claims,
+  ...frameworksToLaw1.added.claims,
+  ...frameworksToLaw2.added.claims,
+]);
 const earlier = <T extends { id: string }>(claims: T[]) =>
   claims.filter((c) => !fromGenealogy.has(c.id));
 const path = researchPath(data, 'anthropic')!;
@@ -86,7 +98,9 @@ describe('branched reading projection', () => {
     // Provision-level records stay on document pages, not in dossiers.
     // The path's own selection is unchanged; the assessments are counted in
     // the dossier total, not selected as path items.
-    // The 2026-10-17 lab genealogy adds its Anthropic records to the total.
+    // The 2026-10-17 lab genealogy adds its Anthropic records to the total,
+    // and the 2026-10-28 frameworks-to-law admission its links from RSP
+    // editions; both are excluded here.
     expect(
       path.totalClaims! -
         institutionalDossier(data, 'anthropic')!.claims.filter((c) =>
@@ -224,7 +238,9 @@ describe('branched reading projection', () => {
     // control-structure page. The 2017 author-affiliation record of
     // 2026-10-15 makes Paul Christiano one of its people, which brings in
     // ten records about him and his papers.
-    // The 2026-10-17 lab genealogy adds its OpenAI records.
+    // The 2026-10-17 lab genealogy adds its OpenAI records, and the
+    // 2026-10-28 frameworks-to-law admission two framework links; both are
+    // excluded here.
     expect(earlier(openai.claims)).toHaveLength(181);
     expect(openai.claims.map((c) => c.id)).toContain('sb-link-openai-fgf');
     expect(

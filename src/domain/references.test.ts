@@ -12,7 +12,7 @@ import {
   sourceReference,
 } from './references';
 import {
-  referenceHash,
+  referencePath,
   resolveReference,
   type ReferenceTarget,
 } from './deep-links';
@@ -42,27 +42,29 @@ describe('stable reference targets', () => {
     { kind: 'search', q: 'MIRI', mode: 'names', inspect: item.claimId },
   ];
   it.each(targets)('resolves $kind by stable identity', (target) => {
-    expect(resolveReference(referenceHash(target), data)).toEqual({
-      target,
+    expect(resolveReference(referencePath(target), data)).toEqual({
+      // The earlier `reading` address now has the question's path.
+      target:
+        target.kind === 'reading' ? { ...target, kind: 'question' } : target,
       notice: null,
     });
   });
   it.each([
-    '#/claim/missing',
-    '#/claim/%ZZ',
-    '#/dossier/dario-amodei',
-    '#/reading/missing',
-    '#/reading/' + selection.id + '?section=missing',
-    '#/reading/' + selection.id + '?claim=missing',
-    '#/reading/' + selection.id + '?inspect=missing',
-    '#/claim/' + item.claimId + '?foo=bar',
-    '#/reading/' + selection.id + '?section=a&section=b',
-    '#/reading/' + selection.id + '?claim=',
-    '#/search?mode=all',
-    '#/search?q=a&q=b',
-    '#/search?q=a&inspect=missing',
-    '#/search?q=a&foo=bar',
-    '#/search/extra',
+    '/claim/missing',
+    '/claim/%ZZ',
+    '/dossier/dario-amodei',
+    '/reading/missing',
+    '/reading/' + selection.id + '?section=missing',
+    '/reading/' + selection.id + '?claim=missing',
+    '/reading/' + selection.id + '?inspect=missing',
+    '/claim/' + item.claimId + '?foo=bar',
+    '/reading/' + selection.id + '?section=a&section=b',
+    '/reading/' + selection.id + '?claim=',
+    '/search?mode=all',
+    '/search?q=a&q=b',
+    '/search?q=a&inspect=missing',
+    '/search?q=a&foo=bar',
+    '/search/extra',
   ])('rejects unavailable or malformed references: %s', (hash) => {
     expect(resolveReference(hash, data).target).toBeNull();
     expect(resolveReference(hash, data).notice).toContain(
@@ -72,7 +74,7 @@ describe('stable reference targets', () => {
   it('rejects a claim paired with a different section', () => {
     expect(
       resolveReference(
-        referenceHash({
+        referencePath({
           kind: 'reading',
           id: selection.id,
           claim: item.claimId,
@@ -91,7 +93,7 @@ describe('stable reference targets', () => {
       supersedes: original.id,
     });
     const result = resolveReference(
-      referenceHash({ kind: 'claim', id: original.id }),
+      referencePath({ kind: 'claim', id: original.id }),
       changed,
     );
     expect(result.target).toEqual({ kind: 'claim', id: original.id });
@@ -131,7 +133,7 @@ describe('citations and documentary exports', () => {
     const text = await claimReference(
       data,
       claim,
-      'https://example.org/' + referenceHash({ kind: 'claim', id: claim.id }),
+      'https://example.org' + referencePath({ kind: 'claim', id: claim.id }),
     );
     for (const value of [
       claim.id,

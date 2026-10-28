@@ -17,7 +17,7 @@ const SHORT = {
 
 const label = (c) =>
   c.partial
-    ? 'stated, partly meets the criterion'
+    ? 'stated, partly (a weaker form than the criterion’s words)'
     : MARK[c.status].toLowerCase();
 const sym = (c) => (c ? (c.partial ? 'S~' : SHORT[c.status]) : '?');
 const cell = (s) =>
@@ -73,7 +73,7 @@ export function render(pack, dir) {
     '',
     '### Latest edition of each framework, at a glance',
     '',
-    `S = stated (quoted below), S~ = stated but only partly meets the facet's criterion (see the mapping note), NF = not found within the recorded search, – = not applicable${count('carried-unverified') ? ', R = recorded in the dataset, not re-checked' : ''}.`,
+    `S = stated (quoted below), S~ = stated, partly: the edition has what the criterion asks for only in a weaker form than its words (see the mapping note), NF = not found within the recorded search, – = not applicable${count('carried-unverified') ? ', R = recorded in the dataset, not re-checked' : ''}.`,
     '',
     `| Facet | ${latest.map((e) => cell(edName(e))).join(' | ')} |`,
     `| --- | ${latest.map(() => '---').join(' | ')} |`,
@@ -118,10 +118,13 @@ export function render(pack, dir) {
         }
         if (c.entries?.length) {
           out.push(`${head}: ${label(c)}`);
-          for (const e of c.entries)
+          for (const e of c.entries) {
             out.push(
               `  - “${e.quote}” (${e.locator})${e.note ? `. _${e.note}_` : ''}`,
             );
+            if (e.paraphraseCheck)
+              out.push(`    - Paraphrase check: ${e.paraphraseCheck}`);
+          }
         } else if (c.status === 'not-found')
           out.push(
             `${head}: **not found** within the recorded search.`,
@@ -129,6 +132,9 @@ export function render(pack, dir) {
             `  - Searched for: ${c.notFound.searchTerms.map((t) => `“${t}”`).join(', ')}`,
             ...(c.notFound.hitsNotCounted
               ? [`  - Hits set aside: ${c.notFound.hitsNotCounted}`]
+              : []),
+            ...(c.notFound.archiveCheck
+              ? [`  - Archive check: ${c.notFound.archiveCheck}`]
               : []),
           );
         else out.push(`${head}: ${MARK[c.status]}. _${c.reason}_`);

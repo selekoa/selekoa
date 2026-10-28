@@ -1,4 +1,4 @@
-import { expect, test } from '@playwright/test';
+import { expect, test } from './fixtures';
 
 test('authorized source reviews remain distinct from wording approvals', async ({
   page,
@@ -8,7 +8,7 @@ test('authorized source reviews remain distinct from wording approvals', async (
   page.on('console', (message) => {
     if (message.type() === 'error') errors.push(message.text());
   });
-  await page.goto('/#/explore');
+  await page.goto('/explore');
   const search = page.getByRole('searchbox');
   await search.fill('Igor Babuschkin');
   await search.press('Enter');

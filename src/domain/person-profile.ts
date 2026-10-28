@@ -52,6 +52,30 @@ export function documentationDates(data: Dataset, claim: Claim) {
 }
 
 /**
+ * The publication phrase for each source of a row. With one source the phrase
+ * is about "the source"; with several, each phrase names its source, so a dated
+ * and an undated source do not read as one source with two dates.
+ */
+export function publicationPhrases(
+  publications: ReturnType<typeof documentationDates>['publications'],
+) {
+  const named = publications.length > 1;
+  return publications.map((p) => ({
+    sourceId: p.sourceId,
+    title: named ? p.title : undefined,
+    text:
+      (named
+        ? p.date
+          ? 'published ' + p.date
+          : 'publication date unknown'
+        : p.date
+          ? 'Source published ' + p.date
+          : 'Source publication date unknown') +
+      (p.retrospective ? ' · retrospective source' : ''),
+  }));
+}
+
+/**
  * A person's documented record: a pure projection of stored claims in which
  * the person is subject or object. Nothing is inferred: no transition between
  * roles, no tenure from a snapshot, no end from a missing end.

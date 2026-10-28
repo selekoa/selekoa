@@ -26,6 +26,15 @@ const evidenceOf = (id: string) =>
 
 describe('California SB 53 (week 4b)', () => {
   const view = commitmentsView(data, externalCommitments);
+  /** Link records whose commitment text or law is in the collection. */
+  const inCollection = (ids: string[]) =>
+    ids.filter((id) => {
+      const object = repository.claims.get(id)!.object;
+      return (
+        object.kind === 'entity' &&
+        externalCommitments.documentIds.includes(object.entityId)
+      );
+    });
   const sb53 = view.documents.find((d) => d.entity.id === 'california-sb-53')!;
 
   it('records the chaptered text as a versioned public-body document', () => {
@@ -75,14 +84,20 @@ describe('California SB 53 (week 4b)', () => {
     expect(keys).toContain('sb53-attorney-general-enforcement');
   });
 
-  it('links four framework editions to SB 53 only in their own quoted words', () => {
+  it('links eight framework editions to SB 53 only in their own quoted words', () => {
+    // The frameworks-to-law admission (2026-10-28) gives RSP v3.1 to v3.4,
+    // which keep v3.0's footnote, their own links.
     expect(
       sb53.links.map((c) => [c.subject, c.attributes!.commitment!.link]),
     ).toEqual([
       ['faif-2025', 'complies_with'],
       ['ms-fgf-2026', 'responds_to'],
       ['rsp-v3-0', 'names'],
+      ['rsp-v3-1', 'names'],
+      ['rsp-v3-2', 'names'],
+      ['rsp-v3-3', 'names'],
       ['frontier-governance-2026', 'designated_under'],
+      ['rsp-v3-4', 'names'],
     ]);
     for (const c of sb53.links) {
       const own = evidenceOf(c.id).filter(
@@ -95,12 +110,13 @@ describe('California SB 53 (week 4b)', () => {
       expect(c.qualification).toContain('not evidence that the edition');
     }
     // The edition histories show the same links (with those to the other
-    // commitment texts), never as replacement.
+    // commitment texts), never as replacement. From 2026-10-28 they also
+    // show links to laws outside the collection, such as the EU AI Act.
     const history = documentHistory(data, frontierSafetyFrameworks);
     const links = history.families.flatMap((f) =>
       f.editions.flatMap((e) => e.commitmentLinks.map((c) => c.id)),
     );
-    expect(links.sort()).toEqual(
+    expect(inCollection(links).sort()).toEqual(
       view.documents.flatMap((d) => d.links.map((c) => c.id)).sort(),
     );
     for (const c of sb53.links) expect(links).toContain(c.id);
@@ -154,7 +170,7 @@ describe('California SB 53 (week 4b)', () => {
       starter.commitments.documents.find(
         (d) => d.documentId === 'california-sb-53',
       )!.linkClaimIds,
-    ).toHaveLength(4);
+    ).toHaveLength(8);
     expect(starter.claims.map((c) => c.id)).toEqual(view.claimIds);
     const md = commitmentsStarterMarkdown(starter);
     expect(md).toContain('# External commitments and obligations');
@@ -166,23 +182,24 @@ describe('California SB 53 (week 4b)', () => {
       frontierSafetyFrameworks,
     );
     expect(
-      historyStarter.families
-        .flatMap((f) => f.editions)
-        .flatMap((e) => e.commitmentLinkClaimIds)
-        .sort(),
+      inCollection(
+        historyStarter.families
+          .flatMap((f) => f.editions)
+          .flatMap((e) => e.commitmentLinkClaimIds),
+      ).sort(),
     ).toEqual(view.documents.flatMap((d) => d.links.map((c) => c.id)).sort());
   });
 
   it('resolves the commitments page address and only the listed control pages', () => {
     expect(
-      resolveReference('#/commitments/external-commitments', data).target,
+      resolveReference('/commitments/external-commitments', data).target,
     ).toEqual({ kind: 'commitments', id: 'external-commitments' });
     expect(controlStructures.map((c) => c.id)).toEqual(['openai', 'anthropic']);
-    expect(resolveReference('#/control/openai', data).target).toEqual({
+    expect(resolveReference('/control/openai', data).target).toEqual({
       kind: 'control',
       id: 'openai',
     });
-    expect(resolveReference('#/control/xai', data).target).toBeNull();
+    expect(resolveReference('/control/xai', data).target).toBeNull();
   });
 });
 

@@ -107,12 +107,26 @@ describe('schema 2.7 source language and archive captures', () => {
       'source-cn-alibaba-budget',
       'source-cn-zhipu-prospectus',
     ]);
-    expect(byTag('zh-Hans')).toEqual([
+    // The second Chinese institutions collection (2026-10-27) keeps its own
+    // pack-prefixed sources, all in Simplified Chinese where Chinese.
+    // The frameworks-to-law admission (2026-10-28) adds Chinese government
+    // texts, also in Simplified Chinese.
+    expect(byTag('zh-Hans').filter((id) => !id.startsWith('c2-src-'))).toEqual([
+      'source-cn-cac-genai-filings-2024',
+      'source-cn-cac-genai-filings-2025',
+      'source-cn-csl-amendment-2025',
+      'source-cn-csl-presidential-order-61',
+      'source-cn-gb-45438-2025-catalogue',
+      'source-cn-gbt-45654-2025-catalogue',
       'source-cn-generative-ai-measures-2023',
+      'source-cn-generative-ai-measures-2023-govcn',
       'source-cn-glm45-readme',
       'source-cn-keg-search',
+      'source-cn-labelling-measures-2025',
+      'source-cn-labelling-news-2025',
       'source-cn-liang-interview',
       'source-cn-qwen3',
+      'source-cn-samr-standards-2025-09',
       'source-cn-zhipu-education',
       'source-cn-zhipu-profile',
     ]);
@@ -151,10 +165,15 @@ describe('schema 2.7 source language and archive captures', () => {
   });
 
   it('keeps quotes within the short-quotation limits', () => {
+    // A passage quoted for several claims counts once (schema 2.11).
     const perSource = new Map<string, { quotes: number; words: number }>();
+    const counted = new Set<string>();
     for (const e of data.evidence.filter((e) => e.passageType === 'quote')) {
       const words = e.passage.trim().split(/\s+/).length;
       expect(words, e.id).toBeLessThanOrEqual(50);
+      const passage = `${e.sourceId} ${e.passage.trim().replace(/\s+/g, ' ')}`;
+      if (counted.has(passage)) continue;
+      counted.add(passage);
       const total = perSource.get(e.sourceId) ?? { quotes: 0, words: 0 };
       perSource.set(e.sourceId, {
         quotes: total.quotes + 1,

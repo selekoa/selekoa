@@ -22,21 +22,33 @@ Maps and graphs are one interface over that corpus, not Selekoa's identity or co
 
 Research spines are deep, durable programmes of documentary coverage using the same underlying evidence standards and ontology. These are current strategic directions, not finished products or claims of comprehensive coverage.
 
-### Frontier AI Governance
+There are three spines, one per reader-facing hub (decided 2026-10-27). "Spine" and "hub" are internal words; readers see the hub name in the menu and the spine name as the hub page's subtitle.
 
-This is a likely flagship. Potential coverage includes governance frameworks and revisions, charters and constitutions, boards and control structures, organizational restructurings, safety and deployment frameworks, documented commitments and policy changes, and regulatory or contractual relationships where historically explanatory.
+| Hub                   | Spine (hub page subtitle)                                  |
+| --------------------- | ---------------------------------------------------------- |
+| Governance            | Frontier AI governance                                     |
+| Ideas & debates       | Human thought and institutions around machine intelligence |
+| Institutions & people | The institutional history of machine intelligence          |
+
+### Frontier AI governance
+
+Hub: Governance. This is a likely flagship. Potential coverage includes governance frameworks and revisions, charters and constitutions, boards and control structures, organizational restructurings, safety and deployment frameworks, documented commitments and policy changes, and regulatory or contractual relationships where historically explanatory.
 
 Versioned documentary history is central: what a document said, when, what replaced it and what changed. Keep documentary revisions, announced commitments and demonstrated implementation separate.
 
 ### Human thought and institutions around machine intelligence
 
+Hub: Ideas & debates. Here "institutions" means the forums, journals, mailing lists and organisations where the debates took place.
+
 Cover the documented evolution of ideas, communities, institutions and disagreements: effective altruism and adjacent institutions, AI alignment and safety, accelerationist currents, and debates over catastrophic risk, governance, openness, scaling, control and technological progress. Follow the organizations, publications and people through which these ideas developed where evidence supports the relationship.
 
 Record self-description, explicit terminology, documents, institutional participation, disagreement, citation and documented intellectual relationships. This is historical research, not ideological labelling or culture-war classification. Never assign labels such as “doomer”, “accelerationist” or “EA” from proximity or model inference. Treat contested terminology historically and source-critically.
 
-### Chinese frontier-AI institutional history
+### The institutional history of machine intelligence
 
-The [bounded Chinese collection](china-atlas.md) is the beginning of an enduring research spine. Preserve distinct organizations, researchers, sources and Chinese-language expressions. “Chinese AI” must not be collapsed into one actor or strategy; a shared discovery entry does not establish shared ownership, lineage or purpose.
+Hub: Institutions & people.
+
+Chinese frontier-AI institutional history is a priority strand inside this spine. The [bounded Chinese collection](china-atlas.md) is its beginning; on the hub page it appears as the "Chinese AI histories" section, without a priority label for readers. Preserve distinct organizations, researchers, sources and Chinese-language expressions. “Chinese AI” must not be collapsed into one actor or strategy; a shared discovery entry does not establish shared ownership, lineage or purpose.
 
 ## Next-phase priorities
 

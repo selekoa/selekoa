@@ -13,6 +13,16 @@
     <meta name="color-scheme" content="light dark" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <title>Selekoa · A documentary history of machine intelligence</title>
+    <script>
+      // The reader's stored theme, before the first paint (see src/App.tsx).
+      try {
+        const theme = localStorage.getItem('selekoa-theme');
+        if (theme === 'light' || theme === 'dark')
+          document.documentElement.dataset.selekoaTheme = theme;
+      } catch {
+        // Storage can be blocked; the system setting applies.
+      }
+    </script>
   </head>
   <body>
     <div id="root"></div>

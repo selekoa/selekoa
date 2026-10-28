@@ -1,77 +1,50 @@
 import type { Dataset } from './schema';
 import { researchPaths } from './research-path';
 import { documentHistories } from '../reading/frontier-safety-frameworks';
+import { frameworkComparison } from '../reading/framework-comparison';
+import { facetById } from './framework-comparison';
 import { controlStructures } from '../reading/control-structures';
 import { commitmentCollections } from '../reading/commitments';
 import { questionStarters } from '../reading/self-governance';
 import { propositionCollections } from '../reading/human-thought';
+import {
+  normalisePath,
+  type HubId,
+  type ReferenceTarget,
+  queryForm,
+} from './addresses';
 
-type QuestionTarget = {
-  id: string;
-  section?: string;
-  claim?: string;
-  inspect?: string;
-};
+export {
+  hubIds,
+  legacyHashPath,
+  normalisePath,
+  referencePath,
+  startPath,
+} from './addresses';
+export type { HubId, ReferenceTarget } from './addresses';
 
-export const hubIds = ['governance', 'ideas', 'institutions'] as const;
-export type HubId = (typeof hubIds)[number];
-
-export type ReferenceTarget =
-  | { kind: 'explore'; q?: string; view?: 'timeline' | 'map' }
-  | { kind: 'hub'; id: HubId }
-  | { kind: 'about' }
-  | { kind: 'search'; q?: string; mode?: 'names'; inspect?: string }
-  | { kind: 'documents'; id: string; inspect?: string }
-  | { kind: 'control'; id: string; inspect?: string }
-  | { kind: 'commitments'; id: string; inspect?: string }
-  | { kind: 'propositions'; id: string; inspect?: string }
-  | { kind: 'claim'; id: string }
-  | { kind: 'dossier'; id: string; inspect?: string }
-  | { kind: 'person'; id: string; inspect?: string }
-  | { kind: 'document'; id: string; inspect?: string }
-  | ({ kind: 'question' } & QuestionTarget)
-  /** The earlier address of a question page; still resolves. */
-  | ({ kind: 'reading' } & QuestionTarget);
-
-export function referenceHash(target: ReferenceTarget) {
-  if (target.kind === 'about') return '#/about';
-  if (target.kind === 'hub') return `#/${target.id}`;
-  const params = new URLSearchParams();
-  if (target.kind === 'explore') {
-    if (target.q) params.set('q', target.q);
-    if (target.view) params.set('view', target.view);
-    return `#/explore${params.size ? '?' + params : ''}`;
-  }
-  if (target.kind === 'search') {
-    if (target.q) params.set('q', target.q);
-    if (target.mode) params.set('mode', target.mode);
-    if (target.inspect) params.set('inspect', target.inspect);
-    return `#/search${params.size ? '?' + params : ''}`;
-  }
-  if (target.kind === 'reading' || target.kind === 'question') {
-    if (target.section) params.set('section', target.section);
-    if (target.claim) params.set('claim', target.claim);
-  }
-  if (target.kind !== 'claim' && target.inspect)
-    params.set('inspect', target.inspect);
-  return `#/${target.kind}/${encodeURIComponent(target.id)}${params.size ? '?' + params : ''}`;
-}
-
+/**
+ * The page an address opens: a path from the site root with its query, such
+ * as `/person/jan-leike?inspect=<claim>`. An address that names no record, or
+ * carries an unknown parameter, opens no page and returns the notice.
+ */
 export function resolveReference(
-  hash: string,
+  address: string,
   data: Dataset,
 ): {
   target: ReferenceTarget | null;
   notice: string | null;
 } {
-  // An empty address is the reading-first start page.
-  if (!hash || hash === '#/') return { target: null, notice: null };
-  if (hash === '#explorer')
-    return { target: { kind: 'explore' }, notice: null };
-  const hub = /^#\/(governance|ideas|institutions)$/.exec(hash);
+  address = queryForm(address);
+  const query = address.indexOf('?');
+  const path = normalisePath(query < 0 ? address : address.slice(0, query));
+  const ref = path + (query < 0 ? '' : address.slice(query));
+  // The site root is the reading-first start page, whatever its query.
+  if (path === '/') return { target: null, notice: null };
+  const hub = /^\/(governance|ideas|institutions)$/.exec(ref);
   if (hub)
     return { target: { kind: 'hub', id: hub[1] as HubId }, notice: null };
-  const explore = /^#\/explore(?:\?(.*))?$/.exec(hash);
+  const explore = /^\/explore(?:\?(.*))?$/.exec(ref);
   if (explore) {
     const params = new URLSearchParams(explore[1]);
     const q = params.get('q') ?? undefined;
@@ -90,13 +63,13 @@ export function resolveReference(
       };
     return { target: { kind: 'explore', q, view }, notice: null };
   }
-  if (hash === '#/about') return { target: { kind: 'about' }, notice: null };
+  if (ref === '/about') return { target: { kind: 'about' }, notice: null };
   const invalid = {
     target: null,
     notice:
       'This link does not match any record in this dataset. Selekoa has not substituted another record.',
   };
-  const search = /^#\/search(?:\?(.*))?$/.exec(hash);
+  const search = /^\/search(?:\?(.*))?$/.exec(ref);
   if (search) {
     const params = new URLSearchParams(search[1]);
     const q = params.get('q') ?? undefined;
@@ -118,8 +91,8 @@ export function resolveReference(
     };
   }
   const match =
-    /^#\/(claim|dossier|reading|question|documents|document|person|control|commitments|propositions)\/([^/?]+)(?:\?(.*))?$/.exec(
-      hash,
+    /^\/(claim|dossier|reading|question|documents|compare|document|person|control|commitments|propositions)\/([^/?]+)(?:\?(.*))?$/.exec(
+      ref,
     );
   if (!match) return invalid;
   let id: string;
@@ -135,7 +108,11 @@ export function resolveReference(
       ? ['section', 'claim', 'inspect']
       : kind === 'claim'
         ? []
-        : ['inspect'];
+        : kind === 'compare'
+          ? ['facet', 'inspect']
+          : kind === 'dossier'
+            ? ['view', 'inspect']
+            : ['inspect'];
   if (
     [...params.keys()].some(
       (key) =>
@@ -162,6 +139,12 @@ export function resolveReference(
     return documentHistories.some((d) => d.id === id)
       ? { target: { kind, id, inspect }, notice: null }
       : invalid;
+  if (kind === 'compare') {
+    const facet = params.get('facet') ?? undefined;
+    return id === frameworkComparison.id && (!facet || facetById(facet))
+      ? { target: { kind, id, facet, inspect }, notice: null }
+      : invalid;
+  }
   if (kind === 'control')
     return controlStructures.some((d) => d.id === id)
       ? { target: { kind, id, inspect }, notice: null }
@@ -176,10 +159,15 @@ export function resolveReference(
       : invalid;
   const entityOf = (type: string) =>
     data.entities.some((e) => e.id === id && e.type === type);
-  if (kind === 'dossier')
-    return entityOf('organisation')
-      ? { target: { kind, id, inspect }, notice: null }
+  if (kind === 'dossier') {
+    const view = params.get('view') ?? undefined;
+    return entityOf('organisation') && (!view || view === 'map')
+      ? {
+          target: { kind, id, view: view as 'map' | undefined, inspect },
+          notice: null,
+        }
       : invalid;
+  }
   if (kind === 'person' || kind === 'document')
     return entityOf(kind)
       ? { target: { kind, id, inspect }, notice: null }

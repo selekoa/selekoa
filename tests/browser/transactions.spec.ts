@@ -1,4 +1,4 @@
-import { expect, test } from '@playwright/test';
+import { expect, test } from './fixtures';
 
 test('OpenAI capital and compute paths expose distinct stages and bounded contract amounts', async ({
   page,
@@ -8,7 +8,7 @@ test('OpenAI capital and compute paths expose distinct stages and bounded contra
   page.on('console', (m) => {
     if (m.type() === 'error') errors.push(m.text());
   });
-  await page.goto('/#/explore');
+  await page.goto('/explore');
   const nav = page.getByRole('navigation', { name: 'Explore the dataset' });
   await nav.getByRole('button', { name: 'OpenAI', exact: true }).click();
   await page.locator('[data-claim-id="microsoft-investment-2019"]').click();
@@ -49,7 +49,7 @@ test('OpenAI capital and compute paths expose distinct stages and bounded contra
 test('Anthropic timeline retains AWS and Google and exposes future TPU limits', async ({
   page,
 }) => {
-  await page.goto('/#/explore');
+  await page.goto('/explore');
   await page
     .getByRole('navigation', { name: 'Explore the dataset' })
     .getByRole('button', { name: 'Anthropic', exact: true })
@@ -83,7 +83,7 @@ test('Anthropic timeline retains AWS and Google and exposes future TPU limits', 
 test('xAI compute and internal Google paths retain snapshot and ownership limits', async ({
   page,
 }) => {
-  await page.goto('/#/explore');
+  await page.goto('/explore');
   const nav = page.getByRole('navigation', { name: 'Explore the dataset' });
   const panel = page.getByRole('complementary', { name: 'Evidence inspector' });
   await nav.getByRole('button', { name: 'xAI', exact: true }).click();
@@ -110,7 +110,7 @@ test('mobile transaction conditions remain inspectable without horizontal overfl
 }) => {
   await page.setViewportSize({ width: 390, height: 844 });
   await page.emulateMedia({ reducedMotion: 'reduce' });
-  await page.goto('/#/explore');
+  await page.goto('/explore');
   await page
     .getByRole('navigation', { name: 'Explore the dataset' })
     .getByRole('button', { name: 'Anthropic', exact: true })

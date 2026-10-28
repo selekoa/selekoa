@@ -34,4 +34,8 @@ export const entityStyle: Record<
     path: 'M-10-5L-5-10H5L10-5V5L5 10H-5L-10 5ZM-5-4H5V4H-5Z',
     label: 'Fund',
   },
+  country: {
+    path: 'M-8-10V10M-8-9H9L5-4L9 1H-8',
+    label: 'Country',
+  },
 };

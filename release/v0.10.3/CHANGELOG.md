@@ -1,0 +1,47 @@
+# Selekoa dataset v0.10.3 (2026-10-28)
+
+Compared with v0.10.2. A changed record is one whose released JSON differs in any field.
+
+| Record type | Added | Changed | Removed | In this release |
+| --- | ---: | ---: | ---: | ---: |
+| Entities | 11 | 0 | 0 | 1,020 |
+| Claims | 66 | 1 | 0 | 2,930 |
+| Evidence | 121 | 0 | 0 | 3,785 |
+| Sources | 12 | 1 | 0 | 856 |
+| Collections | 0 | 2 | 0 | 9 |
+
+## Added
+
+### Entities (11)
+
+`cn-ai-content-labelling-measures-2025`, `cn-cac-genai-filings-announcement-2024`, `cn-cac-genai-filings-announcement-2025`, `cn-cybersecurity-law-amendment-2025`, `cn-gb-45438-2025`, `cn-gbt-45654-2025`, `cn-npc-standing-committee`, `cn-president-prc`, `cn-samr-sac`, `eu-commission-opinion-code-2025`, `gpai-code-of-practice-draft1-2024`
+
+### Claims (66)
+
+`fl-cn-csl-amendment-adopted`, `fl-cn-csl-amendment-effective`, `fl-cn-csl-amendment-promulgated`, `fl-cn-csl-art20-ai`, `fl-cn-filings-2024-published`, `fl-cn-filings-2025-count`, `fl-cn-gb45438-published`, `fl-cn-gbt45654-published`, `fl-cn-genai-art12-labelling`, `fl-cn-genai-art14-illegal-content`, `fl-cn-genai-art19-explain-training-data`, `fl-cn-genai-art21-penalties`, `fl-cn-genai-art22-provider-definition`, `fl-cn-genai-art7-ip-personal-quality`, `fl-cn-genai-art7-lawful-sources`, `fl-cn-genai-art7-training-data`, `fl-cn-genai-scope-non-public-rd`, `fl-cn-labelling-effective`, `fl-cn-labelling-explicit-duty`, `fl-cn-labelling-explicit-implicit`, `fl-cn-labelling-filing-materials`, `fl-cn-labelling-implicit-metadata`, `fl-cn-labelling-issued`, `fl-cn-labelling-scope`, `fl-cn-labelling-standards`, `fl-cn-labelling-unlabelled-logs`, `fl-eu-aia-annex13-criteria`, `fl-eu-aia-art3-gpai-model-definition`, `fl-eu-aia-art51-3-delegated-thresholds`, `fl-eu-aia-art51-classification-conditions`, `fl-eu-aia-art51-commission-decision`, `fl-eu-aia-art52-2-rebuttal`, `fl-eu-aia-art52-4-designation`, `fl-eu-aia-art52-5-reassessment`, `fl-eu-aia-art52-6-public-list`, `fl-eu-aia-art53-1-b-downstream`, `fl-eu-aia-art53-1-c-copyright-policy`, `fl-eu-aia-art53-1-d-training-summary`, `fl-eu-aia-art53-4-code-reliance`, `fl-eu-aia-art54-3-tasks`, `fl-eu-aia-art54-authorised-representative`, `fl-eu-aia-art55-1-chapeau`, `fl-eu-aia-art92-3-access`, `fl-eu-aia-art92-evaluations`, `fl-eu-cop-draft1-light-detail`, `fl-eu-cop-draft1-published`, `fl-eu-cop-draft1-risk-types`, `fl-eu-cop-draft1-ssf`, `fl-eu-cop-draft1-ssr-before-market`, `fl-eu-cop-final-changes-from-draft1-risk-types`, `fl-eu-cop-final-changes-from-draft1-ssf`, `fl-eu-opinion-board-separate`, `fl-eu-opinion-chapter-coverage`, `fl-eu-opinion-conclusion`, `fl-eu-opinion-drafting-process`, `fl-eu-opinion-issued`, `fl-eu-opinion-no-kpis`, `fl-eu-opinion-not-binding`, `fl-link-fgf-2026-eu-ai-act`, `fl-link-ms-fgf-2026-eu-ai-act`, `fl-link-ms-fgf-2026-ny-raise`, `fl-link-preparedness-beta-wh-2023-07`, `fl-link-rsp-v3-1-sb53`, `fl-link-rsp-v3-2-sb53`, `fl-link-rsp-v3-3-sb53`, `fl-link-rsp-v3-4-sb53`
+
+### Evidence (121)
+
+`evidence-cm-link-frontier-governance-2026-eu-code-2`, `evidence-fl-cn-csl-amendment-adopted-1`, `evidence-fl-cn-csl-amendment-adopted-2`, `evidence-fl-cn-csl-amendment-effective-1`, `evidence-fl-cn-csl-amendment-promulgated-1`, `evidence-fl-cn-csl-art20-ai-1`, `evidence-fl-cn-csl-art20-ai-2`, `evidence-fl-cn-filings-2024-published-1`, `evidence-fl-cn-filings-2024-published-2`, `evidence-fl-cn-filings-2025-count-1`, `evidence-fl-cn-filings-2025-count-2`, `evidence-fl-cn-gb45438-published-1`, `evidence-fl-cn-gb45438-published-2`, `evidence-fl-cn-gb45438-published-3`, `evidence-fl-cn-gbt45654-published-1`, `evidence-fl-cn-genai-art12-labelling-1`, `evidence-fl-cn-genai-art12-labelling-2`, `evidence-fl-cn-genai-art14-illegal-content-1`, `evidence-fl-cn-genai-art14-illegal-content-2`, `evidence-fl-cn-genai-art19-explain-training-data-1`, `evidence-fl-cn-genai-art21-penalties-1`, `evidence-fl-cn-genai-art21-penalties-2`, `evidence-fl-cn-genai-art22-provider-definition-1`, `evidence-fl-cn-genai-art22-provider-definition-2`, `evidence-fl-cn-genai-art7-ip-personal-quality-1`, `evidence-fl-cn-genai-art7-ip-personal-quality-2`, `evidence-fl-cn-genai-art7-lawful-sources-1`, `evidence-fl-cn-genai-art7-training-data-1`, `evidence-fl-cn-genai-scope-non-public-rd-1`, `evidence-fl-cn-labelling-effective-1`, `evidence-fl-cn-labelling-explicit-duty-1`, `evidence-fl-cn-labelling-explicit-duty-2`, `evidence-fl-cn-labelling-explicit-implicit-1`, `evidence-fl-cn-labelling-explicit-implicit-2`, `evidence-fl-cn-labelling-filing-materials-1`, `evidence-fl-cn-labelling-implicit-metadata-1`, `evidence-fl-cn-labelling-implicit-metadata-2`, `evidence-fl-cn-labelling-issued-1`, `evidence-fl-cn-labelling-issued-2`, `evidence-fl-cn-labelling-issued-3`, `evidence-fl-cn-labelling-scope-1`, `evidence-fl-cn-labelling-scope-2`, `evidence-fl-cn-labelling-standards-1`, `evidence-fl-cn-labelling-unlabelled-logs-1`, `evidence-fl-cn-labelling-unlabelled-logs-2`, `evidence-fl-eu-aia-annex13-criteria-1`, `evidence-fl-eu-aia-annex13-criteria-2`, `evidence-fl-eu-aia-art3-gpai-model-definition-1`, `evidence-fl-eu-aia-art3-gpai-model-definition-2`, `evidence-fl-eu-aia-art51-3-delegated-thresholds-1`, `evidence-fl-eu-aia-art51-3-delegated-thresholds-2`, `evidence-fl-eu-aia-art51-3-delegated-thresholds-3`, `evidence-fl-eu-aia-art51-classification-conditions-1`, `evidence-fl-eu-aia-art51-classification-conditions-2`, `evidence-fl-eu-aia-art51-commission-decision-1`, `evidence-fl-eu-aia-art52-2-rebuttal-1`, `evidence-fl-eu-aia-art52-4-designation-1`, `evidence-fl-eu-aia-art52-4-designation-2`, `evidence-fl-eu-aia-art52-5-reassessment-1`, `evidence-fl-eu-aia-art52-5-reassessment-2`, `evidence-fl-eu-aia-art52-6-public-list-1`, `evidence-fl-eu-aia-art53-1-b-downstream-1`, `evidence-fl-eu-aia-art53-1-b-downstream-2`, `evidence-fl-eu-aia-art53-1-b-downstream-3`, `evidence-fl-eu-aia-art53-1-c-copyright-policy-1`, `evidence-fl-eu-aia-art53-1-c-copyright-policy-2`, `evidence-fl-eu-aia-art53-1-d-training-summary-1`, `evidence-fl-eu-aia-art53-4-code-reliance-1`, `evidence-fl-eu-aia-art53-4-code-reliance-2`, `evidence-fl-eu-aia-art54-3-tasks-1`, `evidence-fl-eu-aia-art54-3-tasks-2`, `evidence-fl-eu-aia-art54-authorised-representative-1`, `evidence-fl-eu-aia-art55-1-chapeau-1`, `evidence-fl-eu-aia-art92-3-access-1`, `evidence-fl-eu-aia-art92-3-access-2`, `evidence-fl-eu-aia-art92-evaluations-1`, `evidence-fl-eu-aia-art92-evaluations-2`, `evidence-fl-eu-cop-draft1-light-detail-1`, `evidence-fl-eu-cop-draft1-light-detail-2`, `evidence-fl-eu-cop-draft1-published-1`, `evidence-fl-eu-cop-draft1-published-2`, `evidence-fl-eu-cop-draft1-published-3`, `evidence-fl-eu-cop-draft1-published-4`, `evidence-fl-eu-cop-draft1-risk-types-1`, `evidence-fl-eu-cop-draft1-risk-types-2`, `evidence-fl-eu-cop-draft1-ssf-1`, `evidence-fl-eu-cop-draft1-ssf-2`, `evidence-fl-eu-cop-draft1-ssr-before-market-1`, `evidence-fl-eu-cop-final-changes-from-draft1-risk-types-1`, `evidence-fl-eu-cop-final-changes-from-draft1-risk-types-2`, `evidence-fl-eu-cop-final-changes-from-draft1-risk-types-3`, `evidence-fl-eu-cop-final-changes-from-draft1-risk-types-4`, `evidence-fl-eu-cop-final-changes-from-draft1-ssf-1`, `evidence-fl-eu-cop-final-changes-from-draft1-ssf-2`, `evidence-fl-eu-cop-final-changes-from-draft1-ssf-3`, `evidence-fl-eu-opinion-board-separate-1`, `evidence-fl-eu-opinion-chapter-coverage-1`, `evidence-fl-eu-opinion-chapter-coverage-2`, `evidence-fl-eu-opinion-chapter-coverage-3`, `evidence-fl-eu-opinion-conclusion-1`, `evidence-fl-eu-opinion-conclusion-2`, `evidence-fl-eu-opinion-drafting-process-1`, `evidence-fl-eu-opinion-drafting-process-2`, `evidence-fl-eu-opinion-issued-1`, `evidence-fl-eu-opinion-issued-2`, `evidence-fl-eu-opinion-no-kpis-1`, `evidence-fl-eu-opinion-no-kpis-2`, `evidence-fl-eu-opinion-not-binding-1`, `evidence-fl-eu-opinion-not-binding-2`, `evidence-fl-link-fgf-2026-eu-ai-act-1`, `evidence-fl-link-fgf-2026-eu-ai-act-2`, `evidence-fl-link-fgf-2026-eu-ai-act-3`, `evidence-fl-link-fgf-2026-eu-ai-act-4`, `evidence-fl-link-ms-fgf-2026-eu-ai-act-1`, `evidence-fl-link-ms-fgf-2026-ny-raise-1`, `evidence-fl-link-ms-fgf-2026-ny-raise-2`, `evidence-fl-link-preparedness-beta-wh-2023-07-1`, `evidence-fl-link-rsp-v3-1-sb53-1`, `evidence-fl-link-rsp-v3-2-sb53-1`, `evidence-fl-link-rsp-v3-3-sb53-1`, `evidence-fl-link-rsp-v3-4-sb53-1`
+
+### Sources (12)
+
+`source-cn-cac-genai-filings-2024`, `source-cn-cac-genai-filings-2025`, `source-cn-csl-amendment-2025`, `source-cn-csl-presidential-order-61`, `source-cn-gb-45438-2025-catalogue`, `source-cn-gbt-45654-2025-catalogue`, `source-cn-generative-ai-measures-2023-govcn`, `source-cn-labelling-measures-2025`, `source-cn-labelling-news-2025`, `source-cn-samr-standards-2025-09`, `source-eu-code-draft1-2024`, `source-eu-code-draft1-page`
+
+## Changed
+
+### Claims (1)
+
+`cm-link-frontier-governance-2026-eu-code`
+
+### Sources (1)
+
+`source-eu-commission-opinion-2025`
+
+### Collections (2)
+
+`commitments/external-commitments`, `documents/frontier-safety-frameworks`
+
+## Removed
+
+None.

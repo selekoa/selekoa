@@ -1,6 +1,9 @@
 import { useMemo } from 'react';
 import type { Dataset } from '../domain/schema';
 import { appearances, type CollectionTarget } from '../domain/appearances';
+import { NavLink } from './NavLink';
+import { startHref } from './SiteChrome';
+import { startIds } from './start-ids';
 
 const records = (n: number, what: string) =>
   `${n} ${n === 1 ? 'record' : 'records'} ${what}`;
@@ -29,12 +32,13 @@ export function AppearsIn({
         <ul>
           {found.map((a) => (
             <li key={a.target.kind + ('id' in a.target ? a.target.id : '')}>
-              <button
+              <NavLink
                 className="text-button record-explore"
-                onClick={() => onCollection(a.target)}
+                href={startHref(a.target, startIds)}
+                onOpen={() => onCollection(a.target)}
               >
                 {a.title} →
-              </button>
+              </NavLink>
               <span className="record-appears-count">
                 {[
                   a.texts > 0 && records(a.texts, 'on texts by this author'),

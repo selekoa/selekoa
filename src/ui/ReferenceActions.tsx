@@ -1,5 +1,5 @@
 import { Fragment, useId, useState } from 'react';
-import { referenceHash, type ReferenceTarget } from '../domain/deep-links';
+import { referencePath, type ReferenceTarget } from '../domain/deep-links';
 import {
   packetJson,
   packetMarkdown,
@@ -43,9 +43,7 @@ import {
 } from '../domain/question-starter-export';
 
 export function referenceUrl(target: ReferenceTarget) {
-  const url = new URL(window.location.href);
-  url.hash = referenceHash(target);
-  return url.href;
+  return new URL(referencePath(target), window.location.origin).href;
 }
 
 type CopyValue = string | { text: string; html: string };

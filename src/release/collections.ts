@@ -8,11 +8,14 @@ import { commitmentCollections } from '../reading/commitments';
 import { controlStructures } from '../reading/control-structures';
 import { propositionsView } from '../domain/propositions';
 import { propositionCollections } from '../reading/human-thought';
+import { frameworkComparison } from '../reading/framework-comparison';
+import { comparisonView } from '../domain/framework-comparison';
 
 /** Collection kinds, named as in the application's page addresses. */
 export const collectionKinds = [
   'question',
   'documents',
+  'compare',
   'control',
   'commitments',
   'propositions',
@@ -34,6 +37,7 @@ export const applicationCollections: CollectionDefinition[] = [
     kind: 'documents' as const,
     definition,
   })),
+  { kind: 'compare' as const, definition: frameworkComparison },
   ...controlStructures.map((definition) => ({
     kind: 'control' as const,
     definition,
@@ -63,6 +67,11 @@ export function collectionClaimIds(
     return documentHistory(
       data,
       definition as unknown as Parameters<typeof documentHistory>[1],
+    ).claimIds;
+  if (kind === 'compare')
+    return comparisonView(
+      data,
+      definition as unknown as Parameters<typeof comparisonView>[1],
     ).claimIds;
   if (kind === 'control')
     return controlStructure(

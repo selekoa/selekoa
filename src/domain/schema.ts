@@ -5,6 +5,11 @@ import {
   topics,
   type Predicate,
 } from './predicates';
+import {
+  comparisonKey,
+  facetById,
+  isComparisonKey,
+} from './framework-comparison';
 
 const id = z.string().regex(/^[a-z][a-z0-9-]+$/);
 const text = z.string().trim().min(1);
@@ -164,6 +169,15 @@ const announcedStagePredicates = new Set<string>([
   'combined_into',
   'licensing_hiring_agreement',
   'unit_disbanded',
+  // Schema 2.19: an announced revocation or rescission, not yet formalised.
+  'revoked',
+]);
+/** Legislative and executive status records (schema 2.19). */
+const statusPredicates = new Set<string>([
+  'introduced',
+  'passed',
+  'vetoed',
+  'revoked',
 ]);
 export type Tier = (typeof tiers)[number];
 
@@ -182,9 +196,33 @@ export const entitySchema = z.strictObject({
     'model',
     'public_body',
     'fund',
+    // Schema 2.19: a state, keyed by its ISO 3166-1 alpha-2 code.
+    'country',
   ]),
   subtype: text,
   aliases: z.array(text),
+  /** Schema 2.19. A country's ISO 3166-1 alpha-2 code; its ID is `country-` and the code in lower case. */
+  countryCode: z
+    .string()
+    .regex(/^[A-Z]{2}$/)
+    .optional(),
+  /**
+   * Schema 2.19. The names an organisation or public body bore, each dated as
+   * its source dates it, with the sources that name or announce it. A renaming
+   * keeps one entity; the dates are of the names, not of any legal succession.
+   */
+  datedNames: z
+    .array(
+      z.strictObject({
+        name: text,
+        from: historicalDate.optional(),
+        until: historicalDate.optional(),
+        note: text,
+        sourceIds: z.array(id).min(1),
+      }),
+    )
+    .min(2)
+    .optional(),
   description: text.max(600),
   sourceIds: z.array(id).min(1),
   externalIds: z.record(z.string(), text).optional(),
@@ -302,11 +340,17 @@ export const claimSchema = z.strictObject({
       // One framework provision, aligned across editions of a family by key.
       provision: z
         .strictObject({
+          // Schema 2.18 adds the kinds of the paraphrased comparison
+          // questions: risk domains, evaluation timing, reporting, revision.
           kind: z.enum([
             'threshold',
             'required_action',
             'decision_authority',
             'exception',
+            'risk_domain',
+            'evaluation_timing',
+            'reporting',
+            'revision',
           ]),
           key: id,
           parties: z
@@ -324,6 +368,22 @@ export const claimSchema = z.strictObject({
             )
             .min(1)
             .optional(),
+          // Schema 2.17. A framework comparison cell: the edition-neutral
+          // question (facet) the record answers for this edition, and for a
+          // stated cell whether the passage meets the question's criterion as
+          // worded, only in a weaker form (Rule B, 2026-10-27), or is a
+          // recorded passage the comparison could not re-check.
+          facet: z
+            .strictObject({
+              id: text,
+              status: z.enum(['stated', 'partly', 'recorded']).optional(),
+            })
+            .optional(),
+          // Schema 2.19. A date the edition does not state but that follows
+          // from a rule it states (such as entry into force on the twentieth
+          // day after publication): the record is inferred, quotes the rule
+          // and is dated by the computed date.
+          computed: z.literal(true).optional(),
         })
         .optional(),
       // A control relation or restructuring step (schema 2.9): the right
@@ -369,6 +429,16 @@ export const claimSchema = z.strictObject({
               'names',
             ])
             .optional(),
+        })
+        .optional(),
+      // Schema 2.19. A document-level list of participants (signatories,
+      // endorsers, attendees or reporting organisations): how many entries
+      // the list has, and whether the source states that number or Selekoa
+      // counted the entries. A listing is not a signature or compliance.
+      listing: z
+        .strictObject({
+          count: z.number().int().positive(),
+          countBasis: z.enum(['stated', 'counted']),
         })
         .optional(),
       role: text.optional(),
@@ -637,6 +707,9 @@ export const datasetSchema = z
         '2.14',
         '2.15',
         '2.16',
+        '2.17',
+        '2.18',
+        '2.19',
       ]),
       updatedAt: checkDate,
       title: text,
@@ -681,6 +754,44 @@ export const datasetSchema = z
         issue(['entities', i, 'sortName'], `Person needs a sortName: ${e.id}`);
       if (e.type !== 'person' && e.sortName)
         issue(['entities', i, 'sortName'], `sortName is for persons: ${e.id}`);
+      // Schema 2.19: a country is keyed by its ISO 3166-1 alpha-2 code.
+      if ((e.type === 'country') !== Boolean(e.countryCode))
+        issue(
+          ['entities', i, 'countryCode'],
+          `A country, and only a country, has an ISO 3166-1 code: ${e.id}`,
+        );
+      if (
+        e.type === 'country' &&
+        e.countryCode &&
+        e.id !== `country-${e.countryCode.toLowerCase()}`
+      )
+        issue(
+          ['entities', i, 'id'],
+          `A country's ID is country- and its code: ${e.id}`,
+        );
+      if (e.datedNames) {
+        if (!['organisation', 'public_body'].includes(e.type))
+          issue(
+            ['entities', i, 'datedNames'],
+            'Dated names belong to organisations and public bodies',
+          );
+        e.datedNames.forEach((n, j) => {
+          if (
+            n.from &&
+            n.until &&
+            dateBoundary(n.until, true) < dateBoundary(n.from, false)
+          )
+            issue(
+              ['entities', i, 'datedNames', j],
+              'A dated name ends after it begins',
+            );
+          if (!n.from && !n.until)
+            issue(
+              ['entities', i, 'datedNames', j],
+              'A dated name gives at least one date',
+            );
+        });
+      }
       if (e.proposition) {
         if (e.type !== 'concept')
           issue(['entities', i], `A proposition is a concept: ${e.id}`);
@@ -846,12 +957,22 @@ export const datasetSchema = z
     data.meta.anchors.forEach((r) => {
       if (!entities.has(r)) issue(['meta', 'anchors'], `Missing anchor ${r}`);
     });
-    data.entities.forEach((r, i) =>
+    data.entities.forEach((r, i) => {
       r.sourceIds.forEach((s) => {
         if (!sources.has(s))
           issue(['entities', i, 'sourceIds'], `Missing source ${s}`);
-      }),
-    );
+      });
+      r.datedNames?.forEach((n, j) =>
+        n.sourceIds.forEach((s) => {
+          if (!sources.has(s))
+            issue(
+              ['entities', i, 'datedNames', j, 'sourceIds'],
+              `Missing source ${s}`,
+            );
+        }),
+      );
+    });
+    const comparisonCells = new Set<string>();
     data.claims.forEach((c, i) => {
       const path = ['claims', i];
       const subject = entities.get(c.subject);
@@ -1092,7 +1213,21 @@ export const datasetSchema = z
           issue(path, 'Provisions belong to an exact framework edition');
         if (c.object.kind !== 'literal' || typeof c.object.value !== 'string')
           issue(path, 'A provision is named by a text label');
-        if (
+        const computed = provision?.computed === true;
+        if (computed) {
+          // Schema 2.19: dated by the date computed from the quoted rule.
+          if (
+            c.predicate !== 'states_provision' ||
+            c.derivation !== 'inferred' ||
+            !c.inferenceRationale ||
+            c.time.kind !== 'event' ||
+            c.time.basis !== 'effective'
+          )
+            issue(
+              path,
+              'A computed date is an inferred provision record with its rationale, dated by the computed effective date',
+            );
+        } else if (
           c.time.kind !== 'event' ||
           !c.time.basis ||
           c.time.basis === 'announcement' ||
@@ -1109,7 +1244,7 @@ export const datasetSchema = z
           (e) => e && sources.get(e.sourceId)?.documentId === c.subject,
         );
         if (c.predicate === 'states_provision') {
-          if (c.derivation !== 'explicit')
+          if (c.derivation !== 'explicit' && !computed)
             issue(path, 'A stated provision must be explicit in the edition');
           // What the text says is quoted; disputes about what it requires or
           // whether it is adequate are separate assessment records.
@@ -1118,7 +1253,27 @@ export const datasetSchema = z
               path,
               'A stated provision records the quoted text and is supported; record disagreement as a provision assessment',
             );
-          if (
+          // A comparison question given by paraphrase (schema 2.18) is
+          // supported by paraphrases with page locators and quotes nothing.
+          const paraphrased =
+            facetById(provision?.facet?.id ?? '')?.dimension.passages ===
+            'paraphrase';
+          if (paraphrased) {
+            if (
+              !fromEdition.some(
+                (e) =>
+                  e!.support === 'supports' &&
+                  e!.sourceRole === 'primary' &&
+                  e!.passageType === 'paraphrase' &&
+                  wordCount(e!.passage) <= 50,
+              ) ||
+              fromEdition.some((e) => e!.passageType === 'quote')
+            )
+              issue(
+                path,
+                'A paraphrased comparison cell requires supporting paraphrases of at most 50 words from the cited edition, and no quotation',
+              );
+          } else if (
             !fromEdition.some(
               (e) =>
                 e!.support === 'supports' &&
@@ -1144,6 +1299,40 @@ export const datasetSchema = z
             );
         }
       }
+      // Framework comparison cells (schema 2.17).
+      const facet = provision?.facet;
+      if (facet) {
+        const definition = facetById(facet.id);
+        if (!provisionClaim)
+          issue(path, 'A comparison question belongs only to provision claims');
+        if (!definition)
+          issue(path, `Unknown comparison question: ${facet.id}`);
+        else {
+          if (provision.kind !== definition.dimension.kind)
+            issue(
+              path,
+              'A comparison cell carries the provision kind of its question',
+            );
+          if (provision.key !== comparisonKey(facet.id))
+            issue(path, 'A comparison cell carries its question’s key');
+          if (
+            c.object.kind === 'literal' &&
+            c.object.value !== definition.label
+          )
+            issue(path, 'A comparison cell is named by its question’s label');
+        }
+        if (provision.parties)
+          issue(path, 'A comparison cell names no parties');
+        if (c.predicate === 'states_provision' && !facet.status)
+          issue(path, 'A stated comparison cell records its status');
+        if (c.predicate === 'provision_not_found' && facet.status)
+          issue(path, 'A recorded absence has no stated status');
+        const cell = `${c.subject} ${facet.id}`;
+        if (comparisonCells.has(cell))
+          issue(path, `One comparison cell per edition and question: ${cell}`);
+        comparisonCells.add(cell);
+      } else if (provision && isComparisonKey(provision.key))
+        issue(path, 'A comparison key belongs only to comparison cells');
       if (c.predicate === 'changes_from' && provision) {
         const stated = (doc: string) =>
           data.claims.some(
@@ -1189,6 +1378,50 @@ export const datasetSchema = z
           issue(
             path,
             'A provision assessment requires the assessed provision to be stated in that edition',
+          );
+      }
+      // Participant lists and legislative status (schema 2.19).
+      const listing = c.attributes?.listing;
+      if (c.predicate === 'lists_participants') {
+        if (!listing)
+          issue(path, 'A participant list states its count and count basis');
+        if (c.object.kind !== 'literal' || typeof c.object.value !== 'string')
+          issue(path, 'A participant list is given as a text label');
+        if (
+          c.derivation !== 'explicit' ||
+          !links.some(
+            (e) => e?.support === 'supports' && e.sourceRole === 'primary',
+          )
+        )
+          issue(
+            path,
+            'A participant list is explicit and rests on supporting primary evidence',
+          );
+        if (!['event', 'snapshot'].includes(c.time.kind))
+          issue(path, 'A participant list is dated by its list or its source');
+      } else if (listing) {
+        issue(path, 'A count of entries belongs only to participant lists');
+      }
+      if (statusPredicates.has(c.predicate)) {
+        if (
+          c.derivation !== 'explicit' ||
+          !links.some(
+            (e) => e?.support === 'supports' && e.sourceRole === 'primary',
+          )
+        )
+          issue(
+            path,
+            'A legislative or executive status record is explicit and rests on supporting primary evidence',
+          );
+        if (c.time.kind !== 'event')
+          issue(path, 'A legislative or executive status record is an event');
+        if (
+          c.attributes?.activityStage === 'announced' &&
+          !(c.time.kind === 'event' && c.time.basis === 'announcement')
+        )
+          issue(
+            path,
+            'An announced revocation is dated by its announcement, not by a formal act',
           );
       }
       // Control structures and external commitments (schema 2.9).

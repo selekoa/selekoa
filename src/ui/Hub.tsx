@@ -1,6 +1,8 @@
 import type { LandingSummary } from '../domain/landing';
 import type { HubId } from '../domain/deep-links';
-import type { StartAction } from './SiteChrome';
+import { startHref, type StartAction } from './SiteChrome';
+import { NavLink } from './NavLink';
+import { comparisonFacets } from '../domain/framework-comparison';
 import './reading-first.css';
 import './control-commitments.css';
 
@@ -8,6 +10,19 @@ export const hubTitles: Record<HubId, string> = {
   governance: 'Governance',
   ideas: 'Ideas & debates',
   institutions: 'Institutions & people',
+};
+
+/** The research programme each hub belongs to, shown under its title. */
+export const hubSubtitles: Record<HubId, string> = {
+  governance: 'Frontier AI governance',
+  ideas: 'Human thought and institutions around machine intelligence',
+  institutions: 'The institutional history of machine intelligence',
+};
+
+/** A line under the subtitle where a word in it needs defining. */
+const hubScopeNotes: Partial<Record<HubId, string>> = {
+  ideas:
+    'Institutions here are the forums, journals, mailing lists and organisations where the debates took place.',
 };
 
 type Example = { question: string; action: StartAction };
@@ -23,6 +38,14 @@ export function hubOutline(summary: LandingSummary, hub: HubId) {
             question:
               'How did each developer’s safety framework change between editions?',
             action: { kind: 'documents' },
+          },
+          {
+            question:
+              'What does each framework say about pausing development or deployment?',
+            action: {
+              kind: 'compare',
+              id: 'frontier-safety-frameworks',
+            } as StartAction,
           },
           ...(has(summary.controls, 'openai')
             ? [
@@ -112,38 +135,45 @@ export function HubCards({
     <ul className="hub-cards">
       {hubs.map((hub) => {
         const outline = hubOutline(summary, hub);
+        // The start page features the OpenAI control question above the cards.
+        const examples = outline.examples.filter(
+          (e) => !(e.action.kind === 'control' && e.action.id === 'openai'),
+        );
         return (
           <li className="hub-card" key={hub}>
             <h3>
-              <button
+              <NavLink
                 className="text-button"
-                onClick={() => onAction({ kind: 'hub', id: hub })}
+                href={startHref({ kind: 'hub', id: hub }, summary)}
+                onOpen={() => onAction({ kind: 'hub', id: hub })}
               >
                 {outline.title}
-              </button>
+              </NavLink>
             </h3>
             <p>{outline.description}</p>
             <ul
               className="hub-examples"
               aria-label={`${outline.title}: example questions`}
             >
-              {outline.examples.map((e) => (
+              {examples.map((e) => (
                 <li key={e.question}>
-                  <button
+                  <NavLink
                     className="text-button"
-                    onClick={() => onAction(e.action)}
+                    href={startHref(e.action, summary)}
+                    onOpen={() => onAction(e.action)}
                   >
                     {e.question}
-                  </button>
+                  </NavLink>
                 </li>
               ))}
             </ul>
-            <button
+            <NavLink
               className="landing-action"
-              onClick={() => onAction({ kind: 'hub', id: hub })}
+              href={startHref({ kind: 'hub', id: hub }, summary)}
+              onOpen={() => onAction({ kind: 'hub', id: hub })}
             >
               All of {outline.title} →
-            </button>
+            </NavLink>
           </li>
         );
       })}
@@ -174,12 +204,39 @@ function GovernanceEntries({
           downloaded as a research starter, a file of the claims, sources and
           open questions.
         </p>
-        <button
+        <NavLink
           className="landing-action"
-          onClick={() => onAction({ kind: 'documents' })}
+          href={startHref({ kind: 'documents' }, summary)}
+          onOpen={() => onAction({ kind: 'documents' })}
         >
           Read the document histories →
-        </button>
+        </NavLink>
+      </li>
+      <li className="landing-entry">
+        <span className="eyebrow">Comparison</span>
+        <h3>Compare frameworks</h3>
+        <p>
+          The same {comparisonFacets.length} questions put to every framework:
+          which risks it covers, how thresholds are set, what must happen when
+          one is reached, who decides, when models are evaluated, where the
+          framework allows exceptions, what is reported and how the framework is
+          revised. Each cell quotes or paraphrases the chosen edition with its
+          page, or records that no passage was found in a stated search. It
+          shows what the documents state, not what any developer did, and ranks
+          no one.
+        </p>
+        <NavLink
+          className="landing-action"
+          href={startHref(
+            { kind: 'compare', id: 'frontier-safety-frameworks' },
+            summary,
+          )}
+          onOpen={() =>
+            onAction({ kind: 'compare', id: 'frontier-safety-frameworks' })
+          }
+        >
+          Compare frameworks →
+        </NavLink>
       </li>
       <li className="landing-entry">
         <span className="eyebrow">
@@ -208,23 +265,25 @@ function GovernanceEntries({
           <ul className="landing-control">
             {controls.map((c) => (
               <li key={c.id}>
-                <button
+                <NavLink
                   className="text-button"
-                  onClick={() => onAction({ kind: 'control', id: c.id })}
+                  href={startHref({ kind: 'control', id: c.id }, summary)}
+                  onOpen={() => onAction({ kind: 'control', id: c.id })}
                 >
                   {c.title}
-                </button>{' '}
+                </NavLink>{' '}
                 <span className="small-note">{c.records} records</span>
               </li>
             ))}
           </ul>
         )}
-        <button
+        <NavLink
           className="landing-action"
-          onClick={() => onAction({ kind: 'commitments' })}
+          href={startHref({ kind: 'commitments' }, summary)}
+          onOpen={() => onAction({ kind: 'commitments' })}
         >
           Read {commitments.title.toLowerCase()} →
-        </button>
+        </NavLink>
       </li>
       {questions.map((q) => (
         <li className="landing-entry" key={q.id}>
@@ -235,12 +294,13 @@ function GovernanceEntries({
             linked to its original source, with a list of what the records
             cannot answer. No essay or conclusion is added.
           </p>
-          <button
+          <NavLink
             className="landing-action"
-            onClick={() => onAction({ kind: 'question', id: q.id })}
+            href={startHref({ kind: 'question', id: q.id }, summary)}
+            onOpen={() => onAction({ kind: 'question', id: q.id })}
           >
             Open the research question →
-          </button>
+          </NavLink>
         </li>
       ))}
     </>
@@ -277,12 +337,13 @@ function IdeasEntries({
               sources first.
             </p>
           )}
-          <button
+          <NavLink
             className="landing-action"
-            onClick={() => onAction({ kind: 'propositions', id: p.id })}
+            href={startHref({ kind: 'propositions', id: p.id }, summary)}
+            onOpen={() => onAction({ kind: 'propositions', id: p.id })}
           >
             {p.action}
-          </button>
+          </NavLink>
         </li>
       ))}
     </>
@@ -316,12 +377,13 @@ function InstitutionEntries({
                 .filter((d) => d.group === group)
                 .map((d) => (
                   <li key={d.id}>
-                    <button
+                    <NavLink
                       className="text-button"
-                      onClick={() => onAction({ kind: 'dossier', id: d.id })}
+                      href={startHref({ kind: 'dossier', id: d.id }, summary)}
+                      onOpen={() => onAction({ kind: 'dossier', id: d.id })}
                     >
                       {d.label}
-                    </button>
+                    </NavLink>
                   </li>
                 ))}
             </ul>
@@ -332,12 +394,13 @@ function InstitutionEntries({
         <span className="eyebrow">Guided reading</span>
         <h3>Anthropic: {reading.title.toLowerCase()}</h3>
         <p>{reading.question}</p>
-        <button
+        <NavLink
           className="landing-action"
-          onClick={() => onAction({ kind: 'reading' })}
+          href={startHref({ kind: 'reading' }, summary)}
+          onOpen={() => onAction({ kind: 'reading' })}
         >
           Open the guided reading →
-        </button>
+        </NavLink>
       </li>
       <li className="landing-entry landing-entry-wide" id="people-az">
         <span className="eyebrow">People</span>
@@ -356,12 +419,13 @@ function InstitutionEntries({
               <ul>
                 {group.people.map((p) => (
                   <li key={p.id}>
-                    <button
+                    <NavLink
                       className="text-button"
-                      onClick={() => onAction({ kind: 'person', id: p.id })}
+                      href={startHref({ kind: 'person', id: p.id }, summary)}
+                      onOpen={() => onAction({ kind: 'person', id: p.id })}
                     >
                       {p.name}
-                    </button>
+                    </NavLink>
                   </li>
                 ))}
               </ul>
@@ -394,6 +458,10 @@ export function HubPage({
     <main className="landing hub" id="hub" tabIndex={-1}>
       <section className="landing-lede" aria-labelledby="hub-title">
         <h1 id="hub-title">{outline.title}</h1>
+        <p className="hub-subtitle">{hubSubtitles[hub]}</p>
+        {hubScopeNotes[hub] && (
+          <p className="hub-scope-note">{hubScopeNotes[hub]}</p>
+        )}
         <p className="landing-deck">{outline.description}</p>
       </section>
       <section className="landing-entries" aria-label={outline.title}>

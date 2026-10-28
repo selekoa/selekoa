@@ -1,4 +1,4 @@
-import { test, expect, type Page } from '@playwright/test';
+import { test, expect, type Page } from './fixtures';
 import AxeBuilder from '@axe-core/playwright';
 
 function collectErrors(page: Page) {
@@ -29,9 +29,9 @@ test('propositions page names earliest located texts, keeps dates apart and labe
   page,
 }) => {
   const errors = collectErrors(page);
-  await page.goto('/#/ideas');
-  await page.getByRole('button', { name: /^Read the propositions/ }).click();
-  await expect(page).toHaveURL(/#\/propositions\/superintelligence$/);
+  await page.goto('/ideas');
+  await page.getByRole('link', { name: /^Read the propositions/ }).click();
+  await expect(page).toHaveURL(/\/propositions\/superintelligence$/);
   await expect(page.getByRole('heading', { level: 1 })).toHaveText(
     'Propositions about superintelligence, 1863–2022',
   );
@@ -81,19 +81,19 @@ test('propositions page names earliest located texts, keeps dates apart and labe
   await expect(page.locator('#inspector')).toContainText('Claimed date');
   await expect(page.locator('#inspector')).toContainText('Earliest located');
   // A document page lists its propositions and links back to this page.
-  await page.goto('/#/document/erewhon-1872');
+  await page.goto('/document/erewhon-1872');
   await expect(page.locator('[data-relation="articulates"]')).toContainText(
     'Control or purpose specification',
   );
   await page
-    .getByRole('button', {
+    .getByRole('link', {
       name: 'Fast or hard takeoff: propositions page →',
     })
     .click();
-  await expect(page).toHaveURL(/#\/propositions\/superintelligence$/);
+  await expect(page).toHaveURL(/\/propositions\/superintelligence$/);
   await expect(page.locator('#proposition-a4-heading')).toBeFocused();
   // An unknown collection is not routed.
-  await page.goto('/#/propositions/unknown');
+  await page.goto('/propositions/unknown');
   await expect(
     page.getByText('This link does not match any record'),
   ).toBeVisible();
@@ -107,7 +107,7 @@ for (const width of [1440, 390])
     }) => {
       const errors = collectErrors(page);
       await page.setViewportSize({ width, height: 1000 });
-      await page.goto('/#/propositions/superintelligence');
+      await page.goto('/propositions/superintelligence');
       await setTheme(page, theme);
       for (const summary of await page
         .locator('.prop-page details summary')
@@ -128,11 +128,11 @@ test('Yudkowsky argument page pairs earlier views with later texts and shows con
   page,
 }) => {
   const errors = collectErrors(page);
-  await page.goto('/#/ideas');
+  await page.goto('/ideas');
   await page
-    .getByRole('button', { name: /^Read his arguments, claim by claim/ })
+    .getByRole('link', { name: /^Read his arguments, claim by claim/ })
     .click();
-  await expect(page).toHaveURL(/#\/propositions\/yudkowsky-arguments$/);
+  await expect(page).toHaveURL(/\/propositions\/yudkowsky-arguments$/);
   await expect(page.getByRole('heading', { level: 1 })).toContainText(
     'Eliezer Yudkowsky’s arguments on common claims about AI',
   );
@@ -190,7 +190,7 @@ for (const [width, theme] of [
     const errors = collectErrors(page);
     await page.setViewportSize({ width, height: 1000 });
     await page.goto(
-      '/#/propositions/yudkowsky-arguments?inspect=yk-y22-staring-into-the-singularity-a',
+      '/propositions/yudkowsky-arguments?inspect=yk-y22-staring-into-the-singularity-a',
     );
     await setTheme(page, theme);
     await expect(
@@ -215,12 +215,12 @@ test('economics page names tier-1 and tier-2 earliest texts and shows conditions
   page,
 }) => {
   const errors = collectErrors(page);
-  await page.goto('/#/ideas');
+  await page.goto('/ideas');
   await page
-    .getByRole('button', { name: /^Read the economics propositions/ })
+    .getByRole('link', { name: /^Read the economics propositions/ })
     .click();
   await expect(page).toHaveURL(
-    /#\/propositions\/economics-of-machine-intelligence$/,
+    /\/propositions\/economics-of-machine-intelligence$/,
   );
   await expect(page.getByRole('heading', { level: 1 })).toHaveText(
     'Economics of machine intelligence',
@@ -297,7 +297,7 @@ for (const [width, theme] of [
     const errors = collectErrors(page);
     await page.setViewportSize({ width, height: 1000 });
     await page.goto(
-      '/#/propositions/economics-of-machine-intelligence?inspect=ec-g09-clancy-besiroglu-2023-great-inflection-a',
+      '/propositions/economics-of-machine-intelligence?inspect=ec-g09-clancy-besiroglu-2023-great-inflection-a',
     );
     await setTheme(page, theme);
     await expect(page.locator('#inspector')).toContainText(

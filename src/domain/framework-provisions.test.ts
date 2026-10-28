@@ -1,3 +1,4 @@
+import { facetById } from './framework-comparison';
 import { createHash } from 'node:crypto';
 import { describe, expect, it } from 'vitest';
 import { repository } from './repository';
@@ -38,8 +39,8 @@ describe('schema 2.8 framework provisions', () => {
       expect(sha(preProvisionsRaw[key]), key).toBe(before.sha256[key]);
     expect(sha(preProvisionsRaw.meta)).toBe(before.sha256.meta);
     expect(preProvisionsRaw.meta.schemaVersion).toBe('2.7');
-    // The 2026-10-25 re-check corrections moved the current dataset to schema 2.16.
-    expect(data.meta.schemaVersion).toBe('2.16');
+    // Part 2 of the 2026-10-28 frameworks-to-law admission moved the current dataset to schema 2.19.
+    expect(data.meta.schemaVersion).toBe('2.19');
   });
 
   it('applies the three stop-case decisions and keeps their history', () => {
@@ -73,7 +74,12 @@ describe('schema 2.8 framework provisions', () => {
 
   it('quotes every provision from its own edition, briefly', () => {
     expect(provisions.length).toBeGreaterThan(60);
-    for (const c of provisions) {
+    // Comparison questions given by paraphrase (schema 2.18) quote nothing.
+    for (const c of provisions.filter(
+      (c) =>
+        facetById(c.attributes?.provision?.facet?.id ?? '')?.dimension
+          .passages !== 'paraphrase',
+    )) {
       const quote = c.evidenceIds
         .map((id) => repository.evidence.get(id)!)
         .find(
@@ -103,14 +109,19 @@ describe('schema 2.8 framework provisions', () => {
   });
 
   it('stays within the quotation limits for every framework source', () => {
+    // A passage quoted for several claims counts once (schema 2.11).
     const perSource = new Map<string, { quotes: number; words: number }>();
+    const counted = new Set<string>();
     for (const e of data.evidence.filter((e) => e.passageType === 'quote')) {
+      expect(words(e.passage), e.id).toBeLessThanOrEqual(50);
+      const passage = `${e.sourceId} ${e.passage.trim().replace(/\s+/g, ' ')}`;
+      if (counted.has(passage)) continue;
+      counted.add(passage);
       const t = perSource.get(e.sourceId) ?? { quotes: 0, words: 0 };
       perSource.set(e.sourceId, {
         quotes: t.quotes + 1,
         words: t.words + words(e.passage),
       });
-      expect(words(e.passage), e.id).toBeLessThanOrEqual(50);
     }
     const history = documentHistory(data, frontierSafetyFrameworks);
     const ids = new Set(history.claimIds);

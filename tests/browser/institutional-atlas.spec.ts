@@ -1,4 +1,4 @@
-import { expect, test } from '@playwright/test';
+import { expect, test } from './fixtures';
 import AxeBuilder from '@axe-core/playwright';
 
 const examples = {
@@ -43,7 +43,7 @@ for (const [id, fixture] of Object.entries(examples)) {
     page.on('console', (message) => {
       if (message.type() === 'error') errors.push(message.text());
     });
-    await page.goto(`/#/dossier/${id}`);
+    await page.goto(`/dossier/${id}`);
     const dossier = page.getByRole('article', {
       name: `${fixture.name} institutional dossier`,
     });
@@ -102,7 +102,7 @@ for (const [id, fixture] of Object.entries(examples)) {
 test('DeepMind is discoverable and its combination path reaches two separate predecessor dossiers', async ({
   page,
 }) => {
-  await page.goto('/#/explore');
+  await page.goto('/explore');
   await page
     .getByRole('navigation', { name: 'Explore the dataset' })
     .getByRole('button', { name: 'DeepMind', exact: true })
@@ -119,7 +119,7 @@ test('DeepMind is discoverable and its combination path reaches two separate pre
   await expect(inspector).toContainText('2023-04-20');
   await inspector.getByRole('button', { name: 'Close ×' }).click();
   await page
-    .getByRole('button', {
+    .getByRole('link', {
       name: 'Open Google DeepMind dossier →',
       exact: true,
     })
@@ -130,7 +130,7 @@ test('DeepMind is discoverable and its combination path reaches two separate pre
     }),
   ).toBeVisible();
   await page
-    .getByRole('button', { name: 'Open Google Brain dossier →', exact: true })
+    .getByRole('link', { name: 'Open Google Brain dossier →', exact: true })
     .click();
   const brain = page.getByRole('article', {
     name: 'Google Brain institutional dossier',
@@ -142,5 +142,5 @@ test('DeepMind is discoverable and its combination path reaches two separate pre
   await expect(
     brain.locator('summary').filter({ hasText: /Attention Is All You Need/ }),
   ).toBeVisible();
-  await expect(page).toHaveURL(/#\/dossier\/google-brain$/);
+  await expect(page).toHaveURL(/\/dossier\/google-brain$/);
 });

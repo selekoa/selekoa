@@ -1,5 +1,6 @@
 import type { ReactNode } from 'react';
 import type { Claim, Source } from '../domain/schema';
+import { RecordLink } from './NavLink';
 import type { Repository } from '../domain/repository';
 import { predicates } from '../domain/predicates';
 import { timeLabel } from '../domain/query';
@@ -129,8 +130,11 @@ export function ClaimRow({
   heading?: ReactNode;
   /** Replaces the default date line, for rows that show dates elsewhere. */
   detail?: ReactNode;
-  /** A separate navigation control below the row, never nested in it. */
-  link?: { label: string; onClick: () => void };
+  /**
+   * A separate navigation control below the row, never nested in it. With the
+   * record's id it is a real link where that record has a page.
+   */
+  link?: { label: string; onClick: () => void; id?: string };
 }) {
   return (
     <li>
@@ -162,11 +166,23 @@ export function ClaimRow({
         </span>
       </button>
       <StatedReason claim={claim} repository={repository} />
-      {link && (
-        <button className="text-button record-row-link" onClick={link.onClick}>
-          {link.label}
-        </button>
-      )}
+      {link &&
+        (link.id ? (
+          <RecordLink
+            className="text-button record-row-link"
+            id={link.id}
+            onOpen={link.onClick}
+          >
+            {link.label}
+          </RecordLink>
+        ) : (
+          <button
+            className="text-button record-row-link"
+            onClick={link.onClick}
+          >
+            {link.label}
+          </button>
+        ))}
     </li>
   );
 }

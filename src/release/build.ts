@@ -250,6 +250,8 @@ function csvRow(type: RecordType, r: Row): unknown[] {
       p.code,
       p.criterion,
       p.terms,
+      r.countryCode,
+      r.datedNames === undefined ? undefined : canonicalJson(r.datedNames),
     ];
   }
   if (type === 'claims') {

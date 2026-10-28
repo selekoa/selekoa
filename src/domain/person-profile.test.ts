@@ -1,6 +1,10 @@
 import { describe, expect, it } from 'vitest';
 import { repository } from './repository';
-import { personProfile, documentationDates } from './person-profile';
+import {
+  personProfile,
+  documentationDates,
+  publicationPhrases,
+} from './person-profile';
 import { relatedTo } from './query';
 import { canonicalJson } from './references';
 import { personStarter, personStarterMarkdown, starterJson } from './starter';
@@ -125,6 +129,27 @@ describe('person profile projection', () => {
     expect(christiano.works.some((c) => c.predicate !== 'authored')).toBe(
       false,
     );
+  });
+  it('names each source in a row with several, so their dates do not read as one source', () => {
+    const claim = repository.claims.get('cs-summers-initial-board-2023')!;
+    expect(
+      personProfile(data, 'larry-summers')!.path.map((e) => e.claim.id),
+    ).toContain(claim.id);
+    const phrases = publicationPhrases(
+      documentationDates(data, claim).publications,
+    ).map((p) => (p.title ? `${p.title}: ${p.text}` : p.text));
+    expect(phrases).toEqual([
+      'Sam Altman returns as CEO, OpenAI has a new initial board: published 2023-11-29',
+      'Our structure: publication date unknown',
+    ]);
+    for (const person of people)
+      for (const entry of personProfile(data, person.id)!.path) {
+        const list = publicationPhrases(entry.dates.publications);
+        if (list.length === 1) {
+          expect(list[0].title).toBeUndefined();
+          expect(list[0].text).toMatch(/^Source publi/);
+        } else for (const p of list) expect(p.title).toBeTruthy();
+      }
   });
 });
 

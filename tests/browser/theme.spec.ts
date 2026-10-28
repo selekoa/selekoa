@@ -1,4 +1,4 @@
-import { test, expect, type Page } from '@playwright/test';
+import { test, expect, type Page } from './fixtures';
 
 /**
  * Relative luminance of a computed `rgb(...)` colour, 0 (black) to 1 (white).

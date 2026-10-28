@@ -27,11 +27,92 @@ The renderer loads as a separate chunk. The initial overview filters to institut
 
 The start page renders from a summary computed from `data/*.json` at build time
 (`scripts/landing-summary.ts`, `src/domain/landing.ts`), so the first load carries
-no records. `src/App.tsx` is that light shell. Any other address, or a link from the
-start page, loads `src/Workspace.tsx` with the records, which form one chunk of their
+no records. `src/App.tsx` is that light shell. Every page arrives as built HTML
+(see below). Any other address, or a link from the start page, then loads
+`src/Workspace.tsx` with the records, which form one chunk of their
 own so that a code change does not invalidate a cached copy of the data. Each page's
 code (dossier, document history, search and so on) loads when the page first opens.
 The earlier stylesheets still load with the first page, in their original order.
+
+## Addresses and pre-rendered pages
+
+Every page has a real path from the site root, built from stable IDs
+(`src/domain/addresses.ts`, resolved in `src/domain/deep-links.ts`):
+
+| Page                           | Path                                     |
+| ------------------------------ | ---------------------------------------- |
+| Start page                     | `/`                                      |
+| Hubs                           | `/governance`, `/ideas`, `/institutions` |
+| About & method                 | `/about`                                 |
+| Search (terms in the fragment) | `/search#q=…&mode=names`                 |
+| Record explorer                | `/explore#q=…&view=timeline`             |
+| Document history               | `/documents/<collection-id>`             |
+| Framework comparison           | `/compare/<collection-id>?facet=…`       |
+| Control structure              | `/control/<collection-id>`               |
+| Commitments                    | `/commitments/<collection-id>`           |
+| Propositions                   | `/propositions/<collection-id>`          |
+| Question or guided reading     | `/question/<id>?section=…&claim=…`       |
+| Institutional dossier          | `/dossier/<organisation-id>`             |
+| Person                         | `/person/<person-id>`                    |
+| Document                       | `/document/<document-id>`                |
+| Claim                          | `/claim/<claim-id>`                      |
+
+Search and explore terms go in the fragment (`#q=…`), so they stay in the
+browser and never reach the host's logs; the earlier `?q=` form still resolves
+and is rewritten to the fragment. Any page except a claim takes
+`?inspect=<claim-id>` for the open claim panel. IDs are lower-case slugs and are used unchanged. The earlier hash
+addresses (`#/person/<id>`, `#/search?q=…`, `#explorer`, `#/reading/<id>`)
+are moved to their paths in the browser with `history.replaceState`, both
+when a page opens at one and when one is followed from an open page
+(`legacyHashPath`, `src/main.tsx`). An address that names no record shows
+the notice, as before; it never substitutes another record.
+
+**Pre-rendering.** `pnpm build` runs three steps: the client build; a second
+Vite build of the page renderer `src/prerender/render.tsx` (`--ssr`, one
+self-contained file in `dist-ssr/`, built for a worker target with every
+dependency inside); and `scripts/prerender.ts`, which renders every path from
+`pagePaths` (`src/prerender/pages.ts`) into the built `index.html` and writes
+it to `dist/<path>.html` (`/person/x` → `person/x.html`, which Cloudflare
+Pages serves at `/person/x` without a redirect; the start page stays
+`index.html`). It also writes `404.html` (not indexed) and, with indexing on,
+`sitemap.xml` listing every page and the plain files, and it fails the build
+if any link in the written pages leads to no built file.
+
+Each page's HTML carries the page's own title, description, canonical
+address (`baseUrl` + path) and Open Graph copies when indexing is on, and
+the full text the reader sees: headings, statements, dates, qualifications,
+quotations within the quotation budget, source links and review status. The
+pages are rendered from the application's own React components, so the
+built text follows the same wording rules as the app. The explorer's long
+claim list is left out of the built explorer and claim pages and drawn once
+the page runs in the browser; a claim page carries its claim panel.
+
+**Why the React components, not separate templates.** One renderer means
+one wording: the editorial rules (earliest located, context-only passages,
+quote budget) live in the components and cannot drift between the app and
+the built pages. The render path is a pure function from the bundled release
+data and a path to HTML (`renderPage`), using React's web-stream server API
+(`renderToReadableStream`), which runs unchanged in Node and in a Cloudflare
+Worker. It has no DOM or Node-only dependency: browser-only values (theme,
+media queries, the explorer list) go through `src/ui/client.ts`, which gives
+the built value on the server and while the browser takes over the page.
+A worker would import the same bundle and call `renderPage(path, template,
+baseUrl)` with the built `index.html` as template (phase 3).
+
+**Taking over in the browser.** The root element names the path it was
+rendered for (`data-path`). When it matches the address, `src/main.tsx`
+hydrates the built HTML rather than drawing the page again, so there is no
+flash; the workspace then applies the query (an open claim, a search). Page
+code loads with the records before the page is taken over
+(`src/ui/page-modules.tsx`), and App passes the page identical props until
+then: an update reaching a page still being taken over makes React discard
+the built HTML. A button pressed before then is held and pressed again
+afterwards (`src/main.tsx`); search boxes are read-only and other form
+controls disabled until then. Any other page
+(the not-found page, the start page reached through an old hash address, the
+development server) is drawn afresh. Internal navigation uses the History API:
+a new page is a new history entry, a change of open claim, section or search
+replaces the current one, and the document title follows the page.
 
 ## Search
 
@@ -47,7 +128,7 @@ is the same search restricted to names and aliases.
 
 `src/domain` has no React or Sigma dependency. Future file, SQL or API loaders can supply the same validated Dataset to `createRepository`. Preserve the entity/claim/source/evidence contract and stable IDs while replacing storage behind that boundary. Larger datasets will need indexed queries and paginated neighbourhoods rather than a complete browser download.
 
-The app records historical events/snapshots, not current-state contract and employment intervals. Counts describe the sample, never the real-world size of the sector. The build is static-host compatible; deployment is neither configured nor authorized.
+The app records historical events/snapshots, not current-state contract and employment intervals. Counts describe the sample, never the real-world size of the sector. The build is static-host compatible: one HTML file per page, served from the site root.
 
 ## Quality
 

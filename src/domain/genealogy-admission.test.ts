@@ -5,7 +5,10 @@ import snapshot from '../../review/genealogy-admission-before-2026-10-17.json';
 import { repository } from './repository';
 import { datasetSchema, type Dataset } from './schema';
 import { indirectRoutes, restsOnReporting, statedReason } from './genealogy';
-import { preRecheckCorrectionsRaw } from '../editorial/historical-views';
+import {
+  preArchiveAdmissionsRaw,
+  preRecheckCorrectionsRaw,
+} from '../editorial/historical-views';
 
 const data = repository.data;
 const held = map.holdBack as Record<string, string>;
@@ -32,7 +35,17 @@ describe('the lab genealogy (admitted 2026-10-17, schema 2.15)', () => {
     for (const c of pack.claims) {
       const stored = repository.claims.get(c.id);
       if (c.id in held) {
-        expect(stored, c.id).toBeUndefined();
+        // Held back on 2026-10-17; admitted on 2026-10-26 on an archive
+        // capture read (review/archive-admissions-2026-10-26.md).
+        expect(
+          preArchiveAdmissionsRaw.claims.some((r) => r.id === c.id),
+          c.id,
+        ).toBe(false);
+        expect(stored?.predicate, c.id).toBe(c.predicate);
+        expect(stored!.recordedAt).toBe('2026-10-26');
+        expect(
+          repository.evidence.get(stored!.evidenceIds[0])!.retrievalRoute,
+        ).toBeUndefined();
         continue;
       }
       expect(stored?.predicate, c.id).toBe(c.predicate);

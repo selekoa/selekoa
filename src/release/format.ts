@@ -6,7 +6,7 @@
  */
 
 export const releaseFormat = 'selekoa-dataset';
-export const releaseFormatVersion = '1.6';
+export const releaseFormatVersion = '1.7';
 /**
  * Formats the generator can still write, so a release made in an earlier
  * format reproduces byte for byte. Format 1.2 adds `sources.csl.json`;
@@ -14,7 +14,8 @@ export const releaseFormatVersion = '1.6';
  * format 1.4 changes no record field and states the licence (the manifest's
  * `licence` and the README's licence section); format 1.5 adds the source
  * field `authorNames` (dataset schema 2.14); format 1.6 adds the evidence
- * field `retrievalRoute` (dataset schema 2.15).
+ * field `retrievalRoute` (dataset schema 2.15); format 1.7 adds the entity
+ * fields `countryCode` and `datedNames` (dataset schema 2.19).
  */
 export const writableFormatVersions = [
   '1.1',
@@ -23,6 +24,7 @@ export const writableFormatVersions = [
   '1.4',
   '1.5',
   '1.6',
+  '1.7',
 ] as const;
 export type WritableFormatVersion = (typeof writableFormatVersions)[number];
 
@@ -83,6 +85,8 @@ export const recordFields: Record<RecordType, FieldSpec[]> = {
     f('externalIds', 'structured', 'provisional'),
     f('documentVersion', 'selekoa', 'stable', { nested: true }),
     f('proposition', 'selekoa', 'provisional', { nested: true }),
+    f('countryCode', 'structured', 'stable', { since: '1.7' }),
+    f('datedNames', 'selekoa', 'provisional', { nested: true, since: '1.7' }),
   ],
   claims: [
     f('id', 'structured', 'stable', { required: true }),
@@ -182,6 +186,8 @@ export const csvColumns: Record<RecordType, string[]> = {
     'proposition_code',
     'proposition_criterion',
     'proposition_terms',
+    'country_code',
+    'dated_names_json',
   ],
   claims: [
     'id',
@@ -271,6 +277,8 @@ const csvColumnsSince: Record<string, WritableFormatVersion> = {
   context_only_json: '1.3',
   author_names_json: '1.5',
   retrieval_route: '1.6',
+  country_code: '1.7',
+  dated_names_json: '1.7',
 };
 
 const formatOrder = (v: WritableFormatVersion) =>

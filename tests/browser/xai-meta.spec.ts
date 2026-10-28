@@ -1,4 +1,4 @@
-import { expect, test } from '@playwright/test';
+import { expect, test } from './fixtures';
 import AxeBuilder from '@axe-core/playwright';
 import { dossierCount } from './dossier-count';
 import { readFileSync } from 'node:fs';
@@ -65,7 +65,7 @@ for (const [id, sample] of Object.entries(examples)) {
       });
       await page.setViewportSize({ width, height: width === 390 ? 844 : 1000 });
       await page.emulateMedia({ reducedMotion: 'reduce' });
-      await page.goto('/#/dossier/' + id);
+      await page.goto('/dossier/' + id);
       const dossier = page.getByRole('article', {
         name: sample.name + ' institutional dossier',
       });

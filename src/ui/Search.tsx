@@ -7,6 +7,7 @@ import {
   type ReactNode,
 } from 'react';
 import type { Repository } from '../domain/repository';
+import { useInBrowser, useMediaQuery } from './client';
 import {
   searchOrganisations,
   searchRecords,
@@ -30,6 +31,7 @@ import {
 } from '../release/collections';
 import { entityStyle } from './entityStyle';
 import { CopyLink } from './ReferenceActions';
+import { RecordLink } from './NavLink';
 import { ArchiveLink } from './SourceArchive';
 import './search.css';
 import { quoted } from './quote';
@@ -62,6 +64,7 @@ const fieldLabels: Record<SearchField, string> = {
 };
 const collectionKinds: Record<CollectionKind, string> = {
   documents: 'Document history',
+  compare: 'Comparison',
   commitments: 'Commitments',
   control: 'Control structure',
   question: 'Guided reading',
@@ -188,10 +191,13 @@ export function Search({
   const [untilYear, setUntilYear] = useState('');
   const [expanded, setExpanded] = useState<SearchRecordType[]>([]);
   const [wholeWords, setWholeWords] = useState(false);
-  // Filters start open on wide screens and folded on phones.
-  const [filtersOpen, setFiltersOpen] = useState(
-    () => window.matchMedia?.('(min-width: 721px)').matches ?? true,
-  );
+  // Filters start open on wide screens and folded on phones, until the
+  // reader opens or folds them. The built page shows them open.
+  const wide = useMediaQuery('(min-width: 721px)', true);
+  // Controls in a built page answer once the page runs in the browser.
+  const live = useInBrowser();
+  const [filtersToggled, setFiltersToggled] = useState<boolean | null>(null);
+  const filtersOpen = filtersToggled ?? wide;
   const filtered =
     mode === 'all' &&
     !!(type || collectionId || organisationId || fromYear || untilYear);
@@ -395,23 +401,34 @@ export function Search({
         {context(hit, ['name'], entity.name)}
         <span className="search-hit-actions">
           {(entity.type === 'person' || entity.type === 'document') && (
-            <button
+            <RecordLink
               className="text-button"
-              onClick={() => onPage(entity.id)}
+              id={entity.id}
+              onOpen={() => onPage(entity.id)}
               aria-label={`${entity.name}: ${entity.type} page`}
             >
               {entity.type === 'person' ? 'Person page' : 'Document page'} →
+            </RecordLink>
+          )}
+          {entity.type === 'organisation' ? (
+            // An organisation opens its dossier, which has an address.
+            <RecordLink
+              className="text-button"
+              id={entity.id}
+              onOpen={() => onEntity(entity.id)}
+              aria-label={`${entity.name}: explore its records`}
+            >
+              Open in the explorer or dossier →
+            </RecordLink>
+          ) : (
+            <button
+              className="text-button"
+              onClick={() => onEntity(entity.id)}
+              aria-label={`${entity.name}: explore its records`}
+            >
+              Explore its records →
             </button>
           )}
-          <button
-            className="text-button"
-            onClick={() => onEntity(entity.id)}
-            aria-label={`${entity.name}: explore its records`}
-          >
-            {entity.type === 'organisation'
-              ? 'Open in the explorer or dossier →'
-              : 'Explore its records →'}
-          </button>
         </span>
       </div>
     );
@@ -448,6 +465,7 @@ export function Search({
           <span aria-hidden="true">⌕</span>
           <input
             id="record-search"
+            readOnly={!live}
             type="search"
             value={query}
             onChange={(e) => changeQuery(e.target.value)}
@@ -481,6 +499,7 @@ export function Search({
             <label key={value}>
               <input
                 type="radio"
+                disabled={!live}
                 name="search-mode"
                 value={value}
                 checked={mode === value}
@@ -495,6 +514,7 @@ export function Search({
           <label className="search-whole">
             <input
               type="checkbox"
+              disabled={!live}
               checked={wholeWords}
               onChange={(e) => {
                 setExpanded([]);
@@ -508,7 +528,7 @@ export function Search({
           <details
             className="search-filter-panel"
             open={filtersOpen}
-            onToggle={(e) => setFiltersOpen(e.currentTarget.open)}
+            onToggle={(e) => setFiltersToggled(e.currentTarget.open)}
           >
             <summary>
               Filters
@@ -518,6 +538,7 @@ export function Search({
               <label>
                 Record type{' '}
                 <select
+                  disabled={!live}
                   aria-label="Record type"
                   value={type}
                   onChange={(e) =>
@@ -535,6 +556,7 @@ export function Search({
               <label>
                 Collection{' '}
                 <select
+                  disabled={!live}
                   aria-label="Collection"
                   value={collectionId}
                   onChange={(e) => setCollectionId(e.target.value)}
@@ -550,6 +572,7 @@ export function Search({
               <label>
                 Organisation{' '}
                 <select
+                  disabled={!live}
                   aria-label="Organisation"
                   value={organisationId}
                   onChange={(e) => setOrganisationId(e.target.value)}
@@ -566,6 +589,7 @@ export function Search({
               <label>
                 From{' '}
                 <select
+                  disabled={!live}
                   value={fromYear}
                   onChange={(e) => setFromYear(e.target.value)}
                   aria-label="From year"
@@ -581,6 +605,7 @@ export function Search({
               <label>
                 To{' '}
                 <select
+                  disabled={!live}
                   value={untilYear}
                   onChange={(e) => setUntilYear(e.target.value)}
                   aria-label="To year"

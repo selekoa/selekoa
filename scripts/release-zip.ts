@@ -5,6 +5,7 @@ import { readdir, readFile } from 'node:fs/promises';
 import path from 'node:path';
 import { crc32, deflateRawSync } from 'node:zlib';
 import type { Plugin } from 'vite';
+import { dataLicenceFiles } from '../src/site/machine-readable.ts';
 
 const releaseRoot = 'release';
 const releaseName = /^v\d+\.\d+\.\d+$/;
@@ -66,7 +67,7 @@ export function zip(entries: { name: string; data: Buffer }[], date: string) {
  * outside the manifest's checksummed files, so a release made before the
  * licence existed (releases are immutable) still ships with its terms.
  */
-export const archiveLicenceFiles = ['LICENSE-DATA.txt', 'LICENSING.md'];
+export const archiveLicenceFiles = dataLicenceFiles;
 
 /** One archive per release directory: its manifest's files and the licence files. */
 export async function releaseArchives(root = releaseRoot) {
@@ -107,6 +108,8 @@ export function releaseDownloads(): Plugin {
   return {
     name: 'selekoa-release-downloads',
     async generateBundle() {
+      // The page renderer's bundle carries no site files.
+      if (this.environment?.config.consumer === 'server') return;
       for (const archive of await releaseArchives())
         this.emitFile({ type: 'asset', ...archive });
     },

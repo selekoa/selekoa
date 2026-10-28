@@ -1,8 +1,12 @@
-import { readdirSync } from 'node:fs';
+import { readdirSync, readFileSync } from 'node:fs';
 import { clickMapClaim } from './map-actions';
 import claims from '../../data/claims.json' with { type: 'json' };
-import { expect, test } from '@playwright/test';
+import { expect, test } from './fixtures';
+import { readSiteConfig } from '../../scripts/site-config';
+import { hasContact } from '../../src/site/site-config';
 import AxeBuilder from '@axe-core/playwright';
+
+const site = readSiteConfig();
 
 // The explorer and its map leave proposition records out; the propositions
 // collection and document pages list them.
@@ -23,7 +27,7 @@ test('map renders in Edge without console or runtime errors', async ({
   page.on('console', (msg) => {
     if (msg.type() === 'error') errors.push(msg.text());
   });
-  await page.goto('/#/explore');
+  await page.goto('/explore');
   await expect(page.getByRole('heading', { level: 1 })).toHaveText(
     'Explore the documentary record',
   );
@@ -54,7 +58,7 @@ test('curved reciprocal lines open their distinct evidence records', async ({
 }) => {
   // Fixed viewport matches the manually inspected ordinary-desktop layout.
   await page.setViewportSize({ width: 1265, height: 744 });
-  await page.goto('/#/explore');
+  await page.goto('/explore');
   await page
     .getByRole('navigation', { name: 'Explore the dataset' })
     .getByRole('button', { name: 'OpenAI', exact: true })
@@ -92,7 +96,7 @@ test('curved reciprocal lines open their distinct evidence records', async ({
 test('entity focus opens exact capital evidence and qualifications', async ({
   page,
 }) => {
-  await page.goto('/#/explore');
+  await page.goto('/explore');
   await page
     .getByRole('navigation', { name: 'Explore the dataset' })
     .getByRole('button', { name: 'Anthropic', exact: true })
@@ -130,7 +134,7 @@ test('entity focus opens exact capital evidence and qualifications', async ({
 test('search, two-source provenance and keyboard inspection', async ({
   page,
 }) => {
-  await page.goto('/#/explore');
+  await page.goto('/explore');
   await page.getByRole('searchbox').fill('I. J. Good');
   await page.getByRole('searchbox').press('Enter');
   const button = page.getByRole('button', {
@@ -150,7 +154,7 @@ test('search, two-source provenance and keyboard inspection', async ({
 test('time and type filters produce honest empty states and reset', async ({
   page,
 }) => {
-  await page.goto('/#/explore');
+  await page.goto('/explore');
   await page.getByLabel('Record type', { exact: true }).selectOption('all');
   await page.getByLabel('Records through year').selectOption('1965');
   await page.getByRole('button', { name: 'Timeline', exact: true }).click();
@@ -187,7 +191,7 @@ test('time and type filters produce honest empty states and reset', async ({
 test('all claims are accessible as text and the footer opens About & method', async ({
   page,
 }) => {
-  await page.goto('/#/explore');
+  await page.goto('/explore');
   await page.getByLabel('Record type', { exact: true }).selectOption('all');
   await page.getByRole('button', { name: 'Claims', exact: true }).click();
   await expect(page.getByLabel('Claims list').getByRole('button')).toHaveCount(
@@ -199,9 +203,9 @@ test('all claims are accessible as text and the footer opens About & method', as
   ).toContainText('round total');
   await page
     .getByRole('contentinfo')
-    .getByRole('button', { name: 'About & method' })
+    .getByRole('link', { name: 'About & method' })
     .click();
-  await expect(page).toHaveURL(/#\/about$/);
+  await expect(page).toHaveURL(/\/about$/);
   const about = page.getByRole('article', {
     name: 'About Selekoa and its method',
   });
@@ -219,10 +223,10 @@ test('About & method states coverage, labels, citation and corrections', async (
 }) => {
   await page.goto('/');
   await page
-    .getByRole('button', { name: 'About Selekoa and its method →' })
-    .first()
+    .getByRole('navigation', { name: 'Primary' })
+    .getByRole('link', { name: 'About & method' })
     .click();
-  await expect(page).toHaveURL(/#\/about$/);
+  await expect(page).toHaveURL(/\/about$/);
   const about = page.getByRole('article', {
     name: 'About Selekoa and its method',
   });
@@ -288,15 +292,42 @@ test('About & method states coverage, labels, citation and corrections', async (
   );
   expect(archive.status()).toBe(200);
   expect((await archive.body()).subarray(0, 2).toString()).toBe('PK');
-  // Placeholder only: no contact address or personal identity is published.
-  await expect(about.locator('#about-corrections ~ p').first()).toContainText(
-    'will be published here before any public release',
+  // The release's files at fixed addresses, unchanged, and llms.txt.
+  const dataFile = await page.request.get(
+    (await about
+      .getByRole('link', { name: 'data/claims.json' })
+      .getAttribute('href'))!,
   );
-  await expect(about).not.toContainText('@');
-  await expect(page.locator('meta[name="robots"]')).toHaveAttribute(
-    'content',
-    'noindex, nofollow',
+  expect(dataFile.status()).toBe(200);
+  expect(
+    (await dataFile.body()).equals(
+      readFileSync(`release/v${latest}/claims.json`),
+    ),
+  ).toBe(true);
+  const llms = await page.request.get(
+    (await about.getByRole('link', { name: 'llms.txt' }).getAttribute('href'))!,
   );
+  expect(llms.status()).toBe(200);
+  expect(await llms.text()).toMatch(/^# Selekoa\n/);
+  // The corrections address and robots tag follow the build's site config.
+  const corrections = about.locator('#about-corrections ~ p').first();
+  if (hasContact(site)) {
+    await expect(
+      corrections.getByRole('link', { name: site.contact }),
+    ).toHaveAttribute('href', `mailto:${site.contact}`);
+  } else {
+    await expect(corrections).toContainText(
+      'will be published here before any public release',
+    );
+    await expect(about).not.toContainText('@');
+  }
+  if (site.indexing)
+    await expect(page.locator('meta[name="robots"]')).toHaveCount(0);
+  else
+    await expect(page.locator('meta[name="robots"]')).toHaveAttribute(
+      'content',
+      'noindex, nofollow',
+    );
   // The in-page index moves focus to its section.
   await about.getByRole('button', { name: 'How to cite' }).click();
   await expect(page.locator('#about-cite')).toBeFocused();
@@ -318,7 +349,7 @@ test('About & method states coverage, labels, citation and corrections', async (
 test('baseline accessibility in overview and evidence view', async ({
   page,
 }) => {
-  await page.goto('/#/explore');
+  await page.goto('/explore');
   expect(
     (
       await new AxeBuilder({ page })
@@ -344,7 +375,7 @@ test('narrow screens keep controls and evidence within the viewport', async ({
 }) => {
   await page.setViewportSize({ width: 390, height: 844 });
   await page.emulateMedia({ reducedMotion: 'reduce' });
-  await page.goto('/#/explore');
+  await page.goto('/explore');
   await page
     .getByRole('navigation', { name: 'Explore the dataset' })
     .getByRole('button', { name: 'Anthropic', exact: true })
