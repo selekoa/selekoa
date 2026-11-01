@@ -1,0 +1,268 @@
+{
+  "auditor": "fresh-context Claude subagent",
+  "date": "2026-10-29",
+  "scope": "20 items from audit-B-input.json; each passage checked against the cached retrieval via tools.mjs text/grep",
+  "items": [
+    {
+      "id": "pp-au-michael-figurnov-alphafold-paper",
+      "quoteVerbatim": "yes",
+      "locatorRight": "yes",
+      "support": "full",
+      "dateAndKindRight": "yes",
+      "identityRight": "unclear",
+      "overstatement": null,
+      "verdict": "correct",
+      "suggestedFix": "Attach a second identifying source, e.g. https://figurnov.ru/ (fetched as audit-figurnov-home), locator “Publications, Nature, 2021”, passage “Highly accurate protein structure prediction with AlphaFold John Jumper*, Richard Evans*, Alexander Pritzel*, Tim Green*, Michael Figurnov*”, sourceRole primary, support supports (identification only; do not take the homepage role text as a dated role). Without it, hold the item.",
+      "notes": "Byline of au-by-alphafold (Nature page, Published: 15 July 2021) prints “Michael Figurnov1 na1”; 34 names are displayed (the page shows an ellipsis before Hassabis, but the 34 displayed names match the count). No second identifying source is attached to the item or present in the audit input for this paper, so the identity rule is not met as packaged. Auditor found one: figurnov.ru (personal homepage) lists “Highly accurate protein structure prediction with AlphaFold … Michael Figurnov*” under Nature, 2021 and says he was “a core machine learning researcher behind AlphaFold 2”."
+    },
+    {
+      "id": "pp-au-naman-goyal-llama-paper",
+      "quoteVerbatim": "yes",
+      "locatorRight": "yes",
+      "support": "full",
+      "dateAndKindRight": "yes",
+      "identityRight": "yes",
+      "overstatement": null,
+      "verdict": "upheld",
+      "suggestedFix": null,
+      "notes": "arXiv 2302.13971v1 byline lists Naman Goyal; 14 authors; submitted 27 Feb 2023. Identifying page au-id-meta-llama (AI at Meta) lists Naman Goyal under “Written by” (that page dates the publication February 24, 2023, a different date from arXiv v1; the item’s 27 Feb date is the arXiv v1 date and is correct for the inspected expression)."
+    },
+    {
+      "id": "pp-au-patrick-lavictoire-miri-ml-agenda",
+      "quoteVerbatim": "yes",
+      "locatorRight": "yes",
+      "support": "full",
+      "dateAndKindRight": "yes",
+      "identityRight": "unclear",
+      "overstatement": null,
+      "verdict": "correct",
+      "suggestedFix": "Attach https://intelligence.org/2016/07/27/alignment-machine-learning/ (audit-miri-2016-agenda), locator “Post body, first paragraphs”, passage “Co-authored by Jessica Taylor, Eliezer Yudkowsky, Patrick LaVictoire, and Andrew Critch, our new report discusses eight new lines of research”, sourceRole primary, support supports. Optionally refine time to the post date 2016-07-27 with note “Date of MIRI’s announcement post; the PDF itself is undated.” Without a second source, hold the item.",
+      "notes": "PDF title block: “Jessica Taylor and Eliezer Yudkowsky and Patrick LaVictoire and Andrew Critch” (4 authors). The retrieved PDF text shows no publication date; “2016” rests on the dataset record as the note admits. No second identifying source attached or in input. Auditor fetched MIRI’s announcement post (intelligence.org, dated July 27, 2016, Rob Bensinger): “Co-authored by Jessica Taylor, Eliezer Yudkowsky, Patrick LaVictoire, and Andrew Critch, our new report…”. That supplies identification and a documentary release date."
+    },
+    {
+      "id": "pp-au-pavel-izmailov-weak-strong-paper",
+      "quoteVerbatim": "yes",
+      "locatorRight": "yes",
+      "support": "full",
+      "dateAndKindRight": "yes",
+      "identityRight": "unclear",
+      "overstatement": null,
+      "verdict": "correct",
+      "suggestedFix": "Attach https://izmailovpavel.github.io/ (audit-izmailov-home), locator “Selected Papers” list, passage “Weak-to-Strong Generalization: Eliciting Strong Capabilities With Weak Supervision”, plus “Our work on weak-to-strong generalization was covered by a WIRED, MIT Technology Review and others.” Identification only. Without it, hold the item.",
+      "notes": "arXiv 2312.09390v1 PDF byline lists Pavel Izmailov∗; 12 authors counted (Burns, Izmailov, Kirchner, Baker, Gao, Aschenbrenner, Chen, Ecoffet, Joglekar, Leike, Sutskever, Wu); arXiv stamp 14 Dec 2023. No second identifying source attached or in input. Auditor fetched izmailovpavel.github.io: publication list includes “Weak-to-Strong Generalization: Eliciting Strong Capabilities With Weak Supervision” and highlights “Our work on weak-to-strong generalization”. (openai.com page returned HTTP 403.)"
+    },
+    {
+      "id": "pp-au-sergey-ioffe-batch-normalization-paper",
+      "quoteVerbatim": "yes",
+      "locatorRight": "yes",
+      "support": "full",
+      "dateAndKindRight": "yes",
+      "identityRight": "yes",
+      "overstatement": null,
+      "verdict": "upheld",
+      "suggestedFix": null,
+      "notes": "arXiv 1502.03167v1: Authors: Sergey Ioffe, Christian Szegedy; v1 submitted Wed, 11 Feb 2015. Identifying page au-id-goo-batchnorm (Google Research) lists Sergey Ioffe, Christian Szegedy."
+    },
+    {
+      "id": "pp-au-thibaut-lavril-llama-paper",
+      "quoteVerbatim": "yes",
+      "locatorRight": "yes",
+      "support": "full",
+      "dateAndKindRight": "yes",
+      "identityRight": "yes",
+      "overstatement": null,
+      "verdict": "upheld",
+      "suggestedFix": null,
+      "notes": "arXiv v1 byline lists Thibaut Lavril; au-id-meta-llama lists Thibaut Lavril under “Written by”."
+    },
+    {
+      "id": "pp-cn-shen-pengfei-01ai-vp-sales",
+      "quoteVerbatim": "yes",
+      "locatorRight": "yes",
+      "support": "full",
+      "dateAndKindRight": "yes",
+      "identityRight": "na",
+      "overstatement": null,
+      "verdict": "upheld",
+      "suggestedFix": null,
+      "notes": "管理团队 section: “沈鹏飞 联合创始人，销售副总裁” verbatim (full-width comma). Undated page treated as snapshot; the byte-identical 29 October reproduction could not be independently checked beyond the cached sha256."
+    },
+    {
+      "id": "pp-er-kant-poolside-cto-2023",
+      "quoteVerbatim": "yes",
+      "locatorRight": "yes",
+      "support": "full",
+      "dateAndKindRight": "no",
+      "identityRight": "na",
+      "overstatement": "Dating the byline title to 2023-10-07 assumes the byline on a live, mutable page is unchanged since the post date; the inspected copy is the current serving of the page, not a 2023 copy.",
+      "verdict": "correct",
+      "suggestedFix": "Change the time note to: “Post dated 2023-10-07; the byline is as served at the dataset’s retrieval of the live page, and its wording at publication is not verified. The byline does not date the start or end of the role.” Either re-date the snapshot to the retrieval date, or keep 2023-10-07 only after verifying a 2023 archived capture shows the same byline. Statement: “Poolside’s post dated 7 October 2023, as served on <retrieval date>, bylines Eiso Kant as CTO and co-founder.”",
+      "notes": "Byline verbatim: “Eiso Kant CTO & Co-founder @ poolside” under a post header dated 2023-10-07. Attempted Wayback CDX check for a 2023 capture failed (HTTP 429 / connection reset), so the 2023 wording is unverified."
+    },
+    {
+      "id": "pp-ex-ellison-oracle-ceo-1977-2014",
+      "quoteVerbatim": "yes",
+      "locatorRight": "yes",
+      "support": "full",
+      "dateAndKindRight": "yes",
+      "identityRight": "na",
+      "overstatement": null,
+      "verdict": "upheld",
+      "suggestedFix": null,
+      "notes": "DEF 14A 2026 passage verbatim. 8-K (date of report 18 Sept 2014) confirms Catz and Hurd appointed CEO on September 17, 2014; note accurate."
+    },
+    {
+      "id": "pp-ex-nadella-microsoft-chair-2021",
+      "quoteVerbatim": "yes",
+      "locatorRight": "no",
+      "support": "partial",
+      "dateAndKindRight": "yes",
+      "identityRight": "na",
+      "overstatement": "The statement says the board elected him on 16 June 2021; the 8-K says only that on 16 June 2021 Microsoft announced the election. The election date itself is not stated.",
+      "verdict": "correct",
+      "suggestedFix": "Locator: “Item 8.01, Other Events, sole paragraph”. Statement: “Microsoft’s Form 8-K reports that on 16 June 2021 Microsoft announced that the independent members of its board had unanimously elected Satya Nadella board chair.” Keep time from 2021-06-16 with the existing announcement-date note.",
+      "notes": "Passage is verbatim but sits under “Item 8.01 - Other Events”, not Item 5.02. DEF 14A signature “Sincerely, Satya Nadella Chairman and Chief Executive Officer” verbatim; letter dated October 21, 2026."
+    },
+    {
+      "id": "pp-ex-nadella-microsoft-evp-cloud-2013",
+      "quoteVerbatim": "yes",
+      "locatorRight": "yes",
+      "support": "full",
+      "dateAndKindRight": "yes",
+      "identityRight": "na",
+      "overstatement": null,
+      "verdict": "upheld",
+      "suggestedFix": null,
+      "notes": "Passage is a verbatim substring (source: “has served as the Companys Executive Vice President, Cloud and Enterprise since July 2013.”). Open interval note implicitly names the 4 Feb 2014 8-K as latest document; acceptable, though it could say so explicitly (“latest document stating it: the 8-K of 4 February 2014”)."
+    },
+    {
+      "id": "pp-ex-nadella-microsoft-server-tools-2011-2013",
+      "quoteVerbatim": "yes",
+      "locatorRight": "yes",
+      "support": "full",
+      "dateAndKindRight": "yes",
+      "identityRight": "na",
+      "overstatement": null,
+      "verdict": "upheld",
+      "suggestedFix": null,
+      "notes": "Verbatim; year precision correctly preserved."
+    },
+    {
+      "id": "pp-ex-pichai-joined-google-2004",
+      "quoteVerbatim": "yes",
+      "locatorRight": "yes",
+      "support": "full",
+      "dateAndKindRight": "no",
+      "identityRight": "na",
+      "overstatement": null,
+      "verdict": "correct",
+      "suggestedFix": "Either recast as an event dated 2004 (year precision) “Alphabet’s 2026 proxy statement says that Sundar Pichai joined Google in 2004”, or keep the interval and add to the note: “Open interval; not a claim of a continuing role. Latest document stating his Google role: Alphabet’s 2026 proxy statement (24 April 2026), which names him Chief Executive Officer, Alphabet and Google.”",
+      "notes": "Quote verbatim in nominee profile (“Sundar Pichai, 53, joined Google in 2004 and was named…”). The record is an open interval but its note does not name the latest document stating the employment, as the open-interval rule requires; “joined in 2004” is an event, not a held role with a title."
+    },
+    {
+      "id": "pp-ex-wu-alibaba-cofounder",
+      "quoteVerbatim": "yes",
+      "locatorRight": "yes",
+      "support": "full",
+      "dateAndKindRight": "yes",
+      "identityRight": "na",
+      "overstatement": null,
+      "verdict": "upheld",
+      "suggestedFix": null,
+      "notes": "Item 6.A biography passage verbatim including 吴泳銘; next sentence “Mr. Wu was technology director of Alibaba at the company’s inception in 1999.” confirms the note. CEO letter dated May 20, 2026 supports “May 2026”."
+    },
+    {
+      "id": "pp-st-hennessy-2026-ai-oversight-states",
+      "quoteVerbatim": "yes",
+      "locatorRight": "yes",
+      "support": "full",
+      "dateAndKindRight": "no",
+      "identityRight": "na",
+      "overstatement": "Minor: “oversees investment” compresses “our Board continues to be committed to overseeing the company’s long-term investments … This includes investing responsibly to build cloud and AI infrastructure”.",
+      "verdict": "correct",
+      "suggestedFix": "Time note: “Date of the proxy statement (first mailed on or about 24 April 2026); the chair’s letter itself is undated.” Optionally statement: “…and is committed to overseeing the company’s long-term investments, including investment to build cloud and AI infrastructure while expanding energy capacity.”",
+      "notes": "Both passages verbatim; paragraph locators correct (3rd and 4th paragraphs after “Dear Fellow Shareholders”). The chair’s letter itself carries no date; 24 April 2026 is the date on the preceding joint Pichai–Hennessy invitation letter and the proxy’s mailing date (“first mailed to shareholders on or about April 24, 2026”)."
+    },
+    {
+      "id": "pp-st-nadella-2023-altman-team-states",
+      "quoteVerbatim": "yes",
+      "locatorRight": "yes",
+      "support": "full",
+      "dateAndKindRight": "yes",
+      "identityRight": "na",
+      "overstatement": null,
+      "verdict": "upheld",
+      "suggestedFix": null,
+      "notes": "Passage verbatim directly under “Posted Nov. 19, 2023” (labels precede their statements: Nov 21 block, then “Posted Nov. 19”, then “Posted Nov. 17” followed by the Ignite statement). Mention of Emmett Shear is consistent with the 19 November label. Announced-only framing correct."
+    },
+    {
+      "id": "pp-st-nadella-2023-openai-board-states",
+      "quoteVerbatim": "yes",
+      "locatorRight": "yes",
+      "support": "full",
+      "dateAndKindRight": "yes",
+      "identityRight": "na",
+      "overstatement": null,
+      "verdict": "upheld",
+      "suggestedFix": null,
+      "notes": "Passage verbatim; date from “This blog was updated at 10:15 p.m. on Nov. 21”. Minor: the literal value paraphrase drops “essential” (“a first step towards”); the statement keeps the verbatim wording, so not material."
+    },
+    {
+      "id": "pp-st-son-asi-states",
+      "quoteVerbatim": "yes",
+      "locatorRight": "minor",
+      "support": "full",
+      "dateAndKindRight": "yes",
+      "identityRight": "na",
+      "overstatement": null,
+      "verdict": "correct",
+      "suggestedFix": "First evidence locator: “First paragraph, under the heading ‘To Become the No. 1 ASI (Artificial Superintelligence) Platform Provider’”. Replace (or supplement) the second passage with “Our aim is to become the No. 1 Platform Provider for this new era of ASI.”, locator “First paragraph, last sentence”.",
+      "notes": "Both passages verbatim. The section heading is “To Become the No. 1 ASI (Artificial Superintelligence) Platform Provider” (it is the message’s only heading). The aim is stated most directly by “Our aim is to become the No. 1 Platform Provider for this new era of ASI.” (end of first paragraph); the chosen closing-paragraph passage presupposes rather than states the aim."
+    },
+    {
+      "id": "pp-st-son-chairman-message-authored",
+      "quoteVerbatim": "yes",
+      "locatorRight": "yes",
+      "support": "full",
+      "dateAndKindRight": "yes",
+      "identityRight": "na",
+      "overstatement": null,
+      "verdict": "upheld",
+      "suggestedFix": null,
+      "notes": "Closing lines “Masayoshi Son / Chairman and CEO, / SoftBank Group Corp.” verbatim across line breaks. Undated; time unknown is right."
+    },
+    {
+      "id": "pp-st-zuckerberg-2025-open-source-risk-states",
+      "quoteVerbatim": "yes",
+      "locatorRight": "no",
+      "support": "full",
+      "dateAndKindRight": "yes",
+      "identityRight": "na",
+      "overstatement": null,
+      "verdict": "correct",
+      "suggestedFix": "Locator: “Third paragraph from the end, beginning ‘We believe the benefits of superintelligence should be shared with the world as broadly as possible.’”",
+      "notes": "Passage verbatim; essay signed “– Mark / July 30, 2025”. The paragraph beginning “We believe the benefits of superintelligence should be shared…” is followed by two more paragraphs (“The rest of this decade…” and “Meta believes strongly…”) before the signature, so it is the third paragraph from the end, not the penultimate."
+    }
+  ],
+  "retrievalFailures": [
+    {
+      "target": "Wayback CDX/availability for poolside.ai/vision/purpose (2023 capture)",
+      "result": "HTTP 429 then connection reset; 2023 byline wording unverified"
+    },
+    {
+      "target": "https://openai.com/index/weak-to-strong-generalization/ (audit-openai-w2s)",
+      "result": "HTTP 403; used izmailovpavel.github.io instead"
+    },
+    {
+      "target": "https://arxiv.org/a/izmailov_p_1 (audit-arxiv-w2s-listing)",
+      "result": "HTTP 404"
+    }
+  ],
+  "auditFetches": [
+    "audit-miri-2016-agenda",
+    "audit-figurnov-home",
+    "audit-izmailov-home",
+    "audit-openai-w2s (403)",
+    "audit-arxiv-w2s-listing (404)"
+  ]
+}

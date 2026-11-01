@@ -59,7 +59,7 @@ export function Landing({
         <h2 id="start-covered">What’s covered</h2>
         {summary.controls.some((c) => c.id === 'openai') && (
           <div className="landing-featured">
-            <p className="eyebrow">A question the records answer:</p>
+            <p className="eyebrow">For example</p>
             <p>
               <NavLink
                 className="text-button"
@@ -78,9 +78,23 @@ export function Landing({
                 See it as a map: OpenAI’s direct connections →
               </NavLink>
             </p>
+            <p className="landing-featured-note">
+              Two of many ways in. The hubs below cover governance, ideas and
+              institutions.
+            </p>
           </div>
         )}
         <HubCards summary={summary} onAction={onAction} />
+        <p className="landing-years">
+          <NavLink
+            className="text-button"
+            href={startHref({ kind: 'years' }, summary)}
+            onOpen={() => onAction({ kind: 'years' })}
+          >
+            Browse by year →
+          </NavLink>{' '}
+          Every dated record, one page per year.
+        </p>
       </section>
       <section className="landing-gaps" aria-labelledby="start-not-covered">
         <h2 id="start-not-covered">Not yet covered</h2>

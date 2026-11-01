@@ -30,7 +30,21 @@
   margin-top: 28px;
   max-width: 85ch;
 }
-.prop-search > h2 {
+.prop-exchanges {
+  margin-top: 28px;
+  max-width: 85ch;
+}
+.prop-exchanges ul {
+  padding-left: 18px;
+  margin: 4px 0;
+  display: grid;
+  gap: 6px;
+}
+.prop-exchanges p {
+  margin: 2px 0;
+}
+.prop-search > h2,
+.prop-exchanges > h2 {
   font: var(--heading-section) / 1.25 var(--font-serif);
   margin: 0 0 6px;
 }
@@ -163,12 +177,19 @@
 .prop-context {
   margin-top: 12px;
 }
-.prop-corrections ul {
+.prop-corrections ul,
+.prop-related ul {
   padding-left: 18px;
   margin: 4px 0;
   display: grid;
   gap: 4px;
   max-width: 85ch;
+}
+/* A proposition's or text's name can be longer than a phone's line. */
+.prop-related .text-button,
+.prop-exchanges .text-button {
+  white-space: normal;
+  text-align: left;
 }
 @media (max-width: 640px) {
   .prop-headlines > div,

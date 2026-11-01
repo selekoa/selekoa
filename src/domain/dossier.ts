@@ -14,11 +14,25 @@ export type DossierGroup = {
   label: string;
   entity?: Entity;
   claims: Claim[];
-  connectionClaims?: Claim[];
+  /**
+   * Why a document appears in the Ideas section: every qualifying connection,
+   * in reading order (see `institutionalDossier`).
+   */
+  connections?: DossierConnection[];
+};
+/**
+ * One reason a document is in a dossier: the root record (the institution's
+ * publication, a member's authorship of the document, or a member's work it
+ * cites) with, before it, the member's record at the institution if any.
+ */
+export type DossierConnection = {
+  via: 'publication' | 'authorship' | 'citation';
+  claims: Claim[];
 };
 const personnel = new Set(['held_role', 'co_founded', 'departure_announced']);
 const documentary = new Set([
   'cites',
+  'credits_work',
   'discusses',
   'explicitly_credits',
   'uses_method_from',
@@ -191,38 +205,47 @@ export function institutionalDossier(data: Dataset, institutionId: string) {
       Number(founders.has(b.id)) - Number(founders.has(a.id)) ||
       a.label.localeCompare(b.label),
   );
+  const membershipRank = (c: Claim) =>
+    c.predicate === 'co_founded' ? 0 : c.predicate === 'held_role' ? 1 : 2;
+  const memberships = sorted(direct)
+    .filter((c) => personnel.has(c.predicate))
+    .sort((a, b) => membershipRank(a) - membershipRank(b));
+  const connection = (
+    via: DossierConnection['via'],
+    root: Claim,
+  ): DossierConnection => {
+    const membership = peopleIds.has(root.subject)
+      ? memberships.find((c) => c.subject === root.subject)
+      : undefined;
+    return { via, claims: [...(membership ? [membership] : []), root] };
+  };
+  const rootDocument = (c: Claim) =>
+    c.object.kind === 'entity' ? c.object.entityId : '';
   for (const group of sections.ideas) {
-    // Prefer a direct publication to a person's authorship when both explain inclusion.
-    const root =
-      sorted(roots).find(
-        (c) =>
-          c.predicate === 'published' &&
-          c.subject === institutionId &&
-          c.object.kind === 'entity' &&
-          c.object.entityId === group.id,
-      ) ??
-      sorted(roots).find(
-        (c) => c.object.kind === 'entity' && c.object.entityId === group.id,
-      ) ??
-      sorted(roots).find(
-        (r) =>
-          r.object.kind === 'entity' &&
-          links.some(
-            (c) =>
-              c.subject === group.id &&
-              c.object.kind === 'entity' &&
-              c.object.entityId ===
-                (r.object.kind === 'entity' ? r.object.entityId : ''),
-          ),
-      );
-    if (root) {
-      const membershipRank = (c: Claim) =>
-        c.predicate === 'co_founded' ? 0 : c.predicate === 'held_role' ? 1 : 2;
-      const membership = sorted(direct)
-        .sort((a, b) => membershipRank(a) - membershipRank(b))
-        .find((c) => c.subject === root.subject && personnel.has(c.predicate));
-      group.connectionClaims = [...(membership ? [membership] : []), root];
-    }
+    // Every qualifying connection, in a fixed order: the institution's own
+    // publication of the document, then the document's authors who are in
+    // this dossier, then their works (or the institution's publications)
+    // that the document cites or credits, by the date of that record.
+    const own = sorted(roots).filter((c) => rootDocument(c) === group.id);
+    const cited = new Set(
+      links.flatMap((c) =>
+        c.subject === group.id && c.object.kind === 'entity'
+          ? [c.object.entityId]
+          : [],
+      ),
+    );
+    const connections = [
+      ...own
+        .filter((c) => c.predicate === 'published')
+        .map((c) => connection('publication', c)),
+      ...own
+        .filter((c) => c.predicate === 'authored')
+        .map((c) => connection('authorship', c)),
+      ...sorted(roots)
+        .filter((c) => cited.has(rootDocument(c)))
+        .map((c) => connection('citation', c)),
+    ];
+    if (connections.length) group.connections = connections;
   }
   return {
     institution,

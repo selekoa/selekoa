@@ -1,7 +1,7 @@
 import type { Claim, Dataset, Source } from './schema';
 import type { PathSelection } from './research-path';
 import { referencePath } from './deep-links';
-import { timeLabel } from './query';
+import { roleStatedIn, timeLabel } from './query';
 
 /** Sorted object keys, original array ordering, no clock or locale dependency. */
 export function canonicalJson(value: unknown): string {
@@ -38,7 +38,7 @@ export function sourceReference(source: Source) {
 }
 
 export async function claimReference(data: Dataset, claim: Claim, url: string) {
-  return `Selekoa claim record ${claim.id}: ${claim.statement} Qualification: ${claim.qualification} ${timeLabel(claim)}; ${claim.time.note} Derivation: ${claim.derivation}; resolution: ${claim.resolution}; editorial state: ${claim.editorialState}. Dataset updated: ${data.meta.updatedAt}; schema: ${data.meta.schemaVersion}; dataset fingerprint: ${await fingerprint(data)}. ${url} This cites a stored claim record, not an original publication or a human review.`;
+  return `Selekoa claim record ${claim.id}: ${claim.statement} Qualification: ${claim.qualification} ${timeLabel(claim, data)}; ${claim.time.note} Derivation: ${claim.derivation}; resolution: ${claim.resolution}; editorial state: ${claim.editorialState}. Dataset updated: ${data.meta.updatedAt}; schema: ${data.meta.schemaVersion}; dataset fingerprint: ${await fingerprint(data)}. ${url} This cites a stored claim record, not an original publication or a human review.`;
 }
 
 const limits = [
@@ -77,6 +77,8 @@ export async function researchPacket(data: Dataset, selection: PathSelection) {
     ...claims.flatMap((c) => [
       c.subject,
       ...(c.object.kind === 'entity' ? [c.object.entityId] : []),
+      // The document an open-ended role's date line names.
+      ...[roleStatedIn(data, c)?.documentId ?? []].flat(),
     ]),
   ]);
   const entities = data.entities.filter((e) => entityIds.has(e.id));
@@ -182,7 +184,7 @@ export function packetMarkdown(packet: ResearchPacket) {
       '',
       'Qualification: ' + md(claim.qualification),
       '',
-      `Temporal record: ${timeLabel(claim)}. ${md(claim.time.note)}`,
+      `Temporal record: ${timeLabel(claim, packet)}. ${md(claim.time.note)}`,
       '',
       `Derivation: ${claim.derivation}. Resolution: ${claim.resolution}. Editorial state: ${claim.editorialState}. Recorded: ${claim.recordedAt}.`,
       '',

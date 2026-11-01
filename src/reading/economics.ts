@@ -1,72 +1,20 @@
 import type { PropositionsCollection } from '../domain/propositions';
+import { economicsFrame as frame } from './proposition-frames';
 
 const growthChecked = '2026-10-10';
 const mainstreamChecked = '2026-10-12';
 const recheckDecided = '2026-10-25';
 
 export const economicsOfMachineIntelligence: PropositionsCollection = {
-  id: 'economics-of-machine-intelligence',
-  version: 2,
-  title: 'Economics of machine intelligence',
-  question:
-    'Which located texts, from 1952 to 2026, state, contest or bear on propositions about the economics of machine intelligence? Three strands are recorded. The first is the debate over whether machine intelligence could make economic growth explosive. The second is how mainstream economics treated automation, computers and AI. The third is how economists took up recursive self-improvement, superintelligence and existential risk from AI, ideas mostly discussed outside economics. For each proposition, which text by an economist is the earliest located, and which text outside that group?',
-  editorialStatus: 'machine-proposed',
+  id: frame.id,
+  version: frame.version,
+  title: frame.title,
+  question: frame.question,
+  editorialStatus: frame.editorialStatus,
   introduction:
     'Each proposition has one criterion. It is phrased generically and attributed to no one. A text that meets the criterion articulates the proposition. A text that disputes it, or a premise it depends on, contests it, and the record says whether the passage gives a reason against a premise or states the contrary only. A text that comes close bears on it, and its record names what is missing. A result from a formal model is shown with the conditions under which the model derives it. Each text carries a tier: tier 1 for scholarly work by economists and for the core economics journals and working-paper series, tier 2 for other texts. Texts are listed in date order. The page records what texts say and when. It does not assess whether an argument or a model is right.',
-  groups: [
-    {
-      id: 'G',
-      label: 'The explosive-growth debate',
-      description:
-        'Whether machine intelligence could make growth far faster than historical rates, the constraints argued against it, the evidence offered on both sides, and each text’s own estimate. Thirteen texts from 1994 to 2024.',
-      propositionIds: [
-        'explosive-growth-from-labour-substitution',
-        'accelerating-growth-from-automated-research',
-        'long-run-history-suggests-acceleration',
-        'unautomated-tasks-bottleneck-growth',
-        'other-constraints-prevent-explosive-growth',
-        'no-current-sign-of-explosive-growth',
-        'machine-substitution-lowers-wages',
-        'modest-near-term-ai-productivity-effect',
-        'explosive-growth-estimates',
-      ],
-    },
-    {
-      id: 'M',
-      label: 'Mainstream economics, automation and AI',
-      description:
-        'How economists and economics venues treated automation, computers and AI from 1952 to 2024: as ordinary technical change, as the automation of tasks, as a general-purpose technology or as cheaper prediction, and what they said about wages, policy, measurement and the field itself. M06 is split into M06a and M06b. M09 states the prior that mainstream economics took up machine intelligence only recently; it is tested against the dated record, not confirmed.',
-      propositionIds: [
-        'automation-as-ordinary-technical-change',
-        'ai-as-task-automation',
-        'ai-general-purpose-technology-with-lag',
-        'ai-as-cheaper-prediction',
-        'machines-cheaper-at-every-task',
-        'automation-lowers-labour-income',
-        'compensating-policy-for-ai',
-        'task-based-exposure-measurement',
-        'ai-productivity-over-next-decade',
-        'recent-economics-engagement-with-ai',
-      ],
-    },
-    {
-      id: 'E',
-      label: 'Superintelligence and existential risk',
-      description:
-        'Whether economists took up machine intelligence that improves itself, machine intelligence beyond human level in essentially all domains and existential risk from AI, how developers’ incentives bear on safety, and what texts say about the state of economics on these questions. Texts from 1998 to 2026, mostly NBER working papers, with Robin Hanson’s texts of 1998 to 2000 and posts from his 2008 debate with Eliezer Yudkowsky. E05 counts only explicit statements about the state of economics; economists’ engagement itself is recorded under E01 to E04.',
-      propositionIds: [
-        'ai-improving-ai-accelerates-capability',
-        'machine-intelligence-exceeds-humans-in-all-domains',
-        'ai-existential-risk-in-economic-analysis',
-        'ai-developer-incentives-and-safety',
-        'economics-engagement-with-superintelligence',
-      ],
-    },
-  ],
-  tiers: {
-    1: 'Scholarly work by economists in any venue, including their essays in magazines, and any text in a core economics venue, whoever wrote it. An economist has an economics appointment, degree, address or affiliation shown in or near the text, or an established record as an economist when the text was written. The core venues are the five leading general economics journals, the Journal of Economic Perspectives, the Journal of Economic Literature, AER Papers and Proceedings, NBER working papers and the NBER Economics of AI volume, and Kansantaloudellinen aikakauskirja for the Finnish texts.',
-    2: 'Texts by non-economists, whatever the venue, and short-form commentary even by economists: blog comments, forum replies, and magazine or online debates, unless a turn is itself a substantive scholarly argument.',
-  },
+  groups: frame.groups,
+  tiers: frame.tiers,
   searchNote: {
     scope:
       'The collection records what located texts from 1952 to 2026 say about the propositions below. “Earliest located” means the earliest text found by the searches below, within tier 1 unless the page says tier 2. It is not a claim that no earlier text exists.',
@@ -346,14 +294,9 @@ export const economicsOfMachineIntelligence: PropositionsCollection = {
     'Codes such as M05-20 in qualifications refer to the passages of the research packs the records come from.',
     'A machine selected and classified these records, and machine checks from two model families re-examined them. No person has reviewed them.',
   ],
-  axis: {
-    from: 1950,
-    to: 2026,
-    ticks: ['1952', '1966', '1984', '2000', '2015', '2024'],
-  },
-  landing:
-    '{propositions} propositions on the economics of machine intelligence, and {records} records from {texts} texts, 1952–2026, that state, contest or bear on them: the explosive-growth debate, how mainstream economics treated automation and AI, and how economists took up superintelligence and existential risk from AI. Each text carries its tier, and model results their conditions. The page can be downloaded as a research starter, with the original sources first.',
-  landingAction: 'Read the economics propositions →',
-  mostDevelopedEmpty: null,
-  earliestEmpty: 'No located tier-1 text meets the criterion.',
+  axis: frame.axis,
+  landing: frame.landing,
+  landingAction: frame.landingAction,
+  mostDevelopedEmpty: frame.mostDevelopedEmpty,
+  earliestEmpty: frame.earliestEmpty,
 };

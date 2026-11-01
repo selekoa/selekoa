@@ -1,10 +1,14 @@
 import { Suspense, useCallback, useEffect, useMemo, useState } from 'react';
 import summary from 'virtual:landing-summary';
 import { normalisePath, startPath } from './domain/addresses';
+import { mapLayoutPath } from './domain/slices';
 import { Landing } from './ui/Landing';
 import { currentAddress } from './ui/location';
 import { useInBrowser, useMediaQuery } from './ui/client';
-import { loadable, preloadPage } from './ui/page-modules';
+import { loadable, pages, preloadPage } from './ui/page-modules';
+import { loadData, loadRecords } from './ui/records';
+import { searchSource } from './ui/search-source';
+import { provideVisits } from './ui/page-visits';
 import {
   SiteFooter,
   SiteHeader,
@@ -21,13 +25,68 @@ import {
 const Workspace = loadable(() =>
   Promise.all([
     import('./Workspace'),
-    // With the code of the page the browser opened at, so that a built page
-    // is taken over at once (src/ui/page-modules.tsx).
+    // With the code and data of the page the browser opened at, so that a
+    // built page is taken over at once (src/ui/page-modules.tsx).
     typeof window === 'undefined'
       ? null
       : preloadPage(window.location.pathname),
+    typeof window === 'undefined' ? null : preloadData(currentAddress()),
+    typeof window === 'undefined' ? null : prefetchMap(currentAddress()),
   ]).then(([module]) => module.default),
 );
+
+/**
+ * An address that opens a map (a dossier's map, a search's map in the
+ * explorer) fetches the map's code, and the dossier's stored layout or the
+ * worker that lays out a search's map (src/ui/map-layout.ts), with the
+ * page's own code and data rather than after them, so that the map is drawn
+ * soon after the page runs. Nothing waits for them.
+ */
+function prefetchMap(address: string) {
+  const url = new URL(address, 'https://site.invalid');
+  const [, kind, id, rest] = normalisePath(url.pathname).split('/');
+  const hash = new URLSearchParams(url.hash.slice(1));
+  const dossier =
+    kind === 'dossier' &&
+    !!id &&
+    rest === undefined &&
+    url.searchParams.get('view') === 'map';
+  const search =
+    kind === 'explore' &&
+    !id &&
+    !!hash.get('q')?.trim() &&
+    hash.get('view') === 'map';
+  if (!dossier && !search) return null;
+  void pages.Network.preload();
+  void import('./ui/map-layout').then((m) =>
+    dossier
+      ? m.prefetchLayout(
+          mapLayoutPath({ id: decodeURIComponent(id), type: 'organisation' })!,
+        )
+      : m.startWorker(),
+  );
+  return null;
+}
+
+/**
+ * The data a page needs before it is drawn: its slice, or the records, and
+ * on the search page its filters and the index's manifest
+ * (src/ui/records.ts, src/ui/search-source.ts).
+ */
+function preloadData(address: string) {
+  // Slices serve a built page taken over at its own address; anything else
+  // (the start page's links, an address with no built page, the development
+  // server) opens with the whole records, as it did before.
+  const builtPage =
+    document.getElementById('root')?.dataset.path ===
+    normalisePath(window.location.pathname);
+  return Promise.all([
+    builtPage ? loadData(address) : loadRecords(),
+    normalisePath(address.split(/[?#]/)[0]) === '/search'
+      ? searchSource().facets()
+      : null,
+  ]);
+}
 const loadWorkspace = Workspace.preload;
 
 type Theme = 'light' | 'dark';
@@ -87,6 +146,12 @@ export default function App({
 }) {
   // Any address other than the start page needs the records at once.
   const [open, setOpen] = useState(() => !isStartAddress(address));
+  /**
+   * The path the workspace was mounted at, and how many times: a link from a
+   * page drawn from its slice mounts it afresh at the next page's path, as a
+   * fresh load of that address does (src/ui/page-visits.ts).
+   */
+  const [mounted, setMounted] = useState({ path: address, count: 0 });
   /** Whether the page in view runs in the browser (see useTheme). */
   const [workspaceShown, setWorkspaceShown] = useState(false);
   const landingShown = useInBrowser();
@@ -118,6 +183,13 @@ export default function App({
       document.removeEventListener('focusin', prefetch);
     };
   }, [open]);
+  useEffect(() => {
+    provideVisits((path) => {
+      setStart(null);
+      setMounted((m) => ({ path, count: m.count + 1 }));
+    });
+    return () => provideVisits(null);
+  }, []);
   // Set state only, so the same functions serve every render.
   const go = useCallback((action: StartAction) => {
     setStart(action);
@@ -131,7 +203,7 @@ export default function App({
         return;
       }
       go(
-        target === 'search' || target === 'about'
+        target === 'search' || target === 'explore' || target === 'about'
           ? { kind: target }
           : { kind: 'hub', id: target },
       );
@@ -139,6 +211,10 @@ export default function App({
     [go],
   );
   const howChecked = useCallback(() => go({ kind: 'how-checked' }), [go]);
+  const search = useCallback(
+    (q: string) => go({ kind: 'search', q: q || undefined }),
+    [go],
+  );
   // The same element while nothing it shows has changed, so React leaves a
   // page that is still being taken over alone.
   const workspace = useMemo(
@@ -149,6 +225,7 @@ export default function App({
             <SiteHeader
               current={null}
               onNavigate={navigate}
+              onSearch={search}
               theme={theme}
               onTheme={setTheme}
               onHowChecked={howChecked}
@@ -160,7 +237,8 @@ export default function App({
         }
       >
         <Workspace
-          address={address}
+          key={mounted.count}
+          address={mounted.path}
           theme={theme}
           onTheme={setTheme}
           start={start}
@@ -168,7 +246,7 @@ export default function App({
         />
       </Suspense>
     ),
-    [address, theme, setTheme, start, navigate, howChecked],
+    [mounted, theme, setTheme, start, navigate, search, howChecked],
   );
   if (open) return workspace;
   return (
@@ -177,6 +255,7 @@ export default function App({
       <SiteHeader
         current="home"
         onNavigate={navigate}
+        onSearch={search}
         theme={theme}
         onTheme={setTheme}
         onHowChecked={howChecked}

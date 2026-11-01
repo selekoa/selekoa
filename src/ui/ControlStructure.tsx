@@ -1,5 +1,5 @@
 import type { Repository } from '../domain/repository';
-import { NavLink, RecordLink } from './NavLink';
+import { ClaimLink, NavLink, RecordLink } from './NavLink';
 import { referencePath } from '../domain/addresses';
 import { startHref } from './SiteChrome';
 import { startIds } from './start-ids';
@@ -10,7 +10,7 @@ import {
   type ControlEntry,
   type ControlStructure as Structure,
 } from '../domain/control-structures';
-import { predicates } from '../domain/predicates';
+import { relationLabel } from '../domain/predicates';
 import { timeLabel } from '../domain/query';
 import { CopyLink, ExportControlStarter } from './ReferenceActions';
 import {
@@ -30,7 +30,7 @@ function entryRoute(entry: ControlEntry, repository: Repository) {
   if (entry.right)
     return `${shortName(entry.subject)} → ${controlRightLabels[entry.right].toLowerCase()} → ${shortName(entry.object)}`;
   if (entry.claim.object.kind === 'literal')
-    return `${shortName(entry.subject)} → ${predicates[entry.claim.predicate].label} → ${String(entry.claim.object.value)}`;
+    return `${shortName(entry.subject)} → ${relationLabel(entry.claim)} → ${String(entry.claim.object.value)}`;
   return claimRoute(entry.claim, repository);
 }
 
@@ -101,20 +101,20 @@ function ControlSummary({
           <tbody>
             {rights.map((entry) => (
               <tr key={entry.claim.id}>
-                <td>{timeLabel(entry.claim)}</td>
+                <td>{timeLabel(entry.claim, props.repository.data)}</td>
                 <td>{entry.stage}</td>
                 <td>{shortName(entry.subject)}</td>
                 <td>
-                  <button
+                  <ClaimLink
                     className="doc-inspect"
-                    data-claim-id={entry.claim.id}
-                    aria-pressed={props.selectedClaimId === entry.claim.id}
+                    pressed={props.selectedClaimId === entry.claim.id}
                     aria-label={`Inspect: ${entry.claim.statement}`}
-                    onClick={() => props.onClaim(entry.claim.id)}
+                    claimId={entry.claim.id}
+                    onOpen={() => props.onClaim(entry.claim.id)}
                   >
                     {controlRightLabels[entry.right!]}
                     <span aria-hidden="true"> ↗</span>
-                  </button>
+                  </ClaimLink>
                   <StatusBadge claim={entry.claim} />
                 </td>
                 <td>{shortName(entry.object)}</td>
@@ -265,16 +265,17 @@ export function ControlStructure({
               {legalForms.map((c) => (
                 <span key={c.id}>
                   {' · '}
-                  <button
+                  <ClaimLink
                     className="doc-inspect"
-                    data-claim-id={c.id}
-                    aria-pressed={selectedClaimId === c.id}
+                    pressed={selectedClaimId === c.id}
                     aria-label={`Inspect legal form record: ${c.statement}`}
-                    onClick={() => onClaim(c.id)}
+                    claimId={c.id}
+                    onOpen={() => onClaim(c.id)}
                   >
                     {c.object.kind === 'literal' ? String(c.object.value) : ''}{' '}
-                    ({timeLabel(c)})<span aria-hidden="true"> ↗</span>
-                  </button>
+                    ({timeLabel(c, repository.data)})
+                    <span aria-hidden="true"> ↗</span>
+                  </ClaimLink>
                 </span>
               ))}
             </li>
@@ -293,12 +294,14 @@ export function ControlStructure({
                   {q.claimIds.map((id, i) => (
                     <span key={id}>
                       {i > 0 && ' · '}
-                      <button
+                      <ClaimLink
+                        secondary
                         className="text-button"
-                        onClick={() => onClaim(id)}
+                        claimId={id}
+                        onOpen={() => onClaim(id)}
                       >
                         {claimRoute(repository.claims.get(id)!, repository)}
-                      </button>
+                      </ClaimLink>
                     </span>
                   ))}
                 </p>
@@ -349,9 +352,14 @@ export function StopList({
                 {s.claimIds.map((id, i) => (
                   <span key={id}>
                     {i > 0 && ' · '}
-                    <button className="text-button" onClick={() => onClaim(id)}>
+                    <ClaimLink
+                      secondary
+                      className="text-button"
+                      claimId={id}
+                      onOpen={() => onClaim(id)}
+                    >
                       {claimRoute(repository.claims.get(id)!, repository)}
-                    </button>
+                    </ClaimLink>
                   </span>
                 ))}
               </span>

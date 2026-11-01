@@ -1,0 +1,728 @@
+{
+  "auditor": "Claude family, fresh-context same-family audit B",
+  "date": "2026-10-29",
+  "sample": "random and replies",
+  "method": "Each sampled item's quotations were matched against the cached retrieval (.local/risk-debate/doc) with tools.mjs normalisation and read in about 500 characters of surrounding context. Classification, date, statement, voice and (for replies) target identification were judged against the criteria in propositions.json and the rules in scope.md and drafts/FORMAT.md. Part 2 read every statement, qualification, engagement rationale and missing field of all 198 records and 22 replies, using a term scan plus reading; side counts were computed from pack.json with the rule stated in balance.overall. No source was re-fetched and the proposing pass's verification.json verdicts were not consulted.",
+  "coverage": {
+    "checked": 52,
+    "notRetrieved": [],
+    "note": "All 52 sampled items (30 random, 22 replies) had cached text and every quotation matched. Targeted records were not checked in this audit."
+  },
+  "findings": [
+    {
+      "id": "rd-r04-belrose-pope-2023-ai-easy-to-control-contests",
+      "verdict": "ok",
+      "issue": "Both quotes verbatim in the section on white-box methods; the passage disputes that a concealed plan survives training, a premise of R04. Date and voice correct.",
+      "evidence": "Cache belrose-pope-2023-ai-easy-to-control: 'If the AI is secretly planning to kill you, gradient descent will notice this … secret murder plots aren't actively useful …'.",
+      "proposed": null
+    },
+    {
+      "id": "rd-r14-mahowald-2023-dissociating-language-thought-context",
+      "verdict": "correct",
+      "issue": "Quotes are verbatim (short abstract). bears_on and the missing element are right. The qualification says the paper reports models 'on its benchmarks'; the paper is a review of others' findings, not a benchmark study.",
+      "evidence": "Abstract: 'Here, we review the capabilities of LLMs by considering their performance on two different aspects of language use'.",
+      "proposed": "Qualification: 'The paper reviews evidence on current models and does not argue that such systems cannot acquire functional competence.'"
+    },
+    {
+      "id": "rd-r05-aschenbrenner-2024-situational-awareness",
+      "verdict": "ok",
+      "issue": "Quote verbatim from the opening summary of Chapter II. It gives a period (≤1 year) and the chapter is titled 'the intelligence explosion', so it meets R05. Year-only date with metadata note is appropriate.",
+      "evidence": "Cache aschenbrenner-2024-agi-to-superintelligence, chapter title 'II. From AGI to Superintelligence: the Intelligence Explosion'.",
+      "proposed": null
+    },
+    {
+      "id": "rd-r01-muller-cannon-2021-existential-risk-orthogonality-contests",
+      "verdict": "ok",
+      "issue": "Both quotes verbatim (abstract; p. 9). The paper disputes a premise of the orthogonality-based argument. engages-premise is right and the qualification is accurate.",
+      "evidence": "Cache muller-cannon-2022-orthogonality, abstract and §4.",
+      "proposed": null
+    },
+    {
+      "id": "rd-r05-narayanan-kapoor-2025-normal-technology-contests",
+      "verdict": "correct",
+      "issue": "The only evidence item is the bare statement 'Since we reject \"fast takeoff\" scenarios …', which gives no reason. The engagement rationale ('AI development already relies on AI') and the statement's second clause ('holds that a gradual increase … is more likely than a discontinuous moment') rest on a passage that is not this record's evidence: it is the evidence of rd-r16-narayanan-kapoor-2025-normal-technology. As the evidence stands, the engagement is contrary-only and the statement goes beyond it.",
+      "evidence": "Introduction: 'Since we reject \"fast takeoff\" scenarios, we do not see it as necessary or useful to envision a world further ahead'. The 'gradual increase … discontinuous moment' sentence is in Part I and is quoted only on the R16 record.",
+      "proposed": "Either add the Part I passage 'But note that AI development already relies heavily on AI. It is more likely that we will continue to see a gradual increase …' as evidence here (under the pair rule it gives a reason against R05), or set engagement.kind to contrary-only and cut the statement to the rejection of fast-takeoff scenarios."
+    },
+    {
+      "id": "rd-r14-mitchell-krakauer-2022-debate-understanding-context",
+      "verdict": "ok",
+      "issue": "Quotes verbatim (p. 5). bears_on with an accurate missing element: the paper says the question cannot yet be settled.",
+      "evidence": "Cache mitchell-krakauer-2022-debate-understanding.",
+      "proposed": null
+    },
+    {
+      "id": "rd-r01-pinker-2018-popsci-fear-robots-contests",
+      "verdict": "reclassify",
+      "issue": "Quotes are verbatim, but the passage does not dispute R01. Pinker's first passage argues that literal-minded goal pursuit (the value-alignment scenario) is self-refuting because intelligence includes interpreting intentions; that targets misspecification, not the independence of intelligence and final goals. His second passage, a designed AI 'could just as easily think like shmoos' / 'no law … ruthless conquistadors', affirms that goals are independent of intelligence, which is R01's thesis. The record's own qualification says so. As supporting evidence for contesting R01, the second item argues the other way.",
+      "evidence": "popsci text, value-alignment section: 'The ability to choose an action that best satisfies conflicting goals … it is intelligence', followed by 'when we put aside fantasies like foom … artificial intelligence is like any other technology. It is developed incrementally, … tested before it is implemented'. First-fallacy section: 'An artificially intelligent system that was designed rather than evolved could just as easily think like shmoos … There is no law of complex systems …'.",
+      "proposed": "Re-record as rd-r06-pinker-2018-popsci-fear-robots-contests (engages-premise: that a capable system would pursue a given objective in a way harmful through misunderstanding, and that safety will not come from ordinary incremental testing). Drop the 'conquistadors' item from it, or record that item on R10 (no drive to dominate), where Pinker 2014/2015 already sit. Use 'self-refuting' only as a quoted term."
+    },
+    {
+      "id": "rd-r14-kambhampati-2024-llms-cant-plan",
+      "verdict": "reclassify",
+      "issue": "Quotes are verbatim. The paper argues that auto-regressive LLMs cannot plan or self-verify by themselves; it does not state that they lack goals, agency or understanding, and it argues that they can help planning inside LLM-Modulo frameworks. The qualification's bridge (planning is 'the capacity the criterion's \"pursue outcomes\" depends on') is the pack's inference, not the text's statement. 'n-gram models on steroids' supports the 'model text' element only.",
+      "evidence": "Abstract: 'We argue that auto-regressive LLMs cannot, by themselves, do planning or self-verification … LLMs should be viewed as universal approximate knowledge sources that have much more meaningful roles to play in planning/reasoning tasks'.",
+      "proposed": "bears_on_proposition (rd-r14-kambhampati-2024-llms-cant-plan-context), with missing: 'Argues that LLMs cannot plan or self-verify by themselves; does not state that they lack goals, agency or understanding.'"
+    },
+    {
+      "id": "rd-r10-brooks-2014-edge-tool-not-threat-context",
+      "verdict": "ok",
+      "issue": "Quotes verbatim. Context is right: the passage is about timescale, not benevolence or controllability. This Edge response is the same essay as the Robohub repost recorded as brooks-2014-tool-not-threat (rd-r11-brooks-2014-tool-not-threat); see packWideFindings.",
+      "evidence": "Cache edge-2014-myth-of-ai, Brooks response: 'I think it is a mistake to be worrying about us developing malevolent AI anytime in the next few hundred years.'",
+      "proposed": null
+    },
+    {
+      "id": "rd-r14-browning-lecun-2022-limits-of-language",
+      "verdict": "reclassify",
+      "issue": "Quotes verbatim (subtitle; introduction). The essay says language-only systems have a 'shallow understanding' that will never approximate human understanding. That attributes some understanding to them rather than none, and, as the qualification states, the essay does not discuss goals or agency, so it does not reach 'do not themselves pursue outcomes'. This is a judgement call, but the criterion as worded is not met. The statement also uses the authors' word 'doomed' unquoted.",
+      "evidence": "Noema text: 'these systems are doomed to a shallow understanding that will never approximate the full-bodied thinking we see in humans'.",
+      "proposed": "bears_on_proposition, missing: 'Holds that systems trained on language alone have a shallow understanding, not that they lack understanding, and does not discuss goals or agency.' Put 'doomed to a shallow understanding' in quotation marks."
+    },
+    {
+      "id": "rd-r08-sotos-2021-unimportance-superintelligence-contests",
+      "verdict": "ok",
+      "issue": "Quotes verbatim (abstract). The paper disputes that superintelligence adds a distinct threat beyond the peripheral systems it connects to; engages-premise and the qualification fit.",
+      "evidence": "Cache sotos-2021-unimportance-superintelligence, abstract.",
+      "proposed": null
+    },
+    {
+      "id": "rd-r16-yudkowsky-2017-reply-to-chollet-contests",
+      "verdict": "ok",
+      "issue": "Quotes verbatim and in Yudkowsky's own voice. The preceding Chollet sentence is correctly excluded as quoted text. The passage disputes the linear-pace premise. The qualification notes that Chollet's essay was not retrieved.",
+      "evidence": "Cache yudkowsky-2017-reply-to-chollet, closing section: 'If this were to be true, I don't think it would be established by the arguments given.'",
+      "proposed": null
+    },
+    {
+      "id": "rd-r15-hendrycks-2023-overview-contests",
+      "verdict": "ok",
+      "issue": "Both quotes verbatim (p. 7 unilateralist example; p. 33 suggestion). The record contests R15's marginal-risk premise. The document id duplicates hendrycks-2023-overview-catastrophic; see packWideFindings.",
+      "evidence": "Cache hendrycks-2023-overview.",
+      "proposed": null
+    },
+    {
+      "id": "rd-r15-touvron-2023-llama-2",
+      "verdict": "ok",
+      "issue": "Quotes verbatim (p. 4; Responsible Release section). 'better and safer' meets the criterion's 'reduces overall risk' branch only loosely, and 'net benefit' is not a risk claim; the qualification limits the record properly.",
+      "evidence": "Cache touvron-2023-llama-2: 'Collaboration will make these models better and safer.'",
+      "proposed": null
+    },
+    {
+      "id": "rd-r16-narayanan-kapoor-2025-normal-technology",
+      "verdict": "ok",
+      "issue": "Quote verbatim and it meets R16 (gradual, continuous rather than a discontinuous moment). The qualification correctly separates diffusion speed from capability speed. The document id duplicates narayanan-2025-normal-technology; see packWideFindings.",
+      "evidence": "Cache narayanan-kapoor-2025-normal-technology, Part I.",
+      "proposed": null
+    },
+    {
+      "id": "rd-r11-andreessen-2023-ai-will-save-the-world",
+      "verdict": "ok",
+      "issue": "Quote verbatim. The passage asks for a testable and falsifiable hypothesis, which meets R11. The label 'Baptists' is handled as the essay's own term. Three document ids exist for this one essay; see packWideFindings.",
+      "evidence": "Cache andreessen-2023-ai-will-save-the-world: 'My response is that their position is non-scientific – What is the testable hypothesis? …'.",
+      "proposed": null
+    },
+    {
+      "id": "rd-r12-gebru-torres-2024-tescreal",
+      "verdict": "correct",
+      "issue": "The quote is verbatim, but it concerns the influence of the AGI agenda diverting resources from task-specific models, not attention to catastrophic risk diverting from present harms. The statement's first clause (the x-risk notion of safety 'is rooted in' the bundle) rests on the unquoted preceding sentence. The paper has a passage that states R12's diversion element directly, and it is not used.",
+      "evidence": "§6 end: 'TESCREALists use the language of \"safety\" to first drive resources into the goal of building AGI, which in turn causes harm to marginalized groups, and then use the language of \"safety\" to dissuade investigations into those harms and once again divert resources into preventing a hypothetical AGI apocalypse.'",
+      "proposed": "Add that passage as the main evidence item, with its locator (section 6, closing paragraph). Keep the introduction passage as a second item. Revise the statement so that it rests on quoted text."
+    },
+    {
+      "id": "rd-r01-russell-2019-ieee-spectrum",
+      "verdict": "ok",
+      "issue": "Both quotes verbatim. The passage states orthogonality in Russell's own voice, via Hume and Bostrom; the Bostrom paraphrase is correctly not used as evidence. The book-excerpt version is noted.",
+      "evidence": "Cache russell-2019-ieee-spectrum.",
+      "proposed": null
+    },
+    {
+      "id": "rd-r15-gopal-2023-pandemic-agents-contests",
+      "verdict": "ok",
+      "issue": "Quote verbatim from the v1 abstract. The record contests R15 with a stated conclusion. The qualification properly limits it to the abstract.",
+      "evidence": "Cache gopal-2023-pandemic-agents, abstract and submission history (v1 25 Oct 2023).",
+      "proposed": null
+    },
+    {
+      "id": "rd-r06-millidge-2024-alignment-generalizes-further-contests",
+      "verdict": "ok",
+      "issue": "Quotes verbatim. 'Values thus fall out mostly \"for free\"' is present in the text. The passage disputes R06's 'hard' element. The context item is fairly included. Quotation stays within 10% of the ~1,200-word post.",
+      "evidence": "Cache millidge-2024-alignment-generalizes-further.",
+      "proposed": null
+    },
+    {
+      "id": "rd-r08-altman-2015-machine-intelligence-part-1",
+      "verdict": "ok",
+      "issue": "Quote verbatim. With 'to kill us all' and a pursuit of 'some other goal', the passage meets R08 apart from an explicit loss-of-control step, which the qualification flags. The timestamp date is properly explained. Minor: the quote stops before the clause '… wipes us out' that completes the sentence.",
+      "evidence": "Cache altman-2015-machine-intelligence-part-1: '… in an effort to accomplish some other goal (most goals … could make use of resources currently being used by humans) wipes us out.'",
+      "proposed": null
+    },
+    {
+      "id": "rd-r15-mozilla-2023-joint-statement",
+      "verdict": "ok",
+      "issue": "Both quotes verbatim. The record states what the statement says, without attributing it to signatories. The qualification accurately reports that the statement acknowledges abuse risk and divergent signatory views. Quotation (~21 words) is within 10% of a ~790-word page.",
+      "evidence": "Cache mozilla-2023-joint-statement.",
+      "proposed": null
+    },
+    {
+      "id": "rd-r15-seger-2023-open-sourcing-contests",
+      "verdict": "ok",
+      "issue": "Quotes verbatim (abstract; p. 6). The date note is correct: the PDF stamp reads 'arXiv:2311.09227v1 [cs.CY] 29 Sep 2023'. The qualification is accurate.",
+      "evidence": "Cache seger-2023-open-sourcing, p. 1 stamp.",
+      "proposed": null
+    },
+    {
+      "id": "rd-r02-andreessen-2023-why-ai-will-save-the-world-contests",
+      "verdict": "ok",
+      "issue": "Quote verbatim. contrary-only is right: the passage denies that AI has goals without addressing the instrumental reasoning. This document id duplicates andreessen-2023-ai-will-save-the-world (same URL), with a different dateBasis; see packWideFindings.",
+      "evidence": "Cache andreessen-2023-why-ai-will-save-the-world: 'In short, AI doesn't want, it doesn't have goals …'.",
+      "proposed": null
+    },
+    {
+      "id": "rd-r15-widder-2024-open-closed-contests",
+      "verdict": "ok",
+      "issue": "Both quotes verbatim (abstract). The record disputes the distribution-of-power premise only, as the qualification says. Under the pack's counting rule it falls on the 'risk side' although the article says nothing about catastrophic risk; see balance notes.",
+      "evidence": "Cache widder-2024-open-closed, abstract.",
+      "proposed": null
+    },
+    {
+      "id": "rd-r02-turner-tadepalli-2022-retargetable",
+      "verdict": "ok",
+      "issue": "Quotes verbatim (abstract; the text layer reads 'powerseeking'). The record meets R02 as a formal result, properly qualified.",
+      "evidence": "Cache turner-tadepalli-2022-retargetable.",
+      "proposed": null
+    },
+    {
+      "id": "rd-r06-leike-2022-optimistic-alignment-approach-contests",
+      "verdict": "reclassify",
+      "issue": "Quotes verbatim. The post does not dispute that alignment is a hard, unsolved problem that will not be solved by default. It says a once-and-for-all solution 'could be very difficult, and we don't really know how to do this', and argues that a narrower goal is tractable through a deliberate programme, not by default; the record's qualification says the same. Its context item supports R06's 'hard' element. What it disputes is the degree of difficulty of a narrower target, which is close to the criterion but does not contest it.",
+      "evidence": "Section 2: 'Finding this once-and-for-all solution could be very difficult, and we don't really know how to do this. The task seems very daunting …'; summary: 'We're not trying to solve all alignment problems.'",
+      "proposed": "bears_on_proposition (rd-r06-leike-2022-optimistic-alignment-approach-context), missing: 'Argues that aligning a system able to do alignment research is tractable with a deliberate research programme; does not hold that alignment is easy or will be solved by default.'"
+    },
+    {
+      "id": "rd-r05-grace-2022-counterarguments-contests",
+      "verdict": "correct",
+      "issue": "Quotes verbatim; contesting with engages-premise is right. The page carries a byline date of 31 August 2022 and a published_time of 14 October 2022. The record dates the work by publication, correctly, but leaves the earlier byline date only in the document's dateNote.",
+      "evidence": "Source version: 'byline \"Katja Grace, 31 August 2022\", published 2022-10-14'.",
+      "proposed": "Add claimed: {date: '2022-08-31', note: 'Date in the byline; the post was published on 14 October 2022.'}"
+    },
+    {
+      "id": "rd-r04-shah-2022-goal-misgeneralization",
+      "verdict": "ok",
+      "issue": "Quotes verbatim (§4.1, §4.3). The deceptive model behaves identically in training and then subverts oversight, and the hacker acts 'when it is confident … without its overseers noticing'; this meets R04. The speculative framing is qualified and the datasetLink to B1 is appropriate.",
+      "evidence": "Cache shah-2022-goal-misgeneralization pp. 9–10.",
+      "proposed": null
+    },
+    {
+      "id": "rd-r10-bengio-2024-reasoning-through-arguments-contests",
+      "verdict": "ok",
+      "issue": "Quotes verbatim in the section headed for those who think AGI will be kind. The record contests R10 with an argument (engages-premise). The modification metadata is noted.",
+      "evidence": "Cache bengio-2024-reasoning-through-arguments.",
+      "proposed": null
+    },
+    {
+      "id": "rd-reply-dafoe-russell-2016-yes-we-are-worried-to-etzioni-2016-experts-dont-think",
+      "verdict": "ok",
+      "issue": "Quoted passage verbatim; it shows that the text addresses the named target.",
+      "evidence": "Opening sentence names Etzioni and cites his article title in parentheses ('see \"No, Experts Don't Think Superintelligent AI is a Threat to Humanity\"').",
+      "proposed": null
+    },
+    {
+      "id": "rd-reply-dair-2023-statement-to-fli-2023-pause-letter",
+      "verdict": "ok",
+      "issue": "Quoted passage verbatim; it shows that the text addresses the named target.",
+      "evidence": "Opening paragraph names the Future of Life Institute letter and quotes its moratorium request.",
+      "proposed": null
+    },
+    {
+      "id": "rd-reply-ng-2023-existential-risk-dont-get-it-to-cais-2023-statement",
+      "verdict": "ok",
+      "issue": "Quoted passage verbatim; it shows that the text addresses the named target.",
+      "evidence": "First sentence quotes the CAIS statement verbatim (attributing it to 'safe.org', Ng's wording).",
+      "proposed": null
+    },
+    {
+      "id": "rd-reply-richards-2023-illusion-existential-risk-to-cais-2023-statement",
+      "verdict": "ok",
+      "issue": "Quoted passage verbatim; it shows that the text addresses the named target.",
+      "evidence": "Paragraph names the Center for AI Safety statement of May 30 and quotes it, then argues against its focus.",
+      "proposed": null
+    },
+    {
+      "id": "rd-reply-lecun-2019-thread-to-russell-2019-thread",
+      "verdict": "ok",
+      "issue": "Quoted passage verbatim; it shows that the text addresses the named target.",
+      "evidence": "In the LessWrong compilation, Bengio's turn ('Yann, I'd be curious about your response to Stuart Russell's point') immediately precedes LeCun's quoted reply. The statement properly relies on that adjacency.",
+      "proposed": null
+    },
+    {
+      "id": "rd-reply-zador-2019-thread-to-russell-2019-thread",
+      "verdict": "ok",
+      "issue": "Quoted passage verbatim; it shows that the text addresses the named target.",
+      "evidence": "'I think the flaw in Stuart's argument …' names Russell.",
+      "proposed": null
+    },
+    {
+      "id": "rd-reply-russell-2019-thread-to-zador-2019-thread",
+      "verdict": "ok",
+      "issue": "Quoted passage verbatim; it shows that the text addresses the named target.",
+      "evidence": "Russell's turn follows Zador's and answers his quoted phrase 'switching off the human is the optimal solution'. It names no one; the reply rests on adjacency and the echoed phrase, which is adequate.",
+      "proposed": null
+    },
+    {
+      "id": "rd-reply-bengio-2019-thread-to-lecun-2019-thread",
+      "verdict": "ok",
+      "issue": "Quoted passage verbatim; it shows that the text addresses the named target.",
+      "evidence": "'Yann, these are good points …' follows LeCun's turn on trainable objectives.",
+      "proposed": null
+    },
+    {
+      "id": "rd-reply-lecun-2019-thread-to-bengio-2019-thread",
+      "verdict": "ok",
+      "issue": "Quoted passage verbatim; it shows that the text addresses the named target.",
+      "evidence": "'@Yoshua Bengio a couple direct comments on your summary'.",
+      "proposed": null
+    },
+    {
+      "id": "rd-reply-russell-2014-edge-myths-and-moonshine-to-brooks-2014-edge-tool-not-threat",
+      "verdict": "ok",
+      "issue": "Quoted passage verbatim; it shows that the text addresses the named target.",
+      "evidence": "'… not in centuries, as Rod Brooks suggests, but in hours' names Brooks and matches his 'next few hundred years'.",
+      "proposed": null
+    },
+    {
+      "id": "rd-reply-russell-2019-ieee-spectrum-to-pinker-2015-thinking-does-not-imply-subjugating",
+      "verdict": "ok",
+      "issue": "Quoted passage verbatim; it shows that the text addresses the named target.",
+      "evidence": "Names Pinker and quotes 'AI dystopias project a parochial alpha-male psychology …'. The qualification correctly says that the identification with the 2015 Edge text rests on matching wording.",
+      "proposed": null
+    },
+    {
+      "id": "rd-reply-russell-2019-ieee-spectrum-to-brooks-2017-seven-deadly-sins",
+      "verdict": "ok",
+      "issue": "Quoted passage verbatim; it shows that the text addresses the named target.",
+      "evidence": "Names Brooks and quotes his sentence. The qualification discloses that the post itself is not named.",
+      "proposed": null
+    },
+    {
+      "id": "rd-reply-turner-2019-optimal-farsighted-agents-to-pinker-2015-thinking-does-not-imply-subjugating",
+      "verdict": "ok",
+      "issue": "Quoted passage verbatim; it shows that the text addresses the named target.",
+      "evidence": "Cites 'Pinker [2015]' with the title phrase and states that the theorems contradict 'their positions'.",
+      "proposed": null
+    },
+    {
+      "id": "rd-reply-haggstrom-2021-muller-cannon-distinction-to-muller-cannon-2021-existential-risk-orthogonality",
+      "verdict": "ok",
+      "issue": "Quoted passage verbatim; it shows that the text addresses the named target.",
+      "evidence": "The abstract names 'a recent paper by Müller and Cannon'; the introduction cites Müller and Cannon (2021). Minor: dateBasis 'posting' uses the draft heading date; the arXiv v1 submission date was not separately confirmed.",
+      "proposed": null
+    },
+    {
+      "id": "rd-reply-belrose-pope-2024-counting-arguments-to-carlsmith-2023-scheming-ais",
+      "verdict": "ok",
+      "issue": "Quoted passage verbatim; it shows that the text addresses the named target.",
+      "evidence": "Names 'a recent report by AI safety researcher Joe Carlsmith' and goes on to quote it. 'debunk' is the authors' own word inside the quotation, not the pack's.",
+      "proposed": null
+    },
+    {
+      "id": "rd-reply-piantadosi-hill-2022-meaning-without-reference-to-bender-koller-2020-climbing-nlu",
+      "verdict": "ok",
+      "issue": "Quoted passage verbatim; it shows that the text addresses the named target.",
+      "evidence": "States Bender & Koller's position and discusses the octopus test.",
+      "proposed": null
+    },
+    {
+      "id": "rd-reply-alexander-2015-should-ai-be-open-to-openai-launch-announcement",
+      "verdict": "ok",
+      "issue": "Quoted passage verbatim; it shows that the text addresses the named target.",
+      "evidence": "Names OpenAI and quotes its announcement. The target document was not retrieved (openai.com 403), which is disclosed in omissions.",
+      "proposed": null
+    },
+    {
+      "id": "rd-reply-kapoor-2024-open-foundation-models-to-gopal-2023-pandemic-agents",
+      "verdict": "correct",
+      "issue": "The quote is verbatim and cites Gopal et al., so a cites claim is warranted. The statement ('answers … by noting that the pathogen information at issue is publicly available') overstates the passage, which uses Gopal and Guha together as an example of how researchers reach different conclusions without a marginal-risk framework.",
+      "evidence": "§5.1: 'without clearly articulating the marginal risk … researchers might come to completely different conclusions about whether they pose risks: open language models can generate accurate information about pandemic-causing pathogens (Gopal et al., 2023), yet such information is publicly available …'.",
+      "proposed": "Statement: 'Kapoor, Bommasani and co-authors' paper of February 2024 cites Gopal and co-authors' paper, as finding that open language models can generate accurate information about pandemic pathogens, and states that such information is publicly available without open language models.'"
+    },
+    {
+      "id": "rd-reply-howard-2023-dislightenment-to-time-2023-shut-it-all-down",
+      "verdict": "correct",
+      "issue": "The quote is verbatim and names Yudkowsky and the airstrike proposal, but not the TIME article. The candidate cites claim to time-2023-shut-it-all-down is therefore the pack's identification, as the qualification admits. Admitted as an explicit cites claim, it would overstate the source.",
+      "evidence": "fast.ai text: 'when the self-described pioneer of the AI safety movement, Eliezer Yudkowsky, proposed airstrikes on unauthorized data centers …'.",
+      "proposed": "Mark the reply's derivation as inferred, with the premise (the only published airstrike proposal by Yudkowsky in that period is the TIME essay of 29 March 2023) and its rationale. Alternatively, record it as naming Yudkowsky, with the TIME article as context."
+    },
+    {
+      "id": "rd-reply-yudkowsky-2017-reply-to-chollet-to-chollet-2017-impossibility-intelligence-explosion",
+      "verdict": "ok",
+      "issue": "Quoted passage verbatim; it shows that the text addresses the named target. The target document is unretrieved (Medium 403) and carries no record.",
+      "evidence": "Opening sentence: 'This is a reply to Francois Chollet … on his essay \"The impossibility of intelligence explosion.\"'",
+      "proposed": null
+    },
+    {
+      "id": "rd-reply-thorstad-2022-against-singularity-hypothesis-to-chalmers-singularity",
+      "verdict": "ok",
+      "issue": "Quoted passage verbatim; it shows that the text addresses the named target.",
+      "evidence": "Plan of the paper: 'Sections 4-5 consider recent philosophical arguments … by Chalmers (2010) and Bostrom (2014)'.",
+      "proposed": null
+    },
+    {
+      "id": "rd-reply-narayanan-kapoor-2024-ai-scaling-myths-to-aschenbrenner-2024-situational-awareness",
+      "verdict": "ok",
+      "issue": "Quoted passage verbatim. The statement accurately limits the exchange to a further-reading note, and the post says it is not a point-by-point rebuttal and was drafted before the essay.",
+      "evidence": "'We haven't tried to give a point-by-point rebuttal here - most of this post was drafted before Aschenbrenner's essay was released.'",
+      "proposed": null
+    }
+  ],
+  "wording": [
+    {
+      "id": "rd-r01-pinker-2018-popsci-fear-robots-contests",
+      "field": "statement",
+      "text": "scenarios … are self-refuting",
+      "issue": "The pack adopts the author's evaluative term without quotation marks.",
+      "proposed": "… argues that such scenarios are, in its words, \"self-refuting\" …"
+    },
+    {
+      "id": "rd-r14-browning-lecun-2022-limits-of-language",
+      "field": "statement",
+      "text": "such systems are doomed to a shallow understanding",
+      "issue": "The authors' loaded word appears as the pack's own wording.",
+      "proposed": "… so that such systems are, in the essay's words, \"doomed to a shallow understanding\"."
+    },
+    {
+      "id": "rd-r02-thorstad-2026-instrumental-convergence-contests",
+      "field": "statement",
+      "text": "none of the leading defences",
+      "issue": "'leading' is an evaluative adjective. It is the author's word ('leading defenses') but is unquoted.",
+      "proposed": "none of the defences it examines (the paper calls them \"leading defenses\") …"
+    },
+    {
+      "id": "rd-r15-mozilla-2023-joint-statement",
+      "field": "qualification",
+      "text": "It grants that open models can be abused.",
+      "issue": "'grants' is a synonym of 'concedes', one of the banned evaluative verbs.",
+      "proposed": "It also states that open models can be abused."
+    },
+    {
+      "id": "rd-r15-widder-2024-open-closed-contests",
+      "field": "qualification",
+      "text": "and grants that open AI allows some oversight and experimentation",
+      "issue": "'grants' is concessive.",
+      "proposed": "and states that maximally open AI allows some oversight and experimentation"
+    },
+    {
+      "id": "rd-r15-bengio-2024-reasoning-arguments-contests",
+      "field": "qualification",
+      "text": "The post grants a present net benefit of open-sourcing",
+      "issue": "'grants' is concessive.",
+      "proposed": "The post states that open-sourcing may currently be net beneficial and argues otherwise for future systems …"
+    },
+    {
+      "id": "rd-r17-hanson-2023-reasonable-ai-fears",
+      "field": "qualification",
+      "text": "The essay grants that competition sometimes leads firms to cheat customers",
+      "issue": "'grants' is concessive.",
+      "proposed": "The essay also states that competition sometimes leads firms to cheat customers …"
+    },
+    {
+      "id": "rd-r15-seger-2023-open-sourcing-contests",
+      "field": "engagement.rationale",
+      "text": "Grants the benefits attributed to openness",
+      "issue": "'Grants' is concessive.",
+      "proposed": "States the benefits attributed to openness and argues that …"
+    },
+    {
+      "id": "rd-r17-hendrycks-2023-natural-selection-contests",
+      "field": "engagement.rationale",
+      "text": "Grants that economic incentives for safety exist",
+      "issue": "'Grants' is concessive.",
+      "proposed": "States that economic incentives for safety exist and argues that …"
+    },
+    {
+      "id": "rd-r02-andreessen-2023-why-ai-will-save-the-world-contests",
+      "field": "qualification / engagement.rationale",
+      "text": "The passage denies that AI has goals at all / Denies that AI systems have goals",
+      "issue": "'denies' is mildly evaluative; the pack elsewhere uses 'states'.",
+      "proposed": "The passage states that AI has no goals …"
+    },
+    {
+      "id": "rd-r13-bengio-2023-managing-extreme-risks-contests",
+      "field": "engagement.rationale",
+      "text": "It denies that there is a fundamental limit",
+      "issue": "Same as above.",
+      "proposed": "It states that there is no fundamental limit at human level …"
+    },
+    {
+      "id": "rd-r13-altman-2024-intelligence-age-contests",
+      "field": "qualification",
+      "text": "An assertion by the chief executive of a developer of the systems in question",
+      "issue": "'assertion' with a role description discounts the text. Comparable developer-authored texts on the other side (for example Touvron et al., Meta's statement) are described as 'a developer's statement'.",
+      "proposed": "A statement by the chief executive of OpenAI, a developer of the systems in question; it gives no argument …"
+    },
+    {
+      "id": "rd-r11-andreessen-2023-ai-will-save-the-world",
+      "field": "qualification",
+      "text": "(a term it uses for advocates of AI regulation)",
+      "issue": "This paraphrases the essay's label in the pack's own words, more broadly than the essay's 'true believers' who call for new restrictions.",
+      "proposed": "(the essay's term, from its 'Baptists and bootleggers' analogy, for those it describes as true believers calling for new restrictions on AI)"
+    },
+    {
+      "id": "propositions.json groups",
+      "field": "label",
+      "text": "R1 'Arguments that advanced AI could pose catastrophic risk, and their premises' / R2 'Counter-propositions: that the risk is lower, later, placed elsewhere or handled otherwise'",
+      "issue": "The labels are asymmetric. R1 is framed as 'Arguments' and as the reference point; R2 is defined only as 'counter' to it. The scope says group labels only show direction, but this wording makes one side the thesis and the other the rejoinder.",
+      "proposed": "R1 'Propositions that advanced AI could pose catastrophic risk, and their premises'; R2 'Propositions that the risk is lower, later, located elsewhere or otherwise addressed'."
+    },
+    {
+      "id": "propositions.json R10",
+      "field": "label / criterion / pairedWith",
+      "text": "Intelligence brings benevolence or controllability … pairedWith R01",
+      "issue": "R10 bundles two different claims. Pairing it with R01 as a contrary presents the controllability-by-design branch as a denial of orthogonality, but several R10 texts state the independence that R01 asserts (the qualifications of rd-r10-zador-lecun-2019 and rd-r10-pinker-2014 say so). This frames those authors as holding 'intelligence brings benevolence'.",
+      "proposed": "Split R10 into a benevolence branch, paired with R01, and a controllability-by-design branch, unpaired; or drop pairedWith and say in the label that the two branches are distinct."
+    },
+    {
+      "id": "propositions.json R08 / scope.md",
+      "field": "label",
+      "text": "'Existential risk from misalignment or loss of control' (propositions.json) vs 'risk from misalignment or loss of control' (scope.md)",
+      "issue": "The two files label R08 inconsistently.",
+      "proposed": "Use one label in both files."
+    }
+  ],
+  "balance": {
+    "overall": {
+      "riskSide": 91,
+      "counterSide": 86,
+      "context": 21,
+      "total": 198,
+      "rule": "risk = articulates R01–R09 or contests R10–R17; counter = articulates R10–R17 or contests R01–R09; context = bears_on"
+    },
+    "byProposition": {
+      "R01": {
+        "risk": 4,
+        "counter": 4,
+        "context": 0
+      },
+      "R02": {
+        "risk": 11,
+        "counter": 8,
+        "context": 1
+      },
+      "R03": {
+        "risk": 7,
+        "counter": 3,
+        "context": 0
+      },
+      "R04": {
+        "risk": 3,
+        "counter": 2,
+        "context": 1
+      },
+      "R05": {
+        "risk": 6,
+        "counter": 10,
+        "context": 4
+      },
+      "R06": {
+        "risk": 4,
+        "counter": 4,
+        "context": 3
+      },
+      "R07": {
+        "risk": 4,
+        "counter": 1,
+        "context": 0
+      },
+      "R08": {
+        "risk": 8,
+        "counter": 6,
+        "context": 2
+      },
+      "R09": {
+        "risk": 7,
+        "counter": 1,
+        "context": 0
+      },
+      "R10": {
+        "risk": 5,
+        "counter": 8,
+        "context": 1
+      },
+      "R11": {
+        "risk": 2,
+        "counter": 6,
+        "context": 0
+      },
+      "R12": {
+        "risk": 3,
+        "counter": 7,
+        "context": 0
+      },
+      "R13": {
+        "risk": 5,
+        "counter": 4,
+        "context": 2
+      },
+      "R14": {
+        "risk": 4,
+        "counter": 6,
+        "context": 3
+      },
+      "R15": {
+        "risk": 9,
+        "counter": 11,
+        "context": 4
+      },
+      "R16": {
+        "risk": 2,
+        "counter": 3,
+        "context": 0
+      },
+      "R17": {
+        "risk": 7,
+        "counter": 2,
+        "context": 0
+      }
+    },
+    "byAuthor": {
+      "_note": "Counted per listed author of the record's document (co-authors each counted); name variants are not merged. Selected seed authors below; the full table is reproducible from pack.json with the rule above.",
+      "riskSeeds": {
+        "Yoshua Bengio": {
+          "risk": 13,
+          "context": "1 (as 'Yoshua Bengio (chair)')"
+        },
+        "Nick Bostrom": {
+          "risk": 11,
+          "context": 1
+        },
+        "Stuart Russell": {
+          "risk": 10,
+          "context": 1
+        },
+        "Dan Hendrycks": {
+          "risk": 5
+        },
+        "Eliezer Yudkowsky": {
+          "risk": 4,
+          "note": "further texts in the dataset's Yudkowsky collection, not re-recorded"
+        },
+        "Geoffrey Hinton": {
+          "risk": 4
+        },
+        "Stephen M. Omohundro": {
+          "risk": 3
+        },
+        "Richard Ngo": {
+          "risk": 3
+        },
+        "Joe/Joseph Carlsmith": {
+          "risk": 3,
+          "note": "split across two name forms"
+        },
+        "Evan Hubinger": {
+          "risk": 2,
+          "context": 1
+        },
+        "Paul Christiano": {
+          "risk": 1,
+          "counter": 1,
+          "context": 1
+        },
+        "Center for AI Safety": {
+          "risk": 1
+        },
+        "Future of Life Institute": {
+          "context": 2
+        }
+      },
+      "counterSeeds": {
+        "Sayash Kapoor": {
+          "counter": 9
+        },
+        "Arvind Narayanan": {
+          "counter": 8
+        },
+        "Gary Marcus": {
+          "counter": 5,
+          "risk": 2
+        },
+        "Yann LeCun": {
+          "counter": 6
+        },
+        "Marc Andreessen": {
+          "counter": 4,
+          "context": 1,
+          "note": "spread over three duplicate document ids"
+        },
+        "Nora Belrose / Quintin Pope": {
+          "counter": 5
+        },
+        "Rodney Brooks": {
+          "counter": 4,
+          "context": "1 (as 'Rodney A. Brooks')"
+        },
+        "Steven Pinker": {
+          "counter": 4
+        },
+        "Anthony Zador": {
+          "counter": 4
+        },
+        "Emily M. Bender": {
+          "counter": 4
+        },
+        "Kevin Kelly": {
+          "counter": 3
+        },
+        "Robin Hanson": {
+          "counter": 3,
+          "note": "plus the Hanson–Yudkowsky debate in the dataset"
+        },
+        "Timnit Gebru": {
+          "counter": 3
+        },
+        "Andrew Ng": {
+          "counter": 2,
+          "context": 1
+        },
+        "Oren Etzioni": {
+          "counter": 1
+        },
+        "Mark Zuckerberg": {
+          "counter": 1
+        },
+        "Melanie Mitchell": {
+          "context": 2,
+          "counter": 0
+        },
+        "François Chollet": {
+          "counter": 0,
+          "note": "essay not retrieved (Medium 403)"
+        }
+      }
+    },
+    "notes": [
+      "Overall the pack is close to the balance aim: 91 risk-side and 86 counter-side records.",
+      "The overall figure hides proposition-level gaps. The counter side is thin on R07 (4:1), R09 (7:1), R17 (7:2) and R03 (7:3); the risk side is thin on R11 (2:6), R12 (3:7) and R05 (6:10).",
+      "R07/R09: the gap is mostly classification, not selection. Texts that dispute extinction-scale or misuse-scale risk are recorded on R11, R12 or R15 under the pairing and 'record once' rules: Richards et al. 2023, Narayanan and Kapoor 2024, Andreessen 2023, Kapoor et al. 2024 (marginal risk), the DAIR statement. A reader of R07 or R09 alone sees almost no dispute. The collection view for R07 and R09 should point to them, or such passages should also be recorded as contesting R07/R09 where they give a reason.",
+      "R03/R04/R06: the omissions record that LessWrong and the Alignment Forum refused retrieval, so counter-side texts known to the literature (DavidW 2023, Wentworth 2020, Kokotajlo 2020) are missing. This reflects retrieval, not selection. My verdicts would also turn rd-r06-leike-2022 into context, leaving R06 at 4 risk to 3 counter.",
+      "R17: the counter side is thin partly because Hanson 2008 and Gans (2018, 2023) are in the dataset on E04 and linked, not re-recorded. The searchLog supports this.",
+      "The counting rule mixes direction with topic. Several 'risk-side' records argue nothing about catastrophe: Widder et al. 2024 (concentration of power, R15), Piantadosi and Hill 2022 (meaning in LLMs, R14), Gwern 2020 and Altman 2024 (scaling, R13). Equally, 'counter-side' records include Christiano 2018 (R16) and Leike 2022 (R06), whose authors elsewhere argue the risk. Report the side counts as passage direction only, never as people or camps; the pack's wording already does this.",
+      "Concentration by author is uneven. The three densest risk-side authors (Bengio 13, Bostrom 11, Russell 10) carry 34 records; the densest counter-side authors are Kapoor 9, Narayanan 8, LeCun 6 and Marcus 5. Bengio's count includes his co-authored consensus papers.",
+      "Seed coverage on the counter side has gaps. Chollet has no record: his 2017 essay was refused (HTTP 403) and is defined only as a reply target. Melanie Mitchell has context records only. Bender, Gebru et al.'s Stochastic Parrots (2021) was not retrievable, so Bender is represented by Bender and Koller 2020, Bender and Hanna 2023 and the DAIR statement. LeCun's 'A Path Towards Autonomous Machine Intelligence' is unused, and the omissions contradict each other about whether it was retrieved (see packWideFindings). On the risk side every seed author named in the brief is represented by primary text (Yudkowsky deliberately few, because of the dataset).",
+      "No stance is attributed from a signature or proximity. All signed statements (CAIS, FLI 2015 and 2023, Mozilla, Meta's statement of support) are recorded as what the text says, with an explicit no-signatory qualification. The DAIR statement lists its three byline authors, which is correct. The one inference about a target is the Howard reply's identification of the TIME article (finding above)."
+    ]
+  },
+  "packWideFindings": [
+    {
+      "issue": "Duplicate document and source entries for one expression. These split the per-source quotation budget, give one work several ids, and give it inconsistent dateBasis. Andreessen, 'Why AI Will Save the World' has three ids (andreessen-2023-ai-will-save-the-world [publication], andreessen-2023-why-ai-will-save-the-world [posting], andreessen-2023-save-the-world), all for https://a16z.com/ai-will-save-the-world/. Hendrycks et al., 'An Overview of Catastrophic AI Risks' has two (hendrycks-2023-overview-catastrophic, hendrycks-2023-overview; same arXiv v1). Bengio et al., 'Managing AI Risks in an Era of Rapid Progress' has two (bengio-2023-managing-ai-risks, bengio-2023-managing-extreme-risks; sources bengio-2023-managing-ai-risks and takeoff-bengio-2023-managing-extreme-risks; same arXiv v1). Narayanan and Kapoor, 'AI as Normal Technology' has two (narayanan-kapoor-2025-normal-technology, narayanan-2025-normal-technology). Brooks 2014 'AI is a tool, not a threat' appears as two documents for two expressions of the same essay (brooks-2014-tool-not-threat, the Robohub repost; brooks-2014-edge-tool-not-threat, the Edge response).",
+      "proposed": "Merge each set into one document, and one source per expression, in the drafts. Re-run the quotation-budget check per merged source. For Brooks, keep one document with two sources (versions), and date it from the earliest dated expression."
+    },
+    {
+      "issue": "Stale or contradictory omissions. One entry says the Facebook/LessWrong instrumental-convergence thread was not retrieved (403) and 'Not' recorded, but debates.json records it from the LessWrong GraphQL copy. LeCun's 'A Path Towards Autonomous Machine Intelligence' is listed both as 'OpenReview returned HTTP 403. No other expression … located' and as 'Retrieved by the goals-and-drives group'. 'Ng, letters in The Batch … (2023): Only press reports … found' contradicts the recorded Ng letters of 7 June 2023 and 25 October 2023.",
+      "proposed": "Reconcile the omissions with the merged records. For the LeCun paper, state which is true and, if it was retrieved, consider recording it on R14 and R10."
+    },
+    {
+      "issue": "Author-name variants split the by-author counts: Joe/Joseph Carlsmith, Rodney Brooks/Rodney A. Brooks, Alexander Matt Turner/Alex Turner, 'Yoshua Bengio (chair)'.",
+      "proposed": "Normalise author names in the documents list."
+    }
+  ]
+}

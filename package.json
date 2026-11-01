@@ -8,7 +8,7 @@
   "license": "MIT",
   "scripts": {
     "dev": "vite --host 127.0.0.1",
-    "build": "pnpm validate:data && tsc -b && vite build && vite build --ssr src/prerender/render.tsx --outDir dist-ssr && tsx scripts/prerender.ts",
+    "build": "pnpm validate:data && tsc -b && vite build && vite build --ssr src/prerender/render.tsx --outDir dist-ssr && tsx scripts/prerender.ts && tsx scripts/bundle-budget.ts",
     "preview": "vite preview --host 127.0.0.1",
     "typecheck": "tsc -b --pretty false",
     "lint": "eslint . --max-warnings 0",
@@ -25,6 +25,7 @@
     "question:gaps": "tsx scripts/question-gaps.ts",
     "research:corpus": "tsx scripts/research-corpus.ts",
     "research:provenance": "tsx scripts/research-followup.ts",
+    "audit:consistency": "tsx scripts/audit-consistency.ts",
     "check:privacy": "node scripts/check-privacy.mjs",
     "check:links": "node scripts/check-links.mjs",
     "test:privacy": "node --test scripts/test-privacy.mjs",

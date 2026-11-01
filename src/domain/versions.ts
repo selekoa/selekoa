@@ -1,4 +1,5 @@
 import type { Claim, Dataset, Entity } from './schema';
+import { selected } from './memo';
 
 export function versionDate(entity: Entity) {
   const v = entity.documentVersion;
@@ -6,13 +7,15 @@ export function versionDate(entity: Entity) {
 }
 
 export function frameworkVersions(data: Dataset, family: string) {
-  return data.entities
-    .filter((e) => e.documentVersion?.family === family)
-    .sort(
-      (a, b) =>
-        (versionDate(a) ?? '').localeCompare(versionDate(b) ?? '') ||
-        a.id.localeCompare(b.id),
-    );
+  // Chosen by their relation fields alone (src/domain/memo.ts).
+  return selected(
+    'entities',
+    data.entities.filter((e) => e.documentVersion?.family === family),
+  ).sort(
+    (a, b) =>
+      (versionDate(a) ?? '').localeCompare(versionDate(b) ?? '') ||
+      a.id.localeCompare(b.id),
+  );
 }
 
 export function versionNeighbours(claims: Claim[], documentId: string) {

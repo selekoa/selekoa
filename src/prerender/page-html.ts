@@ -21,6 +21,10 @@ export type PageHtmlInput = {
   meta: PageMeta;
   /** The site's absolute address, ending in a slash; null leaves out the canonical link. */
   baseUrl: string | null;
+  /** Hashed scripts the page loads on opening, fetched with the entry script. */
+  modules?: string[];
+  /** The files of the page's slice, fetched with the scripts (docs/data-loading-design-c.md). */
+  data?: string[] | null;
 };
 
 /**
@@ -36,6 +40,8 @@ export function pageHtml({
   body,
   meta,
   baseUrl,
+  modules = [],
+  data = null,
 }: PageHtmlInput) {
   const replace = (html: string, pattern: RegExp, value: string) => {
     if (!pattern.test(html))
@@ -91,6 +97,28 @@ export function pageHtml({
     );
   }
   html = replace(html, /\s*<noscript>[\s\S]*?<\/noscript>/, '');
+  if (modules.length)
+    html = replace(
+      html,
+      /\n?\s*<\/head>/,
+      modules
+        .map(
+          (file) =>
+            `\n    <link rel="modulepreload" crossorigin href="${escapeHtml(file)}" />`,
+        )
+        .join('') + '\n  </head>',
+    );
+  if (data)
+    html = replace(
+      html,
+      /\n?\s*<\/head>/,
+      data
+        .map(
+          (file) =>
+            `\n    <link rel="preload" href="${escapeHtml(file)}" as="fetch" crossorigin />`,
+        )
+        .join('') + '\n  </head>',
+    );
   html = replace(
     html,
     /<div id="root"><\/div>/,

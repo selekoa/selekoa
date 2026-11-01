@@ -1,4 +1,4 @@
-import { test, expect } from './fixtures';
+import { test, expect, MAP_FIRST_DRAW_TIMEOUT } from './fixtures';
 import AxeBuilder from '@axe-core/playwright';
 import { readFileSync } from 'node:fs';
 import { datasetSchema } from '../../src/domain/schema';
@@ -42,7 +42,9 @@ test('no whole-dataset map; the full Anthropic focus retains topology, labels, o
     .getByRole('navigation', { name: 'Explore the dataset' })
     .getByRole('button', { name: 'Anthropic', exact: true })
     .click();
-  await expect(page.locator('[data-label-for="anthropic"]')).toBeVisible();
+  await expect(page.locator('[data-label-for="anthropic"]')).toBeVisible({
+    timeout: MAP_FIRST_DRAW_TIMEOUT,
+  });
   const positions = await page
     .locator('.map-node')
     .evaluateAll((nodes) => nodes.map((n) => n.getAttribute('transform')));
@@ -153,7 +155,9 @@ test('RSP succession and all parallel v3.0 claims are independently selectable',
     .click();
   await page.getByLabel('Framework family').selectOption('anthropic-rsp');
   await page.getByRole('button', { name: 'Map', exact: true }).click();
-  await expect(page.locator('.sequence-note')).toBeVisible();
+  await expect(page.locator('.sequence-note')).toBeVisible({
+    timeout: MAP_FIRST_DRAW_TIMEOUT,
+  });
   const changes = repository.data.claims.filter(
     (c) =>
       c.subject === 'rsp-v3-0' &&
@@ -178,11 +182,17 @@ test('personnel navigation follows real historical roles and founding claims', a
   page,
 }) => {
   await page.goto('/explore');
-  await page.getByRole('searchbox').fill('Dario Amodei');
-  await page.getByRole('searchbox').press('Enter');
-  await expect(
-    page.locator('.map-node[data-entity-id="openai"]'),
-  ).toBeVisible();
+  await page.getByRole('main').getByRole('searchbox').fill('Dario Amodei');
+  // The risk-debate admission (2026-10-31, rd-) adds a document whose name
+  // also matches, so Enter no longer selects the only match; choose the
+  // person from the results.
+  await page
+    .locator('#search-results')
+    .getByRole('button', { name: 'Dario Amodei Person', exact: true })
+    .click();
+  await expect(page.locator('.map-node[data-entity-id="openai"]')).toBeVisible({
+    timeout: MAP_FIRST_DRAW_TIMEOUT,
+  });
   await expect(
     page.locator('.map-node[data-entity-id="anthropic"]'),
   ).toBeVisible();
@@ -212,7 +222,9 @@ test('mobile reduced-motion keyboard route returns to the exact chooser and pass
     .getByRole('navigation', { name: 'Explore the dataset' })
     .getByRole('button', { name: 'Anthropic', exact: true })
     .click();
-  const summary = page.locator('.map-connections summary');
+  const summary = page.locator('.map-connections summary', {
+    hasText: 'Connections in this view',
+  });
   await summary.focus();
   await summary.press('Enter');
   const group = page
@@ -254,12 +266,15 @@ test('mobile reduced-motion keyboard route returns to the exact chooser and pass
     page
       .getByLabel('Claims list')
       .locator(
-        '[data-claim-id]:not([data-claim-id^="lg-"]):not([data-claim-id^="fl-"])',
+        '[data-claim-id]:not([data-claim-id^="lg-"]):not([data-claim-id^="fl-"]):not([data-claim-id^="cpo-"]):not([data-claim-id^="ab-"]):not([data-claim-id^="aib-"]):not([data-claim-id^="pp-"])',
       ),
     // 48 before week 4b, plus Anthropic's Frontier Compliance Framework
     // announcement, plus week 4c's eleven Anthropic control-structure
     // records and its four commitment listings and announced intent. The
     // 2026-10-17 lab genealogy records (lg-) and the 2026-10-28
-    // frameworks-to-law records (fl-) are left out of this count.
+    // frameworks-to-law records (fl-), the 2026-10-30 compute, power and
+    // orbit records (cpo-) and the 2026-10-30 AI and biosecurity records
+    // (ab-), the 2026-10-31 AI in biology records (aib-) and the 2026-10-31
+    // people records (pp-) are left out of this count.
   ).toHaveCount(64);
 });

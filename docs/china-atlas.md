@@ -203,3 +203,68 @@ pnpm vitest run src/domain/china-labs-2-admission.test.ts
 pnpm check
 pnpm check:privacy
 ```
+
+## Third collection (2026-10-31)
+
+The third collection adds seven developers and research institutes and the
+Cyberspace Administration of China's (CAC) lists of filed services. It was prepared
+as a candidate pack in [`research/china-labs-3/`](../research/china-labs-3/README.md),
+audited by a fresh-context machine pass of the same model family, checked blind by a
+model of another family
+([report](../research/china-labs-3/cross-family-check-2026-10-29.md)) and admitted
+in two parts under the maintainer's decisions of 2026-10-30 and 2026-10-31. The
+[admission record](../review/china-labs-3-admission-2026-10-31.md) gives the counts
+as admitted, the mapping, every correction, the holds and the open leads. All
+records remain seeds; no human acceptance is recorded.
+
+### What it covers
+
+- **StepFun (阶跃星辰) and 01.AI (零一万物)**: Step and Yi reports, model cards and
+  licences with their dated changes, StepFun's own post naming its management, and
+  01.AI's two announced joint ventures.
+- **iFlytek (科大讯飞) and SenseTime (商汤科技)**: Spark announcements and annual
+  reports from cninfo, SenseTime's 2021 prospectus and later filings, officers as the
+  filings state them, and investors under the legal names the filings print.
+- **Tencent (腾讯), Hunyuan (混元)**: Hunyuan reports, licences and announcements, and
+  the annual reports' account of the listed company and of Tencent Computer.
+- **BAAI (北京智源人工智能研究院) and Shanghai AI Laboratory (上海人工智能实验室)**:
+  BAAI's founding as it states it, its models and the Beijing AI Principles (2019) and
+  Beijing AI Principles for Children (2020); the laboratory's InternLM, InternVL,
+  Intern-S1 and SafeWork-R1 reports and its report on applying its framework.
+- **Governance texts**: the CAC's lists of filed generative AI services (April 2024 to
+  August 2026) and of filed deep-synthesis algorithms (two batches), each with its
+  count and count basis; eleven developers' entries in those lists; and further
+  provisions of TC260's AI Safety Governance Framework, with the 2.0 and 3.0 prefaces'
+  account of updating the earlier editions.
+
+### How records are mapped
+
+- **Listed entities** (schema 2.27). A developer's row in a CAC list is a participant
+  list counted as one entry, naming the dataset organisation the listed legal name is
+  mapped to. Each qualification states the basis: an exact alias, a shared filing
+  number, a partial name or a translation. A filing is not an approval.
+- **Investors** are recorded under the legal names the filings print (SVF Sense
+  (Singapore) Pte. Ltd.; 中国移动通信有限公司), with the parent chain only as the
+  filing states it. No ownership or continuity with a group record is inferred.
+- **Two expressions of the Beijing AI Principles.** The English text and the Chinese
+  original are both recorded. The Chinese 长远规划 speaks of potential impacts
+  (潜在影响) where the English says potential risks; the wordings are kept apart.
+- **Signature dates.** Tencent's annual reports are dated by their Chairman's
+  Statements, recorded as signature dates, not filing dates.
+
+### Limits
+
+- Shanghai AI Laboratory's founding is held: only a reported plaque unveiling of
+  11 July 2020 was found.
+- The CAC attachments added after April 2024 have unknown posting dates; their title
+  months date the lists as snapshots only.
+- Archive captures read by the cross-family check, which this environment could not
+  open, are recorded as paraphrases of the check's reading and say so.
+
+### Reproduction
+
+```sh
+pnpm tsx scripts/china-labs-3-admission.ts --check
+pnpm check
+pnpm check:privacy
+```

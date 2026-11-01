@@ -87,10 +87,14 @@ describe('frontier safety framework document history', () => {
         ...(f.referent ? [f.referent.id] : []),
       ]),
     );
-    // Comparison cells (schema 2.17) belong to the comparison page.
+    // Comparison cells (schema 2.17) belong to the comparison page. An
+    // edition's citations and attributed credits of other works (from the
+    // 2026-10-31 key papers admission) are documentary relations, listed on
+    // the document page.
     const touching = data.claims.filter(
       (c) =>
         !isComparisonCell(c) &&
+        !(['cites', 'credits_work'] as string[]).includes(c.predicate) &&
         (versionIds.has(c.subject) ||
           (c.object.kind === 'entity' && versionIds.has(c.object.entityId))),
     );
@@ -238,9 +242,12 @@ describe('research starter export', () => {
     expect(inferred).toContain('faif-2026-compliance-sentence');
     expect(inferred).toContain('supersedes-pf-2');
     // Every other inference is a recorded absence or a provision comparison.
+    // The 2026-10-30 AI and biosecurity admission (`ab-` records) adds its
+    // own version changes and absences, which this count leaves out.
     for (const id of inferred.filter(
       (id) =>
-        !['faif-2026-compliance-sentence', 'supersedes-pf-2'].includes(id),
+        !['faif-2026-compliance-sentence', 'supersedes-pf-2'].includes(id) &&
+        !id.startsWith('ab-'),
     ))
       expect(id).toMatch(/^(absent|provchange)-/);
     for (const i of starter.inferences) expect(i.rationale).toBeTruthy();
@@ -334,5 +341,32 @@ describe('research starter export', () => {
     expect(exported.passageIncluded).toBe(false);
     expect(starterMarkdown(starter)).not.toContain(quote.passage);
     expect(starterJson(starter)).not.toContain(quote.passage);
+  });
+
+  it('notes the editions the AI R&D row does not yet track (2026-10-29)', () => {
+    const rsp = history.families.find((f) => f.family === 'anthropic-rsp')!;
+    const row = rsp.provisionKeys.find(
+      (k) => k.key === 'rsp-automated-rd-threshold',
+    )!;
+    expect(row.note!.editionIds).toEqual(['rsp-v2-0', 'rsp-v2-1', 'rsp-v2-2']);
+    // The noted editions have no record in the row yet, and each has the
+    // comparison cell the note rests on.
+    for (const id of row.note!.editionIds) {
+      const cell = row.editions.find((e) => e.editionId === id)!;
+      expect(cell.stated ?? cell.absent).toBeNull();
+      expect(row.note!.claimIds).toContain(`cmp-${id}-d1-autonomy`);
+    }
+    // Every row note attaches to a tracked row of its family.
+    for (const note of collection.rowNotes ?? []) {
+      const family = history.families.find((f) => f.family === note.family)!;
+      expect(family.provisionKeys.map((k) => k.key)).toContain(note.key);
+      const ids = family.editions.map((e) => e.entity.id);
+      for (const id of note.editionIds) expect(ids).toContain(id);
+      for (const id of note.claimIds)
+        expect(data.claims.some((c) => c.id === id)).toBe(true);
+    }
+    expect(rsp.provisionKeys.filter((k) => k.note).map((k) => k.key)).toEqual([
+      'rsp-automated-rd-threshold',
+    ]);
   });
 });

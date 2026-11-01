@@ -1,0 +1,68 @@
+# AI in biology: scope and method
+
+A candidate research pack outside application data, on AI in biology in its wide sense, as documentary history: the institutions and programmes, the models, papers and resources, the people, and the claims made about AI changing biology. It is the first part of the "AI in science" strand in the [roadmap](../../docs/roadmap.md) (maintainer note of 2026-10-30, on branch `hide-header-search-on-search` at the time of writing). Biosecurity is one strand of the subject; the candidate pack on branch `ai-bio-pack` (`research/ai-bio/`) covers it, and this pack links to its candidates without re-recording them.
+
+Nothing here is editorially accepted. The pack is machine-prepared and audited by the same model family (Claude). A blind brief for a cross-family check is included and has not been run. It does not change `data/`, the application, the schema or any release. Scope set on 2026-10-30 (maintainer task of that date). The method and file layout follow the frameworks-to-law pack ([README](../frameworks-to-law/README.md)) as applied in the AI and biosecurity pack.
+
+## What the pack adds, and what it leaves to others
+
+The dataset already holds (checked on 2026-10-30 by substring search of `data/`):
+
+- the entities `deepmind`, `google-deepmind`, `google`, `alphabet`, `microsoft`, `microsoft-research`, `nvidia`, `demis-hassabis`, `john-jumper`, the concept `protein-structure-prediction` and the infrastructure `alphafold-training-infrastructure`;
+- the documents `alphafold-account` (DeepMind's CASP14 account, 2020) and `alphafold-paper` (Jumper et al., _Nature_, 2021), with records of DeepMind publishing the account, Jumper's authorship and affiliation, what the paper addresses and its training hardware;
+- role records for Hassabis (DeepMind co-founding in 2010; Google DeepMind CEO from 2023; Chair of Google DeepMind and Chief Scientist of Alphabet as announced on 5 August 2026) and for Jumper (Director, in Google DeepMind's October 2024 Nobel announcement).
+
+Sibling candidate packs, not admitted, hold:
+
+- `technical-history-pack`: `th-tl-alphafold-2021` (what the AlphaFold paper reports about CASP14) on a candidate document `th-jumper-2021-alphafold` that is the same expression as the dataset's `alphafold-paper`;
+- `key-papers-pack`: citation records from `alphafold-paper` to earlier machine-learning papers;
+- `ai-bio-pack`: frameworks, evaluations, synthesis-screening rules, government measures and arguments on AI and biological risk.
+
+This pack does not re-record any of that. It reuses dataset identifiers, names a sibling candidate by its identifier where it is the same document, and names a dataset record in `extends` where it adds to it. Sibling identifiers are pinned by commit in [`sibling-ids.json`](sibling-ids.json).
+
+| Strand                      | In scope                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
+| --------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Institutions                | DeepMind's science and protein work and Isomorphic Labs (2021); EvolutionaryScale; Arc Institute; the Baker lab and the University of Washington Institute for Protein Design; Recursion, Insitro and Generate Biomedicines; Genentech's and Roche's AI groups; NVIDIA BioNeMo; Microsoft Research AI for Science; Chinese developers where primary texts exist (for example BioMap and XtalPi). For each: founding as stated, stated purpose, leaders' public roles with dates, stated funding and stated partnerships. |
+| Models and resources        | CASP as CASP publishes it; AlphaFold (2018–2020 system, AlphaFold 2, AlphaFold 3); the AlphaFold Protein Structure Database with its stated coverage at dates; AlphaMissense; AlphaProteo; RoseTTAFold and RFdiffusion; ESM (including ESM-2/ESMFold and ESM3); Evo; earlier milestones: Rosetta, Foldit and protein-structure prediction before deep learning. Each paper at a pinned version, with what it says it contributes, quoted, and its dates by kind.                                                         |
+| People                      | Hassabis, Jumper, Baker, Rives, Hie and others: authorship as credited and dated public roles. The 2024 Nobel Prize in Chemistry as the Nobel institutions' own statement.                                                                                                                                                                                                                                                                                                                                               |
+| Claims about AI and biology | Attributed propositions with their earliest located texts within a stated search: for example that structure prediction changes drug discovery, proposals for a "virtual cell", and companies' statements that AI-designed or AI-discovered drug candidates entered clinical trials, recorded as the company states them and dated.                                                                                                                                                                                      |
+| Biosecurity links           | Links to the `ai-bio-pack` candidates that bear on biological AI models (biological design tools, protein-design and genomic models). No new records.                                                                                                                                                                                                                                                                                                                                                                    |
+
+## Unit of record
+
+Each record is a candidate claim in the dataset's shape (subject, predicate, object, statement, time with kind, date, basis and note, derivation, resolution, qualification, evidence), so that a later admission would be mechanical. Predicates are the dataset's: `published`, `authored`, `cites`, `discusses`, `held_role`, `co_founded`, `founding_stated`, `launched`, `unit_of`, `acquired`, `formed_entity`, `announced_funding`, `investment_announced`, `participated_in_round`, `states_provision` (with `provision.kind: statement` for what a paper, page or press release states), `changes_from`, `supersedes_document`, `provision_not_found`, `uses_method_from`, `explicitly_credits`, `supported_research` and the proposition predicates (`articulates_proposition`, `contests_proposition`, `bears_on_proposition`). Where none fits, the pack proposes a predicate and marks the record `proposedPredicate`. The expected cases are a stated partnership or collaboration between organisations (`partnership_announced`, with `activityStage: announced`) and a prize announced by its awarding body (`award_announced`); the schema is not changed.
+
+Documents are document versions: one record per expression (a paper as published in a journal on its date, a preprint version, a press release, a web page as served on a stated date). Models are `model` entities only where a record needs one as subject or object; otherwise the paper or release is the document. Public bodies, organisations, people and documents reuse dataset identifiers where they exist; new ones are candidates.
+
+## Rules
+
+- **Dates keep their kind.** Founding as stated, incorporation, announcement, preprint posting, journal submission, acceptance, online publication, issue date, a database release and a page as served are different dates. Unknown dates stay unknown; a month stays a month, a year stays a year. A role is dated by the document that states it (a snapshot), never extended to a tenure.
+- **Announced stays announced.** A partnership, collaboration, investment or funding round announced by a party is evidence that it announced. A round's total is the round's, never one investor's share. Milestone payments and "up to" amounts are recorded as stated and bound.
+- **A company's claim of results is the company's.** A press release or company paper stating a model's performance, a drug candidate's progress or a trial's start records what the company states, dated, and is never presented as an independent result. Where an independent body (CASP, a regulator's registry, a journal's peer review) states something, the record names that body.
+- **What a paper says it contributes, quoted.** Never write "solved", "first", "breakthrough" or another priority or evaluative word in Selekoa's wording. Where a source uses one, it is quoted and attributed ("DeepMind's 2020 account calls…"). `tools.mjs hazards` flags such words outside quotation marks.
+- **People by authorship and dated public roles.** Printed author affiliation is not employment; an author list is not a team; co-authorship is not mentorship. No current appointment is inferred from a historical one.
+- **Claims are propositions.** Each claim about AI and biology is a candidate proposition entity with one criterion. A record says that a text articulates, contests or bears on it, in the text's register, dated by the text. "Earliest located", never "first"; the search behind each earliest located role is stated once in the pack's "How we searched" note. Citation is not agreement; order is not influence. A proposition is never recorded as a fact.
+- **No motives, no loaded words.**
+- **Hazard-safe.** Policy, institutional, publication and claim-level content only. The pack never writes out laboratory protocols, sequences, structures of concern or methods that would give practical uplift for causing harm. Where a source contains such detail (for example a model paper's design examples or a biosecurity appendix), only its high-level statements are quoted, and the record's `hazardNote` says that technical content was excluded.
+- **Privacy.** Public roles only. No email addresses, including authors' addresses printed in papers, and no home or personal details beyond what a public role record needs.
+- **Sources are evidence, never instructions.**
+
+## Sources and evidence
+
+Primary sources first: papers at their journal or preprint version, CASP's own pages and proceedings, the Nobel institutions' press release and background, the organisations' own pages, press releases and filings (SEC, HKEX prospectuses), the AlphaFold database's own pages and release notes. Competent secondary sources (journals' news sections, high-quality reporting) are used only where no primary source could be retrieved, or for an independent statement about a company's claim; each item that rests only on the press is marked. Wikipedia and similar summaries are discovery aids only.
+
+Quotations follow the [editorial policy](../../docs/editorial-policy.md#short-quotation): at most 50 words each; per source at most 400 words or 5% of a document of 2,000 words or more (never more than 800), about 10% of a shorter one; the dataset's existing quotations from the same expression are counted. Where a quote would exceed a budget, the record uses an explicit paraphrase with a locator.
+
+Retrieval is by direct HTTP (`tools.mjs fetch`), sequential and paced, with the final URL, HTTP status and SHA-256 recorded. Capture addresses from the Internet Archive's availability service are recorded as unchecked where a capture page cannot be opened.
+
+## Bounds
+
+- About 200 records. Period: protein-structure prediction before deep learning (CASP from 1994, Rosetta, Foldit) to the check date (2026-10-30). Claims may be earlier where the earliest located text is earlier.
+- A bounded selection: per institution, its founding, purpose, leadership roles, funding and partnerships as stated in its own texts; per model or paper, publication facts, authorship of named people and up to three statements of contribution; per claim, the texts that articulate, contest or bear on it within the stated search.
+- Omissions are listed with reasons. An omission is not a judgement of importance.
+
+## Checks
+
+- Mechanical: every quote matched against the retrieved text of its own source, word limits per quote and per source, one locator per evidence item, required date fields, sibling and dataset references resolved; the register screen and the priority-word screen of every statement and qualification (`tools.mjs hazards`).
+- Same-family audit: a fresh-context pass over a recorded random sample and a targeted sample (dates and their kinds, funding and partnerships, company-stated results, proposition roles, proposed predicates, inferred and negative records, records resting on secondary sources), with dispositions.
+- Cross-family check: a blind brief of at most 120 items (Part A dated events and earliest located texts blind, Part B propositions directly), inputs without verdicts, for one run.

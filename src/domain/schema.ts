@@ -46,6 +46,30 @@ const languageTag = z.string().refine((s) => {
   }
 }, 'Language must be a canonical BCP 47 tag');
 const wordCount = (s: string) => s.trim().split(/\s+/).length;
+const monthNames = [
+  'January',
+  'February',
+  'March',
+  'April',
+  'May',
+  'June',
+  'July',
+  'August',
+  'September',
+  'October',
+  'November',
+  'December',
+];
+/** Days written out in a passage, as in “2 August 2025”, as ISO dates. */
+const quotedDays = (passage: string) =>
+  [
+    ...passage.matchAll(
+      new RegExp(`\\b(\\d{1,2}) (${monthNames.join('|')}) (\\d{4})\\b`, 'g'),
+    ),
+  ].map(
+    ([, day, month, year]) =>
+      `${year}-${String(monthNames.indexOf(month) + 1).padStart(2, '0')}-${day.padStart(2, '0')}`,
+  );
 /**
  * Quoted words allowed from one document (each edition counts separately) of
  * the given length (maintainer decision of 2026-10-15): about 10% under 2,000
@@ -92,6 +116,28 @@ function dateBoundary(value: string, latest: boolean): number {
 }
 
 /** Roles a text holds for a proposition across the located texts (schema 2.11). */
+/** Schema 2.21: what a capacity or power figure measures, as its source says. */
+export const quantityMeasures = [
+  'it_capacity',
+  'facility_power',
+  'grid_connection',
+  'generation_capacity',
+  'contracted_energy',
+  'chips',
+  'not_stated',
+] as const;
+/** Schema 2.21: kinds of stated dates (targets, deadlines, terms). */
+export const statedDateKinds = [
+  'target_operation',
+  'target_completion',
+  'construction_start_target',
+  'delivery_target',
+  'launch_target',
+  'deadline',
+  'contract_term',
+  'construction_start_stated',
+  'operational_stated',
+] as const;
 export const thoughtRoles = [
   'earliest-located',
   'earliest-located-term',
@@ -171,6 +217,8 @@ const announcedStagePredicates = new Set<string>([
   'unit_disbanded',
   // Schema 2.19: an announced revocation or rescission, not yet formalised.
   'revoked',
+  // Schema 2.23: a partnership as its parties announce it.
+  'partnership_announced',
 ]);
 /** Legislative and executive status records (schema 2.19). */
 const statusPredicates = new Set<string>([
@@ -180,6 +228,21 @@ const statusPredicates = new Set<string>([
   'revoked',
 ]);
 export type Tier = (typeof tiers)[number];
+/**
+ * Schema 2.26. How a naming record's use stands to its concept's criterion:
+ * it meets it, it uses the name in another sense, or its sense could not be
+ * checked (a title read only in an index).
+ */
+export const namingSenses = ['meets', 'other-sense', 'unverified'] as const;
+/** Schema 2.26. A naming record is a use, or the earliest located use. */
+export const namingRoles = ['use', 'earliest-located'] as const;
+/** Schema 2.26. Kinds of defining statement about a family or a term. */
+export const technicalKinds = [
+  'definition',
+  'description',
+  'assessment',
+  'method',
+] as const;
 
 export const entitySchema = z.strictObject({
   id,
@@ -223,6 +286,23 @@ export const entitySchema = z.strictObject({
     )
     .min(2)
     .optional(),
+  // Schema 2.21. Where a site, campus or other infrastructure is, as its
+  // sources word it: the country's ISO 3166-1 alpha-2 code, an admin area
+  // and the place.
+  location: z
+    .strictObject({
+      countryCode: z.string().regex(/^[A-Z]{2}$/),
+      adminArea: text.optional(),
+      place: text.optional(),
+    })
+    .optional(),
+  // Schema 2.21. Who a source states operates or will operate the
+  // infrastructure. Operation never implies ownership, and no operator is
+  // inferred.
+  operator: z
+    .array(z.strictObject({ entityId: id, note: text }))
+    .min(1)
+    .optional(),
   description: text.max(600),
   sourceIds: z.array(id).min(1),
   externalIds: z.record(z.string(), text).optional(),
@@ -258,6 +338,21 @@ export const entitySchema = z.strictObject({
           }),
         )
         .min(1)
+        .optional(),
+    })
+    .optional(),
+  // Schema 2.26. A family of methods or a name (term) in the technical
+  // history of machine intelligence: the one criterion naming records are
+  // classified against, the usual names, and an earliest located use that no
+  // record holds for now, by a recorded decision, while leads are read.
+  naming: z
+    .strictObject({
+      kind: z.enum(['family', 'term']),
+      criterion: text,
+      terms: z.array(text).min(1),
+      withheld: z
+        .array(z.strictObject({ reason: text, recordedAt: checkDate }))
+        .length(1)
         .optional(),
     })
     .optional(),
@@ -326,6 +421,33 @@ export const claimSchema = z.strictObject({
         .optional(),
       evaluatedSystem: text.optional(),
       activityScope: text.optional(),
+      // Schema 2.22. One stated result of one evaluation, as the report that
+      // ran or commissioned it gives it: what was measured, by what kind of
+      // method, the result in the report's words, and the caveats the report
+      // itself states. It is the report's statement, never a verified finding.
+      evaluation: z
+        .strictObject({
+          what: text,
+          how: text,
+          result: text,
+          caveats: text,
+        })
+        .optional(),
+      // Schema 2.24. A document's own description of its contribution that
+      // contains a claim of priority or novelty ("the first …"): the claim
+      // is the document's, flagged so that it is shown as such.
+      priorityClaim: z.literal(true).optional(),
+      // Schema 2.25. The kind of an attributed credit: the citing document
+      // builds on the work, attributes a term or concept to it, summarises
+      // an argument or finding of it, or attributes it and disputes it.
+      attribution: z
+        .enum([
+          'builds_on',
+          'attributes_term',
+          'summarises',
+          'attributes_and_disputes',
+        ])
+        .optional(),
       transitionScope: z
         .enum(['separation_announcement', 'name_announcement'])
         .optional(),
@@ -351,6 +473,14 @@ export const claimSchema = z.strictObject({
             'evaluation_timing',
             'reporting',
             'revision',
+            // Schema 2.20: what a document with an exact expression states
+            // that is not one of the provision kinds above, such as a licence
+            // term, a prospectus statement or a press release's account.
+            'statement',
+            // Schema 2.22: a date a text states for its own application, and
+            // the standing a text claims for itself (voluntary or binding).
+            'date',
+            'standing',
           ]),
           key: id,
           parties: z
@@ -441,6 +571,14 @@ export const claimSchema = z.strictObject({
           countBasis: z.enum(['stated', 'counted']),
         })
         .optional(),
+      // Schema 2.27. One listed entity's entry in a participant list (a
+      // regulator's list of filed services, for example): the dataset
+      // organisation, public body or country the record maps the listed name
+      // to. Valid only on a participant list counted by Selekoa as one entry;
+      // the record's qualification states the basis of the mapping. Being
+      // listed is not approval, signature or compliance, and no ownership or
+      // group structure follows from the mapping.
+      listedEntity: id.optional(),
       role: text.optional(),
       // Schema 2.15. A reason for the recorded event as stated by the person
       // or organisation concerned: who stated it (an entity), a neutral
@@ -481,6 +619,9 @@ export const claimSchema = z.strictObject({
           'operational',
           'completed',
           'undisclosed',
+          // Schema 2.21.
+          'letter_of_intent',
+          'term_sheet',
         ])
         .optional(),
       amount: z
@@ -495,7 +636,16 @@ export const claimSchema = z.strictObject({
             'more_than',
             'less_than',
           ]),
-          scope: z.enum(['transaction', 'round_total', 'cumulative']),
+          // Schema 2.21 adds `project` and `programme` spending as stated,
+          // with the source's stated basis in `scopeNote`.
+          scope: z.enum([
+            'transaction',
+            'round_total',
+            'cumulative',
+            'project',
+            'programme',
+          ]),
+          scopeNote: text.optional(),
         })
         .optional(),
       // How a text stands to a proposition (schema 2.11): its roles across the
@@ -563,6 +713,31 @@ export const claimSchema = z.strictObject({
             .optional(),
         })
         .optional(),
+      // Schema 2.26. A naming record: the string as the text prints it, how
+      // the use stands to the concept's criterion, its role among the located
+      // uses, the register, whether the text or only an indexed title was
+      // read, and dates other than the work's own: an earlier claimed date
+      // that does not date the wording, and the date from which the wording
+      // is attested where it survives only in a later copy.
+      naming: z
+        .strictObject({
+          string: text,
+          sense: z.enum(namingSenses),
+          role: z.enum(namingRoles),
+          register: z.enum(registers),
+          reading: z.enum(['text', 'indexed-title']),
+          claimed: z
+            .strictObject({ date: historicalDate, note: text })
+            .optional(),
+          attested: z
+            .strictObject({ date: historicalDate.optional(), note: text })
+            .optional(),
+        })
+        .optional(),
+      // Schema 2.26. The kind of defining statement a `discusses` record
+      // quotes about a family or a term. It says what a text says the family
+      // is, never where it began.
+      technical: z.strictObject({ kind: z.enum(technicalKinds) }).optional(),
       quantity: z
         .strictObject({
           value: z.number().nonnegative().finite(),
@@ -577,8 +752,59 @@ export const claimSchema = z.strictObject({
               'less_than',
             ])
             .optional(),
+          // Schema 2.21. What the figure measures, as its source says; a
+          // figure whose source does not say is `not_stated` and is never
+          // compared with another. `unit` keeps the source's wording.
+          measures: z.enum(quantityMeasures).optional(),
+          // Schema 2.21. A stated range ("1–4 GW"); `value` is its upper end.
+          range: z
+            .strictObject({
+              from: z.number().nonnegative().finite(),
+              to: z.number().nonnegative().finite(),
+            })
+            .optional(),
         })
         .optional(),
+      // Schema 2.21. Dates a party states as a target, deadline or term,
+      // or a date stated in passing, each with who stated it. A stated date
+      // never dates the record; `date` is at the precision the source gives,
+      // and `wording` keeps phrases such as "mid-2027" or "by the end of 2029"
+      // that no date precision expresses (the date is then the year).
+      statedDates: z
+        .array(
+          z.strictObject({
+            kind: z.enum(statedDateKinds),
+            date: historicalDate.optional(),
+            wording: text.optional(),
+            statedBy: id,
+            note: text.optional(),
+          }),
+        )
+        .min(1)
+        .optional(),
+      // Schema 2.21. A power agreement's technology and mechanism as stated.
+      power: z
+        .strictObject({
+          technology: z.enum(['nuclear', 'fusion', 'gas', 'mixed', 'other']),
+          mechanism: z.enum([
+            'ppa',
+            'restart',
+            'smr_development',
+            'supply',
+            'onsite_generation',
+            'interconnection',
+            'other',
+          ]),
+        })
+        .optional(),
+      // Schema 2.21. A supply agreement's product and quantity as worded.
+      supply: z.strictObject({ product: text, units: text }).optional(),
+      // Schema 2.21. A contract term as stated ("20 years").
+      term: text.optional(),
+      // Schema 2.21. A government award's stage, and the source's own words
+      // for a stage beside the coded one.
+      awardStage: z.enum(['preliminary', 'final', 'disbursed']).optional(),
+      stageWording: text.optional(),
     })
     .optional(),
 });
@@ -710,6 +936,14 @@ export const datasetSchema = z
         '2.17',
         '2.18',
         '2.19',
+        '2.20',
+        '2.21',
+        '2.22',
+        '2.23',
+        '2.24',
+        '2.25',
+        '2.26',
+        '2.27',
       ]),
       updatedAt: checkDate,
       title: text,
@@ -748,6 +982,8 @@ export const datasetSchema = z
     const posedQuestions = minor >= 10;
     // Cross-record proposition roles from schema 2.11.
     const propositionRecords = minor >= 11;
+    // Naming records of families and terms from schema 2.26.
+    const namingRecords = minor >= 23;
     const propositionCodes = new Set<string>();
     data.entities.forEach((e, i) => {
       if (sortNamesRequired && e.type === 'person' && !e.sortName)
@@ -813,6 +1049,25 @@ export const datasetSchema = z
     const versionKeys = new Set<string>();
     const familyPublishers = new Map<string, string>();
     data.entities.forEach((entity, i) => {
+      // Schema 2.21: location and stated operators belong to infrastructure.
+      if (
+        (entity.location || entity.operator) &&
+        entity.type !== 'infrastructure'
+      )
+        issue(
+          ['entities', i],
+          'Location and operator belong to infrastructure',
+        );
+      for (const o of entity.operator ?? [])
+        if (
+          !['organisation', 'public_body'].includes(
+            entities.get(o.entityId)?.type ?? '',
+          )
+        )
+          issue(
+            ['entities', i],
+            'An operator is an organisation or public body',
+          );
       const version = entity.documentVersion;
       if (!version) return;
       if (entity.type !== 'document')
@@ -995,6 +1250,7 @@ export const datasetSchema = z
         issue(path, 'Self relationships require editorial schema extension');
       const links = c.evidenceIds.map((e) => evidence.get(e));
       const engagement = c.predicate === 'evaluation_engagement';
+      const evaluationResult = c.predicate === 'states_evaluation_result';
       const transition = [
         'separation_announced',
         'name_transition_announced',
@@ -1047,11 +1303,134 @@ export const datasetSchema = z
             path,
             'Evaluation engagement requires supporting evidence attributed to an identified evaluator or developer publisher',
           );
-      } else if (c.attributes?.evaluatedSystem || c.attributes?.activityScope) {
+      } else if (
+        (c.attributes?.evaluatedSystem && !evaluationResult) ||
+        c.attributes?.activityScope
+      ) {
         issue(
           path,
-          'Evaluated system and activity scope belong only to evaluation_engagement',
+          'Activity scope belongs only to evaluation_engagement, and an evaluated system to that or to a stated evaluation result',
         );
+      }
+      // Schema 2.22: one stated result of one evaluation, as its report
+      // gives it.
+      if (evaluationResult) {
+        const evaluation = c.attributes?.evaluation;
+        if (!evaluation)
+          issue(
+            path,
+            'A stated evaluation result carries what was measured, how, the result and the report’s caveats',
+          );
+        if (c.derivation !== 'explicit' || c.resolution !== 'supported')
+          issue(
+            path,
+            'A stated evaluation result documents what the report says: explicit and supported',
+          );
+        const expressions = data.sources.filter(
+          (x) => x.documentId === c.subject,
+        );
+        const version = entities.get(c.subject)?.documentVersion;
+        const dates = [
+          ...expressions.flatMap((x) => [x.publicationDate, x.versionDate]),
+          version?.publishedAt,
+          version?.effectiveAt,
+          version?.revisedAt,
+        ].filter(Boolean);
+        // The report dates the result. A report that states no date of its
+        // own gives an unknown date, or a snapshot of the copy served.
+        if (dates.length) {
+          if (c.time.kind !== 'event' || !dates.includes(c.time.date))
+            issue(path, 'A stated evaluation result is dated by its report');
+        } else if (!['unknown', 'snapshot'].includes(c.time.kind))
+          issue(
+            path,
+            'A report that states no date of its own gives an unknown date or a snapshot',
+          );
+        if (
+          !links.some(
+            (e) =>
+              e?.support === 'supports' &&
+              e.sourceRole === 'primary' &&
+              sources.get(e.sourceId)?.documentId === c.subject,
+          )
+        )
+          issue(
+            path,
+            'A stated evaluation result rests on a supporting primary passage of the report',
+          );
+      } else if (c.attributes?.evaluation) {
+        issue(
+          path,
+          'An evaluation block belongs only to a stated evaluation result',
+        );
+      }
+      // Schema 2.24 and 2.25: a document's own description of its
+      // contribution, and a document's attribution of an idea to another
+      // work. Each rests on a supporting primary passage of an expression of
+      // the subject document: a source naming it, or one of its own sources.
+      const expressionOf = (sourceId: string, documentId: string) =>
+        sources.get(sourceId)?.documentId === documentId ||
+        !!entities.get(documentId)?.sourceIds.includes(sourceId);
+      if (c.predicate === 'states_contribution') {
+        if (c.derivation !== 'explicit' || c.resolution !== 'supported')
+          issue(
+            path,
+            'A stated contribution documents what the text says: explicit and supported',
+          );
+        const quoted = links.filter(
+          (e) =>
+            e?.support === 'supports' &&
+            e.sourceRole === 'primary' &&
+            e.passageType === 'quote' &&
+            expressionOf(e.sourceId, c.subject),
+        );
+        if (!quoted.length)
+          issue(
+            path,
+            'A stated contribution rests on a supporting primary quotation of the document',
+          );
+        // Dated by the expression it quotes; an undated expression gives an
+        // unknown date.
+        const dates = quoted.flatMap((e) => {
+          const s = sources.get(e!.sourceId);
+          return [s?.publicationDate, s?.versionDate].filter(Boolean);
+        });
+        if (dates.length) {
+          if (c.time.kind !== 'event' || !dates.includes(c.time.date))
+            issue(
+              path,
+              'A stated contribution is dated by the expression it quotes',
+            );
+        } else if (c.time.kind !== 'unknown')
+          issue(
+            path,
+            'A stated contribution quoting an undated expression has an unknown date',
+          );
+      } else if (c.attributes?.priorityClaim) {
+        issue(path, 'A priority flag belongs only to a stated contribution');
+      }
+      if (c.predicate === 'credits_work') {
+        if (c.derivation !== 'explicit' || c.resolution !== 'supported')
+          issue(
+            path,
+            'An attributed credit documents what the citing text says: explicit and supported',
+          );
+        if (!c.attributes?.attribution)
+          issue(path, 'An attributed credit names its kind of attribution');
+        if (
+          !links.some(
+            (e) =>
+              e?.support === 'supports' &&
+              e.sourceRole === 'primary' &&
+              expressionOf(e.sourceId, c.subject),
+          )
+        )
+          issue(
+            path,
+            'An attributed credit rests on a supporting primary passage of the citing document',
+          );
+      } else if (c.attributes?.attribution) {
+        issue(path, 'An attribution kind belongs only to an attributed credit');
       }
       if (transition) {
         const scope =
@@ -1207,10 +1586,27 @@ export const datasetSchema = z
         );
       if (provisionClaim) {
         const edition = subject?.documentVersion;
+        // Schema 2.20: a stated provision may also belong to any document
+        // with an exact expression, a source whose documentId is the
+        // document; it is then dated by one of that expression's dates.
+        const expressions = data.sources.filter(
+          (s) => s.documentId === c.subject,
+        );
         if (!provision)
           issue(path, 'Provision claims require a provision kind and key');
-        if (!edition)
-          issue(path, 'Provisions belong to an exact framework edition');
+        if (
+          !edition &&
+          !(c.predicate === 'states_provision' && expressions.length)
+        )
+          issue(
+            path,
+            'Provisions belong to an exact framework edition or, when stated, to a document with an exact expression',
+          );
+        if (
+          provision?.kind === 'statement' &&
+          c.predicate !== 'states_provision'
+        )
+          issue(path, 'A statement is recorded only as stated');
         if (c.object.kind !== 'literal' || typeof c.object.value !== 'string')
           issue(path, 'A provision is named by a text label');
         const computed = provision?.computed === true;
@@ -1231,14 +1627,33 @@ export const datasetSchema = z
           c.time.kind !== 'event' ||
           !c.time.basis ||
           c.time.basis === 'announcement' ||
-          (edition &&
-            ![edition.publishedAt, edition.effectiveAt, edition.revisedAt]
-              .filter(Boolean)
-              .includes(c.time.date))
+          !(
+            edition
+              ? [edition.publishedAt, edition.effectiveAt, edition.revisedAt]
+              : expressions.flatMap((s) => [s.publicationDate, s.versionDate])
+          )
+            .filter(Boolean)
+            .concat(
+              // A provision that sets its own date of application may be
+              // dated, as effective, by a day its supporting quotation from
+              // the document states (2026-10-29).
+              c.time.basis === 'effective'
+                ? links
+                    .filter(
+                      (e) =>
+                        e &&
+                        e.support === 'supports' &&
+                        e.passageType === 'quote' &&
+                        sources.get(e.sourceId)?.documentId === c.subject,
+                    )
+                    .flatMap((e) => quotedDays(e!.passage))
+                : [],
+            )
+            .includes(c.time.date)
         )
           issue(
             path,
-            'Provision claims carry one of the edition’s own publication, effective or revision dates',
+            'Provision claims carry one of the edition’s own publication, effective or revision dates, a date of the document’s exact expression, or a date of application its supporting quotation states',
           );
         const fromEdition = links.filter(
           (e) => e && sources.get(e.sourceId)?.documentId === c.subject,
@@ -1272,6 +1687,22 @@ export const datasetSchema = z
               issue(
                 path,
                 'A paraphrased comparison cell requires supporting paraphrases of at most 50 words from the cited edition, and no quotation',
+              );
+          } else if (provision?.kind === 'statement') {
+            // Schema 2.20: a statement rests on a supporting passage of the
+            // cited expression, quoted (at most 50 words) or paraphrased.
+            if (
+              !fromEdition.some(
+                (e) =>
+                  e!.support === 'supports' &&
+                  e!.sourceRole === 'primary' &&
+                  (e!.passageType === 'paraphrase' ||
+                    wordCount(e!.passage) <= 50),
+              )
+            )
+              issue(
+                path,
+                'A stated statement requires a supporting primary passage from the cited expression',
               );
           } else if (
             !fromEdition.some(
@@ -1401,6 +1832,28 @@ export const datasetSchema = z
           issue(path, 'A participant list is dated by its list or its source');
       } else if (listing) {
         issue(path, 'A count of entries belongs only to participant lists');
+      }
+      // One listed entity's entry (schema 2.27).
+      const listedEntity = c.attributes?.listedEntity;
+      if (listedEntity) {
+        const listed = entities.get(listedEntity);
+        if (
+          c.predicate !== 'lists_participants' ||
+          listing?.count !== 1 ||
+          listing.countBasis !== 'counted'
+        )
+          issue(
+            path,
+            'A listed entity belongs only to a participant list counted as one entry',
+          );
+        if (
+          !listed ||
+          !['organisation', 'public_body', 'country'].includes(listed.type)
+        )
+          issue(
+            path,
+            'A listed entity is an organisation, public body or country in the dataset',
+          );
       }
       if (statusPredicates.has(c.predicate)) {
         if (
@@ -1776,6 +2229,44 @@ export const datasetSchema = z
           path,
           'Departure announcements require an event date and a specified role',
         );
+      // Schema 2.23: a partnership and an award, each as the announcing party
+      // states it. An announced partnership is not a contract performed, and
+      // an "up to" amount stays in the statement, never a recorded amount.
+      if (c.predicate === 'partnership_announced') {
+        if (c.attributes?.activityStage !== 'announced')
+          issue(path, 'An announced partnership keeps the stage announced');
+        if (
+          c.time.kind !== 'unknown' &&
+          !(c.time.kind === 'event' && c.time.basis === 'announcement')
+        )
+          issue(
+            path,
+            'An announced partnership is dated by its announcement or left unknown',
+          );
+        if (c.attributes?.amount?.bound === 'up_to')
+          issue(
+            path,
+            'An “up to” amount of an announced partnership stays in its statement',
+          );
+      }
+      if (c.predicate === 'award_announced') {
+        if (!(c.time.kind === 'event' && c.time.basis === 'announcement'))
+          issue(path, 'An announced award is dated by its announcement');
+        if (c.attributes?.amount)
+          issue(path, 'An announced award records no amount');
+      }
+      if (
+        ['partnership_announced', 'award_announced'].includes(c.predicate) &&
+        (c.derivation !== 'explicit' ||
+          c.resolution !== 'supported' ||
+          !links.some(
+            (e) => e?.support === 'supports' && e.sourceRole === 'primary',
+          ))
+      )
+        issue(
+          path,
+          'An announced partnership or award is explicit, supported and rests on a supporting primary passage of the announcement',
+        );
       if (
         ['co_founded', 'launched', 'acquired'].includes(c.predicate) &&
         !['event', 'unknown'].includes(c.time.kind)
@@ -1882,9 +2373,13 @@ export const datasetSchema = z
       if (
         c.predicate === 'investment_announced' &&
         attrs?.transactionType &&
-        !['announced', 'committed', 'planned'].includes(
-          attrs.transactionStage ?? '',
-        )
+        ![
+          'announced',
+          'committed',
+          'planned',
+          'letter_of_intent',
+          'term_sheet',
+        ].includes(attrs.transactionStage ?? '')
       )
         issue(path, 'Investment announcement is not a realised investment');
       if (
@@ -1905,8 +2400,35 @@ export const datasetSchema = z
           c.object.unit !== attrs.amount.currency)
       )
         issue(path, 'Funding literal must match its round total and currency');
-      if (c.attributes?.amount && !c.attributes.transactionStage)
-        issue(path, 'Amounts require a transaction stage');
+      if (
+        c.attributes?.amount &&
+        !c.attributes.transactionStage &&
+        !c.attributes.awardStage
+      )
+        issue(path, 'Amounts require a transaction or award stage');
+      if (c.attributes?.awardStage && c.predicate !== 'government_award')
+        issue(path, 'An award stage belongs to a government award');
+      if (
+        (c.attributes?.power &&
+          ![
+            'power_agreement',
+            'regulator_decision',
+            'announced_plan',
+            'government_award',
+          ].includes(c.predicate)) ||
+        (c.attributes?.supply &&
+          !['supply_agreement', 'compute_capacity'].includes(c.predicate))
+      )
+        issue(path, 'Power and supply terms belong to their agreements');
+      const range = c.attributes?.quantity?.range;
+      if (
+        range &&
+        (range.from > range.to || c.attributes!.quantity!.value !== range.to)
+      )
+        issue(path, 'A range runs upwards and its upper end is the value');
+      for (const d of c.attributes?.statedDates ?? [])
+        if (!d.date && !d.wording)
+          issue(path, 'A stated date needs a date or its wording');
       if (
         c.predicate === 'participated_in_round' &&
         c.attributes?.amount?.scope === 'round_total'
@@ -2068,6 +2590,89 @@ export const datasetSchema = z
                 `${id}: ${c.id} uses a usual name before the earliest located term record`,
               );
           }
+        }
+      }
+    }
+    if (namingRecords) {
+      // Schema 2.26. A naming record is a `uses_term` record of a concept with
+      // a naming criterion. One record per concept is the earliest located
+      // use, unless the role is withheld, decided by the date of the wording
+      // (the attested date where it survives only in a later copy); no use
+      // that meets the criterion is dated definitely before it.
+      data.entities.forEach((e, i) => {
+        if (e.naming && e.type !== 'concept')
+          issue(['entities', i], `A naming criterion is a concept's: ${e.id}`);
+      });
+      const wording = (c: Claim) => {
+        const attested = c.attributes?.naming?.attested;
+        if (attested) return attested.date;
+        return c.time.kind === 'event' ? c.time.date : undefined;
+      };
+      const byConcept = new Map<string, Claim[]>();
+      data.claims.forEach((c, i) => {
+        const naming = c.attributes?.naming;
+        if ((c.predicate === 'uses_term') !== Boolean(naming))
+          issue(
+            ['claims', i],
+            'A uses_term record, and only one, carries naming attributes',
+          );
+        if (c.attributes?.technical && c.predicate !== 'discusses')
+          issue(
+            ['claims', i],
+            'A defining-statement kind belongs to discusses',
+          );
+        if (c.predicate !== 'uses_term' || c.object.kind !== 'entity') return;
+        if (!entities.get(c.object.entityId)?.naming)
+          issue(
+            ['claims', i],
+            'A naming record names a concept with a criterion',
+          );
+        if (naming?.role === 'earliest-located' && naming.sense !== 'meets')
+          issue(
+            ['claims', i],
+            'Only a use that meets the criterion is earliest located',
+          );
+        byConcept.set(c.object.entityId, [
+          ...(byConcept.get(c.object.entityId) ?? []),
+          c,
+        ]);
+      });
+      for (const [id, list] of byConcept) {
+        const naming = entities.get(id)?.naming;
+        if (!naming) continue;
+        const meets = list.filter(
+          (c) => c.attributes?.naming?.sense === 'meets',
+        );
+        const earliest = meets.filter(
+          (c) => c.attributes?.naming?.role === 'earliest-located',
+        );
+        if (naming.withheld && earliest.length)
+          issue(
+            ['claims'],
+            `${id}: the earliest located use is withheld, so no record holds it`,
+          );
+        if (!naming.withheld && meets.length && earliest.length !== 1)
+          issue(['claims'], `${id}: exactly one use is earliest located`);
+        if (earliest.length !== 1) continue;
+        const date = wording(earliest[0]);
+        if (!date) {
+          issue(
+            ['claims'],
+            `${id}: the earliest located use needs dated wording`,
+          );
+          continue;
+        }
+        for (const c of meets) {
+          const other = wording(c);
+          if (
+            c !== earliest[0] &&
+            other &&
+            dateBoundary(other, true) < dateBoundary(date, false)
+          )
+            issue(
+              ['claims'],
+              `${id}: ${c.id} is dated before the earliest located use`,
+            );
         }
       }
     }

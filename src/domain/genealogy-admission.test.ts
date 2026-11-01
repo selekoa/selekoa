@@ -1,7 +1,9 @@
 import { describe, expect, it } from 'vitest';
+import chinaLabs3 from '../../review/china-labs-3-admission-1-before-2026-10-31.json';
 import pack from '../../research/lab-genealogy/pack.json';
 import map from '../../review/genealogy-admission-map-2026-10-17.json';
 import snapshot from '../../review/genealogy-admission-before-2026-10-17.json';
+import auditFixes from '../../review/audit-fixes-before-2026-10-29.json';
 import { repository } from './repository';
 import { datasetSchema, type Dataset } from './schema';
 import { indirectRoutes, restsOnReporting, statedReason } from './genealogy';
@@ -19,6 +21,14 @@ const routeOf = {
   x: 'x_syndication',
 } as const;
 const claim = (id: string) => repository.claims.get(id)!;
+// The 2026-10-29 audit fixes removed the Codeium renaming record and its
+// evidence: the renaming is now recorded as dated names on Windsurf.
+const removed = new Set(
+  [...auditFixes.removed.claims, ...auditFixes.removed.evidence].map(
+    (r) => r.id,
+  ),
+);
+const added = snapshot.added.claims.filter((id) => !removed.has(id));
 const clone = () => structuredClone(data) as Dataset;
 const issues = (d: Dataset) =>
   datasetSchema.safeParse(d).error?.issues.map((i) => i.message) ?? [];
@@ -48,9 +58,19 @@ describe('the lab genealogy (admitted 2026-10-17, schema 2.15)', () => {
         ).toBeUndefined();
         continue;
       }
+      if (removed.has(c.id)) {
+        expect(stored, c.id).toBeUndefined();
+        continue;
+      }
       expect(stored?.predicate, c.id).toBe(c.predicate);
       expect(stored!.editorialState).toBe('seed');
-      expect(stored!.evidenceIds).toEqual(c.evidence.map((e) => e.id));
+      // The third Chinese collection (2026-10-31) added StepFun's own post as
+      // primary evidence to four role records (its decision 8).
+      expect(
+        stored!.evidenceIds.filter(
+          (id) => !chinaLabs3.added.evidence.includes(id),
+        ),
+      ).toEqual(c.evidence.map((e) => e.id));
     }
     // Admitted at schema 2.15; the re-check corrections of 2026-10-25 moved
     // the dataset to 2.16.
@@ -61,7 +81,9 @@ describe('the lab genealogy (admitted 2026-10-17, schema 2.15)', () => {
   });
 
   it('records the retrieval route of every passage and marks indirect ones', () => {
-    for (const c of pack.claims.filter((c) => !(c.id in held)))
+    for (const c of pack.claims.filter(
+      (c) => !(c.id in held) && !removed.has(c.id),
+    ))
       for (const e of c.evidence) {
         const stored = repository.evidence.get(e.id)!;
         const route = packRoute.get(e.sourceId)!;
@@ -87,7 +109,7 @@ describe('the lab genealogy (admitted 2026-10-17, schema 2.15)', () => {
     expect(
       restsOnReporting(claim('lg-oai-murati-cto-return-2023'), repository),
     ).toBe(false);
-    const reporting = snapshot.added.claims.filter((id) =>
+    const reporting = added.filter((id) =>
       restsOnReporting(claim(id), repository),
     );
     expect(reporting.length).toBeGreaterThan(100);
@@ -144,7 +166,7 @@ describe('the lab genealogy (admitted 2026-10-17, schema 2.15)', () => {
         (r) => r.id,
       ),
     );
-    for (const id of snapshot.added.claims) {
+    for (const id of added) {
       const c = claim(id);
       const text = [
         c.statement,

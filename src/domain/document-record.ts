@@ -40,6 +40,22 @@ export const documentRelations: readonly {
     note: 'People or institutions this document expressly credits, with the scope stated in each record.',
   },
   {
+    id: 'attributes',
+    predicate: 'credits_work',
+    direction: 'outgoing',
+    label: 'Attributes ideas to',
+    note: 'Works to which this document attributes an argument, concept, term, finding or approach, in its own words. Each attribution is this document’s claim, not evidence of origin or influence.',
+    onlyWhenPresent: true,
+  },
+  {
+    id: 'attributed-by',
+    predicate: 'credits_work',
+    direction: 'incoming',
+    label: 'Ideas attributed to this work by',
+    note: 'Recorded documents that attribute an argument, concept, term, finding or approach to this one. Each attribution is the citing document’s claim.',
+    onlyWhenPresent: true,
+  },
+  {
     id: 'uses-method-from',
     predicate: 'uses_method_from',
     direction: 'outgoing',
@@ -165,13 +181,29 @@ export function documentRecord(data: Dataset, documentId: string) {
         ...laterChanges,
       ]
     : [];
+  // Schema 2.20: what a document without version metadata states.
+  const statements = edition
+    ? []
+    : related
+        .filter(
+          (c) => c.predicate === 'states_provision' && c.subject === documentId,
+        )
+        .sort(byDate);
+  // Schema 2.24: what the document says it contributes, in its own words.
+  const contributions = related
+    .filter(
+      (c) => c.predicate === 'states_contribution' && c.subject === documentId,
+    )
+    .sort(byDate);
   const shown = new Set(
     [
+      ...contributions,
       ...issued,
       ...authored,
       ...supported,
       ...relations.flatMap((r) => r.claims),
       ...familyClaims,
+      ...statements,
     ].map((c) => c.id),
   );
   // Comparison cells (schema 2.17) have their own section.
@@ -213,6 +245,8 @@ export function documentRecord(data: Dataset, documentId: string) {
     edition,
     laterChanges,
     relations,
+    statements,
+    contributions,
     comparison,
     other,
   };

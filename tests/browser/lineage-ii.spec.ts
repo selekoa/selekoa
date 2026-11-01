@@ -9,8 +9,11 @@ test('oversight citations retain pending review and non-adoption qualifications'
     if (m.type() === 'error') errors.push(m.text());
   });
   await page.goto('/explore');
-  await page.getByRole('searchbox').fill('Scalable agent alignment');
-  await page.getByRole('searchbox').press('Enter');
+  await page
+    .getByRole('main')
+    .getByRole('searchbox')
+    .fill('Scalable agent alignment');
+  await page.getByRole('main').getByRole('searchbox').press('Enter');
   await page.getByRole('button', { name: 'Timeline', exact: true }).click();
   const timeline = page.getByLabel('Chronological claims');
   await timeline

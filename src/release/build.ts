@@ -252,6 +252,9 @@ function csvRow(type: RecordType, r: Row): unknown[] {
       p.terms,
       r.countryCode,
       r.datedNames === undefined ? undefined : canonicalJson(r.datedNames),
+      r.location === undefined ? undefined : canonicalJson(r.location),
+      r.operator === undefined ? undefined : canonicalJson(r.operator),
+      r.naming === undefined ? undefined : canonicalJson(r.naming),
     ];
   }
   if (type === 'claims') {

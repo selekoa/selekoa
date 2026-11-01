@@ -156,7 +156,7 @@ export function controlStarterMarkdown(starter: ControlStarter) {
     '| --- | --- | --- | --- | --- | --- | --- |',
     ...rights.map((t) => {
       const claim = claims.get(t.claimId)!;
-      return `| ${cell(timeLabel(claim))} | ${cell(t.stage ? controlStageLabels[t.stage] : '')} | ${cell(name(t.subjectId))} | ${cell(t.right ? controlRightLabels[t.right] : '')} | ${cell(name(t.objectId))} | ${cell(t.instrument ?? '')} | ${t.claimId} |`;
+      return `| ${cell(timeLabel(claim, starter))} | ${cell(t.stage ? controlStageLabels[t.stage] : '')} | ${cell(name(t.subjectId))} | ${cell(t.right ? controlRightLabels[t.right] : '')} | ${cell(name(t.objectId))} | ${cell(t.instrument ?? '')} | ${t.claimId} |`;
     }),
     '',
     '## Key limits',
@@ -282,7 +282,7 @@ export function commitmentsStarterMarkdown(starter: CommitmentsStarter) {
     ids
       .map((id) => {
         const c = claims.get(id)!;
-        const date = timeLabel(c);
+        const date = timeLabel(c, starter);
         if (c.predicate === 'declined_commitment')
           return `stated it would not sign, ${date}`;
         const stage = c.attributes?.commitment?.stage;

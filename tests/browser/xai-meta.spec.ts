@@ -33,11 +33,13 @@ const examples = {
     // 22 before week 4a, plus two Meta issue records and one replacement,
     // plus week 4c's White House and Seoul listings, its EU refusal and its
     // framework's Seoul link, plus Daniel Gross's two earlier SSI records
-    // once the lab genealogy (2026-10-17) placed him at Meta.
+    // once the lab genealogy (2026-10-17) placed him at Meta. The 2026-10-29
+    // audit fixes merged Facebook into Meta: its name-transition record is
+    // gone and the 2018 FAIR record now names Meta.
     count: 31,
     seeds: 31,
     claims: [
-      'xm-meta-name',
+      'xm-fair-facebook',
       'xm-pineau-cohere',
       'xm-llama-transformer',
       'xm-rsc-plan',

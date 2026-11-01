@@ -3,7 +3,7 @@ import { repository } from './repository';
 import { datasetSchema, type Dataset } from './schema';
 import { propositionStances } from './predicates';
 import { isPropositionRecord, queryDataset } from './query';
-import { propositionsView, recordDates } from './propositions';
+import { earliestMarks, propositionsView, recordDates } from './propositions';
 import {
   propositionsStarter,
   propositionsStarterMarkdown,
@@ -13,7 +13,10 @@ import {
   applicationCollections,
   collectionClaimIds,
 } from '../release/collections';
-import { superintelligencePropositions } from '../reading/human-thought';
+import {
+  propositionCollections,
+  superintelligencePropositions,
+} from '../reading/human-thought';
 
 const data = repository.data;
 const clone = () => structuredClone(data) as Dataset;
@@ -338,5 +341,45 @@ describe('contesting records, retrospectives and context-only passages (schema 2
         'Required context is another record',
       ]),
     );
+  });
+});
+
+describe('earliest located marks on document pages', () => {
+  it('names each headline a collection gives the document, in its words', () => {
+    const marks = earliestMarks(data, propositionCollections, 'good-1965');
+    expect(marks.map((m) => m.text)).toContain(
+      'Earliest located in Propositions about superintelligence, 1863–2022 for A1 Intelligence explosion',
+    );
+    for (const mark of marks) {
+      expect(mark.text).not.toMatch(/\bfirst\b/i);
+      // The claim that holds the role is about this document and is listed.
+      expect(claim(data, mark.claimId).subject).toBe('good-1965');
+      const collection = propositionCollections.find(
+        (c) => c.id === mark.collectionId,
+      )!;
+      expect(propositionsView(data, collection).claimIds).toContain(
+        mark.claimId,
+      );
+    }
+  });
+
+  it('marks tiers and contesting texts as the collection does', () => {
+    const texts = earliestMarks(
+      data,
+      propositionCollections,
+      'buckingham-1955-automation-hearings-statement',
+    ).map((m) => m.text);
+    expect(
+      texts.some((t) => t.startsWith('Earliest located in tier 1 of ')),
+    ).toBe(true);
+    expect(
+      texts.some((t) =>
+        t.startsWith('Earliest located tier-1 text contesting '),
+      ),
+    ).toBe(true);
+  });
+
+  it('gives a document no collection headlines no mark', () => {
+    expect(earliestMarks(data, propositionCollections, 'rsp-v2-0')).toEqual([]);
   });
 });

@@ -92,6 +92,22 @@ export const frontierSafetyFrameworks: DocumentHistoryCollection = {
       ],
     },
   ],
+  rowNotes: [
+    {
+      // Maintainer decision of 2026-10-29: a row note until a data change,
+      // after a cross-family check, links these editions to the provision.
+      id: 'rsp-ai-rd-v2',
+      family: 'anthropic-rsp',
+      key: 'rsp-automated-rd-threshold',
+      text: 'v2.0 to v2.2 also have a capability threshold for “Autonomous AI Research and Development”, which this row does not yet track. See each edition’s document page.',
+      editionIds: ['rsp-v2-0', 'rsp-v2-1', 'rsp-v2-2'],
+      claimIds: [
+        'cmp-rsp-v2-0-d1-autonomy',
+        'cmp-rsp-v2-1-d1-autonomy',
+        'cmp-rsp-v2-2-d1-autonomy',
+      ],
+    },
+  ],
 };
 
 export const documentHistories = [frontierSafetyFrameworks];

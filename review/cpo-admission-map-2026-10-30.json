@@ -1,0 +1,2701 @@
+{
+  "description": "Authored map for scripts/cpo-admission.ts: which pack records each part admits, how each is corrected under the maintainer's decisions of 2026-10-28 and the cross-family check of 2026-10-29/30, and the records, documents, entities and sources added at admission. Records outside both parts' include lists are not admitted.",
+  "admissionDate": "2026-10-30",
+  "parts": {
+    "1": {
+      "baseCommit": "9e7f400",
+      "snapshotDescription": "Dataset state before part 1 of the compute, power and orbit admission (2026-10-30): the IDs it adds and the rows it changes as they were.",
+      "scope": "On 2026-10-30, by the maintainer’s decisions of 2026-10-28, the first part of a machine-prepared, machine-audited and cross-family-checked candidate pack on compute, power and orbit was admitted: US executive orders and a proclamation on AI infrastructure and its power, Texas S.B. 6, the UK AI Opportunities Action Plan’s recommendation on AI Growth Zones, two Chinese plans on data centres and on AI and energy, US export-control rules and guidance on advanced computing from 2023 to 2026 with their stated links to the AI diffusion rule, Chinese export-control announcements and a suspension, three compute and capital announcements, and a new collection of arguments about compute in orbit: dated passages from 1989 to 2026 that state, contest or bear on eleven propositions about the reasons for and the limits of placing computing in orbit. A legal text states duties, not compliance; an announcement is not a contract, construction or operation; a record says what a text states, not whether an argument is right. All records remain seeds.",
+      "include": [
+        "cpo-pw-cn-dc-plan-issued",
+        "cpo-pw-cn-ai-energy-plan-gw-pilots",
+        "cpo-pw-cn-ai-energy-plan-issued",
+        "cpo-pw-uk-aiop-growth-zones-power",
+        "cpo-pw-us-eo14141-clean-power-hourly",
+        "cpo-pw-us-eo14141-signed",
+        "cpo-pw-us-eo14299-ai-dc-defense",
+        "cpo-pw-us-eo14299-reactors-for-ai",
+        "cpo-pw-us-eo14318-revokes-14141",
+        "cpo-pw-us-eo14318-signed",
+        "cpo-pw-us-proc11014-ratepayer-pledge",
+        "cpo-pw-tx-sb6-enacted",
+        "cpo-ch-cn-ga-ge-2023-issued",
+        "cpo-ch-cn-ga-ge-2023-items",
+        "cpo-ch-cn-mofcom-2024-46-us",
+        "cpo-ch-cn-mofcom-2025-61-chips-ai",
+        "cpo-ch-cn-mofcom-2025-61-issued",
+        "cpo-ch-cn-mofcom-2025-70-suspension",
+        "cpo-ch-bis-license-policy-2026-case-by-case",
+        "cpo-ch-bis-license-policy-2026-published",
+        "cpo-ch-bis-acr-2023-3a090-thresholds",
+        "cpo-ch-bis-acr-2023-published",
+        "cpo-ch-bis-fdp-hbm-2024-hbm",
+        "cpo-ch-bis-fdp-hbm-2024-published",
+        "cpo-ch-bis-foundry-dd-2025-published",
+        "cpo-ch-bis-foundry-dd-2025-transistor-attestation",
+        "cpo-ch-bis-gp10-guidance-ascend-list",
+        "cpo-ch-bis-gp10-guidance-issued",
+        "cpo-ch-bis-uae-2026-advanced-computing",
+        "cpo-ch-bis-uae-2026-diffusion-enforcement",
+        "cpo-ch-bis-uae-2026-published",
+        "cpo-ch-anthropic-azure-commitment",
+        "cpo-ch-nvidia-intel-investment",
+        "cpo-ch-tsmc-us-investment-2025",
+        "cpo-orb-ascend-results",
+        "cpo-orb-oc1-lumen-2024",
+        "cpo-orb-oc1-suncatcher-2025",
+        "cpo-orb-oc1-spacex-2026",
+        "cpo-orb-oc2-ascend-2024",
+        "cpo-orb-oc2-lumen-2024",
+        "cpo-orb-oc2-cavalier-2026",
+        "cpo-orb-oc3-lumen-2024",
+        "cpo-orb-oc3-axiom-2025",
+        "cpo-orb-oc3-spacex-2026",
+        "cpo-orb-oc4-lumen-2024",
+        "cpo-orb-oc4-suncatcher-paper-2025",
+        "cpo-orb-oc5-ascend-2024",
+        "cpo-orb-oc5-nvidia-starcloud-2025",
+        "cpo-orb-oc5-lincei-2026",
+        "cpo-orb-oc6-lumen-2024",
+        "cpo-orb-oc6-suncatcher-blog-2025",
+        "cpo-orb-oc6-turyshev-2026",
+        "cpo-orb-oc6-cavalier-2026",
+        "cpo-orb-oc7-lumen-2024",
+        "cpo-orb-oc7-suncatcher-paper-2025",
+        "cpo-orb-oc7-cavalier-2026",
+        "cpo-orb-oc8-lumen-2024",
+        "cpo-orb-oc8-suncatcher-paper-2025",
+        "cpo-orb-oc8-spacex-2026",
+        "cpo-orb-oc9-spacex-2026",
+        "cpo-orb-oc9-turyshev-2026",
+        "cpo-orb-oc9-cavalier-2026",
+        "cpo-orb-oc10-suncatcher-blog-2025",
+        "cpo-orb-oc10-turyshev-2026",
+        "cpo-orb-oc11-lumen-2024",
+        "cpo-orb-oc11-lincei-2026",
+        "cpo-orb-oc11-marcy-2026",
+        "cpo-orb-oc11-swf-2026",
+        "cpo-orb-lumen-wp-published",
+        "cpo-orb-suncatcher-paper-published"
+      ]
+    },
+    "2": {
+      "baseCommit": "9a65038",
+      "schemaVersion": "2.21",
+      "snapshotDescription": "Dataset state before part 2 of the compute, power and orbit admission (2026-10-30): the IDs it adds and the rows it changes as they were.",
+      "scope": "On 2026-10-30, by the maintainer’s decisions of 2026-10-28, the second part of the compute, power and orbit candidate pack was admitted with schema 2.21. Schema 2.21 adds an infrastructure entity’s stated location and operators; what a capacity figure measures and a stated range; dates that parties state as targets, deadlines or terms, kept apart from the dates of records; the predicates announced site, status stated, power agreement, supply agreement, government award, granted equity right, announced plan, launch stated, filed application, regulator decision, accepted for filing and designated zone; letter-of-intent and term-sheet stages, an award stage and the source’s own stage wording; and project and programme spending scopes with their stated basis. The records concern data-centre sites and campuses, capacity and spending plans, power agreements and regulator decisions, chip supply agreements and government awards, and plans, filings and launches of compute in orbit, from 2023 to 2026. An announcement is not a contract, construction or operation; a stated status is the stating party’s account; a target date is a projection; figures are as stated and never summed. All records remain seeds.",
+      "adoptedPredicates": [
+        "announced_site",
+        "status_stated",
+        "power_agreement",
+        "supply_agreement",
+        "government_award",
+        "granted_equity_right",
+        "announced_plan",
+        "launch_stated",
+        "filed_application",
+        "regulator_decision",
+        "accepted_for_filing",
+        "designated_zone"
+      ],
+      "include": [
+        "cpo-dc-crusoe-abilene-1-2gw",
+        "cpo-dc-crusoe-abilene-initial-phase",
+        "cpo-dc-crusoe-abilene-energized-2026",
+        "cpo-dc-crusoe-abilene-total-2-1gw",
+        "cpo-dc-crusoe-microsoft-campus-announced",
+        "cpo-dc-amazon-pennsylvania-20bn",
+        "cpo-dc-aws-gov-1-3gw",
+        "cpo-dc-aws-gov-50bn",
+        "cpo-dc-anthropic-50bn",
+        "cpo-dc-eu-investai-four-gigafactories",
+        "cpo-dc-eu-investai-published",
+        "cpo-dc-eurohpc-aigf-76-eoi",
+        "cpo-dc-google-vizag-15bn",
+        "cpo-dc-google-vizag-campus",
+        "cpo-dc-google-texas-40bn",
+        "cpo-dc-meta-richland-announced",
+        "cpo-dc-meta-hyperion-5gw-2025",
+        "cpo-dc-meta-prometheus-2026",
+        "cpo-dc-meta-el-paso-announced",
+        "cpo-dc-meta-richland-50bn-2026",
+        "cpo-dc-microsoft-fy2025-80bn",
+        "cpo-dc-fairwater-atlanta-operational",
+        "cpo-dc-fairwater-atlanta-unveiled",
+        "cpo-dc-fairwater-wi-operational",
+        "cpo-dc-uae-us-campus-unveiled",
+        "cpo-dc-stargate-uae-announced",
+        "cpo-dc-stargate-norway-230mw",
+        "cpo-dc-stargate-norway-announced",
+        "cpo-dc-nscale-loughton-microsoft",
+        "cpo-dc-stargate-uk-established",
+        "cpo-dc-stargate-uk-openai-offtake",
+        "cpo-dc-stargate-uae-construction-2025",
+        "cpo-dc-stargate-aggregate-sept-2025",
+        "cpo-dc-stargate-dona-ana-announced",
+        "cpo-dc-stargate-lordstown-construction",
+        "cpo-dc-stargate-milam-announced",
+        "cpo-dc-stargate-oracle-sites-capacity",
+        "cpo-dc-stargate-shackelford-announced",
+        "cpo-dc-stargate-softbank-sites-capacity",
+        "cpo-dc-stargate-port-washington-announced",
+        "cpo-dc-stargate-port-washington-capacity",
+        "cpo-dc-vantage-port-washington-spend",
+        "cpo-dc-stargate-saline-announced",
+        "cpo-dc-uk-aigz-culham",
+        "cpo-dc-uk-ne-aigz-designated",
+        "cpo-dc-uk-aigz-five-designated",
+        "cpo-dc-xai-colossus-2gw-stated",
+        "cpo-dc-xai-southaven-20bn",
+        "cpo-dc-xai-southaven-announced",
+        "cpo-pw-amazon-dominion-north-anna",
+        "cpo-pw-amazon-energy-northwest",
+        "cpo-pw-amazon-constellation-calvert",
+        "cpo-pw-amazon-xenergy-aep-indiana",
+        "cpo-pw-cn-dc-plan-green-power-2025",
+        "cpo-pw-msft-constellation-crane-ppa",
+        "cpo-pw-crane-nrc-fuel-amendment",
+        "cpo-pw-eu-ai-energy-roadmap",
+        "cpo-pw-helion-microsoft",
+        "cpo-pw-google-cfs-offtake",
+        "cpo-pw-google-constellation-2700mw-supply",
+        "cpo-pw-google-constellation-890mw",
+        "cpo-pw-google-kairos-agreement",
+        "cpo-pw-tva-kairos-hermes2-ppa",
+        "cpo-pw-google-nextera-duane-arnold",
+        "cpo-pw-uae-campus-energy-mix",
+        "cpo-pw-entergy-lpsc-meta-gas",
+        "cpo-pw-meta-nuclear-rfp",
+        "cpo-pw-meta-constellation-clinton",
+        "cpo-pw-meta-oklo",
+        "cpo-pw-meta-terrapower",
+        "cpo-pw-meta-vistra",
+        "cpo-pw-talen-aws-cumulus-sale",
+        "cpo-pw-amazon-talen-colocation",
+        "cpo-pw-ferc-susquehanna-isa-rejected",
+        "cpo-pw-talen-amazon-1920mw-ppa",
+        "cpo-pw-uk-ai-energy-council",
+        "cpo-pw-us-eo14141-federal-sites",
+        "cpo-pw-us-eo14318-data-center-project",
+        "cpo-pw-doe-ai-site-selection",
+        "cpo-pw-doe-403-large-loads",
+        "cpo-pw-nnsa-amentum-srs",
+        "cpo-pw-tx-sb6-75mw-threshold",
+        "cpo-pw-shelby-xai-turbine-permit",
+        "cpo-ch-nvidia-h20-licence-requirement",
+        "cpo-ch-nvidia-h20-no-china-sales-q2",
+        "cpo-ch-huawei-ascend-roadmap",
+        "cpo-ch-humain-amd",
+        "cpo-ch-humain-nvidia",
+        "cpo-ch-anthropic-nvidia-capacity",
+        "cpo-ch-microsoft-anthropic-investment",
+        "cpo-ch-nvidia-anthropic-investment",
+        "cpo-ch-nvidia-blackwell-tsmc-arizona",
+        "cpo-ch-nvidia-us-production-plan",
+        "cpo-ch-amd-openai-warrant",
+        "cpo-ch-openai-amd-agreement",
+        "cpo-ch-openai-broadcom-collaboration",
+        "cpo-ch-openai-broadcom-term-sheet",
+        "cpo-ch-nvidia-openai-investment-intent",
+        "cpo-ch-openai-nvidia-loi",
+        "cpo-ch-samsung-openai-loi",
+        "cpo-ch-skhynix-openai-loi",
+        "cpo-ch-tsmc-chips-preliminary",
+        "cpo-ch-tsmc-chips-final-award",
+        "cpo-ch-intel-usg-warrant",
+        "cpo-ch-usg-intel-agreement",
+        "cpo-ch-usg-intel-announced",
+        "cpo-ch-usg-intel-closing",
+        "cpo-orb-ascend-study-chosen",
+        "cpo-orb-ascend-1gw-aim",
+        "cpo-orb-axiom-odc-plan",
+        "cpo-orb-axiom-odc-launch-stated",
+        "cpo-orb-axiom-arc-operating",
+        "cpo-orb-cowboy-stampede-plan",
+        "cpo-orb-spacex-fcc-filed",
+        "cpo-orb-fcc-accepts-spacex",
+        "cpo-orb-starcloud-fcc-filed",
+        "cpo-orb-blue-origin-fcc-filed",
+        "cpo-orb-nvidia-space-1-module",
+        "cpo-orb-spacex-odc-plan",
+        "cpo-orb-spacexai-starmind-plan",
+        "cpo-orb-starcloud-5gw-plan",
+        "cpo-orb-starcloud-1-launch-stated",
+        "cpo-orb-starcloud-1-training-stated",
+        "cpo-orb-starcloud-2-plan",
+        "cpo-orb-suncatcher-announced",
+        "cpo-orb-suncatcher-prototype-plan",
+        "cpo-orb-three-body-launch-stated",
+        "cpo-orb-three-body-composition",
+        "cpo-orb-three-body-capacity-stated",
+        "cpo-orb-three-body-thousand-plan",
+        "cpo-orb-xingsuan-02-launch-stated"
+      ],
+      "hold": {
+        "cpo-ch-nvidia-h20-licence-requirement": "Decision 4 keeps `export_licence_requirement_stated` as it stands until a BIS letter or rule is retrieved; none was, so the predicate is not adopted and the record waits.",
+        "cpo-ch-nvidia-h20-no-china-sales-q2": "As for NVIDIA's H20 licence statement: the predicate waits for a BIS letter or rule.",
+        "cpo-orb-three-body-launch-stated": "ADA Space's homepage now serves a suspension notice, so the operator's statement cannot be re-read (cross-family check, item 116). The launch of the first 12 satellites on 14 May 2025 stays recorded through the press report of the thousand-satellite plan; no launch record rests on the operator alone.",
+        "cpo-orb-xingsuan-02-launch-stated": "Its operator passage was not found again (cross-family check, item 120, and paraphrase check 94): ADA Space's homepage serves a suspension notice. Replaced by a record of LandSpace's own release of 14 October 2026, for what that release states."
+      }
+    }
+  },
+  "topics": {
+    "power": "governance",
+    "chips": "governance",
+    "orbital": "ideas",
+    "data-centres": "compute",
+    "new": "ideas"
+  },
+  "kindMap": {
+    "names_ai_compute": "statement",
+    "eligibility": "statement",
+    "date": "statement"
+  },
+  "roleMap": {
+    "supporting": "articulation"
+  },
+  "basisMap": {
+    "issuance": "publication",
+    "revocation": "signature",
+    "operational_stated": "announcement",
+    "launch_stated": "announcement",
+    "completion_stated": "announcement",
+    "filing": null
+  },
+  "basisNotes": {
+    "issuance": "Date of issue as the text gives it (the document date or date line), recorded as its date of publication as in earlier admissions; no signing event is shown.",
+    "revocation": "Dated by the revoking order’s signature.",
+    "operational_stated": "Dated by the statement of the status, not by the event it reports.",
+    "launch_stated": "Dated by the statement of the launch.",
+    "completion_stated": "Dated by the statement of the completion.",
+    "filing": "Date of filing as the regulator lists it."
+  },
+  "sourceKindMap": {
+    "announcement": "announcement",
+    "filing": "filing",
+    "government text": "filing",
+    "regulator record": "filing",
+    "webpage": "post",
+    "report": "report",
+    "paper": "paper",
+    "press report": "article"
+  },
+  "claims": {
+    "cpo-pw-us-eo14141-signed": {
+      "qualification": "Records issue only. Revoked by Executive Order 14318 of 23 July 2025 (recorded separately)."
+    },
+    "cpo-pw-us-eo14299-ai-dc-defense": {
+      "statement": "Section 4(a) of Executive Order 14299 of 23 May 2025 directed the Secretary of Energy to initiate the process for designating AI data centres within the 48 contiguous States and the District of Columbia that are located at or operated in coordination with DOE facilities as critical defense facilities, “where appropriate”, and stated that the electrical infrastructure needed to operate them shall be considered defense critical electric infrastructure, “as appropriate and consistent with applicable law”.",
+      "qualification": "A direction to begin a process, with three limits the section states: the geographic limit (the 48 contiguous States and the District of Columbia), “where appropriate” for the designation, and “as appropriate and consistent with applicable law” for the treatment of the electrical infrastructure. No designation is recorded here (cross-family check, item 49)."
+    },
+    "cpo-pw-us-eo14299-reactors-for-ai": {
+      "kind": "required_action"
+    },
+    "cpo-ch-cn-ga-ge-2023-items": {
+      "kind": "required_action"
+    },
+    "cpo-ch-cn-mofcom-2025-61-chips-ai": {
+      "qualification": "A review standard for licence applications for the announcement’s rare-earth-related items, not a general export rule or a prohibition; it does not show any application decided. MOFCOM–GAC Announcement No. 70 of 2025 suspended Announcement No. 61 from 7 November 2025 to 10 November 2026 (recorded separately)."
+    },
+    "cpo-ch-cn-mofcom-2025-61-issued": {
+      "qualification": "Records issuance and the licensing requirement in summary; the item list (attachment) was not retrieved. The announcement was suspended on 7 November 2025 (recorded separately)."
+    },
+    "cpo-ch-bis-foundry-dd-2025-published": {
+      "qualification": "Records publication and stated dates. The rule’s preamble names the AI diffusion rule as “a rule related to this IFR”; that reference is recorded separately."
+    },
+    "cpo-ch-bis-gp10-guidance-issued": {
+      "time": {
+        "note": "Date printed on the guidance, the same day as the announced rescission of the AI diffusion rule (recorded separately)."
+      }
+    },
+    "cpo-ch-bis-uae-2026-diffusion-enforcement": {
+      "statement": "The July 2026 BIS rule on the UAE states that, although § 742.6(a)(6)(iii)(A) of the EAR specifies a worldwide licence requirement for certain advanced computing items, BIS, consistent with guidance issued on 13 May 2025 and 31 May 2026, is only enforcing it for destinations in Country Groups D:1, D:4 or D:5, excluding those also in Country Groups A:5 or A:6, and for entities headquartered in, or with an ultimate parent headquartered in, Country Group D:5 or Macau, wherever located. It adds that, although the UAE moves to Country Group A:5, BIS will continue enforcing the requirement for the UAE, except for UAE Government entities and listed approved commercial entities.",
+      "qualification": "A statement of enforcement practice in the preamble of a 2026 rule, with the exclusions and the UAE requirement the same passage states (cross-family check, item 71). It is not a rescission rule: the worldwide requirement is still specified in the EAR. The dataset records the rescission of the AI diffusion rule announced in May 2025 separately, as an announcement; neither the pack nor the cross-family check found a Federal Register rule formalising it (the check searched by RIN, docket and phrase through 29 October 2026). The 31 May 2026 guidance was not retrieved."
+    },
+    "cpo-ch-anthropic-azure-commitment": {
+      "topic": "compute",
+      "attributes": {
+        "transactionType": "cloud_services",
+        "relationshipContext": "external"
+      }
+    },
+    "cpo-ch-nvidia-intel-investment": {
+      "topic": "capital",
+      "attributes": {
+        "transactionType": "equity_investment",
+        "relationshipContext": "external"
+      },
+      "qualification": "An announced investment subject to closing conditions; this record does not show that it closed. It is not a supply agreement."
+    },
+    "cpo-ch-tsmc-us-investment-2025": {
+      "topic": "capital",
+      "object": {
+        "kind": "literal",
+        "value": 100000000000,
+        "unit": "USD"
+      },
+      "attributes": {
+        "transactionType": "infrastructure_spend",
+        "transactionStage": "planned",
+        "relationshipContext": "external"
+      },
+      "qualificationAppend": "The plan is for TSMC’s Arizona chip manufacturing operation (TSMC Arizona); its stage is recorded as planned, the stage the dataset gives every announced spending plan."
+    },
+    "cpo-orb-ascend-results": {
+      "qualification": "The press release summarises the study; the study report was not retrieved, and its findings are recorded only as the release states them.",
+      "time": {
+        "basis": "publication",
+        "note": "Dateline of the release."
+      }
+    },
+    "cpo-orb-oc1-lumen-2024": {
+      "attested": {
+        "date": "2024-12-24",
+        "note": "The cover prints September 2024 (v1.01). The earliest copy located is an Internet Archive capture of 24 December 2024, which the cross-family check found byte-identical to the copy retrieved for the pack and again at admission; this admission could not reach the Archive."
+      },
+      "qualification": "Earliest located among the texts found by the pack’s searches of 2026-10-28 (company, agency, scientific-society and arXiv texts on orbital compute, 2019–2026) and the cross-family check’s bounded search of 2026-10-29/30 for earlier texts, including pre-2024 literature on space solar power; not a claim that no earlier text exists. The check found 1978 solar-power literature that describes continuous solar supply in space without placing computing there, and a 2022 ASCEND announcement that proposes solar-powered orbital data centres without the comparison; neither meets the criterion as worded."
+    },
+    "cpo-orb-oc2-lumen-2024": {
+      "attested": {
+        "date": "2024-12-24",
+        "note": "The cover prints September 2024 (v1.01). The earliest copy located is an Internet Archive capture of 24 December 2024, which the cross-family check found byte-identical to the copy retrieved for the pack and again at admission."
+      }
+    },
+    "cpo-orb-oc2-ascend-2024": {
+      "qualification": "Earliest located among the texts found by the pack’s searches of 2026-10-28 and the cross-family check’s bounded search of 2026-10-29/30 for earlier texts; not a claim that no earlier text exists. It states the water point only; it says nothing of radiators or cooling energy. The study report was not read."
+    },
+    "cpo-orb-oc3-lumen-2024": {
+      "attested": {
+        "date": "2024-12-24",
+        "note": "The cover prints September 2024 (v1.01). The earliest copy located is an Internet Archive capture of 24 December 2024, which the cross-family check found byte-identical to the copy retrieved for the pack and again at admission."
+      },
+      "qualification": "Earliest located among the texts read for the pack (2026-10-28) and at admission; not a claim that no earlier text exists. The 2022 ASCEND announcement cites terrestrial data centres’ environmental footprint, not constraints on building them. A lead is open: the cross-family check found an abstract of 2019 by Periola and Kolawole, on space-based data centres, that it read as stating land constraints on terrestrial hosting; this admission could not retrieve the abstract, so the earlier text is not admitted and this role stands until it is read."
+    },
+    "cpo-orb-oc4-lumen-2024": {
+      "attested": {
+        "date": "2024-12-24",
+        "note": "The cover prints September 2024 (v1.01). The earliest copy located is an Internet Archive capture of 24 December 2024, which the cross-family check found byte-identical to the copy retrieved for the pack and again at admission."
+      },
+      "qualification": "Earliest located among the texts found by the pack’s searches of 2026-10-28 and the cross-family check’s bounded search of 2026-10-29/30 for earlier texts; not a claim that no earlier text exists. The $30/kg figure is the paper’s expectation for reusable heavy-lift vehicles, not a quoted price."
+    },
+    "cpo-orb-oc5-ascend-2024": {
+      "qualification": "Earliest located among the texts found by the pack’s searches of 2026-10-28 and the cross-family check’s bounded search of 2026-10-29/30 for earlier texts; not a claim that no earlier text exists. A conditional finding as the release states it; the study report and its assumptions were not read. The November 2022 announcement had posed the same question as an objective to assess, without asserting it."
+    },
+    "cpo-orb-oc6-lumen-2024": {
+      "attested": {
+        "date": "2024-12-24",
+        "note": "The cover prints September 2024 (v1.01). The earliest copy located is an Internet Archive capture of 24 December 2024, which the cross-family check found byte-identical to the copy retrieved for the pack and again at admission."
+      },
+      "missing": "a statement that heat rejection is a significant constraint: the paper presents the radiator requirement as manageable"
+    },
+    "cpo-orb-oc6-suncatcher-blog-2025": {
+      "qualification": "Earliest located among the texts found by the pack’s searches of 2026-10-28 and the cross-family check’s bounded search of 2026-10-29/30; not a claim that no earlier text exists. From a proponent, which states the challenge while arguing the concept is not precluded by physics; the paper states that cooling would be achieved through heat pipes and radiators. A candidate is open: the check found that a Nature Electronics Perspective on carbon-neutral data centres in space (published online in October 2025, read in an author-hosted proof) discusses passive cooling as insufficient; whether it states a significant constraint, as the criterion asks, and in which expression, is not confirmed."
+    },
+    "cpo-orb-oc7-lumen-2024": {
+      "roles": ["articulation"],
+      "attested": {
+        "date": "2024-12-24",
+        "note": "The cover prints September 2024 (v1.01). The earliest copy located is an Internet Archive capture of 24 December 2024, which the cross-family check found byte-identical to the copy retrieved for the pack and again at admission."
+      },
+      "qualification": "From a proponent, which treats radiation as a manageable design cost. It was earliest located in the pack; the cross-family check’s bounded search found a 1989 paper on space radiation and electronic microcircuits that meets the criterion as worded, now earliest located (a correction recorded on the collection page)."
+    },
+    "cpo-orb-oc7-suncatcher-paper-2025": {
+      "missing": "a statement that orbital radiation requires mitigation: it reports a ground test with a margin over the authors’ requirement"
+    },
+    "cpo-orb-oc8-lumen-2024": {
+      "attested": {
+        "date": "2024-12-24",
+        "note": "The cover prints September 2024 (v1.01). The earliest copy located is an Internet Archive capture of 24 December 2024, which the cross-family check found byte-identical to the copy retrieved for the pack and again at admission."
+      },
+      "missing": "a statement that repair in orbit is impracticable: it describes a design with swappable modules"
+    },
+    "cpo-orb-oc8-suncatcher-paper-2025": {
+      "roles": ["articulation"],
+      "qualification": "From a proponent. It was earliest located in the pack; the cross-family check’s bounded search found ESPI Report 98 of 19 November 2025, three days earlier, which states the proposition and is now earliest located (a correction recorded on the collection page). The Lumen white paper (2024) instead plans swappable modules (recorded separately), which does not state the criterion."
+    },
+    "cpo-orb-oc9-turyshev-2026": {
+      "roles": ["articulation"],
+      "qualification": "Independent preprint; the comparison is to a public price benchmark, not to projected Starship prices, and the paper finds early niches (space-native preprocessing) credible. It was earliest located in the pack; the cross-family check’s bounded search found ESPI Report 98 (November 2025), now earliest located (a correction recorded on the collection page)."
+    },
+    "cpo-orb-oc10-suncatcher-blog-2025": {
+      "qualification": "Earliest located among the texts read for the pack (2026-10-28) and at admission; not a claim that no earlier text exists. From a proponent; the Lumen white paper (2024) discusses latency within the cluster, not to the ground. A lead is open: the cross-family check read an ASPLOS 2020 paper on orbital edge computing for Earth-observation satellites that states ground-link constraints on which workloads can be served; this admission could not retrieve it, so it is not admitted and this role stands until it is read."
+    },
+    "cpo-orb-oc11-lumen-2024": {
+      "attested": {
+        "date": "2024-12-24",
+        "note": "The cover prints September 2024 (v1.01). The earliest copy located is an Internet Archive capture of 24 December 2024, which the cross-family check found byte-identical to the copy retrieved for the pack and again at admission."
+      },
+      "qualification": "A proponent’s view of the issue, earlier than the critical texts located."
+    },
+    "cpo-orb-oc11-lincei-2026": {
+      "roles": ["articulation"],
+      "qualification": "Addresses the SpaceX application, though it says its considerations have general validity. The AAS petition on the same application was not retrievable (aas.org refused). It was earliest located in the pack; the cross-family check’s bounded search found a 2025 Perspective on carbon-neutral data centres in space, attested from 25 November 2025, that states the debris element of the proposition and is now earliest located (a correction recorded on the collection page)."
+    },
+    "cpo-orb-oc11-swf-2026": {
+      "missing": "a statement that the constellations would raise collision or debris risks: it asks the regulator for system-level analysis of them"
+    },
+    "cpo-orb-lumen-wp-published": {
+      "topic": "ideas",
+      "qualification": "The date is the one the document prints. The earliest copy located is an Internet Archive capture of 24 December 2024, which the cross-family check found byte-identical to the copy retrieved in 2026 and which prints the same month; a capture does not establish when v1.01 was first posted. A later v1.03 carries the same month and adds the 2025 renaming."
+    },
+    "cpo-orb-suncatcher-paper-published": {
+      "topic": "ideas"
+    },
+    "cpo-dc-crusoe-abilene-1-2gw": {
+      "statedDates": [
+        {
+          "wording": "mid-2026"
+        }
+      ]
+    },
+    "cpo-dc-crusoe-abilene-initial-phase": {
+      "statedDates": [
+        {},
+        {
+          "wording": "first half of 2025"
+        }
+      ]
+    },
+    "cpo-dc-crusoe-abilene-energized-2026": {
+      "statedDates": [
+        {
+          "date": "2026",
+          "wording": "by the end of 2026"
+        }
+      ]
+    },
+    "cpo-dc-crusoe-microsoft-campus-announced": {
+      "statedDates": [
+        {
+          "date": "2027",
+          "wording": "mid-2027"
+        }
+      ]
+    },
+    "cpo-dc-stargate-softbank-sites-capacity": {
+      "statedDates": [
+        {
+          "date": null,
+          "wording": "over the next 18 months",
+          "note": "From the release of 23 September 2025; no month is stated."
+        }
+      ]
+    },
+    "cpo-pw-meta-nuclear-rfp": {
+      "range": {
+        "from": 1,
+        "to": 4
+      }
+    },
+    "cpo-orb-axiom-arc-operating": {
+      "subject": "axiom-odc-nodes",
+      "object": {
+        "kind": "literal",
+        "value": "two ARCs operating on orbit; ARC-to-ARC and ARC-to-ground communications confirmed (as Axiom states)"
+      }
+    },
+    "cpo-orb-starcloud-1-training-stated": {
+      "subject": "starcloud-1",
+      "object": {
+        "kind": "literal",
+        "value": "ran a version of Gemini and trained the nanoGPT model in orbit (as Starcloud states)"
+      },
+      "qualificationAppend": "The same page embeds a congratulation that names Gemma, not Gemini; the discrepancy is Starcloud’s and is recorded, not resolved (cross-family check, item 115)."
+    },
+    "cpo-orb-three-body-composition": {
+      "subject": "three-body-computing-constellation",
+      "qualification": "Press-only: no Zhejiang Lab or ADA Space text stating the division of work was retrieved (zhejianglab.com and yuhang.gov.cn reset the connection), and the cross-family check found none. The constellation is the subject as the hardware’s host; that a lab’s computers are on board is the report’s statement."
+    },
+    "cpo-orb-three-body-capacity-stated": {
+      "predicate": "status_stated",
+      "subject": "three-body-computing-constellation",
+      "qualificationAppend": "Recorded as a stated status of the constellation; the cross-family check found no laboratory or operator text for it."
+    },
+    "cpo-orb-three-body-thousand-plan": {
+      "qualificationAppend": "The cross-family check found no laboratory or operator text for it."
+    },
+    "cpo-ch-usg-intel-announced": {
+      "subject": "us-department-of-commerce",
+      "object": {
+        "kind": "entity",
+        "entityId": "intel"
+      },
+      "qualification": "The investment as Intel announced it; the US government is the investor and the Department of Commerce its party to the agreement. The release’s per-share price ($20.47) differs from the 8-K, which gives $20.74 per issued share if all released funds are received and $20.00 per escrowed share; the 8-K is the filed terms. The AI reference is a quoted official’s statement, not a term of the agreement. The release states no investment made; the closing is recorded separately."
+    },
+    "cpo-pw-uk-ai-energy-council": {
+      "object": {
+        "kind": "entity",
+        "entityId": "uk-ai-energy-council-statement-2025"
+      },
+      "qualification": "Records the government’s statement of the first meeting, as decision 4 directs; the council is advisory and its minutes are not recorded here."
+    },
+    "cpo-dc-stargate-saline-announced": {
+      "statedDates": [
+        {
+          "date": "2026",
+          "wording": "early 2026"
+        }
+      ]
+    },
+    "cpo-ch-openai-broadcom-collaboration": {
+      "statedDates": [
+        {
+          "date": "2026",
+          "wording": "second half of 2026"
+        },
+        {
+          "date": "2029",
+          "wording": "by the end of 2029"
+        }
+      ]
+    },
+    "cpo-pw-crane-nrc-fuel-amendment": [
+      {
+        "object": {
+          "kind": "literal",
+          "value": "Amendment No. 307 to the Crane Clean Energy Center licence: receipt and possession of new nuclear fuel and new sealed neutron sources"
+        },
+        "statement": "By Amendment No. 307, dated 1 July 2026, the NRC staff approved Constellation’s request of 27 June 2025 to receive and possess new nuclear fuel and new sealed neutron sources at the Crane Clean Energy Center, as the NRC’s facility page records. Constellation reported the approval of a fuel licence amendment on 6 August 2026, saying it moved the plant closer to restarting operations in 2027.",
+        "qualification": "The amendment covers the receipt and possession of fuel and sealed sources only; it is not an approval to restart the reactor, and no record here says the plant operates (cross-family check, item 34). Dated by the NRC’s own record. 2027 is Constellation’s restart target, which replaces the 2028 projection of September 2024.",
+        "time": {
+          "kind": "event",
+          "date": "2026-07-01",
+          "note": "Date of Amendment No. 307 as the NRC’s facility page states it; Constellation’s report is dated 6 August 2026."
+        },
+        "pressOnly": false
+      }
+    ],
+    "cpo-pw-entergy-lpsc-meta-gas": {
+      "statement": "The Louisiana Public Service Commission decided at its Business and Executive Session of 20 August 2025, in Order U-37425 dated 29 August 2025 and effective immediately, on Entergy Louisiana’s application for generation and transmission resources to serve a single customer in North Louisiana. Entergy stated on 20 August 2025 that the approval allows it to build three combined-cycle combustion turbine plants tied to Meta’s Richland Parish data centre, two there expected online in late 2028 and one at Waterford by the end of 2029.",
+      "qualification": "Dated by the regulator’s own record (cross-family check, item 40): the decision of 20 August 2025, with the written order of 29 August 2025, effective immediately. The order names the customer’s project, not Meta; Meta is named in Entergy’s release. The cross-family check reads the order as treating the new generation as system resources, not capacity allocated to Meta alone. Plant capacities are not stated in the release, and Entergy’s statement that Meta pays its share of the costs is not a record of the cost terms. The approval also covers transmission and up to 1,500 MW of solar procurement.",
+      "time": {
+        "kind": "event",
+        "date": "2025-08-20",
+        "note": "Date of the decision as Order U-37425 states it (“Decided at the August 20, 2025 Business and Executive Session”); the written order is dated 29 August 2025 and effective immediately. Entergy’s release is dated 20 August 2025."
+      }
+    },
+    "cpo-pw-ferc-susquehanna-isa-rejected": {
+      "statement": "FERC, by order issued on 1 November 2024 (189 FERC ¶ 61,078, Docket ER24-2172), rejected the amended Interconnection Service Agreement among PJM, Susquehanna Nuclear and PPL Electric Utilities, which would have increased the co-located load at the Susquehanna plant from 300 MW to 480 MW. World Nuclear News reported the rejection on 4 November 2024.",
+      "qualification": "Dated by FERC’s own order (cross-family check, item 44); the press report is context. The order names Susquehanna Nuclear, LLC, not Talen; the report’s “Talen” is the corporate group. The 960 MW of the Cumulus campus is a separate figure, not the rejected load.",
+      "time": {
+        "kind": "event",
+        "date": "2024-11-01",
+        "basis": "publication",
+        "note": "Date the order was issued, as it states; the report is dated 4 November 2024."
+      },
+      "pressOnly": false
+    },
+    "cpo-pw-shelby-xai-turbine-permit": {
+      "statement": "The Shelby County Health Department issued construction permit 01156-01PC on 2 July 2025 to CTC Property LLC for fifteen Solar SMT-130 natural gas-fired combustion turbines, each rated at 16.48 MW, at xAI’s Memphis facility, with a printed expiry of 2 January 2027, as the cross-family check read the permit. Action News 5 reported the approval on 2 July 2025.",
+      "qualification": "The permit rests on the cross-family check’s reading of an Internet Archive capture of 3 July 2025 (page 1 of the scanned permit, inspected visually); this admission could not reach the Archive, and the county’s own address now answers HTTP 404. The ratings are each turbine’s and are not summed. A construction permit is not a finding on emissions or operation, and the printed expiry is not a statement of current validity. The press report also says the temporary turbines were to be removed by the end of July, and quotes xAI’s welcome and opponents’ criticism; later legal action is not recorded. The report’s “on Thursday” does not match 2 July 2025, a Wednesday; the permit dates the decision.",
+      "time": {
+        "kind": "event",
+        "date": "2025-07-02",
+        "note": "Date the permit was issued, as the check read it on the permit; the press report is dated the same day."
+      },
+      "pressOnly": false
+    },
+    "cpo-pw-talen-aws-cumulus-sale": {
+      "statement": "Talen announced on 4 March 2024 the sale of its Cumulus data-centre campus in north-eastern Pennsylvania, connected to its Susquehanna nuclear plant; its release does not name the buyer, which Talen’s results of 14 March 2024 name as AWS, as the cross-family check read both. World Nuclear News later reported the 960 MW campus sold to AWS with a long-term power supply agreement.",
+      "qualification": "Talen’s releases rest on the cross-family check’s reading of Internet Archive captures; Talen’s investor site refused this admission (HTTP 403). The reported terms (minimum commitments ramping in 120 MW steps from 2025, a one-time option to cap at 480 MW) are the reporter’s account. The sale price is not recorded. Amazon described the arrangement in October 2024 (recorded separately).",
+      "time": {
+        "kind": "event",
+        "date": "2024-03-04",
+        "basis": "announcement",
+        "note": "Date of Talen’s release, as the cross-family check read it in a capture."
+      },
+      "pressOnly": false
+    },
+    "cpo-pw-talen-amazon-1920mw-ppa": {
+      "statement": "Talen announced on 11 June 2025 a power purchase agreement to supply 1,920 MWe from its Susquehanna nuclear plant to support Amazon Web Services’ data centres, running until 2042, with deliveries ramping to full volume no later than 2032, as the cross-family check read Talen’s release; World Nuclear News reported it on 12 June 2025.",
+      "qualification": "Talen’s release rests on the cross-family check’s reading of an Internet Archive capture, which it found to corroborate the report; Talen’s investor site refused this admission (HTTP 403), and the quotations are the report’s. The report states the co-located arrangement would move to a front-of-the-meter arrangement after transmission reconfiguration expected in spring 2026; whether that took place is not recorded. 1,920 MWe is the full contract quantity, not delivered power.",
+      "time": {
+        "kind": "event",
+        "date": "2025-06-11",
+        "basis": "announcement",
+        "note": "Date of Talen’s release as the cross-family check read it; the report is dated 12 June 2025."
+      },
+      "pressOnly": false
+    }
+  },
+  "evidence": {
+    "cpo-ch-bis-foundry-dd-2025-published:3": {
+      "drop": true
+    },
+    "cpo-orb-oc6-lumen-2024:2": {
+      "set": {
+        "locator": "PDF p. 3, “Reduced Operating Expenses”"
+      },
+      "note": "Locator corrected at admission from PDF p. 8 (cross-family check, item 93)."
+    },
+    "cpo-orb-oc11-marcy-2026:3": {
+      "set": {
+        "locator": "PDF p. 1, title block and Introduction"
+      },
+      "note": "Locator corrected at admission: the “technically attractive” wording is in the Introduction on page 1, not in the abstract (cross-family check, item 110)."
+    },
+    "cpo-pw-cn-ai-energy-plan-gw-pilots:0": {
+      "shorten": "探索百万千瓦级人工智能算力设施与配套能源系统协同建设，选择具备条件的地区开展试点",
+      "translation": "explore coordinated construction of million-kilowatt-scale AI computing facilities and matching energy systems, and select qualified regions for pilots"
+    },
+    "cpo-ch-cn-mofcom-2025-61-chips-ai:0": {
+      "shorten": "最终用途为研发、生产14纳米及以下逻辑芯片或者256层及以上存储芯片",
+      "translation": "whose end use is the research, development or production of logic chips of 14 nm and below or memory chips of 256 layers and above"
+    },
+    "cpo-ch-cn-mofcom-2024-46-us:0": {
+      "shorten": "原则上不予许可",
+      "translation": "in principle, will not be licensed",
+      "shortenNote": "Shortened at admission to keep within the quotation limit for this short text (a tenth of its words); the shortened wording is part of the matched passage, and the rest is given by paraphrase."
+    },
+    "cpo-ch-cn-mofcom-2025-70-suspension:0": {
+      "set": {
+        "passageType": "paraphrase",
+        "passage": "Paraphrase: the suspension runs from the day of the announcement (自即日起) until 10 November 2026."
+      },
+      "note": "Given by paraphrase at admission to keep within the quotation limit for this 76-word text."
+    },
+    "cpo-ch-cn-mofcom-2025-70-suspension:1": {
+      "shorten": "暂停实施",
+      "translation": "are suspended",
+      "shortenNote": "Shortened at admission to keep within the quotation limit for this short text (a tenth of its words); the shortened wording is part of the matched passage, and the rest is given by paraphrase."
+    },
+    "cpo-ch-tsmc-us-investment-2025:0": {
+      "shorten": "$100 billion investment by TSMC",
+      "shortenNote": "Shortened at admission to keep within the quotation limit for this short text (a tenth of its words); the shortened wording is part of the matched passage, and the rest is given by paraphrase."
+    },
+    "cpo-ch-tsmc-us-investment-2025:2": {
+      "set": {
+        "passage": "Paraphrase: the release says the investment is in TSMC’s Arizona-based chip manufacturing operation; President Trump says it goes into five fabrication facilities and brings TSMC’s investment to about $165 billion."
+      }
+    },
+    "cpo-pw-shelby-xai-turbine-permit:0": {
+      "set": {
+        "support": "context"
+      }
+    },
+    "cpo-pw-shelby-xai-turbine-permit:1": {
+      "set": {
+        "support": "context"
+      }
+    },
+    "cpo-pw-talen-aws-cumulus-sale:0": {
+      "set": {
+        "support": "context",
+        "sourceRole": "secondary"
+      }
+    },
+    "cpo-pw-talen-aws-cumulus-sale:1": {
+      "set": {
+        "support": "context",
+        "sourceRole": "secondary"
+      }
+    },
+    "cpo-pw-talen-aws-cumulus-sale:2": {
+      "set": {
+        "support": "context",
+        "sourceRole": "secondary"
+      }
+    },
+    "cpo-pw-ferc-susquehanna-isa-rejected:0": {
+      "set": {
+        "support": "context",
+        "sourceRole": "secondary"
+      }
+    },
+    "cpo-pw-ferc-susquehanna-isa-rejected:1": {
+      "set": {
+        "support": "context",
+        "sourceRole": "secondary"
+      }
+    },
+    "cpo-pw-ferc-susquehanna-isa-rejected:2": {
+      "set": {
+        "support": "context",
+        "sourceRole": "secondary"
+      }
+    },
+    "cpo-pw-ferc-susquehanna-isa-rejected:3": {
+      "set": {
+        "support": "context",
+        "sourceRole": "secondary"
+      }
+    },
+    "cpo-pw-crane-nrc-fuel-amendment:0": {
+      "set": {
+        "support": "context"
+      }
+    },
+    "cpo-pw-talen-amazon-1920mw-ppa:0": {
+      "set": {
+        "sourceRole": "secondary"
+      }
+    },
+    "cpo-pw-talen-amazon-1920mw-ppa:1": {
+      "set": {
+        "sourceRole": "secondary"
+      }
+    },
+    "cpo-pw-talen-amazon-1920mw-ppa:2": {
+      "set": {
+        "sourceRole": "secondary"
+      }
+    },
+    "cpo-pw-talen-amazon-1920mw-ppa:3": {
+      "set": {
+        "sourceRole": "secondary"
+      }
+    },
+    "cpo-dc-eurohpc-aigf-76-eoi:0": {
+      "shorten": "76 expressions of interest",
+      "shortenNote": "Shortened at admission to keep within the quotation limit for this short text (a tenth of its words); the shortened wording is part of the matched passage, and the rest is given by paraphrase."
+    },
+    "cpo-pw-google-nextera-duane-arnold:1": {
+      "shorten": "We expect Duane Arnold to be back online in early 2029",
+      "shortenNote": "Shortened at admission to keep within the quotation limit for this short text (a tenth of its words); the shortened wording is part of the matched passage, and the rest is given by paraphrase."
+    },
+    "cpo-orb-starcloud-1-launch-stated:0": {
+      "shorten": "launched in November 2025",
+      "shortenNote": "Shortened at admission to keep within the quotation limit for this short text (a tenth of its words); the shortened wording is part of the matched passage, and the rest is given by paraphrase."
+    }
+  },
+  "newClaims": [
+    {
+      "part": "1",
+      "id": "cpo-ch-bis-foundry-dd-2025-cites-diffusion",
+      "group": "chips",
+      "topic": "governance",
+      "subject": "us-bis-foundry-dd-ifr-2025",
+      "predicate": "cites",
+      "object": {
+        "kind": "entity",
+        "entityId": "us-bis-ai-diffusion-ifr-2025"
+      },
+      "statement": "The January 2025 foundry due-diligence rule names the AI diffusion rule, which BIS filed for public inspection on 13 January 2025, as “a rule related to this IFR”.",
+      "time": {
+        "kind": "event",
+        "date": "2025-01-16",
+        "basis": "publication",
+        "note": "Dated by the citing rule’s publication in the Federal Register."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "A reference in the rule’s preamble. It does not say that either rule depends on the other, and it says nothing of the rescission of the diffusion rule announced in May 2025 (recorded separately)."
+    },
+    {
+      "part": "1",
+      "id": "cpo-orb-oc7-kolasinski-1989",
+      "group": "new",
+      "subject": "kolasinski-1989-space-radiation-microcircuits",
+      "predicate": "articulates_proposition",
+      "object": {
+        "kind": "entity",
+        "entityId": "oc7-radiation-effects"
+      },
+      "statement": "Kolasinski’s paper on the effects of space radiation on electronic microcircuits (NASA/SDIO workshop proceedings, May 1989) states that single-event upsets appear in computer memories as unexplained bit flips, reports upset rates observed in memories in orbit, and describes efforts to harden payload designs and develop devices resistant to single-event effects.",
+      "time": {
+        "kind": "event",
+        "date": "1989-05",
+        "basis": "publication",
+        "note": "Publication date of the workshop proceedings in NASA’s Technical Reports Server record (May 1989); no day is printed."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "Earliest located among the texts found by the pack’s searches of 2026-10-28 and the cross-family check’s bounded search of 2026-10-29/30, which looked at pre-2024 literature on radiation in space electronics; not a claim that no earlier text exists. The criterion is applied as worded: radiation in orbit disrupts computing hardware (here spacecraft memories and microcircuits), with hardening as the response. The paper concerns spacecraft electronics, not orbital data centres, and argues nothing about placing compute in orbit; the criterion does not require that. It replaces the Lumen Orbit white paper (2024) as earliest located, a correction recorded on the collection page.",
+      "attributes": {
+        "thought": {
+          "roles": ["earliest-located"],
+          "register": "nonfiction"
+        }
+      }
+    },
+    {
+      "part": "1",
+      "id": "cpo-orb-oc8-espi-2025",
+      "group": "new",
+      "subject": "espi-report-98-2025",
+      "predicate": "articulates_proposition",
+      "object": {
+        "kind": "entity",
+        "entityId": "oc8-no-repair"
+      },
+      "statement": "ESPI Report 98 (November 2025) states that in-orbit servicing remains so costly that deorbiting a failed satellite and launching a replacement is generally considered more cost-effective than sending crews for repairs, and that the maintenance cycle of a space-based data centre is expected to depend heavily on redundancy, which itself increases costs.",
+      "time": {
+        "kind": "event",
+        "date": "2025-11-19",
+        "basis": "publication",
+        "note": "Date of publication on the European Space Policy Institute’s report page; the PDF prints “Published: November 2025”."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "Earliest located among the texts found by the pack’s searches of 2026-10-28 and the cross-family check’s bounded search of 2026-10-29/30; not a claim that no earlier text exists. A self-funded policy study; it also reports experts’ suggestion of replacing servers on a five-year cycle by hot-swapping modules, and the development of autonomous repair systems. It replaces the Suncatcher paper (22 November 2025) as earliest located, a correction recorded on the collection page.",
+      "attributes": {
+        "thought": {
+          "roles": ["earliest-located"],
+          "register": "nonfiction"
+        }
+      }
+    },
+    {
+      "part": "1",
+      "id": "cpo-orb-oc9-espi-2025",
+      "group": "new",
+      "subject": "espi-report-98-2025",
+      "predicate": "articulates_proposition",
+      "object": {
+        "kind": "entity",
+        "entityId": "oc9-launch-cost-too-high"
+      },
+      "statement": "ESPI Report 98 (November 2025) models gigawatt-scale space-based data centres against a terrestrial benchmark and finds that, under its modelling assumptions, a constellation architecture has double the benchmark’s capital cost and more than triple its operating cost, and a monolithic architecture an operating cost 38% higher.",
+      "time": {
+        "kind": "event",
+        "date": "2025-11-19",
+        "basis": "publication",
+        "note": "Date of publication on the European Space Policy Institute’s report page; the PDF prints “Published: November 2025”."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "Earliest located among the texts found by the pack’s searches of 2026-10-28 and the cross-family check’s bounded search of 2026-10-29/30; not a claim that no earlier text exists. Architecture-specific and conditional: the report finds the monolithic architecture’s capital cost comparable to the benchmark’s and, with IT hardware lasting over three years, cheaper over its lifetime, and it concludes that the potential for economic feasibility is high if component lifespan and cost, robotic maintenance and launch prices improve. Not a finding for all orbital compute. It replaces Turyshev’s preprint (April 2026) as earliest located, a correction recorded on the collection page.",
+      "attributes": {
+        "thought": {
+          "roles": ["earliest-located"],
+          "register": "nonfiction",
+          "conditions": "The report’s cost model of gigawatt-scale architectures, with a two-year IT-hardware lifetime; its cost equations give expected values without a measure of uncertainty."
+        }
+      }
+    },
+    {
+      "part": "1",
+      "id": "cpo-orb-oc11-aili-2025",
+      "group": "new",
+      "subject": "aili-2025-carbon-neutral-data-centres-in-space",
+      "predicate": "articulates_proposition",
+      "object": {
+        "kind": "entity",
+        "entityId": "oc11-sky-and-debris"
+      },
+      "statement": "Aili, Choi, Ong and Wen’s Perspective on carbon-neutral data centres in space (Nature Electronics, 2025) states that retired orbital hardware ends up as space junk that could burn up in the atmosphere, releasing emissions and other harmful chemicals, a disadvantage compared with terrestrial data centres.",
+      "time": {
+        "kind": "event",
+        "date": "2025-10-27",
+        "basis": "publication",
+        "note": "Online publication date in the publisher’s metadata, as read by the cross-family check on 2026-10-29; this admission did not read the publisher’s page. The proof read here prints “Received: 21 November 2023” and “Accepted: 7 August 2025”."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "Earliest located among the texts found by the pack’s searches of 2026-10-28 and the cross-family check’s bounded search of 2026-10-29/30; not a claim that no earlier text exists. It states the debris and atmospheric element of the proposition, not harm to astronomy. The authors propose orbital data centres; the passage is one of the disadvantages they list. Read in an author-hosted proof whose first page still carries production placeholders; the proof is not assumed identical in every word to the version of record. It replaces the Accademia dei Lincei’s comment (March 2026) as earliest located, a correction recorded on the collection page.",
+      "attributes": {
+        "thought": {
+          "roles": ["earliest-located"],
+          "register": "nonfiction",
+          "attested": {
+            "date": "2025-11-25",
+            "note": "Internet Archive capture of 25 November 2025 of the author-hosted proof, which the cross-family check found byte-identical to the copy retrieved at admission; this admission could not reach the Archive."
+          }
+        }
+      }
+    },
+    {
+      "part": "2",
+      "id": "cpo-orb-landspace-zq2e-y4-launch-stated",
+      "group": "orbital",
+      "topic": "compute",
+      "subject": "landspace",
+      "predicate": "launch_stated",
+      "object": {
+        "kind": "entity",
+        "entityId": "adaspace-xingshidai-39-44-50"
+      },
+      "statement": "LandSpace stated that at 19:40 Beijing time on 14 October 2026 its Zhuque-2E Y4 rocket, launched from the Dongfeng commercial space innovation test zone, placed ten satellites in their planned orbit, among them eight ADA Space Xingshidai satellites (39 and 44 to 50) built by ADA Space mainly to verify high-performance computing payloads, inter-satellite and satellite-to-ground laser communication and large radiative cooling wings.",
+      "time": {
+        "kind": "event",
+        "date": "2026-10-14",
+        "basis": "announcement",
+        "note": "Date of LandSpace’s release; the launch time is the release’s."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "The launch provider’s statement, recorded for what it states (cross-family check, item 120). It does not call the satellites ADA Space’s “Xingsuan” group 02 or part of the Three-Body constellation; ADA Space’s homepage, where the pack read that statement, now serves a suspension notice. A launch is not operation or performance in orbit.",
+      "attributes": {}
+    }
+  ],
+  "newEvidence": [
+    {
+      "id": "evidence-cpo-ch-cn-mofcom-2024-46-us-4",
+      "claimId": "cpo-ch-cn-mofcom-2024-46-us",
+      "source": "ch-mofcom-us-dualuse-2024",
+      "sourceRole": "primary",
+      "support": "supports",
+      "locator": "paragraph 2",
+      "passage": "The paragraph applies this to exports to the United States of gallium-, germanium-, antimony- and superhard-material-related dual-use items.",
+      "passageType": "paraphrase",
+      "reason": "The rest of the quoted sentence, given by paraphrase to keep within the quotation limit for this 225-word text."
+    },
+    {
+      "id": "evidence-cpo-ch-cn-mofcom-2025-70-suspension-4",
+      "claimId": "cpo-ch-cn-mofcom-2025-70-suspension",
+      "source": "ch-mofcom-suspend-70-2025",
+      "sourceRole": "primary",
+      "support": "supports",
+      "locator": "operative sentence",
+      "passage": "The announcements suspended include MOFCOM Announcements No. 61 and No. 62 of 2025 (商务部公告2025年第61号、62号).",
+      "passageType": "paraphrase",
+      "reason": "The announcements named before the quoted words, given by paraphrase to keep within the quotation limit for this 76-word text."
+    },
+    {
+      "id": "evidence-cpo-pw-cn-ai-energy-plan-gw-pilots-2",
+      "claimId": "cpo-pw-cn-ai-energy-plan-gw-pilots",
+      "source": "pw-cn-ai-energy-plan-2026-text",
+      "sourceRole": "primary",
+      "support": "supports",
+      "locator": "二、（一）统筹优化能源资源与算力布局",
+      "passage": "The same sentence opens by taking account of regional energy, water and other carrying capacity, and closes by calling for integrated development of computing–power coordination (算电协同).",
+      "passageType": "paraphrase",
+      "reason": "The rest of the sentence whose middle is quoted."
+    },
+    {
+      "id": "evidence-cpo-ch-cn-mofcom-2025-61-chips-ai-4",
+      "claimId": "cpo-ch-cn-mofcom-2025-61-chips-ai",
+      "source": "ch-mofcom-ree-61-2025",
+      "sourceRole": "primary",
+      "support": "supports",
+      "locator": "Article 4",
+      "passage": "或者研发具有潜在军事用途的人工智能的出口申请，逐案审批",
+      "translation": "or the research and development of artificial intelligence with potential military uses, export applications are examined and approved case by case",
+      "passageType": "quote",
+      "reason": "The end of the sentence whose opening is quoted; the middle names production and test equipment and materials for semiconductors at those processes."
+    },
+    {
+      "id": "evidence-cpo-pw-us-eo14299-ai-dc-defense-3",
+      "claimId": "cpo-pw-us-eo14299-ai-dc-defense",
+      "source": "pw-eo-14299-fr",
+      "sourceRole": "primary",
+      "support": "supports",
+      "locator": "Sec. 4(a), 90 FR 22582",
+      "passage": "as critical defense facilities, where appropriate",
+      "passageType": "quote",
+      "reason": "The limit of the designation that the section states (cross-family check, item 49)."
+    },
+    {
+      "id": "evidence-cpo-pw-us-eo14299-ai-dc-defense-4",
+      "claimId": "cpo-pw-us-eo14299-ai-dc-defense",
+      "source": "pw-eo-14299-fr",
+      "sourceRole": "primary",
+      "support": "supports",
+      "locator": "Sec. 4(a), 90 FR 22582",
+      "passage": "as appropriate and consistent with applicable law",
+      "passageType": "quote",
+      "reason": "The applicable-law limit that the section states for the treatment of the electrical infrastructure (cross-family check, item 49)."
+    },
+    {
+      "id": "evidence-cpo-ch-bis-uae-2026-diffusion-enforcement-3",
+      "claimId": "cpo-ch-bis-uae-2026-diffusion-enforcement",
+      "source": "ch-bis-uae-2026",
+      "sourceRole": "primary",
+      "support": "supports",
+      "locator": "same paragraph, 91 FR 43036 (PDF p. 3)",
+      "passage": "(excluding those also specified in Country Groups A:5 or A:6), and to entities headquartered in or with an ultimate parent headquartered in Country Group D:5 or Macau, wherever located",
+      "passageType": "quote",
+      "reason": "The exclusions and the ultimate-parent condition of the same sentence (cross-family check, item 71)."
+    },
+    {
+      "id": "evidence-cpo-ch-bis-uae-2026-diffusion-enforcement-4",
+      "claimId": "cpo-ch-bis-uae-2026-diffusion-enforcement",
+      "source": "ch-bis-uae-2026",
+      "sourceRole": "primary",
+      "support": "supports",
+      "locator": "same paragraph, 91 FR 43036 (PDF p. 3)",
+      "passage": "Nevertheless, BIS will continue enforcing the license requirement for exports, reexports, and transfers (incountry) of advanced computing items specified in § 742.6(a)(6)(iii)(A) to or within the UAE, except when the ultimate consignee and all end users are UAE Government entities or approved commercial entities",
+      "passageType": "quote",
+      "reason": "The retained UAE licence requirement and its exceptions, stated next in the same paragraph (cross-family check, item 71). The text layer prints “incountry” for “in-country”."
+    },
+    {
+      "id": "evidence-cpo-ch-bis-foundry-dd-2025-cites-diffusion-1",
+      "claimId": "cpo-ch-bis-foundry-dd-2025-cites-diffusion",
+      "source": "ch-bis-foundry-dd-2025",
+      "sourceRole": "primary",
+      "support": "supports",
+      "locator": "Supplementary information, 90 FR 5300 (PDF p. 3)",
+      "passage": "On January 13, 2025, BIS filed for public inspection, a rule related to this IFR, the ‘‘Framework for Artificial Intelligence Diffusion’’ IFR (AI Diffusion IFR)",
+      "passageType": "quote",
+      "reason": "The pack’s context passage on the publication record, admitted as the evidence of this reference instead."
+    },
+    {
+      "id": "evidence-cpo-orb-oc7-kolasinski-1989-1",
+      "claimId": "cpo-orb-oc7-kolasinski-1989",
+      "source": "adm-nasa-1989",
+      "sourceRole": "primary",
+      "support": "supports",
+      "locator": "PDF p. 2 (printed p. 384), introduction",
+      "passage": "In a computer memory, SEUs manifest themselves as unexplained bit flips.",
+      "passageType": "quote",
+      "reason": "Located by the cross-family check (earlier-text search, OC7) and read at admission."
+    },
+    {
+      "id": "evidence-cpo-orb-oc7-kolasinski-1989-2",
+      "claimId": "cpo-orb-oc7-kolasinski-1989",
+      "source": "adm-nasa-1989",
+      "sourceRole": "primary",
+      "support": "supports",
+      "locator": "PDF p. 6 (printed p. 388), “Experience in orbit”",
+      "passage": "the data all seem to cluster around an upset rate of approximately 1 upset per day for a 100,000-bit memory",
+      "passageType": "quote",
+      "reason": "Upset rates observed on spacecraft, which the paper reports under “Experience in orbit”."
+    },
+    {
+      "id": "evidence-cpo-orb-oc7-kolasinski-1989-3",
+      "claimId": "cpo-orb-oc7-kolasinski-1989",
+      "source": "adm-nasa-1989",
+      "sourceRole": "primary",
+      "support": "supports",
+      "locator": "PDF p. 6 (printed p. 388)",
+      "passage": "to harden existing payload designs wherever feasible, and to develop new device technologies resistant to single event effects",
+      "passageType": "quote",
+      "reason": "The responses the paper names: hardening and resistant devices."
+    },
+    {
+      "id": "evidence-cpo-orb-oc8-espi-2025-1",
+      "claimId": "cpo-orb-oc8-espi-2025",
+      "source": "adm-espi-2025",
+      "sourceRole": "primary",
+      "support": "supports",
+      "locator": "PDF p. 41 (printed p. 37), section 4.3",
+      "passage": "The cost of in-orbit servicing remains extremely high, to the extent that deorbiting a failed satellite and launching a replacement is generally considered more cost-effective than sending robotic or human crews for repairs",
+      "passageType": "quote",
+      "reason": "Located by the cross-family check (earlier-text search, OC8) and read at admission."
+    },
+    {
+      "id": "evidence-cpo-orb-oc8-espi-2025-2",
+      "claimId": "cpo-orb-oc8-espi-2025",
+      "source": "adm-espi-2025",
+      "sourceRole": "primary",
+      "support": "supports",
+      "locator": "PDF p. 41 (printed p. 37), section 4.3",
+      "passage": "The maintenance cycle is expected to depend heavily on redundancy, which in itself increases costs.",
+      "passageType": "quote",
+      "reason": "The report’s statement on redundancy."
+    },
+    {
+      "id": "evidence-cpo-orb-oc8-espi-2025-3",
+      "claimId": "cpo-orb-oc8-espi-2025",
+      "source": "adm-espi-page",
+      "sourceRole": "primary",
+      "support": "context",
+      "locator": "report page, heading",
+      "passage": "Published: 19 November 2025",
+      "passageType": "quote",
+      "reason": "The publisher’s date for the report, which dates the record."
+    },
+    {
+      "id": "evidence-cpo-orb-oc9-espi-2025-1",
+      "claimId": "cpo-orb-oc9-espi-2025",
+      "source": "adm-espi-2025",
+      "sourceRole": "primary",
+      "support": "supports",
+      "locator": "PDF p. 46 (printed p. 42), Annex A, “Results and Discussion”",
+      "passage": "the constellation architecture is not nearly as competitive as the monolithic architecture in the GW-scale. Its CapEx is double the TBDCs and its OpEx more than triple.",
+      "passageType": "quote",
+      "reason": "Located by the cross-family check (earlier-text search, OC9) and read at admission."
+    },
+    {
+      "id": "evidence-cpo-orb-oc9-espi-2025-2",
+      "claimId": "cpo-orb-oc9-espi-2025",
+      "source": "adm-espi-2025",
+      "sourceRole": "primary",
+      "support": "supports",
+      "locator": "PDF p. 46 (printed p. 42), Annex A, “Results and Discussion”",
+      "passage": "With respect to OpEx it’s still 38% more expensive than the TBDC given the modelling assumptions.",
+      "passageType": "quote",
+      "reason": "The monolithic architecture’s operating cost, as the report states it."
+    },
+    {
+      "id": "evidence-cpo-orb-oc9-espi-2025-3",
+      "claimId": "cpo-orb-oc9-espi-2025",
+      "source": "adm-espi-2025",
+      "sourceRole": "primary",
+      "support": "context",
+      "locator": "PDF p. 46 (printed p. 42), Annex A",
+      "passage": "In conclusion, the potential for SBDCs being economically feasible is high.",
+      "passageType": "quote",
+      "reason": "The report’s own conclusion, which must be read with the cost findings."
+    },
+    {
+      "id": "evidence-cpo-orb-oc9-espi-2025-4",
+      "claimId": "cpo-orb-oc9-espi-2025",
+      "source": "adm-espi-2025",
+      "sourceRole": "primary",
+      "support": "context",
+      "locator": "PDF pp. 46–47 (printed pp. 42–43), Annex A",
+      "passage": "The report says the monolithic architecture becomes cheaper than the benchmark over its lifetime if IT hardware lasts over three years, uses a two-year lifetime in its model, names a launch cost under $150/kg among its conditions for viability, and gives expected costs without a measure of uncertainty.",
+      "passageType": "paraphrase",
+      "reason": "The model’s conditions and limits."
+    },
+    {
+      "id": "evidence-cpo-orb-oc11-aili-2025-1",
+      "claimId": "cpo-orb-oc11-aili-2025",
+      "source": "adm-ntu-2025",
+      "sourceRole": "primary",
+      "support": "supports",
+      "locator": "PDF p. 7, “End of life-cycle”",
+      "passage": "Retired hardware ends up as space junk and eventually could burn up in the atmosphere, releasing a small amount of scope 3 emissions and other harmful chemicals",
+      "passageType": "quote",
+      "reason": "Located by the cross-family check (earlier-text search, OC11) and read at admission."
+    },
+    {
+      "id": "evidence-cpo-orb-oc11-aili-2025-2",
+      "claimId": "cpo-orb-oc11-aili-2025",
+      "source": "adm-ntu-2025",
+      "sourceRole": "primary",
+      "support": "supports",
+      "locator": "PDF p. 7, “End of life-cycle”",
+      "passage": "This is a disadvantage compared with terrestrial data centres, where retired components can be readily reused or recycled",
+      "passageType": "quote",
+      "reason": "The comparison the passage draws."
+    },
+    {
+      "id": "evidence-cpo-pw-crane-nrc-fuel-amendment-2",
+      "claimId": "cpo-pw-crane-nrc-fuel-amendment",
+      "source": "adm-nrc-ccec",
+      "sourceRole": "primary",
+      "support": "supports",
+      "locator": "Other Licensing Actions, request of June 27, 2025",
+      "passage": "By Amendment No. 307, dated July 1, 2026, the NRC staff approved Constellation's request.",
+      "passageType": "quote",
+      "reason": "The regulator’s own record (cross-family check, item 34)."
+    },
+    {
+      "id": "evidence-cpo-pw-crane-nrc-fuel-amendment-3",
+      "claimId": "cpo-pw-crane-nrc-fuel-amendment",
+      "source": "adm-nrc-ccec",
+      "sourceRole": "primary",
+      "support": "supports",
+      "locator": "Other Licensing Actions, request of June 27, 2025",
+      "passage": "receipt and possession of new nuclear fuel and new sealed neutron sources at the CCEC",
+      "passageType": "quote",
+      "reason": "What the amended licence covers."
+    },
+    {
+      "id": "evidence-cpo-pw-entergy-lpsc-meta-gas-7",
+      "claimId": "cpo-pw-entergy-lpsc-meta-gas",
+      "source": "adm-lpsc-order",
+      "sourceRole": "primary",
+      "support": "supports",
+      "locator": "Order U-37425, PDF p. 1",
+      "passage": "Decided at the August 20, 2025 Business and Executive Session.",
+      "passageType": "quote",
+      "reason": "The regulator’s own record (cross-family check, item 40)."
+    },
+    {
+      "id": "evidence-cpo-pw-entergy-lpsc-meta-gas-8",
+      "claimId": "cpo-pw-entergy-lpsc-meta-gas",
+      "source": "adm-lpsc-order",
+      "sourceRole": "primary",
+      "support": "supports",
+      "locator": "Order U-37425, PDF p. 8, signature block",
+      "passage": "The order states that it is effective immediately and is dated at Baton Rouge on 29 August 2025.",
+      "passageType": "paraphrase",
+      "reason": "The written order’s date and effect, given by paraphrase because the scanned text layer repeats words."
+    },
+    {
+      "id": "evidence-cpo-pw-ferc-susquehanna-isa-rejected-6",
+      "claimId": "cpo-pw-ferc-susquehanna-isa-rejected",
+      "source": "adm-ferc-er24-2172",
+      "sourceRole": "primary",
+      "support": "supports",
+      "locator": "189 FERC ¶ 61,078, PDF p. 1, paragraph 1",
+      "passage": "to increase the amount of Co-Located Load from 300 megawatts (MW) to 480 MW",
+      "passageType": "quote",
+      "reason": "The regulator’s own order (cross-family check, item 44)."
+    },
+    {
+      "id": "evidence-cpo-pw-ferc-susquehanna-isa-rejected-7",
+      "claimId": "cpo-pw-ferc-susquehanna-isa-rejected",
+      "source": "adm-ferc-er24-2172",
+      "sourceRole": "primary",
+      "support": "supports",
+      "locator": "189 FERC ¶ 61,078, PDF p. 1, paragraph 1",
+      "passage": "In this order, we reject the Amended ISA.",
+      "passageType": "quote",
+      "reason": "The decision as the order states it."
+    },
+    {
+      "id": "evidence-cpo-pw-shelby-xai-turbine-permit-4",
+      "claimId": "cpo-pw-shelby-xai-turbine-permit",
+      "source": "adm-shelby-permit-capture",
+      "sourceRole": "primary",
+      "support": "supports",
+      "locator": "Construction Permit 01156-01PC, PDF p. 1",
+      "passage": "The permit, issued on 2 July 2025 to CTC Property LLC, covers fifteen Solar SMT-130 natural gas-fired combustion turbines of 16.48 MW each and prints an expiry of 2 January 2027.",
+      "passageType": "paraphrase",
+      "reason": "The regulator’s own permit, as the cross-family check read it in an Internet Archive capture of 3 July 2025 (visual inspection of the scan); not read at admission."
+    },
+    {
+      "id": "evidence-cpo-pw-talen-aws-cumulus-sale-4",
+      "claimId": "cpo-pw-talen-aws-cumulus-sale",
+      "source": "adm-talen-sale-capture",
+      "sourceRole": "primary",
+      "support": "supports",
+      "locator": "release of 4 March 2024",
+      "passage": "Talen announces the sale of its Cumulus data-centre campus, connected to the Susquehanna plant; the release does not name the buyer.",
+      "passageType": "paraphrase",
+      "reason": "Talen’s own release, as the cross-family check read it in an Internet Archive capture; not read at admission."
+    },
+    {
+      "id": "evidence-cpo-pw-talen-aws-cumulus-sale-5",
+      "claimId": "cpo-pw-talen-aws-cumulus-sale",
+      "source": "adm-talen-results-capture",
+      "sourceRole": "primary",
+      "support": "supports",
+      "locator": "results release of 14 March 2024",
+      "passage": "Talen’s results release names Amazon Web Services as the buyer of the Cumulus campus.",
+      "passageType": "paraphrase",
+      "reason": "Talen’s results, as the cross-family check read them in an Internet Archive capture; not read at admission."
+    },
+    {
+      "id": "evidence-cpo-pw-talen-amazon-1920mw-ppa-5",
+      "claimId": "cpo-pw-talen-amazon-1920mw-ppa",
+      "source": "adm-talen-ppa-capture",
+      "sourceRole": "primary",
+      "support": "supports",
+      "locator": "release of 11 June 2025",
+      "passage": "Talen announces an expanded power purchase agreement with Amazon for electricity from the Susquehanna plant, as reported the next day.",
+      "passageType": "paraphrase",
+      "reason": "Talen’s own release, as the cross-family check read it in an Internet Archive capture and found to corroborate the report; not read at admission."
+    },
+    {
+      "id": "evidence-cpo-orb-landspace-zq2e-y4-launch-stated-1",
+      "claimId": "cpo-orb-landspace-zq2e-y4-launch-stated",
+      "source": "adm-landspace-78",
+      "sourceRole": "primary",
+      "support": "supports",
+      "locator": "release, paragraph 1",
+      "passage": "北京时间2026年10月14日19时40分",
+      "passageType": "quote",
+      "reason": "The launch provider’s own release (cross-family check, item 120).",
+      "translation": "at 19:40 Beijing time on 14 October 2026"
+    },
+    {
+      "id": "evidence-cpo-orb-landspace-zq2e-y4-launch-stated-2",
+      "claimId": "cpo-orb-landspace-zq2e-y4-launch-stated",
+      "source": "adm-landspace-78",
+      "sourceRole": "primary",
+      "support": "supports",
+      "locator": "release, paragraph 3",
+      "passage": "主要开展高性能计算载荷、星间/星地高速激光通信、大尺寸辐冷翼等技术验证",
+      "passageType": "quote",
+      "reason": "What the eight satellites are for, as LandSpace states.",
+      "translation": "mainly to carry out technology verification of high-performance computing payloads, inter-satellite and satellite-to-ground high-speed laser communication and large radiative cooling wings"
+    },
+    {
+      "id": "evidence-cpo-orb-landspace-zq2e-y4-launch-stated-3",
+      "claimId": "cpo-orb-landspace-zq2e-y4-launch-stated",
+      "source": "adm-landspace-78",
+      "sourceRole": "primary",
+      "support": "supports",
+      "locator": "release, paragraphs 1 and 3",
+      "passage": "The Zhuque-2E Y4 rocket lifted off from LandSpace’s launch position in the Dongfeng commercial space innovation test zone carrying ten satellites, among them ADA Space’s Xingshidai-39 and Xingshidai-44 to -50, built by ADA Space, and placed them in their planned orbit.",
+      "passageType": "paraphrase",
+      "reason": "The rest of the launch statement."
+    },
+    {
+      "id": "x-eurohpc",
+      "claimId": "cpo-dc-eurohpc-aigf-76-eoi",
+      "source": "dc-eurohpc-aigf-consultations",
+      "sourceRole": "primary",
+      "support": "supports",
+      "locator": "paragraph 2",
+      "passage": "The page says the expressions of interest propose AI gigafactories in 16 Member States across 60 different sites and have been submitted.",
+      "passageType": "paraphrase",
+      "reason": "The rest of the shortened sentence."
+    },
+    {
+      "id": "x-duane",
+      "claimId": "cpo-pw-google-nextera-duane-arnold",
+      "source": "pw-google-duane-arnold-2025",
+      "sourceRole": "primary",
+      "support": "supports",
+      "locator": "same sentence",
+      "passage": "The same sentence says the plant will provide more than 600 MW.",
+      "passageType": "paraphrase",
+      "reason": "The rest of the shortened sentence."
+    },
+    {
+      "id": "x-starcloud",
+      "claimId": "cpo-orb-starcloud-1-launch-stated",
+      "source": "orb-starcloud-1",
+      "sourceRole": "primary",
+      "support": "supports",
+      "locator": "launch statement",
+      "passage": "Starcloud says the satellite carried an NVIDIA H100 GPU, which it calls the first in space; the priority wording is Starcloud’s.",
+      "passageType": "paraphrase",
+      "reason": "The rest of the shortened passage."
+    }
+  ],
+  "documents": {
+    "us-eo-14141-2025": {
+      "name": "Executive Order 14141: Advancing United States Leadership in Artificial Intelligence Infrastructure",
+      "shortName": "EO 14141 (2025)",
+      "subtype": "Executive order",
+      "aliases": ["Executive Order 14141"],
+      "description": "The US executive order signed on 14 January 2025 and published in the Federal Register on 17 January 2025, on leasing federal sites for frontier AI data centres and their clean power. Revoked by Executive Order 14318 of 23 July 2025. Records state what the text says, not implementation or compliance.",
+      "sources": ["pw-eo-14141-fr"],
+      "documentVersion": {
+        "family": "us-eo-14141",
+        "label": "As published in the Federal Register (17 January 2025)",
+        "publisherId": "us-white-house",
+        "publishedAt": "2025-01-17",
+        "dateNote": "Signed on 14 January 2025; published in the Federal Register of 17 January 2025."
+      }
+    },
+    "us-eo-14299-2025": {
+      "name": "Executive Order 14299: Deploying Advanced Nuclear Reactor Technologies for National Security",
+      "shortName": "EO 14299 (2025)",
+      "subtype": "Executive order",
+      "aliases": ["Executive Order 14299"],
+      "description": "The US executive order signed on 23 May 2025 and published in the Federal Register on 29 May 2025, on advanced nuclear reactors at military and Department of Energy sites, including power for AI data centres. Records state what the text says, not implementation or compliance.",
+      "sources": ["pw-eo-14299-fr"],
+      "documentVersion": {
+        "family": "us-eo-14299",
+        "label": "As published in the Federal Register (29 May 2025)",
+        "publisherId": "us-white-house",
+        "publishedAt": "2025-05-29",
+        "dateNote": "Signed on 23 May 2025; published in the Federal Register of 29 May 2025."
+      }
+    },
+    "us-eo-14318-2025": {
+      "name": "Executive Order 14318: Accelerating Federal Permitting of Data Center Infrastructure",
+      "shortName": "EO 14318 (2025)",
+      "subtype": "Executive order",
+      "aliases": ["Executive Order 14318"],
+      "description": "The US executive order signed on 23 July 2025 and published in the Federal Register on 28 July 2025, on federal permitting for data-centre projects; it revokes Executive Order 14141. Records state what the text says, not implementation or compliance.",
+      "sources": ["pw-eo-14318-fr"],
+      "documentVersion": {
+        "family": "us-eo-14318",
+        "label": "As published in the Federal Register (28 July 2025)",
+        "publisherId": "us-white-house",
+        "publishedAt": "2025-07-28",
+        "dateNote": "Signed on 23 July 2025; published in the Federal Register of 28 July 2025."
+      }
+    },
+    "us-proc-11014-2026": {
+      "name": "Proclamation 11014: Ratepayer Protection Pledge",
+      "shortName": "Proclamation 11014 (2026)",
+      "subtype": "Declaration or statement",
+      "aliases": ["Proclamation 11014"],
+      "description": "A US presidential proclamation signed on 4 March 2026 and published in the Federal Register on 9 March 2026, declaring the Ratepayer Protection Pledge, a voluntary commitment by companies on the power supply of their data centres, national policy. Records state what the text says, not implementation or compliance.",
+      "sources": ["pw-proc-11014-fr"],
+      "documentVersion": {
+        "family": "us-proc-11014",
+        "label": "As published in the Federal Register (9 March 2026)",
+        "publisherId": "us-white-house",
+        "publishedAt": "2026-03-09",
+        "dateNote": "Signed on 4 March 2026; published in the Federal Register of 9 March 2026."
+      }
+    },
+    "tx-sb6-2025": {
+      "name": "Texas S.B. 6 (89th Legislature): planning for, interconnection and operation of, and costs of serving certain electrical loads",
+      "shortName": "Texas S.B. 6 (2025)",
+      "subtype": "Statute",
+      "aliases": ["Texas Senate Bill 6 (2025)"],
+      "description": "A Texas act of the 89th Legislature on large electrical loads, signed by the Governor and effective on 20 June 2025, as enrolled. Records state what the text says, not implementation or compliance.",
+      "sources": ["pw-tx-sb6-2025", "pw-tx-sb6-history"],
+      "documentVersion": {
+        "family": "tx-sb6",
+        "label": "Enrolled version",
+        "publisherId": "texas-legislature",
+        "effectiveAt": "2025-06-20",
+        "dateNote": "Signed by the Governor and effective immediately on 20 June 2025, as the bill history records; the enrolled text certifies Senate passage on 19 March 2025 and concurrence in House amendments on 29 May 2025."
+      }
+    },
+    "uk-ai-opportunities-action-plan-2025": {
+      "name": "AI Opportunities Action Plan",
+      "shortName": "UK AI Opportunities Action Plan (2025)",
+      "subtype": "Report",
+      "aliases": [],
+      "description": "An independent report to the UK government, published by the Department for Science, Innovation and Technology on 13 January 2025. A recommendation in it is not government policy, a designation or an implementation.",
+      "sources": ["pw-uk-ai-opportunities-2025"],
+      "documentVersion": {
+        "family": "uk-ai-opportunities-action-plan",
+        "label": "GOV.UK HTML publication (13 January 2025)",
+        "publisherId": "dsit",
+        "publishedAt": "2025-01-13",
+        "dateNote": "Publication date from the GOV.UK page."
+      }
+    },
+    "cn-dc-green-low-carbon-plan-2024": {
+      "name": "Special Action Plan for the Green and Low-Carbon Development of Data Centres (数据中心绿色低碳发展专项行动计划)",
+      "shortName": "China data-centre green and low-carbon plan (2024)",
+      "subtype": "Policy plan",
+      "aliases": ["数据中心绿色低碳发展专项行动计划", "发改环资〔2024〕970号"],
+      "description": "A plan issued by the NDRC, MIIT, the National Energy Administration and the National Data Administration under document number 发改环资〔2024〕970号, dated 3 July 2024, as posted on gov.cn. The Chinese text is the inspected expression; English renderings in Selekoa records are machine translations. A plan states targets and tasks, not implementation.",
+      "sources": ["pw-cn-dc-green-plan-2024"],
+      "documentVersion": {
+        "family": "cn-dc-green-low-carbon-plan",
+        "label": "Notice and attached plan as posted on gov.cn",
+        "publisherId": "cn-ndrc",
+        "publishedAt": "2024-07-03",
+        "dateNote": "Date of writing (成文日期) on the gov.cn notice page, 3 July 2024, recorded as its date of issue; the attachment’s file name is dated 2024-07-24, and the NDRC’s own release was not retrieved."
+      }
+    },
+    "cn-ai-energy-plan-2026": {
+      "name": "Action Plan on Promoting Two-Way Empowerment of Artificial Intelligence and Energy (关于促进人工智能与能源双向赋能的行动方案)",
+      "shortName": "China AI–energy action plan (2026)",
+      "subtype": "Policy plan",
+      "aliases": [
+        "关于促进人工智能与能源双向赋能的行动方案",
+        "国能发科技〔2026〕34号"
+      ],
+      "description": "A plan issued by the National Energy Administration with the NDRC, MIIT and the National Data Administration as 国能发科技〔2026〕34号, dated 8 April 2026 and published on 8 May 2026, read in a provincial government reprint. English renderings in Selekoa records are machine translations. A plan states tasks, not implementation.",
+      "sources": [
+        "pw-cn-ai-energy-plan-2026-text",
+        "pw-cn-ai-energy-plan-2026"
+      ],
+      "documentVersion": {
+        "family": "cn-ai-energy-plan",
+        "label": "Notice and plan as reprinted on hlj.gov.cn",
+        "publisherId": "cn-nea",
+        "publishedAt": "2026-04-08",
+        "dateNote": "Issuing date under the signatures (2026年4月8日), recorded as its date of issue; the reprint gives a release date (发布日期) of 8 May 2026."
+      }
+    },
+    "cn-mofcom-gac-2023-23": {
+      "name": "MOFCOM–GAC Announcement No. 23 of 2023 on export controls on gallium- and germanium-related items (商务部 海关总署公告2023年第23号)",
+      "shortName": "MOFCOM–GAC Announcement 23/2023",
+      "subtype": "Regulation",
+      "aliases": ["商务部 海关总署公告2023年第23号"],
+      "description": "A joint announcement of the Ministry of Commerce and the General Administration of Customs dated 3 July 2023, effective 1 August 2023, as served by MOFCOM’s Bureau of Industry Security subsite. English renderings in Selekoa records are machine translations. A licensing requirement is not a ban, and the text does not mention chips or AI.",
+      "sources": ["ch-mofcom-ga-ge-2023"],
+      "documentVersion": {
+        "family": "cn-mofcom-gac-2023-23-family",
+        "label": "As served by the MOFCOM Bureau of Industry Security subsite",
+        "publisherId": "cn-mofcom",
+        "publishedAt": "2023-07-03",
+        "effectiveAt": "2023-08-01",
+        "dateNote": "Issue date from the date line and the page’s document date (发文日期), recorded as its date of issue; effective date from Article 8."
+      }
+    },
+    "cn-mofcom-2024-46": {
+      "name": "MOFCOM Announcement No. 46 of 2024 on strengthening export controls on related dual-use items to the United States (商务部公告2024年第46号)",
+      "shortName": "MOFCOM Announcement 46/2024",
+      "subtype": "Regulation",
+      "aliases": ["商务部公告2024年第46号"],
+      "description": "A Ministry of Commerce announcement dated 3 December 2024 and effective on publication. Its paragraph 2 was suspended from 9 November 2025 to 27 November 2026 by Announcement No. 72 of 2025. English renderings in Selekoa records are machine translations.",
+      "sources": ["ch-mofcom-us-dualuse-2024"],
+      "documentVersion": {
+        "family": "cn-mofcom-2024-46-family",
+        "label": "As served by www.mofcom.gov.cn",
+        "publisherId": "cn-mofcom",
+        "publishedAt": "2024-12-03",
+        "effectiveAt": "2024-12-03",
+        "dateNote": "Document date (发文日期) 3 December 2024, recorded as its date of issue; effective on publication per its text."
+      }
+    },
+    "cn-mofcom-2025-61": {
+      "name": "MOFCOM Announcement No. 61 of 2025 on export controls on related foreign rare-earth items (商务部公告2025年第61号)",
+      "shortName": "MOFCOM Announcement 61/2025",
+      "subtype": "Regulation",
+      "aliases": ["商务部公告2025年第61号"],
+      "description": "A Ministry of Commerce announcement dated 9 October 2025, suspended from 7 November 2025 to 10 November 2026 by MOFCOM–GAC Announcement No. 70 of 2025. Its attachment (the item list) was not retrieved. English renderings in Selekoa records are machine translations.",
+      "sources": ["ch-mofcom-ree-61-2025"],
+      "documentVersion": {
+        "family": "cn-mofcom-2025-61-family",
+        "label": "As served by the MOFCOM Bureau of Industry Security subsite",
+        "publisherId": "cn-mofcom",
+        "publishedAt": "2025-10-09",
+        "dateNote": "Document date 9 October 2025, recorded as its date of issue; part 1(3) effective on publication and parts 1(1) and 1(2) from 1 December 2025 (Article 8)."
+      }
+    },
+    "cn-mofcom-gac-2025-70": {
+      "name": "MOFCOM–GAC Announcement No. 70 of 2025 suspending Announcements Nos. 55–58, 61 and 62 of 2025 (商务部、海关总署公告2025年第70号)",
+      "shortName": "MOFCOM–GAC Announcement 70/2025",
+      "subtype": "Regulation",
+      "aliases": ["商务部、海关总署公告2025年第70号"],
+      "description": "A joint announcement of the Ministry of Commerce and the General Administration of Customs dated 7 November 2025, suspending six earlier announcements until 10 November 2026. English renderings in Selekoa records are machine translations.",
+      "sources": ["ch-mofcom-suspend-70-2025"],
+      "documentVersion": {
+        "family": "cn-mofcom-gac-2025-70-family",
+        "label": "As served by www.mofcom.gov.cn",
+        "publisherId": "cn-mofcom",
+        "publishedAt": "2025-11-07",
+        "dateNote": "Date line and document date (发文日期) 7 November 2025, recorded as its date of issue."
+      }
+    },
+    "us-bis-acr-ifr-2023": {
+      "name": "Implementation of Additional Export Controls: Certain Advanced Computing Items; Supercomputer and Semiconductor End Use; Updates and Corrections (interim final rule)",
+      "shortName": "BIS advanced computing rule (2023)",
+      "subtype": "Regulation",
+      "aliases": [],
+      "description": "The Bureau of Industry and Security’s interim final rule published in the Federal Register on 25 October 2023 (88 FR 73458), effective 17 November 2023, revising the advanced computing controls of October 2022. Records state what the text says, not implementation or compliance.",
+      "sources": ["ch-bis-acr-2023"],
+      "documentVersion": {
+        "family": "us-bis-acr-ifr",
+        "label": "As published in the Federal Register (25 October 2023), 88 FR 73458",
+        "publisherId": "us-bureau-of-industry-and-security",
+        "publishedAt": "2023-10-25",
+        "effectiveAt": "2023-11-17",
+        "dateNote": "Both dates from the Federal Register print (masthead and DATES)."
+      }
+    },
+    "us-bis-fdp-hbm-ifr-2024": {
+      "name": "Foreign-Produced Direct Product Rule Additions, and Refinements to Controls for Advanced Computing and Semiconductor Manufacturing Items (interim final rule)",
+      "shortName": "BIS foreign direct product and HBM rule (2024)",
+      "subtype": "Regulation",
+      "aliases": [],
+      "description": "The Bureau of Industry and Security’s interim final rule published in the Federal Register on 5 December 2024 (89 FR 96790), effective 2 December 2024, adding controls on high bandwidth memory among others. Records state what the text says, not implementation or compliance.",
+      "sources": ["ch-bis-fdpr-hbm-2024"],
+      "documentVersion": {
+        "family": "us-bis-fdp-hbm-ifr",
+        "label": "As published in the Federal Register (5 December 2024), 89 FR 96790",
+        "publisherId": "us-bureau-of-industry-and-security",
+        "publishedAt": "2024-12-05",
+        "effectiveAt": "2024-12-02",
+        "dateNote": "Federal Register print; the effective date precedes publication."
+      }
+    },
+    "us-bis-foundry-dd-ifr-2025": {
+      "name": "Implementation of Additional Due Diligence Measures for Advanced Computing Integrated Circuits (interim final rule)",
+      "shortName": "BIS foundry due-diligence rule (2025)",
+      "subtype": "Regulation",
+      "aliases": [],
+      "description": "The Bureau of Industry and Security’s interim final rule published in the Federal Register on 16 January 2025 (90 FR 5298), effective that day, on due diligence by foundries and OSAT companies for advanced computing ICs. Records state what the text says, not implementation or compliance.",
+      "sources": ["ch-bis-foundry-dd-2025"],
+      "documentVersion": {
+        "family": "us-bis-foundry-dd-ifr",
+        "label": "As published in the Federal Register (16 January 2025), 90 FR 5298",
+        "publisherId": "us-bureau-of-industry-and-security",
+        "publishedAt": "2025-01-16",
+        "effectiveAt": "2025-01-16",
+        "dateNote": "Federal Register print; compliance date 31 January 2025."
+      }
+    },
+    "us-bis-gp10-guidance-2025": {
+      "name": "Guidance on Application of General Prohibition 10 (GP10) to People’s Republic of China (PRC) Advanced-Computing Integrated Circuits (ICs)",
+      "shortName": "BIS GP10 guidance (2025)",
+      "subtype": "Guidance",
+      "aliases": [],
+      "description": "Guidance of the Bureau of Industry and Security dated 13 May 2025 on the use of PRC advanced-computing ICs, including Huawei Ascend chips, under General Prohibition 10. Guidance states the agency’s view, not a finding about any transaction.",
+      "sources": ["ch-bis-gp10-guidance-2025"],
+      "documentVersion": {
+        "family": "us-bis-gp10-guidance",
+        "label": "BIS guidance PDF dated 13 May 2025, as served on 2026-10-28",
+        "publisherId": "us-bureau-of-industry-and-security",
+        "publishedAt": "2025-05-13",
+        "dateNote": "Date printed on the guidance, recorded as its date of issue."
+      }
+    },
+    "us-bis-license-policy-rule-2026": {
+      "name": "Revision to License Review Policy for Advanced Computing Commodities (final rule)",
+      "shortName": "BIS licence review policy rule (2026)",
+      "subtype": "Regulation",
+      "aliases": [],
+      "description": "The Bureau of Industry and Security’s final rule published in the Federal Register on 15 January 2026 (91 FR 1684), effective that day, changing the licence review policy for certain advanced computing commodities to China and Macau. Records state what the text says, not licences granted or shipments.",
+      "sources": ["ch-bis-license-policy-2026"],
+      "documentVersion": {
+        "family": "us-bis-license-policy-rule",
+        "label": "As published in the Federal Register (15 January 2026), 91 FR 1684",
+        "publisherId": "us-bureau-of-industry-and-security",
+        "publishedAt": "2026-01-15",
+        "effectiveAt": "2026-01-15",
+        "dateNote": "Federal Register print."
+      }
+    },
+    "us-bis-uae-rule-2026": {
+      "name": "Enhanced Favorable Treatment for the United Arab Emirates Under the Export Administration Regulations (final rule)",
+      "shortName": "BIS UAE rule (2026)",
+      "subtype": "Regulation",
+      "aliases": [],
+      "description": "The Bureau of Industry and Security’s final rule published in the Federal Register on 14 July 2026 (91 FR 43034), effective 10 July 2026. Its preamble also states how BIS enforces the worldwide licence requirement for advanced computing items. Records state what the text says, not implementation or compliance.",
+      "sources": ["ch-bis-uae-2026"],
+      "documentVersion": {
+        "family": "us-bis-uae-rule",
+        "label": "As published in the Federal Register (14 July 2026), 91 FR 43034",
+        "publisherId": "us-bureau-of-industry-and-security",
+        "publishedAt": "2026-07-14",
+        "effectiveAt": "2026-07-10",
+        "dateNote": "Federal Register print; the effective date precedes publication."
+      }
+    },
+    "lumen-orbit-wp-2024": {
+      "name": "Why we should train AI in space",
+      "shortName": "Lumen Orbit white paper (2024)",
+      "subtype": "Technical report",
+      "aliases": ["Lumen Orbit white paper v1.01"],
+      "description": "White paper v1.01 of Lumen Orbit, Inc. (renamed Starcloud in 2025), by Ezra Feilden, Adi Oltean and Philip Johnston, dated September 2024 on its cover. The earliest copy located is an Internet Archive capture of 24 December 2024.",
+      "sources": ["orb-lumen-wp-gh"]
+    },
+    "suncatcher-blog-2025": {
+      "name": "Exploring a space-based, scalable AI infrastructure system design",
+      "shortName": "Google Research, Project Suncatcher post (2025)",
+      "subtype": "Blog post",
+      "aliases": ["Project Suncatcher"],
+      "description": "A Google Research blog post of 4 November 2025 by Travis Beals introducing Project Suncatcher, a design study of solar-powered satellite constellations carrying TPUs.",
+      "sources": ["orb-suncatcher-blog"]
+    },
+    "suncatcher-paper-2025": {
+      "name": "Towards a future space-based, highly scalable AI infrastructure system design",
+      "shortName": "Agüera y Arcas et al., Suncatcher paper (2025)",
+      "subtype": "Preprint",
+      "aliases": [],
+      "description": "A preprint by nine Google authors, arXiv:2511.19468, version 1 of 22 November 2025. Not peer-reviewed as recorded.",
+      "sources": ["orb-suncatcher-arxiv-v1"]
+    },
+    "nvidia-starcloud-blog-2025": {
+      "name": "How Starcloud Is Bringing Data Centers to Outer Space",
+      "shortName": "NVIDIA blog on Starcloud (2025)",
+      "subtype": "Blog post",
+      "aliases": [],
+      "description": "An NVIDIA blog post of 15 October 2025 by Angie Lee, relaying statements by Starcloud’s chief executive Philip Johnston.",
+      "sources": ["orb-nvidia-starcloud-blog"]
+    },
+    "ascend-results-release-2024": {
+      "name": "Thales Alenia Space reveals results of ASCEND feasibility study on space data centers",
+      "shortName": "Thales Alenia Space, ASCEND results (2024)",
+      "subtype": "Press release",
+      "aliases": ["ASCEND"],
+      "description": "A Thales Alenia Space press release dated Cannes, 27 June 2024, summarising the ASCEND feasibility study; the study report was not read.",
+      "sources": ["orb-tas-ascend-results"]
+    },
+    "axiom-odc-release-2025": {
+      "name": "Axiom Space to Launch Orbital Data Center Nodes to Support National Security, Commercial, International Customers",
+      "shortName": "Axiom Space, orbital data-centre nodes (2025)",
+      "subtype": "Press release",
+      "aliases": [],
+      "description": "An Axiom Space press release of 7 April 2025.",
+      "sources": ["orb-axiom-odc-2025"]
+    },
+    "spacex-xai-update-2026": {
+      "name": "xAI joins SpaceX to Accelerate Humanity’s Future",
+      "shortName": "SpaceX update on xAI (2026)",
+      "subtype": "Letter",
+      "aliases": [],
+      "description": "A SpaceX update of 2 February 2026, signed “Elon”, announcing that xAI joins SpaceX and arguing for orbital compute; read through spacex.com’s content API.",
+      "sources": ["orb-spacex-xai"]
+    },
+    "lincei-fcc-comment-2026": {
+      "name": "Comment of the Accademia Nazionale dei Lincei on SpaceX’s Application for Orbital Data Centers",
+      "shortName": "Accademia dei Lincei, comment to the FCC (2026)",
+      "subtype": "Comment",
+      "aliases": [],
+      "description": "A comment signed on 3 March 2026 on SpaceX’s FCC application for an orbital data-centre system (ICFS File No. SAT-LOA-20260108-00016), posted on lincei.it.",
+      "sources": ["orb-lincei-fcc-pdf"]
+    },
+    "marcy-odc-2026": {
+      "name": "The Impact of Computing Data Centres Orbiting Earth",
+      "shortName": "Marcy, Impact of orbiting data centres (2026)",
+      "subtype": "Preprint",
+      "aliases": [],
+      "description": "A preprint by Geoffrey W. Marcy, arXiv:2603.28829, version of 29 March 2026, marked as submitted to Monthly Notices of the Royal Astronomical Society Letters.",
+      "sources": ["orb-impact-odc-2026"]
+    },
+    "turyshev-odc-2026": {
+      "name": "Orbital Data Centers: Spacecraft Constraints and Economic Viability",
+      "shortName": "Turyshev, Orbital data centers (2026)",
+      "subtype": "Preprint",
+      "aliases": [],
+      "description": "A preprint by Slava G. Turyshev, arXiv:2604.27197, version 1 of 29 April 2026.",
+      "sources": ["orb-turyshev-2026"]
+    },
+    "cavalier-spectrum-2026": {
+      "name": "Why Thermodynamics Rules Future Orbital Data Centers",
+      "shortName": "Cavalier, IEEE Spectrum (2026)",
+      "subtype": "Magazine article",
+      "aliases": [],
+      "description": "A signed article by Andrew Cavalier of ABI Research in IEEE Spectrum, 11 June 2026.",
+      "sources": ["orb-ieee-odc-heat"]
+    },
+    "swf-odc-filings-post-2026": {
+      "name": "SWF publishes three FCC filings addressing recent applications for orbital data centers",
+      "shortName": "Secure World Foundation post (2026)",
+      "subtype": "Web page",
+      "aliases": [],
+      "description": "A Secure World Foundation post of 17 May 2026 on its FCC filings about orbital data-centre applications; the filings themselves were not read.",
+      "sources": ["orb-swf-odc"]
+    },
+    "kolasinski-1989-space-radiation-microcircuits": {
+      "name": "Effects of space radiation on electronic microcircuits",
+      "shortName": "Kolasinski, Space radiation and microcircuits (1989)",
+      "subtype": "Research paper",
+      "aliases": [],
+      "description": "A paper by W. A. Kolasinski of The Aerospace Corporation in the proceedings of the NASA/SDIO Space Environmental Effects on Materials Workshop, Part 2 (NASA Langley Research Center, May 1989), printed pp. 383–389, read in NASA’s Technical Reports Server.",
+      "sources": ["adm-nasa-1989"]
+    },
+    "espi-report-98-2025": {
+      "name": "Data Centres in Space: Orbital Backbone of the Second Digital Era? (ESPI Report 98)",
+      "shortName": "ESPI Report 98 (2025)",
+      "subtype": "Report",
+      "aliases": ["ESPI Report 98"],
+      "description": "A self-funded study of the European Space Policy Institute, published on 19 November 2025, with a cost model of gigawatt-scale space-based data centres developed by staff of the TUM Chair of Spacecraft Systems.",
+      "sources": ["adm-espi-2025", "adm-espi-page"]
+    },
+    "aili-2025-carbon-neutral-data-centres-in-space": {
+      "name": "The development of carbon-neutral data centres in space",
+      "shortName": "Aili, Choi, Ong and Wen, Carbon-neutral data centres in space (2025)",
+      "subtype": "Journal article",
+      "aliases": [],
+      "description": "A Perspective by Ablimit Aili, Jihwan Choi, Yew Soon Ong and Yonggang Wen in Nature Electronics (doi:10.1038/s41928-025-01476-1), read in an author-hosted proof on Nanyang Technological University’s site.",
+      "sources": ["adm-ntu-2025"]
+    },
+    "uk-ai-energy-council-statement-2025": {
+      "name": "AI Energy Council meets for the first time (UK government statement)",
+      "shortName": "UK AI Energy Council statement (2025)",
+      "subtype": "Press release",
+      "aliases": [],
+      "description": "A UK government release by the Department for Science, Innovation and Technology and the Department for Energy Security and Net Zero, 8 April 2025, on the first meeting of the AI Energy Council.",
+      "sources": ["pw-uk-ai-energy-council-2025"]
+    },
+    "eu-investai-2025": {
+      "name": "EU launches InvestAI initiative to mobilise €200 billion of investment in artificial intelligence (IP/25/467)",
+      "shortName": "EU InvestAI announcement (2025)",
+      "subtype": "Press release",
+      "aliases": ["InvestAI"],
+      "description": "A European Commission press release of 11 February 2025, marked as updated on 10 April 2025, announcing the InvestAI initiative and a fund for AI gigafactories. An announced initiative is not committed funding.",
+      "sources": ["dc-ec-investai-2025"],
+      "documentVersion": {
+        "family": "eu-investai-announcement",
+        "label": "Press release IP/25/467, Paris, 11 February 2025 (updated 10 April 2025)",
+        "publisherId": "european-commission",
+        "publishedAt": "2025-02-11",
+        "dateNote": "Date of the press release; the page is marked as updated on 10 April 2025, and the text read is the updated version."
+      }
+    }
+  },
+  "entities": {
+    "us-white-house": {
+      "existing": true
+    },
+    "cn-mofcom": {
+      "name": "Ministry of Commerce of the People’s Republic of China (中华人民共和国商务部)",
+      "shortName": "MOFCOM",
+      "type": "public_body",
+      "subtype": "Government department",
+      "aliases": ["MOFCOM", "中华人民共和国商务部"],
+      "description": "The PRC ministry that issues the export-control announcements recorded here; two were issued jointly with the General Administration of Customs, which is not recorded as a separate entity.",
+      "sources": ["ch-mofcom-ga-ge-2023"]
+    },
+    "cn-ndrc": {
+      "name": "National Development and Reform Commission (国家发展和改革委员会)",
+      "shortName": "NDRC",
+      "type": "public_body",
+      "subtype": "Government department",
+      "aliases": ["NDRC", "国家发展和改革委员会"],
+      "description": "The PRC’s macro-economic planning commission; lead issuer of the 2024 data-centre plan.",
+      "sources": ["pw-cn-dc-green-plan-2024"]
+    },
+    "cn-nea": {
+      "name": "National Energy Administration (国家能源局)",
+      "shortName": "NEA",
+      "type": "public_body",
+      "subtype": "Government agency",
+      "aliases": ["NEA", "国家能源局"],
+      "description": "The PRC energy administration; issuer of the 2026 AI–energy plan with three other bodies.",
+      "sources": ["pw-cn-ai-energy-plan-2026"]
+    },
+    "governor-of-texas": {
+      "name": "Governor of Texas",
+      "type": "public_body",
+      "subtype": "Executive office",
+      "aliases": [],
+      "description": "The office of the Governor of the State of Texas, not a named person.",
+      "sources": ["pw-tx-sb6-history"]
+    },
+    "texas-legislature": {
+      "name": "Texas Legislature",
+      "type": "public_body",
+      "subtype": "Legislature",
+      "aliases": [],
+      "description": "The legislature of the State of Texas.",
+      "sources": ["pw-tx-sb6-2025"]
+    },
+    "intel": {
+      "name": "Intel Corporation",
+      "shortName": "Intel",
+      "type": "organisation",
+      "subtype": "Technology company",
+      "aliases": ["Intel"],
+      "description": "A US chipmaker and foundry.",
+      "sources": ["ch-nvidia-intel-2025"]
+    },
+    "tsmc": {
+      "name": "Taiwan Semiconductor Manufacturing Company Limited (TSMC)",
+      "shortName": "TSMC",
+      "type": "organisation",
+      "subtype": "Technology company",
+      "aliases": ["TSMC"],
+      "description": "A semiconductor foundry; parent of TSMC Arizona.",
+      "sources": ["ch-tsmc-wh-2025"]
+    },
+    "starcloud": {
+      "name": "Starcloud (formerly Lumen Orbit)",
+      "shortName": "Starcloud",
+      "type": "organisation",
+      "subtype": "Company",
+      "aliases": ["Lumen Orbit", "Lumen Orbit, Inc."],
+      "description": "A company in Redmond, Washington, developing orbital data centres; its later white paper states that Lumen Orbit was renamed Starcloud in 2025.",
+      "sources": ["orb-lumen-wp-gh"]
+    },
+    "thales-alenia-space": {
+      "name": "Thales Alenia Space",
+      "type": "organisation",
+      "subtype": "Company",
+      "aliases": [],
+      "description": "A space manufacturer, coordinator of the ASCEND study consortium.",
+      "sources": ["orb-tas-ascend-results"]
+    },
+    "oc1-orbital-solar-supply": {
+      "name": "Orbital solar supply as a reason for orbital compute",
+      "type": "concept",
+      "subtype": "Proposition",
+      "aliases": [
+        "Solar power in orbit is more continuous or abundant than on Earth, a reason to place computing there."
+      ],
+      "description": "A proposition about compute in orbit, recorded with one criterion so that texts can be classified against it (code O1, a reason given for orbital compute). It is phrased generically and attributed to no one. A record says what a text states, not whether the proposition is true.",
+      "sources": ["orb-lumen-wp-gh"],
+      "proposition": {
+        "code": "O1",
+        "criterion": "Solar power in suitable orbits is more continuous or more abundant than on Earth, and this is given as a reason to place computing there.",
+        "terms": []
+      }
+    },
+    "oc2-radiative-cooling-advantage": {
+      "name": "Radiative cooling in orbit as an advantage",
+      "type": "concept",
+      "subtype": "Proposition",
+      "aliases": [
+        "Cooling by radiation to space lets orbital data centres avoid terrestrial cooling costs."
+      ],
+      "description": "A proposition about compute in orbit, recorded with one criterion so that texts can be classified against it (code O2, a reason given for orbital compute). It is phrased generically and attributed to no one. A record says what a text states, not whether the proposition is true.",
+      "sources": ["orb-tas-ascend-results"],
+      "proposition": {
+        "code": "O2",
+        "criterion": "Rejecting heat by radiation to space lets an orbital data centre avoid the water use, chillers or cooling energy of terrestrial data centres.",
+        "terms": []
+      }
+    },
+    "oc3-terrestrial-constraints": {
+      "name": "Terrestrial constraints as a reason for orbital compute",
+      "type": "concept",
+      "subtype": "Proposition",
+      "aliases": [
+        "Constraints on building data centres on Earth limit their growth, and orbit avoids them."
+      ],
+      "description": "A proposition about compute in orbit, recorded with one criterion so that texts can be classified against it (code O3, a reason given for orbital compute). It is phrased generically and attributed to no one. A record says what a text states, not whether the proposition is true.",
+      "sources": ["orb-lumen-wp-gh"],
+      "proposition": {
+        "code": "O3",
+        "criterion": "Constraints on building or powering data centres on Earth (land, permitting, grid connection, power supply, water or local impact) limit their growth, and placing compute in orbit is said to avoid them.",
+        "terms": []
+      }
+    },
+    "oc4-launch-cost-condition": {
+      "name": "Falling launch prices as a condition of orbital compute",
+      "type": "concept",
+      "subtype": "Proposition",
+      "aliases": [
+        "The viability of orbital compute depends on launch prices falling."
+      ],
+      "description": "A proposition about compute in orbit, recorded with one criterion so that texts can be classified against it (code O4, a condition stated for orbital compute). It is phrased generically and attributed to no one. A record says what a text states, not whether the proposition is true.",
+      "sources": ["orb-lumen-wp-gh"],
+      "proposition": {
+        "code": "O4",
+        "criterion": "The economic viability of orbital compute depends on launch prices falling, stated with or without a price threshold per kilogram.",
+        "terms": []
+      }
+    },
+    "oc5-lifecycle-emissions": {
+      "name": "Lower lifecycle emissions of orbital data centres",
+      "type": "concept",
+      "subtype": "Proposition",
+      "aliases": [
+        "Orbital data centres can have lower lifecycle greenhouse-gas emissions than terrestrial ones."
+      ],
+      "description": "A proposition about compute in orbit, recorded with one criterion so that texts can be classified against it (code O5, a reason given for orbital compute). It is phrased generically and attributed to no one. A record says what a text states, not whether the proposition is true.",
+      "sources": ["orb-tas-ascend-results"],
+      "proposition": {
+        "code": "O5",
+        "criterion": "Orbital data centres can have lower lifecycle greenhouse-gas emissions than terrestrial ones, with or without stated conditions (such as a less emissive launcher).",
+        "terms": []
+      }
+    },
+    "oc6-heat-rejection-limit": {
+      "name": "Heat rejection as a constraint on orbital compute",
+      "type": "concept",
+      "subtype": "Proposition",
+      "aliases": [
+        "Rejecting heat only by radiation makes thermal management a significant constraint in orbit."
+      ],
+      "description": "A proposition about compute in orbit, recorded with one criterion so that texts can be classified against it (code O6, a limit or objection). It is phrased generically and attributed to no one. A record says what a text states, not whether the proposition is true.",
+      "sources": ["orb-suncatcher-blog"],
+      "proposition": {
+        "code": "O6",
+        "criterion": "Because heat in orbit can be rejected only by radiation, thermal management (for example the required radiator area) is a significant engineering or cost constraint on orbital compute.",
+        "terms": []
+      }
+    },
+    "oc7-radiation-effects": {
+      "name": "Radiation effects on computing hardware in orbit",
+      "type": "concept",
+      "subtype": "Proposition",
+      "aliases": [
+        "Radiation in orbit degrades or disrupts computing hardware, which needs mitigation."
+      ],
+      "description": "A proposition about compute in orbit, recorded with one criterion so that texts can be classified against it (code O7, a limit or objection). It is phrased generically and attributed to no one. A record says what a text states, not whether the proposition is true.",
+      "sources": ["adm-nasa-1989"],
+      "proposition": {
+        "code": "O7",
+        "criterion": "Ionizing radiation in orbit degrades or disrupts computing hardware, requiring shielding, redundancy, error correction or hardened parts.",
+        "terms": []
+      }
+    },
+    "oc8-no-repair": {
+      "name": "No practical repair of hardware in orbit",
+      "type": "concept",
+      "subtype": "Proposition",
+      "aliases": [
+        "Failed hardware in orbit cannot practically be repaired as on Earth."
+      ],
+      "description": "A proposition about compute in orbit, recorded with one criterion so that texts can be classified against it (code O8, a limit or objection). It is phrased generically and attributed to no one. A record says what a text states, not whether the proposition is true.",
+      "sources": ["adm-espi-2025"],
+      "proposition": {
+        "code": "O8",
+        "criterion": "Failed hardware in orbit cannot practically be repaired or replaced by technicians as on Earth, so failures must be met by redundancy, module replacement or launches.",
+        "terms": []
+      }
+    },
+    "oc9-launch-cost-too-high": {
+      "name": "Orbital compute costs more than compute on Earth",
+      "type": "concept",
+      "subtype": "Proposition",
+      "aliases": [
+        "At current or assumed prices, computing in orbit costs more than on Earth."
+      ],
+      "description": "A proposition about compute in orbit, recorded with one criterion so that texts can be classified against it (code O9, a limit or objection). It is phrased generically and attributed to no one. A record says what a text states, not whether the proposition is true.",
+      "sources": ["adm-espi-2025"],
+      "proposition": {
+        "code": "O9",
+        "criterion": "At current or assumed launch and spacecraft prices, computing in orbit costs more than equivalent computing on Earth.",
+        "terms": []
+      }
+    },
+    "oc10-ground-bandwidth": {
+      "name": "Ground links as a limit on orbital compute",
+      "type": "concept",
+      "subtype": "Proposition",
+      "aliases": [
+        "Links to the ground limit which workloads orbital compute can serve."
+      ],
+      "description": "A proposition about compute in orbit, recorded with one criterion so that texts can be classified against it (code O10, a limit or objection). It is phrased generically and attributed to no one. A record says what a text states, not whether the proposition is true.",
+      "sources": ["orb-suncatcher-blog"],
+      "proposition": {
+        "code": "O10",
+        "criterion": "Links between orbital compute and users or data on the ground (bandwidth, latency, ground stations) limit which workloads orbital compute can serve.",
+        "terms": []
+      }
+    },
+    "oc11-sky-and-debris": {
+      "name": "Harm to the sky and debris risk from orbital data centres",
+      "type": "concept",
+      "subtype": "Proposition",
+      "aliases": [
+        "Large orbital-data-centre constellations would harm astronomy or raise debris and atmospheric risks."
+      ],
+      "description": "A proposition about compute in orbit, recorded with one criterion so that texts can be classified against it (code O11, a limit or objection). It is phrased generically and attributed to no one. A record says what a text states, not whether the proposition is true.",
+      "sources": ["orb-lincei-fcc-pdf"],
+      "proposition": {
+        "code": "O11",
+        "criterion": "Large orbital-data-centre constellations would harm astronomical observation or the night sky, or raise collision, debris or atmospheric risks.",
+        "terms": []
+      }
+    },
+    "landspace": {
+      "name": "LandSpace (蓝箭航天)",
+      "shortName": "LandSpace",
+      "type": "organisation",
+      "subtype": "Company",
+      "aliases": ["蓝箭航天"],
+      "description": "A Chinese launch company, maker of the Zhuque-2 rockets.",
+      "sources": ["adm-landspace-78"]
+    },
+    "adaspace-xingshidai-39-44-50": {
+      "name": "ADA Space Xingshidai satellites 39 and 44 to 50",
+      "type": "infrastructure",
+      "subtype": "Spacecraft",
+      "aliases": ["星时代-39星、44至50星"],
+      "description": "Eight satellites built by ADA Space and launched on 14 October 2026, as LandSpace states. Whether they form a named group of ADA Space’s programmes is not stated in the text read.",
+      "sources": ["adm-landspace-78"]
+    }
+  },
+  "sources": {
+    "pw-eo-14141-fr": {
+      "title": "Executive Order 14141: Advancing United States Leadership in Artificial Intelligence Infrastructure (90 FR 5469)",
+      "authors": ["The White House"],
+      "publisher": "Federal Register (Office of the Federal Register, National Archives) via govinfo.gov",
+      "publisherId": "us-white-house"
+    },
+    "pw-eo-14299-fr": {
+      "title": "Executive Order 14299: Deploying Advanced Nuclear Reactor Technologies for National Security (90 FR 22581)",
+      "authors": ["The White House"],
+      "publisher": "Federal Register (Office of the Federal Register, National Archives) via govinfo.gov",
+      "publisherId": "us-white-house"
+    },
+    "pw-eo-14318-fr": {
+      "title": "Executive Order 14318: Accelerating Federal Permitting of Data Center Infrastructure (90 FR 35385)",
+      "authors": ["The White House"],
+      "publisher": "Federal Register (Office of the Federal Register, National Archives) via govinfo.gov",
+      "publisherId": "us-white-house"
+    },
+    "pw-proc-11014-fr": {
+      "title": "Proclamation 11014: Ratepayer Protection Pledge (91 FR 11439)",
+      "authors": ["The White House"],
+      "publisher": "Federal Register (Office of the Federal Register, National Archives) via govinfo.gov",
+      "publisherId": "us-white-house"
+    },
+    "pw-tx-sb6-2025": {
+      "title": "S.B. No. 6, 89th Legislature, Regular Session (enrolled)",
+      "authors": ["Texas Legislature"],
+      "publisherId": "texas-legislature",
+      "publicationDate": null
+    },
+    "pw-tx-sb6-history": {
+      "title": "Bill History: S.B. 6, 89th Legislature (R)",
+      "authors": ["Texas Legislature"],
+      "publisherId": "texas-legislature",
+      "publicationDate": null
+    },
+    "pw-uk-ai-opportunities-2025": {
+      "authors": ["Department for Science, Innovation and Technology"],
+      "publisherId": "dsit"
+    },
+    "pw-cn-dc-green-plan-2024": {
+      "authors": ["国家发展改革委 工业和信息化部 国家能源局 国家数据局"],
+      "publisherId": "cn-ndrc",
+      "publicationDate": "2024-07-03"
+    },
+    "pw-cn-ai-energy-plan-2026-text": {
+      "authors": ["国家能源局 国家发展改革委 工业和信息化部 国家数据局"],
+      "publisherId": "cn-nea"
+    },
+    "pw-cn-ai-energy-plan-2026": {
+      "authors": ["国家数据局"],
+      "documentId": "cn-ai-energy-plan-2026"
+    },
+    "ch-mofcom-ga-ge-2023": {
+      "authors": ["商务部 海关总署"],
+      "publisherId": "cn-mofcom"
+    },
+    "ch-mofcom-us-dualuse-2024": {
+      "authors": ["商务部"],
+      "publisherId": "cn-mofcom"
+    },
+    "ch-mofcom-adjust-72-2025": {
+      "authors": ["商务部"],
+      "publisherId": "cn-mofcom"
+    },
+    "ch-mofcom-ree-61-2025": {
+      "authors": ["商务部"],
+      "publisherId": "cn-mofcom"
+    },
+    "ch-mofcom-suspend-70-2025": {
+      "authors": ["商务部 海关总署"],
+      "publisherId": "cn-mofcom"
+    },
+    "ch-bis-acr-2023": {
+      "authors": [
+        "Bureau of Industry and Security, U.S. Department of Commerce"
+      ],
+      "publisherId": "us-bureau-of-industry-and-security"
+    },
+    "ch-bis-fdpr-hbm-2024": {
+      "authors": [
+        "Bureau of Industry and Security, U.S. Department of Commerce"
+      ],
+      "publisherId": "us-bureau-of-industry-and-security"
+    },
+    "ch-bis-foundry-dd-2025": {
+      "authors": [
+        "Bureau of Industry and Security, U.S. Department of Commerce"
+      ],
+      "publisherId": "us-bureau-of-industry-and-security"
+    },
+    "ch-bis-gp10-guidance-2025": {
+      "authors": [
+        "Bureau of Industry and Security, U.S. Department of Commerce"
+      ],
+      "publisherId": "us-bureau-of-industry-and-security"
+    },
+    "ch-bis-license-policy-2026": {
+      "authors": [
+        "Bureau of Industry and Security, U.S. Department of Commerce"
+      ],
+      "publisherId": "us-bureau-of-industry-and-security"
+    },
+    "ch-bis-uae-2026": {
+      "authors": [
+        "Bureau of Industry and Security, U.S. Department of Commerce"
+      ],
+      "publisherId": "us-bureau-of-industry-and-security"
+    },
+    "ch-msft-nvda-anthropic-anthropic": {
+      "authors": ["Anthropic"]
+    },
+    "ch-msft-nvda-anthropic-nvda": {
+      "authors": ["NVIDIA"]
+    },
+    "ch-nvidia-intel-2025": {
+      "authors": ["NVIDIA", "Intel"]
+    },
+    "ch-tsmc-wh-2025": {
+      "authors": ["The White House"],
+      "publisherId": "us-white-house"
+    },
+    "orb-lumen-wp-gh": {
+      "authors": ["Ezra Feilden", "Adi Oltean", "Philip Johnston"],
+      "authorNames": [
+        {
+          "family": "Feilden",
+          "given": "Ezra"
+        },
+        {
+          "family": "Oltean",
+          "given": "Adi"
+        },
+        {
+          "family": "Johnston",
+          "given": "Philip"
+        }
+      ],
+      "publisher": "Lumen Orbit, Inc. (now Starcloud), via lumenorbit.github.io",
+      "archivedUrl": "https://web.archive.org/web/20241224070032/https://lumenorbit.github.io/wp.pdf",
+      "archivedAt": "2024-12-24",
+      "versionNote": "The cross-family check (2026-10-30) opened the Internet Archive capture linked here and found it byte-identical to this retrieval; a capture shows only what the archive held on its date."
+    },
+    "orb-suncatcher-blog": {
+      "authors": ["Travis Beals"],
+      "authorNames": [
+        {
+          "family": "Beals",
+          "given": "Travis"
+        }
+      ]
+    },
+    "orb-suncatcher-arxiv-v1": {
+      "authors": [
+        "Blaise Agüera y Arcas",
+        "Travis Beals",
+        "Maria Biggs",
+        "Jessica V. Bloom",
+        "Thomas Fischbacher",
+        "Konstantin Gromov",
+        "Urs Köster",
+        "Rishiraj Pravahan",
+        "James Manyika"
+      ],
+      "publisher": "arXiv"
+    },
+    "orb-nvidia-starcloud-blog": {
+      "authors": ["Angie Lee"],
+      "authorNames": [
+        {
+          "family": "Lee",
+          "given": "Angie"
+        }
+      ]
+    },
+    "orb-tas-ascend-results": {
+      "authors": ["Thales Alenia Space"]
+    },
+    "orb-axiom-odc-2025": {
+      "authors": ["Axiom Space"]
+    },
+    "orb-spacex-xai": {
+      "authors": ["SpaceX"]
+    },
+    "orb-lincei-fcc-pdf": {
+      "authors": ["Accademia Nazionale dei Lincei"]
+    },
+    "orb-impact-odc-2026": {
+      "authors": ["Geoffrey W. Marcy"],
+      "authorNames": [
+        {
+          "family": "Marcy",
+          "given": "Geoffrey W."
+        }
+      ],
+      "publisher": "arXiv"
+    },
+    "orb-turyshev-2026": {
+      "authors": ["Slava G. Turyshev"],
+      "authorNames": [
+        {
+          "family": "Turyshev",
+          "given": "Slava G."
+        }
+      ],
+      "publisher": "arXiv"
+    },
+    "orb-ieee-odc-heat": {
+      "authors": ["Andrew Cavalier"],
+      "authorNames": [
+        {
+          "family": "Cavalier",
+          "given": "Andrew"
+        }
+      ],
+      "publisher": "IEEE Spectrum",
+      "kind": "article"
+    },
+    "orb-swf-odc": {
+      "authors": ["Secure World Foundation"]
+    },
+    "pw-cn-dc-green-plan-2024-pdf": {
+      "documentId": "cn-dc-green-low-carbon-plan-2024",
+      "publisherId": "cn-ndrc"
+    }
+  },
+  "extraSources": [
+    {
+      "key": "adm-nasa-1989",
+      "id": "source-cpo-kolasinski-1989",
+      "documentId": "kolasinski-1989-space-radiation-microcircuits",
+      "title": "Effects of space radiation on electronic microcircuits",
+      "authors": ["W. A. Kolasinski"],
+      "authorNames": [
+        {
+          "family": "Kolasinski",
+          "given": "W. A."
+        }
+      ],
+      "publisher": "NASA Langley Research Center, NASA/SDIO Space Environmental Effects on Materials Workshop, Part 2 (NASA Technical Reports Server, 19890014178)",
+      "publicationDate": "1989-05",
+      "url": "https://ntrs.nasa.gov/api/citations/19890014178/downloads/19890014178.pdf",
+      "version": "PDF of the paper (printed pp. 383–389) from NASA’s Technical Reports Server, retrieved at admission on 2026-10-30 (SHA-256 b82cb50dea59c0f186b2a994e8caed4fa38ac35d8abad5153792eff8ad324795, the same bytes the cross-family check retrieved on 2026-10-29). The server’s record gives the proceedings’ publication date as 1 May 1989, a month-level catalogue date; the paper prints no date. The text layer is from a scan.",
+      "language": "en",
+      "documentWords": {
+        "count": 4883,
+        "basis": "pdftotext word count of the eleven PDF pages, including figure residue; counted at admission"
+      },
+      "kind": "paper",
+      "accessedAt": "2026-10-30"
+    },
+    {
+      "key": "adm-espi-2025",
+      "id": "source-cpo-espi-report-98-pdf",
+      "documentId": "espi-report-98-2025",
+      "title": "ESPI Report 98 – Data Centres in Space: Orbital Backbone of the Second Digital Era? - Full Report",
+      "authors": ["European Space Policy Institute (ESPI)"],
+      "publisher": "European Space Policy Institute (ESPI)",
+      "publicationDate": "2025-11-19",
+      "url": "https://www.espi.eu/wp-content/uploads/2025/11/SBDCs.pdf",
+      "archivedUrl": "https://web.archive.org/web/20251119150614/https://www.espi.eu/wp-content/uploads/2025/11/SBDCs.pdf",
+      "archivedAt": "2025-11-19",
+      "version": "Full report PDF, retrieved at admission on 2026-10-30 (SHA-256 ebd2a9682e89ee65d8fdae7d4492f5b80df55a7804611c03594c8551fd47217c). The cross-family check (2026-10-30) opened the Internet Archive capture of 19 November 2025 linked here and found it byte-identical. The PDF prints “Published: November 2025”; the day is the report page’s. The report reserves its rights and asks that extracts cite it as “ESPI Report 98 – Data Centres in Space: Orbital Backbone of the Second Digital Era? - Full Report, November 2025”.",
+      "language": "en",
+      "documentWords": {
+        "count": 20479,
+        "basis": "pdftotext word count of the full PDF; counted at admission"
+      },
+      "kind": "report",
+      "accessedAt": "2026-10-30"
+    },
+    {
+      "key": "adm-espi-page",
+      "id": "source-cpo-espi-report-98-page",
+      "documentId": "espi-report-98-2025",
+      "title": "Data centres in space: orbital backbone of the second digital era?",
+      "authors": ["European Space Policy Institute (ESPI)"],
+      "publisher": "European Space Policy Institute (ESPI)",
+      "publicationDate": "2025-11-19",
+      "url": "https://www.espi.eu/reports/data-centres-in-space-orbital-backbone-of-the-second-digital-era/",
+      "version": "Report page, retrieved at admission on 2026-10-30. Its structured data give datePublished 2025-11-19 and a later modification on 2026-03-17. Its wording can change; earlier wording is not authenticated.",
+      "language": "en",
+      "documentWords": {
+        "count": 1595,
+        "basis": "words of the page text after removing markup; counted at admission"
+      },
+      "kind": "post",
+      "accessedAt": "2026-10-30"
+    },
+    {
+      "key": "adm-ntu-2025",
+      "id": "source-cpo-aili-2025-ntu-proof",
+      "documentId": "aili-2025-carbon-neutral-data-centres-in-space",
+      "title": "The development of carbon-neutral data centres in space",
+      "authors": [
+        "Ablimit Aili",
+        "Jihwan Choi",
+        "Yew Soon Ong",
+        "Yonggang Wen"
+      ],
+      "authorNames": [
+        {
+          "family": "Aili",
+          "given": "Ablimit"
+        },
+        {
+          "family": "Choi",
+          "given": "Jihwan"
+        },
+        {
+          "family": "Ong",
+          "given": "Yew Soon"
+        },
+        {
+          "family": "Wen",
+          "given": "Yonggang"
+        }
+      ],
+      "publisher": "Nature Electronics (author-hosted proof on Nanyang Technological University’s site)",
+      "publicationDate": "2025-10-27",
+      "url": "https://www3.ntu.edu.sg/CorpComms2/Research%20Papers/Nature%20Electronics_Wen%20Yonggang_Space%20Data%20Centres.pdf",
+      "archivedUrl": "https://web.archive.org/web/20251125105044/https://www3.ntu.edu.sg/CorpComms2/Research%20Papers/Nature%20Electronics_Wen%20Yonggang_Space%20Data%20Centres.pdf",
+      "archivedAt": "2025-11-25",
+      "version": "Author-hosted proof, retrieved at admission on 2026-10-30 (SHA-256 399d7be4246bb2b7b1746da24035443ecc54bc23078d75fce02afe4b5fe3ba65). The cross-family check (2026-10-30) opened the Internet Archive capture of 25 November 2025 linked here and found it byte-identical. The proof’s first page prints “Published online: xx xx xxxx” and query markers; it is not assumed identical in every word to the version of record. The publication date is the publisher’s metadata as the check read it.",
+      "language": "en",
+      "documentWords": {
+        "count": 9432,
+        "basis": "pdftotext word count of the proof; counted at admission"
+      },
+      "kind": "paper",
+      "accessedAt": "2026-10-30"
+    },
+    {
+      "key": "adm-nrc-ccec",
+      "id": "source-cpo-nrc-crane-facility-page",
+      "title": "Crane Clean Energy Center (facility page)",
+      "authors": ["U.S. Nuclear Regulatory Commission"],
+      "publisher": "U.S. Nuclear Regulatory Commission",
+      "publicationDate": null,
+      "url": "https://www.nrc.gov/facilities-safety/facility-finder/reactors/ccec",
+      "version": "Facility page retrieved at admission on 2026-10-30; the cross-family check read it on 2026-10-29. Its wording can change; earlier wording is not authenticated.",
+      "language": "en",
+      "documentWords": {
+        "count": 3992,
+        "basis": "words of the retrieved text; counted at admission"
+      },
+      "kind": "post",
+      "accessedAt": "2026-10-30"
+    },
+    {
+      "key": "adm-lpsc-order",
+      "id": "source-cpo-lpsc-order-u37425",
+      "title": "Order Number U-37425, Entergy Louisiana, LLC, ex parte",
+      "authors": ["Louisiana Public Service Commission"],
+      "publisher": "Louisiana Public Service Commission",
+      "publicationDate": "2025-08-29",
+      "url": "https://lpscpubvalence.lpsc.louisiana.gov/portal/PSC/ViewFile?fileId=nDWn%2Fjuc2%2BA%3D",
+      "version": "Scanned order retrieved directly at admission on 2026-10-30 (SHA-256 9185ef7e4130785574b53f0a0cff7216390428399d2aaac0265eebb7da838aaf); the cross-family check read it in an Internet Archive capture of 21 February 2026 after the portal refused it. The text layer is from a scan and repeats words in places.",
+      "language": "en",
+      "documentWords": {
+        "count": 13863,
+        "basis": "words of the retrieved text; counted at admission"
+      },
+      "kind": "filing",
+      "accessedAt": "2026-10-30"
+    },
+    {
+      "key": "adm-ferc-er24-2172",
+      "id": "source-cpo-ferc-order-er24-2172",
+      "title": "Order Rejecting Amended Interconnection Service Agreement, 189 FERC ¶ 61,078 (Docket ER24-2172)",
+      "authors": ["Federal Energy Regulatory Commission"],
+      "publisher": "Federal Energy Regulatory Commission",
+      "publicationDate": "2024-11-01",
+      "url": "https://www.ferc.gov/sites/default/files/2024-11/20241101-3061_ER24-2172-000.pdf",
+      "version": "Order PDF retrieved at admission on 2026-10-30 (SHA-256 69b04b60cfc5f0150af8cb2f96eabca1c6af9ff74f8bbdbd41a2929b0bf69934, the bytes the cross-family check retrieved).",
+      "language": "en",
+      "documentWords": {
+        "count": 18088,
+        "basis": "words of the retrieved text; counted at admission"
+      },
+      "kind": "filing",
+      "accessedAt": "2026-10-30"
+    },
+    {
+      "key": "adm-landspace-78",
+      "id": "source-cpo-landspace-zq2e-y4",
+      "title": "朱雀二号改进型遥四运载火箭一箭十星任务取得圆满成功 (Zhuque-2E Y4 ten-satellite mission a complete success)",
+      "authors": ["蓝箭航天 (LandSpace)"],
+      "publisher": "LandSpace (landspace.com)",
+      "publicationDate": "2026-10-14",
+      "url": "https://www.landspace.com/news-detail.html?itemid=78",
+      "version": "Release retrieved at admission on 2026-10-30 (SHA-256 1782d6ea0c348f5d0981852365f1fc86636ac85e047414750f91a15431c63b75, the bytes the cross-family check retrieved). The English in parentheses in the title is a machine translation. Its wording can change; earlier wording is not authenticated.",
+      "language": "zh-Hans",
+      "documentWords": {
+        "count": 830,
+        "basis": "words of the retrieved text; counted at admission"
+      },
+      "kind": "announcement",
+      "accessedAt": "2026-10-30"
+    },
+    {
+      "key": "adm-shelby-permit-capture",
+      "id": "source-cpo-shelby-permit-01156-01pc",
+      "title": "Construction Permit 01156-01PC (scanned)",
+      "authors": ["Shelby County Health Department"],
+      "publisher": "Shelby County Health Department",
+      "publicationDate": "2025-07-02",
+      "url": "https://www.shelbytnhealth.com/DocumentCenter/View/7174/01156-01PC-070225Permit",
+      "version": "Not read at admission: the county’s address answered HTTP 404 and the Internet Archive refused this admission. The cross-family check (2026-10-29) read the capture linked here and inspected page 1 of the scan visually; the record’s details rest on that reading.",
+      "language": "en",
+      "kind": "filing",
+      "accessedAt": "2026-10-30",
+      "archivedUrl": "https://web.archive.org/web/20250703012450/https://www.shelbytnhealth.com/DocumentCenter/View/7174/01156-01PC-070225Permit",
+      "archivedAt": "2025-07-03"
+    },
+    {
+      "key": "adm-talen-sale-capture",
+      "id": "source-cpo-talen-cumulus-sale-2024",
+      "title": "Talen Energy Announces Sale of Zero-Carbon Data Center Campus",
+      "authors": ["Talen Energy"],
+      "publisher": "Talen Energy (ir.talenenergy.com)",
+      "publicationDate": "2024-03-04",
+      "url": "https://ir.talenenergy.com/news-releases/news-release-details/talen-energy-announces-sale-zero-carbon-data-center-campus",
+      "version": "Not read at admission: the address answered HTTP 403 and the Internet Archive refused this admission. The cross-family check (2026-10-29) read the capture linked here; the paraphrase rests on that reading.",
+      "language": "en",
+      "kind": "announcement",
+      "accessedAt": "2026-10-30",
+      "archivedUrl": "https://web.archive.org/web/20240829160804/https://ir.talenenergy.com/news-releases/news-release-details/talen-energy-announces-sale-zero-carbon-data-center-campus",
+      "archivedAt": "2024-08-29"
+    },
+    {
+      "key": "adm-talen-results-capture",
+      "id": "source-cpo-talen-results-2024-03",
+      "title": "Talen Energy results release of 14 March 2024",
+      "authors": ["Talen Energy"],
+      "publisher": "Talen Energy (ir.talenenergy.com)",
+      "publicationDate": "2024-03-14",
+      "url": "https://ir.talenenergy.com/node/7201/pdf",
+      "version": "Not read at admission. The cross-family check (2026-10-29) read the Internet Archive capture linked here, which is of January 2026; the paraphrase rests on that reading.",
+      "language": "en",
+      "kind": "report",
+      "accessedAt": "2026-10-30",
+      "archivedUrl": "https://web.archive.org/web/20260129035817/https://ir.talenenergy.com/node/7201/pdf",
+      "archivedAt": "2026-01-29"
+    },
+    {
+      "key": "adm-talen-ppa-capture",
+      "id": "source-cpo-talen-amazon-ppa-2025",
+      "title": "Talen Energy Expands Nuclear Energy Relationship with Amazon",
+      "authors": ["Talen Energy"],
+      "publisher": "Talen Energy (ir.talenenergy.com)",
+      "publicationDate": "2025-06-11",
+      "url": "https://ir.talenenergy.com/news-releases/news-release-details/talen-energy-expands-nuclear-energy-relationship-amazon",
+      "version": "Not read at admission: the address answered HTTP 403 and the Internet Archive refused this admission. The cross-family check (2026-10-29) read the capture linked here; the paraphrase rests on that reading.",
+      "language": "en",
+      "kind": "announcement",
+      "accessedAt": "2026-10-30",
+      "archivedUrl": "https://web.archive.org/web/20250613021648/https://ir.talenenergy.com/news-releases/news-release-details/talen-energy-expands-nuclear-energy-relationship-amazon",
+      "archivedAt": "2025-06-13"
+    }
+  ],
+  "predicateMap": {
+    "site_status_stated": "status_stated",
+    "operation_stated": "status_stated",
+    "programme_status_stated": "status_stated",
+    "convened": "published"
+  },
+  "predicateTopics": {
+    "announced_site": "compute",
+    "status_stated": "compute",
+    "power_agreement": "compute",
+    "supply_agreement": "compute",
+    "government_award": "capital",
+    "granted_equity_right": "capital",
+    "announced_plan": "compute",
+    "launch_stated": "compute",
+    "filed_application": "governance",
+    "regulator_decision": "governance",
+    "accepted_for_filing": "governance",
+    "designated_zone": "governance",
+    "plans_capacity": "compute",
+    "plans_infrastructure_spend": "capital",
+    "compute_capacity": "compute",
+    "investment_announced": "capital",
+    "invested_in": "capital",
+    "uses_hardware_from": "compute",
+    "states_provision": "governance",
+    "published": "governance"
+  },
+  "measures": [
+    "it_capacity",
+    "facility_power",
+    "grid_connection",
+    "generation_capacity",
+    "contracted_energy",
+    "chips",
+    "not_stated"
+  ],
+  "measureRules": [
+    ["critical IT|IT load|IT capacity", "it_capacity"],
+    ["facility power|total power capacity|\\bload\\b", "facility_power"],
+    ["grid", "grid_connection"],
+    ["generation|plant output|uprate", "generation_capacity"],
+    ["contracted|offtake|supply|share of electricity", "contracted_energy"],
+    ["chip|GPU", "chips"]
+  ],
+  "statedDateKindMap": {
+    "deadline_stated": "deadline",
+    "contract_end_stated": "contract_term",
+    "delivery_start_stated": "delivery_target",
+    "selection_target": "target_completion",
+    "target_stated": "target_completion"
+  },
+  "transactionTypeMap": {
+    "equity_stake": "equity_investment",
+    "cloud_commitment": "cloud_services"
+  },
+  "subtypeMap": {
+    "organisation:AI infrastructure company": "Technology company",
+    "organisation:Data-centre developer": "Company",
+    "organisation:Power generator": "Company",
+    "organisation:Advanced reactor developer": "Company",
+    "organisation:Federal utility": "Company",
+    "organisation:Utility": "Company",
+    "organisation:Fusion developer": "Company",
+    "organisation:Public power joint operating agency": "Legal entity",
+    "organisation:Engineering contractor": "Company",
+    "organisation:Research laboratory": "Research institute",
+    "organisation:Scientific academy": "Research institute",
+    "organisation:Non-profit organisation": "Nonprofit",
+    "organisation:Company": "Company",
+    "organisation:": "Technology company",
+    "public_body:EU joint undertaking": "EU institution",
+    "public_body:Regulator (bureau)": "Government agency",
+    "public_body:State utility regulator": "Government agency",
+    "public_body:Local air permitting authority": "Government agency",
+    "public_body:Federal regulator": "Government agency",
+    "public_body:Federal department": "Government department",
+    "public_body:Federal agency": "Government agency",
+    "public_body:State news agency": "Government agency",
+    "public_body:Government agency": "Government agency",
+    "public_body:": "Government department",
+    "infrastructure:Data-centre cluster": "Compute cluster",
+    "infrastructure:AI training cluster": "Compute cluster",
+    "infrastructure:Data-centre platform (multi-site)": "Data-centre programme",
+    "infrastructure:Data-centre programme (multi-region)": "Data-centre programme",
+    "infrastructure:Designated AI Growth Zone": "Designated zone",
+    "document:Policy initiative (press release)": "Press release",
+    "document:Agency letter and draft rulemaking proposal": "Letter",
+    "document:Filing": "Regulatory filing",
+    "document:Press release": "Press release"
+  },
+  "locations": {
+    "crusoe-abilene-campus": {
+      "countryCode": "US",
+      "adminArea": "Texas",
+      "place": "Abilene"
+    },
+    "crusoe-abilene-microsoft-campus": {
+      "countryCode": "US",
+      "adminArea": "Texas",
+      "place": "Abilene"
+    },
+    "stargate-shackelford-county": {
+      "countryCode": "US",
+      "adminArea": "Texas",
+      "place": "Shackelford County"
+    },
+    "stargate-dona-ana-county": {
+      "countryCode": "US",
+      "adminArea": "New Mexico",
+      "place": "Doña Ana County"
+    },
+    "stargate-lordstown": {
+      "countryCode": "US",
+      "adminArea": "Ohio",
+      "place": "Lordstown"
+    },
+    "stargate-milam-county": {
+      "countryCode": "US",
+      "adminArea": "Texas",
+      "place": "Milam County"
+    },
+    "stargate-saline-township": {
+      "countryCode": "US",
+      "adminArea": "Michigan",
+      "place": "Saline Township"
+    },
+    "stargate-port-washington": {
+      "countryCode": "US",
+      "adminArea": "Wisconsin",
+      "place": "Port Washington"
+    },
+    "stargate-uae": {
+      "countryCode": "AE",
+      "adminArea": "Abu Dhabi"
+    },
+    "uae-us-ai-campus": {
+      "countryCode": "AE",
+      "adminArea": "Abu Dhabi"
+    },
+    "stargate-norway": {
+      "countryCode": "NO",
+      "place": "Kvandal, outside Narvik"
+    },
+    "stargate-uk": {
+      "countryCode": "GB"
+    },
+    "nscale-loughton": {
+      "countryCode": "GB",
+      "adminArea": "England",
+      "place": "Loughton"
+    },
+    "fairwater-wisconsin": {
+      "countryCode": "US",
+      "adminArea": "Wisconsin",
+      "place": "Mount Pleasant"
+    },
+    "fairwater-atlanta": {
+      "countryCode": "US",
+      "adminArea": "Georgia",
+      "place": "Atlanta"
+    },
+    "meta-richland-parish": {
+      "countryCode": "US",
+      "adminArea": "Louisiana",
+      "place": "Richland Parish"
+    },
+    "meta-hyperion": {
+      "countryCode": "US",
+      "adminArea": "Louisiana",
+      "place": "Richland Parish"
+    },
+    "meta-prometheus": {
+      "countryCode": "US",
+      "adminArea": "Ohio",
+      "place": "New Albany"
+    },
+    "meta-el-paso": {
+      "countryCode": "US",
+      "adminArea": "Texas",
+      "place": "El Paso"
+    },
+    "google-visakhapatnam-ai-hub": {
+      "countryCode": "IN",
+      "adminArea": "Andhra Pradesh",
+      "place": "Visakhapatnam"
+    },
+    "aws-us-government-ai-expansion": {
+      "countryCode": "US"
+    },
+    "xai-macrohardrr": {
+      "countryCode": "US",
+      "adminArea": "Mississippi",
+      "place": "Southaven"
+    },
+    "uk-north-east-ai-growth-zone": {
+      "countryCode": "GB",
+      "adminArea": "England",
+      "place": "Blyth and Cobalt Park"
+    }
+  },
+  "operators": {
+    "stargate-uae": [
+      {
+        "entityId": "openai",
+        "note": "“will be built by G42 and operated by OpenAI and Oracle”, as the joint release of 22 May 2025 states."
+      },
+      {
+        "entityId": "oracle",
+        "note": "As above."
+      }
+    ]
+  }
+}

@@ -17,6 +17,24 @@ export type DocumentHistoryCollection = {
     text: string;
     claimIds: string[];
   }[];
+  /**
+   * A note on one row of a family's provision grid, such as editions that
+   * state the provision under a wording the row does not yet track. The
+   * editions are linked to their document pages. The records the note rests
+   * on (comparison cells, say) stay on their own page and are not exported
+   * with the history.
+   */
+  rowNotes?: RowNote[];
+};
+
+export type RowNote = {
+  id: string;
+  family: string;
+  /** The provision key of the row. */
+  key: string;
+  text: string;
+  editionIds: string[];
+  claimIds: string[];
 };
 
 export type EditionGap = 'no-recorded-predecessor' | 'no-recorded-change';
@@ -41,6 +59,12 @@ export const provisionKinds = [
   'evaluation_timing',
   'reporting',
   'revision',
+  // Schema 2.20: other statements of a document with an exact expression.
+  'statement',
+  // Schema 2.22: a date a text states for its own application, and the
+  // standing a text claims for itself.
+  'date',
+  'standing',
 ] as const;
 export type ProvisionKind = (typeof provisionKinds)[number];
 export const provisionKindLabels: Record<ProvisionKind, string> = {
@@ -52,6 +76,9 @@ export const provisionKindLabels: Record<ProvisionKind, string> = {
   evaluation_timing: 'Evaluation timing',
   reporting: 'Reporting',
   revision: 'Revision',
+  statement: 'Statement',
+  date: 'Stated date',
+  standing: 'Standing',
 };
 export const partyRoleLabels = {
   decides: 'Decides',
@@ -76,6 +103,7 @@ export function familyHistory(
   data: Dataset,
   family: string,
   openQuestions: DocumentHistoryCollection['openQuestions'] = [],
+  rowNotes: RowNote[] = [],
 ) {
   const entities = new Map(data.entities.map((e) => [e.id, e]));
   const versions = frameworkVersions(data, family);
@@ -176,6 +204,7 @@ export function familyHistory(
       key,
       kind,
       label,
+      note: rowNotes.find((n) => n.family === family && n.key === key) ?? null,
       wordings: provisionWordings(editions, key),
       editions: editions.map((e) => ({
         editionId: e.entity.id,
@@ -212,7 +241,7 @@ export function documentHistory(
   collection: DocumentHistoryCollection,
 ) {
   const families = collection.families.map((family) =>
-    familyHistory(data, family, collection.openQuestions),
+    familyHistory(data, family, collection.openQuestions, collection.rowNotes),
   );
   const claimIds = [
     ...new Set(

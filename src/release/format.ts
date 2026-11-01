@@ -6,7 +6,7 @@
  */
 
 export const releaseFormat = 'selekoa-dataset';
-export const releaseFormatVersion = '1.7';
+export const releaseFormatVersion = '1.9';
 /**
  * Formats the generator can still write, so a release made in an earlier
  * format reproduces byte for byte. Format 1.2 adds `sources.csl.json`;
@@ -15,7 +15,9 @@ export const releaseFormatVersion = '1.7';
  * `licence` and the README's licence section); format 1.5 adds the source
  * field `authorNames` (dataset schema 2.14); format 1.6 adds the evidence
  * field `retrievalRoute` (dataset schema 2.15); format 1.7 adds the entity
- * fields `countryCode` and `datedNames` (dataset schema 2.19).
+ * fields `countryCode` and `datedNames` (dataset schema 2.19); format 1.8 adds
+ * the entity fields `location` and `operator` (dataset schema 2.21); format
+ * 1.9 adds the entity field `naming` (dataset schema 2.26).
  */
 export const writableFormatVersions = [
   '1.1',
@@ -25,6 +27,8 @@ export const writableFormatVersions = [
   '1.5',
   '1.6',
   '1.7',
+  '1.8',
+  '1.9',
 ] as const;
 export type WritableFormatVersion = (typeof writableFormatVersions)[number];
 
@@ -87,6 +91,9 @@ export const recordFields: Record<RecordType, FieldSpec[]> = {
     f('proposition', 'selekoa', 'provisional', { nested: true }),
     f('countryCode', 'structured', 'stable', { since: '1.7' }),
     f('datedNames', 'selekoa', 'provisional', { nested: true, since: '1.7' }),
+    f('location', 'selekoa', 'provisional', { nested: true, since: '1.8' }),
+    f('operator', 'selekoa', 'provisional', { nested: true, since: '1.8' }),
+    f('naming', 'selekoa', 'provisional', { nested: true, since: '1.9' }),
   ],
   claims: [
     f('id', 'structured', 'stable', { required: true }),
@@ -188,6 +195,9 @@ export const csvColumns: Record<RecordType, string[]> = {
     'proposition_terms',
     'country_code',
     'dated_names_json',
+    'location_json',
+    'operator_json',
+    'naming_json',
   ],
   claims: [
     'id',
@@ -279,6 +289,9 @@ const csvColumnsSince: Record<string, WritableFormatVersion> = {
   retrieval_route: '1.6',
   country_code: '1.7',
   dated_names_json: '1.7',
+  location_json: '1.8',
+  operator_json: '1.8',
+  naming_json: '1.9',
 };
 
 const formatOrder = (v: WritableFormatVersion) =>

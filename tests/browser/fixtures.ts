@@ -50,3 +50,11 @@ export const test = base.extend({
 
 export { expect } from '@playwright/test';
 export type { Page } from '@playwright/test';
+
+/**
+ * The explorer map lays out the whole dataset on the main thread before its
+ * first draw (docs/roadmap.md, Explorer map speed); after the 2026-10-31
+ * admissions this takes about 16 s on four processors. A test setting until
+ * that task is done, not a size budget.
+ */
+export const MAP_FIRST_DRAW_TIMEOUT = 60_000;

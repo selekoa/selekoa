@@ -1,9 +1,6 @@
 import { analytics, contact, releaseVersion } from 'virtual:site';
 import { versionStatus } from '../site/version';
-import type { Repository } from '../domain/repository';
 import type { ReviewStatus } from '../domain/review-status';
-import type { DocumentHistory } from '../domain/document-history';
-import { coverage } from '../domain/coverage';
 import { mapLimits } from '../domain/query';
 import type { Entity } from '../domain/schema';
 import { changeBasis } from './ReadingRows';
@@ -13,6 +10,8 @@ import {
   latestRelease,
   releaseDownload,
 } from './release-info';
+import facts from 'virtual:about-facts';
+import { chinaScopeNote } from '../reading/china-scope';
 import './reading-first.css';
 import './about.css';
 
@@ -57,10 +56,7 @@ const typeNouns: Record<Entity['type'], [string, string]> = {
 };
 
 export function About({
-  repository,
   status,
-  history,
-  commitmentTexts,
   controlTimelines,
   propositionCollections,
   dossiers,
@@ -69,10 +65,7 @@ export function About({
   statements,
   onClaim,
 }: {
-  repository: Repository;
   status: ReviewStatus;
-  history: DocumentHistory;
-  commitmentTexts: number;
   controlTimelines: number;
   propositionCollections: number;
   dossiers: number;
@@ -82,9 +75,10 @@ export function About({
   statements: Record<string, string>;
   onClaim: (id: string) => void;
 }) {
-  const data = repository.data;
-  const c = coverage(data);
-  const editions = history.families.reduce((n, f) => n + f.editions.length, 0);
+  // Computed by the build from the whole dataset, so that the page is
+  // drawn without the records (src/domain/about-facts.ts).
+  const c = facts.coverage;
+  const { frameworks, editions, commitmentTexts } = facts;
   return (
     <article className="about" aria-labelledby="about-title">
       <header className="doc-lede">
@@ -164,7 +158,7 @@ export function About({
         </h2>
         <p>
           These figures are computed from the dataset loaded in this page,
-          updated {data.meta.updatedAt}.
+          updated {c.updatedAt}.
         </p>
         <dl className="about-facts">
           <dt>Claims</dt>
@@ -215,7 +209,8 @@ export function About({
           <dt>Reading pages</dt>
           <dd>
             Document histories of{' '}
-            {plural(history.families.length, 'safety framework')} (
+            {/* Split as before, so the built page is unchanged. */}
+            {plural(frameworks, 'safety framework')} (
             {plural(editions, 'edition')}),{' '}
             {plural(
               commitmentTexts,
@@ -255,7 +250,7 @@ export function About({
                 <a href="data/claims.json">data/claims.json</a>, and always
                 serve the latest release. <a href="llms.txt">llms.txt</a> lists
                 them for programs and language-model tools.
-                {changedSinceRelease(data, latestRelease) &&
+                {changedSinceRelease(c, latestRelease) &&
                   ' The records on these pages have changed since this release.'}
               </>
             ) : (
@@ -281,6 +276,7 @@ export function About({
           propositions in its collection under Ideas & debates. Coverage is
           selective throughout, and a missing record is a gap in coverage.
         </p>
+        <p id="about-china-scope">{chinaScopeNote(facts.chinaScope)}</p>
       </section>
 
       <section aria-labelledby="about-method">
@@ -452,7 +448,11 @@ export function About({
           <dt>Interval</dt>
           <dd>
             A period with only the start and end a source states. A missing end
-            means the end is unknown.
+            means the end is unknown. A role with no recorded end reads “from”
+            its start, then names the latest dated document that states the
+            role, with that document’s date: “from 2014-02-04 (stated in …,
+            2026-10-21)”. Where no such document is dated, it reads “end not
+            recorded”. Neither reading shows that the role continues.
           </dd>
           <dt>Undated</dt>
           <dd>
@@ -639,7 +639,7 @@ export function About({
         </p>
         <p className="about-example">
           Selekoa, claim record <code>record-id</code>, dataset updated{' '}
-          {data.meta.updatedAt}, accessed YYYY-MM-DD, link to the claim.
+          {c.updatedAt}, accessed YYYY-MM-DD, link to the claim.
         </p>
         {latestRelease ? (
           <>

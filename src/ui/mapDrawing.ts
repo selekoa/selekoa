@@ -1,6 +1,6 @@
 import type Sigma from 'sigma';
 import type { Entity } from '../domain/schema';
-import { predicates } from '../domain/predicates';
+import { relationLabel } from '../domain/predicates';
 import { entityStyle } from './entityStyle';
 import { isProvisional, relationStyles, type ClaimBundle } from './mapGrammar';
 import { documentSequence, type Point } from './layout';
@@ -179,7 +179,7 @@ export function drawMap(
     group.addEventListener('mouseenter', () =>
       onHover(
         b.claims.length === 1
-          ? `${title} · ${predicates[b.claims[0].predicate].label} · ${b.claims[0].statement}`
+          ? `${title} · ${relationLabel(b.claims[0])} · ${b.claims[0].statement}`
           : `${title}. Select to choose an individual claim.`,
       ),
     );

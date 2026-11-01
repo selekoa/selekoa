@@ -1,0 +1,191 @@
+{
+  "description": "Authored map for the admission of the people pack (research/people), applied by scripts/people-admission.ts. It records the maintainer's decisions of 2026-10-30 (review/people-pack-2026-10-29.md, questions 1–12 adopted as recommended), the adjudication of the cross-family check of the same day, the corrections that follow from the check as worded, the records held and why, and the mappings to the schema.",
+  "admissionDate": "2026-10-31",
+  "baseCommit": "754ce57",
+  "checkDate": "2026-10-30",
+  "snapshotDescription": "Dataset state before the people admission (2026-10-31): the IDs it adds and the rows it changes as they were.",
+  "scope": "On 2026-10-31, by the maintainer’s decisions of 2026-10-30 and the corrections of a blind cross-family check, a machine-prepared, machine-audited candidate pack on people was admitted: dated roles and founding credits of the chief executives and chairs of Alphabet and Google, Microsoft, Meta, NVIDIA, SoftBank Group, Oracle and Alibaba from their filings and company pages, the authorship of six texts they signed, roles of twelve persons the dataset already held, and thirty authors of single dataset texts, each identified by a second page. A role with a start and no recorded end is not evidence that the role continues; a page dated by its retrieval says only what it listed then. What the signed texts state is not yet recorded. All records are seeds; none is human-reviewed.",
+  "sourceKindMap": {
+    "filing": "filing",
+    "announcement": "announcement",
+    "report": "report",
+    "paper": "paper",
+    "article": "article",
+    "post": "post",
+    "webpage": "post",
+    "profile": "post",
+    "cv": "report"
+  },
+  "documentSubtypeMap": {
+    "Shareholder letter": "Letter"
+  },
+  "topics": {
+    "authors": "ideas",
+    "executives": "people",
+    "existing-roles": "people"
+  },
+  "hold": {
+    "pp-st-hennessy-2026-ai-oversight-states": "Decision 1: states_position is a proposed predicate; held for a schema decision in a later minor release.",
+    "pp-st-nadella-2023-altman-team-states": "Decision 1: states_position is a proposed predicate; held for a schema decision in a later minor release.",
+    "pp-st-nadella-2023-openai-board-states": "Decision 1: states_position is a proposed predicate; held for a schema decision in a later minor release.",
+    "pp-st-nadella-2025-capacity-states": "Decision 1: states_position is a proposed predicate; held for a schema decision in a later minor release.",
+    "pp-st-pichai-2018-ai-principles-states": "Decision 1: states_position is a proposed predicate; held for a schema decision in a later minor release.",
+    "pp-st-son-asi-states": "Decision 1: states_position is a proposed predicate; held for a schema decision in a later minor release. Check item 85 (partly) concerns the date of the served expression only.",
+    "pp-st-zuckerberg-2025-open-source-risk-states": "Decision 1: states_position is a proposed predicate; held for a schema decision in a later minor release."
+  },
+  "claims": {
+    "pp-ex-nadella-microsoft-chair-2021": {
+      "why": "Adjudication 1 (check item 10): the evidence gives the date's kind, the announcement of 16 June 2021. The effective date the check read in an archive capture of Microsoft's 2021 proxy statement could not be retrieved at admission (SEC HTTP 403; the archive reset the connection), so no effective date is recorded.",
+      "time": {
+        "kind": "event",
+        "date": "2021-06-16",
+        "basis": "announcement",
+        "note": "Date of the announcement, as the 8-K states it; the filing gives neither the date of the election nor an effective date."
+      },
+      "qualification": "The date is the announcement the filing reports, not an election or effective date; the record states no tenure. Microsoft’s 2026 proxy statement (21 October 2026) is signed by Satya Nadella as Chairman and Chief Executive Officer; that is the title on that date, not evidence that the role continues. A cross-family check of 2026-10-30 read “Effective June 16” in an archive capture of Microsoft’s 2021 proxy statement; this admission could not retrieve that text, so no effective date is recorded.",
+      "evidence": {
+        "1": {
+          "support": "context",
+          "note": "The signature gives the title on 21 October 2026, the proxy statement’s date; it does not date the election."
+        }
+      }
+    },
+    "pp-st-nadella-2025-shareholder-letter-authored": {
+      "why": "Adjudication 2 (check item 76): the letter is dated; its closing signature prints 15 October 2025. Confirmed at admission in a fresh retrieval with the pack's bytes.",
+      "time": {
+        "kind": "event",
+        "date": "2025-10-15",
+        "basis": "signature",
+        "note": "Date printed beneath the closing signature."
+      },
+      "qualification": "Credit by the heading and closing signature of a company letter.",
+      "addEvidence": [
+        {
+          "source": "nadella-2025-shareholder-letter",
+          "locator": "Shareholder Letter, closing signature, immediately before Financial Review",
+          "passage": "Satya Nadella Chairman and Chief Executive Officer October 15, 2025",
+          "passageType": "quote",
+          "sourceRole": "primary",
+          "support": "supports",
+          "note": "Passage and locator as the cross-family check of 2026-10-30 read them; matched again at admission on 2026-10-31 in a fresh retrieval whose SHA-256 equals the pack’s."
+        }
+      ]
+    },
+    "pp-cn-huang-huiwen-01ai-coo": {
+      "why": "Check item 32: the page prints only 黄蕙雯; the Latin form is the dataset's transliteration, not a printed alias.",
+      "statement": "01.AI’s management-team page, as retrieved on 15 and 29 October 2026, lists 黄蕙雯 (Huang Huiwen) as co-founder and COO.",
+      "qualificationAdd": "The page prints the name in Chinese characters only; “Huang Huiwen” is the dataset’s transliteration, not a form the page prints. The English rendering of the passage is a machine translation; no human translation review."
+    },
+    "pp-cn-ma-jie-01ai-responsibilities": {
+      "why": "Check item 38: the page prints only 马杰; the Latin form is the dataset's transliteration, not a printed alias.",
+      "statement": "01.AI’s management-team page, as retrieved on 15 and 29 October 2026, lists 马杰 (Ma Jie) as a co-founder responsible for AI+ strategic business, data and security, among other areas.",
+      "qualificationAdd": "The page prints the name in Chinese characters only; “Ma Jie” is the dataset’s transliteration, not a form the page prints. The English rendering of the passage is a machine translation; no human translation review."
+    },
+    "pp-cn-shen-pengfei-01ai-vp-sales": {
+      "why": "Check item 40: the page prints only 沈鹏飞; the Latin form is the dataset's transliteration, not a printed alias.",
+      "statement": "01.AI’s management-team page, as retrieved on 15 and 29 October 2026, lists 沈鹏飞 (Shen Pengfei) as co-founder and vice president of sales.",
+      "qualificationAdd": "The page prints the name in Chinese characters only; “Shen Pengfei” is the dataset’s transliteration, not a form the page prints. The English rendering of the passage is a machine translation; no human translation review."
+    },
+    "pp-er-giannandrea-apple-svp-2025": {
+      "why": "The pack's passage is the opening of a sentence the dataset already quotes from the same release; the whole sentence is used so that the source's quotation counts once (validation counts distinct passages).",
+      "evidence": {
+        "0": {
+          "passage": "John Giannandrea, Apple’s senior vice president for Machine Learning and AI Strategy, is stepping down from his position and will serve as an advisor to the company before retiring in the spring of 2026.",
+          "note": "The whole sentence, already quoted from this release by the dataset’s departure record, is given in place of the pack’s shorter quotation of its opening, so that the release’s quotation counts once."
+        }
+      }
+    },
+    "pp-ex-pichai-alphabet-ceo-2019": {
+      "why": "Review of 2026-10-31: the statement dates the announcement, not the board's act; the quoted passage elides the approval clause.",
+      "statement": "Alphabet’s Form 8-K reports that on 3 December 2019 Alphabet announced the appointment of Sundar Pichai as Alphabet’s chief executive officer, effective immediately."
+    },
+    "pp-ex-nadella-microsoft-ceo-2014": {
+      "why": "Review of 2026-10-31: the 8-K's date is the announcement; the board's appointment is what it announced.",
+      "statement": "Microsoft’s Form 8-K reports that on 4 February 2014 Microsoft announced that its board had appointed Satya Nadella chief executive officer, a role he would assume immediately."
+    },
+    "pp-ex-nadella-microsoft-director-2014": {
+      "why": "Review of 2026-10-31: the 8-K's date is the announcement; the board's appointment is what it announced. Its note named the 2026 proxy statement as the latest document stating the role, which is not among its evidence; under decision 2 the reading names the latest supporting document, so the note now names only the 8-K (2026-11-01).",
+      "statement": "Microsoft’s Form 8-K reports that on 4 February 2014 Microsoft announced that its board had appointed Satya Nadella a director, a role he would assume immediately.",
+      "time": {
+        "kind": "interval",
+        "from": "2014-02-04",
+        "note": "Start from the 8-K, which reports the appointment and that he would assume his new roles immediately; no later document is cited for this record. Open interval, not a claim that the role continues."
+      },
+      "qualification": "Board membership is a separate role from his executive office; the record states no end."
+    }
+  },
+  "persons": {
+    "jensen-huang": {
+      "why": "Adjudication 3 (check item 71): the alias rests on a text that prints both forms.",
+      "addSources": ["huang-stanford-profile"],
+      "description": "Named by NVIDIA as its founder, president and chief executive officer since 1993; its proxy statements print the name as Jen-Hsun Huang, and a Stanford Technology Ventures Program profile headed “Jensen Huang” opens “Jen-Hsun Huang co-founded NVIDIA”."
+    },
+    "lawrence-j-ellison": {
+      "why": "Adjudication 3 (check item 72): the alias rests on a text that prints both forms.",
+      "addSources": ["ellison-apple-name-link"],
+      "description": "Named in Oracle’s filings as its founder, chief executive officer from 1977 to 2014, and executive chair and chief technology officer from September 2014. Apple’s release of 20 September 2002, headed “Larry Ellison Resigns as Apple Director”, names him Lawrence J. Ellison in its opening."
+    }
+  },
+  "existingEntities": {
+    "mark-zuckerberg": {
+      "why": "Decision 4: every role record he has is an executive or board role.",
+      "subtype": "Executive"
+    }
+  },
+  "documents": {
+    "nadella-2025-shareholder-letter": {
+      "publishedAt": "2025-10-15",
+      "dateNote": "Date printed beneath the letter’s closing signature (corrected at admission by the cross-family check, item 76)."
+    },
+    "nadella-2023-openai-statements": {
+      "revisedAt": "2023-11-21",
+      "dateNote": "First posted on 17 November 2023 (“Posted Nov. 17, 2023”); the page was updated with later statements on 19 and 21 November 2023."
+    }
+  },
+  "extraSources": [
+    {
+      "key": "huang-stanford-profile",
+      "id": "source-pp-huang-stanford-profile",
+      "title": "Jensen Huang (Stanford Technology Ventures Program, people)",
+      "authors": ["Stanford Technology Ventures Program"],
+      "publisher": "Stanford Technology Ventures Program, Stanford University",
+      "publicationDate": null,
+      "version": "Profile page located and read by the cross-family check of 2026-10-30 (SHA-256 f99f1abacae4c00746e445df4c19091f119cb4be76e9ba1dd82f580f4d525c88) as the text that prints both forms of the name. Retrieved again at admission on 2026-10-31 (SHA-256 3aaa8e32313edff3bbf60de5fc41aceee3517ff5505b1996c4b91fcf47990a07): the heading “Jensen Huang” is followed by a biography that opens “Jen-Hsun Huang co-founded NVIDIA Corporation in April 1993”. Identity source only; no passage is quoted as claim evidence. Its wording can change; earlier wording is not authenticated.",
+      "url": "https://stvp.stanford.edu/people/jensen-huang",
+      "language": "en",
+      "kind": "post",
+      "accessedAt": "2026-10-31"
+    },
+    {
+      "key": "ellison-apple-name-link",
+      "id": "source-pp-ellison-apple-2002",
+      "title": "Larry Ellison Resigns as Apple Director",
+      "authors": ["Apple"],
+      "publisher": "Apple (Newsroom)",
+      "publisherId": "apple",
+      "publicationDate": "2002-09-20",
+      "version": "Press release dated 20 September 2002 as served on Apple’s newsroom, located and read by the cross-family check of 2026-10-30 (SHA-256 27ab9ba1e557c9b254845ed5af2cb135de48aaffae938f582c041f2727a696ba). Retrieved again at admission on 2026-10-31 (SHA-256 32039bf6a2a86cb3511a9f6a7971d99b98932580c4104ae3fbf41ade0d6f1f61): the title names Larry Ellison and the opening names Lawrence J. Ellison, chairman and chief executive officer of Oracle Corporation. Identity source only; no passage is quoted as claim evidence.",
+      "url": "https://www.apple.com/newsroom/2002/09/20Larry-Ellison-Resigns-as-Apple-Director/",
+      "language": "en",
+      "kind": "announcement",
+      "accessedAt": "2026-10-31"
+    }
+  ],
+  "sourceAliases": {
+    "alibaba-20f-2026": {
+      "id": "lg-src-gc-alibaba-20f-2026",
+      "why": "The same filing at the same address as the dataset's source; the pack did not link it."
+    }
+  },
+  "sourceOverrides": {
+    "au-id-ziebarth-cv": {
+      "why": "Check item 42: the pack's temporary download address expired (HTTP 410); the check retrieved the same bytes through the stable link on the homepage.",
+      "url": "https://www.dropbox.com/s/aq7ii2daqahqv81/CV_nlz.pdf?dl=1",
+      "versionAdd": "The pack's temporary download address has since expired (HTTP 410). The cross-family check of 2026-10-30 found the stable link on the homepage (https://sites.google.com/site/nicolasziebarth/home) and retrieved the same bytes through it; retrieved again through that link at admission on 2026-10-31 with the same SHA-256."
+    }
+  },
+  "checkSentences": {
+    "applied": [10, 76, 71, 72, 32, 38, 40],
+    "retrieval": "agreed in part: some of the record’s sources could not be retrieved in the check, without any contradiction; nothing was changed at admission"
+  }
+}

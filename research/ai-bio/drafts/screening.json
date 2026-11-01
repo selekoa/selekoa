@@ -1,0 +1,3170 @@
+{
+  "group": "screening",
+  "preparedAt": "2026-10-28",
+  "auditCorrections": [
+    {
+      "record": "ab-scr-hhs-2010-voluntary-all-providers",
+      "auditor": "A",
+      "finding": "attributes.provision.kind 'definition' is not in the schema's enum, and the record bundles two provisions of the notice (that following it is voluntary, and that it is addressed to all providers rather than commercial ones) in one claim.",
+      "disposition": "Applied. Verified both sentences in the cached notice (voluntary sentence on the page numbered 62820; the addressee sentence at 62823, which also carries the draft Guidance's 'commercial' providers wording). Split: this record now states the voluntary standing only, with kind 'exception'; the addressees are the new record ab-scr-hhs-2010-all-providers-addressees with kind 'threshold'. Both qualifications say the record was split. No schema kind states an instrument's standing; recorded in openQuestions."
+    },
+    {
+      "record": "ab-scr-hhs-2010-all-providers-addressees",
+      "auditor": "A",
+      "finding": "The second half of the split record (see the entry above): the Guidance is directed to all providers of synthetic double-stranded DNA.",
+      "disposition": "New record carrying the 62823 quote, with provision kind 'threshold' (the kind the dataset uses for a definition that decides who is covered). The statement adds the notice's own account of the change from the draft, which the cached text carries verbatim."
+    },
+    {
+      "record": "ab-scr-hhs-2023-provider-screening",
+      "auditor": "A",
+      "finding": "The Federal Register page in the locator is wrong by one: the passage sits on 70999, not 71000.",
+      "disposition": "Applied. Verified in the cache: the PDF page holding recommendation (1) carries the folio 70999, and the next PDF page opens '71000 Federal Register / Vol. 88, No. 197'. Locator now reads '88 FR 70999'."
+    },
+    {
+      "record": "ab-scr-ostp-framework-2026-review",
+      "auditor": "A",
+      "finding": "The second evidence item's locator is off by one page, and the recorded expression is the September 2024 revision, so the basis should be 'revision' and the document version needs revisedAt 2024-09.",
+      "disposition": "Applied. Verified in the cache: both passages are on PDF p. 11, whose printed folio is 10, and the cover reads 'Revised: September 2024'. Both locators now read 'PDF p. 11 (printed p. 10)'; time.basis is 'revision' and the time note says why. The document version us-ostp-nucleic-acid-synthesis-screening-framework-2024 already carried revisedAt 2024-09, so no document change was needed."
+    },
+    {
+      "record": "ab-scr-aspr-pages-framework-revision-pending",
+      "auditor": "B",
+      "finding": "The record is written about two pages while only the hub page is cited, and the second page's sentence reads 'the new framework', not 'the revised framework'.",
+      "disposition": "Applied. Verified both pages in the cache: the compliance sentence is identical on both, while the hub page ends 'once the revised framework is available' and the framework page 'once the new framework is available'. Added the framework page's sentence as its own evidence item with its locator, reworded the statement to carry both wordings, and recorded in the qualification that each page is cited for its own wording. The record keeps the plural subject, now covered by two cited pages."
+    },
+    {
+      "record": "ab-scr-igsc-membership-certification",
+      "auditor": "B",
+      "finding": "The statement renames item (d)'s object 'the consortium's screening database', where the form says 'the IGSC Regulated Pathogen Database'.",
+      "disposition": "Applied. Verified the form's Certification in the cache: item (d) reads 'not distribute or disclose the IGSC Regulated Pathogen Database, in whole or in part, to any 3rd party without prior written permission of IGSC'. The form's own name is now used in the statement and the paraphrase; a hazardNote records that only the label is recorded and nothing of the database's content, compilation or use in screening."
+    },
+    {
+      "record": "ab-scr-igsc-member-directory-listing",
+      "auditor": "B",
+      "finding": "The paraphrase's clause 'the page gives no category labels' and the qualification's 'The page shows no membership categories' are false; the locator calls a screen-reader-only heading the page heading; and the typology clause in the statement is not stated by the page.",
+      "disposition": "Applied. Verified in the cached HTML: the section is a tab list with aria-label 'Member categories' and two labelled tabs, 'Screening-Verified IGSC Members' (16 article.member entries) and 'Associate IGSC Members' (29), 45 in all; the quoted 'IGSC member directory' is an h2 of class screen-reader-text and the visible heading is 'Members'. The statement now gives the two labels and their counts; the false clauses are removed from the paraphrase and the qualification; the labels are added as a quoted evidence item; the locator says the heading is a screen-reader heading. The typology is moved to the qualification as a reading of the entries' own descriptions, not recorded as a claim, and no member is named."
+    },
+    {
+      "record": "ab-scr-uk-guidance-scope",
+      "auditor": "A",
+      "finding": "attributes.provision.kind 'definition' is not in the schema's enum, and the record carries two propositions (the guidance's standing and its addressees).",
+      "disposition": "Applied. Both quotes re-verified in the cached GOV.UK attachment. Split: this record states the standing only, with kind 'required_action'; the addressees are the new record ab-scr-uk-guidance-addressees with kind 'threshold'. Neither kind is a close fit; recorded in openQuestions."
+    },
+    {
+      "record": "ab-scr-uk-guidance-addressees",
+      "auditor": "A",
+      "finding": "The second half of the split record (see the entry above): the guidance is intended to assist all entities involved in the provision and use of synthetic nucleic acids operating in the UK.",
+      "disposition": "New record carrying the addressee quote, with provision kind 'threshold' and a qualification that it establishes no legal obligation and no territorial rule."
+    },
+    {
+      "record": "ab-scr-s2400-introduced",
+      "auditor": "A",
+      "finding": "time.basis 'introduction' is not in the schema's enum, and the dataset's own status records carry no basis; also, 'as served on 28 October 2026 lists no later action' is bounded by the status record's own generation stamp.",
+      "disposition": "Applied. time.basis removed; the time note now says the date is the date of introduction in the Senate and that the record carries no basis, as the dataset's status records do not. Verified the stamp in the cached status XML (updateDate 2025-12-05) and recorded that the absence of later action is bounded by it."
+    },
+    {
+      "record": "ab-scr-s2400-screening-regulation",
+      "auditor": "A",
+      "finding": "time.basis 'introduction' is not in the schema's enum and a provision claim needs an allowed basis matching one of the edition's own dates; and the statement's verification limb comes from subparagraph (D), outside the cited locator.",
+      "disposition": "Applied. Verified the bill XML in the cache: subparagraph (D) reads 'verifying or provisionally verifying that gene synthesis providers and manufacturers of gene synthesis equipment adhere to the regulation prescribed pursuant to subparagraph (C)', added as a second quoted evidence item with its own locator, so the limb is cited rather than dropped. time.basis is now 'publication' with the date 19 July 2023 of the introduced print (its dateline and the date in its govinfo package metadata), and the document version carries publishedAt 2023-07-19 so that the schema's provision-date rule holds; the note keeps 'introduced in the Senate' as the event."
+    },
+    {
+      "record": "ab-scr-s2399-ai-risk-assessment",
+      "auditor": "A",
+      "finding": "The statement turns the bill's permissive 'Such initiatives and activities may include' into a duty to include a summary in the National Health Security Strategy; time.basis 'introduction' is not in the schema's enum; and the time note rests on the bill-status record, which is not an evidence item.",
+      "disposition": "Applied. Verified the bill XML in the cache: the subsection's words are 'Such initiatives and activities may include—(1) regularly monitoring and researching potential global biological catastrophic risks ... and (2) including in the National Health Security Strategy under section 2802 a summary of the risk assessment conducted under this subsection.' The statement now reads 'provides that such initiatives and activities may include', the paraphrase evidence item carries the permissive wording, and the qualification says neither item would be required. time.basis is 'publication' with 19 July 2023 (the introduced print's dateline and govinfo package date) and the document version carries publishedAt 2023-07-19. The official status record is added as a paraphrase evidence item for the date (verified: introducedDate 2023-07-19 and one text version dated 2023-07-19)."
+    },
+    {
+      "record": "ab-scr-hhs-2010-effective-date",
+      "auditor": "integrator (widened from auditor A's schema-fit finding)",
+      "finding": "The provision kind `date` is not in the schema’s enum.",
+      "disposition": "Changed to `threshold`, the kind the dataset uses for a stated date of effect or application; the schema has no `date` kind, and `states_provision` requires a provision attribute, so removing it was not open. The gap is in the open questions."
+    },
+    {
+      "record": "ab-scr-ostp-framework-funding-requirement-effective",
+      "auditor": "integrator (widened from auditor A's schema-fit finding)",
+      "finding": "The provision kind `date` is not in the schema’s enum.",
+      "disposition": "Changed to `threshold`, the kind the dataset uses for a stated date of effect or application; the schema has no `date` kind, and `states_provision` requires a provision attribute, so removing it was not open. The gap is in the open questions."
+    },
+    {
+      "record": "ab-scr-aspr-pages-framework-revision-pending",
+      "auditor": "integrator (widened from auditor A's schema-fit finding)",
+      "finding": "The provision kind `date` is not in the schema’s enum.",
+      "disposition": "Changed to `threshold`, the kind the dataset uses for a stated date of effect or application; the schema has no `date` kind, and `states_provision` requires a provision attribute, so removing it was not open. The gap is in the open questions."
+    },
+    {
+      "record": "ab-scr-ostp-framework-replacement-not-found",
+      "auditor": "integrator (widened from auditor A's schema-fit finding)",
+      "finding": "The provision kind `date` is not in the schema’s enum.",
+      "disposition": "Changed to `threshold`, the kind the dataset uses for a stated date of effect or application; the schema has no `date` kind, and `states_provision` requires a provision attribute, so removing it was not open. The gap is in the open questions."
+    },
+    {
+      "record": "ab-scr-hhs-2023-scope",
+      "auditor": "integrator (widened from auditor A's schema-fit finding)",
+      "finding": "The provision kind `definition` is not in the schema’s enum.",
+      "disposition": "Changed to `threshold`, as the correction pass did for the audited twin, because the provision decides what the instrument covers."
+    },
+    {
+      "record": "ab-scr-ostp-framework-scope",
+      "auditor": "integrator (widened from auditor A's schema-fit finding)",
+      "finding": "The provision kind `definition` is not in the schema’s enum.",
+      "disposition": "Changed to `threshold`, as the correction pass did for the audited twin, because the provision decides what the instrument covers."
+    },
+    {
+      "record": "ab-scr-uk-guidance-ai-in-background",
+      "auditor": "integrator (widened from auditor A's schema-fit finding)",
+      "finding": "The provision kind `definition` is not in the schema’s enum.",
+      "disposition": "Changed to `risk_domain`: the passage names the risk the guidance addresses, not a definition of coverage."
+    },
+    {
+      "record": "ab-scr-s2400-federal-purchase-restriction",
+      "auditor": "integrator (widened from auditor A's schema-fit finding)",
+      "finding": "The provision kind `enforcement` is not in the schema’s enum.",
+      "disposition": "Changed to `required_action`: the provision requires entities receiving federal funds, and federal agencies, to purchase from providers meeting a stated condition."
+    },
+    {
+      "record": "ab-scr-s2400-federal-purchase-restriction",
+      "auditor": "integrator (widened from auditor A's schema-fit finding)",
+      "finding": "The date basis `introduction` is not in the schema’s enum.",
+      "disposition": "Re-based on the publication of the introduced print, dated 2023-07-19, as the correction pass did for the two audited provision records of the same bills."
+    },
+    {
+      "record": "ab-scr-hr4702-introduced",
+      "auditor": "integrator (widened from auditor A's schema-fit finding)",
+      "finding": "The date basis `introduction` is not in the schema’s enum.",
+      "disposition": "Basis dropped and the kind of date stated in the note, as the correction pass did for ab-scr-s2400-introduced."
+    },
+    {
+      "record": "ab-scr-s2399-introduced",
+      "auditor": "integrator (widened from auditor A's schema-fit finding)",
+      "finding": "The date basis `introduction` is not in the schema’s enum.",
+      "disposition": "Basis dropped and the kind of date stated in the note, as the correction pass did for ab-scr-s2400-introduced."
+    }
+  ],
+  "sources": [
+    {
+      "key": "gov-eo-14110-fr",
+      "cacheKey": "gov-eo-14110-fr",
+      "datasetSource": "source-us-eo-14110-fr",
+      "documentId": "us-eo-14110-2023",
+      "title": "Executive Order 14110 of October 30, 2023: Safe, Secure, and Trustworthy Development and Use of Artificial Intelligence (88 FR 75191)",
+      "publisher": "Federal Register (Office of the Federal Register, National Archives) via govinfo.gov",
+      "url": "https://www.govinfo.gov/content/pkg/FR-2023-11-01/pdf/2023-24283.pdf",
+      "httpStatus": 200,
+      "sha256": "46739dfc1af256961458d3b73fa4d6f4b447b38eaa72efd80966463818be68ab",
+      "retrievedAt": "2026-10-28",
+      "language": "en",
+      "documentWords": {
+        "count": 20000,
+        "basis": "Count taken over from the dataset source source-us-eo-14110-fr (pdftotext word count of the Federal Register pages for this document, less page furniture); the file retrieved here has the same SHA-256 as that source's retrieval of 2026-10-27. Budget shared with that dataset source."
+      },
+      "version": "Federal Register print of 1 November 2023, Vol. 88, No. 210, pp. 75191-75226, FR Doc. 2023-24283. Same expression as dataset source source-us-eo-14110-fr. The PDF text layer renders superscript exponents inline, so quotes stop before such numbers.",
+      "kind": "filing",
+      "archive": {
+        "capture": "http://web.archive.org/web/20261021080002/https://www.govinfo.gov/content/pkg/FR-2023-11-01/pdf/2023-24283.pdf",
+        "via": "availability API (closest capture)",
+        "checked": false
+      }
+    },
+    {
+      "key": "hhs-2010-fr",
+      "cacheKey": "hhs-2010-fr",
+      "datasetSource": null,
+      "documentId": "us-hhs-synthetic-dsdna-guidance-2010",
+      "title": "Screening Framework Guidance for Providers of Synthetic Double-Stranded DNA (75 FR 62820)",
+      "publisher": "Federal Register (Office of the Federal Register, National Archives) via govinfo.gov",
+      "url": "https://www.govinfo.gov/content/pkg/FR-2010-10-13/pdf/2010-25728.pdf",
+      "httpStatus": 200,
+      "sha256": "d3bfd95a1e3ae4d212505081166f0f8bb7475845e225ae643e6d4a03a93b7e56",
+      "retrievedAt": "2026-10-28",
+      "language": "en",
+      "documentWords": {
+        "count": 13662,
+        "basis": "pdftotext word count from the Department of Health and Human Services heading to the end of the per-document PDF, counted 2026-10-28; the first page of the PDF also carries the end of an unrelated notice, which is excluded. Page furniture (running heads, VerDate lines) is not deducted, so the count is approximate."
+      },
+      "version": "Federal Register print of 13 October 2010, Vol. 75, No. 197, pp. 62820-62832, FR Doc. 2010-25728. The notice publishes the final Guidance in full, after the comment responses.",
+      "kind": "filing",
+      "archive": {
+        "capture": "http://web.archive.org/web/20250218084116/https://www.govinfo.gov/content/pkg/FR-2010-10-13/pdf/2010-25728.pdf",
+        "via": "availability API",
+        "checked": false
+      }
+    },
+    {
+      "key": "hhs-2022-fr",
+      "cacheKey": "hhs-2022-fr",
+      "datasetSource": null,
+      "documentId": "us-hhs-synthetic-oligonucleotides-draft-2022",
+      "title": "Screening Framework Guidance for Providers and Users of Synthetic Oligonucleotides (87 FR 25495)",
+      "publisher": "Federal Register (Office of the Federal Register, National Archives) via govinfo.gov",
+      "url": "https://www.govinfo.gov/content/pkg/FR-2022-04-29/pdf/2022-09210.pdf",
+      "httpStatus": 200,
+      "sha256": "57b028801e628b4ba88d1b97b08f9a29e01478a1d905845db087cbb3e06fdd99",
+      "retrievedAt": "2026-10-28",
+      "language": "en",
+      "documentWords": {
+        "count": 4878,
+        "basis": "pdftotext word count from the Department of Health and Human Services heading to the end of the per-document PDF, counted 2026-10-28; neighbouring notices on the same pages are excluded, page furniture is not deducted."
+      },
+      "version": "Federal Register print of 29 April 2022, Vol. 87, No. 83, FR Doc. 2022-09210: the proposed draft revised guidance published for comment.",
+      "kind": "filing",
+      "archive": {
+        "capture": "http://web.archive.org/web/20250815155435/https://www.govinfo.gov/content/pkg/FR-2022-04-29/pdf/2022-09210.pdf",
+        "via": "availability API",
+        "checked": false
+      }
+    },
+    {
+      "key": "hhs-2023-fr",
+      "cacheKey": "hhs-2023-fr",
+      "datasetSource": null,
+      "documentId": "us-hhs-synthetic-nucleic-acids-guidance-2023",
+      "title": "Screening Framework Guidance for Providers and Users of Synthetic Nucleic Acids (88 FR 70998)",
+      "publisher": "Federal Register (Office of the Federal Register, National Archives) via govinfo.gov",
+      "url": "https://www.govinfo.gov/content/pkg/FR-2023-10-13/pdf/2023-22540.pdf",
+      "httpStatus": 200,
+      "sha256": "20a3b9081d675539a0d8991d9021e5216ec373da9750df8711a4b55a47d54f16",
+      "retrievedAt": "2026-10-28",
+      "language": "en",
+      "documentWords": {
+        "count": 6212,
+        "basis": "pdftotext word count from the Department of Health and Human Services heading to the end of the per-document PDF, counted 2026-10-28; the end of an unrelated Food and Drug Administration notice on the first page is excluded, page furniture is not deducted."
+      },
+      "version": "Federal Register print of 13 October 2023, Vol. 88, No. 197, pp. 70998-71004, FR Doc. 2023-22540. The notice publishes the Guidance in full. Its technical sections (sequence screening methodology and the definitions that state screening criteria) were read but are not cited.",
+      "kind": "filing",
+      "archive": {
+        "capture": "http://web.archive.org/web/20250207014619/https://www.govinfo.gov/content/pkg/FR-2023-10-13/pdf/2023-22540.pdf",
+        "via": "availability API",
+        "checked": false
+      }
+    },
+    {
+      "key": "ostp-framework-2024",
+      "cacheKey": "ostp-framework-2024",
+      "datasetSource": null,
+      "documentId": "us-ostp-nucleic-acid-synthesis-screening-framework-2024",
+      "title": "Framework for Nucleic Acid Synthesis Screening (National Science and Technology Council, Fast Track Action Committee on Synthetic Nucleic Acid Procurement Screening)",
+      "publisher": "Office of Science and Technology Policy, Executive Office of the President (copy served from the Biden White House archive)",
+      "url": "https://bidenwhitehouse.archives.gov/wp-content/uploads/2024/04/Nucleic-Acid_Synthesis_Screening_Framework.pdf",
+      "httpStatus": 200,
+      "sha256": "3b083af856f92dfa91bbf5de344ca81761a4eb4c3a0323fa390e37330a802715",
+      "retrievedAt": "2026-10-28",
+      "language": "en",
+      "documentWords": {
+        "count": 5441,
+        "basis": "pdftotext word count of the whole PDF (cover, committee lists, body and footnotes), counted 2026-10-28."
+      },
+      "version": "The copy linked from the HHS ASPR page on 2026-10-28, marked on its cover 'Revised: September 2024' with '2024 Version 1: April 2024'. The April 2024 version 1 was not retrieved. Technical passages (screening windows, matching methods, the criteria that may inform which sequences are in scope) were read but are not cited.",
+      "kind": "report",
+      "archive": {
+        "capture": "http://web.archive.org/web/20260704050800/https://bidenwhitehouse.archives.gov/wp-content/uploads/2024/04/Nucleic-Acid_Synthesis_Screening_Framework.pdf",
+        "via": "availability API",
+        "checked": false
+      }
+    },
+    {
+      "key": "eo-14292-fr",
+      "cacheKey": "eo-biores-2025-fr",
+      "datasetSource": null,
+      "documentId": "us-eo-14292-2025",
+      "title": "Executive Order 14292 of May 5, 2025: Improving the Safety and Security of Biological Research (90 FR 19611)",
+      "publisher": "Federal Register (Office of the Federal Register, National Archives) via govinfo.gov",
+      "url": "https://www.govinfo.gov/content/pkg/FR-2025-05-08/pdf/2025-08266.pdf",
+      "httpStatus": 200,
+      "sha256": "a51c01bb2501ba0570461ad40384a15aa482d24cd7b4c4c36923f8e9bbc62e73",
+      "retrievedAt": "2026-10-28",
+      "language": "en",
+      "documentWords": {
+        "count": 1849,
+        "basis": "pdftotext word count of the whole per-document PDF, counted 2026-10-28; page furniture is not deducted."
+      },
+      "version": "Federal Register print of 8 May 2025, Vol. 90, No. 88, pp. 19611-19613, FR Doc. 2025-08266.",
+      "kind": "filing",
+      "archive": {
+        "capture": null,
+        "via": "availability API: no capture returned on 2026-10-28",
+        "checked": false
+      }
+    },
+    {
+      "key": "aspr-synna-hub",
+      "cacheKey": "aspr-synna-hub",
+      "datasetSource": null,
+      "documentId": "us-aspr-synthetic-nucleic-acid-screening-pages-2026",
+      "title": "Synthetic Nucleic Acid Screening (ASPR, Science, Safety and Security pages)",
+      "publisher": "Administration for Strategic Preparedness and Response, U.S. Department of Health and Human Services (www.aspr.gov)",
+      "url": "https://www.aspr.gov/s3/synthetic-nucleic-acid-screening",
+      "httpStatus": 200,
+      "sha256": "82bd6d2b94e9040f19d221e607444a3f56d99cb200fc632ec4f10b6cbea6beb2",
+      "retrievedAt": "2026-10-28",
+      "language": "en",
+      "documentWords": {
+        "count": 1211,
+        "basis": "Word count of the text extracted from the page, counted 2026-10-28; site navigation and footer are included, so the count overstates the body."
+      },
+      "version": "The hub page as served on 2026-10-28. aspr.hhs.gov redirects to www.aspr.gov; the older address https://aspr.hhs.gov/legal/synna/Pages/default.aspx now answers 404.",
+      "kind": "webpage",
+      "archive": {
+        "capture": "http://web.archive.org/web/20261002194740/https://www.aspr.gov/s3/synthetic-nucleic-acid-screening",
+        "via": "availability API",
+        "checked": false
+      }
+    },
+    {
+      "key": "aspr-ostp-page",
+      "cacheKey": "aspr-ostp-page",
+      "datasetSource": null,
+      "documentId": "us-aspr-synthetic-nucleic-acid-screening-pages-2026",
+      "title": "OSTP Framework for Nucleic Acid Synthesis Screening (ASPR page)",
+      "publisher": "Administration for Strategic Preparedness and Response, U.S. Department of Health and Human Services (www.aspr.gov)",
+      "url": "https://www.aspr.gov/s3/synthetic-nucleic-acid-screening/ostp-framework-nucleic-acid-synthesis-screening",
+      "httpStatus": 200,
+      "sha256": "8566832a75450dc776bce9c8eda92ee04d2800239a114158d1423ebb1ea5c9da",
+      "retrievedAt": "2026-10-28",
+      "language": "en",
+      "documentWords": {
+        "count": 692,
+        "basis": "Word count of the text extracted from the page, counted 2026-10-28; site navigation and footer are included, so the count overstates the body."
+      },
+      "version": "The framework page as served on 2026-10-28; it links the framework PDF held in the Biden White House archive.",
+      "kind": "webpage",
+      "archive": {
+        "capture": "http://web.archive.org/web/20261016190715/https://www.aspr.gov/s3/synthetic-nucleic-acid-screening/ostp-framework-nucleic-acid-synthesis-screening",
+        "via": "availability API",
+        "checked": false
+      }
+    },
+    {
+      "key": "igsc-hsp-v31",
+      "cacheKey": "igsc-hsp-v31",
+      "datasetSource": null,
+      "documentId": "igsc-harmonized-screening-protocol-v3-1",
+      "title": "IGSC Harmonized Screening Protocol v3.1",
+      "publisher": "International Gene Synthesis Consortium (genesynthesisconsortium.org)",
+      "url": "https://genesynthesisconsortium.org/wp-content/uploads/IGSC-Harmonized-Screening-Protocol-V3.1.pdf",
+      "httpStatus": 200,
+      "sha256": "9f6ea4906da571f0fae88e6b24f3b68dfe485ff19b88f849882ebe56f03a2fd3",
+      "retrievedAt": "2026-10-28",
+      "language": "en",
+      "documentWords": {
+        "count": 5758,
+        "basis": "pdftotext word count of the whole PDF, counted 2026-10-28."
+      },
+      "version": "Version 3.1, dated 1 June 2026 on its first page, as served on 2026-10-28. Its screening-data and methodology sections (sections 6 and the appendices) were read but are not cited.",
+      "kind": "report",
+      "archive": {
+        "capture": "http://web.archive.org/web/20261005125124/https://genesynthesisconsortium.org/wp-content/uploads/IGSC-Harmonized-Screening-Protocol-V3.1.pdf",
+        "via": "availability API",
+        "checked": false
+      }
+    },
+    {
+      "key": "igsc-membership-app",
+      "cacheKey": "igsc-membership-app",
+      "datasetSource": null,
+      "documentId": "igsc-membership-application-2026",
+      "title": "Application for Membership (International Gene Synthesis Consortium)",
+      "publisher": "International Gene Synthesis Consortium (genesynthesisconsortium.org)",
+      "url": "https://genesynthesisconsortium.org/wp-content/uploads/IGSC-Membership-Application-2026.pdf",
+      "httpStatus": 200,
+      "sha256": "29678a3470a59edc4db50303fccc57c7300943d12328cdadd32ce86d686a0f02",
+      "retrievedAt": "2026-10-28",
+      "language": "en",
+      "documentWords": {
+        "count": 266,
+        "basis": "pdftotext word count of the two-page form, counted 2026-10-28. Under the editorial policy's limit for a document of under 2,000 words, at most about 26 words may be quoted from it; one passage is quoted."
+      },
+      "version": "The form served on 2026-10-28 from the consortium's 'Want to Join Us?' link. The form itself carries no date; the served file name contains 2026.",
+      "kind": "filing",
+      "archive": {
+        "capture": "http://web.archive.org/web/20261009010848/https://genesynthesisconsortium.org/wp-content/uploads/IGSC-Membership-Application-2026.pdf",
+        "via": "availability API",
+        "checked": false
+      }
+    },
+    {
+      "key": "igsc-members",
+      "cacheKey": "igsc-members",
+      "datasetSource": null,
+      "documentId": "igsc-member-directory-2026",
+      "title": "IGSC member directory",
+      "publisher": "International Gene Synthesis Consortium (genesynthesisconsortium.org)",
+      "url": "https://genesynthesisconsortium.org/members/",
+      "httpStatus": 200,
+      "sha256": "a648b1c9ba5fed89581b3d666bc1383faada73a40a252ca04b37c732f875a244",
+      "retrievedAt": "2026-10-28",
+      "language": "en",
+      "documentWords": {
+        "count": 2817,
+        "basis": "Word count of the text extracted from the page, counted 2026-10-28; most of it is the members' own descriptions, and site navigation is included."
+      },
+      "version": "The directory as served on 2026-10-28. The page shows no date and no membership categories; the 45 entries are the page's heading-level member names.",
+      "kind": "webpage",
+      "archive": {
+        "capture": "http://web.archive.org/web/20261009010258/https://genesynthesisconsortium.org/members/",
+        "via": "availability API",
+        "checked": false
+      }
+    },
+    {
+      "key": "uk-synna-landing",
+      "cacheKey": "uk-synna-guidance",
+      "datasetSource": null,
+      "documentId": "uk-synthetic-nucleic-acids-screening-guidance-2024",
+      "title": "UK screening guidance on synthetic nucleic acids (publication page)",
+      "publisher": "GOV.UK (Department for Science, Innovation and Technology)",
+      "url": "https://www.gov.uk/government/publications/uk-screening-guidance-on-synthetic-nucleic-acids",
+      "httpStatus": 200,
+      "sha256": "33eade2dba8cced0846d41fb896bc17d29ea60c547cde0af5e8ba1be7d33e1c2",
+      "retrievedAt": "2026-10-28",
+      "language": "en",
+      "documentWords": {
+        "count": 653,
+        "basis": "Word count of the text extracted from the page, counted 2026-10-28; site navigation and the cookie banner are included, so the count overstates the body."
+      },
+      "version": "The GOV.UK publication page as served on 2026-10-28, giving the publication date and the attachment.",
+      "kind": "webpage",
+      "archive": {
+        "capture": "http://web.archive.org/web/20260213111509/https://www.gov.uk/government/publications/uk-screening-guidance-on-synthetic-nucleic-acids",
+        "via": "availability API",
+        "checked": false
+      }
+    },
+    {
+      "key": "uk-synna-text",
+      "cacheKey": "uk-synna-text",
+      "datasetSource": null,
+      "documentId": "uk-synthetic-nucleic-acids-screening-guidance-2024",
+      "title": "UK screening guidance on synthetic nucleic acids for users and providers",
+      "publisher": "GOV.UK (Department for Science, Innovation and Technology)",
+      "url": "https://www.gov.uk/government/publications/uk-screening-guidance-on-synthetic-nucleic-acids/uk-screening-guidance-on-synthetic-nucleic-acids-for-users-and-providers",
+      "httpStatus": 200,
+      "sha256": "d12116062f1c3dbb8a384593927c08cf40ee37289dc82cf6011540b63bcb7dd8",
+      "retrievedAt": "2026-10-28",
+      "language": "en",
+      "documentWords": {
+        "count": 5204,
+        "basis": "Word count of the text extracted from the HTML attachment, counted 2026-10-28; site navigation is included, so the count overstates the body."
+      },
+      "version": "The HTML attachment as served on 2026-10-28. Its screening methodology sections and its list of indicators of a suspicious transaction were read but are not cited.",
+      "kind": "report",
+      "archive": {
+        "capture": "http://web.archive.org/web/20260905041216/https://www.gov.uk/government/publications/uk-screening-guidance-on-synthetic-nucleic-acids/uk-screening-guidance-on-synthetic-nucleic-acids-for-users-and-providers",
+        "via": "availability API",
+        "checked": false
+      }
+    },
+    {
+      "key": "bill-s2400is",
+      "cacheKey": "bill-s2400is",
+      "datasetSource": null,
+      "documentId": "us-bill-s-2400-118-introduced",
+      "title": "S. 2400, Securing Gene Synthesis Act, as introduced in the Senate (118th Congress)",
+      "publisher": "U.S. Senate via govinfo.gov (GPO)",
+      "url": "https://www.govinfo.gov/content/pkg/BILLS-118s2400is/xml/BILLS-118s2400is.xml",
+      "httpStatus": 200,
+      "sha256": "96ff620ba3c73e57186529aa4afadfebbbb4669f1b2988b32bbefaa9ed23ebd4",
+      "retrievedAt": "2026-10-28",
+      "language": "en",
+      "documentWords": {
+        "count": 863,
+        "basis": "Word count of the text extracted from the bill XML, counted 2026-10-28. Under the editorial policy's limit for a document of under 2,000 words, at most about 86 words may be quoted from it."
+      },
+      "version": "The 'Introduced in Senate' text version (BILLS-118s2400is), the only text version the bill-status record lists.",
+      "kind": "filing",
+      "archive": {
+        "capture": "http://web.archive.org/web/20260713120115/https://www.govinfo.gov/content/pkg/BILLS-118s2400is/xml/BILLS-118s2400is.xml",
+        "via": "availability API",
+        "checked": false
+      }
+    },
+    {
+      "key": "bs-118s2400",
+      "cacheKey": "bs-118s2400",
+      "datasetSource": null,
+      "documentId": "us-bill-s-2400-118-introduced",
+      "title": "Bill status record for S. 2400 (118th Congress), Securing Gene Synthesis Act",
+      "publisher": "Library of Congress and U.S. Senate, published as bulk data via govinfo.gov (GPO)",
+      "url": "https://www.govinfo.gov/content/pkg/BILLSTATUS-118s2400/xml/BILLSTATUS-118s2400.xml",
+      "httpStatus": 200,
+      "sha256": "7439ef09cc347b58ec3f189bfee3e463ddd9d6019f100110336ee30af7d0d34d",
+      "retrievedAt": "2026-10-28",
+      "language": "en",
+      "documentWords": {
+        "count": 359,
+        "basis": "Word count of the text extracted from the status XML, counted 2026-10-28. Under the editorial policy's limit for a document of under 2,000 words, at most about 35 words may be quoted from it."
+      },
+      "version": "The status record as served on 2026-10-28, carrying updateDate 2025-12-05. Its actions block mixes in actions of the related Senate or House bill, so each action was read with its sourceSystem.",
+      "kind": "dataset",
+      "archive": {
+        "capture": null,
+        "via": "availability API: no capture returned on 2026-10-28",
+        "checked": false
+      }
+    },
+    {
+      "key": "bs-118hr4702",
+      "cacheKey": "bs-118hr4702",
+      "datasetSource": null,
+      "documentId": "us-bill-hr-4702-118-introduced",
+      "title": "Bill status record for H.R. 4702 (118th Congress), Securing Gene Synthesis Act",
+      "publisher": "Library of Congress and U.S. House of Representatives, published as bulk data via govinfo.gov (GPO)",
+      "url": "https://www.govinfo.gov/content/pkg/BILLSTATUS-118hr4702/xml/BILLSTATUS-118hr4702.xml",
+      "httpStatus": 200,
+      "sha256": "a4af5fb0e9fab5c157bec268e13da1ab4bb20862c21d7de65f279eb2797122c6",
+      "retrievedAt": "2026-10-28",
+      "language": "en",
+      "documentWords": {
+        "count": 504,
+        "basis": "Word count of the text extracted from the status XML, counted 2026-10-28. Under the editorial policy's limit for a document of under 2,000 words, at most about 50 words may be quoted from it."
+      },
+      "version": "The status record as served on 2026-10-28, carrying updateDate 2025-12-05.",
+      "kind": "dataset",
+      "archive": {
+        "capture": null,
+        "via": "availability API: no capture returned on 2026-10-28",
+        "checked": false
+      }
+    },
+    {
+      "key": "bill-s2399is",
+      "cacheKey": "bill-s2399is",
+      "datasetSource": null,
+      "documentId": "us-bill-s-2399-118-introduced",
+      "title": "S. 2399, Artificial Intelligence and Biosecurity Risk Assessment Act, as introduced in the Senate (118th Congress)",
+      "publisher": "U.S. Senate via govinfo.gov (GPO)",
+      "url": "https://www.govinfo.gov/content/pkg/BILLS-118s2399is/xml/BILLS-118s2399is.xml",
+      "httpStatus": 200,
+      "sha256": "baff4cb10baf7c21e39c899d6ecdc8319805e60a523ab9f583e0699c5c86f5aa",
+      "retrievedAt": "2026-10-28",
+      "language": "en",
+      "documentWords": {
+        "count": 273,
+        "basis": "Word count of the text extracted from the bill XML, counted 2026-10-28. Under the editorial policy's limit for a document of under 2,000 words, at most about 27 words may be quoted from it; one passage is quoted."
+      },
+      "version": "The 'Introduced in Senate' text version (BILLS-118s2399is), the only text version the bill-status record lists.",
+      "kind": "filing",
+      "archive": {
+        "capture": "http://web.archive.org/web/20260713205753/https://www.govinfo.gov/content/pkg/BILLS-118s2399is/xml/BILLS-118s2399is.xml",
+        "via": "availability API",
+        "checked": false
+      }
+    },
+    {
+      "key": "bs-118s2399",
+      "cacheKey": "bs-118s2399",
+      "datasetSource": null,
+      "documentId": "us-bill-s-2399-118-introduced",
+      "title": "Bill status record for S. 2399 (118th Congress), Artificial Intelligence and Biosecurity Risk Assessment Act",
+      "publisher": "Library of Congress and U.S. Senate, published as bulk data via govinfo.gov (GPO)",
+      "url": "https://www.govinfo.gov/content/pkg/BILLSTATUS-118s2399/xml/BILLSTATUS-118s2399.xml",
+      "httpStatus": 200,
+      "sha256": "4d6f29ba1e88580854e573e5f16ea86124dbed627740f1cfd4e5e7abd2ddbd77",
+      "retrievedAt": "2026-10-28",
+      "language": "en",
+      "documentWords": {
+        "count": 439,
+        "basis": "Word count of the text extracted from the status XML, counted 2026-10-28. Under the editorial policy's limit for a document of under 2,000 words, at most about 43 words may be quoted from it."
+      },
+      "version": "The status record as served on 2026-10-28, carrying updateDate 2025-12-05.",
+      "kind": "dataset",
+      "archive": {
+        "capture": null,
+        "via": "availability API: no capture returned on 2026-10-28",
+        "checked": false
+      }
+    }
+  ],
+  "documents": [
+    {
+      "id": "us-eo-14110-2023",
+      "existingEntity": true,
+      "title": "Executive Order 14110: Safe, Secure, and Trustworthy Development and Use of Artificial Intelligence",
+      "subtype": "Executive order",
+      "publisherId": "us-white-house",
+      "family": "us-eo-14110",
+      "label": "As published in the Federal Register (1 November 2023); dataset entity reused",
+      "dates": {
+        "signedAt": "2023-10-30",
+        "publishedAt": "2023-11-01",
+        "revokedAt": "2025-01-20"
+      },
+      "dateNote": "Signature and publication from the Federal Register print; the revocation date is the dataset record fl-us-eo14110-revoked (Executive Order 14148 of 20 January 2025). No date is re-recorded here.",
+      "language": "en"
+    },
+    {
+      "id": "us-hhs-synthetic-dsdna-guidance-2010",
+      "existingEntity": false,
+      "title": "Screening Framework Guidance for Providers of Synthetic Double-Stranded DNA",
+      "subtype": "Government guidance (United States)",
+      "publisherId": "us-hhs",
+      "family": "us-hhs-synthetic-nucleic-acid-screening-guidance",
+      "label": "As published in the Federal Register of 13 October 2010 (75 FR 62820)",
+      "dates": {
+        "publishedAt": "2010-10-13",
+        "effectiveAt": "2010-10-13"
+      },
+      "dateNote": "Both dates from the notice: the Federal Register issue of 13 October 2010 and the notice's DATES caption, which states the same day as the effective date.",
+      "language": "en"
+    },
+    {
+      "id": "us-hhs-synthetic-oligonucleotides-draft-2022",
+      "existingEntity": false,
+      "title": "Screening Framework Guidance for Providers and Users of Synthetic Oligonucleotides (proposed draft revised guidance)",
+      "subtype": "Government guidance, draft for comment (United States)",
+      "publisherId": "us-aspr",
+      "family": "us-hhs-synthetic-nucleic-acid-screening-guidance",
+      "label": "As published in the Federal Register of 29 April 2022 (87 FR 25495)",
+      "dates": {
+        "publishedAt": "2022-04-29"
+      },
+      "dateNote": "Federal Register issue date of the notice.",
+      "language": "en"
+    },
+    {
+      "id": "us-hhs-synthetic-nucleic-acids-guidance-2023",
+      "existingEntity": false,
+      "title": "Screening Framework Guidance for Providers and Users of Synthetic Nucleic Acids",
+      "subtype": "Government guidance (United States)",
+      "publisherId": "us-aspr",
+      "family": "us-hhs-synthetic-nucleic-acid-screening-guidance",
+      "label": "As published in the Federal Register of 13 October 2023 (88 FR 70998)",
+      "dates": {
+        "publishedAt": "2023-10-13"
+      },
+      "dateNote": "Federal Register issue date of the notice. The notice states no separate effective date, unlike the 2010 guidance.",
+      "language": "en"
+    },
+    {
+      "id": "us-ostp-nucleic-acid-synthesis-screening-framework-2024",
+      "existingEntity": false,
+      "title": "Framework for Nucleic Acid Synthesis Screening",
+      "subtype": "Policy framework (United States)",
+      "publisherId": "us-ostp",
+      "family": "us-ostp-nucleic-acid-synthesis-screening-framework",
+      "label": "The copy served from the Biden White House archive, marked 'Revised: September 2024' with '2024 Version 1: April 2024'",
+      "dates": {
+        "publishedAt": "2024-04-29",
+        "revisedAt": "2024-09"
+      },
+      "dateNote": "Release date 29 April 2024 from the HHS ASPR page, which also gives 'revised September 2024'; the cover of the retrieved copy carries 'Revised: September 2024' and '2024 Version 1: April 2024'. The day of the September 2024 revision is not stated and stays unknown. The framework's own effective date for the funding requirement, 26 April 2025, is recorded as a claim.",
+      "language": "en"
+    },
+    {
+      "id": "us-eo-14292-2025",
+      "existingEntity": false,
+      "title": "Executive Order 14292: Improving the Safety and Security of Biological Research",
+      "subtype": "Executive order (United States)",
+      "publisherId": "us-white-house",
+      "family": "us-eo-14292",
+      "label": "As published in the Federal Register (8 May 2025)",
+      "dates": {
+        "signedAt": "2025-05-05",
+        "publishedAt": "2025-05-08"
+      },
+      "dateNote": "Heading of the printed order ('Executive Order 14292 of May 5, 2025') and the Federal Register issue of 8 May 2025.",
+      "language": "en"
+    },
+    {
+      "id": "us-aspr-synthetic-nucleic-acid-screening-pages-2026",
+      "existingEntity": false,
+      "title": "Synthetic Nucleic Acid Screening pages (ASPR, Science, Safety and Security)",
+      "subtype": "Government webpage (United States)",
+      "publisherId": "us-aspr",
+      "family": "us-aspr-synthetic-nucleic-acid-screening-pages",
+      "label": "The hub page and the OSTP framework page as served on 2026-10-28",
+      "dates": {},
+      "dateNote": "Neither page shows a publication or revision date; both are recorded as served on the check date, 2026-10-28.",
+      "language": "en"
+    },
+    {
+      "id": "igsc-harmonized-screening-protocol-v3-1",
+      "existingEntity": false,
+      "title": "IGSC Harmonized Screening Protocol v3.1",
+      "subtype": "Industry protocol",
+      "publisherId": "igsc",
+      "family": "igsc-harmonized-screening-protocol",
+      "label": "Version 3.1, dated 1 June 2026",
+      "dates": {
+        "publishedAt": "2026-06-01"
+      },
+      "dateNote": "Date on the first page ('1 June, 2026') and in the protocol's own revision table, which gives the same release date for v3.1.",
+      "language": "en"
+    },
+    {
+      "id": "igsc-membership-application-2026",
+      "existingEntity": false,
+      "title": "Application for Membership (International Gene Synthesis Consortium)",
+      "subtype": "Membership form",
+      "publisherId": "igsc",
+      "family": "igsc-membership-application",
+      "label": "The form served on 2026-10-28 (file name IGSC-Membership-Application-2026.pdf)",
+      "dates": {},
+      "dateNote": "The form carries no date. Only the served file name contains 2026; the record is dated by retrieval.",
+      "language": "en"
+    },
+    {
+      "id": "igsc-member-directory-2026",
+      "existingEntity": false,
+      "title": "IGSC member directory",
+      "subtype": "Organisation webpage",
+      "publisherId": "igsc",
+      "family": "igsc-member-directory",
+      "label": "The directory as served on 2026-10-28",
+      "dates": {},
+      "dateNote": "The page shows no date; the record is dated by retrieval.",
+      "language": "en"
+    },
+    {
+      "id": "uk-synthetic-nucleic-acids-screening-guidance-2024",
+      "existingEntity": false,
+      "title": "UK screening guidance on synthetic nucleic acids for users and providers",
+      "subtype": "Government guidance (United Kingdom)",
+      "publisherId": "dsit",
+      "family": "uk-synthetic-nucleic-acids-screening-guidance",
+      "label": "As published on GOV.UK on 8 October 2024",
+      "dates": {
+        "publishedAt": "2024-10-08"
+      },
+      "dateNote": "The GOV.UK publication page states 'Published: 8 October 2024'. The GOV.UK search API gives a public timestamp of 2024-10-07 for the same page; the page's own stated date is used.",
+      "language": "en"
+    },
+    {
+      "id": "us-bill-s-2400-118-introduced",
+      "existingEntity": false,
+      "title": "S. 2400 (118th Congress): Securing Gene Synthesis Act, as introduced in the Senate",
+      "subtype": "Bill as introduced (United States Senate)",
+      "publisherId": "us-senate",
+      "family": "us-securing-gene-synthesis-act",
+      "label": "Introduced in Senate print (BILLS-118s2400is)",
+      "dates": {
+        "introducedAt": "2023-07-19",
+        "publishedAt": "2023-07-19"
+      },
+      "dateNote": "Introduction date from the official bill-status record and the bill's own dateline ('July 19, 2023'). The introduced print carries the same date as its publication date in the govinfo package metadata, recorded as publishedAt so that the two provision records of this expression can carry one of the document's own dates, as the schema's provision-date rule requires; it is not a separate publication event.",
+      "language": "en"
+    },
+    {
+      "id": "us-bill-hr-4702-118-introduced",
+      "existingEntity": false,
+      "title": "H.R. 4702 (118th Congress): Securing Gene Synthesis Act, as introduced in the House",
+      "subtype": "Bill as introduced (United States House of Representatives)",
+      "publisherId": "us-house-of-representatives",
+      "family": "us-securing-gene-synthesis-act",
+      "label": "As recorded in the official bill-status record (the bill text was not retrieved)",
+      "dates": {
+        "introducedAt": "2023-07-18"
+      },
+      "dateNote": "Introduction date from the official bill-status record.",
+      "language": "en"
+    },
+    {
+      "id": "us-bill-s-2399-118-introduced",
+      "existingEntity": false,
+      "title": "S. 2399 (118th Congress): Artificial Intelligence and Biosecurity Risk Assessment Act, as introduced in the Senate",
+      "subtype": "Bill as introduced (United States Senate)",
+      "publisherId": "us-senate",
+      "family": "us-ai-and-biosecurity-risk-assessment-act",
+      "label": "Introduced in Senate print (BILLS-118s2399is)",
+      "dates": {
+        "introducedAt": "2023-07-19",
+        "publishedAt": "2023-07-19"
+      },
+      "dateNote": "Introduction date from the official bill-status record and the bill's own dateline ('July 19, 2023'). The introduced print carries the same date as its publication date in the govinfo package metadata, recorded as publishedAt so that the provision record of this expression can carry one of the document's own dates, as the schema's provision-date rule requires; it is not a separate publication event.",
+      "language": "en"
+    }
+  ],
+  "entities": [
+    {
+      "id": "us-hhs",
+      "name": "United States Department of Health and Human Services",
+      "type": "public_body",
+      "existing": false,
+      "note": "Publisher of the 2010 screening framework guidance through its Office of the Secretary. Candidate entity."
+    },
+    {
+      "id": "us-aspr",
+      "name": "Administration for Strategic Preparedness and Response (U.S. Department of Health and Human Services)",
+      "type": "public_body",
+      "existing": false,
+      "note": "The HHS component that issued the 2022 draft and the 2023 screening framework guidance and that serves the synthetic nucleic acid screening pages. Candidate entity; its relation to us-hhs is not recorded here."
+    },
+    {
+      "id": "us-ostp",
+      "name": "Office of Science and Technology Policy (Executive Office of the President)",
+      "type": "public_body",
+      "existing": false,
+      "note": "Publisher of the 2024 Framework for Nucleic Acid Synthesis Screening, prepared by a Fast Track Action Committee of the National Science and Technology Council. The committee and the Council are not given separate entities in this pass. Candidate entity."
+    },
+    {
+      "id": "igsc",
+      "name": "International Gene Synthesis Consortium",
+      "type": "organisation",
+      "existing": false,
+      "note": "Industry-led consortium that publishes the Harmonized Screening Protocol. Its protocol states that it was first established in 2009 as a trade organisation and incorporated in 2015 as a California not-for-profit corporation; that statement is not recorded as a claim in this pass. Candidate entity."
+    },
+    {
+      "id": "us-senate",
+      "name": "United States Senate",
+      "type": "public_body",
+      "existing": false,
+      "note": "Chamber recorded as introducing S. 2400 and S. 2399 of the 118th Congress. Candidate entity."
+    },
+    {
+      "id": "us-house-of-representatives",
+      "name": "United States House of Representatives",
+      "type": "public_body",
+      "existing": false,
+      "note": "Chamber recorded as introducing H.R. 4702 of the 118th Congress. Candidate entity."
+    }
+  ],
+  "claims": [
+    {
+      "id": "ab-scr-eo14110-sec44b-ostp-framework",
+      "group": "screening",
+      "strand": "Synthesis screening",
+      "subject": "us-eo-14110-2023",
+      "predicate": "states_provision",
+      "proposedPredicate": false,
+      "object": {
+        "kind": "literal",
+        "value": "Direction to the Director of OSTP to establish a nucleic acid synthesis procurement screening framework within 180 days (Sec. 4.4(b)(i))"
+      },
+      "statement": "Section 4.4(b)(i) of Executive Order 14110 directs the Director of the Office of Science and Technology Policy, within 180 days and in consultation with named agency heads, to establish a framework encouraging providers of synthetic nucleic acid sequences to implement comprehensive, scalable and verifiable procurement screening mechanisms, including standards and recommended incentives.",
+      "time": {
+        "kind": "event",
+        "date": "2023-11-01",
+        "basis": "publication",
+        "note": "Provision as the edition states it, dated by the Federal Register publication of 1 November 2023; the order is signed 30 October 2023. Executive Order 14110 was revoked by Executive Order 14148 of 20 January 2025."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "States what the order directs; it does not establish that the framework was produced, nor impose any duty on a provider. The order's own criteria for identifying sequences that could pose a risk, in subparagraph (A), and its direction on screening methodologies, in subparagraph (B), are not recorded. The dataset already holds this order's Sec. 3(k) definition and Sec. 4.2 reporting provisions; Sec. 4.4 was not recorded there.",
+      "extends": null,
+      "attributes": {
+        "provision": {
+          "kind": "required_action",
+          "key": "us-eo14110-sec44bi-nucleic-acid-screening-framework"
+        }
+      },
+      "hazardNote": "Only the policy-level direction is cited. The order's subparagraphs on identifying biological sequences that could pose a risk and on screening methodologies are technical and were excluded.",
+      "evidence": [
+        {
+          "source": "gov-eo-14110-fr",
+          "locator": "Sec. 4.4(b)(i), 88 FR 75201",
+          "passage": "shall establish a framework, incorporating, as appropriate, existing United States Government guidance, to encourage providers of synthetic nucleic acid sequences to implement comprehensive, scalable, and verifiable synthetic nucleic acid procurement screening mechanisms, including standards and recommended incentives",
+          "passageType": "quote",
+          "translation": null,
+          "sourceRole": "primary",
+          "support": "supports",
+          "note": "The subsection opens 'Within 180 days of the date of this order, the Director of OSTP, in consultation with' a list of agency heads."
+        },
+        {
+          "source": "gov-eo-14110-fr",
+          "locator": "Sec. 4.4(b), opening words, 88 FR 75201",
+          "passage": "To reduce the risk of misuse of synthetic nucleic acids, which could be substantially increased by AI's capabilities in this area, and improve biosecurity measures for the nucleic acid synthesis industry",
+          "passageType": "quote",
+          "translation": null,
+          "sourceRole": "primary",
+          "support": "context",
+          "note": "The order's own stated reason for the subsection, which ties synthesis screening to AI. Recorded as the order's statement, not as a finding about AI capabilities."
+        }
+      ]
+    },
+    {
+      "id": "ab-scr-eo14110-sec44bii-nist-engagement",
+      "group": "screening",
+      "strand": "Synthesis screening",
+      "subject": "us-eo-14110-2023",
+      "predicate": "states_provision",
+      "proposedPredicate": false,
+      "object": {
+        "kind": "literal",
+        "value": "Direction to Commerce, through NIST, to develop screening specifications and conformity-assessment practices with industry (Sec. 4.4(b)(ii))"
+      },
+      "statement": "Section 4.4(b)(ii) of Executive Order 14110 directs the Secretary of Commerce, acting through the Director of NIST, within 180 days to engage with industry and stakeholders, informed by the framework of subsection 4.4(b)(i), to develop and refine for possible use by synthetic nucleic acid sequence providers specifications for procurement screening, database management practices, implementation guides and conformity-assessment practices and mechanisms.",
+      "time": {
+        "kind": "event",
+        "date": "2023-11-01",
+        "basis": "publication",
+        "note": "Provision as the edition states it, dated by the Federal Register publication of 1 November 2023; signed 30 October 2023. The order was revoked on 20 January 2025."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "States what the order directs; it is not evidence that any specification, guide or conformity-assessment mechanism was produced or adopted. The four headings are recorded at the generality of the order's own list.",
+      "extends": null,
+      "attributes": {
+        "provision": {
+          "kind": "required_action",
+          "key": "us-eo14110-sec44bii-nist-screening-specifications"
+        }
+      },
+      "hazardNote": "The four lettered headings are recorded as headings only; no technical content of a specification, database practice or implementation guide is recorded.",
+      "evidence": [
+        {
+          "source": "gov-eo-14110-fr",
+          "locator": "Sec. 4.4(b)(ii), 88 FR 75201-75202",
+          "passage": "shall initiate an effort to engage with industry and relevant stakeholders, informed by the framework developed under subsection 4.4(b)(i) of this section, to develop and refine for possible use by synthetic nucleic acid sequence providers",
+          "passageType": "quote",
+          "translation": null,
+          "sourceRole": "primary",
+          "support": "supports",
+          "note": "The subsection opens 'Within 180 days of the date of this order, the Secretary of Commerce, acting through the Director of NIST, in coordination with the Director of OSTP'."
+        },
+        {
+          "source": "gov-eo-14110-fr",
+          "locator": "Sec. 4.4(b)(ii)(A)-(D), 88 FR 75202",
+          "passage": "Paraphrase: the four lettered items are specifications for effective nucleic acid synthesis procurement screening; best practices for managing the databases that support such screening; technical implementation guides; and conformity-assessment best practices and mechanisms.",
+          "passageType": "paraphrase",
+          "translation": null,
+          "sourceRole": "primary",
+          "support": "supports",
+          "note": "Paraphrased at heading level; the order's wording for item (B) names the kind of database, which is not reproduced."
+        }
+      ]
+    },
+    {
+      "id": "ab-scr-eo14110-sec44biii-funding-requirement",
+      "group": "screening",
+      "strand": "Synthesis screening",
+      "subject": "us-eo-14110-2023",
+      "predicate": "states_provision",
+      "proposedPredicate": false,
+      "object": {
+        "kind": "literal",
+        "value": "Direction to agencies that fund life-sciences research to make adherence to the framework a requirement of funding (Sec. 4.4(b)(iii))"
+      },
+      "statement": "Section 4.4(b)(iii) of Executive Order 14110 directs all agencies that fund life-sciences research, within 180 days of the framework's establishment and as appropriate and consistent with applicable law, to establish as a requirement of funding that synthetic nucleic acid procurement is conducted through providers or manufacturers that adhere to the framework, such as through an attestation.",
+      "time": {
+        "kind": "event",
+        "date": "2023-11-01",
+        "basis": "publication",
+        "note": "Provision as the edition states it, dated by the Federal Register publication of 1 November 2023; signed 30 October 2023. The order was revoked on 20 January 2025."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "States what the order directs funding agencies to establish; it does not itself bind any funding recipient or provider, and it is not evidence that any agency established the requirement. What each agency did is not recorded.",
+      "extends": null,
+      "attributes": {
+        "provision": {
+          "kind": "required_action",
+          "key": "us-eo14110-sec44biii-funding-condition"
+        }
+      },
+      "hazardNote": null,
+      "evidence": [
+        {
+          "source": "gov-eo-14110-fr",
+          "locator": "Sec. 4.4(b)(iii), 88 FR 75202",
+          "passage": "all agencies that fund life-sciences research shall, as appropriate and consistent with applicable law, establish that, as a requirement of funding, synthetic nucleic acid procurement is conducted through providers or manufacturers that adhere to the framework, such as through an attestation from the provider or manufacturer",
+          "passageType": "quote",
+          "translation": null,
+          "sourceRole": "primary",
+          "support": "supports",
+          "note": "The subsection opens 'Within 180 days of the establishment of the framework pursuant to subsection 4.4(b)(i) of this section'."
+        }
+      ]
+    },
+    {
+      "id": "ab-scr-hhs-2010-published",
+      "group": "screening",
+      "strand": "Synthesis screening",
+      "subject": "us-hhs",
+      "predicate": "published",
+      "proposedPredicate": false,
+      "object": {
+        "kind": "entity",
+        "entityId": "us-hhs-synthetic-dsdna-guidance-2010"
+      },
+      "statement": "The United States Department of Health and Human Services, through its Office of the Secretary, published the Screening Framework Guidance for Providers of Synthetic Double-Stranded DNA in the Federal Register of 13 October 2010, stating that it sets out recommended baseline standards for the gene and genome synthesis industry and other providers regarding the screening of orders.",
+      "time": {
+        "kind": "event",
+        "date": "2010-10-13",
+        "basis": "publication",
+        "note": "Federal Register issue of 13 October 2010 (75 FR 62820). The notice's DATES caption states the same day as the Guidance's effective date, which is recorded separately."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "Records the publication and the notice's own description of what the Guidance sets out. Publication is not evidence that any provider screened an order or followed the Guidance. The notice also publishes the Government's responses to comments on the 2009 draft, which are not recorded.",
+      "extends": null,
+      "attributes": {},
+      "hazardNote": null,
+      "evidence": [
+        {
+          "source": "hhs-2010-fr",
+          "locator": "SUMMARY, 75 FR 62820",
+          "passage": "sets forth recommended baseline standards for the gene and genome synthesis industry and other providers of synthetic dsDNA products regarding the screening of orders",
+          "passageType": "quote",
+          "translation": null,
+          "sourceRole": "primary",
+          "support": "supports",
+          "note": "The notice is headed 'DEPARTMENT OF HEALTH AND HUMAN SERVICES, Office of the Secretary' and gives its authority as the Public Health Service Act and HSPD-10."
+        }
+      ]
+    },
+    {
+      "id": "ab-scr-hhs-2010-effective-date",
+      "group": "screening",
+      "strand": "Synthesis screening",
+      "subject": "us-hhs-synthetic-dsdna-guidance-2010",
+      "predicate": "states_provision",
+      "proposedPredicate": false,
+      "object": {
+        "kind": "literal",
+        "value": "Effective date of the 2010 Guidance (DATES caption)"
+      },
+      "statement": "The 2010 notice states that the Screening Framework Guidance for Providers of Synthetic Double-Stranded DNA is effective on 13 October 2010.",
+      "time": {
+        "kind": "event",
+        "date": "2010-10-13",
+        "basis": "effective",
+        "note": "The effective date stated in the notice's DATES caption, which is also the date of the Federal Register issue."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "An effective date stated for guidance whose observance the same notice describes as voluntary; it is not a compliance date for any provider and creates no obligation recorded here. The provision kind is `threshold`, the kind the dataset uses for a stated date of effect or application (`omni-entry-into-force`, `ny-effective-date`); the schema has no `date` kind.",
+      "extends": null,
+      "attributes": {
+        "provision": {
+          "kind": "threshold",
+          "key": "hhs-2010-effective-date"
+        }
+      },
+      "hazardNote": null,
+      "evidence": [
+        {
+          "source": "hhs-2010-fr",
+          "locator": "DATES, 75 FR 62820",
+          "passage": "The Guidance is effective on October 13, 2010.",
+          "passageType": "quote",
+          "translation": null,
+          "sourceRole": "primary",
+          "support": "supports",
+          "note": null
+        }
+      ]
+    },
+    {
+      "id": "ab-scr-hhs-2010-voluntary-all-providers",
+      "group": "screening",
+      "strand": "Synthesis screening",
+      "subject": "us-hhs-synthetic-dsdna-guidance-2010",
+      "predicate": "states_provision",
+      "proposedPredicate": false,
+      "object": {
+        "kind": "literal",
+        "value": "Following the Guidance is voluntary"
+      },
+      "statement": "The 2010 Guidance states that following it is voluntary, though many of its specific recommendations serve to remind providers of their obligations under existing regulations.",
+      "time": {
+        "kind": "event",
+        "date": "2010-10-13",
+        "basis": "publication",
+        "note": "Provision as the 2010 expression states it, dated by its publication in the Federal Register of 13 October 2010."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "The notice's statement about its own standing, not a finding about any provider's practice; the existing regulations it refers to are not recorded here. Split under the one-claim-per-edge rule from the record that also carried the Guidance's addressees, which are now the separate record ab-scr-hhs-2010-all-providers-addressees. The provision kind is the nearest the dataset schema admits (the schema has no kind for an instrument's standing): the sentence states that the Guidance itself imposes no duty beyond obligations existing regulations already carry. See openQuestions.",
+      "extends": null,
+      "attributes": {
+        "provision": {
+          "kind": "exception",
+          "key": "us-hhs-screening-guidance-2010-voluntary-standing"
+        }
+      },
+      "hazardNote": null,
+      "evidence": [
+        {
+          "source": "hhs-2010-fr",
+          "locator": "SUMMARY, 75 FR 62820",
+          "passage": "Following this Guidance is voluntary, though many specific recommendations serve to remind providers of their obligations under existing regulations.",
+          "passageType": "quote",
+          "translation": null,
+          "sourceRole": "primary",
+          "support": "supports",
+          "note": null
+        }
+      ]
+    },
+    {
+      "id": "ab-scr-hhs-2010-all-providers-addressees",
+      "group": "screening",
+      "strand": "Synthesis screening",
+      "subject": "us-hhs-synthetic-dsdna-guidance-2010",
+      "predicate": "states_provision",
+      "proposedPredicate": false,
+      "object": {
+        "kind": "literal",
+        "value": "Addressees: the final Guidance is directed to all providers of synthetic double-stranded DNA"
+      },
+      "statement": "The 2010 notice states that the final Guidance is directed to all providers of synthetic double-stranded DNA, the recommendations of the draft Guidance having been directed to 'commercial' providers.",
+      "time": {
+        "kind": "event",
+        "date": "2010-10-13",
+        "basis": "publication",
+        "note": "Provision as the 2010 expression states it, dated by its publication in the Federal Register of 13 October 2010."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "Records whom the notice says the final Guidance is directed to, and the change it states from the draft. It is not a finding that any provider, commercial or otherwise, screened an order, and the notice's further remark that 'orders' does not necessarily imply a commercial transaction is not recorded as a separate provision. Split under the one-claim-per-edge rule from ab-scr-hhs-2010-voluntary-all-providers. The provision kind 'threshold' is the kind the dataset uses for a definition that decides who is covered; see openQuestions.",
+      "extends": null,
+      "attributes": {
+        "provision": {
+          "kind": "threshold",
+          "key": "us-hhs-screening-guidance-2010-addressees"
+        }
+      },
+      "hazardNote": null,
+      "evidence": [
+        {
+          "source": "hhs-2010-fr",
+          "locator": "Response to comments on scope, 75 FR 62823",
+          "passage": "the final Guidance is directed to all providers of synthetic dsDNA",
+          "passageType": "quote",
+          "translation": null,
+          "sourceRole": "primary",
+          "support": "supports",
+          "note": "The passage follows comments that the earlier draft had been directed to commercial providers; the notice adds that 'orders' does not necessarily imply a commercial transaction."
+        }
+      ]
+    },
+    {
+      "id": "ab-scr-hhs-2022-draft-published",
+      "group": "screening",
+      "strand": "Synthesis screening",
+      "subject": "us-aspr",
+      "predicate": "published",
+      "proposedPredicate": false,
+      "object": {
+        "kind": "entity",
+        "entityId": "us-hhs-synthetic-oligonucleotides-draft-2022"
+      },
+      "statement": "The Administration for Strategic Preparedness and Response published a proposed revised screening framework guidance for providers and users of synthetic oligonucleotides in the Federal Register of 29 April 2022, submitting it for public consideration and comment for a period of 60 days.",
+      "time": {
+        "kind": "event",
+        "date": "2022-04-29",
+        "basis": "publication",
+        "note": "Federal Register issue of 29 April 2022 (87 FR 25495)."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "Records the publication of a proposed draft and its stated comment period. A draft is not guidance in force; the notice states that the interagency process was still considering whether to issue the revised guidance as final. The comments received are not recorded.",
+      "extends": null,
+      "attributes": {},
+      "hazardNote": null,
+      "evidence": [
+        {
+          "source": "hhs-2022-fr",
+          "locator": "Request for Comments, 87 FR 25495",
+          "passage": "is submitting this Revised Guidance for public consideration and comment for a period of 60 days",
+          "passageType": "quote",
+          "translation": null,
+          "sourceRole": "primary",
+          "support": "supports",
+          "note": "The sentence names the Office of the Assistant Secretary for Preparedness and Response within HHS as the submitter."
+        },
+        {
+          "source": "hhs-2022-fr",
+          "locator": "Request for Comments, 87 FR 25495",
+          "passage": "ASPR is the lead agency in a broad interagency process considering possible changes to the Guidance and whether to issue the proposed Revised Guidance as final guidance.",
+          "passageType": "quote",
+          "translation": null,
+          "sourceRole": "primary",
+          "support": "supports",
+          "note": null
+        }
+      ]
+    },
+    {
+      "id": "ab-scr-hhs-2023-published",
+      "group": "screening",
+      "strand": "Synthesis screening",
+      "subject": "us-aspr",
+      "predicate": "published",
+      "proposedPredicate": false,
+      "object": {
+        "kind": "entity",
+        "entityId": "us-hhs-synthetic-nucleic-acids-guidance-2023"
+      },
+      "statement": "The Administration for Strategic Preparedness and Response published the Screening Framework Guidance for Providers and Users of Synthetic Nucleic Acids in the Federal Register of 13 October 2023, stating that it sets out baseline standards for the gene and genome synthesis industry and best practices for all entities involved in the provision, use and transfer of synthetic nucleic acids.",
+      "time": {
+        "kind": "event",
+        "date": "2023-10-13",
+        "basis": "publication",
+        "note": "Federal Register issue of 13 October 2023 (88 FR 70998). The notice states no separate effective date."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "Records the publication and the notice's own description of the Guidance. Publication is not evidence that any provider, manufacturer or customer followed it. The Guidance was published eighteen days before Executive Order 14110; no relation between the two is recorded here.",
+      "extends": null,
+      "attributes": {},
+      "hazardNote": null,
+      "evidence": [
+        {
+          "source": "hhs-2023-fr",
+          "locator": "SUMMARY, 88 FR 70998",
+          "passage": "sets forth baseline standards for the gene and genome synthesis industry, as well as best practices for all entities involved in the … provision, use, and transfer of synthetic nucleic acids, regarding screening orders and recipients and maintaining records",
+          "passageType": "quote",
+          "translation": null,
+          "sourceRole": "primary",
+          "support": "supports",
+          "note": "The notice names the Administration for Strategic Preparedness and Response (ASPR) as the issuing agency. The ellipsis marks where the Federal Register page furniture (a VerDate line) interrupts the sentence in the PDF text layer."
+        }
+      ]
+    },
+    {
+      "id": "ab-scr-hhs-2023-supersedes-2010",
+      "group": "screening",
+      "strand": "Synthesis screening",
+      "subject": "us-hhs-synthetic-nucleic-acids-guidance-2023",
+      "predicate": "supersedes_document",
+      "proposedPredicate": false,
+      "object": {
+        "kind": "entity",
+        "entityId": "us-hhs-synthetic-dsdna-guidance-2010"
+      },
+      "statement": "The 2023 Screening Framework Guidance for Providers and Users of Synthetic Nucleic Acids states that advances in the field motivated the United States Government to review and revise the 2010 Screening Framework Guidance for Providers of Synthetic Double-Stranded DNA, and cites the 2010 guidance at 75 FR 62820.",
+      "time": {
+        "kind": "event",
+        "date": "2023-10-13",
+        "basis": "publication",
+        "note": "Dated by the publication of the revising expression."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "The publisher's own statement that the later guidance revises the earlier one. The 2010 text and its history remain on record; what changed is recorded only where this pass states a provision of each expression.",
+      "extends": null,
+      "attributes": {
+        "changeBasis": "publisher_statement"
+      },
+      "hazardNote": null,
+      "evidence": [
+        {
+          "source": "hhs-2023-fr",
+          "locator": "I. Introduction, 88 FR 70999",
+          "passage": "These advances and others motivated the U.S. government to review and revise the 2010 Screening Framework Guidance for Providers of Synthetic Double-Stranded DNA.",
+          "passageType": "quote",
+          "translation": null,
+          "sourceRole": "primary",
+          "support": "supports",
+          "note": "The sentence carries footnote 3, which cites 75 FR 62820 (Oct. 13, 2010)."
+        }
+      ]
+    },
+    {
+      "id": "ab-scr-hhs-2023-scope",
+      "group": "screening",
+      "strand": "Synthesis screening",
+      "subject": "us-hhs-synthetic-nucleic-acids-guidance-2023",
+      "predicate": "states_provision",
+      "proposedPredicate": false,
+      "object": {
+        "kind": "literal",
+        "value": "Scope: all types of synthetic nucleic acids, and the categories of entity addressed"
+      },
+      "statement": "The 2023 Guidance states that it pertains to the sale or transfer of all types of synthetic nucleic acids, DNA and RNA and single- or double-stranded, and that it sets recommended baseline standards for providers and for manufacturers of benchtop nucleic acid synthesis devices and best practices for customers, including institutions, principal users, end users and third-party vendors.",
+      "time": {
+        "kind": "event",
+        "date": "2023-10-13",
+        "basis": "publication",
+        "note": "Provision as the 2023 expression states it, dated by its publication."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "States the Guidance's stated scope and addressees. Whether a named company falls in any category is not recorded, and a recommended baseline standard is not an obligation. The provision kind is `threshold`, the dataset’s kind for a provision that decides what is covered; the schema has no `definition` kind.",
+      "extends": null,
+      "attributes": {
+        "provision": {
+          "kind": "threshold",
+          "key": "us-hhs-screening-guidance-2023-scope"
+        }
+      },
+      "hazardNote": "The Guidance's definitions of the sequences subject to screening and its minimum screening length are technical screening criteria and are not recorded.",
+      "evidence": [
+        {
+          "source": "hhs-2023-fr",
+          "locator": "III. Goals and Scope of the Guidance, 88 FR 71000",
+          "passage": "The Guidance pertains to the sale or transfer of all types of synthetic nucleic acids, i.e., DNA and RNA, whether single- or double-stranded.",
+          "passageType": "quote",
+          "translation": null,
+          "sourceRole": "primary",
+          "support": "supports",
+          "note": null
+        },
+        {
+          "source": "hhs-2023-fr",
+          "locator": "I. Introduction, 88 FR 70999-71000",
+          "passage": "Paraphrase: the Guidance sets out recommended baseline standards for the nucleic acid synthesis industry (Providers) and for Manufacturers of benchtop nucleic acid synthesis devices, and best practices for Customers of synthetic nucleic acids, which it lists as institutions, Principal Users, End Users and Third-Party Vendors.",
+          "passageType": "paraphrase",
+          "translation": null,
+          "sourceRole": "primary",
+          "support": "supports",
+          "note": "Explicit paraphrase; the sentence it paraphrases also names the category of sequences screened for, which is not reproduced."
+        }
+      ]
+    },
+    {
+      "id": "ab-scr-hhs-2023-provider-screening",
+      "group": "screening",
+      "strand": "Synthesis screening",
+      "subject": "us-hhs-synthetic-nucleic-acids-guidance-2023",
+      "predicate": "states_provision",
+      "proposedPredicate": false,
+      "object": {
+        "kind": "literal",
+        "value": "Recommended provider actions on receiving an order: sequence screening, customer identity verification and follow-up"
+      },
+      "statement": "The 2023 Guidance recommends that, upon receiving an order for synthetic nucleic acids, providers and third-party vendors perform sequence screening, verify the identity of their customers, and follow up to verify the legitimacy of the order when sequences in the Guidance's category of concern are identified.",
+      "time": {
+        "kind": "event",
+        "date": "2023-10-13",
+        "basis": "publication",
+        "note": "Provision as the 2023 expression states it, dated by its publication."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "States what the Guidance recommends of the categories it defines. It is not evidence that any provider screens orders or verifies customers, and the Guidance's screening methodology is not recorded.",
+      "extends": null,
+      "attributes": {
+        "provision": {
+          "kind": "required_action",
+          "key": "us-hhs-screening-guidance-2023-provider-order-screening"
+        }
+      },
+      "hazardNote": "Policy-level requirement only. The Guidance's sequence screening methodology section and its criteria for identifying sequences of the category it abbreviates SOCs were read and excluded.",
+      "evidence": [
+        {
+          "source": "hhs-2023-fr",
+          "locator": "I. Introduction, recommendation (1), 88 FR 70999",
+          "passage": "upon receiving an order for synthetic nucleic acids, Providers and Third-Party Vendors perform sequence screening, verify the identity of their Customers, and follow up to verify the legitimacy of the order when SOCs are identified",
+          "passageType": "quote",
+          "translation": null,
+          "sourceRole": "primary",
+          "support": "supports",
+          "note": "SOC is the Guidance's own abbreviation for its defined category of sequences; its definition is not reproduced."
+        }
+      ]
+    },
+    {
+      "id": "ab-scr-hhs-2023-refuse-and-report",
+      "group": "screening",
+      "strand": "Synthesis screening",
+      "subject": "us-hhs-synthetic-nucleic-acids-guidance-2023",
+      "predicate": "states_provision",
+      "proposedPredicate": false,
+      "object": {
+        "kind": "literal",
+        "value": "Recommended action where concerns are not resolved: do not fulfil the order and contact designated government entities"
+      },
+      "statement": "The 2023 Guidance recommends that, where follow-up screening does not resolve concerns about an order or there is reason to believe a customer may violate United States laws or regulations, providers should not fulfil the order and should contact designated entities within the United States Government, which it identifies as the Department of Commerce and the Federal Bureau of Investigation.",
+      "time": {
+        "kind": "event",
+        "date": "2023-10-13",
+        "basis": "publication",
+        "note": "Provision as the 2023 expression states it, dated by its publication."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "States a recommendation of the Guidance. It is not evidence that any order was refused or reported, and no reporting channel or contact detail is recorded.",
+      "extends": null,
+      "attributes": {
+        "provision": {
+          "kind": "required_action",
+          "key": "us-hhs-screening-guidance-2023-refusal-and-reporting"
+        }
+      },
+      "hazardNote": null,
+      "evidence": [
+        {
+          "source": "hhs-2023-fr",
+          "locator": "I. Introduction, 88 FR 71000",
+          "passage": "Providers should not fulfill the order and should contact designated entities within the U.S. government",
+          "passageType": "quote",
+          "translation": null,
+          "sourceRole": "primary",
+          "support": "supports",
+          "note": "The sentence names the U.S. Department of Commerce and the Federal Bureau of Investigation in parentheses as the designated entities."
+        }
+      ]
+    },
+    {
+      "id": "ab-scr-hhs-2023-benchtop-manufacturers",
+      "group": "screening",
+      "strand": "Synthesis screening",
+      "subject": "us-hhs-synthetic-nucleic-acids-guidance-2023",
+      "predicate": "states_provision",
+      "proposedPredicate": false,
+      "object": {
+        "kind": "literal",
+        "value": "Recommended actions for manufacturers of benchtop nucleic acid synthesis equipment"
+      },
+      "statement": "The 2023 Guidance recommends that manufacturers of benchtop nucleic acid synthesis equipment screen all customers purchasing such equipment to validate customer legitimacy, provide equipment only to customers with mechanisms to ensure that devices are operated by legitimate users, and integrate into the equipment the capability to screen sequences and to authenticate legitimate users.",
+      "time": {
+        "kind": "event",
+        "date": "2023-10-13",
+        "basis": "publication",
+        "note": "Provision as the 2023 expression states it, dated by its publication. The 2010 guidance addressed providers of synthetic double-stranded DNA and not equipment manufacturers."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "States recommendations addressed to a category of manufacturer. It is not evidence that any manufacturer screens customers or has built such a capability into a device, and no technical means of doing so is recorded.",
+      "extends": null,
+      "attributes": {
+        "provision": {
+          "kind": "required_action",
+          "key": "us-hhs-screening-guidance-2023-benchtop-manufacturers"
+        }
+      },
+      "hazardNote": "Policy-level requirements only. The Guidance's accompanying recommendations on how such screening should be implemented, including its database and cryptographic passages, were read and excluded.",
+      "evidence": [
+        {
+          "source": "hhs-2023-fr",
+          "locator": "IV. Best practices for benchtop equipment, first bullet, 88 FR 71001",
+          "passage": "Manufacturers should screen all Customers purchasing benchtop nucleic acid synthesizers to validate customer legitimacy and that the equipment is appropriate for their needs.",
+          "passageType": "quote",
+          "translation": null,
+          "sourceRole": "primary",
+          "support": "supports",
+          "note": "The next sentence adds that manufacturers should only provide synthesizers to customers that have mechanisms aimed at ensuring the devices are operated by legitimate users."
+        },
+        {
+          "source": "hhs-2023-fr",
+          "locator": "IV. Best practices for benchtop equipment, later bullet, 88 FR 71001",
+          "passage": "Paraphrase: manufacturers should integrate into benchtop nucleic acid synthesizers the capability to screen sequences and to authenticate legitimate users, at a level the Guidance describes as on a par with the screening practices it recommends for providers.",
+          "passageType": "paraphrase",
+          "translation": null,
+          "sourceRole": "primary",
+          "support": "supports",
+          "note": "Explicit paraphrase; the bullet's technical detail on databases and update frequency is excluded."
+        }
+      ]
+    },
+    {
+      "id": "ab-scr-ostp-framework-published",
+      "group": "screening",
+      "strand": "Synthesis screening",
+      "subject": "us-ostp",
+      "predicate": "published",
+      "proposedPredicate": false,
+      "object": {
+        "kind": "entity",
+        "entityId": "us-ostp-nucleic-acid-synthesis-screening-framework-2024"
+      },
+      "statement": "The Office of Science and Technology Policy released the Framework for Nucleic Acid Synthesis Screening on 29 April 2024, and the copy served from the Biden White House archive on 28 October 2026 is marked as revised in September 2024, with April 2024 given as version 1.",
+      "time": {
+        "kind": "event",
+        "date": "2024-04-29",
+        "basis": "publication",
+        "note": "Release date stated by the HHS ASPR page, which adds 'revised September 2024'. The retrieved copy's cover carries 'Revised: September 2024' and '2024 Version 1: April 2024'; the day of the September 2024 revision is not stated and stays unknown. Version 1 of April 2024 was not retrieved."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "Records the release and the version marks of the retrieved copy. The provisions recorded below are from the revised expression; whether they also stood in version 1 of April 2024 was not checked, because that version could not be retrieved.",
+      "extends": null,
+      "attributes": {},
+      "hazardNote": null,
+      "evidence": [
+        {
+          "source": "aspr-ostp-page",
+          "locator": "Body, first paragraph after the update notice",
+          "passage": "The White House Office of Science and Technology Policy (OSTP) released the Framework for Nucleic Acid Synthesis Screening on April 29, 2024 (revised September 2024).",
+          "passageType": "quote",
+          "translation": null,
+          "sourceRole": "primary",
+          "support": "supports",
+          "note": "HHS ASPR's page about the framework, as served on 2026-10-28."
+        },
+        {
+          "source": "ostp-framework-2024",
+          "locator": "Cover page",
+          "passage": "Paraphrase: the cover carries the title, the committee of origin, 'Revised: September 2024' and '2024 Version 1: April 2024'.",
+          "passageType": "paraphrase",
+          "translation": null,
+          "sourceRole": "primary",
+          "support": "supports",
+          "note": "Explicit paraphrase of the cover's version marks."
+        }
+      ]
+    },
+    {
+      "id": "ab-scr-ostp-framework-eo14110-link",
+      "group": "screening",
+      "strand": "Synthesis screening",
+      "subject": "us-ostp-nucleic-acid-synthesis-screening-framework-2024",
+      "predicate": "references_commitment",
+      "proposedPredicate": false,
+      "object": {
+        "kind": "entity",
+        "entityId": "us-eo-14110-2023"
+      },
+      "statement": "The Framework for Nucleic Acid Synthesis Screening states that the committee that produced it was established in 2023 to develop a framework for nucleic acid synthesis screening pursuant to section 4.4(b)(i) of Executive Order 14110.",
+      "time": {
+        "kind": "event",
+        "date": "2024-04-29",
+        "basis": "publication",
+        "note": "Dated by the framework's release; the statement appears in the retrieved September 2024 revision."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "The framework's own statement of the authority it was prepared under; it is not a finding that the order's direction was fulfilled. The framework's text gives the order's date as 23 October 2023, while the order itself is dated 30 October 2023 and was published on 1 November 2023; the discrepancy is in the framework.",
+      "extends": null,
+      "attributes": {
+        "commitment": {
+          "link": "responds_to"
+        }
+      },
+      "hazardNote": null,
+      "evidence": [
+        {
+          "source": "ostp-framework-2024",
+          "locator": "About the Fast Track Action Committee on Synthetic Nucleic Acid Procurement Screening, p. i",
+          "passage": "to develop a framework for nucleic acid synthesis screening, pursuant to Section 4.4(b)(i) of Executive Order 14110 of October 23, 2023",
+          "passageType": "quote",
+          "translation": null,
+          "sourceRole": "primary",
+          "support": "supports",
+          "note": "Quoted as printed, including the date 23 October 2023, which does not match the order's own date of 30 October 2023."
+        }
+      ]
+    },
+    {
+      "id": "ab-scr-ostp-framework-scope",
+      "group": "screening",
+      "strand": "Synthesis screening",
+      "subject": "us-ostp-nucleic-acid-synthesis-screening-framework-2024",
+      "predicate": "states_provision",
+      "proposedPredicate": false,
+      "object": {
+        "kind": "literal",
+        "value": "Scope: federally funded life sciences research procurement, and the providers and manufacturers whose distribution is covered"
+      },
+      "statement": "The Framework states that it applies to federally funded life sciences research involving the procurement of all types of synthetic nucleic acids and of any benchtop equipment capable of synthesising nucleic acids, and to distribution by providers including biofoundries, cloud laboratories, institutions with core synthesis facilities and contract research organisations, and by manufacturers of benchtop equipment.",
+      "time": {
+        "kind": "event",
+        "date": "2024-09",
+        "basis": "publication",
+        "note": "Provision as the retrieved expression states it; that copy is marked 'Revised: September 2024' and the day is not stated, so the date stays at month precision. The framework was first released on 29 April 2024."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "States the framework's stated scope. Whether a named company or institution falls in a category is not recorded, and the framework's qualifier that it covers acids containing a sequence of its defined category is reproduced only in that generality. The provision kind is `threshold`, the dataset’s kind for a provision that decides what is covered; the schema has no `definition` kind.",
+      "extends": null,
+      "attributes": {
+        "provision": {
+          "kind": "threshold",
+          "key": "us-ostp-nucleic-acid-framework-scope"
+        }
+      },
+      "hazardNote": "The framework's definition of the sequences in scope is a technical screening criterion and is not recorded.",
+      "evidence": [
+        {
+          "source": "ostp-framework-2024",
+          "locator": "III. Scope, p. 5",
+          "passage": "This framework applies to federally funded life sciences research involving the procurement of all types of synthetic nucleic acids",
+          "passageType": "quote",
+          "translation": null,
+          "sourceRole": "primary",
+          "support": "supports",
+          "note": "The sentence continues with examples of nucleic acid types and the qualifier that they contain a synthetic sequence of the framework's defined category."
+        },
+        {
+          "source": "ostp-framework-2024",
+          "locator": "III. Scope, p. 5",
+          "passage": "Paraphrase: it also applies to federally funded life sciences research procuring any benchtop equipment capable of synthesising nucleic acids, and to distribution by providers, among them biofoundries, cloud labs, institutions with core nucleic acid synthesis facilities and contract research organisations, and by manufacturers of benchtop equipment.",
+          "passageType": "paraphrase",
+          "translation": null,
+          "sourceRole": "primary",
+          "support": "supports",
+          "note": "Explicit paraphrase of the three scope paragraphs."
+        }
+      ]
+    },
+    {
+      "id": "ab-scr-ostp-framework-funding-requirement-effective",
+      "group": "screening",
+      "strand": "Synthesis screening",
+      "subject": "us-ostp-nucleic-acid-synthesis-screening-framework-2024",
+      "predicate": "states_provision",
+      "proposedPredicate": false,
+      "object": {
+        "kind": "literal",
+        "value": "Date from which the funding requirement applies to purchases (26 April 2025)"
+      },
+      "statement": "The Framework states that the requirement that procurement for federally funded research be conducted through providers or manufacturers that adhere to the framework takes effect for all purchases of synthetic nucleic acids and benchtop nucleic acid synthesis equipment that take place on or after 26 April 2025.",
+      "time": {
+        "kind": "event",
+        "date": "2025-04-26",
+        "basis": "effective",
+        "note": "The date the framework itself states for the requirement's application to purchases. It is not the framework's publication date and not an effective date of any agency's own terms and conditions."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "States the date the framework sets for the requirement. Whether any funding agency established the requirement, and in what terms, is not recorded; the framework says agencies will do so under their own authorities, such as through award terms and conditions. The provision kind is `threshold`, the kind the dataset uses for a stated date of effect or application (`omni-entry-into-force`, `ny-effective-date`); the schema has no `date` kind.",
+      "extends": null,
+      "attributes": {
+        "provision": {
+          "kind": "threshold",
+          "key": "ostp-framework-funding-requirement-effective"
+        }
+      },
+      "hazardNote": null,
+      "evidence": [
+        {
+          "source": "ostp-framework-2024",
+          "locator": "II. Role of Federal Funding Agencies, p. 5",
+          "passage": "This requirement will take effect for all purchases of synthetic nucleic acids and benchtop nucleic synthesis equipment that take place on or after April 26, 2025.",
+          "passageType": "quote",
+          "translation": null,
+          "sourceRole": "primary",
+          "support": "supports",
+          "note": "Quoted as printed, including 'benchtop nucleic synthesis equipment'."
+        },
+        {
+          "source": "ostp-framework-2024",
+          "locator": "II. Role of Federal Funding Agencies, p. 5",
+          "passage": "Paraphrase: the framework restates the Executive Order's requirement that all agencies funding life sciences research establish, as a requirement of funding and as appropriate and consistent with applicable law, that procurement for federally funded research is conducted through adhering providers or manufacturers.",
+          "passageType": "paraphrase",
+          "translation": null,
+          "sourceRole": "primary",
+          "support": "supports",
+          "note": "Explicit paraphrase; its footnote cites section 4.4(b)(iii) of the order and states that funding includes grants, contracts, cooperative agreements and other agreements."
+        }
+      ]
+    },
+    {
+      "id": "ab-scr-ostp-framework-attestation",
+      "group": "screening",
+      "strand": "Synthesis screening",
+      "subject": "us-ostp-nucleic-acid-synthesis-screening-framework-2024",
+      "predicate": "states_provision",
+      "proposedPredicate": false,
+      "object": {
+        "kind": "literal",
+        "value": "Attestation criterion for adherence (criterion 1), with signature, contact, annual update and 72-hour notification"
+      },
+      "statement": "The Framework states that to adhere to it a provider or manufacturer should either post on a public webpage a statement self-attesting to following each of its criteria or give such a statement to the federally funded customer and the funding agency on request, and that the attestation should be signed by someone authorised for the organisation, give a point of contact, be updated by 1 January each year, and commit the organisation to notify customers and funding agencies within 72 hours if it ceases to adhere.",
+      "time": {
+        "kind": "event",
+        "date": "2024-09",
+        "basis": "publication",
+        "note": "Provision as the retrieved expression states it; that copy is marked 'Revised: September 2024' and the day is not stated. The framework was first released on 29 April 2024."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "States what the framework asks of a provider or manufacturer. A self-attestation is a statement by the organisation making it; it is not verification, certification or compliance, and no record is made of any organisation having attested.",
+      "extends": null,
+      "attributes": {
+        "provision": {
+          "kind": "required_action",
+          "key": "us-ostp-nucleic-acid-framework-attestation"
+        }
+      },
+      "hazardNote": null,
+      "evidence": [
+        {
+          "source": "ostp-framework-2024",
+          "locator": "V. Screening Framework, criterion 1, p. 8",
+          "passage": "either post on a public webpage a statement that self-attests to following each of the criteria in this framework, or provide such a statement to the federally funded customer and the federal funding agency upon request",
+          "passageType": "quote",
+          "translation": null,
+          "sourceRole": "primary",
+          "support": "supports",
+          "note": null
+        },
+        {
+          "source": "ostp-framework-2024",
+          "locator": "V. Screening Framework, criterion 1, items (i) to (iv), p. 8",
+          "passage": "Paraphrase: the attestation should be signed by an individual with authority to respond for the organisation, give point-of-contact information, be updated by 1 January each year or sooner if contacts change, and expressly commit the organisation, if it ceases to adhere, to notify within 72 hours any federally funded customers and funding agencies to which it had attested.",
+          "passageType": "paraphrase",
+          "translation": null,
+          "sourceRole": "primary",
+          "support": "supports",
+          "note": "Explicit paraphrase of the four lettered items. The framework adds that OSTP anticipated coordinating a standardised template statement."
+        }
+      ]
+    },
+    {
+      "id": "ab-scr-ostp-framework-exceptions",
+      "group": "screening",
+      "strand": "Synthesis screening",
+      "subject": "us-ostp-nucleic-acid-synthesis-screening-framework-2024",
+      "predicate": "states_provision",
+      "proposedPredicate": false,
+      "object": {
+        "kind": "literal",
+        "value": "Case-by-case exceptions by heads of federal funding agencies"
+      },
+      "statement": "The Framework states that the heads of federal funding agencies may issue exceptions to its requirements on a case-by-case basis where needed to address health or national security priorities, in consultation with the Director of the Office of Science and Technology Policy and the Federal Bureau of Investigation.",
+      "time": {
+        "kind": "event",
+        "date": "2024-09",
+        "basis": "publication",
+        "note": "Provision as the retrieved expression states it; that copy is marked 'Revised: September 2024' and the day is not stated. The framework was first released on 29 April 2024."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "States the exception the framework provides for. No exception is recorded as having been issued, and the framework also states that it does not supersede any federal statutory or regulatory authority.",
+      "extends": null,
+      "attributes": {
+        "provision": {
+          "kind": "exception",
+          "key": "us-ostp-nucleic-acid-framework-agency-exceptions"
+        }
+      },
+      "hazardNote": null,
+      "evidence": [
+        {
+          "source": "ostp-framework-2024",
+          "locator": "II. Role of Federal Funding Agencies, p. 5",
+          "passage": "The heads of federal funding agencies may issue exceptions to the requirements in this framework on a case-by-case basis when needed to address health or national security priorities, in consultation with the Director of OSTP and the Federal Bureau of Investigation.",
+          "passageType": "quote",
+          "translation": null,
+          "sourceRole": "primary",
+          "support": "supports",
+          "note": "The preceding sentence says that in rare cases funding agencies may encounter circumstances requiring an exception."
+        }
+      ]
+    },
+    {
+      "id": "ab-scr-ostp-framework-2026-review",
+      "group": "screening",
+      "strand": "Synthesis screening",
+      "subject": "us-ostp-nucleic-acid-synthesis-screening-framework-2024",
+      "predicate": "states_provision",
+      "proposedPredicate": false,
+      "object": {
+        "kind": "literal",
+        "value": "Interagency review before 13 October 2026 and recurring review of the framework"
+      },
+      "statement": "The Framework states that an interagency group designated by the Office of Science and Technology Policy will assess the scientific state of the art before 13 October 2026 and recommend any updates to the framework if necessary, and that such a group will consider and recommend updates every two years or as appropriate.",
+      "time": {
+        "kind": "event",
+        "date": "2024-09",
+        "basis": "revision",
+        "note": "Provision as the retrieved expression states it: the copy marked 'Revised: September 2024', whose day is not stated, so the record carries the September 2024 revision as its date and basis; the release of 29 April 2024 is dated in the sibling record ab-scr-ostp-framework-published. The date 13 October 2026 is the framework's own, three years after the 2023 HHS guidance was issued."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "States a review commitment in the framework's text. It is not evidence that any assessment was made or any update recommended; Executive Order 14292 of 5 May 2025 later directed that the framework be revised or replaced, which is recorded separately.",
+      "extends": null,
+      "attributes": {
+        "provision": {
+          "kind": "required_action",
+          "key": "us-ostp-nucleic-acid-framework-review"
+        }
+      },
+      "hazardNote": "The framework's further practices that it dates from 13 October 2026 are technical screening criteria and are not recorded; only the review and its date are.",
+      "evidence": [
+        {
+          "source": "ostp-framework-2024",
+          "locator": "V. Screening Framework, criterion 2, PDF p. 11 (printed p. 10)",
+          "passage": "an OSTP-designated interagency group will assess the scientific state of the art before October 13, 2026 and recommend any updates to this framework if necessary",
+          "passageType": "quote",
+          "translation": null,
+          "sourceRole": "primary",
+          "support": "supports",
+          "note": null
+        },
+        {
+          "source": "ostp-framework-2024",
+          "locator": "V. Screening Framework, criterion 2, PDF p. 11 (printed p. 10)",
+          "passage": "Paraphrase: the framework also provides for an interagency group that will consider and recommend updates every two years, or as appropriate, and will provide additional guidance as needed before 13 October 2026.",
+          "passageType": "paraphrase",
+          "translation": null,
+          "sourceRole": "primary",
+          "support": "supports",
+          "note": "Explicit paraphrase; the list of scientific advances that would inform updates is not reproduced."
+        }
+      ]
+    },
+    {
+      "id": "ab-scr-eo14292-signed",
+      "group": "screening",
+      "strand": "Synthesis screening",
+      "subject": "us-white-house",
+      "predicate": "enacted",
+      "proposedPredicate": false,
+      "object": {
+        "kind": "entity",
+        "entityId": "us-eo-14292-2025"
+      },
+      "statement": "Executive Order 14292, Improving the Safety and Security of Biological Research, is dated 5 May 2025 in the Federal Register print of the order.",
+      "time": {
+        "kind": "event",
+        "date": "2025-05-05",
+        "basis": "signature",
+        "note": "Date in the heading of the printed order; published in the Federal Register of 8 May 2025 (90 FR 19611), which is a different date and is recorded in the document entry."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "Records the order's date as printed. Signature is not implementation: nothing here establishes that any step the order directs was taken. The order's gain-of-function research provisions are outside this pass.",
+      "extends": null,
+      "attributes": {},
+      "hazardNote": null,
+      "evidence": [
+        {
+          "source": "eo-14292-fr",
+          "locator": "Heading, 90 FR 19611",
+          "passage": "Executive Order 14292 of May 5, 2025",
+          "passageType": "quote",
+          "translation": null,
+          "sourceRole": "primary",
+          "support": "supports",
+          "note": "The order number and date are taken from the Federal Register print, not from any press report."
+        }
+      ]
+    },
+    {
+      "id": "ab-scr-eo14292-sec4b-revise-framework",
+      "group": "screening",
+      "strand": "Synthesis screening",
+      "subject": "us-eo-14292-2025",
+      "predicate": "states_provision",
+      "proposedPredicate": false,
+      "object": {
+        "kind": "literal",
+        "value": "Direction to revise or replace the 2024 Framework for Nucleic Acid Synthesis Screening within 90 days (Sec. 4(b))"
+      },
+      "statement": "Section 4(b) of Executive Order 14292 directs the Director of the Office of Science and Technology Policy, within 90 days, to revise or replace the 2024 Framework for Nucleic Acid Synthesis Screening, directs the heads of all agencies that fund life-science research to ensure that synthetic nucleic acid procurement is conducted through providers or manufacturers that adhere to the updated framework, and states that the framework shall be reviewed and revised at least every four years.",
+      "time": {
+        "kind": "event",
+        "date": "2025-05-08",
+        "basis": "publication",
+        "note": "Provision as the order states it, dated by the Federal Register publication of 8 May 2025; the order is dated 5 May 2025."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "States what the order directs. It is not evidence that a revised or replacement framework was produced; the order also directs that the updated framework incorporate the enforcement mechanisms of its section 7, which are not recorded here. The order's characterisation of the approach it requires is its own wording.",
+      "extends": null,
+      "attributes": {
+        "provision": {
+          "kind": "required_action",
+          "key": "us-eo14292-sec4b-revise-nucleic-acid-framework"
+        }
+      },
+      "hazardNote": null,
+      "evidence": [
+        {
+          "source": "eo-14292-fr",
+          "locator": "Sec. 4(b), 90 FR 19612",
+          "passage": "to ensure it takes a commonsense approach and effectively encourages providers of synthetic nucleic acid sequences to implement comprehensive, scalable, and verifiable synthetic nucleic acid procurement screening mechanisms to minimize the risk of misuse",
+          "passageType": "quote",
+          "translation": null,
+          "sourceRole": "primary",
+          "support": "supports",
+          "note": "The subsection opens by directing the Director of OSTP, within 90 days and in coordination with the APNSA and relevant agency heads, to revise or replace the 2024 Framework for Nucleic Acid Synthesis Screening."
+        },
+        {
+          "source": "eo-14292-fr",
+          "locator": "Sec. 4(b), 90 FR 19612",
+          "passage": "The heads of all agencies that fund life-science research shall ensure that synthetic nucleic acid procurement is conducted through providers or manufacturers that adhere to the updated Framework.",
+          "passageType": "quote",
+          "translation": null,
+          "sourceRole": "primary",
+          "support": "supports",
+          "note": null
+        },
+        {
+          "source": "eo-14292-fr",
+          "locator": "Sec. 4(b), final sentence, 90 FR 19612",
+          "passage": "The Framework shall be reviewed and revised at least every 4 years, or as appropriate.",
+          "passageType": "quote",
+          "translation": null,
+          "sourceRole": "primary",
+          "support": "supports",
+          "note": null
+        }
+      ]
+    },
+    {
+      "id": "ab-scr-eo14292-sec5-non-federal-screening",
+      "group": "screening",
+      "strand": "Synthesis screening",
+      "subject": "us-eo-14292-2025",
+      "predicate": "states_provision",
+      "proposedPredicate": false,
+      "object": {
+        "kind": "literal",
+        "value": "Strategy to extend synthesis screening to non-federally funded settings, with a legislative proposal (Sec. 5)"
+      },
+      "statement": "Section 5 of Executive Order 14292 directs the Director of the Office of Science and Technology Policy, within 180 days, to develop and implement a strategy whose actions include achieving comprehensive, scalable and verifiable nucleic acid synthesis screening in non-federally funded settings, and states that any gaps in authorities needed for the strategy shall be addressed in a legislative proposal sent to the President within 180 days.",
+      "time": {
+        "kind": "event",
+        "date": "2025-05-08",
+        "basis": "publication",
+        "note": "Provision as the order states it, dated by the Federal Register publication of 8 May 2025; the order is dated 5 May 2025."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "States what the order directs. No strategy and no legislative proposal is recorded as having been produced or sent; the section's wider subject is research that occurs without federal funding, which this record does not otherwise address.",
+      "extends": null,
+      "attributes": {
+        "provision": {
+          "kind": "required_action",
+          "key": "us-eo14292-sec5-non-federal-synthesis-screening"
+        }
+      },
+      "hazardNote": null,
+      "evidence": [
+        {
+          "source": "eo-14292-fr",
+          "locator": "Sec. 5, 90 FR 19612",
+          "passage": "This strategy shall include actions to achieve comprehensive, scalable, and verifiable nucleic acid synthesis screening in non-federally funded settings.",
+          "passageType": "quote",
+          "translation": null,
+          "sourceRole": "primary",
+          "support": "supports",
+          "note": "The section opens 'Within 180 days of the date of this order, the Director of OSTP, in coordination with' the Director of OMB, the APNSA, the Assistant to the President for Domestic Policy and other agency heads."
+        },
+        {
+          "source": "eo-14292-fr",
+          "locator": "Sec. 5, final sentence, 90 FR 19612",
+          "passage": "Paraphrase: any gaps in the authorities needed to achieve the strategy's goals are to be addressed in a legislative proposal sent to the President, through the Director of OSTP and the APNSA, within 180 days of the order.",
+          "passageType": "paraphrase",
+          "translation": null,
+          "sourceRole": "primary",
+          "support": "supports",
+          "note": "Explicit paraphrase of the closing sentence."
+        }
+      ]
+    },
+    {
+      "id": "ab-scr-aspr-pages-framework-revision-pending",
+      "group": "screening",
+      "strand": "Synthesis screening",
+      "subject": "us-aspr-synthetic-nucleic-acid-screening-pages-2026",
+      "predicate": "states_provision",
+      "proposedPredicate": false,
+      "object": {
+        "kind": "literal",
+        "value": "Notice that the 2024 framework is to be revised or replaced and that the page awaits the revised framework"
+      },
+      "statement": "As served on 28 October 2026, the Administration for Strategic Preparedness and Response's synthetic nucleic acid screening pages state that, in compliance with the Executive Order on Improving the Safety and Security of Biological Research issued on 5 May 2025, federal departments and agencies will revise or replace the 2024 Framework for Nucleic Acid Synthesis Screening, and that each page will be updated once the revised framework, which the framework page calls the new framework, is available.",
+      "time": {
+        "kind": "snapshot",
+        "date": "2026-10-28",
+        "note": "The state of the pages at the check date; neither page shows a publication or revision date, so when the notice was posted is not known."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "Records what the pages say on the check date. It is not evidence about the state of any revision work, and the notice is the agency's own statement of what is to happen. The two pages word the second sentence differently ('the revised framework' on the hub page, 'the new framework' on the framework page); each page is cited for its own wording and no significance is given to the difference. The provision kind is `threshold`, the kind the dataset uses for a stated date of effect or application (`omni-entry-into-force`, `ny-effective-date`); the schema has no `date` kind.",
+      "extends": null,
+      "attributes": {
+        "provision": {
+          "kind": "threshold",
+          "key": "aspr-framework-revision-pending"
+        }
+      },
+      "hazardNote": null,
+      "evidence": [
+        {
+          "source": "aspr-synna-hub",
+          "locator": "Update notice at the head of the page",
+          "passage": "In compliance with the Executive Order on \"Improving the Safety and Security of Biological Research\" issued on May 5, 2025, federal departments and agencies will revise or replace the 2024 Framework for Nucleic Acid Synthesis Screening.",
+          "passageType": "quote",
+          "translation": null,
+          "sourceRole": "primary",
+          "support": "supports",
+          "note": "The extracted page text repeats the word 'Update:' twice before this sentence."
+        },
+        {
+          "source": "aspr-synna-hub",
+          "locator": "Update notice at the head of the page",
+          "passage": "This page will be updated once the revised framework is available.",
+          "passageType": "quote",
+          "translation": null,
+          "sourceRole": "primary",
+          "support": "supports",
+          "note": "The hub page's wording. The framework page carries the same notice with 'the new framework' in place of 'the revised framework' and is cited as its own evidence item below."
+        },
+        {
+          "source": "aspr-ostp-page",
+          "locator": "Update notice at the head of the page",
+          "passage": "This page will be updated once the new framework is available.",
+          "passageType": "quote",
+          "translation": null,
+          "sourceRole": "primary",
+          "support": "supports",
+          "note": "The framework page's wording of the same notice, which also carries the compliance sentence quoted above. Two older ASPR addresses (aspr.hhs.gov/legal/synna and /legal/synna/Pages/default.aspx) answered 404, so the plural 'pages' rests on these two pages only."
+        }
+      ]
+    },
+    {
+      "id": "ab-scr-ostp-framework-replacement-not-found",
+      "group": "screening",
+      "strand": "Synthesis screening",
+      "subject": "us-aspr-synthetic-nucleic-acid-screening-pages-2026",
+      "predicate": "provision_not_found",
+      "proposedPredicate": false,
+      "object": {
+        "kind": "literal",
+        "value": "A revised or replacement Framework for Nucleic Acid Synthesis Screening"
+      },
+      "statement": "Within the pages and documents inspected on 28 October 2026, no revised or replacement Framework for Nucleic Acid Synthesis Screening was found: the Administration for Strategic Preparedness and Response's pages still link the 2024 framework and state that they will be updated once the revised framework is available.",
+      "time": {
+        "kind": "snapshot",
+        "date": "2026-10-28",
+        "note": "Bounded by the check date and by the addresses inspected."
+      },
+      "derivation": "inferred",
+      "resolution": "supported",
+      "inferenceRationale": "The inspected scope was: the ASPR synthetic nucleic acid screening hub page and its OSTP framework page (both retrieved 2026-10-28), the framework copy they link in the Biden White House archive, and a search of the Federal Register API for documents whose text contains \"nucleic acid synthesis\", \"synthesis screening\" or \"Framework for Nucleic Acid Synthesis Screening\" (17, 5 and 4 results, the latest being Executive Order 14292 of 2025). The only framework document located is the 2024 one marked as revised in September 2024, and the ASPR pages state that a revision is still awaited. No search was made of OSTP's own current website or of agency award terms, so this record says nothing about those.",
+      "qualification": "A recorded absence within the stated scope at the stated date, not a finding that no revised framework exists or that none was issued. The 90-day deadline in Executive Order 14292 fell in 2025; whether anything was issued and withdrawn, or issued elsewhere, was not established. The provision kind is `threshold`, the kind the dataset uses for a stated date of effect or application (`omni-entry-into-force`, `ny-effective-date`); the schema has no `date` kind.",
+      "extends": null,
+      "attributes": {
+        "provision": {
+          "kind": "threshold",
+          "key": "ostp-framework-replacement"
+        }
+      },
+      "hazardNote": null,
+      "evidence": [
+        {
+          "source": "aspr-ostp-page",
+          "locator": "Update notice at the head of the page",
+          "passage": "This page will be updated once the new framework is available.",
+          "passageType": "quote",
+          "translation": null,
+          "sourceRole": "primary",
+          "support": "supports",
+          "note": "The page's heading is '2024 OSTP Framework for Nucleic Acid Synthesis Screening' and its only framework link is to the 2024 copy in the Biden White House archive."
+        },
+        {
+          "source": "aspr-synna-hub",
+          "locator": "Body, closing paragraph",
+          "passage": "Paraphrase: the hub page states that OSTP issued the framework in 2024 and that the Executive Order of 5 May 2025 instructed federal departments and agencies to revise or replace it.",
+          "passageType": "paraphrase",
+          "translation": null,
+          "sourceRole": "primary",
+          "support": "context",
+          "note": "Explicit paraphrase; context for the absence, not evidence of it."
+        }
+      ]
+    },
+    {
+      "id": "ab-scr-igsc-hsp-v31-published",
+      "group": "screening",
+      "strand": "Synthesis screening",
+      "subject": "igsc",
+      "predicate": "published",
+      "proposedPredicate": false,
+      "object": {
+        "kind": "entity",
+        "entityId": "igsc-harmonized-screening-protocol-v3-1"
+      },
+      "statement": "The International Gene Synthesis Consortium published version 3.1 of its Harmonized Screening Protocol, dated 1 June 2026, which states that it sets out the standards and practices that the consortium's provider and manufacturer members apply to prevent the misuse of synthetic nucleic acids.",
+      "time": {
+        "kind": "event",
+        "date": "2026-06-01",
+        "basis": "publication",
+        "note": "Date on the protocol's first page ('1 June, 2026') and in its own revision table."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "Records the publication and the protocol's own description of itself. Publication is not evidence that any member applied any practice in it, and the consortium's statement that its members represent a majority of global commercial capacity is not recorded.",
+      "extends": null,
+      "attributes": {},
+      "hazardNote": "The protocol's screening-data and methodology sections and its appendices were read and are not cited.",
+      "evidence": [
+        {
+          "source": "igsc-hsp-v31",
+          "locator": "1 Preamble, p. 1",
+          "passage": "This document outlines the standards and practices that International Gene Synthesis Consortium (IGSC) Provider and Manufacturer members apply to prevent the misuse of synthetic nucleic acids.",
+          "passageType": "quote",
+          "translation": null,
+          "sourceRole": "primary",
+          "support": "supports",
+          "note": null
+        },
+        {
+          "source": "igsc-hsp-v31",
+          "locator": "First page, title and date",
+          "passage": "Harmonized Screening Protocol v3.1",
+          "passageType": "quote",
+          "translation": null,
+          "sourceRole": "primary",
+          "support": "supports",
+          "note": "The date '1 June, 2026' stands immediately below the title."
+        }
+      ]
+    },
+    {
+      "id": "ab-scr-igsc-hsp-revision-history",
+      "group": "screening",
+      "strand": "Synthesis screening",
+      "subject": "igsc-harmonized-screening-protocol-v3-1",
+      "predicate": "states_provision",
+      "proposedPredicate": false,
+      "object": {
+        "kind": "literal",
+        "value": "Stated revision history of the Harmonized Screening Protocol, v1.0 to v3.1"
+      },
+      "statement": "Version 3.1 of the Harmonized Screening Protocol states its own revision history as five versions: v1.0 released on 18 November 2009, v2.0 on 19 November 2017, v2.1 on 5 May 2020, v3.0 on 3 September 2024 and v3.1 on 1 June 2026.",
+      "time": {
+        "kind": "event",
+        "date": "2026-06-01",
+        "basis": "publication",
+        "note": "The history as stated in the expression published on 1 June 2026. Each listed release date is the protocol's own statement about an earlier version; none of those earlier versions was retrieved."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "The publisher's own account of its version history, recorded as such. The earlier versions were not retrieved and their texts are not recorded, so no change between versions is established here beyond what the table states. The table is paraphrased and not reproduced.",
+      "extends": null,
+      "attributes": {
+        "provision": {
+          "kind": "revision",
+          "key": "igsc-harmonized-screening-protocol-revision-history"
+        }
+      },
+      "hazardNote": null,
+      "evidence": [
+        {
+          "source": "igsc-hsp-v31",
+          "locator": "8 Revisions to the Harmonized Screening Protocol, p. 16",
+          "passage": "Paraphrase: the revision table gives five rows: v1.0, 18 November 2009, initial publication; v2.0, 19 November 2017, a change to the update frequency of the consortium's screening database; v2.1, 5 May 2020, an added recommendation on screening pools of short fragments; v3.0, 3 September 2024, a rewrite to align with the 2023 United States guidance, Executive Order 14110 and the OSTP framework and to add context; v3.1, 1 June 2026, adding a requirement to validate the efficacy of screening systems regularly.",
+          "passageType": "paraphrase",
+          "translation": null,
+          "sourceRole": "primary",
+          "support": "supports",
+          "note": "Explicit paraphrase of the table; the publisher's own descriptions of each change are summarised, not quoted."
+        }
+      ]
+    },
+    {
+      "id": "ab-scr-igsc-hsp-v31-customer-screening",
+      "group": "screening",
+      "strand": "Synthesis screening",
+      "subject": "igsc-harmonized-screening-protocol-v3-1",
+      "predicate": "states_provision",
+      "proposedPredicate": false,
+      "object": {
+        "kind": "literal",
+        "value": "Customer screening requirements: restricted-party screening, additional screening for regulated material, and limits on who may be supplied"
+      },
+      "statement": "Version 3.1 of the Harmonized Screening Protocol states that members screen potential customers against the sanctions and denied-party lists of the countries relevant to their operations, require additional customer screening before accepting orders for sequences from regulated pathogens or toxins, and supply such sequences only to researchers in bona fide government laboratories, universities, non-profit research institutions or industrial laboratories demonstrably engaged in legitimate research.",
+      "time": {
+        "kind": "event",
+        "date": "2026-06-01",
+        "basis": "publication",
+        "note": "Provision as version 3.1 states it, dated by its publication."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "States what the protocol says its members do and require. It is not evidence that any member screened any customer or refused any order, and membership is not compliance. The protocol's customer-screening appendix is not recorded.",
+      "extends": null,
+      "attributes": {
+        "provision": {
+          "kind": "required_action",
+          "key": "igsc-harmonized-screening-protocol-customer-screening"
+        }
+      },
+      "hazardNote": "Policy-level requirements only; the protocol's screening methodology, its database and the lists of agents it screens against are not recorded.",
+      "evidence": [
+        {
+          "source": "igsc-hsp-v31",
+          "locator": "7.1 Customer Screening, requirement 1.3, p. 14",
+          "passage": "IGSC members supply nucleic acid sequences from regulated pathogens and toxins only to researchers in bona fide government laboratories, universities, non-profit research institutions, or industrial laboratories demonstrably engaged in legitimate research.",
+          "passageType": "quote",
+          "translation": null,
+          "sourceRole": "primary",
+          "support": "supports",
+          "note": "The same requirement adds that customers ordering significant portions of such genomes must give a written description of the intended use."
+        },
+        {
+          "source": "igsc-hsp-v31",
+          "locator": "7.1 Customer Screening, requirements 1.2 and 1.3, p. 14",
+          "passage": "Paraphrase: potential customers are subject to restricted-party screening against the relevant sanctions or denied-party lists maintained by the countries relevant to each provider's base of operations, and additional customer screening is required before accepting orders for nucleic acid sequences from regulated pathogens or toxins.",
+          "passageType": "paraphrase",
+          "translation": null,
+          "sourceRole": "primary",
+          "support": "supports",
+          "note": "Explicit paraphrase; the named lists are not reproduced."
+        }
+      ]
+    },
+    {
+      "id": "ab-scr-igsc-hsp-v31-record-retention",
+      "group": "screening",
+      "strand": "Synthesis screening",
+      "subject": "igsc-harmonized-screening-protocol-v3-1",
+      "predicate": "states_provision",
+      "proposedPredicate": false,
+      "object": {
+        "kind": "literal",
+        "value": "Record retention: at least eight years for delivery records and for screening results"
+      },
+      "statement": "Version 3.1 of the Harmonized Screening Protocol states that members retain records of every gene synthesised and delivered for a minimum of eight years after shipping, including the recipient's identity and shipping address, and retain every sequence screening result for at least eight years.",
+      "time": {
+        "kind": "event",
+        "date": "2026-06-01",
+        "basis": "publication",
+        "note": "Provision as version 3.1 states it, dated by its publication."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "States a retention period the protocol sets. It is not evidence that any member holds such records. The 2023 United States guidance recommends at least three years; the two periods are different documents' provisions and are not compared here.",
+      "extends": null,
+      "attributes": {
+        "provision": {
+          "kind": "required_action",
+          "key": "igsc-harmonized-screening-protocol-record-retention"
+        }
+      },
+      "hazardNote": null,
+      "evidence": [
+        {
+          "source": "igsc-hsp-v31",
+          "locator": "7.3 Record Keeping and Retention, requirement 3.1, p. 15",
+          "passage": "IGSC members retain records of every gene synthesized and delivered for a minimum of 8 years after shipping",
+          "passageType": "quote",
+          "translation": null,
+          "sourceRole": "primary",
+          "support": "supports",
+          "note": "The requirement lists the sequence, the vector where applicable, and the recipient's identity and shipping address as the minimum content."
+        },
+        {
+          "source": "igsc-hsp-v31",
+          "locator": "7.3 Record Keeping and Retention, requirement 3.2, p. 15",
+          "passage": "IGSC members retain records of every gene sequence screening result for at least 8 years.",
+          "passageType": "quote",
+          "translation": null,
+          "sourceRole": "primary",
+          "support": "supports",
+          "note": null
+        }
+      ]
+    },
+    {
+      "id": "ab-scr-igsc-hsp-v31-refusal-reporting",
+      "group": "screening",
+      "strand": "Synthesis screening",
+      "subject": "igsc-harmonized-screening-protocol-v3-1",
+      "predicate": "states_provision",
+      "proposedPredicate": false,
+      "object": {
+        "kind": "literal",
+        "value": "Order refusal and reporting of potentially problematic orders"
+      },
+      "statement": "Version 3.1 of the Harmonized Screening Protocol states that members reserve the right to refuse to fill any order and to notify other members, law enforcement or other authorities on identifying potentially problematic orders, and that members will report requests from a suspicious potential customer or from one that fails to establish legitimacy under the protocol's customer-screening practices.",
+      "time": {
+        "kind": "event",
+        "date": "2026-06-01",
+        "basis": "publication",
+        "note": "Provision as version 3.1 states it, dated by its publication."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "States what the protocol says members reserve the right to do and will do. No refusal, notification or report is recorded as having occurred, and the authorities named in the protocol are not listed here.",
+      "extends": null,
+      "attributes": {
+        "provision": {
+          "kind": "required_action",
+          "key": "igsc-harmonized-screening-protocol-refusal-reporting"
+        }
+      },
+      "hazardNote": null,
+      "evidence": [
+        {
+          "source": "igsc-hsp-v31",
+          "locator": "7.4 Order Refusal and Reporting, requirement 4.1, p. 15",
+          "passage": "IGSC members reserve the right to refuse to fill any order and to notify other IGSC members and/or law enforcement or other authorities upon identifying potentially problematic orders.",
+          "passageType": "quote",
+          "translation": null,
+          "sourceRole": "primary",
+          "support": "supports",
+          "note": null
+        },
+        {
+          "source": "igsc-hsp-v31",
+          "locator": "7.4 Order Refusal and Reporting, requirement 4.3, p. 15",
+          "passage": "Paraphrase: members will report any request, from a suspicious potential customer or from a potential customer failing to establish legitimacy under the protocol's customer-screening practices, for a gene associated with an organism's pathogenicity.",
+          "passageType": "paraphrase",
+          "translation": null,
+          "sourceRole": "primary",
+          "support": "supports",
+          "note": "Explicit paraphrase; the requirement's cross-reference is to the protocol's customer-screening section."
+        }
+      ]
+    },
+    {
+      "id": "ab-scr-igsc-hsp-v31-screening-validation",
+      "group": "screening",
+      "strand": "Synthesis screening",
+      "subject": "igsc-harmonized-screening-protocol-v3-1",
+      "predicate": "states_provision",
+      "proposedPredicate": false,
+      "object": {
+        "kind": "literal",
+        "value": "Requirement to evaluate the efficacy of automated screening at least once every twelve months"
+      },
+      "statement": "Version 3.1 of the Harmonized Screening Protocol states that member companies regularly evaluate the efficacy of their automated sequence screening using a test set supplied by a source of standards recognised by the consortium, and that these evaluations are performed at least once every twelve months.",
+      "time": {
+        "kind": "event",
+        "date": "2026-06-01",
+        "basis": "publication",
+        "note": "Provision as version 3.1 states it, dated by its publication. The protocol's revision table describes the addition of a requirement to validate the efficacy of screening systems regularly as the change made in v3.1."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "States a requirement the protocol sets and dates to this version. It is not evidence that any member performed such an evaluation, and no result of any evaluation is recorded. The composition of the test set is not recorded.",
+      "extends": null,
+      "attributes": {
+        "provision": {
+          "kind": "required_action",
+          "key": "igsc-harmonized-screening-protocol-screening-validation"
+        }
+      },
+      "hazardNote": "Only the obligation and its frequency are recorded; the test set and the screening methods it tests are not.",
+      "evidence": [
+        {
+          "source": "igsc-hsp-v31",
+          "locator": "7.2 Sequence Screening, requirement 2.6, p. 15",
+          "passage": "IGSC companies regularly evaluate the efficacy of their automated sequence screening",
+          "passageType": "quote",
+          "translation": null,
+          "sourceRole": "primary",
+          "support": "supports",
+          "note": "The requirement names a test set supplied by an IGSC-recognised source of standards, which is not described here."
+        },
+        {
+          "source": "igsc-hsp-v31",
+          "locator": "7.2 Sequence Screening, requirement 2.6, p. 15",
+          "passage": "Evaluations are performed at least once every 12 months.",
+          "passageType": "quote",
+          "translation": null,
+          "sourceRole": "primary",
+          "support": "supports",
+          "note": null
+        }
+      ]
+    },
+    {
+      "id": "ab-scr-igsc-membership-certification",
+      "group": "screening",
+      "strand": "Synthesis screening",
+      "subject": "igsc-membership-application-2026",
+      "predicate": "states_provision",
+      "proposedPredicate": false,
+      "object": {
+        "kind": "literal",
+        "value": "What an applicant certifies on applying for membership"
+      },
+      "statement": "The International Gene Synthesis Consortium's membership application form requires an applicant's representative to certify that, if accepted, the organisation will comply with the requirements of membership set out in the consortium's bylaws and with all requirements of the Harmonized Screening Protocol as amended from time to time, will regularly attend monthly membership meetings, and will not distribute or disclose the IGSC Regulated Pathogen Database, in whole or in part, to a third party without the consortium's prior written permission.",
+      "time": {
+        "kind": "snapshot",
+        "date": "2026-10-28",
+        "note": "The form carries no date; recorded as served on the check date. Its file name on the consortium's site contains 2026."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "States what the form asks an applicant to certify. A certification on an application is not compliance, and no applicant or member is recorded as having given it. Whether the consortium verifies any certification is not stated on the form.",
+      "extends": null,
+      "attributes": {
+        "provision": {
+          "kind": "required_action",
+          "key": "igsc-membership-application-certification"
+        }
+      },
+      "hazardNote": "The database is named only by the form's own label, which carries no technical content; nothing of what the database holds, how it is compiled or how it is used in screening is recorded.",
+      "evidence": [
+        {
+          "source": "igsc-membership-app",
+          "locator": "Certification, item (b), p. 2",
+          "passage": "comply with all requirements of the IGSC Harmonized Screening Protocol, as amended from time to time",
+          "passageType": "quote",
+          "translation": null,
+          "sourceRole": "primary",
+          "support": "supports",
+          "note": "The only passage quoted from this form: at 266 words, its quotation budget under the editorial policy is about 26 words."
+        },
+        {
+          "source": "igsc-membership-app",
+          "locator": "Certification, items (a), (c) and (d), p. 2",
+          "passage": "Paraphrase: the other three certifications are compliance with the requirements of membership in the consortium's bylaws as amended, regular attendance at monthly membership meetings, and not distributing or disclosing the IGSC Regulated Pathogen Database, in whole or in part, to any third party without the consortium's prior written permission.",
+          "passageType": "paraphrase",
+          "translation": null,
+          "sourceRole": "primary",
+          "support": "supports",
+          "note": "Explicit paraphrase, used because the form's quotation budget is about 26 words."
+        }
+      ]
+    },
+    {
+      "id": "ab-scr-igsc-member-directory-listing",
+      "group": "screening",
+      "strand": "Synthesis screening",
+      "subject": "igsc-member-directory-2026",
+      "predicate": "lists_participants",
+      "proposedPredicate": false,
+      "object": {
+        "kind": "literal",
+        "value": "45 entries in two labelled categories in the IGSC member directory as served on 28 October 2026"
+      },
+      "statement": "The International Gene Synthesis Consortium's member directory, as served on 28 October 2026, lists 45 entries in two labelled categories: 16 under 'Screening-Verified IGSC Members' and 29 under 'Associate IGSC Members'.",
+      "time": {
+        "kind": "snapshot",
+        "date": "2026-10-28",
+        "note": "The page shows no date, so when the list took this form is not known; the count is of the page as served at the check date."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "A count of the entries on one page at one date, made by Selekoa; the page states no number. The page's two category labels are recorded as the page gives them; they are not mapped onto the membership categories of the consortium's application form, and no member is named. The kinds of organisation among the entries (gene synthesis companies, makers of synthesis equipment, screening-software suppliers, and research and non-profit organisations) are read off the entries' own descriptions, which the page does not state as a typology, and are therefore not recorded. Being listed is not evidence that an organisation applies the protocol, and absence from the list is not a refusal.",
+      "extends": null,
+      "attributes": {
+        "listing": {
+          "count": 45,
+          "countBasis": "counted"
+        }
+      },
+      "hazardNote": null,
+      "evidence": [
+        {
+          "source": "igsc-members",
+          "locator": "Screen-reader heading of the directory section (the visible page heading is 'Members')",
+          "passage": "IGSC member directory",
+          "passageType": "quote",
+          "translation": null,
+          "sourceRole": "primary",
+          "support": "supports",
+          "note": "An h2 of class screen-reader-text above the member entries; the page's visible heading reads 'Members'."
+        },
+        {
+          "source": "igsc-members",
+          "locator": "Member category tabs (tab list labelled 'Member categories')",
+          "passage": "Screening-Verified IGSC Members … Associate IGSC Members",
+          "passageType": "quote",
+          "translation": null,
+          "sourceRole": "primary",
+          "support": "supports",
+          "note": "The two tab labels of the directory, in the order the page gives them."
+        },
+        {
+          "source": "igsc-members",
+          "locator": "Member entries within each category tab, counted 2026-10-28",
+          "passage": "Paraphrase: the directory holds 45 heading-level entries, each with the organisation’s own short description, in two tab panels: 16 entries in the panel labelled Screening-Verified IGSC Members and 29 in the panel labelled Associate IGSC Members.",
+          "passageType": "paraphrase",
+          "translation": null,
+          "sourceRole": "primary",
+          "support": "supports",
+          "note": "Count made by extracting the page’s heading-level member names within each tab panel on 2026-10-28 (16 + 29 = 45)."
+        }
+      ]
+    },
+    {
+      "id": "ab-scr-uk-guidance-published",
+      "group": "screening",
+      "strand": "Synthesis screening",
+      "subject": "dsit",
+      "predicate": "published",
+      "proposedPredicate": false,
+      "object": {
+        "kind": "entity",
+        "entityId": "uk-synthetic-nucleic-acids-screening-guidance-2024"
+      },
+      "statement": "The UK screening guidance on synthetic nucleic acids for users and providers was published on GOV.UK on 8 October 2024, described there as guidance for users and providers involved in the provision, use and transfer of synthetic nucleic acids and of benchtop equipment that synthesises nucleic acids in the UK.",
+      "time": {
+        "kind": "event",
+        "date": "2024-10-08",
+        "basis": "publication",
+        "note": "The GOV.UK publication page states 'Published: 8 October 2024'. The GOV.UK search API returns a public timestamp of 2024-10-07 for the same page; the page's own stated date is used."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "Records the publication and the page's own description. The page names the Department for Business, Innovation, Science and Trade and the Department for Science, Innovation and Technology as the publishing departments; only the latter is used as the subject, and the guidance text attributes itself to that department. Publication is not evidence that any provider follows the guidance.",
+      "extends": null,
+      "attributes": {},
+      "hazardNote": null,
+      "evidence": [
+        {
+          "source": "uk-synna-landing",
+          "locator": "Publication page, summary and 'Published' field",
+          "passage": "Guidance for users and providers involved in the provision, use, and transfer of synthetic nucleic acids and benchtop equipment that synthesises nucleic acids in the UK.",
+          "passageType": "quote",
+          "translation": null,
+          "sourceRole": "primary",
+          "support": "supports",
+          "note": "The same page's 'Published' field reads 8 October 2024."
+        },
+        {
+          "source": "uk-synna-landing",
+          "locator": "Publication page, 'Published' field",
+          "passage": "Published: 8 October 2024",
+          "passageType": "quote",
+          "translation": null,
+          "sourceRole": "primary",
+          "support": "supports",
+          "note": null
+        }
+      ]
+    },
+    {
+      "id": "ab-scr-uk-guidance-scope",
+      "group": "screening",
+      "strand": "Synthesis screening",
+      "subject": "uk-synthetic-nucleic-acids-screening-guidance-2024",
+      "predicate": "states_provision",
+      "proposedPredicate": false,
+      "object": {
+        "kind": "literal",
+        "value": "Standing: the guidance sets out expected standards of responsible practice"
+      },
+      "statement": "The UK screening guidance states that it sets out expected standards of responsible practice to address the current level of biosecurity risk associated with access to synthetic nucleic acid.",
+      "time": {
+        "kind": "event",
+        "date": "2024-10-08",
+        "basis": "publication",
+        "note": "Provision as the published expression states it, dated by its publication on GOV.UK."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "States the guidance's own account of its standing. 'Expected standards of responsible practice' is the guidance's wording; it does not establish a legal obligation, and the separate statutory duties the guidance points to are recorded separately. Split under the one-claim-per-edge rule from the addressees, now the separate record ab-scr-uk-guidance-addressees. The provision kind 'required_action' is the nearest the schema admits for a statement of what practice an instrument expects; see openQuestions.",
+      "extends": null,
+      "attributes": {
+        "provision": {
+          "kind": "required_action",
+          "key": "uk-synthetic-nucleic-acids-guidance-expected-standards"
+        }
+      },
+      "hazardNote": null,
+      "evidence": [
+        {
+          "source": "uk-synna-text",
+          "locator": "Guidance recommendations, opening paragraphs",
+          "passage": "This gene synthesis guidance sets out expected standards of responsible practice to address the current level of biosecurity risk associated with access to synthetic nucleic acid.",
+          "passageType": "quote",
+          "translation": null,
+          "sourceRole": "primary",
+          "support": "supports",
+          "note": null
+        }
+      ]
+    },
+    {
+      "id": "ab-scr-uk-guidance-addressees",
+      "group": "screening",
+      "strand": "Synthesis screening",
+      "subject": "uk-synthetic-nucleic-acids-screening-guidance-2024",
+      "predicate": "states_provision",
+      "proposedPredicate": false,
+      "object": {
+        "kind": "literal",
+        "value": "Addressees: all entities involved in the provision and use of synthetic nucleic acids operating in the UK"
+      },
+      "statement": "The UK screening guidance states that it is intended to assist all entities involved in the provision and use of synthetic nucleic acids operating in the UK.",
+      "time": {
+        "kind": "event",
+        "date": "2024-10-08",
+        "basis": "publication",
+        "note": "Provision as the published expression states it, dated by its publication on GOV.UK."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "States whom the guidance says it is intended to assist. It is not evidence that any entity followed it, and it does not establish a legal obligation or a territorial rule. Split under the one-claim-per-edge rule from ab-scr-uk-guidance-scope. The provision kind 'threshold' is the kind the dataset uses for a definition that decides who is covered; see openQuestions.",
+      "extends": null,
+      "attributes": {
+        "provision": {
+          "kind": "threshold",
+          "key": "uk-synthetic-nucleic-acids-guidance-addressees"
+        }
+      },
+      "hazardNote": null,
+      "evidence": [
+        {
+          "source": "uk-synna-text",
+          "locator": "Guidance recommendations, third paragraph",
+          "passage": "This gene synthesis guidance is intended to assist all entities involved in the provision and use of synthetic nucleic acids operating in the UK.",
+          "passageType": "quote",
+          "translation": null,
+          "sourceRole": "primary",
+          "support": "supports",
+          "note": "The next sentence says the UK is also working internationally to promote screening practices."
+        }
+      ]
+    },
+    {
+      "id": "ab-scr-uk-guidance-ai-in-background",
+      "group": "screening",
+      "strand": "Synthesis screening",
+      "subject": "uk-synthetic-nucleic-acids-screening-guidance-2024",
+      "predicate": "states_provision",
+      "proposedPredicate": false,
+      "object": {
+        "kind": "literal",
+        "value": "Stated reason for the guidance, naming converging technologies such as AI"
+      },
+      "statement": "The UK screening guidance states that increased access to synthetic nucleic acids, coupled with developments in converging tools and technologies such as AI and an increase in knowledge and expertise, may exacerbate the risks of engineering biology.",
+      "time": {
+        "kind": "event",
+        "date": "2024-10-08",
+        "basis": "publication",
+        "note": "Provision as the published expression states it, dated by its publication on GOV.UK."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "Records what the guidance states as its background. It is not a finding that AI increases biological risk, and the guidance cites no evaluation or study for the statement in this passage. The provision kind is `risk_domain`, because the passage names the risk the guidance addresses rather than a duty; the schema has no `definition` kind.",
+      "extends": null,
+      "attributes": {
+        "provision": {
+          "kind": "risk_domain",
+          "key": "uk-synthetic-nucleic-acids-guidance-ai-background"
+        }
+      },
+      "hazardNote": null,
+      "evidence": [
+        {
+          "source": "uk-synna-text",
+          "locator": "Background section",
+          "passage": "Increased access to synthetic nucleic acids, coupled with developments in converging tools and technologies – such as AI – and an increase in knowledge and expertise, may exacerbate the risks of engineering biology.",
+          "passageType": "quote",
+          "translation": null,
+          "sourceRole": "primary",
+          "support": "supports",
+          "note": "The preceding sentence of the guidance describes what could make it easier for hostile actors to obtain components of dangerous biological systems; it is not reproduced."
+        }
+      ]
+    },
+    {
+      "id": "ab-scr-uk-guidance-customer-screening",
+      "group": "screening",
+      "strand": "Synthesis screening",
+      "subject": "uk-synthetic-nucleic-acids-screening-guidance-2024",
+      "predicate": "states_provision",
+      "proposedPredicate": false,
+      "object": {
+        "kind": "literal",
+        "value": "Customer screening: identity verification, retention of screening information and re-verification at least every 18 months"
+      },
+      "statement": "The UK screening guidance states that providers and third-party vendors should know and document who they are distributing to, should verify the identity of the customer on receiving an order for synthetic nucleic acids, and should retain customer screening information and ask the customer to update it at least every 18 months.",
+      "time": {
+        "kind": "event",
+        "date": "2024-10-08",
+        "basis": "publication",
+        "note": "Provision as the published expression states it, dated by its publication on GOV.UK."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "States what the guidance recommends. It is not evidence that any provider verifies customers or holds such records, and the guidance's list of information to be collected and reviewed is not reproduced here.",
+      "extends": null,
+      "attributes": {
+        "provision": {
+          "kind": "required_action",
+          "key": "uk-synthetic-nucleic-acids-guidance-customer-screening"
+        }
+      },
+      "hazardNote": null,
+      "evidence": [
+        {
+          "source": "uk-synna-text",
+          "locator": "Customer screening, providers and third-party vendors",
+          "passage": "Providers should retain customer screening information and refer to it for repeat orders. At least every 18 months the provider should ask the customer to update their information.",
+          "passageType": "quote",
+          "translation": null,
+          "sourceRole": "primary",
+          "support": "supports",
+          "note": null
+        },
+        {
+          "source": "uk-synna-text",
+          "locator": "Customer screening, providers and third-party vendors, first bullets",
+          "passage": "Paraphrase: providers and third-party vendors should know and document who they are distributing to and, on receiving an order for synthetic nucleic acids, should verify the identity of the customer, following the guidance's customer screening methodology.",
+          "passageType": "paraphrase",
+          "translation": null,
+          "sourceRole": "primary",
+          "support": "supports",
+          "note": "Explicit paraphrase; the methodology section it refers to is not recorded."
+        }
+      ]
+    },
+    {
+      "id": "ab-scr-uk-guidance-statutory-notification",
+      "group": "screening",
+      "strand": "Synthesis screening",
+      "subject": "uk-synthetic-nucleic-acids-screening-guidance-2024",
+      "predicate": "states_provision",
+      "proposedPredicate": false,
+      "object": {
+        "kind": "literal",
+        "value": "Where an order engages statutory controls, the provider must ask the user for proof of notification or licence"
+      },
+      "statement": "The UK screening guidance states that where an order for synthetic nucleic acids contains a sequence in the guidance's category of concern that is listed in Schedule 5 of the Anti-terrorism, Crime and Security Act 2001, the provider must ask the user to provide proof that they have notified the Home Office under Part 7 of that Act, and that where such a sequence derives from an animal pathogen in Groups 3 or 4 of Schedule 1 of the Specified Animal Pathogens Order the provider must ask for proof of a licence from the Health and Safety Executive.",
+      "time": {
+        "kind": "event",
+        "date": "2024-10-08",
+        "basis": "publication",
+        "note": "Provision as the published expression states it, dated by its publication on GOV.UK."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "States what the guidance requires of a provider in these cases, using 'must' where it points to a statutory duty on the user. It is not evidence about any order, and the scope of the statutory provisions it names is not recorded here. The guidance's own name for its category of concern is not reproduced.",
+      "extends": null,
+      "attributes": {
+        "provision": {
+          "kind": "required_action",
+          "key": "uk-synthetic-nucleic-acids-guidance-statutory-notification"
+        }
+      },
+      "hazardNote": "The record names the statutory schedules the guidance points to but no agent, sequence or screening criterion; the guidance's own definition and name for its category of concern are not reproduced.",
+      "evidence": [
+        {
+          "source": "uk-synna-text",
+          "locator": "Sequence screening, providers",
+          "passage": "the provider must ask the user to provide proof that they have notified the Home Office through Part 7 of the ATCSA",
+          "passageType": "quote",
+          "translation": null,
+          "sourceRole": "primary",
+          "support": "supports",
+          "note": "The condition is that the user raises an order for synthetic nucleic acids containing a listed sequence of the guidance's category of concern under Schedule 5 of the Act."
+        },
+        {
+          "source": "uk-synna-text",
+          "locator": "Screening order legitimacy, providers",
+          "passage": "providers must ask the user to provide proof that they have obtained a licence through HSE",
+          "passageType": "quote",
+          "translation": null,
+          "sourceRole": "primary",
+          "support": "supports",
+          "note": "The condition is an order containing sequences of that category derived from an animal pathogen listed in Group 3 or 4 of Schedule 1 of the Specified Animal Pathogens Order that could produce that pathogen."
+        }
+      ]
+    },
+    {
+      "id": "ab-scr-uk-guidance-website-statement",
+      "group": "screening",
+      "strand": "Synthesis screening",
+      "subject": "uk-synthetic-nucleic-acids-screening-guidance-2024",
+      "predicate": "states_provision",
+      "proposedPredicate": false,
+      "object": {
+        "kind": "literal",
+        "value": "Providers aligned to the guidance should note this on their website"
+      },
+      "statement": "The UK screening guidance states that providers who undertake screening measures aligned to the guidance should note this on their website.",
+      "time": {
+        "kind": "event",
+        "date": "2024-10-08",
+        "basis": "publication",
+        "note": "Provision as the published expression states it, dated by its publication on GOV.UK."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "States a recommendation. A statement on a provider's website would be that provider's own claim; the guidance describes no verification of it, and no provider's website is recorded here. The parallel United States attestation requirement is a separate instrument's provision.",
+      "extends": null,
+      "attributes": {
+        "provision": {
+          "kind": "required_action",
+          "key": "uk-synthetic-nucleic-acids-guidance-website-statement"
+        }
+      },
+      "hazardNote": null,
+      "evidence": [
+        {
+          "source": "uk-synna-text",
+          "locator": "Sequence screening, providers, final bullet",
+          "passage": "Providers who undertake screening measures aligned to the gene synthesis guidance should note this on their website.",
+          "passageType": "quote",
+          "translation": null,
+          "sourceRole": "primary",
+          "support": "supports",
+          "note": null
+        }
+      ]
+    },
+    {
+      "id": "ab-scr-s2400-introduced",
+      "group": "screening",
+      "strand": "Synthesis screening",
+      "subject": "us-senate",
+      "predicate": "introduced",
+      "proposedPredicate": false,
+      "object": {
+        "kind": "entity",
+        "entityId": "us-bill-s-2400-118-introduced"
+      },
+      "statement": "S. 2400 of the 118th Congress, the Securing Gene Synthesis Act, was introduced in the Senate on 19 July 2023 by Senator Edward J. Markey and read twice and referred to the Committee on Health, Education, Labor, and Pensions.",
+      "time": {
+        "kind": "event",
+        "date": "2023-07-19",
+        "note": "Date of introduction in the Senate, from the official bill-status record and the bill's own dateline; the record carries no basis, as the dataset's own legislative status records do not. The status record lists one text version, as introduced, and no action later than the referral of 19 July 2023, but it carries the generation stamp 2025-12-05, so that absence of later action is bounded by that stamp and not by a fresh congressional check on the check date."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "Introduction is not passage or enactment; the bill-status record shows no action after the referral and no committee report, so nothing here says the bill advanced. The number, title, dates and sponsor are taken from the official bill-status record and the bill text on govinfo.gov, not from any press account. The status record names H.R. 4702 as an identical bill identified by the Congressional Research Service.",
+      "extends": null,
+      "attributes": {},
+      "hazardNote": null,
+      "evidence": [
+        {
+          "source": "bs-118s2400",
+          "locator": "introducedDate, sponsors and actions elements",
+          "passage": "Read twice and referred to the Committee on Health, Education, Labor, and Pensions.",
+          "passageType": "quote",
+          "translation": null,
+          "sourceRole": "primary",
+          "support": "supports",
+          "note": "The record gives introducedDate 2023-07-19, originChamber Senate, title 'Securing Gene Synthesis Act', sponsor Sen. Markey, Edward J. [D-MA], and updateDate 2025-12-05."
+        },
+        {
+          "source": "bill-s2400is",
+          "locator": "Dateline of the introduced print",
+          "passage": "Mr. Markey introduced the following bill; which was read twice and referred to the Committee on Health, Education, Labor, and Pensions",
+          "passageType": "quote",
+          "translation": null,
+          "sourceRole": "primary",
+          "support": "supports",
+          "note": "The dateline above it reads 'July 19, 2023'."
+        }
+      ]
+    },
+    {
+      "id": "ab-scr-s2400-screening-regulation",
+      "group": "screening",
+      "strand": "Synthesis screening",
+      "subject": "us-bill-s-2400-118-introduced",
+      "predicate": "states_provision",
+      "proposedPredicate": false,
+      "object": {
+        "kind": "literal",
+        "value": "Proposed duty on the Secretary of Health and Human Services to require screening protocols by regulation"
+      },
+      "statement": "S. 2400 as introduced would amend section 351A of the Public Health Service Act to require the Secretary of Health and Human Services to prescribe a regulation requiring gene synthesis providers or manufacturers of gene synthesis equipment to implement screening protocols to detect misuse of de novo gene synthesis products, and to verify or provisionally verify that they adhere to that regulation.",
+      "time": {
+        "kind": "event",
+        "date": "2023-07-19",
+        "basis": "publication",
+        "note": "Provision of the bill as introduced, dated by the publication of the introduced print of 19 July 2023 (the dateline of the print and the date in its govinfo package metadata); introduction in the Senate is the event behind that date. The bill-status record lists no later text version."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "A bill as introduced states a proposal, not law: no duty, regulation or verification scheme is established, and the bill did not advance beyond committee referral on the record inspected. The bill's definition of the length at which a product falls within scope is not recorded.",
+      "extends": null,
+      "attributes": {
+        "provision": {
+          "kind": "required_action",
+          "key": "us-securing-gene-synthesis-act-screening-regulation"
+        }
+      },
+      "hazardNote": "The bill's defined 'screening threshold' sets the minimal length of product subject to screening; that definition is a technical screening criterion and is not recorded.",
+      "evidence": [
+        {
+          "source": "bill-s2400is",
+          "locator": "Sec. 2(1)(C), amending section 351A(b)(2) of the Public Health Service Act",
+          "passage": "requiring gene synthesis providers or manufacturers of gene synthesis equipment to implement screening protocols to detect misuse of de novo gene synthesis products",
+          "passageType": "quote",
+          "translation": null,
+          "sourceRole": "primary",
+          "support": "supports",
+          "note": "The amendment inserts subparagraphs (A) to (F) into section 351A(b)(2); subparagraph (C) is quoted here and subparagraph (D) in the next evidence item."
+        },
+        {
+          "source": "bill-s2400is",
+          "locator": "Sec. 2(1)(D), amending section 351A(b)(2) of the Public Health Service Act",
+          "passage": "verifying or provisionally verifying that gene synthesis providers and manufacturers of gene synthesis equipment adhere to the regulation",
+          "passageType": "quote",
+          "translation": null,
+          "sourceRole": "primary",
+          "support": "supports",
+          "note": "The verification limb of the statement, which rests on this subparagraph rather than on subparagraph (C). The subparagraph continues \"prescribed pursuant to subparagraph (C)\"; the quotation stops short of that cross-reference to keep this source within its quotation budget of about 86 words."
+        }
+      ]
+    },
+    {
+      "id": "ab-scr-s2400-federal-purchase-restriction",
+      "group": "screening",
+      "strand": "Synthesis screening",
+      "subject": "us-bill-s-2400-118-introduced",
+      "predicate": "states_provision",
+      "proposedPredicate": false,
+      "object": {
+        "kind": "literal",
+        "value": "Proposed restriction on purchases by federal agencies and recipients of federal funds"
+      },
+      "statement": "S. 2400 as introduced would require that any entity receiving federal funds, and any federal agency, purchase de novo gene synthesis products or gene synthesis equipment only from providers or manufacturers that are verified or provisionally verified under the regulation the bill would require, and would provide for enforcement including the revocation or withholding of federal research funding.",
+      "time": {
+        "kind": "event",
+        "date": "2023-07-19",
+        "basis": "publication",
+        "note": "Provision as the bill stood when introduced in the Senate on 19 July 2023. Dated by the publication of the bill as introduced (the print’s dateline and the govinfo package date), as the schema admits no `introduction` basis; the introduction itself is recorded by ab-scr-s2400-introduced."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "A proposal in a bill as introduced; it binds no purchaser and no provider. The enforcement sentence of the bill cross-refers to subsection (b)(2)(E) of the amended section, which concerns fees; the cross-reference is reproduced as the bill has it and is not interpreted.",
+      "extends": null,
+      "attributes": {
+        "provision": {
+          "kind": "required_action",
+          "key": "us-securing-gene-synthesis-act-federal-purchase-restriction"
+        }
+      },
+      "hazardNote": null,
+      "evidence": [
+        {
+          "source": "bill-s2400is",
+          "locator": "Sec. 2(1)(F), amending section 351A(b)(2) of the Public Health Service Act",
+          "passage": "to purchase such products and equipment only if such providers or manufacturers are verified or provisionally verified pursuant to subparagraph (D)",
+          "passageType": "quote",
+          "translation": null,
+          "sourceRole": "primary",
+          "support": "supports",
+          "note": "The subparagraph applies to any entity receiving Federal funds, or any Federal agency, which purchases such products or equipment."
+        },
+        {
+          "source": "bill-s2400is",
+          "locator": "Sec. 2(2), amending section 351A(e)(1)",
+          "passage": "Paraphrase: the amendment would add to the enforcement subsection the revocation of federal research funding for an entity found in violation, or the withholding of such funding until the entity demonstrates compliance.",
+          "passageType": "paraphrase",
+          "translation": null,
+          "sourceRole": "primary",
+          "support": "supports",
+          "note": "Explicit paraphrase, used because this source's quotation budget is about 86 words."
+        }
+      ]
+    },
+    {
+      "id": "ab-scr-hr4702-introduced",
+      "group": "screening",
+      "strand": "Synthesis screening",
+      "subject": "us-house-of-representatives",
+      "predicate": "introduced",
+      "proposedPredicate": false,
+      "object": {
+        "kind": "entity",
+        "entityId": "us-bill-hr-4702-118-introduced"
+      },
+      "statement": "H.R. 4702 of the 118th Congress, the Securing Gene Synthesis Act, was introduced in the House of Representatives on 18 July 2023 by Representative Anna G. Eshoo, referred to the Committee on Energy and Commerce, and referred to its Subcommittee on Health on 21 July 2023.",
+      "time": {
+        "kind": "event",
+        "date": "2023-07-18",
+        "note": "Introduction date in the official bill-status record; the referral to the Subcommittee on Health is dated 21 July 2023 and is the latest action the record lists. The date is the date of introduction; a status record carries no date basis, as the dataset’s own legislative status records do not."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "Introduction is not passage or enactment. The bill text was not retrieved, so no provision of H.R. 4702 is recorded; the Senate bill's status record describes H.R. 4702 as an identical bill, identified as such by the Congressional Research Service, and that description is the Research Service's, not Selekoa's comparison.",
+      "extends": null,
+      "attributes": {},
+      "hazardNote": null,
+      "evidence": [
+        {
+          "source": "bs-118hr4702",
+          "locator": "introducedDate, sponsors, actions and latestAction elements",
+          "passage": "Referred to the House Committee on Energy and Commerce.",
+          "passageType": "quote",
+          "translation": null,
+          "sourceRole": "primary",
+          "support": "supports",
+          "note": "The record gives introducedDate 2023-07-18, originChamber House, title 'Securing Gene Synthesis Act', sponsor Rep. Eshoo, Anna G. [D-CA-16], and a latest action of 21 July 2023, 'Referred to the Subcommittee on Health.'"
+        }
+      ]
+    },
+    {
+      "id": "ab-scr-s2399-introduced",
+      "group": "screening",
+      "strand": "Synthesis screening",
+      "subject": "us-senate",
+      "predicate": "introduced",
+      "proposedPredicate": false,
+      "object": {
+        "kind": "entity",
+        "entityId": "us-bill-s-2399-118-introduced"
+      },
+      "statement": "S. 2399 of the 118th Congress, the Artificial Intelligence and Biosecurity Risk Assessment Act, was introduced in the Senate on 19 July 2023 by Senator Edward J. Markey, with Senator Ted Budd as an original cosponsor, and read twice and referred to the Committee on Health, Education, Labor, and Pensions.",
+      "time": {
+        "kind": "event",
+        "date": "2023-07-19",
+        "note": "Introduction date in the official bill-status record and in the bill's own dateline. The status record as served on 28 October 2026 lists no later action than the referral of 19 July 2023. The date is the date of introduction; a status record carries no date basis, as the dataset’s own legislative status records do not."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "Introduction is not passage or enactment, and the status record shows no action after the referral. The record names H.R. 4704 as a related bill, identified by the Congressional Research Service; that House bill is not separately recorded in this pass.",
+      "extends": null,
+      "attributes": {},
+      "hazardNote": null,
+      "evidence": [
+        {
+          "source": "bs-118s2399",
+          "locator": "introducedDate, sponsors, cosponsors and actions elements",
+          "passage": "Read twice and referred to the Committee on Health, Education, Labor, and Pensions.",
+          "passageType": "quote",
+          "translation": null,
+          "sourceRole": "primary",
+          "support": "supports",
+          "note": "The record gives introducedDate 2023-07-19, title 'Artificial Intelligence and Biosecurity Risk Assessment Act', sponsor Sen. Markey, Edward J. [D-MA], cosponsor Sen. Budd, Ted [R-NC] from 2023-07-19, and updateDate 2025-12-05."
+        }
+      ]
+    },
+    {
+      "id": "ab-scr-s2399-ai-risk-assessment",
+      "group": "screening",
+      "strand": "Synthesis screening",
+      "subject": "us-bill-s-2399-118-introduced",
+      "predicate": "states_provision",
+      "proposedPredicate": false,
+      "object": {
+        "kind": "literal",
+        "value": "Proposed duty on the Assistant Secretary for Preparedness and Response to assess emerging risks of artificial intelligence"
+      },
+      "statement": "S. 2399 as introduced would amend section 2811 of the Public Health Service Act to require the Assistant Secretary for Preparedness and Response to conduct risk assessments and implement strategic initiatives or activities to address whether technical advancements in artificial intelligence, such as open-source models and large language models, can be used intentionally or unintentionally to develop novel pathogens, viruses, bioweapons or chemical weapons, and provides that such initiatives and activities may include monitoring and research on potential global biological catastrophic risks and a summary of the risk assessment in the National Health Security Strategy.",
+      "time": {
+        "kind": "event",
+        "date": "2023-07-19",
+        "basis": "publication",
+        "note": "Provision of the bill as introduced, dated by the publication of the introduced print of 19 July 2023 (the dateline of the print and the date in its govinfo package metadata, with the official bill-status record cited below); introduction in the Senate is the event behind that date. The bill-status record lists no later text version."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "A bill as introduced states a proposal, not law: no duty is imposed, nothing in the two listed items is required of the Assistant Secretary even if the bill were enacted, and the bill did not advance beyond committee referral on the record inspected. The proposition is about what the bill would require, not about whether AI can be so used.",
+      "extends": null,
+      "attributes": {
+        "provision": {
+          "kind": "required_action",
+          "key": "us-ai-biosecurity-risk-assessment-act-aspr-assessment"
+        }
+      },
+      "hazardNote": null,
+      "evidence": [
+        {
+          "source": "bill-s2399is",
+          "locator": "Sec. 2, adding section 2811(h) to the Public Health Service Act",
+          "passage": "artificial intelligence, such as open-source artificial intelligence models and large language models, can be used intentionally or unintentionally to develop novel pathogens, viruses, bioweapons, or chemical weapons",
+          "passageType": "quote",
+          "translation": null,
+          "sourceRole": "primary",
+          "support": "supports",
+          "note": "The only passage quoted from this source: at 273 words its quotation budget under the editorial policy is about 27 words. The subsection opens by directing the Assistant Secretary to conduct risk assessments and implement strategic initiatives or activities to address whether those advancements can be so used."
+        },
+        {
+          "source": "bill-s2399is",
+          "locator": "Sec. 2, adding section 2811(h)(1) and (2)",
+          "passage": "Paraphrase: the subsection provides that such initiatives and activities may include (1) regularly monitoring and researching potential global biological catastrophic risks and (2) including in the National Health Security Strategy a summary of the risk assessment conducted under the subsection.",
+          "passageType": "paraphrase",
+          "translation": null,
+          "sourceRole": "primary",
+          "support": "supports",
+          "note": "Explicit paraphrase, used because this source's quotation budget is about 27 words. The subsection's words are 'Such initiatives and activities may include', so neither item is a duty."
+        },
+        {
+          "source": "bs-118s2399",
+          "locator": "introducedDate and textVersions elements",
+          "passage": "Paraphrase: the official bill-status record gives introducedDate 2023-07-19 and lists one text version, 'Introduced in Senate', dated 2023-07-19.",
+          "passageType": "paraphrase",
+          "translation": null,
+          "sourceRole": "primary",
+          "support": "supports",
+          "note": "Cited for the date this provision record carries, which the bill print alone dates only by its dateline. The status record carries the generation stamp 2025-12-05."
+        }
+      ]
+    }
+  ],
+  "omissions": [
+    {
+      "item": "Executive Order 14110, section 4.4(a) (the Department of Homeland Security and Department of Energy work on AI and CBRN risk, and the National Academies study on how AI can increase biosecurity risks) and section 4.4(b)(iv) (the Department of Homeland Security framework for structured evaluation and stress testing of procurement screening, and its annual report)",
+      "reason": "Biosecurity sections of the order that are not themselves synthesis screening rules. The brief assigns the order's biosecurity sections to the `measures` pass; only the three subsections that create the screening framework and its funding condition are recorded here, to avoid two passes recording the same provisions."
+    },
+    {
+      "item": "The AI Action Plan of July 2025 and its nucleic acid synthesis screening item",
+      "reason": "The plan is already a document in the dataset and the `measures` pass covers its biosecurity items."
+    },
+    {
+      "item": "The two HHS notices on the review and revision of the 2010 guidance (85 FR 52611 of 26 August 2020 and 85 FR 69630 of 3 November 2020)",
+      "reason": "Located through the Federal Register API and recited in the 2022 and 2023 notices, but not retrieved separately, so no record is made of them. The 2022 draft notice is recorded and states the comment period of more than 120 days that followed them."
+    },
+    {
+      "item": "All technical content of the instruments read: the 2023 HHS guidance's sequence screening methodology and the definitions that state screening criteria; the OSTP framework's screening windows, matching approach and the criteria that may inform which sequences are in scope; sections 6 and the appendices of the IGSC protocol; the UK guidance's screening methodology and its list of indicators of a suspicious transaction",
+      "reason": "Excluded under the pack's hazard-safe rule. Each affected record's hazardNote says what was excluded. No agent, sequence, method, protocol or acquisition route is recorded anywhere in this draft."
+    },
+    {
+      "item": "The minimum length of order subject to screening, and its dated reduction, stated in the 2023 HHS guidance, the OSTP framework and the IGSC protocol",
+      "reason": "The parameter is a technical screening criterion and is not recorded, which also leaves out the dates attached to it. For the maintainer: the IGSC protocol dates the transition to 24 October 2026 'to conform to the requirements of the U.S. OSTP Framework', while the framework itself dates its further practices to 13 October 2026. The discrepancy is recorded here, not as a claim."
+    },
+    {
+      "item": "The HHS companion guide and frequently asked questions, the 2026 'Summary-Updates' PDF served from the ASPR site, the IGSC third-party conformity assessment member guidance (2026), the NIST test dataset for assessing baseline screening, and the Laird et al. inter-tool analysis (2026)",
+      "reason": "Located on the ASPR and IGSC pages but not retrieved in this pass. The conformity assessment guidance and the inter-tool analysis are candidates for the `evaluations` pass or a later increment."
+    },
+    {
+      "item": "State legislation that addresses AI and CBRN risk (California SB 1047 and SB 53, New York, Michigan, Illinois)",
+      "reason": "Already recorded in the dataset and in the frameworks-to-law pack; nothing is re-recorded here."
+    },
+    {
+      "item": "Bills of the 119th Congress (2025-2026), including any reintroduction of the Securing Gene Synthesis Act, and H.R. 4704 of the 118th Congress",
+      "reason": "No full-text bill search was reachable from this environment (see retrieval failures), so bills were found only by checking candidate package identifiers against the official bill-status records. H.R. 4704 is named in the official status record for S. 2399 as a related bill but is not separately recorded. The pack's bill coverage is therefore explicitly partial and limited to the 118th Congress items found."
+    },
+    {
+      "item": "The NIST notice 'Safety Considerations for Chemical and/or Biological AI Models' (4 October 2024) and three Centers for Disease Control and Prevention Paperwork Reduction Act notices of 2024 whose text refers to the Framework for Nucleic Acid Synthesis Screening",
+      "reason": "Found through the Federal Register API during discovery. They are agency documents naming AI and biology together rather than screening rules, so they belong to the `measures` pass or a later increment."
+    },
+    {
+      "item": "Screening rules outside the United States and the United Kingdom (for example any European Union or Chinese measure on synthetic nucleic acid screening), and the Australia Group and Biological Weapons Convention material the UK guidance points to",
+      "reason": "Not searched in this pass. An omission is not a judgement of importance."
+    },
+    {
+      "item": "The IGSC's statements that its members together represent a majority of global commercial gene-length synthesis capacity, and its account of its own incorporation in 2015",
+      "reason": "Not synthesis-screening provisions. The capacity statement is the consortium's own and would need independent evidence before being recorded as anything but a statement."
+    }
+  ],
+  "retrievalFailures": [
+    {
+      "url": "https://www.congress.gov/ (bill pages and search)",
+      "result": "Not attempted: the brief records HTTP 403 from this environment on 2026-10-28",
+      "fallback": "govinfo.gov BILLS and BILLSTATUS packages for every bill number, title, sponsor, date and action; no bill number, date or status in this draft comes from a press report or a secondary database."
+    },
+    {
+      "url": "https://api.govinfo.gov/search (POST, DEMO_KEY) and https://api.govinfo.gov/search?api_key=DEMO_KEY",
+      "result": "HTTP 200 with body {\"error\":{\"code\":\"OVER_RATE_LIMIT\"}} on both attempts",
+      "fallback": "None available. Bills were located by requesting candidate BILLSTATUS packages and keeping only those whose official title matched the subject; 118s2402, 118s2094, 118s2398 and 119s1792 returned unrelated bills and were discarded."
+    },
+    {
+      "url": "https://www.govinfo.gov/wssearch/search and https://www.govinfo.gov/wssearch/rb/search (POST)",
+      "result": "HTTP 405 Method Not Allowed; a GET returns the same",
+      "fallback": "None; see above."
+    },
+    {
+      "url": "https://www.govtrack.us/api/v2/bill?q=gene%20synthesis",
+      "result": "HTTP 403 (Cloudflare interstitial)",
+      "fallback": "None used. No record in this draft rests on a third-party legislative database."
+    },
+    {
+      "url": "https://aspr.hhs.gov/legal/synna and https://aspr.hhs.gov/legal/synna/Pages/default.aspx",
+      "result": "HTTP 404 (the host redirects to www.aspr.gov)",
+      "fallback": "https://www.aspr.gov/sitemap.xml gave the current addresses of the synthetic nucleic acid screening pages, which answered 200. The 2023 Federal Register notice's own pointer to aspr.hhs.gov/legal/synna is therefore stale."
+    },
+    {
+      "url": "http://archive.org/wayback/available for the Federal Register PDF of Executive Order 14292 and for the three BILLSTATUS XML files",
+      "result": "No capture returned",
+      "fallback": "Those sources carry no archive capture. Every capture recorded in this draft comes from the availability service and is marked checked: false, because the Archive's capture pages refuse connections from this environment."
+    }
+  ],
+  "openQuestions": [
+    {
+      "question": "The schema-fit defects the auditors found in the sampled records run through records they did not sample, which this task left untouched. Provision kinds the schema does not admit: 'date' in ab-scr-hhs-2010-effective-date, ab-scr-ostp-framework-funding-requirement-effective, ab-scr-aspr-pages-framework-revision-pending and ab-scr-ostp-framework-replacement-not-found; 'definition' in ab-scr-hhs-2023-scope, ab-scr-ostp-framework-scope and ab-scr-uk-guidance-ai-in-background; 'enforcement' in ab-scr-s2400-federal-purchase-restriction. Bases the schema does not admit: 'introduction' in ab-scr-hr4702-introduced, ab-scr-s2399-introduced and ab-scr-s2400-federal-purchase-restriction.",
+      "recommended": "Fix them in one authorised pass, the way the audited records were fixed here: drop the basis on a status record and say the kind of date in the note; on a provision record use the basis the source gives; and map 'date', 'definition' and 'enforcement' onto the kinds the schema has. This task applied only the audited findings, so the unsampled records are left as they stand rather than changed without a check."
+    },
+    {
+      "question": "The schema's provision kinds have no entry for an instrument's standing (whether following it is voluntary or expected practice) or for whom it addresses. The audited records now use 'exception', 'required_action' and 'threshold' as the nearest admitted kinds.",
+      "recommended": "Decide at admission between adding a kind (for example 'standing' and 'scope') and keeping the nearest kinds with the qualification each record now carries. The dataset already uses 'threshold' for definitional provisions that decide who or what is covered, so the addressee records follow existing practice; the standing records do not have a precedent."
+    },
+    {
+      "question": "This draft holds 45 records against the brief's aim of about 30. Keep them all, or trim?",
+      "recommended": "Keep. Each instrument needed its publication, scope, central requirement, dates and status. If the pack must be trimmed, drop in this order: ab-scr-hhs-2010-effective-date (the date survives in the document entry and the timeline), ab-scr-uk-guidance-website-statement, ab-scr-hr4702-introduced, ab-scr-eo14110-sec44bii-nist-engagement, ab-scr-ostp-framework-exceptions, ab-scr-igsc-hsp-v31-record-retention, ab-scr-hhs-2022-draft-published, ab-scr-igsc-member-directory-listing. That leaves 37."
+    },
+    {
+      "question": "Should the pack record the minimum length of order subject to screening and the dates on which it changes, which three of these instruments state?",
+      "recommended": "No for the parameter, which is a screening criterion. If the maintainer wants the dates, a bounded record is possible that states only that each instrument sets a date from which a wider screening scope applies, and notes that the IGSC protocol gives 24 October 2026 where the OSTP framework gives 13 October 2026. I left both out and recorded the discrepancy in the omissions instead."
+    },
+    {
+      "question": "Bill coverage stops at the 118th Congress because no full-text bill search was reachable. Should a later pass obtain access?",
+      "recommended": "Yes, as a bounded follow-up: either a congress.gov or govinfo API key in the environment's secrets, or the cross-family checker (who can reach the Internet Archive) asked to list bills of the 119th Congress whose text contains 'gene synthesis'. Until then the pack should say that its bill coverage is the 118th Congress items located."
+    },
+    {
+      "question": "The OSTP framework's provisions are recorded from the copy marked 'Revised: September 2024', at month precision, because version 1 of April 2024 could not be retrieved. Is that acceptable?",
+      "recommended": "Yes, with the qualification as worded. Ask the cross-family checker to retrieve an Internet Archive capture of the framework from May to August 2024 and say whether the recorded provisions, in particular the attestation criterion and the 26 April 2025 date, stood in version 1."
+    },
+    {
+      "question": "The framework's own text gives Executive Order 14110's date as 23 October 2023, where the order is dated 30 October 2023.",
+      "recommended": "Keep the quotation as printed and the qualification that records the discrepancy. Do not silently correct a quoted source."
+    },
+    {
+      "question": "Should the pack record that the Administration for Strategic Preparedness and Response is a unit of the Department of Health and Human Services?",
+      "recommended": "Not in this pass. The two candidate entities are kept distinct and the relation is left unrecorded; `unit_of` would need its own evidence."
+    }
+  ],
+  "notes": "Pass 3 (`screening`), prepared 2026-10-28 in a fresh context. 45 records, all in the strand Synthesis screening, all with ids prefixed ab-scr-; 18 sources, 14 document versions (one of them the dataset's us-eo-14110-2023) and 6 candidate entities (us-hhs, us-aspr, us-ostp, igsc, us-senate, us-house-of-representatives). Records by predicate: states_provision 31, published 6, introduced 3, enacted 1, supersedes_document 1, references_commitment 1, provision_not_found 1, lists_participants 1. One record is inferred (the recorded absence of a revised OSTP framework) and states its search scope; every other record is explicit; all are resolution supported; no proposed predicate was needed; nothing extends a dataset claim, because no dataset claim covers these instruments (the dataset's Executive Order 14110 records concern its sections 3(k) and 4.2, which this pass does not touch; the TC260 training-data screening provisions in the dataset are a different subject and are not re-recorded).\n\nWhat was retrieved, in order: the Federal Register API (three term searches, used for discovery only and not cited); the Federal Register print of Executive Order 14110 (the same expression and SHA-256 as the dataset source and as the `measures` draft's retrieval; this draft therefore reuses that draft's source entry `gov-eo-14110-fr` and its document entry for us-eo-14110-2023 unchanged, so the two drafts share one source and one quote budget: 149 words here, 186 in `measures`, 146 already in the dataset, against a limit of 800); the HHS notices of 2010, 2022 and 2023; the HHS ASPR synthetic nucleic acid screening hub and framework pages (found through the site's sitemap after the address in the 2023 notice 404ed); the OSTP Framework for Nucleic Acid Synthesis Screening from the Biden White House archive; the Federal Register print of Executive Order 14292; the IGSC home, resources and members pages, its Harmonized Screening Protocol v3.1 and its membership application; the GOV.UK publication page and HTML text of the UK screening guidance; and from govinfo.gov the bill texts and bill-status records of S. 2400, S. 2399, H.R. 4702 and H.R. 4704 of the 118th Congress. One secondary page (ifp.org, 'How to Secure the DNA Supply Chain', linked from the IGSC resources page) was retrieved as a discovery aid for bill numbers, named no bill, and is not a source of this draft.\n\nThe two checks are clean: `tools.mjs check` reports no problems (57 quotations matched against the cached text of their own source, with 18 explicit paraphrases alongside them in 75 evidence items; every per-source budget is within its limit, the tightest being bill-s2399is at 27 of 27 words, igsc-membership-app at 16 of 26 and bill-s2400is at 65 of 86), and `tools.mjs hazards` reports no passage in a laboratory or procedural register over all 45 records. One quotation (the 2023 HHS summary) is written with an ellipsis where Federal Register page furniture interrupts the sentence in the PDF text layer.\n\nFor the integrator: three dates are at less than day precision or are retrieval dates. The OSTP framework's provisions carry the date 2024-09 (the revision mark on the retrieved copy; the day is not stated), while its release is dated 2024-04-29 and its funding requirement's application is dated 2025-04-26 with basis effective. Four records are snapshots dated by the check date with basis listing: the two ASPR page records, the IGSC membership application (the form is undated) and the IGSC member directory listing. The member count of 45 was made by Selekoa from the page's heading-level entries; the page states no number and shows no membership categories.\n\nThe hazard-safe rule shaped what could be recorded. Every instrument read contains technical screening content, and in each case only its policy-level passages are cited: what a provider, manufacturer or funding agency must do, who is covered, which dates apply and what status an instrument has. Where a record had to refer to the category of sequences an instrument screens for, it uses the instrument's own abbreviation or a plural gloss and never its definition or criteria; four such references were reworded after the hazard screen flagged the singular defined term in the UK record.\n\nAudit corrections applied on 2026-10-28, listed in auditCorrections: eleven findings of the two same-family audit reports, each verified against the cached source before it was applied. The draft now holds 47 records and 79 evidence items (60 quotations, 19 explicit paraphrases); two records are new halves of records the audit found to carry two provisions each (ab-scr-hhs-2010-all-providers-addressees and ab-scr-uk-guidance-addressees), and the bill documents us-bill-s-2400-118-introduced and us-bill-s-2399-118-introduced now carry publishedAt 2023-07-19 so that their provision records can hold one of the document version’s own dates. The record counts, predicate counts and per-source quoted-word figures in the paragraphs above are from before these corrections. Both checks were re-run clean after them: tools.mjs check reports no problems and tools.mjs hazards no passage in a laboratory or procedural register over all 47 records. The schema-fit defects the audit found in the sampled records also affect records the audit did not sample; those are listed in openQuestions and were left as they stand rather than changed without a check."
+}

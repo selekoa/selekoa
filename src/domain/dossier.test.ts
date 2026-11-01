@@ -1,15 +1,38 @@
 import { describe, expect, it } from 'vitest';
 import { institutionalDossier } from './dossier';
 import { repository } from './repository';
+import { dateOf } from './query';
 import week4b from '../../review/week4b-before-2026-10-04.json';
 import week4c from '../../review/week4c-before-2026-10-04.json';
 import genealogy from '../../review/genealogy-admission-before-2026-10-17.json';
 import frameworksToLaw2 from '../../review/frameworks-to-law-2-before-2026-10-28.json';
+import keyPapers1 from '../../review/key-papers-admission-1-before-2026-10-31.json';
+import keyPapers2 from '../../review/key-papers-admission-2-before-2026-10-31.json';
+import keyPapers3 from '../../review/key-papers-admission-3-before-2026-10-31.json';
 
 const data = repository.data;
 const dossier = institutionalDossier(data, 'anthropic')!;
 const ids = (section: keyof typeof dossier.sections) =>
   dossier.sections[section].flatMap((g) => g.claims.map((c) => c.id));
+// The 2026-10-31 key papers admission links more documents to the
+// institution's people through authorship; the boundary below is checked on
+// the records before it.
+const keyPaperRows = new Set(
+  [keyPapers1, keyPapers2, keyPapers3].flatMap((s) => [
+    ...s.added.claims,
+    ...s.added.entities,
+  ]),
+);
+const beforeKeyPapers = institutionalDossier(
+  {
+    ...data,
+    claims: data.claims.filter((c) => !keyPaperRows.has(c.id)),
+    entities: data.entities.filter((e) => !keyPaperRows.has(e.id)),
+  },
+  'anthropic',
+)!;
+const idsBefore = (section: keyof typeof dossier.sections) =>
+  beforeKeyPapers.sections[section].flatMap((g) => g.claims.map((c) => c.id));
 
 describe('institutional dossier projection', () => {
   it('keeps DeepMind, Brain and Google DeepMind distinct while exposing evidenced navigation', () => {
@@ -60,12 +83,33 @@ describe('institutional dossier projection', () => {
         'atlas-deepmind-alphafold-compute',
       ]),
     );
+    // The AlphaFold paper lists every connection: its authors in this dossier
+    // first, then works by the institution's people that it cites.
     const gdm = institutionalDossier(data, 'google-deepmind')!;
     expect(
       gdm.sections.ideas
         .find((g) => g.id === 'alphafold-paper')!
-        .connectionClaims!.map((c) => c.id),
-    ).toEqual(['atlas-jumper-gdm', 'atlas-jumper-alphafold']);
+        .connections!.map((c) => [c.via, c.claims.map((x) => x.id)]),
+    ).toEqual([
+      [
+        'authorship',
+        ['hassabis-deepmind-2023', 'aib-ppl-hassabis-alphafold-paper'],
+      ],
+      [
+        'authorship',
+        [
+          'aib-ppl-jumper-gdm-senior-research-scientist-2024',
+          'atlas-jumper-alphafold',
+        ],
+      ],
+      [
+        'citation',
+        [
+          'lg-goo-shazeer-gdm-2024',
+          'kp-authored-noam-shazeer-attention-all-you-need',
+        ],
+      ],
+    ]);
   });
   it('preserves original claim identity, evidence, time and qualifications', () => {
     const before = JSON.stringify(data);
@@ -137,14 +181,27 @@ describe('institutional dossier projection', () => {
         'lineage-scaling-uses-attention',
       ]),
     );
-    expect(ids('ideas')).not.toContain('lineage-ii-amplification-cites-debate');
-    expect(ids('ideas')).not.toContain('iem-cites-good-2013');
-    expect(
-      dossier.sections.ideas
-        .find((g) => g.id === 'weak-strong-paper')!
-        .connectionClaims!.map((c) => c.id),
-    ).toEqual([
-      // From 2026-10-17 the dated joining record of the lab genealogy.
+    expect(idsBefore('ideas')).not.toContain(
+      'lineage-ii-amplification-cites-debate',
+    );
+    expect(idsBefore('ideas')).not.toContain('iem-cites-good-2013');
+    // Maintainer decision of 2026-10-31: every qualifying connection, the
+    // document's own authors first, then cited works by the institution's
+    // people by date. The dossier shows the first three. No Anthropic person
+    // is recorded as an author of Weak-to-Strong, so all are citations.
+    const weak = dossier.sections.ideas.find(
+      (g) => g.id === 'weak-strong-paper',
+    )!.connections!;
+    expect(weak.every((c) => c.via === 'citation')).toBe(true);
+    const dates = weak.map((c) => dateOf(c.claims.at(-1)!) ?? '9999');
+    expect(dates).toEqual([...dates].sort());
+    expect(weak.slice(0, 3).map((c) => c.claims.map((x) => x.id))).toEqual([
+      ['kingma-anthropic-research-from-2024', 'lineage-kingma-adam'],
+      ['dario-cofounded-anthropic-2021', 'lineage-dario-amodei-preferences'],
+      // Jan Leike's dated joining record of the 2026-10-17 lab genealogy.
+      ['lg-ant-leike-joins-2024', 'lineage-jan-leike-preferences'],
+    ]);
+    expect(weak.map((c) => c.claims.map((x) => x.id))).toContainEqual([
       'lg-ant-leike-joins-2024',
       'lineage-ii-leike-reward',
     ]);
@@ -180,11 +237,16 @@ describe('institutional dossier projection', () => {
     // California SB 53 joins the RSP v3.0 records.
     const added = new Set(week4b.added.claims);
     const added4c = new Set(week4c.added.claims);
-    // Board records of the 2026-10-17 lab genealogy, and part 2 of the
-    // 2026-10-28 frameworks-to-law admission, form their own groups.
+    // Board records of the 2026-10-17 lab genealogy, part 2 of the
+    // 2026-10-28 frameworks-to-law admission, and the 2026-10-30 AI and
+    // biosecurity records (`ab-`) form their own groups.
     const addedGenealogy = new Set([
       ...genealogy.added.claims,
       ...frameworksToLaw2.added.claims,
+      ...dossier.sections.governance
+        .flatMap((g) => g.claims)
+        .map((c) => c.id)
+        .filter((id) => id.startsWith('ab-')),
     ]);
     expect(
       dossier.sections.governance.filter((g) =>

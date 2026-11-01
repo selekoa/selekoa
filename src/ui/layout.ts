@@ -62,7 +62,11 @@ export function documentSequence(
 /** Deterministic label-spacing layout, not a community or influence analysis.
  * Unique endpoint pairs exert one spring regardless of claim count. All nodes
  * have equal spacing; pinned labs are navigational landmarks only.
- * A reference atlas seeds focus layouts to retain the same directional bearings.
+ * Positions are a function of the records drawn alone: the same records give
+ * the same positions in every release, whatever else the dataset holds. A
+ * centred map pins its focus at the origin. A reference (a larger layout of
+ * the same neighbourhood) seeds a narrower map so that records keep their
+ * bearings when filters change.
  */
 export function networkLayout(
   entities: Entity[],
@@ -112,9 +116,11 @@ export function networkLayout(
       e.id,
       ref
         ? { ...ref }
-        : a >= 0
-          ? { x: a % 2 ? 300 : -300, y: 220 - Math.floor(a / 2) * 440 }
-          : { x: (seed % 997) - 498, y: ((seed >>> 10) % 797) - 398 },
+        : e.id === focusId
+          ? { x: 0, y: 0 }
+          : a >= 0
+            ? { x: a % 2 ? 300 : -300, y: 220 - Math.floor(a / 2) * 440 }
+            : { x: (seed % 997) - 498, y: ((seed >>> 10) % 797) - 398 },
     );
   });
   // Fixed iterations make filtering reproducible and avoid force animation.
@@ -174,3 +180,95 @@ export function networkLayout(
   }
   return positions;
 }
+
+/**
+ * Changes when `networkLayout` changes, so that a layout built by an earlier
+ * build is never taken for the current one.
+ */
+const layoutVersion = 1;
+
+/**
+ * What a layout is a function of, as one short string: the records drawn,
+ * the pairs of records their claims join, the landmarks among them, the
+ * focus and, when no record is in focus, the recorded sequence of document
+ * versions. Two drawings with the same key have the same positions,
+ * whatever order the records come in.
+ */
+export function layoutKey(
+  entities: Entity[],
+  claims: Claim[],
+  anchors: string[],
+  focusId: string | null,
+) {
+  const ids = entities.map((e) => e.id).sort();
+  const held = new Set(ids);
+  const pairs = [
+    ...new Set(
+      claims
+        .filter(
+          (c) =>
+            c.object.kind === 'entity' &&
+            held.has(c.subject) &&
+            held.has(c.object.entityId) &&
+            c.subject !== c.object.entityId,
+        )
+        .map((c) =>
+          [c.subject, c.object.kind === 'entity' ? c.object.entityId : '']
+            .sort()
+            .join(' '),
+        ),
+    ),
+  ].sort();
+  const sequence = focusId
+    ? null
+    : (documentSequence(entities, claims)?.map((e) => e.id) ?? null);
+  const text = JSON.stringify([
+    layoutVersion,
+    focusId,
+    anchors.filter((id) => held.has(id)),
+    ids,
+    pairs,
+    sequence,
+  ]);
+  // Two FNV-1a hashes with different offsets: 64 bits, written in base 36.
+  let a = 0x811c9dc5,
+    b = 0x01000193 ^ 0x5bd1e995;
+  for (let i = 0; i < text.length; i++) {
+    a = Math.imul(a ^ text.charCodeAt(i), 0x01000193);
+    b = Math.imul(b ^ text.charCodeAt(i), 0x01000193);
+  }
+  return `${(a >>> 0).toString(36)}-${(b >>> 0).toString(36)}`;
+}
+
+/**
+ * A layout as the build writes it (src/ui/map-layout.ts): positions rounded
+ * to a tenth of a unit, in the order of the IDs.
+ */
+export type StoredLayout = { key: string; ids: string[]; xy: number[] };
+
+export function storeLayout(
+  key: string,
+  positions: Map<string, Point>,
+): StoredLayout {
+  const ids = [...positions.keys()].sort();
+  return {
+    key,
+    ids,
+    xy: ids.flatMap((id) => {
+      const p = positions.get(id)!;
+      return [Math.round(p.x * 10) / 10, Math.round(p.y * 10) / 10];
+    }),
+  };
+}
+
+export function readLayout(stored: StoredLayout) {
+  return new Map<string, Point>(
+    stored.ids.map((id, i) => [
+      id,
+      { x: stored.xy[2 * i], y: stored.xy[2 * i + 1] },
+    ]),
+  );
+}
+
+/** A file of layouts, of one version of the records. */
+export type LayoutFile = { version: string; layouts: StoredLayout[] };

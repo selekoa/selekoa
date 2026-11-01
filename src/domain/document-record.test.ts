@@ -34,9 +34,14 @@ describe('document record projection', () => {
             ]
           : []),
         ...record.laterChanges,
+        ...record.statements,
+        ...record.contributions,
         ...record.comparison,
         ...record.other,
       ];
+      // Schema 2.20: statements of a document without version metadata.
+      for (const c of record.statements)
+        expect(c.attributes?.provision?.kind).toBe('statement');
       for (const c of shown) expect(c).toBe(repository.claims.get(c.id));
       expect(new Set(shown.map((c) => c.id))).toEqual(
         new Set(
@@ -50,16 +55,25 @@ describe('document record projection', () => {
     const record = documentRecord(data, 'human-preferences-paper')!;
     const ids = (id: string) =>
       record.relations.find((r) => r.id === id)!.claims.map((c) => c.id);
-    expect(ids('cites')).toEqual(['lineage-preferences-cites-trpo']);
+    // The 2026-10-31 key papers admission adds citations of its own (`kp-`).
+    expect(ids('cites').filter((id) => !id.startsWith('kp-'))).toEqual([
+      'lineage-preferences-cites-trpo',
+    ]);
     expect(ids('uses-method-from')).toEqual(['lineage-preferences-uses-trpo']);
-    expect(ids('cited-by').sort()).toEqual(
+    expect(
+      ids('cited-by')
+        .filter((id) => !id.startsWith('kp-'))
+        .sort(),
+    ).toEqual(
       [
         'atlas-feedback-cites-paper',
         'lineage-instruct-cites-preferences',
         'lineage-summaries-cites-preferences',
       ].sort(),
     );
-    expect(record.authored).toHaveLength(3);
+    expect(record.authored.filter((c) => !c.id.startsWith('kp-'))).toHaveLength(
+      3,
+    );
     expect(record.family).toBeNull();
     expect(record.claimDates).toEqual([
       {
@@ -79,16 +93,21 @@ describe('document record projection', () => {
     expect(record.edition!.replaces.map((c) => c.id)).toEqual([
       'supersedes-rsp-2-0',
     ]);
-    expect(record.laterChanges.map((c) => c.id)).toEqual([
+    expect(
+      record.laterChanges
+        .map((c) => c.id)
+        .filter((id) => !id.startsWith('ab-')),
+    ).toEqual([
       'provchange-rsp-v2-1-ceo-rso-decision-board-ltbt-informed',
       'rsp-v2-1-rd-thresholds',
     ]);
     // The edition's own references to external commitments (week 4c) are
     // the only relations outside its family history.
-    expect(record.other.map((c) => c.id)).toEqual([
-      'cm-link-rsp-v2-0-seoul',
-      'cm-link-rsp-v2-0-wh',
-    ]);
+    // The 2026-10-30 AI and biosecurity admission (`ab-` records) adds
+    // provisions of this edition; the earlier relations are counted here.
+    expect(
+      record.other.map((c) => c.id).filter((id) => !id.startsWith('ab-')),
+    ).toEqual(['cm-link-rsp-v2-0-seoul', 'cm-link-rsp-v2-0-wh']);
   });
 
   it('resolves person and document addresses only for entities of that type', () => {

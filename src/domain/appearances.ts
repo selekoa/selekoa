@@ -6,7 +6,7 @@ import { controlStructure } from './control-structures';
 import { commitmentsView } from './commitments';
 import { questionStarterView } from './question-starter';
 import { researchPaths, resolveQuestion } from './research-path';
-import { propositionCollections } from '../reading/human-thought';
+import { propositionFrames } from '../reading/proposition-frames';
 import { documentHistories } from '../reading/frontier-safety-frameworks';
 import { controlStructures } from '../reading/control-structures';
 import { commitmentCollections } from '../reading/commitments';
@@ -81,7 +81,10 @@ function collect(data: Dataset, entityId: string) {
       ? new Set([entity.name, ...entity.aliases].map(authorKey))
       : new Set<string>();
   const about = (claimIds: string[]) => {
-    const ids = claimIds.filter((id) => relatedTo(byId.get(id)!, entityId));
+    const ids = claimIds.filter((id) => {
+      const claim = byId.get(id);
+      return !!claim && relatedTo(claim, entityId);
+    });
     for (const id of ids) recordIds.add(id);
     return ids.length;
   };
@@ -113,7 +116,7 @@ function collect(data: Dataset, entityId: string) {
   return { found, recordIds, textIds };
 }
 
-type CollectionRecords = {
+export type CollectionRecords = {
   target: CollectionTarget;
   title: string;
   claimIds: string[];
@@ -122,12 +125,20 @@ type CollectionRecords = {
 };
 const cache = new WeakMap<Dataset, CollectionRecords[]>();
 
+/**
+ * Gives a dataset every collection's records, as computed from the whole
+ * dataset (src/domain/collection-index.ts), for a page drawn from part of it.
+ */
+export function seedCollections(data: Dataset, list: CollectionRecords[]) {
+  cache.set(data, list);
+}
+
 /** Every collection's records, computed once per dataset. */
-function collections(data: Dataset): CollectionRecords[] {
+export function collections(data: Dataset): CollectionRecords[] {
   const known = cache.get(data);
   if (known) return known;
   const list: CollectionRecords[] = [
-    ...propositionCollections.map((collection) => {
+    ...propositionFrames.map((collection) => {
       const view = propositionsView(data, collection);
       return {
         target: { kind: 'propositions' as const, id: collection.id },

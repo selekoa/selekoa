@@ -1,4 +1,5 @@
 import type { Claim, Dataset } from './schema';
+import { selected } from './memo';
 import { dateOf } from './query';
 import { provisionKinds } from './document-history';
 import type { StopItem } from './control-structures';
@@ -137,6 +138,12 @@ export function commitmentsView(
   const known = new Set(data.claims.map((c) => c.id));
   for (const id of claimIds)
     if (!known.has(id)) throw new Error('Missing collection claim: ' + id);
+  // The page names each of them (src/domain/memo.ts).
+  const named = new Set(claimIds);
+  selected(
+    'claims',
+    data.claims.filter((c) => named.has(c.id)),
+  );
   return {
     collection,
     documents,

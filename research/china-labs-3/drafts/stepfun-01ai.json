@@ -1,0 +1,2719 @@
+{
+  "group": "stepfun-01ai",
+  "searched": "Searched (all retrieval direct, sequential, 29 October 2026): the arXiv API for \"StepFun\" (12 papers listed) and the abstract pages and v1 PDFs of Step-Video-T2V (2502.10248), Step-Audio (2502.11946), Step1X-Edit (2504.17761), Step-Audio 2 (2507.16632), Step-3 (2507.19427) and NextStep-1 (2508.10711); the Hugging Face model listing of stepfun-ai (55 repositories) and the commit lists and pinned README/LICENSE files of step3, Step-3.5-Flash, Step-5-Preview, stepvideo-t2v and Step-Audio-Chat; stepfun.com (https://www.stepfun.com/ and https://www.stepfun.com/company both return HTTP 200 with a 2,262-byte JavaScript shell and no text; the newsroom posts and footer were read in the site's content-hashed build file https://www.stepfun.com/assets/index-4zBpLKmx.js, HTTP 200) and one static blog page (static.stepfun.com/blog/step-3.5-flash/, retrieved, not cited); the 36Kr republication of QbitAI of 27 January 2026 already in the dataset. For 01.AI: the abstract pages and v1 PDFs of the Yi report (2403.04652) and the Yi-Lightning report (2412.01253); the Hugging Face listing of 01-ai (28 repositories), commit lists of Yi-34B, Yi-1.5-34B and Yi-Coder-9B, and a blob-less clone of the Yi-34B Hugging Face repository and of github.com/01-ai/Yi (scratch directory) for LICENSE and README history; lingyiwanwu.com (home, about, newsroom; https://www.lingyiwanwu.com/yi-license, named in the v2.1 licence as the home of the commercial licence agreement, now serves the homepage, HTTP 200, so that agreement was not retrieved), www.01.ai (English home) and two WeChat posts linked from the 01.AI newsroom. A few Hugging Face API metadata lookups (model info, file trees at a commit) were made with plain curl for discovery only and are not cited. No retrieval was refused with an HTTP error; the failures are content failures: the stepfun.com JavaScript shell (above), the removed yi-license page (above), and the stepvideo-t2v README at commit fe3a312810e4 (2025-02-14), which holds only a licence tag. Web.archive.org was not tried (refuses connections here); the cross-family checker may wish to open archive copies of https://www.stepfun.com/, https://www.stepfun.com/company and https://www.lingyiwanwu.com/yi-license. Left out: (1) a StepFun founding statement in its own words exists only in the meta description of the stepfun.com HTML shell (\"阶跃星辰于2023年4月成立\"), which the tool's text layer excludes, so it was not drafted; the existing reporting-based record lg-cn-stepfun-founded-2023 stands. (2) StepFun's own newsroom post dated 26 January 2026 (\"官宣！印奇出任阶跃星辰董事长\", in the build file) states that Yin Qi took up the post of chairman and names CEO Jiang Daxin, chief scientist Zhang Xiangyu and CTO Zhu Yibo as the core management team: it is a primary expression of the four existing reporting-based role records, which were not redrafted; the coordinator may add it as evidence to them. The same post says Yin Qi is also chairman of 千里科技 (not drafted: no such entity in the dataset, and a statement by StepFun rather than by that company). (3) No StepFun or 01.AI funding announcement or filing was located; the StepFun B+ round rests on reporting and names no investors; earlier StepFun rounds and all 01.AI rounds were not drafted. (4) No standalone safety framework or commitment text published by StepFun or 01.AI was located on the pages searched; 01.AI's RAISE is recorded only as described in its two reports. (5) Left out for budget: StepFun's Step-Video-TI2V, GOT-OCR2.0, Step1X-3D, Step-Audio-EditX/R1, Step3-VL-10B, Step-3.7-Flash, StepAudio 3 and Step Edge releases and its partnership posts (Tencent Cloud, Kingdee, Qianli, 上海期智研究院); 01.AI's Yi-VL, Yi-9B and Yi-Large (API only, no document), the Yi licence v2.0 of 4 November 2023 (retrieved, not drafted), and the remaining timeline items of 01.AI's about page. (6) Authorship of existing StepFun people is recorded on the Step-3 report only; the same names appear on the Step-Video-T2V, Step-Audio, Step1X-Edit and NextStep-1 author lists. No existing dataset person appears in the Yi or Yi-Lightning author lists (Kai-Fu Lee is not listed). The Step1X-Edit PDF prints corresponding-author e-mail addresses; nothing from that passage is quoted.",
+  "existingUsed": [
+    "lg-cn-stepfun-founded-2023",
+    "lg-cn-jiang-daxin-stepfun-founder",
+    "lg-cn-jiao-binxing-stepfun-founding-team",
+    "lg-cn-zhu-yibo-stepfun-founding-team",
+    "lg-cn-jiang-daxin-stepfun-ceo-2026",
+    "lg-cn-yin-qi-stepfun-chairman-2026",
+    "lg-cn-zhang-xiangyu-stepfun-chief-2026",
+    "lg-cn-zhu-yibo-stepfun-cto-2026",
+    "lg-cn-jiang-daxin-microsoft-prior",
+    "lg-cn-01ai-founded-2023",
+    "lg-cn-kai-fu-lee-01ai-founder",
+    "lg-cn-kai-fu-lee-01ai-ceo-2026",
+    "lg-cn-huang-huiwen-01ai-cofounder",
+    "lg-cn-ma-jie-01ai-cofounder",
+    "lg-cn-shen-pengfei-01ai-cofounder",
+    "lg-cn-kai-fu-lee-google-prior",
+    "lg-cn-kai-fu-lee-microsoft-prior",
+    "cm-seoul-zero-one-ai",
+    "c2-governance-aiia-aisc-signatory-zero-one-ai"
+  ],
+  "entities": [
+    {
+      "id": "stepfun",
+      "existing": true
+    },
+    {
+      "id": "zero-one-ai",
+      "existing": true
+    },
+    {
+      "id": "jiang-daxin",
+      "existing": true
+    },
+    {
+      "id": "zhang-xiangyu",
+      "existing": true
+    },
+    {
+      "id": "zhu-yibo",
+      "existing": true
+    },
+    {
+      "id": "jiao-binxing",
+      "existing": true
+    },
+    {
+      "id": "step-video-t2v-report",
+      "type": "document",
+      "documentKind": "technical-report",
+      "name": "Step-Video-T2V Technical Report: The Practice, Challenges, and Future of Video Foundation Model",
+      "subtype": "Technical report",
+      "aliases": [],
+      "description": "Technical report on the Step-Video-T2V text-to-video model by StepFun's Step-Video Team; arXiv 2502.10248, version 1 of 14 February 2025 cited.",
+      "sourceIds": [
+        "c3-src-step-video-t2v-abs-v1",
+        "c3-src-step-video-t2v-pdf-v1"
+      ]
+    },
+    {
+      "id": "step-audio-report",
+      "type": "document",
+      "documentKind": "technical-report",
+      "name": "Step-Audio: Unified Understanding and Generation in Intelligent Speech Interaction",
+      "subtype": "Technical report",
+      "aliases": [],
+      "description": "Technical report on the Step-Audio speech models by StepFun's Step-Audio Team; arXiv 2502.11946, version 1 of 17 February 2025 cited.",
+      "sourceIds": ["c3-src-step-audio-abs-v1", "c3-src-step-audio-pdf-v1"]
+    },
+    {
+      "id": "step1x-edit-report",
+      "type": "document",
+      "documentKind": "technical-report",
+      "name": "Step1X-Edit: A Practical Framework for General Image Editing",
+      "subtype": "Technical report",
+      "aliases": [],
+      "description": "Technical report on the Step1X-Edit image-editing model by StepFun's Step1X-Image Team; arXiv 2504.17761, version 1 of 24 April 2025 cited.",
+      "sourceIds": ["c3-src-step1x-edit-abs-v1", "c3-src-step1x-edit-pdf-v1"]
+    },
+    {
+      "id": "step-audio-2-report",
+      "type": "document",
+      "documentKind": "technical-report",
+      "name": "Step-Audio 2 Technical Report",
+      "subtype": "Technical report",
+      "aliases": [],
+      "description": "Technical report on the Step-Audio 2 audio language model by the StepFun Audio Team; arXiv 2507.16632, version 1 of 22 July 2025 cited.",
+      "sourceIds": ["c3-src-step-audio-2-abs-v1", "c3-src-step-audio-2-pdf-v1"]
+    },
+    {
+      "id": "step-3-report",
+      "type": "document",
+      "documentKind": "technical-report",
+      "name": "Step-3 is Large yet Affordable: Model-system Co-design for Cost-effective Decoding",
+      "subtype": "Technical report",
+      "aliases": [],
+      "description": "Report on the Step-3 vision-language model and its inference system, with StepFun as the author group; arXiv 2507.19427, version 1 of 25 July 2025 cited.",
+      "sourceIds": ["c3-src-step-3-abs-v1", "c3-src-step-3-pdf-v1"]
+    },
+    {
+      "id": "nextstep-1-report",
+      "type": "document",
+      "documentKind": "technical-report",
+      "name": "NextStep-1: Toward Autoregressive Image Generation with Continuous Tokens at Scale",
+      "subtype": "Technical report",
+      "aliases": [],
+      "description": "Technical report on the NextStep-1 autoregressive image-generation model by StepFun's NextStep Team; arXiv 2508.10711, version 1 of 14 August 2025 cited.",
+      "sourceIds": ["c3-src-nextstep-1-abs-v1", "c3-src-nextstep-1-pdf-v1"]
+    },
+    {
+      "id": "step3-model-card",
+      "type": "document",
+      "documentKind": "model-card",
+      "name": "step3 model card",
+      "subtype": "Model card",
+      "aliases": [],
+      "description": "Hugging Face model card of step3 under the stepfun-ai account, cited at the commit of 31 July 2025.",
+      "sourceIds": ["c3-src-step3-readme"]
+    },
+    {
+      "id": "step3-licence",
+      "type": "document",
+      "documentKind": "licence",
+      "name": "step3 Apache License 2.0 file",
+      "subtype": "Licence",
+      "aliases": [],
+      "description": "Apache License, Version 2.0 text placed as the LICENSE file of the stepfun-ai/step3 Hugging Face repository, cited at the commit of 31 July 2025.",
+      "sourceIds": ["c3-src-step3-license", "c3-src-step3-readme"]
+    },
+    {
+      "id": "step-3-5-flash-model-card",
+      "type": "document",
+      "documentKind": "model-card",
+      "name": "Step-3.5-Flash model card",
+      "subtype": "Model card",
+      "aliases": [],
+      "description": "Hugging Face model card of Step-3.5-Flash under the stepfun-ai account, cited at a commit of 1 February 2026.",
+      "sourceIds": ["c3-src-step35-readme"]
+    },
+    {
+      "id": "step-3-5-flash-licence",
+      "type": "document",
+      "documentKind": "licence",
+      "name": "Step-3.5-Flash licence statement (Apache 2.0)",
+      "subtype": "Licence",
+      "aliases": [],
+      "description": "The licence section of the Step-3.5-Flash model card, which names the Apache 2.0 License; the repository holds no separate LICENSE file at the cited commit of 1 February 2026.",
+      "sourceIds": ["c3-src-step35-readme"]
+    },
+    {
+      "id": "step-5-preview-announcement",
+      "type": "document",
+      "documentKind": "announcement",
+      "name": "阶跃发布旗舰模型 Step 5 Preview (StepFun newsroom post, 20 September 2026)",
+      "subtype": "Announcement",
+      "aliases": [],
+      "description": "StepFun newsroom post dated 20 September 2026 introducing Step 5 Preview, read in the stepfun.com build file as it stood on 29 October 2026.",
+      "sourceIds": ["c3-src-stepfun-site-bundle"]
+    },
+    {
+      "id": "step-5-preview-model-card",
+      "type": "document",
+      "documentKind": "model-card",
+      "name": "Step-5-Preview model card",
+      "subtype": "Model card",
+      "aliases": [],
+      "description": "Hugging Face model card of Step-5-Preview under the stepfun-ai account, cited at its initial upload of 20 September 2026 and at the commit of 15 October 2026.",
+      "sourceIds": ["c3-src-step5-readme-0920", "c3-src-step5-readme-1015"]
+    },
+    {
+      "id": "stepfun-model-licence-1-0",
+      "type": "document",
+      "documentKind": "licence",
+      "name": "StepFun Model License 1.0",
+      "subtype": "Licence",
+      "aliases": [],
+      "description": "Licence text headed \"StepFun Model License 1.0\" in the Step-5-Preview Hugging Face repository, cited at the commit of 13 October 2026.",
+      "sourceIds": ["c3-src-step5-license", "c3-src-step5-readme-1015"]
+    },
+    {
+      "id": "yi-report",
+      "type": "document",
+      "documentKind": "technical-report",
+      "name": "Yi: Open Foundation Models by 01.AI",
+      "subtype": "Technical report",
+      "aliases": [],
+      "description": "Technical report on the Yi model family by 01.AI; arXiv 2403.04652, version 1 of 7 March 2024 cited.",
+      "sourceIds": ["c3-src-yi-abs-v1", "c3-src-yi-pdf-v1"]
+    },
+    {
+      "id": "yi-lightning-report",
+      "type": "document",
+      "documentKind": "technical-report",
+      "name": "Yi-Lightning Technical Report",
+      "subtype": "Technical report",
+      "aliases": [],
+      "description": "Technical report on the Yi-Lightning model by 01.AI; arXiv 2412.01253, version 1 of 2 December 2024 cited.",
+      "sourceIds": ["c3-src-yi-lightning-abs-v1", "c3-src-yi-lightning-pdf-v1"]
+    },
+    {
+      "id": "yi-34b-model-card",
+      "type": "document",
+      "documentKind": "model-card",
+      "name": "Yi-34B model card",
+      "subtype": "Model card",
+      "aliases": [],
+      "description": "Hugging Face model card of Yi-34B under the 01-ai account, cited at the commit of 4 November 2023.",
+      "sourceIds": ["c3-src-yi34b-readme-1104"]
+    },
+    {
+      "id": "yi-llama-relation-statement",
+      "type": "document",
+      "documentKind": "model-card",
+      "name": "Yi-34B model card, \"Yi's relation with Llama\"",
+      "subtype": "Model card section",
+      "aliases": [],
+      "description": "Section of the Yi-34B model card on the Yi models' relation to Llama, cited at the commit of 6 February 2024, the earliest at which this pack's scan found the quoted sentence.",
+      "sourceIds": ["c3-src-yi34b-readme-0206"]
+    },
+    {
+      "id": "yi-licence-v1-0",
+      "type": "document",
+      "documentKind": "licence",
+      "name": "Yi Series Models License Agreement, Version 1.0",
+      "subtype": "Licence",
+      "aliases": [],
+      "description": "Bilingual licence agreement for the Yi series models, dated 1 November 2023, cited from the Yi-34B Hugging Face repository at the commit of that day.",
+      "sourceIds": ["c3-src-yi34b-license-v10"]
+    },
+    {
+      "id": "yi-community-licence-v2-1",
+      "type": "document",
+      "documentKind": "licence",
+      "name": "Yi Series Models Community License Agreement, Version 2.1",
+      "subtype": "Licence",
+      "aliases": [],
+      "description": "Bilingual licence agreement for the Yi series models, dated 23 November 2023, cited from the Yi-34B Hugging Face repository at the commit of that day.",
+      "sourceIds": ["c3-src-yi34b-license-v21"]
+    },
+    {
+      "id": "yi-34b-apache-licence",
+      "type": "document",
+      "documentKind": "licence",
+      "name": "Yi-34B Apache License 2.0 file",
+      "subtype": "Licence",
+      "aliases": [],
+      "description": "Apache License, Version 2.0 text placed as the LICENSE file of the 01-ai/Yi-34B Hugging Face repository on 30 May 2024.",
+      "sourceIds": ["c3-src-yi34b-license-apache", "c3-src-yi34b-readme-0530"]
+    },
+    {
+      "id": "yi-1-5-34b-model-card",
+      "type": "document",
+      "documentKind": "model-card",
+      "name": "Yi-1.5-34B model card",
+      "subtype": "Model card",
+      "aliases": [],
+      "description": "Hugging Face model card of Yi-1.5-34B under the 01-ai account, cited at the commit of 12 May 2024.",
+      "sourceIds": ["c3-src-yi15-34b-readme"]
+    },
+    {
+      "id": "yi-coder-9b-model-card",
+      "type": "document",
+      "documentKind": "model-card",
+      "name": "Yi-Coder-9B model card",
+      "subtype": "Model card",
+      "aliases": [],
+      "description": "Hugging Face model card of Yi-Coder-9B under the 01-ai account, cited at the commit of 3 September 2024.",
+      "sourceIds": ["c3-src-yi-coder-9b-readme"]
+    },
+    {
+      "id": "q-ai-kazakhstan",
+      "type": "organisation",
+      "name": "Q.AI",
+      "aliases": [],
+      "description": "Joint venture that 01.AI states it formed with Kazakhstan, announced as established in June 2026.",
+      "sourceIds": ["c3-src-01ai-wx-qai", "c3-src-01ai-about"]
+    },
+    {
+      "id": "wanfeng-zhineng",
+      "type": "organisation",
+      "name": "万蜂智能 (Wanfeng Zhineng)",
+      "aliases": ["万蜂智能"],
+      "description": "Joint venture that 01.AI announced in June 2026 it would establish with CP Group (正大集团).",
+      "sourceIds": ["c3-src-01ai-wx-cp", "c3-src-01ai-about"]
+    }
+  ],
+  "sources": [
+    {
+      "id": "c3-src-step-video-t2v-abs-v1",
+      "cacheKey": "s01-stepvideo-abs-v1",
+      "title": "Step-Video-T2V Technical Report: The Practice, Challenges, and Future of Video Foundation Model (arXiv abstract page, v1)",
+      "originalTitle": null,
+      "authors": ["Step-Video Team, StepFun"],
+      "publisher": "arXiv",
+      "publicationDate": "2025-02-14",
+      "kind": "paper",
+      "url": "https://arxiv.org/abs/2502.10248v1",
+      "route": "direct",
+      "language": "en",
+      "sourceClass": "primary",
+      "version": {
+        "kind": "arxiv",
+        "id": "2502.10248v1",
+        "note": "Abstract page of version 1 (submitted 2025-02-14); the page lists later versions v2 (17 February 2025) and v3 (24 February 2025), not inspected."
+      }
+    },
+    {
+      "id": "c3-src-step-video-t2v-pdf-v1",
+      "cacheKey": "s01-stepvideo-pdf-v1",
+      "title": "Step-Video-T2V Technical Report: The Practice, Challenges, and Future of Video Foundation Model (arXiv PDF, v1)",
+      "originalTitle": null,
+      "authors": ["Step-Video Team, StepFun"],
+      "publisher": "arXiv",
+      "publicationDate": "2025-02-14",
+      "kind": "paper",
+      "url": "https://arxiv.org/pdf/2502.10248v1",
+      "route": "direct",
+      "language": "en",
+      "sourceClass": "primary",
+      "version": {
+        "kind": "arxiv",
+        "id": "2502.10248v1",
+        "note": "PDF of version 1; later versions not inspected."
+      }
+    },
+    {
+      "id": "c3-src-step-audio-abs-v1",
+      "cacheKey": "s01-stepaudio-abs-v1",
+      "title": "Step-Audio: Unified Understanding and Generation in Intelligent Speech Interaction (arXiv abstract page, v1)",
+      "originalTitle": null,
+      "authors": ["Step-Audio Team, StepFun"],
+      "publisher": "arXiv",
+      "publicationDate": "2025-02-17",
+      "kind": "paper",
+      "url": "https://arxiv.org/abs/2502.11946v1",
+      "route": "direct",
+      "language": "en",
+      "sourceClass": "primary",
+      "version": {
+        "kind": "arxiv",
+        "id": "2502.11946v1",
+        "note": "Abstract page of version 1 (submitted 2025-02-17); the page lists a later version v2 (18 February 2025), not inspected."
+      }
+    },
+    {
+      "id": "c3-src-step-audio-pdf-v1",
+      "cacheKey": "s01-stepaudio-pdf-v1",
+      "title": "Step-Audio: Unified Understanding and Generation in Intelligent Speech Interaction (arXiv PDF, v1)",
+      "originalTitle": null,
+      "authors": ["Step-Audio Team, StepFun"],
+      "publisher": "arXiv",
+      "publicationDate": "2025-02-17",
+      "kind": "paper",
+      "url": "https://arxiv.org/pdf/2502.11946v1",
+      "route": "direct",
+      "language": "en",
+      "sourceClass": "primary",
+      "version": {
+        "kind": "arxiv",
+        "id": "2502.11946v1",
+        "note": "PDF of version 1; later versions not inspected."
+      }
+    },
+    {
+      "id": "c3-src-step1x-edit-abs-v1",
+      "cacheKey": "s01-step1x-edit-abs-v1",
+      "title": "Step1X-Edit: A Practical Framework for General Image Editing (arXiv abstract page, v1)",
+      "originalTitle": null,
+      "authors": ["Step1X-Image Team, StepFun"],
+      "publisher": "arXiv",
+      "publicationDate": "2025-04-24",
+      "kind": "paper",
+      "url": "https://arxiv.org/abs/2504.17761v1",
+      "route": "direct",
+      "language": "en",
+      "sourceClass": "primary",
+      "version": {
+        "kind": "arxiv",
+        "id": "2504.17761v1",
+        "note": "Abstract page of version 1 (submitted 2025-04-24); the page lists later versions v2 to v5 (28 April to 31 July 2025), not inspected."
+      }
+    },
+    {
+      "id": "c3-src-step1x-edit-pdf-v1",
+      "cacheKey": "s01-step1x-edit-pdf-v1",
+      "title": "Step1X-Edit: A Practical Framework for General Image Editing (arXiv PDF, v1)",
+      "originalTitle": null,
+      "authors": ["Step1X-Image Team, StepFun"],
+      "publisher": "arXiv",
+      "publicationDate": "2025-04-24",
+      "kind": "paper",
+      "url": "https://arxiv.org/pdf/2504.17761v1",
+      "route": "direct",
+      "language": "en",
+      "sourceClass": "primary",
+      "version": {
+        "kind": "arxiv",
+        "id": "2504.17761v1",
+        "note": "PDF of version 1; later versions not inspected."
+      }
+    },
+    {
+      "id": "c3-src-step-audio-2-abs-v1",
+      "cacheKey": "s01-stepaudio2-abs-v1",
+      "title": "Step-Audio 2 Technical Report (arXiv abstract page, v1)",
+      "originalTitle": null,
+      "authors": ["StepFun Audio Team"],
+      "publisher": "arXiv",
+      "publicationDate": "2025-07-22",
+      "kind": "paper",
+      "url": "https://arxiv.org/abs/2507.16632v1",
+      "route": "direct",
+      "language": "en",
+      "sourceClass": "primary",
+      "version": {
+        "kind": "arxiv",
+        "id": "2507.16632v1",
+        "note": "Abstract page of version 1 (submitted 2025-07-22); the page lists later versions v2 (24 July 2025) and v3 (27 August 2025), not inspected."
+      }
+    },
+    {
+      "id": "c3-src-step-audio-2-pdf-v1",
+      "cacheKey": "s01-stepaudio2-pdf-v1",
+      "title": "Step-Audio 2 Technical Report (arXiv PDF, v1)",
+      "originalTitle": null,
+      "authors": ["StepFun Audio Team"],
+      "publisher": "arXiv",
+      "publicationDate": "2025-07-22",
+      "kind": "paper",
+      "url": "https://arxiv.org/pdf/2507.16632v1",
+      "route": "direct",
+      "language": "en",
+      "sourceClass": "primary",
+      "version": {
+        "kind": "arxiv",
+        "id": "2507.16632v1",
+        "note": "PDF of version 1; later versions not inspected."
+      }
+    },
+    {
+      "id": "c3-src-step-3-abs-v1",
+      "cacheKey": "s01-step3-abs-v1",
+      "title": "Step-3 is Large yet Affordable: Model-system Co-design for Cost-effective Decoding (arXiv abstract page, v1)",
+      "originalTitle": null,
+      "authors": ["StepFun"],
+      "publisher": "arXiv",
+      "publicationDate": "2025-07-25",
+      "kind": "paper",
+      "url": "https://arxiv.org/abs/2507.19427v1",
+      "route": "direct",
+      "language": "en",
+      "sourceClass": "primary",
+      "version": {
+        "kind": "arxiv",
+        "id": "2507.19427v1",
+        "note": "Abstract page of version 1 (submitted 2025-07-25); the page lists no later version at retrieval, not inspected."
+      }
+    },
+    {
+      "id": "c3-src-step-3-pdf-v1",
+      "cacheKey": "s01-step3-pdf-v1",
+      "title": "Step-3 is Large yet Affordable: Model-system Co-design for Cost-effective Decoding (arXiv PDF, v1)",
+      "originalTitle": null,
+      "authors": ["StepFun"],
+      "publisher": "arXiv",
+      "publicationDate": "2025-07-25",
+      "kind": "paper",
+      "url": "https://arxiv.org/pdf/2507.19427v1",
+      "route": "direct",
+      "language": "en",
+      "sourceClass": "primary",
+      "version": {
+        "kind": "arxiv",
+        "id": "2507.19427v1",
+        "note": "PDF of version 1; later versions not inspected."
+      }
+    },
+    {
+      "id": "c3-src-nextstep-1-abs-v1",
+      "cacheKey": "s01-nextstep1-abs-v1",
+      "title": "NextStep-1: Toward Autoregressive Image Generation with Continuous Tokens at Scale (arXiv abstract page, v1)",
+      "originalTitle": null,
+      "authors": ["NextStep-Team, StepFun"],
+      "publisher": "arXiv",
+      "publicationDate": "2025-08-14",
+      "kind": "paper",
+      "url": "https://arxiv.org/abs/2508.10711v1",
+      "route": "direct",
+      "language": "en",
+      "sourceClass": "primary",
+      "version": {
+        "kind": "arxiv",
+        "id": "2508.10711v1",
+        "note": "Abstract page of version 1 (submitted 2025-08-14); the page lists a later version v2 (18 August 2025), not inspected."
+      }
+    },
+    {
+      "id": "c3-src-nextstep-1-pdf-v1",
+      "cacheKey": "s01-nextstep1-pdf-v1",
+      "title": "NextStep-1: Toward Autoregressive Image Generation with Continuous Tokens at Scale (arXiv PDF, v1)",
+      "originalTitle": null,
+      "authors": ["NextStep-Team, StepFun"],
+      "publisher": "arXiv",
+      "publicationDate": "2025-08-14",
+      "kind": "paper",
+      "url": "https://arxiv.org/pdf/2508.10711v1",
+      "route": "direct",
+      "language": "en",
+      "sourceClass": "primary",
+      "version": {
+        "kind": "arxiv",
+        "id": "2508.10711v1",
+        "note": "PDF of version 1; later versions not inspected."
+      }
+    },
+    {
+      "id": "c3-src-step3-readme",
+      "cacheKey": "s01-step3-readme",
+      "title": "step3 model card (README.md)",
+      "originalTitle": null,
+      "authors": ["StepFun"],
+      "publisher": "StepFun (stepfun-ai, Hugging Face)",
+      "publicationDate": "2025-07-31",
+      "kind": "announcement",
+      "url": "https://huggingface.co/stepfun-ai/step3/raw/5fe5f2aff383cd9d0195ca7a8e673384ce30c228/README.md",
+      "route": "direct",
+      "language": "en",
+      "sourceClass": "primary",
+      "version": {
+        "kind": "hf-commit",
+        "id": "5fe5f2aff383cd9d0195ca7a8e673384ce30c228",
+        "note": "README at the commit of 31 July 2025 (\"Update README.md\"), the first after the LICENSE file was created; the repository's initial commit is of 28 July 2025; later README edits (to 2 August 2025) not inspected."
+      }
+    },
+    {
+      "id": "c3-src-step3-license",
+      "cacheKey": "s01-step3-license",
+      "title": "step3 LICENSE (Apache License 2.0)",
+      "originalTitle": null,
+      "authors": ["StepFun"],
+      "publisher": "StepFun (stepfun-ai, Hugging Face)",
+      "publicationDate": "2025-07-31",
+      "kind": "report",
+      "url": "https://huggingface.co/stepfun-ai/step3/raw/5fe5f2aff383cd9d0195ca7a8e673384ce30c228/LICENSE",
+      "route": "direct",
+      "language": "en",
+      "sourceClass": "primary",
+      "version": {
+        "kind": "hf-commit",
+        "id": "5fe5f2aff383cd9d0195ca7a8e673384ce30c228",
+        "note": "LICENSE file as it stood at the cited commit of 31 July 2025; the file was created by the commit \"Create LICENSE\" earlier that day."
+      }
+    },
+    {
+      "id": "c3-src-step35-readme",
+      "cacheKey": "s01-step35-readme",
+      "title": "Step-3.5-Flash model card (README.md)",
+      "originalTitle": null,
+      "authors": ["StepFun"],
+      "publisher": "StepFun (stepfun-ai, Hugging Face)",
+      "publicationDate": "2026-02-01",
+      "kind": "announcement",
+      "url": "https://huggingface.co/stepfun-ai/Step-3.5-Flash/raw/3eb118b80899d48a319a06e32c6ba66bcd38d0e7/README.md",
+      "route": "direct",
+      "language": "en",
+      "sourceClass": "primary",
+      "version": {
+        "kind": "hf-commit",
+        "id": "3eb118b80899d48a319a06e32c6ba66bcd38d0e7",
+        "note": "README at the commit of 1 February 2026 (15:52 UTC); the repository's initial commit is of the same day; many later README edits (to 17 March 2026) not inspected."
+      }
+    },
+    {
+      "id": "c3-src-step5-readme-0920",
+      "cacheKey": "s01-step5-readme-0920",
+      "title": "Step-5-Preview model card (README.md), initial upload",
+      "originalTitle": null,
+      "authors": ["StepFun"],
+      "publisher": "StepFun (stepfun-ai, Hugging Face)",
+      "publicationDate": "2026-09-20",
+      "kind": "announcement",
+      "url": "https://huggingface.co/stepfun-ai/Step-5-Preview/raw/43fa7aabe7c2e503bdee2c99a64954d17ab069da/README.md",
+      "route": "direct",
+      "language": "en",
+      "sourceClass": "primary",
+      "version": {
+        "kind": "hf-commit",
+        "id": "43fa7aabe7c2e503bdee2c99a64954d17ab069da",
+        "note": "README at the commit of 20 September 2026 (\"Upload 10 files\"); at this commit the README holds only a metadata header."
+      }
+    },
+    {
+      "id": "c3-src-step5-readme-1015",
+      "cacheKey": "s01-step5-readme",
+      "title": "Step-5-Preview model card (README.md)",
+      "originalTitle": null,
+      "authors": ["StepFun"],
+      "publisher": "StepFun (stepfun-ai, Hugging Face)",
+      "publicationDate": "2026-10-15",
+      "kind": "announcement",
+      "url": "https://huggingface.co/stepfun-ai/Step-5-Preview/raw/364b3b03fed2477aa0953fe855a2c4c8c48ee3cc/README.md",
+      "route": "direct",
+      "language": "en",
+      "sourceClass": "primary",
+      "version": {
+        "kind": "hf-commit",
+        "id": "364b3b03fed2477aa0953fe855a2c4c8c48ee3cc",
+        "note": "README at the commit of 15 October 2026 (\"Update README.md\"), the latest commit at retrieval."
+      }
+    },
+    {
+      "id": "c3-src-step5-license",
+      "cacheKey": "s01-step5-license-1013",
+      "title": "Step-5-Preview LICENSE.txt (StepFun Model License 1.0)",
+      "originalTitle": null,
+      "authors": ["StepFun"],
+      "publisher": "StepFun (stepfun-ai, Hugging Face)",
+      "publicationDate": "2026-10-13",
+      "kind": "report",
+      "url": "https://huggingface.co/stepfun-ai/Step-5-Preview/raw/f3112587a3eb4b2144b93e95df52b7eb8c78bf7d/LICENSE.txt",
+      "route": "direct",
+      "language": "en",
+      "sourceClass": "primary",
+      "version": {
+        "kind": "hf-commit",
+        "id": "f3112587a3eb4b2144b93e95df52b7eb8c78bf7d",
+        "note": "LICENSE.txt at the commit of 13 October 2026 (\"Upload 2 files\"), which added LICENSE.txt and LICENSE-CN.txt; the file at the commit of 15 October 2026 is byte-identical. The Chinese LICENSE-CN.txt was retrieved but not quoted."
+      }
+    },
+    {
+      "id": "c3-src-stepfun-site-bundle",
+      "cacheKey": "s01-stepfun-indexjs",
+      "title": "StepFun website build file carrying the newsroom posts and site footer",
+      "originalTitle": "阶跃星辰官网（构建文件 index-4zBpLKmx.js）",
+      "authors": ["StepFun"],
+      "publisher": "StepFun (阶跃星辰), stepfun.com",
+      "publicationDate": null,
+      "kind": "announcement",
+      "url": "https://www.stepfun.com/assets/index-4zBpLKmx.js",
+      "route": "direct",
+      "language": "zh-Hans",
+      "sourceClass": "primary",
+      "version": {
+        "kind": "mutable-page",
+        "id": "index-4zBpLKmx.js",
+        "note": "The stepfun.com pages are served as an empty JavaScript shell; their text (newsroom posts with their dates, and the footer) is carried in this content-hashed build file, read as it stood on 29 October 2026. The file name changes with each site build; earlier builds not inspected."
+      }
+    },
+    {
+      "id": "c3-src-qbitai-stepfun-2026",
+      "cacheKey": "s01-qbitai-stepfun-2026",
+      "title": "StepFun is no longer low-profile: huge financing, Yin Qi joins, a \"1+3\" core decision-making group emerges",
+      "originalTitle": "阶跃星辰不再低调：巨额融资，印奇加入，“1+3”核心决策层浮出水面",
+      "authors": ["量子位 (QbitAI)"],
+      "publisher": "36Kr (36氪), republishing QbitAI (量子位)",
+      "publicationDate": "2026-01-27",
+      "kind": "article",
+      "url": "https://www.36kr.com/p/3657567182938757",
+      "route": "direct",
+      "language": "zh-Hans",
+      "sourceClass": "reporting",
+      "version": {
+        "kind": "mutable-page",
+        "id": null,
+        "note": "Dated article page, read as it stood on 29 October 2026."
+      },
+      "datasetSourceId": "lg-src-cn-qbitai-stepfun-2026"
+    },
+    {
+      "id": "c3-src-yi-abs-v1",
+      "cacheKey": "s01-yi-abs-v1",
+      "title": "Yi: Open Foundation Models by 01.AI (arXiv abstract page, v1)",
+      "originalTitle": null,
+      "authors": ["01.AI"],
+      "publisher": "arXiv",
+      "publicationDate": "2024-03-07",
+      "kind": "paper",
+      "url": "https://arxiv.org/abs/2403.04652v1",
+      "route": "direct",
+      "language": "en",
+      "sourceClass": "primary",
+      "version": {
+        "kind": "arxiv",
+        "id": "2403.04652v1",
+        "note": "Abstract page of version 1 (submitted 7 March 2024); the page lists later versions v2 (30 December 2024) and v3 (21 January 2025), not inspected."
+      }
+    },
+    {
+      "id": "c3-src-yi-pdf-v1",
+      "cacheKey": "s01-yi-pdf-v1",
+      "title": "Yi: Open Foundation Models by 01.AI (arXiv PDF, v1)",
+      "originalTitle": null,
+      "authors": ["01.AI"],
+      "publisher": "arXiv",
+      "publicationDate": "2024-03-07",
+      "kind": "paper",
+      "url": "https://arxiv.org/pdf/2403.04652v1",
+      "route": "direct",
+      "language": "en",
+      "sourceClass": "primary",
+      "version": {
+        "kind": "arxiv",
+        "id": "2403.04652v1",
+        "note": "PDF of version 1; later versions not inspected."
+      }
+    },
+    {
+      "id": "c3-src-yi-lightning-abs-v1",
+      "cacheKey": "s01-yi-lightning-abs-v1",
+      "title": "Yi-Lightning Technical Report (arXiv abstract page, v1)",
+      "originalTitle": null,
+      "authors": ["01.AI"],
+      "publisher": "arXiv",
+      "publicationDate": "2024-12-02",
+      "kind": "paper",
+      "url": "https://arxiv.org/abs/2412.01253v1",
+      "route": "direct",
+      "language": "en",
+      "sourceClass": "primary",
+      "version": {
+        "kind": "arxiv",
+        "id": "2412.01253v1",
+        "note": "Abstract page of version 1 (submitted 2 December 2024); the page lists later versions v2 to v5 (3 December 2024 to 22 January 2025), not inspected."
+      }
+    },
+    {
+      "id": "c3-src-yi-lightning-pdf-v1",
+      "cacheKey": "s01-yi-lightning-pdf-v1",
+      "title": "Yi-Lightning Technical Report (arXiv PDF, v1)",
+      "originalTitle": null,
+      "authors": ["01.AI"],
+      "publisher": "arXiv",
+      "publicationDate": "2024-12-02",
+      "kind": "paper",
+      "url": "https://arxiv.org/pdf/2412.01253v1",
+      "route": "direct",
+      "language": "en",
+      "sourceClass": "primary",
+      "version": {
+        "kind": "arxiv",
+        "id": "2412.01253v1",
+        "note": "PDF of version 1; later versions not inspected."
+      }
+    },
+    {
+      "id": "c3-src-yi34b-readme-1104",
+      "cacheKey": "s01-yi34b-readme-1104",
+      "title": "Yi-34B model card (README.md)",
+      "originalTitle": null,
+      "authors": ["01.AI"],
+      "publisher": "01.AI (01-ai, Hugging Face)",
+      "publicationDate": "2023-11-04",
+      "kind": "announcement",
+      "url": "https://huggingface.co/01-ai/Yi-34B/raw/e2890c258236706e71284969e118abff5a536959/README.md",
+      "route": "direct",
+      "language": "en",
+      "sourceClass": "primary",
+      "version": {
+        "kind": "hf-commit",
+        "id": "e2890c258236706e71284969e118abff5a536959",
+        "note": "README at the commit of 4 November 2023 (\"Update README.md\"); the repository's initial commit is of 1 November 2023; later README edits not inspected for this record."
+      }
+    },
+    {
+      "id": "c3-src-yi34b-readme-0206",
+      "cacheKey": "s01-yi34b-readme-0206",
+      "title": "Yi-34B model card (README.md), revision of 6 February 2024",
+      "originalTitle": null,
+      "authors": ["01.AI"],
+      "publisher": "01.AI (01-ai, Hugging Face)",
+      "publicationDate": "2024-02-06",
+      "kind": "announcement",
+      "url": "https://huggingface.co/01-ai/Yi-34B/raw/04b45b4915f9805c2c278b722618f4dc4edf645c/README.md",
+      "route": "direct",
+      "language": "en",
+      "sourceClass": "primary",
+      "version": {
+        "kind": "hf-commit",
+        "id": "04b45b4915f9805c2c278b722618f4dc4edf645c",
+        "note": "README at the commit of 6 February 2024 (an \"Auto Sync\" from the 01-ai/Yi GitHub repository), the earliest commit in a scan of the README's history at which the sentence on Llama quoted here appears."
+      }
+    },
+    {
+      "id": "c3-src-yi34b-readme-0530",
+      "cacheKey": "s01-yi34b-readme-0530",
+      "title": "Yi-34B model card (README.md), revision of 30 May 2024",
+      "originalTitle": null,
+      "authors": ["01.AI"],
+      "publisher": "01.AI (01-ai, Hugging Face)",
+      "publicationDate": "2024-05-30",
+      "kind": "announcement",
+      "url": "https://huggingface.co/01-ai/Yi-34B/raw/d86275bb4bc5234489a8fa602efff35855eda9f0/README.md",
+      "route": "direct",
+      "language": "en",
+      "sourceClass": "primary",
+      "version": {
+        "kind": "hf-commit",
+        "id": "d86275bb4bc5234489a8fa602efff35855eda9f0",
+        "note": "README at the commit of 30 May 2024 (\"Auto Sync\" from the 01-ai/Yi GitHub repository), the commit that also replaced the LICENSE file."
+      }
+    },
+    {
+      "id": "c3-src-yi34b-license-v10",
+      "cacheKey": "s01-yi34b-license-v10",
+      "title": "Yi Series Models License Agreement, Version 1.0 (Yi-34B LICENSE)",
+      "originalTitle": null,
+      "authors": ["01.AI"],
+      "publisher": "01.AI (01-ai, Hugging Face)",
+      "publicationDate": "2023-11-01",
+      "kind": "report",
+      "url": "https://huggingface.co/01-ai/Yi-34B/raw/e055d548562a8fa5e4552d09a2ccacd8ac3ed641/LICENSE",
+      "route": "direct",
+      "language": "en",
+      "sourceClass": "primary",
+      "version": {
+        "kind": "hf-commit",
+        "id": "e055d548562a8fa5e4552d09a2ccacd8ac3ed641",
+        "note": "LICENSE file at the commit \"add LICENSE\" of 1 November 2023; bilingual (English and Chinese). Replaced on 4 November 2023 by version 2.0 (not quoted here)."
+      }
+    },
+    {
+      "id": "c3-src-yi34b-license-v21",
+      "cacheKey": "s01-yi34b-license-v21",
+      "title": "Yi Series Models Community License Agreement, Version 2.1 (Yi-34B LICENSE)",
+      "originalTitle": null,
+      "authors": ["01.AI"],
+      "publisher": "01.AI (01-ai, Hugging Face)",
+      "publicationDate": "2023-11-23",
+      "kind": "report",
+      "url": "https://huggingface.co/01-ai/Yi-34B/raw/3ace5f03eee58aa00438b15ea3f0d535f3a81e46/LICENSE",
+      "route": "direct",
+      "language": "en",
+      "sourceClass": "primary",
+      "version": {
+        "kind": "hf-commit",
+        "id": "3ace5f03eee58aa00438b15ea3f0d535f3a81e46",
+        "note": "LICENSE file at the commit of 23 November 2023 (\"Auto Sync\" from the 01-ai/Yi GitHub repository); bilingual (English and Chinese). The file history shows the next change on 30 May 2024."
+      }
+    },
+    {
+      "id": "c3-src-yi34b-license-apache",
+      "cacheKey": "s01-yi34b-license-apache",
+      "title": "Yi-34B LICENSE (Apache License 2.0)",
+      "originalTitle": null,
+      "authors": ["01.AI"],
+      "publisher": "01.AI (01-ai, Hugging Face)",
+      "publicationDate": "2024-05-30",
+      "kind": "report",
+      "url": "https://huggingface.co/01-ai/Yi-34B/raw/d86275bb4bc5234489a8fa602efff35855eda9f0/LICENSE",
+      "route": "direct",
+      "language": "en",
+      "sourceClass": "primary",
+      "version": {
+        "kind": "hf-commit",
+        "id": "d86275bb4bc5234489a8fa602efff35855eda9f0",
+        "note": "LICENSE file at the commit of 30 May 2024 that replaced the Community License Agreement v2.1 with the Apache License 2.0 text; no later change in the inspected clone."
+      }
+    },
+    {
+      "id": "c3-src-yi15-34b-readme",
+      "cacheKey": "s01-yi15-34b-readme",
+      "title": "Yi-1.5-34B model card (README.md)",
+      "originalTitle": null,
+      "authors": ["01.AI"],
+      "publisher": "01.AI (01-ai, Hugging Face)",
+      "publicationDate": "2024-05-12",
+      "kind": "announcement",
+      "url": "https://huggingface.co/01-ai/Yi-1.5-34B/raw/2a670431440ae15bb23c817e071e2a89efa54bcb/README.md",
+      "route": "direct",
+      "language": "en",
+      "sourceClass": "primary",
+      "version": {
+        "kind": "hf-commit",
+        "id": "2a670431440ae15bb23c817e071e2a89efa54bcb",
+        "note": "README at the commit \"Create README.md\" of 12 May 2024; model files were uploaded on 11 May 2024; later README edits not inspected."
+      }
+    },
+    {
+      "id": "c3-src-yi-coder-9b-readme",
+      "cacheKey": "s01-yi-coder-9b-readme",
+      "title": "Yi-Coder-9B model card (README.md)",
+      "originalTitle": null,
+      "authors": ["01.AI"],
+      "publisher": "01.AI (01-ai, Hugging Face)",
+      "publicationDate": "2024-09-03",
+      "kind": "announcement",
+      "url": "https://huggingface.co/01-ai/Yi-Coder-9B/raw/f13c09399f647d74494c8cd34d498ce826941222/README.md",
+      "route": "direct",
+      "language": "en",
+      "sourceClass": "primary",
+      "version": {
+        "kind": "hf-commit",
+        "id": "f13c09399f647d74494c8cd34d498ce826941222",
+        "note": "README at the commit of 3 September 2024, the first README edit; the repository was created on 15 August 2024 and model files uploaded on 27 August 2024; later README edits not inspected."
+      }
+    },
+    {
+      "id": "c3-src-01ai-about",
+      "cacheKey": "s01-01ai-about",
+      "title": "About us — 01.AI",
+      "originalTitle": "关于我们 — 01.AI 零一万物",
+      "authors": ["01.AI"],
+      "publisher": "01.AI (零一万物)",
+      "publicationDate": null,
+      "kind": "report",
+      "url": "https://www.lingyiwanwu.com/about.html",
+      "route": "direct",
+      "language": "zh-Hans",
+      "sourceClass": "primary",
+      "version": {
+        "kind": "mutable-page",
+        "id": null,
+        "note": "Undated company page, read as it stood on 29 October 2026; its timeline entries carry month dates only."
+      },
+      "datasetSourceId": "lg-src-cn-01ai-about"
+    },
+    {
+      "id": "c3-src-01ai-wx-qai",
+      "cacheKey": "s01-01ai-wx-qai2",
+      "title": "Kazakhstan and 01.AI establish the Q.AI joint venture; former vice minister of AI Dmitriy Mun becomes CEO",
+      "originalTitle": "哈萨克斯坦与零一万物成立 Q.AI 合资企业，前人工智能副部长德米特里·穆恩出任 CEO｜FM 01.AI",
+      "authors": ["01.AI"],
+      "publisher": "01.AI (零一万物), WeChat official account",
+      "publicationDate": "2026-06-30",
+      "kind": "post",
+      "url": "https://mp.weixin.qq.com/s/1VUZ8tLmpwc_UFdiWCciXw",
+      "route": "direct",
+      "language": "zh-Hans",
+      "sourceClass": "primary",
+      "version": {
+        "kind": "mutable-page",
+        "id": null,
+        "note": "WeChat post with a creation time of 2026-06-30 08:00 in its page data, linked from 01.AI's newsroom page; read as it stood on 29 October 2026. The post says it compiles reports of Kazakh ministry and broadcast sources."
+      }
+    },
+    {
+      "id": "c3-src-01ai-wx-cp",
+      "cacheKey": "s01-01ai-wx-qai",
+      "title": "01.AI joins Fortune Global 500 company CP Group: from AI poultry farming to an agricultural AI labour system",
+      "originalTitle": "零一万物携手世界500强正大集团：从AI养鸡到农业AI劳动系统，打造“AI+智慧农业”全球新范本",
+      "authors": ["01.AI"],
+      "publisher": "01.AI (零一万物), WeChat official account",
+      "publicationDate": "2026-06-02",
+      "kind": "post",
+      "url": "https://mp.weixin.qq.com/s/u71V3b_xA_s7yFmo9YbmBw",
+      "route": "direct",
+      "language": "zh-Hans",
+      "sourceClass": "primary",
+      "version": {
+        "kind": "mutable-page",
+        "id": null,
+        "note": "WeChat post with a creation time of 2026-06-02 19:00 in its page data, linked from 01.AI's newsroom page; read as it stood on 29 October 2026."
+      }
+    }
+  ],
+  "claims": [
+    {
+      "id": "c3-stepfun-step-video-t2v-report",
+      "subject": "stepfun",
+      "predicate": "published",
+      "object": {
+        "kind": "entity",
+        "entityId": "step-video-t2v-report"
+      },
+      "topic": "ideas",
+      "statement": "A StepFun team posted the Step-Video-T2V technical report to arXiv on 14 February 2025 (version 1), describing a 30-billion-parameter text-to-video model, Step-Video-T2V.",
+      "time": {
+        "kind": "event",
+        "date": "2025-02-14",
+        "basis": "publication",
+        "note": "Submission date of the cited arXiv version; not the model's release date and not the date of later versions."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "The report is the developer's own description; performance and benchmark claims in it are out of scope. Credit to StepFun rests on the team line of the report, not on a separate statement of ownership.",
+      "evidence": [
+        {
+          "id": "c3-ev-stepfun-step-video-t2v-report",
+          "sourceId": "c3-src-step-video-t2v-pdf-v1",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Title page",
+          "passageType": "quote",
+          "passage": "Step-Video Team StepFun",
+          "translation": null
+        },
+        {
+          "id": "c3-ev-stepfun-step-video-t2v-report-2",
+          "sourceId": "c3-src-step-video-t2v-abs-v1",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "arXiv abstract page, abstract",
+          "passageType": "quote",
+          "passage": "We make both Step-Video-T2V and Step-Video-T2V-Eval available at",
+          "translation": null
+        }
+      ]
+    },
+    {
+      "id": "c3-stepfun-step-audio-report",
+      "subject": "stepfun",
+      "predicate": "published",
+      "object": {
+        "kind": "entity",
+        "entityId": "step-audio-report"
+      },
+      "topic": "ideas",
+      "statement": "A StepFun team posted the Step-Audio technical report to arXiv on 17 February 2025 (version 1), describing the Step-Audio speech models, including Step-Audio-Chat.",
+      "time": {
+        "kind": "event",
+        "date": "2025-02-17",
+        "basis": "publication",
+        "note": "Submission date of the cited arXiv version; not the model's release date and not the date of later versions."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "The report is the developer's own description; performance and benchmark claims in it are out of scope. Credit to StepFun rests on the team line of the report, not on a separate statement of ownership.",
+      "evidence": [
+        {
+          "id": "c3-ev-stepfun-step-audio-report",
+          "sourceId": "c3-src-step-audio-pdf-v1",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Title page",
+          "passageType": "quote",
+          "passage": "Step-Audio Team StepFun",
+          "translation": null
+        },
+        {
+          "id": "c3-ev-stepfun-step-audio-report-2",
+          "sourceId": "c3-src-step-audio-abs-v1",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "arXiv abstract page, abstract",
+          "passageType": "quote",
+          "passage": "with the Step-Audio-Chat version open-sourced",
+          "translation": null
+        }
+      ]
+    },
+    {
+      "id": "c3-stepfun-step1x-edit-report",
+      "subject": "stepfun",
+      "predicate": "published",
+      "object": {
+        "kind": "entity",
+        "entityId": "step1x-edit-report"
+      },
+      "topic": "ideas",
+      "statement": "A StepFun team posted the Step1X-Edit technical report to arXiv on 24 April 2025 (version 1), describing the Step1X-Edit image-editing model.",
+      "time": {
+        "kind": "event",
+        "date": "2025-04-24",
+        "basis": "publication",
+        "note": "Submission date of the cited arXiv version; not the model's release date and not the date of later versions."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "The report is the developer's own description; performance and benchmark claims in it are out of scope. Credit to StepFun rests on the team line of the report, not on a separate statement of ownership.",
+      "evidence": [
+        {
+          "id": "c3-ev-stepfun-step1x-edit-report",
+          "sourceId": "c3-src-step1x-edit-pdf-v1",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Title page",
+          "passageType": "quote",
+          "passage": "Step1X-Image Team StepFun",
+          "translation": null
+        },
+        {
+          "id": "c3-ev-stepfun-step1x-edit-report-2",
+          "sourceId": "c3-src-step1x-edit-abs-v1",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "arXiv abstract page, abstract",
+          "passageType": "quote",
+          "passage": "we aim to release a state-of-the-art image editing model, called Step1X-Edit",
+          "translation": null
+        }
+      ]
+    },
+    {
+      "id": "c3-stepfun-step-audio-2-report",
+      "subject": "stepfun",
+      "predicate": "published",
+      "object": {
+        "kind": "entity",
+        "entityId": "step-audio-2-report"
+      },
+      "topic": "ideas",
+      "statement": "A StepFun team posted the Step-Audio 2 Technical Report to arXiv on 22 July 2025 (version 1), describing Step-Audio 2, an end-to-end multimodal model for audio understanding and speech conversation.",
+      "time": {
+        "kind": "event",
+        "date": "2025-07-22",
+        "basis": "publication",
+        "note": "Submission date of the cited arXiv version; not the model's release date and not the date of later versions."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "The report is the developer's own description; performance and benchmark claims in it are out of scope. Credit to StepFun rests on the team line of the report, not on a separate statement of ownership.",
+      "evidence": [
+        {
+          "id": "c3-ev-stepfun-step-audio-2-report",
+          "sourceId": "c3-src-step-audio-2-pdf-v1",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Title page",
+          "passageType": "quote",
+          "passage": "Step-Audio 2 Technical Report StepFun Audio Team",
+          "translation": null
+        },
+        {
+          "id": "c3-ev-stepfun-step-audio-2-report-2",
+          "sourceId": "c3-src-step-audio-2-abs-v1",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "arXiv abstract page, abstract",
+          "passageType": "quote",
+          "passage": "an end-to-end multi-modal large language model designed for industry-strength audio understanding and speech conversation",
+          "translation": null
+        }
+      ]
+    },
+    {
+      "id": "c3-stepfun-step-3-report",
+      "subject": "stepfun",
+      "predicate": "published",
+      "object": {
+        "kind": "entity",
+        "entityId": "step-3-report"
+      },
+      "topic": "ideas",
+      "statement": "A StepFun team posted the Step-3 report to arXiv on 25 July 2025 (version 1), describing Step-3, a 321-billion-parameter vision-language model.",
+      "time": {
+        "kind": "event",
+        "date": "2025-07-25",
+        "basis": "publication",
+        "note": "Submission date of the cited arXiv version; not the model's release date and not the date of later versions."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "The report is the developer's own description; performance and benchmark claims in it are out of scope. Credit to StepFun rests on the team line of the report, not on a separate statement of ownership.",
+      "evidence": [
+        {
+          "id": "c3-ev-stepfun-step-3-report",
+          "sourceId": "c3-src-step-3-abs-v1",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "arXiv abstract page, author list",
+          "passageType": "quote",
+          "passage": "StepFun: Bin Wang, Bojun Wang",
+          "translation": null
+        },
+        {
+          "id": "c3-ev-stepfun-step-3-report-2",
+          "sourceId": "c3-src-step-3-abs-v1",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "arXiv abstract page, abstract",
+          "passageType": "quote",
+          "passage": "This paper introduces Step-3, a 321B-parameter VLM",
+          "translation": null
+        }
+      ]
+    },
+    {
+      "id": "c3-stepfun-nextstep-1-report",
+      "subject": "stepfun",
+      "predicate": "published",
+      "object": {
+        "kind": "entity",
+        "entityId": "nextstep-1-report"
+      },
+      "topic": "ideas",
+      "statement": "A StepFun team posted the NextStep-1 technical report to arXiv on 14 August 2025 (version 1), describing NextStep-1, an autoregressive image-generation model.",
+      "time": {
+        "kind": "event",
+        "date": "2025-08-14",
+        "basis": "publication",
+        "note": "Submission date of the cited arXiv version; not the model's release date and not the date of later versions."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "The report is the developer's own description; performance and benchmark claims in it are out of scope. Credit to StepFun rests on the team line of the report, not on a separate statement of ownership.",
+      "evidence": [
+        {
+          "id": "c3-ev-stepfun-nextstep-1-report",
+          "sourceId": "c3-src-nextstep-1-pdf-v1",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Title page",
+          "passageType": "quote",
+          "passage": "NextStep-Team, StepFun",
+          "translation": null
+        },
+        {
+          "id": "c3-ev-stepfun-nextstep-1-report-2",
+          "sourceId": "c3-src-nextstep-1-pdf-v1",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Title page, links",
+          "passageType": "quote",
+          "passage": "Github: https://github.com/stepfun-ai/NextStep-1",
+          "translation": null
+        }
+      ]
+    },
+    {
+      "id": "c3-stepfun-step-3-author-jiang-daxin",
+      "subject": "jiang-daxin",
+      "predicate": "authored",
+      "object": {
+        "kind": "entity",
+        "entityId": "step-3-report"
+      },
+      "topic": "ideas",
+      "statement": "Daxin Jiang is listed among the authors of the Step-3 report (arXiv version 1), whose author list is headed \"StepFun\".",
+      "time": {
+        "kind": "event",
+        "date": "2025-07-25",
+        "basis": "publication",
+        "note": "Submission date of the cited arXiv version; not the model's release date."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "Credit in a team author list of about 300 names does not establish responsibility for particular methods or a management role. The identification rests on the name in an author list prefixed \"StepFun:\", which gives no per-author affiliation; the person is identified with the dataset entity by name and that group affiliation only.",
+      "evidence": [
+        {
+          "id": "c3-ev-stepfun-step-3-author-jiang-daxin",
+          "sourceId": "c3-src-step-3-abs-v1",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "arXiv abstract page, author list",
+          "passageType": "quote",
+          "passage": "Binxing Jiao, Daxin Jiang, Heung-Yeung Shum",
+          "translation": null
+        },
+        {
+          "id": "c3-ev-stepfun-step-3-author-jiang-daxin-2",
+          "sourceId": "c3-src-step-3-abs-v1",
+          "sourceRole": "primary",
+          "support": "context",
+          "locator": "arXiv abstract page, author list (opening)",
+          "passageType": "quote",
+          "passage": "StepFun: Bin Wang, Bojun Wang",
+          "translation": null
+        }
+      ]
+    },
+    {
+      "id": "c3-stepfun-step-3-author-zhang-xiangyu",
+      "subject": "zhang-xiangyu",
+      "predicate": "authored",
+      "object": {
+        "kind": "entity",
+        "entityId": "step-3-report"
+      },
+      "topic": "ideas",
+      "statement": "Xiangyu Zhang is listed among the authors of the Step-3 report (arXiv version 1), whose author list is headed \"StepFun\".",
+      "time": {
+        "kind": "event",
+        "date": "2025-07-25",
+        "basis": "publication",
+        "note": "Submission date of the cited arXiv version; not the model's release date."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "Credit in a team author list of about 300 names does not establish responsibility for particular methods or a management role. The identification rests on the name in an author list prefixed \"StepFun:\", which gives no per-author affiliation; the person is identified with the dataset entity by name and that group affiliation only.",
+      "evidence": [
+        {
+          "id": "c3-ev-stepfun-step-3-author-zhang-xiangyu",
+          "sourceId": "c3-src-step-3-abs-v1",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "arXiv abstract page, author list",
+          "passageType": "quote",
+          "passage": "Daxin Jiang, Heung-Yeung Shum, Xiangyu Zhang",
+          "translation": null
+        },
+        {
+          "id": "c3-ev-stepfun-step-3-author-zhang-xiangyu-2",
+          "sourceId": "c3-src-step-3-abs-v1",
+          "sourceRole": "primary",
+          "support": "context",
+          "locator": "arXiv abstract page, author list (opening)",
+          "passageType": "quote",
+          "passage": "StepFun: Bin Wang, Bojun Wang",
+          "translation": null
+        }
+      ]
+    },
+    {
+      "id": "c3-stepfun-step-3-author-zhu-yibo",
+      "subject": "zhu-yibo",
+      "predicate": "authored",
+      "object": {
+        "kind": "entity",
+        "entityId": "step-3-report"
+      },
+      "topic": "ideas",
+      "statement": "Yibo Zhu is listed among the authors of the Step-3 report (arXiv version 1), whose author list is headed \"StepFun\".",
+      "time": {
+        "kind": "event",
+        "date": "2025-07-25",
+        "basis": "publication",
+        "note": "Submission date of the cited arXiv version; not the model's release date."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "Credit in a team author list of about 300 names does not establish responsibility for particular methods or a management role. The identification rests on the name in an author list prefixed \"StepFun:\", which gives no per-author affiliation; the person is identified with the dataset entity by name and that group affiliation only.",
+      "evidence": [
+        {
+          "id": "c3-ev-stepfun-step-3-author-zhu-yibo",
+          "sourceId": "c3-src-step-3-abs-v1",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "arXiv abstract page, author list",
+          "passageType": "quote",
+          "passage": "Xuelin Zhang, Yanbo Yu, Yaoyu Wang, Yibo Zhu, Yimin Jiang",
+          "translation": null
+        },
+        {
+          "id": "c3-ev-stepfun-step-3-author-zhu-yibo-2",
+          "sourceId": "c3-src-step-3-abs-v1",
+          "sourceRole": "primary",
+          "support": "context",
+          "locator": "arXiv abstract page, author list (opening)",
+          "passageType": "quote",
+          "passage": "StepFun: Bin Wang, Bojun Wang",
+          "translation": null
+        }
+      ]
+    },
+    {
+      "id": "c3-stepfun-step-3-author-jiao-binxing",
+      "subject": "jiao-binxing",
+      "predicate": "authored",
+      "object": {
+        "kind": "entity",
+        "entityId": "step-3-report"
+      },
+      "topic": "ideas",
+      "statement": "Binxing Jiao is listed among the authors of the Step-3 report (arXiv version 1), whose author list is headed \"StepFun\".",
+      "time": {
+        "kind": "event",
+        "date": "2025-07-25",
+        "basis": "publication",
+        "note": "Submission date of the cited arXiv version; not the model's release date."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "Credit in a team author list of about 300 names does not establish responsibility for particular methods or a management role. The identification rests on the name in an author list prefixed \"StepFun:\", which gives no per-author affiliation; the person is identified with the dataset entity by name and that group affiliation only.",
+      "evidence": [
+        {
+          "id": "c3-ev-stepfun-step-3-author-jiao-binxing",
+          "sourceId": "c3-src-step-3-abs-v1",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "arXiv abstract page, author list",
+          "passageType": "quote",
+          "passage": "Ka Man Lo, Ailin Huang, Binxing Jiao, Bo Li",
+          "translation": null
+        },
+        {
+          "id": "c3-ev-stepfun-step-3-author-jiao-binxing-2",
+          "sourceId": "c3-src-step-3-abs-v1",
+          "sourceRole": "primary",
+          "support": "context",
+          "locator": "arXiv abstract page, author list (opening)",
+          "passageType": "quote",
+          "passage": "StepFun: Bin Wang, Bojun Wang",
+          "translation": null
+        }
+      ]
+    },
+    {
+      "id": "c3-stepfun-step3-card",
+      "subject": "stepfun",
+      "predicate": "published",
+      "object": {
+        "kind": "entity",
+        "entityId": "step3-model-card"
+      },
+      "topic": "ideas",
+      "statement": "StepFun's step3 Hugging Face repository, created on 28 July 2025, carried on 31 July 2025 a model card introducing Step3 as a mixture-of-experts multimodal reasoning model with 321 billion total and 38 billion active parameters.",
+      "time": {
+        "kind": "event",
+        "date": "2025-07-31",
+        "basis": "publication",
+        "note": "Date of the cited commit of the model card; the repository's initial commit is of 28 July 2025 and the weights were added on 31 July 2025. The arXiv report (25 July 2025) is a separate document. Not a verified moment of public availability."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "The card's description is the developer's own; benchmark tables in it are out of scope.",
+      "evidence": [
+        {
+          "id": "c3-ev-stepfun-step3-card",
+          "sourceId": "c3-src-step3-readme",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "README, \"Introduction\"",
+          "passageType": "quote",
+          "passage": "Mixture-of-Experts architecture with 321B total parameters and 38B active.",
+          "translation": null
+        }
+      ]
+    },
+    {
+      "id": "c3-stepfun-step3-licence",
+      "subject": "stepfun",
+      "predicate": "published",
+      "object": {
+        "kind": "entity",
+        "entityId": "step3-licence"
+      },
+      "topic": "governance",
+      "statement": "StepFun released the step3 code repository and model weights under the Apache License, Version 2.0, as stated in the model card and LICENSE file of its Hugging Face repository on 31 July 2025.",
+      "time": {
+        "kind": "event",
+        "date": "2025-07-31",
+        "basis": "publication",
+        "note": "Date of the cited commit; the LICENSE file was created on the same day."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "The licence is described as the text describes itself; no judgement is made whether the release meets any definition of open source. The record covers the repository named; other StepFun models carry their own licence statements.",
+      "evidence": [
+        {
+          "id": "c3-ev-stepfun-step3-licence",
+          "sourceId": "c3-src-step3-readme",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "README, \"License\"",
+          "passageType": "quote",
+          "passage": "Both the code repository and the model weights are released under the",
+          "translation": null
+        },
+        {
+          "id": "c3-ev-stepfun-step3-licence-2",
+          "sourceId": "c3-src-step3-license",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "LICENSE, heading",
+          "passageType": "quote",
+          "passage": "Apache License Version 2.0, January 2004",
+          "translation": null
+        }
+      ]
+    },
+    {
+      "id": "c3-stepfun-step35-card",
+      "subject": "stepfun",
+      "predicate": "published",
+      "object": {
+        "kind": "entity",
+        "entityId": "step-3-5-flash-model-card"
+      },
+      "topic": "ideas",
+      "statement": "StepFun's Step-3.5-Flash Hugging Face repository carried, on 1 February 2026, a model card describing Step 3.5 Flash as a sparse mixture-of-experts model activating 11 billion of its 196 billion parameters per token.",
+      "time": {
+        "kind": "event",
+        "date": "2026-02-01",
+        "basis": "publication",
+        "note": "Date of the cited commit; the repository's initial commit is of the same day. StepFun's newsroom post on the launch is dated 2 February 2026. Not a verified moment of public availability of the weights."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "The card's description is the developer's own; performance claims and benchmark tables are out of scope.",
+      "evidence": [
+        {
+          "id": "c3-ev-stepfun-step35-card",
+          "sourceId": "c3-src-step35-readme",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "README, \"1. Introduction\"",
+          "passageType": "quote",
+          "passage": "Built on a sparse Mixture of Experts (MoE) architecture, it selectively activates only 11B of its 196B parameters per token.",
+          "translation": null
+        },
+        {
+          "id": "c3-ev-stepfun-step35-card-2",
+          "sourceId": "c3-src-stepfun-site-bundle",
+          "sourceRole": "primary",
+          "support": "context",
+          "locator": "Newsroom post \"阶跃星辰 Step 3.5 Flash 上线！\", dated 2026-02-02",
+          "passageType": "quote",
+          "passage": "向大家介绍我们最新、最强开源基座模型",
+          "translation": {
+            "text": "Introducing to everyone our latest and strongest open-source base model",
+            "method": "machine",
+            "humanVerified": false
+          }
+        }
+      ]
+    },
+    {
+      "id": "c3-stepfun-step35-licence",
+      "subject": "stepfun",
+      "predicate": "published",
+      "object": {
+        "kind": "entity",
+        "entityId": "step-3-5-flash-licence"
+      },
+      "topic": "governance",
+      "statement": "StepFun's Step-3.5-Flash model card stated on 1 February 2026 that the project is open-sourced under the Apache 2.0 License.",
+      "time": {
+        "kind": "event",
+        "date": "2026-02-01",
+        "basis": "publication",
+        "note": "Date of the cited commit of the model card."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "The record reports the model card's own licence statement and its metadata tag; the repository holds no separate LICENSE file at the cited commit. \"Open-sourced\" is the card's word; no judgement is made whether the release meets any definition of open source.",
+      "evidence": [
+        {
+          "id": "c3-ev-stepfun-step35-licence",
+          "sourceId": "c3-src-step35-readme",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "README, \"License\"",
+          "passageType": "quote",
+          "passage": "This project is open-sourced under the",
+          "translation": null
+        },
+        {
+          "id": "c3-ev-stepfun-step35-licence-2",
+          "sourceId": "c3-src-step35-readme",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "README, metadata header",
+          "passageType": "quote",
+          "passage": "license: apache-2.0",
+          "translation": null
+        }
+      ]
+    },
+    {
+      "id": "c3-stepfun-step5-announcement",
+      "subject": "stepfun",
+      "predicate": "published",
+      "object": {
+        "kind": "entity",
+        "entityId": "step-5-preview-announcement"
+      },
+      "topic": "ideas",
+      "statement": "StepFun's newsroom post dated 20 September 2026 announced Step 5 Preview as its new flagship model, said it was available in full from that day, and said the model weights would be released on 15 October.",
+      "time": {
+        "kind": "event",
+        "date": "2026-09-20",
+        "basis": "announcement",
+        "note": "Date shown on the post as read in the site build file on 29 October 2026; the post's original publication time is not separately verified."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "The release of weights on 15 October is a stated plan in this post (attributes.stage: announced); whether and when weights became available is a separate matter (the Hugging Face repository shows weight files from 20 September 2026, but its visibility at that date is not known). 开源 is rendered \"open source\" as the post's own term. Performance claims in the post are out of scope.",
+      "evidence": [
+        {
+          "id": "c3-ev-stepfun-step5-announcement",
+          "sourceId": "c3-src-stepfun-site-bundle",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Newsroom post dated 2026-09-20, title",
+          "passageType": "quote",
+          "passage": "阶跃发布旗舰模型 Step 5 Preview",
+          "translation": {
+            "text": "StepFun releases flagship model Step 5 Preview",
+            "method": "machine",
+            "humanVerified": false
+          }
+        },
+        {
+          "id": "c3-ev-stepfun-step5-announcement-2",
+          "sourceId": "c3-src-stepfun-site-bundle",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Newsroom post dated 2026-09-20, closing paragraph",
+          "passageType": "quote",
+          "passage": "Step 5 Preview 依旧是一款…我们将在10 月 15 日释放模型权重",
+          "translation": {
+            "text": "Step 5 Preview is still an [open-source model] … we will release the model weights on 15 October",
+            "method": "machine",
+            "humanVerified": false
+          }
+        }
+      ],
+      "attributes": {
+        "stage": "announced"
+      }
+    },
+    {
+      "id": "c3-stepfun-step5-card-initial",
+      "subject": "stepfun",
+      "predicate": "published",
+      "object": {
+        "kind": "entity",
+        "entityId": "step-5-preview-model-card"
+      },
+      "topic": "ideas",
+      "statement": "StepFun's Step-5-Preview Hugging Face repository was created on 20 September 2026; at the upload of that day its model card contained only a metadata header naming the licence apache-2.0.",
+      "time": {
+        "kind": "event",
+        "date": "2026-09-20",
+        "basis": "publication",
+        "note": "Date of the cited commit (the repository's initial commit and the upload of model files are of the same day)."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "A licence tag in card metadata is not a licence text; the repository held no LICENSE file at this commit. The tag was later replaced (see the record on the StepFun Model License 1.0). Whether the repository was publicly visible on 20 September 2026 is not known.",
+      "evidence": [
+        {
+          "id": "c3-ev-stepfun-step5-card-initial",
+          "sourceId": "c3-src-step5-readme-0920",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "README, metadata header (entire file)",
+          "passageType": "quote",
+          "passage": "license: apache-2.0",
+          "translation": null
+        }
+      ]
+    },
+    {
+      "id": "c3-stepfun-step5-licence",
+      "subject": "stepfun",
+      "predicate": "published",
+      "object": {
+        "kind": "entity",
+        "entityId": "stepfun-model-licence-1-0"
+      },
+      "topic": "governance",
+      "statement": "StepFun added to the Step-5-Preview Hugging Face repository on 13 October 2026 a licence headed \"StepFun Model License 1.0\", which the model card describes as an Apache-2.0-style licence with additional attribution and commercial-licence conditions.",
+      "time": {
+        "kind": "event",
+        "date": "2026-10-13",
+        "basis": "publication",
+        "note": "Date of the commit that added LICENSE.txt and LICENSE-CN.txt; the model card's licence section is cited at the commit of 15 October 2026."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "The licence is described as the text and card describe it; no judgement is made whether it meets any definition of open source. The card’s apache-2.0 tag was removed at the README revision of 13 October 2026, 07:14 UTC (266207ef), before the licence files were added (08:15); the tag license: other was set at 08:36 (555dba45). The English version prevails over translations by its own terms; the Chinese text was not compared.",
+      "evidence": [
+        {
+          "id": "c3-ev-stepfun-step5-licence",
+          "sourceId": "c3-src-step5-license",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "LICENSE.txt, heading",
+          "passageType": "quote",
+          "passage": "StepFun Model License 1.0 Copyright (c) 2026 StepFun AI",
+          "translation": null
+        },
+        {
+          "id": "c3-ev-stepfun-step5-licence-2",
+          "sourceId": "c3-src-step5-readme-1015",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "README, \"License\"",
+          "passageType": "quote",
+          "passage": "The StepFun Model License 1.0 is an Apache-2.0-Style license, with additional attribution and commercial-license conditions specific to model use, modification and distribution.",
+          "translation": null
+        },
+        {
+          "id": "c3-ev-stepfun-step5-licence-3",
+          "sourceId": "c3-src-step5-readme-1015",
+          "sourceRole": "primary",
+          "support": "context",
+          "locator": "README, metadata header",
+          "passageType": "quote",
+          "passage": "license: other",
+          "translation": null
+        }
+      ]
+    },
+    {
+      "id": "c3-stepfun-licence-attribution",
+      "subject": "stepfun-model-licence-1-0",
+      "predicate": "states_provision",
+      "object": {
+        "kind": "literal",
+        "value": "\"Powered by StepFun AI\" display for products above 100 million monthly active users or US$20 million monthly revenue"
+      },
+      "topic": "governance",
+      "statement": "The StepFun Model License 1.0 requires a commercial product or service using the model that, in any calendar month, has more than 100 million active users or more than US$20 million in revenue to display \"Powered by StepFun AI\" prominently thereafter.",
+      "time": {
+        "kind": "event",
+        "date": "2026-10-13",
+        "basis": "publication",
+        "note": "Provision as stated in LICENSE.txt at the cited commit."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "What the licence text states (Section 2(b)); compliance or enforcement is not recorded.",
+      "evidence": [
+        {
+          "id": "c3-ev-stepfun-licence-attribution",
+          "sourceId": "c3-src-step5-license",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Section 2(b), \"Attribution\"",
+          "passageType": "quote",
+          "passage": "has more than 100,000,000 active users or generates revenue exceeding US$20,000,000",
+          "translation": null
+        },
+        {
+          "id": "c3-ev-stepfun-licence-attribution-2",
+          "sourceId": "c3-src-step5-license",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Section 2(b)",
+          "passageType": "quote",
+          "passage": "You must thereafter prominently display \"Powered by StepFun AI\"",
+          "translation": null
+        }
+      ]
+    },
+    {
+      "id": "c3-stepfun-licence-commercial",
+      "subject": "stepfun-model-licence-1-0",
+      "predicate": "states_provision",
+      "object": {
+        "kind": "literal",
+        "value": "Separate commercial licence for device makers and for MaaS operators above US$20 million revenue"
+      },
+      "topic": "governance",
+      "statement": "The StepFun Model License 1.0 requires a separate commercial licence agreement with StepFun AI before a hardware maker or brand owner begins to make the model's capabilities commercially available as a feature of its devices, or before commercial use by a licensee operating a Model-as-a-Service business whose combined revenue exceeds US$20 million over twelve months.",
+      "time": {
+        "kind": "event",
+        "date": "2026-10-13",
+        "basis": "publication",
+        "note": "Provision as stated in LICENSE.txt at the cited commit."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "What the licence text states (Section 2(c)); the section exempts internal use without third-party access and use through channels StepFun AI certifies. Enforcement is not recorded.",
+      "evidence": [
+        {
+          "id": "c3-ev-stepfun-licence-commercial",
+          "sourceId": "c3-src-step5-license",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Section 2(c), \"Commercial License\"",
+          "passageType": "quote",
+          "passage": "You must enter into a separate commercial license agreement with StepFun AI before You or Your affiliates",
+          "translation": null
+        },
+        {
+          "id": "c3-ev-stepfun-licence-commercial-2",
+          "sourceId": "c3-src-step5-license",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Section 2(c)(ii)",
+          "passageType": "quote",
+          "passage": "operate a MaaS business, if the combined revenue of You and Your affiliates from all sources exceeds US$20,000,000",
+          "translation": null
+        }
+      ]
+    },
+    {
+      "id": "c3-stepfun-licence-outputs",
+      "subject": "stepfun-model-licence-1-0",
+      "predicate": "states_provision",
+      "object": {
+        "kind": "literal",
+        "value": "A model trained to a material extent on the model's outputs counts as a Derivative Work"
+      },
+      "topic": "governance",
+      "statement": "The StepFun Model License 1.0 deems a model trained to a material extent on outputs of the licensed model to reproduce or contain a substantial part of it, bringing such a model within its definition of a Derivative Work.",
+      "time": {
+        "kind": "event",
+        "date": "2026-10-13",
+        "basis": "publication",
+        "note": "Provision as stated in LICENSE.txt at the cited commit."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "What the licence text states (Section 1, definitions); how \"material extent\" is assessed is not stated in the text, and enforcement is not recorded.",
+      "evidence": [
+        {
+          "id": "c3-ev-stepfun-licence-outputs",
+          "sourceId": "c3-src-step5-license",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Section 1, definition of \"Derivative Work\"",
+          "passageType": "quote",
+          "passage": "A model trained to a material extent on outputs of the Model is deemed to reproduce or contain a substantial part of the Model.",
+          "translation": null
+        }
+      ]
+    },
+    {
+      "id": "c3-stepfun-legal-form-site",
+      "subject": "stepfun",
+      "predicate": "has_legal_form",
+      "object": {
+        "kind": "literal",
+        "value": "上海阶跃星辰智能科技股份有限公司 (StepFun Intelligence Co., Ltd.), a joint-stock company limited by shares"
+      },
+      "topic": "institutions",
+      "statement": "The footer of StepFun's website, as read on 29 October 2026, carries the copyright line \"Copyright © 2023 上海阶跃星辰智能科技股份有限公司\" (English version: \"StepFun Intelligence Co., Ltd.\").",
+      "time": {
+        "kind": "snapshot",
+        "date": "2026-10-29",
+        "note": "State of the site build file at retrieval; when the footer took this wording is not known."
+      },
+      "derivation": "inferred",
+      "resolution": "supported",
+      "qualification": "A copyright line names a rights holder; it is not a registry extract, and the registration date is not stated. The CAC filing lists retrieved for this pack's governance group name 上海阶跃星辰智能科技有限公司 (a limited liability form) as the filing entity for the same filing number shown in this footer (Shanghai-JieYue-20231106); no change of legal form, and no relation between the two names, is inferred here. 股份有限公司 is rendered \"joint-stock company limited by shares\".",
+      "evidence": [
+        {
+          "id": "c3-ev-stepfun-legal-form-site",
+          "sourceId": "c3-src-stepfun-site-bundle",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Site footer strings (Chinese)",
+          "passageType": "quote",
+          "passage": "Copyright © 2023 上海阶跃星辰智能科技股份有限公司",
+          "translation": {
+            "text": "Copyright © 2023 Shanghai StepFun Intelligent Technology Co., Ltd. (joint-stock company limited by shares)",
+            "method": "machine",
+            "humanVerified": false
+          }
+        },
+        {
+          "id": "c3-ev-stepfun-legal-form-site-2",
+          "sourceId": "c3-src-stepfun-site-bundle",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Site footer strings (English)",
+          "passageType": "quote",
+          "passage": "Copyright © 2023 StepFun Intelligence Co., Ltd.",
+          "translation": null
+        },
+        {
+          "id": "c3-ev-stepfun-legal-form-site-3",
+          "sourceId": "c3-src-stepfun-site-bundle",
+          "sourceRole": "primary",
+          "support": "context",
+          "locator": "Site footer strings (Chinese), next to the copyright line",
+          "passageType": "quote",
+          "passage": "备案号：Shanghai-JieYue-20231106",
+          "translation": {
+            "text": "Filing number: Shanghai-JieYue-20231106",
+            "method": "machine",
+            "humanVerified": false
+          }
+        }
+      ],
+      "inferenceRationale": "The copyright line is on StepFun's own website; the record takes the named rights holder as the legal name StepFun uses for itself there. The site does not state in words that this is the company's registered name."
+    },
+    {
+      "id": "c3-stepfun-b-plus-round-2026",
+      "subject": "stepfun",
+      "predicate": "announced_funding",
+      "object": {
+        "kind": "literal",
+        "value": "超50亿元人民币的B+轮融资 (a B+ round of more than RMB 5 billion), reported as completed"
+      },
+      "topic": "capital",
+      "statement": "QbitAI, republished by 36Kr on 27 January 2026, reported that StepFun had completed a B+ financing round of more than RMB 5 billion.",
+      "time": {
+        "kind": "event",
+        "date": "2026-01-27",
+        "basis": "publication",
+        "note": "Publication date of the report; the closing date of the round is not stated."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "The record rests on reporting: no StepFun announcement or filing stating the round was located (StepFun's own newsroom post of 26 January 2026 on its chairman does not mention it). No investor is named in the report's statement, and the amount is the report's \"more than\" figure, not a verified transfer. 融资 is rendered \"financing\".",
+      "evidence": [
+        {
+          "id": "c3-ev-stepfun-b-plus-round-2026",
+          "sourceId": "c3-src-qbitai-stepfun-2026",
+          "sourceRole": "secondary",
+          "support": "supports",
+          "locator": "Opening paragraphs",
+          "passageType": "quote",
+          "passage": "一是完成超50亿元人民币的B+轮融资。",
+          "translation": {
+            "text": "First, it completed a B+ round of financing of more than 5 billion yuan (RMB).",
+            "method": "machine",
+            "humanVerified": false
+          }
+        }
+      ],
+      "attributes": {
+        "stage": "reported as completed",
+        "round": "B+"
+      }
+    },
+    {
+      "id": "c3-01ai-yi-report",
+      "subject": "zero-one-ai",
+      "predicate": "published",
+      "object": {
+        "kind": "entity",
+        "entityId": "yi-report"
+      },
+      "topic": "ideas",
+      "statement": "01.AI posted the technical report \"Yi: Open Foundation Models by 01.AI\" to arXiv on 7 March 2024 (version 1), describing the Yi family of language and multimodal models based on 6B and 34B pretrained models.",
+      "time": {
+        "kind": "event",
+        "date": "2024-03-07",
+        "basis": "publication",
+        "note": "Submission date of arXiv version 1; the Yi-6B and Yi-34B base models were placed on Hugging Face in November 2023 (see the Yi-34B model card record)."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "The report is the developer's own description; performance claims in it are out of scope. The author list names 01.AI staff in alphabetical order; no person in it is identified with an existing dataset entity.",
+      "evidence": [
+        {
+          "id": "c3-ev-01ai-yi-report",
+          "sourceId": "c3-src-yi-pdf-v1",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Title page",
+          "passageType": "quote",
+          "passage": "Yi: Open Foundation Models by 01.AI 01.AI",
+          "translation": null
+        },
+        {
+          "id": "c3-ev-01ai-yi-report-2",
+          "sourceId": "c3-src-yi-abs-v1",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "arXiv abstract page, abstract",
+          "passageType": "quote",
+          "passage": "The Yi model family is based on 6B and 34B pretrained language models",
+          "translation": null
+        }
+      ]
+    },
+    {
+      "id": "c3-01ai-yi-lightning-report",
+      "subject": "zero-one-ai",
+      "predicate": "published",
+      "object": {
+        "kind": "entity",
+        "entityId": "yi-lightning-report"
+      },
+      "topic": "ideas",
+      "statement": "01.AI posted the Yi-Lightning Technical Report to arXiv on 2 December 2024 (version 1), presenting Yi-Lightning as its latest flagship large language model.",
+      "time": {
+        "kind": "event",
+        "date": "2024-12-02",
+        "basis": "publication",
+        "note": "Submission date of arXiv version 1. 01.AI's company page dates the release of Yi-Lightning (Yi-Lightning 发布) to 2024.10, month precision; the report is a separate, later document."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "The report is the developer's own description; rankings and performance claims are out of scope.",
+      "evidence": [
+        {
+          "id": "c3-ev-01ai-yi-lightning-report",
+          "sourceId": "c3-src-yi-lightning-abs-v1",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "arXiv abstract page, abstract",
+          "passageType": "quote",
+          "passage": "This technical report presents Yi-Lightning, our latest flagship large language model (LLM).",
+          "translation": null
+        },
+        {
+          "id": "c3-ev-01ai-yi-lightning-report-2",
+          "sourceId": "c3-src-01ai-about",
+          "sourceRole": "primary",
+          "support": "context",
+          "locator": "公司介绍, timeline entry 2024.10",
+          "passageType": "quote",
+          "passage": "2024.10 Yi-Lightning 发布",
+          "translation": {
+            "text": "2024.10 Yi-Lightning released",
+            "method": "machine",
+            "humanVerified": false
+          }
+        }
+      ]
+    },
+    {
+      "id": "c3-01ai-yi-34b-card",
+      "subject": "zero-one-ai",
+      "predicate": "published",
+      "object": {
+        "kind": "entity",
+        "entityId": "yi-34b-model-card"
+      },
+      "topic": "ideas",
+      "statement": "01.AI's Yi-34B Hugging Face model card of 4 November 2023 introduced the Yi series as large language models trained from scratch, with an initial public release of two bilingual base models of 6B and 34B parameters, and dated the base models' release to 2 November 2023.",
+      "time": {
+        "kind": "event",
+        "date": "2023-11-04",
+        "basis": "publication",
+        "note": "Date of the cited commit of the card. The repository's initial commit is of 1 November 2023; the card's News section gives 2023/11/02 for the base models; 01.AI's company page dates the open-source release of Yi-34B to 2023.11. Not a verified moment of public availability."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "The card's description is the developer's own; benchmark tables are out of scope. \"Trained from scratch\" is the card's wording; see the separate record on the card's later statement on Llama.",
+      "evidence": [
+        {
+          "id": "c3-ev-01ai-yi-34b-card",
+          "sourceId": "c3-src-yi34b-readme-1104",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "README, \"Introduction\"",
+          "passageType": "quote",
+          "passage": "The first public release contains two bilingual(English/Chinese) base models with the parameter sizes of 6B and 34B.",
+          "translation": null
+        },
+        {
+          "id": "c3-ev-01ai-yi-34b-card-2",
+          "sourceId": "c3-src-yi34b-readme-1104",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "README, \"News\"",
+          "passageType": "quote",
+          "passage": "2023/11/02**: The base model of `Yi-6B` and `Yi-34B`.",
+          "translation": null
+        },
+        {
+          "id": "c3-ev-01ai-yi-34b-card-3",
+          "sourceId": "c3-src-01ai-about",
+          "sourceRole": "primary",
+          "support": "context",
+          "locator": "公司介绍, timeline entry 2023.11",
+          "passageType": "quote",
+          "passage": "2023.11 Yi-34B 开源发布",
+          "translation": {
+            "text": "2023.11 Yi-34B open-source release",
+            "method": "machine",
+            "humanVerified": false
+          }
+        }
+      ]
+    },
+    {
+      "id": "c3-01ai-yi-llama-statement",
+      "subject": "zero-one-ai",
+      "predicate": "published",
+      "object": {
+        "kind": "entity",
+        "entityId": "yi-llama-relation-statement"
+      },
+      "topic": "ideas",
+      "statement": "From its revision of 6 February 2024, 01.AI's Yi-34B model card stated that the Yi series models adopt the same model architecture as Llama but are not derivatives of Llama.",
+      "time": {
+        "kind": "event",
+        "date": "2024-02-06",
+        "basis": "publication",
+        "note": "Date of the earliest commit at which a scan of the README history found the sentence; it remains in the card at the commit of 30 May 2024. The statement may also appear earlier in the 01-ai/Yi GitHub repository, which was not scanned for it."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "What 01.AI's card states about its own models; it does not establish the technical relation between Yi and Llama, which is not assessed here. The background of the statement is not recorded.",
+      "evidence": [
+        {
+          "id": "c3-ev-01ai-yi-llama-statement",
+          "sourceId": "c3-src-yi34b-readme-0206",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "README, \"Yi's relation with Llama\", TL;DR",
+          "passageType": "quote",
+          "passage": "The Yi series models adopt the same model architecture as Llama but are **NOT** derivatives of Llama.",
+          "translation": null,
+          "note": "NOT is set in bold in the README; the asterisks are its Markdown."
+        }
+      ]
+    },
+    {
+      "id": "c3-01ai-yi-licence-v1",
+      "subject": "zero-one-ai",
+      "predicate": "published",
+      "object": {
+        "kind": "entity",
+        "entityId": "yi-licence-v1-0"
+      },
+      "topic": "governance",
+      "statement": "01.AI placed the Yi Series Models License Agreement, Version 1.0, dated 1 November 2023, in the Yi-34B Hugging Face repository on 1 November 2023.",
+      "time": {
+        "kind": "event",
+        "date": "2023-11-01",
+        "basis": "publication",
+        "note": "Date of the commit \"add LICENSE\"; the agreement states the same release date. Version 2.0 replaced the file on 4 November 2023."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "The licence is described as the text describes itself; no judgement is made whether it meets any definition of open source. Its definition clause calls the Yi Series Models \"opensource models\". Coordinator recheck of the repository history: the file cited (e055d54, 1 November 2023) was reformatted the same day (a7c6fc5) and its contact address changed on 2 November (ce65074); on 4 November 2023 the sentence limiting use to non-commercial purposes was removed while the file still read Version 1.0 (18156fa), and the file was relabelled Version 2.0, dated 4 November 2023, later that day (c8651b5).",
+      "evidence": [
+        {
+          "id": "c3-ev-01ai-yi-licence-v1",
+          "sourceId": "c3-src-yi34b-license-v10",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Heading",
+          "passageType": "quote",
+          "passage": "Yi Series Models License Agreement Version [1.0] Date of Release [November 1, 2023]",
+          "translation": null
+        }
+      ]
+    },
+    {
+      "id": "c3-01ai-yi-licence-v1-noncommercial",
+      "subject": "yi-licence-v1-0",
+      "predicate": "states_provision",
+      "object": {
+        "kind": "literal",
+        "value": "Use for non-commercial purposes only; commercial use requires the licensor's prior written authorisation"
+      },
+      "topic": "governance",
+      "statement": "Version 1.0 of the Yi Series Models License Agreement permits use of the Yi models only for non-commercial purposes and requires a prospective commercial user to contact the licensor in advance and obtain its written authorisation.",
+      "time": {
+        "kind": "event",
+        "date": "2023-11-01",
+        "basis": "publication",
+        "note": "Provision as stated in the LICENSE at the cited commit."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "What the licence text states; later versions changed the commercial route (see version 2.1). Enforcement is not recorded. Coordinator recheck of the repository history: the file cited (e055d54, 1 November 2023) was reformatted the same day (a7c6fc5) and its contact address changed on 2 November (ce65074); on 4 November 2023 the sentence limiting use to non-commercial purposes was removed while the file still read Version 1.0 (18156fa), and the file was relabelled Version 2.0, dated 4 November 2023, later that day (c8651b5).",
+      "evidence": [
+        {
+          "id": "c3-ev-01ai-yi-licence-v1-noncommercial",
+          "sourceId": "c3-src-yi34b-license-v10",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Section 2, \"License and License Restrictions\"",
+          "passageType": "quote",
+          "passage": "You may only use the Yi Series Models for non-Commercial Purposes",
+          "translation": null
+        },
+        {
+          "id": "c3-ev-01ai-yi-licence-v1-noncommercial-2",
+          "sourceId": "c3-src-yi34b-license-v10",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Section 2, final paragraph",
+          "passageType": "quote",
+          "passage": "you should contact the Licensor in advance as specified in Section 7 of this Agreement",
+          "translation": null
+        }
+      ]
+    },
+    {
+      "id": "c3-01ai-yi-licence-v1-derivatives",
+      "subject": "yi-licence-v1-0",
+      "predicate": "states_provision",
+      "object": {
+        "kind": "literal",
+        "value": "Derivatives include models trained on synthetic data generated from Yi models"
+      },
+      "topic": "governance",
+      "statement": "Version 1.0 of the Yi Series Models License Agreement defines Derivatives to include models created by transferring the Yi models' weights, parameters, activations or output patterns, including methods that generate synthetic data from the Yi models to train other models.",
+      "time": {
+        "kind": "event",
+        "date": "2023-11-01",
+        "basis": "publication",
+        "note": "Provision as stated in the LICENSE at the cited commit."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "What the definition clause states; enforcement is not recorded. Coordinator recheck of the repository history: the file cited (e055d54, 1 November 2023) was reformatted the same day (a7c6fc5) and its contact address changed on 2 November (ce65074); on 4 November 2023 the sentence limiting use to non-commercial purposes was removed while the file still read Version 1.0 (18156fa), and the file was relabelled Version 2.0, dated 4 November 2023, later that day (c8651b5).",
+      "evidence": [
+        {
+          "id": "c3-ev-01ai-yi-licence-v1-derivatives",
+          "sourceId": "c3-src-yi34b-license-v10",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Section 1, definition of \"Derivatives\"",
+          "passageType": "quote",
+          "passage": "generating synthetic data based on Yi Series Models to train other models",
+          "translation": null
+        }
+      ]
+    },
+    {
+      "id": "c3-01ai-yi-licence-v1-laws",
+      "subject": "yi-licence-v1-0",
+      "predicate": "states_provision",
+      "object": {
+        "kind": "literal",
+        "value": "\"Laws and Regulations\" defined as those of mainland China; no military or unlawful use"
+      },
+      "topic": "governance",
+      "statement": "Version 1.0 of the Yi Series Models License Agreement defines \"Laws and Regulations\" as the laws and administrative regulations of the mainland of the People's Republic of China, and bars use, copying, distribution or derivatives of the Yi models for military or unlawful purposes.",
+      "time": {
+        "kind": "event",
+        "date": "2023-11-01",
+        "basis": "publication",
+        "note": "Provision as stated in the LICENSE at the cited commit."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "What the licence text states; it also refers to the applicable legal requirements of other countries and regions. Enforcement is not recorded. Coordinator recheck of the repository history: the file cited (e055d54, 1 November 2023) was reformatted the same day (a7c6fc5) and its contact address changed on 2 November (ce65074); on 4 November 2023 the sentence limiting use to non-commercial purposes was removed while the file still read Version 1.0 (18156fa), and the file was relabelled Version 2.0, dated 4 November 2023, later that day (c8651b5).",
+      "evidence": [
+        {
+          "id": "c3-ev-01ai-yi-licence-v1-laws",
+          "sourceId": "c3-src-yi34b-license-v10",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Section 1, definition of \"Laws and Regulations\"",
+          "passageType": "quote",
+          "passage": "refers to the laws and administrative regulations of the mainland of the People's Republic of China",
+          "translation": null
+        },
+        {
+          "id": "c3-ev-01ai-yi-licence-v1-laws-2",
+          "sourceId": "c3-src-yi34b-license-v10",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Section 2, restriction 2",
+          "passageType": "quote",
+          "passage": "You shall not, for military or unlawful purposes",
+          "translation": null
+        }
+      ]
+    },
+    {
+      "id": "c3-01ai-legal-form-licensor",
+      "subject": "zero-one-ai",
+      "predicate": "has_legal_form",
+      "object": {
+        "kind": "literal",
+        "value": "北京零一万物信息技术有限公司 (Beijing Lingyiwanwu Information Technology Co., Ltd), a limited liability company, named as licensor of the Yi models"
+      },
+      "topic": "institutions",
+      "statement": "The Yi Series Models License Agreement published in 01.AI's Yi-34B repository names its licensor as 北京零一万物信息技术有限公司 (Beijing Lingyiwanwu Information Technology Co., Ltd), in version 1.0 of 1 November 2023 and again in version 2.1 of 23 November 2023.",
+      "time": {
+        "kind": "snapshot",
+        "date": "2023-11-23",
+        "note": "Latest of the two cited licence versions naming this licensor; also named in version 1.0 of 1 November 2023. Registration date not stated."
+      },
+      "derivation": "inferred",
+      "resolution": "supported",
+      "qualification": "The licence names the party granting rights in the Yi models; it is not a registry extract and does not state the company's registration or that it is 01.AI's only entity. The AIIA signatory list (c2-governance-aiia-aisc-signatory-zero-one-ai) and the CAC filing list retrieved for this pack's governance group name a differently worded company, 北京零一万物科技有限公司; no relation between the two names is inferred. 有限公司 is rendered \"limited liability company\".",
+      "evidence": [
+        {
+          "id": "c3-ev-01ai-legal-form-licensor",
+          "sourceId": "c3-src-yi34b-license-v21",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Section 1 (English), definition of \"Licensor\"",
+          "passageType": "quote",
+          "passage": "“Licensor” refers to Beijing Lingyiwanwu Information Technology Co., Ltd.",
+          "translation": null
+        },
+        {
+          "id": "c3-ev-01ai-legal-form-licensor-2",
+          "sourceId": "c3-src-yi34b-license-v21",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "第1条 (Chinese), 定义",
+          "passageType": "quote",
+          "passage": "“许可方”是指北京零一万物信息技术有限公司。",
+          "translation": {
+            "text": "\"Licensor\" means Beijing Lingyiwanwu Information Technology Co., Ltd.",
+            "method": "machine",
+            "humanVerified": false
+          }
+        },
+        {
+          "id": "c3-ev-01ai-legal-form-licensor-3",
+          "sourceId": "c3-src-yi34b-license-v10",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Section 1 (Chinese), definition, version 1.0",
+          "passageType": "quote",
+          "passage": "“许可方”是指【北京零一万物信息技术有限公司】",
+          "translation": {
+            "text": "\"Licensor\" means [Beijing Lingyiwanwu Information Technology Co., Ltd.]",
+            "method": "machine",
+            "humanVerified": false
+          }
+        }
+      ],
+      "inferenceRationale": "The licence is published in 01.AI's own Hugging Face repository for its Yi models, which the Yi report attributes to 01.AI; the record takes the named licensor as a legal entity name 01.AI uses for the Yi models. The licence does not say in words that the licensor is 01.AI.",
+      "relatedExisting": ["c2-governance-aiia-aisc-signatory-zero-one-ai"]
+    },
+    {
+      "id": "c3-01ai-yi-licence-v21",
+      "subject": "zero-one-ai",
+      "predicate": "published",
+      "object": {
+        "kind": "entity",
+        "entityId": "yi-community-licence-v2-1"
+      },
+      "topic": "governance",
+      "statement": "01.AI placed the Yi Series Models Community License Agreement, Version 2.1, dated 23 November 2023, in the Yi-34B Hugging Face repository on 23 November 2023; the model card's news section records the agreement as updated to v2.1 on that date.",
+      "time": {
+        "kind": "event",
+        "date": "2023-11-23",
+        "basis": "publication",
+        "note": "Date of the cited commit; the agreement states the same release date. It remained the repository's LICENSE until 30 May 2024."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "The licence is described as the text describes itself. The agreement is the third text in the file's history (versions 1.0 of 1 November and 2.0 of 4 November 2023 preceded it); the predecessor named by the update notice is not stated, so no supersession record is drafted.",
+      "evidence": [
+        {
+          "id": "c3-ev-01ai-yi-licence-v21",
+          "sourceId": "c3-src-yi34b-license-v21",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Heading",
+          "passageType": "quote",
+          "passage": "Yi Series Models Community License Agreement Version: 2.1 Date of Release: November 23, 2023",
+          "translation": null
+        },
+        {
+          "id": "c3-ev-01ai-yi-licence-v21-2",
+          "sourceId": "c3-src-yi34b-readme-0530",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "README, \"News\"",
+          "passageType": "quote",
+          "passage": "2023-11-23: The Yi Series Models Community License Agreement is updated to v2.1.",
+          "translation": null
+        }
+      ]
+    },
+    {
+      "id": "c3-01ai-yi-licence-v21-registration",
+      "subject": "yi-community-licence-v2-1",
+      "predicate": "states_provision",
+      "object": {
+        "kind": "literal",
+        "value": "Commercial use licensed by submitting a registration form"
+      },
+      "topic": "governance",
+      "statement": "Version 2.1 of the Yi Series Models Community License Agreement states that a prospective commercial user obtains the licence for commercial purposes by completing and sending the registration form attached to the Yi Series Models Commercial License Agreement.",
+      "time": {
+        "kind": "event",
+        "date": "2023-11-23",
+        "basis": "publication",
+        "note": "Provision as stated in the LICENSE at the cited commit."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "What the licence text states; version 1.0 had required prior written authorisation instead. 登记 is rendered \"registration\". Whether registrations were processed is not recorded.",
+      "evidence": [
+        {
+          "id": "c3-ev-01ai-yi-licence-v21-registration",
+          "sourceId": "c3-src-yi34b-license-v21",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Section 2, final paragraph",
+          "passageType": "quote",
+          "passage": "please refer to the Registration Form of Yi Series Models for Commercial Purposes",
+          "translation": null
+        },
+        {
+          "id": "c3-ev-01ai-yi-licence-v21-registration-2",
+          "sourceId": "c3-src-yi34b-license-v21",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Section 2, final paragraph",
+          "passageType": "quote",
+          "passage": "to complete the registration and obtain the license for Commercial Purposes.",
+          "translation": null
+        }
+      ]
+    },
+    {
+      "id": "c3-01ai-yi-34b-apache",
+      "subject": "zero-one-ai",
+      "predicate": "published",
+      "object": {
+        "kind": "entity",
+        "entityId": "yi-34b-apache-licence"
+      },
+      "topic": "governance",
+      "statement": "On 30 May 2024 the LICENSE file of 01.AI's Yi-34B Hugging Face repository was replaced with the Apache License 2.0, and the model card stated that the code and weights of the Yi series models are distributed under the Apache 2.0 license.",
+      "time": {
+        "kind": "event",
+        "date": "2024-05-30",
+        "basis": "publication",
+        "note": "Date of the commit that replaced the LICENSE file; the card's licence section already named Apache 2.0 at the commit of 29 May 2024."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "The licence is described as the text describes itself. The record covers the Yi-34B repository at the cited commit; whether the change applied retroactively to earlier downloads is not stated.",
+      "evidence": [
+        {
+          "id": "c3-ev-01ai-yi-34b-apache",
+          "sourceId": "c3-src-yi34b-license-apache",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "LICENSE, heading",
+          "passageType": "quote",
+          "passage": "Apache License Version 2.0, January 2004",
+          "translation": null
+        },
+        {
+          "id": "c3-ev-01ai-yi-34b-apache-2",
+          "sourceId": "c3-src-yi34b-readme-0530",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "README, \"License\"",
+          "passageType": "quote",
+          "passage": "The code and weights of the Yi series models are distributed under the",
+          "translation": null
+        }
+      ]
+    },
+    {
+      "id": "c3-01ai-yi-1-5-card",
+      "subject": "zero-one-ai",
+      "predicate": "published",
+      "object": {
+        "kind": "entity",
+        "entityId": "yi-1-5-34b-model-card"
+      },
+      "topic": "ideas",
+      "statement": "01.AI's Yi-1.5-34B Hugging Face model card of 12 May 2024 described Yi-1.5 as an upgraded version of Yi, continuously pre-trained on a 500-billion-token corpus and fine-tuned on 3 million samples, and carried the licence tag apache-2.0.",
+      "time": {
+        "kind": "event",
+        "date": "2024-05-12",
+        "basis": "publication",
+        "note": "Date of the commit creating the card; model files were uploaded on 11 May 2024. Not a verified moment of public availability."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "The card's description is the developer's own; benchmark claims are out of scope. The licence tag is card metadata, not a licence text.",
+      "evidence": [
+        {
+          "id": "c3-ev-01ai-yi-1-5-card",
+          "sourceId": "c3-src-yi15-34b-readme",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "README, \"Intro\"",
+          "passageType": "paraphrase",
+          "passage": "The card introduces Yi-1.5 as an upgraded version of Yi, continuously pre-trained on Yi with a 500-billion-token corpus and fine-tuned on 3 million fine-tuning samples.",
+          "translation": null,
+          "anchor": "Yi-1.5 is an upgraded version of Yi."
+        },
+        {
+          "id": "c3-ev-01ai-yi-1-5-card-2",
+          "sourceId": "c3-src-yi15-34b-readme",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "README, metadata header",
+          "passageType": "quote",
+          "passage": "license: apache-2.0",
+          "translation": null
+        }
+      ]
+    },
+    {
+      "id": "c3-01ai-yi-coder-card",
+      "subject": "zero-one-ai",
+      "predicate": "published",
+      "object": {
+        "kind": "entity",
+        "entityId": "yi-coder-9b-model-card"
+      },
+      "topic": "ideas",
+      "statement": "01.AI's Yi-Coder-9B Hugging Face model card of 3 September 2024 described the Yi-Coder series as models trained for coding tasks in 1.5B and 9B sizes, and carried the licence tag apache-2.0.",
+      "time": {
+        "kind": "event",
+        "date": "2024-09-03",
+        "basis": "publication",
+        "note": "Date of the earliest README commit; the repository was created on 15 August 2024 and model files uploaded on 27 August 2024. Not a verified moment of public availability."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "The card's description is the developer's own; benchmark comparisons in it are out of scope. The licence tag is card metadata, not a licence text.",
+      "evidence": [
+        {
+          "id": "c3-ev-01ai-yi-coder-card",
+          "sourceId": "c3-src-yi-coder-9b-readme",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "README, \"Intro\"",
+          "passageType": "paraphrase",
+          "passage": "The card describes the Yi-Coder series as models trained for coding tasks, in two sizes (1.5B and 9B), supporting 52 programming languages.",
+          "translation": null,
+          "anchor": "Yi-Coder series models are trained for coding tasks"
+        },
+        {
+          "id": "c3-ev-01ai-yi-coder-card-2",
+          "sourceId": "c3-src-yi-coder-9b-readme",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "README, metadata header",
+          "passageType": "quote",
+          "passage": "license: apache-2.0",
+          "translation": null
+        }
+      ]
+    },
+    {
+      "id": "c3-01ai-yi-report-raise",
+      "subject": "yi-report",
+      "predicate": "states_provision",
+      "object": {
+        "kind": "literal",
+        "value": "Responsible AI Safety Engine (RAISE) covering pretraining, alignment and deployment"
+      },
+      "topic": "governance",
+      "statement": "The Yi technical report states that 01.AI developed a full-stack Responsible AI Safety Engine (RAISE) for safe pretraining, alignment and deployment, including pretraining data filters and an alignment safety taxonomy.",
+      "time": {
+        "kind": "event",
+        "date": "2024-03-07",
+        "basis": "publication",
+        "note": "Statement in arXiv version 1; later versions not inspected."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "What the report states about its own safety measures; their effect and adequacy are not recorded. The safety taxonomy's categories are as the report lists them.",
+      "evidence": [
+        {
+          "id": "c3-ev-01ai-yi-report-raise",
+          "sourceId": "c3-src-yi-pdf-v1",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Section 5, \"Safety\"",
+          "passageType": "quote",
+          "passage": "we develop a full-stack Responsible AI Safety Engine (RAISE). RAISE ensures safe pretraining, alignment, and deployment.",
+          "translation": null
+        },
+        {
+          "id": "c3-ev-01ai-yi-report-raise-2",
+          "sourceId": "c3-src-yi-pdf-v1",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Section 5, \"Safety in Alignment\"",
+          "passageType": "quote",
+          "passage": "we first build a comprehensive safety taxonomy",
+          "translation": null
+        }
+      ]
+    },
+    {
+      "id": "c3-01ai-yi-lightning-raise",
+      "subject": "yi-lightning-report",
+      "predicate": "states_provision",
+      "object": {
+        "kind": "literal",
+        "value": "RAISE framework of four components across pre-training, post-training and inference-time input/output processing"
+      },
+      "topic": "governance",
+      "statement": "The Yi-Lightning Technical Report describes RAISE (Responsible AI Safety Engine) as a framework of four components, RAISE-1 to RAISE-4, corresponding to pre-training, post-training and inference-time input and output processing.",
+      "time": {
+        "kind": "event",
+        "date": "2024-12-02",
+        "basis": "publication",
+        "note": "Statement in arXiv version 1; later versions not inspected."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "What the report states about the framework's design; its effect is not recorded.",
+      "evidence": [
+        {
+          "id": "c3-ev-01ai-yi-lightning-raise",
+          "sourceId": "c3-src-yi-lightning-pdf-v1",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Section on safety (RAISE)",
+          "passageType": "quote",
+          "passage": "The RAISE framework comprises four integral components (RAISE-1 to RAISE-4), corresponding to pre-training, post-training, and inference-time input/output processing.",
+          "translation": null
+        }
+      ]
+    },
+    {
+      "id": "c3-01ai-yi-lightning-raise-1",
+      "subject": "yi-lightning-report",
+      "predicate": "states_provision",
+      "object": {
+        "kind": "literal",
+        "value": "RAISE-1: safety classification models filtering pre-training data"
+      },
+      "topic": "governance",
+      "statement": "The Yi-Lightning Technical Report states that, as RAISE-1, a safety model filters pre-training data, using classification models built on Transformer and DNN architectures.",
+      "time": {
+        "kind": "event",
+        "date": "2024-12-02",
+        "basis": "publication",
+        "note": "Statement in arXiv version 1; later versions not inspected."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "What the report states about its own data pipeline; its effect is not recorded.",
+      "evidence": [
+        {
+          "id": "c3-ev-01ai-yi-lightning-raise-1",
+          "sourceId": "c3-src-yi-lightning-pdf-v1",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "RAISE-1: Pre-training Safety",
+          "passageType": "quote",
+          "passage": "At the pre-training phase, we implement a safety model for pretraining data filtration.",
+          "translation": null
+        },
+        {
+          "id": "c3-ev-01ai-yi-lightning-raise-1-2",
+          "sourceId": "c3-src-yi-lightning-pdf-v1",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "RAISE-1: Pre-training Safety",
+          "passageType": "quote",
+          "passage": "We develop classification models based on Transformer and DNN architectures",
+          "translation": null
+        }
+      ]
+    },
+    {
+      "id": "c3-01ai-q-ai-jv",
+      "subject": "zero-one-ai",
+      "predicate": "formed_entity",
+      "object": {
+        "kind": "entity",
+        "entityId": "q-ai-kazakhstan"
+      },
+      "topic": "institutions",
+      "statement": "01.AI's WeChat account stated on 30 June 2026 that Kazakhstan and 01.AI had jointly announced the formal establishment of a joint venture they had formed, Q.AI.",
+      "time": {
+        "kind": "event",
+        "date": "2026-06-30",
+        "basis": "announcement",
+        "note": "Creation time of the WeChat post; 01.AI's company page dates the establishment of Q.AI to 2026.06 (month precision). The registration date of Q.AI is not stated. The post’s dateline (Astana, 29 June 2026) dates the joint announcement it reports; 30 June 2026 is the post’s creation time."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "The post names the counterparty only as \"Kazakhstan\" (哈萨克斯坦) and says it compiles reports from the Kazakh Ministry of Artificial Intelligence and Digital Development's press service and broadcasters; which Kazakh body holds the other interest, the ownership shares and the legal form are not stated and are not inferred. 组建 is rendered \"formed\" and 成立 \"established\".",
+      "evidence": [
+        {
+          "id": "c3-ev-01ai-q-ai-jv",
+          "sourceId": "c3-src-01ai-wx-qai",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Opening paragraph",
+          "passageType": "quote",
+          "passage": "哈萨克斯坦与李开复博士创立的大模型公司零一万物共同宣布，双方组建的合资企业 Q.AI 正式成立。",
+          "translation": {
+            "text": "Kazakhstan and 01.AI, the large-model company founded by Dr Kai-Fu Lee, jointly announced that the joint venture Q.AI formed by the two sides has been formally established.",
+            "method": "machine",
+            "humanVerified": false
+          }
+        },
+        {
+          "id": "c3-ev-01ai-q-ai-jv-2",
+          "sourceId": "c3-src-01ai-about",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "公司介绍, timeline entry 2026.06",
+          "passageType": "paraphrase",
+          "passage": "01.AI's company page lists, in its timeline, the establishment of Q.AI, a joint venture formed by Kazakhstan and 01.AI.",
+          "translation": {
+            "text": "Q.AI, the joint venture jointly formed by Kazakhstan and 01.AI, is established (anchor rendering: the joint venture Q.AI was established)",
+            "method": "machine",
+            "humanVerified": false
+          },
+          "anchor": "合资企业 Q.AI 成立"
+        }
+      ],
+      "attributes": {
+        "stage": "stated as established",
+        "relation": "joint venture"
+      }
+    },
+    {
+      "id": "c3-01ai-wanfeng-jv",
+      "subject": "zero-one-ai",
+      "predicate": "formed_entity",
+      "object": {
+        "kind": "entity",
+        "entityId": "wanfeng-zhineng"
+      },
+      "topic": "institutions",
+      "statement": "01.AI's WeChat account stated on 2 June 2026 that 01.AI and CP Group (正大集团) would jointly establish a joint venture company, 万蜂智能 (Wanfeng Zhineng).",
+      "time": {
+        "kind": "event",
+        "date": "2026-06-02",
+        "basis": "announcement",
+        "note": "Creation time of the WeChat post, which reports a signing and launch event; 01.AI's company page lists the establishment of 万蜂智能 under 2026.06 (month precision)."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "The post states a plan (将共同成立, \"will jointly establish\"); the company page later lists the joint venture as established, but its registration, legal form and ownership shares are not stated. Which CP Group entity is party is not stated. The English name \"CP Group\" is this record's rendering of 正大集团.",
+      "evidence": [
+        {
+          "id": "c3-ev-01ai-wanfeng-jv",
+          "sourceId": "c3-src-01ai-wx-cp",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Body, signing paragraph",
+          "passageType": "quote",
+          "passage": "零一万物与正大集团将共同成立合资公司“万蜂智能”",
+          "translation": {
+            "text": "01.AI and CP Group will jointly establish a joint venture company, \"Wanfeng Zhineng\"",
+            "method": "machine",
+            "humanVerified": false
+          }
+        },
+        {
+          "id": "c3-ev-01ai-wanfeng-jv-2",
+          "sourceId": "c3-src-01ai-about",
+          "sourceRole": "primary",
+          "support": "context",
+          "locator": "公司介绍, timeline entry 2026.06",
+          "passageType": "paraphrase",
+          "passage": "01.AI's company page lists, in its timeline, a strategic cooperation with CP Group (正大集团) and the establishment of a joint venture, 万蜂智能.",
+          "translation": {
+            "text": "reached a strategic cooperation with Fortune Global 500 company CP Group and established the joint venture company Wanfeng Zhineng (anchor rendering: established the joint venture 万蜂智能)",
+            "method": "machine",
+            "humanVerified": false
+          },
+          "anchor": "成立合资公司万蜂智能"
+        }
+      ],
+      "attributes": {
+        "stage": "announced"
+      }
+    }
+  ]
+}

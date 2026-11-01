@@ -2,7 +2,7 @@ import { Fragment, useLayoutEffect } from 'react';
 import type { Repository } from '../domain/repository';
 import { startHref } from './SiteChrome';
 import { startIds } from './start-ids';
-import { NavLink, RecordLink } from './NavLink';
+import { ClaimLink, NavLink, RecordLink, SectionLink } from './NavLink';
 import type { Claim } from '../domain/schema';
 import { timeLabel } from '../domain/query';
 import { derivationLabels, resolutionLabels } from '../domain/epistemics';
@@ -105,12 +105,12 @@ function StarterRow({
 }: ClaimProps & { claim: Claim }) {
   return (
     <li data-question-claim={claim.id}>
-      <button
+      <ClaimLink
         className="dossier-claim doc-claim"
-        data-claim-id={claim.id}
         aria-label={`Inspect claim & evidence: ${claim.statement}`}
-        aria-pressed={selectedClaimId === claim.id}
-        onClick={() => onClaim(claim.id)}
+        pressed={selectedClaimId === claim.id}
+        claimId={claim.id}
+        onOpen={() => onClaim(claim.id)}
       >
         {claim.attributes?.changeBasis && (
           <span
@@ -125,14 +125,15 @@ function StarterRow({
         </span>
         <span className="dossier-statement">{claim.statement}</span>
         <span className="dossier-relation">
-          {timeLabel(claim)} · {derivationLabels[claim.derivation]} ·{' '}
+          {timeLabel(claim, repository.data)} ·{' '}
+          {derivationLabels[claim.derivation]} ·{' '}
           {resolutionLabels[claim.resolution]}{' '}
           <ReviewMarkers claim={claim} repository={repository} />
         </span>
         <span className="dossier-evidence-link">
           Inspect claim & evidence ↗
         </span>
-      </button>
+      </ClaimLink>
       <p className="qs-qualification">
         <strong>Qualification.</strong> {claim.qualification}
       </p>
@@ -157,9 +158,14 @@ function RecordButtons({
       {ids.map((id, i) => (
         <span key={id}>
           {i > 0 && ' · '}
-          <button className="text-button" onClick={() => onClaim(id)}>
+          <ClaimLink
+            secondary
+            className="text-button"
+            claimId={id}
+            onOpen={() => onClaim(id)}
+          >
             {claimRoute(repository.claims.get(id)!, repository)}
-          </button>
+          </ClaimLink>
         </span>
       ))}
     </p>
@@ -248,17 +254,9 @@ export function QuestionStarter({
         <ol>
           {parts.map((p) => (
             <li key={p.id}>
-              <button
-                className="text-button"
-                onClick={() => {
-                  // Hash addresses belong to the router; move focus instead.
-                  const target = document.getElementById(headingId(p.id));
-                  target?.scrollIntoView({ block: 'start' });
-                  target?.focus({ preventScroll: true });
-                }}
-              >
+              <SectionLink className="text-button" id={headingId(p.id)}>
                 {p.title}
-              </button>
+              </SectionLink>
             </li>
           ))}
         </ol>

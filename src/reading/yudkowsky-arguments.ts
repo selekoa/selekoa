@@ -1,53 +1,15 @@
 import type { PropositionsCollection } from '../domain/propositions';
+import { yudkowskyArgumentsFrame as frame } from './proposition-frames';
 
 export const yudkowskyArguments: PropositionsCollection = {
-  id: 'yudkowsky-arguments',
-  version: 1,
-  title: 'Eliezer Yudkowsky’s arguments on common claims about AI, 1996–2026',
-  question:
-    'Which located texts by Eliezer Yudkowsky, from 1996 to 2026, state, contest or bear on 29 claims often made about advanced AI? For each claim, which of his located texts is the earliest to contest it, and which earlier views of his did later texts of his contest?',
-  editorialStatus: 'machine-proposed',
+  id: frame.id,
+  version: frame.version,
+  title: frame.title,
+  question: frame.question,
+  editorialStatus: frame.editorialStatus,
   introduction:
     'Each claim is recorded as a proposition with one criterion. It is phrased generically and attributed to no one. A text of his that meets the criterion articulates the proposition. A text that disputes it, or a premise it depends on, contests it, and the record says whether the passage gives a reason against a premise or states the contrary only. A text that comes close bears on it, and its record names what is missing. Texts are listed in date order. The page records what he wrote and when. It does not assess whether he was right.',
-  groups: [
-    {
-      id: 'Y',
-      label: 'Common claims about advanced AI',
-      description:
-        'Claims often made about advanced AI, phrased generically for this collection. The codes follow the numbers of the research pack the records come from, which has no Y23.',
-      propositionIds: [
-        'switch-off-if-dangerous',
-        'intelligence-brings-benevolence',
-        'understanding-implies-compliance',
-        'short-instruction-suffices',
-        'feedback-instils-values',
-        'confinement-keeps-it-safe',
-        'ai-solves-alignment',
-        'warning-signs-in-time',
-        'next-word-prediction-is-shallow',
-        'diminishing-returns-to-intelligence',
-        'slow-takeoff-time-to-adjust',
-        'evaluations-catch-danger',
-        'agi-decades-away',
-        'fix-problems-as-they-arise',
-        'tool-without-goals',
-        'give-it-human-values',
-        'pause-or-regulation-suffices',
-        'earth-not-worth-taking',
-        'harm-requires-hostility',
-        'risk-is-film-fiction',
-        'human-data-humanlike-mind',
-        'build-superintelligence-fast',
-        'build-it-before-rivals',
-        'interpretability-reads-its-mind',
-        'no-body-no-danger',
-        'experiment-and-see',
-        'developers-know-what-they-are-doing',
-        'many-ais-balance',
-        'default-outcome-good',
-      ],
-    },
-  ],
+  groups: frame.groups,
   searchNote: {
     scope:
       'The collection records passages from Yudkowsky’s own writing only. “Earliest located” means the earliest of his texts that the searches below found. It does not mean that he made the point before anyone else, and an earlier text of his may exist outside these searches.',
@@ -99,19 +61,67 @@ export const yudkowskyArguments: PropositionsCollection = {
     'Codes such as T13-a in qualifications refer to the passages of the research pack the records come from; T01 corresponds to Y01.',
     'A machine selected and classified these records, and machine checks re-examined them. No person has reviewed them.',
   ],
-  axis: {
-    from: 1994,
-    to: 2028,
-    ticks: ['1996', '2000', '2005', '2010', '2015', '2020', '2026'],
+  axis: frame.axis,
+  landing: frame.landing,
+  landingAction: frame.landingAction,
+  mostDevelopedEmpty: frame.mostDevelopedEmpty,
+  earliestEmpty: frame.earliestEmpty,
+  related: {
+    'intelligence-brings-benevolence': [
+      {
+        propositionId: 'orthogonality',
+        relation:
+          'The contrary proposition in the collection on catastrophic risk, recorded from texts by many authors.',
+      },
+      {
+        propositionId: 'benevolence-or-no-drive-to-dominate',
+        relation:
+          'A related proposition in the collection on catastrophic risk, recorded from texts by many authors.',
+      },
+    ],
+    'harm-requires-hostility': [
+      {
+        propositionId: 'instrumental-convergence',
+        relation:
+          'A related proposition in the collection on catastrophic risk, recorded from texts by many authors.',
+      },
+    ],
+    'risk-is-film-fiction': [
+      {
+        propositionId: 'risk-claims-speculative',
+        relation:
+          'A related proposition in the collection on catastrophic risk, recorded from texts by many authors.',
+      },
+    ],
+    'agi-decades-away': [
+      {
+        propositionId: 'capabilities-plateau',
+        relation:
+          'A related proposition in the collection on catastrophic risk, recorded from texts by many authors.',
+      },
+    ],
+    'next-word-prediction-is-shallow': [
+      {
+        propositionId: 'llms-lack-agency',
+        relation:
+          'A related proposition in the collection on catastrophic risk, recorded from texts by many authors.',
+      },
+    ],
+    'tool-without-goals': [
+      {
+        propositionId: 'llms-lack-agency',
+        relation:
+          'A related proposition in the collection on catastrophic risk, recorded from texts by many authors.',
+      },
+    ],
+    'slow-takeoff-time-to-adjust': [
+      {
+        propositionId: 'gradual-takeoff',
+        relation:
+          'A related proposition in the collection on catastrophic risk, recorded from texts by many authors.',
+      },
+    ],
   },
-  landing:
-    '{propositions} claims often made about advanced AI, each recorded as a proposition with one criterion, and {records} records from {texts} texts by Eliezer Yudkowsky, 1996–2026, that state, contest or bear on them. Each claim names his earliest located text that contests it, and his earlier views appear with his later texts that contest them. The page can be downloaded as a research starter, with the original sources first.',
-  landingAction: 'Read his arguments, claim by claim →',
-  mostDevelopedEmpty: null,
-  earliestEmpty: 'None of his located texts states it.',
-  // Premises that no located passage addresses, as the research pack states
-  // them. The pack's per-proposition search notes stay in the pack, because
-  // they quote further passages that no quotation limit has counted.
   openPremises: {
     'pause-or-regulation-suffices': [
       'No located passage discusses whether a fixed but longer pause, short of an indefinite halt, would suffice.',

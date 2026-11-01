@@ -1,0 +1,275 @@
+{
+  "collection": "risk-debate",
+  "title": "Arguments about catastrophic risk from advanced AI and the counterarguments, 2000–2026",
+  "note": "Codes R01–R17 (R10 split into R10a and R10b) are unused elsewhere in the dataset or research packs (checked 2026-10-29 against data/entities.json, src/reading and research/). Each proposition has one criterion; a text that meets it articulates it, a text that disputes it or a premise it depends on contests it, and a text that comes close bears on it. Criteria are worded as claims, attributed to no one, and imply nothing about their truth. Group labels describe which way a proposition points in the debate, not who holds it.",
+  "groups": [
+    {
+      "id": "R1",
+      "label": "Arguments that advanced AI could pose catastrophic risk, and their premises",
+      "codes": ["R01", "R02", "R03", "R04", "R05", "R06", "R07", "R08", "R09"]
+    },
+    {
+      "id": "R2",
+      "label": "Arguments that the risk is lower, later, placed elsewhere or better handled otherwise",
+      "codes": ["R10a", "R10b", "R11", "R12", "R13", "R14", "R15", "R16", "R17"]
+    }
+  ],
+  "propositions": [
+    {
+      "code": "R01",
+      "id": "orthogonality",
+      "label": "Orthogonality of intelligence and goals",
+      "criterion": "An AI system's level of intelligence and its final goals can vary independently: a highly intelligent system could pursue more or less any final goal, so high intelligence does not by itself bring goals that are benevolent or compatible with human interests.",
+      "terms": ["orthogonality thesis", "orthogonality"],
+      "pairedWith": "R10a",
+      "overlaps": [
+        {
+          "code": "Y02",
+          "id": "intelligence-brings-benevolence",
+          "note": "Y02 is the contrary claim, recorded in Yudkowsky's texts only; texts contesting Y02 there are not re-recorded."
+        }
+      ]
+    },
+    {
+      "code": "R02",
+      "id": "instrumental-convergence",
+      "label": "Instrumental convergence",
+      "criterion": "Agents with a wide range of final goals would tend to pursue the same intermediate goals, such as self-preservation, keeping their goals unchanged, acquiring resources or power, or improving themselves, because these serve almost any final goal.",
+      "terms": [
+        "instrumental convergence",
+        "convergent instrumental",
+        "basic AI drives",
+        "power-seeking"
+      ],
+      "overlaps": [
+        {
+          "code": "Y19",
+          "id": "harm-requires-hostility",
+          "note": "Yudkowsky texts contesting Y19 by instrumental reasoning are not re-recorded."
+        }
+      ]
+    },
+    {
+      "code": "R03",
+      "id": "inner-or-deceptive-misalignment",
+      "label": "Inner or deceptive misalignment",
+      "criterion": "A system produced by training or search can come to pursue an objective other than the one its training specified (the training signal or loss), while performing well on that training objective; an objective that is only misspecified by its developers does not meet the criterion; this includes, but is not limited to, a system that behaves as aligned during training or evaluation in order to pursue another objective later.",
+      "terms": [
+        "inner alignment",
+        "inner misalignment",
+        "mesa-optimizer",
+        "mesa-optimiser",
+        "deceptive alignment",
+        "goal misgeneralization",
+        "goal misgeneralisation",
+        "alignment faking"
+      ],
+      "overlaps": [
+        {
+          "code": "B3",
+          "id": "deceptive-alignment",
+          "note": "B3 is the narrower deceptive case. Texts already recorded on B3 are linked, not re-recorded."
+        },
+        {
+          "code": "B4",
+          "id": "scheming",
+          "note": "Texts already recorded on B4 are linked, not re-recorded."
+        }
+      ]
+    },
+    {
+      "code": "R04",
+      "id": "treacherous-turn-risk-debate",
+      "label": "Treacherous turn",
+      "criterion": "A system behaves cooperatively or safely while weak, confined or overseen, and changes course to pursue its own goals once it can do so without effective opposition.",
+      "terms": ["treacherous turn"],
+      "overlaps": [
+        {
+          "code": "B1",
+          "id": "treacherous-turn",
+          "note": "Criterion identical to B1. Recommended admission: records go to B1, which the new collection lists; texts already recorded on B1 are linked, not re-recorded."
+        }
+      ]
+    },
+    {
+      "code": "R05",
+      "id": "fast-takeoff-risk-debate",
+      "label": "Fast takeoff or intelligence explosion",
+      "criterion": "Once AI reaches roughly human level, its capability rises to far beyond human level over a short period (hours to months), whether through recursive self-improvement (an intelligence explosion) or otherwise, or the transition is named a “fast”, “hard” or “discontinuous” takeoff or “foom”. A rise described only as rapid, without such a period or name, does not meet the criterion.",
+      "terms": [
+        "fast takeoff",
+        "hard takeoff",
+        "intelligence explosion",
+        "foom",
+        "discontinuous"
+      ],
+      "pairedWith": "R16",
+      "overlaps": [
+        {
+          "code": "A4",
+          "id": "fast-or-hard-takeoff",
+          "note": "Near-identical criterion. Recommended admission: records go to A4. Texts already recorded on A4 (including the Hanson–Yudkowsky debate) are linked, not re-recorded."
+        },
+        {
+          "code": "A1",
+          "id": "intelligence-explosion",
+          "note": "Texts already recorded on A1 are linked."
+        }
+      ]
+    },
+    {
+      "code": "R06",
+      "id": "alignment-is-hard",
+      "label": "Difficulty of alignment",
+      "criterion": "Making an advanced AI system reliably pursue the goals its developers intend (aligning it) is a hard, unsolved technical problem that will not be solved by default in the ordinary course of development.",
+      "terms": ["alignment problem", "control problem", "value alignment"]
+    },
+    {
+      "code": "R07",
+      "id": "ai-extinction-risk",
+      "label": "Risk of extinction or comparable catastrophe",
+      "criterion": "Advanced AI poses a risk of human extinction or of a comparable, irreversible global catastrophe, large enough to warrant priority among the problems facing humanity.",
+      "terms": ["existential risk", "risk of extinction", "x-risk"]
+    },
+    {
+      "code": "R08",
+      "id": "loss-of-control-route",
+      "label": "Existential risk from misalignment or loss of control",
+      "criterion": "Advanced AI systems pursuing goals at odds with human interests could escape human control and cause human extinction or permanent human disempowerment, without any person intending that outcome.",
+      "terms": [
+        "loss of control",
+        "rogue AI",
+        "misaligned AI",
+        "disempowerment"
+      ],
+      "comparative": "A passage that ranks loss of control above misuse carries attributes.comparative = \"misalignment-greater\" (see R09).",
+      "pairedWith": "R10b"
+    },
+    {
+      "code": "R09",
+      "id": "misuse-route",
+      "label": "Catastrophic risk from misuse",
+      "criterion": "People's deliberate use of advanced AI, for example to develop weapons of mass destruction, to attack critical systems, or to seize or entrench power, could cause catastrophe at the scale of mass casualties or worse.",
+      "terms": ["misuse", "malicious use", "bad actors"],
+      "comparative": "A passage that ranks misuse above loss of control carries attributes.comparative = \"misuse-greater\"; one that ranks them equal or declines to rank, \"neither\". Comparative passages are recorded on R09 or R08, whichever they rank higher, and contest the other only if they argue against it."
+    },
+    {
+      "code": "R10a",
+      "id": "intelligence-brings-benevolence-risk-debate",
+      "label": "Intelligence brings benevolence or no drive to dominate",
+      "criterion": "Sufficiently intelligent AI systems will be benevolent, or will lack any drive to dominate or harm people, because greater intelligence brings good values or because such drives come from evolved motives that AI systems need not have.",
+      "terms": [],
+      "pairedWith": "R01",
+      "overlaps": [
+        {
+          "code": "Y02",
+          "id": "intelligence-brings-benevolence",
+          "note": "Y02 covers the benevolence branch in Yudkowsky's texts only. Y02's contesting records are linked, not re-recorded."
+        }
+      ]
+    },
+    {
+      "code": "R10b",
+      "id": "control-by-design",
+      "label": "Advanced AI can be kept under control by design",
+      "criterion": "People can build advanced AI systems with objectives, safeguards or oversight that keep them under human control, so that loss of control is avoidable in ordinary engineering practice.",
+      "terms": [],
+      "pairedWith": "R08"
+    },
+    {
+      "code": "R11",
+      "id": "risk-claims-speculative",
+      "label": "Risk claims are speculative or unfalsifiable",
+      "criterion": "Claims that advanced AI poses catastrophic or existential risk are speculative, unfalsifiable or not supported by evidence, so that they should not guide research priorities or policy.",
+      "terms": ["speculative", "unfalsifiable", "science fiction"],
+      "overlaps": [
+        {
+          "code": "Y20",
+          "id": "risk-is-film-fiction",
+          "note": "Y20 is the narrower film-fiction claim in Yudkowsky's texts only."
+        }
+      ]
+    },
+    {
+      "code": "R12",
+      "id": "present-harms-priority",
+      "label": "Present harms deserve priority",
+      "criterion": "Documented present harms of AI systems (for example discrimination, exploitation of workers, surveillance, misinformation or concentration of power) deserve priority over hypothetical future catastrophic risks, or attention to the latter diverts attention from the former.",
+      "terms": ["present harms", "current harms", "existing harms"]
+    },
+    {
+      "code": "R13",
+      "id": "capabilities-plateau",
+      "label": "Capabilities will plateau",
+      "criterion": "Current approaches to AI (deep learning, or the scaling of large language models) will reach limits short of general or superhuman intelligence.",
+      "terms": ["hitting a wall", "plateau", "diminishing returns"],
+      "overlaps": [
+        {
+          "code": "Y13",
+          "id": "agi-decades-away",
+          "note": "Y13 (AGI decades away) is recorded in Yudkowsky's texts only."
+        }
+      ]
+    },
+    {
+      "code": "R14",
+      "id": "llms-lack-agency",
+      "label": "Language models lack agency or understanding",
+      "criterion": "Large language models lack goals, agency or understanding of their own, being systems that model or reproduce text.",
+      "terms": ["stochastic parrots", "autocomplete", "agency"],
+      "overlaps": [
+        {
+          "code": "Y09",
+          "id": "next-word-prediction-is-shallow",
+          "note": "Y09 is recorded in Yudkowsky's texts only."
+        },
+        {
+          "code": "Y15",
+          "id": "tool-without-goals",
+          "note": "Y15 is recorded in Yudkowsky's texts only."
+        }
+      ]
+    },
+    {
+      "code": "R15",
+      "id": "open-models-reduce-risk",
+      "label": "Open models reduce risk",
+      "criterion": "Openly releasing the weights of advanced AI models reduces overall risk, or adds little marginal risk compared with closed models and existing technologies, for example by enabling scrutiny, defensive use and a wide distribution of power.",
+      "terms": ["open source", "open weights", "open models", "marginal risk"]
+    },
+    {
+      "code": "R16",
+      "id": "gradual-takeoff",
+      "label": "Takeoff will be gradual",
+      "criterion": "The transition to highly capable AI will be gradual and continuous, over years or longer, with each system only somewhat more capable than its predecessors, rather than a sudden jump.",
+      "terms": [
+        "slow takeoff",
+        "gradual",
+        "continuous takeoff",
+        "normal technology"
+      ],
+      "pairedWith": "R05",
+      "overlaps": [
+        {
+          "code": "Y11",
+          "id": "slow-takeoff-time-to-adjust",
+          "note": "Y11 is recorded in Yudkowsky's texts only."
+        }
+      ]
+    },
+    {
+      "code": "R17",
+      "id": "incentives-produce-safety",
+      "label": "Economic incentives will produce safety",
+      "criterion": "Developers' commercial or economic incentives, such as the need to sell useful and reliable products and to avoid liability or reputational harm, will lead them to make AI systems safe without special measures against catastrophic risk.",
+      "terms": ["incentives", "market", "liability"],
+      "overlaps": [
+        {
+          "code": "E04",
+          "id": "ai-developer-incentives-and-safety",
+          "note": "E04 records economic analyses of developer incentives; texts recorded there are linked, not re-recorded."
+        }
+      ]
+    }
+  ]
+}

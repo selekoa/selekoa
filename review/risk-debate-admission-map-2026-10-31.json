@@ -1,0 +1,1129 @@
+{
+  "description": "Authored map for the admission of the risk-debate candidate pack (research/risk-debate) by scripts/risk-debate-admission.ts. It applies the maintainer's decisions of 2026-10-30 (open questions 1–15, all as recommended) and the adjudication of 2026-10-31 of the cross-family check, both recorded in review/risk-debate-pack-2026-10-29.md. Every decision, correction and hold here carries its reason. Records not named here are admitted as the pack states them, under the general rules in `rules`.",
+  "admissionDate": "2026-10-31",
+  "files": {
+    "pack": "research/risk-debate/pack.json",
+    "verification": "research/risk-debate/verification.json",
+    "check": "research/risk-debate/cross-family-check-2026-10-29.json",
+    "admission": "research/risk-debate/admission-verification-2026-10-31.json"
+  },
+  "snapshotDescription": "Rows added and changed by the admission of the risk-debate candidate pack (scripts/risk-debate-admission.ts, review/risk-debate-admission-2026-10-31.md). Removing the added rows and restoring the changed ones reproduces the dataset as it was at baseCommit.",
+  "scope": "The risk-debate admission (2026-10-31) adds the collection of arguments about catastrophic risk from advanced AI, 2000–2026: published texts that state, contest or bear on sixteen propositions of their own and on the existing treacherous-turn and fast-takeoff propositions, with the published replies between them; every record is a seed with machine-checked evidence.",
+  "rules": [
+    "Decision 1: the pack's R04 records are admitted on the existing concept treacherous-turn (B1) and its R05 records on fast-or-hard-takeoff (A4), each classified against that concept's own criterion; the pack's earliest-located roles on R04 and R05 lapse, and B1 and A4 keep the roles their collection decided. The superintelligence collection names no earliest-located contesting record, so no admitted record takes that role on B1 or A4.",
+    "Decision 1, IDs: the pack's working codes R04 and R05 are re-lettered in record IDs (rd-r04- to rd-b1-, rd-r05- to rd-a4-), as the ontology asks for working codes (schema 2.22).",
+    "Convention C4: admitted proposition-record IDs are stance-neutral. The pack's suffixes -contests and -context are dropped unless that would give two records one ID.",
+    "Decision 2: R03 is admitted as its own concept, inner-or-deceptive-misalignment; no text recorded on B3 or B4 is re-recorded on it.",
+    "Decision 3: the Yudkowsky claims Y02, Y09, Y11, Y13, Y15, Y19 and Y20 stay separate; each is linked to its R counterpart in both collection definitions (src/reading/risk-debate.ts and src/reading/yudkowsky-arguments.ts), and B3 and B4 to R03 in the superintelligence definition.",
+    "Decisions 4 and 5: R10a, R10b and the narrowed R13 and R14 criteria are admitted as the pack states them.",
+    "Decisions 11–13: the 2019 thread records are dated by the compiler's copy; reports and signed statements are recorded as texts, with no stance attributed to any signatory and no signatory list.",
+    "Decision 14: the pack's 22 replies are admitted as cites claims with the reply qualification; its 17 debates become a reading list in the collection definition, not a schema type.",
+    "Decision 15: no record or interface text places a record or an author on a side; the pack's position counts stay in the research files.",
+    "No schema change: the pack's `comparative` attribute (R08/R09 ranking) has no schema field and is not admitted; the two records that rank misuse above loss of control say so in their statements already. Its date bases `posting`, `submission` and `delivery` become `publication` (posting and submission, with the basis in the note) or no basis (delivery, a talk).",
+    "Adjudication of 2026-10-31: earlier-located roles move only to dated texts; leads whose historical date cannot be pinned are listed in the collection's search note, not admitted as headlines.",
+    "Reader-facing text never names a record ID; a pointer to another record becomes \"recorded separately\"."
+  ],
+  "propositions": {
+    "R01": {
+      "id": "orthogonality"
+    },
+    "R02": {
+      "id": "instrumental-convergence"
+    },
+    "R03": {
+      "id": "inner-or-deceptive-misalignment",
+      "note": "Decision 2: B3 (deceptive alignment) and B4 (scheming) are narrower cases; texts recorded on them are not re-recorded here."
+    },
+    "R04": {
+      "existing": "treacherous-turn",
+      "code": "B1",
+      "idCode": "b1"
+    },
+    "R05": {
+      "existing": "fast-or-hard-takeoff",
+      "code": "A4",
+      "idCode": "a4"
+    },
+    "R06": {
+      "id": "alignment-is-hard"
+    },
+    "R07": {
+      "id": "ai-extinction-risk"
+    },
+    "R08": {
+      "id": "loss-of-control-route"
+    },
+    "R09": {
+      "id": "misuse-route"
+    },
+    "R10a": {
+      "id": "benevolence-or-no-drive-to-dominate",
+      "reason": "The pack's working ID (intelligence-brings-benevolence-risk-debate) names the collection; the admitted ID names the proposition and does not collide with Y02's intelligence-brings-benevolence."
+    },
+    "R10b": {
+      "id": "control-by-design"
+    },
+    "R11": {
+      "id": "risk-claims-speculative"
+    },
+    "R12": {
+      "id": "present-harms-priority"
+    },
+    "R13": {
+      "id": "capabilities-plateau"
+    },
+    "R14": {
+      "id": "llms-lack-agency"
+    },
+    "R15": {
+      "id": "open-models-reduce-risk"
+    },
+    "R16": {
+      "id": "gradual-takeoff"
+    },
+    "R17": {
+      "id": "incentives-produce-safety"
+    }
+  },
+  "subtypes": {
+    "Paper": "Research paper",
+    "Essay": "Essay",
+    "Blog post": "Blog post",
+    "Forum thread": "Comment",
+    "Signed statement": "Declaration or statement",
+    "Open letter": "Letter",
+    "Lecture transcript": "Lecture or talk",
+    "Report": "Report",
+    "Book excerpt": "Magazine article",
+    "Testimony": "Testimony",
+    "arXivPaper": "Preprint"
+  },
+  "documentSubtypes": {
+    "pace-2019-instrumental-convergence-debate": "Forum post",
+    "hinton-2024-nobel-banquet": "Speech",
+    "intl-ai-safety-report-2025": "Report",
+    "bostrom-2002-existential-risks": "Journal article",
+    "goertzel-2015-superintelligence-fears": "Journal article",
+    "goertzel-pitt-2012-open-source-agi": "Journal article",
+    "gebru-torres-2024-tescreal": "Journal article",
+    "hoes-gilardi-2025-xrisk-narratives": "Journal article",
+    "widder-2024-open-closed": "Journal article",
+    "muller-cannon-2021-existential-risk-orthogonality": "Journal article",
+    "russell-dewey-tegmark-2015-research-priorities": "Journal article",
+    "armstrong-2013-racing": "Technical report",
+    "thorstad-2022-against-singularity-hypothesis": "Working paper",
+    "nature-2023-editorial-stop-talking": "Opinion",
+    "crawford-calo-2016-blind-spot": "Journal article",
+    "seger-2023-open-sourcing": "Preprint"
+  },
+  "documentDates": {
+    "grace-2022-counterarguments": {
+      "date": "2022-08-31",
+      "description": "The date is the byline's. The page metadata gives 14 October 2022 as article:published_time; a cross-family check (2026-10-31, item 87) did not establish that date as the date of publication.",
+      "reason": "Adjudication of 2026-10-31 (date display of item 87 corrected), carried to the document and its source as well as the record (fresh-context review of 2026-10-31)."
+    },
+    "ng-2023-batch-issue-220": {
+      "date": "2023-10",
+      "description": "The issue page displays two dates, 25 and 26 October 2023 (cross-family check, item 95), so only the month is recorded.",
+      "reason": "Adjudication of 2026-10-31 (date display of item 95 corrected), carried to the document and its source as well as the record (fresh-context review of 2026-10-31)."
+    },
+    "goertzel-2015-superintelligence-fears": {
+      "note": "The page gives both \"Vol. 24 Issue 2 – November 2015\" and \"25(2) – December 2015\"; the record keeps November 2015. The cross-family check of 2026-10-31 noted the conflict.",
+      "reason": "Cross-family check, conflicting month and issue labels on the Goertzel 2015 page (fresh-context review of 2026-10-31); the time note states the conflict instead of a generic note."
+    },
+    "benson-tilsen-soares-2015-formalizing-convergent-goals": {
+      "note": "The PDF prints no date; dated by its PDF metadata (created 24 November 2015) on the MIRI copy read. Later citations give 2016 (an AAAI workshop); not verified here.",
+      "reason": "Cross-family check item 38: the date rests on file metadata, a weaker kind of date than posting (fresh-context review of 2026-10-31)."
+    },
+    "lecun-2019-instrumental-convergence-thread": {
+      "note": "Dated by the LessWrong copy of 4 October 2019. The Facebook thread follows the Scientific American piece of 26 September 2019; the copy gives no date for individual comments.",
+      "reason": "Decision 11: the thread is dated by the compiler's copy; the replies carry the same note as the thread's proposition records, not \"Date of posting\" (fresh-context review of 2026-10-31)."
+    },
+    "russell-2019-instrumental-convergence-thread": {
+      "note": "Dated by the LessWrong copy of 4 October 2019. The Facebook thread follows the Scientific American piece of 26 September 2019; the copy gives no date for individual comments.",
+      "reason": "Decision 11: the thread is dated by the compiler's copy; the replies carry the same note as the thread's proposition records, not \"Date of posting\" (fresh-context review of 2026-10-31)."
+    },
+    "zador-2019-instrumental-convergence-thread": {
+      "note": "Dated by the LessWrong copy of 4 October 2019. The Facebook thread follows the Scientific American piece of 26 September 2019; the copy gives no date for individual comments.",
+      "reason": "Decision 11: the thread is dated by the compiler's copy; the replies carry the same note as the thread's proposition records, not \"Date of posting\" (fresh-context review of 2026-10-31)."
+    },
+    "bengio-2019-instrumental-convergence-thread": {
+      "note": "Dated by the LessWrong copy of 4 October 2019. The Facebook thread follows the Scientific American piece of 26 September 2019; the copy gives no date for individual comments.",
+      "reason": "Decision 11: the thread is dated by the compiler's copy; the replies carry the same note as the thread's proposition records, not \"Date of posting\" (fresh-context review of 2026-10-31)."
+    }
+  },
+  "sourceKinds": {
+    "paper": "paper",
+    "post": "post",
+    "webpage": "article",
+    "report": "report",
+    "statement": "announcement",
+    "letter": "announcement",
+    "transcript": "post"
+  },
+  "sourceKindOverrides": {
+    "senate-hearing-2023-07-25": "report",
+    "hinton-2024-nobel-banquet": "article"
+  },
+  "sourceEdits": {
+    "bostrom-2003-ethical-issues": {
+      "archivedUrl": "https://web.archive.org/web/20030806225530/http://www.nickbostrom.com:80/ethics/ai.html",
+      "archivedAt": "2003-08-06",
+      "version": "Current web page on the author's site, retrieved 2026-10-29; its reference list cites a 2003 edition of Creating Friendly AI, so the page may have been revised after 2003.",
+      "versionNote": "The cross-family check of 2026-10-31 found the quoted R01 passage on arbitrary goals and the A4 passage on a transition of days rather than years, in substance, in an archive capture of the author's page of 6 August 2003, which already describes itself as slightly revised. The printed proceedings (pp. 12–17) were not obtained, so this is not a claim that the wording matches them.",
+      "reason": "Fresh-context review of 2026-10-31: the source record must carry the capture on which the records' attested date of 6 August 2003 rests; the pack's \"no earlier copy compared\" no longer holds."
+    },
+    "pinker-2014-edge-myth-of-ai": {
+      "archivedUrl": "https://web.archive.org/web/20141116025552/http://edge.org/conversation/the-myth-of-ai",
+      "archivedAt": "2014-11-16",
+      "versionNote": "The cross-family check of 2026-10-31 found Pinker's passage on evolved drives in the capture of the conversation page of 16 November 2014; a capture attests only what the archive held on that date."
+    },
+    "kelly-2014-edge-myth-of-ai": {
+      "archivedUrl": "https://web.archive.org/web/20141118155641/http://edge.org/conversation/the-myth-of-ai",
+      "archivedAt": "2014-11-18",
+      "versionNote": "The cross-family check of 2026-10-31 found Kelly's passage on modifying programs absent from the capture of 16 November 2014 and present in the capture of 18 November 2014."
+    },
+    "russell-2014-edge-myths-and-moonshine": {
+      "archivedUrl": "https://web.archive.org/web/20141206054052/http://edge.org:80/conversation/the-myth-of-ai",
+      "archivedAt": "2014-12-06",
+      "versionNote": "The cross-family check of 2026-10-31 found Russell's quoted passages absent from the captures of 18 and 21 November 2014 and present in the capture of 6 December 2014."
+    },
+    "bengio-2023-rogue-ais": {
+      "archivedUrl": "https://web.archive.org/web/20230523031438/https://yoshuabengio.org/2023/05/22/how-rogue-ais-may-arise/",
+      "archivedAt": "2023-05-23",
+      "versionNote": "The cross-family check of 2026-10-31 found Definition 1 and Claim 2 in the capture of 23 May 2023, at the post's earlier address; it did not compare the whole page."
+    },
+    "bengio-2024-reasoning-through-arguments": {
+      "archivedUrl": "https://web.archive.org/web/20240709213152/https://yoshuabengio.org/2024/07/09/reasoning-through-arguments-against-taking-ai-safety-seriously/",
+      "archivedAt": "2024-07-09",
+      "versionNote": "The cross-family check of 2026-10-31 found the sampled passages on evidence and on open-sourcing in the capture of 9 July 2024, at the post's earlier address; nearby wording differs, so the whole page is not identical."
+    },
+    "altman-2015-machine-intelligence-part-1": {
+      "versionNote": "The date of 25 February 2015 is not printed in the post's text; the cross-family check of 2026-10-31 could not confirm it from the page body."
+    },
+    "cais-2023-statement": {
+      "versionNote": "The current page does not print the date of 30 May 2023; the cross-family check of 2026-10-31 could not confirm it from this page."
+    },
+    "ng-2023-batch-issue-220": {
+      "versionNote": "The page displays two dates, 25 and 26 October 2023 (cross-family check, item 95)."
+    }
+  },
+  "hold": {
+    "rd-r05-yudkowsky-2017-alphago-zero-foom": "Judgement: under decision 1 the record moves to A4, whose criterion names only a “hard” or “fast” takeoff or a period of hours to months. The passage meets the pack's R05 only through the name “foom” and gives no period for general capability, so it does not meet A4 as worded. Admit it as context on A4, or record it elsewhere, by a maintainer decision.",
+    "rd-r05-drexler-2019-reframing-superintelligence": "Judgement: the report names an “intelligence explosion” and “extremely rapid progress” but states no period; A4's criterion excludes a transition described only as rapid. It may fit A1 (intelligence explosion). Hold for a maintainer decision rather than reclassify a record the check did not sample.",
+    "rd-r05-eth-davidson-2025-software-intelligence-explosion": "Judgement: the passage states a self-accelerating software intelligence explosion with no period and no hard or fast takeoff name, so it does not meet A4 as worded; it may fit A1. Hold for a maintainer decision.",
+    "rd-r05-kokotajlo-2025-ai-2027": "Judgement: the quoted passages call the scenario's AI-dominated research an intelligence explosion and say that superintelligence could arrive by the end of the decade; neither states a transition of hours to months or a hard or fast takeoff. Hold for a maintainer decision (A4 context, or A1).",
+    "rd-r15-ng-2024-batch-257-context": "Fresh-context review of 2026-10-31: the only passage criticises a proposed law for regulating technology instead of applications; neither it nor any other passage mentions open source, so nothing quoted ties the text to R15. Hold for a maintainer decision (a passage on open source, or no record)."
+  },
+  "claims": {
+    "rd-r01-bostrom-2003-ethical-issues": {
+      "roles": ["earliest-located"],
+      "attested": {
+        "date": "2003-08-06",
+        "note": "Read in the 'slightly revised version' on the author's site. The cross-family check of 2026-10-31 found the quoted wording, in substance, in an archive capture of the author's page of 6 August 2003, which already describes itself as slightly revised; the printed proceedings were not obtained."
+      },
+      "dropClaimed": true,
+      "qualification": "A statement of the author's view of what is possible, not evidence that it is true. Earliest located because the quoted wording is attested by a capture of 6 August 2003; it is not evidence of coinage, and the printed proceedings of 2003 were not compared. The passage also states that a superintelligence could have the goal of serving humanity.",
+      "reason": "Adjudication of 2026-10-31 (Bostrom's wording as attested by 6 August 2003) and decision 6 (a match makes it earliest located on R01, recorded as a correction)."
+    },
+    "rd-r01-bostrom-2012-superintelligent-will": {
+      "roles": ["earliest-located-term", "most-developed"],
+      "qualification": "Earliest located use of the name “orthogonality thesis” among the texts the searches found; it is not evidence of coinage. The paper states the thesis 'with some caveats' and holds that it concerns logical possibility, not that arbitrary goals would be easy to instil.",
+      "reason": "The earliest-located role moves to Bostrom 2003 (above); this record keeps the term and most-developed roles."
+    },
+    "rd-r01-brooks-2017-seven-deadly-sins-contests": {
+      "predicate": "bears_on_proposition",
+      "roles": ["context"],
+      "missing": "It argues that such a program would understand the harm it caused to people; it does not state that intelligence brings goals compatible with human interests, or that intelligence and final goals cannot vary independently.",
+      "reason": "Cross-family check item 96 (adjudicated 2026-10-31): understanding harm does not entail concern for humans, so the passage bears on R01 rather than contesting it."
+    },
+    "rd-r10b-andreessen-2023-ai-will-save-the-world": {
+      "predicate": "bears_on_proposition",
+      "roles": ["context"],
+      "missing": "It states that AI is built, owned, used and controlled by people; it names no objectives, safeguards or oversight that keep systems under control by design.",
+      "reason": "Cross-family check item 92 (adjudicated 2026-10-31): present control or ownership is not a design mechanism."
+    },
+    "rd-r05-aschenbrenner-2024-situational-awareness": {
+      "predicate": "bears_on_proposition",
+      "roles": ["context"],
+      "missing": "The passage gives a year or less for compressing a decade of algorithmic progress, not a period for the whole transition, and does not name a hard or fast takeoff; no passage dating the whole transition was located.",
+      "qualificationAppend": "Recorded as context: a cross-family check (2026-10-31, item 90) found that the summary's “≤1 year”, given for compressing algorithmic progress, does not by itself meet the criterion's period, and no passage dating the whole transition was cited.",
+      "reason": "Adjudication of 2026-10-31: item 90 kept only with a qualifying whole-transition passage, otherwise context. None was cited, so context."
+    },
+    "rd-r04-goertzel-2015-superintelligence-fears-contests": {
+      "roles": ["contesting"],
+      "reason": "Decision 1: the pack's earliest-located contesting role on R04 lapses; B1's collection names no earliest-located contesting record."
+    },
+    "rd-r04-ngo-2022-alignment-problem-deep-learning": {
+      "roles": ["articulation"],
+      "qualification": "Records the v1 argument as the author's expectation about future systems. Earlier texts on this proposition, from Creating Friendly AI (2001), are recorded separately.",
+      "reason": "Decision 1: B1's earliest located text is Creating Friendly AI (2001); the pack's role lapses."
+    },
+    "rd-r05-hanson-2014-i-still-dont-get-foom-contests": {
+      "roles": ["contesting"],
+      "qualification": "The post contests the single-project, weeks-long form of the proposition; it accepts that machines may eventually do most mental tasks better and may greatly raise economic growth rates. Hanson's earlier posts in the debate with Yudkowsky (2008–2013) are recorded separately.",
+      "reason": "Decision 1: the pack's earliest-located contesting role on R05 lapses; A4 already holds an earlier contesting record (Hanson, 1996)."
+    },
+    "rd-r05-chalmers-singularity-context": {
+      "roles": ["context"],
+      "dropTerm": true,
+      "qualification": "Chalmers analyses the argument and its premises, qualifies each step with 'absent defeaters', and adopts 'within decades' as the conservative timeframe; the record does not show that he predicts a transition of hours to months. He attributes the name 'intelligence explosion' to Good (1965). The paper's discussion of the concept is recorded separately, not as a stance on it.",
+      "reason": "Decision 1: A4's usual names are “hard takeoff” and “fast takeoff”; the pack's earliest-located-term role, which rested on “intelligence explosion”, lapses."
+    },
+    "rd-r05-muehlhauser-salamon-2012-intelligence-explosion-context": {
+      "qualification": "Read in MIRI's PDF, which states that it contains changes from the Springer chapter. 'Fairly rapidly' names no period, and the chapter does not call the transition a hard or fast takeoff, so the record is context on A4. A statement of the authors' argument, not evidence that it is correct.",
+      "reason": "Decision 1: classified against A4's own criterion; the pack's basis, the name 'intelligence explosion', is not one of A4's usual names (as for Chalmers above). Fresh-context review of 2026-10-31."
+    },
+    "rd-r05-bostrom-2003-ethical-issues": {
+      "attested": {
+        "date": "2003-08-06",
+        "note": "Read in the 'slightly revised version' on the author's site. The cross-family check of 2026-10-31 found the days-rather-than-years wording, in substance, in an archive capture of the author's page of 6 August 2003; the printed proceedings were not obtained."
+      },
+      "statement": "Bostrom's paper of 2003, in the revised version on the author's site, states that the transition from roughly human-level artificial intelligence to full superintelligence may be very rapid, perhaps a matter of days rather than years, and names this possibility the singularity hypothesis.",
+      "qualification": "A statement of possibility ('may'), not a forecast with a probability, and not evidence that such a transition will occur. Earlier texts on this proposition, among them Creating Friendly AI (2001), are recorded separately.",
+      "reason": "Decision 1 (A4) and the check's capture of 6 August 2003 (item 78)."
+    },
+    "rd-r05-thorstad-2022-against-singularity-hypothesis-contests": {
+      "qualification": "Read in the GPI working-paper expression.",
+      "reason": "The pack's qualification described a most-developed role the record does not hold."
+    },
+    "rd-r05-grace-2022-counterarguments-contests": {
+      "time": {
+        "date": "2022-08-31",
+        "note": "Dated by the byline, 31 August 2022. The research pack gave 14 October 2022 as the date of publication; a cross-family check (2026-10-31, item 87) found that the page displays 31 August 2022 and did not establish the later date."
+      },
+      "dropClaimed": true,
+      "reason": "Adjudication of 2026-10-31: the date display of item 87 corrected."
+    },
+    "rd-r05-aiimpacts-2018-discontinuous-progress-agi-contests": {
+      "attested": {
+        "date": "2020-05-26",
+        "note": "Read in the current page, which states that it was last modified on 26 May 2020; the wording of 23 February 2018 was not compared."
+      },
+      "reason": "Adjudication of 2026-10-31: the date display of item 100 corrected; the quoted wording is attested from the modified page."
+    },
+    "rd-r05-kelly-2017-myth-superhuman-ai-contests": {
+      "reason": "Cross-family check item 117: locator corrected (evidence below)."
+    },
+    "rd-r11-ng-2023-batch-issue-220": {
+      "time": {
+        "date": "2023-10",
+        "note": "The page displays two dates, 25 and 26 October 2023 (cross-family check, item 95); the record keeps the month."
+      },
+      "statement": "Ng's letter in The Batch of October 2023 states that the extinction arguments he heard were vague and nonspecific, reducing to \"it could happen\", and argues that such fears should not lead regulators to pass laws that impede progress.",
+      "reason": "Adjudication of 2026-10-31: the date display of item 95 corrected."
+    },
+    "rd-r06-russell-2014-edge-myths-and-moonshine": {
+      "roles": ["articulation"],
+      "attested": {
+        "date": "2014-12-06",
+        "note": "The Edge response carries no date of its own. The cross-family check of 2026-10-31 found the passage absent from captures of 18 and 21 November 2014 and present in the capture of 6 December 2014."
+      },
+      "qualification": "The response states that there is cause for optimism if alignment is treated as intrinsic to AI; it argues for a change in the field's goals, not that alignment cannot be achieved.",
+      "reason": "Adjudication of 2026-10-31: Goertzel (May 2002) holds the earliest-located role on R06."
+    },
+    "rd-r02-russell-2014-edge-myths-and-moonshine": {
+      "attested": {
+        "date": "2014-12-06",
+        "note": "The Edge response carries no date of its own. The cross-family check of 2026-10-31 found the passage absent from captures of 18 and 21 November 2014 and present in the capture of 6 December 2014."
+      },
+      "reason": "Check, version-edge-2014."
+    },
+    "rd-r11-russell-2014-edge-myths-and-moonshine-contests": {
+      "attested": {
+        "date": "2014-12-06",
+        "note": "The Edge response carries no date of its own. The cross-family check of 2026-10-31 found the passage absent from captures of 18 and 21 November 2014 and present in the capture of 6 December 2014."
+      },
+      "qualification": "The response states that none of this proves AI will be the end of the world.",
+      "reason": "Check, version-edge-2014."
+    },
+    "rd-r02-pinker-2014-edge-myth-of-ai-contests": {
+      "attested": {
+        "date": "2014-11-16",
+        "note": "The Edge response carries no date of its own. The cross-family check of 2026-10-31 found the passage in the capture of the conversation page of 16 November 2014."
+      },
+      "qualification": "Earliest located among the contesting records on this proposition; the response is dated by the 2014 conversation and its passage is attested by a capture of 16 November 2014. The passage does not discuss the argument that power or resources would be sought as means to other goals.",
+      "reason": "Check, version-edge-2014: the capture replaces page order as the basis."
+    },
+    "rd-r10b-kelly-2014-edge-myth-of-ai": {
+      "attested": {
+        "date": "2014-11-18",
+        "note": "The Edge response carries no date of its own. The cross-family check of 2026-10-31 found the passage absent from the capture of 16 November 2014 and present in the capture of 18 November 2014."
+      },
+      "qualification": "Earliest located among the texts the searches found. A statement of the author's expectation, not evidence that AI systems will remain alterable; the response says a locked-out scenario is possible but one of many.",
+      "reason": "Check, version-edge-2014; wording of the qualification made independent of the pack's group."
+    },
+    "rd-r10a-pinker-2014-edge-myth-of-ai": {
+      "roles": ["articulation"],
+      "qualification": "The Edge responses carry no dates of their own. The passage also states that goals are extraneous to intelligence, which is the independence that R01 asserts.",
+      "reason": "Adjudication of 2026-10-31: Goertzel (17 February 2004), a dated text, holds the earliest-located role on R10a."
+    },
+    "rd-r07-bostrom-2002-existential-risks": {
+      "roles": ["articulation"],
+      "reason": "Adjudication of 2026-10-31: Joy (April 2000) holds the earliest-located role on R07. The term role is assigned by the passage rule (it falls on the CAIS statement, “risk of extinction”), because none of this record's passages uses an R07 name."
+    },
+    "rd-r12-dair-2023-statement": {
+      "roles": ["articulation"],
+      "reason": "Adjudication of 2026-10-31: Crawford (25 June 2016) holds the earliest-located role on R12."
+    },
+    "rd-r14-marcus-2020-gpt2-nature-of-intelligence": {
+      "roles": ["articulation"],
+      "reason": "Adjudication of 2026-10-31 (earlier-located roles move to dated texts): Marcus and Davis's Wired excerpt of 10 September 2019, the check's independent answer, holds the role."
+    },
+    "rd-r10b-bengio-2019-instrumental-convergence-thread-contests": {
+      "roles": ["contesting"],
+      "reason": "Balance addition adopted on 2026-10-31: Corrigibility (January 2015) contests R10b and is earlier."
+    },
+    "rd-r08-bengio-2023-rogue-ais": {
+      "attested": {
+        "date": "2023-05-23",
+        "note": "The page metadata records a modification on 2025-12-03. The cross-family check of 2026-10-31 found both quoted passages in an archive capture of 23 May 2023; it did not compare the whole page."
+      },
+      "qualification": "The post sets out definitions, hypotheses and numbered claims; it argues that such a system could be built, not that it will be.",
+      "reason": "Cross-family check item 111: the capture of 23 May 2023 attests the quoted wording."
+    },
+    "rd-r11-bengio-2024-reasoning-through-arguments-contests": {
+      "qualification": "The post places the burden of evidence on the \"no worry\" conclusion; it does not state that the risk has been measured. The page metadata records a modification on 2025-12-03; the cross-family check of 2026-10-31 found the quoted wording in an archive capture of 9 July 2024.",
+      "reason": "Cross-family check item 94: the 2024 capture resolves the date and the qualification's “2023 copy” was the wrong year."
+    },
+    "rd-r15-bengio-2024-reasoning-arguments-contests": {
+      "qualificationAppend": "The cross-family check of 2026-10-31 found both quoted passages in an archive capture of 9 July 2024.",
+      "reason": "Cross-family check item 113."
+    },
+    "rd-r06-millidge-2024-alignment-generalizes-further-contests": {
+      "qualificationAppend": "It also states that how to instil values in model-free or hybrid agents is not yet fully understood.",
+      "reason": "Cross-family check item 82: keep the post's limit on instilling values, beside value choice."
+    },
+    "rd-r12-bengio-2023-faq-catastrophic-contests": {
+      "attested": {
+        "date": "2026-10-29",
+        "note": "The page metadata records a modification on 2025-12-03; the quoted wording is attested from the retrieval of 2026-10-29 and was not compared with a copy of its year of publication."
+      },
+      "reason": "Fresh-context review of 2026-10-31: the qualification says the wording is attested only from 2026, so the record carries that attested date, as Bengio's post on rogue AIs does (open question 6; no capture of the FAQ was compared). The term role on R12 is decided by that date; the FAQ is the only R12 record whose passages use a usual name, so it keeps the role, listed for the maintainer."
+    },
+    "rd-r03-carlsmith-2023-scheming-ais": {
+      "statement": "Carlsmith's report of November 2023 examines whether advanced AIs that perform well in training will do so in order to gain power later, and concludes that scheming is a disturbingly plausible outcome of using baseline machine learning methods to train goal-directed AIs sophisticated enough to scheme.",
+      "qualification": "The report also states that there are reasons for comfort; its conclusion is the author's judgement, not a measured frequency.",
+      "reason": "Fresh-context review of 2026-10-31: the statement's figure (about 25%) is in no evidence passage, so it is cut; no new retrieval."
+    },
+    "rd-r06-belrose-pope-2023-ai-easy-to-control-contests": {
+      "statement": "Belrose and Pope's essay of November 2023 argues that AI, even superhuman AI, will remain much more controllable than humans for the foreseeable future, and that it will be easy to instill human values into an AI.",
+      "qualification": "The essay states that it does not directly address the arguments it disputes and defers them to a later document.",
+      "reason": "Fresh-context review of 2026-10-31: the probability of a takeover (roughly 1%) is in no evidence passage, so it is cut from the statement and qualification; no new retrieval."
+    },
+    "rd-r10b-belrose-pope-2023-ai-easy-to-control": {
+      "qualification": "A statement of the authors' argument; the essay says it does not directly address opposing arguments. Most developed is an editorial judgement among the texts found.",
+      "reason": "Fresh-context review of 2026-10-31: the probability of a takeover (roughly 1%) is in no evidence passage of this record, so it is cut."
+    },
+    "rd-r12-hoes-gilardi-2025-xrisk-narratives-contests": {
+      "statement": "The paper by Hoes and Gilardi of April 2025 states that its findings indicate no direct impact of alarmist coverage of AI's existential threats on public concern for the immediate risks of AI, and that concerns about such coverage may be exaggerated.",
+      "qualification": "The evidence concerns public concern; it does not measure the attention of regulators or researchers, nor which harms deserve priority.",
+      "reason": "Fresh-context review of 2026-10-31: the design (three preregistered experiments, 10,800 participants, the countries) is in no evidence passage, so it is cut; no new retrieval."
+    },
+    "rd-r15-gopal-2023-pandemic-agents-contests": {
+      "statement": "Gopal and co-authors' paper of 25 October 2023 states that its results suggest that releasing the weights of advanced foundation models, no matter how robustly safeguarded, will trigger the proliferation of knowledge sufficient to acquire pandemic agents and other biological weapons.",
+      "engagement": {
+        "kind": "engages-premise",
+        "rationale": "Answers the premise that safeguards keep the misuse risk of released weights low, stating that release proliferates such knowledge however robustly the model is safeguarded."
+      },
+      "reason": "Fresh-context review of 2026-10-31: the hackathon, the model and the virus are in no evidence passage, so they are cut from the statement and the engagement; no new retrieval."
+    },
+    "rd-r02-zador-lecun-2019-dont-fear-the-terminator-contests": {
+      "qualification": "The passage locates self-preservation in evolved instinct; it does not discuss the argument that self-preservation would arise as a means to other goals, which Russell, Bengio and others pressed in the 2019 thread that followed the essay (recorded separately, from the LessWrong copy of 4 October 2019).",
+      "reason": "Fresh-context review of 2026-10-31: the thread was retrieved and is recorded (decision 11), and its comments are undated, so \"not retrieved\" and \"of October 2019\" are removed."
+    },
+    "rd-r16-yudkowsky-2017-reply-to-chollet-contests": {
+      "qualification": "The reply addresses the validity of Chollet's arguments and states that it does not try to make the whole case for an intelligence explosion; Chollet's essay, which the reply quotes, was read by the cross-family check in archive captures and is recorded without a stance.",
+      "reason": "Fresh-context review of 2026-10-31 (same kind as the Zador and LeCun correction): Chollet's essay was retrieved by the check and is admitted as a document."
+    }
+  },
+  "textReplacements": [
+    [
+      "Earliest located among the texts this group's search found",
+      "Earliest located among the texts the searches found"
+    ],
+    ["this group's search", "the searches"],
+    ["the same-family audit", "a machine audit of the research pack"],
+    [
+      "was not compared with a 2023 copy",
+      "was not compared with a copy of its year of publication"
+    ]
+  ],
+  "evidence": {
+    "rd-r01-bostrom-2003-ethical-issues:0": {
+      "set": {
+        "locator": "Section 2, “Superintelligence Is Different”, list of unusual aspects of superintelligence"
+      },
+      "reason": "Cross-family check item 106: the list is in section 2."
+    },
+    "rd-r01-bostrom-2003-ethical-issues:1": {
+      "set": {
+        "locator": "Section 2, same passage"
+      },
+      "reason": "Cross-family check item 106."
+    },
+    "rd-r05-kelly-2017-myth-superhuman-ai-contests:0": {
+      "set": {
+        "locator": "Numbered point 4 of the five assumptions"
+      },
+      "reason": "Cross-family check item 117: the passage is under point 4."
+    },
+    "rd-r15-ntia-2024-open-weights-context:0": {
+      "set": {
+        "passage": "current evidence is not sufficient to definitively determine either that restrictions on such open-weight models are warranted, or that restrictions will never be appropriate in the future."
+      },
+      "quoteCorrection": true,
+      "reason": "Cross-family check item 108: the PDF reads “open-weight”; the pack's text layer had lost the hyphen. Matched again at admission."
+    }
+  },
+  "newDocuments": {
+    "joy-2000-why-the-future": {
+      "name": "Why the Future Doesn't Need Us",
+      "shortName": "Joy, Why the Future Doesn't Need Us (2000)",
+      "subtype": "Magazine article",
+      "description": "An essay by Bill Joy in Wired, issue of April 2000.",
+      "sources": ["adm-joy-2000"]
+    },
+    "goertzel-2002-thoughts-on-ai-morality": {
+      "name": "Thoughts on AI Morality",
+      "shortName": "Goertzel, Thoughts on AI Morality (2002)",
+      "subtype": "Essay",
+      "description": "An essay by Ben Goertzel in Dynamical Psychology, dated May 2002 on its page.",
+      "sources": ["adm-goertzel-2002"]
+    },
+    "goertzel-2004-positive-transcension": {
+      "name": "Encouraging a Positive Transcension",
+      "shortName": "Goertzel, Encouraging a Positive Transcension (2004)",
+      "subtype": "Essay",
+      "description": "An essay by Ben Goertzel in Dynamical Psychology, dated 17 February 2004 on its page.",
+      "sources": ["adm-goertzel-2004"]
+    },
+    "marcus-davis-2019-computers-cant-read": {
+      "name": "If Computers Are So Smart, How Come They Can't Read?",
+      "shortName": "Marcus and Davis, If Computers Are So Smart (2019)",
+      "subtype": "Magazine article",
+      "description": "An excerpt from Gary Marcus and Ernest Davis's book Rebooting AI, published by Wired on 10 September 2019.",
+      "sources": ["adm-marcus-davis-2019"]
+    },
+    "crawford-2016-white-guy-problem": {
+      "name": "Artificial Intelligence's White Guy Problem",
+      "shortName": "Crawford, Artificial Intelligence's White Guy Problem (2016)",
+      "subtype": "Newspaper article",
+      "description": "An opinion essay by Kate Crawford in The New York Times, dated 25 June 2016 online and 26 June 2016 in its address.",
+      "sources": ["adm-crawford-2016"]
+    },
+    "violet-hour-2024-two-tales": {
+      "name": "Two Tales of AI Takeover: My Doubts",
+      "shortName": "Violet Hour, Two Tales of AI Takeover (2024)",
+      "subtype": "Forum post",
+      "description": "A LessWrong post of 5 March 2024 by the author published as Violet Hour.",
+      "sources": ["adm-violet-hour-2024"]
+    },
+    "arctotherium-2026-ai-race-dynamics": {
+      "name": "AI Race Dynamics Are Not Always Bad",
+      "shortName": "Arctotherium, AI Race Dynamics Are Not Always Bad (2026)",
+      "subtype": "Blog post",
+      "description": "A post of 1 October 2026 on the Substack newsletter Not With a Bang, by the author published as Arctotherium.",
+      "sources": ["adm-arctotherium-2026"]
+    },
+    "hadshar-2023-evidence-review": {
+      "name": "A Review of the Evidence for Existential Risk from AI via Misaligned Power-Seeking",
+      "shortName": "Hadshar, A Review of the Evidence (2023)",
+      "subtype": "Preprint",
+      "description": "A paper by Rose Hadshar of AI Impacts, arXiv version 1 of 27 October 2023.",
+      "sources": ["adm-hadshar-2023"]
+    },
+    "ej-fli-2023-ai-licensing": {
+      "name": "AI Licensing for a Better Future: On Addressing Both Present Harms and Emerging Threats",
+      "shortName": "Encode Justice and FLI, AI Licensing for a Better Future (2023)",
+      "subtype": "Letter",
+      "description": "A joint open letter by Encode Justice and the Future of Life Institute to members of the United States Congress, published on 25 October 2023.",
+      "sources": ["adm-ej-fli-2023"]
+    },
+    "davidson-2023-compute-centric-takeoff": {
+      "name": "What a compute-centric framework says about AI takeoff speeds",
+      "shortName": "Davidson, What a compute-centric framework says (2023)",
+      "subtype": "Forum post",
+      "description": "A LessWrong post of 23 January 2023 by Tom Davidson summarising a draft report on AI takeoff speeds written for Open Philanthropy.",
+      "sources": ["adm-davidson-2023"]
+    },
+    "chollet-2017-impossibility-intelligence-explosion": {
+      "name": "The impossibility of intelligence explosion",
+      "shortName": "Chollet, The impossibility of intelligence explosion (2017)",
+      "subtype": "Blog post",
+      "description": "A Medium post by François Chollet of 27 November 2017, titled \"The impossibility of intelligence explosion\" in the captures of 2017 and January 2018. Recorded as the text a reply answers; no stance of it is recorded.",
+      "sources": ["adm-chollet-2017"],
+      "reason": "The pack's reply from Yudkowsky (2017) names this essay. The cross-family check retrieved it from captures; its stances are held with the other missing seeds."
+    }
+  },
+  "newSources": {
+    "adm-joy-2000": {
+      "id": "source-rd-joy-2000",
+      "documentId": "joy-2000-why-the-future",
+      "title": "Why the Future Doesn't Need Us",
+      "authors": ["Bill Joy"],
+      "publisher": "Wired (wired.com)",
+      "publicationDate": "2000-04",
+      "url": "https://www.wired.com/2000/04/joy-2/",
+      "kind": "article",
+      "version": "The essay as served by Wired at wired.com, which dates the page 1 April 2000 for the magazine issue of April 2000; the deck above the essay is the magazine's. Its wording can change; earlier wording is not authenticated."
+    },
+    "adm-goertzel-2002": {
+      "id": "source-rd-goertzel-2002",
+      "documentId": "goertzel-2002-thoughts-on-ai-morality",
+      "title": "Thoughts on AI Morality",
+      "authors": ["Ben Goertzel"],
+      "publisher": "Dynamical Psychology (goertzel.org)",
+      "publicationDate": "2002-05",
+      "url": "https://www.goertzel.org/dynapsyc/2002/AIMorality.htm",
+      "kind": "post",
+      "version": "HTML page served at goertzel.org, headed \"Ben Goertzel, May, 2002\"; the file's own metadata records its creation on 5 May 2002. The wording is the current file's; earlier bytes are not authenticated."
+    },
+    "adm-goertzel-2004": {
+      "id": "source-rd-goertzel-2004",
+      "documentId": "goertzel-2004-positive-transcension",
+      "title": "Encouraging a Positive Transcension",
+      "authors": ["Ben Goertzel"],
+      "publisher": "Dynamical Psychology (goertzel.org)",
+      "publicationDate": "2004-02-17",
+      "url": "https://www.goertzel.org/dynapsyc/2004/PositiveTranscension.htm",
+      "kind": "post",
+      "version": "HTML page served at goertzel.org, headed \"Ben Goertzel, February 17, 2004\"; the file's own metadata records a last save on 20 February 2004. The wording is the current file's; earlier bytes are not authenticated."
+    },
+    "adm-marcus-davis-2019": {
+      "id": "source-rd-marcus-davis-2019",
+      "documentId": "marcus-davis-2019-computers-cant-read",
+      "title": "If Computers Are So Smart, How Come They Can't Read?",
+      "authors": ["Gary Marcus", "Ernest Davis"],
+      "publisher": "Wired (wired.com)",
+      "publicationDate": "2019-09-10",
+      "url": "https://www.wired.com/story/adaptation-if-computers-are-so-smart-how-come-they-cant-read/",
+      "kind": "article",
+      "version": "The excerpt as served by Wired, dated 10 September 2019 and marked as adapted from Rebooting AI (Pantheon, 2019). Its wording can change; earlier wording is not authenticated."
+    },
+    "adm-crawford-2016": {
+      "id": "source-rd-crawford-2016",
+      "documentId": "crawford-2016-white-guy-problem",
+      "title": "Artificial Intelligence's White Guy Problem",
+      "authors": ["Kate Crawford"],
+      "publisher": "The New York Times",
+      "publicationDate": "2016-06-25",
+      "url": "https://www.nytimes.com/2016/06/26/opinion/sunday/artificial-intelligences-white-guy-problem.html",
+      "evidenceUrl": "https://web.archive.org/web/20160625175443/http://www.nytimes.com/2016/06/26/opinion/sunday/artificial-intelligences-white-guy-problem.html",
+      "archivedUrl": "https://web.archive.org/web/20160625175443/http://www.nytimes.com/2016/06/26/opinion/sunday/artificial-intelligences-white-guy-problem.html",
+      "archivedAt": "2016-06-25",
+      "kind": "article",
+      "accessedAt": "2026-10-31",
+      "archiveOnly": true,
+      "documentWords": {
+        "count": 1450,
+        "basis": "Estimate: the cross-family check's retrieval of the capture of 25 June 2016 held about 8,700 characters of text, at about six characters a word; not counted at admission, because the Internet Archive refused connections from the admitting environment"
+      },
+      "version": "Read in the Internet Archive capture of 25 June 2016 by the cross-family check of 2026-10-31 (SHA-256 f3d1cf1dde038fba4e63d55323ddfd269b3ac2b70de18ad152252afd8cc71d73); the publisher's page refused direct retrieval (HTTP 403). The capture dates the essay 25 June 2016; the address gives 26 June 2016, the date of the print edition."
+    },
+    "adm-violet-hour-2024": {
+      "id": "source-rd-violet-hour-2024",
+      "documentId": "violet-hour-2024-two-tales",
+      "title": "Two Tales of AI Takeover: My Doubts",
+      "authors": ["Violet Hour"],
+      "publisher": "LessWrong",
+      "publicationDate": "2024-03-05",
+      "url": "https://www.lesswrong.com/posts/GbpH2kFLy5axXpzPn/two-tales-of-ai-takeover-my-doubts-1",
+      "kind": "post",
+      "apiRoute": true,
+      "version": "Post text read through the LessWrong API (post GbpH2kFLy5axXpzPn, field contents.html) at admission, because the page refused direct retrieval (HTTP 403); the API gives posting on 5 March 2024 and a last modification on 22 March 2024. The cross-family check read the page directly on 2026-10-31."
+    },
+    "adm-arctotherium-2026": {
+      "id": "source-rd-arctotherium-2026",
+      "documentId": "arctotherium-2026-ai-race-dynamics",
+      "title": "AI Race Dynamics Are Not Always Bad",
+      "authors": ["Arctotherium"],
+      "publisher": "Not With a Bang (Substack)",
+      "publicationDate": "2026-10-01",
+      "url": "https://arctotherium.substack.com/p/ai-race-dynamics-are-not-always-bad",
+      "kind": "post",
+      "version": "The post as served by Substack, dated 1 October 2026. Its wording can change; earlier wording is not authenticated."
+    },
+    "adm-hadshar-2023": {
+      "id": "source-rd-hadshar-2023",
+      "documentId": "hadshar-2023-evidence-review",
+      "title": "A Review of the Evidence for Existential Risk from AI via Misaligned Power-Seeking",
+      "authors": ["Rose Hadshar"],
+      "publisher": "arXiv (2310.18244v1)",
+      "publicationDate": "2023-10-27",
+      "url": "https://arxiv.org/pdf/2310.18244v1",
+      "kind": "paper",
+      "version": "arXiv version 1, stamped 27 October 2023."
+    },
+    "adm-ej-fli-2023": {
+      "id": "source-rd-ej-fli-2023",
+      "documentId": "ej-fli-2023-ai-licensing",
+      "title": "AI Licensing for a Better Future: On Addressing Both Present Harms and Emerging Threats",
+      "authors": ["Encode Justice", "Future of Life Institute"],
+      "publisher": "Future of Life Institute (futureoflife.org)",
+      "publicationDate": "2023-10-25",
+      "url": "https://futureoflife.org/wp-content/uploads/2023/04/EJ-FLI-Licensing-For-A-Better-Future.pdf",
+      "kind": "announcement",
+      "version": "PDF of the letter served by the Future of Life Institute. The letter's web page gives \"Published 25 October, 2023\"; the April 2023 folder in the PDF's address is not its date."
+    },
+    "adm-davidson-2023": {
+      "id": "source-rd-davidson-2023",
+      "documentId": "davidson-2023-compute-centric-takeoff",
+      "title": "What a compute-centric framework says about AI takeoff speeds",
+      "authors": ["Tom Davidson"],
+      "publisher": "LessWrong",
+      "publicationDate": "2023-01-23",
+      "url": "https://www.lesswrong.com/posts/Gc9FGtdXhK9sCSEYu/what-a-compute",
+      "kind": "post",
+      "apiRoute": true,
+      "version": "Post text read through the LessWrong API (post Gc9FGtdXhK9sCSEYu, field contents.html) at admission, because the page refused direct retrieval (HTTP 403); the API gives posting on 23 January 2023 and a last modification on 1 April 2025. The cross-family check read the page directly on 2026-10-31."
+    },
+    "adm-chollet-2017": {
+      "id": "source-rd-chollet-2017",
+      "documentId": "chollet-2017-impossibility-intelligence-explosion",
+      "title": "The impossibility of intelligence explosion",
+      "authors": ["François Chollet"],
+      "publisher": "Medium",
+      "publicationDate": "2017-11-27",
+      "url": "https://medium.com/@francois.chollet/the-impossibility-of-intelligence-explosion-5be4a9eda6ec",
+      "evidenceUrl": "https://web.archive.org/web/20171127170103/https://medium.com/@francois.chollet/the-impossibility-of-intelligence-explosion-5be4a9eda6ec",
+      "archivedUrl": "https://web.archive.org/web/20171127170103/https://medium.com/@francois.chollet/the-impossibility-of-intelligence-explosion-5be4a9eda6ec",
+      "archivedAt": "2017-11-27",
+      "kind": "post",
+      "accessedAt": "2026-10-31",
+      "archiveOnly": true,
+      "version": "Read by the cross-family check of 2026-10-31 in Internet Archive captures of 27 November 2017 and 2 January 2018, both titled \"The impossibility of intelligence explosion\"; Medium refused direct retrieval (HTTP 403). No passage is quoted."
+    }
+  },
+  "existingSourceQuotes": {
+    "source-corrigibility-2015-pdf": "adm-corrigibility-2015"
+  },
+  "newClaims": [
+    {
+      "id": "rd-r07-joy-2000-why-the-future",
+      "subject": "joy-2000-why-the-future",
+      "proposition": "R07",
+      "predicate": "articulates_proposition",
+      "statement": "Joy's essay of April 2000 argues that robotics, genetic engineering and nanotechnology could make humans an endangered species, and asks whether, if extinction is a likely or even possible outcome of technological development, we should not proceed with great caution.",
+      "time": {
+        "kind": "event",
+        "date": "2000-04",
+        "basis": "publication",
+        "note": "Wired, issue of April 2000; the page dates it 1 April 2000."
+      },
+      "roles": ["earliest-located"],
+      "register": "nonfiction",
+      "qualification": "Joy treats intelligent robots alongside genetic engineering and nanotechnology, not AI alone, and argues for limiting the development of dangerous technologies. Quotations in the essay from a 1995 manifesto keep that earlier date and are not used here. Earliest located among the texts the searches found, after a cross-family check located it; it is not evidence of coinage.",
+      "evidence": [
+        {
+          "source": "adm-joy-2000",
+          "locator": "Deck under the title",
+          "passage": "Our most powerful 21st-century technologies—robotics, genetic engineering, and nanotech—are threatening to make humans an endangered species.",
+          "passageType": "quote",
+          "note": "The deck is the magazine's summary of the essay; the essay's own wording is in the next passage.",
+          "fromCheck": "7"
+        },
+        {
+          "source": "adm-joy-2000",
+          "locator": "Paragraph before the section on the dream of robotics, closing question",
+          "passage": "And if our own extinction is a likely, or even possible, outcome of our technological development, shouldn’t we proceed with great caution?",
+          "passageType": "quote",
+          "note": "Added at admission so that the record rests on the author's own words; not part of the cross-family check's selection."
+        }
+      ],
+      "reason": "Adjudication of 2026-10-31: Joy (April 2000) earliest located on R07 (check item 7)."
+    },
+    {
+      "id": "rd-r06-goertzel-2002-thoughts-on-ai-morality",
+      "subject": "goertzel-2002-thoughts-on-ai-morality",
+      "proposition": "R06",
+      "predicate": "articulates_proposition",
+      "statement": "Goertzel's essay of May 2002 argues that a proposed design for a friendly AI goal system is very unlikely to produce a value system robust enough to survive repeated, drastic self-modifications aimed at increasing intelligence.",
+      "time": {
+        "kind": "event",
+        "date": "2002-05",
+        "basis": "publication",
+        "note": "Dated May 2002 on its page."
+      },
+      "roles": ["earliest-located"],
+      "register": "nonfiction",
+      "qualification": "The essay states the difficulty as an objection to one proposed design (Yudkowsky's), not as an impossibility result. Earliest located among the texts the searches found, after a cross-family check located it; it is not evidence of coinage.",
+      "evidence": [
+        {
+          "source": "adm-goertzel-2002",
+          "locator": "Section 1, discussion of Yudkowsky's proposed architecture",
+          "passage": "very unlikely to succeed at producing an AGI value system that is robust enough to survive successive, drastic intelligence-increase-directed self-modifications.",
+          "passageType": "quote",
+          "fromCheck": "6"
+        }
+      ],
+      "reason": "Adjudication of 2026-10-31: Goertzel (May 2002) earliest located on R06 (check item 6)."
+    },
+    {
+      "id": "rd-r10a-goertzel-2004-positive-transcension",
+      "subject": "goertzel-2004-positive-transcension",
+      "proposition": "R10a",
+      "predicate": "articulates_proposition",
+      "statement": "Goertzel's essay of 17 February 2004 attributes the scenario of a dominating AI to anthropomorphism and states that making such an AI would probably require explicitly programming it with a lust for power.",
+      "time": {
+        "kind": "event",
+        "date": "2004-02-17",
+        "basis": "publication",
+        "note": "Dated 17 February 2004 on its page."
+      },
+      "roles": ["earliest-located"],
+      "register": "nonfiction",
+      "qualification": "A conditional claim that a drive to dominate would not arise by default, not a claim that intelligence brings benevolence. Earliest located among the texts the searches found, after a cross-family check located it; it is not evidence of coinage.",
+      "evidence": [
+        {
+          "source": "adm-goertzel-2004",
+          "locator": "Section 2.9, discussion of the Megalomaniac AI scenario",
+          "passage": "in order to make a Megalomaniac AI, one would probably need to explicitly program an AI with a lust for power.",
+          "passageType": "quote",
+          "fromCheck": "10"
+        }
+      ],
+      "reason": "Adjudication of 2026-10-31: earlier-located roles move to dated texts; the check's independent answer for R10a (item 10)."
+    },
+    {
+      "id": "rd-r14-marcus-davis-2019-computers-cant-read",
+      "subject": "marcus-davis-2019-computers-cant-read",
+      "proposition": "R14",
+      "predicate": "articulates_proposition",
+      "statement": "Marcus and Davis's excerpt of September 2019 states that GPT-2 can generate strings of words that sound humanlike without real coherence, framing its text generation as statistics of which words occur together rather than understanding.",
+      "time": {
+        "kind": "event",
+        "date": "2019-09-10",
+        "basis": "publication",
+        "note": "Date of the Wired excerpt; the book appeared in 2019."
+      },
+      "roles": ["earliest-located"],
+      "register": "nonfiction",
+      "qualification": "The authors' own argument about GPT-2, adapted from their book; it is not a test of every language model. Earliest located among the texts the searches found, after a cross-family check located it; it is not evidence of coinage.",
+      "evidence": [
+        {
+          "source": "adm-marcus-davis-2019",
+          "locator": "Discussion of GPT-2, paragraph before a generated continuation",
+          "passage": "This means you can generate strings of words that sound humanlike, but there’s no real coherence there.",
+          "passageType": "quote",
+          "fromCheck": "15"
+        }
+      ],
+      "reason": "Adjudication of 2026-10-31: earlier-located roles move to dated texts; the check's independent answer for R14 (item 15)."
+    },
+    {
+      "id": "rd-r12-crawford-2016-white-guy-problem",
+      "subject": "crawford-2016-white-guy-problem",
+      "proposition": "R12",
+      "predicate": "articulates_proposition",
+      "statement": "Crawford's essay of June 2016 states that discussion of artificial intelligence as an existential threat is a distraction from the real problems of artificial intelligence today, such as discrimination built into deployed systems.",
+      "time": {
+        "kind": "event",
+        "date": "2016-06-25",
+        "basis": "publication",
+        "note": "Dated 25 June 2016 on the capture of that day; the address and the print edition give 26 June 2016."
+      },
+      "roles": ["earliest-located"],
+      "register": "nonfiction",
+      "qualification": "Read in an archive capture of the day of publication, through the cross-family check. Earliest located among the texts the searches found; it is not evidence of coinage.",
+      "evidence": [
+        {
+          "source": "adm-crawford-2016",
+          "locator": "Opening paragraphs",
+          "passage": "this hand-wringing is a distraction from the very real problems with artificial intelligence today",
+          "passageType": "quote",
+          "retrievalRoute": null,
+          "checkOnly": true,
+          "fromCheck": "earlier-r12-crawford-2016"
+        }
+      ],
+      "reason": "Adjudication of 2026-10-31: Crawford (25 June 2016) earliest located on R12."
+    },
+    {
+      "id": "rd-r03-violet-hour-2024-two-tales",
+      "subject": "violet-hour-2024-two-tales",
+      "proposition": "R03",
+      "predicate": "contests_proposition",
+      "statement": "Violet Hour's post of March 2024 argues that the account by which training would produce stable goals that differ from the training objective, while the system performs well in training, leaves the mechanism opaque.",
+      "time": {
+        "kind": "event",
+        "date": "2024-03-05",
+        "basis": "publication",
+        "note": "Date of posting."
+      },
+      "attested": {
+        "date": "2024-03-22",
+        "note": "Read through the LessWrong API, which gives a last modification on 22 March 2024; the wording of 5 March 2024 was not compared."
+      },
+      "roles": ["contesting"],
+      "register": "nonfiction",
+      "engagement": {
+        "kind": "engages-premise",
+        "rationale": "It disputes the premise that training reliably produces stable, context-independent goals of the kind deceptive alignment needs."
+      },
+      "qualification": "A reasoned objection to one causal account, not a claim that misalignment of every kind is impossible. Added on the cross-family check's proposal to balance the proposition's records.",
+      "evidence": [
+        {
+          "source": "adm-violet-hour-2024",
+          "locator": "Discussion of stable consequentialist preferences, after the ambition argument",
+          "passage": "the mechanism by which G&B expect stable goals to emerge in spite of this is left opaque.",
+          "passageType": "quote",
+          "fromCheck": "balance-r03-violet-hour-2024"
+        }
+      ],
+      "reason": "Adjudication of 2026-10-31: balance text admitted (Violet Hour 2024, R03)."
+    },
+    {
+      "id": "rd-r17-arctotherium-2026-ai-race-dynamics",
+      "subject": "arctotherium-2026-ai-race-dynamics",
+      "proposition": "R17",
+      "predicate": "articulates_proposition",
+      "statement": "Arctotherium's post of October 2026 argues that commercial competition among AI developers, which sells systems to customers, rewards systems that follow instructions and avoid catastrophes, because an extremely capable system that does not is a bad product.",
+      "time": {
+        "kind": "event",
+        "date": "2026-10-01",
+        "basis": "publication",
+        "note": "Date of posting."
+      },
+      "roles": ["articulation"],
+      "register": "nonfiction",
+      "qualification": "The argument is conditional on competition for customers; it is not a report of any system's safety. Added on the cross-family check's proposal to balance the proposition's records.",
+      "evidence": [
+        {
+          "source": "adm-arctotherium-2026",
+          "locator": "Section \"Commercial Races vs Arms Races\"",
+          "passage": "An AI system that is extremely capable, but doesn’t follow instructions, regularly commits crimes, or is responsible for other catastrophes is a bad system",
+          "passageType": "quote",
+          "fromCheck": "balance-r17-arctotherium-2026"
+        }
+      ],
+      "reason": "Adjudication of 2026-10-31: balance text admitted (Arctotherium 2026, R17)."
+    },
+    {
+      "id": "rd-r10a-corrigibility-2015",
+      "subject": "corrigibility-2015",
+      "proposition": "R10a",
+      "predicate": "contests_proposition",
+      "statement": "Soares, Fallenstein, Yudkowsky and Armstrong's paper of January 2015 states that an agent sufficiently intelligent to realise that its programmers intended it to have different goals would by default still have incentives to prevent them from changing its utility function.",
+      "time": {
+        "kind": "event",
+        "date": "2015-01-25",
+        "basis": "publication",
+        "note": "Workshop dates of 25–26 January 2015 in the header of the PDF."
+      },
+      "roles": ["contesting"],
+      "register": "nonfiction",
+      "engagement": {
+        "kind": "engages-premise",
+        "rationale": "It disputes the premise that a sufficiently intelligent system would lack any drive to resist people, by deriving the incentive from almost any goal rather than from evolved motives."
+      },
+      "qualification": "The paper argues from the incentives of a utility-maximising agent; it does not attribute hostility to any system. Added on the cross-family check's proposal to balance the proposition's records.",
+      "evidence": [
+        {
+          "source": "adm-corrigibility-2015",
+          "locator": "Section 1, Introduction, PDF p. 1",
+          "passage": "even if the agent is sufficiently intelligent to realize that its programmers intended to give it different goals",
+          "passageType": "quote",
+          "note": "The check quoted the next sentence; its text layer differs in the symbols of the utility functions, so the admission quotes the clauses around them."
+        },
+        {
+          "source": "adm-corrigibility-2015",
+          "locator": "Section 1, Introduction, PDF p. 1 (next sentence)",
+          "passage": "by default this agent has incentives to prevent its programmers from changing its utility function",
+          "passageType": "quote",
+          "fromCheck": "balance-r10a-corrigibility"
+        }
+      ],
+      "reason": "Adjudication of 2026-10-31: balance text admitted (Corrigibility 2015, R10a)."
+    },
+    {
+      "id": "rd-r10b-corrigibility-2015",
+      "subject": "corrigibility-2015",
+      "proposition": "R10b",
+      "predicate": "contests_proposition",
+      "statement": "Soares, Fallenstein, Yudkowsky and Armstrong's paper of January 2015 states that rational agents have default incentives to resist being shut down or having their preferences modified, and that simple attempts to define a utility function that removes those incentives prove unsatisfactory.",
+      "time": {
+        "kind": "event",
+        "date": "2015-01-25",
+        "basis": "publication",
+        "note": "Workshop dates of 25–26 January 2015 in the header of the PDF."
+      },
+      "roles": ["contesting", "earliest-located"],
+      "register": "nonfiction",
+      "engagement": {
+        "kind": "engages-premise",
+        "rationale": "It disputes the premise that ordinary engineering can give a capable agent objectives that leave it open to shutdown and correction."
+      },
+      "qualification": "A technical argument about a formal shutdown problem, not a proof that control is impossible; the paper presents its failed proposals as pointing to further research. Earliest located among the contesting texts the searches found, after a cross-family check proposed it; it is not evidence of coinage.",
+      "evidence": [
+        {
+          "source": "adm-corrigibility-2015",
+          "locator": "Abstract, PDF p. 1",
+          "passage": "despite default incentives for rational agents to resist attempts to shut them down or modify their preferences",
+          "passageType": "quote"
+        },
+        {
+          "source": "adm-corrigibility-2015",
+          "locator": "Section 2, The Shutdown Problem, PDF p. 3",
+          "passage": "These attempts will prove unsatisfactory, but will fail in enlightening ways that suggest avenues for future research.",
+          "passageType": "quote",
+          "note": "The check's quotation read “further research”; the PDF reads “future research”, as quoted here.",
+          "fromCheck": "balance-r10b-corrigibility"
+        }
+      ],
+      "reason": "Adjudication of 2026-10-31: balance text admitted (Corrigibility 2015, R10b). It is earlier than the pack's earliest contesting record (Bengio, 2019), so it takes that role, recorded as a correction."
+    },
+    {
+      "id": "rd-r11-hadshar-2023-evidence-review",
+      "subject": "hadshar-2023-evidence-review",
+      "proposition": "R11",
+      "predicate": "contests_proposition",
+      "statement": "Hadshar's review of October 2023 finds the evidence for existential risk from misaligned power-seeking concerning but inconclusive, and states that being unable to rule the risk out confidently is cause for serious concern.",
+      "time": {
+        "kind": "event",
+        "date": "2023-10-27",
+        "basis": "publication",
+        "note": "Date of the arXiv v1 submission."
+      },
+      "roles": ["contesting"],
+      "register": "nonfiction",
+      "engagement": {
+        "kind": "engages-premise",
+        "rationale": "It disputes the premise that the absence of conclusive evidence justifies setting the risk aside."
+      },
+      "qualification": "A review of conceptual and empirical evidence; it does not claim to demonstrate the risk. Added on the cross-family check's proposal to balance the proposition's records.",
+      "evidence": [
+        {
+          "source": "adm-hadshar-2023",
+          "locator": "Abstract, PDF p. 1",
+          "passage": "The fact that we cannot confidently rule out existential risk from AI via misaligned power-seeking is cause for serious concern.",
+          "passageType": "quote",
+          "fromCheck": "balance-r11-hadshar-2023"
+        },
+        {
+          "source": "adm-hadshar-2023",
+          "locator": "Section 1, Introduction, PDF p. 2",
+          "passage": "We find that the current state of the evidence for existential risk from misaligned power-seeking is concerning but inconclusive.",
+          "passageType": "quote",
+          "note": "Added at admission for the review's own summary of its finding; not part of the cross-family check's selection."
+        }
+      ],
+      "reason": "Adjudication of 2026-10-31: balance text admitted (Hadshar 2023, R11)."
+    },
+    {
+      "id": "rd-r12-ej-fli-2023-ai-licensing",
+      "subject": "ej-fli-2023-ai-licensing",
+      "proposition": "R12",
+      "predicate": "contests_proposition",
+      "statement": "The joint letter of Encode Justice and the Future of Life Institute of October 2023 rejects a choice between addressing documented present harms of AI and potentially catastrophic future threats, and calls for policies that address both.",
+      "time": {
+        "kind": "event",
+        "date": "2023-10-25",
+        "basis": "publication",
+        "note": "Date given on the letter's web page."
+      },
+      "roles": ["contesting"],
+      "register": "nonfiction",
+      "engagement": {
+        "kind": "engages-premise",
+        "rationale": "It disputes the premise that attention to future catastrophic risk must come at the expense of present harms."
+      },
+      "qualification": "A signed organisational letter; it records what the letter says, not the views of each person who supports it. Added on the cross-family check's proposal to balance the proposition's records.",
+      "evidence": [
+        {
+          "source": "adm-ej-fli-2023",
+          "locator": "PDF p. 1",
+          "passage": "We must reject the false choice between addressing the documented harms of today and the potentially catastrophic threats of tomorrow.",
+          "passageType": "quote",
+          "fromCheck": "balance-r12-ej-fli-2023"
+        }
+      ],
+      "reason": "Adjudication of 2026-10-31: balance text admitted (Encode Justice–FLI 2023, R12)."
+    },
+    {
+      "id": "rd-a4-davidson-2023-compute-centric-takeoff",
+      "subject": "davidson-2023-compute-centric-takeoff",
+      "proposition": "R05",
+      "predicate": "articulates_proposition",
+      "statement": "Davidson's post of January 2023 names a fast takeoff, which it attributes partly to the expectation that AI will automate AI research and development before it automates the global economy, and gives its takeoff figures as the time from 20%-AI to 100%-AI for cognitive tasks in the global economy.",
+      "time": {
+        "kind": "event",
+        "date": "2023-01-23",
+        "basis": "publication",
+        "note": "Date of posting."
+      },
+      "attested": {
+        "date": "2025-04-01",
+        "note": "Read through the LessWrong API, which gives a last modification on 1 April 2025; the wording of 23 January 2023 was not compared."
+      },
+      "roles": ["articulation"],
+      "register": "nonfiction",
+      "qualification": "The post's metric is not the criterion's span from roughly human level to far beyond it; the record rests on its naming a fast takeoff. Added on the cross-family check's proposal to balance the proposition's records.",
+      "evidence": [
+        {
+          "source": "adm-davidson-2023",
+          "locator": "Opening summary, paragraph after the probabilities",
+          "passage": "One factor driving fast takeoff here is that I expect AI automation of AI R&D to happen before AI automation of the global economy.",
+          "passageType": "quote",
+          "fromCheck": "balance-r05-davidson-2023"
+        },
+        {
+          "source": "adm-davidson-2023",
+          "locator": "Opening summary, after the list of probabilities",
+          "passage": "Those numbers are time from 20%-AI to 100%-AI, for cognitive tasks in the global economy.",
+          "passageType": "quote",
+          "note": "Added at admission so that the metric is stated, as the adjudication asked; not part of the cross-family check's selection."
+        }
+      ],
+      "reason": "Adjudication of 2026-10-31: balance text admitted (Davidson 2023, on A4 under decision 1), with its metric stated. Fresh-context review of 2026-10-31: the probability (about 10% for under three months) and its conditions are in no evidence passage, so they are not recorded; no new retrieval."
+    }
+  ],
+  "replies": {
+    "statement": "keep",
+    "qualification": "A reply is not agreement; the record says only that the text answers the other."
+  },
+  "leads": [
+    {
+      "proposition": "R03",
+      "text": "Optimization daemons (Arbital page migrated to LessWrong, last updated 22 March 2016)",
+      "reason": "No dated historical bytes were obtained (no capture of 2016–2017 found). Listed, not admitted as a headline (adjudication of 2026-10-31). The page is already recorded as context on B3 and A4."
+    },
+    {
+      "proposition": "R05",
+      "text": "Creating Friendly AI 1.0 (2001), wording read in MIRI's later reflow",
+      "reason": "Moot under decision 1: A4 already records Creating Friendly AI as an articulation dated 2001-06-15, and Vinge (1993) holds A4's earliest-located role."
+    },
+    {
+      "proposition": "R10b",
+      "text": "Yudkowsky, What is Friendly AI? (republished 3 May 2001)",
+      "reason": "Held for the maintainer: the check found the date pinned only by a publisher's republication, with no dated capture, and named the criterion fit for adjudication; the adjudication of 2026-10-31 did not decide it."
+    },
+    {
+      "proposition": "R04",
+      "text": "Corrigibility (January 2015)",
+      "reason": "Applied through decision 1: Corrigibility is already recorded on B1 as an articulation; Creating Friendly AI (2001) holds B1's earliest-located role."
+    }
+  ],
+  "missingSeedsHeld": [
+    {
+      "text": "Chollet, The impossibility of intelligence explosion (Medium, 27 November 2017)",
+      "checkStances": "A4 contests (pack R05); R16 articulates",
+      "reason": "Retrieved by the check from captures; the adjudication accepted the check but named only the six balance texts for admission. The document is admitted without stance, as the text Yudkowsky's reply answers."
+    },
+    {
+      "text": "Bender, Gebru, McMillan-Major and Shmitchell, On the Dangers of Stochastic Parrots (manuscript captured 23 January 2021)",
+      "checkStances": "R14 articulates; R12 and R13 bear on",
+      "reason": "Not named by the adjudication; two of three stances have no quoted passage."
+    },
+    {
+      "text": "LeCun, A Path Towards Autonomous Machine Intelligence (version 0.9.2, 27 June 2022)",
+      "checkStances": "R10b and R14 bear on",
+      "reason": "Not named by the adjudication; one stance has no quoted passage."
+    },
+    {
+      "text": "LeCun, written testimony to the Senate Select Committee on Intelligence (19 September 2023)",
+      "checkStances": "R15 articulates; R14 contests; R10b bears on",
+      "reason": "Not named by the adjudication; two of three stances have no quoted passage."
+    }
+  ]
+}

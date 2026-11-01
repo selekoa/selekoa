@@ -1,9 +1,10 @@
-import { useEffect } from 'react';
+import { use, useEffect, useMemo } from 'react';
 import type { Repository } from '../domain/repository';
-import { RecordLink } from './NavLink';
+import { ClaimLink, RecordLink, SectionLink } from './NavLink';
 import {
   engagementLabels,
   laterContests,
+  propositionsView,
   recordDates,
   registerLabels,
   roleLabels,
@@ -11,8 +12,12 @@ import {
   tierLabels,
   type PropositionEntry,
   type PropositionRecord,
+  type PropositionsCollection,
+  type PropositionsFrame,
   type PropositionsView,
 } from '../domain/propositions';
+import { useHeldRecords } from './records';
+import { wholePropositions } from './proposition-text';
 import { CopyLink, ExportPropositionsStarter } from './ReferenceActions';
 import { InspectLink, StatusBadge, type ClaimProps } from './ReadingRows';
 import { ReviewMarkers } from './ReviewMarkers';
@@ -57,12 +62,12 @@ function PropositionRow({
   const { claim } = r;
   return (
     <li>
-      <button
+      <ClaimLink
         className="dossier-claim doc-claim prop-row"
-        data-claim-id={claim.id}
         aria-label={`Inspect claim & evidence: ${r.label}. ${claim.statement}`}
-        aria-pressed={props.selectedClaimId === claim.id}
-        onClick={() => props.onClaim(claim.id)}
+        pressed={props.selectedClaimId === claim.id}
+        claimId={claim.id}
+        onOpen={() => props.onClaim(claim.id)}
       >
         <StatusBadge claim={claim} />
         <span className="record-row-heading">
@@ -91,7 +96,7 @@ function PropositionRow({
         <span className="dossier-evidence-link">
           Inspect claim & evidence ↗
         </span>
-      </button>
+      </ClaimLink>
       {later.length > 0 && (
         <div className="prop-later">
           <span className="prop-later-label">
@@ -227,11 +232,13 @@ function PropositionSection({
   entry,
   collection,
   onDocument,
+  onProposition,
   ...props
 }: ClaimProps & {
   entry: PropositionEntry;
   collection: PropositionsView['collection'];
   onDocument: (id: string) => void;
+  onProposition: (id: string) => void;
 }) {
   const mostDevelopedEmpty =
     collection.mostDevelopedEmpty === undefined
@@ -364,6 +371,25 @@ function PropositionSection({
           </ul>
         </div>
       )}
+      {entry.related.length > 0 && (
+        <div className="prop-related">
+          <h4>Overlapping propositions in other collections</h4>
+          <ul>
+            {entry.related.map((r) => (
+              <li key={r.propositionId}>
+                <RecordLink
+                  id={r.propositionId}
+                  className="text-button"
+                  onOpen={() => onProposition(r.propositionId)}
+                >
+                  {r.entity.proposition!.code} {r.entity.name} →
+                </RecordLink>{' '}
+                <span className="small-note">{r.relation}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
       {entry.corrections.length > 0 && (
         <div className="prop-corrections">
           <h4>Headlines replaced</h4>
@@ -415,6 +441,49 @@ function SearchNote({ view }: { view: PropositionsView }) {
         ))}
       </ul>
       <p>{note.corrections}</p>
+    </section>
+  );
+}
+
+/** Published exchanges between recorded texts, as a reading list. */
+function Exchanges({
+  view,
+  onDocument,
+}: {
+  view: PropositionsView;
+  onDocument: (id: string) => void;
+}) {
+  if (!view.exchanges.length) return null;
+  return (
+    <section className="prop-exchanges" aria-labelledby="prop-exchanges-title">
+      <h2 id="prop-exchanges-title">Published exchanges</h2>
+      <p className="doc-family-note">
+        Texts in which one author answers another. Each answer is recorded as a
+        citation; an answer is not agreement, and the grouping is this
+        collection’s.
+      </p>
+      <ul>
+        {view.exchanges.map((x) => (
+          <li key={x.title}>
+            <strong>{x.title}</strong>{' '}
+            <span className="small-note">{x.period}</span>
+            <p className="small-note">{x.note}</p>
+            <ul>
+              {x.documents.map((d) => (
+                <li key={d.id}>
+                  <RecordLink
+                    id={d.id}
+                    className="text-button"
+                    onOpen={() => onDocument(d.id)}
+                  >
+                    {d.shortName ?? d.name}
+                  </RecordLink>
+                </li>
+              ))}
+            </ul>
+          </li>
+        ))}
+      </ul>
     </section>
   );
 }
@@ -571,23 +640,37 @@ function ReadingKey({ view }: { view: PropositionsView }) {
 }
 
 export function Propositions({
-  view,
+  frame,
   repository,
   selectedClaimId,
   onClaim,
   onEntity,
+  onProposition,
   focus,
   onFocused,
 }: {
-  view: PropositionsView;
+  /** The collection shown, as every page holds it (without its text). */
+  frame: PropositionsFrame;
   repository: Repository;
   selectedClaimId: string | null;
   onClaim: (id: string) => void;
   onEntity: (id: string) => void;
+  /** Opens another proposition's collection at that proposition. */
+  onProposition?: (id: string) => void;
   /** A proposition to scroll to once the page has rendered. */
   focus?: string | null;
   onFocused?: () => void;
 }) {
+  // The collection whole, with its text, loaded with the page's code; the
+  // view is computed from the records held.
+  const whole = use(
+    wholePropositions(frame.id) as Promise<PropositionsCollection | null>,
+  );
+  const records = useHeldRecords();
+  const view = useMemo(() => {
+    if (!whole) throw new Error(`No propositions collection ${frame.id}`);
+    return propositionsView(records.data, whole);
+  }, [records, whole, frame.id]);
   const { collection, groups } = view;
   const props = { repository, selectedClaimId, onClaim };
   const count = groups.reduce((n, g) => n + g.propositions.length, 0);
@@ -639,18 +722,16 @@ export function Propositions({
             <ul>
               {g.propositions.map((p) => (
                 <li key={p.entity.id}>
-                  <button
+                  <SectionLink
                     className="text-button"
-                    onClick={() =>
-                      jump(
-                        'proposition-' +
-                          p.proposition.code.toLowerCase() +
-                          '-heading',
-                      )
+                    id={
+                      'proposition-' +
+                      p.proposition.code.toLowerCase() +
+                      '-heading'
                     }
                   >
                     {p.proposition.code} {p.entity.name}
-                  </button>
+                  </SectionLink>
                 </li>
               ))}
             </ul>
@@ -683,11 +764,13 @@ export function Propositions({
               entry={p}
               collection={collection}
               onDocument={onEntity}
+              onProposition={onProposition ?? onEntity}
               {...props}
             />
           ))}
         </section>
       ))}
+      <Exchanges view={view} onDocument={onEntity} />
     </article>
   );
 }

@@ -9,8 +9,8 @@ test('version Inspector exposes predecessor, successor, publisher and family tim
     if (m.type() === 'error') errors.push(m.text());
   });
   await page.goto('/explore');
-  await page.getByRole('searchbox').fill('RSP v2.0');
-  await page.getByRole('searchbox').press('Enter');
+  await page.getByRole('main').getByRole('searchbox').fill('RSP v2.0');
+  await page.getByRole('main').getByRole('searchbox').press('Enter');
   const inspector = page.getByRole('complementary', {
     name: 'Entity inspector',
   });
@@ -50,7 +50,12 @@ test('version Inspector exposes predecessor, successor, publisher and family tim
   // of the nine editions (2026-10-27), plus 107 cells for the paraphrased
   // questions (schema 2.18; first editions have no stated-changes cell),
   // plus the links of v3.1 to v3.4 to California SB 53 (2026-10-28).
-  await expect(timeline.locator('[data-claim-id]')).toHaveCount(280);
+  // The 2026-10-30 AI and biosecurity admission (`ab-` records) adds the
+  // biological provisions of several RSP editions; the earlier records are
+  // counted here.
+  await expect(
+    timeline.locator('[data-claim-id]:not([data-claim-id^="ab-"])'),
+  ).toHaveCount(280);
   const dates = await timeline.locator('.timeline-date').allTextContents();
   expect(dates.map((s) => s.slice(0, 10))).toEqual(
     dates.map((s) => s.slice(0, 10)).sort(),
@@ -117,7 +122,12 @@ test('mobile xAI comparison is clearly inferred and presents both exact source e
   // Security chapter (week 4c), plus six framework comparison cells for each
   // edition (2026-10-27), plus 23 cells for the paraphrased questions
   // (schema 2.18; the December 2025 edition has no stated-changes cell).
-  await expect(timeline.locator('[data-claim-id]')).toHaveCount(51);
+  // The 2026-10-30 AI and biosecurity admission (`ab-` records) adds the
+  // December 2025 edition's biological provisions and the June 2026
+  // edition's CBRN record; the earlier records are counted here.
+  await expect(
+    timeline.locator('[data-claim-id]:not([data-claim-id^="ab-"])'),
+  ).toHaveCount(51);
   await timeline
     .locator('[data-claim-id="faif-2026-compliance-sentence"]')
     .click();

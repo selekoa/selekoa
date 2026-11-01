@@ -1,0 +1,211 @@
+/* The frameworks edition by edition: editions, status tables, steps and the
+   earliest located editions. Statuses are told apart by their words; the
+   border style repeats the difference for scanning. */
+.fc-family,
+.fc-earliest {
+  margin-top: var(--space-7);
+  padding-top: 18px;
+  border-top: 1px solid var(--color-border);
+}
+.fc-family > h3 {
+  font: var(--heading-sub) / 1.3 var(--font-serif);
+  margin: 22px 0 6px;
+}
+.fc-family > .small-note,
+.fc-earliest > .small-note {
+  max-width: 80ch;
+  margin: 4px 0 8px;
+  color: var(--color-text-muted);
+}
+.fc-status {
+  display: inline-block;
+  font-size: var(--text-xs);
+  line-height: 1.4;
+  padding: 1px 6px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-border-strong);
+  color: var(--color-text);
+  white-space: nowrap;
+}
+.fc-status-partly {
+  border-style: dashed;
+}
+.fc-status-not-found,
+.fc-status-not-checked {
+  border-style: dotted;
+  color: var(--color-text-muted);
+}
+.fc-status-not-applicable {
+  border-color: transparent;
+  color: var(--color-text-muted);
+}
+a.fc-status {
+  text-decoration: none;
+}
+a.fc-status:hover {
+  background: var(--color-hover);
+}
+a.fc-status[aria-pressed='true'] {
+  background: var(--color-selected);
+}
+
+/* Editions in order. */
+.fc-editions {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  max-width: 90ch;
+}
+.fc-edition {
+  display: grid;
+  grid-template-columns: 9.5em minmax(0, 1fr);
+  gap: 4px 16px;
+  padding: 8px 0 8px 12px;
+  border-left: 2px solid var(--color-governance);
+  border-bottom: 1px solid var(--color-border);
+}
+.fc-edition .fl-row-date {
+  align-content: start;
+}
+.fc-edition-body {
+  min-width: 0;
+}
+.fc-edition h4 {
+  margin: 0;
+  font-size: var(--text-base);
+  font-weight: 650;
+}
+.fc-edition .small-note {
+  margin: 2px 0 0;
+  color: var(--color-text-muted);
+}
+.fc-edition .doc-meta {
+  margin: 4px 0 0;
+}
+.fc-edition .doc-provisions {
+  margin-top: 6px;
+}
+
+/* Status by question and edition. The frame also clips the visually hidden
+   labels inside cells, which would otherwise widen the page. */
+.fc-page .doc-alignment-scroll {
+  position: relative;
+}
+/* Columns as wide as their content; past the frame the table scrolls, with
+   the question column in view. */
+.fc-page .fc-status-table,
+.fc-page .fc-earliest-table {
+  table-layout: auto;
+  width: auto;
+  min-width: 0;
+}
+.fc-status-table td {
+  white-space: nowrap;
+}
+.fc-page .fc-status-table thead th:first-child,
+.fc-page .fc-earliest-table thead th:first-child {
+  width: auto;
+}
+.fc-status-table thead th:first-child,
+.fc-status-table tbody th[scope='row'],
+.fc-earliest-table thead th:first-child,
+.fc-earliest-table tbody th[scope='row'] {
+  position: sticky;
+  left: 0;
+  z-index: 1;
+  background: var(--color-page);
+  box-shadow: inset -1px 0 0 var(--color-border);
+  min-width: 11rem;
+  max-width: 14rem;
+}
+.fc-status-table tbody th[scope='row'] {
+  font-weight: 400;
+}
+.fc-status-table tbody th[scope='row'] .text-button {
+  text-align: left;
+  white-space: normal;
+}
+.fc-dimension-row th {
+  font-size: var(--text-xs);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  padding-top: 12px;
+}
+.fc-differs {
+  box-shadow: inset 2px 0 0 var(--color-rule);
+}
+.fc-differs-mark {
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+}
+
+/* Question by question. */
+.fc-dimension-title {
+  font-size: var(--text-xs);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  margin: 18px 0 4px;
+}
+.fc-questions {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  max-width: 90ch;
+}
+.fc-question {
+  border-bottom: 1px solid var(--color-border);
+  padding: 8px 0 10px;
+}
+.fc-question > h4 {
+  margin: 0 0 4px;
+  font-size: var(--text-base);
+  font-weight: 650;
+  scroll-margin-top: 16px;
+}
+.fc-question > p {
+  margin: 0;
+}
+.fc-steps {
+  margin: 0;
+  padding-left: 18px;
+  display: grid;
+  gap: 4px;
+  font-size: var(--text-md);
+}
+.fc-step-label {
+  font-weight: 600;
+}
+.fc-cells {
+  list-style: none;
+  margin: 8px 0 0;
+  padding: 0;
+  display: grid;
+  gap: 10px;
+}
+.fc-cell-head {
+  margin: 0;
+}
+.fc-cell-edition {
+  font-weight: 650;
+}
+.fc-question > .doc-meta {
+  margin-top: 6px;
+}
+.fc-earliest-table td {
+  min-width: 9rem;
+  max-width: 12rem;
+}
+.fc-nowrap {
+  white-space: nowrap;
+}
+.fc-earliest-table .fl-link-kind {
+  white-space: normal;
+}
+
+@media (max-width: 640px) {
+  .fc-edition {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

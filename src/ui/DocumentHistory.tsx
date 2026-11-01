@@ -27,7 +27,7 @@ import {
 } from './ReadingRows';
 import { ArchiveLink, SourceLanguage } from './SourceArchive';
 import { nonEnglishLanguage } from '../domain/source-archive';
-import { NavLink } from './NavLink';
+import { NavLink, ClaimLink, RecordLink } from './NavLink';
 import { referencePath } from '../domain/addresses';
 import { frameworkComparison } from '../reading/framework-comparison';
 import './reading-first.css';
@@ -319,8 +319,12 @@ const openGrids = new Set<string>();
  */
 function ProvisionAlignment({
   family,
+  onEntity,
   ...props
-}: ClaimProps & { family: FamilyHistory }) {
+}: ClaimProps & {
+  family: FamilyHistory;
+  onEntity: (id: string) => void;
+}) {
   const [open, setOpen] = useState(() => openGrids.has(family.family));
   const scroller = useRef<HTMLDivElement>(null);
   const [clipped, setClipped] = useState(false);
@@ -409,6 +413,23 @@ function ProvisionAlignment({
                   ) : (
                     (row.wordings[0]?.label ?? row.label)
                   )}
+                  {row.note && (
+                    <span className="provision-row-note">
+                      {row.note.text}{' '}
+                      {row.note.editionIds.map((id, i) => (
+                        <Fragment key={id}>
+                          {i > 0 && ' · '}
+                          <RecordLink id={id} onOpen={() => onEntity(id)}>
+                            {
+                              props.repository.entities.get(id)!
+                                .documentVersion!.label
+                            }{' '}
+                            →
+                          </RecordLink>
+                        </Fragment>
+                      ))}
+                    </span>
+                  )}
                 </th>
                 {row.editions.map((cell) => {
                   const claim = cell.stated ?? cell.absent;
@@ -459,12 +480,15 @@ export function DocumentHistory({
   repository,
   selectedClaimId,
   onClaim,
+  onEntity,
   onCompare,
 }: {
   history: History;
   repository: Repository;
   selectedClaimId: string | null;
   onClaim: (id: string) => void;
+  /** Opens a document page. */
+  onEntity: (id: string) => void;
   /** Opens the comparison of the same frameworks across developers. */
   onCompare?: () => void;
 }) {
@@ -532,7 +556,7 @@ export function DocumentHistory({
             edition{f.editions.length === 1 ? '' : 's'}, oldest first. An
             edition is shown as replacing another only where a record says so.
           </p>
-          <ProvisionAlignment family={f} {...props} />
+          <ProvisionAlignment family={f} onEntity={onEntity} {...props} />
           <ol className="doc-editions">
             {f.editions.map((edition, index) => (
               <Edition
@@ -555,12 +579,14 @@ export function DocumentHistory({
                       {q.claimIds.map((id, i) => (
                         <span key={id}>
                           {i > 0 && ' · '}
-                          <button
+                          <ClaimLink
+                            secondary
                             className="text-button"
-                            onClick={() => onClaim(id)}
+                            claimId={id}
+                            onOpen={() => onClaim(id)}
                           >
                             {claimRoute(repository.claims.get(id)!, repository)}
-                          </button>
+                          </ClaimLink>
                         </span>
                       ))}
                     </p>

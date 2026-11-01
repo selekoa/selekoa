@@ -69,7 +69,7 @@ export function readingDates(data: Dataset, claim: Claim) {
   );
   return {
     record:
-      timeLabel(claim) +
+      timeLabel(claim, data) +
       (date?.length === 4
         ? ' · year-only precision'
         : date?.length === 7

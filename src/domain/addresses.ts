@@ -23,11 +23,28 @@ export type ReferenceTarget =
   | { kind: 'about' }
   | { kind: 'search'; q?: string; mode?: 'names'; inspect?: string }
   | { kind: 'documents'; id: string; inspect?: string }
-  /** The framework comparison, optionally at one question (facet). */
-  | { kind: 'compare'; id: string; facet?: string; inspect?: string }
+  /**
+   * The framework comparison, optionally at one question (facet) and with
+   * chosen editions in place of the latest ones (`?edition=a,b`).
+   */
+  | {
+      kind: 'compare';
+      id: string;
+      facet?: string;
+      editions?: string[];
+      inspect?: string;
+    }
   | { kind: 'control'; id: string; inspect?: string }
   | { kind: 'commitments'; id: string; inspect?: string }
+  /** A guided reading across collections, such as frameworks and law. */
+  | { kind: 'guide'; id: string; inspect?: string }
   | { kind: 'propositions'; id: string; inspect?: string }
+  /**
+   * A year of the chronicle (`2025`), or one topic of it (`2025-governance`),
+   * and the index of the years.
+   */
+  | { kind: 'year'; id: string; inspect?: string }
+  | { kind: 'years' }
   | { kind: 'claim'; id: string }
   /** An organisation's dossier, or with `view: 'map'` its direct connections. */
   | { kind: 'dossier'; id: string; view?: 'map'; inspect?: string }
@@ -39,6 +56,7 @@ export type ReferenceTarget =
 
 export function referencePath(target: ReferenceTarget) {
   if (target.kind === 'about') return '/about';
+  if (target.kind === 'years') return '/years';
   if (target.kind === 'hub') return `/${target.id}`;
   const params = new URLSearchParams();
   if (target.kind === 'explore') {
@@ -58,6 +76,8 @@ export function referencePath(target: ReferenceTarget) {
   }
   if (target.kind === 'compare' && target.facet)
     params.set('facet', target.facet);
+  if (target.kind === 'compare' && target.editions?.length)
+    params.set('edition', target.editions.join(','));
   if (target.kind === 'dossier' && target.view) params.set('view', target.view);
   if (target.kind !== 'claim' && target.inspect)
     params.set('inspect', target.inspect);

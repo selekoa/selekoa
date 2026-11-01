@@ -1,4 +1,4 @@
-import type { Claim, Dataset, Entity } from './schema';
+import type { Claim, Dataset, Entity, Evidence, Source } from './schema';
 import { propositionStances, type Topic } from './predicates';
 
 export type Filters = {
@@ -20,11 +20,134 @@ export function dateOf(claim: Claim): string | undefined {
       ? (claim.time.from ?? claim.time.until)
       : undefined;
 }
-export function timeLabel(claim: Claim): string {
+/**
+ * The stored time of a claim alone, as review packs print it. Reader-facing
+ * text uses `timeLabel`, which reads an open-ended role differently.
+ */
+export function storedTimeLabel(claim: Claim): string {
   if (claim.time.kind === 'unknown') return 'Date unknown';
   if (claim.time.kind === 'interval')
     return `${claim.time.from ?? 'Unknown start'} → ${claim.time.until ?? 'End unknown'}`;
   return `${claim.time.date} · ${claim.time.kind === 'snapshot' ? 'snapshot' : (claim.time.basis ?? 'event')}`;
+}
+
+/** Predicates whose records are a person's role at an institution. */
+export const rolePredicates: ReadonlySet<Claim['predicate']> = new Set([
+  'held_role',
+]);
+
+/**
+ * The records a time label reads: the dataset, or an export that carries a
+ * claim's evidence, sources and named entities (a starter or a packet).
+ */
+export type LabelRecords = {
+  evidence: readonly Pick<Evidence, 'claimId' | 'sourceId' | 'support'>[];
+  sources: readonly Pick<
+    Source,
+    'id' | 'title' | 'documentId' | 'publicationDate' | 'versionDate'
+  >[];
+  entities: readonly Pick<Entity, 'id' | 'name'>[];
+};
+
+type LabelIndex = {
+  of: LabelRecords;
+  evidence: Map<string, LabelRecords['evidence'][number][]>;
+  sources: Map<string, LabelRecords['sources'][number]>;
+  entities: Map<string, LabelRecords['entities'][number]>;
+};
+// Built from relation fields alone (IDs), which a page's slice always holds
+// (src/domain/slices.ts), so one index serves every page drawn from the
+// same records without counting reads for any of them.
+const labelIndexes = new WeakMap<object, LabelIndex>();
+function labelIndex(records: LabelRecords): LabelIndex {
+  const held = labelIndexes.get(records.evidence);
+  if (
+    held &&
+    held.of.sources === records.sources &&
+    held.of.entities === records.entities
+  )
+    return held;
+  const evidence = new Map<string, LabelRecords['evidence'][number][]>();
+  for (const e of records.evidence) {
+    const items = evidence.get(e.claimId);
+    if (items) items.push(e);
+    else evidence.set(e.claimId, [e]);
+  }
+  const index = {
+    of: {
+      evidence: records.evidence,
+      sources: records.sources,
+      entities: records.entities,
+    },
+    evidence,
+    sources: new Map(records.sources.map((s) => [s.id, s])),
+    entities: new Map(records.entities.map((e) => [e.id, e])),
+  };
+  labelIndexes.set(records.evidence, index);
+  return index;
+}
+
+/** Whether a claim is a role with a stated start and no stated end. */
+export function isOpenRole(claim: Claim) {
+  return (
+    rolePredicates.has(claim.predicate) &&
+    claim.time.kind === 'interval' &&
+    !!claim.time.from &&
+    !claim.time.until
+  );
+}
+
+/**
+ * For an open-ended role: the latest dated document among the sources whose
+ * evidence supports the record, with that source's own date (publication
+ * date, else version date). The name is the source's document record where it
+ * has one and the export holds it, else the source title. Null when no
+ * supporting source carries a date; undefined for any other record.
+ * Maintainer decision of 2026-10-31 (review/people-admission-2026-10-31.md).
+ */
+export function roleStatedIn(records: LabelRecords, claim: Claim) {
+  if (!isOpenRole(claim)) return undefined;
+  const index = labelIndex(records);
+  let latest: { source: LabelRecords['sources'][number]; date: string } | null =
+    null;
+  for (const e of index.evidence.get(claim.id) ?? []) {
+    if (e.support !== 'supports') continue;
+    const source = index.sources.get(e.sourceId);
+    const date = source && (source.publicationDate ?? source.versionDate);
+    if (
+      date &&
+      (!latest ||
+        date > latest.date ||
+        (date === latest.date && source.id < latest.source.id))
+    )
+      latest = { source, date };
+  }
+  if (!latest) return null;
+  const { source, date } = latest;
+  const document = source.documentId
+    ? index.entities.get(source.documentId)
+    : undefined;
+  return {
+    sourceId: source.id,
+    documentId: source.documentId,
+    name: document?.name ?? source.title,
+    date,
+  };
+}
+
+/**
+ * A claim's time as readers see it. An open-ended role reads “from <start>
+ * (stated in <document>, <date>)”, or “from <start> (end not recorded)” when
+ * no supporting source is dated; it never reads “present”. Every other record
+ * reads as stored (`storedTimeLabel`).
+ */
+export function timeLabel(claim: Claim, records: LabelRecords): string {
+  const stated = roleStatedIn(records, claim);
+  if (stated === undefined) return storedTimeLabel(claim);
+  const from = (claim.time as { from: string }).from;
+  return stated
+    ? `from ${from} (stated in ${stated.name}, ${stated.date})`
+    : `from ${from} (end not recorded)`;
 }
 export function relatedTo(claim: Claim, entityId: string): boolean {
   return (

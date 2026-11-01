@@ -30,6 +30,13 @@ const cases = [
     0,
   ],
   ['project role address', 'Contact: maintainer@selekoa.org', 0],
+  ['AWS access key ID', ['AK', 'IA', 'SYNTHETICEXAMPLE'].join(''), 1],
+  [
+    'signed storage address',
+    'https://bucket.example.org/file.html?X-Amz-' + 'Signature=abc123',
+    1,
+  ],
+  ['unsigned storage address', 'https://bucket.example.org/file.html', 0],
   [
     'other address on the project domain',
     ['someone', 'selekoa.org'].join('@'),

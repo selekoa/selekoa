@@ -1,4 +1,9 @@
-import { test, expect, stubAnalytics } from './fixtures';
+import {
+  test,
+  expect,
+  MAP_FIRST_DRAW_TIMEOUT,
+  stubAnalytics,
+} from './fixtures';
 import type { Page } from '@playwright/test';
 import AxeBuilder from '@axe-core/playwright';
 
@@ -109,8 +114,8 @@ test('internal navigation is made of real links that open in place or in a new t
     ['Governance', '/governance'],
     ['Ideas & debates', '/ideas'],
     ['Institutions & people', '/institutions'],
-    ['Search', '/search'],
     ['About & method', '/about'],
+    ['Explore the records', '/explore'],
   ])
     await expect(nav.getByRole('link', { name })).toHaveAttribute('href', href);
   await expect(
@@ -165,9 +170,9 @@ test('internal navigation is made of real links that open in place or in a new t
   );
   // Keyboard: a link is focusable and Enter follows it.
   await page.goto('/');
-  await nav.getByRole('link', { name: 'Search' }).focus();
+  await nav.getByRole('link', { name: 'Explore the records' }).focus();
   await page.keyboard.press('Enter');
-  await expect(page).toHaveURL(/\/search$/);
+  await expect(page).toHaveURL(/\/explore$/);
   expect(errors).toEqual([]);
 });
 
@@ -179,8 +184,10 @@ test('a person page leads with the records on the person’s texts', async ({
   await expect(line).toHaveText(
     /^Person · \d+ records on texts by this author · \d+ recorded claims? about this person · appears in \d+ collections?$/i,
   );
-  // Someone named in claims but not an author leads with the claims.
-  await page.goto('/person/dario-amodei');
+  // Someone named in claims but not an author leads with the claims. (Dario
+  // Amodei, used until the risk-debate admission of 2026-10-31, now has a
+  // record on his Senate statement.)
+  await page.goto('/person/daniela-amodei');
   await expect(
     page.locator('.person-page .doc-lede .eyebrow').first(),
   ).toHaveText(/^Person · \d+ recorded claims? about this person/i);
@@ -214,7 +221,7 @@ test('on a phone the claim panel opens below the tapped record, and Close return
   const errors = collectErrors(page);
   const cases: [string, string, () => Promise<void>][] = [
     ['/propositions/yudkowsky-arguments', '[data-claim-id]', async () => {}],
-    ['/search#q=Yudkowsky', 'button.search-hit', async () => {}],
+    ['/search#q=Yudkowsky', '.search-hit', async () => {}],
     [
       '/documents/frontier-safety-frameworks',
       'td [data-claim-id]',
@@ -277,7 +284,14 @@ for (const width of [1440, 390])
         await page.goto(address);
         await page.waitForLoadState('networkidle');
         await expect(page.locator('main').first()).toBeVisible();
-        await expect(page.getByText(/^Loading/)).toHaveCount(0);
+        // The search address opens the map, which is still loading until its
+        // first draw.
+        await expect(page.getByText(/^Loading/)).toHaveCount(
+          0,
+          address === '/explore#q=Hanson'
+            ? { timeout: MAP_FIRST_DRAW_TIMEOUT }
+            : undefined,
+        );
         expect(await fitsViewport(page), address).toBe(true);
         await noViolations(page);
       }

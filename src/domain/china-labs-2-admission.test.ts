@@ -2,6 +2,7 @@ import { describe, expect, it } from 'vitest';
 import pack from '../../research/china-labs-2/pack.json';
 import map from '../../review/china-labs-2-admission-map-2026-10-27.json';
 import { repository } from './repository';
+import { preAuditFixesRaw } from '../editorial/historical-views';
 
 const data = repository.data;
 const claim = (id: string) => repository.claims.get(id)!;
@@ -25,13 +26,27 @@ describe('the second Chinese institutions collection (admitted 2026-10-27)', () 
   });
 
   it('keeps provisions to framework and commitment editions (decision 3)', () => {
-    for (const c of admitted.filter((c) => c.predicate === 'states_provision'))
+    // Statements of licences, the prospectus and a report were recorded as
+    // publications at admission; the 2026-10-29 audit fixes (schema 2.20)
+    // record them as what each document states.
+    for (const c of admitted.filter(
+      (c) =>
+        c.predicate === 'states_provision' &&
+        c.attributes?.provision?.kind !== 'statement',
+    ))
       expect(repository.entities.get(c.subject)!.documentVersion).toBeTruthy();
     for (const [id, publisher] of Object.entries(map.providers)) {
+      const atAdmission = preAuditFixesRaw.claims.find((c) => c.id === id)!;
+      expect(atAdmission.predicate).toBe('published');
+      expect(atAdmission.subject).toBe(publisher);
+      expect('provision' in (atAdmission.attributes ?? {})).toBe(false);
+      // Decision C9 of 2026-10-29: what the document states.
       const c = claim(id);
-      expect(c.predicate).toBe('published');
-      expect(c.subject).toBe(publisher);
-      expect(c.attributes?.provision).toBeUndefined();
+      expect(c.predicate).toBe('states_provision');
+      expect(c.subject).toBe(
+        (atAdmission.object as { entityId: string }).entityId,
+      );
+      expect(c.attributes?.provision?.kind).toBe('statement');
     }
   });
 
@@ -101,7 +116,13 @@ describe('the second Chinese institutions collection (admitted 2026-10-27)', () 
       evidenceOf('c2-bytedance-seed-15-vl-report').map((e) => e.passage),
     ).toContain('Date: June 13, 2025');
     expect(claim('c2-moonshot-k2-readme').statement).not.toMatch(/created/);
-    expect(claim('c2-moonshot-k3-licence').time.kind).toBe('snapshot');
+    // A snapshot at admission; since the 2026-10-29 audit fixes a statement
+    // of the licence, dated by the commit that dates the file (basis revision).
+    expect(claim('c2-moonshot-k3-licence').time).toMatchObject({
+      kind: 'event',
+      date: '2026-07-27',
+      basis: 'revision',
+    });
     expect(claim('c2-moonshot-k3-licence-maas').statement).toContain(
       'affiliates',
     );

@@ -56,8 +56,26 @@ test('institution dossier connects chronology, people and exact evidence by keyb
     has: page.locator('[data-claim-id="lineage-ii-weak-cites-reward"]'),
   });
   await weak.getByText('Why this document is included').click();
-  // From 2026-10-17 the connection is Leike's dated joining record.
-  await expect(weak).toContainText('weak-to-strong generalization');
+  // Maintainer decision of 2026-10-31: the first three connections show, the
+  // document's own authors first, then cited works by date; the rest are
+  // listed under "and N more". Leike's is his dated joining record.
+  const shown = weak.locator('.dossier-connection > .dossier-connection-list');
+  await expect(shown.locator('li')).toHaveCount(3);
+  await expect(shown.locator('li').nth(0)).toContainText(
+    'Adam: A Method for Stochastic Optimization',
+  );
+  await expect(shown.locator('li').nth(2)).toContainText(
+    'weak-to-strong generalization',
+  );
+  const more = weak.locator('.dossier-connection-more');
+  const reward = more.getByRole('button', {
+    name: /^Scalable agent alignment via reward modeling credits Jan Leike/,
+  });
+  await expect(reward).toBeHidden();
+  await more.locator('summary').focus();
+  await expect(more.locator('summary')).toHaveText(/^and \d+ more$/);
+  await page.keyboard.press('Enter');
+  await expect(reward).toBeVisible();
   await dossier
     .locator('[data-claim-id="lineage-ii-weak-cites-reward"]')
     .click();

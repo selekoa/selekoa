@@ -153,7 +153,9 @@ export function questionStarterMarkdown(starter: QuestionStarterExport) {
   const shownLimits = [...keyLimits, ...definition.limits.slice(0, 2)];
   const record = (claim: Claim) => {
     const citation = citations.get(claim.id)!;
-    const lines = [`- **${timeLabel(claim)}.** ${cell(claim.statement)}`];
+    const lines = [
+      `- **${timeLabel(claim, starter)}.** ${cell(claim.statement)}`,
+    ];
     for (const [i, o] of citation.original.entries()) {
       lines.push(`  - Original source: ${originalLine(o)}`);
       const e = starter.evidence.find(

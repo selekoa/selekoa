@@ -12,9 +12,10 @@ for (const mobile of [false, true]) {
     if (mobile) await page.setViewportSize({ width: 390, height: 844 });
     await page.goto('/explore');
     await page
+      .getByRole('main')
       .getByRole('searchbox')
       .fill('Training language models to follow instructions');
-    await page.getByRole('searchbox').press('Enter');
+    await page.getByRole('main').getByRole('searchbox').press('Enter');
     await page.getByRole('button', { name: 'Timeline', exact: true }).click();
     const timeline = page.getByLabel('Chronological claims');
     await timeline

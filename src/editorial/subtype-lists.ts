@@ -1,0 +1,103 @@
+import type { Entity } from '../domain/schema';
+
+/**
+ * Closed subtype lists adopted on 2026-10-29 (decisions C1 and C2 of the
+ * consistency audit; recorded in docs/ontology.md). The consistency audit
+ * checks stored subtypes against them; validation does not. Concepts,
+ * models, infrastructure, funds and countries have no closed list yet.
+ */
+export const subtypeLists: Partial<Record<Entity['type'], readonly string[]>> =
+  {
+    organisation: [
+      'AI company',
+      'Technology company',
+      'Company',
+      'Business unit',
+      'Research unit',
+      'Governance body',
+      'Research institute',
+      'Nonprofit',
+      'Industry association',
+      'Investor',
+      'University',
+      'Legal entity',
+      'Response centre',
+    ],
+    public_body: [
+      'Legislature',
+      'Legislative chamber',
+      'Executive office',
+      'Government department',
+      'Government agency',
+      'AI safety institute',
+      'Standards body',
+      'EU institution',
+      'Intergovernmental body',
+      'Advisory body',
+    ],
+    person: [
+      'Researcher',
+      'Executive',
+      'Board member',
+      'Investor',
+      'Writer',
+      'Public official',
+    ],
+    document: [
+      'Mailing-list message',
+      'Newsgroup message',
+      'Forum post',
+      'Blog post',
+      'Comment',
+      'Web page',
+      'Working paper',
+      'Research paper',
+      'Preprint',
+      'Technical report',
+      'Report',
+      'Annual report',
+      'Prospectus',
+      'Journal article',
+      'Magazine article',
+      'Newspaper article',
+      'Letter',
+      'Book',
+      'Book chapter',
+      'Essay',
+      'Lecture or talk',
+      'Testimony',
+      'Research proposal',
+      'Announcement',
+      'Press release',
+      'Model card',
+      'Licence',
+      'Framework edition',
+      'Certificate of incorporation',
+      'Voluntary commitments',
+      'Code of practice',
+      'Reporting framework',
+      'Memorandum of understanding',
+      'Declaration or statement',
+      'Speech',
+      'Briefing notes',
+      'Statute',
+      'Bill',
+      'Regulation',
+      'Proposed rule',
+      'Executive order',
+      'Standard',
+      'Guidance',
+      'Opinion',
+      'Rules of procedure',
+      'Policy plan',
+      // 2026-10-30 (compute, power and orbit admission): an application
+      // filed with a regulator.
+      'Regulatory filing',
+      // 2026-10-30 (AI and biosecurity admission): a presidential memorandum,
+      // a directive instrument distinct from an executive order.
+      'Presidential memorandum',
+      // 2026-11-01 (technical history admission, attributed credits): a
+      // master's or doctoral thesis, for three works the credits name.
+      'Thesis',
+    ],
+  };

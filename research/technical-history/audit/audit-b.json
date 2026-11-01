@@ -1,0 +1,373 @@
+{
+  "auditor": "fresh-context same-family pass B",
+  "date": "2026-10-29",
+  "sample": [
+    "th-term-llm-brants-2007",
+    "th-term-fm-bommasani-2021",
+    "th-fam-tllm-attention-2017",
+    "th-tl-gpt3-scale",
+    "th-tl-dqn-2013",
+    "th-tl-dqn-nature-2015",
+    "th-tl-alphago-seoul-2016",
+    "th-tl-alphago-zero-2017",
+    "th-credit-goertzel-2011-self",
+    "th-cn-credit-pdp8-parker",
+    "th-cn-credit-lbh-werbos",
+    "th-cn-credit-schmidhuberbp-linnainmaa",
+    "th-cn-credit-schmidhuberbp-werbos",
+    "th-dl-credit-schmidhuber2022-dechter",
+    "th-rl-sutton-1988-credits-samuel",
+    "th-sym-credit-feigenbaum-1977-self",
+    "th-lp-credit-kowalski-1988-prolog-name",
+    "th-lp-credit-kowalski-1988-colmerauer",
+    "th-term-llm-zhao-credits-cot",
+    "th-term-llm-zhao-2023-def",
+    "th-cn-name-rosenblatt-1958-connectionist",
+    "th-sp-lighthill-1972-combinatorial-explosion",
+    "th-authored-mccarthy-2007",
+    "th-sp-def-strips-1971",
+    "th-cn-credit-pdp8-lecun",
+    "th-term-agi-goertzel-2011",
+    "th-fam-tllm-gpt2-uses-transformer",
+    "th-auth-nilsson-1971",
+    "th-dl-credit-schmidhuber2014-2006",
+    "th-prob-pearl-1982-def",
+    "th-ml-minsky-1961",
+    "th-prob-pearl-1985-def",
+    "th-authored-gubrud-1997",
+    "th-evo-koza-1990-def",
+    "th-sp-name-minsky-1961",
+    "th-sym-name-mark-1977",
+    "th-lp-name-colmerauer-1992",
+    "th-ml-samuel-1959",
+    "th-stat-valiant-1984-def",
+    "th-fam-tllm-gpt4-def",
+    "th-def-ai-mccarthy-2007",
+    "th-ns-mao-2019-term",
+    "th-sym-def-feigenbaum-1977-knowledge-rich",
+    "th-sp-def-astar-1968",
+    "dates[7] th-towell-shavlik-1994 dates[1]",
+    "dates[8] th-lighthill-1973-general-survey dates[1]",
+    "dates[9] th-rhw-1986 dates[2]",
+    "dates[10] th-schmidhuber-bp dates[1]",
+    "dates[11] kp-language-models-unsupervised-multitask-learners-2019 dates[1]",
+    "dates[12] th-legg-hutter-2007-universal-intelligence dates[1]"
+  ],
+  "items": [
+    {
+      "id": "th-term-llm-brants-2007",
+      "verdict": "fix",
+      "findings": "Quotes verbatim at the locators (title p. 1, introduction p. 1, conclusion p. 9); 'up to 2 trillion tokens' is in the abstract; publication June 2007 from the proceedings footer is right. Sense: n-gram models distinguished by scale, which meets the criterion as worded. Earliest-located role refuted by an independent search: Hu, Turin and Brown, 'Language modeling with stochastic automata', Proc. ICSLP 96 (Philadelphia, 3-6 October 1996), pp. 406-409, doi:10.21437/ICSLP.1996-79, abstract: 'large language models are often required to achieve low model perplexity (or entropy) and still have adequate language coverage'. That is a statistical language model distinguished by model size, which meets the criterion as currently worded (the paper's body contrasts entropy against 'model size'). Found through the Semantic Scholar bulk search (abstract), confirmed in the ISCA Archive PDF (cached as b-audit-hu-1996, PDF p. 1). The pack's search covered the ACL Anthology, Crossref titles and arXiv, not the ISCA Archive (ICSLP/Eurospeech/Interspeech).",
+      "proposedFix": "Apply the corrections rule: make Hu, Turin and Brown (ICSLP 96, October 1996, ISCA Archive PDF) the earliest-located-term record for th-term-large-language-model, quoting the abstract sentence; change Brants et al. 2007 to role 'use' and keep its displaced headline as a correction dated 2026-10-29 with the reason. Add the ISCA Archive and Semantic Scholar abstracts to the 'How we searched' note, and record that speech venues are now partly covered. Alternatively, if the maintainer wants a narrower criterion (e.g. a name for a class of models rather than an adjective-plus-noun phrase), say so in the criterion; under such a criterion Brants 2007 would need the same re-test, since its uses ('very large language models') are also adjectival."
+    },
+    {
+      "id": "th-term-fm-bommasani-2021",
+      "verdict": "fix",
+      "findings": "Quote verbatim (PDF p. 1, abstract); arXiv v1 2021-08-16 confirmed by the arXiv API. Sense meets the criterion. The quoted sentence 'We call these models foundation models...' does not on its own carry the statement's description; the referent is in the preceding abstract sentence. Quick independent search (arXiv API abstract phrase search; Semantic Scholar bulk search 'foundation models' with ML terms, 2010-2021) found only engineering senses and the later-revised arXiv items the pack already discounts (2010.03688, 2101.09858, 1810.13306); no earlier ML-sense use.",
+      "proposedFix": "Add to the evidence the preceding abstract sentence: 'models (e.g., BERT, DALL-E, GPT-3) that are trained on broad data at scale and are adaptable to a wide range of downstream tasks' (PDF p. 1, abstract), so the statement's description is quoted, not inferred from 'these models'."
+    },
+    {
+      "id": "th-fam-tllm-attention-2017",
+      "verdict": "ok",
+      "findings": "Both quotes verbatim (p. 1 abstract; p. 10 conclusion); v1 2017-06-12 confirmed. Priority wording is the text's own and marked as such; the qualification honestly states that no index search for earlier uses was made. Quick arXiv title search (ti:transformer in cs.CL/cs.LG/cs.NE/stat.ML before 2017-06-12) returned only transformation-based-learning and other senses; Spatial Transformer Networks (2015) is a different sense (a spatial warping module), not an attention sequence model, and does not meet the criterion.",
+      "proposedFix": "Optional: name the arXiv title check (and Spatial Transformer Networks as a known other sense) in the family's 'How we searched' note."
+    },
+    {
+      "id": "th-tl-gpt3-scale",
+      "verdict": "ok",
+      "findings": "Quote verbatim (p. 1, abstract); v1 2020-05-28 confirmed. Comparative '10x more' is marked as the paper's own.",
+      "proposedFix": ""
+    },
+    {
+      "id": "th-tl-dqn-2013",
+      "verdict": "ok",
+      "findings": "Both quotes verbatim (p. 1); v1 2013-12-19 confirmed. Priority claim marked as the text's own.",
+      "proposedFix": ""
+    },
+    {
+      "id": "th-tl-dqn-nature-2015",
+      "verdict": "ok",
+      "findings": "Quote verbatim in the served abstract; article page gives 'Published: 25 February 2015', issue date 26 February 2015, so publication 2015-02-25 (online) is right. Statement faithful ('classic Atari 2600 games').",
+      "proposedFix": ""
+    },
+    {
+      "id": "th-tl-alphago-seoul-2016",
+      "verdict": "ok",
+      "findings": "Quotes verbatim; post dated 16 March 2016, 'Over the last 10 days in Seoul'. Event month 2016-03 is reasonable; the note correctly says the game dates are not in the post. Attribution to Hassabis matches the byline.",
+      "proposedFix": ""
+    },
+    {
+      "id": "th-tl-alphago-zero-2017",
+      "verdict": "ok",
+      "findings": "Quote verbatim; byline 'David Silver, Demis Hassabis', post date 18 October 2017. 'Learning from self-play' in the statement is supported by the same paragraph ('learns to play simply by playing games against itself') but not by the quoted fragment.",
+      "proposedFix": "Optional: extend the quote or add 'learns to play simply by playing games against itself' so the self-play element is evidenced."
+    },
+    {
+      "id": "th-credit-goertzel-2011-self",
+      "verdict": "fix",
+      "findings": "The quotation is not continuous: the ellipsis replaces 'and I did sort of commission its creation!' (second paragraph of the post). The omitted words are Goertzel's own partial self-credit and bear directly on the record's subject (Goertzel crediting himself), so the cut changes what the passage says about his role. Also, the passage is the second paragraph, not 'second and third sentences of the post' (the first paragraph is one sentence; the second has three). Date 2011-08-28 confirmed on the page.",
+      "proposedFix": "Statement: 'In his 2011 post Goertzel says he is responsible for spreading the term AGI around the world and \"did sort of commission its creation\", but did not coin the phrase.' Quote the passage without the gap, or use two quotes: 'I am indeed the one responsible for spreading the term around the world' and 'and I did sort of commission its creation! But I didn't actually coin the phrase'. Locator: 'second paragraph'. Contribution: add 'commissioning its creation (by his account)'."
+    },
+    {
+      "id": "th-cn-credit-pdp8-parker",
+      "verdict": "fix",
+      "findings": "Passage at the locator (printed p. 322) and statement faithful. Quotation follows the OCR text layer 'learninglogic'; the page image prints 'learning-' at a line end and 'logic.' on the next line (italic). The quote should match the printed expression, not the text-layer artefact.",
+      "proposedFix": "Quote '...which he calls learning-logic.' and note that the hyphen falls at a line break (so the printed form is 'learning-logic' or 'learning logic'); drop the note about the run-together text layer or reword it."
+    },
+    {
+      "id": "th-cn-credit-lbh-werbos",
+      "verdict": "ok",
+      "findings": "Quotes verbatim (printed p. 438; references 24-27, p. 8; ref. 26 is LeCun 1985, 27 Rumelhart et al. 1986). 'This' in the passage refers to computing gradients by backpropagation through a multilayer stack of modules; the statement's 'the backpropagation idea' is a fair gloss. The qualification discloses that only the earliest-cited work carries the edge. Date: the PDF footer gives the issue date 28 May 2015; online publication was 27 May 2015 (not checked in a retrieved text here).",
+      "proposedFix": "Optional: label 2015-05-28 as the issue date."
+    },
+    {
+      "id": "th-cn-credit-schmidhuberbp-linnainmaa",
+      "verdict": "fix",
+      "findings": "Quote verbatim in the page as served on 2026-10-29. The record's date (2014, claimed) misdates the wording: the same opening paragraph says 'In 2020, we celebrated BP's half-century anniversary!' and 'In the 2020s, it was still easy to find misleading accounts', so the quoted text is at least 2020 wording and probably 2025. The 2014 survey (arXiv v4, b-schmidhuber-2014 p. 11) says 'apparently was first described in a 1970 master's thesis', a different, hedged wording. Under the policy's two-dates rule the attested date of this wording is the retrieval state (page last updated 2025 by its own statement), not 2014. Shown alone, a 2014 date would mislead a reader into placing this statement before the 2015 Nature review.",
+      "proposedFix": "Set the time to the attested wording: date 2025 (page's latest stated update) or 2026-10-29 (retrieval), basis 'attested in the page as served 2026-10-29', with 2014 shown only as the page's claimed first version. Optionally add a separate attributed record from the 2014 survey's own hedged sentence ('apparently was first described in a 1970 master's thesis (Linnainmaa, 1970, 1976)', p. 11) if a 2014-dated statement is wanted."
+    },
+    {
+      "id": "th-cn-credit-schmidhuberbp-werbos",
+      "verdict": "fix",
+      "findings": "Quote verbatim in the page as served. Same dating problem as the Linnainmaa record, and here demonstrably so: the 2014 survey (arXiv v4, p. 11) says the first NN-specific application 'was described in 1981 (Werbos, 1981, 2006)' and cites 'some preliminary, NN-specific discussion (Werbos, 1974, section 5.5.1)', whereas the page says 1982 and 'not yet in his 1974 thesis'. So the quoted wording did not exist in 2014; dating it 2014 (claimed) is wrong. The side-by-side disagreement with LeCun, Bengio and Hinton 2015 is correctly recorded, but the chronology of the disagreement is inverted by the misdate.",
+      "proposedFix": "Date the record by the attested wording (2025 update / served 2026-10-29), keep 2014 only as the page's claimed origin, and add to the qualification that the author's 2014 survey gave 1981 and a 'preliminary, NN-specific discussion' in Werbos 1974 (b-schmidhuber-2014, PDF p. 11), so the author's own account changed between versions."
+    },
+    {
+      "id": "th-dl-credit-schmidhuber2022-dechter",
+      "verdict": "ok",
+      "findings": "Quote verbatim (PDF p. 8); v1 2022-12-21 confirmed. Attributed, kept apart from the earliest-located record, and the other-sense status of Dechter is noted.",
+      "proposedFix": "Optional: mention that the same sentence credits Aizenberg et al. (2000) for NNs."
+    },
+    {
+      "id": "th-rl-sutton-1988-credits-samuel",
+      "verdict": "ok",
+      "findings": "Both quotes verbatim (abstract p. 1; references p. 34, IBM Journal 3, 210-229 = Samuel 1959). Attribution kept as Sutton's statement.",
+      "proposedFix": ""
+    },
+    {
+      "id": "th-sym-credit-feigenbaum-1977-self",
+      "verdict": "ok",
+      "findings": "Quote verbatim in the bracketed historical note (PDF p. 4): Michie remarked the DENDRAL work was 'epistemological engineering', which Feigenbaum 'simplified into \"knowledge engineering.\"'. Self-attribution kept as his statement.",
+      "proposedFix": ""
+    },
+    {
+      "id": "th-lp-credit-kowalski-1988-prolog-name",
+      "verdict": "ok",
+      "findings": "Quote verbatim (PDF p. 1, col. 1; CACM 31(1), January 1988 in the footer). Conflict with Colmerauer and Roussel 1992 ('It was Philippe Roussel chose the name', PDF p. 2) confirmed and recorded side by side.",
+      "proposedFix": ""
+    },
+    {
+      "id": "th-lp-credit-kowalski-1988-colmerauer",
+      "verdict": "ok",
+      "findings": "Quote verbatim, including the source's spelling 'Phillipe'. 'Summer of 1972' versus Colmerauer and Roussel's 'end of 1972' for the definitive version confirmed in both texts.",
+      "proposedFix": ""
+    },
+    {
+      "id": "th-term-llm-zhao-credits-cot",
+      "verdict": "ok",
+      "findings": "Quote matches the v1 text except that the ellipsis replaces only the footnote marker '1' (footnote 1: 'Note that a LLM is not necessarily more capable than a small PLM...'). Reference check from the reference list: [31] Wei et al., Emergent abilities; [32] Shanahan; [33] Wei et al., chain of thought; [34] Hoffmann et al. (Chinchilla); [35] Taylor et al. (Galactica). So [33] is correctly identified. The qualification's 'the other two cited works' is right only because [34] has its own record (th-term-llm-zhao-credits-chinchilla); read alone it seems to contradict 'four works'.",
+      "proposedFix": "Qualification: 'Of the other three cited works, [34] (Chinchilla) is recorded separately; Shanahan 2022 and Galactica have no record.' Consider replacing the ellipsis with the footnote marker omitted silently or noted, since only a footnote marker is cut."
+    },
+    {
+      "id": "th-term-llm-zhao-2023-def",
+      "verdict": "ok",
+      "findings": "All three quotes verbatim (pp. 3, 3, 31). The statement's 'trained on massive text data' is in the same sentence as the first quote but outside the quoted span. Footnote 5 on the same page reads 'In existing literature, there is no a formal consensus on the minimum parameter scale for LLMs. In this survey, we mainly focus on discussing LLMs with a model size larger than 10B', which qualifies the 'hundreds of billions' wording more directly than the p. 31 passage.",
+      "proposedFix": "Optional: extend the first quote to include 'which are trained on massive text data', and cite footnote 5 (p. 3) as context."
+    },
+    {
+      "id": "th-cn-name-rosenblatt-1958-connectionist",
+      "verdict": "ok",
+      "findings": "Passage confirmed on PDF p. 2 (printed 386-387); the ellipsis omits 'position with regard to these questions' (the page number 387 intervenes), as the note says. Statement faithful; role 'use' is appropriate and the qualification avoids any derivation claim.",
+      "proposedFix": "Optional: quote the sentence continuously ('...or \"connectionist\" position with regard to these questions') since the omitted words are short."
+    },
+    {
+      "id": "th-sp-lighthill-1972-combinatorial-explosion",
+      "verdict": "ok",
+      "findings": "Quote verbatim (Part I, section 3). The 'personal view' framing is the text's own ('represents in the last analysis only the personal view of the author'). Dated by the survey's own 'July 1972'. Source is the Chilton Computing HTML transcription, which the record does not flag but the source entry does.",
+      "proposedFix": ""
+    },
+    {
+      "id": "th-authored-mccarthy-2007",
+      "verdict": "ok",
+      "findings": "Byline confirmed ('John McCarthy / Computer Science Department / Stanford University / Revised November 12, 2007'). The 2007-11-12 date is a revision date; the time basis says 'publication' while the document date label says revision.",
+      "proposedFix": "Optional: basis 'revision' (or note 'revision date') for consistency with the document date's label."
+    },
+    {
+      "id": "th-sp-def-strips-1971",
+      "verdict": "ok",
+      "findings": "Quote verbatim on the ijcai.org detail page and, independently, in the proceedings PDF already cached as a-strips-1971 (p. 1, 'ABSTRACT', IJCAI-71 p. 608). Paraphrase faithful.",
+      "proposedFix": "Optional: cite the proceedings PDF (a-strips-1971, printed p. 608) rather than the current web detail page, whose abstract is an OCR extraction ('\"·orld model')."
+    },
+    {
+      "id": "th-cn-credit-pdp8-lecun",
+      "verdict": "ok",
+      "findings": "Quote verbatim (printed p. 322, confirmed on the page image). Attributed.",
+      "proposedFix": ""
+    },
+    {
+      "id": "th-term-agi-goertzel-2011",
+      "verdict": "ok",
+      "findings": "Paraphrase faithful: title 'Who coined the term \"AGI\"?' and 'what I now refer to as AGI' in the paragraph beginning 'At the time Ray Kurzweil'. Use meets the criterion (AGI as name for broad, human-level-and-beyond AI). Role 'use' only.",
+      "proposedFix": "Optional: replace the paraphrase with the short quote 'what I now refer to as AGI'."
+    },
+    {
+      "id": "th-fam-tllm-gpt2-uses-transformer",
+      "verdict": "fix",
+      "findings": "Quote verbatim (PDF p. 4, section 2.3). The time basis is 'publication' while the note and the document's only date say the year is claimed from a later citation; the record's own time block contradicts the document date kind.",
+      "proposedFix": "Set time.basis to 'claimed' (year 2019 from the GPT-3 reference list), matching the document date. See the date finding on kp-language-models-unsupervised-multitask-learners-2019 for a possible month."
+    },
+    {
+      "id": "th-auth-nilsson-1971",
+      "verdict": "ok",
+      "findings": "Byline confirmed on the detail page and on the proceedings PDF (a-strips-1971 p. 1: 'Richard E. Fikes / Nils J. Nilsson / Stanford Research Institute').",
+      "proposedFix": ""
+    },
+    {
+      "id": "th-dl-credit-schmidhuber2014-2006",
+      "verdict": "fix",
+      "findings": "Quote verbatim (arXiv v4, PDF p. 21, section 5.15); v4 date 2014-10-08 confirmed by the arXiv API. The passage says the expression was coined 'around 2006, when unsupervised pre-training ... (Hinton and Salakhutdinov, 2006; Hinton et al., 2006)'; it cites the two works for the pre-training, not for the term. A credits_work edge from the survey to Hinton, Osindero and Teh 2006, shown alone in a graph or list, reads as the survey crediting that paper with the term, which the text does not say (and which the pack itself notes the paper does not use). The qualification mitigates this, but an edge carries its object without the qualification.",
+      "proposedFix": "Either re-point the record to the concept (discusses th-term-deep-learning, attributed: 'According to Schmidhuber (2014) the expression was coined around 2006'), or keep credits_work to th-hot-2006 with contribution 'unsupervised pre-training of deep FNNs, cited where the survey places the coinage of \"Deep Learning\" around 2006' so the edge does not imply a term credit."
+    },
+    {
+      "id": "th-prob-pearl-1982-def",
+      "verdict": "ok",
+      "findings": "Both quotes verbatim (p. 1). Statement faithful. 'Definition' kind is a stretch (it is the paper's description of its method), but the qualification says so.",
+      "proposedFix": ""
+    },
+    {
+      "id": "th-ml-minsky-1961",
+      "verdict": "ok",
+      "findings": "Quote verbatim in the MIT transcription (hill-climbing section). Use in the required sense. Role 'use' only.",
+      "proposedFix": ""
+    },
+    {
+      "id": "th-prob-pearl-1985-def",
+      "verdict": "ok",
+      "findings": "Page images checked: p. 1 'Technical Report CSD-850021 R-43 June 1985', 'To be presented at the 7th Conference of the Cognitive Science Society ... August 15-17, 1985'; p. 2 abstract matches the paraphrase closely. 'Presents Bayesian networks as a formalism' slightly strengthens 'reports recent results from the theory of Bayesian networks, which offer a viable formalism'.",
+      "proposedFix": "Optional: 'reports results from the theory of Bayesian networks, which it says offer a viable formalism for...'."
+    },
+    {
+      "id": "th-authored-gubrud-1997",
+      "verdict": "ok",
+      "findings": "Byline confirmed on the Foresight Archives copy. The qualification's 'the affiliation is the 1997 byline's' asserts the date of an undated current copy; the copy calls itself the conference draft and points to 'Updated versions and additional material' elsewhere, which supports but does not prove that the byline is the 1997 one.",
+      "proposedFix": "Optional: 'the affiliation as printed on the archive copy, which presents itself as the 1997 conference draft'."
+    },
+    {
+      "id": "th-evo-koza-1990-def",
+      "verdict": "ok",
+      "findings": "Quote verbatim (PDF p. 8); title page dated June 1990 (Stanford CS report). 'Breeds them by fitness' is supported by the report's title and the following sentence on the fitness function, not by the quoted span.",
+      "proposedFix": ""
+    },
+    {
+      "id": "th-sp-name-minsky-1961",
+      "verdict": "ok",
+      "findings": "Quote verbatim in the MIT transcription. The locator calls the 'Summary' an 'editorial summary'; in the transcription an editorial note (in the third person) precedes it, and the 'Summary:' paragraph appears to be the author's IRE summary. Labelling it editorial may misattribute it.",
+      "proposedFix": "Locator: 'Summary (at the head of the paper)', without 'editorial', unless the printed IRE page shows otherwise."
+    },
+    {
+      "id": "th-sym-name-mark-1977",
+      "verdict": "ok",
+      "findings": "Index entry confirmed on ijcai.org/proceedings/1977. Title-only use; role 'use'; the qualification states the limits.",
+      "proposedFix": ""
+    },
+    {
+      "id": "th-lp-name-colmerauer-1992",
+      "verdict": "fix",
+      "findings": "Quote confirmed (PDF p. 2, Introduction). The problem is the date kind: the document's only date is 'publication 1992-11', but the evidence is the date printed on an author-hosted PDF ('November 1992' under the byline). That is the date the text bears, not evidence of publication; the paper was published in the HOPL-II proceedings (ACM SIGPLAN Notices, 1993; not retrieved here). The record's time inherits the wrong kind.",
+      "proposedFix": "Change the document date to kind 'event' (or the pack's equivalent for a date the text bears, as used for Lighthill's 'July 1972'), label 'date printed on the author-hosted text', and the record's time.basis likewise; add the HOPL-II publication as an unretrieved omission or a claimed date with its source."
+    },
+    {
+      "id": "th-ml-samuel-1959",
+      "verdict": "ok",
+      "findings": "Quotes verbatim in the reprint's text layer (p. 1). Role 'use' (Campaigne holds the earliest-located role); qualification correctly refuses to date 'for some years' as an earlier use. The document has the publication 1959-07 date twice (duplicate).",
+      "proposedFix": "Remove the duplicate document date."
+    },
+    {
+      "id": "th-stat-valiant-1984-def",
+      "verdict": "ok",
+      "findings": "Quotes verbatim (p. 1). The qualification states the family assignment is editorial. Document has both 'publication 1984-11' and 'publication 1984' (redundant).",
+      "proposedFix": ""
+    },
+    {
+      "id": "th-fam-tllm-gpt4-def",
+      "verdict": "fix",
+      "findings": "Quote verbatim (p. 2, section 2), but the statement's 'then fine-tuned with RLHF' is the next sentence, outside the evidence.",
+      "proposedFix": "Add the quote 'The model was then fine-tuned using Reinforcement Learning from Human Feedback (RLHF)' (PDF p. 2, section 2), or extend the existing quote."
+    },
+    {
+      "id": "th-def-ai-mccarthy-2007",
+      "verdict": "ok",
+      "findings": "Quote verbatim (Basic Questions, first answer). Version date as revision; qualification notes the non-consensus disclaimer.",
+      "proposedFix": ""
+    },
+    {
+      "id": "th-ns-mao-2019-term",
+      "verdict": "ok",
+      "findings": "Quote verbatim (p. 1, abstract); v1 2019-04-26 confirmed. 'From images and question-answer pairs' is supported by the next clause ('by simply looking at images and reading paired questions and answers'). Role 'use'.",
+      "proposedFix": ""
+    },
+    {
+      "id": "th-sym-def-feigenbaum-1977-knowledge-rich",
+      "verdict": "ok",
+      "findings": "Quote verbatim (PDF p. 3). The statement drops 'very' ('only very secondarily'). Kind 'definition' for what is the author's thesis is loose but the qualification says it is his thesis.",
+      "proposedFix": "Optional: 'only very secondarily' in the statement."
+    },
+    {
+      "id": "th-sp-def-astar-1968",
+      "verdict": "ok",
+      "findings": "Page images checked: p. 1 (journal p. 100) abstract matches the paraphrase ('describes how heuristic information from the problem domain can be incorporated into a formal mathematical theory of graph searching and demonstrates an optimality property of a class of search strategies'); 'Manuscript received November 24, 1967'; p. 3 (journal p. 102) has 'Search Algorithm A*:'. Faithful.",
+      "proposedFix": ""
+    },
+    {
+      "id": "dates[7] th-towell-shavlik-1994 dates[1]",
+      "verdict": "ok",
+      "findings": "'Submitted 1/92, Final pre-publication revisions 8/94' verbatim on PDF p. 1; kind submission, month precision, correct.",
+      "proposedFix": ""
+    },
+    {
+      "id": "dates[8] th-lighthill-1973-general-survey dates[1]",
+      "verdict": "ok",
+      "findings": "'July 1972.' verbatim under the Part I heading of the transcription; kind 'event' (date the survey bears) is appropriate and kept apart from the 1973 publication.",
+      "proposedFix": ""
+    },
+    {
+      "id": "dates[9] th-rhw-1986 dates[2]",
+      "verdict": "ok",
+      "findings": "Page image p. 4 (printed p. 536) shows 'Received 1 May; accepted 31 July 1986.'; kind submission (journal receipt), day precision, correct.",
+      "proposedFix": ""
+    },
+    {
+      "id": "dates[10] th-schmidhuber-bp dates[1]",
+      "verdict": "fix",
+      "findings": "The header '(2014, updated 2020, 2022, 2025)' is verbatim and 'claimed' is the right kind for 2014. But it is the document's only date, so every record on this page is dated 2014; the wording read is demonstrably post-2020 (see th-cn-credit-schmidhuberbp-linnainmaa and -werbos).",
+      "proposedFix": "Add a second document date for the attested wording: 2025 (latest update the page states) or retrieval 2026-10-29, with the note that no earlier wording was retrieved; use that date for the records quoting the page."
+    },
+    {
+      "id": "dates[11] kp-language-models-unsupervised-multitask-learners-2019 dates[1]",
+      "verdict": "ok",
+      "findings": "Reference entry verbatim (GPT-3 v1, PDF p. 71). Kind 'claimed' right; the citing paper shares authors and publisher with the cited one, which the label could say. The cached GPT-2 PDF's own metadata gives CreationDate and ModDate 2019-02-14 (pdfinfo); that is file metadata, not printed text, but it is consistent with a February 2019 release.",
+      "proposedFix": "Optional: add the PDF metadata date 2019-02-14 as a separate, clearly labelled metadata date (not publication), and note that the citing paper is by the same organisation."
+    },
+    {
+      "id": "dates[12] th-legg-hutter-2007-universal-intelligence dates[1]",
+      "verdict": "ok",
+      "findings": "'[Submitted on 20 Dec 2007]' on the abstract page; arXiv API confirms v1 published 2007-12-20T05:50:54Z.",
+      "proposedFix": ""
+    }
+  ],
+  "searches": [
+    "Verbatim check of every quotation in the sample against the cached text layers (whitespace-only and pack-normalised matching, page located); three non-matches (Goertzel self-credit, Zhao CoT, Rosenblatt) traced to ellipses and examined in context.",
+    "Page images rendered with pdftoppm and read: Pearl 1985 R-43 pp. 1-2; Hart, Nilsson and Raphael 1968 pp. 1 and 3; Rumelhart, Hinton and Williams 1986 (Nature) p. 4; PDP chapter 8 p. 3 (printed 322-323).",
+    "arXiv API id_list query for v1/v4 submission dates: 2212.11279, 1404.7828v4, 0712.3329, 2303.18223, 1904.12584, 2303.08774, 2005.14165, 1706.03762, 2108.07258, 1312.5602 (all as recorded).",
+    "'large language model(s)' before 2007: Crossref query.bibliographic, until-pub-date 2006-12-31, 100 rows, titles screened (none); Crossref with has-abstract, until 1999-12-31, 200 rows, abstracts screened (none); arXiv API abs phrase search ascending (earliest 2012-10-31); Semantic Scholar bulk search, exact phrase, year <= 2007, 17 records with abstracts screened: Hu, Turin and Brown, ICSLP 96 (1996-10-03) uses the phrase in its abstract; confirmed in the ISCA Archive PDF (https://www.isca-archive.org/icslp_1996/hu96_icslp.pdf, fetched as b-audit-hu-1996).",
+    "'foundation model(s)' before 2021-08-16: arXiv API abs phrase search (engineering senses only in the first results); Semantic Scholar bulk search 'foundation models' + learning/neural/language, 2010-2021, 126 records, abstracts screened for ML sense: only items the pack already shows to carry the phrase in later revisions (2010.03688, 2101.09858, 1810.13306) and one misdated 2020 record about a recent ultrasound model.",
+    "'Transformer' as an attention architecture before 2017-06-12: arXiv API ti:transformer in cs.CL, cs.LG, cs.NE, stat.ML (first 30 by date): only transformation-based learning and other senses; Spatial Transformer Networks (2015) known as another sense.",
+    "Schmidhuber 2014 survey (arXiv v4) full-text grep for Linnainmaa and Werbos to compare with the 2026-10-29 state of 'Who Invented Backpropagation?'.",
+    "pdfinfo on the cached GPT-2 PDF (c-gpt2): CreationDate/ModDate 2019-02-14."
+  ],
+  "retrievalFailures": [
+    "Internet Archive availability service for people.idsia.ch/~juergen/who-invented-backpropagation.html (timestamp 2015): HTTP 429, so no earlier wording of the page could be located.",
+    "api.github.com/repos/openai/gpt-2 returned no usable output (GPT-2 repository creation date not obtained).",
+    "Hu, Turin and Brown 1997 (Computer Speech and Language, doi:10.1006/csla.1996.0020): abstract elided by publisher in Semantic Scholar; not retrieved."
+  ]
+}

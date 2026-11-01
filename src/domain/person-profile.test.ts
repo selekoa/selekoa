@@ -71,7 +71,10 @@ describe('person profile projection', () => {
       'leike-anthropic-alignment-science',
       'leike-deepmind-alignment-prior',
     ]);
-    expect(profile.works).toHaveLength(3);
+    // The 2026-10-31 key papers admission adds two authorship records (`kp-`).
+    expect(profile.works.filter((w) => !w.id.startsWith('kp-'))).toHaveLength(
+      3,
+    );
     expect(profile.gaps.map((g) => g.id)).toEqual([
       'snapshots',
       'undated',

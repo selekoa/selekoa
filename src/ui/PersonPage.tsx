@@ -1,3 +1,4 @@
+import { ClaimLink } from './NavLink';
 import {
   Suspense,
   useMemo,
@@ -12,7 +13,7 @@ import {
   type PathEntry,
   type PersonProfile,
 } from '../domain/person-profile';
-import { predicates } from '../domain/predicates';
+import { relationLabel } from '../domain/predicates';
 import { mapReadable, mapSize, queryDataset } from '../domain/query';
 import { derivationLabels, resolutionLabels } from '../domain/epistemics';
 import { CopyLink, ExportPersonStarter } from './ReferenceActions';
@@ -53,15 +54,15 @@ function PathRow({
         <span>{dates.record}</span>
         <span className="person-path-kind">{kindLabels[claim.time.kind]}</span>
       </div>
-      <button
+      <ClaimLink
         className="dossier-claim doc-claim"
-        data-claim-id={claim.id}
         aria-label={`Inspect claim & evidence: ${claim.statement}`}
-        aria-pressed={selectedClaimId === claim.id}
-        onClick={() => onClaim(claim.id)}
+        pressed={selectedClaimId === claim.id}
+        claimId={claim.id}
+        onOpen={() => onClaim(claim.id)}
       >
         <span className="record-row-heading">
-          {capitalise(predicates[claim.predicate].label)}
+          {capitalise(relationLabel(claim))}
           {institution ? ' ' + institution.name : ''}
           {role ? ' · ' + role : ''}
         </span>
@@ -86,7 +87,7 @@ function PathRow({
         <span className="dossier-evidence-link">
           Inspect claim & evidence ↗
         </span>
-      </button>
+      </ClaimLink>
       <StatedReason claim={claim} repository={repository} />
     </li>
   );
@@ -317,12 +318,14 @@ export function PersonPage({
                     {gap.claimIds.map((id, i) => (
                       <span key={id}>
                         {i > 0 && ' · '}
-                        <button
+                        <ClaimLink
+                          secondary
                           className="text-button"
-                          onClick={() => onClaim(id)}
+                          claimId={id}
+                          onOpen={() => onClaim(id)}
                         >
                           {claimRoute(repository.claims.get(id)!, repository)}
-                        </button>
+                        </ClaimLink>
                       </span>
                     ))}
                   </p>
@@ -444,6 +447,7 @@ export function PersonPage({
               <Network
                 entities={neighbourhood.entities}
                 claims={neighbourhood.claims}
+                records={repository.data}
                 anchors={repository.data.meta.anchors}
                 focusId={person.id}
                 selectedClaimId={selectedClaimId}

@@ -47,9 +47,21 @@
   Cache-Control: no-cache
 /commitments/*
   Cache-Control: no-cache
+/guide/*
+  Cache-Control: no-cache
 /propositions/*
   Cache-Control: no-cache
 /question/*
+  Cache-Control: no-cache
+/years
+  Cache-Control: no-cache
+/year/*
+  Cache-Control: no-cache
+
+# The records each page is drawn from in the browser (docs/data-loading-
+# design-c.md), written with the pages under the same names on every build:
+# revalidated as pages are, so a page and its records change together.
+/slices/*
   Cache-Control: no-cache
 
 # Build output with a content hash in the file name: never changes.

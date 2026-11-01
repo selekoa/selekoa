@@ -17,6 +17,7 @@ import {
   withoutSourceArchiveFields,
 } from '../editorial/pre-framework-evidence-data';
 import { preProvisionsRaw } from '../editorial/historical-views';
+import chinaLabs3 from '../../review/china-labs-3-admission-1-before-2026-10-31.json';
 
 const data = repository.data;
 // The schema 2.7 pass is checked against its own dataset state (before the
@@ -110,8 +111,21 @@ describe('schema 2.7 source language and archive captures', () => {
     // The second Chinese institutions collection (2026-10-27) keeps its own
     // pack-prefixed sources, all in Simplified Chinese where Chinese.
     // The frameworks-to-law admission (2026-10-28) adds Chinese government
-    // texts, also in Simplified Chinese.
-    expect(byTag('zh-Hans').filter((id) => !id.startsWith('c2-src-'))).toEqual([
+    // texts, also in Simplified Chinese. The compute, power and orbit
+    // admission (2026-10-30) and the AI in biology admission (2026-10-31)
+    // keep their own pack-prefixed sources, and so does the third Chinese
+    // institutions collection (2026-10-31), whose sources its before-snapshot
+    // lists.
+    const thirdCollection = new Set(chinaLabs3.added.sources);
+    expect(
+      byTag('zh-Hans').filter(
+        (id) =>
+          !id.startsWith('c2-src-') &&
+          !id.startsWith('source-cpo-') &&
+          !id.startsWith('source-aib-') &&
+          !thirdCollection.has(id),
+      ),
+    ).toEqual([
       'source-cn-cac-genai-filings-2024',
       'source-cn-cac-genai-filings-2025',
       'source-cn-csl-amendment-2025',
@@ -240,9 +254,10 @@ describe('schema 2.7 source language and archive captures', () => {
       /^Captured \d+ days after the recorded version date\.$/,
     );
     expect(copy.limit).toContain('does not prove what the page said earlier');
-    expect(archiveCopy(repository.sources.get('source-openai-launch')!)).toBe(
-      null,
-    );
+    // A source without a capture (none was found for this post).
+    expect(
+      archiveCopy(repository.sources.get('lg-src-mx-spacexai-rebrand')!),
+    ).toBe(null);
     expect(nonEnglishLanguage(rsp)).toBe(null);
     expect(
       nonEnglishLanguage(repository.sources.get('source-cn-alibaba-budget')!),

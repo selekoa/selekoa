@@ -91,6 +91,64 @@ text's rule fixes without stating it, recorded as an inferred provision dated by
 computed date. `attributes.activityStage` can be `announced` on a `revoked` record, for
 an announced revocation not yet formalised. `signed_commitment` may have a public body
 or a country as its subject.
+Dataset schema 2.20 (2026-10-29, release 0.12.0) adds the `attributes.provision.kind`
+value `statement`: what a document with an exact expression states that is not one of the
+other provision kinds, such as a licence term or a prospectus statement, recorded with
+`states_provision` on that document. `evaluation_engagement` may have a public body as its
+subject and `held_role` a public body as its object. Format 1.7 carries these unchanged.
+Format 1.8 (dataset schema 2.21, 2026-10-30) adds the entity fields `location` (an
+infrastructure's `countryCode`, `adminArea` and `place`, as its sources word them) and
+`operator` (each stated operator's `entityId` with a `note`; operation never implies
+ownership). Their CSV columns are `location_json` and `operator_json`. Schema 2.21 also adds
+the predicates `announced_site`, `status_stated`, `power_agreement`, `supply_agreement`,
+`government_award`, `granted_equity_right`, `announced_plan`, `launch_stated`,
+`filed_application`, `regulator_decision`, `accepted_for_filing` and `designated_zone`.
+Inside `attributes`: `quantity.measures` (`it_capacity`, `facility_power`,
+`grid_connection`, `generation_capacity`, `contracted_energy`, `chips` or `not_stated`,
+never compared across records) and `quantity.range` (`from`, `to`; the value is its upper
+end); `statedDates`, the dates a party states as targets, deadlines or terms (`kind`,
+`date` at the source's precision, `wording` where no precision fits, `statedBy`, `note`),
+which never date the record; `power` (`technology`, `mechanism`), `supply` (`product`,
+`units`) and `term`, as worded; `awardStage` (`preliminary`, `final`, `disbursed`) and
+`stageWording`; the `transactionStage` values `letter_of_intent` and `term_sheet`; and the
+`amount.scope` values `project` and `programme` with the stated basis in `scopeNote`.
+`plans_capacity` and `plans_infrastructure_spend` may name a group of sites as a literal
+or a site, and `investment_announced` and `invested_in` may have a public body as investor.
+Dataset schema 2.22 (2026-10-30) adds the predicate `states_evaluation_result` and, inside
+`attributes`, the block `evaluation`: `what` was measured, `how` (the kind of method),
+the `result` in the report's words and the `caveats` the report itself states. The record
+is the report's statement, not a verified finding, and it is dated by its report; a report
+that states no date of its own carries an unknown date or a snapshot. `evaluatedSystem`
+may accompany it. Schema 2.22 also adds the `attributes.provision.kind` values `date` (a
+date a text states for its own application) and `standing` (the standing a text claims for
+itself). No file, column or top-level field changes, so the format version stays 1.8.
+Dataset schema 2.23 (2026-10-31) adds the predicates `partnership_announced` (an
+organisation's announced collaboration with a counterparty, with `activityStage:
+announced`, dated by its announcement; an "up to" amount is never an `amount`) and
+`award_announced` (an awarding body's announced award to a person, dated by its
+announcement, with no amount). No file, column or top-level field changes, so the
+format version stays 1.8.
+
+Dataset schema 2.24 (2026-10-31) adds the predicate `states_contribution` (a document's
+own description of its contribution, quoted and dated by the version quoted) and the
+attribute `priorityClaim`, which flags a passage containing the document's own claim of
+priority or novelty. Schema 2.25 adds the predicate `credits_work` (a document's
+attribution of an argument, concept, term, finding or approach to another work) and the
+attribute `attribution` (`builds_on`, `attributes_term`, `summarises`,
+`attributes_and_disputes`). No file, column or top-level field changes, so the format
+version stays 1.8.
+
+Dataset schema 2.26 (2026-10-31) adds the predicate `uses_term`, the entity block `naming`
+(`kind`, `criterion`, `terms` and an optional `withheld` role with its `reason` and
+`recordedAt`) and, inside `attributes`, the blocks `naming` (`string`, `sense`, `role`,
+`register`, `reading`, `claimed`, `attested`) and `technical` (`kind`). `explicitly_credits`
+may name a literal actor. Format 1.9 adds the entity field `naming` (CSV column
+`naming_json`).
+
+Dataset schema 2.27 (2026-10-31) adds `attributes.listedEntity`: on a `lists_participants`
+record counted by Selekoa as one entry, the dataset organisation, public body or country
+that one listed name is mapped to, with the basis of the mapping in the qualification. No
+file, column or top-level field changes, so the format version stays 1.8.
 Releases written in earlier formats stay as they are. The generator still writes formats
 1.1 to 1.5, so the tests can reproduce those releases byte for byte.
 
@@ -107,7 +165,10 @@ Collection IDs are written `<kind>/<id>`, such as `control/openai`, matching the
 address in the application.
 
 An ID is stable once a record is merged to the main dataset, and it is never reused for
-a different record. A correction that keeps a claim's proposition keeps its ID; the
+a different record. An ID describes nothing: five proposition IDs end in a stance letter or
+word that the record no longer has after a later correction (listed in
+`docs/ontology.md`, decision C4 of 2026-10-29), and the record's predicate, not its ID,
+gives its stance. A correction that keeps a claim's proposition keeps its ID; the
 change appears under “changed” in the next changelog. When the proposition itself
 changes, a new claim is created whose `supersedes` field names the claim it replaces,
 and the earlier claim stays in the dataset. Claim supersession is about records. It is
@@ -167,12 +228,15 @@ also contains `LICENSE-DATA.txt` and `LICENSING.md`, outside the checksummed fil
 | `proposition`     | For a proposition concept (schema 2.11): `code`, the one `criterion` texts are classified against, `terms`, its usual names, and from schema 2.16 any `withheld` role | selekoa       | provisional |
 | `countryCode`     | For a country (schema 2.19): its ISO 3166-1 alpha-2 code                                                                                                              | structured    | stable      |
 | `datedNames`      | For an organisation or public body that was renamed (schema 2.19): each `name` with `from` and `until` dates as its sources give them, a `note` and `sourceIds`       | selekoa       | provisional |
+| `location`        | For infrastructure (schema 2.21): `countryCode` (ISO 3166-1 alpha-2), `adminArea` and `place`, as the sources word them                                               | selekoa       | provisional |
+| `operator`        | For infrastructure (schema 2.21): each operator a source states, `entityId` and `note`; never inferred, and not ownership                                             | selekoa       | provisional |
 
 CSV: `id`, `type`, `subtype`, `name`, `short_name`, `sort_name`, `aliases`,
 `description`, `source_ids`, `external_ids_json`, `document_family`, `document_label`,
 `document_publisher_id`, `document_published_at`, `document_effective_at`,
 `document_revised_at`, `document_date_note`, `proposition_code`, `proposition_criterion`,
-`proposition_terms` and, from format 1.7, `country_code` and `dated_names_json`.
+`proposition_terms` and, from format 1.7, `country_code` and `dated_names_json`, and from
+format 1.8, `location_json` and `operator_json`.
 
 ## Claims
 
@@ -325,13 +389,14 @@ A collection is an authored, machine-proposed selection that the application rea
 page: a guided question (`question`), a document history (`documents`), a control-structure
 timeline (`control`), a set of external commitments (`commitments`) or, from format 1.1, a
 collection of propositions with the texts that articulate, contest or bear on them
-(`propositions`). It adds no facts;
+(`propositions`), and also a framework comparison (`compare`) and, from release 0.12.0,
+a guided reading that brings several collections' records together (`guide`). It adds no facts;
 its text frames the claims it lists.
 
 | Field             | Meaning                                                                                                     | Class      | Stability   |
 | ----------------- | ----------------------------------------------------------------------------------------------------------- | ---------- | ----------- |
 | `id`              | `<kind>/<id>`                                                                                               | structured | stable      |
-| `kind`            | `question`, `documents`, `control`, `commitments` or `propositions`                                         | structured | stable      |
+| `kind`            | `question`, `documents`, `compare`, `control`, `commitments`, `propositions` or `guide`                     | structured | stable      |
 | `version`         | The collection's own version number                                                                         | structured | stable      |
 | `title`           | Page title                                                                                                  | selekoa    | stable      |
 | `question`        | The research question the collection addresses                                                              | selekoa    | stable      |

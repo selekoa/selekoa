@@ -45,10 +45,12 @@ const sb53 = 'california-sb-53';
 
 export const selfGovernance: QuestionStarterDefinition = {
   id: 'frameworks-to-obligations',
-  version: 1,
+  // Version 2 (2026-10-29): the question retitled neutrally, by the
+  // maintainer's decision; the ID and address are unchanged.
+  version: 2,
   title: 'Frameworks, commitments and legal obligations, 2023–2026',
   question:
-    'From voluntary frameworks to legal obligations: how did frontier-AI developers’ self-governance change, 2023–2026?',
+    'Frontier-AI frameworks and legal obligations, 2023–2026: what changed in developers’ self-governance and in the law?',
   editorialStatus: 'machine-proposed',
   scope:
     'Selekoa records on the developers’ own safety frameworks, the shared commitments of 2023 and 2024, the EU General-Purpose AI Code of Practice, the EU AI Act as published in 2024 and amended in 2026, California SB 53, the New York RAISE Act and one Chinese measure on generative AI services. It includes the Commission’s guidance on the AI Act and a draft rule on proceedings. Each record links to its claim, its evidence and the original source. The page lists records and adds no claim or conclusion of its own.',

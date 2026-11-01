@@ -4,7 +4,7 @@
 
 Selekoa is a source-critical institutional memory and research base for machine intelligence. Its durable asset is the evidence-backed historical corpus and its research semantics. Research collections, explanatory views and research starters are connected capabilities; the graph is one interface rather than the product identity. Dossiers, person views, document/version histories, timelines, source inspection, exports and future query interfaces should serve the research task. Graph functionality may be reduced or omitted when it does not improve historical understanding. The application flow below describes the existing atlas implementation. The [Reborn Genesis I decision](research-corpus.md) adds a separate validated corpus and deterministic exports under `research/collections/`, with pure code in `src/research`. Corpus propositions do not enter `data/`, graph queries or the browser bundle. Their upstream findings do not map automatically to claim resolution, evidence review or editorial acceptance.
 
-TypeScript and React render a Vite application. Graphology holds a directed multigraph; Sigma renders curved arrow edges in WebGL. A deterministic component layout leaves unsupported connections absent and keeps positions stable. Distance has no analytical meaning.
+TypeScript and React render a Vite application. Graphology holds a directed multigraph; Sigma renders curved arrow edges in WebGL. A deterministic layout leaves unsupported connections absent. Positions are a function of the records drawn alone, so a stored or unseeded map whose records are unchanged keeps its positions across releases. The build stores the map centred on each organisation and person (`/slices/map/`); any other map is laid out in a Web Worker, or in the page when no worker can run (`src/ui/map-layout.ts`, `review/map-prebuilt-layouts-2026-10-31.md`). Distance has no analytical meaning.
 
 Source-controlled JSON provides legible diffs, runtime validation and straightforward future ingestion. There is no database, backend, authentication, telemetry, crawler or cloud service.
 
@@ -39,27 +39,34 @@ The earlier stylesheets still load with the first page, in their original order.
 Every page has a real path from the site root, built from stable IDs
 (`src/domain/addresses.ts`, resolved in `src/domain/deep-links.ts`):
 
-| Page                           | Path                                     |
-| ------------------------------ | ---------------------------------------- |
-| Start page                     | `/`                                      |
-| Hubs                           | `/governance`, `/ideas`, `/institutions` |
-| About & method                 | `/about`                                 |
-| Search (terms in the fragment) | `/search#q=…&mode=names`                 |
-| Record explorer                | `/explore#q=…&view=timeline`             |
-| Document history               | `/documents/<collection-id>`             |
-| Framework comparison           | `/compare/<collection-id>?facet=…`       |
-| Control structure              | `/control/<collection-id>`               |
-| Commitments                    | `/commitments/<collection-id>`           |
-| Propositions                   | `/propositions/<collection-id>`          |
-| Question or guided reading     | `/question/<id>?section=…&claim=…`       |
-| Institutional dossier          | `/dossier/<organisation-id>`             |
-| Person                         | `/person/<person-id>`                    |
-| Document                       | `/document/<document-id>`                |
-| Claim                          | `/claim/<claim-id>`                      |
+| Page                           | Path                                         |
+| ------------------------------ | -------------------------------------------- |
+| Start page                     | `/`                                          |
+| Hubs                           | `/governance`, `/ideas`, `/institutions`     |
+| About & method                 | `/about`                                     |
+| Search (terms in the fragment) | `/search#q=…&mode=names`                     |
+| Record explorer                | `/explore#q=…&view=timeline`                 |
+| Document history               | `/documents/<collection-id>`                 |
+| Framework comparison           | `/compare/<collection-id>?facet=…&edition=…` |
+| Control structure              | `/control/<collection-id>`                   |
+| Commitments                    | `/commitments/<collection-id>`               |
+| Propositions                   | `/propositions/<collection-id>`              |
+| Chronicle: years, a year       | `/years`, `/year/<yyyy>`                     |
+| Chronicle: one topic of a year | `/year/<yyyy>-<topic>`                       |
+| Question or guided reading     | `/question/<id>?section=…&claim=…`           |
+| Institutional dossier          | `/dossier/<organisation-id>`                 |
+| Person                         | `/person/<person-id>`                        |
+| Document                       | `/document/<document-id>`                    |
+| Claim                          | `/claim/<claim-id>`                          |
 
 Search and explore terms go in the fragment (`#q=…`), so they stay in the
 browser and never reach the host's logs; the earlier `?q=` form still resolves
-and is rewritten to the fragment. Any page except a claim takes
+and is rewritten to the fragment. The header's search field submits to
+`/search?q=…` when the page has not run (no scripts), which is that
+earlier form; once the page runs it opens `/search#q=…` directly. The
+comparison's `edition` lists the editions chosen in place of each
+framework's latest, comma-separated, at most one per framework; the built
+page shows the latest editions and the choice applies once it runs. Any page except a claim takes
 `?inspect=<claim-id>` for the open claim panel. IDs are lower-case slugs and are used unchanged. The earlier hash
 addresses (`#/person/<id>`, `#/search?q=…`, `#explorer`, `#/reading/<id>`)
 are moved to their paths in the browser with `history.replaceState`, both
@@ -76,7 +83,10 @@ it to `dist/<path>.html` (`/person/x` → `person/x.html`, which Cloudflare
 Pages serves at `/person/x` without a redirect; the start page stays
 `index.html`). It also writes `404.html` (not indexed) and, with indexing on,
 `sitemap.xml` listing every page and the plain files, and it fails the build
-if any link in the written pages leads to no built file.
+if any link in the written pages leads to no built file. Pages are drawn on
+worker threads, each with its own renderer (one per processor, at most
+eight; `PRERENDER_WORKERS` sets the number); the output does not depend on
+how many.
 
 Each page's HTML carries the page's own title, description, canonical
 address (`baseUrl` + path) and Open Graph copies when indexing is on, and
@@ -119,7 +129,12 @@ replaces the current one, and the document title follows the page.
 `src/domain/search.ts` is a pure full-text search over claim statements and
 qualifications, evidence passages and locators, source titles, entity names and
 aliases, and record IDs. A term matches the beginning of a word after case, accents,
-dashes and quote styles are folded; every term must match. Collection and
+dashes and quote styles are folded and apostrophes dropped (so “Anthropic’s”,
+“anthropic's” and “anthropics” match alike); every term must match. Reading pages
+(hubs, About & method, the explorer, collections, guided readings, question
+starters and control structures; `searchablePages` in `src/prerender/pages.ts`)
+are matched the same way on their title, question and summary and listed as
+"Pages" above the records, except with names only or a filter. Collection and
 organisation filters follow each record's claims and stored document publishers, and
 infer nothing. The score only orders matches by field and completeness. Name lookup
 is the same search restricted to names and aliases.

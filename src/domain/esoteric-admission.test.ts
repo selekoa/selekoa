@@ -1,6 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import esoteric from '../../research/economics-mainstream/esoteric/pack.json';
 import map from '../../review/esoteric-admission-map-2026-10-16.json';
+import archiveFixes from '../../review/archive-fixes-before-2026-10-30.json';
 import { repository } from './repository';
 import { datasetSchema } from './schema';
 import { propositionsView } from './propositions';
@@ -29,6 +30,12 @@ const waybackSources = new Set(
     .filter((s) => 'waybackCapture' in s.retrieval)
     .map((s) => s.id),
 );
+// Passages corrected to their archive capture on 2026-10-30, as admitted.
+const admitted = new Map(
+  (archiveFixes.before.evidence as { id: string; passage: string }[]).map(
+    (e) => [e.id, e.passage],
+  ),
+);
 const evidenceOf = (p: Passage) =>
   repository.evidence.get('evidence-ec-' + p.id.toLowerCase());
 const claimOf = (p: Passage) => repository.claims.get(evidenceOf(p)!.claimId)!;
@@ -49,7 +56,9 @@ describe('the esoteric economics strand (admitted 2026-10-16)', () => {
       }
       expect(e, p.id).toBeDefined();
       expect(e!.locator, p.id).toBe(p.locator);
-      expect(e!.passage, p.id).toBe(changes[p.id]?.quote ?? p.quote);
+      expect(admitted.get(e!.id) ?? e!.passage, p.id).toBe(
+        changes[p.id]?.quote ?? p.quote,
+      );
       expect(Boolean(e!.contextOnly), p.id).toBe(Boolean(p.contextOnly));
     }
   });

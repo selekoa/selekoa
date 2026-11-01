@@ -15,3 +15,29 @@ declare module 'virtual:site' {
   /** Whether indexing or analytics is on, so the site counts as public. */
   export const isLive: boolean;
 }
+
+declare module 'virtual:site-facts' {
+  const facts: import('./domain/site-facts').SiteFacts;
+  export default facts;
+}
+
+declare module 'virtual:about-facts' {
+  const facts: import('./domain/about-facts').AboutFacts;
+  export default facts;
+}
+
+declare module 'virtual:search-index' {
+  export const manifest: import('./domain/search-index').IndexManifest;
+  export const facets: import('./ui/search-facets').SearchFacets;
+  export const load: import('./domain/search-index').IndexLoader;
+}
+
+declare module 'virtual:records-core' {
+  const core: import('./domain/slices').PlacedSlice;
+  export default core;
+}
+
+declare module 'virtual:records-content' {
+  const content: import('./domain/slices').Content;
+  export default content;
+}

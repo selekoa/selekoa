@@ -1,14 +1,14 @@
 import { useLayoutEffect, useRef } from 'react';
 import './research-path.css';
 import { referencePath } from '../domain/addresses';
-import { NavLink } from './NavLink';
+import { ClaimLink, NavLink } from './NavLink';
 import type {
   ReadingPassage,
   ResearchPath as Path,
 } from '../domain/research-path';
 import { readingPosition } from '../domain/research-path';
 import type { Repository } from '../domain/repository';
-import { predicates } from '../domain/predicates';
+import { predicates, relationLabel } from '../domain/predicates';
 import { CopyLink, ExportReading } from './ReferenceActions';
 import { ReviewMarkers } from './ReviewMarkers';
 import { StatusBadge } from './ReadingRows';
@@ -38,13 +38,15 @@ function Passages({
         <ul>
           {passage.claimIds.map((id) => (
             <li key={id}>
-              <button
+              <ClaimLink
+                secondary
                 className="path-reference"
                 data-passage-claim-id={id}
-                onClick={() => onClaim(id)}
+                claimId={id}
+                onOpen={() => onClaim(id)}
               >
                 {repository.claims.get(id)!.statement} ↗<code>{id}</code>
-              </button>
+              </ClaimLink>
             </li>
           ))}
         </ul>
@@ -273,14 +275,14 @@ export function ResearchPath({
                       </p>
                     )}
                     <div className="path-record-actions">
-                      <button
+                      <ClaimLink
                         className="path-evidence"
-                        data-claim-id={claim.id}
                         aria-label={`Inspect claim & evidence: ${claim.statement}`}
-                        onClick={() => onClaim(claim.id)}
+                        claimId={claim.id}
+                        onOpen={() => onClaim(claim.id)}
                       >
                         Inspect claim & evidence ↗
-                      </button>
+                      </ClaimLink>
                     </div>
                     <details className="path-details">
                       <summary>Record notes & sources</summary>
@@ -297,7 +299,7 @@ export function ResearchPath({
                       </p>
                       <p>{claim.time.note}</p>
                       <p>
-                        {predicates[claim.predicate].label}:{' '}
+                        {relationLabel(claim)}:{' '}
                         {predicates[claim.predicate].description}
                       </p>
                       {claim.evidenceIds.map((id) => {
@@ -384,24 +386,28 @@ export function ResearchPath({
           <ul>
             {path.disputed.claims.map((c) => (
               <li key={c.id}>
-                <button
+                <ClaimLink
+                  secondary
                   className="path-reference"
                   data-question-claim-id={c.id}
-                  onClick={() => onClaim(c.id)}
+                  claimId={c.id}
+                  onOpen={() => onClaim(c.id)}
                 >
                   {resolutionLabels[c.resolution]}: {c.statement} ↗
-                </button>
+                </ClaimLink>
               </li>
             ))}
             {path.disputed.counterevidence.map((e) => (
               <li key={e.id}>
-                <button
+                <ClaimLink
+                  secondary
                   className="path-reference"
                   data-question-claim-id={e.claimId}
-                  onClick={() => onClaim(e.claimId)}
+                  claimId={e.claimId}
+                  onOpen={() => onClaim(e.claimId)}
                 >
                   Contradicting evidence for: {recordLabel(e.claimId)} ↗
-                </button>
+                </ClaimLink>
               </li>
             ))}
           </ul>
@@ -446,13 +452,15 @@ export function ResearchPath({
                 <ul>
                   {q.claimIds.map((id) => (
                     <li key={id}>
-                      <button
+                      <ClaimLink
+                        secondary
                         className="path-reference"
                         data-question-claim-id={id}
-                        onClick={() => onClaim(id)}
+                        claimId={id}
+                        onOpen={() => onClaim(id)}
                       >
                         {recordLabel(id)} ↗<code>{id}</code>
-                      </button>
+                      </ClaimLink>
                     </li>
                   ))}
                 </ul>

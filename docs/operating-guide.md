@@ -74,13 +74,13 @@ next free version.
 | Archive retrieval    | Codex only (cloud sessions cannot reach it)    | Codex                                  |
 | Decisions and merges | The maintainer                                 | The maintainer                         |
 
-The admission rule needs two model families, whichever drafts. The
-editorial policy names the preparing family as Claude and the checking
-family as GPT; if Codex becomes the preparing family, that wording is
-updated by maintainer decision before the first Codex-prepared pack is
-admitted, and the override rule (a preparer's adjudication against the
-checker on an earliest-located role or headline is not admitted on that
-adjudication alone) applies with the families swapped.
+The admission rule needs two model families: whichever drafts, the other
+audits (editorial policy, maintainer decision of 2026-10-29). Each pack's
+review note names the preparing and the checking family, and the override
+rule (a preparer's adjudication against the checker on an earliest-located
+role or headline is not admitted on that adjudication alone) applies to
+whichever family prepared. The November roles in the table are a plan, not
+yet decided; the policy does not need changing for either.
 
 Lower tiers allow less work per day. Keep each task bounded: one pack, one
 check or one admission per thread; commit and push after each source group or

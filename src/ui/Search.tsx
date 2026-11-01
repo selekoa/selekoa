@@ -1,37 +1,33 @@
 import {
   Fragment,
+  use,
   useDeferredValue,
   useMemo,
   useRef,
   useState,
   type ReactNode,
 } from 'react';
-import type { Repository } from '../domain/repository';
 import { useInBrowser, useMediaQuery } from './client';
 import {
-  searchOrganisations,
-  searchRecords,
-  searchYears,
+  createPageIndex,
+  searchPages,
   type Highlight,
   type SearchField,
   type SearchHit,
-  type SearchIndex,
   type SearchMode,
   type SearchRecordType,
 } from '../domain/search';
+import type { SearchOutcome, SearchSource } from './search-source';
+import type { SearchFacets } from './search-facets';
 import {
   derivationLabels,
   resolutionLabels,
   supportLabels,
 } from '../domain/epistemics';
-import {
-  applicationCollections,
-  collectionClaimIds,
-  type CollectionKind,
-} from '../release/collections';
 import { entityStyle } from './entityStyle';
 import { CopyLink } from './ReferenceActions';
-import { RecordLink } from './NavLink';
+import { RecordLink, ClaimLink, NavLink, RecordHref } from './NavLink';
+import { recordPath } from './record-path';
 import { ArchiveLink } from './SourceArchive';
 import './search.css';
 import { quoted } from './quote';
@@ -61,14 +57,6 @@ const fieldLabels: Record<SearchField, string> = {
   shortName: 'Short name',
   alias: 'Also known as',
   id: 'Record ID',
-};
-const collectionKinds: Record<CollectionKind, string> = {
-  documents: 'Document history',
-  compare: 'Comparison',
-  commitments: 'Commitments',
-  control: 'Control structure',
-  question: 'Guided reading',
-  propositions: 'Propositions',
 };
 const examples = ['whistleblower', 'ASL-3', 'Responsible Scaling Officer'];
 /** Results shown per group before “Show all”. */
@@ -100,8 +88,8 @@ function Snippet({ segments }: { segments: Highlight[] }) {
 }
 
 type Props = {
-  repository: Repository;
-  index: SearchIndex;
+  /** Facets and results: the static index in the browser (search-source.ts). */
+  source: SearchSource;
   query: string;
   onQuery: (query: string) => void;
   mode: SearchMode;
@@ -112,13 +100,14 @@ type Props = {
   onEntity: (id: string) => void;
   /** Opens a person or document page. */
   onPage: (id: string) => void;
+  /** Opens a reading page, such as a hub or a collection, by its address. */
+  onPagePath: (path: string) => void;
   /** The switch between the list, timeline and map of the results. */
   views?: ReactNode;
 };
 
 export function Search({
-  repository,
-  index,
+  source,
   query,
   onQuery,
   mode,
@@ -127,35 +116,12 @@ export function Search({
   onClaim,
   onEntity,
   onPage,
+  onPagePath,
   views,
 }: Props) {
-  const data = repository.data;
-  const collections = useMemo(
-    () =>
-      [...applicationCollections]
-        .sort(
-          (a, b) =>
-            Object.keys(collectionKinds).indexOf(a.kind) -
-            Object.keys(collectionKinds).indexOf(b.kind),
-        )
-        .map((c) => {
-          const title = String(c.definition.title);
-          const institution =
-            typeof c.definition.institutionId === 'string'
-              ? repository.entities.get(c.definition.institutionId)?.name
-              : undefined;
-          const named = institution
-            ? `${institution}, ${title.toLowerCase()}`
-            : title;
-          return {
-            id: `${c.kind}:${c.definition.id}`,
-            label: `${collectionKinds[c.kind]}: ${named}`,
-            title: named,
-            claimIds: new Set(collectionClaimIds(data, c)),
-          };
-        }),
-    [data, repository],
-  );
+  const facets = use(source.facets() as Promise<SearchFacets>);
+  const pageIndex = useMemo(() => createPageIndex(facets.pages), [facets]);
+  const collections = facets.collections;
   /** The collections each claim appears in, by title. */
   const collectionsOf = useMemo(() => {
     const titles = new Map<string, string[]>();
@@ -164,6 +130,67 @@ export function Search({
         titles.set(id, [...(titles.get(id) ?? []), c.title]);
     return titles;
   }, [collections]);
+  /** Document names shared by more than one document record. */
+  const sharedNames = useMemo(() => new Set(facets.sharedNames), [facets]);
+  const { organisations, years } = facets;
+  const [type, setType] = useState<SearchRecordType | ''>('');
+  const [collectionId, setCollectionId] = useState('');
+  const [organisationId, setOrganisationId] = useState('');
+  const [fromYear, setFromYear] = useState('');
+  const [untilYear, setUntilYear] = useState('');
+  const [expanded, setExpanded] = useState<SearchRecordType[]>([]);
+  const [wholeWords, setWholeWords] = useState(false);
+  const [order, setOrder] = useState<'match' | 'date'>('match');
+  // Filters start open on wide screens and folded on phones, until the
+  // reader opens or folds them. The built page shows them open.
+  const wide = useMediaQuery('(min-width: 721px)', true);
+  // Controls in a built page answer once the page runs in the browser.
+  const live = useInBrowser();
+  const [filtersToggled, setFiltersToggled] = useState<boolean | null>(null);
+  const filtersOpen = filtersToggled ?? wide;
+  const filtered =
+    mode === 'all' &&
+    !!(type || collectionId || organisationId || fromYear || untilYear);
+  // A new query or filter is looked up while the results in view stay; the
+  // index loads only the files it needs (src/domain/search-index.ts).
+  const request = useMemo(
+    () => ({
+      query,
+      filters:
+        mode === 'names'
+          ? { mode, wholeWords, order }
+          : {
+              wholeWords,
+              order,
+              types: type ? [type] : undefined,
+              collectionId: collectionId || null,
+              organisationId: organisationId || null,
+              fromYear: fromYear ? Number(fromYear) : null,
+              untilYear: untilYear ? Number(untilYear) : null,
+            },
+    }),
+    [
+      query,
+      mode,
+      type,
+      collectionId,
+      organisationId,
+      fromYear,
+      untilYear,
+      wholeWords,
+      order,
+    ],
+  );
+  const deferred = useDeferredValue(request);
+  const deferredQuery = deferred.query;
+  const searching = deferred !== request;
+  const { results, repository, failed } = use(
+    source.search(deferred) as Promise<SearchOutcome>,
+  );
+  const data = repository.data;
+  /** The page of a record in the results, as the search page links it. */
+  const recordHref = (id: string) =>
+    recordPath(repository.entities.get(id), false);
   /**
    * The publisher of the document a claim is about, so that two frameworks of
    * the same name (Microsoft's and OpenAI's) can be told apart.
@@ -175,62 +202,13 @@ export function Search({
     const publisherId = subject?.documentVersion?.publisherId;
     return publisherId ? repository.entities.get(publisherId)?.name : undefined;
   };
-  /** Document names shared by more than one document record. */
-  const sharedNames = useMemo(() => {
-    const seen = new Map<string, number>();
-    for (const e of data.entities)
-      if (e.type === 'document') seen.set(e.name, (seen.get(e.name) ?? 0) + 1);
-    return new Set([...seen].filter(([, n]) => n > 1).map(([name]) => name));
-  }, [data]);
-  const organisations = useMemo(() => searchOrganisations(data), [data]);
-  const years = useMemo(() => searchYears(data), [data]);
-  const [type, setType] = useState<SearchRecordType | ''>('');
-  const [collectionId, setCollectionId] = useState('');
-  const [organisationId, setOrganisationId] = useState('');
-  const [fromYear, setFromYear] = useState('');
-  const [untilYear, setUntilYear] = useState('');
-  const [expanded, setExpanded] = useState<SearchRecordType[]>([]);
-  const [wholeWords, setWholeWords] = useState(false);
-  // Filters start open on wide screens and folded on phones, until the
-  // reader opens or folds them. The built page shows them open.
-  const wide = useMediaQuery('(min-width: 721px)', true);
-  // Controls in a built page answer once the page runs in the browser.
-  const live = useInBrowser();
-  const [filtersToggled, setFiltersToggled] = useState<boolean | null>(null);
-  const filtersOpen = filtersToggled ?? wide;
-  const filtered =
-    mode === 'all' &&
-    !!(type || collectionId || organisationId || fromYear || untilYear);
-  const deferredQuery = useDeferredValue(query);
-  const results = useMemo(
+  // Pages are listed with every record, not with names only or filters.
+  const pages = useMemo(
     () =>
-      searchRecords(
-        index,
-        deferredQuery,
-        mode === 'names'
-          ? { mode, wholeWords }
-          : {
-              wholeWords,
-              types: type ? [type] : undefined,
-              collection: collections.find((c) => c.id === collectionId)
-                ?.claimIds,
-              organisationId: organisationId || null,
-              fromYear: fromYear ? Number(fromYear) : null,
-              untilYear: untilYear ? Number(untilYear) : null,
-            },
-      ),
-    [
-      index,
-      deferredQuery,
-      mode,
-      type,
-      collections,
-      collectionId,
-      organisationId,
-      fromYear,
-      untilYear,
-      wholeWords,
-    ],
+      mode === 'all' && !filtered
+        ? searchPages(pageIndex, deferredQuery, { wholeWords })
+        : [],
+    [pageIndex, deferredQuery, mode, filtered, wholeWords],
   );
   const resultsRef = useRef<HTMLDivElement>(null);
   const resetFilters = () => {
@@ -245,17 +223,28 @@ export function Search({
     onQuery(text);
   };
   const shown = query.trim();
+  const pageCount = pages.length
+    ? `${pages.length} ${pages.length === 1 ? 'page' : 'pages'}`
+    : '';
+  const recordCount = `${results.total} ${results.total === 1 ? 'record' : 'records'}`;
+  const matchVerb = pages.length + results.total === 1 ? 'matches' : 'match';
   const status = !shown
     ? null
-    : !results.terms.length
-      ? 'Enter a word, name or phrase.'
-      : results.total && mode === 'names'
-        ? `${results.total} ${results.total === 1 ? 'record matches' : 'records match'} “${shown}” by name or alias.`
-        : results.total
-          ? `${results.total} ${results.total === 1 ? 'record matches' : 'records match'} “${shown}”${filtered ? ' with these filters' : ''}: ${listSentence(results.groups.map((g) => count(g.hits.length, g.type)))}.`
-          : mode === 'names'
-            ? `No name or alias matches “${shown}”.`
-            : `No claim statement or qualification, evidence passage or locator, source title, name, alias or record ID matches “${shown}”${filtered ? ' with these filters' : ''}.`;
+    : searching
+      ? 'Searching…'
+      : failed
+        ? 'Search could not load its index. Check the connection and search again, or reload the page.'
+        : !results.terms.length
+          ? 'Enter a word, name or phrase.'
+          : results.total && mode === 'names'
+            ? `${results.total} ${results.total === 1 ? 'record matches' : 'records match'} “${shown}” by name or alias.`
+            : results.total
+              ? `${pageCount ? `${pageCount} and ` : ''}${recordCount} ${matchVerb} “${shown}”${filtered ? ' with these filters' : ''}: ${listSentence(results.groups.map((g) => count(g.hits.length, g.type)))}.`
+              : mode === 'names'
+                ? `No name or alias matches “${shown}”.`
+                : pageCount
+                  ? `${pageCount} ${matchVerb} “${shown}”. No claim statement or qualification, evidence passage or locator, source title, name, alias or record ID matches it.`
+                  : `No claim statement or qualification, evidence passage or locator, source title, name, alias or record ID matches “${shown}”${filtered ? ' with these filters' : ''}.`;
 
   const sourceLine = (hit: SearchHit) => {
     const [first, ...rest] = hit.sourceIds.map((id) =>
@@ -296,11 +285,11 @@ export function Search({
         hit.type === 'passage' ? repository.evidence.get(hit.id)! : null;
       const selected = selectedClaimId === claim.id;
       return (
-        <button
+        <ClaimLink
           className={`search-hit${selected ? ' is-selected' : ''}`}
-          onClick={() => onClaim(claim.id)}
-          aria-pressed={selected}
-          data-claim-id={claim.id}
+          claimId={claim.id}
+          onOpen={() => onClaim(claim.id)}
+          pressed={selected}
         >
           <span className="search-hit-meta">
             {publisherOf(claim.id) && `${publisherOf(claim.id)} · `}
@@ -334,7 +323,7 @@ export function Search({
             </span>
           )}
           <span className="search-hit-open">Inspect evidence ↗</span>
-        </button>
+        </ClaimLink>
       );
     }
     if (hit.type === 'source') {
@@ -442,7 +431,7 @@ export function Search({
         <p className="doc-intro">
           {mode === 'names'
             ? 'Looks up people, organisations, documents and other records by name or alias.'
-            : 'Searches claim statements and qualifications, evidence passages and their locators, source titles, and the names and aliases of people, organisations and other records. Record IDs are searched too.'}
+            : 'Searches claim statements and qualifications, evidence passages and their locators, source titles, and the names and aliases of people, organisations and other records. Record IDs are searched too. Reading pages whose title, question or summary match are listed first.'}
         </p>
       </header>
       <form
@@ -453,7 +442,7 @@ export function Search({
           event.preventDefault();
           resultsRef.current
             ?.querySelector<HTMLElement>(
-              '.search-hit button, button.search-hit',
+              '.search-hit button, a.search-hit, button.search-hit',
             )
             ?.focus();
         }}
@@ -486,7 +475,10 @@ export function Search({
         <p className="small-note search-help" id="search-help">
           {wholeWords
             ? 'Each term matches whole words only.'
-            : 'A term matches the beginning of a word, so “critic” also finds “criticality”.'}
+            : 'A term matches the beginning of a word, so “critic” also finds “criticality”.'}{' '}
+          {order === 'date'
+            ? 'Results are in date order, undated records last. Evidence passages hold the sources’ own words; a claim can match on Selekoa’s wording alone. The earliest result is the earliest in these records, not a first use.'
+            : 'Closer matches come first, then dated records in date order.'}
         </p>
         <fieldset className="search-mode">
           <legend className="visually-hidden">Search in</legend>
@@ -522,6 +514,21 @@ export function Search({
               }}
             />{' '}
             Whole words only
+          </label>
+          <label className="search-order">
+            Order{' '}
+            <select
+              disabled={!live}
+              aria-label="Order"
+              value={order}
+              onChange={(e) => {
+                setExpanded([]);
+                setOrder(e.target.value as 'match' | 'date');
+              }}
+            >
+              <option value="match">Closest matches first</option>
+              <option value="date">Earliest first</option>
+            </select>
           </label>
         </fieldset>
         {mode === 'all' && (
@@ -642,7 +649,7 @@ export function Search({
         {status}
       </p>
       {views}
-      {shown && results.total > 0 && (
+      {shown && results.total + pages.length > 0 && (
         <CopyLink
           target={{
             kind: 'search',
@@ -669,48 +676,93 @@ export function Search({
           ))}
         </p>
       )}
-      <div className="search-page-results" ref={resultsRef}>
-        {results.groups.map((group) => {
-          const all = expanded.includes(group.type);
-          const hits = all ? group.hits : group.hits.slice(0, pageSize);
-          return (
+      {/* Record links read the records the results came with. */}
+      <RecordHref.Provider value={recordHref}>
+        <div className="search-page-results" ref={resultsRef}>
+          {pages.length > 0 && (
             <section
-              key={group.type}
-              className="search-group"
-              aria-labelledby={`search-group-${group.type}`}
+              className="search-group search-pages"
+              aria-labelledby="search-group-pages"
             >
-              <h2 id={`search-group-${group.type}`}>
-                {groupLabels[group.type]}{' '}
-                <span className="search-count">{group.hits.length}</span>
+              <h2 id="search-group-pages">
+                Pages <span className="search-count">{pages.length}</span>
               </h2>
               <ol>
-                {hits.map((hit) => (
-                  <li key={hit.id}>{renderHit(hit)}</li>
+                {pages.map((hit) => (
+                  <li key={hit.page.path}>
+                    <NavLink
+                      className="search-hit"
+                      href={hit.page.path}
+                      onOpen={() => onPagePath(hit.page.path)}
+                    >
+                      <span className="search-hit-meta">{hit.page.kind}</span>
+                      <span className="search-hit-title">
+                        {hit.field === 'title' ? (
+                          <Snippet segments={hit.snippet} />
+                        ) : (
+                          hit.page.title
+                        )}
+                      </span>
+                      {hit.field !== 'title' ? (
+                        <span className="search-hit-text">
+                          <Snippet segments={hit.snippet} />
+                        </span>
+                      ) : (
+                        hit.page.question && (
+                          <span className="search-hit-text">
+                            {clip(hit.page.question)}
+                          </span>
+                        )
+                      )}
+                      <span className="search-hit-open">Open the page →</span>
+                    </NavLink>
+                  </li>
                 ))}
               </ol>
-              {group.hits.length > hits.length && (
-                <button
-                  type="button"
-                  className="text-button search-more"
-                  onClick={() => {
-                    setExpanded([...expanded, group.type]);
-                    // Keep the reader's place: focus the first added result.
-                    requestAnimationFrame(() =>
-                      document
-                        .querySelector<HTMLElement>(
-                          `#search-group-${group.type} + ol > li:nth-child(${pageSize + 1}) :is(button, a)`,
-                        )
-                        ?.focus(),
-                    );
-                  }}
-                >
-                  Show all {count(group.hits.length, group.type)}
-                </button>
-              )}
             </section>
-          );
-        })}
-      </div>
+          )}
+          {results.groups.map((group) => {
+            const all = expanded.includes(group.type);
+            const hits = all ? group.hits : group.hits.slice(0, pageSize);
+            return (
+              <section
+                key={group.type}
+                className="search-group"
+                aria-labelledby={`search-group-${group.type}`}
+              >
+                <h2 id={`search-group-${group.type}`}>
+                  {groupLabels[group.type]}{' '}
+                  <span className="search-count">{group.hits.length}</span>
+                </h2>
+                <ol>
+                  {hits.map((hit) => (
+                    <li key={hit.id}>{renderHit(hit)}</li>
+                  ))}
+                </ol>
+                {group.hits.length > hits.length && (
+                  <button
+                    type="button"
+                    className="text-button search-more"
+                    onClick={() => {
+                      setExpanded([...expanded, group.type]);
+                      // Keep the reader's place: focus the first added result.
+                      requestAnimationFrame(() =>
+                        document
+                          .querySelector<HTMLElement>(
+                            `#search-group-${group.type} + ol > li:nth-child(${pageSize + 1}) :is(button, a)`,
+                          )
+                          ?.focus(),
+                      );
+                    }}
+                  >
+                    Show all {count(group.hits.length, group.type)}
+                  </button>
+                )}
+              </section>
+            );
+          })}
+        </div>
+      </RecordHref.Provider>
     </article>
   );
 }

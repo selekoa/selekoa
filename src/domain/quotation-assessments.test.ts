@@ -338,7 +338,9 @@ describe('cross-model review packet', () => {
       expect(packet).toContain(`## \`${c.id}\``);
       expect(packet).toContain(c.statement);
       expect(packet).toContain(c.qualification);
-      for (const e of evidenceOf(c.id)) {
+      // The packet quotes the passages as they were before week 4c, not as
+      // later authorised corrections (the archive fixes of 2026-10-30) left them.
+      for (const e of pre4c.evidence.filter((e) => e.claimId === c.id)) {
         expect(packet).toContain(`\`${e.id}\``);
         expect(packet).toContain(e.passage);
       }

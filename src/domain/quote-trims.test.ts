@@ -1,6 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import quoteTrims from '../../review/quote-trims-before-2026-10-13.json';
 import { repository } from './repository';
+import { preArchiveFixesRaw } from '../editorial/historical-views';
 
 // The 2026-10-13 trims only cut words: each kept fragment of a shortened
 // quotation lies, in order, inside one fragment of the earlier quotation, so
@@ -30,8 +31,15 @@ function keepsWords(after: string, before: string) {
 
 describe('quotation trims of 2026-10-13', () => {
   it('shorten passages by cutting words and update only stated word counts', () => {
+    // Passages corrected to their archive capture on 2026-10-30 are compared
+    // as they stood before that correction.
+    const corrected = new Map(
+      preArchiveFixesRaw.evidence.map((e) => [e.id, e]),
+    );
     for (const prior of quoteTrims.before.evidence) {
-      const current = repository.evidence.get(prior.id);
+      const current = repository.evidence.has(prior.id)
+        ? (corrected.get(prior.id) ?? repository.evidence.get(prior.id))
+        : undefined;
       expect(current, prior.id).toBeDefined();
       expect(current!.passageType, prior.id).toBe('quote');
       expect(current!.passage.length, prior.id).toBeLessThan(

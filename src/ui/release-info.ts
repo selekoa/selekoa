@@ -1,4 +1,4 @@
-import type { Dataset } from '../domain/schema';
+import type { Coverage } from '../domain/coverage';
 
 type ManifestSummary = {
   version: string;
@@ -27,14 +27,28 @@ export const latestRelease =
 export const releaseDownload = (version: string) =>
   `release/selekoa-dataset-v${version}.zip`;
 
-/** Whether the loaded records visibly differ from the release's. */
-export function changedSinceRelease(data: Dataset, release: ManifestSummary) {
+/**
+ * Whether the records visibly differ from the release's, by the dataset's
+ * counts and description (`coverage` in src/domain/coverage.ts).
+ */
+export function changedSinceRelease(
+  dataset: Pick<
+    Coverage,
+    | 'updatedAt'
+    | 'schemaVersion'
+    | 'entities'
+    | 'claims'
+    | 'evidence'
+    | 'sources'
+  >,
+  release: ManifestSummary,
+) {
   return (
-    data.meta.updatedAt !== release.dataset.updatedAt ||
-    data.meta.schemaVersion !== release.dataset.schemaVersion ||
-    data.entities.length !== release.counts.entities ||
-    data.claims.length !== release.counts.claims ||
-    data.evidence.length !== release.counts.evidence ||
-    data.sources.length !== release.counts.sources
+    dataset.updatedAt !== release.dataset.updatedAt ||
+    dataset.schemaVersion !== release.dataset.schemaVersion ||
+    dataset.entities !== release.counts.entities ||
+    dataset.claims !== release.counts.claims ||
+    dataset.evidence !== release.counts.evidence ||
+    dataset.sources !== release.counts.sources
   );
 }

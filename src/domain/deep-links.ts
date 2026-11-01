@@ -3,10 +3,13 @@ import { researchPaths } from './research-path';
 import { documentHistories } from '../reading/frontier-safety-frameworks';
 import { frameworkComparison } from '../reading/framework-comparison';
 import { facetById } from './framework-comparison';
+import { frameworkVersions } from './versions';
 import { controlStructures } from '../reading/control-structures';
 import { commitmentCollections } from '../reading/commitments';
+import { guideIds } from '../reading/guides';
 import { questionStarters } from '../reading/self-governance';
-import { propositionCollections } from '../reading/human-thought';
+import { propositionFrames } from '../reading/proposition-frames';
+import { parseYearPageId } from './chronicle-index';
 import {
   normalisePath,
   type HubId,
@@ -64,6 +67,7 @@ export function resolveReference(
     return { target: { kind: 'explore', q, view }, notice: null };
   }
   if (ref === '/about') return { target: { kind: 'about' }, notice: null };
+  if (ref === '/years') return { target: { kind: 'years' }, notice: null };
   const invalid = {
     target: null,
     notice:
@@ -91,7 +95,7 @@ export function resolveReference(
     };
   }
   const match =
-    /^\/(claim|dossier|reading|question|documents|compare|document|person|control|commitments|propositions)\/([^/?]+)(?:\?(.*))?$/.exec(
+    /^\/(claim|dossier|reading|question|documents|compare|document|person|control|commitments|guide|propositions|year)\/([^/?]+)(?:\?(.*))?$/.exec(
       ref,
     );
   if (!match) return invalid;
@@ -109,7 +113,7 @@ export function resolveReference(
       : kind === 'claim'
         ? []
         : kind === 'compare'
-          ? ['facet', 'inspect']
+          ? ['facet', 'edition', 'inspect']
           : kind === 'dossier'
             ? ['view', 'inspect']
             : ['inspect'];
@@ -141,8 +145,19 @@ export function resolveReference(
       : invalid;
   if (kind === 'compare') {
     const facet = params.get('facet') ?? undefined;
-    return id === frameworkComparison.id && (!facet || facetById(facet))
-      ? { target: { kind, id, facet, inspect }, notice: null }
+    const editions = params.get('edition')?.split(',');
+    // At most one chosen edition per framework, each one the comparison holds.
+    const families = editions?.map(
+      (edition) =>
+        frameworkComparison.families.find((family) =>
+          frameworkVersions(data, family).some((e) => e.id === edition),
+        ) ?? null,
+    );
+    return id === frameworkComparison.id &&
+      (!facet || facetById(facet)) &&
+      (!families ||
+        (families.every(Boolean) && new Set(families).size === families.length))
+      ? { target: { kind, id, facet, editions, inspect }, notice: null }
       : invalid;
   }
   if (kind === 'control')
@@ -153,8 +168,16 @@ export function resolveReference(
     return commitmentCollections.some((d) => d.id === id)
       ? { target: { kind, id, inspect }, notice: null }
       : invalid;
+  if (kind === 'guide')
+    return guideIds.includes(id)
+      ? { target: { kind, id, inspect }, notice: null }
+      : invalid;
   if (kind === 'propositions')
-    return propositionCollections.some((d) => d.id === id)
+    return propositionFrames.some((d) => d.id === id)
+      ? { target: { kind, id, inspect }, notice: null }
+      : invalid;
+  if (kind === 'year')
+    return parseYearPageId(data, id)
       ? { target: { kind, id, inspect }, notice: null }
       : invalid;
   const entityOf = (type: string) =>

@@ -3,7 +3,7 @@ import { createHash } from 'node:crypto';
 import { z } from 'zod';
 import { createRepository } from '../domain/repository';
 import { topics, predicates } from '../domain/predicates';
-import { timeLabel } from '../domain/query';
+import { storedTimeLabel } from '../domain/query';
 import { evidenceSummary } from '../domain/epistemics';
 
 export const reviewOrderSchema = z
@@ -116,7 +116,7 @@ export function renderSeedReview(
         field('Relation semantics', predicates[claim.predicate].description),
         field(
           'Temporal scope',
-          `${timeLabel(claim)}; kind: ${claim.time.kind}`,
+          `${storedTimeLabel(claim)}; kind: ${claim.time.kind}`,
         ),
         field('Temporal qualification', claim.time.note),
         field('Qualification / scope limits', claim.qualification),

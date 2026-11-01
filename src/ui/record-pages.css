@@ -244,6 +244,22 @@
 .record-appears {
   margin-top: var(--space-5);
 }
+/* Where a propositions collection names the document earliest located. */
+.doc-earliest {
+  margin: var(--space-4) 0 0;
+  padding: 0 0 0 var(--space-3);
+  list-style: none;
+  border-left: 2px solid var(--color-accent);
+  display: grid;
+  gap: var(--space-2);
+}
+.doc-earliest .text-button {
+  padding: 0;
+  white-space: normal;
+  text-align: left;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
 .record-appears h2 {
   font-size: var(--text-sm);
   font-family: var(--font-sans);
@@ -268,4 +284,40 @@
 .record-appears-count {
   font-size: var(--text-sm);
   color: var(--color-text-muted);
+}
+/* A claim's own page: the statement is the heading, at a reading size. */
+.claim-page .doc-lede h1 {
+  font-size: var(--heading-section);
+  line-height: 1.3;
+}
+.claim-page section {
+  margin-top: var(--space-5);
+}
+.claim-page h2 {
+  font-size: var(--text-sm);
+  font-family: var(--font-sans);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--color-text-muted);
+  margin: 0 0 var(--space-2);
+}
+.claim-page-route {
+  font-size: var(--text-base);
+}
+.claim-page-route a {
+  color: var(--color-accent);
+  text-decoration: underline;
+}
+.claim-page-collections {
+  list-style: none;
+  margin: 0 0 var(--space-2);
+  padding: 0;
+}
+.claim-page-collections li {
+  margin: 4px 0;
+}
+@media (max-width: 640px) {
+  .claim-page .doc-lede h1 {
+    font-size: 22px;
+  }
 }

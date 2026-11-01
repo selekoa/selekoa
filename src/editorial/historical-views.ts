@@ -11,6 +11,24 @@ import entities from '../../data/entities.json';
 import claims from '../../data/claims.json';
 import sources from '../../data/sources.json';
 import evidence from '../../data/evidence.json';
+import riskDebate from '../../review/risk-debate-admission-before-2026-10-31.json';
+import chinaLabs3Admission2 from '../../review/china-labs-3-admission-2-before-2026-10-31.json';
+import chinaLabs3Admission1 from '../../review/china-labs-3-admission-1-before-2026-10-31.json';
+import technicalHistory2 from '../../review/technical-history-admission-2-before-2026-10-31.json';
+import technicalHistory1 from '../../review/technical-history-admission-1-before-2026-10-31.json';
+import keyPapers3 from '../../review/key-papers-admission-3-before-2026-10-31.json';
+import keyPapers2 from '../../review/key-papers-admission-2-before-2026-10-31.json';
+import keyPapers1 from '../../review/key-papers-admission-1-before-2026-10-31.json';
+import aiInBiology2 from '../../review/ai-in-biology-admission-2-before-2026-10-31.json';
+import aiInBiology1 from '../../review/ai-in-biology-admission-1-before-2026-10-31.json';
+import people from '../../review/people-admission-before-2026-10-31.json';
+import aiBio2 from '../../review/ai-bio-admission-2-before-2026-10-30.json';
+import aiBio1 from '../../review/ai-bio-admission-1-before-2026-10-30.json';
+import archiveFixes from '../../review/archive-fixes-before-2026-10-30.json';
+import cpoAdmission2 from '../../review/cpo-admission-2-before-2026-10-30.json';
+import cpoAdmission1 from '../../review/cpo-admission-1-before-2026-10-30.json';
+import readerDecisions from '../../review/reader-decisions-before-2026-10-29.json';
+import auditFixes from '../../review/audit-fixes-before-2026-10-29.json';
 import frameworksToLaw2 from '../../review/frameworks-to-law-2-before-2026-10-28.json';
 import frameworksToLaw1 from '../../review/frameworks-to-law-1-before-2026-10-28.json';
 import paraphraseCorrections from '../../review/paraphrase-corrections-before-2026-10-28.json';
@@ -51,7 +69,9 @@ export type Snapshot = {
   meta: unknown;
   added: Record<Name, string[]>;
   before: Record<Name, unknown[]>;
-  /** Earlier row order, where a change reordered rows. */
+  /** Rows the change removed, as they were; restored at their earlier place. */
+  removed?: Record<Name, unknown[]>;
+  /** Earlier row order, where a change reordered or removed rows. */
   order?: Record<Name, string[] | null>;
 };
 type Raw = { meta: unknown } & { [N in Name]: Row[] };
@@ -65,7 +85,12 @@ export function revert<R extends Raw>(raw: R, snapshot: Snapshot): R {
     );
     const kept = rows
       .filter((row) => !added.has(row.id))
-      .map((row) => structuredClone(prior.get(row.id) ?? row));
+      .map((row) => structuredClone(prior.get(row.id) ?? row))
+      .concat(
+        ((snapshot.removed?.[name] ?? []) as Row[]).map((row) =>
+          structuredClone(row),
+        ),
+      );
     const order = snapshot.order?.[name];
     if (!order) return kept;
     const position = new Map(order.map((id, i) => [id, i]));
@@ -78,8 +103,62 @@ export function revert<R extends Raw>(raw: R, snapshot: Snapshot): R {
 
 const current = { meta, entities, claims, sources, evidence };
 
+/** Raw stored rows at schema 2.27 as released in v0.21.0, before the 2026-10-31 risk debate admission. */
+export const preRiskDebateRaw = revert(current, riskDebate);
+/** Raw stored rows at schema 2.26 as released in v0.20.0, before part 2 of the 2026-10-31 admission of the third Chinese institutions collection (schema 2.27). */
+export const preChinaLabs3Admission2Raw = revert(
+  preRiskDebateRaw,
+  chinaLabs3Admission2,
+);
+/** Raw stored rows at schema 2.26 as released in v0.19.0, before part 1 of the 2026-10-31 admission of the third Chinese institutions collection. */
+export const preChinaLabs3Admission1Raw = revert(
+  preChinaLabs3Admission2Raw,
+  chinaLabs3Admission1,
+);
+/** Raw stored rows at schema 2.25 as released in v0.18.1, before part 2 of the 2026-10-31 technical history admission (schema 2.26). */
+export const preTechnicalHistory2Raw = revert(
+  preChinaLabs3Admission1Raw,
+  technicalHistory2,
+);
+/** Raw stored rows at schema 2.25 as released in v0.18.0, before part 1 of the 2026-10-31 technical history admission. */
+export const preTechnicalHistory1Raw = revert(
+  preTechnicalHistory2Raw,
+  technicalHistory1,
+);
+/** Raw stored rows at schema 2.24 as released in v0.17.1, before part 3 of the 2026-10-31 key papers admission (schema 2.25). */
+export const preKeyPapers3Raw = revert(preTechnicalHistory1Raw, keyPapers3);
+/** Raw stored rows at schema 2.24 as released in v0.17.0, before part 2 of the 2026-10-31 key papers admission. */
+export const preKeyPapers2Raw = revert(preKeyPapers3Raw, keyPapers2);
+/** Raw stored rows at schema 2.23 as released in v0.16.0, before part 1 of the 2026-10-31 key papers admission (schema 2.24). */
+export const preKeyPapers1Raw = revert(preKeyPapers2Raw, keyPapers1);
+/** Raw stored rows at schema 2.22 as released in v0.15.2, before part 2 of the 2026-10-31 AI in biology admission (schema 2.23). */
+export const preAiInBiology2Raw = revert(preKeyPapers1Raw, aiInBiology2);
+/** Raw stored rows at schema 2.22 as released in v0.15.1, before part 1 of the 2026-10-31 AI in biology admission. */
+export const preAiInBiology1Raw = revert(preAiInBiology2Raw, aiInBiology1);
+/** Raw stored rows at schema 2.22 as released in v0.15.0, before the 2026-10-31 people admission. */
+export const prePeopleRaw = revert(preAiInBiology1Raw, people);
+/** Raw stored rows at schema 2.21 as released in v0.14.2, before part 2 of the 2026-10-30 AI and biosecurity admission (schema 2.22). */
+export const preAiBio2Raw = revert(prePeopleRaw, aiBio2);
+/** Raw stored rows at schema 2.21 as released in v0.14.1, before part 1 of the 2026-10-30 AI and biosecurity admission. */
+export const preAiBio1Raw = revert(preAiBio2Raw, aiBio1);
+/** Raw stored rows at schema 2.21 as released in v0.14.0, before the maintainer's 2026-10-30 archive fixes and the narrowing of criterion O7. */
+export const preArchiveFixesRaw = revert(preAiBio1Raw, archiveFixes);
+/** Raw stored rows at schema 2.20 as released in v0.13.0, before part 2 of the 2026-10-30 compute, power and orbit admission (schema 2.21). */
+export const preCpoAdmission2Raw = revert(preArchiveFixesRaw, cpoAdmission2);
+/** Raw stored rows at schema 2.20 as released in v0.12.1, before part 1 of the 2026-10-30 compute, power and orbit admission. */
+export const preCpoAdmission1Raw = revert(preCpoAdmission2Raw, cpoAdmission1);
+/** Raw stored rows at schema 2.20 as released in v0.12.0, before the maintainer's 2026-10-29 decisions on the reader tasks. */
+export const preReaderDecisionsRaw = revert(
+  preCpoAdmission1Raw,
+  readerDecisions,
+);
+/** Raw stored rows at schema 2.19 as released in v0.11.0, before the 2026-10-29 audit fixes (schema 2.20). */
+export const preAuditFixesRaw = revert(preReaderDecisionsRaw, auditFixes);
 /** Raw stored rows at schema 2.18 as released in v0.10.3, before part 2 of the 2026-10-28 frameworks-to-law admission (schema 2.19). */
-export const preFrameworksToLaw2Raw = revert(current, frameworksToLaw2);
+export const preFrameworksToLaw2Raw = revert(
+  preAuditFixesRaw,
+  frameworksToLaw2,
+);
 /** Raw stored rows at schema 2.18 as released in v0.10.2, before part 1 of the 2026-10-28 frameworks-to-law admission. */
 export const preFrameworksToLaw1Raw = revert(
   preFrameworksToLaw2Raw,
@@ -180,6 +259,13 @@ export const preProvisionsRaw = revert(preControlRaw, week4a);
  * pre-4a view, which restores the corrected rows and is exact.
  */
 export const historicalViews = [
+  { snapshot: aiBio2, view: preAiBio2Raw, exact: true },
+  { snapshot: aiBio1, view: preAiBio1Raw, exact: true },
+  { snapshot: archiveFixes, view: preArchiveFixesRaw, exact: true },
+  { snapshot: cpoAdmission2, view: preCpoAdmission2Raw, exact: true },
+  { snapshot: cpoAdmission1, view: preCpoAdmission1Raw, exact: true },
+  { snapshot: readerDecisions, view: preReaderDecisionsRaw, exact: true },
+  { snapshot: auditFixes, view: preAuditFixesRaw, exact: true },
   { snapshot: frameworksToLaw2, view: preFrameworksToLaw2Raw, exact: true },
   { snapshot: frameworksToLaw1, view: preFrameworksToLaw1Raw, exact: true },
   {

@@ -1,4 +1,4 @@
-import { expect, test } from './fixtures';
+import { expect, MAP_FIRST_DRAW_TIMEOUT, test } from './fixtures';
 import { clickMapClaim } from './map-actions';
 const claims = [
   'eval-ontology-i-arc-openai',
@@ -45,7 +45,7 @@ for (const theme of ['light', 'dark']) {
         await page.getByRole('button', { name: 'Map', exact: true }).click();
         await expect(
           page.locator('.map-edge[data-claim-ids~="' + id + '"]').first(),
-        ).toBeVisible();
+        ).toBeVisible({ timeout: MAP_FIRST_DRAW_TIMEOUT });
         await clickMapClaim(page, id);
         await expect(inspector).toContainText(
           index < 2 ? 'reported performed' : 'announced',
@@ -83,7 +83,7 @@ for (const theme of ['light', 'dark']) {
         await page.getByRole('button', { name: 'Map', exact: true }).click();
         await expect(
           page.locator('.map-edge[data-claim-ids~="' + id + '"]'),
-        ).toBeVisible();
+        ).toBeVisible({ timeout: MAP_FIRST_DRAW_TIMEOUT });
         await page.screenshot({
           path: testInfo.outputPath(entityId + '-map.png'),
           fullPage: true,

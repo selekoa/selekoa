@@ -8,10 +8,10 @@ import {
 import { canonicalJson, fingerprint, md, sourceReference } from './references';
 import { reviewStatus, reviewStatusSentences } from './review-status';
 import { referencePath } from './deep-links';
-import { timeLabel } from './query';
+import { roleStatedIn, timeLabel } from './query';
 import { versionDescription } from './versions';
 import { personProfile } from './person-profile';
-import { predicates } from './predicates';
+import { relationLabel } from './predicates';
 
 const changeBasisLabels = {
   publisher_statement: 'stated by the publisher',
@@ -91,6 +91,8 @@ export function starterRecords(
     ...claims.flatMap((c) => [
       c.subject,
       ...(c.object.kind === 'entity' ? [c.object.entityId] : []),
+      // The document an open-ended role's date line names.
+      ...[roleStatedIn(data, c)?.documentId ?? []].flat(),
     ]),
   ]);
   const sourceMap = new Map(data.sources.map((s) => [s.id, s]));
@@ -230,6 +232,7 @@ export type StarterBase = {
   claims: Claim[];
   evidence: StarterEvidence;
   sources: Source[];
+  entities: Entity[];
   disagreements: ReturnType<typeof starterRecords>['disagreements'];
   inferences: ReturnType<typeof starterRecords>['inferences'];
 };
@@ -246,7 +249,7 @@ export function claimBlockLines(
     '',
     md(claim.statement),
     '',
-    `- Date: ${timeLabel(claim)}. ${md(claim.time.note)}`,
+    `- Date: ${timeLabel(claim, starter)}. ${md(claim.time.note)}`,
     `- Qualification: ${md(claim.qualification)}`,
     `- Derivation: ${claim.derivation}; resolution: ${claim.resolution}; editorial state: ${claim.editorialState}.`,
   ];
@@ -616,7 +619,7 @@ export function personStarterMarkdown(starter: PersonStarter) {
   const pathRow = (id: string) => {
     const claim = claims.get(id)!;
     const role = claim.attributes?.role ? ' · ' + claim.attributes.role : '';
-    return `| ${cell(timeLabel(claim))} | ${cell(predicates[claim.predicate].label + role)} | ${cell(counterpart(claim))} | ${cell(claim.statement)} | ${cell(documentedIn(claim))} |`;
+    return `| ${cell(timeLabel(claim, starter))} | ${cell(relationLabel(claim) + role)} | ${cell(counterpart(claim))} | ${cell(claim.statement)} | ${cell(documentedIn(claim))} |`;
   };
   const lines = [
     '# ' + md(person.name) + ': research starter',

@@ -14,7 +14,7 @@ import {
   type ReleaseRecords,
   type Removals,
 } from './build';
-import { applicationCollections } from './collections';
+import { wholeCollections } from './whole-collections';
 import { recordTypes } from './format';
 
 export const releaseRoot = 'release';
@@ -27,7 +27,7 @@ export const currentInput = (): ReleaseInput =>
     claims,
     sources,
     evidence,
-    collections: applicationCollections,
+    collections: wholeCollections,
   }) as ReleaseInput;
 
 /** Released versions on disk, oldest first. */

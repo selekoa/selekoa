@@ -1,4 +1,6 @@
 import { use, type ComponentType } from 'react';
+import { track, type Tracked } from './tracked';
+import { pageCodeOf, propositionsOf } from './page-files';
 
 /**
  * Page code that loads the first time its page opens, like React.lazy, with
@@ -8,28 +10,6 @@ import { use, type ComponentType } from 'react';
  * taken over in one pass. A page still waiting for its code when anything
  * above it changes would be drawn afresh, with a loading notice in between.
  */
-type Tracked<T> = Promise<T> & {
-  status?: 'pending' | 'fulfilled' | 'rejected';
-  value?: T;
-  reason?: unknown;
-};
-
-function track<T>(promise: Promise<T>): Tracked<T> {
-  const tracked = promise as Tracked<T>;
-  tracked.status = 'pending';
-  tracked.then(
-    (value) => {
-      tracked.status = 'fulfilled';
-      tracked.value = value;
-    },
-    (reason: unknown) => {
-      tracked.status = 'rejected';
-      tracked.reason = reason;
-    },
-  );
-  return tracked;
-}
-
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export function loadable<P extends Record<string, any>>(
   load: () => Promise<ComponentType<P>>,
@@ -66,35 +46,41 @@ export const pages = {
   Commitments: loadable(() =>
     import('./Commitments').then((m) => m.Commitments),
   ),
+  FrameworksLaw: loadable(() =>
+    import('./FrameworksLaw').then((m) => m.FrameworksLaw),
+  ),
+  FrameworkChanges: loadable(() =>
+    import('./FrameworkChanges').then((m) => m.FrameworkChanges),
+  ),
+  ComputeBuildout: loadable(() =>
+    import('./ComputeBuildout').then((m) => m.ComputeBuildout),
+  ),
   Propositions: loadable(() =>
     import('./Propositions').then((m) => m.Propositions),
   ),
   QuestionStarter: loadable(() =>
     import('./QuestionStarter').then((m) => m.QuestionStarter),
   ),
+  Chronicle: loadable(() => import('./Chronicle').then((m) => m.Chronicle)),
   About: loadable(() => import('./About').then((m) => m.About)),
   Search: loadable(() => import('./Search').then((m) => m.Search)),
 };
 
-/** The page code an address opens with, by its first path segment. */
-const byPrefix: Record<string, (keyof typeof pages)[]> = {
-  about: ['About'],
-  search: ['Search'],
-  dossier: ['Dossier'],
-  person: ['PersonPage'],
-  document: ['DocumentPage'],
-  documents: ['DocumentHistory'],
-  compare: ['FrameworkComparison'],
-  control: ['ControlStructure'],
-  commitments: ['Commitments'],
-  propositions: ['Propositions'],
-  // A question is a guided reading or a question starter.
-  question: ['QuestionStarter', 'ResearchPath'],
-  reading: ['QuestionStarter', 'ResearchPath'],
-};
-
-/** Loads the code of the page at a path; resolves when it has loaded. */
+/**
+ * Loads the code of the page at a path, and the reading text it shows (a
+ * propositions page's collection, whole); resolves when they have loaded.
+ */
 export function preloadPage(path: string) {
-  const prefix = path.split(/[/?]/)[1] ?? '';
-  return Promise.all((byPrefix[prefix] ?? []).map((n) => pages[n].preload()));
+  const propositions = propositionsOf(path);
+  return Promise.all([
+    ...pageCodeOf(path).map((n) => pages[n as keyof typeof pages].preload()),
+    // Loaded with the page's code, not with every page's.
+    ...(propositions
+      ? [
+          import('./proposition-text').then((m) =>
+            m.wholePropositions(propositions),
+          ),
+        ]
+      : []),
+  ]);
 }

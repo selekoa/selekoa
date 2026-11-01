@@ -1,8 +1,9 @@
 import type { ReactNode } from 'react';
+import { selected } from '../domain/memo';
 import type { Claim, Source } from '../domain/schema';
-import { RecordLink } from './NavLink';
+import { RecordLink, ClaimLink } from './NavLink';
 import type { Repository } from '../domain/repository';
-import { predicates } from '../domain/predicates';
+import { relationLabel } from '../domain/predicates';
 import { timeLabel } from '../domain/query';
 import { derivationLabels, resolutionLabels } from '../domain/epistemics';
 import { commitmentStageLabels } from '../domain/commitments';
@@ -71,6 +72,9 @@ export type ClaimProps = {
 
 /** "Subject → relation → object", using short names where recorded. */
 export function claimRoute(claim: Claim, repository: Repository) {
+  // A claim drawn by its route is on the page, even when no other field of
+  // it is read (src/domain/memo.ts).
+  selected('claims', [claim]);
   const subject = repository.entities.get(claim.subject)!;
   const object =
     claim.object.kind === 'entity'
@@ -81,7 +85,7 @@ export function claimRoute(claim: Claim, repository: Repository) {
   const relation =
     claim.predicate === 'signed_commitment' && stage
       ? commitmentStageLabels[stage].toLowerCase()
-      : predicates[claim.predicate].label;
+      : relationLabel(claim);
   const target =
     claim.object.kind === 'literal'
       ? String(claim.object.value)
@@ -102,16 +106,16 @@ export function InspectLink({
   children: ReactNode;
 }) {
   return (
-    <button
+    <ClaimLink
       className="doc-inspect"
-      data-claim-id={claim.id}
-      aria-pressed={selectedClaimId === claim.id}
+      pressed={selectedClaimId === claim.id}
       aria-label={label}
-      onClick={() => onClaim(claim.id)}
+      claimId={claim.id}
+      onOpen={() => onClaim(claim.id)}
     >
       {children}
       <span aria-hidden="true"> ↗</span>
-    </button>
+    </ClaimLink>
   );
 }
 
@@ -123,6 +127,7 @@ export function ClaimRow({
   onClaim,
   heading,
   detail,
+  excerpt,
   link,
 }: ClaimProps & {
   claim: Claim;
@@ -130,6 +135,8 @@ export function ClaimRow({
   heading?: ReactNode;
   /** Replaces the default date line, for rows that show dates elsewhere. */
   detail?: ReactNode;
+  /** The passage the statement summarises, shown below it. */
+  excerpt?: ReactNode;
   /**
    * A separate navigation control below the row, never nested in it. With the
    * record's id it is a real link where that record has a page.
@@ -138,12 +145,12 @@ export function ClaimRow({
 }) {
   return (
     <li>
-      <button
+      <ClaimLink
         className="dossier-claim doc-claim"
-        data-claim-id={claim.id}
         aria-label={`Inspect claim & evidence: ${claim.statement}`}
-        aria-pressed={selectedClaimId === claim.id}
-        onClick={() => onClaim(claim.id)}
+        pressed={selectedClaimId === claim.id}
+        claimId={claim.id}
+        onOpen={() => onClaim(claim.id)}
       >
         {claim.attributes?.changeBasis && (
           <span
@@ -155,8 +162,10 @@ export function ClaimRow({
         <StatusBadge claim={claim} />
         {heading && <span className="record-row-heading">{heading}</span>}
         <span className="dossier-statement">{claim.statement}</span>
+        {excerpt}
         <span className="dossier-relation">
-          {detail ?? timeLabel(claim)} · {derivationLabels[claim.derivation]} ·{' '}
+          {detail ?? timeLabel(claim, repository.data)} ·{' '}
+          {derivationLabels[claim.derivation]} ·{' '}
           {resolutionLabels[claim.resolution]}{' '}
           <ReviewMarkers claim={claim} repository={repository} />{' '}
           <RecordMarks claim={claim} repository={repository} />
@@ -164,7 +173,7 @@ export function ClaimRow({
         <span className="dossier-evidence-link">
           Inspect claim & evidence ↗
         </span>
-      </button>
+      </ClaimLink>
       <StatedReason claim={claim} repository={repository} />
       {link &&
         (link.id ? (
@@ -223,13 +232,13 @@ export function ProvisionRow({
     claim.object.kind === 'literal' ? String(claim.object.value) : '';
   return (
     <li>
-      <button
+      <ClaimLink
         className="dossier-claim doc-claim provision-claim"
-        data-claim-id={claim.id}
         data-provision-kind={provision.kind}
         aria-label={`Inspect claim & evidence: ${absent ? 'Not found in the inspected text. ' : ''}${claim.statement}`}
-        aria-pressed={selectedClaimId === claim.id}
-        onClick={() => onClaim(claim.id)}
+        pressed={selectedClaimId === claim.id}
+        claimId={claim.id}
+        onOpen={() => onClaim(claim.id)}
       >
         <span className="provision-kind">
           {absent
@@ -267,7 +276,7 @@ export function ProvisionRow({
         <span className="dossier-evidence-link">
           Inspect claim & evidence ↗
         </span>
-      </button>
+      </ClaimLink>
     </li>
   );
 }

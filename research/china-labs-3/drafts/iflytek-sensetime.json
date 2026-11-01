@@ -1,0 +1,2817 @@
+{
+  "group": "iflytek-sensetime",
+  "searched": "Searched HKEXnews (title search for SenseTime, stock 00020, 2021–2026: the 7 December 2021 Global Offering prospectus, the 2022, 2023 and 2025 annual reports, the 17 December 2023 announcement, the 24 April 2024 SenseNova 5.0 announcement and the 26 June 2025 AGM results announcement), sensetime.com (news pages are a Next.js site whose old news-detail URLs return HTTP 404, including https://www.sensetime.com/cn/news-detail/51167729?categoryId=72 linked from the SenseNova 5.0 filing and https://www.sensetime.com/cn/news-detail/51169523?categoryId=72 from the site’s own sitemap.txt; https://www.sensetime.com/cn/news-index and /en/news-index 404; the current /cn/news listing pages client-side, so the April 2023 SenseNova launch post was not reached; the /cn/ethics page and its linked oss.sensetime.com PDFs were retrieved), the sensenova and SenseTime Hugging Face accounts (model listing; SenseNova-U1-8B-MoT and SenseNova-SI-1.1-InternVL3-8B commit lists; the U1 LICENSE at commit 3b06420 returned HTTP 404), cninfo (announcement search for iFlytek, 002230: annual reports 2012–2025, the 2008 IPO prospectus, Spark launch notices of May 2023, August 2023 and June 2024, the 2025 sustainability report and the January 2026 board resolutions; static.cninfo.com.cn often reset the first connection and the tool retried), iflytek.com (https://www.iflytek.com/cn/ is a JavaScript shell, HTTP 200 with about 3 KB; https://www.iflytek.com/news.html HTTP 404; the English site was not used), and the iflytekopensource/iFlytekSpark-13B Gitee repository (blobless clone for history; raw files at pinned commits, after connection resets). The Hugging Face API returned no iflytek-authored models. Left out: SenseTime’s supplemental prospectus of 20 December 2021 and its cornerstone investors (conditional agreements); round-level amounts and valuations; other principal Pre-IPO Investors (Primavera, Silver Lake, CDH, Sailing, Shanghai International Group, China Structural Reform Fund) and the Taobao China Holding Limited holding (the prospectus passage read does not tie it to Alibaba Group); co-founders Lin Dahua, Ma Kun and Xu Chiheng; SenseTime’s earlier ethics publications (2020 Code of Ethics white paper, 2021–2022 reports) and its 2024 trustworthiness report; SenseNova-SI and other SenseNova open-weight repositories; iFlytek Spark V3.0, V3.5 and X1 release announcements (not located on cninfo; X1 recorded only through the 2025 annual report), the date of the change of iFlytek’s registered name, the 2025–2026 non-public offering, officers other than the chairman and president, and the Spark-13B LICENSE_MODEL.md texts of 30 January and 2 February 2024. No iFlytek-published AI ethics principles or frontier safety framework was located. The SenseTime 2022 annual report was retrieved but not cited (it does not mention SenseNova). Web.archive.org was not tried (refuses connections here). Authorship: no authored records were drafted; the white paper names editors and authors who are not otherwise in the dataset.",
+  "existingUsed": [
+    "c2-governance-aiia-aisc-signatory-iflytek",
+    "c2-governance-aiia-aisc-signatory-sensetime",
+    "lg-cn-yan-junjie-sensetime-prior",
+    "lg-cn-yun-yeyi-sensetime-2017-2022"
+  ],
+  "entities": [
+    {
+      "id": "iflytek",
+      "existing": true
+    },
+    {
+      "id": "sensetime",
+      "existing": true
+    },
+    {
+      "id": "softbank-group",
+      "existing": true
+    },
+    {
+      "id": "idg-capital",
+      "existing": true
+    },
+    {
+      "id": "china-mobile",
+      "existing": true
+    },
+    {
+      "id": "tang-xiaoou",
+      "type": "person",
+      "name": "Tang Xiao’ou",
+      "sortName": "Tang, Xiao’ou",
+      "subtype": "Executive",
+      "aliases": ["汤晓鸥", "Tang Xiaoou"],
+      "description": "Named in SenseTime’s December 2021 prospectus as its founder and an executive Director; SenseTime announced on 17 December 2023 that he had died on 15 December 2023.",
+      "sourceIds": [
+        "c3-src-sensetime-prospectus-2021",
+        "c3-src-sensetime-passing-2023"
+      ]
+    },
+    {
+      "id": "xu-li",
+      "type": "person",
+      "name": "Xu Li",
+      "sortName": "Xu, Li",
+      "subtype": "Executive",
+      "aliases": ["徐立"],
+      "description": "Named in SenseTime’s filings as co-founder, executive Chairman of the Board and chief executive officer.",
+      "sourceIds": [
+        "c3-src-sensetime-prospectus-2021",
+        "c3-src-sensetime-ar2025"
+      ]
+    },
+    {
+      "id": "wang-xiaogang",
+      "type": "person",
+      "name": "Wang Xiaogang",
+      "sortName": "Wang, Xiaogang",
+      "subtype": "Executive",
+      "aliases": ["王晓刚"],
+      "description": "Named in SenseTime’s filings as co-founder, executive Director and chief scientist.",
+      "sourceIds": [
+        "c3-src-sensetime-prospectus-2021",
+        "c3-src-sensetime-ar2025"
+      ]
+    },
+    {
+      "id": "xu-bing",
+      "type": "person",
+      "name": "Xu Bing",
+      "sortName": "Xu, Bing",
+      "subtype": "Executive",
+      "aliases": ["徐冰"],
+      "description": "Named in SenseTime’s December 2021 prospectus as co-founder, executive Director and Board secretary; stepped down from those Board roles on 26 June 2025.",
+      "sourceIds": [
+        "c3-src-sensetime-prospectus-2021",
+        "c3-src-sensetime-agm-2025"
+      ]
+    },
+    {
+      "id": "yang-fan",
+      "type": "person",
+      "name": "Yang Fan",
+      "sortName": "Yang, Fan",
+      "subtype": "Executive",
+      "aliases": ["杨帆"],
+      "description": "Named in SenseTime’s filings as co-founder and vice president since November 2014; elected an executive Director of SenseTime on 26 June 2025.",
+      "sourceIds": [
+        "c3-src-sensetime-prospectus-2021",
+        "c3-src-sensetime-agm-2025"
+      ]
+    },
+    {
+      "id": "liu-qingfeng",
+      "type": "person",
+      "name": "Liu Qingfeng",
+      "sortName": "Liu, Qingfeng",
+      "subtype": "Executive",
+      "aliases": ["刘庆峰"],
+      "description": "Named in iFlytek’s filings as its founder (科大讯飞创始人) and chairman of the board; director and president at the 2008 listing.",
+      "sourceIds": ["c3-src-iflytek-ar2025", "c3-src-iflytek-prospectus-2008"]
+    },
+    {
+      "id": "wang-renhua",
+      "type": "person",
+      "name": "Wang Renhua",
+      "sortName": "Wang, Renhua",
+      "subtype": "Executive",
+      "aliases": ["王仁华"],
+      "description": "Named in iFlytek’s 2008 prospectus as chairman of the board, head of the iFlytek research institute and the company’s legal representative.",
+      "sourceIds": ["c3-src-iflytek-prospectus-2008"]
+    },
+    {
+      "id": "wu-xiaoru",
+      "type": "person",
+      "name": "Wu Xiaoru",
+      "sortName": "Wu, Xiaoru",
+      "subtype": "Executive",
+      "aliases": ["吴晓如"],
+      "description": "Named in iFlytek’s filings as president (总裁) and director; appointed president by the seventh Board on 9 January 2026.",
+      "sourceIds": ["c3-src-iflytek-board7-2026", "c3-src-iflytek-ar2025"]
+    },
+    {
+      "id": "shanghai-sensetime",
+      "type": "organisation",
+      "name": "Shanghai SenseTime Intelligent Technology Co., Ltd. / 上海商汤智能科技有限公司",
+      "subtype": "Subsidiary",
+      "aliases": ["上海商汤智能科技有限公司", "Shanghai SenseTime"],
+      "description": "PRC limited liability company incorporated on 15 December 2017 that SenseTime’s December 2021 prospectus describes as its indirect wholly-owned subsidiary.",
+      "sourceIds": [
+        "c3-src-sensetime-prospectus-2021",
+        "c3-src-sensetime-ethics-page"
+      ]
+    },
+    {
+      "id": "sensetime-ai-ethics-committee",
+      "type": "organisation",
+      "name": "SenseTime AI Ethics and Governance Committee / 商汤科技人工智能伦理与治理委员会",
+      "subtype": "Internal committee",
+      "aliases": [
+        "商汤科技人工智能伦理与治理委员会",
+        "AI伦理委员会",
+        "SenseTime AI Ethics Council"
+      ],
+      "description": "Internal committee that SenseTime’s ethics page says was formally established in January 2020; the December 2021 prospectus describes an “AI Ethics Council” of six members.",
+      "sourceIds": [
+        "c3-src-sensetime-ethics-page",
+        "c3-src-sensetime-prospectus-2021"
+      ]
+    },
+    {
+      "id": "sensenova-5-hkex-announcement-2024",
+      "type": "document",
+      "documentKind": "announcement",
+      "name": "SenseTime announcement: Business update on the launch of SenseNova 5.0 (24 April 2024)",
+      "subtype": "Exchange announcement",
+      "aliases": [],
+      "description": "SenseTime Group Inc. announcement on HKEXnews dated 24 April 2024 reporting the launch of SenseNova 5.0 at its Tech Day of 23 April 2024.",
+      "sourceIds": ["c3-src-sensetime-sensenova5-hkex"]
+    },
+    {
+      "id": "sensenova-u1-model-card",
+      "type": "document",
+      "documentKind": "model-card",
+      "name": "SenseNova-U1 model card (SenseNova-U1-8B-MoT)",
+      "subtype": "Model card",
+      "aliases": [],
+      "description": "README of the sensenova/SenseNova-U1-8B-MoT Hugging Face repository introducing the SenseNova U1 Lite models, cited at the commit of 26 April 2026.",
+      "sourceIds": ["c3-src-sensenova-u1-readme"]
+    },
+    {
+      "id": "sensenova-u1-licence",
+      "type": "document",
+      "documentKind": "licence",
+      "name": "SenseNova-U1 licence (Apache License 2.0)",
+      "subtype": "Licence",
+      "aliases": [],
+      "description": "Apache License, Version 2.0, stated in the SenseNova-U1-8B-MoT README (26 April 2026 commit) and present as the repository’s LICENSE file at the commit of 15 May 2026.",
+      "sourceIds": ["c3-src-sensenova-u1-readme", "c3-src-sensenova-u1-license"]
+    },
+    {
+      "id": "sensetime-llm-ethics-white-paper-2023",
+      "type": "document",
+      "documentKind": "report",
+      "name": "商汤大模型伦理原则与实践白皮书 (AI Ethics and Governance Annual Report 2023)",
+      "subtype": "White paper",
+      "aliases": [
+        "SenseTime White Paper on Large-Model Ethics Principles and Practice"
+      ],
+      "description": "SenseTime AI Ethics and Governance Committee report on large-model ethics principles and practice, said to be initially released in Chinese in July 2023; cited from the PDF dated 20 March 2024 on SenseTime’s ethics page.",
+      "sourceIds": ["c3-src-sensetime-llm-ethics-wp"]
+    },
+    {
+      "id": "iflytek-spark-launch-notice-2023",
+      "type": "document",
+      "documentKind": "announcement",
+      "name": "关于讯飞星火认知大模型成果发布会的提示性公告 (2023-036)",
+      "subtype": "Exchange announcement",
+      "aliases": [
+        "Indicative announcement on the iFlytek Spark cognitive large model results launch event"
+      ],
+      "description": "iFlytek announcement No. 2023-036 of 6 May 2023 on the launch event of the iFlytek Spark (讯飞星火) cognitive large model.",
+      "sourceIds": ["c3-src-iflytek-spark-notice-2023-05"]
+    },
+    {
+      "id": "iflytek-spark-v2-notice-2023",
+      "type": "document",
+      "documentKind": "announcement",
+      "name": "关于讯飞星火认知大模型升级发布会的提示性公告 (2023-057)",
+      "subtype": "Exchange announcement",
+      "aliases": [
+        "Indicative announcement on the iFlytek Spark cognitive large model upgrade launch event"
+      ],
+      "description": "iFlytek announcement No. 2023-057 of August 2023 on the upgrade event releasing iFlytek Spark V2.0 on 15 August 2023.",
+      "sourceIds": ["c3-src-iflytek-spark-notice-2023-08"]
+    },
+    {
+      "id": "iflytek-spark-v4-notice-2024",
+      "type": "document",
+      "documentKind": "announcement",
+      "name": "关于讯飞星火大模型升级发布会的提示性公告 (2024-034)",
+      "subtype": "Exchange announcement",
+      "aliases": [
+        "Indicative announcement on the iFlytek Spark large model upgrade launch event"
+      ],
+      "description": "iFlytek announcement No. 2024-034 of 25 June 2024 on the event planned for 27 June 2024 to release iFlytek Spark V4.0.",
+      "sourceIds": ["c3-src-iflytek-spark-notice-2024-06"]
+    },
+    {
+      "id": "iflytek-annual-report-2025",
+      "type": "document",
+      "documentKind": "filing",
+      "name": "科大讯飞股份有限公司2025年年度报告",
+      "subtype": "Annual report",
+      "aliases": ["iFlytek 2025 Annual Report"],
+      "description": "iFlytek’s annual report for 2025, published on cninfo on 29 April 2026.",
+      "sourceIds": ["c3-src-iflytek-ar2025"]
+    },
+    {
+      "id": "iflytekspark-13b-readme",
+      "type": "document",
+      "documentKind": "repository-readme",
+      "name": "iFlytekSpark-13B repository README",
+      "subtype": "Repository README",
+      "aliases": [],
+      "description": "README of the iflytekopensource/iFlytekSpark-13B Gitee repository introducing the 13-billion-parameter iFlytekSpark-13B model, cited at the initial commit of 30 January 2024.",
+      "sourceIds": ["c3-src-iflytekspark-13b-readme"]
+    },
+    {
+      "id": "iflytekspark-13b-licence",
+      "type": "document",
+      "documentKind": "licence",
+      "name": "讯飞星火认知大模型-13B许可协议",
+      "subtype": "Licence",
+      "aliases": ["iFlytek Spark cognitive large model 13B licence agreement"],
+      "description": "Licence agreement for the iFlytek Spark-13B base and chat models, naming 科大讯飞股份有限公司 as licensor, cited as LICENSE_MODEL.md at the commit of 4 February 2024.",
+      "sourceIds": ["c3-src-iflytekspark-13b-licence"]
+    },
+    {
+      "id": "iflytek-sustainability-report-2025",
+      "type": "document",
+      "documentKind": "report",
+      "name": "科大讯飞2025年度可持续发展报告",
+      "subtype": "Sustainability report",
+      "aliases": ["iFlytek 2025 Sustainability Report"],
+      "description": "iFlytek’s sustainability (ESG) report for 2025, published on cninfo on 29 April 2026.",
+      "sourceIds": ["c3-src-iflytek-sustainability-2025"]
+    }
+  ],
+  "sources": [
+    {
+      "id": "c3-src-sensetime-prospectus-2021",
+      "cacheKey": "isf-st-go-0017",
+      "title": "SenseTime Group Inc. — Global Offering",
+      "originalTitle": null,
+      "authors": ["SenseTime Group Inc."],
+      "publisher": "SenseTime Group Inc. (via HKEXnews)",
+      "publicationDate": "2021-12-07",
+      "kind": "filing",
+      "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2021/1207/2021120700017.pdf",
+      "route": "direct",
+      "language": "en",
+      "sourceClass": "primary",
+      "version": {
+        "kind": "filing",
+        "id": "HKEXnews 2021120700017.pdf",
+        "note": "English prospectus filed on HKEXnews on 7 December 2021 (761 pages). A supplemental prospectus of 20 December 2021 (2021122000009.pdf) was not inspected. Chinese characters in the PDF text layer were not extracted (shown as empty parentheses)."
+      }
+    },
+    {
+      "id": "c3-src-sensetime-passing-2023",
+      "cacheKey": "isf-st-passing-2023",
+      "title": "SenseTime Group Inc. — Announcement: Passing of the Controlling Shareholder and Executive Director",
+      "originalTitle": null,
+      "authors": ["SenseTime Group Inc."],
+      "publisher": "SenseTime Group Inc. (via HKEXnews)",
+      "publicationDate": "2023-12-17",
+      "kind": "filing",
+      "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2023/1217/2023121700135.pdf",
+      "route": "direct",
+      "language": "en",
+      "sourceClass": "primary",
+      "version": {
+        "kind": "filing",
+        "id": "HKEXnews 2023121700135.pdf",
+        "note": "Announcement dated 17 December 2023, as filed on HKEXnews."
+      }
+    },
+    {
+      "id": "c3-src-sensetime-agm-2025",
+      "cacheKey": "isf-st-agm-2025",
+      "title": "SenseTime Group Inc. — Poll results of the AGM held on June 26, 2025; appointment of executive Directors; stepping down of an executive Director",
+      "originalTitle": null,
+      "authors": ["SenseTime Group Inc."],
+      "publisher": "SenseTime Group Inc. (via HKEXnews)",
+      "publicationDate": "2025-06-26",
+      "kind": "filing",
+      "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2025/0626/2025062601920.pdf",
+      "route": "direct",
+      "language": "en",
+      "sourceClass": "primary",
+      "version": {
+        "kind": "filing",
+        "id": "HKEXnews 2025062601920.pdf",
+        "note": "Announcement of 26 June 2025, as filed on HKEXnews."
+      }
+    },
+    {
+      "id": "c3-src-sensetime-ar2023",
+      "cacheKey": "isf-st-ar2023",
+      "title": "SenseTime Group Inc. — 2023 Annual Report",
+      "originalTitle": null,
+      "authors": ["SenseTime Group Inc."],
+      "publisher": "SenseTime Group Inc. (via HKEXnews)",
+      "publicationDate": "2024-04-25",
+      "kind": "filing",
+      "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2024/0425/2024042502571.pdf",
+      "route": "direct",
+      "language": "en",
+      "sourceClass": "primary",
+      "version": {
+        "kind": "filing",
+        "id": "HKEXnews 2024042502571.pdf",
+        "note": "English annual report for 2023 filed on HKEXnews on 25 April 2024. Two-column layout; the text layer interleaves columns."
+      }
+    },
+    {
+      "id": "c3-src-sensetime-ar2025",
+      "cacheKey": "isf-st-ar2025",
+      "title": "SenseTime Group Inc. — 2025 Annual Report",
+      "originalTitle": null,
+      "authors": ["SenseTime Group Inc."],
+      "publisher": "SenseTime Group Inc. (via HKEXnews)",
+      "publicationDate": "2026-04-27",
+      "kind": "filing",
+      "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0427/2026042700722.pdf",
+      "route": "direct",
+      "language": "en",
+      "sourceClass": "primary",
+      "version": {
+        "kind": "filing",
+        "id": "HKEXnews 2026042700722.pdf",
+        "note": "English annual report for 2025 filed on HKEXnews on 27 April 2026. Two-column layout; the text layer interleaves columns, so only contiguous runs are quoted."
+      }
+    },
+    {
+      "id": "c3-src-sensetime-sensenova5-hkex",
+      "cacheKey": "isf-st-sensenova5-hkex",
+      "title": "SenseTime Group Inc. — Announcement: Business update on the launch of SenseNova 5.0, unusual share price movement and resumption of trading",
+      "originalTitle": null,
+      "authors": ["SenseTime Group Inc."],
+      "publisher": "SenseTime Group Inc. (via HKEXnews)",
+      "publicationDate": "2024-04-24",
+      "kind": "filing",
+      "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2024/0424/2024042400995.pdf",
+      "route": "direct",
+      "language": "en",
+      "sourceClass": "primary",
+      "version": {
+        "kind": "filing",
+        "id": "HKEXnews 2024042400995.pdf",
+        "note": "Announcement dated 24 April 2024 (HKEXnews lists the same file on 24 and 25 April 2024)."
+      }
+    },
+    {
+      "id": "c3-src-sensenova-u1-readme",
+      "cacheKey": "isf-st-u1-readme",
+      "title": "SenseNova-U1: Unifying Multimodal Understanding and Generation with NEO-Unify Architecture (model card, SenseNova-U1-8B-MoT)",
+      "originalTitle": null,
+      "authors": ["SenseNova (SenseTime)"],
+      "publisher": "sensenova (Hugging Face)",
+      "publicationDate": "2026-04-26",
+      "kind": "announcement",
+      "url": "https://huggingface.co/sensenova/SenseNova-U1-8B-MoT/raw/3b06420a5f2d260278f552c6ef9249fd38598441/README.md",
+      "route": "direct",
+      "language": "en",
+      "sourceClass": "primary",
+      "version": {
+        "kind": "hf-commit",
+        "id": "3b06420a5f2d260278f552c6ef9249fd38598441",
+        "note": "README.md at the commit of 26 April 2026 (\"Upload README.md with huggingface_hub\"); the repository's earliest listed commits are of 22 April 2026; later edits (to 15 May 2026 at least) not inspected."
+      }
+    },
+    {
+      "id": "c3-src-sensenova-u1-license",
+      "cacheKey": "isf-st-u1-license",
+      "title": "SenseNova-U1-8B-MoT LICENSE (Apache License, Version 2.0)",
+      "originalTitle": null,
+      "authors": ["SenseNova (SenseTime)"],
+      "publisher": "sensenova (Hugging Face)",
+      "publicationDate": "2026-05-15",
+      "kind": "report",
+      "url": "https://huggingface.co/sensenova/SenseNova-U1-8B-MoT/raw/bfa9b436503cb8aed4f2bc60e3236710cc77468d/LICENSE",
+      "route": "direct",
+      "language": "en",
+      "sourceClass": "primary",
+      "version": {
+        "kind": "hf-commit",
+        "id": "bfa9b436503cb8aed4f2bc60e3236710cc77468d",
+        "note": "LICENSE file at the commit of 15 May 2026. The file was not present at the README commit 3b06420 (HTTP 404); when it was added was not determined."
+      }
+    },
+    {
+      "id": "c3-src-sensetime-ethics-page",
+      "cacheKey": "isf-st-ethics-page",
+      "title": "SenseTime: AI Ethics and Governance (company page)",
+      "originalTitle": "AI 伦理与治理",
+      "authors": ["SenseTime"],
+      "publisher": "SenseTime (sensetime.com)",
+      "publicationDate": null,
+      "kind": "announcement",
+      "url": "https://www.sensetime.com/cn/ethics",
+      "route": "direct",
+      "language": "zh-Hans",
+      "sourceClass": "primary",
+      "version": {
+        "kind": "mutable-page",
+        "note": "Company page read as it stood on retrieval on 29 October 2026; no dated capture checked."
+      }
+    },
+    {
+      "id": "c3-src-sensetime-llm-ethics-wp",
+      "cacheKey": "isf-st-llm-ethics-wp",
+      "title": "Ri Ri Xin, Si Wu Xie: SenseTime White Paper on Large-Model Ethics Principles and Practice (AI Ethics and Governance Annual Report 2023)",
+      "originalTitle": "日日新，思无邪 商汤大模型伦理原则与实践白皮书（人工智能伦理治理年度报告（2023））",
+      "authors": [
+        "商汤人工智能伦理与治理委员会",
+        "商汤智能产业研究院",
+        "上海交通大学计算法学与 AI 伦理研究中心"
+      ],
+      "publisher": "SenseTime AI Ethics and Governance Committee (via oss.sensetime.com)",
+      "publicationDate": "2024-03-20",
+      "kind": "report",
+      "url": "https://oss.sensetime.com/20240320/eed5f65022e927ee651d0da0507e3f02/%E5%95%86%E6%B1%A4%E5%A4%A7%E6%A8%A1%E5%9E%8B%E4%BC%A6%E7%90%86%E5%8E%9F%E5%88%99%E4%B8%8E%E5%AE%9E%E8%B7%B5%E7%99%BD%E7%9A%AE%E4%B9%A6.pdf",
+      "route": "direct",
+      "language": "zh-Hans",
+      "sourceClass": "primary",
+      "version": {
+        "kind": "pdf",
+        "id": "商汤大模型伦理原则与实践白皮书.pdf (oss.sensetime.com/20240320/eed5f650…)",
+        "note": "PDF linked from the company ethics page, where it is dated 2024-03-20 (also the date in the file path). The report says it was initially released in Chinese in July 2023; whether the file differs from a July 2023 release was not checked."
+      }
+    },
+    {
+      "id": "c3-src-iflytek-prospectus-2008",
+      "cacheKey": "isf-if-prospectus-2008",
+      "title": "Anhui USTC iFlytek Co., Ltd. — Prospectus for the initial public offering of shares",
+      "originalTitle": "安徽科大讯飞信息科技股份有限公司首次公开发行股票招股说明书",
+      "authors": ["安徽科大讯飞信息科技股份有限公司"],
+      "publisher": "Anhui USTC iFlytek Co., Ltd. (via cninfo)",
+      "publicationDate": "2008-04-24",
+      "kind": "filing",
+      "url": "https://static.cninfo.com.cn/finalpage/2008-04-24/39107260.PDF",
+      "route": "direct",
+      "language": "zh-Hans",
+      "sourceClass": "primary",
+      "version": {
+        "kind": "filing",
+        "id": "cninfo finalpage/2008-04-24/39107260.PDF",
+        "note": "IPO prospectus as published on cninfo on 24 April 2008."
+      }
+    },
+    {
+      "id": "c3-src-iflytek-ar2023",
+      "cacheKey": "isf-if-ar2023",
+      "title": "iFlytek Co., Ltd. — 2023 Annual Report (full text)",
+      "originalTitle": "科大讯飞股份有限公司2023年年度报告",
+      "authors": ["科大讯飞股份有限公司"],
+      "publisher": "iFlytek Co., Ltd. (via cninfo)",
+      "publicationDate": "2024-04-23",
+      "kind": "filing",
+      "url": "https://static.cninfo.com.cn/finalpage/2024-04-23/1219744478.PDF",
+      "route": "direct",
+      "language": "zh-Hans",
+      "sourceClass": "primary",
+      "version": {
+        "kind": "filing",
+        "id": "cninfo finalpage/2024-04-23/1219744478.PDF",
+        "note": "Annual report for 2023 as published on cninfo on 23 April 2024. Tables were read in the layout rendering of page 73 where the text layer separates columns."
+      }
+    },
+    {
+      "id": "c3-src-iflytek-ar2025",
+      "cacheKey": "isf-if-ar2025",
+      "title": "iFlytek Co., Ltd. — 2025 Annual Report (full text)",
+      "originalTitle": "科大讯飞股份有限公司2025年年度报告",
+      "authors": ["科大讯飞股份有限公司"],
+      "publisher": "iFlytek Co., Ltd. (via cninfo)",
+      "publicationDate": "2026-04-29",
+      "kind": "filing",
+      "url": "https://static.cninfo.com.cn/finalpage/2026-04-29/1225233581.PDF",
+      "route": "direct",
+      "language": "zh-Hans",
+      "sourceClass": "primary",
+      "version": {
+        "kind": "filing",
+        "id": "cninfo finalpage/2026-04-29/1225233581.PDF",
+        "note": "Annual report for 2025 as published on cninfo on 29 April 2026."
+      }
+    },
+    {
+      "id": "c3-src-iflytek-board7-2026",
+      "cacheKey": "isf-if-board7-2026",
+      "title": "iFlytek Co., Ltd. — Announcement of resolutions of the inaugural (第一次) meeting of the seventh Board of Directors",
+      "originalTitle": "科大讯飞股份有限公司第七届董事会第一次会议决议公告",
+      "authors": ["科大讯飞股份有限公司董事会"],
+      "publisher": "iFlytek Co., Ltd. (via cninfo)",
+      "publicationDate": "2026-01-10",
+      "kind": "filing",
+      "url": "https://static.cninfo.com.cn/finalpage/2026-01-10/1224927456.PDF",
+      "route": "direct",
+      "language": "zh-Hans",
+      "sourceClass": "primary",
+      "version": {
+        "kind": "filing",
+        "id": "Announcement No. 2026-002 (cninfo 1224927456.PDF)",
+        "note": "Announcement dated 10 January 2026 as published on cninfo."
+      }
+    },
+    {
+      "id": "c3-src-iflytek-spark-notice-2023-05",
+      "cacheKey": "isf-if-spark-2023-05",
+      "title": "iFlytek Co., Ltd. — Indicative announcement on the iFlytek Spark cognitive large model results launch event",
+      "originalTitle": "科大讯飞股份有限公司关于讯飞星火认知大模型成果发布会的提示性公告",
+      "authors": ["科大讯飞股份有限公司董事会"],
+      "publisher": "iFlytek Co., Ltd. (via cninfo)",
+      "publicationDate": "2023-05-06",
+      "kind": "filing",
+      "url": "https://static.cninfo.com.cn/finalpage/2023-05-06/1216758016.PDF",
+      "route": "direct",
+      "language": "zh-Hans",
+      "sourceClass": "primary",
+      "version": {
+        "kind": "filing",
+        "id": "Announcement No. 2023-036 (cninfo 1216758016.PDF)",
+        "note": "Announcement dated 6 May 2023 as published on cninfo."
+      }
+    },
+    {
+      "id": "c3-src-iflytek-spark-notice-2023-08",
+      "cacheKey": "isf-if-spark-2023-08",
+      "title": "iFlytek Co., Ltd. — Indicative announcement on the iFlytek Spark cognitive large model upgrade launch event",
+      "originalTitle": "科大讯飞股份有限公司关于讯飞星火认知大模型升级发布会的提示性公告",
+      "authors": ["科大讯飞股份有限公司董事会"],
+      "publisher": "iFlytek Co., Ltd. (via cninfo)",
+      "publicationDate": "2023-08-15",
+      "kind": "filing",
+      "url": "https://static.cninfo.com.cn/finalpage/2023-08-15/1217529975.PDF",
+      "route": "direct",
+      "language": "zh-Hans",
+      "sourceClass": "primary",
+      "version": {
+        "kind": "filing",
+        "id": "Announcement No. 2023-057 (cninfo 1217529975.PDF)",
+        "note": "Announcement listed on cninfo on 15 August 2023."
+      }
+    },
+    {
+      "id": "c3-src-iflytek-spark-notice-2024-06",
+      "cacheKey": "isf-if-spark-2024-06",
+      "title": "iFlytek Co., Ltd. — Indicative announcement on the iFlytek Spark large model upgrade launch event",
+      "originalTitle": "科大讯飞股份有限公司关于讯飞星火大模型升级发布会的提示性公告",
+      "authors": ["科大讯飞股份有限公司董事会"],
+      "publisher": "iFlytek Co., Ltd. (via cninfo)",
+      "publicationDate": "2024-06-25",
+      "kind": "filing",
+      "url": "https://static.cninfo.com.cn/finalpage/2024-06-25/1220444099.PDF",
+      "route": "direct",
+      "language": "zh-Hans",
+      "sourceClass": "primary",
+      "version": {
+        "kind": "filing",
+        "id": "Announcement No. 2024-034 (cninfo 1220444099.PDF)",
+        "note": "Announcement dated 25 June 2024 as published on cninfo."
+      }
+    },
+    {
+      "id": "c3-src-iflytekspark-13b-readme",
+      "cacheKey": "isf-if-spark13b-readme",
+      "title": "iFlytekSpark-13B repository README",
+      "originalTitle": "iFlytekSpark-13B",
+      "authors": ["iflytekopensource"],
+      "publisher": "iflytekopensource (Gitee)",
+      "publicationDate": "2024-01-30",
+      "kind": "announcement",
+      "url": "https://gitee.com/iflytekopensource/iFlytekSpark-13B/raw/b7057fbe82d2e3d40b0d21e5457511fafe8d4451/README.md",
+      "route": "direct",
+      "language": "zh-Hans",
+      "sourceClass": "primary",
+      "version": {
+        "kind": "git-commit",
+        "id": "b7057fbe82d2e3d40b0d21e5457511fafe8d4451",
+        "note": "README.md at the repository's initial commit (message \"first commit\", 30 January 2024); later README edits to 9 March 2024 not inspected. Commit history read from a blobless clone in a scratch directory."
+      }
+    },
+    {
+      "id": "c3-src-iflytekspark-13b-licence",
+      "cacheKey": "isf-if-spark13b-licence",
+      "title": "iFlytek Spark cognitive large model 13B licence agreement (LICENSE_MODEL.md)",
+      "originalTitle": "讯飞星火认知大模型-13B许可协议",
+      "authors": ["iflytekopensource"],
+      "publisher": "iflytekopensource (Gitee)",
+      "publicationDate": "2024-02-04",
+      "kind": "report",
+      "url": "https://gitee.com/iflytekopensource/iFlytekSpark-13B/raw/a624f7f1233c502c70054aac93b667459b41033a/LICENSE_MODEL.md",
+      "route": "direct",
+      "language": "zh-Hans",
+      "sourceClass": "primary",
+      "version": {
+        "kind": "git-commit",
+        "id": "a624f7f1233c502c70054aac93b667459b41033a",
+        "note": "LICENSE_MODEL.md at the commit of 4 February 2024 (\"update: model licence\"), the file's last change in the history read; the file was initially committed on 30 January 2024 and changed on 2 February 2024; those earlier texts were not inspected."
+      }
+    },
+    {
+      "id": "c3-src-iflytek-sustainability-2025",
+      "cacheKey": "isf-if-sust-2025",
+      "title": "iFlytek 2025 Sustainability Report",
+      "originalTitle": "科大讯飞2025年度可持续发展报告",
+      "authors": ["科大讯飞股份有限公司"],
+      "publisher": "iFlytek Co., Ltd. (via cninfo)",
+      "publicationDate": "2026-04-29",
+      "kind": "report",
+      "url": "https://static.cninfo.com.cn/finalpage/2026-04-29/1225233609.PDF",
+      "route": "direct",
+      "language": "zh-Hans",
+      "sourceClass": "primary",
+      "version": {
+        "kind": "filing",
+        "id": "cninfo finalpage/2026-04-29/1225233609.PDF",
+        "note": "Sustainability (ESG) report for 2025 as published on cninfo on 29 April 2026. Two-column layout; only contiguous runs of the text layer are quoted."
+      }
+    }
+  ],
+  "claims": [
+    {
+      "id": "c3-sensetime-founding-2014",
+      "subject": "sensetime",
+      "predicate": "founding_stated",
+      "object": {
+        "kind": "literal",
+        "value": "SenseTime Group Inc. incorporated as an exempted company with limited liability in the Cayman Islands on 15 October 2014"
+      },
+      "topic": "institutions",
+      "statement": "SenseTime’s December 2021 prospectus states that the company was incorporated as an exempted company with limited liability in the Cayman Islands on 15 October 2014, and lists 2014 as the year of incorporation among its milestones.",
+      "time": {
+        "kind": "event",
+        "date": "2014-10-15",
+        "note": "Incorporation date of the Cayman holding company as the prospectus states it. The prospectus gives separate, later incorporation dates for PRC subsidiaries (Beijing SenseTime, 14 November 2014)."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "Incorporation of the listed holding company, not a date for the start of research work. The prospectus says Prof. Tang Xiao’ou joined the group in October 2014.",
+      "evidence": [
+        {
+          "id": "c3-ev-sensetime-founding-2014",
+          "sourceId": "c3-src-sensetime-prospectus-2021",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "History and Corporate Structure, Overview (p. 199)",
+          "passageType": "quote",
+          "passage": "Our Company was incorporated as an exempted company with limited liability in the Cayman Islands on October 15, 2014",
+          "translation": null
+        },
+        {
+          "id": "c3-ev-sensetime-founding-2014-ms",
+          "sourceId": "c3-src-sensetime-prospectus-2021",
+          "sourceRole": "primary",
+          "support": "context",
+          "locator": "History and Corporate Structure, “Our Key Milestones”",
+          "passageType": "quote",
+          "passage": "OUR KEY MILESTONES The following is a summary of our Group’s key business development milestones: Date Event 2014 . . . . . . . . Our Company was incorporated",
+          "translation": null
+        }
+      ]
+    },
+    {
+      "id": "c3-sensetime-legal-form-2021",
+      "subject": "sensetime",
+      "predicate": "has_legal_form",
+      "object": {
+        "kind": "literal",
+        "value": "SenseTime Group Inc. (商汤集团股份有限公司), a company controlled through weighted voting rights and incorporated in the Cayman Islands with limited liability"
+      },
+      "topic": "institutions",
+      "statement": "SenseTime’s December 2021 prospectus describes the issuer as SenseTime Group Inc., a company controlled through weighted voting rights and incorporated in the Cayman Islands with limited liability; its later exchange announcements give the Chinese name 商汤集团股份有限公司.",
+      "time": {
+        "kind": "snapshot",
+        "date": "2021-12-07",
+        "basis": "filing",
+        "note": "State shown on the prospectus cover of 7 December 2021; the Chinese name is taken from the announcement of 17 December 2023."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "Legal name and form as the filings state them. The weighted-voting-rights description is the filing’s; no control relation is recorded here. Group structure (subsidiaries and contractual arrangements) is not recorded except where a separate record says so.",
+      "evidence": [
+        {
+          "id": "c3-ev-sensetime-legal-form-2021",
+          "sourceId": "c3-src-sensetime-prospectus-2021",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Cover page",
+          "passageType": "quote",
+          "passage": "SenseTime Group Inc. (a company controlled through weighted voting rights and incorporated in the Cayman Islands with limited liability)",
+          "translation": null
+        },
+        {
+          "id": "c3-ev-sensetime-legal-form-2021-zh",
+          "sourceId": "c3-src-sensetime-passing-2023",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Signature block",
+          "passageType": "quote",
+          "passage": "SenseTime Group Inc. 商汤集团股份有限公司",
+          "translation": {
+            "text": "SenseTime Group Inc. (Chinese name: SenseTime Group Co., Ltd.)",
+            "method": "machine",
+            "humanVerified": false
+          }
+        }
+      ]
+    },
+    {
+      "id": "c3-sensetime-shanghai-subsidiary",
+      "subject": "shanghai-sensetime",
+      "predicate": "unit_of",
+      "object": {
+        "kind": "entity",
+        "entityId": "sensetime"
+      },
+      "topic": "institutions",
+      "statement": "SenseTime’s December 2021 prospectus defines “Shanghai SenseTime” as Shanghai SenseTime Intelligent Technology Co., Ltd., a PRC limited liability company incorporated on 15 December 2017 and the company’s indirect wholly-owned subsidiary.",
+      "time": {
+        "kind": "snapshot",
+        "date": "2021-12-07",
+        "basis": "filing",
+        "note": "Relationship as stated in the prospectus of 7 December 2021; not extended to a later date. SenseTime’s ethics page (read 29 October 2026) still describes 上海商汤智能科技有限公司 as a subsidiary of the SenseTime group."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "The filing states the subsidiary relationship. The Chinese name 上海商汤智能科技有限公司 is not in the prospectus text layer; it is matched to the English name through SenseTime’s own page footer. 上海商汤智能科技有限公司 is the name under which SenseTime is listed as an AIIA safety-commitment signatory (c2-governance-aiia-aisc-signatory-sensetime).",
+      "evidence": [
+        {
+          "id": "c3-ev-sensetime-shanghai-subsidiary",
+          "sourceId": "c3-src-sensetime-prospectus-2021",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Definitions, “Shanghai SenseTime” (p. 43)",
+          "passageType": "quote",
+          "passage": "“Shanghai SenseTime” Shanghai SenseTime Intelligent Technology Co., Ltd. … a company incorporated under the laws of the PRC with limited liability on December 15, 2017, our indirect wholly-owned subsidiary",
+          "translation": null
+        },
+        {
+          "id": "c3-ev-sensetime-shanghai-subsidiary-zh",
+          "sourceId": "c3-src-sensetime-ethics-page",
+          "sourceRole": "primary",
+          "support": "context",
+          "locator": "Page footer",
+          "passageType": "quote",
+          "passage": "上海商汤智能科技有限公司是商汤集团旗下子公司",
+          "translation": {
+            "text": "Shanghai SenseTime Intelligent Technology Co., Ltd. is a subsidiary of SenseTime Group.",
+            "method": "machine",
+            "humanVerified": false
+          }
+        }
+      ]
+    },
+    {
+      "id": "c3-sensetime-tang-founder",
+      "subject": "tang-xiaoou",
+      "predicate": "co_founded",
+      "object": {
+        "kind": "entity",
+        "entityId": "sensetime"
+      },
+      "topic": "people",
+      "statement": "SenseTime’s December 2021 prospectus names Prof. Tang Xiao’ou as the company’s founder (“our founder”) and, with Xu Li, Wang Xiaogang and Xu Bing, as one of its co-founders.",
+      "time": {
+        "kind": "unknown",
+        "note": "The prospectus gives October 2014 as the date he joined the group; no founding date is attached to the credit."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "Founding credit as the filing states it. The prospectus uses “founder” for Prof. Tang and “co-founder” for the others; the predicate records a founding credit without ranking.",
+      "evidence": [
+        {
+          "id": "c3-ev-sensetime-tang-founder",
+          "sourceId": "c3-src-sensetime-prospectus-2021",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Definitions, “Prof. Tang”",
+          "passageType": "quote",
+          "passage": "“Prof. Tang” Professor Tang Xiao’ou, our founder, executive Director and a WVR Beneficiary",
+          "translation": null
+        },
+        {
+          "id": "c3-ev-sensetime-tang-founder-2",
+          "sourceId": "c3-src-sensetime-prospectus-2021",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Summary, WVR Beneficiaries (p. 21)",
+          "passageType": "quote",
+          "passage": "The WVR Beneficiaries Prof. Tang, Dr. Xu Li, Dr. Wang and Mr. Xu Bing are the co-founders of our Company.",
+          "translation": null
+        }
+      ]
+    },
+    {
+      "id": "c3-sensetime-xu-li-cofounder",
+      "subject": "xu-li",
+      "predicate": "co_founded",
+      "object": {
+        "kind": "entity",
+        "entityId": "sensetime"
+      },
+      "topic": "people",
+      "statement": "SenseTime’s December 2021 prospectus names Dr. Xu Li as a co-founder of the company.",
+      "time": {
+        "kind": "unknown",
+        "note": "The prospectus gives March 2015 as the date he joined the group; no founding date is attached to the credit."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "Founding credit as the filing states it.",
+      "evidence": [
+        {
+          "id": "c3-ev-sensetime-xu-li-cofounder",
+          "sourceId": "c3-src-sensetime-prospectus-2021",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Definitions, “Dr. Xu Li”",
+          "passageType": "quote",
+          "passage": "“Dr. Xu Li” Dr. Xu Li, our co-founder, executive Chairman of our Board, executive Director, chief executive officer and a WVR Beneficiary",
+          "translation": null
+        }
+      ]
+    },
+    {
+      "id": "c3-sensetime-wang-xiaogang-cofounder",
+      "subject": "wang-xiaogang",
+      "predicate": "co_founded",
+      "object": {
+        "kind": "entity",
+        "entityId": "sensetime"
+      },
+      "topic": "people",
+      "statement": "SenseTime’s December 2021 prospectus names Dr. Wang Xiaogang as a co-founder of the company.",
+      "time": {
+        "kind": "unknown",
+        "note": "The prospectus gives October 2016 as the date he joined the group; no founding date is attached to the credit."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "Founding credit as the filing states it. The prospectus also states a family relationship between two Directors; it is not recorded here.",
+      "evidence": [
+        {
+          "id": "c3-ev-sensetime-wang-xiaogang-cofounder",
+          "sourceId": "c3-src-sensetime-prospectus-2021",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Definitions, “Dr. Wang”",
+          "passageType": "quote",
+          "passage": "“Dr. Wang” Dr. Wang Xiaogang, our co-founder, executive Director, chief scientist and a WVR Beneficiary",
+          "translation": null
+        }
+      ]
+    },
+    {
+      "id": "c3-sensetime-xu-bing-cofounder",
+      "subject": "xu-bing",
+      "predicate": "co_founded",
+      "object": {
+        "kind": "entity",
+        "entityId": "sensetime"
+      },
+      "topic": "people",
+      "statement": "SenseTime’s December 2021 prospectus names Mr. Xu Bing as a co-founder of the company.",
+      "time": {
+        "kind": "unknown",
+        "note": "The prospectus gives October 2014 as the date he joined the group; no founding date is attached to the credit."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "Founding credit as the filing states it.",
+      "evidence": [
+        {
+          "id": "c3-ev-sensetime-xu-bing-cofounder",
+          "sourceId": "c3-src-sensetime-prospectus-2021",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Definitions, “Mr. Xu Bing”",
+          "passageType": "quote",
+          "passage": "“Mr. Xu Bing” Mr. Xu Bing, our co-founder, executive Director, Board secretary and a WVR Beneficiary",
+          "translation": null
+        }
+      ]
+    },
+    {
+      "id": "c3-sensetime-yang-fan-cofounder",
+      "subject": "yang-fan",
+      "predicate": "co_founded",
+      "object": {
+        "kind": "entity",
+        "entityId": "sensetime"
+      },
+      "topic": "people",
+      "statement": "SenseTime’s December 2021 prospectus describes Mr. Yang Fan as a co-founder who has been vice president since November 2014.",
+      "time": {
+        "kind": "unknown",
+        "note": "No founding date is attached to the credit; the vice-president role is dated from November 2014 in the prospectus biography (December 2014 in its senior-management table)."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "Founding credit as the filing states it. The prospectus also calls Ma Kun and Xu Chiheng co-founders; they are not recorded in this pack.",
+      "evidence": [
+        {
+          "id": "c3-ev-sensetime-yang-fan-cofounder",
+          "sourceId": "c3-src-sensetime-prospectus-2021",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Directors and Senior Management, senior management biographies",
+          "passageType": "quote",
+          "passage": "is our co-founder and has been our vice president since November 2014. He is primarily responsible for strategic planning and corporate development of our Group.",
+          "translation": null
+        }
+      ]
+    },
+    {
+      "id": "c3-sensetime-xu-li-chair-ceo-2021",
+      "subject": "xu-li",
+      "predicate": "held_role",
+      "object": {
+        "kind": "entity",
+        "entityId": "sensetime"
+      },
+      "topic": "people",
+      "statement": "SenseTime’s December 2021 prospectus identifies Dr. Xu Li as executive Chairman of the Board, executive Director and chief executive officer, appointed a Director on 15 December 2015.",
+      "time": {
+        "kind": "snapshot",
+        "date": "2021-12-07",
+        "basis": "filing",
+        "note": "Roles shown in the prospectus of 7 December 2021. The prospectus dates his appointment as a Director to 15 December 2015 and his re-designation as an executive Director to 23 August 2021."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "Roles as the filing states them at its date; see the 2025 annual report record for a later snapshot.",
+      "evidence": [
+        {
+          "id": "c3-ev-sensetime-xu-li-chair-ceo-2021",
+          "sourceId": "c3-src-sensetime-prospectus-2021",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Directors and Senior Management, Executive Directors",
+          "passageType": "quote",
+          "passage": "is our co-founder, executive Chairman of our Board, executive Director and chief executive officer. He was appointed as a Director on December 15, 2015 and re-designated as an executive Director on August 23, 2021.",
+          "translation": null
+        }
+      ],
+      "attributes": {
+        "role": "executive Chairman of our Board, executive Director and chief executive officer"
+      }
+    },
+    {
+      "id": "c3-sensetime-xu-li-chair-ceo-2026",
+      "subject": "xu-li",
+      "predicate": "held_role",
+      "object": {
+        "kind": "entity",
+        "entityId": "sensetime"
+      },
+      "topic": "people",
+      "statement": "SenseTime’s 2025 annual report lists Dr. Xu Li at the head of its executive Directors as Executive Chairman of the Board and describes him as executive Director and chief executive officer.",
+      "time": {
+        "kind": "snapshot",
+        "date": "2026-04-27",
+        "basis": "filing",
+        "note": "Roles shown in the 2025 annual report filed on 27 April 2026; not extended to any later date."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "Snapshot at the report’s date only. The report’s two-column text layer interleaves passages; the quoted runs are contiguous in it.",
+      "evidence": [
+        {
+          "id": "c3-ev-sensetime-xu-li-chair-ceo-2026",
+          "sourceId": "c3-src-sensetime-ar2025",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Directors’ Report, Directors and Senior Management (p. 67)",
+          "passageType": "quote",
+          "passage": "The Directors as at the Latest Practicable Date are: Executive Directors Dr. XU Li",
+          "translation": null
+        },
+        {
+          "id": "c3-ev-sensetime-xu-li-chair-ceo-2026-2",
+          "sourceId": "c3-src-sensetime-ar2025",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Directors’ Report, Biographical Details of Directors (p. 69)",
+          "passageType": "quote",
+          "passage": "Chairman of our Board, executive Director and chief executive officer. He was appointed as a Director on",
+          "translation": null
+        }
+      ],
+      "attributes": {
+        "role": "Executive Chairman of the Board, executive Director and chief executive officer"
+      }
+    },
+    {
+      "id": "c3-sensetime-tang-director-2021-2023",
+      "subject": "tang-xiaoou",
+      "predicate": "held_role",
+      "object": {
+        "kind": "entity",
+        "entityId": "sensetime"
+      },
+      "topic": "people",
+      "statement": "SenseTime’s filings state that Prof. Tang Xiao’ou was appointed an executive Director on 23 August 2021 and was an executive Director when he died on 15 December 2023, as the company announced on 17 December 2023.",
+      "time": {
+        "kind": "interval",
+        "from": "2021-08-23",
+        "until": "2023-12-15",
+        "note": "Start as the prospectus states the appointment; end is the date of death given in the company’s announcement of 17 December 2023. The prospectus dates his joining the group to October 2014."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "Only the documented public role and dates are recorded. The announcement’s tribute wording and the circumstances it mentions are not recorded.",
+      "evidence": [
+        {
+          "id": "c3-ev-sensetime-tang-director-2021-2023",
+          "sourceId": "c3-src-sensetime-prospectus-2021",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Directors and Senior Management, Executive Directors",
+          "passageType": "quote",
+          "passage": "is our founder and was appointed as our executive Director on August 23, 2021.",
+          "translation": null
+        },
+        {
+          "id": "c3-ev-sensetime-tang-director-2021-2023-end",
+          "sourceId": "c3-src-sensetime-passing-2023",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "First paragraph",
+          "passageType": "quote",
+          "passage": "the controlling shareholder of the Company and an executive director of the Board, has passed away on December 15, 2023",
+          "translation": null
+        }
+      ],
+      "attributes": {
+        "role": "executive Director"
+      }
+    },
+    {
+      "id": "c3-sensetime-wang-xiaogang-chief-scientist",
+      "subject": "wang-xiaogang",
+      "predicate": "held_role",
+      "object": {
+        "kind": "entity",
+        "entityId": "sensetime"
+      },
+      "topic": "people",
+      "statement": "SenseTime’s 2025 annual report describes Dr. Wang Xiaogang as co-founder, executive Director and chief scientist, appointed a Director on 10 October 2016; the December 2021 prospectus gives the same roles.",
+      "time": {
+        "kind": "snapshot",
+        "date": "2026-04-27",
+        "basis": "filing",
+        "note": "Roles shown in the 2025 annual report filed on 27 April 2026; the prospectus of 7 December 2021 shows the same roles. Not extended to any later date."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "Snapshot at the report’s date; the Director appointment date is the filing’s.",
+      "evidence": [
+        {
+          "id": "c3-ev-sensetime-wang-xiaogang-chief-scientist",
+          "sourceId": "c3-src-sensetime-ar2025",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Directors’ Report, Biographical Details of Directors (printed p. 68; PDF p. 69)",
+          "passageType": "quote",
+          "passage": "is our co-founder, executive Director and chief scientist. He was appointed as a Director on October 10, 2016 and re-designated as an executive Director on August 23, 2021.",
+          "translation": null
+        },
+        {
+          "id": "c3-ev-sensetime-wang-xiaogang-chief-scientist-2021",
+          "sourceId": "c3-src-sensetime-prospectus-2021",
+          "sourceRole": "primary",
+          "support": "context",
+          "locator": "Directors and Senior Management, senior management table",
+          "passageType": "quote",
+          "passage": "Dr. Wang Xiaogang ( ) 44 Co-founder, executive Director and chief scientist October 2016 July 2017",
+          "translation": null,
+          "visualReading": true
+        }
+      ],
+      "attributes": {
+        "role": "executive Director and chief scientist"
+      }
+    },
+    {
+      "id": "c3-sensetime-xu-bing-director-2015-2025",
+      "subject": "xu-bing",
+      "predicate": "held_role",
+      "object": {
+        "kind": "entity",
+        "entityId": "sensetime"
+      },
+      "topic": "people",
+      "statement": "SenseTime’s filings state that Mr. Xu Bing was appointed a Director on 15 December 2015, re-designated an executive Director on 23 August 2021, and stepped down as executive Director and secretary of the Board following the annual general meeting of 26 June 2025.",
+      "time": {
+        "kind": "interval",
+        "from": "2015-12-15",
+        "until": "2025-06-26",
+        "note": "Start as the prospectus dates his appointment as a Director; end is the conclusion of the annual general meeting of 26 June 2025 as the announcement of that date states it."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "Board roles only; the announcement records his confirmation of no disagreement with the Board, which is not recorded as a reason. No later role is inferred.",
+      "evidence": [
+        {
+          "id": "c3-ev-sensetime-xu-bing-director-2015-2025",
+          "sourceId": "c3-src-sensetime-prospectus-2021",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Directors and Senior Management, Executive Directors",
+          "passageType": "quote",
+          "passage": "is our co-founder, executive Director and Board secretary. He was appointed as a Director on December 15, 2015 and re-designated as an executive Director on August 23, 2021.",
+          "translation": null
+        },
+        {
+          "id": "c3-ev-sensetime-xu-bing-director-2015-2025-end",
+          "sourceId": "c3-src-sensetime-agm-2025",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Section 4, Stepping down of an executive Director",
+          "passageType": "quote",
+          "passage": "Mr. Xu Bing has stepped down as an executive Director and the secretary of the Board following the conclusion of the Annual General Meeting",
+          "translation": null
+        }
+      ],
+      "attributes": {
+        "role": "Director (executive Director from 23 August 2021) and Board secretary"
+      }
+    },
+    {
+      "id": "c3-sensetime-yang-fan-director-2025",
+      "subject": "yang-fan",
+      "predicate": "held_role",
+      "object": {
+        "kind": "entity",
+        "entityId": "sensetime"
+      },
+      "topic": "people",
+      "statement": "SenseTime announced that shareholders at its annual general meeting of 26 June 2025 approved the appointment of Mr. Yang Fan as an executive Director, under a service contract with a three-year term commencing on 26 June 2025.",
+      "time": {
+        "kind": "interval",
+        "from": "2025-06-26",
+        "note": "Start of the service contract as the announcement states it; no end is recorded. The 2025 annual report (27 April 2026) still lists him as an executive Director."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "The announced term is a contractual term, not a record that he served it in full.",
+      "evidence": [
+        {
+          "id": "c3-ev-sensetime-yang-fan-director-2025",
+          "sourceId": "c3-src-sensetime-agm-2025",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Appointment of executive Directors",
+          "passageType": "quote",
+          "passage": "The Board is pleased to announce that the appointment of each of Mr. Yang and Mr. Wang as an executive Director has been approved by the Shareholders at the Annual General Meeting.",
+          "translation": null
+        },
+        {
+          "id": "c3-ev-sensetime-yang-fan-director-2025-2",
+          "sourceId": "c3-src-sensetime-agm-2025",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Appointment of executive Directors",
+          "passageType": "quote",
+          "passage": "each with a three-year term commencing from June 26, 2025",
+          "translation": null
+        }
+      ],
+      "attributes": {
+        "role": "executive Director"
+      }
+    },
+    {
+      "id": "c3-sensetime-pre-ipo-rounds",
+      "subject": "sensetime",
+      "predicate": "announced_funding",
+      "object": {
+        "kind": "literal",
+        "value": "Twelve rounds of Pre-IPO Investments (Series A-1 to Series D+), between 26 May 2015 and 29 June 2021"
+      },
+      "topic": "capital",
+      "statement": "SenseTime’s December 2021 prospectus states that it conducted twelve rounds of Pre-IPO Investments between 26 May 2015 and 29 June 2021, issuing Preferred Shares to its Pre-IPO Investors.",
+      "time": {
+        "kind": "interval",
+        "from": "2015-05-26",
+        "until": "2021-06-29",
+        "note": "Bounds as the prospectus states them; the prospectus tabulates dates, shares and funds raised for each round, which are not recorded here."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "A filing statement of completed rounds. Round-level amounts and valuations in the prospectus table are not recorded; no round total is attributed to any investor.",
+      "evidence": [
+        {
+          "id": "c3-ev-sensetime-pre-ipo-rounds",
+          "sourceId": "c3-src-sensetime-prospectus-2021",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "History and Corporate Structure, Major Shareholding Changes, item 4",
+          "passageType": "quote",
+          "passage": "Between May 26, 2015 and June 29, 2021, we conducted twelve rounds of Pre-IPO Investments.",
+          "translation": null
+        },
+        {
+          "id": "c3-ev-sensetime-pre-ipo-rounds-2",
+          "sourceId": "c3-src-sensetime-prospectus-2021",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "History and Corporate Structure, Pre-IPO Investments, 1. Overview",
+          "passageType": "quote",
+          "passage": "We have received twelve rounds of Pre-IPO Investments since our establishment and our Pre-IPO Investors were issued Preferred Shares in our Company",
+          "translation": null
+        }
+      ],
+      "attributes": {
+        "stage": "completed (as stated in the filing)"
+      }
+    },
+    {
+      "id": "c3-sensetime-investor-softbank",
+      "subject": "softbank-group",
+      "predicate": "participated_in_round",
+      "object": {
+        "kind": "entity",
+        "entityId": "sensetime"
+      },
+      "topic": "capital",
+      "statement": "SenseTime’s December 2021 prospectus names SVF Sense (Singapore) Pte. Ltd. among its principal Pre-IPO Investors, holding approximately 14.88% of SenseTime’s issued shares at the prospectus date; it states that SVF Sense is indirectly wholly owned by SVF Holdings (UK) LLP, and that the general partner of the fund concerned, SVF GP (Jersey) Limited, is ultimately wholly owned by SoftBank Group Corp.",
+      "time": {
+        "kind": "snapshot",
+        "date": "2021-12-07",
+        "note": "Holding as shown in the prospectus of 7 December 2021; not a continuing state."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "The investing entity is SVF Sense. The filing traces the ownership of SVF Sense to SVF Holdings (UK) LLP, and states that SoftBank Group ultimately wholly owns the general partner (and the manager), not SVF Sense itself. The subject softbank-group stands for that chain only through the general partner and manager; whether a fund or vehicle entity should be the subject is held for the maintainer. The cited passage does not name the series in which SVF Sense invested and attributes no round amount to it. No influence or control is inferred from the shareholding.",
+      "evidence": [
+        {
+          "id": "c3-ev-sensetime-investor-softbank",
+          "sourceId": "c3-src-sensetime-prospectus-2021",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "History and Corporate Structure, 5. Information relating to our principal Pre-IPO Investors, (a)",
+          "passageType": "quote",
+          "passage": "SVF Sense (Singapore) Pte. Ltd. (“SVF Sense”) is a private company limited by shares incorporated in Singapore. SVF Sense is indirectly wholly owned by SVF Holdings (UK) LLP.",
+          "translation": null
+        },
+        {
+          "id": "c3-ev-sensetime-investor-softbank-2",
+          "sourceId": "c3-src-sensetime-prospectus-2021",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Same paragraph",
+          "passageType": "quote",
+          "passage": "SVF GP (Jersey) Limited, which is ultimately wholly owned by SoftBank Group Corp. (TYO: 9984)",
+          "translation": null
+        },
+        {
+          "id": "c3-ev-sensetime-investor-softbank-3",
+          "sourceId": "c3-src-sensetime-prospectus-2021",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Same paragraph",
+          "passageType": "quote",
+          "passage": "SVF Sense (Singapore) Pte. Ltd. holds approximately 14.88% of the total issued and outstanding shares of the Company",
+          "translation": null
+        }
+      ],
+      "attributes": {
+        "transactionType": "equity_investment",
+        "transactionStage": "invested",
+        "relationshipContext": "external",
+        "period": "Pre-IPO Investments (series not specified in the cited passage)"
+      },
+      "reviewHold": "Subject: SoftBank Group, SoftBank Vision Fund or SVF Sense (audit, material)."
+    },
+    {
+      "id": "c3-sensetime-investor-idg",
+      "subject": "idg-capital",
+      "predicate": "participated_in_round",
+      "object": {
+        "kind": "entity",
+        "entityId": "sensetime"
+      },
+      "topic": "capital",
+      "statement": "SenseTime’s December 2021 prospectus names IDG China Venture Capital Fund IV, L.P. and IDG China IV Investors L.P. among its principal Pre-IPO Investors; its capitalisation table shows both holding Series A-1 Preferred Shares.",
+      "time": {
+        "kind": "snapshot",
+        "date": "2021-12-07",
+        "note": "Holdings as shown in the prospectus of 7 December 2021."
+      },
+      "derivation": "inferred",
+      "resolution": "supported",
+      "qualification": "The funds, not a parent, are the investing entities; linking them to the idg-capital entity rests on the fund names. The capitalisation table shows holdings at the prospectus date, read from the layout rendering of p. 208; it does not show whether the shares were subscribed in the Series A-1 round or acquired by transfer. No round amount is attributed to the funds. The prospectus does not name IDG Capital; the funds are mapped to idg-capital by the IDG name prefix.",
+      "evidence": [
+        {
+          "id": "c3-ev-sensetime-investor-idg",
+          "sourceId": "c3-src-sensetime-prospectus-2021",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "History and Corporate Structure, 5. Information relating to our principal Pre-IPO Investors, (d)",
+          "passageType": "quote",
+          "passage": "Each of IDG China Venture Capital Fund IV, L.P. (the “IDG Main Fund”) and IDG China IV Investors L.P. (the “IDG Side Fund”) is an exempted limited partnership",
+          "translation": null
+        },
+        {
+          "id": "c3-ev-sensetime-investor-idg-table",
+          "sourceId": "c3-src-sensetime-prospectus-2021",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Capitalization of our Company table (p. 208), Series A-1 Preferred Shares column",
+          "passageType": "quote",
+          "passage": "IDG China IV Investors L.P. (Note 3) . . . . . . . — 51,080,000",
+          "translation": null,
+          "visualReading": true
+        }
+      ],
+      "attributes": {
+        "transactionType": "equity_investment",
+        "transactionStage": "invested",
+        "relationshipContext": "external",
+        "period": "Series A-1 Preferred Shares (holding shown at the prospectus date)"
+      },
+      "inferenceRationale": "The prospectus names the two IDG funds among the principal Pre-IPO Investors and its capitalisation table shows them holding Series A-1 Preferred Shares; participation in the Series A-1 round is inferred from that holding, which may also have been acquired by transfer. The link to idg-capital rests on the fund names; the prospectus does not name IDG Capital."
+    },
+    {
+      "id": "c3-sensetime-investor-iflytek",
+      "subject": "iflytek",
+      "predicate": "participated_in_round",
+      "object": {
+        "kind": "entity",
+        "entityId": "sensetime"
+      },
+      "topic": "capital",
+      "statement": "SenseTime’s December 2021 prospectus capitalisation table lists Iflytek Co., Ltd. as holding 25,000,000 Series A-1 Preferred Shares of SenseTime at the prospectus date.",
+      "time": {
+        "kind": "snapshot",
+        "date": "2021-12-07",
+        "note": "Holding as shown in the prospectus of 7 December 2021; not a continuing state."
+      },
+      "derivation": "inferred",
+      "resolution": "supported",
+      "qualification": "The table shows a holding of Series A-1 Preferred Shares, read from the layout rendering of p. 208 (the text layer separates the column header from the row). Participation in the Series A-1 round is inferred from the share class; the table does not show whether the shares were subscribed or acquired by transfer. Iflytek Co., Ltd. is matched to iFlytek by name. No amount is attributed to iFlytek and no influence is inferred.",
+      "evidence": [
+        {
+          "id": "c3-ev-sensetime-investor-iflytek",
+          "sourceId": "c3-src-sensetime-prospectus-2021",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Capitalization of our Company table (p. 208), row “Iflytek Co., Ltd.”, Series A-1 Preferred Shares column",
+          "passageType": "quote",
+          "passage": "Iflytek Co., Ltd. . . — 25,000,000",
+          "translation": null,
+          "visualReading": true
+        }
+      ],
+      "inferenceRationale": "The capitalisation table places the 25,000,000 shares held by Iflytek Co., Ltd. in the Series A-1 Preferred Shares column; Series A-1 Preferred Shares were issued in the Series A-1 Pre-IPO round (initial subscription agreement 26 May 2015). The holder may have acquired them by transfer, which the table does not exclude.",
+      "attributes": {
+        "transactionType": "equity_investment",
+        "transactionStage": "invested",
+        "relationshipContext": "external",
+        "period": "Series A-1 Preferred Shares (holding shown at the prospectus date)"
+      }
+    },
+    {
+      "id": "c3-sensetime-sensenova-5-announcement",
+      "subject": "sensetime",
+      "predicate": "published",
+      "object": {
+        "kind": "entity",
+        "entityId": "sensenova-5-hkex-announcement-2024"
+      },
+      "topic": "ideas",
+      "statement": "SenseTime announced on HKEXnews on 24 April 2024 that at its Tech Day of 23 April 2024 it had launched SenseNova 5.0, which it described as having 600 billion parameters.",
+      "time": {
+        "kind": "event",
+        "date": "2024-04-24",
+        "basis": "announcement",
+        "note": "Date of the exchange announcement; the launch event it reports was on 23 April 2024. The announcement links a SenseTime news page (news-detail/51167729) that returned HTTP 404 on retrieval."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "The parameter count and the announcement’s comparison with another model are the company’s statements; performance claims are out of scope. The earlier SenseNova versions are described in the 2023 annual report (SenseNova 1.0 launched in April 2023), cited as context.",
+      "evidence": [
+        {
+          "id": "c3-ev-sensetime-sensenova-5-announcement",
+          "sourceId": "c3-src-sensetime-sensenova5-hkex",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Business update on the launch of SenseNova 5.0",
+          "passageType": "quote",
+          "passage": "On April 23, 2024, the Company held its Tech Day event in Shanghai Lingang AIDC, in which the Company launched SenseNova 5.0 with 600 billion parameters.",
+          "translation": null
+        },
+        {
+          "id": "c3-ev-sensetime-sensenova-5-announcement-ar",
+          "sourceId": "c3-src-sensetime-ar2023",
+          "sourceRole": "primary",
+          "support": "context",
+          "locator": "Chairman’s Statement, “SenseNova” Large Model Series (p. 8)",
+          "passageType": "quote",
+          "passage": "In April 2023, we launched SenseNova 1.0",
+          "translation": null
+        }
+      ]
+    },
+    {
+      "id": "c3-sensetime-sensenova-u1-card",
+      "subject": "sensetime",
+      "predicate": "published",
+      "object": {
+        "kind": "entity",
+        "entityId": "sensenova-u1-model-card"
+      },
+      "topic": "ideas",
+      "statement": "The sensenova Hugging Face account published a model card for SenseNova-U1-8B-MoT, which at a commit of 26 April 2026 announced the open-sourcing of the SenseNova U1 Lite series in two sizes, SenseNova U1-8B-MoT and SenseNova U1-A3B-MoT.",
+      "time": {
+        "kind": "event",
+        "date": "2026-04-26",
+        "basis": "publication",
+        "note": "Date of the cited README commit; the repository’s earliest listed commits are of 22 April 2026. No company announcement date was retrieved."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "The Hugging Face account is “sensenova”; its attribution to SenseTime rests on the account and model names and on SenseTime’s 2025 annual report, which says SenseTime open-sourced SenseNova models; the account’s ownership was not otherwise verified. Benchmark claims in the card are out of scope.",
+      "evidence": [
+        {
+          "id": "c3-ev-sensetime-sensenova-u1-card",
+          "sourceId": "c3-src-sensenova-u1-readme",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "README, “Models”",
+          "passageType": "quote",
+          "passage": "In this release, we are open-sourcing the SenseNova U1 Lite series in two sizes:",
+          "translation": null
+        },
+        {
+          "id": "c3-ev-sensetime-sensenova-u1-card-title",
+          "sourceId": "c3-src-sensenova-u1-readme",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "README title",
+          "passageType": "quote",
+          "passage": "SenseNova-U1: Unifying Multimodal Understanding and Generation with NEO-Unify Architecture",
+          "translation": null
+        },
+        {
+          "id": "c3-ev-sensetime-sensenova-u1-card-ar",
+          "sourceId": "c3-src-sensetime-ar2025",
+          "sourceRole": "primary",
+          "support": "context",
+          "locator": "Management Discussion and Analysis, 2025 highlights (text-layer lines 812–813)",
+          "passageType": "quote",
+          "passage": "and open-sourced the SenseNova-SI Spatial Intelligence Model.",
+          "translation": null
+        }
+      ]
+    },
+    {
+      "id": "c3-sensetime-sensenova-u1-licence",
+      "subject": "sensetime",
+      "predicate": "published",
+      "object": {
+        "kind": "entity",
+        "entityId": "sensenova-u1-licence"
+      },
+      "topic": "governance",
+      "statement": "The SenseNova-U1-8B-MoT model card states that the project is released under the Apache 2.0 License; the repository’s LICENSE file, at a commit of 15 May 2026, is the Apache License, Version 2.0 text.",
+      "time": {
+        "kind": "event",
+        "date": "2026-04-26",
+        "basis": "publication",
+        "note": "Date of the README commit that states the licence; the LICENSE file was absent at that commit and is cited at the commit of 15 May 2026."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "Described as the texts describe themselves; no judgement is made about any definition of open source. The LICENSE file carries no copyright notice naming SenseTime.",
+      "evidence": [
+        {
+          "id": "c3-ev-sensetime-sensenova-u1-licence",
+          "sourceId": "c3-src-sensenova-u1-readme",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "README, “License”",
+          "passageType": "quote",
+          "passage": "This project is released under the … Apache 2.0 License",
+          "translation": null
+        },
+        {
+          "id": "c3-ev-sensetime-sensenova-u1-licence-2",
+          "sourceId": "c3-src-sensenova-u1-license",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "LICENSE heading",
+          "passageType": "quote",
+          "passage": "Apache License Version 2.0, January 2004",
+          "translation": null
+        }
+      ]
+    },
+    {
+      "id": "c3-sensetime-ethics-committee-2020",
+      "subject": "sensetime-ai-ethics-committee",
+      "predicate": "unit_of",
+      "object": {
+        "kind": "entity",
+        "entityId": "sensetime"
+      },
+      "topic": "governance",
+      "statement": "SenseTime’s AI ethics and governance page states that the SenseTime AI Ethics and Governance Committee was formally established in January 2020 and that one of its core tasks is ethics review of all SenseTime product lines on algorithms, data and social impact.",
+      "time": {
+        "kind": "snapshot",
+        "date": "2026-10-29",
+        "note": "Page read as it stood on 29 October 2026; the establishment month (January 2020) is the page’s statement. The December 2021 prospectus describes an “AI Ethics Council” of six members, cited as context; whether the English names refer to the same body is not stated."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "What the company page states about its internal committee; it does not establish how reviews were carried out. The page’s committee e-mail address is not recorded.",
+      "evidence": [
+        {
+          "id": "c3-ev-sensetime-ethics-committee-2020",
+          "sourceId": "c3-src-sensetime-ethics-page",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "“AI 伦理委员会” section",
+          "passageType": "quote",
+          "passage": "2020年1月，为支撑公司战略发展需要，商汤科技人工智能伦理与治理委员会（以下简称AI伦理委员会）正式成立。",
+          "translation": {
+            "text": "In January 2020, to support the company’s strategic development, the SenseTime AI Ethics and Governance Committee (the “AI Ethics Committee”) was formally established.",
+            "method": "machine",
+            "humanVerified": false
+          }
+        },
+        {
+          "id": "c3-ev-sensetime-ethics-committee-2020-review",
+          "sourceId": "c3-src-sensetime-ethics-page",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Same section",
+          "passageType": "quote",
+          "passage": "从算法、数据以及社会影响三个方面对商汤所有产品线进行审核",
+          "translation": {
+            "text": "reviews all SenseTime product lines in three respects: algorithms, data and social impact",
+            "method": "machine",
+            "humanVerified": false
+          }
+        },
+        {
+          "id": "c3-ev-sensetime-ethics-committee-2020-council",
+          "sourceId": "c3-src-sensetime-prospectus-2021",
+          "sourceRole": "primary",
+          "support": "context",
+          "locator": "Business, AI Ethics Initiatives, Organizational Structure and Governance",
+          "passageType": "quote",
+          "passage": "Our AI Ethics Council comprises six members, including one external advisor and one independent non-executive Director",
+          "translation": null
+        }
+      ]
+    },
+    {
+      "id": "c3-sensetime-llm-ethics-white-paper",
+      "subject": "sensetime",
+      "predicate": "published",
+      "object": {
+        "kind": "entity",
+        "entityId": "sensetime-llm-ethics-white-paper-2023"
+      },
+      "topic": "governance",
+      "statement": "SenseTime’s AI Ethics and Governance Committee published 商汤大模型伦理原则与实践白皮书 (a white paper on large-model ethics principles and practice), styled its AI ethics governance annual report for 2023, which states that it was initially released in Chinese in July 2023.",
+      "time": {
+        "kind": "event",
+        "date": "2023-07",
+        "basis": "publication",
+        "note": "Month of initial Chinese release as the report states it; the cited PDF is dated 20 March 2024 on SenseTime’s ethics page."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "The title page credits the committee, with SenseTime’s Intelligent Industry Research Institute and a Shanghai Jiao Tong University research centre as joint producers. The report’s contact e-mail address is not recorded.",
+      "evidence": [
+        {
+          "id": "c3-ev-sensetime-llm-ethics-white-paper",
+          "sourceId": "c3-src-sensetime-llm-ethics-wp",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Title page",
+          "passageType": "quote",
+          "passage": "商汤大模型伦理原则与实践白皮书 商汤人工智能伦理与治理委员会 人工智能伦理治理年度报告（2023）",
+          "translation": {
+            "text": "SenseTime White Paper on Large-Model Ethics Principles and Practice; SenseTime AI Ethics and Governance Committee; AI Ethics Governance Annual Report (2023)",
+            "method": "machine",
+            "humanVerified": false
+          }
+        },
+        {
+          "id": "c3-ev-sensetime-llm-ethics-white-paper-date",
+          "sourceId": "c3-src-sensetime-llm-ethics-wp",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "“About this report” (p. 8)",
+          "passageType": "quote",
+          "passage": "本报告于 2023 年 7 月以中文版本率先发布，英文版本将另行择期发布",
+          "translation": {
+            "text": "this report was first released in a Chinese version in July 2023; an English version will be released at a later date",
+            "method": "machine",
+            "humanVerified": false
+          }
+        }
+      ]
+    },
+    {
+      "id": "c3-sensetime-llm-ethics-principles",
+      "subject": "sensetime-llm-ethics-white-paper-2023",
+      "predicate": "states_provision",
+      "object": {
+        "kind": "literal",
+        "value": "Seven principles for generative-AI governance: data quality and privacy; preventing false information and harmful content; copyright and intellectual property; system security and robustness; explainability and transparency; conformity with ethics; accountability"
+      },
+      "topic": "governance",
+      "statement": "SenseTime’s 2023 large-model ethics white paper states that generative-AI governance should focus on seven principles: ensuring data quality and privacy security, preventing false information and harmful content, respecting copyright and intellectual property, ensuring system security and robustness, enhancing explainability and transparency, conforming with ethics, and strengthening accountability.",
+      "time": {
+        "kind": "event",
+        "date": "2023-07",
+        "basis": "publication",
+        "note": "Provision as stated in the cited PDF (dated 20 March 2024) of the report initially released in July 2023."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "What the document states as its view (认为…应当重点关注); recommendations, not a record of implementation.",
+      "evidence": [
+        {
+          "id": "c3-ev-sensetime-llm-ethics-principles",
+          "sourceId": "c3-src-sensetime-llm-ethics-wp",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Section 3, “Principles of generative AI governance” (p. 15)",
+          "passageType": "quote",
+          "passage": "我们结合自身实践，认为生成式人工智能治理应当重点关注以下几项原则",
+          "translation": {
+            "text": "Drawing on our own practice, we consider that generative AI governance should focus on the following principles",
+            "method": "machine",
+            "humanVerified": false
+          }
+        },
+        {
+          "id": "c3-ev-sensetime-llm-ethics-principles-list",
+          "sourceId": "c3-src-sensetime-llm-ethics-wp",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Section 3, principle headings (pp. 15–16)",
+          "passageType": "quote",
+          "passage": "保障数据质量和隐私安全 … 防止虚假信息和不良内容 … 尊重版权和知识产权 … 保障系统安全和鲁棒",
+          "translation": {
+            "text": "Ensure data quality and privacy security … Prevent false information and harmful content … Respect copyright and intellectual property … Ensure system security and robustness",
+            "method": "machine",
+            "humanVerified": false
+          }
+        },
+        {
+          "id": "c3-ev-sensetime-llm-ethics-principles-list-2",
+          "sourceId": "c3-src-sensetime-llm-ethics-wp",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Section 3, principle headings (pp. 17–18)",
+          "passageType": "quote",
+          "passage": "增强可解释性和透明性 … 合乎道德伦理 … 加强可问责性",
+          "translation": {
+            "text": "Enhance explainability and transparency … Conform with morality and ethics … Strengthen accountability",
+            "method": "machine",
+            "humanVerified": false
+          }
+        }
+      ]
+    },
+    {
+      "id": "c3-sensetime-llm-ethics-sensenova-layers",
+      "subject": "sensetime-llm-ethics-white-paper-2023",
+      "predicate": "states_provision",
+      "object": {
+        "kind": "literal",
+        "value": "SenseNova governance safeguards built at three levels: data, model and content"
+      },
+      "topic": "governance",
+      "statement": "SenseTime’s 2023 large-model ethics white paper states that SenseTime launched the SenseNova (日日新) large-model system on 10 April 2023 and has built an initial governance “protective net” for it at three levels: data, model and content.",
+      "time": {
+        "kind": "event",
+        "date": "2023-07",
+        "basis": "publication",
+        "note": "Provision as stated in the cited report; the SenseNova launch date (10 April 2023) is the report’s statement."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "The company’s description of its own safeguards; it does not establish that they work. The report’s statements of model testing are not recorded separately.",
+      "evidence": [
+        {
+          "id": "c3-ev-sensetime-llm-ethics-sensenova-layers",
+          "sourceId": "c3-src-sensetime-llm-ethics-wp",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Section 4, SenseNova governance case (p. 19)",
+          "passageType": "quote",
+          "passage": "2023 年 4 月 10 日，我们正式推出“商汤日日新 SenseNova”大模型体系",
+          "translation": {
+            "text": "On 10 April 2023 we formally launched the “SenseTime SenseNova” large-model system",
+            "method": "machine",
+            "humanVerified": false
+          }
+        },
+        {
+          "id": "c3-ev-sensetime-llm-ethics-sensenova-layers-2",
+          "sourceId": "c3-src-sensetime-llm-ethics-wp",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Section 4 (p. 19)",
+          "passageType": "quote",
+          "passage": "从数据、模型、内容三个层面初步构建起安全、可信的大模型治理“防护网”",
+          "translation": {
+            "text": "initially built a safe and trustworthy large-model governance “protective net” at three levels: data, model and content",
+            "method": "machine",
+            "humanVerified": false
+          }
+        }
+      ]
+    },
+    {
+      "id": "c3-sensetime-llm-ethics-race",
+      "subject": "sensetime-llm-ethics-white-paper-2023",
+      "predicate": "states_provision",
+      "object": {
+        "kind": "literal",
+        "value": "Call to avoid an “out-of-control race” in AI development and governance, with four proposals including international cooperation on AI governance"
+      },
+      "topic": "governance",
+      "statement": "SenseTime’s 2023 large-model ethics white paper calls on all parties to keep a “dynamic balance” and avoid falling into an “out-of-control race” in both AI development and risk governance, and makes four proposals, among them strengthening international cooperation on AI governance.",
+      "time": {
+        "kind": "event",
+        "date": "2023-07",
+        "basis": "publication",
+        "note": "Provision as stated in the cited report."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "The section refers to the Future of Life Institute’s March 2023 open letter; the report’s phrase is its own, and no endorsement or opposition of that letter is recorded. The four proposals are recommendations.",
+      "evidence": [
+        {
+          "id": "c3-ev-sensetime-llm-ethics-race",
+          "sourceId": "c3-src-sensetime-llm-ethics-wp",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Section 6 (p. 29)",
+          "passageType": "quote",
+          "passage": "都应避免陷入“失控的竞赛”之中。为此，我们愿就生成式人工智能治理的推进提出以下几点倡议",
+          "translation": {
+            "text": "should avoid falling into an “out-of-control race”. To this end, we wish to put forward the following proposals on advancing generative AI governance",
+            "method": "machine",
+            "humanVerified": false
+          }
+        },
+        {
+          "id": "c3-ev-sensetime-llm-ethics-race-2",
+          "sourceId": "c3-src-sensetime-llm-ethics-wp",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Section 6, third proposal (p. 30)",
+          "passageType": "quote",
+          "passage": "三是加强人工智能治理国际合作。各国监管机构应加强生成式人工智能监管协调",
+          "translation": {
+            "text": "Third, strengthen international cooperation on AI governance. Regulators of all countries should strengthen coordination of generative AI regulation",
+            "method": "machine",
+            "humanVerified": false
+          }
+        }
+      ]
+    },
+    {
+      "id": "c3-iflytek-founding-1999",
+      "subject": "iflytek",
+      "predicate": "founding_stated",
+      "object": {
+        "kind": "literal",
+        "value": "Predecessor 安徽中科大讯飞信息科技有限公司 established on 30 December 1999"
+      },
+      "topic": "institutions",
+      "statement": "iFlytek’s 2008 IPO prospectus states that the company’s predecessor, 安徽中科大讯飞信息科技有限公司 (a limited liability company), was established on 30 December 1999.",
+      "time": {
+        "kind": "event",
+        "date": "1999-12-30",
+        "note": "Establishment date of the predecessor company as the prospectus states it."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "The founding of the predecessor limited company, as the issuer’s filing states it. The prospectus gives 26 April 2007 as the establishment date (设立日期) of the joint-stock company.",
+      "evidence": [
+        {
+          "id": "c3-ev-iflytek-founding-1999",
+          "sourceId": "c3-src-iflytek-prospectus-2008",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Section 2, Overview, 1. Issuer profile, “2、设立情况”",
+          "passageType": "quote",
+          "passage": "本公司前身安徽中科大讯飞信息科技有限公司成立于 1999 年 12 月 30 日",
+          "translation": {
+            "text": "The company’s predecessor, Anhui USTC iFlytek Information Technology Co., Ltd., was established on 30 December 1999",
+            "method": "machine",
+            "humanVerified": false
+          }
+        }
+      ]
+    },
+    {
+      "id": "c3-iflytek-legal-form-2008",
+      "subject": "iflytek",
+      "predicate": "has_legal_form",
+      "object": {
+        "kind": "literal",
+        "value": "安徽科大讯飞信息科技股份有限公司 (ANHUI USTC iFLYTEK CO.,LTD.), a joint-stock company limited by shares converted as a whole from a limited liability company on 26 April 2007"
+      },
+      "topic": "institutions",
+      "statement": "iFlytek’s 2008 IPO prospectus names the issuer as 安徽科大讯飞信息科技股份有限公司 (English name ANHUI USTC iFLYTEK CO.,LTD.) and states that its predecessor limited company was converted as a whole into a joint-stock company on 26 April 2007, registered with the Anhui Administration for Industry and Commerce.",
+      "time": {
+        "kind": "snapshot",
+        "date": "2008-04-24",
+        "basis": "filing",
+        "note": "Name and form shown in the prospectus published on 24 April 2008; the conversion date (26 April 2007) is the prospectus’s."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "整体变更 is rendered “converted as a whole”; 工商变更登记 is a change registration (登记), not a filing (备案). The registration number in the passage is not recorded.",
+      "evidence": [
+        {
+          "id": "c3-ev-iflytek-legal-form-2008",
+          "sourceId": "c3-src-iflytek-prospectus-2008",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Section 2, Overview, 1. Issuer profile",
+          "passageType": "quote",
+          "passage": "公司名称：安徽科大讯飞信息科技股份有限公司 英文名称：ANHUI USTC iFLYTEK CO.,LTD.",
+          "translation": {
+            "text": "Company name: Anhui USTC iFlytek Information Technology Co., Ltd. (joint-stock); English name: ANHUI USTC iFLYTEK CO.,LTD.",
+            "method": "machine",
+            "humanVerified": false
+          }
+        },
+        {
+          "id": "c3-ev-iflytek-legal-form-2008-2",
+          "sourceId": "c3-src-iflytek-prospectus-2008",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Section 2, Overview, “2、设立情况”",
+          "passageType": "quote",
+          "passage": "2007 年 4 月 26 日整体变更为安徽科大讯飞信息科技股份有限公司，并在安徽省 工商行政管理局办理了工商变更登记",
+          "translation": {
+            "text": "on 26 April 2007 it was converted as a whole into Anhui USTC iFlytek Information Technology Co., Ltd. (joint-stock) and completed the change registration with the Anhui Provincial Administration for Industry and Commerce",
+            "method": "machine",
+            "humanVerified": false
+          }
+        }
+      ]
+    },
+    {
+      "id": "c3-iflytek-legal-form-2026",
+      "subject": "iflytek",
+      "predicate": "has_legal_form",
+      "object": {
+        "kind": "literal",
+        "value": "科大讯飞股份有限公司 (iFLYTEK CO.,LTD), a company limited by shares listed on the Shenzhen Stock Exchange (002230)"
+      },
+      "topic": "institutions",
+      "statement": "iFlytek’s 2025 annual report gives the company’s Chinese name as 科大讯飞股份有限公司 and its foreign-language name as iFLYTEK CO.,LTD, with stock code 002230 on the Shenzhen Stock Exchange.",
+      "time": {
+        "kind": "snapshot",
+        "date": "2026-04-29",
+        "basis": "filing",
+        "note": "State shown in the 2025 annual report published on 29 April 2026. When the name changed from the 2008 name was not determined in this pack’s searches."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "股份有限公司 is rendered “company limited by shares”. The registered address is in the cited section but not recorded.",
+      "evidence": [
+        {
+          "id": "c3-ev-iflytek-legal-form-2026",
+          "sourceId": "c3-src-iflytek-ar2025",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Section 2, Company profile, 1. Company information",
+          "passageType": "quote",
+          "passage": "公司的中文名称 科大讯飞股份有限公司 公司的中文简称 科大讯飞 公司的外文名称（如有） iFLYTEK CO.,LTD",
+          "translation": {
+            "text": "Company’s Chinese name: 科大讯飞股份有限公司 (iFlytek Co., Ltd.); Chinese short name: 科大讯飞; company’s foreign-language name (if any): iFLYTEK CO.,LTD",
+            "method": "machine",
+            "humanVerified": false
+          }
+        },
+        {
+          "id": "c3-ev-iflytek-legal-form-2026-exchange",
+          "sourceId": "c3-src-iflytek-ar2025",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Same table",
+          "passageType": "quote",
+          "passage": "股票上市证券交易所 深圳证券交易所",
+          "translation": {
+            "text": "Stock exchange of listing: Shenzhen Stock Exchange",
+            "method": "machine",
+            "humanVerified": false
+          }
+        }
+      ]
+    },
+    {
+      "id": "c3-iflytek-liu-qingfeng-founder",
+      "subject": "liu-qingfeng",
+      "predicate": "co_founded",
+      "object": {
+        "kind": "entity",
+        "entityId": "iflytek"
+      },
+      "topic": "people",
+      "statement": "iFlytek’s 2025 annual report describes Liu Qingfeng, the company’s chairman, as the founder of iFlytek (科大讯飞创始人).",
+      "time": {
+        "kind": "unknown",
+        "note": "No founding date is attached to the credit; the predecessor company was established on 30 December 1999 according to the 2008 prospectus."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "Founding credit as the company’s filing states it; the filing names no other founder in the cited passage, and the record does not exclude others. Shareholdings and voting arrangements stated elsewhere in the report are not recorded.",
+      "evidence": [
+        {
+          "id": "c3-ev-iflytek-liu-qingfeng-founder",
+          "sourceId": "c3-src-iflytek-ar2025",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Section 4, Directors and senior management, 2. Positions held, board members",
+          "passageType": "quote",
+          "passage": "刘庆峰先生，公司董事长，中国科学技术大学信号与信息处理专业博士，科大讯飞创始人",
+          "translation": {
+            "text": "Mr. Liu Qingfeng, chairman of the company, PhD in signal and information processing from the University of Science and Technology of China, founder of iFlytek",
+            "method": "machine",
+            "humanVerified": false
+          }
+        }
+      ]
+    },
+    {
+      "id": "c3-iflytek-liu-qingfeng-president-2008",
+      "subject": "liu-qingfeng",
+      "predicate": "held_role",
+      "object": {
+        "kind": "entity",
+        "entityId": "iflytek"
+      },
+      "topic": "people",
+      "statement": "iFlytek’s 2008 IPO prospectus lists Liu Qingfeng as a director and president (总裁) of the company.",
+      "time": {
+        "kind": "snapshot",
+        "date": "2008-04-24",
+        "basis": "filing",
+        "note": "Roles shown in the prospectus published on 24 April 2008; not extended to any later date."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "总裁 is rendered “president”.",
+      "evidence": [
+        {
+          "id": "c3-ev-iflytek-liu-qingfeng-president-2008",
+          "sourceId": "c3-src-iflytek-prospectus-2008",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Section 8, Directors, supervisors and senior management, (1) Directors",
+          "passageType": "quote",
+          "passage": "刘庆峰先生，董事、总裁，中国国籍",
+          "translation": {
+            "text": "Mr. Liu Qingfeng, director and president, Chinese nationality",
+            "method": "machine",
+            "humanVerified": false
+          }
+        }
+      ],
+      "attributes": {
+        "role": "董事、总裁 (director and president)"
+      }
+    },
+    {
+      "id": "c3-iflytek-wang-renhua-chair-2008",
+      "subject": "wang-renhua",
+      "predicate": "held_role",
+      "object": {
+        "kind": "entity",
+        "entityId": "iflytek"
+      },
+      "topic": "people",
+      "statement": "iFlytek’s 2008 IPO prospectus lists Wang Renhua as chairman of the board and head of the iFlytek research institute, and names him as the company’s legal representative.",
+      "time": {
+        "kind": "snapshot",
+        "date": "2008-04-24",
+        "basis": "filing",
+        "note": "Roles shown in the prospectus published on 24 April 2008; not extended to any later date."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "Public roles as the filing states them. His academic positions in the same passage are not recorded.",
+      "evidence": [
+        {
+          "id": "c3-ev-iflytek-wang-renhua-chair-2008",
+          "sourceId": "c3-src-iflytek-prospectus-2008",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Section 8, (1) Directors",
+          "passageType": "quote",
+          "passage": "王仁华先生，董事长、讯飞研究院院长",
+          "translation": {
+            "text": "Mr. Wang Renhua, chairman of the board and head of the iFlytek Research Institute",
+            "method": "machine",
+            "humanVerified": false
+          }
+        },
+        {
+          "id": "c3-ev-iflytek-wang-renhua-chair-2008-rep",
+          "sourceId": "c3-src-iflytek-prospectus-2008",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Section 5, Basic information",
+          "passageType": "quote",
+          "passage": "4、法定代表人：王仁华",
+          "translation": {
+            "text": "4. Legal representative: Wang Renhua",
+            "method": "machine",
+            "humanVerified": false
+          }
+        }
+      ],
+      "attributes": {
+        "role": "董事长、讯飞研究院院长 (chairman of the board; head of the iFlytek Research Institute)"
+      }
+    },
+    {
+      "id": "c3-iflytek-liu-qingfeng-chair-2009",
+      "subject": "liu-qingfeng",
+      "predicate": "held_role",
+      "object": {
+        "kind": "entity",
+        "entityId": "iflytek"
+      },
+      "topic": "people",
+      "statement": "iFlytek’s 2023 annual report lists Liu Qingfeng as chairman (董事长), currently in office, with a term start date of 13 April 2009.",
+      "time": {
+        "kind": "interval",
+        "from": "2009-04-13",
+        "note": "Term start date (任期起始日期) as the 2023 annual report (23 April 2024) states it; the table’s term end, 16 January 2026, is the scheduled end of the then board’s term and is not recorded as a departure. He was elected chairman of the seventh board on 9 January 2026 (separate record)."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "Read from the layout rendering of the table on p. 73, where the text layer separates names from dates. The start date of a term in the table may refer to his service as director or chairman; the table does not distinguish.",
+      "evidence": [
+        {
+          "id": "c3-ev-iflytek-liu-qingfeng-chair-2009",
+          "sourceId": "c3-src-iflytek-ar2023",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Section 4, V. Directors, supervisors and senior management, 1. Basic information (table, p. 73)",
+          "passageType": "quote",
+          "passage": "刘庆峰 男 50 董事长 现任 … 任期起 始日期 任期终 止日期 2009 年 04 月 13 日",
+          "translation": {
+            "text": "Liu Qingfeng, male, 50, chairman, in office … term start date, term end date: 13 April 2009",
+            "method": "machine",
+            "humanVerified": false
+          },
+          "visualReading": true
+        }
+      ],
+      "attributes": {
+        "role": "董事长 (chairman of the board)"
+      }
+    },
+    {
+      "id": "c3-iflytek-liu-qingfeng-chair-2026",
+      "subject": "liu-qingfeng",
+      "predicate": "held_role",
+      "object": {
+        "kind": "entity",
+        "entityId": "iflytek"
+      },
+      "topic": "people",
+      "statement": "iFlytek announced that on 9 January 2026 the inaugural meeting (第一次会议) of its seventh board of directors elected Liu Qingfeng chairman of the seventh board, for a term coinciding with that board’s.",
+      "time": {
+        "kind": "interval",
+        "from": "2026-01-09",
+        "note": "Date of the board meeting as the announcement of 10 January 2026 states it; no end is recorded. The 2025 annual report (29 April 2026) shows him as chairman."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "Election as the company’s announcement states it.",
+      "evidence": [
+        {
+          "id": "c3-ev-iflytek-liu-qingfeng-chair-2026",
+          "sourceId": "c3-src-iflytek-board7-2026",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "II. Matters considered, item (1)",
+          "passageType": "quote",
+          "passage": "会议选举刘庆峰先生为公司第七届董事会董事长，任期与本届董事会一致。",
+          "translation": {
+            "text": "The meeting elected Mr. Liu Qingfeng chairman of the company’s seventh board of directors, with a term coinciding with that of the current board.",
+            "method": "machine",
+            "humanVerified": false
+          }
+        },
+        {
+          "id": "c3-ev-iflytek-liu-qingfeng-chair-2026-date",
+          "sourceId": "c3-src-iflytek-board7-2026",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "I. Convening of the meeting",
+          "passageType": "quote",
+          "passage": "2026 年 1 月 9 日以现场和视频会议相结合的方 式召开",
+          "translation": {
+            "text": "was held on 9 January 2026 in a combination of in-person and video meeting",
+            "method": "machine",
+            "humanVerified": false
+          }
+        }
+      ],
+      "attributes": {
+        "role": "第七届董事会董事长 (chairman of the seventh board of directors)"
+      }
+    },
+    {
+      "id": "c3-iflytek-wu-xiaoru-president-2026",
+      "subject": "wu-xiaoru",
+      "predicate": "held_role",
+      "object": {
+        "kind": "entity",
+        "entityId": "iflytek"
+      },
+      "topic": "people",
+      "statement": "iFlytek announced that its seventh board of directors, at its inaugural meeting (第一次会议) on 9 January 2026, appointed Wu Xiaoru president (总裁) of the company for a term coinciding with that board’s.",
+      "time": {
+        "kind": "interval",
+        "from": "2026-01-09",
+        "note": "Date of the board meeting as the announcement of 10 January 2026 states it; no end is recorded. The interval is the term of this appointment by the seventh board; whether he held the office under the sixth board was not checked."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "总裁 is rendered “president”. Shareholding details in the attached résumé are not recorded.",
+      "evidence": [
+        {
+          "id": "c3-ev-iflytek-wu-xiaoru-president-2026",
+          "sourceId": "c3-src-iflytek-board7-2026",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "II. Matters considered, item (3)",
+          "passageType": "quote",
+          "passage": "公司第七届董事会决定聘任吴晓如先生为公司总裁",
+          "translation": {
+            "text": "The company’s seventh board of directors decided to appoint Mr. Wu Xiaoru as president of the company",
+            "method": "machine",
+            "humanVerified": false
+          }
+        },
+        {
+          "id": "c3-ev-iflytek-wu-xiaoru-president-2026-ar",
+          "sourceId": "c3-src-iflytek-ar2025",
+          "sourceRole": "primary",
+          "support": "context",
+          "locator": "Section 4, board members",
+          "passageType": "quote",
+          "passage": "吴晓如先生，公司总裁、董事",
+          "translation": {
+            "text": "Mr. Wu Xiaoru, president and director of the company",
+            "method": "machine",
+            "humanVerified": false
+          }
+        }
+      ],
+      "attributes": {
+        "role": "总裁 (president)"
+      }
+    },
+    {
+      "id": "c3-iflytek-investor-china-mobile",
+      "subject": "china-mobile",
+      "predicate": "participated_in_round",
+      "object": {
+        "kind": "entity",
+        "entityId": "iflytek"
+      },
+      "topic": "capital",
+      "statement": "iFlytek’s 2025 annual report states that 中国移动通信有限公司 (China Mobile Communication Co., Ltd.), as a strategic investor, subscribed for 70,273,975 iFlytek shares in the company’s 2013 non-public offering, subject to a 36-month lock-up.",
+      "time": {
+        "kind": "event",
+        "date": "2013",
+        "note": "Year of the non-public offering as the report states it; the subscription date is not given in the cited passage. The report states the shares became tradable on 25 April 2016."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "The subscriber named is 中国移动通信有限公司 (China Mobile Communication Co., Ltd.). The dataset entity china-mobile carries 中国移动通信集团有限公司, a different legal name; the cited passage states no parent link, and none is inferred. Held until the subscriber has its own entity or the link is documented. No amount is recorded; no influence is inferred from the shareholding.",
+      "evidence": [
+        {
+          "id": "c3-ev-iflytek-investor-china-mobile",
+          "sourceId": "c3-src-iflytek-ar2025",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Section 7, Top-ten shareholders, note 3",
+          "passageType": "quote",
+          "passage": "中国移动通信有限公司作为战略投资者，在 2013 年非公开发行中认购 70,273,975 股公司股份，锁定期 36 个月",
+          "translation": {
+            "text": "China Mobile Communication Co., Ltd., as a strategic investor, subscribed for 70,273,975 shares of the company in the 2013 non-public offering, with a 36-month lock-up period",
+            "method": "machine",
+            "humanVerified": false
+          }
+        }
+      ],
+      "attributes": {
+        "transactionType": "equity_investment",
+        "transactionStage": "invested",
+        "relationshipContext": "external",
+        "period": "2013 non-public offering (非公开发行)"
+      },
+      "reviewHold": "Subject identity: 中国移动通信有限公司 is not the china-mobile entity by exact name (audit, material)."
+    },
+    {
+      "id": "c3-iflytek-spark-launch-2023",
+      "subject": "iflytek",
+      "predicate": "published",
+      "object": {
+        "kind": "entity",
+        "entityId": "iflytek-spark-launch-notice-2023"
+      },
+      "topic": "ideas",
+      "statement": "iFlytek published an exchange announcement on 6 May 2023 stating that it would hold the launch event for the iFlytek Spark cognitive large model (讯飞星火认知大模型) on 6 May 2023, together with commercial applications in its existing products.",
+      "time": {
+        "kind": "event",
+        "date": "2023-05-06",
+        "basis": "announcement",
+        "note": "Date of the announcement, the same day as the event it announces. The 2023 annual report refers to Spark’s release (讯飞星火发布) on 6 May."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "An announcement of a planned event; the record does not establish the model’s capabilities. 认知大模型 is rendered “cognitive large model”. The announcement’s comparisons with other vendors are not recorded.",
+      "evidence": [
+        {
+          "id": "c3-ev-iflytek-spark-launch-2023",
+          "sourceId": "c3-src-iflytek-spark-notice-2023-05",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "First paragraph",
+          "passageType": "quote",
+          "passage": "科大讯飞股份有限公司（简称“科大讯飞”或“公司”）定于 2023 年 5 月 6 日举办“讯飞星火认知大模型”成果发布会",
+          "translation": {
+            "text": "iFlytek Co., Ltd. (“iFlytek” or the “Company”) is scheduled to hold the “iFlytek Spark Cognitive Large Model” results launch event on 6 May 2023",
+            "method": "machine",
+            "humanVerified": false
+          }
+        },
+        {
+          "id": "c3-ev-iflytek-spark-launch-2023-ar",
+          "sourceId": "c3-src-iflytek-ar2023",
+          "sourceRole": "primary",
+          "support": "context",
+          "locator": "Chairman’s letter",
+          "passageType": "quote",
+          "passage": "自今年 5 月 6 日讯飞星火发布以来",
+          "translation": {
+            "text": "since the release of iFlytek Spark on 6 May this year",
+            "method": "machine",
+            "humanVerified": false
+          }
+        }
+      ]
+    },
+    {
+      "id": "c3-iflytek-spark-v2-2023",
+      "subject": "iflytek",
+      "predicate": "published",
+      "object": {
+        "kind": "entity",
+        "entityId": "iflytek-spark-v2-notice-2023"
+      },
+      "topic": "ideas",
+      "statement": "iFlytek published an exchange announcement in August 2023 stating that Spark had been upgraded on 9 June 2023 and that on 15 August 2023 it would release iFlytek Spark cognitive large model V2.0.",
+      "time": {
+        "kind": "event",
+        "date": "2023-08-15",
+        "basis": "announcement",
+        "note": "Date on which cninfo lists the announcement, also the date of the event it announces; the announcement’s own signature date was not legible in the text layer."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "The announcement states planned releases and the company’s descriptions of capability; performance claims are out of scope.",
+      "evidence": [
+        {
+          "id": "c3-ev-iflytek-spark-v2-2023",
+          "sourceId": "c3-src-iflytek-spark-notice-2023-08",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Second paragraph",
+          "passageType": "quote",
+          "passage": "8 月 15 日，公司将进一步如期实现讯飞星火认知大模型的重大版本升级，发布“讯飞星火认知大模型 V2.0”",
+          "translation": {
+            "text": "On 15 August, the company will further achieve, as scheduled, a major version upgrade of the iFlytek Spark cognitive large model, releasing “iFlytek Spark Cognitive Large Model V2.0”",
+            "method": "machine",
+            "humanVerified": false
+          }
+        },
+        {
+          "id": "c3-ev-iflytek-spark-v2-2023-june",
+          "sourceId": "c3-src-iflytek-spark-notice-2023-08",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "First paragraph",
+          "passageType": "quote",
+          "passage": "6 月 9 日讯飞星火认知大模型已如期升级",
+          "translation": {
+            "text": "on 9 June the iFlytek Spark cognitive large model was upgraded as scheduled",
+            "method": "machine",
+            "humanVerified": false
+          }
+        }
+      ]
+    },
+    {
+      "id": "c3-iflytek-spark-v4-2024",
+      "subject": "iflytek",
+      "predicate": "published",
+      "object": {
+        "kind": "entity",
+        "entityId": "iflytek-spark-v4-notice-2024"
+      },
+      "topic": "ideas",
+      "statement": "iFlytek published an exchange announcement on 25 June 2024 stating that on 27 June 2024, at the China National Convention Center in Beijing, it would release iFlytek Spark large model V4.0 and related applications.",
+      "time": {
+        "kind": "event",
+        "date": "2024-06-25",
+        "basis": "announcement",
+        "note": "Date of the announcement; the event it announces was planned for 27 June 2024."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "An announcement of a planned release. The announcement’s comparison with another model and its statements about customers and what it calls US “maximum pressure” (极限施压) are the company’s and are not recorded as findings.",
+      "evidence": [
+        {
+          "id": "c3-ev-iflytek-spark-v4-2024",
+          "sourceId": "c3-src-iflytek-spark-notice-2024-06",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Second paragraph",
+          "passageType": "quote",
+          "passage": "公司将于 2024 年 6 月 27 日在北京国家会议中心如期发布讯飞星火大模型的最新进展",
+          "translation": {
+            "text": "The company will, as scheduled, release the latest progress of the iFlytek Spark large model on 27 June 2024 at the China National Convention Center in Beijing",
+            "method": "machine",
+            "humanVerified": false
+          }
+        },
+        {
+          "id": "c3-ev-iflytek-spark-v4-2024-2",
+          "sourceId": "c3-src-iflytek-spark-notice-2024-06",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Second paragraph",
+          "passageType": "quote",
+          "passage": "发布讯飞星火大模型 V4.0 及相关落地应用",
+          "translation": {
+            "text": "releasing iFlytek Spark large model V4.0 and related applications",
+            "method": "machine",
+            "humanVerified": false
+          }
+        }
+      ]
+    },
+    {
+      "id": "c3-iflytek-ar2025-spark-x1",
+      "subject": "iflytek",
+      "predicate": "published",
+      "object": {
+        "kind": "entity",
+        "entityId": "iflytek-annual-report-2025"
+      },
+      "topic": "ideas",
+      "statement": "iFlytek’s 2025 annual report, published on 29 April 2026, states that the company released the deep-reasoning model Spark X1 (星火 X1) in January 2025 and an upgraded deep-reasoning large model, Spark X1.5, in November 2025.",
+      "time": {
+        "kind": "event",
+        "date": "2026-04-29",
+        "basis": "publication",
+        "note": "Publication date of the annual report; the model release months (January and November 2025) are the report’s statements. No separate release announcement for Spark X1 was located on cninfo in this pack’s searches."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "The report’s claims of priority, training hardware and benchmark standing are the company’s and are not recorded.",
+      "evidence": [
+        {
+          "id": "c3-ev-iflytek-ar2025-spark-x1",
+          "sourceId": "c3-src-iflytek-ar2025",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Section 3, Management discussion, Spark large model (p. 10)",
+          "passageType": "quote",
+          "passage": "2025 年 1 月，科大讯飞发布深度推理模型星火 X1",
+          "translation": {
+            "text": "In January 2025, iFlytek released the deep-reasoning model Spark X1",
+            "method": "machine",
+            "humanVerified": false
+          }
+        },
+        {
+          "id": "c3-ev-iflytek-ar2025-spark-x15",
+          "sourceId": "c3-src-iflytek-ar2025",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Same section",
+          "passageType": "quote",
+          "passage": "2025 年 11 月，科大讯飞进一步升级发布了深度推理大模型星火 X1.5",
+          "translation": {
+            "text": "In November 2025, iFlytek further upgraded and released the deep-reasoning large model Spark X1.5",
+            "method": "machine",
+            "humanVerified": false
+          }
+        }
+      ]
+    },
+    {
+      "id": "c3-iflytek-spark-13b-readme",
+      "subject": "iflytek",
+      "predicate": "published",
+      "object": {
+        "kind": "entity",
+        "entityId": "iflytekspark-13b-readme"
+      },
+      "topic": "ideas",
+      "statement": "The iFlytekSpark-13B repository on Gitee, at its initial commit of 30 January 2024, introduces 讯飞星火开源-13B (iFlytekSpark-13B), a 13-billion-parameter model, and names 科大讯飞股份有限公司 as the licensor of the model.",
+      "time": {
+        "kind": "event",
+        "date": "2024-01-30",
+        "basis": "publication",
+        "note": "Date of the repository’s initial commit; no company announcement of the release was located in this pack’s searches."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "The Gitee account is “iflytekopensource”; attribution to iFlytek rests on the README, which names 科大讯飞股份有限公司 as licensor, and on the account name. 开源 is rendered “open-source” as the developer’s own term; no judgement is made about any definition. Benchmark results are out of scope.",
+      "evidence": [
+        {
+          "id": "c3-ev-iflytek-spark-13b-readme",
+          "sourceId": "c3-src-iflytekspark-13b-readme",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "README, “模型介绍” (Model introduction)",
+          "passageType": "quote",
+          "passage": "讯飞星火开源-13B（iFlytekSpark-13B）拥有130亿参数",
+          "translation": {
+            "text": "iFlytek Spark Open-Source-13B (iFlytekSpark-13B) has 13 billion parameters",
+            "method": "machine",
+            "humanVerified": false
+          }
+        },
+        {
+          "id": "c3-ev-iflytek-spark-13b-readme-licensor",
+          "sourceId": "c3-src-iflytekspark-13b-readme",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "README, “协议” (Agreement)",
+          "passageType": "quote",
+          "passage": "均表示您与科大讯飞股份有限公司（以下称“许可方”）已就本协议达成一致",
+          "translation": {
+            "text": "signifies that you and iFlytek Co., Ltd. (the “Licensor”) have reached agreement on this agreement",
+            "method": "machine",
+            "humanVerified": false
+          }
+        }
+      ]
+    },
+    {
+      "id": "c3-iflytek-spark-13b-licence",
+      "subject": "iflytek",
+      "predicate": "published",
+      "object": {
+        "kind": "entity",
+        "entityId": "iflytekspark-13b-licence"
+      },
+      "topic": "governance",
+      "statement": "iFlytek published the iFlytekSpark-13B base and chat models under a custom licence agreement, 讯飞星火认知大模型-13B许可协议, which names 科大讯飞股份有限公司 as licensor; the text is read as LICENSE_MODEL.md at the commit of 4 February 2024.",
+      "time": {
+        "kind": "event",
+        "date": "2024-02-04",
+        "basis": "revision",
+        "note": "Date of the cited commit, the file’s last change in the history read; the file was initially committed on 30 January 2024 and changed on 2 February 2024 (texts not inspected)."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "The agreement is described as the text describes itself; no judgement is made about any definition of open source. The repository also carries an Apache-2.0 LICENSE file for code, not inspected.",
+      "evidence": [
+        {
+          "id": "c3-ev-iflytek-spark-13b-licence",
+          "sourceId": "c3-src-iflytekspark-13b-licence",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Heading",
+          "passageType": "quote",
+          "passage": "讯飞星火认知大模型-13B许可协议",
+          "translation": {
+            "text": "iFlytek Spark Cognitive Large Model-13B Licence Agreement",
+            "method": "machine",
+            "humanVerified": false
+          }
+        },
+        {
+          "id": "c3-ev-iflytek-spark-13b-licence-def",
+          "sourceId": "c3-src-iflytekspark-13b-licence",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Section 1, Definitions, item 1",
+          "passageType": "quote",
+          "passage": "“讯飞星火认知大模型-13B”是指讯飞开源的13B大语言模型，包括base和chat两个模型",
+          "translation": {
+            "text": "“iFlytek Spark Cognitive Large Model-13B” means the 13B large language model open-sourced by iFlytek, comprising two models, base and chat",
+            "method": "machine",
+            "humanVerified": false
+          }
+        }
+      ]
+    },
+    {
+      "id": "c3-iflytek-spark-13b-licence-noncommercial",
+      "subject": "iflytekspark-13b-licence",
+      "predicate": "states_provision",
+      "object": {
+        "kind": "literal",
+        "value": "Licence limited to non-commercial copying, distribution, use and modification"
+      },
+      "topic": "governance",
+      "statement": "The iFlytek Spark-13B licence agreement (February 2024 text) grants a non-exclusive, worldwide, non-transferable, royalty-free, limited copyright licence to copy, distribute, use and modify the model or its derivatives for non-commercial purposes.",
+      "time": {
+        "kind": "event",
+        "date": "2024-02-04",
+        "basis": "revision",
+        "note": "Provision as stated in LICENSE_MODEL.md at the cited commit."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "What the agreement states; enforcement is not recorded.",
+      "evidence": [
+        {
+          "id": "c3-ev-iflytek-spark-13b-licence-noncommercial",
+          "sourceId": "c3-src-iflytekspark-13b-licence",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Section 2, Licence and restrictions, item 1",
+          "passageType": "quote",
+          "passage": "非独占性、全球性、不可转让、免版税、有限的版权许可",
+          "translation": {
+            "text": "a non-exclusive, worldwide, non-transferable, royalty-free, limited copyright licence",
+            "method": "machine",
+            "humanVerified": false
+          }
+        },
+        {
+          "id": "c3-ev-iflytek-spark-13b-licence-noncommercial-2",
+          "sourceId": "c3-src-iflytekspark-13b-licence",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Same item",
+          "passageType": "quote",
+          "passage": "被许可方可以非商业用途复制、分发、使用、修改iFLYTEK Spark-13B或其衍生模型",
+          "translation": {
+            "text": "the licensee may copy, distribute, use and modify iFLYTEK Spark-13B or its derivative models for non-commercial purposes",
+            "method": "machine",
+            "humanVerified": false
+          }
+        }
+      ]
+    },
+    {
+      "id": "c3-iflytek-spark-13b-licence-commercial",
+      "subject": "iflytekspark-13b-licence",
+      "predicate": "states_provision",
+      "object": {
+        "kind": "literal",
+        "value": "Commercial use requires contacting the licensor in writing"
+      },
+      "topic": "governance",
+      "statement": "The iFlytek Spark-13B licence agreement (February 2024 text) states that a licensee who needs commercial use should contact the licensor in writing.",
+      "time": {
+        "kind": "event",
+        "date": "2024-02-04",
+        "basis": "revision",
+        "note": "Provision as stated in LICENSE_MODEL.md at the cited commit."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "What the agreement states; whether commercial licences were requested or granted is not recorded.",
+      "evidence": [
+        {
+          "id": "c3-ev-iflytek-spark-13b-licence-commercial",
+          "sourceId": "c3-src-iflytekspark-13b-licence",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Section 2, item 2",
+          "passageType": "quote",
+          "passage": "如您需要商业用途使用，请书面联系许可方。",
+          "translation": {
+            "text": "If you need to use it for commercial purposes, please contact the Licensor in writing.",
+            "method": "machine",
+            "humanVerified": false
+          }
+        }
+      ]
+    },
+    {
+      "id": "c3-iflytek-spark-13b-licence-prohibited",
+      "subject": "iflytekspark-13b-licence",
+      "predicate": "states_provision",
+      "object": {
+        "kind": "literal",
+        "value": "Prohibited: use for acts endangering national security and unity, harming the public interest or infringing others’ lawful rights"
+      },
+      "topic": "governance",
+      "statement": "The iFlytek Spark-13B licence agreement (February 2024 text) prohibits using the model for acts that endanger national security and national unity, harm the social public interest or infringe the lawful rights and interests of others, or other acts prohibited by law.",
+      "time": {
+        "kind": "event",
+        "date": "2024-02-04",
+        "basis": "revision",
+        "note": "Provision as stated in LICENSE_MODEL.md at the cited commit."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "One of four items in Section 2; the agreement is governed by the laws of mainland China (Section 7), not recorded separately. Enforcement is not recorded.",
+      "evidence": [
+        {
+          "id": "c3-ev-iflytek-spark-13b-licence-prohibited",
+          "sourceId": "c3-src-iflytekspark-13b-licence",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Section 2, item 4",
+          "passageType": "quote",
+          "passage": "您不得利用iFLYTEK Spark-13B模型从事任何危害国家安全和国家统一、危害社会公共利益、侵犯他人合法权益等法律、法规禁止的行为",
+          "translation": {
+            "text": "You shall not use the iFLYTEK Spark-13B model to engage in any acts prohibited by laws and regulations, such as endangering national security and national unity, harming the social public interest or infringing the lawful rights and interests of others",
+            "method": "machine",
+            "humanVerified": false
+          }
+        }
+      ]
+    },
+    {
+      "id": "c3-iflytek-sustainability-2025",
+      "subject": "iflytek",
+      "predicate": "published",
+      "object": {
+        "kind": "entity",
+        "entityId": "iflytek-sustainability-report-2025"
+      },
+      "topic": "governance",
+      "statement": "iFlytek published its 2025 sustainability report on 29 April 2026, covering 1 January to 31 December 2025.",
+      "time": {
+        "kind": "event",
+        "date": "2026-04-29",
+        "basis": "publication",
+        "note": "Date the report was published on cninfo."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "The report is the company’s own account; its statements are recorded as statements, not as verified practice. No iFlytek-published AI ethics principles or frontier safety framework was located in this pack’s searches.",
+      "evidence": [
+        {
+          "id": "c3-ev-iflytek-sustainability-2025",
+          "sourceId": "c3-src-iflytek-sustainability-2025",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Cover",
+          "passageType": "quote",
+          "passage": "科大讯飞2025年度 可持续发展报告",
+          "translation": {
+            "text": "iFlytek 2025 Sustainability Report",
+            "method": "machine",
+            "humanVerified": false
+          }
+        },
+        {
+          "id": "c3-ev-iflytek-sustainability-2025-period",
+          "sourceId": "c3-src-iflytek-sustainability-2025",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Contents page, report scope",
+          "passageType": "quote",
+          "passage": "报告时间范围 2025年1月1日至2025年12月31日",
+          "translation": {
+            "text": "Reporting period: 1 January 2025 to 31 December 2025",
+            "method": "machine",
+            "humanVerified": false
+          }
+        }
+      ]
+    },
+    {
+      "id": "c3-iflytek-sustainability-2025-genai-rule",
+      "subject": "iflytek-sustainability-report-2025",
+      "predicate": "states_provision",
+      "object": {
+        "kind": "literal",
+        "value": "Internal rule on generative-AI product security formulated or updated in 2025"
+      },
+      "topic": "governance",
+      "statement": "iFlytek’s 2025 sustainability report states that in 2025 the company formulated or updated internal rules including a 生成式人工智能产品安全管理规定 (regulation on the security management of generative-AI products).",
+      "time": {
+        "kind": "event",
+        "date": "2026-04-29",
+        "basis": "publication",
+        "note": "Report published 29 April 2026; the action is dated to 2025 by the report."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "The internal regulation itself was not published or inspected; the record documents only the report’s statement. 制定或更新 is rendered “formulated or updated”, as the report does not say which.",
+      "evidence": [
+        {
+          "id": "c3-ev-iflytek-sustainability-2025-genai-rule",
+          "sourceId": "c3-src-iflytek-sustainability-2025",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Governance section, information security and privacy protection",
+          "passageType": "quote",
+          "passage": "人工智能安全、供应链安全、安全应急响应等领域，制定或更新了《生成式人工智能产品安全管理规定》",
+          "translation": {
+            "text": "in areas such as AI security, supply-chain security and security emergency response, formulated or updated the “Regulation on the Security Management of Generative AI Products”",
+            "method": "machine",
+            "humanVerified": false
+          }
+        }
+      ]
+    },
+    {
+      "id": "c3-iflytek-sustainability-2025-jailbreak",
+      "subject": "iflytek-sustainability-report-2025",
+      "predicate": "states_provision",
+      "object": {
+        "kind": "literal",
+        "value": "2025 research focus on large-model security attacks and jailbreak techniques"
+      },
+      "topic": "governance",
+      "statement": "iFlytek’s 2025 sustainability report states that in 2025 the company focused research on large-model security attacks and jailbreak techniques and took part in drafting four national and industry standards, including initiating, with CNCERT, a national standard on classifying AI-system security vulnerabilities.",
+      "time": {
+        "kind": "event",
+        "date": "2026-04-29",
+        "basis": "publication",
+        "note": "Report published 29 April 2026; the activities are dated to 2025 by the report."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "The company’s description of its own research and standards work; the papers and standards are not inspected here.",
+      "evidence": [
+        {
+          "id": "c3-ev-iflytek-sustainability-2025-jailbreak",
+          "sourceId": "c3-src-iflytek-sustainability-2025",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Section “前沿研究合作，共建安全生态”",
+          "passageType": "quote",
+          "passage": "2025年，科大讯飞重点研究大模型安全攻击与越狱技术方向，致力于前沿安全技术探索",
+          "translation": {
+            "text": "In 2025, iFlytek focused its research on large-model security attacks and jailbreak techniques, committed to exploring frontier security technology",
+            "method": "machine",
+            "humanVerified": false
+          }
+        },
+        {
+          "id": "c3-ev-iflytek-sustainability-2025-jailbreak-std",
+          "sourceId": "c3-src-iflytek-sustainability-2025",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Same section",
+          "passageType": "quote",
+          "passage": "《网络安全技术 人工智能系统安全漏洞分类分级指南》中，联合国家计算机网络应急技术处理协调中心（CNCERT）共同 发起立项",
+          "translation": {
+            "text": "in the national standard “Cybersecurity technology — Guidelines for classification and grading of security vulnerabilities in AI systems”, jointly initiated the project with the National Computer Network Emergency Response Technical Team/Coordination Center (CNCERT)",
+            "method": "machine",
+            "humanVerified": false
+          }
+        }
+      ]
+    }
+  ]
+}

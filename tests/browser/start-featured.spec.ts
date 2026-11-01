@@ -1,4 +1,4 @@
-import { expect, test, type Page } from './fixtures';
+import { expect, MAP_FIRST_DRAW_TIMEOUT, test, type Page } from './fixtures';
 
 const mapPath = '/dossier/openai?view=map';
 const mapName = 'See it as a map: OpenAI’s direct connections →';
@@ -14,13 +14,18 @@ function collectErrors(page: Page) {
 
 /** The focused map is drawn, not replaced by the list. */
 async function expectOpenAIMap(page: Page) {
-  await expect(page).toHaveURL(new RegExp(mapPath.replace('?', '\\?') + '$'));
-  await expect(page.locator('.exploration-heading h2')).toHaveText('OpenAI');
+  await expect(page).toHaveURL(new RegExp(mapPath.replace('?', '\\?') + '$'), {
+    timeout: MAP_FIRST_DRAW_TIMEOUT,
+  });
+  await expect(page.locator('.exploration-heading :is(h1, h2)')).toHaveText(
+    'OpenAI',
+  );
   await expect(page.locator('.exploration-heading .eyebrow')).toHaveText(
     'Direct connections',
   );
   await expect(page.getByTestId('network').locator('canvas')).not.toHaveCount(
     0,
+    { timeout: MAP_FIRST_DRAW_TIMEOUT },
   );
   await expect(page.locator('.map-withheld')).toHaveCount(0);
   await expect(
@@ -33,13 +38,15 @@ async function expectOpenAIMap(page: Page) {
 test.describe('without JavaScript', () => {
   test.use({ javaScriptEnabled: false });
 
-  test('the built start page labels the featured question and links the map', async ({
+  test('the built start page labels the featured links as examples and links the map', async ({
     page,
   }) => {
     await page.goto('/');
     const featured = page.locator('.landing-featured');
-    await expect(featured.locator('.eyebrow')).toHaveText(
-      'A question the records answer:',
+    // The two links are examples, not the scope.
+    await expect(featured.locator('.eyebrow')).toHaveText('For example');
+    await expect(featured.locator('.landing-featured-note')).toHaveText(
+      'Two of many ways in. The hubs below cover governance, ideas and institutions.',
     );
     await expect(
       featured.getByRole('link', {

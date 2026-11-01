@@ -1,4 +1,4 @@
-import { test, expect, type Page } from './fixtures';
+import { test, expect, MAP_FIRST_DRAW_TIMEOUT, type Page } from './fixtures';
 import AxeBuilder from '@axe-core/playwright';
 import { readFileSync } from 'node:fs';
 import { datasetSchema } from '../../src/domain/schema';
@@ -102,7 +102,7 @@ test('start page leads with search, three hubs and one review-status line', asyn
   await expect(
     page.getByRole('heading', { name: 'Not yet covered' }),
   ).toBeVisible();
-  await expect(page.getByRole('search')).toBeVisible();
+  await expect(page.getByRole('main').getByRole('search')).toBeVisible();
   await expect(page.getByTestId('network')).toHaveCount(0);
   await noViolations(page);
   // The line links to "How this was checked" on the About & method page.
@@ -150,8 +150,9 @@ test('start page leads with search, three hubs and one review-status line', asyn
   await page.getByRole('link', { name: 'Selekoa start page' }).click();
   await expect(page).toHaveURL(/:4173\/$/);
   // The start page's search box opens Search; its map is a view of the results.
-  await page.getByRole('searchbox').fill('Anthropic');
+  await page.getByRole('main').getByRole('searchbox').fill('Anthropic');
   await page
+    .getByRole('main')
     .getByRole('search')
     .getByRole('button', { name: 'Search' })
     .click();
@@ -161,7 +162,7 @@ test('start page leads with search, three hubs and one review-status line', asyn
     .getByRole('link', { name: 'Map' })
     .click();
   await expect(page).toHaveURL(/\/explore#q=Anthropic$/);
-  await expect(page.locator('.exploration-heading h2')).toHaveText(
+  await expect(page.locator('.exploration-heading :is(h1, h2)')).toHaveText(
     'Search: Anthropic',
   );
   await expect(page.locator('.view-description')).toHaveText(
@@ -176,9 +177,12 @@ test('start page leads with search, three hubs and one review-status line', asyn
   await page.goto('/explore#q=Microsoft');
   await expect(page.getByTestId('network').locator('canvas')).not.toHaveCount(
     0,
+    { timeout: MAP_FIRST_DRAW_TIMEOUT },
   );
   await expect(
-    page.getByRole('banner').getByRole('link', { name: 'Search', exact: true }),
+    page
+      .getByRole('banner')
+      .getByRole('link', { name: 'Explore the records', exact: true }),
   ).toHaveAttribute('aria-current', 'page');
   expect(errors).toEqual([]);
 });

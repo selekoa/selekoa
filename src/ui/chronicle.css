@@ -1,0 +1,194 @@
+/* The chronicle: one page per year, records in date order under their topic
+   and month, stated dates kept apart, and the index of the years. */
+.chronicle {
+  max-width: 90ch;
+}
+.chronicle-selective {
+  margin: 4px 0 8px;
+  color: var(--color-text-muted);
+  font-size: var(--text-md);
+}
+.chronicle-limits {
+  margin: 8px 0 12px;
+  font-size: var(--text-md);
+}
+.chronicle-limits summary {
+  cursor: pointer;
+  font-weight: 650;
+}
+.chronicle-limits ul {
+  margin: 6px 0 0;
+  padding-left: 1.2em;
+}
+.chronicle-limits li + li {
+  margin-top: 4px;
+}
+.chronicle-steps {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 18px;
+  margin: 8px 0;
+}
+.chronicle-topics {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 4px 10px;
+  margin: 8px 0 0;
+  font-size: var(--text-md);
+}
+.chronicle-topics ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 6px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.chronicle-topics-label {
+  color: var(--color-text-muted);
+}
+.chronicle-topic-link {
+  display: inline-block;
+  padding: 2px 8px;
+  border: 1px solid var(--color-border-strong);
+  border-radius: 3px;
+  color: var(--color-text);
+  text-decoration: none;
+}
+.chronicle-topic-link:hover {
+  background: var(--color-hover);
+}
+.chronicle-topic-link[aria-current='page'] {
+  background: var(--color-selected);
+  border-color: var(--color-accent);
+  font-weight: 650;
+}
+.chronicle-topic > h2,
+.chronicle-stated > h2 {
+  margin-top: 28px;
+  padding-bottom: 4px;
+  border-bottom: 1px solid var(--color-rule);
+}
+.chronicle-count {
+  font-size: var(--text-md);
+  font-weight: 400;
+  color: var(--color-text-muted);
+}
+.chronicle-month > h3 {
+  margin: 18px 0 6px;
+  font-size: var(--text-lg);
+}
+.chronicle-entries {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.chronicle-entry {
+  padding: 8px 0 8px 12px;
+  border-left: 2px solid var(--color-border-strong);
+  border-bottom: 1px solid var(--color-border);
+  overflow-wrap: anywhere;
+}
+.chronicle-entry p {
+  margin: 0;
+}
+.chronicle-date {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  font-variant-numeric: tabular-nums;
+}
+.chronicle-date time {
+  font-weight: 650;
+  color: var(--color-text);
+}
+.chronicle-date .claim-status,
+.chronicle-derivation {
+  margin-left: 6px;
+}
+.chronicle-derivation {
+  display: inline-block;
+  padding: 0 5px;
+  border: 1px solid var(--color-inferred-border);
+  border-radius: 3px;
+  background: var(--color-inferred-bg);
+  color: var(--color-inferred-text);
+  font-size: var(--text-xs);
+}
+.chronicle-statement {
+  display: block;
+  margin: 2px 0;
+  font-size: var(--text-base);
+  color: var(--color-text);
+}
+a.chronicle-statement {
+  text-decoration: none;
+}
+a.chronicle-statement:hover [data-record-text] {
+  text-decoration: underline;
+}
+.chronicle-evidence {
+  white-space: nowrap;
+  font-size: var(--text-sm);
+  color: var(--color-accent);
+}
+.chronicle-marks {
+  margin: 2px 0;
+  padding: 0;
+  list-style: none;
+  font-size: var(--text-sm);
+}
+.chronicle-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2px 16px;
+  font-size: var(--text-sm);
+}
+.chronicle-provisions {
+  border-left-style: dotted;
+}
+.chronicle-stated-entry {
+  border-left: 2px dotted var(--color-caution-rule);
+}
+.chronicle-note {
+  max-width: 75ch;
+  font-size: var(--text-md);
+  color: var(--color-text-muted);
+}
+.chronicle-decade > h2 {
+  margin: 22px 0 6px;
+  font-size: var(--text-lg);
+}
+.chronicle-years {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.chronicle-years li {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0 12px;
+  padding: 5px 0;
+  border-bottom: 1px solid var(--color-border);
+}
+.chronicle-year-link {
+  min-width: 3.5em;
+  font-weight: 650;
+  font-variant-numeric: tabular-nums;
+}
+.chronicle-year-counts {
+  font-size: var(--text-md);
+  color: var(--color-text-muted);
+}
+.chronicle-year-topics {
+  display: block;
+  font-size: var(--text-sm);
+}
+/* Record names and marks can be long: links in a row wrap. */
+.chronicle .text-button {
+  padding: 0;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  text-align: left;
+}

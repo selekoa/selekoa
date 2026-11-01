@@ -17,8 +17,8 @@ test('browser Back and Forward follow start → governance → frameworks → se
   await page.getByRole('link', { name: /Read the document histories/ }).click();
   await expect(page).toHaveURL(/\/documents\//);
   await page
-    .getByRole('navigation', { name: 'Primary' })
-    .getByRole('link', { name: 'Search' })
+    .getByRole('banner')
+    .getByRole('button', { name: 'Submit search' })
     .click();
   await expect(page).toHaveURL(/\/search$/);
   await page
@@ -26,7 +26,7 @@ test('browser Back and Forward follow start → governance → frameworks → se
     .getByRole('link', { name: 'Map' })
     .click();
   await expect(page).toHaveURL(/\/explore$/);
-  await page.getByRole('searchbox').fill('Jan Leike');
+  await page.getByRole('main').getByRole('searchbox').fill('Jan Leike');
   await page
     .getByRole('link', { name: 'Jan Leike: person page', exact: true })
     .click();
@@ -43,7 +43,7 @@ test('browser Back and Forward follow start → governance → frameworks → se
   await expect(page).toHaveURL(/\/governance$/);
   await page.goBack();
   await expect(page).toHaveURL(/:4173\/$/);
-  await expect(page.getByRole('search')).toBeVisible();
+  await expect(page.getByRole('main').getByRole('search')).toBeVisible();
 
   await page.goForward();
   await expect(page).toHaveURL(/\/governance$/);

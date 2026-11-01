@@ -1,3 +1,5 @@
+import { propositionFrames } from '../reading/proposition-frames';
+import { remember, type Remembered } from './memo';
 import type {
   Claim,
   Dataset,
@@ -67,12 +69,49 @@ export type PropositionsCollection = {
   /** Per proposition: premises that no located passage addresses. */
   openPremises?: Record<string, string[]>;
   /**
+   * Per proposition: overlapping propositions recorded in another
+   * collection, with how they relate. A link records an overlap of criteria,
+   * never a relation between texts.
+   */
+  related?: Record<string, { propositionId: string; relation: string }[]>;
+  /**
+   * Published exchanges in which one text answers another, as a reading
+   * list. Each reply is its own `cites` record; the grouping is the
+   * collection's and is not stored in the dataset.
+   */
+  exchanges?: {
+    title: string;
+    period: string;
+    documentIds: string[];
+    note: string;
+  }[];
+  /**
    * For a collection that sorts its texts into tiers (schema 2.13): what each
    * tier holds. Earliest located is then named within tier 1, and the tier-2
    * earliest separately.
    */
   tiers?: Record<Tier, string>;
 };
+
+/**
+ * The reader text of a propositions collection: what only its own page and
+ * starter show. Pages other than its own read its frame, which the browser
+ * holds for every collection (src/reading/proposition-frames.ts).
+ */
+export type PropositionsText = Pick<
+  PropositionsCollection,
+  | 'introduction'
+  | 'searchNote'
+  | 'corrections'
+  | 'limits'
+  | 'openPremises'
+  | 'related'
+  | 'exchanges'
+>;
+export type PropositionsFrame = Omit<
+  PropositionsCollection,
+  keyof PropositionsText
+>;
 
 export type Stance =
   (typeof propositionStances)[keyof typeof propositionStances];
@@ -233,14 +272,27 @@ const byDate = (a: PropositionRecord, b: PropositionRecord) =>
   (a.wording ?? '9999').localeCompare(b.wording ?? '9999') ||
   a.claim.id.localeCompare(b.claim.id);
 
-export function propositionsView(
+export function propositionsView<C extends PropositionsFrame>(
   data: Dataset,
-  collection: PropositionsCollection,
+  collection: C,
 ) {
+  // From a frame, the view has no reader text: no premises, related
+  // propositions, corrections or exchanges. Only a collection's own page,
+  // which loads it whole, shows them.
+  const text = collection as Partial<PropositionsText>;
   const entities = new Map(data.entities.map((e) => [e.id, e]));
   const sources = new Map(data.sources.map((s) => [s.id, s]));
+  // Only the records on this collection's propositions, chosen by their
+  // relation fields, are read: a page reads no other collection's records
+  // (src/prerender/trace.ts).
+  const own = new Set(collection.groups.flatMap((g) => g.propositionIds));
   const records = data.claims
-    .filter(isPropositionRecord)
+    .filter(
+      (c) =>
+        isPropositionRecord(c) &&
+        c.object.kind === 'entity' &&
+        own.has(c.object.entityId),
+    )
     .map((c) => record(data, c, entities, sources));
   const groups = collection.groups.map((group) => ({
     ...group,
@@ -295,10 +347,14 @@ export function propositionsView(
           entity.proposition.withheld?.find(
             (w) => w.role === 'earliest-located-tier-2',
           )?.reason ?? null,
-        openPremises: collection.openPremises?.[id] ?? [],
+        openPremises: text.openPremises?.[id] ?? [],
+        related: (text.related?.[id] ?? []).flatMap((r) => {
+          const other = entities.get(r.propositionId);
+          return other?.proposition ? [{ ...r, entity: other }] : [];
+        }),
         earliestTerm: withRole('earliest-located-term'),
         mostDeveloped: withRole('most-developed'),
-        corrections: collection.corrections.filter(
+        corrections: (text.corrections ?? []).filter(
           (c) => c.propositionId === id,
         ),
       };
@@ -306,9 +362,18 @@ export function propositionsView(
   }));
   const shown = groups.flatMap((g) => g.propositions.flatMap((p) => p.records));
   const claimIds = shown.map((r) => r.claim.id);
+  // The exchanges' texts, as the dataset holds them.
+  const exchanges = (text.exchanges ?? []).map((x) => ({
+    ...x,
+    documents: x.documentIds.flatMap((id) => {
+      const d = entities.get(id);
+      return d ? [d] : [];
+    }),
+  }));
   return {
     collection,
     groups,
+    exchanges,
     claimIds,
     documentIds: [...new Set(shown.map((r) => r.document.id))],
     sourceIds: [...new Set(shown.flatMap((r) => r.sources.map((s) => s.id)))],
@@ -326,7 +391,9 @@ export function propositionsView(
   };
 }
 
-export type PropositionsView = ReturnType<typeof propositionsView>;
+export type PropositionsView = ReturnType<
+  typeof propositionsView<PropositionsCollection>
+>;
 export type PropositionEntry =
   PropositionsView['groups'][number]['propositions'][number];
 
@@ -362,4 +429,123 @@ export function recordDates(r: PropositionRecord) {
       : []),
     ...(r.claimed ? [`claimed ${r.claimed.date}`] : []),
   ].join(' · ');
+}
+
+/**
+ * Where a propositions collection names a document earliest located: one
+ * line per headline the document holds, worded as the collection's own
+ * headline, with the claim that holds the role.
+ */
+export type EarliestMark = {
+  collectionId: string;
+  propositionId: string;
+  claimId: string;
+  text: string;
+};
+
+const views = new WeakMap<
+  Dataset,
+  Map<string, Remembered<ReturnType<typeof propositionsView>>>
+>();
+/** Each document's marks, as computed from the whole dataset. */
+const marksByDocument = new WeakMap<Dataset, Map<string, EarliestMark[]>>();
+
+/**
+ * Gives a dataset every document's marks, as computed from the whole dataset
+ * (src/domain/collection-index.ts), for a page drawn from part of it.
+ */
+export function seedEarliestMarks(
+  data: Dataset,
+  stored: [string, EarliestMark[]][],
+) {
+  marksByDocument.set(data, new Map(stored));
+}
+
+/** The marks of every document that has any. */
+export function everyEarliestMark(data: Dataset): [string, EarliestMark[]][] {
+  return data.entities
+    .filter((e) => e.type === 'document')
+    .map(
+      (e) =>
+        [e.id, earliestMarks(data, propositionFrames, e.id)] as [
+          string,
+          EarliestMark[],
+        ],
+    )
+    .filter(([, marks]) => marks.length);
+}
+
+const allMarks = new WeakMap<Dataset, EarliestMark[]>();
+
+/**
+ * Every earliest-located mark of every document: as given to a part of the
+ * dataset, or computed once from the whole dataset.
+ */
+export function allEarliestMarks(data: Dataset): EarliestMark[] {
+  const seeded = marksByDocument.get(data);
+  if (seeded) return [...seeded.values()].flat();
+  let marks = allMarks.get(data);
+  if (!marks)
+    allMarks.set(
+      data,
+      (marks = everyEarliestMark(data).flatMap(([, list]) => list)),
+    );
+  return marks;
+}
+
+export function earliestMarks(
+  data: Dataset,
+  collections: readonly PropositionsFrame[],
+  documentId: string,
+): EarliestMark[] {
+  const seeded = marksByDocument.get(data);
+  if (seeded && collections === propositionFrames)
+    return seeded.get(documentId) ?? [];
+  const cache = views.get(data) ?? new Map();
+  views.set(data, cache);
+  const marks: EarliestMark[] = [];
+  for (const collection of collections) {
+    const view = remember(cache, collection.id, () =>
+      propositionsView(data, collection),
+    );
+    const tiered = !!collection.tiers;
+    const title = collection.title;
+    for (const group of view.groups)
+      for (const entry of group.propositions) {
+        const name = `${entry.proposition.code} ${entry.entity.name}`;
+        const headlines: [PropositionRecord | null, string][] = [
+          [
+            entry.earliest,
+            tiered
+              ? `Earliest located in tier 1 of ${title} for ${name}`
+              : `Earliest located in ${title} for ${name}`,
+          ],
+          [
+            entry.earliestTier2,
+            `Earliest located in tier 2 of ${title} for ${name}`,
+          ],
+          [
+            entry.earliestContest,
+            `Earliest located ${tiered ? 'tier-1 ' : ''}text contesting ${name} in ${title}`,
+          ],
+          [
+            entry.earliestContestTier2,
+            `Earliest located tier-2 text contesting ${name} in ${title}`,
+          ],
+          [
+            entry.proposition.terms.length ? entry.earliestTerm : null,
+            `Earliest located use of the name${entry.earliestTerm?.term ? ` “${entry.earliestTerm.term}”` : ''} in ${title} for ${name}`,
+          ],
+        ];
+        for (const [r, text] of headlines)
+          if (r?.document.id === documentId)
+            marks.push({
+              collectionId: collection.id,
+              propositionId: entry.entity.id,
+              claimId: r.claim.id,
+              text,
+            });
+      }
+  }
+  return marks;
 }

@@ -9,7 +9,7 @@ test('authorized source reviews remain distinct from wording approvals', async (
     if (message.type() === 'error') errors.push(message.text());
   });
   await page.goto('/explore');
-  const search = page.getByRole('searchbox');
+  const search = page.getByRole('main').getByRole('searchbox');
   await search.fill('Igor Babuschkin');
   await search.press('Enter');
   await page.getByRole('button', { name: 'Claims', exact: true }).click();

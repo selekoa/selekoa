@@ -9,10 +9,22 @@ import {
   useState,
 } from 'react';
 import summary from 'virtual:landing-summary';
-import { repository } from './domain/repository';
+import facts from 'virtual:site-facts';
+import { chronicleIndexOf, parseYearPageId } from './domain/chronicle-index';
+import {
+  dataHeld,
+  whenData,
+  perRecords,
+  recordsHeld,
+  repository,
+  useHeldRecords,
+  whenRecords,
+} from './ui/records';
+import { searchSource } from './ui/search-source';
+import { remember, selected, type Remembered } from './domain/memo';
+import type { Dataset } from './domain/schema';
 import {
   dateOf,
-  isPropositionRecord,
   mapReadable,
   mapSize,
   queryDataset,
@@ -46,7 +58,8 @@ import {
   type ReferenceTarget,
 } from './domain/deep-links';
 import { currentAddress } from './ui/location';
-import { pages } from './ui/page-modules';
+import { pages, preloadPage } from './ui/page-modules';
+import { revealRow } from './ui/reveal-row';
 import { useInBrowser } from './ui/client';
 import { pageMeta } from './prerender/pages';
 import { documentHistory } from './domain/document-history';
@@ -55,16 +68,28 @@ import { frameworkComparison } from './reading/framework-comparison';
 import { comparisonView } from './domain/framework-comparison';
 import { controlStructure } from './domain/control-structures';
 import { commitmentsView } from './domain/commitments';
+import { frameworksLawView } from './domain/frameworks-law';
+import { computeGuides, editionGuides, guides } from './reading/guides';
+import { frameworkChangesView } from './domain/framework-changes';
+import { computeBuildoutView } from './domain/compute-buildout';
 import { controlStructures } from './reading/control-structures';
 import { externalCommitments } from './reading/commitments';
 import { questionStarters } from './reading/self-governance';
 import { questionStarterView } from './domain/question-starter';
-import { propositionsView } from './domain/propositions';
-import { propositionCollections } from './reading/human-thought';
+import { propositionFrames } from './reading/proposition-frames';
 import { chineseHistories } from './domain/landing';
 import { Landing } from './ui/Landing';
 import { HubPage } from './ui/Hub';
 import { NavLink, RecordHref } from './ui/NavLink';
+import { recordPath } from './ui/record-path';
+import { holdUntilRecords } from './ui/hold-until-records';
+import { opensFromSlice, visit, visitPending } from './ui/page-visits';
+import { entityView, type View } from './ui/views';
+import { ClaimPage, type ClaimCollection } from './ui/ClaimPage';
+import {
+  collectionsByClaim,
+  type CollectionDefinition,
+} from './release/collections';
 import {
   SiteFooter,
   SiteHeader,
@@ -84,8 +109,12 @@ const {
   FrameworkComparison,
   ControlStructure,
   Commitments,
+  FrameworksLaw,
+  FrameworkChanges,
+  ComputeBuildout,
   Propositions,
   QuestionStarter,
+  Chronicle,
   About,
   Search,
 } = pages;
@@ -114,23 +143,9 @@ const topicNotes: Record<Topic | 'all', string> = {
     'Framework editions, evaluation engagements, laws and their provisions, each tied to a date.',
 };
 
-/** The claims the explorer and its map show; proposition records have their own page. */
-const explorable = repository.data.claims.filter(
-  (c) => !isPropositionRecord(c),
-);
-const years = [
-  ...new Set(
-    explorable
-      .map(dateOf)
-      .filter((d): d is string => Boolean(d))
-      .map((d) => Number(d.slice(0, 4))),
-  ),
-].sort((a, b) => b - a);
+const years = facts.years;
 const latestYear = years[0];
-const latestCheck = repository.data.evidence
-  .map((e) => e.checkedAt)
-  .sort()
-  .at(-1)!;
+const latestCheck = facts.latestCheck;
 /**
  * A record dated after the latest source check states a scheduled date, such
  * as when a law takes effect. The year filter says so, so that a future year
@@ -138,47 +153,52 @@ const latestCheck = repository.data.evidence
  */
 const scheduledYears = latestYear > Number(latestCheck.slice(0, 4));
 const datasetStatus = summary.status;
-/** Computed on first use, so a page pays only for what it shows. */
-const once = <T,>(make: () => T) => {
-  let value: T | undefined;
-  return () => (value ??= make());
-};
+/**
+ * Computed on first use, so a page pays only for what it shows, and again
+ * when other records are held (src/ui/records.ts).
+ */
+const once = perRecords;
 const frameworkHistory = once(() =>
   documentHistory(repository.data, frontierSafetyFrameworks),
 );
-const controlViews = once(
-  () =>
-    new Map(
-      controlStructures.map((c) => [
-        c.id,
-        controlStructure(repository.data, c),
-      ]),
-    ),
-);
+/**
+ * Each collection's view by ID, computed when its page is drawn, not every
+ * collection's at once: a page drawn from its slice holds the records of its
+ * own collection only (src/domain/slices.ts).
+ */
+function viewsById<D extends { id: string }, V>(
+  definitions: readonly D[],
+  make: (data: Dataset, definition: D) => V,
+) {
+  return once(() => {
+    const views = new Map<string, Remembered<V>>();
+    const data = repository.data;
+    return {
+      get(id: string): V | undefined {
+        const definition = definitions.find((d) => d.id === id);
+        if (!definition) return undefined;
+        return remember(views, id, () => make(data, definition));
+      },
+    };
+  });
+}
+const controlViews = viewsById(controlStructures, controlStructure);
 const comparisonPage = once(() =>
   comparisonView(repository.data, frameworkComparison),
 );
 const commitmentsPage = once(() =>
   commitmentsView(repository.data, externalCommitments),
 );
-const propositionPages = once(
-  () =>
-    new Map(
-      propositionCollections.map((c) => [
-        c.id,
-        propositionsView(repository.data, c),
-      ]),
-    ),
+// The latest check comes from the build's site facts, so that a guide is
+// drawn from its own records rather than from every passage.
+const guidePages = viewsById(guides, (data, g) =>
+  frameworksLawView(data, g, facts.latestCheck),
 );
-const starterViews = once(
-  () =>
-    new Map(
-      questionStarters.map((d) => [
-        d.id,
-        questionStarterView(repository.data, d),
-      ]),
-    ),
+const changesPages = viewsById(editionGuides, (data, g) =>
+  frameworkChangesView(data, g, frameworkComparison),
 );
+const computePages = viewsById(computeGuides, computeBuildoutView);
+const starterViews = viewsById(questionStarters, questionStarterView);
 const searchIndex = once(() => createSearchIndex(repository.data));
 
 /** The width at which the reading layouts drop their side column. */
@@ -217,24 +237,6 @@ function inspectorSlot(trigger: Element | null): HTMLElement | null {
   return slot;
 }
 
-type View =
-  | 'home'
-  | 'hub'
-  | 'about'
-  | 'map'
-  | 'claims'
-  | 'timeline'
-  | 'dossier'
-  | 'path'
-  | 'starter'
-  | 'documents'
-  | 'compare'
-  | 'control'
-  | 'commitments'
-  | 'propositions'
-  | 'person'
-  | 'document'
-  | 'search';
 type Bookmark = { questionId: string; claimId: string };
 const isQuestion = (kind?: string) => kind === 'reading' || kind === 'question';
 /** People and documents open their reading pages; other entities explore. */
@@ -287,19 +289,23 @@ function locationState(address: string) {
                     ? 'control'
                     : target?.kind === 'commitments'
                       ? 'commitments'
-                      : target?.kind === 'propositions'
-                        ? 'propositions'
-                        : target?.kind === 'person'
-                          ? 'person'
-                          : target?.kind === 'document'
-                            ? 'document'
-                            : target?.kind === 'claim'
-                              ? 'claims'
-                              : target?.kind === 'search'
-                                ? 'search'
-                                : target || notice
-                                  ? 'map'
-                                  : 'home';
+                      : target?.kind === 'guide'
+                        ? 'guide'
+                        : target?.kind === 'propositions'
+                          ? 'propositions'
+                          : target?.kind === 'year' || target?.kind === 'years'
+                            ? 'year'
+                            : target?.kind === 'person'
+                              ? 'person'
+                              : target?.kind === 'document'
+                                ? 'document'
+                                : target?.kind === 'claim'
+                                  ? 'claim'
+                                  : target?.kind === 'search'
+                                    ? 'search'
+                                    : target || notice
+                                      ? 'map'
+                                      : 'home';
   return {
     notice,
     view,
@@ -309,7 +315,12 @@ function locationState(address: string) {
     allTypes: target?.kind === 'dossier' && target.view === 'map',
     controlId: target?.kind === 'control' ? target.id : null,
     compareFacet: target?.kind === 'compare' ? (target.facet ?? null) : null,
+    compareEditions:
+      target?.kind === 'compare' ? (target.editions ?? []) : ([] as string[]),
     propositionsId: target?.kind === 'propositions' ? target.id : null,
+    guideId: target?.kind === 'guide' ? target.id : null,
+    /** A chronicle page's id; null on the index of the years. */
+    yearId: target?.kind === 'year' ? target.id : null,
     starterId,
     starterSection:
       starterId && target && 'section' in target
@@ -357,6 +368,8 @@ export default function Workspace({
   /** A start-page link followed before the records had loaded. */
   start: StartAction | null;
 }) {
+  /** The records held, for values computed from them (src/ui/records.ts). */
+  const records = useHeldRecords();
   const [initial] = useState(() => locationState(address));
   const [linkNotice, setLinkNotice] = useState(initial.notice);
   const [filters, setFilters] = useState<Filters>({
@@ -377,9 +390,15 @@ export default function Workspace({
   const [compareFacet, setCompareFacet] = useState<string | null>(
     initial.compareFacet,
   );
+  /** Editions chosen on the comparison page in place of the latest ones. */
+  const [compareEditions, setCompareEditions] = useState<string[]>(
+    initial.compareEditions,
+  );
   const [propositionsId, setPropositionsId] = useState<string | null>(
     initial.propositionsId,
   );
+  const [guideId, setGuideId] = useState<string | null>(initial.guideId);
+  const [yearId, setYearId] = useState<string | null>(initial.yearId);
   const [propositionFocus, setPropositionFocus] = useState<string | null>(null);
   const [starterId, setStarterId] = useState<string | null>(initial.starterId);
   const [starterSection, setStarterSection] = useState<string | null>(
@@ -397,15 +416,52 @@ export default function Workspace({
    */
   const listed = useInBrowser();
   // Controls in a built page answer once the page runs in the browser.
+  /**
+   * Controls answer once the page runs in the browser; on a page drawn from
+   * its slice, their input waits for the records (see the effect below).
+   */
   const live = listed;
   useEffect(() => onShown(true), [onShown]);
+  /**
+   * A page drawn from its slice holds input until what it needs has loaded
+   * (src/ui/hold-until-records.ts); its links to pages with a slice open
+   * those pages from their slices (src/ui/page-visits.ts). The search page
+   * runs without records on its own: only such links are handled there (its
+   * other changes of page wait for the records).
+   */
+  const searchView = view === 'search';
+  useEffect(() => {
+    if (recordsHeld()) return;
+    return holdUntilRecords({ linksOnly: searchView });
+  }, [searchView, records]);
   /** Whether the page has written its first address. */
   const addressed = useRef(false);
   /** Whether the address the page opened at is still to be applied. */
   const deferred = useRef(false);
   useEffect(() => {
-    const restore = (opening = false) => {
-      const next = locationState(currentAddress());
+    /** The latest address to open; an earlier one still loading gives way. */
+    let latest = 0;
+    const restore = (opening = false, address = currentAddress()) => {
+      const turn = ++latest;
+      // Back or forward from a page drawn from its slice, to a page with a
+      // slice: that page opens as a fresh load of its address would.
+      if (!opening && opensFromSlice(address)) {
+        visit(address, 'history');
+        return;
+      }
+      // A page that needs more records opens once they have loaded; the page
+      // in view stays until then, and may write its own address meanwhile,
+      // so the address to open is put back first.
+      if (!dataHeld(address)) {
+        whenData(address, () => {
+          if (turn !== latest) return;
+          if (currentAddress() !== address)
+            window.history.replaceState(null, '', address);
+          restore(opening, address);
+        });
+        return;
+      }
+      const next = locationState(address);
       setLinkNotice(next.notice);
       setFilters({
         topic: 'all',
@@ -422,7 +478,10 @@ export default function Workspace({
       setQuestionId(next.questionId);
       setControlId(next.controlId);
       setCompareFacet(next.compareFacet);
+      setCompareEditions(next.compareEditions);
       setPropositionsId(next.propositionsId);
+      setGuideId(next.guideId);
+      setYearId(next.yearId);
       setStarterId(next.starterId);
       setStarterSection(next.starterSection);
       setSearchQuery(next.searchQuery);
@@ -440,6 +499,9 @@ export default function Workspace({
     const back = () => restore();
     window.addEventListener('popstate', back);
     return () => {
+      // A restore still loading for this workspace gives way when a link
+      // mounts another (src/ui/page-visits.ts).
+      latest += 1;
       window.removeEventListener('popstate', back);
     };
     // The address is read once, when the page opens.
@@ -499,18 +561,25 @@ export default function Workspace({
     },
     [slot],
   );
+  /**
+   * A change of page from one drawn without records (the search page) waits
+   * for them; on every other page they are already held.
+   */
+  const afterRecords = whenRecords;
   const searchRef = useRef<HTMLInputElement>(null);
   /** The claims behind a search's list, and the records it matches by name. */
   const found = useMemo(
     () =>
       exploreQuery.trim() ? searchClaims(searchIndex(), exploreQuery) : null,
-    [exploreQuery],
+    // The index is computed from the records held, so it changes with them.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [exploreQuery, records],
   );
   const visible = useMemo(() => {
-    if (!found) return queryDataset(repository.data, filters);
+    if (!found) return queryDataset(records.data, filters);
     // The timeline and map of a search show every claim its list shows,
     // proposition records included, and the claims about a matching record.
-    const all = queryDataset(repository.data, {
+    const all = queryDataset(records.data, {
       ...filters,
       propositions: true,
     });
@@ -528,44 +597,44 @@ export default function Workspace({
     );
     if (filters.focusId) used.add(filters.focusId);
     return { claims, entities: all.entities.filter((e) => used.has(e.id)) };
-  }, [filters, found]);
+  }, [filters, found, records]);
   // The explorer's lookup searches names and aliases only.
   const results = useMemo(
     () =>
       query.trim()
         ? (searchRecords(searchIndex(), query, {
             mode: 'names',
-          }).groups[0]?.hits.map((hit) => repository.entities.get(hit.id)!) ??
-          [])
+          }).groups[0]?.hits.map((hit) => records.entities.get(hit.id)!) ?? [])
         : [],
-    [query],
+    [query, records],
   );
   const focusEntity = filters.focusId
     ? repository.entities.get(filters.focusId)
     : null;
   const focusEntityId = filters.focusId;
+  /** The explorer's own heading is the page's main heading only without a focus. */
+  const HeadingTag = focusEntity ? 'h1' : 'h2';
   const dossier = useMemo(
     () =>
       filters.focusId
-        ? institutionalDossier(repository.data, filters.focusId)
+        ? institutionalDossier(records.data, filters.focusId)
         : null,
-    [filters.focusId],
+    [filters.focusId, records],
   );
   const dossierOpen = view === 'dossier' && !!dossier;
   /** The question anchored to the focused institution, for dossier exits. */
   const dossierPath = useMemo(
     () =>
-      filters.focusId ? researchPath(repository.data, filters.focusId) : null,
-    [filters.focusId],
+      filters.focusId ? researchPath(records.data, filters.focusId) : null,
+    [filters.focusId, records],
   );
   const path = useMemo(
-    () => (questionId ? questionPath(repository.data, questionId) : null),
-    [questionId],
+    () => (questionId ? questionPath(records.data, questionId) : null),
+    [questionId, records],
   );
   const savedPath = useMemo(
-    () =>
-      bookmark ? questionPath(repository.data, bookmark.questionId) : null,
-    [bookmark],
+    () => (bookmark ? questionPath(records.data, bookmark.questionId) : null),
+    [bookmark, records],
   );
   const pathOpen = view === 'path' && !!path;
   const documentsOpen = view === 'documents';
@@ -576,11 +645,24 @@ export default function Workspace({
       : null;
   const controlOpen = !!structure;
   const commitmentsOpen = view === 'commitments';
+  const guidePage =
+    view === 'guide' && guideId ? (guidePages().get(guideId) ?? null) : null;
+  const changesPage =
+    view === 'guide' && guideId ? (changesPages().get(guideId) ?? null) : null;
+  const computePage =
+    view === 'guide' && guideId ? (computePages().get(guideId) ?? null) : null;
+  const guideOpen = !!guidePage || !!changesPage || !!computePage;
+  // A propositions page computes its view from its collection, which it
+  // loads whole (src/ui/proposition-text.ts).
   const propositionsPage =
     view === 'propositions' && propositionsId
-      ? (propositionPages().get(propositionsId) ?? null)
+      ? (propositionFrames.find((c) => c.id === propositionsId) ?? null)
       : null;
   const propositionsOpen = !!propositionsPage;
+  /** The year and topic of a chronicle page; null on the index. */
+  const yearPage =
+    view === 'year' && yearId ? parseYearPageId(records.data, yearId) : null;
+  const yearOpen = view === 'year';
   const starterView =
     view === 'starter' && starterId
       ? (starterViews().get(starterId) ?? null)
@@ -589,18 +671,22 @@ export default function Workspace({
   const profile = useMemo(
     () =>
       view === 'person' && filters.focusId
-        ? personProfile(repository.data, filters.focusId)
+        ? personProfile(records.data, filters.focusId)
         : null,
-    [view, filters.focusId],
+    [view, filters.focusId, records],
   );
   const record = useMemo(
     () =>
       view === 'document' && filters.focusId
-        ? documentRecord(repository.data, filters.focusId)
+        ? documentRecord(records.data, filters.focusId)
         : null,
-    [view, filters.focusId],
+    [view, filters.focusId, records],
   );
   const recordOpen = !!profile || !!record;
+  /** A claim's own page, opened at its address rather than from a list. */
+  const claimPage =
+    view === 'claim' && claimId ? repository.claims.get(claimId) : undefined;
+  const claimPageOpen = !!claimPage;
   const projectionOpen =
     dossierOpen ||
     pathOpen ||
@@ -609,6 +695,7 @@ export default function Workspace({
     compareOpen ||
     controlOpen ||
     commitmentsOpen ||
+    guideOpen ||
     propositionsOpen;
   /**
    * Why the map view shows the list instead: the whole dataset is never
@@ -657,6 +744,7 @@ export default function Workspace({
                   kind: 'compare' as const,
                   id: frameworkComparison.id,
                   facet: compareFacet ?? undefined,
+                  editions: compareEditions,
                   inspect: claimId ?? undefined,
                 }
               : structure
@@ -671,59 +759,77 @@ export default function Workspace({
                       id: externalCommitments.id,
                       inspect: claimId ?? undefined,
                     }
-                  : propositionsPage
+                  : guidePage || changesPage || computePage
                     ? {
-                        kind: 'propositions' as const,
-                        id: propositionsPage.collection.id,
+                        kind: 'guide' as const,
+                        id: (guidePage ?? changesPage ?? computePage)!
+                          .collection.id,
                         inspect: claimId ?? undefined,
                       }
-                    : recordOpen && filters.focusId
+                    : propositionsPage
                       ? {
-                          kind: profile
-                            ? ('person' as const)
-                            : ('document' as const),
-                          id: filters.focusId,
+                          kind: 'propositions' as const,
+                          id: propositionsPage.id,
                           inspect: claimId ?? undefined,
                         }
-                      : view === 'search'
-                        ? {
-                            kind: 'search' as const,
-                            q: searchQuery.trim() || undefined,
-                            mode:
-                              searchMode === 'names'
-                                ? ('names' as const)
-                                : undefined,
-                            inspect: claimId ?? undefined,
-                          }
-                        : view === 'map' &&
-                            dossier &&
-                            !exploreQuery.trim() &&
-                            !claimId
+                      : yearOpen
+                        ? yearId
                           ? {
-                              kind: 'dossier' as const,
-                              id: dossier.institution.id,
-                              view: 'map' as const,
+                              kind: 'year' as const,
+                              id: yearId,
+                              inspect: claimId ?? undefined,
                             }
-                          : claimId
-                            ? { kind: 'claim' as const, id: claimId }
-                            : view === 'home'
-                              ? null
-                              : view === 'about'
-                                ? { kind: 'about' as const }
-                                : view === 'hub'
-                                  ? { kind: 'hub' as const, id: hubId }
-                                  : {
-                                      kind: 'explore' as const,
-                                      q: exploreQuery.trim() || undefined,
-                                      view:
-                                        view === 'timeline'
-                                          ? ('timeline' as const)
-                                          : undefined,
-                                    };
+                          : { kind: 'years' as const }
+                        : recordOpen && filters.focusId
+                          ? {
+                              kind: profile
+                                ? ('person' as const)
+                                : ('document' as const),
+                              id: filters.focusId,
+                              inspect: claimId ?? undefined,
+                            }
+                          : view === 'search'
+                            ? {
+                                kind: 'search' as const,
+                                q: searchQuery.trim() || undefined,
+                                mode:
+                                  searchMode === 'names'
+                                    ? ('names' as const)
+                                    : undefined,
+                                inspect: claimId ?? undefined,
+                              }
+                            : view === 'map' &&
+                                dossier &&
+                                !exploreQuery.trim() &&
+                                !claimId
+                              ? {
+                                  kind: 'dossier' as const,
+                                  id: dossier.institution.id,
+                                  view: 'map' as const,
+                                }
+                              : claimId
+                                ? { kind: 'claim' as const, id: claimId }
+                                : view === 'home'
+                                  ? null
+                                  : view === 'about'
+                                    ? { kind: 'about' as const }
+                                    : view === 'hub'
+                                      ? { kind: 'hub' as const, id: hubId }
+                                      : {
+                                          kind: 'explore' as const,
+                                          q: exploreQuery.trim() || undefined,
+                                          view:
+                                            view === 'timeline'
+                                              ? ('timeline' as const)
+                                              : undefined,
+                                        };
     if (deferred.current) {
       deferred.current = false;
       return;
     }
+    // While the next page loads, the page in view writes no address: after a
+    // step back or forward the browser already shows the next one.
+    if (visitPending()) return;
     if (linkNotice && (!target || target.kind === 'explore')) {
       document.title = pageMeta(repository.data, startPath)!.title;
       return;
@@ -742,7 +848,13 @@ export default function Workspace({
     const page = (h: string) => h.split(/[?#]/)[0];
     const change =
       opening || page(current) === page(next) ? 'replaceState' : 'pushState';
-    window.history[change](null, '', next);
+    // A change within the page keeps the entry's state (where the reader
+    // was, for a step back to it).
+    window.history[change](
+      change === 'replaceState' ? window.history.state : null,
+      '',
+      next,
+    );
   }, [
     starterView,
     starterSection,
@@ -753,9 +865,15 @@ export default function Workspace({
     documentsOpen,
     compareOpen,
     compareFacet,
+    compareEditions,
     structure,
     commitmentsOpen,
+    guidePage,
+    changesPage,
+    computePage,
     propositionsPage,
+    yearOpen,
+    yearId,
     recordOpen,
     profile,
     filters.focusId,
@@ -768,12 +886,14 @@ export default function Workspace({
     hubId,
     exploreQuery,
   ]);
+  const onClaimPage = view === 'claim';
   useEffect(() => {
-    if (!claimId) return;
+    // A claim's own page opens at its heading, with the panel below on a phone.
+    if (!claimId || onClaimPage) return;
     const panel = document.getElementById('inspector');
     panel?.focus({ preventScroll: true });
     if (window.innerWidth <= 940) panel?.scrollIntoView({ block: 'start' });
-  }, [claimId]);
+  }, [claimId, onClaimPage]);
   const openQuestion = (id: string, claim?: string) => {
     setLinkNotice(null);
     const target = questionPath(repository.data, id);
@@ -789,7 +909,7 @@ export default function Workspace({
     setClaimId(null);
     setView('path');
   };
-  const entityTypes = [...new Set(repository.data.entities.map((e) => e.type))];
+  const entityTypes = facts.entityTypes;
   const timeline = useMemo(
     () =>
       [...visible.claims].sort(
@@ -803,28 +923,7 @@ export default function Workspace({
   const selectEntity = useCallback((id: string) => {
     setLinkNotice(null);
     const isInstitution = repository.entities.get(id)?.type === 'organisation';
-    setView((v) =>
-      v === 'path' ||
-      v === 'starter' ||
-      v === 'documents' ||
-      v === 'compare' ||
-      v === 'control' ||
-      v === 'commitments' ||
-      v === 'propositions' ||
-      v === 'person' ||
-      v === 'document' ||
-      v === 'search'
-        ? isInstitution
-          ? 'dossier'
-          : 'claims'
-        : v === 'dossier' && !isInstitution
-          ? 'claims'
-          : v === 'home' || v === 'hub'
-            ? isInstitution
-              ? 'dossier'
-              : 'map'
-            : v,
-    );
+    setView((v) => entityView(v, isInstitution));
     // An explicit search or anchor selection opens the entity with all its relations.
     setFilters({
       topic: 'all',
@@ -864,6 +963,8 @@ export default function Workspace({
         view === 'path' ||
         view === 'starter' ||
         view === 'propositions' ||
+        view === 'year' ||
+        view === 'guide' ||
         view === 'compare'
           ? window.scrollY
           : null;
@@ -902,7 +1003,9 @@ export default function Workspace({
       view === 'starter' ||
       view === 'documents' ||
       view === 'compare' ||
+      view === 'guide' ||
       view === 'propositions' ||
+      view === 'year' ||
       view === 'search' ||
       view === 'hub' ||
       recordOpen
@@ -994,6 +1097,7 @@ export default function Workspace({
     setLinkNotice(null);
     setFilters((f) => ({ ...f, focusId: null }));
     setCompareFacet(null);
+    setCompareEditions([]);
     setClaimId(null);
     setQuery('');
     setView('compare');
@@ -1026,6 +1130,15 @@ export default function Workspace({
     setView('commitments');
     window.scrollTo(0, 0);
   };
+  const openGuide = (id: string) => {
+    setLinkNotice(null);
+    setFilters((f) => ({ ...f, focusId: null }));
+    setGuideId(id);
+    setClaimId(null);
+    setQuery('');
+    setView('guide');
+    window.scrollTo(0, 0);
+  };
   const openPropositions = (id: string) => {
     setLinkNotice(null);
     setFilters((f) => ({ ...f, focusId: null }));
@@ -1035,9 +1148,31 @@ export default function Workspace({
     setView('propositions');
     window.scrollTo(0, 0);
   };
+  /** Opens a chronicle page: a year (`2025`, `2025-governance`) or the index. */
+  const openYear = (id: string | null) => {
+    setLinkNotice(null);
+    setFilters((f) => ({ ...f, focusId: null }));
+    setYearId(id);
+    setClaimId(null);
+    setQuery('');
+    setView('year');
+    window.scrollTo(0, 0);
+    requestAnimationFrame(() =>
+      document.getElementById('chronicle')?.focus({ preventScroll: true }),
+    );
+  };
+  /** Opens a claim's own page. */
+  const openClaimPage = (id: string) => {
+    setLinkNotice(null);
+    setFilters((f) => ({ ...f, focusId: null }));
+    setClaimId(id);
+    setQuery('');
+    setView('claim');
+    window.scrollTo(0, 0);
+  };
   /** Opens the propositions page at one proposition's section. */
   const openProposition = (propositionId: string) => {
-    const collection = propositionCollections.find((c) =>
+    const collection = propositionFrames.find((c) =>
       c.groups.some((g) => g.propositionIds.includes(propositionId)),
     );
     if (!collection) return;
@@ -1096,14 +1231,49 @@ export default function Workspace({
     setView('search');
     window.scrollTo(0, 0);
   };
+  /** Opens the record explorer with every record. */
+  const openExplorer = () => {
+    reset();
+    setView('map');
+    window.scrollTo(0, 0);
+    requestAnimationFrame(() =>
+      document.getElementById('explorer')?.focus({ preventScroll: true }),
+    );
+  };
+  /** Opens a reading page that search lists, by its address. */
+  const openPage = (path: string) => {
+    const { target } = resolveReference(path, repository.data);
+    if (!target) return;
+    if (target.kind === 'hub') openHub(target.id);
+    else if (target.kind === 'about') openAbout();
+    else if (target.kind === 'explore') openExplorer();
+    else if (target.kind === 'documents') openDocuments();
+    else if (target.kind === 'compare') openCompare();
+    else if (target.kind === 'control') openControl(target.id);
+    else if (target.kind === 'commitments') openCommitments();
+    else if (target.kind === 'guide') openGuide(target.id);
+    else if (target.kind === 'propositions') openPropositions(target.id);
+    else if (target.kind === 'years') openYear(null);
+    else if (target.kind === 'year') openYear(target.id);
+    else if (target.kind === 'question' || target.kind === 'reading') {
+      if (questionStarters.some((s) => s.id === target.id))
+        openStarter(target.id);
+      else {
+        openQuestion(target.id);
+        window.scrollTo(0, 0);
+      }
+    }
+  };
   const navigate = (target: NavTarget) =>
     target === 'home'
       ? goHome()
       : target === 'search'
         ? openSearch()
-        : target === 'about'
-          ? openAbout()
-          : openHub(target);
+        : target === 'explore'
+          ? openExplorer()
+          : target === 'about'
+            ? openAbout()
+            : openHub(target);
   const openDossier = (id: string, view?: 'map') => {
     selectEntity(id);
     setView(view === 'map' ? 'map' : 'dossier');
@@ -1133,27 +1303,33 @@ export default function Workspace({
           ? openCompare()
           : action.kind === 'commitments'
             ? openCommitments()
-            : action.kind === 'propositions'
-              ? openPropositions(action.id)
-              : action.kind === 'control'
-                ? openControl(action.id)
-                : action.kind === 'reading'
-                  ? openQuestion(researchPaths[0].id)
-                  : action.kind === 'question'
-                    ? openStarter(action.id)
-                    : action.kind === 'dossier'
-                      ? openDossier(action.id, action.view)
-                      : action.kind === 'person'
-                        ? openEntity(action.id)
-                        : action.kind === 'claim'
-                          ? openClaim(action.id)
-                          : action.kind === 'search'
-                            ? openSearch(action.q ?? '')
-                            : action.kind === 'how-checked'
-                              ? showHowChecked()
-                              : action.kind === 'not-covered'
-                                ? showAboutSection('about-not-covered')
-                                : openAbout();
+            : action.kind === 'guide'
+              ? openGuide(action.id)
+              : action.kind === 'propositions'
+                ? openPropositions(action.id)
+                : action.kind === 'years'
+                  ? openYear(null)
+                  : action.kind === 'control'
+                    ? openControl(action.id)
+                    : action.kind === 'reading'
+                      ? openQuestion(researchPaths[0].id)
+                      : action.kind === 'question'
+                        ? openStarter(action.id)
+                        : action.kind === 'dossier'
+                          ? openDossier(action.id, action.view)
+                          : action.kind === 'person'
+                            ? openEntity(action.id)
+                            : action.kind === 'claim'
+                              ? openClaim(action.id)
+                              : action.kind === 'search'
+                                ? openSearch(action.q ?? '')
+                                : action.kind === 'explore'
+                                  ? openExplorer()
+                                  : action.kind === 'how-checked'
+                                    ? showHowChecked()
+                                    : action.kind === 'not-covered'
+                                      ? showAboutSection('about-not-covered')
+                                      : openAbout();
   // A start-page link followed while the records loaded opens once.
   const pendingStart = useRef(start);
   useEffect(() => {
@@ -1163,6 +1339,8 @@ export default function Workspace({
     perform(action);
   });
   const closeInspector = () => {
+    // Closing a claim's own page leaves the explorer in its place.
+    if (view === 'claim') setView('claims');
     if (claimId) {
       const inline = !!slotRef.current;
       setClaimId(null);
@@ -1178,6 +1356,8 @@ export default function Workspace({
             (view === 'path' ||
               view === 'starter' ||
               view === 'propositions' ||
+              view === 'year' ||
+              view === 'guide' ||
               view === 'compare') &&
             claimReturnScroll.current !== null;
           claimTrigger.current.focus({ preventScroll: restoreScroll });
@@ -1191,28 +1371,11 @@ export default function Workspace({
    * The address a record link opens from this view. An organisation opens its
    * dossier, except in the explorer, where it becomes the explorer's focus.
    */
-  const recordHref = (id: string) => {
-    const entity = repository.entities.get(id);
-    if (!entity) return undefined;
-    if (entity.proposition) {
-      const collection = propositionCollections.find((c) =>
-        c.groups.some((g) => g.propositionIds.includes(id)),
-      );
-      return collection
-        ? referencePath({ kind: 'propositions', id: collection.id })
-        : undefined;
-    }
-    if (entity.type === 'person' || entity.type === 'document')
-      return referencePath({ kind: entity.type, id });
-    if (
-      entity.type === 'organisation' &&
-      view !== 'map' &&
-      view !== 'claims' &&
-      view !== 'timeline'
-    )
-      return referencePath({ kind: 'dossier', id });
-    return undefined;
-  };
+  const recordHref = (id: string) =>
+    recordPath(
+      repository.entities.get(id),
+      view === 'map' || view === 'claims' || view === 'timeline',
+    );
   const plural = (n: number, one: string, many: string) =>
     `${n} ${n === 1 ? one : many}`;
   /**
@@ -1260,13 +1423,19 @@ export default function Workspace({
                   ? 'control'
                   : commitmentsOpen
                     ? 'commitments'
-                    : propositionsOpen
-                      ? 'propositions'
-                      : recordOpen
-                        ? 'record-page'
-                        : pathOpen || starterOpen
-                          ? 'question'
-                          : 'explorer';
+                    : guideOpen
+                      ? 'guide'
+                      : propositionsOpen
+                        ? 'propositions'
+                        : yearOpen
+                          ? 'chronicle'
+                          : recordOpen
+                            ? 'record-page'
+                            : claimPageOpen
+                              ? 'claim-page'
+                              : pathOpen || starterOpen
+                                ? 'question'
+                                : 'explorer';
   const readingPage =
     view === 'home' ||
     view === 'hub' ||
@@ -1276,8 +1445,11 @@ export default function Workspace({
     compareOpen ||
     controlOpen ||
     commitmentsOpen ||
+    guideOpen ||
     propositionsOpen ||
+    yearOpen ||
     recordOpen ||
+    claimPageOpen ||
     pathOpen ||
     starterOpen;
   const resume =
@@ -1298,6 +1470,72 @@ export default function Workspace({
         }
       </NavLink>
     ) : null;
+  /** The latest opening at a row; a later one, or leaving, ends earlier ones. */
+  const revealing = useRef(0);
+  useEffect(
+    () => () => {
+      revealing.current += 1;
+    },
+    [],
+  );
+  /**
+   * Opens a collection page with one claim open at its row, as if the reader
+   * had selected the row there. A row inside a closed section is opened first.
+   */
+  const openInCollection = (
+    kind: CollectionDefinition['kind'],
+    id: string,
+    claim: string,
+  ) => {
+    if (kind === 'documents') openDocuments();
+    else if (kind === 'compare') openCompare();
+    else if (kind === 'control') openControl(id);
+    else if (kind === 'commitments') openCommitments();
+    else if (kind === 'propositions') openPropositions(id);
+    else if (kind === 'guide') openGuide(id);
+    else openQuestion(id, claim);
+    // The row is drawn once the page's code and text have loaded (a
+    // propositions collection loads whole with its page): wait for that
+    // load, however long, then for the row (src/ui/reveal-row.ts).
+    const turn = ++revealing.current;
+    void revealRow({
+      loaded: preloadPage(`/${kind}/${encodeURIComponent(id)}`),
+      find: () =>
+        document.querySelector<HTMLElement>(
+          `main [data-claim-id="${CSS.escape(claim)}"]`,
+        ),
+      open: (row) => {
+        for (
+          let details = row.closest('details');
+          details;
+          details = details.parentElement?.closest('details') ?? null
+        )
+          details.open = true;
+        row.scrollIntoView({ block: 'center' });
+        row.focus({ preventScroll: true });
+        row.click();
+      },
+      missing: () => setClaimId(claim),
+      current: () => turn === revealing.current,
+    });
+  };
+  const claimCollections: ClaimCollection[] = claimPage
+    ? (collectionsByClaim(repository.data).get(claimPage.id) ?? []).map(
+        ({ kind, definition }) => {
+          const id = definition.id;
+          const institution =
+            typeof definition.institutionId === 'string'
+              ? repository.entities.get(definition.institutionId)?.name
+              : undefined;
+          const title = String(definition.title);
+          return {
+            title: institution ? `${institution}: ${title}` : title,
+            href: referencePath({ kind, id, inspect: claimPage.id }),
+            onOpen: () => openInCollection(kind, id, claimPage.id),
+          };
+        },
+      )
+    : [];
   const inlineSlot = claimId ? slot : null;
   const readingInspector = inlineSlot ? (
     createPortal(
@@ -1311,6 +1549,7 @@ export default function Workspace({
         onClose={closeInspector}
         onTopic={changeTopic}
         onFamily={selectFamily}
+        onYear={openYear}
       />,
       inlineSlot,
     )
@@ -1323,8 +1562,10 @@ export default function Workspace({
       onClaim={selectClaim}
       onEntity={openRecord}
       onClose={closeInspector}
+      statementShown={claimPageOpen}
       onTopic={changeTopic}
       onFamily={selectFamily}
+      onYear={openYear}
     />
   );
   return (
@@ -1341,24 +1582,36 @@ export default function Workspace({
               ? hubId
               : view === 'about'
                 ? 'about'
-                : view === 'search' || !readingPage
+                : view === 'search'
                   ? 'search'
-                  : documentsOpen ||
-                      compareOpen ||
-                      commitmentsOpen ||
-                      controlOpen ||
-                      starterOpen
-                    ? 'governance'
-                    : propositionsOpen
-                      ? 'ideas'
-                      : dossierOpen || pathOpen || profile
-                        ? 'institutions'
-                        : null
+                  : !readingPage
+                    ? 'explore'
+                    : computePage
+                      ? 'institutions'
+                      : documentsOpen ||
+                          compareOpen ||
+                          commitmentsOpen ||
+                          guideOpen ||
+                          controlOpen ||
+                          starterOpen
+                        ? 'governance'
+                        : propositionsOpen
+                          ? 'ideas'
+                          : dossierOpen || pathOpen || profile
+                            ? 'institutions'
+                            : null
         }
-        onNavigate={navigate}
+        onNavigate={(target) =>
+          afterRecords(
+            () => navigate(target),
+            () =>
+              target === 'about' ? pages.About.preload() : Promise.resolve(),
+          )
+        }
+        onSearch={openSearch}
         theme={theme}
         onTheme={onTheme}
-        onHowChecked={showHowChecked}
+        onHowChecked={() => afterRecords(showHowChecked, pages.About.preload)}
       />
       <Suspense
         fallback={
@@ -1374,12 +1627,9 @@ export default function Workspace({
         ) : view === 'about' ? (
           <main className="about-page" id="about" tabIndex={-1}>
             <About
-              repository={repository}
               status={datasetStatus}
-              history={frameworkHistory()}
-              commitmentTexts={commitmentsPage().documents.length}
               controlTimelines={controlStructures.length}
-              propositionCollections={propositionCollections.length}
+              propositionCollections={propositionFrames.length}
               dossiers={summary.dossiers.length}
               questions={researchPaths.length}
               starters={questionStarters.length}
@@ -1401,6 +1651,7 @@ export default function Workspace({
                       href={referencePath({
                         kind: 'search',
                         q: searchQuery.trim() || undefined,
+                        mode: searchMode === 'names' ? 'names' : undefined,
                       })}
                       onOpen={() => window.scrollTo(0, 0)}
                       aria-current="page"
@@ -1413,7 +1664,9 @@ export default function Workspace({
                         q: searchQuery.trim() || undefined,
                         view: 'timeline',
                       })}
-                      onOpen={() => openSearchView('timeline')}
+                      onOpen={() =>
+                        afterRecords(() => openSearchView('timeline'))
+                      }
                     >
                       Timeline
                     </NavLink>
@@ -1422,22 +1675,38 @@ export default function Workspace({
                         kind: 'explore',
                         q: searchQuery.trim() || undefined,
                       })}
-                      onOpen={() => openSearchView('map')}
+                      onOpen={() => afterRecords(() => openSearchView('map'))}
                     >
                       Map
                     </NavLink>
                   </div>
                 }
-                repository={repository}
-                index={searchIndex()}
+                source={searchSource()}
                 query={searchQuery}
                 onQuery={setSearchQuery}
                 mode={searchMode}
                 onMode={setSearchMode}
                 selectedClaimId={claimId}
-                onClaim={selectClaim}
-                onEntity={selectEntity}
-                onPage={openEntity}
+                onClaim={(id) => afterRecords(() => selectClaim(id))}
+                onEntity={(id) =>
+                  afterRecords(() => selectEntity(id), pages.Dossier.preload)
+                }
+                onPage={(id) =>
+                  afterRecords(
+                    () => openEntity(id),
+                    () =>
+                      Promise.all([
+                        pages.PersonPage.preload(),
+                        pages.DocumentPage.preload(),
+                      ]),
+                  )
+                }
+                onPagePath={(path) =>
+                  afterRecords(
+                    () => openPage(path),
+                    () => preloadPage(path),
+                  )
+                }
               />
             </main>
             {claimId ? (
@@ -1446,10 +1715,11 @@ export default function Workspace({
               <aside className="reading-aside" aria-label="Search guide">
                 <h2>How search works</h2>
                 <p>
-                  A term matches the beginning of a word. Case, accents and
-                  hyphens are ignored, so ASL-3 also finds “ASL 3”. Put a phrase
-                  in quotation marks to keep its words together. A record
-                  matches only if it contains every term.
+                  A term matches the beginning of a word. Case, accents, hyphens
+                  and apostrophes are ignored, so ASL-3 also finds “ASL 3” and
+                  “Anthropic’s” also finds “Anthropics”. Put a phrase in
+                  quotation marks to keep its words together. A record matches
+                  only if it contains every term.
                 </p>
                 <p>
                   Select a claim or passage to open its claim here, with the
@@ -1473,6 +1743,7 @@ export default function Workspace({
                 repository={repository}
                 selectedClaimId={claimId}
                 onClaim={selectClaim}
+                onEntity={openEntity}
                 onCompare={openCompare}
               />
             </main>
@@ -1505,6 +1776,8 @@ export default function Workspace({
                 onClaim={selectClaim}
                 facet={compareFacet}
                 onFacet={setCompareFacet}
+                editions={compareEditions}
+                onEditions={setCompareEditions}
               />
             </main>
             {claimId ? (
@@ -1598,16 +1871,161 @@ export default function Workspace({
               </aside>
             )}
           </div>
-        ) : propositionsPage ? (
+        ) : guidePage ? (
           <div className="reading-layout">
-            <main className="reading-main" id="propositions" tabIndex={-1}>
-              <Propositions
-                key={propositionsPage.collection.id}
-                view={propositionsPage}
+            <main className="reading-main" id="guide" tabIndex={-1}>
+              <FrameworksLaw
+                key={guidePage.collection.id}
+                view={guidePage}
                 repository={repository}
                 selectedClaimId={claimId}
                 onClaim={selectClaim}
                 onEntity={openEntity}
+                onCompare={openCompare}
+                onDocuments={openDocuments}
+                onCommitments={openCommitments}
+              />
+            </main>
+            {claimId ? (
+              readingInspector
+            ) : (
+              <aside className="reading-aside" aria-label="Reading guide">
+                <h2>Inspect any record</h2>
+                <p>
+                  Select a date, a standing, a link or a provision to open its
+                  claim here, with the qualification, the source passage, where
+                  it sits in the source and when it was checked. Close the panel
+                  to return to your place.
+                </p>
+                <p>
+                  Each text’s standing describes its form and recorded stage,
+                  not its legal effect. A framework’s statement that it complies
+                  with or serves under a law is the framework’s own claim. The
+                  page records no cause or influence between texts.
+                </p>
+              </aside>
+            )}
+          </div>
+        ) : changesPage ? (
+          <div className="reading-layout">
+            <main className="reading-main" id="guide" tabIndex={-1}>
+              <FrameworkChanges
+                key={changesPage.collection.id}
+                view={changesPage}
+                repository={repository}
+                selectedClaimId={claimId}
+                onClaim={selectClaim}
+                onEntity={openEntity}
+                onCompare={(facet) => {
+                  openCompare();
+                  if (facet) setCompareFacet(facet);
+                }}
+                onDocuments={openDocuments}
+                onGuide={openGuide}
+              />
+            </main>
+            {claimId ? (
+              readingInspector
+            ) : (
+              <aside className="reading-aside" aria-label="Reading guide">
+                <h2>Inspect any record</h2>
+                <p>
+                  Select a status, a step or a passage to open its record here,
+                  with the qualification, the source passage, where it sits in
+                  the edition and when it was checked. Close the panel to return
+                  to your place.
+                </p>
+                <p>
+                  A difference is between two editions’ recorded cells. The page
+                  gives no reason for it, and a framework’s text is never
+                  evidence of what a developer did.
+                </p>
+              </aside>
+            )}
+          </div>
+        ) : computePage ? (
+          <div className="reading-layout">
+            <main className="reading-main" id="guide" tabIndex={-1}>
+              <ComputeBuildout
+                key={computePage.collection.id}
+                view={computePage}
+                repository={repository}
+                selectedClaimId={claimId}
+                onClaim={selectClaim}
+                onPropositions={openPropositions}
+              />
+            </main>
+            {claimId ? (
+              readingInspector
+            ) : (
+              <aside className="reading-aside" aria-label="Reading guide">
+                <h2>Inspect any record</h2>
+                <p>
+                  Select a row, a figure or a stated date to open its record
+                  here, with the qualification, the source passage, where it
+                  sits in the source and when it was checked. Close the panel to
+                  return to your place.
+                </p>
+                <p>
+                  An announcement or an agreement records what a party stated.
+                  It does not show that anything was built, delivered or paid
+                  for.
+                </p>
+              </aside>
+            )}
+          </div>
+        ) : yearOpen ? (
+          <div className="reading-layout">
+            <main className="reading-main" id="chronicle" tabIndex={-1}>
+              <Chronicle
+                key={yearId ?? 'years'}
+                page={yearPage}
+                data={records.data}
+                index={chronicleIndexOf(records.data)}
+                selectedClaimId={claimId}
+                onClaim={selectClaim}
+                onClaimPage={openClaimPage}
+                onEntity={openRecord}
+                onYear={openYear}
+                onCollectionRow={(collection, claim) =>
+                  openInCollection('propositions', collection, claim)
+                }
+              />
+            </main>
+            {claimId ? (
+              readingInspector
+            ) : (
+              <aside className="reading-aside" aria-label="Reading guide">
+                {yearPage ? (
+                  <>
+                    <h2>Inspect any record</h2>
+                    <p>
+                      Select a record’s statement to open its claim here, with
+                      the source passage, where it sits in the source and when
+                      it was checked. Close the panel to return to your place.
+                    </p>
+                  </>
+                ) : (
+                  <h2>Reading the years</h2>
+                )}
+                <p>
+                  The records are listed by the dates their sources give. Their
+                  order in a year records no connection between them.
+                </p>
+              </aside>
+            )}
+          </div>
+        ) : propositionsPage ? (
+          <div className="reading-layout">
+            <main className="reading-main" id="propositions" tabIndex={-1}>
+              <Propositions
+                key={propositionsPage.id}
+                frame={propositionsPage}
+                repository={repository}
+                selectedClaimId={claimId}
+                onClaim={selectClaim}
+                onEntity={openEntity}
+                onProposition={openProposition}
                 focus={propositionFocus}
                 onFocused={() => setPropositionFocus(null)}
               />
@@ -1707,6 +2125,23 @@ export default function Workspace({
               </aside>
             )}
           </div>
+        ) : claimPageOpen ? (
+          <div className="reading-layout">
+            <main className="reading-main" id="claim-page" tabIndex={-1}>
+              <ClaimPage
+                key={claimPage!.id}
+                claim={claimPage!}
+                repository={repository}
+                collections={claimCollections}
+                onEntity={openRecord}
+                onExplore={() => {
+                  setFilters((f) => ({ ...f, focusId: claimPage!.subject }));
+                  setView('claims');
+                }}
+              />
+            </main>
+            {readingInspector}
+          </div>
         ) : recordOpen ? (
           <div className="reading-layout">
             <main className="reading-main" id="record-page" tabIndex={-1}>
@@ -1735,6 +2170,9 @@ export default function Workspace({
                     onExplore={() => selectEntity(record.document.id)}
                     onProposition={openProposition}
                     onCollection={perform}
+                    onCollectionRow={(id, claim) =>
+                      openInCollection('propositions', id, claim)
+                    }
                     onHistory={
                       record.family &&
                       frontierSafetyFrameworks.families.includes(
@@ -1771,7 +2209,12 @@ export default function Workspace({
             <section className="intro" aria-label="About this research sample">
               <div>
                 <span className="eyebrow">Record explorer</span>
-                <h1>Explore the documentary record</h1>
+                {/* A dossier's or a record's name is the page's main heading. */}
+                {focusEntity ? (
+                  <p className="intro-title">Explore the documentary record</p>
+                ) : (
+                  <h1>Explore the documentary record</h1>
+                )}
               </div>
               <p>
                 Every claim links to its source passage,
@@ -1861,8 +2304,8 @@ export default function Workspace({
                       <span>{topicLabels[topic]}</span>
                       <span className="nav-count">
                         {topic === 'all'
-                          ? explorable.length
-                          : explorable.filter((c) => c.topic === topic).length}
+                          ? facts.explorable
+                          : (facts.topics[topic] ?? 0)}
                       </span>
                     </button>
                   ))}
@@ -1982,7 +2425,7 @@ export default function Workspace({
                             ? 'Search results'
                             : 'All records'}
                     </div>
-                    <h2>
+                    <HeadingTag>
                       {focusEntity
                         ? focusEntity.name
                         : pathOpen && path
@@ -1990,7 +2433,7 @@ export default function Workspace({
                           : exploreQuery.trim()
                             ? `Search: ${exploreQuery.trim()}`
                             : topicLabels[filters.topic]}
-                    </h2>
+                    </HeadingTag>
                   </div>
                   <div
                     className="view-switch"
@@ -2110,11 +2553,13 @@ export default function Workspace({
                       </button>
                     </div>
                     <p className="result-count" role="status">
-                      {visible.entities.length} people, organisations and other
-                      records ·{' '}
+                      {/* Counted and drawn by their relations alone. */}
+                      {selected('entities', visible.entities).length} people,
+                      organisations and other records ·{' '}
                       {
-                        visible.claims.filter((c) => c.object.kind === 'entity')
-                          .length
+                        selected('claims', visible.claims).filter(
+                          (c) => c.object.kind === 'entity',
+                        ).length
                       }{' '}
                       relationships
                       {visible.claims.some((c) => c.object.kind === 'literal')
@@ -2133,6 +2578,18 @@ export default function Workspace({
                     dossier={dossier}
                     path={dossierPath}
                     onRead={() => dossierPath && openQuestion(dossierPath.id)}
+                    control={(() => {
+                      const c = controlStructures.find(
+                        (s) => s.organisationId === dossier.institution.id,
+                      );
+                      return c
+                        ? {
+                            title: c.title,
+                            href: referencePath({ kind: 'control', id: c.id }),
+                            onOpen: () => openControl(c.id),
+                          }
+                        : undefined;
+                    })()}
                     onRecordPage={openEntity}
                     repository={repository}
                     selectedClaimId={claimId}
@@ -2153,6 +2610,7 @@ export default function Workspace({
                       <Network
                         entities={visible.entities}
                         claims={visible.claims}
+                        records={repository.data}
                         anchors={repository.data.meta.anchors}
                         focusId={focusEntityId}
                         selectedClaimId={claimId}
@@ -2225,7 +2683,7 @@ export default function Workspace({
                           <div key={c.id} className="list-record">
                             {view === 'timeline' && (
                               <span className="timeline-date">
-                                {timeLabel(c)}
+                                {timeLabel(c, repository.data)}
                               </span>
                             )}
                             <ClaimButton
@@ -2310,13 +2768,16 @@ export default function Workspace({
                   onClose={closeInspector}
                   onTopic={changeTopic}
                   onFamily={selectFamily}
+                  onYear={openYear}
                 />
               )}
             </main>
           </>
         )}
       </Suspense>
-      <SiteFooter onAbout={openAbout} />
+      <SiteFooter
+        onAbout={() => afterRecords(openAbout, pages.About.preload)}
+      />
     </RecordHref.Provider>
   );
 }

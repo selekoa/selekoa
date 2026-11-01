@@ -1,6 +1,6 @@
 import { expect, it } from 'vitest';
 import { repository } from '../domain/repository';
-import { queryDataset, relationshipClaims } from '../domain/query';
+import { mapLimits, queryDataset, relationshipClaims } from '../domain/query';
 import { networkLayout, documentSequence } from './layout';
 import {
   compactClaims,
@@ -72,28 +72,57 @@ it('gives every primary and secondary entity type a distinct non-letter silhouet
   // Nine types since schema 2.19 added countries.
   expect(new Set(Object.values(entityStyle).map((s) => s.path)).size).toBe(9);
 });
-// Four full force layouts: CPU-bound, and slow while test files run in parallel.
+// Four force layouts: CPU-bound, and slow while test files run in parallel.
 it('keeps the four atlas landmarks pinned and layouts independent of input order or parallel counts', () => {
-  const positions = networkLayout(
-    data.entities,
-    data.claims,
-    data.meta.anchors,
-    null,
+  const visible = queryDataset(data, {
+    topic: 'all',
+    throughYear: 2026,
+    entityType: 'all',
+    focusId: 'anthropic',
+  });
+  // The layout is quadratic in the records drawn, and the app never draws
+  // more than mapLimits.focused.records; the whole dataset's map is
+  // withheld. Lay out a fixed, well-linked sample twice that size (the
+  // records with the most claims, ties by ID), with every landmark and the
+  // whole Anthropic map below, and the claims among them.
+  const degree = new Map<string, number>();
+  for (const c of data.claims)
+    for (const id of [
+      c.subject,
+      c.object.kind === 'entity' ? c.object.entityId : '',
+    ])
+      if (id) degree.set(id, (degree.get(id) ?? 0) + 1);
+  const kept = new Set([
+    ...data.meta.anchors,
+    ...visible.entities.map((e) => e.id),
+    ...[...data.entities]
+      .sort(
+        (a, b) =>
+          (degree.get(b.id) ?? 0) - (degree.get(a.id) ?? 0) ||
+          a.id.localeCompare(b.id),
+      )
+      .slice(0, mapLimits.focused.records * 2)
+      .map((e) => e.id),
+  ]);
+  const entities = data.entities.filter((e) => kept.has(e.id));
+  const claims = data.claims.filter(
+    (c) =>
+      kept.has(c.subject) &&
+      c.object.kind === 'entity' &&
+      kept.has(c.object.entityId),
   );
+  expect(claims.length).toBeGreaterThan(entities.length);
+  const positions = networkLayout(entities, claims, data.meta.anchors, null);
+  expect(positions.size).toBe(entities.length);
   const reordered = networkLayout(
-    [...data.entities].reverse(),
-    [...data.claims].reverse(),
+    [...entities].reverse(),
+    [...claims].reverse(),
     data.meta.anchors,
     null,
   );
   expect(reordered).toEqual(positions);
   expect(
-    networkLayout(
-      data.entities,
-      [...data.claims, ...data.claims],
-      data.meta.anchors,
-      null,
-    ),
+    networkLayout(entities, [...claims, ...claims], data.meta.anchors, null),
   ).toEqual(positions);
   data.meta.anchors.forEach((id, i) =>
     expect(positions.get(id)).toEqual({
@@ -101,12 +130,6 @@ it('keeps the four atlas landmarks pinned and layouts independent of input order
       y: 220 - Math.floor(i / 2) * 440,
     }),
   );
-  const visible = queryDataset(data, {
-    topic: 'all',
-    throughYear: 2026,
-    entityType: 'all',
-    focusId: 'anthropic',
-  });
   const focus = networkLayout(
     visible.entities,
     visible.claims,
@@ -120,7 +143,9 @@ it('keeps the four atlas landmarks pinned and layouts independent of input order
   expect(focus.get('anthropic')).toEqual(positions.get('anthropic'));
   for (const p of focus.values())
     expect(Number.isFinite(p.x) && Number.isFinite(p.y)).toBe(true);
-}, 20000);
+  // Laid out over the whole dataset until 2026-11-01, when that ran past
+  // this limit with 1,928 records.
+}, 90_000);
 it('retains exact target direction in offset reciprocal paths and bounds long labels', () => {
   const a = { x: 0, y: 0 },
     b = { x: 200, y: 0 };

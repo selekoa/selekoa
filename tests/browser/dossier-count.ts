@@ -20,18 +20,38 @@ const data = datasetSchema.parse(
  * A dossier's claim count. The 2026-10-17 lab genealogy (`lg-` records),
  * the 2026-10-27 author-person admission (`ap-` authorship records, which add
  * the papers of their people), the 2026-10-27 second Chinese institutions
- * collection (`c2-` records) and the 2026-10-28 frameworks-to-law admission
- * (`fl-` records) add records to several dossiers; the earlier records must
- * keep the count the tests recorded before them.
+ * collection (`c2-` records), the 2026-10-28 frameworks-to-law admission
+ * (`fl-` records), the 2026-10-30 compute, power and orbit and AI and
+ * biosecurity admissions (`cpo-` and `ab-` records), and the 2026-10-31 AI in
+ * biology, people and technical history admissions (`aib-`, `pp-` and `th-`
+ * records), the 2026-10-31 China III admission (`c3-` records) and the
+ * 2026-10-31 risk-debate admission (`rd-` records) add records to several
+ * dossiers; the earlier records must keep the
+ * count the tests recorded before them. The 2026-10-31 key papers admission
+ * (`kp-` records) also places earlier records in a dossier: its authorship
+ * records add documents through the institution's people, and the earlier
+ * claims about those documents follow. Its records are therefore taken out of
+ * the dataset before the dossier is read.
  */
+const beforeKeyPapers = {
+  ...data,
+  claims: data.claims.filter((c) => !c.id.startsWith('kp-')),
+};
 export function dossierCount(id: string, earlier: number) {
   const claims = institutionalDossier(data, id)!.claims;
-  const before = claims.filter(
+  const before = institutionalDossier(beforeKeyPapers, id)!.claims.filter(
     (c) =>
       !c.id.startsWith('lg-') &&
       !c.id.startsWith('ap-') &&
       !c.id.startsWith('c2-') &&
-      !c.id.startsWith('fl-'),
+      !c.id.startsWith('fl-') &&
+      !c.id.startsWith('cpo-') &&
+      !c.id.startsWith('ab-') &&
+      !c.id.startsWith('aib-') &&
+      !c.id.startsWith('pp-') &&
+      !c.id.startsWith('th-') &&
+      !c.id.startsWith('c3-') &&
+      !c.id.startsWith('rd-'),
   ).length;
   if (before !== earlier)
     throw new Error(`${id}: ${before} earlier records, expected ${earlier}`);

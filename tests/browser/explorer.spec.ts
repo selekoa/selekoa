@@ -1,7 +1,7 @@
 import { readdirSync, readFileSync } from 'node:fs';
 import { clickMapClaim } from './map-actions';
 import claims from '../../data/claims.json' with { type: 'json' };
-import { expect, test } from './fixtures';
+import { expect, MAP_FIRST_DRAW_TIMEOUT, test } from './fixtures';
 import { readSiteConfig } from '../../scripts/site-config';
 import { hasContact } from '../../src/site/site-config';
 import AxeBuilder from '@axe-core/playwright';
@@ -44,6 +44,7 @@ test('map renders in Edge without console or runtime errors', async ({
     .click();
   await expect(page.getByTestId('network').locator('canvas')).not.toHaveCount(
     0,
+    { timeout: MAP_FIRST_DRAW_TIMEOUT },
   );
   await expect(
     page.getByText('The map needs WebGL.', { exact: false }),
@@ -65,6 +66,7 @@ test('curved reciprocal lines open their distinct evidence records', async ({
     .click();
   await expect(page.getByTestId('network').locator('canvas')).not.toHaveCount(
     0,
+    { timeout: MAP_FIRST_DRAW_TIMEOUT },
   );
   // Isolate this pair so added personnel cannot move the canvas hit targets.
   await page
@@ -111,7 +113,10 @@ test('entity focus opens exact capital evidence and qualifications', async ({
     'not evidence that $4 billion had already been paid',
   );
   await expect(
-    panel.getByRole('link', { name: /Expanding access/ }),
+    panel.getByRole('link', {
+      name: 'Expanding access to safer AI with Amazon',
+      exact: true,
+    }),
   ).toHaveAttribute('href', 'https://www.anthropic.com/news/anthropic-amazon');
   await expect(panel).toContainText('Machine-checked');
   await expect(
@@ -135,8 +140,8 @@ test('search, two-source provenance and keyboard inspection', async ({
   page,
 }) => {
   await page.goto('/explore');
-  await page.getByRole('searchbox').fill('I. J. Good');
-  await page.getByRole('searchbox').press('Enter');
+  await page.getByRole('main').getByRole('searchbox').fill('I. J. Good');
+  await page.getByRole('main').getByRole('searchbox').press('Enter');
   const button = page.getByRole('button', {
     name: /I. J. Good authored Speculations/,
   });

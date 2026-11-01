@@ -14,6 +14,54 @@
   border-color: var(--color-accent);
   color: var(--color-accent);
 }
+/* Search from every page: a compact field beside the navigation, opened
+   from an icon on phones. */
+.header-search {
+  display: flex;
+  align-items: stretch;
+  flex: 0 1 200px;
+  min-width: 140px;
+  border: 1px solid var(--color-border-strong);
+  border-radius: var(--radius-md);
+  background: var(--color-raised);
+}
+.header-search:focus-within {
+  outline: 3px solid var(--color-focus);
+  outline-offset: 2px;
+}
+.header-search input:focus-visible {
+  outline: none;
+}
+.header-search input {
+  flex: 1 1 auto;
+  min-width: 0;
+  border: 0;
+  background: transparent;
+  color: var(--color-text);
+  font-size: var(--text-sm);
+  padding: 6px 8px;
+}
+.header-search button,
+.header-search-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 10px;
+  color: var(--color-text-muted);
+}
+.header-search button {
+  border-left: 1px solid var(--color-border);
+}
+.header-search-toggle {
+  display: none;
+  min-width: 40px;
+  min-height: 36px;
+  border: 1px solid var(--color-border);
+  text-decoration: none;
+}
+.header-search-toggle[aria-expanded='true'] {
+  background: var(--color-selected);
+}
 
 .review-exceptions .text-button {
   white-space: normal;
@@ -562,9 +610,9 @@
     display: none;
   }
 }
-@media (max-width: 720px) {
-  /* Keep the primary navigation on phones: it wraps below the wordmark, so
-     every item is visible without scrolling sideways. */
+@media (max-width: 1000px) {
+  /* Keep the primary navigation on narrow screens: it wraps below the
+     wordmark, so every item is visible without scrolling sideways. */
   .site-banner .site-header {
     height: auto;
     min-height: 65px;
@@ -572,11 +620,16 @@
     padding-block: 8px 0;
     row-gap: 0;
   }
+  .header-search {
+    order: 2;
+    margin-left: auto;
+  }
   .header-actions {
     order: 2;
+    margin-left: 0;
   }
   .header-nav {
-    order: 3;
+    order: 4;
     flex: 0 0 100%;
     flex-wrap: wrap;
     gap: 0 2px;
@@ -585,6 +638,28 @@
   }
   .header-nav :is(button, a) {
     padding: 8px 8px;
+  }
+}
+@media (max-width: 720px) {
+  /* On phones the search field opens from an icon, on a row of its own. */
+  .header-actions {
+    margin-left: auto;
+  }
+  .header-search-toggle {
+    display: flex;
+  }
+  .header-search {
+    display: none;
+  }
+  .header-search.is-open {
+    display: flex;
+    order: 3;
+    flex: 0 0 100%;
+    margin: 8px 0 0;
+  }
+  .header-search.is-open input {
+    font-size: var(--text-lg);
+    padding: 8px 10px;
   }
   .landing,
   .reading-layout {
@@ -729,6 +804,13 @@
   display: grid;
   gap: var(--space-1);
 }
+.provision-row-note {
+  display: block;
+  margin-top: var(--space-1);
+  font-size: var(--text-sm);
+  font-weight: 400;
+  color: var(--color-text-muted);
+}
 .provision-wording-editions {
   color: var(--color-text-muted);
   font-variant-numeric: tabular-nums;
@@ -812,6 +894,11 @@
 }
 .landing-featured .landing-featured-map {
   margin-top: var(--space-3);
+}
+.landing-featured .landing-featured-note {
+  margin-top: var(--space-3);
+  font-size: var(--text-base);
+  color: var(--color-text-muted);
 }
 .landing-featured .text-button {
   padding: 0;
@@ -908,4 +995,34 @@
   .hub-cards {
     grid-template-columns: minmax(0, 1fr);
   }
+}
+/* The passage a row's statement summarises, as in a provision row. */
+.row-excerpt {
+  display: block;
+  margin: 6px 8px;
+  padding-left: 10px;
+  border-left: 2px solid var(--color-border);
+  font-family: var(--font-serif);
+  font-size: var(--text-base);
+  line-height: 1.5;
+  color: var(--color-text);
+}
+.row-excerpt-locator {
+  display: block;
+  font-family: var(--font-sans);
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+}
+/* Start page: the entry to the chronicle, below the hub cards. */
+.landing-years {
+  margin: -24px 0 40px;
+  font-size: var(--text-base);
+  color: var(--color-text-muted);
+}
+.landing-years .text-button {
+  padding: 0;
+  white-space: normal;
+}
+.landing-years .text-button {
+  font-size: inherit;
 }

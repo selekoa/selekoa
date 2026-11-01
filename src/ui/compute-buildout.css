@@ -1,0 +1,73 @@
+/* The compute guide: timeline rows with their statements, stated dates kept
+   apart from events, and each record's figures as its source words them. */
+.cb-row-statement {
+  font-size: var(--text-md);
+  overflow-wrap: anywhere;
+}
+.cb-announcement {
+  border-style: dashed;
+}
+.cb-legend > div {
+  grid-template-columns: minmax(0, 8em) minmax(0, 1fr);
+}
+.cb-stated-rows {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  max-width: 90ch;
+}
+.cb-stated-rows li {
+  padding: 6px 0 6px 12px;
+  border-left: 2px dotted var(--color-border-strong);
+  border-bottom: 1px solid var(--color-border);
+  font-size: var(--text-md);
+  overflow-wrap: anywhere;
+}
+.cb-stated-when {
+  font-weight: 650;
+  font-variant-numeric: tabular-nums;
+}
+.cb-stated-kind {
+  color: var(--color-text-muted);
+}
+.cb-stated-note {
+  display: block;
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+}
+.cb-group > h3 .small-note {
+  font-weight: 400;
+  color: var(--color-text-muted);
+}
+.cb-excerpt,
+.cb-figures,
+.cb-figure,
+.cb-stated {
+  display: block;
+}
+.cb-excerpt {
+  margin: 4px 0 2px;
+  font-size: var(--text-sm);
+}
+.cb-figure {
+  padding-left: 10px;
+  border-left: 2px solid var(--color-rule);
+  margin: 2px 0;
+}
+.cb-figure-value {
+  display: block;
+  overflow-wrap: anywhere;
+}
+.cb-figure-meta,
+.cb-stated {
+  color: var(--color-text-muted);
+}
+.cb-stated-label {
+  font-weight: 650;
+}
+.cb-orbit > p {
+  max-width: 80ch;
+}
+.cb-row .fl-row-date {
+  align-content: start;
+}

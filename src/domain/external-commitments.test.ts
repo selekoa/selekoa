@@ -169,7 +169,12 @@ describe('external commitments (week 4c)', () => {
         'wh-voluntary-ai-commitments-2023-09',
         'frontier-ai-safety-commitments-2024',
         'gpai-code-of-practice-2025',
-      ].map((id) => doc(id).provisions.length),
+        // The 2026-10-30 AI and biosecurity admission (`ab-` records) adds
+        // the Code of Practice's CBRN provisions; the earlier count stands.
+      ].map(
+        (id) =>
+          doc(id).provisions.filter((c) => !c.id.startsWith('ab-')).length,
+      ),
     ).toEqual([5, 1, 5, 9]);
     for (const d of view.documents.slice(0, 4))
       for (const c of d.provisions) {

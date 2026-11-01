@@ -1,0 +1,2434 @@
+{
+  "group": "governance",
+  "searched": "Retrieved 2026-10-29, sequentially and directly (no relay, no archive). CAC: the announcement page of 2 April 2024 (cac.gov.cn/2024-04/02/c_1713729983803145.htm), which on retrieval listed 13 attachments (附件1 生成式人工智能服务已备案信息（2024年4月） to 附件13 …（2026年8月）); all 13 PDFs were fetched through the page's downloadfile.jsp links (one connection reset on 附件5, retried successfully) and their rows were counted from pdftotext layout output; five listings are proposed as documents (2024-04, 2024-08, 2025-01, 2025-08, 2026-08: the opening list, the earliest with a registered section, the one reaching the stated end-2024 total, the earliest with a BAAI entry, and the latest). Cross-checks: the filed numbering reaches 302 in the January 2025 list and 748 in the December 2025 list, and the registered numbering 105 and 435, matching the totals the CAC states for 31 December 2024 and 31 December 2025. The CAC's announcement of 9 January 2026 on 2025 filings (cac.gov.cn/2026-01/09/c_1769688009588554.htm) was retrieved after two connection resets. Deep-synthesis algorithm filings: the CAC announcements of 20 June 2023 (first) and 17 July 2026 (eighteenth batch, the latest located) and their attachments, which are .docx files; the pack tool stores no text layer for them, so their counts were made from word/document.xml and are carried as paraphrase on the announcement pages. Batches 2 to 17 were not retrieved (bounded). Covered developers were searched in all 13 generative-AI attachments by name: StepFun, 01.AI, iFlytek, SenseTime, Tencent and Shanghai AI Laboratory appear in the April 2024 list, BAAI (北京智源人工智能研究院) earliest in the August 2025 list; of the earlier collections' developers, Zhipu, MiniMax and Baidu (April 2024) and DeepSeek (August 2024) were recorded because the dataset already holds their listed legal names; Moonshot AI (北京月之暗面科技有限公司, April 2024 list, row 16), ByteDance (北京抖音信息服务有限公司, 云雀大模型, row 3) and Alibaba (阿里巴巴达摩院（杭州）科技有限公司, row 11) appear but were left out because no dataset record or brief mapping ties those legal names to the dataset entities. Latest-listing entries per developer were not drafted (budget). In the first deep-synthesis list iFlytek (科大讯飞股份有限公司), Tencent (深圳市腾讯计算机系统有限公司), Zhipu and Baidu entities appear; not drafted. Provincial lists of locally filed services and the CAC algorithm-filing system (beian.cac.gov.cn) were not searched. TC260: the three framework editions were fetched again from the URLs of the dataset sources (SHA-256 identical to the dataset's records) and searched for provisions not yet recorded, especially on developers and open-source models; the CAC news item for 2.0 (cac.gov.cn/2025-09/15/c_1759653448369123.htm) and TC260's news item for 3.0 were read for replacement wording: neither news item says an edition replaces another; the 2.0 and 3.0 prefaces say each was drafted on the basis of the earlier editions and updates them, recorded as two supersedes_document candidates for reviewer decision. No retrieval was refused (no HTTP 4xx/5xx); cac.gov.cn reset first connections several times (curl error 35), each retried successfully. Web search was used for discovery of the 2026 and deep-synthesis announcement URLs only.",
+  "existingUsed": [
+    "fl-cn-filings-2024-published",
+    "fl-cn-filings-2025-count",
+    "cn-genai-measures-issued",
+    "cn-genai-measures-scope",
+    "fl-cn-labelling-issued",
+    "fl-cn-labelling-filing-materials",
+    "fl-cn-gb45438-published",
+    "fl-cn-gbt45654-published",
+    "c2-governance-tc260-asgf-v1-published",
+    "c2-governance-tc260-asgf-v2-published",
+    "c2-governance-tc260-asgf-v3-published",
+    "c2-governance-tc260-asgf-v1-registration",
+    "c2-governance-tc260-asgf-v2-open-source-prohibited-uses",
+    "c2-governance-tc260-asgf-v2-loss-of-control-testing",
+    "c2-governance-tc260-asgf-v3-loss-of-control-testing",
+    "c2-governance-tc260-asgf-v3-agent-risk-framework",
+    "c2-governance-aiia-aisc-signatory-zhipu",
+    "c2-governance-aiia-aisc-signatory-minimax",
+    "c2-governance-aiia-aisc-signatory-baidu",
+    "c2-governance-aiia-aisc-signatory-deepseek"
+  ],
+  "entities": [
+    {
+      "id": "stepfun",
+      "existing": true
+    },
+    {
+      "id": "zero-one-ai",
+      "existing": true
+    },
+    {
+      "id": "iflytek",
+      "existing": true
+    },
+    {
+      "id": "sensetime",
+      "existing": true
+    },
+    {
+      "id": "tencent",
+      "existing": true
+    },
+    {
+      "id": "shanghai-ai-lab",
+      "existing": true
+    },
+    {
+      "id": "zhipu",
+      "existing": true
+    },
+    {
+      "id": "minimax",
+      "existing": true
+    },
+    {
+      "id": "baidu",
+      "existing": true
+    },
+    {
+      "id": "deepseek",
+      "existing": true
+    },
+    {
+      "id": "cyberspace-administration-of-china",
+      "existing": true
+    },
+    {
+      "id": "tc260",
+      "existing": true
+    },
+    {
+      "id": "tc260-asgf-v1-0",
+      "existing": true
+    },
+    {
+      "id": "tc260-asgf-v2-0",
+      "existing": true
+    },
+    {
+      "id": "tc260-asgf-v3-0",
+      "existing": true
+    },
+    {
+      "id": "cn-cac-genai-filings-announcement-2024",
+      "existing": true
+    },
+    {
+      "id": "cn-cac-genai-filings-announcement-2025",
+      "existing": true
+    },
+    {
+      "id": "cn-cac-genai-service-list-2024-04",
+      "type": "document",
+      "documentKind": "listing",
+      "name": "生成式人工智能服务已备案信息（2024年4月） — CAC list of generative AI services, attachment 1",
+      "subtype": "Regulator listing",
+      "aliases": ["生成式人工智能服务已备案信息（2024年4月）"],
+      "description": "Attachment 1 (附件1) to the CAC announcement page of 2 April 2024, a PDF table of generative AI services that completed filing (已备案); dated by its title to 2024-04. A listing records completed procedures, not an assessment of safety or compliance.",
+      "sourceIds": [
+        "c3-src-cac-genai-list-2024-04",
+        "c3-src-cac-genai-filings-page"
+      ]
+    },
+    {
+      "id": "cn-cac-genai-service-list-2024-08",
+      "type": "document",
+      "documentKind": "listing",
+      "name": "生成式人工智能服务已备案和已登记信息（2024年8月） — CAC list of generative AI services, attachment 2",
+      "subtype": "Regulator listing",
+      "aliases": ["生成式人工智能服务已备案和已登记信息（2024年8月）"],
+      "description": "Attachment 2 (附件2) to the CAC announcement page of 2 April 2024, a PDF table of generative AI services that completed filing (已备案), followed by applications or functions that completed registration (已登记); dated by its title to 2024-08. A listing records completed procedures, not an assessment of safety or compliance.",
+      "sourceIds": [
+        "c3-src-cac-genai-list-2024-08",
+        "c3-src-cac-genai-filings-page"
+      ]
+    },
+    {
+      "id": "cn-cac-genai-service-list-2025-01",
+      "type": "document",
+      "documentKind": "listing",
+      "name": "生成式人工智能服务已备案和已登记信息（2025年1月） — CAC list of generative AI services, attachment 4",
+      "subtype": "Regulator listing",
+      "aliases": ["生成式人工智能服务已备案和已登记信息（2025年1月）"],
+      "description": "Attachment 4 (附件4) to the CAC announcement page of 2 April 2024, a PDF table of generative AI services that completed filing (已备案), followed by applications or functions that completed registration (已登记); dated by its title to 2025-01. A listing records completed procedures, not an assessment of safety or compliance.",
+      "sourceIds": [
+        "c3-src-cac-genai-list-2025-01",
+        "c3-src-cac-genai-filings-page"
+      ]
+    },
+    {
+      "id": "cn-cac-genai-service-list-2025-08",
+      "type": "document",
+      "documentKind": "listing",
+      "name": "生成式人工智能服务已备案和已登记信息（2025年8月） — CAC list of generative AI services, attachment 7",
+      "subtype": "Regulator listing",
+      "aliases": ["生成式人工智能服务已备案和已登记信息（2025年8月）"],
+      "description": "Attachment 7 (附件7) to the CAC announcement page of 2 April 2024, a PDF table of generative AI services that completed filing (已备案), followed by applications or functions that completed registration (已登记); dated by its title to 2025-08. A listing records completed procedures, not an assessment of safety or compliance.",
+      "sourceIds": [
+        "c3-src-cac-genai-list-2025-08",
+        "c3-src-cac-genai-filings-page"
+      ]
+    },
+    {
+      "id": "cn-cac-genai-service-list-2026-08",
+      "type": "document",
+      "documentKind": "listing",
+      "name": "生成式人工智能服务已备案和已登记信息（2026年8月） — CAC list of generative AI services, attachment 13",
+      "subtype": "Regulator listing",
+      "aliases": ["生成式人工智能服务已备案和已登记信息（2026年8月）"],
+      "description": "Attachment 13 (附件13) to the CAC announcement page of 2 April 2024, a PDF table of generative AI services that completed filing (已备案), followed by applications or functions that completed registration (已登记); dated by its title to 2026-08. A listing records completed procedures, not an assessment of safety or compliance.",
+      "sourceIds": [
+        "c3-src-cac-genai-list-2026-08",
+        "c3-src-cac-genai-filings-page"
+      ]
+    },
+    {
+      "id": "cn-cac-genai-filings-announcement-2026",
+      "type": "document",
+      "documentKind": "announcement",
+      "name": "CAC announcement publishing 2025 information on filed generative AI services (国家互联网信息办公室关于发布2025年生成式人工智能服务已备案信息的公告), January 2026",
+      "subtype": "Press release",
+      "aliases": [
+        "国家互联网信息办公室关于发布2025年生成式人工智能服务已备案信息的公告"
+      ],
+      "description": "The CAC announcement of 9 January 2026 stating filed and registered generative AI service counts for 2025 and cumulatively to 31 December 2025.",
+      "sourceIds": ["c3-src-cac-genai-filings-2025-announcement"]
+    },
+    {
+      "id": "cn-cac-deep-synthesis-list-2023-06",
+      "type": "document",
+      "documentKind": "listing",
+      "name": "境内深度合成服务算法备案清单（2023年6月） — CAC list of filed deep-synthesis service algorithms, June 2023",
+      "subtype": "Regulator listing",
+      "aliases": ["境内深度合成服务算法备案清单（2023年6月）"],
+      "description": "Word attachment to the CAC announcement of 20 June 2023 listing deep-synthesis service algorithms filed under the Provisions on the Administration of Deep Synthesis of Internet Information Services, by algorithm name, role (service provider or technical supporter), entity, product, use and filing number.",
+      "sourceIds": [
+        "c3-src-cac-deep-synthesis-list-01",
+        "c3-src-cac-deep-synthesis-batch01"
+      ]
+    },
+    {
+      "id": "cn-cac-deep-synthesis-list-2026-07",
+      "type": "document",
+      "documentKind": "listing",
+      "name": "境内深度合成服务算法备案清单（2026年7月） — CAC list of filed deep-synthesis service algorithms, July 2026",
+      "subtype": "Regulator listing",
+      "aliases": ["境内深度合成服务算法备案清单（2026年7月）"],
+      "description": "Word attachment to the CAC announcement of 17 July 2026 (the eighteenth batch) listing deep-synthesis service algorithms filed under the Provisions on the Administration of Deep Synthesis of Internet Information Services, by algorithm name, role (service provider or technical supporter), entity, product, use and filing number.",
+      "sourceIds": [
+        "c3-src-cac-deep-synthesis-list-18",
+        "c3-src-cac-deep-synthesis-batch18"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "c3-src-cac-genai-filings-page",
+      "cacheKey": "gov-cac-filings-page",
+      "title": "Announcement of the Cyberspace Administration of China publishing information on filed generative AI services",
+      "originalTitle": "国家互联网信息办公室关于发布生成式人工智能服务已备案信息的公告",
+      "authors": ["国家互联网信息办公室"],
+      "publisher": "中央网络安全和信息化委员会办公室 / 国家互联网信息办公室 (cac.gov.cn)",
+      "publicationDate": "2024-04-02",
+      "kind": "announcement",
+      "url": "https://www.cac.gov.cn/2024-04/02/c_1713729983803145.htm",
+      "route": "direct",
+      "language": "zh-Hans",
+      "sourceClass": "primary",
+      "version": {
+        "kind": "mutable-page",
+        "note": "CAC page dated 2024年04月02日 17:00, read as it stood on 2026-10-29; its footer reads \"publishdate:2026/09/14 17:30:39\" and it then listed 13 attachments (附件1 to 附件13), so the attachment list has been extended since April 2024. The dataset's source for this announcement (source-cn-cac-genai-filings-2024) is the gov.cn repost of 3 April 2024, a different expression; no datasetSourceId is set."
+      }
+    },
+    {
+      "id": "c3-src-cac-genai-list-2024-04",
+      "cacheKey": "gov-cac-att01",
+      "title": "Information on filed generative AI services (April 2024)",
+      "originalTitle": "生成式人工智能服务已备案信息（2024年4月）",
+      "authors": ["国家互联网信息办公室"],
+      "publisher": "国家互联网信息办公室 (cac.gov.cn, attachment to the announcement page of 2 April 2024)",
+      "publicationDate": "2024-04",
+      "kind": "report",
+      "url": "https://www.cac.gov.cn/cms/pub/interact/downloadfile.jsp?filepath=NUtqEIwGiCjGm2Bhl20cvHaciuAb2ebr7U8X1xV5925vz0vHSSJ6sATU6DtmcGo1wYjaLSPNhSkF5EQhi7RHdlAfqphfFn00jUfFRLdBE5I=&fText=%E7%94%9F%E6%88%90%E5%BC%8F%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E6%9C%8D%E5%8A%A1%E5%B7%B2%E5%A4%87%E6%A1%88%E4%BF%A1%E6%81%AF%EF%BC%882024%E5%B9%B44%E6%9C%88%EF%BC%89",
+      "route": "direct",
+      "language": "zh-Hans",
+      "sourceClass": "primary",
+      "documentWords": {
+        "count": 2868,
+        "basis": "Approximate: all words in the retrieved PDF text layer (pdftotext), each CJK character counted as one word, counted on 2026-10-29; the default method (text blocks of ten or more words) excludes table cells, which are the whole of this document."
+      },
+      "version": {
+        "kind": "pdf",
+        "id": "附件1: 生成式人工智能服务已备案信息（2024年4月） (PDF served by /cms/pub/interact/downloadfile.jsp)",
+        "note": "PDF attachment 1 of the CAC page, retrieved 2026-10-29 through the downloadfile.jsp link on the page (the URL carries an encoded file path and the attachment title). The PDF metadata creation date is 2024-08-02; that is a file property, not a publication date. The month is the one in the attachment title."
+      }
+    },
+    {
+      "id": "c3-src-cac-genai-list-2024-08",
+      "cacheKey": "gov-cac-att02",
+      "title": "Information on filed and registered generative AI services (August 2024)",
+      "originalTitle": "生成式人工智能服务已备案和已登记信息（2024年8月）",
+      "authors": ["国家互联网信息办公室"],
+      "publisher": "国家互联网信息办公室 (cac.gov.cn, attachment to the announcement page of 2 April 2024)",
+      "publicationDate": "2024-08",
+      "kind": "report",
+      "url": "https://www.cac.gov.cn/cms/pub/interact/downloadfile.jsp?filepath=NUtqEIwGiCjGm2Bhl20cvD3k2jZHxW62PpTbCodAq/hvz0vHSSJ6sATU6DtmcGo1SVh2XLVTbvXpuP4KM0gfclAfqphfFn00jUfFRLdBE5I=&fText=%E7%94%9F%E6%88%90%E5%BC%8F%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E6%9C%8D%E5%8A%A1%E5%B7%B2%E5%A4%87%E6%A1%88%E5%92%8C%E5%B7%B2%E7%99%BB%E8%AE%B0%E4%BF%A1%E6%81%AF%EF%BC%882024%E5%B9%B48%E6%9C%88%EF%BC%89",
+      "route": "direct",
+      "language": "zh-Hans",
+      "sourceClass": "primary",
+      "documentWords": {
+        "count": 2380,
+        "basis": "Approximate: all words in the retrieved PDF text layer (pdftotext), each CJK character counted as one word, counted on 2026-10-29; the default method (text blocks of ten or more words) excludes table cells, which are the whole of this document."
+      },
+      "version": {
+        "kind": "pdf",
+        "id": "附件2: 生成式人工智能服务已备案和已登记信息（2024年8月） (PDF served by /cms/pub/interact/downloadfile.jsp)",
+        "note": "PDF attachment 2 of the CAC page, retrieved 2026-10-29 through the downloadfile.jsp link on the page (the URL carries an encoded file path and the attachment title). The PDF metadata creation date is 2024-08-08; that is a file property, not a publication date. The month is the one in the attachment title."
+      }
+    },
+    {
+      "id": "c3-src-cac-genai-list-2025-01",
+      "cacheKey": "gov-cac-att04",
+      "title": "Information on filed and registered generative AI services (January 2025)",
+      "originalTitle": "生成式人工智能服务已备案和已登记信息（2025年1月）",
+      "authors": ["国家互联网信息办公室"],
+      "publisher": "国家互联网信息办公室 (cac.gov.cn, attachment to the announcement page of 2 April 2024)",
+      "publicationDate": "2025-01",
+      "kind": "report",
+      "url": "https://www.cac.gov.cn/cms/pub/interact/downloadfile.jsp?filepath=NUtqEIwGiCjGm2Bhl20cvMJN~~~VfG4e3TRGnFD8PfRvz0vHSSJ6sATU6DtmcGo1/SlbWBI5~oROMVCft2OZdVAfqphfFn00jUfFRLdBE5I=&fText=%E7%94%9F%E6%88%90%E5%BC%8F%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E6%9C%8D%E5%8A%A1%E5%B7%B2%E5%A4%87%E6%A1%88%E5%92%8C%E5%B7%B2%E7%99%BB%E8%AE%B0%E4%BF%A1%E6%81%AF%EF%BC%882025%E5%B9%B41%E6%9C%88%EF%BC%89",
+      "route": "direct",
+      "language": "zh-Hans",
+      "sourceClass": "primary",
+      "documentWords": {
+        "count": 2414,
+        "basis": "Approximate: all words in the retrieved PDF text layer (pdftotext), each CJK character counted as one word, counted on 2026-10-29; the default method (text blocks of ten or more words) excludes table cells, which are the whole of this document."
+      },
+      "version": {
+        "kind": "pdf",
+        "id": "附件4: 生成式人工智能服务已备案和已登记信息（2025年1月） (PDF served by /cms/pub/interact/downloadfile.jsp)",
+        "note": "PDF attachment 4 of the CAC page, retrieved 2026-10-29 through the downloadfile.jsp link on the page (the URL carries an encoded file path and the attachment title). The PDF metadata creation date is 2025-01-08; that is a file property, not a publication date. The month is the one in the attachment title."
+      }
+    },
+    {
+      "id": "c3-src-cac-genai-list-2025-08",
+      "cacheKey": "gov-cac-att07",
+      "title": "Information on filed and registered generative AI services (August 2025)",
+      "originalTitle": "生成式人工智能服务已备案和已登记信息（2025年8月）",
+      "authors": ["国家互联网信息办公室"],
+      "publisher": "国家互联网信息办公室 (cac.gov.cn, attachment to the announcement page of 2 April 2024)",
+      "publicationDate": "2025-08",
+      "kind": "report",
+      "url": "https://www.cac.gov.cn/cms/pub/interact/downloadfile.jsp?filepath=NUtqEIwGiCjGm2Bhl20cvJU/TD~kOS2Ih3/TRVNsvLlvz0vHSSJ6sATU6DtmcGo1WeCOTuWKYDNBmOqUVzGiOlAfqphfFn00jUfFRLdBE5I=&fText=%E9%99%84%E4%BB%B67%EF%BC%9A%E7%94%9F%E6%88%90%E5%BC%8F%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E6%9C%8D%E5%8A%A1%E5%B7%B2%E5%A4%87%E6%A1%88%E5%92%8C%E5%B7%B2%E7%99%BB%E8%AE%B0%E4%BF%A1%E6%81%AF%EF%BC%882025%E5%B9%B48%E6%9C%88%EF%BC%89",
+      "route": "direct",
+      "language": "zh-Hans",
+      "sourceClass": "primary",
+      "documentWords": {
+        "count": 3114,
+        "basis": "Approximate: all words in the retrieved PDF text layer (pdftotext), each CJK character counted as one word, counted on 2026-10-29; the default method (text blocks of ten or more words) excludes table cells, which are the whole of this document."
+      },
+      "version": {
+        "kind": "pdf",
+        "id": "附件7: 生成式人工智能服务已备案和已登记信息（2025年8月） (PDF served by /cms/pub/interact/downloadfile.jsp)",
+        "note": "PDF attachment 7 of the CAC page, retrieved 2026-10-29 through the downloadfile.jsp link on the page (the URL carries an encoded file path and the attachment title). The PDF metadata creation date is 2025-09-10; that is a file property, not a publication date. The month is the one in the attachment title."
+      }
+    },
+    {
+      "id": "c3-src-cac-genai-list-2026-08",
+      "cacheKey": "gov-cac-att13",
+      "title": "Information on filed and registered generative AI services (August 2026)",
+      "originalTitle": "生成式人工智能服务已备案和已登记信息（2026年8月）",
+      "authors": ["国家互联网信息办公室"],
+      "publisher": "国家互联网信息办公室 (cac.gov.cn, attachment to the announcement page of 2 April 2024)",
+      "publicationDate": "2026-08",
+      "kind": "report",
+      "url": "https://www.cac.gov.cn/cms/pub/interact/downloadfile.jsp?filepath=NUtqEIwGiCjGm2Bhl20cvGmT22KDqGR7FvHLiywcKRhvz0vHSSJ6sATU6DtmcGo1jaT2QSSyYLABPnQL~026zVAfqphfFn00jUfFRLdBE5I=&fText=%E7%94%9F%E6%88%90%E5%BC%8F%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E6%9C%8D%E5%8A%A1%E5%B7%B2%E5%A4%87%E6%A1%88%E5%92%8C%E5%B7%B2%E7%99%BB%E8%AE%B0%E4%BF%A1%E6%81%AF%EF%BC%882026%E5%B9%B48%E6%9C%88%EF%BC%89",
+      "route": "direct",
+      "language": "zh-Hans",
+      "sourceClass": "primary",
+      "documentWords": {
+        "count": 6274,
+        "basis": "Approximate: all words in the retrieved PDF text layer (pdftotext), each CJK character counted as one word, counted on 2026-10-29; the default method (text blocks of ten or more words) excludes table cells, which are the whole of this document."
+      },
+      "version": {
+        "kind": "pdf",
+        "id": "附件13: 生成式人工智能服务已备案和已登记信息（2026年8月） (PDF served by /cms/pub/interact/downloadfile.jsp)",
+        "note": "PDF attachment 13 of the CAC page, retrieved 2026-10-29 through the downloadfile.jsp link on the page (the URL carries an encoded file path and the attachment title). The PDF metadata creation date is 2026-09-14; that is a file property, not a publication date. The month is the one in the attachment title."
+      }
+    },
+    {
+      "id": "c3-src-cac-genai-filings-2025-announcement",
+      "cacheKey": "gov-cac-filings-2025-announcement",
+      "title": "Announcement of the Cyberspace Administration of China publishing 2025 information on filed generative AI services",
+      "originalTitle": "国家互联网信息办公室关于发布2025年生成式人工智能服务已备案信息的公告",
+      "authors": ["国家互联网信息办公室"],
+      "publisher": "中央网络安全和信息化委员会办公室 / 国家互联网信息办公室 (cac.gov.cn)",
+      "publicationDate": "2026-01-09",
+      "kind": "announcement",
+      "url": "https://www.cac.gov.cn/2026-01/09/c_1769688009588554.htm",
+      "route": "direct",
+      "language": "zh-Hans",
+      "sourceClass": "primary",
+      "version": {
+        "kind": "mutable-page",
+        "note": "CAC page dated 2026年01月09日 18:30, read as it stood on 2026-10-29 (the first two connections were reset; the third succeeded)."
+      }
+    },
+    {
+      "id": "c3-src-cac-deep-synthesis-batch01",
+      "cacheKey": "gov-cac-ds-batch01",
+      "title": "Announcement of the Cyberspace Administration of China publishing information on filed deep-synthesis service algorithms",
+      "originalTitle": "国家互联网信息办公室关于发布深度合成服务算法备案信息的公告",
+      "authors": ["国家互联网信息办公室"],
+      "publisher": "中央网络安全和信息化委员会办公室 / 国家互联网信息办公室 (cac.gov.cn)",
+      "publicationDate": "2023-06-20",
+      "kind": "announcement",
+      "url": "https://www.cac.gov.cn/2023-06/20/c_1688910683316256.htm",
+      "route": "direct",
+      "language": "zh-Hans",
+      "sourceClass": "primary",
+      "version": {
+        "kind": "mutable-page",
+        "note": "CAC page dated 2023-06-20 (来源: 中国网信网), read as it stood on 2026-10-29."
+      }
+    },
+    {
+      "id": "c3-src-cac-deep-synthesis-list-01",
+      "cacheKey": "gov-cac-ds-list01",
+      "title": "List of filed domestic deep-synthesis service algorithms (June 2023)",
+      "originalTitle": "境内深度合成服务算法备案清单（2023年6月）",
+      "authors": ["国家互联网信息办公室"],
+      "publisher": "国家互联网信息办公室 (cac.gov.cn, attachment to the announcement page)",
+      "publicationDate": "2023-06",
+      "kind": "report",
+      "url": "https://www.cac.gov.cn/cms/pub/interact/downloadfile.jsp?filepath=ekdHFflbXTKqZLE43DV~bcUMEhfQ2ANCVVPSXPwADu0AhiLdlrABilHJi3N0XGU9dVbk8ExS~QTGjR1V8kqVAJ3MoQYVYfXaOeBYjB154YQ=&fText=%E5%A2%83%E5%86%85%E6%B7%B1%E5%BA%A6%E5%90%88%E6%88%90%E6%9C%8D%E5%8A%A1%E7%AE%97%E6%B3%95%E5%A4%87%E6%A1%88%E6%B8%85%E5%8D%95%EF%BC%882023%E5%B9%B46%E6%9C%88%EF%BC%89",
+      "route": "direct",
+      "language": "zh-Hans",
+      "sourceClass": "primary",
+      "version": {
+        "kind": "pdf",
+        "id": "境内深度合成服务算法备案清单（2023年6月）.docx (served by downloadfile.jsp)",
+        "note": "A Word (.docx) file, not a PDF, retrieved 2026-10-29 through the downloadfile.jsp link on the announcement page. The pack tool stored it without extracting a text layer, so no passage is quoted from it; the row count was made by the preparer from the table in the file's word/document.xml and is carried on the announcement page evidence as a paraphrase."
+      }
+    },
+    {
+      "id": "c3-src-cac-deep-synthesis-batch18",
+      "cacheKey": "gov-cac-ds-batch18",
+      "title": "Announcement of the Cyberspace Administration of China publishing the eighteenth batch of information on filed deep-synthesis service algorithms",
+      "originalTitle": "国家互联网信息办公室关于发布第十八批深度合成服务算法备案信息的公告",
+      "authors": ["国家互联网信息办公室"],
+      "publisher": "中央网络安全和信息化委员会办公室 / 国家互联网信息办公室 (cac.gov.cn)",
+      "publicationDate": "2026-07-17",
+      "kind": "announcement",
+      "url": "https://www.cac.gov.cn/2026-07/17/c_1786032856662750.htm",
+      "route": "direct",
+      "language": "zh-Hans",
+      "sourceClass": "primary",
+      "version": {
+        "kind": "mutable-page",
+        "note": "CAC page dated 2026-07-17 (来源: 新华社), read as it stood on 2026-10-29."
+      }
+    },
+    {
+      "id": "c3-src-cac-deep-synthesis-list-18",
+      "cacheKey": "gov-cac-ds-list18",
+      "title": "List of filed domestic deep-synthesis service algorithms (July 2026)",
+      "originalTitle": "境内深度合成服务算法备案清单（2026年7月）",
+      "authors": ["国家互联网信息办公室"],
+      "publisher": "国家互联网信息办公室 (cac.gov.cn, attachment to the announcement page)",
+      "publicationDate": "2026-07",
+      "kind": "report",
+      "url": "https://www.cac.gov.cn/cms/pub/interact/downloadfile.jsp?filepath=NUtqEIwGiCjGm2Bhl20cvMov5mYBGwhXUVM72KjtgTcN0FupMe0gVPpTdbz/hKvNvJfUQcao7~9~uMx7Wm6brjZS2/Bjnic3oqu3HpPj8kk=&fText=%E5%A2%83%E5%86%85%E6%B7%B1%E5%BA%A6%E5%90%88%E6%88%90%E6%9C%8D%E5%8A%A1%E7%AE%97%E6%B3%95%E5%A4%87%E6%A1%88%E6%B8%85%E5%8D%95%EF%BC%882026%E5%B9%B47%E6%9C%88%EF%BC%89",
+      "route": "direct",
+      "language": "zh-Hans",
+      "sourceClass": "primary",
+      "version": {
+        "kind": "pdf",
+        "id": "境内深度合成服务算法备案清单（2026年7月）.docx (served by downloadfile.jsp)",
+        "note": "A Word (.docx) file, not a PDF, retrieved 2026-10-29 through the downloadfile.jsp link on the announcement page. The pack tool stored it without extracting a text layer, so no passage is quoted from it; the row count was made by the preparer from the table in the file's word/document.xml and is carried on the announcement page evidence as a paraphrase."
+      }
+    },
+    {
+      "id": "c3-src-tc260-asgf-v1-pdf",
+      "cacheKey": "gov-tc260-v1-pdf",
+      "datasetSourceId": "c2-src-tc260-asgf-v1-pdf",
+      "title": "AI Safety Governance Framework (V1.0)",
+      "originalTitle": "人工智能安全治理框架（V1.0）",
+      "authors": ["全国网络安全标准化技术委员会"],
+      "publisher": "全国网络安全标准化技术委员会",
+      "publicationDate": "2024-09",
+      "kind": "report",
+      "url": "https://www.cac.gov.cn/rootimages/uploadimg/1727568303900999/1727568303900999.pdf",
+      "route": "direct",
+      "language": "zh-Hans",
+      "sourceClass": "primary",
+      "version": {
+        "kind": "pdf",
+        "id": "1727568303900999.pdf",
+        "note": "Chinese edition (1727568303900999.pdf) as linked from the CAC news item of 9 September 2024; SHA-256 0cbf3401… identical to the dataset source."
+      }
+    },
+    {
+      "id": "c3-src-tc260-asgf-v2-pdf",
+      "cacheKey": "gov-tc260-v2-pdf",
+      "datasetSourceId": "c2-src-tc260-asgf-v2-pdf",
+      "title": "AI Safety Governance Framework 2.0",
+      "originalTitle": "人工智能安全治理框架2.0",
+      "authors": [
+        "全国网络安全标准化技术委员会",
+        "国家计算机网络应急技术处理协调中心"
+      ],
+      "publisher": "全国网络安全标准化技术委员会",
+      "publicationDate": "2025-09",
+      "kind": "report",
+      "url": "https://www.cac.gov.cn/rootimages/uploadimg/1759653474200838/1759653474200838.pdf",
+      "route": "direct",
+      "language": "zh-Hans",
+      "sourceClass": "primary",
+      "version": {
+        "kind": "pdf",
+        "id": "1759653474200838.pdf",
+        "note": "Bilingual PDF (1759653474200838.pdf) linked from the CAC news item of 15 September 2025; SHA-256 50735b9c… identical to the dataset source. The text layer uses Kangxi-radical compatibility forms (normalised in quotations, except ⻛, kept as printed) and U+0001 control characters between many phrases; in quotations from this edition an ellipsis (…) also marks such a control character, where no words are omitted."
+      }
+    },
+    {
+      "id": "c3-src-tc260-asgf-v3-pdf",
+      "cacheKey": "gov-tc260-v3-pdf",
+      "datasetSourceId": "c2-src-tc260-asgf-v3-pdf",
+      "title": "AI Safety Governance Framework 3.0",
+      "originalTitle": "人工智能安全治理框架3.0",
+      "authors": ["全国网络安全标准化技术委员会"],
+      "publisher": "全国网络安全标准化技术委员会",
+      "publicationDate": "2026-09",
+      "kind": "report",
+      "url": "https://www.tc260.org.cn/tc260/xwdt1/202609/d513a007d04347f58e483fabaefb34b8/files/%E3%80%8A%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%AE%89%E5%85%A8%E6%B2%BB%E7%90%86%E6%A1%86%E6%9E%B63.0%E3%80%8B.pdf.pdf",
+      "route": "direct",
+      "language": "zh-Hans",
+      "sourceClass": "primary",
+      "version": {
+        "kind": "pdf",
+        "id": "《人工智能安全治理框架3.0》.pdf.pdf",
+        "note": "Bilingual PDF attached to TC260's news item of 14 September 2026; SHA-256 cff709d8… identical to the dataset source."
+      }
+    }
+  ],
+  "claims": [
+    {
+      "id": "c3-governance-cac-genai-list-2024-04-published",
+      "subject": "cyberspace-administration-of-china",
+      "predicate": "published",
+      "object": {
+        "kind": "entity",
+        "entityId": "cn-cac-genai-service-list-2024-04"
+      },
+      "topic": "governance",
+      "statement": "The CAC published, as attachment 1 to its announcement page on filed generative AI services, the list titled 生成式人工智能服务已备案信息（2024年4月）, dated by its title to April 2024.",
+      "time": {
+        "kind": "event",
+        "date": "2024-04",
+        "basis": "publication",
+        "note": "Month as given in the attachment title on the CAC page; no day of posting is stated, and the page itself is dated 2 April 2024 with a later publishdate stamp of 14 September 2026. The PDF's metadata creation date is not taken as its publication date."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "The record rests on the attachment's title and position on the CAC page as read on 2026-10-29. A filing (备案) listed by the CAC records that a service completed the filing procedure; it is not an approval or assessment of a model's safety, performance or legal compliance.",
+      "evidence": [
+        {
+          "id": "c3-ev-governance-cac-genai-list-2024-04-published-1",
+          "sourceId": "c3-src-cac-genai-filings-page",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Attachment list, 附件1",
+          "passageType": "paraphrase",
+          "passage": "The page lists, as attachment 1, Information on filed generative AI services (April 2024) (生成式人工智能服务已备案信息（2024年4月）).",
+          "anchor": "附件1： … （2024年4月）",
+          "translation": {
+            "text": "Attachment 1: Information on filed generative AI services (April 2024)",
+            "method": "machine",
+            "humanVerified": false
+          }
+        }
+      ],
+      "relatedExisting": ["fl-cn-filings-2024-published"]
+    },
+    {
+      "id": "c3-governance-cac-genai-list-2024-08-published",
+      "subject": "cyberspace-administration-of-china",
+      "predicate": "published",
+      "object": {
+        "kind": "entity",
+        "entityId": "cn-cac-genai-service-list-2024-08"
+      },
+      "topic": "governance",
+      "statement": "The CAC published, as attachment 2 to its announcement page on filed generative AI services, the list titled 生成式人工智能服务已备案和已登记信息（2024年8月）, dated by its title to August 2024.",
+      "time": {
+        "kind": "event",
+        "date": "2024-08",
+        "basis": "publication",
+        "note": "Month as given in the attachment title on the CAC page; no day of posting is stated, and the page itself is dated 2 April 2024 with a later publishdate stamp of 14 September 2026. The PDF's metadata creation date is not taken as its publication date."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "The record rests on the attachment's title and position on the CAC page as read on 2026-10-29. A filing (备案) listed by the CAC records that a service completed the filing procedure; it is not an approval or assessment of a model's safety, performance or legal compliance.",
+      "evidence": [
+        {
+          "id": "c3-ev-governance-cac-genai-list-2024-08-published-1",
+          "sourceId": "c3-src-cac-genai-filings-page",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Attachment list, 附件2",
+          "passageType": "paraphrase",
+          "passage": "The page lists, as attachment 2, Information on filed and registered generative AI services (August 2024) (生成式人工智能服务已备案和已登记信息（2024年8月）).",
+          "anchor": "附件2： … （2024年8月）",
+          "translation": {
+            "text": "Attachment 2: Information on filed and registered generative AI services (August 2024)",
+            "method": "machine",
+            "humanVerified": false
+          }
+        }
+      ]
+    },
+    {
+      "id": "c3-governance-cac-genai-list-2025-01-published",
+      "subject": "cyberspace-administration-of-china",
+      "predicate": "published",
+      "object": {
+        "kind": "entity",
+        "entityId": "cn-cac-genai-service-list-2025-01"
+      },
+      "topic": "governance",
+      "statement": "The CAC published, as attachment 4 to its announcement page on filed generative AI services, the list titled 生成式人工智能服务已备案和已登记信息（2025年1月）, dated by its title to January 2025.",
+      "time": {
+        "kind": "event",
+        "date": "2025-01",
+        "basis": "publication",
+        "note": "Month as given in the attachment title on the CAC page; no day of posting is stated, and the page itself is dated 2 April 2024 with a later publishdate stamp of 14 September 2026. The PDF's metadata creation date is not taken as its publication date."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "The record rests on the attachment's title and position on the CAC page as read on 2026-10-29. A filing (备案) listed by the CAC records that a service completed the filing procedure; it is not an approval or assessment of a model's safety, performance or legal compliance.",
+      "evidence": [
+        {
+          "id": "c3-ev-governance-cac-genai-list-2025-01-published-1",
+          "sourceId": "c3-src-cac-genai-filings-page",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Attachment list, 附件4",
+          "passageType": "paraphrase",
+          "passage": "The page lists, as attachment 4, Information on filed and registered generative AI services (January 2025) (生成式人工智能服务已备案和已登记信息（2025年1月）).",
+          "anchor": "附件4： … （2025年1月）",
+          "translation": {
+            "text": "Attachment 4: Information on filed and registered generative AI services (January 2025)",
+            "method": "machine",
+            "humanVerified": false
+          }
+        }
+      ]
+    },
+    {
+      "id": "c3-governance-cac-genai-list-2025-08-published",
+      "subject": "cyberspace-administration-of-china",
+      "predicate": "published",
+      "object": {
+        "kind": "entity",
+        "entityId": "cn-cac-genai-service-list-2025-08"
+      },
+      "topic": "governance",
+      "statement": "The CAC published, as attachment 7 to its announcement page on filed generative AI services, the list titled 生成式人工智能服务已备案和已登记信息（2025年8月）, dated by its title to August 2025.",
+      "time": {
+        "kind": "event",
+        "date": "2025-08",
+        "basis": "publication",
+        "note": "Month as given in the attachment title on the CAC page; no day of posting is stated, and the page itself is dated 2 April 2024 with a later publishdate stamp of 14 September 2026. The PDF's metadata creation date is not taken as its publication date."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "The record rests on the attachment's title and position on the CAC page as read on 2026-10-29. A filing (备案) listed by the CAC records that a service completed the filing procedure; it is not an approval or assessment of a model's safety, performance or legal compliance.",
+      "evidence": [
+        {
+          "id": "c3-ev-governance-cac-genai-list-2025-08-published-1",
+          "sourceId": "c3-src-cac-genai-filings-page",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Attachment list, 附件7",
+          "passageType": "paraphrase",
+          "passage": "The page lists, as attachment 7, Information on filed and registered generative AI services (August 2025) (生成式人工智能服务已备案和已登记信息（2025年8月）).",
+          "anchor": "附件7： … （2025年8月）",
+          "translation": {
+            "text": "Attachment 7: Information on filed and registered generative AI services (August 2025)",
+            "method": "machine",
+            "humanVerified": false
+          }
+        }
+      ]
+    },
+    {
+      "id": "c3-governance-cac-genai-list-2026-08-published",
+      "subject": "cyberspace-administration-of-china",
+      "predicate": "published",
+      "object": {
+        "kind": "entity",
+        "entityId": "cn-cac-genai-service-list-2026-08"
+      },
+      "topic": "governance",
+      "statement": "The CAC published, as attachment 13 to its announcement page on filed generative AI services, the list titled 生成式人工智能服务已备案和已登记信息（2026年8月）, dated by its title to August 2026.",
+      "time": {
+        "kind": "event",
+        "date": "2026-08",
+        "basis": "publication",
+        "note": "Month as given in the attachment title on the CAC page; no day of posting is stated, and the page itself is dated 2 April 2024 with a later publishdate stamp of 14 September 2026. The PDF's metadata creation date is not taken as its publication date."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "The record rests on the attachment's title and position on the CAC page as read on 2026-10-29. A filing (备案) listed by the CAC records that a service completed the filing procedure; it is not an approval or assessment of a model's safety, performance or legal compliance.",
+      "evidence": [
+        {
+          "id": "c3-ev-governance-cac-genai-list-2026-08-published-1",
+          "sourceId": "c3-src-cac-genai-filings-page",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Attachment list, 附件13",
+          "passageType": "paraphrase",
+          "passage": "The page lists, as attachment 13, Information on filed and registered generative AI services (August 2026) (生成式人工智能服务已备案和已登记信息（2026年8月）).",
+          "anchor": "附件13： … （2026年8月）",
+          "translation": {
+            "text": "Attachment 13: Information on filed and registered generative AI services (August 2026)",
+            "method": "machine",
+            "humanVerified": false
+          }
+        }
+      ]
+    },
+    {
+      "id": "c3-governance-cac-genai-list-2024-04-count-filed",
+      "subject": "cn-cac-genai-service-list-2024-04",
+      "predicate": "lists_participants",
+      "object": {
+        "kind": "literal",
+        "value": "117 filed generative AI services"
+      },
+      "topic": "governance",
+      "statement": "The April 2024 CAC list of filed generative AI services has 117 rows, numbered 1 to 117, each naming a service that completed filing (count made by the preparer; the list states no total).",
+      "time": {
+        "kind": "snapshot",
+        "date": "2024-04",
+        "note": "Month of the listing as its title gives it. Filing (or registration) dates of individual rows are separate dates listed in the rows."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "Count made by the preparer from the numbered rows of the retrieved PDF (pdftotext layout); a row may be miscounted where the table wraps, but the row numbers ran without a gap. A filing (备案) listed by the CAC records that a service completed the filing procedure; it is not an approval or assessment of a model's safety, performance or legal compliance.",
+      "evidence": [
+        {
+          "id": "c3-ev-governance-cac-genai-list-2024-04-count-filed-1",
+          "sourceId": "c3-src-cac-genai-list-2024-04",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Last table row (p. 5)",
+          "passageType": "paraphrase",
+          "passage": "Table rows counted: 117 (filed (已备案) generative AI services; rows numbered 1 to 117; the list is the opening one of the numbered series, so it is cumulative from its start; counted by the preparer from the rows).",
+          "anchor": "117 广东省 YOYO助理（移动版） 深圳荣耀软件技术有限 公司 Guangdong-YOYOM-20240314 2024/3/28",
+          "translation": {
+            "text": "Row 117: Guangdong; YOYO Assistant (mobile version); Shenzhen Honor Software Technology Co., Ltd.; Guangdong-YOYOM-20240314; 2024/3/28",
+            "method": "machine",
+            "humanVerified": false
+          }
+        }
+      ],
+      "attributes": {
+        "listing": {
+          "count": 117,
+          "countBasis": "counted"
+        },
+        "countNote": "filed (已备案) generative AI services; rows numbered 1 to 117; the list is the opening one of the numbered series, so it is cumulative from its start; counted by the preparer from the rows"
+      }
+    },
+    {
+      "id": "c3-governance-cac-genai-list-2024-08-count-filed",
+      "subject": "cn-cac-genai-service-list-2024-08",
+      "predicate": "lists_participants",
+      "object": {
+        "kind": "literal",
+        "value": "71 filed generative AI services"
+      },
+      "topic": "governance",
+      "statement": "The August 2024 CAC list has 71 rows of filed generative AI services, numbered 118 to 188, continuing the numbering of the April 2024 list (count made by the preparer).",
+      "time": {
+        "kind": "snapshot",
+        "date": "2024-08",
+        "note": "Month of the listing as its title gives it. Filing (or registration) dates of individual rows are separate dates listed in the rows."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "Count made by the preparer from the numbered rows of the retrieved PDF (pdftotext layout); a row may be miscounted where the table wraps, but the row numbers ran without a gap. A filing (备案) listed by the CAC records that a service completed the filing procedure; it is not an approval or assessment of a model's safety, performance or legal compliance.",
+      "evidence": [
+        {
+          "id": "c3-ev-governance-cac-genai-list-2024-08-count-filed-1",
+          "sourceId": "c3-src-cac-genai-list-2024-08",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "First table row (p. 1); last filed row is 188 (p. 3)",
+          "passageType": "paraphrase",
+          "passage": "Table rows counted: 71 (filed (已备案) services added in this list; rows numbered 118 to 188, continuing the April 2024 numbering (cumulative number reached: 188); counted by the preparer).",
+          "anchor": "118 江苏省 炎帝大模型 南京硅基智能有限公司 Jiangsu-YanDi-20240318 2024/4/3",
+          "translation": {
+            "text": "Row 118: Jiangsu; Yandi large model; Nanjing Silicon Intelligence Co., Ltd.; Jiangsu-YanDi-20240318; 2024/4/3",
+            "method": "machine",
+            "humanVerified": false
+          }
+        }
+      ],
+      "attributes": {
+        "listing": {
+          "count": 71,
+          "countBasis": "counted"
+        },
+        "countNote": "filed (已备案) services added in this list; rows numbered 118 to 188, continuing the April 2024 numbering (cumulative number reached: 188); counted by the preparer"
+      }
+    },
+    {
+      "id": "c3-governance-cac-genai-list-2024-08-count-registered",
+      "subject": "cn-cac-genai-service-list-2024-08",
+      "predicate": "lists_participants",
+      "object": {
+        "kind": "literal",
+        "value": "26 registered generative AI applications or functions"
+      },
+      "topic": "governance",
+      "statement": "The August 2024 CAC list includes a second table of 26 registered generative AI applications or functions, numbered 1 to 26, with registration entities, launch numbers and registration dates (count made by the preparer).",
+      "time": {
+        "kind": "snapshot",
+        "date": "2024-08",
+        "note": "Month of the listing as its title gives it. Filing (or registration) dates of individual rows are separate dates listed in the rows."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "Count made by the preparer from the numbered rows of the retrieved PDF (pdftotext layout); a row may be miscounted where the table wraps, but the row numbers ran without a gap. Registration (登记) is a separate procedure from filing (备案): the CAC's January 2026 announcement describes it as applying to applications or functions that call filed models through an API or otherwise. Registration is not an assessment of safety, performance or compliance.",
+      "evidence": [
+        {
+          "id": "c3-ev-governance-cac-genai-list-2024-08-count-registered-1",
+          "sourceId": "c3-src-cac-genai-list-2024-08",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Second table header (p. 3); last registered row is 26 (p. 4)",
+          "passageType": "paraphrase",
+          "passage": "Table rows counted: 26 (registered (已登记) generative AI applications or functions; rows numbered 1 to 26 under the columns 应用/功能名称, 登记单位, 上线编号, 登记时间; earliest list in this pack with a registered section; counted by the preparer).",
+          "anchor": "序号 属地 应用/功能名称 登记单位 上线编号 登记时间 1 北京市 变影",
+          "translation": {
+            "text": "No.; locality; application/function name; registration entity; launch number; registration date; 1; Beijing; Bianying",
+            "method": "machine",
+            "humanVerified": false
+          }
+        }
+      ],
+      "attributes": {
+        "listing": {
+          "count": 26,
+          "countBasis": "counted"
+        },
+        "countNote": "registered (已登记) generative AI applications or functions; rows numbered 1 to 26 under the columns 应用/功能名称, 登记单位, 上线编号, 登记时间; earliest list in this pack with a registered section; counted by the preparer"
+      }
+    },
+    {
+      "id": "c3-governance-cac-genai-list-2025-01-count-filed",
+      "subject": "cn-cac-genai-service-list-2025-01",
+      "predicate": "lists_participants",
+      "object": {
+        "kind": "literal",
+        "value": "50 filed generative AI services"
+      },
+      "topic": "governance",
+      "statement": "The January 2025 CAC list has 50 rows of filed generative AI services, numbered 253 to 302; 302 is also the cumulative number of filed services to 31 December 2024 that the CAC's January 2025 announcement states (row count made by the preparer).",
+      "time": {
+        "kind": "snapshot",
+        "date": "2025-01",
+        "note": "Month of the listing as its title gives it. Filing (or registration) dates of individual rows are separate dates listed in the rows."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "Count made by the preparer from the numbered rows of the retrieved PDF (pdftotext layout); a row may be miscounted where the table wraps, but the row numbers ran without a gap. A filing (备案) listed by the CAC records that a service completed the filing procedure; it is not an approval or assessment of a model's safety, performance or legal compliance.",
+      "evidence": [
+        {
+          "id": "c3-ev-governance-cac-genai-list-2025-01-count-filed-1",
+          "sourceId": "c3-src-cac-genai-list-2025-01",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Last filed row (p. 4)",
+          "passageType": "paraphrase",
+          "passage": "Table rows counted: 50 (filed (已备案) services added in this list; rows numbered 253 to 302 (cumulative number reached: 302, the cumulative total that the CAC's January 2025 announcement states for 31 December 2024); counted by the preparer).",
+          "anchor": "302 重庆市 兆言大语言模型 沪渝人工智能研究院 ChongQing-ZhaoYan-202412090004 2024/12/30",
+          "translation": {
+            "text": "Row 302: Chongqing; Zhaoyan large language model; Hu-Yu Artificial Intelligence Research Institute; ChongQing-ZhaoYan-202412090004; 2024/12/30",
+            "method": "machine",
+            "humanVerified": false
+          }
+        }
+      ],
+      "attributes": {
+        "listing": {
+          "count": 50,
+          "countBasis": "counted"
+        },
+        "countNote": "filed (已备案) services added in this list; rows numbered 253 to 302 (cumulative number reached: 302, the cumulative total that the CAC's January 2025 announcement states for 31 December 2024); counted by the preparer"
+      }
+    },
+    {
+      "id": "c3-governance-cac-genai-list-2025-01-count-registered",
+      "subject": "cn-cac-genai-service-list-2025-01",
+      "predicate": "lists_participants",
+      "object": {
+        "kind": "literal",
+        "value": "48 registered generative AI applications or functions"
+      },
+      "topic": "governance",
+      "statement": "The January 2025 CAC list has 48 rows of registered generative AI applications or functions, numbered 58 to 105 (count made by the preparer).",
+      "time": {
+        "kind": "snapshot",
+        "date": "2025-01",
+        "note": "Month of the listing as its title gives it. Filing (or registration) dates of individual rows are separate dates listed in the rows."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "Count made by the preparer from the numbered rows of the retrieved PDF (pdftotext layout); a row may be miscounted where the table wraps, but the row numbers ran without a gap. Registration (登记) is a separate procedure from filing (备案): the CAC's January 2026 announcement describes it as applying to applications or functions that call filed models through an API or otherwise. Registration is not an assessment of safety, performance or compliance. The cumulative number reached (105) is the number the dataset’s record fl-cn-filings-2025-count gives for registrations by the end of 2024.",
+      "evidence": [
+        {
+          "id": "c3-ev-governance-cac-genai-list-2025-01-count-registered-1",
+          "sourceId": "c3-src-cac-genai-list-2025-01",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "First registered row (p. 4); last registered row is 105 (p. 6)",
+          "passageType": "paraphrase",
+          "passage": "Table rows counted: 48 (registered (已登记) applications or functions added in this list; rows numbered 58 to 105 (cumulative number reached: 105); counted by the preparer).",
+          "anchor": "58 上海市 上观评论参考 解放日报社",
+          "translation": {
+            "text": "Row 58: Shanghai; Shangguan commentary reference; Jiefang Daily",
+            "method": "machine",
+            "humanVerified": false
+          }
+        }
+      ],
+      "attributes": {
+        "listing": {
+          "count": 48,
+          "countBasis": "counted"
+        },
+        "countNote": "registered (已登记) applications or functions added in this list; rows numbered 58 to 105 (cumulative number reached: 105); counted by the preparer"
+      }
+    },
+    {
+      "id": "c3-governance-cac-genai-list-2025-08-count-filed",
+      "subject": "cn-cac-genai-service-list-2025-08",
+      "predicate": "lists_participants",
+      "object": {
+        "kind": "literal",
+        "value": "99 filed generative AI services"
+      },
+      "topic": "governance",
+      "statement": "The August 2025 CAC list has 99 rows of generative AI services filed in July and August 2025, numbered 440 to 538 (count made by the preparer).",
+      "time": {
+        "kind": "snapshot",
+        "date": "2025-08",
+        "note": "Month of the listing as its title gives it. Filing (or registration) dates of individual rows are separate dates listed in the rows."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "Count made by the preparer from the numbered rows of the retrieved PDF (pdftotext layout); a row may be miscounted where the table wraps, but the row numbers ran without a gap. A filing (备案) listed by the CAC records that a service completed the filing procedure; it is not an approval or assessment of a model's safety, performance or legal compliance.",
+      "evidence": [
+        {
+          "id": "c3-ev-governance-cac-genai-list-2025-08-count-filed-1",
+          "sourceId": "c3-src-cac-genai-list-2025-08",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Heading and first row (p. 1); last filed row is 538 (p. 5)",
+          "passageType": "paraphrase",
+          "passage": "Table rows counted: 99 (filed (已备案) services added in this list, headed 生成式人工智能服务已备案信息（2025年7月至8月）; rows numbered 440 to 538; counted by the preparer).",
+          "anchor": "生成式人工智能服务已备案信息 （2025年7月至8月） 序号 属地 大模型名称 备案单位 备案编号 备案时间 440",
+          "translation": {
+            "text": "Information on filed generative AI services (July to August 2025); No.; locality; large model name; filing entity; filing number; filing date; 440",
+            "method": "machine",
+            "humanVerified": false
+          }
+        }
+      ],
+      "attributes": {
+        "listing": {
+          "count": 99,
+          "countBasis": "counted"
+        },
+        "countNote": "filed (已备案) services added in this list, headed 生成式人工智能服务已备案信息（2025年7月至8月）; rows numbered 440 to 538; counted by the preparer"
+      }
+    },
+    {
+      "id": "c3-governance-cac-genai-list-2025-08-count-registered",
+      "subject": "cn-cac-genai-service-list-2025-08",
+      "predicate": "lists_participants",
+      "object": {
+        "kind": "literal",
+        "value": "27 registered generative AI applications or functions"
+      },
+      "topic": "governance",
+      "statement": "The August 2025 CAC list has 27 rows of registered generative AI applications or functions, numbered 237 to 263 (count made by the preparer).",
+      "time": {
+        "kind": "snapshot",
+        "date": "2025-08",
+        "note": "Month of the listing as its title gives it. Filing (or registration) dates of individual rows are separate dates listed in the rows."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "Count made by the preparer from the numbered rows of the retrieved PDF (pdftotext layout); a row may be miscounted where the table wraps, but the row numbers ran without a gap. Registration (登记) is a separate procedure from filing (备案): the CAC's January 2026 announcement describes it as applying to applications or functions that call filed models through an API or otherwise. Registration is not an assessment of safety, performance or compliance.",
+      "evidence": [
+        {
+          "id": "c3-ev-governance-cac-genai-list-2025-08-count-registered-1",
+          "sourceId": "c3-src-cac-genai-list-2025-08",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Second heading (p. 5); rows 237 to 263",
+          "passageType": "paraphrase",
+          "passage": "Table rows counted: 27 (registered (已登记) applications or functions added in this list, headed 生成式人工智能服务已登记信息; rows numbered 237 to 263; counted by the preparer).",
+          "anchor": "生成式人工智能服务已登记信息",
+          "translation": {
+            "text": "Information on registered generative AI services",
+            "method": "machine",
+            "humanVerified": false
+          }
+        }
+      ],
+      "attributes": {
+        "listing": {
+          "count": 27,
+          "countBasis": "counted"
+        },
+        "countNote": "registered (已登记) applications or functions added in this list, headed 生成式人工智能服务已登记信息; rows numbered 237 to 263; counted by the preparer"
+      }
+    },
+    {
+      "id": "c3-governance-cac-genai-list-2026-08-count-filed",
+      "subject": "cn-cac-genai-service-list-2026-08",
+      "predicate": "lists_participants",
+      "object": {
+        "kind": "literal",
+        "value": "117 filed generative AI services"
+      },
+      "topic": "governance",
+      "statement": "The August 2026 CAC list has 117 rows of generative AI services filed in July and August 2026, numbered 989 to 1105 (count made by the preparer).",
+      "time": {
+        "kind": "snapshot",
+        "date": "2026-08",
+        "note": "Month of the listing as its title gives it. Filing (or registration) dates of individual rows are separate dates listed in the rows."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "Count made by the preparer from the numbered rows of the retrieved PDF (pdftotext layout); a row may be miscounted where the table wraps, but the row numbers ran without a gap. A filing (备案) listed by the CAC records that a service completed the filing procedure; it is not an approval or assessment of a model's safety, performance or legal compliance.",
+      "evidence": [
+        {
+          "id": "c3-ev-governance-cac-genai-list-2026-08-count-filed-1",
+          "sourceId": "c3-src-cac-genai-list-2026-08",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Heading and first row (p. 1); last row is 1105 (p. 5)",
+          "passageType": "paraphrase",
+          "passage": "Table rows counted: 117 (filed (已备案) services added in this list, headed 生成式人工智能服务已备案信息（2026年7月至8月）; rows numbered 989 to 1105 (cumulative number reached: 1105); counted by the preparer).",
+          "anchor": "生成式人工智能服务已备案信息 （2026年7月至8月） 序号 属地 大模型名称 备案单位 备案编号 备案时间 989",
+          "translation": {
+            "text": "Information on filed generative AI services (July to August 2026); No.; locality; large model name; filing entity; filing number; filing date; 989",
+            "method": "machine",
+            "humanVerified": false
+          }
+        }
+      ],
+      "attributes": {
+        "listing": {
+          "count": 117,
+          "countBasis": "counted"
+        },
+        "countNote": "filed (已备案) services added in this list, headed 生成式人工智能服务已备案信息（2026年7月至8月）; rows numbered 989 to 1105 (cumulative number reached: 1105); counted by the preparer"
+      }
+    },
+    {
+      "id": "c3-governance-cac-genai-list-2026-08-count-device",
+      "subject": "cn-cac-genai-service-list-2026-08",
+      "predicate": "lists_participants",
+      "object": {
+        "kind": "literal",
+        "value": "7 filed generative AI services provided on mobile devices"
+      },
+      "topic": "governance",
+      "statement": "The August 2026 CAC list includes a separate table of seven filed generative AI services provided on the mobile-phone side (提供手机端侧), numbered 1 to 7, with a column naming the applicable phones (count made by the preparer).",
+      "time": {
+        "kind": "snapshot",
+        "date": "2026-08",
+        "note": "Month of the listing as its title gives it. Filing (or registration) dates of individual rows are separate dates listed in the rows."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "Count made by the preparer from the numbered rows of the retrieved PDF (pdftotext layout); a row may be miscounted where the table wraps, but the row numbers ran without a gap. A filing (备案) listed by the CAC records that a service completed the filing procedure; it is not an approval or assessment of a model's safety, performance or legal compliance.",
+      "evidence": [
+        {
+          "id": "c3-ev-governance-cac-genai-list-2026-08-count-device-1",
+          "sourceId": "c3-src-cac-genai-list-2026-08",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Second heading (p. 5); rows 1 to 7",
+          "passageType": "paraphrase",
+          "passage": "Table rows counted: 7 (filed (已备案) services provided on mobile devices (手机端侧), a separately numbered table (rows 1 to 7) with an added column 适用场景 naming the phone brand; counted by the preparer).",
+          "anchor": "提供手机端侧生成式人工智能服务已备案信息 （2026年7月至8月） … 适用场景",
+          "translation": {
+            "text": "Information on filed generative AI services provided on the mobile-phone side (July to August 2026); No.; locality; large model name; filing entity; filing number; filing date; applicable scenario",
+            "method": "machine",
+            "humanVerified": false
+          }
+        }
+      ],
+      "attributes": {
+        "listing": {
+          "count": 7,
+          "countBasis": "counted"
+        },
+        "countNote": "filed (已备案) services provided on mobile devices (手机端侧), a separately numbered table (rows 1 to 7) with an added column 适用场景 naming the phone brand; counted by the preparer"
+      }
+    },
+    {
+      "id": "c3-governance-cac-genai-list-2026-08-count-registered",
+      "subject": "cn-cac-genai-service-list-2026-08",
+      "predicate": "lists_participants",
+      "object": {
+        "kind": "literal",
+        "value": "133 registered generative AI applications or functions"
+      },
+      "topic": "governance",
+      "statement": "The August 2026 CAC list has 133 rows of registered generative AI applications or functions, numbered 599 to 731 (count made by the preparer).",
+      "time": {
+        "kind": "snapshot",
+        "date": "2026-08",
+        "note": "Month of the listing as its title gives it. Filing (or registration) dates of individual rows are separate dates listed in the rows."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "Count made by the preparer from the numbered rows of the retrieved PDF (pdftotext layout); a row may be miscounted where the table wraps, but the row numbers ran without a gap. Registration (登记) is a separate procedure from filing (备案): the CAC's January 2026 announcement describes it as applying to applications or functions that call filed models through an API or otherwise. Registration is not an assessment of safety, performance or compliance.",
+      "evidence": [
+        {
+          "id": "c3-ev-governance-cac-genai-list-2026-08-count-registered-1",
+          "sourceId": "c3-src-cac-genai-list-2026-08",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Last registered row (p. 12)",
+          "passageType": "paraphrase",
+          "passage": "Table rows counted: 133 (registered (已登记) applications or functions added in this list, headed 生成式人工智能服务已登记信息; rows numbered 599 to 731 (cumulative number reached: 731); counted by the preparer).",
+          "anchor": "731 天津市 求职招聘智能顾问",
+          "translation": {
+            "text": "Row 731: Tianjin; job-seeking and recruitment intelligent adviser",
+            "method": "machine",
+            "humanVerified": false
+          }
+        }
+      ],
+      "attributes": {
+        "listing": {
+          "count": 133,
+          "countBasis": "counted"
+        },
+        "countNote": "registered (已登记) applications or functions added in this list, headed 生成式人工智能服务已登记信息; rows numbered 599 to 731 (cumulative number reached: 731); counted by the preparer"
+      }
+    },
+    {
+      "id": "c3-governance-cac-genai-list-2024-04-entry-stepfun",
+      "subject": "cn-cac-genai-service-list-2024-04",
+      "predicate": "lists_participants",
+      "object": {
+        "kind": "literal",
+        "value": "阶跃 — 上海阶跃星辰智能科技有限公司 — Shanghai-JieYue-20231106 — 2023-11-24"
+      },
+      "topic": "governance",
+      "statement": "The April 2024 CAC list of filed generative AI services includes, as filed service (row 35), 阶跃, with 上海阶跃星辰智能科技有限公司 as filing entity (备案单位), filing number Shanghai-JieYue-20231106 and filing date 2023/11/24 as listed; this is the earliest list in this pack's retrieval in which an entry of StepFun was found.",
+      "time": {
+        "kind": "snapshot",
+        "date": "2024-04",
+        "note": "Month of the listing as its title gives it. The entry's filing date (2023-11-24) is a separate date, listed in the row."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "The mapping of 上海阶跃星辰智能科技有限公司 to the dataset entity stepfun is by filing number, not exact name: the dataset alias 上海阶跃星辰智能科技 lacks the 有限公司 suffix, and the same filing number Shanghai-JieYue-20231106 appears in StepFun’s own site footer (c3-stepfun-legal-form-site), which names 上海阶跃星辰智能科技股份有限公司. Earliest is within the 13 attachments retrieved from the CAC page (and the provincial lists were not searched); a service may have been filed earlier under another name. Absence from any list is not recorded. A filing (备案) listed by the CAC records that a service completed the filing procedure; it is not an approval or assessment of a model's safety, performance or legal compliance.",
+      "evidence": [
+        {
+          "id": "c3-ev-governance-cac-genai-list-2024-04-entry-stepfun-1",
+          "sourceId": "c3-src-cac-genai-list-2024-04",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Table row 35",
+          "passageType": "quote",
+          "passage": "35 上海市 阶跃 上海阶跃星辰智能科技 有限公司 Shanghai-JieYue-20231106 2023/11/24",
+          "translation": {
+            "text": "Row 35: Shanghai; Jieyue; Shanghai StepFun Intelligent Technology Co., Ltd.; Shanghai-JieYue-20231106; 2023/11/24",
+            "method": "machine",
+            "humanVerified": false
+          }
+        }
+      ],
+      "attributes": {
+        "listedEntity": "stepfun",
+        "legalEntityName": "上海阶跃星辰智能科技有限公司",
+        "modelName": "阶跃",
+        "filingNumber": "Shanghai-JieYue-20231106",
+        "filingDate": "2023-11-24"
+      }
+    },
+    {
+      "id": "c3-governance-cac-genai-list-2024-04-entry-zero-one-ai",
+      "subject": "cn-cac-genai-service-list-2024-04",
+      "predicate": "lists_participants",
+      "object": {
+        "kind": "literal",
+        "value": "零一万物大模型 — 北京零一万物科技有限公司 — Beijing-LingYiWanWu-20240102 — 2024-01-17"
+      },
+      "topic": "governance",
+      "statement": "The April 2024 CAC list of filed generative AI services includes, as filed service (row 67), 零一万物大模型, with 北京零一万物科技有限公司 as filing entity (备案单位), filing number Beijing-LingYiWanWu-20240102 and filing date 2024/01/17 as listed; this is the earliest list in this pack's retrieval in which an entry of 01.AI was found.",
+      "time": {
+        "kind": "snapshot",
+        "date": "2024-04",
+        "note": "Month of the listing as its title gives it. The entry's filing date (2024-01-17) is a separate date, listed in the row."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "The mapping of 北京零一万物科技有限公司 to the dataset entity zero-one-ai is by exact name: 北京零一万物科技有限公司 is an alias of the dataset entity zero-one-ai and the legal name under which the dataset lists 01.AI as an AIIA signatory. Earliest is within the 13 attachments retrieved from the CAC page (and the provincial lists were not searched); a service may have been filed earlier under another name. Absence from any list is not recorded. A filing (备案) listed by the CAC records that a service completed the filing procedure; it is not an approval or assessment of a model's safety, performance or legal compliance.",
+      "evidence": [
+        {
+          "id": "c3-ev-governance-cac-genai-list-2024-04-entry-zero-one-ai-1",
+          "sourceId": "c3-src-cac-genai-list-2024-04",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Table row 67",
+          "passageType": "quote",
+          "passage": "67 北京市 零一万物大模型 北京零一万物科技有限 公司 Beijing-LingYiWanWu-20240102 2024/1/17",
+          "translation": {
+            "text": "Row 67: Beijing; 01.AI large model; Beijing 01.AI Technology Co., Ltd.; Beijing-LingYiWanWu-20240102; 2024/1/17",
+            "method": "machine",
+            "humanVerified": false
+          }
+        }
+      ],
+      "attributes": {
+        "listedEntity": "zero-one-ai",
+        "legalEntityName": "北京零一万物科技有限公司",
+        "modelName": "零一万物大模型",
+        "filingNumber": "Beijing-LingYiWanWu-20240102",
+        "filingDate": "2024-01-17"
+      }
+    },
+    {
+      "id": "c3-governance-cac-genai-list-2024-04-entry-iflytek",
+      "subject": "cn-cac-genai-service-list-2024-04",
+      "predicate": "lists_participants",
+      "object": {
+        "kind": "literal",
+        "value": "星火认知大模型 — 科大讯飞股份有限公司 — Anhui-XingHuoRenZhiDaMoXing-20230823 — 2023-09-04"
+      },
+      "topic": "governance",
+      "statement": "The April 2024 CAC list of filed generative AI services includes, as filed service (row 9), 星火认知大模型, with 科大讯飞股份有限公司 as filing entity (备案单位), filing number Anhui-XingHuoRenZhiDaMoXing-20230823 and filing date 2023/09/04 as listed; this is the earliest list in this pack's retrieval in which an entry of iFlytek was found.",
+      "time": {
+        "kind": "snapshot",
+        "date": "2024-04",
+        "note": "Month of the listing as its title gives it. The entry's filing date (2023-09-04) is a separate date, listed in the row."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "The mapping of 科大讯飞股份有限公司 to the dataset entity iflytek is by exact name: 科大讯飞股份有限公司 is an alias of the dataset entity iflytek and the legal name under which the dataset lists iFlytek as an AIIA signatory. Earliest is within the 13 attachments retrieved from the CAC page (and the provincial lists were not searched); a service may have been filed earlier under another name. Absence from any list is not recorded. A filing (备案) listed by the CAC records that a service completed the filing procedure; it is not an approval or assessment of a model's safety, performance or legal compliance.",
+      "evidence": [
+        {
+          "id": "c3-ev-governance-cac-genai-list-2024-04-entry-iflytek-1",
+          "sourceId": "c3-src-cac-genai-list-2024-04",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Table row 9",
+          "passageType": "quote",
+          "passage": "9 安徽省 星火认知大模型 科大讯飞股份有限公司",
+          "translation": {
+            "text": "Row 9: Anhui; Spark cognitive large model; iFlytek Co., Ltd.",
+            "method": "machine",
+            "humanVerified": false
+          }
+        }
+      ],
+      "attributes": {
+        "listedEntity": "iflytek",
+        "legalEntityName": "科大讯飞股份有限公司",
+        "modelName": "星火认知大模型",
+        "filingNumber": "Anhui-XingHuoRenZhiDaMoXing-20230823",
+        "filingDate": "2023-09-04"
+      }
+    },
+    {
+      "id": "c3-governance-cac-genai-list-2024-04-entry-sensetime",
+      "subject": "cn-cac-genai-service-list-2024-04",
+      "predicate": "lists_participants",
+      "object": {
+        "kind": "literal",
+        "value": "日日新 — 上海商汤智能科技有限公司 — Shanghai-RiRiXin-20230821 — 2023-08-31"
+      },
+      "topic": "governance",
+      "statement": "The April 2024 CAC list of filed generative AI services includes, as filed service (row 7), 日日新, with 上海商汤智能科技有限公司 as filing entity (备案单位), filing number Shanghai-RiRiXin-20230821 and filing date 2023/08/31 as listed; this is the earliest list in this pack's retrieval in which an entry of SenseTime was found.",
+      "time": {
+        "kind": "snapshot",
+        "date": "2024-04",
+        "note": "Month of the listing as its title gives it. The entry's filing date (2023-08-31) is a separate date, listed in the row."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "The mapping of 上海商汤智能科技有限公司 to the dataset entity sensetime is by exact name: 上海商汤智能科技有限公司 is an alias of the dataset entity sensetime; the listed company is not the Hong Kong-listed parent and no ownership is recorded here. Earliest is within the 13 attachments retrieved from the CAC page (and the provincial lists were not searched); a service may have been filed earlier under another name. Absence from any list is not recorded. A filing (备案) listed by the CAC records that a service completed the filing procedure; it is not an approval or assessment of a model's safety, performance or legal compliance.",
+      "evidence": [
+        {
+          "id": "c3-ev-governance-cac-genai-list-2024-04-entry-sensetime-1",
+          "sourceId": "c3-src-cac-genai-list-2024-04",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Table row 7",
+          "passageType": "quote",
+          "passage": "7 上海市 日日新 上海商汤智能科技有限 公司 Shanghai-RiRiXin-20230821 2023/8/31",
+          "translation": {
+            "text": "Row 7: Shanghai; RiRiXin (SenseNova); Shanghai SenseTime Intelligent Technology Co., Ltd.; Shanghai-RiRiXin-20230821; 2023/8/31",
+            "method": "machine",
+            "humanVerified": false
+          }
+        }
+      ],
+      "attributes": {
+        "listedEntity": "sensetime",
+        "legalEntityName": "上海商汤智能科技有限公司",
+        "modelName": "日日新",
+        "filingNumber": "Shanghai-RiRiXin-20230821",
+        "filingDate": "2023-08-31"
+      }
+    },
+    {
+      "id": "c3-governance-cac-genai-list-2024-04-entry-tencent",
+      "subject": "cn-cac-genai-service-list-2024-04",
+      "predicate": "lists_participants",
+      "object": {
+        "kind": "literal",
+        "value": "腾讯混元助手大模型 — 深圳市腾讯计算机系统有限公司 — Guangdong-TencentHunyuan-20230901 — 2023-09-14"
+      },
+      "topic": "governance",
+      "statement": "The April 2024 CAC list of filed generative AI services includes, as filed service (row 12), 腾讯混元助手大模型, with 深圳市腾讯计算机系统有限公司 as filing entity (备案单位), filing number Guangdong-TencentHunyuan-20230901 and filing date 2023/09/14 as listed; this is the earliest list in this pack's retrieval in which an entry of Tencent was found.",
+      "time": {
+        "kind": "snapshot",
+        "date": "2024-04",
+        "note": "Month of the listing as its title gives it. The entry's filing date (2023-09-14) is a separate date, listed in the row."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "The mapping of 深圳市腾讯计算机系统有限公司 to the dataset entity tencent is by exact name: 深圳市腾讯计算机系统有限公司 is the legal name of Tencent Computer (shenzhen-tencent-computer-systems), which Tencent’s 2025 annual report describes as controlled through structure contracts (c3-tencent-controls-tencent-computer-2025); the dataset entity tencent also carries it as an alias. No ownership is recorded here. Earliest is within the 13 attachments retrieved from the CAC page (and the provincial lists were not searched); a service may have been filed earlier under another name. Absence from any list is not recorded. A filing (备案) listed by the CAC records that a service completed the filing procedure; it is not an approval or assessment of a model's safety, performance or legal compliance.",
+      "evidence": [
+        {
+          "id": "c3-ev-governance-cac-genai-list-2024-04-entry-tencent-1",
+          "sourceId": "c3-src-cac-genai-list-2024-04",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Table row 12",
+          "passageType": "quote",
+          "passage": "12 广东省 腾讯混元助手大模型 深圳市腾讯计算机系统 有限公司 Guangdong-TencentHunyuan-20230901 2023/9/14",
+          "translation": {
+            "text": "Row 12: Guangdong; Tencent Hunyuan assistant large model; Shenzhen Tencent Computer Systems Co., Ltd.; Guangdong-TencentHunyuan-20230901; 2023/9/14",
+            "method": "machine",
+            "humanVerified": false
+          }
+        }
+      ],
+      "attributes": {
+        "listedEntity": "shenzhen-tencent-computer-systems",
+        "legalEntityName": "深圳市腾讯计算机系统有限公司",
+        "modelName": "腾讯混元助手大模型",
+        "filingNumber": "Guangdong-TencentHunyuan-20230901",
+        "filingDate": "2023-09-14"
+      }
+    },
+    {
+      "id": "c3-governance-cac-genai-list-2024-04-entry-shanghai-ai-lab",
+      "subject": "cn-cac-genai-service-list-2024-04",
+      "predicate": "lists_participants",
+      "object": {
+        "kind": "literal",
+        "value": "书生·浦语 — 上海人工智能创新中心（上海人工智能实验室） — Shanghai-ShuShengPuYu-20230821 — 2023-08-31"
+      },
+      "topic": "governance",
+      "statement": "The April 2024 CAC list of filed generative AI services includes, as filed service (row 8), 书生·浦语, with 上海人工智能创新中心（上海人工智能实验室） as filing entity (备案单位), filing number Shanghai-ShuShengPuYu-20230821 and filing date 2023/08/31 as listed; this is the earliest list in this pack's retrieval in which an entry of Shanghai AI Laboratory was found.",
+      "time": {
+        "kind": "snapshot",
+        "date": "2024-04",
+        "note": "Month of the listing as its title gives it. The entry's filing date (2023-08-31) is a separate date, listed in the row."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "The mapping of 上海人工智能创新中心（上海人工智能实验室） to the dataset entity shanghai-ai-lab is by partial name: the filer 上海人工智能创新中心（上海人工智能实验室） gives the laboratory’s name only in parentheses after an innovation centre’s; no document retrieved states the legal relation between the two, and no combined alias is proposed. Earliest is within the 13 attachments retrieved from the CAC page (and the provincial lists were not searched); a service may have been filed earlier under another name. Absence from any list is not recorded. A filing (备案) listed by the CAC records that a service completed the filing procedure; it is not an approval or assessment of a model's safety, performance or legal compliance.",
+      "evidence": [
+        {
+          "id": "c3-ev-governance-cac-genai-list-2024-04-entry-shanghai-ai-lab-1",
+          "sourceId": "c3-src-cac-genai-list-2024-04",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Table row 8",
+          "passageType": "quote",
+          "passage": "8 上海市 书生·浦语 上海人工智能创新中心 （上海人工智能实验 室） Shanghai-ShuShengPuYu-20230821 2023/8/31",
+          "translation": {
+            "text": "Row 8: Shanghai; InternLM (Shusheng Puyu); Shanghai Artificial Intelligence Innovation Center (Shanghai Artificial Intelligence Laboratory); Shanghai-ShuShengPuYu-20230821; 2023/8/31",
+            "method": "machine",
+            "humanVerified": false
+          }
+        }
+      ],
+      "attributes": {
+        "listedEntity": "shanghai-ai-lab",
+        "legalEntityName": "上海人工智能创新中心（上海人工智能实验室）",
+        "modelName": "书生·浦语",
+        "filingNumber": "Shanghai-ShuShengPuYu-20230821",
+        "filingDate": "2023-08-31"
+      }
+    },
+    {
+      "id": "c3-governance-cac-genai-list-2025-08-entry-baai",
+      "subject": "cn-cac-genai-service-list-2025-08",
+      "predicate": "lists_participants",
+      "object": {
+        "kind": "literal",
+        "value": "Emu文生图 and Emu文生视频 — 北京智源人工智能研究院 — Beijing-EmuWenShengTu-202506250089 and Beijing-EmuWenShengShiPin-202506250090 — 2025-07-11"
+      },
+      "topic": "governance",
+      "statement": "The August 2025 CAC list of filed and registered generative AI services includes, as filed services (rows 459 and 460), Emu文生图 and Emu文生视频, with 北京智源人工智能研究院 as filing entity (备案单位), filing numbers Beijing-EmuWenShengTu-202506250089 and Beijing-EmuWenShengShiPin-202506250090 and filing date 2025/07/11 as listed; this is the earliest list in this pack's retrieval in which an entry of BAAI was found.",
+      "time": {
+        "kind": "snapshot",
+        "date": "2025-08",
+        "note": "Month of the listing as its title gives it. The entry's filing date (2025-07-11) is a separate date, listed in the row."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "The mapping of 北京智源人工智能研究院 to the dataset entity baai is by exact name: 北京智源人工智能研究院 is the name of the proposed entity baai. Earliest is within the 13 attachments retrieved from the CAC page (and the provincial lists were not searched); a service may have been filed earlier under another name. Absence from any list is not recorded. A filing (备案) listed by the CAC records that a service completed the filing procedure; it is not an approval or assessment of a model's safety, performance or legal compliance.",
+      "evidence": [
+        {
+          "id": "c3-ev-governance-cac-genai-list-2025-08-entry-baai-1",
+          "sourceId": "c3-src-cac-genai-list-2025-08",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Table rows 459–460",
+          "passageType": "quote",
+          "passage": "459 北京市 Emu文生图 北京智源人工智能研究院 … 2025/7/11 460 北京市 Emu文生视频 北京智源人工智能研究院",
+          "translation": {
+            "text": "Row 459: Beijing; Emu text-to-image; Beijing Academy of Artificial Intelligence; Beijing-EmuWenShengTu-202506250089; 2025/7/11. Row 460: Beijing; Emu text-to-video; Beijing Academy of Artificial Intelligence",
+            "method": "machine",
+            "humanVerified": false
+          }
+        }
+      ],
+      "attributes": {
+        "listedEntity": "baai",
+        "legalEntityName": "北京智源人工智能研究院",
+        "modelName": "Emu文生图 and Emu文生视频",
+        "filingNumber": "Beijing-EmuWenShengTu-202506250089 and Beijing-EmuWenShengShiPin-202506250090",
+        "filingDate": "2025-07-11"
+      }
+    },
+    {
+      "id": "c3-governance-cac-genai-list-2024-04-entry-zhipu",
+      "subject": "cn-cac-genai-service-list-2024-04",
+      "predicate": "lists_participants",
+      "object": {
+        "kind": "literal",
+        "value": "智谱清言（ChatGLM） — 北京智谱华章科技有限公司 — Beijing-ChatGLM-20230821 — 2023-08-31"
+      },
+      "topic": "governance",
+      "statement": "The April 2024 CAC list of filed generative AI services includes, as filed service (row 2), 智谱清言（ChatGLM）, with 北京智谱华章科技有限公司 as filing entity (备案单位), filing number Beijing-ChatGLM-20230821 and filing date 2023/08/31 as listed; this is the earliest list in this pack's retrieval in which an entry of Zhipu AI was found.",
+      "time": {
+        "kind": "snapshot",
+        "date": "2024-04",
+        "note": "Month of the listing as its title gives it. The entry's filing date (2023-08-31) is a separate date, listed in the row."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "The mapping of 北京智谱华章科技有限公司 to the dataset entity zhipu is by name only: the legal name under which the dataset already lists Zhipu AI as an AIIA signatory (c2-governance-aiia-aisc-signatory-zhipu). Earliest is within the 13 attachments retrieved from the CAC page (and the provincial lists were not searched); a service may have been filed earlier under another name. Absence from any list is not recorded. A filing (备案) listed by the CAC records that a service completed the filing procedure; it is not an approval or assessment of a model's safety, performance or legal compliance.",
+      "evidence": [
+        {
+          "id": "c3-ev-governance-cac-genai-list-2024-04-entry-zhipu-1",
+          "sourceId": "c3-src-cac-genai-list-2024-04",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Table row 2",
+          "passageType": "quote",
+          "passage": "2 北京市 智谱清言（ChatGLM） 北京智谱华章科技有限 公司 Beijing-ChatGLM-20230821 2023/8/31",
+          "translation": {
+            "text": "Row 2: Beijing; Zhipu Qingyan (ChatGLM); Beijing Zhipu Huazhang Technology Co., Ltd.; Beijing-ChatGLM-20230821; 2023/8/31",
+            "method": "machine",
+            "humanVerified": false
+          }
+        }
+      ],
+      "attributes": {
+        "listedEntity": "zhipu",
+        "legalEntityName": "北京智谱华章科技有限公司",
+        "modelName": "智谱清言（ChatGLM）",
+        "filingNumber": "Beijing-ChatGLM-20230821",
+        "filingDate": "2023-08-31"
+      },
+      "relatedExisting": ["c2-governance-aiia-aisc-signatory-zhipu"]
+    },
+    {
+      "id": "c3-governance-cac-genai-list-2024-04-entry-minimax",
+      "subject": "cn-cac-genai-service-list-2024-04",
+      "predicate": "lists_participants",
+      "object": {
+        "kind": "literal",
+        "value": "abab — 上海稀宇科技有限公司 — Shanghai-Abab-20230821 — 2023-08-31"
+      },
+      "topic": "governance",
+      "statement": "The April 2024 CAC list of filed generative AI services includes, as filed service (row 6), abab, with 上海稀宇科技有限公司 as filing entity (备案单位), filing number Shanghai-Abab-20230821 and filing date 2023/08/31 as listed; this is the earliest list in this pack's retrieval in which an entry of MiniMax was found.",
+      "time": {
+        "kind": "snapshot",
+        "date": "2024-04",
+        "note": "Month of the listing as its title gives it. The entry's filing date (2023-08-31) is a separate date, listed in the row."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "The mapping of 上海稀宇科技有限公司 to the dataset entity minimax is by name only: the legal name under which the dataset already lists MiniMax as an AIIA signatory (c2-governance-aiia-aisc-signatory-minimax). Earliest is within the 13 attachments retrieved from the CAC page (and the provincial lists were not searched); a service may have been filed earlier under another name. Absence from any list is not recorded. A filing (备案) listed by the CAC records that a service completed the filing procedure; it is not an approval or assessment of a model's safety, performance or legal compliance.",
+      "evidence": [
+        {
+          "id": "c3-ev-governance-cac-genai-list-2024-04-entry-minimax-1",
+          "sourceId": "c3-src-cac-genai-list-2024-04",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Table row 6",
+          "passageType": "quote",
+          "passage": "6 上海市 abab 上海稀宇科技有限公司 Shanghai-Abab-20230821 2023/8/31",
+          "translation": {
+            "text": "Row 6: Shanghai; abab; Shanghai Xiyu Technology Co., Ltd.; Shanghai-Abab-20230821; 2023/8/31",
+            "method": "machine",
+            "humanVerified": false
+          }
+        }
+      ],
+      "attributes": {
+        "listedEntity": "minimax",
+        "legalEntityName": "上海稀宇科技有限公司",
+        "modelName": "abab",
+        "filingNumber": "Shanghai-Abab-20230821",
+        "filingDate": "2023-08-31"
+      },
+      "relatedExisting": ["c2-governance-aiia-aisc-signatory-minimax"]
+    },
+    {
+      "id": "c3-governance-cac-genai-list-2024-04-entry-baidu",
+      "subject": "cn-cac-genai-service-list-2024-04",
+      "predicate": "lists_participants",
+      "object": {
+        "kind": "literal",
+        "value": "文心一言 — 北京百度网讯科技有限公司 — Beijing-WenXinYiYan-20230821 — 2023-08-31"
+      },
+      "topic": "governance",
+      "statement": "The April 2024 CAC list of filed generative AI services includes, as filed service (row 1), 文心一言, with 北京百度网讯科技有限公司 as filing entity (备案单位), filing number Beijing-WenXinYiYan-20230821 and filing date 2023/08/31 as listed; this is the earliest list in this pack's retrieval in which an entry of Baidu was found.",
+      "time": {
+        "kind": "snapshot",
+        "date": "2024-04",
+        "note": "Month of the listing as its title gives it. The entry's filing date (2023-08-31) is a separate date, listed in the row."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "The mapping of 北京百度网讯科技有限公司 to the dataset entity baidu is by name only: the legal name under which the dataset already lists Baidu as an AIIA signatory (c2-governance-aiia-aisc-signatory-baidu). Earliest is within the 13 attachments retrieved from the CAC page (and the provincial lists were not searched); a service may have been filed earlier under another name. Absence from any list is not recorded. A filing (备案) listed by the CAC records that a service completed the filing procedure; it is not an approval or assessment of a model's safety, performance or legal compliance.",
+      "evidence": [
+        {
+          "id": "c3-ev-governance-cac-genai-list-2024-04-entry-baidu-1",
+          "sourceId": "c3-src-cac-genai-list-2024-04",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Table row 1",
+          "passageType": "quote",
+          "passage": "1 北京市 文心一言 北京百度网讯科技有限 公司 Beijing-WenXinYiYan-20230821 2023/8/31",
+          "translation": {
+            "text": "Row 1: Beijing; Wenxin Yiyan (ERNIE Bot); Beijing Baidu Netcom Science and Technology Co., Ltd.; Beijing-WenXinYiYan-20230821; 2023/8/31",
+            "method": "machine",
+            "humanVerified": false
+          }
+        }
+      ],
+      "attributes": {
+        "listedEntity": "baidu",
+        "legalEntityName": "北京百度网讯科技有限公司",
+        "modelName": "文心一言",
+        "filingNumber": "Beijing-WenXinYiYan-20230821",
+        "filingDate": "2023-08-31"
+      },
+      "relatedExisting": ["c2-governance-aiia-aisc-signatory-baidu"]
+    },
+    {
+      "id": "c3-governance-cac-genai-list-2024-08-entry-deepseek",
+      "subject": "cn-cac-genai-service-list-2024-08",
+      "predicate": "lists_participants",
+      "object": {
+        "kind": "literal",
+        "value": "求索对话DeepSeek Chat — 北京深度求索人工智能基础技术研究有限公司 — Beijing-DeepseekChat-202404280016 — 2024-05-13"
+      },
+      "topic": "governance",
+      "statement": "The August 2024 CAC list of filed and registered generative AI services includes, as filed service (row 152), 求索对话DeepSeek Chat, with 北京深度求索人工智能基础技术研究有限公司 as filing entity (备案单位), filing number Beijing-DeepseekChat-202404280016 and filing date 2024/05/13 as listed; this is the earliest list in this pack's retrieval in which an entry of DeepSeek was found.",
+      "time": {
+        "kind": "snapshot",
+        "date": "2024-08",
+        "note": "Month of the listing as its title gives it. The entry's filing date (2024-05-13) is a separate date, listed in the row."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "The mapping of 北京深度求索人工智能基础技术研究有限公司 to the dataset entity deepseek is by name only: the legal name under which the dataset already lists DeepSeek as an AIIA signatory (c2-governance-aiia-aisc-signatory-deepseek). Earliest is within the 13 attachments retrieved from the CAC page (and the provincial lists were not searched); a service may have been filed earlier under another name. Absence from any list is not recorded. A filing (备案) listed by the CAC records that a service completed the filing procedure; it is not an approval or assessment of a model's safety, performance or legal compliance.",
+      "evidence": [
+        {
+          "id": "c3-ev-governance-cac-genai-list-2024-08-entry-deepseek-1",
+          "sourceId": "c3-src-cac-genai-list-2024-08",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Table row 152",
+          "passageType": "quote",
+          "passage": "152 北京市 求索对话DeepSeek Chat 北京深度求索人工智能 基础技术研究有限公司 Beijing-DeepseekChat-202404280016 2024/5/13",
+          "translation": {
+            "text": "Row 152: Beijing; Qiusuo Duihua DeepSeek Chat; Beijing DeepSeek Artificial Intelligence Basic Technology Research Co., Ltd.; Beijing-DeepseekChat-202404280016; 2024/5/13",
+            "method": "machine",
+            "humanVerified": false
+          }
+        }
+      ],
+      "attributes": {
+        "listedEntity": "deepseek",
+        "legalEntityName": "北京深度求索人工智能基础技术研究有限公司",
+        "modelName": "求索对话DeepSeek Chat",
+        "filingNumber": "Beijing-DeepseekChat-202404280016",
+        "filingDate": "2024-05-13"
+      },
+      "relatedExisting": ["c2-governance-aiia-aisc-signatory-deepseek"]
+    },
+    {
+      "id": "c3-governance-cac-genai-filings-2026-published",
+      "subject": "cyberspace-administration-of-china",
+      "predicate": "published",
+      "object": {
+        "kind": "entity",
+        "entityId": "cn-cac-genai-filings-announcement-2026"
+      },
+      "topic": "governance",
+      "statement": "On 9 January 2026 the CAC published an announcement of 2025 information on filed generative AI services under the Interim Measures, stating that online generative AI applications or functions must display the filed or registered service used, with model name and filing or launch number.",
+      "time": {
+        "kind": "event",
+        "date": "2026-01-09",
+        "basis": "publication",
+        "note": "Date and time shown on the CAC page (2026年01月09日 18:30)."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "What the announcement says. Its single attachment link is titled with the April 2024 announcement's name and was not followed separately; A filing (备案) listed by the CAC records that a service completed the filing procedure; it is not an approval or assessment of a model's safety, performance or legal compliance.",
+      "evidence": [
+        {
+          "id": "c3-ev-governance-cac-genai-filings-2026-published-1",
+          "sourceId": "c3-src-cac-genai-filings-2025-announcement",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Body, second paragraph",
+          "passageType": "paraphrase",
+          "passage": "Generative AI applications or functions already online are to display prominently, or on the product details page, the filed or registered generative AI service they use, noting the model name and the filing or launch number.",
+          "anchor": "注明模型名称、备案号或上线编号",
+          "translation": {
+            "text": "Generative AI applications or functions already online shall publicly display, in a prominent position or on the product details page, the filed or registered generative AI service used, noting the model name and filing number or launch number",
+            "method": "machine",
+            "humanVerified": false
+          }
+        }
+      ],
+      "relatedExisting": ["fl-cn-filings-2025-count"]
+    },
+    {
+      "id": "c3-governance-cac-genai-filings-2026-count-filed",
+      "subject": "cn-cac-genai-filings-announcement-2026",
+      "predicate": "lists_participants",
+      "object": {
+        "kind": "literal",
+        "value": "748 generative AI services filed with the CAC, cumulative to 31 December 2025"
+      },
+      "topic": "governance",
+      "statement": "The CAC's January 2026 announcement states that 446 generative AI services completed filing with the CAC in 2025 and that, as of 31 December 2025, 748 had completed filing cumulatively.",
+      "time": {
+        "kind": "snapshot",
+        "date": "2025-12-31",
+        "note": "The count is stated as of 31 December 2025; the announcement is dated 9 January 2026."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "Counts as the CAC states them. The preparer's row numbering of the CAC lists reaches 748 filed services in the December 2025 list (attachment 9), consistent with the stated total; the announcement does not say whether withdrawn filings are deducted. A filing (备案) listed by the CAC records that a service completed the filing procedure; it is not an approval or assessment of a model's safety, performance or legal compliance.",
+      "evidence": [
+        {
+          "id": "c3-ev-governance-cac-genai-filings-2026-count-filed-1",
+          "sourceId": "c3-src-cac-genai-filings-2025-announcement",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Body, first paragraph",
+          "passageType": "paraphrase",
+          "passage": "In 2025, 446 new generative AI services completed filing with the CAC; as of 31 December 2025, 748 had completed filing cumulatively.",
+          "anchor": "累计有748款生成式人工智能服务完成备案",
+          "translation": {
+            "text": "In the whole of 2025, 446 new generative AI services completed filing with the CAC … As of 31 December 2025, a cumulative 748 generative AI services had completed filing",
+            "method": "machine",
+            "humanVerified": false
+          }
+        }
+      ],
+      "attributes": {
+        "listing": {
+          "count": 748,
+          "countBasis": "stated"
+        },
+        "countNote": "filed (备案) services, cumulative as of 2025-12-31, stated by the source (446 added in 2025)"
+      },
+      "relatedExisting": ["fl-cn-filings-2025-count"]
+    },
+    {
+      "id": "c3-governance-cac-genai-filings-2026-count-registered",
+      "subject": "cn-cac-genai-filings-announcement-2026",
+      "predicate": "lists_participants",
+      "object": {
+        "kind": "literal",
+        "value": "435 generative AI applications or functions registered, cumulative to 31 December 2025"
+      },
+      "topic": "governance",
+      "statement": "The CAC's January 2026 announcement states that local cyberspace offices registered generative AI applications or functions that call filed models through an API or otherwise, 330 of them added in 2025, and that 435 had completed registration cumulatively as of 31 December 2025.",
+      "time": {
+        "kind": "snapshot",
+        "date": "2025-12-31",
+        "note": "The count is stated as of 31 December 2025; the announcement is dated 9 January 2026."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "Counts as the CAC states them; the preparer's row numbering of the registered sections reaches 435 in the December 2025 list. Registration (登记) is a separate procedure from filing (备案): the CAC's January 2026 announcement describes it as applying to applications or functions that call filed models through an API or otherwise. Registration is not an assessment of safety, performance or compliance.",
+      "evidence": [
+        {
+          "id": "c3-ev-governance-cac-genai-filings-2026-count-registered-1",
+          "sourceId": "c3-src-cac-genai-filings-2025-announcement",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Body, first paragraph",
+          "passageType": "paraphrase",
+          "passage": "Applications or functions that call filed models through an API or otherwise are registered by local cyberspace offices; 330 were newly registered in 2025, and 435 had completed registration cumulatively as of 31 December 2025.",
+          "anchor": "435款生成式人工智能应用或功能完成登记",
+          "translation": {
+            "text": "Generative AI applications or functions that directly call the capabilities of filed models through an API or other means are registered by local cyberspace offices; 330 new ones completed registration … 435 generative AI applications or functions had completed registration",
+            "method": "machine",
+            "humanVerified": false
+          }
+        }
+      ],
+      "attributes": {
+        "listing": {
+          "count": 435,
+          "countBasis": "stated"
+        },
+        "countNote": "registered (登记) applications or functions, cumulative as of 2025-12-31, stated by the source (330 added in 2025)"
+      }
+    },
+    {
+      "id": "c3-governance-cac-deep-synthesis-list-2023-06-published",
+      "subject": "cyberspace-administration-of-china",
+      "predicate": "published",
+      "object": {
+        "kind": "entity",
+        "entityId": "cn-cac-deep-synthesis-list-2023-06"
+      },
+      "topic": "governance",
+      "statement": "On 20 June 2023 the CAC published an announcement of filed domestic deep-synthesis service algorithms under the Provisions on the Administration of Deep Synthesis of Internet Information Services, with the attached list 境内深度合成服务算法备案清单（2023年6月）.",
+      "time": {
+        "kind": "event",
+        "date": "2023-06-20",
+        "basis": "publication",
+        "note": "Date shown on the CAC announcement page; the attachment carries the month in its title."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "An algorithm filing (算法备案) records that a provider or technical supporter completed the filing procedure; it is not an approval or assessment of the algorithm. The batch is the earliest announcement of the series located in this pack; batches 2 to 17 were not retrieved.",
+      "evidence": [
+        {
+          "id": "c3-ev-governance-cac-deep-synthesis-list-2023-06-published-1",
+          "sourceId": "c3-src-cac-deep-synthesis-batch01",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Body and attachment line",
+          "passageType": "paraphrase",
+          "passage": "The CAC publishes information on filed domestic deep-synthesis service algorithms under the Provisions on the Administration of Deep Synthesis of Internet Information Services, searchable in the algorithm filing system.",
+          "anchor": "现公开发布境内深度合成服务算法备案信息",
+          "translation": {
+            "text": "In accordance with the Provisions on the Administration of Deep Synthesis of Internet Information Services, information on filed domestic deep-synthesis service algorithms is hereby published",
+            "method": "machine",
+            "humanVerified": false
+          }
+        }
+      ]
+    },
+    {
+      "id": "c3-governance-cac-deep-synthesis-list-2023-06-count",
+      "subject": "cn-cac-deep-synthesis-list-2023-06",
+      "predicate": "lists_participants",
+      "object": {
+        "kind": "literal",
+        "value": "41 filed deep-synthesis service algorithms"
+      },
+      "topic": "governance",
+      "statement": "The CAC's list of 20 June 2023 of filed deep-synthesis service algorithms has 41 rows, 33 with the role of service provider (服务提供者) and 8 of technical supporter (服务技术支持者) (count made by the preparer; the list states no total).",
+      "time": {
+        "kind": "snapshot",
+        "date": "2023-06",
+        "note": "Month in the attachment title; the announcement page is dated 2023-06-20."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "Count made by the preparer from the table rows of the .docx attachment (word/document.xml); the pack tool holds no text layer for that file, so the evidence is the announcement page naming the attachment, with the count as paraphrase. The rows are the algorithms in this batch, not a cumulative total. An algorithm filing is not an approval or assessment of the algorithm.",
+      "evidence": [
+        {
+          "id": "c3-ev-governance-cac-deep-synthesis-list-2023-06-count-1",
+          "sourceId": "c3-src-cac-deep-synthesis-batch01",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Attachment line; count from the attached .docx table",
+          "passageType": "paraphrase",
+          "passage": "The attached list (境内深度合成服务算法备案清单（2023年6月）) is a table with the columns 序号, 算法名称, 角色, 主体名称, 应用产品, 主要用途, 备案编号, 备注; its rows are numbered 1 to 41 (33 服务提供者, 8 服务技术支持者), counted by the preparer.",
+          "anchor": "附件：境内深度合成服务算法备案清单（2023年6月）",
+          "translation": {
+            "text": "Attachment: List of filed domestic deep-synthesis service algorithms (2023-06)",
+            "method": "machine",
+            "humanVerified": false
+          }
+        }
+      ],
+      "attributes": {
+        "listing": {
+          "count": 41,
+          "countBasis": "counted"
+        },
+        "countNote": "filed (备案) deep-synthesis service algorithms in this batch (not cumulative), counted by the preparer from the .docx table: 33 service providers, 8 technical supporters"
+      }
+    },
+    {
+      "id": "c3-governance-cac-deep-synthesis-list-2026-07-published",
+      "subject": "cyberspace-administration-of-china",
+      "predicate": "published",
+      "object": {
+        "kind": "entity",
+        "entityId": "cn-cac-deep-synthesis-list-2026-07"
+      },
+      "topic": "governance",
+      "statement": "On 17 July 2026 the CAC published the eighteenth batch of announcement of filed domestic deep-synthesis service algorithms under the Provisions on the Administration of Deep Synthesis of Internet Information Services, with the attached list 境内深度合成服务算法备案清单（2026年7月）.",
+      "time": {
+        "kind": "event",
+        "date": "2026-07-17",
+        "basis": "publication",
+        "note": "Date shown on the CAC announcement page; the attachment carries the month in its title."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "An algorithm filing (算法备案) records that a provider or technical supporter completed the filing procedure; it is not an approval or assessment of the algorithm. Batches 2 to 17 were not retrieved; the eighteenth was the latest located on 2026-10-29.",
+      "evidence": [
+        {
+          "id": "c3-ev-governance-cac-deep-synthesis-list-2026-07-published-1",
+          "sourceId": "c3-src-cac-deep-synthesis-batch18",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Body and attachment line",
+          "passageType": "paraphrase",
+          "passage": "The CAC publishes the eighteenth batch of information on filed domestic deep-synthesis service algorithms under the Provisions on the Administration of Deep Synthesis of Internet Information Services, searchable in the algorithm filing system.",
+          "anchor": "第十八批境内深度合成服务算法备案信息",
+          "translation": {
+            "text": "In accordance with the Provisions on the Administration of Deep Synthesis of Internet Information Services, the eighteenth batch of information on filed domestic deep-synthesis service algorithms is hereby published",
+            "method": "machine",
+            "humanVerified": false
+          }
+        }
+      ]
+    },
+    {
+      "id": "c3-governance-cac-deep-synthesis-list-2026-07-count",
+      "subject": "cn-cac-deep-synthesis-list-2026-07",
+      "predicate": "lists_participants",
+      "object": {
+        "kind": "literal",
+        "value": "706 filed deep-synthesis service algorithms"
+      },
+      "topic": "governance",
+      "statement": "The CAC's eighteenth-batch list of 17 July 2026 of filed deep-synthesis service algorithms has 706 rows, 599 with the role of service provider (服务提供者) and 107 of technical supporter (服务技术支持者) (count made by the preparer; the list states no total).",
+      "time": {
+        "kind": "snapshot",
+        "date": "2026-07",
+        "note": "Month in the attachment title; the announcement page is dated 2026-07-17."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "Count made by the preparer from the table rows of the .docx attachment (word/document.xml); the pack tool holds no text layer for that file, so the evidence is the announcement page naming the attachment, with the count as paraphrase. The rows are the algorithms in this batch, not a cumulative total. An algorithm filing is not an approval or assessment of the algorithm.",
+      "evidence": [
+        {
+          "id": "c3-ev-governance-cac-deep-synthesis-list-2026-07-count-1",
+          "sourceId": "c3-src-cac-deep-synthesis-batch18",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Attachment line; count from the attached .docx table",
+          "passageType": "paraphrase",
+          "passage": "The attached list (境内深度合成服务算法备案清单（2026年7月）) is a table with the columns 序号, 算法名称, 角色, 主体名称, 应用产品, 主要用途, 备案编号, 备注; its rows are numbered 1 to 706 (599 服务提供者, 107 服务技术支持者), counted by the preparer.",
+          "anchor": "附件：境内深度合成服务算法备案清单（2026年7月）",
+          "translation": {
+            "text": "Attachment: List of filed domestic deep-synthesis service algorithms (2026-07)",
+            "method": "machine",
+            "humanVerified": false
+          }
+        }
+      ],
+      "attributes": {
+        "listing": {
+          "count": 706,
+          "countBasis": "counted"
+        },
+        "countNote": "filed (备案) deep-synthesis service algorithms in this batch (not cumulative), counted by the preparer from the .docx table: 599 service providers, 107 technical supporters"
+      }
+    },
+    {
+      "id": "c3-governance-tc260-asgf-v1-developer-ethics-review",
+      "subject": "tc260-asgf-v1-0",
+      "predicate": "states_provision",
+      "object": {
+        "kind": "literal",
+        "value": "Developers to apply measures such as internal discussion, expert review and science-and-technology ethics review at key stages"
+      },
+      "topic": "governance",
+      "statement": "Under its safety guidelines for model and algorithm developers, version 1.0 of the AI Safety Governance Framework states that developers should, at key stages such as requirements analysis, model design and training-data selection, take measures including internal discussion, expert review, science-and-technology ethics review and hearing public opinion.",
+      "time": {
+        "kind": "event",
+        "date": "2024-09-09",
+        "basis": "publication",
+        "note": "Release date of the cited edition, as the dataset records it; the provision states no effective date."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "What the cited edition says, as guidance in a technical document of TC260 (a national standardisation technical committee); it is not evidence that any developer adopted, implemented or was required to follow it.",
+      "evidence": [
+        {
+          "id": "c3-ev-governance-tc260-asgf-v1-developer-ethics-review-1",
+          "sourceId": "c3-src-tc260-asgf-v1-pdf",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "§6.1(a) 模型算法研发者安全开发指引",
+          "passageType": "quote",
+          "passage": "研发者应在需求分析、项目立项、模型设计开发、训练数据选用等 关键环节 … 组织专家评议、科技伦理审查、听取公众意见",
+          "translation": {
+            "text": "Developers should, at key stages such as requirements analysis, project approval, model design and development and training-data selection … take measures such as holding internal discussions, organising expert review, conducting science-and-technology ethics review and hearing public opinion",
+            "method": "machine",
+            "humanVerified": false
+          }
+        }
+      ],
+      "attributes": {
+        "provision": {
+          "kind": "guidance",
+          "key": "developer-ethics-review"
+        }
+      }
+    },
+    {
+      "id": "c3-governance-tc260-asgf-v1-version-rollback",
+      "subject": "tc260-asgf-v1-0",
+      "predicate": "states_provision",
+      "object": {
+        "kind": "literal",
+        "value": "Developers to manage versions of AI products and datasets, with commercial versions able to roll back"
+      },
+      "topic": "governance",
+      "statement": "Version 1.0 of the AI Safety Governance Framework states that developers should manage the versions of AI products and the datasets used, and that commercial versions should be able to roll back to earlier commercial versions.",
+      "time": {
+        "kind": "event",
+        "date": "2024-09-09",
+        "basis": "publication",
+        "note": "Release date of the cited edition, as the dataset records it; the provision states no effective date."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "What the cited edition says, as guidance in a technical document of TC260 (a national standardisation technical committee); it is not evidence that any developer adopted, implemented or was required to follow it.",
+      "evidence": [
+        {
+          "id": "c3-ev-governance-tc260-asgf-v1-version-rollback-1",
+          "sourceId": "c3-src-tc260-asgf-v1-pdf",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "§6.1(f) 模型算法研发者安全开发指引",
+          "passageType": "quote",
+          "passage": "研发者应做好人工智能产品及所用数据集的版本管理，商用版本应 可以回退到以前的商用版本",
+          "translation": {
+            "text": "Developers should properly manage versions of AI products and the datasets used; commercial versions should be able to roll back to earlier commercial versions",
+            "method": "machine",
+            "humanVerified": false
+          }
+        }
+      ],
+      "attributes": {
+        "provision": {
+          "kind": "guidance",
+          "key": "version-rollback"
+        }
+      }
+    },
+    {
+      "id": "c3-governance-tc260-asgf-v1-open-source-supply-chain",
+      "subject": "tc260-asgf-v1-0",
+      "predicate": "states_provision",
+      "object": {
+        "kind": "literal",
+        "value": "Promote sharing of AI knowledge and open-sourcing of AI technology for supply-chain security"
+      },
+      "topic": "governance",
+      "statement": "Under strengthening AI supply-chain security, version 1.0 of the AI Safety Governance Framework proposes promoting the sharing of AI knowledge, open-sourcing AI technology and joint development of AI chips, frameworks and software.",
+      "time": {
+        "kind": "event",
+        "date": "2024-09-09",
+        "basis": "publication",
+        "note": "Release date of the cited edition, as the dataset records it; the provision states no effective date."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "What the cited edition says, as guidance in a technical document of TC260 (a national standardisation technical committee); it is not evidence that any developer adopted, implemented or was required to follow it. 开源 is rendered \"open-source\" as the text uses it, without any judgement of licence status.",
+      "evidence": [
+        {
+          "id": "c3-ev-governance-tc260-asgf-v1-open-source-supply-chain-1",
+          "sourceId": "c3-src-tc260-asgf-v1-pdf",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "§5.5 强化人工智能供应链安全保障",
+          "passageType": "quote",
+          "passage": "推动共享人工智能知识成果，开 源人工智能技术，共同研发人工智能芯片、框架、软件",
+          "translation": {
+            "text": "promote the sharing of AI knowledge and achievements, open-source AI technology, and jointly develop AI chips, frameworks and software",
+            "method": "machine",
+            "humanVerified": false
+          }
+        }
+      ],
+      "attributes": {
+        "provision": {
+          "kind": "governance_measure",
+          "key": "open-source-supply-chain"
+        }
+      }
+    },
+    {
+      "id": "c3-governance-tc260-asgf-v1-loss-of-control-risk",
+      "subject": "tc260-asgf-v1-0",
+      "predicate": "states_provision",
+      "object": {
+        "kind": "literal",
+        "value": "Risk of future loss of control: AI acquiring external resources, self-replicating and seeking external power"
+      },
+      "topic": "governance",
+      "statement": "Among the risks of AI applications, version 1.0 of the AI Safety Governance Framework names a risk of future loss of control, in which it does not rule out that AI autonomously acquires external resources, self-replicates, develops self-awareness and seeks external power.",
+      "time": {
+        "kind": "event",
+        "date": "2024-09-09",
+        "basis": "publication",
+        "note": "Release date of the cited edition, as the dataset records it; the provision states no effective date."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "What the cited edition says, as guidance in a technical document of TC260 (a national standardisation technical committee); it is not evidence that any developer adopted, implemented or was required to follow it.",
+      "evidence": [
+        {
+          "id": "c3-ev-governance-tc260-asgf-v1-loss-of-control-risk-1",
+          "sourceId": "c3-src-tc260-asgf-v1-pdf",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "§3.2 (c) 未来脱离控制的风险",
+          "passageType": "quote",
+          "passage": "不排除人工 智能自主获取外部资源、自我复制，产生自我意识，寻求外部权力，带来谋求 与人类争夺控制权的风险",
+          "translation": {
+            "text": "it is not ruled out that AI may autonomously acquire external resources, self-replicate, develop self-awareness and seek external power, bringing the risk of seeking to compete with humans for control",
+            "method": "machine",
+            "humanVerified": false
+          }
+        }
+      ],
+      "attributes": {
+        "provision": {
+          "kind": "risk_category",
+          "key": "loss-of-control"
+        }
+      }
+    },
+    {
+      "id": "c3-governance-tc260-asgf-v2-open-source-flaw-propagation",
+      "subject": "tc260-asgf-v2-0",
+      "predicate": "states_provision",
+      "object": {
+        "kind": "literal",
+        "value": "Strengthen assessment of how security flaws in foundation and open-source models are passed on"
+      },
+      "topic": "governance",
+      "statement": "Among technical countermeasures to model and algorithm risks, the AI Safety Governance Framework 2.0 lists strengthening the assessment of how security flaws (安全缺陷) in foundation models and open-source models are passed on.",
+      "time": {
+        "kind": "event",
+        "date": "2025-09-15",
+        "basis": "publication",
+        "note": "Release date of the cited edition, as the dataset records it; the provision states no effective date."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "What the cited edition says, as guidance in a technical document of TC260 (a national standardisation technical committee); it is not evidence that any developer adopted, implemented or was required to follow it. 开源 is rendered \"open-source\" as the text uses it, without any judgement of licence status.",
+      "evidence": [
+        {
+          "id": "c3-ev-governance-tc260-asgf-v2-open-source-flaw-propagation-1",
+          "sourceId": "c3-src-tc260-asgf-v2-pdf",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "§4.1.1 (d)",
+          "passageType": "quote",
+          "passage": "加强基础模型、 … 开源模型安全缺陷传导评估",
+          "translation": {
+            "text": "strengthen assessment of the transmission of security flaws in foundation models and open-source models",
+            "method": "machine",
+            "humanVerified": false
+          }
+        }
+      ],
+      "attributes": {
+        "provision": {
+          "kind": "technical_measure",
+          "key": "open-source-flaw-propagation"
+        }
+      }
+    },
+    {
+      "id": "c3-governance-tc260-asgf-v2-open-source-encouraged",
+      "subject": "tc260-asgf-v2-0",
+      "predicate": "states_provision",
+      "object": {
+        "kind": "literal",
+        "value": "Encourage open-sourcing of training and inference frameworks, tools, components and benchmarks, and greater open-model transparency"
+      },
+      "topic": "governance",
+      "statement": "Under strengthening open-source ecosystem and supply-chain security, the AI Safety Governance Framework 2.0 proposes encouraging and supporting the open-sourcing of training and inference frameworks, software tools, key components and evaluation benchmarks, and further raising the transparency of open-source models.",
+      "time": {
+        "kind": "event",
+        "date": "2025-09-15",
+        "basis": "publication",
+        "note": "Release date of the cited edition, as the dataset records it; the provision states no effective date."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "What the cited edition says, as guidance in a technical document of TC260 (a national standardisation technical committee); it is not evidence that any developer adopted, implemented or was required to follow it. 开源 is rendered \"open-source\" as the text uses it, without any judgement of licence status.",
+      "evidence": [
+        {
+          "id": "c3-ev-governance-tc260-asgf-v2-open-source-encouraged-1",
+          "sourceId": "c3-src-tc260-asgf-v2-pdf",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "§5.4 强化开源生态安全和供应链安全",
+          "passageType": "quote",
+          "passage": "鼓励支持训练推理框架、软件工具、关键 组件、评测基准等全方位的人工智能技术开源， … 进一步提高开源模型透明 度",
+          "translation": {
+            "text": "encourage and support all-round open-sourcing of AI technology, including training and inference frameworks, software tools, key components and evaluation benchmarks, further raising the transparency of open-source models",
+            "method": "machine",
+            "humanVerified": false
+          }
+        }
+      ],
+      "attributes": {
+        "provision": {
+          "kind": "governance_measure",
+          "key": "open-source-encouraged"
+        }
+      }
+    },
+    {
+      "id": "c3-governance-tc260-asgf-v2-open-source-derivative-developers",
+      "subject": "tc260-asgf-v2-0",
+      "predicate": "states_provision",
+      "object": {
+        "kind": "literal",
+        "value": "Developers building on open-source models to follow the applicable open-source licence terms and audit frameworks and code"
+      },
+      "topic": "governance",
+      "statement": "The AI Safety Governance Framework 2.0 states, in its guidelines for model and algorithm development, that developers who build on open-source models and algorithms follow the applicable open-source licence norms while respecting the original developers' intellectual input, and audit the frameworks and code they use.",
+      "time": {
+        "kind": "event",
+        "date": "2025-09-15",
+        "basis": "publication",
+        "note": "Release date of the cited edition, as the dataset records it; the provision states no effective date."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "What the cited edition says, as guidance in a technical document of TC260 (a national standardisation technical committee); it is not evidence that any developer adopted, implemented or was required to follow it. 开源 is rendered \"open-source\" as the text uses it, without any judgement of licence status.",
+      "evidence": [
+        {
+          "id": "c3-ev-governance-tc260-asgf-v2-open-source-derivative-developers-1",
+          "sourceId": "c3-src-tc260-asgf-v2-pdf",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "§6.1.8",
+          "passageType": "quote",
+          "passage": "基于开源模型算法进行二次开发的研发者， … 在尊重研发者智力 投入的基础上， … 遵循相应开源协议规范",
+          "translation": {
+            "text": "Developers carrying out secondary development based on open-source models and algorithms, while respecting the intellectual input of the developers, follow the corresponding open-source licence norms",
+            "method": "machine",
+            "humanVerified": false
+          }
+        }
+      ],
+      "attributes": {
+        "provision": {
+          "kind": "guidance",
+          "key": "open-source-derivative-developers"
+        }
+      }
+    },
+    {
+      "id": "c3-governance-tc260-asgf-v2-audit-disclosure",
+      "subject": "tc260-asgf-v2-0",
+      "predicate": "states_provision",
+      "object": {
+        "kind": "literal",
+        "value": "Regularly disclose audits of AI models and algorithms and how anomalies were handled"
+      },
+      "topic": "governance",
+      "statement": "The AI Safety Governance Framework 2.0 lists, in its guidelines for model and algorithm development, regularly disclosing the audits of AI models and algorithms and the handling of anomalies.",
+      "time": {
+        "kind": "event",
+        "date": "2025-09-15",
+        "basis": "publication",
+        "note": "Release date of the cited edition, as the dataset records it; the provision states no effective date."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "What the cited edition says, as guidance in a technical document of TC260 (a national standardisation technical committee); it is not evidence that any developer adopted, implemented or was required to follow it.",
+      "evidence": [
+        {
+          "id": "c3-ev-governance-tc260-asgf-v2-audit-disclosure-1",
+          "sourceId": "c3-src-tc260-asgf-v2-pdf",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "§6.1.13",
+          "passageType": "quote",
+          "passage": "定期披露人工智能模型算法的审计与异常处置情况",
+          "translation": {
+            "text": "regularly disclose the audits of AI models and algorithms and the handling of anomalies",
+            "method": "machine",
+            "humanVerified": false
+          }
+        }
+      ],
+      "attributes": {
+        "provision": {
+          "kind": "guidance",
+          "key": "audit-disclosure"
+        }
+      }
+    },
+    {
+      "id": "c3-governance-tc260-asgf-v3-agent-human-approval",
+      "subject": "tc260-asgf-v3-0",
+      "predicate": "states_provision",
+      "object": {
+        "kind": "literal",
+        "value": "Set behaviour boundaries for AI agents, with human approval for operations that may cause serious harm"
+      },
+      "topic": "governance",
+      "statement": "The AI Safety Governance Framework 3.0 lists, in its guidelines for model and algorithm development, setting behaviour boundaries for AI agents, with a human approval mechanism for operations that may cause serious harm and safety constraints on tool calls and external interactions.",
+      "time": {
+        "kind": "event",
+        "date": "2026-09-14",
+        "basis": "publication",
+        "note": "Release date of the cited edition, as the dataset records it; the provision states no effective date."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "What the cited edition says, as guidance in a technical document of TC260 (a national standardisation technical committee); it is not evidence that any developer adopted, implemented or was required to follow it.",
+      "evidence": [
+        {
+          "id": "c3-ev-governance-tc260-asgf-v3-agent-human-approval-1",
+          "sourceId": "c3-src-tc260-asgf-v3-pdf",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "§5.1.12",
+          "passageType": "quote",
+          "passage": "合理设定智能体行为边界，对可能造成严重损害的操作配备人工 审批机制，加强对工具调用和外部交互的安全约束",
+          "translation": {
+            "text": "reasonably set behavioural boundaries for agents, provide a human approval mechanism for operations that may cause serious harm, and strengthen safety constraints on tool calls and external interactions",
+            "method": "machine",
+            "humanVerified": false
+          }
+        }
+      ],
+      "attributes": {
+        "provision": {
+          "kind": "guidance",
+          "key": "agent-human-approval"
+        }
+      }
+    },
+    {
+      "id": "c3-governance-tc260-asgf-v3-upstream-flaw-assessment",
+      "subject": "tc260-asgf-v3-0",
+      "predicate": "states_provision",
+      "object": {
+        "kind": "literal",
+        "value": "Developers building on foundation models to assess security flaws of the model and upstream components"
+      },
+      "topic": "governance",
+      "statement": "The AI Safety Governance Framework 3.0 states that those who carry out secondary development on foundation models assess security flaws (安全缺陷) in the model and upstream components, to prevent upstream flaws spreading to downstream models and applications.",
+      "time": {
+        "kind": "event",
+        "date": "2026-09-14",
+        "basis": "publication",
+        "note": "Release date of the cited edition, as the dataset records it; the provision states no effective date."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "What the cited edition says, as guidance in a technical document of TC260 (a national standardisation technical committee); it is not evidence that any developer adopted, implemented or was required to follow it.",
+      "evidence": [
+        {
+          "id": "c3-ev-governance-tc260-asgf-v3-upstream-flaw-assessment-1",
+          "sourceId": "c3-src-tc260-asgf-v3-pdf",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "§5.1.13",
+          "passageType": "quote",
+          "passage": "基于基础大模型进行二次开发的，开展模型及上游组件安全缺陷 评估，防范上游缺陷向下游模型和应用扩散",
+          "translation": {
+            "text": "Those carrying out secondary development based on foundation large models assess security flaws of the model and upstream components, to prevent upstream flaws spreading to downstream models and applications",
+            "method": "machine",
+            "humanVerified": false
+          }
+        }
+      ],
+      "attributes": {
+        "provision": {
+          "kind": "guidance",
+          "key": "upstream-flaw-assessment"
+        }
+      }
+    },
+    {
+      "id": "c3-governance-tc260-asgf-v3-open-source-official-channels",
+      "subject": "tc260-asgf-v3-0",
+      "predicate": "states_provision",
+      "object": {
+        "kind": "literal",
+        "value": "Developers building on open-source models to obtain models from official channels and verify source and integrity"
+      },
+      "topic": "governance",
+      "statement": "The AI Safety Governance Framework 3.0 states that developers building on open-source models and algorithms follow the applicable open-source licence norms, obtain models and components from official channels or mainstream open-source communities, and verify their source and integrity.",
+      "time": {
+        "kind": "event",
+        "date": "2026-09-14",
+        "basis": "publication",
+        "note": "Release date of the cited edition, as the dataset records it; the provision states no effective date."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "What the cited edition says, as guidance in a technical document of TC260 (a national standardisation technical committee); it is not evidence that any developer adopted, implemented or was required to follow it. 开源 is rendered \"open-source\" as the text uses it, without any judgement of licence status.",
+      "evidence": [
+        {
+          "id": "c3-ev-governance-tc260-asgf-v3-open-source-official-channels-1",
+          "sourceId": "c3-src-tc260-asgf-v3-pdf",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "§5.1.14",
+          "passageType": "quote",
+          "passage": "遵循相应开源协议规范，从官方渠道或主流开源社区获取模型和 组件，并开展来源、完整性校验",
+          "translation": {
+            "text": "follow the corresponding open-source licence norms, obtain models and components from official channels or mainstream open-source communities, and verify their source and integrity",
+            "method": "machine",
+            "humanVerified": false
+          }
+        }
+      ],
+      "attributes": {
+        "provision": {
+          "kind": "guidance",
+          "key": "open-source-official-channels"
+        }
+      }
+    },
+    {
+      "id": "c3-governance-tc260-asgf-v3-regulatory-sandbox",
+      "subject": "tc260-asgf-v3-0",
+      "predicate": "states_provision",
+      "object": {
+        "kind": "literal",
+        "value": "Sandbox regulation rules combining sector classification with risk grading"
+      },
+      "topic": "governance",
+      "statement": "The AI Safety Governance Framework 3.0 proposes building a flexible, dynamic and controllable sandbox regulatory environment, beginning with sandbox rules that combine sector classification with risk grading and define the objects, test scope, responsibilities and exit conditions.",
+      "time": {
+        "kind": "event",
+        "date": "2026-09-14",
+        "basis": "publication",
+        "note": "Release date of the cited edition, as the dataset records it; the provision states no effective date."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "What the cited edition says, as guidance in a technical document of TC260 (a national standardisation technical committee); it is not evidence that any developer adopted, implemented or was required to follow it.",
+      "evidence": [
+        {
+          "id": "c3-ev-governance-tc260-asgf-v3-regulatory-sandbox-1",
+          "sourceId": "c3-src-tc260-asgf-v3-pdf",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "§4.3.1",
+          "passageType": "quote",
+          "passage": "建立行业分类与风险分级相结合的沙箱监管规则。明确沙箱监管适 用对象、测试范围、权责关系和退出条件",
+          "translation": {
+            "text": "Establish sandbox regulatory rules combining sector classification with risk grading. Clarify the applicable objects of sandbox regulation, the test scope, the allocation of powers and responsibilities, and exit conditions",
+            "method": "machine",
+            "humanVerified": false
+          }
+        }
+      ],
+      "attributes": {
+        "provision": {
+          "kind": "governance_measure",
+          "key": "regulatory-sandbox"
+        }
+      }
+    },
+    {
+      "id": "c3-governance-tc260-asgf-v2-updates-v1",
+      "subject": "tc260-asgf-v2-0",
+      "predicate": "supersedes_document",
+      "object": {
+        "kind": "entity",
+        "entityId": "tc260-asgf-v1-0"
+      },
+      "topic": "governance",
+      "statement": "The preface of the AI Safety Governance Framework 2.0 refers to version 1.0, issued in September 2024, and states that version 2.0 adjusts and updates the risk types on the basis of version 1.0.",
+      "time": {
+        "kind": "event",
+        "date": "2025-09-15",
+        "basis": "publication",
+        "note": "Release date of the citing edition, as the dataset records it."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "The text describes 2.0 as building on and updating 1.0 (\"在1.0版基础上，调整更新风险类型\"); it does not state that 1.0 is withdrawn or ceases to apply. Whether that warrants supersedes_document, rather than a plain update relation, is a reviewer decision.",
+      "evidence": [
+        {
+          "id": "c3-ev-governance-tc260-asgf-v2-updates-v1-1",
+          "sourceId": "c3-src-tc260-asgf-v2-pdf",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Preface and §2.1",
+          "passageType": "quote",
+          "passage": "我们于2024年9月制 定发布了《人工智能安全治理框架》1.0版 … 在1.0版基础上， … 调整更新⻛险类型",
+          "translation": {
+            "text": "we formulated and released version 1.0 of the AI Safety Governance Framework in September 2024 … on the basis of version 1.0, the risk types are adjusted and updated",
+            "method": "machine",
+            "humanVerified": false
+          }
+        }
+      ]
+    },
+    {
+      "id": "c3-governance-tc260-asgf-v3-updates-v2",
+      "subject": "tc260-asgf-v3-0",
+      "predicate": "supersedes_document",
+      "object": {
+        "kind": "entity",
+        "entityId": "tc260-asgf-v2-0"
+      },
+      "topic": "governance",
+      "statement": "The preface of the AI Safety Governance Framework 3.0 states that TC260 drafted it on the basis of the Framework 1.0 (2024) and 2.0 (2025), updating the risk classification and adjusting the technical and governance measures.",
+      "time": {
+        "kind": "event",
+        "date": "2026-09-14",
+        "basis": "publication",
+        "note": "Release date of the citing edition, as the dataset records it."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "The text names both earlier editions as its basis and describes updating them; it does not state that 2.0 or 1.0 is withdrawn. Recorded against 2.0, the immediate predecessor; the same passage also names 1.0. Whether supersedes_document fits is a reviewer decision.",
+      "evidence": [
+        {
+          "id": "c3-ev-governance-tc260-asgf-v3-updates-v2-1",
+          "sourceId": "c3-src-tc260-asgf-v3-pdf",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Preface",
+          "passageType": "quote",
+          "passage": "在《人工智能安全治理框架 1.0》 （2024年）、《人工智能安全治理框架2.0》 （2025年）基础上，研究编制《人 工智能安全治理框架3.0》",
+          "translation": {
+            "text": "on the basis of the AI Safety Governance Framework 1.0 (2024) and the AI Safety Governance Framework 2.0 (2025), researched and compiled the AI Safety Governance Framework 3.0",
+            "method": "machine",
+            "humanVerified": false
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,4 +1,4 @@
-import { test, expect, type Page } from './fixtures';
+import { test, expect, MAP_FIRST_DRAW_TIMEOUT, type Page } from './fixtures';
 import AxeBuilder from '@axe-core/playwright';
 import { readFileSync } from 'node:fs';
 import { datasetSchema } from '../../src/domain/schema';
@@ -143,10 +143,7 @@ test('person page keeps snapshots, undated roles and computed limits distinct', 
     name: 'Evidence inspector',
   });
   for (const id of profile.claimIds) {
-    await person
-      .locator(`button.doc-claim[data-claim-id="${id}"]`)
-      .first()
-      .click();
+    await person.locator(`.doc-claim[data-claim-id="${id}"]`).first().click();
     await expect(inspector.locator('.claim-title')).toHaveText(
       data.claims.find((c) => c.id === id)!.statement,
     );
@@ -195,6 +192,7 @@ test('neighbourhood map is a secondary, keyboard-reachable tab', async ({
   await expect(map).toHaveAttribute('aria-selected', 'true');
   await expect(page.getByTestId('network').locator('canvas')).not.toHaveCount(
     0,
+    { timeout: MAP_FIRST_DRAW_TIMEOUT },
   );
   await page.keyboard.press('ArrowLeft');
   await expect(
@@ -218,9 +216,14 @@ test('document page separates citation, credit and reported method use', async (
   await expect(dates.locator('[data-claim-id]')).toHaveCount(
     record.authored.length,
   );
-  await expect(
-    article.getByRole('link', { name: /Deep reinforcement learning/ }),
-  ).toHaveAttribute('href', record.exactSources[0].evidenceUrl);
+  // The key papers admission (2026-10-31) adds the paper's arXiv abstract
+  // page as a second source, so each exact source has its own link.
+  const exactLinks = article.getByRole('link', {
+    name: /Deep reinforcement learning/,
+  });
+  await expect(exactLinks).toHaveCount(record.exactSources.length);
+  for (const [i, source] of record.exactSources.entries())
+    await expect(exactLinks.nth(i)).toHaveAttribute('href', source.evidenceUrl);
   for (const relation of record.relations.filter((r) => r.claims.length)) {
     const region = article.locator(`[data-relation="${relation.id}"]`);
     await expect(region.getByRole('heading')).toContainText(relation.label);
@@ -231,7 +234,13 @@ test('document page separates citation, credit and reported method use', async (
   await expect(article).toContainText(
     'No other versions of this document are recorded',
   );
-  await article.locator('[data-relation="cites"] [data-claim-id]').click();
+  // The key papers admission (2026-10-31) adds the paper's own citations;
+  // the earlier record is opened.
+  await article
+    .locator(
+      '[data-relation="cites"] [data-claim-id="lineage-preferences-cites-trpo"]',
+    )
+    .click();
   await expect(
     page.getByRole('complementary', { name: 'Evidence inspector' }),
   ).toContainText('Citation alone is neither agreement');
@@ -289,7 +298,7 @@ test('person links from search, dossiers and the inspector open person pages', a
   page,
 }) => {
   await page.goto('/explore');
-  await page.getByRole('searchbox').fill('Jan Leike');
+  await page.getByRole('main').getByRole('searchbox').fill('Jan Leike');
   await page
     .getByRole('link', { name: 'Jan Leike: person page', exact: true })
     .click();

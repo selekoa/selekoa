@@ -1,10 +1,11 @@
+import { quoted } from './quote';
 import type { ReactNode } from 'react';
 import type { DocumentRecord } from '../domain/document-record';
 import { startHref } from './SiteChrome';
 import { startIds } from './start-ids';
 import { NavLink, RecordLink } from './NavLink';
 import { editionAnchorDate, editionGapText } from '../domain/document-history';
-import { predicates } from '../domain/predicates';
+import { relationLabel } from '../domain/predicates';
 import { CopyLink } from './ReferenceActions';
 import {
   ClaimRow,
@@ -17,6 +18,9 @@ import { ArchiveLink, ArchiveNote, SourceLanguage } from './SourceArchive';
 import { nonEnglishLanguage } from '../domain/source-archive';
 import { AppearsIn } from './AppearsIn';
 import type { CollectionTarget } from '../domain/appearances';
+import { earliestMarks } from '../domain/propositions';
+import { propositionFrames } from '../reading/proposition-frames';
+import { referencePath } from '../domain/addresses';
 import './record-pages.css';
 
 const basisLabels: Record<string, string> = {
@@ -36,6 +40,7 @@ export function DocumentPage({
   onHistory,
   onProposition,
   onCollection,
+  onCollectionRow,
   resume,
 }: ClaimProps & {
   record: DocumentRecord;
@@ -46,10 +51,18 @@ export function DocumentPage({
   /** Opens the propositions page at a proposition. */
   onProposition?: (id: string) => void;
   onCollection: (target: CollectionTarget) => void;
+  /** Opens a propositions collection with one claim open at its row. */
+  onCollectionRow: (collectionId: string, claimId: string) => void;
   resume?: ReactNode;
 }) {
   const { document, family, edition } = record;
   const props = { repository, selectedClaimId, onClaim };
+  // Headlines the propositions collections give this text, in their words.
+  const earliest = earliestMarks(
+    repository.data,
+    propositionFrames,
+    document.id,
+  );
   const name = (id: string) => repository.entities.get(id)!.name;
   const pageLink = (id: string) => {
     const entity = repository.entities.get(id)!;
@@ -300,6 +313,27 @@ export function DocumentPage({
             )}
           </dd>
         </dl>
+        {earliest.length > 0 && (
+          <ul className="doc-earliest">
+            {earliest.map((mark) => (
+              <li key={mark.collectionId + mark.claimId + mark.text}>
+                <NavLink
+                  className="text-button"
+                  href={referencePath({
+                    kind: 'propositions',
+                    id: mark.collectionId,
+                    inspect: mark.claimId,
+                  })}
+                  onOpen={() =>
+                    onCollectionRow(mark.collectionId, mark.claimId)
+                  }
+                >
+                  {mark.text} →
+                </NavLink>
+              </li>
+            ))}
+          </ul>
+        )}
         <div className="doc-actions">
           <CopyLink
             target={{ kind: 'document', id: document.id }}
@@ -428,10 +462,10 @@ export function DocumentPage({
                 <p className="record-note">
                   A limited selection of quoted provisions: what this edition
                   says about thresholds, required actions, who decides and
-                  exceptions. It is not a full summary and says nothing about
-                  implementation. A “not found” record states which part of the
-                  edition was inspected. It is not a claim that the text was
-                  deleted.
+                  exceptions, and other statements of the text. It is not a full
+                  summary and says nothing about implementation. A “not found”
+                  record states which part of the edition was inspected. It is
+                  not a claim that the text was deleted.
                 </p>
                 <ul className="record-rows provision-rows">
                   {[
@@ -557,6 +591,73 @@ export function DocumentPage({
                         ? 'Recorded, not re-checked'
                         : 'Stated'
                 }
+                excerpt={
+                  claim.predicate === 'states_provision' &&
+                  claim.evidenceIds.map((id) => {
+                    const e = repository.evidence.get(id)!;
+                    return (
+                      <span className="row-excerpt" key={id}>
+                        {e.passageType === 'quote'
+                          ? quoted(e.passage)
+                          : `Paraphrase: ${e.passage}`}{' '}
+                        <span className="row-excerpt-locator">{e.locator}</span>
+                      </span>
+                    );
+                  })
+                }
+                {...props}
+              />
+            ))}
+          </ul>
+        </section>
+      )}
+      {record.statements.length > 0 && (
+        <section
+          className="record-section"
+          aria-labelledby="document-statements"
+        >
+          <h2 id="document-statements">What the document states</h2>
+          <p className="record-note">
+            A limited selection of what this document states, each with its
+            passage. It describes the text, not whether anyone acted on it.
+          </p>
+          <ul className="record-rows provision-rows">
+            {record.statements.map((c) => (
+              <ProvisionRow key={c.id} claim={c} {...props} />
+            ))}
+          </ul>
+        </section>
+      )}
+      {record.contributions.length > 0 && (
+        <section
+          className="record-section"
+          aria-labelledby="document-contributions"
+        >
+          <h2 id="document-contributions">What the document says it adds</h2>
+          <p className="record-note">
+            The document’s own description of its contribution, quoted from the
+            version each row names. A claim to be the first is the document’s
+            claim; Selekoa does not assess it.
+          </p>
+          <ul className="record-rows">
+            {record.contributions.map((claim) => (
+              <ClaimRow
+                key={claim.id}
+                claim={claim}
+                heading={
+                  claim.attributes?.priorityClaim
+                    ? 'In its own words · includes its own priority claim'
+                    : 'In its own words'
+                }
+                excerpt={claim.evidenceIds.map((id) => {
+                  const e = repository.evidence.get(id)!;
+                  return (
+                    <span className="row-excerpt" key={id}>
+                      {quoted(e.passage)}{' '}
+                      <span className="row-excerpt-locator">{e.locator}</span>
+                    </span>
+                  );
+                })}
                 {...props}
               />
             ))}
@@ -571,7 +672,12 @@ export function DocumentPage({
               <ClaimRow
                 key={claim.id}
                 claim={claim}
-                heading={predicates[claim.predicate].label}
+                heading={
+                  // A relation recorded from another record reads from it.
+                  claim.subject === document.id
+                    ? relationLabel(claim)
+                    : `${name(claim.subject)} ${relationLabel(claim)} this document`
+                }
                 {...props}
               />
             ))}

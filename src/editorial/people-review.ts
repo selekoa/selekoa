@@ -1,6 +1,6 @@
 import { z } from 'zod';
 import { createRepository } from '../domain/repository';
-import { dateOf, timeLabel } from '../domain/query';
+import { dateOf, storedTimeLabel } from '../domain/query';
 import { renderSeedReview, reviewOrderSchema } from './seed-review';
 
 const incrementSchema = z.object({
@@ -72,7 +72,7 @@ export function renderPeopleReview(
       'Ordered by the supplied date or first known interval boundary; partial dates do not establish within-year order. Undated records appear last and imply no sequence.',
       '',
       ...selected.map(
-        (c) => `- ${md(timeLabel(c))} · \`${c.id}\` · ${md(c.statement)}`,
+        (c) => `- ${md(storedTimeLabel(c))} · \`${c.id}\` · ${md(c.statement)}`,
       ),
       '',
     ].join('\n');

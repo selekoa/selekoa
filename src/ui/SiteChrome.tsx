@@ -1,10 +1,17 @@
+import { useRef, useState } from 'react';
 import { releaseVersion } from 'virtual:site';
 import { referencePath } from '../domain/addresses';
 import { NavLink } from './NavLink';
 
 /** Pages the primary navigation opens. The wordmark opens the start page. */
 export type NavTarget =
-  'home' | 'governance' | 'ideas' | 'institutions' | 'search' | 'about';
+  | 'home'
+  | 'governance'
+  | 'ideas'
+  | 'institutions'
+  | 'search'
+  | 'explore'
+  | 'about';
 
 /**
  * What a start-page link asks the full application to open. The start page
@@ -15,7 +22,9 @@ export type StartAction =
   | { kind: 'documents' }
   | { kind: 'compare'; id: string }
   | { kind: 'commitments' }
+  | { kind: 'guide'; id: string }
   | { kind: 'propositions'; id: string }
+  | { kind: 'years' }
   | { kind: 'control'; id: string }
   | { kind: 'reading' }
   | { kind: 'question'; id: string }
@@ -23,6 +32,7 @@ export type StartAction =
   | { kind: 'person'; id: string }
   | { kind: 'claim'; id: string }
   | { kind: 'search'; q?: string }
+  | { kind: 'explore' }
   | { kind: 'about' }
   | { kind: 'how-checked' }
   | { kind: 'not-covered' };
@@ -34,6 +44,7 @@ export const navHref: Record<NavTarget, string> = {
   ideas: '/ideas',
   institutions: '/institutions',
   search: '/search',
+  explore: '/explore',
   about: '/about',
 };
 
@@ -81,20 +92,49 @@ export function SkipLink({ target, label }: { target: string; label: string }) {
   );
 }
 
+/** A magnifying glass, drawn in the text colour. */
+const searchIcon = (
+  <svg
+    aria-hidden="true"
+    focusable="false"
+    width="16"
+    height="16"
+    viewBox="0 0 16 16"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="1.6"
+  >
+    <circle cx="6.75" cy="6.75" r="4.75" />
+    <path d="M10.25 10.25 14 14" strokeLinecap="round" />
+  </svg>
+);
+
 export function SiteHeader({
   current,
   onNavigate,
+  onSearch,
   theme,
   onTheme,
   onHowChecked,
 }: {
   current: NavTarget | null;
   onNavigate: (target: NavTarget) => void;
+  /** Opens the search page with these terms. */
+  onSearch: (query: string) => void;
   theme: 'light' | 'dark';
   onTheme: (theme: 'light' | 'dark') => void;
   /** Opens “How this was checked” on the About & method page. */
   onHowChecked: () => void;
 }) {
+  // On a phone the search field opens from an icon; wider screens show it.
+  const [searchOpen, setSearchOpen] = useState(false);
+  const fieldRef = useRef<HTMLInputElement>(null);
+  const toggleRef = useRef<HTMLAnchorElement>(null);
+  const toggleSearch = () => {
+    const open = !searchOpen;
+    setSearchOpen(open);
+    if (open) requestAnimationFrame(() => fieldRef.current?.focus());
+  };
   const item = (target: NavTarget, label: string) => (
     <NavLink
       href={navHref[target]}
@@ -126,10 +166,80 @@ export function SiteHeader({
           {item('governance', 'Governance')}
           {item('ideas', 'Ideas & debates')}
           {item('institutions', 'Institutions & people')}
-          {item('search', 'Search')}
           {item('about', 'About & method')}
+          {item('explore', 'Explore the records')}
         </nav>
+        {/* The search page has its own field, so the header leaves it out
+            there. Without scripts the form asks for /search?q=…, which the
+            search page moves to its fragment address once it runs. */}
+        {current !== 'search' && (
+          <form
+            className={`header-search${searchOpen ? ' is-open' : ''}`}
+            id="site-search"
+            role="search"
+            aria-label="Site"
+            action={navHref.search}
+            method="get"
+            onSubmit={(event) => {
+              event.preventDefault();
+              const form = event.currentTarget;
+              const query = String(new FormData(form).get('q') ?? '').trim();
+              form.reset();
+              setSearchOpen(false);
+              onSearch(query);
+            }}
+          >
+            <input
+              ref={fieldRef}
+              type="search"
+              name="q"
+              aria-label="Search the records"
+              placeholder="Search"
+              autoComplete="off"
+              enterKeyHint="search"
+              onKeyDown={(event) => {
+                if (event.key !== 'Escape' || !searchOpen) return;
+                setSearchOpen(false);
+                toggleRef.current?.focus();
+              }}
+            />
+            <button type="submit" aria-label="Submit search">
+              {searchIcon}
+            </button>
+          </form>
+        )}
         <div className="header-actions">
+          {/* A link to the search page until the page runs in the browser. */}
+          {current !== 'search' && (
+            <a
+              ref={toggleRef}
+              className="header-search-toggle"
+              href={navHref.search}
+              role="button"
+              aria-label="Search"
+              aria-expanded={searchOpen}
+              aria-controls="site-search"
+              onClick={(event) => {
+                if (
+                  event.button !== 0 ||
+                  event.metaKey ||
+                  event.ctrlKey ||
+                  event.shiftKey ||
+                  event.altKey
+                )
+                  return;
+                event.preventDefault();
+                toggleSearch();
+              }}
+              onKeyDown={(event) => {
+                if (event.key !== ' ') return;
+                event.preventDefault();
+                toggleSearch();
+              }}
+            >
+              {searchIcon}
+            </a>
+          )}
           <button
             className="theme-toggle"
             aria-pressed={theme === 'dark'}
@@ -145,7 +255,9 @@ export function SiteHeader({
         Records found and checked by machines, not reviewed by an editor ·{' '}
         <NavLink
           className="text-button"
-          href={navHref.about}
+          // The section the link's handler opens, so that the page opened
+          // from its slice, or without scripts, opens there too.
+          href={`${navHref.about}#about-method`}
           onOpen={onHowChecked}
         >
           What this means →

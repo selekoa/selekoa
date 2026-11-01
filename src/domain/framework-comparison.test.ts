@@ -237,4 +237,45 @@ describe('framework comparison (schemas 2.17 and 2.18)', () => {
     ).toBeNull();
     expect(resolveReference('/compare/other', data).target).toBeNull();
   });
+
+  it('links a chosen set of editions, one per framework', () => {
+    const [first, second] = view.columns;
+    const chosen = [first.editions[0].id, second.editions[0].id];
+    const path = referencePath({
+      kind: 'compare',
+      id: frameworkComparison.id,
+      editions: chosen,
+    });
+    expect(path).toBe(
+      `/compare/frontier-safety-frameworks?edition=${chosen.join('%2C')}`,
+    );
+    expect(resolveReference(path, data).target).toEqual({
+      kind: 'compare',
+      id: frameworkComparison.id,
+      editions: chosen,
+    });
+    // The comma may also be written as it is.
+    expect(
+      resolveReference(
+        `/compare/frontier-safety-frameworks?edition=${chosen.join(',')}`,
+        data,
+      ).target,
+    ).toEqual({
+      kind: 'compare',
+      id: frameworkComparison.id,
+      editions: chosen,
+    });
+    const invalid = (edition: string) =>
+      resolveReference(
+        `/compare/frontier-safety-frameworks?edition=${edition}`,
+        data,
+      ).target;
+    // Two editions of one framework, a document outside the comparison, an
+    // empty value.
+    expect(
+      invalid(`${first.editions[0].id},${first.editions.at(-1)!.id}`),
+    ).toBeNull();
+    expect(invalid('eu-ai-act-2024')).toBeNull();
+    expect(invalid('')).toBeNull();
+  });
 });

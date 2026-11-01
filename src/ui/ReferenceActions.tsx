@@ -31,6 +31,17 @@ import {
   controlStarterMarkdown,
   controlStructureStarter,
 } from '../domain/governance-starters';
+import type { FrameworksLawCollection } from '../domain/frameworks-law';
+import {
+  frameworksLawStarter,
+  frameworksLawStarterMarkdown,
+} from '../domain/frameworks-law-starter';
+import type { FrameworkChangesCollection } from '../domain/framework-changes';
+import type { ComparisonCollection } from '../domain/framework-comparison';
+import {
+  frameworkChangesStarter,
+  frameworkChangesStarterMarkdown,
+} from '../domain/framework-changes-starter';
 import type { QuestionStarterDefinition } from '../domain/question-starter';
 import type { PropositionsCollection } from '../domain/propositions';
 import {
@@ -283,7 +294,7 @@ export function ExportReading({
 }
 
 /** Builds both formats before any download, so a failure leaves no partial file. */
-function StarterDownload({
+export function StarterDownload({
   data,
   name,
   description,
@@ -416,6 +427,60 @@ export function ExportCommitmentsStarter({
         const starter = await commitmentsStarter(data, collection);
         return {
           md: commitmentsStarterMarkdown(starter),
+          json: starterJson(starter),
+          sources: starter.sources,
+        };
+      }}
+    />
+  );
+}
+
+export function ExportFrameworksLawStarter({
+  data,
+  collection,
+}: {
+  data: Dataset;
+  collection: FrameworksLawCollection;
+}) {
+  return (
+    <StarterDownload
+      data={data}
+      name={`${collection.id}-v${collection.version}-starter`}
+      description="The timeline, every text’s standing and dated records, its quoted provisions, the framework links and the list of what is not covered, with evidence locations, qualifications, source references, stored paraphrases and permitted short quotes. Original documents are not included."
+      build={async () => {
+        const starter = await frameworksLawStarter(data, collection);
+        return {
+          md: frameworksLawStarterMarkdown(starter),
+          json: starterJson(starter),
+          sources: starter.sources,
+        };
+      }}
+    />
+  );
+}
+
+export function ExportFrameworkChangesStarter({
+  data,
+  collection,
+  comparison,
+}: {
+  data: Dataset;
+  collection: FrameworkChangesCollection;
+  comparison: ComparisonCollection;
+}) {
+  return (
+    <StarterDownload
+      data={data}
+      name={`${collection.id}-v${collection.version}-starter`}
+      description="Every edition of each framework with its dates, each comparison cell’s status by question and edition, the difference between consecutive editions’ cells, the earliest located edition for each question and the list of what is not covered, with evidence locations, qualifications, source references, stored paraphrases and permitted short quotes. Original documents are not included."
+      build={async () => {
+        const starter = await frameworkChangesStarter(
+          data,
+          collection,
+          comparison,
+        );
+        return {
+          md: frameworkChangesStarterMarkdown(starter),
           json: starterJson(starter),
           sources: starter.sources,
         };

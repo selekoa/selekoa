@@ -12,9 +12,18 @@ import { documentHistories } from '../reading/frontier-safety-frameworks';
 import { frameworkComparison } from '../reading/framework-comparison';
 import { controlStructures } from '../reading/control-structures';
 import { commitmentCollections } from '../reading/commitments';
+import { guideById, guideIds } from '../reading/guides';
 import { questionStarters } from '../reading/self-governance';
-import { propositionCollections } from '../reading/human-thought';
+import { propositionFrames } from '../reading/proposition-frames';
 import { hubOutline, hubTitles } from '../ui/Hub';
+import {
+  chronicleIndexOf,
+  chronicleTopicLabels,
+  parseYearPageId,
+  yearPageIds,
+  yearTotal,
+} from '../domain/chronicle-index';
+import { chronicleText, yearCounts } from '../reading/chronicle';
 
 export const siteName = 'Selekoa';
 export const siteTagline = 'A documentary history of machine intelligence';
@@ -40,9 +49,10 @@ export function pagePaths(data: Dataset): string[] {
     ...of(
       commitmentCollections.map((c) => ({ kind: 'commitments', id: c.id })),
     ),
-    ...of(
-      propositionCollections.map((c) => ({ kind: 'propositions', id: c.id })),
-    ),
+    ...of(guideIds.map((id) => ({ kind: 'guide', id }))),
+    ...of(propositionFrames.map((c) => ({ kind: 'propositions', id: c.id }))),
+    ...of([{ kind: 'years' }]),
+    ...of(yearPageIds(data).map((id) => ({ kind: 'year', id }))),
     ...of(
       [...questionStarters, ...researchPaths].map((c) => ({
         kind: 'question',
@@ -78,6 +88,16 @@ const page = (heading: string, description: string): PageMeta => ({
   title: `${heading} · ${siteName}`,
   description: clip(description, 200),
 });
+/**
+ * A page whose description is computed when read: the browser reads only
+ * the title (a hub's description counts every collection's records).
+ */
+const describedLater = (heading: string, describe: () => string): PageMeta => ({
+  title: `${heading} · ${siteName}`,
+  get description() {
+    return clip(describe(), 200);
+  },
+});
 
 /**
  * The title and description of the page at an address, or null when the
@@ -94,9 +114,9 @@ export function pageMeta(data: Dataset, address: string): PageMeta | null {
   const entity = (id: string) => data.entities.find((e) => e.id === id);
   switch (target.kind) {
     case 'hub':
-      return page(
+      return describedLater(
         hubTitles[target.id],
-        hubOutline(landingSummary(data), target.id).description,
+        () => hubOutline(landingSummary(data), target.id).description,
       );
     case 'about':
       return page(
@@ -130,9 +150,29 @@ export function pageMeta(data: Dataset, address: string): PageMeta | null {
       const c = commitmentCollections.find((d) => d.id === target.id)!;
       return page(c.title, c.question);
     }
-    case 'propositions': {
-      const c = propositionCollections.find((d) => d.id === target.id)!;
+    case 'guide': {
+      const c = guideById(target.id)!;
       return page(c.title, c.question);
+    }
+    case 'propositions': {
+      const c = propositionFrames.find((d) => d.id === target.id)!;
+      return page(c.title, c.question);
+    }
+    case 'years':
+      return page(chronicleText.indexTitle, chronicleText.indexDescription);
+    case 'year': {
+      const { year, topic } = parseYearPageId(data, target.id)!;
+      const summary = chronicleIndexOf(data).years.find(
+        (y) => y.year === year,
+      )!;
+      return page(
+        topic
+          ? `Records dated ${year}: ${chronicleTopicLabels[topic].toLowerCase()}`
+          : yearTotal(summary)
+            ? `Records dated ${year}`
+            : chronicleText.statedOnlyTitle(year),
+        `${yearCounts(summary, topic)} ${chronicleText.selective}`,
+      );
     }
     case 'question':
     case 'reading': {

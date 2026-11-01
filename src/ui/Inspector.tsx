@@ -1,6 +1,13 @@
 import { Fragment } from 'react';
+import facts from 'virtual:site-facts';
 import { restsOnReporting, retrievalRouteLabels } from '../domain/genealogy';
-import { RecordLink } from './NavLink';
+import { RecordLink, ClaimLink, NavLink } from './NavLink';
+import {
+  chronicleIndexOf,
+  isScheduled,
+  placements,
+} from '../domain/chronicle-index';
+import { referencePath } from '../domain/addresses';
 import { StatedReason } from './RecordMarks';
 import { quoted } from './quote';
 import {
@@ -11,7 +18,11 @@ import {
 } from '../domain/versions';
 import type { Claim } from '../domain/schema';
 import type { Repository } from '../domain/repository';
-import { predicates } from '../domain/predicates';
+import {
+  attributionLabels,
+  predicates,
+  relationLabel,
+} from '../domain/predicates';
 import { timeLabel } from '../domain/query';
 import {
   engagementLabels,
@@ -64,12 +75,12 @@ export function ClaimButton({
       ? repository.entities.get(claim.object.entityId)!.name
       : `${claim.object.value.toLocaleString('en-US')} ${claim.object.unit ?? ''}`;
   return (
-    <button
+    <ClaimLink
       className={`claim-row${selected ? ' is-selected' : ''}`}
-      onClick={() => onSelect(claim.id)}
-      aria-pressed={selected}
-      data-claim-id={claim.id}
-      aria-label={`${subject.name} ${predicates[claim.predicate].label} ${objectName}. ${timeLabel(claim)}. ${claim.predicate === 'changes_from' || claim.attributes?.transactionType || claim.attributes?.activityStage ? claim.statement : ''} Inspect evidence.`}
+      claimId={claim.id}
+      onOpen={() => onSelect(claim.id)}
+      pressed={selected}
+      aria-label={`${subject.name} ${relationLabel(claim)} ${objectName}. ${timeLabel(claim, repository.data)}. ${claim.predicate === 'changes_from' || claim.attributes?.transactionType || claim.attributes?.activityStage ? claim.statement : ''} Inspect evidence.`}
     >
       <span className="claim-route">
         {subject.shortName ?? subject.name}
@@ -77,7 +88,7 @@ export function ClaimButton({
         {objectName}
       </span>
       <span className="claim-predicate">
-        {predicates[claim.predicate].label}
+        {relationLabel(claim)}
         {claim.attributes?.role ? ` · ${claim.attributes.role}` : ''}
         {claim.attributes?.activityStage
           ? ` · ${claim.attributes.activityStage.replaceAll('_', ' ')}`
@@ -89,10 +100,10 @@ export function ClaimButton({
         <span className="small-note">{claim.statement}</span>
       )}
       <span className="claim-row-meta">
-        {timeLabel(claim)}
+        {timeLabel(claim, repository.data)}
         <span>Evidence ↗</span>
       </span>
-    </button>
+    </ClaimLink>
   );
 }
 
@@ -106,8 +117,12 @@ type Props = {
   /** Opens a person or document reading page from the entity view. */
   onPage?: (id: string) => void;
   onClose: () => void;
+  /** The page's own heading already shows the statement (a claim's page). */
+  statementShown?: boolean;
   onFamily?: (family: string) => void;
   onTopic: (topic: 'ideas' | 'capital' | 'governance') => void;
+  /** Opens the chronicle's page for a year. */
+  onYear?: (id: string) => void;
 };
 export function Inspector({
   repository,
@@ -118,8 +133,10 @@ export function Inspector({
   onEntity,
   onPage,
   onClose,
+  statementShown,
   onFamily,
   onTopic,
+  onYear,
 }: Props) {
   const claim = claimId ? repository.claims.get(claimId) : undefined;
   const entity = entityId ? repository.entities.get(entityId) : undefined;
@@ -147,7 +164,7 @@ export function Inspector({
           <RecordLink id={subject.id} onOpen={() => onEntity(subject.id)}>
             {subject.name}
           </RecordLink>
-          <span>{predicates[claim.predicate].label} ↓</span>
+          <span>{relationLabel(claim)} ↓</span>
           {object ? (
             <RecordLink id={object.id} onOpen={() => onEntity(object.id)}>
               {object.name}
@@ -160,7 +177,13 @@ export function Inspector({
             </strong>
           )}
         </div>
-        <h2 className="claim-title">{claim.statement}</h2>
+        <h2
+          className={
+            statementShown ? 'claim-title visually-hidden' : 'claim-title'
+          }
+        >
+          {claim.statement}
+        </h2>
         <CopyLink
           target={{ kind: 'claim', id: claim.id }}
           label="Copy claim link"
@@ -272,7 +295,33 @@ export function Inspector({
               </Fragment>
             ))}
           <dt>Date</dt>
-          <dd>{timeLabel(claim)}</dd>
+          <dd>
+            {timeLabel(claim, repository.data)}
+            {[
+              ...new Map(
+                placements(claim).map((p) => [
+                  p.date.slice(0, 4),
+                  // A scheduled date is listed with the year's stated dates.
+                  isScheduled(
+                    chronicleIndexOf(repository.data),
+                    claim.id,
+                    p.date,
+                  ),
+                ]),
+              ),
+            ].map(([year, scheduled]) => (
+              <Fragment key={year}>
+                {' '}
+                <NavLink
+                  className="text-button inspector-year"
+                  href={referencePath({ kind: 'year', id: year })}
+                  onOpen={() => onYear?.(year)}
+                >
+                  {scheduled ? 'Dates stated for' : 'Records dated'} {year} →
+                </NavLink>
+              </Fragment>
+            ))}
+          </dd>
           {attributes?.thought && (
             <>
               {attributes.thought.attested && (
@@ -373,6 +422,38 @@ export function Inspector({
               ))}
             </>
           )}
+          {attributes?.quantity?.measures && (
+            <>
+              <dt>Figure measures</dt>
+              <dd>
+                {attributes.quantity.measures === 'not_stated'
+                  ? 'not stated by the source'
+                  : attributes.quantity.measures.replaceAll('_', ' ')}
+              </dd>
+            </>
+          )}
+          {attributes?.statedDates && (
+            <>
+              <dt>Stated dates (targets and terms, not events)</dt>
+              <dd>
+                {attributes.statedDates
+                  .map(
+                    (d) =>
+                      `${d.kind.replaceAll('_', ' ')}: ${d.wording ?? d.date}${d.wording && d.date && !d.wording.includes(d.date) ? ` (${d.date})` : ''}`,
+                  )
+                  .join('; ')}
+              </dd>
+            </>
+          )}
+          {attributes?.listedEntity && (
+            <>
+              <dt>Listed entity, as mapped</dt>
+              <dd>
+                {repository.entities.get(attributes.listedEntity)?.name ??
+                  attributes.listedEntity}
+              </dd>
+            </>
+          )}
           {attributes?.listing && (
             <>
               <dt>Entries listed</dt>
@@ -395,8 +476,39 @@ export function Inspector({
             <>
               <dt>Evaluated system</dt>
               <dd>{attributes.evaluatedSystem}</dd>
-              <dt>Activity scope</dt>
-              <dd>{attributes.activityScope}</dd>
+              {attributes.activityScope && (
+                <>
+                  <dt>Activity scope</dt>
+                  <dd>{attributes.activityScope}</dd>
+                </>
+              )}
+            </>
+          )}
+          {attributes?.evaluation && (
+            <>
+              <dt>What the report measured</dt>
+              <dd>{attributes.evaluation.what}</dd>
+              <dt>By what kind of method</dt>
+              <dd>{attributes.evaluation.how}</dd>
+              <dt>The result, in the report’s words</dt>
+              <dd>{attributes.evaluation.result}</dd>
+              <dt>The caveats the report gives</dt>
+              <dd>{attributes.evaluation.caveats}</dd>
+            </>
+          )}
+          {attributes?.priorityClaim && (
+            <>
+              <dt>Priority claim</dt>
+              <dd>
+                The passage includes the document’s own claim of priority or
+                novelty. It is the document’s claim; Selekoa does not assess it.
+              </dd>
+            </>
+          )}
+          {attributes?.attribution && (
+            <>
+              <dt>Kind of attribution</dt>
+              <dd>{attributionLabels[attributes.attribution]}</dd>
             </>
           )}
           {attributes?.transitionScope && (
@@ -792,6 +904,18 @@ export function Inspector({
         {entity.aliases.length > 0 && (
           <p className="aliases">Also known as {entity.aliases.join(', ')}</p>
         )}
+        {entity.location && (
+          <p className="aliases">
+            Location, as its sources give it:{' '}
+            {[
+              entity.location.place,
+              entity.location.adminArea,
+              entity.location.countryCode,
+            ]
+              .filter(Boolean)
+              .join(', ')}
+          </p>
+        )}
         {entity.datedNames && (
           <p className="aliases">
             Names, as their sources date them:{' '}
@@ -889,9 +1013,10 @@ export function Inspector({
       <div className="editorial-note">
         <h3>Dataset coverage</h3>
         <p>
-          {repository.data.claims.length} claims about{' '}
-          {repository.data.entities.length} people, organisations, documents and
-          other subjects. Every claim links to evidence you can inspect.
+          {facts.claims} claims about{' '}
+          {/* Split as before, so the built pages are unchanged. */}
+          {facts.entities} people, organisations, documents and other subjects.
+          Every claim links to evidence you can inspect.
         </p>
         <p>
           This is a selective historical sample. It is neither complete nor

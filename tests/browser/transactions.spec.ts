@@ -27,6 +27,7 @@ test('OpenAI capital and compute paths expose distinct stages and bounded contra
   await expect(
     panel.getByRole('link', {
       name: 'The next chapter of the Microsoft–OpenAI partnership',
+      exact: true,
     }),
   ).toHaveAttribute(
     'href',

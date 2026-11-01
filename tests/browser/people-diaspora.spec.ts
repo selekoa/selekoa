@@ -15,8 +15,8 @@ for (const mobile of [false, true]) {
       .getByRole('navigation', { name: 'Explore the dataset' })
       .getByRole('button', { name: /^People/ })
       .click();
-    await page.getByRole('searchbox').fill('Guodong Zhang');
-    await page.getByRole('searchbox').press('Enter');
+    await page.getByRole('main').getByRole('searchbox').fill('Guodong Zhang');
+    await page.getByRole('main').getByRole('searchbox').press('Enter');
     await page.getByRole('button', { name: 'Timeline', exact: true }).click();
     const timeline = page.getByLabel('Chronological claims');
     // Lab genealogy records (2026-10-17, lg-) are left out of this count.
@@ -31,8 +31,8 @@ for (const mobile of [false, true]) {
     await expect(inspector).toContainText('Research Intern');
     await expect(inspector).toContainText('Machine-checked');
     await expect(inspector).toContainText('Not reviewed by an editor');
-    await page.getByRole('searchbox').fill('Daniel Gross');
-    await page.getByRole('searchbox').press('Enter');
+    await page.getByRole('main').getByRole('searchbox').fill('Daniel Gross');
+    await page.getByRole('main').getByRole('searchbox').press('Enter');
     await timeline
       .locator('[data-claim-id="gross-ssi-departure-announced-2025"]')
       .click();

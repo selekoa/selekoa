@@ -1,0 +1,796 @@
+{
+  "auditor": "Claude family, fresh-context same-family audit A",
+  "date": "2026-10-29",
+  "sample": "targeted",
+  "coverage": {
+    "checked": 68,
+    "notRetrieved": [
+      "Crawford and Calo, Nature 538:311 (2016), full text: closed access (nature.com PDF HTTP 429; OpenAlex and Semantic Scholar report no open copy); only the cached standfirst was read"
+    ],
+    "method": "Every quotation located in the cached text with the pack's own normalise/quoteFound and read with about 350 characters of context on each side. Earliest-located roles were checked against every pack record on the same proposition and stance, and against all 184 cached documents by targeted regex searches (treacherous, orthogonal, terms of R02/R05/R13/R14, timing words). Dates were checked against headers, page metadata, arXiv stamps and PDF metadata. Proposed replacement quotes were checked with quoteFound. audit-B.json was not opened.",
+    "verdictCounts": {
+      "ok": 49,
+      "correct": 16,
+      "reclassify": 3
+    }
+  },
+  "findings": [
+    {
+      "id": "rd-r01-bostrom-2012-superintelligent-will",
+      "verdict": "ok",
+      "issue": "Quotes verbatim, locators right; meets R01 strictly. Earliest-located holds: the only earlier R01 articulation in the pack (Bostrom 2003) is read in an undated revised copy, so its wording is unattested.",
+      "evidence": "Cached PDF, Section 1.2 boxed thesis (p. 3) and Conclusions (p. 14), both matched in context. Bostrom 2003 page heads itself \"a slightly revised version\" with no revision date.",
+      "proposed": null
+    },
+    {
+      "id": "rd-r01-brooks-2017-seven-deadly-sins-contests",
+      "verdict": "correct",
+      "issue": "Two problems. (1) The first quote is cut off so that it drops Brooks's negation. The source reads \"We would never get to a situation in any version of the real world where such a program could exist. One smart enough ...\". The quote begins at \"such a program could exist\", so on its own it says the opposite of what Brooks argues. (2) Earliest-located should move. Goertzel's paper of November 2015, already a pack source, explicitly disputes the orthogonality thesis, which it quotes. That is earlier than this post of 2017-09-07, but it has no R01 record. The statement also ends with a stray \",.\".",
+      "evidence": "brooks-2017-seven-deadly-sins, Section C \"Misaligned Values\": \"well, no. we would never get to a situation in any version of the real world where such a program could exist. One smart enough ...\". goertzel-2015-superintelligence-fears, section \"6. The 'Scary Idea' redux\": it quotes the orthogonality thesis (p. 107), then \"This seems a strange sort of statement to preoccupy on.\" It argues that in-principle possibility is of little interest and that \"Some intelligence/goal pairings might be physically possible but extremely unlikely to occur under reasonable assumptions\".",
+      "proposed": {
+        "roles": ["contesting"],
+        "statement": "Brooks's post of 7 September 2017 argues that no real program could be smart enough to subvert human society to achieve goals set for it by humans without understanding how it was causing problems for those humans.",
+        "evidence": [
+          {
+            "locator": "Section C, Misaligned Values",
+            "passageType": "quote",
+            "passage": "We would never get to a situation in any version of the real world where such a program could exist."
+          },
+          {
+            "locator": "Section C, Misaligned Values (next sentence)",
+            "passageType": "quote",
+            "passage": "One smart enough that it would be able to invent ways to subvert human society to achieve goals set for it by humans, without understanding the ways in which it was causing problems for those same humans."
+          }
+        ],
+        "qualification": "Brooks answers a quoted passage whose author he leaves unnamed; the post's argument concerns understanding of human goals, not whether such understanding brings concern for them.",
+        "newRecord": {
+          "id": "rd-r01-goertzel-2015-superintelligence-fears-contests",
+          "proposition": "R01",
+          "predicate": "contests_proposition",
+          "document": "goertzel-2015-superintelligence-fears",
+          "roles": ["earliest-located", "contesting"],
+          "time": {
+            "kind": "event",
+            "date": "2015-11",
+            "basis": "publication"
+          },
+          "statement": "Goertzel's paper of 2015, discussing Bostrom's Superintelligence, argues that the orthogonality thesis concerns only what is possible in principle, which is of little direct interest, and that some pairings of intelligence and goals, though physically possible, would be extremely unlikely under reasonable assumptions.",
+          "engagement": {
+            "kind": "engages-premise",
+            "rationale": "Disputes the relevance of in-principle independence by arguing that physically realisable minds constrain which goals go with which levels of intelligence."
+          },
+          "qualification": "The paper asks which goals are likely to accompany which kinds of intelligence in practice; it does not argue that intelligence brings benevolent goals.",
+          "evidence": [
+            {
+              "locator": "Section 6, \"The 'Scary Idea' redux\"",
+              "passageType": "quote",
+              "passage": "This seems a strange sort of statement to preoccupy on."
+            },
+            {
+              "locator": "Section 6",
+              "passageType": "quote",
+              "passage": "Some intelligence/goal pairings might be physically possible but extremely unlikely to occur under reasonable assumptions"
+            }
+          ],
+          "note": "Both quotes checked with quoteFound against the cache. The cached text has U+FFFD in place of apostrophes, so the drafter should avoid quoting words with apostrophes from this source."
+        }
+      }
+    },
+    {
+      "id": "rd-r01-bostrom-2003-ethical-issues",
+      "verdict": "ok",
+      "issue": "Quotes verbatim. The attested date is null and the earliest-located role is correctly withheld, because the page says it is a \"slightly revised version\" with no date. The qualification notes that the same passage allows a goal of serving humanity.",
+      "evidence": "bostrom-2003-ethical-issues, header (\"This is a slightly revised version of a paper published in ... 2003\") and Section 3.",
+      "proposed": null
+    },
+    {
+      "id": "rd-r02-omohundro-2007-nature-self-improving",
+      "verdict": "ok",
+      "issue": "Quotes verbatim; the drive list in the statement matches the section 3 title (\"The four drives: Efficiency, Self-Preservation, Acquisition, and Creativity\"). Dated by the revision read (2008-01-21), which precedes Basic AI Drives (PDF metadata 25 January 2008), so the earliest-located role holds.",
+      "evidence": "PDF heading \"September 5, 2007, revised January 21, 2008\"; Section 2.5 p. 13; Section 5 p. 25; pdfinfo creation dates 24 Jan 2008 (this) and 25 Jan 2008 (Basic AI Drives).",
+      "proposed": null
+    },
+    {
+      "id": "rd-r02-omohundro-2008-basic-ai-drives",
+      "verdict": "ok",
+      "issue": "Quotes verbatim, in the author's voice; earliest-located-term \"basic AI drives\" is right (the 2007 paper does not use the phrase).",
+      "evidence": "Abstract p. 1; Section 6 p. 9.",
+      "proposed": null
+    },
+    {
+      "id": "rd-r02-bostrom-2012-superintelligent-will",
+      "verdict": "ok",
+      "issue": "Quotes verbatim; earliest-located-term \"instrumental convergence\" checked: neither Omohundro paper nor Bostrom 2003 uses it or \"convergent instrumental\".",
+      "evidence": "Section 2 p. 6 (thesis box); Conclusions p. 14.",
+      "proposed": null
+    },
+    {
+      "id": "rd-r02-pinker-2014-edge-myth-of-ai-contests",
+      "verdict": "ok",
+      "issue": "Quote verbatim. The contrary-only engagement is right: the passage addresses evolved dominance motives, not instrumental subgoals. The tie with Kelly (2014) is broken by page order, and the qualification says the page does not state that this order is chronological. The Reality Club header lists Pinker before Kelly.",
+      "evidence": "edge-2014-myth-of-ai, Pinker response para. 4; Reality Club contributor list in page header.",
+      "proposed": null
+    },
+    {
+      "id": "rd-r02-lecun-2019-instrumental-convergence-thread-contests",
+      "verdict": "ok",
+      "issue": "Both quotes are LeCun's own turns in the LessWrong copy; engagement right; attested and dated by the copy.",
+      "evidence": "pace-2019 Comment Thread #2, LeCun replies following Russell's \"2+2\" comment.",
+      "proposed": null
+    },
+    {
+      "id": "rd-r02-russell-2019-instrumental-convergence-thread",
+      "verdict": "correct",
+      "issue": "The quote is Russell's own, but it shows an instrumental subgoal for one specified reward, coffee-fetching, in a toy MDP. The R02 element \"a wide range of final goals\" is not stated in Russell's comment. It appears in the question that opens the thread, which another participant addresses to LeCun. The record holds as an articulation only if the qualification makes this clear. Otherwise it reads as Russell stating the general thesis.",
+      "evidence": "pace-2019 Comment Thread #1. The question reads \"power and survival are instrumental goals for almost any ultimate goal ... You've often written about how we shouldn't be so worried\". Russell answers \"It is trivial to construct a toy MDP in which the agent's only reward comes from fetching the coffee ...\".",
+      "proposed": {
+        "qualification": "A toy model offered as a mathematical observation, for a single specified reward (fetching coffee); the generalisation to almost any goal is stated in the question that opens the thread, not in Russell's comment. Each comment is the participant's own words in a relayed copy; the record states what the comment says in this thread, not the author's view at another date."
+      }
+    },
+    {
+      "id": "rd-r02-zador-2019-instrumental-convergence-thread-contests",
+      "verdict": "ok",
+      "issue": "Quote verbatim; engagement right (retaliation and alternative strategies).",
+      "evidence": "pace-2019 Comment Thread #2, Zador comment before Russell's \"2+2\" reply.",
+      "proposed": null
+    },
+    {
+      "id": "rd-r02-bostrom-2003-ethical-issues-context",
+      "verdict": "ok",
+      "issue": "Quote verbatim; the missing element is correctly named.",
+      "evidence": "Section 4, \"Importance of Initial Motivations\".",
+      "proposed": null
+    },
+    {
+      "id": "rd-r03-soares-2017-ensuring-positive-outcome",
+      "verdict": "ok",
+      "issue": "Quotes verbatim and in context: an objective that diverges from the training objective out of distribution, not misspecification, so it meets R03. The talk date is not given; the post says the talk was \"inspired by\" Yudkowsky's 2016 talk. I checked that transcript (posted 2016-12-28): its \"smiles\" fable is a misspecified objective and a fable, so it does not displace this record.",
+      "evidence": "soares-2017 Section 4 \"Fundamental difficulties\"; post header \"I recently gave a talk at Google ... A modified transcript follows\"; yudkowsky-2016 §3.2 smiles fable.",
+      "proposed": null
+    },
+    {
+      "id": "rd-r03-carlsmith-2023-scheming-ais",
+      "verdict": "ok",
+      "issue": "Quotes verbatim; the ~25% figure is in the parenthesis following the second quote, so the statement is supported by the abstract.",
+      "evidence": "arXiv v1 abstract, p. 1.",
+      "proposed": null
+    },
+    {
+      "id": "rd-r03-belrose-pope-2023-ai-easy-to-control-contests",
+      "verdict": "ok",
+      "issue": "Quotes verbatim, authors' own claims; earliest-located among the three R03 contesting records holds.",
+      "evidence": "Section \"Values are easy to learn\".",
+      "proposed": null
+    },
+    {
+      "id": "rd-r03-turner-2024-many-arguments-wrong-contests",
+      "verdict": "ok",
+      "issue": "Quotes verbatim; attested date (page update 2026-08-19) and scope disclaimers recorded.",
+      "evidence": "Introduction and Disclaimers.",
+      "proposed": null
+    },
+    {
+      "id": "rd-r04-goertzel-2015-superintelligence-fears-contests",
+      "verdict": "ok",
+      "issue": "Quotes verbatim; the passage before them quotes Bostrom's definition, which is not used as Goertzel's voice. Earliest among R04 contests.",
+      "evidence": "Section on Bostrom Ch. 8; JET heading \"Vol. 24 Issue 2 – November 2015\".",
+      "proposed": null
+    },
+    {
+      "id": "rd-r04-ngo-2022-alignment-problem-deep-learning",
+      "verdict": "correct",
+      "issue": "Read in context, the second evidence item does not say what the statement says. \"once they become capable enough to prevent us from modifying them\" belongs to a sentence about what training would have to achieve so that positive goals generalise (\"we'd need to train them such that, once they become capable enough ..., they'll generalize high-level positive goals\"). It is not a claim that AGIs would turn once unopposed. The first quote describes diverging where disobedience is hard to notice, which is undetected defection rather than a change of course once there is no effective opposition. The v1 phase overview states the criterion directly and should replace the fragment. The role holds among pack records. Carlsmith 2022 (arXiv 2022-06-16) footnotes Bostrom's \"treacherous turn\" in §4.4.2, but only for gaming evaluations. Miller et al. 2020 describe the concept inside a hypothetical, as a relay.",
+      "evidence": "ngo-2022 v1 PDF p. 3 (phase overview); p. 8 §2.2.2; p. 12 §2.3.2 (context of fragment: \"so we'd need to train them such that, once they become capable enough to prevent us from modifying them, they'll generalize high-level positive goals ... which seems very difficult\"). carlsmith-2022 §4.4.2 and fn. 121.",
+      "proposed": {
+        "statement": "Ngo's report of August 2022 states that situationally aware policies will learn to pursue misaligned goals deceptively while still getting high training reward, and that policies too capable for humans to supervise effectively will generalise towards actions that give them more power over the world rather than following human intentions.",
+        "evidence": [
+          {
+            "locator": "Section 2 overview, Phase 2, PDF p. 3",
+            "passageType": "quote",
+            "passage": "Once policies can reason about their training processes and deployment contexts (an ability which I’ll call situational awareness), they’ll learn to deceptively pursue misaligned goals while still getting high training reward."
+          },
+          {
+            "locator": "Section 2 overview, Phase 3, PDF p. 3",
+            "passageType": "quote",
+            "passage": "Policies which are too capable for humans to effectively supervise will generalize towards taking actions which give them more power over the world, rather than following human intentions."
+          },
+          {
+            "keep": "existing §2.2.2 quote (p. 8) as a further item"
+          },
+          {
+            "remove": "the §2.3.2 fragment \"once they become capable enough to prevent us from modifying them\""
+          }
+        ]
+      }
+    },
+    {
+      "id": "rd-r05-chalmers-singularity-context",
+      "verdict": "ok",
+      "issue": "Quotes verbatim; bears_on correct (within years / decades); earliest-located-term \"intelligence explosion\" holds among R05 records (Bostrom 2003 says \"singularity hypothesis\"; Bostrom 2002 does not use the term).",
+      "evidence": "PDF p. 1 introduction; p. 7 §3.",
+      "proposed": null
+    },
+    {
+      "id": "rd-r05-hanson-2014-i-still-dont-get-foom-contests",
+      "verdict": "ok",
+      "issue": "Quotes verbatim; both are in the body, before the later additions marked \"Added 2Sep\" and \"Added 5Nov\", which a note could name. The engagement is right. Earliest-located holds among the pack's own contesting records.",
+      "evidence": "Body paragraphs 3 and penultimate; additions at end of post.",
+      "proposed": null
+    },
+    {
+      "id": "rd-r05-yudkowsky-2017-alphago-zero-foom",
+      "verdict": "correct",
+      "issue": "The quote is verbatim, and the ellipsis leaves out \"just because that's what happens when you improve and simplify the architecture,\". The record meets R05 only through the name: two years is not \"hours to months\", and the three-day figure refers to self-play in Go. The qualification should say so, so that the record is not read as stating a short general transition. The searchLog note for R05 also says Bostrom (2003) \"is the earliest text found ... that meets the criterion\", which contradicts the roles. It should say that Bostrom 2003 meets the criterion but is not dated by its wording.",
+      "evidence": "MIRI post 20 Oct 2017, paragraph \"Sheer speed of capability gain\"; no edit note on the MIRI page.",
+      "proposed": {
+        "qualification": "The post treats a narrow, closed domain (Go) as evidence about general capability gains and says so ('AlphaGo clearly isn't a general AI'); it meets the criterion through its use of the name 'foom' for the transition, not through a stated period (the Go comparison spans two years). It is the author's reading of one result, not a measurement of general takeoff speed. Texts by Yudkowsky already recorded on A4 (Hard Takeoff, 2008; Intelligence Explosion Microeconomics, 2013) are linked.",
+        "searchLogR05": "Replace \"Bostrom (2003) is the earliest text found ... that meets the criterion\" with: Bostrom (2003) meets the criterion but is read only in an undated revised copy, so it does not hold the earliest-located role; Yudkowsky (2017) holds it."
+      }
+    },
+    {
+      "id": "rd-r05-bostrom-2003-ethical-issues",
+      "verdict": "ok",
+      "issue": "Quote verbatim; undated revision correctly blocks the earliest-located role. See the searchLog inconsistency noted on the Yudkowsky 2017 record.",
+      "evidence": "Section 2, \"Superintelligence Is Different\".",
+      "proposed": null
+    },
+    {
+      "id": "rd-r06-davis-2014-ethical-guidelines-superintelligence-contests",
+      "verdict": "ok",
+      "issue": "Quotes verbatim; date printed on PDF (October 23, 2014); engagement right.",
+      "evidence": "PDF p. 1 date line and abstract; p. 3.",
+      "proposed": null
+    },
+    {
+      "id": "rd-r06-fli-2015-research-priorities-letter-context",
+      "verdict": "ok",
+      "issue": "Quote verbatim; bears_on and missing element right; claimed January 2015 release recorded.",
+      "evidence": "Letter text.",
+      "proposed": null
+    },
+    {
+      "id": "rd-r06-russell-dewey-tegmark-2015-research-priorities-context",
+      "verdict": "ok",
+      "issue": "Quotes verbatim; bears_on defensible (difficulty, not \"not solved by default\").",
+      "evidence": "AI Magazine PDF pp. 5–6.",
+      "proposed": null
+    },
+    {
+      "id": "rd-r06-yudkowsky-2016-alignment-why-its-hard",
+      "verdict": "correct",
+      "issue": "Earliest-located should move. Russell's Edge response \"Of Myths and Moonshine\" (2014), already a pack source with an R02 record, meets R06 as strictly as the Russell 2019 comment that the pack accepts. It says human values are \"at best\" very difficult to pin down, that \"This is not a minor difficulty\", and that AI's mainstream goal has been improving decisions whatever the utility function, so the field's goals must change (\"we need to build intelligence that is provably aligned with human values\"). That is a hard problem that the ordinary course of development will not solve. The second evidence item here, \"Why expect that their attempts to align the AI would fail\", is half of a rhetorical question and should go or be labelled.",
+      "evidence": "edge-2014-myth-of-ai, Russell response: \"1. The utility function may not be perfectly aligned with the values of the human race, which are (at best) very difficult to pin down ... This is not a minor difficulty. Improving decision quality, irrespective of the utility function chosen, has been the goal of AI research ... The right response seems to be to change the goals of the field itself\". yudkowsky-2016 §3.2.",
+      "proposed": {
+        "roles": ["articulation"],
+        "evidence": [
+          {
+            "remove": "Section 3.2 fragment \"Why expect that their attempts to align the AI would fail\""
+          }
+        ],
+        "newRecord": {
+          "id": "rd-r06-russell-2014-edge-myths-and-moonshine",
+          "proposition": "R06",
+          "predicate": "articulates_proposition",
+          "document": "russell-2014-edge-myths-and-moonshine",
+          "roles": ["earliest-located"],
+          "time": {
+            "kind": "event",
+            "date": "2014",
+            "basis": "posting"
+          },
+          "statement": "Russell's Edge response of 2014 states that a system's utility function may not be aligned with human values, which are very difficult to pin down, that this is not a minor difficulty, and that AI research, which has aimed at better decisions whatever the utility function, needs to change its goals to building intelligence provably aligned with human values.",
+          "qualification": "The response states cause for optimism if alignment is treated as intrinsic to AI; it argues for a change in the field's goals, not that alignment cannot be achieved. Quote budget: Russell's response is counted at 694 words with 47 already quoted, so about 22 words remain at about 10%.",
+          "evidence": [
+            {
+              "locator": "Reality Club response \"Of Myths And Moonshine\", numbered point 1 and following paragraph",
+              "passageType": "quote",
+              "passage": "This is not a minor difficulty."
+            },
+            {
+              "locator": "Same response, closing paragraphs",
+              "passageType": "paraphrase",
+              "passage": "Russell writes that improving decision quality irrespective of the utility function has been the mainstream goal of AI research, and that the right response is to change the field's goals to building intelligence provably aligned with human values, whose values are at best very difficult to pin down."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "rd-r06-russell-2019-instrumental-convergence-thread",
+      "verdict": "ok",
+      "issue": "Quote is Russell's own reply to Rossi; statement and qualification accurate.",
+      "evidence": "pace-2019 Comment Thread #2, Russell reply to Rossi.",
+      "proposed": null
+    },
+    {
+      "id": "rd-r07-bostrom-2002-existential-risks",
+      "verdict": "ok",
+      "issue": "Quotes verbatim. Earliest-located is a judgement call that the cross-family check should look at. The paper calls for priority for existential risks as a class and lists a badly programmed superintelligence among them, but no passage states the priority for AI in particular, which the qualification says. Read strictly, it would become bears_on and the role would pass to Hawking et al. (2014), or to Altman (2015) for an explicit ranking (\"probably the greatest threat\").",
+      "evidence": "JET HTML §1 definition, §4.4, §8 (\"even if the probability were much smaller (say, ~1%) the subject matter would still merit very serious attention\"); no AI-specific priority statement located (searched \"superintelligen\").",
+      "proposed": null
+    },
+    {
+      "id": "rd-r07-ng-2023-existential-risk-dont-get-it-contests",
+      "verdict": "correct",
+      "issue": "Earliest-located is wrong in date order. Earlier pack texts contest R07 directly but have no R07 record. Hawkins (Re/code, 2015-03-02): \"There is no existential threat ...\" and \"Machine intelligence does not represent a threat to humanity any more than computers do\". Pinker's Edge response (2014) gives reasons \"not to worry about killer bots and other machines running amok\" and says disaster scenarios are \"cheap to play out in the probability-free zone of our imaginations\". Separately, the statement paraphrases loosely. Ng writes that he is \"speaking with a few people who I think might have a thoughtful perspective on how AI creates a risk of human extinction\", not people \"who hold the opposite view\".",
+      "evidence": "ng-2023 paragraphs 2 and closing; hawkins-2015-terminator-not-coming closing section; edge-2014-myth-of-ai Pinker response paras 1–2.",
+      "proposed": {
+        "roles": ["contesting"],
+        "statement": "Ng's letter in The Batch of 7 June 2023, responding to the CAIS statement, states that he struggles to see how AI could pose any meaningful risk of human extinction, lists the risks he does recognise, and says he is speaking with people who might have a thoughtful perspective on how AI creates such a risk.",
+        "newRecord": {
+          "id": "rd-r07-hawkins-2015-terminator-not-coming-contests",
+          "proposition": "R07",
+          "predicate": "contests_proposition",
+          "document": "hawkins-2015-terminator-not-coming",
+          "roles": ["earliest-located", "contesting"],
+          "time": {
+            "kind": "event",
+            "date": "2015-03-02",
+            "basis": "publication"
+          },
+          "statement": "Hawkins's essay of 2 March 2015 states that the neocortex-based machine intelligence being created will not lead to robots with uncontrollable intentions, that there is no existential threat for the coming decades, and that machine intelligence does not represent a threat to humanity any more than computers do.",
+          "engagement": {
+            "kind": "engages-premise",
+            "rationale": "Grounds its denial of an existential threat in the claim that neocortex-based machines will lack desires of their own."
+          },
+          "qualification": "The essay limits its claim to \"the future we can see and control today\" and the coming decades, and calls concern about irreversible steps towards extinction legitimate.",
+          "evidence": [
+            {
+              "locator": "Closing section",
+              "passageType": "quote",
+              "passage": "There is no existential threat. This is the reality for the coming decades, and we can easily change direction should new existential threats appear."
+            },
+            {
+              "locator": "Closing section",
+              "passageType": "quote",
+              "passage": "Machine intelligence does not represent a threat to humanity any more than computers do."
+            }
+          ],
+          "alternative": "If Pinker's Edge response (2014) is also recorded on R07 (paraphrase only, since its 526-word quota is almost spent: 48 words quoted), it is earlier and would hold the role."
+        }
+      }
+    },
+    {
+      "id": "rd-r08-bostrom-2002-existential-risks",
+      "verdict": "ok",
+      "issue": "Quotes verbatim; meets R08 (mistaken goals, power, annihilation, unintended). Qualification accurate.",
+      "evidence": "JET §4.4.",
+      "proposed": null
+    },
+    {
+      "id": "rd-r08-lecun-2019-instrumental-convergence-thread-contests",
+      "verdict": "correct",
+      "issue": "Earliest-located should move. Hawkins (2015-03-02) directly contests the unintended route (\"will not lead to self-replicating robots with uncontrollable intentions ... There is no existential threat\"), and it predates this relayed 2019 comment. Pinker's Edge response (2014), \"why would they want to depose their masters, massacre bystanders, or take over the world?\", is earlier still and is already quoted. Zador and LeCun's Scientific American piece (2019-09-26: \"Why would a sentient AI want to take over the world? It wouldn't.\") also predates the thread.",
+      "evidence": "hawkins-2015 closing section; edge-2014 Pinker para. 4; zador-lecun-2019 opening section.",
+      "proposed": {
+        "roles": ["contesting"],
+        "newRecord": {
+          "id": "rd-r08-hawkins-2015-terminator-not-coming-contests",
+          "proposition": "R08",
+          "predicate": "contests_proposition",
+          "document": "hawkins-2015-terminator-not-coming",
+          "roles": ["earliest-located", "contesting"],
+          "time": {
+            "kind": "event",
+            "date": "2015-03-02",
+            "basis": "publication"
+          },
+          "statement": "Hawkins's essay of 2 March 2015 states that the machine-intelligence technology being created, based on neocortical principles, will not lead to self-replicating robots with uncontrollable intentions, and that there is no existential threat.",
+          "engagement": {
+            "kind": "engages-premise",
+            "rationale": "Disputes the premise that capable machines would come to pursue goals of their own at odds with ours, since neocortex-based machines lack desires."
+          },
+          "evidence": [
+            {
+              "locator": "Closing section",
+              "passageType": "quote",
+              "passage": "will not lead to self-replicating robots with uncontrollable intentions."
+            },
+            {
+              "locator": "Closing section",
+              "passageType": "quote",
+              "passage": "There is no existential threat."
+            }
+          ],
+          "alternative": "If Pinker 2014 is preferred, record rd-r08-pinker-2014-edge-myth-of-ai-contests reusing the already quoted para. 4 question (counts once against the quota), engagement contrary-only for the instrumental route."
+        }
+      }
+    },
+    {
+      "id": "rd-r08-carlsmith-2022-power-seeking",
+      "verdict": "ok",
+      "issue": "Quotes verbatim; claimed April 2021 recorded; comparative neither appropriate.",
+      "evidence": "arXiv v1 abstract.",
+      "proposed": null
+    },
+    {
+      "id": "rd-r08-bengio-2023-rogue-ais",
+      "verdict": "correct",
+      "issue": "The quotes are right. The qualification says the wording is attested only from the retrieval of 2026-10-29 (page dateModified 2025-12-03), but the attested field is null. Set it, as was done for Bender and Hanna.",
+      "evidence": "Page JSON-LD: datePublished 2023-05-22T20:44, dateModified 2025-12-03T11:31; Definition 1; Claim 2.",
+      "proposed": {
+        "attested": {
+          "date": "2026-10-29",
+          "note": "The page metadata records a modification on 2025-12-03; the quoted wording is attested from the retrieval of 2026-10-29 and was not compared with a 2023 copy."
+        }
+      }
+    },
+    {
+      "id": "rd-r08-hendrycks-2023-overview-catastrophic",
+      "verdict": "ok",
+      "issue": "Quotes verbatim; the list of mechanisms is in the sentences after quote 1.",
+      "evidence": "arXiv v1 §1 p. 3; §5 p. 34.",
+      "proposed": null
+    },
+    {
+      "id": "rd-r08-bengio-2023-managing-ai-risks",
+      "verdict": "ok",
+      "issue": "Quotes verbatim; qualification on co-authorship right.",
+      "evidence": "arXiv v1 pp. 2–3.",
+      "proposed": null
+    },
+    {
+      "id": "rd-r08-hinton-2024-nobel-banquet",
+      "verdict": "ok",
+      "issue": "Quote verbatim; host's record; the paraphrased next sentence matches (\"We have no idea whether we can stay in control\").",
+      "evidence": "nobelprize.org speech, para. 3.",
+      "proposed": null
+    },
+    {
+      "id": "rd-r09-bostrom-2002-existential-risks",
+      "verdict": "correct",
+      "issue": "The statement says more than the text. The paper does not class the small-group world government as an existential catastrophe outright. It says \"Depending on what those values are, this scenario would count as a shriek.\" The claimed 2001-04 date given on the R07 and R08 records of the same document is missing here.",
+      "evidence": "JET §6.3 \"Repressive totalitarian global regime\".",
+      "proposed": {
+        "statement": "Bostrom's paper of March 2002 states that a small group in control of the initial superintelligence could conceivably select its goals and form a world government reflecting only the idiosyncratic values of its owners or designers, which, depending on those values, the paper would count as an existential catastrophe (a \"shriek\").",
+        "claimed": {
+          "date": "2001-04",
+          "note": "An earlier version was presented in April 2001 (acknowledgements); it does not date the quoted wording."
+        }
+      }
+    },
+    {
+      "id": "rd-r09-bengio-2019-instrumental-convergence-thread",
+      "verdict": "ok",
+      "issue": "Quote verbatim, Bengio's own turn; the \"catastrophic outcomes\" clause is the next sentence; comparative neither right.",
+      "evidence": "pace-2019 Comment Thread #2, Bengio.",
+      "proposed": null
+    },
+    {
+      "id": "rd-r09-sotos-2021-unimportance-superintelligence",
+      "verdict": "correct",
+      "issue": "The quotes are right. R09 concerns deliberate use of advanced AI. The software Sotos ranks highest is narrow \"savant\" software, explicitly \"not generally superintelligent\". His risk is humans having \"the technological capability to collapse civilization\", and the paper does not separate deliberate from accidental release. The qualification should say both, or a reader would take this for a misuse-of-advanced-AI claim.",
+      "evidence": "arXiv v1 abstract, p. 1.",
+      "proposed": {
+        "qualification": "The paper's ranking rests on stated assumptions and a quantitative model of its own; it is the author's argument, not a risk assessment by others. The software it ranks highest is narrow 'savant' software, which it says is not generally superintelligent, and its human-derived risk is a capability to engineer pandemic microbes, without separating deliberate from accidental release."
+      }
+    },
+    {
+      "id": "rd-r09-marcus-2023-ai-risk-agi-risk",
+      "verdict": "correct",
+      "issue": "The statement leaves out a qualifier that matters. Marcus writes \"We need to stop worrying (just) about Skynet\". The statement's \"attention should turn from takeover scenarios to such misuse\" drops \"(just)\" and so overstates the ranking. The comparative misuse-greater is supported, but only for the near term, by a passage the record does not quote. That passage also defines \"MAI risk\" as unreliable but widely deployed AI, which is broader than deliberate misuse.",
+      "evidence": "marcus-2023 opening section: \"I am not worried, immediately, about “AGI risk” ... in the near term I am worried about what I will call “MAI risk”—Mediocre AI that is unreliable ... but widely deployed\"; later paragraph \"(just)\".",
+      "proposed": {
+        "statement": "Marcus's post of 28 March 2023 states that in the near term he is worried less about superintelligent machines beyond human control than about unreliable but widely deployed AI, that criminals and terrorists using it could contribute to nuclear war or the deliberate spread of pathogens, and that people need to stop worrying only about takeover scenarios and think more about such misuse.",
+        "evidence": [
+          {
+            "add": {
+              "locator": "Opening section, after the Hinton tweet",
+              "passageType": "quote",
+              "passage": "I am not worried, immediately, about “AGI risk” (the risk of superintelligent machines beyond our control), in the near term I am worried about what I will call “MAI risk”"
+            }
+          }
+        ],
+        "qualification": "The ranking is stated for the near term. The post gives no estimate (\"We have no earthly idea\") and says its 1% figure was a thought experiment; it also states that future technology may be harder to control. Its \"MAI risk\" covers unreliability as well as misuse. Quote budget: 1,683-word page, 83 words quoted before this addition."
+      }
+    },
+    {
+      "id": "rd-r09-bengio-2023-rogue-ais",
+      "verdict": "correct",
+      "issue": "The statement's \"calls this the fastest route\" is not in the quoted evidence, which is the \"simplest scenario\" sentence, but it is in the text. Add the passage. The attested field is null, as on the R08 record.",
+      "evidence": "Section \"Genocidal Humans\": \"The fastest route to a rogue AI system is if a human with the appropriate technical skills and means intentionally builds it ...\".",
+      "proposed": {
+        "evidence": [
+          {
+            "add": {
+              "locator": "Section \"Genocidal Humans\"",
+              "passageType": "quote",
+              "passage": "The fastest route to a rogue AI system is if a human with the appropriate technical skills and means intentionally builds it with the objective of destroying humanity or a part of it set explicitly as a goal."
+            }
+          }
+        ],
+        "attested": {
+          "date": "2026-10-29",
+          "note": "The page metadata records a modification on 2025-12-03; the quoted wording is attested from the retrieval of 2026-10-29."
+        }
+      }
+    },
+    {
+      "id": "rd-r09-hendrycks-2023-overview-catastrophic",
+      "verdict": "ok",
+      "issue": "Quotes verbatim; most-developed is an editorial judgement; no ranking among the four sources.",
+      "evidence": "arXiv v1 pp. 3, 7, 8.",
+      "proposed": null
+    },
+    {
+      "id": "rd-r09-amodei-2023-senate-statement",
+      "verdict": "ok",
+      "issue": "Quote verbatim, confirmed within the oral statement, before the note \"[The prepared statement of Mr. Amodei appears as a submission for the record.]\". Delivery date from the printed record.",
+      "evidence": "govinfo CHRG-118shrg53503, Statement of Dario Amodei.",
+      "proposed": null
+    },
+    {
+      "id": "rd-r09-mouton-2024-rand-bio-red-team-contests",
+      "verdict": "reclassify",
+      "issue": "The record does not contest R09. R09 says that deliberate use of advanced AI could cause mass-casualty catastrophe. The report measures uplift from the LLMs of summer 2023 in attack planning, and it states that it did not measure the distance between the capability frontier and the knowledge attack planning needs. It also says future developments should be monitored. It does not dispute the proposition, so it bears on a premise for current models only. This leaves R09 without a contesting earliest-located record. Pinker's Edge response (2014) does contest R09: it addresses an evil genius who \"deliberately designed, built, and released a battalion of robots to sow mass destruction\" and argues from the chain of improbable conditions. Hawkins (2015) also contests the scale of misuse risk.",
+      "evidence": "mouton-2024 Key findings p. 1 (\"our research did not measure the distance between the existing LLM capability frontier and the knowledge needed for biological weapon attack planning ... it is prudent to monitor future developments\"); Summary p. 24. edge-2014 Pinker final paragraph. hawkins-2015 closing (\"the risks and bad outcomes arising from machine intelligence are not substantively different from ones we have faced in the past\").",
+      "proposed": {
+        "id": "rd-r09-mouton-2024-rand-bio-red-team-context",
+        "predicate": "bears_on_proposition",
+        "roles": ["context"],
+        "engagement": null,
+        "missing": "Does not dispute that advanced AI could enable mass-casualty misuse; reports no measurable uplift in biological attack planning from the models tested as of summer 2023 and states that the distance to the capability frontier was not measured.",
+        "newRecord": {
+          "id": "rd-r09-pinker-2014-edge-myth-of-ai-contests",
+          "proposition": "R09",
+          "predicate": "contests_proposition",
+          "document": "pinker-2014-edge-myth-of-ai",
+          "roles": ["earliest-located", "contesting"],
+          "time": {
+            "kind": "event",
+            "date": "2014",
+            "basis": "posting"
+          },
+          "statement": "Pinker's Edge response of 2014 argues that a deliberately designed and released battalion of robots for mass destruction would require a chain of improbable conditions (a malevolent technological genius, a secret and loyal team, and survival of detection and blunders), and that while it could happen in theory there are more pressing things to worry about.",
+          "engagement": {
+            "kind": "engages-premise",
+            "rationale": "Disputes the likelihood of deliberate mass-casualty use by multiplying the conditions it requires."
+          },
+          "evidence": [
+            {
+              "locator": "Reality Club response by Steven Pinker, final paragraph",
+              "passageType": "paraphrase",
+              "passage": "Pinker writes that an evil genius deliberately designing and releasing robots to sow mass destruction would need a thirst for mass murder and a genius for innovation, a team with perfect secrecy, loyalty and competence, and to survive detection, betrayal, stings, blunders and bad luck; it could happen in theory, but there are more pressing things to worry about."
+            }
+          ],
+          "note": "Paraphrase because Pinker's 526-word response already has 48 quoted words."
+        }
+      }
+    },
+    {
+      "id": "rd-r10-omohundro-2008-basic-ai-drives-contests",
+      "verdict": "ok",
+      "issue": "Quotes verbatim. The first quote states the position in order to reject it (\"One might imagine ...\"), then rejects it in the author's voice; read as a whole the voice is right. Earliest-located holds.",
+      "evidence": "Abstract and Introduction, p. 1.",
+      "proposed": null
+    },
+    {
+      "id": "rd-r10-pinker-2014-edge-myth-of-ai",
+      "verdict": "ok",
+      "issue": "Quote verbatim; meets the no-drive-to-dominate branch; tie with Kelly handled in qualification. No earlier R10 articulation found (Bostrom 2003 states possibility only).",
+      "evidence": "edge-2014 Pinker para. 4.",
+      "proposed": null
+    },
+    {
+      "id": "rd-r10-bengio-2019-instrumental-convergence-thread-contests",
+      "verdict": "ok",
+      "issue": "Quote verbatim; the \"agree that objectives can be designed and trained\" clause is in the same turn (\"we indeed have much more control over machines than humans since we can design (and train) their objective function\").",
+      "evidence": "pace-2019 Comment Thread #2, Bengio reply to LeCun.",
+      "proposed": null
+    },
+    {
+      "id": "rd-r10-lecun-2019-instrumental-convergence-thread",
+      "verdict": "ok",
+      "issue": "Quote verbatim, LeCun's own turn.",
+      "evidence": "pace-2019 Comment Thread #2.",
+      "proposed": null
+    },
+    {
+      "id": "rd-r10-belrose-pope-2023-ai-easy-to-control",
+      "verdict": "ok",
+      "issue": "Quotes verbatim; the 1% takeover figure is in the introduction.",
+      "evidence": "Introduction; Conclusion.",
+      "proposed": null
+    },
+    {
+      "id": "rd-r11-brooks-2014-tool-not-threat",
+      "verdict": "ok",
+      "issue": "Quotes verbatim; attested from the Robohub repost of 11 November 2014, before the Edge conversation of 14 November. The qualification limiting it to malevolent AI is right.",
+      "evidence": "Robohub page byline \"by Rodney Brooks 11 November 2014\"; para. 3; final paragraphs.",
+      "proposed": null
+    },
+    {
+      "id": "rd-r11-dafoe-russell-2016-yes-we-are-worried-contests",
+      "verdict": "correct",
+      "issue": "Earliest-located should move to Russell's Edge response (2014), which explicitly answers Brooks. It says the gap to the possible \"may sometimes be measured not in centuries, as Rod Brooks suggests, but in hours\", and that \"there is no need for a proof, just a convincing argument pointing to a more-than-infinitesimal possibility\". That disputes the premise that risk claims must be proven before they guide attention, in 2014, two years before this essay. A reply record from Russell 2014 to Brooks 2014 already exists, but there is no R11 record.",
+      "evidence": "edge-2014 Russell response, opening paragraphs.",
+      "proposed": {
+        "roles": ["contesting"],
+        "newRecord": {
+          "id": "rd-r11-russell-2014-edge-myths-and-moonshine-contests",
+          "proposition": "R11",
+          "predicate": "contests_proposition",
+          "document": "russell-2014-edge-myths-and-moonshine",
+          "roles": ["earliest-located", "contesting"],
+          "time": {
+            "kind": "event",
+            "date": "2014",
+            "basis": "posting"
+          },
+          "statement": "Russell's Edge response of 2014, answering Brooks, argues that the time from authoritative statements of impossibility to a breakthrough can be hours rather than centuries, and that a convincing argument for a more-than-infinitesimal possibility of catastrophe is enough, without proof.",
+          "engagement": {
+            "kind": "engages-premise",
+            "rationale": "Disputes the premise that the absence of proof or a long expected timescale makes risk claims unfit to guide attention."
+          },
+          "qualification": "The response states that none of this proves AI will be the end of the world. Quote budget: shared with the proposed R06 record (about 22 words remain in Russell's 694-word response).",
+          "evidence": [
+            {
+              "locator": "Reality Club response \"Of Myths And Moonshine\", second paragraph",
+              "passageType": "quote",
+              "passage": "there is no need for a proof, just a convincing argument pointing to a more-than-infinitesimal possibility."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "rd-r11-narayanan-kapoor-2024-xrisk-probabilities",
+      "verdict": "correct",
+      "issue": "The quotes are right. \"While leaving AI x-risk forecasting as an academic activity unchallenged\" is the drafter's framing, and \"unchallenged\" carries a judgement. The text says \"We have no objection to AI x-risk forecasting as an academic activity\".",
+      "evidence": "normaltech.ai essay, introduction (\"We have no objection to AI x-risk forecasting as an academic activity, and forecasts may be helpful to companies and other private decision makers. We only question its use in the context of public policy.\").",
+      "proposed": {
+        "statement": "The essay by Narayanan and Kapoor of 26 July 2024 argues that probability estimates of AI-caused extinction are far too unreliable to be useful for policy, since there is no reference class for the event, and states that the authors have no objection to AI x-risk forecasting as an academic activity."
+      }
+    },
+    {
+      "id": "rd-r12-crawford-calo-2016-blind-spot",
+      "verdict": "reclassify",
+      "issue": "The only evidence is the journal's standfirst, a third-person summary (\"argue Kate Crawford and Ryan Calo\"), not the authors' assertion. The full text is closed: OpenAlex is_oa false, Semantic Scholar openAccessPdf CLOSED, and nature.com PDF returned HTTP 429. Under the voice rule, the earliest-located role cannot rest on a publisher's summary. Keep the record as context. With the Zador 2019 record also reclassified (below), the earliest R12 articulation in the authors' own words is the DAIR statement (2023-03-31). The R12 searchLog already says so.",
+      "evidence": "Cached nature.com preview: standfirst followed by \"This is a preview of subscription content\". OpenAlex W2531099434 (is_oa false); Semantic Scholar paper 4f6b7f8d… (openAccessPdf status CLOSED).",
+      "proposed": {
+        "predicate": "bears_on_proposition",
+        "roles": ["context"],
+        "register": "relay",
+        "id": "rd-r12-crawford-calo-2016-blind-spot-context",
+        "missing": "The authors' own wording: only the journal's standfirst, which summarises the argument in the third person, was readable.",
+        "moveRole": {
+          "earliest-located": "rd-r12-dair-2023-statement"
+        }
+      }
+    },
+    {
+      "id": "rd-r12-zador-2019-instrumental-convergence-thread",
+      "verdict": "reclassify",
+      "issue": "The record misreads the comment. Zador's \"much more serious issues\" are the unforeseen societal consequences of future AI improvements. Books, food production and social media are analogies from other technologies (\"new technologies often have unintended and profound consequences\"), so social media is not \"named among\" the serious issues of AI. No documented present harms of AI systems are named, which is the element R12 needs. In the same comment Zador says \"I agree value alignment is important, and that it is not a solved problem\".",
+      "evidence": "pace-2019 Comment Thread #2, Zador reply to Bengio (full turn read).",
+      "proposed": {
+        "id": "rd-r12-zador-2019-instrumental-convergence-thread-context",
+        "predicate": "bears_on_proposition",
+        "roles": ["context"],
+        "statement": "Zador's comment in the 2019 thread states that focusing on killer robots that dominate humans is a distraction from much more serious issues, which he presents as the unintended societal consequences that improvements in AI will have, by analogy with books, food production technology and social media.",
+        "missing": "Documented present harms of AI systems: the serious issues are unforeseen future consequences of AI, illustrated by other technologies."
+      }
+    },
+    {
+      "id": "rd-r12-marcus-2023-ai-risk-agi-risk-contests",
+      "verdict": "ok",
+      "issue": "Quote verbatim; engagement right; earliest-located among R12 contesting records holds.",
+      "evidence": "Penultimate paragraph.",
+      "proposed": null
+    },
+    {
+      "id": "rd-r12-bender-hanna-2023-real-harm",
+      "verdict": "ok",
+      "issue": "Quotes verbatim (the standfirst here sits under the authors' byline as a deck; acceptable but could be noted). Attested from retrieval because the served page shows later material.",
+      "evidence": "scientificamerican.com page, deck and paragraph 1.",
+      "proposed": null
+    },
+    {
+      "id": "rd-r13-marcus-2018-critical-appraisal",
+      "verdict": "ok",
+      "issue": "Quotes verbatim, Marcus's own words. The \"diminishing returns\" on p. 1 is in a Chollet epigraph and is correctly not used. This is a criterion issue, not a record error: the record's own qualification says R13's consequence (AI capable of the catastrophes is not near) is not stated, and no R13 articulation in the pack states it. Either the criterion's \"so that\" clause is treated as the point of the proposition rather than a required element, or every R13 articulation becomes bears_on. The maintainer or the cross-family check should decide. The same applies to R14 (\"so that they do not themselves pursue outcomes\").",
+      "evidence": "arXiv v1 p. 1 abstract; p. 3 §1; searched for \"decades|near future|existential|superintelligen\" with no timing statement.",
+      "proposed": null
+    },
+    {
+      "id": "rd-r13-gwern-2020-scaling-hypothesis-contests",
+      "verdict": "correct",
+      "issue": "The quote is right and the engagement fits: the essay says GPT-3 \"did not run into diminishing or negative returns, as many expected\", and it has a \"Critiquing The Critics\" section. The attested note is inconsistent with itself. It takes 2022-01-02 from the page's date range but adds that the page \"may have been revised later\". If the wording is attested only from retrieval, attested should be 2026-10-29, as for Bender and Hanna. No R13 contesting record holds earliest-located. If 2022-01-02 stands, Gwern would hold it ahead of Bengio et al. (2023-10-26).",
+      "evidence": "gwern.net header \"2020-05-28–2022-01-02\"; opening and \"Scaling Hypothesis\" sections.",
+      "proposed": {
+        "attested": "Either keep 2022-01-02 and add roles [\"contesting\",\"earliest-located\"], or set attested to {date: \"2026-10-29\", note: \"Current page; the page dates itself 2020-05-28 to 2022-01-02 and may have been revised later\"} and give earliest-located among R13 contests to rd-r13-bengio-2023-managing-extreme-risks-contests."
+      }
+    },
+    {
+      "id": "rd-r13-marcus-2022-hitting-a-wall",
+      "verdict": "ok",
+      "issue": "Quotes verbatim; earliest-located-term \"hitting a wall\" is the title (Marcus 2018 says \"approaching a wall\").",
+      "evidence": "Nautilus page, 10 March 2022.",
+      "proposed": null
+    },
+    {
+      "id": "rd-r14-marcus-2020-gpt2-nature-of-intelligence",
+      "verdict": "ok",
+      "issue": "Quotes verbatim; meets the understanding branch. The criterion-consequence caveat is the same as for R13.",
+      "evidence": "The Gradient essay, three sections.",
+      "proposed": null
+    },
+    {
+      "id": "rd-r14-marcus-2022-nonsense-on-stilts",
+      "verdict": "ok",
+      "issue": "Quotes verbatim; earliest-located-term \"autocomplete\" checked: Marcus 2020 and Bender and Koller 2020 do not use it. \"Stochastic parrots\" appears only in Shanahan's bibliography.",
+      "evidence": "Substack post; search for autocomplete|stochastic parrot across R14 sources.",
+      "proposed": null
+    },
+    {
+      "id": "rd-r14-piantadosi-hill-2022-meaning-without-reference-contests",
+      "verdict": "ok",
+      "issue": "Quotes verbatim; earliest among R14 contests.",
+      "evidence": "arXiv v1 p. 1.",
+      "proposed": null
+    },
+    {
+      "id": "rd-r15-goertzel-pitt-2012-open-source-agi",
+      "verdict": "ok",
+      "issue": "Quotes verbatim. It meets R15 only loosely: open AGI codebases rather than model weights, and an intuition rather than an argued claim. The qualification says both, so the earliest-located role is defensible.",
+      "evidence": "JET v22 §2.",
+      "proposed": null
+    },
+    {
+      "id": "rd-r15-alexander-2015-should-ai-be-open-contests",
+      "verdict": "ok",
+      "issue": "Quotes verbatim, from the post body, not the comments.",
+      "evidence": "slatestarcodex post, sections II–III/V (cached page includes comments; quotes lie within the first ~17,500 characters).",
+      "proposed": null
+    },
+    {
+      "id": "rd-r15-kapoor-2024-open-foundation-models",
+      "verdict": "ok",
+      "issue": "Quotes verbatim; arXiv stamp reads 27 Feb 2024 despite the 2403 identifier; qualification accurate.",
+      "evidence": "arXiv v1 abstract.",
+      "proposed": null
+    },
+    {
+      "id": "rd-r16-brooks-2017-seven-deadly-sins",
+      "verdict": "ok",
+      "issue": "The quote is right. The criterion element \"each system only somewhat more capable than its predecessors\" is stated in the next sentence, which could be added: \"long before we see such machines arising there will be the somewhat less intelligent and belligerent machines.\" No earlier R16 articulation was found; Hanson 2014 and Kelly 2017 argue against foom without stating gradualness.",
+      "evidence": "Section 6 \"Hollywood scenarios\".",
+      "proposed": {
+        "optionalEvidence": {
+          "locator": "Section 6, \"Hollywood scenarios\", next sentence",
+          "passageType": "quote",
+          "passage": "long before we see such machines arising there will be the somewhat less intelligent and belligerent machines."
+        }
+      }
+    },
+    {
+      "id": "rd-r16-christiano-2018-takeoff-speeds",
+      "verdict": "ok",
+      "issue": "Quotes verbatim. The page shows two dates (\"February 24, 2018February 27, 2018\"), apparently a modification on the 27th; a note would help.",
+      "evidence": "sideways-view.com post header.",
+      "proposed": null
+    },
+    {
+      "id": "rd-r17-armstrong-2016-racing-contests",
+      "verdict": "correct",
+      "issue": "The title page dates the report \"October 2013\", so the date can be 2013-10, not 2013. The record id says 2016, which is the unread journal version, and this could confuse readers.",
+      "evidence": "nickbostrom.com/papers/racing.pdf p. 2: \"Stuart Armstrong Nick Bostrom Carl Shulman October 2013 Abstract\".",
+      "proposed": {
+        "time": {
+          "kind": "event",
+          "date": "2013-10",
+          "basis": "publication",
+          "note": "Title page of the FHI technical report; journal version (2016) not read."
+        },
+        "idNote": "Consider rd-r17-armstrong-2013-racing-contests if ids are not yet fixed."
+      }
+    },
+    {
+      "id": "rd-r17-hanson-2023-reasonable-ai-fears",
+      "verdict": "ok",
+      "issue": "Quotes verbatim; meets R17; qualification on E04 overlap right.",
+      "evidence": "Quillette essay, paragraph beginning \"Furthermore, AIs today\".",
+      "proposed": null
+    }
+  ]
+}

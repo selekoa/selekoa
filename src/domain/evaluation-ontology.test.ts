@@ -180,10 +180,10 @@ describe('evaluation ontology boundaries', () => {
   it('preserves temporal uncertainty and keeps stage separate from family', () => {
     const first = repository.claims.get(ids[0])!;
     const second = repository.claims.get(ids[1])!;
-    expect(timeLabel(first)).toBe('Date unknown');
+    expect(timeLabel(first, repository.data)).toBe('Date unknown');
     expect(second.time).toMatchObject({ kind: 'interval', from: '2022' });
     expect(second.time.note).toContain('fall 2022');
-    expect(timeLabel(second)).toContain('End unknown');
+    expect(timeLabel(second, repository.data)).toContain('End unknown');
     const variants = ['proposed', 'announced', 'reported_performed'].map(
       (activityStage) =>
         ({

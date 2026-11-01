@@ -1,0 +1,1734 @@
+{
+  "auditor": "fresh-context same-family pass (Claude)",
+  "model": "claude-opus-5-5 (same model family as the drafting passes)",
+  "date": "2026-10-29",
+  "sampleMethod": "Random: node research/china-labs-3/tools.mjs sample 20 20261029 (mulberry32, 20% of 212 records). Targeted: every capital, inferred, reporting-only, legal-entity, founding and co-founding record, every developer entry in a CAC listing, and the licence records with territory exclusions, a dated licence change or an internal conflict, not already drawn at random.",
+  "method": "The auditor read AGENTS.md, docs/editorial-policy.md (Atomic claims and sources, Short quotation, Interpretation, Machine-first workflow), scope.md and drafting-brief.md, then the 78 sampled records with their evidence, sources and entities from pack.json. The drafting passes' 'searched' notes were not read. Every source cited by a sampled record (56 sources) was retrieved again, sequentially and directly, into the auditor's own cache (LG_CACHE=audit, keys audit-<source id>); each quote or paraphrase anchor was located with the tool's normalisation and read in context with tools.mjs text/grep and pdftotext -layout (for table rows, page numbers and wrapped filing numbers). Versions and dates were checked against Hugging Face commit and tree APIs (Yi-34B, Yi-1.5-34B, step3, Step-5-Preview, Hunyuan-A13B-Instruct, HunyuanVideo, Tencent-Hunyuan-Large, SenseNova-U1-8B-MoT, Aquila-7B, Intern-S1, Hy3), by fetching earlier README and LICENSE revisions where a record makes a dated licence or history claim (Yi-34B README scan for the Llama sentence; Yi-34B LICENSE before 30 May 2024; HunyuanVideo LICENSE of 2 and 4 December 2024; Tencent-Hunyuan-Large LICENSE.txt from 5 November 2024; Step-5-Preview README of 13 October 2026), and by a blobless clone of InternLM/InternLM in the scratchpad. CAC list counts were recounted from the layout text, and 'earliest list' statements for DeepSeek and BAAI were checked against attachments 1-7 of the CAC page (attachments 3, 5 and 6 fetched for this purpose). Chinese passages were read in Chinese and the machine translations compared. Same-family check: it does not satisfy the editorial policy's cross-family requirement.",
+  "sample": {
+    "random": [
+      "c3-01ai-yi-1-5-card",
+      "c3-01ai-yi-34b-apache",
+      "c3-01ai-yi-licence-v21-registration",
+      "c3-01ai-yi-lightning-raise-1",
+      "c3-01ai-yi-llama-statement",
+      "c3-baai-bjp-control-risks",
+      "c3-baai-bjp-long-term-planning",
+      "c3-governance-cac-genai-list-2024-04-entry-tencent",
+      "c3-governance-cac-genai-list-2024-08-count-filed",
+      "c3-governance-cac-genai-list-2024-08-published",
+      "c3-governance-cac-genai-list-2025-01-count-registered",
+      "c3-governance-tc260-asgf-v2-updates-v1",
+      "c3-governance-tc260-asgf-v3-updates-v2",
+      "c3-iflytek-legal-form-2008",
+      "c3-iflytek-liu-qingfeng-founder",
+      "c3-iflytek-liu-qingfeng-president-2008",
+      "c3-iflytek-spark-v4-2024",
+      "c3-iflytek-wu-xiaoru-president-2026",
+      "c3-sensetime-llm-ethics-race",
+      "c3-sensetime-sensenova-5-announcement",
+      "c3-sensetime-sensenova-u1-card",
+      "c3-sensetime-wang-xiaogang-chief-scientist",
+      "c3-sensetime-xu-li-cofounder",
+      "c3-sensetime-yang-fan-cofounder",
+      "c3-shlab-frmf-practice-cites-frmf",
+      "c3-shlab-frmf-practice-finding",
+      "c3-shlab-intern-s1-report",
+      "c3-shlab-internlm-readme",
+      "c3-shlab-internlm2-sensetime",
+      "c3-shlab-unveiled-2020",
+      "c3-stepfun-step-3-author-zhu-yibo",
+      "c3-stepfun-step-audio-report",
+      "c3-stepfun-step-video-t2v-report",
+      "c3-stepfun-step3-licence",
+      "c3-stepfun-step5-card-initial",
+      "c3-tencent-a13b-licence-licensor",
+      "c3-tencent-esg2025-responsible-ai",
+      "c3-tencent-hunyuan-a13b-report",
+      "c3-tencent-hy3-announcement",
+      "c3-tencent-large-licence-military",
+      "c3-tencent-large-licence-no-improve",
+      "c3-tencent-video-licence",
+      "c3-tencent-video-licence-no-improve"
+    ],
+    "targeted": [
+      "c3-iflytek-founding-1999",
+      "c3-iflytek-investor-china-mobile",
+      "c3-sensetime-founding-2014",
+      "c3-sensetime-pre-ipo-rounds",
+      "c3-baai-founding",
+      "c3-baai-bjp-endorsers",
+      "c3-sensetime-investor-idg",
+      "c3-sensetime-investor-iflytek",
+      "c3-sensetime-investor-softbank",
+      "c3-sensetime-legal-form-2021",
+      "c3-baai-aquila-7b-licence",
+      "c3-01ai-legal-form-licensor",
+      "c3-governance-cac-genai-list-2024-04-entry-baidu",
+      "c3-governance-cac-genai-list-2024-04-entry-iflytek",
+      "c3-governance-cac-genai-list-2024-04-entry-minimax",
+      "c3-governance-cac-genai-list-2024-04-entry-sensetime",
+      "c3-governance-cac-genai-list-2024-04-entry-shanghai-ai-lab",
+      "c3-governance-cac-genai-list-2024-04-entry-stepfun",
+      "c3-governance-cac-genai-list-2024-04-entry-zero-one-ai",
+      "c3-governance-cac-genai-list-2024-04-entry-zhipu",
+      "c3-governance-cac-genai-list-2024-08-entry-deepseek",
+      "c3-tencent-large-licence-territory",
+      "c3-tencent-video-licence-territory",
+      "c3-governance-cac-genai-list-2025-08-entry-baai",
+      "c3-stepfun-b-plus-round-2026",
+      "c3-tencent-controls-tencent-computer-2025",
+      "c3-tencent-legal-form-2025",
+      "c3-iflytek-legal-form-2026",
+      "c3-01ai-wanfeng-jv",
+      "c3-01ai-q-ai-jv",
+      "c3-stepfun-step5-licence",
+      "c3-stepfun-legal-form-site",
+      "c3-sensetime-tang-founder",
+      "c3-sensetime-wang-xiaogang-cofounder",
+      "c3-sensetime-xu-bing-cofounder"
+    ]
+  },
+  "items": [
+    {
+      "id": "c3-01ai-yi-1-5-card",
+      "selection": "random",
+      "disposition": "ok",
+      "issues": [
+        "README at 2a670431 (HF commit 2024-05-12 'Create README.md'; weights uploaded 2024-05-11) has 'license: apache-2.0' and the Intro sentences; paraphrase faithful."
+      ],
+      "fix": null,
+      "retrieval": [
+        {
+          "sourceId": "c3-src-yi15-34b-readme",
+          "url": "https://huggingface.co/01-ai/Yi-1.5-34B/raw/2a670431440ae15bb23c817e071e2a89efa54bcb/README.md",
+          "route": "direct",
+          "httpStatus": 200,
+          "sha256": "276898b57afc3761368391272aeb5107779e27ac88b984b6c8e8d1f76e3360cd",
+          "retrievedAt": "2026-10-29"
+        }
+      ]
+    },
+    {
+      "id": "c3-01ai-yi-34b-apache",
+      "selection": "random",
+      "disposition": "ok",
+      "issues": [
+        "HF commits: d86275bb is 2024-05-30; LICENSE at da71e560 (2024-05-29) and 51a24adb was still Yi Community License v2.1, while the README at da71e560 already named Apache 2.0, as the time note says. Quotes verbatim."
+      ],
+      "fix": null,
+      "retrieval": [
+        {
+          "sourceId": "c3-src-yi34b-license-apache",
+          "url": "https://huggingface.co/01-ai/Yi-34B/raw/d86275bb4bc5234489a8fa602efff35855eda9f0/LICENSE",
+          "route": "direct",
+          "httpStatus": 200,
+          "sha256": "fef9a71a6fa3b558a147271252cf131f70afa07f1f2f448778cd829f123fcc14",
+          "retrievedAt": "2026-10-29"
+        },
+        {
+          "sourceId": "c3-src-yi34b-readme-0530",
+          "url": "https://huggingface.co/01-ai/Yi-34B/raw/d86275bb4bc5234489a8fa602efff35855eda9f0/README.md",
+          "route": "direct",
+          "httpStatus": 200,
+          "sha256": "852f6d28cd1d79801b251b31ef4367611a69b7feaf17eac1d488f7f6ae3e7ef2",
+          "retrievedAt": "2026-10-29"
+        }
+      ]
+    },
+    {
+      "id": "c3-01ai-yi-licence-v21-registration",
+      "selection": "random",
+      "disposition": "ok",
+      "issues": [
+        "v2.1 (3ace5f03, HF commit 2023-11-23) Section 2 end: registration-form sentence verbatim (e-mail address correctly not quoted). v1.0 (e055d548) does require contacting the Licensor and obtaining written authorization, as the qualification says."
+      ],
+      "fix": null,
+      "retrieval": [
+        {
+          "sourceId": "c3-src-yi34b-license-v21",
+          "url": "https://huggingface.co/01-ai/Yi-34B/raw/3ace5f03eee58aa00438b15ea3f0d535f3a81e46/LICENSE",
+          "route": "direct",
+          "httpStatus": 200,
+          "sha256": "d9247556ada84d3b0610b94dd27a2dd8e517f453b5c0e17b895d0051a2fb8354",
+          "retrievedAt": "2026-10-29"
+        }
+      ]
+    },
+    {
+      "id": "c3-01ai-yi-lightning-raise-1",
+      "selection": "random",
+      "disposition": "ok",
+      "issues": [
+        "PDF stamp 'arXiv:2412.01253v1 [cs.CL] 2 Dec 2024'; RAISE-1 paragraph verbatim."
+      ],
+      "fix": null,
+      "retrieval": [
+        {
+          "sourceId": "c3-src-yi-lightning-pdf-v1",
+          "url": "https://arxiv.org/pdf/2412.01253v1",
+          "route": "direct",
+          "httpStatus": 200,
+          "sha256": "1a78807735c4c06f48ba40376dd7fae3241a2c6beab6c5a2f5d2750eaa5f050a",
+          "retrievedAt": "2026-10-29"
+        }
+      ]
+    },
+    {
+      "id": "c3-01ai-yi-llama-statement",
+      "selection": "random",
+      "disposition": "material",
+      "issues": [
+        "The quoted passage 'The Yi series models adopt the same model architecture as Llama but are…derivatives of Llama.' uses the ellipsis to drop the word '**NOT**', so the quote as displayed reads as the opposite of the source ('...but are **NOT** derivatives of Llama'). The statement itself is correct.",
+        "Dating confirmed independently: README at 04b45b49 (2024-02-06 09:35 UTC) and 6a938b0e contain the sentence; the three earlier README revisions checked (fab3b668 and 9987d667 of 2024-02-06, 679a3d0f of 2024-02-01) do not."
+      ],
+      "fix": "Replace the passage with the full sentence, markup stripped: 'The Yi series models adopt the same model architecture as Llama but are NOT derivatives of Llama.' and add to the locator or evidence note that the README sets NOT in bold (Markdown **NOT**).",
+      "retrieval": [
+        {
+          "sourceId": "c3-src-yi34b-readme-0206",
+          "url": "https://huggingface.co/01-ai/Yi-34B/raw/04b45b4915f9805c2c278b722618f4dc4edf645c/README.md",
+          "route": "direct",
+          "httpStatus": 200,
+          "sha256": "f21f0d4ad35291cc310ff9fcc8ddbfdb7429bf31771fb61688bf4664de0951b9",
+          "retrievedAt": "2026-10-29"
+        }
+      ]
+    },
+    {
+      "id": "c3-baai-bjp-control-risks",
+      "selection": "random",
+      "disposition": "ok",
+      "issues": [
+        "English text on the International Research Center for AI Ethics and Governance site, 'Control Risks' under Research and Development, verbatim; qualification states the host and that the Chinese original was not checked."
+      ],
+      "fix": null,
+      "retrieval": [
+        {
+          "sourceId": "c3-src-bjp-aieg-en",
+          "url": "https://ai-ethics-and-governance.institute/beijing-artificial-intelligence-principles/",
+          "route": "direct",
+          "httpStatus": 200,
+          "sha256": "049d7d29a154c415aead0a2b904a2efd4587308674bce8c656a145f3703e63a9",
+          "retrievedAt": "2026-10-29"
+        }
+      ]
+    },
+    {
+      "id": "c3-baai-bjp-long-term-planning",
+      "selection": "random",
+      "disposition": "ok",
+      "issues": ["Verbatim under Governance; locator correct."],
+      "fix": null,
+      "retrieval": [
+        {
+          "sourceId": "c3-src-bjp-aieg-en",
+          "url": "https://ai-ethics-and-governance.institute/beijing-artificial-intelligence-principles/",
+          "route": "direct",
+          "httpStatus": 200,
+          "sha256": "049d7d29a154c415aead0a2b904a2efd4587308674bce8c656a145f3703e63a9",
+          "retrievedAt": "2026-10-29"
+        }
+      ]
+    },
+    {
+      "id": "c3-governance-cac-genai-list-2024-04-entry-tencent",
+      "selection": "random",
+      "disposition": "minor",
+      "issues": [
+        "Row 12 matches verbatim (layout text: Guangdong-TencentHunyuan-20230901, 2023/9/14).",
+        "listedEntity is 'tencent' on the strength of the dataset alias 深圳市腾讯计算机系统有限公司, but this pack's own records (c3-tencent-legal-form-2025, c3-tencent-controls-tencent-computer-2025) say that alias names a different company, Tencent Computer, and create the entity shenzhen-tencent-computer-systems for it. The entry therefore maps a filing by Tencent Computer onto Tencent Holdings.",
+        "The qualification cites 'the name match given in this pack's brief'; drafting-brief.md contains no such mapping, so a reader cannot check the basis."
+      ],
+      "fix": "Either set attributes.listedEntity to shenzhen-tencent-computer-systems (its equivalence with 深圳市腾讯计算机系统有限公司 still to be confirmed from a Chinese-language filing, as c3-tencent-controls-tencent-computer-2025 says), or keep 'tencent' and say in the qualification that the matched alias names Tencent Computer, not the listed holding company. Replace 'the name match given in this pack's brief' with 'the alias 深圳市腾讯计算机系统有限公司 recorded on the dataset entity tencent'.",
+      "retrieval": [
+        {
+          "sourceId": "c3-src-cac-genai-list-2024-04",
+          "url": "https://www.cac.gov.cn/cms/pub/interact/downloadfile.jsp?filepath=NUtqEIwGiCjGm2Bhl20cvHaciuAb2ebr7U8X1xV5925vz0vHSSJ6sATU6DtmcGo1wYjaLSPNhSkF5EQhi7RHdlAfqphfFn00jUfFRLdBE5I=&fText=%E7%94%9F%E6%88%90%E5%BC%8F%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E6%9C%8D%E5%8A%A1%E5%B7%B2%E5%A4%87%E6%A1%88%E4%BF%A1%E6%81%AF%EF%BC%882024%E5%B9%B44%E6%9C%88%EF%BC%89",
+          "route": "direct",
+          "httpStatus": 200,
+          "sha256": "329eb680eeb7ef69002a06b5eebe423abb4ced27fa922414c1941e933f28965e",
+          "retrievedAt": "2026-10-29"
+        }
+      ]
+    },
+    {
+      "id": "c3-governance-cac-genai-list-2024-08-count-filed",
+      "selection": "random",
+      "disposition": "ok",
+      "issues": [
+        "Recounted from pdftotext -layout: filed rows run 118–188 (71) across three table sections; registered rows 1–26 follow under 登记单位. PDF creation metadata 2024-08-08, not used as a date."
+      ],
+      "fix": null,
+      "retrieval": [
+        {
+          "sourceId": "c3-src-cac-genai-list-2024-08",
+          "url": "https://www.cac.gov.cn/cms/pub/interact/downloadfile.jsp?filepath=NUtqEIwGiCjGm2Bhl20cvD3k2jZHxW62PpTbCodAq/hvz0vHSSJ6sATU6DtmcGo1SVh2XLVTbvXpuP4KM0gfclAfqphfFn00jUfFRLdBE5I=&fText=%E7%94%9F%E6%88%90%E5%BC%8F%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E6%9C%8D%E5%8A%A1%E5%B7%B2%E5%A4%87%E6%A1%88%E5%92%8C%E5%B7%B2%E7%99%BB%E8%AE%B0%E4%BF%A1%E6%81%AF%EF%BC%882024%E5%B9%B48%E6%9C%88%EF%BC%89",
+          "route": "direct",
+          "httpStatus": 200,
+          "sha256": "1bc2cc5be74325670cacc06da897ba54cc689e020cd4dabb5fa0874048f96efd",
+          "retrievedAt": "2026-10-29"
+        }
+      ]
+    },
+    {
+      "id": "c3-governance-cac-genai-list-2024-08-published",
+      "selection": "random",
+      "disposition": "ok",
+      "issues": [
+        "CAC page dated 2024年04月02日 lists 附件2 with the quoted title; publishdate stamp 2026/09/14 as the time note says."
+      ],
+      "fix": null,
+      "retrieval": [
+        {
+          "sourceId": "c3-src-cac-genai-filings-page",
+          "url": "https://www.cac.gov.cn/2024-04/02/c_1713729983803145.htm",
+          "route": "direct",
+          "httpStatus": 200,
+          "sha256": "4716f7fe0e5e6cf892d96d4ba05a1c78f9b68b04f8248aff7bc04103b6972796",
+          "retrievedAt": "2026-10-29"
+        }
+      ]
+    },
+    {
+      "id": "c3-governance-cac-genai-list-2025-01-count-registered",
+      "selection": "random",
+      "disposition": "minor",
+      "issues": [
+        "Recount confirms 48 registered rows numbered 58–105.",
+        "countNote says the cumulative 105 matches 'the 105 registrations in 2024 that the CAC's January 2025 announcement states', and the qualification describes registration from 'the CAC's January 2026 announcement'. Neither announcement is cited as evidence on this record, and the pack holds no January 2025 announcement source at all."
+      ],
+      "fix": "Drop the clause 'matching the 105 registrations in 2024 that the CAC's January 2025 announcement states' from countNote and the evidence paraphrase (or retrieve and cite that announcement as context evidence); add c3-src-cac-genai-filings-2025-announcement as context evidence for the January 2026 description of registration, with its locator.",
+      "retrieval": [
+        {
+          "sourceId": "c3-src-cac-genai-list-2025-01",
+          "url": "https://www.cac.gov.cn/cms/pub/interact/downloadfile.jsp?filepath=NUtqEIwGiCjGm2Bhl20cvMJN~~~VfG4e3TRGnFD8PfRvz0vHSSJ6sATU6DtmcGo1/SlbWBI5~oROMVCft2OZdVAfqphfFn00jUfFRLdBE5I=&fText=%E7%94%9F%E6%88%90%E5%BC%8F%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E6%9C%8D%E5%8A%A1%E5%B7%B2%E5%A4%87%E6%A1%88%E5%92%8C%E5%B7%B2%E7%99%BB%E8%AE%B0%E4%BF%A1%E6%81%AF%EF%BC%882025%E5%B9%B41%E6%9C%88%EF%BC%89",
+          "route": "direct",
+          "httpStatus": 200,
+          "sha256": "14fc7e5da18593d0378b82737f52e36aaf1f4b13966b6781ae53ed2b1c3c4b8c",
+          "retrievedAt": "2026-10-29"
+        }
+      ]
+    },
+    {
+      "id": "c3-governance-tc260-asgf-v2-updates-v1",
+      "selection": "random",
+      "disposition": "ok",
+      "issues": [
+        "Preface sentence on the September 2024 1.0 release and §2.1 '在1.0版基础上，调整更新风险类型' verbatim. The qualification correctly leaves to the reviewer whether supersedes_document fits a text that says it updates, not replaces, 1.0 (the brief allows 'replaces or updates'; the predicate definition says 'replacement')."
+      ],
+      "fix": null,
+      "retrieval": [
+        {
+          "sourceId": "c3-src-tc260-asgf-v2-pdf",
+          "url": "https://www.cac.gov.cn/rootimages/uploadimg/1759653474200838/1759653474200838.pdf",
+          "route": "direct",
+          "httpStatus": 200,
+          "sha256": "50735b9ca01bff746169fa58e554abb97b4e62c27d4c97afd64f18ff83bba705",
+          "retrievedAt": "2026-10-29"
+        }
+      ]
+    },
+    {
+      "id": "c3-governance-tc260-asgf-v3-updates-v2",
+      "selection": "random",
+      "disposition": "ok",
+      "issues": [
+        "Preface passage verbatim; statement matches '梳理更新风险分类，优化调整技术应对和综合治理措施'. Same predicate question as v2."
+      ],
+      "fix": null,
+      "retrieval": [
+        {
+          "sourceId": "c3-src-tc260-asgf-v3-pdf",
+          "url": "https://www.tc260.org.cn/tc260/xwdt1/202609/d513a007d04347f58e483fabaefb34b8/files/%E3%80%8A%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%AE%89%E5%85%A8%E6%B2%BB%E7%90%86%E6%A1%86%E6%9E%B63.0%E3%80%8B.pdf.pdf",
+          "route": "direct",
+          "httpStatus": 200,
+          "sha256": "cff709d8b1b2a0dfd2ff24df4d6b942b160975331e44c918e14a47d5c86da43d",
+          "retrievedAt": "2026-10-29"
+        }
+      ]
+    },
+    {
+      "id": "c3-iflytek-legal-form-2008",
+      "selection": "random",
+      "disposition": "ok",
+      "issues": [
+        "第二节 概览, 一、发行人简介: name, English name and the 2007-04-26 conversion with 工商变更登记 verbatim; translations faithful."
+      ],
+      "fix": null,
+      "retrieval": [
+        {
+          "sourceId": "c3-src-iflytek-prospectus-2008",
+          "url": "https://static.cninfo.com.cn/finalpage/2008-04-24/39107260.PDF",
+          "route": "direct",
+          "httpStatus": 200,
+          "sha256": "2e56e7abfd8bd36eccbaabf81701311cc64c5d28ac2aabe0b45fdf92fc0a6c72",
+          "retrievedAt": "2026-10-29"
+        }
+      ]
+    },
+    {
+      "id": "c3-iflytek-liu-qingfeng-founder",
+      "selection": "random",
+      "disposition": "ok",
+      "issues": [
+        "Section 4 board biographies, verbatim; the same wording also appears in the board announcement of 10 January 2026."
+      ],
+      "fix": null,
+      "retrieval": [
+        {
+          "sourceId": "c3-src-iflytek-ar2025",
+          "url": "https://static.cninfo.com.cn/finalpage/2026-04-29/1225233581.PDF",
+          "route": "direct",
+          "httpStatus": 200,
+          "sha256": "8504042c6e77ea787ad43a88e0b3a35b9a57992fd6cf3be51a59fde2fe498ade",
+          "retrievedAt": "2026-10-29"
+        }
+      ]
+    },
+    {
+      "id": "c3-iflytek-liu-qingfeng-president-2008",
+      "selection": "random",
+      "disposition": "ok",
+      "issues": [
+        "Biography in the directors section (before 第九节 公司治理) verbatim."
+      ],
+      "fix": null,
+      "retrieval": [
+        {
+          "sourceId": "c3-src-iflytek-prospectus-2008",
+          "url": "https://static.cninfo.com.cn/finalpage/2008-04-24/39107260.PDF",
+          "route": "direct",
+          "httpStatus": 200,
+          "sha256": "2e56e7abfd8bd36eccbaabf81701311cc64c5d28ac2aabe0b45fdf92fc0a6c72",
+          "retrievedAt": "2026-10-29"
+        }
+      ]
+    },
+    {
+      "id": "c3-iflytek-spark-v4-2024",
+      "selection": "random",
+      "disposition": "minor",
+      "issues": [
+        "Announcement 2024-034 dated 二〇二四年六月二十五日; both quotes verbatim in the second paragraph; announced stage kept.",
+        "The qualification calls the announcement's statements 'about customers and export restrictions'. The text says '在美国极限施压的背景下' and '2022年10月美国第二次极限施压' ('US maximum pressure'); 'export restrictions' is the drafter's gloss, not the document's term."
+      ],
+      "fix": "In the qualification replace 'export restrictions' with 'what it calls US \"maximum pressure\" (极限施压)'.",
+      "retrieval": [
+        {
+          "sourceId": "c3-src-iflytek-spark-notice-2024-06",
+          "url": "https://static.cninfo.com.cn/finalpage/2024-06-25/1220444099.PDF",
+          "route": "direct",
+          "httpStatus": 200,
+          "sha256": "2574d3e16c85a3533662bc5dd49023a08517e194e131c8528e48b55ea4d9ca6d",
+          "retrievedAt": "2026-10-29"
+        }
+      ]
+    },
+    {
+      "id": "c3-iflytek-wu-xiaoru-president-2026",
+      "selection": "random",
+      "disposition": "minor",
+      "issues": [
+        "Board resolution of 9 January 2026 (announcement 2026-002, dated 10 January 2026) verbatim; translation faithful.",
+        "The resolution is an appointment for the seventh board's term. The time note's 'having earlier served as vice president' invites the reading that his presidency began on 9 January 2026; the annual report's '历任公司副总裁等职务' does not establish when he first became president, and earlier boards' appointments were not checked."
+      ],
+      "fix": "Add to the time note: 'The interval is the term of this appointment by the seventh board; whether he held the office under the sixth board was not checked.' and drop 'having earlier served as vice president' or quote the report's 历任公司副总裁等职务 with that limit.",
+      "retrieval": [
+        {
+          "sourceId": "c3-src-iflytek-board7-2026",
+          "url": "https://static.cninfo.com.cn/finalpage/2026-01-10/1224927456.PDF",
+          "route": "direct",
+          "httpStatus": 200,
+          "sha256": "89370d4c61c007a482ebba1b70d611e4688f7f56759488cd25817518062f5272",
+          "retrievedAt": "2026-10-29"
+        },
+        {
+          "sourceId": "c3-src-iflytek-ar2025",
+          "url": "https://static.cninfo.com.cn/finalpage/2026-04-29/1225233581.PDF",
+          "route": "direct",
+          "httpStatus": 200,
+          "sha256": "8504042c6e77ea787ad43a88e0b3a35b9a57992fd6cf3be51a59fde2fe498ade",
+          "retrievedAt": "2026-10-29"
+        }
+      ]
+    },
+    {
+      "id": "c3-sensetime-llm-ethics-race",
+      "selection": "random",
+      "disposition": "ok",
+      "issues": [
+        "§6 p. 29–30: '动态平衡' and '失控的竞赛' passage and the third proposal verbatim; report says it was first released in Chinese in July 2023. Translation faithful."
+      ],
+      "fix": null,
+      "retrieval": [
+        {
+          "sourceId": "c3-src-sensetime-llm-ethics-wp",
+          "url": "https://oss.sensetime.com/20240320/eed5f65022e927ee651d0da0507e3f02/%E5%95%86%E6%B1%A4%E5%A4%A7%E6%A8%A1%E5%9E%8B%E4%BC%A6%E7%90%86%E5%8E%9F%E5%88%99%E4%B8%8E%E5%AE%9E%E8%B7%B5%E7%99%BD%E7%9A%AE%E4%B9%A6.pdf",
+          "route": "direct",
+          "httpStatus": 200,
+          "sha256": "e1239d4be7611047a4355ce4e3c560897099597647c1aa7703bb9dbaedf435dc",
+          "retrievedAt": "2026-10-29"
+        }
+      ]
+    },
+    {
+      "id": "c3-sensetime-sensenova-5-announcement",
+      "selection": "random",
+      "disposition": "ok",
+      "issues": [
+        "HKEX announcement of 24 April 2024 verbatim; AR2023 context sentence present."
+      ],
+      "fix": null,
+      "retrieval": [
+        {
+          "sourceId": "c3-src-sensetime-sensenova5-hkex",
+          "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2024/0424/2024042400995.pdf",
+          "route": "direct",
+          "httpStatus": 200,
+          "sha256": "9b83ea44b45c09b42b50fe3fcdd32519223e9af3010972c4120012949dde4d22",
+          "retrievedAt": "2026-10-29"
+        },
+        {
+          "sourceId": "c3-src-sensetime-ar2023",
+          "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2024/0425/2024042502571.pdf",
+          "route": "direct",
+          "httpStatus": 200,
+          "sha256": "cb9a59d9281344f1df0c41877f775feb64b6d2af8bc44bac4ecb48d3bdba5c56",
+          "retrievedAt": "2026-10-29"
+        }
+      ]
+    },
+    {
+      "id": "c3-sensetime-sensenova-u1-card",
+      "selection": "random",
+      "disposition": "minor",
+      "issues": [
+        "README at 3b06420a (HF commit 2026-04-26) has both quotes; repository's initial commit is 2026-04-22, as the time note says.",
+        "The statement asserts 'SenseTime's SenseNova team published', but the card does not name SenseTime; the qualification itself says the attribution rests on the account name and on an annual-report passage about a different model (SenseNova-SI)."
+      ],
+      "fix": "Reword the statement to 'The sensenova Hugging Face account published a model card for SenseNova-U1-8B-MoT, which at a commit of 26 April 2026 announced …' and keep the attribution to SenseTime in the qualification. Optionally add as context the AR2025 sentence on a new model 'based on the second-generation NEO architecture' (MD&A, same page), which is closer to U1 than the SenseNova-SI sentence.",
+      "retrieval": [
+        {
+          "sourceId": "c3-src-sensenova-u1-readme",
+          "url": "https://huggingface.co/sensenova/SenseNova-U1-8B-MoT/raw/3b06420a5f2d260278f552c6ef9249fd38598441/README.md",
+          "route": "direct",
+          "httpStatus": 200,
+          "sha256": "0d6829683762a19bda34decc85d8254ddae86aaba5686b7f6b09726f52688ae5",
+          "retrievedAt": "2026-10-29"
+        },
+        {
+          "sourceId": "c3-src-sensetime-ar2025",
+          "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0427/2026042700722.pdf",
+          "route": "direct",
+          "httpStatus": 200,
+          "sha256": "357236741ec26e6898be08c118251790b97a28d2f4c04fd1f4121b98d9b517aa",
+          "retrievedAt": "2026-10-29"
+        }
+      ]
+    },
+    {
+      "id": "c3-sensetime-wang-xiaogang-chief-scientist",
+      "selection": "random",
+      "disposition": "minor",
+      "issues": [
+        "AR2025 biography and prospectus table passages present.",
+        "Locator '(p. 69)' is the PDF page; the printed page is 68 (Directors' Report). The prospectus records in this pack use printed page numbers."
+      ],
+      "fix": "Change the locator to 'Directors' Report, Biographical Details of Directors (printed p. 68; PDF p. 69)'.",
+      "retrieval": [
+        {
+          "sourceId": "c3-src-sensetime-ar2025",
+          "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0427/2026042700722.pdf",
+          "route": "direct",
+          "httpStatus": 200,
+          "sha256": "357236741ec26e6898be08c118251790b97a28d2f4c04fd1f4121b98d9b517aa",
+          "retrievedAt": "2026-10-29"
+        },
+        {
+          "sourceId": "c3-src-sensetime-prospectus-2021",
+          "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2021/1207/2021120700017.pdf",
+          "route": "direct",
+          "httpStatus": 200,
+          "sha256": "45a8fc07d0a356dea0d69b8511e55dd16d4748761910203e5671cf50257195bf",
+          "retrievedAt": "2026-10-29"
+        }
+      ]
+    },
+    {
+      "id": "c3-sensetime-xu-li-cofounder",
+      "selection": "random",
+      "disposition": "ok",
+      "issues": ["Definitions entry verbatim."],
+      "fix": null,
+      "retrieval": [
+        {
+          "sourceId": "c3-src-sensetime-prospectus-2021",
+          "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2021/1207/2021120700017.pdf",
+          "route": "direct",
+          "httpStatus": 200,
+          "sha256": "45a8fc07d0a356dea0d69b8511e55dd16d4748761910203e5671cf50257195bf",
+          "retrievedAt": "2026-10-29"
+        }
+      ]
+    },
+    {
+      "id": "c3-sensetime-yang-fan-cofounder",
+      "selection": "random",
+      "disposition": "ok",
+      "issues": [
+        "Senior-management biography verbatim; table gives December 2014, as the time note says."
+      ],
+      "fix": null,
+      "retrieval": [
+        {
+          "sourceId": "c3-src-sensetime-prospectus-2021",
+          "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2021/1207/2021120700017.pdf",
+          "route": "direct",
+          "httpStatus": 200,
+          "sha256": "45a8fc07d0a356dea0d69b8511e55dd16d4748761910203e5671cf50257195bf",
+          "retrievedAt": "2026-10-29"
+        }
+      ]
+    },
+    {
+      "id": "c3-shlab-frmf-practice-cites-frmf",
+      "selection": "random",
+      "disposition": "ok",
+      "issues": [
+        "Abstract of 2507.16534v1 (22 Jul 2025) verbatim with citation '(Shanghai AI Lab & Concordia AI, 2025)'."
+      ],
+      "fix": null,
+      "retrieval": [
+        {
+          "sourceId": "c3-src-frmf-practice-arxiv-v1",
+          "url": "https://arxiv.org/pdf/2507.16534v1",
+          "route": "direct",
+          "httpStatus": 200,
+          "sha256": "f62e193deeccc890f47df2ae9e8dd75bb93e00a7dd977a3530d44249d87fa049",
+          "retrievedAt": "2026-10-29"
+        }
+      ]
+    },
+    {
+      "id": "c3-shlab-frmf-practice-finding",
+      "selection": "random",
+      "disposition": "ok",
+      "issues": [
+        "Abstract sentence verbatim; recorded as the report's own result."
+      ],
+      "fix": null,
+      "retrieval": [
+        {
+          "sourceId": "c3-src-frmf-practice-arxiv-v1",
+          "url": "https://arxiv.org/pdf/2507.16534v1",
+          "route": "direct",
+          "httpStatus": 200,
+          "sha256": "f62e193deeccc890f47df2ae9e8dd75bb93e00a7dd977a3530d44249d87fa049",
+          "retrievedAt": "2026-10-29"
+        }
+      ]
+    },
+    {
+      "id": "c3-shlab-intern-s1-report",
+      "selection": "random",
+      "disposition": "ok",
+      "issues": [
+        "Title page and stamp 21 Aug 2025; HF internlm/Intern-S1 initial commit and model upload 2025-07-24, README updates 2025-07-25, as the time note says."
+      ],
+      "fix": null,
+      "retrieval": [
+        {
+          "sourceId": "c3-src-intern-s1-arxiv-v1",
+          "url": "https://arxiv.org/pdf/2508.15763v1",
+          "route": "direct",
+          "httpStatus": 200,
+          "sha256": "18cf1fe7a2090bbd96cb6046b43453721a2786c2fcc1efca5347e51c2012e6a2",
+          "retrievedAt": "2026-10-29"
+        }
+      ]
+    },
+    {
+      "id": "c3-shlab-internlm-readme",
+      "selection": "random",
+      "disposition": "ok",
+      "issues": [
+        "Blobless clone: fa7337b3 is the repository's initial commit, 2023-07-06. Both quotes verbatim."
+      ],
+      "fix": null,
+      "retrieval": [
+        {
+          "sourceId": "c3-src-internlm-readme-0706",
+          "url": "https://raw.githubusercontent.com/InternLM/InternLM/fa7337b37b0024e70bee3c638f969451dc4d7351/README.md",
+          "route": "direct",
+          "httpStatus": 200,
+          "sha256": "268a4e97c2b6f344d286be9028abdb9886e9c00b7fe934e124fa1a05b351b679",
+          "retrievedAt": "2026-10-29"
+        }
+      ]
+    },
+    {
+      "id": "c3-shlab-internlm2-sensetime",
+      "selection": "random",
+      "disposition": "ok",
+      "issues": [
+        "v1 (26 Mar 2024) affiliations: Shanghai AI Laboratory, SenseTime Group, CUHK, Fudan; the e-mail line is not quoted."
+      ],
+      "fix": null,
+      "retrieval": [
+        {
+          "sourceId": "c3-src-internlm2-arxiv-v1",
+          "url": "https://arxiv.org/pdf/2403.17297v1",
+          "route": "direct",
+          "httpStatus": 200,
+          "sha256": "c2f52cf7b3ad874d15017b04fdebbba0c13705aaae49b801079ab7a074624c74",
+          "retrievedAt": "2026-10-29"
+        }
+      ]
+    },
+    {
+      "id": "c3-shlab-unveiled-2020",
+      "selection": "random",
+      "disposition": "material",
+      "issues": [
+        "Yicai page (published 2020-07-11 18:53:38 per page metadata) carries both quotes verbatim; translation faithful.",
+        "The predicate founding_stated means 'a source states the organisation's founding date'. Yicai reports a plaque-unveiling (揭牌) ceremony, and the record's own qualification says this is not a date of establishment. The record therefore files a non-founding event, resting on reporting only, under a founding predicate, on a founding question (a consequential placement under the editorial policy's triggers). time.basis is also missing."
+      ],
+      "fix": "Hold. Either recast outside founding_stated (no existing predicate records a ceremony; raise it as an open mapping question in the review note), or keep it out of admission until the laboratory's own statement or a filing gives a founding date. If kept, add time.basis and say in the statement that the report is the only source.",
+      "retrieval": [
+        {
+          "sourceId": "c3-src-yicai-2020-07-11",
+          "url": "https://www.yicai.com/news/100696666.html",
+          "route": "direct",
+          "httpStatus": 200,
+          "sha256": "3014f908b10c9d6467ff265eef85d19cd4a3481c2fe4da53e0e621fa19721199",
+          "retrievedAt": "2026-10-29"
+        }
+      ]
+    },
+    {
+      "id": "c3-stepfun-step-3-author-zhu-yibo",
+      "selection": "random",
+      "disposition": "ok",
+      "issues": [
+        "abs page v1, Submitted 25 Jul 2025; 'StepFun:' prefix and the name present; 198 names shown plus 99 'not shown', consistent with 'about 300'."
+      ],
+      "fix": null,
+      "retrieval": [
+        {
+          "sourceId": "c3-src-step-3-abs-v1",
+          "url": "https://arxiv.org/abs/2507.19427v1",
+          "route": "direct",
+          "httpStatus": 200,
+          "sha256": "b4595fd9b76a831dbb922ec1d0c5471efff5f22d2315956fd9e6221d655f8508",
+          "retrievedAt": "2026-10-29"
+        }
+      ]
+    },
+    {
+      "id": "c3-stepfun-step-audio-report",
+      "selection": "random",
+      "disposition": "ok",
+      "issues": [
+        "PDF stamp 17 Feb 2025, 'Step-Audio Team StepFun'; abstract phrase verbatim."
+      ],
+      "fix": null,
+      "retrieval": [
+        {
+          "sourceId": "c3-src-step-audio-pdf-v1",
+          "url": "https://arxiv.org/pdf/2502.11946v1",
+          "route": "direct",
+          "httpStatus": 200,
+          "sha256": "73f7cd03586ac6f7cc10630c2f944cc95f4a50e9063f31a4018de84dbc7a89eb",
+          "retrievedAt": "2026-10-29"
+        },
+        {
+          "sourceId": "c3-src-step-audio-abs-v1",
+          "url": "https://arxiv.org/abs/2502.11946v1",
+          "route": "direct",
+          "httpStatus": 200,
+          "sha256": "c0e354ce34395d92fcf56a81a70afcba6d308e5d678d5fd989732c4a59f87549",
+          "retrievedAt": "2026-10-29"
+        }
+      ]
+    },
+    {
+      "id": "c3-stepfun-step-video-t2v-report",
+      "selection": "random",
+      "disposition": "ok",
+      "issues": [
+        "Submitted 14 Feb 2025 (v1; v3 of 24 Feb 2025 exists); 30B parameters; quotes verbatim."
+      ],
+      "fix": null,
+      "retrieval": [
+        {
+          "sourceId": "c3-src-step-video-t2v-pdf-v1",
+          "url": "https://arxiv.org/pdf/2502.10248v1",
+          "route": "direct",
+          "httpStatus": 200,
+          "sha256": "8193cfc035ebfafba9d95fe1ef8223db3ff24da61077778e31cd9722c880f7f2",
+          "retrievedAt": "2026-10-29"
+        },
+        {
+          "sourceId": "c3-src-step-video-t2v-abs-v1",
+          "url": "https://arxiv.org/abs/2502.10248v1",
+          "route": "direct",
+          "httpStatus": 200,
+          "sha256": "dc53f658a157fe10b0151533e894728040bdd1c5f40f08d696306bf959e44964",
+          "retrievedAt": "2026-10-29"
+        }
+      ]
+    },
+    {
+      "id": "c3-stepfun-step3-licence",
+      "selection": "random",
+      "disposition": "ok",
+      "issues": [
+        "HF commits: LICENSE created cda3a8d5 and README 5fe5f2af, both 2025-07-31; both quotes present."
+      ],
+      "fix": null,
+      "retrieval": [
+        {
+          "sourceId": "c3-src-step3-readme",
+          "url": "https://huggingface.co/stepfun-ai/step3/raw/5fe5f2aff383cd9d0195ca7a8e673384ce30c228/README.md",
+          "route": "direct",
+          "httpStatus": 200,
+          "sha256": "243260dbd2d842c4748a113871014bd0dfc50190db89be1bc77cba1e2b0007a3",
+          "retrievedAt": "2026-10-29"
+        },
+        {
+          "sourceId": "c3-src-step3-license",
+          "url": "https://huggingface.co/stepfun-ai/step3/raw/5fe5f2aff383cd9d0195ca7a8e673384ce30c228/LICENSE",
+          "route": "direct",
+          "httpStatus": 200,
+          "sha256": "58d1e17ffe5109a7ae296caafcadfdbe6a7d176f0bc4ab01e12a689b0499d8bd",
+          "retrievedAt": "2026-10-29"
+        }
+      ]
+    },
+    {
+      "id": "c3-stepfun-step5-card-initial",
+      "selection": "random",
+      "disposition": "ok",
+      "issues": [
+        "HF tree at 43fa7aab (2026-09-20): no LICENSE file; README is 28 bytes, metadata header only. Initial commit 9953fd19 of the same day."
+      ],
+      "fix": null,
+      "retrieval": [
+        {
+          "sourceId": "c3-src-step5-readme-0920",
+          "url": "https://huggingface.co/stepfun-ai/Step-5-Preview/raw/43fa7aabe7c2e503bdee2c99a64954d17ab069da/README.md",
+          "route": "direct",
+          "httpStatus": 200,
+          "sha256": "98b45ea81164d1e1a1dd82255207053b15cd6c69d922a1c5cf3387ce604d4b74",
+          "retrievedAt": "2026-10-29"
+        }
+      ]
+    },
+    {
+      "id": "c3-tencent-a13b-licence-licensor",
+      "selection": "random",
+      "disposition": "ok",
+      "issues": [
+        "A13B LICENSE at 290ddb9a (2025-08-21) Section 1(i) verbatim; Large and Video editions define Tencent as THL A29 Limited."
+      ],
+      "fix": null,
+      "retrieval": [
+        {
+          "sourceId": "c3-src-hunyuan-a13b-hf-license",
+          "url": "https://huggingface.co/tencent/Hunyuan-A13B-Instruct/raw/290ddb9a56ed23c2c83a1c8081533e58925df952/LICENSE",
+          "route": "direct",
+          "httpStatus": 200,
+          "sha256": "e3e51427556222cb152990f47991eedbd6ffa6561bb9346580d32e841e13530c",
+          "retrievedAt": "2026-10-29"
+        },
+        {
+          "sourceId": "c3-src-hunyuanvideo-hf-license",
+          "url": "https://huggingface.co/tencent/HunyuanVideo/raw/6204ad6aea1a77ff5aba337c88278bb9500eb37d/LICENSE",
+          "route": "direct",
+          "httpStatus": 200,
+          "sha256": "6ba8ea0dc1c464c9ab549b281be5d3afcab93c3308a6967d22240150d844c54d",
+          "retrievedAt": "2026-10-29"
+        }
+      ]
+    },
+    {
+      "id": "c3-tencent-esg2025-responsible-ai",
+      "selection": "random",
+      "disposition": "ok",
+      "issues": [
+        "Section 3.3 'Responsible Artificial Intelligence', five numbered principles; principle 1 verbatim."
+      ],
+      "fix": null,
+      "retrieval": [
+        {
+          "sourceId": "c3-src-tencent-esg-2025",
+          "url": "https://static.www.tencent.com/uploads/2026/04/09/34cdfa7393ee49cd5677b28f38c68d74.pdf",
+          "route": "direct",
+          "httpStatus": 200,
+          "sha256": "8fa8f9b9f750fb25f302dfd3213e5323b258d2d361dfa41ba3dfbc682dc517d7",
+          "retrievedAt": "2026-10-29"
+        }
+      ]
+    },
+    {
+      "id": "c3-tencent-hunyuan-a13b-report",
+      "selection": "random",
+      "disposition": "ok",
+      "issues": [
+        "PDF stamp 'arXiv:2609.27284v1 [cs.AI] 23 Sep 2026' and printed '2025-06-27'; both dates kept apart."
+      ],
+      "fix": null,
+      "retrieval": [
+        {
+          "sourceId": "c3-src-hunyuan-a13b-arxiv-v1",
+          "url": "https://arxiv.org/pdf/2609.27284v1",
+          "route": "direct",
+          "httpStatus": 200,
+          "sha256": "2a559bd51425ae183081085412487b6cfadc27f44563c388b9204d8a87f39396",
+          "retrievedAt": "2026-10-29"
+        }
+      ]
+    },
+    {
+      "id": "c3-tencent-hy3-announcement",
+      "selection": "random",
+      "disposition": "ok",
+      "issues": [
+        "Post dated July 6, 2026; both quotes verbatim; HF API gives tencent/Hy3 createdAt 2026-07-02."
+      ],
+      "fix": null,
+      "retrieval": [
+        {
+          "sourceId": "c3-src-tencent-hy3-news",
+          "url": "https://www.tencent.com/tencent-hunyuan-officially-releases-hy3-advancing-agent-capabilities-and-deeper-product-integration/",
+          "route": "direct",
+          "httpStatus": 200,
+          "sha256": "ab2a4bce7037b0ef62baebfc444b07cf2a4620ab04ffd7249db94d13c06efe6b",
+          "retrievedAt": "2026-10-29"
+        }
+      ]
+    },
+    {
+      "id": "c3-tencent-large-licence-military",
+      "selection": "random",
+      "disposition": "ok",
+      "issues": [
+        "LICENSE.txt identical (md5) at 1779e4df (2024-11-05), 552e9f95, 4efe9121 'Fix License' and 023bb217; AUP item 19 and preamble verbatim, list of 20 items, 'Last modified: November 5, 2024'."
+      ],
+      "fix": null,
+      "retrieval": [
+        {
+          "sourceId": "c3-src-hunyuan-large-hf-license",
+          "url": "https://huggingface.co/tencent/Tencent-Hunyuan-Large/raw/023bb217c7f4fdfabd7308a344994b0e9ac7359c/LICENSE.txt",
+          "route": "direct",
+          "httpStatus": 200,
+          "sha256": "36f4473bbeaf0508fe6e8cfd75e88b62b04d9c830f1846ea562ecb8f73e4d1f5",
+          "retrievedAt": "2026-10-29"
+        }
+      ]
+    },
+    {
+      "id": "c3-tencent-large-licence-no-improve",
+      "selection": "random",
+      "disposition": "ok",
+      "issues": ["Section 5(b) verbatim; text unchanged since 2024-11-05."],
+      "fix": null,
+      "retrieval": [
+        {
+          "sourceId": "c3-src-hunyuan-large-hf-license",
+          "url": "https://huggingface.co/tencent/Tencent-Hunyuan-Large/raw/023bb217c7f4fdfabd7308a344994b0e9ac7359c/LICENSE.txt",
+          "route": "direct",
+          "httpStatus": 200,
+          "sha256": "36f4473bbeaf0508fe6e8cfd75e88b62b04d9c830f1846ea562ecb8f73e4d1f5",
+          "retrievedAt": "2026-10-29"
+        }
+      ]
+    },
+    {
+      "id": "c3-tencent-video-licence",
+      "selection": "random",
+      "disposition": "minor",
+      "issues": [
+        "Heading verbatim at 6204ad6a.",
+        "The time note says the LICENSE updates of 2 and 4 December 2024 'were not compared'. Compared here: the 2 December text (5687e9af) excluded the European Union only; the 4 December update (a4ed25a9) added the United Kingdom and South Korea, in the preamble and in the definition of Territory; the cited head revision is byte-identical to the 4 December file."
+      ],
+      "fix": "Replace 'LICENSE updates of 2 and 4 December 2024 were not compared' with 'The LICENSE first uploaded on 2 December 2024 (5687e9af) excluded the European Union only; the update of 4 December 2024 (a4ed25a9) added the United Kingdom and South Korea; the text at 6204ad6a is identical to that of 4 December.'",
+      "retrieval": [
+        {
+          "sourceId": "c3-src-hunyuanvideo-hf-license",
+          "url": "https://huggingface.co/tencent/HunyuanVideo/raw/6204ad6aea1a77ff5aba337c88278bb9500eb37d/LICENSE",
+          "route": "direct",
+          "httpStatus": 200,
+          "sha256": "6ba8ea0dc1c464c9ab549b281be5d3afcab93c3308a6967d22240150d844c54d",
+          "retrievedAt": "2026-10-29"
+        }
+      ]
+    },
+    {
+      "id": "c3-tencent-video-licence-no-improve",
+      "selection": "random",
+      "disposition": "ok",
+      "issues": [
+        "Section 5(b) 'any other AI model' already present in the 2 December 2024 file; only the territory lines and one AUP line ending changed on 4 December."
+      ],
+      "fix": null,
+      "retrieval": [
+        {
+          "sourceId": "c3-src-hunyuanvideo-hf-license",
+          "url": "https://huggingface.co/tencent/HunyuanVideo/raw/6204ad6aea1a77ff5aba337c88278bb9500eb37d/LICENSE",
+          "route": "direct",
+          "httpStatus": 200,
+          "sha256": "6ba8ea0dc1c464c9ab549b281be5d3afcab93c3308a6967d22240150d844c54d",
+          "retrievedAt": "2026-10-29"
+        }
+      ]
+    },
+    {
+      "id": "c3-iflytek-founding-1999",
+      "selection": "targeted",
+      "disposition": "ok",
+      "issues": [
+        "设立情况 sentence verbatim; 设立日期 2007年4月26日 confirmed in 第五节."
+      ],
+      "fix": null,
+      "retrieval": [
+        {
+          "sourceId": "c3-src-iflytek-prospectus-2008",
+          "url": "https://static.cninfo.com.cn/finalpage/2008-04-24/39107260.PDF",
+          "route": "direct",
+          "httpStatus": 200,
+          "sha256": "2e56e7abfd8bd36eccbaabf81701311cc64c5d28ac2aabe0b45fdf92fc0a6c72",
+          "retrievedAt": "2026-10-29"
+        }
+      ]
+    },
+    {
+      "id": "c3-iflytek-investor-china-mobile",
+      "selection": "targeted",
+      "disposition": "material",
+      "issues": [
+        "Passage verbatim (AR2025 top-ten shareholders, note 3).",
+        "Identity: the subscriber named is 中国移动通信有限公司 (China Mobile Communication Co., Ltd.). The record's subject is the dataset entity china-mobile, whose only legal-name alias is 中国移动通信集团有限公司 (China Mobile Communications Group Co., Ltd.), a different company. The qualification concedes that the parent–subsidiary link is not stated. The mapping is not by exact name, so the record attributes the subscription to an entity the source does not name."
+      ],
+      "fix": "Create an organisation entity for 中国移动通信有限公司 (China Mobile Communication Co., Ltd.) and make it the subject, with no parent link inferred; or hold the record until a filing states the relation. Keep the other wording.",
+      "retrieval": [
+        {
+          "sourceId": "c3-src-iflytek-ar2025",
+          "url": "https://static.cninfo.com.cn/finalpage/2026-04-29/1225233581.PDF",
+          "route": "direct",
+          "httpStatus": 200,
+          "sha256": "8504042c6e77ea787ad43a88e0b3a35b9a57992fd6cf3be51a59fde2fe498ade",
+          "retrievedAt": "2026-10-29"
+        }
+      ]
+    },
+    {
+      "id": "c3-sensetime-founding-2014",
+      "selection": "targeted",
+      "disposition": "minor",
+      "issues": [
+        "Passages verbatim.",
+        "Locator 'History and Corporate Structure, Overview (p. 198)': the passage is on printed page 199 (PDF page 208), which also carries the milestones table."
+      ],
+      "fix": "Change '(p. 198)' to '(p. 199)'.",
+      "retrieval": [
+        {
+          "sourceId": "c3-src-sensetime-prospectus-2021",
+          "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2021/1207/2021120700017.pdf",
+          "route": "direct",
+          "httpStatus": 200,
+          "sha256": "45a8fc07d0a356dea0d69b8511e55dd16d4748761910203e5671cf50257195bf",
+          "retrievedAt": "2026-10-29"
+        }
+      ]
+    },
+    {
+      "id": "c3-sensetime-pre-ipo-rounds",
+      "selection": "targeted",
+      "disposition": "ok",
+      "issues": [
+        "Both sentences verbatim; the capitalisation table's twelve preferred-share columns run Series A-1 to Series D+, matching the literal. No amount recorded."
+      ],
+      "fix": null,
+      "retrieval": [
+        {
+          "sourceId": "c3-src-sensetime-prospectus-2021",
+          "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2021/1207/2021120700017.pdf",
+          "route": "direct",
+          "httpStatus": 200,
+          "sha256": "45a8fc07d0a356dea0d69b8511e55dd16d4748761910203e5671cf50257195bf",
+          "retrievedAt": "2026-10-29"
+        }
+      ]
+    },
+    {
+      "id": "c3-baai-founding",
+      "selection": "targeted",
+      "disposition": "ok",
+      "issues": [
+        "hub.baai.ac.cn/view/4041 dated 2020-11-16 (repost noted as from mp.weixin.qq.com) and the site bundle's About text verbatim; sponsor wording kept in BAAI's terms; translation faithful."
+      ],
+      "fix": null,
+      "retrieval": [
+        {
+          "sourceId": "c3-src-baai-hub-4041",
+          "url": "https://hub.baai.ac.cn/view/4041",
+          "route": "direct",
+          "httpStatus": 200,
+          "sha256": "ed21ce3e8e5fc9f407e91499c2e26d5f8e000e61651ef53c3ec938b8cb47a0be",
+          "retrievedAt": "2026-10-29"
+        },
+        {
+          "sourceId": "c3-src-baai-site-bundle",
+          "url": "https://www.baai.ac.cn/assets/index-hCeadbk4.js",
+          "route": "direct",
+          "httpStatus": 200,
+          "sha256": "4f37970b54a34cbf8a0feb124032306f2bd29f27910725618e98ac2ba4254003",
+          "retrievedAt": "2026-10-29"
+        }
+      ]
+    },
+    {
+      "id": "c3-baai-bjp-endorsers",
+      "selection": "targeted",
+      "disposition": "ok",
+      "issues": [
+        "'Release and Endorsement' note verbatim; examples marked e.g.; no count recorded."
+      ],
+      "fix": null,
+      "retrieval": [
+        {
+          "sourceId": "c3-src-bjp-aieg-en",
+          "url": "https://ai-ethics-and-governance.institute/beijing-artificial-intelligence-principles/",
+          "route": "direct",
+          "httpStatus": 200,
+          "sha256": "049d7d29a154c415aead0a2b904a2efd4587308674bce8c656a145f3703e63a9",
+          "retrievedAt": "2026-10-29"
+        }
+      ]
+    },
+    {
+      "id": "c3-sensetime-investor-idg",
+      "selection": "targeted",
+      "disposition": "minor",
+      "issues": [
+        "Passage (d) and the capitalisation-table row verbatim (printed p. 208, PDF p. 217).",
+        "The prospectus never names 'IDG Capital'; the subject idg-capital is matched by fund-name prefix, not by exact name. The qualification says so, but the statement does not.",
+        "The record is marked explicit while it rests, like c3-sensetime-investor-iflytek (marked inferred), on a holding of Series A-1 Preferred Shares at the prospectus date; the qualification itself says the table does not show subscription in the A-1 round."
+      ],
+      "fix": "Either add an entity for the two IDG funds as subject or put the mapping basis in the statement ('… two funds whose names the dataset matches to IDG Capital'); and set attributes.period to 'Pre-IPO Investments (principal Pre-IPO Investor; holding of Series A-1 Preferred Shares at the prospectus date)' or mark the A-1 attribution inferred with the same rationale as the iFlytek record.",
+      "retrieval": [
+        {
+          "sourceId": "c3-src-sensetime-prospectus-2021",
+          "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2021/1207/2021120700017.pdf",
+          "route": "direct",
+          "httpStatus": 200,
+          "sha256": "45a8fc07d0a356dea0d69b8511e55dd16d4748761910203e5671cf50257195bf",
+          "retrievedAt": "2026-10-29"
+        }
+      ]
+    },
+    {
+      "id": "c3-sensetime-investor-iflytek",
+      "selection": "targeted",
+      "disposition": "ok",
+      "issues": [
+        "Row present in the layout rendering of printed p. 208 under the Series A-1 column; inference and its premise are recorded; 'Iflytek Co., Ltd.' matches iFlytek's foreign-language name iFLYTEK CO.,LTD (case and spacing aside)."
+      ],
+      "fix": null,
+      "retrieval": [
+        {
+          "sourceId": "c3-src-sensetime-prospectus-2021",
+          "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2021/1207/2021120700017.pdf",
+          "route": "direct",
+          "httpStatus": 200,
+          "sha256": "45a8fc07d0a356dea0d69b8511e55dd16d4748761910203e5671cf50257195bf",
+          "retrievedAt": "2026-10-29"
+        }
+      ]
+    },
+    {
+      "id": "c3-sensetime-investor-softbank",
+      "selection": "targeted",
+      "disposition": "material",
+      "issues": [
+        "The three quotes are verbatim.",
+        "Ownership chain overstated. The prospectus says SVF Sense is indirectly wholly owned by SVF Holdings (UK) LLP; SoftBank Vision Fund L.P. is the managing member of that LLP; the fund's general partner, SVF GP (Jersey) Limited, and its manager, SB Investment Advisers (UK) Limited, are each ultimately wholly owned by SoftBank Group Corp. It does not say that SVF Sense, or the fund, is ultimately wholly owned by SoftBank Group. The statement ('which it describes as ultimately wholly owned by SoftBank Group Corp. through SoftBank Vision Fund L.P.') and the qualification ('as the filing traces ownership to it') attribute to the filing an ownership statement it does not make, and the record names SoftBank Group as the participating investor on that basis."
+      ],
+      "fix": "Rewrite the statement: 'SenseTime's December 2021 prospectus names SVF Sense (Singapore) Pte. Ltd. among its principal Pre-IPO Investors, holding approximately 14.88% of its issued shares at the prospectus date. It states that SVF Sense is indirectly wholly owned by SVF Holdings (UK) LLP, whose managing member is SoftBank Vision Fund L.P.; the fund's general partner and its manager are ultimately wholly owned by SoftBank Group Corp.' Then either make SoftBank Vision Fund (or SVF Sense) the subject, or keep softbank-group only with an explicit qualification that the filing links SoftBank Group to the fund through its general partner and manager, not through ownership of SVF Sense. Hold until the subject is settled.",
+      "retrieval": [
+        {
+          "sourceId": "c3-src-sensetime-prospectus-2021",
+          "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2021/1207/2021120700017.pdf",
+          "route": "direct",
+          "httpStatus": 200,
+          "sha256": "45a8fc07d0a356dea0d69b8511e55dd16d4748761910203e5671cf50257195bf",
+          "retrievedAt": "2026-10-29"
+        }
+      ]
+    },
+    {
+      "id": "c3-sensetime-legal-form-2021",
+      "selection": "targeted",
+      "disposition": "ok",
+      "issues": [
+        "Cover wording verbatim; the 17 December 2023 announcement's signature block gives 'SenseTime Group Inc. 商汤集团股份有限公司'."
+      ],
+      "fix": null,
+      "retrieval": [
+        {
+          "sourceId": "c3-src-sensetime-prospectus-2021",
+          "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2021/1207/2021120700017.pdf",
+          "route": "direct",
+          "httpStatus": 200,
+          "sha256": "45a8fc07d0a356dea0d69b8511e55dd16d4748761910203e5671cf50257195bf",
+          "retrievedAt": "2026-10-29"
+        },
+        {
+          "sourceId": "c3-src-sensetime-passing-2023",
+          "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2023/1217/2023121700135.pdf",
+          "route": "direct",
+          "httpStatus": 200,
+          "sha256": "ed39aa4e38c80c3574a387b5da37f921007b6c47db6a47574662b122c2652c5a",
+          "retrievedAt": "2026-10-29"
+        }
+      ]
+    },
+    {
+      "id": "c3-baai-aquila-7b-licence",
+      "selection": "targeted",
+      "disposition": "ok",
+      "issues": [
+        "HF commits: c0687c52 'Update README.md' 2023-06-08 08:36; agreement PDF uploaded 07:25 the same day. Licence section and the conflicting 'Apache 2.0' table cell both present; the discrepancy is recorded."
+      ],
+      "fix": null,
+      "retrieval": [
+        {
+          "sourceId": "c3-src-aquila7b-card-0608",
+          "url": "https://huggingface.co/BAAI/Aquila-7B/raw/c0687c52ebfb584027a85cca7f045c2376f79810/README.md",
+          "route": "direct",
+          "httpStatus": 200,
+          "sha256": "fdc097ef035e8fc66ea5fa5d9b023211a47e1399bf75646e6656c45add27812e",
+          "retrievedAt": "2026-10-29"
+        }
+      ]
+    },
+    {
+      "id": "c3-01ai-legal-form-licensor",
+      "selection": "targeted",
+      "disposition": "ok",
+      "issues": [
+        "Licensor definition verbatim in v2.1 (English and Chinese) and v1.0 (Chinese, bracketed). Derivation is inferred with a stated premise; the qualification records the differing CAC/AIIA name. See the pattern note on two legal names on one entity."
+      ],
+      "fix": null,
+      "retrieval": [
+        {
+          "sourceId": "c3-src-yi34b-license-v21",
+          "url": "https://huggingface.co/01-ai/Yi-34B/raw/3ace5f03eee58aa00438b15ea3f0d535f3a81e46/LICENSE",
+          "route": "direct",
+          "httpStatus": 200,
+          "sha256": "d9247556ada84d3b0610b94dd27a2dd8e517f453b5c0e17b895d0051a2fb8354",
+          "retrievedAt": "2026-10-29"
+        },
+        {
+          "sourceId": "c3-src-yi34b-license-v10",
+          "url": "https://huggingface.co/01-ai/Yi-34B/raw/e055d548562a8fa5e4552d09a2ccacd8ac3ed641/LICENSE",
+          "route": "direct",
+          "httpStatus": 200,
+          "sha256": "b8cfce2240ab4a2a69f1871da1a76dc1025933cab468ee4a4edb3b0a0420aa81",
+          "retrievedAt": "2026-10-29"
+        }
+      ]
+    },
+    {
+      "id": "c3-governance-cac-genai-list-2024-04-entry-baidu",
+      "selection": "targeted",
+      "disposition": "ok",
+      "issues": [
+        "Row 1 verbatim; alias 北京百度网讯科技有限公司 exact on dataset entity baidu. Earliest is trivially the first attachment."
+      ],
+      "fix": null,
+      "retrieval": [
+        {
+          "sourceId": "c3-src-cac-genai-list-2024-04",
+          "url": "https://www.cac.gov.cn/cms/pub/interact/downloadfile.jsp?filepath=NUtqEIwGiCjGm2Bhl20cvHaciuAb2ebr7U8X1xV5925vz0vHSSJ6sATU6DtmcGo1wYjaLSPNhSkF5EQhi7RHdlAfqphfFn00jUfFRLdBE5I=&fText=%E7%94%9F%E6%88%90%E5%BC%8F%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E6%9C%8D%E5%8A%A1%E5%B7%B2%E5%A4%87%E6%A1%88%E4%BF%A1%E6%81%AF%EF%BC%882024%E5%B9%B44%E6%9C%88%EF%BC%89",
+          "route": "direct",
+          "httpStatus": 200,
+          "sha256": "329eb680eeb7ef69002a06b5eebe423abb4ced27fa922414c1941e933f28965e",
+          "retrievedAt": "2026-10-29"
+        }
+      ]
+    },
+    {
+      "id": "c3-governance-cac-genai-list-2024-04-entry-iflytek",
+      "selection": "targeted",
+      "disposition": "ok",
+      "issues": [
+        "Row 9 verbatim; the filing number wraps in the PDF ('…DaMoXing-' / '20230823'), so the hyphenated number is right. Alias exact. Phrase 'the name match given in this pack's brief' is unverifiable (pattern note)."
+      ],
+      "fix": null,
+      "retrieval": [
+        {
+          "sourceId": "c3-src-cac-genai-list-2024-04",
+          "url": "https://www.cac.gov.cn/cms/pub/interact/downloadfile.jsp?filepath=NUtqEIwGiCjGm2Bhl20cvHaciuAb2ebr7U8X1xV5925vz0vHSSJ6sATU6DtmcGo1wYjaLSPNhSkF5EQhi7RHdlAfqphfFn00jUfFRLdBE5I=&fText=%E7%94%9F%E6%88%90%E5%BC%8F%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E6%9C%8D%E5%8A%A1%E5%B7%B2%E5%A4%87%E6%A1%88%E4%BF%A1%E6%81%AF%EF%BC%882024%E5%B9%B44%E6%9C%88%EF%BC%89",
+          "route": "direct",
+          "httpStatus": 200,
+          "sha256": "329eb680eeb7ef69002a06b5eebe423abb4ced27fa922414c1941e933f28965e",
+          "retrievedAt": "2026-10-29"
+        }
+      ]
+    },
+    {
+      "id": "c3-governance-cac-genai-list-2024-04-entry-minimax",
+      "selection": "targeted",
+      "disposition": "ok",
+      "issues": ["Row 6 verbatim; alias exact."],
+      "fix": null,
+      "retrieval": [
+        {
+          "sourceId": "c3-src-cac-genai-list-2024-04",
+          "url": "https://www.cac.gov.cn/cms/pub/interact/downloadfile.jsp?filepath=NUtqEIwGiCjGm2Bhl20cvHaciuAb2ebr7U8X1xV5925vz0vHSSJ6sATU6DtmcGo1wYjaLSPNhSkF5EQhi7RHdlAfqphfFn00jUfFRLdBE5I=&fText=%E7%94%9F%E6%88%90%E5%BC%8F%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E6%9C%8D%E5%8A%A1%E5%B7%B2%E5%A4%87%E6%A1%88%E4%BF%A1%E6%81%AF%EF%BC%882024%E5%B9%B44%E6%9C%88%EF%BC%89",
+          "route": "direct",
+          "httpStatus": 200,
+          "sha256": "329eb680eeb7ef69002a06b5eebe423abb4ced27fa922414c1941e933f28965e",
+          "retrievedAt": "2026-10-29"
+        }
+      ]
+    },
+    {
+      "id": "c3-governance-cac-genai-list-2024-04-entry-sensetime",
+      "selection": "targeted",
+      "disposition": "ok",
+      "issues": [
+        "Row 7 verbatim; alias 上海商汤智能科技有限公司 exact on dataset entity sensetime; qualification says it is not the listed parent. Brief-reference phrase: pattern note."
+      ],
+      "fix": null,
+      "retrieval": [
+        {
+          "sourceId": "c3-src-cac-genai-list-2024-04",
+          "url": "https://www.cac.gov.cn/cms/pub/interact/downloadfile.jsp?filepath=NUtqEIwGiCjGm2Bhl20cvHaciuAb2ebr7U8X1xV5925vz0vHSSJ6sATU6DtmcGo1wYjaLSPNhSkF5EQhi7RHdlAfqphfFn00jUfFRLdBE5I=&fText=%E7%94%9F%E6%88%90%E5%BC%8F%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E6%9C%8D%E5%8A%A1%E5%B7%B2%E5%A4%87%E6%A1%88%E4%BF%A1%E6%81%AF%EF%BC%882024%E5%B9%B44%E6%9C%88%EF%BC%89",
+          "route": "direct",
+          "httpStatus": 200,
+          "sha256": "329eb680eeb7ef69002a06b5eebe423abb4ced27fa922414c1941e933f28965e",
+          "retrievedAt": "2026-10-29"
+        }
+      ]
+    },
+    {
+      "id": "c3-governance-cac-genai-list-2024-04-entry-shanghai-ai-lab",
+      "selection": "targeted",
+      "disposition": "minor",
+      "issues": [
+        "Row 8 verbatim.",
+        "Not an exact-name match: the filer is 上海人工智能创新中心（上海人工智能实验室）, while the dataset entity's aliases are 上海人工智能实验室, 上海AI实验室 and Shanghai AI Lab. The laboratory's name appears only in parentheses after an innovation centre's name, and the stated basis ('the name match given in this pack's brief') is not in drafting-brief.md."
+      ],
+      "fix": "State the actual basis in the qualification: 'The filer's name contains the laboratory's name in parentheses after 上海人工智能创新中心; the dataset entity has no alias in this exact form, so the mapping is by partial name.' Keep or hold listedEntity at the maintainer's choice, and do not add the combined name as an alias without a document stating the relation.",
+      "retrieval": [
+        {
+          "sourceId": "c3-src-cac-genai-list-2024-04",
+          "url": "https://www.cac.gov.cn/cms/pub/interact/downloadfile.jsp?filepath=NUtqEIwGiCjGm2Bhl20cvHaciuAb2ebr7U8X1xV5925vz0vHSSJ6sATU6DtmcGo1wYjaLSPNhSkF5EQhi7RHdlAfqphfFn00jUfFRLdBE5I=&fText=%E7%94%9F%E6%88%90%E5%BC%8F%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E6%9C%8D%E5%8A%A1%E5%B7%B2%E5%A4%87%E6%A1%88%E4%BF%A1%E6%81%AF%EF%BC%882024%E5%B9%B44%E6%9C%88%EF%BC%89",
+          "route": "direct",
+          "httpStatus": 200,
+          "sha256": "329eb680eeb7ef69002a06b5eebe423abb4ced27fa922414c1941e933f28965e",
+          "retrievedAt": "2026-10-29"
+        }
+      ]
+    },
+    {
+      "id": "c3-governance-cac-genai-list-2024-04-entry-stepfun",
+      "selection": "targeted",
+      "disposition": "minor",
+      "issues": [
+        "Row 35 verbatim.",
+        "Not an exact-name match: the dataset alias is 上海阶跃星辰智能科技 (no legal-form suffix); the filer is 上海阶跃星辰智能科技有限公司, and StepFun's own site footer names 上海阶跃星辰智能科技股份有限公司. The stronger documentary link, the same filing number Shanghai-JieYue-20231106 in StepFun's own site footer (c3-stepfun-legal-form-site), is not mentioned; the stated basis refers to a brief that does not contain it."
+      ],
+      "fix": "Replace the basis with: 'The filer's name extends the dataset alias 上海阶跃星辰智能科技; StepFun's own website footer shows the same filing number (Shanghai-JieYue-20231106; see c3-stepfun-legal-form-site).'",
+      "retrieval": [
+        {
+          "sourceId": "c3-src-cac-genai-list-2024-04",
+          "url": "https://www.cac.gov.cn/cms/pub/interact/downloadfile.jsp?filepath=NUtqEIwGiCjGm2Bhl20cvHaciuAb2ebr7U8X1xV5925vz0vHSSJ6sATU6DtmcGo1wYjaLSPNhSkF5EQhi7RHdlAfqphfFn00jUfFRLdBE5I=&fText=%E7%94%9F%E6%88%90%E5%BC%8F%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E6%9C%8D%E5%8A%A1%E5%B7%B2%E5%A4%87%E6%A1%88%E4%BF%A1%E6%81%AF%EF%BC%882024%E5%B9%B44%E6%9C%88%EF%BC%89",
+          "route": "direct",
+          "httpStatus": 200,
+          "sha256": "329eb680eeb7ef69002a06b5eebe423abb4ced27fa922414c1941e933f28965e",
+          "retrievedAt": "2026-10-29"
+        }
+      ]
+    },
+    {
+      "id": "c3-governance-cac-genai-list-2024-04-entry-zero-one-ai",
+      "selection": "targeted",
+      "disposition": "ok",
+      "issues": [
+        "Row 67 verbatim; alias 北京零一万物科技有限公司 exact. Brief-reference phrase: pattern note."
+      ],
+      "fix": null,
+      "retrieval": [
+        {
+          "sourceId": "c3-src-cac-genai-list-2024-04",
+          "url": "https://www.cac.gov.cn/cms/pub/interact/downloadfile.jsp?filepath=NUtqEIwGiCjGm2Bhl20cvHaciuAb2ebr7U8X1xV5925vz0vHSSJ6sATU6DtmcGo1wYjaLSPNhSkF5EQhi7RHdlAfqphfFn00jUfFRLdBE5I=&fText=%E7%94%9F%E6%88%90%E5%BC%8F%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E6%9C%8D%E5%8A%A1%E5%B7%B2%E5%A4%87%E6%A1%88%E4%BF%A1%E6%81%AF%EF%BC%882024%E5%B9%B44%E6%9C%88%EF%BC%89",
+          "route": "direct",
+          "httpStatus": 200,
+          "sha256": "329eb680eeb7ef69002a06b5eebe423abb4ced27fa922414c1941e933f28965e",
+          "retrievedAt": "2026-10-29"
+        }
+      ]
+    },
+    {
+      "id": "c3-governance-cac-genai-list-2024-04-entry-zhipu",
+      "selection": "targeted",
+      "disposition": "ok",
+      "issues": ["Row 2 verbatim; alias exact."],
+      "fix": null,
+      "retrieval": [
+        {
+          "sourceId": "c3-src-cac-genai-list-2024-04",
+          "url": "https://www.cac.gov.cn/cms/pub/interact/downloadfile.jsp?filepath=NUtqEIwGiCjGm2Bhl20cvHaciuAb2ebr7U8X1xV5925vz0vHSSJ6sATU6DtmcGo1wYjaLSPNhSkF5EQhi7RHdlAfqphfFn00jUfFRLdBE5I=&fText=%E7%94%9F%E6%88%90%E5%BC%8F%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E6%9C%8D%E5%8A%A1%E5%B7%B2%E5%A4%87%E6%A1%88%E4%BF%A1%E6%81%AF%EF%BC%882024%E5%B9%B44%E6%9C%88%EF%BC%89",
+          "route": "direct",
+          "httpStatus": 200,
+          "sha256": "329eb680eeb7ef69002a06b5eebe423abb4ced27fa922414c1941e933f28965e",
+          "retrievedAt": "2026-10-29"
+        }
+      ]
+    },
+    {
+      "id": "c3-governance-cac-genai-list-2024-08-entry-deepseek",
+      "selection": "targeted",
+      "disposition": "ok",
+      "issues": [
+        "Row 152 verbatim; alias exact; DeepSeek absent from the April 2024 list, so 'earliest' holds within the attachments."
+      ],
+      "fix": null,
+      "retrieval": [
+        {
+          "sourceId": "c3-src-cac-genai-list-2024-08",
+          "url": "https://www.cac.gov.cn/cms/pub/interact/downloadfile.jsp?filepath=NUtqEIwGiCjGm2Bhl20cvD3k2jZHxW62PpTbCodAq/hvz0vHSSJ6sATU6DtmcGo1SVh2XLVTbvXpuP4KM0gfclAfqphfFn00jUfFRLdBE5I=&fText=%E7%94%9F%E6%88%90%E5%BC%8F%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E6%9C%8D%E5%8A%A1%E5%B7%B2%E5%A4%87%E6%A1%88%E5%92%8C%E5%B7%B2%E7%99%BB%E8%AE%B0%E4%BF%A1%E6%81%AF%EF%BC%882024%E5%B9%B48%E6%9C%88%EF%BC%89",
+          "route": "direct",
+          "httpStatus": 200,
+          "sha256": "1bc2cc5be74325670cacc06da897ba54cc689e020cd4dabb5fa0874048f96efd",
+          "retrievedAt": "2026-10-29"
+        }
+      ]
+    },
+    {
+      "id": "c3-tencent-large-licence-territory",
+      "selection": "targeted",
+      "disposition": "ok",
+      "issues": [
+        "Preamble, 1(l) and 5(c) verbatim; text unchanged from 2024-11-05 to 023bb217."
+      ],
+      "fix": null,
+      "retrieval": [
+        {
+          "sourceId": "c3-src-hunyuan-large-hf-license",
+          "url": "https://huggingface.co/tencent/Tencent-Hunyuan-Large/raw/023bb217c7f4fdfabd7308a344994b0e9ac7359c/LICENSE.txt",
+          "route": "direct",
+          "httpStatus": 200,
+          "sha256": "36f4473bbeaf0508fe6e8cfd75e88b62b04d9c830f1846ea562ecb8f73e4d1f5",
+          "retrievedAt": "2026-10-29"
+        }
+      ]
+    },
+    {
+      "id": "c3-tencent-video-licence-territory",
+      "selection": "targeted",
+      "disposition": "material",
+      "issues": [
+        "Both quotes are verbatim at the cited revision 6204ad6a.",
+        "Dated licence history wrong. The record dates the EU/UK/South Korea exclusion to 3 December 2024 (the release date printed in the heading). The repository's LICENSE as first uploaded on 2 December 2024 (5687e9af) excluded the European Union only; the United Kingdom and South Korea were added on 4 December 2024 (a4ed25a9). On the release date the file read 'DOES NOT APPLY IN THE EUROPEAN UNION'. The qualification's comparison ('the Large edition excludes the European Union only') also implies a difference between editions that the HunyuanVideo file itself shared for two days."
+      ],
+      "fix": "Change time to event 2024-12-04, basis revision, note: 'Commit a4ed25a9 of 4 December 2024 added the United Kingdom and South Korea; the LICENSE first uploaded on 2 December 2024 (5687e9af) excluded the European Union only. The heading's release date (December 3, 2024) is unchanged. Read at 6204ad6a, identical to the 4 December text.' Add the 2 December state to the qualification.",
+      "retrieval": [
+        {
+          "sourceId": "c3-src-hunyuanvideo-hf-license",
+          "url": "https://huggingface.co/tencent/HunyuanVideo/raw/6204ad6aea1a77ff5aba337c88278bb9500eb37d/LICENSE",
+          "route": "direct",
+          "httpStatus": 200,
+          "sha256": "6ba8ea0dc1c464c9ab549b281be5d3afcab93c3308a6967d22240150d844c54d",
+          "retrievedAt": "2026-10-29"
+        }
+      ]
+    },
+    {
+      "id": "c3-governance-cac-genai-list-2025-08-entry-baai",
+      "selection": "targeted",
+      "disposition": "ok",
+      "issues": [
+        "Rows 459–460 verbatim (filing numbers wrap in the layout); BAAI absent from attachments 1–6 (April 2024, August 2024, November 2024, January 2025, March 2025, June 2025, all retrieved), so 'earliest' holds within the attachments."
+      ],
+      "fix": null,
+      "retrieval": [
+        {
+          "sourceId": "c3-src-cac-genai-list-2025-08",
+          "url": "https://www.cac.gov.cn/cms/pub/interact/downloadfile.jsp?filepath=NUtqEIwGiCjGm2Bhl20cvJU/TD~kOS2Ih3/TRVNsvLlvz0vHSSJ6sATU6DtmcGo1WeCOTuWKYDNBmOqUVzGiOlAfqphfFn00jUfFRLdBE5I=&fText=%E9%99%84%E4%BB%B67%EF%BC%9A%E7%94%9F%E6%88%90%E5%BC%8F%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E6%9C%8D%E5%8A%A1%E5%B7%B2%E5%A4%87%E6%A1%88%E5%92%8C%E5%B7%B2%E7%99%BB%E8%AE%B0%E4%BF%A1%E6%81%AF%EF%BC%882025%E5%B9%B48%E6%9C%88%EF%BC%89",
+          "route": "direct",
+          "httpStatus": 200,
+          "sha256": "7679cdd10810f0cd49f732c04372b979e44fdeecec6d2ad69f9d7157ec7c244c",
+          "retrievedAt": "2026-10-29"
+        }
+      ]
+    },
+    {
+      "id": "c3-stepfun-b-plus-round-2026",
+      "selection": "targeted",
+      "disposition": "minor",
+      "issues": [
+        "36Kr page 'QbitAI · 2026年01月27日 19:30'; sentence verbatim; reporting marked as such; no investor named; stage 'reported as completed' kept.",
+        "time.basis is 'announcement', but the date is the publication of a press report, not an announcement by StepFun."
+      ],
+      "fix": "Set time.basis to 'publication' and keep the note 'Publication date of the report'.",
+      "retrieval": [
+        {
+          "sourceId": "c3-src-qbitai-stepfun-2026",
+          "url": "https://www.36kr.com/p/3657567182938757",
+          "route": "direct",
+          "httpStatus": 200,
+          "sha256": "afcc62195654df41dca268ee422606d53b89ba335620843c8386e51cc16c74f3",
+          "retrievedAt": "2026-10-29"
+        }
+      ]
+    },
+    {
+      "id": "c3-tencent-controls-tencent-computer-2025",
+      "selection": "targeted",
+      "disposition": "ok",
+      "issues": [
+        "Note 1 (General information) of the consolidated financial statements carries the passage verbatim; definition entry on p. 278. Control by contract and no date for the contracts, as stated."
+      ],
+      "fix": null,
+      "retrieval": [
+        {
+          "sourceId": "c3-src-tencent-ar-2025",
+          "url": "https://static.www.tencent.com/uploads/2026/04/09/62d786fcf3d3c8cb7e54791ee95439ac.pdf",
+          "route": "direct",
+          "httpStatus": 200,
+          "sha256": "2a7547168077c3d9994af673125e77612e8656bc0f17ad189371d7e4088f4e98",
+          "retrievedAt": "2026-10-29"
+        }
+      ]
+    },
+    {
+      "id": "c3-tencent-legal-form-2025",
+      "selection": "targeted",
+      "disposition": "ok",
+      "issues": ["Definition entry p. 273 and cover line verbatim."],
+      "fix": null,
+      "retrieval": [
+        {
+          "sourceId": "c3-src-tencent-ar-2025",
+          "url": "https://static.www.tencent.com/uploads/2026/04/09/62d786fcf3d3c8cb7e54791ee95439ac.pdf",
+          "route": "direct",
+          "httpStatus": 200,
+          "sha256": "2a7547168077c3d9994af673125e77612e8656bc0f17ad189371d7e4088f4e98",
+          "retrievedAt": "2026-10-29"
+        }
+      ]
+    },
+    {
+      "id": "c3-iflytek-legal-form-2026",
+      "selection": "targeted",
+      "disposition": "ok",
+      "issues": ["第二节 公司信息 table verbatim."],
+      "fix": null,
+      "retrieval": [
+        {
+          "sourceId": "c3-src-iflytek-ar2025",
+          "url": "https://static.cninfo.com.cn/finalpage/2026-04-29/1225233581.PDF",
+          "route": "direct",
+          "httpStatus": 200,
+          "sha256": "8504042c6e77ea787ad43a88e0b3a35b9a57992fd6cf3be51a59fde2fe498ade",
+          "retrievedAt": "2026-10-29"
+        }
+      ]
+    },
+    {
+      "id": "c3-01ai-wanfeng-jv",
+      "selection": "targeted",
+      "disposition": "ok",
+      "issues": [
+        "WeChat post (account nick_name '零一万物 01AI', createTime 2026-06-02 19:00) sentence verbatim; About-page timeline 2026.06 anchor present; announced stage kept."
+      ],
+      "fix": null,
+      "retrieval": [
+        {
+          "sourceId": "c3-src-01ai-wx-cp",
+          "url": "https://mp.weixin.qq.com/s/u71V3b_xA_s7yFmo9YbmBw",
+          "route": "direct",
+          "httpStatus": 200,
+          "sha256": "3fae9606de31214ec27ad5e33493868805ab416d1cb188f2794ebee575a3af92",
+          "retrievedAt": "2026-10-29"
+        },
+        {
+          "sourceId": "c3-src-01ai-about",
+          "url": "https://www.lingyiwanwu.com/about.html",
+          "route": "direct",
+          "httpStatus": 200,
+          "sha256": "c6d11a3575e252ae47dc7548f4c1302dbd289897ab1aaf6c4d2f9b9f7829410d",
+          "retrievedAt": "2026-10-29"
+        }
+      ]
+    },
+    {
+      "id": "c3-01ai-q-ai-jv",
+      "selection": "targeted",
+      "disposition": "minor",
+      "issues": [
+        "Post (createTime 2026-06-30 08:00) opening sentence verbatim; About-page anchor present; counterparty limits correctly stated.",
+        "The post's own dateline reads '哈萨克斯坦阿斯塔纳，2026 年 6 月 29 日', so the joint announcement it reports is dated 29 June 2026; the time note gives only the post's creation time."
+      ],
+      "fix": "Add to the time note: 'The post's dateline (Astana, 29 June 2026) dates the joint announcement it reports; 30 June 2026 is the post's creation time.'",
+      "retrieval": [
+        {
+          "sourceId": "c3-src-01ai-wx-qai",
+          "url": "https://mp.weixin.qq.com/s/1VUZ8tLmpwc_UFdiWCciXw",
+          "route": "direct",
+          "httpStatus": 200,
+          "sha256": "498ee9d51428072a5ebe9dd4a019392c7e4fe15f1eedb93c7042104b344c2b2b",
+          "retrievedAt": "2026-10-29"
+        },
+        {
+          "sourceId": "c3-src-01ai-about",
+          "url": "https://www.lingyiwanwu.com/about.html",
+          "route": "direct",
+          "httpStatus": 200,
+          "sha256": "c6d11a3575e252ae47dc7548f4c1302dbd289897ab1aaf6c4d2f9b9f7829410d",
+          "retrievedAt": "2026-10-29"
+        }
+      ]
+    },
+    {
+      "id": "c3-stepfun-step5-licence",
+      "selection": "targeted",
+      "disposition": "minor",
+      "issues": [
+        "f3112587 (2026-10-13 08:15 UTC) uploaded LICENSE.txt and LICENSE-CN.txt; heading and README sentence verbatim at 364b3b03.",
+        "The qualification says the licence 'replaced the apache-2.0 metadata tag of the card's initial upload'. The history is in three steps: the README revision 266207ef (13 Oct 07:14) already had no metadata header and no licence tag; the licence files followed at 08:15; 'license: other' with a link to LICENSE.txt appeared at 555dba45 (08:36)."
+      ],
+      "fix": "Replace the sentence with: 'The card's apache-2.0 tag was removed at the README revision of 13 October 2026, 07:14 UTC (266207ef), before the licence files were added (08:15); the tag license: other was set at 08:36 (555dba45).'",
+      "retrieval": [
+        {
+          "sourceId": "c3-src-step5-license",
+          "url": "https://huggingface.co/stepfun-ai/Step-5-Preview/raw/f3112587a3eb4b2144b93e95df52b7eb8c78bf7d/LICENSE.txt",
+          "route": "direct",
+          "httpStatus": 200,
+          "sha256": "01aa781a1a68a9007cb01dadf93ead44a31ee0dcd49e13c854c4129b4a894b83",
+          "retrievedAt": "2026-10-29"
+        },
+        {
+          "sourceId": "c3-src-step5-readme-1015",
+          "url": "https://huggingface.co/stepfun-ai/Step-5-Preview/raw/364b3b03fed2477aa0953fe855a2c4c8c48ee3cc/README.md",
+          "route": "direct",
+          "httpStatus": 200,
+          "sha256": "58e6b5768025c646002c5dddce5fb09ef4ccf795de2ec3424a0ca9219b163747",
+          "retrievedAt": "2026-10-29"
+        }
+      ]
+    },
+    {
+      "id": "c3-stepfun-legal-form-site",
+      "selection": "targeted",
+      "disposition": "ok",
+      "issues": [
+        "Current bundle index-4zBpLKmx.js is still the one linked from www.stepfun.com; footer strings verbatim in both languages. Derivation inferred with premise; differing CAC filer form recorded."
+      ],
+      "fix": null,
+      "retrieval": [
+        {
+          "sourceId": "c3-src-stepfun-site-bundle",
+          "url": "https://www.stepfun.com/assets/index-4zBpLKmx.js",
+          "route": "direct",
+          "httpStatus": 200,
+          "sha256": "4a9822256a9c02a015133c2dbf8edd147c117d9c13e633cdd6c50258ae484ae5",
+          "retrievedAt": "2026-10-29"
+        }
+      ]
+    },
+    {
+      "id": "c3-sensetime-tang-founder",
+      "selection": "targeted",
+      "disposition": "ok",
+      "issues": ["Definitions entry and the WVR summary sentence verbatim."],
+      "fix": null,
+      "retrieval": [
+        {
+          "sourceId": "c3-src-sensetime-prospectus-2021",
+          "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2021/1207/2021120700017.pdf",
+          "route": "direct",
+          "httpStatus": 200,
+          "sha256": "45a8fc07d0a356dea0d69b8511e55dd16d4748761910203e5671cf50257195bf",
+          "retrievedAt": "2026-10-29"
+        }
+      ]
+    },
+    {
+      "id": "c3-sensetime-wang-xiaogang-cofounder",
+      "selection": "targeted",
+      "disposition": "ok",
+      "issues": ["Definitions entry verbatim."],
+      "fix": null,
+      "retrieval": [
+        {
+          "sourceId": "c3-src-sensetime-prospectus-2021",
+          "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2021/1207/2021120700017.pdf",
+          "route": "direct",
+          "httpStatus": 200,
+          "sha256": "45a8fc07d0a356dea0d69b8511e55dd16d4748761910203e5671cf50257195bf",
+          "retrievedAt": "2026-10-29"
+        }
+      ]
+    },
+    {
+      "id": "c3-sensetime-xu-bing-cofounder",
+      "selection": "targeted",
+      "disposition": "ok",
+      "issues": ["Definitions entry verbatim."],
+      "fix": null,
+      "retrieval": [
+        {
+          "sourceId": "c3-src-sensetime-prospectus-2021",
+          "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2021/1207/2021120700017.pdf",
+          "route": "direct",
+          "httpStatus": 200,
+          "sha256": "45a8fc07d0a356dea0d69b8511e55dd16d4748761910203e5671cf50257195bf",
+          "retrievedAt": "2026-10-29"
+        }
+      ]
+    }
+  ],
+  "retrievalFailures": [
+    {
+      "url": "https://static.cninfo.com.cn/finalpage/2026-01-10/1224927456.PDF",
+      "status": "first attempt: curl error (connection); retried by the tool, HTTP 200",
+      "effect": "none"
+    },
+    {
+      "url": "https://web.archive.org/",
+      "status": "not attempted: the Internet Archive refuses this environment (per scope.md and the brief)",
+      "effect": "Earlier wording of mutable pages (BJP English text, BAAI hub post and site bundle, StepFun site bundle, 01.AI pages, Tencent newsroom, Yicai, 36Kr) is read only as served on 2026-10-29; no capture authenticates it."
+    }
+  ],
+  "extraRetrievals": [
+    "CAC attachments 3, 5 and 6 (November 2024, March 2025, June 2025) for the BAAI and DeepSeek earliest-list checks: HTTP 200",
+    "Hugging Face commits/tree APIs and raw README/LICENSE files at the revisions named in method: all HTTP 200",
+    "git clone --filter=blob:none https://github.com/InternLM/InternLM (scratchpad)"
+  ],
+  "counts": {
+    "ok": 59,
+    "minor": 14,
+    "material": 5,
+    "not retrieved": 0,
+    "total": 78,
+    "bySelection": {
+      "random": {
+        "ok": 34,
+        "minor": 7,
+        "material": 2,
+        "not retrieved": 0
+      },
+      "targeted": {
+        "ok": 25,
+        "minor": 7,
+        "material": 3,
+        "not retrieved": 0
+      }
+    }
+  }
+}

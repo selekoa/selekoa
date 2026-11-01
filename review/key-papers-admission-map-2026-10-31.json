@@ -1,0 +1,633 @@
+{
+  "description": "Authored map for scripts/key-papers-admission.ts: the decisions it applies, the mappings onto records already in the dataset, the corrections of the cross-family check, the venue versions it adds and every record it holds, each with its reason. The pack (research/key-papers/pack.json) is never changed.",
+  "admissionDate": "2026-10-31",
+  "decisions": "Maintainer decisions of 2026-10-28 (review/key-papers-pack-2026-10-28.md): recommended answers 1–10 adopted as written.",
+  "adjudication": "Accept the check.\n - LLaMA: four other citing documents only. Move it to basis 2 if it qualifies there, otherwise drop it.\n - Add the printed authors Bo Wen (RoFormer v1) and Kamile Lukosuite (Constitutional AI v1).\n - Keep the version qualification on B010 and B011, which appear only in the October 2018 revision.\n - Add Stuart Armstrong to the Corrigibility author list in B001 and B002.\n - Add the conference and journal versions the check located, at their source precision; Crossref-only dates at year precision.\n Admission steps follow the pack’s decision 10: documents first, then persons and authorship, then attributed-credit records.",
+  "adjudicationBy": "maintainer, 2026-10-31",
+  "documentMap": {
+    "kp-llama-open-efficient-foundation-language-2023": {
+      "id": "llama-paper",
+      "reason": "The dataset already records the work (arXiv 2302.13971) as llama-paper, whose source is the v1 HTML rendering; the pack did not match it. The cross-family check (B081) found that LLaMA’s own text was counted as citing it."
+    },
+    "kp-batch-normalization-accelerating-deep-network-2015": {
+      "id": "batch-normalization-paper",
+      "reason": "The dataset already records the work (arXiv 1502.03167) as batch-normalization-paper; its one counted citing document was its own text."
+    },
+    "kp-deepseek-r1-incentivizing-reasoning-capability-2025": {
+      "id": "deepseek-r1-report",
+      "reason": "The dataset already records the work (arXiv 2501.12948) as deepseek-r1-report, with the v1 HTML rendering as its source."
+    }
+  },
+  "citingDocuments": {
+    "source:lg-src-goo-codex-v1": {
+      "id": "kp-evaluating-large-language-models-trained-2021",
+      "sourceId": "lg-src-goo-codex-v1",
+      "reason": "The source is the arXiv v1 PDF of a pack paper (Evaluating Large Language Models Trained on Code); it becomes that document’s expression."
+    },
+    "source:source-gemini-report-v1": {
+      "id": "kp-gemini-family-multimodal-models-2023",
+      "sourceId": "source-gemini-report-v1",
+      "name": "Gemini: A Family of Highly Capable Multimodal Models",
+      "subtype": "Technical report",
+      "externalIds": {
+        "arxiv": "2312.11805"
+      },
+      "description": "Technical report by the Gemini Team at Google, arXiv version 1 of 19 December 2023. Recorded as a document so that the works its text cites can be recorded; evidence is scoped to the inspected version 1.",
+      "reason": "The source is already in the dataset without a document record. The pack counted it as its own corpus entry, and the cross-family check counted its citations as other-document citations (B061 and others)."
+    },
+    "source:lg-src-new-yogatama-dm-2019": {
+      "id": "kp-learning-evaluating-general-linguistic-2019",
+      "sourceId": "lg-src-new-yogatama-dm-2019",
+      "name": "Learning and Evaluating General Linguistic Intelligence",
+      "subtype": "Research paper",
+      "externalIds": {
+        "arxiv": "1901.11373"
+      },
+      "description": "Paper by Yogatama and others, arXiv version 1 of 31 January 2019. Recorded as a document so that the works its text cites can be recorded; evidence is scoped to the inspected version 1.",
+      "reason": "The source is already in the dataset without a document record. The pack counted it as its own corpus entry, and the cross-family check counted its citations as other-document citations."
+    }
+  },
+  "subtypes": {
+    "default": "Research paper",
+    "note": "Decision 1 admits the pack’s papers as work-level research-paper records (subtype \"Research paper\"; \"(work)\" names the work level, not a subtype). Three works are not papers, and the closed subtype list has their kinds.",
+    "overrides": {
+      "kp-superintelligence-paths-dangers-strategies-2014": {
+        "subtype": "Book",
+        "reason": "A book (Oxford University Press, 2014)."
+      },
+      "kp-ai-risk-management-framework-2023": {
+        "subtype": "Guidance",
+        "reason": "NIST AI 100-1, voluntary guidance; the dataset types NIST’s other AI 100 and 800 series documents as Guidance."
+      },
+      "kp-gpt-4-technical-report-2023": {
+        "subtype": "Technical report",
+        "reason": "A technical report under a collective byline, as the dataset types other laboratories’ technical reports."
+      }
+    }
+  },
+  "basis2Moves": {
+    "kp-llama-open-efficient-foundation-language-2023": {
+      "rank": 50,
+      "citationCount": 22221,
+      "retrievedAt": "2026-10-28",
+      "reason": "The adjudication moves LLaMA to basis 2 if it qualifies. It does: the pack’s Semantic Scholar ranking (research/key-papers/pack.json, basis2Skipped) places it at index rank 50 with 22,221 citations, above three basis-2 papers (ranks 51, 53 and 54), and it was passed over there only because basis 1 held it. Basis 2 then holds 31 works; the rule says \"until about 30\", and no basis-2 work is removed."
+    }
+  },
+  "bylineAdditions": {
+    "kp-roformer-enhanced-transformer-rotary-position-2021": {
+      "name": "Bo Wen",
+      "after": "Shengfeng Pan",
+      "item": "A084"
+    },
+    "kp-constitutional-ai-harmlessness-from-ai-2022": {
+      "name": "Kamile Lukosuite",
+      "after": "Kamal Ndousse",
+      "item": "A087"
+    }
+  },
+  "venues": {
+    "kp-basic-ai-drives-2008": {
+      "add": [
+        {
+          "precision": "month",
+          "kind": "conference",
+          "label": "Artificial General Intelligence 2008, Frontiers in Artificial Intelligence and Applications 171",
+          "publisher": "Artificial General Intelligence 2008 (proceedings)",
+          "date": "2008-02",
+          "item": "A007",
+          "url": "https://selfawaresystems.com/2007/11/30/paper-on-the-basic-ai-drives/",
+          "locator": "Opening publication note",
+          "note": "As the author’s page reports it; the proceedings publisher’s own record was not inspected."
+        }
+      ]
+    },
+    "nordhaus-2015-economic-singularity": {
+      "add": [
+        {
+          "precision": "month",
+          "kind": "journal",
+          "label": "American Economic Journal: Macroeconomics 13(1), pp. 299–332",
+          "publisher": "American Economic Association",
+          "date": "2021-01",
+          "doi": "10.1257/mac.20170105",
+          "item": "A010",
+          "url": "https://pubs.aeaweb.org/doi/10.1257/mac.20170105",
+          "locator": "Journal issue heading"
+        }
+      ]
+    },
+    "kp-imagenet-classification-deep-convolutional-neural-2012": {
+      "add": [
+        {
+          "precision": "day",
+          "kind": "journal",
+          "label": "Communications of the ACM 60(6), June 2017 issue (a reprint of the 2012 paper)",
+          "publisher": "Association for Computing Machinery",
+          "date": "2017-05-24",
+          "doi": "10.1145/3065386",
+          "item": "A011",
+          "url": "https://doi.org/10.1145/3065386",
+          "locator": "Publication History and Published In",
+          "note": "Online publication 24 May 2017; the issue is dated June 2017. A separate reprint, kept apart from the 2012 proceedings version."
+        }
+      ]
+    },
+    "kp-natural-questions-benchmark-question-answering-2019": {
+      "replace": {
+        "kp-natural-questions-benchmark-question-answering-2019--crossref": {
+          "precision": "month",
+          "kind": "journal",
+          "label": "Transactions of the Association for Computational Linguistics 7, pp. 453–466",
+          "publisher": "Association for Computational Linguistics",
+          "date": "2019-07",
+          "doi": "10.1162/tacl_a_00276",
+          "item": "A012",
+          "url": "https://aclanthology.org/Q19-1026.pdf",
+          "locator": "the PDF’s publication footer, “Published 7/2019”, on printed p. 453; the Anthology’s landing page gives the year only, with pages 452–466"
+        }
+      }
+    },
+    "kp-dropout-simple-way-prevent-neural-2014": {
+      "add": [
+        {
+          "precision": "month",
+          "kind": "journal",
+          "label": "Journal of Machine Learning Research 15, pp. 1929–1958",
+          "publisher": "Journal of Machine Learning Research",
+          "date": "2014-06",
+          "item": "A023",
+          "url": "https://jmlr.org/papers/v15/srivastava14a.html",
+          "locator": "Journal citation; the PDF prints “Published 6/14” on p. 1"
+        }
+      ]
+    },
+    "kp-mathvista-evaluating-mathematical-reasoning-foundation-2023": {
+      "add": [
+        {
+          "precision": "year",
+          "kind": "conference",
+          "label": "ICLR 2024 (proceedings)",
+          "publisher": "International Conference on Learning Representations",
+          "date": "2024",
+          "item": "A024",
+          "url": "https://proceedings.iclr.cc/paper_files/paper/2024/file/663bce02a0050c4a11f1eb8a7f1429d3-Paper-Conference.pdf",
+          "locator": "Title page: “Published as a conference paper at ICLR 2024”"
+        }
+      ]
+    },
+    "kp-bert-pre-training-deep-bidirectional-2019": {
+      "replace": {
+        "kp-bert-pre-training-deep-bidirectional-2019--crossref": {
+          "precision": "month",
+          "kind": "conference",
+          "label": "NAACL-HLT 2019, Volume 1 (Long and Short Papers), pp. 4171–4186",
+          "publisher": "Association for Computational Linguistics",
+          "date": "2019-06",
+          "doi": "10.18653/v1/n19-1423",
+          "item": "A025",
+          "url": "https://aclanthology.org/N19-1423/",
+          "locator": "Volume, month, year"
+        }
+      }
+    },
+    "kp-triviaqa-large-scale-distantly-supervised-2017": {
+      "replace": {
+        "kp-triviaqa-large-scale-distantly-supervised-2017--crossref": {
+          "precision": "month",
+          "kind": "conference",
+          "label": "ACL 2017, Volume 1: Long Papers, pp. 1601–1611",
+          "publisher": "Association for Computational Linguistics",
+          "date": "2017-07",
+          "doi": "10.18653/v1/p17-1147",
+          "item": "A026",
+          "url": "https://aclanthology.org/P17-1147/",
+          "locator": "Volume, month, year"
+        }
+      }
+    },
+    "adam-paper": {
+      "add": [
+        {
+          "precision": "year",
+          "kind": "conference",
+          "label": "ICLR 2015 (conference poster programme)",
+          "publisher": "International Conference on Learning Representations",
+          "date": "2015",
+          "item": "A029",
+          "url": "https://iclr.cc/archive/www/2015.html",
+          "locator": "Conference poster programme, title entry",
+          "note": "ICLR 2015 published no proceedings volume; the programme lists the paper."
+        }
+      ]
+    },
+    "kp-language-models-few-shot-learners-2020": {
+      "add": [
+        {
+          "precision": "year",
+          "kind": "conference",
+          "label": "Advances in Neural Information Processing Systems 33",
+          "publisher": "Neural Information Processing Systems",
+          "date": "2020",
+          "item": "A030",
+          "url": "https://proceedings.neurips.cc/paper_files/paper/2020/hash/1457c0d6bfcb4967418bfb8ac142f64a-Abstract.html",
+          "locator": "Proceedings heading"
+        }
+      ]
+    },
+    "kp-grad-cam-visual-explanations-from-2016": {
+      "add": [
+        {
+          "precision": "year",
+          "kind": "conference",
+          "label": "2017 IEEE International Conference on Computer Vision (ICCV), pp. 618–626",
+          "publisher": "IEEE",
+          "date": "2017",
+          "doi": "10.1109/ICCV.2017.74",
+          "item": "A032",
+          "url": "https://api.crossref.org/works/10.1109%2FICCV.2017.74",
+          "locator": "published-print",
+          "note": "Crossref’s deposited date (October 2017) is kept at year precision.",
+          "crossref": true
+        }
+      ]
+    },
+    "kp-explaining-harnessing-adversarial-examples-2014": {
+      "add": [
+        {
+          "precision": "year",
+          "kind": "conference",
+          "label": "ICLR 2015 (conference poster programme)",
+          "publisher": "International Conference on Learning Representations",
+          "date": "2015",
+          "item": "A035",
+          "url": "https://iclr.cc/archive/www/2015.html",
+          "locator": "Conference poster programme, title entry",
+          "note": "ICLR 2015 published no proceedings volume; the programme lists the paper."
+        }
+      ]
+    },
+    "kp-neural-machine-translation-by-jointly-2014": {
+      "add": [
+        {
+          "precision": "year",
+          "kind": "conference",
+          "label": "ICLR 2015 (conference presentation)",
+          "publisher": "International Conference on Learning Representations",
+          "date": "2015",
+          "item": "A036",
+          "url": "https://iclr.cc/archive/www/lib/exe/fetch.php%3Fmedia%3Diclr2015%3Abahdanau-iclr2015.pdf",
+          "locator": "Conference-hosted title slide",
+          "note": "ICLR 2015 published no proceedings volume; the conference archive holds the presentation."
+        }
+      ]
+    },
+    "kp-truthfulqa-measuring-how-models-mimic-2021": {
+      "replace": {
+        "kp-truthfulqa-measuring-how-models-mimic-2021--crossref": {
+          "precision": "month",
+          "kind": "conference",
+          "label": "ACL 2022, Volume 1: Long Papers, pp. 3214–3252",
+          "publisher": "Association for Computational Linguistics",
+          "date": "2022-05",
+          "doi": "10.18653/v1/2022.acl-long.229",
+          "item": "A037",
+          "url": "https://aclanthology.org/2022.acl-long.229/",
+          "locator": "Volume, month, year"
+        }
+      }
+    },
+    "kp-efficient-estimation-word-representations-vector-2013": {
+      "add": [
+        {
+          "precision": "day",
+          "kind": "workshop",
+          "label": "ICLR 2013 workshop track, poster session II",
+          "publisher": "International Conference on Learning Representations",
+          "date": "2013-05-03",
+          "item": "A039",
+          "url": "https://iclr.cc/archive/2013/program-details/program.html",
+          "locator": "Poster session II (Friday 3 May), title entry",
+          "note": "The date is that of the poster session in the official programme, a presentation, not a proceedings publication."
+        }
+      ]
+    },
+    "kp-deep-contextualized-word-representations-2018": {
+      "replace": {
+        "kp-deep-contextualized-word-representations-2018--crossref": {
+          "precision": "month",
+          "kind": "conference",
+          "label": "NAACL-HLT 2018, Volume 1 (Long Papers), pp. 2227–2237",
+          "publisher": "Association for Computational Linguistics",
+          "date": "2018-06",
+          "doi": "10.18653/v1/n18-1202",
+          "item": "A040",
+          "url": "https://aclanthology.org/N18-1202/",
+          "locator": "Volume, month, year"
+        }
+      }
+    },
+    "kp-hellaswag-can-machine-really-finish-2019": {
+      "replace": {
+        "kp-hellaswag-can-machine-really-finish-2019--crossref": {
+          "precision": "month",
+          "kind": "conference",
+          "label": "ACL 2019, pp. 4791–4800",
+          "publisher": "Association for Computational Linguistics",
+          "date": "2019-07",
+          "doi": "10.18653/v1/p19-1472",
+          "item": "A041",
+          "url": "https://aclanthology.org/P19-1472/",
+          "locator": "Volume, month, year"
+        }
+      }
+    },
+    "kp-mmlu-pro-more-robust-challenging-2024": {
+      "add": [
+        {
+          "precision": "year",
+          "kind": "conference",
+          "label": "Advances in Neural Information Processing Systems 37, Datasets and Benchmarks Track",
+          "publisher": "Neural Information Processing Systems",
+          "date": "2024",
+          "item": "A043",
+          "url": "https://proceedings.neurips.cc/paper_files/paper/2024/hash/ad236edc564f3e3156e1b2feafb99a24-Abstract-Datasets_and_Benchmarks_Track.html",
+          "locator": "Proceedings heading"
+        }
+      ]
+    },
+    "kp-self-consistency-improves-chain-thought-2022": {
+      "add": [
+        {
+          "precision": "year",
+          "kind": "conference",
+          "label": "ICLR 2023",
+          "publisher": "International Conference on Learning Representations",
+          "date": "2023",
+          "item": "A048",
+          "url": "https://openreview.net/pdf?id=1PL1NIMMrw",
+          "locator": "PDF title page: “Published as a conference paper at ICLR 2023”; the official conference paper list"
+        }
+      ]
+    },
+    "autor-2015-why-are-there-still-so-many-jobs": {
+      "note": {
+        "autor-2015-why-are-there-still-so-many-jobs--crossref": "The journal PDF prints the issue as Summer 2015 (cross-family check, 2026-10-30, item A008); Crossref’s deposited day is not an established publication day."
+      }
+    },
+    "kp-unified-approach-interpreting-model-predictions-2017": {
+      "hold": {
+        "kp-unified-approach-interpreting-model-predictions-2017--crossref": "The Crossref record the index linked (DOI 10.9728/dcs.2024.25.7.1847, Journal of Digital Contents Society 25(7), 2024) is another article; the work is a 2017 paper. A wrong index match, like the two the pack discarded; the item was outside the check’s brief."
+      },
+      "dropDoi": "10.9728/dcs.2024.25.7.1847"
+    }
+  },
+  "venueHolds": {
+    "A001": "Superintelligence: the Oxford University Press hardback of 3 July 2014 (a book publication). Used only as the document’s identity source, because the pack read no text of the book.",
+    "A002": "Language Models are Unsupervised Multitask Learners: OpenAI’s technical paper release of 14 February 2019 (a release, not a venue). The document carries no dated expression.",
+    "A003": "Artificial Intelligence and Economic Growth: the 2019 chapter in The Economics of Artificial Intelligence: An Agenda (a book chapter).",
+    "A004": "Artificial Intelligence as a Positive and Negative Factor in Global Risk: Oxford’s chapter date 3 July 2008 (day), which would refine the pack’s Crossref year for the same chapter (a book chapter).",
+    "A005": "Improving Language Understanding by Generative Pre-Training: OpenAI’s release of 11 June 2018 (a release, not a venue). The document carries no dated expression.",
+    "A006": "AI RMF 1.0: Crossref’s online date 26 January 2023 (Crossref-only); the title page’s January 2023 stays.",
+    "A014": "The Race Between Machine and Man (NBER working paper): its American Economic Review version of 2018 is the dataset’s separate document for the journal article.",
+    "A015": "Economic Growth Given Machine Intelligence: the author’s bibliography year 1998 (no venue).",
+    "A018": "Speculations Concerning the First Ultraintelligent Machine: the 1965/1966 imprint conflict stays as recorded.",
+    "A021": "Random Forests: Crossref’s October 2001 issue month; the date rests on Crossref, so the pack’s year stays.",
+    "Crossref-only": "A013, A016, A017, A019, A020, A022, A027, A033, A034, A044 and A046 give Crossref days or months for versions the pack already holds; they stay at year precision."
+  },
+  "identitySources": {
+    "kp-superintelligence-paths-dangers-strategies-2014": {
+      "title": "Superintelligence: Paths, Dangers, Strategies",
+      "authors": ["Oxford Martin School"],
+      "publisher": "Oxford Martin School",
+      "publicationDate": null,
+      "kind": "announcement",
+      "url": "https://www.oxfordmartin.ox.ac.uk/publications/superintelligence-paths-dangers-strategies",
+      "item": "A001",
+      "version": "Publication listing of the book on the Oxford Martin School site, giving the Oxford University Press hardback date, 3 July 2014, and its ISBN. Read by the cross-family check on 2026-10-30 (item A001); not read again at admission. The pack retrieved no text of the book."
+    },
+    "kp-algorithms-inverse-reinforcement-learning-2000": {
+      "title": "Algorithms for Inverse Reinforcement Learning",
+      "authors": ["Stanford AI Lab (author-hosted copy)"],
+      "publisher": "Stanford AI Lab (author-hosted copy)",
+      "publicationDate": null,
+      "kind": "paper",
+      "url": "https://ai.stanford.edu/~ang/papers/icml00-irl.pdf",
+      "item": "A009",
+      "version": "Author-hosted PDF (file name icml00-irl.pdf), read by the cross-family check on 2026-10-30 (item A009); not read again at admission. The pack’s retrieval failed (HTTP 503). The check did not verify the publication year against the proceedings, so the copy carries no date."
+    }
+  },
+  "textSources": {
+    "kp-language-models-unsupervised-multitask-learners-2019--text": {
+      "publisher": "OpenAI",
+      "date": null,
+      "note": "Technical paper PDF served by OpenAI; the PDF prints no date. OpenAI’s announcement of 14 February 2019 links it (cross-family check, item A002)."
+    },
+    "kp-improving-language-understanding-by-generative-2018--text": {
+      "publisher": "OpenAI",
+      "date": null,
+      "note": "Technical paper PDF served by OpenAI; the PDF prints no date. OpenAI’s release page of 11 June 2018 links it (cross-family check, item A005)."
+    },
+    "kp-ai-risk-management-framework-2023--text": {
+      "publisher": "National Institute of Standards and Technology",
+      "date": "2023-01",
+      "note": "NIST AI 100-1; the title page prints “January 2023”."
+    },
+    "kp-basic-ai-drives-2008--text": {
+      "publisher": "Self-Aware Systems (author-hosted copy)",
+      "date": null,
+      "note": "Final PDF posted by the author (file ai_drives_final.pdf); the copy prints no date."
+    },
+    "kp-imagenet-classification-deep-convolutional-neural-2012--text": {
+      "publisher": "Neural Information Processing Systems",
+      "date": "2012",
+      "note": "Paper PDF in the proceedings of Advances in Neural Information Processing Systems 25 (2012)."
+    },
+    "kp-natural-questions-benchmark-question-answering-2019--text": {
+      "publisher": "Association for Computational Linguistics",
+      "date": "2019-07",
+      "note": "Journal PDF in the ACL Anthology, Transactions of the Association for Computational Linguistics 7; the month is from the PDF’s publication footer (“Published 7/2019”, printed p. 453), as the cross-family check read it (item A012)."
+    },
+    "kp-robots-jobs-evidence-from-us-2019--text": {
+      "publisher": "National Bureau of Economic Research",
+      "date": null,
+      "note": "NBER Working Paper 23285, read because the journal text is not open; its quotations are scoped to the working paper. The pack recorded no date for the working paper."
+    },
+    "kp-human-level-control-through-deep-2015--text": {
+      "publisher": "Nature",
+      "date": "2015",
+      "note": "Publisher’s article page (abstract only; the article text is not open). Year from Crossref."
+    },
+    "kp-mastering-game-go-deep-neural-2016--text": {
+      "publisher": "Nature",
+      "date": "2016",
+      "note": "Publisher’s article page (abstract only). Year from Crossref."
+    },
+    "kp-gradient-based-learning-applied-document-1998--text": {
+      "publisher": "Yann LeCun (author-hosted copy)",
+      "date": null,
+      "note": "Author-hosted PDF of the Proceedings of the IEEE article; its text layer is unusable, so nothing is quoted from it."
+    },
+    "kp-dropout-simple-way-prevent-neural-2014--text": {
+      "publisher": "Journal of Machine Learning Research",
+      "date": "2014-06",
+      "note": "Journal PDF; it prints “Published 6/14” on p. 1 (cross-family check, item A023)."
+    }
+  },
+  "crossrefTitles": {
+    "kp-humanity-s-last-exam-2025--crossref": {
+      "title": "A benchmark of expert-level academic questions to assess AI capabilities",
+      "note": "The journal title differs from the arXiv title “Humanity’s Last Exam”; the title is the one the cross-family check read in the Crossref record on 2026-10-30 (item A034)."
+    },
+    "kp-deepseek-r1-incentivizing-reasoning-capability-2025--crossref": {
+      "title": "DeepSeek-R1 incentivizes reasoning in LLMs through reinforcement learning",
+      "note": "The journal title differs from the arXiv title “DeepSeek-R1: Incentivizing Reasoning Capability in LLMs via Reinforcement Learning”; the title is the one the cross-family check read in the Crossref record on 2026-10-30 (item A046)."
+    }
+  },
+  "laterCopies": {
+    "source-benzell-et-al-2015-robots-are-us": {
+      "copy": "NBER Working Paper 20941, first issued February 2015; the copy read is the October 2018 revision.",
+      "cites": {
+        "time": {
+          "kind": "event",
+          "date": "2018-10",
+          "basis": "revision",
+          "note": "Date of the revision read: NBER Working Paper 20941, revised October 2018. The citation was not checked against the February 2015 copy, so the record is not dated by the first issue."
+        },
+        "qualificationAppend": "The citation is read in the October 2018 revision of the working paper (cover “February 2015, Revised October 2018”) and was not checked against the February 2015 copy."
+      },
+      "reason": "As the companion attributed-credit records from the same copy (B010, B011, adjudicated 2026-10-31): dated by the revision read."
+    },
+    "source-shulman-2009-miri-reprint": {
+      "copy": "MIRI reprint of the 2009 conference paper, which says it contains minor changes.",
+      "cites": {
+        "timeNote": "Date the dataset records for the paper (presented at ECAP, 2–4 July 2009, according to the reprint’s citation line). The citation was read in the MIRI reprint, which says it contains minor changes, so this copy does not attest the citation for July 2009.",
+        "qualificationAppend": "Read in a later copy marked as changed (the MIRI reprint)."
+      },
+      "reason": "As the attributed-credit record from a MIRI reprint (B015): the work’s date, with a note that the copy read does not attest it."
+    },
+    "source-aipnfgr-miri-reprint": {
+      "copy": "MIRI reprint of the 2008 chapter, which says it contains minor changes and is undated.",
+      "cites": {
+        "timeNote": "Date of the chapter’s publication. The citation was read in the MIRI reprint, which says it contains minor changes and is undated, so this copy does not attest the citation for 2008.",
+        "qualificationAppend": "Read in a later copy marked as changed (the MIRI reprint)."
+      },
+      "states_contribution": {
+        "timeNote": "Date of the chapter’s publication. The wording was read in the MIRI reprint, which says it contains minor changes and is undated, so this copy does not attest the wording for 2008.",
+        "qualificationAppend": "The wording quoted is that of the MIRI reprint, which says it contains minor changes; the 2008 chapter may word it differently."
+      },
+      "reason": "As the attributed-credit record from the same copy (kp-shaping-yudkowsky-good, B015)."
+    },
+    "source-acemoglu-restrepo-2016-race-between-machine-and-man": {
+      "copy": "NBER Working Paper 22252, first issued May 2016; the copy read is the June 2017 revision.",
+      "states_contribution": {
+        "timeNote": "Date of the working paper’s first issue (cover “May 2016, Revised June 2017”). The wording quoted is read in the June 2017 revision, so it is attested from June 2017 only.",
+        "qualificationAppend": "NBER Working Paper 22252, May 2016, revised June 2017; quoted wording attested from the June 2017 revision, not necessarily the May 2016 original (cross-family check, item A014, for the revision date)."
+      },
+      "reason": "As the dataset’s other records quoting this copy (the economics pack’s records): the first-issue date, which schema 2.24 takes from the source, with the attested revision in the note and qualification."
+    }
+  },
+  "claims": {
+    "kp-shaping-corrigibility-bostrom": {
+      "statement": "Soares, Fallenstein, Yudkowsky and Armstrong (2015) attribute the term “treacherous turn”, for an agent that conceals its utility function until it can avoid correction, to Bostrom (2014).",
+      "reason": "Adjudication: add Stuart Armstrong to the Corrigibility author list (B001)."
+    },
+    "kp-shaping-corrigibility-omohundro": {
+      "statement": "Soares, Fallenstein, Yudkowsky and Armstrong (2015) attribute the term “goal-content integrity”, as an instrumentally convergent goal of intelligent agents, to Omohundro (2008).",
+      "reason": "Adjudication: add Stuart Armstrong to the Corrigibility author list (B002)."
+    },
+    "kp-shaping-benzell-autor": {
+      "time": {
+        "kind": "event",
+        "date": "2018-10",
+        "basis": "revision",
+        "note": "Date of the revision read: NBER Working Paper 20941, revised October 2018. The passage is absent from the February 2015 copy the cross-family check inspected, so the record is not dated by the first issue."
+      },
+      "qualificationAppend": "The wording is attested only from the October 2018 revision: a cross-family check (2026-10-30) found it in the copy labelled “Revised October 2018” (captured 11 May 2019) and not in the February 2015 copy.",
+      "reason": "Adjudication: keep the version qualification (B010)."
+    },
+    "kp-shaping-benzell-aghion": {
+      "time": {
+        "kind": "event",
+        "date": "2018-10",
+        "basis": "revision",
+        "note": "Date of the revision read: NBER Working Paper 20941, revised October 2018. The passage is absent from the February 2015 copy the cross-family check inspected, so the record is not dated by the first issue."
+      },
+      "qualificationAppend": "The wording is attested only from the October 2018 revision: a cross-family check (2026-10-30) found it in the copy labelled “Revised October 2018” (captured 11 May 2019) and not in the February 2015 copy.",
+      "reason": "Adjudication: keep the version qualification (B011)."
+    },
+    "kp-shaping-yudkowsky-good": {
+      "timeNote": "Date of the chapter’s publication. The wording was read in the MIRI reprint, which says it contains minor changes and is undated, so this copy does not attest the wording for 2008.",
+      "reason": "The check (B015) keeps the qualification of the undated reprint."
+    },
+    "kp-shaping-openai-fgf-nist-rmf": {
+      "qualificationAppend": "The framework names the NIST AI Risk Management Framework without a version label; that it means AI RMF 1.0 is not printed. A cross-family check (2026-10-30) could not establish the May 2026 edition date from the PDF text.",
+      "reason": "The check (B026) asks to preserve both uncertainties."
+    },
+    "kp-states-llama-open-efficient-foundation-language-2023-1": {
+      "statement": "The paper introduces LLaMA, a collection of foundation language models ranging from 7B to 65B parameters.",
+      "reason": "Trimmed to what the quoted passage says (admission review, 2026-10-31); no new retrieval."
+    },
+    "kp-states-chain-thought-prompting-elicits-reasoning-2022-1": {
+      "statement": "The paper explores the ability of language models to generate a coherent chain of thought, a series of short sentences that mimic the reasoning process a person might have when responding to a question.",
+      "reason": "Trimmed to what the quoted passage says (admission review, 2026-10-31); no new retrieval."
+    },
+    "kp-states-truthfulqa-measuring-how-models-mimic-2021-1": {
+      "statement": "The paper proposes a benchmark to measure whether a language model is truthful in generating answers to questions.",
+      "reason": "Trimmed to what the quoted passage says (admission review, 2026-10-31); no new retrieval."
+    },
+    "kp-states-natural-questions-benchmark-question-answering-2019-1": {
+      "statement": "The paper presents the Natural Questions corpus, a question answering data set.",
+      "reason": "Trimmed to what the quoted passage says (admission review, 2026-10-31); no new retrieval."
+    },
+    "kp-states-deeplab-semantic-image-segmentation-deep-2016-1": {
+      "statement": "The paper addresses the task of semantic image segmentation with deep learning and states that it makes three main contributions.",
+      "reason": "Trimmed to what the quoted passage says (admission review, 2026-10-31); no new retrieval."
+    },
+    "kp-states-think-you-have-solved-question-2018-1": {
+      "statement": "The paper presents a new question set, text corpus and baselines, assembled to encourage AI research in advanced question answering.",
+      "reason": "Trimmed to what the quoted passage says (admission review, 2026-10-31); no new retrieval."
+    },
+    "kp-states-ssd-single-shot-multibox-detector-2015-1": {
+      "statement": "The paper presents a method for detecting objects in images using a single deep neural network.",
+      "reason": "Trimmed to what the quoted passage says (admission review, 2026-10-31); no new retrieval."
+    }
+  },
+  "hold": {
+    "kp-authored-tom-b-brown-human-preferences-paper": "Printed “Tom B Brown”, a different form from “Tom B. Brown” on the other two papers. The check (A049) found that the bylines do not identify one person; decision 3 never merges variant printed forms without an identifying source.",
+    "kp-authored-sheer-el-showk-training-helpful-harmless-assistant-reinforcement-2022": "Printed “Sheer El-Showk” on one paper and “Sheer El Showk” on the other (check A050). Under one identical printed form the name is credited on one pack paper only, below the person threshold, so neither credit has a person record; both forms stay in the author lists.",
+    "kp-authored-sheer-el-showk-constitutional-ai-harmlessness-from-ai-2022": "Printed “Sheer El-Showk” on one paper and “Sheer El Showk” on the other (check A050). Under one identical printed form the name is credited on one pack paper only, below the person threshold, so neither credit has a person record; both forms stay in the author lists.",
+    "kp-authored-karen-simonyan-compute-optimal-language-models": "Printed “Karen Simonyan”; the dataset’s person record is “Karén Simonyan”. Decision 3 never merges variant printed forms without an identifying source. The form stays in the author list.",
+    "kp-authored-karen-simonyan-scaling-language-models-methods-analysis-2021": "Printed “Karen Simonyan”; the dataset’s person record is “Karén Simonyan”. Decision 3 never merges variant printed forms without an identifying source. The form stays in the author list."
+  },
+  "identityHold": {
+    "minimumPapers": 3,
+    "reason": "Credited on two pack papers only. Decision 3 admits such persons after the cross-family identity items; the check (A049–A075) found identity unresolved on the printed name alone, which changes the basis of that step, so it is listed for the maintainer instead of applied. The printed name stays in the author lists."
+  },
+  "personHolds": {
+    "sheer-el-showk": "No identical printed form on two pack papers once the variant forms are kept apart (check A050).",
+    "jian-sun": "Credited on three pack papers under a name the pack report singled out as common (check priority 4: Xiangyu Zhang, Jian Sun, Wei Liu). The check found identity unresolved (A065) and that a matching printed name cannot resolve common-name identity, which changes the basis of admitting the name on the printed form alone; listed for the maintainer instead of applied. The printed name stays in the author lists."
+  },
+  "sortNames": {
+    "diego-de-las-casas": "Las Casas, Diego de",
+    "ronan-le-bras": "Le Bras, Ronan"
+  },
+  "parts": {
+    "1": {
+      "predicates": ["states_contribution", "cites"],
+      "schemaVersion": "2.24",
+      "scope": "The key papers admission (2026-10-31, part 1) adds papers and other publications on machine intelligence that dataset documents cite, or that Semantic Scholar ranks among the most cited machine-learning papers, as work-level documents with their arXiv and venue versions as sources; what each says it contributes, quoted (schema 2.24); and the dataset documents that cite them.",
+      "snapshotDescription": "Records as stored before part 1 of the key papers admission (2026-10-31; review/key-papers-admission-2026-10-31.md): the earlier metadata, the IDs part 1 added and the rows it changed, as they were."
+    },
+    "2": {
+      "predicates": ["authored"],
+      "scope": "Part 2 (2026-10-31) adds the persons credited under one identical printed name on three or more of those papers (the first step of decision 3; the second step waits on the maintainer), and authorship as printed in each paper’s byline.",
+      "snapshotDescription": "Records as stored before part 2 of the key papers admission (2026-10-31; review/key-papers-admission-2026-10-31.md): the earlier metadata, the IDs part 2 added and the rows it changed, as they were."
+    },
+    "3": {
+      "predicates": ["credits_work"],
+      "schemaVersion": "2.25",
+      "scope": "Part 3 (2026-10-31) adds attributed-credit records (schema 2.25): a dataset document’s own sentence attributing a term, an argument, a finding or an approach to one of those papers, as that document’s claim.",
+      "snapshotDescription": "Records as stored before part 3 of the key papers admission (2026-10-31; review/key-papers-admission-2026-10-31.md): the earlier metadata, the IDs part 3 added and the rows it changed, as they were."
+    }
+  }
+}

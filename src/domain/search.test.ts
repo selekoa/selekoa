@@ -1,12 +1,14 @@
 import { describe, expect, it } from 'vitest';
 import { repository } from './repository';
 import {
+  createPageIndex,
   createSearchIndex,
   foldText,
   highlight,
   parseQuery,
   searchClaims,
   searchOrganisations,
+  searchPages,
   searchRecords,
   searchYears,
   type SearchResults,
@@ -16,6 +18,13 @@ import {
   collectionClaimIds,
 } from '../release/collections';
 import { isPropositionRecord, queryDataset, relatedTo } from './query';
+import { pagePaths } from '../prerender/pages';
+import { searchablePages } from '../prerender/searchable-pages';
+import technicalHistory1 from '../../review/technical-history-admission-1-before-2026-10-31.json';
+import technicalHistory2 from '../../review/technical-history-admission-2-before-2026-10-31.json';
+import riskDebateBefore from '../../review/risk-debate-admission-before-2026-10-31.json';
+
+const riskDebateAdded = new Set<string>(riskDebateBefore.added.evidence);
 
 const index = createSearchIndex(repository.data);
 const ids = (results: SearchResults, type: string) =>
@@ -24,8 +33,10 @@ const marked = (segments: { text: string; match: boolean }[]) =>
   segments.filter((s) => s.match).map((s) => s.text);
 
 describe('query parsing and folding', () => {
-  it('folds case, accents, dashes and quote styles', () => {
-    expect(foldText('Zürich’s “AI” — ASL-3')).toBe(`zurich's "ai"   asl 3`);
+  it('folds case, accents, dashes, quote styles and apostrophes', () => {
+    expect(foldText('Zürich’s “AI” — ASL-3')).toBe(`zurichs "ai"   asl 3`);
+    expect(foldText("Anthropic's")).toBe(foldText('Anthropic’s'));
+    expect(parseQuery('anthropic’s')).toEqual(['anthropics']);
     expect(foldText('Ångström')).toBe('angstrom');
   });
   it('keeps quoted text and hyphenated words together as phrases', () => {
@@ -129,6 +140,35 @@ describe('full-text search over the records', () => {
     );
     expect(searchRecords(index, 'Altman zzzunmatched').total).toBe(0);
     expect(searchRecords(index, '   ').groups).toEqual([]);
+  });
+  it('orders by date on request, earliest first and undated records last', () => {
+    const dated = searchRecords(index, 'AGI', { order: 'date' });
+    const claims = dated.groups.find((g) => g.type === 'claim')!.hits;
+    const dates = claims.map((h) =>
+      repository.claims.get(h.id)!.time.kind === 'unknown'
+        ? '9999'
+        : // The date, not its kind: records of one date keep any order.
+          (h.date ?? '9999').split(' · ')[0],
+    );
+    expect(dates).toEqual([...dates].sort());
+    // The earliest passage holds the term in the source's own words. The
+    // 2026-10-31 technical history admission adds earlier passages (Gubrud,
+    // 1997) and the risk-debate admission further passages; both are set
+    // aside here.
+    const added = new Set([
+      ...technicalHistory1.added.evidence,
+      ...technicalHistory2.added.evidence,
+      ...riskDebateAdded,
+    ]);
+    expect(ids(dated, 'passage').find((id) => !added.has(id))).toBe(
+      'evidence-yk-t21-s2',
+    );
+    expect(ids(dated, 'passage')[0]).toBe('evidence-th-def-agi-gubrud-1997-1');
+    // The same records either way; only their order differs.
+    const matched = searchRecords(index, 'AGI');
+    expect(new Set(ids(matched, 'claim'))).toEqual(
+      new Set(ids(dated, 'claim')),
+    );
   });
   it('gives claims and passages the stored status, date and sources of their claim', () => {
     const hit = searchRecords(index, 'whistleblower')
@@ -263,15 +303,75 @@ describe('searchClaims: what a search timeline and map show', () => {
     }
     // A search on an economist finds proposition records, which the explorer
     // leaves out without the flag, and the authorship records of the author's
-    // texts.
+    // texts. The 2026-10-31 key papers records about his paper (`kp-`:
+    // citations of it and what it says it contributes) are left aside.
     const hanson = searchClaims(index, 'Hanson').listed;
     expect(hanson.size).toBeGreaterThan(0);
     expect(
-      [...hanson].every(
-        (id) =>
-          isPropositionRecord(repository.claims.get(id)!) ||
-          repository.claims.get(id)!.predicate === 'authored',
-      ),
+      [...hanson]
+        .filter((id) => !id.startsWith('kp-'))
+        .every(
+          (id) =>
+            isPropositionRecord(repository.claims.get(id)!) ||
+            repository.claims.get(id)!.predicate === 'authored',
+        ),
     ).toBe(true);
+  });
+});
+
+describe('pages', () => {
+  const pages = searchablePages(repository.data);
+  const pageIndex = createPageIndex(pages);
+  const paths = (query: string) =>
+    searchPages(pageIndex, query).map((h) => h.page.path);
+
+  it('lists hubs, collections, guided pages, starters and control structures', () => {
+    const built = new Set(pagePaths(repository.data));
+    for (const page of pages) {
+      expect(built.has(page.path)).toBe(true);
+      expect(page.title).not.toMatch(/Selekoa/);
+    }
+    for (const path of [
+      '/governance',
+      '/ideas',
+      '/institutions',
+      '/about',
+      '/explore',
+      '/control/openai',
+      '/control/anthropic',
+      '/compare/frontier-safety-frameworks',
+      '/guide/frontier-frameworks-and-law',
+    ])
+      expect(pages.map((p) => p.path)).toContain(path);
+    expect(new Set(pages.map((p) => p.path)).size).toBe(pages.length);
+  });
+
+  it('matches a possessive with or without its apostrophe', () => {
+    for (const query of [
+      "anthropic's control structure",
+      'anthropics control structure',
+      'Anthropic’s control structure',
+      'ANTHROPIC CONTROL STRUCTURE',
+    ])
+      expect(paths(query)[0]).toBe('/control/anthropic');
+    const [hit] = searchPages(pageIndex, "anthropic's control structure");
+    expect(hit.field).toBe('title');
+    expect(marked(hit.snippet).join(' ')).toBe('Anthropic’s control structure');
+  });
+
+  it('matches questions and summaries, and needs every term', () => {
+    expect(paths('which entity has controlled OpenAI')).toContain(
+      '/control/openai',
+    );
+    expect(paths('Long-Term Benefit Trust')).toContain('/control/anthropic');
+    expect(paths('anthropic zzzz')).toEqual([]);
+    expect(paths('')).toEqual([]);
+  });
+
+  it('finds records with an apostrophe written either way', () => {
+    const straight = searchRecords(index, "Anthropic's board").total;
+    expect(straight).toBeGreaterThan(0);
+    expect(searchRecords(index, 'Anthropic’s board').total).toBe(straight);
+    expect(searchRecords(index, 'Anthropics board').total).toBe(straight);
   });
 });

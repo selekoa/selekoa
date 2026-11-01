@@ -54,8 +54,10 @@ test('frameworks page shows quoted provisions, alignment and plain dispute statu
   ).toContainText('Not found in the inspected text');
   const alignment = pf.locator('details.doc-alignment');
   await alignment.locator('summary').click();
-  // Five keys before the follow-up, plus four re-examined stops.
-  await expect(alignment.locator('tbody tr')).toHaveCount(9);
+  // Five keys before the follow-up, plus four re-examined stops, plus the
+  // five biological provision keys of the 2026-10-30 AI and biosecurity
+  // admission (`ab-` records), which the table rows do not identify.
+  await expect(alignment.locator('tbody tr')).toHaveCount(14);
   await expect(alignment).toContainText('Not found');
   await expect(
     alignment.getByRole('button', {

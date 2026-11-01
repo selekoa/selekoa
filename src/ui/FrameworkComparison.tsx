@@ -1,3 +1,4 @@
+import { ClaimLink } from './NavLink';
 import { useEffect, useRef, useState } from 'react';
 import { useInBrowser, useMediaQuery } from './client';
 import type { Repository } from '../domain/repository';
@@ -31,6 +32,9 @@ type Props = {
   /** The question shown in the one-question layout. */
   facet: string | null;
   onFacet: (facet: string) => void;
+  /** Editions shown in place of each framework's latest, as in the address. */
+  editions: string[];
+  onEditions: (editions: string[]) => void;
 };
 
 const editionLabel = (e: Entity) => e.documentVersion?.label ?? e.name;
@@ -56,7 +60,7 @@ function Cell({
   repository,
   selectedClaimId,
   onClaim,
-}: Omit<Props, 'facet' | 'onFacet'> & {
+}: Omit<Props, 'facet' | 'onFacet' | 'editions' | 'onEditions'> & {
   editionId: string;
   facetId: string;
   facetLabel: string;
@@ -111,11 +115,11 @@ function Cell({
         </p>
       )}
       {claim && (
-        <button
+        <ClaimLink
           className="doc-inspect"
-          data-claim-id={claim.id}
-          aria-pressed={selectedClaimId === claim.id}
-          onClick={() => onClaim(claim.id)}
+          pressed={selectedClaimId === claim.id}
+          claimId={claim.id}
+          onOpen={() => onClaim(claim.id)}
         >
           {cell.status === 'not-found'
             ? 'Open the search record'
@@ -124,20 +128,31 @@ function Cell({
             : {name}, {facetLabel}
           </span>
           <span aria-hidden="true"> ↗</span>
-        </button>
+        </ClaimLink>
       )}
     </div>
   );
 }
 
 export function FrameworkComparison(props: Props) {
-  const { view, repository, facet, onFacet } = props;
+  const { view, repository, facet, onFacet, editions, onEditions } = props;
   const { collection, columns, dimensions } = view;
-  const [chosen, setChosen] = useState<Record<string, string>>(() =>
-    Object.fromEntries(
-      columns.map((c) => [c.family, c.editions.at(-1)!.id] as const),
-    ),
+  // Each framework shows its latest edition unless the address names another.
+  const chosen: Record<string, string> = Object.fromEntries(
+    columns.map((c) => [
+      c.family,
+      c.editions.find((e) => editions.includes(e.id))?.id ??
+        c.editions.at(-1)!.id,
+    ]),
   );
+  /** The address keeps only the editions that differ from the latest. */
+  const choose = (family: string, editionId: string) =>
+    onEditions(
+      columns.flatMap((c) => {
+        const id = c.family === family ? editionId : chosen[c.family];
+        return id === c.editions.at(-1)!.id ? [] : [id];
+      }),
+    );
   // The built page is the wide table, readable without JavaScript; a phone,
   // or an address at one question, switches once the page runs.
   const narrow = useMediaQuery(narrowQuery, false);
@@ -206,7 +221,11 @@ export function FrameworkComparison(props: Props) {
         </p>
         <div className="doc-actions">
           <CopyLink
-            target={{ kind: 'compare', id: collection.id }}
+            target={{
+              kind: 'compare',
+              id: collection.id,
+              editions: editions.length ? editions : undefined,
+            }}
             label="Copy link to this comparison"
           />
         </div>
@@ -248,12 +267,7 @@ export function FrameworkComparison(props: Props) {
                 <select
                   value={chosen[c.family]}
                   disabled={!live}
-                  onChange={(event) =>
-                    setChosen((prev) => ({
-                      ...prev,
-                      [c.family]: event.target.value,
-                    }))
-                  }
+                  onChange={(event) => choose(c.family, event.target.value)}
                 >
                   {c.editions.map((e, i) => (
                     <option key={e.id} value={e.id}>

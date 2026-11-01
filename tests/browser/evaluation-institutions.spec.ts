@@ -1,4 +1,4 @@
-import { expect, test } from './fixtures';
+import { expect, MAP_FIRST_DRAW_TIMEOUT, test } from './fixtures';
 
 test('evaluation institution records retain evidence and limits in map and dossiers', async ({
   page,
@@ -17,8 +17,13 @@ test('evaluation institution records retain evidence and limits in map and dossi
   );
   await expect(inspector).toContainText('Not reviewed by an editor');
   await expect(inspector).toContainText('Machine-checked');
-  // Map from a claim draws its subject's direct connections, the claim's
-  // line marked, and keeps the claim address.
+  // From a claim's page, the explorer's map draws its subject's direct
+  // connections, the claim's line marked, and keeps the claim address.
+  await page
+    .getByRole('button', {
+      name: 'See it with the related records in the explorer →',
+    })
+    .click();
   await page.getByRole('button', { name: 'Map', exact: true }).click();
   await expect(page.locator('.exploration-heading .eyebrow')).toHaveText(
     'Direct connections',
@@ -28,7 +33,7 @@ test('evaluation institution records retain evidence and limits in map and dossi
     page.locator(
       '.map-edge.is-selected[data-claim-ids~="eval-i-arc-incubation"]',
     ),
-  ).toBeVisible();
+  ).toBeVisible({ timeout: MAP_FIRST_DRAW_TIMEOUT });
   await expect(page).toHaveURL(/\/claim\/eval-i-arc-incubation$/);
   await page.screenshot({
     path: testInfo.outputPath('map.png'),

@@ -2,9 +2,10 @@ import type { Claim, Dataset, Entity } from './schema';
 import { dateOf, timeLabel } from './query';
 
 /**
- * Full-text search over the stored records. Matching is literal: a term
- * matches the beginning of a word, or a whole word when asked, ignoring case,
- * accents, hyphens and quote styles. Nothing is inferred, expanded or ranked by importance; the score
+ * Full-text search over the stored records and the reading pages. Matching
+ * is literal: a term matches the beginning of a word, or a whole word when
+ * asked, ignoring case, accents, hyphens, quote styles and apostrophes (so
+ * “Anthropic’s”, “anthropic's” and “anthropics” are one word). Nothing is inferred, expanded or ranked by importance; the score
  * only orders matches by where and how completely the terms occur.
  */
 
@@ -70,6 +71,11 @@ export type SearchFilters = {
   untilYear?: number | null;
   /** Match whole words only: "critic" no longer finds "criticality". */
   wholeWords?: boolean;
+  /**
+   * `date`: dated records first, earliest first, then the closest matches.
+   * The default puts the closest matches first.
+   */
+  order?: 'match' | 'date';
 };
 
 export type Highlight = { text: string; match: boolean };
@@ -99,7 +105,7 @@ export type SearchResults = {
 };
 
 type IndexedField = { field: SearchField; text: string; folded: string };
-type IndexedRecord = {
+export type IndexedRecord = {
   type: SearchRecordType;
   id: string;
   claimId?: string;
@@ -116,12 +122,15 @@ type IndexedRecord = {
 export type SearchIndex = { records: IndexedRecord[] };
 
 const foldCache = new Map<string, string>();
-/** Case, accent, dash and quote folding for one code point. */
+/**
+ * Case, accent, dash and quote folding for one code point. Apostrophes are
+ * dropped, so a possessive reads as one word with its noun.
+ */
 function foldChar(ch: string): string {
   const code = ch.charCodeAt(0);
   if (code < 128) {
     if (code >= 65 && code <= 90) return String.fromCharCode(code + 32);
-    return ch === '-' ? ' ' : ch;
+    return ch === '-' ? ' ' : ch === "'" ? '' : ch;
   }
   let folded = foldCache.get(ch);
   if (folded === undefined) {
@@ -130,8 +139,8 @@ function foldChar(ch: string): string {
         ? ''
         : /[‐-―−]/.test(ch)
           ? ' '
-          : /[‘’‚‛′]/.test(ch)
-            ? "'"
+          : /[‘’‚‛′ʼ]/.test(ch)
+            ? ''
             : /[“-‟″]/.test(ch)
               ? '"'
               : ch.normalize('NFKD').replace(/\p{M}/gu, '').toLowerCase();
@@ -140,11 +149,11 @@ function foldChar(ch: string): string {
   return folded;
 }
 
-/** Folds text for matching. ASCII text keeps its length. */
+/** Folds text for matching. */
 export function foldText(text: string): string {
   // eslint-disable-next-line no-control-regex
   if (/^[\x00-\x7f]*$/.test(text))
-    return text.toLowerCase().replaceAll('-', ' ');
+    return text.toLowerCase().replaceAll('-', ' ').replaceAll("'", '');
   let out = '';
   for (const ch of text) out += foldChar(ch);
   return out;
@@ -167,11 +176,12 @@ function foldWithMap(text: string) {
   return { folded, starts, ends };
 }
 
-const isWordChar = (ch: string | undefined) =>
+/** Whether a folded character belongs to a word. */
+export const isWordChar = (ch: string | undefined) =>
   !!ch &&
   (/[a-z0-9]/.test(ch) || (ch.charCodeAt(0) > 127 && /[\p{L}\p{N}]/u.test(ch)));
 // Scripts written without spaces between words match anywhere.
-const unspaced =
+export const unspaced =
   /^[\p{Script=Han}\p{Script=Hiragana}\p{Script=Katakana}\p{Script=Hangul}]/u;
 
 /**
@@ -289,7 +299,7 @@ export function createSearchIndex(data: Dataset): SearchIndex {
       years: claimYears(c),
       sortDate: dateOf(c),
       status: status(c),
-      date: timeLabel(c),
+      date: timeLabel(c, data),
       sourceIds: [
         ...new Set((evidenceByClaim.get(c.id) ?? []).map((e) => e.sourceId)),
       ],
@@ -310,7 +320,7 @@ export function createSearchIndex(data: Dataset): SearchIndex {
       years: claimYears(c),
       sortDate: dateOf(c),
       status: status(c),
-      date: timeLabel(c),
+      date: timeLabel(c, data),
       sourceIds: [e.sourceId],
     });
   }
@@ -449,7 +459,8 @@ export function highlight(
 /**
  * Every record matching all terms, grouped by record type in a fixed order.
  * Within a group, records with more complete and better-placed matches come
- * first, then dated records in date order, then by ID.
+ * first, then dated records in date order, then by ID; with `order: 'date'`,
+ * date order comes first.
  */
 export function searchRecords(
   index: SearchIndex,
@@ -522,11 +533,14 @@ export function searchRecords(
     .map(([type, hits]) => ({
       type,
       hits: hits
-        .sort(
-          (a, b) =>
-            b.hit.score - a.hit.score ||
-            a.sortDate.localeCompare(b.sortDate) ||
-            a.hit.id.localeCompare(b.hit.id),
+        .sort((a, b) =>
+          filters.order === 'date'
+            ? a.sortDate.localeCompare(b.sortDate) ||
+              b.hit.score - a.hit.score ||
+              a.hit.id.localeCompare(b.hit.id)
+            : b.hit.score - a.hit.score ||
+              a.sortDate.localeCompare(b.sortDate) ||
+              a.hit.id.localeCompare(b.hit.id),
         )
         .map((h) => h.hit),
     }));
@@ -537,7 +551,6 @@ export function searchRecords(
   };
 }
 
-/** Organisations named in at least one claim, by name, for filtering. */
 /**
  * The claims a search's timeline and map show. `listed` holds every claim the
  * result list shows as a claim or through one of its passages; `matched`
@@ -552,6 +565,7 @@ export function searchClaims(index: SearchIndex, query: string) {
   };
 }
 
+/** Organisations named in at least one claim, by name, for filtering. */
 export function searchOrganisations(data: Dataset) {
   const named = new Set(data.claims.flatMap(endpoints));
   return data.entities
@@ -573,4 +587,91 @@ export function searchYears(data: Dataset) {
   for (const s of data.sources)
     if (s.publicationDate) years.add(yearOf(s.publicationDate)!);
   return [...years].sort((a, b) => a - b);
+}
+
+/** A reading page as search lists it; see `searchablePages`. */
+export type PageEntry = {
+  path: string;
+  kind: string;
+  title: string;
+  question?: string;
+  summary?: string;
+};
+export type PageField = 'title' | 'question' | 'summary';
+export type PageHit = {
+  page: PageEntry;
+  /** The field shown in the snippet: the best-placed one matching most terms. */
+  field: PageField;
+  snippet: Highlight[];
+  score: number;
+};
+export type PageIndex = {
+  pages: { page: PageEntry; fields: { field: PageField; folded: string }[] }[];
+};
+
+const pageWeights: Record<PageField, number> = {
+  title: 6,
+  question: 3,
+  summary: 1,
+};
+
+export function createPageIndex(pages: readonly PageEntry[]): PageIndex {
+  return {
+    pages: pages.map((page) => ({
+      page,
+      fields: (['title', 'question', 'summary'] as const).flatMap((f) =>
+        page[f] ? [{ field: f, folded: foldText(page[f]) }] : [],
+      ),
+    })),
+  };
+}
+
+/**
+ * Pages whose title, question or summary match every term, as records do;
+ * pages with more terms in the title come first.
+ */
+export function searchPages(
+  index: PageIndex,
+  query: string,
+  { wholeWords = false }: { wholeWords?: boolean } = {},
+): PageHit[] {
+  const terms = parseQuery(query);
+  if (!terms.length) return [];
+  const phrase = terms.length > 1 ? terms.join(' ') : null;
+  const hits: PageHit[] = [];
+  for (const { page, fields } of index.pages) {
+    let score = 0;
+    const matched = new Map<PageField, number>();
+    for (const term of terms) {
+      let best = 0;
+      for (const f of fields) {
+        if (!occurrences(f.folded, term, 1, wholeWords).length) continue;
+        matched.set(f.field, (matched.get(f.field) ?? 0) + 1);
+        best = Math.max(best, pageWeights[f.field]);
+      }
+      if (!best) {
+        score = 0;
+        break;
+      }
+      score += best;
+    }
+    if (!score) continue;
+    if (phrase)
+      for (const f of fields)
+        if (occurrences(f.folded, phrase, 1, wholeWords).length)
+          score += pageWeights[f.field] * 2;
+    const [field] = [...matched.entries()].sort(
+      (a, b) => b[1] - a[1] || pageWeights[b[0]] - pageWeights[a[0]],
+    )[0];
+    hits.push({
+      page,
+      field,
+      snippet: highlight(page[field]!, terms, 90, wholeWords),
+      score,
+    });
+  }
+  return hits.sort(
+    (a, b) =>
+      b.score - a.score || a.page.title.localeCompare(b.page.title, 'en'),
+  );
 }

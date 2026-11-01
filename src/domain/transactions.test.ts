@@ -17,6 +17,24 @@ import followups from '../../review/followups-before-2026-10-28.json';
 import frameworksToLaw1 from '../../review/frameworks-to-law-1-before-2026-10-28.json';
 import frameworksToLaw2 from '../../review/frameworks-to-law-2-before-2026-10-28.json';
 import paraphraseCorrections from '../../review/paraphrase-corrections-before-2026-10-28.json';
+import auditFixes from '../../review/audit-fixes-before-2026-10-29.json';
+import archiveFixes from '../../review/archive-fixes-before-2026-10-30.json';
+import readerDecisions from '../../review/reader-decisions-before-2026-10-29.json';
+import cpoAdmission1 from '../../review/cpo-admission-1-before-2026-10-30.json';
+import aiBio1 from '../../review/ai-bio-admission-1-before-2026-10-30.json';
+import aiBio2 from '../../review/ai-bio-admission-2-before-2026-10-30.json';
+import peopleAdmission from '../../review/people-admission-before-2026-10-31.json';
+import riskDebate from '../../review/risk-debate-admission-before-2026-10-31.json';
+import chinaLabs3Admission2 from '../../review/china-labs-3-admission-2-before-2026-10-31.json';
+import chinaLabs3Admission1 from '../../review/china-labs-3-admission-1-before-2026-10-31.json';
+import technicalHistory2 from '../../review/technical-history-admission-2-before-2026-10-31.json';
+import technicalHistory1 from '../../review/technical-history-admission-1-before-2026-10-31.json';
+import keyPapers3 from '../../review/key-papers-admission-3-before-2026-10-31.json';
+import keyPapers2 from '../../review/key-papers-admission-2-before-2026-10-31.json';
+import keyPapers1 from '../../review/key-papers-admission-1-before-2026-10-31.json';
+import aiInBiology1 from '../../review/ai-in-biology-admission-1-before-2026-10-31.json';
+import aiInBiology2 from '../../review/ai-in-biology-admission-2-before-2026-10-31.json';
+import cpoAdmission2 from '../../review/cpo-admission-2-before-2026-10-30.json';
 import compareMoreFacets from '../../review/compare-more-facets-before-2026-10-27.json';
 import authorPersons from '../../review/author-persons-before-2026-10-27.json';
 import recheckCorrections from '../../review/recheck-corrections-before-2026-10-25.json';
@@ -252,10 +270,30 @@ describe('capital and compute transaction semantics', () => {
         ...frameworksToLaw1.added.claims,
         ...frameworksToLaw2.added.claims,
         ...paraphraseCorrections.added.claims,
+        ...auditFixes.added.claims,
+        ...readerDecisions.added.claims,
+        ...readerDecisions.added.claims,
+        ...cpoAdmission1.added.claims,
+        ...aiBio1.added.claims,
+        ...aiBio2.added.claims,
+        ...peopleAdmission.added.claims,
+        ...riskDebate.added.claims,
+        ...chinaLabs3Admission2.added.claims,
+        ...chinaLabs3Admission1.added.claims,
+        ...technicalHistory2.added.claims,
+        ...technicalHistory1.added.claims,
+        ...keyPapers3.added.claims,
+        ...keyPapers2.added.claims,
+        ...keyPapers1.added.claims,
+        ...aiInBiology1.added.claims,
+        ...aiInBiology2.added.claims,
+        ...cpoAdmission2.added.claims,
+        ...archiveFixes.added.claims,
         ...compareMoreFacets.added.claims,
         ...authorPersons.added.claims,
       ]).size,
-    ).toBe(data.claims.length);
+      // Earlier increments added the claims the 2026-10-29 audit fixes removed.
+    ).toBe(data.claims.length + auditFixes.removed.claims.length);
     for (const id of ids) {
       expect(claim(id).editorialState).toBe('seed');
       for (const eid of claim(id).evidenceIds)

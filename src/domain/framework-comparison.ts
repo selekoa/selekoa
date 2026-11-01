@@ -285,11 +285,6 @@ export function comparisonView(
   collection: ComparisonCollection,
 ) {
   const entities = new Map(data.entities.map((e) => [e.id, e]));
-  const cells = new Map<string, Claim>();
-  for (const c of data.claims) {
-    const facet = c.attributes?.provision?.facet;
-    if (facet) cells.set(`${c.subject} ${facet.id}`, c);
-  }
   const columns = collection.families.map((family) => {
     const editions = frameworkVersions(data, family);
     if (!editions.length) throw new Error('Empty framework family: ' + family);
@@ -301,6 +296,18 @@ export function comparisonView(
       editions,
     };
   });
+  // Cells are read only on claims about the editions shown, chosen by their
+  // subject: a page reads no other claim's attributes
+  // (src/prerender/trace.ts).
+  const shown = new Set(
+    columns.flatMap((col) => col.editions.map((e) => e.id)),
+  );
+  const cells = new Map<string, Claim>();
+  for (const c of data.claims) {
+    if (!shown.has(c.subject)) continue;
+    const facet = c.attributes?.provision?.facet;
+    if (facet) cells.set(`${c.subject} ${facet.id}`, c);
+  }
   const cell = (editionId: string, facetId: string) => {
     const claim = cells.get(`${editionId} ${facetId}`);
     if (claim) {

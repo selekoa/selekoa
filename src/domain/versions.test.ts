@@ -17,6 +17,24 @@ import followups from '../../review/followups-before-2026-10-28.json';
 import frameworksToLaw1 from '../../review/frameworks-to-law-1-before-2026-10-28.json';
 import frameworksToLaw2 from '../../review/frameworks-to-law-2-before-2026-10-28.json';
 import paraphraseCorrections from '../../review/paraphrase-corrections-before-2026-10-28.json';
+import auditFixes from '../../review/audit-fixes-before-2026-10-29.json';
+import archiveFixes from '../../review/archive-fixes-before-2026-10-30.json';
+import readerDecisions from '../../review/reader-decisions-before-2026-10-29.json';
+import cpoAdmission1 from '../../review/cpo-admission-1-before-2026-10-30.json';
+import aiBio1 from '../../review/ai-bio-admission-1-before-2026-10-30.json';
+import aiBio2 from '../../review/ai-bio-admission-2-before-2026-10-30.json';
+import peopleAdmission from '../../review/people-admission-before-2026-10-31.json';
+import riskDebate from '../../review/risk-debate-admission-before-2026-10-31.json';
+import chinaLabs3Admission2 from '../../review/china-labs-3-admission-2-before-2026-10-31.json';
+import chinaLabs3Admission1 from '../../review/china-labs-3-admission-1-before-2026-10-31.json';
+import technicalHistory2 from '../../review/technical-history-admission-2-before-2026-10-31.json';
+import technicalHistory1 from '../../review/technical-history-admission-1-before-2026-10-31.json';
+import keyPapers3 from '../../review/key-papers-admission-3-before-2026-10-31.json';
+import keyPapers2 from '../../review/key-papers-admission-2-before-2026-10-31.json';
+import keyPapers1 from '../../review/key-papers-admission-1-before-2026-10-31.json';
+import aiInBiology1 from '../../review/ai-in-biology-admission-1-before-2026-10-31.json';
+import aiInBiology2 from '../../review/ai-in-biology-admission-2-before-2026-10-31.json';
+import cpoAdmission2 from '../../review/cpo-admission-2-before-2026-10-30.json';
 import compareMoreFacets from '../../review/compare-more-facets-before-2026-10-27.json';
 import authorPersons from '../../review/author-persons-before-2026-10-27.json';
 import recheckCorrections from '../../review/recheck-corrections-before-2026-10-25.json';
@@ -125,9 +143,9 @@ describe('governance version history', () => {
     const rsp = repository.entities.get('rsp-v3-4')!;
     expect(rsp.documentVersion?.publishedAt).toBeUndefined();
     expect(rsp.documentVersion?.effectiveAt).toBe('2026-07-08');
-    expect(timeLabel(repository.claims.get('issued-rsp-3-4')!)).toBe(
-      '2026-07-08 · effective',
-    );
+    expect(
+      timeLabel(repository.claims.get('issued-rsp-3-4')!, repository.data),
+    ).toBe('2026-07-08 · effective');
     expect(
       repository.entities.get('faif-2025')?.documentVersion?.revisedAt,
     ).toBe('2025-12-30');
@@ -178,8 +196,12 @@ describe('governance version history', () => {
           (c) =>
             c.subject === 'frontier-governance-2026' &&
             c.object.kind === 'entity' &&
-            // Week 4b's quoted link to California SB 53 is not a version relation.
-            c.predicate !== 'references_commitment',
+            // Week 4b's quoted link to California SB 53 is not a version relation,
+            // nor are the 2026-10-31 key papers admission's citations and
+            // attributed credits.
+            c.predicate !== 'references_commitment' &&
+            c.predicate !== 'cites' &&
+            c.predicate !== 'credits_work',
         )
         .map((c) => c.predicate),
     ).toEqual(['applies_framework']);
@@ -240,6 +262,13 @@ describe('governance version history', () => {
       ...frameworksToLaw1.added.claims,
       ...frameworksToLaw2.added.claims,
       ...paraphraseCorrections.added.claims,
+      ...auditFixes.added.claims,
+      ...readerDecisions.added.claims,
+      ...cpoAdmission1.added.claims,
+      ...aiBio1.added.claims,
+      ...aiBio2.added.claims,
+      ...cpoAdmission2.added.claims,
+      ...archiveFixes.added.claims,
       ...compareMoreFacets.added.claims,
     ]);
     const prior = (claims: typeof data.claims) =>
@@ -300,10 +329,30 @@ describe('governance version history', () => {
         ...frameworksToLaw1.added.claims,
         ...frameworksToLaw2.added.claims,
         ...paraphraseCorrections.added.claims,
+        ...auditFixes.added.claims,
+        ...readerDecisions.added.claims,
+        ...readerDecisions.added.claims,
+        ...cpoAdmission1.added.claims,
+        ...aiBio1.added.claims,
+        ...aiBio2.added.claims,
+        ...peopleAdmission.added.claims,
+        ...riskDebate.added.claims,
+        ...chinaLabs3Admission2.added.claims,
+        ...chinaLabs3Admission1.added.claims,
+        ...technicalHistory2.added.claims,
+        ...technicalHistory1.added.claims,
+        ...keyPapers3.added.claims,
+        ...keyPapers2.added.claims,
+        ...keyPapers1.added.claims,
+        ...aiInBiology1.added.claims,
+        ...aiInBiology2.added.claims,
+        ...cpoAdmission2.added.claims,
+        ...archiveFixes.added.claims,
         ...compareMoreFacets.added.claims,
         ...authorPersons.added.claims,
       ]).size,
-    ).toBe(data.claims.length);
+      // Earlier increments added the claims the 2026-10-29 audit fixes removed.
+    ).toBe(data.claims.length + auditFixes.removed.claims.length);
     expect(newClaims.every((c) => c.editorialState === 'seed')).toBe(true);
     expect(
       data.evidence

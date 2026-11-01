@@ -3,6 +3,7 @@ import type { HubId } from '../domain/deep-links';
 import { startHref, type StartAction } from './SiteChrome';
 import { NavLink } from './NavLink';
 import { comparisonFacets } from '../domain/framework-comparison';
+import { chinaScopeNote } from '../reading/china-scope';
 import './reading-first.css';
 import './control-commitments.css';
 
@@ -60,6 +61,11 @@ export function hubOutline(summary: LandingSummary, hub: HubId) {
             question: q.question,
             action: { kind: 'question', id: q.id } as StartAction,
           })),
+          ...summary.guides.slice(0, 1).map((g) => ({
+            question:
+              'Which laws and government texts address frontier AI developers, with what standing, and which frameworks name them?',
+            action: { kind: 'guide', id: g.id } as StartAction,
+          })),
         ]
       : hub === 'ideas'
         ? [
@@ -71,6 +77,18 @@ export function hubOutline(summary: LandingSummary, hub: HubId) {
                     action: {
                       kind: 'propositions',
                       id: 'superintelligence',
+                    } as StartAction,
+                  },
+                ]
+              : []),
+            ...(has(summary.propositions, 'risk-debate')
+              ? [
+                  {
+                    question:
+                      'Which published texts argue for and against catastrophic risk from advanced AI, and which answer one another?',
+                    action: {
+                      kind: 'propositions',
+                      id: 'risk-debate',
                     } as StartAction,
                   },
                 ]
@@ -188,7 +206,8 @@ function GovernanceEntries({
   summary: LandingSummary;
   onAction: (action: StartAction) => void;
 }) {
-  const { history, controls, commitments, questions } = summary;
+  const { history, controls, commitments, questions, guides, editionGuides } =
+    summary;
   const publishers = history.publishers;
   return (
     <>
@@ -238,6 +257,49 @@ function GovernanceEntries({
           Compare frameworks →
         </NavLink>
       </li>
+      {guides.map((g) => (
+        <li className="landing-entry" key={g.id}>
+          <span className="eyebrow">Guided reading</span>
+          <h3>{g.title}</h3>
+          <p>
+            {g.editions} framework editions and {g.texts} laws and government
+            texts from {g.jurisdictions} jurisdictions and forums, on one
+            timeline built from the records. Each text shows its standing
+            (binding, required by law, voluntary, announced or revoked), its
+            dates and what it states; {g.links} framework statements name a law
+            or commitment. It shows what the documents state, not compliance.
+          </p>
+          <NavLink
+            className="landing-action"
+            href={startHref({ kind: 'guide', id: g.id }, summary)}
+            onOpen={() => onAction({ kind: 'guide', id: g.id })}
+          >
+            Read frameworks and law →
+          </NavLink>
+        </li>
+      ))}
+      {editionGuides.map((g) => (
+        <li className="landing-entry" key={g.id}>
+          <span className="eyebrow">Guided reading</span>
+          <h3>{g.title}</h3>
+          <p>
+            The comparison read edition by edition: {g.editions} editions of{' '}
+            {g.frameworks} frameworks against the same {g.questions} questions.
+            For each framework, its editions in order, the status of every
+            question in every edition, and where two consecutive editions’ cells
+            differ, with both passages. For each question, the earliest compared
+            edition of each framework that records it. A difference is between
+            recorded cells; the page gives no reason for it.
+          </p>
+          <NavLink
+            className="landing-action"
+            href={startHref({ kind: 'guide', id: g.id }, summary)}
+            onOpen={() => onAction({ kind: 'guide', id: g.id })}
+          >
+            Read the frameworks edition by edition →
+          </NavLink>
+        </li>
+      ))}
       <li className="landing-entry">
         <span className="eyebrow">
           {controls.length ? 'Control and commitments' : 'Commitments'}
@@ -387,9 +449,35 @@ function InstitutionEntries({
                   </li>
                 ))}
             </ul>
+            {group === 'Chinese AI histories' && (
+              <p className="small-note" id="china-scope">
+                {chinaScopeNote(summary.china)}
+              </p>
+            )}
           </div>
         ))}
       </li>
+      {summary.computeGuides.map((g) => (
+        <li className="landing-entry" key={g.id}>
+          <span className="eyebrow">Guided reading</span>
+          <h3>{g.title}</h3>
+          <p>
+            {g.records} records of data-centre sites, power agreements, chip
+            supply, government measures, export-control rules and computing in
+            orbit, on one timeline dated by the records themselves. Each figure
+            is given as its source words it, with what it measures; targets and
+            deadlines are listed apart from events. An announcement records what
+            a party stated, not what was built.
+          </p>
+          <NavLink
+            className="landing-action"
+            href={startHref({ kind: 'guide', id: g.id }, summary)}
+            onOpen={() => onAction({ kind: 'guide', id: g.id })}
+          >
+            Read the compute records →
+          </NavLink>
+        </li>
+      ))}
       <li className="landing-entry">
         <span className="eyebrow">Guided reading</span>
         <h3>Anthropic: {reading.title.toLowerCase()}</h3>
@@ -467,6 +555,23 @@ export function HubPage({
       <section className="landing-entries" aria-label={outline.title}>
         <ol>
           <Entries summary={summary} onAction={onAction} />
+          <li className="landing-entry">
+            <span className="eyebrow">Chronicle</span>
+            <h3>Browse by year</h3>
+            <p>
+              Every dated record, one page per year, in date order and grouped
+              by topic, each with its date as its source gives it. Targets and
+              other stated dates are listed apart from the records. Selective:
+              what the records hold, not a history of any year.
+            </p>
+            <NavLink
+              className="landing-action"
+              href={startHref({ kind: 'years' }, summary)}
+              onOpen={() => onAction({ kind: 'years' })}
+            >
+              Browse the records by year →
+            </NavLink>
+          </li>
         </ol>
       </section>
     </main>

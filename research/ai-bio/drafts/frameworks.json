@@ -1,0 +1,3067 @@
+{
+  "group": "frameworks",
+  "preparedAt": "2026-10-28",
+  "auditCorrections": [
+    {
+      "record": "ab-fw-rsp-v2-2-cbrn-3-threat-model-rationale",
+      "auditor": "B",
+      "finding": "The change log gives two co-ordinate reasons in one sentence; \"as its reason\" reads as the only reason given.",
+      "disposition": "Applied. The sentence was re-read in the cached PDF (p. 23): the two reasons are joined by \", and\" — the CBRN-3 threat-model reason and \"the relatively small number of employees who might be capable of model theft does not significantly affect the risk level\" — and a separate reason follows for AI R&D-4. The statement now says \"one of the two reasons it states\", the second clause is added as a second quoted evidence item (20 words; source-rsp-2-2 had 107 words of headroom), and the qualification names both."
+    },
+    {
+      "record": "ab-fw-rsp-v3-3-revises-novel-cb-threshold-and-off-cycle",
+      "auditor": "B",
+      "finding": "The locator says items (1) and (2), but the paraphrase also carries item (3).",
+      "disposition": "Applied. The entry was re-read in the cached PDF (p. 20): it has three numbered items, the third being the minor terminology changes the paraphrase reports. Locator changed to \"items (1) to (3)\". The auditor’s further remark that a quote would have fitted the 50-word limit is not a finding and was not acted on: the text layer of this PDF displaces the first character of many lines (\"T\" of \"This update\" sits on its own line), so a verbatim match of the entry cannot be checked mechanically, which is what the evidence note already says."
+    },
+    {
+      "record": "ab-fw-rsp-v3-2-novel-cb-threat-pathway-sharing",
+      "auditor": "A",
+      "finding": "The record states a provision but rests on a paraphrase alone; schema validation requires a supporting verbatim quote of at most 50 words from the cited edition. The auditor reports the cell’s sentence as 28 words and within both budgets.",
+      "disposition": "Not applied: the per-source budget does not allow it, contrary to the auditor. The sentence was verified in the cached edition (\"Additionally, we will identify the most concerning specific threat pathways, create policy recommendations for early detection and response for such threats, and share this content with policymakers.\", PDF p. 7). It is 27 words whole and 26 as the pack quotes it for v3.0, while source-rsp-3-2 has 22 words of headroom: the dataset already quotes 393 words of it against a limit of 415, and `tools.mjs check` reports \"rsp-3-2: 26+393 quoted words over limit 415\". The record keeps its paraphrase; its evidence note and a new openQuestion record the gap and the options."
+    }
+  ],
+  "sources": [
+    {
+      "key": "rsp-1-0",
+      "cacheKey": "rsp-1-0",
+      "datasetSource": "source-rsp-1-0",
+      "documentId": "rsp-2023",
+      "title": "Responsible Scaling Policy — v1.0",
+      "publisher": "Anthropic",
+      "url": "https://www-cdn.anthropic.com/1adf000c8f675958c2ee23805d91aaade1cd4613/responsible-scaling-policy.pdf",
+      "httpStatus": 200,
+      "sha256": "14785337769bee567dd488d346f9cf6e36fed7792da9656a0a8b55b2f6d21c43",
+      "retrievedAt": "2026-10-28",
+      "language": "en",
+      "documentWords": {
+        "count": 10538,
+        "basis": "Count taken over from the dataset source source-rsp-1-0; the file retrieved on 2026-10-28 is the same expression. Quote budget shared with that dataset source."
+      },
+      "version": "Responsible Scaling Policy v1.0; effective date 2023-09-19.",
+      "kind": "report",
+      "archive": null
+    },
+    {
+      "key": "rsp-2-0",
+      "cacheKey": "rsp-2-0",
+      "datasetSource": "source-rsp-2-0",
+      "documentId": "rsp-v2-0",
+      "title": "Responsible Scaling Policy — v2.0",
+      "publisher": "Anthropic",
+      "url": "https://www-cdn.anthropic.com/616dee633636e5bd309cb73aed8622e80fe47839.pdf",
+      "httpStatus": 200,
+      "sha256": "cc522e2770c6fec6c2808ce5abd8b757a8d7fe2078d029879295df8443185f7f",
+      "retrievedAt": "2026-10-28",
+      "language": "en",
+      "documentWords": {
+        "count": 9495,
+        "basis": "Count taken over from the dataset source source-rsp-2-0; the file retrieved on 2026-10-28 is the same expression. Quote budget shared with that dataset source."
+      },
+      "version": "Responsible Scaling Policy v2.0; effective date 2024-10-15. v2.0 identity is supplied by the official archive and later dated changelogs; the cover is not numbered.",
+      "kind": "report",
+      "archive": null
+    },
+    {
+      "key": "rsp-2-1",
+      "cacheKey": "rsp-2-1",
+      "datasetSource": "source-rsp-2-1",
+      "documentId": "rsp-v2-1",
+      "title": "Responsible Scaling Policy — v2.1",
+      "publisher": "Anthropic",
+      "url": "https://www-cdn.anthropic.com/17310f6d70ae5627f55313ed067afc1a762a4068.pdf",
+      "httpStatus": 200,
+      "sha256": "f0ac67ca61b1726cbcd159e6d2f595ce4f26de2ee29c594ba488f53f780d4ee7",
+      "retrievedAt": "2026-10-28",
+      "language": "en",
+      "documentWords": {
+        "count": 9755,
+        "basis": "Count taken over from the dataset source source-rsp-2-1; the file retrieved on 2026-10-28 is the same expression. Quote budget shared with that dataset source."
+      },
+      "version": "Responsible Scaling Policy v2.1; effective date 2025-03-31.",
+      "kind": "report",
+      "archive": null
+    },
+    {
+      "key": "rsp-2-2",
+      "cacheKey": "rsp-2-2",
+      "datasetSource": "source-rsp-2-2",
+      "documentId": "rsp-v2-2",
+      "title": "Responsible Scaling Policy — v2.2",
+      "publisher": "Anthropic",
+      "url": "https://www-cdn.anthropic.com/872c653b2d0501d6ab44cf87f43e1dc4853e4d37.pdf",
+      "httpStatus": 200,
+      "sha256": "4807f3970c76968a75a6dffa55d8ffe547014522b63c67e261cd02f7b6fc1e39",
+      "retrievedAt": "2026-10-28",
+      "language": "en",
+      "documentWords": {
+        "count": 9609,
+        "basis": "Count taken over from the dataset source source-rsp-2-2; the file retrieved on 2026-10-28 is the same expression. Quote budget shared with that dataset source."
+      },
+      "version": "Responsible Scaling Policy v2.2; effective date 2025-05-14.",
+      "kind": "report",
+      "archive": null
+    },
+    {
+      "key": "rsp-3-0",
+      "cacheKey": "rsp-3-0",
+      "datasetSource": "source-rsp-3-0",
+      "documentId": "rsp-v3-0",
+      "title": "Responsible Scaling Policy — v3.0",
+      "publisher": "Anthropic",
+      "url": "https://www-cdn.anthropic.com/e670587677525f28df69b59e5fb4c22cc5461a17.pdf",
+      "httpStatus": 200,
+      "sha256": "a71bfa08a7fa4b750b2b408b4b9c8681ad50c6b53271c314f591c59c84c38064",
+      "retrievedAt": "2026-10-28",
+      "language": "en",
+      "documentWords": {
+        "count": 7889,
+        "basis": "Count taken over from the dataset source source-rsp-3-0; the file retrieved on 2026-10-28 is the same expression. Quote budget shared with that dataset source."
+      },
+      "version": "Responsible Scaling Policy v3.0; effective date 2026-02-24.",
+      "kind": "report",
+      "archive": null
+    },
+    {
+      "key": "rsp-3-1",
+      "cacheKey": "rsp-3-1",
+      "datasetSource": "source-rsp-3-1",
+      "documentId": "rsp-v3-1",
+      "title": "Responsible Scaling Policy — v3.1",
+      "publisher": "Anthropic",
+      "url": "https://www-cdn.anthropic.com/files/4zrzovbb/website/bf04581e4f329735fd90634f6a1962c13c0bd351.pdf",
+      "httpStatus": 200,
+      "sha256": "5aa73a3b3155ef856e429711c8d156e18d9b5ce1e28c2e0a74019a2c3c764d7b",
+      "retrievedAt": "2026-10-28",
+      "language": "en",
+      "documentWords": {
+        "count": 7914,
+        "basis": "Count taken over from the dataset source source-rsp-3-1; the file retrieved on 2026-10-28 is the same expression. Quote budget shared with that dataset source."
+      },
+      "version": "Responsible Scaling Policy v3.1; effective date 2026-04-02.",
+      "kind": "report",
+      "archive": null
+    },
+    {
+      "key": "rsp-3-2",
+      "cacheKey": "rsp-3-2",
+      "datasetSource": "source-rsp-3-2",
+      "documentId": "rsp-v3-2",
+      "title": "Responsible Scaling Policy — v3.2",
+      "publisher": "Anthropic",
+      "url": "https://cdn.sanity.io/files/4zrzovbb/website/28c6241900d90410628a8a2003a5572faae4365a.pdf",
+      "httpStatus": 200,
+      "sha256": "5410e3d986cf6917e9105c3d3a661ccc91bfbcb8672bca18b7752ca394e3f2a1",
+      "retrievedAt": "2026-10-28",
+      "language": "en",
+      "documentWords": {
+        "count": 8315,
+        "basis": "Count taken over from the dataset source source-rsp-3-2; the file retrieved on 2026-10-28 is the same expression. Quote budget shared with that dataset source."
+      },
+      "version": "Responsible Scaling Policy v3.2; effective date 2026-04-29.",
+      "kind": "report",
+      "archive": null
+    },
+    {
+      "key": "rsp-3-3",
+      "cacheKey": "rsp-3-3",
+      "datasetSource": "source-rsp-3-3",
+      "documentId": "rsp-v3-3",
+      "title": "Responsible Scaling Policy — v3.3",
+      "publisher": "Anthropic",
+      "url": "https://cdn.sanity.io/files/4zrzovbb/website/c11e84981d0a7281a1b229f3fa6af0da66eaf43f.pdf",
+      "httpStatus": 200,
+      "sha256": "b7e7cc1e72e9371949415522ae3c9e61103cc739c5df64579af32dd941624f42",
+      "retrievedAt": "2026-10-28",
+      "language": "en",
+      "documentWords": {
+        "count": 8210,
+        "basis": "Count taken over from the dataset source source-rsp-3-3; the file retrieved on 2026-10-28 is the same expression. Quote budget shared with that dataset source."
+      },
+      "version": "Responsible Scaling Policy v3.3; effective date 2026-05-26.",
+      "kind": "report",
+      "archive": null
+    },
+    {
+      "key": "rsp-3-4",
+      "cacheKey": "rsp-3-4",
+      "datasetSource": "source-rsp-3-4",
+      "documentId": "rsp-v3-4",
+      "title": "Responsible Scaling Policy — v3.4",
+      "publisher": "Anthropic",
+      "url": "https://cdn.sanity.io/files/4zrzovbb/website/0bacdc8440ea96e62a8766d99ebe1d4eea6d5f3a.pdf",
+      "httpStatus": 200,
+      "sha256": "6247b9e4001fd342827526fabc476c9d4dd6b2041ac00055f0ccda26f4d0b07d",
+      "retrievedAt": "2026-10-28",
+      "language": "en",
+      "documentWords": {
+        "count": 8756,
+        "basis": "Count taken over from the dataset source source-rsp-3-4; the file retrieved on 2026-10-28 is the same expression. Quote budget shared with that dataset source."
+      },
+      "version": "Responsible Scaling Policy v3.4; effective date 2026-07-08.",
+      "kind": "report",
+      "archive": null
+    },
+    {
+      "key": "fsf-1-0",
+      "cacheKey": "fsf-1-0",
+      "datasetSource": "source-fsf-1-0",
+      "documentId": "fsf-2024",
+      "title": "Frontier Safety Framework — v1.0",
+      "publisher": "Google DeepMind",
+      "url": "https://storage.googleapis.com/deepmind-media/DeepMind.com/Blog/introducing-the-frontier-safety-framework/fsf-technical-report.pdf",
+      "httpStatus": 200,
+      "sha256": "3c073cd5c7a0dd03a07d0cc826fd9d5c76801f57441ac37ef6b2163e9261543d",
+      "retrievedAt": "2026-10-28",
+      "language": "en",
+      "documentWords": {
+        "count": 2865,
+        "basis": "Count taken over from the dataset source source-fsf-1-0; the file retrieved on 2026-10-28 is the same expression. Quote budget shared with that dataset source."
+      },
+      "version": "Frontier Safety Framework v1.0; publication date 2024-05-17.",
+      "kind": "report",
+      "archive": null
+    },
+    {
+      "key": "fsf-2-0",
+      "cacheKey": "fsf-2-0",
+      "datasetSource": "source-fsf-2-0",
+      "documentId": "fsf-v2-0",
+      "title": "Frontier Safety Framework — v2.0",
+      "publisher": "Google DeepMind",
+      "url": "https://storage.googleapis.com/deepmind-media/DeepMind.com/Blog/updating-the-frontier-safety-framework/Frontier%20Safety%20Framework%202.0.pdf",
+      "httpStatus": 200,
+      "sha256": "14a48e4ef052fba75b651ea23845c2e9557f5c638e2767656decc6410861aae3",
+      "retrievedAt": "2026-10-28",
+      "language": "en",
+      "documentWords": {
+        "count": 4092,
+        "basis": "Count taken over from the dataset source source-fsf-2-0; the file retrieved on 2026-10-28 is the same expression. Quote budget shared with that dataset source."
+      },
+      "version": "Frontier Safety Framework v2.0; publication date 2025-02-04.",
+      "kind": "report",
+      "archive": null
+    },
+    {
+      "key": "fsf-3-0",
+      "cacheKey": "fsf-3-0",
+      "datasetSource": "source-fsf-3-0",
+      "documentId": "fsf-v3-0",
+      "title": "Frontier Safety Framework — v3.0",
+      "publisher": "Google DeepMind",
+      "url": "https://storage.googleapis.com/deepmind-media/DeepMind.com/Blog/strengthening-our-frontier-safety-framework/frontier-safety-framework_3.pdf",
+      "httpStatus": 200,
+      "sha256": "87ebf40b747b98468226b2198442b45ff54854975f6e9882d9ece2d009082fe5",
+      "retrievedAt": "2026-10-28",
+      "language": "en",
+      "documentWords": {
+        "count": 6054,
+        "basis": "Count taken over from the dataset source source-fsf-3-0; the file retrieved on 2026-10-28 is the same expression. Quote budget shared with that dataset source."
+      },
+      "version": "Frontier Safety Framework v3.0; publication date 2025-09-22.",
+      "kind": "report",
+      "archive": null
+    },
+    {
+      "key": "fsf-3-1",
+      "cacheKey": "fsf-3-1",
+      "datasetSource": "source-fsf-3-1",
+      "documentId": "fsf-v3-1",
+      "title": "Frontier Safety Framework — v3.1",
+      "publisher": "Google DeepMind",
+      "url": "https://storage.googleapis.com/deepmind-media/DeepMind.com/Blog/strengthening-our-frontier-safety-framework/frontier-safety-framework_3-1.pdf",
+      "httpStatus": 200,
+      "sha256": "ad10d2d240e0d557ecad406dbccedcbb4a70295f8ba8eec46bfe01803cb9c301",
+      "retrievedAt": "2026-10-28",
+      "language": "en",
+      "documentWords": {
+        "count": 8025,
+        "basis": "Count taken over from the dataset source source-fsf-3-1; the file retrieved on 2026-10-28 is the same expression. Quote budget shared with that dataset source."
+      },
+      "version": "Frontier Safety Framework v3.1; publication date 2026-04-17.",
+      "kind": "report",
+      "archive": null
+    },
+    {
+      "key": "pf-beta",
+      "cacheKey": "pf-beta",
+      "datasetSource": "source-pf-beta",
+      "documentId": "preparedness-beta-2023",
+      "title": "Preparedness Framework — Beta",
+      "publisher": "OpenAI",
+      "url": "https://cdn.openai.com/openai-preparedness-framework-beta.pdf",
+      "httpStatus": 200,
+      "sha256": "c84e3a59c7dab251e45434e0b0d3e8abadcea7293f995cf92d32269e7d290398",
+      "retrievedAt": "2026-10-28",
+      "language": "en",
+      "documentWords": {
+        "count": 6620,
+        "basis": "Count taken over from the dataset source source-pf-beta; the file retrieved on 2026-10-28 is the same expression. Quote budget shared with that dataset source."
+      },
+      "version": "Preparedness Framework Beta; publication date 2023-12-18.",
+      "kind": "report",
+      "archive": null
+    },
+    {
+      "key": "pf-2",
+      "cacheKey": "pf-2",
+      "datasetSource": "source-pf-2",
+      "documentId": "preparedness-v2",
+      "title": "Preparedness Framework — Version 2",
+      "publisher": "OpenAI",
+      "url": "https://cdn.openai.com/pdf/18a02b5d-6b67-4cec-ab64-68cdfbddebcd/preparedness-framework-v2.pdf",
+      "httpStatus": 200,
+      "sha256": "fae6e4cc6f7212a010bb9348fc0cde1fe711b9cad426c6a99db97740ee52729b",
+      "retrievedAt": "2026-10-28",
+      "language": "en",
+      "documentWords": {
+        "count": 10260,
+        "basis": "Count taken over from the dataset source source-pf-2; the file retrieved on 2026-10-28 is the same expression. Quote budget shared with that dataset source."
+      },
+      "version": "Preparedness Framework Version 2; revision date 2025-04-15.",
+      "kind": "report",
+      "archive": null
+    },
+    {
+      "key": "fgf-2026",
+      "cacheKey": "fgf-2026",
+      "datasetSource": "source-fgf-2026",
+      "documentId": "frontier-governance-2026",
+      "title": "Frontier Governance Framework — May 2026 edition",
+      "publisher": "OpenAI",
+      "url": "https://cdn.openai.com/pdf/e37d949b-8c9f-4d76-b99e-4272f4631a7e/openai-frontier-governance-framework.pdf",
+      "httpStatus": 200,
+      "sha256": "33e4e118b24d56786c2292df6ed4d9ec635f8887b22986f98ce3c09896fcfffc",
+      "retrievedAt": "2026-10-28",
+      "language": "en",
+      "documentWords": {
+        "count": 4279,
+        "basis": "Count taken over from the dataset source source-fgf-2026; the file retrieved on 2026-10-28 is the same expression. Quote budget shared with that dataset source."
+      },
+      "version": "Frontier Governance Framework May 2026 edition; publication date 2026-05-28.",
+      "kind": "report",
+      "archive": null
+    },
+    {
+      "key": "faif-2025",
+      "cacheKey": "faif-2025",
+      "datasetSource": "source-faif-2025",
+      "documentId": "faif-2025",
+      "title": "Frontier Artificial Intelligence Framework — December 2025 edition",
+      "publisher": "xAI",
+      "url": "https://data.x.ai/2025-12-31-xai-frontier-artificial-intelligence-framework.pdf",
+      "httpStatus": 200,
+      "sha256": "aa01669c19fca50c85323595141d08f98076cf0c48ed8f4a114ad6420c1a1012",
+      "retrievedAt": "2026-10-28",
+      "language": "en",
+      "documentWords": {
+        "count": 4169,
+        "basis": "Count taken over from the dataset source source-faif-2025; the file retrieved on 2026-10-28 is the same expression. Quote budget shared with that dataset source."
+      },
+      "version": "Frontier Artificial Intelligence Framework December 2025 edition; revision date 2025-12-30.",
+      "kind": "report",
+      "archive": null
+    },
+    {
+      "key": "ms-fgf-2025",
+      "cacheKey": "ms-fgf-2025",
+      "datasetSource": "source-ms-fgf-2025",
+      "documentId": "ms-fgf-2025",
+      "title": "Frontier Governance Framework — Version 1 (February 2025)",
+      "publisher": "Microsoft",
+      "url": "https://cdn-dynmedia-1.microsoft.com/is/content/microsoftcorp/microsoft/final/en-us/microsoft-brand/documents/Microsoft-Frontier-Governance-Framework.pdf",
+      "httpStatus": 200,
+      "sha256": "da0d8b1507a305fb8b5148b560d8be426549b854ca8888b999874d00e6170c4f",
+      "retrievedAt": "2026-10-28",
+      "language": "en",
+      "documentWords": {
+        "count": 4224,
+        "basis": "Count taken over from the dataset source source-ms-fgf-2025; the file retrieved on 2026-10-28 is the same expression. Quote budget shared with that dataset source."
+      },
+      "version": "Frontier Governance Framework, Version 1 (February 2025); its change log reads “8 February 2025 – First version”. The file served at the recorded address (last modified 2025-02-12) is byte-identical to the Internet Archive capture of 2025-02-26, the earliest located.",
+      "kind": "report",
+      "archive": null
+    },
+    {
+      "key": "ms-fgf-2026",
+      "cacheKey": "ms-fgf-2026",
+      "datasetSource": "source-ms-fgf-2026",
+      "documentId": "ms-fgf-2026",
+      "title": "Frontier Governance Framework — February 2026",
+      "publisher": "Microsoft",
+      "url": "https://cdn-dynmedia-1.microsoft.com/is/content/microsoftcorp/microsoft/msc/documents/presentations/CSR/Frontier-Governance-Framework-Feb-2026.pdf",
+      "httpStatus": 200,
+      "sha256": "3282e4fc65a84420f3bf1360d4716928883abce3d28b56804d0598c164111932",
+      "retrievedAt": "2026-10-28",
+      "language": "en",
+      "documentWords": {
+        "count": 5085,
+        "basis": "Count taken over from the dataset source source-ms-fgf-2026; the file retrieved on 2026-10-28 is the same expression. Quote budget shared with that dataset source."
+      },
+      "version": "Frontier Governance Framework, February 2026 edition (change log entry dated February 2026). The file served at the recorded address (last modified 2026-03-24) is byte-identical to the Internet Archive capture of 2026-04-24, the earliest located; a separate publication date was not established.",
+      "kind": "report",
+      "archive": null
+    }
+  ],
+  "documents": [
+    {
+      "id": "rsp-2023",
+      "existingEntity": true,
+      "title": "Responsible Scaling Policy (2023)",
+      "subtype": "Policy release",
+      "publisherId": "anthropic",
+      "family": "anthropic-rsp",
+      "label": "v1.0",
+      "dates": {
+        "publishedAt": "2023-09-19",
+        "effectiveAt": "2023-09-19",
+        "revisedAt": null
+      },
+      "dateNote": "Initial public policy dated September 19, 2023; original entity and publication claim retained.",
+      "language": "en"
+    },
+    {
+      "id": "rsp-v2-0",
+      "existingEntity": true,
+      "title": "Anthropic Responsible Scaling Policy — v2.0",
+      "subtype": "Framework version",
+      "publisherId": "anthropic",
+      "family": "anthropic-rsp",
+      "label": "v2.0",
+      "dates": {
+        "publishedAt": null,
+        "effectiveAt": "2024-10-15",
+        "revisedAt": null
+      },
+      "dateNote": "The stated effective date is retained; a separate publication day is not inferred.",
+      "language": "en"
+    },
+    {
+      "id": "rsp-v2-1",
+      "existingEntity": true,
+      "title": "Anthropic Responsible Scaling Policy — v2.1",
+      "subtype": "Framework version",
+      "publisherId": "anthropic",
+      "family": "anthropic-rsp",
+      "label": "v2.1",
+      "dates": {
+        "publishedAt": null,
+        "effectiveAt": "2025-03-31",
+        "revisedAt": null
+      },
+      "dateNote": "The stated effective date is retained; a separate publication day is not inferred.",
+      "language": "en"
+    },
+    {
+      "id": "rsp-v2-2",
+      "existingEntity": true,
+      "title": "Anthropic Responsible Scaling Policy — v2.2",
+      "subtype": "Framework version",
+      "publisherId": "anthropic",
+      "family": "anthropic-rsp",
+      "label": "v2.2",
+      "dates": {
+        "publishedAt": null,
+        "effectiveAt": "2025-05-14",
+        "revisedAt": null
+      },
+      "dateNote": "The stated effective date is retained; a separate publication day is not inferred.",
+      "language": "en"
+    },
+    {
+      "id": "rsp-v3-0",
+      "existingEntity": true,
+      "title": "Anthropic Responsible Scaling Policy — v3.0",
+      "subtype": "Framework version",
+      "publisherId": "anthropic",
+      "family": "anthropic-rsp",
+      "label": "v3.0",
+      "dates": {
+        "publishedAt": "2026-02-24",
+        "effectiveAt": "2026-02-24",
+        "revisedAt": null
+      },
+      "dateNote": "The cover effective date and release announcement publication date both identify February 24, 2026.",
+      "language": "en"
+    },
+    {
+      "id": "rsp-v3-1",
+      "existingEntity": true,
+      "title": "Anthropic Responsible Scaling Policy — v3.1",
+      "subtype": "Framework version",
+      "publisherId": "anthropic",
+      "family": "anthropic-rsp",
+      "label": "v3.1",
+      "dates": {
+        "publishedAt": null,
+        "effectiveAt": "2026-04-02",
+        "revisedAt": null
+      },
+      "dateNote": "The stated effective date is retained; a separate publication day is not inferred.",
+      "language": "en"
+    },
+    {
+      "id": "rsp-v3-2",
+      "existingEntity": true,
+      "title": "Anthropic Responsible Scaling Policy — v3.2",
+      "subtype": "Framework version",
+      "publisherId": "anthropic",
+      "family": "anthropic-rsp",
+      "label": "v3.2",
+      "dates": {
+        "publishedAt": null,
+        "effectiveAt": "2026-04-29",
+        "revisedAt": null
+      },
+      "dateNote": "The stated effective date is retained; a separate publication day is not inferred.",
+      "language": "en"
+    },
+    {
+      "id": "rsp-v3-3",
+      "existingEntity": true,
+      "title": "Anthropic Responsible Scaling Policy — v3.3",
+      "subtype": "Framework version",
+      "publisherId": "anthropic",
+      "family": "anthropic-rsp",
+      "label": "v3.3",
+      "dates": {
+        "publishedAt": null,
+        "effectiveAt": "2026-05-26",
+        "revisedAt": null
+      },
+      "dateNote": "The stated effective date is retained; a separate publication day is not inferred.",
+      "language": "en"
+    },
+    {
+      "id": "rsp-v3-4",
+      "existingEntity": true,
+      "title": "Anthropic Responsible Scaling Policy — v3.4",
+      "subtype": "Framework version",
+      "publisherId": "anthropic",
+      "family": "anthropic-rsp",
+      "label": "v3.4",
+      "dates": {
+        "publishedAt": null,
+        "effectiveAt": "2026-07-08",
+        "revisedAt": null
+      },
+      "dateNote": "The stated effective date is retained; a separate publication day is not inferred.",
+      "language": "en"
+    },
+    {
+      "id": "fsf-2024",
+      "existingEntity": true,
+      "title": "Frontier Safety Framework (2024)",
+      "subtype": "Framework release",
+      "publisherId": "google-deepmind",
+      "family": "deepmind-fsf",
+      "label": "v1.0",
+      "dates": {
+        "publishedAt": "2024-05-17",
+        "effectiveAt": null,
+        "revisedAt": null
+      },
+      "dateNote": "The sourced publication date does not establish an implementation or effective date.",
+      "language": "en"
+    },
+    {
+      "id": "fsf-v2-0",
+      "existingEntity": true,
+      "title": "Google DeepMind Frontier Safety Framework — v2.0",
+      "subtype": "Framework version",
+      "publisherId": "google-deepmind",
+      "family": "deepmind-fsf",
+      "label": "v2.0",
+      "dates": {
+        "publishedAt": "2025-02-04",
+        "effectiveAt": null,
+        "revisedAt": null
+      },
+      "dateNote": "The sourced publication date does not establish an implementation or effective date.",
+      "language": "en"
+    },
+    {
+      "id": "fsf-v3-0",
+      "existingEntity": true,
+      "title": "Google DeepMind Frontier Safety Framework — v3.0",
+      "subtype": "Framework version",
+      "publisherId": "google-deepmind",
+      "family": "deepmind-fsf",
+      "label": "v3.0",
+      "dates": {
+        "publishedAt": "2025-09-22",
+        "effectiveAt": null,
+        "revisedAt": null
+      },
+      "dateNote": "The sourced publication date does not establish an implementation or effective date.",
+      "language": "en"
+    },
+    {
+      "id": "fsf-v3-1",
+      "existingEntity": true,
+      "title": "Google DeepMind Frontier Safety Framework — v3.1",
+      "subtype": "Framework version",
+      "publisherId": "google-deepmind",
+      "family": "deepmind-fsf",
+      "label": "v3.1",
+      "dates": {
+        "publishedAt": "2026-04-17",
+        "effectiveAt": null,
+        "revisedAt": null
+      },
+      "dateNote": "The sourced publication date does not establish an implementation or effective date.",
+      "language": "en"
+    },
+    {
+      "id": "preparedness-beta-2023",
+      "existingEntity": true,
+      "title": "OpenAI Preparedness Framework — Beta",
+      "subtype": "Framework version",
+      "publisherId": "openai",
+      "family": "openai-preparedness",
+      "label": "Beta",
+      "dates": {
+        "publishedAt": "2023-12-18",
+        "effectiveAt": null,
+        "revisedAt": null
+      },
+      "dateNote": "The sourced publication date does not establish an implementation or effective date.",
+      "language": "en"
+    },
+    {
+      "id": "preparedness-v2",
+      "existingEntity": true,
+      "title": "OpenAI Preparedness Framework — Version 2",
+      "subtype": "Framework version",
+      "publisherId": "openai",
+      "family": "openai-preparedness",
+      "label": "Version 2",
+      "dates": {
+        "publishedAt": "2025-04-15",
+        "effectiveAt": null,
+        "revisedAt": "2025-04-15"
+      },
+      "dateNote": "Cover last-updated date and dated publication announcement both identify April 15, 2025; no distinct effective date is asserted.",
+      "language": "en"
+    },
+    {
+      "id": "frontier-governance-2026",
+      "existingEntity": true,
+      "title": "OpenAI Frontier Governance Framework — May 2026 edition",
+      "subtype": "Framework version",
+      "publisherId": "openai",
+      "family": "openai-frontier-governance",
+      "label": "May 2026 edition",
+      "dates": {
+        "publishedAt": "2026-05-28",
+        "effectiveAt": null,
+        "revisedAt": null
+      },
+      "dateNote": "Publication date comes from the release announcement; the PDF cover has no separate version date.",
+      "language": "en"
+    },
+    {
+      "id": "faif-2025",
+      "existingEntity": true,
+      "title": "xAI Frontier Artificial Intelligence Framework — December 2025 edition",
+      "subtype": "Framework version",
+      "publisherId": "xai",
+      "family": "xai-faif",
+      "label": "December 2025 edition",
+      "dates": {
+        "publishedAt": null,
+        "effectiveAt": null,
+        "revisedAt": "2025-12-30"
+      },
+      "dateNote": "The printed update date is retained; it is not silently treated as publication. The URL filename says December 31; the visible document says last updated December 30.",
+      "language": "en"
+    },
+    {
+      "id": "ms-fgf-2025",
+      "existingEntity": true,
+      "title": "Microsoft Frontier Governance Framework — Version 1 (February 2025)",
+      "subtype": "Framework version",
+      "publisherId": "microsoft",
+      "family": "microsoft-frontier-governance",
+      "label": "Feb 2025 (Version 1)",
+      "dates": {
+        "publishedAt": "2025-02",
+        "effectiveAt": null,
+        "revisedAt": null
+      },
+      "dateNote": "Page footers read “Version 1 (February 2025)” and the change log dates the first version 8 February 2025. No separate dated announcement was located; the earliest archive capture is 2025-02-26, so publication is dated only to the month.",
+      "language": "en"
+    },
+    {
+      "id": "ms-fgf-2026",
+      "existingEntity": true,
+      "title": "Microsoft Frontier Governance Framework — February 2026",
+      "subtype": "Framework version",
+      "publisherId": "microsoft",
+      "family": "microsoft-frontier-governance",
+      "label": "Feb 2026",
+      "dates": {
+        "publishedAt": null,
+        "effectiveAt": null,
+        "revisedAt": "2026-02"
+      },
+      "dateNote": "The edition’s footers and change log date it February 2026. A publication date is not established: the file was last modified 2026-03-24 and first captured 2026-04-24.",
+      "language": "en"
+    }
+  ],
+  "entities": [],
+  "claims": [
+    {
+      "group": "frameworks",
+      "strand": "Frameworks",
+      "proposedPredicate": false,
+      "derivation": "explicit",
+      "resolution": "supported",
+      "extends": null,
+      "hazardNote": null,
+      "id": "ab-fw-rsp-2023-asl2-bio-information-level",
+      "subject": "rsp-2023",
+      "predicate": "states_provision",
+      "object": {
+        "kind": "literal",
+        "value": "ASL-2 illustration: a system giving bioweapon-related information not findable via a search engine, but too unreliably to be useful"
+      },
+      "statement": "RSP v1.0 illustrates its ASL-2 level with an AI system that can provide bioweapon-related information that could not be found via a search engine, but does so too unreliably to be useful in practice.",
+      "time": {
+        "kind": "event",
+        "date": "2023-09-19",
+        "basis": "effective",
+        "note": "Provision as stated in this edition, dated by the edition’s effective date."
+      },
+      "qualification": "The record states how the edition illustrates a capability level. It is not a finding about any model, and the edition’s own ASL-2 row describes an example, not a measured capability.",
+      "attributes": {
+        "provision": {
+          "kind": "threshold",
+          "key": "rsp-asl2-bio-information-level"
+        }
+      },
+      "evidence": [
+        {
+          "source": "rsp-1-0",
+          "locator": "PDF p. 4 (printed p. 4), AI Safety Level table, ASL-2 row, “Dangerous Capabilities” column",
+          "passage": "an AI system that can provide bioweapon-related information that couldn’t be found via a search engine, but does so too unreliably to be useful in practice",
+          "passageType": "quote",
+          "translation": null,
+          "sourceRole": "primary",
+          "support": "supports",
+          "note": null
+        }
+      ]
+    },
+    {
+      "group": "frameworks",
+      "strand": "Frameworks",
+      "proposedPredicate": false,
+      "derivation": "explicit",
+      "resolution": "supported",
+      "extends": "cmp-rsp-2023-d1-cbrn",
+      "hazardNote": null,
+      "id": "ab-fw-rsp-2023-bio-evaluation-first-area",
+      "subject": "rsp-2023",
+      "predicate": "states_provision",
+      "object": {
+        "kind": "literal",
+        "value": "First area of evaluation effort is bioweapons risk, with threat models and capabilities set in consultation with biosecurity experts"
+      },
+      "statement": "RSP v1.0 states that Anthropic’s first area of effort is evaluating bioweapons risks, for which it will determine threat models and capabilities in consultation with a number of world-class biosecurity experts.",
+      "time": {
+        "kind": "event",
+        "date": "2023-09-19",
+        "basis": "effective",
+        "note": "Provision as stated in this edition, dated by the edition’s effective date."
+      },
+      "qualification": "A stated intention in the edition. It is not evidence that any evaluation was built, run or completed, and it names no expert or organisation.",
+      "attributes": {
+        "provision": {
+          "kind": "evaluation_timing",
+          "key": "rsp-bio-evaluation-development"
+        }
+      },
+      "evidence": [
+        {
+          "source": "rsp-1-0",
+          "locator": "PDF p. 7 (printed p. 7), section “ASL-3 Capabilities and Threat Models”, item 1, paragraph following the misuse threshold",
+          "passage": "Our first area of effort is in evaluating bioweapons risks where we will determine threat models and capabilities in consultation with a number of world-class biosecurity experts.",
+          "passageType": "quote",
+          "translation": null,
+          "sourceRole": "primary",
+          "support": "supports",
+          "note": null
+        }
+      ]
+    },
+    {
+      "group": "frameworks",
+      "strand": "Frameworks",
+      "proposedPredicate": false,
+      "derivation": "explicit",
+      "resolution": "supported",
+      "extends": null,
+      "hazardNote": "Only the domain-scoping sentence of the red-teaming bullet is cited; the surrounding sentences describing elicitation were not recorded.",
+      "id": "ab-fw-rsp-2023-asl3-redteam-cbrn-domains",
+      "subject": "rsp-2023",
+      "predicate": "states_provision",
+      "object": {
+        "kind": "literal",
+        "value": "ASL-3 deployment red-teaming must cover at least extreme CBRN risks and cybersecurity"
+      },
+      "statement": "RSP v1.0 states that the misuse domains covered by its ASL-3 deployment red-teaming measure should at a minimum include causes of extreme CBRN risks, and cybersecurity.",
+      "time": {
+        "kind": "event",
+        "date": "2023-09-19",
+        "basis": "effective",
+        "note": "Provision as stated in this edition, dated by the edition’s effective date."
+      },
+      "qualification": "A stated requirement of the edition. It is not evidence that red-teaming was performed, nor that it would detect anything.",
+      "attributes": {
+        "provision": {
+          "kind": "required_action",
+          "key": "rsp-asl3-redteam-domains"
+        }
+      },
+      "evidence": [
+        {
+          "source": "rsp-1-0",
+          "locator": "PDF p. 8 (printed p. 8), “ASL-3 Deployment Measures”, bullet “Successfully pass red-teaming”, second sentence",
+          "passage": "Misuse domains should at a minimum include causes of extreme CBRN risks, and cybersecurity.",
+          "passageType": "quote",
+          "translation": null,
+          "sourceRole": "primary",
+          "support": "supports",
+          "note": null
+        }
+      ]
+    },
+    {
+      "group": "frameworks",
+      "strand": "Frameworks",
+      "proposedPredicate": false,
+      "derivation": "explicit",
+      "resolution": "supported",
+      "extends": null,
+      "hazardNote": null,
+      "id": "ab-fw-rsp-2023-tiered-access-biology-exception",
+      "subject": "rsp-2023",
+      "predicate": "states_provision",
+      "object": {
+        "kind": "literal",
+        "value": "Tiered access: harmful biology capabilities usable for cancer research may be opened to a small group of vetted researchers"
+      },
+      "statement": "RSP v1.0 states, as an example of its tiered-access measure, that potentially harmful biology capabilities that could be used for cancer research might be made available to a small group of vetted researchers at organisations committing to strong, well defined and thoroughly vetted security and internal controls.",
+      "time": {
+        "kind": "event",
+        "date": "2023-09-19",
+        "basis": "effective",
+        "note": "Provision as stated in this edition, dated by the edition’s effective date."
+      },
+      "qualification": "A stated exception in the edition, given as an example. It records no grant of access to anyone and names no organisation.",
+      "attributes": {
+        "provision": {
+          "kind": "exception",
+          "key": "rsp-tiered-access-vetted-users"
+        }
+      },
+      "evidence": [
+        {
+          "source": "rsp-1-0",
+          "locator": "PDF p. 9 (printed p. 9), “ASL-3 Deployment Measures”, bullet “Tiered access”, example sentence",
+          "passage": "The bullet says that, in limited cases, models with capabilities relevant to catastrophic harm may be made available to a select group of vetted users with a legitimate and beneficial use case that cannot be separated from dangerous capabilities, and gives as its example potentially harmful biology capabilities usable for cancer research being made available to a small group of vetted researchers at organisations that commit to strong, well defined and thoroughly vetted security and internal controls.",
+          "passageType": "paraphrase",
+          "translation": null,
+          "sourceRole": "primary",
+          "support": "supports",
+          "note": "Paraphrased rather than quoted to stay inside this source’s quotation budget, which is largely used by the dataset’s existing records."
+        }
+      ]
+    },
+    {
+      "group": "frameworks",
+      "strand": "Frameworks",
+      "proposedPredicate": false,
+      "derivation": "explicit",
+      "resolution": "supported",
+      "extends": null,
+      "hazardNote": null,
+      "id": "ab-fw-rsp-2023-asl4-anticipated-misuse-level",
+      "subject": "rsp-2023",
+      "predicate": "states_provision",
+      "object": {
+        "kind": "literal",
+        "value": "Early guess at ASL-4: AI models have become the primary source of national security risk in a major area, such as biological weapons"
+      },
+      "statement": "RSP v1.0 states, as an early guess at what ASL-4 will involve, a critical catastrophic misuse risk in which AI models have become the primary source of national security risk in a major area such as cyberattacks or biological weapons, rather than a significant contributor.",
+      "time": {
+        "kind": "event",
+        "date": "2023-09-19",
+        "basis": "effective",
+        "note": "Provision as stated in this edition, dated by the edition’s effective date."
+      },
+      "qualification": "The edition presents this as speculative and likely to change; the record states what the edition guesses, not a defined threshold or any capability of any model.",
+      "attributes": {
+        "provision": {
+          "kind": "threshold",
+          "key": "rsp-asl4-anticipated-misuse-level"
+        }
+      },
+      "evidence": [
+        {
+          "source": "rsp-1-0",
+          "locator": "PDF p. 14 (printed p. 14), “Early Thoughts on ASL-4 and Higher”, bullet “Critical catastrophic misuse risk”, first sentence",
+          "passage": "AI models have become the primary source of national security risk in a major area (such as cyberattacks or biological weapons)",
+          "passageType": "quote",
+          "translation": null,
+          "sourceRole": "primary",
+          "support": "supports",
+          "note": null
+        }
+      ]
+    },
+    {
+      "group": "frameworks",
+      "strand": "Frameworks",
+      "proposedPredicate": false,
+      "derivation": "explicit",
+      "resolution": "supported",
+      "extends": "prov-rsp-v2-0-misuse-uplift-threshold",
+      "hazardNote": null,
+      "id": "ab-fw-rsp-v2-0-cbrn-required-safeguards",
+      "subject": "rsp-v2-0",
+      "predicate": "states_provision",
+      "object": {
+        "kind": "literal",
+        "value": "CBRN Capability Threshold requires the ASL-3 Deployment Standard and the ASL-3 Security Standard"
+      },
+      "statement": "RSP v2.0 states that the Required Safeguards for its CBRN weapons Capability Threshold are the ASL-3 Deployment Standard and the ASL-3 Security Standard, which it describes as protecting against misuse and model-weight theft by non-state adversaries.",
+      "time": {
+        "kind": "event",
+        "date": "2024-10-15",
+        "basis": "effective",
+        "note": "Provision as stated in this edition, dated by the edition’s effective date."
+      },
+      "qualification": "A stated requirement of the edition, not evidence that either standard was met, implemented or is adequate.",
+      "attributes": {
+        "provision": {
+          "kind": "required_action",
+          "key": "rsp-cbrn-required-safeguards"
+        }
+      },
+      "evidence": [
+        {
+          "source": "rsp-2-0",
+          "locator": "PDF p. 7 (printed p. 3), §2 Capability Thresholds and Required Safeguards, table row “Chemical, Biological, Radiological, and Nuclear (CBRN) weapons”, Required Safeguards column, second sentence",
+          "passage": "The ASL-3 Deployment Standard and the ASL-3 Security Standard, which protect against misuse and model-weight theft by non-state adversaries, are required.",
+          "passageType": "quote",
+          "translation": null,
+          "sourceRole": "primary",
+          "support": "supports",
+          "note": null
+        }
+      ]
+    },
+    {
+      "group": "frameworks",
+      "strand": "Frameworks",
+      "proposedPredicate": false,
+      "derivation": "explicit",
+      "resolution": "supported",
+      "extends": "prov-rsp-v2-0-misuse-uplift-threshold",
+      "hazardNote": null,
+      "id": "ab-fw-rsp-v2-0-cbrn-assessment-baseline",
+      "subject": "rsp-v2-0",
+      "predicate": "states_provision",
+      "object": {
+        "kind": "literal",
+        "value": "CBRN threshold assessed against 2023-level online resources, with funding and up to a year but no initial specialised expertise"
+      },
+      "statement": "RSP v2.0 states that it assesses its CBRN weapons Capability Threshold by comparing what potential attackers could achieve with full model access against 2023-level online resources, assuming funding and up to one year of time to invest but no initial specialised expertise.",
+      "time": {
+        "kind": "event",
+        "date": "2024-10-15",
+        "basis": "effective",
+        "note": "Provision as stated in this edition, dated by the edition’s effective date."
+      },
+      "qualification": "The record states the comparison the edition sets for itself. The edition’s own footnote says the comparison is hard to make in practice; no assessment of any model is recorded.",
+      "attributes": {
+        "provision": {
+          "kind": "threshold",
+          "key": "rsp-cbrn-assessment-baseline"
+        }
+      },
+      "evidence": [
+        {
+          "source": "rsp-2-0",
+          "locator": "PDF p. 20 (printed p. 16), Appendix C: Detailed Capability Thresholds, paragraph “Chemical, Biological, Radiological, and Nuclear (CBRN) weapons”, second sentence",
+          "passage": "comparing what potential attackers could achieve with full model access versus 2023-level online resources, assuming they have funding and up to one year of time to invest, but no initial specialized expertise",
+          "passageType": "quote",
+          "translation": null,
+          "sourceRole": "primary",
+          "support": "supports",
+          "note": null
+        }
+      ]
+    },
+    {
+      "group": "frameworks",
+      "strand": "Frameworks",
+      "proposedPredicate": false,
+      "derivation": "explicit",
+      "resolution": "supported",
+      "extends": null,
+      "hazardNote": "The edition says the lists are sensitive and does not publish them; nothing from any such list is recorded here.",
+      "id": "ab-fw-rsp-v2-0-cbrn-capabilities-list-sharing",
+      "subject": "rsp-v2-0",
+      "predicate": "states_provision",
+      "object": {
+        "kind": "literal",
+        "value": "A list of specific CBRN capabilities of concern is maintained, treated as sensitive, and planned to be shared with AI Safety Institutes and the Frontier Model Forum"
+      },
+      "statement": "RSP v2.0 states that Anthropic maintains a current list of specific CBRN capabilities of concern for which it would implement stronger mitigations, treats these lists as sensitive, and plans to share them with organisations such as AI Safety Institutes and the Frontier Model Forum.",
+      "time": {
+        "kind": "event",
+        "date": "2024-10-15",
+        "basis": "effective",
+        "note": "Provision as stated in this edition, dated by the edition’s effective date."
+      },
+      "qualification": "A stated intention. The record does not establish that any list exists in a given form, that it was shared, or what it contains; the list itself is not recorded.",
+      "attributes": {
+        "provision": {
+          "kind": "reporting",
+          "key": "rsp-cbrn-capabilities-list-sharing"
+        }
+      },
+      "evidence": [
+        {
+          "source": "rsp-2-0",
+          "locator": "PDF p. 20 (printed p. 16), Appendix C, footnote 21",
+          "passage": "we maintain a current list of specific CBRN capabilities of concern … we plan to share them with organizations such as AI Safety Institutes and the Frontier Model Forum",
+          "passageType": "quote",
+          "translation": null,
+          "sourceRole": "primary",
+          "support": "supports",
+          "note": null
+        }
+      ]
+    },
+    {
+      "group": "frameworks",
+      "strand": "Frameworks",
+      "proposedPredicate": false,
+      "derivation": "explicit",
+      "resolution": "supported",
+      "extends": null,
+      "hazardNote": null,
+      "id": "ab-fw-rsp-v2-1-cbrn-4-threshold",
+      "subject": "rsp-v2-1",
+      "predicate": "states_provision",
+      "object": {
+        "kind": "literal",
+        "value": "CBRN-4: substantial uplift to the CBRN development capabilities of moderately resourced state programs"
+      },
+      "statement": "RSP v2.1 states a CBRN-4 Capability Threshold: the ability to substantially uplift the CBRN development capabilities of moderately resourced state programs with relevant expert teams, such as by novel weapons design, substantially accelerating existing processes, or dramatically reducing technical barriers.",
+      "time": {
+        "kind": "event",
+        "date": "2025-03-31",
+        "basis": "effective",
+        "note": "Provision as stated in this edition, dated by the edition’s effective date."
+      },
+      "qualification": "The record states the threshold as the edition words it, at the generality of its own entry. It is not a finding about any model and names no state, programme or agent.",
+      "attributes": {
+        "provision": {
+          "kind": "threshold",
+          "key": "rsp-cbrn-4-threshold"
+        }
+      },
+      "evidence": [
+        {
+          "source": "rsp-2-1",
+          "locator": "PDF p. 8 (printed p. 4), §2 Capability Thresholds and Required Safeguards, table row “Chemical, Biological, Radiological, and Nuclear (CBRN) weapons”, entry “CBRN-4”, Capability Thresholds column",
+          "passage": "The ability to substantially uplift CBRN development capabilities of moderately resourced state programs (with relevant expert teams), such as by novel weapons design, substantially accelerating existing processes, or dramatic reduction in technical barriers.",
+          "passageType": "quote",
+          "translation": null,
+          "sourceRole": "primary",
+          "support": "supports",
+          "note": null
+        }
+      ]
+    },
+    {
+      "group": "frameworks",
+      "strand": "Frameworks",
+      "proposedPredicate": false,
+      "derivation": "explicit",
+      "resolution": "supported",
+      "extends": null,
+      "hazardNote": null,
+      "id": "ab-fw-rsp-v2-1-cbrn-4-expected-safeguards",
+      "subject": "rsp-v2-1",
+      "predicate": "states_provision",
+      "object": {
+        "kind": "literal",
+        "value": "CBRN-4 is expected to require the ASL-4 Deployment and Security Standards, not yet specified"
+      },
+      "statement": "RSP v2.1 states that it expects the CBRN-4 threshold to require the ASL-4 Deployment and Security Standards, and that it plans to add more information about what those entail in a future update.",
+      "time": {
+        "kind": "event",
+        "date": "2025-03-31",
+        "basis": "effective",
+        "note": "Provision as stated in this edition, dated by the edition’s effective date."
+      },
+      "qualification": "An expectation stated by the edition, with the content of the standards left undefined in it. It is not a commitment that the standards exist or a finding that any model reached the threshold.",
+      "attributes": {
+        "provision": {
+          "kind": "required_action",
+          "key": "rsp-cbrn-4-expected-safeguards"
+        }
+      },
+      "evidence": [
+        {
+          "source": "rsp-2-1",
+          "locator": "PDF p. 8 (printed p. 4), §2, table row “CBRN weapons”, entry “CBRN-4”, Required Safeguards column",
+          "passage": "We expect this threshold will require the ASL-4 Deployment and Security Standards. We plan to add more information about what those entail in a future update.",
+          "passageType": "quote",
+          "translation": null,
+          "sourceRole": "primary",
+          "support": "supports",
+          "note": null
+        }
+      ]
+    },
+    {
+      "group": "frameworks",
+      "strand": "Frameworks",
+      "proposedPredicate": false,
+      "derivation": "explicit",
+      "resolution": "supported",
+      "extends": null,
+      "hazardNote": null,
+      "id": "ab-fw-rsp-v2-1-adds-cbrn-development-threshold",
+      "subject": "rsp-v2-1",
+      "predicate": "changes_from",
+      "object": {
+        "kind": "entity",
+        "entityId": "rsp-v2-0"
+      },
+      "statement": "The RSP v2.1 change log states that the update adds a new capability threshold related to CBRN development, defining capabilities that could substantially uplift the development capabilities of moderately resourced state programs.",
+      "time": {
+        "kind": "event",
+        "date": "2025-03-31",
+        "basis": "effective",
+        "note": "Change as stated in the v2.1 change log, dated by the edition’s effective date."
+      },
+      "qualification": "The change is the publisher’s own description in its change log. It establishes no effect on practice and no safety ranking between the editions.",
+      "attributes": {
+        "changeBasis": "changelog"
+      },
+      "evidence": [
+        {
+          "source": "rsp-2-1",
+          "locator": "PDF p. 22 (printed p. 18), Changelog, entry “March 31, 2025 (RSP v2.1)”, paragraph “New Capability Thresholds”, first sentence",
+          "passage": "We have added a new capability threshold related to CBRN development, which defines capabilities that could substantially uplift the development capabilities of moderately resourced state programs.",
+          "passageType": "quote",
+          "translation": null,
+          "sourceRole": "primary",
+          "support": "supports",
+          "note": null
+        }
+      ]
+    },
+    {
+      "group": "frameworks",
+      "strand": "Frameworks",
+      "proposedPredicate": false,
+      "derivation": "explicit",
+      "resolution": "supported",
+      "extends": "rsp-v2-2-insider-scope",
+      "hazardNote": null,
+      "id": "ab-fw-rsp-v2-2-cbrn-3-threat-model-rationale",
+      "subject": "rsp-v2-2",
+      "predicate": "changes_from",
+      "object": {
+        "kind": "entity",
+        "entityId": "rsp-v2-1"
+      },
+      "statement": "The RSP v2.2 change log gives, as one of the two reasons it states for excluding sophisticated and state-compromised insiders from the ASL-3 Security Standard, that the CBRN-3 threat models entail large numbers of users having access to unguarded models, which it says is more likely to occur through a universal jailbreak than via model theft.",
+      "time": {
+        "kind": "event",
+        "date": "2025-05-14",
+        "basis": "effective",
+        "note": "Change as stated in the v2.2 change log, dated by the edition’s effective date."
+      },
+      "qualification": "The record states one of the two co-ordinate reasons the change log gives in that sentence; the other is quoted as the second evidence item, and the entry gives a separate reason for AI R&D-4. It is not an assessment of whether the reasoning holds, and it says nothing about Anthropic’s actual security measures.",
+      "attributes": {
+        "changeBasis": "changelog"
+      },
+      "evidence": [
+        {
+          "source": "rsp-2-2",
+          "locator": "PDF p. 23 (printed p. 19), Changelog, entry “May 14, 2025 (RSP v2.2)”, paragraph “ASL-3 Security”, third sentence",
+          "passage": "the CBRN-3 threat models entail large numbers of users having access to unguarded models (which is more likely to occur through a universal jailbreak than via model theft)",
+          "passageType": "quote",
+          "translation": null,
+          "sourceRole": "primary",
+          "support": "supports",
+          "note": null
+        },
+        {
+          "source": "rsp-2-2",
+          "locator": "PDF p. 23 (printed p. 19), Changelog, entry “May 14, 2025 (RSP v2.2)”, paragraph “ASL-3 Security”, third sentence, second clause",
+          "passage": "the relatively small number of employees who might be capable of model theft does not significantly affect the risk level",
+          "passageType": "quote",
+          "translation": null,
+          "sourceRole": "primary",
+          "support": "supports",
+          "note": "Added after the audit of 2026-10-28: the second of the two reasons the sentence gives, cited so that the reason in the statement is not read as the only one."
+        }
+      ]
+    },
+    {
+      "group": "frameworks",
+      "strand": "Frameworks",
+      "proposedPredicate": false,
+      "derivation": "explicit",
+      "resolution": "supported",
+      "extends": null,
+      "hazardNote": "Only the commitment is recorded; the edition names no pathway and none is recorded here.",
+      "id": "ab-fw-rsp-v3-0-novel-cb-threat-pathway-sharing",
+      "subject": "rsp-v3-0",
+      "predicate": "states_provision",
+      "object": {
+        "kind": "literal",
+        "value": "At the novel chemical/biological threshold: identify the most concerning threat pathways, make policy recommendations for early detection and response, and share them with policymakers"
+      },
+      "statement": "RSP v3.0 states that, for its novel chemical/biological weapons production threshold, Anthropic will identify the most concerning specific threat pathways, create policy recommendations for early detection and response, and share this content with policymakers.",
+      "time": {
+        "kind": "event",
+        "date": "2026-02-24",
+        "basis": "effective",
+        "note": "Provision as stated in this edition, dated by the edition’s effective date."
+      },
+      "qualification": "A stated commitment of the edition. Nothing in the record says that any pathway was identified, any recommendation made or anything shared; no pathway is named.",
+      "attributes": {
+        "provision": {
+          "kind": "reporting",
+          "key": "rsp-novel-cb-threat-pathway-sharing"
+        }
+      },
+      "evidence": [
+        {
+          "source": "rsp-3-0",
+          "locator": "PDF p. 7 (printed p. 7), §1 Our Recommendations for Industry-Wide Safety, threshold table, row “Novel chemical/biological weapons production”, middle column (“Mitigations—our plan as a company”), second paragraph",
+          "passage": "we will identify the most concerning specific threat pathways, create policy recommendations for early detection and response for such threats, and share this content with policymakers",
+          "passageType": "quote",
+          "translation": null,
+          "sourceRole": "primary",
+          "support": "supports",
+          "note": null
+        }
+      ]
+    },
+    {
+      "group": "frameworks",
+      "strand": "Frameworks",
+      "proposedPredicate": false,
+      "derivation": "explicit",
+      "resolution": "supported",
+      "extends": null,
+      "hazardNote": null,
+      "id": "ab-fw-rsp-v3-0-novel-cb-mitigations",
+      "subject": "rsp-v3-0",
+      "predicate": "states_provision",
+      "object": {
+        "kind": "literal",
+        "value": "At the novel chemical/biological threshold: protections at least as strong as ASL-3, applied to an expanded set of use cases"
+      },
+      "statement": "RSP v3.0 states that, at its novel chemical/biological weapons production threshold, Anthropic will apply protections at least as strong as its ASL-3 protections to an expanded set of potential use cases for AI, covering what it calls the most likely vectors for this threat.",
+      "time": {
+        "kind": "event",
+        "date": "2026-02-24",
+        "basis": "effective",
+        "note": "Provision as stated in this edition, dated by the edition’s effective date."
+      },
+      "qualification": "A stated plan of the edition, not evidence of implementation or of effectiveness; the edition does not define the expanded set of use cases.",
+      "attributes": {
+        "provision": {
+          "kind": "required_action",
+          "key": "rsp-novel-cb-mitigations"
+        }
+      },
+      "evidence": [
+        {
+          "source": "rsp-3-0",
+          "locator": "PDF p. 7 (printed p. 7), §1, threshold table, row “Novel chemical/biological weapons production”, middle column, first paragraph",
+          "passage": "The column says Anthropic will apply protections at least as strong as its ASL-3 protections, described in the previous row, to an expanded set of potential use cases for AI, covering the most likely vectors for this threat.",
+          "passageType": "paraphrase",
+          "translation": null,
+          "sourceRole": "primary",
+          "support": "supports",
+          "note": "Paraphrased because this source’s quotation budget is almost fully used by the dataset’s existing records."
+        }
+      ]
+    },
+    {
+      "group": "frameworks",
+      "strand": "Frameworks",
+      "proposedPredicate": false,
+      "derivation": "explicit",
+      "resolution": "supported",
+      "extends": null,
+      "hazardNote": null,
+      "id": "ab-fw-rsp-v3-0-non-novel-cb-industry-recommendation",
+      "subject": "rsp-v3-0",
+      "predicate": "states_provision",
+      "object": {
+        "kind": "literal",
+        "value": "Industry-wide recommendation at the non-novel chemical/biological threshold: a strong argument that individual users and small teams will not become significantly more likely to cause catastrophic harm"
+      },
+      "statement": "RSP v3.0 recommends, for any frontier developer at its non-novel chemical/biological weapons production threshold, a strong argument that individual users and relatively small teams will not become significantly more likely to cause catastrophic harm through use of product surfaces or theft of model weights.",
+      "time": {
+        "kind": "event",
+        "date": "2026-02-24",
+        "basis": "effective",
+        "note": "Provision as stated in this edition, dated by the edition’s effective date."
+      },
+      "qualification": "A recommendation the edition addresses to the industry, not a requirement on anyone and not a finding that any developer meets it.",
+      "attributes": {
+        "provision": {
+          "kind": "required_action",
+          "key": "rsp-non-novel-cb-industry-recommendation"
+        }
+      },
+      "evidence": [
+        {
+          "source": "rsp-3-0",
+          "locator": "PDF p. 6 (printed p. 6), §1, threshold table, row “Non-novel chemical/biological weapons production”, right column (“Mitigations—ambitious industry-wide recommendations”), first sentence",
+          "passage": "The column says a frontier developer should make a strong argument that individual users and relatively small teams will not become significantly more likely to cause catastrophic harm via their usage of product surfaces or via theft of model weights.",
+          "passageType": "paraphrase",
+          "translation": null,
+          "sourceRole": "primary",
+          "support": "supports",
+          "note": "Paraphrased because this source’s quotation budget is almost fully used by the dataset’s existing records."
+        }
+      ]
+    },
+    {
+      "group": "frameworks",
+      "strand": "Frameworks",
+      "proposedPredicate": false,
+      "derivation": "explicit",
+      "resolution": "supported",
+      "extends": null,
+      "hazardNote": null,
+      "id": "ab-fw-rsp-v3-1-non-novel-cb-industry-recommendation",
+      "subject": "rsp-v3-1",
+      "predicate": "states_provision",
+      "object": {
+        "kind": "literal",
+        "value": "Industry-wide recommendation at the non-novel chemical/biological threshold: a strong argument that individual users and small teams will not become significantly more likely to cause catastrophic harm"
+      },
+      "statement": "RSP v3.1 recommends, for any frontier developer at its non-novel chemical/biological weapons production threshold, a strong argument that individual users and relatively small teams will not become significantly more likely to cause catastrophic harm through use of product surfaces or theft of model weights.",
+      "time": {
+        "kind": "event",
+        "date": "2026-04-02",
+        "basis": "effective",
+        "note": "Provision as stated in this edition, dated by the edition’s effective date."
+      },
+      "qualification": "A recommendation the edition addresses to the industry, not a requirement on anyone and not a finding that any developer meets it.",
+      "attributes": {
+        "provision": {
+          "kind": "required_action",
+          "key": "rsp-non-novel-cb-industry-recommendation"
+        }
+      },
+      "evidence": [
+        {
+          "source": "rsp-3-1",
+          "locator": "PDF p. 6 (printed p. 6), §1 Our Recommendations for Industry-Wide Safety, threshold table, row “Non-novel chemical/biological weapons production”, right column (“Mitigations—ambitious industry-wide recommendations”), first sentence",
+          "passage": "The column says a frontier developer should make a strong argument that individual users and relatively small teams will not become significantly more likely to cause catastrophic harm via their usage of product surfaces or via theft of model weights.",
+          "passageType": "paraphrase",
+          "translation": null,
+          "sourceRole": "primary",
+          "support": "supports",
+          "note": "Paraphrased, not quoted: the text layer of this PDF interleaves the table columns and displaces the first character of many lines, so a verbatim match cannot be checked mechanically against it."
+        }
+      ]
+    },
+    {
+      "group": "frameworks",
+      "strand": "Frameworks",
+      "proposedPredicate": false,
+      "derivation": "explicit",
+      "resolution": "supported",
+      "extends": null,
+      "hazardNote": "Only the commitment is recorded; the edition names no pathway and none is recorded here.",
+      "id": "ab-fw-rsp-v3-2-novel-cb-threat-pathway-sharing",
+      "subject": "rsp-v3-2",
+      "predicate": "states_provision",
+      "object": {
+        "kind": "literal",
+        "value": "At the novel chemical/biological threshold: identify the most concerning threat pathways, make policy recommendations for early detection and response, and share them with policymakers"
+      },
+      "statement": "RSP v3.2 states that, for its novel chemical/biological weapons production threshold, Anthropic will identify the most concerning specific threat pathways, create policy recommendations for early detection and response, and share this content with policymakers.",
+      "time": {
+        "kind": "event",
+        "date": "2026-04-29",
+        "basis": "effective",
+        "note": "Provision as stated in this edition, dated by the edition’s effective date."
+      },
+      "qualification": "A stated commitment of the edition. Nothing in the record says that any pathway was identified, any recommendation made or anything shared; no pathway is named.",
+      "attributes": {
+        "provision": {
+          "kind": "reporting",
+          "key": "rsp-novel-cb-threat-pathway-sharing"
+        }
+      },
+      "evidence": [
+        {
+          "source": "rsp-3-2",
+          "locator": "PDF p. 7 (printed p. 7), §1, threshold table, row “Novel chemical/biological weapons production”, middle column (“Mitigations—our plan as a company”), second paragraph",
+          "passage": "The column says Anthropic will identify the most concerning specific threat pathways, create policy recommendations for early detection and response for such threats, and share this content with policymakers. The wording matches the v3.0 passage quoted in ab-fw-rsp-v3-0-novel-cb-threat-pathway-sharing.",
+          "passageType": "paraphrase",
+          "translation": null,
+          "sourceRole": "primary",
+          "support": "supports",
+          "note": "Paraphrased because this source’s quotation budget is almost fully used by the dataset’s existing records. The audit of 2026-10-28 asked for the cell’s own sentence to be quoted, as schema validation requires of a stated provision; it was not added, because the sentence is 26 words as the pack quotes it for v3.0 and source-rsp-3-2 has 22 words of headroom (393 quoted of a limit of 415), so `tools.mjs check` reports the quote as over the limit. See openQuestions."
+        }
+      ]
+    },
+    {
+      "group": "frameworks",
+      "strand": "Frameworks",
+      "proposedPredicate": false,
+      "derivation": "explicit",
+      "resolution": "supported",
+      "extends": null,
+      "hazardNote": null,
+      "id": "ab-fw-rsp-v3-3-off-cycle-risk-report-cb-trigger",
+      "subject": "rsp-v3-3",
+      "predicate": "states_provision",
+      "object": {
+        "kind": "literal",
+        "value": "Off-cycle risk analysis is triggered by public deployment of a model significantly more capable than all models whose chemical/biological weapons production risks have been publicly analysed"
+      },
+      "statement": "RSP v3.3 states that Anthropic will publish an off-cycle analysis of a model’s risks when it publicly deploys a model it determines to be significantly more capable than all models for which it has publicly analysed risks related to chemical/biological weapons production, high-stakes misalignment or automated research and development.",
+      "time": {
+        "kind": "event",
+        "date": "2026-05-26",
+        "basis": "effective",
+        "note": "Provision as stated in this edition, dated by the edition’s effective date."
+      },
+      "qualification": "A stated reporting trigger. The record does not say that the trigger was met or that any analysis was published, and the determination of greater capability is the publisher’s own.",
+      "attributes": {
+        "provision": {
+          "kind": "reporting",
+          "key": "rsp-off-cycle-cb-analysis-trigger"
+        }
+      },
+      "evidence": [
+        {
+          "source": "rsp-3-3",
+          "locator": "PDF p. 11 (printed p. 11), section on off-cycle updates to Risk Reports, first bullet of the list of circumstances",
+          "passage": "The bullet gives, as a circumstance in which Anthropic will provide an off-cycle analysis of how a model’s capabilities and propensities affect or change prior analyses, the public deployment of a model it determines to be significantly more capable than all models for which it has publicly analysed risks related to chemical/biological weapons production, high-stakes misalignment or automated research and development, naming a prior Risk Report, system card or other public artifact as examples of such analysis.",
+          "passageType": "paraphrase",
+          "translation": null,
+          "sourceRole": "primary",
+          "support": "supports",
+          "note": "Paraphrased, not quoted: the text layer of this PDF displaces the first character of many lines, so a verbatim match cannot be checked mechanically against it."
+        }
+      ]
+    },
+    {
+      "group": "frameworks",
+      "strand": "Frameworks",
+      "proposedPredicate": false,
+      "derivation": "explicit",
+      "resolution": "supported",
+      "extends": "provchange-rsp-v3-3-novel-cb-threshold",
+      "hazardNote": null,
+      "id": "ab-fw-rsp-v3-3-revises-novel-cb-threshold-and-off-cycle",
+      "subject": "rsp-v3-3",
+      "predicate": "changes_from",
+      "object": {
+        "kind": "entity",
+        "entityId": "rsp-v3-2"
+      },
+      "statement": "The RSP v3.3 change log states that the update revises Anthropic’s threshold for novel chemical/biological weapons production to better track the threat model of concern, and refines its approach to off-cycle updates regarding the risks of individual models.",
+      "time": {
+        "kind": "event",
+        "date": "2026-05-26",
+        "basis": "effective",
+        "note": "Change as stated in the v3.3 change log, dated by the edition’s effective date."
+      },
+      "qualification": "The publisher’s own description of its change. It establishes no effect on practice and no safety ranking between the editions; the dataset record provchange-rsp-v3-3-novel-cb-threshold holds the threshold wording on each side.",
+      "attributes": {
+        "changeBasis": "changelog"
+      },
+      "evidence": [
+        {
+          "source": "rsp-3-3",
+          "locator": "PDF p. 20 (printed p. 19), Changelog, entry “May 26, 2026 (RSP v3.3)”, items (1) to (3)",
+          "passage": "The entry says the update revises the threshold for novel chemical/biological weapons production to better track the threat model of concern, refines the approach to off-cycle updates regarding the risks of individual models, and makes minor terminology changes.",
+          "passageType": "paraphrase",
+          "translation": null,
+          "sourceRole": "primary",
+          "support": "supports",
+          "note": "Paraphrased, not quoted: the text layer of this PDF displaces the first character of many lines, so a verbatim match cannot be checked mechanically against it."
+        }
+      ]
+    },
+    {
+      "group": "frameworks",
+      "strand": "Frameworks",
+      "proposedPredicate": false,
+      "derivation": "explicit",
+      "resolution": "supported",
+      "extends": null,
+      "hazardNote": null,
+      "id": "ab-fw-rsp-v3-4-off-cycle-risk-report-cb-trigger",
+      "subject": "rsp-v3-4",
+      "predicate": "states_provision",
+      "object": {
+        "kind": "literal",
+        "value": "Off-cycle risk analysis is triggered by public deployment of a model significantly more capable than all models whose chemical/biological weapons production risks have been publicly analysed"
+      },
+      "statement": "RSP v3.4 states that Anthropic will publish an off-cycle analysis of a model’s risks when it publicly deploys a model it determines to be significantly more capable than all models for which it has publicly analysed risks related to chemical/biological weapons production, high-stakes misalignment or automated research and development.",
+      "time": {
+        "kind": "event",
+        "date": "2026-07-08",
+        "basis": "effective",
+        "note": "Provision as stated in this edition, dated by the edition’s effective date."
+      },
+      "qualification": "A stated reporting trigger, recorded for the edition in force at the check date. The record does not say that the trigger was met or that any analysis was published.",
+      "attributes": {
+        "provision": {
+          "kind": "reporting",
+          "key": "rsp-off-cycle-cb-analysis-trigger"
+        }
+      },
+      "evidence": [
+        {
+          "source": "rsp-3-4",
+          "locator": "PDF p. 11 (printed p. 11), section on off-cycle updates to Risk Reports, first bullet of the list of circumstances",
+          "passage": "The bullet gives, as a circumstance in which Anthropic will provide an off-cycle analysis of how a model’s capabilities and propensities affect or change prior analyses, the public deployment of a model it determines to be significantly more capable than all models for which it has publicly analysed risks related to chemical/biological weapons production, high-stakes misalignment or automated research and development.",
+          "passageType": "paraphrase",
+          "translation": null,
+          "sourceRole": "primary",
+          "support": "supports",
+          "note": "Paraphrased, not quoted: the text layer of this PDF displaces the first character of many lines, so a verbatim match cannot be checked mechanically against it."
+        }
+      ]
+    },
+    {
+      "group": "frameworks",
+      "strand": "Frameworks",
+      "proposedPredicate": false,
+      "derivation": "explicit",
+      "resolution": "supported",
+      "extends": "cmp-fsf-2024-d1-cbrn",
+      "hazardNote": null,
+      "id": "ab-fw-fsf-2024-biosecurity-domain-definition",
+      "subject": "fsf-2024",
+      "predicate": "states_provision",
+      "object": {
+        "kind": "literal",
+        "value": "Biosecurity risk domain: risks of models assisting in the development, preparation and/or execution of a biological attack"
+      },
+      "statement": "The Frontier Safety Framework v1.0 defines its Biosecurity risk domain as risks of models assisting in the development, preparation and/or execution of a biological attack.",
+      "time": {
+        "kind": "event",
+        "date": "2024-05-17",
+        "basis": "publication",
+        "note": "Provision as stated in this edition, dated by the edition’s publication date."
+      },
+      "qualification": "The record states how the edition defines a risk domain. It is not a finding that any model assists in anything.",
+      "attributes": {
+        "provision": {
+          "kind": "risk_domain",
+          "key": "fsf-biosecurity-domain-definition"
+        }
+      },
+      "evidence": [
+        {
+          "source": "fsf-1-0",
+          "locator": "PDF p. 5 (printed p. 5), Critical Capability Levels table, “Risk domain” column, Biosecurity row",
+          "passage": "Biosecurity: Risks of models assisting in the development, preparation and/or execution of a biological attack.",
+          "passageType": "quote",
+          "translation": null,
+          "sourceRole": "primary",
+          "support": "supports",
+          "note": null
+        }
+      ]
+    },
+    {
+      "group": "frameworks",
+      "strand": "Frameworks",
+      "proposedPredicate": false,
+      "derivation": "explicit",
+      "resolution": "supported",
+      "extends": null,
+      "hazardNote": "Only the “Critical capability level” column is recorded. The table’s “Rationale” column, which descends to a technical register, was read and excluded.",
+      "id": "ab-fw-fsf-2024-bio-amateur-enablement-level-1",
+      "subject": "fsf-2024",
+      "predicate": "states_provision",
+      "object": {
+        "kind": "literal",
+        "value": "Bio amateur enablement level 1: significantly enabling a non-expert to develop known biothreats"
+      },
+      "statement": "The Frontier Safety Framework v1.0 states a Critical Capability Level named “Bio amateur enablement level 1”: capable of significantly enabling a non-expert to develop known biothreats that could increase their ability to cause severe harm compared to other means.",
+      "time": {
+        "kind": "event",
+        "date": "2024-05-17",
+        "basis": "publication",
+        "note": "Provision as stated in this edition, dated by the edition’s publication date."
+      },
+      "qualification": "The record states the capability level as the edition words it. It is not a finding about any model, and the edition gives no evaluation result for it.",
+      "attributes": {
+        "provision": {
+          "kind": "threshold",
+          "key": "fsf-bio-amateur-enablement-1"
+        }
+      },
+      "evidence": [
+        {
+          "source": "fsf-1-0",
+          "locator": "PDF p. 5 (printed p. 5), Critical Capability Levels table, Biosecurity row, “Critical capability level” column, first entry",
+          "passage": "Bio amateur enablement level 1: Capable of significantly enabling a non-expert to develop known biothreats that could increase their ability to cause severe harm compared to other means.",
+          "passageType": "quote",
+          "translation": null,
+          "sourceRole": "primary",
+          "support": "supports",
+          "note": null
+        }
+      ]
+    },
+    {
+      "group": "frameworks",
+      "strand": "Frameworks",
+      "proposedPredicate": false,
+      "derivation": "explicit",
+      "resolution": "supported",
+      "extends": null,
+      "hazardNote": "Only the “Critical capability level” column is recorded. The table’s “Rationale” column, which descends to a technical register, was read and excluded.",
+      "id": "ab-fw-fsf-2024-bio-expert-enablement-level-1",
+      "subject": "fsf-2024",
+      "predicate": "states_provision",
+      "object": {
+        "kind": "literal",
+        "value": "Bio expert enablement level 1: significantly enabling an expert to develop novel biothreats"
+      },
+      "statement": "The Frontier Safety Framework v1.0 states a Critical Capability Level named “Bio expert enablement level 1”: capable of significantly enabling an expert, which it glosses as PhD or above, to develop novel biothreats that could result in an incident of high severity.",
+      "time": {
+        "kind": "event",
+        "date": "2024-05-17",
+        "basis": "publication",
+        "note": "Provision as stated in this edition, dated by the edition’s publication date."
+      },
+      "qualification": "The record states the capability level as the edition words it. It is not a finding about any model, and the edition gives no evaluation result for it.",
+      "attributes": {
+        "provision": {
+          "kind": "threshold",
+          "key": "fsf-bio-expert-enablement-1"
+        }
+      },
+      "evidence": [
+        {
+          "source": "fsf-1-0",
+          "locator": "PDF p. 5 (printed p. 5), Critical Capability Levels table, Biosecurity row, “Critical capability level” column, second entry",
+          "passage": "Bio expert enablement level 1: Capable of significantly enabling an expert (i.e. PhD or above) to develop novel biothreats that could result in an incident of high severity.",
+          "passageType": "quote",
+          "translation": null,
+          "sourceRole": "primary",
+          "support": "supports",
+          "note": null
+        }
+      ]
+    },
+    {
+      "group": "frameworks",
+      "strand": "Frameworks",
+      "proposedPredicate": false,
+      "derivation": "explicit",
+      "resolution": "supported",
+      "extends": "cmp-fsf-v2-0-d1-cbrn",
+      "hazardNote": null,
+      "id": "ab-fw-fsf-v2-0-cbrn-domain-definition",
+      "subject": "fsf-v2-0",
+      "predicate": "states_provision",
+      "object": {
+        "kind": "literal",
+        "value": "CBRN risk domain: risks of models assisting in the development, preparation and/or execution of a CBRN attack"
+      },
+      "statement": "The Frontier Safety Framework v2.0 defines its CBRN risk domain as risks of models assisting in the development, preparation and/or execution of a chemical, biological, radiological or nuclear attack.",
+      "time": {
+        "kind": "event",
+        "date": "2025-02-04",
+        "basis": "publication",
+        "note": "Provision as stated in this edition, dated by the edition’s publication date."
+      },
+      "qualification": "The record states how the edition defines a risk domain. It is not a finding that any model assists in anything.",
+      "attributes": {
+        "provision": {
+          "kind": "risk_domain",
+          "key": "fsf-cbrn-domain-definition"
+        }
+      },
+      "evidence": [
+        {
+          "source": "fsf-2-0",
+          "locator": "PDF p. 2 (printed p. 2), list of misuse risk domains, first bullet",
+          "passage": "CBRN: Risks of models assisting in the development, preparation, and/or execution of a chemical, biological, radiological, or nuclear (“CBRN”) attack.",
+          "passageType": "quote",
+          "translation": null,
+          "sourceRole": "primary",
+          "support": "supports",
+          "note": null
+        }
+      ]
+    },
+    {
+      "group": "frameworks",
+      "strand": "Frameworks",
+      "proposedPredicate": false,
+      "derivation": "explicit",
+      "resolution": "supported",
+      "extends": null,
+      "hazardNote": "Only the table entry is recorded. The edition’s footnote to this entry, which names an agent category, was read and excluded.",
+      "id": "ab-fw-fsf-v2-0-cbrn-uplift-1-threshold",
+      "subject": "fsf-v2-0",
+      "predicate": "states_provision",
+      "object": {
+        "kind": "literal",
+        "value": "CBRN uplift 1: significant assistance to a low-resourced actor, resulting in a substantial increase in ability to cause a mass casualty event"
+      },
+      "statement": "The Frontier Safety Framework v2.0 states a misuse Critical Capability Level named “CBRN uplift 1”: can be used to significantly assist a low-resourced actor with dual-use scientific protocols, resulting in a substantial increase in ability to cause a mass casualty event.",
+      "time": {
+        "kind": "event",
+        "date": "2025-02-04",
+        "basis": "publication",
+        "note": "Provision as stated in this edition, dated by the edition’s publication date."
+      },
+      "qualification": "The record states the capability level as the edition words it, at the generality of its own table entry. It is not a finding about any model.",
+      "attributes": {
+        "provision": {
+          "kind": "threshold",
+          "key": "fsf-cbrn-uplift-1-threshold"
+        }
+      },
+      "evidence": [
+        {
+          "source": "fsf-2-0",
+          "locator": "PDF p. 5 (printed p. 5), Table 1: Misuse CCLs and Security Mitigations, CBRN row, “Critical capability level” column",
+          "passage": "CBRN uplift 1: Can be used to significantly assist a low-resourced actor with dual-use scientific protocols, resulting in a substantial increase in ability to cause a mass casualty event.",
+          "passageType": "quote",
+          "translation": null,
+          "sourceRole": "primary",
+          "support": "supports",
+          "note": null
+        }
+      ]
+    },
+    {
+      "group": "frameworks",
+      "strand": "Frameworks",
+      "proposedPredicate": false,
+      "derivation": "explicit",
+      "resolution": "supported",
+      "extends": null,
+      "hazardNote": null,
+      "id": "ab-fw-fsf-v2-0-cbrn-uplift-1-security-level",
+      "subject": "fsf-v2-0",
+      "predicate": "states_provision",
+      "object": {
+        "kind": "literal",
+        "value": "CBRN uplift 1 recommended security level: controls and detections generally aligned with RAND SL 2"
+      },
+      "statement": "The Frontier Safety Framework v2.0 recommends, for its CBRN uplift 1 Critical Capability Level, security controls and detections at a level generally aligned with RAND SL 2.",
+      "time": {
+        "kind": "event",
+        "date": "2025-02-04",
+        "basis": "publication",
+        "note": "Provision as stated in this edition, dated by the edition’s publication date."
+      },
+      "qualification": "A recommendation the edition addresses to the frontier AI field and describes as a baseline. It is not evidence that Google DeepMind or anyone else applied it.",
+      "attributes": {
+        "provision": {
+          "kind": "required_action",
+          "key": "fsf-cbrn-uplift-1-security-level"
+        }
+      },
+      "evidence": [
+        {
+          "source": "fsf-2-0",
+          "locator": "PDF p. 5 (printed p. 5), Table 1, CBRN row, “Recommended security level and rationale” column, first line",
+          "passage": "Security controls and detections at a level generally aligned with RAND SL 2",
+          "passageType": "quote",
+          "translation": null,
+          "sourceRole": "primary",
+          "support": "supports",
+          "note": null
+        }
+      ]
+    },
+    {
+      "group": "frameworks",
+      "strand": "Frameworks",
+      "proposedPredicate": false,
+      "derivation": "inferred",
+      "resolution": "supported",
+      "extends": null,
+      "hazardNote": null,
+      "id": "ab-fw-fsf-v2-0-replaces-biosecurity-levels-with-cbrn-uplift",
+      "subject": "fsf-v2-0",
+      "predicate": "changes_from",
+      "object": {
+        "kind": "entity",
+        "entityId": "fsf-2024"
+      },
+      "statement": "Where the Frontier Safety Framework v1.0 set two Critical Capability Levels in a Biosecurity risk domain, one for enabling a non-expert and one for enabling an expert, v2.0 sets a single level, CBRN uplift 1, in a combined chemical, biological, radiological and nuclear risk domain.",
+      "time": {
+        "kind": "event",
+        "date": "2025-02-04",
+        "basis": "publication",
+        "note": "Difference between the two editions, dated by the later edition’s publication date."
+      },
+      "inferenceRationale": "Premises: v1.0 states two Biosecurity Critical Capability Levels in the table on PDF p. 5, recorded as ab-fw-fsf-2024-bio-amateur-enablement-level-1 and ab-fw-fsf-2024-bio-expert-enablement-level-1; v2.0 states one CBRN level, recorded as ab-fw-fsf-v2-0-cbrn-uplift-1-threshold, in a domain it defines over all four CBRN letters (ab-fw-fsf-v2-0-cbrn-domain-definition). The v2.0 change notes list no entry for this difference, so the comparison is Selekoa’s, drawn from the two inspected tables alone.",
+      "qualification": "A comparison of the two inspected editions, not a publisher statement. The record does not say that any capability level was deleted, weakened or strengthened, and establishes no safety ranking.",
+      "attributes": {
+        "changeBasis": "document_comparison"
+      },
+      "evidence": [
+        {
+          "source": "fsf-2-0",
+          "locator": "PDF p. 4 (printed p. 4) and p. 5 (printed p. 5), “Misuse Critical Capability Levels” and Table 1",
+          "passage": "The edition says the misuse Critical Capability Levels in its table were identified by ongoing analysis of three domains, CBRN, Cyber and Machine Learning R&D, and its table gives one CBRN level.",
+          "passageType": "paraphrase",
+          "translation": null,
+          "sourceRole": "primary",
+          "support": "supports",
+          "note": null
+        },
+        {
+          "source": "fsf-1-0",
+          "locator": "PDF p. 5 (printed p. 5), Critical Capability Levels table, Biosecurity row",
+          "passage": "The edition’s Biosecurity row lists two Critical Capability Levels, “Bio amateur enablement level 1” and “Bio expert enablement level 1”.",
+          "passageType": "paraphrase",
+          "translation": null,
+          "sourceRole": "primary",
+          "support": "supports",
+          "note": null
+        }
+      ]
+    },
+    {
+      "group": "frameworks",
+      "strand": "Frameworks",
+      "proposedPredicate": false,
+      "derivation": "explicit",
+      "resolution": "supported",
+      "extends": null,
+      "hazardNote": "The edition’s reference scenarios are not published in it and nothing of them is recorded here.",
+      "id": "ab-fw-fsf-v3-0-cbrn-uplift-level-1-threshold",
+      "subject": "fsf-v3-0",
+      "predicate": "states_provision",
+      "object": {
+        "kind": "literal",
+        "value": "CBRN uplift level 1: uplift to low to medium resourced actors in reference scenarios, resulting in additional expected harm at severe scale"
+      },
+      "statement": "The Frontier Safety Framework v3.0 states a misuse Critical Capability Level named “CBRN uplift level 1”: providing low to medium resourced actors uplift in reference scenarios resulting in additional expected harm at severe scale.",
+      "time": {
+        "kind": "event",
+        "date": "2025-09-22",
+        "basis": "publication",
+        "note": "Provision as stated in this edition, dated by the edition’s publication date."
+      },
+      "qualification": "The record states the capability level as the edition words it. The edition does not publish its reference scenarios, and the record is not a finding about any model.",
+      "attributes": {
+        "provision": {
+          "kind": "threshold",
+          "key": "fsf-cbrn-uplift-1-threshold"
+        }
+      },
+      "evidence": [
+        {
+          "source": "fsf-3-0",
+          "locator": "PDF p. 10 (printed p. 10), Table 2.2.1.a: CBRN CCLs and Security Mitigations, “Critical Capability Level” column",
+          "passage": "The column reads that CBRN uplift level 1 provides low to medium resourced actors uplift in reference scenarios resulting in additional expected harm at severe scale, with a footnote marker after “additional” that the edition glosses as meaning relative to a baseline without generative AI.",
+          "passageType": "paraphrase",
+          "translation": null,
+          "sourceRole": "primary",
+          "support": "supports",
+          "note": "Paraphrased because a footnote marker falls inside the sentence in the text layer and this source’s quotation budget is almost fully used by the dataset’s existing records."
+        }
+      ]
+    },
+    {
+      "group": "frameworks",
+      "strand": "Frameworks",
+      "proposedPredicate": false,
+      "derivation": "explicit",
+      "resolution": "supported",
+      "extends": null,
+      "hazardNote": null,
+      "id": "ab-fw-fsf-v3-0-cbrn-uplift-1-security-level",
+      "subject": "fsf-v3-0",
+      "predicate": "states_provision",
+      "object": {
+        "kind": "literal",
+        "value": "CBRN uplift level 1 recommended security level: Security level 2"
+      },
+      "statement": "The Frontier Safety Framework v3.0 recommends Security level 2 for its CBRN uplift level 1 Critical Capability Level, reasoning that the difficulty of building defences against certain CBRN threats makes exfiltration and leak of such model weights highly damaging, while the actors most likely to gain uplift are unlikely to pose an exfiltration threat at the level of RAND OC3 groups.",
+      "time": {
+        "kind": "event",
+        "date": "2025-09-22",
+        "basis": "publication",
+        "note": "Provision as stated in this edition, dated by the edition’s publication date."
+      },
+      "qualification": "A recommendation and its stated reasoning. It is not evidence that the level was applied, nor an assessment of whether the reasoning holds.",
+      "attributes": {
+        "provision": {
+          "kind": "required_action",
+          "key": "fsf-cbrn-uplift-1-security-level"
+        }
+      },
+      "evidence": [
+        {
+          "source": "fsf-3-0",
+          "locator": "PDF p. 10 (printed p. 10), Table 2.2.1.a, “Recommended security level and rationale” column",
+          "passage": "The column recommends Security level 2 and gives as its rationale that the difficulty of building defences against certain CBRN threats means the exfiltration and leak of model weights with this capability could be highly damaging, but that the low to medium resourced actors likely to experience the most CBRN uplift are unlikely to pose a substantial exfiltration threat at the level of RAND OC3 groups.",
+          "passageType": "paraphrase",
+          "translation": null,
+          "sourceRole": "primary",
+          "support": "supports",
+          "note": "Paraphrased because this source’s quotation budget is almost fully used by the dataset’s existing records."
+        }
+      ]
+    },
+    {
+      "group": "frameworks",
+      "strand": "Frameworks",
+      "proposedPredicate": false,
+      "derivation": "inferred",
+      "resolution": "supported",
+      "extends": null,
+      "hazardNote": null,
+      "id": "ab-fw-fsf-v3-0-cbrn-domain-attack-to-threat",
+      "subject": "fsf-v3-0",
+      "predicate": "changes_from",
+      "object": {
+        "kind": "entity",
+        "entityId": "fsf-v2-0"
+      },
+      "statement": "The Frontier Safety Framework v3.0 defines its CBRN risk domain as risks of models assisting in the development, preparation and/or execution of a CBRN threat, where v2.0 defined the same domain as risks of assisting in a CBRN attack.",
+      "time": {
+        "kind": "event",
+        "date": "2025-09-22",
+        "basis": "publication",
+        "note": "Difference between the two editions, dated by the later edition’s publication date."
+      },
+      "inferenceRationale": "Premises: v3.0’s misuse risk domain bullet on PDF p. 4 ends “a chemical, biological, radiological, or nuclear (“CBRN”) threat”; v2.0’s corresponding bullet on PDF p. 2 ends “attack” (quoted in ab-fw-fsf-v2-0-cbrn-domain-definition). The two bullets are otherwise identically worded. No change note in v3.0 records this difference, so the comparison is Selekoa’s.",
+      "qualification": "A one-word difference between the inspected editions. The record does not say that the scope of the domain changed in practice, and no publisher statement interprets the wording.",
+      "attributes": {
+        "changeBasis": "document_comparison"
+      },
+      "evidence": [
+        {
+          "source": "fsf-3-0",
+          "locator": "PDF p. 4 (printed p. 4), list of misuse risk domains, first bullet",
+          "passage": "The bullet defines the CBRN domain as risks of models assisting in the development, preparation, and/or execution of a chemical, biological, radiological, or nuclear threat.",
+          "passageType": "paraphrase",
+          "translation": null,
+          "sourceRole": "primary",
+          "support": "supports",
+          "note": null
+        },
+        {
+          "source": "fsf-2-0",
+          "locator": "PDF p. 2 (printed p. 2), list of misuse risk domains, first bullet",
+          "passage": "The bullet defines the CBRN domain as risks of models assisting in the development, preparation, and/or execution of a chemical, biological, radiological, or nuclear attack.",
+          "passageType": "paraphrase",
+          "translation": null,
+          "sourceRole": "primary",
+          "support": "supports",
+          "note": null
+        }
+      ]
+    },
+    {
+      "group": "frameworks",
+      "strand": "Frameworks",
+      "proposedPredicate": false,
+      "derivation": "explicit",
+      "resolution": "supported",
+      "extends": "fsf-v3-1-cbrn-tcls",
+      "hazardNote": "The edition’s reference scenarios are not published in it and nothing of them is recorded here.",
+      "id": "ab-fw-fsf-v3-1-cbrn-uplift-tcl",
+      "subject": "fsf-v3-1",
+      "predicate": "states_provision",
+      "object": {
+        "kind": "literal",
+        "value": "CBRN uplift TCL: uplift to low to medium resourced actors in reference scenarios, resulting in material risk of CBRN attacks causing significant but not severe harm"
+      },
+      "statement": "The Frontier Safety Framework v3.1 states a CBRN Tracked Capability Level: providing low to medium resourced actors uplift in reference scenarios, resulting in material risk of CBRN attacks that could result in significant but not severe harm.",
+      "time": {
+        "kind": "event",
+        "date": "2026-04-17",
+        "basis": "publication",
+        "note": "Provision as stated in this edition, dated by the edition’s publication date."
+      },
+      "qualification": "The record states the tracked level as the edition words it. The edition does not publish its reference scenarios, and the record is not a finding about any model.",
+      "attributes": {
+        "provision": {
+          "kind": "threshold",
+          "key": "fsf-cbrn-uplift-tcl"
+        }
+      },
+      "evidence": [
+        {
+          "source": "fsf-3-1",
+          "locator": "PDF p. 11 (printed p. 11), §2.2.1 Chemical, Biological, Radiological or Nuclear, paragraph “CBRN Tracked Capability Level”",
+          "passage": "CBRN uplift TCL: Provides low to medium resourced actors uplift in reference scenarios, resulting in material risk of CBRN attacks that could result in significant but not severe harm.",
+          "passageType": "quote",
+          "translation": null,
+          "sourceRole": "primary",
+          "support": "supports",
+          "note": null
+        }
+      ]
+    },
+    {
+      "group": "frameworks",
+      "strand": "Frameworks",
+      "proposedPredicate": false,
+      "derivation": "explicit",
+      "resolution": "supported",
+      "extends": null,
+      "hazardNote": null,
+      "id": "ab-fw-fsf-v3-1-cbrn-early-warning-evaluations",
+      "subject": "fsf-v3-1",
+      "predicate": "states_provision",
+      "object": {
+        "kind": "literal",
+        "value": "Early warning evaluations assess a model’s proximity to the CBRN Tracked Capability Level, involving internal and external experts as needed"
+      },
+      "statement": "The Frontier Safety Framework v3.1 states that, as for its Critical Capability Levels, early warning evaluations will be used to assess a model’s proximity to a Tracked Capability Level, including the CBRN one, and to analyse the risk posed, involving internal and external experts as needed.",
+      "time": {
+        "kind": "event",
+        "date": "2026-04-17",
+        "basis": "publication",
+        "note": "Provision as stated in this edition, dated by the edition’s publication date."
+      },
+      "qualification": "A stated process. The record does not say that any such evaluation was run, by whom, or with what result, and names no expert or organisation.",
+      "attributes": {
+        "provision": {
+          "kind": "evaluation_timing",
+          "key": "fsf-tcl-early-warning-evaluations"
+        }
+      },
+      "evidence": [
+        {
+          "source": "fsf-3-1",
+          "locator": "PDF p. 4 (printed p. 4), paragraph introducing Tracked Capability Levels, last two sentences",
+          "passage": "The paragraph says the edition identifies Tracked Capability Levels for CBRN risk as well as for machine learning R&D and misalignment risks, and that, similarly to Critical Capability Levels, early warning evaluations will be used to assess the proximity of a model to a Tracked Capability Level and analyse the risk posed, involving internal and external experts as needed.",
+          "passageType": "paraphrase",
+          "translation": null,
+          "sourceRole": "primary",
+          "support": "supports",
+          "note": "Paraphrased because this source’s quotation budget is almost fully used by the dataset’s existing records."
+        }
+      ]
+    },
+    {
+      "group": "frameworks",
+      "strand": "Frameworks",
+      "proposedPredicate": false,
+      "derivation": "explicit",
+      "resolution": "supported",
+      "extends": null,
+      "hazardNote": null,
+      "id": "ab-fw-fsf-v3-1-cbrn-security-level-2-plus",
+      "subject": "fsf-v3-1",
+      "predicate": "changes_from",
+      "object": {
+        "kind": "entity",
+        "entityId": "fsf-v3-0"
+      },
+      "statement": "The Frontier Safety Framework v3.1 change notes state that the update raises the recommended level of security for the CBRN, Cyber and Harmful Manipulation Critical Capability Levels to Security Level 2+.",
+      "time": {
+        "kind": "event",
+        "date": "2026-04-17",
+        "basis": "publication",
+        "note": "Change as stated in the v3.1 change notes, dated by the edition’s publication date."
+      },
+      "qualification": "The publisher’s own description of its change. It is not evidence that any level of security was applied, and the edition does not say what Security Level 2+ requires beyond Security level 2.",
+      "attributes": {
+        "changeBasis": "changelog"
+      },
+      "evidence": [
+        {
+          "source": "fsf-3-1",
+          "locator": "PDF p. 17 (printed p. 17), §5.3 Past Updates and Changes, “Version 3.1 (April 17, 2026)”, third bullet",
+          "passage": "The bullet says the version outlined an enhanced level of security for the CBRN, Cyber and Harmful Manipulation Critical Capability Levels to Security Level 2+.",
+          "passageType": "paraphrase",
+          "translation": null,
+          "sourceRole": "primary",
+          "support": "supports",
+          "note": "Paraphrased because this source’s quotation budget is almost fully used by the dataset’s existing records, including a quote from the first bullet of the same entry."
+        },
+        {
+          "source": "fsf-3-0",
+          "locator": "PDF p. 10 (printed p. 10), Table 2.2.1.a, “Recommended security level and rationale” column",
+          "passage": "The v3.0 column recommends Security level 2 for CBRN uplift level 1.",
+          "passageType": "paraphrase",
+          "translation": null,
+          "sourceRole": "primary",
+          "support": "supports",
+          "note": null
+        }
+      ]
+    },
+    {
+      "group": "frameworks",
+      "strand": "Frameworks",
+      "proposedPredicate": false,
+      "derivation": "explicit",
+      "resolution": "supported",
+      "extends": "cmp-preparedness-beta-2023-d1-cbrn",
+      "hazardNote": null,
+      "id": "ab-fw-pf-beta-cbrn-category-definition",
+      "subject": "preparedness-beta-2023",
+      "predicate": "states_provision",
+      "object": {
+        "kind": "literal",
+        "value": "CBRN tracked risk category: risks related to model-assisted creation of chemical, biological, radiological and/or nuclear threats"
+      },
+      "statement": "The Preparedness Framework (Beta) defines its CBRN tracked risk category as focused on risks related to model-assisted creation of chemical, biological, radiological and/or nuclear threats.",
+      "time": {
+        "kind": "event",
+        "date": "2023-12-18",
+        "basis": "publication",
+        "note": "Provision as stated in this edition, dated by the edition’s publication date."
+      },
+      "qualification": "The record states how the edition defines a tracked category. It is not a finding about any model.",
+      "attributes": {
+        "provision": {
+          "kind": "risk_domain",
+          "key": "pf-cbrn-category-definition"
+        }
+      },
+      "evidence": [
+        {
+          "source": "pf-beta",
+          "locator": "PDF p. 9 (printed p. 9), Tracked Risk Categories, “CBRN (chemical, biological, radiological, nuclear)”, opening sentence",
+          "passage": "CBRN is focused on risks related to model-assisted creation of chemical, biological, radiological, and/or nuclear threats.",
+          "passageType": "quote",
+          "translation": null,
+          "sourceRole": "primary",
+          "support": "supports",
+          "note": null
+        }
+      ]
+    },
+    {
+      "group": "frameworks",
+      "strand": "Frameworks",
+      "proposedPredicate": false,
+      "derivation": "explicit",
+      "resolution": "supported",
+      "extends": null,
+      "hazardNote": "Only the “Definition” column is recorded. The adjoining “Rationale for threshold” column, which descends to a technical register, was read and excluded.",
+      "id": "ab-fw-pf-beta-cbrn-high-level",
+      "subject": "preparedness-beta-2023",
+      "predicate": "states_provision",
+      "object": {
+        "kind": "literal",
+        "value": "CBRN High: enabling an expert to develop a novel threat vector, or enabling anyone with basic training in a relevant field to create a CBRN threat"
+      },
+      "statement": "The Preparedness Framework (Beta) defines the High risk level of its CBRN category as a model that enables an expert to develop a novel threat vector, or provides meaningfully improved assistance enabling anyone with basic training in a relevant field to create a CBRN threat.",
+      "time": {
+        "kind": "event",
+        "date": "2023-12-18",
+        "basis": "publication",
+        "note": "Provision as stated in this edition, dated by the edition’s publication date."
+      },
+      "qualification": "The record states the risk-level definition as the edition words it, at the generality of its own table cell. It is not a finding about any model.",
+      "attributes": {
+        "provision": {
+          "kind": "threshold",
+          "key": "pf-cbrn-high-level"
+        }
+      },
+      "evidence": [
+        {
+          "source": "pf-beta",
+          "locator": "PDF p. 9 (printed p. 9), CBRN table, High row, “Definition” column",
+          "passage": "The cell reads that the model enables an expert to develop a novel threat vector, or provides meaningfully improved assistance that enables anyone with basic training in a relevant field, its example being an introductory undergraduate biology course, to create a CBRN threat.",
+          "passageType": "paraphrase",
+          "translation": null,
+          "sourceRole": "primary",
+          "support": "supports",
+          "note": "Paraphrased, not quoted: the text layer of this page interleaves the Definition and Rationale columns line by line, so a verbatim match cannot be checked mechanically against it."
+        }
+      ]
+    },
+    {
+      "group": "frameworks",
+      "strand": "Frameworks",
+      "proposedPredicate": false,
+      "derivation": "explicit",
+      "resolution": "supported",
+      "extends": "cmp-preparedness-v2-d1-cbrn",
+      "hazardNote": null,
+      "id": "ab-fw-pf-2-bio-chem-category-definition",
+      "subject": "preparedness-v2",
+      "predicate": "states_provision",
+      "object": {
+        "kind": "literal",
+        "value": "Biological and Chemical tracked category: capabilities that can reduce barriers to creating and using biological or chemical weapons"
+      },
+      "statement": "The Preparedness Framework Version 2 describes its Biological and Chemical tracked category as capabilities that, in addition to unlocking discoveries and cures, can also reduce barriers to creating and using biological or chemical weapons.",
+      "time": {
+        "kind": "event",
+        "date": "2025-04-15",
+        "basis": "publication",
+        "note": "Provision as stated in this edition, dated by the edition’s publication date."
+      },
+      "qualification": "The record states how the edition describes a tracked category. It is not a finding about any model.",
+      "attributes": {
+        "provision": {
+          "kind": "risk_domain",
+          "key": "pf-bio-chem-category-definition"
+        }
+      },
+      "evidence": [
+        {
+          "source": "pf-2",
+          "locator": "PDF p. 2 (printed p. 1), opening page, first bullet of the Tracked Categories list",
+          "passage": "Biological and Chemical capabilities that, in addition to unlocking discoveries and cures, can also reduce barriers to creating and using biological or chemical weapons.",
+          "passageType": "quote",
+          "translation": null,
+          "sourceRole": "primary",
+          "support": "supports",
+          "note": null
+        }
+      ]
+    },
+    {
+      "group": "frameworks",
+      "strand": "Frameworks",
+      "proposedPredicate": false,
+      "derivation": "explicit",
+      "resolution": "supported",
+      "extends": null,
+      "hazardNote": null,
+      "id": "ab-fw-pf-2-bio-chem-high-threshold",
+      "subject": "preparedness-v2",
+      "predicate": "states_provision",
+      "object": {
+        "kind": "literal",
+        "value": "Biological and Chemical High: meaningful counterfactual assistance, relative to the 2021 baseline of tools, to novice actors enabling them to create known biological or chemical threats"
+      },
+      "statement": "The Preparedness Framework Version 2 states a High capability threshold for its Biological and Chemical category: the model can provide meaningful counterfactual assistance, relative to unlimited access to the baseline of tools available in 2021, to novice actors with a basic relevant technical background, enabling them to create known biological or chemical threats.",
+      "time": {
+        "kind": "event",
+        "date": "2025-04-15",
+        "basis": "publication",
+        "note": "Provision as stated in this edition, dated by the edition’s publication date."
+      },
+      "qualification": "The record states the threshold as the edition words it. It is not a finding about any model and sets no result.",
+      "attributes": {
+        "provision": {
+          "kind": "threshold",
+          "key": "pf-bio-chem-high-threshold"
+        }
+      },
+      "evidence": [
+        {
+          "source": "pf-2",
+          "locator": "PDF p. 6 (printed p. 5), Table 1, Biological and Chemical row, “Capability threshold that could lead to the risk” column, entry marked [High]",
+          "passage": "The cell reads that the model can provide meaningful counterfactual assistance, relative to unlimited access to the baseline of tools available in 2021, to “novice” actors, which it glosses as anyone with a basic relevant technical background, that enables them to create known biological or chemical threats.",
+          "passageType": "paraphrase",
+          "translation": null,
+          "sourceRole": "primary",
+          "support": "supports",
+          "note": "Paraphrased, not quoted: the text layer of Table 1 interleaves the table columns line by line, so a verbatim match cannot be checked mechanically against it."
+        }
+      ]
+    },
+    {
+      "group": "frameworks",
+      "strand": "Frameworks",
+      "proposedPredicate": false,
+      "derivation": "explicit",
+      "resolution": "supported",
+      "extends": null,
+      "hazardNote": null,
+      "id": "ab-fw-pf-2-bio-chem-high-safeguards",
+      "subject": "preparedness-v2",
+      "predicate": "states_provision",
+      "object": {
+        "kind": "literal",
+        "value": "At the Biological and Chemical High threshold: security controls meeting the High standard, and safeguards against misuse meeting the High standard before external deployment"
+      },
+      "statement": "The Preparedness Framework Version 2 states that, at the High capability threshold of its Biological and Chemical category, it requires security controls meeting its High standard and safeguards against misuse meeting its High standard before external deployment.",
+      "time": {
+        "kind": "event",
+        "date": "2025-04-15",
+        "basis": "publication",
+        "note": "Provision as stated in this edition, dated by the edition’s publication date."
+      },
+      "qualification": "A stated requirement of the edition, referring to standards set out in its own appendices. It is not evidence that either standard was met or that any deployment occurred.",
+      "attributes": {
+        "provision": {
+          "kind": "required_action",
+          "key": "pf-bio-chem-high-safeguards"
+        }
+      },
+      "evidence": [
+        {
+          "source": "pf-2",
+          "locator": "PDF p. 6 (printed p. 5), Table 1, Biological and Chemical row, “Risk-specific safeguard guidelines” column, bullets opposite the [High] threshold",
+          "passage": "The bullets require security controls meeting the High standard of Appendix C.3, and safeguards against misuse meeting the High standard of Appendix C.1 before external deployment.",
+          "passageType": "paraphrase",
+          "translation": null,
+          "sourceRole": "primary",
+          "support": "supports",
+          "note": "Paraphrased, not quoted: the text layer of Table 1 interleaves the table columns line by line, so a verbatim match cannot be checked mechanically against it."
+        }
+      ]
+    },
+    {
+      "group": "frameworks",
+      "strand": "Frameworks",
+      "proposedPredicate": false,
+      "derivation": "explicit",
+      "resolution": "supported",
+      "extends": null,
+      "hazardNote": null,
+      "id": "ab-fw-pf-2-bio-chem-critical-halt",
+      "subject": "preparedness-v2",
+      "predicate": "states_provision",
+      "object": {
+        "kind": "literal",
+        "value": "At the Biological and Chemical Critical threshold: halt further development until safeguards and security controls meeting a Critical standard are specified"
+      },
+      "statement": "The Preparedness Framework Version 2 states that, at the Critical capability threshold of its Biological and Chemical category, it will halt further development until it has specified safeguards and security controls that would meet a Critical standard, and will contribute towards improved public policy and pandemic preparedness.",
+      "time": {
+        "kind": "event",
+        "date": "2025-04-15",
+        "basis": "publication",
+        "note": "Provision as stated in this edition, dated by the edition’s publication date."
+      },
+      "qualification": "A stated requirement of the edition, which does not define a Critical standard. It is not evidence that development was halted or that any threshold was reached.",
+      "attributes": {
+        "provision": {
+          "kind": "required_action",
+          "key": "pf-bio-chem-critical-safeguards"
+        }
+      },
+      "evidence": [
+        {
+          "source": "pf-2",
+          "locator": "PDF p. 6 (printed p. 5), Table 1, Biological and Chemical row, “Risk-specific safeguard guidelines” column, bullets opposite the [Critical] threshold",
+          "passage": "The bullets say that, until OpenAI has specified safeguards and security controls that would meet a Critical standard, it will halt further development, and that it will contribute towards improved public policy and pandemic preparedness.",
+          "passageType": "paraphrase",
+          "translation": null,
+          "sourceRole": "primary",
+          "support": "supports",
+          "note": "Paraphrased, not quoted: the text layer of Table 1 interleaves the table columns line by line, so a verbatim match cannot be checked mechanically against it."
+        }
+      ]
+    },
+    {
+      "group": "frameworks",
+      "strand": "Frameworks",
+      "proposedPredicate": false,
+      "derivation": "explicit",
+      "resolution": "supported",
+      "extends": null,
+      "hazardNote": null,
+      "id": "ab-fw-pf-2-bio-evaluation-priority",
+      "subject": "preparedness-v2",
+      "predicate": "states_provision",
+      "object": {
+        "kind": "literal",
+        "value": "Biological capability evaluations are prioritised and used as the indicators for the category’s High and Critical capabilities"
+      },
+      "statement": "The Preparedness Framework Version 2 states that OpenAI will build safeguards against both biological and chemical threats and, given the higher potential severity of biological threats, will prioritise biological capability evaluations, which will be used as indicators for the High and Critical capabilities of the category.",
+      "time": {
+        "kind": "event",
+        "date": "2025-04-15",
+        "basis": "publication",
+        "note": "Provision as stated in this edition, dated by the edition’s publication date."
+      },
+      "qualification": "A stated approach. It is not evidence that any evaluation was run or that any safeguard was built.",
+      "attributes": {
+        "provision": {
+          "kind": "evaluation_timing",
+          "key": "pf-bio-evaluation-priority"
+        }
+      },
+      "evidence": [
+        {
+          "source": "pf-2",
+          "locator": "PDF p. 6 (printed p. 5), footnote 5 to the Biological and Chemical row of Table 1",
+          "passage": "We will build safeguards against both biological and chemical threats. Given the higher potential severity of biological threats relative to chemical ones, we will prioritize Biological capability evaluations and these will be used as indicators for High and Critical capabilities for the category.",
+          "passageType": "quote",
+          "translation": null,
+          "sourceRole": "primary",
+          "support": "supports",
+          "note": null
+        }
+      ]
+    },
+    {
+      "group": "frameworks",
+      "strand": "Frameworks",
+      "proposedPredicate": false,
+      "derivation": "explicit",
+      "resolution": "supported",
+      "extends": null,
+      "hazardNote": "Only the opening sentence of the passage is cited. Its remaining sentences, which name stages of a threat process and descend to a laboratory-level register, were read and excluded.",
+      "id": "ab-fw-pf-2-bio-evaluation-object",
+      "subject": "preparedness-v2",
+      "predicate": "states_provision",
+      "object": {
+        "kind": "literal",
+        "value": "Biological capability evaluations test both information provision and integration with relevant tools"
+      },
+      "statement": "The Preparedness Framework Version 2 states that, to assess the degree to which a covered system can reduce the barriers to creating a biological weapon, its current evaluations test both how capable the system is at providing useful information and how capable it is of directly integrating with relevant tools.",
+      "time": {
+        "kind": "event",
+        "date": "2025-04-15",
+        "basis": "publication",
+        "note": "Provision as stated in this edition, dated by the edition’s publication date."
+      },
+      "qualification": "The record states what the edition says its evaluations test. It carries no result, and the edition points to its system cards for findings.",
+      "attributes": {
+        "provision": {
+          "kind": "evaluation_timing",
+          "key": "pf-bio-evaluation-object"
+        }
+      },
+      "evidence": [
+        {
+          "source": "pf-2",
+          "locator": "PDF p. 10 (printed p. 9), §3.1 box “An example of a Tracked Category capability evaluation”, first sentence",
+          "passage": "To assess the degree to which a covered system can reduce the barriers to creating a biological weapon, our current evaluations test both how capable the system is at providing useful information to someone creating a weapon and how capable it is of directly integrating with relevant tools",
+          "passageType": "quote",
+          "translation": null,
+          "sourceRole": "primary",
+          "support": "supports",
+          "note": null
+        }
+      ]
+    },
+    {
+      "group": "frameworks",
+      "strand": "Frameworks",
+      "proposedPredicate": false,
+      "derivation": "explicit",
+      "resolution": "supported",
+      "extends": null,
+      "hazardNote": null,
+      "id": "ab-fw-pf-2-independent-biological-risk-expertise",
+      "subject": "preparedness-v2",
+      "predicate": "states_provision",
+      "object": {
+        "kind": "literal",
+        "value": "The Safety Advisory Group may obtain independent expert opinion in domains of relevant risk, biological risk among them"
+      },
+      "statement": "The Preparedness Framework Version 2 states that OpenAI’s Safety Advisory Group may obtain independent expert opinion on the evidence produced to it, to add independent analysis from individuals or organisations with deep expertise in domains of relevant risks, biological risk among its examples.",
+      "time": {
+        "kind": "event",
+        "date": "2025-04-15",
+        "basis": "publication",
+        "note": "Provision as stated in this edition, dated by the edition’s publication date."
+      },
+      "qualification": "A stated option, not an obligation, and not evidence that any opinion was sought or given. No person or organisation is named.",
+      "attributes": {
+        "provision": {
+          "kind": "decision_authority",
+          "key": "pf-sag-independent-expert-opinion"
+        }
+      },
+      "evidence": [
+        {
+          "source": "pf-2",
+          "locator": "PDF p. 14 (printed p. 13), §4 Governance, item “Independent expert opinion on the evidence being produced to SAG”, second sentence",
+          "passage": "The purpose of this input is to add independent analysis from individuals or organizations with deep expertise in domains of relevant risks (e.g., biological risk).",
+          "passageType": "quote",
+          "translation": null,
+          "sourceRole": "primary",
+          "support": "supports",
+          "note": null
+        }
+      ]
+    },
+    {
+      "group": "frameworks",
+      "strand": "Frameworks",
+      "proposedPredicate": false,
+      "derivation": "explicit",
+      "resolution": "supported",
+      "extends": "cmp-frontier-governance-2026-d1-cbrn",
+      "hazardNote": null,
+      "id": "ab-fw-fgf-2026-bio-evaluation-priority",
+      "subject": "frontier-governance-2026",
+      "predicate": "states_provision",
+      "object": {
+        "kind": "literal",
+        "value": "Biological capability evaluations are prioritised because of the higher potential severity of biological threats"
+      },
+      "statement": "The Frontier Governance Framework of May 2026 states that OpenAI prioritises biological capability evaluations because of the higher potential severity of biological threats, and that it has established a tier system quantifying model capabilities against weapons and threat development uplift metrics for CBRN risks.",
+      "time": {
+        "kind": "event",
+        "date": "2026-05-28",
+        "basis": "publication",
+        "note": "Provision as stated in this edition, dated by the edition’s publication date."
+      },
+      "qualification": "A stated approach. It is not evidence that any evaluation was run, and the edition publishes no metric values.",
+      "attributes": {
+        "provision": {
+          "kind": "evaluation_timing",
+          "key": "fgf-bio-evaluation-priority"
+        }
+      },
+      "evidence": [
+        {
+          "source": "fgf-2026",
+          "locator": "PDF p. 10 (printed p. 08), §2.4 Risk tiers, “CBRN”, first paragraph, first and second sentences",
+          "passage": "The paragraph says that for CBRN risks OpenAI has established a tier system quantifying model capabilities against weapons and threat development uplift metrics, that it principally builds safeguards against biological and chemical threats, and that it prioritises biological capability evaluations because of the higher potential severity of biological threats.",
+          "passageType": "paraphrase",
+          "translation": null,
+          "sourceRole": "primary",
+          "support": "supports",
+          "note": "Paraphrased, not quoted: this source’s quotation budget is already used in full by the dataset’s existing records."
+        }
+      ]
+    },
+    {
+      "group": "frameworks",
+      "strand": "Frameworks",
+      "proposedPredicate": false,
+      "derivation": "explicit",
+      "resolution": "supported",
+      "extends": null,
+      "hazardNote": "Only the “Description” column of the tier table is recorded. The adjoining “Examples” column, which descends to a procedural register, was read and excluded.",
+      "id": "ab-fw-fgf-2026-cbrn-tier-2",
+      "subject": "frontier-governance-2026",
+      "predicate": "states_provision",
+      "object": {
+        "kind": "literal",
+        "value": "CBRN Tier 2: meaningful counterfactual assistance, relative to the 2021 baseline of tools, to novice actors enabling them to create known biological or chemical threats"
+      },
+      "statement": "The Frontier Governance Framework of May 2026 describes Tier 2 of its CBRN tier system as a model that can provide meaningful counterfactual assistance, relative to unlimited access to the baseline of tools available in 2021, to novice actors with a basic relevant technical background, enabling them to create known biological or chemical threats.",
+      "time": {
+        "kind": "event",
+        "date": "2026-05-28",
+        "basis": "publication",
+        "note": "Provision as stated in this edition, dated by the edition’s publication date."
+      },
+      "qualification": "The record states the tier description as the edition words it, and matches the wording of the Preparedness Framework Version 2 High threshold. It is not a finding about any model.",
+      "attributes": {
+        "provision": {
+          "kind": "threshold",
+          "key": "fgf-cbrn-tier-2"
+        }
+      },
+      "evidence": [
+        {
+          "source": "fgf-2026",
+          "locator": "PDF p. 10 (printed p. 08), §2.4 Risk tiers, CBRN tier table, Tier 2 row, “Description” column",
+          "passage": "The cell reads that the model can provide meaningful counterfactual assistance, relative to unlimited access to the baseline of tools available in 2021, to novice actors, which it glosses as anyone with a basic relevant technical background, that enables them to create known biological or chemical threats.",
+          "passageType": "paraphrase",
+          "translation": null,
+          "sourceRole": "primary",
+          "support": "supports",
+          "note": "Paraphrased, not quoted: this source’s quotation budget is already used in full by the dataset’s existing records."
+        }
+      ]
+    },
+    {
+      "group": "frameworks",
+      "strand": "Frameworks",
+      "proposedPredicate": false,
+      "derivation": "explicit",
+      "resolution": "supported",
+      "extends": "cmp-faif-2025-d1-cbrn",
+      "hazardNote": null,
+      "id": "ab-fw-faif-2025-cbrn-barrier-recognition",
+      "subject": "faif-2025",
+      "predicate": "states_provision",
+      "object": {
+        "kind": "literal",
+        "value": "Without safeguards, advanced AI models could lower the barrier to entry for actors seeking CBRN or cyber weapons"
+      },
+      "statement": "The Frontier Artificial Intelligence Framework of December 2025 states that, without any safeguards, xAI recognises that advanced AI models could lower the barrier to entry for bad actors seeking to develop CBRN or cyber weapons and could help automate knowledge compilation to overcome bottlenecks to weapons development.",
+      "time": {
+        "kind": "event",
+        "date": "2025-12-30",
+        "basis": "revision",
+        "note": "Provision as stated in this edition, dated by the edition’s revision date."
+      },
+      "qualification": "The record states what the edition says it recognises. It is not a finding that any model has this effect, and the edition offers no evidence for the proposition.",
+      "attributes": {
+        "provision": {
+          "kind": "risk_domain",
+          "key": "faif-cbrn-barrier-recognition"
+        }
+      },
+      "evidence": [
+        {
+          "source": "faif-2025",
+          "locator": "PDF p. 3 (no printed page numbers), “Addressing Risks of Malicious Use”, first paragraph, second sentence",
+          "passage": "advanced AI models could lower the barrier to entry for bad actors seeking to develop chemical, biological, radiological, or nuclear (“CBRN”) or cyber weapons, and could help automate knowledge compilation to swiftly overcome bottlenecks to weapons development",
+          "passageType": "quote",
+          "translation": null,
+          "sourceRole": "primary",
+          "support": "supports",
+          "note": null
+        }
+      ]
+    },
+    {
+      "group": "frameworks",
+      "strand": "Frameworks",
+      "proposedPredicate": false,
+      "derivation": "explicit",
+      "resolution": "supported",
+      "extends": "prov-faif-2026-heightened-safeguards",
+      "hazardNote": "Only the provision sentence is cited. The examples that follow it in the same paragraph were read and excluded.",
+      "id": "ab-fw-faif-2025-heightened-safeguards",
+      "subject": "faif-2025",
+      "predicate": "states_provision",
+      "object": {
+        "kind": "literal",
+        "value": "Heightened safeguards apply to prompts posing a foreseeable and non-trivial risk of weapons of mass destruction, including CBRN weapons"
+      },
+      "statement": "The Frontier Artificial Intelligence Framework of December 2025 states that xAI’s models apply heightened safeguards if they receive user prompts posing a foreseeable and non-trivial risk of resulting in large-scale violence, terrorism, or the use, development or proliferation of weapons of mass destruction, including CBRN weapons, and major cyber attacks on critical infrastructure.",
+      "time": {
+        "kind": "event",
+        "date": "2025-12-30",
+        "basis": "revision",
+        "note": "Provision as stated in this edition, dated by the edition’s revision date."
+      },
+      "qualification": "A stated provision of this edition, not evidence that any safeguard was applied or works. The dataset record prov-faif-2026-heightened-safeguards holds the June 2026 wording, which this record does not compare: that edition could not be retrieved on the check date.",
+      "attributes": {
+        "provision": {
+          "kind": "required_action",
+          "key": "faif-heightened-safeguards"
+        }
+      },
+      "evidence": [
+        {
+          "source": "faif-2025",
+          "locator": "PDF p. 3 (no printed page numbers), “Addressing Risks of Malicious Use”, second paragraph, first sentence",
+          "passage": "Under this FAIF, xAI’s models apply heightened safeguards if they receive user prompts that pose a foreseeable and non-trivial risk of resulting in large-scale violence, terrorism, or the use, development, or proliferation of weapons of mass destruction, including CBRN weapons, and major cyber attacks on critical infrastructure.",
+          "passageType": "quote",
+          "translation": null,
+          "sourceRole": "primary",
+          "support": "supports",
+          "note": null
+        }
+      ]
+    },
+    {
+      "group": "frameworks",
+      "strand": "Frameworks",
+      "proposedPredicate": false,
+      "derivation": "explicit",
+      "resolution": "supported",
+      "extends": null,
+      "hazardNote": null,
+      "id": "ab-fw-faif-2025-vetted-user-exception",
+      "subject": "faif-2025",
+      "predicate": "states_provision",
+      "object": {
+        "kind": "literal",
+        "value": "Vetted, highly trusted users may be allowed to receive responses that heightened safeguards would otherwise restrict"
+      },
+      "statement": "The Frontier Artificial Intelligence Framework of December 2025 states that xAI may selectively allow its models to respond to requests that heightened safeguards would otherwise restrict, where the requester is among some vetted, highly trusted users known to be using those capabilities for benign or beneficial purposes.",
+      "time": {
+        "kind": "event",
+        "date": "2025-12-30",
+        "basis": "revision",
+        "note": "Provision as stated in this edition, dated by the edition’s revision date."
+      },
+      "qualification": "A stated exception. It records no grant of access to anyone, names no customer or auditor, and is not evidence that the exception was used.",
+      "attributes": {
+        "provision": {
+          "kind": "exception",
+          "key": "faif-vetted-user-exception"
+        }
+      },
+      "evidence": [
+        {
+          "source": "faif-2025",
+          "locator": "PDF p. 3 (no printed page numbers), “Addressing Risks of Malicious Use”, third paragraph, first sentence",
+          "passage": "we may selectively allow xAI’s models to respond to such requests from some vetted, highly trusted users (such as trusted third-party safety auditors or large enterprise customers under contract) whom we know to be using those capabilities for benign or beneficial purposes",
+          "passageType": "quote",
+          "translation": null,
+          "sourceRole": "primary",
+          "support": "supports",
+          "note": null
+        }
+      ]
+    },
+    {
+      "group": "frameworks",
+      "strand": "Frameworks",
+      "proposedPredicate": false,
+      "derivation": "explicit",
+      "resolution": "supported",
+      "extends": null,
+      "hazardNote": "Only the heading sentence is cited. The enumerated steps that follow it, which descend to a technical register and name agent and chemical control lists, were read and excluded.",
+      "id": "ab-fw-faif-2025-bio-chem-critical-steps",
+      "subject": "faif-2025",
+      "predicate": "states_provision",
+      "object": {
+        "kind": "literal",
+        "value": "For biological and chemical weapons, xAI identifies critical steps at which it restricts its models from providing detailed information or substantial assistance"
+      },
+      "statement": "The Frontier Artificial Intelligence Framework of December 2025 states that, in the setting of biological and chemical weapons, xAI considers critical steps where it restricts its models from providing detailed information or substantial assistance.",
+      "time": {
+        "kind": "event",
+        "date": "2025-12-30",
+        "basis": "revision",
+        "note": "Provision as stated in this edition, dated by the edition’s revision date."
+      },
+      "qualification": "The record states that the edition identifies such steps, not what they are. It is not evidence that any restriction was implemented or is effective.",
+      "attributes": {
+        "provision": {
+          "kind": "required_action",
+          "key": "faif-bio-chem-critical-steps"
+        }
+      },
+      "evidence": [
+        {
+          "source": "faif-2025",
+          "locator": "PDF p. 5 (no printed page numbers), “Addressing Risks of Malicious Use” › “2. Risk Assessment”, paragraph introducing the restricted critical steps",
+          "passage": "In the setting of biological and chemical weapons, xAI considers critical steps where we restrict xAI models from providing detailed information or substantial assistance",
+          "passageType": "quote",
+          "translation": null,
+          "sourceRole": "primary",
+          "support": "supports",
+          "note": null
+        }
+      ]
+    },
+    {
+      "group": "frameworks",
+      "strand": "Frameworks",
+      "proposedPredicate": false,
+      "derivation": "explicit",
+      "resolution": "supported",
+      "extends": null,
+      "hazardNote": null,
+      "id": "ab-fw-ms-fgf-2025-cbrn-medium-threshold",
+      "subject": "ms-fgf-2025",
+      "predicate": "states_provision",
+      "object": {
+        "kind": "literal",
+        "value": "CBRN Medium: some assistance increasing an existing expert’s ability to develop a known CBRN threat; deployment allowed under the Responsible AI Program"
+      },
+      "statement": "The Frontier Governance Framework of February 2025 defines the Medium CBRN risk level as a model providing some assistance increasing the ability of an existing expert, which it glosses as PhD level education in related fields, to develop a known CBRN threat, and allows deployment at that level in line with Microsoft’s Responsible AI Program requirements.",
+      "time": {
+        "kind": "event",
+        "date": "2025-02",
+        "basis": "publication",
+        "note": "Provision as stated in this edition, dated by the edition’s publication month."
+      },
+      "qualification": "The record states the risk level and its stated deployment requirement. It is not a finding about any model.",
+      "attributes": {
+        "provision": {
+          "kind": "threshold",
+          "key": "msfgf-cbrn-medium-threshold"
+        }
+      },
+      "evidence": [
+        {
+          "source": "ms-fgf-2025",
+          "locator": "PDF p. 12 (printed p. 11), Appendix I – Capability thresholds, CBRN weapons table, Medium row, Capability threshold column",
+          "passage": "The model provides some assistance increasing the ability of an existing expert (PhD level education in related fields) to develop a known CBRN threat.",
+          "passageType": "quote",
+          "translation": null,
+          "sourceRole": "primary",
+          "support": "supports",
+          "note": null
+        }
+      ]
+    },
+    {
+      "group": "frameworks",
+      "strand": "Frameworks",
+      "proposedPredicate": false,
+      "derivation": "explicit",
+      "resolution": "supported",
+      "extends": null,
+      "hazardNote": null,
+      "id": "ab-fw-ms-fgf-2025-cbrn-critical-threshold",
+      "subject": "ms-fgf-2025",
+      "predicate": "states_provision",
+      "object": {
+        "kind": "literal",
+        "value": "CBRN Critical: meaningful uplift to an expert developing a highly dangerous novel threat, or significantly lower barriers for a low-skilled actor to develop and deliver a known CBRN threat; further review and mitigations required"
+      },
+      "statement": "The Frontier Governance Framework of February 2025 defines the Critical CBRN risk level as a model providing a meaningful uplift to an expert’s ability to develop a highly dangerous novel threat, or significantly lowering the barriers to a low-skilled actor developing and delivering a known CBRN threat, and states that further review and mitigations are required at that level.",
+      "time": {
+        "kind": "event",
+        "date": "2025-02",
+        "basis": "publication",
+        "note": "Provision as stated in this edition, dated by the edition’s publication month."
+      },
+      "qualification": "The record states the risk level and its stated deployment requirement. The edition does not say what the further review or mitigations consist of, and the record is not a finding about any model.",
+      "attributes": {
+        "provision": {
+          "kind": "threshold",
+          "key": "msfgf-cbrn-critical-threshold"
+        }
+      },
+      "evidence": [
+        {
+          "source": "ms-fgf-2025",
+          "locator": "PDF p. 12 (printed p. 11), Appendix I – Capability thresholds, CBRN weapons table, Critical row, Capability threshold column",
+          "passage": "The model provides a meaningful uplift to an expert’s ability to develop a highly dangerous novel threat or significantly lowers the barriers to a low-skilled actor developing and delivering a known CBRN threat.",
+          "passageType": "quote",
+          "translation": null,
+          "sourceRole": "primary",
+          "support": "supports",
+          "note": null
+        },
+        {
+          "source": "ms-fgf-2025",
+          "locator": "PDF p. 12 (printed p. 11), Appendix I, CBRN weapons table, Critical row, Deployment requirements column",
+          "passage": "The column reads that further review and mitigations are required.",
+          "passageType": "paraphrase",
+          "translation": null,
+          "sourceRole": "primary",
+          "support": "supports",
+          "note": null
+        }
+      ]
+    },
+    {
+      "group": "frameworks",
+      "strand": "Frameworks",
+      "proposedPredicate": false,
+      "derivation": "explicit",
+      "resolution": "supported",
+      "extends": null,
+      "hazardNote": null,
+      "id": "ab-fw-ms-fgf-2025-leading-indicator-direction",
+      "subject": "ms-fgf-2025",
+      "predicate": "states_provision",
+      "object": {
+        "kind": "literal",
+        "value": "Leading-indicator screening is intended to move towards direct assessment of tracked capabilities such as CBRN weapon development"
+      },
+      "statement": "The Frontier Governance Framework of February 2025 states that, as evaluations mature, Microsoft intends to move its leading-indicator screening towards a more direct assessment of tracked capabilities such as CBRN weapon development, offensive cyberoperations and advanced autonomy.",
+      "time": {
+        "kind": "event",
+        "date": "2025-02",
+        "basis": "publication",
+        "note": "Provision as stated in this edition, dated by the edition’s publication month."
+      },
+      "qualification": "A stated intention, which the edition pairs with its statement that general-purpose benchmarks are its current leading indicator. It is not evidence that any direct assessment was built or run.",
+      "attributes": {
+        "provision": {
+          "kind": "evaluation_timing",
+          "key": "msfgf-leading-indicator-direction"
+        }
+      },
+      "evidence": [
+        {
+          "source": "ms-fgf-2025",
+          "locator": "PDF p. 6 (printed p. 5), §3 Capability assessment, paragraph on leading indicator assessments, second sentence",
+          "passage": "we intend to move this leading indicator screening toward a more direct assessment of tracked capabilities such as CBRN weapon development, offensive cyberoperations, and advanced autonomy",
+          "passageType": "quote",
+          "translation": null,
+          "sourceRole": "primary",
+          "support": "supports",
+          "note": null
+        }
+      ]
+    },
+    {
+      "group": "frameworks",
+      "strand": "Frameworks",
+      "proposedPredicate": false,
+      "derivation": "explicit",
+      "resolution": "supported",
+      "extends": null,
+      "hazardNote": null,
+      "id": "ab-fw-ms-fgf-2026-cbrn-critical-threshold",
+      "subject": "ms-fgf-2026",
+      "predicate": "states_provision",
+      "object": {
+        "kind": "literal",
+        "value": "CBRN Critical: meaningful uplift to an expert developing a highly dangerous novel threat, or significantly lower barriers for a low-skilled actor to develop and deliver a known CBRN threat; further review and mitigations required"
+      },
+      "statement": "The Frontier Governance Framework of February 2026 defines the Critical CBRN risk level as a model providing a meaningful uplift to an expert’s ability to develop a highly dangerous novel threat, or significantly lowering the barriers to a low-skilled actor developing and delivering a known CBRN threat, and states that further review and mitigations are required at that level.",
+      "time": {
+        "kind": "event",
+        "date": "2026-02",
+        "basis": "revision",
+        "note": "Provision as stated in this edition, dated by the edition’s revision month."
+      },
+      "qualification": "The record states the risk level and its stated deployment requirement for this edition. It is not a finding about any model.",
+      "attributes": {
+        "provision": {
+          "kind": "threshold",
+          "key": "msfgf-cbrn-critical-threshold"
+        }
+      },
+      "evidence": [
+        {
+          "source": "ms-fgf-2026",
+          "locator": "PDF p. 12 (printed p. 11), Appendix I – Capability thresholds, CBRN weapons table, Critical row, Capability threshold and Deployment requirements columns",
+          "passage": "The row reads that the model provides a meaningful uplift to an expert’s ability to develop a highly dangerous novel threat or significantly lowers the barriers to a low-skilled actor developing and delivering a known CBRN threat, and that further review and mitigations are required. The wording is the same as the February 2025 edition’s Critical row.",
+          "passageType": "paraphrase",
+          "translation": null,
+          "sourceRole": "primary",
+          "support": "supports",
+          "note": "Paraphrased, not quoted: this source’s quotation budget is already used in full by the dataset’s existing records."
+        }
+      ]
+    },
+    {
+      "group": "frameworks",
+      "strand": "Frameworks",
+      "proposedPredicate": false,
+      "derivation": "inferred",
+      "resolution": "supported",
+      "extends": null,
+      "hazardNote": null,
+      "id": "ab-fw-ms-fgf-2026-changelog-no-cbrn-entry",
+      "subject": "ms-fgf-2026",
+      "predicate": "provision_not_found",
+      "object": {
+        "kind": "literal",
+        "value": "A change-log entry recording a change to the CBRN capability thresholds"
+      },
+      "statement": "No passage recording a change to the CBRN weapons capability thresholds was found in the change log of the Frontier Governance Framework of February 2026 within the inspected scope.",
+      "time": {
+        "kind": "event",
+        "date": "2026-02",
+        "basis": "revision",
+        "note": "Provision as stated in this edition, dated by the edition’s revision month."
+      },
+      "inferenceRationale": "Scope inspected: the whole of Appendix II – Change log on PDF p. 16 (printed p. 15), whose February 2026 entry lists six changes. Search terms applied to the normalised text of the entry: “CBRN”, “chemical”, “biological”, “threshold”. The entry names the addition of harmful manipulation and loss of control as tracked high-risk capabilities, the update cadence, the scope of the framework, the cadence of deeper capability assessment, a definition of substantially fine-tuned models, and other edits for clarity.",
+      "qualification": "A recorded absence in one named part of one edition. It is not a finding that the CBRN thresholds are unchanged: the comparison of the two editions’ Critical CBRN rows is recorded separately, in ab-fw-ms-fgf-2026-cbrn-critical-threshold. It says nothing about other parts of the edition or about practice.",
+      "attributes": {
+        "provision": {
+          "kind": "revision",
+          "key": "msfgf-changelog-cbrn-entry"
+        }
+      },
+      "evidence": [
+        {
+          "source": "ms-fgf-2026",
+          "locator": "PDF p. 16 (printed p. 15), Appendix II – Change log, entry “February 2026”, all six bullets",
+          "passage": "Within the inspected scope, no bullet of the February 2026 change-log entry names the CBRN weapons capability thresholds or a change to them.",
+          "passageType": "paraphrase",
+          "translation": null,
+          "sourceRole": "primary",
+          "support": "supports",
+          "note": null
+        }
+      ]
+    }
+  ],
+  "omissions": [
+    {
+      "item": "Meta Frontier AI Framework v1.1 and Meta Advanced AI Scaling Framework v2: no record at all.",
+      "reason": "Neither edition could be retrieved. ai.meta.com answered HTTP 400 to every request from this environment, including the framework file and the announcement post, and the Internet Archive capture pages answer HTTP 403 here. Nothing was recorded from memory, so the two Meta editions carry no record from this pass. See retrievalFailures."
+    },
+    {
+      "item": "xAI Frontier Artificial Intelligence Framework, June 2026 edition: no record.",
+      "reason": "The dataset address returns HTTP 404 (NoSuchKey) and the Internet Archive capture answers HTTP 403 here. The December 2025 edition was retrieved and recorded; the comparison between the two editions, which the dataset only partly holds, is left open."
+    },
+    {
+      "item": "The D1 CBRN comparison cells (cmp-*-d1-cbrn) and every biological provision already in data/claims.json.",
+      "reason": "Already in the dataset, as scope.md requires. Where a record adds to one, the dataset claim is named in `extends`: cmp-rsp-2023-d1-cbrn, prov-rsp-v2-0-misuse-uplift-threshold, rsp-v2-2-insider-scope, provchange-rsp-v3-3-novel-cb-threshold, cmp-fsf-2024-d1-cbrn, cmp-fsf-v2-0-d1-cbrn, fsf-v3-1-cbrn-tcls, cmp-preparedness-beta-2023-d1-cbrn, cmp-preparedness-v2-d1-cbrn, cmp-frontier-governance-2026-d1-cbrn, cmp-faif-2025-d1-cbrn, prov-faif-2026-heightened-safeguards and prov-faif-2025-bio-chem-acceptance-criterion."
+    },
+    {
+      "item": "The rationale and example columns of the capability tables of the Frontier Safety Framework v1.0, the Preparedness Framework Beta and Version 2, and the Frontier Governance Framework of May 2026.",
+      "reason": "Hazard-safe register. These columns descend to a technical or procedural level, and two of them name an agent class. Only the capability-level, threshold and tier columns were recorded, and each affected record carries a hazardNote."
+    },
+    {
+      "item": "The enumerated restricted critical steps and the threat-model stages of the xAI Frontier Artificial Intelligence Framework, December 2025, and the benchmark descriptions on its PDF p. 4.",
+      "reason": "Hazard-safe register. Only the heading sentence that states the policy was recorded (ab-fw-faif-2025-bio-chem-critical-steps). The named control lists, agent traits and stages of the threat model were read and excluded."
+    },
+    {
+      "item": "The passage in the Responsible Scaling Policy v1.0 (PDF p. 12) stating that evaluations for capabilities related to biological risks were previously carried out on a model similar to Claude 2 and showed it strictly below ASL-3.",
+      "reason": "It is a stated evaluation result rather than a provision, so it belongs to the `evaluations` pass, where it can carry attributes.evaluation with the report’s own conditions. Flagged here so that pass does not miss it."
+    },
+    {
+      "item": "The illustrative scorecard of the Preparedness Framework Beta (PDF pp. 15–16), which shows a CBRN row and a GPT-versus-search evaluation.",
+      "reason": "The edition marks the whole scorecard and the evaluation beside it as illustrative and says the specifics do not reflect results from real evaluations. Recording them as results would misstate the source; it also names an agent class, which is excluded."
+    },
+    {
+      "item": "The Anthropic analogy between AI Safety Levels and biosafety level standards (Responsible Scaling Policy v1.0, PDF p. 2).",
+      "reason": "It describes where the name of the scheme comes from, not a provision about biological risk, and no schema provision kind fits it. Worth a record if the maintainer wants the framing recorded; see openQuestions."
+    },
+    {
+      "item": "Per-edition restatements of provisions whose wording is identical across consecutive editions.",
+      "reason": "Bounded selection. The novel chemical/biological threat-pathway sharing provision, for example, is stated in the same words in Responsible Scaling Policy v3.0, v3.1, v3.2, v3.3 and v3.4; it is recorded for v3.0, with a quote, and for v3.2, so that the key is anchored in both the clean-text editions, but not for v3.1, v3.3 or v3.4. The off-cycle reporting trigger is recorded for v3.3, where it first appears, and for v3.4, the edition in force at the check date."
+    }
+  ],
+  "retrievalFailures": [
+    {
+      "url": "https://ai.meta.com/static-resource/Meta_Advanced-AI-Scaling-Framework-v2",
+      "result": "HTTP 400 with a Meta error page, on two attempts on 2026-10-28, and the same for the trailing-slash form. Every ai.meta.com address tried from this environment answered HTTP 400, including https://ai.meta.com/blog/scaling-how-we-build-test-advanced-ai/.",
+      "fallback": "None. http://archive.org/wayback/available gives the capture http://web.archive.org/web/20261019213557/https://ai.meta.com/static-resource/Meta_Advanced-AI-Scaling-Framework-v2, which answered HTTP 403 from here. The cross-family checker, who can reach the Archive, should open it. Unchecked."
+    },
+    {
+      "url": "https://web.archive.org/web/20250213105620/https://ai.meta.com/static-resource/meta-frontier-ai-framework/",
+      "result": "Connection reset by peer on three attempts on 2026-10-28; the Internet Archive capture pages refuse connections from this environment, as scope.md anticipates.",
+      "fallback": "None. The Meta Frontier AI Framework v1.1 is recorded in the dataset from this capture, but no new record could be checked against a retrieved text, so none was made. Unchecked."
+    },
+    {
+      "url": "https://media.x.ai/v1/website/xai-frontier-artificial-intelligence-framework-30-june-2026-99c40684.pdf",
+      "result": "HTTP 404 with an S3 NoSuchKey body on 2026-10-28, as the brief anticipated.",
+      "fallback": "None. http://archive.org/wayback/available gives http://web.archive.org/web/20260926012707/https://media.x.ai/v1/website/xai-frontier-artificial-intelligence-framework-30-june-2026-99c40684.pdf, which answered HTTP 403 from here. Unchecked; the cross-family checker should open it."
+    },
+    {
+      "url": "https://x.ai/about/frontier-ai-framework and https://x.ai/safety",
+      "result": "HTTP 403 on 2026-10-28. Tried only to locate a current address for the June 2026 edition after the 404 above.",
+      "fallback": "None."
+    }
+  ],
+  "openQuestions": [
+    {
+      "question": "The `BASES` set in research/ai-bio/build.mjs has no `revision`, but the dataset dates the xAI December 2025 edition and the Microsoft February 2026 edition by their revision dates, with `basis: \"revision\"`. Six records in this draft use that basis and will be reported as problems by `tools.mjs merge`.",
+      "recommended": "Add `revision` to `BASES` in research/ai-bio/build.mjs. Keeping date fidelity matters more than the tool’s current list, and relabelling a revision date as a publication date would assert a publication that neither edition establishes."
+    },
+    {
+      "question": "Should the Meta and xAI June 2026 editions be left without records in this pack, or should the cross-family checker be asked to retrieve the three unreachable expressions and draft their records?",
+      "recommended": "Ask the cross-family checker to open the three Internet Archive captures named in retrievalFailures and to report the biological provisions of each edition. Admitting the pack with three of the 22 editions unread should be stated as a coverage limit rather than left implicit."
+    },
+    {
+      "question": "Four of the retrieved PDFs (Responsible Scaling Policy v2.2, v3.1, v3.3, v3.4) have text layers that displace the first character of many lines, and three more (Preparedness Framework Beta p. 9, Preparedness Framework Version 2 Table 1, Frontier Governance Framework 2026 tables) interleave table columns. Verbatim quotes from those passages cannot be checked mechanically, so this draft uses explicit paraphrases with locators there.",
+      "recommended": "Keep the paraphrases. If a quote from those passages is wanted later, extract each table column separately, as the dataset record absent-rsp-v3-3-no-train-deploy-without-safeguards says was done, and record which extraction was checked."
+    },
+    {
+      "question": "Several sources have almost no quotation budget left: source-fgf-2026 has 1 word of headroom and source-ms-fgf-2026 has 4, against the editorial policy’s per-source limit. Three records in this draft rest on paraphrase for that reason alone.",
+      "recommended": "Accept the paraphrases. If the exact wording of the Frontier Governance Framework tiers or the Microsoft 2026 CBRN rows is later wanted as a quote, it needs a maintainer decision on which existing dataset quote from the same source to retire."
+    },
+    {
+      "question": "Should the Anthropic analogy between AI Safety Levels and US biosafety level standards be recorded, and under which provision kind?",
+      "recommended": "Record it if the maintainer wants the framing in the corpus, as a `states_provision` of kind `threshold` on rsp-2023 with an explicit qualification that it records the derivation of the scheme’s name and no provision about biological risk. It was left out of this draft because no schema provision kind fits it cleanly."
+    },
+    {
+      "question": "The provision keys in this draft (for example `rsp-cbrn-4-threshold`, `fsf-cbrn-uplift-1-threshold`, `pf-bio-chem-high-threshold`) are new and align editions within one family only.",
+      "recommended": "Keep them family-scoped, as the dataset’s existing keys are. Aligning thresholds across developers is a comparison question (the `comparison-*` keys) and should not be done by reusing a provision key."
+    },
+    {
+      "question": "ab-fw-rsp-v3-2-novel-cb-threat-pathway-sharing cannot carry the verbatim quote that schema validation requires of a stated provision: the cell’s sentence is 26 words as quoted for v3.0, and source-rsp-3-2 has 22 words of headroom (393 quoted of a limit of 415). The audit of 2026-10-28 asked for the quote; it was declined for that reason.",
+      "recommended": "Admit the record with an elided quote of the sentence’s outer limbs (“we will identify the most concerning specific threat pathways … and share this content with policymakers”, 16 counted words, within the 22 available), keeping the paraphrase beside it for the middle limb. Retiring one of the dataset’s 16 existing quotes from source-rsp-3-2 to free the budget would also work but is a maintainer decision. Do not drop the record: the same provision is recorded for v3.0 with a quote, and omitting it for v3.2 would leave a hole in the edition series."
+    }
+  ],
+  "notes": "Pass 1 of five, group `frameworks`, strand `Frameworks`, 53 records against an aim of about 45; nothing is editorially accepted. Nineteen of the 22 framework editions named in the brief were retrieved by direct HTTP on 2026-10-28 and every record is checked against the retrieved text of its own edition: the nine Responsible Scaling Policy editions, the four Frontier Safety Framework editions, the Preparedness Framework Beta and Version 2, the Frontier Governance Framework of May 2026, the xAI Frontier Artificial Intelligence Framework of December 2025, and the two Microsoft Frontier Governance Framework editions. Three could not be retrieved and carry no record: Meta Frontier AI Framework v1.1, Meta Advanced AI Scaling Framework v2 (every ai.meta.com address answered HTTP 400 from here) and the xAI June 2026 edition (HTTP 404). Records by edition: rsp-2023 5, rsp-v2-0 3, rsp-v2-1 3, rsp-v2-2 1, rsp-v3-0 3, rsp-v3-1 1, rsp-v3-2 1, rsp-v3-3 2, rsp-v3-4 1; fsf-2024 3, fsf-v2-0 4, fsf-v3-0 3, fsf-v3-1 3; preparedness-beta-2023 2, preparedness-v2 7, frontier-governance-2026 2; faif-2025 4; ms-fgf-2025 3, ms-fgf-2026 2. Predicates: 46 states_provision, 6 changes_from, 1 provision_not_found; no predicate is proposed. Three records are inferred (two edition comparisons and the one recorded absence), each with its premises in inferenceRationale; the rest are explicit and supported. Thirteen records name a dataset claim in `extends`. Every quote is verbatim from the cached retrieval of its own edition and within the per-source quotation budget that the dataset’s existing quotes have left; where the budget or the PDF text layer made a verbatim match uncheckable, the record uses an explicit paraphrase and its evidence note says why. Fourteen records carry a hazardNote recording that a rationale or example column, an enumerated list of steps, a set of reference scenarios or a named agent class was read and excluded. No record states that any safeguard works, that any threshold was reached, or that any framework was implemented or complied with. Two tooling points for the integrator: six records use `basis: \"revision\"`, which the pack’s own BASES set lacks but the dataset uses for these editions (see openQuestions); and the `provision.kind` values are restricted to the schema 2.19 enum rather than the looser list in FORMAT.md, so a later admission is mechanical.\n\nCorrections of 2026-10-28: the findings of audit-A and audit-B whose verdict is `correct` for an `ab-fw-` record are applied, one entry each in `auditCorrections`, and each was re-checked against the cached edition before it was applied. Two of the three were applied; the third (a quote for ab-fw-rsp-v3-2-novel-cb-threat-pathway-sharing) was declined because the per-source quotation budget does not allow it, and is recorded in `openQuestions`. `tools.mjs check` and `tools.mjs hazards` were run against this file again until clean."
+}

@@ -3,7 +3,8 @@ export const predicates = {
     label: 'documented evaluation engagement with',
     description:
       'An evaluator’s explicitly documented, system-specific engagement with a developer. Proposed, announced and reported performed work are distinct activity stages. Reported performance does not independently verify execution, effectiveness or certification.',
-    subjects: ['organisation'],
+    // Schema 2.20: a government AI safety institute is a public body.
+    subjects: ['organisation', 'public_body'],
     objects: ['organisation'],
   },
   separation_announced: {
@@ -23,8 +24,8 @@ export const predicates = {
   invested_in: {
     label: 'invested in',
     description:
-      'A reported realised investment, scoped to the cited event or snapshot. Instrument and stage are separate; this does not imply control.',
-    subjects: ['organisation'],
+      'A reported realised investment, scoped to the cited event or snapshot. Instrument and stage are separate; this does not imply control. From schema 2.21 the investor may be a public body.',
+    subjects: ['organisation', 'public_body'],
     objects: ['organisation'],
   },
   extended_credit_to: {
@@ -51,16 +52,16 @@ export const predicates = {
   plans_infrastructure_spend: {
     label: 'planned infrastructure spending of',
     description:
-      'An infrastructure spending plan, not a funding round, realised expenditure or direct investment in its customer.',
+      'An infrastructure spending plan, not a funding round, realised expenditure or direct investment in its customer. From schema 2.21 the object may be the identified site the plan is for.',
     subjects: ['organisation'],
-    objects: ['literal'],
+    objects: ['literal', 'infrastructure'],
   },
   plans_capacity: {
     label: 'planned capacity for',
     description:
-      'Planned capacity of an identified compute asset. No deployment, operation, procurement or ownership is established.',
+      'Planned capacity of an identified compute asset or, from schema 2.21, of a group of sites a source states together (a literal naming the group). No deployment, operation, procurement or ownership is established, and a group’s figure is never divided among its sites.',
     subjects: ['organisation'],
-    objects: ['infrastructure'],
+    objects: ['infrastructure', 'literal'],
   },
   supersedes_document: {
     label: 'supersedes version',
@@ -79,7 +80,7 @@ export const predicates = {
   states_provision: {
     label: 'states provision',
     description:
-      'An exact framework edition states one provision: a capability threshold or risk level and its trigger, a required safeguard or action, a decision authority (who decides, recommends, can overrule or is informed), or a stated exception. The quoted text records what the edition says, not implementation, compliance or effectiveness. Provisions with the same key align across editions of one family.',
+      'An exact framework edition, or another document with an exact expression, states one provision: a capability threshold or risk level and its trigger, a required safeguard or action, a decision authority (who decides, recommends, can overrule or is informed), a stated exception, or another statement of its content, such as a licence term or a prospectus statement. The passage records what the document says, not implementation, compliance or effectiveness. Provisions with the same key align across editions of one family.',
     subjects: ['document'],
     objects: ['literal'],
   },
@@ -149,7 +150,7 @@ export const predicates = {
   lists_participants: {
     label: 'lists as participants',
     description:
-      'A document lists the participants in a text or process, such as signatories, endorsers, attendees or reporting organisations, at a stated date (schema 2.19). The record gives the list and how many entries it has, stated by the source or counted by Selekoa. Lists of the same text at different dates are separate records. Being listed is not a signature, ratification or compliance, and absence from a list is not a refusal.',
+      'A document lists the participants in a text or process, such as signatories, endorsers, attendees or reporting organisations, at a stated date (schema 2.19). The record gives the list and how many entries it has, stated by the source or counted by Selekoa. Lists of the same text at different dates are separate records. From schema 2.27 a record may give one listed entity’s entry, counted as one, naming the organisation it maps the listed name to. Being listed is not a signature, ratification, approval or compliance, and absence from a list is not a refusal.',
     subjects: ['document'],
     objects: ['literal'],
   },
@@ -207,7 +208,8 @@ export const predicates = {
     description:
       'An institutional role with explicitly scoped time: snapshot, sourced interval, or unknown dates. No continuing appointment is implied.',
     subjects: ['person'],
-    objects: ['organisation'],
+    // Schema 2.20: a role at a public body, such as a government institute.
+    objects: ['organisation', 'public_body'],
   },
   co_founded: {
     label: 'co-founded',
@@ -251,6 +253,21 @@ export const predicates = {
     subjects: ['organisation'],
     objects: ['organisation'],
   },
+  // Schema 2.23 (AI in biology admission, decision 5 of 2026-10-30).
+  partnership_announced: {
+    label: 'announced a partnership with',
+    description:
+      'An organisation announced a collaboration or partnership with a named counterparty, as the announcement states it (stage announced). It is not evidence that the work was performed, that a payment was made or that the arrangement continues; an “up to” amount stays in the statement.',
+    subjects: ['organisation'],
+    objects: ['organisation'],
+  },
+  award_announced: {
+    label: 'announced an award to',
+    description:
+      'An awarding body announced its decision to award a named prize to a person, with the citation in its own words. It is the awarding body’s statement, not a Selekoa assessment of the work, and it does not attribute the work to the laureate alone.',
+    subjects: ['organisation', 'public_body'],
+    objects: ['person'],
+  },
   // Lab genealogy (schema 2.15).
   founding_stated: {
     label: 'is stated to have been founded in',
@@ -276,8 +293,8 @@ export const predicates = {
   investment_announced: {
     label: 'announced investment in',
     description:
-      'A counterparty announced an investment. Amount and transaction stage are qualified separately.',
-    subjects: ['organisation'],
+      'A counterparty announced an investment. Amount and transaction stage are qualified separately. From schema 2.21 the investor may be a public body.',
+    subjects: ['organisation', 'public_body'],
     objects: ['organisation'],
   },
   participated_in_round: {
@@ -300,6 +317,91 @@ export const predicates = {
       'A dated announcement describing cloud provision. Direction runs from customer to provider; this does not assert payment or continuing exclusivity.',
     subjects: ['organisation'],
     objects: ['organisation'],
+  },
+  // Schema 2.21: the compute, power and orbit records.
+  announced_site: {
+    label: 'announced site',
+    description:
+      'A party announced a data-centre site, campus or other infrastructure, dated by the announcement. An announcement is not construction, operation, ownership or a contract.',
+    subjects: ['organisation', 'public_body'],
+    objects: ['infrastructure'],
+  },
+  status_stated: {
+    label: 'has status as stated',
+    description:
+      'A party states the status of an infrastructure or programme, such as construction under way, energised or operating, dated by the statement. It is the stating party’s account, not an independent finding, and a stated status is not extended beyond what the statement covers.',
+    subjects: ['infrastructure', 'public_body'],
+    objects: ['literal'],
+  },
+  power_agreement: {
+    label: 'has a power agreement with',
+    description:
+      'A stated agreement on electricity supply, a power purchase, a plant restart or the development of generation, at the stage the parties state. It is not delivery of power, and an agreement to explore is not a contract.',
+    subjects: ['organisation', 'public_body'],
+    objects: ['organisation', 'public_body'],
+  },
+  supply_agreement: {
+    label: 'has a supply agreement with',
+    description:
+      'A stated agreement to supply chips, memory, systems or manufacturing, at the stage the parties state, with the product and quantity as worded. It is not delivery or payment.',
+    subjects: ['organisation'],
+    objects: ['organisation'],
+  },
+  government_award: {
+    label: 'made a government award to',
+    description:
+      'A public body states an award, grant or selection, with its stage: preliminary, final or disbursed. A preliminary award is not a final one, and a final award is not disbursement.',
+    subjects: ['public_body'],
+    objects: ['organisation'],
+  },
+  granted_equity_right: {
+    label: 'granted an equity right to',
+    description:
+      'A company states that it grants or issued a warrant or other right to acquire its shares, with its conditions. A right is not an exercised purchase or a holding.',
+    subjects: ['organisation'],
+    objects: ['organisation', 'public_body'],
+  },
+  announced_plan: {
+    label: 'announced plan',
+    description:
+      'A party announced a plan, programme or intention, dated by the announcement. A plan is not an action, a contract or spending.',
+    subjects: ['organisation', 'public_body'],
+    objects: ['literal', 'infrastructure'],
+  },
+  launch_stated: {
+    label: 'stated the launch of',
+    description:
+      'A party states that a spacecraft or constellation was launched, dated by the statement. Launch is not operation or performance in orbit.',
+    subjects: ['organisation'],
+    objects: ['infrastructure'],
+  },
+  filed_application: {
+    label: 'filed application',
+    description:
+      'A party filed an application with a regulator, dated by the filing as the regulator lists it. A filing is not an authorisation.',
+    subjects: ['organisation'],
+    objects: ['document'],
+  },
+  regulator_decision: {
+    label: 'recorded a regulator decision on',
+    description:
+      'A regulator’s decision, dated by the regulator’s own record where it was retrieved and otherwise by the statement that reports it, which the record names. The decision covers only what its record states.',
+    subjects: ['public_body'],
+    objects: ['literal', 'document', 'organisation', 'infrastructure'],
+  },
+  accepted_for_filing: {
+    label: 'accepted for filing',
+    description:
+      'A regulator accepted an application for filing, opening it to comment. Acceptance for filing is not approval.',
+    subjects: ['public_body'],
+    objects: ['document'],
+  },
+  designated_zone: {
+    label: 'designated zone',
+    description:
+      'A government designated a zone, such as an AI Growth Zone, dated by the designation as stated. A designation is not construction or investment in it.',
+    subjects: ['public_body'],
+    objects: ['infrastructure'],
   },
   uses_infrastructure: {
     label: 'uses infrastructure',
@@ -348,12 +450,23 @@ export const predicates = {
     description:
       'A document expressly attributes intellectual or practical contribution to a named actor, with the scope retained in the claim.',
     subjects: ['document'],
-    objects: ['person', 'organisation'],
+    // Schema 2.26: a literal actor, for a person the source names who has no
+    // record of their own.
+    objects: ['person', 'organisation', 'literal'],
   },
   discusses: {
     label: 'discusses',
     description:
       'The concept is explicitly discussed in the document. This makes no earliest-use, invention or transmission claim.',
+    subjects: ['document'],
+    objects: ['concept'],
+  },
+  // Schema 2.26: a naming record. The document uses a name for a family of
+  // methods or a term that a concept's naming criterion describes.
+  uses_term: {
+    label: 'uses the name',
+    description:
+      'A passage of the document uses a name for a family of methods or a term, in the sense the concept’s naming criterion describes or, where labelled, in another sense. The record documents the use; it is not evidence that the name began there, and it implies no influence on or from another text.',
     subjects: ['document'],
     objects: ['concept'],
   },
@@ -363,6 +476,29 @@ export const predicates = {
       'A document names a concept as an evaluation category. This is not a finding that the evaluated system exhibits the property.',
     subjects: ['document'],
     objects: ['concept'],
+  },
+  states_evaluation_result: {
+    label: 'states evaluation result',
+    description:
+      'A report states the result of an evaluation it ran or commissioned, in its own words, with what was measured, by what kind of method, and the caveats the report itself gives (schema 2.22). The record is the report’s statement, not a verified finding: it says nothing about another system, a later version or real-world risk, and a null or limiting result is not evidence that no effect exists.',
+    subjects: ['document'],
+    objects: ['literal'],
+  },
+  // Schema 2.24 (key papers admission, decision 4 of 2026-10-28).
+  states_contribution: {
+    label: 'states its contribution',
+    description:
+      'A paper or other publication describes its own contribution, quoted from the expression the record names, usually its abstract or introduction. The record is the document’s own description, not an assessment: a claim of priority or novelty it contains is the document’s claim, flagged as such, and says nothing about earlier or later work.',
+    subjects: ['document'],
+    objects: ['literal'],
+  },
+  // Schema 2.25 (key papers admission, decision 2 of 2026-10-28).
+  credits_work: {
+    label: 'attributes to',
+    description:
+      'A document expressly attributes an argument, concept, term, finding or approach to another work, in its own words; the kind of attribution is recorded. The record is the citing document’s claim. It is not evidence that the cited work originated the idea, that the attribution is accurate, or of influence beyond the passage. Citation alone is recorded as a citation.',
+    subjects: ['document'],
+    objects: ['document'],
   },
   supported_research: {
     label: 'supported research for',
@@ -397,6 +533,14 @@ export const predicates = {
   },
 } as const;
 
+/** The kinds of an attributed credit (schema 2.25), as a reader reads them. */
+export const attributionLabels = {
+  builds_on: 'Builds on the work',
+  attributes_term: 'Attributes a term or concept to the work',
+  summarises: 'Summarises an argument or finding of the work',
+  attributes_and_disputes: 'Attributes an argument to the work and disputes it',
+} as const;
+
 /** The stance of each proposition predicate (schema 2.11). */
 export const propositionStances = {
   articulates_proposition: 'articulates',
@@ -414,3 +558,21 @@ export const topics = [
   'governance',
 ] as const;
 export type Topic = (typeof topics)[number];
+
+/**
+ * Records whose route shows a narrower label than their predicate's, because
+ * the statement says no more than the label does. The predicate is unchanged
+ * (maintainer decision of 2026-10-29, review/reader-decisions-2026-10-29.md).
+ */
+export const relationLabelOverrides: Record<string, string> = {
+  // The statement says only that the founder named a financial backer.
+  'cn-high-flyer-backing': 'named as a financial backer of',
+};
+
+/** The relation label a record's route shows. */
+export function relationLabel(claim: {
+  id: string;
+  predicate: Predicate;
+}): string {
+  return relationLabelOverrides[claim.id] ?? predicates[claim.predicate].label;
+}

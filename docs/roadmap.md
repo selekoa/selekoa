@@ -173,6 +173,8 @@ the start page: every page is a hash route rendered in the browser.
    work, a deployment approaching the host's file limit (20,000 files per deployment
    on the free Pages plan), or the browser data bundle (about 6 MB in October 2026)
    becoming too heavy for phones. Check these at each dataset release.
+   Data loading plan (measured 2026-10-30), a staged split before the pending packs:
+   [data-loading-plan.md](data-loading-plan.md).
 
 ## Next major development phase
 
@@ -227,10 +229,112 @@ and paid infrastructure require separate decisions.
 
 ### Next steps
 
+- Explorer map speed (maintainer decision, 2026-10-31): the map computes a
+  layout of the whole dataset on the main thread before its first draw, at a cost
+  that grows roughly with the square of the number of entities: about 14 s on
+  `main` before the admissions of 2026-10-31 and about 20.5 s with the key papers
+  admission, during which the page does not respond. Compute the layout at build
+  time or in a Web Worker. Two map browser specs pass on an idle machine and time
+  out under load until then.
+- After the large admissions (maintainer note, 2026-10-31): rerun the 20 reader
+  tasks (`review/reader-tasks-2026-10-29.md`) and the consistency audit
+  (`pnpm audit:consistency`) on the grown dataset, and fix what they find.
 - Citation export (BibTeX, RIS, CSL-JSON and Copy APA) uses the structured author
   names of schema 2.14. Open: six sources without them (unsigned, anonymous, edited or
   unnamed contributors), two group credits that hide named chairs, and an editor role
   for edited books; see `review/citation-authors-2026-10-15.md`.
+
+### Interface work after the admissions (maintainer order, 2026-11-01)
+
+Start once every current admission is on the live site. Items 1, 2 and 3 come
+before any public mention of Selekoa.
+
+1. **Compare frameworks** (`/compare/frontier-safety-frameworks`). At 1440 px the
+   table is 1,848 px wide inside a 748 px column. The question column and the
+   framework headers scroll away with it.
+   - Give the table the page width. Keep the question column and the framework
+     headers in place while scrolling. Open the cell panel as a drawer only when a
+     cell is inspected.
+   - Add two ways to read it. **One question:** a single question, with every
+     framework listed down the page and a link of its own. **Side by side:** two or
+     three chosen frameworks as columns.
+   - Offer a CSV download with one row per cell: framework, edition, question,
+     status, the quotation or the marked paraphrase, page, source URL, date checked
+     and the search notes for "not found". Build it from the same data as the page,
+     and add a test that the two match.
+   - Optional, and last: a landscape print style.
+2. **Start page: a "Ways in" panel** directly under the search box.
+   - It holds the "for example" questions, Compare frameworks, Browse by year, the
+     map and Explore the records. It replaces the "For example" block and the
+     separate year line.
+   - Give tools (things a reader operates: comparison, years, map, explorer) one
+     visual style, used the same way wherever a tool appears. Keep it distinct from
+     readings (questions and guides).
+   - Do not use square brackets as the marker: on this site they mark an editor's
+     insertion in a quotation.
+   - The start page title ("A documentary history of machine intelligence.") breaks
+     before its last word on a laptop. Fix the size, measure or wrapping (for example
+     `text-wrap: balance`) so that no line holds a single word, and check it at phone,
+     laptop and desktop widths.
+3. **About, start-page wording and review status** (maintainer decision, 2026-11-01).
+   This item, like items 1 and 2, comes before any public mention.
+   - **Start page introduction** (it replaces the current paragraph; the title line
+     stays): "Selekoa is a documentary history of machine intelligence and of human
+     thought about it. Machines built it: they find the sources, quote them and
+     check each other's work, and every statement links to the passage it rests on.
+     What they leave to **you** is the _human part_: the question, the point of
+     view, the stance." Set "you" in bold and "human part" in italics.
+   - **About, a new opening section, "Why machine-first",** signed "the maintainer"
+     until the maintainer chooses to give a name. Text: "Selekoa tests a method:
+     let machines do the research bootstrapping — finding, quoting, dating and
+     cross-checking sources at a scale no single researcher could — and keep for
+     people what machines can't decide for them. I think this changes how research
+     is done. Collecting and checking sources used to take most of a researcher's
+     time. When machines do much of that, what remains is the part they can't do for you,
+     and it matters more than before: deciding what to ask, and from where. The same
+     records could support a poststructuralist, decolonial futures-studies article
+     or an accelerationist manifesto. **Selekoa doesn't choose between them.** It
+     tries to make sure both argue from the same sources, which anyone can check.
+     Choosing the standpoint is the human part of the work, and Selekoa leaves it
+     to you." The bold is the maintainer's. The maintainer may still edit the text.
+   - **About, on the choice of collections:** "The collections are not a survey of
+     the field. They follow the maintainer's own research interests, so the
+     selection is partly arbitrary, and its gaps say more about one person's
+     curiosity than about what matters. Suggestions for new collections or projects
+     are welcome; a good one may well become the next collection." Suggestions go
+     to `maintainer@selekoa.org`, the address in `site.config.json` (maintainer
+     decision, 2026-11-01). Today it appears only in About's corrections and
+     rights paragraph and in `llms.txt`. Show it in this section and in the site
+     footer, both read from `site.config.json`, never hard-coded. The public
+     repository's issues may be offered as a second route if they are open.
+   - **Review status.** Remove the "not yet human-reviewed" framing; it implies a
+     review stage that is not planned.
+     - The banner "Records found and checked by machines, not reviewed by an
+       editor" becomes "Found and cross-checked by machines · How this works →".
+     - Drop the per-page "machine-proposed" and "No human review of the selection
+       or framing is recorded" notices.
+     - About keeps one plain disclosure: "No person reads every record before
+       publication. The maintainer sets the rules, reviews every batch of changes
+       and decides what is admitted."
+     - The `editorialStatus` field stays in the data; changing its values would
+       be a schema change, and released datasets carry it.
+     - Update the editorial policy, the style guide and `llms.txt` to match.
+     - Drop human acceptance as a planned stage; editorial acceptance of single
+       records is no longer a goal.
+     - Earlier records and review notes keep their wording as history.
+4. **Lab control timelines side by side.** Show the board, ownership and control
+   changes of OpenAI, Anthropic, Google DeepMind and xAI on one shared time axis,
+   from the existing control-structure records. This is design work, not new
+   research.
+5. **Propositions by thinker** (the maintainer's next choice). For each proposition,
+   who articulated or contested it, and when, from the stored stances. It comes
+   after the heterodox pack is admitted.
+6. Less urgent:
+   - **Laws compared:** laws as rows, questions as columns (scope and threshold,
+     duties, start dates, penalties, enforcing body). This needs a research pack
+     with a cross-family check, and every cell must quote the law.
+   - **Commitments by developer:** who signed which external commitment, when and
+     in which edition. A signature is never compliance.
 
 ### Backlog
 
@@ -255,6 +359,15 @@ and paid infrastructure require separate decisions.
   example: cited by dataset documents or frameworks, or a stated citation count with
   its date and source); record what a paper states and its publication facts, never
   “first” or “landmark”.
+- **AI in mathematics and science (maintainer note, 2026-10-30).** AI in biology
+  is the first part (candidate pack on `ai-in-biology-pack`). Widen later to
+  mathematics (theorem provers, formal proof assistants, AI-assisted results),
+  physics, chemistry, materials, climate and astronomy, and to AI in space
+  exploration and Earth observation, as one "AI in science" strand: institutions,
+  models and papers, people, and attributed claims with their earliest located texts.
+- **ASI in fiction (maintainer note, 2026-10-28; low priority).** Depictions of
+  superintelligent machines in fiction, recorded as documents and what they state,
+  with links into the thought spine only where a dataset document cites a work.
 
 ### Parked work
 

@@ -39,8 +39,9 @@ describe('schema 2.8 framework provisions', () => {
       expect(sha(preProvisionsRaw[key]), key).toBe(before.sha256[key]);
     expect(sha(preProvisionsRaw.meta)).toBe(before.sha256.meta);
     expect(preProvisionsRaw.meta.schemaVersion).toBe('2.7');
-    // Part 2 of the 2026-10-28 frameworks-to-law admission moved the current dataset to schema 2.19.
-    expect(data.meta.schemaVersion).toBe('2.19');
+    // Part 2 of the 2026-10-31 admission of the third Chinese institutions
+    // collection moved the current dataset to schema 2.27.
+    expect(data.meta.schemaVersion).toBe('2.27');
   });
 
   it('applies the three stop-case decisions and keeps their history', () => {
@@ -74,11 +75,13 @@ describe('schema 2.8 framework provisions', () => {
 
   it('quotes every provision from its own edition, briefly', () => {
     expect(provisions.length).toBeGreaterThan(60);
-    // Comparison questions given by paraphrase (schema 2.18) quote nothing.
+    // Comparison questions given by paraphrase (schema 2.18) quote nothing,
+    // and a statement (schema 2.20) may rest on a paraphrase.
     for (const c of provisions.filter(
       (c) =>
         facetById(c.attributes?.provision?.facet?.id ?? '')?.dimension
-          .passages !== 'paraphrase',
+          .passages !== 'paraphrase' &&
+        c.attributes?.provision?.kind !== 'statement',
     )) {
       const quote = c.evidenceIds
         .map((id) => repository.evidence.get(id)!)

@@ -30,7 +30,7 @@ const samples = [
   {
     path: '/dossier/anthropic',
     title: 'Anthropic: institutional dossier · Selekoa',
-    heading: 'Explore the documentary record',
+    heading: 'Anthropic',
     text: 'The documented history of Anthropic: chronology, people, research, capital and compute, and governance.',
   },
   {
@@ -42,7 +42,7 @@ const samples = [
   {
     path: '/claim/' + claim.id,
     title: 'Claim: ' + claim.statement.replace(/\.$/, '') + ' · Selekoa',
-    heading: 'Explore the documentary record',
+    heading: claim.statement,
     text: claim.statement,
   },
 ];
@@ -198,13 +198,17 @@ test('the browser takes over the built HTML in place, with no errors', async ({
 test('a button pressed before the page runs takes effect once it does', async ({
   page,
 }) => {
-  // Hold back the records, so the page is still the built HTML.
+  // Hold back the page's data (its slice and the relation core), so the page
+  // is still the built HTML.
   let release = () => {};
   const held = new Promise<void>((resolve) => (release = resolve));
-  await page.route(/\/assets\/records-.*\.js$/, async (route) => {
-    await held;
-    await route.continue();
-  });
+  await page.route(
+    /\/(slices\/explore\.json|assets\/_virtual_records-core-[^/]*\.js)$/,
+    async (route) => {
+      await held;
+      await route.continue();
+    },
+  );
   await page.goto('/explore', { waitUntil: 'domcontentloaded' });
   await expect(page.locator('#entity-search')).toHaveAttribute('readonly', '');
   await page
@@ -229,7 +233,9 @@ test('a built page opened with a query applies it after taking over', async ({
   // The earlier query form still opens the search, and the terms move to the
   // fragment so that they never reach the host.
   await page.goto('/search?q=ASL-3');
-  await expect(page.getByRole('searchbox').first()).toHaveValue('ASL-3');
+  await expect(
+    page.getByRole('main').getByRole('searchbox').first(),
+  ).toHaveValue('ASL-3');
   await expect(page).toHaveURL(/\/search#q=ASL-3$/);
   expect(errors).toEqual([]);
 });
@@ -268,16 +274,8 @@ test.describe('earlier hash addresses', () => {
     ['/#/search?q=ASL-3', '/search#q=ASL-3', 'Search the records'],
     ['/#/person/jan-leike', '/person/jan-leike', 'Jan Leike'],
     ['/#/document/rsp-v2-0', '/document/rsp-v2-0', entity('rsp-v2-0').name],
-    [
-      '/#/dossier/anthropic',
-      '/dossier/anthropic',
-      'Explore the documentary record',
-    ],
-    [
-      '/#/claim/' + claim.id,
-      '/claim/' + claim.id,
-      'Explore the documentary record',
-    ],
+    ['/#/dossier/anthropic', '/dossier/anthropic', 'Anthropic'],
+    ['/#/claim/' + claim.id, '/claim/' + claim.id, claim.statement],
     [
       '/#/documents/frontier-safety-frameworks',
       '/documents/frontier-safety-frameworks',

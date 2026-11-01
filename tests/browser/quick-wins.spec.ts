@@ -68,6 +68,8 @@ test('search explains prefix matching, offers whole words and names collections 
 }) => {
   await page.goto('/search#q=critic');
   const status = page.locator('#search-status');
+  // Results load from the search index after the page is taken over.
+  await expect(status).toContainText('match');
   await expect(page.locator('#search-help')).toContainText(
     'matches the beginning of a word',
   );
@@ -148,7 +150,7 @@ test('provisions grid keeps its first column in view, cues scrolling and stays o
 
   await page
     .getByRole('navigation', { name: 'Primary' })
-    .getByRole('link', { name: 'Search' })
+    .getByRole('link', { name: 'Explore the records' })
     .click();
   await page
     .getByRole('navigation', { name: 'Primary' })

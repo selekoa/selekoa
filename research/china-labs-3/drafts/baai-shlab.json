@@ -1,0 +1,2552 @@
+{
+  "group": "baai-shlab",
+  "searched": "Retrieved 29 October 2026, sequentially, direct route only. BAAI: www.baai.ac.cn is now a single-page application; its home page and the former pages www.baai.ac.cn/news/beijing-ai-principles.html, www.baai.ac.cn/blog/beijing-ai-principles and www.baai.ac.cn/portal/article/index/type/center_result/id/110.html (the Beijing AI Principles) all return HTTP 200 with the same empty JavaScript shell, so the site's text was read from its script file (assets/index-hCeadbk4.js) and one page of its news API (/api/news, whose items link to WeChat posts and carry re-import dates, so it was not used as evidence). BAAI Community (hub.baai.ac.cn) posts 4041 (second anniversary), 8375 (Wu Dao 2.0, 2021 conference), 2197 (Principles for Children) and 27398 (Wu Dao 3.0, 2023 conference; a repost of a media article, not used) were read. 2021.baai.ac.cn has no Wu Dao text. The Chinese text of the Beijing AI Principles (2019) was not found on any BAAI page; www.linking-ai-principles.org/cnprinciples failed (expired TLS certificate, then connection reset; no HTTP status); the English text was taken from ai-ethics-and-governance.institute, and the co-publishers from China Daily (reporting); Beijing News (bjnews.com.cn, 26 May 2019) was read but gives only a summary. No statement of BAAI's registered legal form (e.g. 民办非企业单位) was found; a web search found none, and registry aggregators were not used. BAAI's hosting of the International Dialogues on AI Safety (its timeline: 北京AI安全国际对话举办, March 2024; idais-beijing.baai.ac.cn) was not recorded: hosting is not authorship and the statement was not drafted. Wu Dao 1.0 (20 March 2021) has no record of its own because only the 2021 conference post mentions it; Wu Dao 3.0 and later BAAI models (Emu3.5, the 悟界 series, RoboBrain) were left out for budget. Hugging Face: commit lists and READMEs for BAAI/Aquila-7B (three pages of commits; earliest 8 June 2023), BAAI/Emu3-Gen and BAAI/bge-large-zh-v1.5; arXiv PDFs and abstract pages for 2307.05222, 2409.18869, 2309.07597 and 2408.07410 (v1). Authorship records for Huang Tiejun (Emu, 2307.05222) and Wang Zhongyuan were not drafted, since neither is in existing-entities. Shanghai AI Laboratory: www.shlab.org.cn home page (first connection reset, then HTTP 200) and /aboutus (gives no founding date; describes itself as 新型科研机构); no founding date was found on a laboratory or government page, so the unveiling of 11 July 2020 rests on Yicai; chinanews.com.cn/gn/2021/05-14/9476944.shtml (HTTP 200) did not yield the article body in the text layer and was not used; two touch.shio.gov.cn pages were unrelated. No laboratory or filing text naming its legal entity (上海人工智能创新中心) was found; the CAC lists are left to the governance group. GitHub InternLM/InternLM was read through a blobless clone for commit history and raw.githubusercontent.com for the initial README; Hugging Face commit lists and files for internlm/internlm2-chat-7b (README first created 15 January 2024; the initial weights commit has no README, HTTP 404), internlm/Intern-S1 and OpenGVLab/InternVL-Chat-V1-5 (commit list only; its licence was not drafted); arXiv PDFs and abstract pages for 2403.17297, 2312.14238, 2508.15763, 2507.18576 and 2507.16534 (v1). Zhou Bowen's authorship is recorded only where the report names him as Scientific Director; his place in the long Intern-S1 author list was not drafted. Existing records reused: Zhou Bowen's role from April 2024 and the Frontier AI Risk Management Framework v1.0 records. web.archive.org was not used.",
+  "existingUsed": [
+    "lg-gc-zhou-bowen-shanghai-ai-lab-2024",
+    "c2-governance-sail-frmf-v1-published",
+    "c2-governance-sail-frmf-v1-concordia",
+    "c2-governance-sail-frmf-v1-cites-tc260",
+    "c2-governance-sail-frmf-v1-red-yellow-lines",
+    "c2-governance-sail-frmf-v1-red-line-suspension",
+    "cn-tang-tsinghua",
+    "lg-cn-tang-jie-zhipu-cofounder"
+  ],
+  "entities": [
+    {
+      "id": "shanghai-ai-lab",
+      "existing": true
+    },
+    {
+      "id": "zhou-bowen",
+      "existing": true
+    },
+    {
+      "id": "tang-jie",
+      "existing": true
+    },
+    {
+      "id": "sensetime",
+      "existing": true
+    },
+    {
+      "id": "sail-frontier-ai-risk-management-framework-v1-0",
+      "existing": true
+    },
+    {
+      "id": "baai",
+      "type": "organisation",
+      "name": "Beijing Academy of Artificial Intelligence / 北京智源人工智能研究院",
+      "subtype": "Research institute",
+      "aliases": ["BAAI", "智源研究院", "智源", "北京智源人工智能研究院"],
+      "description": "Beijing AI research institute that describes itself as a non-profit research institution (非营利性科研机构) established in November 2018; developer of the Wu Dao (悟道), Aquila, Emu and BGE models. Its registered legal form was not retrieved.",
+      "sourceIds": ["c3-src-baai-site-bundle", "c3-src-baai-hub-4041"]
+    },
+    {
+      "id": "huang-tiejun",
+      "type": "person",
+      "name": "Huang Tiejun",
+      "sortName": "Huang, Tiejun",
+      "subtype": "Researcher",
+      "aliases": ["黄铁军", "Tiejun Huang"],
+      "description": "Named by BAAI as its 院长 (president) in November 2020 and as chairman of its council (理事长) in November 2024.",
+      "sourceIds": ["c3-src-baai-hub-4041", "c3-src-baai-site-bundle"]
+    },
+    {
+      "id": "zhang-hongjiang",
+      "type": "person",
+      "name": "Zhang Hongjiang",
+      "sortName": "Zhang, Hongjiang",
+      "subtype": "Researcher",
+      "aliases": ["张宏江"],
+      "description": "Named by BAAI as chairman of its council (理事长) at the 2021 BAAI Conference.",
+      "sourceIds": ["c3-src-baai-hub-8375"]
+    },
+    {
+      "id": "wang-zhongyuan",
+      "type": "person",
+      "name": "Wang Zhongyuan",
+      "sortName": "Wang, Zhongyuan",
+      "subtype": "Researcher",
+      "aliases": ["王仲远"],
+      "description": "Named by BAAI as its 院长 (president) in a news item on an event of 5 November 2024.",
+      "sourceIds": ["c3-src-baai-site-bundle"]
+    },
+    {
+      "id": "lin-yonghua",
+      "type": "person",
+      "name": "Lin Yonghua",
+      "sortName": "Lin, Yonghua",
+      "subtype": "Researcher",
+      "aliases": ["林咏华"],
+      "description": "Named by BAAI as a vice president (副院长) in a news item on an event of 5 November 2024.",
+      "sourceIds": ["c3-src-baai-site-bundle"]
+    },
+    {
+      "id": "opengvlab",
+      "type": "organisation",
+      "name": "OpenGVLab",
+      "subtype": "Research group",
+      "aliases": [],
+      "description": "Group named in the InternVL report's affiliation line as \"OpenGVLab, Shanghai AI Laboratory\"; publishes the InternVL models on Hugging Face.",
+      "sourceIds": ["c3-src-internvl-arxiv-v1"]
+    },
+    {
+      "id": "beijing-ai-principles-2019",
+      "type": "document",
+      "documentKind": "principles",
+      "name": "Beijing AI Principles (人工智能北京共识)",
+      "subtype": "Principles",
+      "aliases": [
+        "人工智能北京共识",
+        "Beijing Artificial Intelligence Principles"
+      ],
+      "description": "Fifteen principles on the research and development, use and governance of AI, released on 25 May 2019 with BAAI leading the release; the English text on the website of the International Research Center for AI Ethics and Governance is the inspected expression, the Chinese original was not retrieved.",
+      "sourceIds": ["c3-src-bjp-aieg-en", "c3-src-bjp-chinadaily"]
+    },
+    {
+      "id": "beijing-ai-principles-for-children-2020",
+      "type": "document",
+      "documentKind": "principles",
+      "name": "Beijing AI Principles for Children (面向儿童的人工智能北京共识)",
+      "subtype": "Principles",
+      "aliases": ["面向儿童的人工智能北京共识"],
+      "description": "Principles on AI and children released on 14 September 2020 by BAAI with universities, research institutes, companies and an industry alliance; the Chinese text in the BAAI Community post of 16 September 2020 is the inspected expression.",
+      "sourceIds": ["c3-src-baai-hub-2197"]
+    },
+    {
+      "id": "wudao-2-0-announcement",
+      "type": "document",
+      "documentKind": "announcement",
+      "name": "Wu Dao 2.0 release announcement (BAAI Conference, 1 June 2021)",
+      "subtype": "Announcement",
+      "aliases": ["悟道2.0"],
+      "description": "BAAI's account of the release of the Wu Dao 2.0 (悟道2.0) model at the opening of the 2021 BAAI Conference, as reproduced in the BAAI Community post of 7 June 2021.",
+      "sourceIds": ["c3-src-baai-hub-8375"]
+    },
+    {
+      "id": "aquila-7b-model-card",
+      "type": "document",
+      "documentKind": "model-card",
+      "name": "Aquila-7B model card",
+      "subtype": "Model card",
+      "aliases": [],
+      "description": "Hugging Face model card of BAAI/Aquila-7B, cited at the commit of 8 June 2023.",
+      "sourceIds": ["c3-src-aquila7b-card-0608"]
+    },
+    {
+      "id": "aquila-7b-licence",
+      "type": "document",
+      "documentKind": "licence",
+      "name": "Aquila-7B licence statement (BAAI Aquila Model Licence Agreement), commit c0687c52",
+      "subtype": "Licence statement",
+      "aliases": [],
+      "description": "Licence section of the BAAI/Aquila-7B model card at the commit of 8 June 2023, naming the BAAI Aquila Model Licence Agreement (智源Aquila系列模型许可协议) for the model and Apache Licence 2.0 for the source code. The agreement's PDF itself was not inspected.",
+      "sourceIds": ["c3-src-aquila7b-card-0608"]
+    },
+    {
+      "id": "aquila2-report",
+      "type": "document",
+      "documentKind": "technical-report",
+      "name": "Aquila2 Technical Report",
+      "subtype": "Technical report",
+      "aliases": [],
+      "description": "Technical report on the Aquila2 bilingual models by BAAI's Language Foundation Model & Software Team; arXiv 2408.07410, version 1 of 14 August 2024 cited.",
+      "sourceIds": ["c3-src-aquila2-arxiv-v1"]
+    },
+    {
+      "id": "emu-report",
+      "type": "document",
+      "documentKind": "technical-report",
+      "name": "Generative Pretraining in Multimodality (Emu)",
+      "subtype": "Technical report",
+      "aliases": [],
+      "description": "Paper introducing the Emu multimodal foundation model, with BAAI as affiliation number 1; arXiv 2307.05222, version 1 of 11 July 2023 cited.",
+      "sourceIds": ["c3-src-emu-arxiv-v1"]
+    },
+    {
+      "id": "emu3-report",
+      "type": "document",
+      "documentKind": "technical-report",
+      "name": "Emu3: Next-Token Prediction is All You Need",
+      "subtype": "Technical report",
+      "aliases": [],
+      "description": "Report introducing the Emu3 multimodal models, credited to the Emu3 Team, BAAI; arXiv 2409.18869, version 1 of 27 September 2024 cited.",
+      "sourceIds": ["c3-src-emu3-arxiv-v1"]
+    },
+    {
+      "id": "emu3-gen-licence",
+      "type": "document",
+      "documentKind": "licence",
+      "name": "Emu3-Gen licence statement (apache-2.0), commit 6f85fd46",
+      "subtype": "Licence statement",
+      "aliases": [],
+      "description": "Licence metadata of the BAAI/Emu3-Gen Hugging Face model card at the commit of 26 September 2024.",
+      "sourceIds": ["c3-src-emu3gen-card"]
+    },
+    {
+      "id": "c-pack-report",
+      "type": "document",
+      "documentKind": "technical-report",
+      "name": "C-Pack: Packaged Resources To Advance General Chinese Embedding",
+      "subtype": "Technical report",
+      "aliases": [],
+      "description": "Paper introducing the C-Pack resources (C-MTEB, C-MTP and the C-TEM/BGE embedding models), with BAAI and Hugging Face as affiliations; arXiv 2309.07597, version 1 of 14 September 2023 cited.",
+      "sourceIds": ["c3-src-cpack-arxiv-v1"]
+    },
+    {
+      "id": "bge-large-zh-v1-5-licence",
+      "type": "document",
+      "documentKind": "licence",
+      "name": "bge-large-zh-v1.5 licence statement (MIT License), commit bc5e88a5",
+      "subtype": "Licence statement",
+      "aliases": [],
+      "description": "Licence metadata and License section of the BAAI/bge-large-zh-v1.5 model card at the commit of 12 September 2023.",
+      "sourceIds": ["c3-src-bge-zh-v15-card"]
+    },
+    {
+      "id": "internlm-readme-2023",
+      "type": "document",
+      "documentKind": "repository-readme",
+      "name": "InternLM repository README (July 2023)",
+      "subtype": "Repository README",
+      "aliases": [],
+      "description": "README of the InternLM/InternLM GitHub repository introducing the InternLM 7B base and chat models, cited at the initial commit of 6 July 2023.",
+      "sourceIds": ["c3-src-internlm-readme-0706"]
+    },
+    {
+      "id": "internlm-7b-licence-2023",
+      "type": "document",
+      "documentKind": "licence",
+      "name": "InternLM licence statement (July 2023)",
+      "subtype": "Licence statement",
+      "aliases": [],
+      "description": "Open Source License section of the InternLM repository README at the initial commit of 6 July 2023: Apache-2.0 for code; weights open for academic research, commercial use with written permission.",
+      "sourceIds": ["c3-src-internlm-readme-0706"]
+    },
+    {
+      "id": "internlm2-report",
+      "type": "document",
+      "documentKind": "technical-report",
+      "name": "InternLM2 Technical Report",
+      "subtype": "Technical report",
+      "aliases": [],
+      "description": "Technical report on the InternLM2 models; affiliations listed as Shanghai AI Laboratory, SenseTime Group, The Chinese University of Hong Kong and Fudan University; arXiv 2403.17297, version 1 of 26 March 2024 cited.",
+      "sourceIds": ["c3-src-internlm2-arxiv-v1"]
+    },
+    {
+      "id": "internlm2-chat-7b-licence",
+      "type": "document",
+      "documentKind": "licence",
+      "name": "internlm2-chat-7b licence statement, commit d619b7fb",
+      "subtype": "Licence statement",
+      "aliases": [],
+      "description": "Open Source License section (English and Chinese) of the internlm/internlm2-chat-7b Hugging Face model card at the commit of 15 January 2024.",
+      "sourceIds": ["c3-src-internlm2-chat-7b-card"]
+    },
+    {
+      "id": "internvl-report",
+      "type": "document",
+      "documentKind": "technical-report",
+      "name": "InternVL: Scaling up Vision Foundation Models and Aligning for Generic Visual-Linguistic Tasks",
+      "subtype": "Technical report",
+      "aliases": [],
+      "description": "Paper introducing InternVL, with authors from Nanjing University, OpenGVLab of Shanghai AI Laboratory and other institutions; arXiv 2312.14238, version 1 of 21 December 2023 cited.",
+      "sourceIds": ["c3-src-internvl-arxiv-v1"]
+    },
+    {
+      "id": "intern-s1-report",
+      "type": "document",
+      "documentKind": "technical-report",
+      "name": "Intern-S1: A Scientific Multimodal Foundation Model",
+      "subtype": "Technical report",
+      "aliases": [],
+      "description": "Technical report on Intern-S1 credited to the Intern-S1 Team, Shanghai AI Laboratory; arXiv 2508.15763, version 1 of 21 August 2025 cited.",
+      "sourceIds": ["c3-src-intern-s1-arxiv-v1"]
+    },
+    {
+      "id": "intern-s1-model-card",
+      "type": "document",
+      "documentKind": "model-card",
+      "name": "Intern-S1 model card",
+      "subtype": "Model card",
+      "aliases": [],
+      "description": "Hugging Face model card of internlm/Intern-S1, cited at the commit of 25 July 2025.",
+      "sourceIds": ["c3-src-intern-s1-card"]
+    },
+    {
+      "id": "intern-s1-licence",
+      "type": "document",
+      "documentKind": "licence",
+      "name": "Intern-S1 licence (Apache License 2.0)",
+      "subtype": "Licence",
+      "aliases": [],
+      "description": "Apache License, Version 2.0 text in LICENSE.txt of the internlm/Intern-S1 Hugging Face repository at the commit of 24 July 2025, with the model card's apache-2.0 metadata at the commit of 25 July 2025.",
+      "sourceIds": ["c3-src-intern-s1-license", "c3-src-intern-s1-card"]
+    },
+    {
+      "id": "safework-r1-report",
+      "type": "document",
+      "documentKind": "technical-report",
+      "name": "SafeWork-R1: Coevolving Safety and Intelligence under the AI-45° Law",
+      "subtype": "Technical report",
+      "aliases": [],
+      "description": "Technical report on the SafeWork-R1 model credited to Shanghai Artificial Intelligence Laboratory; arXiv 2507.18576, version 1 of 24 July 2025 cited.",
+      "sourceIds": ["c3-src-safework-r1-arxiv-v1"]
+    },
+    {
+      "id": "sail-frmf-in-practice-report",
+      "type": "document",
+      "documentKind": "technical-report",
+      "name": "Frontier AI Risk Management Framework in Practice: A Risk Analysis Technical Report",
+      "subtype": "Technical report",
+      "aliases": [],
+      "description": "Risk-analysis report credited to Shanghai Artificial Intelligence Laboratory that applies the Frontier AI Risk Management Framework (v1.0); arXiv 2507.16534, version 1 of 22 July 2025 cited. What it states about models is the laboratory's own assessment.",
+      "sourceIds": ["c3-src-frmf-practice-arxiv-v1"]
+    }
+  ],
+  "sources": [
+    {
+      "id": "c3-src-baai-site-bundle",
+      "cacheKey": "bs-baai-site-bundle",
+      "title": "BAAI website (Chinese pages): page text as served in the site's script file index-hCeadbk4.js",
+      "originalTitle": "BAAI智源研究院",
+      "authors": ["Beijing Academy of Artificial Intelligence"],
+      "publisher": "Beijing Academy of Artificial Intelligence (www.baai.ac.cn)",
+      "publicationDate": null,
+      "kind": "announcement",
+      "url": "https://www.baai.ac.cn/assets/index-hCeadbk4.js",
+      "route": "direct",
+      "language": "zh-Hans",
+      "sourceClass": "primary",
+      "version": {
+        "kind": "mutable-page",
+        "id": "index-hCeadbk4.js",
+        "note": "www.baai.ac.cn is a single-page application: its HTML (cached as bs-baai-home) is an empty shell, and the page text (the About section, the history timeline, the Wu Dao section and a news item dated 2024.11.08) is carried in this script file, read as served on 29 October 2026. The hashed file name changes when the site is rebuilt; earlier states of the site were not inspected."
+      }
+    },
+    {
+      "id": "c3-src-baai-hub-4041",
+      "cacheKey": "bs-hub-4041",
+      "title": "From 0 to 1, from 1 to 10: BAAI's second anniversary opens a new chapter (BAAI Community post)",
+      "originalTitle": "0 到 1 的过往，1 到 10 的未来 | 智源两周年，开启新篇章",
+      "authors": ["刘沂喆"],
+      "publisher": "BAAI Community (智源社区, hub.baai.ac.cn)",
+      "publicationDate": "2020-11-16",
+      "kind": "announcement",
+      "url": "https://hub.baai.ac.cn/view/4041",
+      "route": "direct",
+      "language": "zh-Hans",
+      "sourceClass": "primary",
+      "version": {
+        "kind": "mutable-page",
+        "id": "hub.baai.ac.cn/view/4041",
+        "note": "Post dated 2020-11-16 on BAAI's community site, marked as taken from a WeChat article (以下文章来源于mp.weixin.qq.com); the WeChat original was not retrieved. Read as served on 29 October 2026."
+      }
+    },
+    {
+      "id": "c3-src-baai-hub-8375",
+      "cacheKey": "bs-hub-8375",
+      "title": "BAAI | Wu Dao 2.0 released (BAAI Community post on the 2021 BAAI Conference)",
+      "originalTitle": "智源｜全球最大智能模型“悟道2.0”重磅发布",
+      "authors": ["Brian Shen申德周"],
+      "publisher": "BAAI Community (智源社区, hub.baai.ac.cn)",
+      "publicationDate": "2021-06-07",
+      "kind": "announcement",
+      "url": "https://hub.baai.ac.cn/view/8375",
+      "route": "direct",
+      "language": "zh-Hans",
+      "sourceClass": "primary",
+      "version": {
+        "kind": "mutable-page",
+        "id": "hub.baai.ac.cn/view/8375",
+        "note": "Post dated 2021-06-07 on BAAI's community site, reproducing an article headed 第三届北京智源大会开幕，全球最大智能模型“悟道2.0”重磅发布. Read as served on 29 October 2026."
+      }
+    },
+    {
+      "id": "c3-src-baai-hub-2197",
+      "cacheKey": "bs-hub-2197",
+      "title": "Full text of the Beijing AI Principles for Children released (BAAI Community post)",
+      "originalTitle": "《面向儿童的人工智能北京共识》全文发布",
+      "authors": ["王炜强"],
+      "publisher": "BAAI Community (智源社区, hub.baai.ac.cn)",
+      "publicationDate": "2020-09-16",
+      "kind": "announcement",
+      "url": "https://hub.baai.ac.cn/view/2197",
+      "route": "direct",
+      "language": "zh-Hans",
+      "sourceClass": "primary",
+      "version": {
+        "kind": "mutable-page",
+        "id": "hub.baai.ac.cn/view/2197",
+        "note": "Post dated 2020-09-16 on BAAI's community site, marked as taken from a WeChat article, carrying the Chinese text of the principles. Read as served on 29 October 2026."
+      }
+    },
+    {
+      "id": "c3-src-bjp-aieg-en",
+      "cacheKey": "bs-bjp-aieg",
+      "title": "Beijing Artificial Intelligence Principles (English text)",
+      "originalTitle": null,
+      "authors": ["International Research Center for AI Ethics and Governance"],
+      "publisher": "International Research Center for AI Ethics and Governance (ai-ethics-and-governance.institute)",
+      "publicationDate": null,
+      "kind": "announcement",
+      "url": "https://ai-ethics-and-governance.institute/beijing-artificial-intelligence-principles/",
+      "route": "direct",
+      "language": "en",
+      "sourceClass": "primary",
+      "version": {
+        "kind": "mutable-page",
+        "id": "ai-ethics-and-governance.institute/beijing-artificial-intelligence-principles/",
+        "note": "English text of the principles with a 'Release and Endorsement' note, on the website of the research centre that names the principles' lead drafter; not a BAAI domain and undated. Read as served on 29 October 2026. The Chinese original (人工智能北京共识) was not retrieved."
+      }
+    },
+    {
+      "id": "c3-src-bjp-chinadaily",
+      "cacheKey": "bs-bjp-chinadaily",
+      "title": "Beijing AI Principles released: R&D to be responsible for potential ethical risks (China Daily Chinese website)",
+      "originalTitle": "《人工智能北京共识》发布:研发上要对潜在伦理风险与隐患负责",
+      "authors": ["辛闻"],
+      "publisher": "China Daily (中国日报网)",
+      "publicationDate": "2019-05-26",
+      "kind": "article",
+      "url": "http://cn.chinadaily.com.cn/a/201905/26/WS5cea4d1ea310e7f8b157ed68.html",
+      "route": "direct",
+      "language": "zh-Hans",
+      "sourceClass": "reporting",
+      "version": {
+        "kind": "mutable-page",
+        "id": "WS5cea4d1ea310e7f8b157ed68",
+        "note": "News report of 26 May 2019, read as served on 29 October 2026; the page carries a note that it is a repost (该文章系我网转载)."
+      }
+    },
+    {
+      "id": "c3-src-emu-arxiv-v1",
+      "cacheKey": "bs-arxiv-2307.05222-pdf",
+      "title": "Generative Pretraining in Multimodality",
+      "originalTitle": null,
+      "authors": [
+        "Quan Sun",
+        "Qiying Yu",
+        "Yufeng Cui",
+        "Fan Zhang",
+        "Xiaosong Zhang",
+        "Yueze Wang",
+        "Hongcheng Gao",
+        "Jingjing Liu",
+        "Tiejun Huang",
+        "Xinlong Wang"
+      ],
+      "publisher": "arXiv",
+      "publicationDate": "2023-07-11",
+      "kind": "paper",
+      "url": "https://arxiv.org/pdf/2307.05222v1",
+      "route": "direct",
+      "language": "en",
+      "sourceClass": "primary",
+      "version": {
+        "kind": "arxiv",
+        "id": "2307.05222v1",
+        "note": "PDF of version 1 (11 July 2023); the abstract page notes a later v2 of 8 May 2024, not inspected."
+      }
+    },
+    {
+      "id": "c3-src-emu3-arxiv-v1",
+      "cacheKey": "bs-arxiv-2409.18869-pdf",
+      "title": "Emu3: Next-Token Prediction is All You Need",
+      "originalTitle": null,
+      "authors": ["Emu3 Team, BAAI"],
+      "publisher": "arXiv",
+      "publicationDate": "2024-09-27",
+      "kind": "paper",
+      "url": "https://arxiv.org/pdf/2409.18869v1",
+      "route": "direct",
+      "language": "en",
+      "sourceClass": "primary",
+      "version": {
+        "kind": "arxiv",
+        "id": "2409.18869v1",
+        "note": "PDF of version 1 (27 September 2024); later versions not inspected."
+      }
+    },
+    {
+      "id": "c3-src-cpack-arxiv-v1",
+      "cacheKey": "bs-arxiv-2309.07597-pdf",
+      "title": "C-Pack: Packaged Resources To Advance General Chinese Embedding",
+      "originalTitle": null,
+      "authors": [
+        "Shitao Xiao",
+        "Zheng Liu",
+        "Peitian Zhang",
+        "Niklas Muennighoff"
+      ],
+      "publisher": "arXiv",
+      "publicationDate": "2023-09-14",
+      "kind": "paper",
+      "url": "https://arxiv.org/pdf/2309.07597v1",
+      "route": "direct",
+      "language": "en",
+      "sourceClass": "primary",
+      "version": {
+        "kind": "arxiv",
+        "id": "2309.07597v1",
+        "note": "PDF of version 1 (14 September 2023); the abstract page notes a later v5 of 24 September 2024, not inspected."
+      }
+    },
+    {
+      "id": "c3-src-aquila2-arxiv-v1",
+      "cacheKey": "bs-arxiv-2408.07410-pdf",
+      "title": "Aquila2 Technical Report",
+      "originalTitle": null,
+      "authors": [
+        "Bo-Wen Zhang",
+        "Liangdong Wang",
+        "Jijie Li",
+        "Shuhao Gu",
+        "Xinya Wu",
+        "Zhengduo Zhang",
+        "Boyan Gao",
+        "Yulong Ao",
+        "Guang Liu"
+      ],
+      "publisher": "arXiv",
+      "publicationDate": "2024-08-14",
+      "kind": "paper",
+      "url": "https://arxiv.org/pdf/2408.07410v1",
+      "route": "direct",
+      "language": "en",
+      "sourceClass": "primary",
+      "version": {
+        "kind": "arxiv",
+        "id": "2408.07410v1",
+        "note": "PDF of version 1 (14 August 2024); later versions not inspected."
+      }
+    },
+    {
+      "id": "c3-src-aquila7b-card-0608",
+      "cacheKey": "bs-hf-aquila7b-readme-0608",
+      "title": "Aquila-7B model card (README.md)",
+      "originalTitle": "Aquila-7B 模型卡（简介/Overview）",
+      "authors": ["BAAI"],
+      "publisher": "BAAI (Hugging Face)",
+      "publicationDate": "2023-06-08",
+      "kind": "announcement",
+      "url": "https://huggingface.co/BAAI/Aquila-7B/raw/c0687c52ebfb584027a85cca7f045c2376f79810/README.md",
+      "route": "direct",
+      "language": "zh-Hans",
+      "sourceClass": "primary",
+      "version": {
+        "kind": "hf-commit",
+        "id": "c0687c52ebfb584027a85cca7f045c2376f79810",
+        "note": "README at the commit of 8 June 2023 (\"Update README.md\"); the repository's commit list begins on 8 June 2023 with an initial commit and an upload of 'BAAI Aquila Model License Agreement.pdf'; later edits (for example the commit of 7 July 2023) not used."
+      }
+    },
+    {
+      "id": "c3-src-emu3gen-card",
+      "cacheKey": "bs-hf-emu3gen-readme",
+      "title": "Emu3-Gen model card (README.md)",
+      "originalTitle": null,
+      "authors": ["BAAI"],
+      "publisher": "BAAI (Hugging Face)",
+      "publicationDate": "2024-09-26",
+      "kind": "announcement",
+      "url": "https://huggingface.co/BAAI/Emu3-Gen/raw/6f85fd46bfc3dd245c6d9cbdd44080475f9db80d/README.md",
+      "route": "direct",
+      "language": "en",
+      "sourceClass": "primary",
+      "version": {
+        "kind": "hf-commit",
+        "id": "6f85fd46bfc3dd245c6d9cbdd44080475f9db80d",
+        "note": "README at the commit of 26 September 2024 (\"Update README.md\"); the repository was initialised on 25 September 2024; later edits not inspected."
+      }
+    },
+    {
+      "id": "c3-src-bge-zh-v15-card",
+      "cacheKey": "bs-hf-bge-readme",
+      "title": "bge-large-zh-v1.5 model card (README.md)",
+      "originalTitle": null,
+      "authors": ["BAAI"],
+      "publisher": "BAAI (Hugging Face)",
+      "publicationDate": "2023-09-12",
+      "kind": "announcement",
+      "url": "https://huggingface.co/BAAI/bge-large-zh-v1.5/raw/bc5e88a59c64e37ab596d00a82a5ccba7dd7cec3/README.md",
+      "route": "direct",
+      "language": "en",
+      "sourceClass": "primary",
+      "version": {
+        "kind": "hf-commit",
+        "id": "bc5e88a59c64e37ab596d00a82a5ccba7dd7cec3",
+        "note": "README at the commit of 12 September 2023 (\" update\"), the day the repository was initialised; later edits not inspected."
+      }
+    },
+    {
+      "id": "c3-src-yicai-2020-07-11",
+      "cacheKey": "bs-yicai-2020-shlab",
+      "title": "Total investment over 30 billion yuan: a batch of major Shanghai AI projects signed today (Yicai)",
+      "originalTitle": "投资总额超300亿元！沪一批人工智能重大项目今天签约",
+      "authors": ["第一财经"],
+      "publisher": "Yicai (第一财经)",
+      "publicationDate": "2020-07-11",
+      "kind": "article",
+      "url": "https://www.yicai.com/news/100696666.html",
+      "route": "direct",
+      "language": "zh-Hans",
+      "sourceClass": "reporting",
+      "version": {
+        "kind": "mutable-page",
+        "id": "yicai.com/news/100696666",
+        "note": "News report timestamped 2020-07-11 18:53:38, read as served on 29 October 2026."
+      }
+    },
+    {
+      "id": "c3-src-internlm-readme-0706",
+      "cacheKey": "bs-gh-internlm-readme-zh-initial",
+      "title": "InternLM repository README (English)",
+      "originalTitle": null,
+      "authors": ["InternLM"],
+      "publisher": "InternLM (GitHub)",
+      "publicationDate": "2023-07-06",
+      "kind": "announcement",
+      "url": "https://raw.githubusercontent.com/InternLM/InternLM/fa7337b37b0024e70bee3c638f969451dc4d7351/README.md",
+      "route": "direct",
+      "language": "en",
+      "sourceClass": "primary",
+      "version": {
+        "kind": "git-commit",
+        "id": "fa7337b37b0024e70bee3c638f969451dc4d7351",
+        "note": "README.md at the initial commit of 6 July 2023 of the InternLM/InternLM repository (history read from a blobless clone); later edits not used."
+      }
+    },
+    {
+      "id": "c3-src-internlm2-chat-7b-card",
+      "cacheKey": "bs-hf-internlm2-chat-7b-readme",
+      "title": "internlm2-chat-7b model card (README.md)",
+      "originalTitle": null,
+      "authors": ["InternLM"],
+      "publisher": "InternLM (Hugging Face)",
+      "publicationDate": "2024-01-15",
+      "kind": "announcement",
+      "url": "https://huggingface.co/internlm/internlm2-chat-7b/raw/d619b7fb1f85bd1fedd9432093817e0d31440917/README.md",
+      "route": "direct",
+      "language": "en",
+      "sourceClass": "primary",
+      "version": {
+        "kind": "hf-commit",
+        "id": "d619b7fb1f85bd1fedd9432093817e0d31440917",
+        "note": "README at the commit of 15 January 2024 (\"Create README.md\"); the repository was initialised on 10 January 2024 and the README was edited on later dates, not used."
+      }
+    },
+    {
+      "id": "c3-src-internlm2-arxiv-v1",
+      "cacheKey": "bs-arxiv-2403.17297-pdf",
+      "title": "InternLM2 Technical Report",
+      "originalTitle": null,
+      "authors": [
+        "Zheng Cai",
+        "Maosong Cao",
+        "Haojiong Chen",
+        "Kai Chen",
+        "et al."
+      ],
+      "publisher": "arXiv",
+      "publicationDate": "2024-03-26",
+      "kind": "paper",
+      "url": "https://arxiv.org/pdf/2403.17297v1",
+      "route": "direct",
+      "language": "en",
+      "sourceClass": "primary",
+      "version": {
+        "kind": "arxiv",
+        "id": "2403.17297v1",
+        "note": "PDF of version 1 (26 March 2024); later versions not inspected."
+      }
+    },
+    {
+      "id": "c3-src-internvl-arxiv-v1",
+      "cacheKey": "bs-arxiv-2312.14238-pdf",
+      "title": "InternVL: Scaling up Vision Foundation Models and Aligning for Generic Visual-Linguistic Tasks",
+      "originalTitle": null,
+      "authors": ["Zhe Chen", "Jiannan Wu", "Wenhai Wang", "et al."],
+      "publisher": "arXiv",
+      "publicationDate": "2023-12-21",
+      "kind": "paper",
+      "url": "https://arxiv.org/pdf/2312.14238v1",
+      "route": "direct",
+      "language": "en",
+      "sourceClass": "primary",
+      "version": {
+        "kind": "arxiv",
+        "id": "2312.14238v1",
+        "note": "PDF of version 1 (21 December 2023); the abstract page notes a later v3 of 15 January 2024, not inspected."
+      }
+    },
+    {
+      "id": "c3-src-intern-s1-arxiv-v1",
+      "cacheKey": "bs-arxiv-2508.15763-pdf",
+      "title": "Intern-S1: A Scientific Multimodal Foundation Model",
+      "originalTitle": null,
+      "authors": ["Intern-S1 Team, Shanghai AI Laboratory"],
+      "publisher": "arXiv",
+      "publicationDate": "2025-08-21",
+      "kind": "paper",
+      "url": "https://arxiv.org/pdf/2508.15763v1",
+      "route": "direct",
+      "language": "en",
+      "sourceClass": "primary",
+      "version": {
+        "kind": "arxiv",
+        "id": "2508.15763v1",
+        "note": "PDF of version 1 (21 August 2025); the abstract page notes a later v2 of 24 August 2025, not inspected."
+      }
+    },
+    {
+      "id": "c3-src-intern-s1-card",
+      "cacheKey": "bs-hf-intern-s1-readme",
+      "title": "Intern-S1 model card (README.md)",
+      "originalTitle": null,
+      "authors": ["InternLM"],
+      "publisher": "InternLM (Hugging Face)",
+      "publicationDate": "2025-07-25",
+      "kind": "announcement",
+      "url": "https://huggingface.co/internlm/Intern-S1/raw/ff0c7fd819c354410be3abe86a5163b94befe356/README.md",
+      "route": "direct",
+      "language": "en",
+      "sourceClass": "primary",
+      "version": {
+        "kind": "hf-commit",
+        "id": "ff0c7fd819c354410be3abe86a5163b94befe356",
+        "note": "README at the commit of 25 July 2025 (\"Update README.md\"); the repository was initialised and the model uploaded on 24 July 2025; later edits not inspected."
+      }
+    },
+    {
+      "id": "c3-src-intern-s1-license",
+      "cacheKey": "bs-hf-intern-s1-license",
+      "title": "Intern-S1 LICENSE.txt",
+      "originalTitle": null,
+      "authors": ["InternLM"],
+      "publisher": "InternLM (Hugging Face)",
+      "publicationDate": "2025-07-24",
+      "kind": "announcement",
+      "url": "https://huggingface.co/internlm/Intern-S1/raw/dad998bac39dd81fc6e4acf5b712f74202ddbce3/LICENSE.txt",
+      "route": "direct",
+      "language": "en",
+      "sourceClass": "primary",
+      "version": {
+        "kind": "hf-commit",
+        "id": "dad998bac39dd81fc6e4acf5b712f74202ddbce3",
+        "note": "LICENSE.txt at the commit of 24 July 2025 (\"Upload LICENSE.txt\"); later edits not inspected."
+      }
+    },
+    {
+      "id": "c3-src-safework-r1-arxiv-v1",
+      "cacheKey": "bs-arxiv-2507.18576-pdf",
+      "title": "SafeWork-R1: Coevolving Safety and Intelligence under the AI-45° Law",
+      "originalTitle": null,
+      "authors": ["Shanghai Artificial Intelligence Laboratory"],
+      "publisher": "arXiv",
+      "publicationDate": "2025-07-24",
+      "kind": "paper",
+      "url": "https://arxiv.org/pdf/2507.18576v1",
+      "route": "direct",
+      "language": "en",
+      "sourceClass": "primary",
+      "version": {
+        "kind": "arxiv",
+        "id": "2507.18576v1",
+        "note": "PDF of version 1 (24 July 2025); the abstract page notes a later v3 of 7 August 2025, not inspected."
+      }
+    },
+    {
+      "id": "c3-src-frmf-practice-arxiv-v1",
+      "cacheKey": "bs-arxiv-2507.16534-pdf",
+      "title": "Frontier AI Risk Management Framework in Practice: A Risk Analysis Technical Report",
+      "originalTitle": null,
+      "authors": ["Shanghai Artificial Intelligence Laboratory"],
+      "publisher": "arXiv",
+      "publicationDate": "2025-07-22",
+      "kind": "paper",
+      "url": "https://arxiv.org/pdf/2507.16534v1",
+      "route": "direct",
+      "language": "en",
+      "sourceClass": "primary",
+      "version": {
+        "kind": "arxiv",
+        "id": "2507.16534v1",
+        "note": "PDF of version 1 (22 July 2025); the abstract page notes a later v2 of 26 July 2025, not inspected."
+      }
+    }
+  ],
+  "claims": [
+    {
+      "id": "c3-baai-founding",
+      "subject": "baai",
+      "predicate": "founding_stated",
+      "object": {
+        "kind": "literal",
+        "value": "Established on 14 November 2018 (as BAAI states it)"
+      },
+      "topic": "institutions",
+      "statement": "BAAI states that it was established on 14 November 2018; its second-anniversary post says it was set up under the guidance and support of the Ministry of Science and Technology and the Beijing municipal Party committee and government, promoted by the Beijing Municipal Science and Technology Commission and the Haidian District government.",
+      "time": {
+        "kind": "event",
+        "date": "2018-11-14",
+        "note": "Day as given in BAAI's second-anniversary post of November 2020; BAAI's current website gives the month only (2018年11月)."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "The sponsoring bodies are recorded in BAAI's own words (指导和支持, 推动成立: 'guidance and support', 'promoted the establishment'); no direction, control or ownership is inferred from them. The website describes BAAI as a non-profit research institution (非营利性科研机构); its registered legal form and registration record were not retrieved, so no has_legal_form record is proposed.",
+      "evidence": [
+        {
+          "id": "c3-ev-baai-founding-date",
+          "sourceId": "c3-src-baai-hub-4041",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Opening paragraph",
+          "passageType": "quote",
+          "passage": "2018 年11月14日，为落实“北京智源行动计划”",
+          "translation": {
+            "text": "On 14 November 2018, to implement the 'Beijing Zhiyuan Action Plan',",
+            "method": "machine",
+            "humanVerified": false
+          }
+        },
+        {
+          "id": "c3-ev-baai-founding-sponsors",
+          "sourceId": "c3-src-baai-hub-4041",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Opening paragraph",
+          "passageType": "quote",
+          "passage": "在科技部和北京市委市政府的指导和支持下，由北京市科委和海淀区政府推动成立北京智源人工智能研究院",
+          "translation": {
+            "text": "under the guidance and support of the Ministry of Science and Technology and the Beijing Municipal Party Committee and Municipal Government, the Beijing Municipal Science and Technology Commission and the Haidian District Government promoted the establishment of the Beijing Academy of Artificial Intelligence",
+            "method": "machine",
+            "humanVerified": false
+          }
+        },
+        {
+          "id": "c3-ev-baai-founding-site",
+          "sourceId": "c3-src-baai-site-bundle",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "About section (array Jc), first paragraph",
+          "passageType": "quote",
+          "passage": "北京智源人工智能研究院（简称：智源）是2018年11月成立的非营利性科研机构",
+          "translation": {
+            "text": "The Beijing Academy of Artificial Intelligence (BAAI) is a non-profit research institution established in November 2018",
+            "method": "machine",
+            "humanVerified": false
+          }
+        }
+      ]
+    },
+    {
+      "id": "c3-baai-huang-tiejun-president-2020",
+      "subject": "huang-tiejun",
+      "predicate": "held_role",
+      "object": {
+        "kind": "entity",
+        "entityId": "baai"
+      },
+      "topic": "people",
+      "statement": "BAAI's second-anniversary post names Huang Tiejun as president (院长) of BAAI at the 2020 BAAI Forum on 14 November 2020.",
+      "time": {
+        "kind": "snapshot",
+        "date": "2020-11-14",
+        "note": "Role as shown on the date of the forum reported in the post; start and end dates are not stated."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "院长 is rendered 'president' (also translated 'dean'). The post does not state when the role began or ended; it is not extended beyond the snapshot.",
+      "evidence": [
+        {
+          "id": "c3-ev-baai-huang-president-2020",
+          "sourceId": "c3-src-baai-hub-4041",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Paragraph on the 2020 BAAI Forum opening",
+          "passageType": "quote",
+          "passage": "在“2020智源论坛”的开幕式中，智源研究院院长黄铁军教授指出",
+          "translation": {
+            "text": "At the opening of the '2020 BAAI Forum', Professor Huang Tiejun, president of BAAI, pointed out",
+            "method": "machine",
+            "humanVerified": false
+          }
+        },
+        {
+          "id": "c3-ev-baai-huang-president-2020-date",
+          "sourceId": "c3-src-baai-hub-4041",
+          "sourceRole": "primary",
+          "support": "context",
+          "locator": "Paragraph on the anniversary events",
+          "passageType": "quote",
+          "passage": "2020年11月14日，在智源研究院成立两周年之际",
+          "translation": {
+            "text": "On 14 November 2020, on the occasion of BAAI's second anniversary",
+            "method": "machine",
+            "humanVerified": false
+          }
+        }
+      ],
+      "attributes": {
+        "role": "院长 (president)"
+      }
+    },
+    {
+      "id": "c3-baai-zhang-hongjiang-chair-2021",
+      "subject": "zhang-hongjiang",
+      "predicate": "held_role",
+      "object": {
+        "kind": "entity",
+        "entityId": "baai"
+      },
+      "topic": "people",
+      "statement": "BAAI's account of the 2021 BAAI Conference names Zhang Hongjiang as chairman of BAAI's council (理事长) at the opening ceremony on 1 June 2021.",
+      "time": {
+        "kind": "snapshot",
+        "date": "2021-06-01",
+        "note": "Role as shown at the conference opening of 1 June 2021; start and end dates are not stated."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "理事长 is rendered 'chairman of the council'. The post does not state when the role began or ended.",
+      "evidence": [
+        {
+          "id": "c3-ev-baai-zhang-chair-2021",
+          "sourceId": "c3-src-baai-hub-8375",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Section 二, paragraph on the opening ceremony",
+          "passageType": "quote",
+          "passage": "开幕式上，智源研究院理事长张宏江介绍了“悟道”模型研发的背景",
+          "translation": {
+            "text": "At the opening ceremony, Zhang Hongjiang, chairman of the BAAI council, introduced the background of the development of the 'Wu Dao' models",
+            "method": "machine",
+            "humanVerified": false
+          }
+        }
+      ],
+      "attributes": {
+        "role": "理事长 (chairman of the council)"
+      }
+    },
+    {
+      "id": "c3-baai-tang-jie-academic-vp-2021",
+      "subject": "tang-jie",
+      "predicate": "held_role",
+      "object": {
+        "kind": "entity",
+        "entityId": "baai"
+      },
+      "topic": "people",
+      "statement": "BAAI's account of the 2021 BAAI Conference names Tang Jie as BAAI's vice president for academic affairs (学术副院长), who presented Wu Dao 2.0 at the opening on 1 June 2021, and says he led the Wu Dao team.",
+      "time": {
+        "kind": "snapshot",
+        "date": "2021-06-01",
+        "note": "Role as shown at the conference opening of 1 June 2021; start and end dates are not stated."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "学术副院长 is rendered 'vice president for academic affairs'. The role at BAAI is separate from Tang Jie's Tsinghua and Zhipu roles recorded elsewhere; no relation between them is inferred.",
+      "evidence": [
+        {
+          "id": "c3-ev-baai-tang-vp-2021",
+          "sourceId": "c3-src-baai-hub-8375",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Section 二, paragraph on the Wu Dao 2.0 presentation",
+          "passageType": "quote",
+          "passage": "开幕式上，智源研究院学术副院长唐杰教授介绍了“悟道2.0”模型的具体情况",
+          "translation": {
+            "text": "At the opening ceremony, Professor Tang Jie, BAAI's vice president for academic affairs, introduced the details of the 'Wu Dao 2.0' model",
+            "method": "machine",
+            "humanVerified": false
+          }
+        },
+        {
+          "id": "c3-ev-baai-tang-wudao-team",
+          "sourceId": "c3-src-baai-hub-8375",
+          "sourceRole": "primary",
+          "support": "context",
+          "locator": "Section 二, paragraph on the Wu Dao team",
+          "passageType": "quote",
+          "passage": "成立了由智源研究院学术副院长唐杰教授领衔，100多位科研骨干共同参与的“悟道”团队",
+          "translation": {
+            "text": "set up the 'Wu Dao' team, led by Professor Tang Jie, BAAI's vice president for academic affairs, with more than 100 core researchers",
+            "method": "machine",
+            "humanVerified": false
+          }
+        }
+      ],
+      "attributes": {
+        "role": "学术副院长 (vice president for academic affairs)"
+      }
+    },
+    {
+      "id": "c3-baai-huang-tiejun-chair-2024",
+      "subject": "huang-tiejun",
+      "predicate": "held_role",
+      "object": {
+        "kind": "entity",
+        "entityId": "baai"
+      },
+      "topic": "people",
+      "statement": "A BAAI news item dated 8 November 2024 names Huang Tiejun as chairman of BAAI's council (理事长) at a BAAI summit held on 5 November 2024.",
+      "time": {
+        "kind": "snapshot",
+        "date": "2024-11-05",
+        "note": "Role as shown at the event of 5 November 2024, in a news item dated 2024.11.08 on BAAI's website; start and end dates are not stated."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "理事长 is rendered 'chairman of the council'. The change from the 2020 role (院长) to this one is shown only by two dated snapshots; no transition date is recorded.",
+      "evidence": [
+        {
+          "id": "c3-ev-baai-huang-chair-2024",
+          "sourceId": "c3-src-baai-site-bundle",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "News item 智源举办2024具身与世界模型专题峰会… (2024.11.08), first paragraph",
+          "passageType": "quote",
+          "passage": "智源研究院理事长黄铁军、智源研究院院长王仲远、智源研究院副院长林咏华出席大会",
+          "translation": {
+            "text": "BAAI council chairman Huang Tiejun, BAAI president Wang Zhongyuan and BAAI vice president Lin Yonghua attended the meeting",
+            "method": "machine",
+            "humanVerified": false
+          }
+        },
+        {
+          "id": "c3-ev-baai-roles-2024-date",
+          "sourceId": "c3-src-baai-site-bundle",
+          "sourceRole": "primary",
+          "support": "context",
+          "locator": "Same news item, first paragraph",
+          "passageType": "quote",
+          "passage": "2024年11月5日，北京智源人工智能研究院主办的“智源论坛·2024具身与世界模型专题峰会”在智源大厦举行",
+          "translation": {
+            "text": "On 5 November 2024, the 'BAAI Forum · 2024 Embodied and World Models Summit' hosted by the Beijing Academy of Artificial Intelligence was held at the BAAI building",
+            "method": "machine",
+            "humanVerified": false
+          }
+        }
+      ],
+      "attributes": {
+        "role": "理事长 (chairman of the council)"
+      }
+    },
+    {
+      "id": "c3-baai-wang-zhongyuan-president-2024",
+      "subject": "wang-zhongyuan",
+      "predicate": "held_role",
+      "object": {
+        "kind": "entity",
+        "entityId": "baai"
+      },
+      "topic": "people",
+      "statement": "A BAAI news item dated 8 November 2024 names Wang Zhongyuan as president (院长) of BAAI at a BAAI summit held on 5 November 2024.",
+      "time": {
+        "kind": "snapshot",
+        "date": "2024-11-05",
+        "note": "Role as shown at the event of 5 November 2024, in a news item dated 2024.11.08 on BAAI's website; start and end dates are not stated."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "院长 is rendered 'president'. The item does not state when the role began.",
+      "evidence": [
+        {
+          "id": "c3-ev-baai-wang-president-2024",
+          "sourceId": "c3-src-baai-site-bundle",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Same news item, paragraph on the opening",
+          "passageType": "quote",
+          "passage": "智源研究院院长王仲远在开幕式致辞中表示",
+          "translation": {
+            "text": "BAAI president Wang Zhongyuan said in his opening address",
+            "method": "machine",
+            "humanVerified": false
+          }
+        }
+      ],
+      "attributes": {
+        "role": "院长 (president)"
+      }
+    },
+    {
+      "id": "c3-baai-lin-yonghua-vp-2024",
+      "subject": "lin-yonghua",
+      "predicate": "held_role",
+      "object": {
+        "kind": "entity",
+        "entityId": "baai"
+      },
+      "topic": "people",
+      "statement": "A BAAI news item dated 8 November 2024 names Lin Yonghua as a vice president (副院长) of BAAI at a BAAI summit held on 5 November 2024.",
+      "time": {
+        "kind": "snapshot",
+        "date": "2024-11-05",
+        "note": "Role as shown at the event of 5 November 2024, in a news item dated 2024.11.08 on BAAI's website; start and end dates are not stated."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "副院长 is rendered 'vice president'. The same passage supports c3-baai-huang-tiejun-chair-2024.",
+      "evidence": [
+        {
+          "id": "c3-ev-baai-lin-vp-2024",
+          "sourceId": "c3-src-baai-site-bundle",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "News item 智源举办2024具身与世界模型专题峰会… (2024.11.08), first paragraph",
+          "passageType": "quote",
+          "passage": "智源研究院副院长林咏华出席大会",
+          "translation": {
+            "text": "BAAI vice president Lin Yonghua attended the meeting",
+            "method": "machine",
+            "humanVerified": false
+          }
+        }
+      ],
+      "attributes": {
+        "role": "副院长 (vice president)"
+      }
+    },
+    {
+      "id": "c3-baai-beijing-ai-principles",
+      "subject": "baai",
+      "predicate": "published",
+      "object": {
+        "kind": "entity",
+        "entityId": "beijing-ai-principles-2019"
+      },
+      "topic": "governance",
+      "statement": "BAAI led the release of the Beijing AI Principles (人工智能北京共识) on 25 May 2019, together with universities, research institutes and an industry alliance.",
+      "time": {
+        "kind": "event",
+        "date": "2019-05-25",
+        "basis": "publication",
+        "note": "Release date as given in the 'Release and Endorsement' note of the English text and in China Daily's report of 26 May 2019."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "The English text is hosted by the International Research Center for AI Ethics and Governance, not by BAAI; BAAI's own former page for the principles now returns its single-page-application shell, so the Chinese original was not read. That the release was joint with other institutions rests on the same note and on China Daily's report. 发布 is rendered 'released'.",
+      "evidence": [
+        {
+          "id": "c3-ev-baai-bjp-released",
+          "sourceId": "c3-src-bjp-aieg-en",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Section 'Release and Endorsement'",
+          "passageType": "quote",
+          "passage": "The Beijing AI Principles were released on May 25th, 2019.",
+          "translation": null
+        },
+        {
+          "id": "c3-ev-baai-bjp-led",
+          "sourceId": "c3-src-bjp-aieg-en",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Section 'Release and Endorsement'",
+          "passageType": "quote",
+          "passage": "Beijing Academy of Artificial Intelligence (BAAI) led the release",
+          "translation": null
+        },
+        {
+          "id": "c3-ev-baai-bjp-chinadaily",
+          "sourceId": "c3-src-bjp-chinadaily",
+          "sourceRole": "secondary",
+          "support": "supports",
+          "locator": "First paragraph",
+          "passageType": "quote",
+          "passage": "北京智源人工智能研究院联合北京大学、清华大学、中国科学院自动化研究所、中国科学院计算技术研究所",
+          "translation": {
+            "text": "the Beijing Academy of Artificial Intelligence, together with Peking University, Tsinghua University, the Institute of Automation of the Chinese Academy of Sciences and the Institute of Computing Technology of the Chinese Academy of Sciences",
+            "method": "machine",
+            "humanVerified": false
+          }
+        }
+      ]
+    },
+    {
+      "id": "c3-baai-bjp-endorsers",
+      "subject": "beijing-ai-principles-2019",
+      "predicate": "lists_participants",
+      "object": {
+        "kind": "literal",
+        "value": "Endorsed on the day of release by universities, research institutes and an industry alliance, named as examples: Tsinghua University, Peking University, the Institute of Automation and the Institute of Computing Technology of the Chinese Academy of Sciences, and the Artificial Intelligence Industry Technology Innovation Strategic Alliance (AITISA)"
+      },
+      "topic": "governance",
+      "statement": "The 'Release and Endorsement' note to the Beijing AI Principles says they were endorsed on the day of release by universities, national research institutions and AITISA, naming Tsinghua University, Peking University and two Chinese Academy of Sciences institutes as examples.",
+      "time": {
+        "kind": "snapshot",
+        "date": "2019-05-25",
+        "note": "Endorsement on the day of release as the note states it; the note itself is undated and read as served on 29 October 2026."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "The note gives examples ('e.g.', 'etc.'), not a complete list, so no count is recorded. Endorsement is recorded as the note states it; it does not establish adoption or implementation by the named bodies. The note also names Yi Zeng (Chinese Academy of Sciences) as lead drafter; that credit comes from his own centre's website and is not recorded as a separate claim here.",
+      "evidence": [
+        {
+          "id": "c3-ev-baai-bjp-endorsers",
+          "sourceId": "c3-src-bjp-aieg-en",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Section 'Release and Endorsement'",
+          "passageType": "paraphrase",
+          "passage": "The note states that, on the day of release, the principles were endorsed by leading universities (Tsinghua University, Peking University), national research institutions (the Institute of Automation and the Institute of Computing Technology of the Chinese Academy of Sciences) and the Artificial Intelligence Industry Technology Innovation Strategic Alliance (AITISA), among others.",
+          "translation": null,
+          "anchor": "officially endorsed on the day of release"
+        }
+      ],
+      "attributes": {
+        "countBasis": "examples named by the note; no complete list"
+      }
+    },
+    {
+      "id": "c3-baai-bjp-control-risks",
+      "subject": "beijing-ai-principles-2019",
+      "predicate": "states_provision",
+      "object": {
+        "kind": "literal",
+        "value": "Control Risks: continuous efforts to improve the maturity, robustness, reliability and controllability of AI systems"
+      },
+      "topic": "governance",
+      "statement": "The Beijing AI Principles' 'Control Risks' principle states that continuous efforts should be made to improve the maturity, robustness, reliability and controllability of AI systems, for data security and the safety of the system and its environment.",
+      "time": {
+        "kind": "event",
+        "date": "2019-05-25",
+        "basis": "publication",
+        "note": "Release date of the principles; wording read from the undated English text as served on 29 October 2026."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "Quoted from the English text on the International Research Center for AI Ethics and Governance's website; the Chinese original was not retrieved, so correspondence with its wording is not checked. What the principles state, not implementation.",
+      "evidence": [
+        {
+          "id": "c3-ev-baai-bjp-control-risks",
+          "sourceId": "c3-src-bjp-aieg-en",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Research and Development, 'Control Risks'",
+          "passageType": "quote",
+          "passage": "Continuous efforts should be made to improve the maturity, robustness, reliability, and controllability of AI systems",
+          "translation": null
+        }
+      ]
+    },
+    {
+      "id": "c3-baai-bjp-be-responsible",
+      "subject": "beijing-ai-principles-2019",
+      "predicate": "states_provision",
+      "object": {
+        "kind": "literal",
+        "value": "Be Responsible: researchers and developers to consider and act to reduce potential ethical, legal and social impacts and risks"
+      },
+      "topic": "governance",
+      "statement": "The Beijing AI Principles' 'Be Responsible' principle states that AI researchers and developers should give sufficient consideration to the potential ethical, legal and social impacts and risks of their products and take concrete actions to reduce and avoid them.",
+      "time": {
+        "kind": "event",
+        "date": "2019-05-25",
+        "basis": "publication",
+        "note": "Release date of the principles; wording read from the undated English text as served on 29 October 2026."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "Quoted from the English text on the International Research Center for AI Ethics and Governance's website; the Chinese original was not retrieved, so correspondence with its wording is not checked. What the principles state, not implementation.",
+      "evidence": [
+        {
+          "id": "c3-ev-baai-bjp-be-responsible",
+          "sourceId": "c3-src-bjp-aieg-en",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Research and Development, 'Be Responsible'",
+          "passageType": "quote",
+          "passage": "should have sufficient considerations for the potential ethical, legal, and social impacts and risks",
+          "translation": null
+        }
+      ]
+    },
+    {
+      "id": "c3-baai-bjp-harmony-cooperation",
+      "subject": "beijing-ai-principles-2019",
+      "predicate": "states_provision",
+      "object": {
+        "kind": "literal",
+        "value": "Harmony and Cooperation: a cross-sectoral, global AI governance ecosystem to avoid a malicious AI race"
+      },
+      "topic": "governance",
+      "statement": "The Beijing AI Principles' 'Harmony and Cooperation' principle calls for cooperation to establish an interdisciplinary, cross-sectoral, cross-regional and global AI governance ecosystem, so as to avoid a malicious AI race.",
+      "time": {
+        "kind": "event",
+        "date": "2019-05-25",
+        "basis": "publication",
+        "note": "Release date of the principles; wording read from the undated English text as served on 29 October 2026."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "Quoted from the English text on the International Research Center for AI Ethics and Governance's website; the Chinese original was not retrieved, so correspondence with its wording is not checked. What the principles state, not implementation.",
+      "evidence": [
+        {
+          "id": "c3-ev-baai-bjp-harmony",
+          "sourceId": "c3-src-bjp-aieg-en",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Governance, 'Harmony and Cooperation'",
+          "passageType": "quote",
+          "passage": "so as to avoid malicious AI race",
+          "translation": null
+        }
+      ]
+    },
+    {
+      "id": "c3-baai-bjp-long-term-planning",
+      "subject": "beijing-ai-principles-2019",
+      "predicate": "states_provision",
+      "object": {
+        "kind": "literal",
+        "value": "Long-term Planning: continuous research on the potential risks of augmented intelligence, AGI and superintelligence"
+      },
+      "topic": "governance",
+      "statement": "The Beijing AI Principles' 'Long-term Planning' principle states that continuous research on the potential risks of augmented intelligence, artificial general intelligence and superintelligence should be encouraged.",
+      "time": {
+        "kind": "event",
+        "date": "2019-05-25",
+        "basis": "publication",
+        "note": "Release date of the principles; wording read from the undated English text as served on 29 October 2026."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "Quoted from the English text on the International Research Center for AI Ethics and Governance's website; the Chinese original was not retrieved, so correspondence with its wording is not checked. What the principles state, not implementation.",
+      "evidence": [
+        {
+          "id": "c3-ev-baai-bjp-long-term",
+          "sourceId": "c3-src-bjp-aieg-en",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Governance, 'Long-term Planning'",
+          "passageType": "quote",
+          "passage": "Continuous research on the potential risks of Augmented Intelligence, Artificial General Intelligence (AGI) and Superintelligence should be encouraged.",
+          "translation": null
+        }
+      ]
+    },
+    {
+      "id": "c3-baai-ai-principles-children",
+      "subject": "baai",
+      "predicate": "published",
+      "object": {
+        "kind": "entity",
+        "entityId": "beijing-ai-principles-for-children-2020"
+      },
+      "topic": "governance",
+      "statement": "BAAI, with Peking University's and Tsinghua University's AI institutes, three Chinese Academy of Sciences institutes, several companies and an industry alliance, released the Beijing AI Principles for Children (面向儿童的人工智能北京共识) on 14 September 2020, according to BAAI's community post.",
+      "time": {
+        "kind": "event",
+        "date": "2020-09-14",
+        "basis": "publication",
+        "note": "Release date as stated in the post of 16 September 2020."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "The co-publishers are those the post names (including Xiaomi, Megvii and Qihoo 360); the post's description of the text as the country's earliest such principles (我国首个) is BAAI's wording and is not adopted. 共同发布 is rendered 'jointly released'.",
+      "evidence": [
+        {
+          "id": "c3-ev-baai-children-release",
+          "sourceId": "c3-src-baai-hub-2197",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Opening paragraph",
+          "passageType": "quote",
+          "passage": "2020年9月14日，北京智源人工智能研究院（以下简称“智源研究院”）联合北京大学人工智能研究院、清华大学人工智能研究院",
+          "translation": {
+            "text": "On 14 September 2020, the Beijing Academy of Artificial Intelligence ('BAAI'), together with the Institute for Artificial Intelligence of Peking University and the Institute for Artificial Intelligence of Tsinghua University",
+            "method": "machine",
+            "humanVerified": false
+          }
+        },
+        {
+          "id": "c3-ev-baai-children-copublishers",
+          "sourceId": "c3-src-baai-hub-2197",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Opening paragraph",
+          "passageType": "quote",
+          "passage": "以及小米、旷视、奇虎360、好未来、爱学习、极客邦、新一代人工智能产业技术创新战略联盟等人工智能企业和联盟组织",
+          "translation": {
+            "text": "as well as AI companies and alliance organisations such as Xiaomi, Megvii, Qihoo 360, TAL, Aixuexi, Geekbang and the New Generation AI Industry Technology Innovation Strategic Alliance",
+            "method": "machine",
+            "humanVerified": false
+          }
+        }
+      ]
+    },
+    {
+      "id": "c3-baai-children-privacy",
+      "subject": "beijing-ai-principles-for-children-2020",
+      "predicate": "states_provision",
+      "object": {
+        "kind": "literal",
+        "value": "Privacy protection: collection of children's information to be lawful, legitimate and necessary, with guardians' informed consent"
+      },
+      "topic": "governance",
+      "statement": "The Beijing AI Principles for Children state that AI development should protect children's privacy more strictly, and that collecting children's information should follow the principles of lawfulness, legitimacy and necessity and ensure guardians' informed consent.",
+      "time": {
+        "kind": "event",
+        "date": "2020-09-14",
+        "basis": "publication",
+        "note": "Release date of the principles; text read from the post of 16 September 2020."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "What the principles state, not implementation or compliance by any signatory.",
+      "evidence": [
+        {
+          "id": "c3-ev-baai-children-privacy",
+          "sourceId": "c3-src-baai-hub-2197",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Section 保护儿童权利, 隐私保护",
+          "passageType": "quote",
+          "passage": "收集儿童信息应遵循合法正当必要的原则，确保监护人的知情与同意",
+          "translation": {
+            "text": "The collection of children's information should follow the principles of lawfulness, legitimacy and necessity, and ensure the informed consent of guardians",
+            "method": "machine",
+            "humanVerified": false
+          }
+        }
+      ]
+    },
+    {
+      "id": "c3-baai-wudao-2-0",
+      "subject": "baai",
+      "predicate": "published",
+      "object": {
+        "kind": "entity",
+        "entityId": "wudao-2-0-announcement"
+      },
+      "topic": "ideas",
+      "statement": "BAAI announced the Wu Dao 2.0 (悟道2.0) model at the opening of the 2021 BAAI Conference on 1 June 2021, according to BAAI's community post of 7 June 2021.",
+      "time": {
+        "kind": "event",
+        "date": "2021-06-01",
+        "basis": "announcement",
+        "note": "Date of the conference opening as stated in the post; the post itself is dated 2021-06-07. The same post says Wu Dao 1.0 was released on 20 March (2021)."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "The post's descriptions of Wu Dao 2.0 as the world's largest model and of Wu Dao 1.0 as China's earliest such model are BAAI's own wording and are not adopted; parameter counts and performance are out of scope. No weights or model card for Wu Dao 2.0 were inspected.",
+      "evidence": [
+        {
+          "id": "c3-ev-baai-wudao2-release",
+          "sourceId": "c3-src-baai-hub-8375",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Opening section",
+          "passageType": "quote",
+          "passage": "在大会开幕式上，智源研究院发布了全球最大的超大规模智能模型“悟道 2.0”",
+          "translation": {
+            "text": "At the conference opening, BAAI released 'Wu Dao 2.0', the world's largest ultra-large-scale intelligent model",
+            "method": "machine",
+            "humanVerified": false
+          }
+        },
+        {
+          "id": "c3-ev-baai-wudao2-date",
+          "sourceId": "c3-src-baai-hub-8375",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Opening paragraph",
+          "passageType": "quote",
+          "passage": "6 月 1 日，由北京智源人工智能研究院（以下简称智源研究院）主办的 2021 北京智源大会",
+          "translation": {
+            "text": "On 1 June, the 2021 BAAI Conference hosted by the Beijing Academy of Artificial Intelligence (BAAI)",
+            "method": "machine",
+            "humanVerified": false
+          }
+        },
+        {
+          "id": "c3-ev-baai-wudao1-context",
+          "sourceId": "c3-src-baai-hub-8375",
+          "sourceRole": "primary",
+          "support": "context",
+          "locator": "Section 二, paragraph on the Wu Dao team",
+          "passageType": "quote",
+          "passage": "今年3月20日，智源研究院发布了中国首个超大规模智能模型“悟道1.0”",
+          "translation": {
+            "text": "On 20 March this year, BAAI released 'Wu Dao 1.0', China's first ultra-large-scale intelligent model",
+            "method": "machine",
+            "humanVerified": false
+          }
+        }
+      ]
+    },
+    {
+      "id": "c3-baai-aquila-7b-card",
+      "subject": "baai",
+      "predicate": "published",
+      "object": {
+        "kind": "entity",
+        "entityId": "aquila-7b-model-card"
+      },
+      "topic": "ideas",
+      "statement": "BAAI published the Aquila-7B (悟道·天鹰) model card in its Hugging Face repository by 8 June 2023, describing a Chinese-English language model trained from scratch.",
+      "time": {
+        "kind": "event",
+        "date": "2023-06-08",
+        "basis": "publication",
+        "note": "Date of the cited README commit; the repository's commit list begins on 8 June 2023. BAAI's own website places Wu Dao 3.0, including Aquila, in 2023 without a day; the release event date was not read from a BAAI page."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "The card's claims of efficiency, performance and of being the earliest model with these features are the developer's own and are out of scope. The card at this commit still carries placeholder table values (0.xxx), indicating it was a working version.",
+      "evidence": [
+        {
+          "id": "c3-ev-baai-aquila-card",
+          "sourceId": "c3-src-aquila7b-card-0608",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "简介/Overview, English paragraph",
+          "passageType": "quote",
+          "passage": "The Aquila language model is trained from scratch on high-quality Chinese and English corpora.",
+          "translation": null
+        },
+        {
+          "id": "c3-ev-baai-aquila-wudao3",
+          "sourceId": "c3-src-baai-site-bundle",
+          "sourceRole": "primary",
+          "support": "context",
+          "locator": "Research page, Wu Dao series (悟道系列), entry 悟道3.0",
+          "passageType": "quote",
+          "passage": "发布并开源，包括“悟道·天鹰”（Aquila）语言大模型和“悟道 · 视界”视觉大模型系列",
+          "translation": {
+            "text": "released and open-sourced, including the 'Wu Dao · Aquila' language models and the 'Wu Dao · Vision' visual model series",
+            "method": "machine",
+            "humanVerified": false
+          }
+        }
+      ]
+    },
+    {
+      "id": "c3-baai-aquila-7b-licence",
+      "subject": "baai",
+      "predicate": "published",
+      "object": {
+        "kind": "entity",
+        "entityId": "aquila-7b-licence"
+      },
+      "topic": "governance",
+      "statement": "The Aquila-7B model card of 8 June 2023 states that the model is licensed under the BAAI Aquila Model Licence Agreement (智源Aquila系列模型许可协议) and the source code under Apache Licence 2.0.",
+      "time": {
+        "kind": "event",
+        "date": "2023-06-08",
+        "basis": "publication",
+        "note": "Date of the cited README commit; the agreement's PDF was uploaded to the repository the same day."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "The card's model-details table at the same commit lists 'Apache 2.0' in its License column for Aquila-7B, which differs from the licence section; the record follows the licence section and notes the discrepancy. The agreement's own text was not inspected, so its terms are not described. 开源 is rendered 'open-source' as the card's own label.",
+      "evidence": [
+        {
+          "id": "c3-ev-baai-aquila-licence-zh",
+          "sourceId": "c3-src-aquila7b-card-0608",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Section 证书/License",
+          "passageType": "quote",
+          "passage": "Aquila-7B开源模型使用 [智源Aquila系列模型许可协议] … 原始代码基于[Apache Licence 2.0]",
+          "translation": {
+            "text": "The Aquila-7B open-source model uses the [BAAI Aquila Series Model Licence Agreement] … the original code is based on [Apache Licence 2.0]",
+            "method": "machine",
+            "humanVerified": false
+          }
+        },
+        {
+          "id": "c3-ev-baai-aquila-licence-table",
+          "sourceId": "c3-src-aquila7b-card-0608",
+          "sourceRole": "primary",
+          "support": "context",
+          "locator": "Section 模型细节/Model details, table",
+          "passageType": "quote",
+          "passage": "Aquila-7B | Apache 2.0",
+          "translation": null
+        }
+      ]
+    },
+    {
+      "id": "c3-baai-aquila2-report",
+      "subject": "baai",
+      "predicate": "published",
+      "object": {
+        "kind": "entity",
+        "entityId": "aquila2-report"
+      },
+      "topic": "ideas",
+      "statement": "BAAI's Language Foundation Model & Software Team posted the Aquila2 Technical Report to arXiv on 14 August 2024 (version 1), describing bilingual models of 7, 34 and 70 billion parameters.",
+      "time": {
+        "kind": "event",
+        "date": "2024-08-14",
+        "basis": "publication",
+        "note": "Submission date of the cited arXiv version; not the model's release date and not the date of later versions."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "Affiliation as printed on the title page. Performance claims are out of scope.",
+      "evidence": [
+        {
+          "id": "c3-ev-baai-aquila2-report",
+          "sourceId": "c3-src-aquila2-arxiv-v1",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Title page",
+          "passageType": "quote",
+          "passage": "Language Foundation Model & Software Team BAAI",
+          "translation": null
+        },
+        {
+          "id": "c3-ev-baai-aquila2-sizes",
+          "sourceId": "c3-src-aquila2-arxiv-v1",
+          "sourceRole": "primary",
+          "support": "context",
+          "locator": "Abstract",
+          "passageType": "quote",
+          "passage": "bilingual models with parameter sizes of 7, 34, and 70 billion",
+          "translation": null
+        }
+      ]
+    },
+    {
+      "id": "c3-baai-emu-report",
+      "subject": "baai",
+      "predicate": "published",
+      "object": {
+        "kind": "entity",
+        "entityId": "emu-report"
+      },
+      "topic": "ideas",
+      "statement": "Researchers affiliated with BAAI, Tsinghua University and Peking University posted 'Generative Pretraining in Multimodality', introducing the Emu multimodal foundation model, to arXiv on 11 July 2023 (version 1), with code under the baaivision GitHub organisation.",
+      "time": {
+        "kind": "event",
+        "date": "2023-07-11",
+        "basis": "publication",
+        "note": "Submission date of the cited arXiv version; not the model's release date and not the date of later versions."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "BAAI is affiliation number 1 and most authors are marked with it; attribution of the publication to BAAI rests on that and on the baaivision code link, not on a BAAI announcement. Performance claims are out of scope.",
+      "evidence": [
+        {
+          "id": "c3-ev-baai-emu-affil",
+          "sourceId": "c3-src-emu-arxiv-v1",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Title page, affiliations",
+          "passageType": "quote",
+          "passage": "1 Beijing Academy of Artificial Intelligence 2 Tsinghua University 3 Peking University",
+          "translation": null
+        },
+        {
+          "id": "c3-ev-baai-emu-code",
+          "sourceId": "c3-src-emu-arxiv-v1",
+          "sourceRole": "primary",
+          "support": "context",
+          "locator": "Title page",
+          "passageType": "quote",
+          "passage": "Code & Demo: https://github.com/baaivision/Emu",
+          "translation": null
+        }
+      ]
+    },
+    {
+      "id": "c3-baai-emu3-report",
+      "subject": "baai",
+      "predicate": "published",
+      "object": {
+        "kind": "entity",
+        "entityId": "emu3-report"
+      },
+      "topic": "ideas",
+      "statement": "The Emu3 Team of BAAI posted 'Emu3: Next-Token Prediction is All You Need' to arXiv on 27 September 2024 (version 1).",
+      "time": {
+        "kind": "event",
+        "date": "2024-09-27",
+        "basis": "publication",
+        "note": "Submission date of the cited arXiv version; not the model's release date and not the date of later versions. BAAI's website timeline places the Emu3 release in October 2024 (2024年10月)."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "Credit as printed on the title page. The timeline entry's description of Emu3 as the world's earliest native multimodal world model (全球首个) is BAAI's wording and is not adopted. The report's performance claims are out of scope.",
+      "evidence": [
+        {
+          "id": "c3-ev-baai-emu3-report",
+          "sourceId": "c3-src-emu3-arxiv-v1",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Title page",
+          "passageType": "quote",
+          "passage": "Emu3 Team∗, BAAI",
+          "translation": null
+        },
+        {
+          "id": "c3-ev-baai-emu3-timeline",
+          "sourceId": "c3-src-baai-site-bundle",
+          "sourceRole": "primary",
+          "support": "context",
+          "locator": "History timeline (array Yc), entry for 2024-10",
+          "passageType": "quote",
+          "passage": "全球首个原生多模态世界模型 Emu 3 发布",
+          "translation": {
+            "text": "Emu 3, the world's first native multimodal world model, released",
+            "method": "machine",
+            "humanVerified": false
+          }
+        }
+      ]
+    },
+    {
+      "id": "c3-baai-emu3-gen-licence",
+      "subject": "baai",
+      "predicate": "published",
+      "object": {
+        "kind": "entity",
+        "entityId": "emu3-gen-licence"
+      },
+      "topic": "governance",
+      "statement": "The BAAI/Emu3-Gen model card, at the commit of 26 September 2024, declares the licence apache-2.0 in its metadata.",
+      "time": {
+        "kind": "event",
+        "date": "2024-09-26",
+        "basis": "publication",
+        "note": "Date of the cited README commit; the repository was initialised on 25 September 2024."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "The statement is the card's metadata field only; no LICENSE file in the repository was inspected, and the licences of the other Emu3 repositories (for example Emu3-Chat and the vision tokenizer) were not checked.",
+      "evidence": [
+        {
+          "id": "c3-ev-baai-emu3-gen-licence",
+          "sourceId": "c3-src-emu3gen-card",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "YAML front matter",
+          "passageType": "quote",
+          "passage": "license: apache-2.0",
+          "translation": null
+        }
+      ]
+    },
+    {
+      "id": "c3-baai-cpack-report",
+      "subject": "baai",
+      "predicate": "published",
+      "object": {
+        "kind": "entity",
+        "entityId": "c-pack-report"
+      },
+      "topic": "ideas",
+      "statement": "Researchers at BAAI, with a co-author at Hugging Face, posted 'C-Pack: Packaged Resources To Advance General Chinese Embedding' to arXiv on 14 September 2023 (version 1), describing the C-MTEB benchmark, the C-MTP dataset and the C-TEM family of embedding models.",
+      "time": {
+        "kind": "event",
+        "date": "2023-09-14",
+        "basis": "publication",
+        "note": "Submission date of the cited arXiv version; not the model's release date and not the date of later versions."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "Affiliations as printed on the title page; the C-TEM models are published on Hugging Face as BGE (see c3-baai-bge-licence). Performance claims are out of scope.",
+      "evidence": [
+        {
+          "id": "c3-ev-baai-cpack-affil",
+          "sourceId": "c3-src-cpack-arxiv-v1",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Title page",
+          "passageType": "quote",
+          "passage": "Peitian Zhang ♠ Beijing Academy of Artificial Intelligence",
+          "translation": null
+        },
+        {
+          "id": "c3-ev-baai-cpack-contents",
+          "sourceId": "c3-src-cpack-arxiv-v1",
+          "sourceRole": "primary",
+          "support": "context",
+          "locator": "Abstract",
+          "passageType": "quote",
+          "passage": "C-TEM is a family of embedding models covering multiple sizes",
+          "translation": null
+        }
+      ]
+    },
+    {
+      "id": "c3-baai-bge-licence",
+      "subject": "baai",
+      "predicate": "published",
+      "object": {
+        "kind": "entity",
+        "entityId": "bge-large-zh-v1-5-licence"
+      },
+      "topic": "governance",
+      "statement": "The BAAI/bge-large-zh-v1.5 model card, at its commit of 12 September 2023, declares the MIT licence and states that the released models can be used commercially free of charge.",
+      "time": {
+        "kind": "event",
+        "date": "2023-09-12",
+        "basis": "publication",
+        "note": "Date of the cited README commit, the day the repository was initialised; the card's own update list dates the release of the bge-*-v1.5 models to 09/12/2023."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "The licence section names the MIT License for FlagEmbedding and adds the commercial-use sentence; the LICENSE file it links on GitHub was not inspected. Contact e-mail addresses in the card are not reproduced.",
+      "evidence": [
+        {
+          "id": "c3-ev-baai-bge-licence-meta",
+          "sourceId": "c3-src-bge-zh-v15-card",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "YAML front matter",
+          "passageType": "quote",
+          "passage": "license: mit",
+          "translation": null
+        },
+        {
+          "id": "c3-ev-baai-bge-licence-section",
+          "sourceId": "c3-src-bge-zh-v15-card",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Section 'License'",
+          "passageType": "quote",
+          "passage": "FlagEmbedding is licensed under the [MIT License] … The released models can be used for commercial purposes free of charge.",
+          "translation": null
+        }
+      ]
+    },
+    {
+      "id": "c3-shlab-unveiled-2020",
+      "subject": "shanghai-ai-lab",
+      "predicate": "founding_stated",
+      "object": {
+        "kind": "literal",
+        "value": "Unveiled (揭牌) on 11 July 2020 at the 2020 World Artificial Intelligence Conference, as reported by Yicai"
+      },
+      "topic": "institutions",
+      "statement": "Yicai reported that Shanghai Artificial Intelligence Laboratory's plaque was unveiled (揭牌) by Shanghai's acting mayor Gong Zheng at the project-signing and results-release session of the 2020 World Artificial Intelligence Conference cloud summit, which closed on 11 July 2020.",
+      "time": {
+        "kind": "event",
+        "date": "2020-07-11",
+        "note": "Date of the reported closing session; Yicai published its report the same day. No founding date was found on the laboratory’s own pages.",
+        "basis": "publication"
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "Rests on reporting: no statement by the laboratory or a filing giving its founding date was retrieved. 揭牌 ('unveiling of the plaque') is a ceremony, recorded as such, not as the date of legal establishment. The unveiling by a city official is recorded as reported; no direction or control is inferred. The legal entity named in the regulator's filing lists (上海人工智能创新中心（上海人工智能实验室）) is left to the governance group.",
+      "evidence": [
+        {
+          "id": "c3-ev-shlab-unveiled",
+          "sourceId": "c3-src-yicai-2020-07-11",
+          "sourceRole": "secondary",
+          "support": "supports",
+          "locator": "First paragraph",
+          "passageType": "quote",
+          "passage": "在大会项目签约和成果发布活动上，上海市委副书记、代市长龚正为上海人工智能实验室揭牌",
+          "translation": {
+            "text": "At the conference's project-signing and results-release session, Gong Zheng, deputy secretary of the Shanghai Municipal Party Committee and acting mayor, unveiled the plaque of Shanghai Artificial Intelligence Laboratory",
+            "method": "machine",
+            "humanVerified": false
+          }
+        },
+        {
+          "id": "c3-ev-shlab-unveiled-date",
+          "sourceId": "c3-src-yicai-2020-07-11",
+          "sourceRole": "secondary",
+          "support": "supports",
+          "locator": "First paragraph",
+          "passageType": "quote",
+          "passage": "2020世界人工智能大会云端峰会7月11日圆满落幕",
+          "translation": {
+            "text": "The 2020 World Artificial Intelligence Conference cloud summit closed successfully on 11 July",
+            "method": "machine",
+            "humanVerified": false
+          }
+        }
+      ],
+      "reviewHold": "Predicate: a reported plaque unveiling (揭牌) is not a founding date; no existing predicate fits; rests on reporting (audit, material)."
+    },
+    {
+      "id": "c3-shlab-internlm-readme",
+      "subject": "shanghai-ai-lab",
+      "predicate": "published",
+      "object": {
+        "kind": "entity",
+        "entityId": "internlm-readme-2023"
+      },
+      "topic": "ideas",
+      "statement": "The InternLM repository README of 6 July 2023 announced a 7-billion-parameter InternLM base model and chat model and credited the codebase to Shanghai AI Laboratory and researchers from universities and companies.",
+      "time": {
+        "kind": "event",
+        "date": "2023-07-06",
+        "basis": "publication",
+        "note": "Date of the repository's initial commit; the date on which weights became downloadable was not checked."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "Attribution to Shanghai AI Laboratory rests on the README's acknowledgements and contact domain; other contributors are not named there. 'open-sourced' is the README's own word and is not a judgement of the licence.",
+      "evidence": [
+        {
+          "id": "c3-ev-shlab-internlm-readme",
+          "sourceId": "c3-src-internlm-readme-0706",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Introduction",
+          "passageType": "quote",
+          "passage": "InternLM has open-sourced a 7 billion parameter base model and a chat model tailored for practical scenarios.",
+          "translation": null
+        },
+        {
+          "id": "c3-ev-shlab-internlm-ack",
+          "sourceId": "c3-src-internlm-readme-0706",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Acknowledgements",
+          "passageType": "quote",
+          "passage": "InternLM codebase is an open-source project contributed by Shanghai AI Laboratory and researchers from different universities and companies.",
+          "translation": null
+        }
+      ]
+    },
+    {
+      "id": "c3-shlab-internlm-licence-2023",
+      "subject": "shanghai-ai-lab",
+      "predicate": "published",
+      "object": {
+        "kind": "entity",
+        "entityId": "internlm-7b-licence-2023"
+      },
+      "topic": "governance",
+      "statement": "The InternLM README of 6 July 2023 stated that the repository's code is under Apache-2.0 and that the InternLM weights are fully open for academic research, with commercial use requiring written permission from the official team.",
+      "time": {
+        "kind": "event",
+        "date": "2023-07-06",
+        "basis": "publication",
+        "note": "Date of the repository's initial commit; the README was revised later (see c3-shlab-internlm2-chat-licence for the January 2024 wording on InternLM2)."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "The README's statement only; no separate weights licence text was inspected. The contact e-mail address in the passage is not reproduced.",
+      "evidence": [
+        {
+          "id": "c3-ev-shlab-internlm-licence",
+          "sourceId": "c3-src-internlm-readme-0706",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Open Source License",
+          "passageType": "quote",
+          "passage": "The InternLM weights are fully open for academic research and also allow commercial use with written permission from the official team.",
+          "translation": null
+        }
+      ]
+    },
+    {
+      "id": "c3-shlab-internlm2-report",
+      "subject": "shanghai-ai-lab",
+      "predicate": "published",
+      "object": {
+        "kind": "entity",
+        "entityId": "internlm2-report"
+      },
+      "topic": "ideas",
+      "statement": "The InternLM2 Technical Report, whose affiliations are listed as Shanghai AI Laboratory, SenseTime Group, The Chinese University of Hong Kong and Fudan University, was posted to arXiv on 26 March 2024 (version 1).",
+      "time": {
+        "kind": "event",
+        "date": "2024-03-26",
+        "basis": "publication",
+        "note": "Submission date of the cited arXiv version; not the model's release date and not the date of later versions. The internlm2-chat-7b weights repository on Hugging Face predates it (initialised 10 January 2024)."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "The title page lists four affiliations without mapping them to authors; attribution to Shanghai AI Laboratory rests on its position at the head of the list and the internlm contact domain (pjlab.org.cn), and does not establish sole authorship. Performance claims are out of scope.",
+      "evidence": [
+        {
+          "id": "c3-ev-shlab-internlm2-affil",
+          "sourceId": "c3-src-internlm2-arxiv-v1",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Title page, affiliations",
+          "passageType": "quote",
+          "passage": "Shanghai AI Laboratory SenseTime Group The Chinese University of Hong Kong Fudan University",
+          "translation": null
+        },
+        {
+          "id": "c3-ev-shlab-internlm2-date",
+          "sourceId": "c3-src-internlm2-arxiv-v1",
+          "sourceRole": "primary",
+          "support": "context",
+          "locator": "Title page margin",
+          "passageType": "quote",
+          "passage": "arXiv:2403.17297v1 [cs.CL] 26 Mar 2024",
+          "translation": null
+        }
+      ]
+    },
+    {
+      "id": "c3-shlab-internlm2-sensetime",
+      "subject": "internlm2-report",
+      "predicate": "explicitly_credits",
+      "object": {
+        "kind": "entity",
+        "entityId": "sensetime"
+      },
+      "topic": "institutions",
+      "statement": "The InternLM2 Technical Report (arXiv version 1) lists SenseTime Group among its four affiliations, after Shanghai AI Laboratory.",
+      "time": {
+        "kind": "event",
+        "date": "2024-03-26",
+        "basis": "publication",
+        "note": "Submission date of the cited arXiv version; not the model's release date and not the date of later versions."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "An affiliation in an author block; it does not establish which authors are SenseTime employees, any contractual or ownership relation between SenseTime and the laboratory, or a share of the work.",
+      "evidence": [
+        {
+          "id": "c3-ev-shlab-internlm2-sensetime",
+          "sourceId": "c3-src-internlm2-arxiv-v1",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Title page, affiliations",
+          "passageType": "quote",
+          "passage": "Shanghai AI Laboratory SenseTime Group",
+          "translation": null
+        }
+      ]
+    },
+    {
+      "id": "c3-shlab-internlm2-chat-licence",
+      "subject": "shanghai-ai-lab",
+      "predicate": "published",
+      "object": {
+        "kind": "entity",
+        "entityId": "internlm2-chat-7b-licence"
+      },
+      "topic": "governance",
+      "statement": "The internlm2-chat-7b model card of 15 January 2024 states that the code is under Apache-2.0 and that the model weights are fully open for academic research and allow free commercial use, for which a licence is applied for through a form.",
+      "time": {
+        "kind": "event",
+        "date": "2024-01-15",
+        "basis": "publication",
+        "note": "Date of the commit that created the README; the weights repository was initialised on 10 January 2024."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "免费的商业使用授权 is rendered 'free commercial-use authorisation'; the record states that an application is required, not that it is granted. Publication by the laboratory rests on the internlm organisation and the InternLM name; the card itself does not name the laboratory in this section.",
+      "evidence": [
+        {
+          "id": "c3-ev-shlab-internlm2-licence-en",
+          "sourceId": "c3-src-internlm2-chat-7b-card",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Open Source License",
+          "passageType": "quote",
+          "passage": "The code is licensed under Apache-2.0, while model weights are fully open for academic research and also allow **free** commercial usage.",
+          "translation": null
+        },
+        {
+          "id": "c3-ev-shlab-internlm2-licence-zh",
+          "sourceId": "c3-src-internlm2-chat-7b-card",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "开源许可证",
+          "passageType": "quote",
+          "passage": "模型权重对学术研究完全开放，也可申请免费的商业使用授权",
+          "translation": {
+            "text": "The model weights are fully open for academic research, and a free commercial-use authorisation can also be applied for",
+            "method": "machine",
+            "humanVerified": false
+          }
+        }
+      ]
+    },
+    {
+      "id": "c3-shlab-internvl-report",
+      "subject": "shanghai-ai-lab",
+      "predicate": "published",
+      "object": {
+        "kind": "entity",
+        "entityId": "internvl-report"
+      },
+      "topic": "ideas",
+      "statement": "The InternVL report, with authors from Nanjing University, OpenGVLab of Shanghai AI Laboratory, Tsinghua University, SenseTime Research and other institutions, was posted to arXiv on 21 December 2023 (version 1).",
+      "time": {
+        "kind": "event",
+        "date": "2023-12-21",
+        "basis": "publication",
+        "note": "Submission date of the cited arXiv version; not the model's release date and not the date of later versions."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "A multi-institution paper; recording it under Shanghai AI Laboratory rests on the OpenGVLab affiliation and the OpenGVLab code link, and does not establish sole authorship. Performance claims are out of scope.",
+      "evidence": [
+        {
+          "id": "c3-ev-shlab-internvl-affil",
+          "sourceId": "c3-src-internvl-arxiv-v1",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Title page, affiliations",
+          "passageType": "quote",
+          "passage": "2 OpenGVLab, Shanghai AI Laboratory",
+          "translation": null
+        },
+        {
+          "id": "c3-ev-shlab-internvl-code",
+          "sourceId": "c3-src-internvl-arxiv-v1",
+          "sourceRole": "primary",
+          "support": "context",
+          "locator": "Title page",
+          "passageType": "quote",
+          "passage": "https://github.com/OpenGVLab/InternVL",
+          "translation": null
+        }
+      ]
+    },
+    {
+      "id": "c3-shlab-opengvlab-unit",
+      "subject": "opengvlab",
+      "predicate": "unit_of",
+      "object": {
+        "kind": "entity",
+        "entityId": "shanghai-ai-lab"
+      },
+      "topic": "institutions",
+      "statement": "The InternVL report (arXiv version 1) gives OpenGVLab as an affiliation in the form 'OpenGVLab, Shanghai AI Laboratory'.",
+      "time": {
+        "kind": "snapshot",
+        "date": "2023-12-21",
+        "note": "Affiliation as printed in the version of 21 December 2023; no founding or later status of OpenGVLab was checked."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "The unit relation rests on the affiliation form alone (group, institution); no organisational chart or statement by the laboratory was retrieved.",
+      "evidence": [
+        {
+          "id": "c3-ev-shlab-opengvlab-unit",
+          "sourceId": "c3-src-internvl-arxiv-v1",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Title page, affiliations",
+          "passageType": "quote",
+          "passage": "OpenGVLab, Shanghai AI Laboratory",
+          "translation": null
+        }
+      ]
+    },
+    {
+      "id": "c3-shlab-intern-s1-card",
+      "subject": "shanghai-ai-lab",
+      "predicate": "published",
+      "object": {
+        "kind": "entity",
+        "entityId": "intern-s1-model-card"
+      },
+      "topic": "ideas",
+      "statement": "The Intern-S1 model card in the internlm Hugging Face organisation, at its commit of 25 July 2025, introduces Intern-S1 as a multimodal reasoning model built upon a 235B mixture-of-experts language model and a 6B vision encoder.",
+      "time": {
+        "kind": "event",
+        "date": "2025-07-25",
+        "basis": "publication",
+        "note": "Date of the cited README commit; the model files were uploaded on 24 July 2025."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "The card's comparative performance claims are out of scope. Attribution to Shanghai AI Laboratory rests on the internlm organisation and on the technical report's credit (c3-shlab-intern-s1-report).",
+      "evidence": [
+        {
+          "id": "c3-ev-shlab-intern-s1-card",
+          "sourceId": "c3-src-intern-s1-card",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Introduction",
+          "passageType": "quote",
+          "passage": "Built upon a 235B MoE language model and a 6B Vision encoder",
+          "translation": null
+        }
+      ]
+    },
+    {
+      "id": "c3-shlab-intern-s1-licence",
+      "subject": "shanghai-ai-lab",
+      "predicate": "published",
+      "object": {
+        "kind": "entity",
+        "entityId": "intern-s1-licence"
+      },
+      "topic": "governance",
+      "statement": "The internlm/Intern-S1 repository carries the Apache License, Version 2.0 as LICENSE.txt (commit of 24 July 2025), and its model card declares apache-2.0 (commit of 25 July 2025).",
+      "time": {
+        "kind": "event",
+        "date": "2025-07-24",
+        "basis": "publication",
+        "note": "Date of the commit that uploaded LICENSE.txt."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "The file is the standard Apache 2.0 text with no filled-in copyright line; it is recorded as the repository's licence statement for the weights in that repository only.",
+      "evidence": [
+        {
+          "id": "c3-ev-shlab-intern-s1-licence",
+          "sourceId": "c3-src-intern-s1-license",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Heading",
+          "passageType": "quote",
+          "passage": "Apache License Version 2.0, January 2004",
+          "translation": null
+        },
+        {
+          "id": "c3-ev-shlab-intern-s1-licence-meta",
+          "sourceId": "c3-src-intern-s1-card",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "YAML front matter",
+          "passageType": "quote",
+          "passage": "license: apache-2.0",
+          "translation": null
+        }
+      ]
+    },
+    {
+      "id": "c3-shlab-intern-s1-report",
+      "subject": "shanghai-ai-lab",
+      "predicate": "published",
+      "object": {
+        "kind": "entity",
+        "entityId": "intern-s1-report"
+      },
+      "topic": "ideas",
+      "statement": "The Intern-S1 Team of Shanghai AI Laboratory posted the Intern-S1 technical report to arXiv on 21 August 2025 (version 1).",
+      "time": {
+        "kind": "event",
+        "date": "2025-08-21",
+        "basis": "publication",
+        "note": "Submission date of the cited arXiv version; not the model's release date and not the date of later versions. The model card and weights were published on Hugging Face on 24–25 July 2025."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "Credit as printed on the title page. Performance claims are out of scope.",
+      "evidence": [
+        {
+          "id": "c3-ev-shlab-intern-s1-report",
+          "sourceId": "c3-src-intern-s1-arxiv-v1",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Title page",
+          "passageType": "quote",
+          "passage": "Intern-S1 Team, Shanghai AI Laboratory",
+          "translation": null
+        }
+      ]
+    },
+    {
+      "id": "c3-shlab-safework-r1-report",
+      "subject": "shanghai-ai-lab",
+      "predicate": "published",
+      "object": {
+        "kind": "entity",
+        "entityId": "safework-r1-report"
+      },
+      "topic": "governance",
+      "statement": "Shanghai Artificial Intelligence Laboratory posted the SafeWork-R1 technical report to arXiv on 24 July 2025 (version 1); it describes SafeWork-R1 as a multimodal reasoning model derived from its base model Qwen2.5-VL-72B.",
+      "time": {
+        "kind": "event",
+        "date": "2025-07-24",
+        "basis": "publication",
+        "note": "Submission date of the cited arXiv version; not the model's release date and not the date of later versions."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "The report's statements about safety and capability results are its own and are out of scope; the base-model relation is recorded as the report states it.",
+      "evidence": [
+        {
+          "id": "c3-ev-shlab-safework-credit",
+          "sourceId": "c3-src-safework-r1-arxiv-v1",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Title page",
+          "passageType": "quote",
+          "passage": "SafeWork-R1: Coevolving Safety and Intelligence under the AI-45◦ Law Shanghai Artificial Intelligence Laboratory",
+          "translation": null
+        },
+        {
+          "id": "c3-ev-shlab-safework-base",
+          "sourceId": "c3-src-safework-r1-arxiv-v1",
+          "sourceRole": "primary",
+          "support": "context",
+          "locator": "Abstract",
+          "passageType": "quote",
+          "passage": "over its base model Qwen2.5-VL-72B",
+          "translation": null
+        }
+      ]
+    },
+    {
+      "id": "c3-shlab-safework-r1-safeladder",
+      "subject": "safework-r1-report",
+      "predicate": "states_provision",
+      "object": {
+        "kind": "literal",
+        "value": "SafeLadder: large-scale, progressive, safety-oriented reinforcement-learning post-training with multi-principled verifiers"
+      },
+      "topic": "governance",
+      "statement": "The SafeWork-R1 report states that the model was developed with the laboratory's SafeLadder framework of large-scale, progressive, safety-oriented reinforcement-learning post-training supported by multi-principled verifiers.",
+      "time": {
+        "kind": "event",
+        "date": "2025-07-24",
+        "basis": "publication",
+        "note": "Submission date of the cited arXiv version; not the model's release date and not the date of later versions."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "A description of the developer's method in its own report, not an independent evaluation of its effect.",
+      "evidence": [
+        {
+          "id": "c3-ev-shlab-safework-safeladder",
+          "sourceId": "c3-src-safework-r1-arxiv-v1",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Abstract",
+          "passageType": "quote",
+          "passage": "SafeLadder framework, which incorporates large-scale, progressive, safety-oriented reinforcement learning post-training, supported by a suite of multi-principled verifiers",
+          "translation": null
+        }
+      ]
+    },
+    {
+      "id": "c3-shlab-safework-r1-zhou-bowen",
+      "subject": "zhou-bowen",
+      "predicate": "authored",
+      "object": {
+        "kind": "entity",
+        "entityId": "safework-r1-report"
+      },
+      "topic": "people",
+      "statement": "The SafeWork-R1 report (arXiv version 1) names Bowen Zhou as its Scientific Director in its authorship section.",
+      "time": {
+        "kind": "event",
+        "date": "2025-07-24",
+        "basis": "publication",
+        "note": "Submission date of the cited arXiv version; not the model's release date and not the date of later versions."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "The report defines Scientific Director as responsible for the strategic and organisational aspects of the project. The identification with the existing person record rests on the name in a report credited to Shanghai AI Laboratory, where he is recorded as director from April 2024 (lg-gc-zhou-bowen-shanghai-ai-lab-2024).",
+      "evidence": [
+        {
+          "id": "c3-ev-shlab-safework-zhou",
+          "sourceId": "c3-src-safework-r1-arxiv-v1",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Authorship section",
+          "passageType": "quote",
+          "passage": "Scientific Director: Bowen Zhou",
+          "translation": null
+        }
+      ]
+    },
+    {
+      "id": "c3-shlab-frmf-practice-report",
+      "subject": "shanghai-ai-lab",
+      "predicate": "published",
+      "object": {
+        "kind": "entity",
+        "entityId": "sail-frmf-in-practice-report"
+      },
+      "topic": "governance",
+      "statement": "Shanghai Artificial Intelligence Laboratory posted 'Frontier AI Risk Management Framework in Practice: A Risk Analysis Technical Report' to arXiv on 22 July 2025 (version 1).",
+      "time": {
+        "kind": "event",
+        "date": "2025-07-22",
+        "basis": "publication",
+        "note": "Submission date of the cited arXiv version; not the model's release date and not the date of later versions."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "Credit as printed on the title page and in its citation line ('Shanghai AI Lab (2025)').",
+      "evidence": [
+        {
+          "id": "c3-ev-shlab-frmf-practice-credit",
+          "sourceId": "c3-src-frmf-practice-arxiv-v1",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Title page",
+          "passageType": "quote",
+          "passage": "Frontier AI Risk Management Framework in Practice: A Risk Analysis Technical Report Shanghai Artificial Intelligence Laboratory",
+          "translation": null
+        },
+        {
+          "id": "c3-ev-shlab-frmf-practice-cite",
+          "sourceId": "c3-src-frmf-practice-arxiv-v1",
+          "sourceRole": "primary",
+          "support": "context",
+          "locator": "Title page footnote",
+          "passageType": "quote",
+          "passage": "Please cite this work as “Shanghai AI Lab (2025)”.",
+          "translation": null
+        }
+      ]
+    },
+    {
+      "id": "c3-shlab-frmf-practice-cites-frmf",
+      "subject": "sail-frmf-in-practice-report",
+      "predicate": "cites",
+      "object": {
+        "kind": "entity",
+        "entityId": "sail-frontier-ai-risk-management-framework-v1-0"
+      },
+      "topic": "governance",
+      "statement": "The risk-analysis report states that it draws on the E-T-C analysis of the Frontier AI Risk Management Framework (v1.0), which it cites as Shanghai AI Lab & Concordia AI, 2025.",
+      "time": {
+        "kind": "event",
+        "date": "2025-07-22",
+        "basis": "publication",
+        "note": "Submission date of the cited arXiv version; not the model's release date and not the date of later versions."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "A citation and stated use of the framework's analysis method; it does not establish how the framework is applied inside the laboratory beyond this report.",
+      "evidence": [
+        {
+          "id": "c3-ev-shlab-frmf-practice-cites",
+          "sourceId": "c3-src-frmf-practice-arxiv-v1",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Abstract",
+          "passageType": "quote",
+          "passage": "Drawing on the E-T-C analysis (deployment environment, threat source, enabling capability) from the Frontier AI Risk Management Framework (v1.0)",
+          "translation": null
+        }
+      ]
+    },
+    {
+      "id": "c3-shlab-frmf-practice-seven-areas",
+      "subject": "sail-frmf-in-practice-report",
+      "predicate": "states_provision",
+      "object": {
+        "kind": "literal",
+        "value": "Critical risks identified in seven areas: cyber offense, biological and chemical risks, persuasion and manipulation, uncontrolled autonomous AI R&D, strategic deception and scheming, self-replication, collusion"
+      },
+      "topic": "governance",
+      "statement": "The risk-analysis report identifies critical risks in seven areas: cyber offense, biological and chemical risks, persuasion and manipulation, uncontrolled autonomous AI R&D, strategic deception and scheming, self-replication, and collusion.",
+      "time": {
+        "kind": "event",
+        "date": "2025-07-22",
+        "basis": "publication",
+        "note": "Submission date of the cited arXiv version; not the model's release date and not the date of later versions."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "What the report states as its scope of assessment.",
+      "evidence": [
+        {
+          "id": "c3-ev-shlab-frmf-practice-areas",
+          "sourceId": "c3-src-frmf-practice-arxiv-v1",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Abstract",
+          "passageType": "quote",
+          "passage": "we identify critical risks in seven areas: cyber offense, biological and chemical risks, persuasion and manipulation, uncontrolled autonomous AI R&D, strategic deception and scheming, self-replication, and collusion",
+          "translation": null
+        }
+      ]
+    },
+    {
+      "id": "c3-shlab-frmf-practice-zones",
+      "subject": "sail-frmf-in-practice-report",
+      "predicate": "states_provision",
+      "object": {
+        "kind": "literal",
+        "value": "Risk zones: green (routine deployment with monitoring), yellow (strengthened mitigations, controlled deployment), red (suspension of development and/or deployment)"
+      },
+      "topic": "governance",
+      "statement": "The risk-analysis report defines three risk zones by red and yellow lines: green for routine deployment with continuous monitoring, yellow requiring strengthened mitigations and controlled deployment, and red necessitating suspension of development and/or deployment.",
+      "time": {
+        "kind": "event",
+        "date": "2025-07-22",
+        "basis": "publication",
+        "note": "Submission date of the cited arXiv version; not the model's release date and not the date of later versions."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "Zone definitions as the report states them; it does not establish that any developer has adopted them.",
+      "evidence": [
+        {
+          "id": "c3-ev-shlab-frmf-practice-zones",
+          "sourceId": "c3-src-frmf-practice-arxiv-v1",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Abstract",
+          "passageType": "quote",
+          "passage": "yellow (requiring strengthened mitigations and controlled deployment), and red (necessitating suspension of development and/or deployment)",
+          "translation": null
+        }
+      ]
+    },
+    {
+      "id": "c3-shlab-frmf-practice-finding",
+      "subject": "sail-frmf-in-practice-report",
+      "predicate": "states_provision",
+      "object": {
+        "kind": "literal",
+        "value": "Assessment: all recent frontier AI models evaluated reside in the green and yellow zones, without crossing red lines"
+      },
+      "topic": "governance",
+      "statement": "The risk-analysis report states, as its own experimental result, that all recent frontier AI models it evaluated reside in the green and yellow zones without crossing red lines.",
+      "time": {
+        "kind": "event",
+        "date": "2025-07-22",
+        "basis": "publication",
+        "note": "Submission date of the cited arXiv version; not the model's release date and not the date of later versions."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "The laboratory's own assessment of other developers' models under its own thresholds; recorded as what the report states, not as an independent finding about those models. Per-model and per-area results are not recorded.",
+      "evidence": [
+        {
+          "id": "c3-ev-shlab-frmf-practice-finding",
+          "sourceId": "c3-src-frmf-practice-arxiv-v1",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Abstract",
+          "passageType": "quote",
+          "passage": "Experimental results show that all recent frontier AI models reside in green and yellow zones, without crossing red lines.",
+          "translation": null
+        }
+      ]
+    },
+    {
+      "id": "c3-shlab-frmf-practice-zhou-bowen",
+      "subject": "zhou-bowen",
+      "predicate": "authored",
+      "object": {
+        "kind": "entity",
+        "entityId": "sail-frmf-in-practice-report"
+      },
+      "topic": "people",
+      "statement": "The risk-analysis report (arXiv version 1) names Bowen Zhou as its Scientific Director in its authorship section.",
+      "time": {
+        "kind": "event",
+        "date": "2025-07-22",
+        "basis": "publication",
+        "note": "Submission date of the cited arXiv version; not the model's release date and not the date of later versions."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "The report defines Scientific Director as responsible for the strategic and organisational aspects of the project. The identification with the existing person record rests on the name in a report credited to Shanghai AI Laboratory, where he is recorded as director from April 2024 (lg-gc-zhou-bowen-shanghai-ai-lab-2024).",
+      "evidence": [
+        {
+          "id": "c3-ev-shlab-frmf-practice-zhou",
+          "sourceId": "c3-src-frmf-practice-arxiv-v1",
+          "sourceRole": "primary",
+          "support": "supports",
+          "locator": "Authorship section",
+          "passageType": "quote",
+          "passage": "Scientific Director: Bowen Zhou",
+          "translation": null
+        }
+      ]
+    }
+  ]
+}

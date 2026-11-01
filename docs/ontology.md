@@ -231,8 +231,192 @@ A cell records what an edition states, not implementation, compliance or effecti
 **Countries, participant lists and legislative status (schema 2.19).** On 2026-10-28 the maintainer decided how the second part of the frameworks-to-law pack is modelled ([`review/frameworks-to-law-admission-2-2026-10-28.md`](../review/frameworks-to-law-admission-2-2026-10-28.md)).
 
 - A `country` is an entity keyed by its ISO 3166-1 alpha-2 code (`countryCode`; the ID is `country-` and the code in lower case). A country is recorded singly only where a claim needs it, for example as the subject of `signed_commitment`, which may now also have a public body as its subject.
-- `lists_participants` records a whole list of signatories, endorsers, attendees or reporting organisations as one document-level record, with `attributes.listing`: the number of entries and whether the source states it (`stated`) or Selekoa counted it (`counted`). Lists of one text at different dates are separate records, each dated by its own list. Being listed is not a signature or compliance, and absence from a list is never a refusal; an absence is said in the list's statement and qualification.
+- `lists_participants` records a whole list of signatories, endorsers, attendees or reporting organisations as one document-level record, with `attributes.listing`: the number of entries and whether the source states it (`stated`) or Selekoa counted it (`counted`). Lists of one text at different dates are separate records, each dated by its own list. Being listed is not a signature or compliance, and absence from a list is never a refusal; an absence is said in the list's statement and qualification. From schema 2.27 (2026-10-31, third Chinese collection) a `lists_participants` record may instead give one listed entity's entry, such as a developer's row in a regulator's list of filed services: `attributes.listedEntity` names the dataset organisation, public body or country the listed name is mapped to, and is valid only with `attributes.listing` counted by Selekoa as one entry. The qualification states the basis of the mapping (exact alias, filing number, partial name or translation). A listed legal entity is not thereby identified with a group, and no ownership follows from the mapping; a filing listed by a regulator is not an approval.
 - `introduced`, `passed`, `vetoed` and `revoked` record legislative and executive status as explicit events. An announced revocation that has not been formalised is `revoked` with `attributes.activityStage: announced`, dated by its announcement. An announced agreement or reported joint work of an evaluator and a developer uses the existing `evaluation_engagement`, whose stage separates announced from reported work.
 - A renaming is recorded as `datedNames` on one entity, each name dated as its source dates it; no legal succession is implied.
 - An intergovernmental forum or organisation, such as the G7 or the OECD, is a `public_body` with an intergovernmental subtype.
 - A date that a text fixes by a rule without stating it, such as entry into force on the twentieth day after publication, is a `states_provision` record with `attributes.provision.computed`: inferred, with its rationale, quoting the rule and dated by the computed date with basis `effective`.
+
+## Document statements and audit conventions (schema 2.20)
+
+On 2026-10-29 the maintainer adopted every recommendation of the [dataset consistency audit](../review/dataset-audit-2026-10-29.md). The fixes are recorded in [`review/audit-fixes-2026-10-29.md`](../review/audit-fixes-2026-10-29.md); the rows they changed, added and removed are in [`review/audit-fixes-before-2026-10-29.json`](../review/audit-fixes-before-2026-10-29.json), from which the test-only historical view reproduces the earlier dataset. `pnpm audit:consistency` checks the conventions below; validation enforces only the schema change.
+
+**Statements of a document (schema 2.20, decision C9).** `states_provision` may now be recorded on any document with an exact expression, a source whose `documentId` is the document, and not only on an edition with version metadata. The new provision kind `statement` covers what such a document states that is not a threshold, required action, decision authority or exception: a licence term, a prospectus statement, a press release's account. A statement is explicit and supported, dated as an event by one of its expression's dates (the edition's dates where the document has version metadata), and rests on a supporting primary passage of that expression, quoted in at most 50 words or paraphrased. `published` then records only that a document was issued. Schema 2.20 also lets a public body be the subject of `evaluation_engagement` and the object of `held_role`, so that a government AI safety institute is typed as one.
+
+**C1. Public institutions.** A body that is part of a government or established by an intergovernmental agreement is a `public_body`: state AI safety institutes, national CERTs, standards committees. A state-funded but separately constituted research institute or laboratory is an `organisation` (`shanghai-ai-lab`, `peng-cheng-laboratory`, and `technology-innovation-institute` unless a source shows otherwise). A retype needs a source that states the body's status; `cncert` stays an organisation until one is found.
+
+**C2. Closed subtype lists.** The audit reports any other subtype. Concepts, models, infrastructure, funds and countries have no closed list yet. Detail belongs in the name and qualifications in the description, never in the subtype.
+
+| Type         | Subtypes                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
+| ------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Organisation | AI company (frontier and other model developers); Technology company; Company (other companies and groups); Business unit (non-research divisions and product teams); Research unit (internal teams, labs and divisions); Governance body (board committees, councils, trusts); Research institute; Nonprofit; Industry association; Investor; University; Legal entity (control-structure vehicles, with the legal form in the description); Response centre                                                                                                                                                                                                                                    |
+| Public body  | Legislature; Legislative chamber; Executive office; Government department; Government agency; AI safety institute; Standards body; EU institution; Intergovernmental body; Advisory body                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
+| Person       | Researcher; Executive; Board member; Investor; Writer (the credited author of recorded texts; no occupation implied); Public official. A person's subtype is chosen from the roles the records give, never from proximity                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+| Document     | Mailing-list message; Newsgroup message; Forum post; Blog post; Comment; Web page; Working paper; Research paper; Preprint; Technical report; Report; Annual report; Prospectus; Journal article; Magazine article; Newspaper article; Letter; Book; Book chapter; Essay; Lecture or talk; Testimony; Research proposal; Announcement; Press release; Model card; Licence; Framework edition; Certificate of incorporation; Voluntary commitments; Code of practice; Reporting framework; Memorandum of understanding; Declaration or statement; Speech; Briefing notes; Statute; Bill; Regulation; Proposed rule; Executive order; Standard; Guidance; Opinion; Rules of procedure; Policy plan |
+
+The audit recommended a shorter organisation list; Company, Business unit, Governance body, Industry association and Response centre were added for records that fit none of its kinds, and Board member for persons recorded only in board and trustee roles.
+
+**C3. Renamings.** One entity with `datedNames` when the sources describe a renaming of the same body (the US and UK institutes, Facebook to Meta, Codeium to Windsurf). Two entities and a `name_transition_announced` claim only when the sources describe a new body or do not establish that the body was renamed: ARC Evals to METR (the announcement says that staff will move to the new METR entity once it is formed) and xAI to SpaceXAI.
+
+**C4. Stance-bearing IDs.** Five merged proposition IDs end in a stance letter or word that the record no longer has, after later dispositions: `ts-a2-hanson-2008-core-argument-contests` (now bears on), `yk-y24-sl4-2002-05-03-yudkowsky-0205-3551-a` and `yk-y24-extropians-2000-09-29-yudkowsky-6080-a` (now bear on), `yk-y22-lw-2008-fighting-a-rearguard-action-against-the-b` and `yk-y30-lw-2008-that-tiny-note-of-discord-b` (now articulate). Merged IDs are stable, so they are kept; the suffix is historical and says nothing about the record. New proposition IDs are stance-neutral (`<collection>-<code>-<text>`).
+
+**C5. Expressions of one work.** One document entity per work, with each inspected expression (working paper, journal version, live page, capture) as a source with `documentId`; separate document entities only for distinct editions whose wording differs and is recorded as such. A re-inspection updates the existing source record (`accessedAt`, and the evidence it re-checks), never a second record. Quotation limits are counted per edition, so two sources of one edition share one limit.
+
+**C6. Papers announced in a post.** A `published` claim whose object is a paper is dated by the paper's first public expression (arXiv version 1 or the venue). The date of a post that announces it goes in the time note, or the post is its own document.
+
+**C7. Scheduled dates.** An effective date stays an event with `basis: effective`. When it was still to come at `recordedAt`, the time note says that it was scheduled at the time of recording.
+
+**C8. Access and check dates.** `accessedAt` is the latest inspection of the expression and each evidence `checkedAt` the date its passage was last checked. A re-inspection re-checks and re-dates the evidence it covers in the same change; a passage it did not re-check keeps its earlier date.
+
+**C10. Legislative chambers.** One entity per chamber where a record dates a chamber's vote; the legislature entity stays for enactment-level records and as a publisher.
+
+**C11. Publisher links.** `publisherId` is set where the printed publisher is the institution whose expression the source is and the name identifies one entity; for "OpenAI", `openai` unless the source is a legal filing. A hosting platform (X, arXiv, LessWrong, GitHub, Hugging Face) is never linked as publisher. Sources linked to one publisher print one form of its name, or one of its dated names; the form printed on the expression and the hosting route are kept in `version`.
+
+**C12. ID prefixes.** Merged IDs are not renamed. New sources use `source-` and new evidence `evidence-`; claim IDs may keep a pack prefix.
+
+## Compute, power and orbit (schema 2.21)
+
+Adopted by the maintainer's decisions of 2026-10-28 on the compute, power and orbit pack
+(`review/compute-power-orbit-pack-2026-10-28.md`, questions 1–5 and 11).
+
+- **Infrastructure.** A data-centre site or campus, a spacecraft or a constellation is an
+  `infrastructure` entity, distinct from the venture that announces it, with the subtypes
+  “Data-centre site”, “Data-centre campus”, “Spacecraft” and “Constellation”; the
+  admission also uses “Compute cluster”, “Data-centre programme” and “Designated zone”.
+  `location` gives where the sources place it and `operator` who they say operates it.
+  Ownership is never inferred from operation.
+- **Figures.** `quantity.unit` keeps the source's wording; `quantity.measures` says what a
+  figure measures where the source says so, and `not_stated` otherwise. Figures are never
+  converted or summed, and a `not_stated` figure is never compared with another.
+- **Stated dates.** Targets, deadlines and terms are `statedDates`, kept apart from the
+  record's date and shown apart from events. A phrase such as “mid-2027” or “by the end of
+  2029” stays as `wording` with the year; it is never coded as a month or quarter.
+- **Predicates.** `announced_site`, `announced_plan`, `status_stated` (the stating party's
+  account of an infrastructure's or programme's status), `power_agreement`,
+  `supply_agreement`, `government_award` (with `awardStage`), `granted_equity_right`,
+  `launch_stated`, `filed_application`, `accepted_for_filing` (not an approval),
+  `regulator_decision` (dated by the regulator's own record where it was retrieved) and
+  `designated_zone`. Announced stays announced: none of them is evidence of construction,
+  operation, delivery or payment.
+- **Stages and scopes.** `letter_of_intent` and `term_sheet` are transaction stages, with
+  the source's words in `stageWording`; `project` and `programme` amount scopes carry the
+  stated basis in `scopeNote`.
+
+## AI and biosecurity (schema 2.22)
+
+Adopted by the maintainer's decisions of 2026-10-28 on the AI and biosecurity pack
+(`review/ai-bio-pack-2026-10-28.md`, questions 2–5), after the cross-family check of
+2026-10-30.
+
+- **Hazard rule.** Every record of this collection stays at the policy and evaluation
+  level: what a text requires, what an evaluation measured and what its report states.
+  No record carries a method, protocol, agent, acquisition route or screening criterion,
+  and where a correction asks for a material limitation it is stated at that level
+  without the excluded criterion. A record whose source holds such content says in its
+  qualification that the content was read and excluded.
+- **`states_evaluation_result`.** A report's own stated result of an evaluation it ran or
+  commissioned, with `attributes.evaluation`: what was measured, by what kind of method,
+  the result in the report's words, and the caveats the report itself gives. The record
+  is the report's statement, never a verified finding: it is not generalised to another
+  system, a later version or real-world risk, and a null or limiting result is not
+  evidence that no effect exists. It is dated by its report; a report that states no date
+  of its own gives an unknown date or a snapshot of the copy served. Naming an evaluation
+  category remains `reports_evaluation_of`.
+- **`evaluatedSystem`** also belongs to a stated evaluation result, with the version the
+  report names. `activityScope` stays with `evaluation_engagement`, which has admitted
+  public-body evaluators since schema 2.20.
+- **Provision kinds `date` and `standing`.** A date a text states for its own application,
+  and the standing a text claims for itself (voluntary or binding). Earlier records that
+  used `threshold` or `exception` for these are re-kinded, not re-sourced.
+- **Propositions.** The biosecurity arguments take the free code letter D. A proposition
+  code is a collection's, not a pack's: a pack's working codes are re-lettered once at
+  admission, and the records are renamed with them.
+
+## AI in biology (schema 2.23)
+
+Adopted by the maintainer's decisions of 2026-10-30 on the AI in biology pack
+(`review/ai-in-biology-pack-2026-10-30.md`, questions 5 and 6), after the
+cross-family check of 2026-10-30.
+
+- **`partnership_announced`.** An organisation announced a collaboration or
+  partnership with a named counterparty, as the announcement states it. The record
+  keeps `activityStage: announced` and is dated by its announcement (or left
+  unknown). It is not evidence that the work was performed, that any payment was
+  made or that the arrangement continues. An upfront amount the announcement states
+  may be recorded with `transactionStage: announced` and an amount scope the schema
+  has; an "up to" or milestone amount stays in the statement and is never an
+  `amount`. "Led by" stays in the statement.
+- **`award_announced`.** An awarding body announced its decision to award a named
+  prize to a person, one record per laureate, dated by the announcement. The citation
+  is the body's own wording, quoted in the statement and evidence; the record is not a
+  Selekoa assessment of the work and does not attribute the work to the laureate
+  alone. No amount is recorded.
+- **Documents without version metadata.** Papers, releases and pages of this pack are
+  documents without `documentVersion`: each is dated by its expression's
+  `publicationDate`, and a stated provision is dated by one of those dates. Where a
+  served page displays a later date than its original-period capture, the capture is
+  recorded as a source of its own and dates the record; the served page's date is
+  given in the notes.
+
+## Key papers (schema 2.24 and 2.25)
+
+Adopted by the maintainer's decisions of 2026-10-28 on the key papers pack
+(`review/key-papers-pack-2026-10-28.md`, questions 1–8), after the cross-family check
+and its adjudication of 2026-10-31.
+
+- **Works and versions.** A paper is one work-level document (subtype "Research paper",
+  or the closed list's kind for a book, a technical report or guidance). Each version is
+  a source with `documentId`: the arXiv abstract page with its submission history, the
+  version read, and each conference or journal version, dated at the precision of its own
+  source. A version known only from Crossref is dated by year. A citation to the work does
+  not identify which version was read.
+- **Authors as printed.** The version read keeps its byline as printed in the source's
+  `authors`, including credited names without a person record. A person record is made
+  only for a name printed identically on two or more of the pack's papers; variant
+  printed forms are never merged without a source that identifies the person. A
+  collective byline ("OpenAI", "DeepSeek-AI") is recorded as printed, without individual
+  authorship records.
+- **`states_contribution`** (schema 2.24). A document's own description of its
+  contribution, quoted from the version the record names and dated by that version; an
+  undated version gives an unknown date. It is explicit and supported, never an
+  assessment. `attributes.priorityClaim` flags a passage that contains the document's own
+  claim of priority or novelty; the claim is the document's.
+- **`credits_work`** (schema 2.25). A dataset document's own sentence attributing an
+  argument, concept, term, finding or approach to another work, with
+  `attributes.attribution`: `builds_on`, `attributes_term`, `summarises` or
+  `attributes_and_disputes`. It is the citing document's claim, explicit and supported,
+  resting on a supporting primary passage of the citing document. It is not evidence that
+  the cited work originated the idea, that the attribution is accurate, or of influence;
+  a citation alone stays a `cites` record.
+
+## Families of methods and their names (schema 2.26)
+
+Adopted by the maintainer's decisions of 2026-10-30 on the technical history pack
+(`review/technical-history-pack-2026-10-29.md`, questions 1, 4, 8 and 10), with the
+adjudication of the cross-family check of 2026-10-31.
+
+- **Naming concepts.** A family of methods or a name (term) is a concept with an
+  `entity.naming` block: its kind (`family` or `term`), the one criterion naming records
+  are classified against, and its usual names. A naming concept is not a proposition: a
+  naming record says that a text uses a name, not that it argues anything.
+- **`uses_term`.** A document uses a name for the concept, with `attributes.naming`: the
+  string as printed, its `sense` (`meets` the criterion, `other-sense`, or `unverified`
+  where only an indexed title was read), its `role` (`use` or `earliest-located`), the
+  register, whether the text or only an indexed title was `reading`, and, as for
+  propositions, a `claimed` date that does not date the wording and the date from which
+  the wording is `attested` where it survives only in a later copy.
+- **Earliest located use.** One record per naming concept holds `earliest-located`,
+  decided by the date of its wording (the attested date where there is one); no use that
+  meets the criterion may be dated definitely before it. The role can be withheld, with
+  a reason that names the leads that would decide it (`naming.withheld`, the rule of
+  schema 2.16); no record then holds it. Earliest located never means first, and the
+  order of uses establishes no influence.
+- **Defining statements.** A `discusses` record of a naming concept may carry
+  `attributes.technical.kind`: `definition`, `description` (a system's own description),
+  `assessment` or `method`. It says what a text says a family is, never where it began.
+- **Attributed credits.** `explicitly_credits` may name a literal actor, for a person the
+  source names who has no record of their own.
+- **Statements dated by their text.** A stated statement (`states_provision` of kind
+  `statement`, schema 2.20) about a match, release or result is dated by the text that
+  states it; the date of what it reports stays in the statement and the note, and a date
+  from a later account is labelled as claimed.

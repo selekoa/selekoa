@@ -33,7 +33,9 @@ test('the start page renders without the records, which load on demand', async (
   ).toBeVisible();
   await expect(page.getByText(/^Current coverage: \d+ claims/)).toBeVisible();
   await page.waitForLoadState('networkidle');
-  expect(loaded.some((p) => /\/records-/.test(p))).toBe(false);
+  expect(loaded.some((p) => /_virtual_records-(core|content)-/.test(p))).toBe(
+    false,
+  );
   expect(loaded.some((p) => /\/Workspace-/.test(p))).toBe(false);
   // A start-page link carries over to the page it names once records load.
   await page
@@ -45,7 +47,8 @@ test('the start page renders without the records, which load on demand', async (
     page.getByRole('heading', { level: 1, name: 'Frontier safety frameworks' }),
   ).toBeVisible();
   await expect(page).toHaveURL(/\/documents\/frontier-safety-frameworks$/);
-  expect(loaded.some((p) => /\/records-/.test(p))).toBe(true);
+  // The records: the relation core and the content module.
+  expect(loaded.some((p) => /_virtual_records-content-/.test(p))).toBe(true);
   expect(errors).toEqual([]);
 });
 
@@ -55,10 +58,12 @@ test('search finds claims and passages, groups them and opens the evidence', asy
   const errors = collectErrors(page);
   await page.goto('/');
   await page
-    .getByRole('navigation', { name: 'Primary' })
-    .getByRole('link', { name: 'Search' })
+    .getByRole('banner')
+    .getByRole('button', { name: 'Submit search' })
     .click();
-  const field = page.getByRole('searchbox', { name: 'Search terms' });
+  const field = page
+    .getByRole('main')
+    .getByRole('searchbox', { name: 'Search terms' });
   await expect(field).toBeFocused();
   await field.fill('whistleblower');
   const status = page.locator('#search-status');
@@ -116,7 +121,9 @@ test('search covers an ASL term and a decision-maker, with filters and a names m
   ).toHaveCount(0);
   await page.getByRole('button', { name: 'Reset filters' }).click();
 
-  const field = page.getByRole('searchbox', { name: 'Search terms' });
+  const field = page
+    .getByRole('main')
+    .getByRole('searchbox', { name: 'Search terms' });
   await field.fill('Responsible Scaling Officer');
   await expect(
     page
@@ -129,9 +136,19 @@ test('search covers an ASL term and a decision-maker, with filters and a names m
 
   await field.fill('Altman');
   await page.getByRole('radio', { name: 'Names and aliases only' }).check();
+  // The risk-debate admission (2026-10-31) adds two documents by Sam Altman
+  // whose short names begin with his name; before it, one record matched.
+  const admitted = [
+    'altman-2015-machine-intelligence-part-1',
+    'altman-2024-intelligence-age',
+  ];
   await expect(status).toHaveText(
-    '1 record matches “Altman” by name or alias.',
+    `${1 + admitted.length} records match “Altman” by name or alias.`,
   );
+  for (const id of admitted)
+    await expect(
+      page.getByRole('main').locator(`a[href="/document/${id}"]`),
+    ).toHaveCount(1);
   await expect(page).toHaveURL(/\/search#q=Altman&mode=names$/);
   await page.getByRole('link', { name: 'Sam Altman: person page' }).click();
   await expect(page.locator('#record-page')).toBeFocused();
@@ -141,7 +158,7 @@ test('the explorer lookup says what it searched and links to full search', async
   page,
 }) => {
   await page.goto('/explore');
-  const lookup = page.getByRole('searchbox');
+  const lookup = page.getByRole('main').getByRole('searchbox');
   await lookup.fill('whistleblower');
   const results = page.locator('#search-results');
   await expect(results.getByRole('status')).toHaveText(
@@ -158,7 +175,7 @@ test('the explorer lookup says what it searched and links to full search', async
     .click();
   await expect(page).toHaveURL(/\/search#q=MIRI$/);
   await expect(
-    page.getByRole('searchbox', { name: 'Search terms' }),
+    page.getByRole('main').getByRole('searchbox', { name: 'Search terms' }),
   ).toHaveValue('MIRI');
 });
 

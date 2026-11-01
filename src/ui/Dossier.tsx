@@ -1,13 +1,14 @@
 import { useState } from 'react';
-import { NavLink, RecordLink } from './NavLink';
+import { NavLink, RecordLink, ClaimLink } from './NavLink';
 import { referencePath } from '../domain/addresses';
 import {
   dossierSections,
+  type DossierConnection,
   type DossierSection,
   type InstitutionalDossier,
 } from '../domain/dossier';
 import type { Repository } from '../domain/repository';
-import { predicates } from '../domain/predicates';
+import { relationLabel } from '../domain/predicates';
 import { timeLabel } from '../domain/query';
 import { versionDescription } from '../domain/versions';
 import { entityStyle } from './entityStyle';
@@ -31,6 +32,37 @@ const notes: Record<DossierSection, string> = {
     'Published frameworks, evaluation engagements, documented replacements between editions and selected changes. Each evaluation keeps its stage and the system it covered. A reported evaluation or a published policy does not show independent verification or effect.',
 };
 
+/** How many connections show before "and N more". */
+const shownConnections = 3;
+
+/** Connections in their stored order, each a member's record and its root. */
+function ConnectionList({
+  connections,
+  onClaim,
+}: {
+  connections: DossierConnection[];
+  onClaim: (id: string) => void;
+}) {
+  return (
+    <ol className="dossier-connection-list">
+      {connections.map((connection) => (
+        <li key={connection.claims.map((c) => c.id).join(' ')}>
+          {connection.claims.map((c) => (
+            <ClaimLink
+              secondary
+              key={c.id}
+              claimId={c.id}
+              onOpen={() => onClaim(c.id)}
+            >
+              {c.statement} <span>Inspect evidence ↗</span>
+            </ClaimLink>
+          ))}
+        </li>
+      ))}
+    </ol>
+  );
+}
+
 export function Dossier({
   dossier,
   repository,
@@ -40,6 +72,7 @@ export function Dossier({
   onRecordPage,
   path,
   onRead,
+  control,
 }: {
   dossier: InstitutionalDossier;
   repository: Repository;
@@ -50,6 +83,8 @@ export function Dossier({
   onRecordPage?: (id: string) => void;
   path?: ResearchPath | null;
   onRead?: () => void;
+  /** The institution's control-structure page, where one exists. */
+  control?: { title: string; href: string; onOpen: () => void };
 }) {
   const [section, setSection] = useState<DossierSection>('chronology');
   const seedCount = dossier.claims.filter(
@@ -83,6 +118,17 @@ export function Dossier({
               Selected by machine · no human review of the framing recorded
             </small>
           </div>
+        )}
+        {control && (
+          <p className="dossier-control-link">
+            <NavLink
+              className="text-button record-explore"
+              href={control.href}
+              onOpen={control.onOpen}
+            >
+              {control.title}: who held which control right, and when →
+            </NavLink>
+          </p>
         )}
         <p className="eyebrow">Institutional dossier</p>
         <p className="dossier-deck">
@@ -158,13 +204,15 @@ export function Dossier({
                   >
                     Open {entity.name} dossier →
                   </RecordLink>
-                  <button
+                  <ClaimLink
+                    secondary
                     className="dossier-connection-evidence"
-                    onClick={() => onClaim(claim.id)}
+                    claimId={claim.id}
+                    onOpen={() => onClaim(claim.id)}
                     aria-label={`Inspect institutional connection: ${claim.statement}`}
                   >
                     {claim.statement} <span>Inspect evidence ↗</span>
-                  </button>
+                  </ClaimLink>
                 </li>
               ))}
             </ul>
@@ -226,19 +274,31 @@ export function Dossier({
                 </span>
               </span>
             </summary>
-            {group.connectionClaims && (
+            {group.connections && (
               <details className="dossier-connection">
                 <summary>Why this document is included</summary>
                 <p>
                   These records explain why the document appears here. They do
                   not show that the institution adopted it or was influenced by
-                  it.
+                  it. The institution’s own publication comes first, then the
+                  document’s authors in this dossier, then the works by this
+                  institution or its people that the document cites, by date.
                 </p>
-                {group.connectionClaims.map((c) => (
-                  <button key={c.id} onClick={() => onClaim(c.id)}>
-                    {c.statement} <span>Inspect evidence ↗</span>
-                  </button>
-                ))}
+                <ConnectionList
+                  connections={group.connections.slice(0, shownConnections)}
+                  onClaim={onClaim}
+                />
+                {group.connections.length > shownConnections && (
+                  <details className="dossier-connection-more">
+                    <summary>
+                      and {group.connections.length - shownConnections} more
+                    </summary>
+                    <ConnectionList
+                      connections={group.connections.slice(shownConnections)}
+                      onClaim={onClaim}
+                    />
+                  </details>
+                )}
               </details>
             )}
             {onRecordPage &&
@@ -276,24 +336,24 @@ export function Dossier({
                   >
                     <div className="dossier-record-meta">
                       <span>
-                        {timeLabel(claim)}
+                        {timeLabel(claim, repository.data)}
                         {claim.time.kind === 'interval' ? ' · interval' : ''}
                       </span>
                       <span>{claim.topic}</span>
                     </div>
-                    <button
+                    <ClaimLink
                       className="dossier-claim"
-                      data-claim-id={claim.id}
                       aria-label={`Inspect claim & evidence: ${claim.statement}`}
-                      aria-pressed={selectedClaimId === claim.id}
-                      onClick={() => onClaim(claim.id)}
+                      pressed={selectedClaimId === claim.id}
+                      claimId={claim.id}
+                      onOpen={() => onClaim(claim.id)}
                     >
                       <span className="dossier-statement">
                         {claim.statement}
                       </span>
                       <span className="dossier-relation">
                         {subject.shortName ?? subject.name} →{' '}
-                        {predicates[claim.predicate].label} →{' '}
+                        {relationLabel(claim)} →{' '}
                         {object?.shortName ??
                           object?.name ??
                           (claim.object.kind === 'literal'
@@ -303,7 +363,7 @@ export function Dossier({
                       <span className="dossier-evidence-link">
                         Inspect claim & evidence ↗
                       </span>
-                    </button>
+                    </ClaimLink>
                     <p className="dossier-context">
                       {dossier.connections[claim.id]} ·{' '}
                       {derivationLabels[claim.derivation]} ·{' '}

@@ -19,6 +19,8 @@ const patterns = [
   /(?:^|[\s"'`(=]|file:\/\/)\/(Users|home)\/[^/\s]+\//,
   /(?:gh[pousr]_[a-zA-Z0-9]{20,}|github_pat_[a-zA-Z0-9_]{20,}|sk-proj-[a-zA-Z0-9_-]{20,})/,
   /-----BEGIN (?:RSA |EC |OPENSSH )?PRIVATE KEY-----/,
+  // AWS access key IDs, and signed storage addresses that carry one.
+  /\b(?:AKIA|ASIA)[0-9A-Z]{16}\b|[?&]X-Amz-(?:Credential|Signature)=/,
 ];
 const privateTerms = (process.env.SELEKOA_PRIVATE_TERMS ?? '')
   .split('|')

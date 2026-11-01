@@ -2,24 +2,22 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 import { MultiDirectedGraph } from 'graphology';
 import Sigma from 'sigma';
 import type { Entity, Claim } from '../domain/schema';
-import { repository } from '../domain/repository';
-import { predicates } from '../domain/predicates';
-import { timeLabel } from '../domain/query';
+import { relationLabel } from '../domain/predicates';
+import { timeLabel, type LabelRecords } from '../domain/query';
 import { addClaimEdges } from './claimEdges';
-import { networkLayout, documentSequence } from './layout';
+import { documentSequence, layoutKey } from './layout';
+import { mapLayoutPath } from '../domain/slices';
+import { placeRecords, type Placement } from './map-layout';
 import { compactClaims, relationStyles, type ClaimBundle } from './mapGrammar';
 import { drawMap } from './mapDrawing';
+import { entityStyle } from './entityStyle';
 
-const atlas = networkLayout(
-  repository.data.entities,
-  repository.data.claims,
-  repository.data.meta.anchors,
-  null,
-);
 type Props = {
   theme: 'light' | 'dark';
   entities: Entity[];
   claims: Claim[];
+  /** The records a claim's date line reads (`timeLabel`). */
+  records: LabelRecords;
   anchors: string[];
   focusId: string | null;
   selectedClaimId: string | null;
@@ -30,6 +28,7 @@ export function Network({
   theme,
   entities,
   claims,
+  records,
   anchors,
   focusId,
   selectedClaimId,
@@ -47,6 +46,32 @@ export function Network({
   const chooser = useRef<HTMLDivElement>(null);
   const bundles = useMemo(() => compactClaims(claims), [claims]);
   const bundle = bundles.find((b) => b.id === bundleId);
+  const byName = useMemo(
+    () => [...entities].sort((a, b) => a.name.localeCompare(b.name)),
+    [entities],
+  );
+  /**
+   * How the records list names each record: its type, and its short name
+   * where that differs. Records that would still read alike (two editions
+   * of one paper) add their record ID.
+   */
+  const listed = useMemo(() => {
+    const line = (e: Entity) =>
+      entityStyle[e.type].label +
+      (e.shortName && e.shortName !== e.name ? ` · ${e.shortName}` : '');
+    const seen = new Map<string, number>();
+    for (const e of entities) {
+      const text = `${e.name}\n${line(e)}`;
+      seen.set(text, (seen.get(text) ?? 0) + 1);
+    }
+    return new Map(
+      entities.map((e) => [
+        e.id,
+        line(e) +
+          ((seen.get(`${e.name}\n${line(e)}`) ?? 0) > 1 ? ` · ${e.id}` : ''),
+      ]),
+    );
+  }, [entities]);
   const names = useMemo(
     () => new Map(entities.map((e) => [e.id, e.name])),
     [entities],
@@ -55,11 +80,80 @@ export function Network({
     selected.current = selectedClaimId;
     draw.current();
   }, [selectedClaimId, theme]);
+  /**
+   * The positions of the records: stored by the build for the map centred
+   * on an organisation or person as its page draws it, otherwise laid out in
+   * a worker (src/ui/map-layout.ts). Until they arrive the lists below
+   * serve. A layout no longer wanted when the records change again is
+   * dropped before it starts.
+   */
+  const key = useMemo(
+    () => layoutKey(entities, claims, anchors, focusId),
+    [entities, claims, anchors, focusId],
+  );
+  const focus = entities.find((e) => e.id === focusId);
+  const storedAt = focus ? mapLayoutPath(focus) : null;
+  const [placed, setPlaced] = useState<(Placement & { key: string }) | null>(
+    null,
+  );
+  const [unplaced, setUnplaced] = useState<string | null>(null);
   useEffect(() => {
-    if (!container.current || !overlay.current || !entities.length) return;
+    if (!entities.length) return;
+    const wanted = new AbortController();
+    placeRecords(
+      entities,
+      claims,
+      anchors,
+      focusId,
+      storedAt,
+      wanted.signal,
+    ).then(
+      (found) => {
+        if (!wanted.signal.aborted) setPlaced({ key, ...found });
+      },
+      (error: unknown) => {
+        if (wanted.signal.aborted) return;
+        console.error('The map could not be laid out', error);
+        setUnplaced(key);
+      },
+    );
+    return () => wanted.abort();
+  }, [entities, claims, anchors, focusId, storedAt, key]);
+  const positions = placed?.key === key ? placed.positions : null;
+  /**
+   * Choosing a record from the list can take the map away with it (another
+   * page, or a map too large to draw), perhaps once the records have
+   * loaded. When it goes and focus is left on nothing, focus moves to the
+   * page's main region, as on other changes of page.
+   */
+  const chosen = useRef(false);
+  const chooseRecord = (id: string) => {
+    chosen.current = true;
+    onEntity(id);
+  };
+  useEffect(
+    () => () => {
+      if (!chosen.current) return;
+      requestAnimationFrame(() => {
+        const active = document.activeElement;
+        if (active && active !== document.body && active.isConnected) return;
+        document
+          .querySelector<HTMLElement>('main[tabindex]')
+          ?.focus({ preventScroll: true });
+      });
+    },
+    [],
+  );
+  useEffect(() => {
+    if (
+      !positions ||
+      !container.current ||
+      !overlay.current ||
+      !entities.length
+    )
+      return;
     const overlayElement = overlay.current;
     const graph = new MultiDirectedGraph();
-    const positions = networkLayout(entities, claims, anchors, focusId, atlas);
     entities.forEach((e) =>
       graph.addNode(e.id, {
         ...positions.get(e.id),
@@ -132,7 +226,16 @@ export function Network({
       renderer.current = null;
       overlayElement.replaceChildren();
     };
-  }, [entities, claims, anchors, focusId, bundles, onEntity, onClaim]);
+  }, [
+    positions,
+    entities,
+    claims,
+    anchors,
+    focusId,
+    bundles,
+    onEntity,
+    onClaim,
+  ]);
   const moveCamera = (action: 'in' | 'out' | 'reset') => {
     const camera = renderer.current?.getCamera();
     if (!camera) return;
@@ -157,11 +260,25 @@ export function Network({
           ref={container}
           className="network"
           data-testid="network"
+          data-layout={positions ? placed!.source : 'pending'}
+          data-layout-seed={positions ? (placed!.seed ?? undefined) : undefined}
           tabIndex={-1}
           role="img"
           aria-label={`Relationship map with ${entities.length} records. The Claims view and search give full keyboard access.`}
         />
         <svg ref={overlay} className="map-drawing" aria-hidden="true" />
+        {!positions && !failed && unplaced === key && (
+          <p className="graph-notice" role="status">
+            The map could not be laid out. The lists below name every record and
+            connection.
+          </p>
+        )}
+        {!positions && !failed && unplaced !== key && !!entities.length && (
+          <p className="graph-notice" role="status">
+            Placing the records on the map. The lists below already name every
+            record and connection.
+          </p>
+        )}
         {failed && (
           <p className="graph-notice" role="status">
             The map needs WebGL. Use the Claims view to explore every
@@ -239,7 +356,7 @@ export function Network({
                 aria-pressed={selectedClaimId === c.id}
               >
                 <strong>
-                  {predicates[c.predicate].label} · {timeLabel(c)}
+                  {relationLabel(c)} · {timeLabel(c, records)}
                 </strong>
                 <span>{c.statement}</span>
                 <small>{c.id} · Inspect evidence ↗</small>
@@ -273,6 +390,29 @@ export function Network({
                   {relationStyles[b.family].label} ·{' '}
                   {b.stage.replaceAll('_', ' ') || 'No stage recorded'} ·{' '}
                   {b.claims.length} {b.claims.length === 1 ? 'claim' : 'claims'}
+                </small>
+              </button>
+            ))}
+          </div>
+        </details>
+        <details>
+          <summary>Records in this view · {entities.length}</summary>
+          <p>
+            Every record the map draws, by name. Selecting one does what
+            selecting its symbol on the map does.
+          </p>
+          <div className="connection-index">
+            {byName.map((e) => (
+              <button
+                key={e.id}
+                data-map-entity-id={e.id}
+                onClick={() => chooseRecord(e.id)}
+                aria-current={e.id === focusId ? 'true' : undefined}
+              >
+                <span>{e.name}</span>
+                <small>
+                  {listed.get(e.id)}
+                  {e.id === focusId ? ' · centre of this map' : ''}
                 </small>
               </button>
             ))}

@@ -1,7 +1,7 @@
 import { Fragment } from 'react';
 import type { Repository } from '../domain/repository';
 import { referencePath } from '../domain/addresses';
-import { NavLink, RecordLink } from './NavLink';
+import { ClaimLink, NavLink, RecordLink, SectionLink } from './NavLink';
 import {
   commitmentLinkLabels,
   commitmentStageLabels,
@@ -180,7 +180,7 @@ function CommitmentSection({
             {...props}
           >
             {claim.predicate === 'enacted' ? 'Enacted' : 'Issued'}{' '}
-            {timeLabel(claim)}
+            {timeLabel(claim, repository.data)}
           </InspectLink>
         ))}
         {d.sources.map((s) => (
@@ -314,12 +314,14 @@ function CommitmentSection({
                   {q.claimIds.map((id, i) => (
                     <span key={id}>
                       {i > 0 && ' · '}
-                      <button
+                      <ClaimLink
+                        secondary
                         className="text-button"
-                        onClick={() => props.onClaim(id)}
+                        claimId={id}
+                        onOpen={() => props.onClaim(id)}
                       >
                         {claimRoute(repository.claims.get(id)!, repository)}
-                      </button>
+                      </ClaimLink>
                     </span>
                   ))}
                 </p>
@@ -405,19 +407,12 @@ export function Commitments({
         <ol>
           {documents.map((d) => (
             <li key={d.entity.id}>
-              <button
+              <SectionLink
                 className="text-button"
-                onClick={() => {
-                  // Hash addresses belong to the router; move focus instead.
-                  const target = document.getElementById(
-                    'commitment-heading-' + d.entity.id,
-                  );
-                  target?.scrollIntoView({ block: 'start' });
-                  target?.focus({ preventScroll: true });
-                }}
+                id={'commitment-heading-' + d.entity.id}
               >
                 {d.entity.name}
-              </button>
+              </SectionLink>
             </li>
           ))}
         </ol>

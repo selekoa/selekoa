@@ -1,0 +1,2528 @@
+{
+  "group": "claims",
+  "preparedAt": "2026-10-30",
+  "howWeSearched": {
+    "scope": "Published texts on six propositions about AI and biology (P1 to P6): papers and their abstracts, perspectives, journal news articles, company announcements and press releases. Developer model papers are the subject of the `models` pass and company statements of the `companies` pass; this pass records only their stance on a proposition. Biosecurity propositions are left to the ai-bio-pack.",
+    "routes": [
+      "Europe PMC REST search (https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=…&format=json), lite results sorted by publication date ascending, then core records (resultType=core) for abstracts and dates; Europe PMC full-text XML (/PMC…/fullTextXML) where open",
+      "Article pages on nature.com (Nature, Nature Methods, Nature Medicine, Nature Reviews Drug Discovery, Scientific Reports), retrieved directly",
+      "arXiv abstract pages (arxiv.org/abs/…v1) and the bioRxiv details API (api.biorxiv.org/details/biorxiv/<doi>)",
+      "Company sites retrieved directly: deepmind.google, isomorphiclabs.com (news listing and articles), evolutionaryscale.ai, sumitomo-pharma.com, insilico.com (news listing, to locate release addresses)",
+      "Internet Archive availability API for one capture (deepmind.com, December 2020)",
+      "Candidate lookup by title or DOI: several texts (Wong et al. 2022, Terwilliger et al. 2023, Lyu et al. 2024, Ma et al. 2018, Ahlmann-Eltze et al. 2025, Jayatunga et al. 2024, Xu et al. 2025, Huang et al. 2016, Anishchenko et al. 2020/2021, Watson et al. 2023, Bunne et al. 2024) were looked up as candidates by title or DOI rather than found by the term searches below; every record rests on the text then retrieved. Such lookups find what is already known and bias the earliest-located roles toward well-cited texts."
+    ],
+    "termsAndYears": {
+      "P1": "Europe PMC: TITLE_ABS \"structure prediction\" AND \"drug design\", 1970–1995 (3 hits); ABSTRACT \"structure prediction\" AND drug, 1970–1994 (2 hits); TITLE \"prediction of protein structures\", 1970–1990 (2 hits); abstract phrases \"predicted structure\", \"structure prediction\", \"predicting the structure\", \"tertiary structure\" with \"drug design\" or \"design of drugs\", 1960–1987 (0 hits, which shows phrase matching is exact and that Blundell et al. 1987 was found only through the title search); TITLE AlphaFold AND \"drug discovery\", 2020–2023 (6 hits). DeepMind's 2020 account was read because the dataset already holds it.",
+      "P2": "Europe PMC: TITLE_ABS \"virtual cell\", 1960–2001 (18 hits; the earliest is a 1993 Trends in Genetics title by Casini with no abstract, not read); \"virtual cell\" with machine learning, deep learning, artificial intelligence or neural network, to 2021 (2 hits, neither on the criterion); \"virtual cell\", \"whole-cell model\", \"model of a cell\" or \"simulate cell\" with deep learning, neural network or artificial intelligence, MEDLINE, 1990–2023 (43 hits, none earlier than Ma et al. 2018 on the criterion); TITLE \"virtual cell challenge\" (3 hits). The combined search did not return Ma et al. 2018, which was looked up by its title as a candidate and then retrieved; searches for \"in silico cell\" and \"cell simulation\" with machine learning were not run, so the P2 earliest-located role is weakly bounded.",
+      "P3": "No bibliographic search was run for company statements: the Sumitomo Dainippon Pharma and Exscientia release of January 2020 and Insilico Medicine's statements were located from the companies' own newsrooms. Earlier company statements that a named AI-discovered candidate began a trial (for example from companies founded before 2015) were not searched; press-release archives (Business Wire, PR Newswire, GlobeNewswire) were not searched systematically, and GlobeNewswire refused the one release tried.",
+      "P4": "Europe PMC: TITLE_ABS \"protein design\" with neural network, machine learning, deep learning or artificial intelligence, to 2018 (39 hits, mostly stability prediction and engineering of natural proteins, none meeting the criterion); TITLE \"protein design\" with deep, neural, machine learning or generative, 2015–2020 (9 hits). The earliest located (Anishchenko et al., bioRxiv v1 of 23 July 2020) is bounded: preprints on generative models for protein design from 2019 (gcWGAN, autoregressive generative models; Europe PMC preprint records) were listed but not read, and could meet the criterion.",
+      "P5": "Europe PMC: abstract phrases \"biology is an informational science\", \"biology has become an information science\", \"biology is an information science\" (12 hits; Hood and Galas 2003 read). No search was run for \"programmable biology\", \"digital biology\" or \"language of life\" with machine learning, and no book or lecture literature was searched; the earliest located (Isomorphic Labs, 2021) is weakly bounded.",
+      "P6": "Located through the companies and trial texts above (Jayatunga et al. 2024 by title search in Europe PMC). No systematic search for analyses of AI-discovered drug success rates was run; later analyses (2025–2026) may exist."
+    },
+    "gaps": [
+      "Paywalled article bodies were not read: Nature (1987, 2003, 2016), Nature Methods (2018) and the Nature and Nature Reviews Drug Discovery news articles were read in their abstracts or standfirsts only. Five texts (Sternberg 1992, Tomita 2001, Lyu 2024, Jayatunga 2024, Roohani 2025) were read only in Europe PMC records of their abstracts.",
+      "science.org was not tried (refused per the brief); the PMC page for Lyu et al. returned a browser check and the Europe PMC full text returned HTTP 500; the Elsevier page for Jayatunga et al. returned no readable text; cell.com was not tried.",
+      "Europe PMC abstract coverage before the mid-1970s is thin, so P1 and P2 searches cannot show earlier texts; no book, conference proceedings (for example ISMB, Pacific Symposium on Biocomputing) or pre-1987 review literature was searched.",
+      "No non-English text was searched; Chinese-language texts on these propositions (for example from BioMap or XtalPi) were not looked for.",
+      "Interviews, talks, op-eds and general press were not searched; DeepMind's and Isomorphic Labs' other posts were listed but only the two recorded were read.",
+      "The pages of DeepMind (2020), Isomorphic Labs (2021) and EvolutionaryScale (2024) were read as served on 2026-10-30; their wording is attested from that date. The December 2020 Internet Archive capture of DeepMind's account returned HTTP 403."
+    ],
+    "earliestLocated": {
+      "P1": "Blundell, Sibanda, Sternberg and Thornton, Nature, 26 March 1987 (knowledge-based modelling, not machine learning).",
+      "P2": "Ma et al., Nature Methods, 5 March 2018.",
+      "P3": "Sumitomo Dainippon Pharma and Exscientia release, 30 January 2020.",
+      "P4": "Anishchenko et al., bioRxiv v1, 23 July 2020.",
+      "P5": "Isomorphic Labs, \"Introducing Isomorphic Labs\", 1 November 2021 (wording attested 2026-10-30).",
+      "P6": "Jayatunga et al., Drug Discovery Today, 30 April 2024."
+    },
+    "retrievalFailures": "See `retrievalFailures`.",
+    "note": "\"Earliest located\" means the earliest text these searches found that meets the proposition's criterion and that was retrieved and checked here. It is not a claim that no earlier text exists, and it says nothing about influence between the texts. Searches ran on 2026-10-30."
+  },
+  "sources": [
+    {
+      "key": "blundell-1987-nature",
+      "cacheKey": "claims-blundell-1987-nature",
+      "datasetSource": null,
+      "documentId": "aib-doc-blundell-1987",
+      "title": "Knowledge-based prediction of protein structures and the design of novel molecules",
+      "publisher": "Nature",
+      "url": "https://www.nature.com/articles/326347a0",
+      "httpStatus": 200,
+      "sha256": "f57b0deefb38eab75e710ff7f8a64e9b53069ac5f53cdeb6338fa41621378bf9",
+      "retrievedAt": "2026-10-30",
+      "language": "en",
+      "documentWords": {
+        "count": 2073,
+        "basis": "words of the text extracted by tools.mjs from the retrieved response (page chrome included for HTML pages; JSON field text for API records); for paywalled pages and records this counts only what was served, not the article"
+      },
+      "version": "Nature article page (review article); abstract and article metadata as served on 2026-10-30; full text behind subscription, not read",
+      "kind": "webpage",
+      "finalUrlNote": "The server redirected through a cookie-check parameter; the address recorded is the one requested."
+    },
+    {
+      "key": "sternberg-1992-epmc",
+      "cacheKey": "claims-epmc-med-1290938",
+      "datasetSource": null,
+      "documentId": "aib-doc-sternberg-1992",
+      "title": "Modelling the structure and function of enzymes by machine learning",
+      "publisher": "Europe PMC (record of the PubMed abstract; article in Faraday Discussions)",
+      "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=EXT_ID%3A1290938%20AND%20SRC%3AMED&format=json&resultType=core",
+      "httpStatus": 200,
+      "sha256": "1611c4b9998ab817d0ca6ee50f96b66a460f7d26998e5ce1e86da7bb1f387790",
+      "retrievedAt": "2026-10-30",
+      "language": "en",
+      "documentWords": {
+        "count": 195,
+        "basis": "words of the text extracted by tools.mjs from the retrieved response (page chrome included for HTML pages; JSON field text for API records); for paywalled pages and records this counts only what was served, not the article"
+      },
+      "version": "Europe PMC REST core record (JSON) carrying the abstract as indexed in PubMed; the article itself was not retrieved",
+      "kind": "bibliographic record"
+    },
+    {
+      "key": "deepmind-casp14-account-2026",
+      "cacheKey": "claims-dm-casp14-account",
+      "datasetSource": "source-atlas-alphafold-account",
+      "documentId": "alphafold-account",
+      "title": "AlphaFold: a solution to a 50-year-old grand challenge in biology",
+      "publisher": "Google DeepMind (deepmind.google)",
+      "url": "https://deepmind.google/blog/alphafold-a-solution-to-a-50-year-old-grand-challenge-in-biology/",
+      "httpStatus": 200,
+      "sha256": "4bf25c61beb6bbdd0b0c3c41af28d95686b957254a48969fde36a2432b51f414",
+      "retrievedAt": "2026-10-30",
+      "language": "en",
+      "documentWords": {
+        "count": 2920,
+        "basis": "words of the text extracted by tools.mjs from the retrieved response (page chrome included for HTML pages; JSON field text for API records); for paywalled pages and records this counts only what was served, not the article"
+      },
+      "version": "Current HTML as served on 2026-10-30, dated November 30, 2020 on the page, with a July 2022 update notice at its head; the same expression as the dataset source source-atlas-alphafold-account (inspected 2026-09-28)",
+      "kind": "webpage",
+      "archive": {
+        "capture": "http://web.archive.org/web/20201202003317/https://deepmind.com/blog/article/alphafold-a-solution-to-a-50-year-old-grand-challenge-in-biology",
+        "via": "availability API",
+        "checked": false,
+        "note": "Direct retrieval of the capture returned HTTP 403 on 2026-10-30."
+      }
+    },
+    {
+      "key": "mullard-2021-nrdd",
+      "cacheKey": "claims-nrdd-2021",
+      "datasetSource": null,
+      "documentId": "aib-doc-mullard-2021",
+      "title": "What does AlphaFold mean for drug discovery?",
+      "publisher": "Nature Reviews Drug Discovery",
+      "url": "https://www.nature.com/articles/d41573-021-00161-0",
+      "httpStatus": 200,
+      "sha256": "9e7115bb6c20032a92f104778da4e24a63f965e1731d2fe03d6428ce42acb2e9",
+      "retrievedAt": "2026-10-30",
+      "language": "en",
+      "documentWords": {
+        "count": 883,
+        "basis": "words of the text extracted by tools.mjs from the retrieved response (page chrome included for HTML pages; JSON field text for API records); for paywalled pages and records this counts only what was served, not the article"
+      },
+      "version": "Nature Reviews Drug Discovery news article page as served on 2026-10-30; standfirst and opening paragraph only, remainder behind subscription",
+      "kind": "news article",
+      "finalUrlNote": "The server redirected through a cookie-check parameter; the address recorded is the one requested."
+    },
+    {
+      "key": "wong-2022-msb",
+      "cacheKey": "claims-wong-2022",
+      "datasetSource": null,
+      "documentId": "aib-doc-wong-2022",
+      "title": "Benchmarking AlphaFold-enabled molecular docking predictions for antibiotic discovery",
+      "publisher": "Molecular Systems Biology (via Europe PMC full text)",
+      "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC9446081/fullTextXML",
+      "httpStatus": 200,
+      "sha256": "bab05e84181322600ccd05fb1f66f3024baa9232f055cccc37ed5f7caada7727",
+      "retrievedAt": "2026-10-30",
+      "language": "en",
+      "documentWords": {
+        "count": 16381,
+        "basis": "words of the text extracted by tools.mjs from the retrieved response (page chrome included for HTML pages; JSON field text for API records); for paywalled pages and records this counts only what was served, not the article"
+      },
+      "version": "Europe PMC full-text XML of PMC9446081, the open-access version of record deposited by the publisher",
+      "kind": "paper"
+    },
+    {
+      "key": "terwilliger-2023-natmethods",
+      "cacheKey": "claims-terwilliger-2023",
+      "datasetSource": null,
+      "documentId": "aib-doc-terwilliger-2023",
+      "title": "AlphaFold predictions are valuable hypotheses and accelerate but do not replace experimental structure determination",
+      "publisher": "Nature Methods",
+      "url": "https://www.nature.com/articles/s41592-023-02087-4",
+      "httpStatus": 200,
+      "sha256": "c3295e1b4248de783b80cc9902efcab10c0e73d1c1b1ab636e1cd4773f35af91",
+      "retrievedAt": "2026-10-30",
+      "language": "en",
+      "documentWords": {
+        "count": 8678,
+        "basis": "words of the text extracted by tools.mjs from the retrieved response (page chrome included for HTML pages; JSON field text for API records); for paywalled pages and records this counts only what was served, not the article"
+      },
+      "version": "Nature Methods article page, open access, version of record of 30 November 2023, as served on 2026-10-30",
+      "kind": "paper",
+      "finalUrlNote": "The server redirected through a cookie-check parameter; the address recorded is the one requested."
+    },
+    {
+      "key": "arnold-2023-nature-news",
+      "cacheKey": "claims-nature-news-2023",
+      "datasetSource": null,
+      "documentId": "aib-doc-arnold-2023",
+      "title": "AlphaFold touted as next big thing for drug discovery — but is it?",
+      "publisher": "Nature (News)",
+      "url": "https://www.nature.com/articles/d41586-023-02984-w",
+      "httpStatus": 200,
+      "sha256": "8c339715a733598f455f377f60d659f3113e3277b6475c91186e556dabd01f11",
+      "retrievedAt": "2026-10-30",
+      "language": "en",
+      "documentWords": {
+        "count": 1183,
+        "basis": "words of the text extracted by tools.mjs from the retrieved response (page chrome included for HTML pages; JSON field text for API records); for paywalled pages and records this counts only what was served, not the article"
+      },
+      "version": "Nature news article page as served on 2026-10-30; headline, standfirst and opening paragraph only, remainder behind subscription",
+      "kind": "news article",
+      "finalUrlNote": "The server redirected through a cookie-check parameter; the address recorded is the one requested."
+    },
+    {
+      "key": "lyu-2024-epmc",
+      "cacheKey": "claims-epmc-lyu",
+      "datasetSource": null,
+      "documentId": "aib-doc-lyu-2024",
+      "title": "AlphaFold2 structures guide prospective ligand discovery",
+      "publisher": "Europe PMC (record of the PubMed abstract; article in Science)",
+      "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=TITLE%3A%22AlphaFold2%20structures%20guide%20prospective%20ligand%20discovery%22&format=json&resultType=core",
+      "httpStatus": 200,
+      "sha256": "673e928e4e05fbe232ca7d35fc15063d17e4843f4843820b58b205d0ebf9e510",
+      "retrievedAt": "2026-10-30",
+      "language": "en",
+      "documentWords": {
+        "count": 703,
+        "basis": "words of the text extracted by tools.mjs from the retrieved response (page chrome included for HTML pages; JSON field text for API records); for paywalled pages and records this counts only what was served, not the article"
+      },
+      "version": "Europe PMC REST core record (JSON) with the abstract; science.org, the PMC author manuscript (browser check) and the Europe PMC full text (HTTP 500) were not readable",
+      "kind": "bibliographic record"
+    },
+    {
+      "key": "tomita-2001-epmc",
+      "cacheKey": "claims-epmc-med-11356281",
+      "datasetSource": null,
+      "documentId": "aib-doc-tomita-2001",
+      "title": "Whole-cell simulation: a grand challenge of the 21st century",
+      "publisher": "Europe PMC (record of the PubMed abstract; article in Trends in Biotechnology)",
+      "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=EXT_ID%3A11356281%20AND%20SRC%3AMED&format=json&resultType=core",
+      "httpStatus": 200,
+      "sha256": "b866d3a4811141b738804f97b1bc7d239b4a59df41ac9b6f7bd94c5e3b3429a1",
+      "retrievedAt": "2026-10-30",
+      "language": "en",
+      "documentWords": {
+        "count": 150,
+        "basis": "words of the text extracted by tools.mjs from the retrieved response (page chrome included for HTML pages; JSON field text for API records); for paywalled pages and records this counts only what was served, not the article"
+      },
+      "version": "Europe PMC REST core record (JSON) with the abstract; the article was not retrieved",
+      "kind": "bibliographic record"
+    },
+    {
+      "key": "ma-2018-natmethods",
+      "cacheKey": "claims-ma-2018",
+      "datasetSource": null,
+      "documentId": "aib-doc-ma-2018",
+      "title": "Using deep learning to model the hierarchical structure and function of a cell",
+      "publisher": "Nature Methods",
+      "url": "https://www.nature.com/articles/nmeth.4627",
+      "httpStatus": 200,
+      "sha256": "1a3adc811808c562cb9968e983cb46ee8a183a3b5846d2cf697baf4223bbf69b",
+      "retrievedAt": "2026-10-30",
+      "language": "en",
+      "documentWords": {
+        "count": 2830,
+        "basis": "words of the text extracted by tools.mjs from the retrieved response (page chrome included for HTML pages; JSON field text for API records); for paywalled pages and records this counts only what was served, not the article"
+      },
+      "version": "Nature Methods article page as served on 2026-10-30; abstract and metadata, full text behind subscription",
+      "kind": "paper",
+      "finalUrlNote": "The server redirected through a cookie-check parameter; the address recorded is the one requested."
+    },
+    {
+      "key": "bunne-2024-arxiv",
+      "cacheKey": "claims-bunne-2024-abs",
+      "datasetSource": null,
+      "documentId": "aib-doc-bunne-2024",
+      "title": "How to Build the Virtual Cell with Artificial Intelligence: Priorities and Opportunities",
+      "publisher": "arXiv",
+      "url": "https://arxiv.org/abs/2409.11654v1",
+      "httpStatus": 200,
+      "sha256": "bc8ed7243e4d486c63c743ee313c5830d6c6d1484f6b9a19ef4a0d8f041ad54c",
+      "retrievedAt": "2026-10-30",
+      "language": "en",
+      "documentWords": {
+        "count": 822,
+        "basis": "words of the text extracted by tools.mjs from the retrieved response (page chrome included for HTML pages; JSON field text for API records); for paywalled pages and records this counts only what was served, not the article"
+      },
+      "version": "arXiv abstract page of v1 (18 September 2024); v2 of 14 October 2024 exists and was not read",
+      "kind": "preprint"
+    },
+    {
+      "key": "roohani-2025-epmc",
+      "cacheKey": "claims-epmc-vcc",
+      "datasetSource": null,
+      "documentId": "aib-doc-roohani-2025",
+      "title": "Virtual Cell Challenge: Toward a Turing test for the virtual cell",
+      "publisher": "Europe PMC (record of the PubMed abstract; article in Cell)",
+      "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=TITLE%3A%22virtual%20cell%20challenge%22&format=json&resultType=core",
+      "httpStatus": 200,
+      "sha256": "bb87c1d70ee8e5cce31f1c7ffeefea15d1f654765b17da48e17ec4a37459549b",
+      "retrievedAt": "2026-10-30",
+      "language": "en",
+      "documentWords": {
+        "count": 690,
+        "basis": "words of the text extracted by tools.mjs from the retrieved response (page chrome included for HTML pages; JSON field text for API records); for paywalled pages and records this counts only what was served, not the article"
+      },
+      "version": "Europe PMC REST core search result (JSON, three records); the Cell record (PMID 40578317) is the one cited; the article was not retrieved from cell.com",
+      "kind": "bibliographic record"
+    },
+    {
+      "key": "ahlmann-eltze-2025-natmethods",
+      "cacheKey": "claims-ahlmann-2025",
+      "datasetSource": null,
+      "documentId": "aib-doc-ahlmann-eltze-2025",
+      "title": "Deep-learning-based gene perturbation effect prediction does not yet outperform simple linear baselines",
+      "publisher": "Nature Methods",
+      "url": "https://www.nature.com/articles/s41592-025-02772-6",
+      "httpStatus": 200,
+      "sha256": "3ad786d9b77f25dae848ab4354e643e1327a3ca8b792a4d577caf75654567656",
+      "retrievedAt": "2026-10-30",
+      "language": "en",
+      "documentWords": {
+        "count": 6946,
+        "basis": "words of the text extracted by tools.mjs from the retrieved response (page chrome included for HTML pages; JSON field text for API records); for paywalled pages and records this counts only what was served, not the article"
+      },
+      "version": "Nature Methods article page, version of record of 4 August 2025, as served on 2026-10-30",
+      "kind": "paper",
+      "finalUrlNote": "The server redirected through a cookie-check parameter; the address recorded is the one requested."
+    },
+    {
+      "key": "sumitomo-exscientia-2020",
+      "cacheKey": "claims-sumitomo-2020",
+      "datasetSource": null,
+      "documentId": "aib-doc-sumitomo-dsp1181-2020",
+      "title": "Sumitomo Dainippon Pharma and Exscientia Joint Development New Drug Candidate Created Using Artificial Intelligence (AI) Begins Clinical Study",
+      "publisher": "Sumitomo Pharma (then Sumitomo Dainippon Pharma)",
+      "url": "https://www.sumitomo-pharma.com/news/20200130.html",
+      "httpStatus": 200,
+      "sha256": "3a5856fdbe40a67bb2b6ee1be1ac6f8528e80fb6a962d31ce3b9a125cc4c920a",
+      "retrievedAt": "2026-10-30",
+      "language": "en",
+      "documentWords": {
+        "count": 797,
+        "basis": "words of the text extracted by tools.mjs from the retrieved response (page chrome included for HTML pages; JSON field text for API records); for paywalled pages and records this counts only what was served, not the article"
+      },
+      "version": "News release page dated Jan. 30, 2020 on Sumitomo Pharma's newsroom, as served on 2026-10-30",
+      "kind": "press release"
+    },
+    {
+      "key": "xu-2025-natmed",
+      "cacheKey": "claims-xu-2025-natmed",
+      "datasetSource": null,
+      "documentId": "aib-doc-xu-2025",
+      "title": "A generative AI-discovered TNIK inhibitor for idiopathic pulmonary fibrosis: a randomized phase 2a trial",
+      "publisher": "Nature Medicine",
+      "url": "https://www.nature.com/articles/s41591-025-03743-2",
+      "httpStatus": 200,
+      "sha256": "ef9e787bc19076ee7fd0031e2edef34ff77b1f3796db7d7baa0e1ecefee66806",
+      "retrievedAt": "2026-10-30",
+      "language": "en",
+      "documentWords": {
+        "count": 10522,
+        "basis": "words of the text extracted by tools.mjs from the retrieved response (page chrome included for HTML pages; JSON field text for API records); for paywalled pages and records this counts only what was served, not the article"
+      },
+      "version": "Nature Medicine article page, open access, version of record of 3 June 2025, as served on 2026-10-30",
+      "kind": "paper",
+      "finalUrlNote": "The server redirected through a cookie-check parameter; the address recorded is the one requested."
+    },
+    {
+      "key": "jayatunga-2024-epmc",
+      "cacheKey": "claims-epmc-jaya",
+      "datasetSource": null,
+      "documentId": "aib-doc-jayatunga-2024",
+      "title": "How successful are AI-discovered drugs in clinical trials? A first analysis and emerging lessons",
+      "publisher": "Europe PMC (record of the PubMed abstract; article in Drug Discovery Today)",
+      "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=TITLE%3A%22How%20successful%20are%20AI-discovered%20drugs%22&format=json&resultType=core",
+      "httpStatus": 200,
+      "sha256": "6264b8f15122449d0b3f0b4ab0251f46bad1fffa3ae7dcf40c5d4bd01868de32",
+      "retrievedAt": "2026-10-30",
+      "language": "en",
+      "documentWords": {
+        "count": 241,
+        "basis": "words of the text extracted by tools.mjs from the retrieved response (page chrome included for HTML pages; JSON field text for API records); for paywalled pages and records this counts only what was served, not the article"
+      },
+      "version": "Europe PMC REST core record (JSON) with the abstract; the publisher page (doi.org redirect to Elsevier) returned no readable text",
+      "kind": "bibliographic record"
+    },
+    {
+      "key": "huang-2016-nature",
+      "cacheKey": "claims-huang-2016",
+      "datasetSource": null,
+      "documentId": "aib-doc-huang-2016",
+      "title": "The coming of age of de novo protein design",
+      "publisher": "Nature",
+      "url": "https://www.nature.com/articles/nature19946",
+      "httpStatus": 200,
+      "sha256": "8ed3f404c2ed570357d15dabbf5337ef6aa3560d13c9a97ce3c08abee285597b",
+      "retrievedAt": "2026-10-30",
+      "language": "en",
+      "documentWords": {
+        "count": 3550,
+        "basis": "words of the text extracted by tools.mjs from the retrieved response (page chrome included for HTML pages; JSON field text for API records); for paywalled pages and records this counts only what was served, not the article"
+      },
+      "version": "Nature review article page as served on 2026-10-30; abstract and metadata, full text behind subscription",
+      "kind": "paper",
+      "finalUrlNote": "The server redirected through a cookie-check parameter; the address recorded is the one requested."
+    },
+    {
+      "key": "wang-2018-srep",
+      "cacheKey": "claims-wang-2018-srep",
+      "datasetSource": null,
+      "documentId": "aib-doc-wang-2018",
+      "title": "Computational Protein Design with Deep Learning Neural Networks",
+      "publisher": "Scientific Reports",
+      "url": "https://www.nature.com/articles/s41598-018-24760-x",
+      "httpStatus": 200,
+      "sha256": "21ce0bc79495fd4b42ec0d61ba1a7c6da9a1d416a35564ff0e36ae3b09212598",
+      "retrievedAt": "2026-10-30",
+      "language": "en",
+      "documentWords": {
+        "count": 7079,
+        "basis": "words of the text extracted by tools.mjs from the retrieved response (page chrome included for HTML pages; JSON field text for API records); for paywalled pages and records this counts only what was served, not the article"
+      },
+      "version": "Scientific Reports article page, open access, as served on 2026-10-30",
+      "kind": "paper",
+      "finalUrlNote": "The server redirected through a cookie-check parameter; the address recorded is the one requested."
+    },
+    {
+      "key": "anishchenko-2020-biorxiv-api",
+      "cacheKey": "claims-biorxiv-halluc-api",
+      "datasetSource": null,
+      "documentId": "aib-doc-hallucination-preprint-2020",
+      "title": "De novo protein design by deep network hallucination (bioRxiv v1)",
+      "publisher": "bioRxiv (details API)",
+      "url": "https://api.biorxiv.org/details/biorxiv/10.1101/2020.07.22.211482",
+      "httpStatus": 200,
+      "sha256": "275259bdb35bb6a61c57c69729653085d6fb43943f49a28e111f28d31260e7cd",
+      "retrievedAt": "2026-10-30",
+      "language": "en",
+      "documentWords": {
+        "count": 236,
+        "basis": "words of the text extracted by tools.mjs from the retrieved response (page chrome included for HTML pages; JSON field text for API records); for paywalled pages and records this counts only what was served, not the article"
+      },
+      "version": "bioRxiv details API record (JSON) for v1 of 2020-07-23, with the v1 abstract; the bioRxiv HTML page was not fetched (rate-limited route)",
+      "kind": "preprint record"
+    },
+    {
+      "key": "anishchenko-2021-nature",
+      "cacheKey": "claims-anishchenko-2021",
+      "datasetSource": null,
+      "documentId": "aib-doc-hallucination-2021",
+      "title": "De novo protein design by deep network hallucination",
+      "publisher": "Nature",
+      "url": "https://www.nature.com/articles/s41586-021-04184-w",
+      "httpStatus": 200,
+      "sha256": "eef0974270764f95a79e8713c0238700eab405f815b6a5bd6df6d276b0f55e8c",
+      "retrievedAt": "2026-10-30",
+      "language": "en",
+      "documentWords": {
+        "count": 4758,
+        "basis": "words of the text extracted by tools.mjs from the retrieved response (page chrome included for HTML pages; JSON field text for API records); for paywalled pages and records this counts only what was served, not the article"
+      },
+      "version": "Nature article page as served on 2026-10-30; abstract and metadata",
+      "kind": "paper",
+      "finalUrlNote": "The server redirected through a cookie-check parameter; the address recorded is the one requested."
+    },
+    {
+      "key": "watson-2023-nature",
+      "cacheKey": "claims-watson-2023",
+      "datasetSource": null,
+      "documentId": "aib-doc-rfdiffusion-2023",
+      "title": "De novo design of protein structure and function with RFdiffusion",
+      "publisher": "Nature",
+      "url": "https://www.nature.com/articles/s41586-023-06415-8",
+      "httpStatus": 200,
+      "sha256": "2545d6a704439810814a21280fd6165f6fd2c3835a9441ebb2977cec1fe95b50",
+      "retrievedAt": "2026-10-30",
+      "language": "en",
+      "documentWords": {
+        "count": 14185,
+        "basis": "words of the text extracted by tools.mjs from the retrieved response (page chrome included for HTML pages; JSON field text for API records); for paywalled pages and records this counts only what was served, not the article"
+      },
+      "version": "Nature article page, version of record of 23 August 2023 (published online 11 July 2023), as served on 2026-10-30",
+      "kind": "paper",
+      "finalUrlNote": "The server redirected through a cookie-check parameter; the address recorded is the one requested."
+    },
+    {
+      "key": "hood-galas-2003-nature",
+      "cacheKey": "claims-hood-2003",
+      "datasetSource": null,
+      "documentId": "aib-doc-hood-galas-2003",
+      "title": "The digital code of DNA",
+      "publisher": "Nature",
+      "url": "https://www.nature.com/articles/nature01410",
+      "httpStatus": 200,
+      "sha256": "492854d64264634c89b6ed576c43d85277d7be0ff24be87e99653d73ac3a0858",
+      "retrievedAt": "2026-10-30",
+      "language": "en",
+      "documentWords": {
+        "count": 1294,
+        "basis": "words of the text extracted by tools.mjs from the retrieved response (page chrome included for HTML pages; JSON field text for API records); for paywalled pages and records this counts only what was served, not the article"
+      },
+      "version": "Nature feature article page as served on 2026-10-30; abstract and metadata, full text behind subscription",
+      "kind": "paper",
+      "finalUrlNote": "The server redirected through a cookie-check parameter; the address recorded is the one requested."
+    }
+  ],
+  "documents": [
+    {
+      "id": "aib-doc-blundell-1987",
+      "existingEntity": false,
+      "title": "Knowledge-based prediction of protein structures and the design of novel molecules",
+      "subtype": "Journal article",
+      "publisherId": null,
+      "authorsAsPrinted": [
+        "T. L. Blundell",
+        "B. L. Sibanda",
+        "M. J. E. Sternberg",
+        "J. M. Thornton"
+      ],
+      "family": "blundell-1987",
+      "label": "Nature 326, 347–352 (review article), published 26 March 1987",
+      "dates": {
+        "publishedAt": "1987-03-26",
+        "issueAt": "1987-03-26"
+      },
+      "dateNote": "The Nature article page gives \"Published: 26 March 1987\" and \"Issue date: 26 March 1987\".",
+      "language": "en"
+    },
+    {
+      "id": "aib-doc-sternberg-1992",
+      "existingEntity": false,
+      "title": "Modelling the structure and function of enzymes by machine learning",
+      "subtype": "Journal article",
+      "publisherId": null,
+      "authorsAsPrinted": [
+        "Sternberg MJ",
+        "Lewis RA",
+        "King RD",
+        "Muggleton S"
+      ],
+      "family": "sternberg-1992",
+      "label": "Faraday Discussions 93, 269–280 (1992)",
+      "dates": {
+        "issueAt": "1992"
+      },
+      "dateNote": "Europe PMC gives the print publication date as 1992-01-01, which is its placeholder for a year; only the year is recorded.",
+      "language": "en"
+    },
+    {
+      "id": "aib-doc-mullard-2021",
+      "existingEntity": false,
+      "title": "What does AlphaFold mean for drug discovery?",
+      "subtype": "Journal article",
+      "publisherId": null,
+      "authorsAsPrinted": ["Asher Mullard"],
+      "family": "mullard-2021",
+      "label": "Nature Reviews Drug Discovery 20, 725–727 (news), 14 September 2021",
+      "dates": {
+        "publishedAt": "2021-09-14"
+      },
+      "dateNote": "The article page prints \"NEWS 14 September 2021\" and the citation \"Nature Reviews Drug Discovery 20, 725-727 (2021)\".",
+      "language": "en"
+    },
+    {
+      "id": "aib-doc-wong-2022",
+      "existingEntity": false,
+      "title": "Benchmarking AlphaFold-enabled molecular docking predictions for antibiotic discovery",
+      "subtype": "Journal article",
+      "publisherId": null,
+      "authorsAsPrinted": [
+        "Wong F",
+        "Krishnan A",
+        "Zheng EJ",
+        "Stärk H",
+        "Manson AL",
+        "Earl AM",
+        "Jaakkola T",
+        "Collins JJ"
+      ],
+      "family": "wong-2022",
+      "label": "Molecular Systems Biology (2022), published online 6 September 2022",
+      "dates": {
+        "submittedAt": "2022-04-18",
+        "acceptedAt": "2022-07-26",
+        "publishedAt": "2022-09-06",
+        "issueAt": "2022-09"
+      },
+      "dateNote": "Dates from the JATS history in the Europe PMC full text: received 18 April 2022, revised 12 June 2022, accepted 26 July 2022, epub 6 September 2022, collection September 2022.",
+      "language": "en"
+    },
+    {
+      "id": "aib-doc-terwilliger-2023",
+      "existingEntity": false,
+      "title": "AlphaFold predictions are valuable hypotheses and accelerate but do not replace experimental structure determination",
+      "subtype": "Journal article",
+      "publisherId": null,
+      "authorsAsPrinted": [
+        "Thomas C. Terwilliger",
+        "Dorothee Liebschner",
+        "Tristan I. Croll",
+        "et al."
+      ],
+      "family": "terwilliger-2023",
+      "label": "Nature Methods 21, 110–116 (2024), published online 30 November 2023",
+      "dates": {
+        "submittedAt": "2023-01-30",
+        "acceptedAt": "2023-10-11",
+        "publishedAt": "2023-11-30",
+        "issueAt": "2024-01"
+      },
+      "dateNote": "The article page gives Received 30 January 2023, Accepted 11 October 2023, Published 30 November 2023, Issue date January 2024.",
+      "language": "en"
+    },
+    {
+      "id": "aib-doc-arnold-2023",
+      "existingEntity": false,
+      "title": "AlphaFold touted as next big thing for drug discovery — but is it?",
+      "subtype": "Journal article",
+      "publisherId": null,
+      "authorsAsPrinted": ["Carrie Arnold"],
+      "family": "arnold-2023",
+      "label": "Nature 622, 15–17 (news), 22 September 2023",
+      "dates": {
+        "publishedAt": "2023-09-22"
+      },
+      "dateNote": "The page prints \"NEWS 22 September 2023\" and the citation \"Nature 622, 15-17 (2023)\".",
+      "language": "en"
+    },
+    {
+      "id": "aib-doc-lyu-2024",
+      "existingEntity": false,
+      "title": "AlphaFold2 structures guide prospective ligand discovery",
+      "subtype": "Journal article",
+      "publisherId": null,
+      "authorsAsPrinted": [
+        "Lyu J",
+        "Kapolka N",
+        "Gumpper R",
+        "et al. (21 authors)",
+        "Shoichet BK",
+        "Roth BL"
+      ],
+      "family": "lyu-2024",
+      "label": "Science 384 (6702), eadn6354 (2024)",
+      "dates": {
+        "publishedAt": "2024-06-21",
+        "issueAt": "2024-06"
+      },
+      "dateNote": "Europe PMC gives the electronic publication date 2024-06-21 and print publication 2024-06 (its 2024-06-01 placeholder for a month). Neither was checked against science.org, which refuses requests from this environment.",
+      "language": "en"
+    },
+    {
+      "id": "aib-doc-tomita-2001",
+      "existingEntity": false,
+      "title": "Whole-cell simulation: a grand challenge of the 21st century",
+      "subtype": "Journal article",
+      "publisherId": null,
+      "authorsAsPrinted": ["Tomita M"],
+      "family": "tomita-2001",
+      "label": "Trends in Biotechnology 19 (6), 205–210 (June 2001)",
+      "dates": {
+        "issueAt": "2001-06"
+      },
+      "dateNote": "Europe PMC gives the print publication date as 2001-06-01, its placeholder for a month; the month is recorded.",
+      "language": "en"
+    },
+    {
+      "id": "aib-doc-ma-2018",
+      "existingEntity": false,
+      "title": "Using deep learning to model the hierarchical structure and function of a cell",
+      "subtype": "Journal article",
+      "publisherId": null,
+      "authorsAsPrinted": [
+        "Jianzhu Ma",
+        "Michael Ku Yu",
+        "Samson Fong",
+        "Keiichiro Ono",
+        "Eric Sage",
+        "Barry Demchak",
+        "Roded Sharan",
+        "Trey Ideker"
+      ],
+      "family": "ma-2018",
+      "label": "Nature Methods 15, 290–298 (2018), published online 5 March 2018",
+      "dates": {
+        "submittedAt": "2017-07-19",
+        "acceptedAt": "2018-02-07",
+        "publishedAt": "2018-03-05",
+        "issueAt": "2018-04-01"
+      },
+      "dateNote": "The article page gives Received 19 July 2017, Accepted 7 February 2018, Published 5 March 2018, Issue date 1 April 2018.",
+      "language": "en"
+    },
+    {
+      "id": "aib-doc-bunne-2024",
+      "existingEntity": false,
+      "title": "How to Build the Virtual Cell with Artificial Intelligence: Priorities and Opportunities",
+      "subtype": "Preprint",
+      "publisherId": "arxiv",
+      "authorsAsPrinted": [
+        "Charlotte Bunne",
+        "Yusuf Roohani",
+        "Yanay Rosen",
+        "et al. (42 authors)",
+        "Stephen R. Quake"
+      ],
+      "family": "bunne-2024",
+      "label": "arXiv:2409.11654v1 (18 September 2024)",
+      "dates": {
+        "postedAt": "2024-09-18"
+      },
+      "dateNote": "The arXiv abstract page records v1 submitted Wed, 18 Sep 2024 and v2 on Mon, 14 Oct 2024; only v1 was read. A later journal version (the brief names Cell, 2024) was not retrieved.",
+      "language": "en"
+    },
+    {
+      "id": "aib-doc-roohani-2025",
+      "existingEntity": false,
+      "title": "Virtual Cell Challenge: Toward a Turing test for the virtual cell",
+      "subtype": "Journal article",
+      "publisherId": null,
+      "authorsAsPrinted": [
+        "Roohani YH",
+        "Hua TJ",
+        "Tung PY",
+        "et al.",
+        "Hsu PD",
+        "Goodarzi H",
+        "Burke DP"
+      ],
+      "family": "roohani-2025",
+      "label": "Cell 188 (13), 3370–3374 (June 2025)",
+      "dates": {
+        "issueAt": "2025-06"
+      },
+      "dateNote": "Europe PMC gives first and print publication as 2025-06-01, its placeholder for a month; the month is recorded. No online-first date was retrieved.",
+      "language": "en"
+    },
+    {
+      "id": "aib-doc-ahlmann-eltze-2025",
+      "existingEntity": false,
+      "title": "Deep-learning-based gene perturbation effect prediction does not yet outperform simple linear baselines",
+      "subtype": "Journal article",
+      "publisherId": null,
+      "authorsAsPrinted": [
+        "Constantin Ahlmann-Eltze",
+        "Wolfgang Huber",
+        "Simon Anders"
+      ],
+      "family": "ahlmann-eltze-2025",
+      "label": "Nature Methods 22, 1657–1661 (2025, brief communication), published online 4 August 2025",
+      "dates": {
+        "submittedAt": "2024-10-11",
+        "acceptedAt": "2025-06-24",
+        "publishedAt": "2025-08-04",
+        "issueAt": "2025-08"
+      },
+      "dateNote": "The article page gives Received 11 October 2024, Accepted 24 June 2025, Published 4 August 2025, Issue date August 2025.",
+      "language": "en"
+    },
+    {
+      "id": "aib-doc-sumitomo-dsp1181-2020",
+      "existingEntity": false,
+      "title": "Sumitomo Dainippon Pharma and Exscientia Joint Development New Drug Candidate Created Using Artificial Intelligence (AI) Begins Clinical Study",
+      "subtype": "Press release",
+      "publisherId": "aib-sumitomo-pharma",
+      "authorsAsPrinted": [],
+      "family": "sumitomo-dsp1181-2020",
+      "label": "Sumitomo Dainippon Pharma news release, 30 January 2020",
+      "dates": {
+        "announcedAt": "2020-01-30"
+      },
+      "dateNote": "The release page prints \"Jan. 30, 2020\".",
+      "language": "en"
+    },
+    {
+      "id": "aib-doc-xu-2025",
+      "existingEntity": false,
+      "title": "A generative AI-discovered TNIK inhibitor for idiopathic pulmonary fibrosis: a randomized phase 2a trial",
+      "subtype": "Journal article",
+      "publisherId": null,
+      "authorsAsPrinted": [
+        "Zuojun Xu",
+        "Feng Ren",
+        "Ping Wang",
+        "et al.",
+        "Alex Zhavoronkov"
+      ],
+      "family": "xu-2025",
+      "label": "Nature Medicine 31, 2602–2610 (2025), published online 3 June 2025",
+      "dates": {
+        "submittedAt": "2024-12-19",
+        "acceptedAt": "2025-04-25",
+        "publishedAt": "2025-06-03",
+        "issueAt": "2025-08"
+      },
+      "dateNote": "The article page gives Received 19 December 2024, Accepted 25 April 2025, Published 3 June 2025, Issue date August 2025.",
+      "language": "en"
+    },
+    {
+      "id": "aib-doc-jayatunga-2024",
+      "existingEntity": false,
+      "title": "How successful are AI-discovered drugs in clinical trials? A first analysis and emerging lessons",
+      "subtype": "Journal article",
+      "publisherId": null,
+      "authorsAsPrinted": [
+        "Kp Jayatunga M",
+        "Ayers M",
+        "Bruens L",
+        "Jayanth D",
+        "Meier C"
+      ],
+      "family": "jayatunga-2024",
+      "label": "Drug Discovery Today 29 (6), 104009 (2024), published online 30 April 2024",
+      "dates": {
+        "publishedAt": "2024-04-30",
+        "issueAt": "2024-06"
+      },
+      "dateNote": "Europe PMC gives the electronic publication date 2024-04-30 and print 2024-06 (its 2024-06-01 placeholder for a month). The publisher page was not readable.",
+      "language": "en"
+    },
+    {
+      "id": "aib-doc-huang-2016",
+      "existingEntity": false,
+      "title": "The coming of age of de novo protein design",
+      "subtype": "Journal article",
+      "publisherId": null,
+      "authorsAsPrinted": ["Po-Ssu Huang", "Scott E. Boyken", "David Baker"],
+      "family": "huang-2016",
+      "label": "Nature 537, 320–327 (review article), published online 14 September 2016",
+      "dates": {
+        "submittedAt": "2016-04-12",
+        "acceptedAt": "2016-07-20",
+        "publishedAt": "2016-09-14",
+        "issueAt": "2016-09-15"
+      },
+      "dateNote": "The article page gives Received 12 April 2016, Accepted 20 July 2016, Published 14 September 2016, Issue date 15 September 2016.",
+      "language": "en"
+    },
+    {
+      "id": "aib-doc-wang-2018",
+      "existingEntity": false,
+      "title": "Computational Protein Design with Deep Learning Neural Networks",
+      "subtype": "Journal article",
+      "publisherId": null,
+      "authorsAsPrinted": [
+        "Jingxue Wang",
+        "Huali Cao",
+        "John Z. H. Zhang",
+        "Yifei Qi"
+      ],
+      "family": "wang-2018",
+      "label": "Scientific Reports 8, 6349 (2018), published 20 April 2018",
+      "dates": {
+        "submittedAt": "2017-10-12",
+        "acceptedAt": "2018-04-10",
+        "publishedAt": "2018-04-20"
+      },
+      "dateNote": "The article page gives Received 12 October 2017, Accepted 10 April 2018, Published 20 April 2018.",
+      "language": "en"
+    },
+    {
+      "id": "aib-doc-hallucination-preprint-2020",
+      "existingEntity": false,
+      "title": "De novo protein design by deep network hallucination",
+      "subtype": "Preprint",
+      "publisherId": null,
+      "authorsAsPrinted": [
+        "Anishchenko I",
+        "Chidyausiku TM",
+        "Ovchinnikov S",
+        "Pellock SJ",
+        "Baker D"
+      ],
+      "family": "hallucination-2021",
+      "label": "bioRxiv 10.1101/2020.07.22.211482, v1 (23 July 2020)",
+      "dates": {
+        "postedAt": "2020-07-23"
+      },
+      "dateNote": "The bioRxiv details API gives version 1 dated 2020-07-23 and links the published version 10.1038/s41586-021-04184-w.",
+      "language": "en"
+    },
+    {
+      "id": "aib-doc-hallucination-2021",
+      "existingEntity": false,
+      "title": "De novo protein design by deep network hallucination",
+      "subtype": "Journal article",
+      "publisherId": null,
+      "authorsAsPrinted": [
+        "Ivan Anishchenko",
+        "Samuel J. Pellock",
+        "Tamuka M. Chidyausiku",
+        "et al.",
+        "David Baker"
+      ],
+      "family": "hallucination-2021",
+      "label": "Nature 600, 547–552 (2021), published online 1 December 2021",
+      "dates": {
+        "submittedAt": "2020-09-18",
+        "acceptedAt": "2021-10-21",
+        "publishedAt": "2021-12-01",
+        "issueAt": "2021-12-16"
+      },
+      "dateNote": "The article page gives Received 18 September 2020, Accepted 21 October 2021, Published 1 December 2021, Issue date 16 December 2021.",
+      "language": "en"
+    },
+    {
+      "id": "aib-doc-hood-galas-2003",
+      "existingEntity": false,
+      "title": "The digital code of DNA",
+      "subtype": "Journal article",
+      "publisherId": null,
+      "authorsAsPrinted": ["Leroy Hood", "David Galas"],
+      "family": "hood-galas-2003",
+      "label": "Nature 421, 444–448 (feature), published 23 January 2003",
+      "dates": {
+        "publishedAt": "2003-01-23"
+      },
+      "dateNote": "The article page gives \"Published: 23 January 2003\".",
+      "language": "en"
+    }
+  ],
+  "entities": [
+    {
+      "id": "aib-prop-predicted-structures-aid-drug-design",
+      "name": "Predicted protein structures aid drug design",
+      "type": "concept",
+      "subtype": "Proposition",
+      "existing": false,
+      "note": "Candidate proposition for this pack. A record of a text's stance on it is never evidence that it is true.",
+      "proposition": {
+        "code": "P1",
+        "criterion": "The text states that protein structures obtained by computational prediction, rather than by experiment, are or will be of use in designing or discovering drugs.",
+        "terms": ["structure-based drug design"]
+      }
+    },
+    {
+      "id": "aib-prop-ai-virtual-cell",
+      "name": "AI models can simulate or predict the behaviour of cells (a \"virtual cell\")",
+      "type": "concept",
+      "subtype": "Proposition",
+      "existing": false,
+      "note": "Candidate proposition for this pack. A record of a text's stance on it is never evidence that it is true.",
+      "proposition": {
+        "code": "P2",
+        "criterion": "The text states that a machine-learning or other AI model simulates, or will be able to simulate or predict, the behaviour of a living cell, such as its growth or its responses to perturbations.",
+        "terms": ["virtual cell", "AI Virtual Cell"]
+      }
+    },
+    {
+      "id": "aib-prop-ai-drug-candidate-in-trials",
+      "name": "A drug candidate discovered or designed with AI has entered human clinical trials",
+      "type": "concept",
+      "subtype": "Proposition",
+      "existing": false,
+      "note": "Candidate proposition for this pack. A record of a text's stance on it is never evidence that it is true.",
+      "proposition": {
+        "code": "P3",
+        "criterion": "The text states that a named drug candidate, described as discovered, designed or created using AI, has begun testing in humans in a clinical trial.",
+        "terms": []
+      }
+    },
+    {
+      "id": "aib-prop-ml-designs-new-proteins",
+      "name": "Machine-learning methods make proteins with new functions designable",
+      "type": "concept",
+      "subtype": "Proposition",
+      "existing": false,
+      "note": "Candidate proposition for this pack. A record of a text's stance on it is never evidence that it is true.",
+      "proposition": {
+        "code": "P4",
+        "criterion": "The text states that machine-learning models can be used, or will contribute, to designing proteins with functions, or sequences, not found among natural proteins.",
+        "terms": []
+      }
+    },
+    {
+      "id": "aib-prop-biology-as-information-for-ai",
+      "name": "Biology is an information system that AI can read, describe or program",
+      "type": "concept",
+      "subtype": "Proposition",
+      "existing": false,
+      "note": "Candidate proposition for this pack. A record of a text's stance on it is never evidence that it is true.",
+      "proposition": {
+        "code": "P5",
+        "criterion": "The text states that biology is, or can be treated as, an information system, language or code, and that AI is, or may become, the means of reading, describing or programming it.",
+        "terms": ["digital biology", "programmable biology"]
+      }
+    },
+    {
+      "id": "aib-prop-ai-drugs-higher-trial-success",
+      "name": "AI-discovered drug candidates succeed in clinical trials more often than historical averages",
+      "type": "concept",
+      "subtype": "Proposition",
+      "existing": false,
+      "note": "Candidate proposition for this pack. A record of a text's stance on it is never evidence that it is true.",
+      "proposition": {
+        "code": "P6",
+        "criterion": "The text states that drug candidates discovered or designed with AI have passed at least one phase of clinical trials at a higher rate than historical industry averages.",
+        "terms": []
+      }
+    },
+    {
+      "id": "aib-sumitomo-pharma",
+      "name": "Sumitomo Pharma (Sumitomo Dainippon Pharma until 2022)",
+      "type": "organisation",
+      "subtype": "Company",
+      "existing": false,
+      "note": "Publisher of the 30 January 2020 release on DSP-1181, under its then name Sumitomo Dainippon Pharma Co., Ltd. The renaming year is orientation only and rests on no retrieved passage here; the integrator should reconcile with the companies pass, which may define Exscientia and this company."
+    }
+  ],
+  "claims": [
+    {
+      "id": "aib-arg-p1-blundell-1987",
+      "group": "claims",
+      "strand": "Claims about AI and biology",
+      "subject": "aib-doc-blundell-1987",
+      "predicate": "articulates_proposition",
+      "proposedPredicate": false,
+      "object": {
+        "kind": "entity",
+        "entityId": "aib-prop-predicted-structures-aid-drug-design"
+      },
+      "statement": "The Nature review \"Knowledge-based prediction of protein structures and the design of novel molecules\" (Blundell, Sibanda, Sternberg and Thornton, 26 March 1987) states that knowledge-based prediction techniques are of value in predicting receptor structures to aid the design of drugs.",
+      "time": {
+        "kind": "event",
+        "date": "1987-03-26",
+        "basis": "publication",
+        "note": "Publication and issue date printed on the Nature article page."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "The record documents what this text states, in its register; it is not evidence that the proposition is true and implies no influence on or from any other text. The method the abstract describes is knowledge-based modelling from analogies with known structures, not machine learning; the record bears on the AI period only as an earlier statement of the same expectation. Only the abstract was read. Earliest located for this proposition among the texts found by the searches in howWeSearched; not a claim that no earlier text exists.",
+      "extends": null,
+      "siblingLinks": [],
+      "attributes": {
+        "thought": {
+          "roles": ["earliest-located"],
+          "register": "nonfiction",
+          "qualifier": "Stated of knowledge-based (comparative) modelling, as a field of use; no drug is named."
+        }
+      },
+      "hazardNote": null,
+      "evidence": [
+        {
+          "source": "blundell-1987-nature",
+          "locator": "Abstract (article page)",
+          "passage": "Such techniques are of value in prediction of receptor structures to aid the design of drugs, herbicides or pesticides, antigens in vaccine design, and novel molecules in protein engineering.",
+          "passageType": "quote",
+          "translation": null,
+          "sourceRole": "primary",
+          "support": "supports",
+          "note": "The text is the primary source for its own statement."
+        },
+        {
+          "source": "blundell-1987-nature",
+          "locator": "Abstract (article page), what the techniques are",
+          "passage": "Prediction of the tertiary structures of proteins may be carried out using a knowledge-based approach.",
+          "passageType": "quote",
+          "translation": null,
+          "sourceRole": "primary",
+          "support": "supports",
+          "note": "Shows that the predicted structures in question are computational predictions, not experimental structures."
+        }
+      ]
+    },
+    {
+      "id": "aib-arg-p1-sternberg-1992",
+      "group": "claims",
+      "strand": "Claims about AI and biology",
+      "subject": "aib-doc-sternberg-1992",
+      "predicate": "bears_on_proposition",
+      "proposedPredicate": false,
+      "object": {
+        "kind": "entity",
+        "entityId": "aib-prop-predicted-structures-aid-drug-design"
+      },
+      "statement": "The Faraday Discussions paper \"Modelling the structure and function of enzymes by machine learning\" (Sternberg, Lewis, King and Muggleton, 1992) reports applying the machine-learning program GOLEM both to protein secondary-structure prediction and, separately, to modelling a structure-activity relationship in drug design.",
+      "time": {
+        "kind": "event",
+        "date": "1992",
+        "basis": "publication",
+        "note": "Year of the Faraday Discussions issue (vol. 93) as given by Europe PMC; no finer date was retrieved."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "The record documents what this text states, in its register; it is not evidence that the proposition is true and implies no influence on or from any other text. Read in the Europe PMC record of the abstract only. Kept as context because it is the earliest located text in these searches that joins machine learning, protein structure prediction and drug design in one study.",
+      "extends": null,
+      "siblingLinks": [],
+      "attributes": {
+        "thought": {
+          "roles": ["context"],
+          "register": "nonfiction",
+          "missing": "Does not state that predicted protein structures aid drug design: the structure-prediction and drug-design applications are separate, and the drug-design model rests on ligand activities, not on a predicted protein structure."
+        }
+      },
+      "hazardNote": null,
+      "evidence": [
+        {
+          "source": "sternberg-1992-epmc",
+          "locator": "Abstract (Europe PMC record, abstractText)",
+          "passage": "the prediction of protein secondary structure from sequence and (2) modelling a quantitative structure-activity relationship in drug design.",
+          "passageType": "quote",
+          "translation": null,
+          "sourceRole": "primary",
+          "support": "supports",
+          "note": "Abstract text relayed by Europe PMC's record of the PubMed abstract: the authors' own text, so primary; the journal expression was not read. The two applications are listed as separate problems."
+        }
+      ]
+    },
+    {
+      "id": "aib-arg-p1-deepmind-2020",
+      "group": "claims",
+      "strand": "Claims about AI and biology",
+      "subject": "alphafold-account",
+      "predicate": "articulates_proposition",
+      "proposedPredicate": false,
+      "object": {
+        "kind": "entity",
+        "entityId": "aib-prop-predicted-structures-aid-drug-design"
+      },
+      "statement": "DeepMind's account of AlphaFold at CASP14 (dated 30 November 2020) states that insights from protein structure predictions could enable more precise work on drug development, complementing existing experimental methods.",
+      "time": {
+        "kind": "event",
+        "date": "2020-11-30",
+        "basis": "publication",
+        "note": "Date printed on the page. The wording is attested only in the copy served on 2026-10-30, which carries a July 2022 update notice at its head; the December 2020 Internet Archive capture could not be opened (HTTP 403)."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "The record documents what this text states, in its register; it is not evidence that the proposition is true and implies no influence on or from any other text. Stated as a possibility (\"could\"), of insights from work with a small number of specialist groups. A developer's statement about its own system. The page also quotes third parties on drug discovery; those relays are not recorded here.",
+      "extends": null,
+      "siblingLinks": [],
+      "attributes": {
+        "thought": {
+          "roles": ["articulation"],
+          "register": "nonfiction",
+          "qualifier": "A possibility, framed as complementing experimental methods."
+        }
+      },
+      "hazardNote": null,
+      "evidence": [
+        {
+          "source": "deepmind-casp14-account-2026",
+          "locator": "Section on next steps, paragraph beginning \"In the meantime\"",
+          "passage": "These insights could enable more precise work on drug development, complementing existing experimental methods to find promising treatments faster.",
+          "passageType": "quote",
+          "translation": null,
+          "sourceRole": "primary",
+          "support": "supports",
+          "note": "The developer is the primary source for its own statement."
+        },
+        {
+          "source": "deepmind-casp14-account-2026",
+          "locator": "Same paragraph, preceding sentence",
+          "passage": "we're also looking into how protein structure predictions could contribute to our understanding of specific diseases with a small number of specialist groups",
+          "passageType": "quote",
+          "translation": null,
+          "sourceRole": "primary",
+          "support": "supports",
+          "note": "Shows that \"these insights\" are insights from protein structure predictions."
+        }
+      ]
+    },
+    {
+      "id": "aib-arg-p1-mullard-2021",
+      "group": "claims",
+      "strand": "Claims about AI and biology",
+      "subject": "aib-doc-mullard-2021",
+      "predicate": "bears_on_proposition",
+      "proposedPredicate": false,
+      "object": {
+        "kind": "entity",
+        "entityId": "aib-prop-predicted-structures-aid-drug-design"
+      },
+      "statement": "Mullard's Nature Reviews Drug Discovery news article \"What does AlphaFold mean for drug discovery?\" (14 September 2021) says in its standfirst that the implications of AlphaFold and RoseTTAFold for drug discovery are more incremental than their advance in structure prediction.",
+      "time": {
+        "kind": "event",
+        "date": "2021-09-14",
+        "basis": "publication",
+        "note": "Date printed on the article page."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "The record documents what this text states, in its register; it is not evidence that the proposition is true and implies no influence on or from any other text. Journalism (secondary source). Only the standfirst and the opening paragraph were readable; the body, which may give the reasoning and named sources, was not read.",
+      "extends": null,
+      "siblingLinks": [],
+      "attributes": {
+        "thought": {
+          "roles": ["context"],
+          "register": "nonfiction",
+          "missing": "Assesses the degree of the implications for drug discovery (\"more incremental\"); it does not state that predicted structures are of no use, nor that they are of use."
+        }
+      },
+      "hazardNote": null,
+      "evidence": [
+        {
+          "source": "mullard-2021-nrdd",
+          "locator": "Standfirst",
+          "passage": "but the implications for drug discovery are more incremental. For now.",
+          "passageType": "quote",
+          "translation": null,
+          "sourceRole": "secondary",
+          "support": "supports",
+          "note": "The standfirst is the publication's own summary."
+        }
+      ]
+    },
+    {
+      "id": "aib-arg-p1-wong-2022",
+      "group": "claims",
+      "strand": "Claims about AI and biology",
+      "subject": "aib-doc-wong-2022",
+      "predicate": "bears_on_proposition",
+      "proposedPredicate": false,
+      "object": {
+        "kind": "entity",
+        "entityId": "aib-prop-predicted-structures-aid-drug-design"
+      },
+      "statement": "Wong et al. (Molecular Systems Biology, 6 September 2022) report that docking compounds against AlphaFold2-predicted structures of essential Escherichia coli proteins gave weak performance in their benchmark, and state that advances in modelling protein-ligand interactions are needed to better harness AlphaFold2 for drug discovery.",
+      "time": {
+        "kind": "event",
+        "date": "2022-09-06",
+        "basis": "publication",
+        "note": "Online publication date from the JATS history of the Europe PMC full text."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "The record documents what this text states, in its register; it is not evidence that the proposition is true and implies no influence on or from any other text. The authors' own benchmark of one docking set-up on one bacterial proteome; they report similar performance with experimentally determined structures, so the result is about docking, not about predicted structures as such.",
+      "extends": null,
+      "siblingLinks": [],
+      "attributes": {
+        "thought": {
+          "roles": ["context"],
+          "register": "nonfiction",
+          "missing": "A caution about present docking methods; it neither states nor disputes that predicted structures aid drug discovery, and it frames AlphaFold2 as something to be \"better harnessed\"."
+        }
+      },
+      "hazardNote": null,
+      "evidence": [
+        {
+          "source": "wong-2022-msb",
+          "locator": "Abstract",
+          "passage": "We confirm extensive promiscuity, but find that the average area under the receiver operating characteristic curve (auROC) is 0.48, indicating weak model performance.",
+          "passageType": "quote",
+          "translation": null,
+          "sourceRole": "primary",
+          "support": "supports",
+          "note": "The authors' reported result."
+        },
+        {
+          "source": "wong-2022-msb",
+          "locator": "Abstract, last sentence",
+          "passage": "This work indicates that advances in modeling protein‐ligand interactions, particularly using machine learning‐based approaches, are needed to better harness AlphaFold2 for drug discovery.",
+          "passageType": "quote",
+          "translation": null,
+          "sourceRole": "primary",
+          "support": "supports",
+          "note": "The authors' conclusion."
+        },
+        {
+          "source": "wong-2022-msb",
+          "locator": "Discussion",
+          "passage": "Repeating our benchmarking with experimentally determined structures yielded similar performance (Fig 4).",
+          "passageType": "quote",
+          "translation": null,
+          "sourceRole": "primary",
+          "support": "supports",
+          "note": "Locates the weakness in docking rather than in the predicted structures."
+        }
+      ]
+    },
+    {
+      "id": "aib-arg-p1-terwilliger-2023",
+      "group": "claims",
+      "strand": "Claims about AI and biology",
+      "subject": "aib-doc-terwilliger-2023",
+      "predicate": "bears_on_proposition",
+      "proposedPredicate": false,
+      "object": {
+        "kind": "entity",
+        "entityId": "aib-prop-predicted-structures-aid-drug-design"
+      },
+      "statement": "Terwilliger et al. (Nature Methods, published online 30 November 2023) suggest treating AlphaFold predictions as exceptionally useful hypotheses and carrying out experimental structure determination to verify structural details, particularly interactions not included in the prediction.",
+      "time": {
+        "kind": "event",
+        "date": "2023-11-30",
+        "basis": "publication",
+        "note": "Online publication date printed on the article page."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "The record documents what this text states, in its register; it is not evidence that the proposition is true and implies no influence on or from any other text. The paper compares predictions with experimental crystallographic maps; it does not test drug design.",
+      "extends": null,
+      "siblingLinks": [],
+      "attributes": {
+        "thought": {
+          "roles": ["context"],
+          "register": "nonfiction",
+          "missing": "Addresses whether predictions can substitute for experimental structures, not whether they aid drug design."
+        }
+      },
+      "hazardNote": null,
+      "evidence": [
+        {
+          "source": "terwilliger-2023-natmethods",
+          "locator": "Abstract",
+          "passage": "We suggest considering AlphaFold predictions as exceptionally useful hypotheses. We further suggest that it is important to consider the confidence in prediction when interpreting AlphaFold predictions and to carry out experimental structure determination to verify structural details",
+          "passageType": "quote",
+          "translation": null,
+          "sourceRole": "primary",
+          "support": "supports",
+          "note": "The authors' recommendation."
+        },
+        {
+          "source": "terwilliger-2023-natmethods",
+          "locator": "Introduction",
+          "passage": "AlphaFold predictions have already been made available for 200 million individual protein sequences to further drug discovery and protein engineering and to understand biology",
+          "passageType": "quote",
+          "translation": null,
+          "sourceRole": "primary",
+          "support": "supports",
+          "note": "The paper's framing of the purpose of the released predictions, which it then qualifies."
+        }
+      ]
+    },
+    {
+      "id": "aib-arg-p1-arnold-2023",
+      "group": "claims",
+      "strand": "Claims about AI and biology",
+      "subject": "aib-doc-arnold-2023",
+      "predicate": "bears_on_proposition",
+      "proposedPredicate": false,
+      "object": {
+        "kind": "entity",
+        "entityId": "aib-prop-predicted-structures-aid-drug-design"
+      },
+      "statement": "Arnold's Nature news article (22 September 2023) says in its standfirst that questions remain about whether AlphaFold can really shake up the pharmaceutical industry.",
+      "time": {
+        "kind": "event",
+        "date": "2023-09-22",
+        "basis": "publication",
+        "note": "Date printed on the article page."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "The record documents what this text states, in its register; it is not evidence that the proposition is true and implies no influence on or from any other text. Journalism (secondary source). Only the headline, standfirst and opening paragraph were readable; the reporting and named sources in the body were not read. The reference list printed on the page includes a 2023 eLife study by Karelina, Noh and Dror, not retrieved.",
+      "extends": null,
+      "siblingLinks": [],
+      "attributes": {
+        "thought": {
+          "roles": ["context"],
+          "register": "nonfiction",
+          "missing": "Reports an open question about degree (whether AlphaFold can \"really shake up\" the industry); the readable text neither states nor disputes the criterion."
+        }
+      },
+      "hazardNote": null,
+      "evidence": [
+        {
+          "source": "arnold-2023-nature-news",
+          "locator": "Standfirst",
+          "passage": "Questions remain about whether the AI tool for predicting protein structures can really shake up the pharmaceutical industry.",
+          "passageType": "quote",
+          "translation": null,
+          "sourceRole": "secondary",
+          "support": "supports",
+          "note": "The publication's own summary."
+        },
+        {
+          "source": "arnold-2023-nature-news",
+          "locator": "Opening paragraph",
+          "passage": "chemists became excited about the promise of using the open-source artificial-intelligence (AI) programme to discover drugs more quickly and cheaply.",
+          "passageType": "quote",
+          "translation": null,
+          "sourceRole": "secondary",
+          "support": "supports",
+          "note": "The article's report of the expectation it examines."
+        }
+      ]
+    },
+    {
+      "id": "aib-arg-p1-lyu-2024",
+      "group": "claims",
+      "strand": "Claims about AI and biology",
+      "subject": "aib-doc-lyu-2024",
+      "predicate": "articulates_proposition",
+      "proposedPredicate": false,
+      "object": {
+        "kind": "entity",
+        "entityId": "aib-prop-predicted-structures-aid-drug-design"
+      },
+      "statement": "Lyu et al. (Science, 2024) report that prospective docking against unrefined AlphaFold2 models of two receptors gave hit rates similar to docking against experimental structures, and state that such models remain relevant for ligand discovery, extending the domain of structure-based drug design.",
+      "time": {
+        "kind": "event",
+        "date": "2024-06-21",
+        "basis": "publication",
+        "note": "Electronic publication date as given by Europe PMC; not checked at science.org."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "The record documents what this text states, in its register; it is not evidence that the proposition is true and implies no influence on or from any other text. Read in the Europe PMC record of the abstract only. The authors' own results for two receptors; the abstract also notes \"mixed success\" of such models in retrospective ligand recognition.",
+      "extends": null,
+      "siblingLinks": [],
+      "attributes": {
+        "thought": {
+          "roles": ["articulation"],
+          "register": "nonfiction",
+          "qualifier": "Stated for two receptors, from prospective docking results reported by the authors."
+        }
+      },
+      "hazardNote": null,
+      "evidence": [
+        {
+          "source": "lyu-2024-epmc",
+          "locator": "Abstract (Europe PMC record, abstractText), last sentence",
+          "passage": "AF2 models may sample conformations that differ from experimental structures but remain low energy and relevant for ligand discovery, extending the domain of structure-based drug design.",
+          "passageType": "quote",
+          "translation": null,
+          "sourceRole": "primary",
+          "support": "supports",
+          "note": "Abstract text relayed by Europe PMC's record of the PubMed abstract: the authors' own text, so primary; the journal expression was not read. The authors' conclusion."
+        },
+        {
+          "source": "lyu-2024-epmc",
+          "locator": "Abstract (Europe PMC record, abstractText), first sentence",
+          "passage": "AlphaFold2 (AF2) models have had wide impact but mixed success in retrospective ligand recognition.",
+          "passageType": "quote",
+          "translation": null,
+          "sourceRole": "primary",
+          "support": "supports",
+          "note": "Abstract text relayed by Europe PMC's record of the PubMed abstract: the authors' own text, so primary; the journal expression was not read. The authors' own statement of the earlier record, kept with the claim."
+        }
+      ]
+    },
+    {
+      "id": "aib-arg-p2-tomita-2001",
+      "group": "claims",
+      "strand": "Claims about AI and biology",
+      "subject": "aib-doc-tomita-2001",
+      "predicate": "bears_on_proposition",
+      "proposedPredicate": false,
+      "object": {
+        "kind": "entity",
+        "entityId": "aib-prop-ai-virtual-cell"
+      },
+      "statement": "Tomita's article \"Whole-cell simulation: a grand challenge of the 21st century\" (Trends in Biotechnology, June 2001) states that the complex behaviour of the cell cannot be determined or predicted unless a computer model of the cell is constructed, and reports that the E-CELL project has completed \"a couple of\" virtual cell models.",
+      "time": {
+        "kind": "event",
+        "date": "2001-06",
+        "basis": "publication",
+        "note": "Issue month as given by Europe PMC."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "The record documents what this text states, in its register; it is not evidence that the proposition is true and implies no influence on or from any other text. Read in the Europe PMC record of the abstract only. The models described are simulation models, not machine-learning models.",
+      "extends": null,
+      "siblingLinks": [],
+      "attributes": {
+        "thought": {
+          "roles": ["context"],
+          "register": "nonfiction",
+          "missing": "No AI or machine-learning element: the virtual cell is a computer simulation built from biological data."
+        }
+      },
+      "hazardNote": null,
+      "evidence": [
+        {
+          "source": "tomita-2001-epmc",
+          "locator": "Abstract (Europe PMC record, abstractText)",
+          "passage": "The E-CELL project has completed a couple of virtual cell models",
+          "passageType": "quote",
+          "translation": null,
+          "sourceRole": "primary",
+          "support": "supports",
+          "note": "Abstract text relayed by Europe PMC's record of the PubMed abstract: the authors' own text, so primary; the journal expression was not read. The author's report of his project's work."
+        }
+      ]
+    },
+    {
+      "id": "aib-arg-p2-ma-2018",
+      "group": "claims",
+      "strand": "Claims about AI and biology",
+      "subject": "aib-doc-ma-2018",
+      "predicate": "articulates_proposition",
+      "proposedPredicate": false,
+      "object": {
+        "kind": "entity",
+        "entityId": "aib-prop-ai-virtual-cell"
+      },
+      "statement": "Ma et al. (Nature Methods, published online 5 March 2018) state that DCell, a \"visible\" neural network embedded in the hierarchical structure of the subsystems of a eukaryotic cell and trained on several million genotypes, simulates cellular growth nearly as accurately as laboratory observations.",
+      "time": {
+        "kind": "event",
+        "date": "2018-03-05",
+        "basis": "publication",
+        "note": "Online publication date printed on the article page."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "The record documents what this text states, in its register; it is not evidence that the proposition is true and implies no influence on or from any other text. The authors' own report for one organism's growth phenotype; the abstract does not use the phrase \"virtual cell\". Earliest located for this proposition among the texts found by the searches in howWeSearched; not a claim that no earlier text exists.",
+      "extends": null,
+      "siblingLinks": [],
+      "attributes": {
+        "thought": {
+          "roles": ["earliest-located"],
+          "register": "nonfiction",
+          "qualifier": "Stated of growth prediction from genotype in one eukaryotic cell model."
+        }
+      },
+      "hazardNote": null,
+      "evidence": [
+        {
+          "source": "ma-2018-natmethods",
+          "locator": "Abstract",
+          "passage": "Trained on several million genotypes, DCell simulates cellular growth nearly as accurately as laboratory observations.",
+          "passageType": "quote",
+          "translation": null,
+          "sourceRole": "primary",
+          "support": "supports",
+          "note": "The authors' stated result."
+        },
+        {
+          "source": "ma-2018-natmethods",
+          "locator": "Abstract",
+          "passage": "Here we develop DCell, a VNN embedded in the hierarchical structure of 2,526 subsystems comprising a eukaryotic cell",
+          "passageType": "quote",
+          "translation": null,
+          "sourceRole": "primary",
+          "support": "supports",
+          "note": "Identifies the model as a neural network (VNN, visible neural network) of a cell."
+        }
+      ]
+    },
+    {
+      "id": "aib-arg-p2-bunne-2024",
+      "group": "claims",
+      "strand": "Claims about AI and biology",
+      "subject": "aib-doc-bunne-2024",
+      "predicate": "articulates_proposition",
+      "proposedPredicate": false,
+      "object": {
+        "kind": "entity",
+        "entityId": "aib-prop-ai-virtual-cell"
+      },
+      "statement": "Bunne et al. (arXiv v1, 18 September 2024) propose a vision of \"AI-powered Virtual Cells\" whose representations are learned from biological data and that facilitate in silico experiments to predict and understand cell behaviour.",
+      "time": {
+        "kind": "event",
+        "date": "2024-09-18",
+        "basis": "publication",
+        "note": "Date of the arXiv v1 submission, the expression read."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "The record documents what this text states, in its register; it is not evidence that the proposition is true and implies no influence on or from any other text. A perspective by 42 authors from academia and industry, stating a vision and its requirements; it reports no model. Only the v1 abstract was read.",
+      "extends": null,
+      "siblingLinks": [],
+      "attributes": {
+        "thought": {
+          "roles": ["articulation"],
+          "register": "nonfiction",
+          "qualifier": "A proposal and research agenda, in the future tense."
+        }
+      },
+      "hazardNote": null,
+      "evidence": [
+        {
+          "source": "bunne-2024-arxiv",
+          "locator": "Abstract",
+          "passage": "Here we propose a vision of AI-powered Virtual Cells, where robust representations of cells and cellular systems under different conditions are directly learned from growing biological data across measurements and scales.",
+          "passageType": "quote",
+          "translation": null,
+          "sourceRole": "primary",
+          "support": "supports",
+          "note": "The authors' stated proposal."
+        },
+        {
+          "source": "bunne-2024-arxiv",
+          "locator": "Abstract",
+          "passage": "We envision a future where AI Virtual Cells help identify new drug targets, predict cellular responses to perturbations, as well as scale hypothesis exploration.",
+          "passageType": "quote",
+          "translation": null,
+          "sourceRole": "primary",
+          "support": "supports",
+          "note": "The predictive capability the authors foresee."
+        }
+      ]
+    },
+    {
+      "id": "aib-arg-p2-roohani-2025",
+      "group": "claims",
+      "strand": "Claims about AI and biology",
+      "subject": "aib-doc-roohani-2025",
+      "predicate": "articulates_proposition",
+      "proposedPredicate": false,
+      "object": {
+        "kind": "entity",
+        "entityId": "aib-prop-ai-virtual-cell"
+      },
+      "statement": "Roohani et al. (Cell, June 2025) describe virtual cells as an emerging frontier at the intersection of AI and biology, name predicting cellular responses to perturbations as a key goal of such cell state models, and announce the Arc Institute's Virtual Cell Challenge as a recurring benchmark competition toward that goal.",
+      "time": {
+        "kind": "event",
+        "date": "2025-06",
+        "basis": "publication",
+        "note": "Issue month as given by Europe PMC."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "The record documents what this text states, in its register; it is not evidence that the proposition is true and implies no influence on or from any other text. Read in the Europe PMC record of the abstract only. The authors are associated with the Arc Institute, which runs the challenge; the text announces a benchmark and states a goal, not a result.",
+      "extends": null,
+      "siblingLinks": [],
+      "attributes": {
+        "thought": {
+          "roles": ["articulation"],
+          "register": "nonfiction",
+          "qualifier": "States the goal and a benchmark for it; does not claim the goal is met."
+        }
+      },
+      "hazardNote": null,
+      "evidence": [
+        {
+          "source": "roohani-2025-epmc",
+          "locator": "Abstract (Europe PMC record for PMID 40578317, abstractText)",
+          "passage": "Virtual cells are an emerging frontier at the intersection of artificial intelligence and biology. A key goal of these cell state models is predicting cellular responses to perturbations.",
+          "passageType": "quote",
+          "translation": null,
+          "sourceRole": "primary",
+          "support": "supports",
+          "note": "Abstract text relayed by Europe PMC's record of the PubMed abstract: the authors' own text, so primary; the journal expression was not read. The authors' framing."
+        },
+        {
+          "source": "roohani-2025-epmc",
+          "locator": "Abstract (Europe PMC record for PMID 40578317, abstractText)",
+          "passage": "This recurring and open benchmark competition from the Arc Institute will provide an evaluation framework, purpose-built datasets, and a venue for accelerating model development.",
+          "passageType": "quote",
+          "translation": null,
+          "sourceRole": "primary",
+          "support": "supports",
+          "note": "Abstract text relayed by Europe PMC's record of the PubMed abstract: the authors' own text, so primary; the journal expression was not read. What the text announces."
+        }
+      ]
+    },
+    {
+      "id": "aib-arg-p2-ahlmann-eltze-2025",
+      "group": "claims",
+      "strand": "Claims about AI and biology",
+      "subject": "aib-doc-ahlmann-eltze-2025",
+      "predicate": "contests_proposition",
+      "proposedPredicate": false,
+      "object": {
+        "kind": "entity",
+        "entityId": "aib-prop-ai-virtual-cell"
+      },
+      "statement": "Ahlmann-Eltze, Huber and Anders (Nature Methods, published online 4 August 2025) report that none of five foundation models and two other deep-learning models outperformed deliberately simple baselines at predicting transcriptome changes after genetic perturbations, and conclude that the goal of predicting the outcome of not-yet-performed experiments is still elusive.",
+      "time": {
+        "kind": "event",
+        "date": "2025-08-04",
+        "basis": "publication",
+        "note": "Online publication date printed on the article page."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "The record documents what this text states, in its register; it is not evidence that the proposition is true and implies no influence on or from any other text. Disputes the present-tense half of the criterion (that current AI models predict cell responses better than simple methods), for the models and benchmarks the authors tested; it does not dispute that such models may become possible.",
+      "extends": null,
+      "siblingLinks": [],
+      "attributes": {
+        "thought": {
+          "roles": ["contesting"],
+          "register": "nonfiction",
+          "qualifier": "Contests current capability for the tested models; silent on future capability."
+        }
+      },
+      "hazardNote": null,
+      "evidence": [
+        {
+          "source": "ahlmann-eltze-2025-natmethods",
+          "locator": "Abstract",
+          "passage": "Here we compared five foundation models and two other deep learning models against deliberately simple baselines for predicting transcriptome changes after single or double perturbations. None outperformed the baselines",
+          "passageType": "quote",
+          "translation": null,
+          "sourceRole": "primary",
+          "support": "supports",
+          "note": "The authors' reported result."
+        },
+        {
+          "source": "ahlmann-eltze-2025-natmethods",
+          "locator": "Main text, after the comparison results",
+          "passage": "we conclude that the latter's goal of providing a generalizable representation of cellular states and predicting the outcome of not-yet-performed experiments is still elusive.",
+          "passageType": "quote",
+          "translation": null,
+          "sourceRole": "primary",
+          "support": "supports",
+          "note": "The authors' conclusion on the stated goal."
+        }
+      ]
+    },
+    {
+      "id": "aib-arg-p3-sumitomo-2020",
+      "group": "claims",
+      "strand": "Claims about AI and biology",
+      "subject": "aib-doc-sumitomo-dsp1181-2020",
+      "predicate": "articulates_proposition",
+      "proposedPredicate": false,
+      "object": {
+        "kind": "entity",
+        "entityId": "aib-prop-ai-drug-candidate-in-trials"
+      },
+      "statement": "A news release of Sumitomo Dainippon Pharma and Exscientia (30 January 2020) announces that a phase I clinical study of DSP-1181, which it says was created using artificial intelligence, has been initiated in Japan.",
+      "time": {
+        "kind": "event",
+        "date": "2020-01-30",
+        "basis": "announcement",
+        "note": "Date printed on the release."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "The record documents what this text states, in its register; it is not evidence that the proposition is true and implies no influence on or from any other text. The companies' own statement; no clinical-trial registry entry was retrieved. The release's comparison of its exploratory research phase (under 12 months) with a 4.5-year average is the companies' figure and is not recorded as a result. Earliest located for this proposition among the texts found by the searches in howWeSearched; not a claim that no earlier text exists.",
+      "extends": null,
+      "siblingLinks": [],
+      "attributes": {
+        "thought": {
+          "roles": ["earliest-located"],
+          "register": "nonfiction",
+          "qualifier": "A company announcement of a phase I study start."
+        }
+      },
+      "hazardNote": null,
+      "evidence": [
+        {
+          "source": "sumitomo-exscientia-2020",
+          "locator": "First paragraph",
+          "passage": "announce that a phase I clinical study of DSP-1181, that was created using Artificial Intelligence (AI), has been initiated in Japan for the treatment of obsessive-compulsive disorder as an initial indication.",
+          "passageType": "quote",
+          "translation": null,
+          "sourceRole": "primary",
+          "support": "supports",
+          "note": "The companies are the primary source for their own announcement."
+        },
+        {
+          "source": "sumitomo-exscientia-2020",
+          "locator": "Second paragraph",
+          "passage": "Exscientia applying its Centaur ChemistTM Artificial Intelligence (AI) platform for drug discovery.",
+          "passageType": "quote",
+          "translation": null,
+          "sourceRole": "primary",
+          "support": "supports",
+          "note": "Names the AI platform the release credits."
+        }
+      ]
+    },
+    {
+      "id": "aib-arg-p3-xu-2025",
+      "group": "claims",
+      "strand": "Claims about AI and biology",
+      "subject": "aib-doc-xu-2025",
+      "predicate": "articulates_proposition",
+      "proposedPredicate": false,
+      "object": {
+        "kind": "entity",
+        "entityId": "aib-prop-ai-drug-candidate-in-trials"
+      },
+      "statement": "Xu et al. (Nature Medicine, published online 3 June 2025) report a phase 2a randomized, placebo-controlled trial of rentosertib, which they describe as an AI-generated small-molecule inhibitor of a target discovered using generative AI.",
+      "time": {
+        "kind": "event",
+        "date": "2025-06-03",
+        "basis": "publication",
+        "note": "Online publication date printed on the article page."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "The record documents what this text states, in its register; it is not evidence that the proposition is true and implies no influence on or from any other text. Eleven authors are employees of Insilico Medicine, which the paper names as the study sponsor; the description of the molecule as AI-generated is the authors' own. The paper's description of its trial as \"first\" is the authors' wording and is not adopted here.",
+      "extends": null,
+      "siblingLinks": [],
+      "attributes": {
+        "thought": {
+          "roles": ["articulation"],
+          "register": "nonfiction",
+          "qualifier": "A sponsor-authored trial report; the phase is as stated (2a)."
+        }
+      },
+      "hazardNote": null,
+      "evidence": [
+        {
+          "source": "xu-2025-natmed",
+          "locator": "Abstract",
+          "passage": "a first-in-class AI-generated small-molecule inhibitor of TNIK, a first-in-class target in idiopathic pulmonary fibrosis (IPF) discovered using generative AI.",
+          "passageType": "quote",
+          "translation": null,
+          "sourceRole": "primary",
+          "support": "supports",
+          "note": "How the authors describe the candidate."
+        },
+        {
+          "source": "xu-2025-natmed",
+          "locator": "Competing interests",
+          "passage": "are employees of Insilico Medicine. Insilico Medicine was the study sponsor.",
+          "passageType": "quote",
+          "translation": null,
+          "sourceRole": "primary",
+          "support": "supports",
+          "note": "The paper's own declaration, kept with the record."
+        }
+      ]
+    },
+    {
+      "id": "aib-arg-p3-jayatunga-2024",
+      "group": "claims",
+      "strand": "Claims about AI and biology",
+      "subject": "aib-doc-jayatunga-2024",
+      "predicate": "bears_on_proposition",
+      "proposedPredicate": false,
+      "object": {
+        "kind": "entity",
+        "entityId": "aib-prop-ai-drug-candidate-in-trials"
+      },
+      "statement": "Jayatunga et al. (Drug Discovery Today, published online 30 April 2024) state that a growing number of drugs and vaccines have been discovered using AI and analyse the clinical pipelines of what they call AI-native biotech companies.",
+      "time": {
+        "kind": "event",
+        "date": "2024-04-30",
+        "basis": "publication",
+        "note": "Electronic publication date as given by Europe PMC."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "The record documents what this text states, in its register; it is not evidence that the proposition is true and implies no influence on or from any other text. Read in the Europe PMC record of the abstract only; the companies and molecules in the analysis were not read.",
+      "extends": null,
+      "siblingLinks": [],
+      "attributes": {
+        "thought": {
+          "roles": ["context"],
+          "register": "nonfiction",
+          "missing": "Names no specific candidate in the abstract read; the criterion requires a named candidate stated to have begun human testing."
+        }
+      },
+      "hazardNote": null,
+      "evidence": [
+        {
+          "source": "jayatunga-2024-epmc",
+          "locator": "Abstract (Europe PMC record, abstractText), second and fifth sentences",
+          "passage": "Paraphrase: the authors say that a growing number of drugs and vaccines have been discovered using AI, and that they analysed the clinical pipelines of AI-native biotech companies.",
+          "passageType": "paraphrase",
+          "translation": null,
+          "sourceRole": "primary",
+          "support": "supports",
+          "note": "Abstract text relayed by Europe PMC's record of the PubMed abstract: the authors' own text, so primary; the journal expression was not read. Explicit paraphrase, to keep the short record within its quotation budget (the P6 record quotes the same abstract)."
+        }
+      ]
+    },
+    {
+      "id": "aib-arg-p4-huang-2016",
+      "group": "claims",
+      "strand": "Claims about AI and biology",
+      "subject": "aib-doc-huang-2016",
+      "predicate": "bears_on_proposition",
+      "proposedPredicate": false,
+      "object": {
+        "kind": "entity",
+        "entityId": "aib-prop-ml-designs-new-proteins"
+      },
+      "statement": "Huang, Boyken and Baker (Nature, published online 14 September 2016) state that computational methodology now allows a wide range of protein structures to be designed from scratch with atomic-level accuracy, and that it should now be possible to design new functional proteins from the ground up.",
+      "time": {
+        "kind": "event",
+        "date": "2016-09-14",
+        "basis": "publication",
+        "note": "Online publication date printed on the article page."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "The record documents what this text states, in its register; it is not evidence that the proposition is true and implies no influence on or from any other text. Only the abstract was read. The design methods the abstract describes are guided by physical principles, not machine learning.",
+      "extends": null,
+      "siblingLinks": [],
+      "attributes": {
+        "thought": {
+          "roles": ["context"],
+          "register": "nonfiction",
+          "missing": "No machine-learning element: the design methods are physics-based."
+        }
+      },
+      "hazardNote": null,
+      "evidence": [
+        {
+          "source": "huang-2016-nature",
+          "locator": "Abstract",
+          "passage": "Almost all protein engineering so far has involved the modification of naturally occurring proteins; it should now be possible to design new functional proteins from the ground up to tackle current challenges in biomedicine and nanotechnology.",
+          "passageType": "quote",
+          "translation": null,
+          "sourceRole": "primary",
+          "support": "supports",
+          "note": "The authors' statement."
+        },
+        {
+          "source": "huang-2016-nature",
+          "locator": "Abstract",
+          "passage": "De novo protein design explores the full sequence space, guided by the physical principles that underlie protein folding.",
+          "passageType": "quote",
+          "translation": null,
+          "sourceRole": "primary",
+          "support": "supports",
+          "note": "Shows that the approach described is physics-based."
+        }
+      ]
+    },
+    {
+      "id": "aib-arg-p4-wang-2018",
+      "group": "claims",
+      "strand": "Claims about AI and biology",
+      "subject": "aib-doc-wang-2018",
+      "predicate": "bears_on_proposition",
+      "proposedPredicate": false,
+      "object": {
+        "kind": "entity",
+        "entityId": "aib-prop-ml-designs-new-proteins"
+      },
+      "statement": "Wang, Cao, Zhang and Qi (Scientific Reports, 20 April 2018) report applying a deep-learning neural network to computational protein design and state that their results may benefit further development of computational protein design methods.",
+      "time": {
+        "kind": "event",
+        "date": "2018-04-20",
+        "basis": "publication",
+        "note": "Publication date printed on the article page."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "The record documents what this text states, in its register; it is not evidence that the proposition is true and implies no influence on or from any other text. The authors' own report; the abstract evaluates the network on redesigning natural proteins.",
+      "extends": null,
+      "siblingLinks": [],
+      "attributes": {
+        "thought": {
+          "roles": ["context"],
+          "register": "nonfiction",
+          "missing": "Applies machine learning to protein design but does not state that it makes proteins with new functions or unnatural sequences designable."
+        }
+      },
+      "hazardNote": null,
+      "evidence": [
+        {
+          "source": "wang-2018-srep",
+          "locator": "Abstract",
+          "passage": "In this study, we applied the deep learning neural network approach to computational protein design for predicting the probability of 20 natural amino acids on each residue in a protein.",
+          "passageType": "quote",
+          "translation": null,
+          "sourceRole": "primary",
+          "support": "supports",
+          "note": "What the authors say they did."
+        },
+        {
+          "source": "wang-2018-srep",
+          "locator": "Abstract, last sentence",
+          "passage": "Results from this study may benefit further development of computational protein design methods.",
+          "passageType": "quote",
+          "translation": null,
+          "sourceRole": "primary",
+          "support": "supports",
+          "note": "The authors' stated contribution."
+        }
+      ]
+    },
+    {
+      "id": "aib-arg-p4-anishchenko-2020",
+      "group": "claims",
+      "strand": "Claims about AI and biology",
+      "subject": "aib-doc-hallucination-preprint-2020",
+      "predicate": "articulates_proposition",
+      "proposedPredicate": false,
+      "object": {
+        "kind": "entity",
+        "entityId": "aib-prop-ml-designs-new-proteins"
+      },
+      "statement": "The bioRxiv preprint \"De novo protein design by deep network hallucination\" (Anishchenko, Chidyausiku, Ovchinnikov, Pellock and Baker, v1 of 23 July 2020) states that deep networks trained to predict native protein structures can be inverted to design new proteins and should contribute to the de novo design of proteins with new functions.",
+      "time": {
+        "kind": "event",
+        "date": "2020-07-23",
+        "basis": "publication",
+        "note": "Date of bioRxiv v1, from the bioRxiv details API. The journal version (Nature, published online 1 December 2021) carries the same concluding statement in edited wording."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "The record documents what this text states, in its register; it is not evidence that the proposition is true and implies no influence on or from any other text. Read in the v1 abstract served by the bioRxiv API and in the abstract of the Nature version. The contribution to new functions is stated as an expectation (\"should contribute\"); the abstract reports new folds, not new functions. Earliest located for this proposition among the texts found by the searches in howWeSearched; not a claim that no earlier text exists.",
+      "extends": null,
+      "siblingLinks": [],
+      "attributes": {
+        "thought": {
+          "roles": ["earliest-located"],
+          "register": "nonfiction",
+          "qualifier": "An expectation for new functions, from a demonstration of new folded proteins."
+        }
+      },
+      "hazardNote": "The abstract describes the design and laboratory procedure; only its concluding sentences are cited and no method detail is paraphrased.",
+      "evidence": [
+        {
+          "source": "anishchenko-2020-biorxiv-api",
+          "locator": "v1 abstract (bioRxiv details API, abstract field), last sentence",
+          "passage": "such networks and methods should contribute, alongside traditional physically based models, to the de novo design of proteins with new functions.",
+          "passageType": "quote",
+          "translation": null,
+          "sourceRole": "primary",
+          "support": "supports",
+          "note": "Abstract text relayed by the bioRxiv details API's abstract field: the authors' own text, so primary; the journal expression was not read. The authors' stated expectation, in the preprint wording."
+        },
+        {
+          "source": "anishchenko-2021-nature",
+          "locator": "Abstract (Nature article page), last sentence",
+          "passage": "deep networks trained to predict native protein structures from their sequences can be inverted to design new proteins",
+          "passageType": "quote",
+          "translation": null,
+          "sourceRole": "primary",
+          "support": "supports",
+          "note": "The same conclusion in the journal version of 1 December 2021."
+        }
+      ]
+    },
+    {
+      "id": "aib-arg-p4-watson-2023",
+      "group": "claims",
+      "strand": "Claims about AI and biology",
+      "subject": "aib-doc-rfdiffusion-2023",
+      "predicate": "articulates_proposition",
+      "proposedPredicate": false,
+      "object": {
+        "kind": "entity",
+        "entityId": "aib-prop-ml-designs-new-proteins"
+      },
+      "statement": "Watson et al. (Nature, published online 11 July 2023) state that their deep-learning method RFdiffusion enables the design of diverse functional proteins from simple molecular specifications.",
+      "time": {
+        "kind": "event",
+        "date": "2023-07-11",
+        "basis": "publication",
+        "note": "Online publication date printed on the article page."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "The record documents what this text states, in its register; it is not evidence that the proposition is true and implies no influence on or from any other text. The authors' own report of their method. The `models` pass records what this paper says it contributes; this record is only its stance on the proposition.",
+      "extends": null,
+      "siblingLinks": [],
+      "attributes": {
+        "thought": {
+          "roles": ["articulation"],
+          "register": "nonfiction",
+          "qualifier": "Stated of the authors' own method."
+        }
+      },
+      "hazardNote": "The abstract lists design categories and an experimental structure; only the general concluding sentence and the opening sentence are cited.",
+      "evidence": [
+        {
+          "source": "watson-2023-nature",
+          "locator": "Abstract, last sentence",
+          "passage": "In a manner analogous to networks that produce images from user-specified inputs, RFdiffusion enables the design of diverse functional proteins from simple molecular specifications.",
+          "passageType": "quote",
+          "translation": null,
+          "sourceRole": "primary",
+          "support": "supports",
+          "note": "The authors' stated contribution."
+        },
+        {
+          "source": "watson-2023-nature",
+          "locator": "Abstract, first sentence",
+          "passage": "There has been considerable recent progress in designing new proteins using deep-learning methods",
+          "passageType": "quote",
+          "translation": null,
+          "sourceRole": "primary",
+          "support": "supports",
+          "note": "The authors' own account of earlier work, kept as a pointer for later searches."
+        }
+      ]
+    },
+    {
+      "id": "aib-arg-p4-esm3-2024",
+      "group": "claims",
+      "strand": "Claims about AI and biology",
+      "subject": "aib-doc-esm3-release-2024",
+      "predicate": "articulates_proposition",
+      "proposedPredicate": false,
+      "object": {
+        "kind": "entity",
+        "entityId": "aib-prop-ml-designs-new-proteins"
+      },
+      "statement": "EvolutionaryScale's ESM3 announcement (dated 25 June 2024) states that its language model generated a new fluorescent protein, esmGFP, with a sequence only 58% similar to the closest known fluorescent protein.",
+      "time": {
+        "kind": "event",
+        "date": "2024-06-25",
+        "basis": "announcement",
+        "note": "Date printed on the post; the wording is attested in the copy served on 2026-10-30, which carries a January 2025 update notice."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "The record documents what this text states, in its register; it is not evidence that the proposition is true and implies no influence on or from any other text. A company's statement about its own model; the estimate that the result is \"equivalent to simulating over 500 million years of evolution\" is the company's.",
+      "extends": null,
+      "siblingLinks": [],
+      "attributes": {
+        "thought": {
+          "roles": ["articulation"],
+          "register": "nonfiction",
+          "qualifier": "A company's statement of a sequence distant from known natural proteins with a known (fluorescent) function."
+        }
+      },
+      "hazardNote": "The post describes generation and screening steps; only its summary statements are cited.",
+      "evidence": [
+        {
+          "source": "esm3-release-post",
+          "locator": "Section on generating a new fluorescent protein",
+          "passage": "esmGFP, our new protein, has a sequence that is only 58% similar to the closest known fluorescent protein.",
+          "passageType": "quote",
+          "translation": null,
+          "sourceRole": "primary",
+          "support": "supports",
+          "note": "The company is the primary source for its own statement."
+        },
+        {
+          "source": "esm3-release-post",
+          "locator": "Same section",
+          "passage": "we estimate that this generation of a new fluorescent protein is equivalent to simulating over 500 million years of evolution.",
+          "passageType": "quote",
+          "translation": null,
+          "sourceRole": "primary",
+          "support": "supports",
+          "note": "The company's own estimate, attributed."
+        }
+      ]
+    },
+    {
+      "id": "aib-arg-p5-hood-galas-2003",
+      "group": "claims",
+      "strand": "Claims about AI and biology",
+      "subject": "aib-doc-hood-galas-2003",
+      "predicate": "bears_on_proposition",
+      "proposedPredicate": false,
+      "object": {
+        "kind": "entity",
+        "entityId": "aib-prop-biology-as-information-for-ai"
+      },
+      "statement": "Hood and Galas (Nature, 23 January 2003) state that the discovery of the structure of DNA engendered a new view of biology as an information science.",
+      "time": {
+        "kind": "event",
+        "date": "2003-01-23",
+        "basis": "publication",
+        "note": "Publication date printed on the article page."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "The record documents what this text states, in its register; it is not evidence that the proposition is true and implies no influence on or from any other text. Only the abstract was read.",
+      "extends": null,
+      "siblingLinks": [],
+      "attributes": {
+        "thought": {
+          "roles": ["context"],
+          "register": "nonfiction",
+          "missing": "No AI element: the information view is tied to DNA and genomics, not to AI as the means of reading or describing biology."
+        }
+      },
+      "hazardNote": null,
+      "evidence": [
+        {
+          "source": "hood-galas-2003-nature",
+          "locator": "Abstract",
+          "passage": "The discovery of the structure of DNA transformed biology profoundly, catalysing the sequencing of the human genome and engendering a new view of biology as an information science.",
+          "passageType": "quote",
+          "translation": null,
+          "sourceRole": "primary",
+          "support": "supports",
+          "note": "The authors' statement."
+        }
+      ]
+    },
+    {
+      "id": "aib-arg-p5-isomorphic-2021",
+      "group": "claims",
+      "strand": "Claims about AI and biology",
+      "subject": "aib-doc-iso-launch-2021",
+      "predicate": "articulates_proposition",
+      "proposedPredicate": false,
+      "object": {
+        "kind": "entity",
+        "entityId": "aib-prop-biology-as-information-for-ai"
+      },
+      "statement": "The announcement \"Introducing Isomorphic Labs\" (dated 1 November 2021) states that biology can be thought of as an information processing system and that, just as mathematics turned out to be the right description language for physics, biology may turn out to be the perfect type of regime for the application of AI.",
+      "time": {
+        "kind": "event",
+        "date": "2021-11-01",
+        "basis": "announcement",
+        "note": "Date printed on the page; the wording is attested in the copy served on 2026-10-30."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "The record documents what this text states, in its register; it is not evidence that the proposition is true and implies no influence on or from any other text. The writer, who uses \"I\", says they will serve as Isomorphic's CEO while remaining DeepMind CEO; the page as served prints no author name. The page also gives this view as the reason for the company's name. A company's founding statement. Earliest located for this proposition among the texts found by the searches in howWeSearched; not a claim that no earlier text exists.",
+      "extends": null,
+      "siblingLinks": [],
+      "attributes": {
+        "thought": {
+          "roles": ["earliest-located"],
+          "register": "nonfiction",
+          "qualifier": "Stated as a personal view (\"I think\") and a possibility (\"may\")."
+        }
+      },
+      "hazardNote": null,
+      "evidence": [
+        {
+          "source": "labs-iso-launch",
+          "locator": "Section \"An AI-first approach to drug discovery and biology\"",
+          "passage": "At its most fundamental level, I think biology can be thought of as an information processing system, albeit an extraordinarily complex and dynamic one.",
+          "passageType": "quote",
+          "translation": null,
+          "sourceRole": "primary",
+          "support": "supports",
+          "note": "The page is the primary source for its own statement."
+        },
+        {
+          "source": "labs-iso-launch",
+          "locator": "Same section",
+          "passage": "Paraphrase: the article compares mathematics as the description language for physics with biology, which it says may turn out to be the perfect type of regime for the application of AI.",
+          "passageType": "paraphrase",
+          "translation": null,
+          "sourceRole": "primary",
+          "support": "supports",
+          "note": "Joins the information view to AI. Converted to paraphrase by the integrator for the quotation budget."
+        }
+      ]
+    },
+    {
+      "id": "aib-arg-p5-esm3-2024",
+      "group": "claims",
+      "strand": "Claims about AI and biology",
+      "subject": "aib-doc-esm3-release-2024",
+      "predicate": "articulates_proposition",
+      "proposedPredicate": false,
+      "object": {
+        "kind": "entity",
+        "entityId": "aib-prop-biology-as-information-for-ai"
+      },
+      "statement": "EvolutionaryScale's ESM3 announcement (dated 25 June 2024) states that biology is written in a language not yet understood, and that learning to read and write in the code of life would make biology programmable.",
+      "time": {
+        "kind": "event",
+        "date": "2024-06-25",
+        "basis": "announcement",
+        "note": "Date printed on the post; the wording is attested in the copy served on 2026-10-30."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "The record documents what this text states, in its register; it is not evidence that the proposition is true and implies no influence on or from any other text. A company's statement introducing itself and its model; conditional (\"If we could\").",
+      "extends": null,
+      "siblingLinks": [],
+      "attributes": {
+        "thought": {
+          "roles": ["articulation"],
+          "register": "nonfiction",
+          "qualifier": "Conditional, in a company's announcement of its own model."
+        }
+      },
+      "hazardNote": null,
+      "evidence": [
+        {
+          "source": "esm3-release-post",
+          "locator": "Opening section",
+          "passage": "If we could learn to read and write in the code of life it would make biology programmable. Trial and error would be replaced by logic, and painstaking experiments by simulation.",
+          "passageType": "quote",
+          "translation": null,
+          "sourceRole": "primary",
+          "support": "supports",
+          "note": "The company is the primary source for its own statement."
+        },
+        {
+          "source": "esm3-release-post",
+          "locator": "Opening section",
+          "passage": "ESM3—a frontier language model for the life sciences that advances our ability to program and create with the code of life.",
+          "passageType": "quote",
+          "translation": null,
+          "sourceRole": "primary",
+          "support": "supports",
+          "note": "Names the model as the means."
+        }
+      ]
+    },
+    {
+      "id": "aib-arg-p6-jayatunga-2024",
+      "group": "claims",
+      "strand": "Claims about AI and biology",
+      "subject": "aib-doc-jayatunga-2024",
+      "predicate": "articulates_proposition",
+      "proposedPredicate": false,
+      "object": {
+        "kind": "entity",
+        "entityId": "aib-prop-ai-drugs-higher-trial-success"
+      },
+      "statement": "Jayatunga et al. (Drug Discovery Today, published online 30 April 2024) state that, in their analysis, AI-discovered molecules have an 80–90% success rate in phase I, substantially higher than historic industry averages, and a phase II success rate of about 40%, comparable to those averages, on a limited sample.",
+      "time": {
+        "kind": "event",
+        "date": "2024-04-30",
+        "basis": "publication",
+        "note": "Electronic publication date as given by Europe PMC."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "The record documents what this text states, in its register; it is not evidence that the proposition is true and implies no influence on or from any other text. Read in the Europe PMC record of the abstract only; the sample, the definition of \"AI-discovered\" and the comparison data were not read. The authors frame the result as early signs. Earliest located for this proposition among the texts found by the searches in howWeSearched; not a claim that no earlier text exists.",
+      "extends": null,
+      "siblingLinks": [],
+      "attributes": {
+        "thought": {
+          "roles": ["earliest-located"],
+          "register": "nonfiction",
+          "qualifier": "Phase I only; phase II stated as comparable."
+        }
+      },
+      "hazardNote": null,
+      "evidence": [
+        {
+          "source": "jayatunga-2024-epmc",
+          "locator": "Abstract (Europe PMC record, abstractText)",
+          "passage": "In Phase I we find AI-discovered molecules have an 80-90% success rate, substantially higher than historic industry averages.",
+          "passageType": "quote",
+          "translation": null,
+          "sourceRole": "primary",
+          "support": "supports",
+          "note": "Abstract text relayed by Europe PMC's record of the PubMed abstract: the authors' own text, so primary; the journal expression was not read. The authors' reported finding."
+        },
+        {
+          "source": "jayatunga-2024-epmc",
+          "locator": "Abstract (Europe PMC record, abstractText)",
+          "passage": "Paraphrase: in phase II the authors find a success rate of about 40%, on a limited sample, which they call comparable to historic industry averages.",
+          "passageType": "paraphrase",
+          "translation": null,
+          "sourceRole": "primary",
+          "support": "supports",
+          "note": "Abstract text relayed by Europe PMC's record of the PubMed abstract: the authors' own text, so primary; the journal expression was not read. Explicit paraphrase, to stay within the quotation budget of a short record; kept because it bounds the claim to phase I."
+        }
+      ]
+    },
+    {
+      "id": "aib-arg-p6-xu-2025",
+      "group": "claims",
+      "strand": "Claims about AI and biology",
+      "subject": "aib-doc-xu-2025",
+      "predicate": "bears_on_proposition",
+      "proposedPredicate": false,
+      "object": {
+        "kind": "entity",
+        "entityId": "aib-prop-ai-drugs-higher-trial-success"
+      },
+      "statement": "Xu et al. (Nature Medicine, published online 3 June 2025) state that few AI-discovered or AI-designed drugs have reached clinical trials, that AI-discovered drugs have experienced similar levels of phase 2 failure as non-AI-discovered drugs, and that none has so far progressed through phase 3.",
+      "time": {
+        "kind": "event",
+        "date": "2025-06-03",
+        "basis": "publication",
+        "note": "Online publication date printed on the article page."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "The record documents what this text states, in its register; it is not evidence that the proposition is true and implies no influence on or from any other text. The introduction of a sponsor-authored trial report, citing other literature (its references 20 and 21, not retrieved) for these statements.",
+      "extends": null,
+      "siblingLinks": [],
+      "attributes": {
+        "thought": {
+          "roles": ["context"],
+          "register": "nonfiction",
+          "missing": "Addresses phases 2 and 3 only; it neither states nor disputes a higher success rate in phase I."
+        }
+      },
+      "hazardNote": null,
+      "evidence": [
+        {
+          "source": "xu-2025-natmed",
+          "locator": "Introduction",
+          "passage": "AI-discovered drugs have experienced similar levels of phase 2 trial failure as non-AI-discovered drugs20,21, and none has so far progressed through phase 3 trials21.",
+          "passageType": "quote",
+          "translation": null,
+          "sourceRole": "primary",
+          "support": "supports",
+          "note": "The authors' summary of the literature they cite."
+        }
+      ]
+    },
+    {
+      "id": "aib-arg-p3-exscientia-2021",
+      "group": "claims",
+      "strand": "Claims about AI and biology",
+      "subject": "aib-doc-exscientia-prospectus-2021",
+      "predicate": "articulates_proposition",
+      "proposedPredicate": false,
+      "object": {
+        "kind": "entity",
+        "entityId": "aib-prop-ai-drug-candidate-in-trials"
+      },
+      "statement": "Exscientia’s IPO prospectus (30 September 2021) states that it began a Phase 1 trial of EXS21546 in December 2020 and that it “originated the first three AI-designed precision drug candidates to enter human clinical trials”.",
+      "time": {
+        "kind": "event",
+        "date": "2021-09-30",
+        "basis": "publication",
+        "note": "Dated by the prospectus; the trial start month (December 2020) is the company's statement within it."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "The record documents what this text states, in its register; it is not evidence that the proposition is true and implies no influence on or from any other text. The company’s own statement; no clinical-trial registry entry was retrieved. Added by the integrator from the companies pass’s evidence (record aib-co-exscientia-phase1-2021).",
+      "extends": null,
+      "siblingLinks": [],
+      "attributes": {
+        "thought": {
+          "roles": ["articulation"],
+          "register": "nonfiction",
+          "qualifier": "A prospectus statement by the issuer; the priority wording is the company’s and is quoted, not adopted."
+        }
+      },
+      "hazardNote": null,
+      "evidence": [
+        {
+          "source": "companies-exs-424b4",
+          "locator": "Business, \"Demonstrating the Impact of our AI\"",
+          "passage": "Among these is our most advanced internally developed drug candidate, EXS21546. We began the first Phase 1 clinical trial of this drug candidate in December 2020",
+          "passageType": "quote",
+          "translation": null,
+          "sourceRole": "primary",
+          "support": "supports",
+          "note": null
+        },
+        {
+          "source": "companies-exs-424b4",
+          "locator": "Business, \"Demonstrating the Impact of our AI\"",
+          "passage": "We originated the first three AI-designed precision drug candidates to enter human clinical trials.",
+          "passageType": "quote",
+          "translation": null,
+          "sourceRole": "primary",
+          "support": "context",
+          "note": "The company's priority claim, quoted and attributed; not adopted."
+        }
+      ]
+    },
+    {
+      "id": "aib-arg-p3-insilico-2026",
+      "group": "claims",
+      "strand": "Claims about AI and biology",
+      "subject": "aib-doc-insilico-rentosertib-ph3-initiation-2026",
+      "predicate": "articulates_proposition",
+      "proposedPredicate": false,
+      "object": {
+        "kind": "entity",
+        "entityId": "aib-prop-ai-drug-candidate-in-trials"
+      },
+      "statement": "Insilico Medicine’s announcement of 8 July 2026 states that rentosertib, which it says was discovered and developed with the support of its generative AI platform, had entered a Phase III clinical trial.",
+      "time": {
+        "kind": "event",
+        "date": "2026-07-08",
+        "basis": "announcement",
+        "note": "Date of the HKEXnews listing of the announcement."
+      },
+      "derivation": "explicit",
+      "resolution": "supported",
+      "qualification": "The record documents what this text states, in its register; it is not evidence that the proposition is true and implies no influence on or from any other text. The company’s own statement; no clinical-trial registry entry was retrieved. Added by the integrator from the companies pass’s evidence (record aib-co-insilico-rentosertib-phase3-initiation-2026).",
+      "extends": null,
+      "siblingLinks": [],
+      "attributes": {
+        "thought": {
+          "roles": ["articulation"],
+          "register": "nonfiction",
+          "qualifier": "A company announcement to the Hong Kong exchange; the phase is as stated."
+        }
+      },
+      "hazardNote": null,
+      "evidence": [
+        {
+          "source": "companies-insilico-ph3-init",
+          "locator": "first paragraph",
+          "passage": "Rentosertib (ISM001-055), independently discovered and developed by Insilico Medicine, has officially entered Phase III clinical trial (CTR20262475, NCT07687459)",
+          "passageType": "quote",
+          "translation": null,
+          "sourceRole": "primary",
+          "support": "supports",
+          "note": null
+        },
+        {
+          "source": "companies-insilico-ph3-init",
+          "locator": "About Rentosertib",
+          "passage": "discovered and developed with the support of Insilico Medicine’s proprietary generative AI platform, Pharma. AI.",
+          "passageType": "quote",
+          "translation": null,
+          "sourceRole": "primary",
+          "support": "supports",
+          "note": null
+        }
+      ]
+    }
+  ],
+  "omissions": [
+    {
+      "item": "Insilico Medicine's January 2023 release on the phase 1 results of INS018_055 (GlobeNewswire)",
+      "reason": "HTTP 403; the Nature Medicine 2025 trial report was used for Insilico instead."
+    },
+    {
+      "item": "Arnold (2023) and Mullard (2021) news bodies, and the eLife study by Karelina, Noh and Dror (2023) cited by Arnold",
+      "reason": "Paywalled or not retrieved; only standfirsts recorded."
+    },
+    {
+      "item": "Casini, \"In vivo, in vitro, in silicio: towards a virtual cell\" (Trends in Genetics, 1993); Schaff and Loew, \"The virtual cell\" (Pacific Symposium on Biocomputing, 1999)",
+      "reason": "Early uses of the name \"virtual cell\" for simulation, without an AI element; the 1993 item has no abstract and was not read. No earliest-located-term role was assigned, since the name's earliest use was not the object of a full search."
+    },
+    {
+      "item": "Isomorphic Labs' 2026 post on joining the Virtual Biology Initiative",
+      "reason": "Read; it concerns data for predictive AI models of biology but states no virtual-cell proposition in the readable text."
+    },
+    {
+      "item": "Statements on AI drug discovery by Recursion, insitro, Generate Biomedicines, XtalPi and BioMap",
+      "reason": "Left to the companies pass; P3 can take links to its records by id once its draft exists."
+    },
+    {
+      "item": "Third-party quotations printed on DeepMind's 2020 account (for example on accelerating drug discovery)",
+      "reason": "Relays of other speakers on a developer page; not recorded as the developer's stance."
+    }
+  ],
+  "retrievalFailures": [
+    {
+      "url": "http://web.archive.org/web/20201202003317/https://deepmind.com/blog/article/alphafold-a-solution-to-a-50-year-old-grand-challenge-in-biology",
+      "result": "HTTP 403",
+      "fallback": "Current page as served 2026-10-30; capture recorded as unchecked."
+    },
+    {
+      "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC11253030/fullTextXML",
+      "result": "HTTP 500",
+      "fallback": "Europe PMC core record (abstract)."
+    },
+    {
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11253030/",
+      "result": "HTTP 200 with a browser-check page (23 words)",
+      "fallback": "Europe PMC core record (abstract)."
+    },
+    {
+      "url": "https://doi.org/10.1016/j.drudis.2024.104009",
+      "result": "HTTP 200 with no readable text (1 word)",
+      "fallback": "Europe PMC core record (abstract)."
+    },
+    {
+      "url": "https://www.globenewswire.com/news-release/2023/01/10/2586249/31533/en/Insilico-Medicine-announces-positive-topline-results-of-the-New-Zealand-Phase-1-trial-of-INS018_055-an-AI-designed-drug-for-an-AI-discovered-target.html",
+      "result": "HTTP 403",
+      "fallback": "Xu et al., Nature Medicine 2025."
+    },
+    {
+      "url": "https://www.isomorphiclabs.com/articles/welcome-to-isomorphic-labs",
+      "result": "HTTP 404 (guessed address)",
+      "fallback": "/articles/introducing-isomorphic-labs."
+    },
+    {
+      "url": "https://arcinstitute.org/news/virtual-cell-challenge",
+      "result": "HTTP 404 (guessed address)",
+      "fallback": "Europe PMC record of Roohani et al., Cell 2025."
+    }
+  ],
+  "openQuestions": [
+    {
+      "question": "P1's criterion is not limited to AI, so its earliest located text (Blundell et al. 1987) is knowledge-based modelling. Keep the criterion broad, or narrow it to machine-learning predictions?",
+      "recommended": "Keep it broad: the expectation that predicted structures aid drug design predates machine-learning structure prediction, which is what the record shows; the qualification says the 1987 method is not machine learning."
+    },
+    {
+      "question": "Should records resting only on a Europe PMC abstract record (five texts) be admitted, or held until the article itself is read?",
+      "recommended": "Admit as abstract-level records with the source labelled as the Europe PMC record, and reread at the publisher where access allows; the earliest-located role for P6 (Jayatunga et al.) should be rechecked against the article before admission."
+    },
+    {
+      "question": "Ahlmann-Eltze et al. (2025) are recorded as contesting P2 (present-tense half only). Is \"contests\" right, or should it be context?",
+      "recommended": "Contests, with the qualifier as written: the paper disputes, for the tested models, the capability the criterion states in its present tense; the cross-family check should look at this record."
+    },
+    {
+      "question": "The pages of Isomorphic Labs (2021) and EvolutionaryScale (2024) name or omit authors differently from the labs pass's possible records of the same pages. Who owns these documents?",
+      "recommended": "The labs pass, if it defines them; the integrator should merge the document ids (aib-doc-isomorphic-intro-2021, aib-doc-evolutionaryscale-esm3-post-2024) into its ids."
+    }
+  ],
+  "notes": "Records: 26 across six propositions (P1 8, P2 5, P3 3, P4 5, P5 3, P6 2). Stances: 12 articulates (6 of them earliest located), 1 contests, 13 bears on (context). 24 sources retrieved and quoted; about 20 further retrievals were searches or listings used for discovery. Documents used from other passes or the dataset: alphafold-account (dataset; source datasetSource source-atlas-alphafold-account, quotes new to the dataset), aib-doc-rfdiffusion-2023 (the `models` pass id named in the brief; not redefined here). Documents defined here that other passes may also define: aib-doc-isomorphic-intro-2021 and aib-doc-evolutionaryscale-esm3-post-2024 (labs), aib-doc-sumitomo-dsp1181-2020 and aib-doc-xu-2025 (companies, if it records the DSP-1181 release or Insilico's trial). The companies draft did not exist when this pass began, so P3 records are on this pass's own sources. At the end of the pass it held company statements that bear on P3 (and on P6 for later phases): aib-co-generate-gb0895-phase3-2026 (Generate Biomedicines, Phase 3 of GB-0895), aib-co-recursion-clinical-programs-2021 (Recursion, clinical-stage programmes, no candidate named as AI-discovered in the statement) and the Insilico Medicine HKEXnews announcements aib-doc-insilico-rentosertib-ph3-initiation-2026 and aib-doc-insilico-rentosertib-ph3-dosing-2026. These were not read by this pass and no P3 record was built on them; the integrator can add articulates_proposition records on those documents, using the companies pass's quotes, where a statement names a candidate as AI-discovered or AI-designed. Xu et al. (2025) state that no AI-discovered drug had progressed through phase 3; a phase 3 start in 2026 does not contradict that statement, which is dated. aib-doc-bunne-2024 uses the sibling id `arxiv` (ai-bio-pack) as publisher. aib-sumitomo-pharma is a new entity to reconcile with the companies pass. The source key deepmind-casp14-account-2026 points to the same expression as the dataset source; its quote budget counts the dataset's quotes. No record states biosecurity propositions; three records carry a hazardNote."
+}

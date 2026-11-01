@@ -14,6 +14,17 @@ import archiveAdmissions from '../../review/archive-admissions-before-2026-10-26
 import authorPersons from '../../review/author-persons-before-2026-10-27.json';
 import frameworksToLaw1 from '../../review/frameworks-to-law-1-before-2026-10-28.json';
 import frameworksToLaw2 from '../../review/frameworks-to-law-2-before-2026-10-28.json';
+import cpoAdmission1 from '../../review/cpo-admission-1-before-2026-10-30.json';
+import aiBio1 from '../../review/ai-bio-admission-1-before-2026-10-30.json';
+import aiBio2 from '../../review/ai-bio-admission-2-before-2026-10-30.json';
+import peopleAdmission from '../../review/people-admission-before-2026-10-31.json';
+import keyPapers1 from '../../review/key-papers-admission-1-before-2026-10-31.json';
+import keyPapers2 from '../../review/key-papers-admission-2-before-2026-10-31.json';
+import keyPapers3 from '../../review/key-papers-admission-3-before-2026-10-31.json';
+import cpoAdmission2 from '../../review/cpo-admission-2-before-2026-10-30.json';
+import technicalHistory1 from '../../review/technical-history-admission-1-before-2026-10-31.json';
+import technicalHistory2 from '../../review/technical-history-admission-2-before-2026-10-31.json';
+import riskDebate from '../../review/risk-debate-admission-before-2026-10-31.json';
 const data = repository.data;
 // Records of the 2026-10-17 lab genealogy, left out of the earlier counts.
 // The genealogy records, including the five admitted on 2026-10-26, and the
@@ -24,10 +35,35 @@ const fromGenealogy = new Set([
   ...authorPersons.added.claims,
   ...frameworksToLaw1.added.claims,
   ...frameworksToLaw2.added.claims,
+  ...cpoAdmission1.added.claims,
+  ...aiBio1.added.claims,
+  ...aiBio2.added.claims,
+  ...keyPapers1.added.claims,
+  ...keyPapers2.added.claims,
+  ...keyPapers3.added.claims,
+  ...cpoAdmission2.added.claims,
+  ...peopleAdmission.added.claims,
+  ...technicalHistory1.added.claims,
+  ...technicalHistory2.added.claims,
+  ...riskDebate.added.claims,
 ]);
 const earlier = <T extends { id: string }>(claims: T[]) =>
   claims.filter((c) => !fromGenealogy.has(c.id));
 const path = researchPath(data, 'anthropic')!;
+// The 2026-10-31 key papers admission adds authorship that links more papers
+// to the institutions' people, which brings their earlier records into the
+// dossiers; the frozen totals below are taken on the records before it.
+const keyPaperRows = new Set(
+  [keyPapers1, keyPapers2, keyPapers3].flatMap((s) => [
+    ...s.added.claims,
+    ...s.added.entities,
+  ]),
+);
+const beforeKeyPapers = {
+  ...data,
+  claims: data.claims.filter((c) => !keyPaperRows.has(c.id)),
+  entities: data.entities.filter((e) => !keyPaperRows.has(e.id)),
+};
 const principalIds = [
   'dario-cofounded-anthropic-2021',
   'daniela-cofounded-anthropic-2021',
@@ -102,8 +138,8 @@ describe('branched reading projection', () => {
     // and the 2026-10-28 frameworks-to-law admission its links from RSP
     // editions; both are excluded here.
     expect(
-      path.totalClaims! -
-        institutionalDossier(data, 'anthropic')!.claims.filter((c) =>
+      researchPath(beforeKeyPapers, 'anthropic')!.totalClaims! -
+        institutionalDossier(beforeKeyPapers, 'anthropic')!.claims.filter((c) =>
           fromGenealogy.has(c.id),
         ).length,
     ).toBe(156);
@@ -227,7 +263,7 @@ describe('branched reading projection', () => {
     }
   });
   it('keeps OpenAI reusable without publishing a second selection', () => {
-    const openai = institutionalDossier(data, 'openai')!;
+    const openai = institutionalDossier(beforeKeyPapers, 'openai')!;
     // 158 before week 4b, plus the Frontier Governance Framework's quoted
     // designation as OpenAI's framework under California SB 53, plus seven
     // week 4c records naming the OpenAI umbrella identity (the 2019 and 2025
@@ -251,12 +287,12 @@ describe('branched reading projection', () => {
     ).toHaveLength(22);
     expect(
       openai.sections.ideas.find((g) => g.id === 'human-preferences-paper')
-        ?.connectionClaims?.[0].id,
+        ?.connections?.[0].claims[0].id,
     ).toBe('dario-openai-vp-2020');
     expect(
       openai.sections.ideas
         .find((g) => g.id === 'weak-strong-paper')
-        ?.connectionClaims?.map((c) => c.id),
+        ?.connections?.[0].claims.map((c) => c.id),
     ).toEqual(['lineage-ii-openai-published-weak']);
     const fixture = {
       ...researchPaths[0],

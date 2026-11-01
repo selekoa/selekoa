@@ -45,7 +45,7 @@ describe('personnel and institutional history', () => {
   });
   it('keeps a sourced interval after its end in cumulative history, without making it a current role', () => {
     const id = 'ng-brain-lead-2011-2012';
-    expect(timeLabel(claim(id))).toBe('2011 → 2012');
+    expect(timeLabel(claim(id), repository.data)).toBe('2011 → 2012');
     for (const [year, present] of [
       [2010, false],
       [2011, true],
