@@ -1,6 +1,9 @@
 import type { PropositionsCollection } from '../domain/propositions';
 import { economicsFrame as frame } from './proposition-frames';
 
+/** The maintainer's decisions of 2026-11-02 on the archive retrieval of held sources. */
+const archiveApply = '2026-11-02';
+
 /** The maintainer's decisions of 2026-11-02 on the earliest-located re-check (decisions 1 to 4). */
 const recheckDecisions = '2026-11-02';
 
@@ -70,6 +73,7 @@ export const economicsOfMachineIntelligence: PropositionsCollection = {
       'A passage engages a premise when its section, dialogue turn or message gives a reason against that premise. Otherwise it is recorded as stating the contrary.',
       'Results from formal models are recorded with their conditions. Model scenarios counted as articulating M05 are labelled as such and shown only with their context (maintainer decision of 2026-10-11). Estimates under G09 are recorded one per text and holder, as worded, and are never converted to a common threshold.',
       `Fresh-context audits by Claude models re-read every passage. Checks by an OpenAI GPT-6 model then re-examined 49 of 65 passages of the explosive-growth strand and 62 passages and four Finnish texts of the mainstream strand. Correction passes applied their findings on ${growthChecked} and ${mainstreamChecked}; for the mainstream strand the maintainer accepted every final disagreement.`,
+      'An archive retrieval of 2026-11-02 by an OpenAI model read Hanson’s article of 1998 in its capture of 28 January 1999, whose bytes match the hash its source records, and gave the passage on bottlenecks verbatim. The record admitted from it quotes that passage; the session that applied it could not reach the archive and did not retrieve it again.',
       'The records were admitted on 2026-10-14 from two research packs. One quotation was shortened to keep it within 50 words; its wording is unchanged.',
       'On 2026-10-25 a same-family fresh-context machine check re-examined every tier and every earliest located role of the first two strands, and a blind cross-family machine check re-examined 19 of its items against the recorded captures and the hearing scans. The maintainer decided their disagreements the same day: one text was re-tiered, six records were added, five earliest located roles moved and one was withheld. In that correction pass web.archive.org refused connections, so passages read only in archive captures rest on the GPT check.',
       'For the strand on superintelligence and existential risk, an OpenAI GPT-6 model checked all 119 passages blind on 2026-10-15 and found every quotation matching. Its 22 disagreements on classification were decided on the evidence the same day, and the maintainer decided on 2026-10-15 how E05 is read. The 20 passages read in Internet Archive captures could not be read again at admission, because the archive refused connections; they rest on that check, which retrieved the same captures. The strand was admitted on 2026-10-16. Three passages were held back to keep within the quotation limit for Hanson’s 1998 comment, and one quotation was shortened to 50 words with its wording unchanged.',
@@ -352,6 +356,18 @@ export const economicsOfMachineIntelligence: PropositionsCollection = {
         'ec-m09-agrawal-gans-goldfarb-2019-economics-of-ai-introduction-a',
       ],
       recordedAt: recheckDecisions,
+    },
+    {
+      propositionId: 'unautomated-tasks-bottleneck-growth',
+      replaced:
+        'No earliest located headline: under re-check from 2026-11-02. Before that, Nordhaus’s paper of September 2015 (wording attested August 2016) was headlined.',
+      reason:
+        'Moved on 2026-11-02 to Hanson’s “Is a Singularity Just Around the Corner?” (June 1998; wording attested 28 January 1999), tier 1, by the maintainer’s decision of 2026-11-02 on the cross-family re-check (role 132), once an archive retrieval of 2026-11-02 gave the passage from the capture. The text meets the criterion and is dated before Nordhaus’s paper. The record was admitted on this proposition with that passage.',
+      claimIds: [
+        'ec-g04-hanson-1998-is-a-singularity-just-around-the-corner-a',
+        'ec-g04-nordhaus-2015-economic-singularity-a',
+      ],
+      recordedAt: archiveApply,
     },
   ],
   limits: [

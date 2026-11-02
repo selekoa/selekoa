@@ -25,6 +25,8 @@ import aiBio1 from '../../review/ai-bio-admission-1-before-2026-10-30.json';
 import aiBio2 from '../../review/ai-bio-admission-2-before-2026-10-30.json';
 import peopleAdmission from '../../review/people-admission-before-2026-10-31.json';
 import auditFollowups from '../../review/audit-followups-before-2026-11-02.json';
+import auditSampleFixes from '../../review/audit-sample-fixes-before-2026-11-02.json';
+import archiveFetchApply from '../../review/archive-fetch-apply-before-2026-11-02.json';
 import recheckDecisions from '../../review/recheck-decisions-before-2026-11-02.json';
 import prelaunchFixes from '../../review/prelaunch-fixes-before-2026-11-02.json';
 import labGenealogy2 from '../../review/lab-genealogy-2-admission-before-2026-11-01.json';
@@ -343,6 +345,8 @@ describe('governance version history', () => {
         ...aiBio2.added.claims,
         ...peopleAdmission.added.claims,
         ...auditFollowups.added.claims,
+        ...auditSampleFixes.added.claims,
+        ...archiveFetchApply.added.claims,
         ...recheckDecisions.added.claims,
         ...prelaunchFixes.added.claims,
         ...labGenealogy2.added.claims,

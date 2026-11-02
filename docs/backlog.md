@@ -287,17 +287,11 @@ it needs a schema change (minor).
     adjudication (`review/recheck-apply-2026-11-02.md`) moved 3. The
     maintainer's decisions 1 to 4 of 2026-11-02
     (`review/recheck-decisions-2026-11-02.md`) dropped 12 name headlines as
-    ordinary phrases and moved 31 to newly admitted records. **27 remain
-    under re-check**:
-    - 9 agreed moves whose held text is an archive capture this cloud session
-      could not retrieve: roles 55, 70 (Drexler 1986, capture of 1997), 89,
-      119 (“Staring into the Singularity”, capture of 2000), 110, 113, 122,
-      125 (Butler 1863; Papers Past also refuses scripted requests), 132
-      (Hanson 1998, capture of 1999). Next: a retrieval of the five captures
-      (Codex, which can reach the archive), then the same admission. For
-      Butler, choose at that point between widening machine succession to
-      1863 (decision 3) and marking the letter an antecedent; the period
-      stays 1979–2026 until then (S · Codex, then Claude);
+    ordinary phrases and moved 31 to newly admitted records. The 9 moves held
+    for the archive (roles 55, 70, 89, 110, 113, 119, 122, 125, 132) were
+    admitted on 2026-11-02 from Codex's archive retrieval
+    (`review/archive-fetch-apply-2026-11-02.md`); machine succession now runs
+    from 1863. **18 remain under re-check**:
     - 1 agreed move blocked by the quotation limit: role 106 (SL4 message of
       2001-04-12, 212 words, its 21 quotable words already used). Needs a
       decision: a paraphrase-only record, or freeing a quoted passage
@@ -316,17 +310,19 @@ it needs a schema change (minor).
   - PA-19 (backlog by decision): admit "independent director" as a board role
     in the OpenAI control collection, version 3, and add the November 2023
     departure records (Toner, McCauley, Hoffman, Zilis, Hurd, Karnofsky).
-  - PA-22 (backlog by decision): re-read the 2026-09-17 capture of Jan Leike's
-    biography; if it already said "until the beginning of 2026", correct
-    `leike-anthropic-alignment-science` under its ID. Archive read.
   - PA-27 (backlog by decision): record RSP v1.0's "Autonomous AI research"
     passage (a provision record) in the next framework pack, with a
     cross-family check.
   - PA-28 (backlog by decision): record xAI's Risk Management Framework of
     2025-08-20 as its first edition, or reword the not-applicable reason.
-  - PA-29 (held): add a `founding_stated` record for xAI from its own primary
-    source. x.ai refused this container (403) and web.archive.org reset the
-    connection on 2026-11-02. Archive read (Codex).
+  - xAI launch roster (follow-up of PA-29): the 2023-07-12 capture of x.ai
+    that now supports `lg-xai-founding-stated-2023` also carries the launch
+    team list, while 13 roster and launch records (`musk-launched-xai-2023`,
+    the `*-xai-team-2023` records, `lg-mx-*-xai-team-2023`,
+    `lg-gs-hendrycks-xai-adviser-2023`) rest only on Ars Technica and Axios
+    (`pnpm audit:consistency`, `secondary-only-actor-source-same-day`).
+    Add the capture's roster passages as primary evidence. Archive read
+    (S · Codex, then Claude).
   - PA-34 (backlog by decision): `power.technology` on
     `cpo-pw-google-constellation-2700mw-supply` needs a schema decision: a
     "not stated" value, or drop the attribute.
@@ -365,6 +361,27 @@ it needs a schema change (minor).
   - PA-54: the question as H1 on one-question comparison pages.
   - PA-55: drop the slug in the AI-in-science group heading ("biology ·
     Biology").
+
+- **D28. Cross-family audit sample: open items** (S each · decision, then
+  Claude or Codex). The blind sample of 2026-11-02 (120 claims; 4 material
+  errors, 13 minor slips) was applied in v0.26.1
+  ([record](../review/audit-sample-fixes-2026-11-02.md)), except:
+  - Item 22, `lg-cn-tang-jie-zhipu-cofounder`: the KEG/GLM account was not
+    located in the cited prospectus pages, but the pack matched its anchor
+    on 2026-10-15. Re-read the prospectus (Codex), then keep or withdraw the
+    second evidence item and the qualification's KEG/GLM sentences.
+  - Item 66, Natural Questions paper: July 2019 is unsupported by the cited
+    expression (ACL month empty; Crossref print month November 2019), and a
+    record citing it is dated January 2019. Settle the work's earliest
+    expression once for all ten records of the paper.
+  - Item 117 follow-up: Y08 has no earliest located contesting text. Recheck
+    the bounded Y08 candidate sequence before setting one.
+  - The sample certifies no unsampled record. A Codex sweep of absence
+    claims ("does not", "gives no"), the kind of error in items 80 and 119,
+    is running on branch `codex/absence-claims-sweep`.
+
+  Source: `review/cross-family-audit-sample-2026-11-02.md`;
+  `review/audit-sample-fixes-2026-11-02.md` § Held.
 
 ## 3. Interface follow-ups
 

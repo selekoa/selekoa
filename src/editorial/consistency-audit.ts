@@ -227,6 +227,7 @@ export const keptStanceIds = [
   'yk-y24-extropians-2000-09-29-yudkowsky-6080-a',
   'yk-y22-lw-2008-fighting-a-rearguard-action-against-the-b',
   'yk-y30-lw-2008-that-tiny-note-of-discord-b',
+  'yk-y08-extropians-1999-01-06-yudkowsky-0160-c',
 ];
 /** Lower severity when the sentence attributes the wording to a source. */
 const attribution =

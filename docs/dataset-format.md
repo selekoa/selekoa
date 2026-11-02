@@ -178,7 +178,7 @@ Collection IDs are written `<kind>/<id>`, such as `control/openai`, matching the
 address in the application.
 
 An ID is stable once a record is merged to the main dataset, and it is never reused for
-a different record. An ID describes nothing: five proposition IDs end in a stance letter or
+a different record. An ID describes nothing: six proposition IDs end in a stance letter or
 word that the record no longer has after a later correction (listed in
 `docs/ontology.md`, decision C4 of 2026-10-29), and the record's predicate, not its ID,
 gives its stance. A correction that keeps a claim's proposition keeps its ID; the

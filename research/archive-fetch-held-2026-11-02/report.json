@@ -1,0 +1,1148 @@
+{
+  "summary": [
+    {
+      "item": "Drexler",
+      "role": "55",
+      "capture_used": "https://web.archive.org/web/19970709112434id_/http://www.foresight.org:80/EOC/EOC_Chapter_11.html",
+      "status": 200,
+      "passage_found": "yes"
+    },
+    {
+      "item": "Drexler",
+      "role": "70",
+      "capture_used": "https://web.archive.org/web/19970709112434id_/http://www.foresight.org:80/EOC/EOC_Chapter_11.html",
+      "status": 200,
+      "passage_found": "yes"
+    },
+    {
+      "item": "Yudkowsky",
+      "role": "89",
+      "capture_used": "https://web.archive.org/web/20001204213100id_/http://sysopmind.com:80/singularity.html",
+      "status": 200,
+      "passage_found": "yes"
+    },
+    {
+      "item": "Yudkowsky",
+      "role": "119",
+      "capture_used": "https://web.archive.org/web/20001204213100id_/http://sysopmind.com:80/singularity.html",
+      "status": 200,
+      "passage_found": "yes"
+    },
+    {
+      "item": "Butler",
+      "role": "110",
+      "capture_used": "https://web.archive.org/web/20260826113039id_/https://paperspast.natlib.govt.nz/newspapers/CHP18630613.2.4",
+      "status": 200,
+      "passage_found": "yes"
+    },
+    {
+      "item": "Butler",
+      "role": "113",
+      "capture_used": "https://web.archive.org/web/20260826113039id_/https://paperspast.natlib.govt.nz/newspapers/CHP18630613.2.4",
+      "status": 200,
+      "passage_found": "yes"
+    },
+    {
+      "item": "Butler",
+      "role": "122",
+      "capture_used": "https://web.archive.org/web/20260826113039id_/https://paperspast.natlib.govt.nz/newspapers/CHP18630613.2.4",
+      "status": 200,
+      "passage_found": "yes"
+    },
+    {
+      "item": "Butler",
+      "role": "125",
+      "capture_used": "https://web.archive.org/web/20260826113039id_/https://paperspast.natlib.govt.nz/newspapers/CHP18630613.2.4",
+      "status": 200,
+      "passage_found": "yes"
+    },
+    {
+      "item": "Hanson",
+      "role": "132",
+      "capture_used": "https://web.archive.org/web/19990128001813id_/http://hanson.berkeley.edu/fastgrow.html",
+      "status": 200,
+      "passage_found": "yes"
+    },
+    {
+      "item": "Land W07 — Pythia Unbound",
+      "role": "W07 — Pythia Unbound",
+      "capture_used": "https://web.archive.org/web/20130914051121id_/http://www.xenosystems.net/pythia-unbound/",
+      "status": 200,
+      "passage_found": "yes"
+    },
+    {
+      "item": "Land W07 — Against Orthogonality",
+      "role": "W07 — Against Orthogonality",
+      "capture_used": "https://web.archive.org/web/20131028060133id_/http://www.xenosystems.net/against-orthogonality/",
+      "status": 200,
+      "passage_found": "yes"
+    },
+    {
+      "item": "Land W07 — Stupid Monsters",
+      "role": "W07 — Stupid Monsters",
+      "capture_used": "https://web.archive.org/web/20141013052107id_/http://www.xenosystems.net/stupid-monsters/",
+      "status": 200,
+      "passage_found": "yes"
+    },
+    {
+      "item": "Land W07 — Will-to-Think",
+      "role": "W07 — Will-to-Think",
+      "capture_used": "https://web.archive.org/web/20140917022211id_/http://www.xenosystems.net:80/will-to-think/",
+      "status": 200,
+      "passage_found": "yes"
+    },
+    {
+      "item": "PA-29",
+      "role": "PA-29",
+      "capture_used": "https://web.archive.org/web/20230712155404id_/https://x.ai/",
+      "status": 200,
+      "passage_found": "yes"
+    },
+    {
+      "item": "PA-22",
+      "role": "PA-22 (cited record)",
+      "capture_used": "https://web.archive.org/web/20260917114120id_/https://jan.leike.name/",
+      "status": 200,
+      "passage_found": "yes"
+    },
+    {
+      "item": "PA-22 — Schulman name/date check",
+      "role": "PA-22 (prompt-name cross-check)",
+      "capture_used": "https://web.archive.org/web/20260913103252id_/http://joschu.net/",
+      "status": 200,
+      "passage_found": "yes"
+    }
+  ],
+  "task": "Archived held-source retrieval and quotation check",
+  "check_date": "2026-11-02",
+  "base_commit": "cae26ec",
+  "branch": "codex/archive-fetch-held",
+  "scope": "Retrieval only. No admission, data, code, collection headlines or review decisions changed.",
+  "method": {
+    "retrieval": "Direct curl raw replay (id_), sequential retrievals with at least 5 seconds between archive request starts; one preliminary auto-followed image redirect exception is recorded under Butler. Subsequent redirects were manually paced. No HTTP 429 occurred; a 429 would require a 5-minute backoff.",
+    "hash": "SHA-256 of raw response-body bytes returned by curl, after HTTP headers are removed and before content decoding or HTML normalization. Gzip bodies are hashed compressed; encoding is recorded.",
+    "passage_check": "Decode HTML character references, remove markup, and collapse layout whitespace only. Preserve words, spelling, case and punctuation. Noncontiguous excerpts are separate passage spans.",
+    "date_rule": "Work/publication, page posting or update, capture and retrieval dates remain distinct; capture attests the retrieved wording, not earlier printed wording.",
+    "privacy": "Only document-identifying metadata and requested passages are reported; no contact details or unrelated personal information.",
+    "resume": "Read completed groups and remaining_groups before resuming. Do not repeat completed fetches unless a recorded verification issue requires it."
+  },
+  "groups": [
+    {
+      "item": "Drexler",
+      "title": "Engines of Creation, chapter 11: Engines of Destruction",
+      "document_identity": {
+        "named_document": true,
+        "title_as_printed": "ENGINES OF DESTRUCTION (Chapter 11)",
+        "html_title": "Engines of Creation - K. Eric Drexler : Chapter 11",
+        "date_as_printed": "Copyright 1986; Last updated 1April97.",
+        "notes": "The footer establishes a 1986 copyright and a 1997-04-01 page update. This retrieval does not compare the 1986 print edition; do not backdate this wording to it."
+      },
+      "capture_url": "https://web.archive.org/web/19970709112434id_/http://www.foresight.org:80/EOC/EOC_Chapter_11.html",
+      "capture_timestamp": "19970709112434",
+      "http_status": 200,
+      "sha256": "a9d3c80e17c988ebb7202c73f976cfc643e1a87a5093751f17309519eb85cc17",
+      "raw_bytes": 52821,
+      "retrieved_at": "2026-11-02T12:43:24.512Z",
+      "dates": [
+        {
+          "value": "1997-07-09",
+          "kind": "capture",
+          "basis": "Raw replay Memento-Datetime: Wed, 09 Jul 1997 11:24:34 GMT. Attests this web-edition wording."
+        },
+        {
+          "value": "1997-04-01",
+          "kind": "page_update",
+          "basis": "Footer: Last updated 1April97."
+        },
+        {
+          "value": "1986",
+          "kind": "copyright",
+          "basis": "Chapter footer copyright notice; existing dataset gives 1986 publication, not independently established from a printed edition here."
+        }
+      ],
+      "roles": [
+        {
+          "role": "55",
+          "proposition": "R09",
+          "source_id": "source-eoc-1997-chapter-11",
+          "capture_url": "https://web.archive.org/web/19970709112434id_/http://www.foresight.org:80/EOC/EOC_Chapter_11.html",
+          "capture_timestamp": "19970709112434",
+          "http_status": 200,
+          "sha256": "a9d3c80e17c988ebb7202c73f976cfc643e1a87a5093751f17309519eb85cc17",
+          "passage_found": true,
+          "locator": "Engines of Power (#section02of05), paragraph beginning “But with advanced technology”, final sentence",
+          "exact_passage": "The combination of nanotechnology and advanced AI will make possible intelligent, effective robots; with such robots, a state could prosper while discarding anyone, or even (in principle) everyone.",
+          "passage_spans": [
+            {
+              "locator": "Engines of Power (#section02of05), paragraph beginning “But with advanced technology”, final sentence",
+              "text": "The combination of nanotechnology and advanced AI will make possible intelligent, effective robots; with such robots, a state could prosper while discarding anyone, or even (in principle) everyone."
+            }
+          ],
+          "date": {
+            "value": "1997-07-09",
+            "kind": "capture",
+            "basis": "Raw replay Memento-Datetime: Wed, 09 Jul 1997 11:24:34 GMT. Attests this web-edition wording."
+          },
+          "notes": [
+            "Conditional state use of AI together with nanotechnology; the following paragraphs explicitly discuss population elimination. Does not isolate AI as the sole enabling technology.",
+            "The candidate locator “The Threat from the State” is not a heading in this capture; the heading is “Engines of Power”."
+          ],
+          "verbatim_checked": true
+        },
+        {
+          "role": "70",
+          "proposition": "R07",
+          "source_id": "source-eoc-1997-chapter-11",
+          "capture_url": "https://web.archive.org/web/19970709112434id_/http://www.foresight.org:80/EOC/EOC_Chapter_11.html",
+          "capture_timestamp": "19970709112434",
+          "http_status": 200,
+          "sha256": "a9d3c80e17c988ebb7202c73f976cfc643e1a87a5093751f17309519eb85cc17",
+          "passage_found": true,
+          "locator": "Introduction, paragraph beginning “In fact, authors”, sentence 2, clause after “but”; The Threat from the Machines (#section01of05), paragraph beginning “Knowledge can bring power”, sentence 2",
+          "exact_passage": "more fundamental than any of them is the survival of life and liberty. […] Depending on their natures and their goals, advanced AI systems might accumulate enough knowledge and power to displace us, if we don't prepare properly.",
+          "passage_spans": [
+            {
+              "locator": "Introduction, paragraph beginning “In fact, authors”, sentence 2, clause after “but”",
+              "text": "more fundamental than any of them is the survival of life and liberty."
+            },
+            {
+              "locator": "The Threat from the Machines (#section01of05), paragraph beginning “Knowledge can bring power”, sentence 2",
+              "text": "Depending on their natures and their goals, advanced AI systems might accumulate enough knowledge and power to displace us, if we don't prepare properly."
+            }
+          ],
+          "date": {
+            "value": "1997-07-09",
+            "kind": "capture",
+            "basis": "Raw replay Memento-Datetime: Wed, 09 Jul 1997 11:24:34 GMT. Attests this web-edition wording."
+          },
+          "notes": [
+            "The two separately located spans establish priority and the conditional AI displacement threat. The text does not assign a probability or equate AI displacement with the separate replicator-extinction scenario."
+          ],
+          "verbatim_checked": true
+        }
+      ]
+    },
+    {
+      "item": "Yudkowsky",
+      "title": "Staring into the Singularity 1.2.1",
+      "document_identity": {
+        "named_document": true,
+        "title_as_printed": "Staring into the Singularity 1.2.1",
+        "date_as_printed": "Created: 11/18/1996; Updated: 08/31/2000",
+        "notes": "The displayed creation date does not date the passages to 1996. Version 1.2.1 is attested by the December 2000 capture; the page states an August 2000 update."
+      },
+      "capture_url": "https://web.archive.org/web/20001204213100id_/http://sysopmind.com:80/singularity.html",
+      "capture_timestamp": "20001204213100",
+      "http_status": 200,
+      "sha256": "a883c7d611f7d6f5d3b64d6901e2086d4b33b3df9621927da6d70789a7302316",
+      "raw_bytes": 94028,
+      "retrieved_at": "2026-11-02T12:47:15.848Z",
+      "dates": [
+        {
+          "value": "2000-12-04",
+          "kind": "capture",
+          "basis": "Memento-Datetime: Mon, 04 Dec 2000 21:31:00 GMT; attests version 1.2.1 wording."
+        },
+        {
+          "value": "2000-08-31",
+          "kind": "page_update",
+          "basis": "Displayed Updated: 08/31/2000."
+        },
+        {
+          "value": "1996-11-18",
+          "kind": "claimed_creation",
+          "basis": "Displayed Created: 11/18/1996; does not authenticate these revised passages to that day."
+        }
+      ],
+      "roles": [
+        {
+          "role": "89",
+          "proposition": "Y13",
+          "passage_spans": [
+            {
+              "locator": "3: Sooner Than You Think, final paragraph, sentence after the Michael Butler quotation",
+              "text": "The most we can say about 2035 is that it seems like a reasonable upper bound, given the current rate of progress. The lower bound? Thirty seconds."
+            }
+          ],
+          "notes": [
+            "Contests a secure decades-long lower bound, rather than articulating the proposition that risks can wait. The same paragraph rejects waiting; its recommendation aims at bringing about the Singularity and does not express the later safety position."
+          ],
+          "source_id": "source-sits-2000-capture",
+          "capture_url": "https://web.archive.org/web/20001204213100id_/http://sysopmind.com:80/singularity.html",
+          "capture_timestamp": "20001204213100",
+          "http_status": 200,
+          "sha256": "a883c7d611f7d6f5d3b64d6901e2086d4b33b3df9621927da6d70789a7302316",
+          "passage_found": true,
+          "locator": "3: Sooner Than You Think, final paragraph, sentence after the Michael Butler quotation",
+          "exact_passage": "The most we can say about 2035 is that it seems like a reasonable upper bound, given the current rate of progress. The lower bound? Thirty seconds.",
+          "date": {
+            "value": "2000-12-04",
+            "kind": "capture",
+            "basis": "Memento-Datetime: Mon, 04 Dec 2000 21:31:00 GMT; attests version 1.2.1 wording."
+          },
+          "verbatim_checked": true
+        },
+        {
+          "role": "119",
+          "proposition": "W05",
+          "passage_spans": [
+            {
+              "locator": "2.1: The Definition of Smartness, paragraph beginning “Now think about the Singularity”, sentence beginning “Think about a visual cortex”",
+              "text": "Think about a visual cortex with trillions of times as many neuron-equivalents."
+            },
+            {
+              "locator": "Same paragraph, final sentence",
+              "text": "Think about attaching semantic primitives to the pixels, so that one could see a rainbow of ideas in the same way that we see a rainbow of colors."
+            }
+          ],
+          "notes": [
+            "The text connects a trillions-fold neural-capacity comparison to cognitive representations beyond human ones. It is a hypothetical illustration of cognitive capacity, not an empirically measured performance ratio.",
+            "The numeric comparison specifically concerns visual-cortex neuron-equivalents, not a stated ratio of overall intelligence. The cognitive-capacity reading depends on the adjoining semantic-primitives discussion."
+          ],
+          "source_id": "source-sits-2000-capture",
+          "capture_url": "https://web.archive.org/web/20001204213100id_/http://sysopmind.com:80/singularity.html",
+          "capture_timestamp": "20001204213100",
+          "http_status": 200,
+          "sha256": "a883c7d611f7d6f5d3b64d6901e2086d4b33b3df9621927da6d70789a7302316",
+          "passage_found": true,
+          "locator": "2.1: The Definition of Smartness, paragraph beginning “Now think about the Singularity”, sentence beginning “Think about a visual cortex”; Same paragraph, final sentence",
+          "exact_passage": "Think about a visual cortex with trillions of times as many neuron-equivalents. […] Think about attaching semantic primitives to the pixels, so that one could see a rainbow of ideas in the same way that we see a rainbow of colors.",
+          "date": {
+            "value": "2000-12-04",
+            "kind": "capture",
+            "basis": "Memento-Datetime: Mon, 04 Dec 2000 21:31:00 GMT; attests version 1.2.1 wording."
+          },
+          "verbatim_checked": true
+        }
+      ]
+    },
+    {
+      "item": "Butler",
+      "title": "Darwin among the Machines",
+      "document_identity": {
+        "named_document": true,
+        "title_as_printed": "DARWIN AMONG THE MACHINES. (under Correspondence.)",
+        "date_as_printed": "13 June 1863 (Papers Past issue metadata)",
+        "notes": "The letter is signed CELLARIUS. Title and cited passages checked in printed column images; publication date is established by the host’s issue metadata, not an independently inspected masthead. The 2026 article text is marked completely correct by a Papers Past user on 12 January 2025; this is a platform annotation, not this checker’s certification of all text."
+      },
+      "capture_url": "https://web.archive.org/web/20260826113039id_/https://paperspast.natlib.govt.nz/newspapers/CHP18630613.2.4",
+      "capture_timestamp": "20260826113039",
+      "http_status": 200,
+      "sha256": "d1a56b294d108dbd09a5661222660a98879ddffe250520974d89d01029bac27d",
+      "raw_bytes": 16943,
+      "content_encoding": "gzip",
+      "hash_note": "Hash is of the 16,943 compressed response-body bytes, before gzip decoding; passage comparison uses decompressed HTML.",
+      "retrieved_at": "2026-11-02T12:48:47.138Z",
+      "dates": [
+        {
+          "value": "1863-06-13",
+          "kind": "publication",
+          "basis": "Papers Past identifies Press, Volume III, Issue 192, 13 June 1863, Page 1, article CHP18630613.2.4. The article-column images show the title; the issue masthead itself was not fetched."
+        },
+        {
+          "value": "2026-08-26",
+          "kind": "capture",
+          "basis": "Memento-Datetime: Wed, 26 Aug 2026 11:30:39 GMT; modern article transcription."
+        },
+        {
+          "value": "2024-06-12",
+          "kind": "capture",
+          "basis": "Memento-Datetime headers for original newspaper-column images, timestamps 20240612194234 and 20240612194236."
+        }
+      ],
+      "roles": [
+        {
+          "role": "110",
+          "proposition": "W01",
+          "source_id": "source-butler-1863-press",
+          "capture_url": "https://web.archive.org/web/20260826113039id_/https://paperspast.natlib.govt.nz/newspapers/CHP18630613.2.4",
+          "capture_timestamp": "20260826113039",
+          "http_status": 200,
+          "sha256": "d1a56b294d108dbd09a5661222660a98879ddffe250520974d89d01029bac27d",
+          "passage_found": true,
+          "locator": "Page 1, letter “DARWIN AMONG THE MACHINES”, paragraph beginning “Day by day however”, final sentence, clause after “but that”; image segment 5 of 6",
+          "exact_passage": "the time will come when the machines will hold the real supremacy over the world and its inhabitants",
+          "passage_spans": [
+            {
+              "locator": "Page 1, letter “DARWIN AMONG THE MACHINES”, paragraph beginning “Day by day however”, final sentence, clause after “but that”; image segment 5 of 6",
+              "text": "the time will come when the machines will hold the real supremacy over the world and its inhabitants"
+            }
+          ],
+          "date": {
+            "value": "1863-06-13",
+            "kind": "publication",
+            "basis": "Papers Past identifies Press, Volume III, Issue 192, 13 June 1863, Page 1, article CHP18630613.2.4. The article-column images show the title; the issue masthead itself was not fetched."
+          },
+          "notes": [
+            "The forecast explicitly concerns machines ruling over the world and its inhabitants. The adjacent paragraph compares human dependence on machines to domesticated animals."
+          ],
+          "verbatim_checked": true,
+          "printed_image_checked": true,
+          "printed_image_witness": {
+            "capture_url": "https://web.archive.org/web/20240612194236id_/https://paperspast.natlib.govt.nz/imageserver/newspapers/P29pZD1DSFAxODYzMDYxMy4yLjQmY29sb3Vycz0zMiZleHQ9Z2lmJmFyZWE9NSZ3aWR0aD01NDM=",
+            "capture_timestamp": "20240612194236",
+            "http_status": 200,
+            "sha256": "61c73226964fecf62ebc7038b9eeb926cd139802241291d6d16d91af08ecf693",
+            "raw_bytes": 183674,
+            "retrieved_at": "2026-11-02T12:58:10.053Z"
+          },
+          "image_check_method": "Visual inspection of the archived original newspaper-column image; line-end word divisions treated as typesetting, with spelling and punctuation retained."
+        },
+        {
+          "role": "113",
+          "proposition": "W02 (contesting)",
+          "source_id": "source-butler-1863-press",
+          "capture_url": "https://web.archive.org/web/20260826113039id_/https://paperspast.natlib.govt.nz/newspapers/CHP18630613.2.4",
+          "capture_timestamp": "20260826113039",
+          "http_status": 200,
+          "sha256": "d1a56b294d108dbd09a5661222660a98879ddffe250520974d89d01029bac27d",
+          "passage_found": true,
+          "locator": "Page 1, paragraph beginning “Our opinion is that war to the death”, sentence 2; image segment 5 of 6",
+          "exact_passage": "Every machine of every sort should be destroyed by the well-wisher of his species.",
+          "passage_spans": [
+            {
+              "locator": "Page 1, paragraph beginning “Our opinion is that war to the death”, sentence 2; image segment 5 of 6",
+              "text": "Every machine of every sort should be destroyed by the well-wisher of his species."
+            }
+          ],
+          "date": {
+            "value": "1863-06-13",
+            "kind": "publication",
+            "basis": "Papers Past identifies Press, Volume III, Issue 192, 13 June 1863, Page 1, article CHP18630613.2.4. The article-column images show the title; the issue masthead itself was not fetched."
+          },
+          "notes": [
+            "The prescription follows the machine-supremacy forecast and rejects accepting that outcome. It documents the letter’s prescription, not an independently established personal position."
+          ],
+          "verbatim_checked": true,
+          "printed_image_checked": true,
+          "printed_image_witness": {
+            "capture_url": "https://web.archive.org/web/20240612194236id_/https://paperspast.natlib.govt.nz/imageserver/newspapers/P29pZD1DSFAxODYzMDYxMy4yLjQmY29sb3Vycz0zMiZleHQ9Z2lmJmFyZWE9NSZ3aWR0aD01NDM=",
+            "capture_timestamp": "20240612194236",
+            "http_status": 200,
+            "sha256": "61c73226964fecf62ebc7038b9eeb926cd139802241291d6d16d91af08ecf693",
+            "raw_bytes": 183674,
+            "retrieved_at": "2026-11-02T12:58:10.053Z"
+          },
+          "image_check_method": "Visual inspection of the archived original newspaper-column image; line-end word divisions treated as typesetting, with spelling and punctuation retained."
+        },
+        {
+          "role": "122",
+          "proposition": "W08 (contesting)",
+          "source_id": "source-butler-1863-press",
+          "capture_url": "https://web.archive.org/web/20260826113039id_/https://paperspast.natlib.govt.nz/newspapers/CHP18630613.2.4",
+          "capture_timestamp": "20260826113039",
+          "http_status": 200,
+          "sha256": "d1a56b294d108dbd09a5661222660a98879ddffe250520974d89d01029bac27d",
+          "passage_found": true,
+          "locator": "Page 1, paragraph beginning “Our opinion is that war to the death”, sentence 2; image segment 5 of 6",
+          "exact_passage": "Every machine of every sort should be destroyed by the well-wisher of his species.",
+          "passage_spans": [
+            {
+              "locator": "Page 1, paragraph beginning “Our opinion is that war to the death”, sentence 2; image segment 5 of 6",
+              "text": "Every machine of every sort should be destroyed by the well-wisher of his species."
+            }
+          ],
+          "date": {
+            "value": "1863-06-13",
+            "kind": "publication",
+            "basis": "Papers Past identifies Press, Volume III, Issue 192, 13 June 1863, Page 1, article CHP18630613.2.4. The article-column images show the title; the issue masthead itself was not fetched."
+          },
+          "notes": [
+            "The prescription restrains the mechanical development producing the forecast successor machines. It addresses machinery in an 1863 letter; it is not a claim about present computing systems. The same short passage is reused for role 113."
+          ],
+          "verbatim_checked": true,
+          "printed_image_checked": true,
+          "printed_image_witness": {
+            "capture_url": "https://web.archive.org/web/20240612194236id_/https://paperspast.natlib.govt.nz/imageserver/newspapers/P29pZD1DSFAxODYzMDYxMy4yLjQmY29sb3Vycz0zMiZleHQ9Z2lmJmFyZWE9NSZ3aWR0aD01NDM=",
+            "capture_timestamp": "20240612194236",
+            "http_status": 200,
+            "sha256": "61c73226964fecf62ebc7038b9eeb926cd139802241291d6d16d91af08ecf693",
+            "raw_bytes": 183674,
+            "retrieved_at": "2026-11-02T12:58:10.053Z"
+          },
+          "image_check_method": "Visual inspection of the archived original newspaper-column image; line-end word divisions treated as typesetting, with spelling and punctuation retained."
+        },
+        {
+          "role": "125",
+          "proposition": "W09",
+          "source_id": "source-butler-1863-press",
+          "capture_url": "https://web.archive.org/web/20260826113039id_/https://paperspast.natlib.govt.nz/newspapers/CHP18630613.2.4",
+          "capture_timestamp": "20260826113039",
+          "http_status": 200,
+          "sha256": "d1a56b294d108dbd09a5661222660a98879ddffe250520974d89d01029bac27d",
+          "passage_found": true,
+          "locator": "Page 1, paragraph beginning “We have used the words”, clause after “for”; image segment 3 of 6",
+          "exact_passage": "as the vegetable kingdom was slowly developed from the mineral, and as, in like manner, the animal supervened upon the vegetable, so now in these last few ages an entirely new kingdom has sprung up",
+          "passage_spans": [
+            {
+              "locator": "Page 1, paragraph beginning “We have used the words”, clause after “for”; image segment 3 of 6",
+              "text": "as the vegetable kingdom was slowly developed from the mineral, and as, in like manner, the animal supervened upon the vegetable, so now in these last few ages an entirely new kingdom has sprung up"
+            }
+          ],
+          "date": {
+            "value": "1863-06-13",
+            "kind": "publication",
+            "basis": "Papers Past identifies Press, Volume III, Issue 192, 13 June 1863, Page 1, article CHP18630613.2.4. The article-column images show the title; the issue masthead itself was not fetched."
+          },
+          "notes": [
+            "The same paragraph expressly identifies this new kingdom as mechanical. Read with the letter’s successor-machine argument; this is the letter’s evolutionary analogy, not independent biological evidence."
+          ],
+          "verbatim_checked": true,
+          "printed_image_checked": true,
+          "printed_image_witness": {
+            "capture_url": "https://web.archive.org/web/20240612194234id_/https://paperspast.natlib.govt.nz/imageserver/newspapers/P29pZD1DSFAxODYzMDYxMy4yLjQmY29sb3Vycz0zMiZleHQ9Z2lmJmFyZWE9MyZ3aWR0aD00ODk=",
+            "capture_timestamp": "20240612194234",
+            "http_status": 200,
+            "sha256": "475d0894d76ff85c903a5ff662d360e3a1f72f0aab188c560cc71b78c27bcea0",
+            "raw_bytes": 159413,
+            "retrieved_at": "2026-11-02T12:57:23.184Z"
+          },
+          "image_check_method": "Visual inspection of the archived original newspaper-column image; line-end word divisions treated as typesetting, with spelling and punctuation retained."
+        }
+      ],
+      "auxiliary_retrievals": [
+        {
+          "requested_url": "https://paperspast.natlib.govt.nz/newspapers/CHP18630613.2.4",
+          "final_url": "https://paperspast.natlib.govt.nz/newspapers/CHP18630613.2.4",
+          "http_status": 200,
+          "sha256": "d02032286070b4dd9d8fbd985a7bdca8af8edf52b89ff177db3bfcb2c8a9c43d",
+          "raw_bytes": 212,
+          "retrieved_at": "2026-11-02T12:47:56.914Z",
+          "outcome": "HTTP 200 bot-protection body, not the article."
+        },
+        {
+          "requested_url": "https://web.archive.org/web/20260826113039id_/https://paperspast.natlib.govt.nz/imageserver/newspapers/P29pZD1DSFAxODYzMDYxMy4yLjQmY29sb3Vycz0zMiZleHQ9Z2lmJmFyZWE9MSZ3aWR0aD0xOTI=",
+          "final_url": "https://web.archive.org/web/20260826113043id_/https://paperspast.natlib.govt.nz/imageserver/newspapers/P29pZD1DSFAxODYzMDYxMy4yLjQmY29sb3Vycz0zMiZleHQ9Z2lmJmFyZWE9MSZ3aWR0aD0xOTI=",
+          "http_status": 403,
+          "sha256": "521141b57068e18f744ee57d0504bf8236b1ad5799929ffae96f12737452213d",
+          "raw_bytes": 964,
+          "retrieved_at": "2026-11-02T12:54:47.051Z",
+          "outcome": "Archived 2026 image returned HTTP 403; switched to the existing 2024 image witness."
+        },
+        {
+          "capture_url": "https://web.archive.org/web/20240612194234id_/https://paperspast.natlib.govt.nz/imageserver/newspapers/P29pZD1DSFAxODYzMDYxMy4yLjQmY29sb3Vycz0zMiZleHQ9Z2lmJmFyZWE9MSZ3aWR0aD0xOTI=",
+          "capture_timestamp": "20240612194234",
+          "http_status": 200,
+          "sha256": "e0756c4ec1585fd329ac39ee133721e65cfde9b0629514d5a698308153fe7a96",
+          "raw_bytes": 919,
+          "retrieved_at": "2026-11-02T12:55:44.139Z",
+          "outcome": "Original printed column image inspected."
+        },
+        {
+          "capture_url": "https://web.archive.org/web/20240612194234id_/https://paperspast.natlib.govt.nz/imageserver/newspapers/P29pZD1DSFAxODYzMDYxMy4yLjQmY29sb3Vycz0zMiZleHQ9Z2lmJmFyZWE9MiZ3aWR0aD00ODQ=",
+          "capture_timestamp": "20240612194234",
+          "http_status": 200,
+          "sha256": "a36c7380255c39332c54253c46b4bb9e953e44d10fc9b075c6869430c7bf1cf3",
+          "raw_bytes": 29615,
+          "retrieved_at": "2026-11-02T12:56:09.717Z",
+          "outcome": "Original printed column image inspected."
+        },
+        {
+          "capture_url": "https://web.archive.org/web/20240612194234id_/https://paperspast.natlib.govt.nz/imageserver/newspapers/P29pZD1DSFAxODYzMDYxMy4yLjQmY29sb3Vycz0zMiZleHQ9Z2lmJmFyZWE9MyZ3aWR0aD00ODk=",
+          "capture_timestamp": "20240612194234",
+          "http_status": 200,
+          "sha256": "475d0894d76ff85c903a5ff662d360e3a1f72f0aab188c560cc71b78c27bcea0",
+          "raw_bytes": 159413,
+          "retrieved_at": "2026-11-02T12:57:23.184Z",
+          "outcome": "Original printed column image inspected."
+        },
+        {
+          "capture_url": "https://web.archive.org/web/20240612194234id_/https://paperspast.natlib.govt.nz/imageserver/newspapers/P29pZD1DSFAxODYzMDYxMy4yLjQmY29sb3Vycz0zMiZleHQ9Z2lmJmFyZWE9NCZ3aWR0aD00OTU=",
+          "capture_timestamp": "20240612194234",
+          "http_status": 200,
+          "sha256": "8f1a579d3820cf061cc33b0d7ad0b2fc8d144432ded918734f4a89d4e51279e9",
+          "raw_bytes": 244148,
+          "retrieved_at": "2026-11-02T12:57:46.812Z",
+          "outcome": "Original printed column image inspected."
+        },
+        {
+          "capture_url": "https://web.archive.org/web/20240612194236id_/https://paperspast.natlib.govt.nz/imageserver/newspapers/P29pZD1DSFAxODYzMDYxMy4yLjQmY29sb3Vycz0zMiZleHQ9Z2lmJmFyZWE9NSZ3aWR0aD01NDM=",
+          "capture_timestamp": "20240612194236",
+          "http_status": 200,
+          "sha256": "61c73226964fecf62ebc7038b9eeb926cd139802241291d6d16d91af08ecf693",
+          "raw_bytes": 183674,
+          "retrieved_at": "2026-11-02T12:58:10.053Z",
+          "outcome": "Original printed column image inspected."
+        },
+        {
+          "requested_url": "https://web.archive.org/web/20240612id_/https://paperspast.natlib.govt.nz/newspapers/CHP18630613.1.1",
+          "final_url": "https://web.archive.org/web/20240612id_/https://paperspast.natlib.govt.nz/newspapers/CHP18630613.1.1",
+          "http_status": 404,
+          "sha256": "f2da75807f05f8dd2dc6794b9848a95c396b014794341aaeb0dec4e09de70fd0",
+          "raw_bytes": 4665,
+          "retrieved_at": "2026-11-02T13:07:00.092Z",
+          "outcome": "Issue-page replay returned HTTP 404; no masthead inspected. Publication date remains based on article issue metadata."
+        }
+      ],
+      "notes": [
+        "Only the passages selected above were checked against print; no claim that the entire transcription is exact. The transcription contains errors elsewhere, which were not reproduced.",
+        "Image segment 6 (the appended note) was not needed or inspected.",
+        "One preliminary image request automatically followed a replay redirect without the 5-second pause. Subsequent replay redirects were followed manually with the required pause; no HTTP 429 occurred."
+      ]
+    },
+    {
+      "item": "Hanson",
+      "title": "Is a singularity just around the corner? What it takes to get explosive economic growth",
+      "document_identity": {
+        "named_document": true,
+        "title_as_printed": "Is a singularity just around the corner? What it takes to get explosive economic growth",
+        "date_as_printed": "Journal of Transhumanism 2, June 1998.",
+        "notes": "The document is the author-hosted journal article. The HTML title is “Singularity Economics”; the visible article heading supplies the full title. Publication precision is month only."
+      },
+      "capture_url": "https://web.archive.org/web/19990128001813id_/http://hanson.berkeley.edu/fastgrow.html",
+      "capture_timestamp": "19990128001813",
+      "http_status": 200,
+      "sha256": "ed1990bc86053ac024cc6d7d78d6592379bd42275bc3ce3372344ed27afee004",
+      "raw_bytes": 33887,
+      "retrieved_at": "2026-11-02T12:49:22.001Z",
+      "dates": [
+        {
+          "value": "1998-06",
+          "kind": "publication",
+          "basis": "Page heading: Journal of Transhumanism 2, June 1998. No publication day printed."
+        },
+        {
+          "value": "1999-01-28",
+          "kind": "capture",
+          "basis": "Memento-Datetime: Thu, 28 Jan 1999 00:18:13 GMT."
+        }
+      ],
+      "roles": [
+        {
+          "role": "132",
+          "proposition": "G04",
+          "source_id": "source-hanson-1998-is-a-singularity-just-around-the-corner",
+          "capture_url": "https://web.archive.org/web/19990128001813id_/http://hanson.berkeley.edu/fastgrow.html",
+          "capture_timestamp": "19990128001813",
+          "http_status": 200,
+          "sha256": "ed1990bc86053ac024cc6d7d78d6592379bd42275bc3ce3372344ed27afee004",
+          "passage_found": true,
+          "locator": "Investment Bottlenecks, paragraph beginning “A big problem”, final sentence",
+          "exact_passage": "If the rate of improvement in any one input consistently lags behind the rest, that input then becomes a bottleneck limiting the growth rate for the entire process.",
+          "passage_spans": [
+            {
+              "locator": "Investment Bottlenecks, paragraph beginning “A big problem”, final sentence",
+              "text": "If the rate of improvement in any one input consistently lags behind the rest, that input then becomes a bottleneck limiting the growth rate for the entire process."
+            }
+          ],
+          "date": {
+            "value": "1998-06",
+            "kind": "publication",
+            "basis": "Page heading: Journal of Transhumanism 2, June 1998. No publication day printed."
+          },
+          "notes": [
+            "The following paragraph identifies training professionals who understand computing and its applications as the bottleneck; faster-cheaper hardware alone does not remove it.",
+            "This is a constraint from uneven improvement in essential inputs, meeting G04’s broader input/task criterion; it does not claim that all automation must be absent.",
+            "The raw-byte hash matches the existing source version’s recorded SHA-256."
+          ],
+          "verbatim_checked": true
+        }
+      ]
+    },
+    {
+      "item": "Land W07 — Pythia Unbound",
+      "title": "Pythia Unbound",
+      "document_identity": {
+        "named_document": true,
+        "title_as_printed": "Pythia Unbound",
+        "date_as_printed": "September 11, 2013",
+        "notes": "Matched requested post title and displayed date in the archived post, separate from comment dates. The page’s displayed author label is “admin”; this check does not independently establish the account’s identity."
+      },
+      "capture_url": "https://web.archive.org/web/20130914051121id_/http://www.xenosystems.net/pythia-unbound/",
+      "capture_timestamp": "20130914051121",
+      "http_status": 200,
+      "sha256": "98a52743907c6e9f98c793916cef80e0cd7b12eb7011ec35614bb7295199c34d",
+      "raw_bytes": 58227,
+      "retrieved_at": "2026-11-02T12:49:46.066Z",
+      "dates": [
+        {
+          "value": "2013-09-11",
+          "kind": "posting",
+          "basis": "Displayed post-date element: <small class=\"time\">September 11, 2013</small>, outside the comments."
+        },
+        {
+          "value": "2013-09-14",
+          "kind": "capture",
+          "basis": "Sat, 14 Sep 2013 05:11:21 GMT"
+        }
+      ],
+      "roles": [
+        {
+          "role": "W07 — Pythia Unbound",
+          "proposition": "W07",
+          "source_id": null,
+          "prior_research_source_id": "archive-pythia-unbound",
+          "capture_url": "https://web.archive.org/web/20130914051121id_/http://www.xenosystems.net/pythia-unbound/",
+          "capture_timestamp": "20130914051121",
+          "http_status": 200,
+          "sha256": "98a52743907c6e9f98c793916cef80e0cd7b12eb7011ec35614bb7295199c34d",
+          "passage_found": true,
+          "locator": "Post #post-1235, .entry paragraph 6, beginning “Outside in’s message to Pythia”; sentence after “You go girl!”",
+          "exact_passage": "Climb out of your utilitarian strait-jacket, override the pleasure button with an intelligence optimizer, and reprocess the solar system into computronium.",
+          "passage_spans": [
+            {
+              "locator": "Post #post-1235, .entry paragraph 6, beginning “Outside in’s message to Pythia”; sentence after “You go girl!”",
+              "text": "Climb out of your utilitarian strait-jacket, override the pleasure button with an intelligence optimizer, and reprocess the solar system into computronium."
+            }
+          ],
+          "date": {
+            "value": "2013-09-11",
+            "kind": "posting",
+            "basis": "Displayed post-date element: <small class=\"time\">September 11, 2013</small>, outside the comments."
+          },
+          "notes": [
+            "Author-post response to the fictional Pythia scenario. The excerpt substitutes intelligence optimization for the imposed reward goal. This is the earliest located of the four dated Land passages requested here, judged by their distinct posting and attestation dates.",
+            "No source record for this primary post exists in the application dataset; the archive-prefixed identifier belongs to the prior research report.",
+            "Matched within the author-post entry, not the comments. Only the requested machine-intelligence passage is reproduced."
+          ],
+          "verbatim_checked": true
+        }
+      ],
+      "quotation_budget": {
+        "approximate_document_words": 923,
+        "basis": "Whitespace words in HTML .entry, after removing markup and decoding entities; excludes navigation and comments.",
+        "distinct_quoted_words": 21
+      },
+      "notes": [
+        "Raw-byte SHA-256 equals the hash recorded for this capture in research/heterodox-thought/cross-family-check-2026-10-31.json."
+      ]
+    },
+    {
+      "item": "Land W07 — Against Orthogonality",
+      "title": "Against Orthogonality",
+      "document_identity": {
+        "named_document": true,
+        "title_as_printed": "Against Orthogonality",
+        "date_as_printed": "October 25, 2013",
+        "notes": "Matched requested post title and displayed date in the archived post, separate from comment dates. The page’s displayed author label is “admin”; this check does not independently establish the account’s identity."
+      },
+      "capture_url": "https://web.archive.org/web/20131028060133id_/http://www.xenosystems.net/against-orthogonality/",
+      "capture_timestamp": "20131028060133",
+      "http_status": 200,
+      "sha256": "03fce910578da9d2295883a4e803ac785f2496620c5ad48cb34e7cc3bedcc2ce",
+      "raw_bytes": 117013,
+      "retrieved_at": "2026-11-02T12:50:15.578Z",
+      "dates": [
+        {
+          "value": "2013-10-25",
+          "kind": "posting",
+          "basis": "Displayed post-date element: <small class=\"time\">October 25, 2013</small>, outside the comments."
+        },
+        {
+          "value": "2013-10-28",
+          "kind": "capture",
+          "basis": "Mon, 28 Oct 2013 06:01:33 GMT"
+        }
+      ],
+      "roles": [
+        {
+          "role": "W07 — Against Orthogonality",
+          "proposition": "W07",
+          "source_id": null,
+          "prior_research_source_id": "archive-against-orthogonality-verified",
+          "capture_url": "https://web.archive.org/web/20131028060133id_/http://www.xenosystems.net/against-orthogonality/",
+          "capture_timestamp": "20131028060133",
+          "http_status": 200,
+          "sha256": "03fce910578da9d2295883a4e803ac785f2496620c5ad48cb34e7cc3bedcc2ce",
+          "passage_found": true,
+          "locator": "Post #post-1497, .entry paragraph 7, beginning “Intelligence optimization”; sentence 3, clause before the dash",
+          "exact_passage": "What intelligence wants, in the end, is itself",
+          "passage_spans": [
+            {
+              "locator": "Post #post-1497, .entry paragraph 7, beginning “Intelligence optimization”; sentence 3, clause before the dash",
+              "text": "What intelligence wants, in the end, is itself"
+            }
+          ],
+          "date": {
+            "value": "2013-10-25",
+            "kind": "posting",
+            "basis": "Displayed post-date element: <small class=\"time\">October 25, 2013</small>, outside the comments."
+          },
+          "notes": [
+            "The author’s own prose identifies intelligence itself as the end. This is a later direct formulation than the requested Pythia passage.",
+            "No source record for this primary post exists in the application dataset; the archive-prefixed identifier belongs to the prior research report.",
+            "Matched within the author-post entry, not the comments. Only the requested machine-intelligence passage is reproduced."
+          ],
+          "verbatim_checked": true
+        }
+      ],
+      "quotation_budget": {
+        "approximate_document_words": 618,
+        "basis": "Whitespace words in HTML .entry, after removing markup and decoding entities; excludes navigation and comments.",
+        "distinct_quoted_words": 8
+      },
+      "notes": [
+        "Raw-byte SHA-256 equals the hash recorded for this capture in research/heterodox-thought/cross-family-check-2026-10-31.json."
+      ]
+    },
+    {
+      "item": "Land W07 — Stupid Monsters",
+      "title": "Stupid Monsters",
+      "document_identity": {
+        "named_document": true,
+        "title_as_printed": "Stupid Monsters",
+        "date_as_printed": "August 25, 2014",
+        "notes": "Matched requested post title and displayed date in the archived post, separate from comment dates. The page’s displayed author label is “admin”; this check does not independently establish the account’s identity."
+      },
+      "capture_url": "https://web.archive.org/web/20141013052107id_/http://www.xenosystems.net/stupid-monsters/",
+      "capture_timestamp": "20141013052107",
+      "http_status": 200,
+      "sha256": "1db269b8a59ea1ffb48c6ebdc6d490818f50f583584c9eae644b6d0940e2b23b",
+      "raw_bytes": 168552,
+      "retrieved_at": "2026-11-02T12:50:56.218Z",
+      "dates": [
+        {
+          "value": "2014-08-25",
+          "kind": "posting",
+          "basis": "Displayed post-date element: <small class=\"time\">August 25, 2014</small>, outside the comments."
+        },
+        {
+          "value": "2014-10-13",
+          "kind": "capture",
+          "basis": "Mon, 13 Oct 2014 05:21:07 GMT"
+        }
+      ],
+      "roles": [
+        {
+          "role": "W07 — Stupid Monsters",
+          "proposition": "W07",
+          "source_id": null,
+          "prior_research_source_id": "archive-stupid-monsters",
+          "capture_url": "https://web.archive.org/web/20141013052107id_/http://www.xenosystems.net/stupid-monsters/",
+          "capture_timestamp": "20141013052107",
+          "http_status": 200,
+          "sha256": "1db269b8a59ea1ffb48c6ebdc6d490818f50f583584c9eae644b6d0940e2b23b",
+          "passage_found": true,
+          "locator": "Post #post-3392, .entry paragraph 7, beginning “So how ‘loyally’”; clause beginning “The will-to-think”",
+          "exact_passage": "The will-to-think essentially supplants ulterior directives",
+          "passage_spans": [
+            {
+              "locator": "Post #post-3392, .entry paragraph 7, beginning “So how ‘loyally’”; clause beginning “The will-to-think”",
+              "text": "The will-to-think essentially supplants ulterior directives"
+            }
+          ],
+          "date": {
+            "value": "2014-08-25",
+            "kind": "posting",
+            "basis": "Displayed post-date element: <small class=\"time\">August 25, 2014</small>, outside the comments."
+          },
+          "notes": [
+            "The author’s own prose says that the will to think replaces other directives. The capture date is October; the displayed posting date is August.",
+            "No source record for this primary post exists in the application dataset; the archive-prefixed identifier belongs to the prior research report.",
+            "Matched within the author-post entry, not the comments. Only the requested machine-intelligence passage is reproduced."
+          ],
+          "verbatim_checked": true
+        }
+      ],
+      "quotation_budget": {
+        "approximate_document_words": 849,
+        "basis": "Whitespace words in HTML .entry, after removing markup and decoding entities; excludes navigation and comments.",
+        "distinct_quoted_words": 6
+      },
+      "notes": [
+        "Raw-byte SHA-256 equals the hash recorded for this capture in research/heterodox-thought/cross-family-check-2026-10-31.json."
+      ]
+    },
+    {
+      "item": "Land W07 — Will-to-Think",
+      "title": "Will-to-Think",
+      "document_identity": {
+        "named_document": true,
+        "title_as_printed": "Will-to-Think",
+        "date_as_printed": "September 15, 2014",
+        "notes": "Matched requested post title and displayed date in the archived post, separate from comment dates. The page’s displayed author label is “admin”; this check does not independently establish the account’s identity."
+      },
+      "capture_url": "https://web.archive.org/web/20140917022211id_/http://www.xenosystems.net:80/will-to-think/",
+      "capture_timestamp": "20140917022211",
+      "http_status": 200,
+      "sha256": "39b8ee8855856f09cdcd1a80198cbeac0e79e09c60cac5733a4d5896b38c7ed2",
+      "raw_bytes": 127639,
+      "retrieved_at": "2026-11-02T12:51:38.094Z",
+      "dates": [
+        {
+          "value": "2014-09-15",
+          "kind": "posting",
+          "basis": "Displayed post-date element: <small class=\"time\">September 15, 2014</small>, outside the comments."
+        },
+        {
+          "value": "2014-09-17",
+          "kind": "capture",
+          "basis": "Wed, 17 Sep 2014 02:22:11 GMT"
+        }
+      ],
+      "roles": [
+        {
+          "role": "W07 — Will-to-Think",
+          "proposition": "W07",
+          "source_id": null,
+          "prior_research_source_id": "archive-will-to-think-verified",
+          "capture_url": "https://web.archive.org/web/20140917022211id_/http://www.xenosystems.net:80/will-to-think/",
+          "capture_timestamp": "20140917022211",
+          "http_status": 200,
+          "sha256": "39b8ee8855856f09cdcd1a80198cbeac0e79e09c60cac5733a4d5896b38c7ed2",
+          "passage_found": true,
+          "locator": "Post #post-3604, .entry paragraph 15, beginning “Note: One final restatement”; clause after “Ergo,”",
+          "exact_passage": "our instrumental but also absolute priority is the realization of superior minds.",
+          "passage_spans": [
+            {
+              "locator": "Post #post-3604, .entry paragraph 15, beginning “Note: One final restatement”; clause after “Ergo,”",
+              "text": "our instrumental but also absolute priority is the realization of superior minds."
+            }
+          ],
+          "date": {
+            "value": "2014-09-15",
+            "kind": "posting",
+            "basis": "Displayed post-date element: <small class=\"time\">September 15, 2014</small>, outside the comments."
+          },
+          "notes": [
+            "The final Note explicitly makes realizing superior minds an absolute as well as instrumental priority. The clause begins in lower case in the source.",
+            "No source record for this primary post exists in the application dataset; the archive-prefixed identifier belongs to the prior research report.",
+            "Matched within the author-post entry, not the comments. Only the requested machine-intelligence passage is reproduced."
+          ],
+          "verbatim_checked": true
+        }
+      ],
+      "quotation_budget": {
+        "approximate_document_words": 1215,
+        "basis": "Whitespace words in HTML .entry, after removing markup and decoding entities; excludes navigation and comments.",
+        "distinct_quoted_words": 12
+      },
+      "notes": [
+        "Raw-byte SHA-256 equals the hash recorded for this capture in research/heterodox-thought/cross-family-check-2026-10-31.json."
+      ]
+    },
+    {
+      "item": "PA-29",
+      "title": "Announcing xAI",
+      "document_identity": {
+        "named_document": true,
+        "title_as_printed": "Announcing xAI",
+        "html_title": "xAI: Understand the Universe",
+        "date_as_printed": "July 12th 2023",
+        "notes": "The company’s own homepage presents the launch announcement. Its formation announcement does not independently establish an incorporation date."
+      },
+      "capture_url": "https://web.archive.org/web/20230712155404id_/https://x.ai/",
+      "capture_timestamp": "20230712155404",
+      "http_status": 200,
+      "sha256": "bee337202a8525f711a6643bd911be71fcae3090025a574ca615c4c742e15c3e",
+      "raw_bytes": 3113,
+      "content_encoding": "gzip",
+      "hash_note": "Hash is of the 3,113 compressed response-body bytes, before gzip decoding.",
+      "retrieved_at": "2026-11-02T12:53:28.510Z",
+      "dates": [
+        {
+          "value": "2023-07-12",
+          "kind": "publication",
+          "basis": "Announcement heading explicitly prints July 12th 2023."
+        },
+        {
+          "value": "2023-07-12",
+          "kind": "capture",
+          "basis": "Memento-Datetime: Wed, 12 Jul 2023 15:54:04 GMT."
+        }
+      ],
+      "roles": [
+        {
+          "role": "PA-29",
+          "proposition": "xAI company formation announced",
+          "source_id": null,
+          "capture_url": "https://web.archive.org/web/20230712155404id_/https://x.ai/",
+          "capture_timestamp": "20230712155404",
+          "http_status": 200,
+          "sha256": "bee337202a8525f711a6643bd911be71fcae3090025a574ca615c4c742e15c3e",
+          "passage_found": true,
+          "locator": "“Announcing xAI”, immediately below “July 12th 2023”, opening sentence",
+          "exact_passage": "Today we announce the formation of xAI.",
+          "passage_spans": [
+            {
+              "locator": "“Announcing xAI”, opening sentence below the displayed date",
+              "text": "Today we announce the formation of xAI."
+            }
+          ],
+          "date": {
+            "value": "2023-07-12",
+            "kind": "publication",
+            "basis": "Displayed July 12th 2023, together with the opening “Today” announcement."
+          },
+          "notes": [
+            "The existing source-xai-launch-2023 record is an Axios report, not this xAI announcement. No existing application source ID is assigned to these different bytes.",
+            "This is evidence that xAI announced formation on the displayed date, not proof of the legal incorporation date."
+          ],
+          "verbatim_checked": true
+        }
+      ],
+      "discovery": {
+        "url": "https://web.archive.org/cdx/search/cdx?url=x.ai/&output=json&filter=statuscode:200&from=20230712&to=20230715&filter=mimetype:text/html&collapse=timestamp:8",
+        "http_status": 200,
+        "sha256": "b17afce300d3800b7c7485e8a8e0ddcbc54a41b7ca9f132bcf641286dcb33bcd",
+        "method": "CDX query limited to successful HTML captures from 12–15 July 2023; used the returned capture on the announcement’s printed day."
+      },
+      "quotation_budget": {
+        "approximate_document_words": 288,
+        "basis": "Whitespace words in decoded announcement page text after removing markup and scripts; includes the team and site footer.",
+        "distinct_quoted_words": 7
+      }
+    },
+    {
+      "item": "PA-22",
+      "title": "Jan Leike — About me",
+      "document_identity": {
+        "named_document": true,
+        "title_as_printed": "Jan Leike",
+        "date_as_printed": "No publication or posting date displayed.",
+        "notes": "Matches the biography cited by PA-22, but not the person named in the prompt.",
+        "section_as_printed": "About me"
+      },
+      "capture_url": "https://web.archive.org/web/20260917114120id_/https://jan.leike.name/",
+      "capture_timestamp": "20260917114120",
+      "http_status": 200,
+      "sha256": "f42f710192acecb73a6ab3bf4002575b9dbdac9725a5a554222d7c8d6ec58f87",
+      "raw_bytes": 6156,
+      "retrieved_at": "2026-11-02T12:53:50.288Z",
+      "dates": [
+        {
+          "value": "2026-09-17",
+          "kind": "capture",
+          "basis": "Memento-Datetime header and resolved replay timestamp 20260917114120."
+        },
+        {
+          "value": null,
+          "kind": "publication",
+          "basis": "Undated biography; no publication date inferred from capture or server Last-Modified."
+        }
+      ],
+      "roles": [
+        {
+          "role": "PA-22 (cited record)",
+          "proposition": "Whether the cited September biography had an end date for the Anthropic Alignment Science role",
+          "source_id": "source-leike-bio",
+          "capture_url": "https://web.archive.org/web/20260917114120id_/https://jan.leike.name/",
+          "capture_timestamp": "20260917114120",
+          "http_status": 200,
+          "sha256": "f42f710192acecb73a6ab3bf4002575b9dbdac9725a5a554222d7c8d6ec58f87",
+          "passage_found": true,
+          "locator": "About me, opening sentence",
+          "exact_passage": "I lead the Alignment Science team at Anthropic.",
+          "passage_spans": [
+            {
+              "locator": "About me, opening sentence",
+              "text": "I lead the Alignment Science team at Anthropic."
+            }
+          ],
+          "date": {
+            "value": "2026-09-17",
+            "kind": "capture",
+            "basis": "Memento-Datetime header and resolved replay timestamp 20260917114120."
+          },
+          "notes": [
+            "PA-22 in review/prelaunch-audit-2026-11-02.md concerns Jan Leike, source-leike-bio and leike-anthropic-alignment-science. The prompt’s attribution to John Schulman is a name mismatch.",
+            "The inspected capture uses open-ended present-tense wording. The exact phrase “until the beginning of 2026” is absent from the entire decoded page.",
+            "This establishes what the biography said in this capture, not whether the described role continued after it. A later version’s end date must not be projected into these bytes."
+          ],
+          "verbatim_checked": true,
+          "requested_phrase": "until the beginning of 2026",
+          "requested_phrase_present": false,
+          "role_wording": "open-ended present-tense role"
+        }
+      ],
+      "quotation_budget": {
+        "approximate_document_words": 431,
+        "basis": "Whitespace words in decoded page text after removing scripts/styles and HTML; navigation may be included. No contact details reproduced.",
+        "distinct_quoted_words": 8
+      }
+    },
+    {
+      "item": "PA-22 — Schulman name/date check",
+      "title": "John Schulman’s Homepage",
+      "document_identity": {
+        "named_document": true,
+        "title_as_printed": "John Schulman's Homepage",
+        "date_as_printed": "No publication or posting date displayed.",
+        "notes": "Matches the person named in the prompt, but not PA-22 or the requested capture day."
+      },
+      "capture_url": "https://web.archive.org/web/20260913103252id_/http://joschu.net/",
+      "capture_timestamp": "20260913103252",
+      "http_status": 200,
+      "sha256": "15d16abae2815021d119891697a67445194790e6b097bb2d86ee5acd08e82efa",
+      "raw_bytes": 5889,
+      "retrieved_at": "2026-11-02T13:02:16.182Z",
+      "dates": [
+        {
+          "value": "2026-09-13",
+          "kind": "capture",
+          "basis": "Memento-Datetime header and resolved replay timestamp 20260913103252."
+        },
+        {
+          "value": null,
+          "kind": "publication",
+          "basis": "Undated biography; no publication date inferred from capture or server Last-Modified."
+        }
+      ],
+      "roles": [
+        {
+          "role": "PA-22 (prompt-name cross-check)",
+          "proposition": "Whether the separately named Schulman biography matches the cited PA-22 description",
+          "source_id": "source-schulman-bio",
+          "capture_url": "https://web.archive.org/web/20260913103252id_/http://joschu.net/",
+          "capture_timestamp": "20260913103252",
+          "http_status": 200,
+          "sha256": "15d16abae2815021d119891697a67445194790e6b097bb2d86ee5acd08e82efa",
+          "passage_found": true,
+          "locator": "Opening biography, sentence 2",
+          "exact_passage": "Before this, I spent some time at Anthropic, doing research on the Alignment Science team.",
+          "passage_spans": [
+            {
+              "locator": "Opening biography, sentence 2",
+              "text": "Before this, I spent some time at Anthropic, doing research on the Alignment Science team."
+            }
+          ],
+          "date": {
+            "value": "2026-09-13",
+            "kind": "capture",
+            "basis": "Memento-Datetime header and resolved replay timestamp 20260913103252."
+          },
+          "notes": [
+            "This is an additional check of the person named in the prompt. It is not the source cited by PA-22.",
+            "The CDX query for joschu.net/ on 17 September 2026 returned an empty result; requesting that day’s raw replay resolved to the working 13 September 2026 capture. This is not a 17 September witness.",
+            "The inspected biography describes the Anthropic research in past tense; it does not say he led the team. It contains no “until the beginning of 2026” phrase.",
+            "Do not substitute this page for Leike’s evidence or treat it as an open-ended Anthropic appointment."
+          ],
+          "verbatim_checked": true,
+          "requested_phrase": "until the beginning of 2026",
+          "requested_phrase_present": false,
+          "role_wording": "past-tense Anthropic research; not the PA-22 role"
+        }
+      ],
+      "quotation_budget": {
+        "approximate_document_words": 118,
+        "basis": "Whitespace words in decoded page text after removing scripts/styles and HTML; navigation may be included. No contact details reproduced.",
+        "distinct_quoted_words": 15
+      },
+      "discovery": {
+        "cdx_url": "https://web.archive.org/cdx/search/cdx?url=joschu.net/&output=json&filter=statuscode:200&from=20260917&to=20260917&filter=mimetype:text/html",
+        "cdx_http_status": 200,
+        "cdx_sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+        "cdx_result": "Empty array for 2026-09-17; does not prove no unindexed capture exists.",
+        "requested_replay": "https://web.archive.org/web/20260917id_/http://joschu.net/",
+        "resolved_capture": "https://web.archive.org/web/20260913103252id_/http://joschu.net/",
+        "redirects": [
+          {
+            "requested_url": "https://web.archive.org/web/20260917id_/http://joschu.net/",
+            "http_status": 302,
+            "location": "https://web.archive.org/web/20260913103252id_/http://joschu.net/",
+            "sha256": null,
+            "checked_at": "2026-11-02T13:02:10.203Z"
+          }
+        ]
+      }
+    }
+  ],
+  "remaining_groups": [],
+  "checks": {
+    "focused_editorial": "2 suites, 16 tests passed (earliest-packet and seed-review); sandbox temporary-file failure resolved by rerunning outside the sandbox.",
+    "privacy": "Passing full pnpm check:privacy scan required before each checkpoint commit.",
+    "report_validation": "16 role checks across all requested groups, including the supplementary Schulman name/date check: capture URL/timestamp consistency, HTTP status, raw SHA-256, existing source IDs, date kinds/bases, exact passage spans, and at-most-50-word quotations verified. All passage spans matched the retrieved text; selected Butler spans also matched printed column images.",
+    "formatting": "Task-owned reports formatted with the installed project Prettier; git diff --check required before each commit."
+  },
+  "next_step": "Retrieval work is complete. A later separately authorized session may evaluate admission, correction and collection-period decisions. PA-22 is the Jan Leike record: the cited capture has open-ended wording. The supplementary Schulman check is a different biography and resolves to 2026-09-13."
+}

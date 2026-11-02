@@ -1,6 +1,9 @@
 import type { PropositionsCollection } from '../domain/propositions';
 import { riskDebateFrame as frame } from './proposition-frames';
 
+/** The maintainer's decisions of 2026-11-02 on the archive retrieval of held sources. */
+const archiveApply = '2026-11-02';
+
 /** The maintainer's decisions of 2026-11-02 on the earliest-located re-check (decisions 1 to 4). */
 const recheckDecisions = '2026-11-02';
 
@@ -52,6 +55,7 @@ export const riskDebate: PropositionsCollection = {
         period: 'Texts of 1993 to 1997',
         items: [
           'Vinge’s paper of December 1993 and messages of 1996 to the Extropians mailing list by Dan Clemmensen and Eliezer Yudkowsky, which the dataset already held for other collections. A cross-family re-check of 2026-11-02 found that they meet criteria here earlier than the texts from 2000, and the maintainer widened the period to include them on 2026-11-02.',
+          'Chapter 11 of Drexler’s Engines of Creation in the Foresight Institute’s web edition (page updated 1 April 1997, captured 9 July 1997), which the dataset already held for the superintelligence collection. The re-check found that it meets R07 and R09 before the texts from 2000; an archive retrieval of 2026-11-02 read the capture. The book’s copyright year, 1986, does not date this wording: the 1986 printing was not compared.',
           'The years 1993 to 1999 were not searched for this collection; the texts of those years recorded here are those the re-check found among the dataset’s holdings.',
         ],
       },
@@ -69,6 +73,7 @@ export const riskDebate: PropositionsCollection = {
       'Each record gives the date its text is dated by. Where the quoted wording is known only from a later copy, the record also gives the date from which the wording is attested, and that date decides which text is earliest located. Passages of the Edge responses of 2014 and of two of Bengio’s posts are attested by archive captures.',
       'Each record was applied against its proposition’s criterion as worded. On B1 and A4 the texts were classified against those propositions’ own criteria, and the roles those propositions already had were kept.',
       'Two fresh-context machine audits by Claude models and a check by an OpenAI GPT-6 model re-read these records.',
+      'An archive retrieval of 2026-11-02 by an OpenAI model read Drexler’s chapter in its capture of 9 July 1997 and gave the passages verbatim with the capture’s SHA-256 hash. The records admitted from it quote those passages; the session that applied them could not reach the archive and did not retrieve them again.',
     ],
     gaps: [
       'The records are not balanced proposition by proposition. Texts contesting R09 (misuse), R17 (incentives) and R03 (misalignment learned in training) are few, and so are texts articulating some counter-propositions. The causes are the search: LessWrong and the Alignment Forum refused direct retrieval during the search, and much published disagreement about extinction and misuse risk is in posts on X, interviews and debates without transcripts, which were out of scope. The imbalance is a result of the search, not a finding.',
@@ -730,6 +735,30 @@ export const riskDebate: PropositionsCollection = {
         'Dropped on 2026-11-02 by the maintainer’s decision on the cross-family re-check (role 22): the usual names are ordinary phrases rather than names of this proposition, so no text is headlined as using them first. The names stay listed. No label or affiliation is inferred from them.',
       claimIds: ['rd-r17-askell-2019-cooperation'],
       recordedAt: recheckDecisions,
+    },
+    {
+      propositionId: 'misuse-route',
+      replaced:
+        'No earliest located headline: under re-check from 2026-11-02. Before that, Bostrom’s paper of March 2002 was headlined.',
+      reason:
+        'Moved on 2026-11-02 to chapter 11 of Drexler’s Engines of Creation in its web edition (page updated 1 April 1997; wording attested 9 July 1997), by the maintainer’s decision of 2026-11-02 on the cross-family re-check (role 55), once an archive retrieval of 2026-11-02 gave the passage from the capture. The text meets the criterion and its wording is attested before Bostrom’s paper. The record was admitted on this proposition with that passage; it names AI and nanotechnology together.',
+      claimIds: [
+        'rd-r09-drexler-1986-engines-of-destruction',
+        'rd-r09-bostrom-2002-existential-risks',
+      ],
+      recordedAt: archiveApply,
+    },
+    {
+      propositionId: 'ai-extinction-risk',
+      replaced:
+        'No earliest located headline: under re-check from 2026-11-02. Before that, Joy’s “Why the Future Doesn’t Need Us” (April 2000) was headlined.',
+      reason:
+        'Moved on 2026-11-02 to chapter 11 of Drexler’s Engines of Creation in its web edition (page updated 1 April 1997; wording attested 9 July 1997), by the maintainer’s decision of 2026-11-02 on the cross-family re-check (role 70), once an archive retrieval of 2026-11-02 gave the passages from the capture. The text meets the criterion and its wording is attested before Joy’s essay. The record was admitted on this proposition with those passages.',
+      claimIds: [
+        'rd-r07-drexler-1986-engines-of-destruction',
+        'rd-r07-joy-2000-why-the-future',
+      ],
+      recordedAt: archiveApply,
     },
   ],
   limits: [

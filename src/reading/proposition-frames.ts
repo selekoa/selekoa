@@ -64,7 +64,7 @@ export const superintelligenceFrame = {
 /** The frame of `riskDebate` (src/reading/risk-debate.ts). */
 export const riskDebateFrame = {
   id: 'risk-debate',
-  version: 5,
+  version: 7,
   title: 'Arguments about catastrophic risk from advanced AI, 1863–2026',
   question:
     'Which published texts, from 1993 to 2026 and, on the two propositions shared with the superintelligence collection, from 1863, state, contest or bear on the arguments that advanced AI could cause catastrophe or human extinction, and on the arguments that the risk is lower, later, placed elsewhere or better handled otherwise? Which texts answer one another? For each proposition, which text is the earliest located?',
@@ -122,7 +122,7 @@ export const riskDebateFrame = {
 /** The frame of `yudkowskyArguments` (src/reading/yudkowsky-arguments.ts). */
 export const yudkowskyArgumentsFrame = {
   id: 'yudkowsky-arguments',
-  version: 4,
+  version: 6,
   title: 'Eliezer Yudkowsky’s arguments on common claims about AI, 1996–2026',
   question:
     'Which located texts by Eliezer Yudkowsky, from 1996 to 2026, state, contest or bear on 29 claims often made about advanced AI? For each claim, which of his located texts is the earliest to contest it, and which earlier views of his did later texts of his contest?',
@@ -184,11 +184,11 @@ export const yudkowskyArgumentsFrame = {
 /** The frame of `machineSuccession` (src/reading/machine-succession.ts). */
 export const machineSuccessionFrame = {
   id: 'machine-succession',
-  version: 5,
+  version: 7,
   title:
-    'Machine succession, scale and acceleration: propositions in located texts, 1979–2026',
+    'Machine succession, scale and acceleration: propositions in located texts, 1863–2026',
   question:
-    'Which located texts, from 1979 to 2026, state, contest or bear on ten propositions about machine intelligence: that machines succeed humans, that this would be acceptable, that minds move into machines, that building such machines brings conflict, that machine intelligence vastly exceeds human intelligence, that capital is itself a machine intelligence, that intelligence is its own end, that development should be accelerated, and that machine intelligence is a cosmic process that spreads beyond Earth? For each proposition, which text is the earliest located?',
+    'Which located texts, from 1863 to 2026, state, contest or bear on ten propositions about machine intelligence: that machines succeed humans, that this would be acceptable, that minds move into machines, that building such machines brings conflict, that machine intelligence vastly exceeds human intelligence, that capital is itself a machine intelligence, that intelligence is its own end, that development should be accelerated, and that machine intelligence is a cosmic process that spreads beyond Earth? For each proposition, which text is the earliest located?',
   editorialStatus: 'machine-proposed',
   groups: [
     {
@@ -227,9 +227,9 @@ export const machineSuccessionFrame = {
     },
   ],
   axis: {
-    from: 1975,
+    from: 1860,
     to: 2027,
-    ticks: ['1979', '1990', '2000', '2010', '2026'],
+    ticks: ['1863', '1900', '1950', '1979', '2000', '2026'],
   },
   landing:
     '{propositions} propositions about machine succession, scale and acceleration, and {records} records from {texts} texts that state, contest or bear on them. Each proposition names its earliest located text where one is settled. The page can be downloaded as a research starter, with the original sources first.',
@@ -241,7 +241,7 @@ export const machineSuccessionFrame = {
 /** The frame of `economicsOfMachineIntelligence` (src/reading/economics.ts). */
 export const economicsFrame = {
   id: 'economics-of-machine-intelligence',
-  version: 5,
+  version: 6,
   title:
     'Economics of machine intelligence: texts from 1952 to 2026 that state, contest or bear on its propositions',
   question:

@@ -1,6 +1,9 @@
 import type { PropositionsCollection } from '../domain/propositions';
 import { yudkowskyArgumentsFrame as frame } from './proposition-frames';
 
+/** The maintainer's decisions of 2026-11-02 on the archive retrieval of held sources. */
+const archiveApply = '2026-11-02';
+
 /** The maintainer's decisions of 2026-11-02 on the earliest-located re-check (decisions 1 to 4). */
 const recheckDecisions = '2026-11-02';
 
@@ -9,6 +12,9 @@ const recheckWithdrawn = '2026-11-02';
 
 /** The maintainer's decision on the pre-launch audit (PA-01, PA-02). */
 const withdrawn = '2026-11-02';
+
+/** The maintainer's decisions of 2026-11-02 on the cross-family audit sample. */
+const auditSample = '2026-11-02';
 
 export const yudkowskyArguments: PropositionsCollection = {
   id: frame.id,
@@ -46,6 +52,7 @@ export const yudkowskyArguments: PropositionsCollection = {
       'A passage engages a premise when its paragraph, message or dialogue turn gives a reason against that premise. A passage that states the contrary conclusion without such a reason is recorded as stating the contrary. This message-level rule is a maintainer decision of 2026-10-08.',
       'Wording known only from MIRI’s later reprints was compared on 2026-10-08 with the 2001 web edition of Creating Friendly AI and the 2006 draft of the Global Catastrophic Risks chapter. Where the same wording was found, the record is dated by that copy. Otherwise it says that its wording is known only from a later copy, and it cannot be the earliest located text.',
       'Fresh-context machine audits by Claude Opus 5.5 models re-read every passage. A check by an OpenAI GPT-6 model re-examined 94 sampled passages and 13 comparison passages, and a correction pass settled each of its findings.',
+      'An archive retrieval of 2026-11-02 by an OpenAI model read Staring into the Singularity in its capture of 4 December 2000 and gave the passage on timelines verbatim with the capture’s SHA-256 hash. The record admitted from it quotes that passage; the session that applied it could not reach the archive and did not retrieve it again.',
       'Quotations are at most 50 words. Nine were shortened or replaced by paraphrases because the dataset already quotes the same sources, and together the quotations would exceed the limit per document.',
     ],
     gaps: [
@@ -61,6 +68,15 @@ export const yudkowskyArguments: PropositionsCollection = {
       'A text of his found later that is earlier than an earliest located text becomes the new earliest located text, and the earlier headline stays on record as a correction.',
   },
   corrections: [
+    {
+      propositionId: 'warning-signs-in-time',
+      replaced:
+        'His Extropians message of 1999-01-06 (0160), headlined as the earliest located text that contests the proposition.',
+      reason:
+        'Withdrawn on 2026-11-02 by the maintainer’s decision on the cross-family audit sample of 2026-11-02 (item 117), pending a re-check of the proposition’s candidate texts; no record holds the headline meanwhile. The message argues that superintelligent action will be too fast to notice, but does not explicitly address a recognisable warning before danger, failures first seen in weaker systems, or action on a warning. It is now recorded as bearing on the proposition, not contesting it.',
+      claimIds: ['yk-y08-extropians-1999-01-06-yudkowsky-0160-c'],
+      recordedAt: auditSample,
+    },
     {
       propositionId: 'build-superintelligence-fast',
       replaced:
@@ -240,6 +256,18 @@ export const yudkowskyArguments: PropositionsCollection = {
         'yk-y30-sl4-2000-11-13-yudkowsky-0011-0181-c',
       ],
       recordedAt: recheckDecisions,
+    },
+    {
+      propositionId: 'agi-decades-away',
+      replaced:
+        'No earliest located contesting headline: under re-check from 2026-11-02. Before that, “Artificial Intelligence as a Positive and Negative Factor in Global Risk” (draft of 5 February 2006) was headlined.',
+      reason:
+        'Moved on 2026-11-02 to “Staring into the Singularity”, version 1.2.1 (updated 31 August 2000; wording attested 4 December 2000), by the maintainer’s decision of 2026-11-02 on the cross-family re-check (role 89), once an archive retrieval of 2026-11-02 gave the passage from the capture. The text contests the proposition’s premise that AGI can be known to be decades away, and its wording is attested before the draft of 2006. Its own recommendation is to bring about the Singularity, not his later safety position. The record was admitted on this proposition with that passage.',
+      claimIds: [
+        'yk-y13-staring-into-the-singularity-c',
+        'yk-y13-ai-positive-negative-factor-global-risk-c',
+      ],
+      recordedAt: archiveApply,
     },
   ],
   limits: [

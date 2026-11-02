@@ -1,0 +1,705 @@
+{
+  "description": "The maintainer’s decisions of 2026-11-02 on the blind cross-family audit sample (review/cross-family-audit-sample-2026-11-02.md): the four material errors corrected, Y08’s earliest located contesting headline withdrawn under re-check, and eleven of the thirteen minor slips fixed (with one unsampled record quoting the same passage as item 59); and on the Turing 1951 lead (research/turing-1951-lead-2026-11-02/report.md): a W01 articulation from AMT/B/4 and a W01 context record from AMT/B/5. The full record is in review/audit-sample-fixes-2026-11-02.md. Applied by scripts/apply-recheck.ts; built by scripts/audit-sample-fixes-spec.py.",
+  "date": "2026-11-02",
+  "schemaVersion": "2.29",
+  "snapshotPath": "review/audit-sample-fixes-before-2026-11-02.json",
+  "snapshotDescription": "Rows changed by the maintainer’s decisions of 2026-11-02 on the cross-family audit sample and the Turing 1951 lead (scripts/apply-recheck.ts, review/audit-sample-fixes-2026-11-02.json). Reverting it (src/editorial/historical-views.ts) reproduces the dataset as it was at baseCommit.",
+  "held": {
+    "lg-cn-tang-jie-zhipu-cofounder": "Audit item 22 (minor): needs judgement. The audit could not locate the KEG/GLM account in the cited prospectus pages, while the pack’s retrieval of 2026-10-15 matched its anchor “KEG與唐傑博士”; withdrawing an evidence item and rewording the qualification is not mechanical.",
+    "kp-authored-quoc-le-natural-questions-benchmark-question-answering-2019": "Audit item 66 (minor): needs judgement. The July 2019 date is shared by every authorship record and the states record of the paper, and a record citing the work is dated January 2019; the date belongs to the work’s expression and is corrected for the family, not one record."
+  },
+  "corrections": [
+    {
+      "id": "audit-80:rd-r06-pinker-2018-popsci-fear-robots",
+      "item": 80,
+      "verdict": "material error",
+      "finding": "The qualification says the article does not discuss systems produced by training; its value-alignment passage lists an AI “trained on the concept of happiness with pictures of smiling faces”.",
+      "decision": "Maintainer decision 1 of 2026-11-02 on the cross-family audit sample: correct the qualification or statement as the audit shows, to what the source supports.",
+      "patches": [
+        {
+          "table": "claims",
+          "id": "rd-r06-pinker-2018-popsci-fear-robots",
+          "path": "qualification",
+          "old": "The article argues that the alignment scenarios it describes misread intelligence; it does not discuss systems produced by training. The same article states that a designed AI need not have dominating goals, which is recorded on R10a.",
+          "new": "The article argues that the alignment scenarios it describes misread intelligence. Among those scenarios it lists an AI that, “if it had been trained on the concept of happiness with pictures of smiling faces”, would tile the galaxy with pictures of smiley faces; an earlier paragraph says that current programs are “trained on millions of examples”. The same article states that a designed AI need not have dominating goals, which is recorded on R10a."
+        },
+        {
+          "table": "evidence",
+          "id": "evidence-rd-r06-pinker-2018-popsci-fear-robots-1",
+          "path": "checkedAt",
+          "old": "2026-10-31",
+          "new": "2026-11-02"
+        },
+        {
+          "table": "evidence",
+          "id": "evidence-rd-r06-pinker-2018-popsci-fear-robots-1",
+          "path": "note",
+          "old": "Candidate pack passage, arguments about catastrophic risk from advanced AI (research/risk-debate). The quotation (46 words) matched the text retrieved for the candidate pack on 2026-10-29. Matching ignored differences of whitespace, case, quotation marks, dashes and Unicode compatibility forms, so the source’s typography can differ. No human editorial review.",
+          "new": "Candidate pack passage, arguments about catastrophic risk from advanced AI (research/risk-debate). The quotation (46 words) matched the text retrieved for the candidate pack on 2026-10-29. Matching ignored differences of whitespace, case, quotation marks, dashes and Unicode compatibility forms, so the source’s typography can differ. No human editorial review. Corrected on 2026-11-02 after the cross-family audit sample of 2026-11-02 (review/cross-family-audit-sample-2026-11-02.md, item 80): the record’s qualification no longer says that the article does not discuss systems produced by training; this passage is unchanged. The session applying the correction re-read the passage in the source as served on 2026-11-02. Recorded in review/audit-sample-fixes-2026-11-02.md."
+        }
+      ]
+    },
+    {
+      "id": "audit-86:yk-y01-sl4-2002-05-03-yudkowsky-0205-3551-c",
+      "item": 86,
+      "verdict": "material error",
+      "finding": "The statement says only the CFAI semantics would keep goals as the programmers understood them; the message says they are “the only way I know of”, for “the kind of goals that humans would craft”.",
+      "decision": "Maintainer decision 1 of 2026-11-02 on the cross-family audit sample: correct the qualification or statement as the audit shows, to what the source supports. “The only way I know of” stays a limit on known methods.",
+      "patches": [
+        {
+          "table": "claims",
+          "id": "yk-y01-sl4-2002-05-03-yudkowsky-0205-3551-c",
+          "path": "statement",
+          "old": "The SL4 message “Re: supergoal stability” (2002-05-03) contests Y01. Replying to Wei Dai in a thread on supergoal stability, he says a non-Friendly mind will keep whatever goals it had when it first became able to protect its goal system from modification, and that only the CFAI semantics would keep goals as the programmers understood them.",
+          "new": "The SL4 message “Re: supergoal stability” (2002-05-03) contests Y01. Replying to Wei Dai in a thread on supergoal stability, he says a non-Friendly mind will keep whatever goals it had when it first became able to protect its goal system from modification, and that, for the kind of goals humans would craft, the CFAI semantics were the only way he knew of to create an AI that would implement those goals as the programmers originally understood them."
+        },
+        {
+          "table": "claims",
+          "id": "yk-y01-sl4-2002-05-03-yudkowsky-0205-3551-c",
+          "path": "qualification",
+          "old": "Premise addressed: A capable goal-directed system will not act to prevent its own shutdown or modification, and a shutdown or correction mechanism can simply be added to it. Hedged ('It currently looks to me'). Concerns resistance to goal modification, not shutdown as such.",
+          "new": "Premise addressed: A capable goal-directed system will not act to prevent its own shutdown or modification, and a shutdown or correction mechanism can simply be added to it. Hedged ('It currently looks to me'), and limited to methods he knew of ('the only way I know of'). Concerns resistance to goal modification, not shutdown as such."
+        },
+        {
+          "table": "evidence",
+          "id": "evidence-yk-t01-s3",
+          "path": "checkedAt",
+          "old": "2026-10-07",
+          "new": "2026-11-02"
+        },
+        {
+          "table": "evidence",
+          "id": "evidence-yk-t01-s3",
+          "path": "note",
+          "old": "Candidate pack passage T01-s3. The quotation (30 words) matched the retrieved expression (SHA-256 7669bc17ecbbc641fb8377adc6b034b6cec911c527d0a2be683ed53c7a3ee06c) when checked on 2026-10-07.",
+          "new": "Candidate pack passage T01-s3. The quotation (30 words) matched the retrieved expression (SHA-256 7669bc17ecbbc641fb8377adc6b034b6cec911c527d0a2be683ed53c7a3ee06c) when checked on 2026-10-07. Corrected on 2026-11-02 after the cross-family audit sample of 2026-11-02 (review/cross-family-audit-sample-2026-11-02.md, item 86): the record’s statement now keeps the next sentence’s limit to methods the author knew of (“the only way I know of”); this passage is unchanged. The session applying the correction re-read the passage in the source as served on 2026-11-02. Recorded in review/audit-sample-fixes-2026-11-02.md."
+        }
+      ]
+    },
+    {
+      "id": "audit-119:yk-y11-sl4-2000-10-03-yudkowsky-0010-0125-c",
+      "item": 119,
+      "verdict": "material error",
+      "finding": "The record says the message states the contrary expectation without engaging any argument for gradual takeoff; later in the same message the author answers Goertzel’s observation-and-catch-up premise with independent self-improvement in accelerated subjective time.",
+      "decision": "Maintainer decision 1 of 2026-11-02 on the cross-family audit sample: correct the qualification or statement as the audit shows, to what the source supports. The contesting relation and the quoted opening are kept; the engagement becomes engages-premise, as the audit proposes.",
+      "patches": [
+        {
+          "table": "claims",
+          "id": "yk-y11-sl4-2000-10-03-yudkowsky-0010-0125-c",
+          "path": "qualification",
+          "old": "Premise addressed: Capability gains will be gradual and visible. States the contrary expectation without engaging any argument for gradual takeoff. Earlier than the CFAI passage (2001-06-15) and his SL4 answer of 2001-01-24.",
+          "new": "Premise addressed: Capability gains will be gradual and visible. The opening paragraph states the contrary expectation. Later in the same message (section “Webmind’s awakening”, “How fast would a Webmind wake up?”), answering Goertzel’s view that others would observe a “real AI” and play catch-up, he argues that once an AI can enhance itself independently of its programmers it can “redesign itself radically in accelerated subjective time and walk out as a transhuman”, passing from a prehuman to a transhuman state before observation and catch-up would matter. This records the argument, not its validity. Earlier than the CFAI passage (2001-06-15) and his SL4 answer of 2001-01-24."
+        },
+        {
+          "table": "claims",
+          "id": "yk-y11-sl4-2000-10-03-yudkowsky-0010-0125-c",
+          "path": "attributes.thought.engagement",
+          "old": {
+            "kind": "contrary-only",
+            "rationale": "Under the message-level rule, the passage states the contrary conclusion without giving a reason against the premise that capability gains will be gradual and visible, even when read with its message or dialogue turn."
+          },
+          "new": {
+            "kind": "engages-premise",
+            "rationale": "Under the message-level rule, the message gives a reason against the premise that capability gains will be gradual and visible: an AI that improves itself independently, in accelerated subjective time, could pass from a prehuman to a transhuman state before others observe it and catch up."
+          }
+        },
+        {
+          "table": "evidence",
+          "id": "evidence-yk-t11-s1",
+          "path": "checkedAt",
+          "old": "2026-10-07",
+          "new": "2026-11-02"
+        },
+        {
+          "table": "evidence",
+          "id": "evidence-yk-t11-s1",
+          "path": "note",
+          "old": "Candidate pack passage T11-s1. The quotation (20 words) matched the retrieved expression (SHA-256 8aefc21492cd1992d0007035163b0366bd8875b09a0ba5998e6bca7a236c9cef) when checked on 2026-10-07.",
+          "new": "Candidate pack passage T11-s1. The quotation (20 words) matched the retrieved expression (SHA-256 8aefc21492cd1992d0007035163b0366bd8875b09a0ba5998e6bca7a236c9cef) when checked on 2026-10-07. Corrected on 2026-11-02 after the cross-family audit sample of 2026-11-02 (review/cross-family-audit-sample-2026-11-02.md, item 119): the record’s engagement and qualification now take account of the later section “Webmind’s awakening” of the same message; this passage is unchanged. The session applying the correction re-read the passage in the source as served on 2026-11-02. Recorded in review/audit-sample-fixes-2026-11-02.md."
+        }
+      ]
+    },
+    {
+      "id": "audit-117:yk-y08-extropians-1999-01-06-yudkowsky-0160-c",
+      "item": 117,
+      "verdict": "material error",
+      "finding": "The quotation and date are correct, but the explicit contesting relation to Y08, and therefore the earliest located role, are unsupported by the message.",
+      "decision": "Maintainer decision 1 of 2026-11-02 on the cross-family audit sample: withdraw the role with underRecheck (reason: the cross-family audit of 2026-11-02, item 117) and correct the stance or qualification as the source supports; assign no role elsewhere.",
+      "patches": [
+        {
+          "table": "claims",
+          "id": "yk-y08-extropians-1999-01-06-yudkowsky-0160-c",
+          "path": "predicate",
+          "old": "contests_proposition",
+          "new": "bears_on_proposition"
+        },
+        {
+          "table": "claims",
+          "id": "yk-y08-extropians-1999-01-06-yudkowsky-0160-c",
+          "path": "statement",
+          "old": "The Extropians message “Re: Paths to Uploading” (1999-01-06) contests Y08. Replying to Anders Sandberg on paths to uploading, he argues that the forces in a Singularity are vast and dominated by positive feedback, so there will be no humanly observable intermediate period of superintelligent action.",
+          "new": "The Extropians message “Re: Paths to Uploading” (1999-01-06) bears on Y08. Replying to Anders Sandberg on paths to uploading, he argues that the forces in a Singularity are vast and dominated by positive feedback, so there will be no humanly observable intermediate period of superintelligent action."
+        },
+        {
+          "table": "claims",
+          "id": "yk-y08-extropians-1999-01-06-yudkowsky-0160-c",
+          "path": "qualification",
+          "old": "Premise addressed: There will be a recognisable, consensus-forming signal in time to act. About the speed of superintelligent action, not about warning signs or consensus as such.",
+          "new": "Premise addressed: There will be a recognisable, consensus-forming signal in time to act. The message argues that the forces of a Singularity are vast and dominated by positive feedback, and that superintelligent action will be too fast to notice once it can be noticed at all. It does not explicitly address a recognisable warning before danger, failures first seen in weaker systems, or action on a warning, so it is recorded as context. It was recorded as contesting the proposition, and headlined as the earliest located contesting text, until the cross-family audit sample of 2026-11-02 (review/cross-family-audit-sample-2026-11-02.md, item 117)."
+        },
+        {
+          "table": "claims",
+          "id": "yk-y08-extropians-1999-01-06-yudkowsky-0160-c",
+          "path": "attributes.thought.roles",
+          "old": ["contesting", "earliest-located"],
+          "new": ["context"]
+        },
+        {
+          "table": "claims",
+          "id": "yk-y08-extropians-1999-01-06-yudkowsky-0160-c",
+          "path": "attributes.thought.engagement",
+          "old": {
+            "kind": "contrary-only",
+            "rationale": "Under the message-level rule, the passage states the contrary conclusion without giving a reason against the premise that there will be a recognisable, consensus-forming signal in time to act, even when read with its message or dialogue turn."
+          },
+          "remove": true
+        },
+        {
+          "table": "claims",
+          "id": "yk-y08-extropians-1999-01-06-yudkowsky-0160-c",
+          "path": "attributes.thought.missing",
+          "new": "Argues that superintelligent action will be too fast to notice; it does not explicitly claim that no recognisable warning will come before danger, that failures will not first appear in weaker systems, or that a warning would not lead to effective action."
+        },
+        {
+          "table": "entities",
+          "id": "warning-signs-in-time",
+          "path": "proposition.underRecheck",
+          "new": [
+            {
+              "headline": "earliest-located-contesting",
+              "reason": "The cross-family audit sample of 2026-11-02 (review/cross-family-audit-sample-2026-11-02.md, item 117) found the record’s contesting relation to Y08, and so its earliest located role, unsupported: the message argues that superintelligent action will be too fast to notice, but does not explicitly address a recognisable warning before danger, failures first seen in weaker systems, or action on a warning. The record now bears on the proposition. The headline is withdrawn until a re-check of the proposition’s candidate texts; it is assigned to no other record.",
+              "recordedAt": "2026-11-02"
+            }
+          ]
+        },
+        {
+          "table": "evidence",
+          "id": "evidence-yk-t08-e1",
+          "path": "checkedAt",
+          "old": "2026-10-07",
+          "new": "2026-11-02"
+        },
+        {
+          "table": "evidence",
+          "id": "evidence-yk-t08-e1",
+          "path": "note",
+          "old": "Candidate pack passage T08-e1. The quotation (17 words) matched the retrieved expression (SHA-256 54aacc749efff72625a9d729962739c62cd48679b2fd55c273d150817ee94296) when checked on 2026-10-07.",
+          "new": "Candidate pack passage T08-e1. The quotation (17 words) matched the retrieved expression (SHA-256 54aacc749efff72625a9d729962739c62cd48679b2fd55c273d150817ee94296) when checked on 2026-10-07. Corrected on 2026-11-02 after the cross-family audit sample of 2026-11-02 (review/cross-family-audit-sample-2026-11-02.md, item 117): the record now bears on Y08 instead of contesting it, and its earliest located role is withdrawn; this passage is unchanged. The session applying the correction re-read the passage in the source as served on 2026-11-02. Recorded in review/audit-sample-fixes-2026-11-02.md."
+        }
+      ]
+    },
+    {
+      "id": "audit-2:lg-mx-lecun-ami-chair-2025",
+      "item": 2,
+      "verdict": "minor",
+      "finding": "The quoted sentence is in the third article-body paragraph, not the second.",
+      "decision": "Maintainer decision 2 of 2026-11-02 on the cross-family audit sample: fix the mechanical slips as the audit proposes.",
+      "patches": [
+        {
+          "table": "evidence",
+          "id": "lg-ev-mx-lecun-ami-chair-2025",
+          "path": "locator",
+          "old": "Paragraph 2, quoting LeCun's post",
+          "new": "Article body, paragraph 3, quoting LeCun’s post (quotation beginning “Yes, AMI Labs”)"
+        },
+        {
+          "table": "evidence",
+          "id": "lg-ev-mx-lecun-ami-chair-2025",
+          "path": "checkedAt",
+          "old": "2026-10-29",
+          "new": "2026-11-02"
+        },
+        {
+          "table": "evidence",
+          "id": "lg-ev-mx-lecun-ami-chair-2025",
+          "path": "note",
+          "old": "Candidate pack passage, lab genealogy (research/lab-genealogy). The quotation (11 words) matched the retrieved text on 2026-10-15 and again in a fresh retrieval the same day. Read directly from the publisher. Matching ignored differences of whitespace, case, quotation marks, apostrophes, dashes and Unicode compatibility forms, so the source’s typography can differ. A cross-family machine check (2026-10-16/17) re-read the record’s sources and agreed with the record. No human editorial review. On 2026-10-30, by the maintainer’s decision of that day, the quotation was corrected to the archive capture of 2026-10-13 (quotation marks and apostrophes as in the capture), which a cross-family archive check read on 2026-10-29; the proposition is unchanged. The retrieval route is that of the earlier check.",
+          "new": "Candidate pack passage, lab genealogy (research/lab-genealogy). The quotation (11 words) matched the retrieved text on 2026-10-15 and again in a fresh retrieval the same day. Read directly from the publisher. Matching ignored differences of whitespace, case, quotation marks, apostrophes, dashes and Unicode compatibility forms, so the source’s typography can differ. A cross-family machine check (2026-10-16/17) re-read the record’s sources and agreed with the record. No human editorial review. On 2026-10-30, by the maintainer’s decision of that day, the quotation was corrected to the archive capture of 2026-10-13 (quotation marks and apostrophes as in the capture), which a cross-family archive check read on 2026-10-29; the proposition is unchanged. The retrieval route is that of the earlier check. Corrected on 2026-11-02 after the cross-family audit sample of 2026-11-02 (review/cross-family-audit-sample-2026-11-02.md, item 2): locator changed from paragraph 2 to paragraph 3. The session applying the correction re-read the passage in the source as served on 2026-11-02. Recorded in review/audit-sample-fixes-2026-11-02.md."
+        }
+      ]
+    },
+    {
+      "id": "audit-19:kp-cites-llama-paper-natural-questions-benchmark-question-answering-2019",
+      "item": 19,
+      "verdict": "minor",
+      "finding": "The locator “reference or mention by title” does not identify a section or entry.",
+      "decision": "Maintainer decision 2 of 2026-11-02 on the cross-family audit sample: fix the mechanical slips as the audit proposes.",
+      "patches": [
+        {
+          "table": "evidence",
+          "id": "evidence-kp-cites-llama-paper-natural-questions-benchmark-question-answering-2019-1",
+          "path": "locator",
+          "old": "reference or mention by title",
+          "new": "References, Kwiatkowski et al. (2019), “Natural questions: a benchmark for question answering research”; also §3.2 Closed-book Question Answering"
+        },
+        {
+          "table": "evidence",
+          "id": "evidence-kp-cites-llama-paper-natural-questions-benchmark-question-answering-2019-1",
+          "path": "checkedAt",
+          "old": "2026-10-31",
+          "new": "2026-11-02"
+        },
+        {
+          "table": "evidence",
+          "id": "evidence-kp-cites-llama-paper-natural-questions-benchmark-question-answering-2019-1",
+          "path": "note",
+          "old": "Candidate pack passage, key papers (research/key-papers). The citation was matched (title) in the text retrieved for the candidate pack on 2026-10-28 and re-found by its mechanical check. The paraphrase is Selekoa’s. No human editorial review.",
+          "new": "Candidate pack passage, key papers (research/key-papers). The citation was matched (title) in the text retrieved for the candidate pack on 2026-10-28 and re-found by its mechanical check. The paraphrase is Selekoa’s. No human editorial review. Corrected on 2026-11-02 after the cross-family audit sample of 2026-11-02 (review/cross-family-audit-sample-2026-11-02.md, item 19): locator changed from “reference or mention by title” to the reference entry and §3.2. The session applying the correction re-read the passage in the source as served on 2026-11-02. Recorded in review/audit-sample-fixes-2026-11-02.md."
+        }
+      ]
+    },
+    {
+      "id": "audit-28:rd-r06-belrose-pope-2023-ai-easy-to-control",
+      "item": 28,
+      "verdict": "minor",
+      "finding": "The quotation uses straight quotation marks around “alignment” where the source has curly marks.",
+      "decision": "Maintainer decision 2 of 2026-11-02 on the cross-family audit sample: fix the mechanical slips as the audit proposes.",
+      "patches": [
+        {
+          "table": "evidence",
+          "id": "evidence-rd-r06-belrose-pope-2023-ai-easy-to-control-1",
+          "path": "passage",
+          "old": "we also argue it will be easy to instill our values into an AI, a process called \"alignment.\"",
+          "new": "we also argue it will be easy to instill our values into an AI, a process called “alignment.”"
+        },
+        {
+          "table": "evidence",
+          "id": "evidence-rd-r06-belrose-pope-2023-ai-easy-to-control-1",
+          "path": "checkedAt",
+          "old": "2026-10-31",
+          "new": "2026-11-02"
+        },
+        {
+          "table": "evidence",
+          "id": "evidence-rd-r06-belrose-pope-2023-ai-easy-to-control-1",
+          "path": "note",
+          "old": "Candidate pack passage, arguments about catastrophic risk from advanced AI (research/risk-debate). The quotation (18 words) matched the text retrieved for the candidate pack on 2026-10-29. Matching ignored differences of whitespace, case, quotation marks, dashes and Unicode compatibility forms, so the source’s typography can differ. No human editorial review.",
+          "new": "Candidate pack passage, arguments about catastrophic risk from advanced AI (research/risk-debate). The quotation (18 words) matched the text retrieved for the candidate pack on 2026-10-29. Matching ignored differences of whitespace, case, quotation marks, dashes and Unicode compatibility forms, so the source’s typography can differ. No human editorial review. Corrected on 2026-11-02 after the cross-family audit sample of 2026-11-02 (review/cross-family-audit-sample-2026-11-02.md, item 28): quotation marks around “alignment” changed to the source’s curly marks. The session applying the correction re-read the passage in the source as served on 2026-11-02. Recorded in review/audit-sample-fixes-2026-11-02.md."
+        }
+      ]
+    },
+    {
+      "id": "audit-29:c2-bytedance-seed-20-model-card",
+      "item": 29,
+      "verdict": "minor",
+      "finding": "The contributor quotation has a straight apostrophe in “authors’”.",
+      "decision": "Maintainer decision 2 of 2026-11-02 on the cross-family audit sample: fix the mechanical slips as the audit proposes.",
+      "patches": [
+        {
+          "table": "evidence",
+          "id": "c2-ev-bytedance-seed-20-model-card-aliases",
+          "path": "passage",
+          "old": "The authors are listed in alphabetical order by their first names. Some names refer to the authors' internal aliases at the company.",
+          "new": "The authors are listed in alphabetical order by their first names. Some names refer to the authors’ internal aliases at the company."
+        },
+        {
+          "table": "evidence",
+          "id": "c2-ev-bytedance-seed-20-model-card-aliases",
+          "path": "locator",
+          "old": "Section 7, Contributors",
+          "new": "PDF p. 58, Section 7, Contributors, introductory sentences"
+        },
+        {
+          "table": "evidence",
+          "id": "c2-ev-bytedance-seed-20-model-card-aliases",
+          "path": "checkedAt",
+          "old": "2026-10-27",
+          "new": "2026-11-02"
+        },
+        {
+          "table": "evidence",
+          "id": "c2-ev-bytedance-seed-20-model-card-aliases",
+          "path": "note",
+          "old": "Candidate pack passage, Chinese frontier-AI institutions, second collection (research/china-labs-2). The quotation (22 words) matched the retrieved text on 2026-10-27 and again in a fresh retrieval the same day. Read directly from the publisher. Matching ignored differences of whitespace, case, quotation marks, apostrophes, dashes and Unicode compatibility forms, so the source’s typography can differ. No human editorial review.",
+          "new": "Candidate pack passage, Chinese frontier-AI institutions, second collection (research/china-labs-2). The quotation (22 words) matched the retrieved text on 2026-10-27 and again in a fresh retrieval the same day. Read directly from the publisher. Matching ignored differences of whitespace, case, quotation marks, apostrophes, dashes and Unicode compatibility forms, so the source’s typography can differ. No human editorial review. Corrected on 2026-11-02 after the cross-family audit sample of 2026-11-02 (review/cross-family-audit-sample-2026-11-02.md, item 29): apostrophe in “authors’” as in the source; locator given the PDF page. The session applying the correction re-read the passage in the source as served on 2026-11-02. Recorded in review/audit-sample-fixes-2026-11-02.md."
+        }
+      ]
+    },
+    {
+      "id": "audit-59:aib-labs-iso-founding-stated",
+      "item": 59,
+      "verdict": "minor",
+      "finding": "The Novartis release quotation is on PDF p. 2, not p. 1, and changes the source’s curly apostrophe.",
+      "decision": "Maintainer decision 2 of 2026-11-02 on the cross-family audit sample: fix the mechanical slips as the audit proposes.",
+      "patches": [
+        {
+          "table": "evidence",
+          "id": "evidence-aib-labs-iso-founding-stated-2",
+          "path": "locator",
+          "old": "PDF p. 1, \"About Isomorphic Labs\"",
+          "new": "PDF p. 2, \"About Isomorphic Labs\""
+        },
+        {
+          "table": "evidence",
+          "id": "evidence-aib-labs-iso-founding-stated-2",
+          "path": "passage",
+          "old": "Isomorphic Labs is an autonomous subsidiary of Alphabet that was launched from Alphabet's DeepMind in 2021",
+          "new": "Isomorphic Labs is an autonomous subsidiary of Alphabet that was launched from Alphabet’s DeepMind in 2021"
+        },
+        {
+          "table": "claims",
+          "id": "aib-labs-iso-founding-stated",
+          "path": "statement",
+          "old": "Isomorphic Labs' January 2026 release states that the company \"was founded in 2021\"; its January 2024 releases state that it was \"launched from Alphabet's DeepMind in 2021\".",
+          "new": "Isomorphic Labs' January 2026 release states that the company \"was founded in 2021\"; its January 2024 releases state that it was \"launched from Alphabet’s DeepMind in 2021\"."
+        },
+        {
+          "table": "evidence",
+          "id": "evidence-aib-labs-iso-founding-stated-2",
+          "path": "checkedAt",
+          "old": "2026-10-30",
+          "new": "2026-11-02"
+        },
+        {
+          "table": "evidence",
+          "id": "evidence-aib-labs-iso-founding-stated-2",
+          "path": "note",
+          "old": "Candidate pack passage, AI in biology (research/ai-in-biology). The quotation (16 words) matched the text retrieved for the candidate pack on 2026-10-30. Matching ignored differences of whitespace, case, quotation marks, dashes and Unicode compatibility forms, so the source’s typography can differ. No human editorial review.",
+          "new": "Candidate pack passage, AI in biology (research/ai-in-biology). The quotation (16 words) matched the text retrieved for the candidate pack on 2026-10-30. Matching ignored differences of whitespace, case, quotation marks, dashes and Unicode compatibility forms, so the source’s typography can differ. No human editorial review. Corrected on 2026-11-02 after the cross-family audit sample of 2026-11-02 (review/cross-family-audit-sample-2026-11-02.md, item 59): locator changed from PDF p. 1 to p. 2; apostrophe in “Alphabet’s” as in the source, also in the statement’s quotation. The session applying the correction re-read the passage in the source as served on 2026-11-02. Recorded in review/audit-sample-fixes-2026-11-02.md."
+        }
+      ]
+    },
+    {
+      "id": "audit-59:aib-labs-iso-alphabet-subsidiary-2024",
+      "item": 59,
+      "verdict": "minor (same passage, not sampled)",
+      "finding": "The sibling record quotes the same passage of the Novartis release with the same page and apostrophe slips as item 59.",
+      "decision": "Maintainer decision 2 of 2026-11-02 on the cross-family audit sample: fix the mechanical slips as the audit proposes.",
+      "patches": [
+        {
+          "table": "evidence",
+          "id": "evidence-aib-labs-iso-alphabet-subsidiary-2024-1",
+          "path": "locator",
+          "old": "PDF p. 1, \"About Isomorphic Labs\"",
+          "new": "PDF p. 2, \"About Isomorphic Labs\""
+        },
+        {
+          "table": "evidence",
+          "id": "evidence-aib-labs-iso-alphabet-subsidiary-2024-1",
+          "path": "passage",
+          "old": "Isomorphic Labs is an autonomous subsidiary of Alphabet that was launched from Alphabet's DeepMind in 2021",
+          "new": "Isomorphic Labs is an autonomous subsidiary of Alphabet that was launched from Alphabet’s DeepMind in 2021"
+        },
+        {
+          "table": "claims",
+          "id": "aib-labs-iso-alphabet-subsidiary-2024",
+          "path": "statement",
+          "old": "Isomorphic Labs' January 2024 release describes the company as \"an autonomous subsidiary of Alphabet that was launched from Alphabet's DeepMind in 2021\" and says that it operates autonomously within Alphabet with its own dedicated resources.",
+          "new": "Isomorphic Labs' January 2024 release describes the company as \"an autonomous subsidiary of Alphabet that was launched from Alphabet’s DeepMind in 2021\" and says that it operates autonomously within Alphabet with its own dedicated resources."
+        },
+        {
+          "table": "evidence",
+          "id": "evidence-aib-labs-iso-alphabet-subsidiary-2024-1",
+          "path": "checkedAt",
+          "old": "2026-10-30",
+          "new": "2026-11-02"
+        },
+        {
+          "table": "evidence",
+          "id": "evidence-aib-labs-iso-alphabet-subsidiary-2024-1",
+          "path": "note",
+          "old": "Candidate pack passage, AI in biology (research/ai-in-biology). The quotation (16 words) matched the text retrieved for the candidate pack on 2026-10-30. Matching ignored differences of whitespace, case, quotation marks, dashes and Unicode compatibility forms, so the source’s typography can differ. No human editorial review.",
+          "new": "Candidate pack passage, AI in biology (research/ai-in-biology). The quotation (16 words) matched the text retrieved for the candidate pack on 2026-10-30. Matching ignored differences of whitespace, case, quotation marks, dashes and Unicode compatibility forms, so the source’s typography can differ. No human editorial review. Corrected on 2026-11-02 after the cross-family audit sample of 2026-11-02 (review/cross-family-audit-sample-2026-11-02.md, item 59): the same passage as in the sampled record evidence-aib-labs-iso-founding-stated-2: locator changed from PDF p. 1 to p. 2; apostrophe in “Alphabet’s” as in the source, also in the statement’s quotation. The session applying the correction re-read the passage in the source as served on 2026-11-02. Recorded in review/audit-sample-fixes-2026-11-02.md."
+        }
+      ]
+    },
+    {
+      "id": "audit-72:aib-labs-dm-2018-casp13-ranking",
+      "item": 72,
+      "verdict": "minor",
+      "finding": "The quotation normalises the live source’s apostrophe and quotation marks.",
+      "decision": "Maintainer decision 2 of 2026-11-02 on the cross-family audit sample: fix the mechanical slips as the audit proposes.",
+      "patches": [
+        {
+          "table": "evidence",
+          "id": "evidence-aib-labs-dm-2018-casp13-ranking-1",
+          "path": "passage",
+          "old": "We're proud to be part of what the CASP organisers have called \"unprecedented progress in the ability of computational methods to predict protein structure,\" placing first in rankings among the teams that entered (our entry is A7D).",
+          "new": "We’re proud to be part of what the CASP organisers have called “unprecedented progress in the ability of computational methods to predict protein structure,” placing first in rankings among the teams that entered (our entry is A7D)."
+        },
+        {
+          "table": "evidence",
+          "id": "evidence-aib-labs-dm-2018-casp13-ranking-1",
+          "path": "checkedAt",
+          "old": "2026-10-30",
+          "new": "2026-11-02"
+        },
+        {
+          "table": "evidence",
+          "id": "evidence-aib-labs-dm-2018-casp13-ranking-1",
+          "path": "note",
+          "old": "Candidate pack passage, AI in biology (research/ai-in-biology). The quotation (37 words) matched the text retrieved for the candidate pack on 2026-10-30. Matching ignored differences of whitespace, case, quotation marks, dashes and Unicode compatibility forms, so the source’s typography can differ. No human editorial review.",
+          "new": "Candidate pack passage, AI in biology (research/ai-in-biology). The quotation (37 words) matched the text retrieved for the candidate pack on 2026-10-30. Matching ignored differences of whitespace, case, quotation marks, dashes and Unicode compatibility forms, so the source’s typography can differ. No human editorial review. Corrected on 2026-11-02 after the cross-family audit sample of 2026-11-02 (review/cross-family-audit-sample-2026-11-02.md, item 72): “We’re” and the curly quotation marks as in the page as served. The session applying the correction re-read the passage in the source as served on 2026-11-02. Recorded in review/audit-sample-fixes-2026-11-02.md."
+        }
+      ]
+    },
+    {
+      "id": "audit-73:th-ns-garcez-lamb-term",
+      "item": 73,
+      "verdict": "minor",
+      "finding": "The recorded date is arXiv version 1’s submission date, but both evidence items cite version 2 (16 December 2020) without distinguishing it.",
+      "decision": "Maintainer decision 2 of 2026-11-02 on the cross-family audit sample: fix the mechanical slips as the audit proposes. The audit’s alternative is taken: the time note distinguishes the version 1 date from the cited version 2.",
+      "patches": [
+        {
+          "table": "claims",
+          "id": "th-ns-garcez-lamb-term",
+          "path": "time.note",
+          "old": "Date of submission (an arXiv version or a journal’s received date, as the source states it); not a later revision or the venue’s publication date.",
+          "new": "Submission date of arXiv version 1 (10 December 2020). The quotations are read in version 2 (stamped 16 December 2020); the title and the abstract’s wording are the same in version 1, as the cross-family audit sample of 2026-11-02 (item 73) found and as re-read on 2026-11-02."
+        }
+      ]
+    },
+    {
+      "id": "audit-78:rd-r10a-brooks-2014-tool-not-threat",
+      "item": 78,
+      "verdict": "minor",
+      "finding": "The month comes from the Robohub repost, a separate expression; the Edge response carries no date of its own.",
+      "decision": "Maintainer decision 2 of 2026-11-02 on the cross-family audit sample: fix the mechanical slips as the audit proposes.",
+      "patches": [
+        {
+          "table": "claims",
+          "id": "rd-r10a-brooks-2014-tool-not-threat",
+          "path": "time.date",
+          "old": "2014-11",
+          "new": "2014"
+        },
+        {
+          "table": "claims",
+          "id": "rd-r10a-brooks-2014-tool-not-threat",
+          "path": "time.note",
+          "old": "Date of posting.",
+          "new": "Year only. The Edge response carries no date of its own; the Robohub repost of 11 November 2014 is a separate expression with small differences of wording and does not date it."
+        }
+      ]
+    },
+    {
+      "id": "audit-79:kp-states-lamda-language-models-dialog-applications-2022-2",
+      "item": 79,
+      "verdict": "minor",
+      "finding": "The quotation drops the hyphen in “Transformer-based” when joining a PDF line break.",
+      "decision": "Maintainer decision 2 of 2026-11-02 on the cross-family audit sample: fix the mechanical slips as the audit proposes.",
+      "patches": [
+        {
+          "table": "evidence",
+          "id": "evidence-kp-states-lamda-language-models-dialog-applications-2022-2-1",
+          "path": "passage",
+          "old": "LaMDA is a family of Transformerbased neural language models specialized for dialog, which have up to 137B parameters and are pre-trained on 1.56T words of public dialog data and web text.",
+          "new": "LaMDA is a family of Transformer-based neural language models specialized for dialog, which have up to 137B parameters and are pre-trained on 1.56T words of public dialog data and web text."
+        },
+        {
+          "table": "evidence",
+          "id": "evidence-kp-states-lamda-language-models-dialog-applications-2022-2-1",
+          "path": "checkedAt",
+          "old": "2026-10-31",
+          "new": "2026-11-02"
+        },
+        {
+          "table": "evidence",
+          "id": "evidence-kp-states-lamda-language-models-dialog-applications-2022-2-1",
+          "path": "note",
+          "old": "Candidate pack passage, key papers (research/key-papers). The quotation (31 words) matched the text retrieved for the candidate pack on 2026-10-28 (research/key-papers/verification.json). Matching ignored differences of whitespace, case, quotation marks, dashes and line-break hyphens, so the source’s typography can differ. No human editorial review.",
+          "new": "Candidate pack passage, key papers (research/key-papers). The quotation (31 words) matched the text retrieved for the candidate pack on 2026-10-28 (research/key-papers/verification.json). Matching ignored differences of whitespace, case, quotation marks, dashes and line-break hyphens, so the source’s typography can differ. No human editorial review. Corrected on 2026-11-02 after the cross-family audit sample of 2026-11-02 (review/cross-family-audit-sample-2026-11-02.md, item 79): “Transformerbased” corrected to “Transformer-based”, as in the arXiv abstract page. The session applying the correction re-read the passage in the source as served on 2026-11-02. Recorded in review/audit-sample-fixes-2026-11-02.md."
+        }
+      ]
+    },
+    {
+      "id": "audit-112:ts-a1-shulman-2009",
+      "item": 112,
+      "verdict": "minor",
+      "finding": "The record turns the opening day of the conference interval (2–4 July 2009) into an exact publication day.",
+      "decision": "Maintainer decision 2 of 2026-11-02 on the cross-family audit sample: fix the mechanical slips as the audit proposes.",
+      "patches": [
+        {
+          "table": "claims",
+          "id": "ts-a1-shulman-2009",
+          "path": "time.date",
+          "old": "2009-07-02",
+          "new": "2009-07"
+        },
+        {
+          "table": "claims",
+          "id": "ts-a1-shulman-2009",
+          "path": "time.note",
+          "old": "Presented at ECAP, 2–4 July 2009, according to the reprint’s citation line.",
+          "new": "Month only: presented at ECAP, 2–4 July 2009, according to the reprint’s citation line, which gives no day for the paper. The MIRI reprint, marked as containing minor changes, is a separate, undated expression."
+        }
+      ]
+    },
+    {
+      "id": "audit-120:ts-a6-grace-2014-treacherous-turn",
+      "item": 120,
+      "verdict": "minor",
+      "finding": "The quotation joins two bullets with a slash the source does not have.",
+      "decision": "Maintainer decision 2 of 2026-11-02 on the cross-family audit sample: fix the mechanical slips as the audit proposes. The sub-bullet is quoted alone.",
+      "patches": [
+        {
+          "table": "evidence",
+          "id": "evidence-ts-a6-grace-2014-treacherous-turn",
+          "path": "passage",
+          "old": "The possibility of a first mover advantage + orthogonality thesis + convergent instrumental values suggests doom for humanity (p115-6) / First mover advantage implies the AI is in a position to do what it wants",
+          "new": "First mover advantage implies the AI is in a position to do what it wants"
+        },
+        {
+          "table": "evidence",
+          "id": "evidence-ts-a6-grace-2014-treacherous-turn",
+          "path": "locator",
+          "old": "Section \"Summary\", first bullet, citing pp. 115–6, and its first sub-bullet",
+          "new": "Section \"Summary\", first sub-bullet of the first bullet (which cites pp. 115–6)"
+        },
+        {
+          "table": "evidence",
+          "id": "evidence-ts-a6-grace-2014-treacherous-turn",
+          "path": "checkedAt",
+          "old": "2026-10-06",
+          "new": "2026-11-02"
+        },
+        {
+          "table": "evidence",
+          "id": "evidence-ts-a6-grace-2014-treacherous-turn",
+          "path": "note",
+          "old": "Checked in the first stored version on 2026-10-06; the slash marks the start of the sub-bullet.",
+          "new": "Checked in the first stored version on 2026-10-06; the slash marks the start of the sub-bullet. Corrected on 2026-11-02 after the cross-family audit sample of 2026-11-02 (review/cross-family-audit-sample-2026-11-02.md, item 120): the sub-bullet is quoted alone, without the first bullet and the joining slash. The session applying the correction re-read the passage in the source as served on 2026-11-02. Recorded in review/audit-sample-fixes-2026-11-02.md."
+        }
+      ]
+    },
+    {
+      "id": "audit-turing-B4:ht-w01-turing-c1951-heretical-theory",
+      "item": "turing-B4",
+      "verdict": "admission",
+      "finding": "The Turing 1951 lead report (B4-P1) finds that the typescript articulates W01; Butler (1863) holds the earliest located role.",
+      "decision": "Maintainer decision 3 of 2026-11-02 on the Turing 1951 lead: admit a W01 articulation from AMT/B/4 with the report’s passage and locator, dated c. 1951, with no earliest located role; add the AMT/B/5 record if it bears on W01 as the report says.",
+      "patches": [],
+      "added": {
+        "claims": [
+          {
+            "row": {
+              "id": "ht-w01-turing-c1951-heretical-theory",
+              "subject": "turing-c1951-heretical-theory",
+              "predicate": "articulates_proposition",
+              "object": {
+                "kind": "entity",
+                "entityId": "machine-succession"
+              },
+              "topic": "ideas",
+              "statement": "Alan Turing’s lecture typescript “Intelligent Machinery, a Heretical Theory” (c. 1951) says that once the machine thinking method had started it would not take long to outstrip human powers, and that at some stage “we should have to expect the machines to take control”, as mentioned in Butler’s Erewhon.",
+              "time": {
+                "kind": "event",
+                "date": "1951",
+                "note": "Approximate year: the King’s College catalogue dates the lecture typescript (AMT/B/4), a lecture to the ’51 Society at Manchester, c. 1951. No lecture day is established. The wording is dated by the typescript, not by its printing in Philosophia Mathematica (September 1996)."
+              },
+              "derivation": "explicit",
+              "resolution": "supported",
+              "editorialState": "seed",
+              "qualification": "A conditional forecast: the lecture assumes that thinking machines can be made. The reference to Erewhon is the typescript’s own citation of Butler; it is not evidence of influence and does not carry over Butler’s other arguments. The same sentence is recorded on A1 in the superintelligence collection. Later than Butler’s letter of 1863, which holds the earliest located role.",
+              "evidenceIds": [
+                "evidence-ht-w01-turing-c1951-heretical-theory-1"
+              ],
+              "recordedAt": "2026-11-02",
+              "attributes": {
+                "thought": {
+                  "roles": ["articulation"],
+                  "register": "nonfiction"
+                }
+              }
+            },
+            "after": "ht-w01-butler-1863-darwin-among-the-machines"
+          }
+        ],
+        "evidence": [
+          {
+            "row": {
+              "id": "evidence-ht-w01-turing-c1951-heretical-theory-1",
+              "claimId": "ht-w01-turing-c1951-heretical-theory",
+              "sourceId": "source-turing-c1951-amt-b-4",
+              "sourceRole": "primary",
+              "support": "supports",
+              "locator": "Typescript p. 10, final sentence (AMT/B/4/16, scan 16); the same sentence on carbon p. 101 (AMT/B/4/6, scan 6)",
+              "passage": "At some stage therefore we should have to expect the machines to take control, in the way that is mentioned in Samuel Butler's 'Erewhon'.",
+              "passageType": "quote",
+              "verification": "machine_checked",
+              "checkedAt": "2026-11-02",
+              "note": "Read on the archive’s scan, typescript p. 10 (scan 16), compared with carbon p. 101 (scan 6), by the Turing 1951 lead report of 2026-11-02 (research/turing-1951-lead-2026-11-02/report.md, B4-P1), which gives the passage verbatim; that report, by a model of another family, is the cross-family pass for this record. The session admitting it re-read the passage on the same scan on 2026-11-02. The scan has no text layer. Admitted by the maintainer’s decision of 2026-11-02. No human editorial review.",
+              "retrievalRoute": "direct"
+            },
+            "after": "evidence-ht-w01-butler-1863-darwin-among-the-machines-1"
+          }
+        ]
+      }
+    },
+    {
+      "id": "audit-turing-B5:ht-w01-turing-1951-can-digital-computers-think",
+      "item": "turing-B5",
+      "verdict": "admission",
+      "finding": "The Turing 1951 lead report (B5-P1, B5-P3) finds that the broadcast script bears on W01 but lacks a statement of succession.",
+      "decision": "Maintainer decision 3 of 2026-11-02 on the Turing 1951 lead: admit a W01 articulation from AMT/B/4 with the report’s passage and locator, dated c. 1951, with no earliest located role; add the AMT/B/5 record if it bears on W01 as the report says.",
+      "patches": [],
+      "added": {
+        "claims": [
+          {
+            "row": {
+              "id": "ht-w01-turing-1951-can-digital-computers-think",
+              "subject": "turing-1951-can-digital-computers-think",
+              "predicate": "bears_on_proposition",
+              "object": {
+                "kind": "entity",
+                "entityId": "machine-succession"
+              },
+              "topic": "ideas",
+              "statement": "Alan Turing’s broadcast script “Can Digital Computers Think?” (1951) asks where we should be if a machine thought more intelligently than we do, says that even if machines were kept subservient we should as a species feel greatly humbled, and compares the possibility of being superseded by the pig or the rat.",
+              "time": {
+                "kind": "event",
+                "date": "1951",
+                "note": "The King’s College catalogue identifies the annotated script (AMT/B/5) with the BBC Third Programme broadcast of 15 May 1951; the script’s composition and annotations are not dated to that day, and it is not a recording of what was said."
+              },
+              "derivation": "explicit",
+              "resolution": "supported",
+              "editorialState": "seed",
+              "qualification": "The script introduces these points as features that make the idea of a thinking machine unpleasant, in a paragraph on irrational opposition to it. The supersession it names is by pigs or rats, not machines. Do not substitute the stronger prediction of the Heretical Theory lecture for this script.",
+              "evidenceIds": [
+                "evidence-ht-w01-turing-1951-can-digital-computers-think-1"
+              ],
+              "recordedAt": "2026-11-02",
+              "attributes": {
+                "thought": {
+                  "roles": ["context"],
+                  "register": "nonfiction",
+                  "missing": "Considers machines more intelligent than people and keeping them subservient; it does not state that machines would replace or succeed humans as the dominant intelligence."
+                }
+              }
+            },
+            "after": "ht-w01-turing-c1951-heretical-theory"
+          }
+        ],
+        "evidence": [
+          {
+            "row": {
+              "id": "evidence-ht-w01-turing-1951-can-digital-computers-think-1",
+              "claimId": "ht-w01-turing-1951-can-digital-computers-think",
+              "sourceId": "source-turing-1951-amt-b-5",
+              "sourceRole": "primary",
+              "support": "supports",
+              "locator": "Script p. 6a (AMT/B/5/7, scan 7), paragraph on irrational opposition to the idea",
+              "passage": "If a machine can think, it might think more intelligently than we do, and then where should we be?",
+              "passageType": "quote",
+              "verification": "machine_checked",
+              "checkedAt": "2026-11-02",
+              "note": "Read on the archive’s scan, script p. 6a (scan 7), by the Turing 1951 lead report of 2026-11-02 (research/turing-1951-lead-2026-11-02/report.md, B5-P1), which gives the passage verbatim; that report, by a model of another family, is the cross-family pass for this record. The session admitting it re-read the passage on the same scan on 2026-11-02. The scan has no text layer. Admitted by the maintainer’s decision of 2026-11-02. No human editorial review.",
+              "retrievalRoute": "direct"
+            },
+            "after": "evidence-ht-w01-turing-c1951-heretical-theory-1"
+          }
+        ]
+      }
+    }
+  ]
+}

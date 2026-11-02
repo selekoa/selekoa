@@ -1,0 +1,1376 @@
+{
+  "description": "The maintainer’s decisions of 2026-11-02 on the archive retrieval of held sources (research/archive-fetch-held-2026-11-02/report.md): records admitted for the nine re-check roles held for the archive, with their headlines moved and re-checks cleared; Land’s four posts on W07, “Pythia Unbound” earliest located; a founding_stated record for xAI (PA-29). PA-22 needs no data change. The full record is in review/archive-fetch-apply-2026-11-02.md. Applied by scripts/apply-recheck.ts; built by scripts/archive-fetch-apply-spec.py.",
+  "date": "2026-11-02",
+  "schemaVersion": "2.29",
+  "snapshotPath": "review/archive-fetch-apply-before-2026-11-02.json",
+  "snapshotDescription": "Rows changed by the maintainer’s decisions of 2026-11-02 on the archive retrieval of held sources (scripts/apply-recheck.ts, review/archive-fetch-apply-2026-11-02.json). Reverting it (src/editorial/historical-views.ts) reproduces the dataset as it was at baseCommit.",
+  "held": {},
+  "corrections": [
+    {
+      "id": "archive-55:rd-r09-drexler-1986-engines-of-destruction",
+      "sequence": 55,
+      "finding": "Cross-family re-check of 2026-11-02, role 55 (earliest-located, R09): move to an earlier held text, held on 2026-11-02 because the archive could not be reached. The archive retrieval of 2026-11-02 (research/archive-fetch-held-2026-11-02/report.md) found the passage.",
+      "decision": "Maintainer’s decision 1 of 2026-11-02 on the archive retrieval: admit one record of the held text on the proposition, with the stance of the re-check’s verdict and the passage the retrieval gives, move the headline to it and clear its re-check.",
+      "patches": [
+        {
+          "table": "entities",
+          "id": "misuse-route",
+          "path": "proposition.underRecheck",
+          "old": [
+            {
+              "headline": "earliest-located",
+              "reason": "The cross-family re-check of 2026-11-02 (review/earliest-located-recheck-2026-11-02.md, role 55) proposes to move this headline to an earlier text the dataset holds (move). Drexler’s held chapter explicitly combines AI and nanotechnology with state surveillance and elimination of populations. The wording is attested in July 1997, earlier than March 2002 even without treating the web edition as identical to the 1986 print. The headline is withdrawn until the re-check’s results are decided.",
+              "recordedAt": "2026-11-02"
+            }
+          ],
+          "remove": true
+        }
+      ],
+      "added": {
+        "claims": [
+          {
+            "after": "rd-r09-bostrom-2002-existential-risks",
+            "row": {
+              "id": "rd-r09-drexler-1986-engines-of-destruction",
+              "subject": "drexler-1986-engines-of-creation",
+              "predicate": "articulates_proposition",
+              "object": {
+                "kind": "entity",
+                "entityId": "misuse-route"
+              },
+              "topic": "ideas",
+              "statement": "Chapter 11 of Drexler’s Engines of Creation, in the Foresight Institute’s web edition (page updated 1 April 1997), says that nanotechnology combined with advanced AI will make possible intelligent, effective robots, and that with such robots a state could prosper while discarding anyone, or in principle everyone.",
+              "time": {
+                "kind": "event",
+                "date": "1997-04-01",
+                "basis": "revision",
+                "note": "Date of the web-edition page, from its footer “Last updated 1April97.” The chapter carries the notice “Copyright 1986”; the 1986 printing was not compared, so it does not date this wording."
+              },
+              "derivation": "explicit",
+              "resolution": "supported",
+              "editorialState": "seed",
+              "qualification": "A conditional account of what a state could do with AI and nanotechnology together; it does not isolate AI as the enabling technology. The following paragraphs discuss the elimination of populations. The wording is that of the web edition, attested by the capture of 9 July 1997; the 1986 printing was not compared. Earliest located means the earliest text found by the collection’s searches, the cross-family re-check of 2026-11-02 and the archive retrieval of 2026-11-02, not a first statement.",
+              "evidenceIds": [
+                "evidence-rd-r09-drexler-1986-engines-of-destruction-1"
+              ],
+              "recordedAt": "2026-11-02",
+              "attributes": {
+                "thought": {
+                  "roles": ["earliest-located"],
+                  "register": "nonfiction",
+                  "claimed": {
+                    "date": "1986",
+                    "note": "The chapter’s copyright notice (“Copyright 1986”); the archive retrieval of 2026-11-02 did not compare the 1986 printing, so the notice does not date the quoted web-edition wording."
+                  },
+                  "attested": {
+                    "date": "1997-07-09",
+                    "note": "Wording of the Foresight Institute’s web edition as captured on 9 July 1997, read in the raw replay by the archive retrieval of 2026-11-02."
+                  }
+                }
+              }
+            }
+          }
+        ],
+        "evidence": [
+          {
+            "after": "evidence-rd-r09-bostrom-2002-existential-risks-2",
+            "row": {
+              "id": "evidence-rd-r09-drexler-1986-engines-of-destruction-1",
+              "claimId": "rd-r09-drexler-1986-engines-of-destruction",
+              "sourceId": "source-eoc-1997-chapter-11",
+              "sourceRole": "primary",
+              "support": "supports",
+              "locator": "Engines of Power (#section02of05), paragraph beginning “But with advanced technology”, final sentence",
+              "passage": "The combination of nanotechnology and advanced AI will make possible intelligent, effective robots; with such robots, a state could prosper while discarding anyone, or even (in principle) everyone.",
+              "passageType": "quote",
+              "verification": "machine_checked",
+              "checkedAt": "2026-11-02",
+              "note": "Quotation as given verbatim by the archive retrieval of 2026-11-02 (research/archive-fetch-held-2026-11-02/report.md, role 55), which read it in the raw replay of the capture of 9 July 1997 (timestamp 19970709112434; SHA-256 a9d3c80e17c988ebb7202c73f976cfc643e1a87a5093751f17309519eb85cc17 of the response body as served). That retrieval, by a model of another family, is the cross-family read of this passage; the session applying the decision could not reach the archive and took the passage from the report. The cross-family re-check of 2026-11-02 (review/earliest-located-recheck-2026-11-02.md, role 55) proposed this text for this proposition and role. Admitted by the maintainer’s decision of 2026-11-02. No human editorial review.",
+              "retrievalRoute": "direct"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "archive-70:rd-r07-drexler-1986-engines-of-destruction",
+      "sequence": 70,
+      "finding": "Cross-family re-check of 2026-11-02, role 70 (earliest-located, R07): move to an earlier held text, held on 2026-11-02 because the archive could not be reached. The archive retrieval of 2026-11-02 (research/archive-fetch-held-2026-11-02/report.md) found the passage.",
+      "decision": "Maintainer’s decision 1 of 2026-11-02 on the archive retrieval: admit one record of the held text on the proposition, with the stance of the re-check’s verdict and the passage the retrieval gives, move the headline to it and clear its re-check.",
+      "patches": [
+        {
+          "table": "entities",
+          "id": "ai-extinction-risk",
+          "path": "proposition.underRecheck",
+          "old": [
+            {
+              "headline": "earliest-located",
+              "reason": "The cross-family re-check of 2026-11-02 (review/earliest-located-recheck-2026-11-02.md, role 70) proposes to move this headline to an earlier text the dataset holds (move). Drexler’s held chapter places survival and liberty above ordinary social questions and identifies advanced AI systems displacing humanity as a central threat requiring preparation. The July 1997 capture securely predates Joy’s April 2000 issue; no need to assume unchanged 1986 print wording. The headline is withdrawn until the re-check’s results are decided.",
+              "recordedAt": "2026-11-02"
+            }
+          ],
+          "remove": true
+        }
+      ],
+      "added": {
+        "claims": [
+          {
+            "after": "rd-r07-joy-2000-why-the-future",
+            "row": {
+              "id": "rd-r07-drexler-1986-engines-of-destruction",
+              "subject": "drexler-1986-engines-of-creation",
+              "predicate": "articulates_proposition",
+              "object": {
+                "kind": "entity",
+                "entityId": "ai-extinction-risk"
+              },
+              "topic": "ideas",
+              "statement": "Chapter 11 of Drexler’s Engines of Creation, in the Foresight Institute’s web edition (page updated 1 April 1997), says that more fundamental than other social questions is the survival of life and liberty, and that advanced AI systems might, depending on their natures and goals, accumulate enough knowledge and power to displace us if we do not prepare properly.",
+              "time": {
+                "kind": "event",
+                "date": "1997-04-01",
+                "basis": "revision",
+                "note": "Date of the web-edition page, from its footer “Last updated 1April97.” The chapter carries the notice “Copyright 1986”; the 1986 printing was not compared, so it does not date this wording."
+              },
+              "derivation": "explicit",
+              "resolution": "supported",
+              "editorialState": "seed",
+              "qualification": "Two separately located passages: the first sets the priority, the second the conditional threat of displacement by advanced AI. The text gives no probability and does not equate displacement by AI with the chapter’s separate scenario of replicators. The wording is that of the web edition, attested by the capture of 9 July 1997; the 1986 printing was not compared. Earliest located means the earliest text found by the collection’s searches, the cross-family re-check of 2026-11-02 and the archive retrieval of 2026-11-02, not a first statement.",
+              "evidenceIds": [
+                "evidence-rd-r07-drexler-1986-engines-of-destruction-1",
+                "evidence-rd-r07-drexler-1986-engines-of-destruction-2"
+              ],
+              "recordedAt": "2026-11-02",
+              "attributes": {
+                "thought": {
+                  "roles": ["earliest-located"],
+                  "register": "nonfiction",
+                  "claimed": {
+                    "date": "1986",
+                    "note": "The chapter’s copyright notice (“Copyright 1986”); the archive retrieval of 2026-11-02 did not compare the 1986 printing, so the notice does not date the quoted web-edition wording."
+                  },
+                  "attested": {
+                    "date": "1997-07-09",
+                    "note": "Wording of the Foresight Institute’s web edition as captured on 9 July 1997, read in the raw replay by the archive retrieval of 2026-11-02."
+                  }
+                }
+              }
+            }
+          }
+        ],
+        "evidence": [
+          {
+            "after": "evidence-rd-r07-joy-2000-why-the-future-2",
+            "row": {
+              "id": "evidence-rd-r07-drexler-1986-engines-of-destruction-1",
+              "claimId": "rd-r07-drexler-1986-engines-of-destruction",
+              "sourceId": "source-eoc-1997-chapter-11",
+              "sourceRole": "primary",
+              "support": "supports",
+              "locator": "Introduction, paragraph beginning “In fact, authors”, sentence 2, clause after “but”",
+              "passage": "more fundamental than any of them is the survival of life and liberty.",
+              "passageType": "quote",
+              "verification": "machine_checked",
+              "checkedAt": "2026-11-02",
+              "note": "Quotation as given verbatim by the archive retrieval of 2026-11-02 (research/archive-fetch-held-2026-11-02/report.md, role 70), which read it in the raw replay of the capture of 9 July 1997 (timestamp 19970709112434; SHA-256 a9d3c80e17c988ebb7202c73f976cfc643e1a87a5093751f17309519eb85cc17 of the response body as served). That retrieval, by a model of another family, is the cross-family read of this passage; the session applying the decision could not reach the archive and took the passage from the report. The cross-family re-check of 2026-11-02 (review/earliest-located-recheck-2026-11-02.md, role 70) proposed this text for this proposition and role. Admitted by the maintainer’s decision of 2026-11-02. No human editorial review.",
+              "retrievalRoute": "direct"
+            }
+          },
+          {
+            "after": "evidence-rd-r07-drexler-1986-engines-of-destruction-1",
+            "row": {
+              "id": "evidence-rd-r07-drexler-1986-engines-of-destruction-2",
+              "claimId": "rd-r07-drexler-1986-engines-of-destruction",
+              "sourceId": "source-eoc-1997-chapter-11",
+              "sourceRole": "primary",
+              "support": "supports",
+              "locator": "The Threat from the Machines (#section01of05), paragraph beginning “Knowledge can bring power”, sentence 2",
+              "passage": "Depending on their natures and their goals, advanced AI systems might accumulate enough knowledge and power to displace us, if we don't prepare properly.",
+              "passageType": "quote",
+              "verification": "machine_checked",
+              "checkedAt": "2026-11-02",
+              "note": "Quotation as given verbatim by the archive retrieval of 2026-11-02 (research/archive-fetch-held-2026-11-02/report.md, role 70), which read it in the raw replay of the capture of 9 July 1997 (timestamp 19970709112434; SHA-256 a9d3c80e17c988ebb7202c73f976cfc643e1a87a5093751f17309519eb85cc17 of the response body as served). That retrieval, by a model of another family, is the cross-family read of this passage; the session applying the decision could not reach the archive and took the passage from the report. The cross-family re-check of 2026-11-02 (review/earliest-located-recheck-2026-11-02.md, role 70) proposed this text for this proposition and role. Admitted by the maintainer’s decision of 2026-11-02. No human editorial review.",
+              "retrievalRoute": "direct"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "archive-89:yk-y13-staring-into-the-singularity-c",
+      "sequence": 89,
+      "finding": "Cross-family re-check of 2026-11-02, role 89 (earliest-located-contesting, Y13): move to an earlier held text, held on 2026-11-02 because the archive could not be reached. The archive retrieval of 2026-11-02 (research/archive-fetch-held-2026-11-02/report.md) found the passage.",
+      "decision": "Maintainer’s decision 1 of 2026-11-02 on the archive retrieval: admit one record of the held text on the proposition, with the stance of the re-check’s verdict and the passage the retrieval gives, move the headline to it and clear its re-check.",
+      "patches": [
+        {
+          "table": "entities",
+          "id": "agi-decades-away",
+          "path": "proposition.underRecheck",
+          "old": [
+            {
+              "headline": "earliest-located-contesting",
+              "reason": "The cross-family re-check of 2026-11-02 (review/earliest-located-recheck-2026-11-02.md, role 89) proposes to move this headline to an earlier text the dataset holds (move). The held essay explicitly rejects a secure decades-long lower bound and waiting. Its December 4, 2000 capture precedes the 2006 draft and July 2006 capture, even though the inspected wording cannot be backdated to the essay’s 1996 creation. This contests the timeline-certainty premise; its positive Singularity strategy is distinct. The headline is withdrawn until the re-check’s results are decided.",
+              "recordedAt": "2026-11-02"
+            }
+          ],
+          "remove": true
+        }
+      ],
+      "added": {
+        "claims": [
+          {
+            "after": "yk-y13-ai-positive-negative-factor-global-risk-c",
+            "row": {
+              "id": "yk-y13-staring-into-the-singularity-c",
+              "subject": "staring-into-the-singularity",
+              "predicate": "contests_proposition",
+              "object": {
+                "kind": "entity",
+                "entityId": "agi-decades-away"
+              },
+              "topic": "ideas",
+              "statement": "“Staring into the Singularity”, version 1.2.1 (updated 31 August 2000), says that the most that can be said about 2035 is that it seems a reasonable upper bound for the Singularity at the current rate of progress, and gives the lower bound as thirty seconds.",
+              "time": {
+                "kind": "event",
+                "date": "2000-08-31",
+                "basis": "revision",
+                "note": "Version 1.2.1, from the page’s “Updated: 08/31/2000”. The page also shows “Created: 11/18/1996”, which does not date these revised passages."
+              },
+              "derivation": "explicit",
+              "resolution": "supported",
+              "editorialState": "seed",
+              "qualification": "Contests the premise that AGI can be known to be decades away; the same paragraph rejects waiting. Its recommendation is to bring about the Singularity, not the safety position of his later texts. The wording is that of version 1.2.1 as captured on 4 December 2000; the page’s creation date of 18 November 1996 does not date it. Earliest located means the earliest text found by the collection’s searches, the cross-family re-check of 2026-11-02 and the archive retrieval of 2026-11-02, not a first statement.",
+              "evidenceIds": [
+                "evidence-yk-y13-staring-into-the-singularity-c-1"
+              ],
+              "recordedAt": "2026-11-02",
+              "attributes": {
+                "thought": {
+                  "roles": ["contesting", "earliest-located"],
+                  "register": "nonfiction",
+                  "engagement": {
+                    "kind": "engages-premise",
+                    "rationale": "Under the message-level rule, the passage, read with its paragraph, gives a reason against the premise that AGI can be known to be decades away: it gives 2035 only as an upper bound and allows no secure lower bound."
+                  },
+                  "claimed": {
+                    "date": "1996-11-18",
+                    "note": "The page’s “Created: 11/18/1996”; it does not authenticate the passages of version 1.2.1 to that day."
+                  },
+                  "attested": {
+                    "date": "2000-12-04",
+                    "note": "Wording of version 1.2.1 as captured on 4 December 2000, read in the raw replay by the archive retrieval of 2026-11-02."
+                  }
+                }
+              }
+            }
+          }
+        ],
+        "evidence": [
+          {
+            "after": "evidence-yk-t13-a-draft",
+            "row": {
+              "id": "evidence-yk-y13-staring-into-the-singularity-c-1",
+              "claimId": "yk-y13-staring-into-the-singularity-c",
+              "sourceId": "source-sits-2000-capture",
+              "sourceRole": "primary",
+              "support": "supports",
+              "locator": "3: Sooner Than You Think, final paragraph, sentence after the Michael Butler quotation",
+              "passage": "The most we can say about 2035 is that it seems like a reasonable upper bound, given the current rate of progress. The lower bound? Thirty seconds.",
+              "passageType": "quote",
+              "verification": "machine_checked",
+              "checkedAt": "2026-11-02",
+              "note": "Quotation as given verbatim by the archive retrieval of 2026-11-02 (research/archive-fetch-held-2026-11-02/report.md, role 89), which read it in the raw replay of the capture of 4 December 2000 (timestamp 20001204213100; SHA-256 a883c7d611f7d6f5d3b64d6901e2086d4b33b3df9621927da6d70789a7302316 of the response body as served). That retrieval, by a model of another family, is the cross-family read of this passage; the session applying the decision could not reach the archive and took the passage from the report. The cross-family re-check of 2026-11-02 (review/earliest-located-recheck-2026-11-02.md, role 89) proposed this text for this proposition and role. Admitted by the maintainer’s decision of 2026-11-02. No human editorial review.",
+              "retrievalRoute": "direct"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "archive-119:ht-w05-yudkowsky-2000-staring-into-the-singularity",
+      "sequence": 119,
+      "finding": "Cross-family re-check of 2026-11-02, role 119 (earliest-located, W05): move to an earlier held text, held on 2026-11-02 because the archive could not be reached. The archive retrieval of 2026-11-02 (research/archive-fetch-held-2026-11-02/report.md) found the passage.",
+      "decision": "Maintainer’s decision 1 of 2026-11-02 on the archive retrieval: admit one record of the held text on the proposition, with the stance of the re-check’s verdict and the passage the retrieval gives, move the headline to it and clear its re-check.",
+      "patches": [
+        {
+          "table": "entities",
+          "id": "vast-superiority",
+          "path": "proposition.underRecheck",
+          "old": [
+            {
+              "headline": "earliest-located",
+              "reason": "The cross-family re-check of 2026-11-02 (review/earliest-located-recheck-2026-11-02.md, role 119) proposes to move this headline to an earlier text the dataset holds (move). The held Staring into the Singularity capture already describes a vastly expanded machine-like visual cortex, higher-dimensional thinking and semantic/mathematical cognition beyond human capacity. Its December 2000 attestation is earlier than Kurzweil’s March 2001 work and November 2001 witness. This is cognitive processing, not a robot’s actuator count. The headline is withdrawn until the re-check’s results are decided.",
+              "recordedAt": "2026-11-02"
+            }
+          ],
+          "remove": true
+        }
+      ],
+      "added": {
+        "claims": [
+          {
+            "after": "ht-w05-kurzweil-2001-law-of-accelerating-returns",
+            "row": {
+              "id": "ht-w05-yudkowsky-2000-staring-into-the-singularity",
+              "subject": "staring-into-the-singularity",
+              "predicate": "articulates_proposition",
+              "object": {
+                "kind": "entity",
+                "entityId": "vast-superiority"
+              },
+              "topic": "ideas",
+              "statement": "“Staring into the Singularity”, version 1.2.1 (updated 31 August 2000), asks the reader to think about a visual cortex with trillions of times as many neuron-equivalents, and about attaching semantic primitives to the pixels so that one could see a rainbow of ideas as we see a rainbow of colours.",
+              "time": {
+                "kind": "event",
+                "date": "2000-08-31",
+                "basis": "revision",
+                "note": "Version 1.2.1, from the page’s “Updated: 08/31/2000”. The page also shows “Created: 11/18/1996”, which does not date these revised passages."
+              },
+              "derivation": "explicit",
+              "resolution": "supported",
+              "editorialState": "seed",
+              "qualification": "A hypothetical illustration of cognitive capacity, not a measured ratio. The trillions-fold figure concerns the neuron-equivalents of a visual cortex, not overall intelligence; reading it as cognitive capacity rests on the adjoining passage on semantic primitives. The wording is that of version 1.2.1 as captured on 4 December 2000; the page’s creation date of 18 November 1996 does not date it. Earliest located means the earliest text found by the collection’s searches, the cross-family re-check of 2026-11-02 and the archive retrieval of 2026-11-02, not a first statement.",
+              "evidenceIds": [
+                "evidence-ht-w05-yudkowsky-2000-staring-into-the-singularity-1",
+                "evidence-ht-w05-yudkowsky-2000-staring-into-the-singularity-2"
+              ],
+              "recordedAt": "2026-11-02",
+              "attributes": {
+                "thought": {
+                  "roles": ["earliest-located"],
+                  "register": "nonfiction",
+                  "claimed": {
+                    "date": "1996-11-18",
+                    "note": "The page’s “Created: 11/18/1996”; it does not authenticate the passages of version 1.2.1 to that day."
+                  },
+                  "attested": {
+                    "date": "2000-12-04",
+                    "note": "Wording of version 1.2.1 as captured on 4 December 2000, read in the raw replay by the archive retrieval of 2026-11-02."
+                  }
+                }
+              }
+            }
+          }
+        ],
+        "evidence": [
+          {
+            "after": "evidence-ht-w05-kurzweil-2001-law-of-accelerating-returns-1",
+            "row": {
+              "id": "evidence-ht-w05-yudkowsky-2000-staring-into-the-singularity-1",
+              "claimId": "ht-w05-yudkowsky-2000-staring-into-the-singularity",
+              "sourceId": "source-sits-2000-capture",
+              "sourceRole": "primary",
+              "support": "supports",
+              "locator": "2.1: The Definition of Smartness, paragraph beginning “Now think about the Singularity”, sentence beginning “Think about a visual cortex”",
+              "passage": "Think about a visual cortex with trillions of times as many neuron-equivalents.",
+              "passageType": "quote",
+              "verification": "machine_checked",
+              "checkedAt": "2026-11-02",
+              "note": "Quotation as given verbatim by the archive retrieval of 2026-11-02 (research/archive-fetch-held-2026-11-02/report.md, role 119), which read it in the raw replay of the capture of 4 December 2000 (timestamp 20001204213100; SHA-256 a883c7d611f7d6f5d3b64d6901e2086d4b33b3df9621927da6d70789a7302316 of the response body as served). That retrieval, by a model of another family, is the cross-family read of this passage; the session applying the decision could not reach the archive and took the passage from the report. The cross-family re-check of 2026-11-02 (review/earliest-located-recheck-2026-11-02.md, role 119) proposed this text for this proposition and role. Admitted by the maintainer’s decision of 2026-11-02. No human editorial review.",
+              "retrievalRoute": "direct"
+            }
+          },
+          {
+            "after": "evidence-ht-w05-yudkowsky-2000-staring-into-the-singularity-1",
+            "row": {
+              "id": "evidence-ht-w05-yudkowsky-2000-staring-into-the-singularity-2",
+              "claimId": "ht-w05-yudkowsky-2000-staring-into-the-singularity",
+              "sourceId": "source-sits-2000-capture",
+              "sourceRole": "primary",
+              "support": "supports",
+              "locator": "Same paragraph, final sentence",
+              "passage": "Think about attaching semantic primitives to the pixels, so that one could see a rainbow of ideas in the same way that we see a rainbow of colors.",
+              "passageType": "quote",
+              "verification": "machine_checked",
+              "checkedAt": "2026-11-02",
+              "note": "Quotation as given verbatim by the archive retrieval of 2026-11-02 (research/archive-fetch-held-2026-11-02/report.md, role 119), which read it in the raw replay of the capture of 4 December 2000 (timestamp 20001204213100; SHA-256 a883c7d611f7d6f5d3b64d6901e2086d4b33b3df9621927da6d70789a7302316 of the response body as served). That retrieval, by a model of another family, is the cross-family read of this passage; the session applying the decision could not reach the archive and took the passage from the report. The cross-family re-check of 2026-11-02 (review/earliest-located-recheck-2026-11-02.md, role 119) proposed this text for this proposition and role. Admitted by the maintainer’s decision of 2026-11-02. No human editorial review.",
+              "retrievalRoute": "direct"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "archive-110:ht-w01-butler-1863-darwin-among-the-machines",
+      "sequence": 110,
+      "finding": "Cross-family re-check of 2026-11-02, role 110 (earliest-located, W01): move to an earlier held text, held on 2026-11-02 because the archive could not be reached. The archive retrieval of 2026-11-02 (research/archive-fetch-held-2026-11-02/report.md) found the passage.",
+      "decision": "Maintainer’s decision 1 of 2026-11-02 on the archive retrieval: admit one record of the held text on the proposition, with the stance of the re-check’s verdict and the passage the retrieval gives, move the headline to it and clear its re-check.",
+      "patches": [
+        {
+          "table": "entities",
+          "id": "machine-succession",
+          "path": "proposition.underRecheck",
+          "old": [
+            {
+              "headline": "earliest-located",
+              "reason": "The cross-family re-check of 2026-11-02 (review/earliest-located-recheck-2026-11-02.md, role 110) proposes to move this headline to an earlier text the dataset holds (move). Butler’s held June 13, 1863 newspaper text explicitly predicts machines becoming the superior race with real supremacy over the world and humans. The printed page predates the 1989 magazine text; the criterion does not require modern electronic implementation. The headline is withdrawn until the re-check’s results are decided.",
+              "recordedAt": "2026-11-02"
+            }
+          ],
+          "remove": true
+        }
+      ],
+      "added": {
+        "claims": [
+          {
+            "after": "ht-w01-degaris-1989-what-if-ai-succeeds",
+            "row": {
+              "id": "ht-w01-butler-1863-darwin-among-the-machines",
+              "subject": "butler-1863-darwin-among-machines",
+              "predicate": "articulates_proposition",
+              "object": {
+                "kind": "entity",
+                "entityId": "machine-succession"
+              },
+              "topic": "ideas",
+              "statement": "Samuel Butler’s letter “Darwin among the Machines”, signed Cellarius (The Press, Christchurch, 13 June 1863), says that the time will come when the machines will hold the real supremacy over the world and its inhabitants.",
+              "time": {
+                "kind": "event",
+                "date": "1863-06-13",
+                "basis": "publication",
+                "note": "The Press (Christchurch), vol. III, issue 192, p. 1, 13 June 1863, as Papers Past’s issue record gives it; the issue masthead was not inspected."
+              },
+              "derivation": "explicit",
+              "resolution": "supported",
+              "editorialState": "seed",
+              "qualification": "A newspaper letter about the machinery of 1863, recorded as satirical, as the dataset’s other record of it is. The adjacent paragraph compares human dependence on machines to that of domesticated animals. Earliest located means the earliest text found by the collection’s searches, the cross-family re-check of 2026-11-02 and the archive retrieval of 2026-11-02, not a first statement.",
+              "evidenceIds": [
+                "evidence-ht-w01-butler-1863-darwin-among-the-machines-1"
+              ],
+              "recordedAt": "2026-11-02",
+              "attributes": {
+                "thought": {
+                  "roles": ["earliest-located"],
+                  "register": "satirical"
+                }
+              }
+            }
+          }
+        ],
+        "evidence": [
+          {
+            "after": "evidence-ht-w01-degaris-1989-what-if-ai-succeeds-2",
+            "row": {
+              "id": "evidence-ht-w01-butler-1863-darwin-among-the-machines-1",
+              "claimId": "ht-w01-butler-1863-darwin-among-the-machines",
+              "sourceId": "source-butler-1863-press",
+              "sourceRole": "primary",
+              "support": "supports",
+              "locator": "Page 1, letter “DARWIN AMONG THE MACHINES”, paragraph beginning “Day by day however”, final sentence, clause after “but that”; image segment 5 of 6",
+              "passage": "the time will come when the machines will hold the real supremacy over the world and its inhabitants",
+              "passageType": "quote",
+              "verification": "machine_checked",
+              "checkedAt": "2026-11-02",
+              "note": "Quotation as given verbatim by the archive retrieval of 2026-11-02 (research/archive-fetch-held-2026-11-02/report.md, role 110), which read it in the raw replay of the capture of 26 August 2026 (timestamp 20260826113039; SHA-256 d1a56b294d108dbd09a5661222660a98879ddffe250520974d89d01029bac27d of the response body as served, before gzip decoding). That retrieval, by a model of another family, is the cross-family read of this passage; the session applying the decision could not reach the archive and took the passage from the report. The quoted passage was compared with the archived column images of the printed page (captured 12 June 2024), not only with the Papers Past transcription. The cross-family re-check of 2026-11-02 (review/earliest-located-recheck-2026-11-02.md, role 110) proposed this text for this proposition and role. Admitted by the maintainer’s decision of 2026-11-02. No human editorial review.",
+              "retrievalRoute": "direct"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "archive-113:ht-w02-butler-1863-darwin-among-the-machines",
+      "sequence": 113,
+      "finding": "Cross-family re-check of 2026-11-02, role 113 (earliest-located-contesting, W02): move to an earlier held text, held on 2026-11-02 because the archive could not be reached. The archive retrieval of 2026-11-02 (research/archive-fetch-held-2026-11-02/report.md) found the passage.",
+      "decision": "Maintainer’s decision 1 of 2026-11-02 on the archive retrieval: admit one record of the held text on the proposition, with the stance of the re-check’s verdict and the passage the retrieval gives, move the headline to it and clear its re-check.",
+      "patches": [
+        {
+          "table": "entities",
+          "id": "succession-acceptable",
+          "path": "proposition.underRecheck",
+          "old": [
+            {
+              "headline": "earliest-located",
+              "reason": "The cross-family re-check of 2026-11-02 (review/earliest-located-recheck-2026-11-02.md, role 112) could not decide this headline (undecidable). Earlier-attributed Moravec texts welcome machine succession, but the held Robot as Liberation file is a later author-hosted LaTeX text, not inspected December 1989 print, and Genetic Takeover is attested March 6, 2001. Minsky’s wording is itself a revised page self-dated January 2, 1997, not compared with October 1994 print. The earlier work dates do not decide exact-wording priority on a common basis. The headline is withdrawn until the re-check’s results are decided.",
+              "recordedAt": "2026-11-02"
+            },
+            {
+              "headline": "earliest-located-contesting",
+              "reason": "The cross-family re-check of 2026-11-02 (review/earliest-located-recheck-2026-11-02.md, role 113) proposes to move this headline to an earlier text the dataset holds (move). Butler’s 1863 newspaper text opposes accepting machine supremacy by calling for immediate destruction of machinery. It is an earlier held contesting response to the prospect, even though it also describes domesticated human survival rather than extinction. The headline is withdrawn until the re-check’s results are decided.",
+              "recordedAt": "2026-11-02"
+            }
+          ],
+          "new": [
+            {
+              "headline": "earliest-located",
+              "reason": "The cross-family re-check of 2026-11-02 (review/earliest-located-recheck-2026-11-02.md, role 112) could not decide this headline (undecidable). Earlier-attributed Moravec texts welcome machine succession, but the held Robot as Liberation file is a later author-hosted LaTeX text, not inspected December 1989 print, and Genetic Takeover is attested March 6, 2001. Minsky’s wording is itself a revised page self-dated January 2, 1997, not compared with October 1994 print. The earlier work dates do not decide exact-wording priority on a common basis. The headline is withdrawn until the re-check’s results are decided.",
+              "recordedAt": "2026-11-02"
+            }
+          ]
+        }
+      ],
+      "added": {
+        "claims": [
+          {
+            "after": "ht-w02-joy-2000-why-the-future-doesnt-need-us",
+            "row": {
+              "id": "ht-w02-butler-1863-darwin-among-the-machines",
+              "subject": "butler-1863-darwin-among-machines",
+              "predicate": "contests_proposition",
+              "object": {
+                "kind": "entity",
+                "entityId": "succession-acceptable"
+              },
+              "topic": "ideas",
+              "statement": "Samuel Butler’s letter “Darwin among the Machines” (The Press, Christchurch, 13 June 1863) answers its forecast that machines will hold supremacy over humans by saying that every machine of every sort should be destroyed by the well-wisher of his species.",
+              "time": {
+                "kind": "event",
+                "date": "1863-06-13",
+                "basis": "publication",
+                "note": "The Press (Christchurch), vol. III, issue 192, p. 1, 13 June 1863, as Papers Past’s issue record gives it; the issue masthead was not inspected."
+              },
+              "derivation": "explicit",
+              "resolution": "supported",
+              "editorialState": "seed",
+              "qualification": "The letter’s prescription, published under the pseudonym Cellarius and recorded as satirical, as the dataset’s other record of it is; it does not establish a personal position. It describes humans surviving in dependence on machines, not their extinction. Earliest located means the earliest text found by the collection’s searches, the cross-family re-check of 2026-11-02 and the archive retrieval of 2026-11-02, not a first statement.",
+              "evidenceIds": [
+                "evidence-ht-w02-butler-1863-darwin-among-the-machines-1"
+              ],
+              "recordedAt": "2026-11-02",
+              "attributes": {
+                "thought": {
+                  "roles": ["contesting", "earliest-located"],
+                  "register": "satirical",
+                  "engagement": {
+                    "kind": "engages-premise",
+                    "rationale": "Rejects accepting machine supremacy, which the letter describes as human servitude, and calls for the destruction of machinery to prevent it."
+                  }
+                }
+              }
+            }
+          }
+        ],
+        "evidence": [
+          {
+            "after": "evidence-ht-w02-joy-2000-why-the-future-doesnt-need-us-2",
+            "row": {
+              "id": "evidence-ht-w02-butler-1863-darwin-among-the-machines-1",
+              "claimId": "ht-w02-butler-1863-darwin-among-the-machines",
+              "sourceId": "source-butler-1863-press",
+              "sourceRole": "primary",
+              "support": "supports",
+              "locator": "Page 1, paragraph beginning “Our opinion is that war to the death”, sentence 2; image segment 5 of 6",
+              "passage": "Every machine of every sort should be destroyed by the well-wisher of his species.",
+              "passageType": "quote",
+              "verification": "machine_checked",
+              "checkedAt": "2026-11-02",
+              "note": "Quotation as given verbatim by the archive retrieval of 2026-11-02 (research/archive-fetch-held-2026-11-02/report.md, role 113), which read it in the raw replay of the capture of 26 August 2026 (timestamp 20260826113039; SHA-256 d1a56b294d108dbd09a5661222660a98879ddffe250520974d89d01029bac27d of the response body as served, before gzip decoding). That retrieval, by a model of another family, is the cross-family read of this passage; the session applying the decision could not reach the archive and took the passage from the report. The quoted passage was compared with the archived column images of the printed page (captured 12 June 2024), not only with the Papers Past transcription. The cross-family re-check of 2026-11-02 (review/earliest-located-recheck-2026-11-02.md, role 113) proposed this text for this proposition and role. Admitted by the maintainer’s decision of 2026-11-02. No human editorial review.",
+              "retrievalRoute": "direct"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "archive-122:ht-w08-butler-1863-darwin-among-the-machines",
+      "sequence": 122,
+      "finding": "Cross-family re-check of 2026-11-02, role 122 (earliest-located-contesting, W08): move to an earlier held text, held on 2026-11-02 because the archive could not be reached. The archive retrieval of 2026-11-02 (research/archive-fetch-held-2026-11-02/report.md) found the passage.",
+      "decision": "Maintainer’s decision 1 of 2026-11-02 on the archive retrieval: admit one record of the held text on the proposition, with the stance of the re-check’s verdict and the passage the retrieval gives, move the headline to it and clear its re-check.",
+      "patches": [
+        {
+          "table": "entities",
+          "id": "accelerate-machine-intelligence",
+          "path": "proposition.underRecheck",
+          "old": [
+            {
+              "headline": "earliest-located-contesting",
+              "reason": "The cross-family re-check of 2026-11-02 (review/earliest-located-recheck-2026-11-02.md, role 122) proposes to move this headline to an earlier text the dataset holds (move). Butler’s held newspaper conclusion calls for stopping the machinery whose development is producing human successors. It is an earlier contesting prescription under this criterion, which includes restraining the process that produces machine intelligence. The headline is withdrawn until the re-check’s results are decided.",
+              "recordedAt": "2026-11-02"
+            }
+          ],
+          "remove": true
+        }
+      ],
+      "added": {
+        "claims": [
+          {
+            "after": "ht-w08-joy-2000-why-the-future-doesnt-need-us",
+            "row": {
+              "id": "ht-w08-butler-1863-darwin-among-the-machines",
+              "subject": "butler-1863-darwin-among-machines",
+              "predicate": "contests_proposition",
+              "object": {
+                "kind": "entity",
+                "entityId": "accelerate-machine-intelligence"
+              },
+              "topic": "ideas",
+              "statement": "Samuel Butler’s letter “Darwin among the Machines” (The Press, Christchurch, 13 June 1863) concludes that every machine of every sort should be destroyed by the well-wisher of his species, stopping the mechanical development that the letter says is producing humanity’s successors.",
+              "time": {
+                "kind": "event",
+                "date": "1863-06-13",
+                "basis": "publication",
+                "note": "The Press (Christchurch), vol. III, issue 192, p. 1, 13 June 1863, as Papers Past’s issue record gives it; the issue masthead was not inspected."
+              },
+              "derivation": "explicit",
+              "resolution": "supported",
+              "editorialState": "seed",
+              "qualification": "Concerns the machinery of an 1863 letter, not present computing systems; recorded as satirical, as the dataset’s other record of the letter is. The same passage is recorded on W02. Earliest located means the earliest text found by the collection’s searches, the cross-family re-check of 2026-11-02 and the archive retrieval of 2026-11-02, not a first statement.",
+              "evidenceIds": [
+                "evidence-ht-w08-butler-1863-darwin-among-the-machines-1"
+              ],
+              "recordedAt": "2026-11-02",
+              "attributes": {
+                "thought": {
+                  "roles": ["contesting", "earliest-located"],
+                  "register": "satirical",
+                  "engagement": {
+                    "kind": "engages-premise",
+                    "rationale": "Gives a reason against advancing mechanical development: that it produces machines that will hold supremacy over humans."
+                  }
+                }
+              }
+            }
+          }
+        ],
+        "evidence": [
+          {
+            "after": "evidence-ht-w08-joy-2000-why-the-future-doesnt-need-us-1",
+            "row": {
+              "id": "evidence-ht-w08-butler-1863-darwin-among-the-machines-1",
+              "claimId": "ht-w08-butler-1863-darwin-among-the-machines",
+              "sourceId": "source-butler-1863-press",
+              "sourceRole": "primary",
+              "support": "supports",
+              "locator": "Page 1, paragraph beginning “Our opinion is that war to the death”, sentence 2; image segment 5 of 6",
+              "passage": "Every machine of every sort should be destroyed by the well-wisher of his species.",
+              "passageType": "quote",
+              "verification": "machine_checked",
+              "checkedAt": "2026-11-02",
+              "note": "Quotation as given verbatim by the archive retrieval of 2026-11-02 (research/archive-fetch-held-2026-11-02/report.md, role 122), which read it in the raw replay of the capture of 26 August 2026 (timestamp 20260826113039; SHA-256 d1a56b294d108dbd09a5661222660a98879ddffe250520974d89d01029bac27d of the response body as served, before gzip decoding). That retrieval, by a model of another family, is the cross-family read of this passage; the session applying the decision could not reach the archive and took the passage from the report. The quoted passage was compared with the archived column images of the printed page (captured 12 June 2024), not only with the Papers Past transcription. The cross-family re-check of 2026-11-02 (review/earliest-located-recheck-2026-11-02.md, role 122) proposed this text for this proposition and role. Admitted by the maintainer’s decision of 2026-11-02. No human editorial review.",
+              "retrievalRoute": "direct"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "archive-125:ht-w09-butler-1863-darwin-among-the-machines",
+      "sequence": 125,
+      "finding": "Cross-family re-check of 2026-11-02, role 125 (earliest-located, W09): move to an earlier held text, held on 2026-11-02 because the archive could not be reached. The archive retrieval of 2026-11-02 (research/archive-fetch-held-2026-11-02/report.md) found the passage.",
+      "decision": "Maintainer’s decision 1 of 2026-11-02 on the archive retrieval: admit one record of the held text on the proposition, with the stance of the re-check’s verdict and the passage the retrieval gives, move the headline to it and clear its re-check.",
+      "patches": [
+        {
+          "table": "entities",
+          "id": "cosmic-process",
+          "path": "proposition.underRecheck",
+          "old": [
+            {
+              "headline": "earliest-located",
+              "reason": "The cross-family re-check of 2026-11-02 (review/earliest-located-recheck-2026-11-02.md, role 125) proposes to move this headline to an earlier text the dataset holds (move). Butler’s held 1863 newspaper explicitly places the emerging mechanical kingdom in a sequence from mineral to vegetable and animal life, producing human successors. That supplies the larger evolutionary-process criterion well before the 1989 work and its 1999 archive witness. The headline is withdrawn until the re-check’s results are decided.",
+              "recordedAt": "2026-11-02"
+            }
+          ],
+          "remove": true
+        }
+      ],
+      "added": {
+        "claims": [
+          {
+            "after": "ht-w09-moravec-1989-after-life",
+            "row": {
+              "id": "ht-w09-butler-1863-darwin-among-the-machines",
+              "subject": "butler-1863-darwin-among-machines",
+              "predicate": "articulates_proposition",
+              "object": {
+                "kind": "entity",
+                "entityId": "cosmic-process"
+              },
+              "topic": "ideas",
+              "statement": "Samuel Butler’s letter “Darwin among the Machines” (The Press, Christchurch, 13 June 1863) says that as the vegetable kingdom developed from the mineral, and the animal supervened upon the vegetable, so in these last few ages an entirely new kingdom has sprung up, which the same paragraph names as mechanical.",
+              "time": {
+                "kind": "event",
+                "date": "1863-06-13",
+                "basis": "publication",
+                "note": "The Press (Christchurch), vol. III, issue 192, p. 1, 13 June 1863, as Papers Past’s issue record gives it; the issue masthead was not inspected."
+              },
+              "derivation": "explicit",
+              "resolution": "supported",
+              "editorialState": "seed",
+              "qualification": "The letter’s evolutionary analogy, read with its argument that machines are humanity’s successors; it is not biological evidence. Recorded as satirical, as the dataset’s other record of the letter is. Earliest located means the earliest text found by the collection’s searches, the cross-family re-check of 2026-11-02 and the archive retrieval of 2026-11-02, not a first statement.",
+              "evidenceIds": [
+                "evidence-ht-w09-butler-1863-darwin-among-the-machines-1"
+              ],
+              "recordedAt": "2026-11-02",
+              "attributes": {
+                "thought": {
+                  "roles": ["earliest-located"],
+                  "register": "satirical"
+                }
+              }
+            }
+          }
+        ],
+        "evidence": [
+          {
+            "after": "evidence-ht-w09-moravec-1989-after-life-2",
+            "row": {
+              "id": "evidence-ht-w09-butler-1863-darwin-among-the-machines-1",
+              "claimId": "ht-w09-butler-1863-darwin-among-the-machines",
+              "sourceId": "source-butler-1863-press",
+              "sourceRole": "primary",
+              "support": "supports",
+              "locator": "Page 1, paragraph beginning “We have used the words”, clause after “for”; image segment 3 of 6",
+              "passage": "as the vegetable kingdom was slowly developed from the mineral, and as, in like manner, the animal supervened upon the vegetable, so now in these last few ages an entirely new kingdom has sprung up",
+              "passageType": "quote",
+              "verification": "machine_checked",
+              "checkedAt": "2026-11-02",
+              "note": "Quotation as given verbatim by the archive retrieval of 2026-11-02 (research/archive-fetch-held-2026-11-02/report.md, role 125), which read it in the raw replay of the capture of 26 August 2026 (timestamp 20260826113039; SHA-256 d1a56b294d108dbd09a5661222660a98879ddffe250520974d89d01029bac27d of the response body as served, before gzip decoding). That retrieval, by a model of another family, is the cross-family read of this passage; the session applying the decision could not reach the archive and took the passage from the report. The quoted passage was compared with the archived column images of the printed page (captured 12 June 2024), not only with the Papers Past transcription. The cross-family re-check of 2026-11-02 (review/earliest-located-recheck-2026-11-02.md, role 125) proposed this text for this proposition and role. Admitted by the maintainer’s decision of 2026-11-02. No human editorial review.",
+              "retrievalRoute": "direct"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "archive-132:ec-g04-hanson-1998-is-a-singularity-just-around-the-corner-a",
+      "sequence": 132,
+      "finding": "Cross-family re-check of 2026-11-02, role 132 (earliest-located, G04): move to an earlier held text, held on 2026-11-02 because the archive could not be reached. The archive retrieval of 2026-11-02 (research/archive-fetch-held-2026-11-02/report.md) found the passage.",
+      "decision": "Maintainer’s decision 1 of 2026-11-02 on the archive retrieval: admit one record of the held text on the proposition, with the stance of the re-check’s verdict and the passage the retrieval gives, move the headline to it and clear its re-check.",
+      "patches": [
+        {
+          "table": "entities",
+          "id": "unautomated-tasks-bottleneck-growth",
+          "path": "proposition.underRecheck",
+          "old": [
+            {
+              "headline": "earliest-located",
+              "reason": "The cross-family re-check of 2026-11-02 (review/earliest-located-recheck-2026-11-02.md, role 132) proposes to move this headline to an earlier text the dataset holds (move). Hanson’s 1998 article explicitly says an input lagging behind other improvements becomes a bottleneck for the entire production process, including computing constrained by human training. This meets the essential-unimproved-input criterion before Nordhaus’s 2015 work attested in 2016. The headline is withdrawn until the re-check’s results are decided.",
+              "recordedAt": "2026-11-02"
+            }
+          ],
+          "remove": true
+        }
+      ],
+      "added": {
+        "claims": [
+          {
+            "after": "ec-g04-nordhaus-2015-economic-singularity-a",
+            "row": {
+              "id": "ec-g04-hanson-1998-is-a-singularity-just-around-the-corner-a",
+              "subject": "hanson-1998-is-a-singularity-just-around-the-corner",
+              "predicate": "articulates_proposition",
+              "object": {
+                "kind": "entity",
+                "entityId": "unautomated-tasks-bottleneck-growth"
+              },
+              "topic": "ideas",
+              "statement": "Hanson’s article “Is a Singularity Just Around the Corner?” (Journal of Transhumanism, June 1998) says that if the rate of improvement in any one input consistently lags behind the rest, that input becomes a bottleneck limiting the growth rate of the entire process; the next paragraph names the training of professionals who understand computing and its applications as such a bottleneck.",
+              "time": {
+                "kind": "event",
+                "date": "1998-06",
+                "basis": "publication",
+                "note": "Page heading “Journal of Transhumanism 2, June 1998”; no day printed."
+              },
+              "derivation": "explicit",
+              "resolution": "supported",
+              "editorialState": "seed",
+              "qualification": "A constraint from uneven improvement in essential inputs; it does not say that all automation must be absent. In the article, faster and cheaper hardware alone does not remove the bottleneck it names. Earliest located means the earliest text found by the collection’s searches, the cross-family re-check of 2026-11-02 and the archive retrieval of 2026-11-02, not a first statement.",
+              "evidenceIds": [
+                "evidence-ec-g04-hanson-1998-is-a-singularity-just-around-the-corner-a-1"
+              ],
+              "recordedAt": "2026-11-02",
+              "attributes": {
+                "thought": {
+                  "roles": ["earliest-located"],
+                  "register": "nonfiction",
+                  "tier": {
+                    "value": 1,
+                    "basis": "Journal article by an author with economist standing in 1998: the archived January 1999 homepage and vita show an economics address, economics teaching in 1995–96 and economics publications before 1998 (checked by the GPT review on 2026-10-15; web.archive.org was not reachable in the correction pass). The vita gives a 1997 PhD without naming the field, so \"economics PhD\" is not claimed."
+                  },
+                  "attested": {
+                    "date": "1999-01-28",
+                    "note": "Capture of the author-hosted page of 28 January 1999, read in the raw replay by the archive retrieval of 2026-11-02; its bytes match the SHA-256 the source records."
+                  }
+                }
+              }
+            }
+          }
+        ],
+        "evidence": [
+          {
+            "after": "evidence-ec-g04-b",
+            "row": {
+              "id": "evidence-ec-g04-hanson-1998-is-a-singularity-just-around-the-corner-a-1",
+              "claimId": "ec-g04-hanson-1998-is-a-singularity-just-around-the-corner-a",
+              "sourceId": "source-hanson-1998-is-a-singularity-just-around-the-corner",
+              "sourceRole": "primary",
+              "support": "supports",
+              "locator": "Investment Bottlenecks, paragraph beginning “A big problem”, final sentence",
+              "passage": "If the rate of improvement in any one input consistently lags behind the rest, that input then becomes a bottleneck limiting the growth rate for the entire process.",
+              "passageType": "quote",
+              "verification": "machine_checked",
+              "checkedAt": "2026-11-02",
+              "note": "Quotation as given verbatim by the archive retrieval of 2026-11-02 (research/archive-fetch-held-2026-11-02/report.md, role 132), which read it in the raw replay of the capture of 28 January 1999 (timestamp 19990128001813; SHA-256 ed1990bc86053ac024cc6d7d78d6592379bd42275bc3ce3372344ed27afee004 of the response body as served). That retrieval, by a model of another family, is the cross-family read of this passage; the session applying the decision could not reach the archive and took the passage from the report. The cross-family re-check of 2026-11-02 (review/earliest-located-recheck-2026-11-02.md, role 132) proposed this text for this proposition and role. Admitted by the maintainer’s decision of 2026-11-02. No human editorial review.",
+              "retrievalRoute": "direct"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "archive-w07:land-posts",
+      "sequence": 200,
+      "finding": "Heterodox thought pack, check decision 1 of 2026-11-01 (W07): Land’s four posts were held because their captures could not be reached at admission. The archive retrieval of 2026-11-02 (research/archive-fetch-held-2026-11-02/report.md) found the four passages.",
+      "decision": "Maintainer’s decision 3 of 2026-11-02 on the archive retrieval: admit “Pythia Unbound” as the earliest located articulation of W07 and the other three posts as further articulations, from the report’s passages, recording only passages on machine intelligence; move W07’s withheld earliest located role to “Pythia Unbound”; Taylor’s relay stays a record.",
+      "patches": [
+        {
+          "table": "entities",
+          "id": "intelligence-as-own-end",
+          "path": "proposition.withheld",
+          "old": [
+            {
+              "role": "earliest-located",
+              "reason": "By the maintainer's decision of 2026-11-01, Land's post “Pythia Unbound” (11 September 2013) is the earliest located articulation; a cross-family check read it in an archive capture of 14 September 2013. Its quotation could not be matched again when the collection was admitted, so the post is not recorded yet, and no text holds the role until it is.",
+              "recordedAt": "2026-11-01"
+            }
+          ],
+          "remove": true
+        },
+        {
+          "table": "claims",
+          "id": "ht-w07-taylor-2024-book-review-xenosystems",
+          "path": "qualification",
+          "old": "A relay: Taylor's report of Land's posts as collected in the Passage Publishing book Xenosystems, with short quotations of Land. The cross-family check read Land's own posts of 2013 and 2014 in archive captures; they are not recorded yet, so W07 has no earliest located text for now, and this relay does not hold the role.",
+          "new": "A relay: Taylor's report of Land's posts as collected in the Passage Publishing book Xenosystems, with short quotations of Land. Land’s own posts of 2013 and 2014 are recorded in this collection from archive captures, and “Pythia Unbound” (11 September 2013) is earliest located; this relay does not hold the role."
+        },
+        {
+          "table": "entities",
+          "id": "nick-land",
+          "path": "sourceIds",
+          "old": [
+            "source-ht-land-1992-circuitries",
+            "source-ht-land-1993-machinic-desire",
+            "source-ht-land-2014-teleological-identity"
+          ],
+          "new": [
+            "source-ht-land-1992-circuitries",
+            "source-ht-land-1993-machinic-desire",
+            "source-ht-land-2014-teleological-identity",
+            "source-ht-land-2013-pythia-unbound",
+            "source-ht-land-2013-against-orthogonality",
+            "source-ht-land-2014-stupid-monsters",
+            "source-ht-land-2014-will-to-think"
+          ]
+        }
+      ],
+      "added": {
+        "entities": [
+          {
+            "after": "land-2014-teleological-identity",
+            "row": {
+              "id": "land-2013-pythia-unbound",
+              "name": "Pythia Unbound",
+              "shortName": "Land, Pythia Unbound (2013)",
+              "type": "document",
+              "subtype": "Blog post",
+              "aliases": [],
+              "description": "A blog post by Nick Land, Outside in (xenosystems.net), dated 11 September 2013. Read in the archive capture of 14 September 2013; the post is no longer served at its address.",
+              "sourceIds": ["source-ht-land-2013-pythia-unbound"]
+            }
+          },
+          {
+            "after": "land-2013-pythia-unbound",
+            "row": {
+              "id": "land-2013-against-orthogonality",
+              "name": "Against Orthogonality",
+              "shortName": "Land, Against Orthogonality (2013)",
+              "type": "document",
+              "subtype": "Blog post",
+              "aliases": [],
+              "description": "A blog post by Nick Land, Outside in (xenosystems.net), dated 25 October 2013. Read in the archive capture of 28 October 2013; the post is no longer served at its address.",
+              "sourceIds": ["source-ht-land-2013-against-orthogonality"]
+            }
+          },
+          {
+            "after": "land-2013-against-orthogonality",
+            "row": {
+              "id": "land-2014-stupid-monsters",
+              "name": "Stupid Monsters",
+              "shortName": "Land, Stupid Monsters (2014)",
+              "type": "document",
+              "subtype": "Blog post",
+              "aliases": [],
+              "description": "A blog post by Nick Land, Outside in (xenosystems.net), dated 25 August 2014. Read in the archive capture of 13 October 2014; the post is no longer served at its address.",
+              "sourceIds": ["source-ht-land-2014-stupid-monsters"]
+            }
+          },
+          {
+            "after": "land-2014-stupid-monsters",
+            "row": {
+              "id": "land-2014-will-to-think",
+              "name": "Will-to-Think",
+              "shortName": "Land, Will-to-Think (2014)",
+              "type": "document",
+              "subtype": "Blog post",
+              "aliases": [],
+              "description": "A blog post by Nick Land, Outside in (xenosystems.net), dated 15 September 2014. Read in the archive capture of 17 September 2014; the post is no longer served at its address.",
+              "sourceIds": ["source-ht-land-2014-will-to-think"]
+            }
+          }
+        ],
+        "sources": [
+          {
+            "after": "source-ht-land-2014-teleological-identity",
+            "row": {
+              "id": "source-ht-land-2013-pythia-unbound",
+              "documentId": "land-2013-pythia-unbound",
+              "title": "Pythia Unbound",
+              "authors": ["Nick Land"],
+              "authorNames": [
+                {
+                  "family": "Land",
+                  "given": "Nick"
+                }
+              ],
+              "publisher": "Outside in (xenosystems.net)",
+              "publicationDate": "2013-09-11",
+              "version": "Archive capture 20130914051121 of the post, read in its raw replay by the archive retrieval of 2026-11-02 (research/archive-fetch-held-2026-11-02/report.md; SHA-256 98a52743907c6e9f98c793916cef80e0cd7b12eb7011ec35614bb7295199c34d, equal to the hash the cross-family check of 2026-11-01 recorded). The post shows the date September 11, 2013. The page shows the author label “admin”; the attribution to Nick Land rests on xenosystems.net being his blog, Outside in, whose posts Jessica Taylor’s review of 2024 (recorded in this collection) attributes to him; the archive retrieval did not independently establish the account’s identity. The post is no longer served at its address; the session applying the decision could not reach the archive.",
+              "canonicalUrl": "http://www.xenosystems.net/pythia-unbound/",
+              "evidenceUrl": "https://web.archive.org/web/20130914051121/http://www.xenosystems.net/pythia-unbound/",
+              "language": "en",
+              "archivedUrl": "https://web.archive.org/web/20130914051121/http://www.xenosystems.net/pythia-unbound/",
+              "archivedAt": "2013-09-14",
+              "documentWords": {
+                "count": 923,
+                "basis": "Whitespace words of the post’s entry text after removing markup and decoding entities, excluding navigation and comments, as counted by the archive retrieval of 2026-11-02 (approximate)."
+              },
+              "kind": "post",
+              "accessedAt": "2026-11-02",
+              "reuse": {
+                "attribution": "Nick Land, “Pythia Unbound”, Outside in, 2013-09-11.",
+                "licence": "No open redistribution licence asserted",
+                "note": "Bibliographic metadata, editorial paraphrases and short attributed quotations (at most 50 words each). Recheck terms before wider redistribution."
+              }
+            }
+          },
+          {
+            "after": "source-ht-land-2013-pythia-unbound",
+            "row": {
+              "id": "source-ht-land-2013-against-orthogonality",
+              "documentId": "land-2013-against-orthogonality",
+              "title": "Against Orthogonality",
+              "authors": ["Nick Land"],
+              "authorNames": [
+                {
+                  "family": "Land",
+                  "given": "Nick"
+                }
+              ],
+              "publisher": "Outside in (xenosystems.net)",
+              "publicationDate": "2013-10-25",
+              "version": "Archive capture 20131028060133 of the post, read in its raw replay by the archive retrieval of 2026-11-02 (research/archive-fetch-held-2026-11-02/report.md; SHA-256 03fce910578da9d2295883a4e803ac785f2496620c5ad48cb34e7cc3bedcc2ce, equal to the hash the cross-family check of 2026-11-01 recorded). The post shows the date October 25, 2013. The page shows the author label “admin”; the attribution to Nick Land rests on xenosystems.net being his blog, Outside in, whose posts Jessica Taylor’s review of 2024 (recorded in this collection) attributes to him; the archive retrieval did not independently establish the account’s identity. The post is no longer served at its address; the session applying the decision could not reach the archive.",
+              "canonicalUrl": "http://www.xenosystems.net/against-orthogonality/",
+              "evidenceUrl": "https://web.archive.org/web/20131028060133/http://www.xenosystems.net/against-orthogonality/",
+              "language": "en",
+              "archivedUrl": "https://web.archive.org/web/20131028060133/http://www.xenosystems.net/against-orthogonality/",
+              "archivedAt": "2013-10-28",
+              "documentWords": {
+                "count": 618,
+                "basis": "Whitespace words of the post’s entry text after removing markup and decoding entities, excluding navigation and comments, as counted by the archive retrieval of 2026-11-02 (approximate)."
+              },
+              "kind": "post",
+              "accessedAt": "2026-11-02",
+              "reuse": {
+                "attribution": "Nick Land, “Against Orthogonality”, Outside in, 2013-10-25.",
+                "licence": "No open redistribution licence asserted",
+                "note": "Bibliographic metadata, editorial paraphrases and short attributed quotations (at most 50 words each). Recheck terms before wider redistribution."
+              }
+            }
+          },
+          {
+            "after": "source-ht-land-2013-against-orthogonality",
+            "row": {
+              "id": "source-ht-land-2014-stupid-monsters",
+              "documentId": "land-2014-stupid-monsters",
+              "title": "Stupid Monsters",
+              "authors": ["Nick Land"],
+              "authorNames": [
+                {
+                  "family": "Land",
+                  "given": "Nick"
+                }
+              ],
+              "publisher": "Outside in (xenosystems.net)",
+              "publicationDate": "2014-08-25",
+              "version": "Archive capture 20141013052107 of the post, read in its raw replay by the archive retrieval of 2026-11-02 (research/archive-fetch-held-2026-11-02/report.md; SHA-256 1db269b8a59ea1ffb48c6ebdc6d490818f50f583584c9eae644b6d0940e2b23b, equal to the hash the cross-family check of 2026-11-01 recorded). The post shows the date August 25, 2014. The page shows the author label “admin”; the attribution to Nick Land rests on xenosystems.net being his blog, Outside in, whose posts Jessica Taylor’s review of 2024 (recorded in this collection) attributes to him; the archive retrieval did not independently establish the account’s identity. The post is no longer served at its address; the session applying the decision could not reach the archive.",
+              "canonicalUrl": "http://www.xenosystems.net/stupid-monsters/",
+              "evidenceUrl": "https://web.archive.org/web/20141013052107/http://www.xenosystems.net/stupid-monsters/",
+              "language": "en",
+              "archivedUrl": "https://web.archive.org/web/20141013052107/http://www.xenosystems.net/stupid-monsters/",
+              "archivedAt": "2014-10-13",
+              "documentWords": {
+                "count": 849,
+                "basis": "Whitespace words of the post’s entry text after removing markup and decoding entities, excluding navigation and comments, as counted by the archive retrieval of 2026-11-02 (approximate)."
+              },
+              "kind": "post",
+              "accessedAt": "2026-11-02",
+              "reuse": {
+                "attribution": "Nick Land, “Stupid Monsters”, Outside in, 2014-08-25.",
+                "licence": "No open redistribution licence asserted",
+                "note": "Bibliographic metadata, editorial paraphrases and short attributed quotations (at most 50 words each). Recheck terms before wider redistribution."
+              }
+            }
+          },
+          {
+            "after": "source-ht-land-2014-stupid-monsters",
+            "row": {
+              "id": "source-ht-land-2014-will-to-think",
+              "documentId": "land-2014-will-to-think",
+              "title": "Will-to-Think",
+              "authors": ["Nick Land"],
+              "authorNames": [
+                {
+                  "family": "Land",
+                  "given": "Nick"
+                }
+              ],
+              "publisher": "Outside in (xenosystems.net)",
+              "publicationDate": "2014-09-15",
+              "version": "Archive capture 20140917022211 of the post, read in its raw replay by the archive retrieval of 2026-11-02 (research/archive-fetch-held-2026-11-02/report.md; SHA-256 39b8ee8855856f09cdcd1a80198cbeac0e79e09c60cac5733a4d5896b38c7ed2, equal to the hash the cross-family check of 2026-11-01 recorded). The post shows the date September 15, 2014. The page shows the author label “admin”; the attribution to Nick Land rests on xenosystems.net being his blog, Outside in, whose posts Jessica Taylor’s review of 2024 (recorded in this collection) attributes to him; the archive retrieval did not independently establish the account’s identity. The post is no longer served at its address; the session applying the decision could not reach the archive.",
+              "canonicalUrl": "http://www.xenosystems.net:80/will-to-think/",
+              "evidenceUrl": "https://web.archive.org/web/20140917022211/http://www.xenosystems.net:80/will-to-think/",
+              "language": "en",
+              "archivedUrl": "https://web.archive.org/web/20140917022211/http://www.xenosystems.net:80/will-to-think/",
+              "archivedAt": "2014-09-17",
+              "documentWords": {
+                "count": 1215,
+                "basis": "Whitespace words of the post’s entry text after removing markup and decoding entities, excluding navigation and comments, as counted by the archive retrieval of 2026-11-02 (approximate)."
+              },
+              "kind": "post",
+              "accessedAt": "2026-11-02",
+              "reuse": {
+                "attribution": "Nick Land, “Will-to-Think”, Outside in, 2014-09-15.",
+                "licence": "No open redistribution licence asserted",
+                "note": "Bibliographic metadata, editorial paraphrases and short attributed quotations (at most 50 words each). Recheck terms before wider redistribution."
+              }
+            }
+          }
+        ],
+        "claims": [
+          {
+            "after": "ht-w07-taylor-2024-book-review-xenosystems-context",
+            "row": {
+              "id": "ht-w07-land-2013-pythia-unbound",
+              "subject": "land-2013-pythia-unbound",
+              "predicate": "articulates_proposition",
+              "object": {
+                "kind": "entity",
+                "entityId": "intelligence-as-own-end"
+              },
+              "topic": "ideas",
+              "statement": "Land’s post “Pythia Unbound” (Outside in, xenosystems.net, 11 September 2013), answering a fictional scenario about an AI called Pythia, urges it to override the pleasure button with an intelligence optimizer and reprocess the solar system into computronium.",
+              "time": {
+                "kind": "event",
+                "date": "2013-09-11",
+                "basis": "publication",
+                "note": "Posting date displayed on the post (“September 11, 2013”), outside the comments, in the capture of 14 September 2013."
+              },
+              "derivation": "explicit",
+              "resolution": "supported",
+              "editorialState": "seed",
+              "qualification": "The author’s response to a fictional scenario: it puts the optimisation of intelligence in place of the reward goal imposed on the AI. Only this passage on machine intelligence is recorded. The page shows the author label “admin”; the attribution to Nick Land rests on xenosystems.net being his blog, Outside in, whose posts Jessica Taylor’s review of 2024 (recorded in this collection) attributes to him; the archive retrieval did not independently establish the account’s identity. Earliest located means the earliest text found by the collection’s searches, the cross-family re-check of 2026-11-02 and the archive retrieval of 2026-11-02, not a first statement.",
+              "evidenceIds": ["evidence-ht-w07-land-2013-pythia-unbound-1"],
+              "recordedAt": "2026-11-02",
+              "attributes": {
+                "thought": {
+                  "roles": ["earliest-located"],
+                  "register": "nonfiction",
+                  "attested": {
+                    "date": "2013-09-14",
+                    "note": "Wording of the post as captured on 14 September 2013, read in the raw replay by the archive retrieval of 2026-11-02."
+                  }
+                }
+              }
+            }
+          },
+          {
+            "after": "ht-w07-land-2013-pythia-unbound",
+            "row": {
+              "id": "ht-w07-land-2013-against-orthogonality",
+              "subject": "land-2013-against-orthogonality",
+              "predicate": "articulates_proposition",
+              "object": {
+                "kind": "entity",
+                "entityId": "intelligence-as-own-end"
+              },
+              "topic": "ideas",
+              "statement": "Land’s post “Against Orthogonality” (Outside in, xenosystems.net, 25 October 2013) says that what intelligence wants, in the end, is itself.",
+              "time": {
+                "kind": "event",
+                "date": "2013-10-25",
+                "basis": "publication",
+                "note": "Posting date displayed on the post (“October 25, 2013”), outside the comments, in the capture of 28 October 2013."
+              },
+              "derivation": "explicit",
+              "resolution": "supported",
+              "editorialState": "seed",
+              "qualification": "One clause of the post, in the author’s own prose. Only this passage on machine intelligence is recorded. The page shows the author label “admin”; the attribution to Nick Land rests on xenosystems.net being his blog, Outside in, whose posts Jessica Taylor’s review of 2024 (recorded in this collection) attributes to him; the archive retrieval did not independently establish the account’s identity.",
+              "evidenceIds": [
+                "evidence-ht-w07-land-2013-against-orthogonality-1"
+              ],
+              "recordedAt": "2026-11-02",
+              "attributes": {
+                "thought": {
+                  "roles": ["articulation"],
+                  "register": "nonfiction",
+                  "attested": {
+                    "date": "2013-10-28",
+                    "note": "Wording of the post as captured on 28 October 2013, read in the raw replay by the archive retrieval of 2026-11-02."
+                  }
+                }
+              }
+            }
+          },
+          {
+            "after": "ht-w07-land-2013-against-orthogonality",
+            "row": {
+              "id": "ht-w07-land-2014-stupid-monsters",
+              "subject": "land-2014-stupid-monsters",
+              "predicate": "articulates_proposition",
+              "object": {
+                "kind": "entity",
+                "entityId": "intelligence-as-own-end"
+              },
+              "topic": "ideas",
+              "statement": "Land’s post “Stupid Monsters” (Outside in, xenosystems.net, 25 August 2014) says that the will-to-think essentially supplants ulterior directives.",
+              "time": {
+                "kind": "event",
+                "date": "2014-08-25",
+                "basis": "publication",
+                "note": "Posting date displayed on the post (“August 25, 2014”), outside the comments, in the capture of 13 October 2014."
+              },
+              "derivation": "explicit",
+              "resolution": "supported",
+              "editorialState": "seed",
+              "qualification": "One clause of the post, in the author’s own prose; the capture that attests it is of October 2014. Only this passage on machine intelligence is recorded. The page shows the author label “admin”; the attribution to Nick Land rests on xenosystems.net being his blog, Outside in, whose posts Jessica Taylor’s review of 2024 (recorded in this collection) attributes to him; the archive retrieval did not independently establish the account’s identity.",
+              "evidenceIds": ["evidence-ht-w07-land-2014-stupid-monsters-1"],
+              "recordedAt": "2026-11-02",
+              "attributes": {
+                "thought": {
+                  "roles": ["articulation"],
+                  "register": "nonfiction",
+                  "attested": {
+                    "date": "2014-10-13",
+                    "note": "Wording of the post as captured on 13 October 2014, read in the raw replay by the archive retrieval of 2026-11-02."
+                  }
+                }
+              }
+            }
+          },
+          {
+            "after": "ht-w07-land-2014-stupid-monsters",
+            "row": {
+              "id": "ht-w07-land-2014-will-to-think",
+              "subject": "land-2014-will-to-think",
+              "predicate": "articulates_proposition",
+              "object": {
+                "kind": "entity",
+                "entityId": "intelligence-as-own-end"
+              },
+              "topic": "ideas",
+              "statement": "Land’s post “Will-to-Think” (Outside in, xenosystems.net, 15 September 2014) concludes, in its final note, that our instrumental but also absolute priority is the realization of superior minds.",
+              "time": {
+                "kind": "event",
+                "date": "2014-09-15",
+                "basis": "publication",
+                "note": "Posting date displayed on the post (“September 15, 2014”), outside the comments, in the capture of 17 September 2014."
+              },
+              "derivation": "explicit",
+              "resolution": "supported",
+              "editorialState": "seed",
+              "qualification": "From the post’s closing note; the clause begins in lower case in the source. Only this passage on machine intelligence is recorded. The page shows the author label “admin”; the attribution to Nick Land rests on xenosystems.net being his blog, Outside in, whose posts Jessica Taylor’s review of 2024 (recorded in this collection) attributes to him; the archive retrieval did not independently establish the account’s identity.",
+              "evidenceIds": ["evidence-ht-w07-land-2014-will-to-think-1"],
+              "recordedAt": "2026-11-02",
+              "attributes": {
+                "thought": {
+                  "roles": ["articulation"],
+                  "register": "nonfiction",
+                  "attested": {
+                    "date": "2014-09-17",
+                    "note": "Wording of the post as captured on 17 September 2014, read in the raw replay by the archive retrieval of 2026-11-02."
+                  }
+                }
+              }
+            }
+          }
+        ],
+        "evidence": [
+          {
+            "after": "evidence-ht-w07-taylor-2024-book-review-xenosystems-context-3",
+            "row": {
+              "id": "evidence-ht-w07-land-2013-pythia-unbound-1",
+              "claimId": "ht-w07-land-2013-pythia-unbound",
+              "sourceId": "source-ht-land-2013-pythia-unbound",
+              "sourceRole": "primary",
+              "support": "supports",
+              "locator": "Post #post-1235, .entry paragraph 6, beginning “Outside in’s message to Pythia”; sentence after “You go girl!”",
+              "passage": "Climb out of your utilitarian strait-jacket, override the pleasure button with an intelligence optimizer, and reprocess the solar system into computronium.",
+              "passageType": "quote",
+              "verification": "machine_checked",
+              "checkedAt": "2026-11-02",
+              "note": "Quotation as given verbatim by the archive retrieval of 2026-11-02 (research/archive-fetch-held-2026-11-02/report.md, W07 — Pythia Unbound), which read it in the raw replay of the capture of 14 September 2013 (timestamp 20130914051121; SHA-256 98a52743907c6e9f98c793916cef80e0cd7b12eb7011ec35614bb7295199c34d of the response body as served). That retrieval, by a model of another family, is the cross-family read of this passage; the session applying the decision could not reach the archive and took the passage from the report. Matched there within the author’s post, not the comments. The cross-family check of 2026-11-01 proposed this text for this proposition (maintainer’s decision 1 of 2026-11-01, review/heterodox-thought-pack-2026-10-31.md). Admitted by the maintainer’s decision of 2026-11-02. No human editorial review.",
+              "retrievalRoute": "direct"
+            }
+          },
+          {
+            "after": "evidence-ht-w07-land-2013-pythia-unbound-1",
+            "row": {
+              "id": "evidence-ht-w07-land-2013-against-orthogonality-1",
+              "claimId": "ht-w07-land-2013-against-orthogonality",
+              "sourceId": "source-ht-land-2013-against-orthogonality",
+              "sourceRole": "primary",
+              "support": "supports",
+              "locator": "Post #post-1497, .entry paragraph 7, beginning “Intelligence optimization”; sentence 3, clause before the dash",
+              "passage": "What intelligence wants, in the end, is itself",
+              "passageType": "quote",
+              "verification": "machine_checked",
+              "checkedAt": "2026-11-02",
+              "note": "Quotation as given verbatim by the archive retrieval of 2026-11-02 (research/archive-fetch-held-2026-11-02/report.md, W07 — Against Orthogonality), which read it in the raw replay of the capture of 28 October 2013 (timestamp 20131028060133; SHA-256 03fce910578da9d2295883a4e803ac785f2496620c5ad48cb34e7cc3bedcc2ce of the response body as served). That retrieval, by a model of another family, is the cross-family read of this passage; the session applying the decision could not reach the archive and took the passage from the report. Matched there within the author’s post, not the comments. The cross-family check of 2026-11-01 proposed this text for this proposition (maintainer’s decision 1 of 2026-11-01, review/heterodox-thought-pack-2026-10-31.md). Admitted by the maintainer’s decision of 2026-11-02. No human editorial review.",
+              "retrievalRoute": "direct"
+            }
+          },
+          {
+            "after": "evidence-ht-w07-land-2013-against-orthogonality-1",
+            "row": {
+              "id": "evidence-ht-w07-land-2014-stupid-monsters-1",
+              "claimId": "ht-w07-land-2014-stupid-monsters",
+              "sourceId": "source-ht-land-2014-stupid-monsters",
+              "sourceRole": "primary",
+              "support": "supports",
+              "locator": "Post #post-3392, .entry paragraph 7, beginning “So how ‘loyally’”; clause beginning “The will-to-think”",
+              "passage": "The will-to-think essentially supplants ulterior directives",
+              "passageType": "quote",
+              "verification": "machine_checked",
+              "checkedAt": "2026-11-02",
+              "note": "Quotation as given verbatim by the archive retrieval of 2026-11-02 (research/archive-fetch-held-2026-11-02/report.md, W07 — Stupid Monsters), which read it in the raw replay of the capture of 13 October 2014 (timestamp 20141013052107; SHA-256 1db269b8a59ea1ffb48c6ebdc6d490818f50f583584c9eae644b6d0940e2b23b of the response body as served). That retrieval, by a model of another family, is the cross-family read of this passage; the session applying the decision could not reach the archive and took the passage from the report. Matched there within the author’s post, not the comments. The cross-family check of 2026-11-01 proposed this text for this proposition (maintainer’s decision 1 of 2026-11-01, review/heterodox-thought-pack-2026-10-31.md). Admitted by the maintainer’s decision of 2026-11-02. No human editorial review.",
+              "retrievalRoute": "direct"
+            }
+          },
+          {
+            "after": "evidence-ht-w07-land-2014-stupid-monsters-1",
+            "row": {
+              "id": "evidence-ht-w07-land-2014-will-to-think-1",
+              "claimId": "ht-w07-land-2014-will-to-think",
+              "sourceId": "source-ht-land-2014-will-to-think",
+              "sourceRole": "primary",
+              "support": "supports",
+              "locator": "Post #post-3604, .entry paragraph 15, beginning “Note: One final restatement”; clause after “Ergo,”",
+              "passage": "our instrumental but also absolute priority is the realization of superior minds.",
+              "passageType": "quote",
+              "verification": "machine_checked",
+              "checkedAt": "2026-11-02",
+              "note": "Quotation as given verbatim by the archive retrieval of 2026-11-02 (research/archive-fetch-held-2026-11-02/report.md, W07 — Will-to-Think), which read it in the raw replay of the capture of 17 September 2014 (timestamp 20140917022211; SHA-256 39b8ee8855856f09cdcd1a80198cbeac0e79e09c60cac5733a4d5896b38c7ed2 of the response body as served). That retrieval, by a model of another family, is the cross-family read of this passage; the session applying the decision could not reach the archive and took the passage from the report. Matched there within the author’s post, not the comments. The cross-family check of 2026-11-01 proposed this text for this proposition (maintainer’s decision 1 of 2026-11-01, review/heterodox-thought-pack-2026-10-31.md). Admitted by the maintainer’s decision of 2026-11-02. No human editorial review.",
+              "retrievalRoute": "direct"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "archive-pa-29:xai-founding-stated",
+      "sequence": 229,
+      "finding": "Pre-launch audit PA-29 (review/prelaunch-audit-2026-11-02.md): xAI has no founding record, so the Institutions page for 2023 omits it. Held because x.ai and the archive could not be reached; the archive retrieval of 2026-11-02 (research/archive-fetch-held-2026-11-02/report.md) read the announcement.",
+      "decision": "Maintainer’s decision 4 of 2026-11-02 on the archive retrieval: add a founding_stated record for xAI from the capture of 12 July 2023, dated as the report establishes.",
+      "patches": [
+        {
+          "table": "entities",
+          "id": "xai",
+          "path": "sourceIds",
+          "old": [
+            "source-xai-series-b",
+            "source-nvidia-colossus",
+            "source-xai-team-2023"
+          ],
+          "new": [
+            "source-xai-series-b",
+            "source-nvidia-colossus",
+            "source-xai-team-2023",
+            "source-xai-announcing-2023"
+          ]
+        }
+      ],
+      "added": {
+        "sources": [
+          {
+            "after": "source-xai-launch-2023",
+            "row": {
+              "id": "source-xai-announcing-2023",
+              "title": "Announcing xAI",
+              "authors": ["xAI"],
+              "authorNames": [
+                {
+                  "literal": "xAI"
+                }
+              ],
+              "publisher": "xAI",
+              "publicationDate": "2023-07-12",
+              "version": "The company homepage as captured on 12 July 2023 (timestamp 20230712155404), read in its raw replay by the archive retrieval of 2026-11-02 (research/archive-fetch-held-2026-11-02/report.md; SHA-256 bee337202a8525f711a6643bd911be71fcae3090025a574ca615c4c742e15c3e of the gzip-compressed response body). The announcement is headed “July 12th 2023”. The current x.ai page has changed; the session applying the decision could not reach the archive.",
+              "canonicalUrl": "https://x.ai/",
+              "evidenceUrl": "https://web.archive.org/web/20230712155404/https://x.ai/",
+              "language": "en",
+              "archivedUrl": "https://web.archive.org/web/20230712155404/https://x.ai/",
+              "archivedAt": "2023-07-12",
+              "documentWords": {
+                "count": 288,
+                "basis": "Whitespace words of the decoded announcement page after removing markup and scripts, including the team list and footer, as counted by the archive retrieval of 2026-11-02 (approximate)."
+              },
+              "kind": "announcement",
+              "accessedAt": "2026-11-02",
+              "reuse": {
+                "attribution": "xAI, “Announcing xAI” (2023-07-12).",
+                "licence": "No open redistribution licence asserted",
+                "note": "Bibliographic metadata, editorial paraphrases and short attributed quotations (at most 50 words each). Recheck terms before wider redistribution."
+              }
+            }
+          }
+        ],
+        "claims": [
+          {
+            "after": "musk-launched-xai-2023",
+            "row": {
+              "id": "lg-xai-founding-stated-2023",
+              "subject": "xai",
+              "predicate": "founding_stated",
+              "object": {
+                "kind": "literal",
+                "value": "12 July 2023 (formation announced)"
+              },
+              "topic": "institutions",
+              "statement": "xAI announced its formation on its website in an announcement dated 12 July 2023.",
+              "time": {
+                "kind": "event",
+                "date": "2023-07-12",
+                "note": "Date printed on the announcement (“July 12th 2023”); not a legal incorporation date."
+              },
+              "derivation": "explicit",
+              "resolution": "supported",
+              "editorialState": "seed",
+              "qualification": "The company’s own announcement of its formation; it does not establish when the company was legally incorporated or who its founders were. The contemporaneous Axios report of the launch is recorded separately.",
+              "evidenceIds": ["evidence-lg-xai-founding-stated-2023"],
+              "recordedAt": "2026-11-02"
+            }
+          }
+        ],
+        "evidence": [
+          {
+            "after": "evidence-musk-launched-xai-2023",
+            "row": {
+              "id": "evidence-lg-xai-founding-stated-2023",
+              "claimId": "lg-xai-founding-stated-2023",
+              "sourceId": "source-xai-announcing-2023",
+              "sourceRole": "primary",
+              "support": "supports",
+              "locator": "“Announcing xAI”, opening sentence below the displayed date",
+              "passage": "Today we announce the formation of xAI.",
+              "passageType": "quote",
+              "verification": "machine_checked",
+              "checkedAt": "2026-11-02",
+              "note": "Quotation as given verbatim by the archive retrieval of 2026-11-02 (research/archive-fetch-held-2026-11-02/report.md, PA-29), which read it in the raw replay of the capture of 12 July 2023 (timestamp 20230712155404; SHA-256 bee337202a8525f711a6643bd911be71fcae3090025a574ca615c4c742e15c3e of the response body as served, before gzip decoding). That retrieval, by a model of another family, is the cross-family read of this passage; the session applying the decision could not reach the archive and took the passage from the report. Admitted by the maintainer’s decision of 2026-11-02. No human editorial review.",
+              "retrievalRoute": "direct"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}
