@@ -506,10 +506,6 @@ export function DocumentHistory({
         <h1>{collection.title}</h1>
         <p className="landing-deck">{collection.question}</p>
         <p className="doc-intro">{collection.introduction}</p>
-        <p className="doc-status">
-          A machine selected and arranged these records. No human review of the
-          selection or framing is recorded.
-        </p>
         <div className="doc-actions">
           <ExportStarter data={repository.data} collection={collection} />
           <CopyLink

@@ -16,6 +16,8 @@ import './reading-first.css';
 import './about.css';
 
 const sections = [
+  ['about-why', 'Why machine-first'],
+  ['about-built', 'How this was built'],
   ['about-what', 'What Selekoa is'],
   ['about-coverage', 'Current coverage'],
   ['about-method', 'How this was checked'],
@@ -27,6 +29,9 @@ const sections = [
   ['about-privacy', 'Privacy'],
   ['about-keyboard', 'Keyboard use'],
 ] as const;
+
+/** The public source repository, where the operating guide is published. */
+const publicSource = 'https://github.com/selekoa/selekoa';
 
 const analyticsNames = {
   cloudflare: 'Cloudflare Web Analytics',
@@ -103,6 +108,97 @@ export function About({
         </ol>
       </nav>
 
+      <section aria-labelledby="about-why">
+        <h2 id="about-why" tabIndex={-1}>
+          Why machine-first
+        </h2>
+        <p>
+          Selekoa tests a method: let machines do the research bootstrapping —
+          finding, quoting, dating and cross-checking sources at a scale no
+          single researcher could — and keep for people what machines can’t
+          decide for them. I think this changes how research is done. Collecting
+          and checking sources used to take most of a researcher’s time. When
+          machines do much of that, what remains is the part they can’t do for
+          you, and it matters more than before: deciding what to ask, and from
+          where. The same records could support a poststructuralist, decolonial
+          futures-studies article or an accelerationist manifesto.{' '}
+          <strong>Selekoa doesn’t choose between them.</strong> It tries to make
+          sure both argue from the same sources, which anyone can check.
+          Choosing the standpoint is the human part of the work, and Selekoa
+          leaves it to you.
+        </p>
+        <p>
+          Selekoa does not replace library research. Most scholarly literature
+          is still in subscription databases and publisher archives (Scopus, Web
+          of Science, JSTOR and others, which now have AI tools of their own),
+          and the machines that build Selekoa cannot get behind their paywalls.
+          Selekoa uses openly available material: company and government
+          documents, archived web pages, open-access papers and preprints,
+          forums and blogs. For much of the recent history of AI, that material
+          is the primary record. For questions that depend on paywalled
+          scholarship, Selekoa is meant to complement the usual databases.
+        </p>
+        <p className="about-signature">— the maintainer</p>
+      </section>
+
+      <section aria-labelledby="about-built">
+        <h2 id="about-built" tabIndex={-1}>
+          How this was built
+        </h2>
+        <p>
+          Every claim links to the passage it rests on, quoted word for word or
+          marked as a paraphrase. The latest dataset release can be rebuilt from
+          the public source and checked byte for byte. AI agents, mostly
+          Anthropic’s Claude Code, drafted the research and the code. Since
+          mid-October 2026, OpenAI’s Codex has checked each batch blind: it
+          gives its own answers before it sees the drafter’s, and the
+          disagreements are settled and recorded before anything is admitted. In
+          the first weeks, drafts were also read by chat assistants (Claude and
+          xAI’s Grok) acting as adversarial auditors. The editorial rules are
+          enforced by tests: a page that breaks them fails the build. No person
+          reads every record before publication. The maintainer sets the rules,
+          reviews every batch of changes and decides what is admitted.
+        </p>
+        <p>Each addition to the dataset passes through six steps:</p>
+        <ol className="about-pipeline">
+          <li>
+            <strong>Pack.</strong> A research session gathers candidate records
+            with their passages, scope notes and a first audit, outside the
+            dataset.
+          </li>
+          <li>
+            <strong>Cross-family check.</strong> A model from the other company
+            answers the same questions blind, then compares its answers with the
+            pack’s.
+          </li>
+          <li>
+            <strong>Adjudication.</strong> Each disagreement gets a proposed
+            correction or a hold, and the maintainer decides. The decisions are
+            recorded with the pack.
+          </li>
+          <li>
+            <strong>Admission.</strong> One script makes every data change, and
+            a numbered dataset release is cut.
+          </li>
+          <li>
+            <strong>Review.</strong> A separate session reruns the checks and
+            reads the changes before they are proposed for the site.
+          </li>
+          <li>
+            <strong>Merge.</strong> Only the maintainer merges, and the merge
+            publishes the change.
+          </li>
+        </ol>
+        <p>
+          The{' '}
+          <a href={`${publicSource}/blob/main/docs/operating-guide.md`}>
+            operating guide
+          </a>{' '}
+          in the public source repository describes each step and who carries it
+          out.
+        </p>
+      </section>
+
       <section aria-labelledby="about-what">
         <h2 id="about-what" tabIndex={-1}>
           What Selekoa is
@@ -125,9 +221,7 @@ export function About({
           <li>
             <strong>Completeness.</strong> Coverage is selective and uneven. It
             is not a current inventory of the field, and a missing record is a
-            gap in coverage. The topics, people and documents covered so far
-            follow the maintainer’s research interests, so the site reads in
-            part as a research diary.
+            gap in coverage.
           </li>
           <li>
             <strong>Effect.</strong> A published framework or commitment shows
@@ -150,6 +244,22 @@ export function About({
             change between releases. It is not a finished reference work.
           </li>
         </ul>
+        <h3 id="about-collections" tabIndex={-1}>
+          How the collections are chosen
+        </h3>
+        <p>
+          The collections are not a survey of the field. They follow the
+          maintainer’s own research interests, so the selection is partly
+          arbitrary, and its gaps say more about one person’s curiosity than
+          about what matters. Suggestions for new collections or projects are
+          welcome; a good one may well become the next collection.
+          {contact && (
+            <>
+              {' '}
+              Send them to <a href={'mailto:' + contact}>{contact}</a>.
+            </>
+          )}
+        </p>
       </section>
 
       <section aria-labelledby="about-coverage">
@@ -261,20 +371,24 @@ export function About({
         <p>
           Institutional coverage centres on Anthropic, OpenAI, DeepMind and
           Google DeepMind, xAI and Meta, with earlier material on MIRI and the
-          history of AI alignment research. Two Chinese collections cover
+          history of AI alignment research. Three Chinese collections cover
           DeepSeek, Alibaba and its Qwen models, Zhipu AI, Moonshot AI, MiniMax,
-          Baidu and its ERNIE models, and ByteDance Seed, with three Chinese AI
-          governance texts. Related institutions keep separate records.
+          Baidu and its ERNIE models, ByteDance Seed, StepFun, 01.AI, iFlytek,
+          SenseTime, Tencent and its Hunyuan models, the Beijing Academy of
+          Artificial Intelligence and Shanghai AI Laboratory, with Chinese AI
+          governance texts (see the note on China below). Related institutions
+          keep separate records.
         </p>
         <h3 id="about-not-covered" tabIndex={-1}>
           Not yet covered
         </h3>
         <p>
           Whether developers followed their own frameworks, model capabilities
-          and benchmark results, chip export controls, and most AI developers
-          other than those named above. Economics is covered only through the
-          propositions in its collection under Ideas & debates. Coverage is
-          selective throughout, and a missing record is a gap in coverage.
+          and benchmark results, export controls beyond the selected US and
+          Chinese rules in the compute guide, and most AI developers other than
+          those named above. Economics is covered only through the propositions
+          in its collection under Ideas & debates. Coverage is selective
+          throughout, and a missing record is a gap in coverage.
         </p>
         <p id="about-china-scope">{chinaScopeNote(facts.chinaScope)}</p>
       </section>
@@ -337,12 +451,13 @@ export function About({
             earliest located text or a headline, the other model checks again or
             the maintainer decides.
           </dd>
-          <dt>Human review</dt>
+          <dt>The maintainer’s part</dt>
           <dd>
-            People review selected records: reported errors, material
-            disagreements, consequential ambiguities and claims put forward for
-            editorial acceptance. Most evidence records are machine-checked
-            only, and the interface marks the exceptions.
+            No person reads every record before publication. The maintainer sets
+            the rules, reviews every batch of changes and decides what is
+            admitted, and rechecks reported errors and material disagreements.
+            Most evidence records are machine-checked only, and the interface
+            marks the exceptions.
           </dd>
         </dl>
       </section>
@@ -390,21 +505,21 @@ export function About({
         </dl>
         <h3>Editorial status and evidence checks</h3>
         <dl className="about-terms">
-          <dt>Not reviewed by an editor</dt>
+          <dt>Machine-checked</dt>
           <dd>
-            The default status of a claim: an exploratory record that no editor
-            has accepted. Where a person has checked some of its evidence, the
-            claim panel says “Not editorially accepted” instead. It does not say
-            whether a person has read any linked passage. Lists leave this
-            status unmarked and show only the exceptions below.
+            The status of almost every claim: machines found it and checked it
+            against its source passages, and no person accepted it individually.
+            Lists leave this status unmarked and show only the exceptions below.
           </dd>
           <dt>Editorially accepted</dt>
           <dd>
-            An editor explicitly accepted the claim after human review of its
-            evidence. Accepting a contested record accepts the record of the
-            dispute. It does not declare either side right.
+            A person explicitly accepted the claim after checking its evidence.
+            A few early records carry this status; accepting single records is
+            not part of the current process. Accepting a contested record
+            accepts the record of the dispute. It does not declare either side
+            right.
           </dd>
-          <dt>Machine-checked</dt>
+          <dt>Machine-checked evidence</dt>
           <dd>
             An automated check compared the claim with the source passage. No
             person has confirmed this evidence record.

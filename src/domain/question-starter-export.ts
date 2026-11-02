@@ -65,8 +65,7 @@ export async function questionStarter(
     question: {
       definition,
       fingerprint: await fingerprint(definition),
-      interpretationStatus:
-        'machine-proposed; not human-reviewed or editorially accepted',
+      interpretationStatus: 'machine-proposed',
       orderedClaimIds: view.claimIds,
       chronology: view.chronology.map((c) => ({
         date: c.date,

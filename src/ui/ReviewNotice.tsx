@@ -60,12 +60,10 @@ export function ReviewExceptions({
         ))}
       </ul>
       <p className="review-notice-note">
-        “Not editorially accepted” describes a claim’s recorded status. It does
-        not mean that no person has read a linked passage. A machine check is
-        not a human review, and neither makes a claim certain. Elsewhere, lists
-        mark only the exceptions above, and the Evidence Inspector shows every
-        claim’s status. Before you rely on a claim, check it against the
-        original source.
+        A machine check is not a person’s review, and neither makes a claim
+        certain. Elsewhere, lists mark only the exceptions above, and the
+        Evidence Inspector shows every claim’s status. Before you rely on a
+        claim, check it against the original source.
       </p>
     </details>
   );

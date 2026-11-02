@@ -57,8 +57,7 @@ export async function frameworkChangesStarter(
         version: comparison.version,
         fingerprint: await fingerprint(comparison),
       },
-      interpretationStatus:
-        'machine-proposed; not human-reviewed or editorially accepted',
+      interpretationStatus: 'machine-proposed',
       orderedClaimIds: view.claimIds,
       families: view.families.map((f) => ({
         family: f.family,

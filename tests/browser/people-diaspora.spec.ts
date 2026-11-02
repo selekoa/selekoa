@@ -30,7 +30,7 @@ for (const mobile of [false, true]) {
     await expect(inspector).toContainText('2019-06 → 2019-11');
     await expect(inspector).toContainText('Research Intern');
     await expect(inspector).toContainText('Machine-checked');
-    await expect(inspector).toContainText('Not reviewed by an editor');
+    await expect(inspector).toContainText('Machine-checked');
     await page.getByRole('main').getByRole('searchbox').fill('Daniel Gross');
     await page.getByRole('main').getByRole('searchbox').press('Enter');
     await timeline

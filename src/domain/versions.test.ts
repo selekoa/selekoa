@@ -24,6 +24,12 @@ import cpoAdmission1 from '../../review/cpo-admission-1-before-2026-10-30.json';
 import aiBio1 from '../../review/ai-bio-admission-1-before-2026-10-30.json';
 import aiBio2 from '../../review/ai-bio-admission-2-before-2026-10-30.json';
 import peopleAdmission from '../../review/people-admission-before-2026-10-31.json';
+import auditFollowups from '../../review/audit-followups-before-2026-11-02.json';
+import recheckDecisions from '../../review/recheck-decisions-before-2026-11-02.json';
+import prelaunchFixes from '../../review/prelaunch-fixes-before-2026-11-02.json';
+import labGenealogy2 from '../../review/lab-genealogy-2-admission-before-2026-11-01.json';
+import craneNrcFix from '../../review/crane-nrc-fix-before-2026-11-01.json';
+import machineSuccession from '../../review/heterodox-admission-before-2026-11-01.json';
 import riskDebate from '../../review/risk-debate-admission-before-2026-10-31.json';
 import chinaLabs3Admission2 from '../../review/china-labs-3-admission-2-before-2026-10-31.json';
 import chinaLabs3Admission1 from '../../review/china-labs-3-admission-1-before-2026-10-31.json';
@@ -336,6 +342,12 @@ describe('governance version history', () => {
         ...aiBio1.added.claims,
         ...aiBio2.added.claims,
         ...peopleAdmission.added.claims,
+        ...auditFollowups.added.claims,
+        ...recheckDecisions.added.claims,
+        ...prelaunchFixes.added.claims,
+        ...labGenealogy2.added.claims,
+        ...craneNrcFix.added.claims,
+        ...machineSuccession.added.claims,
         ...riskDebate.added.claims,
         ...chinaLabs3Admission2.added.claims,
         ...chinaLabs3Admission1.added.claims,
@@ -351,8 +363,13 @@ describe('governance version history', () => {
         ...compareMoreFacets.added.claims,
         ...authorPersons.added.claims,
       ]).size,
-      // Earlier increments added the claims the 2026-10-29 audit fixes removed.
-    ).toBe(data.claims.length + auditFixes.removed.claims.length);
+      // Earlier increments added the claims the 2026-10-29 audit fixes and the
+      // 2026-11-02 audit follow-ups removed.
+    ).toBe(
+      data.claims.length +
+        auditFixes.removed.claims.length +
+        auditFollowups.removed.claims.length,
+    );
     expect(newClaims.every((c) => c.editorialState === 'seed')).toBe(true);
     expect(
       data.evidence

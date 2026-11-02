@@ -149,6 +149,19 @@ Dataset schema 2.27 (2026-10-31) adds `attributes.listedEntity`: on a `lists_par
 record counted by Selekoa as one entry, the dataset organisation, public body or country
 that one listed name is mapped to, with the basis of the mapping in the qualification. No
 file, column or top-level field changes, so the format version stays 1.8.
+
+Dataset schema 2.28 (2026-11-02) adds, inside `proposition`, `underRecheck`: an earliest
+located headline (`earliest-located`, `earliest-located-contesting` or
+`earliest-located-term`) withdrawn by a recorded decision while a re-check runs, with its
+`reason` and `recordedAt`. No record holds that role meanwhile. It is a provisional nested
+value, so the format version stays 1.9; the entity CSV columns do not include it.
+
+Dataset schema 2.29 (2026-11-02) adds, inside `proposition`, `noTermHeadline`: a recorded
+decision that no earliest located use of a usual name is headlined, because the usual names
+are ordinary phrases rather than names of the proposition, with its `reason` and
+`recordedAt`. The names stay in `terms`, and no record holds the `earliest-located-term`
+role. It is a nested value, so the format version stays 1.9; the entity CSV columns do not
+include it.
 Releases written in earlier formats stay as they are. The generator still writes formats
 1.1 to 1.5, so the tests can reproduce those releases byte for byte.
 

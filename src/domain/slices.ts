@@ -119,12 +119,16 @@ const slicedPages = new Set([
   'commitments',
   'guide',
   'propositions',
+  'stances',
   'question',
   'year',
 ]);
 
-/** Pages without an ID built with a slice: About & method, the explorer. */
-const singlePages = new Set(['about', 'explore', 'years']);
+/**
+ * Pages without an ID built with a slice: About & method, the explorer, the
+ * years, propositions by author.
+ */
+const singlePages = new Set(['about', 'explore', 'years', 'stances']);
 const hubs = new Set(['governance', 'ideas', 'institutions']);
 
 /** FNV-1a: a fixed, quick hash, the same in the build and the browser. */
@@ -143,10 +147,13 @@ export const bucketPath = (claimId: string) =>
 
 /** The file holding a page's slice, or null when the page has none. */
 export function slicePath(path: string): string | null {
-  const [, kind, id, rest] = normalisePath(path).split('/');
+  const [, kind, id, rest, more] = normalisePath(path).split('/');
   // The three hubs read the same records; they share one file.
   if (!id && hubs.has(kind)) return '/slices/hubs.json';
   if (!id && singlePages.has(kind)) return `/slices/${kind}.json`;
+  // A comparison question's page has a slice of its own.
+  if (kind === 'compare' && rest && more === undefined)
+    return `/slices/compare/${id}/${rest}.json`;
   if (!id || rest !== undefined) return null;
   if (kind === 'claim') return bucketPath(decodeURIComponent(id));
   return slicedPages.has(kind) ? `/slices/${kind}/${id}.json` : null;

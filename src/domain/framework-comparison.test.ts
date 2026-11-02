@@ -222,13 +222,24 @@ describe('framework comparison (schemas 2.17 and 2.18)', () => {
       id: frameworkComparison.id,
       facet: 'D3.halt',
     });
-    expect(path).toBe('/compare/frontier-safety-frameworks?facet=D3.halt');
+    expect(path).toBe('/compare/frontier-safety-frameworks/d3-halt');
     expect(resolveReference(path, data).target).toEqual({
       kind: 'compare',
       id: frameworkComparison.id,
       facet: 'D3.halt',
       inspect: undefined,
     });
+    // The earlier query form still opens the question.
+    expect(
+      resolveReference(
+        '/compare/frontier-safety-frameworks?facet=D3.halt',
+        data,
+      ).target,
+    ).toMatchObject({ facet: 'D3.halt' });
+    expect(
+      resolveReference('/compare/frontier-safety-frameworks/d9-cbrn', data)
+        .target,
+    ).toBeNull();
     expect(
       resolveReference(
         '/compare/frontier-safety-frameworks?facet=D9.cbrn',
@@ -236,6 +247,31 @@ describe('framework comparison (schemas 2.17 and 2.18)', () => {
       ).target,
     ).toBeNull();
     expect(resolveReference('/compare/other', data).target).toBeNull();
+  });
+
+  it('links two or three frameworks side by side', () => {
+    const [a, b, c, d] = frameworkComparison.families;
+    const path = referencePath({
+      kind: 'compare',
+      id: frameworkComparison.id,
+      frameworks: [a, b],
+    });
+    expect(path).toBe(
+      `/compare/frontier-safety-frameworks?frameworks=${encodeURIComponent(`${a},${b}`)}`,
+    );
+    expect(resolveReference(path, data).target).toMatchObject({
+      kind: 'compare',
+      frameworks: [a, b],
+    });
+    const base = '/compare/frontier-safety-frameworks';
+    for (const bad of [
+      `?frameworks=${a}`,
+      `?frameworks=${a},${b},${c},${d}`,
+      `?frameworks=${a},${a}`,
+      `?frameworks=${a},nonexistent`,
+      `/d3-halt?frameworks=${a},${b}`,
+    ])
+      expect(resolveReference(base + bad, data).target, bad).toBeNull();
   });
 
   it('links a chosen set of editions, one per framework', () => {

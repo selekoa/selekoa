@@ -1,7 +1,7 @@
 import { expect, MAP_FIRST_DRAW_TIMEOUT, test, type Page } from './fixtures';
 
 const mapPath = '/dossier/openai?view=map';
-const mapName = 'See it as a map: OpenAI’s direct connections →';
+const mapName = 'See a map: OpenAI’s direct connections';
 
 function collectErrors(page: Page) {
   const errors: string[] = [];
@@ -38,22 +38,15 @@ async function expectOpenAIMap(page: Page) {
 test.describe('without JavaScript', () => {
   test.use({ javaScriptEnabled: false });
 
-  test('the built start page labels the featured links as examples and links the map', async ({
+  test('the built start page offers its ways in, the map among the tools', async ({
     page,
   }) => {
     await page.goto('/');
-    const featured = page.locator('.landing-featured');
-    // The two links are examples, not the scope.
-    await expect(featured.locator('.eyebrow')).toHaveText('For example');
-    await expect(featured.locator('.landing-featured-note')).toHaveText(
-      'Two of many ways in. The hubs below cover governance, ideas and institutions.',
-    );
+    const ways = page.getByRole('navigation', { name: 'Ways in' });
     await expect(
-      featured.getByRole('link', {
-        name: 'Who controlled OpenAI, and when? →',
-      }),
+      ways.getByRole('link', { name: 'Who controlled OpenAI, and when?' }),
     ).toHaveAttribute('href', '/control/openai');
-    await expect(featured.getByRole('link', { name: mapName })).toHaveAttribute(
+    await expect(ways.getByRole('link', { name: mapName })).toHaveAttribute(
       'href',
       mapPath,
     );

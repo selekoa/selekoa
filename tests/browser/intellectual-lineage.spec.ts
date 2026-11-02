@@ -35,7 +35,7 @@ for (const mobile of [false, true]) {
     await expect(inspector).toContainText('2022-03-04');
     await expect(inspector).toContainText('v1 §3.5');
     await expect(inspector).toContainText('Machine-checked');
-    await expect(inspector).toContainText('Not reviewed by an editor');
+    await expect(inspector).toContainText('Machine-checked');
     await expect(inspector.locator('a.source-title')).toHaveAttribute(
       'href',
       'https://arxiv.org/pdf/2203.02155v1',

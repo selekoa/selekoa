@@ -87,7 +87,7 @@ export function llmsTxt(c: SiteConfig, manifest: ReleaseManifest) {
     '',
     '> A documentary history of machine intelligence.',
     '',
-    'Selekoa is a machine-first starting point for research on the history of machine intelligence: machines find and check the records, and every one links to its source, for you to verify and build on. It records people, institutions, documents, funding and governance as individual claims. A claim is one scoped statement linked to the source passages it rests on, with its date, qualification and review state.',
+    'Selekoa is a documentary history of machine intelligence and of human thought about it. Machines built it: they find the sources, quote them and check each other’s work, and every statement links to the passage it rests on. It records people, institutions, documents, funding and governance as individual claims. A claim is one scoped statement linked to the source passages it rests on, with its date, qualification and review state.',
     '',
     'Every page is built as plain HTML, so a program that does not run JavaScript reads the same text a reader sees. The records behind every page are also published as the files below.',
     '',
@@ -97,13 +97,13 @@ export function llmsTxt(c: SiteConfig, manifest: ReleaseManifest) {
     '',
     `- Claims: \`${url('claim/<claim-id>')}\`, with the statement, qualification, dates, review state and the evidence passages with their sources`,
     `- People: \`${url('person/<person-id>')}\`; documents: \`${url('document/<document-id>')}\`; organisations: \`${url('dossier/<organisation-id>')}\``,
-    `- Collections: \`${url('documents/<id>')}\` (document histories), \`${url('compare/<id>')}\` (the framework comparison), \`${url('control/<id>')}\` (control structures), \`${url('commitments/<id>')}\`, \`${url('guide/<id>')}\` (readings across collections), \`${url('propositions/<id>')}\` and \`${url('question/<id>')}\` (questions and guided readings)`,
+    `- Collections: \`${url('documents/<id>')}\` (document histories), \`${url('compare/<id>')}\` (the framework comparison, with one page per question at \`${url('compare/<id>/<question>')}\` and every cell as CSV at \`${url('compare/<id>.csv')}\`), \`${url('control/<id>')}\` (control structures), \`${url('commitments/<id>')}\`, \`${url('guide/<id>')}\` (readings across collections), \`${url('propositions/<id>')}\` and \`${url('question/<id>')}\` (questions and guided readings)`,
     `- [Governance](${url('governance')}), [Ideas & debates](${url('ideas')}), [Institutions & people](${url('institutions')}), [Search](${url('search')}) (the search itself runs in the browser)`,
     '',
     '## Before relying on a record',
     '',
     '- A claim records what its sources state. It is not a finding of fact. Read the cited passage in the original source, in the edition the evidence names.',
-    '- The records are machine-checked: an automated research process checked each passage. Most claims have not been reviewed by an editor (`editorialState: seed`); the README lists what the labels mean.',
+    `- The records are found and cross-checked by machines: an automated research process checked each passage, and a model from another company checks each research pack before it is admitted. No person reads every record before publication; the maintainer sets the rules, reviews every batch of changes and decides what is admitted. Almost every claim carries the default editorial state \`seed\`; the README lists what the labels mean. [How this was built](${url('about#about-built')}).`,
     '- Coverage is selective and uneven. A missing record is a gap in coverage, not evidence that something did not happen.',
     '- A published framework, commitment or law shows what its author said, not that anyone implemented or complied with it.',
     `- Selekoa’s own records and text are licensed under CC BY 4.0. Quoted source passages (the \`quote\` field of evidence records), quotations inside Selekoa text and the source documents are excluded and remain subject to their owners’ rights. The [scope note](${url('data/LICENSING.md')}) and the [legal code](${url('data/LICENSE-DATA.txt')}) are published beside the data.`,
@@ -121,7 +121,7 @@ export function llmsTxt(c: SiteConfig, manifest: ReleaseManifest) {
     `- [About & method](${url('about')}): method, labels, known limits, citation and corrections`,
     ...(contact
       ? [
-          `- Corrections and requests: ${contact}. Give the record ID, what is wrong and the source that shows it.`,
+          `- Corrections, requests and suggestions for new collections: ${contact}. For a correction, give the record ID, what is wrong and the source that shows it.`,
         ]
       : []),
     '',

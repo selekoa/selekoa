@@ -188,11 +188,23 @@ describe('the propositions collection page and its starter', () => {
     for (const entry of entries) {
       const dates = entry.records.map((r) => r.dated);
       expect(dates, entry.entity.id).toEqual([...dates].sort());
-      if (entry.stated.some((r) => r.stance === 'articulates'))
+      if (
+        entry.stated.some((r) => r.stance === 'articulates') &&
+        !entry.recheck.earliest
+      )
         expect(entry.earliest, entry.entity.id).not.toBeNull();
+      if (entry.recheck.earliest) expect(entry.earliest).toBeNull();
       expect(entry.earliest?.stance ?? 'articulates').toBe('articulates');
-      if (entry.proposition.terms.length)
+      // A headline under re-check (schema 2.28) has no holder meanwhile.
+      // A dropped name headline (schema 2.29) has no holder either.
+      if (
+        entry.proposition.terms.length &&
+        !entry.recheck.term &&
+        !entry.termDropped
+      )
         expect(entry.earliestTerm, entry.entity.id).not.toBeNull();
+      if (entry.recheck.term || entry.termDropped)
+        expect(entry.earliestTerm).toBeNull();
     }
   });
 
@@ -348,7 +360,7 @@ describe('earliest located marks on document pages', () => {
   it('names each headline a collection gives the document, in its words', () => {
     const marks = earliestMarks(data, propositionCollections, 'good-1965');
     expect(marks.map((m) => m.text)).toContain(
-      'Earliest located in Propositions about superintelligence, 1863–2022 for A1 Intelligence explosion',
+      'Earliest located in Propositions about superintelligence, 1863–2025 for A1 Intelligence explosion',
     );
     for (const mark of marks) {
       expect(mark.text).not.toMatch(/\bfirst\b/i);

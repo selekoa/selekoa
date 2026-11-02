@@ -101,8 +101,7 @@ export async function controlStructureStarter(
     controlStructure: {
       definition: collection,
       fingerprint: await fingerprint(collection),
-      interpretationStatus:
-        'machine-proposed; not human-reviewed or editorially accepted',
+      interpretationStatus: 'machine-proposed',
       orderedClaimIds: structure.claimIds,
       timeline: structure.entries.map((e) => ({
         claimId: e.claim.id,
@@ -231,8 +230,7 @@ export async function commitmentsStarter(
     commitments: {
       definition: collection,
       fingerprint: await fingerprint(collection),
-      interpretationStatus:
-        'machine-proposed; not human-reviewed or editorially accepted',
+      interpretationStatus: 'machine-proposed',
       orderedClaimIds: view.claimIds,
       documents: view.documents.map((d) => ({
         documentId: d.entity.id,
@@ -365,8 +363,16 @@ export function commitmentsStarterMarkdown(starter: CommitmentsStarter) {
       ['Disputed assessment', d.assessmentClaimIds],
     ];
     for (const [heading, ids] of groups)
-      for (const id of ids)
-        lines.push(...claimBlockLines(starter, claims.get(id)!, heading));
+      for (const id of ids) {
+        const claim = claims.get(id)!;
+        // An announced intention to sign is not a signature.
+        const label =
+          heading === 'Signatory' &&
+          claim.attributes?.commitment?.stage === 'intent_announced'
+            ? 'Announced intention to sign'
+            : heading;
+        lines.push(...claimBlockLines(starter, claim, label));
+      }
     if (!d.linkClaimIds.length)
       lines.push(
         'Coverage gap: no published framework is recorded as linking itself to this text.',

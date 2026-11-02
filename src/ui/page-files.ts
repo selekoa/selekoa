@@ -15,6 +15,7 @@ export const pageCode: Record<string, string[]> = {
   commitments: ['Commitments'],
   guide: ['FrameworksLaw', 'FrameworkChanges'],
   propositions: ['Propositions'],
+  stances: ['PropositionStances'],
   year: ['Chronicle'],
   years: ['Chronicle'],
   // A question is a guided reading or a question starter.
@@ -28,6 +29,7 @@ export const pageCode: Record<string, string[]> = {
  */
 export const pageCodeById: Record<string, string[]> = {
   'guide/ai-compute-2023-2026': ['ComputeBuildout'],
+  'control/side-by-side': ['ControlTimelines'],
 };
 
 /** The page code of a path, by name. */
@@ -46,6 +48,7 @@ export const propositionModules: Record<string, string> = {
   superintelligence: 'src/reading/superintelligence.ts',
   'risk-debate': 'src/reading/risk-debate.ts',
   'yudkowsky-arguments': 'src/reading/yudkowsky-arguments.ts',
+  'machine-succession': 'src/reading/machine-succession.ts',
   'economics-of-machine-intelligence': 'src/reading/economics.ts',
   'orbital-compute-arguments': 'src/reading/orbital-compute.ts',
   'ai-bio-arguments': 'src/reading/ai-bio-arguments.ts',

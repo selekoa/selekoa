@@ -1,6 +1,12 @@
 import type { PropositionsCollection } from '../domain/propositions';
 import { aiInScienceFrame as frame } from './proposition-frames';
 
+/** The maintainer's decisions of 2026-11-02 on the earliest-located re-check (decisions 1 to 4). */
+const recheckDecisions = '2026-11-02';
+
+/** The maintainer's decision on the pre-launch audit (PA-01, PA-02). */
+const withdrawn = '2026-11-02';
+
 const admitted = '2026-10-31';
 
 /**
@@ -45,7 +51,7 @@ export const aiInScience: PropositionsCollection = {
       'Every quotation was compared with the retrieved text of its own source. Paraphrases are labelled as such.',
       'Abstracts read in PubMed or Europe PMC records are the authors’ own text. The publishers’ pages of several papers refused retrieval, and the check read their dates in Internet Archive captures.',
       'Each record was applied against its proposition’s criterion as worded. A text that argues something adjacent bears on the proposition and its record says what is missing.',
-      'A fresh-context machine audit by Claude models re-read a sample of 72 records of the research pack, and a check by an OpenAI GPT model re-examined 120 items. No person has reviewed the records.',
+      'A fresh-context machine audit by Claude models re-read a sample of 72 records of the research pack, and a check by an OpenAI GPT model re-examined 120 items.',
     ],
     gaps: [
       'The searches for the virtual-cell, protein-design and information propositions were weakly bounded. Two 2019 preprints on protein design were read only by the check.',
@@ -93,13 +99,49 @@ export const aiInScience: PropositionsCollection = {
       claimIds: ['aib-arg-p5-isomorphic-2021'],
       recordedAt: admitted,
     },
+    {
+      propositionId: 'aib-prop-ai-virtual-cell',
+      replaced:
+        'Tomita’s article of June 2001, headlined as the earliest located use of the name (“virtual cell”).',
+      reason:
+        'Withdrawn on 2026-11-02 by the maintainer’s decision on the pre-launch audit (PA-01), pending a cross-family re-check; no record holds the headline meanwhile. The collection’s own Europe PMC search returns Schaff and others (1997), which uses “virtual cell”; it is not recorded here.',
+      claimIds: ['aib-arg-p2-tomita-2001'],
+      recordedAt: withdrawn,
+    },
+    {
+      propositionId: 'aib-prop-predicted-structures-aid-drug-design',
+      replaced:
+        'Lyu and others (published online 16 May 2024), headlined as the earliest located use of the name (“structure-based drug design”).',
+      reason:
+        'Withdrawn on 2026-11-02 by the maintainer’s decision on the pre-launch audit (PA-01), pending a cross-family re-check, which also flagged it; no record holds the headline meanwhile. Ring and others (1993), inside the stated search window of 1960–1995, uses “structure-based drug design”; it is not recorded here.',
+      claimIds: ['aib-arg-p1-lyu-2024'],
+      recordedAt: withdrawn,
+    },
+    {
+      propositionId: 'aib-prop-ai-virtual-cell',
+      replaced:
+        'No headline for the earliest located use of the name: under re-check from 2026-11-02. Before that, Tomita’s article of June 2001 was headlined, with “virtual cell”.',
+      reason:
+        'Dropped on 2026-11-02 by the maintainer’s decision on the cross-family re-check (role 8): the usual names are ordinary phrases rather than names of this proposition, so no text is headlined as using them first. The names stay listed. No label or affiliation is inferred from them.',
+      claimIds: ['aib-arg-p2-tomita-2001'],
+      recordedAt: recheckDecisions,
+    },
+    {
+      propositionId: 'aib-prop-predicted-structures-aid-drug-design',
+      replaced:
+        'No headline for the earliest located use of the name: under re-check from 2026-11-02. Before that, Lyu and others (16 May 2024) was headlined, with “structure-based drug design”.',
+      reason:
+        'Dropped on 2026-11-02 by the maintainer’s decision on the cross-family re-check (role 9): the usual names are ordinary phrases rather than names of this proposition, so no text is headlined as using them first. The names stay listed. No label or affiliation is inferred from them.',
+      claimIds: ['aib-arg-p1-lyu-2024'],
+      recordedAt: recheckDecisions,
+    },
   ],
   limits: [
     '“Earliest located” means the earliest text found by the searches described under “How we searched”. It is not a claim of first use or first statement.',
     'A record documents what a text says. It is not evidence that the proposition is true, that any model can do what a text says, or that any drug works.',
     'A company’s statement that a drug candidate entered a trial, or of how it was found, is the company’s. No trial registry was read.',
     'The first criterion is not limited to machine learning: computational prediction of protein structure predates it, and the earliest located text shows this.',
-    'A machine selected and classified these records, and machine checks from two model families re-examined them. No person has reviewed them.',
+    'A machine selected and classified these records, and machine checks from two model families re-examined them.',
   ],
   axis: frame.axis,
   landing: frame.landing,

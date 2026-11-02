@@ -257,6 +257,16 @@ export type CellStatus =
   | 'not-checked'
   | 'not-applicable';
 
+/** The reader's name for each status, on the page and in the CSV file. */
+export const cellStatusLabels: Record<CellStatus, string> = {
+  stated: 'Stated',
+  partly: 'Stated, partly',
+  recorded: 'Recorded, not re-checked',
+  'not-found': 'Not found in the recorded search',
+  'not-checked': 'Not checked',
+  'not-applicable': 'Does not apply',
+};
+
 export type ComparisonCollection = {
   id: string;
   version: number;
@@ -265,7 +275,10 @@ export type ComparisonCollection = {
   editorialStatus: 'machine-proposed';
   /** Framework families as columns, in this fixed order. */
   families: string[];
+  /** What a row and a column are: two sentences under the title. */
   introduction: string;
+  /** How to read a cell, shown with the status legend above the table. */
+  reading: string;
   /** Status wording (Rule B, 2026-10-27). */
   legend: Record<CellStatus, string>;
   limits: string[];

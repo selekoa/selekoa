@@ -183,9 +183,7 @@ describe('citations and documentary exports', () => {
     expect(packet.selection.orderedClaimIds).toEqual(
       selection.items.map((i) => i.claimId),
     );
-    expect(packet.selection.interpretationStatus).toContain(
-      'not human-reviewed',
-    );
+    expect(packet.selection.interpretationStatus).toBe('machine-authored');
     for (const c of packet.claims) {
       expect(c).toEqual(
         modified.claims.find((original) => original.id === c.id),

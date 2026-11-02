@@ -44,6 +44,12 @@ import { pageMeta, pagePaths, siteName } from './pages';
 import { pageHtml } from './page-html';
 import { mapReadable, queryDataset } from '../domain/query';
 import { siteFacts } from '../domain/site-facts';
+import { controlTimelines, timelineCsv } from '../domain/control-timelines';
+import { controlTimelines as timelinesDefinition } from '../reading/control-timelines';
+import { controlTimelinesCsvPath } from '../reading/control-timelines-page';
+import { propositionStances, stanceCsv } from '../domain/proposition-stances';
+import { stancesCsvPath } from '../reading/proposition-stances-page';
+import { propositionFrames } from '../reading/proposition-frames';
 import {
   layoutKey,
   networkLayout,
@@ -70,6 +76,29 @@ const indexed = (slice: PlacedSlice): PlacedSlice => ({
   index: indexFor(wholeIndex(), repository.data, slice),
 });
 provideSearch(memorySearchSource(repository));
+
+/**
+ * Files the build writes beside the pages, built from the same records as
+ * the page that links to them: the control timelines' CSV and each
+ * collection's stances by author. `baseUrl` is the site's address, for the
+ * record links in a file read away from the site.
+ */
+export const pageFiles = (baseUrl: string) => [
+  {
+    path: controlTimelinesCsvPath,
+    text: timelineCsv(
+      repository.data,
+      controlTimelines(repository.data, timelinesDefinition),
+    ),
+  },
+  ...propositionFrames.map((frame) => ({
+    path: stancesCsvPath(frame.id),
+    text: stanceCsv(
+      propositionStances(repository.data, frame),
+      baseUrl.replace(/\/$/, ''),
+    ),
+  })),
+];
 
 /** Every path the build writes. */
 export const paths = () => pagePaths(repository.data);

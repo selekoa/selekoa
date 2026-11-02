@@ -1,0 +1,410 @@
+[
+  {
+    "id": "lg2-eu-mistral-seed-2023-lightspeed",
+    "verdict": "ok",
+    "issues": [],
+    "proposedFix": "",
+    "retrieval": "fresh direct"
+  },
+  {
+    "id": "lg2-cn-zhipu-round-b2",
+    "verdict": "correct",
+    "issues": [
+      "The prospectus's table splits the round into Stage 1 (completed in July 2023; Tianjin Sankuai) and Stage 2 (completed in August 2023). 'Completed in August 2023' is the prospectus's own wording for the round and is correctly quoted, but the qualification omits that part of the consideration was subscribed in a stage completed in July 2023.",
+      "Total RMB410,112,528 verified against the 'Total' row; consistent with 'Amount of consideration paid to the Company' RMB410.11 million in the Key Terms table."
+    ],
+    "proposedFix": "Add to the qualification: 'The prospectus divides the round into Stage 1 (completed July 2023) and Stage 2 (completed August 2023); the date is the completion of the round as a whole.'",
+    "retrieval": "fresh direct"
+  },
+  {
+    "id": "lg2-cn-zhipu-round-b3",
+    "verdict": "correct",
+    "issues": [
+      "The table splits the round into Stage 1 (completed in November 2023; Trend Mega) and Stage 2 (completed in January 2024). Qualification does not mention the stages.",
+      "Total RMB608,973,038 verified."
+    ],
+    "proposedFix": "Add: 'The prospectus divides the round into Stage 1 (completed November 2023) and Stage 2 (completed January 2024); the date is the completion of the round as a whole.'",
+    "retrieval": "fresh direct"
+  },
+  {
+    "id": "lg2-oa-kilpatrick-google-2024",
+    "verdict": "ok",
+    "issues": [
+      "Passages verbatim. Quartz itself relays his LinkedIn post and earlier Business Insider/Gizmochina reports.",
+      "Closer source probably exists: Kilpatrick's own X post of early April 2024 announcing the move; not checked here. Worth one retrieval attempt via the x route before admission."
+    ],
+    "proposedFix": "Optional: try Kilpatrick's X announcement (x route) and cite it as primary if retrievable.",
+    "retrieval": "fresh relay"
+  },
+  {
+    "id": "lg2-eu-mistral-seriesb-2024",
+    "verdict": "ok",
+    "issues": [
+      "Verbatim and accurate; 'General Catalyst led the round' is not recorded here (not needed). TechCrunch quotes Arthur Mensch 'in a statement', so a Mistral statement existed; none located by the drafters."
+    ],
+    "proposedFix": "",
+    "retrieval": "fresh direct"
+  },
+  {
+    "id": "lg2-oa-brockman-openai-sabbatical-2024",
+    "verdict": "correct",
+    "issues": [
+      "Post verified (2024-08-06T02:14:55Z): 'I'm taking a sabbatical through end of year.' A sabbatical is not a departure; recording it as departure_announced will render as a departure in graph/list views whatever the qualification says.",
+      "Role attribute imports 'President of OpenAI per the existing 2022 record' into a 2024 record: that extends a role past its document date, against the scope rules."
+    ],
+    "proposedFix": "Hold or drop the record until a leave predicate exists (or the coordinator explicitly accepts departure_announced with a visible 'temporary leave' label). Remove the bracketed President attribution from the role attribute: 'Not stated in the post'.",
+    "retrieval": "fresh x"
+  },
+  {
+    "id": "lg2-nl-ssi-round-2024-09",
+    "verdict": "ok",
+    "issues": [
+      "Entry 'September 4th, 2024 — Update: We've raised $1B from NFDG, a16z, Sequoia, DST Global, and SV Angel' verified on the mutable updates page (page now also carries 2025–2026 entries)."
+    ],
+    "proposedFix": "",
+    "retrieval": "fresh direct"
+  },
+  {
+    "id": "lg2-cn-zhipu-ant-b5",
+    "verdict": "correct",
+    "issues": [
+      "Subscriber is Shanghai Feiya; the prospectus nowhere says Ant Group subscribed. Assigning the participation to Ant Group via the ownership chain is an inference and should be recorded with derivation 'inferred' and an inferenceRationale (premises: p.120 table row; p.132 ownership chain; p.240 'under the SFO, Ant Group is deemed to be interested in the Shares held by ... Shanghai Feiya').",
+      "Shanghai Feiya appears twice in the B5 table (two rows of 465,090 / RMB200,000,000), so the quoted row is not unique; the locator should say which sub-round table position.",
+      "The quoted table row includes an amount; the record correctly attributes no amount to Ant Group."
+    ],
+    "proposedFix": "Either make the subject Shanghai Feiya (with Ant Group context in the qualification) or set derivation 'inferred' with the ownership-chain rationale; cite the p.240 'deemed to be interested' passage as the closest textual link.",
+    "retrieval": "fresh direct"
+  },
+  {
+    "id": "lg2-cn-zhipu-round-b6-1-2",
+    "verdict": "ok",
+    "issues": [
+      "Verified: subscriber rows sum to RMB1,922,000,000 and the 'Total' row matches."
+    ],
+    "proposedFix": "",
+    "retrieval": "fresh direct"
+  },
+  {
+    "id": "lg2-oa-radford-openai-departure-2024",
+    "verdict": "correct",
+    "issues": [
+      "Passages verbatim. Mark Chen's statement is known here only in QbitAI's Chinese translation; the English paraphrase in the statement is a back-translation and must not be read as his wording.",
+      "Closer source: The Information's report (paywalled) carried Chen's English statement."
+    ],
+    "proposedFix": "Add to qualification: 'Mark Chen's words are recorded from QbitAI's Chinese translation; the original English wording was not retrieved.'",
+    "retrieval": "fresh direct"
+  },
+  {
+    "id": "lg2-oa-carlini-gdm-departure-2025",
+    "verdict": "correct",
+    "issues": [
+      "Second quote is a truncated fragment ending inside a parenthesis ('...I no longer believe DeepMind (and DeepMind leadership'); the words carrying the stated reason ('supports the type of high-impact security and privacy research I like to do') are outside the quoted passage, separated in the page by footnote [a].",
+      "Statement drops 'high-impact' and turns 'I like to do' into 'he wanted to do'; minor."
+    ],
+    "proposedFix": "Quote 'I no longer believe DeepMind (and DeepMind leadership) supports the type of high-impact security and privacy research I like to do' (noting the footnote marker is omitted), and align the statement wording with it.",
+    "retrieval": "fresh direct"
+  },
+  {
+    "id": "lg2-gm-hsiao-leaves-gemini-app-role-2025",
+    "verdict": "correct",
+    "issues": [
+      "Passages verbatim; 9to5Google explicitly relays Semafor and quotes staff memos.",
+      "No 'stage' attribute although the move is prospective ('is leaving'); other departure records carry stage: announced.",
+      "Closer source: the Semafor report (1–2 April 2025) and the internal memo it quotes."
+    ],
+    "proposedFix": "Add stage: announced; try Semafor.",
+    "retrieval": "fresh direct"
+  },
+  {
+    "id": "lg2-cn-dai-zonghong-01ai-departure-2025",
+    "verdict": "ok",
+    "issues": [
+      "Both quotes verbatim. 01.AI's reply ('数月前...再次创业') suggests the departure was months before the May 2025 reports; statement already reports both. Closer source: the 36Kr report of 8 May 2025."
+    ],
+    "proposedFix": "",
+    "retrieval": "fresh direct"
+  },
+  {
+    "id": "lg2-gm-velloso-leaves-google-2025",
+    "verdict": "correct",
+    "issues": [
+      "Role attribute says 'title not given in the report', but the report says 'Velloso ocupava o mesmo cargo na Google DeepMind', i.e. the same post he was taking at Meta ('vice-presidente de produto e desenvolvimento de plataforma').",
+      "Date lowered to month precision although the report date (15 July 2025) is known; acceptable but inconsistent with other report-dated records."
+    ],
+    "proposedFix": "Role: 'vice-president of product and developer platform at Google DeepMind (as reported: \"o mesmo cargo\")'.",
+    "retrieval": "fresh direct"
+  },
+  {
+    "id": "lg2-xa-ruddarraju-openai-compute-2025",
+    "verdict": "ok",
+    "issues": [
+      "Verbatim; 'last July' in a 20 July 2026 report = July 2025. Retrospective.",
+      "Contemporaneous July 2025 reporting of his hire from xAI (e.g. Wired) is likely closer in time; not checked."
+    ],
+    "proposedFix": "Optional: seek contemporaneous July 2025 report.",
+    "retrieval": "fresh relay"
+  },
+  {
+    "id": "lg2-nl-tml-seed-2025-amd",
+    "verdict": "ok",
+    "issues": [
+      "Verbatim; 'on Monday' in a Tuesday 15 July 2025 report = 14 July 2025.",
+      "Closer primary source probably exists: Mira Murati's X post of 15 July 2025 announcing the round and its participants; scope requires reporting only where no primary text could be retrieved."
+    ],
+    "proposedFix": "Try Murati's X post (x route); if it names AMD, cite it as primary.",
+    "retrieval": "fresh direct"
+  },
+  {
+    "id": "lg2-xa-lim-xai-head-of-legal-2025",
+    "verdict": "ok",
+    "issues": [
+      "'Taking over is Lily Lim' verbatim; qualification adequately limits it."
+    ],
+    "proposedFix": "",
+    "retrieval": "fresh direct"
+  },
+  {
+    "id": "lg2-gm-agi-foundations-disbanded-2025",
+    "verdict": "ok",
+    "issues": [
+      "Verbatim; MWL relays Bloomberg ('reorganisation yesterday (19 August.)'). Closer: Bloomberg / outlets that printed the memo."
+    ],
+    "proposedFix": "",
+    "retrieval": "fresh relay"
+  },
+  {
+    "id": "lg2-gm-msl-products-applied-research-2025",
+    "verdict": "ok",
+    "issues": [
+      "Verbatim. TechTarget says media 'reported Monday', Storyboard18 says the memo circulated 'on Tuesday'; the note's '18–19 August' covers the discrepancy."
+    ],
+    "proposedFix": "",
+    "retrieval": "fresh direct"
+  },
+  {
+    "id": "lg2-gm-wang-tbd-lab-lead-2025",
+    "verdict": "ok",
+    "issues": [
+      "Verbatim; Storyboard18 says the memo 'was obtained by Bloomberg News'. Weak relaying outlet; Bloomberg is the closer source."
+    ],
+    "proposedFix": "",
+    "retrieval": "fresh direct"
+  },
+  {
+    "id": "lg2-eu-mistral-seriesc-2025-asml",
+    "verdict": "ok",
+    "issues": [
+      "Verified; ASML's CEO is also quoted as 'proud ... to be lead investor', which corroborates the role."
+    ],
+    "proposedFix": "",
+    "retrieval": "fresh direct"
+  },
+  {
+    "id": "lg2-nl-periodic-seed-2025",
+    "verdict": "ok",
+    "issues": ["Verbatim; date and stage handled correctly."],
+    "proposedFix": "",
+    "retrieval": "fresh direct"
+  },
+  {
+    "id": "lg2-nl-reflection-round-2025",
+    "verdict": "ok",
+    "issues": [
+      "Post displays 'August 9, 2025' and states 'raised $2 billion'; TechCrunch dated 9 October 2025. Discrepancy correctly left unresolved.",
+      "A Reflection AI X post of October 2025 could settle the announcement date; not checked."
+    ],
+    "proposedFix": "Optional: try Reflection's X announcement to resolve the date.",
+    "retrieval": "fresh direct"
+  },
+  {
+    "id": "lg2-cn-luo-fuli-xiaomi-mimo-2025-11",
+    "verdict": "correct",
+    "issues": [
+      "Statement says she posted 'that day'; the source reads '11月12日，据澎湃新闻报道，罗福莉在朋友圈发文' — the date most naturally attaches to The Paper's report, not the post. The post date is not established.",
+      "Article contains private-life and salary-rumour material (relative's confirmation, birth year, 'ten-million salary' rumour); correctly excluded."
+    ],
+    "proposedFix": "Statement: '...that, according to The Paper's report that day, Luo Fuli had posted on WeChat Moments that she was at Xiaomi MiMo.' Time note: 'Date of the report relayed; the post's own date is not given.'",
+    "retrieval": "fresh direct"
+  },
+  {
+    "id": "lg2-xa-prasad-amazon-departure-2025",
+    "verdict": "ok",
+    "issues": [
+      "Verified; page published 2025-12-17T17:16Z. Reuters context passage verbatim and correctly kept as context."
+    ],
+    "proposedFix": "",
+    "retrieval": "fresh direct"
+  },
+  {
+    "id": "lg2-oa-tworek-openai-departure-2026",
+    "verdict": "correct",
+    "issues": [
+      "TrendForce passage verbatim; it relays The Verge citing his X post, whose note is an image. The stated reason thus passes through two reporting layers; scope admits reasons only where the person states them in a cited source.",
+      "Closer source: The Verge's report (5–6 January 2026), which may transcribe the note."
+    ],
+    "proposedFix": "Retrieve The Verge; if it transcribes the note, cite that. Otherwise keep the reason only with explicit 'as relayed by TrendForce citing The Verge' wording or drop statedReason.",
+    "retrieval": "fresh direct"
+  },
+  {
+    "id": "lg2-nl-humansand-seed-2026",
+    "verdict": "ok",
+    "issues": [
+      "Verbatim; TechCrunch explicitly relays the NYT. Home page context quote verbatim."
+    ],
+    "proposedFix": "",
+    "retrieval": "fresh direct"
+  },
+  {
+    "id": "lg2-dl-gdm-hume-agreement-2026",
+    "verdict": "ok",
+    "issues": [
+      "Verbatim. TechCrunch relays Wired's first report; Ettinger quote verified. Closer: Wired, or any Hume AI blog post."
+    ],
+    "proposedFix": "",
+    "retrieval": "fresh direct"
+  },
+  {
+    "id": "lg2-nl-ricursive-series-a-2026",
+    "verdict": "correct",
+    "issues": [
+      "Statement implies only the 16 February report calls it a Series A; the 26 January report already says 'The Series A comes just two months since...'."
+    ],
+    "proposedFix": "Statement: 'TechCrunch reported on 26 January 2026 that Ricursive Intelligence had raised $300 million in a Series A round the company said was led by Lightspeed.'",
+    "retrieval": "fresh direct"
+  },
+  {
+    "id": "lg2-eu-adaption-seed-2026",
+    "verdict": "ok",
+    "issues": [
+      "Verbatim; post dated February 4, 2026. Adaption's own announcement (company blog or founders' posts) may exist; not checked."
+    ],
+    "proposedFix": "",
+    "retrieval": "fresh direct"
+  },
+  {
+    "id": "lg2-oa-schwarzer-openai-departure-2026",
+    "verdict": "ok",
+    "issues": [
+      "X post verified (2026-03-03T21:02Z, 'I've decided to leave OpenAI'). The VP title rests on exchange4media, an Indian marketing trade outlet, which is weak for a title; qualification is honest about it."
+    ],
+    "proposedFix": "Optional: find a stronger source for the title or drop the title from the attribute note.",
+    "retrieval": "fresh x"
+  },
+  {
+    "id": "lg2-nl-nvidia-tml-investment-2026",
+    "verdict": "ok",
+    "issues": [
+      "Verified (page dated Mar 10, 2026). It is a joint announcement ('Thinking Machines Lab and NVIDIA announced today')."
+    ],
+    "proposedFix": "",
+    "retrieval": "fresh direct"
+  },
+  {
+    "id": "lg2-nl-applied-compute-round-2026-04-lux-capital",
+    "verdict": "ok",
+    "issues": [
+      "Verbatim; 'continued participation' correctly kept, no amount attributed."
+    ],
+    "proposedFix": "",
+    "retrieval": "fresh direct"
+  },
+  {
+    "id": "lg2-gm-velloso-leaves-meta-2026",
+    "verdict": "correct",
+    "issues": [
+      "Report is internally inconsistent: 'após sete meses' vs 'Desde julho de 2025' (about eleven months to June 2026). The statement repeats 'after seven months' without noting this.",
+      "Reason passage verified ('a Meta não era o lugar certo para eu influenciar as coisas da forma necessária'). Article spells him 'Matt Velloso'; identity is the same person."
+    ],
+    "proposedFix": "Add to qualification: 'The report gives both \"after seven months\" and a start of July 2025; the duration is not adopted.' Consider dropping 'after seven months' from the statement.",
+    "retrieval": "fresh direct"
+  },
+  {
+    "id": "lg2-cn-ru-liyun-baichuan-departure-2026",
+    "verdict": "ok",
+    "issues": [
+      "Both quotes verbatim. The piece is a WeChat commentary republished by 36Kr with a 'views of the author only' disclaimer; qualification says so. Next role (慧辰股份总裁) correctly omitted with reason."
+    ],
+    "proposedFix": "",
+    "retrieval": "fresh direct"
+  },
+  {
+    "id": "lg2-gm-le-leaves-google-2026",
+    "verdict": "correct",
+    "issues": [
+      "Quote verbatim. The same report says the venture is funded by Alphabet (via TechCrunch) and names Jeff Dean, Sanjay Ghemawat and Oriol Vinyals as co-founders; 'left Google' is VnExpress's characterisation and could be misread without this context.",
+      "Closer sources: Discovery Loop's announcement of 5 August 2026, Le's own post, and the TechCrunch report it cites."
+    ],
+    "proposedFix": "Retrieve Discovery Loop's announcement / TechCrunch; add to qualification that the report says Alphabet is among the funders.",
+    "retrieval": "fresh direct"
+  },
+  {
+    "id": "lg2-oa-metz-msl-2026",
+    "verdict": "ok",
+    "issues": [
+      "Verbatim; TNW says Ina Fried reported it on Monday (24 August 2026), matching the date."
+    ],
+    "proposedFix": "",
+    "retrieval": "fresh direct"
+  },
+  {
+    "id": "lg2-gm-patel-leaves-meta-2026",
+    "verdict": "correct",
+    "issues": [
+      "Verbatim. 'Is departing' is prospective, but no stage: announced attribute is set."
+    ],
+    "proposedFix": "Add stage: announced.",
+    "retrieval": "fresh direct"
+  },
+  {
+    "id": "lg2-cn-hong-tao-baichuan-cofounder",
+    "verdict": "ok",
+    "issues": [
+      "Verbatim. Jiemian bases the Hong Tao item on 36Kr's December 2024 report; the co-founder label is Jiemian's description. Baichuan's relayed reply credits him with building the commercial team, not with co-founding."
+    ],
+    "proposedFix": "",
+    "retrieval": "fresh direct"
+  },
+  {
+    "id": "lg2-cn-ru-liyun-baichuan-cofounder",
+    "verdict": "ok",
+    "issues": [
+      "Verbatim. The commentary's 'April 2023' conflicts with the official-site date of 24 March 2023 that Jiemian relays; the record rightly does not adopt it."
+    ],
+    "proposedFix": "",
+    "retrieval": "fresh direct"
+  },
+  {
+    "id": "lg2-eu-kohl-deepmind-prior",
+    "verdict": "ok",
+    "issues": ["Verbatim; release dated February 13, 2025."],
+    "proposedFix": "",
+    "retrieval": "fresh direct"
+  },
+  {
+    "id": "lg2-nl-azalia-mirhoseini-ricursive-founder",
+    "verdict": "ok",
+    "issues": [
+      "Both quotes verbatim; the 16 February report calls them 'co-founders'."
+    ],
+    "proposedFix": "",
+    "retrieval": "fresh direct"
+  },
+  {
+    "id": "lg2-nl-ricursive-seed-sequoia",
+    "verdict": "ok",
+    "issues": [
+      "Both quotes verbatim. A Sequoia post on the investment may exist as a closer source; not checked."
+    ],
+    "proposedFix": "",
+    "retrieval": "fresh direct"
+  },
+  {
+    "id": "lg2-nl-zelikman-humansand-cofounder",
+    "verdict": "ok",
+    "issues": [
+      "'Eric Zelikman (co-founder)' verified, but it appears inside the list of individual investors, not a founders list; the page has no founders roster. Qualification adequate."
+    ],
+    "proposedFix": "",
+    "retrieval": "fresh direct"
+  }
+]

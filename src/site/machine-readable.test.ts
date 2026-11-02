@@ -92,7 +92,9 @@ describe('llms.txt', () => {
     expect(text).toMatch(
       /^# Selekoa\n\n> A documentary history of machine intelligence\.\n/,
     );
-    expect(text).toContain('Selekoa is a machine-first starting point');
+    expect(text).toContain(
+      'Selekoa is a documentary history of machine intelligence and of human thought about it.',
+    );
     expect(text).toMatch(/\n## Data: dataset release v\d+\.\d+\.\d+ /);
     expect(text).toContain('\n## Optional\n');
   });
@@ -138,8 +140,8 @@ describe('llms.txt', () => {
   });
 
   it('states the limits of the records and of the licence', () => {
-    expect(text).toContain('machine-checked');
-    expect(text).toContain('not been reviewed by an editor');
+    expect(text).toContain('cross-checked by machines');
+    expect(text).toContain('No person reads every record before publication');
     expect(text).toContain('Coverage is selective');
     expect(text).toContain('CC BY 4.0');
     expect(text).toMatch(/Quoted source passages .* are excluded/);

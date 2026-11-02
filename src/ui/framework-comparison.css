@@ -1,14 +1,37 @@
 /* Framework comparison. Every status uses the same neutral style: the page
    compares what editions state and never marks a cell as better or worse. */
 .cmp-scope {
-  max-width: 75ch;
+  margin: 0;
   font-weight: 500;
 }
-.cmp-legend {
-  margin-top: var(--space-5);
+.cmp .doc-lede h1 {
+  margin: 8px 0 6px;
 }
-.cmp-legend h2 {
-  font-size: var(--heading-sub);
+.cmp .doc-intro {
+  margin-top: 6px;
+  max-width: 110ch;
+}
+/* How to read the cells, collapsed directly above the table. */
+.cmp-reading {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: var(--space-1) var(--space-5);
+  margin-bottom: var(--space-3);
+}
+.cmp-reading > details[open] {
+  flex-basis: 100%;
+}
+.cmp-reading .doc-limits-box {
+  margin-top: 0;
+}
+.cmp-legend > summary {
+  cursor: pointer;
+  color: var(--color-accent);
+}
+.cmp-legend > p {
+  max-width: 85ch;
+  margin: var(--space-2) 0 0;
 }
 .cmp-legend dl {
   display: grid;
@@ -23,14 +46,43 @@
   margin: 0 0 0 var(--space-4);
   color: var(--color-text-muted);
 }
+.cmp-legend .cmp-hint {
+  margin-top: var(--space-2);
+}
 .cmp-controls {
   display: grid;
-  gap: var(--space-4);
-  margin: var(--space-5) 0 var(--space-4);
+  gap: var(--space-3);
+  margin: var(--space-3) 0 var(--space-3);
 }
-.cmp-editions-box > summary {
-  cursor: pointer;
+/* Views, editions, link and download on one row. */
+.cmp-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2) var(--space-5);
+}
+.cmp-toolbar .reference-action {
+  margin: 0;
+}
+.cmp-editions-toggle,
+.cmp-toolbar .reference-action > .text-button {
+  font: inherit;
+  font-size: var(--text-sm);
+  padding: 0;
   color: var(--color-accent);
+  text-decoration: underline;
+  background: none;
+  border: 0;
+  cursor: pointer;
+}
+.cmp-editions-toggle:disabled {
+  cursor: default;
+}
+.cmp-toolbar .reference-action [role='status']:empty {
+  display: none;
+}
+.cmp-editions[hidden] {
+  display: none;
 }
 .cmp-editions {
   margin-top: var(--space-2);
@@ -66,7 +118,6 @@
   border-radius: var(--radius-sm);
 }
 .cmp-controls .view-switch {
-  justify-self: start;
   flex-wrap: wrap;
 }
 .cmp-question-pick {
@@ -161,13 +212,92 @@
 .cmp-cell .doc-inspect {
   margin-top: var(--space-2);
 }
+/* The comparison takes the page width; its records open in a drawer. */
+.cmp-layout {
+  padding: var(--space-5) var(--space-6) 56px;
+}
+.cmp-layout .doc-lede {
+  max-width: 1200px;
+}
+.cmp-layout .cmp-reading,
+.cmp-layout .cmp-controls,
+.cmp-layout .cmp-question {
+  max-width: 1080px;
+}
+.cmp-drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 30;
+  width: min(30rem, 100vw);
+  display: flex;
+}
+.cmp-drawer > .inspector {
+  flex: 1 1 auto;
+  max-height: none;
+  border-left: 1px solid var(--color-border-strong);
+}
+.cmp-hint {
+  margin: 0;
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+}
+.cmp-pair {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2) var(--space-4);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-2) var(--space-4) var(--space-3);
+  min-width: 0;
+}
+.cmp-pair legend {
+  font-weight: 600;
+  padding: 0 var(--space-1);
+}
+.cmp-download {
+  font-size: var(--text-sm);
+}
+.cmp-question-nav {
+  margin-top: var(--space-8);
+  border-top: 1px solid var(--color-border);
+  padding-top: var(--space-4);
+}
+.cmp-question-nav h2 {
+  font-size: var(--heading-sub);
+}
+.cmp-question-nav h3 {
+  margin: var(--space-3) 0 var(--space-1);
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+}
+.cmp-question-nav ul {
+  margin: 0;
+  padding-left: var(--space-5);
+}
+.cmp-question-nav [aria-current='page'] {
+  font-weight: 650;
+  text-decoration: none;
+  color: var(--color-text);
+}
+/* The table scrolls inside its own box, so that the framework headers and
+   the question column stay in place on both axes. */
 .cmp-scroll {
-  overflow-x: auto;
-  /* Clips the visually hidden button labels inside cells, too. */
+  overflow: auto;
+  max-height: calc(100vh - 3rem);
+  max-height: calc(100dvh - 3rem);
   position: relative;
+  border: 1px solid var(--color-border);
+  overscroll-behavior-x: contain;
+}
+.cmp-scroll:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
 }
 .cmp-table table {
-  border-collapse: collapse;
+  border-collapse: separate;
+  border-spacing: 0;
   font-size: var(--text-sm);
 }
 .cmp-table th,
@@ -182,8 +312,13 @@
   max-width: 22rem;
 }
 .cmp-table thead th {
+  position: sticky;
+  top: 0;
+  z-index: 2;
   min-width: 17rem;
   font-weight: 600;
+  background: var(--color-page);
+  box-shadow: inset 0 -1px 0 var(--color-border-strong);
 }
 /* The question column stays in view while the frameworks scroll. */
 .cmp-table thead th:first-child,
@@ -196,8 +331,17 @@
   min-width: 13rem;
   max-width: 15rem;
 }
+.cmp-table thead th:first-child {
+  z-index: 3;
+  box-shadow:
+    inset -1px 0 0 var(--color-border),
+    inset 0 -1px 0 var(--color-border-strong);
+}
 .cmp-table tbody th[scope='row'] {
   font-weight: 600;
+}
+.cmp-question-link {
+  color: var(--color-accent);
 }
 .cmp-table tbody th .cmp-criterion {
   display: block;
@@ -210,4 +354,54 @@
   letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--color-text-muted);
+}
+.cmp-dimension-row th > span {
+  display: inline-block;
+  position: sticky;
+  left: var(--space-3);
+}
+@media (max-width: 720px) {
+  .cmp-layout {
+    padding: 28px 16px 40px;
+  }
+  .cmp-table thead th:first-child,
+  .cmp-table tbody th[scope='row'] {
+    min-width: 8.5rem;
+    max-width: 9.5rem;
+  }
+  .cmp-table tbody th .cmp-criterion {
+    display: none;
+  }
+  .cmp-table td,
+  .cmp-table thead th {
+    min-width: 14rem;
+  }
+}
+@media print {
+  @page {
+    size: landscape;
+  }
+  .site-banner,
+  .site-footer,
+  .cmp-controls,
+  .cmp-reading,
+  .cmp-drawer,
+  .doc-actions,
+  .doc-alignment-cue {
+    display: none;
+  }
+  .cmp-scroll {
+    max-height: none;
+    overflow: visible;
+    border: 0;
+  }
+  .cmp-table thead th,
+  .cmp-table thead th:first-child,
+  .cmp-table tbody th[scope='row'] {
+    position: static;
+  }
+  .cmp-table td,
+  .cmp-table thead th {
+    min-width: 0;
+  }
 }

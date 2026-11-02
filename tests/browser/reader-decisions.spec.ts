@@ -53,7 +53,9 @@ test('the China scope note is on the Institutions hub and the About page', async
   await page.goto('/institutions');
   const hubNote = page.locator('#china-scope');
   await expect(hubNote).toContainText('On China, the records hold');
-  await expect(hubNote).toContainText('GB 45438-2025 is held');
+  await expect(hubNote).toContainText(
+    'GB 45438-2025, because its text was not retrieved',
+  );
   const text = (await hubNote.textContent())!;
   await page.goto('/about');
   await expect(page.locator('#about-china-scope')).toHaveText(text);

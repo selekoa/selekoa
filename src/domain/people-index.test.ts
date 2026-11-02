@@ -1,7 +1,8 @@
 import { describe, expect, it } from 'vitest';
 import { createRepository, repository } from './repository';
 import { datasetSchema } from './schema';
-import { nameCollator, peopleIndex } from './people-index';
+import { listedPerson, nameCollator, peopleIndex } from './people-index';
+import { landingSummary } from './landing';
 import { preSortNameData } from '../editorial/pre-sort-name-data';
 import { preFrameworkEvidenceRaw } from '../editorial/pre-framework-evidence-data';
 
@@ -59,5 +60,24 @@ describe('person sort names', () => {
     expect(groups.map((g) => g.letter)).toEqual([
       ...new Set(groups.map((g) => g.letter)),
     ]);
+  });
+
+  it('lists a person by name alone in the landing summary only when the identifier follows from it', () => {
+    const listed = landingSummary(data).people;
+    expect(
+      listed.map((g) => ({
+        letter: g.letter,
+        people: g.people.map(listedPerson),
+      })),
+    ).toEqual(
+      peopleIndex(data).map((g) => ({
+        letter: g.letter,
+        people: g.people.map(({ id, name }) => ({ id, name })),
+      })),
+    );
+    const flat = listed.flatMap((g) => g.people);
+    expect(flat.filter((p) => typeof p === 'string').length).toBeGreaterThan(
+      flat.length / 2,
+    );
   });
 });

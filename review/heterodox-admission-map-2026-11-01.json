@@ -1,0 +1,566 @@
+{
+  "description": "Authored map for the admission of the candidate pack research/heterodox-thought by scripts/heterodox-admission.ts. It applies the maintainer's decisions of 2026-11-01 on the open questions (1–16, all as recommended) and on the cross-family check (items 1–11), both recorded in review/heterodox-thought-pack-2026-10-31.md. Every decision, correction and hold here carries its reason. Record IDs are not reader-facing.",
+  "admissionDate": "2026-11-01",
+  "collection": "machine-succession",
+  "files": {
+    "pack": "research/heterodox-thought/pack.json",
+    "verification": "research/heterodox-thought/verification.json",
+    "check": "research/heterodox-thought/cross-family-check-2026-10-31.json",
+    "admission": "research/heterodox-thought/admission-verification-2026-11-01.json"
+  },
+  "snapshotDescription": "Rows added and changed by the admission of the candidate pack research/heterodox-thought (scripts/heterodox-admission.ts, review/heterodox-admission-2026-11-01.md). Removing the added rows and restoring the changed ones reproduces the dataset as it was at baseCommit.",
+  "scope": "The machine-succession admission (2026-11-01) adds the collection on machine succession, scale and acceleration, 1979–2026: texts that state, contest or bear on ten propositions about machines succeeding humans, the scale and setting of machine intelligence, and capital, values and acceleration, with the texts and authors they name; every record is a seed with machine-checked evidence.",
+  "rules": [
+    "Open question 1: the reader-facing title is neutral and names the subject; the research directory keeps its name.",
+    "Open question 2: dataset documents (Moravec 1979 and 1989, Vinge 1993, Hanson 1994, Chalmers 2010) are recorded on the new W propositions; no dataset document is re-recorded on a concept where the dataset already records it.",
+    "Open question 3 and check decision 3: a capture that the cross-family check compared and found to hold a record's quoted wording attests that wording from the capture's date; the earliest located roles are then recomputed mechanically from the wording dates, and each change is a correction.",
+    "Open questions 4–6 and check decisions 1–2: see newClaims, hold and captures.",
+    "Open question 7 and check decision 8: a post signed “Old Nick” is credited to its signature, not to Land.",
+    "Open question 8: the second part of Lê's conversation with Land stays out (removed at integration).",
+    "Open question 9: pseudonymous and collective bylines are recorded as their bylines show; no pseudonym is joined to a legal name except where the text itself does, and then only in that text's record.",
+    "Open question 10: Andreessen's list is a cites link; the only explicitly_credits link is xenogothic 2023 to Land.",
+    "Open question 11: a person entity is created for a pack author whom an admitted link names (Nick Land, through the explicitly_credits link); a link whose target would be a new entity only for that link is held and its target listed in the search note. Links that cite a person are held: `cites` takes a document object, so they need a schema decision (see citesPersonHold).",
+    "Open questions 12–14: kept as recorded; the gaps are stated in the search note, not padded.",
+    "Open questions 15–16 and check decisions 3 and 11: the adjacent strands are listed as searched and not included, within the bounds of each search; the unread earlier texts and Drexler's chapter are listed in review/thought-spine-leads.md."
+  ],
+  "propositions": {
+    "W01": {
+      "id": "machine-succession"
+    },
+    "W02": {
+      "id": "succession-acceptable"
+    },
+    "W03": {
+      "id": "mind-transfer"
+    },
+    "W04": {
+      "id": "species-dominance-conflict"
+    },
+    "W05": {
+      "id": "vast-superiority",
+      "criterion": "Machine intelligence could come to exceed human intelligence or overall cognitive capacity not moderately but by many orders of magnitude (a factor stated as trillions, or comparable to the gap between humans and much simpler organisms or matter). Capacity here means intelligence or overall cognitive capacity, not a robot's sensorimotor or output capacity.",
+      "reason": "Check decision 6: the criterion is clarified; item 97 (Moravec 1989) stays bears-on."
+    },
+    "W06": {
+      "id": "capital-as-machine-intelligence"
+    },
+    "W07": {
+      "id": "intelligence-as-own-end",
+      "withheld": "By the maintainer's decision of 2026-11-01, Land's post “Pythia Unbound” (11 September 2013) is the earliest located articulation; a cross-family check read it in an archive capture of 14 September 2013. Its quotation could not be matched again when the collection was admitted, so the post is not recorded yet, and no text holds the role until it is."
+    },
+    "W08": {
+      "id": "accelerate-machine-intelligence"
+    },
+    "W09": {
+      "id": "cosmic-process"
+    },
+    "W10": {
+      "id": "cosmic-expansion"
+    }
+  },
+  "subtypes": {
+    "Essay": "Essay",
+    "Blog post": "Blog post",
+    "Magazine article": "Magazine article",
+    "Paper": "Research paper",
+    "Book chapter": "Book chapter",
+    "Interview transcript": "Interview",
+    "Manifesto": "Declaration or statement",
+    "Lecture slides": "Lecture or talk",
+    "Lecture transcript": "Lecture or talk",
+    "Book": "Book"
+  },
+  "documentSubtypes": {},
+  "sourceKinds": {
+    "webpage": "article",
+    "post": "post",
+    "paper": "paper",
+    "book": "book",
+    "interview": "article",
+    "transcript": "post",
+    "report": "report",
+    "message": "post",
+    "letter": "article"
+  },
+  "sourceKindOverrides": {},
+  "documentDates": {
+    "kurzweil-2001-law-of-accelerating-returns": {
+      "date": "2001-03-07",
+      "description": "The kurzweilai.net copy captured on 7 November 2001 states that the essay was written in November 2000 and published on 7 March 2001; the Kurzweil Library page read for the pack labels it January 2001 and is itself dated 1 January 2025.",
+      "note": "Published 7 March 2001 and written in November 2000, as the kurzweilai.net copy captured on 7 November 2001 states (cross-family check of 2026-11-01). The Kurzweil Library page read for the pack labels it January 2001.",
+      "reason": "Check decision 8: the January 2001 label is corrected."
+    },
+    "eacc-2022-effective-accelerationism-repost": {
+      "date": "2022-06-01",
+      "description": "The original post on swarthy.substack.com shows 1 June 2022; the cross-family check read it in an archive capture of 2 June 2022. The quotations were matched in the newsletter's repost of 31 October 2022, which calls itself a verbatim repost and names @zestular, @creatine_cycle, @BasedBeffJezos and @bayeslord as authors.",
+      "note": "Posting date of the original post (1 June 2022), read by the cross-family check in a capture of 2 June 2022; the quotations were matched in the verbatim repost of 31 October 2022.",
+      "name": "Effective Accelerationism — e/acc",
+      "shortName": "e/acc, Effective Accelerationism — e/acc (2022)",
+      "reason": "Check decision 8: the original post of 1 June 2022 is the version basis."
+    },
+    "faggella-2023-worthy-successor": {
+      "date": "2023-11-24",
+      "description": "The current page gives 24 November 2023 as its posting date and 15 October 2026 as its update date; the archive capture of 26 February 2024 gives 22 December 2023 (and 13 February 2024). Both posting dates are recorded as the pages state them.",
+      "note": "Posting date as the current page states it (24 November 2023); the capture of 26 February 2024 gives 22 December 2023. Both are as stated; neither is preferred.",
+      "reason": "Check decision 9: both posting dates are kept as stated."
+    },
+    "land-meltdown": {
+      "date": "1997",
+      "description": "Dated Winter 1997 (Abstract Culture, first swarm) as the publisher's reprint attributes it; the CCRU web copy is undated, and its wording is attested by an archive capture of 3 February 2004 that the cross-family check found byte-identical to the current copy.",
+      "note": "Winter 1997, as the publisher's reprint attributes the text to Abstract Culture (first swarm); the web copy is undated.",
+      "reason": "Check decision 2: Meltdown stays a later articulation, dated as attributed, with its wording attested by the capture of 3 February 2004."
+    },
+    "old-nick-2007-critique-of-transcendental-miserablism": {
+      "description": "A post signed “Old Nick” on the Hyperstition blog, dated by the blog's archive page. It is credited to its signature: a chapter of the same title is attributed to Nick Land in Fanged Noumena (2011), whose wording was not compared.",
+      "reason": "Check decision 8 and open question 7."
+    }
+  },
+  "captures": {
+    "moravec-1989-after-life": {
+      "url": "https://web.archive.org/web/19991110171507/http://www.frc.ri.cmu.edu:80/~hpm/project.archive/robot.papers/1989/Afterlife.html",
+      "date": "1999-11-10",
+      "all": true,
+      "note": "The cross-family check found the archive capture of 10 November 1999 byte-identical to the copy read."
+    },
+    "moravec-1999-rise-of-the-robots": {
+      "url": "https://web.archive.org/web/20010330004155/http://www.frc.ri.cmu.edu:80/~hpm/project.archive/robot.papers/1999/SciAm.scan.html",
+      "date": "2001-03-30",
+      "all": true,
+      "note": "The cross-family check found the archive capture of 30 March 2001 byte-identical to the copy read."
+    },
+    "moravec-1991-universal-robot": {
+      "url": "https://web.archive.org/web/19990209012930/http://www.frc.ri.cmu.edu:80/%7Ehpm/project.archive/robot.papers/1991/Universal.Robot.910618.html",
+      "date": "1999-02-09",
+      "note": "The cross-family check found the quoted passages in the archive capture of 9 February 1999; the file's bytes differ elsewhere."
+    },
+    "moravec-1992-pigs-in-cyberspace": {
+      "url": "https://web.archive.org/web/19990427090442/http://www.frc.ri.cmu.edu:80/%7Ehpm/project.archive/general.articles/1992/CyberPigs.html",
+      "date": "1999-04-27",
+      "note": "The cross-family check found the quoted passages in the archive capture of 27 April 1999; the file's bytes differ elsewhere."
+    },
+    "moravec-2000-robots-re-evolving-mind": {
+      "url": "https://web.archive.org/web/20010627010648/http://www.frc.ri.cmu.edu:80/~hpm/project.archive/robot.papers/2000/Cerebrum.html",
+      "date": "2001-06-27",
+      "note": "The cross-family check found the quoted passages in the archive capture of 27 June 2001; the file's bytes differ elsewhere."
+    },
+    "kurzweil-2001-loar": {
+      "url": "https://web.archive.org/web/20011107130154/http://www.kurzweilai.net:80/articles/art0134.html",
+      "date": "2001-11-07",
+      "note": "The cross-family check found the quoted passages in the kurzweilai.net copy captured on 7 November 2001."
+    },
+    "hanson-1994-uploads-gmu": {
+      "url": "https://web.archive.org/web/19980220204707/http://hanson.berkeley.edu/uploads.html",
+      "date": "1998-02-20",
+      "records": ["ht-w03-hanson-1994-if-uploads-come-first"],
+      "note": "The cross-family check found both quoted passages in the hanson.berkeley.edu reprint captured on 20 February 1998, the dataset's existing source for this article."
+    },
+    "faggella-2023-worthy-successor": {
+      "url": "https://web.archive.org/web/20240226081218/https://danfaggella.com/worthy/",
+      "date": "2024-02-26",
+      "note": "The cross-family check found these passages in the archive capture of 26 February 2024."
+    },
+    "land-meltdown-ccru": {
+      "url": "https://web.archive.org/web/20040203102201/http://www.ccru.net:80/swarm1/1_melt.htm",
+      "date": "2004-02-03",
+      "all": true,
+      "note": "The cross-family check found the archive capture of 3 February 2004 byte-identical to the copy read."
+    },
+    "moravec-1998-simulation-consciousness-existence": {
+      "url": "https://web.archive.org/web/20000829110345/http://www.frc.ri.cmu.edu:80/~hpm/project.archive/general.articles/1998/SimConEx.98.html",
+      "date": "2000-08-29",
+      "all": true,
+      "note": "The cross-family check found the archive capture of 29 August 2000 byte-identical to the copy read."
+    }
+  },
+  "currentWording": {
+    "ht-w02-faggella-2023-worthy-successor": "Both passages are absent from the archive capture of 26 February 2024, which states the successor aim in other words (cross-family check); they are dated by the current page, as updated on 15 October 2026 and retrieved on 2026-10-31.",
+    "ht-w08-faggella-2023-worthy-successor": "Both slowdown passages are absent from the archive capture of 26 February 2024 (cross-family check); they are dated by the current page, as updated on 15 October 2026 and retrieved on 2026-10-31."
+  },
+  "sourceEdits": {
+    "kurzweil-2001-loar": {
+      "archivedUrl": "https://web.archive.org/web/20011107130154/http://www.kurzweilai.net:80/articles/art0134.html",
+      "archivedAt": "2001-11-07",
+      "versionNote": "The cross-family check of 2026-11-01 read the kurzweilai.net copy captured on 7 November 2001, which states that the essay was written in November 2000 and published on 7 March 2001, and found the quoted passages it compared."
+    },
+    "bostrom-2004-future-human-evolution": {
+      "archivedUrl": "https://web.archive.org/web/20041221002632/http://www.nickbostrom.com:80/fut/evolution.pdf",
+      "archivedAt": "2004-12-21",
+      "versionNote": "The cross-family check of 2026-11-01 read the PDF as captured on 21 December 2004: it already cites Hanson and Moravec, in footnotes 11 and 6 (12 and 7 in the current PDF)."
+    },
+    "eacc-2022-effective-accelerationism-repost": {
+      "archivedUrl": "https://web.archive.org/web/20220602061031/https://swarthy.substack.com/p/effective-accelerationism-eacc",
+      "archivedAt": "2022-06-02",
+      "versionNote": "Version basis: the original post of 1 June 2022 on swarthy.substack.com, which the cross-family check of 2026-11-01 read in the archive capture of 2 June 2022 and found to hold the definition quoted from the repost."
+    },
+    "faggella-2023-worthy-successor": {
+      "archivedUrl": "https://web.archive.org/web/20240226081218/https://danfaggella.com/worthy/",
+      "archivedAt": "2024-02-26",
+      "versionNote": "The cross-family check of 2026-11-01 compared the archive capture of 26 February 2024: it holds the galaxy aim and the list of capabilities, but not the current wording of the successor aim and its conclusion, the sentence on Kurzweil or the opening and closing notes on slowing down."
+    },
+    "land-meltdown-ccru": {
+      "archivedUrl": "https://web.archive.org/web/20040203102201/http://www.ccru.net:80/swarm1/1_melt.htm",
+      "archivedAt": "2004-02-03",
+      "versionNote": "The cross-family check of 2026-11-01 found the archive capture of 3 February 2004 byte-identical to this copy."
+    },
+    "hanson-1994-uploads-gmu": {
+      "versionNote": "The date line “March 8, 1994” is a heading of the reprint, not a stated date of publication. The cross-family check of 2026-11-01 found the quoted passages in the hanson.berkeley.edu reprint captured on 20 February 1998."
+    },
+    "land-2007-miserablism-hyp": {
+      "versionNote": "Signed “Old Nick”; credited to that signature."
+    }
+  },
+  "claims": {
+    "ht-w03-degaris-1989-what-if-ai-succeeds": {
+      "predicate": "bears_on_proposition",
+      "roles": ["context"],
+      "missing": "Transfer, copying or continuation of an existing human mind in a machine: the passage names modifying bodies and brains to become artilects.",
+      "statement": "De Garis's article of 1989 names, as a third option beside letting artilects evolve or not, that some human beings might modify their own bodies and brains to become artilects themselves.",
+      "reason": "Check decision 4 (item 41): recorded as bearing on W03; the earliest located role passes to the next qualifying text."
+    },
+    "ht-w05-degaris-1990-moral-dilemmas": {
+      "predicate": "bears_on_proposition",
+      "roles": ["context"],
+      "missing": "The criterion's scale: the passage says “orders of magnitude” without stating trillions or a gap comparable to that between humans and much simpler organisms.",
+      "reason": "Check decision 4 (item 51): recorded as bearing on W05; the earliest located role passes to the next qualifying text."
+    },
+    "ht-w08-joy-2000-why-the-future-doesnt-need-us": {
+      "engagement": {
+        "kind": "engages-premise",
+        "rationale": "Gives a reason for restraint: the risks of the named technologies are unmanageable and no defence can be built in time."
+      },
+      "reason": "Check decision 7 (item 12): a reasoned objection."
+    },
+    "ht-w07-pinker-2015-thinking-does-not-imply-subjugating-contests": {
+      "statement": "Pinker's Edge response of 2015 states that the goals are extraneous to the intelligence itself.",
+      "engagement": {
+        "kind": "engages-premise",
+        "rationale": "Disputes W07's premise by stating that goals are extraneous to intelligence."
+      },
+      "evidence": {
+        "0": {
+          "passage": "the goals are extraneous to the intelligence itself",
+          "trim": true,
+          "reason": "Trimmed at admission to these words, so that the quotations from this response stay within the quotation limit for its length; the risk-debate collection already quotes the sentence that follows, and this collection's record on W01 quotes another passage."
+        }
+      },
+      "reason": "Check decision 7 (item 20): a reasoned objection; quotation limit."
+    },
+    "ht-w08-eacc-2022-effective-accelerationism-repost": {
+      "statement": "The inaugural e/acc post of 1 June 2022 states that effective accelerationism is a set of ideas and practices that seek to maximise the probability of the \"technocapital singularity\".",
+      "time": {
+        "kind": "event",
+        "date": "2022-06-01",
+        "basis": "publication",
+        "note": "Posting date of the original post (1 June 2022), read by the cross-family check in a capture of 2 June 2022; the quotation was matched in the verbatim repost of 31 October 2022."
+      },
+      "attested": {
+        "date": "2022-06-02",
+        "note": "The cross-family check of 2026-11-01 found the quoted definition in the original post as captured on 2 June 2022; the admission matched it in the repost of 31 October 2022."
+      },
+      "qualification": "The quotation is matched in the repost of 31 October 2022, which calls itself verbatim; the original post's wording of the definition was read by the cross-family check in a capture of 2 June 2022. The paraphrased paragraph on stalling progress is read only in the repost and is context.",
+      "evidence": {
+        "1": {
+          "support": "context",
+          "note": "Read in the repost of 31 October 2022; not compared with the original post."
+        }
+      },
+      "reason": "Check decision 8: the original post is the version basis."
+    },
+    "ht-w02-eacc-2022-effective-accelerationism-repost": {
+      "repostOnly": true
+    },
+    "ht-w06-eacc-2022-effective-accelerationism-repost": {
+      "repostOnly": true
+    },
+    "ht-w01-vinge-1993-coming-technological-singularity": {
+      "evidence": {
+        "0": {
+          "passage": "Within thirty years, we will have … means to create superhuman intelligence. … the human era will be ended.",
+          "quoteCorrection": true,
+          "reason": "The printed abstract reads “the technological means”; the omission of “the technological” is marked (maintainer's decision of 2026-11-01 on the cross-family check, item 59). The text layer displaces those words."
+        }
+      }
+    },
+    "ht-w01-pinker-2015-thinking-does-not-imply-subjugating-contests": {
+      "statement": "Pinker's Edge response of 2015 states that AI dystopias project a parochial alpha-male psychology onto the concept of intelligence, assuming that superhumanly intelligent robots would develop goals like deposing their masters or taking over the world.",
+      "reason": "Review: the full passage is kept, so that the record shows the contest; the W07 passage from the same response is trimmed instead (quotation limit)."
+    },
+    "ht-w05-kelly-2017-myth-of-a-superhuman-ai-contests": {
+      "time": {
+        "kind": "event",
+        "date": "2017-04-27",
+        "basis": "publication",
+        "note": "27 April 2017, the date in the footer of the author's blog post."
+      },
+      "reason": "Check decision 8: the date is the primary footer's."
+    },
+    "ht-w03-moravec-1979-todays-computers": {
+      "qualification": "A described thought procedure (\"meant to suggest a variety of ways\"), not a technical design. The essay is dated 1979-02, but its wording is attested only from 2001-07-10; under the attested-date rule the earliest located role on W03 goes to Minsky's essay of 1994, whose wording is attested from 1997-01-02.",
+      "reason": "Review: the holder named in the pack's qualification changed (check decision 4)."
+    },
+    "ht-w09-moravec-1979-todays-computers": {
+      "qualification": "The process named is the evolution of life on Earth. The essay is dated 1979-02, but its wording is attested only from 2001-07-10; under the attested-date rule the earliest located role on W09 goes to Moravec's \"After Life\" (1989), whose wording is attested from 1999-11-10.",
+      "reason": "Review: the holder changed through the capture of 10 November 1999."
+    },
+    "ht-w07-taylor-2024-book-review-xenosystems": {
+      "qualification": "A relay: Taylor's report of Land's posts as collected in the Passage Publishing book Xenosystems, with short quotations of Land. The cross-family check read Land's own posts of 2013 and 2014 in archive captures; they are not recorded yet, so W07 has no earliest located text for now, and this relay does not hold the role.",
+      "reason": "Check decision 1, as applied (held posts)."
+    },
+    "ht-w02-moravec-1991-universal-robot": {
+      "qualification": "The text presents the succession reading as one point of view among two. A use of the term is not evidence of coinage. The cross-family check found the quoted passages in an archive capture of 9 February 1999, which attests the wording from that date.",
+      "reason": "Review: the capture has been compared."
+    },
+    "ht-w06-land-meltdown": {
+      "register": "fiction",
+      "reason": "Open question 6 as adopted: the W06 passage, framed 'The story goes like this', is labelled fiction."
+    }
+  },
+  "evidence": {},
+  "hold": {},
+  "holdLinks": {
+    "karl-marx": "A new person entity only for this link (open question 11).",
+    "deleuze-guattari": "A new entity only for this link (open question 11).",
+    "lenin-1918-left-wing-childishness": "A new document entity only for this link (open question 11).",
+    "based-beff-jezos": "An X account; a new entity only for this link (open questions 9 and 11).",
+    "bayeslord": "An X account; a new entity only for this link (open questions 9 and 11).",
+    "kurzweil-1999-age-of-spiritual-machines": "A new document entity only for this link (open question 11).",
+    "deleuze-guattari-anti-oedipus": "A new document entity only for this link (open question 11).",
+    "k-punk-2007-post": "A post the passage links but does not title; a new entity only for this link (open question 11).",
+    "kelly-out-of-control": "A new document entity only for this link (open question 11).",
+    "land-xenosystems": "A blog and book compilation; a new entity only for this link (open question 11).",
+    "a-g-cairns-smith": "A new person entity only for this link (open question 11).",
+    "barrow-tipler-anthropic-cosmological-principle": "New document entities only for this link (open question 11)."
+  },
+  "linkTargets": {
+    "bostrom-2014-superintelligence": "kp-superintelligence-paths-dangers-strategies-2014",
+    "land-machinic-desire": "land-1993-machinic-desire"
+  },
+  "persons": {
+    "nick-land": {
+      "name": "Nick Land",
+      "sortName": "Land, Nick",
+      "documents": [
+        "land-1993-machinic-desire",
+        "land-1992-circuitries",
+        "land-meltdown",
+        "land-2014-teleological-identity"
+      ]
+    },
+    "ray-kurzweil": {
+      "name": "Ray Kurzweil",
+      "sortName": "Kurzweil, Ray",
+      "documents": [
+        "kurzweil-2001-law-of-accelerating-returns",
+        "kurzweil-2011-dont-underestimate-the-singularity"
+      ]
+    },
+    "guillaume-verdon": {
+      "name": "Guillaume Verdon",
+      "sortName": "Verdon, Guillaume",
+      "documents": ["verdon-2023-lex-fridman-transcript"]
+    }
+  },
+  "linkQualification": "A naming records that the later text names the earlier text or author; it is not agreement, influence or lineage beyond what the passage states.",
+  "linkEvidence": {
+    "ht-link-bostrom-2004-future-of-human-evolution-names-hanson-1994-if-uploads-come-first:0": {
+      "locator": "Footnote 11 in the PDF captured on 21 December 2004 (footnote 12, PDF p. 7, in the current PDF)",
+      "reason": "Check decision 8 (item 132)."
+    },
+    "ht-link-bostrom-2004-future-of-human-evolution-names-hans-moravec:0": {
+      "locator": "Footnote 6 in the PDF captured on 21 December 2004 (footnote 7, PDF p. 4, in the current PDF)",
+      "reason": "Check decision 8 (item 133)."
+    }
+  },
+  "linkTimes": {
+    "ht-link-faggella-2023-worthy-successor-names-ray-kurzweil": {
+      "kind": "event",
+      "date": "2026-10-15",
+      "basis": "publication",
+      "note": "The passage is in the page as updated on 15 October 2026 and retrieved on 2026-10-31; the cross-family check did not find it in the capture of 26 February 2024 (check decision 9)."
+    }
+  },
+  "newDocuments": {
+    "land-1993-machinic-desire": {
+      "name": "Machinic Desire",
+      "shortName": "Land, Machinic Desire (1993)",
+      "subtype": "Journal article",
+      "description": "An article by Nick Land in Textual Practice 7(3), 1993, pp. 471–482, read in the publisher's PDF (online 30 June 2008).",
+      "sources": ["adm-land-1993-machinic-desire"]
+    }
+  },
+  "newSources": {
+    "adm-land-1993-machinic-desire": {
+      "id": "source-ht-land-1993-machinic-desire",
+      "documentId": "land-1993-machinic-desire",
+      "title": "Machinic desire",
+      "authors": ["Nick Land"],
+      "publisher": "Textual Practice 7(3), pp. 471–482 (Routledge)",
+      "publicationDate": "1993",
+      "url": "https://xenopraxis.net/readings/land_machinicdesire.pdf",
+      "archivedUrl": "https://web.archive.org/web/20190304091609/http://xenopraxis.net/readings/land_machinicdesire.pdf",
+      "archivedAt": "2019-03-04",
+      "kind": "paper",
+      "version": "The publisher's PDF of the 1993 journal article (Taylor & Francis, online 30 June 2008), with a download stamp of 29 May 2012, on an academic reading site. The file retrieved at admission is byte-identical to the archive capture of 4 March 2019 that the cross-family check read (SHA-256 3b1c20b237bfe4965dab6a4653041fb1759fc6b3d6a82af5fce0b9bf93f9e7d6). The printed issue was not inspected."
+    }
+  },
+  "existingSourceQuotes": {},
+  "newClaims": [
+    {
+      "id": "ht-w06-land-1993-machinic-desire",
+      "subject": "land-1993-machinic-desire",
+      "proposition": "W06",
+      "predicate": "articulates_proposition",
+      "roles": ["articulation"],
+      "register": "nonfiction",
+      "statement": "Land's article of 1993 states that what appears to humanity as the history of capitalism is an invasion from the future by an artificial intelligent space.",
+      "time": {
+        "kind": "event",
+        "date": "1993",
+        "basis": "publication",
+        "note": "Textual Practice 7(3), 1993; read in the publisher's PDF of the article."
+      },
+      "qualification": "One passage of the article; it records what the text states, not that the account is sound. The article's other content is not recorded. Read in the publisher's PDF of the journal article; the printed issue was not inspected.",
+      "evidence": [
+        {
+          "source": "adm-land-1993-machinic-desire",
+          "locator": "Printed p. 479 (PDF p. 10), paragraph beginning “Machinic desire can seem a little inhuman”",
+          "passage": "what appears to humanity as the history of capitalism is an invasion from the future by an artificial intelligent space",
+          "passageType": "quote",
+          "fromCheck": true
+        }
+      ],
+      "reason": "Check decision 2: the passage the cross-family check named; matched mechanically in a file byte-identical to the named capture."
+    }
+  ],
+  "heldNewRecords": [
+    {
+      "text": "Land, “Pythia Unbound” (xenosystems.net, 11 September 2013; capture 20130914051121)",
+      "proposition": "W07",
+      "role": "earliest located articulation (check decision 1)",
+      "reason": "The Internet Archive refused this environment (HTTP 403 from the session's network policy), and the post is no longer served at its address (HTTP 404), so the passage the check named for it (A1 item 7, paragraph beginning “Outside in’s message to Pythia”) could not be matched again."
+    },
+    {
+      "text": "Land, “Against Orthogonality” (25 October 2013; capture 20131028060133)",
+      "proposition": "W07",
+      "role": "further articulation (check decision 1)",
+      "reason": "Capture not reachable at admission; quotation “What intelligence wants, in the end, is itself” not matched again."
+    },
+    {
+      "text": "Land, “Stupid Monsters” (25 August 2014; capture 20141013052107)",
+      "proposition": "W07",
+      "role": "further articulation (check decision 1)",
+      "reason": "Capture not reachable at admission; quotation “The will-to-think essentially supplants ulterior directives” not matched again."
+    },
+    {
+      "text": "Land, “Will-to-Think” (15 September 2014; capture 20140917022211)",
+      "proposition": "W07",
+      "role": "further articulation (check decision 1)",
+      "reason": "Capture not reachable at admission; quotation “our instrumental but also absolute priority is the realization of superior minds.” not matched again."
+    }
+  ],
+  "textReplacements": [
+    [
+      "Earliest located among the texts this group's search found",
+      "Earliest located among the texts the searches found"
+    ],
+    ["this group's search", "the searches"],
+    ["the same-family audit", "a machine audit of the research pack"],
+    [
+      "One premise of a speculative answer to Fermi's paradox",
+      "One premise of the answer the text gives to Fermi's paradox"
+    ],
+    [
+      " The text predates the pack's 1985 period bound (see open questions).",
+      ""
+    ],
+    [
+      "; the text predates the pack's 1985 period bound (see open questions)",
+      ""
+    ],
+    ["that is his term, not the pack's", "that is his term"],
+    [
+      "the pack records only what the passage states",
+      "the record gives only what the passage states"
+    ],
+    [
+      " W03 is outside this group's main propositions and is recorded because the text meets it.",
+      ""
+    ],
+    [
+      "Land's own texts are recorded by another group.",
+      "Land's own texts are recorded separately."
+    ],
+    ["recorded in the accelerationism group", "recorded in this collection"],
+    [
+      "'Machinic Desire' was not read by this group.",
+      "'Machinic Desire' itself is recorded in this collection."
+    ],
+    [
+      "the 1992 print read by this group",
+      "the 1992 print read for this collection"
+    ],
+    [" (ts-a6-hanson-1994)", ""],
+    [" (see degaris-2005-artilect-war)", ""],
+    [
+      "The risk-debate pack's unadmitted R01 (orthogonality) records the same contrary in other texts.",
+      "The collection on catastrophic risk from advanced AI records the same contrary, orthogonality, from other texts."
+    ],
+    [
+      "The date of the wording is not established before the web copy; the text cannot be earliest located.",
+      "The wording is attested from an archive capture of 3 February 2004."
+    ],
+    [
+      "The date of the wording is not established before the web copy.",
+      "The wording is attested from an archive capture of 3 February 2004."
+    ],
+    [" (address in retrievalFailures)", ""],
+    [
+      "if the checker finds the capture identical",
+      "if the capture is found identical"
+    ],
+    [
+      "since web.archive.org refuses this environment",
+      "since the Internet Archive refused the research pack's retrievals"
+    ],
+    [
+      "Captures of kurzweilai.net copies exist from 2001-11-07 (articles/art0134.html) and 2010-07-09 but could not be opened from this environment and were not compared.",
+      "The cross-family check found other passages of the essay in the kurzweilai.net copy captured on 7 November 2001; not every passage of this record was compared with it."
+    ],
+    [
+      "An Internet Archive capture of the address from 2010-06-13 exists and was not compared; if the capture is found identical, the wording is attested from 2010-06-13.",
+      "The cross-family check found two passages of the paper in an archive capture of 21 August 2010 (the capture requested for 13 June 2010 redirects to it); not every passage of this record was compared with it."
+    ],
+    [
+      "A capture of the PDF address from 2004-12-21 exists and was not compared.",
+      "The cross-family check read the PDF captured on 21 December 2004 for its footnotes only; this record's passages were not compared with it."
+    ],
+    [
+      "(an archive capture could not be opened)",
+      "(the cross-family check did not find the same paragraph's sentence on Kurzweil in the archive capture of 26 February 2024)"
+    ],
+    [
+      "The wording is attested from the 2026 update.",
+      "The cross-family check found these passages in an archive capture of 26 February 2024."
+    ],
+    [
+      "The e/acc newsletter's repost of 31 October 2022 states",
+      "The inaugural e/acc post of 1 June 2022, read in the newsletter's repost of 31 October 2022, states"
+    ],
+    [
+      "goes to de Garis's article of 1989, whose wording is read in the publisher's copy of its 1989 printing (integration, 2026-10-31)",
+      "goes to de Garis's article of 1989, whose wording is read in the publisher's copy of its 1989 printing"
+    ]
+  ],
+  "citesPersonHold": "A `cites` claim takes a document as its object (src/domain/predicates.ts); a naming of a person needs a schema change (cites to a person, or another predicate), which is the maintainer's decision. Held, with the person entity it would need (open question 11 assumed no schema change).",
+  "textRegexReplacements": [
+    [
+      " Another (articulation|contesting text) on W\\d\\d has wording attested earlier, so the role was reassigned at integration \\(2026-10-31\\)\\.",
+      ""
+    ],
+    [" \\(integration, 2026-10-31\\)", ""]
+  ],
+  "checkDisagreements": {
+    "ht-w08-moravec-1979-todays-computers": "read the record’s passages as articulating W08; the maintainer’s decision of 2026-11-01 keeps the record as bearing on W08, and the disagreement is stated in the collection’s search note.",
+    "ht-w05-moravec-1989-robot-as-liberation": "read the record’s passages as articulating W05 under its wording then; the maintainer’s decision of 2026-11-01 clarified the criterion (capacity means intelligence or overall cognitive capacity) and keeps the record as bearing on W05."
+  }
+}

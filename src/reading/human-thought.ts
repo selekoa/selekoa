@@ -5,6 +5,7 @@ import { orbitalCompute } from './orbital-compute';
 import { aiBioArguments } from './ai-bio-arguments';
 import { aiInScience } from './ai-in-science';
 import { riskDebate } from './risk-debate';
+import { machineSuccession } from './machine-succession';
 
 export { superintelligencePropositions };
 
@@ -18,6 +19,7 @@ export const propositionCollections = [
   superintelligencePropositions,
   riskDebate,
   yudkowskyArguments,
+  machineSuccession,
   economicsOfMachineIntelligence,
   orbitalCompute,
   aiBioArguments,

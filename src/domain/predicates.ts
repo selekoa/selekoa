@@ -573,6 +573,13 @@ export const relationLabelOverrides: Record<string, string> = {
 export function relationLabel(claim: {
   id: string;
   predicate: Predicate;
+  attributes?: { commitment?: { stage?: string } };
 }): string {
+  // An announced intention to sign is not a signature.
+  if (
+    claim.predicate === 'signed_commitment' &&
+    claim.attributes?.commitment?.stage === 'intent_announced'
+  )
+    return 'announced an intent to sign';
   return relationLabelOverrides[claim.id] ?? predicates[claim.predicate].label;
 }

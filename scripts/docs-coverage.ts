@@ -6,14 +6,14 @@ import {
   withCoverage,
 } from '../src/domain/coverage';
 
-// Writes the README's current-coverage block from the stored records.
+// Writes the current-coverage block of docs/development.md from the stored records.
 // --check reports whether the stored block matches; a unit test does the same.
 const args = process.argv.slice(2);
 const check = args.includes('--check');
 if (args.some((a) => a !== '--check'))
   throw new Error('Usage: pnpm docs:coverage [--check]');
 
-const path = 'README.md';
+const path = 'docs/development.md';
 const stored = await readFile(path, 'utf8');
 const updated = withCoverage(
   stored,

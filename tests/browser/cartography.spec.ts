@@ -266,7 +266,7 @@ test('mobile reduced-motion keyboard route returns to the exact chooser and pass
     page
       .getByLabel('Claims list')
       .locator(
-        '[data-claim-id]:not([data-claim-id^="lg-"]):not([data-claim-id^="fl-"]):not([data-claim-id^="cpo-"]):not([data-claim-id^="ab-"]):not([data-claim-id^="aib-"]):not([data-claim-id^="pp-"])',
+        '[data-claim-id]:not([data-claim-id^="lg-"]):not([data-claim-id^="fl-"]):not([data-claim-id^="cpo-"]):not([data-claim-id^="ab-"]):not([data-claim-id^="aib-"]):not([data-claim-id^="pp-"]):not([data-claim-id^="lg2-"])',
       ),
     // 48 before week 4b, plus Anthropic's Frontier Compliance Framework
     // announcement, plus week 4c's eleven Anthropic control-structure
@@ -275,6 +275,7 @@ test('mobile reduced-motion keyboard route returns to the exact chooser and pass
     // frameworks-to-law records (fl-), the 2026-10-30 compute, power and
     // orbit records (cpo-) and the 2026-10-30 AI and biosecurity records
     // (ab-), the 2026-10-31 AI in biology records (aib-) and the 2026-10-31
-    // people records (pp-) are left out of this count.
+    // people records (pp-) are left out of this count, and so are the
+    // 2026-11-01 second lab genealogy records (lg2-).
   ).toHaveCount(64);
 });

@@ -1,0 +1,498 @@
+{
+  "note": "Disposition of each finding with verdict “correct” in audit/audit-{1,2,3}.json (correction pass of 2026-10-29, same model family as the drafters and auditors). Changes are made by research/lab-genealogy-2/corrections.mjs and the drops in integration.json. The event/snapshot pattern was checked across all 288 draft records and found consistent (every held_role and unit_of record dated by a report is a snapshot; every departure, founding, funding and agreement record is an event), so no record changed. Coordinator decisions 1–9 are those of the correction brief.",
+  "counts": {
+    "findings": 48,
+    "applied": 36,
+    "appliedDifferently": 11,
+    "notApplied": 1
+  },
+  "findings": [
+    {
+      "id": "lg2-oa-bubeck-microsoft-departure-2024",
+      "audit": 1,
+      "disposition": "applied",
+      "what": "Locators corrected (spokesperson passage: paragraph beginning “It’s currently unclear what specific role”; title: paragraph 1). Added Bloomberg’s report of 14 October 2024 (as carried by Fortune) as supporting evidence that Microsoft said Bubeck was leaving to join OpenAI; statement and qualification rewritten to name both reports, Bloomberg’s note that The Information first reported it, and Maginative’s unnamed source.",
+      "why": "Closer report tried once and retrieved. The originating report (The Information) is paywalled and was not tried."
+    },
+    {
+      "id": "lg2-oa-kolesnikov-openai-2024",
+      "audit": 1,
+      "disposition": "applied",
+      "what": "Qualification says the quotations are from heise’s English edition, translated from the German original. Widened to the Beyer and Zhai records from the same article.",
+      "why": "The researchers’ own X posts (optional in the proposed fix) were not tried."
+    },
+    {
+      "id": "lg2-cn-chen-weipeng-baichuan-departure-2025",
+      "audit": 1,
+      "disposition": "applied",
+      "what": "Qualification names Lanjing News’s unnamed people familiar with the matter (知情人士) and Baichuan’s silence; the 36Kr evidence item is now context. Reported-departure note added (decision 8).",
+      "why": "Lanjing’s original report (optional) was not tried."
+    },
+    {
+      "id": "lg2-gm-woodward-google-labs-vp-2025",
+      "audit": 1,
+      "disposition": "applied differently",
+      "what": "Qualification names the relay (9to5Google, “According to Semafor”). Added Semafor’s own report of 2 April 2025 (Hassabis’s memo: Woodward will remain head of Google Labs) as supporting evidence. Google’s author page (retrieved 29 October 2026, undated) is attached as context only, as a paraphrase with a 3-word anchor (the page has about 65 words of running text).",
+      "why": "No dated Keyword byline of about April 2025 was located; the author page is a later snapshot and cannot support the April 2025 title."
+    },
+    {
+      "id": "lg2-gm-velloso-meta-vp-product-2025",
+      "audit": 1,
+      "disposition": "applied",
+      "what": "Qualification records the spelling “Matt Velloso”, the Radar Big Tech interview and the report’s inconsistent duration.",
+      "why": ""
+    },
+    {
+      "id": "lg2-gm-ramani-msl-infra-lead-2025",
+      "audit": 1,
+      "disposition": "not applied",
+      "what": "Dropped via integration.json (keep: null) with the reason recorded there.",
+      "why": "Coordinator decision 5: one report of Wang’s memo was tried (CNBC, 21 August 2025); it relays the four-team structure from the Wall Street Journal but does not name Ramani. Business Insider and The Information could not be searched or retrieved from this environment."
+    },
+    {
+      "id": "lg2-gm-agarwal-leaves-meta-2025",
+      "audit": 1,
+      "disposition": "applied differently",
+      "what": "statedReason now carries his words “felt the pull” and cites a new evidence item with the anchor “felt the pull”; the departure evidence anchor shortened to “last week”. Stage “announced” added (decision 9).",
+      "why": "The post has 54 words, so the 10% limit allows 5 quoted words; the full sentence the auditor proposed (11 words) would exceed it."
+    },
+    {
+      "id": "lg2-xa-ke-yang-apple-departure-2025",
+      "audit": 1,
+      "disposition": "applied",
+      "what": "Qualification uses “Yang’s role at Meta” and names Bloomberg’s unnamed people familiar with the matter; reported-departure note added (decision 8).",
+      "why": "Bloomberg’s original (optional) was not tried (paywalled)."
+    },
+    {
+      "id": "lg2-xa-burnham-xai-general-counsel-2025",
+      "audit": 1,
+      "disposition": "applied",
+      "what": "Statement now says the role was listed in a press release of 19 November 2025 on the xAI–HUMAIN partnership; qualification aligned.",
+      "why": "The closer source was tried once: xAI’s own post of 19 November 2025 (“Grok goes Global with KSA”) was retrieved but does not list Burnham; the release with the contact block was not located."
+    },
+    {
+      "id": "lg2-nl-humansand-seed-2026-emerson-collective",
+      "audit": 1,
+      "disposition": "applied",
+      "what": "Qualification says TechCrunch’s round link follows The New York Times’s report. Widened to the SV Angel, NVIDIA and GV participation records.",
+      "why": ""
+    },
+    {
+      "id": "lg2-eu-silver-deepmind-departure-2026",
+      "audit": 1,
+      "disposition": "applied differently",
+      "what": "Time note and qualification say the staff notice and his plans rest on an unnamed person; the spokesperson confirmation is named. Stage set to “effective”, since Fortune states the departure as effective (“has left”).",
+      "why": "Coordinator decision 9 excludes “announced” for a departure stated as effective; “effective” is the dataset’s existing stage value."
+    },
+    {
+      "id": "lg2-xa-humain-series-e",
+      "audit": 1,
+      "disposition": "applied",
+      "what": "Split (decision 4): lg2-xa-humain-series-e is now participated_in_round with no amount (transactionType funding_round); new lg2-xa-humain-investment-2026 is investment_announced with HUMAIN’s $3 billion (scope transaction, stage announced as worded, period Series E).",
+      "why": "PR Newswire’s own copy (optional) was not substituted for the Kyodo republication."
+    },
+    {
+      "id": "lg2-gm-ramani-leaves-meta-2026",
+      "audit": 1,
+      "disposition": "applied",
+      "what": "Stage “announced” added; qualification says the announcement (an internal memo) is known only from WinBuzzer relaying The Information.",
+      "why": ""
+    },
+    {
+      "id": "lg2-oa-ruddarraju-openai-cto-compute-2026",
+      "audit": 1,
+      "disposition": "applied",
+      "what": "Added CNBC’s report of 14 October 2026 (“who has been serving as OpenAI’s CTO of compute”, in a sentence attributed to a spokesperson) as supporting evidence; qualification calls exchange4media an unsourced trade brief and says the CNBC report supports the title, not the July date.",
+      "why": ""
+    },
+    {
+      "id": "lg2-gm-hassabis-steps-down-ceo-2026",
+      "audit": 1,
+      "disposition": "applied differently",
+      "what": "Kept as departure_announced scoped to the CEO title (coordinator decision 2): statement, attributes.scope and qualification say Google’s text gives him the roles of Chair of Google DeepMind and Chief Scientist of Alphabet and that he does not leave Google DeepMind; the Google passage now supports.",
+      "why": "The auditor preferred a role-change model; the coordinator chose the scoped departure. The Chair role is already the dataset record lg-goo-hassabis-gdm-chair-2026."
+    },
+    {
+      "id": "lg2-oa-katti-openai-departure-2026",
+      "audit": 1,
+      "disposition": "applied",
+      "what": "CNBC’s report of 14 October 2026 replaces Crypto Briefing as the evidence; statement and qualification rewritten (Katti’s LinkedIn post relayed by CNBC; last day 15 November prospective).",
+      "why": ""
+    },
+    {
+      "id": "lg2-cn-xie-jian-baichuan-cofounder",
+      "audit": 1,
+      "disposition": "applied",
+      "what": "Added a contemporaneous report: Sina Tech’s “BUG” column of 17 July 2025, republished by Huxiu, which calls him 百川智能技术联合创始人. Qualification describes 36Kr’s own source note.",
+      "why": "The auditor’s “来源：公开信息整理” label is not in this pack’s or the auditor’s cached text of the 36Kr page; the qualification describes the source note the page does carry (sources listed in general terms, including interviews with unnamed people)."
+    },
+    {
+      "id": "lg2-nl-linden-li-openai-researcher-prior",
+      "audit": 1,
+      "disposition": "applied",
+      "what": "TechCrunch evidence item naming Linden Li attached (as context for the name); qualification says TechCrunch reports the names as reported by Upstarts Media. Widened to the Yash Patil and Rhythm Garg records.",
+      "why": ""
+    },
+    {
+      "id": "lg2-nl-sutskever-ssi-cofounder-primary",
+      "audit": 1,
+      "disposition": "applied",
+      "what": "Dropped via integration.json with keep ilya-sutskever-ssi-cofounder-2024; the release passage is in nl.json evidenceForExisting and pack.evidenceForExisting (decision 3).",
+      "why": ""
+    },
+    {
+      "id": "lg2-eu-inflection-round-2023-microsoft",
+      "audit": 2,
+      "disposition": "applied",
+      "what": "Qualification says TechCrunch relays Forbes’s first report. Widened to the round total and the NVIDIA participation record (the total’s qualification also notes the unnamed source of the valuation, not recorded).",
+      "why": "Inflection’s own announcement was already tried by the drafter and the auditor (relay HTTP 401); not tried again. The archive copy is for the cross-family checker."
+    },
+    {
+      "id": "lg2-dl-cma-microsoft-inflection-assets-2024",
+      "audit": 2,
+      "disposition": "applied differently",
+      "what": "Held (coordinator decision 7): dropped via integration.json with keep lg-deal-microsoft-inflection-agreement-2024. The CMA’s wording (Summary para 1) and its completion date (para 132) are in dl.json evidenceForExisting. The held record itself was also corrected as proposed (time note from para 132, para 132 as supporting quote, the “pivoted towards a B2B (enterprise) business” passage as context).",
+      "why": "An `acquired` edge between the companies would read as an acquisition of Inflection AI."
+    },
+    {
+      "id": "lg2-cn-zhipu-round-b6-3-4",
+      "audit": 2,
+      "disposition": "applied",
+      "what": "Quote replaced with the completion sentence naming B6-3, B6-3+ and B6-4 (elisions marked); qualification now says agreements of September 2024 to March 2025, converted on 29 May 2025.",
+      "why": ""
+    },
+    {
+      "id": "lg2-xa-liberatore-xai-departure-2025",
+      "audit": 2,
+      "disposition": "applied",
+      "what": "Quote shortened (without “abruptly”), also on the interval record lg2-xa-liberatore-xai-cfo-2025; qualification names the WSJ report of 3 September 2025 and its unnamed people; stage “effective”; reported-departure note (decision 8).",
+      "why": ""
+    },
+    {
+      "id": "lg2-dl-hayes-anthropic-2025",
+      "audit": 2,
+      "disposition": "applied",
+      "what": "Humanloop’s announcement attached as evidence; the Anthropic spokesperson passage (no acquisition of assets or IP) attached as context. Widened to the Habib and Burgess records.",
+      "why": ""
+    },
+    {
+      "id": "lg2-xa-armstrong-xai-cfo-2025",
+      "audit": 2,
+      "disposition": "applied",
+      "what": "Qualification: “xAI did not immediately respond to TechCrunch”; stage “announced”.",
+      "why": ""
+    },
+    {
+      "id": "lg2-cn-moonshot-round-c-2025",
+      "audit": 2,
+      "disposition": "applied",
+      "what": "The letter’s own sentence (公司近期完成了5亿美元C轮融资且大幅超募) is now the quote, located in Lanjing’s reproduction of the full letter; statement and qualification rewritten; 大幅超募 kept as the letter’s remark.",
+      "why": "Source role stays secondary: the source is a news outlet reproducing the CEO’s text."
+    },
+    {
+      "id": "lg2-oa-vallone-anthropic-2026",
+      "audit": 2,
+      "disposition": "applied differently",
+      "what": "The LinkedIn clause is deleted; the qualification says The Decoder names no source. Same note on lg2-oa-vallone-openai-model-policy-prior.",
+      "why": "The Verge’s report could not be located: the search tool refuses theverge.com, and no URL was known."
+    },
+    {
+      "id": "lg2-xa-luan-amazon-departure-2026",
+      "audit": 2,
+      "disposition": "applied differently",
+      "what": "statedReason marked as an English rendering of Next’s French and now includes “entirely new capabilities” and “with artificial general intelligence so close”; qualification names Next’s relay of The Verge; stage “effective” (Reuters states he left in February).",
+      "why": "Luan’s English text could not be retrieved (The Verge not searchable; LinkedIn not admissible)."
+    },
+    {
+      "id": "lg2-oa-schwarzer-anthropic-2026",
+      "audit": 2,
+      "disposition": "applied",
+      "what": "The X post (already a source in oa.json) is attached as context and dates the record; time note and qualification rewritten.",
+      "why": ""
+    },
+    {
+      "id": "lg2-oa-ruddarraju-openai-compute-lead-2026",
+      "audit": 2,
+      "disposition": "applied differently",
+      "what": "CNBC’s report replaces Crypto Briefing as the evidence; statement and qualification rewritten.",
+      "why": "Replaced rather than disclosing the relay, since the closer report was retrieved."
+    },
+    {
+      "id": "lg2-cn-luo-fuli-deepseek-prior",
+      "audit": 2,
+      "disposition": "applied",
+      "what": "Qualification says Jiemian introduces the passage as a summary of public information (公开资料显示) without naming a source.",
+      "why": "The optional DeepSeek-V2 author list was not added: it documents authorship, not the job title."
+    },
+    {
+      "id": "lg2-gm-velloso-gdm-vp-product-prior",
+      "audit": 2,
+      "disposition": "applied",
+      "what": "Qualification notes the spelling “Matt” and the title given by reference (“a mesma posição”).",
+      "why": "No Google byline or first-person post was located for the title."
+    },
+    {
+      "id": "lg2-nl-ricursive-seed",
+      "audit": 2,
+      "disposition": "applied differently",
+      "what": "Time note rewritten for both seed records: the 26 January 2026 report says the company “formally launched with a seed investment led by Sequoia” two months before the Series A, and the 16 February report places the seed a couple of months before it. That passage is attached to lg2-nl-ricursive-seed as context.",
+      "why": "The auditor read only the 16 February article; the 26 January article does say “formally launched with a seed investment”."
+    },
+    {
+      "id": "lg2-nl-yash-patil-openai-researcher-prior",
+      "audit": 2,
+      "disposition": "applied",
+      "what": "TechCrunch passage attached; qualification names Upstarts Media as TechCrunch’s source.",
+      "why": ""
+    },
+    {
+      "id": "lg2-cn-zhipu-round-b2",
+      "audit": 3,
+      "disposition": "applied",
+      "what": "Qualification records Stage 1 (July 2023) and Stage 2 (August 2023).",
+      "why": ""
+    },
+    {
+      "id": "lg2-cn-zhipu-round-b3",
+      "audit": 3,
+      "disposition": "applied",
+      "what": "Qualification records Stage 1 (November 2023) and Stage 2 (January 2024).",
+      "why": ""
+    },
+    {
+      "id": "lg2-oa-brockman-openai-sabbatical-2024",
+      "audit": 3,
+      "disposition": "applied",
+      "what": "Held via integration.json (keep: null; coordinator decision 1). Role attribute changed to “Not stated in the post”. The return record lg2-oa-brockman-openai-return-2024 reworded so it does not rest on the sabbatical framing.",
+      "why": ""
+    },
+    {
+      "id": "lg2-cn-zhipu-ant-b5",
+      "audit": 3,
+      "disposition": "applied",
+      "what": "Derivation “inferred” with an inferenceRationale (p.120 subscriber, p.132 ownership chain, p.240 “deemed to be interested”); the p.240 passage added as evidence; locator notes the two Shanghai Feiya rows. Widened to the Ant Group B3 and Meituan B2 records (decision 6).",
+      "why": ""
+    },
+    {
+      "id": "lg2-oa-radford-openai-departure-2024",
+      "audit": 3,
+      "disposition": "applied",
+      "what": "Qualification says Mark Chen’s words are known only from QbitAI’s Chinese translation and the statement’s English is a back-translation.",
+      "why": ""
+    },
+    {
+      "id": "lg2-oa-carlini-gdm-departure-2025",
+      "audit": 3,
+      "disposition": "applied",
+      "what": "Quote extended to the words carrying the reason (footnote omitted, marked with …); statement and statedReason aligned (“high-impact”, “he likes to do”).",
+      "why": ""
+    },
+    {
+      "id": "lg2-gm-hsiao-leaves-gemini-app-role-2025",
+      "audit": 3,
+      "disposition": "applied",
+      "what": "Stage “announced”; Semafor’s report retrieved and attached (“will step down immediately”); statement and qualification rewritten (internal memos reviewed by Semafor, not published).",
+      "why": ""
+    },
+    {
+      "id": "lg2-gm-velloso-leaves-google-2025",
+      "audit": 3,
+      "disposition": "applied",
+      "what": "Role attribute now gives the title by reference (“o mesmo cargo”), with the report’s passage attached; stage “effective”.",
+      "why": ""
+    },
+    {
+      "id": "lg2-cn-luo-fuli-xiaomi-mimo-2025-11",
+      "audit": 3,
+      "disposition": "applied",
+      "what": "Statement and time note: the date is that of The Paper’s report as relayed; the post’s date is not given.",
+      "why": ""
+    },
+    {
+      "id": "lg2-oa-tworek-openai-departure-2026",
+      "audit": 3,
+      "disposition": "applied differently",
+      "what": "statedReason and qualification say the reason is relayed by TrendForce citing The Verge’s report of an image note.",
+      "why": "The Verge could not be located (search tool refuses theverge.com); the reason is kept with explicit relay wording, as the fallback in the proposed fix."
+    },
+    {
+      "id": "lg2-nl-ricursive-series-a-2026",
+      "audit": 3,
+      "disposition": "applied",
+      "what": "Statement credits the Series A label to the 26 January 2026 report; qualification no longer cites the unattached home page.",
+      "why": ""
+    },
+    {
+      "id": "lg2-gm-velloso-leaves-meta-2026",
+      "audit": 3,
+      "disposition": "applied",
+      "what": "“after seven months” dropped from the statement; qualification notes the report’s inconsistent duration and the spelling; stage “effective”.",
+      "why": ""
+    },
+    {
+      "id": "lg2-gm-le-leaves-google-2026",
+      "audit": 3,
+      "disposition": "applied differently",
+      "what": "Qualification says the report states Alphabet is among the funders, with that passage as context; Jeff Dean’s announcement thread (as reproduced by Radical Ventures) attached as context naming Alphabet (Google) among the round’s participants; reported-departure note; stage “effective”.",
+      "why": "Discovery Loop’s own announcement page and the TechCrunch report were not located; Dean’s thread names Le as co-founder but says nothing of his leaving Google, so it is context only."
+    },
+    {
+      "id": "lg2-gm-patel-leaves-meta-2026",
+      "audit": 3,
+      "disposition": "applied",
+      "what": "Stage “announced”; reported-departure note naming TechCrunch’s unsourced exclusive.",
+      "why": ""
+    }
+  ],
+  "widened": [
+    {
+      "pattern": "Reported departures kept as departure_announced with an explicit open-question note naming the reporting and anonymous sourcing (coordinator decision 8)",
+      "recordsChanged": [
+        "lg2-gm-le-leaves-google-2026",
+        "lg2-gm-patel-leaves-meta-2026",
+        "lg2-xa-liberatore-xai-departure-2025",
+        "lg2-xa-ke-yang-apple-departure-2025",
+        "lg2-cn-jiao-ke-baichuan-departure-2025",
+        "lg2-cn-chen-weipeng-baichuan-departure-2025",
+        "lg2-cn-xie-jian-baichuan-departure-2025",
+        "lg2-cn-ru-liyun-baichuan-departure-2026"
+      ]
+    },
+    {
+      "pattern": "Departures announced by the person or company but known only from reporting: qualification says so (no open-question note)",
+      "recordsChanged": [
+        "lg2-gm-hsiao-leaves-gemini-app-role-2025",
+        "lg2-gm-ramani-leaves-meta-2026",
+        "lg2-eu-silver-deepmind-departure-2026",
+        "lg2-eu-hooker-cohere-departure-2025",
+        "lg2-oa-katti-openai-departure-2026",
+        "lg2-oa-tworek-openai-departure-2026",
+        "lg2-oa-radford-openai-departure-2024",
+        "lg2-cn-hong-tao-baichuan-departure-2024",
+        "lg2-cn-dai-zonghong-01ai-departure-2025"
+      ]
+    },
+    {
+      "pattern": "Stage on every departure_announced and prospective held_role record: “announced” for prospective, “effective” where the source states the departure as effective (coordinator decision 9)",
+      "recordsChanged": [
+        "lg2-gm-vinyals-leaves-google-2026",
+        "lg2-gm-hsiao-leaves-gemini-app-role-2025",
+        "lg2-gm-ramani-leaves-meta-2026",
+        "lg2-gm-agarwal-leaves-meta-2025",
+        "lg2-gm-patel-leaves-meta-2026",
+        "lg2-gm-le-leaves-google-2026",
+        "lg2-gm-velloso-leaves-google-2025",
+        "lg2-gm-velloso-leaves-meta-2026",
+        "lg2-eu-silver-deepmind-departure-2026",
+        "lg2-xa-luan-amazon-departure-2026",
+        "lg2-xa-keele-xai-departure-2025",
+        "lg2-xa-liberatore-xai-departure-2025",
+        "lg2-cn-hong-tao-baichuan-departure-2024",
+        "lg2-cn-jiao-ke-baichuan-departure-2025",
+        "lg2-cn-ru-liyun-baichuan-departure-2026",
+        "lg2-cn-dai-zonghong-01ai-departure-2025",
+        "lg2-gm-wang-tbd-lab-lead-2025",
+        "lg2-gm-friedman-products-applied-research-2025",
+        "lg2-gm-fergus-continues-fair-2025-08",
+        "lg2-xa-armstrong-xai-cfo-2025",
+        "lg2-xa-lim-xai-head-of-legal-2025"
+      ]
+    },
+    {
+      "pattern": "Qualifications naming a source not attached to the record (claims about unattached pages removed, or the source attached)",
+      "recordsChanged": [
+        "lg2-oa-brockman-openai-return-2024",
+        "lg2-oa-karpathy-anthropic-2026",
+        "lg2-oa-houlsby-anthropic-zurich-2025",
+        "lg2-oa-vallone-anthropic-2026",
+        "lg2-eu-zeghidour-kyutai-2023",
+        "lg2-eu-jegou-kyutai-2023",
+        "lg2-nl-anna-goldie-ricursive-founder",
+        "lg2-nl-azalia-mirhoseini-ricursive-founder",
+        "lg2-nl-ricursive-series-a-2026",
+        "lg2-nl-noah-goodman-humansand-founder",
+        "lg2-dl-edwards-groq-ceo-2025",
+        "lg2-dl-ross-groq-ceo-2025",
+        "lg2-dl-habib-anthropic-2025",
+        "lg2-dl-hayes-anthropic-2025",
+        "lg2-dl-burgess-anthropic-2025",
+        "lg2-cn-hong-tao-baichuan-cofounder",
+        "lg2-cn-dai-zonghong-01ai-cofounder",
+        "lg2-cn-ru-liyun-baichuan-departure-2026",
+        "lg2-cn-moonshot-round-c-2025",
+        "lg2-oa-schwarzer-anthropic-2026"
+      ]
+    },
+    {
+      "pattern": "Reporting that relays another outlet (“according to”, “first reported”, “citing”) now named in the qualification",
+      "recordsChanged": [
+        "lg2-oa-kilpatrick-google-2024",
+        "lg2-oa-kilpatrick-openai-devrel-prior",
+        "lg2-oa-katti-openai-2025",
+        "lg2-gm-kavukcuoglu-chief-ai-architect-2025-06",
+        "lg2-gm-kavukcuoglu-gdm-cto-2025-06",
+        "lg2-gm-woodward-gemini-app-2025",
+        "lg2-gm-hsiao-leaves-gemini-app-role-2025",
+        "lg2-eu-inflection-round-2023",
+        "lg2-eu-inflection-round-2023-nvidia",
+        "lg2-nl-humansand-seed-2026-sv-angel",
+        "lg2-nl-humansand-seed-2026-nvidia",
+        "lg2-nl-humansand-seed-2026-gv",
+        "lg2-nl-yash-patil-applied-compute-founder",
+        "lg2-nl-rhythm-garg-applied-compute-founder",
+        "lg2-nl-linden-li-applied-compute-founder",
+        "lg2-cn-jiao-ke-baichuan-cofounder",
+        "lg2-cn-chen-weipeng-baichuan-cofounder"
+      ]
+    },
+    {
+      "pattern": "Anonymous sourcing stated",
+      "recordsChanged": [
+        "lg2-gm-pang-joins-meta-2025",
+        "lg2-xa-liberatore-xai-cfo-2025",
+        "lg2-cn-jiao-ke-baichuan-departure-2025",
+        "lg2-cn-xie-jian-baichuan-departure-2025",
+        "lg2-eu-inflection-round-2023"
+      ]
+    },
+    {
+      "pattern": "“Not retrieved” claims where the outlet reproduces the document",
+      "recordsChanged": ["lg2-cn-moonshot-round-c-2025"]
+    },
+    {
+      "pattern": "Full names resting on unattached evidence",
+      "recordsChanged": [
+        "lg2-nl-rhythm-garg-openai-researcher-prior",
+        "lg2-nl-linden-li-openai-researcher-prior",
+        "lg2-nl-yash-patil-openai-researcher-prior"
+      ]
+    },
+    {
+      "pattern": "Ownership-chain attribution of participations through subscriber vehicles: derivation inferred with rationale (coordinator decision 6)",
+      "recordsChanged": [
+        "lg2-cn-zhipu-meituan-b2",
+        "lg2-cn-zhipu-ant-b3",
+        "lg2-cn-zhipu-ant-b5"
+      ]
+    },
+    {
+      "pattern": "Translated editions named",
+      "recordsChanged": ["lg2-oa-beyer-openai-2024", "lg2-oa-zhai-openai-2024"]
+    },
+    {
+      "pattern": "Amounts on participation records",
+      "recordsChanged": ["lg2-xa-humain-series-e"]
+    },
+    {
+      "pattern": "Event vs snapshot for report-dated records (role or state reported on a date is a snapshot; departure or announcement is an event)",
+      "recordsChanged": []
+    },
+    {
+      "pattern": "Records duplicating an existing dataset claim, moved to evidenceForExisting",
+      "recordsChanged": [
+        "lg2-nl-sutskever-ssi-cofounder-primary",
+        "lg2-dl-cma-microsoft-inflection-assets-2024"
+      ]
+    }
+  ]
+}

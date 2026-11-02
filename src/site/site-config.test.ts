@@ -1,9 +1,11 @@
 import { readFileSync } from 'node:fs';
+import { fileURLToPath } from 'node:url';
 import { describe, expect, it } from 'vitest';
 import {
   analyticsTag,
   contactPlaceholder,
   launchProblems,
+  shareCard,
   robotsTxt,
   siteConfigSchema,
   sitemapXml,
@@ -106,6 +108,22 @@ describe('index.html transform', () => {
     );
     expect(out).toContain('property="og:title"');
     expect(out).toContain('property="og:description"');
+    expect(out).toContain(
+      '<meta property="og:image" content="https://example.org/og/selekoa-card.png" />',
+    );
+    expect(out).toContain('<meta property="og:image:width" content="1200" />');
+    expect(out).toContain('name="twitter:card" content="summary_large_image"');
+  });
+
+  it('ships the share card at the size it declares', () => {
+    const png = readFileSync(
+      fileURLToPath(
+        new URL('../../public/og/selekoa-card.png', import.meta.url),
+      ),
+    );
+    // PNG IHDR: width and height as big-endian 32-bit integers at bytes 16–23.
+    expect(png.readUInt32BE(16)).toBe(shareCard.width);
+    expect(png.readUInt32BE(20)).toBe(shareCard.height);
   });
 
   it('adds one analytics script only for the chosen provider', () => {

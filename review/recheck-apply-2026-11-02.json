@@ -1,0 +1,277 @@
+{
+  "description": "Adjudication of 2026-11-02 of the withdrawn earliest located roles (the 20 withdrawn by #135 and the 53 by the interim withdrawal) against the cross-family re-check (review/earliest-located-recheck-2026-11-02.md), by the drafting family. Only the moves that the drafting family agrees with and that a record already on the proposition can take are applied; every other role stays under re-check. The full adjudication is in review/recheck-apply-2026-11-02.md. Applied by scripts/apply-recheck.ts.",
+  "date": "2026-11-02",
+  "schemaVersion": "2.28",
+  "snapshotPath": "review/recheck-apply-before-2026-11-02.json",
+  "snapshotDescription": "Rows changed by the adjudication of 2026-11-02 of the re-checked headlines (scripts/apply-recheck.ts, review/recheck-apply-2026-11-02.json). Reverting it (src/editorial/historical-views.ts) reproduces the dataset as it was at baseCommit.",
+  "corrections": [
+    {
+      "id": "recheck-11:rd-r02-omohundro-2008-basic-ai-drives",
+      "sequence": 11,
+      "finding": "Cross-family re-check of 2026-11-02, role 11 (earliest-located-term, R02): move, post-blind alias “basic AI drives”.",
+      "decision": "Adjudicated by the drafting family on 2026-11-02 under the maintainer’s instruction: agree, the earlier held text meets the same criterion in the same sense; the record already on R02 receives the role.",
+      "patches": [
+        {
+          "table": "claims",
+          "id": "rd-r02-omohundro-2008-basic-ai-drives",
+          "path": "attributes.thought.roles",
+          "old": ["articulation"],
+          "new": ["articulation", "earliest-located-term"]
+        },
+        {
+          "table": "claims",
+          "id": "rd-r02-omohundro-2008-basic-ai-drives",
+          "path": "attributes.thought.term",
+          "new": "basic AI drives"
+        },
+        {
+          "table": "claims",
+          "id": "rd-r02-omohundro-2008-basic-ai-drives",
+          "path": "evidenceIds",
+          "old": [
+            "evidence-rd-r02-omohundro-2008-basic-ai-drives-1",
+            "evidence-rd-r02-omohundro-2008-basic-ai-drives-2"
+          ],
+          "new": [
+            "evidence-rd-r02-omohundro-2008-basic-ai-drives-1",
+            "evidence-rd-r02-omohundro-2008-basic-ai-drives-2",
+            "evidence-rd-r02-omohundro-2008-basic-ai-drives-3"
+          ]
+        },
+        {
+          "table": "entities",
+          "id": "instrumental-convergence",
+          "path": "proposition.underRecheck",
+          "old": [
+            {
+              "headline": "earliest-located-term",
+              "reason": "The pre-launch audit of 2026-11-02 (PA-01) found an earlier use of a usual name in texts the collections already hold. Omohundro’s paper of 2008 (rd-r02-omohundro-2008-basic-ai-drives), already recorded on this proposition, carries the usual name “basic AI drives” in its title, “The Basic AI Drives”. The cross-family re-check of 2026-11-02 also flagged it. The headline is withdrawn until the re-check’s results are decided.",
+              "recordedAt": "2026-11-02"
+            },
+            {
+              "headline": "earliest-located",
+              "reason": "The cross-family re-check of 2026-11-02 (review/earliest-located-recheck-2026-11-02.md, role 47) proposes to move this headline to an earlier text the dataset holds (move). Clemmensen’s August 31, 1996 own paragraph says greater intelligence is an intermediate goal for most other goals. That is a convergent self-improvement goal under the criterion, which does not require every listed drive. The posting precedes both the 2007 work date and inspected January 2008 revision. The headline is withdrawn until the re-check’s results are decided.",
+              "recordedAt": "2026-11-02"
+            },
+            {
+              "headline": "earliest-located-contesting",
+              "reason": "The cross-family re-check of 2026-11-02 (review/earliest-located-recheck-2026-11-02.md, role 48) proposes to move this headline to an earlier text the dataset holds (move). Yudkowsky’s own November 22, 1996 reply explicitly challenges the survival and competition drives of superior minds as inherited assumptions. This contests instrumental-convergence premises earlier than the Edge passage attested November 16, 2014. The headline is withdrawn until the re-check’s results are decided.",
+              "recordedAt": "2026-11-02"
+            }
+          ],
+          "new": [
+            {
+              "headline": "earliest-located",
+              "reason": "The cross-family re-check of 2026-11-02 (review/earliest-located-recheck-2026-11-02.md, role 47) proposes to move this headline to an earlier text the dataset holds (move). Clemmensen’s August 31, 1996 own paragraph says greater intelligence is an intermediate goal for most other goals. That is a convergent self-improvement goal under the criterion, which does not require every listed drive. The posting precedes both the 2007 work date and inspected January 2008 revision. The headline is withdrawn until the re-check’s results are decided.",
+              "recordedAt": "2026-11-02"
+            },
+            {
+              "headline": "earliest-located-contesting",
+              "reason": "The cross-family re-check of 2026-11-02 (review/earliest-located-recheck-2026-11-02.md, role 48) proposes to move this headline to an earlier text the dataset holds (move). Yudkowsky’s own November 22, 1996 reply explicitly challenges the survival and competition drives of superior minds as inherited assumptions. This contests instrumental-convergence premises earlier than the Edge passage attested November 16, 2014. The headline is withdrawn until the re-check’s results are decided.",
+              "recordedAt": "2026-11-02"
+            }
+          ]
+        }
+      ],
+      "added": {
+        "evidence": [
+          {
+            "after": "evidence-rd-r02-omohundro-2008-basic-ai-drives-2",
+            "row": {
+              "id": "evidence-rd-r02-omohundro-2008-basic-ai-drives-3",
+              "claimId": "rd-r02-omohundro-2008-basic-ai-drives",
+              "sourceId": "source-kp-basic-ai-drives-2008-text",
+              "sourceRole": "primary",
+              "support": "supports",
+              "locator": "Title, PDF p. 1",
+              "passage": "The Basic AI Drives",
+              "passageType": "quote",
+              "verification": "machine_checked",
+              "checkedAt": "2026-11-02",
+              "note": "Title read on PDF p. 1 of the author's PDF, retrieved on 2026-11-02 with the SHA-256 recorded for the candidate pack's retrieval, for the earliest located use of a usual name. The cross-family re-check of 2026-11-02 (review/earliest-located-recheck-2026-11-02.md, role 11) attested the title by a capture of the author's announcement of 1 May 2011. Not evidence of coinage. No human editorial review."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "recheck-29:ht-w08-eacc-2022-effective-accelerationism-repost",
+      "sequence": 29,
+      "finding": "Cross-family re-check of 2026-11-02, role 29 (earliest-located-term, W08): move to the e/acc post.",
+      "decision": "Adjudicated by the drafting family on 2026-11-02 under the maintainer’s instruction: agree; the record already on W08 receives the role.",
+      "patches": [
+        {
+          "table": "claims",
+          "id": "ht-w08-eacc-2022-effective-accelerationism-repost",
+          "path": "attributes.thought.roles",
+          "old": ["articulation"],
+          "new": ["articulation", "earliest-located-term"]
+        },
+        {
+          "table": "claims",
+          "id": "ht-w08-eacc-2022-effective-accelerationism-repost",
+          "path": "attributes.thought.term",
+          "new": "accelerationism"
+        },
+        {
+          "table": "claims",
+          "id": "ht-w08-eacc-2022-effective-accelerationism-repost",
+          "path": "evidenceIds",
+          "old": [
+            "evidence-ht-w08-eacc-2022-effective-accelerationism-repost-1",
+            "evidence-ht-w08-eacc-2022-effective-accelerationism-repost-2"
+          ],
+          "new": [
+            "evidence-ht-w08-eacc-2022-effective-accelerationism-repost-1",
+            "evidence-ht-w08-eacc-2022-effective-accelerationism-repost-2",
+            "evidence-ht-w08-eacc-2022-effective-accelerationism-repost-3"
+          ]
+        },
+        {
+          "table": "entities",
+          "id": "accelerate-machine-intelligence",
+          "path": "proposition.underRecheck",
+          "old": [
+            {
+              "headline": "earliest-located-term",
+              "reason": "The pre-launch audit of 2026-11-02 (PA-01) found an earlier use of a usual name in texts the collections already hold. The e/acc post of 1 June 2022 (ht-w08-eacc-2022-effective-accelerationism-repost), the proposition’s earliest located text, uses the usual name “e/acc”. The cross-family re-check of 2026-11-02 also flagged it. The headline is withdrawn until the re-check’s results are decided.",
+              "recordedAt": "2026-11-02"
+            },
+            {
+              "headline": "earliest-located-contesting",
+              "reason": "The cross-family re-check of 2026-11-02 (review/earliest-located-recheck-2026-11-02.md, role 122) proposes to move this headline to an earlier text the dataset holds (move). Butler’s held newspaper conclusion calls for stopping the machinery whose development is producing human successors. It is an earlier contesting prescription under this criterion, which includes restraining the process that produces machine intelligence. The headline is withdrawn until the re-check’s results are decided.",
+              "recordedAt": "2026-11-02"
+            },
+            {
+              "headline": "earliest-located",
+              "reason": "The cross-family re-check of 2026-11-02 (review/earliest-located-recheck-2026-11-02.md, role 123) proposes to move this headline to an earlier text the dataset holds (move). The November 19, 1996 announcement explicitly prescribes reaching the technological Singularity as quickly as possible and identifies it with beings smarter than humans. This is earlier held acceleration advocacy, distinct from use of the later e/acc name. The longer 2000 essay need not be backdated for the slogan. The headline is withdrawn until the re-check’s results are decided.",
+              "recordedAt": "2026-11-02"
+            }
+          ],
+          "new": [
+            {
+              "headline": "earliest-located-contesting",
+              "reason": "The cross-family re-check of 2026-11-02 (review/earliest-located-recheck-2026-11-02.md, role 122) proposes to move this headline to an earlier text the dataset holds (move). Butler’s held newspaper conclusion calls for stopping the machinery whose development is producing human successors. It is an earlier contesting prescription under this criterion, which includes restraining the process that produces machine intelligence. The headline is withdrawn until the re-check’s results are decided.",
+              "recordedAt": "2026-11-02"
+            },
+            {
+              "headline": "earliest-located",
+              "reason": "The cross-family re-check of 2026-11-02 (review/earliest-located-recheck-2026-11-02.md, role 123) proposes to move this headline to an earlier text the dataset holds (move). The November 19, 1996 announcement explicitly prescribes reaching the technological Singularity as quickly as possible and identifies it with beings smarter than humans. This is earlier held acceleration advocacy, distinct from use of the later e/acc name. The longer 2000 essay need not be backdated for the slogan. The headline is withdrawn until the re-check’s results are decided.",
+              "recordedAt": "2026-11-02"
+            }
+          ]
+        }
+      ],
+      "added": {
+        "evidence": [
+          {
+            "after": "evidence-ht-w08-eacc-2022-effective-accelerationism-repost-2",
+            "row": {
+              "id": "evidence-ht-w08-eacc-2022-effective-accelerationism-repost-3",
+              "claimId": "ht-w08-eacc-2022-effective-accelerationism-repost",
+              "sourceId": "source-ht-eacc-2022-effective-accelerationism-repost",
+              "sourceRole": "primary",
+              "support": "supports",
+              "locator": "Title",
+              "passage": "Effective Accelerationism — e/acc",
+              "passageType": "quote",
+              "verification": "machine_checked",
+              "checkedAt": "2026-11-02",
+              "note": "Title of the verbatim repost, read on 2026-11-02 for the earliest located use of a usual name. The cross-family re-check of 2026-11-02 (review/earliest-located-recheck-2026-11-02.md, role 29) read the original post's title, “Effective Accelerationism”, in the capture of 2 June 2022. Not evidence of coinage, and no label or affiliation is inferred from the name. No human editorial review."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "recheck-114:ht-w03-hanson-1994-if-uploads-come-first",
+      "sequence": 114,
+      "finding": "Cross-family re-check of 2026-11-02, role 114 (earliest-located, W03): move from Minsky’s essay to Hanson’s article, dated by the printed Extropy issue.",
+      "decision": "Adjudicated by the drafting family on 2026-11-02 under the maintainer’s instruction: agree; Hanson’s record on W03 receives the role, gains the printed issue as evidence and loses the later attested date.",
+      "added": {
+        "evidence": [
+          {
+            "row": {
+              "id": "evidence-ht-w03-hanson-1994-if-uploads-come-first-3",
+              "claimId": "ht-w03-hanson-1994-if-uploads-come-first",
+              "sourceId": "source-extropy-13-scan",
+              "sourceRole": "primary",
+              "support": "supports",
+              "locator": "PDF page 8 (printed p. 10), the abstract beneath the article title",
+              "passage": "Hanson asks what would follow if people learned to model small brain units and so could \"upload ourselves into new computer brains\".",
+              "passageType": "paraphrase",
+              "verification": "machine_checked",
+              "checkedAt": "2026-11-02",
+              "note": "Read in the scan of the printed issue (third quarter 1994) by the cross-family re-check of 2026-11-02 (review/earliest-located-recheck-2026-11-02.md, roles 25 and 114), which also read the title on the same page; the pre-1996 candidate search had read printed pp. 10–15 of the scan. The drafting family could not retrieve the scan on 2026-11-02 (HTTP 503) and did not re-read it. No human editorial review."
+            },
+            "after": "evidence-ht-w03-hanson-1994-if-uploads-come-first-2"
+          }
+        ]
+      },
+      "patches": [
+        {
+          "table": "claims",
+          "id": "ht-w03-hanson-1994-if-uploads-come-first",
+          "path": "attributes.thought.roles",
+          "old": ["articulation"],
+          "new": ["earliest-located"]
+        },
+        {
+          "table": "claims",
+          "id": "ht-w03-hanson-1994-if-uploads-come-first",
+          "path": "attributes.thought.attested",
+          "old": {
+            "date": "1998-02-20",
+            "note": "The cross-family check found both quoted passages in the hanson.berkeley.edu reprint captured on 20 February 1998, the dataset's existing source for this article."
+          },
+          "remove": true
+        },
+        {
+          "table": "claims",
+          "id": "ht-w03-hanson-1994-if-uploads-come-first",
+          "path": "evidenceIds",
+          "old": [
+            "evidence-ht-w03-hanson-1994-if-uploads-come-first-1",
+            "evidence-ht-w03-hanson-1994-if-uploads-come-first-2"
+          ],
+          "new": [
+            "evidence-ht-w03-hanson-1994-if-uploads-come-first-1",
+            "evidence-ht-w03-hanson-1994-if-uploads-come-first-2",
+            "evidence-ht-w03-hanson-1994-if-uploads-come-first-3"
+          ]
+        },
+        {
+          "table": "claims",
+          "id": "ht-w03-hanson-1994-if-uploads-come-first",
+          "path": "time.note",
+          "old": "Extropy 6:2 (no. 13), stated as the original place of publication by the reprint read; the dataset's scan of the printed issue gives third quarter 1994 on the footers and September 1994 on the contents page. The reprint carries the date line \"March 8, 1994\" under the byline; this is not shown to be a publication date.",
+          "new": "Extropy 6:2 (no. 13), third quarter 1994 on the footers of the printed issue and September 1994 on its contents page, read in the dataset’s scan; the abstract’s wording was read there by the cross-family re-check of 2026-11-02. The quotations are matched in the reprint captured on 20 February 1998, which carries the date line \"March 8, 1994\" under the byline; this is not shown to be a publication date."
+        },
+        {
+          "table": "entities",
+          "id": "mind-transfer",
+          "path": "proposition.underRecheck",
+          "old": [
+            {
+              "headline": "earliest-located-term",
+              "reason": "The cross-family re-check of 2026-11-02 (branch codex/earliest-located-recheck) flagged this headline. The re-check read the name in the printed Extropy issue of the third quarter of 1994, which may change the date that decides the role. The headline is withdrawn until the re-check’s results are decided.",
+              "recordedAt": "2026-11-02"
+            },
+            {
+              "headline": "earliest-located",
+              "reason": "The pre-launch audit of 2026-11-02 (PA-02) found the attested-date rule applied unevenly between Minsky’s self-dated page (1997) and Hanson’s reprint (captured 1998-02-20). The headline is withdrawn until a cross-family re-check decides.",
+              "recordedAt": "2026-11-02"
+            }
+          ],
+          "new": [
+            {
+              "headline": "earliest-located-term",
+              "reason": "The cross-family re-check of 2026-11-02 (branch codex/earliest-located-recheck) flagged this headline. The re-check read the name in the printed Extropy issue of the third quarter of 1994, which may change the date that decides the role. The headline is withdrawn until the re-check’s results are decided.",
+              "recordedAt": "2026-11-02"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

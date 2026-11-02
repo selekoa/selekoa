@@ -369,6 +369,6 @@ export const technicalHistory: NamingCollection = {
     'Where a quoted wording survives only in a later copy, such as an archive capture or a reprint, the date from which it is attested decides which text is earliest located, and both dates are shown.',
     'Six families and the name ‘machine learning’ have no earliest located use for now. Their earliest leads are known only from index titles, citations or undated copies, or, for statistical learning, a dated candidate that has been read (Valiant, 1984) must first be reconciled with the criterion. The role waits until then, and each names its leads.',
     'Attributed statements record what a text says about who named or devised something. Where texts disagree they are shown side by side and not resolved.',
-    'A machine selected and classified these records. A same-family audit and a check by a model from another family re-examined them. No person has reviewed them.',
+    'A machine selected and classified these records. A same-family audit and a check by a model from another family re-examined them.',
   ],
 };

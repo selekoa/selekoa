@@ -74,7 +74,11 @@ describe('the Yudkowsky argument collection (schema 2.12)', () => {
 
   it('names an earliest located contesting text for every proposition contested', () => {
     for (const entry of entries)
-      if (entry.records.some((r) => r.stance === 'contests'))
+      // A headline under re-check (schema 2.28) has no holder meanwhile.
+      if (
+        entry.records.some((r) => r.stance === 'contests') &&
+        !entry.recheck.contest
+      )
         expect(entry.earliestContest, entry.entity.id).not.toBeNull();
   });
 

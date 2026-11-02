@@ -2,15 +2,17 @@ import type { Dataset } from './schema';
 import { researchPaths } from './research-path';
 import { documentHistories } from '../reading/frontier-safety-frameworks';
 import { frameworkComparison } from '../reading/framework-comparison';
-import { facetById } from './framework-comparison';
+import { comparisonFacets, facetById } from './framework-comparison';
 import { frameworkVersions } from './versions';
 import { controlStructures } from '../reading/control-structures';
+import { controlTimelinesId } from '../reading/control-timelines-page';
 import { commitmentCollections } from '../reading/commitments';
 import { guideIds } from '../reading/guides';
 import { questionStarters } from '../reading/self-governance';
 import { propositionFrames } from '../reading/proposition-frames';
 import { parseYearPageId } from './chronicle-index';
 import {
+  facetSlug,
   normalisePath,
   type HubId,
   type ReferenceTarget,
@@ -68,6 +70,7 @@ export function resolveReference(
   }
   if (ref === '/about') return { target: { kind: 'about' }, notice: null };
   if (ref === '/years') return { target: { kind: 'years' }, notice: null };
+  if (ref === '/stances') return { target: { kind: 'stances' }, notice: null };
   const invalid = {
     target: null,
     notice:
@@ -94,10 +97,17 @@ export function resolveReference(
       notice: null,
     };
   }
-  const match =
-    /^\/(claim|dossier|reading|question|documents|compare|document|person|control|commitments|guide|propositions|year)\/([^/?]+)(?:\?(.*))?$/.exec(
-      ref,
-    );
+  // A comparison question's own page: `/compare/<id>/<question>`.
+  const question = /^\/compare\/([^/?]+)\/([^/?]+)(?:\?(.*))?$/.exec(ref);
+  const facetPage = question
+    ? comparisonFacets.find((f) => facetSlug(f.id) === question[2])
+    : undefined;
+  if (question && !facetPage) return invalid;
+  const match = question
+    ? [ref, 'compare', question[1], question[3]]
+    : /^\/(claim|dossier|reading|question|documents|compare|document|person|control|commitments|guide|propositions|stances|year)\/([^/?]+)(?:\?(.*))?$/.exec(
+        ref,
+      );
   if (!match) return invalid;
   let id: string;
   try {
@@ -113,7 +123,7 @@ export function resolveReference(
       : kind === 'claim'
         ? []
         : kind === 'compare'
-          ? ['facet', 'edition', 'inspect']
+          ? ['facet', 'edition', 'frameworks', 'inspect']
           : kind === 'dossier'
             ? ['view', 'inspect']
             : ['inspect'];
@@ -144,7 +154,9 @@ export function resolveReference(
       ? { target: { kind, id, inspect }, notice: null }
       : invalid;
   if (kind === 'compare') {
-    const facet = params.get('facet') ?? undefined;
+    // The earlier `?facet=` form still opens the question.
+    if (facetPage && params.has('facet')) return invalid;
+    const facet = facetPage?.id ?? params.get('facet') ?? undefined;
     const editions = params.get('edition')?.split(',');
     // At most one chosen edition per framework, each one the comparison holds.
     const families = editions?.map(
@@ -153,15 +165,36 @@ export function resolveReference(
           frameworkVersions(data, family).some((e) => e.id === edition),
         ) ?? null,
     );
+    // Side by side: two or three distinct frameworks, never with one question.
+    const frameworks = params.get('frameworks')?.split(',');
+    const pairOk =
+      !frameworks ||
+      (!facet &&
+        frameworks.length >= 2 &&
+        frameworks.length <= 3 &&
+        new Set(frameworks).size === frameworks.length &&
+        frameworks.every((f) => frameworkComparison.families.includes(f)));
     return id === frameworkComparison.id &&
       (!facet || facetById(facet)) &&
+      pairOk &&
       (!families ||
         (families.every(Boolean) && new Set(families).size === families.length))
-      ? { target: { kind, id, facet, editions, inspect }, notice: null }
+      ? {
+          target: {
+            kind,
+            id,
+            facet,
+            editions,
+            ...(frameworks ? { frameworks } : {}),
+            inspect,
+          },
+          notice: null,
+        }
       : invalid;
   }
   if (kind === 'control')
-    return controlStructures.some((d) => d.id === id)
+    return controlStructures.some((d) => d.id === id) ||
+      id === controlTimelinesId
       ? { target: { kind, id, inspect }, notice: null }
       : invalid;
   if (kind === 'commitments')
@@ -172,7 +205,7 @@ export function resolveReference(
     return guideIds.includes(id)
       ? { target: { kind, id, inspect }, notice: null }
       : invalid;
-  if (kind === 'propositions')
+  if (kind === 'propositions' || kind === 'stances')
     return propositionFrames.some((d) => d.id === id)
       ? { target: { kind, id, inspect }, notice: null }
       : invalid;

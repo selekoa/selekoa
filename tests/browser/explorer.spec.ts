@@ -130,10 +130,11 @@ test('entity focus opens exact capital evidence and qualifications', async ({
   await expect(panel.locator('.status-line')).not.toContainText('Seed');
   await panel.getByText('Status and meaning').click();
   await expect(
-    panel.getByText('Not reviewed by an editor', { exact: true }),
+    panel.locator('.semantics').getByText('Machine-checked', { exact: true }),
   ).toBeVisible();
   await panel.getByText('Source details and check notes').click();
-  await expect(panel).toContainText('Human editorial review is pending');
+  // The bulk wording correction of 2026-11-02 (PA-56).
+  await expect(panel).toContainText('Machine-checked; see How this was built.');
   await page.screenshot({ path: '.local/evidence.png', fullPage: true });
 });
 test('search, two-source provenance and keyboard inspection', async ({
@@ -236,6 +237,8 @@ test('About & method states coverage, labels, citation and corrections', async (
     name: 'About Selekoa and its method',
   });
   await expect(about.getByRole('heading', { level: 2 })).toHaveText([
+    'Why machine-first',
+    'How this was built',
     'What Selekoa is',
     'Current coverage',
     'How this was checked',
@@ -268,7 +271,7 @@ test('About & method states coverage, labels, citation and corrections', async (
     'Supported',
     'Contested',
     'Unresolved',
-    'Not reviewed by an editor',
+    'Machine-checked evidence',
     'Editorially accepted',
     'Machine-checked',
     'Human-reviewed evidence',

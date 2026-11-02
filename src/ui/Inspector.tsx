@@ -739,18 +739,10 @@ export function Inspector({
             <strong>Editorial status. </strong>
             {claim.editorialState === 'seed' ? (
               <>
-                <span>
-                  {claim.evidenceIds.some(
-                    (id) =>
-                      repository.evidence.get(id)?.verification ===
-                      'human_reviewed',
-                  )
-                    ? 'Not editorially accepted'
-                    : 'Not reviewed by an editor'}
-                </span>
-                . An exploratory record that no editor has accepted. This status
-                does not say whether a person has read any linked passage. Each
-                evidence record above shows how it was checked.
+                <span>Machine-checked</span>. Machines found this record and
+                checked it against its sources; no person accepted it
+                individually. Each evidence record above shows how it was
+                checked.
               </>
             ) : (
               <span>Editorially accepted</span>

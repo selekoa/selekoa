@@ -1,5 +1,5 @@
 import { useRef, useState } from 'react';
-import { releaseVersion } from 'virtual:site';
+import { contact, releaseVersion } from 'virtual:site';
 import { referencePath } from '../domain/addresses';
 import { NavLink } from './NavLink';
 
@@ -20,10 +20,13 @@ export type NavTarget =
 export type StartAction =
   | { kind: 'hub'; id: 'governance' | 'ideas' | 'institutions' }
   | { kind: 'documents' }
-  | { kind: 'compare'; id: string }
+  /** The framework comparison, or one of its questions (facet). */
+  | { kind: 'compare'; id: string; facet?: string }
   | { kind: 'commitments' }
   | { kind: 'guide'; id: string }
   | { kind: 'propositions'; id: string }
+  /** Propositions by author, at the first author with one of these keys. */
+  | { kind: 'stances'; id?: string; authors?: string[] }
   | { kind: 'years' }
   | { kind: 'control'; id: string }
   | { kind: 'reading' }
@@ -68,8 +71,9 @@ export function startHref(action: StartAction, ids: StartIds): string {
       return referencePath({ kind: 'question', id: ids.reading.id });
     case 'search':
       return referencePath({ kind: 'search', q: action.q });
-    case 'about':
     case 'how-checked':
+      return referencePath({ kind: 'about' }) + '#about-built';
+    case 'about':
     case 'not-covered':
       return referencePath({ kind: 'about' });
     default:
@@ -123,7 +127,7 @@ export function SiteHeader({
   onSearch: (query: string) => void;
   theme: 'light' | 'dark';
   onTheme: (theme: 'light' | 'dark') => void;
-  /** Opens “How this was checked” on the About & method page. */
+  /** Opens “How this was built” on the About & method page. */
   onHowChecked: () => void;
 }) {
   // On a phone the search field opens from an icon; wider screens show it.
@@ -249,18 +253,18 @@ export function SiteHeader({
           </button>
         </div>
       </div>
-      {/* The dataset's review status, stated once for every page. Each
-          record states its own status in the Evidence Inspector. */}
+      {/* How the records are made, stated once for every page; About says
+          more. Each record states its own checks in the Evidence Inspector. */}
       <p className="site-status">
-        Records found and checked by machines, not reviewed by an editor ·{' '}
+        Found and cross-checked by machines ·{' '}
         <NavLink
           className="text-button"
           // The section the link's handler opens, so that the page opened
           // from its slice, or without scripts, opens there too.
-          href={`${navHref.about}#about-method`}
+          href={`${navHref.about}#about-built`}
           onOpen={onHowChecked}
         >
-          What this means →
+          How this works →
         </NavLink>
       </p>
     </header>
@@ -274,7 +278,13 @@ export function SiteFooter({ onAbout }: { onAbout: () => void }) {
         Selekoa · research preview
         {releaseVersion && ` · dataset release v${releaseVersion}`}
       </span>
-      <span>Exploratory records, checked by machines.</span>
+      <span>Found and cross-checked by machines.</span>
+      {contact && (
+        <span>
+          Corrections and suggestions:{' '}
+          <a href={`mailto:${contact}`}>{contact}</a>
+        </span>
+      )}
       <NavLink className="text-button" href={navHref.about} onOpen={onAbout}>
         About & method
       </NavLink>

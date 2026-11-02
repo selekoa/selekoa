@@ -1,4 +1,5 @@
 import { describe, expect, it } from 'vitest';
+import auditFollowups from '../../review/audit-followups-before-2026-11-02.json';
 import {
   questionPath,
   readingDates,
@@ -25,6 +26,7 @@ import cpoAdmission2 from '../../review/cpo-admission-2-before-2026-10-30.json';
 import technicalHistory1 from '../../review/technical-history-admission-1-before-2026-10-31.json';
 import technicalHistory2 from '../../review/technical-history-admission-2-before-2026-10-31.json';
 import riskDebate from '../../review/risk-debate-admission-before-2026-10-31.json';
+import labGenealogy2 from '../../review/lab-genealogy-2-admission-before-2026-11-01.json';
 const data = repository.data;
 // Records of the 2026-10-17 lab genealogy, left out of the earlier counts.
 // The genealogy records, including the five admitted on 2026-10-26, and the
@@ -46,6 +48,11 @@ const fromGenealogy = new Set([
   ...technicalHistory1.added.claims,
   ...technicalHistory2.added.claims,
   ...riskDebate.added.claims,
+  // The 2026-11-01 lab genealogy 2 records (founders, moves and rounds,
+  // 2023–2026) are left out of the frozen counts too.
+  ...labGenealogy2.added.claims,
+  // The 2026-11-02 audit follow-ups (Christiano's initial-Trustee snapshot).
+  ...auditFollowups.added.claims,
 ]);
 const earlier = <T extends { id: string }>(claims: T[]) =>
   claims.filter((c) => !fromGenealogy.has(c.id));
@@ -53,8 +60,10 @@ const path = researchPath(data, 'anthropic')!;
 // The 2026-10-31 key papers admission adds authorship that links more papers
 // to the institutions' people, which brings their earlier records into the
 // dossiers; the frozen totals below are taken on the records before it.
+// The 2026-11-01 lab genealogy 2 admission's people and moves link further
+// earlier records to the dossier in the same way, so they are left out too.
 const keyPaperRows = new Set(
-  [keyPapers1, keyPapers2, keyPapers3].flatMap((s) => [
+  [keyPapers1, keyPapers2, keyPapers3, labGenealogy2].flatMap((s) => [
     ...s.added.claims,
     ...s.added.entities,
   ]),
@@ -72,6 +81,8 @@ const principalIds = [
   'tom-brown-cofounded-anthropic-2021',
   'jared-kaplan-anthropic-cofounder',
   'sam-mccandlish-anthropic-cofounder',
+  // Added in version 4 of the reading (2026-11-02, PA-07).
+  'lg-ant-mann-cofounded',
   'dario-anthropic-2021',
   'daniela-anthropic-2021',
 ];
@@ -91,7 +102,7 @@ const originalIds = [
 ];
 
 describe('branched reading projection', () => {
-  it('groups all seven founding attributions and two leadership snapshots, retaining 11 optional records without factual mutation', () => {
+  it('groups all eight founding attributions and two leadership snapshots, retaining 11 optional records without factual mutation', () => {
     const before = JSON.stringify(data);
     expect(
       path.items
@@ -143,7 +154,7 @@ describe('branched reading projection', () => {
           fromGenealogy.has(c.id),
         ).length,
     ).toBe(156);
-    expect(path.version).toBe(3);
+    expect(path.version).toBe(4);
     expect(path.editorialStatus).toBe('machine-proposed');
   });
   it('shows year precision and retrospective publication inline without dating undated events', () => {

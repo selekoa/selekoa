@@ -197,13 +197,15 @@ test('a search that matches pages and records lists both, pages first', async ({
   await expect(page.getByRole('region', { name: /^Pages/ })).toHaveCount(0);
 });
 
-test('the start page calls its featured links examples', async ({ page }) => {
+test('the start page offers its featured links as ways in', async ({
+  page,
+}) => {
   await page.goto('/');
-  const featured = page.locator('.landing-featured');
-  await expect(featured.locator('.eyebrow')).toHaveText('For example');
-  await expect(featured.locator('.landing-featured-note')).toHaveText(
-    'Two of many ways in. The hubs below cover governance, ideas and institutions.',
-  );
+  await expect(
+    page.getByRole('navigation', { name: 'Ways in' }).getByRole('heading', {
+      name: 'Questions to read',
+    }),
+  ).toBeVisible();
   await expect(page.getByRole('heading', { level: 1 })).toHaveText(
     'A documentary history of machine intelligence.',
   );
@@ -217,7 +219,7 @@ for (const width of [1440, 390])
     await page.setViewportSize({ width, height: 900 });
     await page.goto('/document/good-1965');
     const mark = page.getByRole('link', {
-      name: 'Earliest located in Propositions about superintelligence, 1863–2022 for A1 Intelligence explosion →',
+      name: 'Earliest located in Propositions about superintelligence, 1863–2025 for A1 Intelligence explosion →',
     });
     await expect(mark).toBeVisible();
     const href = await mark.getAttribute('href');
@@ -245,6 +247,7 @@ test('a chosen set of editions has an address that reopens it', async ({
 }) => {
   const errors = collectErrors(page);
   await page.goto('/compare/frontier-safety-frameworks');
+  await page.getByRole('button', { name: /^Choose editions/ }).click();
   const select = page
     .getByRole('group', { name: 'Edition shown for each framework' })
     .getByRole('combobox')
@@ -254,15 +257,15 @@ test('a chosen set of editions has an address that reopens it', async ({
   await expect(page).toHaveURL(
     new RegExp(`/compare/frontier-safety-frameworks\\?edition=${first}$`),
   );
-  await expect(page.locator('.cmp-editions-box summary')).toContainText(
-    'your choice',
-  );
+  await expect(
+    page.getByRole('button', { name: /^Choose editions/ }),
+  ).toHaveText('Choose editions (1 chosen)');
   // The address reopens the same choice.
   await page.goto(`/compare/frontier-safety-frameworks?edition=${first}`);
   await expect(select).toHaveValue(first!);
-  await expect(page.locator('.cmp-editions-box summary')).toContainText(
-    'your choice',
-  );
+  await expect(
+    page.getByRole('button', { name: /^Choose editions/ }),
+  ).toHaveText('Choose editions (1 chosen)');
   // Back to the latest edition removes it from the address.
   const latest = await select.locator('option').last().getAttribute('value');
   await select.selectOption(latest!);

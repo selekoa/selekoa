@@ -155,3 +155,94 @@ describe('auditDataset', () => {
     expect(merge?.ids.sort()).toEqual(['lab-a', 'lab-b']);
   });
 });
+
+describe('checks added for the pre-launch audit', () => {
+  const data = {
+    ...fixture,
+    claims: [
+      claim('plan', {
+        predicate: 'announced_funding',
+        statement: 'Lab A raised $5 million.',
+        attributes: {
+          amount: {
+            value: 5000000,
+            currency: 'USD',
+            bound: 'up_to',
+            scope: 'transaction',
+          },
+        },
+      }),
+      claim('plan-attributed', {
+        predicate: 'announced_funding',
+        statement: 'Lab A announced that it had raised “$5 million”.',
+      }),
+      claim('complies', {
+        predicate: 'signed_commitment',
+        statement: 'Lab A complies with the code.',
+      }),
+      claim('complies-not', {
+        predicate: 'signed_commitment',
+        statement:
+          'Lab A signed the code; this is not evidence that it complies.',
+      }),
+      claim('earliest', {
+        predicate: 'bears_on_proposition',
+        statement: 'The earliest passage on the question.',
+      }),
+      claim('earliest-located', {
+        predicate: 'bears_on_proposition',
+        statement: 'The earliest located passage on the question.',
+      }),
+      claim('role-a', {
+        time: { kind: 'interval', from: '2020', until: '2022', note: 'n' },
+        attributes: { role: 'Chief scientist' },
+      }),
+      claim('role-b', {
+        time: { kind: 'interval', from: '2019', until: '2022', note: 'n' },
+        attributes: { role: 'Chief Scientist' },
+      }),
+      claim('founded-a', {
+        predicate: 'founding_stated',
+        object: { kind: 'literal', value: '2015' },
+        time: { kind: 'event', date: '2015', note: 'n' },
+      }),
+      claim('founded-b', {
+        predicate: 'founding_stated',
+        object: { kind: 'literal', value: '2016' },
+        time: { kind: 'event', date: '2016', note: 'n' },
+      }),
+      claim('contribution', {
+        subject: 'paper',
+        predicate: 'states_contribution',
+        object: { kind: 'literal', value: 'x' },
+      }),
+    ],
+    evidence: [],
+  } as unknown as Dataset;
+  const findings = auditDataset(data).findings;
+  const ids = (code: string) =>
+    findings.filter((f) => f.code === code).flatMap((f) => f.ids);
+
+  it('flags an announcement reported as done in our own words', () => {
+    expect(ids('announced-as-done')).toEqual(['plan']);
+  });
+  it('flags compliance in our own words, not a negated mention', () => {
+    expect(ids('commitment-as-compliance')).toEqual(['complies']);
+  });
+  it('flags "earliest" without a located scope', () => {
+    expect(ids('earliest-unscoped')).toEqual(['earliest']);
+  });
+  it('flags a bound the statement does not show', () => {
+    expect(ids('amount-bound-unstated')).toEqual(['plan']);
+  });
+  it('flags one role or founding dated two incompatible ways', () => {
+    expect(ids('role-dates-differ').sort()).toEqual(['role-a', 'role-b']);
+    expect(ids('founding-dates-differ').sort()).toEqual([
+      'founded-a',
+      'founded-b',
+    ]);
+  });
+  it("flags a contribution that does not rest on the document's own text", () => {
+    expect(ids('contribution-not-own-text')).toEqual(['contribution']);
+  });
+});

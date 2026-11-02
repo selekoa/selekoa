@@ -1,0 +1,45 @@
+{
+  "note": "Integrator’s and correction-pass decisions applied by `tools.mjs merge` after the drafts are combined. `keep` names the record kept in place of the dropped one: a pack record, a dataset record (the dropped record’s passage is then proposed in the draft’s evidenceForExisting), or null (the record is held for the maintainer and nothing replaces it). The dropped record stays in its draft; sources and entities used by no remaining record are left out of pack.json.",
+  "drop": [
+    {
+      "id": "lg2-oa-liberatore-xai-cfo-2025",
+      "keep": "lg2-xa-liberatore-xai-cfo-2025",
+      "reason": "Same proposition from the same CFO Dive report; the kept record gives both reported months."
+    },
+    {
+      "id": "lg2-oa-liberatore-openai-bfo-2025",
+      "keep": "lg2-xa-liberatore-openai-bfo-2025",
+      "reason": "Same proposition from the same CFO Dive report."
+    },
+    {
+      "id": "lg2-oa-ruddarraju-xai-infra-prior",
+      "keep": "lg2-xa-ruddarraju-xai-infrastructure-prior",
+      "reason": "Same proposition (his earlier xAI infrastructure role); the kept record rests on DatacenterDynamics, the dropped one on exchange4media; neither gives a start."
+    },
+    {
+      "id": "lg2-gm-silver-leaves-gdm-2026",
+      "keep": "lg2-eu-silver-deepmind-departure-2026",
+      "reason": "Same proposition from the same Fortune report; kept with the Ineffable Intelligence records."
+    },
+    {
+      "id": "lg2-oa-brockman-openai-sabbatical-2024",
+      "keep": null,
+      "reason": "held: a leave is not a departure; no leave predicate exists (open question for the maintainer)"
+    },
+    {
+      "id": "lg2-nl-sutskever-ssi-cofounder-primary",
+      "keep": "ilya-sutskever-ssi-cofounder-2024",
+      "reason": "Proposed instead as additional primary evidence for the existing dataset record"
+    },
+    {
+      "id": "lg2-dl-cma-microsoft-inflection-assets-2024",
+      "keep": "lg-deal-microsoft-inflection-agreement-2024",
+      "reason": "held: an `acquired` edge between the companies would read as an acquisition of Inflection AI; the CMA’s wording is proposed as additional evidence for the existing agreement record (open question)"
+    },
+    {
+      "id": "lg2-gm-ramani-msl-infra-lead-2025",
+      "keep": null,
+      "reason": "Rests only on BTW Media, an aggregator page with a machine confidence label and a revision dated a year after publication; the one closer report tried (CNBC, 21 August 2025, relaying the Wall Street Journal on the four-team structure) does not name Ramani, and no report of Wang’s memo naming her was retrieved. Her Meta Superintelligence Labs infrastructure role remains in lg2-gm-ramani-msl-vp-engineering-prior."
+    }
+  ]
+}

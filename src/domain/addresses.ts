@@ -24,14 +24,17 @@ export type ReferenceTarget =
   | { kind: 'search'; q?: string; mode?: 'names'; inspect?: string }
   | { kind: 'documents'; id: string; inspect?: string }
   /**
-   * The framework comparison, optionally at one question (facet) and with
-   * chosen editions in place of the latest ones (`?edition=a,b`).
+   * The framework comparison, optionally at one question (facet), which has
+   * a page of its own (`/compare/<id>/<question>`), and with chosen editions
+   * in place of the latest ones (`?edition=a,b`).
    */
   | {
       kind: 'compare';
       id: string;
       facet?: string;
       editions?: string[];
+      /** Two or three frameworks side by side (`?frameworks=a,b`). */
+      frameworks?: string[];
       inspect?: string;
     }
   | { kind: 'control'; id: string; inspect?: string }
@@ -39,6 +42,11 @@ export type ReferenceTarget =
   /** A guided reading across collections, such as frameworks and law. */
   | { kind: 'guide'; id: string; inspect?: string }
   | { kind: 'propositions'; id: string; inspect?: string }
+  /**
+   * Propositions by author: the index of the collections (`/stances`), or
+   * one collection's stances (`/stances/<collection>`).
+   */
+  | { kind: 'stances'; id?: string; inspect?: string }
   /**
    * A year of the chronicle (`2025`), or one topic of it (`2025-governance`),
    * and the index of the years.
@@ -57,6 +65,7 @@ export type ReferenceTarget =
 export function referencePath(target: ReferenceTarget) {
   if (target.kind === 'about') return '/about';
   if (target.kind === 'years') return '/years';
+  if (target.kind === 'stances' && !target.id) return '/stances';
   if (target.kind === 'hub') return `/${target.id}`;
   const params = new URLSearchParams();
   if (target.kind === 'explore') {
@@ -74,17 +83,28 @@ export function referencePath(target: ReferenceTarget) {
     if (target.section) params.set('section', target.section);
     if (target.claim) params.set('claim', target.claim);
   }
-  if (target.kind === 'compare' && target.facet)
-    params.set('facet', target.facet);
   if (target.kind === 'compare' && target.editions?.length)
     params.set('edition', target.editions.join(','));
+  if (target.kind === 'compare' && target.frameworks?.length)
+    params.set('frameworks', target.frameworks.join(','));
   if (target.kind === 'dossier' && target.view) params.set('view', target.view);
   if (target.kind !== 'claim' && target.inspect)
     params.set('inspect', target.inspect);
   // The earlier `reading` address is kept only as a redirect.
   const kind = target.kind === 'reading' ? 'question' : target.kind;
-  return `/${kind}/${encodeURIComponent(target.id)}${params.size ? '?' + params : ''}`;
+  const question =
+    target.kind === 'compare' && target.facet
+      ? '/' + facetSlug(target.facet)
+      : '';
+  return `/${kind}/${encodeURIComponent(target.id ?? '')}${question}${params.size ? '?' + params : ''}`;
 }
+
+/** The comparison as a CSV file, written by the build (scripts/comparison-csv.ts). */
+export const comparisonCsvPath = (id: string) => `/compare/${id}.csv`;
+
+/** The path segment of a comparison question: `D3.halt` → `d3-halt`. */
+export const facetSlug = (facetId: string) =>
+  facetId.toLowerCase().replace('.', '-');
 
 /** The start page's address. */
 export const startPath = '/';

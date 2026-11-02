@@ -46,7 +46,7 @@ test('personnel search, distinct roles and source uncertainty are inspectable', 
   });
   await expect(evidence).toContainText('2020-12-29 · event');
   await expect(evidence).toContainText('Machine-checked');
-  await expect(evidence).toContainText('Not reviewed by an editor');
+  await expect(evidence).toContainText('Machine-checked');
   await page.getByRole('main').getByRole('searchbox').fill('Christopher Olah');
   await page.getByRole('main').getByRole('searchbox').press('Enter');
   await list

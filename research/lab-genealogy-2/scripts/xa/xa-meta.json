@@ -1,0 +1,139 @@
+{
+  "searched": "Searched on 2026-10-29 the dataset inventory (existing-claims, existing-entities, people-pack-claims) for xAI, Amazon, Apple and each person and investor named below, and data/claims.json for xAI's capital records (Series B total and Sequoia; Series C total and NVIDIA; Series E total and NVIDIA). Retrieved xAI's Series B, C and E announcements directly from x.ai (which answered direct HTTP this time), HUMAIN's press release on its Series E investment, Andy Jassy's message of 17 December 2025 and the Amazon Nova announcement of 3 December 2024 from aboutamazon.com, Apple's announcement of 1 December 2025, and Robert Keele's X post through the syndication endpoint. Web searches (discovery only) covered xAI executives 2024–2026 (CFOs, general counsel, president, heads of teams, hires from and moves to other frontier labs), Amazon's AGI organisation 2023–2026 (Prasad, DeSantis, Abbeel, Luan, the AGI Lab), and Apple's foundation-model and AI leadership 2025–2026. No primary text was found for the xAI finance and legal appointments, Nicolls's presidency, Ruddarraju's and Kosic's moves, Luan's departure or Ke Yang's departure; those records rest on reporting (TechCrunch, CFO Dive, Fortune, Bloomberg Government, DatacenterDynamics, Reuters via StreetInsider, Next, AppleInsider, 36Kr) and say so. GeekWire refused this environment (Cloudflare block); a Bloomberg article was not retrieved because it is paywalled. xAI's Series C names twelve financial investors besides NVIDIA and AMD; only AMD was drafted (see omitted).",
+  "existingUsed": [
+    "xai-round-total-2024",
+    "sequoia-xai-2024",
+    "xai-series-c-total-2024",
+    "nvidia-xai-series-c-2024",
+    "xm-series-e-total",
+    "xm-nvidia-series-e",
+    "lg-deal-luan-amazon-agi-sf-2024",
+    "lg-deal-amazon-agi-sf-lab-unit-2024",
+    "lg-deal-amazon-adept-agreement-2024",
+    "lg-gw-giannandrea-apple-departure-2025",
+    "lg-gw-subramanya-apple-vp-ai-2025",
+    "lg-gw-pang-apple-departure-2025",
+    "lg-mx-kosic-xai-departure-2024",
+    "lg-mx-pohlen-xai-departure-2026",
+    "xm-babuschkin-departure",
+    "xm-spacex-acquisition",
+    "lg-mx-xai-into-spacex-announced-2026"
+  ],
+  "omitted": [
+    {
+      "item": "xAI Series C (23 December 2024): A16Z, Blackrock, Fidelity Management & Research Company, Kingdom Holdings, Lightspeed, MGX, Morgan Stanley, OIA, QIA, Sequoia Capital, Valor Equity Partners, Vy Capital",
+      "reason": "Named in xAI's announcement (cached as xa-series-c) but not drafted in this bounded pass, to keep the group near its target size; only AMD, the strategic investor not yet recorded, was drafted. A later pass can add one participated_in_round record each from the same source."
+    },
+    {
+      "item": "Prince Alwaleed Bin Talal as a Series B participant",
+      "reason": "A person; participated_in_round takes an organisation as subject. Kingdom Holding, named alongside him, is drafted."
+    },
+    {
+      "item": "Robert Keele's stated reason for leaving xAI",
+      "reason": "A private-life reason (family); left out under the brief's convention."
+    },
+    {
+      "item": "Closure of Amazon's AGI Lab (San Francisco), July 2026",
+      "reason": "Known only from reporting relaying The Information (The Next Web) and a GeekWire report that this environment could not open; GeekWire's headline describes the closure of a site while saying work on top models continues, so a unit_disbanded record would overstate what was retrieved. Reuters (retrieved) reports only job cuts in the AGI organisation."
+    },
+    {
+      "item": "Amazon job cuts in the AGI organisation (22 July 2026); Adeeb Shanaa and Vishal Sharma as AGI vice presidents",
+      "reason": "Layoffs are not a personnel move of a named leader; the two vice presidents appear only as heads of affected teams in a report about online forum posts."
+    },
+    {
+      "item": "Uday Ruddarraju as OpenAI CTO of Compute (July 2026)",
+      "reason": "An internal OpenAI promotion; belongs to the OpenAI pass. His move from xAI to OpenAI is drafted."
+    },
+    {
+      "item": "Kyle Kosic's move to Project Prometheus (2026)",
+      "reason": "A move between organisations outside this group; his 2024 return from xAI to OpenAI is drafted."
+    },
+    {
+      "item": "Kyle Kosic's departure from xAI dated April 2024 (Fortune)",
+      "reason": "The departure is the existing record lg-mx-kosic-xai-departure-2024 (dated 2024 from TechCrunch); Fortune's month rests on a LinkedIn profile and is noted in the qualification of the OpenAI record instead of a second departure record."
+    },
+    {
+      "item": "Gwynne Shotwell, Bret Johnsen and Brian Bjelde overseeing xAI operations, finance and HR (2025–2026); Jared Birchall as xAI company secretary",
+      "reason": "SpaceX and family-office executives known only from 36Kr's third-hand description of a Bloomberg organisation chart; oversight is not a stated xAI title. Michael Nicolls, whose xAI title is stated, is drafted."
+    },
+    {
+      "item": "Ashok Elluswamy joining xAI's Macrohard project (March 2026)",
+      "reason": "A Tesla executive's reported engineering collaboration, from the same third-hand 36Kr description; no xAI title stated."
+    },
+    {
+      "item": "Jack Garabedian replacing Diego Pasini as head of xAI's human data team (June 2026)",
+      "reason": "A team-level change reported from an internal note (Bloomberg, partly paywalled); below the executive scope of the pack."
+    },
+    {
+      "item": "Mike Dalton, Raghu Rao",
+      "reason": "An infrastructure engineer and a senior lawyer named only as departing staff; staff-directory scope."
+    },
+    {
+      "item": "Lily Lim's later departure from xAI (2025)",
+      "reason": "Mentioned in a search summary of Bloomberg reporting only; no retrievable text."
+    },
+    {
+      "item": "Anthony Armstrong also overseeing X's finances; Mahmoud Reza Banki leaving as X CFO",
+      "reason": "Roles at X, not xAI's AI organisation."
+    },
+    {
+      "item": "xAI's reported $5 billion debt and $5 billion equity raise (2025)",
+      "reason": "Known only from reporting summarised in search results; no xAI announcement or retrievable report naming participants was found."
+    },
+    {
+      "item": "Amazon's appointment of Rohit Prasad to lead the AGI organisation (2023)",
+      "reason": "No dated Amazon announcement or memo text from 2023 was retrieved; the December 2024 title snapshot is drafted instead."
+    },
+    {
+      "item": "Pieter Abbeel joining Amazon with Covariant (2024)",
+      "reason": "Belongs to the deals pass (drafts/dl.json, lg2-dl-abbeel-amazon-2024); the December 2025 frontier-research appointment is drafted here."
+    },
+    {
+      "item": "Amar Subramanya's areas (Apple Foundation Models, ML research, AI Safety and Evaluation)",
+      "reason": "Same appointment and date as the existing record lg-gw-subramanya-apple-vp-ai-2025."
+    },
+    {
+      "item": "Benoit Dupin as Ke Yang's replacement at Apple",
+      "reason": "One clause in a reporting summary; not drafted without a fuller source."
+    },
+    {
+      "item": "Zhifeng Chen as head of Apple's foundation-models team after Ruoming Pang (2025)",
+      "reason": "No retrievable source found in this pass."
+    },
+    {
+      "item": "Jian Zhang, Apple robotics AI researcher, to Meta (2025)",
+      "reason": "Robotics research, not foundation-model leadership."
+    },
+    {
+      "item": "Other Apple researchers reported as moving to Meta in 2025 (Frank Chu, Tom Gunter, Mark Lee, Bowen Zhang, Yun Zhu)",
+      "reason": "Named only in an aggregator list; researchers without a stated leadership role."
+    }
+  ],
+  "retrievalFailures": [
+    {
+      "url": "https://www.geekwire.com/2026/head-of-amazons-agi-lab-is-leaving-in-latest-exit-from-high-profile-adept-deal/",
+      "what": "GeekWire report on David Luan's departure from Amazon (February 2026)",
+      "result": "HTTP 403 Cloudflare block page (direct); relay HTTP 401"
+    },
+    {
+      "url": "https://geekwire.com/2026/amazon-confirms-its-closing-key-ai-site-in-san-francisco-but-says-work-on-its-top-models-continues",
+      "what": "GeekWire report on Amazon closing its San Francisco AGI site (July 2026)",
+      "result": "Not attempted after the same host returned a Cloudflare block page"
+    },
+    {
+      "url": "https://www.bloomberg.com/news/articles/2025-10-15/apple-s-head-of-chatgpt-like-ai-search-effort-to-leave-for-meta",
+      "what": "Bloomberg report on Ke Yang leaving Apple for Meta",
+      "result": "Paywalled; not retrieved (AppleInsider's report of it is used)"
+    },
+    {
+      "url": "https://x.com/keelelaw_io/status/1952880645216289178",
+      "what": "Robert Keele's post of 5 August 2025",
+      "result": "Syndication text truncated after about 50 words (a long post); only the first line is used"
+    },
+    {
+      "url": "https://www.wired.com/",
+      "what": "WIRED report (July 2025) on OpenAI's hires from xAI, Tesla and Meta, relaying Greg Brockman's internal Slack message",
+      "result": "Not reachable by the discovery search tool; not retrieved"
+    }
+  ]
+}

@@ -12,10 +12,12 @@ import { landingSummary } from '../domain/landing';
 import { documentHistories } from '../reading/frontier-safety-frameworks';
 import { frameworkComparison } from '../reading/framework-comparison';
 import { controlStructures } from '../reading/control-structures';
+import { controlTimelines } from '../reading/control-timelines';
 import { commitmentCollections } from '../reading/commitments';
 import { computeGuides, editionGuides, guides } from '../reading/guides';
 import { questionStarters } from '../reading/self-governance';
 import { propositionCollections } from '../reading/human-thought';
+import { stancesQuestion } from '../reading/proposition-stances-page';
 import { hubOutline, hubSubtitles } from '../ui/Hub';
 import { chronicleIndexOf } from '../domain/chronicle-index';
 import { chronicleText } from '../reading/chronicle';
@@ -110,6 +112,12 @@ export function searchablePages(data: Dataset): PageEntry[] {
         c.introduction,
       ),
     ),
+    entry(
+      { kind: 'control', id: controlTimelines.id },
+      'Control structure',
+      controlTimelines.question,
+      controlTimelines.introduction,
+    ),
     ...documentHistories.map((c) =>
       entry(
         { kind: 'documents', id: c.id },
@@ -122,7 +130,7 @@ export function searchablePages(data: Dataset): PageEntry[] {
       { kind: 'compare', id: frameworkComparison.id },
       'Comparison',
       frameworkComparison.question,
-      frameworkComparison.introduction,
+      frameworkComparison.introduction + ' ' + frameworkComparison.reading,
     ),
     ...commitmentCollections.map((c) =>
       entry(
@@ -140,6 +148,7 @@ export function searchablePages(data: Dataset): PageEntry[] {
         c.introduction,
       ),
     ),
+    entry({ kind: 'stances' }, 'Propositions', stancesQuestion),
     entry(
       { kind: 'years' },
       'Chronicle',

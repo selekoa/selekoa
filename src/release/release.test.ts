@@ -1,4 +1,5 @@
 import { readFile } from 'node:fs/promises';
+import path from 'node:path';
 import { createHash } from 'node:crypto';
 import { describe, expect, it } from 'vitest';
 import {
@@ -7,6 +8,7 @@ import {
   compareReleases,
   inputFingerprint,
   inputFromRelease,
+  releaseDirectory,
   type ReleaseRecords,
   type Removals,
 } from './build';
@@ -15,6 +17,7 @@ import {
   readRelease,
   readRemovals,
   releasedVersions,
+  releaseRoot,
 } from './files';
 import {
   csvColumns,
@@ -168,8 +171,19 @@ describe('dataset releases', () => {
   });
 
   it('keeps the changelog index current', async () => {
+    // Only each release's manifest: reading every release's files at once
+    // exceeded a test worker's heap once the releases passed about 690 MB
+    // (2026-11-01).
     const manifests = await Promise.all(
-      versions.map(async (v) => (await readRelease(v)).manifest),
+      versions.map(
+        async (v) =>
+          JSON.parse(
+            await readFile(
+              path.join(releaseRoot, releaseDirectory(v), 'manifest.json'),
+              'utf8',
+            ),
+          ) as Awaited<ReturnType<typeof readRelease>>['manifest'],
+      ),
     );
     expect(await readFile('release/CHANGELOG.md', 'utf8')).toBe(
       changelogIndex(manifests),

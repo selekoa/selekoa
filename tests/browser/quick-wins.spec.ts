@@ -191,17 +191,15 @@ test('provisions grid attaches each wording to the editions it comes from', asyn
   );
 });
 
-test('collection notices drop the version number and the claim panel avoids “Seed”', async ({
+test('collection pages carry no machine-selection notice and the claim panel avoids “Seed”', async ({
   page,
 }) => {
   await page.goto('/documents/frontier-safety-frameworks');
-  await expect(page.locator('.doc-status').first()).toHaveText(
-    /^A machine selected and arranged these records\. /,
-  );
+  await expect(page.locator('.doc-status')).toHaveCount(0);
   await page.goto('/claim/prov-preparedness-v2-high-deployment-restriction');
   const panel = page.getByRole('complementary', { name: 'Evidence inspector' });
   await panel.getByText('Status and meaning').click();
-  await expect(panel).toContainText('Not reviewed by an editor');
+  await expect(panel).toContainText('Machine-checked');
   await expect(panel).not.toContainText('Seed');
 });
 
@@ -224,7 +222,7 @@ test('the featured question opens the OpenAI control structure', async ({
 }) => {
   await page.goto('/');
   const featured = page.getByRole('link', {
-    name: 'Who controlled OpenAI, and when? →',
+    name: 'Who controlled OpenAI, and when?',
   });
   await expect(featured).toBeVisible();
   // The Governance card does not repeat the featured question.

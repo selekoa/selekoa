@@ -1,6 +1,6 @@
 import { use, useEffect, useMemo } from 'react';
 import type { Repository } from '../domain/repository';
-import { ClaimLink, RecordLink, SectionLink } from './NavLink';
+import { ClaimLink, NavLink, RecordLink, SectionLink } from './NavLink';
 import {
   engagementLabels,
   laterContests,
@@ -21,6 +21,9 @@ import { wholePropositions } from './proposition-text';
 import { CopyLink, ExportPropositionsStarter } from './ReferenceActions';
 import { InspectLink, StatusBadge, type ClaimProps } from './ReadingRows';
 import { ReviewMarkers } from './ReviewMarkers';
+import { startIds } from './start-ids';
+import { startHref, type StartAction } from './SiteChrome';
+import { stancesTitle } from '../reading/proposition-stances-page';
 import './reading-first.css';
 import './control-commitments.css';
 import './propositions.css';
@@ -197,6 +200,12 @@ function DateStrip({
   );
 }
 
+/**
+ * Schema 2.28: a headline withdrawn while a re-check runs. A record that holds
+ * the role again is shown instead, so the line goes once the role is set.
+ */
+const underRecheck = (since: string) => `Under re-check (${since})`;
+
 function Headline({
   label,
   record,
@@ -270,10 +279,12 @@ function PropositionSection({
           label={tiered ? 'Earliest located, tier 1' : 'Earliest located'}
           record={entry.earliest}
           empty={
-            entry.earliestWithheld
-              ? 'Not assigned. ' + entry.earliestWithheld
-              : (collection.earliestEmpty ??
-                'No located text meets the criterion.')
+            entry.recheck.earliest
+              ? underRecheck(entry.recheck.earliest)
+              : entry.earliestWithheld
+                ? 'Not assigned. ' + entry.earliestWithheld
+                : (collection.earliestEmpty ??
+                  'No located text meets the criterion.')
           }
           {...props}
         />
@@ -293,7 +304,7 @@ function PropositionSection({
             {...props}
           />
         )}
-        {entry.earliestContest && (
+        {(entry.earliestContest || entry.recheck.contest) && (
           <Headline
             label={
               tiered
@@ -301,7 +312,7 @@ function PropositionSection({
                 : 'Earliest located text that contests it'
             }
             record={entry.earliestContest}
-            empty=""
+            empty={underRecheck(entry.recheck.contest ?? '')}
             {...props}
           />
         )}
@@ -313,11 +324,15 @@ function PropositionSection({
             {...props}
           />
         )}
-        {proposition.terms.length > 0 && (
+        {proposition.terms.length > 0 && !entry.termDropped && (
           <Headline
             label="Earliest located use of the name"
             record={entry.earliestTerm}
-            empty="No located text uses the name."
+            empty={
+              entry.recheck.term
+                ? underRecheck(entry.recheck.term)
+                : 'No located text uses the name.'
+            }
             {...props}
           />
         )}
@@ -648,6 +663,7 @@ export function Propositions({
   onProposition,
   focus,
   onFocused,
+  onAction,
 }: {
   /** The collection shown, as every page holds it (without its text). */
   frame: PropositionsFrame;
@@ -660,6 +676,8 @@ export function Propositions({
   /** A proposition to scroll to once the page has rendered. */
   focus?: string | null;
   onFocused?: () => void;
+  /** Opens another page: the collection's propositions by author. */
+  onAction?: (action: StartAction) => void;
 }) {
   // The collection whole, with its text, loaded with the page's code; the
   // view is computed from the records held.
@@ -698,10 +716,6 @@ export function Propositions({
         <h1>{collection.title}</h1>
         <p className="landing-deck">{collection.question}</p>
         <p className="doc-intro">{collection.introduction}</p>
-        <p className="doc-status">
-          A machine selected and arranged these records. No human review of the
-          selection or framing is recorded.
-        </p>
         <div className="doc-actions">
           <ExportPropositionsStarter
             data={repository.data}
@@ -712,6 +726,17 @@ export function Propositions({
             label="Copy link to this page"
           />
         </div>
+        {onAction && (
+          <p className="prop-stances-link">
+            <NavLink
+              className="text-button"
+              href={startHref({ kind: 'stances', id: collection.id }, startIds)}
+              onOpen={() => onAction({ kind: 'stances', id: collection.id })}
+            >
+              {stancesTitle} →
+            </NavLink>
+          </p>
+        )}
       </header>
       <nav className="prop-toc" aria-label="Propositions">
         {groups.map((g) => (

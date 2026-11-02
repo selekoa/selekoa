@@ -19,7 +19,13 @@ export const chronicleText = {
   indexDescription:
     'Selekoa’s dated records, one page per year, each record with its date as the source gives it. Selective: what the records hold, not a history of any year.',
   indexLede:
-    'Every year in which Selekoa holds a dated record or a stated date. Each year’s page lists its records in date order, grouped by topic. The counts are of records, not of events.',
+    'Every year in which Selekoa holds a dated record or a stated date. Each year’s page lists its records in date order, grouped by topic.',
+  /** The index's disclosure: what its counts show and do not show. */
+  indexLimits: [
+    'The counts are of records, not of events.',
+    'Coverage is uneven across years and topics: a year or topic with few records may be one the records barely cover.',
+  ],
+  indexLimitsHeading: 'What this shows and does not show',
   selective: 'Selective: what the records hold, not a history of the year.',
   limitsHeading: 'How this page is made',
   limits: [
@@ -29,7 +35,7 @@ export const chronicleText = {
     'Dates a party states for a year are listed apart, after the records: targets, deadlines and terms, and dates stated in passing, such as a reported start of operation. So is a record’s own date that falls after its sources were last checked, such as a law’s date of effect. A stated date given only in words, with no year, is not listed.',
     'Records with an unknown date are not listed. A record with an interval appears in the year it starts and in the year it ends, or once, with both dates, when both fall in one year.',
     'Each provision of a text is a record of its own. Provisions sharing a text and a date are shown here as one entry, with their number, and listed on the text’s page; a contested or unresolved one is listed here on its own. The counts on this page include each provision record.',
-    'The page is generated from the records, with no selection or framing by an editor. Coverage is uneven across years and topics: a year or topic with few records may be one the records barely cover.',
+    'The page lists the records by fixed rules, without selection or framing. Coverage is uneven across years and topics: a year or topic with few records may be one the records barely cover.',
   ],
   statedHeading: (year: number) => `Dates stated for ${year}`,
   statedNote:

@@ -1,6 +1,7 @@
 import { useMemo } from 'react';
 import type { Dataset } from '../domain/schema';
 import { appearances, type CollectionTarget } from '../domain/appearances';
+import { authorKey } from '../domain/propositions';
 import { NavLink } from './NavLink';
 import { startHref } from './SiteChrome';
 import { startIds } from './start-ids';
@@ -24,6 +25,14 @@ export function AppearsIn({
   onCollection: (target: CollectionTarget) => void;
 }) {
   const found = useMemo(() => appearances(data, entityId), [data, entityId]);
+  // A person's name and aliases as byline keys: propositions by author opens
+  // at the first that a byline of the collection prints.
+  const authors = useMemo(() => {
+    const person = data.entities.find((e) => e.id === entityId);
+    return person && kind === 'person'
+      ? [...new Set([person.name, ...person.aliases].map(authorKey))]
+      : [];
+  }, [data, entityId, kind]);
   const headingId = kind + '-appears';
   return (
     <section className="record-appears" aria-labelledby={headingId}>
@@ -53,6 +62,14 @@ export function AppearsIn({
                   .filter(Boolean)
                   .join(' · ')}
               </span>
+              {a.target.kind === 'propositions' &&
+                a.texts > 0 &&
+                authors.length > 0 && (
+                  <StancesLink
+                    target={{ kind: 'stances', id: a.target.id, authors }}
+                    onCollection={onCollection}
+                  />
+                )}
             </li>
           ))}
         </ul>
@@ -62,5 +79,28 @@ export function AppearsIn({
         </p>
       )}
     </section>
+  );
+}
+
+/** The link from a person's collection to its stances, at their bylines. */
+function StancesLink({
+  target,
+  onCollection,
+}: {
+  target: Extract<CollectionTarget, { kind: 'stances' }>;
+  onCollection: (target: CollectionTarget) => void;
+}) {
+  return (
+    <NavLink
+      className="text-button record-explore"
+      href={
+        startHref(target, startIds) +
+        '#authors=' +
+        encodeURIComponent(target.authors.join('|'))
+      }
+      onOpen={() => onCollection(target)}
+    >
+      Their texts’ stances, by author →
+    </NavLink>
   );
 }

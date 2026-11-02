@@ -7,7 +7,9 @@ const archiveLimit =
 
 export const openaiControl: ControlStructureCollection = {
   id: 'openai',
-  version: 1,
+  // Version 2 (release 0.22.1): a staff role whose sourcing note mentions a
+  // board is no longer read as a board role (src/domain/control-structures.ts).
+  version: 2,
   title: 'OpenAI’s control structure, 2015–2026',
   organisationId: 'openai',
   question:

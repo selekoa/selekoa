@@ -3,12 +3,14 @@ import { renderToStaticMarkup } from 'react-dom/server';
 import { describe, expect, it } from 'vitest';
 import { repository } from '../domain/repository';
 import { landingSummary } from '../domain/landing';
+import { listedPerson } from '../domain/people-index';
 import { resolveReference } from '../domain/deep-links';
 import { appearances } from '../domain/appearances';
 import { hubOutline } from './Hub';
 import { RecordHref, RecordLink } from './NavLink';
 import { startHref, type StartAction } from './SiteChrome';
 import { startIds } from './start-ids';
+import { comparisonFacets } from '../domain/framework-comparison';
 
 const data = repository.data;
 const summary = landingSummary(data);
@@ -37,7 +39,10 @@ describe('real links: every navigation address resolves', () => {
       ...summary.dossiers.map((d) => ({ kind: 'dossier' as const, id: d.id })),
       { kind: 'dossier', id: 'openai', view: 'map' },
       ...summary.people.flatMap((g) =>
-        g.people.map((p) => ({ kind: 'person' as const, id: p.id })),
+        g.people.map((p) => ({
+          kind: 'person' as const,
+          id: listedPerson(p).id,
+        })),
       ),
     ];
     for (const action of actions) {
@@ -74,5 +79,17 @@ describe('real links: every navigation address resolves', () => {
       '<a href="/person/x" class="nav-link">X</a>',
     );
     expect(link()).toBe('<button>X</button>');
+  });
+});
+
+describe('in-app actions name what the page reads', () => {
+  it('gives a comparison action a question ID, not its address slug', () => {
+    // A click runs the action itself; only the address goes through the
+    // slug, so a slug here opens the first question instead.
+    const ids = new Set(comparisonFacets.map((f) => f.id));
+    for (const hub of ['governance', 'ideas', 'institutions'] as const)
+      for (const { action } of hubOutline(summary, hub).examples)
+        if (action.kind === 'compare' && action.facet)
+          expect(ids.has(action.facet), action.facet).toBe(true);
   });
 });

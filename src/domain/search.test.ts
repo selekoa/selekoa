@@ -304,12 +304,14 @@ describe('searchClaims: what a search timeline and map show', () => {
     // A search on an economist finds proposition records, which the explorer
     // leaves out without the flag, and the authorship records of the author's
     // texts. The 2026-10-31 key papers records about his paper (`kp-`:
-    // citations of it and what it says it contributes) are left aside.
+    // citations of it and what it says it contributes) and the 2026-11-01
+    // machine succession admission's namings of texts (`ht-link-`: Bostrom's
+    // paper of 2004 cites Hanson's of 1994) are left aside.
     const hanson = searchClaims(index, 'Hanson').listed;
     expect(hanson.size).toBeGreaterThan(0);
     expect(
       [...hanson]
-        .filter((id) => !id.startsWith('kp-'))
+        .filter((id) => !id.startsWith('kp-') && !id.startsWith('ht-link-'))
         .every(
           (id) =>
             isPropositionRecord(repository.claims.get(id)!) ||

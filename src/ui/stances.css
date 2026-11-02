@@ -1,0 +1,73 @@
+/* Propositions by author (src/ui/PropositionStances.tsx). */
+.stances-modes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 8px 0 20px;
+}
+.stances-mode {
+  font: inherit;
+  font-size: var(--text-sm);
+  padding: 6px 14px;
+  border: 1px solid var(--color-border-strong);
+  border-radius: 4px;
+  background: var(--color-surface);
+  color: var(--color-text);
+  cursor: pointer;
+}
+.stances-mode[aria-pressed='true'] {
+  border-color: var(--color-accent);
+  background: var(--color-selected);
+  font-weight: 600;
+}
+.stances-mode:focus-visible {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 2px;
+}
+.stances-view h2 {
+  margin-top: 28px;
+}
+.stances-proposition h3,
+.stances-author h3 {
+  font: 19px/1.35 var(--font-serif);
+  margin: 22px 0 8px;
+  scroll-margin-top: 16px;
+}
+.stances-rows {
+  overflow-wrap: anywhere;
+}
+.stance-text {
+  display: block;
+  font-family: var(--font-serif);
+}
+.stances-letters ul,
+.stances-index,
+.stances-others ul {
+  list-style: none;
+  padding: 0;
+}
+.stances-letters ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 12px;
+}
+.stances-index li,
+.stances-others li {
+  margin: 0 0 10px;
+}
+.stances-index .small-note {
+  display: block;
+}
+.stances-others {
+  margin-top: 36px;
+  border-top: 1px solid var(--color-rule);
+}
+.prop-stances-link {
+  margin: 12px 0 0;
+}
+/* Collection titles are long: they wrap at phone width. */
+.stances-index .text-button,
+.stances-others .text-button,
+.stances-related .text-button {
+  white-space: normal;
+}

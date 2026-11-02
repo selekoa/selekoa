@@ -100,6 +100,17 @@ exceptions in the self-check report for the change.
 - Metadata lines use the middle dot: `2021-05 · snapshot · Inferred`.
 - Empty states say what is missing and what that means, in one sentence:
   "No authorship record yet. A missing record is a gap in coverage."
+- Tools (pages a reader operates: the comparison, the years, the map, the
+  explorer) share one link style, a ruled box with the slider mark
+  (`ToolLink` in `src/ui/tools.tsx`, the single list of tools). Readings
+  (questions and guides) stay underlined serif links. Never mark either with
+  square brackets: on this site they mark an editor's insertion in a
+  quotation.
+- Entry pages (the start page, the hubs, Compare frameworks, Browse by year,
+  the explorer) carry at most one plain caveat line per section, with the full
+  wording one click away (a "What this shows and does not show" disclosure or
+  a link to About & method). Record, claim and evidence pages keep every
+  qualification.
 - Status badges use the reader terms below, and every badge is explained on
   the About & method page.
 
@@ -108,23 +119,23 @@ exceptions in the self-check report for the change.
 Replace internal terms in reader-facing text, or explain them where a precise
 label is required.
 
-| Internal term                                 | Reader-facing wording                                                                                                                                                                                            |
-| --------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| seed (`editorialState: seed`)                 | "not reviewed by an editor" (maintainer decision of 2026-10-15); "not editorially accepted" where a person has checked some of the claim's evidence; on the About page, "exploratory record". Never show "Seed". |
-| accepted                                      | "editorially accepted"                                                                                                                                                                                           |
-| `machine_checked`                             | "machine-checked": an automated research pass compared the claim with the source passage. Always say that no person has confirmed it.                                                                            |
-| `human_reviewed`                              | "human-reviewed", with the reviewer's pseudonym and date                                                                                                                                                         |
-| claim derivation: explicit / inferred / posed | "Stated in source" / "Inferred" (with the reasoning shown) / "Question posed by Selekoa"; never show "Stated in source" for an assessment or an unresolved question                                              |
-| claim resolution                              | "Supported", "Contested", "Unresolved", each explained                                                                                                                                                           |
-| literal value, literal claim                  | "a claim about a value" (an amount, a legal form, a quoted provision)                                                                                                                                            |
-| entity                                        | "person, organisation or document" or "record", unless the general term is needed                                                                                                                                |
-| projection                                    | "computed from stored claims"                                                                                                                                                                                    |
-| increment, pass, week 4c                      | "a later update"                                                                                                                                                                                                 |
-| research anchors                              | "core institutions"                                                                                                                                                                                              |
-| stop, stopped item                            | "question set aside", with the reason                                                                                                                                                                            |
-| keyed provision                               | "provision tracked across editions"                                                                                                                                                                              |
-| snapshot / interval / event                   | keep, and explain: a snapshot is one dated report of a state; an interval has only the start and end a source states; an event is a dated action                                                                 |
-| machine-proposed selection                    | "a machine selected and arranged these records"; keep "no human review of the selection or framing is recorded"                                                                                                  |
+| Internal term                                 | Reader-facing wording                                                                                                                                                                                                                                                                                         |
+| --------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| seed (`editorialState: seed`)                 | "machine-checked" (maintainer decision of 2026-11-01, replacing "not reviewed by an editor" of 2026-10-15); "machine-checked · human-reviewed evidence" where a person has checked some of the claim's evidence. Never show "Seed", and never frame a record as not yet reviewed: no review stage is planned. |
+| accepted                                      | "editorially accepted" (a few early records; accepting single records is no longer a goal)                                                                                                                                                                                                                    |
+| `machine_checked`                             | "machine-checked": an automated research pass compared the claim with the source passage. Always say that no person has confirmed it.                                                                                                                                                                         |
+| `human_reviewed`                              | "human-reviewed", with the reviewer's pseudonym and date                                                                                                                                                                                                                                                      |
+| claim derivation: explicit / inferred / posed | "Stated in source" / "Inferred" (with the reasoning shown) / "Question posed by Selekoa"; never show "Stated in source" for an assessment or an unresolved question                                                                                                                                           |
+| claim resolution                              | "Supported", "Contested", "Unresolved", each explained                                                                                                                                                                                                                                                        |
+| literal value, literal claim                  | "a claim about a value" (an amount, a legal form, a quoted provision)                                                                                                                                                                                                                                         |
+| entity                                        | "person, organisation or document" or "record", unless the general term is needed                                                                                                                                                                                                                             |
+| projection                                    | "computed from stored claims"                                                                                                                                                                                                                                                                                 |
+| increment, pass, week 4c                      | "a later update"                                                                                                                                                                                                                                                                                              |
+| research anchors                              | "core institutions"                                                                                                                                                                                                                                                                                           |
+| stop, stopped item                            | "question set aside", with the reason                                                                                                                                                                                                                                                                         |
+| keyed provision                               | "provision tracked across editions"                                                                                                                                                                                                                                                                           |
+| snapshot / interval / event                   | keep, and explain: a snapshot is one dated report of a state; an interval has only the start and end a source states; an event is a dated action                                                                                                                                                              |
+| machine-proposed selection                    | no per-page notice (maintainer decision of 2026-11-01); the site banner "Found and cross-checked by machines · How this works →" and About & method's "How this was built" cover it once                                                                                                                      |
 
 ## Self-check
 

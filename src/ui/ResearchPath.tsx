@@ -161,15 +161,12 @@ export function ResearchPath({
             onClaim={onClaim}
           />
         )}
-        <p className="path-status">
-          Written by machine · not human-reviewed or editorially accepted.
-        </p>
+        <p className="path-status">Written by machine.</p>
         <details className="path-details">
           <summary>About this reading</summary>
           <p>
-            A machine selected the records and wrote the text. No human review
-            of the selection, source paths or framing is recorded. Each
-            supporting record keeps its own review status.
+            A machine selected the records and wrote the text. Each supporting
+            record keeps its own review status.
           </p>
         </details>
         {(onDossier || onMap) && (

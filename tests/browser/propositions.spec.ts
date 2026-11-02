@@ -33,7 +33,7 @@ test('propositions page names earliest located texts, keeps dates apart and labe
   await page.getByRole('link', { name: /^Read the propositions/ }).click();
   await expect(page).toHaveURL(/\/propositions\/superintelligence$/);
   await expect(page.getByRole('heading', { level: 1 })).toHaveText(
-    'Propositions about superintelligence, 1863–2022',
+    'Propositions about superintelligence, 1863–2025',
   );
   // The scope is stated once, with the known gaps.
   const search = page.locator('.prop-search');
@@ -223,7 +223,7 @@ test('economics page names tier-1 and tier-2 earliest texts and shows conditions
     /\/propositions\/economics-of-machine-intelligence$/,
   );
   await expect(page.getByRole('heading', { level: 1 })).toHaveText(
-    'Economics of machine intelligence',
+    'Economics of machine intelligence: texts from 1952 to 2026 that state, contest or bear on its propositions',
   );
   // The scope is stated once, with the known gaps and the Finnish strand.
   const search = page.locator('.prop-search');
@@ -264,17 +264,17 @@ test('economics page names tier-1 and tier-2 earliest texts and shows conditions
       '#proposition-g09 .prop-row[data-claim-id="ec-g09-davidson-2021-explosive-economic-growth-a"]',
     ),
   ).toContainText('Estimate by Tom Davidson');
-  // M05: the earliest located text is a model scenario, dated by its revision.
+  // M05: the tier-1 headline, under re-check from 2026-11-02, moved to
+  // Hanson's model (maintainer's decision of 2026-11-02); the model
+  // scenario stays on the page as a record.
   const m05 = page.locator('#proposition-m05');
   await expect(m05.locator('.prop-headlines')).toContainText(
-    '2016-05 · wording attested 2017-06',
+    'Earliest located, tier 1Robin Hanson · Economic Growth Given Machine Intelligence',
   );
   const scenario = m05.locator(
     '.prop-row[data-claim-id="ec-m05-acemoglu-restrepo-2016-race-between-machine-and-man-a"]',
   );
-  await expect(scenario).toContainText(
-    'Articulates · Earliest located · Tier 1 · Model scenario',
-  );
+  await expect(scenario).toContainText('Articulates · Tier 1 · Model scenario');
   await expect(m05.locator('.prop-corrections')).toContainText(
     'Nordhaus (2015), headlined as earliest located.',
   );

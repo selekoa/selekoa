@@ -158,7 +158,7 @@ test('internal navigation is made of real links that open in place or in a new t
     links.map((a) => a.getAttribute('href')),
   ))
     expect(href).toMatch(
-      /^\/(propositions|documents|control|commitments|question)\//,
+      /^\/(propositions|stances|documents|control|commitments|question)\//,
     );
   // A record link in the claim panel names its page's address.
   await page.goto('/propositions/yudkowsky-arguments');

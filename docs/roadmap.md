@@ -10,7 +10,7 @@ research, serious journalism, books, policy research and historical investigatio
 Exploratory records remain distinct from human-curated interpretations; neither
 machine agreement nor presentation is editorial acceptance.
 
-Current counts are not copied here: the [README](../README.md#research-sample) carries a
+Current counts are not copied here: the [development notes](development.md#research-sample) carries a
 block generated from the stored records (`pnpm docs:coverage`), the About & method page
 computes them in the app, and each [dataset release](../release/CHANGELOG.md) records its
 own in its manifest. Meaningful institutional coverage now spans Anthropic, OpenAI,
@@ -33,7 +33,7 @@ Implemented capabilities include:
   scanning and machine-first research QA.
 
 Historical increment documents retain the counts, decisions and limits of their
-original baselines. See [README](../README.md) for commands and
+original baselines. See [development notes](development.md) for commands and
 [positioning](project-positioning.md) for product boundaries.
 
 ## Direction (agreed 2026-10-04)
@@ -249,7 +249,11 @@ and paid infrastructure require separate decisions.
 Start once every current admission is on the live site. Items 1, 2 and 3 come
 before any public mention of Selekoa.
 
-1. **Compare frameworks** (`/compare/frontier-safety-frameworks`). At 1440 px the
+**Items 1–3 done** on branch `prelaunch-interface` (2026-11-01), with the two
+further maintainer decisions of 2026-11-01 recorded under item 3 below; see
+[the review record](../review/prelaunch-interface-2026-11-01.md).
+
+1. **Done (2026-11-01).** **Compare frameworks** (`/compare/frontier-safety-frameworks`). At 1440 px the
    table is 1,848 px wide inside a 748 px column. The question column and the
    framework headers scroll away with it.
    - Give the table the page width. Keep the question column and the framework
@@ -263,7 +267,7 @@ before any public mention of Selekoa.
      and the search notes for "not found". Build it from the same data as the page,
      and add a test that the two match.
    - Optional, and last: a landscape print style.
-2. **Start page: a "Ways in" panel** directly under the search box.
+2. **Done (2026-11-01).** **Start page: a "Ways in" panel** directly under the search box.
    - It holds the "for example" questions, Compare frameworks, Browse by year, the
      map and Explore the records. It replaces the "For example" block and the
      separate year line.
@@ -276,7 +280,7 @@ before any public mention of Selekoa.
      before its last word on a laptop. Fix the size, measure or wrapping (for example
      `text-wrap: balance`) so that no line holds a single word, and check it at phone,
      laptop and desktop widths.
-3. **About, start-page wording and review status** (maintainer decision, 2026-11-01).
+3. **Done (2026-11-01).** **About, start-page wording and review status** (maintainer decision, 2026-11-01).
    This item, like items 1 and 2, comes before any public mention.
    - **Start page introduction** (it replaces the current paragraph; the title line
      stays): "Selekoa is a documentary history of machine intelligence and of human
@@ -322,6 +326,27 @@ before any public mention of Selekoa.
      - Drop human acceptance as a planned stage; editorial acceptance of single
        records is no longer a goal.
      - Earlier records and review notes keep their wording as history.
+   - **About, a final paragraph for "Why machine-first"** (maintainer's addition,
+     2026-11-01): "Selekoa does not replace library research. Most scholarly
+     literature is still in subscription databases and publisher archives
+     (Scopus, Web of Science, JSTOR and others, which now have AI tools of their
+     own), and the machines that build Selekoa cannot get behind their paywalls.
+     Selekoa uses openly available material: company and government documents,
+     archived web pages, open-access papers and preprints, forums and blogs. For
+     much of the recent history of AI, that material is the primary record. For
+     questions that depend on paywalled scholarship, Selekoa is meant to
+     complement the usual databases."
+   - **Done (maintainer decision, 2026-11-01): "How this was built" merged into
+     About** as its own section after "Why machine-first", with the maintainer's
+     text and a short account of the pipeline (pack, cross-family check,
+     adjudication, admission, review, merge) linking the operating guide in the
+     public source repository. Sentences found inaccurate against the
+     repository are reported in the review record with proposed corrections,
+     not reworded.
+   - **Done (maintainer decision, 2026-11-01): caveats trimmed on entry pages**
+     (the start page, the three hubs, Compare frameworks, Browse by year, the
+     explorer): at most one plain caveat line per section, the full wording one
+     click away. Record, claim and evidence pages keep every qualification.
 4. **Lab control timelines side by side.** Show the board, ownership and control
    changes of OpenAI, Anthropic, Google DeepMind and xAI on one shared time axis,
    from the existing control-structure records. This is design work, not new

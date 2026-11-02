@@ -15,7 +15,7 @@ test('evaluation institution records retain evidence and limits in map and dossi
   await expect(inspector).toContainText(
     'ARC Evals was incubated within ARC in 2022.',
   );
-  await expect(inspector).toContainText('Not reviewed by an editor');
+  await expect(inspector).toContainText('Machine-checked');
   await expect(inspector).toContainText('Machine-checked');
   // From a claim's page, the explorer's map draws its subject's direct
   // connections, the claim's line marked, and keeps the claim address.
@@ -45,9 +45,8 @@ test('evaluation institution records retain evidence and limits in map and dossi
     name: 'Model Evaluation & Threat Research institutional dossier',
   });
   await expect(dossier).toBeVisible();
-  await expect(dossier).toContainText('not editorially accepted');
   await expect(page.getByLabel('Dossier reading guide')).toContainText(
-    'No human review',
+    'Each claim shows its own editorial status',
   );
   await page.screenshot({
     path: testInfo.outputPath('metr-dossier.png'),
@@ -87,7 +86,7 @@ test('evaluation institution records retain evidence and limits in map and dossi
   await expect(inspector).toContainText(
     'government docket-receipt date are unknown',
   );
-  await expect(inspector).toContainText('Not reviewed by an editor');
+  await expect(inspector).toContainText('Machine-checked');
   await page.screenshot({
     path: testInfo.outputPath('closeout-bis.png'),
     fullPage: true,

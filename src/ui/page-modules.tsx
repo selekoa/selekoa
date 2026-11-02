@@ -43,6 +43,12 @@ export const pages = {
   ControlStructure: loadable(() =>
     import('./ControlStructure').then((m) => m.ControlStructure),
   ),
+  PropositionStances: loadable(() =>
+    import('./PropositionStances').then((m) => m.PropositionStances),
+  ),
+  ControlTimelines: loadable(() =>
+    import('./ControlTimelines').then((m) => m.ControlTimelines),
+  ),
   Commitments: loadable(() =>
     import('./Commitments').then((m) => m.Commitments),
   ),

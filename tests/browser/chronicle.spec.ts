@@ -89,7 +89,10 @@ test('chronicle: from the start page to a year, by topic, drawn from slices', as
   const errors = collectErrors(page);
   const seen = requests(page);
   await page.goto('/');
-  await page.getByRole('link', { name: 'Browse by year →' }).click();
+  await page
+    .getByRole('navigation', { name: 'Ways in' })
+    .getByRole('link', { name: /^Browse by year/ })
+    .click();
   await expect(page).toHaveURL(/\/years$/);
   await expect(page.getByRole('heading', { level: 1 })).toHaveText(
     'Browse by year',
@@ -123,8 +126,11 @@ test('chronicle: from the start page to a year, by topic, drawn from slices', as
     topics.getByRole('link', { name: /^All topics/ }),
   ).toHaveAttribute('aria-current', 'page');
   for (const section of await page.locator('.chronicle-topic').all()) {
+    // Each entry's own date: an interval also shows its end within the year
+    // (since 2026-11-01 one 2025 record runs from April to July), which is
+    // not its place in the order.
     const dates = await section
-      .locator('.chronicle-date time')
+      .locator('.chronicle-date > time:first-of-type')
       .allTextContents();
     expect(dates).toEqual([...dates].sort());
     for (const date of dates) expect(date.startsWith('2025')).toBe(true);
@@ -168,12 +174,10 @@ test('chronicle: reached from a hub, a claim panel and search', async ({
   for (const hub of ['/governance', '/ideas', '/institutions']) {
     await page.goto(hub);
     await expect(
-      page.getByRole('link', { name: 'Browse the records by year →' }),
+      page.getByRole('link', { name: 'Browse by year', exact: true }),
     ).toHaveAttribute('href', '/years');
   }
-  await page
-    .getByRole('link', { name: 'Browse the records by year →' })
-    .click();
+  await page.getByRole('link', { name: 'Browse by year', exact: true }).click();
   await expect(page).toHaveURL(/\/years$/);
 
   // A claim's date links to its year.

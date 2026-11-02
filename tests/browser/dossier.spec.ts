@@ -23,9 +23,9 @@ test('institution dossier connects chronology, people and exact evidence by keyb
   // commitment records (listings, an announced intent and RSP links).
   const count = dossierCount('anthropic', 156);
   await expect(dossier).toContainText(`${count} claims ·`);
-  await expect(dossier).toContainText(`${count} not editorially accepted`);
+  await expect(dossier).not.toContainText('not editorially accepted');
   await expect(page.getByLabel('Dossier reading guide')).toContainText(
-    'No human review of the selection or framing is recorded',
+    'Each claim shows its own editorial status',
   );
   await expect(dossier).toContainText('the order within it is unknown');
   await page.getByRole('button', { name: 'People & paths' }).click();

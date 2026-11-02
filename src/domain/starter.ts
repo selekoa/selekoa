@@ -30,7 +30,7 @@ const summaryBasisLabels = {
 /** Limits a reader needs before the details; the rest close the Markdown export. */
 export const keyLimits = [
   'This research starter is a starting point for checking the exact claims and original documents you rely on. It is not a finding.',
-  'A machine proposed the selection, the order and any connecting text. No human review of the selection, source paths or framing is recorded.',
+  'A machine proposed the selection, the order and any connecting text.',
 ];
 export const limits = [
   ...keyLimits,
@@ -145,8 +145,7 @@ export async function documentHistoryStarter(
     collection: {
       definition: collection,
       fingerprint: await fingerprint(collection),
-      interpretationStatus:
-        'machine-proposed; not human-reviewed or editorially accepted',
+      interpretationStatus: 'machine-proposed',
       orderedClaimIds: history.claimIds,
     },
     reviewStatus: reviewStatus(data, history.claimIds),
@@ -572,8 +571,7 @@ export async function personStarter(data: Dataset, personId: string) {
     person: {
       entityId: personId,
       projectionVersion: personProjectionVersion,
-      interpretationStatus:
-        'machine-computed projection of stored claims; not human-reviewed or editorially accepted',
+      interpretationStatus: 'machine-computed projection of stored claims',
       orderedClaimIds: profile.claimIds,
       identitySourceIds: profile.person.sourceIds,
       sections,

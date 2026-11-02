@@ -82,6 +82,14 @@ function YearsIndex({
         <p className="chronicle-selective">
           Selective: what the records hold, not a history of any year.
         </p>
+        <details className="chronicle-limits">
+          <summary>{chronicleText.indexLimitsHeading}</summary>
+          <ul>
+            {chronicleText.indexLimits.map((limit) => (
+              <li key={limit}>{limit}</li>
+            ))}
+          </ul>
+        </details>
       </header>
       {[...decades].map(([decade, years]) => (
         <section

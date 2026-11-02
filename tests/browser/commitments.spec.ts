@@ -75,7 +75,9 @@ test('commitments page shows who signed which text, SB 53 provisions and the fra
   await page.keyboard.press('Enter');
   await expect(page).toHaveURL(/inspect=cm-eu-code-declined-meta/);
   const eu = page.locator('#commitment-gpai-code-of-practice-2025');
-  await expect(eu).toContainText('Signatories (13) · stated refusals (1)');
+  await expect(eu).toContainText(
+    'Signatories (9) · announced intentions to sign (4) · stated refusals (1)',
+  );
   await expect(
     page.locator('#commitment-wh-voluntary-ai-commitments-2023-09'),
   ).toContainText('No published framework is recorded as linking itself');

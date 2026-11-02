@@ -102,7 +102,7 @@ test.describe('without JavaScript', () => {
     const inspector = page.locator('#inspector');
     await expect(inspector).toContainText(claim.statement);
     await expect(inspector).toContainText(claim.qualification);
-    await expect(inspector).toContainText('Not reviewed by an editor');
+    await expect(inspector).toContainText('Machine-checked');
     for (const id of claim.evidenceIds) {
       const evidence = data.evidence.find((e) => e.id === id)!;
       const source = data.sources.find((s) => s.id === evidence.sourceId)!;
@@ -294,7 +294,7 @@ test.describe('earlier hash addresses', () => {
     [
       '/#/propositions/superintelligence',
       '/propositions/superintelligence',
-      'Propositions about superintelligence, 1863–2022',
+      'Propositions about superintelligence, 1863–2025',
     ],
     [
       '/#/question/frameworks-to-obligations',

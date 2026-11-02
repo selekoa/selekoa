@@ -4,12 +4,12 @@ import { repository } from './repository';
 import { coverage, coverageMarkdown, withCoverage } from './coverage';
 
 const readme = readFileSync(
-  new URL('../../README.md', import.meta.url),
+  new URL('../../docs/development.md', import.meta.url),
   'utf8',
 );
 
 describe('generated coverage', () => {
-  it('keeps the README block in step with the stored records', () => {
+  it('keeps the development notes block in step with the stored records', () => {
     // Run `pnpm docs:coverage` after a data change.
     const block = coverageMarkdown(coverage(repository.data));
     expect(withCoverage(readme, block)).toBe(readme);

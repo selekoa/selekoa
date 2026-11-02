@@ -305,15 +305,15 @@ test("the search page's List link keeps the reader's choices", async ({
   await expect(order).toHaveValue('date');
 });
 
-test('the header’s “What this means” link opens How this was checked', async ({
+test('the header’s “How this works” link opens How this was built', async ({
   page,
 }) => {
   const seen = requests(page);
   await page.goto('/person/jan-leike');
   seen.mark();
-  await page.getByRole('link', { name: 'What this means →' }).click();
+  await page.getByRole('link', { name: 'How this works →' }).click();
   await expect(page).toHaveURL(/\/about$/);
-  await expect(page.locator('#about-method')).toBeFocused();
-  await expect(page.locator('#about-method')).toBeInViewport();
+  await expect(page.locator('#about-built')).toBeFocused();
+  await expect(page.locator('#about-built')).toBeInViewport();
   expect(seen.records()).toBe(false);
 });

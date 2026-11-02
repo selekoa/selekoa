@@ -29,7 +29,29 @@ import './control-commitments.css';
 const documentLabel = (d: CommitmentDocument) =>
   d.entity.shortName ?? d.entity.documentVersion?.label ?? d.entity.name;
 
+/**
+ * The signatories heading: organisations recorded as signing or listed,
+ * counted once each, apart from announced intentions to sign, which are not
+ * signatures.
+ */
+function signatoryHeading(signatories: Claim[]) {
+  const intents = signatories.filter(
+    (c) => c.attributes?.commitment?.stage === 'intent_announced',
+  );
+  const signed = new Set(
+    signatories.filter((c) => !intents.includes(c)).map((c) => c.subject),
+  );
+  const intending = new Set(intents.map((c) => c.subject));
+  return (
+    `Signatories (${signed.size})` +
+    (intending.size
+      ? ` · announced intentions to sign (${intending.size})`
+      : '')
+  );
+}
+
 /** Short cell text for one signatory or refusal record. */
+
 function cellText(claim: Claim) {
   const date = dateOf(claim) ?? 'date unknown';
   if (claim.predicate === 'declined_commitment')
@@ -210,7 +232,7 @@ function CommitmentSection({
       ) : (
         <div className="commit-block">
           <h3>
-            Signatories ({d.signatories.length})
+            {signatoryHeading(d.signatories)}
             {d.declined.length > 0 &&
               ` · stated refusals (${d.declined.length})`}
           </h3>
@@ -371,10 +393,6 @@ export function Commitments({
         <h1>{collection.title}</h1>
         <p className="landing-deck">{collection.question}</p>
         <p className="doc-intro">{collection.introduction}</p>
-        <p className="doc-status">
-          A machine selected and arranged these records. No human review of the
-          selection or framing is recorded.
-        </p>
         <div className="doc-actions">
           <ExportCommitmentsStarter
             data={repository.data}

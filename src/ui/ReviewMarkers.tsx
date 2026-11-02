@@ -19,7 +19,7 @@ export function reviewExceptions(claim: Claim, repository: Repository) {
 
 /**
  * A claim's review status in plain words, for the Evidence Inspector. The
- * default state reads “Machine-checked, not reviewed by an editor”.
+ * default state (editorial state `seed`) reads “Machine-checked”.
  */
 export function reviewLabel(claim: Claim, repository: Repository) {
   const reviewed = claim.evidenceIds.some(
@@ -30,8 +30,8 @@ export function reviewLabel(claim: Claim, repository: Repository) {
       ? 'Editorially accepted · human-reviewed evidence'
       : 'Editorially accepted';
   return reviewed
-    ? 'Not editorially accepted · human-reviewed evidence'
-    : 'Machine-checked, not reviewed by an editor';
+    ? 'Machine-checked · human-reviewed evidence'
+    : 'Machine-checked';
 }
 
 export function ReviewMarkers({

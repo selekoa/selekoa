@@ -99,6 +99,7 @@ test('a comparison edition chosen before the records load applies with them', as
   const errors: string[] = [];
   page.on('pageerror', (e) => errors.push(String(e)));
   await page.goto('/compare/frontier-safety-frameworks');
+  await page.getByRole('button', { name: /^Choose editions/ }).click();
   await page
     .getByRole('combobox', { name: /Anthropic · Responsible Scaling Policy/ })
     .selectOption('rsp-2023');

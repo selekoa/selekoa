@@ -7,7 +7,7 @@ import { documentHistory } from './document-history';
 import { controlStructure } from './control-structures';
 import { commitmentsView } from './commitments';
 import { institutionalDossier } from './dossier';
-import { peopleIndex } from './people-index';
+import { listPerson, peopleIndex } from './people-index';
 import { researchPaths } from './research-path';
 import { frontierSafetyFrameworks } from '../reading/frontier-safety-frameworks';
 import { controlStructures } from '../reading/control-structures';
@@ -215,7 +215,14 @@ export function landingSummary(data: Dataset) {
     },
     dossiers: landingDossiers(data),
     china: chinaScope(data),
-    people: peopleIndex(data),
+    // Every page holds this summary, so the people index carries only what
+    // the A–Z list shows: the name and its link. The family-name sort order
+    // is already in the grouping, and a person whose identifier is the
+    // name's slug is listed by name alone (2026-11-01, page budgets).
+    people: peopleIndex(data).map((group) => ({
+      letter: group.letter,
+      people: group.people.map(listPerson),
+    })),
     coverage: {
       claims: data.claims.length,
       entities: data.entities.length,

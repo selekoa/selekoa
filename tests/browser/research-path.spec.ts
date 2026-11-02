@@ -39,7 +39,7 @@ async function enter(page: Page) {
   return page.getByRole('article', { name: 'Anthropic guided research path' });
 }
 
-test('principal reading groups seven founders and two leaders; optional branches retain exact evidence and bookmarks', async ({
+test('principal reading groups eight founders and two leaders; optional branches retain exact evidence and bookmarks', async ({
   page,
 }) => {
   const errors: string[] = [];
@@ -49,9 +49,9 @@ test('principal reading groups seven founders and two leaders; optional branches
   });
   const reader = await enter(page);
   await expect(reader).toContainText(
-    '9 main claims · 11 optional context records',
+    '10 main claims · 11 optional context records',
   );
-  await expect(reader.locator('.path-record')).toHaveCount(9);
+  await expect(reader.locator('.path-record')).toHaveCount(10);
   await expect(
     reader.locator('.path-record').first().locator(':scope > :first-child'),
   ).toHaveText('Dario Amodei co-founded Anthropic in 2021.');
@@ -64,17 +64,14 @@ test('principal reading groups seven founders and two leaders; optional branches
     reader
       .getByRole('region', { name: 'Founding participation', exact: true })
       .locator('.path-record'),
-  ).toHaveCount(7);
+  ).toHaveCount(8);
   await expect(
     reader
       .getByRole('region', { name: 'Early leadership', exact: true })
       .locator('.path-record'),
   ).toHaveCount(2);
   await expect(
-    reader.getByText(
-      'Written by machine · not human-reviewed or editorially accepted.',
-      { exact: true },
-    ),
+    reader.getByText('Written by machine.', { exact: true }),
   ).toBeVisible();
   const inspector = page.getByRole('complementary', {
     name: 'Evidence inspector',
@@ -160,7 +157,7 @@ test('principal reading groups seven founders and two leaders; optional branches
     .click();
   await expect(founder).toHaveAttribute('data-bookmarked', 'true');
   await expect(founder.locator('h4')).toBeFocused();
-  await expect(reader.locator('.path-record')).toHaveCount(9);
+  await expect(reader.locator('.path-record')).toHaveCount(10);
   expect(errors).toEqual([]);
 });
 

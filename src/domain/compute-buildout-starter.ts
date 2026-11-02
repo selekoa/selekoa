@@ -43,8 +43,7 @@ export async function computeBuildoutStarter(
     computeBuildout: {
       definition: collection,
       fingerprint: await fingerprint(collection),
-      interpretationStatus:
-        'machine-proposed; not human-reviewed or editorially accepted',
+      interpretationStatus: 'machine-proposed',
       orderedClaimIds: view.claimIds,
       timeline: view.timeline.map((r) => ({
         claimId: r.claim.id,

@@ -35,7 +35,7 @@ for (const theme of ['light', 'dark']) {
           index < 2 ? 'reported performed' : 'announced',
         );
         await expect(inspector).toContainText('Machine-checked');
-        await expect(inspector).toContainText('Not reviewed by an editor');
+        await expect(inspector).toContainText('Machine-checked');
         if (index < 2)
           await expect(inspector).toContainText('Evaluated system');
         else await expect(inspector).toContainText('Transition scope');
@@ -75,7 +75,6 @@ for (const theme of ['light', 'dark']) {
         });
         await claim.click();
         await expect(inspector).toContainText('Activity stage');
-        await expect(dossier).toContainText('not editorially accepted');
         await page.screenshot({
           path: testInfo.outputPath(entityId + '-dossier.png'),
           fullPage: true,

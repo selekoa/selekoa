@@ -213,8 +213,7 @@ export function PersonPage({
         </p>
         <p className="doc-status">
           Computed from stored claims by fixed rules. The page adds no
-          connecting text and infers no moves between roles. No human review of
-          the selection is recorded.
+          connecting text and infers no moves between roles.
         </p>
         <div className="doc-actions">
           <ExportPersonStarter data={repository.data} personId={person.id} />

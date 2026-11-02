@@ -6,6 +6,7 @@ import type {
   Engagement,
   Entity,
   Evidence,
+  RecheckHeadline,
   Register,
   Source,
   ThoughtRole,
@@ -143,6 +144,14 @@ export const registerLabels: Record<Register, string> = {
   dream: 'Framed as a dream',
   relay: 'Relay of another author',
 };
+
+/**
+ * Schema 2.28: the date a headline was put under re-check, or null. A record
+ * that holds the role again takes precedence on the page.
+ */
+const recheckedSince = (entity: Entity, headline: RecheckHeadline) =>
+  entity.proposition?.underRecheck?.find((r) => r.headline === headline)
+    ?.recordedAt ?? null;
 
 const stanceOf = (claim: Claim) =>
   propositionStances[claim.predicate as keyof typeof propositionStances];
@@ -347,12 +356,20 @@ export function propositionsView<C extends PropositionsFrame>(
           entity.proposition.withheld?.find(
             (w) => w.role === 'earliest-located-tier-2',
           )?.reason ?? null,
+        // Schema 2.28: the date from which a headline is under re-check.
+        recheck: {
+          earliest: recheckedSince(entity, 'earliest-located'),
+          contest: recheckedSince(entity, 'earliest-located-contesting'),
+          term: recheckedSince(entity, 'earliest-located-term'),
+        },
         openPremises: text.openPremises?.[id] ?? [],
         related: (text.related?.[id] ?? []).flatMap((r) => {
           const other = entities.get(r.propositionId);
           return other?.proposition ? [{ ...r, entity: other }] : [];
         }),
         earliestTerm: withRole('earliest-located-term'),
+        // Schema 2.29: no name headline, by a recorded decision.
+        termDropped: !!entity.proposition.noTermHeadline,
         mostDeveloped: withRole('most-developed'),
         corrections: (text.corrections ?? []).filter(
           (c) => c.propositionId === id,

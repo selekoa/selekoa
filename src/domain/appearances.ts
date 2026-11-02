@@ -17,6 +17,7 @@ import { comparisonView } from './framework-comparison';
 /** Where a collection page opens, in the start page's terms. */
 export type CollectionTarget =
   | { kind: 'propositions'; id: string }
+  | { kind: 'stances'; id: string; authors: string[] }
   | { kind: 'documents' }
   | { kind: 'compare'; id: string }
   | { kind: 'control'; id: string }

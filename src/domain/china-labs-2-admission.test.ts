@@ -82,9 +82,20 @@ describe('the second Chinese institutions collection (admitted 2026-10-27)', () 
   });
 
   it('maps each listed legal entity to its group entity by alias (decision 5)', () => {
+    // The audit follow-ups of 2026-11-02 (PA-24) re-pointed the SenseTime and
+    // Tencent listings to the legal entities and removed the aliases.
+    const repointed: Record<string, string> = {
+      'c2-governance-aiia-aisc-signatory-sensetime': 'shanghai-sensetime',
+      'c2-governance-aiia-aisc-signatory-tencent':
+        'shenzhen-tencent-computer-systems',
+    };
     for (const c of admitted.filter(
       (c) => c.predicate === 'signed_commitment',
     )) {
+      if (repointed[c.id]) {
+        expect(c.subject).toBe(repointed[c.id]);
+        continue;
+      }
       const legal = c.statement.match(/, as ([^,]+),/)![1];
       expect(repository.entities.get(c.subject)!.aliases).toContain(legal);
       expect(c.qualification).toContain(legal);

@@ -1,0 +1,35 @@
+# Selekoa dataset v0.25.0 (2026-11-02)
+
+Compared with v0.24.2. A changed record is one whose released JSON differs in any field.
+
+| Record type | Added | Changed | Removed | In this release |
+| --- | ---: | ---: | ---: | ---: |
+| Entities | 0 | 34 | 0 | 2,129 |
+| Claims | 31 | 0 | 0 | 5,816 |
+| Evidence | 36 | 0 | 0 | 7,934 |
+| Sources | 0 | 0 | 0 | 2,008 |
+| Collections | 0 | 7 | 0 | 15 |
+
+## Added
+
+### Claims (31)
+
+`ab-arg-d1-gpt4-card-articulates`, `ab-arg-d6-sandbrink-articulates`, `ec-m05-hanson-economic-growth-given-machine-intelligence-a`, `ec-m09-hanson-economic-growth-given-machine-intelligence-a`, `ht-w07-bostrom-2012-superintelligent-will`, `ht-w07-clemmensen-1996-si-that-ate-chicago`, `ht-w08-yudkowsky-1996-staring-into-the-singularity`, `ht-w09-lanier-2000-one-half-a-manifesto`, `rd-r01-yudkowsky-1996-survival-ethic`, `rd-r02-clemmensen-1996-si-that-ate-chicago`, `rd-r02-yudkowsky-1996-survival-ethic`, `rd-r03-rlo-2019-introduction`, `rd-r06-yudkowsky-1996-survival-ethic`, `rd-r08-clemmensen-1996-thinking-about-the-future`, `rd-r08-yudkowsky-1996-survival-ethic`, `rd-r10a-clemmensen-1996-thinking-about-the-future`, `rd-r10a-yudkowsky-1996-survival-ethic`, `rd-r10b-davis-2014-ethical-guidelines-superintelligence`, `rd-r10b-vinge-1993-coming-technological-singularity`, `rd-r11-bostrom-2002-existential-risks`, `rd-r16-hanson-2008-setting-the-stage`, `rd-r16-yudkowsky-2001-event-horizon`, `rd-r17-hanson-2008-friendly-projects-vs-products`, `rd-r17-vinge-1993-coming-technological-singularity`, `ts-c1-weizenbaum-1966`, `yk-y04-extropians-1996-12-08-yudkowsky-3761-c`, `yk-y11-extropians-1998-09-07-yudkowsky-2209-c`, `yk-y12-extropians-1996-12-31-yudkowsky-5142-c`, `yk-y18-extropians-1998-09-07-yudkowsky-2171-c`, `yk-y27-extropians-2000-09-05-yudkowsky-4277-c`, `yk-y30-extropians-1999-08-01-yudkowsky-1386-c`
+
+### Evidence (36)
+
+`evidence-ab-arg-d1-gpt4-card-articulates-1`, `evidence-ab-arg-d1-gpt4-card-articulates-2`, `evidence-ab-arg-d6-sandbrink-articulates-1`, `evidence-ec-m05-hanson-economic-growth-given-machine-intelligence-a-1`, `evidence-ec-m05-hanson-economic-growth-given-machine-intelligence-a-2`, `evidence-ec-m09-hanson-economic-growth-given-machine-intelligence-a-1`, `evidence-ht-w07-bostrom-2012-superintelligent-will-1`, `evidence-ht-w07-bostrom-2012-superintelligent-will-2`, `evidence-ht-w07-clemmensen-1996-si-that-ate-chicago-1`, `evidence-ht-w08-yudkowsky-1996-staring-into-the-singularity-1`, `evidence-ht-w09-lanier-2000-one-half-a-manifesto-1`, `evidence-rd-r01-yudkowsky-1996-survival-ethic-1`, `evidence-rd-r02-clemmensen-1996-si-that-ate-chicago-1`, `evidence-rd-r02-yudkowsky-1996-survival-ethic-1`, `evidence-rd-r03-rlo-2019-introduction-1`, `evidence-rd-r06-yudkowsky-1996-survival-ethic-1`, `evidence-rd-r08-clemmensen-1996-thinking-about-the-future-1`, `evidence-rd-r08-yudkowsky-1996-survival-ethic-1`, `evidence-rd-r10a-clemmensen-1996-thinking-about-the-future-1`, `evidence-rd-r10a-yudkowsky-1996-survival-ethic-1`, `evidence-rd-r10b-davis-2014-ethical-guidelines-superintelligence-1`, `evidence-rd-r10b-vinge-1993-coming-technological-singularity-1`, `evidence-rd-r11-bostrom-2002-existential-risks-1`, `evidence-rd-r16-hanson-2008-setting-the-stage-1`, `evidence-rd-r16-yudkowsky-2001-event-horizon-1`, `evidence-rd-r17-hanson-2008-friendly-projects-vs-products-1`, `evidence-rd-r17-vinge-1993-coming-technological-singularity-1`, `evidence-ts-c1-weizenbaum-1966-1`, `evidence-ts-c1-weizenbaum-1966-2`, `evidence-yk-y04-extropians-1996-12-08-yudkowsky-3761-c-1`, `evidence-yk-y11-extropians-1998-09-07-yudkowsky-2209-c-1`, `evidence-yk-y12-extropians-1996-12-31-yudkowsky-5142-c-1`, `evidence-yk-y18-extropians-1998-09-07-yudkowsky-2171-c-1`, `evidence-yk-y27-extropians-2000-09-05-yudkowsky-4277-c-1`, `evidence-yk-y30-extropians-1999-08-01-yudkowsky-1386-c-1`, `evidence-yk-y30-extropians-1999-08-01-yudkowsky-1386-c-2`
+
+## Changed
+
+### Entities (34)
+
+`ab-prop-current-system-uplift`, `ab-prop-open-weights-bio-risk`, `accelerate-machine-intelligence`, `ai-extinction-risk`, `aib-prop-ai-virtual-cell`, `aib-prop-predicted-structures-aid-drug-design`, `alignment-is-hard`, `behavioural-tests-as-evidence`, `benevolence-or-no-drive-to-dominate`, `capabilities-plateau`, `control-by-design`, `cosmic-process`, `default-outcome-good`, `earth-not-worth-taking`, `evaluations-catch-danger`, `experiment-and-see`, `gradual-takeoff`, `incentives-produce-safety`, `inner-or-deceptive-misalignment`, `instrumental-convergence`, `intelligence-as-own-end`, `llms-lack-agency`, `loss-of-control-route`, `machine-succession`, `machines-cheaper-at-every-task`, `mind-transfer`, `misuse-route`, `open-models-reduce-risk`, `orthogonality`, `present-harms-priority`, `recent-economics-engagement-with-ai`, `risk-claims-speculative`, `short-instruction-suffices`, `slow-takeoff-time-to-adjust`
+
+### Collections (7)
+
+`propositions/ai-bio-arguments`, `propositions/ai-in-science`, `propositions/economics-of-machine-intelligence`, `propositions/machine-succession`, `propositions/risk-debate`, `propositions/superintelligence`, `propositions/yudkowsky-arguments`
+
+## Removed
+
+None.

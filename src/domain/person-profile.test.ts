@@ -75,9 +75,12 @@ describe('person profile projection', () => {
     expect(profile.works.filter((w) => !w.id.startsWith('kp-'))).toHaveLength(
       3,
     );
+    // From 2026-11-02 the departure is dated by his post of 15 May 2024 and
+    // also rests on his thread of 17 May, a later source (PA-49).
     expect(profile.gaps.map((g) => g.id)).toEqual([
       'snapshots',
       'undated',
+      'retrospective',
       'unknown-publication',
       'no-end-or-departure',
     ]);

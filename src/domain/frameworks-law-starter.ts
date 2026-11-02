@@ -51,8 +51,7 @@ export async function frameworksLawStarter(
     frameworksLaw: {
       definition: collection,
       fingerprint: await fingerprint(collection),
-      interpretationStatus:
-        'machine-proposed; not human-reviewed or editorially accepted',
+      interpretationStatus: 'machine-proposed',
       orderedClaimIds: view.claimIds,
       timeline: view.timeline.map((r) => ({
         date: r.date,

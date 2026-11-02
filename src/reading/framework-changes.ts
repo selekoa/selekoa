@@ -71,6 +71,6 @@ export const frameworkChanges: FrameworkChangesCollection = {
     'The page reads the comparison’s cells and compares them. It adds no record, and it gives no reason for any difference.',
     'A status records what an edition’s text states. It is not evidence of implementation, compliance or effectiveness, and a shared question does not make two editions’ provisions equivalent.',
     '“Earliest located” names the earliest compared edition of a framework whose cell records a passage on the question. The developer may have said the same thing earlier elsewhere, and a later edition may record no passage.',
-    'Passages were selected, checked and placed under each question by machine, and checked by a reviewer from a different model family. No editor has reviewed the records, the selection or the framing.',
+    'Passages were selected, checked and placed under each question by machine, and checked by a reviewer from a different model family.',
   ],
 };

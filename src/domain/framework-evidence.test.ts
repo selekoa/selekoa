@@ -144,7 +144,12 @@ describe('schema 2.7 source language and archive captures', () => {
       'source-cn-zhipu-education',
       'source-cn-zhipu-profile',
     ]);
-    expect(byTag('fr')).toEqual(['source-xm-fair-paris']);
+    // The 2026-11-01 lab genealogy 2 admission adds Next's French report on
+    // David Luan's departure.
+    expect(byTag('fr')).toEqual([
+      'lg2-src-nextink-luan-2026',
+      'source-xm-fair-paris',
+    ]);
     // Earlier free-text language notes agree with the structured tag.
     for (const s of data.sources) {
       const noted = s.version.match(/Source language: [^(]+\(([^)]+)\)/)?.[1];

@@ -37,7 +37,7 @@ it('shows inference, dispute, rationale and review independently in the Inspecto
     'Contested',
     claim.inferenceRationale,
     'Counterevidence: secondary',
-    'An exploratory record that no editor has accepted',
+    'no person accepted it individually',
     'Machine-checked',
   ])
     expect(html).toContain(text);
@@ -69,10 +69,11 @@ it('labels each claim’s review status in plain words, never “Seed”', () =>
     html.indexOf('class="status-line"'),
     html.indexOf('aria-label="Evidence coverage"'),
   );
-  expect(statusLine).toContain('Machine-checked, not reviewed by an editor');
+  expect(statusLine).toContain('Machine-checked');
+  expect(statusLine).not.toMatch(/not reviewed|editor/i);
   expect(statusLine).not.toContain('Seed');
   const details = html.slice(html.indexOf('class="semantics"'));
-  expect(details).toContain('Not reviewed by an editor');
+  expect(details).toContain('Machine-checked</span>');
   expect(details).not.toContain('Seed');
   const accepted = repository.data.claims.find(
     (c) => c.editorialState === 'accepted',

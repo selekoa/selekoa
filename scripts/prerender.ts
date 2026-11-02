@@ -394,6 +394,11 @@ export async function prerender({
     sliceBytes += json.length;
     writeFileSync(file, json);
   }
+  for (const file of render.pageFiles(config.baseUrl)) {
+    const target = path.join(dist, file.path.slice(1));
+    mkdirSync(path.dirname(target), { recursive: true });
+    writeFileSync(target, file.text);
+  }
   writeFileSync(
     path.join(dist, '404.html'),
     await render.renderNotFound(template),

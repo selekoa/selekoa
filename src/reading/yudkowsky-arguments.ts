@@ -1,6 +1,15 @@
 import type { PropositionsCollection } from '../domain/propositions';
 import { yudkowskyArgumentsFrame as frame } from './proposition-frames';
 
+/** The maintainer's decisions of 2026-11-02 on the earliest-located re-check (decisions 1 to 4). */
+const recheckDecisions = '2026-11-02';
+
+/** The interim withdrawal of 2026-11-02: headlines the cross-family re-check marks move or undecidable. */
+const recheckWithdrawn = '2026-11-02';
+
+/** The maintainer's decision on the pre-launch audit (PA-01, PA-02). */
+const withdrawn = '2026-11-02';
+
 export const yudkowskyArguments: PropositionsCollection = {
   id: frame.id,
   version: frame.version,
@@ -36,7 +45,7 @@ export const yudkowskyArguments: PropositionsCollection = {
       'Every quotation was compared with the retrieved text. Quotations from LessWrong posts edited after posting were also compared with the version stored on the day of posting.',
       'A passage engages a premise when its paragraph, message or dialogue turn gives a reason against that premise. A passage that states the contrary conclusion without such a reason is recorded as stating the contrary. This message-level rule is a maintainer decision of 2026-10-08.',
       'Wording known only from MIRI’s later reprints was compared on 2026-10-08 with the 2001 web edition of Creating Friendly AI and the 2006 draft of the Global Catastrophic Risks chapter. Where the same wording was found, the record is dated by that copy. Otherwise it says that its wording is known only from a later copy, and it cannot be the earliest located text.',
-      'Fresh-context machine audits by Claude Opus 5.5 models re-read every passage. A check by an OpenAI GPT-6 model re-examined 94 sampled passages and 13 comparison passages, and a correction pass settled each of its findings. No person has reviewed the records.',
+      'Fresh-context machine audits by Claude Opus 5.5 models re-read every passage. A check by an OpenAI GPT-6 model re-examined 94 sampled passages and 13 comparison passages, and a correction pass settled each of its findings.',
       'Quotations are at most 50 words. Nine were shortened or replaced by paraphrases because the dataset already quotes the same sources, and together the quotations would exceed the limit per document.',
     ],
     gaps: [
@@ -51,15 +60,196 @@ export const yudkowskyArguments: PropositionsCollection = {
     corrections:
       'A text of his found later that is earlier than an earliest located text becomes the new earliest located text, and the earlier headline stays on record as a correction.',
   },
-  corrections: [],
+  corrections: [
+    {
+      propositionId: 'build-superintelligence-fast',
+      replaced:
+        'His SL4 message of 13 November 2000, headlined as the earliest located text that contests the proposition.',
+      reason:
+        'Withdrawn on 2026-11-02 by the maintainer’s decision on the pre-launch audit (PA-02), pending a cross-family re-check; no record holds the headline meanwhile. The record’s own qualification says the message rejects automatic goodness, not speed: in the next paragraph he is still “devoting my life to making the Singularity happen earlier”.',
+      claimIds: ['yk-y22-sl4-2000-11-13-yudkowsky-0011-0181-c'],
+      recordedAt: withdrawn,
+    },
+    {
+      propositionId: 'short-instruction-suffices',
+      replaced:
+        'Yudkowsky, Extropians message of 1998-12-06 (2153), headlined as the earliest located text that contests the proposition.',
+      reason:
+        'Withdrawn on 2026-11-02 by the maintainer’s decision to withdraw every headline the cross-family re-check proposes to move or could not decide, pending adjudication; no record holds the headline meanwhile. The re-check proposes an earlier text the dataset holds: The author’s December 8, 1996 reply already rejects imprinting compact Three Laws as sufficient safe instructions, explaining that they could backfire. This meets the general short-goal criterion before the 1998 human-survival example.',
+      claimIds: ['yk-y04-extropians-1998-12-06-yudkowsky-2153-c'],
+      recordedAt: recheckWithdrawn,
+    },
+    {
+      propositionId: 'feedback-instils-values',
+      replaced:
+        'Yudkowsky, Extropians message of 1999-08-04 (1587), headlined as the earliest located text that contests the proposition.',
+      reason:
+        'Withdrawn on 2026-11-02 by the maintainer’s decision to withdraw every headline the cross-family re-check proposes to move or could not decide, pending adjudication; no record holds the headline meanwhile. The re-check proposes an earlier text the dataset holds: The same-day message 1589 already states that parenting depends on human emotions absent in AI. Its sent header is 18:47:55 -0500, fifteen seconds before 1587 at 18:48:10; receipt order agrees.',
+      claimIds: ['yk-y05-extropians-1999-08-04-yudkowsky-1587-c'],
+      recordedAt: recheckWithdrawn,
+    },
+    {
+      propositionId: 'slow-takeoff-time-to-adjust',
+      replaced:
+        'Yudkowsky, Extropians message of 1998-09-08 (2235), headlined as the earliest located text that contests the proposition.',
+      reason:
+        'Withdrawn on 2026-11-02 by the maintainer’s decision to withdraw every headline the cross-family re-check proposes to move or could not decide, pending adjudication; no record holds the headline meanwhile. The re-check proposes an earlier text the dataset holds: The September 7 message already contrasts a bottleneck and sharp upward snap with steady increase, passing human intelligence rapidly and reaching infrastructure capability. It explicitly opposes gradual-visible gains one day before the September 8 headline; no precise hours-to-months claim is needed for this different criterion.',
+      claimIds: ['yk-y11-extropians-1998-09-08-yudkowsky-2235-c'],
+      recordedAt: recheckWithdrawn,
+    },
+    {
+      propositionId: 'evaluations-catch-danger',
+      replaced:
+        'Yudkowsky, Creating Friendly AI (2001), headlined as the earliest located text that contests the proposition.',
+      reason:
+        'Withdrawn on 2026-11-02 by the maintainer’s decision to withdraw every headline the cross-family re-check proposes to move or could not decide, pending adjudication; no record holds the headline meanwhile. The re-check proposes an earlier text the dataset holds: The December 31, 1996 own confinement reply already says an evil system can lie convincingly to gain release, explicitly challenging the inference from safe-looking assessed behavior. It precedes the 2001 flight-recorder passage, whose wording is attested June 17.',
+      claimIds: ['yk-y12-creating-friendly-ai-2001-c'],
+      recordedAt: recheckWithdrawn,
+    },
+    {
+      propositionId: 'agi-decades-away',
+      replaced:
+        '“Artificial Intelligence as a Positive and Negative Factor in Global Risk” (2006), headlined as the earliest located text that contests the proposition.',
+      reason:
+        'Withdrawn on 2026-11-02 by the maintainer’s decision to withdraw every headline the cross-family re-check proposes to move or could not decide, pending adjudication; no record holds the headline meanwhile. The re-check proposes an earlier text the dataset holds: The held essay explicitly rejects a secure decades-long lower bound and waiting. Its December 4, 2000 capture precedes the 2006 draft and July 2006 capture, even though the inspected wording cannot be backdated to the essay’s 1996 creation. This contests the timeline-certainty premise; its positive Singularity strategy is distinct.',
+      claimIds: ['yk-y13-ai-positive-negative-factor-global-risk-c'],
+      recordedAt: recheckWithdrawn,
+    },
+    {
+      propositionId: 'earth-not-worth-taking',
+      replaced:
+        'Yudkowsky, Extropians message of 1999-08-25 (2783), headlined as the earliest located text that contests the proposition.',
+      reason:
+        'Withdrawn on 2026-11-02 by the maintainer’s decision to withdraw every headline the cross-family re-check proposes to move or could not decide, pending adjudication; no record holds the headline meanwhile. The re-check proposes an earlier text the dataset holds: The September 7, 1998 own spare-atoms argument already gives an alternative use of human matter as a reason for erasing humanity without threat or hostility. It contests the premise that preserving humans is automatically costless or uninteresting to a superior mind, before the August 1999 atoms reply.',
+      claimIds: ['yk-y18-extropians-1999-08-25-yudkowsky-2783-c'],
+      recordedAt: recheckWithdrawn,
+    },
+    {
+      propositionId: 'interpretability-reads-its-mind',
+      replaced:
+        'Yudkowsky, SL4 message of 2003-05-22 (6783), headlined as the earliest located text that contests the proposition.',
+      reason:
+        'Withdrawn on 2026-11-02 by the maintainer’s decision to withdraw every headline the cross-family re-check proposes to move or could not decide, pending adjudication; no record holds the headline meanwhile. The re-check proposes an earlier text the dataset holds: The original seed chapter already states that a poor recorder only works if an obscuring intention is visible, recognizable and recorded before obscuration. These are explicit limits on reading thought from records, before the May 2003 stronger warning about nonautomatic detection.',
+      claimIds: ['yk-y25-sl4-2003-05-22-yudkowsky-0305-6783-c'],
+      recordedAt: recheckWithdrawn,
+    },
+    {
+      propositionId: 'experiment-and-see',
+      replaced:
+        'Yudkowsky, SL4 message of 2000-09-17 (0092), headlined as the earliest located text that contests the proposition.',
+      reason:
+        'Withdrawn on 2026-11-02 by the maintainer’s decision to withdraw every headline the cross-family re-check proposes to move or could not decide, pending adjudication; no record holds the headline meanwhile. The re-check proposes an earlier text the dataset holds: The September 5 own reply already rejects trying a superintelligence and putting it down afterward: the decision must occur before it becomes superintelligent. This contests learning from a dangerous frontier failure before the September 17 get-it-right argument.',
+      claimIds: ['yk-y27-sl4-2000-09-17-yudkowsky-0009-0092-c'],
+      recordedAt: recheckWithdrawn,
+    },
+    {
+      propositionId: 'developers-know-what-they-are-doing',
+      replaced:
+        'Yudkowsky, Creating Friendly AI (2001), headlined as earliest located.',
+      reason:
+        'Withdrawn on 2026-11-02 by the maintainer’s decision to withdraw every headline the cross-family re-check proposes to move or could not decide, pending adjudication; no record holds the headline meanwhile. The re-check proposes an earlier text the dataset holds: The September 29, 2000 own reply already gives a project’s developers’ understanding and sustained Friendliness work as reasons to defer to their safety judgment. It predates the policy chapter attested June 17, 2001.',
+      claimIds: ['yk-y28-creating-friendly-ai-2001-a'],
+      recordedAt: recheckWithdrawn,
+    },
+    {
+      propositionId: 'developers-know-what-they-are-doing',
+      replaced:
+        'Yudkowsky, SL4 message of 2001-08-01 (2031), headlined as the earliest located text that contests the proposition.',
+      reason:
+        'Withdrawn on 2026-11-02 by the maintainer’s decision to withdraw every headline the cross-family re-check proposes to move or could not decide, pending adjudication; no record holds the headline meanwhile. The re-check proposes an earlier text the dataset holds: The April 12, 2001 own closed-source explanation already says a competitor could outrun the main project merely with additional computation, creating Friendliness risk. This explicitly separates the leading project from superior safety competence before the August message.',
+      claimIds: ['yk-y28-sl4-2001-08-01-yudkowsky-0108-2031-c'],
+      recordedAt: recheckWithdrawn,
+    },
+    {
+      propositionId: 'default-outcome-good',
+      replaced:
+        'Yudkowsky, SL4 message of 2000-11-13 (0181), headlined as the earliest located text that contests the proposition.',
+      reason:
+        'Withdrawn on 2026-11-02 by the maintainer’s decision to withdraw every headline the cross-family re-check proposes to move or could not decide, pending adjudication; no record holds the headline meanwhile. The re-check proposes an earlier text the dataset holds: The August 1, 1999 own reply already withdraws assured benevolence and gives uncertain survival odds around a coin flip. It contests the default-good expectation earlier than the explicit November 2000 retrospective explanation; the earlier posting dates its own argument rather than the belief’s unrecorded onset.',
+      claimIds: ['yk-y30-sl4-2000-11-13-yudkowsky-0011-0181-c'],
+      recordedAt: recheckWithdrawn,
+    },
+    {
+      propositionId: 'short-instruction-suffices',
+      replaced:
+        'No earliest located contesting headline: under re-check from 2026-11-02. Before that, his message of 6 December 1998 was headlined.',
+      reason:
+        'Moved on 2026-11-02 to his message of 8 December 1996, by the maintainer’s decision on the cross-family re-check (role 80). The text contests the proposition and is dated before his message of 6 December 1998. The record was admitted on this proposition with a passage matched against the held text.',
+      claimIds: [
+        'yk-y04-extropians-1996-12-08-yudkowsky-3761-c',
+        'yk-y04-extropians-1998-12-06-yudkowsky-2153-c',
+      ],
+      recordedAt: recheckDecisions,
+    },
+    {
+      propositionId: 'slow-takeoff-time-to-adjust',
+      replaced:
+        'No earliest located contesting headline: under re-check from 2026-11-02. Before that, his message of 8 September 1998 was headlined.',
+      reason:
+        'Moved on 2026-11-02 to his message of 7 September 1998, by the maintainer’s decision on the cross-family re-check (role 87). The text contests the proposition and is dated before his message of 8 September 1998. The record was admitted on this proposition with a passage matched against the held text.',
+      claimIds: [
+        'yk-y11-extropians-1998-09-07-yudkowsky-2209-c',
+        'yk-y11-extropians-1998-09-08-yudkowsky-2235-c',
+      ],
+      recordedAt: recheckDecisions,
+    },
+    {
+      propositionId: 'evaluations-catch-danger',
+      replaced:
+        'No earliest located contesting headline: under re-check from 2026-11-02. Before that, Creating Friendly AI (2001; wording attested 17 June 2001) was headlined.',
+      reason:
+        'Moved on 2026-11-02 to his message of 31 December 1996, by the maintainer’s decision on the cross-family re-check (role 88). The text contests the proposition and is dated before Creating Friendly AI. The record was admitted on this proposition with a passage matched against the held text.',
+      claimIds: [
+        'yk-y12-extropians-1996-12-31-yudkowsky-5142-c',
+        'yk-y12-creating-friendly-ai-2001-c',
+      ],
+      recordedAt: recheckDecisions,
+    },
+    {
+      propositionId: 'earth-not-worth-taking',
+      replaced:
+        'No earliest located contesting headline: under re-check from 2026-11-02. Before that, his message of 25 August 1999 was headlined.',
+      reason:
+        'Moved on 2026-11-02 to his message of 7 September 1998, by the maintainer’s decision on the cross-family re-check (role 94). The text contests the proposition and is dated before his message of 25 August 1999. The record was admitted on this proposition with a passage matched against the held text.',
+      claimIds: [
+        'yk-y18-extropians-1998-09-07-yudkowsky-2171-c',
+        'yk-y18-extropians-1999-08-25-yudkowsky-2783-c',
+      ],
+      recordedAt: recheckDecisions,
+    },
+    {
+      propositionId: 'experiment-and-see',
+      replaced:
+        'No earliest located contesting headline: under re-check from 2026-11-02. Before that, his SL4 message of 17 September 2000 was headlined.',
+      reason:
+        'Moved on 2026-11-02 to his Extropians message of 5 September 2000, by the maintainer’s decision on the cross-family re-check (role 104). The text contests the proposition and is dated before his SL4 message of 17 September 2000. The record was admitted on this proposition with a passage matched against the held text.',
+      claimIds: [
+        'yk-y27-extropians-2000-09-05-yudkowsky-4277-c',
+        'yk-y27-sl4-2000-09-17-yudkowsky-0009-0092-c',
+      ],
+      recordedAt: recheckDecisions,
+    },
+    {
+      propositionId: 'default-outcome-good',
+      replaced:
+        'No earliest located contesting headline: under re-check from 2026-11-02. Before that, his SL4 message of 13 November 2000 was headlined.',
+      reason:
+        'Moved on 2026-11-02 to his Extropians message of 1 August 1999, by the maintainer’s decision on the cross-family re-check (role 108). The text contests the proposition and is dated before his SL4 message of 13 November 2000. The record was admitted on this proposition with a passage matched against the held text.',
+      claimIds: [
+        'yk-y30-extropians-1999-08-01-yudkowsky-1386-c',
+        'yk-y30-sl4-2000-11-13-yudkowsky-0011-0181-c',
+      ],
+      recordedAt: recheckDecisions,
+    },
+  ],
   limits: [
     '“Earliest located” means the earliest of his texts that the searches described under “How we searched” found. It is not a claim of first use.',
     'A record documents what a text says, in its register. It is not evidence that the proposition is true or false, and no record links one text to another.',
-    'The propositions were phrased for this collection and are attributed to no one. Their criteria and premises have had no human review, and changing them would change the records.',
+    'The propositions were phrased for this collection and are attributed to no one. Changing their criteria or premises would change the records.',
     'An earlier text of his that states a proposition is shown with his later texts that contest it. The pairing is computed from the records. Some later texts do not refer back to the earlier one, and their qualifications say so.',
     'A passage that would mislead on its own is marked “shown only with its context” and is never shown without that context.',
     'Codes such as T13-a in qualifications refer to the passages of the research pack the records come from; T01 corresponds to Y01.',
-    'A machine selected and classified these records, and machine checks re-examined them. No person has reviewed them.',
+    'A machine selected and classified these records, and machine checks re-examined them.',
   ],
   axis: frame.axis,
   landing: frame.landing,
@@ -67,6 +257,18 @@ export const yudkowskyArguments: PropositionsCollection = {
   mostDevelopedEmpty: frame.mostDevelopedEmpty,
   earliestEmpty: frame.earliestEmpty,
   related: {
+    'build-superintelligence-fast': [
+      {
+        propositionId: 'succession-acceptable',
+        relation:
+          'A related proposition in the collection on machine succession, scale and acceleration, recorded from texts by many authors.',
+      },
+      {
+        propositionId: 'accelerate-machine-intelligence',
+        relation:
+          'A related proposition in the collection on machine succession, scale and acceleration, recorded from texts by many authors.',
+      },
+    ],
     'intelligence-brings-benevolence': [
       {
         propositionId: 'orthogonality',
@@ -77,6 +279,11 @@ export const yudkowskyArguments: PropositionsCollection = {
         propositionId: 'benevolence-or-no-drive-to-dominate',
         relation:
           'A related proposition in the collection on catastrophic risk, recorded from texts by many authors.',
+      },
+      {
+        propositionId: 'intelligence-as-own-end',
+        relation:
+          'A related proposition in the collection on machine succession, scale and acceleration: that the growth of intelligence is its own end.',
       },
     ],
     'harm-requires-hostility': [

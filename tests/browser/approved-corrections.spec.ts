@@ -28,7 +28,9 @@ test('authorized source reviews remain distinct from wording approvals', async (
   await list.locator('[data-claim-id="levy-brain-intern-2017"]').click();
   await expect(inspector).toContainText('Research intern');
   await expect(inspector).toContainText('Summer 2017');
-  await expect(inspector).toContainText('Not editorially accepted');
+  await expect(inspector).toContainText(
+    'Machine-checked · human-reviewed evidence',
+  );
   await expect(inspector).toContainText('Machine-checked');
   await expect(inspector).toContainText('Reviewed by futurelightcone');
   await expect(inspector.locator('a.source-title')).toHaveCount(2);
@@ -44,7 +46,7 @@ test('authorized source reviews remain distinct from wording approvals', async (
   ]) {
     await list.locator(`[data-claim-id="${id}"]`).click();
     await expect(inspector).toContainText(name);
-    await expect(inspector).toContainText('Not reviewed by an editor');
+    await expect(inspector).toContainText('Machine-checked');
     await expect(inspector).not.toContainText('Reviewed by futurelightcone');
   }
   expect(errors).toEqual([]);

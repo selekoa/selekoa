@@ -152,6 +152,16 @@ export const thoughtRoles = [
   'earliest-located-tier-2',
 ] as const;
 export type ThoughtRole = (typeof thoughtRoles)[number];
+/**
+ * Schema 2.28. The earliest located headlines a proposition can show "under
+ * re-check": the articulation's, the contesting text's and the usual name's.
+ */
+export const recheckHeadlines = [
+  'earliest-located',
+  'earliest-located-contesting',
+  'earliest-located-term',
+] as const;
+export type RecheckHeadline = (typeof recheckHeadlines)[number];
 type Stance = (typeof propositionStances)[keyof typeof propositionStances];
 /** Roles each kind of proposition record may hold, and the one it must hold. */
 const allowedRoles: Record<Stance, readonly ThoughtRole[]> = {
@@ -338,6 +348,28 @@ export const entitySchema = z.strictObject({
           }),
         )
         .min(1)
+        .optional(),
+      // Schema 2.28. An earliest located headline withdrawn by a recorded
+      // decision while a re-check runs: the articulation's role, the
+      // contesting text's role or the earliest located use of a usual name.
+      // No record holds that role meanwhile; the re-check that sets the role
+      // again removes the entry. The reason names the finding.
+      underRecheck: z
+        .array(
+          z.strictObject({
+            headline: z.enum(recheckHeadlines),
+            reason: text,
+            recordedAt: checkDate,
+          }),
+        )
+        .min(1)
+        .optional(),
+      // Schema 2.29. No earliest located use of a usual name is headlined,
+      // by a recorded decision: the usual names are ordinary phrases rather
+      // than names of this proposition. The names stay listed; no record
+      // holds the earliest-located-term role.
+      noTermHeadline: z
+        .strictObject({ reason: text, recordedAt: checkDate })
         .optional(),
     })
     .optional(),
@@ -944,6 +976,8 @@ export const datasetSchema = z
         '2.25',
         '2.26',
         '2.27',
+        '2.28',
+        '2.29',
       ]),
       updatedAt: checkDate,
       title: text,
@@ -1040,6 +1074,17 @@ export const datasetSchema = z
         const withheld = e.proposition.withheld ?? [];
         if (new Set(withheld.map((w) => w.role)).size !== withheld.length)
           issue(['entities', i], 'A role is withheld at most once');
+        const recheck = e.proposition.underRecheck ?? [];
+        if (new Set(recheck.map((r) => r.headline)).size !== recheck.length)
+          issue(['entities', i], 'A headline is under re-check at most once');
+        if (
+          recheck.some((r) => r.headline === 'earliest-located') &&
+          withheld.some((w) => w.role === 'earliest-located')
+        )
+          issue(
+            ['entities', i],
+            'An earliest located role is either withheld or under re-check',
+          );
       }
     });
     const entities = new Map(data.entities.map((r) => [r.id, r]));
@@ -2507,7 +2552,18 @@ export const datasetSchema = z
           const earliest = articulations.filter((c) => has(c, role));
           // Schema 2.16: a withheld role has no holder until the decision
           // that withheld it is revisited.
-          const withheld = proposition.withheld?.some((w) => w.role === role);
+          // Schema 2.28: a headline under re-check has no holder either.
+          const rechecked = (headline: RecheckHeadline) =>
+            role === 'earliest-located' &&
+            !!proposition.underRecheck?.some((r) => r.headline === headline);
+          if (rechecked('earliest-located') && earliest.length)
+            issue(
+              ['claims'],
+              `${id}: the earliest located role is under re-check, so no articulation holds it`,
+            );
+          const withheld =
+            proposition.withheld?.some((w) => w.role === role) ||
+            rechecked('earliest-located');
           if (withheld && earliest.length)
             issue(
               ['claims'],
@@ -2541,6 +2597,14 @@ export const datasetSchema = z
             (c) => c.predicate === 'contests_proposition' && own(c),
           );
           const earliestContest = contesting.filter((c) => has(c, role));
+          if (
+            rechecked('earliest-located-contesting') &&
+            earliestContest.length
+          )
+            issue(
+              ['claims'],
+              `${id}: the earliest located contesting role is under re-check, so no contesting record holds it`,
+            );
           if (earliestContest.length > 1)
             issue(
               ['claims'],
@@ -2575,7 +2639,34 @@ export const datasetSchema = z
           );
         const termRecords = list.filter((c) => has(c, 'earliest-located-term'));
         const users = list.filter(usesTerm);
-        if (termRecords.length > 1 || (users.length && !termRecords.length))
+        const termRechecked = !!proposition.underRecheck?.some(
+          (r) => r.headline === 'earliest-located-term',
+        );
+        // Schema 2.29: a dropped name headline has no holder, and is neither
+        // under re-check nor set on a proposition without usual names.
+        const termDropped = !!proposition.noTermHeadline;
+        if (termDropped && (termRechecked || !proposition.terms.length))
+          issue(
+            ['claims'],
+            `${id}: a dropped name headline needs usual names and is not under re-check`,
+          );
+        if (termDropped && termRecords.length)
+          issue(
+            ['claims'],
+            `${id}: the name headline is dropped, so no record is the earliest located use of a usual name`,
+          );
+        else if (termRechecked && termRecords.length)
+          issue(
+            ['claims'],
+            `${id}: the earliest located use of a usual name is under re-check, so no record holds it`,
+          );
+        else if (
+          termRecords.length > 1 ||
+          (users.length &&
+            !termRecords.length &&
+            !termRechecked &&
+            !termDropped)
+        )
           issue(
             ['claims'],
             `${id}: exactly one record is the earliest located use of a usual name`,

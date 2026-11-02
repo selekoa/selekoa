@@ -39,9 +39,9 @@ describe('schema 2.8 framework provisions', () => {
       expect(sha(preProvisionsRaw[key]), key).toBe(before.sha256[key]);
     expect(sha(preProvisionsRaw.meta)).toBe(before.sha256.meta);
     expect(preProvisionsRaw.meta.schemaVersion).toBe('2.7');
-    // Part 2 of the 2026-10-31 admission of the third Chinese institutions
-    // collection moved the current dataset to schema 2.27.
-    expect(data.meta.schemaVersion).toBe('2.27');
+    // The maintainer's decisions of 2026-11-02 on the earliest-located
+    // re-check moved the current dataset to schema 2.29.
+    expect(data.meta.schemaVersion).toBe('2.29');
   });
 
   it('applies the three stop-case decisions and keeps their history', () => {

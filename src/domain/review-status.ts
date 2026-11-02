@@ -34,7 +34,7 @@ export type ReviewStatus = ReturnType<typeof reviewStatus>;
 
 export function reviewStatusSentences(status: ReviewStatus) {
   return [
-    `${status.seedClaims} of ${status.claims} claims are exploratory records that are not editorially accepted (editorial state: seed).` +
+    `${status.seedClaims} of ${status.claims} claims carry the default editorial state, seed: found and checked by machines and not accepted individually by a person.` +
       (status.acceptedClaimIds.length
         ? ` Editorially accepted: ${status.acceptedClaimIds.join(', ')}.`
         : ' No claim in this scope is editorially accepted.'),

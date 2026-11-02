@@ -31,11 +31,16 @@ const data = datasetSchema.parse(
  * (`kp-` records) also places earlier records in a dossier: its authorship
  * records add documents through the institution's people, and the earlier
  * claims about those documents follow. Its records are therefore taken out of
- * the dataset before the dossier is read.
+ * the dataset before the dossier is read. The 2026-11-01 second lab genealogy
+ * (`lg2-` records) does the same through the people it adds to an
+ * institution (Anthropic gains nine earlier records that way), so its records
+ * are taken out too.
  */
 const beforeKeyPapers = {
   ...data,
-  claims: data.claims.filter((c) => !c.id.startsWith('kp-')),
+  claims: data.claims.filter(
+    (c) => !c.id.startsWith('kp-') && !c.id.startsWith('lg2-'),
+  ),
 };
 export function dossierCount(id: string, earlier: number) {
   const claims = institutionalDossier(data, id)!.claims;

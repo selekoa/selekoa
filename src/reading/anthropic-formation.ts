@@ -2,7 +2,7 @@ import type { QuestionSelection } from '../domain/research-path';
 
 export const anthropicFormation: QuestionSelection = {
   id: 'anthropic-formation',
-  version: 3,
+  version: 4,
   institutionId: 'anthropic',
   title: 'Founding and early leadership',
   question:
@@ -22,6 +22,7 @@ export const anthropicFormation: QuestionSelection = {
         'tom-brown-cofounded-anthropic-2021',
         'jared-kaplan-anthropic-cofounder',
         'sam-mccandlish-anthropic-cofounder',
+        'lg-ant-mann-cofounded',
         'dario-openai-vp-2020',
         'olah-brain-team-2017',
         'lineage-dario-amodei-preferences',
@@ -36,8 +37,8 @@ export const anthropicFormation: QuestionSelection = {
       kind: 'principal',
       title: 'Founding & early leadership',
       description:
-        'Seven founding attributions and two early leadership snapshots.',
-      gap: 'These seven attributions do not establish an exhaustive historical roster, simultaneous participation or a legal incorporation date.',
+        'Eight founding attributions and two early leadership snapshots.',
+      gap: 'These eight attributions do not establish an exhaustive historical roster, simultaneous participation or a legal incorporation date.',
       groups: [
         { title: 'Founding participation', predicates: ['co_founded'] },
         { title: 'Early leadership' },
@@ -45,7 +46,7 @@ export const anthropicFormation: QuestionSelection = {
       passages: [
         {
           id: 'founding-testimony',
-          text: 'The founding accounts were written after the events they describe. Anthropic’s 2022 Series B announcement credits Dario and Daniela Amodei; a 2024 founder slide credits Chris Olah, Jack Clark and Tom Brown alongside its 2021 founding panel. These five records retain only year-level dates. The October 2024 Responsible Scaling Policy announcement also identifies Jared Kaplan and Sam McCandlish as co-founders, without dating their founding participation.',
+          text: 'The founding accounts were written after the events they describe. Anthropic’s 2022 Series B announcement credits Dario and Daniela Amodei; a 2024 founder slide credits Chris Olah, Jack Clark, Tom Brown and Ben Mann alongside its 2021 founding panel. Five of these records retain only year-level dates; Ben Mann’s gives none. The October 2024 Responsible Scaling Policy announcement also identifies Jared Kaplan and Sam McCandlish as co-founders, without dating their founding participation.',
           claimIds: [
             'dario-cofounded-anthropic-2021',
             'daniela-cofounded-anthropic-2021',
@@ -54,6 +55,7 @@ export const anthropicFormation: QuestionSelection = {
             'tom-brown-cofounded-anthropic-2021',
             'jared-kaplan-anthropic-cofounder',
             'sam-mccandlish-anthropic-cofounder',
+            'lg-ant-mann-cofounded',
           ],
         },
         {
@@ -173,6 +175,12 @@ export const anthropicFormation: QuestionSelection = {
       sectionId: 'formation',
       rationale:
         'Places McCandlish’s retrospective co-founder attribution alongside the dated founding records; no event date is supplied.',
+    },
+    {
+      claimId: 'lg-ant-mann-cofounded',
+      sectionId: 'formation',
+      rationale:
+        'Adds the eighth person the 2024 founder slide credits as a co-founder; the slide gives no founding date for him.',
     },
     {
       claimId: 'dario-anthropic-2021',

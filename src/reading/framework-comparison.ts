@@ -18,7 +18,9 @@ export const frameworkComparison: ComparisonCollection = {
     'xai-faif',
   ],
   introduction:
-    'Each row is one question, worded so that it fits every framework. Each column is one framework, showing its latest edition unless you choose another. A cell gives what that edition says on the question, with the page, or records that no passage was found in a stated search. Six questions give the edition’s own words; the other twelve give Selekoa’s paraphrase, marked as such. The questions are Selekoa’s. An edition’s own terms, such as “ASL” or “Critical Capability Level”, appear only in quotation marks.',
+    'Each row is one question, worded so that it fits every framework. Each column is one framework, showing its latest edition unless you choose another.',
+  reading:
+    'A cell gives what that edition says on the question, with the page, or records that no passage was found in a stated search. Six questions give the edition’s own words; the other twelve give Selekoa’s paraphrase, marked as such. The questions are Selekoa’s. An edition’s own terms, such as “ASL” or “Critical Capability Level”, appear only in quotation marks.',
   legend: {
     stated:
       'A passage meets the question’s criterion as worded, however conditional or narrow its scope. The condition or scope is in the note.',
@@ -37,7 +39,7 @@ export const frameworkComparison: ComparisonCollection = {
     'Conditions that matter are in each cell’s note. A “stated” cell can carry conditions as important as those of a “stated, partly” one.',
     'The page compares and does not rank. There are no scores or totals, and columns are in a fixed order.',
     'Six questions, on required actions, who decides and exceptions, quote the edition. The other twelve, on risk domains, thresholds, evaluation timing, reporting and revision, give a paraphrase with the page, because quoting them as well would exceed Selekoa’s quotation limit for most editions. A paraphrase states what the passage says, in other words; read the edition at that page before relying on it.',
-    'Passages were selected, checked and placed under each question by machine, and checked by a reviewer from a different model family. The maintainer decided the borderline cases. No editor has reviewed the records.',
+    'Passages were selected, checked and placed under each question by machine, and checked by a reviewer from a different model family. The maintainer decided the borderline cases.',
   ],
   notChecked: [],
   notApplicable: [

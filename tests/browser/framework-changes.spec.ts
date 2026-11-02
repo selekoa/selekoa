@@ -138,11 +138,11 @@ test('frameworks edition by edition: a question opens in the comparison', async 
     .getByRole('link', { name: 'This question in the comparison →' });
   await expect(link).toHaveAttribute(
     'href',
-    '/compare/frontier-safety-frameworks?facet=D3.halt',
+    '/compare/frontier-safety-frameworks/d3-halt',
   );
   await link.click();
   await expect(page).toHaveURL(
-    /\/compare\/frontier-safety-frameworks\?facet=D3\.halt$/,
+    /\/compare\/frontier-safety-frameworks\/d3-halt$/,
   );
   await expect(page.getByRole('heading', { level: 1 })).toHaveText(
     'Compare frameworks',

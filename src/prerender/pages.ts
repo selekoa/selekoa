@@ -10,7 +10,19 @@ import { researchPaths } from '../domain/research-path';
 import { landingSummary } from '../domain/landing';
 import { documentHistories } from '../reading/frontier-safety-frameworks';
 import { frameworkComparison } from '../reading/framework-comparison';
+import { facetById, comparisonFacets } from '../domain/framework-comparison';
 import { controlStructures } from '../reading/control-structures';
+// The page's address, title and question only: the browser reads this
+// module (the document title), and the definition stays with the page.
+import {
+  controlTimelinesId,
+  controlTimelinesQuestion,
+  controlTimelinesTitle,
+} from '../reading/control-timelines-page';
+import {
+  stancesQuestion,
+  stancesTitle,
+} from '../reading/proposition-stances-page';
 import { commitmentCollections } from '../reading/commitments';
 import { guideById, guideIds } from '../reading/guides';
 import { questionStarters } from '../reading/self-governance';
@@ -45,12 +57,22 @@ export function pagePaths(data: Dataset): string[] {
     ...of([{ kind: 'about' }, { kind: 'search' }, { kind: 'explore' }]),
     ...of(documentHistories.map((c) => ({ kind: 'documents', id: c.id }))),
     ...of([{ kind: 'compare', id: frameworkComparison.id }]),
+    ...of(
+      comparisonFacets.map((f) => ({
+        kind: 'compare',
+        id: frameworkComparison.id,
+        facet: f.id,
+      })),
+    ),
     ...of(controlStructures.map((c) => ({ kind: 'control', id: c.id }))),
+    ...of([{ kind: 'control', id: controlTimelinesId }]),
     ...of(
       commitmentCollections.map((c) => ({ kind: 'commitments', id: c.id })),
     ),
     ...of(guideIds.map((id) => ({ kind: 'guide', id }))),
     ...of(propositionFrames.map((c) => ({ kind: 'propositions', id: c.id }))),
+    ...of([{ kind: 'stances' }]),
+    ...of(propositionFrames.map((c) => ({ kind: 'stances', id: c.id }))),
     ...of([{ kind: 'years' }]),
     ...of(yearPageIds(data).map((id) => ({ kind: 'year', id }))),
     ...of(
@@ -137,12 +159,21 @@ export function pageMeta(data: Dataset, address: string): PageMeta | null {
       const c = documentHistories.find((d) => d.id === target.id)!;
       return page(c.title, c.question);
     }
-    case 'compare':
-      return page(
-        'Compare frontier safety frameworks',
-        frameworkComparison.question,
-      );
+    case 'compare': {
+      const facet = target.facet ? facetById(target.facet) : undefined;
+      return facet
+        ? page(
+            `Compare frontier safety frameworks: ${facet.label.toLowerCase()}`,
+            `${facet.dimension.question} ${facet.criterion}`,
+          )
+        : page(
+            'Compare frontier safety frameworks',
+            frameworkComparison.question,
+          );
+    }
     case 'control': {
+      if (target.id === controlTimelinesId)
+        return page(controlTimelinesTitle, controlTimelinesQuestion);
       const c = controlStructures.find((d) => d.id === target.id)!;
       return page(c.title, c.question);
     }
@@ -157,6 +188,12 @@ export function pageMeta(data: Dataset, address: string): PageMeta | null {
     case 'propositions': {
       const c = propositionFrames.find((d) => d.id === target.id)!;
       return page(c.title, c.question);
+    }
+    case 'stances': {
+      const c = propositionFrames.find((d) => d.id === target.id);
+      return c
+        ? page(`${stancesTitle}: ${c.title}`, c.question)
+        : page(stancesTitle, stancesQuestion);
     }
     case 'years':
       return page(chronicleText.indexTitle, chronicleText.indexDescription);

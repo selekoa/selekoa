@@ -13,10 +13,10 @@ import type { PropositionsFrame } from '../domain/propositions';
 /** The frame of `superintelligencePropositions` (src/reading/superintelligence.ts). */
 export const superintelligenceFrame = {
   id: 'superintelligence',
-  version: 1,
-  title: 'Propositions about superintelligence, 1863–2022',
+  version: 4,
+  title: 'Propositions about superintelligence, 1863–2025',
   question:
-    'Which located texts from 1863 to 2022 state, dispute or bear on propositions about machine intelligence? The propositions concern intelligence rising faster than earlier change, and people’s means of observing and directing it becoming inadequate. For each, which text is the earliest located?',
+    'Which located texts from 1863 to 2025 state, dispute or bear on propositions about machine intelligence? The propositions concern intelligence rising faster than earlier change, and people’s means of observing and directing it becoming inadequate. For each, which text is the earliest located?',
   editorialStatus: 'machine-proposed',
   groups: [
     {
@@ -64,10 +64,10 @@ export const superintelligenceFrame = {
 /** The frame of `riskDebate` (src/reading/risk-debate.ts). */
 export const riskDebateFrame = {
   id: 'risk-debate',
-  version: 1,
-  title: 'Arguments about catastrophic risk from advanced AI',
+  version: 5,
+  title: 'Arguments about catastrophic risk from advanced AI, 1863–2026',
   question:
-    'Which published texts, from 2000 to 2026, state, contest or bear on the arguments that advanced AI could cause catastrophe or human extinction, and on the arguments that the risk is lower, later, placed elsewhere or better handled otherwise? Which texts answer one another? For each proposition, which text is the earliest located?',
+    'Which published texts, from 1993 to 2026 and, on the two propositions shared with the superintelligence collection, from 1863, state, contest or bear on the arguments that advanced AI could cause catastrophe or human extinction, and on the arguments that the risk is lower, later, placed elsewhere or better handled otherwise? Which texts answer one another? For each proposition, which text is the earliest located?',
   editorialStatus: 'machine-proposed',
   groups: [
     {
@@ -122,7 +122,7 @@ export const riskDebateFrame = {
 /** The frame of `yudkowskyArguments` (src/reading/yudkowsky-arguments.ts). */
 export const yudkowskyArgumentsFrame = {
   id: 'yudkowsky-arguments',
-  version: 1,
+  version: 4,
   title: 'Eliezer Yudkowsky’s arguments on common claims about AI, 1996–2026',
   question:
     'Which located texts by Eliezer Yudkowsky, from 1996 to 2026, state, contest or bear on 29 claims often made about advanced AI? For each claim, which of his located texts is the earliest to contest it, and which earlier views of his did later texts of his contest?',
@@ -181,11 +181,69 @@ export const yudkowskyArgumentsFrame = {
   // they quote further passages that no quotation limit has counted.
 } satisfies PropositionsFrame;
 
+/** The frame of `machineSuccession` (src/reading/machine-succession.ts). */
+export const machineSuccessionFrame = {
+  id: 'machine-succession',
+  version: 5,
+  title:
+    'Machine succession, scale and acceleration: propositions in located texts, 1979–2026',
+  question:
+    'Which located texts, from 1979 to 2026, state, contest or bear on ten propositions about machine intelligence: that machines succeed humans, that this would be acceptable, that minds move into machines, that building such machines brings conflict, that machine intelligence vastly exceeds human intelligence, that capital is itself a machine intelligence, that intelligence is its own end, that development should be accelerated, and that machine intelligence is a cosmic process that spreads beyond Earth? For each proposition, which text is the earliest located?',
+  editorialStatus: 'machine-proposed',
+  groups: [
+    {
+      id: 'WA',
+      label: 'Machine intelligence and the human succession',
+      description:
+        'Propositions that machines succeed humans as the leading intelligence, that this would be acceptable or desirable, that human minds could move into machines, and that building superhuman machines would bring conflict among humans.',
+      propositionIds: [
+        'machine-succession',
+        'succession-acceptable',
+        'mind-transfer',
+        'species-dominance-conflict',
+      ],
+    },
+    {
+      id: 'WB',
+      label: 'Scale, direction and cosmic setting of machine intelligence',
+      description:
+        'Propositions that machine intelligence could exceed human intelligence by many orders of magnitude, that its rise is a physical or cosmic process, and that it spreads beyond Earth.',
+      propositionIds: [
+        'vast-superiority',
+        'cosmic-process',
+        'cosmic-expansion',
+      ],
+    },
+    {
+      id: 'WC',
+      label: 'Machine intelligence, capital, values and acceleration',
+      description:
+        'Propositions that capital or the techno-economic process is itself a machine intelligence, that the growth of intelligence is its own end, and that its development should be accelerated rather than restrained.',
+      propositionIds: [
+        'capital-as-machine-intelligence',
+        'intelligence-as-own-end',
+        'accelerate-machine-intelligence',
+      ],
+    },
+  ],
+  axis: {
+    from: 1975,
+    to: 2027,
+    ticks: ['1979', '1990', '2000', '2010', '2026'],
+  },
+  landing:
+    '{propositions} propositions about machine succession, scale and acceleration, and {records} records from {texts} texts that state, contest or bear on them. Each proposition names its earliest located text where one is settled. The page can be downloaded as a research starter, with the original sources first.',
+  landingAction: 'Read the texts on machine succession →',
+  mostDevelopedEmpty: null,
+  earliestEmpty: 'No located text meets the criterion.',
+} satisfies PropositionsFrame;
+
 /** The frame of `economicsOfMachineIntelligence` (src/reading/economics.ts). */
 export const economicsFrame = {
   id: 'economics-of-machine-intelligence',
-  version: 2,
-  title: 'Economics of machine intelligence',
+  version: 5,
+  title:
+    'Economics of machine intelligence: texts from 1952 to 2026 that state, contest or bear on its propositions',
   question:
     'Which located texts, from 1952 to 2026, state, contest or bear on propositions about the economics of machine intelligence? Three strands are recorded. The first is the debate over whether machine intelligence could make economic growth explosive. The second is how mainstream economics treated automation, computers and AI. The third is how economists took up recursive self-improvement, superintelligence and existential risk from AI, ideas mostly discussed outside economics. For each proposition, which text by an economist is the earliest located, and which text outside that group?',
   editorialStatus: 'machine-proposed',
@@ -258,7 +316,7 @@ export const economicsFrame = {
 /** The frame of `orbitalCompute` (src/reading/orbital-compute.ts). */
 export const orbitalComputeFrame = {
   id: 'orbital-compute-arguments',
-  version: 2,
+  version: 3,
   title: 'Arguments about compute in orbit',
   question:
     'Which located texts, from 1989 to 2026, state, contest or bear on the reasons given for placing computing in orbit and on the limits and objections raised against it? For each proposition, which text is the earliest located?',
@@ -307,7 +365,7 @@ export const orbitalComputeFrame = {
 /** The frame of `aiBioArguments` (src/reading/ai-bio-arguments.ts). */
 export const aiBioArgumentsFrame = {
   id: 'ai-bio-arguments',
-  version: 1,
+  version: 3,
   title: 'Arguments about AI and biological risk',
   question:
     'Which located texts, from 2023 to 2026, state, contest or bear on the published arguments about AI and biological risk: whether current systems already help an actor seeking biological harm, where the binding barrier lies, what published evaluations establish, whether design tools are a distinct case, whether synthesis screening is the control point, whether open weights raise the risk, and whom assessment must cover? For each proposition, which text is the earliest located?',
@@ -352,7 +410,7 @@ export const aiBioArgumentsFrame = {
 /** The frame of `aiInScience` (src/reading/ai-in-science.ts). */
 export const aiInScienceFrame = {
   id: 'ai-in-science',
-  version: 1,
+  version: 3,
   title: 'AI in science',
   question:
     'Which located texts state, contest or bear on what AI does, or will do, in a science? In biology, from 1987 to 2026: whether predicted protein structures help to design drugs, whether AI models can simulate cells, whether drug candidates found with AI have entered clinical trials and pass them more often, whether machine learning makes new proteins designable, and whether biology is information that AI can read or program. For each proposition, which text is the earliest located?',
@@ -388,6 +446,7 @@ export const propositionFrames: readonly PropositionsFrame[] = [
   superintelligenceFrame,
   riskDebateFrame,
   yudkowskyArgumentsFrame,
+  machineSuccessionFrame,
   economicsFrame,
   orbitalComputeFrame,
   aiBioArgumentsFrame,

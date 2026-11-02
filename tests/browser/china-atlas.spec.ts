@@ -92,7 +92,6 @@ for (const sample of samples)
       // earlier records keep their count.
       const count = dossierCount(sample.id, sample.count);
       await expect(dossier).toContainText(`${count} claims ·`);
-      await expect(dossier).toContainText(`${count} not editorially accepted`);
       for (let i = 0; i < sections.length; i++) {
         await dossier
           .getByRole('button', { name: sections[i], exact: false })

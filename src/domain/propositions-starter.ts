@@ -89,8 +89,7 @@ export async function propositionsStarter(
       kind: 'propositions',
       definition: collection,
       fingerprint: await fingerprint(collection),
-      interpretationStatus:
-        'machine-proposed; not human-reviewed or editorially accepted',
+      interpretationStatus: 'machine-proposed',
       groups: view.groups.map((g) => ({
         id: g.id,
         label: g.label,
@@ -115,6 +114,14 @@ export async function propositionsStarter(
               }
             : {}),
           earliestLocatedTerm: brief(p.earliestTerm),
+          // Schema 2.28: headlines withdrawn while a re-check runs.
+          ...(Object.values(p.recheck).some(Boolean)
+            ? {
+                underRecheck: Object.fromEntries(
+                  Object.entries(p.recheck).filter(([, since]) => since),
+                ) as Partial<Record<'earliest' | 'contest' | 'term', string>>,
+              }
+            : {}),
           mostDeveloped: brief(p.mostDeveloped),
           openPremises: p.openPremises,
           records: p.records.map((r) => ({
@@ -333,12 +340,17 @@ export function propositionsStarterMarkdown(starter: PropositionsStarter) {
           '',
         );
       const tiered = !!definition.tiers;
+      const recheck = ('underRecheck' in p && p.underRecheck) || {};
       if (p.earliestLocated)
         lines.push(
           headline(
             tiered ? 'Earliest located, tier 1' : 'Earliest located',
             p.earliestLocated,
           ),
+        );
+      else if (recheck.earliest)
+        lines.push(
+          `- ${tiered ? 'Earliest located, tier 1' : 'Earliest located'}: under re-check (${recheck.earliest})`,
         );
       else if ('earliestLocatedWithheld' in p && p.earliestLocatedWithheld)
         lines.push(
@@ -368,6 +380,10 @@ export function propositionsStarterMarkdown(starter: PropositionsStarter) {
             p.earliestLocatedContest,
           ),
         );
+      else if (recheck.contest)
+        lines.push(
+          `- ${tiered ? 'Earliest located tier-1 text that contests it' : 'Earliest located text that contests it'}: under re-check (${recheck.contest})`,
+        );
       if ('earliestLocatedContestTier2' in p && p.earliestLocatedContestTier2)
         lines.push(
           headline(
@@ -378,6 +394,10 @@ export function propositionsStarterMarkdown(starter: PropositionsStarter) {
       if (p.earliestLocatedTerm)
         lines.push(
           headline('Earliest located use of the name', p.earliestLocatedTerm),
+        );
+      else if (recheck.term)
+        lines.push(
+          `- Earliest located use of the name: under re-check (${recheck.term})`,
         );
       if (p.mostDeveloped)
         lines.push(headline('Most developed', p.mostDeveloped));

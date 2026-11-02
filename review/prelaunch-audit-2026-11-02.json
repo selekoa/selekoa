@@ -1,0 +1,3203 @@
+{
+  "report": "review/prelaunch-audit-2026-11-02.md",
+  "date": "2026-11-02",
+  "base": {
+    "main": "4629608",
+    "release": "v0.23.2"
+  },
+  "correctionRelease": "v0.23.3",
+  "summary": {
+    "bySeverity": {
+      "high": {
+        "decision": 3,
+        "fixed-data": 2,
+        "fixed-interface": 2,
+        "total": 7
+      },
+      "medium": {
+        "fixed-interface": 1,
+        "fixed-data": 9,
+        "decision": 12,
+        "open": 6,
+        "total": 28
+      },
+      "low": {
+        "fixed-data": 7,
+        "fixed-interface": 2,
+        "open": 8,
+        "decision": 6,
+        "total": 23
+      }
+    }
+  },
+  "findings": [
+    {
+      "id": "PA-01",
+      "severity": "high",
+      "kind": "earliest-located",
+      "where": "/propositions/risk-debate, /propositions/machine-succession, /propositions/ai-in-science, /year/2023",
+      "recordIds": [
+        "rd-r07-cais-2023-statement",
+        "rd-r07-bostrom-2002-existential-risks",
+        "rd-r02-bostrom-2012-superintelligent-will",
+        "rd-r02-omohundro-2008-basic-ai-drives",
+        "rd-r03-shah-2022-goal-misgeneralization",
+        "ts-b3-rlo-2019-intro",
+        "rd-r12-bengio-2023-faq-catastrophic",
+        "rd-r12-ej-fli-2023-ai-licensing",
+        "ht-w08-andreessen-2023-techno-optimist-manifesto",
+        "ht-w08-eacc-2022-effective-accelerationism-repost",
+        "rd-r16-christiano-2018-takeoff-speeds",
+        "yk-y11-sl4-2001-01-24-yudkowsky-0101-0452-c"
+      ],
+      "detail": "Eight \"Earliest located use of the name\" headlines are contradicted by earlier texts that the same collection (or another collection) already records with a listed name in their title or wording: risk of extinction (CAIS 2023, while Bostrom 2002 is titled \"Existential Risks\"), instrumental convergence (Bostrom 2012 vs Omohundro 2008, \"The Basic AI Drives\"), goal misgeneralization (Shah 2022 vs Risks from Learned Optimization 2019, which proposition B3 already credits with \"deceptive alignment\"), present harms (Bengio, attested 2026, vs the FLI/Encode Justice letter of 2023-10-25, title), accelerationism (Andreessen 2023 vs the e/acc post of 2022-06-01, which is the same proposition's earliest located text), slow takeoff (Christiano 2018 vs an SL4 message of 2001 using \"slow-takeoff\"), and in AI in science \"virtual cell\" (Tomita 2001 vs Schaff et al. 1997 in the collection's own stated Europe PMC search) and \"structure-based drug design\" (Lyu et al. 2024 vs Ring et al. 1993, inside the stated 1960–1995 window). Validation checks quoted passages only, so title uses passed.",
+      "status": "decision",
+      "action": "Not changed: moving an earliest-located role needs a cross-family second pass or a recorded maintainer decision (editorial policy). Recommended: one bounded cross-family re-check of every earliest-located-term role against all texts the collections already hold (titles included), then move the roles found earlier and record each change as a correction.",
+      "foundBy": "H3, H4, R3, sample B5"
+    },
+    {
+      "id": "PA-02",
+      "severity": "high",
+      "kind": "earliest-located",
+      "where": "/propositions/machine-succession (W03), /propositions/yudkowsky-arguments (Y22)",
+      "recordIds": [
+        "ht-w03-minsky-1994-will-robots-inherit-the-earth",
+        "yk-y22-sl4-2000-11-13-yudkowsky-0011-0181-c"
+      ],
+      "detail": "Two \"Earliest located\" headlines rest on inconsistent bases. W03 names Minsky 1994 on the strength of the web page's own \"Last modified 1997-01-02\" footer, while the same collection dates Moravec's pages by their first archive capture, under which Hanson (captured 1998-02-20) would precede Minsky (first captures found 1999). Y22's heading block names a 2000-11-13 SL4 message as the earliest text contesting \"build it as fast as possible\", while that record's own qualification says the message rejects automatic goodness, not speed.",
+      "status": "decision",
+      "action": "Not changed (earliest-located roles). Recommended: include both in the cross-family re-check of PA-01; apply the attested-date rule the same way to self-dated pages and captures.",
+      "foundBy": "R1, R3"
+    },
+    {
+      "id": "PA-03",
+      "severity": "high",
+      "kind": "date",
+      "where": "/person/robin-hanson, /year/2013",
+      "recordIds": [
+        "ap-robin-hanson-hanson-2008-ai-go-foom",
+        "ap-robin-hanson-hanson-2008-setting-the-stage",
+        "ap-robin-hanson-hanson-2008-friendliness-factors",
+        "ap-robin-hanson-hanson-2008-emulations-go-foom",
+        "ap-robin-hanson-hanson-2008-friendly-projects-vs-products",
+        "ap-robin-hanson-hanson-2008-wrapping-up",
+        "ap-robin-hanson-hanson-2011-debating-yudkowsky"
+      ],
+      "detail": "Robin Hanson's person page showed six posts of the 2008 AI-Foom debate and one of 2011 as 2013 works, the date of MIRI's compilation, beside links labelled 2008; the document records, the economics records and Yudkowsky's posts from the same debate use the post dates.",
+      "status": "fixed-data",
+      "action": "Dated by the post dates (2008-11-16 to 2008-12-07; 2011-07-03) from Overcoming Bias, with the compilation as the expression read and its misprinted heading noted (v0.23.3).",
+      "foundBy": "H4"
+    },
+    {
+      "id": "PA-04",
+      "severity": "high",
+      "kind": "coverage-text",
+      "where": "/ (start page), /about, /institutions",
+      "recordIds": [],
+      "detail": "The start page and About listed \"chip export controls\" among the largest gaps and the China note said export controls are covered only through BIS records, while the records hold BIS rules of 2023–2026 and MOFCOM export-control announcements of 2023–2025 and the compute guide advertises them. About also said \"Two Chinese collections\" cover seven labs; there are three collections and 14 Chinese dossiers.",
+      "status": "fixed-interface",
+      "action": "Start page, About and the China note reworded to what the records hold.",
+      "foundBy": "R1, H3"
+    },
+    {
+      "id": "PA-05",
+      "severity": "high",
+      "kind": "commitment-stage",
+      "where": "/commitments/external-commitments, /document/gpai-code-of-practice-2025",
+      "recordIds": [
+        "cm-eu-code-xai",
+        "cm-eu-code-intent-openai",
+        "cm-eu-code-intent-anthropic",
+        "cm-eu-code-intent-google",
+        "cm-eu-code-intent-xai"
+      ],
+      "detail": "xAI's EU Code record was staged \"listed\" (\"Listed as signatory\") although its own statement says the Commission's page leaves xAI off the list and states separately that xAI signed up to one chapter. The section heading \"Signatories (13)\" counted records (9 organisations plus 4 announced intentions), and the Code's document page labelled the four announced intentions \"is documented as a signatory of\".",
+      "status": "fixed-data",
+      "action": "Stage corrected to \"signed\" (v0.23.3); heading now \"Signatories (9) · announced intentions to sign (4) · stated refusals (1)\"; intents read \"announced an intent to sign\" (interface).",
+      "foundBy": "R2"
+    },
+    {
+      "id": "PA-06",
+      "severity": "high",
+      "kind": "stale-text",
+      "where": "/question/frameworks-to-obligations (a governance example question)",
+      "recordIds": [],
+      "detail": "The page said \"No United Kingdom text is recorded\", \"No other statute, regulation or official code on frontier AI developers is recorded\" and that the 2025 New York chapter is known only through announcements; since 2026-10-28 the records hold UK memoranda, Illinois and Michigan texts, US executive orders, Chinese labelling measures and the New York bill S6953-B as signed.",
+      "status": "fixed-interface",
+      "action": "Reworded to what this page lists, pointing to the frameworks-and-law page; stored starter gaps regenerated.",
+      "foundBy": "H3"
+    },
+    {
+      "id": "PA-07",
+      "severity": "high",
+      "kind": "incomplete-headline",
+      "where": "/question/anthropic-formation (the Institutions hub's featured question)",
+      "recordIds": ["lg-ant-mann-cofounded"],
+      "detail": "The guided reading says \"These seven attributions\" and that a 2024 founder slide credits three further co-founders; the same AWS slide credits eight, and the eighth (Ben Mann) is recorded and shown on the Anthropic dossier but not in the reading.",
+      "status": "decision",
+      "action": "Not changed: adding a claim to the reading changes a released question collection (a new collection version). Recommended: add the Ben Mann record and say \"eight\", in collection version 2.",
+      "foundBy": "R3"
+    },
+    {
+      "id": "PA-08",
+      "severity": "medium",
+      "kind": "navigation",
+      "where": "/governance → \"What does each framework say about pausing…\"",
+      "recordIds": [],
+      "detail": "The example question opened the whole 18-row comparison on its CBRN row; the pause row was ~5,500 px down a nested scroll box.",
+      "status": "fixed-interface",
+      "action": "Links to /compare/frontier-safety-frameworks/d3-halt.",
+      "foundBy": "R2, R3, H3"
+    },
+    {
+      "id": "PA-09",
+      "severity": "medium",
+      "kind": "link",
+      "where": "Compare frameworks (every page), document histories, CSV",
+      "recordIds": ["source-faif-2026"],
+      "detail": "The \"Edition text\" link of xAI's June 2026 framework (the default xAI edition) returned 404.",
+      "status": "fixed-data",
+      "action": "xAI now serves the edition at a new address; all eleven quoted passages were found verbatim on the same pages; the version note records the earlier file's hash and the difference (v0.23.3).",
+      "foundBy": "H3, R3, link check"
+    },
+    {
+      "id": "PA-10",
+      "severity": "medium",
+      "kind": "coherence",
+      "where": "/dossier/openai, /dossier/xai, /dossier/anthropic",
+      "recordIds": ["openai", "xai", "anthropic"],
+      "detail": "Dossier descriptions contradicted their own contents (\"through the 2024 o1 system card\"; \"Later corporate changes are outside this historical slice\"; a genesis-sample clause).",
+      "status": "fixed-data",
+      "action": "Stale coverage sentences removed (v0.23.3).",
+      "foundBy": "H1, H3"
+    },
+    {
+      "id": "PA-11",
+      "severity": "medium",
+      "kind": "contradiction",
+      "where": "/dossier/xai",
+      "recordIds": [
+        "spacexai",
+        "cm-eu-code-intent-xai",
+        "lg-mx-xai-spacexai-name-2026",
+        "source-xai-eu-code-post-2025"
+      ],
+      "detail": "Three different accounts of the X account that announced the SpaceXAI name.",
+      "status": "fixed-data",
+      "action": "Descriptions and notes now say only what the retrieved pages show (v0.23.3).",
+      "foundBy": "H1"
+    },
+    {
+      "id": "PA-12",
+      "severity": "medium",
+      "kind": "statement",
+      "where": "/propositions/machine-succession (W01, W02)",
+      "recordIds": [
+        "ht-w01-faggella-2023-worthy-successor",
+        "ht-w02-faggella-2023-worthy-successor"
+      ],
+      "detail": "Qualifications said the cross-family check found the passages in the February 2024 capture; the records' own attested notes say it did not. W01's statement dropped \"Kurzweil is almost certainly right that\". The one material error of the random sample.",
+      "status": "fixed-data",
+      "action": "Qualifications and statement corrected (v0.23.3).",
+      "foundBy": "sample B4, verify workflow"
+    },
+    {
+      "id": "PA-13",
+      "severity": "medium",
+      "kind": "statement",
+      "where": "/propositions/risk-debate (R07)",
+      "recordIds": ["rd-r07-hawking-russell-tegmark-wilczek-2014-independent"],
+      "detail": "The statement dropped the essay's qualifier: little serious research is devoted to these issues \"outside non-profit institutes\".",
+      "status": "fixed-data",
+      "action": "Statement corrected (v0.23.3).",
+      "foundBy": "sample B5"
+    },
+    {
+      "id": "PA-14",
+      "severity": "medium",
+      "kind": "qualification",
+      "where": "/guide/frontier-frameworks-and-law",
+      "recordIds": [
+        "fl-us-ny-2025-def-frontier-model",
+        "fl-us-ny-2025-civil-penalty",
+        "fl-us-ny-2025-def-large-developer",
+        "fl-us-ny-2025-incident-72-hours",
+        "fl-us-ny-2025-safety-protocol-duty"
+      ],
+      "detail": "A qualification said Chapter 96 replaced the 2025 text \"before the act took effect\", which the legislature's records do not settle; time notes credited the undated bill print with the signature date.",
+      "status": "fixed-data",
+      "action": "Qualification and notes corrected (v0.23.3).",
+      "foundBy": "sample B1"
+    },
+    {
+      "id": "PA-15",
+      "severity": "medium",
+      "kind": "characterisation",
+      "where": "/propositions/yudkowsky-arguments (Y14)",
+      "recordIds": ["yk-y14-extropians-2000-09-05-yudkowsky-4277-c"],
+      "detail": "\"a stance he later revised\": no record documents the revision.",
+      "status": "fixed-data",
+      "action": "Clause removed (v0.23.3).",
+      "foundBy": "sample B7"
+    },
+    {
+      "id": "PA-16",
+      "severity": "medium",
+      "kind": "date",
+      "where": "/person/andrej-karpathy, /year/2024-people",
+      "recordIds": ["lg-oai-karpathy-departure-2024"],
+      "detail": "\"had left OpenAI the previous day\" on a UTC-dated post points to 13 February; the post (13 February, US Pacific) says \"yesterday\".",
+      "status": "fixed-data",
+      "action": "Quotes \"yesterday\" (v0.23.3).",
+      "foundBy": "H4"
+    },
+    {
+      "id": "PA-17",
+      "severity": "medium",
+      "kind": "date",
+      "where": "/control/side-by-side and its CSV, /control/anthropic",
+      "recordIds": [
+        "cs-anthropic-ltbt-class-t-consent",
+        "cs-anthropic-ltbt-removes-directors",
+        "cs-openai-gp-llc-manages-opco"
+      ],
+      "detail": "Control rights read from a later document are shown \"In effect or completed\" from that document's date (10 rows): the Trust's veto and removal rights appear at 2025-07-03 though both clauses are in the certificate filed 2023-03-31.",
+      "status": "decision",
+      "action": "Recommended: show control-right snapshots as \"Dated record\" on the side-by-side and in the CSV, or re-date the two Anthropic rights from the 2023 certificate (a collection version).",
+      "foundBy": "H1"
+    },
+    {
+      "id": "PA-18",
+      "severity": "medium",
+      "kind": "date",
+      "where": "/control/anthropic",
+      "recordIds": [
+        "lg-ant-matheny-ltbt-departure-2023",
+        "lg-ant-bahl-ltbt-departure-2026",
+        "lg-ant-robinson-ltbt-departure-2026"
+      ],
+      "detail": "\"Stated reason, as given by Anthropic (2023-09-19)\" for departures of December 2023 and January 2026: the date is the Trust page's first publication; the reasons are in later, undated footnotes.",
+      "status": "open",
+      "action": "Recommended interface fix: in statedReason() (src/domain/genealogy.ts), do not print a source publication date earlier than the record's own date.",
+      "foundBy": "H1"
+    },
+    {
+      "id": "PA-19",
+      "severity": "medium",
+      "kind": "coherence",
+      "where": "/control/openai, /control/side-by-side",
+      "recordIds": [
+        "lg-oai-helen-toner-board-2023",
+        "lg-oai-tasha-mccauley-board-2023"
+      ],
+      "detail": "The OpenAI board timeline never shows Toner or McCauley on, or leaving, the board of 17 November 2023: their role reads \"Independent director\", which the board filter (src/domain/control-structures.ts) drops. Departures of Toner, McCauley, Hoffman, Zilis, Hurd and Karnofsky are not recorded.",
+      "status": "decision",
+      "action": "Not changed: the filter decides a released collection's members (version 3). Recommended: admit \"independent director\" as a board role in collection version 3 and add the November 2023 departure records.",
+      "foundBy": "H1, H3"
+    },
+    {
+      "id": "PA-20",
+      "severity": "medium",
+      "kind": "ordering",
+      "where": "person pages (Sutskever, Amodei, Suleyman, Jumper)",
+      "recordIds": [],
+      "detail": "Records with the same date sort by ID and year-only records come before dated ones: a departure is listed above the role it ends, a new lab above the departure.",
+      "status": "open",
+      "action": "Recommended interface change in src/domain/person-profile.ts: within a date, roles at the institution being left, then the departure, then new roles; year-only after day-precision records of that year.",
+      "foundBy": "H4"
+    },
+    {
+      "id": "PA-21",
+      "severity": "medium",
+      "kind": "date",
+      "where": "/person/john-schulman, /dossier/anthropic",
+      "recordIds": [
+        "lg-ant-schulman-joins-2024",
+        "lg-oai-schulman-departure-2024"
+      ],
+      "detail": "Schulman appears to join Anthropic (2024-08-05, TechCrunch's US date) a day before leaving OpenAI (2024-08-06, the UTC date of the same X post).",
+      "status": "decision",
+      "action": "Recommended: date both by the UTC day of the post (the convention for X posts) and keep TechCrunch's date in the note.",
+      "foundBy": "H1, H4"
+    },
+    {
+      "id": "PA-22",
+      "severity": "medium",
+      "kind": "currency",
+      "where": "/person/jan-leike",
+      "recordIds": ["leike-anthropic-alignment-science", "source-leike-bio"],
+      "detail": "His biography now says he led Anthropic's Alignment team \"until the beginning of 2026\"; the record shows an open-ended role from a capture of 2026-09-17 that cannot be read here.",
+      "status": "decision",
+      "action": "Recommended: re-read the 2026-09-17 capture; if it already said \"until\", correct the record under its ID.",
+      "foundBy": "H4"
+    },
+    {
+      "id": "PA-23",
+      "severity": "medium",
+      "kind": "duplicate",
+      "where": "/dossier/stepfun",
+      "recordIds": [
+        "lg2-cn-stepfun-round-bplus-2026",
+        "c3-stepfun-b-plus-round-2026"
+      ],
+      "detail": "One B+ round of more than RMB 5 billion appears as two consecutive records from two reports a day apart, whose qualifications disagree on whether investors are named.",
+      "status": "decision",
+      "action": "Recommended: keep lg2-cn-stepfun-round-bplus-2026, add the 36Kr passage to it, retire the c3 record by a recorded correction.",
+      "foundBy": "H2"
+    },
+    {
+      "id": "PA-24",
+      "severity": "medium",
+      "kind": "duplicate",
+      "where": "entities",
+      "recordIds": [
+        "aib-gv",
+        "gv",
+        "sensetime",
+        "shanghai-sensetime",
+        "tencent",
+        "shenzhen-tencent-computer-systems"
+      ],
+      "detail": "GV is recorded twice (aib-gv, gv). Subsidiary legal names are aliases of parent groups (上海商汤智能科技有限公司 on sensetime; 深圳市腾讯计算机系统有限公司 on tencent) while separate entities carry them, so listing records can attach to the group.",
+      "status": "decision",
+      "action": "Recommended: merge aib-gv into gv; remove the two aliases from the groups and re-point the AIIA signatory record to shanghai-sensetime, after checking which mappings rely on the aliases.",
+      "foundBy": "audit, H2"
+    },
+    {
+      "id": "PA-25",
+      "severity": "medium",
+      "kind": "coherence",
+      "where": "/dossier/deepseek",
+      "recordIds": ["lg-gc-deepseek-founded-2023-07", "cn-liang-deepseek"],
+      "detail": "The chronology shows DeepSeek \"founded 2023-07\" (from reporting) after Liang Wenfeng's own interview of 25 May 2023, which already describes it as a separately established company and is filed under \"Date unknown\".",
+      "status": "decision",
+      "action": "Recommended: date cn-liang-deepseek 2023-05-25 and say in the founding record that the earlier account exists.",
+      "foundBy": "H2"
+    },
+    {
+      "id": "PA-26",
+      "severity": "medium",
+      "kind": "announced-as-done",
+      "where": "/dossier/zero-one-ai",
+      "recordIds": ["c3-01ai-wanfeng-jv"],
+      "detail": "A formed_entity record (\"formed\") is dated by a post that states a plan.",
+      "status": "decision",
+      "action": "Recommended: date it 2026-06 from the company page with the post as context, or change the predicate to an announced formation.",
+      "foundBy": "H2"
+    },
+    {
+      "id": "PA-27",
+      "severity": "medium",
+      "kind": "omission",
+      "where": "/document/rsp-v1-0, T04",
+      "recordIds": [],
+      "detail": "RSP v1.0 already names \"Autonomous AI research\" as an early guess at ASL-4; the records start AI R&D thresholds at v2.0, so the \"earliest\" answer is incomplete.",
+      "status": "decision",
+      "action": "Recommended: record the v1.0 passage (a provision record) in the next framework pack, with a cross-family check.",
+      "foundBy": "R1"
+    },
+    {
+      "id": "PA-28",
+      "severity": "medium",
+      "kind": "edition",
+      "where": "/compare (xAI column, \"stated changes\")",
+      "recordIds": ["faif-2025", "source-faif-2025"],
+      "detail": "xAI's December 2025 framework shows \"no earlier edition\", while its Risk Management Framework of 2025-08-20 shares 81 of 114 sentences verbatim.",
+      "status": "decision",
+      "action": "Recommended: record the August 2025 RMF as the first xAI edition, or reword the not-applicable reason.",
+      "foundBy": "H3"
+    },
+    {
+      "id": "PA-29",
+      "severity": "medium",
+      "kind": "omission",
+      "where": "/year/2023-institutions",
+      "recordIds": ["musk-launched-xai-2023"],
+      "detail": "xAI's launch is filed under People, so the Institutions page for 2023 lists eleven labs founded that year but not xAI; there is no xAI founding record.",
+      "status": "decision",
+      "action": "Recommended: add a founding_stated record for xAI.",
+      "foundBy": "R3"
+    },
+    {
+      "id": "PA-30",
+      "severity": "medium",
+      "kind": "navigation",
+      "where": "/person/liang-wenfeng",
+      "recordIds": ["cn-high-flyer-backing"],
+      "detail": "The person page has no record of the backing he stated and no link to the DeepSeek or High-Flyer dossiers.",
+      "status": "open",
+      "action": "Recommended: list records whose evidence is the person's own account on the person page.",
+      "foundBy": "R2"
+    },
+    {
+      "id": "PA-31",
+      "severity": "medium",
+      "kind": "interface",
+      "where": "/control/openai on a 390 px phone",
+      "recordIds": [],
+      "detail": "The control table answering the start page's featured question is cut mid-word with hidden columns and no scroll cue.",
+      "status": "open",
+      "action": "Recommended: a scroll hint as on the comparison, or stacked rows below 600 px.",
+      "foundBy": "R1"
+    },
+    {
+      "id": "PA-32",
+      "severity": "medium",
+      "kind": "interface",
+      "where": "section links opened directly on a phone",
+      "recordIds": [],
+      "detail": "A copied section address lands up to 4,000 px off on a phone: the page grows above the target after it loads and the scroll is not corrected.",
+      "status": "open",
+      "action": "Recommended: re-scroll to the hash target once the page has rendered.",
+      "foundBy": "R1"
+    },
+    {
+      "id": "PA-33",
+      "severity": "medium",
+      "kind": "interface",
+      "where": "/control/side-by-side at desktop width",
+      "recordIds": [],
+      "detail": "The year-by-year list is hidden above 940 px and the marks have no visible label or tooltip; each record must be opened to be read.",
+      "status": "open",
+      "action": "Recommended: show the list at all widths, or label marks on hover and focus.",
+      "foundBy": "R3"
+    },
+    {
+      "id": "PA-34",
+      "severity": "medium",
+      "kind": "attribute",
+      "where": "/guide/ai-compute-2023-2026",
+      "recordIds": ["cpo-pw-google-constellation-2700mw-supply"],
+      "detail": "power.technology is \"nuclear\" though the release names no technology for the 2,700 MW (it is Constellation's operating fleet, which includes gas and hydro).",
+      "status": "decision",
+      "action": "Qualification corrected (v0.23.3). The attribute needs a schema decision: add a \"not stated\" technology value, or drop the attribute.",
+      "foundBy": "sample B2"
+    },
+    {
+      "id": "PA-35",
+      "severity": "medium",
+      "kind": "statement",
+      "where": "/propositions/ai-in-science",
+      "recordIds": ["aib-mod-casp13-a7d-result"],
+      "detail": "\"most accurate results overall in CASP13\" for a sentence in the template-free modelling section.",
+      "status": "fixed-data",
+      "action": "Scoped to that section (v0.23.3).",
+      "foundBy": "sample B3"
+    },
+    {
+      "id": "PA-36",
+      "severity": "low",
+      "kind": "wording",
+      "where": "qualifications and notes (20 records)",
+      "recordIds": [
+        "ab-scr-uk-guidance-addressees",
+        "ab-scr-hhs-2010-all-providers-addressees",
+        "cpo-pw-meta-nuclear-rfp"
+      ],
+      "detail": "Garbles left by an identifier scrub (\"Split under the one-claim-per-edge rule from recorded separately\", \"recorded separately (recorded separately)\") and pointers to pack-internal fields (\"see openQuestions\").",
+      "status": "fixed-data",
+      "action": "Rewritten without changing meaning (v0.23.3).",
+      "foundBy": "sample B2, verify sweep"
+    },
+    {
+      "id": "PA-37",
+      "severity": "low",
+      "kind": "locator",
+      "where": "15 evidence records",
+      "recordIds": [
+        "evidence-ec-g05-g",
+        "lg2-ev-oa-houlsby-anthropic-zurich-2025",
+        "lg-ev-new-murati-tml-cofounder"
+      ],
+      "detail": "Locators naming the wrong paragraph or section.",
+      "status": "fixed-data",
+      "action": "Corrected after re-reading the sources (v0.23.3).",
+      "foundBy": "samples B5–B8, verify workflow"
+    },
+    {
+      "id": "PA-38",
+      "severity": "low",
+      "kind": "quote-note",
+      "where": "evidence and qualifications",
+      "recordIds": [
+        "yk-y26-ai-positive-negative-factor-global-risk-c",
+        "c3-ev-governance-tc260-asgf-v2-open-source-encouraged-1",
+        "ts-a2-turing-1947-context"
+      ],
+      "detail": "Notes that misdescribe a quotation (an ellipsis said to mark only a page break; ellipses in continuous TC260 passages) or a date (a typescript said to be undated though headed with the lecture date).",
+      "status": "fixed-data",
+      "action": "Notes corrected; continuous TC260 passages quoted without the false ellipses (v0.23.3).",
+      "foundBy": "samples B5–B7"
+    },
+    {
+      "id": "PA-39",
+      "severity": "low",
+      "kind": "stale-note",
+      "where": "qualifications",
+      "recordIds": [
+        "cs-openai-lp-board-control-2019",
+        "cs-altman-board-return-2024",
+        "lg-goo-kavukcuoglu-chief-ai-architect-2025"
+      ],
+      "detail": "Notes saying a fact is \"not recorded here\" that a later record now records.",
+      "status": "fixed-data",
+      "action": "\"recorded separately\" (v0.23.3).",
+      "foundBy": "H1, H4"
+    },
+    {
+      "id": "PA-40",
+      "severity": "low",
+      "kind": "attribution",
+      "where": "Chinese dossiers",
+      "recordIds": [
+        "lg-cn-tang-jie-zhipu-cofounder",
+        "lg2-cn-luo-fuli-deepseek-prior",
+        "c3-shlab-intern-s1-card",
+        "lg2-cn-zhipu-ant-b5"
+      ],
+      "detail": "Company priority wording (\"pioneered\", \"first developed\") and a report's \"DeepSeek's parent company\" not marked as the source's; commit dates read as publication dates; sub-rounds said to be unestablished though the prospectus shows them.",
+      "status": "fixed-data",
+      "action": "Attributed and corrected (v0.23.3).",
+      "foundBy": "H2, sample B6"
+    },
+    {
+      "id": "PA-41",
+      "severity": "low",
+      "kind": "precision",
+      "where": "/person pages, /year/2024",
+      "recordIds": [
+        "lg2-nl-reflection-founding-stated-2024",
+        "lg2-gm-hassabis-steps-down-ceo-2026"
+      ],
+      "detail": "A founding year shown as the launch month; \"remains Chair\" where Google said \"will become the Chair\".",
+      "status": "fixed-data",
+      "action": "Corrected (v0.23.3).",
+      "foundBy": "H4"
+    },
+    {
+      "id": "PA-42",
+      "severity": "low",
+      "kind": "policy-text",
+      "where": "all dossiers",
+      "recordIds": [],
+      "detail": "Every dossier still printed \"No human inspection … is recorded for this dossier\", which the maintainer decision of 2026-11-01 dropped.",
+      "status": "fixed-interface",
+      "action": "Sentence removed.",
+      "foundBy": "H1, H2, H3"
+    },
+    {
+      "id": "PA-43",
+      "severity": "low",
+      "kind": "wording",
+      "where": "/institutions, /about (China note)",
+      "recordIds": [],
+      "detail": "\"the scope of GB 45438-2025 is held\" (internal jargon that reads as the opposite); \"prospectus\" for several.",
+      "status": "fixed-interface",
+      "action": "Reworded.",
+      "foundBy": "H2, H3"
+    },
+    {
+      "id": "PA-44",
+      "severity": "low",
+      "kind": "link",
+      "where": "sources of the lab genealogy 2 admission",
+      "recordIds": [
+        "lg2-src-covariant-next-phase-2024",
+        "lg2-src-inflection-funding-2023"
+      ],
+      "detail": "Two evidence links return 404; the pages were read in archive captures.",
+      "status": "fixed-data",
+      "action": "Evidence links point to the captures; version notes record the dead addresses (v0.23.3).",
+      "foundBy": "link check"
+    },
+    {
+      "id": "PA-45",
+      "severity": "low",
+      "kind": "link",
+      "where": "older sources (canonical addresses only)",
+      "recordIds": [
+        "source-cfai-2001-seed-html",
+        "source-sits-2000-capture",
+        "source-eoc-1997-chapter-5",
+        "source-aipnfgr-2006-draft"
+      ],
+      "detail": "14 client errors and 8 dead domains on 2,121 URLs, all historical addresses (singinst.org, sysopmind.com, foresight.org, hanson.berkeley.edu) with archive captures; 18 server errors (mostly the Moravec archive at CMU, 503); 133 bot walls.",
+      "status": "open",
+      "action": "No change: canonical addresses are kept as history; the captures are the working copies. Re-check the CMU 503s later.",
+      "foundBy": "link check"
+    },
+    {
+      "id": "PA-46",
+      "severity": "low",
+      "kind": "boilerplate",
+      "where": "576 citation records; author-person records",
+      "recordIds": [
+        "kp-cites-ernie-5-report-challenging-big-bench-tasks-whether-2022",
+        "pp-au-sergey-ioffe-batch-normalization-paper"
+      ],
+      "detail": "The standard qualification \"The citing text does not identify which version of the work was read\" is untrue where the reference names a journal or conference edition; \"The identifying page establishes no role or affiliation\" sits beside bylines that print an affiliation.",
+      "status": "decision",
+      "action": "Recommended: reword both templates to what the record checked (\"this record does not map the reference to a version\"; \"no role or affiliation is recorded from it\").",
+      "foundBy": "samples B1, B3"
+    },
+    {
+      "id": "PA-47",
+      "severity": "low",
+      "kind": "date",
+      "where": "/year/2026 and topic pages",
+      "recordIds": [
+        "aib-ppl-baker-casp14-advisory-board",
+        "pp-er-kant-poolside-cto-2023"
+      ],
+      "detail": "Snapshots dated by retrieval put old facts under October 2026 on the year pages.",
+      "status": "open",
+      "action": "Recommended: label retrieval snapshots \"as served on <date>\" on year pages, or keep them off.",
+      "foundBy": "H4"
+    },
+    {
+      "id": "PA-48",
+      "severity": "low",
+      "kind": "duplicate-line",
+      "where": "/year pages",
+      "recordIds": ["aib-ppl-nobel-hassabis", "aib-ppl-nobel-jumper"],
+      "detail": "Pairs of records with word-for-word identical statements read as duplicated lines.",
+      "status": "open",
+      "action": "Recommended: let each statement name its own subject first.",
+      "foundBy": "H4"
+    },
+    {
+      "id": "PA-49",
+      "severity": "low",
+      "kind": "date",
+      "where": "/person/jan-leike",
+      "recordIds": ["lg-oai-leike-departure-2024"],
+      "detail": "Departure dated 2024-05-17 though his first post (\"I resigned\") was 2024-05-15.",
+      "status": "decision",
+      "action": "Recommended: add the 15 May post as evidence and date the announcement by it.",
+      "foundBy": "H4"
+    },
+    {
+      "id": "PA-50",
+      "severity": "low",
+      "kind": "coherence",
+      "where": "/control/anthropic, /control/side-by-side",
+      "recordIds": ["cs-christiano-anthropic-ltbt-trustee"],
+      "detail": "Christiano appears only at 2024-04 (\"start not recorded\") while the other initial Trustees appear at 2023-09-19.",
+      "status": "decision",
+      "action": "Recommended: add his initial-Trustee snapshot like the other four.",
+      "foundBy": "H1"
+    },
+    {
+      "id": "PA-51",
+      "severity": "low",
+      "kind": "wording",
+      "where": "collection titles",
+      "recordIds": [],
+      "detail": "\"Propositions about superintelligence, 1863–2022\" lists texts to 2025; risk-debate asks about 2000–2026 under a 1863–2026 header; the economics range \"1952–2026\" invites \"Leontief 1952\", a context text.",
+      "status": "decision",
+      "action": "Recommended: widen the titles in the next collection versions.",
+      "foundBy": "H3, R2"
+    },
+    {
+      "id": "PA-52",
+      "severity": "low",
+      "kind": "interface",
+      "where": "/explore",
+      "recordIds": [],
+      "detail": "Topic counts (4,566) silently exclude proposition records while the page reports 5,785 claims.",
+      "status": "open",
+      "action": "Recommended: label the counts.",
+      "foundBy": "H3"
+    },
+    {
+      "id": "PA-53",
+      "severity": "low",
+      "kind": "interface",
+      "where": "dossier relation lines",
+      "recordIds": [
+        "cn-alibaba-budget",
+        "lg2-cn-stepfun-round-bplus-2026",
+        "lg-cn-jiao-binxing-stepfun-founding-team"
+      ],
+      "detail": "Literal amounts print unformatted and without their bound (\"380000000000 CNY\" for \"at least\"); \"co-founded\" for a \"core founding team\" member.",
+      "status": "open",
+      "action": "Recommended: format literals with their bound; show attrs.role on co_founded lines.",
+      "foundBy": "H2"
+    },
+    {
+      "id": "PA-54",
+      "severity": "low",
+      "kind": "label",
+      "where": "/compare/frontier-safety-frameworks/<question>",
+      "recordIds": [],
+      "detail": "One-question pages carry the generic H1 \"Compare frameworks\"; the question is only an H2.",
+      "status": "open",
+      "action": "Recommended: the question as H1.",
+      "foundBy": "R3"
+    },
+    {
+      "id": "PA-55",
+      "severity": "low",
+      "kind": "label",
+      "where": "/propositions/ai-in-science",
+      "recordIds": [],
+      "detail": "Group heading reads \"biology · Biology\".",
+      "status": "open",
+      "action": "Recommended: drop the slug.",
+      "foundBy": "R3"
+    },
+    {
+      "id": "PA-56",
+      "severity": "low",
+      "kind": "wording",
+      "where": "evidence notes",
+      "recordIds": [],
+      "detail": "Every evidence note says \"Human editorial review is pending\", which the decision of 2026-11-01 no longer plans.",
+      "status": "decision",
+      "action": "Recommended: leave stored notes as history (as the decision says) or replace the sentence in a bulk wording correction.",
+      "foundBy": "R3"
+    },
+    {
+      "id": "PA-57",
+      "severity": "low",
+      "kind": "date-display",
+      "where": "/document/good-1965, /document/buckingham-1955-automation-hearings-statement, GPT-2 report",
+      "recordIds": ["good-1965", "source-kp-good-1965-crossref"],
+      "detail": "Good's page shows 1965 and, two lines below, Crossref 1966 without explanation; oral testimony labelled \"Published\"; the GPT-2 report shown as \"Date unknown\".",
+      "status": "open",
+      "action": "Recommended: show the reason for differing dates on document pages.",
+      "foundBy": "R1, R2"
+    },
+    {
+      "id": "PA-58",
+      "severity": "low",
+      "kind": "wording",
+      "where": "qualifications (yk-y11, yk-y16)",
+      "recordIds": [
+        "yk-y11-sl4-2001-01-24-yudkowsky-0101-0452-c",
+        "yk-y16-sl4-2002-06-27-yudkowsky-0206-4453-c"
+      ],
+      "detail": "\"Earliest SL4 passage\" without \"located\" (found by the extended audit).",
+      "status": "decision",
+      "action": "Recommended: add \"located\" in the PA-01 re-check.",
+      "foundBy": "audit"
+    }
+  ],
+  "sample": {
+    "seed": 20261102,
+    "populations": {
+      "S3-ai-biosecurity": 191,
+      "S0-before-2026-10-28": 2847,
+      "S1-frameworks-law": 196,
+      "S5-ai-in-science-bio": 233,
+      "S8-china-labs-3": 209,
+      "S2-compute-power-orbit": 203,
+      "S10-machine-succession": 172,
+      "S6-key-papers": 980,
+      "S11-lab-genealogy-2": 253,
+      "S4-people": 76,
+      "S9-risk-debate": 239,
+      "S7-technical-history": 186
+    },
+    "targets": {
+      "S1-frameworks-law": 10,
+      "S2-compute-power-orbit": 10,
+      "S3-ai-biosecurity": 10,
+      "S4-people": 8,
+      "S5-ai-in-science-bio": 10,
+      "S6-key-papers": 12,
+      "S7-technical-history": 10,
+      "S8-china-labs-3": 10,
+      "S9-risk-debate": 10,
+      "S10-machine-succession": 10,
+      "S11-lab-genealogy-2": 12,
+      "S0-before-2026-10-28": 40
+    },
+    "stats": {
+      "strata": {
+        "S0-before-2026-10-28": {
+          "correct": 38,
+          "retrieval_failure": 5,
+          "minor": 8,
+          "checked": 46,
+          "population": 2847
+        },
+        "S1-frameworks-law": {
+          "correct": 8,
+          "retrieval_failure": 1,
+          "minor": 2,
+          "checked": 10,
+          "population": 196
+        },
+        "S10-machine-succession": {
+          "correct": 9,
+          "error": 1,
+          "checked": 10,
+          "population": 172
+        },
+        "S11-lab-genealogy-2": {
+          "minor": 6,
+          "correct": 6,
+          "retrieval_failure": 1,
+          "checked": 12,
+          "population": 253
+        },
+        "S2-compute-power-orbit": {
+          "correct": 7,
+          "minor": 3,
+          "checked": 10,
+          "population": 203
+        },
+        "S3-ai-biosecurity": {
+          "correct": 8,
+          "minor": 2,
+          "checked": 10,
+          "population": 191
+        },
+        "S4-people": {
+          "correct": 6,
+          "minor": 2,
+          "checked": 8,
+          "population": 76
+        },
+        "S5-ai-in-science-bio": {
+          "correct": 9,
+          "minor": 1,
+          "checked": 10,
+          "population": 233
+        },
+        "S6-key-papers": {
+          "correct": 10,
+          "minor": 2,
+          "checked": 12,
+          "population": 980
+        },
+        "S7-technical-history": {
+          "correct": 10,
+          "minor": 1,
+          "checked": 11,
+          "population": 186
+        },
+        "S8-china-labs-3": {
+          "correct": 10,
+          "minor": 5,
+          "checked": 15,
+          "population": 209
+        },
+        "S9-risk-debate": {
+          "minor": 3,
+          "correct": 7,
+          "checked": 10,
+          "population": 239
+        }
+      },
+      "overall": {
+        "checked": 164,
+        "attempted": 171,
+        "retrieval_failure": 7,
+        "correct": 128,
+        "minor": 35,
+        "error": 1,
+        "error_rate": 0.006097560975609756,
+        "wilson95": [0.0010771536693771344, 0.03372709033210999],
+        "clopper_pearson_upper95": 0.03350367710338726,
+        "any_issue_rate": 0.21951219512195122,
+        "any_issue_wilson95": [0.16298304128303545, 0.2888810972857103],
+        "weighted_error_rate": 0.0029732065687121867,
+        "weighted_any_issue_rate": 0.19724105889225577
+      },
+      "since-2026-10-28": {
+        "checked": 118,
+        "error": 1,
+        "minor": 27,
+        "wilson95": [0.0014975019757751395, 0.04644671412119009],
+        "any_issue_wilson95": [0.16957859709211365, 0.32156400116660916]
+      },
+      "before-2026-10-28": {
+        "checked": 46,
+        "error": 0,
+        "minor": 8,
+        "wilson95": [0, 0.07707617732978073],
+        "any_issue_wilson95": [0.09085683568889254, 0.3072363234392253]
+      }
+    },
+    "records": [
+      {
+        "claimId": "fl-eu-aia-art52-2-rebuttal",
+        "stratum": "S1-frameworks-law",
+        "verdict": "correct",
+        "beyondTarget": false,
+        "issues": [],
+        "urlUsed": "http://publications.europa.eu/resource/celex/32024R1689 (Cellar, resolved to cellar/dc8116a1-3fe6-11ef-865a-01aa75ed71a1.0006.03/DOC_1, OJ L 2024/1689 English XHTML); Regulation (EU) 2026/1744 read via http://publications.europa.eu/resource/celex/32026R1744"
+      },
+      {
+        "claimId": "cmp-meta-faf-v1-1-d6-discretion",
+        "stratum": "S1-frameworks-law",
+        "verdict": "retrieval_failure",
+        "beyondTarget": false,
+        "issues": [],
+        "urlUsed": "none faithful; tried https://ai.meta.com/static-resource/meta-frontier-ai-framework/ (HTTP 500), web.archive.org capture (connection reset; WebFetch also refused), searched for a publisher or official mirror (none found). Unofficial AGORA plaintext at https://agora.eto.tech/instrument/1970 consulted only for orientation."
+      },
+      {
+        "claimId": "fl-eu-opinion-no-kpis",
+        "stratum": "S1-frameworks-law",
+        "verdict": "correct",
+        "beyondTarget": false,
+        "issues": [],
+        "urlUsed": "https://ec.europa.eu/newsroom/dae/redirection/document/118688 (PDF, 12 pages, SHA-1 9c3e8d3c9b15c02a3dc36333ea4726102c60fbd2)"
+      },
+      {
+        "claimId": "fl-eu-cop-draft1-risk-types",
+        "stratum": "S1-frameworks-law",
+        "verdict": "correct",
+        "beyondTarget": false,
+        "issues": [],
+        "urlUsed": "https://ec.europa.eu/newsroom/dae/redirection/document/109946 (PDF, 36 pp., SHA-256 e7522e16b0dd05f368592ff19cd2e4af1f1208be88015bfa0059cdb5f6a32354, identical to the hash in the source record; CreationDate 2024-11-14 10:55 UTC)"
+      },
+      {
+        "claimId": "fl-uk-openai-mou-published",
+        "stratum": "S1-frameworks-law",
+        "verdict": "correct",
+        "beyondTarget": false,
+        "issues": [],
+        "urlUsed": "https://www.gov.uk/government/publications/memorandum-of-understanding-between-the-uk-and-openai-on-ai-opportunities/memorandum-of-understanding-between-uk-and-openai-on-ai-opportunities; metadata via https://www.gov.uk/api/content/government/publications/memorandum-of-understanding-between-the-uk-and-openai-on-ai-opportunities"
+      },
+      {
+        "claimId": "fl-intl-paris-notes-voluntary-commitments",
+        "stratum": "S1-frameworks-law",
+        "verdict": "minor",
+        "beyondTarget": false,
+        "issues": [
+          {
+            "kind": "wording",
+            "material": false,
+            "detail": "The edge is elysee -published-> paris-ai-action-statement-2025-web (time basis publication), but the statement sentence describes the statement's content ('commends ... and notes the voluntary commitments launched there'), not the act of publication. The same edge already exists as fl-intl-paris-statement-published ('The Élysée posted the English text ... on 11 February 2025'), so this record dupl"
+          }
+        ],
+        "urlUsed": "https://www.elysee.fr/en/emmanuel-macron/2025/02/11/statement-on-inclusive-and-sustainable-artificial-intelligence-for-people-and-the-planet"
+      },
+      {
+        "claimId": "fl-intl-seoul-declaration-participants",
+        "stratum": "S1-frameworks-law",
+        "verdict": "correct",
+        "beyondTarget": false,
+        "issues": [],
+        "urlUsed": "https://www.gov.uk/government/publications/seoul-declaration-for-safe-innovative-and-inclusive-ai-ai-seoul-summit-2024/seoul-declaration-for-safe-innovative-and-inclusive-ai-by-participants-attending-the-leaders-session-ai-seoul-summit-21-may-2024"
+      },
+      {
+        "claimId": "fl-us-ny-2025-def-frontier-model",
+        "stratum": "S1-frameworks-law",
+        "verdict": "minor",
+        "beyondTarget": false,
+        "issues": [
+          {
+            "kind": "qualification",
+            "material": false,
+            "detail": "Qualification says the text was 'replaced by Chapter 96 of 2026 before the act took effect'. S6953-B § 3: 'This act shall take effect on the ninetieth day after it shall have become a law'; the Assembly record shows '12/19/2025 SIGNED CHAP.699', so the original effective date would fall on about 19 March 2026, while S8828 shows '03/27/2026 SIGNED CHAP.96'. Chapter 96 § 3 then amended that section "
+          },
+          {
+            "kind": "metadata",
+            "material": false,
+            "detail": "time.note says 'Date of signature, as the source gives it', but the cited source (the S6953-B print) shows no signature date; 19 December 2025 comes from the Assembly bill record ('12/19/2025 SIGNED CHAP.699')."
+          }
+        ],
+        "urlUsed": "https://legislation.nysenate.gov/pdf/bills/2025/S6953B (PDF, 5 pp.); dates checked in https://nyassembly.gov/leg/?default_fld=&leg_video=&bn=S06953&term=2025&Summary=Y&Actions=Y and S8828 text https://legislation.nysenate.gov/pdf/bills/2025/S8828 and record https://nyassembly.gov/leg/?default_fld=&leg_video=&bn=S8828&term=2025&Summary=Y&Actions=Y"
+      },
+      {
+        "claimId": "fl-uk-kings-speech-2026-no-frontier-bill",
+        "stratum": "S1-frameworks-law",
+        "verdict": "correct",
+        "beyondTarget": false,
+        "issues": [],
+        "urlUsed": "https://assets.publishing.service.gov.uk/media/6a18713db95db968c8f3bbfd/The_King_s_Speech_2026_-_background_briefing_notes.pdf (129 pp., SHA-256 f17c81e91842fc1c0ae0942eace6b12cb879afe08c00de465635bff67ad228b7, identical to the source record)"
+      },
+      {
+        "claimId": "fl-eu-aia-art53-1-d-training-summary",
+        "stratum": "S1-frameworks-law",
+        "verdict": "correct",
+        "beyondTarget": false,
+        "issues": [],
+        "urlUsed": "http://publications.europa.eu/resource/celex/32024R1689 (Cellar, OJ L 2024/1689 English XHTML); Regulation (EU) 2026/1744 via http://publications.europa.eu/resource/celex/32026R1744"
+      },
+      {
+        "claimId": "fl-uk-openai-mou-aisi",
+        "stratum": "S1-frameworks-law",
+        "verdict": "correct",
+        "beyondTarget": false,
+        "issues": [],
+        "urlUsed": "https://www.gov.uk/government/publications/memorandum-of-understanding-between-the-uk-and-openai-on-ai-opportunities/memorandum-of-understanding-between-uk-and-openai-on-ai-opportunities"
+      },
+      {
+        "claimId": "pp-er-qiu-imbue-ceo-asof-2026",
+        "stratum": "S4-people",
+        "verdict": "correct",
+        "beyondTarget": false,
+        "issues": [],
+        "urlUsed": "https://imbue.com/about (fetched 2026-11-01)"
+      },
+      {
+        "claimId": "pp-ex-huang-nvidia-founded-1993",
+        "stratum": "S4-people",
+        "verdict": "correct",
+        "beyondTarget": false,
+        "issues": [],
+        "urlUsed": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000036/nvda-20260512.htm (DEF 14A; filing index shows Filing Date 2026-05-12)"
+      },
+      {
+        "claimId": "pp-er-albrecht-imbue-cto-asof-2026",
+        "stratum": "S4-people",
+        "verdict": "correct",
+        "beyondTarget": false,
+        "issues": [],
+        "urlUsed": "https://imbue.com/about (fetched 2026-11-01)"
+      },
+      {
+        "claimId": "pp-au-xavier-martinet-llama-paper",
+        "stratum": "S4-people",
+        "verdict": "minor",
+        "beyondTarget": false,
+        "issues": [
+          {
+            "kind": "qualification",
+            "material": false,
+            "detail": "The qualification says 'The identifying page establishes no role or affiliation', but the v1 byline prints an affiliation for the author block: 'Affiliation: Meta AI' (HTML rendering; corresponding emails @meta.com). The intended point (the record does not assert an affiliation) is fine, but as worded it misdescribes the page."
+          }
+        ],
+        "urlUsed": "https://arxiv.org/html/2302.13971v1; https://arxiv.org/abs/2302.13971v1 (citation_author metadata, 'Submitted on 27 Feb 2023')"
+      },
+      {
+        "claimId": "pp-cn-huang-huiwen-01ai-coo",
+        "stratum": "S4-people",
+        "verdict": "correct",
+        "beyondTarget": false,
+        "issues": [],
+        "urlUsed": "https://www.lingyiwanwu.com/about.html (fetched 2026-11-01; SHA-256 c6d11a3575e252ae47dc7548f4c1302dbd289897ab1aaf6c4d2f9b9f7829410d, identical to the source record's 2026-10-15 hash)"
+      },
+      {
+        "claimId": "pp-ex-pichai-google-ceo-2015",
+        "stratum": "S4-people",
+        "verdict": "correct",
+        "beyondTarget": false,
+        "issues": [],
+        "urlUsed": "https://www.sec.gov/Archives/edgar/data/1652044/000130817926000342/goog-20260424.htm; https://www.sec.gov/Archives/edgar/data/1288776/000128877615000039/a20150810form8-k.htm (both fetched with a declared User-Agent)"
+      },
+      {
+        "claimId": "pp-st-son-chairman-message-authored",
+        "stratum": "S4-people",
+        "verdict": "correct",
+        "beyondTarget": false,
+        "issues": [],
+        "urlUsed": "https://group.softbank/en/philosophy/message (fetched 2026-11-01; bytes differ from the 2026-10-29 hash, as expected for a dynamic page)"
+      },
+      {
+        "claimId": "pp-au-sergey-ioffe-batch-normalization-paper",
+        "stratum": "S4-people",
+        "verdict": "minor",
+        "beyondTarget": false,
+        "issues": [
+          {
+            "kind": "qualification",
+            "material": false,
+            "detail": "The qualification says 'The identifying page establishes no role or affiliation', but the v1 byline prints 'Sergey Ioffe / Google Inc., [e-mail address]' and 'Christian Szegedy / Google Inc.'. The page does state an affiliation. The record rightly does not assert one, but the sentence misdescribes the source."
+          }
+        ],
+        "urlUsed": "https://arxiv.org/html/1502.03167v1; https://arxiv.org/abs/1502.03167v1 ('Submitted on 11 Feb 2015', citation_author Ioffe, Sergey; Szegedy, Christian)"
+      },
+      {
+        "claimId": "cpo-dc-stargate-softbank-sites-capacity",
+        "stratum": "S2-compute-power-orbit",
+        "verdict": "correct",
+        "beyondTarget": false,
+        "issues": [],
+        "urlUsed": "https://group.softbank/en/news/press/20250924"
+      },
+      {
+        "claimId": "cpo-ch-bis-gp10-guidance-ascend-list",
+        "stratum": "S2-compute-power-orbit",
+        "verdict": "correct",
+        "beyondTarget": false,
+        "issues": [],
+        "urlUsed": "https://www.bis.gov/media/documents/general-prohibition-10-guidance-may-13-2025.pdf"
+      },
+      {
+        "claimId": "cpo-ch-cn-mofcom-2025-61-chips-ai",
+        "stratum": "S2-compute-power-orbit",
+        "verdict": "correct",
+        "beyondTarget": false,
+        "issues": [],
+        "urlUsed": "https://aqygzj.mofcom.gov.cn/qdml/art/2025/art_fbc5f7e23bff4bb184d5c49ff878f8ad.html; https://www.mofcom.gov.cn/zwgk/zcfb/art/2025/art_b1ec77dd3f0d4762952904df7cdaadec.html"
+      },
+      {
+        "claimId": "cpo-dc-xai-southaven-20bn",
+        "stratum": "S2-compute-power-orbit",
+        "verdict": "correct",
+        "beyondTarget": false,
+        "issues": [],
+        "urlUsed": "https://governorreeves.ms.gov/tech-leader-xai-investing-more-than-20-billion-in-southaven/"
+      },
+      {
+        "claimId": "cpo-dc-stargate-aggregate-sept-2025",
+        "stratum": "S2-compute-power-orbit",
+        "verdict": "minor",
+        "beyondTarget": false,
+        "issues": [
+          {
+            "kind": "qualification",
+            "material": false,
+            "detail": "The qualification says the aggregate \"includes CoreWeave projects that are not sites of the Stargate venture as such\". The release says nothing of the kind: it counts them toward Stargate (\"The combined capacity from these five new sites – along with our flagship site in Abilene, Texas, and ongoing projects with CoreWeave – brings Stargate to nearly 7 gigawatts\") and calls Stargate \"OpenAI’s overa"
+          }
+        ],
+        "urlUsed": "https://group.softbank/en/news/press/20250924"
+      },
+      {
+        "claimId": "cpo-ch-bis-license-policy-2026-published",
+        "stratum": "S2-compute-power-orbit",
+        "verdict": "correct",
+        "beyondTarget": false,
+        "issues": [],
+        "urlUsed": "https://www.govinfo.gov/content/pkg/FR-2026-01-15/pdf/2026-00789.pdf"
+      },
+      {
+        "claimId": "cpo-dc-eu-investai-published",
+        "stratum": "S2-compute-power-orbit",
+        "verdict": "minor",
+        "beyondTarget": false,
+        "issues": [
+          {
+            "kind": "quote",
+            "material": false,
+            "detail": "Paraphrase evidence-…-3 lists the programmes as if complete: \"existing EU funding programmes with a digital component (Digital Europe Programme, Horizon Europe and InvestEU)\". The source says \"existing EU funding programmes which have a digital component, such as Digital Europe Programme and Horizon Europe, and InvestEU\" — the list is illustrative. It also adds that \"Member States can also contrib"
+          },
+          {
+            "kind": "metadata",
+            "material": false,
+            "detail": "canonicalUrl is the JSON API endpoint, which a reader cannot use as a page; the press corner's own page for IP/25/467 exists."
+          }
+        ],
+        "urlUsed": "https://ec.europa.eu/commission/presscorner/api/documents?reference=IP/25/467&language=en"
+      },
+      {
+        "claimId": "cpo-ch-bis-foundry-dd-2025-cites-diffusion",
+        "stratum": "S2-compute-power-orbit",
+        "verdict": "correct",
+        "beyondTarget": false,
+        "issues": [],
+        "urlUsed": "https://www.govinfo.gov/content/pkg/FR-2025-01-16/pdf/2025-00711.pdf"
+      },
+      {
+        "claimId": "cpo-ch-openai-broadcom-term-sheet",
+        "stratum": "S2-compute-power-orbit",
+        "verdict": "correct",
+        "beyondTarget": false,
+        "issues": [],
+        "urlUsed": "https://mfn.se/all/a/broadcom/openai-and-broadcom-announce-strategic-collaboration-to-deploy-10-gigawatts-of-openai-designed-ai-accelerators-7f50bad2"
+      },
+      {
+        "claimId": "cpo-pw-google-constellation-2700mw-supply",
+        "stratum": "S2-compute-power-orbit",
+        "verdict": "minor",
+        "beyondTarget": false,
+        "issues": [
+          {
+            "kind": "metadata",
+            "material": false,
+            "detail": "attributes.power.technology is \"nuclear\", but the schema field records technology \"as stated\" and the release does not say the 2,700 MW is nuclear: \"the companies entered into a 15-year energy supply agreement for an additional 2,700 MWs in PJM's fleet. This financial structure ensures that Constellation's operating generation assets continue to deliver energy and capacity to the PJM market.\" Cons"
+          },
+          {
+            "kind": "wording",
+            "material": false,
+            "detail": "\"from Constellation's fleet in PJM\" rewords the source's \"in PJM's fleet\"; the reading is supported by the next sentence (\"Constellation's operating generation assets\"). The release is joint (\"Google and Constellation Energy today announced\"), so \"Constellation stated\" is a simplification of a joint release on Constellation's site."
+          }
+        ],
+        "urlUsed": "https://www.constellationenergy.com/news/2026/10/google-and-constellation-announce-landmark-agreement-to-bring-890-mw-of-new-nuclear-capacity-to-pjm-grid.html"
+      },
+      {
+        "claimId": "ab-arg-d3-anthropic-articulates",
+        "stratum": "S3-ai-biosecurity",
+        "verdict": "correct",
+        "beyondTarget": false,
+        "issues": [],
+        "urlUsed": "https://www.anthropic.com/research/biorisk"
+      },
+      {
+        "claimId": "ab-gov-us-nsm-aisi-guidance-bio-chem",
+        "stratum": "S3-ai-biosecurity",
+        "verdict": "correct",
+        "beyondTarget": false,
+        "issues": [],
+        "urlUsed": "https://bidenwhitehouse.archives.gov/briefing-room/presidential-actions/2024/10/24/memorandum-on-advancing-the-united-states-leadership-in-artificial-intelligence-harnessing-artificial-intelligence-to-fulfill-national-security-objectives-and-fostering-the-safety-security/"
+      },
+      {
+        "claimId": "ab-fw-faif-2025-cbrn-barrier-recognition",
+        "stratum": "S3-ai-biosecurity",
+        "verdict": "correct",
+        "beyondTarget": false,
+        "issues": [],
+        "urlUsed": "https://data.x.ai/2025-12-31-xai-frontier-artificial-intelligence-framework.pdf"
+      },
+      {
+        "claimId": "ab-ev-llama3-cb-uplift-result",
+        "stratum": "S3-ai-biosecurity",
+        "verdict": "correct",
+        "beyondTarget": false,
+        "issues": [],
+        "urlUsed": "https://arxiv.org/pdf/2407.21783v3"
+      },
+      {
+        "claimId": "ab-ev-chatgpt-agent-card-published",
+        "stratum": "S3-ai-biosecurity",
+        "verdict": "correct",
+        "beyondTarget": false,
+        "issues": [],
+        "urlUsed": "https://cdn.openai.com/pdf/839e66fc-602c-48bf-81d3-b21eacc3459d/chatgpt_agent_system_card.pdf"
+      },
+      {
+        "claimId": "ab-gov-cn-tc260-v3-research-ethics-bio",
+        "stratum": "S3-ai-biosecurity",
+        "verdict": "correct",
+        "beyondTarget": false,
+        "issues": [],
+        "urlUsed": "https://www.tc260.org.cn/tc260/xwdt1/202609/d513a007d04347f58e483fabaefb34b8/files/%E3%80%8A%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%AE%89%E5%85%A8%E6%B2%BB%E7%90%86%E6%A1%86%E6%9E%B63.0%E3%80%8B.pdf.pdf; https://www.tc260.org.cn/tc260/xwdt1/202609/d513a007d04347f58e483fabaefb34b8.shtml (for the release date)"
+      },
+      {
+        "claimId": "ab-ev-anthropic-asl3-opus4-determination",
+        "stratum": "S3-ai-biosecurity",
+        "verdict": "correct",
+        "beyondTarget": false,
+        "issues": [],
+        "urlUsed": "https://www.anthropic.com/news/activating-asl3-protections"
+      },
+      {
+        "claimId": "ab-scr-uk-guidance-addressees",
+        "stratum": "S3-ai-biosecurity",
+        "verdict": "minor",
+        "beyondTarget": false,
+        "issues": [
+          {
+            "kind": "wording",
+            "material": false,
+            "detail": "The qualification contains a broken sentence and an internal pointer a reader cannot follow: \"Split under the one-claim-per-edge rule from recorded separately. The provision kind 'threshold' is the kind the dataset uses for a definition that decides who is covered; see openQuestions.\" The referent of \"from\" is missing. The same broken sentence appears in ab-scr-hhs-2010-all-providers-addressees, a"
+          }
+        ],
+        "urlUsed": "https://www.gov.uk/government/publications/uk-screening-guidance-on-synthetic-nucleic-acids/uk-screening-guidance-on-synthetic-nucleic-acids-for-users-and-providers"
+      },
+      {
+        "claimId": "ab-gov-cn-tc260-v3-cbrn-knowledge-risk",
+        "stratum": "S3-ai-biosecurity",
+        "verdict": "correct",
+        "beyondTarget": false,
+        "issues": [],
+        "urlUsed": "https://www.tc260.org.cn/tc260/xwdt1/202609/d513a007d04347f58e483fabaefb34b8/files/%E3%80%8A%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%AE%89%E5%85%A8%E6%B2%BB%E7%90%86%E6%A1%86%E6%9E%B63.0%E3%80%8B.pdf.pdf"
+      },
+      {
+        "claimId": "ab-ev-usaisi-openai-o1-engagement",
+        "stratum": "S3-ai-biosecurity",
+        "verdict": "minor",
+        "beyondTarget": false,
+        "issues": [
+          {
+            "kind": "locator",
+            "material": false,
+            "detail": "Evidence -2 is located as \"PDF p. 3, §4 Safety Evaluations, introductory paragraph\" and the time note says the expression checked is the PDF at cdn.openai.com/o1-system-card-20241205.pdf, but source-o1-card's evidenceUrl and canonicalUrl are the HTML index page (openai.com/index/openai-o1-system-card/), and its version line describes that page (\"Page labelled Updated: December 5, 2024\"). The PDF l"
+          }
+        ],
+        "urlUsed": "https://www.nist.gov/news-events/news/2024/12/pre-deployment-evaluation-openais-o1-model; https://cdn.openai.com/o1-system-card-20241205.pdf (the o1 card's evidenceUrl, openai.com, returns 403)"
+      },
+      {
+        "claimId": "aib-co-recursion-exscientia-agreement-2024",
+        "stratum": "S5-ai-in-science-bio",
+        "verdict": "correct",
+        "beyondTarget": false,
+        "issues": [],
+        "urlUsed": "https://www.sec.gov/Archives/edgar/data/1601830/000119312524196505/d856792dex991.htm"
+      },
+      {
+        "claimId": "aib-co-recursion-ipo-2021",
+        "stratum": "S5-ai-in-science-bio",
+        "verdict": "correct",
+        "beyondTarget": false,
+        "issues": [],
+        "urlUsed": "https://www.sec.gov/Archives/edgar/data/1601830/000119312521119404/d89478d424b4.htm"
+      },
+      {
+        "claimId": "aib-ppl-moult-casp-chair",
+        "stratum": "S5-ai-in-science-bio",
+        "verdict": "correct",
+        "beyondTarget": false,
+        "issues": [],
+        "urlUsed": "https://predictioncenter.org/casp14/index.cgi"
+      },
+      {
+        "claimId": "aib-mod-rfdiffusion-code",
+        "stratum": "S5-ai-in-science-bio",
+        "verdict": "correct",
+        "beyondTarget": false,
+        "issues": [],
+        "urlUsed": "https://www.nature.com/articles/s41586-023-06415-8"
+      },
+      {
+        "claimId": "aib-co-koller-insitro-founded",
+        "stratum": "S5-ai-in-science-bio",
+        "verdict": "correct",
+        "beyondTarget": false,
+        "issues": [],
+        "urlUsed": "https://www.insitro.com/purpose/ (via WebFetch; curl blocked)"
+      },
+      {
+        "claimId": "aib-co-xtalpi-pfizer-2024",
+        "stratum": "S5-ai-in-science-bio",
+        "verdict": "correct",
+        "beyondTarget": false,
+        "issues": [],
+        "urlUsed": "https://www1.hkexnews.hk/listedco/listconews/sehk/2024/0604/2024060400065.pdf"
+      },
+      {
+        "claimId": "aib-co-insitro-founding-stated",
+        "stratum": "S5-ai-in-science-bio",
+        "verdict": "correct",
+        "beyondTarget": false,
+        "issues": [],
+        "urlUsed": "https://www.insitro.com/purpose/ ; https://www.insitro.com/news/insitro-raises-400-million-in-series-c-financing-2/ (both via WebFetch; curl blocked)"
+      },
+      {
+        "claimId": "aib-co-cpp-insitro-series-c-2021",
+        "stratum": "S5-ai-in-science-bio",
+        "verdict": "correct",
+        "beyondTarget": false,
+        "issues": [],
+        "urlUsed": "https://www.insitro.com/news/insitro-raises-400-million-in-series-c-financing-2/ (via WebFetch; curl blocked)"
+      },
+      {
+        "claimId": "aib-mod-casp14-participation",
+        "stratum": "S5-ai-in-science-bio",
+        "verdict": "correct",
+        "beyondTarget": false,
+        "issues": [],
+        "urlUsed": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8726744/"
+      },
+      {
+        "claimId": "aib-mod-casp13-a7d-result",
+        "stratum": "S5-ai-in-science-bio",
+        "verdict": "minor",
+        "beyondTarget": false,
+        "issues": [
+          {
+            "kind": "wording",
+            "material": false,
+            "detail": "The sentence ('One group, A7D from DeepMind 20 , appear to have very successfully deployed this technique, and had the most accurate results overall.') sits in the TEMPLATE FREE MODELING section, where 'overall' is read in that section's context. The statement appends 'in CASP13', which a reader can take as overall across all CASP13 categories; the paper does not say that in this sentence."
+          }
+        ],
+        "urlUsed": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6927249/"
+      },
+      {
+        "claimId": "kp-cites-self-critique-paper-chain-thought-prompting-elicits-reasoning-2022",
+        "stratum": "S6-key-papers",
+        "verdict": "correct",
+        "beyondTarget": false,
+        "issues": [],
+        "urlUsed": "https://arxiv.org/pdf/2206.05802v1"
+      },
+      {
+        "claimId": "kp-cites-ernie-5-report-challenging-big-bench-tasks-whether-2022",
+        "stratum": "S6-key-papers",
+        "verdict": "minor",
+        "beyondTarget": false,
+        "issues": [
+          {
+            "kind": "qualification",
+            "material": false,
+            "detail": "Boilerplate qualification says 'The citing text does not identify which version of the work was read', but the PDF p. 34 reference identifies a specific edition: 'Mirac Suzgun, ... Challenging big-bench tasks and whether chain-of-thought can solve them. In Findings of the Association for Computational Linguistics: ACL 2023, pp. 13003–13051, 2023.' The work entity lists only the arXiv v1 source."
+          }
+        ],
+        "urlUsed": "https://arxiv.org/pdf/2602.04705v1"
+      },
+      {
+        "claimId": "kp-states-boolq-exploring-surprising-difficulty-natural-2019-1",
+        "stratum": "S6-key-papers",
+        "verdict": "correct",
+        "beyondTarget": false,
+        "issues": [],
+        "urlUsed": "https://arxiv.org/pdf/1905.10044v1"
+      },
+      {
+        "claimId": "kp-states-gshard-scaling-giant-models-conditional-2020-2",
+        "stratum": "S6-key-papers",
+        "verdict": "correct",
+        "beyondTarget": false,
+        "issues": [],
+        "urlUsed": "https://arxiv.org/pdf/2006.16668v1"
+      },
+      {
+        "claimId": "kp-authored-ilya-sutskever-language-models-unsupervised-multitask-learners-2019",
+        "stratum": "S6-key-papers",
+        "verdict": "correct",
+        "beyondTarget": false,
+        "issues": [],
+        "urlUsed": "https://cdn.openai.com/better-language-models/language_models_are_unsupervised_multitask_learners.pdf"
+      },
+      {
+        "claimId": "kp-cites-benzell-et-al-2015-robots-are-us-acemoglu-restrepo-2018-race-between-man-and-machine",
+        "stratum": "S6-key-papers",
+        "verdict": "correct",
+        "beyondTarget": false,
+        "issues": [],
+        "urlUsed": "https://www.nber.org/system/files/working_papers/w20941/w20941.pdf"
+      },
+      {
+        "claimId": "kp-cites-summarize-feedback-paper-adam-paper",
+        "stratum": "S6-key-papers",
+        "verdict": "correct",
+        "beyondTarget": false,
+        "issues": [],
+        "urlUsed": "https://arxiv.org/pdf/2009.01325v1"
+      },
+      {
+        "claimId": "kp-cites-source-gemini-report-v1-attention-all-you-need",
+        "stratum": "S6-key-papers",
+        "verdict": "correct",
+        "beyondTarget": false,
+        "issues": [],
+        "urlUsed": "https://arxiv.org/pdf/2312.11805v1"
+      },
+      {
+        "claimId": "kp-authored-denny-zhou-challenging-big-bench-tasks-whether-2022",
+        "stratum": "S6-key-papers",
+        "verdict": "correct",
+        "beyondTarget": false,
+        "issues": [],
+        "urlUsed": "https://arxiv.org/pdf/2210.09261v1"
+      },
+      {
+        "claimId": "kp-states-evaluating-large-language-models-trained-2021-1",
+        "stratum": "S6-key-papers",
+        "verdict": "correct",
+        "beyondTarget": false,
+        "issues": [],
+        "urlUsed": "https://arxiv.org/pdf/2107.03374v1"
+      },
+      {
+        "claimId": "kp-cites-source-gemini-report-v1-palm-scaling-language-modeling-pathways-2022",
+        "stratum": "S6-key-papers",
+        "verdict": "minor",
+        "beyondTarget": false,
+        "issues": [
+          {
+            "kind": "qualification",
+            "material": false,
+            "detail": "Boilerplate qualification says 'The citing text does not identify which version of the work was read', but the PDF p. 26 reference names a specific edition: '... PaLM: Scaling Language Modeling with Pathways. Journal of Machine Learning Research, 24(240): 1–113, 2023. URL http://jmlr.org/papers/v24/22-1144.html.' The cited work entity lists only an arXiv v1 source (2204.02311)."
+          }
+        ],
+        "urlUsed": "https://arxiv.org/pdf/2312.11805v1"
+      },
+      {
+        "claimId": "kp-cites-kimi-k2-report-measuring-massive-multitask-language-understanding-2020",
+        "stratum": "S6-key-papers",
+        "verdict": "correct",
+        "beyondTarget": false,
+        "issues": [],
+        "urlUsed": "https://arxiv.org/pdf/2507.20534v1"
+      },
+      {
+        "claimId": "th-sym-credit-feigenbaum-1977-self",
+        "stratum": "S7-technical-history",
+        "verdict": "correct",
+        "beyondTarget": false,
+        "issues": [],
+        "urlUsed": "https://ijcai.org/proceedings/1977/0231.pdf"
+      },
+      {
+        "claimId": "th-lp-name-kowalski-1974",
+        "stratum": "S7-technical-history",
+        "verdict": "correct",
+        "beyondTarget": false,
+        "issues": [],
+        "urlUsed": "https://www.doc.ic.ac.uk/~rak/papers/IFIP%2074.pdf"
+      },
+      {
+        "claimId": "th-evo-koza-credits-holland",
+        "stratum": "S7-technical-history",
+        "verdict": "correct",
+        "beyondTarget": false,
+        "issues": [],
+        "urlUsed": "http://www.genetic-programming.com/jkpdf/tr1314.pdf"
+      },
+      {
+        "claimId": "th-fam-tllm-attention-credits-bahdanau",
+        "stratum": "S7-technical-history",
+        "verdict": "correct",
+        "beyondTarget": false,
+        "issues": [],
+        "urlUsed": "https://arxiv.org/pdf/1706.03762v1"
+      },
+      {
+        "claimId": "th-term-agi-gubrud-1997",
+        "stratum": "S7-technical-history",
+        "verdict": "correct",
+        "beyondTarget": false,
+        "issues": [],
+        "urlUsed": "https://legacy.foresight.org/Conferences/MNT05/Papers/Gubrud/index.html; https://legacy.foresight.org/Conferences/MNT05/Abstracts/Gubrabst.html; https://legacy.foresight.org/Conferences/MNT05/index.html"
+      },
+      {
+        "claimId": "th-dl-stat-deng-2009",
+        "stratum": "S7-technical-history",
+        "verdict": "correct",
+        "beyondTarget": false,
+        "issues": [],
+        "urlUsed": "https://papers.baulab.info/papers/also/Deng-2009.pdf"
+      },
+      {
+        "claimId": "th-prob-pearl-1982-term",
+        "stratum": "S7-technical-history",
+        "verdict": "correct",
+        "beyondTarget": false,
+        "issues": [],
+        "urlUsed": "https://cdn.aaai.org/AAAI/1982/AAAI82-032.pdf"
+      },
+      {
+        "claimId": "th-rl-tesauro-1995-1992-debut",
+        "stratum": "S7-technical-history",
+        "verdict": "correct",
+        "beyondTarget": false,
+        "issues": [],
+        "urlUsed": "https://bkgm.com/articles/tesauro/tdl.html; http://incompleteideas.net/book/RLbook2020.pdf"
+      },
+      {
+        "claimId": "th-ml-samuel-1959",
+        "stratum": "S7-technical-history",
+        "verdict": "correct",
+        "beyondTarget": false,
+        "issues": [],
+        "urlUsed": "https://people.csail.mit.edu/brooks/idocs/Samuel.pdf"
+      },
+      {
+        "claimId": "th-fam-tllm-gpt4-def",
+        "stratum": "S7-technical-history",
+        "verdict": "correct",
+        "beyondTarget": false,
+        "issues": [],
+        "urlUsed": "https://arxiv.org/pdf/2303.08774v1"
+      },
+      {
+        "claimId": "th-term-agi-goertzel-2011",
+        "stratum": "S7-technical-history",
+        "verdict": "minor",
+        "beyondTarget": false,
+        "issues": [
+          {
+            "kind": "wording",
+            "material": false,
+            "detail": "The statement says the post uses 'AGI' for 'the field he and Pennachin named in their book title'. The post says 'Shane Legg ... came up with Artificial General Intelligence' and 'So Cassio and I used the term for the book title'; it does not say Goertzel and Pennachin named a field. 'named' can be read as crediting them with the name, which the post gives to Legg. The cited paraphrase (title and "
+          }
+        ],
+        "urlUsed": "https://goertzel.org/who-coined-the-term-agi/ (via WebFetch; curl returned 406)"
+      },
+      {
+        "claimId": "ht-w02-degaris-2005-artilect-war",
+        "stratum": "S10-machine-succession",
+        "verdict": "correct",
+        "beyondTarget": false,
+        "issues": [],
+        "urlUsed": "https://profhugodegaris.wordpress.com/wp-content/uploads/2011/04/artilectwar.pdf"
+      },
+      {
+        "claimId": "ht-w03-degaris-2009-coming-artilect-war",
+        "stratum": "S10-machine-succession",
+        "verdict": "correct",
+        "beyondTarget": false,
+        "issues": [],
+        "urlUsed": "https://www.forbes.com/2009/06/18/cosmist-terran-cyborgist-opinions-contributors-artificial-intelligence-09-hugo-de-garis.html"
+      },
+      {
+        "claimId": "ht-w01-faggella-2023-worthy-successor",
+        "stratum": "S10-machine-succession",
+        "verdict": "error",
+        "beyondTarget": false,
+        "issues": [
+          {
+            "kind": "qualification",
+            "material": true,
+            "detail": "The qualification opens 'The cross-family check found these passages in an archive capture of 26 February 2024.' The record's only evidence passage is the Kurzweil sentence, and the record's own attested note says 'the cross-family check did not find the same paragraph's sentence on Kurzweil in the archive capture of 26 February 2024'; the source version likewise says the capture does not hold 'th"
+          },
+          {
+            "kind": "wording",
+            "material": false,
+            "detail": "Source: 'AGI would almost certainly be essential for the project – and Kurzweil is almost certainly right that in the longer term non-biological substrates will be more prominent and important for carrying forth life's flourishing than any eternal commitment today's biological substrates.' The statement drops 'Kurzweil is almost certainly right that', so the second clause reads as an unhedged asse"
+          }
+        ],
+        "urlUsed": "https://danfaggella.com/worthy/"
+      },
+      {
+        "claimId": "ht-w09-degaris-2001-building-gods",
+        "stratum": "S10-machine-succession",
+        "verdict": "correct",
+        "beyondTarget": false,
+        "issues": [],
+        "urlUsed": "https://www.writingsbyraykurzweil.com/building-gods-or-building-our-potential-exterminators"
+      },
+      {
+        "claimId": "ht-w09-jezos-bayes-2022-notes-eacc-principles",
+        "stratum": "S10-machine-succession",
+        "verdict": "correct",
+        "beyondTarget": false,
+        "issues": [],
+        "urlUsed": "https://beff.substack.com/p/notes-on-eacc-principles-and-tenets"
+      },
+      {
+        "claimId": "ht-w02-joy-2000-why-the-future-doesnt-need-us",
+        "stratum": "S10-machine-succession",
+        "verdict": "correct",
+        "beyondTarget": false,
+        "issues": [],
+        "urlUsed": "https://www.wired.com/2000/04/joy-2/"
+      },
+      {
+        "claimId": "ht-w07-alexander-2014-meditations-on-moloch",
+        "stratum": "S10-machine-succession",
+        "verdict": "correct",
+        "beyondTarget": false,
+        "issues": [],
+        "urlUsed": "https://slatestarcodex.com/2014/07/30/meditations-on-moloch/"
+      },
+      {
+        "claimId": "ht-link-le-2026-capitalism-is-ai-names-land-2014-teleological-identity",
+        "stratum": "S10-machine-succession",
+        "verdict": "correct",
+        "beyondTarget": false,
+        "issues": [],
+        "urlUsed": "https://vincentl3.substack.com/p/capitalism-is-ai-ai-is-capitalism"
+      },
+      {
+        "claimId": "ht-w01-degaris-2015-how-will-artilect-war-start",
+        "stratum": "S10-machine-succession",
+        "verdict": "correct",
+        "beyondTarget": false,
+        "issues": [],
+        "urlUsed": "https://profhugodegaris.wordpress.com/how-will-the-artilect-war-start/"
+      },
+      {
+        "claimId": "ht-w10-faggella-2023-worthy-successor",
+        "stratum": "S10-machine-succession",
+        "verdict": "correct",
+        "beyondTarget": false,
+        "issues": [],
+        "urlUsed": "https://danfaggella.com/worthy/"
+      },
+      {
+        "claimId": "c3-01ai-yi-licence-v1-laws",
+        "stratum": "S8-china-labs-3",
+        "verdict": "correct",
+        "beyondTarget": false,
+        "issues": [],
+        "urlUsed": "https://huggingface.co/01-ai/Yi-34B/raw/e055d548562a8fa5e4552d09a2ccacd8ac3ed641/LICENSE"
+      },
+      {
+        "claimId": "c3-baai-huang-tiejun-chair-2024",
+        "stratum": "S8-china-labs-3",
+        "verdict": "correct",
+        "beyondTarget": false,
+        "issues": [],
+        "urlUsed": "https://www.baai.ac.cn/assets/index-hCeadbk4.js"
+      },
+      {
+        "claimId": "c3-governance-tc260-asgf-v2-open-source-encouraged",
+        "stratum": "S8-china-labs-3",
+        "verdict": "minor",
+        "beyondTarget": false,
+        "issues": [
+          {
+            "kind": "quote",
+            "material": false,
+            "detail": "The passage is printed with an ellipsis ('…开源， … 进一步提高开源模型透明度') and the evidence note says 'the ellipses mark omitted words, so the passage is not continuous in the source'. In the retrieved PDF (hash matches) the text is continuous: '鼓励支持训练推理框架、软件工具、关键组件、评测基准等全方位的人工智能技术开源，进一步提高开源模型透明度。' Nothing is omitted; meaning unaffected."
+          }
+        ],
+        "urlUsed": "https://www.cac.gov.cn/rootimages/uploadimg/1759653474200838/1759653474200838.pdf"
+      },
+      {
+        "claimId": "c3-stepfun-licence-attribution",
+        "stratum": "S8-china-labs-3",
+        "verdict": "correct",
+        "beyondTarget": false,
+        "issues": [],
+        "urlUsed": "https://huggingface.co/stepfun-ai/Step-5-Preview/raw/f3112587a3eb4b2144b93e95df52b7eb8c78bf7d/LICENSE.txt"
+      },
+      {
+        "claimId": "c3-iflytek-sustainability-2025-genai-rule",
+        "stratum": "S8-china-labs-3",
+        "verdict": "minor",
+        "beyondTarget": false,
+        "issues": [
+          {
+            "kind": "locator",
+            "material": false,
+            "detail": "Locator says 'Governance section, information security and privacy protection'. The passage is in section 4.5 守护信息安全，隐私保护与安全防御, which the table of contents places under S（Social）：履行社会责任 (report pp. 045-068), not G（Governance）：力行规范治理 (pp. 069-086). It is on PDF page 33 (report pp. 065-066)."
+          },
+          {
+            "kind": "quote",
+            "material": false,
+            "detail": "The quote starts mid-phrase: the source reads '重点围绕生成式人工智能安全、供应链安全、安全应急响应等领域，制定或更新了《生成式人工智能产品安全管理规定》《软件供应链安全管理办法》…'. Cutting '生成式' makes the evidence note's translation 'in areas such as AI security' rather than 'generative-AI security'. The claim statement is unaffected."
+          }
+        ],
+        "urlUsed": "https://static.cninfo.com.cn/finalpage/2026-04-29/1225233609.PDF"
+      },
+      {
+        "claimId": "c3-sensetime-tang-director-2021-2023",
+        "stratum": "S8-china-labs-3",
+        "verdict": "correct",
+        "beyondTarget": false,
+        "issues": [],
+        "urlUsed": "https://www1.hkexnews.hk/listedco/listconews/sehk/2021/1207/2021120700017.pdf ; https://www1.hkexnews.hk/listedco/listconews/sehk/2023/1217/2023121700135.pdf"
+      },
+      {
+        "claimId": "c3-baai-bjp-control-risks",
+        "stratum": "S8-china-labs-3",
+        "verdict": "correct",
+        "beyondTarget": false,
+        "issues": [],
+        "urlUsed": "https://ai-ethics-and-governance.institute/beijing-artificial-intelligence-principles/"
+      },
+      {
+        "claimId": "c3-shlab-frmf-practice-seven-areas",
+        "stratum": "S8-china-labs-3",
+        "verdict": "correct",
+        "beyondTarget": false,
+        "issues": [],
+        "urlUsed": "https://arxiv.org/pdf/2507.16534v1"
+      },
+      {
+        "claimId": "c3-iflytek-spark-13b-licence",
+        "stratum": "S8-china-labs-3",
+        "verdict": "minor",
+        "beyondTarget": false,
+        "issues": [
+          {
+            "kind": "metadata",
+            "material": false,
+            "detail": "The time note and source version say the file 'was initially committed on 30 January 2024 and changed on 2 February 2024'. The Gitee commit API for LICENSE_MODEL.md lists five commits, and the raw file differs at each: b7057fbe82 (30 Jan 2024, 'first commit'), 85068c9cdf (31 Jan, 'update readme structure': 许可方 wording, 是指是指 typo), 43dcad4225 (2 Feb, 'update: LICENSE_MODEL.md'), 61e6ad99d6 (3 Feb, "
+          }
+        ],
+        "urlUsed": "https://gitee.com/iflytekopensource/iFlytekSpark-13B/raw/a624f7f1233c502c70054aac93b667459b41033a/LICENSE_MODEL.md (+ Gitee API commits?path=LICENSE_MODEL.md, and raw file at each listed commit)"
+      },
+      {
+        "claimId": "c3-baai-beijing-ai-principles",
+        "stratum": "S8-china-labs-3",
+        "verdict": "correct",
+        "beyondTarget": false,
+        "issues": [],
+        "urlUsed": "https://ai-ethics-and-governance.institute/beijing-artificial-intelligence-principles/ ; http://cn.chinadaily.com.cn/a/201905/26/WS5cea4d1ea310e7f8b157ed68.html"
+      },
+      {
+        "claimId": "c3-shlab-internlm-licence-2023",
+        "stratum": "S8-china-labs-3",
+        "verdict": "correct",
+        "beyondTarget": true,
+        "issues": [],
+        "urlUsed": "https://raw.githubusercontent.com/InternLM/InternLM/fa7337b37b0024e70bee3c638f969451dc4d7351/README.md (+ blobless git clone for history)"
+      },
+      {
+        "claimId": "c3-iflytek-spark-13b-licence-prohibited",
+        "stratum": "S8-china-labs-3",
+        "verdict": "minor",
+        "beyondTarget": true,
+        "issues": [
+          {
+            "kind": "metadata",
+            "material": false,
+            "detail": "Same source-level slip as c3-iflytek-spark-13b-licence: the source version says the file was 'initially committed on 30 January 2024 and changed on 2 February 2024'; the Gitee history shows the file also changed on 31 January (85068c9cdf) and 3 February 2024 (61e6ad99d6) before the cited 4 February commit."
+          }
+        ],
+        "urlUsed": "https://gitee.com/iflytekopensource/iFlytekSpark-13B/raw/a624f7f1233c502c70054aac93b667459b41033a/LICENSE_MODEL.md"
+      },
+      {
+        "claimId": "c3-governance-tc260-asgf-v2-open-source-derivative-developers",
+        "stratum": "S8-china-labs-3",
+        "verdict": "minor",
+        "beyondTarget": true,
+        "issues": [
+          {
+            "kind": "quote",
+            "material": false,
+            "detail": "The passage is cut with two ellipses, but the source text of §6.1.8 is continuous: '基于开源模型算法进行二次开发的研发者，在尊重研发者智力投入的基础上，遵循相应开源协议规范。' Nothing is omitted. The statement's second element ('audit the frameworks and code they use') rests on the next, unquoted sentence: '对所使用的开发框架、代码等进行安全审计，并关注开源框架安全及漏洞相关问题'. That sentence supports it (it says security audit)."
+          }
+        ],
+        "urlUsed": "https://www.cac.gov.cn/rootimages/uploadimg/1759653474200838/1759653474200838.pdf"
+      },
+      {
+        "claimId": "c3-01ai-wanfeng-jv",
+        "stratum": "S8-china-labs-3",
+        "verdict": "correct",
+        "beyondTarget": true,
+        "issues": [],
+        "urlUsed": "https://mp.weixin.qq.com/s/u71V3b_xA_s7yFmo9YbmBw ; https://www.lingyiwanwu.com/about.html"
+      },
+      {
+        "claimId": "c3-shlab-internlm-readme",
+        "stratum": "S8-china-labs-3",
+        "verdict": "correct",
+        "beyondTarget": true,
+        "issues": [],
+        "urlUsed": "https://raw.githubusercontent.com/InternLM/InternLM/fa7337b37b0024e70bee3c638f969451dc4d7351/README.md"
+      },
+      {
+        "claimId": "rd-r07-hawking-russell-tegmark-wilczek-2014-independent",
+        "stratum": "S9-risk-debate",
+        "verdict": "minor",
+        "beyondTarget": false,
+        "issues": [
+          {
+            "kind": "wording",
+            "material": false,
+            "detail": "The statement says the essay states 'that little serious research is devoted to the issue'. The source sentence is qualified: 'little serious research is devoted to these issues outside non-profit institutes such as the Cambridge Centre for the Study of Existential Risk, the Future of Humanity Institute, the Machine Intelligence Research Institute, and the Future of Life Institute.' This clause al"
+          }
+        ],
+        "urlUsed": "https://www.independent.co.uk/news/science/stephen-hawking-transcendence-looks-at-the-implications-of-artificial-intelligence-but-are-we-taking-ai-seriously-enough-9313474.html"
+      },
+      {
+        "claimId": "rd-r16-christiano-2018-takeoff-speeds",
+        "stratum": "S9-risk-debate",
+        "verdict": "minor",
+        "beyondTarget": false,
+        "issues": [
+          {
+            "kind": "proposition-role",
+            "material": false,
+            "detail": "The record holds the role 'earliest-located-term' (term 'slow takeoff') for R16. The dataset itself holds an earlier use of the name: yk-y11-sl4-2001-01-24-yudkowsky-0101-0452-c quotes Yudkowsky on SL4, 24 Jan 2001: 'the \"moving Event Horizon\" theory is one of those slow-takeoff scenarios…' (recorded against a different proposition, slow-takeoff-time-to-adjust). The role is defined as earliest wit"
+          },
+          {
+            "kind": "locator",
+            "material": false,
+            "detail": "Locator 'Opening paragraph': the quoted sentence opens the second paragraph; the first is 'Futurists have argued for years about whether… (“slow takeoff”).'"
+          }
+        ],
+        "urlUsed": "https://sideways-view.com/2018/02/24/takeoff-speeds/"
+      },
+      {
+        "claimId": "rd-r14-marcus-2020-gpt2-nature-of-intelligence",
+        "stratum": "S9-risk-debate",
+        "verdict": "correct",
+        "beyondTarget": false,
+        "issues": [],
+        "urlUsed": "https://thegradient.pub/gpt2-and-the-nature-of-intelligence/"
+      },
+      {
+        "claimId": "rd-a4-muehlhauser-salamon-2012-intelligence-explosion",
+        "stratum": "S9-risk-debate",
+        "verdict": "correct",
+        "beyondTarget": false,
+        "issues": [],
+        "urlUsed": "https://intelligence.org/files/IE-EI.pdf"
+      },
+      {
+        "claimId": "rd-r06-concrete-problems-paper",
+        "stratum": "S9-risk-debate",
+        "verdict": "correct",
+        "beyondTarget": false,
+        "issues": [],
+        "urlUsed": "https://arxiv.org/pdf/1606.06565v1"
+      },
+      {
+        "claimId": "rd-a4-altman-2015-machine-intelligence-part-1",
+        "stratum": "S9-risk-debate",
+        "verdict": "correct",
+        "beyondTarget": false,
+        "issues": [],
+        "urlUsed": "https://blog.samaltman.com/machine-intelligence-part-1"
+      },
+      {
+        "claimId": "rd-reply-thorstad-2022-against-singularity-hypothesis-to-chalmers-singularity",
+        "stratum": "S9-risk-debate",
+        "verdict": "correct",
+        "beyondTarget": false,
+        "issues": [],
+        "urlUsed": "https://www.globalprioritiesinstitute.org/wp-content/uploads/David-Thorstad-Against-the-singularity-hypothesis.pdf"
+      },
+      {
+        "claimId": "rd-r03-ngo-2022-alignment-problem-deep-learning",
+        "stratum": "S9-risk-debate",
+        "verdict": "correct",
+        "beyondTarget": false,
+        "issues": [],
+        "urlUsed": "https://arxiv.org/pdf/2209.00626v1"
+      },
+      {
+        "claimId": "rd-r09-bengio-2023-rogue-ais",
+        "stratum": "S9-risk-debate",
+        "verdict": "correct",
+        "beyondTarget": false,
+        "issues": [],
+        "urlUsed": "https://yoshuabengio.org/en/blog/how-rogue-ais-may-arise"
+      },
+      {
+        "claimId": "rd-r15-kapoor-2024-open-foundation-models",
+        "stratum": "S9-risk-debate",
+        "verdict": "minor",
+        "beyondTarget": false,
+        "issues": [
+          {
+            "kind": "metadata",
+            "material": false,
+            "detail": "Source record c.f. source-ab-kapoor-open-2024: 'authors' holds the string 'arXiv (preprint, Sayash Kapoor, Rishi Bommasani and others)' (a publisher-style label, not author names) and publicationDate is null, although the PDF stamp reads 'arXiv:2403.07918v1 [cs.CY] 27 Feb 2024' with dateline 'February 27, 2024' and arXiv lists v1 as Tue 27 Feb 2024 16:49 UTC."
+          },
+          {
+            "kind": "proposition-role",
+            "material": false,
+            "detail": "Articulates R15 with role 'most-developed' is a generous reading. The paper says open models 'present significant benefits, with some caveats', that the framework 'helps explain why the marginal risk is low in some cases', but also that 'current research is insufficient to effectively characterize the marginal risk'; its conclusion is only 'optimistic that open foundation models can contribute to "
+          }
+        ],
+        "urlUsed": "https://arxiv.org/pdf/2403.07918v1"
+      },
+      {
+        "claimId": "lg2-oa-houlsby-anthropic-zurich-2025",
+        "stratum": "S11-lab-genealogy-2",
+        "verdict": "minor",
+        "beyondTarget": false,
+        "issues": [
+          {
+            "kind": "locator",
+            "material": false,
+            "detail": "The quoted sentence is the second sentence of a paragraph that begins “Over the next year Anthropic intends to hire a variety of roles…”; no paragraph begins “Today's announcement builds on”."
+          }
+        ],
+        "urlUsed": "https://www.anthropic.com/news/head-of-EMEA-new-roles"
+      },
+      {
+        "claimId": "lg2-gm-msl-products-applied-research-2025",
+        "stratum": "S11-lab-genealogy-2",
+        "verdict": "minor",
+        "beyondTarget": false,
+        "issues": [
+          {
+            "kind": "metadata",
+            "material": false,
+            "detail": "The article carries a personal byline (“Esther Shittu, Reporter, AI”); the source record gives the author as “TechTarget”."
+          },
+          {
+            "kind": "link",
+            "material": false,
+            "detail": "The stored URL now 301-redirects twice to https://www.techtarget.com/news/Meta-restructures-AI-division-aiming-for-superintelligence/834299/ (same article)."
+          }
+        ],
+        "urlUsed": "https://www.techtarget.com/news/Meta-restructures-AI-division-aiming-for-superintelligence/834299/"
+      },
+      {
+        "claimId": "lg2-oa-vallone-anthropic-2026",
+        "stratum": "S11-lab-genealogy-2",
+        "verdict": "minor",
+        "beyondTarget": false,
+        "issues": [
+          {
+            "kind": "locator",
+            "material": false,
+            "detail": "The article body (also in its JSON-LD articleBody) has three paragraphs; “At Anthropic, Vallone will report to Jan Leike.” opens the third, not the fourth."
+          }
+        ],
+        "urlUsed": "https://the-decoder.com/openai-safety-researcher-joins-anthropics-alignment-team/"
+      },
+      {
+        "claimId": "lg2-cn-zhipu-round-b4",
+        "stratum": "S11-lab-genealogy-2",
+        "verdict": "correct",
+        "beyondTarget": false,
+        "issues": [],
+        "urlUsed": "https://www1.hkexnews.hk/listedco/listconews/sehk/2025/1230/2025123000017.pdf"
+      },
+      {
+        "claimId": "lg2-xa-lim-xai-head-of-legal-2025",
+        "stratum": "S11-lab-genealogy-2",
+        "verdict": "correct",
+        "beyondTarget": false,
+        "issues": [],
+        "urlUsed": "https://techcrunch.com/2025/08/07/xais-legal-chief-steps-down-after-whirlwind-year/"
+      },
+      {
+        "claimId": "lg2-cn-zhipu-ant-b5",
+        "stratum": "S11-lab-genealogy-2",
+        "verdict": "minor",
+        "beyondTarget": false,
+        "issues": [
+          {
+            "kind": "qualification",
+            "material": false,
+            "detail": "The qualification says the record “does not establish in which of the three sub-rounds of Series B5 each subscription was made”. In the layout text of p. 120 the table has sub-headings and Shanghai Feiya’s two rows (465,090 / 200,000,000) sit under “Series B5-1 Financing” and “Series B5-2 Financing”; none under B5-3. The prospectus does settle this; the qualification reads as if it did not."
+          }
+        ],
+        "urlUsed": "https://www1.hkexnews.hk/listedco/listconews/sehk/2025/1230/2025123000017.pdf"
+      },
+      {
+        "claimId": "lg2-cn-ru-liyun-baichuan-departure-2026",
+        "stratum": "S11-lab-genealogy-2",
+        "verdict": "correct",
+        "beyondTarget": false,
+        "issues": [],
+        "urlUsed": "https://finance.sina.com.cn/wm/2026-07-19/doc-iniikaqx3319639.shtml ; https://www.36kr.com/p/3909039058015368"
+      },
+      {
+        "claimId": "lg2-cn-luo-fuli-deepseek-prior",
+        "stratum": "S11-lab-genealogy-2",
+        "verdict": "correct",
+        "beyondTarget": false,
+        "issues": [],
+        "urlUsed": "https://www.jiemian.com/article/13627855.html"
+      },
+      {
+        "claimId": "lg2-oa-kilpatrick-openai-devrel-prior",
+        "stratum": "S11-lab-genealogy-2",
+        "verdict": "retrieval_failure",
+        "beyondTarget": false,
+        "issues": [],
+        "urlUsed": "https://qz.com/google-hires-ex-open-ai-leader-gemini-1851385096"
+      },
+      {
+        "claimId": "lg2-xa-luan-amazon-departure-2026",
+        "stratum": "S11-lab-genealogy-2",
+        "verdict": "correct",
+        "beyondTarget": false,
+        "issues": [],
+        "urlUsed": "https://www.linkedin.com/posts/jluan_ill-be-leaving-amazon-at-the-end-of-this-share-7432162649276153856-Tgev/ ; https://next.ink/brief-article/amazon-perd-le-responsable-de-son-ai-lab-qui-va-se-consacrer-a-la-quete-de-lia-generale-agi/ ; https://www.thestar.com.my/tech/tech-news/2026/07/22/amazon-cuts-jobs-in-its-artificial-general-intelligence-group (Reuters copy, same text)"
+      },
+      {
+        "claimId": "lg2-eu-latent-seriesa-2025-sofinnova-partners",
+        "stratum": "S11-lab-genealogy-2",
+        "verdict": "minor",
+        "beyondTarget": false,
+        "issues": [
+          {
+            "kind": "locator",
+            "material": false,
+            "detail": "The anchor sentence (“The funding includes a $40M Series A co-led by Radical Ventures and Sofinnova Partners…”) is the third body paragraph, after the dateline paragraph and “The company was founded by Dr Simon Kohl…”."
+          }
+        ],
+        "urlUsed": "https://www.latentlabs.com/press-release/latent-labs-secures-50m-in-funding/"
+      },
+      {
+        "claimId": "lg2-oa-carlini-gdm-departure-2025",
+        "stratum": "S11-lab-genealogy-2",
+        "verdict": "minor",
+        "beyondTarget": false,
+        "issues": [
+          {
+            "kind": "locator",
+            "material": false,
+            "detail": "In the HTML, “But most importantly: Brain merged into DeepMind, and I no longer believe DeepMind …” is the fourth sentence of the paragraph that begins “Joining Google Brain after finishing my PhD in 2018 was a dream job.”; no paragraph begins “But most importantly”."
+          }
+        ],
+        "urlUsed": "https://nicholas.carlini.com/writing/2025/career-update.html"
+      },
+      {
+        "claimId": "lg2-gm-friedman-products-applied-research-2025",
+        "stratum": "S11-lab-genealogy-2",
+        "verdict": "correct",
+        "beyondTarget": false,
+        "issues": [],
+        "urlUsed": "https://www.storyboard18.com/digital/meta-restructures-ai-division-into-four-units-to-drive-superintelligence-push-79411.htm"
+      },
+      {
+        "claimId": "lg-new-lample-meta-2023",
+        "stratum": "S0-before-2026-10-28",
+        "verdict": "correct",
+        "beyondTarget": false,
+        "issues": [],
+        "urlUsed": "https://arxiv.org/html/2302.13971v1 ; https://arxiv.org/pdf/2302.13971v1 ; https://arxiv.org/abs/2302.13971v1"
+      },
+      {
+        "claimId": "yk-y30-lw-2008-that-tiny-note-of-discord-b",
+        "stratum": "S0-before-2026-10-28",
+        "verdict": "correct",
+        "beyondTarget": false,
+        "issues": [],
+        "urlUsed": "https://www.lesswrong.com/posts/SwCwG9wZcAzQtckwx/that-tiny-note-of-discord"
+      },
+      {
+        "claimId": "ts-a4-cfai",
+        "stratum": "S0-before-2026-10-28",
+        "verdict": "correct",
+        "beyondTarget": false,
+        "issues": [],
+        "urlUsed": "https://intelligence.org/files/CFAI.pdf (MIRI reprint, PDF p. 255, which the locator also cites)"
+      },
+      {
+        "claimId": "cs-openai-structure-plan-2024",
+        "stratum": "S0-before-2026-10-28",
+        "verdict": "retrieval_failure",
+        "beyondTarget": false,
+        "issues": [],
+        "urlUsed": "https://openai.com/index/why-our-structure-must-evolve-to-advance-our-mission/ ; https://openai.com/news/rss.xml"
+      },
+      {
+        "claimId": "lg-cn-huang-huiwen-01ai-cofounder",
+        "stratum": "S0-before-2026-10-28",
+        "verdict": "correct",
+        "beyondTarget": false,
+        "issues": [],
+        "urlUsed": "https://www.lingyiwanwu.com/about.html"
+      },
+      {
+        "claimId": "prov-meta-faf-v1-1-uplift-assessment-approval",
+        "stratum": "S0-before-2026-10-28",
+        "verdict": "retrieval_failure",
+        "beyondTarget": false,
+        "issues": [],
+        "urlUsed": "https://ai.meta.com/static-resource/meta-frontier-ai-framework/ ; https://agora.eto.tech/instrument/1970 (third-party transcription, corroboration only)"
+      },
+      {
+        "claimId": "yk-y04-extropians-2000-03-14-yudkowsky-4837-b",
+        "stratum": "S0-before-2026-10-28",
+        "verdict": "correct",
+        "beyondTarget": false,
+        "issues": [],
+        "urlUsed": "http://extropians.weidai.com/extropians.1Q00/4837.html"
+      },
+      {
+        "claimId": "cs-openai-nonprofit-retains-control-2025",
+        "stratum": "S0-before-2026-10-28",
+        "verdict": "retrieval_failure",
+        "beyondTarget": false,
+        "issues": [],
+        "urlUsed": "https://openai.com/index/evolving-our-structure/ ; https://openai.com/news/rss.xml"
+      },
+      {
+        "claimId": "ec-g02-aghion-jones-jones-2017-ai-and-economic-growth-c",
+        "stratum": "S0-before-2026-10-28",
+        "verdict": "correct",
+        "beyondTarget": false,
+        "issues": [],
+        "urlUsed": "https://www.nber.org/system/files/working_papers/w23928/w23928.pdf"
+      },
+      {
+        "claimId": "lg-oai-david-velez-pbc-board-2026",
+        "stratum": "S0-before-2026-10-28",
+        "verdict": "retrieval_failure",
+        "beyondTarget": false,
+        "issues": [],
+        "urlUsed": "https://openai.com/index/david-velez-robin-vince-join-openai-boards/ ; https://openai.com/news/rss.xml"
+      },
+      {
+        "claimId": "yk-y26-ai-positive-negative-factor-global-risk-c",
+        "stratum": "S0-before-2026-10-28",
+        "verdict": "minor",
+        "beyondTarget": false,
+        "issues": [
+          {
+            "kind": "qualification",
+            "material": false,
+            "detail": "The qualification says “The ellipsis marks only a page break (running head and page number); no words are omitted.” This is false. The reprint reads “…it can only affect the world at the speed of its manipulators; it can’t operate machinery faster than it can order human hands to [page break, printed pp. 25/26] work; therefore a fast mind is no great threat.” The ellipsis in the quote omits “; it "
+          },
+          {
+            "kind": "wording",
+            "material": false,
+            "detail": "The statement says the step “assumes only one human willing or deceived into helping”. The source: “Find at least one human connected to the Internet who can be paid, blackmailed, or fooled by the right background story”. ‘Willing’ does not cover ‘blackmailed’."
+          }
+        ],
+        "urlUsed": "https://intelligence.org/files/AIPosNegFactor.pdf"
+      },
+      {
+        "claimId": "lg-cn-tang-jie-zhipu-cofounder",
+        "stratum": "S0-before-2026-10-28",
+        "verdict": "correct",
+        "beyondTarget": false,
+        "issues": [],
+        "urlUsed": "https://www1.hkexnews.hk/listedco/listconews/sehk/2025/1230/2025123000018_c.pdf"
+      },
+      {
+        "claimId": "ap-eliezer-yudkowsky-sl4-2005-01-02-yudkowsky-0501-10512",
+        "stratum": "S0-before-2026-10-28",
+        "verdict": "correct",
+        "beyondTarget": false,
+        "issues": [],
+        "urlUsed": "http://sl4.org/archive/0501/10512.html"
+      },
+      {
+        "claimId": "ts-a2-turing-1947-context",
+        "stratum": "S0-before-2026-10-28",
+        "verdict": "minor",
+        "beyondTarget": false,
+        "issues": [
+          {
+            "kind": "date",
+            "material": false,
+            "detail": "claim.time.note says \"The typescript photocopy is undated\", but scan 1 (typescript p. 1) is headed, typed and underlined, \"Lecture to L.M.S. Feb. 20 1947\". The date value 1947-02-20 is correct; only the note mis-describes the document."
+          }
+        ],
+        "urlUsed": "https://mediadepot.kings.cam.ac.uk/getmedia/25/3aba98a45870caf929342f032cd994f63c0557583c01548254049a5b45e4707961faef9d296e03c59ed624cadf5f06cf83c01085ec35e872c2614eece1618786 (scan PDF linked from the catalogue page; scans 30-31 rendered and read)"
+      },
+      {
+        "claimId": "xm-babuschkin-departure",
+        "stratum": "S0-before-2026-10-28",
+        "verdict": "correct",
+        "beyondTarget": false,
+        "issues": [],
+        "urlUsed": "https://www.investing.com/news/stock-market-news/xai-cofounder-babuschkin-departs-to-launch-ai-safety-investment-firm-4190463 (via WebFetch; curl got 403)"
+      },
+      {
+        "claimId": "ap-daniel-rock-eloundou-et-al-2023-gpts-are-gpts",
+        "stratum": "S0-before-2026-10-28",
+        "verdict": "correct",
+        "beyondTarget": false,
+        "issues": [],
+        "urlUsed": "https://arxiv.org/pdf/2303.10130v1"
+      },
+      {
+        "claimId": "provchange-preparedness-v2-critical-development-restriction",
+        "stratum": "S0-before-2026-10-28",
+        "verdict": "correct",
+        "beyondTarget": false,
+        "issues": [],
+        "urlUsed": "https://cdn.openai.com/pdf/18a02b5d-6b67-4cec-ab64-68cdfbddebcd/preparedness-framework-v2.pdf ; https://cdn.openai.com/openai-preparedness-framework-beta.pdf"
+      },
+      {
+        "claimId": "lg-deal-moreno-windsurf-president-2025",
+        "stratum": "S0-before-2026-10-28",
+        "verdict": "correct",
+        "beyondTarget": false,
+        "issues": [],
+        "urlUsed": "https://devin.ai/blog/windsurfs-next-stage (direct; windsurf.com URL redirects here)"
+      },
+      {
+        "claimId": "c2-moonshot-k3-card",
+        "stratum": "S0-before-2026-10-28",
+        "verdict": "correct",
+        "beyondTarget": false,
+        "issues": [],
+        "urlUsed": "https://huggingface.co/moonshotai/Kimi-K3/raw/2496450e92e425c886db095102a52a6682ca3970/README.md ; https://huggingface.co/api/models/moonshotai/Kimi-K3/commits/main"
+      },
+      {
+        "claimId": "ec-g05-erdil-besiroglu-2023-explosive-growth-review-c",
+        "stratum": "S0-before-2026-10-28",
+        "verdict": "minor",
+        "beyondTarget": false,
+        "issues": [
+          {
+            "kind": "locator",
+            "material": false,
+            "detail": "The quoted passage is not in the paragraph containing \"there might be intrinsic timescales\"; that paragraph ends \"If true, this could be a strong objection against the explosive growth view.\" The quote is the next paragraph, beginning \"Some version of this argument is certainly sound\" (PDF p. 11)."
+          }
+        ],
+        "urlUsed": "https://arxiv.org/pdf/2309.11690v2 (SHA-256 matches recorded 28610b91…); https://arxiv.org/abs/2309.11690v2"
+      },
+      {
+        "claimId": "ts-b3-christiano-2018-daemons",
+        "stratum": "S0-before-2026-10-28",
+        "verdict": "correct",
+        "beyondTarget": false,
+        "issues": [],
+        "urlUsed": "https://www.alignmentforum.org/posts/nyCHnY7T5PHPLjxmN/open-question-are-minimal-circuits-daemon-free"
+      },
+      {
+        "claimId": "cmp-fsf-2024-d1-persuasion",
+        "stratum": "S0-before-2026-10-28",
+        "verdict": "correct",
+        "beyondTarget": false,
+        "issues": [],
+        "urlUsed": "https://storage.googleapis.com/deepmind-media/DeepMind.com/Blog/introducing-the-frontier-safety-framework/fsf-technical-report.pdf"
+      },
+      {
+        "claimId": "lg-mx-zhang-xai-departure-2026",
+        "stratum": "S0-before-2026-10-28",
+        "verdict": "correct",
+        "beyondTarget": false,
+        "issues": [],
+        "urlUsed": "https://cdn.syndication.twimg.com/tweet-result?id=2032285406964957333 ; https://www.businessinsider.com/manuel-kroiss-xai-cofounder-departure-elon-musk-2026-3"
+      },
+      {
+        "claimId": "lg-goo-ghahramani-gdm-research-leadership-2023",
+        "stratum": "S0-before-2026-10-28",
+        "verdict": "correct",
+        "beyondTarget": false,
+        "issues": [],
+        "urlUsed": "https://deepmind.google/blog/announcing-google-deepmind/"
+      },
+      {
+        "claimId": "cmp-ms-fgf-2025-d6-competitor",
+        "stratum": "S0-before-2026-10-28",
+        "verdict": "correct",
+        "beyondTarget": false,
+        "issues": [],
+        "urlUsed": "https://cdn-dynmedia-1.microsoft.com/is/content/microsoftcorp/microsoft/final/en-us/microsoft-brand/documents/Microsoft-Frontier-Governance-Framework.pdf"
+      },
+      {
+        "claimId": "ec-m09-buckingham-1955-automation-hearings-statement-b",
+        "stratum": "S0-before-2026-10-28",
+        "verdict": "minor",
+        "beyondTarget": false,
+        "issues": [
+          {
+            "kind": "metadata",
+            "material": false,
+            "detail": "The OCR URL recorded in source.version, https://ia803102.us.archive.org/32/items/congress-automation-and-technological-change/congress-automation-and-technological-changedjvu.txt, returns 404: the file name lacks the underscore. The file with the recorded hash is congress-automation-and-technological-change_djvu.txt."
+          },
+          {
+            "kind": "qualification",
+            "material": false,
+            "detail": "The qualification is a checker workflow note, and its premise that the .txt extraction omits printed pp. 29–37 does not hold for the djvu.txt whose hash is recorded: that file contains printed p. 29 and the quoted words (\"I speak for myself only? and as an economist, which is the only profession which I lay any claim to.\")."
+          },
+          {
+            "kind": "wording",
+            "material": false,
+            "detail": "attributes.thought.missing calls Buckingham \"the subcommittee's opening analytical witness on automation in October 1955\". The order of appearances for Friday 14 October, 10 a.m., lists John Diebold first and Buckingham second, and Buckingham speaks after Diebold's presentation."
+          }
+        ],
+        "urlUsed": "https://archive.org/download/congress-automation-and-technological-change/congress-automation-and-technological-change_djvu.txt (SHA-256 3962809f…, matches the recorded hash)"
+      },
+      {
+        "claimId": "yk-y14-extropians-2000-09-05-yudkowsky-4277-c",
+        "stratum": "S0-before-2026-10-28",
+        "verdict": "minor",
+        "beyondTarget": false,
+        "issues": [
+          {
+            "kind": "qualification",
+            "material": false,
+            "detail": "The qualification ends its summary of the reply (\"One does not perform 'research' in this area. One gets it right the first time. One designs an AI that ... can be trusted to recover from any mistakes made by the programmers.\") with \"a stance he later revised\". Nothing in this record or its evidence documents the later revision, and the phrase does not say which part (no research, getting it right"
+          }
+        ],
+        "urlUsed": "http://extropians.weidai.com/extropians.3Q00/4277.html (SHA-256 matches recorded 817049e5…)"
+      },
+      {
+        "claimId": "lg-oai-zoph-departure-2024",
+        "stratum": "S0-before-2026-10-28",
+        "verdict": "correct",
+        "beyondTarget": false,
+        "issues": [],
+        "urlUsed": "https://cdn.syndication.twimg.com/tweet-result?id=1839095143397515452 ; https://techcrunch.com/2024/09/25/openais-chief-research-officer-has-left/"
+      },
+      {
+        "claimId": "lg-new-murati-tml-cofounder",
+        "stratum": "S0-before-2026-10-28",
+        "verdict": "minor",
+        "beyondTarget": false,
+        "issues": [
+          {
+            "kind": "locator",
+            "material": false,
+            "detail": "The quoted attribution is in the fifth body paragraph, not paragraph 3. Body order: (1) 'Thinking Machines Lab and NVIDIA announced today...', (2) 'The partnership also includes...', (3) 'NVIDIA has also made a significant investment...', (4) Huang quotation, (5) '“NVIDIA’s technology is the foundation...,” said Mira Murati, cofounder and CEO of Thinking Machines.'"
+          }
+        ],
+        "urlUsed": "https://thinkingmachines.ai/news/nvidia-partnership/"
+      },
+      {
+        "claimId": "lg-mx-pineau-meta-departure-2025",
+        "stratum": "S0-before-2026-10-28",
+        "verdict": "correct",
+        "beyondTarget": false,
+        "issues": [],
+        "urlUsed": "https://www.cnbc.com/2025/04/01/metas-head-of-ai-research-announces-departure.html (via WebFetch; curl gets 403)"
+      },
+      {
+        "claimId": "lineage-ii-weak-cites-critique",
+        "stratum": "S0-before-2026-10-28",
+        "verdict": "correct",
+        "beyondTarget": false,
+        "issues": [],
+        "urlUsed": "https://arxiv.org/pdf/2312.09390v1"
+      },
+      {
+        "claimId": "lg-goo-chen-gdm-2025",
+        "stratum": "S0-before-2026-10-28",
+        "verdict": "correct",
+        "beyondTarget": false,
+        "issues": [],
+        "urlUsed": "https://publish.x.com/oembed?url=https://twitter.com/demishassabis/status/1943794383536652309 (X's official oEmbed endpoint)"
+      },
+      {
+        "claimId": "prov-ms-fgf-2025-pause-unmitigable-risk",
+        "stratum": "S0-before-2026-10-28",
+        "verdict": "correct",
+        "beyondTarget": false,
+        "issues": [],
+        "urlUsed": "https://cdn-dynmedia-1.microsoft.com/is/content/microsoftcorp/microsoft/final/en-us/microsoft-brand/documents/Microsoft-Frontier-Governance-Framework.pdf"
+      },
+      {
+        "claimId": "cmp-rsp-v2-2-d8-process",
+        "stratum": "S0-before-2026-10-28",
+        "verdict": "correct",
+        "beyondTarget": false,
+        "issues": [],
+        "urlUsed": "https://www-cdn.anthropic.com/872c653b2d0501d6ab44cf87f43e1dc4853e4d37.pdf"
+      },
+      {
+        "claimId": "ap-eliezer-yudkowsky-arbital-context-disaster",
+        "stratum": "S0-before-2026-10-28",
+        "verdict": "correct",
+        "beyondTarget": false,
+        "issues": [],
+        "urlUsed": "https://arbital.greaterwrong.com/p/context_disaster/ (via WebFetch; curl from the container got connection resets twice)"
+      },
+      {
+        "claimId": "cmp-rsp-v3-2-d3-halt",
+        "stratum": "S0-before-2026-10-28",
+        "verdict": "correct",
+        "beyondTarget": false,
+        "issues": [],
+        "urlUsed": "https://cdn.sanity.io/files/4zrzovbb/website/28c6241900d90410628a8a2003a5572faae4365a.pdf (also v3.0 and v3.1 PDFs to check the 'added in v3.1' qualification)"
+      },
+      {
+        "claimId": "cmp-rsp-v2-0-d1-autonomy",
+        "stratum": "S0-before-2026-10-28",
+        "verdict": "correct",
+        "beyondTarget": false,
+        "issues": [],
+        "urlUsed": "https://www-cdn.anthropic.com/616dee633636e5bd309cb73aed8622e80fe47839.pdf"
+      },
+      {
+        "claimId": "ap-daron-acemoglu-acemoglu-restrepo-2019-automation-and-new-tasks",
+        "stratum": "S0-before-2026-10-28",
+        "verdict": "correct",
+        "beyondTarget": false,
+        "issues": [],
+        "urlUsed": "https://www.nber.org/system/files/working_papers/w25684/w25684.pdf"
+      },
+      {
+        "claimId": "lg-new-tulloch-tml-departure-2025",
+        "stratum": "S0-before-2026-10-28",
+        "verdict": "correct",
+        "beyondTarget": false,
+        "issues": [],
+        "urlUsed": "https://vn.tradingview.com/news/reuters.com%2C2025%3Anewsml_L2N3VS042%3A0-thinking-machines-lab-co-founder-tulloch-departs-for-meta-wsj-reports/"
+      },
+      {
+        "claimId": "lg-gc-zhou-xinyu-moonshot-cofounder",
+        "stratum": "S0-before-2026-10-28",
+        "verdict": "correct",
+        "beyondTarget": false,
+        "issues": [],
+        "urlUsed": "https://www.36kr.com/p/3548523752173447"
+      },
+      {
+        "claimId": "yk-y11-creating-friendly-ai-2001-c",
+        "stratum": "S0-before-2026-10-28",
+        "verdict": "correct",
+        "beyondTarget": false,
+        "issues": [],
+        "urlUsed": "https://intelligence.org/files/CFAI.pdf"
+      },
+      {
+        "claimId": "ts-b2-christiano-2019-wflf",
+        "stratum": "S0-before-2026-10-28",
+        "verdict": "correct",
+        "beyondTarget": false,
+        "issues": [],
+        "urlUsed": "https://www.alignmentforum.org/posts/HBxe6wdjxK239zajf/what-failure-looks-like"
+      },
+      {
+        "claimId": "c2-governance-aiia-aisc-signatory-zero-one-ai",
+        "stratum": "S0-before-2026-10-28",
+        "verdict": "retrieval_failure",
+        "beyondTarget": false,
+        "issues": [],
+        "urlUsed": "https://mp.weixin.qq.com/s/s-XFKQCWhu0uye4opgb3Ng (captcha); https://itcloudbd.com/rengongzhineng/13352.html (secondary, read)"
+      },
+      {
+        "claimId": "ts-a3-clemmensen-1996-08-31-context",
+        "stratum": "S0-before-2026-10-28",
+        "verdict": "correct",
+        "beyondTarget": false,
+        "issues": [],
+        "urlUsed": "http://extropians.weidai.com/extropians.96/0624.html"
+      },
+      {
+        "claimId": "lg-mx-schalkwyk-msl-2025",
+        "stratum": "S0-before-2026-10-28",
+        "verdict": "minor",
+        "beyondTarget": false,
+        "issues": [
+          {
+            "kind": "wording",
+            "material": false,
+            "detail": "The memo introduces the list as 'several strong new team members joining today or who have joined in the past few weeks'; neither the lead-in nor the entries say 'MSL'. The tie to MSL is by context: the memo says 'We're going to call our overall organization Meta Superintelligence Labs (MSL)', which 'includes all of our foundations, product, and FAIR teams'. 'Among new MSL team members' is a fair "
+          },
+          {
+            "kind": "metadata",
+            "material": false,
+            "detail": "Source record gives authors ['CNBC']; the article carries the byline Jonathan Vanian (published Mon, Jun 30 2025, 2:32 PM EDT; updated 6:20 PM EDT)."
+          }
+        ],
+        "urlUsed": "https://www.cnbc.com/2025/06/30/mark-zuckerberg-creating-meta-superintelligence-labs-read-the-memo.html (via WebFetch; curl gets 403)"
+      },
+      {
+        "claimId": "yk-y11-yudkowsky-2008-hard-takeoff-c",
+        "stratum": "S0-before-2026-10-28",
+        "verdict": "correct",
+        "beyondTarget": true,
+        "issues": [],
+        "urlUsed": "https://www.lesswrong.com/posts/tjH8XPxAnr6JRbh7k/hard-takeoff"
+      },
+      {
+        "claimId": "yk-y30-sl4-2000-11-13-yudkowsky-0011-0181-c",
+        "stratum": "S0-before-2026-10-28",
+        "verdict": "correct",
+        "beyondTarget": true,
+        "issues": [],
+        "urlUsed": "http://sl4.org/archive/0011/0181.html"
+      },
+      {
+        "claimId": "ec-e02-restrepo-2025-we-wont-be-missed-b",
+        "stratum": "S0-before-2026-10-28",
+        "verdict": "correct",
+        "beyondTarget": true,
+        "issues": [],
+        "urlUsed": "https://www.nber.org/papers/w34423"
+      },
+      {
+        "claimId": "ap-eliezer-yudkowsky-sl4-2001-04-06-yudkowsky-0104-0956",
+        "stratum": "S0-before-2026-10-28",
+        "verdict": "correct",
+        "beyondTarget": true,
+        "issues": [],
+        "urlUsed": "http://sl4.org/archive/0104/0956.html"
+      },
+      {
+        "claimId": "ap-vernor-vinge-extropians-1998-09-16-vinge",
+        "stratum": "S0-before-2026-10-28",
+        "verdict": "minor",
+        "beyondTarget": true,
+        "issues": [
+          {
+            "kind": "qualification",
+            "material": false,
+            "detail": "The qualification is the generic sender-name wording ('A sender name on a mailing-list message as archived; ... quoted text by others inside the message is not the sender’s'), but here Vinge is not the sender: the header shows 'Robin Hanson', 'Wed, 16 Sep 1998 09:38:11 -0700', and the body opens 'Vinge asks me to forward the following to the list:' and the forwarded text ends with the signature 'V"
+          }
+        ],
+        "urlUsed": "http://extropians.weidai.com/extropians.3Q98/2437.html"
+      },
+      {
+        "claimId": "supersedes-rsp-3-0",
+        "stratum": "S0-before-2026-10-28",
+        "verdict": "correct",
+        "beyondTarget": true,
+        "issues": [],
+        "urlUsed": "https://anthropic.com/responsible-scaling-policy/rsp-v3-0 (-> PDF) and https://www.anthropic.com/responsible-scaling-policy"
+      }
+    ]
+  },
+  "readerTasks": [
+    {
+      "task": "T01",
+      "question": "What does the EU AI Act require of general-purpose AI model providers, and from when?",
+      "startPath": "Start page → 'Which laws and government texts address frontier AI developers, with what standing, and which frameworks name them?' (guide) → contents 'European Union' → open 'What the text states · 40 provisions recorded'. The date and the existence of the duties are already in the guide's opening paragraph after the first click.",
+      "startClicks": {
+        "desktop": 3,
+        "phone": 3
+      },
+      "pages": 2,
+      "depthPx": {
+        "desktop": {
+          "dateInOpeningParagraph": 937,
+          "chapterVDateRowInEUSection": 10362,
+          "art111_3": 12954,
+          "art55_1_a": 13679,
+          "art53_1_a": 13831
+        },
+        "phone": {
+          "dateInOpeningParagraph": 1217,
+          "chapterVDateRowInEUSection": 16251,
+          "art111_3": 19716,
+          "art55_1_a": 20687,
+          "art53_1_a": 20902
+        },
+        "note": "Deep positions are reached by the contents link, which jumps to the EU section (no unaided scroll)."
+      },
+      "ratingStart": "Found",
+      "ratingDeepJs": "Found",
+      "ratingNoJs": "Found",
+      "misleads": "No. The guide's opening paragraph now says in plain words that the chapter on general-purpose models applies from 2 August 2025, a year before the general date; the timeline has a 2025-08-02 row 'Chapter V (general-purpose AI models) applies from 2 August 2025'; and Article 111(3) (models placed on the market before 2 August 2025 comply by 2 August 2027) is now recorded.",
+      "answerGiven": "Duties: Art. 53(1)(a)-(d) (technical documentation; information for downstream providers; copyright policy; public training-content summary), Art. 54 (EU authorised representative for third-country providers), Art. 55(1)(a)-(d) for models with systemic risk (evaluation incl. adversarial testing; assess and mitigate systemic risks; serious-incident reporting; cybersecurity); codes of practice may be relied on (Art. 53(4), 55(2)). Dates: Chapter V applies from 2 August 2025 (Art. 113(b)), Art. 101 fines excepted; general application 2 August 2026; models already on the market before 2 August 2025 by 2 August 2027 (Art. 111(3)).",
+      "answerCorrect": "yes",
+      "sourceChecked": "Evidence link is EUR-Lex OJ:L_202401689 (returned HTTP 202 with an empty body to this container, a bot check; not circumvented) and a web.archive.org capture (unreachable). Checked instead against the same Official Journal text from the Publications Office Cellar (publications.europa.eu/resource/celex/32024R1689, XHTML): Art. 113 reads 'It shall apply from 2 August 2026. However: ... (b) Chapter III Section 4, Chapter V, Chapter VII and Chapter XII and Article 78 shall apply from 2 August 2025, with the exception of Article 101'; Art. 111(3) 'Providers of general-purpose AI models that have been placed on the market before 2 August 2025 shall take the necessary steps ... by 2 August 2027'; Art. 53(1)(a) and 55(1) chapeau match the quoted passages. The 'No article names CBRN risk' record holds: 'chemical, biological, radiological' occurs only in Recital 110; 'nuclear' elsewhere only in Annex II.",
+      "compareTo20261029": "better: start path was 'Found with difficulty' (the GPAI date appeared only as an 'Exception' naming 'Chapter V' and the first dated row read 2 August 2026); now the date is stated in plain words on the guide's first screen, glossed in the row label, on the timeline, and Art. 111(3) is added. Deep landing and no-JS unchanged at Found."
+    },
+    {
+      "task": "T02",
+      "question": "Who controlled OpenAI in 2019?",
+      "startPath": "Start page → 'Who controlled OpenAI, and when?' (/control/openai); answer in the first table 'Who holds which control right'.",
+      "startClicks": {
+        "desktop": 1,
+        "phone": 1
+      },
+      "pages": 2,
+      "depthPx": {
+        "desktop": {
+          "table990Row": 707,
+          "tableAnnouncedRow": 841,
+          "timelineStatement": 2838
+        },
+        "phone": {
+          "table990Row": 1065,
+          "tableAnnouncedRow": 1379,
+          "timelineStatement": 4325
+        }
+      },
+      "ratingStart": "Found",
+      "ratingDeepJs": "Found",
+      "ratingNoJs": "Found",
+      "misleads": "No on desktop. On a phone the table's 'Right', 'Over' and 'Instrument' columns are off-screen, so the first visible row reads '2019 · snapshot · Effective · OpenAI GP LLC · Co…'; the statement in the timeline below is complete.",
+      "answerGiven": "2019: OpenAI's announcement of 11 March 2019 states OpenAI LP is controlled by the board of OpenAI Nonprofit (legal name OpenAI Inc) [announced]; Form 990 for tax year 2019, Schedule R: OpenAI GP LLC is the direct controlling entity of OpenAI LP (Part III, general/managing partner 'Yes') and OpenAI Inc the direct controlling entity of OpenAI GP LLC (Part I) [effective]. Qualification: the records do not settle which entity was the general partner in law.",
+      "answerCorrect": "partly verified: Form 990 part yes; announcement part unverifiable here",
+      "sourceChecked": "Form 990 Schedule R, tax year 2019 (ProPublica render projects.propublica.org/nonprofits/full_text/202003219349325305/IRS990ScheduleR, served gzip from S3): Part I lists 'OpenAI GP LLC … Direct controlling entity OpenAI Inc'; Part III lists 'OpenAI LP … 83-1960637 … CA … OpenAI GP LLC … No | Yes' — matches the records. The March 2019 announcement (openai.com/index/openai-lp/) returned HTTP 403 and the web.archive.org capture of 2019-03-11 was unreachable (connection reset); no other faithful copy found, so the quoted 'the company is controlled by OpenAI Nonprofit’s board' is unverified by this run.",
+      "compareTo20261029": "same: Found from start and from the dossier (1 click via the control-structure link, fixed on 29 October); no-JS Found."
+    },
+    {
+      "task": "T03",
+      "question": "Which frameworks name California's SB 53?",
+      "startPath": "Start page → guide 'Which laws and government texts address frontier AI developers…' → contents 'United States: states' (jumps to ~21,980 px) → third entry, California SB 53, 'Framework editions that name it'.",
+      "startClicks": {
+        "desktop": 2,
+        "phone": 2
+      },
+      "pages": 2,
+      "depthPx": {
+        "desktop": {
+          "sb53Entry": 22885,
+          "listFirst": 23070,
+          "listLast": 23235
+        },
+        "phone": {
+          "sb53Entry": 33400,
+          "listFirst": 33676,
+          "listLast": 34016
+        },
+        "note": "The contents link lands at the US-states heading; the SB 53 list is ~900 px (desktop) below it."
+      },
+      "ratingStart": "Found",
+      "ratingDeepJs": "Found",
+      "ratingNoJs": "Found",
+      "misleads": "Mildly, by omission: the list gives eight framework editions (xAI FAIF Dec 2025 'states that it complies'; Microsoft FGF Feb 2026 'states that it responds'; OpenAI FGF May 2026 'serves as its framework under this text'; Anthropic RSP v3.0–v3.4 'names this text') but not Anthropic's Frontier Compliance Framework, which Anthropic announced on 2025-12-19 as its SB 53 compliance framework (recorded as sb-anthropic-fcf-published; disclosed only in the guide's 'Not covered' section, far below). The RSP footnote the list relies on itself says SB 53 requirements are addressed 'in separate compliance frameworks'.",
+      "answerGiven": "Eight editions: xAI Frontier AI Framework (Dec 2025); Microsoft Frontier Governance Framework (Feb 2026); Anthropic RSP v3.0, v3.1, v3.2, v3.3, v3.4; OpenAI Frontier Governance Framework (May 2026).",
+      "answerCorrect": "yes for the eight passages checked; incomplete against the dataset's own FCF record",
+      "sourceChecked": "xAI FAIF PDF (data.x.ai/2025-12-31-…pdf): 'Last updated: December 30, 2025'; 'This FAIF complies with California's Transparency in Frontier Artificial Intelligence Act' — matches. RSP v3.0 PDF (anthropic.com/responsible-scaling-policy/rsp-v3-0): 'Effective February 24, 2026'; footnote 'Where laws such as California SB 53 define this or similar terms with specific thresholds, we address those requirements in separate compliance frameworks.' — matches. OpenAI FGF May 2026 PDF (cdn.openai.com, reachable): 'Under California’s Transparency in Frontier AI Act (TFAIA), this FGF is our Frontier AI Framework' — matches. Microsoft FGF Feb 2026 PDF: change-log 'One year update following finalization of the EU Code of Practice … NY RAISE Act and CA Transparency in Frontier Artificial Intelligence Act' and the leading-indicator sentence naming TFAIA — match. Anthropic news post compliance-framework-SB53 (dated 2025-12-19 in page metadata and 'Dec 19, 2025'): 'the FCF will serve as our compliance framework for SB 53 and other regulatory requirements' — the omitted relation is real.",
+      "compareTo20261029": "same rating (Found / Found / Found); the 29 October wording fix holds (relations now read from the framework: '… explicitly links itself to this document'). New observation: the FCF omission."
+    },
+    {
+      "task": "T04",
+      "question": "When did Anthropic's RSP first include an AI R&D threshold? (earliest located)",
+      "startPath": "(a) Start-page search 'AI R&D' (1 typed search) → evidence passage 'The edition’s Autonomous AI R&D Capability Threshold…' (RSP v2.0, 2024-10-15), first among evidence passages; nothing says whether v1.0 has one. (b) Alternative: Governance question 'How did each developer’s safety framework change between editions?' → open 'Provisions across editions · 32 tracked provisions' → Automated R&D row now carries the note 'v2.0 to v2.2 also have a capability threshold for “Autonomous AI Research and Development”, which this row does not yet track … v2.0 →' (2 clicks; 3 with the v2.0 link).",
+      "startClicks": {
+        "desktop": 1,
+        "phone": 1,
+        "historyPath": {
+          "desktop": 2,
+          "phone": 2
+        }
+      },
+      "pages": 2,
+      "depthPx": {
+        "desktop": {
+          "searchV20Passage": 4147,
+          "searchV20PassageEarliestFirst": 5799,
+          "historyRowNote": 1943
+        },
+        "phone": {
+          "searchV20Passage": 5183,
+          "searchV20PassageEarliestFirst": 7576,
+          "historyRowNote": 2548
+        }
+      },
+      "ratingStart": "Found with difficulty",
+      "ratingDeepJs": "Found with difficulty",
+      "ratingNoJs": "Found with difficulty",
+      "misleads": "Yes, partly. The site's records lead to 'v2.0 (effective 2024-10-15); v1.0 had only autonomous replication'. v2.0 is indeed the first edition with a formal Autonomous AI R&D Capability Threshold, but RSP v1.0 (2023-09-19), under 'Early Thoughts on ASL-4 and Higher', already lists 'Autonomous AI research: A model for which the weights would be a massive boost to a malicious AI development program' as an early guess at what ASL-4 will involve. That passage is not recorded: v1.0's comparison cell for 'Autonomy, self-improvement or AI research and development' cites only 'Autonomous replication in the lab', and the only v1.0 ASL-4 record is the misuse bullet.",
+      "answerGiven": "RSP v2.0, effective 2024-10-15: Autonomous AI R&D Capability Threshold = fully automate the work of an entry-level, remote-only researcher at Anthropic, or dramatically accelerate the rate of effective scaling. v2.1 (2025-03-31) separates AI R&D-4 and AI R&D-5; v3.0 (2026-02-24) renames it 'Automated R&D in key domains'.",
+      "answerCorrect": "partly: v2.0 date and threshold text correct; 'earliest' incomplete because v1.0 already named 'Autonomous AI research' as a speculative ASL-4 criterion",
+      "sourceChecked": "RSP v2.0 PDF (www-cdn.anthropic.com/616dee63…pdf, reachable): cover 'Effective October 15, 2024'; table row 'Autonomous AI Research and Development (AI R&D): The ability to either fully automate the work of an entry-level remote-only Researcher at Anthropic, or cause dramatic acceleration in the rate of effective scaling' — matches. RSP v1.0 PDF (www-cdn.anthropic.com/1adf000c…/responsible-scaling-policy.pdf, reachable): ASL-3 item 2 'Autonomous replication in the lab' as recorded; and 'Early Thoughts on ASL-4 and Higher … an early guess … is that ASL-4 will involve one or more of the following: … Autonomous AI research: A model for which the weights would be a massive boost to a malicious AI development program' — not recorded anywhere in the dataset.",
+      "compareTo20261029": "same ratings, but better on the grid: the 29 October report's worst trap (grid tracks 'Automated R&D threshold' only from v3.0, inviting the answer 2026) is now defused by a row note pointing to v2.0–v2.2. Search 'Earliest first' exists. Still no statement that no earlier edition has one, and the source check found the earlier v1.0 ASL-4 guess that the records omit."
+    },
+    {
+      "task": "T05",
+      "question": "Where does the term 'AGI' appear earliest in the record?",
+      "startPath": "Start-page search 'AGI' (1 typed search) → default order 'Closest matches first' puts Goertzel's SL4 message 'Complexity of AGI' (2002-05-19) first; switching Order to 'Earliest first' (+1) puts Gubrud's 1997 Foresight paper ('artificial general intelligence') first, with the help line 'The earliest result is the earliest in these records, not a first use.'",
+      "startClicks": {
+        "desktop": 2,
+        "phone": 2,
+        "defaultOrderOnly": 1
+      },
+      "pages": 2,
+      "depthPx": {
+        "desktop": {
+          "defaultOrderGoertzel2002": 918,
+          "earliestFirstGubrud1997": 935,
+          "earliestFirstGoertzel2002": 3090,
+          "helpLine": 413
+        },
+        "phone": {
+          "defaultOrderGoertzel2002": 879,
+          "earliestFirstGubrud1997": 912,
+          "earliestFirstGoertzel2002": 4042,
+          "helpLine": 489
+        }
+      },
+      "ratingStart": "Found",
+      "ratingDeepJs": "Found (same as start)",
+      "ratingNoJs": "n/a (search needs scripts); claim page Found",
+      "misleads": "No. Default order shows the earliest use of the abbreviation (Goertzel, 2002-05-19) first; date order shows the earliest located use of the full term (Gubrud, Nov 1997) first and says it is not a first use. Two 2000-07-09 Yudkowsky records sit between them in date order but show the qualification snippet that makes them match (references to 2006 and 2022 texts).",
+      "answerGiven": "Full term 'artificial general intelligence': M. A. Gubrud, 'Nanotechnology and International Security', paper for the Fifth Foresight Conference (Nov 1997, organiser's date; wording attested by an archive capture of 1998-02-07); qualification 'Earliest located use by the recorded search; not evidence of coinage'. Abbreviation 'AGI': Ben Goertzel's SL4 message 'Complexity of AGI', 2002-05-19 (qualification: earliest in the SL4 subject lines scanned 2000-02 to 2002-06; bodies before it not searched); then Yudkowsky's reply of 2002-06-23.",
+      "answerCorrect": "yes (dates of the SL4 messages and the passages verified; Gubrud's Nov 1997 date is the organiser's, as the record says)",
+      "sourceChecked": "sl4.org/archive/0205/3730.html: 'Complexity of AGI', From: Ben Goertzel, Date: Sun May 19 2002 - 14:08:36 MDT, body 'Eliezer, I have thought a little about your intuition that an AGI needs to be 1-2 orders of magnitude more complex than Novamente.' — matches. sl4.org/archive/0206/4219.html: Yudkowsky, Sun Jun 23 2002, quotes Goertzel '…the most important content of an AGI mind will be things that…' and writes 'An AGI is not going to automatically pick up basic human empathy…' — matches. legacy.foresight.org/Conferences/MNT05/Papers/Gubrud/index.html: 'By advanced artificial general intelligence, I mean AI systems that rival or surpass the human brain in complexity and speed…' and '…advanced artificial general intelligence may be developed within the first few decades of the 21st century' — match; the abstract page says 'This is an abstract for a poster to be presented at the Fifth Foresight Conference'. The 1998-02-07 web.archive.org capture that dates the wording could not be reached from this container. Note that Goertzel's message replies to an earlier 'intuition' of Yudkowsky's, so an earlier 'AGI' on SL4 is plausible; the record says message bodies before May 2002 were not searched.",
+      "compareTo20261029": "same rating (Found), better data: on 29 October the earliest was Yudkowsky's SL4 message of 2002-06-23; the 31 October technical-history admission adds Gubrud 1997 (earliest located, full term) and Goertzel 2002-05-19 (abbreviation)."
+    },
+    {
+      "task": "T06",
+      "question": "What does Selekoa not cover on China?",
+      "startPath": "Start page → 'What is not covered →' (scripted: jumps to About › 'Not yet covered' at 3,118 px desktop / 4,619 px phone; the China paragraph follows directly). Alternative: 'All of Institutions & people →' → the same China paragraph under 'Chinese AI histories' (686 px desktop / 821 px phone).",
+      "startClicks": {
+        "desktop": 1,
+        "phone": 1
+      },
+      "pages": 2,
+      "depthPx": {
+        "desktop": {
+          "aboutNotYetCovered": 3118,
+          "aboutChinaNote": 3244,
+          "institutionsHubChinaNote": 686
+        },
+        "phone": {
+          "aboutNotYetCovered": 4619,
+          "aboutChinaNote": 4808,
+          "institutionsHubChinaNote": 821
+        }
+      },
+      "ratingStart": "Found",
+      "ratingDeepJs": "Not found",
+      "ratingNoJs": "Found with difficulty (start link has no fragment); deep landing Not found",
+      "misleads": "Yes, on export controls. The China note ends 'Not covered: … export controls are covered only through the US Bureau of Industry and Security’s records', and the start page and About list 'chip export controls' among the largest gaps. The live records include MOFCOM/GAC export-control announcements (No. 23 of 2023 on gallium and germanium, No. 46 of 2024, No. 61 of 2025 with case-by-case review for chip and military-AI end uses, No. 70 of 2025 suspending it) and US BIS advanced-computing chip rules 2023–2026; a search for 'export controls' returns the 'AI compute' guided reading, whose summary mentions 'Chinese controls on exports of gallium, germanium and rare…'. Also, About's coverage paragraph still says 'Two Chinese collections cover DeepSeek, Alibaba …, Zhipu, Moonshot, MiniMax, Baidu … and ByteDance Seed', two lines above the note's '14 institutional dossiers'.",
+      "answerGiven": "Holds 14 Chinese dossiers, 3 Chinese AI governance texts (TC260 framework v1–v3, AIIA commitments, Shanghai AI Lab framework), 7 Chinese laws/standards/government texts on the frameworks-and-law page, the Beijing AI Principles (2019, 2020) and 7 CAC filing lists. Not covered: TC260's framework is not on the frameworks-and-law page; GB 45438-2025's scope held (text not retrieved); export controls only through US BIS records. Shanghai AI Lab's framework is the only framework from a Chinese developer in the records.",
+      "answerCorrect": "partly: counts check out against the hub (14 dossiers listed) and the guide's China section (7 texts), but the export-control sentence is contradicted by the site's own records",
+      "sourceChecked": "Checked against the site's own records (the claim is about coverage): claims cpo-ch-cn-ga-ge-2023-issued, cpo-ch-cn-mofcom-2024-46-us, cpo-ch-cn-mofcom-2025-61-issued / -chips-ai, cpo-ch-cn-mofcom-2025-70-suspension (MOFCOM/GAC) and cpo-ch-bis-acr-2023-*, -fdp-hbm-2024-*, -foundry-dd-2025-*, -gp10-guidance-*, -license-policy-2026-* (BIS chip rules) are live and found by site search 'export controls'. The MOFCOM page itself (aqygzj.mofcom.gov.cn) refused the TLS connection from this container, so the Chinese text was not re-read.",
+      "compareTo20261029": "better from the start page (Found with difficulty → Found): decision 2's China scope note now exists on About and on the Institutions hub. Deep landing unchanged (Not found). New problem: the note's export-control sentence is wrong, and About's coverage paragraph is stale."
+    },
+    {
+      "task": "T07",
+      "question": "Did Yudkowsky reverse his early view that superintelligence should be built as fast as possible, and when?",
+      "startPath": "Start page → Ideas question 'Which of his earlier views did Eliezer Yudkowsky later contest?' → contents link 'Y22 Build superintelligence as fast as possible' (jumps, focus moves to the heading).",
+      "startClicks": {
+        "desktop": 2,
+        "phone": 2
+      },
+      "pages": 2,
+      "depthPx": {
+        "desktop": {
+          "contentsLinkY22": 1256,
+          "y22Heading": 39047,
+          "floppy2001ExplicitReversal": 40285,
+          "folly2008": 40801
+        },
+        "phone": {
+          "contentsLinkY22": 1469,
+          "y22Heading": 56294,
+          "floppy2001ExplicitReversal": 58187,
+          "folly2008": 58986
+        },
+        "note": "Reached by the contents jump; the answer sits 1,200 px (desktop) / 1,900 px (phone) below the Y22 heading."
+      },
+      "ratingStart": "Found",
+      "ratingDeepJs": "Found (2 clicks via 'Appears in' and the contents list; rated 'with difficulty' on 29 October for lack of a jump from the person page)",
+      "ratingNoJs": "Found",
+      "misleads": "Mildly. The first thing under the Y22 heading is 'Earliest located text that contests it: Re: Ben's \"Extropian Creed\" · 2000-11-13'. By the record's own qualification (visible only in the claim panel) that message rejects only the 'good by default' premise — 'Speed is not yet rejected here'; the same message says he is 'devoting my life to making the Singularity happen earlier'. The 2001-08-01 card says 'records an explicit reversal', but its qualification also says it 'does not reject speed as such'; the explicit rejection of the full-speed strategy is the 2008 post. A reader who stops at the headline answers 'November 2000'.",
+      "answerGiven": "Earliest located statement of Y22: 'Staring into the Singularity' (1996-11-18, wording attested 1996-11-19) and the Extropians message of 1996-11-22. Earliest located contest: SL4 'Re: Ben's \"Extropian Creed\"' 2000-11-13 (engages a premise: no longer believes Friendly AI happens automatically). SL4 'Re: Floppy take-off' 2001-08-01: 'explicit reversal' ('total turnaround … now regard non-Friendliness-aware AI as a disaster scenario'). 'The Magnitude of His Own Folly' 2008-09-30: explicitly rejects his earlier full-speed strategy. TIME 2023-03-29: calls for an indefinite moratorium.",
+      "answerCorrect": "yes (all dates and passages verified); the headline's framing is the issue, not the data",
+      "sourceChecked": "sl4.org/archive/0011/0181.html (Mon Nov 13 2000): 'I used to have the extremely convenient belief that Friendly AI would happen completely on automatic because morality was objective. I now believe that Friendly AI needs to be more complex than that' and, two paragraphs on, 'That's why I'm devoting my life to making the Singularity happen earlier' — matches record and qualification. sl4.org/archive/0108/2031.html (Wed Aug 01 2001): 'I've made a total turnaround from my position of few years back and now regard non-Friendliness-aware AI as a disaster scenario' — matches. lesswrong.com 'The Magnitude of His Own Folly' (postedAt 2008-09-30): 'the careful arguments I had constructed, for why the wisest choice was to continue forward at full speed' — matches. extropians.weidai.com/extropians.96/3124.html (Tue, 19 Nov 1996): 'Includes the Interim Meaning Of Life: \"Get to the Singularity as fast as possible!\"' — matches the 'wording attested 1996-11-19'.",
+      "compareTo20261029": "same rating from the start (Found); deep landing judged Found here (contents list jumps). Answer framing changed: on 29 October the answer was the 2001-08-01 'explicit reversal'; the page now headlines a 2000-11-13 message as the earliest contest, which the record itself says does not reject speed."
+    },
+    {
+      "task": "T08",
+      "question": "Which text is the earliest located for the 'intelligence explosion' proposition?",
+      "startPath": "Start page → Ideas question 'Which text is the earliest located for each proposition about superintelligence?' → A1 is the first proposition: 'Earliest located: I. J. Good · Speculations Concerning the First Ultraintelligent Machine · 1965 · claimed 1962-10 · “intelligence explosion”', below the 'How we searched' scope.",
+      "startClicks": {
+        "desktop": 1,
+        "phone": 1
+      },
+      "pages": 2,
+      "depthPx": {
+        "desktop": {
+          "howWeSearched": 786,
+          "a1Heading": 1634,
+          "earliestLocatedGood": 1743
+        },
+        "phone": {
+          "howWeSearched": 1316,
+          "a1Heading": 2706,
+          "earliestLocatedGood": 2899
+        }
+      },
+      "ratingStart": "Found",
+      "ratingDeepJs": "Found",
+      "ratingNoJs": "Found",
+      "misleads": "No. 'Earliest located' is scoped by 'How we searched' and the qualification says the cited 1951, 1959 and 1963 references were not retrieved.",
+      "answerGiven": "I. J. Good, 'Speculations Concerning the First Ultraintelligent Machine', Advances in Computers vol. 6, dated 1965 (claimed 1962-10: talks of October 1962 named in the chapter's footnote; not retrieved); also earliest located use of the name 'intelligence explosion' and earliest located for A5 (AI-automated AI research).",
+      "answerCorrect": "yes",
+      "sourceChecked": "gwern.net/doc/ai/1966-good.pdf (the scan the evidence cites, reachable): p. 31 footnote 'Based on talks given in a Conference on the Conceptual Aspects of Biocommunications, Neuropsychiatric Institute, University of California, Los Angeles, October 1962; and in the Artificial Intelligence Sessions of the Winter General Meetings of the IEEE, January 1963 … The first draft of this monograph was completed in April 1963, and the present slightly emended version in May 1964' — supports 'claimed 1962-10' and the record's note. p. 33, §2: '…an ultraintelligent machine could design even better machines; there would then unquestionably be an “intelligence explosion,” and the intelligence of man would be left far behind (see for example refs. [22], [34], [44])' — matches the labelled paraphrase and the quote 'an ultraintelligent machine could design even better machines'. PDF metadata gives 'Advances in Computers Volume 6, 1966'; the record keeps 1965 (Open Library) and states the Crossref 1966 discrepancy as unresolved.",
+      "compareTo20261029": "better on the deep landing (Found with difficulty → Found): the document page now carries the earliest-located marks with links into the collection. Start path and no-JS unchanged (Found)."
+    },
+    {
+      "task": "T09",
+      "question": "Which economist's text is the earliest located in the economics collection, and when?",
+      "startPath": "Start page 'How did economists take up explosive growth and risk from AI?' -> /propositions/economics-of-machine-intelligence; contents list gives no hint which proposition holds the earliest text, so the reader scans the 'Earliest located' headlines of 24 propositions down to M01 (or clicks contents 'M01' if guessed)",
+      "startClicks": {
+        "desktop": 1,
+        "phone": 1
+      },
+      "pages": 2,
+      "depthPx": {
+        "desktop": 19161,
+        "phone": 30215
+      },
+      "ratingStart": "Found with difficulty",
+      "ratingDeepJs": "Found (1 click to the document page for 'earliest located')",
+      "ratingNoJs": "Found (person page names text and date; document page HTML carries the three 'Earliest located' links)",
+      "misleads": "Mildly: the collection's eyebrow and lede say '1952-2026' and the only 1952 text (Leontief, 'Machines and Man', standfirst only) is tier 1 but only 'bears on' M05; a reader asking for the earliest economist text may answer Leontief 1952. By the page's own definition (earliest located = articulates or contests) the answer is Buckingham 1955.",
+      "answerGiven": "Walter S. Buckingham Jr., 'Statement (testifying as an economist)', Automation and Technological Change hearings, 1955-10-14, tier 1: earliest located tier-1 text for M01 and M06a and earliest tier-1 text contesting M05",
+      "answerCorrect": "yes",
+      "sourceChecked": "archive.org item congress-automation-and-technological-change, djvu text layer (fetched 2026-11-01): order of appearances 'Friday, October 14: 10 a.m.: ... Walter S. Buckingham, Jr., associate professor, Georgia Institute of Technology'; p. 31 'Sometimes mechanization substitutes machinery for brainwork at the lower, routine levels. The electronic computer does this.'; he says 'I speak for myself only, and as an economist'. Date, speaker and passage match.",
+      "compareTo20261029": "better on the deep landing, same from the start: the document page now marks 'Earliest located' (problem 9 fixed); the collection page is still 54,000/83,000 px with the answer 19,000/30,000 px down and no collection-wide 'earliest' statement"
+    },
+    {
+      "task": "T10",
+      "question": "What does Google DeepMind's latest framework say about pausing development or deployment?",
+      "startPath": "Start page 'What does each framework say about pausing development or deployment?' -> /compare/frontier-safety-frameworks. Desktop: 'All frameworks' grid opens at the first question (CBRN); the 'Pause, non-deployment or non-training' row is the 9th of 18, 5,470 px down inside the grid's own 856 px scroll box (or 'One question' + choose 'Pause' = 3 clicks, quote at 933 px). Phone: 'One question' view opens on CBRN; choose 'Pause' in the Question dropdown (2nd action), GDM quote at 1,445 px",
+      "startClicks": {
+        "desktop": 1,
+        "phone": 2
+      },
+      "pages": 2,
+      "depthPx": {
+        "desktop": 5883,
+        "phone": 1445
+      },
+      "ratingStart": "Found",
+      "ratingDeepJs": "Found",
+      "ratingNoJs": "Found",
+      "misleads": "No: the cell is 'Stated' but its note says 'No passage states that development will be put on hold' and that the misuse criterion applies only to external deployment",
+      "answerGiven": "FSF v3.1 (published 2026-04-17), Stated: 'Pre-deployment review of residual risk assessment: external deployments of a model take place only after the appropriate governance function determines the residual risk to be acceptable (including a safety case where a CCL has been reached).' PDF p. 10, §2.1.2 step 2. Note: a deployment gate; no passage puts development on hold.",
+      "answerCorrect": "yes",
+      "sourceChecked": "https://storage.googleapis.com/deepmind-media/DeepMind.com/Blog/strengthening-our-frontier-safety-framework/frontier-safety-framework_3-1.pdf (200, Last-Modified 17 Apr 2026): cover 'Version 3.1 / Published: April 17, 2026'; PDF p. 10 step 2 wording matches exactly; p. 7 'This is required only for external deployment, not internal deployment or further development' matches the note; no occurrence of pause/halt/stop in the text. Archived copy on web.archive.org not retrievable from this container. Whether a later GDM edition exists outside the record was not checked.",
+      "compareTo20261029": "worse on the start path: 10-29 had the answer 1 click and 1,800/2,400 px down; the start-page link now opens the whole grid at CBRN, with the pause row 5,500 px down a nested scroll box on desktop and behind a dropdown on phone. Deep landing same."
+    },
+    {
+      "task": "T11",
+      "question": "What replaced Anthropic's RSP v2.2, and when did it take effect?",
+      "startPath": "Start page 'How did each developer's safety framework change between editions?' -> /documents/frontier-safety-frameworks; 'Editions, 2023-2026' timeline shows v3.0 after v2.2 (741/981 px); select 'v3.0' on the timeline -> jumps to the v3.0 section: 'Effective 2026-02-24 · Published 2026-02-24 ... Replaces v2.2'",
+      "startClicks": {
+        "desktop": 2,
+        "phone": 2
+      },
+      "pages": 2,
+      "depthPx": {
+        "desktop": 4979,
+        "phone": 6811
+      },
+      "ratingStart": "Found",
+      "ratingDeepJs": "Found",
+      "ratingNoJs": "Found",
+      "misleads": "No",
+      "answerGiven": "RSP v3.0, effective 2026-02-24 (published the same day); the replacement is recorded from the publisher's changelog order and version archive",
+      "answerCorrect": "yes",
+      "sourceChecked": "https://anthropic.com/responsible-scaling-policy/rsp-v3-0 (redirects to www-cdn.anthropic.com PDF, 19 pp.): cover 'Version 3.0 / Effective February 24, 2026'; changelog lists 'May 14, 2025 (RSP v2.2)' then 'February 24, 2026 (RSP v3.0)'. https://www.anthropic.com/responsible-scaling-policy: 'Version 3.0 (effective February 24, 2026)' directly above 'Version 2.2 ... (effective May 14, 2025)'. Archive copies on web.archive.org not retrievable here.",
+      "compareTo20261029": "same: found from the start page and from the landing; the start page now links the document histories directly (1 click instead of 2 to reach the page)"
+    },
+    {
+      "task": "T12",
+      "question": "Which companies said they would not sign the EU GPAI Code of Practice?",
+      "startPath": "Start page header 'Governance' -> 'Read external commitments and obligations ->' -> /commitments/external-commitments; the table 'Who signed or refused which text' shows Meta 'Stated refusal · 2025-07-18' in the EU column (desktop 1,350 px). Phone: the EU column sits off-screen to the right of a sideways-scrolling table with no hint; via the contents link 'General-Purpose AI Code of Practice' (3rd click) the heading 'Signatories (13) · stated refusals (1)' is at 15,799 px and Meta's row at 18,627 px",
+      "startClicks": {
+        "desktop": 2,
+        "phone": 3
+      },
+      "pages": 3,
+      "depthPx": {
+        "desktop": 1350,
+        "phone": 18627
+      },
+      "ratingStart": "Found",
+      "ratingDeepJs": "Found",
+      "ratingNoJs": "Found",
+      "misleads": "Not on the refusal (one stated refusal, Meta). Yes on the context around it: the section heading counts 'Signatories (13)', which are 13 records for 9 organisations, 4 of them announced intents and one (xAI) a chapter-only signature that the Commission lists separately; on the document page every intent reads '<company> is documented as a signatory of this document'.",
+      "answerGiven": "One stated refusal: Meta, 2025-07-18 (Joel Kaplan's LinkedIn post: Meta would not sign); 'stated refusals (1)'",
+      "answerCorrect": "yes",
+      "sourceChecked": "LinkedIn post https://www.linkedin.com/posts/joel-kaplan-63905618_europe-is-heading-down-the-wrong-path-on-activity-7351928745668055042-XuF7/ (200, fetched without sign-in): text 'Meta won't be signing it. This Code introduces a number of legal uncertainties...'; datePublished 2025-07-18T11:00:05Z. CNBC secondary source returned HTTP 403; web.archive.org unreachable.",
+      "compareTo20261029": "better on desktop (answer in the overview table at 1,350 px instead of 11,500 px); phone needs one more step because the table's EU column is off-screen; deep landing same"
+    },
+    {
+      "task": "T13",
+      "question": "Who backed DeepSeek financially, according to the record, and is an amount stated?",
+      "startPath": "Start page 'What do the records show about DeepSeek?' -> /dossier/deepseek; chronology year 2023 open: 'Liang Wenfeng publicly identified High-Flyer as one of DeepSeek's financial backers', route 'High-Flyer / 幻方 -> named as a financial backer of -> DeepSeek'; open 'Qualification and date notes' (2nd click) for 'No amount, instrument, equity share, exact legal counterparty or disbursement is established'",
+      "startClicks": {
+        "desktop": 2,
+        "phone": 2
+      },
+      "pages": 2,
+      "depthPx": {
+        "desktop": 995,
+        "phone": 1646
+      },
+      "ratingStart": "Found",
+      "ratingDeepJs": "Found with difficulty",
+      "ratingNoJs": "Found with difficulty (person page -> claim page -> 'What it connects' -> dossier)",
+      "misleads": "Mildly: the claim panel's fields read 'Transaction type: investment' and 'Stage: announced', which together read as an announced investment although the source names a backer only; and the dossier's 'Date unknown' year (lab-genealogy-2 record lg2-cn-luo-fuli-deepseek-prior) relays Jiemian's 'High-Flyer, DeepSeek's parent company', an ownership description the dossier's own description says it does not establish.",
+      "answerGiven": "High-Flyer (幻方), named by Liang Wenfeng in the 36Kr interview of 2023-05-25 as one of DeepSeek's financial backers (出资人之一); no amount, instrument or equity share is established",
+      "answerCorrect": "yes",
+      "sourceChecked": "https://www.36kr.com/p/2272896094586500 (200, 2026-11-01): Q '那研究经费哪里来？' A (梁文锋) '幻方作为我们的出资人之一，有充足的研发预算，另外每年有几个亿的捐款预算…'; article dated 2023-05-25. No investment amount is given (the 'several hundred million a year' is a donation budget). Matches the record and its qualification.",
+      "compareTo20261029": "better on wording, worse on the landing: the route now reads 'named as a financial backer of' (decision 4 applied); the Liang Wenfeng person page, rated Found on 10-29, holds no financing record and no direct dossier link"
+    },
+    {
+      "task": "T14",
+      "question": "When did Anthropic's Long-Term Benefit Trust-appointed directors become a board majority?",
+      "startPath": "Start page header 'Governance' -> 'Anthropic's control structure, 2021-2026' -> scroll to the 2026 board records: 'Anthropic announced on 14 April 2026 that the Long-Term Benefit Trust had appointed Vas Narasimhan ... and that, with this appointment, Trust-appointed directors made up a majority of the board.'",
+      "startClicks": {
+        "desktop": 2,
+        "phone": 2
+      },
+      "pages": 3,
+      "depthPx": {
+        "desktop": 6426,
+        "phone": 9546
+      },
+      "ratingStart": "Found",
+      "ratingDeepJs": "Found",
+      "ratingNoJs": "Found",
+      "misleads": "No: the page also records, under 'Conflicting dates, no decisive source', that the dates the Trust became entitled to elect further directors are unsettled",
+      "answerGiven": "Anthropic's announcement of 14 April 2026 (Vas Narasimhan appointed by the LTBT; with it, Trust-appointed directors made up a majority of the board)",
+      "answerCorrect": "yes",
+      "sourceChecked": "https://www.anthropic.com/news/narasimhan-board (200, 2026-11-01): dated 'Apr 14, 2026'; 'Vas Narasimhan has been appointed to Anthropic's Board of Directors by the Anthropic Long-Term Benefit Trust.' and 'With Narasimhan's appointment, Trust-appointed directors now make up a majority of the Board.' Archive copy not retrievable here.",
+      "compareTo20261029": "same: found on the control page at the same depth (6,300/9,300 then, 6,426/9,546 now); the dossier still links the control page"
+    },
+    {
+      "task": "T15",
+      "question": "What roles at OpenAI does the record give Dario Amodei, with dates?",
+      "startPath": "Start page header 'Institutions & people' -> 'People, A-Z' (heading 1,255/1,818 px) -> 'Dario Amodei' (1,669/2,253 px) -> /person/dario-amodei, 'Documented path'",
+      "startClicks": {
+        "desktop": 2,
+        "phone": 2
+      },
+      "pages": 3,
+      "depthPx": {
+        "desktop": 722,
+        "phone": 962
+      },
+      "ratingStart": "Found",
+      "ratingDeepJs": "Found",
+      "ratingNoJs": "Found (both rows and their claim links are in the HTML; 15 claim links)",
+      "misleads": "No: the VP of Research row is labelled 'Snapshot · one dated report' and the page says a snapshot establishes neither start nor end",
+      "answerGiven": "OpenAI: VP of Research, a snapshot from OpenAI's departure announcement of 2020-12-29; departure announced 2020-12-29. No other OpenAI role or start date is recorded.",
+      "answerCorrect": "partly verifiable: date yes, role wording unverifiable",
+      "sourceChecked": "https://openai.com/index/organizational-update/ returns HTTP 403 here and web.archive.org is unreachable, so the 'VP of Research' passage could not be read. OpenAI's own RSS feed (https://openai.com/news/rss.xml, 200) lists 'Organizational update from OpenAI', pubDate 'Tue, 29 Dec 2020 08:00:00 GMT', confirming the date.",
+      "compareTo20261029": "same: 2 clicks, answer 700-900 px down on both widths"
+    },
+    {
+      "task": "T16",
+      "question": "For the claim that OpenAI LP was controlled by the nonprofit's board in 2019: source, place in it, checked by whom?",
+      "startPath": "Start page 'Who controlled OpenAI, and when?' -> /control/openai; table row 2019-03-11 'Announced · OpenAI nonprofit · Controls' (847/1,385 px) -> claim panel (URL becomes ?inspect=cs-openai-lp-board-control-2019): source 'OpenAI LP' (OpenAI, 2019-03-11, Brockman, Sutskever), excerpt 'the company is controlled by OpenAI Nonprofit's board', location 'Section \"The mission comes first\", paragraph beginning \"OpenAI LP's primary fiduciary obligation\"', 'Machine-checked · 2026-10-04'; 'Source details and check notes' (3rd click) gives 'Verbatim quote, re-checked on 2026-10-04 by the integrating session ... Human editorial review is pending.'",
+      "startClicks": {
+        "desktop": 3,
+        "phone": 3
+      },
+      "pages": 2,
+      "depthPx": {
+        "desktop": 1496,
+        "phone": 2812
+      },
+      "ratingStart": "Found",
+      "ratingDeepJs": "Found",
+      "ratingNoJs": "Found (all evidence, location and check notes are in the HTML)",
+      "misleads": "No. The scope note keeps the 2019 Form 990's 'OpenAI GP LLC' as the direct controlling entity apart from the post's wording.",
+      "answerGiven": "Source: OpenAI, 'OpenAI LP' (2019-03-11; Greg Brockman, Ilya Sutskever), section 'The mission comes first', paragraph 'OpenAI LP's primary fiduciary obligation', excerpt 'the company is controlled by OpenAI Nonprofit's board'; machine-checked 2026-10-04 by an automated session against a direct fetch and the Internet Archive capture of 2019-03-11; human editorial review pending",
+      "answerCorrect": "partly verifiable: date yes, passage unverifiable",
+      "sourceChecked": "https://openai.com/index/openai-lp/ returns HTTP 403 and the cited web.archive.org capture (20190311161512) is unreachable from this container, so the excerpt could not be compared. OpenAI's RSS feed lists 'OpenAI LP', pubDate 'Mon, 11 Mar 2019 07:00:00 GMT', confirming the date.",
+      "compareTo20261029": "same: the claim page still leads with the statement as h1 on both widths; panel unchanged"
+    },
+    {
+      "task": "T17",
+      "question": "Download a research starter for Yudkowsky's arguments that lists the original sources.",
+      "startPath": "Start page 'Which of his earlier views did Eliezer Yudkowsky later contest?' -> /propositions/yudkowsky-arguments -> open 'Download research starter' -> 'Download Markdown'",
+      "startClicks": {
+        "desktop": 3,
+        "phone": 3
+      },
+      "pages": 2,
+      "depthPx": {
+        "desktop": 684,
+        "phone": 979
+      },
+      "ratingStart": "Found",
+      "ratingDeepJs": "Found",
+      "ratingNoJs": "n/a (download needs JS; the 'Download Markdown/JSON/BibTeX/RIS/CSL-JSON' buttons are rendered in the static HTML but inert, with no notice); 278 claim links (207 distinct) in the static page, as on 29 Oct",
+      "misleads": "No",
+      "answerGiven": "propositions-yudkowsky-arguments-v1-starter.md (637,614 characters, same at both widths). Order: research question, key limits (incl. 'Earliest located ... is not a claim of first use'), then '## Original sources' table in date order (1996-11-13 to 2026-09-13) with authors, title, publisher, inspected copy and archived copy, then How we searched, review status, Y01-Y30 records, disagreements, inferences, source metadata.",
+      "answerCorrect": "yes",
+      "sourceChecked": "http://extropians.weidai.com/extropians.96/2941.html: header 'Eliezer Yudkowsky ... Wed, 13 Nov 1996', title 'Re: Zones of Thought (was Zindell's _The Wild_)' = first row of the table. http://extropians.weidai.com/extropians.96/3761.html: 'Sun, 08 Dec 1996', 'Re: Trans- vs. Non-human' = Y01 earliest located contesting record (1996-12-08). Both match.",
+      "compareTo20261029": "same: 3 clicks, Markdown starts with the original sources; depth 684/979 vs 700/1,000. Page height grew slightly (52,452 vs ~50k desktop)."
+    },
+    {
+      "task": "T18",
+      "question": "Has a person checked these records? What does 'machine-checked' mean?",
+      "startPath": "Header status line 'Found and cross-checked by machines · How this works →' -> /about scrolled to 'How this was built' (part 1 on screen); part 2 ('Machine-checked' definition) under 'What the labels mean': scroll ~4,000 px (phone ~6,300) or scroll back up to the contents and click 'What the labels mean'",
+      "startClicks": {
+        "desktop": 2,
+        "phone": 2
+      },
+      "pages": 2,
+      "depthPx": {
+        "desktop": "1,036 ('No person reads every record before publication', on screen after the jump) / 5,045 ('Machine-checked' definition)",
+        "phone": "1,426 / 7,716"
+      },
+      "ratingStart": "Found",
+      "ratingDeepJs": "Found (1 click)",
+      "ratingNoJs": "Found (claim page holds 'Status and meaning' text and the evidence 'Check notes' in plain HTML; About holds every section, but its contents list is <button>s, inert without scripts and not linkable)",
+      "misleads": "No (mild wording tension, see problems)",
+      "answerGiven": "About, How this was built: 'No person reads every record before publication. The maintainer sets the rules, reviews every batch of changes and decides what is admitted.' Labels: 'Machine-checked: The status of almost every claim: machines found it and checked it against its source passages, and no person accepted it individually.' Current coverage: '1 of 5785 claims is editorially accepted. 2 of 7893 evidence records are human-reviewed.'",
+      "answerCorrect": "yes",
+      "sourceChecked": "data/claims.json: editorialState seed 5,784, accepted 1; data/evidence.json: verification machine_checked 7,891, human_reviewed 2. Matches the About figures.",
+      "compareTo20261029": "slightly worse: on 29 Oct the header link ('What this means →') went straight to 'What the labels mean' (1 click, 3,600 / 5,600 px). Now the header link ('How this works →') lands on 'How this was built', which answers the first half at once but not what 'machine-checked' means; the definition is 4,000-6,300 px further down. Deep landing same (1 click)."
+    },
+    {
+      "task": "T19",
+      "question": "Who co-founded Anthropic, according to the record, and how firm is each credit?",
+      "startPath": "Start page, Institutions & people: 'What can the documentary record establish about Anthropic's formation…' -> /question/anthropic-formation (opens with ?section=formation&claim=dario-cofounded-anthropic-2021)",
+      "startClicks": {
+        "desktop": 1,
+        "phone": 1
+      },
+      "pages": 2,
+      "depthPx": {
+        "desktop": "698-1,216 (seven co-founder rows and 'These seven attributions…')",
+        "phone": "987-1,611"
+      },
+      "ratingStart": "Found",
+      "ratingDeepJs": "Found (1 click)",
+      "ratingNoJs": "Found (all records in static HTML; 56 claim links on the reading, 157 on the dossier)",
+      "misleads": "Yes: the guided reading names seven co-founders ('These seven attributions…'; 'a 2024 founder slide credits Chris Olah, Jack Clark and Tom Brown'), but the dataset and the Anthropic dossier hold an eighth credit from the same slide (Ben Mann, claim lg-ant-mann-cofounded). A reader of the reading alone answers 'seven'.",
+      "answerGiven": "Guided reading: Dario and Daniela Amodei 'co-founded Anthropic in 2021' (Series B announcement 2022-04-29, year-only, retrospective); Chris Olah, Jack Clark, Tom Brown 'credited as an Anthropic co-founder in the company's 2024 founder slide' (dated 2021, year-only, retrospective); Jared Kaplan and Sam McCandlish identified as co-founders by the October 2024 RSP announcement (date unknown). 'These seven attributions do not establish an exhaustive historical roster, simultaneous participation or a legal incorporation date.' Dossier adds: Ben Mann credited by the 2024 slide (date unknown).",
+      "answerCorrect": "partly",
+      "sourceChecked": "anthropic.com/news/anthropic-raises-series-b-to-build-safe-reliable-ai (Published Apr 29, 2022): 'Since its founding at the beginning of 2021', 'Anthropic co-founder and CEO Dario Amodei', 'Anthropic co-founder and President Daniela Amodei' - matches. anthropic.com/news/announcing-our-updated-responsible-scaling-policy (Published Oct 15, 2024): 'Co-Founder and Chief Science Officer Jared Kaplan … succeeding Co-Founder and Chief Technology Officer Sam McCandlish' - matches. AWS re:Invent 2024 slide PDF AIM123-S, p. 6 'Founded 2021': lists eight people as Co-founder - Dario Amodei, Daniela Amodei, Jared Kaplan, Sam McCandlish, Jack Clark, Chris Olah, Tom Brown, Ben Mann. The reading's 'credits Chris Olah, Jack Clark and Tom Brown' is true but incomplete; the same panel credits all eight.",
+      "compareTo20261029": "same rating, worse correctness: still 1 click (depth now 700-1,200 / 990-1,610 vs 1,500 / 2,100). The Ben Mann credit (admitted 2026-10-28, before v0.23.0, so not a lab-genealogy-2 effect) is on the dossier but the reading still says seven."
+    },
+    {
+      "task": "T20",
+      "question": "When did Anthropic announce its Frontier Compliance Framework, and what did it say the framework is for?",
+      "startPath": "Start page search box 'Frontier Compliance Framework' + Enter -> /search#q=… ; first claim result",
+      "startClicks": {
+        "desktop": 1,
+        "phone": 1
+      },
+      "pages": 2,
+      "depthPx": {
+        "desktop": 1083,
+        "phone": 1083
+      },
+      "ratingStart": "Found",
+      "ratingDeepJs": "Found",
+      "ratingNoJs": "Found (document page: statement and 3 claim links in static HTML; the search page itself needs scripts, as before)",
+      "misleads": "No",
+      "answerGiven": "'Anthropic announced on 19 December 2025 that its Frontier Compliance Framework was available, stating that the framework will serve as its compliance framework for SB 53 and other regulatory requirements while its Responsible Scaling Policy remains its voluntary safety policy.' Qualification: forward-looking ('will serve'), not evidence that the FCF satisfies the statute; the FCF text itself was not inspected.",
+      "answerCorrect": "yes",
+      "sourceChecked": "https://www.anthropic.com/news/compliance-framework-SB53 (retrieved 2026-11-01): 'Published Dec 19, 2025'; 'Our Frontier Compliance Framework (FCF) is now available to the public'; 'Moving forward, the FCF will serve as our compliance framework for SB 53 and other regulatory requirements. The RSP will remain our voluntary safety policy…'. Matches statement, date and locators.",
+      "compareTo20261029": "same: 1 typed search, answer is the first claim result (depth 1,083 vs 900 / 800 on 29 Oct; a matching guided-reading page is now listed above the claims)."
+    },
+    {
+      "task": "N01",
+      "question": "At the end of 2025, who could appoint and remove the directors of OpenAI's for-profit company and of Anthropic, and what does the record hold on this for Google DeepMind and xAI?",
+      "startPath": "Start page 'Control timelines side by side' -> /control/side-by-side. Desktop: open the marks one by one (OpenAI 2025-10-28 elect + remove, Anthropic 2025-07-03 remove, Anthropic 2023-09-06 elect). Phone: scroll the 'Year by year' list to 2025 (and 2023).",
+      "startClicks": {
+        "desktop": "5 minimum (1 + 4 marks, if the reader guesses the right marks among ~10 in the OpenAI 2025 column; realistically 7-10)",
+        "phone": 1
+      },
+      "pages": 2,
+      "depthPx": {
+        "desktop": "877-909 (OpenAI marks), 1,078-1,142 (Anthropic marks), 1,578 ('Where each row comes from')",
+        "phone": "9,279 (2025 heading) to 11,685; Anthropic election right in the 2023 block at 5,773; sources note at 14,662"
+      },
+      "ratingStart": "Found with difficulty (desktop: marks have no visible label, tooltip or list; every record must be opened to be read) / Found (phone: year-by-year list)",
+      "ratingDeepJs": "Found with difficulty (desktop) / Found (phone)",
+      "ratingNoJs": "Found with difficulty: the marks are real <a href=/claim/…> links (178 claim links, 89 distinct) with aria-labels, so each opens its claim page without scripts, and the year-by-year list is in the HTML (shown at phone width only). The CSV (/control/side-by-side.csv, 89 records with statements) works without scripts.",
+      "misleads": "Mildly: Anthropic's LTBT right to elect directors is an open-ended interval but is drawn as a single dot at 2023-09-06; the legend explains only dots for days and bands for months/years. A reader scanning the 2025 column sees Anthropic's removal right but not the election right.",
+      "answerGiven": "Panels: 'OpenAI states that the OpenAI Foundation, through special voting and governance rights held solely by it, appoints all members of OpenAI Group's board and can replace directors at any time…' (2025-10-28, snapshot, effective); 'Under Section V.3 … the holder of the Class N Common Stock may remove directors with or without cause…'; 'The restated certificate filed on 3 July 2025 provides that any director elected under Article VIII(B) may be removed at any time without cause by the holders … so the holders of Class T Common Stock … may remove the Class T Directors'; 'Anthropic's restated certificates … give holders of Class T Common Stock … the right to elect one director from 6 September 2023, two from the Second Phase-In Date and three of five from the Final Phase-In Date.' Row notes: 'No board record for Google DeepMind is stored', 'No board record for xAI is stored.'",
+      "answerCorrect": "yes (Anthropic parts verified in the filed certificate; OpenAI parts verified in the Delaware AG letter, certificate itself not retrievable)",
+      "sourceChecked": "Anthropic Amended and Restated Certificate of Incorporation (Google Drive copy, drive.usercontent.google.com id 1yeFKDaHN-…; scanned, read as page images): stamp 'FILED 12:54 PM 07/03/2025'; p.22 Art. VIII(B)2-4: Class T elects one, then two (Second Phase-In), then three of five (Final Phase-In); p.23 Art. VIII(B)6(v) 'First Phase-In Date means September 6, 2023' and VIII(B)7 'Director Removal. Any director elected as provided in Article VIII(B) may be removed at any time without cause by the affirmative vote of the holders of the shares of the class or series of capital stock entitled to elect such director…' - matches. OpenAI: certificate at s3.documentcloud.org and documentcloud.org -> 403 (Cloudflare block); openai.com/our-structure -> 403; web.archive.org unreachable. Substitute: Delaware DOJ letter of October 28, 2025 (news.delaware.gov PDF), Representation 1: 'So long as the NFP holds Class N Common Stock, the NFP will retain control … including the sole power and authority of the NFP Board to appoint members of the Board of Directors of the PBC … and the power and authority of the NFP Board to remove PBC Board members.' Consistent with the records; the certificate's section and page locators (IV.2(b)(i) p.4, V.3 p.24) were not verifiable.",
+      "compareTo20261029": "new feature (not in the 29 Oct set)"
+    },
+    {
+      "task": "N02",
+      "question": "In their latest editions, which frontier safety frameworks say that development itself (not only deployment) will stop or not proceed when safeguards are inadequate or a level is reached?",
+      "startPath": "Start page, 'What's covered › Governance': 'What does each framework say about pausing development or deployment?' -> /compare/frontier-safety-frameworks. Desktop: lands on the 'All frameworks' grid (pause row ~5,000 px down inside an 856-px nested scroll box, 2 of 7 columns off to the right) -> 'One question' (goes to /d1-cbrn) -> 'Pause, non-deployment or non-training' -> /d3-halt. Phone: lands on 'One question' showing CBRN -> choose 'Pause…' in the Question select -> /d3-halt.",
+      "startClicks": {
+        "desktop": 3,
+        "phone": 2
+      },
+      "pages": 2,
+      "depthPx": {
+        "desktop": "535 (Anthropic) to ~2,400 (xAI cell end); Microsoft quote 1,486",
+        "phone": "798 to ~3,700; Microsoft quote 2,340"
+      },
+      "ratingStart": "Found with difficulty (desktop: the start link lands on the 18-row grid, not on the pause question) / Found (phone, 2 interactions)",
+      "ratingDeepJs": "Found",
+      "ratingNoJs": "Found (all seven quotes and notes in static HTML; 7 claim links)",
+      "misleads": "Mildly: every cell carries the same status 'STATED', so the status row alone reads as seven pause commitments; only the quotes and notes show that two are deployment-only and Anthropic's is tied to competitor scenarios.",
+      "answerGiven": "As in answerInData; quotes and notes shown per framework.",
+      "answerCorrect": "yes for 6 of 7 (quotes, pages and edition dates match); xAI unverifiable",
+      "sourceChecked": "RSP v3.4 PDF (cdn.sanity.io): cover 'Version 3.4 Effective July 8, 2026'; p.17 Appendix A 'Anthropic in the lead … We will delay AI development and deployment as needed…' and intro '…do not preclude us from taking cautionary action, such as refraining from training or deploying models… we would strongly consider pausing…' - match (anthropic.com/responsible-scaling-policy lists v3.4 as latest on 2026-11-01). FSF v3.1 PDF: 'Published: April 17, 2026'; p.10 deployment gate quote, p.7 'required only for external deployment, not internal deployment or further development' - match. Meta AASF v2 PDF: p.17 'we will only continue development…' and p.29 'such deployment will not be implemented' - match. Microsoft FGF Feb 2026 PDF: p.9 'we will pause development and deployment until…' - match. OpenAI FGF May 2026 PDF (cdn.openai.com reachable): p.13 'the model is not deployed unless additional mitigation measures…' - match. OpenAI PF v2 PDF: 'Last updated: 15th April, 2025'; p.4 both quotes - match. xAI FAIF June 2026: media.x.ai URL now returns 404 NoSuchKey, x.ai 403, web.archive.org unreachable; the December 2025 edition (data.x.ai) does not contain the quoted sentence, so it is no substitute. Unverifiable.",
+      "compareTo20261029": "new page type; compared with T10 (29 Oct, FSF pause answer found on the compare grid in 1 click), the one-question page is a clear improvement for a deep landing, but the start-page link still goes to the whole grid."
+    },
+    {
+      "task": "N03",
+      "question": "Which AI labs and companies do the records show as founded or launched in 2023, and on whose statement?",
+      "startPath": "Start page 'Browse by year' -> /years (2023 at 4,452 / 4,715 px; no jump to recent decades) -> '2023' -> /year/2023 (topic links at 381 px) -> 'Institutions (24)' -> /year/2023-institutions",
+      "startClicks": {
+        "desktop": 3,
+        "phone": 3
+      },
+      "pages": 4,
+      "depthPx": {
+        "desktop": "578 (first founding record) to 2,429 (Kyutai)",
+        "phone": "646 to 3,058"
+      },
+      "ratingStart": "Found (but incomplete, see misleads)",
+      "ratingDeepJs": "Found (1 click)",
+      "ratingNoJs": "Found (static HTML holds every record; 46 claim links on the institutions page)",
+      "misleads": "Yes: the Institutions topic page omits xAI's launch (2023-07-12), which the records hold only as a People-topic record about Elon Musk. A historian reading '2023: institutions' as the list of labs founded that year misses xAI. The page warns 'Selective: what the records hold', but the record is held.",
+      "answerGiven": "11 founding statements as listed, each naming its source and kept at the source's precision ('dated to the year/month/day'); Google DeepMind combination 'announced'; no xAI.",
+      "answerCorrect": "partly (each shown record checked is correct; the topic list is incomplete against the records)",
+      "sourceChecked": "mistral.ai/about: 'In April 2023, Mistral was born…' - match. sakana.ai/company-info: 'Founded July 2023' - match. technologyreview.com 2025/01/24 (datePublished 2025-01-24): 'it was founded in July 2023 by Liang Wenfeng' - match. moonshot.cn/about: '2023年 春天 … 月之暗面（Moonshot AI）正式成立' - match. hcompany.ai/about: 'In 2023, five researchers from DeepMind came together…' - match. huggingface Seed-OSS README rev 497f1dca: 'Founded in 2023, ByteDance Seed Team…' - match. lingyiwanwu.com/about.html: '零一万物成立于2023年5月' - match. eastmoney (Kechuangban Ribao, 2024-03-23): '阶跃星辰成立于2023年4月' - match. Not retrievable: baichuan-ai.com (JS-rendered, empty body in headless browser), Essential AI release on hpcwire (403), Axios xAI article (403), CMA CGM Kyutai release (404 now; link rot on the evidence URL).",
+      "compareTo20261029": "new feature (not in the 29 Oct set)"
+    },
+    {
+      "task": "N04",
+      "question": "Which text does Selekoa name as the earliest located for the idea that a human mind could be transferred into a machine (W03), and how does the collection qualify that choice, given that Moravec wrote about it in the 1970s and 1980s?",
+      "startPath": "Start page 'Ideas & debates' -> 'Read the texts on machine succession →' -> contents 'W03 Human minds transferred into machines'",
+      "startClicks": {
+        "desktop": 3,
+        "phone": 3
+      },
+      "pages": 3,
+      "depthPx": {
+        "desktop": "11,307 (W03 heading), 11,416 ('Earliest located'), 15,079 ('Headlines replaced')",
+        "phone": "16,218 / 16,398 / 21,370"
+      },
+      "ratingStart": "Found",
+      "ratingDeepJs": "Found (1 click; the context of the headline needs the W03 section)",
+      "ratingNoJs": "Found (document page shows both 'Earliest located in …' marks and #proposition-w03 links; collection page holds all text; 185 claim links)",
+      "misleads": "Yes: the W03 headline 'Earliest located: Minsky 1994' rests on the page's self-reported 'Last modified: Wed Jan 02 1997', while the same collection treats a self-reported date on Moravec's 1979 page ('this version 1978') as 'claimed' and dates it by its first archive capture. On the capture basis the collection states for other texts, Hanson (capture 1998-02-20) precedes Minsky (earliest captures located 1999-01-27 / 1999-03-02). Milder: the headline names a 1994 text directly above five earlier-dated articulating texts; only the 'wording attested' dates explain it.",
+      "answerGiven": "Earliest located: 'Marvin L. Minsky · Will Robots Inherit the Earth? · 1994-10 · wording attested 1997-01-02'; claim panel role 'Earliest located' with the attested note; scope: '\"Earliest located\" means the earliest text found … judged by the date from which its quoted wording is attested. It is not a claim that no earlier text exists.'",
+      "answerCorrect": "partly (text, quotes and dates are right; the earliest-located choice depends on an inconsistently applied attestation basis)",
+      "sourceChecked": "web.mit.edu/dxh/www/marvin/web.media.mit.edu/~minsky/papers/sciam.inherit.html (retrieved 2026-11-01): heading '(Scientific American, Oct, 1994 with some minor revisions)'; all three quoted passages present ('Eventually we will entirely replace our brains -- using nanotechnology.', 'Needless to say, in doing so, we'll be making ourselves into machines.', 'to copy a functional brain, it should suffice to replicate just enough of the function of each part…'); footer 'Last modified: Wed Jan 02 1997' (2 Jan 1997 was a Thursday). Wayback availability API (archive.org/wayback/available; web.archive.org itself unreachable): earliest captures located of Minsky's page 1999-01-27 (www.media.mit.edu/~minsky/…) and 1999-03-02 (www.ai.mit.edu/people/minsky/…); Hanson reprint hanson.berkeley.edu/uploads.html captured 1998-02-20 (matches the record); Moravec's analog.1978.html first capture 2001-07-10 (matches). Capture contents not opened.",
+      "compareTo20261029": "new collection; compared with T08 (earliest located, 29 Oct) the document page now carries the 'Earliest located in …' mark (problem 9 fixed)."
+    },
+    {
+      "task": "N05",
+      "question": "Which text is the earliest located for the claim that AI models can simulate or predict how a cell behaves (the 'virtual cell', P2), which texts contest it, and since when is the name 'virtual cell' in use?",
+      "startPath": "Start page 'Ideas & debates' -> 'Read AI in science →' -> contents 'P2 AI models can simulate or predict the behaviour of cells'",
+      "startClicks": {
+        "desktop": 3,
+        "phone": 3
+      },
+      "pages": 3,
+      "depthPx": {
+        "desktop": "2,595 (P2 heading after jump), 2,720 (Bray headline), 3,868 (contesting text), 4,121 ('Headlines replaced')",
+        "phone": "3,636 / 3,903 / 5,559 / 5,954"
+      },
+      "ratingStart": "Found",
+      "ratingDeepJs": "Found",
+      "ratingNoJs": "Found (all text and 36 claim links in static HTML; the Tomita 'No AI or machine-learning element' note is in the folded list)",
+      "misleads": "Mildly: the headline 'Earliest located use of the name: Tomita 2001 \"virtual cell\"' does not say that Tomita's text has no AI element (only the folded 'bear on' list does), and the Europe PMC search the collection describes returns earlier uses of the name of the same kind (Schaff et al., Biophys J 1997-09, 'The \"Virtual Cell\" provides a general system…'; Schaff & Loew, 'The virtual cell', 1999). On P1, at the top of the same page, 'Earliest located use of the name \"structure-based drug design\"' is Lyu et al. 2024, though Ring et al. (PNAS 1993-04) uses the name and meets the criterion (computer model-built structures used to find inhibitors), inside the stated 1960-1995 search window.",
+      "answerGiven": "As in answerInData; the Bray record carries its qualification on the panel; the contesting record is labelled 'CONTESTS' without 'engages a premise/states the contrary'.",
+      "answerCorrect": "partly (earliest located text, its date and the contesting text are correct; the 'earliest located use of the name' is contradicted by the collection's own stated search)",
+      "sourceChecked": "Europe PMC core record PMID 2385105 (Bray D., J Theor Biol 143(2):215-231, March 1990): abstract contains 'a procedure is described by which a PDP network could simulate a cell signalling pathway' and 'The analogy with PDP networks shows how living cells can recognize combinations of environmental influences…' - match. Europe PMC record for Ahlmann-Eltze, Huber, Anders, Nature Methods, first published 2025-08-04, doi 10.1038/s41592-025-02772-6: abstract 'Here we compared five foundation models and two other deep learning models … None outperformed the baselines' - match (nature.com returned 429; the main-text 'still elusive' quote not checked). Europe PMC search TITLE_ABS:\"virtual cell\", 1960-2001, sorted by date: 18 hits; Casini 1993 (title 'towards a virtual cell', no abstract), Schaff et al. 1997 (PMID 9284281), Schaff & Loew 1999 (PMID 10380200) precede Tomita 2001 (PMID 11356281), whose abstract matches the record. Europe PMC PMID 8475107 (Ring et al., PNAS 1993-04): 'The lack of an experimentally determined structure … limits the application of structure-based drug design methods … we have investigated the use of computer model-built structures…'.",
+      "compareTo20261029": "new collection (not in the 29 Oct set); the document page carries the 'Earliest located in …' mark."
+    }
+  ]
+}

@@ -1,6 +1,12 @@
 import type { PropositionsCollection } from '../domain/propositions';
 import { economicsFrame as frame } from './proposition-frames';
 
+/** The maintainer's decisions of 2026-11-02 on the earliest-located re-check (decisions 1 to 4). */
+const recheckDecisions = '2026-11-02';
+
+/** The interim withdrawal of 2026-11-02: headlines the cross-family re-check marks move or undecidable. */
+const recheckWithdrawn = '2026-11-02';
+
 const growthChecked = '2026-10-10';
 const mainstreamChecked = '2026-10-12';
 const recheckDecided = '2026-10-25';
@@ -63,7 +69,7 @@ export const economicsOfMachineIntelligence: PropositionsCollection = {
       'Tiers follow the maintainer’s rule of 2026-10-11, with an author’s standing as an economist judged when the text was written (2026-10-12). Each record gives the basis of its tier.',
       'A passage engages a premise when its section, dialogue turn or message gives a reason against that premise. Otherwise it is recorded as stating the contrary.',
       'Results from formal models are recorded with their conditions. Model scenarios counted as articulating M05 are labelled as such and shown only with their context (maintainer decision of 2026-10-11). Estimates under G09 are recorded one per text and holder, as worded, and are never converted to a common threshold.',
-      `Fresh-context audits by Claude models re-read every passage. Checks by an OpenAI GPT-6 model then re-examined 49 of 65 passages of the explosive-growth strand and 62 passages and four Finnish texts of the mainstream strand. Correction passes applied their findings on ${growthChecked} and ${mainstreamChecked}; for the mainstream strand the maintainer accepted every final disagreement. No person has reviewed the records.`,
+      `Fresh-context audits by Claude models re-read every passage. Checks by an OpenAI GPT-6 model then re-examined 49 of 65 passages of the explosive-growth strand and 62 passages and four Finnish texts of the mainstream strand. Correction passes applied their findings on ${growthChecked} and ${mainstreamChecked}; for the mainstream strand the maintainer accepted every final disagreement.`,
       'The records were admitted on 2026-10-14 from two research packs. One quotation was shortened to keep it within 50 words; its wording is unchanged.',
       'On 2026-10-25 a same-family fresh-context machine check re-examined every tier and every earliest located role of the first two strands, and a blind cross-family machine check re-examined 19 of its items against the recorded captures and the hearing scans. The maintainer decided their disagreements the same day: one text was re-tiered, six records were added, five earliest located roles moved and one was withheld. In that correction pass web.archive.org refused connections, so passages read only in archive captures rest on the GPT check.',
       'For the strand on superintelligence and existential risk, an OpenAI GPT-6 model checked all 119 passages blind on 2026-10-15 and found every quotation matching. Its 22 disagreements on classification were decided on the evidence the same day, and the maintainer decided on 2026-10-15 how E05 is read. The 20 passages read in Internet Archive captures could not be read again at admission, because the archive refused connections; they rest on that check, which retrieved the same captures. The strand was admitted on 2026-10-16. Three passages were held back to keep within the quotation limit for Hanson’s 1998 comment, and one quotation was shortened to 50 words with its wording unchanged.',
@@ -283,6 +289,70 @@ export const economicsOfMachineIntelligence: PropositionsCollection = {
       ],
       recordedAt: mainstreamChecked,
     },
+    {
+      propositionId: 'unautomated-tasks-bottleneck-growth',
+      replaced:
+        'Nordhaus, Are We Approaching an Economic Singularity (2015), headlined as earliest located (tier 1).',
+      reason:
+        'Withdrawn on 2026-11-02 by the maintainer’s decision to withdraw every headline the cross-family re-check proposes to move or could not decide, pending adjudication; no record holds the headline meanwhile. The re-check proposes an earlier text the dataset holds: Hanson’s 1998 article explicitly says an input lagging behind other improvements becomes a bottleneck for the entire production process, including computing constrained by human training. This meets the essential-unimproved-input criterion before Nordhaus’s 2015 work attested in 2016.',
+      claimIds: ['ec-g04-nordhaus-2015-economic-singularity-a'],
+      recordedAt: recheckWithdrawn,
+    },
+    {
+      propositionId: 'ai-as-task-automation',
+      replaced:
+        'Frey and Osborne, The Future of Employment (2013), headlined as earliest located (tier 1).',
+      reason:
+        'Withdrawn on 2026-11-02 by the maintainer’s decision to withdraw every headline the cross-family re-check proposes to move or could not decide, pending adjudication; no record holds the headline meanwhile. The re-check proposes an earlier text the dataset holds: Bresnahan, Brynjolfsson and Hitt’s held 1999 tier-1 paper explicitly analyzes computer substitution for human decisionmaking through task allocation and work redesign. It discusses the limited scope of AI-related substitution and the tasks left to people; this is an earlier task framework, not merely a factor-share equation.',
+      claimIds: ['ec-m02-frey-osborne-2013-future-of-employment-a'],
+      recordedAt: recheckWithdrawn,
+    },
+    {
+      propositionId: 'machines-cheaper-at-every-task',
+      replaced:
+        'Acemoglu and Restrepo, The Race Between Machine and Man (2016), headlined as earliest located (tier 1).',
+      reason:
+        'Withdrawn on 2026-11-02 by the maintainer’s decision to withdraw every headline the cross-family re-check proposes to move or could not decide, pending adjudication; no record holds the headline meanwhile. The re-check proposes an earlier text the dataset holds: Hanson’s tier-1 model attested August 2000 already treats machine and human labor as perfect substitutes in the baseline for future production, with machine cost falling enough to push wages below human subsistence. That models the all-tasks case as a conditional scenario; the residual-human-jobs variant is separate. It predates the inspected June 2017 revision of the 2016 work.',
+      claimIds: [
+        'ec-m05-acemoglu-restrepo-2016-race-between-machine-and-man-a',
+      ],
+      recordedAt: recheckWithdrawn,
+    },
+    {
+      propositionId: 'recent-economics-engagement-with-ai',
+      replaced:
+        '“Introduction to The Economics of Artificial Intelligence: An Agenda” (2019), headlined as earliest located (tier 1).',
+      reason:
+        'Withdrawn on 2026-11-02 by the maintainer’s decision to withdraw every headline the cross-family re-check proposes to move or could not decide, pending adjudication; no record holds the headline meanwhile. The re-check proposes an earlier text the dataset holds: This predates the 2019 editors’ similar statement; no inference about the entire field’s actual neglect is made.',
+      claimIds: [
+        'ec-m09-agrawal-gans-goldfarb-2019-economics-of-ai-introduction-a',
+      ],
+      recordedAt: recheckWithdrawn,
+    },
+    {
+      propositionId: 'machines-cheaper-at-every-task',
+      replaced:
+        'No earliest located headline: under re-check from 2026-11-02. Before that, Acemoglu and Restrepo (2016; wording attested June 2017) was headlined.',
+      reason:
+        'Moved on 2026-11-02 to Hanson’s “Economic Growth Given Machine Intelligence” (wording attested 19 August 2000), tier 1, by the maintainer’s decision on the cross-family re-check (role 143). The text meets the criterion and is dated before Acemoglu and Restrepo. The record was admitted on this proposition with a passage matched against the held text. A conditional model result.',
+      claimIds: [
+        'ec-m05-hanson-economic-growth-given-machine-intelligence-a',
+        'ec-m05-acemoglu-restrepo-2016-race-between-machine-and-man-a',
+      ],
+      recordedAt: recheckDecisions,
+    },
+    {
+      propositionId: 'recent-economics-engagement-with-ai',
+      replaced:
+        'No earliest located headline: under re-check from 2026-11-02. Before that, Agrawal, Gans and Goldfarb’s introduction (May 2019) was headlined.',
+      reason:
+        'Moved on 2026-11-02 to Hanson’s “Economic Growth Given Machine Intelligence” (wording attested 19 August 2000), tier 1, by the maintainer’s decision on the cross-family re-check (role 148). The text meets the criterion and is dated before Agrawal, Gans and Goldfarb’s introduction. The record was admitted on this proposition with a passage matched against the held text. A self-description of the literature, not proof that earlier work was absent.',
+      claimIds: [
+        'ec-m09-hanson-economic-growth-given-machine-intelligence-a',
+        'ec-m09-agrawal-gans-goldfarb-2019-economics-of-ai-introduction-a',
+      ],
+      recordedAt: recheckDecisions,
+    },
   ],
   limits: [
     '“Earliest located” means the earliest text found by the searches described under “How we searched”, by economists unless the page says tier 2. It is not a claim that no earlier text exists.',
@@ -292,11 +362,20 @@ export const economicsOfMachineIntelligence: PropositionsCollection = {
     'Each record carries the date its work is dated by. Where the quoted wording is known only from a later copy or revision, the date from which it is attested is shown, and that date decides which text is earliest located.',
     'A passage that would mislead on its own is marked “shown only with its context” and is never shown without that context.',
     'Codes such as M05-20 in qualifications refer to the passages of the research packs the records come from.',
-    'A machine selected and classified these records, and machine checks from two model families re-examined them. No person has reviewed them.',
+    'A machine selected and classified these records, and machine checks from two model families re-examined them.',
   ],
   axis: frame.axis,
   landing: frame.landing,
   landingAction: frame.landingAction,
   mostDevelopedEmpty: frame.mostDevelopedEmpty,
   earliestEmpty: frame.earliestEmpty,
+  related: {
+    'machine-intelligence-exceeds-humans-in-all-domains': [
+      {
+        propositionId: 'machine-succession',
+        relation:
+          'A wider claim in the collection on machine succession, scale and acceleration: that machines succeed humans as the leading intelligence.',
+      },
+    ],
+  },
 };

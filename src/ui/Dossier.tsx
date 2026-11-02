@@ -73,6 +73,7 @@ export function Dossier({
   path,
   onRead,
   control,
+  timelines,
 }: {
   dossier: InstitutionalDossier;
   repository: Repository;
@@ -85,11 +86,10 @@ export function Dossier({
   onRead?: () => void;
   /** The institution's control-structure page, where one exists. */
   control?: { title: string; href: string; onOpen: () => void };
+  /** The control timelines of several organisations, where this is one. */
+  timelines?: { title: string; href: string; onOpen: () => void };
 }) {
   const [section, setSection] = useState<DossierSection>('chronology');
-  const seedCount = dossier.claims.filter(
-    (c) => c.editorialState === 'seed',
-  ).length;
   return (
     <article
       className="dossier"
@@ -114,9 +114,6 @@ export function Dossier({
             >
               Open the guided reading →
             </NavLink>
-            <small>
-              Selected by machine · no human review of the framing recorded
-            </small>
           </div>
         )}
         {control && (
@@ -127,6 +124,18 @@ export function Dossier({
               onOpen={control.onOpen}
             >
               {control.title}: who held which control right, and when →
+            </NavLink>
+          </p>
+        )}
+        {timelines && (
+          <p className="dossier-control-link">
+            <NavLink
+              className="text-button record-explore"
+              href={timelines.href}
+              onOpen={timelines.onOpen}
+            >
+              {timelines.title}: board, ownership and control changes of four
+              laboratories on one time axis →
             </NavLink>
           </p>
         )}
@@ -142,18 +151,16 @@ export function Dossier({
           undated
         </p>
         <p className="small-note">
-          {dossier.claims.length} claims · {dossier.sourceIds.length} sources ·{' '}
-          {seedCount} not editorially accepted. The counts describe this
-          selection. They do not measure completeness or independent
-          confirmation.
+          {dossier.claims.length} claims · {dossier.sourceIds.length} sources.
+          The counts describe this selection. They do not measure completeness
+          or independent confirmation.
         </p>
         <details className="dossier-method">
           <summary>Scope, evidence and limits</summary>
           <p>Description: {dossier.institution.description}</p>
           <p>
-            The records are grouped automatically. No human inspection of the
-            selected claims, source paths or framing is recorded for this
-            dossier. Each source passage shows how it was checked.
+            The records are grouped automatically. Each source passage shows how
+            it was checked.
           </p>
           <p>
             The dossier is computed from existing records. It is not a

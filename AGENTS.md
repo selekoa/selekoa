@@ -59,7 +59,7 @@ Prioritize a polished, immediately legible public-facing experience, researcher 
 
 ## Engineering and design
 
-Start with `README.md` for current coverage and local commands, `docs/roadmap.md` for priorities, and the editorial policy for research admission. Inspect branches and worktrees before changing Git state; preserve unmerged and unrelated work.
+Start with `docs/development.md` for current coverage and local commands, `docs/roadmap.md` for priorities, and the editorial policy for research admission. Inspect branches and worktrees before changing Git state; preserve unmerged and unrelated work.
 
 Major work should make Selekoa materially deeper as documentary history or materially more useful to a researcher. Generic infrastructure, preparatory audits and documentation-only increments should support a concrete deliverable or resolve a specific need; avoid repetitive audits without one.
 

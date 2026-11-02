@@ -11,6 +11,14 @@ import entities from '../../data/entities.json';
 import claims from '../../data/claims.json';
 import sources from '../../data/sources.json';
 import evidence from '../../data/evidence.json';
+import recheckDecisions from '../../review/recheck-decisions-before-2026-11-02.json';
+import recheckApply from '../../review/recheck-apply-before-2026-11-02.json';
+import recheckInterim from '../../review/recheck-interim-before-2026-11-02.json';
+import auditFollowups from '../../review/audit-followups-before-2026-11-02.json';
+import prelaunchFixes from '../../review/prelaunch-fixes-before-2026-11-02.json';
+import labGenealogy2 from '../../review/lab-genealogy-2-admission-before-2026-11-01.json';
+import craneNrcFix from '../../review/crane-nrc-fix-before-2026-11-01.json';
+import machineSuccession from '../../review/heterodox-admission-before-2026-11-01.json';
 import riskDebate from '../../review/risk-debate-admission-before-2026-10-31.json';
 import chinaLabs3Admission2 from '../../review/china-labs-3-admission-2-before-2026-10-31.json';
 import chinaLabs3Admission1 from '../../review/china-labs-3-admission-1-before-2026-10-31.json';
@@ -103,8 +111,33 @@ export function revert<R extends Raw>(raw: R, snapshot: Snapshot): R {
 
 const current = { meta, entities, claims, sources, evidence };
 
+/** Raw stored rows at schema 2.28 as released in v0.24.2, before the maintainer's decisions of 2026-11-02 on the earliest-located re-check (schema 2.29). */
+export const preRecheckDecisionsRaw = revert(current, recheckDecisions);
+/** Raw stored rows at schema 2.28 as released in v0.24.1, before the adjudication of 2026-11-02 of the re-checked headlines. */
+export const preRecheckApplyRaw = revert(preRecheckDecisionsRaw, recheckApply);
+/** Raw stored rows at schema 2.28 as released in v0.24.0, before the interim withdrawal of 2026-11-02 of the headlines the cross-family re-check marks move or undecidable. */
+export const preRecheckInterimRaw = revert(preRecheckApplyRaw, recheckInterim);
+/** Raw stored rows at schema 2.27 as released in v0.23.3, before the maintainer's decisions of 2026-11-02 on the pre-launch audit (schema 2.28). */
+export const preAuditFollowupsRaw = revert(
+  preRecheckInterimRaw,
+  auditFollowups,
+);
+/** Raw stored rows at schema 2.27 as released in v0.23.2, before the corrections of the pre-launch audit of 2026-11-02. */
+export const prePrelaunchFixesRaw = revert(
+  preAuditFollowupsRaw,
+  prelaunchFixes,
+);
+/** Raw stored rows at schema 2.27 as released in v0.23.1, before the 2026-11-01 lab genealogy 2 admission. */
+export const preLabGenealogy2Raw = revert(prePrelaunchFixesRaw, labGenealogy2);
+/** Raw stored rows at schema 2.27 as released in v0.23.0, before the 2026-11-01 correction of the NRC Crane fuel amendment record. */
+export const preCraneNrcFixRaw = revert(preLabGenealogy2Raw, craneNrcFix);
+/** Raw stored rows at schema 2.27 as released in v0.22.0, before the 2026-11-01 machine succession admission. */
+export const preMachineSuccessionRaw = revert(
+  preCraneNrcFixRaw,
+  machineSuccession,
+);
 /** Raw stored rows at schema 2.27 as released in v0.21.0, before the 2026-10-31 risk debate admission. */
-export const preRiskDebateRaw = revert(current, riskDebate);
+export const preRiskDebateRaw = revert(preMachineSuccessionRaw, riskDebate);
 /** Raw stored rows at schema 2.26 as released in v0.20.0, before part 2 of the 2026-10-31 admission of the third Chinese institutions collection (schema 2.27). */
 export const preChinaLabs3Admission2Raw = revert(
   preRiskDebateRaw,

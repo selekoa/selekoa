@@ -6,9 +6,9 @@
  * held and given again once what the control needs has loaded, as are a
  * select's or field's changes; a select's list opens once the records have. Pointing at or focusing a control starts the load. Controls that
  * need no records act at once: links within the page or to other sites, the
- * theme switch, the header's search and buttons that copy a link. (Another
- * copy made after a long wait may be refused by the browser; copy buttons
- * then show the text to copy.) A link to a page that has a slice of its own
+ * theme switch, the header's search, buttons that copy a link and controls
+ * marked `data-in-page`. (Another copy made after a long wait may be
+ * refused by the browser; copy buttons then show the text to copy.) A link to a page that has a slice of its own
  * is not held: it opens that page from its slice alone
  * (src/ui/page-visits.ts), and pointing at or focusing it fetches only that
  * slice. On the search page (`linksOnly`) only such links are handled.
@@ -31,8 +31,13 @@ const controls =
   'a[href], button, summary, label, select, input, textarea, [role="tab"], [role="button"], [role="radio"]';
 /** Controls the arrow keys and their kind act on, rather than scrolling. */
 const moving = 'select, input[type="radio"], [role="tab"], [role="radio"]';
+/**
+ * Controls that act without the records. `data-in-page` marks a control that
+ * only changes how a page shows what its slice holds (the view switch of
+ * propositions by author).
+ */
 const exempt =
-  '.theme-toggle, .header-search-toggle, .site-header form[role="search"] *, a[href^="#"], a[target="_blank"]';
+  '.theme-toggle, .header-search-toggle, .site-header form[role="search"] *, a[href^="#"], a[target="_blank"], [data-in-page]';
 const pressing = new Set(['Enter', ' ']);
 const keys = new Set([
   'ArrowLeft',

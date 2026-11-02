@@ -99,6 +99,17 @@ const kindOf: Partial<Record<Claim['predicate'], ControlEntryKind>> = {
 
 // Board, trustee and chair roles; a research or policy director is not a
 // governance role.
+/**
+ * The role a record names. From a collection's version 2, without a
+ * parenthesised sourcing note: a staff title "from 'OpenAI Board Forms Safety
+ * and Security Committee'" is not a board role. Version 1, which released
+ * datasets up to v0.22.0 carry, read the whole text; it is kept so that
+ * those releases reproduce.
+ */
+const roleText = (claim: Claim, version: number) => {
+  const role = claim.attributes?.role ?? '';
+  return version >= 2 ? role.replace(/\s*\(.*$/s, '') : role;
+};
 const boardRole = /\bboard\b|\btrustees?\b|^(co-)?chair(man|person|woman)?\b/i;
 
 /** The stage shown for a timeline entry; naming records are announcements. */
@@ -110,13 +121,11 @@ export function entryStage(claim: Claim) {
 }
 
 /**
- * A dated timeline of one organisation's recorded control structures: who
- * holds which right over which entity, through which instrument, announced
- * or effective, with legal forms, formations, conversions, board actions
- * and assessments of control. It returns stored claims and adds no assertion;
- * in particular it never infers a control chain from adjacent records.
+ * The dated records of one organisation's control-structure page, without
+ * its open questions and stopped items: what other pages that show the same
+ * records read (src/domain/control-timelines.ts).
  */
-export function controlStructure(
+export function controlEntries(
   data: Dataset,
   collection: ControlStructureCollection,
 ) {
@@ -142,7 +151,7 @@ export function controlStructure(
       return (
         !!object &&
         listed.has(object) &&
-        boardRole.test(c.attributes?.role ?? '')
+        boardRole.test(roleText(c, collection.version))
       );
     return listed.has(c.subject) || (!!object && listed.has(object));
   });
@@ -168,6 +177,21 @@ export function controlStructure(
         (a.date ?? '9999').localeCompare(b.date ?? '9999') ||
         a.claim.id.localeCompare(b.claim.id),
     );
+  return { entities, organisation, entries };
+}
+
+/**
+ * A dated timeline of one organisation's recorded control structures: who
+ * holds which right over which entity, through which instrument, announced
+ * or effective, with legal forms, formations, conversions, board actions
+ * and assessments of control. It returns stored claims and adds no assertion;
+ * in particular it never infers a control chain from adjacent records.
+ */
+export function controlStructure(
+  data: Dataset,
+  collection: ControlStructureCollection,
+) {
+  const { entities, organisation, entries } = controlEntries(data, collection);
   const years = [
     ...new Set(entries.map((e) => (e.date ? e.date.slice(0, 4) : null))),
   ].map((year) => ({

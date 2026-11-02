@@ -69,7 +69,7 @@ test('start page leads with search, three hubs and one review-status line', asyn
     'A documentary history of machine intelligence.',
   );
   await expect(page.locator('.landing-lede .landing-deck')).toHaveText(
-    'Selekoa is a machine-first starting point for research on the history of machine intelligence: machines find and check the records, and every one links to its source, for you to verify and build on.',
+    'Selekoa is a documentary history of machine intelligence and of human thought about it. Machines built it: they find the sources, quote them and check each other’s work, and every statement links to the passage it rests on. What they leave to you is the human part: the question, the point of view, the stance.',
   );
   // The heading carries the tagline, so the header omits it on this page.
   await expect(
@@ -77,12 +77,11 @@ test('start page leads with search, three hubs and one review-status line', asyn
       .locator('.site-header')
       .getByText('A documentary history of machine intelligence.'),
   ).toHaveCount(0);
-  await expect(page.getByText(/machine-first/i)).toHaveCount(1);
+  await expect(page.getByText(/machine-first/i)).toHaveCount(0);
   await expect(page).toHaveTitle(
     'Selekoa · A documentary history of machine intelligence',
   );
-  const statusText =
-    'Records found and checked by machines, not reviewed by an editor · What this means →';
+  const statusText = 'Found and cross-checked by machines · How this works →';
   const banner = page.getByRole('banner');
   const line = banner.locator('.site-status');
   await expect(line).toContainText(statusText);
@@ -105,13 +104,11 @@ test('start page leads with search, three hubs and one review-status line', asyn
   await expect(page.getByRole('main').getByRole('search')).toBeVisible();
   await expect(page.getByTestId('network')).toHaveCount(0);
   await noViolations(page);
-  // The line links to "How this was checked" on the About & method page.
-  await line.getByRole('link', { name: 'What this means →' }).click();
+  // The line links to "How this was built" on the About & method page.
+  await line.getByRole('link', { name: 'How this works →' }).click();
   await expect(page).toHaveURL(/\/about$/);
-  await expect(page.locator('#about-method')).toBeFocused();
-  await expect(page.locator('#about-method')).toHaveText(
-    'How this was checked',
-  );
+  await expect(page.locator('#about-built')).toBeFocused();
+  await expect(page.locator('#about-built')).toHaveText('How this was built');
   // The exceptions are listed by identity under the coverage counts.
   const exceptions = page.getByRole('list', {
     name: 'Review-state exceptions',
@@ -144,9 +141,9 @@ test('start page leads with search, three hubs and one review-status line', asyn
   await expect(page.locator('.site-status')).toHaveCount(1);
   await page
     .getByRole('banner')
-    .getByRole('link', { name: 'What this means →' })
+    .getByRole('link', { name: 'How this works →' })
     .click();
-  await expect(page.locator('#about-method')).toBeFocused();
+  await expect(page.locator('#about-built')).toBeFocused();
   await page.getByRole('link', { name: 'Selekoa start page' }).click();
   await expect(page).toHaveURL(/:4173\/$/);
   // The start page's search box opens Search; its map is a view of the results.
@@ -252,9 +249,9 @@ test('frameworks page reads cleanly: timeline jump, changes and source in a few 
     await expect(absent).toHaveCount(0);
   // No per-row seed label; exceptions only.
   const history = page.getByRole('article', { name: collection.title });
-  await expect(history).not.toContainText('Not reviewed by an editor');
+  await expect(history).not.toContainText('Machine-checked');
   await expect(page.getByRole('banner').locator('.site-status')).toContainText(
-    'not reviewed by an editor',
+    'Found and cross-checked by machines',
   );
 
   // "What did Anthropic change between RSP v2.2 and v3.0, and where is the source?"

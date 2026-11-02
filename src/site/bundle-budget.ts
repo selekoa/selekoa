@@ -155,6 +155,31 @@ export const pageTypes: PageType[] = [
     data: [slice('/propositions/economics-of-machine-intelligence')],
     limitKb: 455,
   },
+  // Control timelines side by side (review/control-timelines-2026-11-01.md):
+  // four organisations' control records on one axis.
+  {
+    name: 'Control timelines',
+    path: '/control/side-by-side',
+    modules: [...workspace, ...core, 'src/ui/ControlTimelines.tsx'],
+    data: [slice('/control/side-by-side')],
+    limitKb: 285,
+  },
+  // Propositions by author (review/propositions-by-thinker-2026-11-01.md):
+  // its largest collection page, and the index of the collections.
+  {
+    name: 'By author',
+    path: '/stances/economics-of-machine-intelligence',
+    modules: [...workspace, ...core, 'src/ui/PropositionStances.tsx'],
+    data: [slice('/stances/economics-of-machine-intelligence')],
+    limitKb: 310,
+  },
+  {
+    name: 'By author index',
+    path: '/stances',
+    modules: [...workspace, ...core, 'src/ui/PropositionStances.tsx'],
+    data: [slice('/stances')],
+    limitKb: 250,
+  },
   // The chronicle (review/chronicle-by-year-2026-10-31.md): its largest
   // year page, and the index of the years.
   {

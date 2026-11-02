@@ -112,8 +112,13 @@ describe('external commitments (week 4c)', () => {
       'microsoft',
       'mistral-ai',
       'openai',
-      'xai',
     ]);
+    // The Commission's page leaves xAI out of its list and states separately
+    // that xAI signed up to one chapter (corrected 2026-11-01; it was
+    // recorded as listed).
+    expect(
+      repository.claims.get('cm-eu-code-xai')!.attributes!.commitment!.stage,
+    ).toBe('signed');
     for (const c of listed('gpai-code-of-practice-2025'))
       expect(dateOf(c)).toBe('2025-08-01');
     const intents = code.signatories.filter(
@@ -127,7 +132,7 @@ describe('external commitments (week 4c)', () => {
     ]);
     for (const c of intents)
       expect(c.time).toMatchObject({ basis: 'announcement' });
-    // xAI's listing and announcement both carry the chapter scope.
+    // xAI's signature and announcement both carry the chapter scope.
     for (const id of ['cm-eu-code-xai', 'cm-eu-code-intent-xai'])
       expect(repository.claims.get(id)!.attributes!.commitment!.scope).toBe(
         'Safety and Security chapter only',

@@ -79,9 +79,6 @@ for (const [id, sample] of Object.entries(examples)) {
       // Lab genealogy records (2026-10-17) are seeds added to the count.
       const count = dossierCount(id, sample.count);
       await expect(dossier).toContainText(`${count} claims ·`);
-      await expect(dossier).toContainText(
-        `${sample.seeds + count - sample.count} not editorially accepted`,
-      );
       for (let i = 0; i < sections.length; i++) {
         await dossier
           .getByRole('button', { name: sections[i], exact: false })

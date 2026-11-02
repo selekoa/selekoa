@@ -42,7 +42,7 @@ export async function claimReference(data: Dataset, claim: Claim, url: string) {
 }
 
 const limits = [
-  'The reading’s text is machine-written interpretation. No human review of the selection, source paths or framing is recorded, and it is not editorially accepted.',
+  'The reading’s text is machine-written interpretation.',
   'Each claim’s editorial status and each evidence record’s check status are kept, separately. “Supported” does not mean that no contrary evidence exists.',
   'Source passages are omitted, including stored quotes and paraphrases. Follow the locators to inspect original material. No third-party documents are included; source reuse restrictions still apply.',
   'Fingerprints identify the complete loaded dataset and selection using canonical JSON (sorted object keys, preserved array order, UTF-8) and SHA-256. The packet is a subset, not a full dataset archive.',
@@ -106,8 +106,7 @@ export async function researchPacket(data: Dataset, selection: PathSelection) {
     selection: {
       definition: selection,
       fingerprint: await fingerprint(selection),
-      interpretationStatus:
-        'machine-authored; not human-reviewed or editorially accepted',
+      interpretationStatus: 'machine-authored',
       orderedClaimIds: ids,
     },
     claims,

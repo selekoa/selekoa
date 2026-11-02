@@ -8,6 +8,7 @@ import {
 } from './scripts/landing-summary.ts';
 import { searchIndexModule } from './scripts/search-index.ts';
 import { siteModule } from './scripts/site-config.ts';
+import { comparisonCsvModule } from './scripts/comparison-csv.ts';
 
 export default defineConfig(({ isSsrBuild }) => ({
   // Pages have real paths (/person/<id>), so assets load from the site root.
@@ -20,6 +21,7 @@ export default defineConfig(({ isSsrBuild }) => ({
     aboutFactsModule(),
     searchIndexModule(),
     siteModule(),
+    comparisonCsvModule(),
   ],
   // The page renderer (src/prerender/render.tsx) is built as one bundle with
   // every dependency inside and no Node-only import, as a worker would need.

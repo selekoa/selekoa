@@ -1,0 +1,1239 @@
+{
+  "description": "The maintainer's decisions of 2026-11-02 on the pre-launch audit (review/prelaunch-audit-2026-11-02.md, 'Decisions for the maintainer') as data changes. Each correction names its finding, the decision and the patches: the record, the field, the value replaced (absent where the field was absent) and the new value; rows added follow a named row; rows removed carry the reason recorded in release/removals.json. Bulk rules replace one exact sentence in one field wherever it occurs; the changed IDs are in review/audit-followups-wording-2026-11-02.json. Held items are listed with the reason. Applied by scripts/audit-followups.ts.",
+  "date": "2026-11-02",
+  "schemaVersion": "2.28",
+  "corrections": [
+    {
+      "id": "PA-01:rd-r07-cais-2023-statement",
+      "finding": "PA-01: “Earliest located use of the name” (“risk of extinction”) contradicted by an earlier text the collections hold",
+      "decision": "Maintainer decision of 2026-11-02 on the pre-launch audit: withdraw the role pending a cross-family re-check; assign it to no other record.",
+      "reason": "Bostrom’s paper of March 2002 (rd-r07-bostrom-2002-existential-risks), already recorded on this proposition, carries the usual name “existential risk” in its title, “Existential Risks”.",
+      "patches": [
+        {
+          "table": "claims",
+          "id": "rd-r07-cais-2023-statement",
+          "path": "attributes.thought.roles",
+          "old": ["articulation", "earliest-located-term"],
+          "new": ["articulation"]
+        },
+        {
+          "table": "claims",
+          "id": "rd-r07-cais-2023-statement",
+          "path": "attributes.thought.term",
+          "old": "risk of extinction",
+          "remove": true
+        },
+        {
+          "table": "entities",
+          "id": "ai-extinction-risk",
+          "path": "proposition.underRecheck",
+          "new": [
+            {
+              "headline": "earliest-located-term",
+              "reason": "The pre-launch audit of 2026-11-02 (PA-01) found an earlier use of a usual name in texts the collections already hold. Bostrom’s paper of March 2002 (rd-r07-bostrom-2002-existential-risks), already recorded on this proposition, carries the usual name “existential risk” in its title, “Existential Risks”. The cross-family re-check of 2026-11-02 also flagged it. The headline is withdrawn until the re-check’s results are decided.",
+              "recordedAt": "2026-11-02"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "PA-01:rd-r02-bostrom-2012-superintelligent-will",
+      "finding": "PA-01: “Earliest located use of the name” (“convergent instrumental”) contradicted by an earlier text the collections hold",
+      "decision": "Maintainer decision of 2026-11-02 on the pre-launch audit: withdraw the role pending a cross-family re-check; assign it to no other record.",
+      "reason": "Omohundro’s paper of 2008 (rd-r02-omohundro-2008-basic-ai-drives), already recorded on this proposition, carries the usual name “basic AI drives” in its title, “The Basic AI Drives”.",
+      "patches": [
+        {
+          "table": "claims",
+          "id": "rd-r02-bostrom-2012-superintelligent-will",
+          "path": "attributes.thought.roles",
+          "old": ["most-developed", "earliest-located-term"],
+          "new": ["most-developed"]
+        },
+        {
+          "table": "claims",
+          "id": "rd-r02-bostrom-2012-superintelligent-will",
+          "path": "attributes.thought.term",
+          "old": "convergent instrumental",
+          "remove": true
+        },
+        {
+          "table": "entities",
+          "id": "instrumental-convergence",
+          "path": "proposition.underRecheck",
+          "new": [
+            {
+              "headline": "earliest-located-term",
+              "reason": "The pre-launch audit of 2026-11-02 (PA-01) found an earlier use of a usual name in texts the collections already hold. Omohundro’s paper of 2008 (rd-r02-omohundro-2008-basic-ai-drives), already recorded on this proposition, carries the usual name “basic AI drives” in its title, “The Basic AI Drives”. The cross-family re-check of 2026-11-02 also flagged it. The headline is withdrawn until the re-check’s results are decided.",
+              "recordedAt": "2026-11-02"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "PA-01:rd-r03-shah-2022-goal-misgeneralization",
+      "finding": "PA-01: “Earliest located use of the name” (“goal misgeneralization”) contradicted by an earlier text the collections hold",
+      "decision": "Maintainer decision of 2026-11-02 on the pre-launch audit: withdraw the role pending a cross-family re-check; assign it to no other record.",
+      "reason": "Risks from Learned Optimization (2019), already recorded on proposition B3 with the earliest located use of “deceptive alignment” (ts-b3-rlo-2019-intro), uses usual names of this proposition three years earlier.",
+      "patches": [
+        {
+          "table": "claims",
+          "id": "rd-r03-shah-2022-goal-misgeneralization",
+          "path": "attributes.thought.roles",
+          "old": ["articulation", "earliest-located-term"],
+          "new": ["articulation"]
+        },
+        {
+          "table": "claims",
+          "id": "rd-r03-shah-2022-goal-misgeneralization",
+          "path": "attributes.thought.term",
+          "old": "goal misgeneralization",
+          "remove": true
+        },
+        {
+          "table": "entities",
+          "id": "inner-or-deceptive-misalignment",
+          "path": "proposition.underRecheck",
+          "new": [
+            {
+              "headline": "earliest-located-term",
+              "reason": "The pre-launch audit of 2026-11-02 (PA-01) found an earlier use of a usual name in texts the collections already hold. Risks from Learned Optimization (2019), already recorded on proposition B3 with the earliest located use of “deceptive alignment” (ts-b3-rlo-2019-intro), uses usual names of this proposition three years earlier. The cross-family re-check of 2026-11-02 also flagged it. The headline is withdrawn until the re-check’s results are decided.",
+              "recordedAt": "2026-11-02"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "PA-01:rd-r12-bengio-2023-faq-catastrophic",
+      "finding": "PA-01: “Earliest located use of the name” (“current harms”) contradicted by an earlier text the collections hold",
+      "decision": "Maintainer decision of 2026-11-02 on the pre-launch audit: withdraw the role pending a cross-family re-check; assign it to no other record.",
+      "reason": "Bengio’s FAQ is dated 24 June 2023 but its wording is attested only from 2026; the FLI and Encode Justice letter of 25 October 2023 (rd-r12-ej-fli-2023-ai-licensing), already recorded on this proposition, uses a usual name in its title.",
+      "patches": [
+        {
+          "table": "claims",
+          "id": "rd-r12-bengio-2023-faq-catastrophic",
+          "path": "attributes.thought.roles",
+          "old": ["contesting", "earliest-located-term"],
+          "new": ["contesting"]
+        },
+        {
+          "table": "claims",
+          "id": "rd-r12-bengio-2023-faq-catastrophic",
+          "path": "attributes.thought.term",
+          "old": "current harms",
+          "remove": true
+        },
+        {
+          "table": "entities",
+          "id": "present-harms-priority",
+          "path": "proposition.underRecheck",
+          "new": [
+            {
+              "headline": "earliest-located-term",
+              "reason": "The pre-launch audit of 2026-11-02 (PA-01) found an earlier use of a usual name in texts the collections already hold. Bengio’s FAQ is dated 24 June 2023 but its wording is attested only from 2026; the FLI and Encode Justice letter of 25 October 2023 (rd-r12-ej-fli-2023-ai-licensing), already recorded on this proposition, uses a usual name in its title. The cross-family re-check of 2026-11-02 also flagged it. The headline is withdrawn until the re-check’s results are decided.",
+              "recordedAt": "2026-11-02"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "PA-01:ht-w08-andreessen-2023-techno-optimist-manifesto",
+      "finding": "PA-01: “Earliest located use of the name” (“accelerationism”) contradicted by an earlier text the collections hold",
+      "decision": "Maintainer decision of 2026-11-02 on the pre-launch audit: withdraw the role pending a cross-family re-check; assign it to no other record.",
+      "reason": "The e/acc post of 1 June 2022 (ht-w08-eacc-2022-effective-accelerationism-repost), the proposition’s earliest located text, uses the usual name “e/acc”.",
+      "patches": [
+        {
+          "table": "claims",
+          "id": "ht-w08-andreessen-2023-techno-optimist-manifesto",
+          "path": "attributes.thought.roles",
+          "old": ["articulation", "earliest-located-term"],
+          "new": ["articulation"]
+        },
+        {
+          "table": "claims",
+          "id": "ht-w08-andreessen-2023-techno-optimist-manifesto",
+          "path": "attributes.thought.term",
+          "old": "accelerationism",
+          "remove": true
+        },
+        {
+          "table": "entities",
+          "id": "accelerate-machine-intelligence",
+          "path": "proposition.underRecheck",
+          "new": [
+            {
+              "headline": "earliest-located-term",
+              "reason": "The pre-launch audit of 2026-11-02 (PA-01) found an earlier use of a usual name in texts the collections already hold. The e/acc post of 1 June 2022 (ht-w08-eacc-2022-effective-accelerationism-repost), the proposition’s earliest located text, uses the usual name “e/acc”. The cross-family re-check of 2026-11-02 also flagged it. The headline is withdrawn until the re-check’s results are decided.",
+              "recordedAt": "2026-11-02"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "PA-01:rd-r16-christiano-2018-takeoff-speeds",
+      "finding": "PA-01: “Earliest located use of the name” (“slow takeoff”) contradicted by an earlier text the collections hold",
+      "decision": "Maintainer decision of 2026-11-02 on the pre-launch audit: withdraw the role pending a cross-family re-check; assign it to no other record.",
+      "reason": "An SL4 message of 24 January 2001 (yk-y11-sl4-2001-01-24-yudkowsky-0101-0452-c), recorded in the collection of Yudkowsky’s arguments, uses “slow-takeoff”.",
+      "patches": [
+        {
+          "table": "claims",
+          "id": "rd-r16-christiano-2018-takeoff-speeds",
+          "path": "attributes.thought.roles",
+          "old": ["most-developed", "earliest-located-term"],
+          "new": ["most-developed"]
+        },
+        {
+          "table": "claims",
+          "id": "rd-r16-christiano-2018-takeoff-speeds",
+          "path": "attributes.thought.term",
+          "old": "slow takeoff",
+          "remove": true
+        },
+        {
+          "table": "entities",
+          "id": "gradual-takeoff",
+          "path": "proposition.underRecheck",
+          "new": [
+            {
+              "headline": "earliest-located-term",
+              "reason": "The pre-launch audit of 2026-11-02 (PA-01) found an earlier use of a usual name in texts the collections already hold. An SL4 message of 24 January 2001 (yk-y11-sl4-2001-01-24-yudkowsky-0101-0452-c), recorded in the collection of Yudkowsky’s arguments, uses “slow-takeoff”. The cross-family re-check of 2026-11-02 also flagged it. The headline is withdrawn until the re-check’s results are decided.",
+              "recordedAt": "2026-11-02"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "PA-01:aib-arg-p2-tomita-2001",
+      "finding": "PA-01: “Earliest located use of the name” (“virtual cell”) contradicted by an earlier text the collections hold",
+      "decision": "Maintainer decision of 2026-11-02 on the pre-launch audit: withdraw the role pending a cross-family re-check; assign it to no other record.",
+      "reason": "The collection’s own stated Europe PMC search returns Schaff et al. (1997), which uses “virtual cell”; it is not recorded here.",
+      "patches": [
+        {
+          "table": "claims",
+          "id": "aib-arg-p2-tomita-2001",
+          "path": "attributes.thought.roles",
+          "old": ["context", "earliest-located-term"],
+          "new": ["context"]
+        },
+        {
+          "table": "claims",
+          "id": "aib-arg-p2-tomita-2001",
+          "path": "attributes.thought.term",
+          "old": "virtual cell",
+          "remove": true
+        },
+        {
+          "table": "entities",
+          "id": "aib-prop-ai-virtual-cell",
+          "path": "proposition.underRecheck",
+          "new": [
+            {
+              "headline": "earliest-located-term",
+              "reason": "The pre-launch audit of 2026-11-02 (PA-01) found an earlier use of a usual name in texts the collections already hold. The collection’s own stated Europe PMC search returns Schaff et al. (1997), which uses “virtual cell”; it is not recorded here. The cross-family re-check of 2026-11-02 also flagged it. The headline is withdrawn until the re-check’s results are decided.",
+              "recordedAt": "2026-11-02"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "PA-01:aib-arg-p1-lyu-2024",
+      "finding": "PA-01: “Earliest located use of the name” (“structure-based drug design”) contradicted by an earlier text the collections hold",
+      "decision": "Maintainer decision of 2026-11-02 on the pre-launch audit: withdraw the role pending a cross-family re-check; assign it to no other record.",
+      "reason": "Ring et al. (1993), inside the collection’s stated search window of 1960–1995, uses “structure-based drug design”; it is not recorded here.",
+      "patches": [
+        {
+          "table": "claims",
+          "id": "aib-arg-p1-lyu-2024",
+          "path": "attributes.thought.roles",
+          "old": ["articulation", "earliest-located-term"],
+          "new": ["articulation"]
+        },
+        {
+          "table": "claims",
+          "id": "aib-arg-p1-lyu-2024",
+          "path": "attributes.thought.term",
+          "old": "structure-based drug design",
+          "remove": true
+        },
+        {
+          "table": "entities",
+          "id": "aib-prop-predicted-structures-aid-drug-design",
+          "path": "proposition.underRecheck",
+          "new": [
+            {
+              "headline": "earliest-located-term",
+              "reason": "The pre-launch audit of 2026-11-02 (PA-01) found an earlier use of a usual name in texts the collections already hold. Ring et al. (1993), inside the collection’s stated search window of 1960–1995, uses “structure-based drug design”; it is not recorded here. The cross-family re-check of 2026-11-02 also flagged it. The headline is withdrawn until the re-check’s results are decided.",
+              "recordedAt": "2026-11-02"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "PA-01+:ts-b1-grace-2014-schedule-context",
+      "finding": "PA-01 addition: “Earliest located use of the name” (“treacherous turn”) flagged by the cross-family re-check",
+      "decision": "Maintainer decision of 2026-11-02, addition to decision 1: withdraw the earliest-located-term role from the records the Codex re-check flagged; assign no role elsewhere.",
+      "reason": "The re-check could not order Grace’s page, whose schedule wording is not dated by its stored posting date, against Danaher’s post of 2014 and the book of July 2014 (undecidable).",
+      "patches": [
+        {
+          "table": "claims",
+          "id": "ts-b1-grace-2014-schedule-context",
+          "path": "attributes.thought.roles",
+          "old": ["context", "earliest-located-term"],
+          "new": ["context"]
+        },
+        {
+          "table": "claims",
+          "id": "ts-b1-grace-2014-schedule-context",
+          "path": "attributes.thought.term",
+          "old": "treacherous turn",
+          "remove": true
+        },
+        {
+          "table": "entities",
+          "id": "treacherous-turn",
+          "path": "proposition.underRecheck",
+          "new": [
+            {
+              "headline": "earliest-located-term",
+              "reason": "The cross-family re-check of 2026-11-02 (branch codex/earliest-located-recheck) flagged this headline. The re-check could not order Grace’s page, whose schedule wording is not dated by its stored posting date, against Danaher’s post of 2014 and the book of July 2014 (undecidable). The headline is withdrawn until the re-check’s results are decided.",
+              "recordedAt": "2026-11-02"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "PA-01+:rd-r06-russell-2019-instrumental-convergence-thread",
+      "finding": "PA-01 addition: “Earliest located use of the name” (“alignment problem”) flagged by the cross-family re-check",
+      "decision": "Maintainer decision of 2026-11-02, addition to decision 1: withdraw the earliest-located-term role from the records the Codex re-check flagged; assign no role elsewhere.",
+      "reason": "The re-check found “agent alignment problem” in the abstract of the reward-modeling paper, arXiv v1 of 19 November 2018, held in the dataset.",
+      "patches": [
+        {
+          "table": "claims",
+          "id": "rd-r06-russell-2019-instrumental-convergence-thread",
+          "path": "attributes.thought.roles",
+          "old": ["articulation", "earliest-located-term"],
+          "new": ["articulation"]
+        },
+        {
+          "table": "claims",
+          "id": "rd-r06-russell-2019-instrumental-convergence-thread",
+          "path": "attributes.thought.term",
+          "old": "alignment problem",
+          "remove": true
+        },
+        {
+          "table": "entities",
+          "id": "alignment-is-hard",
+          "path": "proposition.underRecheck",
+          "new": [
+            {
+              "headline": "earliest-located-term",
+              "reason": "The cross-family re-check of 2026-11-02 (branch codex/earliest-located-recheck) flagged this headline. The re-check found “agent alignment problem” in the abstract of the reward-modeling paper, arXiv v1 of 19 November 2018, held in the dataset. The headline is withdrawn until the re-check’s results are decided.",
+              "recordedAt": "2026-11-02"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "PA-01+:rd-r09-hendrycks-2023-overview-catastrophic",
+      "finding": "PA-01 addition: “Earliest located use of the name” (“malicious use”) flagged by the cross-family re-check",
+      "decision": "Maintainer decision of 2026-11-02, addition to decision 1: withdraw the earliest-located-term role from the records the Codex re-check flagged; assign no role elsewhere.",
+      "reason": "The re-check found the name in Kurzweil’s essay, attested by an archive capture of 7 November 2001, held in the dataset.",
+      "patches": [
+        {
+          "table": "claims",
+          "id": "rd-r09-hendrycks-2023-overview-catastrophic",
+          "path": "attributes.thought.roles",
+          "old": ["most-developed", "earliest-located-term"],
+          "new": ["most-developed"]
+        },
+        {
+          "table": "claims",
+          "id": "rd-r09-hendrycks-2023-overview-catastrophic",
+          "path": "attributes.thought.term",
+          "old": "malicious use",
+          "remove": true
+        },
+        {
+          "table": "entities",
+          "id": "misuse-route",
+          "path": "proposition.underRecheck",
+          "new": [
+            {
+              "headline": "earliest-located-term",
+              "reason": "The cross-family re-check of 2026-11-02 (branch codex/earliest-located-recheck) flagged this headline. The re-check found the name in Kurzweil’s essay, attested by an archive capture of 7 November 2001, held in the dataset. The headline is withdrawn until the re-check’s results are decided.",
+              "recordedAt": "2026-11-02"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "PA-01+:rd-r13-marcus-2022-hitting-a-wall",
+      "finding": "PA-01 addition: “Earliest located use of the name” (“diminishing returns”) flagged by the cross-family re-check",
+      "decision": "Maintainer decision of 2026-11-02, addition to decision 1: withdraw the earliest-located-term role from the records the Codex re-check flagged; assign no role elsewhere.",
+      "reason": "The re-check found the name in Hanson’s text attested by a capture of 28 January 1999, held in the dataset.",
+      "patches": [
+        {
+          "table": "claims",
+          "id": "rd-r13-marcus-2022-hitting-a-wall",
+          "path": "attributes.thought.roles",
+          "old": ["articulation", "earliest-located-term"],
+          "new": ["articulation"]
+        },
+        {
+          "table": "claims",
+          "id": "rd-r13-marcus-2022-hitting-a-wall",
+          "path": "attributes.thought.term",
+          "old": "diminishing returns",
+          "remove": true
+        },
+        {
+          "table": "entities",
+          "id": "capabilities-plateau",
+          "path": "proposition.underRecheck",
+          "new": [
+            {
+              "headline": "earliest-located-term",
+              "reason": "The cross-family re-check of 2026-11-02 (branch codex/earliest-located-recheck) flagged this headline. The re-check found the name in Hanson’s text attested by a capture of 28 January 1999, held in the dataset. The headline is withdrawn until the re-check’s results are decided.",
+              "recordedAt": "2026-11-02"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "PA-01+:rd-r14-marcus-2022-nonsense-on-stilts",
+      "finding": "PA-01 addition: “Earliest located use of the name” (“autocomplete”) flagged by the cross-family re-check",
+      "decision": "Maintainer decision of 2026-11-02, addition to decision 1: withdraw the earliest-located-term role from the records the Codex re-check flagged; assign no role elsewhere.",
+      "reason": "The re-check found “autocomplete-like” in Solaiman and others’ report, arXiv v1 of 24 August 2019, held in the dataset.",
+      "patches": [
+        {
+          "table": "claims",
+          "id": "rd-r14-marcus-2022-nonsense-on-stilts",
+          "path": "attributes.thought.roles",
+          "old": ["articulation", "earliest-located-term"],
+          "new": ["articulation"]
+        },
+        {
+          "table": "claims",
+          "id": "rd-r14-marcus-2022-nonsense-on-stilts",
+          "path": "attributes.thought.term",
+          "old": "autocomplete",
+          "remove": true
+        },
+        {
+          "table": "entities",
+          "id": "llms-lack-agency",
+          "path": "proposition.underRecheck",
+          "new": [
+            {
+              "headline": "earliest-located-term",
+              "reason": "The cross-family re-check of 2026-11-02 (branch codex/earliest-located-recheck) flagged this headline. The re-check found “autocomplete-like” in Solaiman and others’ report, arXiv v1 of 24 August 2019, held in the dataset. The headline is withdrawn until the re-check’s results are decided.",
+              "recordedAt": "2026-11-02"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "PA-01+:rd-r15-goertzel-pitt-2012-open-source-agi",
+      "finding": "PA-01 addition: “Earliest located use of the name” (“open source”) flagged by the cross-family re-check",
+      "decision": "Maintainer decision of 2026-11-02, addition to decision 1: withdraw the earliest-located-term role from the records the Codex re-check flagged; assign no role elsewhere.",
+      "reason": "The re-check found “open-source project” in Yudkowsky’s message of 3 August 1999, held in the dataset.",
+      "patches": [
+        {
+          "table": "claims",
+          "id": "rd-r15-goertzel-pitt-2012-open-source-agi",
+          "path": "attributes.thought.roles",
+          "old": ["earliest-located", "earliest-located-term"],
+          "new": ["earliest-located"]
+        },
+        {
+          "table": "claims",
+          "id": "rd-r15-goertzel-pitt-2012-open-source-agi",
+          "path": "attributes.thought.term",
+          "old": "open source",
+          "remove": true
+        },
+        {
+          "table": "entities",
+          "id": "open-models-reduce-risk",
+          "path": "proposition.underRecheck",
+          "new": [
+            {
+              "headline": "earliest-located-term",
+              "reason": "The cross-family re-check of 2026-11-02 (branch codex/earliest-located-recheck) flagged this headline. The re-check found “open-source project” in Yudkowsky’s message of 3 August 1999, held in the dataset. The headline is withdrawn until the re-check’s results are decided.",
+              "recordedAt": "2026-11-02"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "PA-01+:rd-r17-askell-2019-cooperation",
+      "finding": "PA-01 addition: “Earliest located use of the name” (“incentives”) flagged by the cross-family re-check",
+      "decision": "Maintainer decision of 2026-11-02, addition to decision 1: withdraw the earliest-located-term role from the records the Codex re-check flagged; assign no role elsewhere.",
+      "reason": "The re-check found “economic incentives” in the printed 1955 automation hearings, held in the dataset.",
+      "patches": [
+        {
+          "table": "claims",
+          "id": "rd-r17-askell-2019-cooperation",
+          "path": "attributes.thought.roles",
+          "old": ["contesting", "earliest-located-term"],
+          "new": ["contesting"]
+        },
+        {
+          "table": "claims",
+          "id": "rd-r17-askell-2019-cooperation",
+          "path": "attributes.thought.term",
+          "old": "incentives",
+          "remove": true
+        },
+        {
+          "table": "entities",
+          "id": "incentives-produce-safety",
+          "path": "proposition.underRecheck",
+          "new": [
+            {
+              "headline": "earliest-located-term",
+              "reason": "The cross-family re-check of 2026-11-02 (branch codex/earliest-located-recheck) flagged this headline. The re-check found “economic incentives” in the printed 1955 automation hearings, held in the dataset. The headline is withdrawn until the re-check’s results are decided.",
+              "recordedAt": "2026-11-02"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "PA-01+:ht-w01-moravec-1989-genetic-takeover",
+      "finding": "PA-01 addition: “Earliest located use of the name” (“post-biological”) flagged by the cross-family re-check",
+      "decision": "Maintainer decision of 2026-11-02, addition to decision 1: withdraw the earliest-located-term role from the records the Codex re-check flagged; assign no role elsewhere.",
+      "reason": "The re-check found “post-biological” in Land’s printed article of October 1992, earlier than the 2001 capture that attests Moravec’s wording.",
+      "patches": [
+        {
+          "table": "claims",
+          "id": "ht-w01-moravec-1989-genetic-takeover",
+          "path": "attributes.thought.roles",
+          "old": ["articulation", "earliest-located-term"],
+          "new": ["articulation"]
+        },
+        {
+          "table": "claims",
+          "id": "ht-w01-moravec-1989-genetic-takeover",
+          "path": "attributes.thought.term",
+          "old": "post-biological",
+          "remove": true
+        },
+        {
+          "table": "entities",
+          "id": "machine-succession",
+          "path": "proposition.underRecheck",
+          "new": [
+            {
+              "headline": "earliest-located-term",
+              "reason": "The cross-family re-check of 2026-11-02 (branch codex/earliest-located-recheck) flagged this headline. The re-check found “post-biological” in Land’s printed article of October 1992, earlier than the 2001 capture that attests Moravec’s wording. The headline is withdrawn until the re-check’s results are decided.",
+              "recordedAt": "2026-11-02"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "PA-01+:ht-w03-hanson-1994-if-uploads-come-first",
+      "finding": "PA-01 addition: “Earliest located use of the name” (“upload”) flagged by the cross-family re-check",
+      "decision": "Maintainer decision of 2026-11-02, addition to decision 1: withdraw the earliest-located-term role from the records the Codex re-check flagged; assign no role elsewhere.",
+      "reason": "The re-check read the name in the printed Extropy issue of the third quarter of 1994, which may change the date that decides the role.",
+      "patches": [
+        {
+          "table": "claims",
+          "id": "ht-w03-hanson-1994-if-uploads-come-first",
+          "path": "attributes.thought.roles",
+          "old": ["articulation", "earliest-located-term"],
+          "new": ["articulation"]
+        },
+        {
+          "table": "claims",
+          "id": "ht-w03-hanson-1994-if-uploads-come-first",
+          "path": "attributes.thought.term",
+          "old": "upload",
+          "remove": true
+        },
+        {
+          "table": "entities",
+          "id": "mind-transfer",
+          "path": "proposition.underRecheck",
+          "new": [
+            {
+              "headline": "earliest-located-term",
+              "reason": "The cross-family re-check of 2026-11-02 (branch codex/earliest-located-recheck) flagged this headline. The re-check read the name in the printed Extropy issue of the third quarter of 1994, which may change the date that decides the role. The headline is withdrawn until the re-check’s results are decided.",
+              "recordedAt": "2026-11-02"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "PA-01+:ht-w07-alexander-2014-meditations-on-moloch",
+      "finding": "PA-01 addition: “Earliest located use of the name” (“orthogonality”) flagged by the cross-family re-check",
+      "decision": "Maintainer decision of 2026-11-02, addition to decision 1: withdraw the earliest-located-term role from the records the Codex re-check flagged; assign no role elsewhere.",
+      "reason": "The re-check found the name in Bostrom’s paper, attested by a capture of 9 February 2014, before Alexander’s post of 30 July 2014.",
+      "patches": [
+        {
+          "table": "claims",
+          "id": "ht-w07-alexander-2014-meditations-on-moloch",
+          "path": "attributes.thought.roles",
+          "old": ["earliest-located", "contesting", "earliest-located-term"],
+          "new": ["earliest-located", "contesting"]
+        },
+        {
+          "table": "claims",
+          "id": "ht-w07-alexander-2014-meditations-on-moloch",
+          "path": "attributes.thought.term",
+          "old": "orthogonality",
+          "remove": true
+        },
+        {
+          "table": "entities",
+          "id": "intelligence-as-own-end",
+          "path": "proposition.underRecheck",
+          "new": [
+            {
+              "headline": "earliest-located-term",
+              "reason": "The cross-family re-check of 2026-11-02 (branch codex/earliest-located-recheck) flagged this headline. The re-check found the name in Bostrom’s paper, attested by a capture of 9 February 2014, before Alexander’s post of 30 July 2014. The headline is withdrawn until the re-check’s results are decided.",
+              "recordedAt": "2026-11-02"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "PA-02:ht-w03-minsky-1994-will-robots-inherit-the-earth",
+      "finding": "PA-02: W03 “Earliest located” rests on a basis applied unevenly to self-dated pages and captures",
+      "decision": "Maintainer decision of 2026-11-02 on the pre-launch audit: withdraw the role pending a cross-family re-check; assign it to no other record.",
+      "reason": "The record names Minsky’s essay of 1994 on the strength of the web page’s own “Last modified 1997-01-02” footer, while the collection dates Moravec’s pages by their first archive capture; under that rule Hanson’s article (captured 1998-02-20) would precede Minsky’s (first captures found 1999). The attested-date rule is applied unevenly.",
+      "patches": [
+        {
+          "table": "claims",
+          "id": "ht-w03-minsky-1994-will-robots-inherit-the-earth",
+          "path": "attributes.thought.roles",
+          "old": ["earliest-located"],
+          "new": ["articulation"]
+        },
+        {
+          "table": "entities",
+          "id": "mind-transfer",
+          "path": "proposition.underRecheck",
+          "old": [
+            {
+              "headline": "earliest-located-term",
+              "reason": "The cross-family re-check of 2026-11-02 (branch codex/earliest-located-recheck) flagged this headline. The re-check read the name in the printed Extropy issue of the third quarter of 1994, which may change the date that decides the role. The headline is withdrawn until the re-check’s results are decided.",
+              "recordedAt": "2026-11-02"
+            }
+          ],
+          "new": [
+            {
+              "headline": "earliest-located-term",
+              "reason": "The cross-family re-check of 2026-11-02 (branch codex/earliest-located-recheck) flagged this headline. The re-check read the name in the printed Extropy issue of the third quarter of 1994, which may change the date that decides the role. The headline is withdrawn until the re-check’s results are decided.",
+              "recordedAt": "2026-11-02"
+            },
+            {
+              "headline": "earliest-located",
+              "reason": "The pre-launch audit of 2026-11-02 (PA-02) found the attested-date rule applied unevenly between Minsky’s self-dated page (1997) and Hanson’s reprint (captured 1998-02-20). The headline is withdrawn until a cross-family re-check decides.",
+              "recordedAt": "2026-11-02"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "PA-02:yk-y22-sl4-2000-11-13-yudkowsky-0011-0181-c",
+      "finding": "PA-02: Y22 earliest located contesting text contradicted by its own qualification",
+      "decision": "Maintainer decision of 2026-11-02 on the pre-launch audit: withdraw the role pending a cross-family re-check; assign it to no other record.",
+      "reason": "The heading names the message as the earliest text contesting “build it as fast as possible”, while the record’s own qualification says it rejects automatic goodness, not speed.",
+      "patches": [
+        {
+          "table": "claims",
+          "id": "yk-y22-sl4-2000-11-13-yudkowsky-0011-0181-c",
+          "path": "attributes.thought.roles",
+          "old": ["contesting", "earliest-located"],
+          "new": ["contesting"]
+        },
+        {
+          "table": "entities",
+          "id": "build-superintelligence-fast",
+          "path": "proposition.underRecheck",
+          "new": [
+            {
+              "headline": "earliest-located-contesting",
+              "reason": "The pre-launch audit of 2026-11-02 (PA-02) found that the message headlined as the earliest contesting text rejects automatic goodness, not speed, by its own record’s qualification. The headline is withdrawn until a cross-family re-check decides.",
+              "recordedAt": "2026-11-02"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "PA-58",
+      "finding": "PA-58: “Earliest SL4 passage” without “located”",
+      "decision": "Maintainer decision of 2026-11-02 on the pre-launch audit: add “located”.",
+      "reason": "The policy’s phrase is “earliest located”.",
+      "patches": [
+        {
+          "table": "claims",
+          "id": "yk-y11-sl4-2001-01-24-yudkowsky-0101-0452-c",
+          "path": "qualification",
+          "old": "Premise addressed: Capability gains will be gradual and visible. Earliest SL4 passage that names and rejects a slow-takeoff scenario. The target is a futurist model of a receding event horizon; the paragraph does not discuss whether slowness would give time to adjust. His accompanying prediction of a hard takeoff 'in the next ten years or so' (next paragraph) did not come true. The immediate topic is predictability (the \"moving Event Horizon\"). The same message predicts a hard takeoff \"sometime in the next ten years or so\" (from 2001), which did not happen.",
+          "new": "Premise addressed: Capability gains will be gradual and visible. Earliest located SL4 passage that names and rejects a slow-takeoff scenario. The target is a futurist model of a receding event horizon; the paragraph does not discuss whether slowness would give time to adjust. His accompanying prediction of a hard takeoff 'in the next ten years or so' (next paragraph) did not come true. The immediate topic is predictability (the \"moving Event Horizon\"). The same message predicts a hard takeoff \"sometime in the next ten years or so\" (from 2001), which did not happen."
+        },
+        {
+          "table": "claims",
+          "id": "yk-y16-sl4-2002-06-27-yudkowsky-0206-4453-c",
+          "path": "qualification",
+          "old": "Premise addressed: Present-day or programmers' values are settled enough to fix permanently in an AI. Earliest located for this premise specifically; his SL4 message of 2000-10-03 is the earliest SL4 answer to ‘Giving it good human values’ (Y16) overall.",
+          "new": "Premise addressed: Present-day or programmers' values are settled enough to fix permanently in an AI. Earliest located for this premise specifically; his SL4 message of 2000-10-03 is the earliest located SL4 answer to ‘Giving it good human values’ (Y16) overall."
+        }
+      ]
+    },
+    {
+      "id": "PA-21",
+      "finding": "PA-21: Schulman appears to join Anthropic (2024-08-05) a day before leaving OpenAI (2024-08-06), from the same X post",
+      "decision": "Maintainer decision of 2026-11-02 on the pre-launch audit: date both by the UTC day of the post, with TechCrunch’s date in the note (as recommended).",
+      "reason": "X posts are dated by their UTC timestamp; the departure record already is.",
+      "patches": [
+        {
+          "table": "claims",
+          "id": "lg-ant-schulman-joins-2024",
+          "path": "statement",
+          "old": "TechCrunch reported on 5 August 2024 that John Schulman had written, in a note posted on X, that he had decided to pursue his alignment work at Anthropic.",
+          "new": "John Schulman wrote, in a note posted on X on 6 August 2024 (UTC; 5 August in US Pacific time) and quoted by TechCrunch in a report dated 5 August 2024, that he had decided to pursue his alignment work at Anthropic."
+        },
+        {
+          "table": "claims",
+          "id": "lg-ant-schulman-joins-2024",
+          "path": "time.date",
+          "old": "2024-08-05",
+          "new": "2024-08-06"
+        },
+        {
+          "table": "claims",
+          "id": "lg-ant-schulman-joins-2024",
+          "path": "time.note",
+          "old": "Post timestamp 2024-08-06 00:00 UTC, which is 5 August in US Pacific time; TechCrunch's report is dated 5 August. Not a start date.",
+          "new": "UTC date of the post (00:00 UTC on 6 August 2024; 5 August in US Pacific time), the convention for X posts. TechCrunch’s report quoting the note is dated 5 August 2024. Not a start date."
+        }
+      ]
+    },
+    {
+      "id": "PA-49",
+      "finding": "PA-49: Leike’s departure dated 2024-05-17 though his first post (“I resigned”) was 2024-05-15",
+      "decision": "Maintainer decision of 2026-11-02 on the pre-launch audit: add the 15 May post as evidence and date the announcement by it (as recommended).",
+      "reason": "The post of 15 May 2024 is the first announcement; the thread of 17 May states the last working day.",
+      "patches": [
+        {
+          "table": "claims",
+          "id": "lg-oai-leike-departure-2024",
+          "path": "statement",
+          "old": "Jan Leike posted on X on 17 May 2024 that the previous day had been his last day at OpenAI as head of alignment, superalignment lead and executive; he stated that he had been disagreeing with OpenAI leadership about the company’s core priorities for quite some time, until a breaking point was reached.",
+          "new": "Jan Leike posted on X on 15 May 2024 (UTC) that he had resigned; in a thread of 17 May 2024 he wrote that the previous day had been his last day at OpenAI as head of alignment, superalignment lead and executive, and stated that he had been disagreeing with OpenAI leadership about the company’s core priorities for quite some time, until a breaking point was reached."
+        },
+        {
+          "table": "claims",
+          "id": "lg-oai-leike-departure-2024",
+          "path": "time.date",
+          "old": "2024-05-17",
+          "new": "2024-05-15"
+        },
+        {
+          "table": "claims",
+          "id": "lg-oai-leike-departure-2024",
+          "path": "time.note",
+          "old": "Date of the post; his last working day is stated as the previous day.",
+          "new": "UTC date of his post “I resigned” (04:43 UTC; 14 May in US Pacific time), the convention for X posts. His thread of 17 May 2024 states that his last working day was the previous day."
+        },
+        {
+          "table": "claims",
+          "id": "lg-oai-leike-departure-2024",
+          "path": "qualification",
+          "old": "A first-person announcement. The stated reason is his own account in the same thread and is attributed, not adopted.",
+          "new": "A first-person announcement, dated by his first post. The stated reason is his own account in the thread of 17 May and is attributed, not adopted."
+        },
+        {
+          "table": "claims",
+          "id": "lg-oai-leike-departure-2024",
+          "path": "evidenceIds",
+          "old": [
+            "lg-ev-oai-leike-departure-2024-1",
+            "lg-ev-oai-leike-departure-2024-2"
+          ],
+          "new": [
+            "lg-ev-oai-leike-departure-2024-resigned",
+            "lg-ev-oai-leike-departure-2024-1",
+            "lg-ev-oai-leike-departure-2024-2"
+          ]
+        }
+      ],
+      "added": {
+        "sources": [
+          {
+            "row": {
+              "id": "lg-src-oai-leike-resigned-x-2024",
+              "title": "Post of 15 May 2024 (UTC) announcing his resignation",
+              "authors": ["Jan Leike"],
+              "authorNames": [
+                {
+                  "family": "Leike",
+                  "given": "Jan"
+                }
+              ],
+              "publisher": "X",
+              "publicationDate": "2024-05-15",
+              "version": "Dated post, retrieved on 2026-11-02 (SHA-256 of the response 3234a09b91b036eb80fec9f2bb576446f57e10881be286e8204d6691a5736513) through X’s own syndication endpoint for the post’s text. Publication date is the post’s UTC timestamp, 2024-05-15 04:43 UTC (14 May in US Pacific time).",
+              "canonicalUrl": "https://x.com/janleike/status/1790603862132596961",
+              "evidenceUrl": "https://x.com/janleike/status/1790603862132596961",
+              "language": "en",
+              "documentWords": {
+                "count": 2,
+                "basis": "The whole text of the post, counted on 2026-11-02."
+              },
+              "kind": "post",
+              "accessedAt": "2026-11-02",
+              "reuse": {
+                "attribution": "Jan Leike, “Post of 15 May 2024 (UTC) announcing his resignation”, 2024-05-15.",
+                "licence": "No open redistribution licence asserted",
+                "note": "Bibliographic metadata, editorial paraphrases and short attributed quotations (at most 50 words each). Recheck terms before wider redistribution."
+              }
+            },
+            "after": "lg-src-oai-leike-x-2024"
+          }
+        ],
+        "evidence": [
+          {
+            "row": {
+              "id": "lg-ev-oai-leike-departure-2024-resigned",
+              "claimId": "lg-oai-leike-departure-2024",
+              "sourceId": "lg-src-oai-leike-resigned-x-2024",
+              "sourceRole": "primary",
+              "support": "supports",
+              "locator": "Post text (whole post)",
+              "passage": "The post, in full, says that he resigned.",
+              "passageType": "paraphrase",
+              "verification": "machine_checked",
+              "checkedAt": "2026-11-02",
+              "note": "Added on 2026-11-02 by the maintainer’s decision on the pre-launch audit (PA-49). The paraphrase’s verbatim anchor “I resigned”, the whole text of the post, matched the text retrieved on 2026-11-02 through X’s own syndication endpoint, which gives the timestamp 2024-05-15T04:43:23Z. Read through X’s syndication endpoint (text only). The paraphrase is Selekoa’s; only the anchor is the source’s wording.",
+              "retrievalRoute": "x_syndication"
+            },
+            "after": "lg-ev-oai-leike-departure-2024-2"
+          }
+        ]
+      }
+    },
+    {
+      "id": "PA-50",
+      "finding": "PA-50: Christiano appears only at 2024-04 (“start not recorded”) while the other initial Trustees appear at 2023-09-19",
+      "decision": "Maintainer decision of 2026-11-02 on the pre-launch audit: add his initial-Trustee snapshot like the other four (as recommended).",
+      "reason": "The announcement names five initial Trustees; four had snapshots.",
+      "patches": [
+        {
+          "table": "claims",
+          "id": "cs-christiano-anthropic-ltbt-trustee",
+          "path": "qualification",
+          "old": "Documented roles only. The footnote that dates his departure is undated and was added after the original publication.",
+          "new": "Documented roles only. His naming as an initial Trustee on 2023-09-19 is also recorded as a snapshot, like the other initial Trustees. The footnote that dates his departure is undated and was added after the original publication."
+        }
+      ],
+      "added": {
+        "claims": [
+          {
+            "row": {
+              "id": "lg-ant-christiano-ltbt-trustee",
+              "subject": "paul-christiano",
+              "predicate": "held_role",
+              "object": {
+                "kind": "entity",
+                "entityId": "anthropic-ltbt"
+              },
+              "topic": "governance",
+              "statement": "Anthropic's announcement of its Long-Term Benefit Trust on 19 September 2023 names Paul Christiano, Founder of the Alignment Research Center, as an initial Trustee.",
+              "time": {
+                "kind": "snapshot",
+                "date": "2023-09-19",
+                "note": "Date of the announcement naming the initial Trustees; the start of his term is not stated. His step-down is recorded separately."
+              },
+              "derivation": "explicit",
+              "resolution": "supported",
+              "editorialState": "seed",
+              "qualification": "A documented role at the announcement date. The page says the board chose the initial Trustees and that Trustees serve one-year terms; reappointments are not documented here.",
+              "evidenceIds": ["lg-ev-ant-christiano-ltbt-trustee-1"],
+              "recordedAt": "2026-11-02",
+              "attributes": {
+                "role": "Trustee (initial Trustee)"
+              }
+            },
+            "after": "lg-ant-bahl-ltbt-trustee"
+          }
+        ],
+        "evidence": [
+          {
+            "row": {
+              "id": "lg-ev-ant-christiano-ltbt-trustee-1",
+              "claimId": "lg-ant-christiano-ltbt-trustee",
+              "sourceId": "source-anthropic-ltbt-2023",
+              "sourceRole": "primary",
+              "support": "supports",
+              "locator": "Section “Meet the Initial Trustees”, list of initial Trustees",
+              "passage": "The list of initial Trustees includes Paul Christiano, Founder of the Alignment Research Center.",
+              "passageType": "paraphrase",
+              "verification": "machine_checked",
+              "checkedAt": "2026-11-02",
+              "note": "Added on 2026-11-02 by the maintainer’s decision on the pre-launch audit (PA-50), like the snapshots of the other four initial Trustees. The paraphrase’s verbatim anchor “Founder of the Alignment Research Center” matched the publisher’s page retrieved directly on 2026-11-02, in the list “The initial Trustees are:”. The paraphrase is Selekoa’s; only the anchor is the source’s wording.",
+              "retrievalRoute": "direct"
+            },
+            "after": "lg-ev-ant-bahl-ltbt-trustee-1"
+          }
+        ]
+      }
+    },
+    {
+      "id": "PA-23",
+      "finding": "PA-23: one StepFun B+ round recorded twice, from reports a day apart",
+      "decision": "Maintainer decision of 2026-11-02 on the pre-launch audit: keep lg2-cn-stepfun-round-bplus-2026, add the 36Kr passage to it, retire the c3 record by a recorded correction (as recommended).",
+      "reason": "The two records state the same round from two reports; one record per round.",
+      "patches": [
+        {
+          "table": "claims",
+          "id": "lg2-cn-stepfun-round-bplus-2026",
+          "path": "qualification",
+          "old": "The record rests on reporting; no StepFun announcement was retrieved. The amount is a lower bound (“超50亿元”). The report names Tencent, Qiming and 5Y as existing shareholders investing further; no records of their participation are made, because no StepFun announcement or filing naming them was found.",
+          "new": "The record rests on reporting; no StepFun announcement was retrieved. The amount is a lower bound (“超50亿元”). The Paper’s report names Tencent, Qiming and 5Y as existing shareholders investing further; no records of their participation are made, because no StepFun announcement or filing naming them was found. QbitAI’s report, republished by 36Kr on 27 January 2026, states the same round without naming investors (second passage). StepFun’s own newsroom post of 26 January 2026 on its chairman does not mention the round."
+        },
+        {
+          "table": "claims",
+          "id": "lg2-cn-stepfun-round-bplus-2026",
+          "path": "evidenceIds",
+          "old": ["lg2-ev-cn-stepfun-round-bplus-2026"],
+          "new": [
+            "lg2-ev-cn-stepfun-round-bplus-2026",
+            "c3-ev-stepfun-b-plus-round-2026"
+          ]
+        },
+        {
+          "table": "evidence",
+          "id": "c3-ev-stepfun-b-plus-round-2026",
+          "path": "claimId",
+          "old": "c3-stepfun-b-plus-round-2026",
+          "new": "lg2-cn-stepfun-round-bplus-2026"
+        },
+        {
+          "table": "evidence",
+          "id": "c3-ev-stepfun-b-plus-round-2026",
+          "path": "note",
+          "old": "Candidate pack passage, Chinese frontier-AI institutions, third collection (research/china-labs-3). The quotation (16 words, each CJK character counted as one) matched the text retrieved for the candidate pack on 2026-10-29 and again in a fresh retrieval the same day, read directly from the publisher. Matching ignored differences of whitespace, case, quotation marks, dashes and Unicode compatibility forms, so the source’s typography can differ. English machine translation, not verified by a person: “First, it completed a B+ round of financing of more than 5 billion yuan (RMB).”. A cross-family machine check (2026-10-31, item K094) answered the record’s question blind from fresh retrievals and agreed with the record. No human editorial review.",
+          "new": "Candidate pack passage, Chinese frontier-AI institutions, third collection (research/china-labs-3). The quotation (16 words, each CJK character counted as one) matched the text retrieved for the candidate pack on 2026-10-29 and again in a fresh retrieval the same day, read directly from the publisher. Matching ignored differences of whitespace, case, quotation marks, dashes and Unicode compatibility forms, so the source’s typography can differ. English machine translation, not verified by a person: “First, it completed a B+ round of financing of more than 5 billion yuan (RMB).”. A cross-family machine check (2026-10-31, item K094) answered the record’s question blind from fresh retrievals and agreed with the record. No human editorial review. Moved on 2026-11-02 from a record of the same round that the pre-launch audit’s correction PA-23 retired (see release/removals.json)."
+        }
+      ],
+      "removed": {
+        "claims": [
+          {
+            "id": "c3-stepfun-b-plus-round-2026",
+            "reason": "Removed on 2026-11-02 (maintainer decision on the pre-launch audit, PA-23): it stated the same StepFun B+ round as lg2-cn-stepfun-round-bplus-2026, from a report a day later; its passage from QbitAI, republished by 36Kr, now supports that record."
+          }
+        ]
+      }
+    },
+    {
+      "id": "PA-24a",
+      "finding": "PA-24: GV recorded twice (aib-gv, gv)",
+      "decision": "Maintainer decision of 2026-11-02 on the pre-launch audit: merge aib-gv into gv (as recommended).",
+      "reason": "Both records name the venture firm GV.",
+      "patches": [
+        {
+          "table": "entities",
+          "id": "gv",
+          "path": "aliases",
+          "old": [],
+          "new": ["GV"]
+        },
+        {
+          "table": "entities",
+          "id": "gv",
+          "path": "description",
+          "old": "Venture capital firm, named as “GV (Google Ventures)” by humans&.",
+          "new": "Venture capital firm, named as “GV (Google Ventures)” by humans& and as “GV” by Isomorphic Labs."
+        },
+        {
+          "table": "entities",
+          "id": "gv",
+          "path": "sourceIds",
+          "old": ["lg2-src-humansand-home"],
+          "new": ["lg2-src-humansand-home", "source-aib-labs-iso-funding-pr"]
+        },
+        {
+          "table": "claims",
+          "id": "aib-labs-gv-iso-round-2025",
+          "path": "subject",
+          "old": "aib-gv",
+          "new": "gv"
+        }
+      ],
+      "removed": {
+        "entities": [
+          {
+            "id": "aib-gv",
+            "reason": "Merged on 2026-11-02 into gv (maintainer decision on the pre-launch audit, PA-24): both records name the venture firm GV; its one record, aib-labs-gv-iso-round-2025, now names gv, which carries “GV” as an alias."
+          }
+        ]
+      }
+    },
+    {
+      "id": "PA-24b",
+      "finding": "PA-24: subsidiary legal names carried as aliases of the parent groups (上海商汤智能科技有限公司 on sensetime; 深圳市腾讯计算机系统有限公司 on tencent)",
+      "decision": "Maintainer decision of 2026-11-02 on the pre-launch audit: remove the two aliases from the groups and re-point the AIIA signatory record, after checking which mappings rely on them (as recommended).",
+      "reason": "Separate entities carry the legal names. The check found three records mapped through the aliases: the AIIA signatory records of SenseTime and Tencent, and the CAC listing entry of SenseTime. All three are re-pointed to the legal entities, and five qualifications that cite the aliases are reworded.",
+      "patches": [
+        {
+          "table": "entities",
+          "id": "sensetime",
+          "path": "aliases",
+          "old": ["SenseTime Group Inc.", "商汤", "上海商汤智能科技有限公司"],
+          "new": ["SenseTime Group Inc.", "商汤"]
+        },
+        {
+          "table": "entities",
+          "id": "tencent",
+          "path": "aliases",
+          "old": ["腾讯", "Tencent Holdings", "深圳市腾讯计算机系统有限公司"],
+          "new": ["腾讯", "Tencent Holdings"]
+        },
+        {
+          "table": "claims",
+          "id": "c2-governance-aiia-aisc-signatory-sensetime",
+          "path": "subject",
+          "old": "sensetime",
+          "new": "shanghai-sensetime"
+        },
+        {
+          "table": "claims",
+          "id": "c2-governance-aiia-aisc-signatory-sensetime",
+          "path": "statement",
+          "old": "SenseTime is listed, as 上海商汤智能科技有限公司, among the 17 companies on the initial signatory list (首批签署企业名单) of the AIIA AI Safety Commitments posted by CAICT on 24 December 2024.",
+          "new": "Shanghai SenseTime Intelligent Technology Co., Ltd. (上海商汤智能科技有限公司) is listed among the 17 companies on the initial signatory list (首批签署企业名单) of the AIIA AI Safety Commitments posted by CAICT on 24 December 2024."
+        },
+        {
+          "table": "claims",
+          "id": "c2-governance-aiia-aisc-signatory-sensetime",
+          "path": "qualification",
+          "old": "The list names the legal entity 上海商汤智能科技有限公司. The record maps it to the group-level entity SenseTime, which carries that name as an alias; the mapping rests on the company name, and no claim is made about group structure or about which group company is bound. A listing is the publisher’s statement, dated by the post; it is not a signature date and not evidence that the company complied with or implemented the commitments. A later total of 22 signatories is reported, but no later list was retrieved.",
+          "new": "The list names the legal entity 上海商汤智能科技有限公司. The record maps it by exact name to Shanghai SenseTime, which SenseTime’s prospectus describes as its indirect wholly-owned subsidiary (recorded separately); no claim is made about which group company is bound. A listing is the publisher’s statement, dated by the post; it is not a signature date and not evidence that the company complied with or implemented the commitments. A later total of 22 signatories is reported, but no later list was retrieved."
+        },
+        {
+          "table": "claims",
+          "id": "c2-governance-aiia-aisc-signatory-tencent",
+          "path": "subject",
+          "old": "tencent",
+          "new": "shenzhen-tencent-computer-systems"
+        },
+        {
+          "table": "claims",
+          "id": "c2-governance-aiia-aisc-signatory-tencent",
+          "path": "statement",
+          "old": "Tencent is listed, as 深圳市腾讯计算机系统有限公司, among the 17 companies on the initial signatory list (首批签署企业名单) of the AIIA AI Safety Commitments posted by CAICT on 24 December 2024.",
+          "new": "Shenzhen Tencent Computer Systems Company Limited (深圳市腾讯计算机系统有限公司) is listed among the 17 companies on the initial signatory list (首批签署企业名单) of the AIIA AI Safety Commitments posted by CAICT on 24 December 2024."
+        },
+        {
+          "table": "claims",
+          "id": "c2-governance-aiia-aisc-signatory-tencent",
+          "path": "qualification",
+          "old": "The list names the legal entity 深圳市腾讯计算机系统有限公司. The record maps it to the group-level entity Tencent, which carries that name as an alias; the mapping rests on the company name, and no claim is made about group structure or about which group company is bound. A listing is the publisher’s statement, dated by the post; it is not a signature date and not evidence that the company complied with or implemented the commitments. A later total of 22 signatories is reported, but no later list was retrieved.",
+          "new": "The list names the legal entity 深圳市腾讯计算机系统有限公司. The record maps it to the operating company Shenzhen Tencent Computer Systems Company Limited, which Tencent’s annual report describes as controlled through contractual arrangements (recorded separately); the mapping rests on translation, because the English report does not print the Chinese name. No claim is made about which group company is bound. A listing is the publisher’s statement, dated by the post; it is not a signature date and not evidence that the company complied with or implemented the commitments. A later total of 22 signatories is reported, but no later list was retrieved."
+        },
+        {
+          "table": "claims",
+          "id": "c3-governance-cac-genai-list-2024-04-entry-sensetime",
+          "path": "attributes.listedEntity",
+          "old": "sensetime",
+          "new": "shanghai-sensetime"
+        },
+        {
+          "table": "claims",
+          "id": "c3-governance-cac-genai-list-2024-04-entry-sensetime",
+          "path": "qualification",
+          "old": "The mapping of 上海商汤智能科技有限公司 to the dataset’s record of SenseTime is by exact name: 上海商汤智能科技有限公司 is an alias of the dataset’s record of SenseTime; the listed company is not the Hong Kong-listed parent and no ownership is recorded here. Earliest is within the 13 attachments retrieved from the CAC page (and the provincial lists were not searched); a service may have been filed earlier under another name. Absence from any list is not recorded. A filing (备案) listed by the CAC records that a service completed the filing procedure; it is not an approval or assessment of a model's safety, performance or legal compliance.",
+          "new": "The mapping of 上海商汤智能科技有限公司 to the dataset’s record of Shanghai SenseTime, SenseTime’s subsidiary, is by exact name; the listed company is not the Hong Kong-listed parent and no ownership is recorded here. Earliest is within the 13 attachments retrieved from the CAC page (and the provincial lists were not searched); a service may have been filed earlier under another name. Absence from any list is not recorded. A filing (备案) listed by the CAC records that a service completed the filing procedure; it is not an approval or assessment of a model's safety, performance or legal compliance."
+        },
+        {
+          "table": "claims",
+          "id": "c3-sensetime-shanghai-subsidiary",
+          "path": "qualification",
+          "old": "The filing states the subsidiary relationship. The prospectus prints the Chinese name in traditional characters, 上海商湯智能科技有限公司; the simplified form 上海商汤智能科技有限公司 is the one on SenseTime's own page footer, cited as context. The simplified form is also the name under which SenseTime is listed as an AIIA safety-commitment signatory (recorded separately).",
+          "new": "The filing states the subsidiary relationship. The prospectus prints the Chinese name in traditional characters, 上海商湯智能科技有限公司; the simplified form 上海商汤智能科技有限公司 is the one on SenseTime's own page footer, cited as context. The simplified form is also the name listed among the AIIA safety-commitment signatories and in the CAC list of filed services (recorded separately)."
+        },
+        {
+          "table": "claims",
+          "id": "c3-tencent-controls-tencent-computer-2025",
+          "path": "qualification",
+          "old": "Control is by contract as the report describes it, not by equity held by Tencent Holdings; the report names the registered owners of Tencent Computer, whose individual shareholdings are not recorded here. The English report does not give the Chinese name, so its equivalence with 深圳市腾讯计算机系统有限公司 (an alias of the dataset's Tencent record, as listed by CAICT) rests on translation and needs a Chinese-language filing.",
+          "new": "Control is by contract as the report describes it, not by equity held by Tencent Holdings; the report names the registered owners of Tencent Computer, whose individual shareholdings are not recorded here. The English report does not give the Chinese name, so its equivalence with 深圳市腾讯计算机系统有限公司 (the name listed by CAICT and by the CAC) rests on translation and needs a Chinese-language filing."
+        },
+        {
+          "table": "claims",
+          "id": "c3-governance-cac-genai-list-2024-04-entry-tencent",
+          "path": "qualification",
+          "old": "The listed filing entity is mapped to the dataset's record of the operating company Shenzhen Tencent Computer Systems Company Limited, not to Tencent Holdings, the group parent. The mapping rests on translation: Tencent's English annual report names the company in English only, and describes it as controlled through contractual arrangements (recorded separately); the Chinese name is not printed there. The dataset's Tencent record also carries 深圳市腾讯计算机系统有限公司 as an alias from the AIIA signatory list; the listed company is not thereby identified with the parent, and no ownership is recorded here. Earliest is within the 13 attachments retrieved from the CAC page (and the provincial lists were not searched); a service may have been filed earlier under another name. Absence from any list is not recorded. A filing (备案) listed by the CAC records that a service completed the filing procedure; it is not an approval or assessment of a model's safety, performance or legal compliance.",
+          "new": "The listed filing entity is mapped to the dataset's record of the operating company Shenzhen Tencent Computer Systems Company Limited, not to Tencent Holdings, the group parent. The mapping rests on translation: Tencent's English annual report names the company in English only, and describes it as controlled through contractual arrangements (recorded separately); the Chinese name is not printed there. The listed company is not thereby identified with the parent, and no ownership is recorded here. Earliest is within the 13 attachments retrieved from the CAC page (and the provincial lists were not searched); a service may have been filed earlier under another name. Absence from any list is not recorded. A filing (备案) listed by the CAC records that a service completed the filing procedure; it is not an approval or assessment of a model's safety, performance or legal compliance."
+        },
+        {
+          "table": "claims",
+          "id": "c3-tencent-legal-form-2025",
+          "path": "qualification",
+          "new": "Records the listed holding company's name and form as the report states them. It does not establish which group entity develops or licenses the Hunyuan/HY models. 深圳市腾讯计算机系统有限公司, listed by CAICT and by the CAC, names a different company (see the Tencent Computer record).",
+          "old": "Records the listed holding company's name and form as the report states them. It does not establish which group entity develops or licenses the Hunyuan/HY models; the dataset's Tencent record also carries the alias 深圳市腾讯计算机系统有限公司, which names a different company (see the Tencent Computer record)."
+        }
+      ]
+    },
+    {
+      "id": "PA-25",
+      "finding": "PA-25: DeepSeek “founded 2023-07” (reporting) after Liang Wenfeng’s own interview of 25 May 2023, filed under “Date unknown”",
+      "decision": "Maintainer decision of 2026-11-02 on the pre-launch audit: date cn-liang-deepseek 2023-05-25 and say in the founding record that the earlier account exists (as recommended).",
+      "reason": "The interview, published on 25 May 2023, already describes DeepSeek as a separately established company.",
+      "patches": [
+        {
+          "table": "claims",
+          "id": "cn-liang-deepseek",
+          "path": "statement",
+          "old": "Liang Wenfeng described establishing a new company named DeepSeek.",
+          "new": "Liang Wenfeng said, in an interview published on 25 May 2023, that they had separately established a new company named DeepSeek."
+        },
+        {
+          "table": "claims",
+          "id": "cn-liang-deepseek",
+          "path": "time",
+          "old": {
+            "kind": "unknown",
+            "note": "Established by the May 2023 interview; precise formation and incorporation dates unverified."
+          },
+          "new": {
+            "kind": "event",
+            "date": "2023-05-25",
+            "basis": "publication",
+            "note": "Publication date of the interview, by which he describes the company as already established. The founding and incorporation dates are not stated there."
+          }
+        },
+        {
+          "table": "claims",
+          "id": "lg-gc-deepseek-founded-2023-07",
+          "path": "qualification",
+          "old": "The record rests on reporting; it relays the founding month without citing a registration record, and no DeepSeek page or filing giving a founding date was retrieved. The exact registration date and legal entity are not established here. Liang Wenfeng’s own account of establishing the company is recorded separately.",
+          "new": "The record rests on reporting; it relays the founding month without citing a registration record, and no DeepSeek page or filing giving a founding date was retrieved. The exact registration date and legal entity are not established here. Liang Wenfeng’s own account, in an interview published on 25 May 2023 (recorded separately), already describes DeepSeek as a separately established company, before the month reported here."
+        }
+      ]
+    },
+    {
+      "id": "PA-26",
+      "finding": "PA-26: a formed_entity record (“formed”) dated by a post that states a plan",
+      "decision": "Maintainer decision of 2026-11-02 on the pre-launch audit: date the formation by the company page (2026-06), with the post as context (as recommended).",
+      "reason": "The company page lists the joint venture as established under 2026.06; the post of 2 June 2026 states that the two companies will establish it.",
+      "patches": [
+        {
+          "table": "claims",
+          "id": "c3-01ai-wanfeng-jv",
+          "path": "statement",
+          "old": "01.AI's WeChat account stated on 2 June 2026 that 01.AI and CP Group (正大集团) would jointly establish a joint venture company, 万蜂智能 (Wanfeng Zhineng).",
+          "new": "01.AI’s company page lists, in its timeline under 2026.06, the establishment of a joint venture, 万蜂智能 (Wanfeng Zhineng), with CP Group (正大集团)."
+        },
+        {
+          "table": "claims",
+          "id": "c3-01ai-wanfeng-jv",
+          "path": "time",
+          "old": {
+            "kind": "event",
+            "date": "2026-06-02",
+            "basis": "announcement",
+            "note": "Creation time of the WeChat post, which reports a signing and launch event; 01.AI's company page lists the establishment of 万蜂智能 under 2026.06 (month precision)."
+          },
+          "new": {
+            "kind": "event",
+            "date": "2026-06",
+            "note": "Month as the company page’s timeline gives it (2026.06); no day or registration date is stated. 01.AI’s WeChat post of 2 June 2026, recorded as context, reports a signing at which the two companies would jointly establish the joint venture."
+          }
+        },
+        {
+          "table": "claims",
+          "id": "c3-01ai-wanfeng-jv",
+          "path": "qualification",
+          "old": "The post states a plan (将共同成立, \"will jointly establish\"); the company page later lists the joint venture as established, but its registration, legal form and ownership shares are not stated. Which CP Group entity is party is not stated. The English name \"CP Group\" is this record's rendering of 正大集团.",
+          "new": "The company page lists the joint venture as established, by month; its registration, legal form and ownership shares are not stated. The WeChat post of 2 June 2026 states a plan (将共同成立, \"will jointly establish\") and is context for the date. Which CP Group entity is party is not stated. The English name \"CP Group\" is this record's rendering of 正大集团."
+        },
+        {
+          "table": "claims",
+          "id": "c3-01ai-wanfeng-jv",
+          "path": "evidenceIds",
+          "old": ["c3-ev-01ai-wanfeng-jv", "c3-ev-01ai-wanfeng-jv-2"],
+          "new": ["c3-ev-01ai-wanfeng-jv-2", "c3-ev-01ai-wanfeng-jv"]
+        },
+        {
+          "table": "evidence",
+          "id": "c3-ev-01ai-wanfeng-jv-2",
+          "path": "support",
+          "old": "context",
+          "new": "supports"
+        },
+        {
+          "table": "evidence",
+          "id": "c3-ev-01ai-wanfeng-jv",
+          "path": "support",
+          "old": "supports",
+          "new": "context"
+        }
+      ]
+    }
+  ],
+  "bulk": [
+    {
+      "id": "PA-56",
+      "finding": "PA-56: evidence notes say “Human editorial review is pending”, which the decision of 2026-11-01 no longer plans",
+      "decision": "Maintainer decision of 2026-11-02 on the pre-launch audit: replace the sentence with a neutral sentence consistent with About, as one bulk wording correction listing every changed record.",
+      "table": "evidence",
+      "field": "note",
+      "from": "Human editorial review is pending.",
+      "to": "Machine-checked; see How this was built.",
+      "expected": 1516
+    },
+    {
+      "id": "PA-46a",
+      "finding": "PA-46: “The citing text does not identify which version of the work was read” is untrue where the reference names a journal or conference edition",
+      "decision": "Maintainer decision of 2026-11-02 on the pre-launch audit: reword the template as recommended.",
+      "table": "claims",
+      "field": "qualification",
+      "from": "The citing text does not identify which version of the work was read.",
+      "to": "This record does not map the reference to a version.",
+      "expected": 576
+    },
+    {
+      "id": "PA-46b",
+      "finding": "PA-46: “The identifying page establishes no role or affiliation” sits beside bylines that print an affiliation",
+      "decision": "Maintainer decision of 2026-11-02 on the pre-launch audit: reword the template as recommended.",
+      "table": "claims",
+      "field": "qualification",
+      "from": "The identifying page establishes no role or affiliation.",
+      "to": "No role or affiliation is recorded from the identifying page.",
+      "expected": 30
+    }
+  ],
+  "held": [
+    {
+      "id": "PA-29",
+      "finding": "PA-29: no founding record for xAI, so the Institutions page for 2023 does not list it",
+      "decision": "Add a founding_stated record for xAI from its own primary source; if none can be retrieved, list it as held.",
+      "reason": "Not retrieved. x.ai answers this container with 403 (company and news pages, 2026-11-02); web.archive.org resets the connection; the dataset holds no X post of July 2023 by xAI or Elon Musk to read through X’s syndication endpoint, and a reader relay was not used. Held for an archive read (Codex), backlog D25."
+    }
+  ]
+}

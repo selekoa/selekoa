@@ -1,14 +1,12 @@
 import { useState } from 'react';
 import type { LandingSummary } from '../domain/landing';
-import { HubCards } from './Hub';
+import { HubCards, startExamples } from './Hub';
 import { startHref, type StartAction } from './SiteChrome';
+import { readerTools, ToolLink } from './tools';
 import { NavLink } from './NavLink';
 import { useInBrowser } from './client';
 import './reading-first.css';
 import './control-commitments.css';
-
-/** The featured map: the direct connections of OpenAI's dossier. */
-const openAIMap: StartAction = { kind: 'dossier', id: 'openai', view: 'map' };
 
 export function Landing({
   summary,
@@ -28,9 +26,11 @@ export function Landing({
           A documentary history of machine intelligence.
         </h1>
         <p className="landing-deck">
-          Selekoa is a machine-first starting point for research on the history
-          of machine intelligence: machines find and check the records, and
-          every one links to its source, for you to verify and build on.
+          Selekoa is a documentary history of machine intelligence and of human
+          thought about it. Machines built it: they find the sources, quote them
+          and check each other’s work, and every statement links to the passage
+          it rests on. What they leave to <strong>you</strong> is the{' '}
+          <em>human part</em>: the question, the point of view, the stance.
         </p>
         <form
           className="landing-search"
@@ -55,52 +55,43 @@ export function Landing({
           <button type="submit">Search</button>
         </form>
       </section>
+      <nav className="ways-in" aria-labelledby="ways-in-title">
+        <h2 id="ways-in-title">Ways in</h2>
+        <div>
+          <h3>Questions to read</h3>
+          <ul className="ways-in-questions">
+            {startExamples(summary).map((e) => (
+              <li key={e.question}>
+                <NavLink
+                  href={startHref(e.action, summary)}
+                  onOpen={() => onAction(e.action)}
+                >
+                  {e.question}
+                </NavLink>
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div>
+          <h3>Tools to use</h3>
+          <ul className="ways-in-tools">
+            {readerTools.map((tool) => (
+              <li key={tool.id}>
+                <ToolLink tool={tool} ids={summary} onAction={onAction} />
+              </li>
+            ))}
+          </ul>
+        </div>
+      </nav>
       <section className="landing-entries" aria-labelledby="start-covered">
         <h2 id="start-covered">What’s covered</h2>
-        {summary.controls.some((c) => c.id === 'openai') && (
-          <div className="landing-featured">
-            <p className="eyebrow">For example</p>
-            <p>
-              <NavLink
-                className="text-button"
-                href={startHref({ kind: 'control', id: 'openai' }, summary)}
-                onOpen={() => onAction({ kind: 'control', id: 'openai' })}
-              >
-                Who controlled OpenAI, and when? →
-              </NavLink>
-            </p>
-            <p className="landing-featured-map">
-              <NavLink
-                className="text-button"
-                href={startHref(openAIMap, summary)}
-                onOpen={() => onAction(openAIMap)}
-              >
-                See it as a map: OpenAI’s direct connections →
-              </NavLink>
-            </p>
-            <p className="landing-featured-note">
-              Two of many ways in. The hubs below cover governance, ideas and
-              institutions.
-            </p>
-          </div>
-        )}
         <HubCards summary={summary} onAction={onAction} />
-        <p className="landing-years">
-          <NavLink
-            className="text-button"
-            href={startHref({ kind: 'years' }, summary)}
-            onOpen={() => onAction({ kind: 'years' })}
-          >
-            Browse by year →
-          </NavLink>{' '}
-          Every dated record, one page per year.
-        </p>
       </section>
       <section className="landing-gaps" aria-labelledby="start-not-covered">
         <h2 id="start-not-covered">Not yet covered</h2>
         <p>
           Coverage is selective. The largest gaps are whether developers
-          followed their own frameworks, model capabilities, chip export
+          followed their own frameworks, model capabilities, most export
           controls and most AI developers.{' '}
           <NavLink
             className="text-button"
@@ -119,8 +110,7 @@ export function Landing({
         some records are undated. Evidence was checked between{' '}
         {coverage.firstCheck} and {coverage.lastCheck}.
         {Number(coverage.lastYear) > Number(coverage.lastCheck.slice(0, 4)) &&
-          ' Dates after the latest check are scheduled dates stated in the sources.'}{' '}
-        Coverage is selective and uneven.
+          ' Dates after the latest check are scheduled dates stated in the sources.'}
       </p>
     </main>
   );

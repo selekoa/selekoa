@@ -217,10 +217,6 @@ export function QuestionStarter({
         <h1>{definition.title}</h1>
         <p className="landing-deck">{definition.question}</p>
         <p className="doc-intro">{definition.scope}</p>
-        <p className="doc-status">
-          A machine selected and arranged these records. No human review of the
-          selection or framing is recorded.
-        </p>
         <div className="doc-actions">
           <ExportQuestionStarter
             data={repository.data}

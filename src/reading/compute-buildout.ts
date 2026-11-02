@@ -480,6 +480,6 @@ export const computeBuildout: ComputeBuildoutCollection = {
     'Figures are each source’s own, in its own words. They are not added up, converted or compared.',
     'An announcement, a plan, a letter of intent or an agreement records what a party stated. It does not show that a site was built, that power was delivered, that chips were supplied or that money was spent.',
     'Stated dates are targets, deadlines and terms that a party gave. They are kept apart from the timeline and never date a record.',
-    'A machine selected and arranged these records, and a reviewer from a different model family checked them. No editor has reviewed the records, the selection or the framing.',
+    'A machine selected and arranged these records, and a reviewer from a different model family checked them.',
   ],
 };

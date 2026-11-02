@@ -1,6 +1,9 @@
 import type { PropositionsCollection } from '../domain/propositions';
 import { orbitalComputeFrame as frame } from './proposition-frames';
 
+/** The interim withdrawal of 2026-11-02: headlines the cross-family re-check marks move or undecidable. */
+const recheckWithdrawn = '2026-11-02';
+
 const admitted = '2026-10-30';
 
 export const orbitalCompute: PropositionsCollection = {
@@ -36,7 +39,7 @@ export const orbitalCompute: PropositionsCollection = {
       'Sources were retrieved directly by script, one request at a time, on 2026-10-28 and again at admission on 2026-10-30. Each retrieved text is identified by its SHA-256 hash in the source record.',
       'Every quotation was compared with the retrieved text, both times. Paraphrases are labelled as such.',
       'Where the quoted wording is known only from a later copy, the date from which an Internet Archive capture attests it is shown, and that date decides which text is earliest located.',
-      'Fresh-context machine audits by Claude models re-read a sample of 64 records of the research pack, and a check by an OpenAI GPT-6 model re-examined every argument record and searched for earlier texts. No person has reviewed the records.',
+      'Fresh-context machine audits by Claude models re-read a sample of 64 records of the research pack, and a check by an OpenAI GPT-6 model re-examined every argument record and searched for earlier texts.',
     ],
     gaps: [
       'Two earlier texts that the check read could not be retrieved at admission and are not recorded: an abstract of 2019 by Periola and Kolawole on space-based data centres (terrestrial constraints) and an ASPLOS 2020 paper on orbital edge computing (links to the ground). Until they are read, the roles they may change stand as recorded.',
@@ -93,6 +96,33 @@ export const orbitalCompute: PropositionsCollection = {
       claimIds: ['cpo-orb-oc11-lincei-2026', 'cpo-orb-oc11-aili-2025'],
       recordedAt: admitted,
     },
+    {
+      propositionId: 'oc6-heat-rejection-limit',
+      replaced:
+        'Google Research, Project Suncatcher post (2025), headlined as earliest located.',
+      reason:
+        'Withdrawn on 2026-11-02 by the maintainer’s decision to withdraw every headline the cross-family re-check proposes to move or could not decide, pending adjudication; no record holds the headline meanwhile. The re-check proposes an earlier text the dataset holds: Lumen’s held v1.01 already explicitly requires rejecting gigawatts through very large deployable radiators because conduction/convection to the environment are unavailable. It is a substantial engineering requirement even though the text argues it can be met. Its December 2024 witness predates the November 2025 blog.',
+      claimIds: ['cpo-orb-oc6-suncatcher-blog-2025'],
+      recordedAt: recheckWithdrawn,
+    },
+    {
+      propositionId: 'oc10-ground-bandwidth',
+      replaced:
+        'Google Research, Project Suncatcher post (2025), headlined as earliest located.',
+      reason:
+        'Withdrawn on 2026-11-02 by the maintainer’s decision to withdraw every headline the cross-family re-check proposes to move or could not decide, pending adjudication; no record holds the headline meanwhile. The re-check could not decide: The cited blog conclusion names high-bandwidth ground communications as an engineering challenge, but does not explicitly state which orbital-compute workloads are excluded or limited, as the criterion requires. Lumen’s 2024 ground links/data shuttles and Axiom’s April 2025 latency benefits likewise do not clearly supply that workload-limitation claim. The later November 22 preprint cannot date additional wording to the November 4 blog.',
+      claimIds: ['cpo-orb-oc10-suncatcher-blog-2025'],
+      recordedAt: recheckWithdrawn,
+    },
+    {
+      propositionId: 'oc11-sky-and-debris',
+      replaced:
+        'Aili, Choi, Ong and Wen, Carbon-neutral data centres in space (2025), headlined as earliest located.',
+      reason:
+        'Withdrawn on 2026-11-02 by the maintainer’s decision to withdraw every headline the cross-family re-check proposes to move or could not decide, pending adjudication; no record holds the headline meanwhile. The re-check proposes an earlier text the dataset holds: Lumen’s held 2024 text already identifies orbital-debris mitigation and collision probability as hurdles for large data centers and links their large size to avoidance responsibilities. This meets the collision/debris arm of the criterion before Aili’s October 2025 publication and November proof witness. It does not establish an astronomical-observation finding.',
+      claimIds: ['cpo-orb-oc11-aili-2025'],
+      recordedAt: recheckWithdrawn,
+    },
   ],
   limits: [
     '“Earliest located” means the earliest text found by the searches described under “How we searched”. It is not a claim of first use.',
@@ -101,7 +131,7 @@ export const orbitalCompute: PropositionsCollection = {
     'Each record carries the date its work is dated by. Where the quoted wording is known only from a later copy, the date from which it is attested is shown.',
     'The radiation proposition (O7) counts only texts that discuss computing placed in orbit for this purpose. Texts on radiation effects in space electronics in general are not counted; the 1989 paper recorded as context is one.',
     'The codes O1 to O11 correspond to OC1 to OC11 in the research pack the records come from.',
-    'A machine selected and classified these records, and machine checks from two model families re-examined them. No person has reviewed them.',
+    'A machine selected and classified these records, and machine checks from two model families re-examined them.',
   ],
   axis: frame.axis,
   landing: frame.landing,

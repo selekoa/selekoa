@@ -3,6 +3,7 @@ import { format, resolveConfig } from 'prettier';
 import { repository } from '../src/domain/repository';
 import { wholeCollections } from '../src/release/whole-collections';
 import { questionStarters } from '../src/reading/self-governance';
+import { controlTimelines } from '../src/reading/control-timelines';
 import { auditDataset } from '../src/editorial/consistency-audit';
 
 // Report-only consistency audit. Prints a summary by check; with
@@ -25,6 +26,12 @@ const report = auditDataset(repository.data, [
     id: definition.id,
     definition,
   })),
+  // The control timelines page reads its records by ID, like a collection.
+  {
+    kind: 'control-timelines',
+    id: 'side-by-side',
+    definition: controlTimelines,
+  },
 ]);
 for (const s of report.summary)
   console.log(

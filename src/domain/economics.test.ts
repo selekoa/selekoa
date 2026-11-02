@@ -134,11 +134,13 @@ describe('the economics of machine intelligence collection (schema 2.13)', () =>
     const g06 = entries.find((e) => e.proposition.code === 'G06')!;
     expect(g06.earliest).toBeNull();
     expect(g06.earliestTier2).not.toBeNull();
+    // M05's tier-1 headline, under re-check from 2026-11-02, moved to
+    // Hanson's model by the maintainer's decision of 2026-11-02; tier 2 stays.
     const m05 = entries.find((e) => e.proposition.code === 'M05')!;
-    expect(m05.earliest?.claim.id).toBe(
-      'ec-m05-acemoglu-restrepo-2016-race-between-machine-and-man-a',
+    expect(m05.earliest?.document.id).toBe(
+      'hanson-economic-growth-given-machine-intelligence',
     );
-    expect(m05.earliest?.wording).toBe('2017-06');
+    expect(m05.recheck.earliest).toBeNull();
   });
 
   it('shows every record of its propositions once, in date order', () => {
@@ -216,8 +218,10 @@ describe('the re-check corrections of 2026-10-25', () => {
       expect(entry(code).earliestTier2?.document.id, code).toBe(
         'diebold-1955-automation-condensation',
       );
+    // The M05 role this decision moved went under re-check on 2026-11-02 and
+    // then to Hanson's model (maintainer's decision of 2026-11-02).
     expect(entry('M05').earliest?.claim.id).toBe(
-      'ec-m05-acemoglu-restrepo-2016-race-between-machine-and-man-a',
+      'ec-m05-hanson-economic-growth-given-machine-intelligence-a',
     );
     for (const r of records.filter(
       (r) => r.document.id === 'erdil-besiroglu-2023-explosive-growth-review',

@@ -14,6 +14,8 @@ export const propositionLoaders: Record<
   'risk-debate': () => import('./risk-debate').then((m) => m.riskDebate),
   'yudkowsky-arguments': () =>
     import('./yudkowsky-arguments').then((m) => m.yudkowskyArguments),
+  'machine-succession': () =>
+    import('./machine-succession').then((m) => m.machineSuccession),
   'economics-of-machine-intelligence': () =>
     import('./economics').then((m) => m.economicsOfMachineIntelligence),
   'orbital-compute-arguments': () =>

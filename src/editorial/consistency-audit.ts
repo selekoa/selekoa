@@ -1946,6 +1946,8 @@ export function auditDataset(
         });
   }
 
+  auditRecentKinds(data, add);
+
   const order: Record<Severity, number> = {
     high: 0,
     medium: 1,
@@ -1978,4 +1980,281 @@ export function auditDataset(
     }),
     findings,
   };
+}
+
+/**
+ * Predicates whose records report what a party announced, planned or stated
+ * (schema 2.21, 2.23 and earlier), as distinct from a completed transaction.
+ */
+const announcedPredicates = new Set([
+  'investment_announced',
+  'announced_funding',
+  'announced_plan',
+  'announced_site',
+  'partnership_announced',
+  'award_announced',
+  'plans_capacity',
+  'plans_infrastructure_spend',
+  'launch_stated',
+  'status_stated',
+]);
+/** Legal and framework texts: their records paraphrase duties and terms. */
+const textPredicates = new Set([
+  'states_provision',
+  'provision_not_found',
+  'changes_from',
+  'references_commitment',
+  'published',
+  'enacted',
+  'discusses',
+  'articulates_proposition',
+  'contests_proposition',
+  'bears_on_proposition',
+  'states_contribution',
+  'credits_work',
+]);
+/** Words that report an event as done. */
+const doneWords =
+  /\b(?:raised|completed|closed|paid|received|built|operates|operating|delivered|finali[sz]ed|secured|invested)\b/i;
+/** Words that attribute what follows to a source or party. */
+const attributing =
+  /\b(?:announc\w*|stat(?:es|ed|ing)|said|says|wrote|writes|according to|report\w*|records?|describ\w*|lists?|listed|names?|named|prints?|filing|filed|letter|release|post|update)\b/i;
+/** Words that report compliance or implementation. */
+const complianceWords =
+  /\b(?:compl(?:y|ies|ied|iance|iant)|implemented|fulfil+(?:ed|s)?|adhere[sd]?|abides? by)\b/i;
+/** Words that keep an amount's bound visible, by bound. */
+const boundWords: Record<string, RegExp> = {
+  up_to:
+    /\bup to\b|\bas much as\b|\bat most\b|\bno more than\b|\bcan scale\b|\d\s*[–-]\s*\d/i,
+  more_than: /\bmore than\b|\bover\b|\bin excess of\b|\bexceed|\+/i,
+  at_least: /\bat least\b|\bor more\b|\bminimum\b|\+/i,
+  approximate:
+    /\babout\b|\bapproximately\b|\baround\b|\broughly\b|\bnearly\b|\bclose to\b|~/i,
+};
+
+/**
+ * Checks added for the pre-launch audit of 2026-11-02: records of the kinds
+ * schema 2.21 to 2.27 introduced (announced partnerships and awards, a
+ * document's own contribution, attributed credits, participant entries) and
+ * contradictions between records that validation does not catch: one role or
+ * founding dated two incompatible ways, a role recorded after a departure.
+ */
+function auditRecentKinds(data: Dataset, add: (f: Finding) => void) {
+  const sources = new Map(data.sources.map((s) => [s.id, s]));
+  const evidence = new Map(data.evidence.map((v) => [v.id, v]));
+  const own = (s: string) => stripQuoted(s);
+
+  for (const c of data.claims) {
+    // An announcement reported as done, in our own words.
+    if (announcedPredicates.has(c.predicate)) {
+      const text = own(c.statement);
+      const done = doneWords.exec(text);
+      if (done && !attributing.test(text.slice(0, done.index)))
+        add({
+          check: 'wording',
+          code: 'announced-as-done',
+          severity: 'medium',
+          fix: 'needs_source',
+          ids: [c.id],
+          message: `${c.id} (${c.predicate}) reports “${done[0]}” in our own words without attributing it.`,
+          details: { statement: c.statement },
+        });
+    }
+    // Compliance or implementation in our own words, outside the records
+    // that paraphrase a legal or framework text's terms.
+    if (!textPredicates.has(c.predicate)) {
+      for (const field of ['statement', 'qualification'] as const) {
+        const text = own(c[field]);
+        const hit = complianceWords.exec(text);
+        if (!hit) continue;
+        const before =
+          text
+            .slice(0, hit.index)
+            .split(/[.;]\s/)
+            .at(-1) ?? '';
+        if (/\b(?:not|never|no|nor|without|neither)\b/i.test(before)) continue;
+        if (
+          attributing.test(before) ||
+          /\b(?:requir|must|shall|commit)/i.test(before)
+        )
+          continue;
+        add({
+          check: 'wording',
+          code: 'commitment-as-compliance',
+          severity: field === 'statement' ? 'medium' : 'low',
+          fix: 'needs_source',
+          ids: [c.id],
+          message: `${c.id} ${field}: “${hit[0]}” in our own words; a commitment or framework is not evidence of compliance.`,
+          details: { [field]: c[field] },
+        });
+      }
+    }
+    // "Earliest" without the located scope the policy requires.
+    for (const field of ['statement', 'qualification'] as const) {
+      const text = own(c[field]);
+      for (const m of text.matchAll(/\bearliest\b/gi)) {
+        // The sentence that holds the word.
+        const start = text.lastIndexOf('. ', m.index!);
+        const end = text.indexOf('. ', m.index!);
+        const sentence = text.slice(start + 1, end >= 0 ? end : undefined);
+        if (
+          /\blocated\b|\bretriev|\bsearch|\bscanned|\bcaptur|\bindex|\bwithin\b|\bin this collection|\bin these records|\bnot\b|\bno\b|\bneither\b|\bnor\b|\bcited\b|\brecorded\b|\bheld\b|\battested\b|\bdated\b|\bat the earliest\b/i.test(
+            sentence,
+          )
+        )
+          continue;
+        // A source's own wording, attributed before the word.
+        if (attributing.test(sentence.slice(0, m.index! - start - 1))) continue;
+        add({
+          check: 'wording',
+          code: 'earliest-unscoped',
+          severity: 'low',
+          fix: 'convention',
+          ids: [c.id],
+          message: `${c.id} ${field}: “earliest” without a located or search scope.`,
+          details: { [field]: c[field] },
+        });
+      }
+    }
+    // Schema 2.24 and 2.25: a document's own contribution, and a citing
+    // document's attributed credit, rest on that document's own text.
+    if (
+      (c.predicate === 'states_contribution' ||
+        c.predicate === 'credits_work') &&
+      c.evidenceIds.length
+    ) {
+      const docs = c.evidenceIds
+        .map((id) => evidence.get(id))
+        .map((v) => (v ? sources.get(v.sourceId) : undefined))
+        .map((s) => s?.documentId);
+      if (!docs.includes(c.subject)) {
+        const other = docs.filter((d): d is string => Boolean(d));
+        add({
+          check: 'evidence',
+          code: 'contribution-not-own-text',
+          severity: other.length ? 'medium' : 'low',
+          fix: other.length ? 'needs_source' : 'mechanical',
+          ids: [c.id],
+          message: other.length
+            ? `${c.id} (${c.predicate}) rests on ${other.join(', ')}, not on ${c.subject}'s own text.`
+            : `${c.id} (${c.predicate}) rests on a source not linked to any document; ${c.subject}'s own text should be the source's document.`,
+        });
+      }
+    }
+    // An amount or quantity whose bound ("up to", "more than") the statement
+    // does not show.
+    for (const [kind, value] of [
+      ['amount', c.attributes?.amount],
+      ['quantity', c.attributes?.quantity],
+    ] as const) {
+      const bound = (value as { bound?: string } | undefined)?.bound;
+      if (!bound || !boundWords[bound]) continue;
+      if (boundWords[bound].test(c.statement)) continue;
+      add({
+        check: 'evidence',
+        code: 'amount-bound-unstated',
+        severity: 'low',
+        fix: 'convention',
+        ids: [c.id],
+        message: `${c.id}: the ${kind}'s bound is ${bound.replace('_', ' ')}, which the statement does not say.`,
+        details: { statement: c.statement },
+      });
+    }
+  }
+
+  // Contradictions: one role, or one founding, dated two incompatible ways.
+  const startOf = (c: Claim) =>
+    c.time.kind === 'interval'
+      ? c.time.from
+      : c.time.kind === 'event'
+        ? c.time.date
+        : undefined;
+  const roleKey = (c: Claim) =>
+    `${c.subject}|${c.object.kind === 'entity' ? c.object.entityId : ''}|${normaliseName(c.attributes?.role ?? '')}`;
+  const roles = new Map<string, Claim[]>();
+  for (const c of data.claims)
+    if (c.predicate === 'held_role' && c.object.kind === 'entity')
+      roles.set(roleKey(c), [...(roles.get(roleKey(c)) ?? []), c]);
+  for (const list of roles.values()) {
+    if (list.length < 2) continue;
+    const ends = list
+      .map((c) => (c.time.kind === 'interval' ? c.time.until : undefined))
+      .filter((d): d is string => Boolean(d));
+    const starts = list
+      .map((c) => (c.time.kind === 'interval' ? c.time.from : undefined))
+      .filter((d): d is string => Boolean(d));
+    const clash = (ds: string[]) =>
+      ds.some((a) => ds.some((b) => !datesCompatible(a, b)));
+    if (clash(starts) || clash(ends))
+      add({
+        check: 'overlaps',
+        code: 'role-dates-differ',
+        severity: 'medium',
+        fix: 'needs_source',
+        ids: list.map((c) => c.id),
+        message: `${list.length} records give the same role (${list[0].attributes?.role ?? 'unnamed'}) incompatible start or end dates: two tenures, or a contradiction.`,
+      });
+  }
+  const foundings = new Map<string, Claim[]>();
+  for (const c of data.claims) {
+    const org =
+      c.predicate === 'founding_stated'
+        ? c.subject
+        : c.predicate === 'co_founded' && c.object.kind === 'entity'
+          ? c.object.entityId
+          : undefined;
+    if (org) foundings.set(org, [...(foundings.get(org) ?? []), c]);
+  }
+  for (const [org, list] of foundings) {
+    const dated = list
+      .map((c) => ({ c, d: startOf(c) }))
+      .filter((x): x is { c: Claim; d: string } => Boolean(x.d));
+    const clash = dated.filter((x) =>
+      dated.some((y) => !datesCompatible(x.d, y.d)),
+    );
+    if (clash.length)
+      add({
+        check: 'overlaps',
+        code: 'founding-dates-differ',
+        severity: 'medium',
+        fix: 'needs_source',
+        ids: clash.map((x) => x.c.id),
+        message: `${org}: founding records give incompatible dates (${[...new Set(clash.map((x) => x.d))].join(', ')}).`,
+      });
+  }
+  // A role dated after an announced departure from the same organisation:
+  // a return, or a change of role when the departure was from one role only.
+  const departures = data.claims.filter(
+    (c) =>
+      c.predicate === 'departure_announced' &&
+      c.object.kind === 'entity' &&
+      c.time.kind === 'event',
+  );
+  for (const c of data.claims) {
+    if (c.predicate !== 'held_role' || c.object.kind !== 'entity') continue;
+    const at =
+      c.time.kind === 'snapshot'
+        ? c.time.date
+        : c.time.kind === 'interval'
+          ? c.time.from
+          : undefined;
+    if (!at) continue;
+    const org = c.object.entityId;
+    const before = departures.filter(
+      (d) =>
+        d.subject === c.subject &&
+        (d.object as { entityId: string }).entityId === org &&
+        d.time.kind === 'event' &&
+        dateRange(d.time.date)[1] < dateRange(at)[0],
+    );
+    if (before.length)
+      add({
+        check: 'dates',
+        code: 'role-after-departure',
+        severity: 'info',
+        fix: 'none',
+        ids: [c.id, ...before.map((d) => d.id)],
+        message: `${c.id} dates a role at ${org} on ${at}, after ${before.map((d) => d.id).join(', ')}: a return or a change of role, which the person page should show as such.`,
+      });
+  }
 }

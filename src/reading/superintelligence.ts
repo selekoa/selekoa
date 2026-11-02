@@ -1,6 +1,15 @@
 import type { PropositionsCollection } from '../domain/propositions';
 import { superintelligenceFrame as frame } from './proposition-frames';
 
+/** The maintainer's decisions of 2026-11-02 on the earliest-located re-check (decisions 1 to 4). */
+const recheckDecisions = '2026-11-02';
+
+/** The interim withdrawal of 2026-11-02: headlines the cross-family re-check marks move or undecidable. */
+const recheckWithdrawn = '2026-11-02';
+
+/** The maintainer's decision on the pre-launch audit (PA-01, PA-02). */
+const withdrawn = '2026-11-02';
+
 const found = '2026-10-06';
 const candidates = 'the 1996–2022 candidate search';
 
@@ -15,7 +24,7 @@ export const superintelligencePropositions: PropositionsCollection = {
   groups: frame.groups,
   searchNote: {
     scope:
-      'The collection records what located texts from 1863 to 2022 say about the propositions below. “Earliest located” means the earliest text found by the searches below. It is not a claim that no earlier text exists.',
+      'The collection records what located texts from 1863 to 2022 say about the propositions below; texts to 2025 on two of them (A4 and B1) come from the collection on catastrophic risk, which shares them. “Earliest located” means the earliest text found by the searches below. It is not a claim that no earlier text exists.',
     venues: [
       {
         period: '1863 to mid-1996',
@@ -49,7 +58,7 @@ export const superintelligencePropositions: PropositionsCollection = {
       'Every quotation was compared with the retrieved text, or with page images where a scan has no text layer or its OCR is unreliable.',
       'Internet Archive full-text screens looked for selected wordings before the earliest located texts. Each screen read the first 20 hits and finds only the phrasings searched.',
       'Each record gives the date its work is dated by. Where the quoted wording survives only in a later copy, the record also gives the date from which that wording is attested, and that date decides which text is earliest located.',
-      'Two separate machine checks re-examined the candidate records, one by an OpenAI GPT-6 model for 1996–2022 and one by a Claude Opus 5.5 model for the earlier texts. A third, by an OpenAI GPT-6 model, re-read every earliest located record in its sources. Their corrections are applied. No person has reviewed the records.',
+      'Two separate machine checks re-examined the candidate records, one by an OpenAI GPT-6 model for 1996–2022 and one by a Claude Opus 5.5 model for the earlier texts. A third, by an OpenAI GPT-6 model, re-read every earliest located record in its sources. Their corrections are applied.',
       'The third check verified the article text of Butler’s 1863 letter but could not retrieve the column images (HTTP 403), so it did not recheck the printed wording.',
     ],
     gaps: [
@@ -210,6 +219,42 @@ export const superintelligencePropositions: PropositionsCollection = {
       claimIds: ['ts-b3-christiano-2018-daemons', 'ts-b3-christiano-2019-wflf'],
       recordedAt: found,
     },
+    {
+      propositionId: 'treacherous-turn',
+      replaced:
+        'Grace’s page of 31 August 2014, headlined as the earliest located use of the name (“treacherous turn”).',
+      reason:
+        'Withdrawn on 2026-11-02 by the maintainer’s decision on the pre-launch audit (addition to decision 1), after the cross-family re-check flagged it; no record holds the headline meanwhile. The re-check could not order Grace’s page, whose schedule wording is not dated by its stored posting date, against Danaher’s post of 2014 and the book of July 2014 (undecidable).',
+      claimIds: ['ts-b1-grace-2014-schedule-context'],
+      recordedAt: withdrawn,
+    },
+    {
+      propositionId: 'behavioural-tests-as-evidence',
+      replaced:
+        'Michie, Computer—servant or master (1968), headlined as earliest located.',
+      reason:
+        'Withdrawn on 2026-11-02 by the maintainer’s decision to withdraw every headline the cross-family re-check proposes to move or could not decide, pending adjudication; no record holds the headline meanwhile. The re-check proposes an earlier text the dataset holds: Weizenbaum’s held January 1966 journal article explicitly describes the illusion of being understood in ELIZA conversation. Its printed wording predates both Michie’s attributed 1968 publication and the inspected 1986 reprint.',
+      claimIds: ['ts-c1-michie-1968'],
+      recordedAt: recheckWithdrawn,
+    },
+    {
+      propositionId: 'recursive-self-improvement',
+      replaced:
+        'Clemmensen, Extropians message of 1996-09-03, headlined as earliest located.',
+      reason:
+        'Withdrawn on 2026-11-02 by the maintainer’s decision to withdraw every headline the cross-family re-check proposes to move or could not decide, pending adjudication; no record holds the headline meanwhile. The re-check proposes an earlier text the dataset holds: Good’s same-machine equipment alternative, read together with its machine-design intelligence feedback, meets the criterion independently of his better-successor scenario. Both candidate publication years, 1965 and 1966, precede the September 1996 posting. McCarthy’s 1959 improving-mechanism wording is also relevant but the held retyped copy is not a verified 1959 textual witness.',
+      claimIds: ['ts-a3-clemmensen-1996-09-03'],
+      recordedAt: recheckWithdrawn,
+    },
+    {
+      propositionId: 'behavioural-tests-as-evidence',
+      replaced:
+        'No earliest located headline: under re-check from 2026-11-02. Before that, Michie’s essay of 1968 (wording attested in the reprint of 1986) was headlined.',
+      reason:
+        'Moved on 2026-11-02 to Weizenbaum’s ELIZA article (January 1966), read in a scan of the printed pages, by the maintainer’s decision on the cross-family re-check (role 34). The text meets the criterion and is dated before Michie’s essay of 1968. The record was admitted on this proposition with a passage matched against the held text.',
+      claimIds: ['ts-c1-weizenbaum-1966', 'ts-c1-michie-1968'],
+      recordedAt: recheckDecisions,
+    },
   ],
   limits: [
     '“Earliest located” means the earliest text found by the searches described under “How we searched”. It is not a claim that no earlier text exists.',
@@ -217,10 +262,24 @@ export const superintelligencePropositions: PropositionsCollection = {
     'Most developed is an editorial judgement among the located texts. None is named for B6 and C1–C3, which were looked for only before mid-1996.',
     'Quotations are short and come from sources whose reuse permits them. Other passages are labelled paraphrases, including every in-copyright text read in a third-party copy.',
     'Each record carries the date its work is dated by. Where the quoted wording survives only in a later copy, the date from which it is attested is shown, and that date decides which text is earliest located.',
-    'A machine selected and classified these records, and three machine checks re-examined them. No person has reviewed them.',
+    'A machine selected and classified these records, and three machine checks re-examined them.',
     'B1 and A4 also hold texts after 2022, recorded by the search on catastrophic risk from advanced AI; they did not change the earliest located texts.',
   ],
   related: {
+    'intelligence-explosion': [
+      {
+        propositionId: 'vast-superiority',
+        relation:
+          'A different claim in the collection on machine succession, scale and acceleration: the size of the eventual gap, whatever its route.',
+      },
+    ],
+    'competition-defeats-restraint': [
+      {
+        propositionId: 'accelerate-machine-intelligence',
+        relation:
+          'A different claim in the collection on machine succession, scale and acceleration: that development should be accelerated rather than restrained.',
+      },
+    ],
     'deceptive-alignment': [
       {
         propositionId: 'inner-or-deceptive-misalignment',

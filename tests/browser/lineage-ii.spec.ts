@@ -24,7 +24,7 @@ test('oversight citations retain pending review and non-adoption qualifications'
   });
   await expect(inspector).toContainText('not adoption');
   await expect(inspector).toContainText('Machine-checked');
-  await expect(inspector).toContainText('Not reviewed by an editor');
+  await expect(inspector).toContainText('Machine-checked');
   await expect(inspector.locator('a.source-title')).toHaveAttribute(
     'href',
     'https://arxiv.org/pdf/1811.07871v1',

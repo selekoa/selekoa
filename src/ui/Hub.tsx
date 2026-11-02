@@ -1,7 +1,10 @@
 import type { LandingSummary } from '../domain/landing';
+import { listedPerson } from '../domain/people-index';
 import type { HubId } from '../domain/deep-links';
 import { startHref, type StartAction } from './SiteChrome';
 import { NavLink } from './NavLink';
+import { toolById, ToolLink } from './tools';
+import { stancesTitle } from '../reading/proposition-stances-page';
 import { comparisonFacets } from '../domain/framework-comparison';
 import { chinaScopeNote } from '../reading/china-scope';
 import './reading-first.css';
@@ -28,6 +31,32 @@ const hubScopeNotes: Partial<Record<HubId, string>> = {
 
 type Example = { question: string; action: StartAction };
 
+/** The questions the start page's "Ways in" panel offers as readings. */
+export function startExamples(summary: LandingSummary): Example[] {
+  return [
+    ...(summary.controls.some((c) => c.id === 'openai')
+      ? [
+          {
+            question: 'Who controlled OpenAI, and when?',
+            action: { kind: 'control', id: 'openai' } as StartAction,
+          },
+        ]
+      : []),
+    ...(summary.propositions.some((p) => p.id === 'risk-debate')
+      ? [
+          {
+            question:
+              'Which texts argue for and against catastrophic risk from advanced AI?',
+            action: { kind: 'propositions', id: 'risk-debate' } as StartAction,
+          },
+        ]
+      : []),
+  ];
+}
+
+const sameAction = (a: StartAction, b: StartAction) =>
+  a.kind === b.kind && ('id' in a ? a.id : '') === ('id' in b ? b.id : '');
+
 /** What each hub covers, in one sentence, with example questions it can answer. */
 export function hubOutline(summary: LandingSummary, hub: HubId) {
   const has = <T extends { id: string }>(list: T[], id: string) =>
@@ -43,9 +72,11 @@ export function hubOutline(summary: LandingSummary, hub: HubId) {
           {
             question:
               'What does each framework say about pausing development or deployment?',
+            // The comparison's own page for this question, not the whole grid.
             action: {
               kind: 'compare',
               id: 'frontier-safety-frameworks',
+              facet: 'D3.halt',
             } as StartAction,
           },
           ...(has(summary.controls, 'openai')
@@ -153,9 +184,10 @@ export function HubCards({
     <ul className="hub-cards">
       {hubs.map((hub) => {
         const outline = hubOutline(summary, hub);
-        // The start page features the OpenAI control question above the cards.
+        // The start page's "Ways in" panel already offers its questions.
+        const featured = startExamples(summary);
         const examples = outline.examples.filter(
-          (e) => !(e.action.kind === 'control' && e.action.id === 'openai'),
+          (e) => !featured.some((f) => sameAction(f.action, e.action)),
         );
         return (
           <li className="hub-card" key={hub}>
@@ -232,7 +264,7 @@ function GovernanceEntries({
         </NavLink>
       </li>
       <li className="landing-entry">
-        <span className="eyebrow">Comparison</span>
+        <span className="eyebrow">Tool · comparison</span>
         <h3>Compare frameworks</h3>
         <p>
           The same {comparisonFacets.length} questions put to every framework:
@@ -244,18 +276,12 @@ function GovernanceEntries({
           shows what the documents state, not what any developer did, and ranks
           no one.
         </p>
-        <NavLink
-          className="landing-action"
-          href={startHref(
-            { kind: 'compare', id: 'frontier-safety-frameworks' },
-            summary,
-          )}
-          onOpen={() =>
-            onAction({ kind: 'compare', id: 'frontier-safety-frameworks' })
-          }
-        >
-          Compare frameworks →
-        </NavLink>
+        <ToolLink
+          tool={toolById('compare')}
+          ids={summary}
+          onAction={onAction}
+          described={false}
+        />
       </li>
       {guides.map((g) => (
         <li className="landing-entry" key={g.id}>
@@ -337,6 +363,13 @@ function GovernanceEntries({
                 <span className="small-note">{c.records} records</span>
               </li>
             ))}
+            <li>
+              <ToolLink
+                tool={toolById('control-timelines')}
+                ids={summary}
+                onAction={onAction}
+              />
+            </li>
           </ul>
         )}
         <NavLink
@@ -408,6 +441,22 @@ function IdeasEntries({
           </NavLink>
         </li>
       ))}
+      <li className="landing-entry">
+        <span className="eyebrow">Tool · propositions</span>
+        <h3>{stancesTitle}</h3>
+        <p>
+          For each proposition, the texts that articulate, contest or bear on
+          it, with their bylines and dates; or, for each author, the
+          propositions their texts take a stance on. Built from the stored
+          records alone, with a CSV of each collection.
+        </p>
+        <ToolLink
+          tool={toolById('stances')}
+          ids={summary}
+          onAction={onAction}
+          described={false}
+        />
+      </li>
     </>
   );
 }
@@ -505,7 +554,7 @@ function InstitutionEntries({
             <div key={group.letter}>
               <h4>{group.letter}</h4>
               <ul>
-                {group.people.map((p) => (
+                {group.people.map(listedPerson).map((p) => (
                   <li key={p.id}>
                     <NavLink
                       className="text-button"
@@ -556,7 +605,7 @@ export function HubPage({
         <ol>
           <Entries summary={summary} onAction={onAction} />
           <li className="landing-entry">
-            <span className="eyebrow">Chronicle</span>
+            <span className="eyebrow">Tool · chronicle</span>
             <h3>Browse by year</h3>
             <p>
               Every dated record, one page per year, in date order and grouped
@@ -564,13 +613,12 @@ export function HubPage({
               other stated dates are listed apart from the records. Selective:
               what the records hold, not a history of any year.
             </p>
-            <NavLink
-              className="landing-action"
-              href={startHref({ kind: 'years' }, summary)}
-              onOpen={() => onAction({ kind: 'years' })}
-            >
-              Browse the records by year →
-            </NavLink>
+            <ToolLink
+              tool={toolById('years')}
+              ids={summary}
+              onAction={onAction}
+              described={false}
+            />
           </li>
         </ol>
       </section>

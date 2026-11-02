@@ -30,7 +30,9 @@ test('the comparison opens from the Governance hub and shows each framework’s 
 }) => {
   const errors = collectErrors(page);
   await page.goto('/governance');
-  await page.getByRole('link', { name: 'Compare frameworks →' }).click();
+  await page
+    .getByRole('link', { name: 'Compare frameworks', exact: true })
+    .click();
   await expect(page).toHaveURL(/\/compare\/frontier-safety-frameworks$/);
   await expect(page.getByRole('heading', { level: 1 })).toHaveText(
     'Compare frameworks',
@@ -38,10 +40,19 @@ test('the comparison opens from the Governance hub and shows each framework’s 
   await expect(page.locator('.cmp-scope')).toContainText(
     'It does not show implementation, compliance or effectiveness',
   );
-  // Rule B wording in the legend.
-  await expect(page.locator('.cmp-legend')).toContainText(
+  // Rule B wording in the legend, collapsed above the table; each status
+  // label carries its meaning as well.
+  const legend = page.locator('.cmp-legend');
+  await expect(legend).not.toHaveAttribute('open', '');
+  await legend.locator('summary').focus();
+  await page.keyboard.press('Enter');
+  await expect(legend).toHaveAttribute('open', '');
+  await expect(legend).toContainText(
     'in a weaker form than the criterion’s own words',
   );
+  await expect(
+    page.locator('.cmp-cell-partly .cmp-status').first(),
+  ).toHaveAttribute('title', /in a weaker form than the criterion’s own words/);
   // Wide screen: the table, one column per framework, latest editions.
   const table = page.locator('.cmp-table table');
   await expect(table.locator('thead th')).toHaveCount(8);
@@ -74,11 +85,17 @@ test('the comparison opens from the Governance hub and shows each framework’s 
     .getByRole('button', { name: /Close/ })
     .first()
     .click();
-  // An earlier edition can be chosen per framework.
+  // An earlier edition can be chosen per framework, behind one control.
+  const toggle = page.getByRole('button', { name: /^Choose editions/ });
+  await expect(toggle).toHaveText('Choose editions (0 chosen)');
+  await expect(toggle).toHaveAttribute('aria-expanded', 'false');
+  await toggle.click();
+  await expect(toggle).toHaveAttribute('aria-expanded', 'true');
   await page
     .getByRole('combobox', { name: /Anthropic · Responsible Scaling Policy/ })
     .selectOption('rsp-2023');
   await expect(table.locator('thead th').nth(1)).toContainText('v1.0');
+  await expect(toggle).toHaveText('Choose editions (1 chosen)');
   await expect(
     halt
       .locator('td')
@@ -119,6 +136,7 @@ test('paraphrased questions are marked as paraphrases, never as quotations', asy
   await page
     .getByRole('combobox', { name: 'Question' })
     .selectOption('D8.changes');
+  await page.getByRole('button', { name: /^Choose editions/ }).click();
   await page
     .getByRole('combobox', { name: /^Anthropic/ })
     .selectOption('rsp-2023');
@@ -150,8 +168,11 @@ test('one question at a time, from a link, with absences and unchecked cells exp
   await page
     .getByRole('combobox', { name: 'Question' })
     .selectOption('D3.halt');
-  await expect(page).toHaveURL(/facet=D3\.halt/);
+  await expect(page).toHaveURL(
+    /\/compare\/frontier-safety-frameworks\/d3-halt$/,
+  );
   // Meta Version 1.1: re-checked cells are stated or not found.
+  await page.getByRole('button', { name: /^Choose editions/ }).click();
   await page
     .getByRole('combobox', { name: /^Meta/ })
     .selectOption('meta-faf-v1-1');
@@ -193,6 +214,8 @@ for (const width of [1440, 390])
       await page.goto('/compare/frontier-safety-frameworks');
       await setTheme(page, theme);
       await page.locator('.doc-limits-box summary').click();
+      await page.locator('.cmp-legend summary').click();
+      await page.getByRole('button', { name: /^Choose editions/ }).click();
       // A phone starts with one question at a time.
       if (width === 390) await expect(page.locator('.cmp-rows')).toBeVisible();
       else await expect(page.locator('.cmp-table')).toBeVisible();
@@ -207,10 +230,7 @@ for (const width of [1440, 390])
       // The other layout too.
       await page
         .getByRole('button', {
-          name:
-            width === 390
-              ? 'All questions in a table'
-              : 'One question at a time',
+          name: width === 390 ? 'All frameworks' : 'One question',
         })
         .click();
       expect(await fitsViewport(page)).toBe(true);
@@ -232,7 +252,7 @@ test.describe('without JavaScript', () => {
   }) => {
     await page.goto('/governance');
     await expect(
-      page.getByRole('link', { name: 'Compare frameworks →' }),
+      page.getByRole('link', { name: 'Compare frameworks', exact: true }),
     ).toHaveAttribute('href', '/compare/frontier-safety-frameworks');
     const response = await page.goto('/compare/frontier-safety-frameworks');
     expect(response?.status()).toBe(200);
@@ -260,6 +280,9 @@ test.describe('without JavaScript', () => {
     await expect(page.locator('.cmp-legend')).toContainText(
       'It does not show that the developer lacks the practice',
     );
+    await expect(
+      page.locator('.cmp-cell-not-found .cmp-status').first(),
+    ).toHaveAttribute('title', /It does not show that the developer lacks/);
     await expect(page.locator('.cmp-scope')).toContainText(
       'It does not show implementation, compliance or effectiveness',
     );
@@ -290,8 +313,69 @@ test('the browser takes over the built comparison in place', async ({
         (window as unknown as { built: Element }).built,
     ),
   ).toBe(true);
+  const toggle = page.getByRole('button', { name: /^Choose editions/ });
+  await expect(toggle).toBeEnabled();
+  await toggle.click();
   await expect(
     page.getByRole('combobox', { name: /^Anthropic/ }),
   ).toBeEnabled();
+  expect(errors).toEqual([]);
+});
+
+for (const [width, height] of [
+  [1280, 800],
+  [1440, 900],
+] as const)
+  test(`the table header and first question start on the first screen at ${width}×${height}`, async ({
+    page,
+  }) => {
+    await page.setViewportSize({ width, height });
+    await page.goto('/compare/frontier-safety-frameworks');
+    const head = await page.locator('.cmp-table thead').boundingBox();
+    const first = await page
+      .locator('.cmp-table tbody tr:not(.cmp-dimension-row) th')
+      .first()
+      .boundingBox();
+    expect(head!.y).toBeGreaterThan(0);
+    expect(head!.y + head!.height).toBeLessThan(height);
+    // The first question row begins with room to read its opening lines.
+    expect(first!.y + 120).toBeLessThan(height);
+    // Introduction, scope, views, link, download and editions control lie
+    // above it, the legend and pickers collapsed.
+    await expect(page.locator('.cmp-scope')).toBeInViewport();
+    await expect(
+      page.getByRole('button', { name: 'Copy link to this comparison' }),
+    ).toBeInViewport();
+    await expect(
+      page.getByRole('link', { name: 'Download every cell as CSV' }),
+    ).toBeInViewport();
+    await expect(page.locator('.cmp-editions')).toBeHidden();
+    await expect(page.locator('.cmp-legend')).not.toHaveAttribute('open', '');
+  });
+
+test('an address with chosen editions opens the editions control', async ({
+  page,
+}) => {
+  const errors = collectErrors(page);
+  await page.goto('/compare/frontier-safety-frameworks?edition=rsp-2023');
+  const toggle = page.getByRole('button', { name: /^Choose editions/ });
+  await expect(toggle).toHaveAttribute('aria-expanded', 'true');
+  await expect(toggle).toHaveText('Choose editions (1 chosen)');
+  await expect(page.getByRole('combobox', { name: /^Anthropic/ })).toHaveValue(
+    'rsp-2023',
+  );
+  // Keyboard: the control closes and reopens the pickers, which follow it.
+  await toggle.focus();
+  await page.keyboard.press('Enter');
+  await expect(page.locator('.cmp-editions')).toBeHidden();
+  await page.keyboard.press('Space');
+  await expect(page.locator('.cmp-editions')).toBeVisible();
+  // A question's own page too.
+  await page.goto(
+    '/compare/frontier-safety-frameworks/d3-halt?edition=rsp-2023',
+  );
+  await expect(
+    page.getByRole('button', { name: /^Choose editions/ }),
+  ).toHaveAttribute('aria-expanded', 'true');
   expect(errors).toEqual([]);
 });

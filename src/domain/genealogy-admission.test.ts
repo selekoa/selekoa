@@ -1,4 +1,6 @@
 import { describe, expect, it } from 'vitest';
+import auditFollowups from '../../review/audit-followups-before-2026-11-02.json';
+import labGenealogy2 from '../../review/lab-genealogy-2-admission-before-2026-11-01.json';
 import chinaLabs3 from '../../review/china-labs-3-admission-1-before-2026-10-31.json';
 import pack from '../../research/lab-genealogy/pack.json';
 import map from '../../review/genealogy-admission-map-2026-10-17.json';
@@ -65,10 +67,17 @@ describe('the lab genealogy (admitted 2026-10-17, schema 2.15)', () => {
       expect(stored?.predicate, c.id).toBe(c.predicate);
       expect(stored!.editorialState).toBe('seed');
       // The third Chinese collection (2026-10-31) added StepFun's own post as
-      // primary evidence to four role records (its decision 8).
+      // primary evidence to four role records (its decision 8); the lab
+      // genealogy 2 admission (2026-11-01) added the CMA's passages to the
+      // Microsoft–Inflection agreement and SSI's release to Sutskever's
+      // co-founding. The audit follow-ups (2026-11-02) added Leike's post of
+      // 15 May 2024 to his departure record.
       expect(
         stored!.evidenceIds.filter(
-          (id) => !chinaLabs3.added.evidence.includes(id),
+          (id) =>
+            !chinaLabs3.added.evidence.includes(id) &&
+            !labGenealogy2.added.evidence.includes(id) &&
+            !auditFollowups.added.evidence.includes(id),
         ),
       ).toEqual(c.evidence.map((e) => e.id));
     }

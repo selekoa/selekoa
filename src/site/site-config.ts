@@ -72,6 +72,14 @@ export function analyticsTag(c: SiteConfig): string {
   }
 }
 
+/** The image link previews show: the wordmark, the title and the start page's line. */
+export const shareCard = {
+  path: 'og/selekoa-card.png',
+  width: 1200,
+  height: 627,
+  alt: 'selekoa. A documentary history of machine intelligence. Machines find the sources, quote them and check each other’s work. What they leave to you is the human part: the question, the point of view, the stance.',
+} as const;
+
 /** Applies the launch settings to index.html. Throws if the template changed shape. */
 export function transformHtml(html: string, c: SiteConfig): string {
   let out = html;
@@ -94,7 +102,13 @@ export function transformHtml(html: string, c: SiteConfig): string {
       `<meta property="og:title" content="${title}" />`,
       `<meta property="og:description" content="${description}" />`,
       `<meta property="og:url" content="${escape(c.baseUrl)}" />`,
-      '<meta name="twitter:card" content="summary" />',
+      // The share card (scripts/og-card/card.html, rendered at 1200×627).
+      `<meta property="og:image" content="${escape(c.baseUrl)}${shareCard.path}" />`,
+      `<meta property="og:image:width" content="${shareCard.width}" />`,
+      `<meta property="og:image:height" content="${shareCard.height}" />`,
+      `<meta property="og:image:alt" content="${shareCard.alt}" />`,
+      '<meta name="twitter:card" content="summary_large_image" />',
+      `<meta name="twitter:image" content="${escape(c.baseUrl)}${shareCard.path}" />`,
     );
   }
   const analytics = analyticsTag(c);

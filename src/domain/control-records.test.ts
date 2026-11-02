@@ -208,6 +208,35 @@ describe('OpenAI and Anthropic control structures (week 4c)', () => {
       );
   });
 
+  it('reads a staff role whose sourcing note names a board as no board role', async () => {
+    const staff = [
+      'lg-oai-schulman-departure-2024',
+      'lg-oai-weng-departure-2024',
+    ];
+    // Both roles mention a board only in their sourcing note.
+    for (const id of staff)
+      expect(repository.claims.get(id)!.attributes?.role).toMatch(
+        /^[^(]*\(.*Board/,
+      );
+    const page = controlStructure(data, openaiControl);
+    expect(openaiControl.version).toBe(2);
+    const ids = page.entries.map((e) => e.claim.id);
+    for (const id of staff) expect(ids).not.toContain(id);
+    // Board roles stay, including those with a note in parentheses.
+    expect(ids).toContain('lg-oai-hurd-board-2021');
+    expect(ids).toContain('cs-christiano-openai-foundation-board-2026');
+    // The research starter exports the same records.
+    const starter = await controlStructureStarter(data, openaiControl);
+    const exported = JSON.stringify(starter.controlStructure.timeline);
+    for (const id of staff) expect(exported).not.toContain(id);
+    expect(controlStarterMarkdown(starter)).not.toMatch(/Schulman|Lilian Weng/);
+    // Version 1, which released datasets up to v0.22.0 carry, still reads the
+    // whole role text, so that those releases reproduce.
+    const v1 = controlStructure(data, { ...openaiControl, version: 1 });
+    for (const id of staff)
+      expect(v1.entries.map((e) => e.claim.id)).toContain(id);
+  });
+
   it('exports a research starter for each timeline', async () => {
     for (const collection of controlStructures) {
       const starter = await controlStructureStarter(data, collection);
