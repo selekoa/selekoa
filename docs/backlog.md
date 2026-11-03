@@ -376,9 +376,17 @@ it needs a schema change (minor).
     expression once for all ten records of the paper.
   - Item 117 follow-up: Y08 has no earliest located contesting text. Recheck
     the bounded Y08 candidate sequence before setting one.
-  - The sample certifies no unsampled record. A Codex sweep of absence
-    claims ("does not", "gives no"), the kind of error in items 80 and 119,
-    is running on branch `codex/absence-claims-sweep`.
+  - The sample certifies no unsampled record. The Codex sweep of absence
+    claims is applied: part 1 in v0.26.2
+    ([record](../review/absence-sweep-apply-part1-2026-11-02.md)), part 2 in
+    v0.26.3 ([record](../review/absence-sweep-apply-part2-2026-11-03.md)).
+    Left as they are: the 3 unverifiable records (`ts-b6-samuel-1960-contests`,
+    `ts-b1-crocker-1996-12-31-context`, `yk-y17-creating-friendly-ai-2001-c`)
+    and the 21 `aib-`/`ab-` records the maintainer excluded, which the sweep
+    did not check.
+  - Leads from part 1, for the A3 re-check and Y20: Minsky 1961's GPS
+    "bootstrapping" and its reference to Newell, Shaw and Simon; AIPNFGR
+    section 10 ("does not hate you") as a possible Y20 contesting record.
 
   Source: `review/cross-family-audit-sample-2026-11-02.md`;
   `review/audit-sample-fixes-2026-11-02.md` § Held.

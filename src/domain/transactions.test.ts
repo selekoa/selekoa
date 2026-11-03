@@ -26,6 +26,8 @@ import aiBio2 from '../../review/ai-bio-admission-2-before-2026-10-30.json';
 import peopleAdmission from '../../review/people-admission-before-2026-10-31.json';
 import auditFollowups from '../../review/audit-followups-before-2026-11-02.json';
 import auditSampleFixes from '../../review/audit-sample-fixes-before-2026-11-02.json';
+import absenceSweepApply2 from '../../review/absence-sweep-apply-2-before-2026-11-03.json';
+import absenceSweepApply1 from '../../review/absence-sweep-apply-1-before-2026-11-02.json';
 import archiveFetchApply from '../../review/archive-fetch-apply-before-2026-11-02.json';
 import recheckDecisions from '../../review/recheck-decisions-before-2026-11-02.json';
 import prelaunchFixes from '../../review/prelaunch-fixes-before-2026-11-02.json';
@@ -287,6 +289,8 @@ describe('capital and compute transaction semantics', () => {
         ...peopleAdmission.added.claims,
         ...auditFollowups.added.claims,
         ...auditSampleFixes.added.claims,
+        ...absenceSweepApply2.added.claims,
+        ...absenceSweepApply1.added.claims,
         ...archiveFetchApply.added.claims,
         ...recheckDecisions.added.claims,
         ...prelaunchFixes.added.claims,

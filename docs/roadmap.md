@@ -361,6 +361,23 @@ further maintainer decisions of 2026-11-01 recorded under item 3 below; see
    - **Commitments by developer:** who signed which external commitment, when and
      in which edition. A signature is never compliance.
 
+### Next collections (maintainer order, 2026-11-02)
+
+Recorded after launch. Quality work comes first: apply the absence-claims sweep ([brief 08](briefs/08-absence-sweep-apply.md)) and settle the headlines under re-check ([brief 09](briefs/09-recheck-remaining.md)).
+
+**Most valuable**
+
+1. **Model cards compared** (the maintainer's first choice). For each frontier model release with a published system or model card, what the card discloses about dangerous-capability evaluations, external testing, framework threshold determinations and safeguards, on the same questions, in the format of Compare frameworks. Every cell quotes the card or records a stated search. Evaluations are recorded at policy level only.
+2. **Laws compared.** Finish it: apply the cross-family check ([brief 07](briefs/07-laws-compared-apply.md)), then admit it as a collection and a page.
+3. Release DOIs (Zenodo), later, as a maintainer decision.
+
+**Most interesting**, in this order:
+
+1. **Pre-history:** antecedent texts on machine intelligence before the modern record (Butler, Lovelace, Turing, Wiener, von Neumann and Ulam, Lem), as their own collection, so other collections need not stretch their periods. Cosmism and the cybernetics strands only where a text explicitly concerns machine intelligence.
+2. **AI and money:** what central banks, the BIS, the IMF, the FSB and supervisors have said about machine intelligence in payments, monetary policy, financial stability and supervision.
+3. **A dated record of AI predictions:** who predicted what, when, with what timeline and in what form (forecast, bet, survey). A prediction is recorded as stated; whether it came true is not judged by Selekoa.
+4. Possibly later: Finland and the Nordics in AI governance.
+
 ### Backlog
 
 - **AGI term provenance:** earliest located uses of 'artificial general intelligence' /

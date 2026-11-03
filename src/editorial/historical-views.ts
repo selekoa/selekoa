@@ -11,6 +11,8 @@ import entities from '../../data/entities.json';
 import claims from '../../data/claims.json';
 import sources from '../../data/sources.json';
 import evidence from '../../data/evidence.json';
+import absenceSweepApply2 from '../../review/absence-sweep-apply-2-before-2026-11-03.json';
+import absenceSweepApply1 from '../../review/absence-sweep-apply-1-before-2026-11-02.json';
 import auditSampleFixes from '../../review/audit-sample-fixes-before-2026-11-02.json';
 import archiveFetchApply from '../../review/archive-fetch-apply-before-2026-11-02.json';
 import recheckDecisions from '../../review/recheck-decisions-before-2026-11-02.json';
@@ -113,8 +115,18 @@ export function revert<R extends Raw>(raw: R, snapshot: Snapshot): R {
 
 const current = { meta, entities, claims, sources, evidence };
 
+/** Raw stored rows at schema 2.29 as released in v0.26.2, before part 2 of the textual absence-claims sweep of 2026-11-02 was applied. */
+export const preAbsenceSweepApply2Raw = revert(current, absenceSweepApply2);
+/** Raw stored rows at schema 2.29 as released in v0.26.1, before part 1 of the textual absence-claims sweep of 2026-11-02 was applied. */
+export const preAbsenceSweepApply1Raw = revert(
+  preAbsenceSweepApply2Raw,
+  absenceSweepApply1,
+);
 /** Raw stored rows at schema 2.29 as released in v0.26.0, before the maintainer's decisions of 2026-11-02 on the cross-family audit sample and the Turing 1951 lead. */
-export const preAuditSampleFixesRaw = revert(current, auditSampleFixes);
+export const preAuditSampleFixesRaw = revert(
+  preAbsenceSweepApply1Raw,
+  auditSampleFixes,
+);
 /** Raw stored rows at schema 2.29 as released in v0.25.0, before the maintainer's decisions of 2026-11-02 on the archive retrieval of held sources. */
 export const preArchiveFetchApplyRaw = revert(
   preAuditSampleFixesRaw,

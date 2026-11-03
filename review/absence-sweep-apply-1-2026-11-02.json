@@ -1,0 +1,1286 @@
+{
+  "description": "Part 1 of the textual absence-claims sweep of 2026-11-02 (review/absence-claims-sweep-2026-11-02-part1.md, Codex, branch codex/absence-claims-sweep at f8e00f7): every checked record marked “absence fails” or “scope issue” corrected to what the source supports, with the sweep’s passage and locator. Two of the 41 were already corrected in v0.26.1. No earliest located role is withdrawn. The full record is in review/absence-sweep-apply-part1-2026-11-02.md. Applied by scripts/apply-recheck.ts; built by scripts/absence-sweep-apply-1-spec.py.",
+  "date": "2026-11-02",
+  "schemaVersion": "2.29",
+  "snapshotPath": "review/absence-sweep-apply-1-before-2026-11-02.json",
+  "snapshotDescription": "Rows changed by part 1 of the textual absence-claims sweep of 2026-11-02 (scripts/apply-recheck.ts, review/absence-sweep-apply-1-2026-11-02.json). Reverting it (src/editorial/historical-views.ts) reproduces the dataset as it was at baseCommit.",
+  "unchanged": {
+    "yk-y11-sl4-2000-10-03-yudkowsky-0010-0125-c": {
+      "item": 85,
+      "verdict": "absence fails",
+      "reason": "Already corrected in v0.26.1 (cross-family audit sample, item 119): the qualification and engagement take account of the section “Webmind’s awakening”. The sweep read the v0.26.0 baseline (4627aa9)."
+    },
+    "rd-r06-pinker-2018-popsci-fear-robots": {
+      "item": 220,
+      "verdict": "absence fails",
+      "reason": "Already corrected in v0.26.1 (cross-family audit sample, item 80): the qualification quotes the trained-on-smiling-faces scenario and the “trained on millions of examples” sentence. The sweep read the v0.26.0 baseline (4627aa9)."
+    }
+  },
+  "corrections": [
+    {
+      "id": "sweep-6:ts-b2-erewhon-1872-context",
+      "item": 6,
+      "verdict": "scope issue",
+      "finding": "The cited paragraph expressly limits the mediation claim to the present and immediately considers machines acquiring direct hearing and developed language. The qualification drops that temporal and sensory scope and makes it sound like a limit throughout the fictional treatise.",
+      "decision": "Brief 08 and the task of 2026-11-02: correct the qualification or note to what the source supports, using the sweep’s passage and locator.",
+      "reread": false,
+      "patches": [
+        {
+          "table": "claims",
+          "id": "ts-b2-erewhon-1872-context",
+          "path": "qualification",
+          "old": "Fiction inside a satirical novel; the machines act only through people.",
+          "new": "Fiction inside a satirical novel. In the treatise the machines as yet receive their impressions through human senses (chapter XXI, pp. 196–197 of the 1872 printing); it goes on to consider machines that hear directly and develop a language of their own."
+        },
+        {
+          "table": "evidence",
+          "id": "evidence-ts-b2-erewhon-1872-context",
+          "path": "checkedAt",
+          "old": "2026-10-06",
+          "new": "2026-11-02"
+        },
+        {
+          "table": "evidence",
+          "id": "evidence-ts-b2-erewhon-1872-context",
+          "path": "note",
+          "old": "The same passage as the B6 record; read on the page images.",
+          "new": "The same passage as the B6 record; read on the page images. Corrected on 2026-11-02 after the textual absence-claims sweep of 2026-11-02, part 1 (review/absence-claims-sweep-2026-11-02-part1.md, record 6): the record’s qualification no longer states the absence the sweep found too broad or contradicted; this passage is unchanged. The session applying the correction took the passage and locator from the sweep, which read the source on 2026-11-02, and did not retrieve it again. Recorded in review/absence-sweep-apply-part1-2026-11-02.md."
+        }
+      ]
+    },
+    {
+      "id": "sweep-11:ts-a4-turing-c1951-context",
+      "item": 11,
+      "verdict": "scope issue",
+      "finding": "The closing paragraph does give a qualitative transition horizon: it would not take long to outstrip human powers. It supplies no numerical hours-to-months period. The qualification should preserve the qualitative forecast while stating the collection criterion’s narrower missing precision.",
+      "decision": "Brief 08 and the task of 2026-11-02: correct the qualification or note to what the source supports, using the sweep’s passage and locator.",
+      "reread": false,
+      "patches": [
+        {
+          "table": "claims",
+          "id": "ts-a4-turing-c1951-context",
+          "path": "qualification",
+          "old": "No transition period is stated.",
+          "new": "The talk says that once machine thinking had started it would not take long to outstrip human powers; it gives no duration for the transition."
+        },
+        {
+          "table": "evidence",
+          "id": "evidence-ts-a4-turing-c1951-context",
+          "path": "checkedAt",
+          "old": "2026-10-06",
+          "new": "2026-11-02"
+        },
+        {
+          "table": "evidence",
+          "id": "evidence-ts-a4-turing-c1951-context",
+          "path": "note",
+          "old": "Read on the page image.",
+          "new": "Read on the page image. Corrected on 2026-11-02 after the textual absence-claims sweep of 2026-11-02, part 1 (review/absence-claims-sweep-2026-11-02-part1.md, record 11): the record’s qualification no longer states the absence the sweep found too broad or contradicted; this passage is unchanged. The session applying the correction took the passage and locator from the sweep, which read the source on 2026-11-02, and did not retrieve it again. Recorded in review/absence-sweep-apply-part1-2026-11-02.md."
+        }
+      ]
+    },
+    {
+      "id": "sweep-12:ts-a4-turing-1951-context",
+      "item": 12,
+      "verdict": "absence fails",
+      "finding": "The complete script supplies both a forecast of convincing question-answering by the end of the century and a conditional horizon within the next millennium for the danger just discussed. These are arrival/danger horizons, rather than a numerical duration of a takeoff after human-level capability. The qualification removes that distinction.",
+      "decision": "Brief 08 and the task of 2026-11-02: correct the qualification or note to what the source supports, using the sweep’s passage and locator.",
+      "reread": false,
+      "patches": [
+        {
+          "table": "claims",
+          "id": "ts-a4-turing-1951-context",
+          "path": "qualification",
+          "old": "No timescale is given.",
+          "new": "The script gives no duration for a transition after machines reach human level. It does give horizons: convincing question-answering by the end of the century, and, for the danger it discusses, “If it comes at all it will almost certainly be within the next millennium” (final printed p. 7)."
+        },
+        {
+          "table": "evidence",
+          "id": "evidence-ts-a4-turing-1951-context",
+          "path": "passage",
+          "old": "Turing contemplates machines thinking more intelligently than people, without saying how quickly that would come about.",
+          "new": "Turing contemplates machines thinking more intelligently than people, without saying how long a transition to that state would take."
+        },
+        {
+          "table": "evidence",
+          "id": "evidence-ts-a4-turing-1951-context",
+          "path": "checkedAt",
+          "old": "2026-10-06",
+          "new": "2026-11-02"
+        },
+        {
+          "table": "evidence",
+          "id": "evidence-ts-a4-turing-1951-context",
+          "path": "note",
+          "old": "Paraphrase from the pre-1996 candidate search.",
+          "new": "Paraphrase from the pre-1996 candidate search. Corrected on 2026-11-02 after the textual absence-claims sweep of 2026-11-02, part 1 (review/absence-claims-sweep-2026-11-02-part1.md, record 12): the record’s qualification no longer says that the script gives no timescale, and this paraphrase now says it gives no duration for the transition, not that it gives no time at all. The session applying the correction took the passage and locator from the sweep, which read the source on 2026-11-02, and did not retrieve it again. Recorded in review/absence-sweep-apply-part1-2026-11-02.md."
+        }
+      ]
+    },
+    {
+      "id": "sweep-14:ts-a3-dartmouth-1955-context",
+      "item": 14,
+      "verdict": "scope issue",
+      "finding": "The qualification should name the missing recursive improvement mechanism. The short self-improvement item does not spell out the schemes it mentions; the full attachment contains proposed mechanisms for learning, internal models, abstraction and self-reference. An unqualified no-mechanism sentence can be read as applying to all of these.",
+      "decision": "Brief 08 and the task of 2026-11-02: correct the qualification or note to what the source supports, using the sweep’s passage and locator.",
+      "reread": false,
+      "patches": [
+        {
+          "table": "claims",
+          "id": "ts-a3-dartmouth-1955-context",
+          "path": "qualification",
+          "old": "No mechanism is given.",
+          "new": "The self-improvement item names existing schemes as worth further study without describing them, and gives no mechanism for improving the improvement process. The attached research statements separately describe approaches to learning and internal models."
+        },
+        {
+          "table": "evidence",
+          "id": "evidence-ts-a3-dartmouth-1955-context",
+          "path": "checkedAt",
+          "old": "2026-10-06",
+          "new": "2026-11-02"
+        },
+        {
+          "table": "evidence",
+          "id": "evidence-ts-a3-dartmouth-1955-context",
+          "path": "note",
+          "old": "Paraphrase from the pre-1996 candidate search.",
+          "new": "Paraphrase from the pre-1996 candidate search. Corrected on 2026-11-02 after the textual absence-claims sweep of 2026-11-02, part 1 (review/absence-claims-sweep-2026-11-02-part1.md, record 14): the record’s qualification no longer states the absence the sweep found too broad or contradicted; this passage is unchanged. The session applying the correction took the passage and locator from the sweep, which read the source on 2026-11-02, and did not retrieve it again. Recorded in review/absence-sweep-apply-part1-2026-11-02.md."
+        }
+      ]
+    },
+    {
+      "id": "sweep-17:ts-a3-minsky-1961-context",
+      "item": 17,
+      "verdict": "scope issue",
+      "finding": "The qualification is too categorical for the paper as a whole. Beyond the general improvement summary, the planning section explicitly discusses self-application of GPS to improve its own methods. The narrower question of repeated improvement of improvement capacity should be stated separately rather than treating the paper as lacking self-application.",
+      "decision": "Brief 08 and the task of 2026-11-02: correct the qualification or note to what the source supports, using the sweep’s passage and locator. The sweep’s proposed sentence is an instruction to the editor (assess the proposal against A3); the record states what the text says and leaves the assessment to the A3 re-check.",
+      "reread": true,
+      "patches": [
+        {
+          "table": "claims",
+          "id": "ts-a3-minsky-1961-context",
+          "path": "qualification",
+          "old": "Heuristic improvement of problem solving, not recursive self-improvement.",
+          "new": "The summarising paragraph concerns heuristic improvement of problem solving through learning and planning. Section IV-D (Planning) also describes GPS as to be self-applied to discovering its own Differences: “bootstrapping”, “applying a problem-solving system to the task of improving some of its own methods”, which Minsky calls old and familiar. Whether that self-application improves the capacity to improve, as A3 requires, is not assessed here."
+        },
+        {
+          "table": "evidence",
+          "id": "evidence-ts-a3-minsky-1961-context",
+          "path": "checkedAt",
+          "old": "2026-10-06",
+          "new": "2026-11-02"
+        },
+        {
+          "table": "evidence",
+          "id": "evidence-ts-a3-minsky-1961-context",
+          "path": "note",
+          "old": "Paraphrase from the pre-1996 candidate search; not re-read for this collection.",
+          "new": "Paraphrase from the pre-1996 candidate search; not re-read for this collection. Corrected on 2026-11-02 after the textual absence-claims sweep of 2026-11-02, part 1 (review/absence-claims-sweep-2026-11-02-part1.md, record 17): the record’s qualification no longer says categorically that the paper concerns heuristic improvement rather than self-improvement; this passage is unchanged. The session applying the correction re-read the sweep’s passage in the source as served on 2026-11-02. Recorded in review/absence-sweep-apply-part1-2026-11-02.md."
+        }
+      ]
+    },
+    {
+      "id": "sweep-18:ts-a1-good-1965",
+      "item": 18,
+      "verdict": "absence fails",
+      "finding": "The conclusion gives a probability-qualified forecast for construction within the twentieth century. That refutes the unqualified absence of any timescale. The intelligence-explosion paragraph supplies no duration for the post-construction feedback process; construction horizon and takeoff duration must be separated. No contrary passage about concealment was located in the inspected argument sections.",
+      "decision": "Brief 08 and the task of 2026-11-02: correct the qualification or note to what the source supports, using the sweep’s passage and locator. The earliest located and earliest located term roles stay: the sweep finds section 2 still meets A1.",
+      "reread": true,
+      "patches": [
+        {
+          "table": "claims",
+          "id": "ts-a1-good-1965",
+          "path": "qualification",
+          "old": "The chapter gives no timescale and says nothing about concealment. For the explosion it cites its references [22], [34] and [44]: Good’s 1951 review of a book by D. R. Hartree, an IBM report of 1959 (RC-115) and \"The social implications of artificial intelligence\" in The Scientist Speculates (1963); none was retrieved. An Internet Archive full-text search for the phrase in items indexed before 1965 found only unresolved or misdated hits.",
+          "new": "The chapter gives no duration for the intelligence explosion; its conclusions (section 9, printed p. 78) say it is “more probable than not that, within the twentieth century, an ultraintelligent machine will be built”. No passage on concealment was located in sections 1–2 and 9 or by full-text search; the technical sections were not read line by line. For the explosion it cites its references [22], [34] and [44]: Good’s 1951 review of a book by D. R. Hartree, an IBM report of 1959 (RC-115) and \"The social implications of artificial intelligence\" in The Scientist Speculates (1963); none was retrieved. An Internet Archive full-text search for the phrase in items indexed before 1965 found only unresolved or misdated hits."
+        },
+        {
+          "table": "evidence",
+          "id": "evidence-ts-a1-good-1965",
+          "path": "checkedAt",
+          "old": "2026-10-06",
+          "new": "2026-11-02"
+        },
+        {
+          "table": "evidence",
+          "id": "evidence-ts-a1-good-1965",
+          "path": "note",
+          "old": "Checked against the text layer of the inspected scan on 2026-10-06 (hash matched the 1996–2022 candidate search), and by a machine check on the page image of a second scan. Labelled paraphrase: the scan is a third-party copy of an in-copyright chapter.",
+          "new": "Checked against the text layer of the inspected scan on 2026-10-06 (hash matched the 1996–2022 candidate search), and by a machine check on the page image of a second scan. Labelled paraphrase: the scan is a third-party copy of an in-copyright chapter. Corrected on 2026-11-02 after the textual absence-claims sweep of 2026-11-02, part 1 (review/absence-claims-sweep-2026-11-02-part1.md, record 18): the record’s qualification no longer says that the chapter gives no timescale; this passage is unchanged. The session applying the correction re-read the sweep’s passage in the source as served on 2026-11-02. Recorded in review/absence-sweep-apply-part1-2026-11-02.md."
+        }
+      ]
+    },
+    {
+      "id": "sweep-21:ts-c1-weizenbaum-1966",
+      "item": 21,
+      "verdict": "absence fails",
+      "finding": "The full paper’s discussion explicitly proposes credibility experiments using ELIZA and a test of understanding based on drawing valid conclusions. These contradict the unqualified absence of a test.",
+      "decision": "Brief 08 and the task of 2026-11-02: correct the qualification or note to what the source supports, using the sweep’s passage and locator. The earliest located role stays: the sweep finds the illusion-of-understanding passage still meets C1.",
+      "reread": true,
+      "patches": [
+        {
+          "table": "claims",
+          "id": "ts-c1-weizenbaum-1966",
+          "path": "qualification",
+          "old": "Concerns the appearance of understanding in conversation with one program and its explanation; the article proposes no test. The wording was checked in a scan of the printed pages, whose text layer is OCR. Earliest located means the earliest text found by the collection’s searches and the cross-family re-check of 2026-11-02, not a first statement.",
+          "new": "Concerns the appearance of understanding in conversation with one program and its explanation. The Discussion (printed pp. 42–43) proposes experiments, with ELIZA as the vehicle, on keeping its responses credible, and says the crucial test of understanding is not the ability to continue a conversation but to draw valid conclusions from what one is told. The wording was checked in a scan of the printed pages, whose text layer is OCR. Earliest located means the earliest text found by the collection’s searches and the cross-family re-check of 2026-11-02, not a first statement."
+        },
+        {
+          "table": "evidence",
+          "id": "evidence-ts-c1-weizenbaum-1966-2",
+          "path": "note",
+          "old": "Quotation matched on 2026-11-02 against the held source, retrieved on 2026-11-02 from the source’s evidence URL (SHA-256 3b18ed3ebf7c28670c215709e778c9b339055fb225b0286796bd0767197be041). Matching ignored differences of whitespace, case, quotation marks, dashes and Unicode compatibility forms; “…” joins fragments that occur in order. Cross-family pass: the re-check of 2026-11-02 (review/earliest-located-recheck-2026-11-02.md, role 34) read this text for this proposition and role. Admitted by the maintainer’s decision of 2026-11-02. No human editorial review.",
+          "new": "Quotation matched on 2026-11-02 against the held source, retrieved on 2026-11-02 from the source’s evidence URL (SHA-256 3b18ed3ebf7c28670c215709e778c9b339055fb225b0286796bd0767197be041). Matching ignored differences of whitespace, case, quotation marks, dashes and Unicode compatibility forms; “…” joins fragments that occur in order. Cross-family pass: the re-check of 2026-11-02 (review/earliest-located-recheck-2026-11-02.md, role 34) read this text for this proposition and role. Admitted by the maintainer’s decision of 2026-11-02. No human editorial review. Corrected on 2026-11-02 after the textual absence-claims sweep of 2026-11-02, part 1 (review/absence-claims-sweep-2026-11-02-part1.md, record 21): the record’s qualification no longer says that the article proposes no test; this passage is unchanged. The session applying the correction re-read the sweep’s passage in the source as served on 2026-11-02. Recorded in review/absence-sweep-apply-part1-2026-11-02.md."
+        }
+      ]
+    },
+    {
+      "id": "sweep-22:ts-a1-moravec-1979",
+      "item": 22,
+      "verdict": "absence fails",
+      "finding": "The qualification generalises the research-tools discussion to the whole essay. Section 5 explicitly puts machines to work improving their own software and hardware, projects increasingly smarter successor generations, and denies human equivalence as an upper bound. That directly contradicts the unqualified beyond-human absence.",
+      "decision": "Brief 08 and the task of 2026-11-02: correct the qualification or note to what the source supports, using the sweep’s passage and locator.",
+      "reread": false,
+      "patches": [
+        {
+          "table": "claims",
+          "id": "ts-a1-moravec-1979",
+          "path": "qualification",
+          "old": "The compounding brings capable systems sooner; it does not describe a runaway beyond human level.",
+          "new": "In the cited paragraph the compounding brings capable systems sooner. Section 5 separately describes machines improving their own software and hardware over successive generations that “will be increasingly smarter”, and says there is no reason to assume human equivalence is an upper bound."
+        },
+        {
+          "table": "evidence",
+          "id": "evidence-ts-a1-moravec-1979",
+          "path": "checkedAt",
+          "old": "2026-10-06",
+          "new": "2026-11-02"
+        },
+        {
+          "table": "evidence",
+          "id": "evidence-ts-a1-moravec-1979",
+          "path": "note",
+          "old": "The same passage as the A3 record.",
+          "new": "The same passage as the A3 record. Corrected on 2026-11-02 after the textual absence-claims sweep of 2026-11-02, part 1 (review/absence-claims-sweep-2026-11-02-part1.md, record 22): the record’s qualification no longer says that the essay does not describe a runaway beyond human level; this passage is unchanged. The session applying the correction took the passage and locator from the sweep, which read the source on 2026-11-02, and did not retrieve it again. Recorded in review/absence-sweep-apply-part1-2026-11-02.md."
+        }
+      ]
+    },
+    {
+      "id": "sweep-26:ts-a4-drexler-1986-context",
+      "item": 26,
+      "verdict": "scope issue",
+      "finding": "The final synthesis does supply a qualitative brief period for many areas of technological advance. It does not quantify a human-to-superhuman AI capability transition. The qualification should state that narrower missing duration.",
+      "decision": "Brief 08 and the task of 2026-11-02: correct the qualification or note to what the source supports, using the sweep’s passage and locator.",
+      "reread": false,
+      "patches": [
+        {
+          "table": "claims",
+          "id": "ts-a4-drexler-1986-context",
+          "path": "qualification",
+          "old": "No transition period is given.",
+          "new": "Predicts that once automated engineering and assemblers operate many technologies will advance “in a brief time”; it gives no duration for a transition from human-level to superhuman AI."
+        },
+        {
+          "table": "evidence",
+          "id": "evidence-ts-a4-drexler-1986-context",
+          "path": "checkedAt",
+          "old": "2026-10-06",
+          "new": "2026-11-02"
+        },
+        {
+          "table": "evidence",
+          "id": "evidence-ts-a4-drexler-1986-context",
+          "path": "note",
+          "old": "Checked against the 1997 capture.",
+          "new": "Checked against the 1997 capture. Corrected on 2026-11-02 after the textual absence-claims sweep of 2026-11-02, part 1 (review/absence-claims-sweep-2026-11-02-part1.md, record 26): the record’s qualification no longer states the absence the sweep found too broad or contradicted; this passage is unchanged. The session applying the correction took the passage and locator from the sweep, which read the source on 2026-11-02, and did not retrieve it again. Recorded in review/absence-sweep-apply-part1-2026-11-02.md."
+        }
+      ]
+    },
+    {
+      "id": "sweep-31:ts-a1-moravec-1989-context",
+      "item": 31,
+      "verdict": "scope issue",
+      "finding": "The broad sentence omits the full text’s proposed account of adaptive mental components and testing. The narrower missing element is an explicit derivation of an intelligence-driven acceleration feedback loop, rather than an absence of any mechanism.",
+      "decision": "Brief 08 and the task of 2026-11-02: correct the qualification or note to what the source supports, using the sweep’s passage and locator.",
+      "reread": false,
+      "patches": [
+        {
+          "table": "claims",
+          "id": "ts-a1-moravec-1989-context",
+          "path": "qualification",
+          "old": "No mechanism is given.",
+          "new": "The text forecasts increasingly rapid self-improvement and describes mental components being created, tested, added and deleted; it does not derive how improved intelligence would accelerate the improvement itself."
+        },
+        {
+          "table": "evidence",
+          "id": "evidence-ts-a1-moravec-1989-context",
+          "path": "checkedAt",
+          "old": "2026-10-06",
+          "new": "2026-11-02"
+        },
+        {
+          "table": "evidence",
+          "id": "evidence-ts-a1-moravec-1989-context",
+          "path": "note",
+          "old": "Paraphrase checked against the retrieved file.",
+          "new": "Paraphrase checked against the retrieved file. Corrected on 2026-11-02 after the textual absence-claims sweep of 2026-11-02, part 1 (review/absence-claims-sweep-2026-11-02-part1.md, record 31): the record’s qualification no longer states the absence the sweep found too broad or contradicted; this passage is unchanged. The session applying the correction took the passage and locator from the sweep, which read the source on 2026-11-02, and did not retrieve it again. Recorded in review/absence-sweep-apply-part1-2026-11-02.md."
+        }
+      ]
+    },
+    {
+      "id": "sweep-38:ts-a5-vinge-1993",
+      "item": 38,
+      "verdict": "scope issue",
+      "finding": "The cited paragraph leaves the creators at the general level of greater-than-human intelligence, but the preceding discussion distinguishes several possible routes and later sections develop intelligence amplification. A whole-paper absence would erase that context.",
+      "decision": "Brief 08 and the task of 2026-11-02: correct the qualification or note to what the source supports, using the sweep’s passage and locator.",
+      "reread": true,
+      "patches": [
+        {
+          "table": "claims",
+          "id": "ts-a5-vinge-1993",
+          "path": "qualification",
+          "old": "The creating entities are not specified further.",
+          "new": "This paragraph leaves the creating entities at the general level of greater-than-human intelligence; the paper elsewhere distinguishes several routes to it (computers, networks, human–computer interfaces, biological improvement)."
+        },
+        {
+          "table": "evidence",
+          "id": "evidence-ts-a5-vinge-1993",
+          "path": "checkedAt",
+          "old": "2026-10-06",
+          "new": "2026-11-02"
+        },
+        {
+          "table": "evidence",
+          "id": "evidence-ts-a5-vinge-1993",
+          "path": "note",
+          "old": "Checked against the text layer on 2026-10-06.",
+          "new": "Checked against the text layer on 2026-10-06. Corrected on 2026-11-02 after the textual absence-claims sweep of 2026-11-02, part 1 (review/absence-claims-sweep-2026-11-02-part1.md, record 38): the record’s qualification no longer states the absence the sweep found too broad or contradicted; this passage is unchanged. The session applying the correction re-read the sweep’s passage in the source as served on 2026-11-02. Recorded in review/absence-sweep-apply-part1-2026-11-02.md."
+        }
+      ]
+    },
+    {
+      "id": "sweep-40:ts-a6-vinge-1993",
+      "item": 40,
+      "verdict": "absence fails",
+      "finding": "The preceding section explicitly says restraining laws would let someone else obtain the technology earlier, followed by the competition argument about restrictive rules. The absence is unsafe as a statement about the paper.",
+      "decision": "Brief 08 and the task of 2026-11-02: correct the qualification or note to what the source supports, using the sweep’s passage and locator. The earliest located role stays: the sweep finds p. 16 still meets A6, and the correction adds to its support.",
+      "reread": true,
+      "patches": [
+        {
+          "table": "claims",
+          "id": "ts-a6-vinge-1993",
+          "path": "qualification",
+          "old": "A conditional argument about incentives, not evidence that any developer gave up safety. It names no first-mover advantage.",
+          "new": "A conditional argument about incentives, not evidence that any developer gave up safety. The preceding section (p. 15, “Can the Singularity be avoided?”) also says that the competitive advantage of every advance in automation is such that forbidding it “merely assures that someone else will get them first”."
+        },
+        {
+          "table": "evidence",
+          "id": "evidence-ts-a6-vinge-1993",
+          "path": "checkedAt",
+          "old": "2026-10-06",
+          "new": "2026-11-02"
+        },
+        {
+          "table": "evidence",
+          "id": "evidence-ts-a6-vinge-1993",
+          "path": "note",
+          "old": "Checked against the text layer on 2026-10-06; the doubled \"the those\" is in the printed text.",
+          "new": "Checked against the text layer on 2026-10-06; the doubled \"the those\" is in the printed text. Corrected on 2026-11-02 after the textual absence-claims sweep of 2026-11-02, part 1 (review/absence-claims-sweep-2026-11-02-part1.md, record 40): the record’s qualification no longer says that the paper names no first-mover advantage; this passage is unchanged. The session applying the correction re-read the sweep’s passage in the source as served on 2026-11-02. Recorded in review/absence-sweep-apply-part1-2026-11-02.md."
+        }
+      ]
+    },
+    {
+      "id": "sweep-46:ts-a4-hanson-1994-context",
+      "item": 46,
+      "verdict": "scope issue",
+      "finding": "The article gives no numerical AI capability-transition duration, but repeatedly describes a sharp upload transition and discusses what could make it more sudden. The qualification should not suggest an absence of all discussion of transition pace.",
+      "decision": "Brief 08 and the task of 2026-11-02: correct the qualification or note to what the source supports, using the sweep’s passage and locator.",
+      "reread": false,
+      "patches": [
+        {
+          "table": "claims",
+          "id": "ts-a4-hanson-1994-context",
+          "path": "qualification",
+          "old": "About uploads; no takeoff period.",
+          "new": "About uploads. The article discusses how sudden the upload transition could be, and what would make it more sudden, but gives no duration for a transition in AI capability."
+        },
+        {
+          "table": "evidence",
+          "id": "evidence-ts-a4-hanson-1994-context",
+          "path": "checkedAt",
+          "old": "2026-10-06",
+          "new": "2026-11-02"
+        },
+        {
+          "table": "evidence",
+          "id": "evidence-ts-a4-hanson-1994-context",
+          "path": "note",
+          "old": "Paraphrase from the pre-1996 candidate search.",
+          "new": "Paraphrase from the pre-1996 candidate search. Corrected on 2026-11-02 after the textual absence-claims sweep of 2026-11-02, part 1 (review/absence-claims-sweep-2026-11-02-part1.md, record 46): the record’s qualification no longer states the absence the sweep found too broad or contradicted; this passage is unchanged. The session applying the correction took the passage and locator from the sweep, which read the source on 2026-11-02, and did not retrieve it again. Recorded in review/absence-sweep-apply-part1-2026-11-02.md."
+        }
+      ]
+    },
+    {
+      "id": "sweep-47:ts-a4-miller-1995-context",
+      "item": 47,
+      "verdict": "scope issue",
+      "finding": "The comment declines to identify one event as the definition of Singularity. That does not mean it leaves AI unrelated: its forecasts place AI and uploads in the cluster around S, and the continuation discusses their technological overlap.",
+      "decision": "Brief 08 and the task of 2026-11-02: correct the qualification or note to what the source supports, using the sweep’s passage and locator.",
+      "reread": false,
+      "patches": [
+        {
+          "table": "claims",
+          "id": "ts-a4-miller-1995-context",
+          "path": "qualification",
+          "old": "Miller leaves \"Singularity\" undefined, offering general molecular assembly as one candidate for the centre of the cluster, so the comment does not tie the singularity to AI; Miller doubts that uploads and AI designed without uploading will be cleanly distinct.",
+          "new": "Miller leaves \"Singularity\" undefined, offering general molecular assembly as one candidate for the centre of the cluster, and his forecasts place AI and uploads among the events clustered around it, without a duration for an AI takeoff; Miller doubts that uploads and AI designed without uploading will be cleanly distinct."
+        },
+        {
+          "table": "evidence",
+          "id": "evidence-ts-a4-miller-1995-context",
+          "path": "checkedAt",
+          "old": "2026-10-06",
+          "new": "2026-11-02"
+        },
+        {
+          "table": "evidence",
+          "id": "evidence-ts-a4-miller-1995-context",
+          "path": "note",
+          "old": "Paraphrase from the pre-1996 candidate search, with additions after a machine check.",
+          "new": "Paraphrase from the pre-1996 candidate search, with additions after a machine check. Corrected on 2026-11-02 after the textual absence-claims sweep of 2026-11-02, part 1 (review/absence-claims-sweep-2026-11-02-part1.md, record 47): the record’s qualification no longer states the absence the sweep found too broad or contradicted; this passage is unchanged. The session applying the correction took the passage and locator from the sweep, which read the source on 2026-11-02, and did not retrieve it again. Recorded in review/absence-sweep-apply-part1-2026-11-02.md."
+        }
+      ]
+    },
+    {
+      "id": "sweep-67:ts-b5-loosemore-2015-contests",
+      "item": 67,
+      "verdict": "absence fails",
+      "finding": "The complete post develops its stated design-consistency argument without a strategic-concealment mechanism. Separately, the current public Post API returns a non-null userId, contrary to the metadata absence. This current response does not establish what an earlier API response contained.",
+      "decision": "Brief 08 and the task of 2026-11-02: correct the qualification or note to what the source supports, using the sweep’s passage and locator.",
+      "reread": false,
+      "patches": [
+        {
+          "table": "claims",
+          "id": "ts-b5-loosemore-2015-contests",
+          "path": "time.note",
+          "old": "Posting time 2015-05-05T02:46:34Z; the API returns no author account, but the post names its author.",
+          "new": "Posting time 2015-05-05T02:46:34Z. The post names its author in the body; on 2026-11-02 the public Post API returned an account identifier with the posting time. An earlier response without an account is not reproduced."
+        },
+        {
+          "table": "evidence",
+          "id": "evidence-ts-b5-loosemore-2015-contests",
+          "path": "checkedAt",
+          "old": "2026-10-06",
+          "new": "2026-11-02"
+        },
+        {
+          "table": "evidence",
+          "id": "evidence-ts-b5-loosemore-2015-contests",
+          "path": "note",
+          "old": "Checked against the first stored version on 2026-10-06.",
+          "new": "Checked against the first stored version on 2026-10-06. Corrected on 2026-11-02 after the textual absence-claims sweep of 2026-11-02, part 1 (review/absence-claims-sweep-2026-11-02-part1.md, record 67): the record’s time note no longer states the absence the sweep found contradicted; this passage is unchanged. The session applying the correction took the passage and locator from the sweep, which read the source on 2026-11-02, and did not retrieve it again. Recorded in review/absence-sweep-apply-part1-2026-11-02.md."
+        }
+      ]
+    },
+    {
+      "id": "sweep-88:yk-y11-extropians-1999-08-03-yudkowsky-1487-c",
+      "item": 88,
+      "verdict": "absence fails",
+      "finding": "The same quoted paragraph also makes a confinement claim and conditions a slow transition on persuading the system to remain slow. Describing the paragraph as exclusively about speed removes its control content.",
+      "decision": "Brief 08 and the task of 2026-11-02: correct the qualification or note to what the source supports, using the sweep’s passage and locator.",
+      "reread": true,
+      "patches": [
+        {
+          "table": "claims",
+          "id": "yk-y11-extropians-1999-08-03-yudkowsky-1487-c",
+          "path": "qualification",
+          "old": "Premise addressed: Capability gains will be gradual and visible. 'Transcend' is his 1990s term for the passage to superintelligence. The same message rejects building controls into the AI as technically impossible, a position he later abandoned; the quoted paragraph concerns only takeoff speed.",
+          "new": "Premise addressed: Capability gains will be gradual and visible. 'Transcend' is his 1990s term for the passage to superintelligence. The same message rejects building controls into the AI as technically impossible, a position he later abandoned; the quoted paragraph also says containment on a superintelligence is useless, a slow Transcend lasting only “as long as you can convince the Transcendee to remain slow”."
+        },
+        {
+          "table": "evidence",
+          "id": "evidence-yk-t11-e2",
+          "path": "checkedAt",
+          "old": "2026-10-07",
+          "new": "2026-11-02"
+        },
+        {
+          "table": "evidence",
+          "id": "evidence-yk-t11-e2",
+          "path": "note",
+          "old": "Candidate pack passage T11-e2. The quotation (35 words) matched the retrieved expression (SHA-256 9234ee148973e0bf6feb236801e09f00eea8907cb862e91a55a64f3d6e2b08a8) when checked on 2026-10-07.",
+          "new": "Candidate pack passage T11-e2. The quotation (35 words) matched the retrieved expression (SHA-256 9234ee148973e0bf6feb236801e09f00eea8907cb862e91a55a64f3d6e2b08a8) when checked on 2026-10-07. Corrected on 2026-11-02 after the textual absence-claims sweep of 2026-11-02, part 1 (review/absence-claims-sweep-2026-11-02-part1.md, record 88): the record’s qualification no longer says that the quoted paragraph concerns only takeoff speed; this passage is unchanged. The session applying the correction re-read the sweep’s passage in the source as served on 2026-11-02. Recorded in review/absence-sweep-apply-part1-2026-11-02.md."
+        }
+      ]
+    },
+    {
+      "id": "sweep-100:yk-y20-staring-into-the-singularity-b",
+      "item": 100,
+      "verdict": "scope issue",
+      "finding": "The paragraph combines rejection of inevitable destruction and spontaneously appearing human emotions with explicit acknowledgement of a programming-related engineering risk. The categorical contrast can obscure that concession; the qualification should describe both parts without equating the earlier and later arguments.",
+      "decision": "Brief 08 and the task of 2026-11-02: correct the qualification or note to what the source supports, using the sweep’s passage and locator.",
+      "reread": false,
+      "patches": [
+        {
+          "table": "claims",
+          "id": "yk-y20-staring-into-the-singularity-b",
+          "path": "qualification",
+          "old": "Premise addressed: The concern is about robots that come to hate or rebel against humans. Wayback capture 2000-12-04 (page dated 11/18/1996, updated 08/31/2000); first appearance of the sentence not established. Related rather than answered-it because the surrounding argument draws a reassuring conclusion that his later texts do not share. In context the point reassures: the same paragraph says there is no point worrying that hostile Powers will inevitably wipe out humanity. Not the later \"risk is real but not Terminator\" argument.",
+          "new": "Premise addressed: The concern is about robots that come to hate or rebel against humans. Wayback capture 2000-12-04 (page dated 11/18/1996, updated 08/31/2000); first appearance of the sentence not established. Related rather than answered-it because the surrounding argument draws a reassuring conclusion that his later texts do not share. In context the point reassures: the same paragraph says there is no point worrying that hostile Powers will inevitably wipe out humanity, while allowing that a badly programmed Power is “an engineering risk, and minimizing it is an engineering task”. The conclusion stays reassuring, unlike his later texts."
+        },
+        {
+          "table": "evidence",
+          "id": "evidence-yk-t20-c",
+          "path": "checkedAt",
+          "old": "2026-10-06",
+          "new": "2026-11-02"
+        },
+        {
+          "table": "evidence",
+          "id": "evidence-yk-t20-c",
+          "path": "note",
+          "old": "Candidate pack passage T20-c. The quotation (20 words) matched the retrieved expression (SHA-256 a883c7d611f7d6f5d3b64d6901e2086d4b33b3df9621927da6d70789a7302316) when checked on 2026-10-06.",
+          "new": "Candidate pack passage T20-c. The quotation (20 words) matched the retrieved expression (SHA-256 a883c7d611f7d6f5d3b64d6901e2086d4b33b3df9621927da6d70789a7302316) when checked on 2026-10-06. Corrected on 2026-11-02 after the textual absence-claims sweep of 2026-11-02, part 1 (review/absence-claims-sweep-2026-11-02-part1.md, record 100): the record’s qualification no longer states the absence the sweep found too broad or contradicted; this passage is unchanged. The session applying the correction took the passage and locator from the sweep, which read the source on 2026-11-02, and did not retrieve it again. Recorded in review/absence-sweep-apply-part1-2026-11-02.md."
+        }
+      ]
+    },
+    {
+      "id": "sweep-101:yk-y20-ai-positive-negative-factor-global-risk-b",
+      "item": 101,
+      "verdict": "scope issue",
+      "finding": "The cited methodological paragraph cautions against generic predictions, but its continuation mentions lack of hatred in an optimization process, and the chapter later explicitly separates harmful optimization from hatred. Limit the negative to the particular methodological task rather than extending it to the chapter.",
+      "decision": "Brief 08 and the task of 2026-11-02: correct the qualification or note to what the source supports, using the sweep’s passage and locator.",
+      "reread": false,
+      "patches": [
+        {
+          "table": "claims",
+          "id": "yk-y20-ai-positive-negative-factor-global-risk-b",
+          "path": "qualification",
+          "old": "Premise addressed: The concern is about robots that come to hate or rebel against humans. Chapter published 2008; cached text is the MIRI reprint ('contains minor changes'). Methodological: avoid storyteller predictions, good or bad; it does not address hatred or rebellion as such. Admission check, 2026-10-08: the quoted wording also appears in the draft of 5 February 2006, so the record is dated by the draft.",
+          "new": "Premise addressed: The concern is about robots that come to hate or rebel against humans. Chapter published 2008; cached text is the MIRI reprint ('contains minor changes'). Methodological: the cited paragraph argues for choosing a particular optimization process rather than making storyteller predictions, good or bad. Elsewhere (section 10 of the reprint) the chapter describes harm from an optimization process without hatred. Admission check, 2026-10-08: the quoted wording also appears in the draft of 5 February 2006, so the record is dated by the draft."
+        },
+        {
+          "table": "claims",
+          "id": "yk-y20-ai-positive-negative-factor-global-risk-b",
+          "path": "attributes.thought.missing",
+          "old": "It rejects storybook predictions, good or bad; it does not address hatred or rebellion as the concern.",
+          "new": "It rejects storybook predictions, good or bad; this paragraph does not address hatred or rebellion as the concern."
+        },
+        {
+          "table": "evidence",
+          "id": "evidence-yk-t20-d",
+          "path": "checkedAt",
+          "old": "2026-10-06",
+          "new": "2026-11-02"
+        },
+        {
+          "table": "evidence",
+          "id": "evidence-yk-t20-d",
+          "path": "note",
+          "old": "Candidate pack passage T20-d. The quotation (23 words) matched the retrieved expression (SHA-256 5b5a2ec3252a45f65cdc0b899330af2cbd946e75a31b83d5fbd3aa581a23615d) when checked on 2026-10-06. The dataset already quotes this source for the human-thought collection; together the quotations would exceed the per-document quotation limit. Converted to a labelled paraphrase.",
+          "new": "Candidate pack passage T20-d. The quotation (23 words) matched the retrieved expression (SHA-256 5b5a2ec3252a45f65cdc0b899330af2cbd946e75a31b83d5fbd3aa581a23615d) when checked on 2026-10-06. The dataset already quotes this source for the human-thought collection; together the quotations would exceed the per-document quotation limit. Converted to a labelled paraphrase. Corrected on 2026-11-02 after the textual absence-claims sweep of 2026-11-02, part 1 (review/absence-claims-sweep-2026-11-02-part1.md, record 101): the record’s qualification no longer says that the chapter does not address hatred or rebellion; this passage is unchanged. The session applying the correction took the passage and locator from the sweep, which read the source on 2026-11-02, and did not retrieve it again. Recorded in review/absence-sweep-apply-part1-2026-11-02.md."
+        }
+      ]
+    },
+    {
+      "id": "sweep-106:yk-y24-ai-positive-negative-factor-global-risk-b",
+      "item": 106,
+      "verdict": "scope issue",
+      "finding": "The section conditions its local strategy on correct Friendliness preceding lower-standard systems and gives explicit examples of an earlier system preventing another system’s development. It does not establish default control by a human builder. The blanket racing exclusion obscures the conditional development-order claim.",
+      "decision": "Brief 08 and the task of 2026-11-02: correct the qualification or note to what the source supports, using the sweep’s passage and locator.",
+      "reread": false,
+      "patches": [
+        {
+          "table": "claims",
+          "id": "yk-y24-ai-positive-negative-factor-global-risk-b",
+          "path": "qualification",
+          "old": "Premise addressed: Whoever builds it controls it. In 2008 he favoured a local strategy in which one project gets Friendly AI right before others build AI to a lower standard. That is a first-mover view, but about the AI's Friendliness, not about a builder or nation controlling the AI. No located later passage explicitly retracts it, so it is recorded as related, not earlier-self. Published 2008 in Global Catastrophic Risks (the text says it was written in 2006); the cached MIRI PDF reprint states it \"contains minor changes\". His 2008 strategic view was that the first AI must be Friendly; this is not an argument for racing, and in 2023 he called anyone talking of arms races \"a fool\" (TIME). Admission check, 2026-10-08: the quoted wording also appears in the draft of 5 February 2006, so the record is dated by the draft.",
+          "new": "Premise addressed: Whoever builds it controls it. In 2008 he favoured a local strategy in which one project gets Friendly AI right before others build AI to a lower standard. That is a first-mover view, but about the AI's Friendliness, not about a builder or nation controlling the AI. No located later passage explicitly retracts it, so it is recorded as related, not earlier-self. Published 2008 in Global Catastrophic Risks (the text says it was written in 2006); the cached MIRI PDF reprint states it \"contains minor changes\". His 2008 strategic view was that the first AI must be Friendly: under the assumption of a large jump, the local strategy requires Friendly AI to be got right before anyone builds AI to a lower standard. That is a conditional claim about the order of development, with no guarantee of control by a builder or nation; in 2023 he called anyone talking of arms races \"a fool\" (TIME). Admission check, 2026-10-08: the quoted wording also appears in the draft of 5 February 2006, so the record is dated by the draft."
+        },
+        {
+          "table": "claims",
+          "id": "yk-y24-ai-positive-negative-factor-global-risk-b",
+          "path": "attributes.thought.missing",
+          "old": "A first-mover view about whether the first AI is Friendly; it does not claim that a builder or nation controls the AI or that racing improves the outcome.",
+          "new": "A first-mover view about whether the first AI is Friendly; it does not claim that a builder or nation controls the AI or that being first improves the outcome whoever builds."
+        },
+        {
+          "table": "evidence",
+          "id": "evidence-yk-t24-d",
+          "path": "checkedAt",
+          "old": "2026-10-06",
+          "new": "2026-11-02"
+        },
+        {
+          "table": "evidence",
+          "id": "evidence-yk-t24-d",
+          "path": "note",
+          "old": "Candidate pack passage T24-d. The quotation (38 words) matched the retrieved expression (SHA-256 5b5a2ec3252a45f65cdc0b899330af2cbd946e75a31b83d5fbd3aa581a23615d) when checked on 2026-10-06. The dataset already quotes this source for the human-thought collection; together the quotations would exceed the per-document quotation limit. Converted to a labelled paraphrase.",
+          "new": "Candidate pack passage T24-d. The quotation (38 words) matched the retrieved expression (SHA-256 5b5a2ec3252a45f65cdc0b899330af2cbd946e75a31b83d5fbd3aa581a23615d) when checked on 2026-10-06. The dataset already quotes this source for the human-thought collection; together the quotations would exceed the per-document quotation limit. Converted to a labelled paraphrase. Corrected on 2026-11-02 after the textual absence-claims sweep of 2026-11-02, part 1 (review/absence-claims-sweep-2026-11-02-part1.md, record 106): the record’s qualification no longer says that the passage is not an argument for racing; this passage is unchanged. The session applying the correction took the passage and locator from the sweep, which read the source on 2026-11-02, and did not retrieve it again. Recorded in review/absence-sweep-apply-part1-2026-11-02.md."
+        }
+      ]
+    },
+    {
+      "id": "sweep-109:yk-y24-sl4-2002-05-03-yudkowsky-0205-3551-a",
+      "item": 109,
+      "verdict": "scope issue",
+      "finding": "The complete message rejects default preservation of a programmer’s intended narrow goals, but also explicitly proposes completing the preferred approach ahead of a project using different goal semantics. Its probability-improvement answer is conditional, so a blanket absence of any development-order strategy is too broad. The two named later texts do not identify this message.",
+      "decision": "Brief 08 and the task of 2026-11-02: correct the qualification or note to what the source supports, using the sweep’s passage and locator.",
+      "reread": true,
+      "patches": [
+        {
+          "table": "claims",
+          "id": "yk-y24-sl4-2002-05-03-yudkowsky-0205-3551-a",
+          "path": "qualification",
+          "old": "Premise addressed: Racing to be first improves the outcome. He says that any project that tries to design Friendliness semantics for propaganda, that is, an AI serving narrow goals, is beyond his sympathy, and that the only thing to do is to try to beat it to the punch. The 'other side' is such a project, not a rival state. The message does not state that whoever builds advanced AI controls it, or that racing to be first improves the outcome. In the same message he says that a goal such as \"serve Wei Dai\" would probably be frozen into a form its programmer had not intended, and, asked how Friendly AI could be funded before a more selfish project builds a superintelligence, that the aim is not to predict that things will turn out okay but to improve the probability that they will. His later texts on racing (SL4 message of 2007-11-24: it does not matter if someone else does worse; TIME, 2023: 'anyone talking of arms races is a fool') do not refer back to this message and do not supply the missing premise.",
+          "new": "Premise addressed: Racing to be first improves the outcome. He says that any project that tries to design Friendliness semantics for propaganda, that is, an AI serving narrow goals, is beyond his sympathy, and that the only thing to do is to try to beat it to the punch. The 'other side' is such a project, not a rival state. The message does not state that whoever builds advanced AI controls it; its proposal to finish first is limited to such projects, and it makes no general claim that being first improves the outcome. In the same message he says that a goal such as \"serve Wei Dai\" would probably be frozen into a form its programmer had not intended, and, asked how Friendly AI could be funded before a more selfish project builds a superintelligence, that the aim is not to predict that things will turn out okay but to improve the probability that they will. His later texts on racing (SL4 message of 2007-11-24: it does not matter if someone else does worse; TIME, 2023: 'anyone talking of arms races is a fool') do not refer back to this message and do not supply the missing premise."
+        },
+        {
+          "table": "claims",
+          "id": "yk-y24-sl4-2002-05-03-yudkowsky-0205-3551-a",
+          "path": "attributes.thought.missing",
+          "old": "Says the only thing to do about a project designing Friendliness for propaganda is to try to beat it to the punch; it does not state that the builder controls the outcome or that racing to be first improves it.",
+          "new": "Says the only thing to do about a project designing Friendliness for propaganda is to try to beat it to the punch; it does not state that the builder controls the outcome or that being first improves it in general."
+        },
+        {
+          "table": "evidence",
+          "id": "evidence-yk-t24-s3",
+          "path": "checkedAt",
+          "old": "2026-10-07",
+          "new": "2026-11-02"
+        },
+        {
+          "table": "evidence",
+          "id": "evidence-yk-t24-s3",
+          "path": "note",
+          "old": "Candidate pack passage T24-s3. The quotation (23 words) matched the retrieved expression (SHA-256 7669bc17ecbbc641fb8377adc6b034b6cec911c527d0a2be683ed53c7a3ee06c) when checked on 2026-10-07.",
+          "new": "Candidate pack passage T24-s3. The quotation (23 words) matched the retrieved expression (SHA-256 7669bc17ecbbc641fb8377adc6b034b6cec911c527d0a2be683ed53c7a3ee06c) when checked on 2026-10-07. Corrected on 2026-11-02 after the textual absence-claims sweep of 2026-11-02, part 1 (review/absence-claims-sweep-2026-11-02-part1.md, record 109): the record’s qualification no longer states the absence the sweep found too broad or contradicted; this passage is unchanged. The session applying the correction re-read the sweep’s passage in the source as served on 2026-11-02. Recorded in review/absence-sweep-apply-part1-2026-11-02.md."
+        }
+      ]
+    },
+    {
+      "id": "sweep-110:yk-y24-extropians-2000-09-29-yudkowsky-6080-a",
+      "item": 110,
+      "verdict": "scope issue",
+      "finding": "The short reply rejects coercion and distinguishes good intentions from competence, then explicitly proposes writing up Friendliness and seeking earlier completion as ways to affect the situation. It does not give a general guarantee of builder control or recommend sacrificing safeguards. The absence should distinguish that conditional strategy from a universal claim.",
+      "decision": "Brief 08 and the task of 2026-11-02: correct the qualification or note to what the source supports, using the sweep’s passage and locator.",
+      "reread": true,
+      "patches": [
+        {
+          "table": "claims",
+          "id": "yk-y24-extropians-2000-09-29-yudkowsky-6080-a",
+          "path": "qualification",
+          "old": "Premise addressed: Racing to be first improves the outcome. Being first is tied to writing up Friendly AI, not to beating a named rival; the same reply rejects coercion against other projects. It does not state that whoever builds advanced AI controls it, or that racing to be first improves the outcome. Quotation kept short because the message has about 140 words of his own. His later texts on racing (SL4 message of 2007-11-24: building an AI is pass-fail; TIME, 2023: 'anyone talking of arms races is a fool') do not refer back to this message and do not supply the missing premise.",
+          "new": "Premise addressed: Racing to be first improves the outcome. Being first is tied to writing up Friendly AI, not to beating a named rival; the same reply rejects coercion against other projects. It proposes trying to be first, alongside writing up Friendly AI, as a way to affect the situation; it does not state that whoever builds advanced AI controls it, or that being first improves the outcome whoever builds. Quotation kept short because the message has about 140 words of his own. His later texts on racing (SL4 message of 2007-11-24: building an AI is pass-fail; TIME, 2023: 'anyone talking of arms races is a fool') do not refer back to this message and do not supply the missing premise."
+        },
+        {
+          "table": "claims",
+          "id": "yk-y24-extropians-2000-09-29-yudkowsky-6080-a",
+          "path": "attributes.thought.missing",
+          "old": "Seeks to build AI first while writing up Friendly AI and rejecting coercion; it does not state that the builder controls the outcome or that racing to be first improves it.",
+          "new": "Seeks to build AI first while writing up Friendly AI and rejecting coercion; it does not state that the builder controls the outcome or that being first improves it whoever builds."
+        },
+        {
+          "table": "evidence",
+          "id": "evidence-yk-t24-e2",
+          "path": "checkedAt",
+          "old": "2026-10-07",
+          "new": "2026-11-02"
+        },
+        {
+          "table": "evidence",
+          "id": "evidence-yk-t24-e2",
+          "path": "note",
+          "old": "Candidate pack passage T24-e2. The quotation (9 words) matched the retrieved expression (SHA-256 50b829ded65f6c396627fc2b6659cdba6d9186084b37fac2897801f7ada758de) when checked on 2026-10-07.",
+          "new": "Candidate pack passage T24-e2. The quotation (9 words) matched the retrieved expression (SHA-256 50b829ded65f6c396627fc2b6659cdba6d9186084b37fac2897801f7ada758de) when checked on 2026-10-07. Corrected on 2026-11-02 after the textual absence-claims sweep of 2026-11-02, part 1 (review/absence-claims-sweep-2026-11-02-part1.md, record 110): the record’s qualification no longer states the absence the sweep found too broad or contradicted; this passage is unchanged. The session applying the correction re-read the sweep’s passage in the source as served on 2026-11-02. Recorded in review/absence-sweep-apply-part1-2026-11-02.md."
+        }
+      ]
+    },
+    {
+      "id": "sweep-113:yk-y28-lw-2022-six-dimensions-of-operational-adequacy-in-c",
+      "item": 113,
+      "verdict": "scope issue",
+      "finding": "The full post explicitly separates resource advantage from alignment mindset and makes project comparisons on those dimensions. Whether those comparisons logically refute the premise is an editorial assessment, not a textual absence. The qualification should name the distinction rather than imply no relevant engagement.",
+      "decision": "Brief 08 and the task of 2026-11-02: correct the qualification or note to what the source supports, using the sweep’s passage and locator.",
+      "reread": false,
+      "patches": [
+        {
+          "table": "claims",
+          "id": "yk-y28-lw-2022-six-dimensions-of-operational-adequacy-in-c",
+          "path": "qualification",
+          "old": "Premise addressed: A credible safety plan exists. Read with the whole post, the reason given is its diagnosis of inadequate alignment mindset and safety approaches at named leading projects; it does not refute the premise that the most advanced projects are the most competent. Dated by its publication on 2022-05-30. The post's editor's note says it is a lightly edited copy of a document written in November 2017; that drafting date is claimed, and the quoted wording is attested only in the edited copy.",
+          "new": "Premise addressed: A credible safety plan exists. Read with the whole post, the reason given is its diagnosis of inadequate alignment mindset and safety approaches at named leading projects; it treats a project’s resource advantage and its alignment mindset as separate dimensions and compares projects on each. Dated by its publication on 2022-05-30. The post's editor's note says it is a lightly edited copy of a document written in November 2017; that drafting date is claimed, and the quoted wording is attested only in the edited copy."
+        },
+        {
+          "table": "evidence",
+          "id": "evidence-yk-t28-c",
+          "path": "checkedAt",
+          "old": "2026-10-06",
+          "new": "2026-11-02"
+        },
+        {
+          "table": "evidence",
+          "id": "evidence-yk-t28-c",
+          "path": "note",
+          "old": "Candidate pack passage T28-c. The quotation (29 words) matched the retrieved expression (SHA-256 30f88ccb952602dd97747a4ce6188fd120a8b51ce44b8acc73f80411f634f223) when checked on 2026-10-06. It also matched the posting-day version 1.0.0. Pack version note: edited post, current version 1.1.1; posting-day check pending.",
+          "new": "Candidate pack passage T28-c. The quotation (29 words) matched the retrieved expression (SHA-256 30f88ccb952602dd97747a4ce6188fd120a8b51ce44b8acc73f80411f634f223) when checked on 2026-10-06. It also matched the posting-day version 1.0.0. Pack version note: edited post, current version 1.1.1; posting-day check pending. Corrected on 2026-11-02 after the textual absence-claims sweep of 2026-11-02, part 1 (review/absence-claims-sweep-2026-11-02-part1.md, record 113): the record’s qualification no longer states the absence the sweep found too broad or contradicted; this passage is unchanged. The session applying the correction took the passage and locator from the sweep, which read the source on 2026-11-02, and did not retrieve it again. Recorded in review/absence-sweep-apply-part1-2026-11-02.md."
+        }
+      ]
+    },
+    {
+      "id": "sweep-128:ec-g05-clancy-besiroglu-2023-great-inflection-c",
+      "item": 128,
+      "verdict": "scope issue",
+      "finding": "The complete archived dialogue was read. The cited confidence statement is accurate, but the turn also develops arguments about falling training costs, enforcement scale, deployment incentives and political effects. The word only is defensible as a summary of confidence, but not as a limit on what the turn says about regulation.",
+      "decision": "Brief 08 and the task of 2026-11-02: correct the qualification or note to what the source supports, using the sweep’s passage and locator.",
+      "reread": false,
+      "patches": [
+        {
+          "table": "claims",
+          "id": "ec-g05-clancy-besiroglu-2023-great-inflection-c",
+          "path": "qualification",
+          "old": "The quotation is a turn by Tamay Besiroglu in a dialogue. On regulation the same turn says only that its effect \"is plausible, but I'm not confident it will\" keep growth near historical rates.",
+          "new": "The quotation is a turn by Tamay Besiroglu in a dialogue. On regulation the same turn says that its effect \"is plausible, but I'm not confident it will\" keep growth near historical rates, and discusses falling training costs, what enforcement would require, incentives to bypass constraints and possible political effects."
+        },
+        {
+          "table": "evidence",
+          "id": "evidence-ec-g05-f",
+          "path": "checkedAt",
+          "old": "2026-10-14",
+          "new": "2026-11-02"
+        },
+        {
+          "table": "evidence",
+          "id": "evidence-ec-g05-f",
+          "path": "note",
+          "old": "Candidate pack passage G05-f (research/economics-growth). The quotation (15 words) matched the checked expression (asterisk-debate) in the pack's verification. Re-checked at admission on 2026-10-14 against a copy retrieved that day, whose SHA-256 differs from the recorded one.",
+          "new": "Candidate pack passage G05-f (research/economics-growth). The quotation (15 words) matched the checked expression (asterisk-debate) in the pack's verification. Re-checked at admission on 2026-10-14 against a copy retrieved that day, whose SHA-256 differs from the recorded one. Corrected on 2026-11-02 after the textual absence-claims sweep of 2026-11-02, part 1 (review/absence-claims-sweep-2026-11-02-part1.md, record 128): the record’s qualification no longer states the absence the sweep found too broad or contradicted; this passage is unchanged. The session applying the correction took the passage and locator from the sweep, which read the source on 2026-11-02, and did not retrieve it again. Recorded in review/absence-sweep-apply-part1-2026-11-02.md."
+        }
+      ]
+    },
+    {
+      "id": "sweep-133:ec-m01-nourse-1955-automation-hearings-statement-b",
+      "item": 133,
+      "verdict": "scope issue",
+      "finding": "The complete hearing OCR was opened. The statement distinguishes technological novelty in feedback from the economic problem of technical progress. However, treating its p.618 description only as a reported view understates its own explanatory role: p.620 explicitly accepts the long-run evaluation, while pp.621-622 qualify automatic adjustment. Coverage: statement pp.618-627 read, with the ending checked separately; this is not a review of all hearing testimony.",
+      "decision": "Brief 08 and the task of 2026-11-02: correct the qualification or note to what the source supports, using the sweep’s passage and locator.",
+      "reread": false,
+      "patches": [
+        {
+          "table": "claims",
+          "id": "ec-m01-nourse-1955-automation-hearings-statement-b",
+          "path": "qualification",
+          "old": "(First passage) The passage reports a view the author does not state as their own. On the next page Nourse qualifies the 'just mechanization' view technologically (see the second passage, p. 619), while on p. 621 he treats the economic problem as one of technological progress in general. Read the three passages together. The quote matches the cached .txt. (Second passage) Bears on M01 (relation changed from contests on 2026-10-12): the newness Nourse names is technological, in feedback control; it does not dispute analysing automation as ordinary economic technical change. On the economics (p. 621) he says there is no 'specific economic problem of automation', only the broad problem of technological progress (Nourse's passage recorded as articulating M01). The quote matches the cached .txt.",
+          "new": "(First passage) The passage summarises the witnesses’ account of automation as mechanization. On the next page Nourse qualifies the 'just mechanization' view technologically (see the second passage, p. 619), on p. 620 he accepts the long-run economic evaluation as a prospect, and on pp. 621–622 he requires attention to adjustment and public policy; on p. 621 he treats the economic problem as one of technological progress in general. Read the three passages together. The quote matches the cached .txt. (Second passage) Bears on M01 (relation changed from contests on 2026-10-12): the newness Nourse names is technological, in feedback control; it does not dispute analysing automation as ordinary economic technical change. On the economics (p. 621) he says there is no 'specific economic problem of automation', only the broad problem of technological progress (Nourse's passage recorded as articulating M01). The quote matches the cached .txt."
+        },
+        {
+          "table": "evidence",
+          "id": "evidence-ec-m01-03",
+          "path": "checkedAt",
+          "old": "2026-10-14",
+          "new": "2026-11-02"
+        },
+        {
+          "table": "evidence",
+          "id": "evidence-ec-m01-03",
+          "path": "note",
+          "old": "Candidate pack passage M01-03 (research/economics-mainstream). The quotation (34 words) matched the retrieved current copy (SHA-256 3962809fbb923be62bf986addb0014ee147934a8767475c1f7cfe051959bff90) in the pack's verification. Re-checked at admission on 2026-10-14 against a copy retrieved that day.",
+          "new": "Candidate pack passage M01-03 (research/economics-mainstream). The quotation (34 words) matched the retrieved current copy (SHA-256 3962809fbb923be62bf986addb0014ee147934a8767475c1f7cfe051959bff90) in the pack's verification. Re-checked at admission on 2026-10-14 against a copy retrieved that day. Corrected on 2026-11-02 after the textual absence-claims sweep of 2026-11-02, part 1 (review/absence-claims-sweep-2026-11-02-part1.md, record 133): the record’s qualification no longer states the absence the sweep found too broad or contradicted; this passage is unchanged. The session applying the correction took the passage and locator from the sweep, which read the source on 2026-11-02, and did not retrieve it again. Recorded in review/absence-sweep-apply-part1-2026-11-02.md."
+        }
+      ]
+    },
+    {
+      "id": "sweep-134:ec-m01-technology-and-the-american-economy-1966-b",
+      "item": 134,
+      "verdict": "scope issue",
+      "finding": "The complete report PDF and OCR were retrieved. The opening comparison explicitly declines to determine whether the newer technologies are more revolutionary; this is a knowledge limit, not a finding of parity. Its lack of a separate category in that paragraph does not establish a classification for the whole report. The introduction footnote confirms its separate status, beginning on printed p.xi, rather than xii as stated in the stored locator. Coverage: transmittal, introduction, opening chapter discussion and the cited unemployment paragraph read; other computer-related contexts searched.",
+      "decision": "Brief 08 and the task of 2026-11-02: correct the qualification or note to what the source supports, using the sweep’s passage and locator.",
+      "reread": false,
+      "patches": [
+        {
+          "table": "claims",
+          "id": "ec-m01-technology-and-the-american-economy-1966-b",
+          "path": "qualification",
+          "old": "Puts the computer on a par with earlier general technologies and gives it no separate category. Checked against the raw djvu text (.html) only.",
+          "new": "The opening paragraph declines to judge whether the computer, nuclear power and molecular biology are more “revolutionary” than the telephone, electric power and bacteriology; it does not put them on a par, and gives the computer no separate category there. Checked against the raw djvu text (.html) only."
+        },
+        {
+          "table": "evidence",
+          "id": "evidence-ec-m01-06",
+          "path": "checkedAt",
+          "old": "2026-10-14",
+          "new": "2026-11-02"
+        },
+        {
+          "table": "evidence",
+          "id": "evidence-ec-m01-06",
+          "path": "note",
+          "old": "Candidate pack passage M01-06 (research/economics-mainstream). The quotation (28 words) matched the retrieved current copy (SHA-256 d23de21a0c05416f957dda13acb680f1baa77ee88e3c094966e8eaba50db637b) in the pack's verification. Re-checked at admission on 2026-10-14 against a copy retrieved that day.",
+          "new": "Candidate pack passage M01-06 (research/economics-mainstream). The quotation (28 words) matched the retrieved current copy (SHA-256 d23de21a0c05416f957dda13acb680f1baa77ee88e3c094966e8eaba50db637b) in the pack's verification. Re-checked at admission on 2026-10-14 against a copy retrieved that day. Corrected on 2026-11-02 after the textual absence-claims sweep of 2026-11-02, part 1 (review/absence-claims-sweep-2026-11-02-part1.md, record 134): the record’s qualification no longer states the absence the sweep found too broad or contradicted; this passage is unchanged. The session applying the correction took the passage and locator from the sweep, which read the source on 2026-11-02, and did not retrieve it again. Recorded in review/absence-sweep-apply-part1-2026-11-02.md."
+        }
+      ]
+    },
+    {
+      "id": "sweep-135:ec-m01-mansfield-1966-technological-change-b",
+      "item": 135,
+      "verdict": "absence fails",
+      "finding": "The complete appendix-volume PDF and OCR were retrieved. The native PDF text includes a substantive Detroit automation example on printed p.II-100, absent from the examined OCR stretch. The page image was inspected: the example explains adoption through changing factor prices, in addition to the later acceleration question. That contradicts only. No separate computer treatment was located in the bounded study (PDF pp.94-131) by normalized text search. Coverage: contents, introduction, production-function discussion, acceleration discussion and conclusion read; automation/computer contexts checked throughout this study, not the adjacent papers.",
+      "decision": "Brief 08 and the task of 2026-11-02: correct the qualification or note to what the source supports, using the sweep’s passage and locator.",
+      "reread": false,
+      "patches": [
+        {
+          "table": "claims",
+          "id": "ec-m01-mansfield-1966-technological-change-b",
+          "path": "qualification",
+          "old": "The study takes up automation only through the Commission's acceleration question; it gives computers no separate treatment. Meets M01's 'general tools' condition, while its explicit discussion of automation is thin. Matches the cached .txt. Locator tightened on 2026-10-12 from \"Part II, sec. 2 'Technological change and the production function', printed p. II-99 (approx.; OCR page markers are out of order by about ±1)\" (GPT cross-family check of 2026-10-12, accepted by the maintainer on 2026-10-12; the page was confirmed on a page image of the scan, not in the OCR text).",
+          "new": "The study takes up automation in a production-function example (\"Detroit automation\", printed p. II-100, explained by changing factor prices) and through the Commission's acceleration question; no separate treatment of computers was located in the study. Meets M01's 'general tools' condition, while its explicit discussion of automation is thin. Matches the cached .txt. Locator tightened on 2026-10-12 from \"Part II, sec. 2 'Technological change and the production function', printed p. II-99 (approx.; OCR page markers are out of order by about ±1)\" (GPT cross-family check of 2026-10-12, accepted by the maintainer on 2026-10-12; the page was confirmed on a page image of the scan, not in the OCR text)."
+        },
+        {
+          "table": "evidence",
+          "id": "evidence-ec-m01-09",
+          "path": "checkedAt",
+          "old": "2026-10-14",
+          "new": "2026-11-02"
+        },
+        {
+          "table": "evidence",
+          "id": "evidence-ec-m01-09",
+          "path": "note",
+          "old": "Candidate pack passage M01-09 (research/economics-mainstream). The quotation (19 words) matched the retrieved current copy (SHA-256 85b1fb59b997e8cbc0f7255076a55f68008955a2b10523b375ac0ae58628572c) in the pack's verification. Re-checked at admission on 2026-10-14 against a copy retrieved that day.",
+          "new": "Candidate pack passage M01-09 (research/economics-mainstream). The quotation (19 words) matched the retrieved current copy (SHA-256 85b1fb59b997e8cbc0f7255076a55f68008955a2b10523b375ac0ae58628572c) in the pack's verification. Re-checked at admission on 2026-10-14 against a copy retrieved that day. Corrected on 2026-11-02 after the textual absence-claims sweep of 2026-11-02, part 1 (review/absence-claims-sweep-2026-11-02-part1.md, record 135): the record’s qualification no longer states the absence the sweep found too broad or contradicted; this passage is unchanged. The session applying the correction took the passage and locator from the sweep, which read the source on 2026-11-02, and did not retrieve it again. Recorded in review/absence-sweep-apply-part1-2026-11-02.md."
+        }
+      ]
+    },
+    {
+      "id": "sweep-138:ec-m02-autor-2015-why-are-there-still-so-many-jobs-a",
+      "item": 138,
+      "verdict": "absence fails",
+      "finding": "The entire cited AEA page and abstract were retrieved and read. Its closing abstract sentences explicitly connect the discussion to artificial intelligence and robotics, followed immediately by the routine-task and comparative-advantage explanation. This contradicts the qualification even within its stated abstract-only scope. The earlier full-article retrieval failure is a workflow note, not this absence.",
+      "decision": "Brief 08 and the task of 2026-11-02: correct the qualification or note to what the source supports, using the sweep’s passage and locator.",
+      "reread": true,
+      "patches": [
+        {
+          "table": "claims",
+          "id": "ec-m02-autor-2015-why-are-there-still-so-many-jobs-a",
+          "path": "qualification",
+          "old": "Abstract page only; the full article was not retrieved (see autor2015.failure.json). Dated 2015; the abstract does not say whether the task framework is applied to AI specifically.",
+          "new": "Abstract page only; the full article was not retrieved (see autor2015.failure.json). Dated 2015. The abstract says the final section reflects on how advances in artificial intelligence and robotics should shape thinking about occupational change, then states the task argument; how the framework is applied to AI in the article was not read."
+        },
+        {
+          "table": "evidence",
+          "id": "evidence-ec-m02-09",
+          "path": "checkedAt",
+          "old": "2026-10-14",
+          "new": "2026-11-02"
+        },
+        {
+          "table": "evidence",
+          "id": "evidence-ec-m02-09",
+          "path": "note",
+          "old": "Candidate pack passage M02-09 (research/economics-mainstream). The quotation (36 words) matched the retrieved current copy (SHA-256 faa6a9976b49be8beb09c2cb4b16ea37795a78fa86301a46698515b3a7f79897) in the pack's verification. Re-checked at admission on 2026-10-14 against a copy retrieved that day, whose SHA-256 differs from the recorded one.",
+          "new": "Candidate pack passage M02-09 (research/economics-mainstream). The quotation (36 words) matched the retrieved current copy (SHA-256 faa6a9976b49be8beb09c2cb4b16ea37795a78fa86301a46698515b3a7f79897) in the pack's verification. Re-checked at admission on 2026-10-14 against a copy retrieved that day, whose SHA-256 differs from the recorded one. Corrected on 2026-11-02 after the textual absence-claims sweep of 2026-11-02, part 1 (review/absence-claims-sweep-2026-11-02-part1.md, record 138): the record’s qualification no longer states the absence the sweep found too broad or contradicted; this passage is unchanged. The session applying the correction re-read the sweep’s passage in the source as served on 2026-11-02. Recorded in review/absence-sweep-apply-part1-2026-11-02.md."
+        }
+      ]
+    },
+    {
+      "id": "sweep-145:ec-m06b-stevenson-2019-ai-income-employment-meaning-b",
+      "item": 145,
+      "verdict": "absence fails",
+      "finding": "The complete eight-page chapter was read. The closing section explicitly asks about increasing funding for education, worker training, the arts and community service. Earlier p.193 also names pension and retirement programs, child tax credits, allowances and health-care subsidies. The record can distinguish a general closing call from a detailed redistribution design, but without naming instruments is too broad even for the closing section.",
+      "decision": "Brief 08 and the task of 2026-11-02: correct the qualification or note to what the source supports, using the sweep’s passage and locator.",
+      "reread": true,
+      "patches": [
+        {
+          "table": "claims",
+          "id": "ec-m06b-stevenson-2019-ai-income-employment-meaning-b",
+          "path": "qualification",
+          "old": "Frames distribution as a political question; the chapter closes by calling for a stable and fair income distribution without naming instruments.",
+          "new": "Frames distribution as a political question and gives existing redistribution as examples (pensions, child tax credits and allowances, health-care subsidies, p. 193). The chapter closes by asking whether to increase funding for education, worker training, the arts and community service (p. 195), without setting out a redistribution design."
+        },
+        {
+          "table": "claims",
+          "id": "ec-m06b-stevenson-2019-ai-income-employment-meaning-b",
+          "path": "attributes.thought.missing",
+          "old": "Does not argue for a specific redistributive or compensating policy.",
+          "new": "Does not argue for a specific redistributive or compensating policy design."
+        },
+        {
+          "table": "evidence",
+          "id": "evidence-ec-m06b-22",
+          "path": "checkedAt",
+          "old": "2026-10-14",
+          "new": "2026-11-02"
+        },
+        {
+          "table": "evidence",
+          "id": "evidence-ec-m06b-22",
+          "path": "note",
+          "old": "Candidate pack passage M06b-22 (research/economics-mainstream). The quotation (22 words) matched the retrieved current copy (SHA-256 8594f8c92d1eca658f19a7b1e5ab4e41b1e08a5cf9c1c0d7489d11733e6db2b1) in the pack's verification. Re-checked at admission on 2026-10-14 against a copy retrieved that day.",
+          "new": "Candidate pack passage M06b-22 (research/economics-mainstream). The quotation (22 words) matched the retrieved current copy (SHA-256 8594f8c92d1eca658f19a7b1e5ab4e41b1e08a5cf9c1c0d7489d11733e6db2b1) in the pack's verification. Re-checked at admission on 2026-10-14 against a copy retrieved that day. Corrected on 2026-11-02 after the textual absence-claims sweep of 2026-11-02, part 1 (review/absence-claims-sweep-2026-11-02-part1.md, record 145): the record’s qualification no longer states the absence the sweep found too broad or contradicted; this passage is unchanged. The session applying the correction re-read the sweep’s passage in the source as served on 2026-11-02. Recorded in review/absence-sweep-apply-part1-2026-11-02.md."
+        }
+      ]
+    },
+    {
+      "id": "sweep-148:ec-m01-bresnahan-brynjolfsson-hitt-1999-it-workplace-organization-a",
+      "item": 148,
+      "verdict": "absence fails",
+      "finding": "The complete 47-page PDF was retrieved. Its initial two pages have no usable text extraction, so both were rendered and visually inspected: PDF p.1 is the NBER series cover with Working Paper 7136 and May 1999, and p.2 is the NBER abstract sheet. Missing OCR cannot support a missing-cover assertion. The introduction, production framework and limited-substitution sections were read. The paper explicitly mentions artificial intelligence on printed p.11 but keeps its formal inputs as labor and IT/other capital; about IT is a subject description, not literal silence about AI. The retrieved bytes match the source record SHA-256 (9fb812b5d73898ed75b3fc03f073bba13cc65ca0f005f779d9e915b2634838bb), so the cover finding applies to the recorded expression, not merely a different live revision.",
+      "decision": "Brief 08 and the task of 2026-11-02: correct the qualification or note to what the source supports, using the sweep’s passage and locator.",
+      "reread": false,
+      "patches": [
+        {
+          "table": "claims",
+          "id": "ec-m01-bresnahan-brynjolfsson-hitt-1999-it-workplace-organization-a",
+          "path": "time.note",
+          "old": "Crossref record for doi:10.3386/w7136 (issued 1999-05); the retrieved PDF has no NBER cover page. Journal version: QJE 117(1), 2002 (census), not retrieved. Third author given name from Crossref. Checked in a current copy; an archive capture was not available, so earlier bytes are not authenticated.",
+          "new": "Crossref record for doi:10.3386/w7136 (issued 1999-05). The retrieved PDF opens with the NBER cover (Working Paper 7136, May 1999) and abstract sheet, scanned pages without a text layer. Journal version: QJE 117(1), 2002 (census), not retrieved. Third author given name from Crossref. Checked in a current copy; an archive capture was not available, so earlier bytes are not authenticated."
+        },
+        {
+          "table": "claims",
+          "id": "ec-m01-bresnahan-brynjolfsson-hitt-1999-it-workplace-organization-a",
+          "path": "qualification",
+          "old": "NBER Working Paper 7136 (May 1999). Text-level evidence for M01: IT is analysed within the skill-biased technical change framework, with no separate category for machine cognition; the paper is about IT, not AI.",
+          "new": "NBER Working Paper 7136 (May 1999). Text-level evidence for M01: IT is analysed within the skill-biased technical change framework, with no separate category for machine cognition; the paper is about IT; it mentions artificial intelligence in its discussion of limited substitution (printed p. 11) but keeps its formal inputs to labour, IT and other capital."
+        },
+        {
+          "table": "evidence",
+          "id": "evidence-ec-m01-23",
+          "path": "checkedAt",
+          "old": "2026-10-14",
+          "new": "2026-11-02"
+        },
+        {
+          "table": "evidence",
+          "id": "evidence-ec-m01-23",
+          "path": "note",
+          "old": "Candidate pack passage M01-23 (research/economics-mainstream). The quotation (18 words) matched the retrieved current copy (SHA-256 9fb812b5d73898ed75b3fc03f073bba13cc65ca0f005f779d9e915b2634838bb) in the pack's verification. Re-checked at admission on 2026-10-14 against a copy retrieved that day.",
+          "new": "Candidate pack passage M01-23 (research/economics-mainstream). The quotation (18 words) matched the retrieved current copy (SHA-256 9fb812b5d73898ed75b3fc03f073bba13cc65ca0f005f779d9e915b2634838bb) in the pack's verification. Re-checked at admission on 2026-10-14 against a copy retrieved that day. Corrected on 2026-11-02 after the textual absence-claims sweep of 2026-11-02, part 1 (review/absence-claims-sweep-2026-11-02-part1.md, record 148): the record’s time note no longer says that the PDF has no NBER cover page; this passage is unchanged. The session applying the correction took the passage and locator from the sweep, which read the source on 2026-11-02, and did not retrieve it again. Recorded in review/absence-sweep-apply-part1-2026-11-02.md."
+        }
+      ]
+    },
+    {
+      "id": "sweep-149:ec-m09-bresnahan-brynjolfsson-hitt-1999-it-workplace-organization-b",
+      "item": 149,
+      "verdict": "absence fails",
+      "finding": "The complete 47-page PDF was retrieved. Its initial two pages have no usable text extraction, so both were rendered and visually inspected: PDF p.1 is the NBER series cover with Working Paper 7136 and May 1999, and p.2 is the NBER abstract sheet. Missing OCR cannot support a missing-cover assertion. The introduction, production framework and limited-substitution sections were read. The paper explicitly mentions artificial intelligence on printed p.11 but keeps its formal inputs as labor and IT/other capital; about IT is a subject description, not literal silence about AI. The retrieved bytes match the source record SHA-256 (9fb812b5d73898ed75b3fc03f073bba13cc65ca0f005f779d9e915b2634838bb), so the cover finding applies to the recorded expression, not merely a different live revision.",
+      "decision": "Brief 08 and the task of 2026-11-02: correct the qualification or note to what the source supports, using the sweep’s passage and locator.",
+      "reread": false,
+      "patches": [
+        {
+          "table": "claims",
+          "id": "ec-m09-bresnahan-brynjolfsson-hitt-1999-it-workplace-organization-b",
+          "path": "time.note",
+          "old": "Crossref record for doi:10.3386/w7136 (issued 1999-05); the retrieved PDF has no NBER cover page. Journal version: QJE 117(1), 2002 (census), not retrieved. Third author given name from Crossref. Checked in a current copy; an archive capture was not available, so earlier bytes are not authenticated.",
+          "new": "Crossref record for doi:10.3386/w7136 (issued 1999-05). The retrieved PDF opens with the NBER cover (Working Paper 7136, May 1999) and abstract sheet, scanned pages without a text layer. Journal version: QJE 117(1), 2002 (census), not retrieved. Third author given name from Crossref. Checked in a current copy; an archive capture was not available, so earlier bytes are not authenticated."
+        },
+        {
+          "table": "evidence",
+          "id": "evidence-ec-m09-34",
+          "path": "checkedAt",
+          "old": "2026-10-14",
+          "new": "2026-11-02"
+        },
+        {
+          "table": "evidence",
+          "id": "evidence-ec-m09-34",
+          "path": "note",
+          "old": "Candidate pack passage M09-34 (research/economics-mainstream). The quotation (23 words) matched the retrieved current copy (SHA-256 9fb812b5d73898ed75b3fc03f073bba13cc65ca0f005f779d9e915b2634838bb) in the pack's verification. Re-checked at admission on 2026-10-14 against a copy retrieved that day.",
+          "new": "Candidate pack passage M09-34 (research/economics-mainstream). The quotation (23 words) matched the retrieved current copy (SHA-256 9fb812b5d73898ed75b3fc03f073bba13cc65ca0f005f779d9e915b2634838bb) in the pack's verification. Re-checked at admission on 2026-10-14 against a copy retrieved that day. Corrected on 2026-11-02 after the textual absence-claims sweep of 2026-11-02, part 1 (review/absence-claims-sweep-2026-11-02-part1.md, record 149): the record’s time note no longer states the absence the sweep found contradicted; this passage is unchanged. The session applying the correction took the passage and locator from the sweep, which read the source on 2026-11-02, and did not retrieve it again. Recorded in review/absence-sweep-apply-part1-2026-11-02.md."
+        }
+      ]
+    },
+    {
+      "id": "sweep-162:ec-e04-korinek-stiglitz-2017-ai-income-distribution-b",
+      "item": 162,
+      "verdict": "scope issue",
+      "finding": "The complete 45-page PDF was retrieved. The p.38 passage concerns whether progress could be halted, but earlier sections discuss innovation returns, contestability, patent protection and taxation in substantial detail. Thus a limit on the cited governance passage should not become a whole-paper absence of developer-incentive analysis. Coverage: governance/scenario discussion pp.37-39 and innovation-policy discussion pp.19-21 read, with all incentive-word contexts checked across the extracted full text. No assertion of a detailed safety-investment model follows from these economic analyses.",
+      "decision": "Brief 08 and the task of 2026-11-02: correct the qualification or note to what the source supports, using the sweep’s passage and locator.",
+      "reread": false,
+      "patches": [
+        {
+          "table": "claims",
+          "id": "ec-e04-korinek-stiglitz-2017-ai-income-distribution-b",
+          "path": "qualification",
+          "old": "The authors' own reasoning on whether development can be governed. They do not analyse developer incentives in detail.",
+          "new": "The authors' own reasoning on whether development can be governed. The cited p. 38 paragraph asks whether AI progress could or should be halted. Elsewhere (pp. 19–21) the paper analyses innovators’ returns, contestable innovation, patent protection and taxation, but not developers’ incentives to invest in safety."
+        },
+        {
+          "table": "claims",
+          "id": "ec-e04-korinek-stiglitz-2017-ai-income-distribution-b",
+          "path": "attributes.thought.missing",
+          "old": "Asks whether humanity should slow or halt AI progress; does not analyse developers' incentives.",
+          "new": "Asks whether humanity should slow or halt AI progress; does not analyse developers' incentives regarding safety."
+        },
+        {
+          "table": "evidence",
+          "id": "evidence-ec-e04-08",
+          "path": "checkedAt",
+          "old": "2026-10-16",
+          "new": "2026-11-02"
+        },
+        {
+          "table": "evidence",
+          "id": "evidence-ec-e04-08",
+          "path": "note",
+          "old": "Candidate pack passage E04-08 (research/economics-mainstream/esoteric). The quotation (27 words) matched the retrieved current copy (SHA-256 aeddf962b5c488cae68b7d48cef964de22379c78e75579c5793f0df71d5e9f40) in the pack's verification of 2026-10-15. Re-checked at admission on 2026-10-16 against a copy retrieved that day.",
+          "new": "Candidate pack passage E04-08 (research/economics-mainstream/esoteric). The quotation (27 words) matched the retrieved current copy (SHA-256 aeddf962b5c488cae68b7d48cef964de22379c78e75579c5793f0df71d5e9f40) in the pack's verification of 2026-10-15. Re-checked at admission on 2026-10-16 against a copy retrieved that day. Corrected on 2026-11-02 after the textual absence-claims sweep of 2026-11-02, part 1 (review/absence-claims-sweep-2026-11-02-part1.md, record 162): the record’s qualification no longer states the absence the sweep found too broad or contradicted; this passage is unchanged. The session applying the correction took the passage and locator from the sweep, which read the source on 2026-11-02, and did not retrieve it again. Recorded in review/absence-sweep-apply-part1-2026-11-02.md."
+        }
+      ]
+    },
+    {
+      "id": "sweep-166:ec-e05-hyytinen-2017-kak-editorial-b",
+      "item": 166,
+      "verdict": "scope issue",
+      "finding": "The complete four-page Finnish editorial was read. Footnote 3 explicitly says the singularity possibility has been considered from different viewpoints and names prior discussions, including two economic working papers. The editorial is not a survey of overall economics coverage, but says nothing is broader than that missing survey or neglect assessment. The growth hypothesis is distinct from a claim of all-domain superintelligence.",
+      "decision": "Brief 08 and the task of 2026-11-02: correct the qualification or note to what the source supports, using the sweep’s passage and locator.",
+      "reread": false,
+      "patches": [
+        {
+          "table": "claims",
+          "id": "ec-e05-hyytinen-2017-kak-editorial-b",
+          "path": "qualification",
+          "old": "Hyytinen's own assessment. The topic is a growth singularity (robotisation and AI accelerating technological progress), not superintelligence; footnote 3 cites Brynjolfsson and McAfee, Nordhaus (2015) and Aghion, Jones and Jones (2017). E05 boundary, option A (maintainer decision of 2026-10-15): bears on E05, because it names a hypothesis and assesses it; it says nothing about the state of economics on the topic.",
+          "new": "Hyytinen's own assessment. The topic is a growth singularity (robotisation and AI accelerating technological progress), not superintelligence; footnote 3 cites Brynjolfsson and McAfee, Nordhaus (2015) and Aghion, Jones and Jones (2017). E05 boundary, option A (maintainer decision of 2026-10-15): bears on E05, because it names a hypothesis and assesses it; it names earlier discussions (footnote 3) but does not assess how far economics has engaged with the topic."
+        },
+        {
+          "table": "evidence",
+          "id": "evidence-ec-e05-10",
+          "path": "checkedAt",
+          "old": "2026-10-16",
+          "new": "2026-11-02"
+        },
+        {
+          "table": "evidence",
+          "id": "evidence-ec-e05-10",
+          "path": "note",
+          "old": "Candidate pack passage E05-10 (research/economics-mainstream/esoteric). The quotation (12 words) matched the retrieved current copy (SHA-256 c6512d574ffb62a7b171a0a78fb243eeaa5d0a44ded1c40d243531ebb3078bad) in the pack's verification of 2026-10-15. Re-checked at admission on 2026-10-16 against a copy retrieved that day.",
+          "new": "Candidate pack passage E05-10 (research/economics-mainstream/esoteric). The quotation (12 words) matched the retrieved current copy (SHA-256 c6512d574ffb62a7b171a0a78fb243eeaa5d0a44ded1c40d243531ebb3078bad) in the pack's verification of 2026-10-15. Re-checked at admission on 2026-10-16 against a copy retrieved that day. Corrected on 2026-11-02 after the textual absence-claims sweep of 2026-11-02, part 1 (review/absence-claims-sweep-2026-11-02-part1.md, record 166): the record’s qualification no longer states the absence the sweep found too broad or contradicted; this passage is unchanged. The session applying the correction took the passage and locator from the sweep, which read the source on 2026-11-02, and did not retrieve it again. Recorded in review/absence-sweep-apply-part1-2026-11-02.md."
+        }
+      ]
+    },
+    {
+      "id": "sweep-172:cpo-orb-oc1-lumen-2024",
+      "item": 172,
+      "verdict": "scope issue",
+      "finding": "Read Lumen PDF p.2 and the full current 2022 ASCEND release. The latter proposes solar-powered data centres but does not make the day/night continuity comparison. The 1978 ScienceDirect URL refused direct HTTP and web opening; a fresh search returned the complete publisher abstract, which concerns solar power stations, not computing. The earlier check likewise identified abstract-only access. The qualification should delimit the 1978 absence to that abstract instead of the paper or literature.",
+      "decision": "Brief 08 and the task of 2026-11-02: correct the qualification or note to what the source supports, using the sweep’s passage and locator. The earliest located role stays: the sweep finds the Lumen text still meets O1; the correction narrows what the comparator search inspected.",
+      "reread": false,
+      "patches": [
+        {
+          "table": "claims",
+          "id": "cpo-orb-oc1-lumen-2024",
+          "path": "qualification",
+          "old": "Earliest located among the texts found by the pack’s searches of 2026-10-28 (company, agency, scientific-society and arXiv texts on orbital compute, 2019–2026) and the cross-family check’s bounded search of 2026-10-29/30 for earlier texts, including pre-2024 literature on space solar power; not a claim that no earlier text exists. The check found 1978 solar-power literature that describes continuous solar supply in space without placing computing there, and a 2022 ASCEND announcement that proposes solar-powered orbital data centres without the comparison; neither meets the criterion as worded.",
+          "new": "Earliest located among the texts found by the pack’s searches of 2026-10-28 (company, agency, scientific-society and arXiv texts on orbital compute, 2019–2026) and the cross-family check’s bounded search of 2026-10-29/30 for earlier texts, including pre-2024 literature on space solar power; not a claim that no earlier text exists. The check found the publisher’s abstract of a 1978 paper on solar power satellites, which describes near-continuous solar supply in space without mentioning computing (the full paper was not inspected), and a 2022 ASCEND announcement that proposes solar-powered orbital data centres without the comparison; neither meets the criterion as worded."
+        },
+        {
+          "table": "evidence",
+          "id": "evidence-cpo-orb-oc1-lumen-2024-1",
+          "path": "checkedAt",
+          "old": "2026-10-30",
+          "new": "2026-11-02"
+        },
+        {
+          "table": "evidence",
+          "id": "evidence-cpo-orb-oc1-lumen-2024-1",
+          "path": "note",
+          "old": "Candidate pack passage, compute, power and orbit (research/compute-power-orbit). The quotation (19 words) matched the text retrieved for the candidate pack on 2026-10-28 and again at admission on 2026-10-30, in a fresh retrieval whose SHA-256 equals the pack’s. Matching ignored differences of whitespace, case, quotation marks, dashes and Unicode compatibility forms, so the source’s typography can differ. A cross-family machine check (2026-10-29/30, item 79) re-read the record’s sources and found full support. No human editorial review.",
+          "new": "Candidate pack passage, compute, power and orbit (research/compute-power-orbit). The quotation (19 words) matched the text retrieved for the candidate pack on 2026-10-28 and again at admission on 2026-10-30, in a fresh retrieval whose SHA-256 equals the pack’s. Matching ignored differences of whitespace, case, quotation marks, dashes and Unicode compatibility forms, so the source’s typography can differ. A cross-family machine check (2026-10-29/30, item 79) re-read the record’s sources and found full support. No human editorial review. Corrected on 2026-11-02 after the textual absence-claims sweep of 2026-11-02, part 1 (review/absence-claims-sweep-2026-11-02-part1.md, record 172): the record’s qualification no longer states the absence the sweep found too broad or contradicted; this passage is unchanged. The session applying the correction took the passage and locator from the sweep, which read the source on 2026-11-02, and did not retrieve it again. Recorded in review/absence-sweep-apply-part1-2026-11-02.md."
+        }
+      ]
+    },
+    {
+      "id": "sweep-201:rd-r01-miller-yampolskiy-haggstrom-2020-agi-modifying-utility",
+      "item": 201,
+      "verdict": "absence fails",
+      "finding": "Read the abstract, motivating story, and background, PDF pp.1–4. The paper uses instrumental reasoning, but p.4 expressly says its examples can be viewed as counterexamples to the instrumental goal of goal integrity, while choosing to frame them as counterexamples to strong orthogonality. “Does not dispute” therefore overstates its agreement with the account.",
+      "decision": "Brief 08 and the task of 2026-11-02: correct the qualification or note to what the source supports, using the sweep’s passage and locator.",
+      "reread": true,
+      "patches": [
+        {
+          "table": "claims",
+          "id": "rd-r01-miller-yampolskiy-haggstrom-2020-agi-modifying-utility",
+          "path": "qualification",
+          "old": "The paper distinguishes a strong from a weak orthogonality thesis and contests the strong version in competitive environments; it works within, and does not dispute, the Omohundro-Bostrom account of instrumental goals.",
+          "new": "The paper distinguishes a strong from a weak orthogonality thesis and contests the strong version in competitive environments; it reasons with the Omohundro–Bostrom account of instrumental goals but argues that competitive pressure can defeat goal preservation, and says its examples can be read either as counterexamples to the instrumental goal of goal integrity or to orthogonality, choosing the latter (PDF p. 4)."
+        },
+        {
+          "table": "evidence",
+          "id": "evidence-rd-r01-miller-yampolskiy-haggstrom-2020-agi-modifying-utility-1",
+          "path": "checkedAt",
+          "old": "2026-10-31",
+          "new": "2026-11-02"
+        },
+        {
+          "table": "evidence",
+          "id": "evidence-rd-r01-miller-yampolskiy-haggstrom-2020-agi-modifying-utility-1",
+          "path": "note",
+          "old": "Candidate pack passage, arguments about catastrophic risk from advanced AI (research/risk-debate). The quotation (33 words) matched the text retrieved for the candidate pack on 2026-10-29. Matching ignored differences of whitespace, case, quotation marks, dashes and Unicode compatibility forms, so the source’s typography can differ. No human editorial review.",
+          "new": "Candidate pack passage, arguments about catastrophic risk from advanced AI (research/risk-debate). The quotation (33 words) matched the text retrieved for the candidate pack on 2026-10-29. Matching ignored differences of whitespace, case, quotation marks, dashes and Unicode compatibility forms, so the source’s typography can differ. No human editorial review. Corrected on 2026-11-02 after the textual absence-claims sweep of 2026-11-02, part 1 (review/absence-claims-sweep-2026-11-02-part1.md, record 201): the record’s qualification no longer says that the paper does not dispute the Omohundro–Bostrom account; this passage is unchanged. The session applying the correction re-read the sweep’s passage in the source as served on 2026-11-02. Recorded in review/absence-sweep-apply-part1-2026-11-02.md."
+        }
+      ]
+    },
+    {
+      "id": "sweep-211:rd-r03-belrose-pope-2024-counting-arguments",
+      "item": 211,
+      "verdict": "scope issue",
+      "finding": "Read the complete essay, including “Against goal realism”, “Goal reductionism is powerful” and its empirical generalisation examples. It does report empirical training/behaviour results and uses them to argue about goal attribution and scheming. It does not directly measure a hidden final objective in a trained system. The existing negative should specify that narrower missing measurement.",
+      "decision": "Brief 08 and the task of 2026-11-02: correct the qualification or note to what the source supports, using the sweep’s passage and locator.",
+      "reread": true,
+      "patches": [
+        {
+          "table": "claims",
+          "id": "rd-r03-belrose-pope-2024-counting-arguments",
+          "path": "qualification",
+          "old": "Records the essay's critique of one argument for scheming; it does not report evidence about trained systems' goals.",
+          "new": "Records the essay’s critique of one argument for scheming. The essay draws on empirical results about training and generalisation; it does not measure hidden final goals or scheming motives in a trained system."
+        },
+        {
+          "table": "evidence",
+          "id": "evidence-rd-r03-belrose-pope-2024-counting-arguments-1",
+          "path": "checkedAt",
+          "old": "2026-10-31",
+          "new": "2026-11-02"
+        },
+        {
+          "table": "evidence",
+          "id": "evidence-rd-r03-belrose-pope-2024-counting-arguments-1",
+          "path": "note",
+          "old": "Candidate pack passage, arguments about catastrophic risk from advanced AI (research/risk-debate). The quotation (11 words) matched the text retrieved for the candidate pack on 2026-10-29. Matching ignored differences of whitespace, case, quotation marks, dashes and Unicode compatibility forms, so the source’s typography can differ. No human editorial review.",
+          "new": "Candidate pack passage, arguments about catastrophic risk from advanced AI (research/risk-debate). The quotation (11 words) matched the text retrieved for the candidate pack on 2026-10-29. Matching ignored differences of whitespace, case, quotation marks, dashes and Unicode compatibility forms, so the source’s typography can differ. No human editorial review. Corrected on 2026-11-02 after the textual absence-claims sweep of 2026-11-02, part 1 (review/absence-claims-sweep-2026-11-02-part1.md, record 211): the record’s qualification no longer states the absence the sweep found too broad or contradicted; this passage is unchanged. The session applying the correction re-read the sweep’s passage in the source as served on 2026-11-02. Recorded in review/absence-sweep-apply-part1-2026-11-02.md."
+        }
+      ]
+    },
+    {
+      "id": "sweep-216:rd-a4-altman-2015-machine-intelligence-part-1",
+      "item": 216,
+      "verdict": "scope issue",
+      "finding": "Read the complete post. The transition paragraph gives fast and gradual alternatives without a duration for that transition, but the post also discusses ten- versus hundred-year arrival horizons and a forty-year comparison/projection. “Names no period” needs to identify the transition duration rather than all time estimates in the post.",
+      "decision": "Brief 08 and the task of 2026-11-02: correct the qualification or note to what the source supports, using the sweep’s passage and locator.",
+      "reread": true,
+      "patches": [
+        {
+          "table": "claims",
+          "id": "rd-a4-altman-2015-machine-intelligence-part-1",
+          "path": "qualification",
+          "old": "The post gives both possibilities ('it also may be more gradual') and names no period.",
+          "new": "The post gives both possibilities ('it also may be more gradual') and no duration for the transition. It separately discusses whether arrival is ten or a hundred years away and looks forty years ahead."
+        },
+        {
+          "table": "claims",
+          "id": "rd-a4-altman-2015-machine-intelligence-part-1",
+          "path": "attributes.thought.missing",
+          "old": "It names no period for the rise and uses neither \"intelligence explosion\" nor a takeoff term; it also allows a gradual course.",
+          "new": "It names no duration for the rise and uses neither \"intelligence explosion\" nor a takeoff term; it also allows a gradual course."
+        },
+        {
+          "table": "evidence",
+          "id": "evidence-rd-a4-altman-2015-machine-intelligence-part-1-1",
+          "path": "checkedAt",
+          "old": "2026-10-31",
+          "new": "2026-11-02"
+        },
+        {
+          "table": "evidence",
+          "id": "evidence-rd-a4-altman-2015-machine-intelligence-part-1-1",
+          "path": "note",
+          "old": "Candidate pack passage, arguments about catastrophic risk from advanced AI (research/risk-debate). The quotation (21 words) matched the text retrieved for the candidate pack on 2026-10-29. Matching ignored differences of whitespace, case, quotation marks, dashes and Unicode compatibility forms, so the source’s typography can differ. No human editorial review.",
+          "new": "Candidate pack passage, arguments about catastrophic risk from advanced AI (research/risk-debate). The quotation (21 words) matched the text retrieved for the candidate pack on 2026-10-29. Matching ignored differences of whitespace, case, quotation marks, dashes and Unicode compatibility forms, so the source’s typography can differ. No human editorial review. Corrected on 2026-11-02 after the textual absence-claims sweep of 2026-11-02, part 1 (review/absence-claims-sweep-2026-11-02-part1.md, record 216): the record’s qualification no longer states the absence the sweep found too broad or contradicted; this passage is unchanged. The session applying the correction re-read the sweep’s passage in the source as served on 2026-11-02. Recorded in review/absence-sweep-apply-part1-2026-11-02.md."
+        }
+      ]
+    },
+    {
+      "id": "sweep-229:rd-r08-altman-2015-machine-intelligence-part-1",
+      "item": 229,
+      "verdict": "scope issue",
+      "finding": "Read the complete post. It explicitly argues from optimisation/fitness functions, useful survival subgoals, resource competition and unexpected goal achievement. It supplies no formal model or detailed implementation, but “without a technical argument” can conceal the qualitative causal argument actually given.",
+      "decision": "Brief 08 and the task of 2026-11-02: correct the qualification or note to what the source supports, using the sweep’s passage and locator.",
+      "reread": true,
+      "patches": [
+        {
+          "table": "claims",
+          "id": "rd-r08-altman-2015-machine-intelligence-part-1",
+          "path": "qualification",
+          "old": "The post describes a scenario without a technical argument for how control would be lost.",
+          "new": "The post gives a qualitative argument from fitness functions, survival as a useful subgoal and competition for resources to unintended harm; it gives no formal model or detailed account of how control would be lost."
+        },
+        {
+          "table": "evidence",
+          "id": "evidence-rd-r08-altman-2015-machine-intelligence-part-1-1",
+          "path": "checkedAt",
+          "old": "2026-10-31",
+          "new": "2026-11-02"
+        },
+        {
+          "table": "evidence",
+          "id": "evidence-rd-r08-altman-2015-machine-intelligence-part-1-1",
+          "path": "note",
+          "old": "Candidate pack passage, arguments about catastrophic risk from advanced AI (research/risk-debate). The quotation (39 words) matched the text retrieved for the candidate pack on 2026-10-29. Matching ignored differences of whitespace, case, quotation marks, dashes and Unicode compatibility forms, so the source’s typography can differ. A cross-family machine check (2026-10-31, item 85) re-read the record’s source and found the quotation and stance supported. No human editorial review.",
+          "new": "Candidate pack passage, arguments about catastrophic risk from advanced AI (research/risk-debate). The quotation (39 words) matched the text retrieved for the candidate pack on 2026-10-29. Matching ignored differences of whitespace, case, quotation marks, dashes and Unicode compatibility forms, so the source’s typography can differ. A cross-family machine check (2026-10-31, item 85) re-read the record’s source and found the quotation and stance supported. No human editorial review. Corrected on 2026-11-02 after the textual absence-claims sweep of 2026-11-02, part 1 (review/absence-claims-sweep-2026-11-02-part1.md, record 229): the record’s qualification no longer states the absence the sweep found too broad or contradicted; this passage is unchanged. The session applying the correction re-read the sweep’s passage in the source as served on 2026-11-02. Recorded in review/absence-sweep-apply-part1-2026-11-02.md."
+        }
+      ]
+    },
+    {
+      "id": "sweep-230:rd-r08-dafoe-russell-2016-yes-we-are-worried",
+      "item": 230,
+      "verdict": "scope issue",
+      "finding": "Read the complete Dafoe–Russell reply, separating Etzioni’s appended response. Its final paragraph names unpredictability and possible irreversibility of an optimisation process exceeding its designers as the route of concern. It does not work through a detailed extinction scenario. The missing detail should not be broadened into an absence of any route.",
+      "decision": "Brief 08 and the task of 2026-11-02: correct the qualification or note to what the source supports, using the sweep’s passage and locator.",
+      "reread": true,
+      "patches": [
+        {
+          "table": "claims",
+          "id": "rd-r08-dafoe-russell-2016-yes-we-are-worried",
+          "path": "qualification",
+          "old": "A short statement of the argument in a reply essay; it names no route to extinction.",
+          "new": "A short statement of the argument in a reply essay. It names a general route, the unpredictability and possible irreversibility of an optimisation process more intelligent than its designers, but works through no extinction scenario."
+        },
+        {
+          "table": "evidence",
+          "id": "evidence-rd-r08-dafoe-russell-2016-yes-we-are-worried-1",
+          "path": "checkedAt",
+          "old": "2026-10-31",
+          "new": "2026-11-02"
+        },
+        {
+          "table": "evidence",
+          "id": "evidence-rd-r08-dafoe-russell-2016-yes-we-are-worried-1",
+          "path": "note",
+          "old": "Candidate pack passage, arguments about catastrophic risk from advanced AI (research/risk-debate). The quotation (23 words) matched the text retrieved for the candidate pack on 2026-10-29. Matching ignored differences of whitespace, case, quotation marks, dashes and Unicode compatibility forms, so the source’s typography can differ. A cross-family machine check (2026-10-31, item 70) re-read the record’s source and found the quotation and stance supported. No human editorial review.",
+          "new": "Candidate pack passage, arguments about catastrophic risk from advanced AI (research/risk-debate). The quotation (23 words) matched the text retrieved for the candidate pack on 2026-10-29. Matching ignored differences of whitespace, case, quotation marks, dashes and Unicode compatibility forms, so the source’s typography can differ. A cross-family machine check (2026-10-31, item 70) re-read the record’s source and found the quotation and stance supported. No human editorial review. Corrected on 2026-11-02 after the textual absence-claims sweep of 2026-11-02, part 1 (review/absence-claims-sweep-2026-11-02-part1.md, record 230): the record’s qualification no longer states the absence the sweep found too broad or contradicted; this passage is unchanged. The session applying the correction re-read the sweep’s passage in the source as served on 2026-11-02. Recorded in review/absence-sweep-apply-part1-2026-11-02.md."
+        }
+      ]
+    },
+    {
+      "id": "sweep-237:rd-r09-bostrom-2002-existential-risks",
+      "item": 237,
+      "verdict": "scope issue",
+      "finding": "Read section 6.3 with the adjacent 6.2 and 6.4 and following paragraph. Section 6.3 names no weapon or attack and gives a conditional elite-control scenario. Immediately after the list, however, the paper assigns substantial probability to the shriek scenarios collectively. “Not likely” should not erase that aggregate likelihood statement or turn lack of an individual estimate into a probability denial.",
+      "decision": "Brief 08 and the task of 2026-11-02: correct the qualification or note to what the source supports, using the sweep’s passage and locator.",
+      "reread": false,
+      "patches": [
+        {
+          "table": "claims",
+          "id": "rd-r09-bostrom-2002-existential-risks",
+          "path": "qualification",
+          "old": "The passage concerns the deliberate selection of a superintelligence's goals by a small group to entrench its values; it names no weapon or attack, and it presents the scenario as conceivable, not likely. Recorded on R09 for the seizure or entrenchment of power the criterion names.",
+          "new": "The passage concerns the deliberate selection of a superintelligence's goals by a small group to entrench its values; it names no weapon or attack and presents the scenario as conceivable, giving it no separate probability; the paragraph after the list assigns substantial probability to the shriek scenarios together. Recorded on R09 for the seizure or entrenchment of power the criterion names."
+        },
+        {
+          "table": "evidence",
+          "id": "evidence-rd-r09-bostrom-2002-existential-risks-1",
+          "path": "checkedAt",
+          "old": "2026-10-31",
+          "new": "2026-11-02"
+        },
+        {
+          "table": "evidence",
+          "id": "evidence-rd-r09-bostrom-2002-existential-risks-1",
+          "path": "note",
+          "old": "Candidate pack passage, arguments about catastrophic risk from advanced AI (research/risk-debate). The quotation (28 words) matched the text retrieved for the candidate pack on 2026-10-29. Matching ignored differences of whitespace, case, quotation marks, dashes and Unicode compatibility forms, so the source’s typography can differ. A cross-family machine check (2026-10-31, item 66) answered the record’s question blind and agreed with its stance. No human editorial review.",
+          "new": "Candidate pack passage, arguments about catastrophic risk from advanced AI (research/risk-debate). The quotation (28 words) matched the text retrieved for the candidate pack on 2026-10-29. Matching ignored differences of whitespace, case, quotation marks, dashes and Unicode compatibility forms, so the source’s typography can differ. A cross-family machine check (2026-10-31, item 66) answered the record’s question blind and agreed with its stance. No human editorial review. Corrected on 2026-11-02 after the textual absence-claims sweep of 2026-11-02, part 1 (review/absence-claims-sweep-2026-11-02-part1.md, record 237): the record’s qualification no longer states the absence the sweep found too broad or contradicted; this passage is unchanged. The session applying the correction took the passage and locator from the sweep, which read the source on 2026-11-02, and did not retrieve it again. Recorded in review/absence-sweep-apply-part1-2026-11-02.md."
+        }
+      ]
+    }
+  ]
+}
