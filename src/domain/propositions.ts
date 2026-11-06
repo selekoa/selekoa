@@ -111,8 +111,14 @@ export type PropositionsText = Pick<
 >;
 export type PropositionsFrame = Omit<
   PropositionsCollection,
-  keyof PropositionsText
->;
+  keyof PropositionsText | 'groups'
+> & {
+  /**
+   * The groups without their descriptions, which only the collection's own
+   * page shows: each whole collection adds them (src/reading/describe-groups.ts).
+   */
+  groups: Omit<PropositionsCollection['groups'][number], 'description'>[];
+};
 
 export type Stance =
   (typeof propositionStances)[keyof typeof propositionStances];

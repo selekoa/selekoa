@@ -239,14 +239,15 @@ describe('institutional dossier projection', () => {
     const added4c = new Set(week4c.added.claims);
     // Board records of the 2026-10-17 lab genealogy, part 2 of the
     // 2026-10-28 frameworks-to-law admission, and the 2026-10-30 AI and
-    // biosecurity records (`ab-`) form their own groups.
+    // biosecurity records (`ab-`) and the 2026-11-03 model-cards records
+    // (`mc-`) form their own groups.
     const addedGenealogy = new Set([
       ...genealogy.added.claims,
       ...frameworksToLaw2.added.claims,
       ...dossier.sections.governance
         .flatMap((g) => g.claims)
         .map((c) => c.id)
-        .filter((id) => id.startsWith('ab-')),
+        .filter((id) => id.startsWith('ab-') || id.startsWith('mc-')),
     ]);
     expect(
       dossier.sections.governance.filter((g) =>

@@ -40,6 +40,10 @@ import { setReadHooks } from '../domain/memo';
 import type { Dataset } from '../domain/schema';
 import { memorySearchSource } from '../ui/memory-search';
 import { provideSearch } from '../ui/search-source';
+import { provideIslands } from '../ui/islands';
+import { cellsIsland, ModelCardsCells } from '../ui/ModelCards';
+import { modelCardsId } from '../reading/model-cards-page';
+import { normalisePath } from '../domain/addresses';
 import { pageMeta, pagePaths, siteName } from './pages';
 import { pageHtml } from './page-html';
 import { mapReadable, queryDataset } from '../domain/query';
@@ -103,7 +107,36 @@ export const pageFiles = (baseUrl: string) => [
 /** Every path the build writes. */
 export const paths = () => pagePaths(repository.data);
 
+/**
+ * Built markup the browser keeps until it has loaded what draws it
+ * (src/ui/islands.ts), drawn from the whole dataset, never from the records
+ * held for a page: it is no part of any page's slice. The list of every
+ * cell on the Model cards page.
+ */
+const islands = new Map<string, string>();
+provideIslands((key) => islands.get(key));
+async function drawIslands(address: string) {
+  if (
+    islands.has(cellsIsland) ||
+    normalisePath(address.split('?')[0]) !== `/compare/${modelCardsId}`
+  )
+    return;
+  const none = () => {};
+  const stream = await renderToReadableStream(
+    <ModelCardsCells
+      repository={repository}
+      developer={null}
+      selectedClaimId={null}
+      onClaim={none}
+      onEditions={none}
+    />,
+  );
+  await stream.allReady;
+  islands.set(cellsIsland, await new Response(stream).text());
+}
+
 async function renderApp(address: string) {
+  await drawIslands(address);
   let failure: unknown = null;
   const stream = await renderToReadableStream(
     <StrictMode>

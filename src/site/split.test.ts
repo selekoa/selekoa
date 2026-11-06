@@ -3,7 +3,7 @@ import { repository } from '../domain/repository';
 import type { Dataset } from '../domain/schema';
 import { createSearchIndex } from '../domain/search';
 import { buildIndexFiles, chunkShown } from '../domain/search-index';
-import { searchFacets } from '../ui/search-facets';
+import { searchCollections, searchFacets } from '../ui/search-facets';
 import {
   assemble,
   contentOf,
@@ -11,6 +11,8 @@ import {
   coreOf,
   mergeIndexes,
   mergeSlices,
+  packSlice,
+  unpackSlice,
   type PlacedSlice,
 } from '../domain/slices';
 import { collectionIndex, indexFor } from '../domain/collection-index';
@@ -77,7 +79,7 @@ describe('split completeness', () => {
 describe('split completeness of the search index', () => {
   const facets = searchFacets(data);
   const files = buildIndexFiles(data, {
-    collections: facets.collections,
+    collections: searchCollections(data),
     organisations: facets.organisations.map((o) => o.id),
   });
   const index = createSearchIndex(data);
@@ -177,6 +179,31 @@ describe('split completeness of per-page data', () => {
             ).toEqual(original[field]);
         });
     }
+  });
+});
+
+describe('slice files', () => {
+  it('gives back every slice as it was packed, field for field', async () => {
+    for (const path of [
+      '/compare/model-cards',
+      '/dossier/openai',
+      '/claim/dario-anthropic-2021',
+    ]) {
+      const { slice } = (await renderSlice(path))!;
+      const file = JSON.parse(JSON.stringify(packSlice(slice)));
+      expect(unpackSlice(file), path).toEqual(
+        JSON.parse(JSON.stringify(slice)),
+      );
+    }
+    const core = coreOf(data);
+    expect(unpackSlice(JSON.parse(JSON.stringify(packSlice(core))))).toEqual(
+      JSON.parse(JSON.stringify(core)),
+    );
+  });
+
+  it('reads a slice that is not packed as it stands', () => {
+    const core = coreOf(data);
+    expect(unpackSlice(core)).toBe(core);
   });
 });
 
@@ -313,6 +340,15 @@ describe('propositions collections without their text', () => {
       const frame = propositionFrames[i] as Record<string, unknown>;
       for (const [field, value] of Object.entries(whole))
         if (text.includes(field)) expect(frame[field], field).toBeUndefined();
+        // The frame's groups leave out the descriptions only the page shows.
+        else if (field === 'groups')
+          expect(frame.groups, `${whole.id}.groups`).toEqual(
+            whole.groups.map((g) => ({
+              id: g.id,
+              label: g.label,
+              propositionIds: g.propositionIds,
+            })),
+          );
         else expect(frame[field], `${whole.id}.${field}`).toBe(value);
     });
   });

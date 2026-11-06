@@ -1,5 +1,6 @@
 import type { PropositionsCollection } from '../domain/propositions';
 import { yudkowskyArgumentsFrame as frame } from './proposition-frames';
+import { describeGroups } from './describe-groups';
 
 /** The maintainer's decisions of 2026-11-02 on the archive retrieval of held sources. */
 const archiveApply = '2026-11-02';
@@ -24,7 +25,9 @@ export const yudkowskyArguments: PropositionsCollection = {
   editorialStatus: frame.editorialStatus,
   introduction:
     'Each claim is recorded as a proposition with one criterion. It is phrased generically and attributed to no one. A text of his that meets the criterion articulates the proposition. A text that disputes it, or a premise it depends on, contests it, and the record says whether the passage gives a reason against a premise or states the contrary only. A text that comes close bears on it, and its record names what is missing. Texts are listed in date order. The page records what he wrote and when. It does not assess whether he was right.',
-  groups: frame.groups,
+  groups: describeGroups(frame.groups, {
+    Y: 'Claims often made about advanced AI, phrased generically for this collection. The codes follow the numbers of the research pack the records come from, which has no Y23.',
+  }),
   searchNote: {
     scope:
       'The collection records passages from Yudkowsky’s own writing only. “Earliest located” means the earliest of his texts that the searches below found. It does not mean that he made the point before anyone else, and an earlier text of his may exist outside these searches.',
@@ -347,6 +350,11 @@ export const yudkowskyArguments: PropositionsCollection = {
         propositionId: 'llms-lack-agency',
         relation:
           'A related proposition in the collection on catastrophic risk, recorded from texts by many authors.',
+      },
+      {
+        propositionId: 'machines-only-do-what-they-are-ordered',
+        relation:
+          'An earlier claim in the collection of antecedent texts: that a machine can only do what it is ordered to do. It concerns what a machine can produce, not its goals.',
       },
     ],
     'slow-takeoff-time-to-adjust': [

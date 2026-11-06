@@ -4,6 +4,14 @@ import { documentHistories } from '../reading/frontier-safety-frameworks';
 import { frameworkComparison } from '../reading/framework-comparison';
 import { comparisonFacets, facetById } from './framework-comparison';
 import { frameworkVersions } from './versions';
+import { cardDevelopers, cardFacets } from './model-card-facets';
+import { modelCardsId } from '../reading/model-cards-page';
+import { lawFacets } from './law-questions';
+import {
+  lawsComparedEarlierTexts,
+  lawsComparedId,
+} from '../reading/laws-compared-page';
+import { predictionsId } from '../reading/predictions-page';
 import { controlStructures } from '../reading/control-structures';
 import { controlTimelinesId } from '../reading/control-timelines-page';
 import { commitmentCollections } from '../reading/commitments';
@@ -99,13 +107,19 @@ export function resolveReference(
   }
   // A comparison question's own page: `/compare/<id>/<question>`.
   const question = /^\/compare\/([^/?]+)\/([^/?]+)(?:\?(.*))?$/.exec(ref);
+  // Model cards compared has questions of its own (src/domain/model-cards.ts).
   const facetPage = question
-    ? comparisonFacets.find((f) => facetSlug(f.id) === question[2])
+    ? (question[1] === modelCardsId
+        ? cardFacets
+        : question[1] === lawsComparedId
+          ? lawFacets
+          : comparisonFacets
+      ).find((f) => facetSlug(f.id) === question[2])
     : undefined;
   if (question && !facetPage) return invalid;
   const match = question
     ? [ref, 'compare', question[1], question[3]]
-    : /^\/(claim|dossier|reading|question|documents|compare|document|person|control|commitments|guide|propositions|stances|year)\/([^/?]+)(?:\?(.*))?$/.exec(
+    : /^\/(claim|dossier|reading|question|documents|compare|document|person|control|commitments|guide|propositions|predictions|stances|year)\/([^/?]+)(?:\?(.*))?$/.exec(
         ref,
       );
   if (!match) return invalid;
@@ -122,11 +136,15 @@ export function resolveReference(
       ? ['section', 'claim', 'inspect']
       : kind === 'claim'
         ? []
-        : kind === 'compare'
-          ? ['facet', 'edition', 'frameworks', 'inspect']
-          : kind === 'dossier'
-            ? ['view', 'inspect']
-            : ['inspect'];
+        : kind === 'compare' && id === modelCardsId
+          ? ['developer', 'inspect']
+          : kind === 'compare' && id === lawsComparedId
+            ? ['edition', 'inspect']
+            : kind === 'compare'
+              ? ['facet', 'edition', 'frameworks', 'inspect']
+              : kind === 'dossier'
+                ? ['view', 'inspect']
+                : ['inspect'];
   if (
     [...params.keys()].some(
       (key) =>
@@ -153,6 +171,38 @@ export function resolveReference(
     return documentHistories.some((d) => d.id === id)
       ? { target: { kind, id, inspect }, notice: null }
       : invalid;
+  if (kind === 'compare' && id === modelCardsId) {
+    // One developer's cards: a developer some row of the table is by.
+    const developer = params.get('developer') ?? undefined;
+    return !developer || cardDevelopers.some((d) => d.id === developer)
+      ? {
+          target: {
+            kind,
+            id,
+            facet: facetPage?.id,
+            ...(developer ? { developer } : {}),
+            inspect,
+          },
+          notice: null,
+        }
+      : invalid;
+  }
+  if (kind === 'compare' && id === lawsComparedId) {
+    // An earlier text in place of a column's latest (New York as signed).
+    const edition = params.get('edition') ?? undefined;
+    return !edition || lawsComparedEarlierTexts.includes(edition)
+      ? {
+          target: {
+            kind,
+            id,
+            facet: facetPage?.id,
+            ...(edition ? { editions: [edition] } : {}),
+            inspect,
+          },
+          notice: null,
+        }
+      : invalid;
+  }
   if (kind === 'compare') {
     // The earlier `?facet=` form still opens the question.
     if (facetPage && params.has('facet')) return invalid;
@@ -203,6 +253,10 @@ export function resolveReference(
       : invalid;
   if (kind === 'guide')
     return guideIds.includes(id)
+      ? { target: { kind, id, inspect }, notice: null }
+      : invalid;
+  if (kind === 'predictions')
+    return id === predictionsId
       ? { target: { kind, id, inspect }, notice: null }
       : invalid;
   if (kind === 'propositions' || kind === 'stances')

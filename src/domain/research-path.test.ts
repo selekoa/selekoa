@@ -1,4 +1,5 @@
 import { describe, expect, it } from 'vitest';
+import corrections from '../../review/corrections-2026-11-06-before-2026-11-06.json';
 import auditFollowups from '../../review/audit-followups-before-2026-11-02.json';
 import {
   questionPath,
@@ -27,6 +28,9 @@ import technicalHistory1 from '../../review/technical-history-admission-1-before
 import technicalHistory2 from '../../review/technical-history-admission-2-before-2026-10-31.json';
 import riskDebate from '../../review/risk-debate-admission-before-2026-10-31.json';
 import labGenealogy2 from '../../review/lab-genealogy-2-admission-before-2026-11-01.json';
+import modelCards1 from '../../review/model-cards-admission-1-before-2026-11-03.json';
+import modelCards3 from '../../review/model-cards-admission-3-before-2026-11-05.json';
+import modelCards4 from '../../review/model-cards-admission-4-before-2026-11-05.json';
 const data = repository.data;
 // Records of the 2026-10-17 lab genealogy, left out of the earlier counts.
 // The genealogy records, including the five admitted on 2026-10-26, and the
@@ -51,6 +55,11 @@ const fromGenealogy = new Set([
   // The 2026-11-01 lab genealogy 2 records (founders, moves and rounds,
   // 2023–2026) are left out of the frozen counts too.
   ...labGenealogy2.added.claims,
+  // The 2026-11-03 and 2026-11-05 model-cards records (card publication,
+  // citations and cells).
+  ...modelCards1.added.claims,
+  ...modelCards3.added.claims,
+  ...modelCards4.added.claims,
   // The 2026-11-02 audit follow-ups (Christiano's initial-Trustee snapshot).
   ...auditFollowups.added.claims,
 ]);
@@ -61,12 +70,13 @@ const path = researchPath(data, 'anthropic')!;
 // to the institutions' people, which brings their earlier records into the
 // dossiers; the frozen totals below are taken on the records before it.
 // The 2026-11-01 lab genealogy 2 admission's people and moves link further
-// earlier records to the dossier in the same way, so they are left out too.
+// earlier records to the dossier in the same way, so they are left out too,
+// as is Christiano's authorship of "Takeoff speeds" (corrections of
+// 2026-11-06).
 const keyPaperRows = new Set(
-  [keyPapers1, keyPapers2, keyPapers3, labGenealogy2].flatMap((s) => [
-    ...s.added.claims,
-    ...s.added.entities,
-  ]),
+  [keyPapers1, keyPapers2, keyPapers3, labGenealogy2, corrections].flatMap(
+    (s) => [...s.added.claims, ...s.added.entities],
+  ),
 );
 const beforeKeyPapers = {
   ...data,

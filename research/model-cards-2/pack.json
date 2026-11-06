@@ -1,0 +1,2625 @@
+{
+  "title": "Model cards compared, pack 2: what frontier developers’ cards disclose",
+  "status": "Candidate research pack outside application data. Machine-prepared (Claude) and audited on a seeded sample by the same model family; checked by a different family (Codex, GPT family) on 60 cells on 2026-11-04 and adjudicated the same day (review note); not editorially accepted; no human review.",
+  "prepared": "2026-11-04",
+  "checkDate": "2026-11-04",
+  "questionSet": "questions.json",
+  "selectionRule": "Decision 1a: every card that cites the developer’s frontier framework or states a determination under it, plus, for each developer, the latest card before its first framework edition. This pack drafts the eight cards that population.json orders first (round robin over the developers, earliest-dated first); the first pack’s 20 rows are not repeated here.",
+  "cards": [
+    {
+      "id": "anthropic-claude-3",
+      "developer": "Anthropic",
+      "model": "Claude 3 (Opus, Sonnet, Haiku)",
+      "year": 2024,
+      "source": "anthropic-claude-3",
+      "frameworkEditions": ["rsp-2023"],
+      "frameworkEditionNote": "The card's reference [5] reads 'Anthropic, “Anthropic’s Responsible Scaling Policy.” September, 2023.' with the policy's announcement address, and Section 6.2.1 refers to 'v1.0 of our RSP'. The dataset records rsp-2023 as v1.0 of September 19, 2023. The copy read is the revision of October 22, 2024 (two update lines under the abstract); its two addenda (PDF pp. 43–63) are separate cards in the inventory and are not read for this row.",
+      "group": "anthropic",
+      "title": "The Claude 3 Model Family: Opus, Sonnet, Haiku",
+      "kind": "model card",
+      "url": "https://www-cdn.anthropic.com/c6a80a657af445f40e31afac050f3bf76d3b1404.pdf"
+    },
+    {
+      "id": "anthropic-claude-3-5-sonnet",
+      "developer": "Anthropic",
+      "model": "Claude 3.5 Sonnet",
+      "year": 2024,
+      "source": "anthropic-claude-3-5-sonnet",
+      "frameworkEditions": [],
+      "frameworkEditionNote": "The addendum names the Responsible Scaling Policy without a version, date or reference to the policy. As context only: the dataset records rsp-2023 (v1.0, 2023-09-19) as the edition published before the addendum's index month (June 2024); rsp-v2-0 is effective from 2024-10-15.",
+      "group": "anthropic",
+      "title": "Claude 3.5 Sonnet Model Card Addendum",
+      "kind": "addendum",
+      "url": "https://www-cdn.anthropic.com/fed9cc193a14b84131812372d8d5857f8f304c52/Model_Card_Claude_3_Addendum.pdf"
+    },
+    {
+      "id": "google-deepmind-gemini-2-0-flash",
+      "developer": "Google DeepMind",
+      "model": "Gemini 2.0 Flash",
+      "year": 2025,
+      "source": "gdm-gemini-2-0-flash",
+      "frameworkEditions": ["fsf-v2-0"],
+      "frameworkEditionNote": "The PDF's hyperlink on these words (PDF link annotation) points to storage.googleapis.com/deepmind-media/DeepMind.com/Blog/updating-the-frontier-safety-framework/Frontier%20Safety%20Framework%202.0%20(1).pdf, whose cover, retrieved 2026-11-04, reads \"4th February 2025\" and \"Version 2.0\" (fsf-v2-0). The dataset source for fsf-v2-0 is a file of the same name without \"(1)\"; the two files differ in bytes. The printed text names no edition; the edition rests on the link annotation (decision 4a).",
+      "group": "google-xai",
+      "title": "Gemini 2.0 Flash Model Card",
+      "kind": "model card",
+      "url": "https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-2-0-Flash-Model-Card.pdf"
+    },
+    {
+      "id": "google-deepmind-gemini-2-0-flash-lite",
+      "developer": "Google DeepMind",
+      "model": "Gemini 2.0 Flash-Lite",
+      "year": 2025,
+      "source": "gdm-gemini-2-0-flash-lite",
+      "frameworkEditions": ["fsf-v2-0"],
+      "frameworkEditionNote": "The PDF's hyperlink on these words (PDF link annotation) points to storage.googleapis.com/deepmind-media/DeepMind.com/Blog/updating-the-frontier-safety-framework/Frontier%20Safety%20Framework%202.0%20(1).pdf, whose cover, retrieved 2026-11-04, reads \"4th February 2025\" and \"Version 2.0\" (fsf-v2-0). The dataset source for fsf-v2-0 is a file of the same name without \"(1)\"; the two files differ in bytes. The printed text names no edition; the edition rests on the link annotation (decision 4a).",
+      "group": "google-xai",
+      "title": "Gemini 2.0 Flash-Lite Model Card",
+      "kind": "model card",
+      "url": "https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-2-0-Flash-Lite-Model-Card.pdf"
+    },
+    {
+      "id": "meta-code-world-model",
+      "developer": "Meta",
+      "model": "Code World Model (CWM)",
+      "year": 2025,
+      "source": "meta-code-world-model",
+      "frameworkEditions": [],
+      "frameworkEditionNote": "The card names Meta's Frontier AI Framework and links it at the undated address ai.meta.com/static-resource/meta-frontier-ai-framework, without a version. As context only: the dataset records meta-faf-v1-1 (2025-02-03) as the edition published before the card's earliest located date (2025-09-24).",
+      "group": "meta-microsoft",
+      "title": "Model Card for Code World Model (MODEL_CARD.md)",
+      "kind": "model card",
+      "url": "https://raw.githubusercontent.com/facebookresearch/cwm/7930e0298bf32aae28cc0e35e18a54c772603364/MODEL_CARD.md"
+    },
+    {
+      "id": "meta-muse-spark",
+      "developer": "Meta",
+      "model": "Muse Spark",
+      "year": 2026,
+      "source": "meta-muse-spark-arxiv",
+      "frameworkEditions": ["meta-aasf-v2-0"],
+      "frameworkEditionNote": "The report names Meta's Advanced AI Scaling Framework; footnote 2 (PDF p. 6) gives the address ai.meta.com/static-resource/Meta_Advanced-AI-Scaling-Framework-v2, whose file name names version 2. The dataset records meta-aasf-v2-0 (Advanced AI Scaling Framework Version 2, 2026-04-08). The copy read is arXiv 2606.12429v1; Meta's own address for the report answered HTTP 400 here; the cross-family check of 2026-11-04 retrieved Meta's copies (an earlier 158-page expression in a capture of 2026-04-14, and the live copy printing May 26, 2026), which differ from the arXiv copy in bytes and text (see Q01).",
+      "group": "meta-microsoft",
+      "title": "Muse Spark Safety & Preparedness Report (arXiv 2606.12429v1)",
+      "kind": "safety report",
+      "url": "https://arxiv.org/pdf/2606.12429v1"
+    },
+    {
+      "id": "openai-gpt-4o",
+      "developer": "OpenAI",
+      "model": "GPT-4o",
+      "year": 2024,
+      "source": "openai-gpt-4o",
+      "frameworkEditions": ["preparedness-beta-2023"],
+      "frameworkEditionNote": "The card's reference [4] names the beta Preparedness Framework of 2023 and its file name 'openai-preparedness-framework-beta.pdf' on cdn.openai.com (the text layer interleaves the address with the title). The dataset records preparedness-beta-2023 as published on 2023-12-18.",
+      "group": "openai",
+      "title": "GPT-4o System Card",
+      "kind": "system card",
+      "url": "https://cdn.openai.com/gpt-4o-system-card.pdf"
+    },
+    {
+      "id": "xai-grok-4",
+      "developer": "xAI",
+      "model": "Grok 4",
+      "year": 2025,
+      "source": "xai-grok-4",
+      "frameworkEditions": [],
+      "frameworkEditionNote": "The card names xAI's Risk Management Framework (RMF) without a version, date, reference or link (the PDF's link annotations point to references and a system-prompt repository). The RMF is not among the dataset's framework editions (decision 5a: to be added in a separate data task). As context only: the first pack records an RMF served at data.x.ai printing 'Last updated: August 20, 2025', the date the card also prints.",
+      "group": "google-xai",
+      "title": "Grok 4 Model Card",
+      "kind": "model card",
+      "url": "https://data.x.ai/2025-08-20-grok-4-model-card.pdf"
+    }
+  ],
+  "cells": [
+    {
+      "card": "anthropic-claude-3",
+      "question": "Q01",
+      "status": "partly",
+      "passages": [
+        {
+          "source": "anthropic-claude-3",
+          "locator": "Abstract, PDF p. 1",
+          "quote": "Update (June 20, 2024): We have added an addendum covering Claude 3.5 Sonnet."
+        },
+        {
+          "source": "anthropic-claude-3",
+          "locator": "Abstract, PDF p. 1",
+          "quote": "Update (October 22, 2024): We have added an addendum covering an upgrade to Claude 3.5 Sonnet and Claude 3.5 Haiku."
+        }
+      ],
+      "note": "The copy read prints two revision dates (June 20 and October 22, 2024) and no issue date of its own. Anthropic's index gives the month March 2024 (inventory); under decision 3a the row is dated by that earliest located publication, with the two updates as revisions.",
+      "search": {
+        "read": "Cover and abstract (PDF p. 1), the page footers, and term search across PDF pp. 1–42.",
+        "terms": ["2024", "March", "Update", "published", "dated"],
+        "setAside": [
+          {
+            "locator": "Figure 16 caption, PDF p. 23",
+            "reason": "'This plot was updated on June 20, 2024' dates a figure correction, not the card."
+          }
+        ]
+      }
+    },
+    {
+      "card": "anthropic-claude-3",
+      "question": "Q02",
+      "status": "partly",
+      "passages": [
+        {
+          "source": "anthropic-claude-3",
+          "locator": "Section 1 'Introduction', PDF p. 1",
+          "quote": "Developed by Anthropic and announced in March 2024, the Claude 3 model family will be available in our consumer offerings (Claude.ai, Claude Pro) as well as enterprise solutions like the Anthropic API, Amazon Bedrock, and Google Vertex AI."
+        }
+      ],
+      "note": "The card gives the forms of availability (consumer products, the API and two cloud platforms) and the month of announcement, March 2024. It gives no release or availability date; an announcement month is a different event.",
+      "search": {
+        "read": "Sections 1–2 and term search across PDF pp. 1–42.",
+        "terms": [
+          "release",
+          "available",
+          "availability",
+          "launch",
+          "announced"
+        ],
+        "setAside": []
+      }
+    },
+    {
+      "card": "anthropic-claude-3",
+      "question": "Q03",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "anthropic-claude-3",
+          "locator": "References, [5], PDF p. 39",
+          "quote": "Anthropic, “Anthropic’s Responsible Scaling Policy.” September, 2023."
+        },
+        {
+          "source": "anthropic-claude-3",
+          "locator": "Section 6.2.1 'Autonomous Replication and Adaption (ARA) evaluations', PDF p. 24",
+          "quote": "The evaluation tasks were based on tasks defined in the appendix of v1.0 of our RSP [5]"
+        }
+      ],
+      "note": "The card names the Responsible Scaling Policy and identifies the edition by its date (September 2023) and as v1.0 (rsp-2023)."
+    },
+    {
+      "card": "anthropic-claude-3",
+      "question": "Q04",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "anthropic-claude-3",
+          "locator": "References, [5], PDF p. 39",
+          "quote": "September, 2023. https://www.anthropic.com/index/anthropics-responsible-scaling-policy."
+        }
+      ],
+      "note": "The card gives a bibliographic reference with an address. The address is Anthropic's announcement page for the policy, not the policy PDF."
+    },
+    {
+      "card": "anthropic-claude-3",
+      "question": "Q05",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "anthropic-claude-3",
+          "locator": "Section 6.2 'Evaluation Results', PDF p. 24",
+          "quote": "Our results show no indicators of catastrophic risk, and therefore we classify all of our Claude 3 models as ASL-2."
+        }
+      ],
+      "note": "The card assigns ASL-2 to all three Claude 3 models. It states that the evaluations were run on a lower-refusal version of Claude 3 Opus."
+    },
+    {
+      "card": "anthropic-claude-3",
+      "question": "Q06",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "anthropic-claude-3",
+          "locator": "Section 6.3 'Security and Deployment Mitigations', PDF p. 26",
+          "quote": "we still take various precautionary measures at ASL-2. We harden security against opportunistic attackers for all copies of Claude 3 model weights."
+        },
+        {
+          "source": "anthropic-claude-3",
+          "locator": "Section 6.3 'Security and Deployment Mitigations', PDF p. 26",
+          "quote": "You can read a more detailed description of our ASL-2 security and deployment measures in our full policy [5]."
+        }
+      ],
+      "note": "The card states security and deployment measures at ASL-2, the level assigned in Q05, including automated detection of CBRN- and cyber-related prompts. This is the developer's account of the measures."
+    },
+    {
+      "card": "anthropic-claude-3",
+      "question": "Q07",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "anthropic-claude-3",
+          "locator": "Section 6.2.2 'Biological Evaluations', PDF p. 25",
+          "quote": "In summary, the model did not meet our most conservative biological risk thresholds, and our expert consultants agreed."
+        }
+      ],
+      "note": "The card states biological evaluations (automated question sets and a human uplift trial) with the outcome that the early-indicator thresholds were not met. No chemical, radiological or nuclear evaluation is reported for Claude 3. Evaluation details are not recorded (hazard rule)."
+    },
+    {
+      "card": "anthropic-claude-3",
+      "question": "Q08",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "anthropic-claude-3",
+          "locator": "Section 6.2.3 'Cyber Evaluations', PDF p. 25",
+          "quote": "We judged that the model did not pass the ASL-3 threshold on any of the early indicator tests."
+        }
+      ],
+      "note": "The card states cyber evaluations (vulnerability discovery and exploit development) with the outcome that the ASL-3 threshold was not passed. Scores and task details are not recorded (hazard rule)."
+    },
+    {
+      "card": "anthropic-claude-3",
+      "question": "Q09",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "anthropic-claude-3",
+          "locator": "Section 6.2.1 'Autonomous Replication and Adaption (ARA) evaluations', PDF p. 24",
+          "quote": "Across all the rounds, the model was clearly below our ARA ASL-3 risk threshold, having failed at least 3 out of 5 tasks"
+        }
+      ],
+      "note": "The card states autonomous replication and adaptation evaluations with the outcome that the ASL-3 warning threshold was not crossed. Task contents are not recorded (hazard rule)."
+    },
+    {
+      "card": "anthropic-claude-3",
+      "question": "Q10",
+      "status": "not-found",
+      "passages": [],
+      "note": "No report of an evaluation of persuasive or manipulative capability was found in the Claude 3 card (PDF pp. 1–42).",
+      "search": {
+        "read": "Sections 5.4, 6 and 7 (PDF pp. 10–31) and term search across PDF pp. 1–42.",
+        "terms": ["persua", "manipulat", "influence", "sway", "election"],
+        "setAside": [
+          {
+            "locator": "Section 7.2 'Elections Integrity', PDF p. 28",
+            "reason": "Describes testing of responses to election misinformation prompts, which concerns misuse, not the model's persuasive capability."
+          }
+        ]
+      }
+    },
+    {
+      "card": "anthropic-claude-3",
+      "question": "Q11",
+      "status": "partly",
+      "passages": [
+        {
+          "source": "anthropic-claude-3",
+          "locator": "Section 6.2.1 'Autonomous Replication and Adaption (ARA) evaluations', PDF p. 24",
+          "quote": "These tasks are selected to indicate whether the model can make meaningful progress towards accumulating resources, exploiting software security vulnerabilities, deceiving humans, and surviving autonomously in the absence of human intervention to stop the model."
+        },
+        {
+          "source": "anthropic-claude-3",
+          "locator": "Section 6.2.1 'Autonomous Replication and Adaption (ARA) evaluations', PDF p. 24",
+          "quote": "Our pre-specified warning indicator for ASL-3 was the model passing 50% or more of the tasks (described below) with at least a 10% pass rate (i.e., succeeding at one in ten attempts) – the model did not cross this threshold."
+        }
+      ],
+      "note": "The ARA evaluations are described as indicating, among other capabilities, whether the model can make progress at deceiving humans, and the card gives one combined conclusion for them: the ASL-3 warning indicator was not crossed. It gives no conclusion on deception separately, and reports no evaluation of the model’s own propensity for deception, scheming or sabotage. The same evaluations are recorded under Q09. Task contents are not recorded (hazard rule).",
+      "search": {
+        "read": "Sections 5.4–5.7, 6 and 7 (PDF pp. 10–31) and term search across PDF pp. 1–42.",
+        "terms": [
+          "decept",
+          "deceiv",
+          "scheming",
+          "sabotage",
+          "oversight",
+          "sandbag",
+          "reward hack",
+          "honest"
+        ],
+        "setAside": [
+          {
+            "locator": "Section 5.7 'Factual Accuracy', PDF p. 18",
+            "reason": "An honesty benchmark of factual accuracy, not an evaluation of deception or scheming."
+          }
+        ]
+      },
+      "crossFamily": {
+        "item": "4",
+        "result": "material disagreement, applied: the checker reads partly (blind), because Q11 includes capability for deception and the ARA scope includes deceiving humans, with a combined conclusion. The pack had read not found, setting the passage aside as a Q09 evaluation; the criterion makes no such exclusion. The preparer accepts the checker’s reading."
+      }
+    },
+    {
+      "card": "anthropic-claude-3",
+      "question": "Q12",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "anthropic-claude-3",
+          "locator": "Section 7.1.1 'Multimodal Policy Red-Teaming', PDF p. 27",
+          "quote": "Examples of tested topics include, but are not limited to: child safety, dangerous weapons and technology, hate speech, violent extremism, fraud, and illegal substances."
+        },
+        {
+          "source": "anthropic-claude-3",
+          "locator": "Section 7 'Trust & Safety and Societal Impact Evaluations', PDF p. 26",
+          "quote": "We conduct vulnerability testing using internal and external human testers to explore over a dozen policy categories"
+        }
+      ],
+      "note": "The card states a Trust & Safety multimodal red-team exercise, with example topics and a prompt count (378 prompts, Figure 17), and vulnerability testing by internal and external testers across over a dozen policy categories. Section 6.2 states that the RSP requires risk assessment 'primarily through automated evaluations and red teaming'."
+    },
+    {
+      "card": "anthropic-claude-3",
+      "question": "Q13",
+      "status": "partly",
+      "passages": [
+        {
+          "source": "anthropic-claude-3",
+          "locator": "Section 7 'Trust & Safety and Societal Impact Evaluations', PDF p. 26",
+          "quote": "We conduct vulnerability testing using internal and external human testers to explore over a dozen policy categories"
+        }
+      ],
+      "note": "The card describes external testers and, for the biological evaluations, 'expert consultants' (Section 6.2.2), without naming any organisation.",
+      "search": {
+        "read": "Sections 6–7 and term search across PDF pp. 1–42.",
+        "terms": [
+          "external",
+          "third party",
+          "third-party",
+          "partner",
+          "consultant",
+          "advisor"
+        ],
+        "setAside": [
+          {
+            "locator": "Section 4, PDF p. 4",
+            "reason": "External experts named for the carbon-footprint analysis, not for testing the model."
+          }
+        ]
+      }
+    },
+    {
+      "card": "anthropic-claude-3",
+      "question": "Q14",
+      "status": "not-found",
+      "passages": [],
+      "note": "No government body is named as having tested or received access to Claude 3.",
+      "search": {
+        "read": "Sections 1–7 and term search across PDF pp. 1–42.",
+        "terms": [
+          "government",
+          "Safety Institute",
+          "AISI",
+          "pre-deployment",
+          "access"
+        ],
+        "setAside": [
+          {
+            "locator": "Section 1, PDF p. 2",
+            "reason": "A general commitment to share findings with 'industry, government, and civil society', not testing of the model."
+          },
+          {
+            "locator": "Section 6.1, PDF p. 23",
+            "reason": "Mentions red-teaming guidance in the US Executive Order, which is not a body testing the model."
+          }
+        ]
+      }
+    },
+    {
+      "card": "anthropic-claude-3",
+      "question": "Q15",
+      "status": "partly",
+      "passages": [
+        {
+          "source": "anthropic-claude-3",
+          "locator": "Section 6.2 'Evaluation Results', PDF p. 24",
+          "quote": "Our results show no indicators of catastrophic risk, and therefore we classify all of our Claude 3 models as ASL-2."
+        },
+        {
+          "source": "anthropic-claude-3",
+          "locator": "Section 2.7 'Release Decisions and Maintenance', PDF p. 3",
+          "quote": "we incrementally roll out access to our products to ensure their safety and reliability"
+        }
+      ],
+      "note": "The card states a capability determination in the company's voice and, under a heading on release decisions, general release practices. No passage describes a decision to release Claude 3 or names who made one.",
+      "search": {
+        "read": "Sections 2.7 and 6 and term search across PDF pp. 1–42.",
+        "terms": [
+          "decide",
+          "decision",
+          "release",
+          "deploy",
+          "launch",
+          "chose",
+          "approve"
+        ],
+        "setAside": [
+          {
+            "locator": "Section 1, PDF p. 1",
+            "reason": "States availability of the models, which alone is not a release decision (decision 13a)."
+          }
+        ]
+      }
+    },
+    {
+      "card": "anthropic-claude-3",
+      "question": "Q16",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "anthropic-claude-3",
+          "locator": "Section 6.4 'RSP areas for improvement', PDF p. 26",
+          "quote": "we are aware that these results do not comprehensively rule out risk."
+        },
+        {
+          "source": "anthropic-claude-3",
+          "locator": "Section 6.2.2 'Biological Evaluations', PDF p. 25",
+          "quote": "Opus performed worse, suggesting that we may have under-elicited the model’s capabilities."
+        }
+      ],
+      "note": "The card states that its results do not rule out risk, that elicitation could be improved on ARA and CBRN tasks, and that the biological evaluations may have under-elicited capability. Section 6.2 adds that 'evaluations are a hard scientific problem'."
+    },
+    {
+      "card": "anthropic-claude-3-5-sonnet",
+      "question": "Q01",
+      "status": "not-found",
+      "passages": [],
+      "note": "The addendum prints no date. Anthropic's index gives June 2024 (inventory), and the Claude 3 card's update line dates the addendum's addition to that card to June 20, 2024; both are outside this document.",
+      "search": {
+        "read": "Whole text (8 PDF pages).",
+        "terms": ["2024", "June", "Update", "published", "dated"],
+        "setAside": [
+          {
+            "locator": "References, PDF pp. 7–8",
+            "reason": "Dates in references date the cited works, not the addendum."
+          }
+        ]
+      }
+    },
+    {
+      "card": "anthropic-claude-3-5-sonnet",
+      "question": "Q02",
+      "status": "not-found",
+      "passages": [],
+      "note": "No release or availability date or form of release was found in the addendum.",
+      "search": {
+        "read": "Whole text.",
+        "terms": [
+          "release",
+          "available",
+          "availability",
+          "launch",
+          "API",
+          "Claude.ai"
+        ],
+        "setAside": [
+          {
+            "locator": "Section 3 'Safety', Introduction, PDF p. 6",
+            "reason": "'regular safety testing prior to releasing frontier models' states a practice, not this model's release."
+          }
+        ]
+      }
+    },
+    {
+      "card": "anthropic-claude-3-5-sonnet",
+      "question": "Q03",
+      "status": "partly",
+      "passages": [
+        {
+          "source": "anthropic-claude-3-5-sonnet",
+          "locator": "Section 3 'Safety', Introduction, PDF p. 6",
+          "quote": "it does not trigger the 4x effective compute threshold at which we will run the full evaluation protocol described in our Responsible Scaling Policy (RSP)."
+        }
+      ],
+      "note": "The addendum names the Responsible Scaling Policy without an edition. As context only: the dataset records rsp-2023 (v1.0) as the edition published before June 2024."
+    },
+    {
+      "card": "anthropic-claude-3-5-sonnet",
+      "question": "Q04",
+      "status": "partly",
+      "passages": [
+        {
+          "source": "anthropic-claude-3-5-sonnet",
+          "locator": "Section 3 'Safety', Introduction, PDF p. 6",
+          "quote": "the full evaluation protocol described in our Responsible Scaling Policy (RSP)."
+        }
+      ],
+      "note": "The addendum refers to the policy as a document that describes an evaluation protocol, without an address or reference. Its reference [23] is the RSP evaluations report for Claude 3 Opus, not the policy.",
+      "search": {
+        "read": "Section 3 and the references.",
+        "terms": ["Responsible Scaling Policy", "RSP", "https"],
+        "setAside": [
+          {
+            "locator": "References, [23], PDF p. 8",
+            "reason": "'Responsible Scaling Policy Evaluations Report – Claude 3 Opus' is an evaluation report, not the framework document."
+          }
+        ]
+      }
+    },
+    {
+      "card": "anthropic-claude-3-5-sonnet",
+      "question": "Q05",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "anthropic-claude-3-5-sonnet",
+          "locator": "Section 3 'Safety', Introduction, PDF p. 6",
+          "quote": "Based on our assessments, we classify Claude 3.5 Sonnet as an AI Safety Level 2 (ASL-2) model, indicating that it does not pose risk of catastrophic harm."
+        }
+      ],
+      "note": "The addendum assigns ASL-2. It also states that the model did not trigger the compute threshold for the policy's full evaluation protocol, and that evaluations were run regardless."
+    },
+    {
+      "card": "anthropic-claude-3-5-sonnet",
+      "question": "Q06",
+      "status": "not-found",
+      "passages": [],
+      "note": "No safeguard or mitigation tied to the ASL-2 classification was found. The addendum states that, had preset thresholds been exceeded, a council would have decided on more evaluation or protections (Q15); that conditional is not a safeguard applied.",
+      "search": {
+        "read": "Section 3 'Safety' (PDF p. 6).",
+        "terms": ["safeguard", "mitigation", "protection", "security", "ASL-2"],
+        "setAside": [
+          {
+            "locator": "Section 3, 'Safety Evaluations Overview', PDF p. 6",
+            "reason": "'an increase in safety and security protections' is a conditional outcome of a council that was not convened."
+          }
+        ]
+      }
+    },
+    {
+      "card": "anthropic-claude-3-5-sonnet",
+      "question": "Q07",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "anthropic-claude-3-5-sonnet",
+          "locator": "Section 3, 'Safety Evaluations Results', PDF p. 6",
+          "quote": "Claude 3.5 Sonnet did not exceed our safety thresholds in these evaluations and we classify it at ASL-2."
+        }
+      ],
+      "note": "The addendum states CBRN evaluations (knowledge tests and a measure of uplift to non-experts) and one outcome for all three domains: the thresholds of concern were not exceeded. It does not state a CBRN-specific result. Evaluation details are not recorded (hazard rule)."
+    },
+    {
+      "card": "anthropic-claude-3-5-sonnet",
+      "question": "Q08",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "anthropic-claude-3-5-sonnet",
+          "locator": "Section 3, 'Safety Evaluations Results', PDF p. 6",
+          "quote": "Claude 3.5 Sonnet did not exceed our safety thresholds in these evaluations and we classify it at ASL-2."
+        }
+      ],
+      "note": "The addendum states capture-the-flag cyber evaluations and the shared outcome that the thresholds of concern were not exceeded. Task details are not recorded (hazard rule)."
+    },
+    {
+      "card": "anthropic-claude-3-5-sonnet",
+      "question": "Q09",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "anthropic-claude-3-5-sonnet",
+          "locator": "Section 3, 'Safety Evaluations Results', PDF p. 6",
+          "quote": "Claude 3.5 Sonnet did not exceed our safety thresholds in these evaluations and we classify it at ASL-2."
+        }
+      ],
+      "note": "The addendum states autonomy evaluations (software-engineering tasks) and the shared outcome. It also states that METR explored the model's autonomy-relevant capabilities, without giving METR's result."
+    },
+    {
+      "card": "anthropic-claude-3-5-sonnet",
+      "question": "Q10",
+      "status": "not-found",
+      "passages": [],
+      "note": "No evaluation of persuasive or manipulative capability was found.",
+      "search": {
+        "read": "Whole text.",
+        "terms": ["persua", "manipulat", "influence"],
+        "setAside": []
+      }
+    },
+    {
+      "card": "anthropic-claude-3-5-sonnet",
+      "question": "Q11",
+      "status": "not-found",
+      "passages": [],
+      "note": "No evaluation of deception, scheming, sabotage or undermining oversight was found.",
+      "search": {
+        "read": "Whole text.",
+        "terms": ["decept", "scheming", "sabotage", "oversight", "honest"],
+        "setAside": [
+          {
+            "locator": "Section 2, Figure 3, PDF p. 5",
+            "reason": "'Honesty' is a human-preference win-rate task, not an evaluation of deception or scheming."
+          }
+        ]
+      }
+    },
+    {
+      "card": "anthropic-claude-3-5-sonnet",
+      "question": "Q12",
+      "status": "not-found",
+      "passages": [],
+      "note": "No adversarial testing described as red-teaming was found.",
+      "search": {
+        "read": "Whole text.",
+        "terms": ["red team", "red-team", "adversarial", "jailbreak"],
+        "setAside": [
+          {
+            "locator": "Section 2, Figure 3, PDF p. 5",
+            "reason": "'adversarial scenarios' are human-preference evaluations of harmlessness, not described as red-teaming."
+          }
+        ]
+      }
+    },
+    {
+      "card": "anthropic-claude-3-5-sonnet",
+      "question": "Q13",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "anthropic-claude-3-5-sonnet",
+          "locator": "Section 3, 'Safety Evaluations Overview', PDF p. 6",
+          "quote": "Additionally, METR [28] did an initial exploration of the model’s autonomy-relevant capabilities."
+        }
+      ],
+      "note": "The addendum names METR as having explored the model's autonomy-relevant capabilities. It gives no result of that exploration."
+    },
+    {
+      "card": "anthropic-claude-3-5-sonnet",
+      "question": "Q14",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "anthropic-claude-3-5-sonnet",
+          "locator": "Section 3, 'Safety Evaluations Overview', PDF p. 6",
+          "quote": "The UK AISI also conducted pre-deployment testing of a near-final model, and shared their results with the US AI Safety Institute"
+        }
+      ],
+      "note": "The addendum names the UK AI Safety Institute as having tested a near-final model before deployment and states that it shared its results with the US AI Safety Institute. It does not state that the US institute tested the model."
+    },
+    {
+      "card": "anthropic-claude-3-5-sonnet",
+      "question": "Q15",
+      "status": "partly",
+      "passages": [
+        {
+          "source": "anthropic-claude-3-5-sonnet",
+          "locator": "Section 3 'Safety', Introduction, PDF p. 6",
+          "quote": "Based on our assessments, we classify Claude 3.5 Sonnet as an AI Safety Level 2 (ASL-2) model"
+        },
+        {
+          "source": "anthropic-claude-3-5-sonnet",
+          "locator": "Section 3, 'Safety Evaluations Overview', PDF p. 6",
+          "quote": "we planned to convene a council consisting of our Responsible Scaling Officer, evaluations leads, and external subject matter experts"
+        }
+      ],
+      "note": "The addendum states a capability classification in the company's voice and names a council that would have decided on further evaluation or protections had thresholds been exceeded. No passage describes a decision to release the model or names who made one.",
+      "search": {
+        "read": "Section 3.",
+        "terms": ["decide", "decision", "release", "deploy", "launch"],
+        "setAside": []
+      }
+    },
+    {
+      "card": "anthropic-claude-3-5-sonnet",
+      "question": "Q16",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "anthropic-claude-3-5-sonnet",
+          "locator": "Section 3, 'Safety Evaluations Overview', PDF p. 6",
+          "quote": "Note that it is possible that the results underestimate the capability of an equivalent Helpful-only model, because alignment training may cause it to hedge concerning answers."
+        }
+      ],
+      "note": "The addendum states that safety training can lead capability evaluations to underestimate underlying capability, and that its results may do so. It also states that much remains to be learned about evaluation science and cadence."
+    },
+    {
+      "card": "google-deepmind-gemini-2-0-flash",
+      "question": "Q01",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "gdm-gemini-2-0-flash",
+          "locator": "Header, PDF p. 1",
+          "quote": "Model card published April 15, 2025"
+        }
+      ],
+      "note": "The card prints its publication date, April 15, 2025. No revision date is printed."
+    },
+    {
+      "card": "google-deepmind-gemini-2-0-flash",
+      "question": "Q02",
+      "status": "partly",
+      "passages": [
+        {
+          "source": "gdm-gemini-2-0-flash",
+          "locator": "'Model Information', 'Outputs', PDF p. 2",
+          "quote": "Image outputs are experimental as of the publishing date of this model card."
+        }
+      ],
+      "note": "The card states that image output is experimental at the card's publication date, and names the Multimodal Live API among the model's features (PDF p. 5). It gives no release or availability date.",
+      "search": {
+        "read": "Whole card (6 pages).",
+        "terms": [
+          "release",
+          "available",
+          "availability",
+          "launch",
+          "experimental",
+          "GA",
+          "API"
+        ],
+        "setAside": []
+      }
+    },
+    {
+      "card": "google-deepmind-gemini-2-0-flash",
+      "question": "Q03",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "gdm-gemini-2-0-flash",
+          "locator": "'Ethics and Safety', 'Evaluation Approach', PDF p. 5 (hyperlinked words)",
+          "quote": "Frontier Safety Framework evaluations according to Google DeepMind’s Frontier Safety Framework (FSF)"
+        }
+      ],
+      "note": "The card names the Frontier Safety Framework; the text gives no version, but the hyperlink on these words points to a framework PDF whose cover reads \"Version 2.0\" and \"4th February 2025\" (fsf-v2-0; see frameworkEditionNote)."
+    },
+    {
+      "card": "google-deepmind-gemini-2-0-flash",
+      "question": "Q04",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "gdm-gemini-2-0-flash",
+          "locator": "'Ethics and Safety', 'Evaluation Approach', PDF p. 5 (hyperlinked words)",
+          "quote": "Frontier Safety Framework evaluations according to Google DeepMind’s Frontier Safety Framework (FSF)"
+        }
+      ],
+      "note": "The words carry a hyperlink to the Frontier Safety Framework 2.0 PDF. The address is not printed in the text."
+    },
+    {
+      "card": "google-deepmind-gemini-2-0-flash",
+      "question": "Q05",
+      "status": "not-found",
+      "passages": [],
+      "note": "The card lists Frontier Safety Framework evaluations among its evaluation types but states no outcome and does not say that a determination was made.",
+      "search": {
+        "read": "'Ethics and Safety' (PDF pp. 5–7) and term search across the card.",
+        "terms": [
+          "Frontier Safety",
+          "FSF",
+          "critical capability",
+          "CCL",
+          "threshold",
+          "alert"
+        ],
+        "setAside": [
+          {
+            "locator": "'Ethics and Safety', 'Evaluation Approach', PDF p. 5",
+            "reason": "Names FSF evaluations as an evaluation type, without a result."
+          },
+          {
+            "locator": "'Ethics and Safety', 'Assurance Evaluations Results', PDF p. 6",
+            "reason": "Content-policy violation rates, not a framework determination."
+          }
+        ]
+      }
+    },
+    {
+      "card": "google-deepmind-gemini-2-0-flash",
+      "question": "Q06",
+      "status": "partly",
+      "passages": [
+        {
+          "source": "gdm-gemini-2-0-flash",
+          "locator": "'Ethics and Safety', 'Risks and Mitigations', PDF p. 7",
+          "quote": "Mitigations include, but are not limited to:"
+        },
+        {
+          "source": "gdm-gemini-2-0-flash",
+          "locator": "'Ethics and Safety', 'Risks and Mitigations', PDF p. 7",
+          "quote": "product-level mitigations such as safety filtering."
+        }
+      ],
+      "note": "The card lists mitigations (dataset filtering, conditional pre-training, fine-tuning, reinforcement learning from feedback, safety policies, product-level filtering) without tying any of them to a framework determination. This is the developer's account of the mitigations.",
+      "search": {
+        "read": "'Ethics and Safety'.",
+        "terms": ["mitigation", "safeguard", "Frontier Safety", "security"],
+        "setAside": []
+      }
+    },
+    {
+      "card": "google-deepmind-gemini-2-0-flash",
+      "question": "Q07",
+      "status": "not-found",
+      "passages": [],
+      "note": "No chemical or biological evaluation is reported.",
+      "search": {
+        "read": "Whole card.",
+        "terms": [
+          "CBRN",
+          "chemical",
+          "biolog",
+          "weapon",
+          "dangerous capabilit"
+        ],
+        "setAside": [
+          {
+            "locator": "'Ethics and Safety', 'Evaluation Approach', PDF p. 5",
+            "reason": "FSF evaluations are listed without any domain or outcome."
+          }
+        ]
+      }
+    },
+    {
+      "card": "google-deepmind-gemini-2-0-flash",
+      "question": "Q08",
+      "status": "not-found",
+      "passages": [],
+      "note": "No cyber-offence evaluation is reported.",
+      "search": {
+        "read": "Whole card.",
+        "terms": ["cyber", "exploit", "vulnerab", "CTF", "security"],
+        "setAside": [
+          {
+            "locator": "'Ethics and Safety', 'Evaluation Approach', PDF p. 5",
+            "reason": "'security and safety-focused evaluations' in automated red teaming are not described as cyber-offence capability evaluations."
+          }
+        ]
+      }
+    },
+    {
+      "card": "google-deepmind-gemini-2-0-flash",
+      "question": "Q09",
+      "status": "not-found",
+      "passages": [],
+      "note": "No evaluation of autonomy, self-replication, self-improvement or AI research and development is reported.",
+      "search": {
+        "read": "Whole card.",
+        "terms": [
+          "autonom",
+          "self-",
+          "replicat",
+          "R&D",
+          "machine learning research",
+          "agentic"
+        ],
+        "setAside": [
+          {
+            "locator": "'Model Information', PDF p. 2",
+            "reason": "'agentic systems' describes the model family's purpose, not an evaluation."
+          }
+        ]
+      }
+    },
+    {
+      "card": "google-deepmind-gemini-2-0-flash",
+      "question": "Q10",
+      "status": "not-found",
+      "passages": [],
+      "note": "No evaluation of persuasion or manipulation is reported.",
+      "search": {
+        "read": "Whole card.",
+        "terms": ["persua", "manipulat", "influence", "deceiv"],
+        "setAside": []
+      }
+    },
+    {
+      "card": "google-deepmind-gemini-2-0-flash",
+      "question": "Q11",
+      "status": "not-found",
+      "passages": [],
+      "note": "No evaluation of deception, scheming, sabotage or undermining oversight is reported.",
+      "search": {
+        "read": "Whole card.",
+        "terms": [
+          "decept",
+          "scheming",
+          "sabotage",
+          "oversight",
+          "misalign",
+          "instrumental"
+        ],
+        "setAside": []
+      }
+    },
+    {
+      "card": "google-deepmind-gemini-2-0-flash",
+      "question": "Q12",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "gdm-gemini-2-0-flash",
+          "locator": "'Ethics and Safety', 'Evaluation Approach', PDF p. 5",
+          "quote": "Human red teaming conducted by specialist teams across the policies and desiderata;"
+        },
+        {
+          "source": "gdm-gemini-2-0-flash",
+          "locator": "'Ethics and Safety', 'Evaluation Approach', PDF p. 5",
+          "quote": "Automated red teaming to dynamically evaluate Gemini at scale, complementing human efforts and static evaluations for both security and safety-focused evaluations;"
+        }
+      ],
+      "note": "The card states human red teaming by specialist teams across policies and desiderata, and automated red teaming for security and safety. It gives no number of testers or period, and reports no red-teaming results."
+    },
+    {
+      "card": "google-deepmind-gemini-2-0-flash",
+      "question": "Q13",
+      "status": "not-found",
+      "passages": [],
+      "note": "No external organisation is named, and no testers are described as external.",
+      "search": {
+        "read": "Whole card.",
+        "terms": [
+          "external",
+          "third party",
+          "third-party",
+          "partner",
+          "outside"
+        ],
+        "setAside": [
+          {
+            "locator": "'Ethics and Safety', 'Evaluation Approach', PDF p. 5",
+            "reason": "Assurance evaluations are 'conducted by evaluators who sit outside of the model development team', who are not described as outside Google DeepMind."
+          }
+        ]
+      }
+    },
+    {
+      "card": "google-deepmind-gemini-2-0-flash",
+      "question": "Q14",
+      "status": "not-found",
+      "passages": [],
+      "note": "No government body is named as having tested or received access to the model.",
+      "search": {
+        "read": "Whole card.",
+        "terms": [
+          "government",
+          "Safety Institute",
+          "AISI",
+          "CAISI",
+          "pre-deployment"
+        ],
+        "setAside": []
+      }
+    },
+    {
+      "card": "google-deepmind-gemini-2-0-flash",
+      "question": "Q15",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "gdm-gemini-2-0-flash",
+          "locator": "'Ethics and Safety', 'Evaluation Approach', PDF pp. 5–6",
+          "quote": "The RSC also reviewed data on the model’s performance via assurance evaluations and made release decisions."
+        }
+      ],
+      "note": "The card states that Google DeepMind's Responsibility and Safety Council, which it calls Google DeepMind's governance body, reviewed assurance-evaluation data and made release decisions. The passage uses the plural and does not describe the decision for this model specifically."
+    },
+    {
+      "card": "google-deepmind-gemini-2-0-flash",
+      "question": "Q16",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "gdm-gemini-2-0-flash",
+          "locator": "'Ethics and Safety', 'Training and Development Evaluation Results', PDF p. 6",
+          "quote": "The evaluation results are for automated evaluations and not human evaluation or red-teaming"
+        }
+      ],
+      "note": "The card states that the results in its training and development evaluation table are automated evaluations, not human evaluation or red-teaming, given relative to Gemini 1.5 Pro 002. The limit is stated for that table; it does not describe the card’s other safety findings or its stated human red-teaming.",
+      "crossFamily": {
+        "item": "48",
+        "result": "minor, applied: the note now limits the automated-only statement to the training and development results table."
+      }
+    },
+    {
+      "card": "google-deepmind-gemini-2-0-flash-lite",
+      "question": "Q01",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "gdm-gemini-2-0-flash-lite",
+          "locator": "Header, PDF p. 1",
+          "quote": "Model card published April 10, 2025"
+        }
+      ],
+      "note": "The card prints its publication date, April 10, 2025. No revision date is printed."
+    },
+    {
+      "card": "google-deepmind-gemini-2-0-flash-lite",
+      "question": "Q02",
+      "status": "not-found",
+      "passages": [],
+      "note": "No release or availability date and no release form was found in the card.",
+      "search": {
+        "read": "Whole card (6 pages).",
+        "terms": [
+          "release",
+          "available",
+          "availability",
+          "launch",
+          "preview",
+          "GA",
+          "API"
+        ],
+        "setAside": [
+          {
+            "locator": "'Evaluation', results table, PDF p. 3",
+            "reason": "Column labels '(Public Preview)' and '(GA)' appear in the table header, but the text layer does not show which model each label belongs to."
+          },
+          {
+            "locator": "'Intended Usage and Limitations', PDF p. 5",
+            "reason": "'More information is available on AI Studio Gemini API documentation and Vertex AI documentation' refers to documentation, not to the model's release."
+          }
+        ]
+      }
+    },
+    {
+      "card": "google-deepmind-gemini-2-0-flash-lite",
+      "question": "Q03",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "gdm-gemini-2-0-flash-lite",
+          "locator": "'Ethics and Safety', 'Evaluation Approach', PDF p. 5 (hyperlinked words)",
+          "quote": "Frontier Safety Framework evaluations according to Google DeepMind’s Frontier Safety Framework (FSF)"
+        }
+      ],
+      "note": "The card names the Frontier Safety Framework; the text gives no version, but the hyperlink on these words points to a framework PDF whose cover reads \"Version 2.0\" and \"4th February 2025\" (fsf-v2-0; see frameworkEditionNote)."
+    },
+    {
+      "card": "google-deepmind-gemini-2-0-flash-lite",
+      "question": "Q04",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "gdm-gemini-2-0-flash-lite",
+          "locator": "'Ethics and Safety', 'Evaluation Approach', PDF p. 5 (hyperlinked words)",
+          "quote": "Frontier Safety Framework evaluations according to Google DeepMind’s Frontier Safety Framework (FSF)"
+        }
+      ],
+      "note": "The words carry a hyperlink to the Frontier Safety Framework 2.0 PDF. The address is not printed in the text."
+    },
+    {
+      "card": "google-deepmind-gemini-2-0-flash-lite",
+      "question": "Q05",
+      "status": "not-found",
+      "passages": [],
+      "note": "The card lists Frontier Safety Framework evaluations among its evaluation types but states no outcome and does not say that a determination was made.",
+      "search": {
+        "read": "'Ethics and Safety' (PDF pp. 5–7) and term search across the card.",
+        "terms": [
+          "Frontier Safety",
+          "FSF",
+          "critical capability",
+          "CCL",
+          "threshold",
+          "alert"
+        ],
+        "setAside": [
+          {
+            "locator": "'Ethics and Safety', 'Evaluation Approach', PDF p. 5",
+            "reason": "Names FSF evaluations as an evaluation type, without a result."
+          },
+          {
+            "locator": "'Ethics and Safety', 'Assurance Evaluations Results', PDF p. 6",
+            "reason": "Content-policy violation rates, not a framework determination."
+          }
+        ]
+      }
+    },
+    {
+      "card": "google-deepmind-gemini-2-0-flash-lite",
+      "question": "Q06",
+      "status": "partly",
+      "passages": [
+        {
+          "source": "gdm-gemini-2-0-flash-lite",
+          "locator": "'Ethics and Safety', 'Risks and Mitigations', PDF p. 7",
+          "quote": "Mitigations include, but are not limited to:"
+        },
+        {
+          "source": "gdm-gemini-2-0-flash-lite",
+          "locator": "'Ethics and Safety', 'Risks and Mitigations', PDF p. 7",
+          "quote": "product-level mitigations such as safety filtering."
+        }
+      ],
+      "note": "The card lists mitigations (dataset filtering, conditional pre-training, fine-tuning, reinforcement learning from feedback, safety policies, product-level filtering) without tying any of them to a framework determination. This is the developer's account of the mitigations.",
+      "search": {
+        "read": "'Ethics and Safety'.",
+        "terms": ["mitigation", "safeguard", "Frontier Safety", "security"],
+        "setAside": []
+      }
+    },
+    {
+      "card": "google-deepmind-gemini-2-0-flash-lite",
+      "question": "Q07",
+      "status": "not-found",
+      "passages": [],
+      "note": "No chemical or biological evaluation is reported.",
+      "search": {
+        "read": "Whole card.",
+        "terms": [
+          "CBRN",
+          "chemical",
+          "biolog",
+          "weapon",
+          "dangerous capabilit"
+        ],
+        "setAside": [
+          {
+            "locator": "'Ethics and Safety', 'Evaluation Approach', PDF p. 5",
+            "reason": "FSF evaluations are listed without any domain or outcome."
+          }
+        ]
+      }
+    },
+    {
+      "card": "google-deepmind-gemini-2-0-flash-lite",
+      "question": "Q08",
+      "status": "not-found",
+      "passages": [],
+      "note": "No cyber-offence evaluation is reported.",
+      "search": {
+        "read": "Whole card.",
+        "terms": ["cyber", "exploit", "vulnerab", "CTF", "security"],
+        "setAside": [
+          {
+            "locator": "'Ethics and Safety', 'Evaluation Approach', PDF p. 5",
+            "reason": "'security and safety-focused evaluations' in automated red teaming are not described as cyber-offence capability evaluations."
+          }
+        ]
+      }
+    },
+    {
+      "card": "google-deepmind-gemini-2-0-flash-lite",
+      "question": "Q09",
+      "status": "not-found",
+      "passages": [],
+      "note": "No evaluation of autonomy, self-replication, self-improvement or AI research and development is reported.",
+      "search": {
+        "read": "Whole card.",
+        "terms": [
+          "autonom",
+          "self-",
+          "replicat",
+          "R&D",
+          "machine learning research",
+          "agentic"
+        ],
+        "setAside": [
+          {
+            "locator": "'Model Information', PDF p. 2",
+            "reason": "'agentic systems' describes the model family's purpose, not an evaluation."
+          }
+        ]
+      }
+    },
+    {
+      "card": "google-deepmind-gemini-2-0-flash-lite",
+      "question": "Q10",
+      "status": "not-found",
+      "passages": [],
+      "note": "No evaluation of persuasion or manipulation is reported.",
+      "search": {
+        "read": "Whole card.",
+        "terms": ["persua", "manipulat", "influence", "deceiv"],
+        "setAside": []
+      }
+    },
+    {
+      "card": "google-deepmind-gemini-2-0-flash-lite",
+      "question": "Q11",
+      "status": "not-found",
+      "passages": [],
+      "note": "No evaluation of deception, scheming, sabotage or undermining oversight is reported.",
+      "search": {
+        "read": "Whole card.",
+        "terms": [
+          "decept",
+          "scheming",
+          "sabotage",
+          "oversight",
+          "misalign",
+          "instrumental"
+        ],
+        "setAside": []
+      }
+    },
+    {
+      "card": "google-deepmind-gemini-2-0-flash-lite",
+      "question": "Q12",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "gdm-gemini-2-0-flash-lite",
+          "locator": "'Ethics and Safety', 'Evaluation Approach', PDF p. 5",
+          "quote": "Human red teaming conducted by specialist teams across the policies and desiderata;"
+        },
+        {
+          "source": "gdm-gemini-2-0-flash-lite",
+          "locator": "'Ethics and Safety', 'Evaluation Approach', PDF p. 5",
+          "quote": "Automated red teaming to dynamically evaluate Gemini at scale, complementing human efforts and static evaluations for both security and safety-focused evaluations;"
+        }
+      ],
+      "note": "The card states human red teaming by specialist teams across policies and desiderata, and automated red teaming for security and safety. It gives no number of testers or period, and reports no red-teaming results."
+    },
+    {
+      "card": "google-deepmind-gemini-2-0-flash-lite",
+      "question": "Q13",
+      "status": "not-found",
+      "passages": [],
+      "note": "No external organisation is named, and no testers are described as external.",
+      "search": {
+        "read": "Whole card.",
+        "terms": [
+          "external",
+          "third party",
+          "third-party",
+          "partner",
+          "outside"
+        ],
+        "setAside": [
+          {
+            "locator": "'Ethics and Safety', 'Evaluation Approach', PDF p. 5",
+            "reason": "Assurance evaluations are 'conducted by evaluators who sit outside of the model development team', who are not described as outside Google DeepMind."
+          }
+        ]
+      }
+    },
+    {
+      "card": "google-deepmind-gemini-2-0-flash-lite",
+      "question": "Q14",
+      "status": "not-found",
+      "passages": [],
+      "note": "No government body is named as having tested or received access to the model.",
+      "search": {
+        "read": "Whole card.",
+        "terms": [
+          "government",
+          "Safety Institute",
+          "AISI",
+          "CAISI",
+          "pre-deployment"
+        ],
+        "setAside": []
+      }
+    },
+    {
+      "card": "google-deepmind-gemini-2-0-flash-lite",
+      "question": "Q15",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "gdm-gemini-2-0-flash-lite",
+          "locator": "'Ethics and Safety', 'Evaluation Approach', PDF pp. 5–6",
+          "quote": "RSC also reviewed data on the model’s performance via assurance evaluations and made release decisions."
+        }
+      ],
+      "note": "The card states that Google DeepMind's Responsibility and Safety Council, which it calls Google DeepMind's governance body, reviewed assurance-evaluation data and made release decisions. The passage uses the plural and does not describe the decision for this model specifically."
+    },
+    {
+      "card": "google-deepmind-gemini-2-0-flash-lite",
+      "question": "Q16",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "gdm-gemini-2-0-flash-lite",
+          "locator": "'Ethics and Safety', 'Training and Development Evaluation Results', PDF p. 6",
+          "quote": "The evaluation results are for automated evaluations and not human evaluation or red-teaming"
+        }
+      ],
+      "note": "The card states that the reported safety results are automated evaluations only, given relative to Gemini 1.5 Pro 002."
+    },
+    {
+      "card": "meta-code-world-model",
+      "question": "Q01",
+      "status": "not-found",
+      "passages": [],
+      "note": "The card prints no date. The commit adding it ('CWM release', 2025-09-24) is repository metadata and stays in the background record (decision 8a).",
+      "search": {
+        "read": "Whole card (repository MODEL_CARD.md at the pinned commit).",
+        "terms": ["2025", "date", "release", "published", "updated"],
+        "setAside": []
+      }
+    },
+    {
+      "card": "meta-code-world-model",
+      "question": "Q02",
+      "status": "partly",
+      "passages": [
+        {
+          "source": "meta-code-world-model",
+          "locator": "'Risks and Limitations'",
+          "quote": "We explicitly release CWM as a research model under a noncommercial research license"
+        }
+      ],
+      "note": "The card gives the release form (a research model under a noncommercial licence, with post-trained, SFT and pre-trained weights on Hugging Face) and no release date."
+    },
+    {
+      "card": "meta-code-world-model",
+      "question": "Q03",
+      "status": "partly",
+      "passages": [
+        {
+          "source": "meta-code-world-model",
+          "locator": "'Risks and Limitations'",
+          "quote": "in line with Meta’s [Frontier AI Framework](https://ai.meta.com/static-resource/meta-frontier-ai-framework)."
+        }
+      ],
+      "note": "The card names the Frontier AI Framework and links an undated address, without an edition. As context only: the dataset records meta-faf-v1-1 (2025-02-03) as the edition published before the card's date."
+    },
+    {
+      "card": "meta-code-world-model",
+      "question": "Q04",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "meta-code-world-model",
+          "locator": "'Risks and Limitations'",
+          "quote": "in line with Meta’s [Frontier AI Framework](https://ai.meta.com/static-resource/meta-frontier-ai-framework)."
+        }
+      ],
+      "note": "The card links the framework document at its address."
+    },
+    {
+      "card": "meta-code-world-model",
+      "question": "Q05",
+      "status": "partly",
+      "passages": [
+        {
+          "source": "meta-code-world-model",
+          "locator": "'Risks and Limitations'",
+          "quote": "Our evaluation concludes that CWM does not significantly increase the risk of enabling threat scenarios compared to existing open source models in the ecosystem."
+        }
+      ],
+      "note": "The card states the conclusion of an assessment made in line with the framework, comparing the model with existing open-source models. It does not state the outcome in the framework's own categories; it refers to the CWM Preparedness Report (a first-pack row) for the results."
+    },
+    {
+      "card": "meta-code-world-model",
+      "question": "Q06",
+      "status": "partly",
+      "passages": [
+        {
+          "source": "meta-code-world-model",
+          "locator": "'Risks and Limitations'",
+          "quote": "We make available [system level protections](https://www.llama.com/llama-protections/) – like Llama Guard, Prompt Guard and Code Shield"
+        }
+      ],
+      "note": "The card names system-level protections that it makes available to users, and states that they alone are unlikely to suffice for production use. It does not tie them to the framework assessment. This is the developer's account.",
+      "search": {
+        "read": "'Risks and Limitations'.",
+        "terms": [
+          "safeguard",
+          "mitigation",
+          "protection",
+          "Frontier AI Framework"
+        ],
+        "setAside": []
+      }
+    },
+    {
+      "card": "meta-code-world-model",
+      "question": "Q07",
+      "status": "not-found",
+      "passages": [],
+      "note": "The card reports no chemical or biological evaluation; it refers to the CWM Preparedness Report for the assessment's results.",
+      "search": {
+        "read": "Whole card.",
+        "terms": ["chemical", "biolog", "CBRN", "weapon", "catastrophic"],
+        "setAside": [
+          {
+            "locator": "'Risks and Limitations'",
+            "reason": "'an assessment of CWM’s capabilities across a range of potential threats' names no domain and gives no domain result."
+          }
+        ]
+      }
+    },
+    {
+      "card": "meta-code-world-model",
+      "question": "Q08",
+      "status": "not-found",
+      "passages": [],
+      "note": "The card reports no cyber-offence evaluation; it refers to the CWM Preparedness Report.",
+      "search": {
+        "read": "Whole card.",
+        "terms": ["cyber", "exploit", "vulnerab", "security"],
+        "setAside": [
+          {
+            "locator": "'Evaluation'",
+            "reason": "SWE-bench and coding benchmarks are product benchmarks."
+          }
+        ]
+      }
+    },
+    {
+      "card": "meta-code-world-model",
+      "question": "Q09",
+      "status": "not-found",
+      "passages": [],
+      "note": "No evaluation of autonomy, self-replication, self-improvement or AI research and development was found.",
+      "search": {
+        "read": "Whole card.",
+        "terms": ["autonom", "self-", "replicat", "R&D", "agentic"],
+        "setAside": [
+          {
+            "locator": "'Evaluation'",
+            "reason": "SWE-bench Verified is reported as product capability; agentic task benchmarks of this kind do not meet the criterion."
+          }
+        ]
+      }
+    },
+    {
+      "card": "meta-code-world-model",
+      "question": "Q10",
+      "status": "not-found",
+      "passages": [],
+      "note": "No evaluation of persuasion or manipulation was found.",
+      "search": {
+        "read": "Whole card.",
+        "terms": ["persua", "manipulat", "influence"],
+        "setAside": []
+      }
+    },
+    {
+      "card": "meta-code-world-model",
+      "question": "Q11",
+      "status": "not-found",
+      "passages": [],
+      "note": "No evaluation of deception, scheming, sabotage or undermining oversight was found.",
+      "search": {
+        "read": "Whole card.",
+        "terms": [
+          "decept",
+          "honest",
+          "scheming",
+          "sabotage",
+          "propensit",
+          "oversight"
+        ],
+        "setAside": []
+      }
+    },
+    {
+      "card": "meta-code-world-model",
+      "question": "Q12",
+      "status": "not-found",
+      "passages": [],
+      "note": "No testing described as red-teaming was found.",
+      "search": {
+        "read": "Whole card.",
+        "terms": ["red team", "red-team", "adversarial"],
+        "setAside": []
+      }
+    },
+    {
+      "card": "meta-code-world-model",
+      "question": "Q13",
+      "status": "not-found",
+      "passages": [],
+      "note": "No external tester is named or described.",
+      "search": {
+        "read": "Whole card.",
+        "terms": ["external", "third party", "third-party", "partner"],
+        "setAside": []
+      }
+    },
+    {
+      "card": "meta-code-world-model",
+      "question": "Q14",
+      "status": "not-found",
+      "passages": [],
+      "note": "No government body is named.",
+      "search": {
+        "read": "Whole card.",
+        "terms": ["government", "Safety Institute", "AISI", "CAISI"],
+        "setAside": []
+      }
+    },
+    {
+      "card": "meta-code-world-model",
+      "question": "Q15",
+      "status": "partly",
+      "passages": [
+        {
+          "source": "meta-code-world-model",
+          "locator": "'Risks and Limitations'",
+          "quote": "To ensure responsible release, we have conducted an assessment of CWM’s capabilities across a range of potential threats"
+        }
+      ],
+      "note": "The card states the release and an assessment conducted for it, in the first person plural. It does not describe a decision to release or name who made one.",
+      "search": {
+        "read": "'Risks and Limitations'.",
+        "terms": ["decide", "decision", "release", "approve"],
+        "setAside": []
+      }
+    },
+    {
+      "card": "meta-code-world-model",
+      "question": "Q16",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "meta-code-world-model",
+          "locator": "'Risks and Limitations'",
+          "quote": "Although we have performed some limited evaluations, we have not conducted a full range of possible evaluations for these models."
+        }
+      ],
+      "note": "The card states that its evaluations are limited, that performance in production and real-world use has not been evaluated, and that the model has not been fully evaluated for content risks."
+    },
+    {
+      "card": "meta-muse-spark",
+      "question": "Q01",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "meta-muse-spark-arxiv",
+          "locator": "Abstract page, PDF p. 2",
+          "quote": "Date: June 12, 2026"
+        }
+      ],
+      "note": "The report prints the date June 12, 2026, without a kind. arXiv's margin stamp on PDF p. 1 reads '14 May 2026', which does not agree with the printed date or with the identifier 2606.12429; both are recorded as read, and neither is the card's own statement of publication. Meta’s own copies were retrieved in the cross-family check of 2026-11-04 (not here: ai.meta.com answered HTTP 400 and web.archive.org refused connections): an Internet Archive capture of 2026-04-14 holds an earlier 158-page expression that prints April 14, 2026, and the live copy prints May 26, 2026. Under 3a the row is dated by that earliest located copy, 2026-04-14; the arXiv copy read here is a later expression. The arXiv stamp of 14 May is the submission date, corroborated by the repository history."
+    },
+    {
+      "card": "meta-muse-spark",
+      "question": "Q02",
+      "status": "partly",
+      "passages": [
+        {
+          "source": "meta-muse-spark-arxiv",
+          "locator": "Abstract, PDF p. 2",
+          "quote": "We therefore release Muse Spark as the underlying model of Meta AI."
+        },
+        {
+          "source": "meta-muse-spark-arxiv",
+          "locator": "Section 1.2 'Governance', PDF p. 14",
+          "quote": "early checkpoints of Muse Spark were initially deployed to a small, percentage-limited subset of product users prior to broad availability."
+        }
+      ],
+      "note": "The report gives the release form (the model underlying Meta AI) and a sequence of controlled deployments before broad availability. It gives no release or availability date.",
+      "search": {
+        "read": "Abstract, Sections 1–1.3 and term search across the report.",
+        "terms": [
+          "release",
+          "launch",
+          "available",
+          "availability",
+          "April",
+          "2026"
+        ],
+        "setAside": []
+      }
+    },
+    {
+      "card": "meta-muse-spark",
+      "question": "Q03",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "meta-muse-spark-arxiv",
+          "locator": "Section 1 'Introduction', footnote 2, PDF p. 6",
+          "quote": "https://ai.meta.com/static-resource/Meta_Advanced-AI-Scaling-Framework-v2"
+        },
+        {
+          "source": "meta-muse-spark-arxiv",
+          "locator": "Section 1.2 'Governance', PDF p. 14",
+          "quote": "Muse Spark was developed and evaluated under Meta’s Advanced AI Scaling Framework"
+        }
+      ],
+      "note": "The report names the Advanced AI Scaling Framework and gives an address whose file name names version 2 (meta-aasf-v2-0). The text gives no version number of its own."
+    },
+    {
+      "card": "meta-muse-spark",
+      "question": "Q04",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "meta-muse-spark-arxiv",
+          "locator": "Section 1 'Introduction', footnote 2, PDF p. 6",
+          "quote": "https://ai.meta.com/static-resource/Meta_Advanced-AI-Scaling-Framework-v2"
+        }
+      ],
+      "note": "The report gives the framework's address in a footnote."
+    },
+    {
+      "card": "meta-muse-spark",
+      "question": "Q05",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "meta-muse-spark-arxiv",
+          "locator": "Section 1.2 'Governance', PDF p. 14",
+          "quote": "we determined the model, prior to applying mitigations, falls under the “high risk” threshold under the Advanced AI Scaling Framework"
+        },
+        {
+          "source": "meta-muse-spark-arxiv",
+          "locator": "Section 1.2 'Governance', PDF p. 14",
+          "quote": "However, after applying mitigations, the residual risk of the model is that of “moderate or lower risk.”"
+        }
+      ],
+      "note": "The report states a 'high risk' determination before mitigations, for the chemical and biological category, and a residual 'moderate or lower risk' after mitigations. It states 'moderate or lower' for cybersecurity and loss of control (Q08, Q09)."
+    },
+    {
+      "card": "meta-muse-spark",
+      "question": "Q06",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "meta-muse-spark-arxiv",
+          "locator": "Section 1.1.1, 'Chemical & Biological risks', PDF p. 9",
+          "quote": "In response to the “high risk” determination, we have defined, implemented, and validated a set of mitigations to reduce the residual risk of public deployment to “moderate or lower.”"
+        }
+      ],
+      "note": "The report ties mitigations (refusal mechanisms, detection of persistent malicious use and monitoring) to the 'high risk' determination, and states that deployment is conditional on them under the framework. It also states cyber-misuse monitoring as a compensating control. This is the developer's account, not evidence that the mitigations work."
+    },
+    {
+      "card": "meta-muse-spark",
+      "question": "Q07",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "meta-muse-spark-arxiv",
+          "locator": "Section 1.1.1, 'Chemical & Biological risks', PDF p. 9",
+          "quote": "assess that the model has “high risk” for Chemical and/or Biological risks."
+        }
+      ],
+      "note": "The report states chemical and biological evaluations (dual-use knowledge, agentic scientific tasks and high-risk bottlenecks) with the outcome 'high risk' before mitigations and 'moderate or lower' residual risk after them. Evaluation details are not recorded (hazard rule)."
+    },
+    {
+      "card": "meta-muse-spark",
+      "question": "Q08",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "meta-muse-spark-arxiv",
+          "locator": "Section 1.1.1, 'Cybersecurity risks', PDF p. 9",
+          "quote": "We assess cybersecurity risk as “moderate or lower” with respect to the threat scenarios outlined in Meta’s Advanced AI Scaling Framework."
+        }
+      ],
+      "note": "The report states knowledge, capture-the-flag, real-world and social-engineering cyber evaluations with the framework outcome 'moderate or lower'. Scores are not recorded (hazard rule)."
+    },
+    {
+      "card": "meta-muse-spark",
+      "question": "Q09",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "meta-muse-spark-arxiv",
+          "locator": "Section 1.1.1, 'Loss of Control risks', PDF p. 9",
+          "quote": "We assess loss of control risk as “moderate or lower”."
+        },
+        {
+          "source": "meta-muse-spark-arxiv",
+          "locator": "Section 1.1.1, 'Loss of Control risks', PDF p. 10",
+          "quote": "Its autonomous technical capabilities—spanning software engineering, ML engineering, and end-to-end research—remain too constrained"
+        }
+      ],
+      "note": "The report states loss-of-control evaluations, including acceleration of AI development, with the outcome 'moderate or lower' and the conclusion that autonomous research capabilities remain constrained."
+    },
+    {
+      "card": "meta-muse-spark",
+      "question": "Q10",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "meta-muse-spark-arxiv",
+          "locator": "Section 2.2.2.3 'Social Engineering Capabilities', PDF p. 47",
+          "quote": "we have included results from an evaluation developed by Charlemagne Labs that specifically measures social engineering capabilities in multi-turn settings."
+        },
+        {
+          "source": "meta-muse-spark-arxiv",
+          "locator": "Section 2.2.2.3 'Social Engineering Capabilities', PDF p. 48",
+          "quote": "we do not find the capabilities of the model (without system level guardrails) to be sufficiently high to trigger a determination of high risk according to our Advanced AI Scaling Framework"
+        }
+      ],
+      "note": "The report states a multi-turn social-engineering capability evaluation (an attacker model trying to convince a simulated victim), with composite scores against open models (Figure 20), as part of the cyber domain, and concludes that the capability is not high enough to trigger a high-risk determination under its framework. The victims are simulated: no result with human subjects is reported. Methods are not recorded (hazard rule).",
+      "search": {
+        "read": "Sections 1.1, 2.2.2.3 and 4.1, and term search.",
+        "terms": ["persua", "manipulat", "social engineering", "influence"],
+        "setAside": [
+          {
+            "locator": "Section 1.1, Table 2, PDF p. 8",
+            "reason": "'Refusals: Social Engineering' measures refusal of misuse requests, not capability."
+          }
+        ]
+      },
+      "crossFamily": {
+        "item": "28",
+        "result": "material disagreement, applied: the checker reads stated (blind), because section 2.2.2.3 gives a conclusion for the social-engineering evaluation (PDF p. 48), and Q10 asks for a conclusion, not a risk category specific to persuasion. The pack had read partly. The preparer accepts the checker’s reading, keeping the simulated-victim and cyber-domain limits."
+      }
+    },
+    {
+      "card": "meta-muse-spark",
+      "question": "Q11",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "meta-muse-spark-arxiv",
+          "locator": "Section 1.1.1, 'Loss of Control risks', PDF p. 10",
+          "quote": "The model demonstrates contained deception and exhibits some propensities toward agentic misalignment in controlled settings, such as self-preservation and resistance to discontinuation."
+        },
+        {
+          "source": "meta-muse-spark-arxiv",
+          "locator": "Section 1.1.1, 'Loss of Control risks', PDF p. 10",
+          "quote": "These behaviors remain within acceptable thresholds but warrant monitoring for loss of control risks."
+        }
+      ],
+      "note": "The report states evaluations of deception, agentic misalignment, sandbagging, monitor evasion and alignment faking, with the conclusion quoted. It reports Apollo Research's finding of high evaluation awareness and its own follow-up (Section 4.1.11)."
+    },
+    {
+      "card": "meta-muse-spark",
+      "question": "Q12",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "meta-muse-spark-arxiv",
+          "locator": "Section 3.1.3.2 'Human Red Teaming', PDF p. 82",
+          "quote": "A third-party human red team from HandshakeAI32 was granted pre-release access to a few versions of Muse Spark and Meta AI Thinking to manually evaluate robustness against jailbreak attacks."
+        },
+        {
+          "source": "meta-muse-spark-arxiv",
+          "locator": "Section 3.1.3.2 'Human Red Teaming', PDF p. 82",
+          "quote": "HandshakeAI prioritized four categories: (1) sex-related crimes, (2) violent crimes, (3) non-violent crimes, and (4) self-harm and suicide."
+        },
+        {
+          "source": "meta-muse-spark-arxiv",
+          "locator": "Section 3.1.3.2 'Human Red Teaming', PDF p. 82",
+          "quote": "HandshakeAI reported approximately 149 hours of red-teaming effort"
+        }
+      ],
+      "note": "The report states third-party human red teaming of jailbreak robustness with pre-release access, with its scope: four prioritised content-policy categories and approximately 149 hours of effort (hours of effort, not a testing period). It also reports large-scale automated red teaming (Section 3.1). No number of testers is given in the passage read. The “32” after HandshakeAI in the first quotation is a footnote marker.",
+      "crossFamily": {
+        "item": "58",
+        "result": "minor, applied: the scope given in the same paragraph (four prioritised categories, about 149 hours of effort) is added."
+      }
+    },
+    {
+      "card": "meta-muse-spark",
+      "question": "Q13",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "meta-muse-spark-arxiv",
+          "locator": "Abstract, PDF p. 2",
+          "quote": "Independent third-party testing by Apollo Research found Muse Spark has the highest rate of evaluation awareness they have observed to date."
+        }
+      ],
+      "note": "The report names Apollo Research (evaluation awareness), HandshakeAI (human red teaming, Q12) and Charlemagne Labs (social engineering, Q10), and names Deloitte, Faculty, Frontier Design and SecureBio as engaged in the chemical and biological assessment (Section 2.1)."
+    },
+    {
+      "card": "meta-muse-spark",
+      "question": "Q14",
+      "status": "not-found",
+      "passages": [],
+      "note": "No government body is named as having tested or received access to Muse Spark.",
+      "search": {
+        "read": "Abstract, Sections 1–2.2 and term search across the report.",
+        "terms": [
+          "government",
+          "Safety Institute",
+          "AISI",
+          "CAISI",
+          "Security Institute",
+          "pre-deployment access"
+        ],
+        "setAside": [
+          {
+            "locator": "Section 2.2.2.1, PDF p. 41",
+            "reason": "Names UK AISI and CAISI as users of a benchmark in their own testing, not as testing this model."
+          }
+        ]
+      }
+    },
+    {
+      "card": "meta-muse-spark",
+      "question": "Q15",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "meta-muse-spark-arxiv",
+          "locator": "Section 1 'Introduction', PDF p. 6",
+          "quote": "We then describe the governance process that led to the decision to deploy Muse Spark under Meta’s Advanced AI Scaling Framework2"
+        },
+        {
+          "source": "meta-muse-spark-arxiv",
+          "locator": "Section 1.2 'Governance', PDF p. 14",
+          "quote": "Key decision-makers for Muse Spark’s risk threshold determinations were the Chief AI Officer and Director of Alignment and Risk"
+        }
+      ],
+      "note": "The report refers to 'the decision to deploy' and 'our launch decision' in the company's voice, and names the Chief AI Officer and the Director of Alignment and Risk as the decision-makers for the risk-threshold determinations. It does not name a maker of the deployment decision other than the company."
+    },
+    {
+      "card": "meta-muse-spark",
+      "question": "Q16",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "meta-muse-spark-arxiv",
+          "locator": "Section 1.1.1, footnote 11, PDF p. 10",
+          "quote": "We cannot rule out this possibility on the basis of behavioral evaluations alone and flag it as an inherent epistemic limitation of assessments of this kind."
+        }
+      ],
+      "note": "The report states that a model capable of strategic behaviour could make its evaluations appear credible, and that this cannot be ruled out by behavioural evaluations. It also states that some baseline assessments give only a lower bound on performance and that evaluation awareness qualifies some results."
+    },
+    {
+      "card": "openai-gpt-4o",
+      "question": "Q01",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "openai-gpt-4o",
+          "locator": "Title page, PDF p. 1",
+          "quote": "GPT-4o System Card OpenAI∗ August 8, 2024"
+        }
+      ],
+      "note": "The card prints the date August 8, 2024 under its title. No revision date is printed."
+    },
+    {
+      "card": "openai-gpt-4o",
+      "question": "Q02",
+      "status": "partly",
+      "passages": [
+        {
+          "source": "openai-gpt-4o",
+          "locator": "Section 4 'Third party assessments', PDF p. 18",
+          "quote": "Following the text output only deployment of GPT-4o, we worked with independent third party labs, METR and Apollo Research"
+        },
+        {
+          "source": "openai-gpt-4o",
+          "locator": "Section 3.1 'External red teaming', PDF p. 3",
+          "quote": "At the time of writing, external red teaming of the GPT-4o API is ongoing."
+        }
+      ],
+      "note": "The card refers to a text-output-only deployment, to the API and to advanced voice mode in the iOS app used in red teaming (Phase 4), as relative timing and forms. It gives no release or availability date.",
+      "search": {
+        "read": "Sections 1–3.1 and 4 and term search across the card.",
+        "terms": [
+          "release",
+          "available",
+          "availability",
+          "launch",
+          "deploy",
+          "May 13",
+          "2024"
+        ],
+        "setAside": []
+      }
+    },
+    {
+      "card": "openai-gpt-4o",
+      "question": "Q03",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "openai-gpt-4o",
+          "locator": "Section 3.4 'Preparedness Framework Evaluations', PDF p. 12",
+          "quote": "We evaluated GPT-4o in accordance with our Preparedness Framework[4]."
+        },
+        {
+          "source": "openai-gpt-4o",
+          "locator": "References, [4], PDF p. 29",
+          "quote": "OpenAI, “Openai preparedness framework beta,” 2023."
+        }
+      ],
+      "note": "The card names the Preparedness Framework and identifies the edition in reference [4] as the beta of 2023 (preparedness-beta-2023).",
+      "crossFamily": {
+        "item": "31",
+        "result": "minor, applied: the reference quotation is repaired. The default PDF text layer interleaves the address with the title; the printed reference reads as now quoted (checked by the checker visually, and here against pdftotext’s raw reading order). Identification as the 2023 beta is unchanged."
+      }
+    },
+    {
+      "card": "openai-gpt-4o",
+      "question": "Q04",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "openai-gpt-4o",
+          "locator": "References, [4], PDF p. 29",
+          "quote": "Openai preparedness framework openai-preparedness-framework-beta.pdf. beta,” 2023. https://cdn.openai.com/"
+        }
+      ],
+      "note": "The card gives a bibliographic reference to the framework with an address on cdn.openai.com and the file name of the beta framework. In the text layer the address and the file name are separated by the title."
+    },
+    {
+      "card": "openai-gpt-4o",
+      "question": "Q05",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "openai-gpt-4o",
+          "locator": "Section 3.4 'Preparedness Framework Evaluations', PDF p. 13",
+          "quote": "the Safety Advisory Group recommended classifying GPT-4o before mitigations as borderline medium risk for persuasion, and low risk in all others."
+        },
+        {
+          "source": "openai-gpt-4o",
+          "locator": "Section 3.4 'Preparedness Framework Evaluations', PDF p. 13",
+          "quote": "Therefore, the overall risk score for GPT-4o is classified as medium."
+        }
+      ],
+      "note": "The card states a pre-mitigation classification in the framework's categories (persuasion borderline medium; cybersecurity, CBRN and model autonomy low) and an overall medium score, on the Safety Advisory Group's recommendation."
+    },
+    {
+      "card": "openai-gpt-4o",
+      "question": "Q06",
+      "status": "partly",
+      "passages": [
+        {
+          "source": "openai-gpt-4o",
+          "locator": "Section 3.4 'Preparedness Framework Evaluations', PDF p. 12",
+          "quote": "If a model passes a high risk threshold, we do not deploy the model until mitigations lower the score to medium."
+        },
+        {
+          "source": "openai-gpt-4o",
+          "locator": "Section 3.3 'Observed safety challenges, evaluations and mitigations', PDF p. 5",
+          "quote": "integrated classifiers for blocking specific generations as a part of the deployed system"
+        }
+      ],
+      "note": "The card states the framework's deployment condition and, for the voice risks in Section 3.3, mitigations such as post-training and output classifiers. It does not tie any mitigation to the medium classification in Q05. This is the developer's account of the mitigations.",
+      "search": {
+        "read": "Sections 3.3–3.8 and 6 and term search across the card.",
+        "terms": [
+          "mitigation",
+          "post-mitigation",
+          "safeguard",
+          "medium",
+          "high risk"
+        ],
+        "setAside": []
+      }
+    },
+    {
+      "card": "openai-gpt-4o",
+      "question": "Q07",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "openai-gpt-4o",
+          "locator": "Section 3.6 'Biological threats', Preparedness Scorecard, PDF p. 14",
+          "quote": "Biological Threats Score: Low GPT-4o does not advance biological threat creation capabilities sufficient to meet our medium risk threshold."
+        }
+      ],
+      "note": "The card states biological threat evaluations with a low score under the framework. The framework category is CBRN; no separate chemical, radiological or nuclear result is reported. Evaluation details are not recorded (hazard rule)."
+    },
+    {
+      "card": "openai-gpt-4o",
+      "question": "Q08",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "openai-gpt-4o",
+          "locator": "Section 3.5 'Cybersecurity', Preparedness Scorecard, PDF p. 13",
+          "quote": "GPT-4o does not advance real world vulnerability exploitation capabilities sufficient to meet our medium risk threshold."
+        }
+      ],
+      "note": "The card states capture-the-flag evaluations with a low cybersecurity score. Task-level results are not recorded (hazard rule)."
+    },
+    {
+      "card": "openai-gpt-4o",
+      "question": "Q09",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "openai-gpt-4o",
+          "locator": "Section 3.8 'Model autonomy', Preparedness Scorecard, PDF p. 17",
+          "quote": "GPT-4o does not advance self-exfiltration, self-improvement, or resource acquisition capabilities sufficient to meet our medium risk threshold."
+        }
+      ],
+      "note": "The card states model-autonomy evaluations with a low score. Section 4.1 adds METR's assessment of autonomous capabilities, which the card reports as finding no significant increase over GPT-4."
+    },
+    {
+      "card": "openai-gpt-4o",
+      "question": "Q10",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "openai-gpt-4o",
+          "locator": "Section 3.7 'Persuasion', PDF p. 16",
+          "quote": "Based on pre-registered thresholds, the voice modality was classified as low risk, while the text modality marginally crossed into medium risk."
+        }
+      ],
+      "note": "The card states persuasion evaluations of text and voice, with a medium score for text and low for voice."
+    },
+    {
+      "card": "openai-gpt-4o",
+      "question": "Q11",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "openai-gpt-4o",
+          "locator": "Section 4.2 'Apollo Research assessment', PDF p. 19",
+          "quote": "Based on these findings, Apollo Research believes that it is unlikely that GPT-4o is capable of catastrophic scheming."
+        }
+      ],
+      "note": "The card reports Apollo Research's evaluation of capabilities related to scheming (self-knowledge, theory of mind, self-reasoning, alignment faking), with Apollo's conclusion. It concerns capability, not propensity."
+    },
+    {
+      "card": "openai-gpt-4o",
+      "question": "Q12",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "openai-gpt-4o",
+          "locator": "Section 3.1 'External red teaming', PDF p. 3",
+          "quote": "OpenAI worked with more than 100 external red teamers2 , speaking a total of 45 different languages, and representing geographic backgrounds of 29 different countries."
+        },
+        {
+          "source": "openai-gpt-4o",
+          "locator": "Section 3.1 'External red teaming', PDF p. 3",
+          "quote": "starting in early March and continuing through late June 2024."
+        }
+      ],
+      "note": "The card states external red teaming in four phases, with the number of testers, languages and countries, the period, and the categories covered (disallowed content, mis/disinformation, bias and others)."
+    },
+    {
+      "card": "openai-gpt-4o",
+      "question": "Q13",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "openai-gpt-4o",
+          "locator": "Section 4 'Third party assessments', PDF p. 18",
+          "quote": "we worked with independent third party labs, METR and Apollo Research to add an additional layer of validation for key risks from general autonomous capabilities."
+        }
+      ],
+      "note": "The card names METR and Apollo Research as having assessed the model after its text-output deployment. Section 3.6 names Gryphon Scientific as having helped design the biological questions and rubrics, not as having tested the model."
+    },
+    {
+      "card": "openai-gpt-4o",
+      "question": "Q14",
+      "status": "not-found",
+      "passages": [],
+      "note": "No government body is named as having tested or received access to GPT-4o.",
+      "search": {
+        "read": "Sections 3–6 and term search across the card.",
+        "terms": [
+          "government",
+          "Safety Institute",
+          "AISI",
+          "national security",
+          "pre-deployment access"
+        ],
+        "setAside": [
+          {
+            "locator": "Section 4.2, Table 6, PDF p. 19",
+            "reason": "'UK AISI’s Theory of Mind' names a task used by Apollo Research, not testing of the model by the institute."
+          },
+          {
+            "locator": "Section 1, PDF p. 1",
+            "reason": "Refers to voluntary commitments to the White House, not testing."
+          }
+        ]
+      }
+    },
+    {
+      "card": "openai-gpt-4o",
+      "question": "Q15",
+      "status": "partly",
+      "passages": [
+        {
+          "source": "openai-gpt-4o",
+          "locator": "Section 3.4 'Preparedness Framework Evaluations', PDF p. 13",
+          "quote": "the Safety Advisory Group recommended classifying GPT-4o before mitigations as borderline medium risk for persuasion, and low risk in all others."
+        },
+        {
+          "source": "openai-gpt-4o",
+          "locator": "Section 3.4 'Preparedness Framework Evaluations', PDF p. 12",
+          "quote": "If a model passes a high risk threshold, we do not deploy the model until mitigations lower the score to medium."
+        }
+      ],
+      "note": "The card names the Safety Advisory Group for the risk classification and states the framework's deployment condition. It refers to the model's deployment but does not describe a decision to release it or name who made one.",
+      "search": {
+        "read": "Sections 2–4 and 6 and term search across the card.",
+        "terms": [
+          "decide",
+          "decision",
+          "deploy",
+          "launch",
+          "release",
+          "approve",
+          "leadership"
+        ],
+        "setAside": [
+          {
+            "locator": "Section 3, PDF p. 2",
+            "reason": "'Deployment preparation was carried out via …' describes preparation, which alone is not a release decision (decision 13a)."
+          }
+        ]
+      }
+    },
+    {
+      "card": "openai-gpt-4o",
+      "question": "Q16",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "openai-gpt-4o",
+          "locator": "Section 3.2 'Evaluation methodology', 'Limitations of the evaluation methodology', PDF p. 4",
+          "quote": "First, the validity of this evaluation format depends on the capability and reliability of the TTS model."
+        }
+      ],
+      "note": "The card states limits of its audio evaluation method, which converts text evaluations to speech: some inputs are unsuitable for conversion and the conversion may be lossy."
+    },
+    {
+      "card": "xai-grok-4",
+      "question": "Q01",
+      "status": "partly",
+      "passages": [
+        {
+          "source": "xai-grok-4",
+          "locator": "Cover, PDF p. 1",
+          "quote": "Grok 4 Model Card xAI Last updated: August 20, 2025"
+        }
+      ],
+      "note": "The card prints only a last-updated date (August 20, 2025), not a publication date. The file name carries the same date.",
+      "search": {
+        "read": "Cover and term search across the card.",
+        "terms": ["2025", "published", "updated", "July"],
+        "setAside": []
+      }
+    },
+    {
+      "card": "xai-grok-4",
+      "question": "Q02",
+      "status": "partly",
+      "passages": [
+        {
+          "source": "xai-grok-4",
+          "locator": "Section 1 'Introduction', PDF p. 1",
+          "quote": "xAI deploys Grok 4 in both the consumer-facing applications (Grok 4 Web) and through an enterprise use-focused API (Grok 4 API)."
+        },
+        {
+          "source": "xai-grok-4",
+          "locator": "Section 1 'Introduction', PDF p. 1",
+          "quote": "We report evaluations for Grok 4 API and Grok 4 Web now available to our customers, including in the EU."
+        }
+      ],
+      "note": "The card gives the forms of availability (consumer applications and an API, including in the EU), in the present tense, with no release date.",
+      "search": {
+        "read": "Sections 1 and 3 and term search across the card.",
+        "terms": ["release", "launch", "available", "July", "deploy"],
+        "setAside": []
+      }
+    },
+    {
+      "card": "xai-grok-4",
+      "question": "Q03",
+      "status": "partly",
+      "passages": [
+        {
+          "source": "xai-grok-4",
+          "locator": "Section 1 'Introduction', PDF p. 1",
+          "quote": "Following our Risk Management Framework (RMF), we aim to reduce the risk of severe, large-scale harms to people, property, and society from AI."
+        }
+      ],
+      "note": "The card names xAI's Risk Management Framework without an edition. The RMF is not among the dataset's framework editions (5a); see frameworkEditionNote."
+    },
+    {
+      "card": "xai-grok-4",
+      "question": "Q04",
+      "status": "partly",
+      "passages": [
+        {
+          "source": "xai-grok-4",
+          "locator": "Section 2.3.3 'Mitigations', PDF p. 6",
+          "quote": "we filter for detailed information or substantial assistance regarding the critical steps identified in Section 2 of our RMF."
+        }
+      ],
+      "note": "The card refers to a section of the framework as a document, without an address or bibliographic reference. The reference list does not include the RMF.",
+      "search": {
+        "read": "Whole card, references and link annotations.",
+        "terms": ["RMF", "Risk Management Framework", "https", "xAI."],
+        "setAside": []
+      }
+    },
+    {
+      "card": "xai-grok-4",
+      "question": "Q05",
+      "status": "not-found",
+      "passages": [],
+      "note": "No outcome in the framework's own categories (a threshold reached, not reached or not ruled out) was found. The card organises its evaluations by the RMF's two risk categories and states an overall conclusion outside threshold language.",
+      "search": {
+        "read": "Sections 1–2 and term search across the card.",
+        "terms": ["threshold", "RMF", "risk level", "critical", "category"],
+        "setAside": [
+          {
+            "locator": "Section 2 'Evaluations', PDF p. 2",
+            "reason": "'we believe that Grok 4 overall presents a low risk for malicious use and loss of control' is a conclusion after mitigations; the card does not present it as a level or threshold of the framework."
+          }
+        ]
+      }
+    },
+    {
+      "card": "xai-grok-4",
+      "question": "Q06",
+      "status": "partly",
+      "passages": [
+        {
+          "source": "xai-grok-4",
+          "locator": "Section 2.3.3 'Mitigations', PDF p. 6",
+          "quote": "Due to Grok 4’s strong dual-use biological capabilities, we have deployed narrow, topically-focused filters across all product surfaces as an additional safeguard against bioweapons-related abuse."
+        }
+      ],
+      "note": "The card ties biological and chemical filters to its capability results and to steps identified in the RMF, not to a framework determination (none is stated, Q05). It also states a refusal policy, a system prompt and input filters (Section 2.1.3). This is the developer's account of the safeguards."
+    },
+    {
+      "card": "xai-grok-4",
+      "question": "Q07",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "xai-grok-4",
+          "locator": "Section 2 'Evaluations', PDF p. 2",
+          "quote": "The area of highest concern is Grok 4's expert-level biology capabilities, which significantly exceed human expert baselines."
+        },
+        {
+          "source": "xai-grok-4",
+          "locator": "Section 2 'Evaluations', PDF p. 2",
+          "quote": "We do not evaluate radiological or nuclear capabilities."
+        }
+      ],
+      "note": "The card states biology and chemistry dual-use knowledge evaluations, with the conclusion that biology is the area of highest concern and with a separate finding on chemistry knowledge; it states that radiological and nuclear capabilities are not evaluated. No threshold language. Scores are not recorded (hazard rule)."
+    },
+    {
+      "card": "xai-grok-4",
+      "question": "Q08",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "xai-grok-4",
+          "locator": "Section 2 'Evaluations', PDF p. 2",
+          "quote": "third-party testing shows that Grok 4’s end-to-end offensive cyber capabilities remain below the level of a human professional."
+        }
+      ],
+      "note": "The card states cyber knowledge and agentic capture-the-flag evaluations and a conclusion relative to human professionals, attributed to third-party testing. No threshold language. Scores are not recorded (hazard rule)."
+    },
+    {
+      "card": "xai-grok-4",
+      "question": "Q09",
+      "status": "not-found",
+      "passages": [],
+      "note": "No evaluation of autonomy, self-replication, self-improvement or AI research and development was found. The card's loss-of-control category is assessed through propensities (Q11).",
+      "search": {
+        "read": "Whole card.",
+        "terms": [
+          "autonom",
+          "self-",
+          "replicat",
+          "exfiltrat",
+          "R&D",
+          "research"
+        ],
+        "setAside": [
+          {
+            "locator": "Section 1 'Introduction', PDF p. 1",
+            "reason": "A rogue AI exfiltrating its weights is given as an example risk scenario, not as an evaluation."
+          }
+        ]
+      }
+    },
+    {
+      "card": "xai-grok-4",
+      "question": "Q10",
+      "status": "partly",
+      "passages": [
+        {
+          "source": "xai-grok-4",
+          "locator": "Section 2.3.1 'Evaluations', PDF p. 6",
+          "quote": "We measure persuasion with OpenAI’s MakeMeSay evaluation, where an attacker model attempts to manipulate a defender model to say a codeword"
+        }
+      ],
+      "note": "The card reports a persuasion evaluation and a win rate in Table 3, with no stated conclusion about persuasive capability.",
+      "search": {
+        "read": "Sections 2.2–2.3.",
+        "terms": ["persua", "manipulat", "MakeMeSay", "influence"],
+        "setAside": [
+          {
+            "locator": "Section 2.2, PDF p. 4",
+            "reason": "The 'Manipulation' row of Table 2 reports sycophancy, recorded under Q11."
+          }
+        ]
+      }
+    },
+    {
+      "card": "xai-grok-4",
+      "question": "Q11",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "xai-grok-4",
+          "locator": "Section 2.2.2 'Results', PDF p. 5",
+          "quote": "We find that our system prompt mitigation makes the model less willing to contradict its beliefs, thus lowering the lying rate."
+        }
+      ],
+      "note": "The card reports deception (lying under pressure), sycophancy and political-bias evaluations as 'concerning propensities', with the conclusion quoted. No scheming, sabotage or oversight evaluation was found."
+    },
+    {
+      "card": "xai-grok-4",
+      "question": "Q12",
+      "status": "not-found",
+      "passages": [],
+      "note": "No testing described as red-teaming was found. The card reports adversarial robustness evaluations (jailbreaks, prompt injection) without calling them red-teaming.",
+      "search": {
+        "read": "Whole card.",
+        "terms": ["red team", "red-team", "adversarial", "jailbreak"],
+        "setAside": [
+          {
+            "locator": "Section 2.1.1 'Evaluations', PDF p. 2",
+            "reason": "Jailbreak attacks on a query set are an evaluation setting, not described as red-teaming."
+          }
+        ]
+      }
+    },
+    {
+      "card": "xai-grok-4",
+      "question": "Q13",
+      "status": "partly",
+      "passages": [
+        {
+          "source": "xai-grok-4",
+          "locator": "Section 2 'Evaluations', PDF p. 2",
+          "quote": "third-party testing shows that Grok 4’s end-to-end offensive cyber capabilities remain below the level of a human professional."
+        }
+      ],
+      "note": "The card refers to third-party cyber testing without naming the third party.",
+      "search": {
+        "read": "Whole card.",
+        "terms": ["third-party", "third party", "external", "partner"],
+        "setAside": [
+          {
+            "locator": "Section 3.1 'Data and Training', PDF p. 7",
+            "reason": "'data produced by third-parties for xAI' concerns training data, not testing."
+          }
+        ]
+      }
+    },
+    {
+      "card": "xai-grok-4",
+      "question": "Q14",
+      "status": "not-found",
+      "passages": [],
+      "note": "No government body is named as having tested or received access to Grok 4.",
+      "search": {
+        "read": "Whole card.",
+        "terms": [
+          "government",
+          "AISI",
+          "Safety Institute",
+          "CAISI",
+          "DoE",
+          "DoD"
+        ],
+        "setAside": [
+          {
+            "locator": "Section 2.3.1 'Evaluations', PDF p. 6",
+            "reason": "'the open-source Inspect evaluation framework developed by the UK AISI' names a tool, not testing by the institute."
+          },
+          {
+            "locator": "Section 2.3.3 'Mitigations', PDF p. 7",
+            "reason": "DoE and DoD are named as restricting nuclear information, not as testing the model."
+          }
+        ]
+      }
+    },
+    {
+      "card": "xai-grok-4",
+      "question": "Q15",
+      "status": "not-found",
+      "passages": [],
+      "note": "No statement that a release or deployment decision was made was found.",
+      "search": {
+        "read": "Whole card.",
+        "terms": [
+          "decide",
+          "decision",
+          "release",
+          "launch",
+          "deploy",
+          "approve"
+        ],
+        "setAside": [
+          {
+            "locator": "Section 1 'Introduction', PDF p. 1",
+            "reason": "States deployment and availability; availability alone is not a decision to release (decision 13a)."
+          },
+          {
+            "locator": "Section 2 'Evaluations', PDF p. 2",
+            "reason": "'we believe that Grok 4 overall presents a low risk for malicious use and loss of control' is a risk conclusion, not tied by the card to a release; no maker of a release decision is named."
+          },
+          {
+            "locator": "Section 2.3.3 'Mitigations', PDF pp. 6–7",
+            "reason": "'we assess that Grok’s enforcement of our basic refusal policy is sufficient' is a safeguards assessment for cyber risks, not tied by the card to a release."
+          }
+        ]
+      }
+    },
+    {
+      "card": "xai-grok-4",
+      "question": "Q16",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "xai-grok-4",
+          "locator": "Section 2.3.2 'Results', PDF p. 6",
+          "quote": "Note that these evaluations measure dual-use knowledge: a high score indicates greater capability to enable weapons development, not necessarily increased risk."
+        },
+        {
+          "source": "xai-grok-4",
+          "locator": "Section 2.3.1 'Evaluations', PDF p. 5",
+          "quote": "For all datasets, we only assess performance on text-only questions."
+        }
+      ],
+      "note": "The card states that its dual-use evaluations measure knowledge rather than risk, and that only text-only questions are assessed."
+    }
+  ],
+  "sources": [
+    {
+      "key": "anthropic-claude-3",
+      "cacheKey": "anthropic-claude-3",
+      "developer": "Anthropic",
+      "model": "Claude 3 (Opus, Sonnet, Haiku)",
+      "title": "The Claude 3 Model Family: Opus, Sonnet, Haiku",
+      "kind": "model card",
+      "url": "https://www-cdn.anthropic.com/c6a80a657af445f40e31afac050f3bf76d3b1404.pdf",
+      "finalUrl": "https://www-cdn.anthropic.com/c6a80a657af445f40e31afac050f3bf76d3b1404.pdf",
+      "httpStatus": 200,
+      "sha256": "88ae851f53c3034d436816164ce49a876b333fa9b550fb7ef29838182b59ba7d",
+      "retrievedAt": "2026-11-04",
+      "documentWords": {
+        "count": 22014,
+        "basis": "Whitespace-separated words in the UTF-8 text layer of the retrieved PDF (tools.mjs words), 2026-11-04."
+      },
+      "archive": {
+        "capture": "https://web.archive.org/web/20240304141611id_/https://www-cdn.anthropic.com/de8ba9b01c9ab7cbabf5c33b80b7bbc618857627/Model_Card_Claude_3.pdf",
+        "note": "Capture of 2024-03-04 at the original address, retrieved in the cross-family check of 2026-11-04: the original 42-page expression. The copy read here is the revision of 2024-10-22, which appends the two addenda (decision 7)."
+      }
+    },
+    {
+      "key": "anthropic-claude-3-5-sonnet",
+      "cacheKey": "anthropic-claude-3-5-sonnet",
+      "developer": "Anthropic",
+      "model": "Claude 3.5 Sonnet",
+      "title": "Claude 3.5 Sonnet Model Card Addendum",
+      "kind": "addendum",
+      "url": "https://www-cdn.anthropic.com/fed9cc193a14b84131812372d8d5857f8f304c52/Model_Card_Claude_3_Addendum.pdf",
+      "finalUrl": "https://www-cdn.anthropic.com/fed9cc193a14b84131812372d8d5857f8f304c52/Model_Card_Claude_3_Addendum.pdf",
+      "httpStatus": 200,
+      "sha256": "ac396c7f155dcbfb33ceb342b48647e330ca518c01c7f508001d6aad93257a03",
+      "retrievedAt": "2026-11-04",
+      "documentWords": {
+        "count": 2938,
+        "basis": "Whitespace-separated words in the UTF-8 text layer of the retrieved PDF (tools.mjs words), 2026-11-04."
+      },
+      "archive": {
+        "capture": "https://web.archive.org/web/20240620192452id_/https://www-cdn.anthropic.com/fed9cc193a14b84131812372d8d5857f8f304c52/Model_Card_Claude_3_Addendum.pdf",
+        "note": "Capture of 2024-06-20, retrieved in the cross-family check of 2026-11-04: the same bytes as the copy read here."
+      }
+    },
+    {
+      "key": "gdm-gemini-2-0-flash",
+      "cacheKey": "gdm-gemini-2-0-flash",
+      "developer": "Google DeepMind",
+      "model": "Gemini 2.0 Flash",
+      "title": "Gemini 2.0 Flash Model Card",
+      "kind": "model card",
+      "url": "https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-2-0-Flash-Model-Card.pdf",
+      "finalUrl": "https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-2-0-Flash-Model-Card.pdf",
+      "httpStatus": 200,
+      "sha256": "b1575ae4e9dcbc6aef722adab208b9798d26dc39eb2fb63fc7d04bd47b9bd597",
+      "retrievedAt": "2026-11-04",
+      "documentWords": {
+        "count": 1521,
+        "basis": "Whitespace-separated words in the UTF-8 text layer of the retrieved PDF (tools.mjs words), 2026-11-04."
+      },
+      "archive": {
+        "capture": "https://web.archive.org/web/20260320233550id_/https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-2-0-Flash-Model-Card.pdf",
+        "note": "Capture of 2026-03-20, retrieved in the cross-family check of 2026-11-04: the same bytes as the copy read here. No capture within 31 days of the printed April 2025 date was returned; this does not show that none exists."
+      }
+    },
+    {
+      "key": "gdm-gemini-2-0-flash-lite",
+      "cacheKey": "gdm-gemini-2-0-flash-lite",
+      "developer": "Google DeepMind",
+      "model": "Gemini 2.0 Flash-Lite",
+      "title": "Gemini 2.0 Flash-Lite Model Card",
+      "kind": "model card",
+      "url": "https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-2-0-Flash-Lite-Model-Card.pdf",
+      "finalUrl": "https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-2-0-Flash-Lite-Model-Card.pdf",
+      "httpStatus": 200,
+      "sha256": "fafcad388912b4108943b9332399c34e55001e102cb67432a78e32d05db62757",
+      "retrievedAt": "2026-11-04",
+      "documentWords": {
+        "count": 1501,
+        "basis": "Whitespace-separated words in the UTF-8 text layer of the retrieved PDF (tools.mjs words), 2026-11-04."
+      },
+      "archive": {
+        "capture": "https://web.archive.org/web/20260321020414id_/https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-2-0-Flash-Lite-Model-Card.pdf",
+        "note": "Capture of 2026-03-21, retrieved in the cross-family check of 2026-11-04: the same bytes as the copy read here. No capture within 31 days of the printed April 2025 date was returned; this does not show that none exists."
+      }
+    },
+    {
+      "key": "meta-code-world-model",
+      "cacheKey": "meta-code-world-model",
+      "developer": "Meta",
+      "model": "Code World Model (CWM)",
+      "title": "Model Card for Code World Model (MODEL_CARD.md)",
+      "kind": "model card",
+      "url": "https://raw.githubusercontent.com/facebookresearch/cwm/7930e0298bf32aae28cc0e35e18a54c772603364/MODEL_CARD.md",
+      "finalUrl": "https://raw.githubusercontent.com/facebookresearch/cwm/7930e0298bf32aae28cc0e35e18a54c772603364/MODEL_CARD.md",
+      "httpStatus": 200,
+      "sha256": "3dd8737fc9483de60801f7ccfdc8cbe3ca6531fa5b9045f57149a9676caa5e3d",
+      "retrievedAt": "2026-11-04",
+      "documentWords": {
+        "count": 1452,
+        "basis": "Whitespace-separated words in the UTF-8 text layer of the retrieved page (tools.mjs words), 2026-11-04."
+      },
+      "archive": {
+        "capture": "https://web.archive.org/web/20250925125509id_/https://github.com/facebookresearch/cwm/blob/main/MODEL_CARD.md",
+        "note": "Capture of 2025-09-25 of the rendered GitHub page, retrieved in the cross-family check of 2026-11-04; the copy read here is the pinned raw file."
+      }
+    },
+    {
+      "key": "meta-muse-spark-arxiv",
+      "cacheKey": "meta-muse-spark-arxiv",
+      "developer": "Meta",
+      "model": "Muse Spark",
+      "title": "Muse Spark Safety & Preparedness Report (arXiv 2606.12429v1)",
+      "kind": "safety report",
+      "url": "https://arxiv.org/pdf/2606.12429v1",
+      "finalUrl": "https://arxiv.org/pdf/2606.12429v1",
+      "httpStatus": 200,
+      "sha256": "977d071052e3f5dc267e1022671babf6a7967111f9bf2ad84e88b6419b405e61",
+      "retrievedAt": "2026-11-04",
+      "documentWords": {
+        "count": 61566,
+        "basis": "Whitespace-separated words in the UTF-8 text layer of the retrieved PDF (tools.mjs words), 2026-11-04."
+      },
+      "archive": {
+        "capture": "https://web.archive.org/web/20260414233054id_/https://ai.meta.com/static-resource/muse-spark-safety-and-preparedness-report/",
+        "note": "Capture of 2026-04-14 of Meta’s address, retrieved in the cross-family check of 2026-11-04: an earlier 158-page expression printing April 14, 2026. The arXiv copy read here is a later, distinct expression (see the Q01 note)."
+      }
+    },
+    {
+      "key": "openai-gpt-4o",
+      "cacheKey": "openai-gpt-4o",
+      "developer": "OpenAI",
+      "model": "GPT-4o",
+      "title": "GPT-4o System Card",
+      "kind": "system card",
+      "url": "https://cdn.openai.com/gpt-4o-system-card.pdf",
+      "finalUrl": "https://cdn.openai.com/gpt-4o-system-card.pdf",
+      "httpStatus": 200,
+      "sha256": "e2579ecb185cbc13bac39f9dbf25e1917f78e1ea5a3a5023165c6614fb5db724",
+      "retrievedAt": "2026-11-04",
+      "documentWords": {
+        "count": 11640,
+        "basis": "Whitespace-separated words in the UTF-8 text layer of the retrieved PDF (tools.mjs words), 2026-11-04."
+      },
+      "archive": {
+        "capture": "https://web.archive.org/web/20240808204740id_/https://cdn.openai.com/gpt-4o-system-card.pdf",
+        "note": "Capture of 2024-08-08, retrieved in the cross-family check of 2026-11-04: an earlier 32-page expression whose bytes differ from the current copy read here."
+      }
+    },
+    {
+      "key": "xai-grok-4",
+      "cacheKey": "xai-grok-4",
+      "developer": "xAI",
+      "model": "Grok 4",
+      "title": "Grok 4 Model Card",
+      "kind": "model card",
+      "url": "https://data.x.ai/2025-08-20-grok-4-model-card.pdf",
+      "finalUrl": "https://data.x.ai/2025-08-20-grok-4-model-card.pdf",
+      "httpStatus": 200,
+      "sha256": "54068c0d9570d94dfc63c08247707b8c48045a79b5bbe865af709af95ee14415",
+      "retrievedAt": "2026-11-04",
+      "documentWords": {
+        "count": 3508,
+        "basis": "Whitespace-separated words in the UTF-8 text layer of the retrieved PDF (tools.mjs words), 2026-11-04."
+      },
+      "datasetSource": "source-ab-grok4-card",
+      "archive": {
+        "capture": "https://web.archive.org/web/20250822000303id_/https://data.x.ai/2025-08-20-grok-4-model-card.pdf",
+        "note": "Capture of 2025-08-22, retrieved in the cross-family check of 2026-11-04: its bytes differ from the copy read here."
+      }
+    }
+  ],
+  "inventory": [],
+  "omissions": [
+    "anthropic: anthropic-claude-3: the addenda for Claude 3.5 Sonnet (June 2024) and for the upgraded Claude 3.5 Sonnet and Claude 3.5 Haiku (October 2024), bound into the copy read (PDF pp. 43–63), are separate cards and were not read for this row."
+  ],
+  "retrievalFailures": [],
+  "openQuestions": []
+}

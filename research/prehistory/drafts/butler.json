@@ -1,0 +1,350 @@
+{
+  "group": "butler",
+  "preparedAt": "2026-11-02",
+  "propositions": ["W01", "W02", "W04", "W08", "U01", "U02"],
+  "sources": [
+    {
+      "key": "butler-1865-press",
+      "cacheKey": "butler-1865-papers-past",
+      "datasetSource": "source-butler-1865-press",
+      "documentId": "butler-1865-lucubratio-ebria",
+      "title": "Lucubratio Ebria",
+      "authors": ["Unsigned (attributed to Samuel Butler)"],
+      "publisher": "The Press (Christchurch), vol. VIII, issue 847, p. 2, 29 July 1865, in Papers Past",
+      "url": "https://paperspast.natlib.govt.nz/newspapers/CHP18650729.2.8",
+      "httpStatus": 200,
+      "sha256": "a56ab9ee5cbf7a6d9d4d49af7fc2ab13fb9de0ed41e4107d291cab8b9a882a73",
+      "retrievedAt": "2026-11-02",
+      "language": "en",
+      "documentWords": {
+        "count": 2330,
+        "basis": "As recorded on the dataset source (Papers Past OCR text of the article, counted 2026-10-06)."
+      },
+      "version": "Papers Past article page, OCR text, retrieved directly on 2026-11-02 (the dataset's source cites an archive capture of the same page). Column images were not compared.",
+      "kind": "statement"
+    },
+    {
+      "key": "erewhon-1872-scan",
+      "cacheKey": "erewhon-1872-txt",
+      "datasetSource": "source-erewhon-1872-scan",
+      "documentId": "erewhon-1872",
+      "title": "Erewhon, or Over the Range",
+      "authors": ["Samuel Butler (published anonymously)"],
+      "publisher": "London: Trübner & Co., 1872; Internet Archive scan ErewhonOverrang00Butl",
+      "url": "https://archive.org/download/ErewhonOverrang00Butl/ErewhonOverrang00Butl_djvu.txt",
+      "httpStatus": 200,
+      "sha256": "4c0b3116d03ba2d074aa6598be5ead41db1db6f907e26346dd7dcc09ae94ef72",
+      "retrievedAt": "2026-11-02",
+      "language": "en",
+      "documentWords": {
+        "count": 71726,
+        "basis": "As recorded on the dataset source (whitespace-separated words of the plain-text file, counted 2026-10-06)."
+      },
+      "version": "The 1872 Trübner printing, as the dataset's source records it, read in the Internet Archive OCR text; page numbers from the running heads in the OCR.",
+      "kind": "book"
+    }
+  ],
+  "documents": [
+    {
+      "id": "butler-1865-lucubratio-ebria",
+      "existingEntity": true,
+      "title": "Lucubratio Ebria",
+      "shortName": "Lucubratio Ebria (1865)",
+      "subtype": "Newspaper article",
+      "authors": ["Unsigned (attributed to Samuel Butler)"],
+      "date": "1865-07-29",
+      "dateBasis": "publication",
+      "dateNote": "Issue date in the Papers Past record, as on the dataset entity."
+    },
+    {
+      "id": "erewhon-1872",
+      "existingEntity": true,
+      "title": "Erewhon, or Over the Range",
+      "shortName": "Butler, Erewhon (1872)",
+      "subtype": "Book",
+      "authors": ["Samuel Butler"],
+      "date": "1872",
+      "dateBasis": "publication",
+      "dateNote": "Title-page year of the 1872 printing, as on the dataset entity."
+    }
+  ],
+  "records": [
+    {
+      "id": "pre-w01-butler-1865-lucubratio-ebria-contests",
+      "proposition": "W01",
+      "document": "butler-1865-lucubratio-ebria",
+      "predicate": "contests_proposition",
+      "statement": "The unsigned article “Lucubratio Ebria” (The Press, Christchurch, 29 July 1865) rejects a previous correspondent's view that machines are separate beings whose final triumph over mankind is to be expected, and treats machines as the means by which the human organism develops.",
+      "time": {
+        "kind": "event",
+        "date": "1865-07-29",
+        "basis": "publication",
+        "note": "The Press, vol. VIII, issue 847, p. 2, in the Papers Past record."
+      },
+      "attested": null,
+      "claimed": null,
+      "roles": ["contesting", "earliest-located"],
+      "term": null,
+      "register": "dream",
+      "engagement": {
+        "kind": "engages-premise",
+        "rationale": "Gives a reason against the premise that machines are a separate kind of being that could succeed people: they are extensions of the human organism."
+      },
+      "missing": null,
+      "hazardNote": null,
+      "qualification": "The article frames itself as a dream after a glass of hot whisky and water and closes by leaving 'our dream'. Its attribution to Butler rests on its close match with the reply to the machine treatise in Erewhon (1872), as the dataset's entity records. The same passage is the evidence of the dataset's B6 record of this article (ts-b6-butler-1865-contests). The quotation is read in the Papers Past OCR text; the newspaper page image was not checked (Papers Past image requests answered HTTP 403 to the cross-family check and on 2026-11-03 here).",
+      "datasetLink": "ts-b6-butler-1865-contests",
+      "evidence": [
+        {
+          "source": "butler-1865-press",
+          "locator": "Paragraph beginning “It is a mistake then to take the view”, after the comparison with the Chinese",
+          "passage": "to consider the machines as identities, […] and to anticipate their final triumph over mankind. They are to be regarded as the mode of development by which human organism is most especially advancing",
+          "passageType": "quote",
+          "sourceRole": "primary",
+          "support": "supports",
+          "note": "The omitted words are 'to animalise them,' (OCR 'aniinalise')."
+        }
+      ],
+      "crossFamily": {
+        "items": ["A1.3", "A2.14", "F-Butler-1865-image"],
+        "result": "not checkable on the page image; reading agreed (the passage disputes separate succession). OCR-only qualification added."
+      },
+      "maintainerDecision": {
+        "decision": "4a",
+        "effect": "W01's earliest located contesting text at admission (replacing Lanier, 2000-11-10), with the qualification that the quotation is read in the OCR text; the page image is unchecked."
+      }
+    },
+    {
+      "id": "pre-w01-erewhon-1872",
+      "proposition": "W01",
+      "document": "erewhon-1872",
+      "predicate": "articulates_proposition",
+      "statement": "Erewhon (1872) gives, as an extract from a fictional Erewhonian treatise, the question whether people are not themselves creating their successors in the supremacy of the earth, giving machines ever more of a self-regulating, self-acting power that will be better than intellect.",
+      "time": {
+        "kind": "event",
+        "date": "1872",
+        "basis": "publication",
+        "note": "Title-page year of the 1872 Trübner printing."
+      },
+      "attested": null,
+      "claimed": null,
+      "roles": ["articulation"],
+      "term": null,
+      "register": "fiction",
+      "engagement": null,
+      "missing": null,
+      "hazardNote": null,
+      "qualification": "Fiction: the narrator of a satirical novel translates extracts from a treatise that led Erewhon to destroy its machines; the passage documents what the novel says, not Butler's view. The passage is put as a rhetorical question. Butler's letter of 1863, already recorded on W01, has a close counterpart sentence.",
+      "datasetLink": "ht-w01-butler-1863-darwin-among-the-machines",
+      "evidence": [
+        {
+          "source": "erewhon-1872-scan",
+          "locator": "Chapter XXII, 'The Book of the Machines' (continued), p. 203",
+          "passage": "Are we not ourselves creating our successors in the supremacy of the earth? daily adding to the beauty and delicacy of their organisation, daily giving them greater skill and supplying more and more of that self-regulating self-acting power which will be better than intellect itself?",
+          "passageType": "quote",
+          "sourceRole": "primary",
+          "support": "supports",
+          "note": null
+        }
+      ]
+    },
+    {
+      "id": "pre-w02-erewhon-1872-contests",
+      "proposition": "W02",
+      "document": "erewhon-1872",
+      "predicate": "contests_proposition",
+      "statement": "Erewhon's fictional treatise (1872) argues that people should destroy as many machines as they can dispense with, lest the machines tyrannise over them more completely.",
+      "time": {
+        "kind": "event",
+        "date": "1872",
+        "basis": "publication",
+        "note": "Title-page year of the 1872 Trübner printing."
+      },
+      "attested": null,
+      "claimed": null,
+      "roles": ["contesting"],
+      "term": null,
+      "register": "fiction",
+      "engagement": {
+        "kind": "contrary-only",
+        "rationale": "States the contrary course (destroy the machines rather than accept their rule) without arguing against a premise of the acceptability claim."
+      },
+      "missing": null,
+      "hazardNote": null,
+      "qualification": "Fiction, voiced by an Erewhonian treatise inside a satirical novel. In the 1872 preface to the second edition Butler calls these chapters an example of the specious misuse of analogy, as the dataset's B6 record notes.",
+      "datasetLink": "ht-w02-butler-1863-darwin-among-the-machines",
+      "evidence": [
+        {
+          "source": "erewhon-1872-scan",
+          "locator": "Chapter XXII, pp. 200–201, paragraph before 'It is true, from a low materialistic point of view'",
+          "passage": "This fact precludes us from proposing the complete annihilation of machinery, but surely it indicates that we should destroy as many of them as we can possibly dispense with, lest they should tyrannise over us even more completely.",
+          "passageType": "quote",
+          "sourceRole": "primary",
+          "support": "supports",
+          "note": "The page break (running head 'THE BOOK OF THE MACHINES. 201') falls after 'but'; matched with it skipped. Shared by the W02 and W08 records; counted once.",
+          "matchText": "This fact precludes us from proposing the complete annihilation of machinery, but […] surely it indicates that we should destroy as many of them as we can possibly dispense with, lest they should tyrannise over us even more completely."
+        }
+      ]
+    },
+    {
+      "id": "pre-w08-erewhon-1872-contests",
+      "proposition": "W08",
+      "document": "erewhon-1872",
+      "predicate": "contests_proposition",
+      "statement": "Erewhon's fictional treatise (1872) argues that people should destroy as many machines as they can dispense with, lest the machines tyrannise over them more completely.",
+      "time": {
+        "kind": "event",
+        "date": "1872",
+        "basis": "publication",
+        "note": "Title-page year of the 1872 Trübner printing."
+      },
+      "attested": null,
+      "claimed": null,
+      "roles": ["contesting"],
+      "term": null,
+      "register": "fiction",
+      "engagement": {
+        "kind": "engages-premise",
+        "rationale": "Gives a reason against advancing machines: their advance would let them tyrannise over people."
+      },
+      "missing": null,
+      "hazardNote": null,
+      "qualification": "Fiction, as the W02 record of the same passage. The passage shares its evidence with that record, as the dataset's Butler 1863 records share theirs.",
+      "datasetLink": "ht-w08-butler-1863-darwin-among-the-machines",
+      "evidence": [
+        {
+          "source": "erewhon-1872-scan",
+          "locator": "Chapter XXII, pp. 200–201",
+          "passage": "This fact precludes us from proposing the complete annihilation of machinery, but surely it indicates that we should destroy as many of them as we can possibly dispense with, lest they should tyrannise over us even more completely.",
+          "passageType": "quote",
+          "sourceRole": "primary",
+          "support": "supports",
+          "note": "The page break (running head 'THE BOOK OF THE MACHINES. 201') falls after 'but'; matched with it skipped. Shared by the W02 and W08 records; counted once.",
+          "matchText": "This fact precludes us from proposing the complete annihilation of machinery, but […] surely it indicates that we should destroy as many of them as we can possibly dispense with, lest they should tyrannise over us even more completely."
+        }
+      ]
+    },
+    {
+      "id": "pre-w04-erewhon-1872-context",
+      "proposition": "W04",
+      "document": "erewhon-1872",
+      "predicate": "bears_on_proposition",
+      "statement": "Erewhon (1872) describes a civil war, some five hundred years before the narrator's visit, between parties styled the machinists and the anti-machinists, which the anti-machinists won.",
+      "time": {
+        "kind": "event",
+        "date": "1872",
+        "basis": "publication",
+        "note": "Title-page year of the 1872 Trübner printing."
+      },
+      "attested": null,
+      "claimed": null,
+      "roles": ["context"],
+      "term": null,
+      "register": "fiction",
+      "engagement": null,
+      "missing": "The dispute is over keeping existing machinery after the treatise's argument, not over whether superhuman machine intelligence should be built; the novel does not describe the machines in dispute as superhuman intelligence.",
+      "hazardNote": null,
+      "qualification": "Fiction. The narrator says the civil war is said to have halved the population; the closing paragraph of the treatise chapters mentions 'reactionary civil wars'. Recorded as context because the criterion's object (superhuman machine intelligence) is absent; see the review note's open question on this record.",
+      "datasetLink": null,
+      "evidence": [
+        {
+          "source": "erewhon-1872-scan",
+          "locator": "Chapter XX, pp. 187–188",
+          "passage": "The parties were styled the machinists and the anti-machinists, and in the end, as I have said already, the latter got the victory",
+          "passageType": "quote",
+          "sourceRole": "primary",
+          "support": "context",
+          "note": "The preceding sentence says civil war raged for many years and is said to have reduced the inhabitants by one half."
+        }
+      ],
+      "maintainerDecision": {
+        "decision": "2a",
+        "effect": "Kept as context; W04 keeps de Garis (1989) as its earliest located text."
+      }
+    },
+    {
+      "id": "pre-u02-erewhon-1872",
+      "proposition": "U02",
+      "document": "erewhon-1872",
+      "predicate": "articulates_proposition",
+      "statement": "Erewhon (1872) quotes its fictional treatise as saying that machines' possessing little consciousness now is no security against the ultimate development of mechanical consciousness.",
+      "time": {
+        "kind": "event",
+        "date": "1872",
+        "basis": "publication",
+        "note": "Title-page year of the 1872 Trübner printing."
+      },
+      "attested": null,
+      "claimed": null,
+      "roles": ["articulation"],
+      "term": null,
+      "register": "fiction",
+      "engagement": null,
+      "missing": null,
+      "hazardNote": null,
+      "qualification": "Fiction: the narrator quotes the Erewhonian treatise's 'own words'. The passage documents what the novel says, not Butler's view. The dataset records the same passage on B5 as context (ts-b5-erewhon-1872-context). Just before the quoted passage the treatise imagines 'some new phase of mind' unlike any consciousness known; the cross-family check reads mechanical consciousness as a literal mental state that meets U02 (audit F5), with that difference kept. The earlier satirical letter of 1863 (Darwin among the Machines) was located by the cross-family check and is the earliest located U02 articulation; Erewhon is the earliest located novel.",
+      "datasetLink": "ts-b5-erewhon-1872-context",
+      "evidence": [
+        {
+          "source": "erewhon-1872-scan",
+          "locator": "Chapter XXI, 'The Book of the Machines', p. 191",
+          "passage": "There is no security […] against the ultimate development of mechanical consciousness, in the fact of machines possessing little consciousness now.",
+          "passageType": "quote",
+          "sourceRole": "primary",
+          "support": "supports",
+          "note": "The omitted words are the narrator's '—to quote his own words—'."
+        }
+      ],
+      "crossFamily": {
+        "items": ["A2.3", "C1", "F5"],
+        "result": "corrected: earliest located role moved to the 1863 letter (checker-located); classification agreed."
+      },
+      "maintainerDecision": {
+        "decision": "12a",
+        "effect": "Listed under the U02 headline as the earliest located novel."
+      }
+    }
+  ],
+  "links": [],
+  "searchLog": [
+    {
+      "proposition": "W01",
+      "searched": "Lucubratio Ebria read in full in the Papers Past OCR text; Erewhon chapters XX–XXIII read in the 1872 OCR text and searched for 'successor', 'supremacy', 'parasite', 'rule'.",
+      "earliestNote": "Butler's letter of 1863 holds W01's earliest located articulation in the dataset; Erewhon is later. Lucubratio Ebria (1865) would be the earliest located contesting text, replacing Lanier (2000): flagged in the review note, not assigned."
+    },
+    {
+      "proposition": "W04",
+      "searched": "Erewhon chapters XX and XXIII for 'civil war', 'machinists'.",
+      "earliestNote": "Recorded as context only; if the maintainer reads the criterion to cover fiction about a war over machines whose supremacy is feared, Erewhon (1872) would precede de Garis (1989)."
+    },
+    {
+      "proposition": "U02",
+      "searched": "Erewhon chapters XXI–XXIII for 'consciousness', 'reason', 'think'; Lucubratio Ebria in full.",
+      "earliestNote": "Erewhon (1872) is the earliest located U02 text in this pack, in fiction. The earliest located non-fiction text is Turing's lecture of 1947."
+    },
+    {
+      "proposition": "U01",
+      "searched": "Erewhon chapter XXIII (the reply) and Lucubratio Ebria for statements that machines do only what they are made to do.",
+      "earliestNote": "No passage meets U01: the reply treats machines as limbs, which concerns their status, not what they can originate."
+    }
+  ],
+  "omissions": [
+    {
+      "item": "Butler, 'Darwin among the Machines' (1863): new propositions U01 and U02",
+      "reason": "Papers Past returned a bot-protection page for this item on 2026-11-02 (the 1865 item was served minutes earlier); the letter was not re-read for U01 or U02. Its dataset records (W01, W02, W08, W09, B6 and A1, A4, A5 context) are unchanged."
+    },
+    {
+      "item": "Erewhon, revised edition (1901)",
+      "reason": "Not re-read; the 1872 printing is the expression recorded. The dataset's B6 record notes one wording change of 1901."
+    }
+  ],
+  "retrievalFailures": [
+    {
+      "url": "https://paperspast.natlib.govt.nz/newspapers/CHP18630613.2.4",
+      "result": "HTTP 200 with a 212-byte bot-protection page (Incapsula), 2026-11-02",
+      "fallback": "None; not retried by other means."
+    }
+  ],
+  "codexRetrieval": [],
+  "openQuestions": []
+}

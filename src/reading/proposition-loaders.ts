@@ -9,6 +9,8 @@ export const propositionLoaders: Record<
   string,
   () => Promise<PropositionsCollection>
 > = {
+  'antecedent-texts': () =>
+    import('./antecedent-texts').then((m) => m.antecedentTexts),
   superintelligence: () =>
     import('./superintelligence').then((m) => m.superintelligencePropositions),
   'risk-debate': () => import('./risk-debate').then((m) => m.riskDebate),

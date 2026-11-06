@@ -782,7 +782,9 @@ export function Propositions({
           <h2 id={'prop-group-' + g.id}>
             {g.id} · {g.label}
           </h2>
-          <p className="doc-family-note">{g.description}</p>
+          <p className="doc-family-note">
+            {collection.groups.find((x) => x.id === g.id)?.description}
+          </p>
           {g.propositions.map((p) => (
             <PropositionSection
               key={p.entity.id}

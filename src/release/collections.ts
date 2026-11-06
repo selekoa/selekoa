@@ -10,6 +10,12 @@ import { propositionsView } from '../domain/propositions';
 import { propositionFrames } from '../reading/proposition-frames';
 import { frameworkComparison } from '../reading/framework-comparison';
 import { comparisonView } from '../domain/framework-comparison';
+import { modelCardsClaimIds } from '../domain/model-cards';
+import { modelCardsFrame } from '../reading/model-cards-frame';
+import { lawsComparedClaimIds } from '../domain/law-comparison';
+import { lawsComparedFrame } from '../reading/laws-compared-frame';
+import { predictionsClaimIds } from '../domain/predictions';
+import { predictionsFrame } from '../reading/predictions-frame';
 import { frameworksLawView } from '../domain/frameworks-law';
 import { computeGuides, guides } from '../reading/guides';
 import { computeBuildoutView } from '../domain/compute-buildout';
@@ -24,6 +30,9 @@ export const collectionKinds = [
   'propositions',
   // From release 0.12.0: guided readings across collections (`/guide/<id>`).
   'guide',
+  // From release 0.31.0: dated predictions with a chart and a table
+  // (`/predictions/<id>`).
+  'predictions',
 ] as const;
 export type CollectionKind = (typeof collectionKinds)[number];
 
@@ -48,6 +57,13 @@ export const applicationCollections: CollectionDefinition[] = [
     definition,
   })),
   { kind: 'compare' as const, definition: frameworkComparison },
+  // "Model cards compared" (schema 2.30): its frame, without the reader text
+  // only its own pages show (src/reading/model-cards.ts); releases record it
+  // whole (src/release/whole-collections.ts).
+  { kind: 'compare' as const, definition: modelCardsFrame },
+  // "Laws compared" (schema 2.31), by its frame in the same way
+  // (src/reading/laws-compared.ts holds the reader text).
+  { kind: 'compare' as const, definition: lawsComparedFrame },
   ...controlStructures.map((definition) => ({
     kind: 'control' as const,
     definition,
@@ -61,6 +77,9 @@ export const applicationCollections: CollectionDefinition[] = [
     definition,
   })),
   ...guides.map((definition) => ({ kind: 'guide' as const, definition })),
+  // "Predictions on record" (schema 2.32), by its frame; the reader text
+  // (src/reading/predictions.ts) loads only with its page.
+  { kind: 'predictions' as const, definition: predictionsFrame },
   // The compute guide (`computeGuides`) joins here at the release that
   // registers it; `collectionClaimIds` already reads it.
 ];
@@ -81,6 +100,17 @@ export function collectionClaimIds(
       data,
       definition as unknown as Parameters<typeof documentHistory>[1],
     ).claimIds;
+  // "Model cards compared" by its ID: shared code carries only its frame.
+  if (kind === 'compare' && definition.id === modelCardsFrame.id)
+    return modelCardsClaimIds(
+      data,
+      definition as unknown as Parameters<typeof modelCardsClaimIds>[1],
+    );
+  if (kind === 'compare' && definition.id === lawsComparedFrame.id)
+    return lawsComparedClaimIds(
+      data,
+      definition as unknown as Parameters<typeof lawsComparedClaimIds>[1],
+    );
   if (kind === 'compare')
     return comparisonView(
       data,
@@ -101,6 +131,11 @@ export function collectionClaimIds(
       data,
       definition as unknown as Parameters<typeof frameworksLawView>[1],
     ).claimIds;
+  if (kind === 'predictions')
+    return predictionsClaimIds(
+      data,
+      definition as unknown as Parameters<typeof predictionsClaimIds>[1],
+    );
   if (kind === 'propositions')
     return propositionsView(
       data,

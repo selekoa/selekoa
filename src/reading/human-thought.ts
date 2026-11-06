@@ -6,6 +6,7 @@ import { aiBioArguments } from './ai-bio-arguments';
 import { aiInScience } from './ai-in-science';
 import { riskDebate } from './risk-debate';
 import { machineSuccession } from './machine-succession';
+import { antecedentTexts } from './antecedent-texts';
 
 export { superintelligencePropositions };
 
@@ -16,6 +17,7 @@ export { superintelligencePropositions };
  * (src/reading/proposition-loaders.ts).
  */
 export const propositionCollections = [
+  antecedentTexts,
   superintelligencePropositions,
   riskDebate,
   yudkowskyArguments,

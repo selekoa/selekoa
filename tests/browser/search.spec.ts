@@ -137,10 +137,14 @@ test('search covers an ASL term and a decision-maker, with filters and a names m
   await field.fill('Altman');
   await page.getByRole('radio', { name: 'Names and aliases only' }).check();
   // The risk-debate admission (2026-10-31) adds two documents by Sam Altman
-  // whose short names begin with his name; before it, one record matched.
+  // whose short names begin with his name, and the predictions admission
+  // (2026-11-05) three more; before them, one record matched.
   const admitted = [
     'altman-2015-machine-intelligence-part-1',
     'altman-2024-intelligence-age',
+    'altman-2025-reflections',
+    'altman-2025-three-observations',
+    'altman-2025-gentle-singularity',
   ];
   await expect(status).toHaveText(
     `${1 + admitted.length} records match “Altman” by name or alias.`,

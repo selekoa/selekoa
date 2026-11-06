@@ -174,15 +174,17 @@ it needs a schema change (minor).
   2024 announcement post and admit Allan Dafoe (S). Source:
   `review/people-pack-2026-10-29.md` § Open questions 7, 9–11;
   `review/people-admission-2026-10-31.md` § Held.
-- **D14. Archive verification: results still to apply** (M · Codex +
-  archive). Of 729 sources checked, archive-fixes applied 532 archive links,
-  4 captures, 58 of 68 quotation fixes and 15 of 16 canonical addresses. Still
-  open: 21 held items (X posts, pages without a verified capture, NY S8828
-  "§", Hanson 2008 and Nordhaus canonical addresses) and 11 re-checks for the
-  next Codex batch (items 26, 61, 111, 148, 454, 461, 554, 614, 644, 701,
-  710). Recommend: one Codex batch, then one patch. Source:
-  `review/archive-fixes-2026-10-30.md` § Held, unchanged; Re-checks for the
-  next Codex batch; `research/archive-fixes-2026-10-30/changes.json`.
+- **D14. Archive verification: results still to apply** (S · Codex +
+  archive). The 11 re-checks and 21 held rows were re-read by Codex on
+  2026-11-04 and applied in the corrections of 2026-11-06. Still open:
+  retrieval gaps with no readable capture (`source-ca-gov-11546-8`,
+  `source-good`, `source-michie-1986-on-machine-intelligence`,
+  `source-vinge-1983-omni-scan`, `source-xm-babuschkin-departure`; the three
+  gwern.net captures answer 403), X and investing.com pages with no
+  content-bearing capture (`lg-src-mx-spacexai-rebrand`,
+  `lg-src-new-murati-x-2026`, `source-xm-x-acquisition`), NY S8828 (no
+  capture) and the Nordhaus canonical address (decision). Source:
+  `review/corrections-2026-11-06.md` § Held.
 - **D15. Link health: sources without archive copies** (M · Codex +
   archive). 41 non-ok sources were not on the Codex list (39 still without
   `archivedUrl`); 144 sources were blocked or unreadable from the cloud (28
@@ -190,49 +192,33 @@ it needs a schema change (minor).
   network. Decide the " / " line-break convention and the Trammell–Korinek
   canonical address. Source: `review/link-health-2026-10-29.md` §
   Recommended next steps 3–5; § Changed.
-- **D16. Archive-only reads** (M · Codex + archive). Records that rest on
-  the cross-family check's reading or on paraphrase: Meta FAF v1.1 (17
-  cells) and xAI FAIF June 2026 (16 paraphrases) in the comparison; three
-  editions in AI-bio; four compute sources (Shelby County permit, three
-  Talen releases); dates resting on the check (Perspective, Lumen, the
-  Commission library page, the BIS PDF); Part 1 frameworks-to-law sources
-  without `archivedUrl`. Recommend: one Codex retrieval brief listing them,
-  then one patch. Source: `review/followups-2026-10-28.md` § Open 1;
-  `review/compare-more-facets-2026-10-27.md` § Open decisions 3;
-  `review/ai-bio-admission-1-2026-10-30.md` § The three editions;
-  `review/cpo-admission-1-2026-10-30.md` § Open 4;
-  `review/cpo-admission-2-2026-10-30.md` § Open 3;
-  `review/frameworks-to-law-admission-1-2026-10-28.md` § Open 2, 4.
 - **D17. Single held records** (S each · Claude or archive).
-  - GB 45438-2025 scope: read the standard's own text.
-    `review/frameworks-to-law-admission-1-2026-10-28.md` § Held.
-  - Christiano "Takeoff speeds" (A105): a source tying the blog account to
-    him. Butler 1865: a bibliography or a ruling.
-    `review/author-persons-admission-2026-10-27.md` § Held.
+  - GB 45438-2025 scope: the standard's own text is read (Codex,
+    2026-11-04); admission waits on a length count or a paraphrase
+    (decision). `review/corrections-2026-11-06.md` § Held.
   - AI Magazine 2006 date (15 Dec against 1 Dec): decide.
     `review/followups-2026-10-28.md` § Open for the maintainer 2.
-  - Shanghai AI Lab founding; two Tencent ESG statements (HKEX filing
-    dates). `review/china-labs-3-admission-2026-10-31.md` § Held.
-  - Nadella's effective chair date (2021 proxy).
-    `review/people-admission-2026-10-31.md` § Held.
+  - Shanghai AI Lab founding (a laboratory reprint gives July 2020; no
+    founding or registration text).
+    `review/china-labs-3-admission-2026-10-31.md` § Held;
+    `review/corrections-2026-11-06.md` § Held.
   - NVIDIA H20 statements (a BIS letter or rule); ADA Space Three-Body
     launch; Starcloud-1 "Gemini" or "Gemma".
     `review/cpo-admission-2-2026-10-30.md` § Held; Corrections.
   - O3 and O10 orbital leads (could replace two earliest-located texts).
     `review/cpo-admission-1-2026-10-30.md` § Open 1.
-  - Michigan HB 4668 after 2026-03-23; Illinois Act; SB 1047 votes from the
-    journals. `review/frameworks-to-law-admission-2-2026-10-28.md` § Open
-    3–4; `review/frameworks-to-law-pack-2026-10-28.md` § Q8.
-  - Hanson 1994 base records dated by a heading (1994-03-08); Hanson in
-    printed Extropy 13 (W03, a Codex read).
-    `review/heterodox-admission-2026-11-01.md` § Open 3–4.
+  - Michigan HB 4668 after 2026-03-28 (the latest capture read).
+    `review/frameworks-to-law-admission-2-2026-10-28.md` § Open 3.
+  - Hanson 1994 base records dated by a heading (1994-03-08; the printed
+    issue is the third quarter of 1994).
+    `review/heterodox-admission-2026-11-01.md` § Open 4;
+    `review/corrections-2026-11-06.md` § Held.
   - NRC Amendment No. 307 text; Constellation's 2027 restart target as a new
     record (decision). `review/crane-nrc-fix-2026-11-01.md`.
-  - Audit holds: Moravec files, `cncert` typing, working-paper/journal pairs,
-    the UK AI Security Institute launch claim.
-    `review/audit-fixes-2026-10-29.md` § Held, and why.
-  - MiniMax M3 capture left unlinked.
-    `review/china-labs-2-admission-2026-10-27.md` § Admission's own fixes.
+  - Audit holds: `cncert` typing, working-paper/journal pairs, the UK AI
+    Security Institute launch claim (all now read; decisions).
+    `review/audit-fixes-2026-10-29.md` § Held, and why;
+    `review/corrections-2026-11-06.md` § Held.
 - **D18. Comparison and framework corrections** (S · Claude). Trim cell notes
   that repeat their paraphrase (`review/paraphrase-corrections-2026-10-28.md`
   § Open 2); the GPT check's "cyber" reason that the text layers do not
@@ -315,14 +301,6 @@ it needs a schema change (minor).
     cross-family check.
   - PA-28 (backlog by decision): record xAI's Risk Management Framework of
     2025-08-20 as its first edition, or reword the not-applicable reason.
-  - xAI launch roster (follow-up of PA-29): the 2023-07-12 capture of x.ai
-    that now supports `lg-xai-founding-stated-2023` also carries the launch
-    team list, while 13 roster and launch records (`musk-launched-xai-2023`,
-    the `*-xai-team-2023` records, `lg-mx-*-xai-team-2023`,
-    `lg-gs-hendrycks-xai-adviser-2023`) rest only on Ars Technica and Axios
-    (`pnpm audit:consistency`, `secondary-only-actor-source-same-day`).
-    Add the capture's roster passages as primary evidence. Archive read
-    (S · Codex, then Claude).
   - PA-34 (backlog by decision): `power.technology` on
     `cpo-pw-google-constellation-2700mw-supply` needs a schema decision: a
     "not stated" value, or drop the attribute.
@@ -366,14 +344,13 @@ it needs a schema change (minor).
   Claude or Codex). The blind sample of 2026-11-02 (120 claims; 4 material
   errors, 13 minor slips) was applied in v0.26.1
   ([record](../review/audit-sample-fixes-2026-11-02.md)), except:
-  - Item 22, `lg-cn-tang-jie-zhipu-cofounder`: the KEG/GLM account was not
-    located in the cited prospectus pages, but the pack matched its anchor
-    on 2026-10-15. Re-read the prospectus (Codex), then keep or withdraw the
-    second evidence item and the qualification's KEG/GLM sentences.
   - Item 66, Natural Questions paper: July 2019 is unsupported by the cited
     expression (ACL month empty; Crossref print month November 2019), and a
     record citing it is dated January 2019. Settle the work's earliest
-    expression once for all ten records of the paper.
+    expression once for all ten records of the paper. Codex's read of
+    2026-11-04 found the published PDF's footer gives July 2019, and a dated
+    announcement attests the accepted paper on 2019-01-23 (decision:
+    `review/corrections-2026-11-06.md` § Held).
   - Item 117 follow-up: Y08 has no earliest located contesting text. Recheck
     the bounded Y08 candidate sequence before setting one.
   - The sample certifies no unsampled record. The Codex sweep of absence
@@ -481,11 +458,10 @@ it needs a schema change (minor).
 Each is pack → Codex check → adjudication → admission
 ([operating guide](operating-guide.md)).
 
-- **R1. Laws compared** (L · Claude + Codex). Laws as rows, questions as
-  columns (scope and threshold, duties, start dates, penalties, enforcing
-  body); every cell quotes the law. A research pack is being drafted on
-  2026-11-01; its brief, once on `main`, is the starting point. Source:
-  `docs/roadmap.md` § Interface work 6.
+- **R1. Laws compared** (L · Claude + Codex). Done at release 0.30.0
+  (`review/laws-compared-admission-2-2026-11-05.md`). Next: a small pack for
+  the jurisdictions not yet read, starting with Korea's AI Basic Act
+  (decision 10a).
 - **R2. Guide: the risk debate** (M · Claude). A reader's guide over the
   risk-debate collection, like the edition and compute guides. Design work
   on existing records. Source: handover brief of 2026-11-01; template
@@ -494,12 +470,6 @@ Each is pack → Codex check → adjudication → admission
   brief; `review/technical-history-admission-2026-10-31.md` § Collection.
 - **R4. Guide: AI in biology** (M · Claude). Over the AI-bio and AI-in-biology
   collections. Source: handover brief.
-- **R5. W07: Land's own texts** (S · archive). Pythia Unbound, Against
-  Orthogonality, Stupid Monsters and Will-to-Think are held; web.archive.org
-  returned 403 and the publisher 404. Codex opens the captures and matches
-  the four passages in `heldNewRecords`; then a patch gives Pythia Unbound
-  the withheld earliest-located role. Source:
-  `review/heterodox-admission-2026-11-01.md` § Held; Open 2.
 - **R6. Technical history: seven withheld headlines** (L · Claude + Codex).
   Connectionism, machine learning, evolutionary computation, statistical
   learning, neurosymbolic AI, search and planning, symbolic AI. Source:
@@ -613,7 +583,7 @@ Each is pack → Codex check → adjudication → admission
 3. One schema decision sitting (D1, D2, D3, D20, D9), then one minor release
    applying them.
 4. D4, D5, D6, D7, D8 decisions; one patch per collection.
-5. One Codex retrieval batch for D14, D16 and R5.
+5. One Codex retrieval for what D14 and D17 still need (blocked hosts).
 6. Interface: I2 with R3, then I3, I4, I5.
 7. R1 when its pack and check are ready.
 

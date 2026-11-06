@@ -11,6 +11,32 @@ import { landingSummary } from '../domain/landing';
 import { documentHistories } from '../reading/frontier-safety-frameworks';
 import { frameworkComparison } from '../reading/framework-comparison';
 import { facetById, comparisonFacets } from '../domain/framework-comparison';
+import {
+  cardFacetById,
+  cardFacetNumber,
+  cardFacets,
+} from '../domain/model-card-facets';
+// The page's address, title and question only, as for control timelines.
+import {
+  modelCardsId,
+  modelCardsQuestion,
+  modelCardsTitle,
+} from '../reading/model-cards-page';
+import {
+  lawFacetById,
+  lawFacetNumber,
+  lawFacets,
+} from '../domain/law-questions';
+import {
+  lawsComparedId,
+  lawsComparedQuestion,
+  lawsComparedTitle,
+} from '../reading/laws-compared-page';
+import {
+  predictionsId,
+  predictionsQuestion,
+  predictionsTitle,
+} from '../reading/predictions-page';
 import { controlStructures } from '../reading/control-structures';
 // The page's address, title and question only: the browser reads this
 // module (the document title), and the definition stays with the page.
@@ -64,6 +90,22 @@ export function pagePaths(data: Dataset): string[] {
         facet: f.id,
       })),
     ),
+    ...of([{ kind: 'compare', id: lawsComparedId }]),
+    ...of(
+      lawFacets.map((f) => ({
+        kind: 'compare',
+        id: lawsComparedId,
+        facet: f.id,
+      })),
+    ),
+    ...of([{ kind: 'compare', id: modelCardsId }]),
+    ...of(
+      cardFacets.map((f) => ({
+        kind: 'compare',
+        id: modelCardsId,
+        facet: f.id,
+      })),
+    ),
     ...of(controlStructures.map((c) => ({ kind: 'control', id: c.id }))),
     ...of([{ kind: 'control', id: controlTimelinesId }]),
     ...of(
@@ -71,6 +113,7 @@ export function pagePaths(data: Dataset): string[] {
     ),
     ...of(guideIds.map((id) => ({ kind: 'guide', id }))),
     ...of(propositionFrames.map((c) => ({ kind: 'propositions', id: c.id }))),
+    ...of([{ kind: 'predictions', id: predictionsId }]),
     ...of([{ kind: 'stances' }]),
     ...of(propositionFrames.map((c) => ({ kind: 'stances', id: c.id }))),
     ...of([{ kind: 'years' }]),
@@ -160,6 +203,24 @@ export function pageMeta(data: Dataset, address: string): PageMeta | null {
       return page(c.title, c.question);
     }
     case 'compare': {
+      if (target.id === lawsComparedId) {
+        const law = target.facet ? lawFacetById(target.facet) : undefined;
+        return law
+          ? page(
+              `${lawsComparedTitle}: ${lawFacetNumber(law.id)} ${law.label.toLowerCase()}`,
+              `Every compared instrument’s answer to question ${lawFacetNumber(law.id)} (${law.label.toLowerCase()}), with its quotation, or the search that found no passage. ${lawsComparedQuestion}`,
+            )
+          : page(lawsComparedTitle, lawsComparedQuestion);
+      }
+      if (target.id === modelCardsId) {
+        const card = target.facet ? cardFacetById(target.facet) : undefined;
+        return card
+          ? page(
+              `${modelCardsTitle}: ${cardFacetNumber(card.id)} ${card.label.toLowerCase()}`,
+              `Every compared card’s answer to question ${cardFacetNumber(card.id)} (${card.label.toLowerCase()}), with its quotation, or the search that found no passage. ${modelCardsQuestion}`,
+            )
+          : page(modelCardsTitle, modelCardsQuestion);
+      }
       const facet = target.facet ? facetById(target.facet) : undefined;
       return facet
         ? page(
@@ -189,6 +250,8 @@ export function pageMeta(data: Dataset, address: string): PageMeta | null {
       const c = propositionFrames.find((d) => d.id === target.id)!;
       return page(c.title, c.question);
     }
+    case 'predictions':
+      return page(predictionsTitle, predictionsQuestion);
     case 'stances': {
       const c = propositionFrames.find((d) => d.id === target.id);
       return c

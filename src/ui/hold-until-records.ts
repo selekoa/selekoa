@@ -26,6 +26,7 @@ import {
   prefetchPage,
   visit,
 } from './page-visits';
+import { pageFailed } from './page-failure';
 
 const controls =
   'a[href], button, summary, label, select, input, textarea, [role="tab"], [role="button"], [role="radio"]';
@@ -137,8 +138,12 @@ export function holdUntilRecords({
             passing.delete(target);
           }
         },
-        (error: unknown) =>
-          console.error('The records could not be loaded', error),
+        // A link the records were loading for is followed by the browser.
+        (error: unknown) => {
+          if (pagesOpened() === page)
+            pageFailed('The records could not be loaded', error);
+          else console.error('The records could not be loaded', error);
+        },
       )
       .finally(() => {
         pending -= 1;

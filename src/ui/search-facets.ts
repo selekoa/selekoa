@@ -26,14 +26,17 @@ const collectionKinds: Record<CollectionKind, string> = {
   question: 'Guided reading',
   propositions: 'Propositions',
   guide: 'Guided reading',
+  predictions: 'Predictions',
 };
 
 export type SearchCollection = {
   id: string;
   label: string;
   title: string;
-  claimIds: string[];
 };
+
+/** A collection of the filter with its claims, as the index is built from. */
+export type CollectionMembers = SearchCollection & { claimIds: string[] };
 
 export type SearchFacets = {
   /** Collections for the filter, in the order of their kinds. */
@@ -48,9 +51,14 @@ export type SearchFacets = {
   pages: PageEntry[];
 };
 
-export function searchFacets(data: Dataset): SearchFacets {
+/**
+ * The filter's collections with their claims. The index stores each shown
+ * claim's collections with the records (src/domain/search-index.ts), so the
+ * search page's facets carry none of these claim IDs.
+ */
+export function searchCollections(data: Dataset): CollectionMembers[] {
   const entities = new Map(data.entities.map((e) => [e.id, e]));
-  const collections = [...applicationCollections]
+  return [...applicationCollections]
     .sort(
       (a, b) =>
         Object.keys(collectionKinds).indexOf(a.kind) -
@@ -72,11 +80,18 @@ export function searchFacets(data: Dataset): SearchFacets {
         claimIds: [...new Set(collectionClaimIds(data, c))],
       };
     });
+}
+
+export function searchFacets(data: Dataset): SearchFacets {
   const seen = new Map<string, number>();
   for (const e of data.entities)
     if (e.type === 'document') seen.set(e.name, (seen.get(e.name) ?? 0) + 1);
   return {
-    collections,
+    collections: searchCollections(data).map(({ id, label, title }) => ({
+      id,
+      label,
+      title,
+    })),
     organisations: searchOrganisations(data),
     years: searchYears(data),
     sharedNames: [...seen].filter(([, n]) => n > 1).map(([name]) => name),

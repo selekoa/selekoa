@@ -11,7 +11,7 @@ import { searchQueries } from '../domain/search-queries';
 import type { SearchMode } from '../domain/search';
 import { memorySearchSource } from './memory-search';
 import { Search } from './Search';
-import { searchFacets } from './search-facets';
+import { searchCollections, searchFacets } from './search-facets';
 import { indexSearchSource, type SearchSource } from './search-source';
 
 /**
@@ -31,7 +31,7 @@ const IDENTITY_TIMEOUT = 300_000;
 const data = repository.data;
 const facets = searchFacets(data);
 const files = buildIndexFiles(data, {
-  collections: facets.collections,
+  collections: searchCollections(data),
   organisations: facets.organisations.map((o) => o.id),
 });
 const indexed = () =>

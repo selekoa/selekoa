@@ -1,5 +1,6 @@
 import type { PropositionsCollection } from '../domain/propositions';
 import { orbitalComputeFrame as frame } from './proposition-frames';
+import { describeGroups } from './describe-groups';
 
 /** The interim withdrawal of 2026-11-02: headlines the cross-family re-check marks move or undecidable. */
 const recheckWithdrawn = '2026-11-02';
@@ -14,7 +15,10 @@ export const orbitalCompute: PropositionsCollection = {
   editorialStatus: frame.editorialStatus,
   introduction:
     'Each argument is recorded as a proposition with one criterion. It is phrased generically and attributed to no one. A text that meets the criterion articulates the proposition. A text that disputes it contests it. A text that comes close bears on it, and its record names what is missing. Companies that propose orbital data centres also state limits of their own designs, and their records say that they come from a proponent. Texts are listed in date order. The page records what texts say and when. It does not assess whether an argument is right or whether any system was built.',
-  groups: frame.groups,
+  groups: describeGroups(frame.groups, {
+    R: 'Solar supply, radiative cooling, constraints on building on Earth, the launch-price condition and lifecycle emissions, as texts from 2024 to 2026 state them.',
+    L: 'Heat rejection, radiation, repair, cost, links to the ground, and the sky, debris and the atmosphere. The radiation criterion counts only texts that discuss computing placed in orbit for this purpose; a 1989 paper on spacecraft electronics is recorded as context.',
+  }),
   searchNote: {
     scope:
       'The collection records what located texts say about eleven propositions on compute in orbit. “Earliest located” means the earliest text found by the searches below. It is not a claim that no earlier text exists.',

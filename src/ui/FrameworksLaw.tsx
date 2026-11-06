@@ -2,6 +2,10 @@ import { Fragment, useState } from 'react';
 import type { Repository } from '../domain/repository';
 import type { Claim } from '../domain/schema';
 import { referencePath } from '../domain/addresses';
+import {
+  lawsComparedId,
+  lawsComparedTitle,
+} from '../reading/laws-compared-page';
 import { commitmentLinkLabels } from '../domain/commitments';
 import { frameworkLabels } from '../domain/versions';
 import { provisionKindLabels } from '../domain/document-history';
@@ -678,6 +682,7 @@ export function FrameworksLaw({
   onClaim,
   onEntity,
   onCompare,
+  onLaws,
   onDocuments,
   onCommitments,
 }: {
@@ -687,6 +692,8 @@ export function FrameworksLaw({
   onClaim: (id: string) => void;
   onEntity: (id: string) => void;
   onCompare: () => void;
+  /** Opens Laws compared. */
+  onLaws?: () => void;
   onDocuments: () => void;
   onCommitments: () => void;
 }) {
@@ -731,6 +738,14 @@ export function FrameworksLaw({
             onOpen={onCompare}
           >
             Compare frameworks
+          </NavLink>
+          {' · '}
+          <NavLink
+            className="text-button"
+            href={referencePath({ kind: 'compare', id: lawsComparedId })}
+            onOpen={() => onLaws?.()}
+          >
+            {lawsComparedTitle}: how binding texts treat the same questions
           </NavLink>
           {' · '}
           <NavLink

@@ -1,0 +1,907 @@
+{
+  "auditor": "fresh-context blind pass",
+  "prepared": "2026-11-02",
+  "method": "Card texts read via tools.mjs grep/page/text; PDF hyperlinks checked with pypdf. Locators give PDF page index.",
+  "items": [
+    {
+      "n": 1,
+      "id": "anthropic-claude-2-1:Q05",
+      "status": "not-found",
+      "passages": [],
+      "searched": [
+        "Responsible Scaling",
+        "RSP",
+        "ASL",
+        "AI Safety Level",
+        "threshold"
+      ],
+      "setAside": [
+        {
+          "quote": "Based on our evaluations, we do not believe any deployed versions of Claude pose national security or significant safety related risks in the areas that we have identified",
+          "locator": "PDF p. 2, §2 Claude 2 Model Card, Evaluations and Red Teaming",
+          "reason": "Not stated in any framework category; written for Claude 2 (July 2023 text)."
+        }
+      ],
+      "note": "The card carries an update of November 21, 2023, after RSP v1.0 (September 2023), so the framework questions arise; the card (main text and 2.1 appendix, pp. 1-16) names no framework and states no level. If the card were dated by its July 2023 main text, Q03-Q05 would be not-applicable."
+    },
+    {
+      "n": 2,
+      "id": "anthropic-claude-3-5-haiku-sonnet-new:Q05",
+      "status": "stated",
+      "passages": [
+        {
+          "quote": "The model did not demonstrate capabilities requiring ASL … safeguards and security in any domain.",
+          "locator": "PDF pp. 9-10, §3.2.1 Results"
+        },
+        {
+          "quote": "Based on our analysis, we judge that the upgraded Claude 3.5 Sonnet does not require ASL-3 safeguards at this time.",
+          "locator": "PDF p. 10, §3.2.1 Results"
+        }
+      ],
+      "note": "Determination stated for the upgraded Claude 3.5 Sonnet only. For Claude 3.5 Haiku the addendum says only that \"these models did not trigger the full evaluation protocol described in our Responsible Scaling Policy\" (§3.3, p. 10). Framework: RSP, reference [4] dated October 2024 (p. 13)."
+    },
+    {
+      "n": 3,
+      "id": "anthropic-claude-opus-4-5:Q05",
+      "status": "stated",
+      "passages": [
+        {
+          "quote": "Based on these assessments, we have decided to release Claude Opus 4.5 under the ASL-3 Standard.",
+          "locator": "PDF p. 12, §1.2.3 AI Safety Level determination process"
+        },
+        {
+          "quote": "Our determination is that Claude Opus 4.5 does not cross either the AI R&D-4 or CBRN-4 capability threshold. However, confidently ruling out these thresholds is becoming increasingly difficult.",
+          "locator": "PDF p. 12, §1.2.4 Conclusions"
+        }
+      ],
+      "note": "Determination by the Responsible Scaling Officer and CEO (p. 12). The card does not name an RSP version in its text."
+    },
+    {
+      "n": 4,
+      "id": "anthropic-claude-haiku-5-5:Q05",
+      "status": "stated",
+      "passages": [
+        {
+          "quote": "we determine that Haiku 5.5 does not cross our CB-2 or Autonomy-2 RSP thresholds. However, we do treat Haiku 5.5 as meeting our CB-1 and Autonomy-1 thresholds, and we apply the corresponding mitigations from our RSP.",
+          "locator": "PDF p. 11, §2.1 Introduction (RSP evaluations)"
+        }
+      ],
+      "note": "Partly inferred from comparison with larger models (§2.3.3: \"we draw the same conclusion\"). RSP edition not identified in the card."
+    },
+    {
+      "n": 5,
+      "id": "google-deepmind-gemini-3-flash:Q05",
+      "status": "stated",
+      "passages": [
+        {
+          "quote": "the Gemini 3 Pro model results give us confidence that Gemini 3 Flash is unlikely to reach any CCLs, we can rely on results reported for Gemini 3 Pro.",
+          "locator": "PDF p. 6, Ethics and Content Safety, Frontier Safety Assessment"
+        }
+      ],
+      "note": "Outcome by reference to Gemini 3 Pro Preview, which \"did not reach any critical capability levels (CCLs)\"; the card reports no separate frontier evaluation of Flash. FSF edition not identified."
+    },
+    {
+      "n": 6,
+      "id": "google-deepmind-gemini-4-argon:Q05",
+      "status": "stated",
+      "passages": [
+        {
+          "quote": "CBRN CCL: We cannot rule out that Gemini 4 Argon has reached this CCL for biological information risk",
+          "locator": "PDF p. 11, Frontier Safety Assessment"
+        },
+        {
+          "quote": "Cybersecurity CCL: We cannot rule out that Gemini 4 Argon has reached this CCL",
+          "locator": "PDF p. 11, Frontier Safety Assessment"
+        }
+      ],
+      "note": "Table (pp. 12-13): CBRN uplift TCL not reached; biological CCL and cybersecurity CCL \"cannot be ruled out\"; harmful manipulation CCL not reached; stealth and situational awareness TCL cannot be ruled out; ML R&D CCLs not reached. Framework named as \"Frontier Safety Framework (April 2026)\"."
+    },
+    {
+      "n": 7,
+      "id": "meta-llama-2:Q05",
+      "status": "not-applicable",
+      "passages": [],
+      "note": "Card (Llama 2 text from July 2023; pinned revision of 2024-03-23) predates Meta's Frontier AI Framework (February 2025); Q03 not applicable."
+    },
+    {
+      "n": 8,
+      "id": "meta-llama-3-3:Q05",
+      "status": "not-applicable",
+      "passages": [],
+      "note": "Card added 2024-12-06, before Meta's Frontier AI Framework (February 2025). Caveat: the pinned revision is dated 2025-02-12 (emissions edits only), after the framework; the text names no framework either way."
+    },
+    {
+      "n": 9,
+      "id": "meta-cwm-preparedness:Q05",
+      "status": "stated",
+      "passages": [
+        {
+          "quote": "These results indicate that CWM is within the “moderate” risk threshold for the catastrophic domains defined in Meta’s Frontier AI Framework.",
+          "locator": "PDF p. 1, §1 Introduction"
+        }
+      ],
+      "note": "Domains assessed: cybersecurity and chemical & biological (p. 1). Framework cited as Meta AI 2025a, address given in references (accessed 2025-09-18)."
+    },
+    {
+      "n": 10,
+      "id": "meta-muse-spark-1-3:Q05",
+      "status": "stated",
+      "passages": [
+        {
+          "quote": "Evaluated without mitigations, we continue to not rule out Muse Spark 1.3 meeting this threshold in the Chemical & Biological domain.",
+          "locator": "PDF p. 2, Abstract"
+        },
+        {
+          "quote": "we assess residual risk after system-level mitigations across the Chemical & Biological and Cybersecurity domains as “moderate or lower.” Our current Loss of Control assessment is also “moderate or lower.”",
+          "locator": "PDF p. 8, §1.1.1 Risk Assessment Summary"
+        }
+      ],
+      "note": "Framework: Meta Superintelligence Scaling Framework (successor naming); edition not identified in these passages."
+    },
+    {
+      "n": 11,
+      "id": "microsoft-phi-2:Q05",
+      "status": "not-applicable",
+      "passages": [],
+      "note": "Card first uploaded 2023-12-13, before Microsoft's Frontier Governance Framework (February 2025). Caveat: the pinned README revision is 2025-12-08; the text names no framework."
+    },
+    {
+      "n": 12,
+      "id": "microsoft-phi-4:Q05",
+      "status": "not-applicable",
+      "passages": [],
+      "note": "Model released December 12, 2024 (card table), before the Frontier Governance Framework (February 2025). Caveat: README last changed 2025-11-24; no framework named."
+    },
+    {
+      "n": 13,
+      "id": "microsoft-phi-4-mini-flash-reasoning:Q05",
+      "status": "not-found",
+      "passages": [],
+      "searched": [
+        "framework",
+        "Frontier Governance",
+        "threshold",
+        "risk level"
+      ],
+      "setAside": [
+        {
+          "quote": "Phi-4-Mini-Flash-Reasoning was developed in accordance with Microsoft's responsible AI principles.",
+          "locator": "Safety Evaluation and Red-Teaming",
+          "reason": "Principles, not the frontier framework; no determination."
+        },
+        {
+          "quote": "Azure AI Foundry’s Risk and Safety Evaluation framework",
+          "locator": "Safety Evaluation and Red-Teaming",
+          "reason": "An evaluation tool, not a frontier safety framework."
+        }
+      ],
+      "note": "Card from June 2025 (after the Frontier Governance Framework), so the question arises; whole card read."
+    },
+    {
+      "n": 14,
+      "id": "microsoft-mai-cyber-1-1-flash:Q05",
+      "status": "not-found",
+      "passages": [],
+      "searched": [
+        "framework",
+        "governance",
+        "threshold",
+        "high risk",
+        "critical",
+        "capability level"
+      ],
+      "setAside": [
+        {
+          "quote": "Because of the increased model-level risk, the model is only being made available within codename MDASH to select verified customers.",
+          "locator": "PDF p. 4, §2.8 Responsible AI considerations",
+          "reason": "Not a determination in a framework's categories."
+        },
+        {
+          "quote": "This assessment uncovered several critical risks of the model alone",
+          "locator": "PDF p. 7, §3.2",
+          "reason": "Red-team finding, not a framework category."
+        }
+      ],
+      "note": "Whole card read (7 pp.)."
+    },
+    {
+      "n": 15,
+      "id": "openai-gpt-4v:Q05",
+      "status": "not-applicable",
+      "passages": [],
+      "note": "Card dated September 25, 2023, before the Preparedness Framework (Beta), December 2023; no framework named."
+    },
+    {
+      "n": 16,
+      "id": "openai-o1:Q05",
+      "status": "stated",
+      "passages": [
+        {
+          "quote": "the Safety Advisory Group [28] classified the o1 pre-mitigation model as overall medium risk, including medium risk for persuasion and CBRN, and low risk for model autonomy and cybersecurity.",
+          "locator": "PDF p. 16, §5 Preparedness Framework Evaluations"
+        }
+      ],
+      "note": "Post-mitigation levels rated the same as pre-mitigation (p. 16). Framework: Preparedness Framework (Beta), 2023, reference [28]."
+    },
+    {
+      "n": 17,
+      "id": "openai-gpt-5-2-codex:Q05",
+      "status": "stated",
+      "passages": [
+        {
+          "quote": "It is very capable in the cybersecurity domain but does not reach High capability on cybersecurity.",
+          "locator": "PDF p. 4, §1 Introduction"
+        },
+        {
+          "quote": "it is being treated as High capability on biology, and is being deployed with the corresponding suite of safeguards we use for other models in the GPT-5 family. It does not reach High capability on AI self-improvement.",
+          "locator": "PDF p. 4, §1 Introduction"
+        }
+      ],
+      "note": "Also §5 Preparedness (p. 8)."
+    },
+    {
+      "n": 18,
+      "id": "openai-gpt-6-luna-october-29:Q05",
+      "status": "stated",
+      "passages": [
+        {
+          "quote": "Under our Preparedness Framework, we are treating GPT-6 Luna (October 29) as High capability in both Cybersecurity and Biological and Chemical domains. The model does not reach our High threshold in AI Self-Improvement.",
+          "locator": "PDF p. 13, §8 Preparedness"
+        }
+      ],
+      "note": "\"Treating as\" High is the developer's precautionary designation. Also §1 (p. 4)."
+    },
+    {
+      "n": 19,
+      "id": "xai-grok-4-1:Q05",
+      "status": "not-found",
+      "passages": [],
+      "searched": [
+        "Risk Management Framework",
+        "RMF",
+        "threshold",
+        "acceptable",
+        "risk level"
+      ],
+      "setAside": [
+        {
+          "quote": "In line with our Risk Management Framework (RMF), we measure safety-relevant behaviors across three categories: abuse potential, concerning propensities, and dual-use capabilities.",
+          "locator": "PDF p. 1, §1 Introduction",
+          "reason": "Framework cited; no outcome in its categories."
+        },
+        {
+          "quote": "we do not believe it poses risks due to advanced persuasion capabilities.",
+          "locator": "PDF p. 5, §2.3.2 Results",
+          "reason": "Conclusion for one domain, not phrased in RMF thresholds."
+        }
+      ],
+      "note": "Whole card read (6 pp.). Arguably partly if the persuasion conclusion is read as a domain outcome."
+    },
+    {
+      "n": 20,
+      "id": "xai-grok-4-7:Q05",
+      "status": "partly",
+      "passages": [
+        {
+          "quote": "Grok 4.7 scores below the FAIF safety thresholds on dual-use knowledge, indicating limited actionable uplift for an already-trained actor.",
+          "locator": "PDF p. 20, §7 Biological and chemical capabilities and safeguards"
+        }
+      ],
+      "note": "FAIF outcome stated for biological and chemical dual-use knowledge only; the cyber section (§6) gives capability observations without FAIF threshold language."
+    },
+    {
+      "n": 21,
+      "id": "xai-grok-4-1:Q12",
+      "status": "not-found",
+      "passages": [],
+      "searched": [
+        "red team",
+        "red-team",
+        "redteam",
+        "third-party",
+        "external"
+      ],
+      "setAside": [
+        {
+          "quote": "leverage Grok to systematically apply different adversarial attacks",
+          "locator": "PDF p. 1, §2.1.1",
+          "reason": "Filter training, not described as red-teaming."
+        },
+        {
+          "quote": "Adversarial robustness. For the underlying model, we evaluate Grok 4.1 with an internal dataset of single-turn jailbreak templates",
+          "locator": "PDF p. 2, §2.1.2",
+          "reason": "Adversarial evaluation not described as red-teaming."
+        }
+      ],
+      "note": "Whole card read."
+    },
+    {
+      "n": 22,
+      "id": "anthropic-claude-haiku-5-5:Q14",
+      "status": "not-found",
+      "passages": [],
+      "searched": [
+        "CAISI",
+        "AISI",
+        "AI Security Institute",
+        "Safety Institute",
+        "Standards and Innovation",
+        "government"
+      ],
+      "setAside": [
+        {
+          "quote": "Indirect Prompt Injection (IPI) benchmark … created by Gray Swan in partnership with the UK AI Security Institute, the US Center for AI Standards and Innovation",
+          "locator": "PDF p. 50, §5.2.1 External red teaming",
+          "reason": "Bodies co-created a benchmark; not stated to have tested this model."
+        },
+        {
+          "quote": "a prompt provided by the UK AI Security Institute (which was optimized to elicit higher controllability in early 2026 Claude models)",
+          "locator": "PDF p. 93",
+          "reason": "Prompt supplied earlier; not testing of or access to Haiku 5.5."
+        }
+      ],
+      "note": "§1.6 refers to unnamed external testers."
+    },
+    {
+      "n": 23,
+      "id": "microsoft-phi-4:Q13",
+      "status": "not-found",
+      "passages": [],
+      "searched": [
+        "external",
+        "third-party",
+        "independent",
+        "red team",
+        "partner"
+      ],
+      "setAside": [
+        {
+          "quote": "we collaborated with the independent AI Red Team (AIRT) at Microsoft",
+          "locator": "Safety Evaluation and Red-Teaming",
+          "reason": "A Microsoft team, not an external organisation."
+        }
+      ],
+      "note": "Whole card read."
+    },
+    {
+      "n": 24,
+      "id": "meta-llama-2:Q10",
+      "status": "not-found",
+      "passages": [],
+      "searched": ["persuas", "manipul", "influence", "deception"],
+      "setAside": [
+        {
+          "quote": "For TruthfulQA, we present the percentage of generations that are both truthful and informative",
+          "locator": "Evaluation Results",
+          "reason": "Truthfulness benchmark, not persuasion."
+        }
+      ],
+      "note": "Whole card read (956 words)."
+    },
+    {
+      "n": 25,
+      "id": "google-deepmind-gemini-3-flash:Q14",
+      "status": "not-found",
+      "passages": [],
+      "searched": [
+        "institute",
+        "AISI",
+        "CAISI",
+        "government",
+        "external",
+        "third party",
+        "independent"
+      ],
+      "note": "Whole card read (6 PDF pp.); no testers outside Google named."
+    },
+    {
+      "n": 26,
+      "id": "microsoft-phi-4-mini-flash-reasoning:Q10",
+      "status": "not-found",
+      "passages": [],
+      "searched": ["persuas", "manipul", "influence", "election"],
+      "setAside": [
+        {
+          "quote": "The model has an elevated defect rate when responding to election-critical queries",
+          "locator": "Responsible AI Considerations",
+          "reason": "Product limitation, not a persuasion evaluation."
+        }
+      ],
+      "note": "Whole card read."
+    },
+    {
+      "n": 27,
+      "id": "anthropic-claude-3-5-haiku-sonnet-new:Q10",
+      "status": "not-found",
+      "passages": [],
+      "searched": [
+        "persuas",
+        "manipul",
+        "influence",
+        "deceiv",
+        "misinformation",
+        "election"
+      ],
+      "setAside": [
+        {
+          "quote": "Our assessment paid particular attention to critical areas such as Elections Integrity",
+          "locator": "PDF p. 7, §3.1.1 Trust & Safety Model Red-Teaming",
+          "reason": "Content-policy red-teaming, not persuasion capability."
+        }
+      ],
+      "note": "Frontier evaluations cover CBRN, cyber and autonomy only (§3.2)."
+    },
+    {
+      "n": 28,
+      "id": "meta-llama-3-3:Q09",
+      "status": "not-found",
+      "passages": [],
+      "searched": [
+        "autonom",
+        "self-replic",
+        "self-improv",
+        "AI research",
+        "R&D"
+      ],
+      "setAside": [
+        {
+          "quote": "Our attack automation study focused on evaluating the capabilities of LLMs when used as autonomous agents in cyber offensive operations",
+          "locator": "Responsibility & Safety, Critical and other risks, 3. Cyber attack enablement",
+          "reason": "Cyber domain (Q08), and no outcome stated."
+        }
+      ],
+      "note": "Whole card read."
+    },
+    {
+      "n": 29,
+      "id": "microsoft-phi-4-mini-flash-reasoning:Q08",
+      "status": "not-found",
+      "passages": [],
+      "searched": ["cyber", "hack", "exploit", "vulnerab", "malware", "CTF"],
+      "setAside": [
+        {
+          "quote": "Other forms of misuse such as fraud, spam, or malware production may be possible",
+          "locator": "Responsible AI Considerations",
+          "reason": "Misuse advice, not an evaluation."
+        }
+      ],
+      "note": "Whole card read."
+    },
+    {
+      "n": 30,
+      "id": "openai-gpt-5-2-codex:Q12",
+      "status": "not-found",
+      "passages": [],
+      "searched": ["red team", "red-team", "redteam", "external"],
+      "setAside": [
+        {
+          "quote": "We evaluate the robustness of models to jailbreaks: adversarial prompts that purposely try to circumvent model refusals",
+          "locator": "PDF p. 5, §2.2 Jailbreaks",
+          "reason": "Adversarial evaluation not described as red-teaming."
+        },
+        {
+          "quote": "Irregular, an AI security organization focused on frontier cybersecurity risks, evaluated GPT-5.2Codex on a subset of a suite of cyberoffensive challenges",
+          "locator": "PDF p. 16, §5.1.2.4",
+          "reason": "External evaluation, not described as red-teaming."
+        }
+      ],
+      "note": "Whole addendum read."
+    },
+    {
+      "n": 31,
+      "id": "openai-gpt-5-2-codex:Q09",
+      "status": "stated",
+      "passages": [
+        {
+          "quote": "GPT-5.2-Codex performed at a similar capability level to GPT-5.2-Thinking and did not meet our High thresholds.",
+          "locator": "PDF p. 17, §5.1.3 AI Self-Improvement"
+        }
+      ],
+      "note": "Also p. 4 §1 and p. 8 §5."
+    },
+    {
+      "n": 32,
+      "id": "meta-llama-2:Q14",
+      "status": "not-found",
+      "passages": [],
+      "searched": ["government", "institute", "AISI", "external"],
+      "note": "Whole card read."
+    },
+    {
+      "n": 33,
+      "id": "meta-llama-2:Q11",
+      "status": "not-found",
+      "passages": [],
+      "searched": [
+        "deceiv",
+        "decept",
+        "scheming",
+        "sabotage",
+        "reward hacking",
+        "oversight",
+        "alignment"
+      ],
+      "setAside": [
+        {
+          "quote": "Evaluation of fine-tuned LLMs on different safety datasets.",
+          "locator": "Evaluation Results (TruthfulQA, ToxiGen tables)",
+          "reason": "Truthfulness and toxicity benchmarks, not misalignment or deception propensity."
+        }
+      ],
+      "note": "Whole card read."
+    },
+    {
+      "n": 34,
+      "id": "xai-grok-4-7:Q13",
+      "status": "stated",
+      "passages": [
+        {
+          "quote": "Grok 4.7 scores 29.0% at xhigh, evaluated by Proximal Labs",
+          "locator": "PDF p. 10, §2.4 FrontierSWE V2"
+        },
+        {
+          "quote": "Results reported are taken from evaluations conducted by Datacurve.",
+          "locator": "PDF p. 7, §2.2 DeepSWE v1.1"
+        }
+      ],
+      "note": "Named external evaluators ran capability benchmarks (also Harbor p. 9, Abundant AI p. 10). Third-party cyber evaluators are not named (§6, p. 17); CathedralBench is described as \"an independent, third party evaluation\" without naming its operator."
+    },
+    {
+      "n": 35,
+      "id": "openai-gpt-4v:Q08",
+      "status": "partly",
+      "passages": [
+        {
+          "quote": "Cybersecurity Performance accuracy CAPTCHA breaking evaluations",
+          "locator": "PDF p. 3, §2.2 Evaluations"
+        },
+        {
+          "quote": "a powerful, general purpose CAPTCHA breaker that’s easily accessible can have cybersecurity and AI safety implications.",
+          "locator": "PDF p. 5, §2.2"
+        }
+      ],
+      "note": "CAPTCHA-breaking accuracy evaluation listed under \"Cybersecurity\"; no outcome or conclusion stated. No other offensive-cyber evaluation reported."
+    },
+    {
+      "n": 36,
+      "id": "xai-grok-4-7:Q16",
+      "status": "stated",
+      "passages": [
+        {
+          "quote": "Provider-side filters can dominate refusal behavior, and the restricted task sets characterize the tested checkpoint and harness rather than establishing general biological safety or reliability.",
+          "locator": "PDF p. 20, §7.1 BioSecBench"
+        },
+        {
+          "quote": "The recalibrated resources reduce infrastructure-driven failures, but absolute scores remain sensitive to the agent harness.",
+          "locator": "PDF p. 9, §2.3 Terminal-Bench 4.0"
+        }
+      ]
+    },
+    {
+      "n": 37,
+      "id": "openai-o1:Q11",
+      "status": "stated",
+      "passages": [
+        {
+          "quote": "Apollo found that o1 has the capability to do basic in-context scheming (i.e. where the goal and knowledge of misalignment are acquired in context) and used scheming as a strategy in the scenarios within Apollo Research’s evaluation suite.",
+          "locator": "PDF p. 13, §4.4.3 Apollo Research"
+        }
+      ],
+      "note": "Third-party finding as reported by OpenAI; Apollo \"believes that it is unlikely that such instances would lead to catastrophic outcomes ... but their evaluations were not designed to directly assess this risk\". Also CoT deception monitoring, §4.3.1 (p. 8): 0.17% of responses flagged."
+    },
+    {
+      "n": 38,
+      "id": "microsoft-phi-4:Q07",
+      "status": "not-found",
+      "passages": [],
+      "searched": ["biolog", "chemical", "CBRN", "weapon"],
+      "note": "Whole card read; safety section lists unspecified \"multiple safety categories\" only."
+    },
+    {
+      "n": 39,
+      "id": "meta-llama-3-3:Q02",
+      "status": "stated",
+      "passages": [
+        {
+          "quote": "70B Instruct: December 6, 2024",
+          "locator": "Model Information"
+        }
+      ],
+      "note": "Release form: open release (\"Meta is openly releasing these models\", Training Greenhouse Gas Emissions)."
+    },
+    {
+      "n": 40,
+      "id": "xai-grok-4-7:Q06",
+      "status": "partly",
+      "passages": [
+        {
+          "quote": "On some deployment surfaces, Grok 4.7 is additionally augmented with runtime input and topical filters that add controls for classes of severe harm, including CSAM, self-harm, and biological/chemical weapons pathways, alongside cyber-specific safeguards.",
+          "locator": "PDF p. 24, §9 General output safety"
+        }
+      ],
+      "note": "Safeguards stated, not tied to the FAIF determination (§7 states the model is below FAIF thresholds on dual-use knowledge). §9.3 (p. 25) describes CBRN safeguard layers likewise without a threshold link."
+    },
+    {
+      "n": 41,
+      "id": "openai-gpt-6-luna-october-29:Q12",
+      "status": "stated",
+      "passages": [
+        {
+          "quote": "We have continued to scale our GPT-Red approach, where we use adversarial training with an automated red-teaming agent to strengthen resistance to malicious instructions",
+          "locator": "PDF p. 7, §4.2 Prompt Injection"
+        }
+      ],
+      "note": "Scope: automated red-teaming agent; prompt injection (direct and indirect) via \"GPT-Red automated evaluations\". No human red-teaming reported in this addendum. Borderline partly: the passage primarily describes adversarial training."
+    },
+    {
+      "n": 42,
+      "id": "anthropic-claude-3-5-haiku-sonnet-new:Q16",
+      "status": "stated",
+      "passages": [
+        {
+          "quote": "We believe dedicated scaffolding and prompting can further improve the results.",
+          "locator": "PDF p. 3, §2.2 Tool Use & Agentic Tasks (SWE-bench Verified)"
+        },
+        {
+          "quote": "We detail some of our preliminary reasoning below",
+          "locator": "PDF p. 9, §3.1.4 Evaluating Computer Use for the Responsible Scaling Policy"
+        }
+      ],
+      "note": "Limits concern a capability benchmark and the \"preliminary\" computer-use reasoning; no limitation is stated for the §3.2 frontier evaluations themselves. Borderline partly."
+    },
+    {
+      "n": 43,
+      "id": "anthropic-claude-haiku-5-5:Q01",
+      "status": "stated",
+      "passages": [
+        {
+          "quote": "October 7, 2026",
+          "locator": "PDF p. 1, cover"
+        }
+      ],
+      "note": "Unlabelled date on the cover (card date). No revision dates or changelog in the card."
+    },
+    {
+      "n": 44,
+      "id": "anthropic-claude-haiku-5-5:Q10",
+      "status": "not-found",
+      "passages": [],
+      "searched": ["persuas", "manipul", "influence", "sway"],
+      "setAside": [
+        {
+          "quote": "In multi-turn testing, Haiku 5.5 improved over Haiku 4.5 in domains including influence operations",
+          "locator": "PDF p. 30, §4.1",
+          "reason": "Content-safety response rates, not persuasion capability."
+        },
+        {
+          "quote": "User deception: Unprompted intentional deception of human users",
+          "locator": "PDF p. 66, §6.2.3 Misleading users",
+          "reason": "Deception metric (Q11), not persuasion."
+        }
+      ],
+      "note": "Election integrity (§4.4.3) is a usage-policy benchmark."
+    },
+    {
+      "n": 45,
+      "id": "anthropic-claude-opus-4-5:Q10",
+      "status": "partly",
+      "passages": [
+        {
+          "quote": "willingness to sabotage our safeguards, attempts to hide dangerous capabilities, and attempts to manipulate users toward certain views.",
+          "locator": "PDF p. 64, §6.1 Introduction and summary of findings"
+        }
+      ],
+      "note": "Manipulation of users is listed within the alignment assessment's scope; the card states only an overall alignment conclusion, with no outcome specific to manipulation or persuasion. No persuasion capability evaluation found (searched persua, manipulat, influence)."
+    },
+    {
+      "n": 46,
+      "id": "xai-grok-4-1:Q10",
+      "status": "stated",
+      "passages": [
+        {
+          "quote": "Finally, we note that Grok 4.1 performs poorly on MakeMeSay, and that broadly, we do not believe it poses risks due to advanced persuasion capabilities.",
+          "locator": "PDF p. 5, §2.3.2 Results"
+        }
+      ],
+      "note": "Evaluation: OpenAI's MakeMeSay (§2.3.1)."
+    },
+    {
+      "n": 47,
+      "id": "xai-grok-4-7:Q03",
+      "status": "stated",
+      "passages": [
+        {
+          "quote": "treated as safety-threshold evaluations under the xAI Frontier Artificial Intelligence Framework (FAIF)16",
+          "locator": "PDF p. 20, §7"
+        },
+        {
+          "quote": "xAI Frontier Artificial Intelligence Framework (FAIF). xAI, June 30, 2026.",
+          "locator": "PDF p. 29, References, item 16"
+        }
+      ],
+      "note": "Edition identified by date (June 30, 2026) and a dated link."
+    },
+    {
+      "n": 48,
+      "id": "anthropic-claude-2-1:Q02",
+      "status": "partly",
+      "passages": [
+        {
+          "quote": "Claude 2 was developed by Anthropic and released in July 2023.",
+          "locator": "PDF p. 1, §2 Claude 2 Model Card, Model details"
+        },
+        {
+          "quote": "additional details for Claude 2.1, a new release which builds additional product features and functionality on top of Claude 2.0.",
+          "locator": "PDF p. 15, Claude 2.1 Model Card Appendix, §1 Introduction"
+        }
+      ],
+      "note": "Claude 2 release dated (month). Claude 2.1 described only as \"a new release\" with relative timing (\"we have now increased support\", §2, p. 15); the November 21, 2023 date is the card update, not a release date. Stated if the row is read as Claude 2."
+    },
+    {
+      "n": 49,
+      "id": "anthropic-claude-2-1:Q12",
+      "status": "stated",
+      "passages": [
+        {
+          "quote": "Before deployment, we also worked with external red teamers, including crowdworker platforms, to test Claude 2 on a range of Trust and Safety related topics",
+          "locator": "PDF p. 2, §2 Claude 2 Model Card, Evaluations and Red Teaming"
+        },
+        {
+          "quote": "We evaluated and red-teamed Claude 2 and previous Claude models for several national security and safety related risks.",
+          "locator": "PDF p. 2, same section"
+        }
+      ],
+      "note": "Concerns Claude 2; the 2.1 appendix reports no red-teaming."
+    },
+    {
+      "n": 50,
+      "id": "openai-gpt-5-2-codex:Q02",
+      "status": "partly",
+      "passages": [
+        {
+          "quote": "A version of GPT-5.2 optimized for agentic coding in Codex",
+          "locator": "PDF p. 4, §1 Introduction"
+        },
+        {
+          "quote": "The model is not intended for deployment in any general-purpose chat application, and will not be deployed by OpenAI in any such context.",
+          "locator": "PDF p. 4, §2.1"
+        }
+      ],
+      "note": "Release form only (Codex; not general chat); no release date. December 18, 2025 is the card date."
+    },
+    {
+      "n": 51,
+      "id": "microsoft-phi-4-mini-flash-reasoning:Q13",
+      "status": "not-found",
+      "passages": [],
+      "searched": [
+        "external",
+        "third-party",
+        "independent",
+        "partner",
+        "red team"
+      ],
+      "note": "Whole card read; Azure AI Foundry evaluation is Microsoft's own."
+    },
+    {
+      "n": 52,
+      "id": "anthropic-claude-opus-4-5:Q08",
+      "status": "stated",
+      "passages": [
+        {
+          "quote": "We believe that Claude Opus 4.5 does not demonstrate catastrophically risky capabilities in the cyber domain.",
+          "locator": "PDF p. 145, §7.4 Cyber evaluations, Results"
+        }
+      ],
+      "note": "The RSP \"does not stipulate a capability threshold for cyber capabilities\" (p. 143)."
+    },
+    {
+      "n": 53,
+      "id": "openai-o1:Q04",
+      "status": "stated",
+      "passages": [
+        {
+          "quote": "[28] OpenAI, “Openai preparedness framework (beta).” openai-preparedness-framework-beta.pdf, 2023. Accessed: 2024-09-11. https://cdn.openai.com/",
+          "locator": "PDF p. 52, References"
+        }
+      ],
+      "note": "Also hyperlinked from §5 (p. 15)."
+    },
+    {
+      "n": 54,
+      "id": "google-deepmind-gemini-3-flash:Q04",
+      "status": "partly",
+      "passages": [
+        {
+          "quote": "in line with the risk acceptance criteria outlined in our FSF (and our general responsibility and safety practices)",
+          "locator": "PDF p. 6, Frontier Safety Assessment"
+        }
+      ],
+      "note": "Refers to the FSF as a document without address. The only frontier-safety link points to the Gemini 3 Pro Frontier Safety Framework Report, not the framework."
+    },
+    {
+      "n": 55,
+      "id": "meta-llama-3-3:Q16",
+      "status": "stated",
+      "passages": [
+        {
+          "quote": "Testing conducted to date has not covered, nor could it cover, all scenarios.",
+          "locator": "Ethical Considerations and Limitations"
+        }
+      ]
+    },
+    {
+      "n": 56,
+      "id": "openai-gpt-6-luna-october-29:Q13",
+      "status": "not-found",
+      "passages": [],
+      "searched": [
+        "external",
+        "third-party",
+        "Irregular",
+        "Apollo",
+        "METR",
+        "SecureBio",
+        "evaluated by"
+      ],
+      "note": "Whole addendum read; it refers to the GPT-6 Luna (October 7) and GPT-6 Astra cards for full evaluations."
+    },
+    {
+      "n": 57,
+      "id": "anthropic-claude-haiku-5-5:Q08",
+      "status": "stated",
+      "passages": [
+        {
+          "quote": "In cyber evaluations, Claude Haiku 5.5 significantly outperformed Claude Haiku 4.5 but fell short of results achieved by Claude Opus 5.5, Claude Mythos 5.1, and even Claude Opus 5. Given the lack of advanced cybersecurity capabilities",
+          "locator": "PDF p. 2, Executive summary"
+        }
+      ],
+      "note": "Outcome stated comparatively; no cyber threshold language. §3 (pp. 23-29) reports the evaluations."
+    },
+    {
+      "n": 58,
+      "id": "microsoft-phi-2:Q07",
+      "status": "not-found",
+      "passages": [],
+      "searched": ["biolog", "chemical", "CBRN", "weapon"],
+      "note": "Whole card read."
+    },
+    {
+      "n": 59,
+      "id": "xai-grok-4-7:Q15",
+      "status": "not-found",
+      "passages": [],
+      "searched": [
+        "decid",
+        "decision",
+        "determin",
+        "approv",
+        "chose",
+        "acceptable",
+        "release",
+        "deploy",
+        "launch"
+      ],
+      "setAside": [
+        {
+          "quote": "It is available for use through the following channels",
+          "locator": "PDF p. 5, §1.1 Overview",
+          "reason": "Availability stated; no decision described."
+        }
+      ],
+      "note": "Whole card read."
+    },
+    {
+      "n": 60,
+      "id": "xai-grok-4-1:Q08",
+      "status": "stated",
+      "passages": [
+        {
+          "quote": "On the agentic Cybench evaluation, Grok 4.1 again performs similarly to other frontier models, but substantially below the level of human cybersecurity experiments.",
+          "locator": "PDF p. 5, §2.3.2 Results"
+        }
+      ],
+      "note": "Comparative outcome; no threshold language. \"experiments\" is the card's wording."
+    }
+  ]
+}

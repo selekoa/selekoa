@@ -25,6 +25,38 @@ import {
 
 const moduleId = 'virtual:site';
 const resolvedId = '\0' + moduleId;
+// The newest release's version, dates and counts: what About & method shows.
+// Only these fields, so the page does not carry every release's manifest.
+const releaseModuleId = 'virtual:latest-release';
+const resolvedReleaseId = '\0' + releaseModuleId;
+
+/** The newest release's summary from its manifest, or null before any release. */
+export function latestReleaseSummary(root = 'release') {
+  const version = latestReleaseVersion(root);
+  if (!version) return null;
+  const m = JSON.parse(
+    readFileSync(path.join(root, `v${version}`, 'manifest.json'), 'utf8'),
+  ) as {
+    version: string;
+    releasedAt: string;
+    dataset: { schemaVersion: string; updatedAt: string };
+    counts: Record<'entities' | 'claims' | 'evidence' | 'sources', number>;
+  };
+  return {
+    version: m.version,
+    releasedAt: m.releasedAt,
+    dataset: {
+      schemaVersion: m.dataset.schemaVersion,
+      updatedAt: m.dataset.updatedAt,
+    },
+    counts: {
+      entities: m.counts.entities,
+      claims: m.counts.claims,
+      evidence: m.counts.evidence,
+      sources: m.counts.sources,
+    },
+  };
+}
 
 /** Reads and validates site.config.json (SELEKOA_SITE_CONFIG names another file, for trial builds). */
 export function readSiteConfig(
@@ -104,8 +136,15 @@ export function siteModule(): Plugin {
             problems.join('\n- '),
         );
     },
-    resolveId: (id) => (id === moduleId ? resolvedId : undefined),
+    resolveId: (id) =>
+      id === moduleId
+        ? resolvedId
+        : id === releaseModuleId
+          ? resolvedReleaseId
+          : undefined,
     load(id) {
+      if (id === resolvedReleaseId)
+        return `export default ${JSON.stringify(latestReleaseSummary())};`;
       if (id !== resolvedId) return;
       const info = {
         releaseVersion: latestReleaseVersion(),

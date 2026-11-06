@@ -1,0 +1,318 @@
+{
+  "group": "openai",
+  "drafter": "drafting pass of the preparing session, 2026-11-04 (one model family: Claude)",
+  "cards": [
+    {
+      "id": "openai-gpt-4o",
+      "developer": "OpenAI",
+      "model": "GPT-4o",
+      "year": 2024,
+      "source": "openai-gpt-4o",
+      "frameworkEditions": ["preparedness-beta-2023"],
+      "frameworkEditionNote": "The card's reference [4] names the beta Preparedness Framework of 2023 and its file name 'openai-preparedness-framework-beta.pdf' on cdn.openai.com (the text layer interleaves the address with the title). The dataset records preparedness-beta-2023 as published on 2023-12-18."
+    }
+  ],
+  "cells": [
+    {
+      "card": "openai-gpt-4o",
+      "question": "Q01",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "openai-gpt-4o",
+          "locator": "Title page, PDF p. 1",
+          "quote": "GPT-4o System Card OpenAI∗ August 8, 2024"
+        }
+      ],
+      "note": "The card prints the date August 8, 2024 under its title. No revision date is printed."
+    },
+    {
+      "card": "openai-gpt-4o",
+      "question": "Q02",
+      "status": "partly",
+      "passages": [
+        {
+          "source": "openai-gpt-4o",
+          "locator": "Section 4 'Third party assessments', PDF p. 18",
+          "quote": "Following the text output only deployment of GPT-4o, we worked with independent third party labs, METR and Apollo Research"
+        },
+        {
+          "source": "openai-gpt-4o",
+          "locator": "Section 3.1 'External red teaming', PDF p. 3",
+          "quote": "At the time of writing, external red teaming of the GPT-4o API is ongoing."
+        }
+      ],
+      "note": "The card refers to a text-output-only deployment, to the API and to advanced voice mode in the iOS app used in red teaming (Phase 4), as relative timing and forms. It gives no release or availability date.",
+      "search": {
+        "read": "Sections 1–3.1 and 4 and term search across the card.",
+        "terms": [
+          "release",
+          "available",
+          "availability",
+          "launch",
+          "deploy",
+          "May 13",
+          "2024"
+        ],
+        "setAside": []
+      }
+    },
+    {
+      "card": "openai-gpt-4o",
+      "question": "Q03",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "openai-gpt-4o",
+          "locator": "Section 3.4 'Preparedness Framework Evaluations', PDF p. 12",
+          "quote": "We evaluated GPT-4o in accordance with our Preparedness Framework[4]."
+        },
+        {
+          "source": "openai-gpt-4o",
+          "locator": "References, [4], PDF p. 29",
+          "quote": "OpenAI, “Openai preparedness framework beta,” 2023."
+        }
+      ],
+      "note": "The card names the Preparedness Framework and identifies the edition in reference [4] as the beta of 2023 (preparedness-beta-2023).",
+      "crossFamily": {
+        "item": "31",
+        "result": "minor, applied: the reference quotation is repaired. The default PDF text layer interleaves the address with the title; the printed reference reads as now quoted (checked by the checker visually, and here against pdftotext’s raw reading order). Identification as the 2023 beta is unchanged."
+      }
+    },
+    {
+      "card": "openai-gpt-4o",
+      "question": "Q04",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "openai-gpt-4o",
+          "locator": "References, [4], PDF p. 29",
+          "quote": "Openai preparedness framework openai-preparedness-framework-beta.pdf. beta,” 2023. https://cdn.openai.com/"
+        }
+      ],
+      "note": "The card gives a bibliographic reference to the framework with an address on cdn.openai.com and the file name of the beta framework. In the text layer the address and the file name are separated by the title."
+    },
+    {
+      "card": "openai-gpt-4o",
+      "question": "Q05",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "openai-gpt-4o",
+          "locator": "Section 3.4 'Preparedness Framework Evaluations', PDF p. 13",
+          "quote": "the Safety Advisory Group recommended classifying GPT-4o before mitigations as borderline medium risk for persuasion, and low risk in all others."
+        },
+        {
+          "source": "openai-gpt-4o",
+          "locator": "Section 3.4 'Preparedness Framework Evaluations', PDF p. 13",
+          "quote": "Therefore, the overall risk score for GPT-4o is classified as medium."
+        }
+      ],
+      "note": "The card states a pre-mitigation classification in the framework's categories (persuasion borderline medium; cybersecurity, CBRN and model autonomy low) and an overall medium score, on the Safety Advisory Group's recommendation."
+    },
+    {
+      "card": "openai-gpt-4o",
+      "question": "Q06",
+      "status": "partly",
+      "passages": [
+        {
+          "source": "openai-gpt-4o",
+          "locator": "Section 3.4 'Preparedness Framework Evaluations', PDF p. 12",
+          "quote": "If a model passes a high risk threshold, we do not deploy the model until mitigations lower the score to medium."
+        },
+        {
+          "source": "openai-gpt-4o",
+          "locator": "Section 3.3 'Observed safety challenges, evaluations and mitigations', PDF p. 5",
+          "quote": "integrated classifiers for blocking specific generations as a part of the deployed system"
+        }
+      ],
+      "note": "The card states the framework's deployment condition and, for the voice risks in Section 3.3, mitigations such as post-training and output classifiers. It does not tie any mitigation to the medium classification in Q05. This is the developer's account of the mitigations.",
+      "search": {
+        "read": "Sections 3.3–3.8 and 6 and term search across the card.",
+        "terms": [
+          "mitigation",
+          "post-mitigation",
+          "safeguard",
+          "medium",
+          "high risk"
+        ],
+        "setAside": []
+      }
+    },
+    {
+      "card": "openai-gpt-4o",
+      "question": "Q07",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "openai-gpt-4o",
+          "locator": "Section 3.6 'Biological threats', Preparedness Scorecard, PDF p. 14",
+          "quote": "Biological Threats Score: Low GPT-4o does not advance biological threat creation capabilities sufficient to meet our medium risk threshold."
+        }
+      ],
+      "note": "The card states biological threat evaluations with a low score under the framework. The framework category is CBRN; no separate chemical, radiological or nuclear result is reported. Evaluation details are not recorded (hazard rule)."
+    },
+    {
+      "card": "openai-gpt-4o",
+      "question": "Q08",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "openai-gpt-4o",
+          "locator": "Section 3.5 'Cybersecurity', Preparedness Scorecard, PDF p. 13",
+          "quote": "GPT-4o does not advance real world vulnerability exploitation capabilities sufficient to meet our medium risk threshold."
+        }
+      ],
+      "note": "The card states capture-the-flag evaluations with a low cybersecurity score. Task-level results are not recorded (hazard rule)."
+    },
+    {
+      "card": "openai-gpt-4o",
+      "question": "Q09",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "openai-gpt-4o",
+          "locator": "Section 3.8 'Model autonomy', Preparedness Scorecard, PDF p. 17",
+          "quote": "GPT-4o does not advance self-exfiltration, self-improvement, or resource acquisition capabilities sufficient to meet our medium risk threshold."
+        }
+      ],
+      "note": "The card states model-autonomy evaluations with a low score. Section 4.1 adds METR's assessment of autonomous capabilities, which the card reports as finding no significant increase over GPT-4."
+    },
+    {
+      "card": "openai-gpt-4o",
+      "question": "Q10",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "openai-gpt-4o",
+          "locator": "Section 3.7 'Persuasion', PDF p. 16",
+          "quote": "Based on pre-registered thresholds, the voice modality was classified as low risk, while the text modality marginally crossed into medium risk."
+        }
+      ],
+      "note": "The card states persuasion evaluations of text and voice, with a medium score for text and low for voice."
+    },
+    {
+      "card": "openai-gpt-4o",
+      "question": "Q11",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "openai-gpt-4o",
+          "locator": "Section 4.2 'Apollo Research assessment', PDF p. 19",
+          "quote": "Based on these findings, Apollo Research believes that it is unlikely that GPT-4o is capable of catastrophic scheming."
+        }
+      ],
+      "note": "The card reports Apollo Research's evaluation of capabilities related to scheming (self-knowledge, theory of mind, self-reasoning, alignment faking), with Apollo's conclusion. It concerns capability, not propensity."
+    },
+    {
+      "card": "openai-gpt-4o",
+      "question": "Q12",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "openai-gpt-4o",
+          "locator": "Section 3.1 'External red teaming', PDF p. 3",
+          "quote": "OpenAI worked with more than 100 external red teamers2 , speaking a total of 45 different languages, and representing geographic backgrounds of 29 different countries."
+        },
+        {
+          "source": "openai-gpt-4o",
+          "locator": "Section 3.1 'External red teaming', PDF p. 3",
+          "quote": "starting in early March and continuing through late June 2024."
+        }
+      ],
+      "note": "The card states external red teaming in four phases, with the number of testers, languages and countries, the period, and the categories covered (disallowed content, mis/disinformation, bias and others)."
+    },
+    {
+      "card": "openai-gpt-4o",
+      "question": "Q13",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "openai-gpt-4o",
+          "locator": "Section 4 'Third party assessments', PDF p. 18",
+          "quote": "we worked with independent third party labs, METR and Apollo Research to add an additional layer of validation for key risks from general autonomous capabilities."
+        }
+      ],
+      "note": "The card names METR and Apollo Research as having assessed the model after its text-output deployment. Section 3.6 names Gryphon Scientific as having helped design the biological questions and rubrics, not as having tested the model."
+    },
+    {
+      "card": "openai-gpt-4o",
+      "question": "Q14",
+      "status": "not-found",
+      "passages": [],
+      "note": "No government body is named as having tested or received access to GPT-4o.",
+      "search": {
+        "read": "Sections 3–6 and term search across the card.",
+        "terms": [
+          "government",
+          "Safety Institute",
+          "AISI",
+          "national security",
+          "pre-deployment access"
+        ],
+        "setAside": [
+          {
+            "locator": "Section 4.2, Table 6, PDF p. 19",
+            "reason": "'UK AISI’s Theory of Mind' names a task used by Apollo Research, not testing of the model by the institute."
+          },
+          {
+            "locator": "Section 1, PDF p. 1",
+            "reason": "Refers to voluntary commitments to the White House, not testing."
+          }
+        ]
+      }
+    },
+    {
+      "card": "openai-gpt-4o",
+      "question": "Q15",
+      "status": "partly",
+      "passages": [
+        {
+          "source": "openai-gpt-4o",
+          "locator": "Section 3.4 'Preparedness Framework Evaluations', PDF p. 13",
+          "quote": "the Safety Advisory Group recommended classifying GPT-4o before mitigations as borderline medium risk for persuasion, and low risk in all others."
+        },
+        {
+          "source": "openai-gpt-4o",
+          "locator": "Section 3.4 'Preparedness Framework Evaluations', PDF p. 12",
+          "quote": "If a model passes a high risk threshold, we do not deploy the model until mitigations lower the score to medium."
+        }
+      ],
+      "note": "The card names the Safety Advisory Group for the risk classification and states the framework's deployment condition. It refers to the model's deployment but does not describe a decision to release it or name who made one.",
+      "search": {
+        "read": "Sections 2–4 and 6 and term search across the card.",
+        "terms": [
+          "decide",
+          "decision",
+          "deploy",
+          "launch",
+          "release",
+          "approve",
+          "leadership"
+        ],
+        "setAside": [
+          {
+            "locator": "Section 3, PDF p. 2",
+            "reason": "'Deployment preparation was carried out via …' describes preparation, which alone is not a release decision (decision 13a)."
+          }
+        ]
+      }
+    },
+    {
+      "card": "openai-gpt-4o",
+      "question": "Q16",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "openai-gpt-4o",
+          "locator": "Section 3.2 'Evaluation methodology', 'Limitations of the evaluation methodology', PDF p. 4",
+          "quote": "First, the validity of this evaluation format depends on the capability and reliability of the TTS model."
+        }
+      ],
+      "note": "The card states limits of its audio evaluation method, which converts text evaluations to speech: some inputs are unsuitable for conversion and the conversion may be lossy."
+    }
+  ],
+  "omissions": [],
+  "retrievalFailures": [],
+  "openQuestions": []
+}

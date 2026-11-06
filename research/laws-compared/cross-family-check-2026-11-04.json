@@ -1,0 +1,729 @@
+{
+  "checker": {
+    "model": "GPT-6",
+    "version": "Exact version not exposed"
+  },
+  "date": "2026-11-04",
+  "instrument": "Illinois Public Act 104-0538 (il-aisma)",
+  "base_commit": "9d0e126",
+  "phase": "complete",
+  "blind_order": {
+    "kept": true,
+    "part_a_answered_before_verdicts": true,
+    "part_a_commit": "c981803b6c4e19219a6459deead4917ece3efc76",
+    "part_a_push_confirmed": true,
+    "verdicts_opened": true,
+    "verdicts_opened_only_after_blind_commit_and_push": true,
+    "verdicts_sha256": "aa1c5291d2bca593cddc8082f3a46f40615e08acee367bfad44326412c3de4de",
+    "other_restricted_material_opened": false,
+    "note": "All 15 independent answers and their deciding passages were committed and pushed before opening the verdicts. No pack, verification, audit, draft or review-note content was opened for this check. The mandatory privacy scan processed indexed files without exposing their contents."
+  },
+  "retrieval": {
+    "method": "Sequential direct HTTP using curl; one request at a time; an explicit eight-second pause after the first archive response before the next request to that host. Listed archive captures used without a live-official attempt. Sources are evidence only.",
+    "sources": [
+      {
+        "id": "il-pa104-0538",
+        "url": "https://web.archive.org/web/20260908054441id_/https://www.ilga.gov/Documents/Legislation/PublicActs/104/PDF/104-0538.pdf",
+        "official_url": "https://www.ilga.gov/Documents/Legislation/PublicActs/104/PDF/104-0538.pdf",
+        "capture": "2026-09-08T05:44:41Z",
+        "retrieved_at_utc": "2026-11-04T06:23:45Z",
+        "http_status": 200,
+        "bytes": 219503,
+        "sha256": "f10cd7d854d5a6e1ab2c5e982e458d744abbfbdafde97f897ae03d1d8069f71f",
+        "matches_preparer": true,
+        "pdf_pages": 56
+      },
+      {
+        "id": "il-sb315-history",
+        "url": "https://web.archive.org/web/20260731225100id_/https://www.ilga.gov/Legislation/BillStatus?DocNum=315&GAID=18&DocTypeID=SB&LegId=157797&SessionID=114",
+        "capture": "2026-07-31T22:51:00Z",
+        "retrieved_at_utc": "2026-11-04T06:23:55Z",
+        "http_status": 200,
+        "wire_bytes": 22402,
+        "wire_sha256": "4a6854587c2e36e0eeec90a2ad14f4108a6a4281058b90deef712e8c8b40b859",
+        "content_encoding": "gzip",
+        "decoded_sha256": "2aa768a35f7ef8e069b100c34bbc29af444ce8139c39cc1e9e57eca9176c6e4e",
+        "matches_preparer_after_decoding": true
+      },
+      {
+        "id": "il-eo-2026-07",
+        "url": "https://www.illinois.gov/government/executive-orders/executive-order.executive-order-2026-07.2026.html",
+        "retrieved_at_utc": "2026-11-04T06:23:56Z",
+        "http_status": 200,
+        "bytes": 40403,
+        "sha256": "913468f996ec852497d82ab29dc07811e9df413f7316d08f55b7c2a36ed7be6b",
+        "preparer_sha256": "eb1787197fa9e997fe19c1f0faa96b853880ffaeae8ee3e3838764ff36d520a9",
+        "matches_preparer": false,
+        "note": "Worked from the fresh page. The preparer copy was not opened; byte difference is recorded without attributing it to a particular cause."
+      }
+    ],
+    "failures": [],
+    "access_limitations": [
+      {
+        "stage": "initial archive request",
+        "issue": "Sandbox domain allowlist blocked direct access before a source response was obtained.",
+        "resolution": "Retried through approved direct HTTP outside sandbox; all three sources returned HTTP 200."
+      }
+    ]
+  },
+  "act_word_count": {
+    "words": 10499,
+    "whole_pdf_extraction_words": 11060,
+    "scope": "All 56 PDF pages, including the repeated versions of amended FOIA text, statutory source notes, section numbers and subsection labels; excluding running public-act and bill identifiers.",
+    "method": "Extract text with bundled PDF.js, truncate each page before SB0315 Enrolled (the extraction places running identifiers after body text), join pages, normalize the split exponent 10 26 integer to 10²⁶ integer, then count nonempty whitespace-delimited tokens. Unfiltered extraction count 11,060 includes running identifiers and the split exponent."
+  },
+  "inspection": {
+    "read": "Sections 1-35 (PDF pp. 1-23), Section 90 (pp. 54-55), Sections 95, 97 and 99 (pp. 55-56); official bill-history Actions table and executive-order text. All 56 PDF pages extracted for word count.",
+    "visual_check_pages": [4, 56],
+    "quotation_convention": "Verbatim text with whitespace/line breaks normalized; superscript exponent retained as 10²⁶. Each passage is at most 50 whitespace-delimited words. PDF pages are one-based; HTML sources have null pdf_pages and their own section/table locators. No passage from the executive order substitutes for the Act on duties."
+  },
+  "summary": {
+    "items_answered": 16,
+    "part_a_answered": 15,
+    "part_b_checked": 1,
+    "status_counts": {
+      "stated": 15,
+      "partly": 0,
+      "not-found": 0,
+      "not-applicable": 0,
+      "not-retrieved": 0
+    },
+    "part_a_comparisons": {
+      "agree": 1,
+      "disagree": 0,
+      "partly": 0,
+      "not-comparable": 14,
+      "pending": 0
+    },
+    "part_b_comparisons": {
+      "agree": 1,
+      "disagree": 0,
+      "partly": 0
+    },
+    "combined_comparisons": {
+      "agree": 2,
+      "disagree": 0,
+      "partly": 0,
+      "not-comparable": 14
+    },
+    "comparison_count_rule": "The 14 not-retrieved placeholders have no substantive answer to compare and are excluded from agree/disagree/partly counts. Each now has a fresh stated answer. Part B agreement is counted separately from the 15 cell comparisons.",
+    "retrieval_failures": 0,
+    "unresolved_retrieval_failures": 0
+  },
+  "items": {
+    "1:il-aisma:Q01": {
+      "item": 1,
+      "cell_id": "il-aisma:Q01",
+      "part": "A",
+      "status": "stated",
+      "answer": "The duty bearers are frontier developers and the revenue-defined tier, large frontier developers. The framework and annual audit duties apply to the large tier; transparency reporting, incident reporting and the Section 20 prohibitions apply to frontier developers.",
+      "passages": [
+        {
+          "source": "il-pa104-0538",
+          "section": "5, definition of frontier developer",
+          "pdf_pages": [3, 4],
+          "quote": "\"Frontier developer\" means a person who trains, or initiates the training of, a frontier model using computing power that meets the technical specifications set forth in the definition of \"frontier model\".",
+          "word_count": 31
+        },
+        {
+          "source": "il-pa104-0538",
+          "section": "5, definition of large frontier developer",
+          "pdf_pages": [4],
+          "quote": "\"Large frontier developer\" means a frontier developer that, together with its affiliates, collectively had annual gross revenues in excess of $500,000,000 in the preceding calendar year.",
+          "word_count": 26
+        }
+      ],
+      "not_found_search": null,
+      "comparison": {
+        "pack_status": "not-retrieved",
+        "checker_status": "stated",
+        "result": "not-comparable",
+        "pack_note_overstates": false,
+        "pack_note_omits_condition": false,
+        "reason": "The pack records a retrieval failure, not a substantive answer. This check retrieved the enacted text and supplies a source-supported answer. No agreement or disagreement with legal content is assigned to the retrieval placeholder. The pack note states its limitation accurately; it supplies no competing interpretation.",
+        "recommended_follow_up": "Use the blind answer and passages for a separately authorized reconciliation; no pack edit has been made."
+      }
+    },
+    "2:il-aisma:Q02": {
+      "item": 2,
+      "cell_id": "il-aisma:Q02",
+      "part": "A",
+      "status": "stated",
+      "answer": "A frontier model is a foundation model trained with more than 10²⁶ integer or floating-point operations. Compute includes original training and subsequent fine-tuning, reinforcement learning or other material modifications. The large-developer tier additionally requires preceding-calendar-year gross revenues exceeding $500 million collectively with affiliates. These are statutory conditions, not findings about any developer.",
+      "passages": [
+        {
+          "source": "il-pa104-0538",
+          "section": "5, definition of frontier model",
+          "pdf_pages": [4],
+          "quote": "\"Frontier model\" means a foundation model that was trained using a quantity of computing power greater than 10²⁶ integer or floating-point operations.",
+          "word_count": 22
+        },
+        {
+          "source": "il-pa104-0538",
+          "section": "5, definition of frontier model",
+          "pdf_pages": [4],
+          "quote": "shall include computing for the original training run and for any subsequent fine-tuning, reinforcement learning, or other material modifications the developer applies to a preceding foundation model.",
+          "word_count": 27
+        },
+        {
+          "source": "il-pa104-0538",
+          "section": "5, definition of large frontier developer",
+          "pdf_pages": [4],
+          "quote": "\"Large frontier developer\" means a frontier developer that, together with its affiliates, collectively had annual gross revenues in excess of $500,000,000 in the preceding calendar year.",
+          "word_count": 26
+        }
+      ],
+      "not_found_search": null,
+      "comparison": {
+        "pack_status": "stated",
+        "checker_status": "stated",
+        "result": "agree",
+        "pack_note_overstates": false,
+        "pack_note_omits_condition": false,
+        "reason": "The status, >10²⁶ compute threshold and locator agree. The note also preserves subsequent-compute inclusion and the affiliate-inclusive prior-year revenue tier; both are now independently checked against Section 5. The pack uses typographic quotation marks around the defined term; the lexical quotation matches the PDF.",
+        "recommended_follow_up": "The note may now record independent passage verification rather than leaving the threshold refinements unverified."
+      }
+    },
+    "3:il-aisma:Q03": {
+      "item": 3,
+      "cell_id": "il-aisma:Q03",
+      "part": "A",
+      "status": "stated",
+      "answer": "Beginning January 1, 2028, large frontier developers must write, implement, comply with and publish a frontier AI framework. Its defined subject is management, assessment and mitigation of catastrophic risks.",
+      "passages": [
+        {
+          "source": "il-pa104-0538",
+          "section": "10(a), opening duty",
+          "pdf_pages": [4, 5],
+          "quote": "Beginning January 1, 2028, a large frontier developer shall write, implement, comply with, and clearly and conspicuously publish on its website a frontier AI framework",
+          "word_count": 25
+        },
+        {
+          "source": "il-pa104-0538",
+          "section": "5, definition of frontier AI framework",
+          "pdf_pages": [3],
+          "quote": "\"Frontier AI framework\" means documented technical and organizational protocols to manage, assess, and mitigate catastrophic risks.",
+          "word_count": 16
+        }
+      ],
+      "not_found_search": null,
+      "comparison": {
+        "pack_status": "not-retrieved",
+        "checker_status": "stated",
+        "result": "not-comparable",
+        "pack_note_overstates": false,
+        "pack_note_omits_condition": false,
+        "reason": "The pack records a retrieval failure, not a substantive answer. This check retrieved the enacted text and supplies a source-supported answer. No agreement or disagreement with legal content is assigned to the retrieval placeholder. The pack note states its limitation accurately; it supplies no competing interpretation.",
+        "recommended_follow_up": "Use the blind answer and passages for a separately authorized reconciliation; no pack edit has been made."
+      }
+    },
+    "4:il-aisma:Q04": {
+      "item": 4,
+      "cell_id": "il-aisma:Q04",
+      "part": "A",
+      "status": "stated",
+      "answer": "The large frontier developer must clearly and conspicuously publish the framework on its website. Material modifications require publication of the modified framework and a justification within 30 days. Section 10(g) permits necessary, justified redactions and requires retention of unredacted information for five years.",
+      "passages": [
+        {
+          "source": "il-pa104-0538",
+          "section": "10(a), opening duty",
+          "pdf_pages": [4, 5],
+          "quote": "Beginning January 1, 2028, a large frontier developer shall write, implement, comply with, and clearly and conspicuously publish on its website a frontier AI framework",
+          "word_count": 25
+        },
+        {
+          "source": "il-pa104-0538",
+          "section": "10(b)(2)",
+          "pdf_pages": [6],
+          "quote": "the large frontier developer shall clearly and conspicuously publish on its website the modified frontier AI framework and a justification for that modification within 30 days.",
+          "word_count": 26
+        }
+      ],
+      "not_found_search": null,
+      "comparison": {
+        "pack_status": "not-retrieved",
+        "checker_status": "stated",
+        "result": "not-comparable",
+        "pack_note_overstates": false,
+        "pack_note_omits_condition": false,
+        "reason": "The pack records a retrieval failure, not a substantive answer. This check retrieved the enacted text and supplies a source-supported answer. No agreement or disagreement with legal content is assigned to the retrieval placeholder. The pack note states its limitation accurately; it supplies no competing interpretation.",
+        "recommended_follow_up": "Use the blind answer and passages for a separately authorized reconciliation; no pack edit has been made."
+      }
+    },
+    "5:il-aisma:Q05": {
+      "item": 5,
+      "cell_id": "il-aisma:Q05",
+      "part": "A",
+      "status": "stated",
+      "answer": "Large frontier developers must implement and comply with a framework addressing model-capability assessment, mitigations based on those assessments, and review of assessments and mitigations when deciding to deploy or use a model extensively internally. This is a duty concerning frontier-model risks; it does not establish that evaluations occurred.",
+      "passages": [
+        {
+          "source": "il-pa104-0538",
+          "section": "10(a), opening duty",
+          "pdf_pages": [4, 5],
+          "quote": "Beginning January 1, 2028, a large frontier developer shall write, implement, comply with, and clearly and conspicuously publish on its website a frontier AI framework",
+          "word_count": 25
+        },
+        {
+          "source": "il-pa104-0538",
+          "section": "10(a)(2)",
+          "pdf_pages": [5],
+          "quote": "defining and assessing thresholds used by the large frontier developer to identify and assess whether a frontier model has capabilities that could pose a catastrophic risk, which may include multiple-tiered thresholds;",
+          "word_count": 31
+        },
+        {
+          "source": "il-pa104-0538",
+          "section": "10(a)(4)",
+          "pdf_pages": [5],
+          "quote": "reviewing assessments and adequacy of mitigations as part of the decision to deploy a frontier model or use it extensively internally;",
+          "word_count": 21
+        }
+      ],
+      "not_found_search": null,
+      "comparison": {
+        "pack_status": "not-retrieved",
+        "checker_status": "stated",
+        "result": "not-comparable",
+        "pack_note_overstates": false,
+        "pack_note_omits_condition": false,
+        "reason": "The pack records a retrieval failure, not a substantive answer. This check retrieved the enacted text and supplies a source-supported answer. No agreement or disagreement with legal content is assigned to the retrieval placeholder. The pack note states its limitation accurately; it supplies no competing interpretation.",
+        "recommended_follow_up": "Use the blind answer and passages for a separately authorized reconciliation; no pack edit has been made."
+      }
+    },
+    "6:il-aisma:Q06": {
+      "item": 6,
+      "cell_id": "il-aisma:Q06",
+      "part": "A",
+      "status": "stated",
+      "answer": "Annual independent third-party audits of Section 10 compliance are mandatory for large frontier developers, starting on the later of January 1, 2028 and 90 days after first qualifying. This meets the practices-assessment limb of Q06; it is not a requirement for an independent test of every model. Auditors must be competent and cannot have the specified mutual financial interests; payment cannot depend on results.",
+      "passages": [
+        {
+          "source": "il-pa104-0538",
+          "section": "10(d), application trigger",
+          "pdf_pages": [8],
+          "quote": "Beginning on January 1, 2028 or 90 days after a developer first qualifies as a large frontier developer, whichever is later,",
+          "word_count": 21
+        },
+        {
+          "source": "il-pa104-0538",
+          "section": "10(d), independent audit duty",
+          "pdf_pages": [8],
+          "quote": "a large frontier developer shall annually retain a third party to perform an independent audit of compliance with the requirements of this Section.",
+          "word_count": 23
+        },
+        {
+          "source": "il-pa104-0538",
+          "section": "10(d)(2)(C)",
+          "pdf_pages": [9],
+          "quote": "a detailed assessment of the large frontier developer's internal controls, including its designation and empowerment of senior personnel",
+          "word_count": 18
+        }
+      ],
+      "not_found_search": null,
+      "comparison": {
+        "pack_status": "not-retrieved",
+        "checker_status": "stated",
+        "result": "not-comparable",
+        "pack_note_overstates": false,
+        "pack_note_omits_condition": false,
+        "reason": "The pack records a retrieval failure, not a substantive answer. This check retrieved the enacted text and supplies a source-supported answer. No agreement or disagreement with legal content is assigned to the retrieval placeholder. The pack note states its limitation accurately; it supplies no competing interpretation.",
+        "recommended_follow_up": "Use the blind answer and passages for a separately authorized reconciliation; no pack edit has been made."
+      }
+    },
+    "7:il-aisma:Q07": {
+      "item": 7,
+      "cell_id": "il-aisma:Q07",
+      "part": "A",
+      "status": "stated",
+      "answer": "Frontier developers must report critical safety incidents to the Agency and Attorney General within 72 hours after learning facts sufficient for a reasonable belief that an incident occurred. An incident posing an imminent risk of death or serious physical injury must also be disclosed within 24 hours to an appropriate authority with jurisdiction, as required by law. Non-frontier foundation-model reports are encouraged rather than mandatory.",
+      "passages": [
+        {
+          "source": "il-pa104-0538",
+          "section": "15(c), reporting subject",
+          "pdf_pages": [12],
+          "quote": "A frontier developer shall report any critical safety incident pertaining to one or more of its frontier models to",
+          "word_count": 19
+        },
+        {
+          "source": "il-pa104-0538",
+          "section": "15(c), recipients, deadline and knowledge trigger",
+          "pdf_pages": [13],
+          "quote": "the Agency and the Attorney General within 72 hours of the frontier developer learning facts sufficient to establish a reasonable belief that a critical safety incident has occurred.",
+          "word_count": 28
+        },
+        {
+          "source": "il-pa104-0538",
+          "section": "15(c), imminent harm",
+          "pdf_pages": [13],
+          "quote": "If a frontier developer discovers that a critical safety incident poses an imminent risk of death or serious physical injury, the frontier developer shall disclose that incident within 24 hours to an authority,",
+          "word_count": 33
+        }
+      ],
+      "not_found_search": null,
+      "comparison": {
+        "pack_status": "not-retrieved",
+        "checker_status": "stated",
+        "result": "not-comparable",
+        "pack_note_overstates": false,
+        "pack_note_omits_condition": false,
+        "reason": "The pack records a retrieval failure, not a substantive answer. This check retrieved the enacted text and supplies a source-supported answer. No agreement or disagreement with legal content is assigned to the retrieval placeholder. The pack note states its limitation accurately; it supplies no competing interpretation.",
+        "recommended_follow_up": "Use the blind answer and passages for a separately authorized reconciliation; no pack edit has been made."
+      }
+    },
+    "8:il-aisma:Q08": {
+      "item": 8,
+      "cell_id": "il-aisma:Q08",
+      "part": "A",
+      "status": "stated",
+      "answer": "Before or concurrently with deployment of a new or substantially modified frontier model, frontier developers must publish a model transparency report. Large frontier developers must additionally include summaries of catastrophic-risk assessments, results, third-party involvement and other framework steps, in machine-readable form. A system/model card can satisfy this duty if it includes the required information. Necessary redactions are allowed under Section 10(g). Section 18 separately requires in-state large-developer disclosure filings and fees from January 1, 2027.",
+      "passages": [
+        {
+          "source": "il-pa104-0538",
+          "section": "10(c)(1)",
+          "pdf_pages": [6],
+          "quote": "Before, or concurrently with, deploying a new frontier model or a substantially modified version of an existing frontier model, a frontier developer shall clearly and conspicuously publish on its website a transparency report",
+          "word_count": 33
+        },
+        {
+          "source": "il-pa104-0538",
+          "section": "10(c)(2)(A)",
+          "pdf_pages": [7],
+          "quote": "assessments of catastrophic risks from the frontier model conducted pursuant to the large frontier developer's frontier AI framework;",
+          "word_count": 18
+        }
+      ],
+      "not_found_search": null,
+      "comparison": {
+        "pack_status": "not-retrieved",
+        "checker_status": "stated",
+        "result": "not-comparable",
+        "pack_note_overstates": false,
+        "pack_note_omits_condition": false,
+        "reason": "The pack records a retrieval failure, not a substantive answer. This check retrieved the enacted text and supplies a source-supported answer. No agreement or disagreement with legal content is assigned to the retrieval placeholder. The pack note states its limitation accurately; it supplies no competing interpretation.",
+        "recommended_follow_up": "Use the blind answer and passages for a separately authorized reconciliation; no pack edit has been made."
+      }
+    },
+    "9:il-aisma:Q09": {
+      "item": 9,
+      "cell_id": "il-aisma:Q09",
+      "part": "A",
+      "status": "stated",
+      "answer": "Section 20 directly prohibits frontier developers from preventing or retaliating against qualifying covered-employee disclosures of catastrophic-risk dangers or Act violations. Large frontier developers must provide an anonymous internal process with monthly updates; this independently meets the channel limb. Section 90 also expressly adds good-faith Act-violation disclosures to the Whistleblower Act; protection is not solely by reference.",
+      "passages": [
+        {
+          "source": "il-pa104-0538",
+          "section": "20(a)",
+          "pdf_pages": [19, 20],
+          "quote": "A frontier developer shall not make, adopt, enforce, or enter into a rule, regulation, policy, or contract that prevents a covered employee from disclosing, or retaliates against a covered employee for disclosing, information to the Agency, Attorney General,",
+          "word_count": 38
+        },
+        {
+          "source": "il-pa104-0538",
+          "section": "20(e)(1)",
+          "pdf_pages": [21],
+          "quote": "A large frontier developer shall provide a reasonable internal process through which a covered employee may anonymously disclose information to the large frontier developer",
+          "word_count": 24
+        },
+        {
+          "source": "il-pa104-0538",
+          "section": "90, amending Whistleblower Act 15(e)",
+          "pdf_pages": [55],
+          "quote": "An employer may not take retaliatory action against an employee for disclosing or threatening to disclose in good faith any violation of the Artificial Intelligence Safety Measures Act.",
+          "word_count": 28
+        }
+      ],
+      "not_found_search": null,
+      "comparison": {
+        "pack_status": "not-retrieved",
+        "checker_status": "stated",
+        "result": "not-comparable",
+        "pack_note_overstates": false,
+        "pack_note_omits_condition": false,
+        "reason": "The pack records a retrieval failure, not a substantive answer. This check retrieved the enacted text and supplies a source-supported answer. No agreement or disagreement with legal content is assigned to the retrieval placeholder. The pack note states its limitation accurately; it supplies no competing interpretation.",
+        "recommended_follow_up": "Use the blind answer and passages for a separately authorized reconciliation; no pack edit has been made."
+      }
+    },
+    "10:il-aisma:Q10": {
+      "item": 10,
+      "cell_id": "il-aisma:Q10",
+      "part": "A",
+      "status": "stated",
+      "answer": "The official Actions table records Governor approval on July 6, 2026. It separately records Passed Both Houses on May 29, 2026. These are approval and legislative-passage dates, respectively. The executive order confirms passage and signature without giving either event a date; September 22 is the order's own issue/filing date.",
+      "passages": [
+        {
+          "source": "il-sb315-history",
+          "section": "Actions table, Governor Approved row",
+          "pdf_pages": null,
+          "quote": "7/06/2026 Senate Governor Approved",
+          "word_count": 4
+        },
+        {
+          "source": "il-sb315-history",
+          "section": "Actions table, Passed Both Houses row",
+          "pdf_pages": null,
+          "quote": "5/29/2026 Senate Passed Both Houses",
+          "word_count": 5
+        }
+      ],
+      "not_found_search": null,
+      "comparison": {
+        "pack_status": "not-retrieved",
+        "checker_status": "stated",
+        "result": "not-comparable",
+        "pack_note_overstates": false,
+        "pack_note_omits_condition": false,
+        "reason": "The pack records a retrieval failure, not a substantive answer. This check retrieved the enacted text and supplies a source-supported answer. No agreement or disagreement with legal content is assigned to the retrieval placeholder. The pack note states its limitation accurately; it supplies no competing interpretation.",
+        "recommended_follow_up": "Use the blind answer and passages for a separately authorized reconciliation; no pack edit has been made."
+      }
+    },
+    "11:il-aisma:Q11": {
+      "item": 11,
+      "cell_id": "il-aisma:Q11",
+      "part": "A",
+      "status": "stated",
+      "answer": "Section 99 expressly sets January 1, 2027 as the effective date. This is neither a computed date nor the separate 2028 framework/audit start.",
+      "passages": [
+        {
+          "source": "il-pa104-0538",
+          "section": "99, Effective date",
+          "pdf_pages": [56],
+          "quote": "This Act takes effect January 1, 2027.",
+          "word_count": 7
+        }
+      ],
+      "not_found_search": null,
+      "comparison": {
+        "pack_status": "not-retrieved",
+        "checker_status": "stated",
+        "result": "not-comparable",
+        "pack_note_overstates": false,
+        "pack_note_omits_condition": false,
+        "reason": "The pack records a retrieval failure, not a substantive answer. This check retrieved the enacted text and supplies a source-supported answer. No agreement or disagreement with legal content is assigned to the retrieval placeholder. The pack note states its limitation accurately; it supplies no competing interpretation.",
+        "recommended_follow_up": "Use the blind answer and passages for a separately authorized reconciliation; no pack edit has been made."
+      }
+    },
+    "12:il-aisma:Q12": {
+      "item": 12,
+      "cell_id": "il-aisma:Q12",
+      "part": "A",
+      "status": "stated",
+      "answer": "Section 10(a) sets a separate January 1, 2028 start for the framework. Section 10(d) sets audits from the later of January 1, 2028 and 90 days after first qualifying as a large frontier developer. Section 18(a) starts in-state disclosure and fee requirements January 1, 2027, coinciding with the Act's effect. The 2028 date must not be applied to all duties. Section 10(c) instead uses the trigger before or concurrently with deployment; no general existing-model grace period is inferred.",
+      "passages": [
+        {
+          "source": "il-pa104-0538",
+          "section": "10(a), opening duty",
+          "pdf_pages": [4, 5],
+          "quote": "Beginning January 1, 2028, a large frontier developer shall write, implement, comply with, and clearly and conspicuously publish on its website a frontier AI framework",
+          "word_count": 25
+        },
+        {
+          "source": "il-pa104-0538",
+          "section": "10(d), application trigger",
+          "pdf_pages": [8],
+          "quote": "Beginning on January 1, 2028 or 90 days after a developer first qualifies as a large frontier developer, whichever is later,",
+          "word_count": 21
+        },
+        {
+          "source": "il-pa104-0538",
+          "section": "18(a)",
+          "pdf_pages": [17],
+          "quote": "beginning January 1, 2027, no large frontier developer may develop, deploy, or operate a frontier model, in whole or in part in this State, without having a current disclosure statement filed with the Agency and paying the required fee.",
+          "word_count": 39
+        }
+      ],
+      "not_found_search": null,
+      "comparison": {
+        "pack_status": "not-retrieved",
+        "checker_status": "stated",
+        "result": "not-comparable",
+        "pack_note_overstates": false,
+        "pack_note_omits_condition": false,
+        "reason": "The pack records a retrieval failure, not a substantive answer. This check retrieved the enacted text and supplies a source-supported answer. No agreement or disagreement with legal content is assigned to the retrieval placeholder. The pack note states its limitation accurately; it supplies no competing interpretation.",
+        "recommended_follow_up": "Use the blind answer and passages for a separately authorized reconciliation; no pack edit has been made."
+      }
+    },
+    "13:il-aisma:Q13": {
+      "item": 13,
+      "cell_id": "il-aisma:Q13",
+      "part": "A",
+      "status": "stated",
+      "answer": "Section 25(a) subjects large frontier developers to civil penalties for the listed breaches, up to $1 million for the first violation and $3 million per subsequent violation, with amount dependent on severity. Section 18(e) separately permits Agency penalties of $1,000 per day for failure to file disclosure or correct false information, plus assessments owed. There is no single aggregate ceiling across those remedies; Section 25 is limited to its named large-developer breaches.",
+      "passages": [
+        {
+          "source": "il-pa104-0538",
+          "section": "25(a)",
+          "pdf_pages": [22],
+          "quote": "shall be subject to a civil penalty in an amount dependent upon the severity of the violation that does not exceed $1,000,000 for the first violation. For a subsequent violation, the civil penalty may not exceed $3,000,000 per violation.",
+          "word_count": 39
+        },
+        {
+          "source": "il-pa104-0538",
+          "section": "18(e)(1)",
+          "pdf_pages": [19],
+          "quote": "a civil penalty of $1,000 for each day the person fails to file a disclosure as required by this Section or fails to correct false information;",
+          "word_count": 26
+        }
+      ],
+      "not_found_search": null,
+      "comparison": {
+        "pack_status": "not-retrieved",
+        "checker_status": "stated",
+        "result": "not-comparable",
+        "pack_note_overstates": false,
+        "pack_note_omits_condition": false,
+        "reason": "The pack records a retrieval failure, not a substantive answer. This check retrieved the enacted text and supplies a source-supported answer. No agreement or disagreement with legal content is assigned to the retrieval placeholder. The pack note states its limitation accurately; it supplies no competing interpretation.",
+        "recommended_follow_up": "Use the blind answer and passages for a separately authorized reconciliation; no pack edit has been made."
+      }
+    },
+    "14:il-aisma:Q14": {
+      "item": 14,
+      "cell_id": "il-aisma:Q14",
+      "part": "A",
+      "status": "stated",
+      "answer": "Section 25 civil penalties are recovered exclusively through Attorney General civil actions. The Illinois Emergency Management Agency and Office of Homeland Security administers reporting and may levy the separate Section 18 disclosure penalties after notice and hearing. The bodies have distinct statutory roles.",
+      "passages": [
+        {
+          "source": "il-pa104-0538",
+          "section": "5, definition of Agency",
+          "pdf_pages": [1],
+          "quote": "\"Agency\" means the Illinois Emergency Management Agency and Office of Homeland Security.",
+          "word_count": 12
+        },
+        {
+          "source": "il-pa104-0538",
+          "section": "25(b)",
+          "pdf_pages": [22],
+          "quote": "A civil penalty described in this Section shall be recovered in a civil action brought exclusively by the Attorney General.",
+          "word_count": 20
+        },
+        {
+          "source": "il-pa104-0538",
+          "section": "18(e)",
+          "pdf_pages": [19],
+          "quote": "the Agency may, after notice and hearing, levy civil penalties, fees, and costs as follows:",
+          "word_count": 15
+        }
+      ],
+      "not_found_search": null,
+      "comparison": {
+        "pack_status": "not-retrieved",
+        "checker_status": "stated",
+        "result": "not-comparable",
+        "pack_note_overstates": false,
+        "pack_note_omits_condition": false,
+        "reason": "The pack records a retrieval failure, not a substantive answer. This check retrieved the enacted text and supplies a source-supported answer. No agreement or disagreement with legal content is assigned to the retrieval placeholder. The pack note states its limitation accurately; it supplies no competing interpretation.",
+        "recommended_follow_up": "Use the blind answer and passages for a separately authorized reconciliation; no pack edit has been made."
+      }
+    },
+    "15:il-aisma:Q15": {
+      "item": 15,
+      "cell_id": "il-aisma:Q15",
+      "part": "A",
+      "status": "stated",
+      "answer": "Section 10 requires the developer's own frontier AI framework and requires it to describe incorporation of national/international standards and industry-consensus best practices. Section 17 provides conditional deemed compliance through an Agency-designated federal law, regulation or guidance document, after declaration and only to the extent its standards or requirements are met. Section 10(c)(4) separately deems a larger document such as a system/model card sufficient if it contains the required transparency information. These are different relations and are not proof of anyone's compliance.",
+      "passages": [
+        {
+          "source": "il-pa104-0538",
+          "section": "10(a), opening duty",
+          "pdf_pages": [4, 5],
+          "quote": "Beginning January 1, 2028, a large frontier developer shall write, implement, comply with, and clearly and conspicuously publish on its website a frontier AI framework",
+          "word_count": 25
+        },
+        {
+          "source": "il-pa104-0538",
+          "section": "10(a)(1)",
+          "pdf_pages": [5],
+          "quote": "incorporating national standards, international standards, and industry-consensus best practices into its frontier AI framework;",
+          "word_count": 14
+        },
+        {
+          "source": "il-pa104-0538",
+          "section": "17(b)(2)(A)",
+          "pdf_pages": [16],
+          "quote": "the frontier developer shall be deemed in compliance with this Act to the extent that the frontier developer meets the standards of, or complies with the requirements imposed or stated by, the designated federal law, regulation, or guidance document",
+          "word_count": 39
+        }
+      ],
+      "not_found_search": null,
+      "comparison": {
+        "pack_status": "not-retrieved",
+        "checker_status": "stated",
+        "result": "not-comparable",
+        "pack_note_overstates": false,
+        "pack_note_omits_condition": false,
+        "reason": "The pack records a retrieval failure, not a substantive answer. This check retrieved the enacted text and supplies a source-supported answer. No agreement or disagreement with legal content is assigned to the retrieval placeholder. The pack note states its limitation accurately; it supplies no competing interpretation.",
+        "recommended_follow_up": "Use the blind answer and passages for a separately authorized reconciliation; no pack edit has been made."
+      }
+    },
+    "16:standing:il-aisma": {
+      "item": 16,
+      "cell_id": "standing:il-aisma",
+      "part": "B",
+      "status": "checked",
+      "comparison": "agree",
+      "quotation_verbatim": "yes",
+      "locator_right": "yes",
+      "support": "full",
+      "date_kind_right": "yes",
+      "misleading_alone": {
+        "answer": "no",
+        "reason": "The note attributes passage and signing to the Governor and explicitly says that the order gives no date for either. It separately identifies the July 6 event as approval in the bill history; it does not assign the order's September 22 date to signing or claim the Act was already operative."
+      },
+      "overstatement": {
+        "found": false,
+        "reason": "No compliance, realised-effect or ranking assertion appears in the quoted standing record. The nearby order language praising the law is not adopted by this record."
+      },
+      "passages": [
+        {
+          "source": "il-eo-2026-07",
+          "section": "Recitals, paragraph beginning WHEREAS, Illinois is a leader in AI safety",
+          "pdf_pages": null,
+          "quote": "the Illinois General Assembly passed and I signed into law the AI Safety Measures Act",
+          "word_count": 15
+        },
+        {
+          "source": "il-sb315-history",
+          "section": "Actions table, Governor Approved row",
+          "pdf_pages": null,
+          "quote": "7/06/2026 Senate Governor Approved",
+          "word_count": 5
+        }
+      ],
+      "date_checks": [
+        {
+          "date": "2026-07-06",
+          "kind": "Governor approval",
+          "result": "yes",
+          "source": "il-sb315-history",
+          "qualification": "The Actions row verifies approval; a separate precise signature date is not supplied by the executive-order recital."
+        },
+        {
+          "date": "2026-09-22",
+          "kind": "Executive-order issue and filing",
+          "result": "yes",
+          "source": "il-eo-2026-07",
+          "qualification": "This is the order's date, not the Act's adoption, signature or effective date."
+        }
+      ],
+      "note": "The recital quotation is verbatim and the locator is correct. The fresh executive-order copy has a different SHA-256 from the preparer's copy; this finding concerns the copy actually retrieved. The standing record's earlier not-verified-here qualification can now be supplemented with this independent check of the official history. No exact signing day or implementation is inferred."
+    }
+  },
+  "validation": {
+    "blind_checkpoint": {
+      "prettier": "passed for both reports",
+      "privacy": "passed for 2167 indexed files",
+      "diff_check": "passed",
+      "passages": "37 Part A passages matched the source text; longest 39 words; all at most 50 words"
+    },
+    "final_push_gates": [
+      "npx prettier --check on both report files",
+      "pnpm check:privacy against the staged index",
+      "git diff --cached --check",
+      "Part A answers and passages unchanged from blind commit"
+    ],
+    "execution_note": "Prettier is resolved from the existing root installation. The privacy command uses pnpm --config.verify-deps-before-run=false check:privacy to suppress pnpm automatic dependency installation; the script itself is unchanged. An ordinary pnpm invocation hit a Windows symlink permission error before running the script. No dependencies, scripts or tracked configuration were changed."
+  },
+  "open_decisions": [
+    "Whether and how to reconcile the 14 pack retrieval placeholders using the supplied passages belongs to a separately authorized task. No status is promoted and no application data is changed."
+  ]
+}

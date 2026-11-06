@@ -145,9 +145,11 @@ describe('schema 2.7 source language and archive captures', () => {
       'source-cn-zhipu-profile',
     ]);
     // The 2026-11-01 lab genealogy 2 admission adds Next's French report on
-    // David Luan's departure.
+    // David Luan's departure, and the 2026-11-04 antecedent-texts admission
+    // the 1637 edition of Descartes's Discours.
     expect(byTag('fr')).toEqual([
       'lg2-src-nextink-luan-2026',
+      'source-pre-descartes-1637-gallica-images',
       'source-xm-fair-paris',
     ]);
     // Earlier free-text language notes agree with the structured tag.

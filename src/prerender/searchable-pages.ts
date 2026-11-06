@@ -11,6 +11,7 @@ import { researchPaths } from '../domain/research-path';
 import { landingSummary } from '../domain/landing';
 import { documentHistories } from '../reading/frontier-safety-frameworks';
 import { frameworkComparison } from '../reading/framework-comparison';
+import { modelCards } from '../reading/model-cards';
 import { controlStructures } from '../reading/control-structures';
 import { controlTimelines } from '../reading/control-timelines';
 import { commitmentCollections } from '../reading/commitments';
@@ -18,6 +19,7 @@ import { computeGuides, editionGuides, guides } from '../reading/guides';
 import { questionStarters } from '../reading/self-governance';
 import { propositionCollections } from '../reading/human-thought';
 import { stancesQuestion } from '../reading/proposition-stances-page';
+import { predictionsOnRecord } from '../reading/predictions';
 import { hubOutline, hubSubtitles } from '../ui/Hub';
 import { chronicleIndexOf } from '../domain/chronicle-index';
 import { chronicleText } from '../reading/chronicle';
@@ -132,6 +134,12 @@ export function searchablePages(data: Dataset): PageEntry[] {
       frameworkComparison.question,
       frameworkComparison.introduction + ' ' + frameworkComparison.reading,
     ),
+    entry(
+      { kind: 'compare', id: modelCards.id },
+      'Comparison',
+      modelCards.question,
+      modelCards.introduction,
+    ),
     ...commitmentCollections.map((c) =>
       entry(
         { kind: 'commitments', id: c.id },
@@ -147,6 +155,12 @@ export function searchablePages(data: Dataset): PageEntry[] {
         c.question,
         c.introduction,
       ),
+    ),
+    entry(
+      { kind: 'predictions', id: predictionsOnRecord.id },
+      'Predictions',
+      predictionsOnRecord.question,
+      predictionsOnRecord.introduction,
     ),
     entry({ kind: 'stances' }, 'Propositions', stancesQuestion),
     entry(

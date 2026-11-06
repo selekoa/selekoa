@@ -40,6 +40,13 @@ export const pages = {
   FrameworkComparison: loadable(() =>
     import('./FrameworkComparison').then((m) => m.FrameworkComparison),
   ),
+  ModelCards: loadable(() => import('./ModelCards').then((m) => m.ModelCards)),
+  LawsCompared: loadable(() =>
+    import('./LawsCompared').then((m) => m.LawsCompared),
+  ),
+  Predictions: loadable(() =>
+    import('./Predictions').then((m) => m.Predictions),
+  ),
   ControlStructure: loadable(() =>
     import('./ControlStructure').then((m) => m.ControlStructure),
   ),

@@ -1,4 +1,5 @@
 import { comparisonFacets, isComparisonCell } from './framework-comparison';
+import { isCardCell } from './model-cards';
 import type { Claim, Dataset } from './schema';
 import type { Predicate } from './predicates';
 import { dateOf, relatedTo } from './query';
@@ -186,7 +187,11 @@ export function documentRecord(data: Dataset, documentId: string) {
     ? []
     : related
         .filter(
-          (c) => c.predicate === 'states_provision' && c.subject === documentId,
+          (c) =>
+            c.predicate === 'states_provision' &&
+            c.subject === documentId &&
+            // Model-card cells (schema 2.30) are listed with other records.
+            !isCardCell(c),
         )
         .sort(byDate);
   // Schema 2.24: what the document says it contributes, in its own words.

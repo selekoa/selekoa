@@ -16,6 +16,12 @@ declare module 'virtual:site' {
   export const isLive: boolean;
 }
 
+declare module 'virtual:latest-release' {
+  /** The newest dataset release's summary (scripts/site-config.ts). */
+  const release: import('./ui/release-info').ManifestSummary | null;
+  export default release;
+}
+
 declare module 'virtual:site-facts' {
   const facts: import('./domain/site-facts').SiteFacts;
   export default facts;

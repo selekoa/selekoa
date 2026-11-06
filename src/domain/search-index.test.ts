@@ -167,7 +167,9 @@ describe('the static search index', () => {
 
   it('reads one postings file for most terms, and few chunks for rare words', async () => {
     const read = new Set<string>();
-    await searchIndexFiles(files.manifest, loader(read), 'whistleblower');
+    // "whistleblower" was the rare word until the law cells of 2026-11-05
+    // put it in a question asked of every compared law.
+    await searchIndexFiles(files.manifest, loader(read), 'rescinded');
     const postings = [...read].filter((f) => f.startsWith('postings'));
     expect(postings.length).toBe(1);
     expect(

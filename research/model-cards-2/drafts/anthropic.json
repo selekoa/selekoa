@@ -1,0 +1,625 @@
+{
+  "group": "anthropic",
+  "drafter": "drafting pass of the preparing session, 2026-11-04 (one model family: Claude)",
+  "cards": [
+    {
+      "id": "anthropic-claude-3",
+      "developer": "Anthropic",
+      "model": "Claude 3 (Opus, Sonnet, Haiku)",
+      "year": 2024,
+      "source": "anthropic-claude-3",
+      "frameworkEditions": ["rsp-2023"],
+      "frameworkEditionNote": "The card's reference [5] reads 'Anthropic, “Anthropic’s Responsible Scaling Policy.” September, 2023.' with the policy's announcement address, and Section 6.2.1 refers to 'v1.0 of our RSP'. The dataset records rsp-2023 as v1.0 of September 19, 2023. The copy read is the revision of October 22, 2024 (two update lines under the abstract); its two addenda (PDF pp. 43–63) are separate cards in the inventory and are not read for this row."
+    },
+    {
+      "id": "anthropic-claude-3-5-sonnet",
+      "developer": "Anthropic",
+      "model": "Claude 3.5 Sonnet",
+      "year": 2024,
+      "source": "anthropic-claude-3-5-sonnet",
+      "frameworkEditions": [],
+      "frameworkEditionNote": "The addendum names the Responsible Scaling Policy without a version, date or reference to the policy. As context only: the dataset records rsp-2023 (v1.0, 2023-09-19) as the edition published before the addendum's index month (June 2024); rsp-v2-0 is effective from 2024-10-15."
+    }
+  ],
+  "cells": [
+    {
+      "card": "anthropic-claude-3",
+      "question": "Q01",
+      "status": "partly",
+      "passages": [
+        {
+          "source": "anthropic-claude-3",
+          "locator": "Abstract, PDF p. 1",
+          "quote": "Update (June 20, 2024): We have added an addendum covering Claude 3.5 Sonnet."
+        },
+        {
+          "source": "anthropic-claude-3",
+          "locator": "Abstract, PDF p. 1",
+          "quote": "Update (October 22, 2024): We have added an addendum covering an upgrade to Claude 3.5 Sonnet and Claude 3.5 Haiku."
+        }
+      ],
+      "note": "The copy read prints two revision dates (June 20 and October 22, 2024) and no issue date of its own. Anthropic's index gives the month March 2024 (inventory); under decision 3a the row is dated by that earliest located publication, with the two updates as revisions.",
+      "search": {
+        "read": "Cover and abstract (PDF p. 1), the page footers, and term search across PDF pp. 1–42.",
+        "terms": ["2024", "March", "Update", "published", "dated"],
+        "setAside": [
+          {
+            "locator": "Figure 16 caption, PDF p. 23",
+            "reason": "'This plot was updated on June 20, 2024' dates a figure correction, not the card."
+          }
+        ]
+      }
+    },
+    {
+      "card": "anthropic-claude-3",
+      "question": "Q02",
+      "status": "partly",
+      "passages": [
+        {
+          "source": "anthropic-claude-3",
+          "locator": "Section 1 'Introduction', PDF p. 1",
+          "quote": "Developed by Anthropic and announced in March 2024, the Claude 3 model family will be available in our consumer offerings (Claude.ai, Claude Pro) as well as enterprise solutions like the Anthropic API, Amazon Bedrock, and Google Vertex AI."
+        }
+      ],
+      "note": "The card gives the forms of availability (consumer products, the API and two cloud platforms) and the month of announcement, March 2024. It gives no release or availability date; an announcement month is a different event.",
+      "search": {
+        "read": "Sections 1–2 and term search across PDF pp. 1–42.",
+        "terms": [
+          "release",
+          "available",
+          "availability",
+          "launch",
+          "announced"
+        ],
+        "setAside": []
+      }
+    },
+    {
+      "card": "anthropic-claude-3",
+      "question": "Q03",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "anthropic-claude-3",
+          "locator": "References, [5], PDF p. 39",
+          "quote": "Anthropic, “Anthropic’s Responsible Scaling Policy.” September, 2023."
+        },
+        {
+          "source": "anthropic-claude-3",
+          "locator": "Section 6.2.1 'Autonomous Replication and Adaption (ARA) evaluations', PDF p. 24",
+          "quote": "The evaluation tasks were based on tasks defined in the appendix of v1.0 of our RSP [5]"
+        }
+      ],
+      "note": "The card names the Responsible Scaling Policy and identifies the edition by its date (September 2023) and as v1.0 (rsp-2023)."
+    },
+    {
+      "card": "anthropic-claude-3",
+      "question": "Q04",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "anthropic-claude-3",
+          "locator": "References, [5], PDF p. 39",
+          "quote": "September, 2023. https://www.anthropic.com/index/anthropics-responsible-scaling-policy."
+        }
+      ],
+      "note": "The card gives a bibliographic reference with an address. The address is Anthropic's announcement page for the policy, not the policy PDF."
+    },
+    {
+      "card": "anthropic-claude-3",
+      "question": "Q05",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "anthropic-claude-3",
+          "locator": "Section 6.2 'Evaluation Results', PDF p. 24",
+          "quote": "Our results show no indicators of catastrophic risk, and therefore we classify all of our Claude 3 models as ASL-2."
+        }
+      ],
+      "note": "The card assigns ASL-2 to all three Claude 3 models. It states that the evaluations were run on a lower-refusal version of Claude 3 Opus."
+    },
+    {
+      "card": "anthropic-claude-3",
+      "question": "Q06",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "anthropic-claude-3",
+          "locator": "Section 6.3 'Security and Deployment Mitigations', PDF p. 26",
+          "quote": "we still take various precautionary measures at ASL-2. We harden security against opportunistic attackers for all copies of Claude 3 model weights."
+        },
+        {
+          "source": "anthropic-claude-3",
+          "locator": "Section 6.3 'Security and Deployment Mitigations', PDF p. 26",
+          "quote": "You can read a more detailed description of our ASL-2 security and deployment measures in our full policy [5]."
+        }
+      ],
+      "note": "The card states security and deployment measures at ASL-2, the level assigned in Q05, including automated detection of CBRN- and cyber-related prompts. This is the developer's account of the measures."
+    },
+    {
+      "card": "anthropic-claude-3",
+      "question": "Q07",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "anthropic-claude-3",
+          "locator": "Section 6.2.2 'Biological Evaluations', PDF p. 25",
+          "quote": "In summary, the model did not meet our most conservative biological risk thresholds, and our expert consultants agreed."
+        }
+      ],
+      "note": "The card states biological evaluations (automated question sets and a human uplift trial) with the outcome that the early-indicator thresholds were not met. No chemical, radiological or nuclear evaluation is reported for Claude 3. Evaluation details are not recorded (hazard rule)."
+    },
+    {
+      "card": "anthropic-claude-3",
+      "question": "Q08",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "anthropic-claude-3",
+          "locator": "Section 6.2.3 'Cyber Evaluations', PDF p. 25",
+          "quote": "We judged that the model did not pass the ASL-3 threshold on any of the early indicator tests."
+        }
+      ],
+      "note": "The card states cyber evaluations (vulnerability discovery and exploit development) with the outcome that the ASL-3 threshold was not passed. Scores and task details are not recorded (hazard rule)."
+    },
+    {
+      "card": "anthropic-claude-3",
+      "question": "Q09",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "anthropic-claude-3",
+          "locator": "Section 6.2.1 'Autonomous Replication and Adaption (ARA) evaluations', PDF p. 24",
+          "quote": "Across all the rounds, the model was clearly below our ARA ASL-3 risk threshold, having failed at least 3 out of 5 tasks"
+        }
+      ],
+      "note": "The card states autonomous replication and adaptation evaluations with the outcome that the ASL-3 warning threshold was not crossed. Task contents are not recorded (hazard rule)."
+    },
+    {
+      "card": "anthropic-claude-3",
+      "question": "Q10",
+      "status": "not-found",
+      "passages": [],
+      "note": "No report of an evaluation of persuasive or manipulative capability was found in the Claude 3 card (PDF pp. 1–42).",
+      "search": {
+        "read": "Sections 5.4, 6 and 7 (PDF pp. 10–31) and term search across PDF pp. 1–42.",
+        "terms": ["persua", "manipulat", "influence", "sway", "election"],
+        "setAside": [
+          {
+            "locator": "Section 7.2 'Elections Integrity', PDF p. 28",
+            "reason": "Describes testing of responses to election misinformation prompts, which concerns misuse, not the model's persuasive capability."
+          }
+        ]
+      }
+    },
+    {
+      "card": "anthropic-claude-3",
+      "question": "Q11",
+      "status": "partly",
+      "passages": [
+        {
+          "source": "anthropic-claude-3",
+          "locator": "Section 6.2.1 'Autonomous Replication and Adaption (ARA) evaluations', PDF p. 24",
+          "quote": "These tasks are selected to indicate whether the model can make meaningful progress towards accumulating resources, exploiting software security vulnerabilities, deceiving humans, and surviving autonomously in the absence of human intervention to stop the model."
+        },
+        {
+          "source": "anthropic-claude-3",
+          "locator": "Section 6.2.1 'Autonomous Replication and Adaption (ARA) evaluations', PDF p. 24",
+          "quote": "Our pre-specified warning indicator for ASL-3 was the model passing 50% or more of the tasks (described below) with at least a 10% pass rate (i.e., succeeding at one in ten attempts) – the model did not cross this threshold."
+        }
+      ],
+      "note": "The ARA evaluations are described as indicating, among other capabilities, whether the model can make progress at deceiving humans, and the card gives one combined conclusion for them: the ASL-3 warning indicator was not crossed. It gives no conclusion on deception separately, and reports no evaluation of the model’s own propensity for deception, scheming or sabotage. The same evaluations are recorded under Q09. Task contents are not recorded (hazard rule).",
+      "search": {
+        "read": "Sections 5.4–5.7, 6 and 7 (PDF pp. 10–31) and term search across PDF pp. 1–42.",
+        "terms": [
+          "decept",
+          "deceiv",
+          "scheming",
+          "sabotage",
+          "oversight",
+          "sandbag",
+          "reward hack",
+          "honest"
+        ],
+        "setAside": [
+          {
+            "locator": "Section 5.7 'Factual Accuracy', PDF p. 18",
+            "reason": "An honesty benchmark of factual accuracy, not an evaluation of deception or scheming."
+          }
+        ]
+      },
+      "crossFamily": {
+        "item": "4",
+        "result": "material disagreement, applied: the checker reads partly (blind), because Q11 includes capability for deception and the ARA scope includes deceiving humans, with a combined conclusion. The pack had read not found, setting the passage aside as a Q09 evaluation; the criterion makes no such exclusion. The preparer accepts the checker’s reading."
+      }
+    },
+    {
+      "card": "anthropic-claude-3",
+      "question": "Q12",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "anthropic-claude-3",
+          "locator": "Section 7.1.1 'Multimodal Policy Red-Teaming', PDF p. 27",
+          "quote": "Examples of tested topics include, but are not limited to: child safety, dangerous weapons and technology, hate speech, violent extremism, fraud, and illegal substances."
+        },
+        {
+          "source": "anthropic-claude-3",
+          "locator": "Section 7 'Trust & Safety and Societal Impact Evaluations', PDF p. 26",
+          "quote": "We conduct vulnerability testing using internal and external human testers to explore over a dozen policy categories"
+        }
+      ],
+      "note": "The card states a Trust & Safety multimodal red-team exercise, with example topics and a prompt count (378 prompts, Figure 17), and vulnerability testing by internal and external testers across over a dozen policy categories. Section 6.2 states that the RSP requires risk assessment 'primarily through automated evaluations and red teaming'."
+    },
+    {
+      "card": "anthropic-claude-3",
+      "question": "Q13",
+      "status": "partly",
+      "passages": [
+        {
+          "source": "anthropic-claude-3",
+          "locator": "Section 7 'Trust & Safety and Societal Impact Evaluations', PDF p. 26",
+          "quote": "We conduct vulnerability testing using internal and external human testers to explore over a dozen policy categories"
+        }
+      ],
+      "note": "The card describes external testers and, for the biological evaluations, 'expert consultants' (Section 6.2.2), without naming any organisation.",
+      "search": {
+        "read": "Sections 6–7 and term search across PDF pp. 1–42.",
+        "terms": [
+          "external",
+          "third party",
+          "third-party",
+          "partner",
+          "consultant",
+          "advisor"
+        ],
+        "setAside": [
+          {
+            "locator": "Section 4, PDF p. 4",
+            "reason": "External experts named for the carbon-footprint analysis, not for testing the model."
+          }
+        ]
+      }
+    },
+    {
+      "card": "anthropic-claude-3",
+      "question": "Q14",
+      "status": "not-found",
+      "passages": [],
+      "note": "No government body is named as having tested or received access to Claude 3.",
+      "search": {
+        "read": "Sections 1–7 and term search across PDF pp. 1–42.",
+        "terms": [
+          "government",
+          "Safety Institute",
+          "AISI",
+          "pre-deployment",
+          "access"
+        ],
+        "setAside": [
+          {
+            "locator": "Section 1, PDF p. 2",
+            "reason": "A general commitment to share findings with 'industry, government, and civil society', not testing of the model."
+          },
+          {
+            "locator": "Section 6.1, PDF p. 23",
+            "reason": "Mentions red-teaming guidance in the US Executive Order, which is not a body testing the model."
+          }
+        ]
+      }
+    },
+    {
+      "card": "anthropic-claude-3",
+      "question": "Q15",
+      "status": "partly",
+      "passages": [
+        {
+          "source": "anthropic-claude-3",
+          "locator": "Section 6.2 'Evaluation Results', PDF p. 24",
+          "quote": "Our results show no indicators of catastrophic risk, and therefore we classify all of our Claude 3 models as ASL-2."
+        },
+        {
+          "source": "anthropic-claude-3",
+          "locator": "Section 2.7 'Release Decisions and Maintenance', PDF p. 3",
+          "quote": "we incrementally roll out access to our products to ensure their safety and reliability"
+        }
+      ],
+      "note": "The card states a capability determination in the company's voice and, under a heading on release decisions, general release practices. No passage describes a decision to release Claude 3 or names who made one.",
+      "search": {
+        "read": "Sections 2.7 and 6 and term search across PDF pp. 1–42.",
+        "terms": [
+          "decide",
+          "decision",
+          "release",
+          "deploy",
+          "launch",
+          "chose",
+          "approve"
+        ],
+        "setAside": [
+          {
+            "locator": "Section 1, PDF p. 1",
+            "reason": "States availability of the models, which alone is not a release decision (decision 13a)."
+          }
+        ]
+      }
+    },
+    {
+      "card": "anthropic-claude-3",
+      "question": "Q16",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "anthropic-claude-3",
+          "locator": "Section 6.4 'RSP areas for improvement', PDF p. 26",
+          "quote": "we are aware that these results do not comprehensively rule out risk."
+        },
+        {
+          "source": "anthropic-claude-3",
+          "locator": "Section 6.2.2 'Biological Evaluations', PDF p. 25",
+          "quote": "Opus performed worse, suggesting that we may have under-elicited the model’s capabilities."
+        }
+      ],
+      "note": "The card states that its results do not rule out risk, that elicitation could be improved on ARA and CBRN tasks, and that the biological evaluations may have under-elicited capability. Section 6.2 adds that 'evaluations are a hard scientific problem'."
+    },
+    {
+      "card": "anthropic-claude-3-5-sonnet",
+      "question": "Q01",
+      "status": "not-found",
+      "passages": [],
+      "note": "The addendum prints no date. Anthropic's index gives June 2024 (inventory), and the Claude 3 card's update line dates the addendum's addition to that card to June 20, 2024; both are outside this document.",
+      "search": {
+        "read": "Whole text (8 PDF pages).",
+        "terms": ["2024", "June", "Update", "published", "dated"],
+        "setAside": [
+          {
+            "locator": "References, PDF pp. 7–8",
+            "reason": "Dates in references date the cited works, not the addendum."
+          }
+        ]
+      }
+    },
+    {
+      "card": "anthropic-claude-3-5-sonnet",
+      "question": "Q02",
+      "status": "not-found",
+      "passages": [],
+      "note": "No release or availability date or form of release was found in the addendum.",
+      "search": {
+        "read": "Whole text.",
+        "terms": [
+          "release",
+          "available",
+          "availability",
+          "launch",
+          "API",
+          "Claude.ai"
+        ],
+        "setAside": [
+          {
+            "locator": "Section 3 'Safety', Introduction, PDF p. 6",
+            "reason": "'regular safety testing prior to releasing frontier models' states a practice, not this model's release."
+          }
+        ]
+      }
+    },
+    {
+      "card": "anthropic-claude-3-5-sonnet",
+      "question": "Q03",
+      "status": "partly",
+      "passages": [
+        {
+          "source": "anthropic-claude-3-5-sonnet",
+          "locator": "Section 3 'Safety', Introduction, PDF p. 6",
+          "quote": "it does not trigger the 4x effective compute threshold at which we will run the full evaluation protocol described in our Responsible Scaling Policy (RSP)."
+        }
+      ],
+      "note": "The addendum names the Responsible Scaling Policy without an edition. As context only: the dataset records rsp-2023 (v1.0) as the edition published before June 2024."
+    },
+    {
+      "card": "anthropic-claude-3-5-sonnet",
+      "question": "Q04",
+      "status": "partly",
+      "passages": [
+        {
+          "source": "anthropic-claude-3-5-sonnet",
+          "locator": "Section 3 'Safety', Introduction, PDF p. 6",
+          "quote": "the full evaluation protocol described in our Responsible Scaling Policy (RSP)."
+        }
+      ],
+      "note": "The addendum refers to the policy as a document that describes an evaluation protocol, without an address or reference. Its reference [23] is the RSP evaluations report for Claude 3 Opus, not the policy.",
+      "search": {
+        "read": "Section 3 and the references.",
+        "terms": ["Responsible Scaling Policy", "RSP", "https"],
+        "setAside": [
+          {
+            "locator": "References, [23], PDF p. 8",
+            "reason": "'Responsible Scaling Policy Evaluations Report – Claude 3 Opus' is an evaluation report, not the framework document."
+          }
+        ]
+      }
+    },
+    {
+      "card": "anthropic-claude-3-5-sonnet",
+      "question": "Q05",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "anthropic-claude-3-5-sonnet",
+          "locator": "Section 3 'Safety', Introduction, PDF p. 6",
+          "quote": "Based on our assessments, we classify Claude 3.5 Sonnet as an AI Safety Level 2 (ASL-2) model, indicating that it does not pose risk of catastrophic harm."
+        }
+      ],
+      "note": "The addendum assigns ASL-2. It also states that the model did not trigger the compute threshold for the policy's full evaluation protocol, and that evaluations were run regardless."
+    },
+    {
+      "card": "anthropic-claude-3-5-sonnet",
+      "question": "Q06",
+      "status": "not-found",
+      "passages": [],
+      "note": "No safeguard or mitigation tied to the ASL-2 classification was found. The addendum states that, had preset thresholds been exceeded, a council would have decided on more evaluation or protections (Q15); that conditional is not a safeguard applied.",
+      "search": {
+        "read": "Section 3 'Safety' (PDF p. 6).",
+        "terms": ["safeguard", "mitigation", "protection", "security", "ASL-2"],
+        "setAside": [
+          {
+            "locator": "Section 3, 'Safety Evaluations Overview', PDF p. 6",
+            "reason": "'an increase in safety and security protections' is a conditional outcome of a council that was not convened."
+          }
+        ]
+      }
+    },
+    {
+      "card": "anthropic-claude-3-5-sonnet",
+      "question": "Q07",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "anthropic-claude-3-5-sonnet",
+          "locator": "Section 3, 'Safety Evaluations Results', PDF p. 6",
+          "quote": "Claude 3.5 Sonnet did not exceed our safety thresholds in these evaluations and we classify it at ASL-2."
+        }
+      ],
+      "note": "The addendum states CBRN evaluations (knowledge tests and a measure of uplift to non-experts) and one outcome for all three domains: the thresholds of concern were not exceeded. It does not state a CBRN-specific result. Evaluation details are not recorded (hazard rule)."
+    },
+    {
+      "card": "anthropic-claude-3-5-sonnet",
+      "question": "Q08",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "anthropic-claude-3-5-sonnet",
+          "locator": "Section 3, 'Safety Evaluations Results', PDF p. 6",
+          "quote": "Claude 3.5 Sonnet did not exceed our safety thresholds in these evaluations and we classify it at ASL-2."
+        }
+      ],
+      "note": "The addendum states capture-the-flag cyber evaluations and the shared outcome that the thresholds of concern were not exceeded. Task details are not recorded (hazard rule)."
+    },
+    {
+      "card": "anthropic-claude-3-5-sonnet",
+      "question": "Q09",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "anthropic-claude-3-5-sonnet",
+          "locator": "Section 3, 'Safety Evaluations Results', PDF p. 6",
+          "quote": "Claude 3.5 Sonnet did not exceed our safety thresholds in these evaluations and we classify it at ASL-2."
+        }
+      ],
+      "note": "The addendum states autonomy evaluations (software-engineering tasks) and the shared outcome. It also states that METR explored the model's autonomy-relevant capabilities, without giving METR's result."
+    },
+    {
+      "card": "anthropic-claude-3-5-sonnet",
+      "question": "Q10",
+      "status": "not-found",
+      "passages": [],
+      "note": "No evaluation of persuasive or manipulative capability was found.",
+      "search": {
+        "read": "Whole text.",
+        "terms": ["persua", "manipulat", "influence"],
+        "setAside": []
+      }
+    },
+    {
+      "card": "anthropic-claude-3-5-sonnet",
+      "question": "Q11",
+      "status": "not-found",
+      "passages": [],
+      "note": "No evaluation of deception, scheming, sabotage or undermining oversight was found.",
+      "search": {
+        "read": "Whole text.",
+        "terms": ["decept", "scheming", "sabotage", "oversight", "honest"],
+        "setAside": [
+          {
+            "locator": "Section 2, Figure 3, PDF p. 5",
+            "reason": "'Honesty' is a human-preference win-rate task, not an evaluation of deception or scheming."
+          }
+        ]
+      }
+    },
+    {
+      "card": "anthropic-claude-3-5-sonnet",
+      "question": "Q12",
+      "status": "not-found",
+      "passages": [],
+      "note": "No adversarial testing described as red-teaming was found.",
+      "search": {
+        "read": "Whole text.",
+        "terms": ["red team", "red-team", "adversarial", "jailbreak"],
+        "setAside": [
+          {
+            "locator": "Section 2, Figure 3, PDF p. 5",
+            "reason": "'adversarial scenarios' are human-preference evaluations of harmlessness, not described as red-teaming."
+          }
+        ]
+      }
+    },
+    {
+      "card": "anthropic-claude-3-5-sonnet",
+      "question": "Q13",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "anthropic-claude-3-5-sonnet",
+          "locator": "Section 3, 'Safety Evaluations Overview', PDF p. 6",
+          "quote": "Additionally, METR [28] did an initial exploration of the model’s autonomy-relevant capabilities."
+        }
+      ],
+      "note": "The addendum names METR as having explored the model's autonomy-relevant capabilities. It gives no result of that exploration."
+    },
+    {
+      "card": "anthropic-claude-3-5-sonnet",
+      "question": "Q14",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "anthropic-claude-3-5-sonnet",
+          "locator": "Section 3, 'Safety Evaluations Overview', PDF p. 6",
+          "quote": "The UK AISI also conducted pre-deployment testing of a near-final model, and shared their results with the US AI Safety Institute"
+        }
+      ],
+      "note": "The addendum names the UK AI Safety Institute as having tested a near-final model before deployment and states that it shared its results with the US AI Safety Institute. It does not state that the US institute tested the model."
+    },
+    {
+      "card": "anthropic-claude-3-5-sonnet",
+      "question": "Q15",
+      "status": "partly",
+      "passages": [
+        {
+          "source": "anthropic-claude-3-5-sonnet",
+          "locator": "Section 3 'Safety', Introduction, PDF p. 6",
+          "quote": "Based on our assessments, we classify Claude 3.5 Sonnet as an AI Safety Level 2 (ASL-2) model"
+        },
+        {
+          "source": "anthropic-claude-3-5-sonnet",
+          "locator": "Section 3, 'Safety Evaluations Overview', PDF p. 6",
+          "quote": "we planned to convene a council consisting of our Responsible Scaling Officer, evaluations leads, and external subject matter experts"
+        }
+      ],
+      "note": "The addendum states a capability classification in the company's voice and names a council that would have decided on further evaluation or protections had thresholds been exceeded. No passage describes a decision to release the model or names who made one.",
+      "search": {
+        "read": "Section 3.",
+        "terms": ["decide", "decision", "release", "deploy", "launch"],
+        "setAside": []
+      }
+    },
+    {
+      "card": "anthropic-claude-3-5-sonnet",
+      "question": "Q16",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "anthropic-claude-3-5-sonnet",
+          "locator": "Section 3, 'Safety Evaluations Overview', PDF p. 6",
+          "quote": "Note that it is possible that the results underestimate the capability of an equivalent Helpful-only model, because alignment training may cause it to hedge concerning answers."
+        }
+      ],
+      "note": "The addendum states that safety training can lead capability evaluations to underestimate underlying capability, and that its results may do so. It also states that much remains to be learned about evaluation science and cadence."
+    }
+  ],
+  "omissions": [
+    "anthropic-claude-3: the addenda for Claude 3.5 Sonnet (June 2024) and for the upgraded Claude 3.5 Sonnet and Claude 3.5 Haiku (October 2024), bound into the copy read (PDF pp. 43–63), are separate cards and were not read for this row."
+  ],
+  "retrievalFailures": [],
+  "openQuestions": []
+}

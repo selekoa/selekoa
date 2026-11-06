@@ -12,11 +12,27 @@ import { preEarliestFixesRaw } from './historical-views';
 const checked = createRepository(preEarliestFixesRaw).data;
 // Version 1 of the collection's scope note, which the packet quotes; version
 // 2 (2026-11-02) widened it to the texts of 2025.
+// The antecedent-texts admission (2026-11-04) added a venue and extended two
+// gaps; the packet quotes them as they were.
+const before1637 = (gap: string) =>
+  gap
+    .replace(
+      ' The searches for the antecedent texts later found Descartes’s Discours de la méthode (1637) on C1, recorded as context.',
+      '',
+    )
+    .replace(
+      '; Čapek’s play R.U.R. (English version, 1923) is recorded on B6 from the searches for the antecedent texts.',
+      '.',
+    );
 const collection = {
   ...superintelligencePropositions,
   version: 1,
   searchNote: {
     ...superintelligencePropositions.searchNote,
+    venues: superintelligencePropositions.searchNote.venues.filter(
+      (v) => !v.period.startsWith('Antecedent texts'),
+    ),
+    gaps: superintelligencePropositions.searchNote.gaps.map(before1637),
     scope:
       'The collection records what located texts from 1863 to 2022 say about the propositions below. “Earliest located” means the earliest text found by the searches below. It is not a claim that no earlier text exists.',
   },

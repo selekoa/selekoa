@@ -162,8 +162,50 @@ are ordinary phrases rather than names of the proposition, with its `reason` and
 `recordedAt`. The names stay in `terms`, and no record holds the `earliest-located-term`
 role. It is a nested value, so the format version stays 1.9; the entity CSV columns do not
 include it.
+
+Dataset schema 2.30 (2026-11-04) adds the model-card questions: sixteen card-question
+identifiers, `MC.Q01` to `MC.Q16`, defined in `src/domain/model-cards.ts` and kept apart
+from the framework comparison's questions, because a card is not a framework edition. A
+card cell is a `states_provision` (status `stated` or `partly`) or `provision_not_found`
+record on the card's document, with `attributes.provision.kind` `disclosure` (a new
+value, used only by card cells), the key `model-card-q01` to `model-card-q16` and
+`attributes.provision.facet.id` naming the question. It is named by the question's
+label and dated by a publication or revision date of the card's expression, or carries an
+unknown date when the card prints none. A question that does not arise for a card has no
+record; it is listed with its reason in the collection definition
+(`src/reading/model-cards.ts`). No file, column or top-level field changes, so the format
+version stays 1.9.
+
+Dataset schema 2.31 (2026-11-05) adds the law questions for "Laws compared": fifteen
+identifiers, `L.Q01` to `L.Q15`, defined in `src/domain/law-questions.ts` and kept apart
+from the framework and card questions. A law cell is a `states_provision` (status
+`stated` or `partly`) or `provision_not_found` record on a versioned instrument text, with
+the question's provision kind (an existing kind; `statement` for Q01, Q04, Q13 and Q15),
+the key `comparison-law-q01` to `comparison-law-q15` and `attributes.provision.facet.id`
+naming the question. A stated cell that rests on a paraphrase carries
+`attributes.provision.facet.paraphrased: true`, a nested value. Evidence gains an optional
+`translation`: Selekoa's working English translation beside a quotation in another
+language. Format 1.10 adds the evidence field `translation` and its CSV column.
 Releases written in earlier formats stay as they are. The generator still writes formats
 1.1 to 1.5, so the tests can reproduce those releases byte for byte.
+
+Dataset schema 2.32 (2026-11-05) adds the predicate `states_prediction` for "Predictions
+on record": a document states a prediction, named by the predicted event (a literal, in
+the text's words) and dated by the document, never by the target. Its
+`attributes.prediction` holds the `form` (`stated-forecast`, `public-bet`,
+`expert-survey`, `platform-question` or `reported-statement`), an optional `mode`
+(`forecast-or-aim`), the `predictor` (`kind`, `label`, optional `entityIds`, and a
+`reporter` for an unnamed predictor), the `event` (`type` `quote` or `paraphrase`, `text`,
+`note`), the `horizon` (`asStated`, its quoted `words`, `kind`, `years` only where printed
+and only for `absolute` and `quantile` horizons, a relative horizon's `interval`, never
+converted to a year, `relation`, `precision`, `note`), an `occasion` the horizon counts
+from, `probability` and `confidence` as worded, `points` (each probability with its own
+horizon, and its version and date where a text gives two versions), `conditions`,
+`hedge`, and, by form, `survey`, `bet` or the `capture` a platform figure is read from;
+`attested` and `retrospective` dates; and a documentary `dispute` (wording, attribution
+or version), required for a contested or unresolved record. There is no outcome field.
+The collection kind `predictions` is added for the collection's page
+(`/predictions/<id>`). No file or column changes, so the format version stays 1.10.
 
 A release is never overwritten. `pnpm release` refuses an existing or earlier version,
 and `pnpm release <version> --check` regenerates an existing release and compares it
@@ -337,6 +379,7 @@ CSV: `id`, `subject`, `predicate`, `object_kind`, `object_entity_id`, `object_va
 | `note`           | How the passage was checked and what it does not show                                | selekoa       | stable      |
 | `contextOnly`    | From schema 2.12: the passage misleads when shown alone (see below)                  | selekoa       | provisional |
 | `retrievalRoute` | From schema 2.15: `direct`, `reader_relay` or `x_syndication` (see below)            | structured    | provisional |
+| `translation`    | From schema 2.31: Selekoa's working English translation of a quotation (see below)   | selekoa       | provisional |
 
 The internal schema stores one `passage` field; the release splits it into `quote` and
 `paraphrase` so that third-party text has a field of its own.
@@ -353,9 +396,13 @@ archive copy and does not authenticate earlier wording; or `x_syndication`, the 
 post from X's own syndication endpoint, which truncates long notes. Records admitted before
 schema 2.15 omit it.
 
+`translation`, beside a quotation in another language than English, is Selekoa's working
+English translation of it, not verified by a person. Releases from format 1.10 carry it.
+
 CSV: `id`, `claim_id`, `source_id`, `source_role`, `support`, `locator`, `passage_type`,
 `quote`, `paraphrase`, `verification`, `checked_at`, `reviewer`, `note` and, from format
-1.3, `context_only_json` and, from format 1.6, `retrieval_route`.
+1.3, `context_only_json`, from format 1.6, `retrieval_route` and, from format 1.10,
+`translation`.
 
 ## Sources
 
@@ -403,13 +450,15 @@ page: a guided question (`question`), a document history (`documents`), a contro
 timeline (`control`), a set of external commitments (`commitments`) or, from format 1.1, a
 collection of propositions with the texts that articulate, contest or bear on them
 (`propositions`), and also a framework comparison (`compare`) and, from release 0.12.0,
-a guided reading that brings several collections' records together (`guide`). It adds no facts;
+a guided reading that brings several collections' records together (`guide`) and, from
+release 0.31.0, a collection of dated predictions with its chart and table
+(`predictions`). It adds no facts;
 its text frames the claims it lists.
 
 | Field             | Meaning                                                                                                     | Class      | Stability   |
 | ----------------- | ----------------------------------------------------------------------------------------------------------- | ---------- | ----------- |
 | `id`              | `<kind>/<id>`                                                                                               | structured | stable      |
-| `kind`            | `question`, `documents`, `compare`, `control`, `commitments`, `propositions` or `guide`                     | structured | stable      |
+| `kind`            | `question`, `documents`, `compare`, `control`, `commitments`, `propositions`, `guide` or `predictions`      | structured | stable      |
 | `version`         | The collection's own version number                                                                         | structured | stable      |
 | `title`           | Page title                                                                                                  | selekoa    | stable      |
 | `question`        | The research question the collection addresses                                                              | selekoa    | stable      |

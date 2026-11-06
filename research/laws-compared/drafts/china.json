@@ -1,0 +1,601 @@
+{
+  "group": "china",
+  "drafter": "fresh-context drafting pass, 2026-11-01",
+  "cells": [
+    {
+      "instrument": "cn-genai-measures",
+      "question": "Q01",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "cn-genai",
+          "locator": "Article 7 (第七条), chapeau",
+          "quote": "生成式人工智能服务提供者（以下称提供者）",
+          "translation": "providers of generative AI services (hereinafter 'providers')"
+        },
+        {
+          "source": "cn-genai",
+          "locator": "Article 22 (第二十二条), point (2)",
+          "quote": "包括通过提供可编程接口等方式提供生成式人工智能服务",
+          "translation": "including providing generative AI services by means such as providing programmable interfaces",
+          "datasetClaim": "fl-cn-genai-art22-provider-definition"
+        }
+      ],
+      "note": "The duties fall on 生成式人工智能服务提供者 (providers of generative AI services), defined in Article 22(2) as organisations and individuals that use generative AI technology to provide generative AI services, including through programmable interfaces. The Measures do not define a developer; they have no tiers. Some provisions (Article 4) address both provision and use; Article 22(3) defines users (使用者). Translations are Selekoa's working translations."
+    },
+    {
+      "instrument": "cn-genai-measures",
+      "question": "Q02",
+      "status": "partly",
+      "passages": [
+        {
+          "source": "cn-genai",
+          "locator": "Article 2 (第二条), first paragraph",
+          "quote": "利用生成式人工智能技术向中华人民共和国境内公众提供生成文本、图片、音频、视频等内容的服务（以下称生成式人工智能服务），适用本办法。",
+          "translation": "These Measures apply to services that use generative AI technology to provide content such as text, images, audio and video to the public within the territory of the People's Republic of China (hereinafter 'generative AI services').",
+          "datasetClaim": "cn-genai-measures-scope"
+        },
+        {
+          "source": "cn-genai",
+          "locator": "Article 2 (第二条), third paragraph",
+          "quote": "未向境内公众提供生成式人工智能服务的，不适用本办法的规定",
+          "translation": "where generative AI services are not provided to the public within the territory, the provisions of these Measures do not apply",
+          "datasetClaim": "fl-cn-genai-scope-non-public-rd"
+        }
+      ],
+      "note": "Coverage turns on providing generative AI services to the public in China; there is no compute, revenue, capability or user-number threshold. Article 2(3) excludes research, development and application by industry organisations, enterprises, education and research institutions and others that do not provide services to the public in China; Article 2(2) defers to other rules for news publishing, film and television production and literary and artistic creation. Article 17 adds a further condition (services 'with public-opinion attributes or social mobilisation capacity') for security assessment and algorithm filing only; see Q05."
+    },
+    {
+      "instrument": "cn-genai-measures",
+      "question": "Q03",
+      "status": "not-found",
+      "note": "No provision requiring the provider to have a written framework, policy or protocol on the risks of its models was found.",
+      "search": {
+        "read": "Order No. 15 preamble and Articles 1–24 in full (the page repeats the text; the first copy was read and the second spot-checked).",
+        "terms": ["标准", "评估", "制度|管理体系|风险", "规则", "措施"],
+        "setAside": [
+          {
+            "locator": "Article 8 (第八条)",
+            "reason": "Requires 'clear, specific and operable' data-annotation rules (标注规则) and annotation quality assessment: a document on a single other subject (data annotation), not on model risks."
+          },
+          {
+            "locator": "Article 4 (第四条), points (1)–(5)",
+            "reason": "Requires 'effective measures' (有效措施) against prohibited content, discrimination and for transparency and accuracy, addressed to providing and using services; no risk-management system or written document on model risks is required, so not counted as partly. Point (2) requires effective measures against discrimination in algorithm design, training-data selection, model generation and optimisation and service provision: measures on a single other subject (discrimination), not a framework or system on model risks."
+          },
+          {
+            "locator": "Article 15 (第十五条)",
+            "reason": "Complaint and reporting mechanism for the public; not a risk framework."
+          },
+          {
+            "locator": "Article 5 (第五条), second paragraph",
+            "reason": "Supports cooperation on risk prevention (风险防范) among organisations; encouragement, not a duty on providers."
+          }
+        ]
+      }
+    },
+    {
+      "instrument": "cn-genai-measures",
+      "question": "Q04",
+      "status": "not-applicable",
+      "note": "Q03 found no framework document whose publication or submission could be asked about. Article 17 algorithm filing is recorded under Q05 and Q08."
+    },
+    {
+      "instrument": "cn-genai-measures",
+      "question": "Q05",
+      "status": "partly",
+      "passages": [
+        {
+          "source": "cn-genai",
+          "locator": "Article 17 (第十七条)",
+          "quote": "提供具有舆论属性或者社会动员能力的生成式人工智能服务的，应当按照国家有关规定开展安全评估，并按照《互联网信息服务算法推荐管理规定》履行算法备案和变更、注销备案手续。",
+          "translation": "Those providing generative AI services with public-opinion attributes or social mobilisation capacity shall carry out a security assessment in accordance with relevant state provisions, and complete algorithm filing, modification and cancellation procedures in accordance with the Provisions on the Administration of Algorithmic Recommendation for Internet Information Services.",
+          "datasetClaim": "cn-genai-measures-security-assessment"
+        }
+      ],
+      "note": "The security assessment (安全评估) is required only for services with public-opinion attributes or social mobilisation capacity, and is of the service, by reference to 'relevant state provisions' not set out in the Measures; no duty to evaluate or test the model for risks was found. Article 8 requires annotation quality assessment (set aside: data annotation, not risk).",
+      "search": {
+        "read": "Articles 4, 7, 8, 14, 17 and 19.",
+        "terms": ["评估", "测试", "检测"],
+        "setAside": [
+          {
+            "locator": "Article 8 (第八条)",
+            "reason": "数据标注质量评估 (annotation quality assessment) concerns data annotation, not risks."
+          }
+        ]
+      }
+    },
+    {
+      "instrument": "cn-genai-measures",
+      "question": "Q06",
+      "status": "partly",
+      "passages": [
+        {
+          "source": "cn-genai",
+          "locator": "Article 19 (第十九条), first paragraph",
+          "quote": "开展监督检查",
+          "translation": "carry out supervision and inspection [of generative AI services]"
+        },
+        {
+          "source": "cn-genai",
+          "locator": "Article 19 (第十九条), first paragraph",
+          "quote": "按要求对训练数据来源、规模、类型、标注规则、算法机制机理等予以说明",
+          "translation": "explain, as required, the sources, scale and types of training data, annotation rules, algorithmic mechanisms and principles, and so on",
+          "datasetClaim": "fl-cn-genai-art19-explain-training-data"
+        }
+      ],
+      "note": "Competent authorities (有关主管部门) carry out supervision and inspection of generative AI services 'according to their duties'; providers shall cooperate, explain the listed matters as required and provide necessary technical and data support. The provision is an inspection of the service with explanations from the provider; it does not require an assessment of the model by an outside party. Article 19(2) binds bodies and personnel taking part in security assessment and inspection to confidentiality, without stating who conducts the Article 17 assessment.",
+      "search": {
+        "read": "Articles 16–21.",
+        "terms": ["监督检查", "评估", "第三方|机构"],
+        "setAside": [
+          {
+            "locator": "Article 17 (第十七条)",
+            "reason": "Security assessment is a duty of the provider 'in accordance with relevant state provisions'; the Measures do not say an outside party conducts it."
+          }
+        ]
+      }
+    },
+    {
+      "instrument": "cn-genai-measures",
+      "question": "Q07",
+      "status": "partly",
+      "passages": [
+        {
+          "source": "cn-genai",
+          "locator": "Article 14 (第十四条), first paragraph",
+          "quote": "向有关主管部门报告",
+          "translation": "report to the competent authorities"
+        },
+        {
+          "source": "cn-genai",
+          "locator": "Article 14 (第十四条), first paragraph",
+          "quote": "采取模型优化训练等措施进行整改",
+          "translation": "take measures such as model optimisation training to rectify",
+          "datasetClaim": "fl-cn-genai-art14-illegal-content"
+        }
+      ],
+      "note": "Where a provider discovers illegal content (违法内容), it shall promptly take disposal measures (stopping generation, stopping transmission, deletion), rectify, and report to the competent authorities; Article 14(2) adds a reporting duty where users are found using the service for illegal activities. The Measures do not define incidents; the authority is not named beyond 'competent authorities', and no deadline is stated for the report ('及时' qualifies the disposal measures).",
+      "search": {
+        "read": "Articles 9–15 and 19.",
+        "terms": ["报告", "事件|事故", "及时"],
+        "setAside": []
+      }
+    },
+    {
+      "instrument": "cn-genai-measures",
+      "question": "Q08",
+      "status": "partly",
+      "passages": [
+        {
+          "source": "cn-genai",
+          "locator": "Article 19 (第十九条), first paragraph",
+          "quote": "按要求对训练数据来源、规模、类型、标注规则、算法机制机理等予以说明",
+          "translation": "explain, as required, the sources, scale and types of training data, annotation rules, algorithmic mechanisms and principles, and so on",
+          "datasetClaim": "fl-cn-genai-art19-explain-training-data"
+        },
+        {
+          "source": "cn-genai",
+          "locator": "Article 17 (第十七条)",
+          "quote": "提供具有舆论属性或者社会动员能力的生成式人工智能服务的，应当按照国家有关规定开展安全评估，并按照《互联网信息服务算法推荐管理规定》履行算法备案和变更、注销备案手续。",
+          "translation": "Those providing generative AI services with public-opinion attributes or social mobilisation capacity shall carry out a security assessment in accordance with relevant state provisions, and complete algorithm filing, modification and cancellation procedures in accordance with the Provisions on the Administration of Algorithmic Recommendation for Internet Information Services.",
+          "datasetClaim": "cn-genai-measures-security-assessment"
+        }
+      ],
+      "note": "Information on training data and algorithmic mechanisms is supplied to authorities on request during supervision and inspection (Article 19); for services with public-opinion attributes or social mobilisation capacity, algorithm filing runs under the Algorithmic Recommendation Provisions, whose filing content is not set out in these Measures. No duty to draw up per-model documentation or publish a model report with a deployment trigger was found. Article 10 requires providers to publish the service's intended users, occasions and uses; Article 12 requires labelling of generated images, video and other content under the Deep Synthesis Provisions (an output-labelling duty, noted only).",
+      "search": {
+        "read": "Articles 7–12, 17 and 19.",
+        "terms": ["说明", "公开", "备案", "报告"],
+        "setAside": [
+          {
+            "locator": "Article 10 (第十条)",
+            "reason": "Publication of the service's applicable users, occasions and uses (适用人群、场合、用途): information on the service, not documentation on a model."
+          },
+          {
+            "locator": "Article 12 (第十二条)",
+            "reason": "Labelling of generated content (对图片、视频等生成内容进行标识): an output-labelling duty, excluded by the criterion."
+          }
+        ]
+      }
+    },
+    {
+      "instrument": "cn-genai-measures",
+      "question": "Q09",
+      "status": "not-found",
+      "note": "No provision prohibiting retaliation against people who disclose risks or violations, or requiring a channel for such disclosures by employees or others, was found. A public complaint and reporting mechanism is present (Article 15) and is noted.",
+      "search": {
+        "read": "Articles 1–24 in full.",
+        "terms": ["举报|投诉|报复", "打击报复", "员工|职工|工作人员"],
+        "setAside": [
+          {
+            "locator": "Article 15 (第十五条)",
+            "reason": "Providers must set up complaint and reporting (投诉、举报) mechanisms for the public with published handling procedures and response times: a general complaint mechanism for users, which the criterion excludes."
+          },
+          {
+            "locator": "Article 18 (第十八条)",
+            "reason": "Users who find a service non-compliant have the right to complain or report to the competent authorities; a user complaint right, with no anti-retaliation protection."
+          }
+        ]
+      }
+    },
+    {
+      "instrument": "cn-genai-measures",
+      "question": "Q10",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "cn-genai",
+          "locator": "Order No. 15 (令第15号), date line",
+          "quote": "2023年7月10日",
+          "translation": "10 July 2023",
+          "datasetClaim": "cn-genai-measures-issued"
+        }
+      ],
+      "note": "Date of the order of seven authorities (国家互联网信息办公室, 国家发展和改革委员会, 教育部, 科学技术部, 工业和信息化部, 公安部, 国家广播电视总局), Order No. 15, issuing the Measures (gov.cn 成文日期 2023-07-10). The order also states that the Measures were deliberated and adopted at the 12th office meeting of 2023 of the Cyberspace Administration of China on 23 May 2023, with the agreement of the other six authorities (paraphrase, not quoted to save budget)."
+    },
+    {
+      "instrument": "cn-genai-measures",
+      "question": "Q11",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "cn-genai",
+          "locator": "Article 24 (第二十四条)",
+          "quote": "本办法自2023年8月15日起施行。",
+          "translation": "These Measures take effect on 15 August 2023.",
+          "datasetClaim": "cn-genai-measures-issued"
+        }
+      ],
+      "note": "Fixed date in the Measures; the order repeats it (现予公布，自2023年8月15日起施行)."
+    },
+    {
+      "instrument": "cn-genai-measures",
+      "question": "Q12",
+      "status": "not-found",
+      "note": "No separate application date or transition period, including for services already offered, was found.",
+      "search": {
+        "read": "Order No. 15 and Articles 1–24, with attention to Chapter 5 (附则, Articles 22–24).",
+        "terms": ["过渡|之前|已经|存量", "起施行", "日起"],
+        "setAside": [
+          {
+            "locator": "Order No. 15, first paragraph",
+            "reason": "'现予公布，自2023年8月15日起施行' repeats the Article 24 effective date; not a separate application date."
+          }
+        ]
+      }
+    },
+    {
+      "instrument": "cn-genai-measures",
+      "question": "Q13",
+      "status": "partly",
+      "passages": [
+        {
+          "source": "cn-genai",
+          "locator": "Article 21 (第二十一条), first paragraph, closing words",
+          "quote": "责令暂停提供相关服务",
+          "translation": "order suspension of the provision of the relevant services",
+          "datasetClaim": "fl-cn-genai-art21-penalties"
+        }
+      ],
+      "note": "Breaches are penalised by the competent authorities under the Cybersecurity Law, Data Security Law, Personal Information Protection Law, Law on Progress of Science and Technology and other laws and administrative regulations; where those are silent, the Measures provide for a warning, a notice of criticism and an order to correct within a time limit by the competent authorities, and, on refusal to correct or in serious cases, order suspension of the relevant services. Article 21(2) refers to public-security administrative penalties and criminal liability. No maximum is stated in the Measures; penalties are by reference to other laws.",
+      "search": {
+        "read": "Articles 20–21.",
+        "terms": ["罚款|处罚|万元"],
+        "setAside": []
+      }
+    },
+    {
+      "instrument": "cn-genai-measures",
+      "question": "Q14",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "cn-genai",
+          "locator": "Article 16 (第十六条), first paragraph",
+          "quote": "网信、发展改革、教育、科技、工业和信息化、公安、广播电视、新闻出版等部门",
+          "translation": "the cyberspace, development and reform, education, science and technology, industry and information technology, public security, radio and television, press and publication and other departments"
+        }
+      ],
+      "note": "These departments strengthen the management of generative AI services 'according to their respective duties' (Article 16). Supervision and inspection (Article 19) and penalties (Article 21) are assigned to 'competent authorities' (有关主管部门) without further naming; Article 20 names the national cyberspace department (国家网信部门) for services provided from outside China."
+    },
+    {
+      "instrument": "cn-genai-measures",
+      "question": "Q15",
+      "status": "not-found",
+      "note": "No reference to a provider's own safety framework, a code of practice or a standard was found. The Measures refer to other departmental rules, set aside below.",
+      "search": {
+        "read": "Articles 1–24 in full.",
+        "terms": ["标准", "规范", "指引", "按照《"],
+        "setAside": [
+          {
+            "locator": "Article 17 (第十七条)",
+            "reason": "Refers to 'relevant state provisions' for security assessment and to the Algorithmic Recommendation Provisions for filing: departmental rules, not a code of practice or standard."
+          },
+          {
+            "locator": "Article 12 (第十二条)",
+            "reason": "Labelling under the Deep Synthesis Provisions (《互联网信息服务深度合成管理规定》): a departmental rule, not a code or standard."
+          },
+          {
+            "locator": "Article 16 (第十六条), second paragraph",
+            "reason": "Authorities are to formulate classified and graded supervision rules or guidelines (监管规则或者指引); a direction to authorities, not a document named as a means of compliance."
+          }
+        ]
+      }
+    },
+    {
+      "instrument": "cn-labelling-measures",
+      "question": "Q01",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "cn-labelling",
+          "locator": "Article 2 (第二条)",
+          "quote": "符合…规定情形的网络信息服务提供者（以下简称“服务提供者”）",
+          "translation": "network information service providers that fall within the circumstances provided for in [the three named rules] (hereinafter 'service providers')"
+        },
+        {
+          "source": "cn-labelling",
+          "locator": "Article 2 (第二条), closing words",
+          "quote": "开展人工智能生成合成内容标识活动，适用本办法",
+          "translation": "[when they] carry out labelling of AI-generated synthetic content, these Measures apply",
+          "datasetClaim": "fl-cn-labelling-scope"
+        }
+      ],
+      "note": "The principal duties fall on 服务提供者 (service providers): network information service providers within the circumstances of the Algorithmic Recommendation Provisions, the Deep Synthesis Provisions or the Interim Measures for Generative AI Services. Other duties fall on service providers offering content-dissemination services (Article 6), internet application distribution platforms (Article 7), and users and 'any organisation or individual' (Article 10). The Measures do not address model developers as such and have no tiers."
+    },
+    {
+      "instrument": "cn-labelling-measures",
+      "question": "Q02",
+      "status": "partly",
+      "passages": [
+        {
+          "source": "cn-labelling",
+          "locator": "Article 2 (第二条)",
+          "quote": "符合…规定情形的网络信息服务提供者（以下简称“服务提供者”）",
+          "translation": "network information service providers that fall within the circumstances provided for in [the three named rules] (hereinafter 'service providers')"
+        }
+      ],
+      "note": "Coverage is defined by reference to the circumstances of three other rules (Algorithmic Recommendation Provisions, Deep Synthesis Provisions, Interim Measures for Generative AI Services), with no model-level threshold. The explicit-labelling duty of Article 4 applies where the service falls within Article 17(1) of the Deep Synthesis Provisions."
+    },
+    {
+      "instrument": "cn-labelling-measures",
+      "question": "Q03",
+      "status": "not-found",
+      "note": "No provision requiring a written framework, policy or protocol on model risks was found; the Measures concern content labelling only.",
+      "search": {
+        "read": "Notice 国信办通字〔2025〕2号 and Articles 1–14 in full.",
+        "terms": ["制度|管理体系|风险", "评估", "标准"],
+        "setAside": [
+          {
+            "locator": "Article 8 (第八条)",
+            "reason": "Service providers must state labelling methods and styles in the user service agreement (用户服务协议): a document on a single other subject (content labelling), excluded by the criterion."
+          },
+          {
+            "locator": "Article 9 (第九条)",
+            "reason": "A user agreement (用户协议) setting the user's labelling obligations before unlabelled content is supplied: labelling only."
+          }
+        ]
+      }
+    },
+    {
+      "instrument": "cn-labelling-measures",
+      "question": "Q04",
+      "status": "not-applicable",
+      "note": "Q03 found no framework document whose publication or submission could be asked about."
+    },
+    {
+      "instrument": "cn-labelling-measures",
+      "question": "Q05",
+      "status": "not-found",
+      "note": "No duty to evaluate or test models for risks, or to assess a service or content category for risks, was found.",
+      "search": {
+        "read": "Articles 1–14 in full.",
+        "terms": ["评估", "测试|检测", "风险", "核验"],
+        "setAside": [
+          {
+            "locator": "Article 6 (第六条), first paragraph, point (1) and (3)",
+            "reason": "Dissemination services check file metadata for implicit labels (核验) and detect explicit labels or other traces: label verification on content, not a risk evaluation."
+          },
+          {
+            "locator": "Article 12 (第十二条)",
+            "reason": "Refers to security assessment (安全评估) procedures under other rules, during which labelling materials are supplied; it does not itself impose an assessment."
+          }
+        ]
+      }
+    },
+    {
+      "instrument": "cn-labelling-measures",
+      "question": "Q06",
+      "status": "partly",
+      "passages": [
+        {
+          "source": "cn-labelling",
+          "locator": "Article 7 (第七条)",
+          "quote": "互联网应用程序分发平台应当核验其生成合成内容标识相关材料",
+          "translation": "the internet application distribution platform shall verify its materials relating to the labelling of generated synthetic content"
+        },
+        {
+          "source": "cn-labelling",
+          "locator": "Article 12 (第十二条)",
+          "quote": "服务提供者在履行算法备案、安全评估等手续时，应当按照本办法提供生成合成内容标识相关材料",
+          "translation": "when completing procedures such as algorithm filing and security assessment, service providers shall provide materials relating to the labelling of generated synthetic content in accordance with these Measures",
+          "datasetClaim": "fl-cn-labelling-filing-materials"
+        }
+      ],
+      "note": "App distribution platforms verify the labelling materials of app service providers that offer AI generation or synthesis services, at listing or launch review (Article 7); labelling materials are supplied in algorithm filing and security assessment procedures under other rules (Article 12). Both concern labelling documents, not an assessment of the model or of risk practices.",
+      "search": {
+        "read": "Articles 6–13.",
+        "terms": ["核验", "评估", "备案"],
+        "setAside": []
+      }
+    },
+    {
+      "instrument": "cn-labelling-measures",
+      "question": "Q07",
+      "status": "not-found",
+      "note": "No duty to report incidents to a public authority was found.",
+      "search": {
+        "read": "Articles 1–14 in full.",
+        "terms": ["报告", "事件|事故", "通报"],
+        "setAside": [
+          {
+            "locator": "Article 12 (第十二条)",
+            "reason": "Service providers are to strengthen sharing of labelling information and support the prevention of and crackdown on related crime; no reporting duty or recipient authority is stated."
+          },
+          {
+            "locator": "Article 9 (第九条)",
+            "reason": "Retention of logs on recipients of unlabelled content for no less than six months (不少于六个月); a retention duty, not a report to an authority."
+          }
+        ]
+      }
+    },
+    {
+      "instrument": "cn-labelling-measures",
+      "question": "Q08",
+      "status": "not-found",
+      "note": "No duty to publish a model report or supply model documentation was found. The Measures impose output-labelling duties (explicit labels, Article 4; implicit labels in file metadata, Article 5), noted only as the criterion excludes them.",
+      "search": {
+        "read": "Articles 1–14 in full.",
+        "terms": ["材料", "备案", "说明", "公开|公布"],
+        "setAside": [
+          {
+            "locator": "Article 12 (第十二条)",
+            "reason": "Labelling-related materials (生成合成内容标识相关材料) supplied in filing and assessment procedures concern labelling, not the model."
+          },
+          {
+            "locator": "Article 7 (第七条)",
+            "reason": "App service providers state to distribution platforms whether they provide AI generation or synthesis services; a statement to a private platform about the service, not model documentation."
+          },
+          {
+            "locator": "Articles 4–5 (第四条、第五条)",
+            "reason": "Explicit and implicit labelling of generated content: output-labelling duties, excluded by the criterion."
+          }
+        ]
+      }
+    },
+    {
+      "instrument": "cn-labelling-measures",
+      "question": "Q09",
+      "status": "not-found",
+      "note": "No anti-retaliation provision or disclosure channel was found.",
+      "search": {
+        "read": "Articles 1–14 in full.",
+        "terms": ["举报|投诉|报复", "员工|职工|工作人员"],
+        "setAside": []
+      }
+    },
+    {
+      "instrument": "cn-labelling-measures",
+      "question": "Q10",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "cn-labelling",
+          "locator": "Notice, date line",
+          "quote": "2025年3月7日",
+          "translation": "7 March 2025"
+        },
+        {
+          "source": "cn-labelling",
+          "locator": "Notice header",
+          "quote": "国信办通字〔2025〕2号",
+          "translation": "Guoxinban Tongzi [2025] No. 2",
+          "datasetClaim": "fl-cn-labelling-issued"
+        }
+      ],
+      "note": "Date of the notice of four authorities (国家互联网信息办公室, 工业和信息化部, 公安部, 国家广播电视总局) issuing (印发) the Measures to provincial-level counterparts (gov.cn 成文日期 2025-03-07)."
+    },
+    {
+      "instrument": "cn-labelling-measures",
+      "question": "Q11",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "cn-labelling",
+          "locator": "Article 14 (第十四条)",
+          "quote": "本办法自2025年9月1日起施行。",
+          "translation": "These Measures take effect on 1 September 2025.",
+          "datasetClaim": "fl-cn-labelling-effective"
+        }
+      ],
+      "note": "Fixed date in the Measures."
+    },
+    {
+      "instrument": "cn-labelling-measures",
+      "question": "Q12",
+      "status": "not-found",
+      "note": "No separate application date or transition period was found.",
+      "search": {
+        "read": "Notice and Articles 1–14 in full.",
+        "terms": ["过渡|之前|已经|存量", "起施行", "日起"],
+        "setAside": []
+      }
+    },
+    {
+      "instrument": "cn-labelling-measures",
+      "question": "Q13",
+      "status": "partly",
+      "passages": [
+        {
+          "source": "cn-labelling",
+          "locator": "Article 13 (第十三条)",
+          "quote": "按照有关法律、行政法规、部门规章的规定予以处理",
+          "translation": "deal with [the breach] in accordance with relevant laws, administrative regulations and departmental rules"
+        }
+      ],
+      "note": "Breaches are dealt with under other laws, administrative regulations and departmental rules; the Measures state no penalty or maximum of their own.",
+      "search": {
+        "read": "Articles 10–14.",
+        "terms": ["罚款|处罚|万元"],
+        "setAside": []
+      }
+    },
+    {
+      "instrument": "cn-labelling-measures",
+      "question": "Q14",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "cn-labelling",
+          "locator": "Article 13 (第十三条)",
+          "quote": "由网信、电信、公安和广播电视等有关主管部门依据职责",
+          "translation": "by the cyberspace, telecommunications, public security, radio and television and other competent authorities according to their duties"
+        }
+      ],
+      "note": "The listed authorities deal with breaches according to their duties, under other laws and rules (see Q13)."
+    },
+    {
+      "instrument": "cn-labelling-measures",
+      "question": "Q15",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "cn-labelling",
+          "locator": "Article 11 (第十一条)",
+          "quote": "还应当符合相关法律、行政法规、部门规章和强制性国家标准的要求",
+          "translation": "shall also comply with the requirements of relevant laws, administrative regulations, departmental rules and mandatory national standards",
+          "datasetClaim": "fl-cn-labelling-standards"
+        }
+      ],
+      "note": "Service providers carrying out labelling 'shall also comply with' mandatory national standards (强制性国家标准); the Measures do not name a standard (no standard number appears in the text). No developer framework or code of practice is referred to. Articles 4 and 5 refer to the Deep Synthesis Provisions for the scope of explicit labelling and for implicit labels."
+    }
+  ],
+  "omissions": [
+    "cn-genai Article 7 (training data: lawful sources, IP, personal information, data quality) and dataset quotes fl-cn-genai-art7-*: training-data duties, not within any of the fifteen criteria.",
+    "cn-genai Article 9 (network information security obligations, service agreements), Article 10 (minors), Article 11 (input data protection), Article 13 (stable service): not used.",
+    "cn-genai Article 23 (administrative licensing where required by law; foreign investment): not used.",
+    "cn-genai Article 1 and cn-labelling Article 1: legal bases (Cybersecurity Law, Data Security Law, PIPL, Science and Technology Progress Law; the labelling Measures also cite the Algorithmic Recommendation and Deep Synthesis Provisions and the Interim Measures).",
+    "cn-labelling Article 3 (definitions of explicit and implicit labels), Article 5(2) (digital watermarks encouraged), Article 10(2) (prohibition on removing or forging labels): output-labelling provisions, noted under Q08 only in general terms.",
+    "cn-labelling Article 9 retention of logs for no less than six months (dataset quote fl-cn-labelling-unlabelled-logs): set aside under Q07."
+  ],
+  "retrievalFailures": [
+    "GB 45438-2025 (mandatory national standard on labelling methods) text not retrieved; the Measures' Article 11 refers only generically to mandatory national standards, so the link to GB 45438-2025 is not established from the Measures' own text.",
+    "cac.gov.cn copies not retrieved; the gov.cn policy-library copies (which repeat the text twice) were used."
+  ],
+  "openQuestions": [
+    "cn-genai Q07: Article 14 reports concern discovered illegal content and illegal user activity, which the Measures do not call incidents. Recommendation: keep partly (no deadline, authority unnamed) with the note's qualification; change to not-found if the maintainer reads 'incident' as requiring the instrument's own incident concept.",
+    "cn-genai Q08: Article 19 on-request explanation of training data and algorithms, plus Article 17 algorithm filing, recorded as partly. Recommendation: keep partly; the filing content under the Algorithmic Recommendation Provisions is outside this instrument and was not read.",
+    "cn-genai Q03: Article 4 'effective measures' could be read as risk measures (partly). Recommendation: keep not-found, since the measures target listed content and discrimination outcomes rather than model risk management.",
+    "cn-labelling Q06: an app distribution platform (private party) verifying labelling materials recorded as partly. Recommendation: keep partly or downgrade to not-found if 'outside assessment' should mean assessment of model risk practices only.",
+    "cn-genai budget: about 7 characters of new quotation remain after this draft; any further cn-genai quotes need dataset reuse or a budget decision."
+  ]
+}

@@ -13,17 +13,15 @@ import type { PropositionsFrame } from '../domain/propositions';
 /** The frame of `superintelligencePropositions` (src/reading/superintelligence.ts). */
 export const superintelligenceFrame = {
   id: 'superintelligence',
-  version: 4,
+  version: 5,
   title: 'Propositions about superintelligence, 1863–2025',
   question:
-    'Which located texts from 1863 to 2025 state, dispute or bear on propositions about machine intelligence? The propositions concern intelligence rising faster than earlier change, and people’s means of observing and directing it becoming inadequate. For each, which text is the earliest located?',
+    'Which located texts from 1863 to 2025, and one earlier text, of 1637, recorded on C1 as context, state, dispute or bear on propositions about machine intelligence? The propositions concern intelligence rising faster than earlier change, and people’s means of observing and directing it becoming inadequate. For each, which text is the earliest located?',
   editorialStatus: 'machine-proposed',
   groups: [
     {
       id: 'A',
       label: 'Temporal compression',
-      description:
-        'Propositions that machine intelligence could rise, or be raced towards, much faster than earlier technological change.',
       propositionIds: [
         'intelligence-explosion',
         'seed-ai',
@@ -36,8 +34,6 @@ export const superintelligenceFrame = {
     {
       id: 'B',
       label: 'Changing epistemic adequacy',
-      description:
-        'Propositions that what people can observe of a capable system, or their means of directing it, may stop being adequate as the system becomes more capable.',
       propositionIds: [
         'treacherous-turn',
         'strategic-concealment',
@@ -50,8 +46,6 @@ export const superintelligenceFrame = {
     {
       id: 'C',
       label: 'Wider senses recorded separately',
-      description:
-        'Three propositions kept apart from B5, B2 and A6, whose criteria are narrower. They were looked for only before mid-1996.',
       propositionIds: [
         'behavioural-tests-as-evidence',
         'designed-deception-of-testers',
@@ -59,6 +53,12 @@ export const superintelligenceFrame = {
       ],
     },
   ],
+  // Widened on 2026-11-04 from the default 1860–2025 for Descartes (1637), on C1.
+  axis: {
+    from: 1630,
+    to: 2025,
+    ticks: ['1637', '1863', '1950', '2000', '2022'],
+  },
 } satisfies PropositionsFrame;
 
 /** The frame of `riskDebate` (src/reading/risk-debate.ts). */
@@ -74,8 +74,6 @@ export const riskDebateFrame = {
       id: 'R1',
       label:
         'Arguments that advanced AI could pose catastrophic risk, and their premises',
-      description:
-        'The premises (orthogonality, instrumental convergence, misalignment learned in training, the treacherous turn, fast takeoff, the difficulty of alignment) and the claims of extinction, loss of control and misuse. B1 and A4 are the treacherous-turn and fast-takeoff propositions of the superintelligence collection, shown here with the texts recorded on them from both searches.',
       propositionIds: [
         'orthogonality',
         'instrumental-convergence',
@@ -92,8 +90,6 @@ export const riskDebateFrame = {
       id: 'R2',
       label:
         'Arguments that the risk is lower, later, placed elsewhere or better handled otherwise',
-      description:
-        'Whether intelligence brings benevolence or control by design suffices, whether the risk claims are speculative, whether present harms come first, whether capabilities will plateau, whether language models lack agency, whether open models reduce risk, whether takeoff will be gradual and whether incentives will produce safety. The group label says which way a proposition points; it does not classify the people whose texts are recorded.',
       propositionIds: [
         'benevolence-or-no-drive-to-dominate',
         'control-by-design',
@@ -131,8 +127,6 @@ export const yudkowskyArgumentsFrame = {
     {
       id: 'Y',
       label: 'Common claims about advanced AI',
-      description:
-        'Claims often made about advanced AI, phrased generically for this collection. The codes follow the numbers of the research pack the records come from, which has no Y23.',
       propositionIds: [
         'switch-off-if-dangerous',
         'intelligence-brings-benevolence',
@@ -184,7 +178,7 @@ export const yudkowskyArgumentsFrame = {
 /** The frame of `machineSuccession` (src/reading/machine-succession.ts). */
 export const machineSuccessionFrame = {
   id: 'machine-succession',
-  version: 7,
+  version: 8,
   title:
     'Machine succession, scale and acceleration: propositions in located texts, 1863–2026',
   question:
@@ -194,8 +188,6 @@ export const machineSuccessionFrame = {
     {
       id: 'WA',
       label: 'Machine intelligence and the human succession',
-      description:
-        'Propositions that machines succeed humans as the leading intelligence, that this would be acceptable or desirable, that human minds could move into machines, and that building superhuman machines would bring conflict among humans.',
       propositionIds: [
         'machine-succession',
         'succession-acceptable',
@@ -206,8 +198,6 @@ export const machineSuccessionFrame = {
     {
       id: 'WB',
       label: 'Scale, direction and cosmic setting of machine intelligence',
-      description:
-        'Propositions that machine intelligence could exceed human intelligence by many orders of magnitude, that its rise is a physical or cosmic process, and that it spreads beyond Earth.',
       propositionIds: [
         'vast-superiority',
         'cosmic-process',
@@ -217,8 +207,6 @@ export const machineSuccessionFrame = {
     {
       id: 'WC',
       label: 'Machine intelligence, capital, values and acceleration',
-      description:
-        'Propositions that capital or the techno-economic process is itself a machine intelligence, that the growth of intelligence is its own end, and that its development should be accelerated rather than restrained.',
       propositionIds: [
         'capital-as-machine-intelligence',
         'intelligence-as-own-end',
@@ -238,21 +226,54 @@ export const machineSuccessionFrame = {
   earliestEmpty: 'No located text meets the criterion.',
 } satisfies PropositionsFrame;
 
+/** The frame of `antecedentTexts` (src/reading/antecedent-texts.ts). */
+export const antecedentTextsFrame = {
+  id: 'antecedent-texts',
+  version: 2,
+  title: 'Antecedent texts: machine intelligence before 1965',
+  question:
+    'Which located texts state, contest or bear on three propositions about machines that recur before 1965: that a machine can only do what it is ordered to do, that a machine could think, and that machine intelligence will bring a singularity? For each proposition, which text is the earliest located?',
+  editorialStatus: 'machine-proposed',
+  groups: [
+    {
+      id: 'UA',
+      label: 'Whether machines can think or originate',
+      propositionIds: [
+        'machines-only-do-what-they-are-ordered',
+        'machines-could-think',
+      ],
+    },
+    {
+      id: 'UB',
+      label: 'A point beyond which human affairs could not continue',
+      propositionIds: ['technological-singularity'],
+    },
+  ],
+  axis: {
+    from: 1630,
+    to: 1995,
+    ticks: ['1637', '1843', '1900', '1950', '1965', '1993'],
+  },
+  landing:
+    '{propositions} propositions about whether machines can think or originate anything, and {records} records from {texts} texts that state, contest or bear on them. Each proposition names its earliest located text. The page can be downloaded as a research starter, with the original sources first.',
+  landingAction: 'Read the antecedent texts →',
+  mostDevelopedEmpty: null,
+  earliestEmpty: 'No located text meets the criterion.',
+} satisfies PropositionsFrame;
+
 /** The frame of `economicsOfMachineIntelligence` (src/reading/economics.ts). */
 export const economicsFrame = {
   id: 'economics-of-machine-intelligence',
-  version: 6,
+  version: 7,
   title:
     'Economics of machine intelligence: texts from 1952 to 2026 that state, contest or bear on its propositions',
   question:
-    'Which located texts, from 1952 to 2026, state, contest or bear on propositions about the economics of machine intelligence? Three strands are recorded. The first is the debate over whether machine intelligence could make economic growth explosive. The second is how mainstream economics treated automation, computers and AI. The third is how economists took up recursive self-improvement, superintelligence and existential risk from AI, ideas mostly discussed outside economics. For each proposition, which text by an economist is the earliest located, and which text outside that group?',
+    'Which located texts, from 1952 to 2026, and one earlier text, Wiener’s Cybernetics (1948, wording attested 2019), recorded on M06a, state, contest or bear on propositions about the economics of machine intelligence? Three strands are recorded. The first is the debate over whether machine intelligence could make economic growth explosive. The second is how mainstream economics treated automation, computers and AI. The third is how economists took up recursive self-improvement, superintelligence and existential risk from AI, ideas mostly discussed outside economics. For each proposition, which text by an economist is the earliest located, and which text outside that group?',
   editorialStatus: 'machine-proposed',
   groups: [
     {
       id: 'G',
       label: 'The explosive-growth debate',
-      description:
-        'Whether machine intelligence could make growth far faster than historical rates, the constraints argued against it, the evidence offered on both sides, and each text’s own estimate. Thirteen texts from 1994 to 2024.',
       propositionIds: [
         'explosive-growth-from-labour-substitution',
         'accelerating-growth-from-automated-research',
@@ -268,8 +289,6 @@ export const economicsFrame = {
     {
       id: 'M',
       label: 'Mainstream economics, automation and AI',
-      description:
-        'How economists and economics venues treated automation, computers and AI from 1952 to 2024: as ordinary technical change, as the automation of tasks, as a general-purpose technology or as cheaper prediction, and what they said about wages, policy, measurement and the field itself. M06 is split into M06a and M06b. M09 states the prior that mainstream economics took up machine intelligence only recently; it is tested against the dated record, not confirmed.',
       propositionIds: [
         'automation-as-ordinary-technical-change',
         'ai-as-task-automation',
@@ -286,8 +305,6 @@ export const economicsFrame = {
     {
       id: 'E',
       label: 'Superintelligence and existential risk',
-      description:
-        'Whether economists took up machine intelligence that improves itself, machine intelligence beyond human level in essentially all domains and existential risk from AI, how developers’ incentives bear on safety, and what texts say about the state of economics on these questions. Texts from 1998 to 2026, mostly NBER working papers, with Robin Hanson’s texts of 1998 to 2000 and posts from his 2008 debate with Eliezer Yudkowsky. E05 counts only explicit statements about the state of economics; economists’ engagement itself is recorded under E01 to E04.',
       propositionIds: [
         'ai-improving-ai-accelerates-capability',
         'machine-intelligence-exceeds-humans-in-all-domains',
@@ -301,10 +318,11 @@ export const economicsFrame = {
     1: 'Scholarly work by economists in any venue, including their essays in magazines, and any text in a core economics venue, whoever wrote it. An economist has an economics appointment, degree, address or affiliation shown in or near the text, or an established record as an economist when the text was written. The core venues are the five leading general economics journals, the Journal of Economic Perspectives, the Journal of Economic Literature, AER Papers and Proceedings, NBER working papers and the NBER Economics of AI volume, and Kansantaloudellinen aikakauskirja for the Finnish texts.',
     2: 'Texts by non-economists, whatever the venue, and short-form commentary even by economists: blog comments, forum replies, and magazine or online debates, unless a turn is itself a substantive scholarly argument.',
   },
+  // Widened on 2026-11-04 from 1950 for Wiener’s Cybernetics (1948), on M06a.
   axis: {
-    from: 1950,
+    from: 1945,
     to: 2026,
-    ticks: ['1952', '1966', '1984', '2000', '2015', '2024'],
+    ticks: ['1948', '1966', '1984', '2000', '2015', '2024'],
   },
   landing:
     '{propositions} propositions on the economics of machine intelligence, and {records} records from {texts} texts, 1952–2026, that state, contest or bear on them: the explosive-growth debate, how mainstream economics treated automation and AI, and how economists took up superintelligence and existential risk from AI. Each text carries its tier, and model results their conditions. The page can be downloaded as a research starter, with the original sources first.',
@@ -325,8 +343,6 @@ export const orbitalComputeFrame = {
     {
       id: 'R',
       label: 'Reasons given for orbital compute',
-      description:
-        'Solar supply, radiative cooling, constraints on building on Earth, the launch-price condition and lifecycle emissions, as texts from 2024 to 2026 state them.',
       propositionIds: [
         'oc1-orbital-solar-supply',
         'oc2-radiative-cooling-advantage',
@@ -338,8 +354,6 @@ export const orbitalComputeFrame = {
     {
       id: 'L',
       label: 'Limits and objections',
-      description:
-        'Heat rejection, radiation, repair, cost, links to the ground, and the sky, debris and the atmosphere. The radiation criterion counts only texts that discuss computing placed in orbit for this purpose; a 1989 paper on spacecraft electronics is recorded as context.',
       propositionIds: [
         'oc6-heat-rejection-limit',
         'oc7-radiation-effects',
@@ -374,8 +388,6 @@ export const aiBioArgumentsFrame = {
     {
       id: 'R',
       label: 'What current systems and evaluations show',
-      description:
-        'Whether systems already available increase an actor’s ability, where the binding barrier lies, and what published evaluations of biological capability establish.',
       propositionIds: [
         'ab-prop-current-system-uplift',
         'ab-prop-physical-bottleneck',
@@ -385,8 +397,6 @@ export const aiBioArgumentsFrame = {
     {
       id: 'G',
       label: 'What follows for governance',
-      description:
-        'Whether biological design tools are a distinct case, whether screening orders for synthesised nucleic acids is the control point, whether publishing model weights raises the risk, and whether assessment must cover actors who already hold relevant skills.',
       propositionIds: [
         'ab-prop-design-tools-distinct',
         'ab-prop-synthesis-screening-control-point',
@@ -419,8 +429,6 @@ export const aiInScienceFrame = {
     {
       id: 'biology',
       label: 'Biology',
-      description:
-        'Protein structure prediction and drug design, models of the cell, drug candidates found with AI and their clinical trials, the design of new proteins, and biology described as information.',
       propositionIds: [
         'aib-prop-predicted-structures-aid-drug-design',
         'aib-prop-ai-virtual-cell',
@@ -443,6 +451,7 @@ export const aiInScienceFrame = {
 } satisfies PropositionsFrame;
 
 export const propositionFrames: readonly PropositionsFrame[] = [
+  antecedentTextsFrame,
   superintelligenceFrame,
   riskDebateFrame,
   yudkowskyArgumentsFrame,

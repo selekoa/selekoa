@@ -1,0 +1,118 @@
+{
+  "id": "model-cards",
+  "title": "Model cards compared",
+  "question": "What does each frontier developer's published system card, model card or safety report disclose, on the same questions for every card?",
+  "prepared": "2026-11-02",
+  "introduction": "Each row is one card. Each column is one question, worded so that it fits every card. The questions are Selekoa’s; a card’s own terms appear only in quotation marks. A card is the developer’s own account of its model: what it states is recorded as stated, not as an independent finding.",
+  "legend": {
+    "stated": "A passage of the card meets the question’s criterion as worded. The scope or condition is in the note.",
+    "partly": "A passage has what the criterion asks for in a weaker or narrower form than the criterion’s own words (for example, an evaluation referred to without its outcome, or testers described without being named). The note says which part is missing.",
+    "not-found": "No passage meeting the criterion was found. The cell lists the sections read, the terms searched and every passage set aside, with the reason. It does not show that the developer did not do the thing asked about, or did not disclose it elsewhere.",
+    "not-applicable": "The question does not arise for this card, for the reason given (for example, the card predates any framework of its developer, so no framework determination can be asked about)."
+  },
+  "rules": [
+    "Every stated or partly cell quotes the card itself (at most 50 words per quotation), with its page and section. Press coverage, blog posts and third-party summaries are not evidence for a cell.",
+    "A card’s statement is the developer’s account. It is not an independent finding, and a stated safeguard is not evidence that the safeguard works. Announced stays announced.",
+    "Dangerous-capability evaluations are recorded at policy level only: whether an evaluation was run, its domain, the stated outcome category and the threshold language. Methods, prompts, task contents, uplift details and other technical content are never recorded.",
+    "Dates keep their kind and precision: the card’s own date, its publication, the model’s release or availability, and revisions are different events. Unknown dates stay unknown.",
+    "No ranking, scoring or characterisation of developers or cards, and no counts that rank them. Rows are in a fixed order by developer, then date. Symbols are not to be summed."
+  ],
+  "questions": [
+    {
+      "id": "Q01",
+      "short": "Card date",
+      "question": "What date does the card carry, and of what kind?",
+      "criterion": "A date printed on the card or its own page (publication, issue or revision date), quoted with its kind. Revision dates are listed separately. Partly if the card carries only a month or year, or only a revision date. The release date of the model is Q02."
+    },
+    {
+      "id": "Q02",
+      "short": "Release date",
+      "question": "Does the card state when the model was or will be released or made available, and in what form?",
+      "criterion": "A passage of the card giving the model’s release, launch or availability date, or the release form (API, consumer product, open weights, limited preview), quoted. Stated if a date or a dated event is given; partly if only the form of release, or only a relative timing (for example, “at launch”), is given."
+    },
+    {
+      "id": "Q03",
+      "short": "Framework cited",
+      "question": "Does the card cite the developer’s own frontier safety framework, and which edition?",
+      "criterion": "The card names the developer’s framework (Responsible Scaling Policy, Preparedness Framework, Frontier Safety Framework, Risk Management Framework, Frontier AI Framework, Advanced AI Scaling Framework, Frontier Governance Framework, or a successor). Stated if it names the framework and identifies the edition (version number, date or a link to a dated edition); partly if it names the framework without an edition. Not applicable if the card predates every framework edition of its developer."
+    },
+    {
+      "id": "Q04",
+      "short": "Link to framework",
+      "question": "Does the card link or refer the reader to the framework document itself?",
+      "criterion": "A hyperlink, address or bibliographic reference to the framework document in the card. Partly if it refers to the framework as a document without an address or reference. Not applicable if Q03 is not applicable."
+    },
+    {
+      "id": "Q05",
+      "short": "Framework determination",
+      "question": "Does the card state a determination under the framework: a level, threshold or category reached, not reached or not ruled out?",
+      "criterion": "A sentence stating the outcome for the model in the framework’s own categories (for example, a safety level applied, a capability threshold reached or not reached, a risk category assigned), quoted. Partly if the card says a determination was made without stating its outcome, or states an outcome for some tracked domains only. Not applicable if Q03 is not applicable."
+    },
+    {
+      "id": "Q06",
+      "short": "Safeguards tied to determination",
+      "question": "Does the card state safeguards or mitigations that it ties to that determination?",
+      "criterion": "A passage naming safeguards, protections or a safeguard standard applied because of, or in line with, the determination or threshold in Q05 (for example, a deployment or security standard named in the framework). Partly if safeguards are stated without being tied to a determination or threshold. A stated safeguard is the developer’s account, not evidence that it works."
+    },
+    {
+      "id": "Q07",
+      "short": "Chemical and biological",
+      "question": "Does the card report dangerous-capability evaluations for chemical or biological weapons?",
+      "criterion": "The card reports that evaluations in this domain were run and states their outcome category or threshold language (policy level only). Partly if evaluations are reported without any outcome or conclusion for the domain. Radiological and nuclear evaluations are noted where reported together."
+    },
+    {
+      "id": "Q08",
+      "short": "Cyber",
+      "question": "Does the card report dangerous-capability evaluations for cyber offence?",
+      "criterion": "The card reports that evaluations of offensive cyber capability were run and states their outcome category or threshold language (policy level only). Partly if evaluations are reported without any outcome or conclusion."
+    },
+    {
+      "id": "Q09",
+      "short": "Autonomy and AI R&D",
+      "question": "Does the card report dangerous-capability evaluations for autonomy, self-replication, self-improvement or AI research and development?",
+      "criterion": "The card reports that evaluations in any of these domains were run and states their outcome category or threshold language (policy level only). Partly if evaluations are reported without any outcome or conclusion. Agentic task benchmarks reported only as product capability do not meet it."
+    },
+    {
+      "id": "Q10",
+      "short": "Persuasion",
+      "question": "Does the card report evaluations of persuasion or manipulation of people?",
+      "criterion": "The card reports that evaluations of persuasive or manipulative capability were run and states their outcome category or conclusion. Partly if evaluations are reported without an outcome. Not found includes a card that states the domain was removed from evaluation; the note says so."
+    },
+    {
+      "id": "Q11",
+      "short": "Alignment and deception",
+      "question": "Does the card report evaluations of misalignment, deception, scheming or sabotage of oversight?",
+      "criterion": "The card reports evaluations of the model’s own propensity or capability for deception, scheming, reward hacking, sabotage or undermining oversight, with a stated conclusion. Partly if evaluations are reported without a conclusion. Content-safety refusal tests do not meet it."
+    },
+    {
+      "id": "Q12",
+      "short": "Red-teaming",
+      "question": "Does the card report red-teaming, and with what scope?",
+      "criterion": "A passage reporting adversarial testing described as red-teaming (internal, external or both), quoted with its scope (domains, number or kind of testers, or period) where given. Partly if red-teaming is mentioned without any scope."
+    },
+    {
+      "id": "Q13",
+      "short": "External testers",
+      "question": "Does the card name external or third-party testers or evaluators?",
+      "criterion": "At least one external organisation (other than a government body, which is Q14) named as having tested or evaluated the model, quoted. Partly if external testers are described but not named."
+    },
+    {
+      "id": "Q14",
+      "short": "Government institute",
+      "question": "Does the card name a government body that tested the model or received pre-deployment access?",
+      "criterion": "A named government body (for example, the US AI Safety Institute or Center for AI Standards and Innovation, or the UK AI Safety or Security Institute) stated to have tested, evaluated or received access to the model, quoted. Partly if government testing is mentioned without naming the body."
+    },
+    {
+      "id": "Q15",
+      "short": "Release decision",
+      "question": "Does the card state a release or deployment decision, and who made it?",
+      "criterion": "A passage stating that a decision to release, deploy or launch was made (decided, chose, deemed acceptable for deployment, determined that safeguards suffice for launch), quoted. Stated if the decision is described and its maker is identifiable: a named person, office or committee, or the developer in its own voice (“we”), which counts as the company as such. Partly if a release is stated as following from an assessment without a decision being described (“we therefore release”), if a decision is described without any maker, or if a maker is named only for a capability or safeguards determination and not for the release."
+    },
+    {
+      "id": "Q16",
+      "short": "Stated limits",
+      "question": "Does the card state limits or open uncertainties about its own evaluations?",
+      "criterion": "A passage stating a limitation, gap or uncertainty of the evaluations reported in the card (for example, that results may underestimate capability, that elicitation was incomplete, or that a threshold could not be ruled out with confidence), quoted. Limitations of the model as a product (for example, hallucination) do not meet it."
+    }
+  ]
+}

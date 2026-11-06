@@ -135,19 +135,27 @@ export function comparisonCsvRows(
 const field = (value: string) =>
   /[",\r\n]/.test(value) ? `"${value.replaceAll('"', '""')}"` : value;
 
+/** CSV text from rows, with a header row and CRLF line ends, as RFC 4180 has them. */
+export function csvText<C extends string>(
+  columns: readonly C[],
+  rows: Record<C, string>[],
+): string {
+  return (
+    [
+      columns.join(','),
+      ...rows.map((row) => columns.map((c) => field(row[c])).join(',')),
+    ].join('\r\n') + '\r\n'
+  );
+}
+
 /** The CSV text, with a header row and CRLF line ends, as RFC 4180 has them. */
 export function comparisonCsv(
   data: Dataset,
   collection: ComparisonCollection,
   baseUrl = '',
 ): string {
-  const rows = comparisonCsvRows(data, collection, baseUrl);
-  return (
-    [
-      comparisonCsvColumns.join(','),
-      ...rows.map((row) =>
-        comparisonCsvColumns.map((c) => field(row[c])).join(','),
-      ),
-    ].join('\r\n') + '\r\n'
+  return csvText(
+    comparisonCsvColumns,
+    comparisonCsvRows(data, collection, baseUrl),
   );
 }

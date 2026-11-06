@@ -1,0 +1,66 @@
+/* Laws compared: questions as rows, instruments as columns. Statuses keep
+   the neutral weight of Model cards compared (./model-cards.css). */
+.cmp-table.lc-table table {
+  width: 100%;
+}
+.cmp-table.lc-table thead th {
+  min-width: 8.5rem;
+  max-width: 11rem;
+  font-weight: 400;
+}
+.cmp-table.lc-table thead th:first-child,
+.cmp-table.lc-table tbody th[scope='row'] {
+  min-width: 11rem;
+  max-width: 13rem;
+}
+.lc-group-row th {
+  font-size: var(--text-2xs);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  border-bottom: 1px solid var(--color-border);
+  text-align: left;
+}
+.lc-instrument {
+  display: block;
+  font-weight: 600;
+}
+.lc-standing,
+.lc-standing-records {
+  display: block;
+  margin-top: 2px;
+  color: var(--color-text-muted);
+}
+.lc-standing-link {
+  font-size: var(--text-2xs);
+}
+.lc-meta .cmp-edition,
+.lc-meta .lc-standing {
+  display: block;
+}
+.lc-paraphrase,
+.lc-translation {
+  margin: 0 0 var(--space-1);
+}
+.lc-translation {
+  color: var(--color-text-muted);
+}
+.lc-rules {
+  margin: var(--space-1) 0 var(--space-2);
+  padding-left: var(--space-5);
+  font-size: var(--text-sm);
+}
+.lc-related {
+  margin-top: var(--space-2);
+  font-size: var(--text-sm);
+}
+.lc-version select {
+  max-width: 16rem;
+}
+@media (max-width: 720px) {
+  .cmp-table.lc-table thead th:first-child,
+  .cmp-table.lc-table tbody th[scope='row'] {
+    min-width: 8rem;
+    max-width: 9rem;
+  }
+}

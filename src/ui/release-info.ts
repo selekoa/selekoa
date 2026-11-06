@@ -1,27 +1,18 @@
 import type { Coverage } from '../domain/coverage';
+import latest from 'virtual:latest-release';
 
-type ManifestSummary = {
+export type ManifestSummary = {
   version: string;
   releasedAt: string;
   dataset: { schemaVersion: string; updatedAt: string };
   counts: Record<'entities' | 'claims' | 'evidence' | 'sources', number>;
 };
 
-const manifests = Object.values(
-  import.meta.glob<ManifestSummary>('../../release/v*/manifest.json', {
-    eager: true,
-    import: 'default',
-  }),
-);
-const parts = (v: string) => v.split('.').map(Number);
-const newer = (a: ManifestSummary, b: ManifestSummary) => {
-  const [x, y] = [parts(a.version), parts(b.version)];
-  return x[0] - y[0] || x[1] - y[1] || x[2] - y[2];
-};
-
-/** The newest dataset release in this build, if any. */
-export const latestRelease =
-  [...manifests].sort((a, b) => newer(b, a))[0] ?? null;
+/**
+ * The newest dataset release in this build, if any: only the fields shown,
+ * from the build (`virtual:latest-release`), not every release's manifest.
+ */
+export const latestRelease: ManifestSummary | null = latest;
 
 /** The local archive built from the release files (scripts/release-zip.ts). */
 export const releaseDownload = (version: string) =>

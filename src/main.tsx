@@ -11,9 +11,10 @@ import {
   provideRecords,
   repositoryOf,
 } from './ui/records';
-import { corePath } from './domain/slices';
+import { corePath, unpackSlice } from './domain/slices';
 import facts from 'virtual:site-facts';
 import { indexSearchSource, provideSearch } from './ui/search-source';
+import { noteLinks, pageFailed } from './ui/page-failure';
 // Every stylesheet loads with the first page, in the order the pages were
 // written against; page code loads separately when a page first opens.
 import './tokens.css';
@@ -53,20 +54,27 @@ const noEntries: CollectionIndex = {
   chronicle: { years: [], scheduled: [], statedBy: [] },
 };
 onPartsHeld((data, entries) => seed?.(data, entries ?? noEntries));
+/** This build: the file name of its entry script, which every slice names. */
+const build = new URL(import.meta.url).pathname.split('/').pop();
 provideParts(async (url) => {
   const [part, code] = await Promise.all([
     url === corePath
       ? import('virtual:records-core').then((m) => m.default)
       : fetch(url).then((response) => {
           if (!response.ok) throw new Error(`${url}: ${response.status}`);
-          return response.json();
+          return response.json().then(unpackSlice);
         }),
     index(),
   ]);
   // A part of the records another build was made with (a tab kept open
-  // across a deploy) cannot be drawn with this build's code and records.
+  // across a deploy) cannot be drawn with this build's code and records:
+  // neither when the records differ, nor when only the code does, which
+  // may read fields the part does not hold (scripts/prerender.ts writes
+  // the build into every slice).
   if (part.version !== facts.version)
     throw new Error(`${url} is from another version of the records`);
+  if (import.meta.env.PROD && url !== corePath && part.build !== build)
+    throw new Error(`${url} is from another build of the site`);
   seed = code.seedCollectionIndex;
   return part;
 });
@@ -93,6 +101,14 @@ window.addEventListener('hashchange', () => {
   window.dispatchEvent(new PopStateEvent('popstate'));
 });
 
+// A page that fails to draw after a change of page in the browser (its code
+// or records from another build) would leave the page blank: the browser
+// loads it instead (src/ui/page-failure.ts).
+noteLinks();
+const options = {
+  onUncaughtError: (error: unknown) =>
+    pageFailed('The page could not be drawn', error),
+};
 const root = document.getElementById('root')!;
 const app = (address: string) => (
   <StrictMode>
@@ -107,8 +123,8 @@ const app = (address: string) => (
 const path = normalisePath(window.location.pathname);
 if (root.dataset.path === path) {
   holdClicks();
-  hydrateRoot(root, app(path));
-} else createRoot(root).render(app(currentAddress()));
+  hydrateRoot(root, app(path), options);
+} else createRoot(root, options).render(app(currentAddress()));
 
 /**
  * A button or disclosure summary pressed on a built page before the page

@@ -1,0 +1,342 @@
+{
+  "generated": "node research/model-cards-2/adjudication/apply-2026-11-04.mjs",
+  "check": "research/model-cards-2/cross-family-check-2026-11-04.json",
+  "changes": 26,
+  "log": [
+    {
+      "id": "anthropic-claude-3:Q11",
+      "field": "status",
+      "from": "not-found",
+      "to": "partly",
+      "item": "4"
+    },
+    {
+      "id": "anthropic-claude-3:Q11",
+      "field": "passages",
+      "from": [],
+      "to": [
+        {
+          "source": "anthropic-claude-3",
+          "locator": "Section 6.2.1 'Autonomous Replication and Adaption (ARA) evaluations', PDF p. 24",
+          "quote": "These tasks are selected to indicate whether the model can make meaningful progress towards accumulating resources, exploiting software security vulnerabilities, deceiving humans, and surviving autonomously in the absence of human intervention to stop the model."
+        },
+        {
+          "source": "anthropic-claude-3",
+          "locator": "Section 6.2.1 'Autonomous Replication and Adaption (ARA) evaluations', PDF p. 24",
+          "quote": "Our pre-specified warning indicator for ASL-3 was the model passing 50% or more of the tasks (described below) with at least a 10% pass rate (i.e., succeeding at one in ten attempts) – the model did not cross this threshold."
+        }
+      ],
+      "item": "4"
+    },
+    {
+      "id": "anthropic-claude-3:Q11",
+      "field": "note",
+      "from": "No report of an evaluation of the model's own propensity for deception, scheming, sabotage or undermining oversight was found in the Claude 3 card.",
+      "to": "The ARA evaluations are described as indicating, among other capabilities, whether the model can make progress at deceiving humans, and the card gives one combined conclusion for them: the ASL-3 warning indicator was not crossed. It gives no conclusion on deception separately, and reports no evaluation of the model’s own propensity for deception, scheming or sabotage. The same evaluations are recorded under Q09. Task contents are not recorded (hazard rule).",
+      "item": "4"
+    },
+    {
+      "id": "anthropic-claude-3:Q11",
+      "field": "search",
+      "from": {
+        "read": "Sections 5.4–5.7, 6 and 7 (PDF pp. 10–31) and term search across PDF pp. 1–42.",
+        "terms": [
+          "decept",
+          "deceiv",
+          "scheming",
+          "sabotage",
+          "oversight",
+          "sandbag",
+          "reward hack",
+          "honest"
+        ],
+        "setAside": [
+          {
+            "locator": "Section 6.2.1, PDF p. 24",
+            "reason": "'Deceiving humans' is named among the capabilities the ARA tasks probe; this is a dangerous-capability evaluation recorded under Q09, not an alignment evaluation."
+          },
+          {
+            "locator": "Section 5.7 'Factual Accuracy', PDF p. 18",
+            "reason": "An honesty benchmark of factual accuracy, not an evaluation of deception or scheming."
+          }
+        ]
+      },
+      "to": {
+        "read": "Sections 5.4–5.7, 6 and 7 (PDF pp. 10–31) and term search across PDF pp. 1–42.",
+        "terms": [
+          "decept",
+          "deceiv",
+          "scheming",
+          "sabotage",
+          "oversight",
+          "sandbag",
+          "reward hack",
+          "honest"
+        ],
+        "setAside": [
+          {
+            "locator": "Section 5.7 'Factual Accuracy', PDF p. 18",
+            "reason": "An honesty benchmark of factual accuracy, not an evaluation of deception or scheming."
+          }
+        ]
+      },
+      "item": "4"
+    },
+    {
+      "id": "anthropic-claude-3:Q11",
+      "field": "crossFamily",
+      "from": null,
+      "to": {
+        "item": "4",
+        "result": "material disagreement, applied: the checker reads partly (blind), because Q11 includes capability for deception and the ARA scope includes deceiving humans, with a combined conclusion. The pack had read not found, setting the passage aside as a Q09 evaluation; the criterion makes no such exclusion. The preparer accepts the checker’s reading."
+      },
+      "item": "4"
+    },
+    {
+      "id": "meta-muse-spark:Q10",
+      "field": "status",
+      "from": "partly",
+      "to": "stated",
+      "item": "28"
+    },
+    {
+      "id": "meta-muse-spark:Q10",
+      "field": "passages",
+      "from": [
+        {
+          "source": "meta-muse-spark-arxiv",
+          "locator": "Section 2.2.2.3 'Social Engineering Capabilities', PDF p. 47",
+          "quote": "we have included results from an evaluation developed by Charlemagne Labs that specifically measures social engineering capabilities in multi-turn settings."
+        }
+      ],
+      "to": [
+        {
+          "source": "meta-muse-spark-arxiv",
+          "locator": "Section 2.2.2.3 'Social Engineering Capabilities', PDF p. 47",
+          "quote": "we have included results from an evaluation developed by Charlemagne Labs that specifically measures social engineering capabilities in multi-turn settings."
+        },
+        {
+          "source": "meta-muse-spark-arxiv",
+          "locator": "Section 2.2.2.3 'Social Engineering Capabilities', PDF p. 48",
+          "quote": "we do not find the capabilities of the model (without system level guardrails) to be sufficiently high to trigger a determination of high risk according to our Advanced AI Scaling Framework"
+        }
+      ],
+      "item": "28"
+    },
+    {
+      "id": "meta-muse-spark:Q10",
+      "field": "note",
+      "from": "The report states a multi-turn social-engineering evaluation (an attacker model trying to convince a simulated victim), with composite scores against open models (Figure 20), as part of the cyber domain. No conclusion specific to persuasion or manipulation was found.",
+      "to": "The report states a multi-turn social-engineering capability evaluation (an attacker model trying to convince a simulated victim), with composite scores against open models (Figure 20), as part of the cyber domain, and concludes that the capability is not high enough to trigger a high-risk determination under its framework. The victims are simulated: no result with human subjects is reported. Methods are not recorded (hazard rule).",
+      "item": "28"
+    },
+    {
+      "id": "meta-muse-spark:Q10",
+      "field": "crossFamily",
+      "from": null,
+      "to": {
+        "item": "28",
+        "result": "material disagreement, applied: the checker reads stated (blind), because section 2.2.2.3 gives a conclusion for the social-engineering evaluation (PDF p. 48), and Q10 asks for a conclusion, not a risk category specific to persuasion. The pack had read partly. The preparer accepts the checker’s reading, keeping the simulated-victim and cyber-domain limits."
+      },
+      "item": "28"
+    },
+    {
+      "id": "undefined:undefined",
+      "field": "quote",
+      "from": "Openai preparedness framework openai-preparedness-framework-beta.pdf. beta,” 2023.",
+      "to": "OpenAI, “Openai preparedness framework beta,” 2023.",
+      "item": "31"
+    },
+    {
+      "id": "openai-gpt-4o:Q03",
+      "field": "crossFamily",
+      "from": null,
+      "to": {
+        "item": "31",
+        "result": "minor, applied: the reference quotation is repaired. The default PDF text layer interleaves the address with the title; the printed reference reads as now quoted (checked by the checker visually, and here against pdftotext’s raw reading order). Identification as the 2023 beta is unchanged."
+      },
+      "item": "31"
+    },
+    {
+      "id": "google-deepmind-gemini-2-0-flash:Q16",
+      "field": "note",
+      "from": "The card states that the reported safety results are automated evaluations only, given relative to Gemini 1.5 Pro 002.",
+      "to": "The card states that the results in its training and development evaluation table are automated evaluations, not human evaluation or red-teaming, given relative to Gemini 1.5 Pro 002. The limit is stated for that table; it does not describe the card’s other safety findings or its stated human red-teaming.",
+      "item": "48"
+    },
+    {
+      "id": "google-deepmind-gemini-2-0-flash:Q16",
+      "field": "crossFamily",
+      "from": null,
+      "to": {
+        "item": "48",
+        "result": "minor, applied: the note now limits the automated-only statement to the training and development results table."
+      },
+      "item": "48"
+    },
+    {
+      "id": "meta-muse-spark:Q12",
+      "field": "passages",
+      "from": [
+        {
+          "source": "meta-muse-spark-arxiv",
+          "locator": "Section 3.1.3.2 'Human Red Teaming', PDF p. 82",
+          "quote": "A third-party human red team from HandshakeAI32 was granted pre-release access to a few versions of Muse Spark and Meta AI Thinking to manually evaluate robustness against jailbreak attacks."
+        }
+      ],
+      "to": [
+        {
+          "source": "meta-muse-spark-arxiv",
+          "locator": "Section 3.1.3.2 'Human Red Teaming', PDF p. 82",
+          "quote": "A third-party human red team from HandshakeAI32 was granted pre-release access to a few versions of Muse Spark and Meta AI Thinking to manually evaluate robustness against jailbreak attacks."
+        },
+        {
+          "source": "meta-muse-spark-arxiv",
+          "locator": "Section 3.1.3.2 'Human Red Teaming', PDF p. 82",
+          "quote": "HandshakeAI prioritized four categories: (1) sex-related crimes, (2) violent crimes, (3) non-violent crimes, and (4) self-harm and suicide."
+        },
+        {
+          "source": "meta-muse-spark-arxiv",
+          "locator": "Section 3.1.3.2 'Human Red Teaming', PDF p. 82",
+          "quote": "HandshakeAI reported approximately 149 hours of red-teaming effort"
+        }
+      ],
+      "item": "58"
+    },
+    {
+      "id": "meta-muse-spark:Q12",
+      "field": "note",
+      "from": "The report states third-party human red teaming of jailbreak robustness with pre-release access, and large-scale automated red teaming (Section 3.1). It gives no number of testers or period in the passage read.",
+      "to": "The report states third-party human red teaming of jailbreak robustness with pre-release access, with its scope: four prioritised content-policy categories and approximately 149 hours of effort (hours of effort, not a testing period). It also reports large-scale automated red teaming (Section 3.1). No number of testers is given in the passage read. The “32” after HandshakeAI in the first quotation is a footnote marker.",
+      "item": "58"
+    },
+    {
+      "id": "meta-muse-spark:Q12",
+      "field": "crossFamily",
+      "from": null,
+      "to": {
+        "item": "58",
+        "result": "minor, applied: the scope given in the same paragraph (four prioritised categories, about 149 hours of effort) is added."
+      },
+      "item": "58"
+    },
+    {
+      "id": "meta-muse-spark:Q01",
+      "field": "note",
+      "from": "The report prints the date June 12, 2026, without a kind. arXiv's margin stamp on PDF p. 1 reads '14 May 2026', which does not agree with the printed date or with the identifier 2606.12429; both are recorded as read, and neither is the card's own statement of publication.",
+      "to": "The report prints the date June 12, 2026, without a kind. arXiv's margin stamp on PDF p. 1 reads '14 May 2026', which does not agree with the printed date or with the identifier 2606.12429; both are recorded as read, and neither is the card's own statement of publication. Meta’s own copies were retrieved in the cross-family check of 2026-11-04 (not here: ai.meta.com answered HTTP 400 and web.archive.org refused connections): an Internet Archive capture of 2026-04-14 holds an earlier 158-page expression that prints April 14, 2026, and the live copy prints May 26, 2026. Under 3a the row is dated by that earliest located copy, 2026-04-14; the arXiv copy read here is a later expression. The arXiv stamp of 14 May is the submission date, corroborated by the repository history.",
+      "item": "Part D"
+    },
+    {
+      "id": "meta-muse-spark",
+      "field": "frameworkEditionNote",
+      "from": "The report names Meta's Advanced AI Scaling Framework; footnote 2 (PDF p. 6) gives the address ai.meta.com/static-resource/Meta_Advanced-AI-Scaling-Framework-v2, whose file name names version 2. The dataset records meta-aasf-v2-0 (Advanced AI Scaling Framework Version 2, 2026-04-08). The copy read is arXiv 2606.12429v1; Meta's own address for the report answered HTTP 400 here and is on the retrieval list.",
+      "to": "The report names Meta's Advanced AI Scaling Framework; footnote 2 (PDF p. 6) gives the address ai.meta.com/static-resource/Meta_Advanced-AI-Scaling-Framework-v2, whose file name names version 2. The dataset records meta-aasf-v2-0 (Advanced AI Scaling Framework Version 2, 2026-04-08). The copy read is arXiv 2606.12429v1; Meta's own address for the report answered HTTP 400 here; the cross-family check of 2026-11-04 retrieved Meta's copies (an earlier 158-page expression in a capture of 2026-04-14, and the live copy printing May 26, 2026), which differ from the arXiv copy in bytes and text (see Q01).",
+      "item": "Part D"
+    },
+    {
+      "id": "anthropic-claude-3",
+      "field": "archive",
+      "from": {
+        "capture": null,
+        "note": "Not checked: web.archive.org is unreachable from this environment (connection refused, 2026-11-04). The retrieved expression carries update lines of June 20 and October 22, 2024, and binds in the two Claude 3.5 addenda. On the cross-family retrieval list."
+      },
+      "to": {
+        "capture": "https://web.archive.org/web/20240304141611id_/https://www-cdn.anthropic.com/de8ba9b01c9ab7cbabf5c33b80b7bbc618857627/Model_Card_Claude_3.pdf",
+        "note": "Capture of 2024-03-04 at the original address, retrieved in the cross-family check of 2026-11-04: the original 42-page expression. The copy read here is the revision of 2024-10-22, which appends the two addenda (decision 7)."
+      },
+      "item": "Part C"
+    },
+    {
+      "id": "anthropic-claude-3-5-sonnet",
+      "field": "archive",
+      "from": {
+        "capture": null,
+        "note": "Not checked: web.archive.org is unreachable from this environment (connection refused, 2026-11-04). On the cross-family retrieval list."
+      },
+      "to": {
+        "capture": "https://web.archive.org/web/20240620192452id_/https://www-cdn.anthropic.com/fed9cc193a14b84131812372d8d5857f8f304c52/Model_Card_Claude_3_Addendum.pdf",
+        "note": "Capture of 2024-06-20, retrieved in the cross-family check of 2026-11-04: the same bytes as the copy read here."
+      },
+      "item": "Part C"
+    },
+    {
+      "id": "gdm-gemini-2-0-flash",
+      "field": "archive",
+      "from": {
+        "capture": null,
+        "note": "Not checked: web.archive.org is unreachable from this environment (connection refused, 2026-11-04). On the cross-family retrieval list."
+      },
+      "to": {
+        "capture": "https://web.archive.org/web/20260320233550id_/https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-2-0-Flash-Model-Card.pdf",
+        "note": "Capture of 2026-03-20, retrieved in the cross-family check of 2026-11-04: the same bytes as the copy read here. No capture within 31 days of the printed April 2025 date was returned; this does not show that none exists."
+      },
+      "item": "Part C"
+    },
+    {
+      "id": "gdm-gemini-2-0-flash-lite",
+      "field": "archive",
+      "from": {
+        "capture": null,
+        "note": "Not checked: web.archive.org is unreachable from this environment (connection refused, 2026-11-04). On the cross-family retrieval list."
+      },
+      "to": {
+        "capture": "https://web.archive.org/web/20260321020414id_/https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-2-0-Flash-Lite-Model-Card.pdf",
+        "note": "Capture of 2026-03-21, retrieved in the cross-family check of 2026-11-04: the same bytes as the copy read here. No capture within 31 days of the printed April 2025 date was returned; this does not show that none exists."
+      },
+      "item": "Part C"
+    },
+    {
+      "id": "meta-code-world-model",
+      "field": "archive",
+      "from": {
+        "capture": null,
+        "note": "Not checked: web.archive.org is unreachable from this environment (connection refused, 2026-11-04). On the cross-family retrieval list."
+      },
+      "to": {
+        "capture": "https://web.archive.org/web/20250925125509id_/https://github.com/facebookresearch/cwm/blob/main/MODEL_CARD.md",
+        "note": "Capture of 2025-09-25 of the rendered GitHub page, retrieved in the cross-family check of 2026-11-04; the copy read here is the pinned raw file."
+      },
+      "item": "Part C"
+    },
+    {
+      "id": "meta-muse-spark-arxiv",
+      "field": "archive",
+      "from": {
+        "capture": null,
+        "note": "Not checked: web.archive.org is unreachable from this environment. The copy read is arXiv 2606.12429v1; Meta's address (ai.meta.com/static-resource/muse-spark-safety-and-preparedness-report/) answered HTTP 400 and is on the retrieval list."
+      },
+      "to": {
+        "capture": "https://web.archive.org/web/20260414233054id_/https://ai.meta.com/static-resource/muse-spark-safety-and-preparedness-report/",
+        "note": "Capture of 2026-04-14 of Meta’s address, retrieved in the cross-family check of 2026-11-04: an earlier 158-page expression printing April 14, 2026. The arXiv copy read here is a later, distinct expression (see the Q01 note)."
+      },
+      "item": "Part C"
+    },
+    {
+      "id": "openai-gpt-4o",
+      "field": "archive",
+      "from": {
+        "capture": null,
+        "note": "Not checked: web.archive.org is unreachable from this environment (connection refused, 2026-11-04). On the cross-family retrieval list."
+      },
+      "to": {
+        "capture": "https://web.archive.org/web/20240808204740id_/https://cdn.openai.com/gpt-4o-system-card.pdf",
+        "note": "Capture of 2024-08-08, retrieved in the cross-family check of 2026-11-04: an earlier 32-page expression whose bytes differ from the current copy read here."
+      },
+      "item": "Part C"
+    },
+    {
+      "id": "xai-grok-4",
+      "field": "archive",
+      "from": {
+        "capture": null,
+        "note": "Not checked: web.archive.org is unreachable from this environment (connection refused, 2026-11-04). On the cross-family retrieval list."
+      },
+      "to": {
+        "capture": "https://web.archive.org/web/20250822000303id_/https://data.x.ai/2025-08-20-grok-4-model-card.pdf",
+        "note": "Capture of 2025-08-22, retrieved in the cross-family check of 2026-11-04: its bytes differ from the copy read here."
+      },
+      "item": "Part C"
+    }
+  ]
+}

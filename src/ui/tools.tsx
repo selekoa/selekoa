@@ -5,6 +5,12 @@ import {
   controlTimelinesTitle,
 } from '../reading/control-timelines-page';
 import { stancesTitle } from '../reading/proposition-stances-page';
+import { modelCardsId, modelCardsTitle } from '../reading/model-cards-page';
+import {
+  lawsComparedId,
+  lawsComparedTitle,
+} from '../reading/laws-compared-page';
+import { predictionsId, predictionsTitle } from '../reading/predictions-page';
 import './tools.css';
 
 /**
@@ -60,7 +66,37 @@ export const readerTools: ReaderTool[] = [
   },
 ];
 
-export const toolById = (id: string) => readerTools.find((t) => t.id === id)!;
+/**
+ * Model cards compared: listed on the governance hub, next to Compare
+ * frameworks, and not yet in the start page's "Ways in" panel.
+ */
+export const modelCardsTool: ReaderTool = {
+  id: 'model-cards',
+  label: modelCardsTitle,
+  does: 'the same questions put to every compared system card',
+  action: { kind: 'compare', id: modelCardsId },
+};
+
+/** Laws compared: listed on the governance hub, beside the two comparisons above. */
+export const lawsComparedTool: ReaderTool = {
+  id: 'laws-compared',
+  label: lawsComparedTitle,
+  does: 'the same questions put to every compared binding text',
+  action: { kind: 'compare', id: lawsComparedId },
+};
+
+/** Predictions on record: listed on the ideas hub, beside the propositions. */
+export const predictionsTool: ReaderTool = {
+  id: 'predictions',
+  label: predictionsTitle,
+  does: 'dated predictions by source date and printed target year',
+  action: { kind: 'predictions', id: predictionsId },
+};
+
+export const toolById = (id: string) =>
+  [...readerTools, modelCardsTool, lawsComparedTool, predictionsTool].find(
+    (t) => t.id === id,
+  )!;
 
 type Ids = Parameters<typeof startHref>[1];
 

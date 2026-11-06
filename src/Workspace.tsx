@@ -65,6 +65,9 @@ import { pageMeta } from './prerender/pages';
 import { documentHistory } from './domain/document-history';
 import { frontierSafetyFrameworks } from './reading/frontier-safety-frameworks';
 import { frameworkComparison } from './reading/framework-comparison';
+import { modelCardsId } from './reading/model-cards-page';
+import { lawsComparedId } from './reading/laws-compared-page';
+import { predictionsId } from './reading/predictions-page';
 import { comparisonView } from './domain/framework-comparison';
 import { controlStructure } from './domain/control-structures';
 import { commitmentsView } from './domain/commitments';
@@ -112,6 +115,9 @@ const {
   DocumentPage,
   DocumentHistory,
   FrameworkComparison,
+  ModelCards,
+  LawsCompared,
+  Predictions,
   ControlStructure,
   ControlTimelines,
   Commitments,
@@ -301,22 +307,25 @@ function locationState(address: string) {
                       ? 'commitments'
                       : target?.kind === 'guide'
                         ? 'guide'
-                        : target?.kind === 'propositions' ||
-                            target?.kind === 'stances'
-                          ? 'propositions'
-                          : target?.kind === 'year' || target?.kind === 'years'
-                            ? 'year'
-                            : target?.kind === 'person'
-                              ? 'person'
-                              : target?.kind === 'document'
-                                ? 'document'
-                                : target?.kind === 'claim'
-                                  ? 'claim'
-                                  : target?.kind === 'search'
-                                    ? 'search'
-                                    : target || notice
-                                      ? 'map'
-                                      : 'home';
+                        : target?.kind === 'predictions'
+                          ? 'predictions'
+                          : target?.kind === 'propositions' ||
+                              target?.kind === 'stances'
+                            ? 'propositions'
+                            : target?.kind === 'year' ||
+                                target?.kind === 'years'
+                              ? 'year'
+                              : target?.kind === 'person'
+                                ? 'person'
+                                : target?.kind === 'document'
+                                  ? 'document'
+                                  : target?.kind === 'claim'
+                                    ? 'claim'
+                                    : target?.kind === 'search'
+                                      ? 'search'
+                                      : target || notice
+                                        ? 'map'
+                                        : 'home';
   return {
     notice,
     view,
@@ -325,7 +334,11 @@ function locationState(address: string) {
     /** A dossier's map shows every type of record it connects to. */
     allTypes: target?.kind === 'dossier' && target.view === 'map',
     controlId: target?.kind === 'control' ? target.id : null,
+    /** The comparison shown: Compare frameworks or Model cards compared. */
+    compareId: target?.kind === 'compare' ? target.id : frameworkComparison.id,
     compareFacet: target?.kind === 'compare' ? (target.facet ?? null) : null,
+    compareDeveloper:
+      target?.kind === 'compare' ? (target.developer ?? null) : null,
     compareEditions:
       target?.kind === 'compare' ? (target.editions ?? []) : ([] as string[]),
     compareFrameworks:
@@ -405,8 +418,13 @@ export default function Workspace({
     initial.questionId,
   );
   const [controlId, setControlId] = useState<string | null>(initial.controlId);
+  const [compareId, setCompareId] = useState<string>(initial.compareId);
   const [compareFacet, setCompareFacet] = useState<string | null>(
     initial.compareFacet,
+  );
+  /** The developer whose cards Model cards compared shows, if chosen. */
+  const [compareDeveloper, setCompareDeveloper] = useState<string | null>(
+    initial.compareDeveloper,
   );
   /** Editions chosen on the comparison page in place of the latest ones. */
   const [compareEditions, setCompareEditions] = useState<string[]>(
@@ -500,7 +518,9 @@ export default function Workspace({
       setBookmark(next.bookmark);
       setQuestionId(next.questionId);
       setControlId(next.controlId);
+      setCompareId(next.compareId);
       setCompareFacet(next.compareFacet);
+      setCompareDeveloper(next.compareDeveloper);
       setCompareEditions(next.compareEditions);
       setCompareFrameworks(next.compareFrameworks);
       setPropositionsId(next.propositionsId);
@@ -688,6 +708,7 @@ export default function Workspace({
       ? (propositionFrames.find((c) => c.id === propositionsId) ?? null)
       : null;
   const propositionsOpen = !!propositionsPage || stancesOpen;
+  const predictionsOpen = view === 'predictions';
   /** The year and topic of a chronicle page; null on the index. */
   const yearPage =
     view === 'year' && yearId ? parseYearPageId(records.data, yearId) : null;
@@ -725,7 +746,8 @@ export default function Workspace({
     controlOpen ||
     commitmentsOpen ||
     guideOpen ||
-    propositionsOpen;
+    propositionsOpen ||
+    predictionsOpen;
   /**
    * Why the map view shows the list instead: the whole dataset is never
    * drawn, and a set too large to read is not drawn either.
@@ -769,14 +791,30 @@ export default function Workspace({
                 inspect: claimId ?? undefined,
               }
             : compareOpen
-              ? {
-                  kind: 'compare' as const,
-                  id: frameworkComparison.id,
-                  facet: compareFacet ?? undefined,
-                  editions: compareEditions,
-                  frameworks: compareFrameworks ?? undefined,
-                  inspect: claimId ?? undefined,
-                }
+              ? compareId === modelCardsId
+                ? {
+                    kind: 'compare' as const,
+                    id: compareId,
+                    facet: compareFacet ?? undefined,
+                    developer: compareDeveloper ?? undefined,
+                    inspect: claimId ?? undefined,
+                  }
+                : compareId === lawsComparedId
+                  ? {
+                      kind: 'compare' as const,
+                      id: compareId,
+                      facet: compareFacet ?? undefined,
+                      editions: compareEditions,
+                      inspect: claimId ?? undefined,
+                    }
+                  : {
+                      kind: 'compare' as const,
+                      id: frameworkComparison.id,
+                      facet: compareFacet ?? undefined,
+                      editions: compareEditions,
+                      frameworks: compareFrameworks ?? undefined,
+                      inspect: claimId ?? undefined,
+                    }
               : structure || timelines
                 ? {
                     kind: 'control' as const,
@@ -798,69 +836,77 @@ export default function Workspace({
                           .collection.id,
                         inspect: claimId ?? undefined,
                       }
-                    : stancesOpen
+                    : predictionsOpen
                       ? {
-                          kind: 'stances' as const,
-                          id: propositionsId || undefined,
+                          kind: 'predictions' as const,
+                          id: predictionsId,
                           inspect: claimId ?? undefined,
                         }
-                      : propositionsPage
+                      : stancesOpen
                         ? {
-                            kind: 'propositions' as const,
-                            id: propositionsPage.id,
+                            kind: 'stances' as const,
+                            id: propositionsId || undefined,
                             inspect: claimId ?? undefined,
                           }
-                        : yearOpen
-                          ? yearId
-                            ? {
-                                kind: 'year' as const,
-                                id: yearId,
-                                inspect: claimId ?? undefined,
-                              }
-                            : { kind: 'years' as const }
-                          : recordOpen && filters.focusId
-                            ? {
-                                kind: profile
-                                  ? ('person' as const)
-                                  : ('document' as const),
-                                id: filters.focusId,
-                                inspect: claimId ?? undefined,
-                              }
-                            : view === 'search'
+                        : propositionsPage
+                          ? {
+                              kind: 'propositions' as const,
+                              id: propositionsPage.id,
+                              inspect: claimId ?? undefined,
+                            }
+                          : yearOpen
+                            ? yearId
                               ? {
-                                  kind: 'search' as const,
-                                  q: searchQuery.trim() || undefined,
-                                  mode:
-                                    searchMode === 'names'
-                                      ? ('names' as const)
-                                      : undefined,
+                                  kind: 'year' as const,
+                                  id: yearId,
                                   inspect: claimId ?? undefined,
                                 }
-                              : view === 'map' &&
-                                  dossier &&
-                                  !exploreQuery.trim() &&
-                                  !claimId
+                              : { kind: 'years' as const }
+                            : recordOpen && filters.focusId
+                              ? {
+                                  kind: profile
+                                    ? ('person' as const)
+                                    : ('document' as const),
+                                  id: filters.focusId,
+                                  inspect: claimId ?? undefined,
+                                }
+                              : view === 'search'
                                 ? {
-                                    kind: 'dossier' as const,
-                                    id: dossier.institution.id,
-                                    view: 'map' as const,
+                                    kind: 'search' as const,
+                                    q: searchQuery.trim() || undefined,
+                                    mode:
+                                      searchMode === 'names'
+                                        ? ('names' as const)
+                                        : undefined,
+                                    inspect: claimId ?? undefined,
                                   }
-                                : claimId
-                                  ? { kind: 'claim' as const, id: claimId }
-                                  : view === 'home'
-                                    ? null
-                                    : view === 'about'
-                                      ? { kind: 'about' as const }
-                                      : view === 'hub'
-                                        ? { kind: 'hub' as const, id: hubId }
-                                        : {
-                                            kind: 'explore' as const,
-                                            q: exploreQuery.trim() || undefined,
-                                            view:
-                                              view === 'timeline'
-                                                ? ('timeline' as const)
-                                                : undefined,
-                                          };
+                                : view === 'map' &&
+                                    dossier &&
+                                    !exploreQuery.trim() &&
+                                    !claimId
+                                  ? {
+                                      kind: 'dossier' as const,
+                                      id: dossier.institution.id,
+                                      view: 'map' as const,
+                                    }
+                                  : claimId
+                                    ? { kind: 'claim' as const, id: claimId }
+                                    : view === 'home'
+                                      ? null
+                                      : view === 'about'
+                                        ? { kind: 'about' as const }
+                                        : view === 'hub'
+                                          ? { kind: 'hub' as const, id: hubId }
+                                          : {
+                                              kind: 'explore' as const,
+                                              q:
+                                                exploreQuery.trim() ||
+                                                undefined,
+                                              view:
+                                                view === 'timeline'
+                                                  ? ('timeline' as const)
+                                                  : undefined,
+                                            };
     if (deferred.current) {
       deferred.current = false;
       return;
@@ -902,7 +948,9 @@ export default function Workspace({
     dossier,
     documentsOpen,
     compareOpen,
+    compareId,
     compareFacet,
+    compareDeveloper,
     compareEditions,
     compareFrameworks,
     structure,
@@ -912,6 +960,7 @@ export default function Workspace({
     changesPage,
     computePage,
     propositionsPage,
+    predictionsOpen,
     stancesOpen,
     propositionsId,
     yearOpen,
@@ -1005,6 +1054,7 @@ export default function Workspace({
         view === 'path' ||
         view === 'starter' ||
         view === 'propositions' ||
+        view === 'predictions' ||
         view === 'year' ||
         view === 'guide' ||
         view === 'compare'
@@ -1047,6 +1097,7 @@ export default function Workspace({
       view === 'compare' ||
       view === 'guide' ||
       view === 'propositions' ||
+      view === 'predictions' ||
       view === 'year' ||
       view === 'search' ||
       view === 'hub' ||
@@ -1135,11 +1186,19 @@ export default function Workspace({
     setQuery('');
     setView('documents');
   };
-  const openCompare = (facet?: string) => {
+  /** Opens a comparison: Compare frameworks unless another is named. */
+  const openCompare = (
+    facet?: string,
+    id: string = frameworkComparison.id,
+    developer?: string,
+    editions: string[] = [],
+  ) => {
     setLinkNotice(null);
     setFilters((f) => ({ ...f, focusId: null }));
+    setCompareId(id);
     setCompareFacet(facet ?? null);
-    setCompareEditions([]);
+    setCompareDeveloper(developer ?? null);
+    setCompareEditions(editions);
     setCompareFrameworks(null);
     setClaimId(null);
     setQuery('');
@@ -1190,6 +1249,14 @@ export default function Workspace({
     setClaimId(null);
     setQuery('');
     setView('propositions');
+    window.scrollTo(0, 0);
+  };
+  const openPredictions = () => {
+    setLinkNotice(null);
+    setFilters((f) => ({ ...f, focusId: null }));
+    setClaimId(null);
+    setQuery('');
+    setView('predictions');
     window.scrollTo(0, 0);
   };
   /**
@@ -1301,11 +1368,18 @@ export default function Workspace({
     else if (target.kind === 'about') openAbout();
     else if (target.kind === 'explore') openExplorer();
     else if (target.kind === 'documents') openDocuments();
-    else if (target.kind === 'compare') openCompare(target.facet);
+    else if (target.kind === 'compare')
+      openCompare(
+        target.facet,
+        target.id,
+        target.developer,
+        target.editions ?? [],
+      );
     else if (target.kind === 'control') openControl(target.id);
     else if (target.kind === 'commitments') openCommitments();
     else if (target.kind === 'guide') openGuide(target.id);
     else if (target.kind === 'propositions') openPropositions(target.id);
+    else if (target.kind === 'predictions') openPredictions();
     else if (target.kind === 'stances') openStances(target.id);
     else if (target.kind === 'years') openYear(null);
     else if (target.kind === 'year') openYear(target.id);
@@ -1355,38 +1429,42 @@ export default function Workspace({
       : action.kind === 'documents'
         ? openDocuments()
         : action.kind === 'compare'
-          ? openCompare(action.facet)
+          ? openCompare(action.facet, action.id)
           : action.kind === 'commitments'
             ? openCommitments()
             : action.kind === 'guide'
               ? openGuide(action.id)
               : action.kind === 'propositions'
                 ? openPropositions(action.id)
-                : action.kind === 'stances'
-                  ? openStances(action.id, action.authors)
-                  : action.kind === 'years'
-                    ? openYear(null)
-                    : action.kind === 'control'
-                      ? openControl(action.id)
-                      : action.kind === 'reading'
-                        ? openQuestion(researchPaths[0].id)
-                        : action.kind === 'question'
-                          ? openStarter(action.id)
-                          : action.kind === 'dossier'
-                            ? openDossier(action.id, action.view)
-                            : action.kind === 'person'
-                              ? openEntity(action.id)
-                              : action.kind === 'claim'
-                                ? openClaim(action.id)
-                                : action.kind === 'search'
-                                  ? openSearch(action.q ?? '')
-                                  : action.kind === 'explore'
-                                    ? openExplorer()
-                                    : action.kind === 'how-checked'
-                                      ? showHowBuilt()
-                                      : action.kind === 'not-covered'
-                                        ? showAboutSection('about-not-covered')
-                                        : openAbout();
+                : action.kind === 'predictions'
+                  ? openPredictions()
+                  : action.kind === 'stances'
+                    ? openStances(action.id, action.authors)
+                    : action.kind === 'years'
+                      ? openYear(null)
+                      : action.kind === 'control'
+                        ? openControl(action.id)
+                        : action.kind === 'reading'
+                          ? openQuestion(researchPaths[0].id)
+                          : action.kind === 'question'
+                            ? openStarter(action.id)
+                            : action.kind === 'dossier'
+                              ? openDossier(action.id, action.view)
+                              : action.kind === 'person'
+                                ? openEntity(action.id)
+                                : action.kind === 'claim'
+                                  ? openClaim(action.id)
+                                  : action.kind === 'search'
+                                    ? openSearch(action.q ?? '')
+                                    : action.kind === 'explore'
+                                      ? openExplorer()
+                                      : action.kind === 'how-checked'
+                                        ? showHowBuilt()
+                                        : action.kind === 'not-covered'
+                                          ? showAboutSection(
+                                              'about-not-covered',
+                                            )
+                                          : openAbout();
   // A start-page link followed while the records loaded opens once.
   const pendingStart = useRef(start);
   useEffect(() => {
@@ -1413,6 +1491,7 @@ export default function Workspace({
             (view === 'path' ||
               view === 'starter' ||
               view === 'propositions' ||
+              view === 'predictions' ||
               view === 'year' ||
               view === 'guide' ||
               view === 'compare') &&
@@ -1504,15 +1583,17 @@ export default function Workspace({
                       ? 'guide'
                       : propositionsOpen
                         ? 'propositions'
-                        : yearOpen
-                          ? 'chronicle'
-                          : recordOpen
-                            ? 'record-page'
-                            : claimPageOpen
-                              ? 'claim-page'
-                              : pathOpen || starterOpen
-                                ? 'question'
-                                : 'explorer';
+                        : predictionsOpen
+                          ? 'predictions'
+                          : yearOpen
+                            ? 'chronicle'
+                            : recordOpen
+                              ? 'record-page'
+                              : claimPageOpen
+                                ? 'claim-page'
+                                : pathOpen || starterOpen
+                                  ? 'question'
+                                  : 'explorer';
   const readingPage =
     view === 'home' ||
     view === 'hub' ||
@@ -1524,6 +1605,7 @@ export default function Workspace({
     commitmentsOpen ||
     guideOpen ||
     propositionsOpen ||
+    predictionsOpen ||
     yearOpen ||
     recordOpen ||
     claimPageOpen ||
@@ -1565,11 +1647,12 @@ export default function Workspace({
     claim: string,
   ) => {
     if (kind === 'documents') openDocuments();
-    else if (kind === 'compare') openCompare();
+    else if (kind === 'compare') openCompare(undefined, id);
     else if (kind === 'control') openControl(id);
     else if (kind === 'commitments') openCommitments();
     else if (kind === 'propositions') openPropositions(id);
     else if (kind === 'guide') openGuide(id);
+    else if (kind === 'predictions') openPredictions();
     else openQuestion(id, claim);
     // The row is drawn once the page's code and text have loaded (a
     // propositions collection loads whole with its page): wait for that
@@ -1672,7 +1755,7 @@ export default function Workspace({
                           controlOpen ||
                           starterOpen
                         ? 'governance'
-                        : propositionsOpen
+                        : propositionsOpen || predictionsOpen
                           ? 'ideas'
                           : dossierOpen || pathOpen || profile
                             ? 'institutions'
@@ -1821,7 +1904,7 @@ export default function Workspace({
                 selectedClaimId={claimId}
                 onClaim={selectClaim}
                 onEntity={openEntity}
-                onCompare={openCompare}
+                onCompare={() => openCompare()}
               />
             </main>
             {claimId ? (
@@ -1843,6 +1926,42 @@ export default function Workspace({
               </aside>
             )}
           </div>
+        ) : compareOpen && compareId === modelCardsId ? (
+          <div className="cmp-layout">
+            <main className="reading-main" id="compare" tabIndex={-1}>
+              <ModelCards
+                repository={repository}
+                selectedClaimId={claimId}
+                onClaim={selectClaim}
+                onEntity={openEntity}
+                facet={compareFacet}
+                onFacet={setCompareFacet}
+                developer={compareDeveloper}
+                onDeveloper={setCompareDeveloper}
+                onEditions={(editions) =>
+                  openCompare(undefined, undefined, undefined, editions)
+                }
+              />
+            </main>
+            {claimId && <div className="cmp-drawer">{readingInspector}</div>}
+          </div>
+        ) : compareOpen && compareId === lawsComparedId ? (
+          <div className="cmp-layout">
+            <main className="reading-main" id="compare" tabIndex={-1}>
+              <LawsCompared
+                repository={repository}
+                selectedClaimId={claimId}
+                onClaim={selectClaim}
+                onEntity={openEntity}
+                facet={compareFacet}
+                onFacet={setCompareFacet}
+                editions={compareEditions}
+                onEditions={setCompareEditions}
+                onFrameworks={() => openCompare()}
+              />
+            </main>
+            {claimId && <div className="cmp-drawer">{readingInspector}</div>}
+          </div>
         ) : compareOpen ? (
           <div className="cmp-layout">
             <main className="reading-main" id="compare" tabIndex={-1}>
@@ -1862,6 +1981,10 @@ export default function Workspace({
                 onEditions={setCompareEditions}
                 frameworks={compareFrameworks}
                 onFrameworks={setCompareFrameworks}
+                onCards={(developer) =>
+                  openCompare(undefined, modelCardsId, developer)
+                }
+                onLaws={() => openCompare(undefined, lawsComparedId)}
               />
             </main>
             {/* A cell's record opens in a drawer over the table; Escape or
@@ -1971,7 +2094,8 @@ export default function Workspace({
                 selectedClaimId={claimId}
                 onClaim={selectClaim}
                 onEntity={openEntity}
-                onCompare={openCompare}
+                onCompare={() => openCompare()}
+                onLaws={() => openCompare(undefined, lawsComparedId)}
                 onDocuments={openDocuments}
                 onCommitments={openCommitments}
               />
@@ -2101,6 +2225,34 @@ export default function Workspace({
                 <p>
                   The records are listed by the dates their sources give. Their
                   order in a year records no connection between them.
+                </p>
+              </aside>
+            )}
+          </div>
+        ) : predictionsOpen ? (
+          <div className="reading-layout">
+            <main className="reading-main" id="predictions" tabIndex={-1}>
+              <Predictions
+                repository={repository}
+                selectedClaimId={claimId}
+                onClaim={selectClaim}
+                onYear={(year: string) => openYear(year)}
+              />
+            </main>
+            {claimId ? (
+              readingInspector
+            ) : (
+              <aside className="reading-aside" aria-label="Reading guide">
+                <h2>Inspect any record</h2>
+                <p>
+                  Select a point on the chart or a row in the table to open its
+                  record here, with the source passage, where it sits in the
+                  source and when it was checked. Close the panel to return to
+                  your place.
+                </p>
+                <p>
+                  Each record gives what a text states and when. It says nothing
+                  about whether the predicted event happened.
                 </p>
               </aside>
             )}

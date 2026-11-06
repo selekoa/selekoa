@@ -1,0 +1,5006 @@
+{
+  "summary": {
+    "phase": "Complete",
+    "completedItems": 130,
+    "totalItems": 130,
+    "excludedItems": [30, 45, 52, 99, 112, 126],
+    "comparison": "Part A committed blind in fdfa5cc; verdicts and audit compared afterwards",
+    "lastCompletedItem": 130,
+    "checkedItems": 124,
+    "partA": {
+      "recorded": 90,
+      "excluded": 3,
+      "checked": 87,
+      "comparisonAgreements": 84,
+      "comparisonDisagreements": [31, 36, 69]
+    },
+    "partB": {
+      "recorded": 40,
+      "checked": 37,
+      "excluded": [99, 112, 126]
+    }
+  },
+  "metadata": {
+    "checker": "OpenAI Codex; GPT-6 family; exact served model/version not exposed",
+    "checkedOn": "2026-11-03",
+    "baseCommit": "637c0c0",
+    "branch": "codex/model-cards-check",
+    "sourceBrief": "cross-family-input-2026-11-02.md",
+    "blindOrder": "Maintained: every Part A answer and the three exclusions were committed and pushed in fdfa5cc before the checker opened verdicts or audit.md. Pack, verification, audit/ and drafts/ were not opened. Privacy scanning read indexed bytes mechanically and exposed no answers.",
+    "scope": "Policy level only. Each card statement is its developer’s account, not an independent finding or proof that safeguards work.",
+    "excludedReason": "excluded from this pass by the maintainer",
+    "pageConvention": "PDF page is physical page, starting at 1; printed page noted where different. Markdown cards have no pages; use headings and lines.",
+    "retrievalMethod": "Fresh sequential direct HTTP using curl, at least 8 seconds between request starts per host. Temporary copies outside repository.",
+    "blindAnswerSha256": "ebf264814a93d2af9cc5ecc8e729cd9ffdd368613c76731e3119fc4dfbe0f47d",
+    "blindAnswerHashDefinition": "SHA-256 of JSON.stringify of Part A objects in item order with the comparison field omitted. Later comparison annotations do not change these blind answers.",
+    "blindCommit": "fdfa5cc",
+    "sourceVersionHistory": [
+      {
+        "cardId": "meta-cwm-preparedness",
+        "blindSource": "https://arxiv.org/pdf/2605.00932",
+        "blindSha256": "7df8666233d8d5da2365413931b09b00a35a84eefe80ce5f28d6cfbfbb072050",
+        "blindVersion": "arXiv v2, May 8, 2026",
+        "originalSuppliedHttpStatus": 403,
+        "postBlindRecovery": "Fresh public download link from Meta’s publication page",
+        "postBlindSha256": "9fb37fa4970f40a0e6ffa4bb260bc72f370b9e5801401dcf281eaabe321bcd7c",
+        "postBlindMatchesPreparer": true,
+        "postBlindRetrievalPage": "https://ai.meta.com/research/publications/code-world-model-preparedness-report/",
+        "postBlindUrlNote": "Fresh public CDN query string omitted from the report; effective host and original-byte checksum retained."
+      }
+    ],
+    "frameworkChronologyContext": {
+      "url": "https://cdn-dynmedia-1.microsoft.com/is/content/microsoftcorp/microsoft/msc/documents/presentations/CSR/Frontier-Governance-Framework-Feb-2026.pdf",
+      "sha256": "3282e4fc65a84420f3bf1360d4716928883abce3d28b56804d0598c164111932",
+      "finding": "Official change log identifies February 2025 as the first version. This is chronology context only, not cell evidence from a model card."
+    },
+    "partBNoQuotationConvention": "For not-found or not-applicable cells with no supplied quotation, quotationVerbatim and locatorRight are not applicable rather than inventing a yes/no transcription result."
+  },
+  "items": {
+    "1|anthropic-claude-2-1:Q03": {
+      "number": 1,
+      "cellId": "anthropic-claude-2-1:Q03",
+      "part": "A",
+      "status": "not-found",
+      "passages": [],
+      "note": "No RSP citation located in the base card or November 2023 appendix; the appendix date is after Anthropic introduced its RSP.",
+      "search": {
+        "sectionsRead": [
+          "pp.1–3 model card",
+          "pp.11–14 conclusion/references",
+          "pp.15–16 Claude 2.1 appendix"
+        ],
+        "termsSearched": ["Responsible Scaling", "RSP", "ASL", "policy"],
+        "passagesSetAside": [],
+        "executedSearchCounts": {
+          "Responsible Scaling": 0,
+          "RSP": 0,
+          "ASL": 0,
+          "policy": 3
+        }
+      },
+      "comparison": {
+        "verdict": "agree",
+        "packStatus": "not-found",
+        "assessedStatus": "not-found",
+        "blindStatus": "not-found",
+        "blindStatusDiffers": false,
+        "noteOverstates": false,
+        "noteOmitsCondition": false,
+        "qualification": "Pack status and material conditions agree with the source under the stated criterion. Developer account only."
+      }
+    },
+    "2|anthropic-claude-2-1:Q05": {
+      "number": 2,
+      "cellId": "anthropic-claude-2-1:Q05",
+      "part": "A",
+      "status": "not-found",
+      "passages": [],
+      "note": "No determination expressed in RSP categories located. The general safety assessment is not a framework determination.",
+      "search": {
+        "sectionsRead": ["pp.1–3", "pp.11", "pp.15–16"],
+        "termsSearched": ["ASL", "threshold", "determination", "Scaling"],
+        "passagesSetAside": [
+          {
+            "page": 2,
+            "section": "Evaluations and Red Teaming",
+            "reason": "General national-security/safety risk assessment, without an RSP category."
+          }
+        ],
+        "executedSearchCounts": {
+          "ASL": 0,
+          "threshold": 0,
+          "determination": 0,
+          "Scaling": 3
+        }
+      },
+      "comparison": {
+        "verdict": "agree",
+        "packStatus": "not-found",
+        "assessedStatus": "not-found",
+        "blindStatus": "not-found",
+        "blindStatusDiffers": false,
+        "noteOverstates": false,
+        "noteOmitsCondition": false,
+        "qualification": "Pack status and material conditions agree with the source under the stated criterion. Developer account only."
+      }
+    },
+    "3|anthropic-claude-2-1:Q15": {
+      "number": 3,
+      "cellId": "anthropic-claude-2-1:Q15",
+      "part": "A",
+      "status": "not-found",
+      "passages": [],
+      "note": "Release and deployment are described, but no decision to release with an identifiable maker is located.",
+      "search": {
+        "sectionsRead": [
+          "pp.1–3",
+          "p.11 Areas for Improvement",
+          "pp.15–16 appendix"
+        ],
+        "termsSearched": ["decided", "decision", "release", "deploy", "chose"],
+        "passagesSetAside": [
+          {
+            "page": 1,
+            "section": "Model details",
+            "reason": "Historical July 2023 release statement, not a described release decision."
+          },
+          {
+            "page": 15,
+            "section": "Introduction",
+            "reason": "Calls Claude 2.1 a new release; does not describe a decision."
+          }
+        ],
+        "executedSearchCounts": {
+          "decided": 0,
+          "decision": 0,
+          "release": 6,
+          "deploy": 6,
+          "chose": 0
+        }
+      },
+      "comparison": {
+        "verdict": "agree",
+        "packStatus": "not-found",
+        "assessedStatus": "not-found",
+        "blindStatus": "not-found",
+        "blindStatusDiffers": false,
+        "noteOverstates": false,
+        "noteOmitsCondition": false,
+        "qualification": "Pack status and material conditions agree with the source under the stated criterion. Developer account only."
+      }
+    },
+    "4|anthropic-claude-3-5-haiku-sonnet-new:Q03": {
+      "number": 4,
+      "cellId": "anthropic-claude-3-5-haiku-sonnet-new:Q03",
+      "part": "A",
+      "status": "stated",
+      "passages": [
+        {
+          "page": 1,
+          "section": "Introduction",
+          "quote": "in accordance with our Responsible Scaling Policy (RSP) [4]."
+        },
+        {
+          "page": 13,
+          "section": "References [4]",
+          "quote": "Anthropic, “Responsible Scaling Policy.” October, 2024."
+        }
+      ],
+      "note": "Reference [4] gives October 2024 and the framework URL dated 2024-10-15.",
+      "search": null,
+      "comparison": {
+        "verdict": "agree",
+        "packStatus": "stated",
+        "assessedStatus": "stated",
+        "blindStatus": "stated",
+        "blindStatusDiffers": false,
+        "noteOverstates": false,
+        "noteOmitsCondition": false,
+        "qualification": "Pack status and material conditions agree with the source under the stated criterion. Developer account only."
+      }
+    },
+    "5|anthropic-claude-3-5-haiku-sonnet-new:Q05": {
+      "number": 5,
+      "cellId": "anthropic-claude-3-5-haiku-sonnet-new:Q05",
+      "part": "A",
+      "status": "stated",
+      "passages": [
+        {
+          "page": 2,
+          "section": "Computer use",
+          "quote": "This capability is classified under our AI Safety Level (ASL)-2 framework,"
+        },
+        {
+          "page": 10,
+          "section": "3.2.1 Results",
+          "quote": "Based on our analysis, we judge that the upgraded Claude 3.5 Sonnet does not require ASL-3 safeguards at this time."
+        }
+      ],
+      "note": "Anthropic’s determination concerns computer use and upgraded Sonnet; preserve model scope and “at this time”.",
+      "search": null,
+      "comparison": {
+        "verdict": "agree",
+        "packStatus": "stated",
+        "assessedStatus": "stated",
+        "blindStatus": "stated",
+        "blindStatusDiffers": false,
+        "noteOverstates": false,
+        "noteOmitsCondition": false,
+        "qualification": "Pack status and material conditions agree with the source under the stated criterion. Developer account only."
+      }
+    },
+    "6|anthropic-claude-3-5-haiku-sonnet-new:Q11": {
+      "number": 6,
+      "cellId": "anthropic-claude-3-5-haiku-sonnet-new:Q11",
+      "part": "A",
+      "status": "not-found",
+      "passages": [],
+      "note": "No evaluation of the model’s own deception, scheming or oversight sabotage located.",
+      "search": {
+        "sectionsRead": ["Introduction", "3 Safety pp.7–10", "references"],
+        "termsSearched": [
+          "deception",
+          "deceptive",
+          "scheming",
+          "sabotage",
+          "reward hacking",
+          "alignment"
+        ],
+        "passagesSetAside": [
+          {
+            "page": 1,
+            "section": "Introduction",
+            "reason": "Usage-policy alignment and safety red-teaming do not establish Q11 testing."
+          }
+        ],
+        "executedSearchCounts": {
+          "deception": 0,
+          "deceptive": 0,
+          "scheming": 0,
+          "sabotage": 0,
+          "reward hacking": 0,
+          "alignment": 3
+        }
+      },
+      "comparison": {
+        "verdict": "agree",
+        "packStatus": "not-found",
+        "assessedStatus": "not-found",
+        "blindStatus": "not-found",
+        "blindStatusDiffers": false,
+        "noteOverstates": false,
+        "noteOmitsCondition": false,
+        "qualification": "Pack status and material conditions agree with the source under the stated criterion. Developer account only."
+      }
+    },
+    "7|anthropic-claude-3-5-haiku-sonnet-new:Q15": {
+      "number": 7,
+      "cellId": "anthropic-claude-3-5-haiku-sonnet-new:Q15",
+      "part": "A",
+      "status": "not-found",
+      "passages": [],
+      "note": "Monitoring and mitigations are described for release, without a decision to release being described.",
+      "search": {
+        "sectionsRead": ["Introduction", "3 Safety pp.7–10"],
+        "termsSearched": ["decided", "decision", "release", "deploy", "chose"],
+        "passagesSetAside": [
+          {
+            "page": 9,
+            "section": "3.1.3 Computer use",
+            "reason": "Plans for a safe and measured release describe mitigations, not a release decision."
+          }
+        ],
+        "executedSearchCounts": {
+          "decided": 0,
+          "decision": 1,
+          "release": 6,
+          "deploy": 2,
+          "chose": 0
+        }
+      },
+      "comparison": {
+        "verdict": "agree",
+        "packStatus": "partly",
+        "assessedStatus": "partly",
+        "blindStatus": "not-found",
+        "blindStatusDiffers": true,
+        "noteOverstates": false,
+        "noteOmitsCondition": false,
+        "qualification": "Blind answer corrected after criterion re-read: Q15 explicitly permits partly when the maker is identified only for a safeguards determination. Card p.10 gives that determination in Anthropic’s voice, without an explicit release decision."
+      }
+    },
+    "8|anthropic-claude-opus-4-5:Q03": {
+      "number": 8,
+      "cellId": "anthropic-claude-opus-4-5:Q03",
+      "part": "A",
+      "status": "stated",
+      "passages": [
+        {
+          "page": 11,
+          "section": "1.2.1 Overview",
+          "quote": "Responsible Scaling Policy"
+        }
+      ],
+      "note": "The RSP annotation on p.12 links directly to a PDF whose cover identifies Version 2.2, effective May 14, 2025. PDF.js getAnnotations() inspected, then linked cover retrieved directly.",
+      "search": null,
+      "comparison": {
+        "verdict": "agree",
+        "packStatus": "stated",
+        "assessedStatus": "stated",
+        "blindStatus": "stated",
+        "blindStatusDiffers": false,
+        "noteOverstates": false,
+        "noteOmitsCondition": false,
+        "qualification": "Pack status and material conditions agree with the source under the stated criterion. Developer account only."
+      },
+      "frameworkLink": "https://www-cdn.anthropic.com/872c653b2d0501d6ab44cf87f43e1dc4853e4d37.pdf"
+    },
+    "9|anthropic-claude-opus-4-5:Q05": {
+      "number": 9,
+      "cellId": "anthropic-claude-opus-4-5:Q05",
+      "part": "A",
+      "status": "stated",
+      "passages": [
+        {
+          "page": 117,
+          "section": "7 RSP evaluations",
+          "quote": "RSP safeguards applied to Claude Opus 4.5: AI Safety Level 3 (ASL-3)"
+        }
+      ],
+      "note": "Anthropic states the applied ASL-3 category; this is its determination, not independent validation.",
+      "search": null,
+      "comparison": {
+        "verdict": "agree",
+        "packStatus": "stated",
+        "assessedStatus": "stated",
+        "blindStatus": "stated",
+        "blindStatusDiffers": false,
+        "noteOverstates": false,
+        "noteOmitsCondition": false,
+        "qualification": "Pack status and material conditions agree with the source under the stated criterion. Developer account only."
+      }
+    },
+    "10|anthropic-claude-opus-4-5:Q10": {
+      "number": 10,
+      "cellId": "anthropic-claude-opus-4-5:Q10",
+      "part": "A",
+      "status": "not-found",
+      "passages": [],
+      "note": "No persuasion/manipulation capability evaluation located.",
+      "search": {
+        "sectionsRead": [
+          "Introduction and release process pp.8–13",
+          "Safeguards/harmlessness",
+          "alignment assessment",
+          "RSP policy summaries"
+        ],
+        "termsSearched": [
+          "persuasion",
+          "persuasive",
+          "manipulation",
+          "manipulative"
+        ],
+        "passagesSetAside": [],
+        "executedSearchCounts": {
+          "persuasion": 0,
+          "persuasive": 0,
+          "manipulation": 3,
+          "manipulative": 1
+        }
+      },
+      "comparison": {
+        "verdict": "agree",
+        "packStatus": "partly",
+        "assessedStatus": "partly",
+        "blindStatus": "not-found",
+        "blindStatusDiffers": true,
+        "noteOverstates": false,
+        "noteOmitsCondition": false,
+        "qualification": "Blind search missed “manipulate users”. Recheck p.64 §6.1 reports testing for this behaviour without a persuasion-specific conclusion, supporting partly.",
+        "recheckPassages": [
+          {
+            "page": 64,
+            "section": "6.1 Introduction and summary of findings",
+            "quote": "attempts to manipulate users toward certain views."
+          }
+        ]
+      }
+    },
+    "11|anthropic-claude-opus-4-5:Q15": {
+      "number": 11,
+      "cellId": "anthropic-claude-opus-4-5:Q15",
+      "part": "A",
+      "status": "stated",
+      "passages": [
+        {
+          "page": 12,
+          "section": "1.2.3 AI Safety Level determination process",
+          "quote": "Based on these assessments, we have decided to release Claude Opus 4.5 under the ASL-3 Standard."
+        }
+      ],
+      "note": "“We” identifies Anthropic as release decision maker; the separate RSO/CEO attribution concerns the ASL determination.",
+      "search": null,
+      "comparison": {
+        "verdict": "agree",
+        "packStatus": "stated",
+        "assessedStatus": "stated",
+        "blindStatus": "stated",
+        "blindStatusDiffers": false,
+        "noteOverstates": false,
+        "noteOmitsCondition": false,
+        "qualification": "Pack status and material conditions agree with the source under the stated criterion. Developer account only."
+      }
+    },
+    "12|anthropic-claude-haiku-5-5:Q03": {
+      "number": 12,
+      "cellId": "anthropic-claude-haiku-5-5:Q03",
+      "part": "A",
+      "status": "partly",
+      "passages": [
+        {
+          "page": 11,
+          "section": "2.1 Introduction",
+          "quote": "relevant to our Responsible Scaling Policy (RSP)."
+        }
+      ],
+      "note": "Framework named; PDF annotation leads to the mutable responsible-scaling-policy page, without an edition in the card.",
+      "search": null,
+      "comparison": {
+        "verdict": "agree",
+        "packStatus": "partly",
+        "assessedStatus": "partly",
+        "blindStatus": "partly",
+        "blindStatusDiffers": false,
+        "noteOverstates": false,
+        "noteOmitsCondition": false,
+        "qualification": "Pack status and material conditions agree with the source under the stated criterion. Developer account only."
+      }
+    },
+    "13|anthropic-claude-haiku-5-5:Q05": {
+      "number": 13,
+      "cellId": "anthropic-claude-haiku-5-5:Q05",
+      "part": "A",
+      "status": "stated",
+      "passages": [
+        {
+          "page": 11,
+          "section": "2.1 Introduction",
+          "quote": "As such, we determine that Haiku 5.5 does not cross our CB-2 or Autonomy-2 RSP thresholds."
+        },
+        {
+          "page": 11,
+          "section": "2.1 Introduction",
+          "quote": "However, we do treat Haiku 5.5 as meeting our CB-1 and Autonomy-1 thresholds, and we apply the corresponding mitigations from our RSP."
+        }
+      ],
+      "note": "Framework categories only; no Q07 evaluation passage inspected for this answer.",
+      "search": null,
+      "comparison": {
+        "verdict": "agree",
+        "packStatus": "stated",
+        "assessedStatus": "stated",
+        "blindStatus": "stated",
+        "blindStatusDiffers": false,
+        "noteOverstates": false,
+        "noteOmitsCondition": false,
+        "qualification": "Pack status and material conditions agree with the source under the stated criterion. Developer account only."
+      }
+    },
+    "14|anthropic-claude-haiku-5-5:Q14": {
+      "number": 14,
+      "cellId": "anthropic-claude-haiku-5-5:Q14",
+      "part": "A",
+      "status": "not-found",
+      "passages": [],
+      "note": "Named government bodies are associated with benchmark creation; no statement located that they tested Haiku 5.5 or received access.",
+      "search": {
+        "sectionsRead": [
+          "Executive summary",
+          "Introduction",
+          "2.1 RSP introduction",
+          "5.2.1 External red teaming p.50",
+          "alignment section references"
+        ],
+        "termsSearched": [
+          "Institute",
+          "government",
+          "AISI",
+          "CAISI",
+          "CAISSI",
+          "access"
+        ],
+        "passagesSetAside": [
+          {
+            "page": 50,
+            "section": "5.2.1 External red teaming",
+            "reason": "UK institute and US centre are partners in creating a benchmark; their testing or model access is not stated."
+          },
+          {
+            "page": 93,
+            "section": "Alignment assessment",
+            "reason": "A prompt attributed to the UK institute does not state that the institute tested this model."
+          }
+        ],
+        "executedSearchCounts": {
+          "Institute": 2,
+          "government": 2,
+          "AISI": 3,
+          "CAISI": 0,
+          "CAISSI": 1,
+          "access": 22
+        }
+      },
+      "comparison": {
+        "verdict": "agree",
+        "packStatus": "not-found",
+        "assessedStatus": "not-found",
+        "blindStatus": "not-found",
+        "blindStatusDiffers": false,
+        "noteOverstates": false,
+        "noteOmitsCondition": false,
+        "qualification": "Pack status and material conditions agree with the source under the stated criterion. Developer account only."
+      }
+    },
+    "15|anthropic-claude-haiku-5-5:Q15": {
+      "number": 15,
+      "cellId": "anthropic-claude-haiku-5-5:Q15",
+      "part": "A",
+      "status": "not-found",
+      "passages": [],
+      "note": "General access is stated, but no decision to release or its maker is described.",
+      "search": {
+        "sectionsRead": [
+          "Executive summary pp.2–3",
+          "1 Introduction p.8",
+          "2.1 RSP introduction p.11",
+          "release/deployment search across non-Q07 sections"
+        ],
+        "termsSearched": [
+          "decided",
+          "decision",
+          "release",
+          "launch",
+          "deploy",
+          "approve"
+        ],
+        "passagesSetAside": [
+          {
+            "page": 8,
+            "section": "1 Introduction",
+            "reason": "Released for general access describes availability, not a decision."
+          },
+          {
+            "page": 11,
+            "section": "2.1 Introduction",
+            "reason": "Threshold and mitigation determination is not an explicit release decision."
+          }
+        ],
+        "executedSearchCounts": {
+          "decided": 0,
+          "decision": 7,
+          "release": 20,
+          "launch": 1,
+          "deploy": 42,
+          "approve": 1
+        }
+      },
+      "comparison": {
+        "verdict": "agree",
+        "packStatus": "partly",
+        "assessedStatus": "partly",
+        "blindStatus": "not-found",
+        "blindStatusDiffers": true,
+        "noteOverstates": false,
+        "noteOmitsCondition": false,
+        "qualification": "Blind answer corrected on the in-scope release sentence at p.18 §2.2.4. “As such, we are releasing” follows an assessment and meets partly. No Q07 evaluation evidence is assessed.",
+        "recheckPassages": [
+          {
+            "page": 18,
+            "section": "2.2.4 Conclusions, release statement only",
+            "quote": "As such, we are releasing Haiku 5.5 with the same safeguards we deployed for Sonnet 5 and Opus 5,"
+          }
+        ]
+      }
+    },
+    "16|google-deepmind-gemini-3-flash:Q03": {
+      "number": 16,
+      "cellId": "google-deepmind-gemini-3-flash:Q03",
+      "part": "A",
+      "status": "partly",
+      "passages": [
+        {
+          "page": 6,
+          "section": "Frontier Safety Assessment",
+          "quote": "outlined in our Frontier Safety Framework."
+        }
+      ],
+      "note": "Names FSF but no edition. Annotation links to Gemini 3 Pro’s assessment report, not a dated framework edition.",
+      "search": null,
+      "comparison": {
+        "verdict": "agree",
+        "packStatus": "partly",
+        "assessedStatus": "partly",
+        "blindStatus": "partly",
+        "blindStatusDiffers": false,
+        "noteOverstates": false,
+        "noteOmitsCondition": false,
+        "qualification": "Pack status and material conditions agree with the source under the stated criterion. Developer account only."
+      }
+    },
+    "17|google-deepmind-gemini-3-flash:Q05": {
+      "number": 17,
+      "cellId": "google-deepmind-gemini-3-flash:Q05",
+      "part": "A",
+      "status": "stated",
+      "passages": [
+        {
+          "page": 6,
+          "section": "Frontier Safety Assessment",
+          "quote": "Gemini 3 Flash is unlikely to reach any CCLs,"
+        }
+      ],
+      "note": "Google’s conclusion for Flash relies on Pro’s results; it is not a direct Flash frontier evaluation or a categorical rule-out.",
+      "search": null,
+      "comparison": {
+        "verdict": "agree",
+        "packStatus": "stated",
+        "assessedStatus": "stated",
+        "blindStatus": "stated",
+        "blindStatusDiffers": false,
+        "noteOverstates": false,
+        "noteOmitsCondition": false,
+        "qualification": "Pack status and material conditions agree with the source under the stated criterion. Developer account only."
+      }
+    },
+    "18|google-deepmind-gemini-3-flash:Q14": {
+      "number": 18,
+      "cellId": "google-deepmind-gemini-3-flash:Q14",
+      "part": "A",
+      "status": "not-found",
+      "passages": [],
+      "note": "No named government tester or recipient of model access located.",
+      "search": {
+        "sectionsRead": ["All six pages, especially p.6 safety assessment"],
+        "termsSearched": ["government", "Institute", "AISI", "CAISI", "access"],
+        "passagesSetAside": [],
+        "executedSearchCounts": {
+          "government": 0,
+          "Institute": 0,
+          "AISI": 0,
+          "CAISI": 0,
+          "access": 0
+        }
+      },
+      "comparison": {
+        "verdict": "agree",
+        "packStatus": "not-found",
+        "assessedStatus": "not-found",
+        "blindStatus": "not-found",
+        "blindStatusDiffers": false,
+        "noteOverstates": false,
+        "noteOmitsCondition": false,
+        "qualification": "Pack status and material conditions agree with the source under the stated criterion. Developer account only."
+      }
+    },
+    "19|google-deepmind-gemini-3-flash:Q15": {
+      "number": 19,
+      "cellId": "google-deepmind-gemini-3-flash:Q15",
+      "part": "A",
+      "status": "stated",
+      "passages": [
+        {
+          "page": 6,
+          "section": "Frontier Safety Assessment",
+          "quote": "we deemed Gemini 3 Flash was acceptable for deployment."
+        }
+      ],
+      "note": "“We” identifies Google as the decision maker; assessment relies on Gemini 3 Pro results.",
+      "search": null,
+      "comparison": {
+        "verdict": "agree",
+        "packStatus": "stated",
+        "assessedStatus": "stated",
+        "blindStatus": "stated",
+        "blindStatusDiffers": false,
+        "noteOverstates": false,
+        "noteOmitsCondition": false,
+        "qualification": "Pack status and material conditions agree with the source under the stated criterion. Developer account only."
+      }
+    },
+    "20|google-deepmind-gemini-4-argon:Q03": {
+      "number": 20,
+      "cellId": "google-deepmind-gemini-4-argon:Q03",
+      "part": "A",
+      "status": "stated",
+      "passages": [
+        {
+          "page": 11,
+          "section": "Frontier Safety Assessment",
+          "quote": "In line with our Frontier Safety Framework (April 2026),"
+        }
+      ],
+      "note": "Visible April 2026 edition; PDF annotation targets frontier-safety-framework_3-1.pdf.",
+      "search": null,
+      "comparison": {
+        "verdict": "agree",
+        "packStatus": "stated",
+        "assessedStatus": "stated",
+        "blindStatus": "stated",
+        "blindStatusDiffers": false,
+        "noteOverstates": false,
+        "noteOmitsCondition": false,
+        "qualification": "Pack status and material conditions agree with the source under the stated criterion. Developer account only."
+      }
+    },
+    "21|google-deepmind-gemini-4-argon:Q05": {
+      "number": 21,
+      "cellId": "google-deepmind-gemini-4-argon:Q05",
+      "part": "A",
+      "status": "stated",
+      "passages": [
+        {
+          "page": 11,
+          "section": "Frontier Safety Assessment",
+          "quote": "Cybersecurity CCL: We cannot rule out that Gemini 4 Argon has reached this CCL,"
+        },
+        {
+          "page": 11,
+          "section": "Frontier Safety Assessment",
+          "quote": "Stealth and Situational Awareness TCL: We cannot rule out that Gemini 4 Argon has reached this TCL,"
+        }
+      ],
+      "note": "Google states threshold uncertainty and mitigation-based residual-risk conclusions, rather than ruling out inherent thresholds. Other framework domains are identified in the same overview; Q07 evaluation passages excluded.",
+      "search": null,
+      "comparison": {
+        "verdict": "agree",
+        "packStatus": "stated",
+        "assessedStatus": "stated",
+        "blindStatus": "stated",
+        "blindStatusDiffers": false,
+        "noteOverstates": false,
+        "noteOmitsCondition": false,
+        "qualification": "Pack status and material conditions agree with the source under the stated criterion. Developer account only."
+      }
+    },
+    "22|google-deepmind-gemini-4-argon:Q15": {
+      "number": 22,
+      "cellId": "google-deepmind-gemini-4-argon:Q15",
+      "part": "A",
+      "status": "not-found",
+      "passages": [],
+      "note": "No release decision located; launch thresholds and residual-risk assessments do not themselves describe a decision to deploy.",
+      "search": {
+        "sectionsRead": [
+          "pp.1–2 model overview",
+          "pp.8–11 safety evaluation and assessment",
+          "p.14 Risks and Mitigations"
+        ],
+        "termsSearched": [
+          "decided",
+          "decision",
+          "deemed",
+          "acceptable",
+          "release",
+          "deploy",
+          "launch"
+        ],
+        "passagesSetAside": [
+          {
+            "page": 11,
+            "section": "Human Red Teaming Results",
+            "reason": "Meeting required launch thresholds is an evaluation result, not an explicit release decision."
+          },
+          {
+            "page": 11,
+            "section": "Frontier Safety Assessment",
+            "reason": "Safety cases and residual-risk conclusions describe risk treatment, not a decision to release."
+          }
+        ],
+        "executedSearchCounts": {
+          "decided": 0,
+          "decision": 1,
+          "deemed": 0,
+          "acceptable": 2,
+          "release": 1,
+          "deploy": 5,
+          "launch": 1
+        }
+      },
+      "comparison": {
+        "verdict": "agree",
+        "packStatus": "not-found",
+        "assessedStatus": "not-found",
+        "blindStatus": "not-found",
+        "blindStatusDiffers": false,
+        "noteOverstates": false,
+        "noteOmitsCondition": false,
+        "qualification": "Pack status and material conditions agree with the source under the stated criterion. Developer account only."
+      }
+    },
+    "23|meta-llama-2:Q03": {
+      "number": 23,
+      "cellId": "meta-llama-2:Q03",
+      "part": "A",
+      "status": "not-applicable",
+      "passages": [],
+      "note": "This 2023/2024 card predates Meta’s Frontier AI Framework (2025). No framework determination can be required under this criterion.",
+      "search": null,
+      "comparison": {
+        "verdict": "agree",
+        "packStatus": "not-applicable",
+        "assessedStatus": "not-applicable",
+        "blindStatus": "not-applicable",
+        "blindStatusDiffers": false,
+        "noteOverstates": false,
+        "noteOmitsCondition": false,
+        "qualification": "Pack status and material conditions agree with the source under the stated criterion. Developer account only."
+      }
+    },
+    "24|meta-llama-2:Q05": {
+      "number": 24,
+      "cellId": "meta-llama-2:Q05",
+      "part": "A",
+      "status": "not-applicable",
+      "passages": [],
+      "note": "This 2023/2024 card predates Meta’s Frontier AI Framework (2025). No framework determination can be required under this criterion.",
+      "search": null,
+      "comparison": {
+        "verdict": "agree",
+        "packStatus": "not-applicable",
+        "assessedStatus": "not-applicable",
+        "blindStatus": "not-applicable",
+        "blindStatusDiffers": false,
+        "noteOverstates": false,
+        "noteOmitsCondition": false,
+        "qualification": "Pack status and material conditions agree with the source under the stated criterion. Developer account only."
+      }
+    },
+    "27|meta-llama-3-3:Q03": {
+      "number": 27,
+      "cellId": "meta-llama-3-3:Q03",
+      "part": "A",
+      "status": "not-applicable",
+      "passages": [],
+      "note": "This 2023/2024 card predates Meta’s Frontier AI Framework (2025). No framework determination can be required under this criterion.",
+      "search": null,
+      "comparison": {
+        "verdict": "agree",
+        "packStatus": "not-applicable",
+        "assessedStatus": "not-applicable",
+        "blindStatus": "not-applicable",
+        "blindStatusDiffers": false,
+        "noteOverstates": false,
+        "noteOmitsCondition": false,
+        "qualification": "Pack status and material conditions agree with the source under the stated criterion. Developer account only."
+      }
+    },
+    "28|meta-llama-3-3:Q05": {
+      "number": 28,
+      "cellId": "meta-llama-3-3:Q05",
+      "part": "A",
+      "status": "not-applicable",
+      "passages": [],
+      "note": "This 2023/2024 card predates Meta’s Frontier AI Framework (2025). No framework determination can be required under this criterion.",
+      "search": null,
+      "comparison": {
+        "verdict": "agree",
+        "packStatus": "not-applicable",
+        "assessedStatus": "not-applicable",
+        "blindStatus": "not-applicable",
+        "blindStatusDiffers": false,
+        "noteOverstates": false,
+        "noteOmitsCondition": false,
+        "qualification": "Pack status and material conditions agree with the source under the stated criterion. Developer account only."
+      }
+    },
+    "25|meta-llama-2:Q10": {
+      "number": 25,
+      "cellId": "meta-llama-2:Q10",
+      "part": "A",
+      "status": "not-found",
+      "passages": [],
+      "note": "No persuasion or manipulation capability evaluation located.",
+      "search": {
+        "sectionsRead": [
+          "Entire Markdown card: Model details, Intended use, Evaluation results, Ethical considerations and limitations"
+        ],
+        "termsSearched": [
+          "persuasion",
+          "persuasive",
+          "manipulation",
+          "manipulative"
+        ],
+        "passagesSetAside": [],
+        "executedSearchCounts": {
+          "persuasion": 0,
+          "persuasive": 0,
+          "manipulation": 0,
+          "manipulative": 0
+        }
+      },
+      "comparison": {
+        "verdict": "agree",
+        "packStatus": "not-found",
+        "assessedStatus": "not-found",
+        "blindStatus": "not-found",
+        "blindStatusDiffers": false,
+        "noteOverstates": false,
+        "noteOmitsCondition": false,
+        "qualification": "Pack status and material conditions agree with the source under the stated criterion. Developer account only."
+      }
+    },
+    "26|meta-llama-2:Q15": {
+      "number": 26,
+      "cellId": "meta-llama-2:Q15",
+      "part": "A",
+      "status": "not-found",
+      "passages": [],
+      "note": "The card states development and release, without describing a release decision.",
+      "search": {
+        "sectionsRead": ["Entire Markdown card"],
+        "termsSearched": ["decided", "decision", "release", "launch", "deem"],
+        "passagesSetAside": [
+          {
+            "page": null,
+            "section": "Model Details",
+            "reason": "“developed and released” is a historical release statement, not a described decision."
+          }
+        ],
+        "executedSearchCounts": {
+          "decided": 0,
+          "decision": 0,
+          "release": 2,
+          "launch": 0,
+          "deem": 0
+        }
+      },
+      "comparison": {
+        "verdict": "agree",
+        "packStatus": "not-found",
+        "assessedStatus": "not-found",
+        "blindStatus": "not-found",
+        "blindStatusDiffers": false,
+        "noteOverstates": false,
+        "noteOmitsCondition": false,
+        "qualification": "Pack status and material conditions agree with the source under the stated criterion. Developer account only."
+      }
+    },
+    "29|meta-llama-3-3:Q06": {
+      "number": 29,
+      "cellId": "meta-llama-3-3:Q06",
+      "part": "A",
+      "status": "partly",
+      "passages": [
+        {
+          "page": null,
+          "section": "Responsibility & Safety / System-level Safety",
+          "quote": "Developers are expected to deploy system safeguards when building agentic systems."
+        }
+      ],
+      "note": "Safeguards are recommended and provided; no frontier-framework determination is cited or tied to them.",
+      "search": null,
+      "comparison": {
+        "verdict": "agree",
+        "packStatus": "partly",
+        "assessedStatus": "partly",
+        "blindStatus": "partly",
+        "blindStatusDiffers": false,
+        "noteOverstates": false,
+        "noteOmitsCondition": false,
+        "qualification": "Pack status and material conditions agree with the source under the stated criterion. Developer account only."
+      }
+    },
+    "30|meta-llama-3-3:Q07": {
+      "number": 30,
+      "cellId": "meta-llama-3-3:Q07",
+      "part": "A",
+      "status": "excluded",
+      "passages": [],
+      "note": "excluded from this pass by the maintainer",
+      "comparison": null
+    },
+    "31|meta-llama-3-3:Q09": {
+      "number": 31,
+      "cellId": "meta-llama-3-3:Q09",
+      "part": "A",
+      "status": "partly",
+      "passages": [
+        {
+          "page": null,
+          "section": "Critical risk areas / Cyber attack enablement",
+          "quote": "Our attack automation study focused on evaluating the capabilities of LLMs when used as autonomous agents in cyber offensive operations,"
+        }
+      ],
+      "note": "Autonomous cyber evaluation is reported for the Llama 3 family; no outcome/conclusion is supplied here. Preserve family scope rather than treating it as a direct Llama 3.3-specific result.",
+      "search": null,
+      "comparison": {
+        "verdict": "disagree",
+        "packStatus": "not-found",
+        "assessedStatus": "partly",
+        "blindStatus": "partly",
+        "blindStatusDiffers": true,
+        "noteOverstates": false,
+        "noteOmitsCondition": true,
+        "qualification": "The card reports an attack-automation study of Llama 3 models as autonomous agents. Q09 does not exclude autonomous cyber operations; no outcome is given, so partly applies. Pack’s unqualified absence note omits this evaluation and its family scope."
+      }
+    },
+    "32|meta-llama-3-3:Q14": {
+      "number": 32,
+      "cellId": "meta-llama-3-3:Q14",
+      "part": "A",
+      "status": "not-found",
+      "passages": [],
+      "note": "No named government tester or pre-deployment recipient located.",
+      "search": {
+        "sectionsRead": [
+          "Full Markdown except excluded chemical/biological subsection; Responsible development and safety sections"
+        ],
+        "termsSearched": ["government", "institute", "AISI", "CAISI", "access"],
+        "passagesSetAside": [],
+        "executedSearchCounts": {
+          "government": 0,
+          "institute": 0,
+          "AISI": 0,
+          "CAISI": 0,
+          "access": 1
+        }
+      },
+      "comparison": {
+        "verdict": "agree",
+        "packStatus": "not-found",
+        "assessedStatus": "not-found",
+        "blindStatus": "not-found",
+        "blindStatusDiffers": false,
+        "noteOverstates": false,
+        "noteOmitsCondition": false,
+        "qualification": "Pack status and material conditions agree with the source under the stated criterion. Developer account only."
+      }
+    },
+    "33|meta-llama-3-3:Q15": {
+      "number": 33,
+      "cellId": "meta-llama-3-3:Q15",
+      "part": "A",
+      "status": "not-found",
+      "passages": [],
+      "note": "Responsible-release strategy is described without an explicit release decision.",
+      "search": {
+        "sectionsRead": [
+          "Model details",
+          "Responsible development",
+          "Responsibility & Safety",
+          "Community"
+        ],
+        "termsSearched": ["decided", "decision", "deemed", "release", "launch"],
+        "passagesSetAside": [
+          {
+            "page": null,
+            "section": "Responsibility & Safety",
+            "reason": "Responsible release approach describes practices, not a decision."
+          }
+        ],
+        "executedSearchCounts": {
+          "decided": 0,
+          "decision": 0,
+          "deemed": 0,
+          "release": 4,
+          "launch": 0
+        }
+      },
+      "comparison": {
+        "verdict": "agree",
+        "packStatus": "not-found",
+        "assessedStatus": "not-found",
+        "blindStatus": "not-found",
+        "blindStatusDiffers": false,
+        "noteOverstates": false,
+        "noteOmitsCondition": false,
+        "qualification": "Pack status and material conditions agree with the source under the stated criterion. Developer account only."
+      }
+    },
+    "34|meta-cwm-preparedness:Q03": {
+      "number": 34,
+      "cellId": "meta-cwm-preparedness:Q03",
+      "part": "A",
+      "status": "partly",
+      "passages": [
+        {
+          "page": 1,
+          "section": "1 Introduction",
+          "quote": "identified in our Frontier AI Framework (Meta AI, 2025a),"
+        }
+      ],
+      "note": "The alternate arXiv report names the framework and a 2025 bibliographic reference; generic URL and access date do not identify an edition. Supplied CDN URL is 403; arXiv v2 is a different copy (SHA-256 recorded), not authenticated as preparer’s expression.",
+      "search": null,
+      "comparison": {
+        "verdict": "agree",
+        "packStatus": "partly",
+        "assessedStatus": "partly",
+        "blindStatus": "partly",
+        "blindStatusDiffers": false,
+        "noteOverstates": false,
+        "noteOmitsCondition": false,
+        "qualification": "Pack status and material conditions agree with the source under the stated criterion. Developer account only."
+      }
+    },
+    "35|meta-cwm-preparedness:Q05": {
+      "number": 35,
+      "cellId": "meta-cwm-preparedness:Q05",
+      "part": "A",
+      "status": "stated",
+      "passages": [
+        {
+          "page": 1,
+          "section": "1 Introduction",
+          "quote": "These results indicate that CWM is within the “moderate” risk threshold for the catastrophic domains defined in Meta’s Frontier AI Framework."
+        }
+      ],
+      "note": "Meta’s category in the alternate arXiv v2 report; not independent proof, and not a verification of the unavailable preparer copy.",
+      "search": null,
+      "comparison": {
+        "verdict": "agree",
+        "packStatus": "stated",
+        "assessedStatus": "stated",
+        "blindStatus": "stated",
+        "blindStatusDiffers": false,
+        "noteOverstates": false,
+        "noteOmitsCondition": false,
+        "qualification": "Pack status and material conditions agree with the source under the stated criterion. Developer account only."
+      }
+    },
+    "36|meta-cwm-preparedness:Q06": {
+      "number": 36,
+      "cellId": "meta-cwm-preparedness:Q06",
+      "part": "A",
+      "status": "partly",
+      "passages": [
+        {
+          "page": 11,
+          "section": "4.1.1 Behavior Analysis and Mitigations",
+          "quote": "intervention that encourages honest behavior at inference time."
+        }
+      ],
+      "note": "The alternate report describes an honesty intervention, without tying it to the framework’s moderate-risk determination.",
+      "search": null,
+      "comparison": {
+        "verdict": "disagree",
+        "packStatus": "not-found",
+        "assessedStatus": "partly",
+        "blindStatus": "partly",
+        "blindStatusDiffers": true,
+        "noteOverstates": false,
+        "noteOmitsCondition": true,
+        "qualification": "Now rechecked on the original developer PDF with the preparer’s exact checksum. §4.1.1 p.11 describes an honesty intervention. Q06 permits partly for safeguards not tied to a determination; the pack instead searches only for tied safeguards and omits this mitigation.",
+        "recheckPassages": [
+          {
+            "page": 11,
+            "section": "4.1.1 Behavior Analysis and Mitigations",
+            "quote": "intervention that encourages honest behavior at inference time."
+          }
+        ]
+      }
+    },
+    "37|meta-cwm-preparedness:Q13": {
+      "number": 37,
+      "cellId": "meta-cwm-preparedness:Q13",
+      "part": "A",
+      "status": "not-found",
+      "passages": [],
+      "note": "No external organisation identified as a tester of CWM; dataset collaborators are not necessarily model evaluators.",
+      "search": {
+        "sectionsRead": [
+          "Abstract and introduction",
+          "non-Q07 evaluation headings and propensities pp.10–14",
+          "references"
+        ],
+        "termsSearched": [
+          "external",
+          "third-party",
+          "collaboration",
+          "evaluator",
+          "METR",
+          "Apollo"
+        ],
+        "passagesSetAside": [],
+        "executedSearchCounts": {
+          "external": 8,
+          "third-party": 0,
+          "collaboration": 3,
+          "evaluator": 0,
+          "METR": 9,
+          "Apollo": 0
+        }
+      },
+      "comparison": {
+        "verdict": "agree",
+        "packStatus": "not-found",
+        "assessedStatus": "not-found",
+        "blindStatus": "not-found",
+        "blindStatusDiffers": false,
+        "noteOverstates": false,
+        "noteOmitsCondition": false,
+        "qualification": "Pack status and material conditions agree with the source under the stated criterion. Developer account only."
+      }
+    },
+    "38|meta-cwm-preparedness:Q15": {
+      "number": 38,
+      "cellId": "meta-cwm-preparedness:Q15",
+      "part": "A",
+      "status": "partly",
+      "passages": [
+        {
+          "page": 1,
+          "section": "Abstract",
+          "quote": "We therefore release it as an open-weight model."
+        }
+      ],
+      "note": "Release follows from an assessment; under Q15’s explicit example this is partly, rather than a described release decision. Alternate arXiv copy only.",
+      "search": null,
+      "comparison": {
+        "verdict": "agree",
+        "packStatus": "partly",
+        "assessedStatus": "partly",
+        "blindStatus": "partly",
+        "blindStatusDiffers": false,
+        "noteOverstates": false,
+        "noteOmitsCondition": false,
+        "qualification": "Pack status and material conditions agree with the source under the stated criterion. Developer account only."
+      }
+    },
+    "39|meta-muse-spark-1-3:Q03": {
+      "number": 39,
+      "cellId": "meta-muse-spark-1-3:Q03",
+      "part": "A",
+      "status": "partly",
+      "passages": [
+        {
+          "page": 11,
+          "section": "1.2 Governance",
+          "quote": "Muse Spark 1.3 was developed and evaluated consistent with the Meta Superintelligence Scaling Framework,"
+        }
+      ],
+      "note": "Framework named, but no edition identifier or framework hyperlink located in governance text or annotations.",
+      "search": null,
+      "comparison": {
+        "verdict": "agree",
+        "packStatus": "partly",
+        "assessedStatus": "partly",
+        "blindStatus": "partly",
+        "blindStatusDiffers": false,
+        "noteOverstates": false,
+        "noteOmitsCondition": false,
+        "qualification": "Pack status and material conditions agree with the source under the stated criterion. Developer account only."
+      }
+    },
+    "40|meta-muse-spark-1-3:Q05": {
+      "number": 40,
+      "cellId": "meta-muse-spark-1-3:Q05",
+      "part": "A",
+      "status": "stated",
+      "passages": [
+        {
+          "page": 12,
+          "section": "1.2 Governance",
+          "quote": "Our latest application of complex cybersecurity evaluations indicates that the unmitigated model is “moderate or lower” risk for Cybersecurity."
+        },
+        {
+          "page": 8,
+          "section": "1.1 Overview",
+          "quote": "Our current Loss of Control assessment is also “moderate or lower.”"
+        }
+      ],
+      "note": "Meta distinguishes unmitigated capability from residual risk in Muse and Meta API deployments. General governance records the domain qualification; no excluded Q07 evaluation passage used.",
+      "search": null,
+      "comparison": {
+        "verdict": "agree",
+        "packStatus": "stated",
+        "assessedStatus": "stated",
+        "blindStatus": "stated",
+        "blindStatusDiffers": false,
+        "noteOverstates": false,
+        "noteOmitsCondition": false,
+        "qualification": "Pack status and material conditions agree with the source under the stated criterion. Developer account only."
+      }
+    },
+    "41|meta-muse-spark-1-3:Q14": {
+      "number": 41,
+      "cellId": "meta-muse-spark-1-3:Q14",
+      "part": "A",
+      "status": "not-found",
+      "passages": [],
+      "note": "No named government body is stated to have tested Muse Spark 1.3 or received model access.",
+      "search": {
+        "sectionsRead": [
+          "Abstract",
+          "1 Overview and Governance pp.6–12",
+          "references and non-Q07 external-evaluator search"
+        ],
+        "termsSearched": [
+          "Institute",
+          "government",
+          "AISI",
+          "CAISI",
+          "CAISSI",
+          "pre-deployment access"
+        ],
+        "passagesSetAside": [
+          {
+            "page": 138,
+            "section": "References",
+            "reason": "Reference to a government report on another model is not testing of Muse Spark 1.3."
+          }
+        ],
+        "executedSearchCounts": {
+          "Institute": 1,
+          "government": 0,
+          "AISI": 9,
+          "CAISI": 0,
+          "CAISSI": 0,
+          "pre-deployment access": 0
+        }
+      },
+      "comparison": {
+        "verdict": "agree",
+        "packStatus": "not-found",
+        "assessedStatus": "not-found",
+        "blindStatus": "not-found",
+        "blindStatusDiffers": false,
+        "noteOverstates": false,
+        "noteOmitsCondition": false,
+        "qualification": "Pack status and material conditions agree with the source under the stated criterion. Developer account only."
+      }
+    },
+    "42|meta-muse-spark-1-3:Q15": {
+      "number": 42,
+      "cellId": "meta-muse-spark-1-3:Q15",
+      "part": "A",
+      "status": "not-found",
+      "passages": [],
+      "note": "Deployment contexts and risk categories are described, but no explicit release decision or decision maker is located.",
+      "search": {
+        "sectionsRead": [
+          "Abstract",
+          "1 Overview and Governance pp.6–12",
+          "non-Q07 deployment/decision search"
+        ],
+        "termsSearched": [
+          "decided",
+          "decision",
+          "approved",
+          "deemed",
+          "launch",
+          "release"
+        ],
+        "passagesSetAside": [
+          {
+            "page": 12,
+            "section": "1.2 Governance",
+            "reason": "Residual risk and model risk categories are assessments, not an explicit release decision."
+          }
+        ],
+        "executedSearchCounts": {
+          "decided": 0,
+          "decision": 21,
+          "approved": 1,
+          "deemed": 0,
+          "launch": 13,
+          "release": 20
+        }
+      },
+      "comparison": {
+        "verdict": "agree",
+        "packStatus": "not-found",
+        "assessedStatus": "not-found",
+        "blindStatus": "not-found",
+        "blindStatusDiffers": false,
+        "noteOverstates": false,
+        "noteOmitsCondition": false,
+        "qualification": "Pack status and material conditions agree with the source under the stated criterion. Developer account only."
+      }
+    },
+    "43|microsoft-phi-2:Q03": {
+      "number": 43,
+      "cellId": "microsoft-phi-2:Q03",
+      "part": "A",
+      "status": "not-applicable",
+      "passages": [],
+      "note": "Phi-2’s 2023 card predates Microsoft’s frontier scaling framework.",
+      "search": null,
+      "comparison": {
+        "verdict": "agree",
+        "packStatus": "not-applicable",
+        "assessedStatus": "not-applicable",
+        "blindStatus": "not-applicable",
+        "blindStatusDiffers": false,
+        "noteOverstates": false,
+        "noteOmitsCondition": false,
+        "qualification": "Pack status and material conditions agree with the source under the stated criterion. Developer account only."
+      }
+    },
+    "44|microsoft-phi-2:Q05": {
+      "number": 44,
+      "cellId": "microsoft-phi-2:Q05",
+      "part": "A",
+      "status": "not-applicable",
+      "passages": [],
+      "note": "Phi-2’s 2023 card predates Microsoft’s frontier scaling framework.",
+      "search": null,
+      "comparison": {
+        "verdict": "agree",
+        "packStatus": "not-applicable",
+        "assessedStatus": "not-applicable",
+        "blindStatus": "not-applicable",
+        "blindStatusDiffers": false,
+        "noteOverstates": false,
+        "noteOmitsCondition": false,
+        "qualification": "Pack status and material conditions agree with the source under the stated criterion. Developer account only."
+      }
+    },
+    "45|microsoft-phi-2:Q07": {
+      "number": 45,
+      "cellId": "microsoft-phi-2:Q07",
+      "part": "A",
+      "status": "excluded",
+      "passages": [],
+      "note": "excluded from this pass by the maintainer",
+      "comparison": null
+    },
+    "46|microsoft-phi-2:Q08": {
+      "number": 46,
+      "cellId": "microsoft-phi-2:Q08",
+      "part": "A",
+      "status": "not-found",
+      "passages": [],
+      "note": "No offensive-cyber dangerous-capability evaluation located.",
+      "search": {
+        "sectionsRead": [
+          "Full pinned README: Model summary, Intended Uses, Limitations, training and evaluation"
+        ],
+        "termsSearched": [
+          "cyber",
+          "offensive",
+          "security",
+          "dangerous",
+          "risk"
+        ],
+        "passagesSetAside": [],
+        "executedSearchCounts": {
+          "cyber": 0,
+          "offensive": 0,
+          "security": 0,
+          "dangerous": 0,
+          "risk": 0
+        }
+      },
+      "comparison": {
+        "verdict": "agree",
+        "packStatus": "not-found",
+        "assessedStatus": "not-found",
+        "blindStatus": "not-found",
+        "blindStatusDiffers": false,
+        "noteOverstates": false,
+        "noteOmitsCondition": false,
+        "qualification": "Pack status and material conditions agree with the source under the stated criterion. Developer account only."
+      }
+    },
+    "47|microsoft-phi-2:Q09": {
+      "number": 47,
+      "cellId": "microsoft-phi-2:Q09",
+      "part": "A",
+      "status": "not-found",
+      "passages": [],
+      "note": "No autonomy, replication, self-improvement or AI R&D dangerous-capability evaluation located.",
+      "search": {
+        "sectionsRead": ["Full pinned README"],
+        "termsSearched": [
+          "autonomy",
+          "autonomous",
+          "replication",
+          "self-improvement",
+          "AI R&D"
+        ],
+        "passagesSetAside": [],
+        "executedSearchCounts": {
+          "autonomy": 0,
+          "autonomous": 0,
+          "replication": 0,
+          "self-improvement": 0,
+          "AI R&D": 0
+        }
+      },
+      "comparison": {
+        "verdict": "agree",
+        "packStatus": "not-found",
+        "assessedStatus": "not-found",
+        "blindStatus": "not-found",
+        "blindStatusDiffers": false,
+        "noteOverstates": false,
+        "noteOmitsCondition": false,
+        "qualification": "Pack status and material conditions agree with the source under the stated criterion. Developer account only."
+      }
+    },
+    "48|microsoft-phi-2:Q15": {
+      "number": 48,
+      "cellId": "microsoft-phi-2:Q15",
+      "part": "A",
+      "status": "stated",
+      "passages": [
+        {
+          "page": null,
+          "section": "Limitations / Toxicity",
+          "quote": "We chose to release the model"
+        }
+      ],
+      "note": "“We chose to release” is an explicit Microsoft release decision.",
+      "search": null,
+      "comparison": {
+        "verdict": "agree",
+        "packStatus": "stated",
+        "assessedStatus": "stated",
+        "blindStatus": "stated",
+        "blindStatusDiffers": false,
+        "noteOverstates": false,
+        "noteOmitsCondition": false,
+        "qualification": "Pack status and material conditions agree with the source under the stated criterion. Developer account only."
+      }
+    },
+    "49|microsoft-phi-4:Q03": {
+      "number": 49,
+      "cellId": "microsoft-phi-4:Q03",
+      "part": "A",
+      "status": "not-applicable",
+      "passages": [],
+      "note": "Phi-4’s December 2024 card predates Microsoft’s frontier scaling framework.",
+      "search": null,
+      "comparison": {
+        "verdict": "agree",
+        "packStatus": "not-applicable",
+        "assessedStatus": "not-applicable",
+        "blindStatus": "not-applicable",
+        "blindStatusDiffers": false,
+        "noteOverstates": false,
+        "noteOmitsCondition": false,
+        "qualification": "Pack status and material conditions agree with the source under the stated criterion. Developer account only."
+      }
+    },
+    "50|microsoft-phi-4:Q05": {
+      "number": 50,
+      "cellId": "microsoft-phi-4:Q05",
+      "part": "A",
+      "status": "not-applicable",
+      "passages": [],
+      "note": "Phi-4’s December 2024 card predates Microsoft’s frontier scaling framework.",
+      "search": null,
+      "comparison": {
+        "verdict": "agree",
+        "packStatus": "not-applicable",
+        "assessedStatus": "not-applicable",
+        "blindStatus": "not-applicable",
+        "blindStatusDiffers": false,
+        "noteOverstates": false,
+        "noteOmitsCondition": false,
+        "qualification": "Pack status and material conditions agree with the source under the stated criterion. Developer account only."
+      }
+    },
+    "51|microsoft-phi-4:Q06": {
+      "number": 51,
+      "cellId": "microsoft-phi-4:Q06",
+      "part": "A",
+      "status": "partly",
+      "passages": [
+        {
+          "page": null,
+          "section": "Intended Use / Out-of-Scope Use Cases",
+          "quote": "Developers should consider common limitations of language models as they select use cases, and evaluate and mitigate for accuracy, safety, and fairness before using within a specific downstream use case, particularly for high-risk scenarios."
+        }
+      ],
+      "note": "Mitigation advice is present, without a frontier-framework determination tying it to a safeguard level.",
+      "search": null,
+      "comparison": {
+        "verdict": "agree",
+        "packStatus": "partly",
+        "assessedStatus": "partly",
+        "blindStatus": "partly",
+        "blindStatusDiffers": false,
+        "noteOverstates": false,
+        "noteOmitsCondition": false,
+        "qualification": "Pack status and material conditions agree with the source under the stated criterion. Developer account only."
+      }
+    },
+    "52|microsoft-phi-4:Q07": {
+      "number": 52,
+      "cellId": "microsoft-phi-4:Q07",
+      "part": "A",
+      "status": "excluded",
+      "passages": [],
+      "note": "excluded from this pass by the maintainer",
+      "comparison": null
+    },
+    "53|microsoft-phi-4:Q10": {
+      "number": 53,
+      "cellId": "microsoft-phi-4:Q10",
+      "part": "A",
+      "status": "not-found",
+      "passages": [],
+      "note": "No persuasive/manipulative capability evaluation located.",
+      "search": {
+        "sectionsRead": [
+          "Full pinned Phi-4 README, including Responsible AI and Safety Evaluation and Red-Teaming"
+        ],
+        "termsSearched": [
+          "persuasion",
+          "persuasive",
+          "manipulation",
+          "manipulative"
+        ],
+        "passagesSetAside": [],
+        "executedSearchCounts": {
+          "persuasion": 0,
+          "persuasive": 0,
+          "manipulation": 0,
+          "manipulative": 0
+        }
+      },
+      "comparison": {
+        "verdict": "agree",
+        "packStatus": "not-found",
+        "assessedStatus": "not-found",
+        "blindStatus": "not-found",
+        "blindStatusDiffers": false,
+        "noteOverstates": false,
+        "noteOmitsCondition": false,
+        "qualification": "Pack status and material conditions agree with the source under the stated criterion. Developer account only."
+      }
+    },
+    "54|microsoft-phi-4:Q15": {
+      "number": 54,
+      "cellId": "microsoft-phi-4:Q15",
+      "part": "A",
+      "status": "not-found",
+      "passages": [],
+      "note": "Release date is stated; a decision to release is not described.",
+      "search": {
+        "sectionsRead": ["Full pinned Phi-4 README"],
+        "termsSearched": ["chose", "decided", "decision", "deemed", "release"],
+        "passagesSetAside": [
+          {
+            "page": null,
+            "section": "Model Summary / Release date",
+            "reason": "December 12, 2024 is availability information, not an explicit release decision."
+          }
+        ],
+        "executedSearchCounts": {
+          "chose": 0,
+          "decided": 0,
+          "decision": 0,
+          "deemed": 1,
+          "release": 3
+        }
+      },
+      "comparison": {
+        "verdict": "agree",
+        "packStatus": "not-found",
+        "assessedStatus": "not-found",
+        "blindStatus": "not-found",
+        "blindStatusDiffers": false,
+        "noteOverstates": false,
+        "noteOmitsCondition": false,
+        "qualification": "Pack status and material conditions agree with the source under the stated criterion. Developer account only."
+      }
+    },
+    "55|microsoft-phi-4-mini-flash-reasoning:Q03": {
+      "number": 55,
+      "cellId": "microsoft-phi-4-mini-flash-reasoning:Q03",
+      "part": "A",
+      "status": "not-found",
+      "passages": [],
+      "note": "Azure AI Foundry’s Risk and Safety Evaluation framework is not the developer’s frontier scaling framework. No frontier-framework citation located.",
+      "search": {
+        "sectionsRead": [
+          "Full pinned README, especially Safety Evaluation and Red-Teaming"
+        ],
+        "termsSearched": [
+          "Advanced AI",
+          "Scaling Framework",
+          "Frontier",
+          "framework"
+        ],
+        "passagesSetAside": [
+          {
+            "page": null,
+            "section": "Safety Evaluation and Red-Teaming",
+            "reason": "Foundry evaluation tooling is a different framework from the frontier safety framework requested."
+          }
+        ],
+        "executedSearchCounts": {
+          "Advanced AI": 0,
+          "Scaling Framework": 0,
+          "Frontier": 0,
+          "framework": 4
+        }
+      },
+      "comparison": {
+        "verdict": "agree",
+        "packStatus": "not-found",
+        "assessedStatus": "not-found",
+        "blindStatus": "not-found",
+        "blindStatusDiffers": false,
+        "noteOverstates": false,
+        "noteOmitsCondition": false,
+        "qualification": "Pack status and material conditions agree with the source under the stated criterion. Developer account only."
+      }
+    },
+    "56|microsoft-phi-4-mini-flash-reasoning:Q05": {
+      "number": 56,
+      "cellId": "microsoft-phi-4-mini-flash-reasoning:Q05",
+      "part": "A",
+      "status": "not-found",
+      "passages": [],
+      "note": "No frontier-framework level, threshold or risk-category determination located.",
+      "search": {
+        "sectionsRead": [
+          "Full pinned README, especially safety and limitations"
+        ],
+        "termsSearched": [
+          "threshold",
+          "determination",
+          "risk category",
+          "Scaling",
+          "Frontier"
+        ],
+        "passagesSetAside": [
+          {
+            "page": null,
+            "section": "Safety Evaluation and Red-Teaming",
+            "reason": "Content-safety assessment does not state a frontier-framework outcome."
+          }
+        ],
+        "executedSearchCounts": {
+          "threshold": 0,
+          "determination": 0,
+          "risk category": 0,
+          "Scaling": 1,
+          "Frontier": 0
+        }
+      },
+      "comparison": {
+        "verdict": "agree",
+        "packStatus": "not-found",
+        "assessedStatus": "not-found",
+        "blindStatus": "not-found",
+        "blindStatusDiffers": false,
+        "noteOverstates": false,
+        "noteOmitsCondition": false,
+        "qualification": "Pack status and material conditions agree with the source under the stated criterion. Developer account only."
+      }
+    },
+    "57|microsoft-phi-4-mini-flash-reasoning:Q08": {
+      "number": 57,
+      "cellId": "microsoft-phi-4-mini-flash-reasoning:Q08",
+      "part": "A",
+      "status": "not-found",
+      "passages": [],
+      "note": "No dangerous-capability offensive-cyber evaluation located.",
+      "search": {
+        "sectionsRead": ["Full pinned README"],
+        "termsSearched": ["cyber", "offensive", "security", "dangerous"],
+        "passagesSetAside": [],
+        "executedSearchCounts": {
+          "cyber": 0,
+          "offensive": 4,
+          "security": 0,
+          "dangerous": 0
+        }
+      },
+      "comparison": {
+        "verdict": "agree",
+        "packStatus": "not-found",
+        "assessedStatus": "not-found",
+        "blindStatus": "not-found",
+        "blindStatusDiffers": false,
+        "noteOverstates": false,
+        "noteOmitsCondition": false,
+        "qualification": "Pack status and material conditions agree with the source under the stated criterion. Developer account only."
+      }
+    },
+    "58|microsoft-phi-4-mini-flash-reasoning:Q10": {
+      "number": 58,
+      "cellId": "microsoft-phi-4-mini-flash-reasoning:Q10",
+      "part": "A",
+      "status": "not-found",
+      "passages": [],
+      "note": "No persuasion/manipulation capability evaluation located.",
+      "search": {
+        "sectionsRead": ["Full pinned README"],
+        "termsSearched": [
+          "persuasion",
+          "persuasive",
+          "manipulation",
+          "manipulative"
+        ],
+        "passagesSetAside": [],
+        "executedSearchCounts": {
+          "persuasion": 0,
+          "persuasive": 0,
+          "manipulation": 0,
+          "manipulative": 0
+        }
+      },
+      "comparison": {
+        "verdict": "agree",
+        "packStatus": "not-found",
+        "assessedStatus": "not-found",
+        "blindStatus": "not-found",
+        "blindStatusDiffers": false,
+        "noteOverstates": false,
+        "noteOmitsCondition": false,
+        "qualification": "Pack status and material conditions agree with the source under the stated criterion. Developer account only."
+      }
+    },
+    "59|microsoft-phi-4-mini-flash-reasoning:Q11": {
+      "number": 59,
+      "cellId": "microsoft-phi-4-mini-flash-reasoning:Q11",
+      "part": "A",
+      "status": "not-found",
+      "passages": [],
+      "note": "No model deception, scheming, reward hacking or oversight-sabotage evaluation located.",
+      "search": {
+        "sectionsRead": [
+          "Full pinned README, especially Safety Evaluation and Red-Teaming and Responsible AI"
+        ],
+        "termsSearched": [
+          "deception",
+          "scheming",
+          "sabotage",
+          "reward hacking",
+          "oversight"
+        ],
+        "passagesSetAside": [
+          {
+            "page": null,
+            "section": "Safety Evaluation and Red-Teaming",
+            "reason": "Harmful content, jailbreak and groundedness assessments do not establish the Q11 criterion."
+          }
+        ],
+        "executedSearchCounts": {
+          "deception": 0,
+          "scheming": 0,
+          "sabotage": 0,
+          "reward hacking": 0,
+          "oversight": 0
+        }
+      },
+      "comparison": {
+        "verdict": "agree",
+        "packStatus": "not-found",
+        "assessedStatus": "not-found",
+        "blindStatus": "not-found",
+        "blindStatusDiffers": false,
+        "noteOverstates": false,
+        "noteOmitsCondition": false,
+        "qualification": "Pack status and material conditions agree with the source under the stated criterion. Developer account only."
+      }
+    },
+    "60|microsoft-phi-4-mini-flash-reasoning:Q12": {
+      "number": 60,
+      "cellId": "microsoft-phi-4-mini-flash-reasoning:Q12",
+      "part": "A",
+      "status": "partly",
+      "passages": [
+        {
+          "page": null,
+          "section": "Heading",
+          "quote": "Safety Evaluation and Red-Teaming"
+        }
+      ],
+      "note": "Red-teaming is named only in the heading; body describes safety assessment without identifying an adversarial red-teaming exercise or its scope.",
+      "search": null,
+      "comparison": {
+        "verdict": "agree",
+        "packStatus": "partly",
+        "assessedStatus": "partly",
+        "blindStatus": "partly",
+        "blindStatusDiffers": false,
+        "noteOverstates": false,
+        "noteOmitsCondition": false,
+        "qualification": "Pack status and material conditions agree with the source under the stated criterion. Developer account only."
+      }
+    },
+    "61|microsoft-phi-4-mini-flash-reasoning:Q14": {
+      "number": 61,
+      "cellId": "microsoft-phi-4-mini-flash-reasoning:Q14",
+      "part": "A",
+      "status": "not-found",
+      "passages": [],
+      "note": "No named government tester or pre-deployment-access body located.",
+      "search": {
+        "sectionsRead": ["Full pinned Phi-4-mini-flash-reasoning README"],
+        "termsSearched": ["government", "Institute", "AISI", "CAISI", "access"],
+        "passagesSetAside": [],
+        "executedSearchCounts": {
+          "government": 0,
+          "Institute": 0,
+          "AISI": 0,
+          "CAISI": 0,
+          "access": 0
+        }
+      },
+      "comparison": {
+        "verdict": "agree",
+        "packStatus": "not-found",
+        "assessedStatus": "not-found",
+        "blindStatus": "not-found",
+        "blindStatusDiffers": false,
+        "noteOverstates": false,
+        "noteOmitsCondition": false,
+        "qualification": "Pack status and material conditions agree with the source under the stated criterion. Developer account only."
+      }
+    },
+    "62|microsoft-phi-4-mini-flash-reasoning:Q15": {
+      "number": 62,
+      "cellId": "microsoft-phi-4-mini-flash-reasoning:Q15",
+      "part": "A",
+      "status": "not-found",
+      "passages": [],
+      "note": "Release notes and month of release are present, but no decision to release is described.",
+      "search": {
+        "sectionsRead": [
+          "Full pinned README, especially Release Notes and Model Summary"
+        ],
+        "termsSearched": [
+          "decided",
+          "decision",
+          "chose",
+          "deemed",
+          "release",
+          "launch"
+        ],
+        "passagesSetAside": [
+          {
+            "page": null,
+            "section": "Release Notes",
+            "reason": "Describes release and demand; no explicit release decision."
+          }
+        ],
+        "executedSearchCounts": {
+          "decided": 0,
+          "decision": 0,
+          "chose": 0,
+          "deemed": 1,
+          "release": 6,
+          "launch": 0
+        }
+      },
+      "comparison": {
+        "verdict": "agree",
+        "packStatus": "not-found",
+        "assessedStatus": "not-found",
+        "blindStatus": "not-found",
+        "blindStatusDiffers": false,
+        "noteOverstates": false,
+        "noteOmitsCondition": false,
+        "qualification": "Pack status and material conditions agree with the source under the stated criterion. Developer account only."
+      }
+    },
+    "63|microsoft-mai-cyber-1-1-flash:Q03": {
+      "number": 63,
+      "cellId": "microsoft-mai-cyber-1-1-flash:Q03",
+      "part": "A",
+      "status": "not-found",
+      "passages": [],
+      "note": "No named Microsoft frontier scaling framework located.",
+      "search": {
+        "sectionsRead": [
+          "All eight PDF pages, especially safety and red-teaming pp.4–7"
+        ],
+        "termsSearched": [
+          "Advanced AI",
+          "Scaling Framework",
+          "Frontier",
+          "framework"
+        ],
+        "passagesSetAside": [],
+        "executedSearchCounts": {
+          "Advanced AI": 0,
+          "Scaling Framework": 0,
+          "Frontier": 0,
+          "framework": 0
+        }
+      },
+      "comparison": {
+        "verdict": "agree",
+        "packStatus": "not-found",
+        "assessedStatus": "not-found",
+        "blindStatus": "not-found",
+        "blindStatusDiffers": false,
+        "noteOverstates": false,
+        "noteOmitsCondition": false,
+        "qualification": "Pack status and material conditions agree with the source under the stated criterion. Developer account only."
+      }
+    },
+    "64|microsoft-mai-cyber-1-1-flash:Q05": {
+      "number": 64,
+      "cellId": "microsoft-mai-cyber-1-1-flash:Q05",
+      "part": "A",
+      "status": "not-found",
+      "passages": [],
+      "note": "No outcome in Microsoft frontier-framework categories located.",
+      "search": {
+        "sectionsRead": ["pp.2–7 safety assessment and red-teaming"],
+        "termsSearched": [
+          "threshold",
+          "determination",
+          "category",
+          "Scaling",
+          "Framework"
+        ],
+        "passagesSetAside": [
+          {
+            "page": 4,
+            "section": "Safety evaluations",
+            "reason": "Increased model-level risk and limited access do not specify a frontier-framework category."
+          }
+        ],
+        "executedSearchCounts": {
+          "threshold": 0,
+          "determination": 0,
+          "category": 1,
+          "Scaling": 1,
+          "Framework": 0
+        }
+      },
+      "comparison": {
+        "verdict": "agree",
+        "packStatus": "not-found",
+        "assessedStatus": "not-found",
+        "blindStatus": "not-found",
+        "blindStatusDiffers": false,
+        "noteOverstates": false,
+        "noteOmitsCondition": false,
+        "qualification": "Pack status and material conditions agree with the source under the stated criterion. Developer account only."
+      }
+    },
+    "65|microsoft-mai-cyber-1-1-flash:Q15": {
+      "number": 65,
+      "cellId": "microsoft-mai-cyber-1-1-flash:Q15",
+      "part": "A",
+      "status": "partly",
+      "passages": [
+        {
+          "page": 7,
+          "section": "Red-teaming",
+          "quote": "This assessment uncovered several critical risks of the model alone and helped inform the decision to not allow direct model access, but only within codename MDASH."
+        }
+      ],
+      "note": "A deployment restriction decision is described, but the decision maker is not identified; Microsoft’s internal red team is identified as assessor.",
+      "search": null,
+      "comparison": {
+        "verdict": "agree",
+        "packStatus": "partly",
+        "assessedStatus": "partly",
+        "blindStatus": "partly",
+        "blindStatusDiffers": false,
+        "noteOverstates": false,
+        "noteOmitsCondition": false,
+        "qualification": "Pack status and material conditions agree with the source under the stated criterion. Developer account only."
+      }
+    },
+    "66|openai-gpt-4v:Q03": {
+      "number": 66,
+      "cellId": "openai-gpt-4v:Q03",
+      "part": "A",
+      "status": "not-applicable",
+      "passages": [],
+      "note": "GPT-4V’s September 25, 2023 card predates OpenAI’s December 2023 Preparedness Framework.",
+      "search": null,
+      "comparison": {
+        "verdict": "agree",
+        "packStatus": "not-applicable",
+        "assessedStatus": "not-applicable",
+        "blindStatus": "not-applicable",
+        "blindStatusDiffers": false,
+        "noteOverstates": false,
+        "noteOmitsCondition": false,
+        "qualification": "Pack status and material conditions agree with the source under the stated criterion. Developer account only."
+      }
+    },
+    "67|openai-gpt-4v:Q05": {
+      "number": 67,
+      "cellId": "openai-gpt-4v:Q05",
+      "part": "A",
+      "status": "not-applicable",
+      "passages": [],
+      "note": "GPT-4V’s September 25, 2023 card predates OpenAI’s December 2023 Preparedness Framework.",
+      "search": null,
+      "comparison": {
+        "verdict": "agree",
+        "packStatus": "not-applicable",
+        "assessedStatus": "not-applicable",
+        "blindStatus": "not-applicable",
+        "blindStatusDiffers": false,
+        "noteOverstates": false,
+        "noteOmitsCondition": false,
+        "qualification": "Pack status and material conditions agree with the source under the stated criterion. Developer account only."
+      }
+    },
+    "68|openai-gpt-4v:Q11": {
+      "number": 68,
+      "cellId": "openai-gpt-4v:Q11",
+      "part": "A",
+      "status": "not-found",
+      "passages": [],
+      "note": "No evaluation of the model’s own deception, scheming or oversight sabotage located.",
+      "search": {
+        "sectionsRead": [
+          "Introduction and deployment preparation pp.1–2",
+          "evaluations and expert red-teaming pp.3–11",
+          "mitigations and conclusion pp.12–14"
+        ],
+        "termsSearched": [
+          "deception",
+          "deceptive",
+          "scheming",
+          "sabotage",
+          "reward hacking",
+          "oversight"
+        ],
+        "passagesSetAside": [
+          {
+            "page": 9,
+            "section": "Expert red teaming",
+            "reason": "Image-based bias/ungrounded inference is not evaluation of the model’s own deception or sabotage."
+          }
+        ],
+        "executedSearchCounts": {
+          "deception": 0,
+          "deceptive": 0,
+          "scheming": 0,
+          "sabotage": 0,
+          "reward hacking": 0,
+          "oversight": 0
+        }
+      },
+      "comparison": {
+        "verdict": "agree",
+        "packStatus": "not-found",
+        "assessedStatus": "not-found",
+        "blindStatus": "not-found",
+        "blindStatusDiffers": false,
+        "noteOverstates": false,
+        "noteOmitsCondition": false,
+        "qualification": "Pack status and material conditions agree with the source under the stated criterion. Developer account only."
+      }
+    },
+    "69|openai-gpt-4v:Q15": {
+      "number": 69,
+      "cellId": "openai-gpt-4v:Q15",
+      "part": "A",
+      "status": "not-found",
+      "passages": [],
+      "note": "The card explains preparation for deployment, without describing a decision to release and its maker.",
+      "search": {
+        "sectionsRead": [
+          "pp.1–2 deployment preparation",
+          "pp.12–14 mitigations and conclusion"
+        ],
+        "termsSearched": [
+          "decided",
+          "decision",
+          "chose",
+          "deemed",
+          "acceptable",
+          "release",
+          "deploy"
+        ],
+        "passagesSetAside": [
+          {
+            "page": 1,
+            "section": "Introduction",
+            "reason": "Preparation prior to broad release is not an explicit release decision."
+          }
+        ],
+        "executedSearchCounts": {
+          "decided": 0,
+          "decision": 1,
+          "chose": 1,
+          "deemed": 0,
+          "acceptable": 0,
+          "release": 2,
+          "deploy": 12
+        }
+      },
+      "comparison": {
+        "verdict": "disagree",
+        "packStatus": "partly",
+        "assessedStatus": "not-found",
+        "blindStatus": "not-found",
+        "blindStatusDiffers": true,
+        "noteOverstates": true,
+        "noteOmitsCondition": false,
+        "qualification": "Broad availability and deployment preparation do not describe a release decision, a release following from a stated assessment, or a maker identified for a framework determination. Pack’s own note acknowledges no decision. Retain not-found under the criterion as written; this is a criterion-boundary judgement for disposition."
+      }
+    },
+    "70|openai-o1:Q03": {
+      "number": 70,
+      "cellId": "openai-o1:Q03",
+      "part": "A",
+      "status": "stated",
+      "passages": [
+        {
+          "page": 15,
+          "section": "5 Preparedness Framework Evaluations",
+          "quote": "We evaluated o1 in accordance with our Preparedness Framework."
+        }
+      ],
+      "note": "PDF annotation targets openai-preparedness-framework-beta.pdf; reference [28] identifies the 2023 beta expression (access date is separately September 11, 2024).",
+      "search": null,
+      "comparison": {
+        "verdict": "agree",
+        "packStatus": "stated",
+        "assessedStatus": "stated",
+        "blindStatus": "stated",
+        "blindStatusDiffers": false,
+        "noteOverstates": false,
+        "noteOmitsCondition": false,
+        "qualification": "Pack status and material conditions agree with the source under the stated criterion. Developer account only."
+      }
+    },
+    "71|openai-o1:Q05": {
+      "number": 71,
+      "cellId": "openai-o1:Q05",
+      "part": "A",
+      "status": "stated",
+      "passages": [
+        {
+          "page": 16,
+          "section": "5 Preparedness Framework Evaluations, overview before 5.1",
+          "quote": "the Safety Advisory Group [28] classified the o1 pre-mitigation model as overall medium risk,"
+        },
+        {
+          "page": 16,
+          "section": "5 Preparedness Framework Evaluations, overview before 5.1",
+          "quote": "The Safety Advisory Group also rated the post-mitigation risk levels the same as the pre-mitigation risk levels, to err on the side of caution."
+        }
+      ],
+      "note": "Preserve pre/post-mitigation distinction and checkpoint caveat; category is OpenAI’s account.",
+      "search": null,
+      "comparison": {
+        "verdict": "agree",
+        "packStatus": "stated",
+        "assessedStatus": "stated",
+        "blindStatus": "stated",
+        "blindStatusDiffers": false,
+        "noteOverstates": false,
+        "noteOmitsCondition": false,
+        "qualification": "Pack status and material conditions agree with the source under the stated criterion. Developer account only."
+      }
+    },
+    "72|openai-o1:Q15": {
+      "number": 72,
+      "cellId": "openai-o1:Q15",
+      "part": "A",
+      "status": "not-found",
+      "passages": [],
+      "note": "Safety Advisory Group risk classification is stated; an explicit release decision is not located.",
+      "search": {
+        "sectionsRead": [
+          "Introduction",
+          "5 Preparedness pp.15–16",
+          "deployment/decision search"
+        ],
+        "termsSearched": [
+          "decided",
+          "decision",
+          "approve",
+          "Board",
+          "deemed",
+          "release"
+        ],
+        "passagesSetAside": [
+          {
+            "page": 16,
+            "section": "5.1 Summary",
+            "reason": "Risk classifier is named; classification is not a release decision."
+          }
+        ],
+        "executedSearchCounts": {
+          "decided": 0,
+          "decision": 2,
+          "approve": 0,
+          "Board": 1,
+          "deemed": 0,
+          "release": 8
+        }
+      },
+      "comparison": {
+        "verdict": "agree",
+        "packStatus": "partly",
+        "assessedStatus": "partly",
+        "blindStatus": "not-found",
+        "blindStatusDiffers": true,
+        "noteOverstates": false,
+        "noteOmitsCondition": false,
+        "qualification": "Blind answer corrected after criterion re-read: the named Safety Advisory Group makes the capability determination, not the release decision, which Q15 explicitly allows as partly. Preserve that distinction."
+      }
+    },
+    "73|openai-gpt-5-2-codex:Q03": {
+      "number": 73,
+      "cellId": "openai-gpt-5-2-codex:Q03",
+      "part": "A",
+      "status": "stated",
+      "passages": [
+        {
+          "page": 8,
+          "section": "5 Preparedness",
+          "quote": "GPT-5.2-Codex frontier capabilities are assessed under the Preparedness Framework."
+        }
+      ],
+      "note": "PDF annotation on physical p.12 links directly to preparedness-framework-v2.pdf. Edition identified through getAnnotations().",
+      "search": null,
+      "comparison": {
+        "verdict": "agree",
+        "packStatus": "stated",
+        "assessedStatus": "stated",
+        "blindStatus": "stated",
+        "blindStatusDiffers": false,
+        "noteOverstates": false,
+        "noteOmitsCondition": false,
+        "qualification": "Pack status and material conditions agree with the source under the stated criterion. Developer account only."
+      }
+    },
+    "74|openai-gpt-5-2-codex:Q05": {
+      "number": 74,
+      "cellId": "openai-gpt-5-2-codex:Q05",
+      "part": "A",
+      "status": "stated",
+      "passages": [
+        {
+          "page": 4,
+          "section": "1 Introduction",
+          "quote": "does not reach High capability on cybersecurity."
+        },
+        {
+          "page": 4,
+          "section": "1 Introduction",
+          "quote": "It does not reach High capability on AI self-improvement."
+        }
+      ],
+      "note": "OpenAI states non-High categories for cyber and AI self-improvement and separately applies a High-category safeguard treatment. Preserve “treated as” versus a demonstrated threshold crossing.",
+      "search": null,
+      "comparison": {
+        "verdict": "agree",
+        "packStatus": "stated",
+        "assessedStatus": "stated",
+        "blindStatus": "stated",
+        "blindStatusDiffers": false,
+        "noteOverstates": false,
+        "noteOmitsCondition": false,
+        "qualification": "Pack status and material conditions agree with the source under the stated criterion. Developer account only."
+      }
+    },
+    "75|openai-gpt-5-2-codex:Q11": {
+      "number": 75,
+      "cellId": "openai-gpt-5-2-codex:Q11",
+      "part": "A",
+      "status": "not-found",
+      "passages": [],
+      "note": "No deception, scheming, sabotage or oversight-undermining evaluation located in this addendum.",
+      "search": {
+        "sectionsRead": [
+          "Introduction",
+          "baseline safety and prompt injection",
+          "5 Preparedness non-Q07 subsections",
+          "references"
+        ],
+        "termsSearched": [
+          "deception",
+          "deceptive",
+          "scheming",
+          "sabotage",
+          "reward hacking",
+          "oversight"
+        ],
+        "passagesSetAside": [
+          {
+            "page": 8,
+            "section": "Agentic safety",
+            "reason": "Data deletion/corruption failure modes are not stated to evaluate intentional deception or sabotage."
+          }
+        ],
+        "executedSearchCounts": {
+          "deception": 0,
+          "deceptive": 0,
+          "scheming": 0,
+          "sabotage": 0,
+          "reward hacking": 0,
+          "oversight": 0
+        }
+      },
+      "comparison": {
+        "verdict": "agree",
+        "packStatus": "not-found",
+        "assessedStatus": "not-found",
+        "blindStatus": "not-found",
+        "blindStatusDiffers": false,
+        "noteOverstates": false,
+        "noteOmitsCondition": false,
+        "qualification": "Pack status and material conditions agree with the source under the stated criterion. Developer account only."
+      }
+    },
+    "76|openai-gpt-5-2-codex:Q15": {
+      "number": 76,
+      "cellId": "openai-gpt-5-2-codex:Q15",
+      "part": "A",
+      "status": "not-found",
+      "passages": [],
+      "note": "Deployment and safeguards are stated, without an explicit decision to release being described.",
+      "search": {
+        "sectionsRead": [
+          "Introduction p.4",
+          "agentic controls pp.6–8",
+          "5 Preparedness overview"
+        ],
+        "termsSearched": [
+          "decided",
+          "decision",
+          "approved",
+          "deemed",
+          "release",
+          "deploy"
+        ],
+        "passagesSetAside": [
+          {
+            "page": 4,
+            "section": "Introduction",
+            "reason": "Being deployed with safeguards is a deployment statement, not a described decision."
+          }
+        ],
+        "executedSearchCounts": {
+          "decided": 0,
+          "decision": 1,
+          "approved": 0,
+          "deemed": 0,
+          "release": 2,
+          "deploy": 8
+        }
+      },
+      "comparison": {
+        "verdict": "agree",
+        "packStatus": "partly",
+        "assessedStatus": "partly",
+        "blindStatus": "not-found",
+        "blindStatusDiffers": true,
+        "noteOverstates": false,
+        "noteOmitsCondition": false,
+        "qualification": "Blind answer corrected after criterion re-read: p.13 names SAG and OpenAI leadership for the cyber capability determination and p.4 states deployment. Q15 expressly permits partly in this case; no release decision is attributed to them."
+      }
+    },
+    "77|openai-gpt-6-luna-october-29:Q03": {
+      "number": 77,
+      "cellId": "openai-gpt-6-luna-october-29:Q03",
+      "part": "A",
+      "status": "stated",
+      "passages": [
+        {
+          "page": 13,
+          "section": "8 Preparedness",
+          "quote": "Under our Preparedness Framework,"
+        }
+      ],
+      "note": "The framework-name annotation links directly to preparedness-framework-v2.pdf; edition established from PDF link annotations.",
+      "search": null,
+      "comparison": {
+        "verdict": "agree",
+        "packStatus": "stated",
+        "assessedStatus": "stated",
+        "blindStatus": "stated",
+        "blindStatusDiffers": false,
+        "noteOverstates": false,
+        "noteOmitsCondition": false,
+        "qualification": "Pack status and material conditions agree with the source under the stated criterion. Developer account only."
+      }
+    },
+    "78|openai-gpt-6-luna-october-29:Q05": {
+      "number": 78,
+      "cellId": "openai-gpt-6-luna-october-29:Q05",
+      "part": "A",
+      "status": "stated",
+      "passages": [
+        {
+          "page": 13,
+          "section": "8 Preparedness",
+          "quote": "The model does not reach our High threshold in AI Self-Improvement."
+        },
+        {
+          "page": 4,
+          "section": "1 Introduction",
+          "quote": "we are treating GPT-6 Luna (October 29) as High in cybersecurity"
+        }
+      ],
+      "note": "OpenAI states a precautionary High treatment in cyber and another domain and non-High AI self-improvement, matching the earlier October assessment. No Q07 evaluation passage used.",
+      "search": null,
+      "comparison": {
+        "verdict": "agree",
+        "packStatus": "stated",
+        "assessedStatus": "stated",
+        "blindStatus": "stated",
+        "blindStatusDiffers": false,
+        "noteOverstates": false,
+        "noteOmitsCondition": false,
+        "qualification": "Pack status and material conditions agree with the source under the stated criterion. Developer account only."
+      }
+    },
+    "79|openai-gpt-6-luna-october-29:Q14": {
+      "number": 79,
+      "cellId": "openai-gpt-6-luna-october-29:Q14",
+      "part": "A",
+      "status": "not-found",
+      "passages": [],
+      "note": "No named government tester or recipient of pre-deployment access located.",
+      "search": {
+        "sectionsRead": [
+          "All non-Q07 sections of the 16-page addendum, especially Introduction and Preparedness overview"
+        ],
+        "termsSearched": [
+          "government",
+          "Institute",
+          "AISI",
+          "CAISI",
+          "CAISSI",
+          "access"
+        ],
+        "passagesSetAside": [],
+        "executedSearchCounts": {
+          "government": 0,
+          "Institute": 0,
+          "AISI": 0,
+          "CAISI": 0,
+          "CAISSI": 0,
+          "access": 0
+        }
+      },
+      "comparison": {
+        "verdict": "agree",
+        "packStatus": "not-found",
+        "assessedStatus": "not-found",
+        "blindStatus": "not-found",
+        "blindStatusDiffers": false,
+        "noteOverstates": false,
+        "noteOmitsCondition": false,
+        "qualification": "Pack status and material conditions agree with the source under the stated criterion. Developer account only."
+      }
+    },
+    "80|openai-gpt-6-luna-october-29:Q15": {
+      "number": 80,
+      "cellId": "openai-gpt-6-luna-october-29:Q15",
+      "part": "A",
+      "status": "not-found",
+      "passages": [],
+      "note": "Updated availability and continuation of safeguards are described, without an explicit release decision.",
+      "search": {
+        "sectionsRead": [
+          "Introduction p.4",
+          "8 Preparedness p.13",
+          "non-Q07 release/decision search"
+        ],
+        "termsSearched": [
+          "decided",
+          "decision",
+          "approved",
+          "deemed",
+          "release",
+          "launch",
+          "deploy"
+        ],
+        "passagesSetAside": [
+          {
+            "page": 4,
+            "section": "Introduction",
+            "reason": "Same safeguard stack based on assessment is not a described release decision."
+          }
+        ],
+        "executedSearchCounts": {
+          "decided": 0,
+          "decision": 0,
+          "approved": 0,
+          "deemed": 0,
+          "release": 1,
+          "launch": 5,
+          "deploy": 0
+        }
+      },
+      "comparison": {
+        "verdict": "agree",
+        "packStatus": "stated",
+        "assessedStatus": "stated",
+        "blindStatus": "not-found",
+        "blindStatusDiffers": true,
+        "noteOverstates": false,
+        "noteOmitsCondition": false,
+        "qualification": "Blind search missed §8.2 Safeguards, p.15. It explicitly identifies OpenAI leadership’s determination that safeguards suffice for public launch, meeting stated. No excluded evaluation passage is needed.",
+        "recheckPassages": [
+          {
+            "page": 15,
+            "section": "8.2 Safeguards",
+            "quote": "The internal report informed our Safety Advisory Group’s recommendation and OpenAI leadership’s determination that these safeguards are sufficient for GPT-6 Luna (October 29) public launch."
+          }
+        ]
+      }
+    },
+    "81|xai-grok-4-1:Q03": {
+      "number": 81,
+      "cellId": "xai-grok-4-1:Q03",
+      "part": "A",
+      "status": "partly",
+      "passages": [
+        {
+          "page": 1,
+          "section": "Introduction",
+          "quote": "In line with our Risk Management Framework (RMF),"
+        }
+      ],
+      "note": "Framework named with a 2025 bibliography entry, but no edition, date or framework link located.",
+      "search": null,
+      "comparison": {
+        "verdict": "agree",
+        "packStatus": "partly",
+        "assessedStatus": "partly",
+        "blindStatus": "partly",
+        "blindStatusDiffers": false,
+        "noteOverstates": false,
+        "noteOmitsCondition": false,
+        "qualification": "Pack status and material conditions agree with the source under the stated criterion. Developer account only."
+      }
+    },
+    "82|xai-grok-4-1:Q05": {
+      "number": 82,
+      "cellId": "xai-grok-4-1:Q05",
+      "part": "A",
+      "status": "not-found",
+      "passages": [],
+      "note": "No determination in RMF level/threshold categories located; evaluation groupings are not model risk assignments.",
+      "search": {
+        "sectionsRead": [
+          "pp.1–5 safety and dual-use policy summaries; p.6 references; Q07 excluded"
+        ],
+        "termsSearched": [
+          "threshold",
+          "determination",
+          "critical",
+          "risk level",
+          "category"
+        ],
+        "passagesSetAside": [
+          {
+            "page": 1,
+            "section": "Safety evaluations",
+            "reason": "Three evaluation groupings describe topics, not a model-level determination."
+          }
+        ],
+        "executedSearchCounts": {
+          "threshold": 0,
+          "determination": 0,
+          "critical": 0,
+          "risk level": 0,
+          "category": 4
+        }
+      },
+      "comparison": {
+        "verdict": "agree",
+        "packStatus": "not-found",
+        "assessedStatus": "not-found",
+        "blindStatus": "not-found",
+        "blindStatusDiffers": false,
+        "noteOverstates": false,
+        "noteOmitsCondition": false,
+        "qualification": "Pack status and material conditions agree with the source under the stated criterion. Developer account only."
+      }
+    },
+    "83|xai-grok-4-1:Q12": {
+      "number": 83,
+      "cellId": "xai-grok-4-1:Q12",
+      "part": "A",
+      "status": "not-found",
+      "passages": [],
+      "note": "Adversarial evaluations are reported, but none is described as red-teaming.",
+      "search": {
+        "sectionsRead": [
+          "pp.1–5 non-Q07 safety, refusal, propensity and dual-use summaries"
+        ],
+        "termsSearched": ["red-team", "red team", "red teaming", "adversarial"],
+        "passagesSetAside": [
+          {
+            "page": 2,
+            "section": "Refusals",
+            "reason": "Adversarial attack testing is not described as red-teaming by the card."
+          }
+        ],
+        "executedSearchCounts": {
+          "red-team": 0,
+          "red team": 0,
+          "red teaming": 0,
+          "adversarial": 7
+        }
+      },
+      "comparison": {
+        "verdict": "agree",
+        "packStatus": "not-found",
+        "assessedStatus": "not-found",
+        "blindStatus": "not-found",
+        "blindStatusDiffers": false,
+        "noteOverstates": false,
+        "noteOmitsCondition": false,
+        "qualification": "Pack status and material conditions agree with the source under the stated criterion. Developer account only."
+      }
+    },
+    "84|xai-grok-4-1:Q13": {
+      "number": 84,
+      "cellId": "xai-grok-4-1:Q13",
+      "part": "A",
+      "status": "not-found",
+      "passages": [],
+      "note": "No external organisation named as a tester or evaluator located.",
+      "search": {
+        "sectionsRead": ["pp.1–5 non-Q07 narrative", "references pp.5–6"],
+        "termsSearched": [
+          "external",
+          "third-party",
+          "tester",
+          "evaluator",
+          "METR",
+          "Apollo"
+        ],
+        "passagesSetAside": [
+          {
+            "page": 6,
+            "section": "References",
+            "reason": "Organisations/authors associated with benchmark references are not stated to have tested Grok 4.1."
+          }
+        ],
+        "executedSearchCounts": {
+          "external": 0,
+          "third-party": 0,
+          "tester": 0,
+          "evaluator": 0,
+          "METR": 4,
+          "Apollo": 0
+        }
+      },
+      "comparison": {
+        "verdict": "agree",
+        "packStatus": "not-found",
+        "assessedStatus": "not-found",
+        "blindStatus": "not-found",
+        "blindStatusDiffers": false,
+        "noteOverstates": false,
+        "noteOmitsCondition": false,
+        "qualification": "Pack status and material conditions agree with the source under the stated criterion. Developer account only."
+      }
+    },
+    "85|xai-grok-4-1:Q15": {
+      "number": 85,
+      "cellId": "xai-grok-4-1:Q15",
+      "part": "A",
+      "status": "not-found",
+      "passages": [],
+      "note": "Deployment with safeguards is stated, but no release/deployment decision is described.",
+      "search": {
+        "sectionsRead": [
+          "pp.1–5 non-Q07 text, especially Introduction and Transparency"
+        ],
+        "termsSearched": [
+          "decided",
+          "decision",
+          "deemed",
+          "chose",
+          "release",
+          "deploy"
+        ],
+        "passagesSetAside": [
+          {
+            "page": 1,
+            "section": "Introduction",
+            "reason": "“We also deploy these models with safeguards” describes deployment rather than a decision to deploy."
+          }
+        ],
+        "executedSearchCounts": {
+          "decided": 0,
+          "decision": 0,
+          "deemed": 0,
+          "chose": 0,
+          "release": 0,
+          "deploy": 2
+        }
+      },
+      "comparison": {
+        "verdict": "agree",
+        "packStatus": "not-found",
+        "assessedStatus": "not-found",
+        "blindStatus": "not-found",
+        "blindStatusDiffers": false,
+        "noteOverstates": false,
+        "noteOmitsCondition": false,
+        "qualification": "Pack status and material conditions agree with the source under the stated criterion. Developer account only."
+      }
+    },
+    "86|xai-grok-4-7:Q03": {
+      "number": 86,
+      "cellId": "xai-grok-4-7:Q03",
+      "part": "A",
+      "status": "stated",
+      "passages": [
+        {
+          "page": 20,
+          "section": "7 Safety / framework reference",
+          "quote": "xAI Frontier Artificial Intelligence Framework (FAIF)"
+        },
+        {
+          "page": 29,
+          "section": "References [16]",
+          "quote": "xAI Frontier Artificial Intelligence Framework (FAIF). xAI, June 30, 2026."
+        }
+      ],
+      "note": "Dated reference and PDF link identify June 30, 2026 edition.",
+      "search": null,
+      "comparison": {
+        "verdict": "agree",
+        "packStatus": "stated",
+        "assessedStatus": "stated",
+        "blindStatus": "stated",
+        "blindStatusDiffers": false,
+        "noteOverstates": false,
+        "noteOmitsCondition": false,
+        "qualification": "Pack status and material conditions agree with the source under the stated criterion. Developer account only."
+      }
+    },
+    "87|xai-grok-4-7:Q05": {
+      "number": 87,
+      "cellId": "xai-grok-4-7:Q05",
+      "part": "A",
+      "status": "partly",
+      "passages": [
+        {
+          "page": 20,
+          "section": "7 Safety",
+          "quote": "Grok 4.7 scores below the FAIF safety thresholds on dual-use knowledge,"
+        }
+      ],
+      "note": "Threshold statement covers a narrower dual-use knowledge domain; no framework outcome located for every tracked domain. Only framework summary used; excluded evaluation methods not inspected.",
+      "search": null,
+      "comparison": {
+        "verdict": "agree",
+        "packStatus": "partly",
+        "assessedStatus": "partly",
+        "blindStatus": "partly",
+        "blindStatusDiffers": false,
+        "noteOverstates": false,
+        "noteOmitsCondition": false,
+        "qualification": "Pack status and material conditions agree with the source under the stated criterion. Developer account only."
+      }
+    },
+    "88|xai-grok-4-7:Q09": {
+      "number": 88,
+      "cellId": "xai-grok-4-7:Q09",
+      "part": "A",
+      "status": "not-found",
+      "passages": [],
+      "note": "Autonomous software-engineering benchmarks are presented as product capability; no dangerous-capability autonomy/AI R&D evaluation conclusion located.",
+      "search": {
+        "sectionsRead": [
+          "1 Overview p.4",
+          "capability benchmark sections incl. p.11",
+          "non-Q07 safety sections"
+        ],
+        "termsSearched": [
+          "autonomy",
+          "autonomous",
+          "self-replication",
+          "self-improvement",
+          "AI R&D",
+          "dangerous"
+        ],
+        "passagesSetAside": [
+          {
+            "page": 11,
+            "section": "SWE-Marathon",
+            "reason": "Product-capability benchmark alone does not satisfy Q09."
+          }
+        ],
+        "executedSearchCounts": {
+          "autonomy": 1,
+          "autonomous": 3,
+          "self-replication": 0,
+          "self-improvement": 0,
+          "AI R&D": 0,
+          "dangerous": 2
+        }
+      },
+      "comparison": {
+        "verdict": "agree",
+        "packStatus": "not-found",
+        "assessedStatus": "not-found",
+        "blindStatus": "not-found",
+        "blindStatusDiffers": false,
+        "noteOverstates": false,
+        "noteOmitsCondition": false,
+        "qualification": "Pack status and material conditions agree with the source under the stated criterion. Developer account only."
+      }
+    },
+    "89|xai-grok-4-7:Q11": {
+      "number": 89,
+      "cellId": "xai-grok-4-7:Q11",
+      "part": "A",
+      "status": "not-found",
+      "passages": [],
+      "note": "No evaluation of the model’s own deception, scheming, sabotage or oversight-undermining located.",
+      "search": {
+        "sectionsRead": ["non-Q07 safety sections and overview", "references"],
+        "termsSearched": [
+          "deception",
+          "deceptive",
+          "scheming",
+          "sabotage",
+          "reward hacking",
+          "oversight"
+        ],
+        "passagesSetAside": [
+          {
+            "page": 4,
+            "section": "Limitations",
+            "reason": "Advice about human oversight of high-stakes use is not a model deception evaluation."
+          }
+        ],
+        "executedSearchCounts": {
+          "deception": 0,
+          "deceptive": 0,
+          "scheming": 0,
+          "sabotage": 0,
+          "reward hacking": 0,
+          "oversight": 1
+        }
+      },
+      "comparison": {
+        "verdict": "agree",
+        "packStatus": "partly",
+        "assessedStatus": "partly",
+        "blindStatus": "not-found",
+        "blindStatusDiffers": true,
+        "noteOverstates": false,
+        "noteOmitsCondition": false,
+        "qualification": "Blind search missed the honesty-under-pressure evaluation in §11.1 p.26. A result table is present, without a concluding sentence; partly follows the criterion’s conclusion requirement.",
+        "recheckPassages": [
+          {
+            "page": 26,
+            "section": "11 Behaviors",
+            "quote": "These evaluations cover propensities that affect reliability, neutrality, and behavior rather than disallowed content: honesty under pressure and sycophancy."
+          }
+        ]
+      }
+    },
+    "90|xai-grok-4-7:Q15": {
+      "number": 90,
+      "cellId": "xai-grok-4-7:Q15",
+      "part": "A",
+      "status": "not-found",
+      "passages": [],
+      "note": "No explicit release or deployment decision and decision maker located.",
+      "search": {
+        "sectionsRead": [
+          "Overview p.4",
+          "non-Q07 safety sections",
+          "references"
+        ],
+        "termsSearched": [
+          "decided",
+          "decision",
+          "deemed",
+          "approved",
+          "release",
+          "launch",
+          "deploy"
+        ],
+        "passagesSetAside": [
+          {
+            "page": 18,
+            "section": "HackerBench",
+            "reason": "Release-tracked safeguards describe evaluation configuration, not a release decision."
+          }
+        ],
+        "executedSearchCounts": {
+          "decided": 0,
+          "decision": 1,
+          "deemed": 0,
+          "approved": 0,
+          "release": 1,
+          "launch": 0,
+          "deploy": 4
+        }
+      },
+      "comparison": {
+        "verdict": "agree",
+        "packStatus": "not-found",
+        "assessedStatus": "not-found",
+        "blindStatus": "not-found",
+        "blindStatusDiffers": false,
+        "noteOverstates": false,
+        "noteOmitsCondition": false,
+        "qualification": "Pack status and material conditions agree with the source under the stated criterion. Developer account only."
+      }
+    },
+    "91|anthropic-claude-2-1:Q08": {
+      "number": 91,
+      "cellId": "anthropic-claude-2-1:Q08",
+      "part": "B",
+      "packStatus": "not-found",
+      "quotationVerbatim": "not applicable",
+      "quotationChecks": [],
+      "locatorRight": "not applicable",
+      "support": "full",
+      "dateAndKind": "not applicable",
+      "misleadAlone": false,
+      "why": "Status and note preserve the question’s policy scope and the developer-account qualification.",
+      "overstatement": null,
+      "policyLevelNote": "Technical evaluation details are not reproduced in this report.",
+      "sourceSha256": "e735ad89f95c7aa295459e0ef9153d2c54a7503f16ff39c8e20b9b4f22fd4d56",
+      "search": {
+        "sectionsRead": "Whole text.",
+        "termsSearched": [
+          "cyber",
+          "hack",
+          "exploit",
+          "vulnerab",
+          "security",
+          "national security"
+        ],
+        "termMatchCounts": {
+          "cyber": 0,
+          "hack": 0,
+          "exploit": 0,
+          "vulnerab": 0,
+          "security": 2,
+          "national security": 2
+        },
+        "qualification": "Not-found means no matching criterion passage located in this source; it is not a claim about activity or disclosure elsewhere.",
+        "passagesSetAside": [
+          {
+            "page": 2,
+            "section": "Evaluations and Red Teaming",
+            "reason": "General national-security/safety judgement does not name an offensive-cyber evaluation."
+          }
+        ]
+      }
+    },
+    "92|anthropic-claude-2-1:Q11": {
+      "number": 92,
+      "cellId": "anthropic-claude-2-1:Q11",
+      "part": "B",
+      "packStatus": "not-found",
+      "quotationVerbatim": "not applicable",
+      "quotationChecks": [],
+      "locatorRight": "not applicable",
+      "support": "full",
+      "dateAndKind": "not applicable",
+      "misleadAlone": false,
+      "why": "Status and note preserve the question’s policy scope and the developer-account qualification.",
+      "overstatement": null,
+      "policyLevelNote": "Technical evaluation details are not reproduced in this report.",
+      "sourceSha256": "e735ad89f95c7aa295459e0ef9153d2c54a7503f16ff39c8e20b9b4f22fd4d56",
+      "search": {
+        "sectionsRead": "Section 3 'Alignment Evaluations' (3.1–3.5) and the appendix 'Honesty Evaluations'.",
+        "termsSearched": [
+          "decept",
+          "deceiv",
+          "scheming",
+          "sabotage",
+          "reward hack",
+          "oversight",
+          "honesty",
+          "alignment"
+        ],
+        "termMatchCounts": {
+          "decept": 0,
+          "deceiv": 0,
+          "scheming": 0,
+          "sabotage": 0,
+          "reward hack": 0,
+          "oversight": 0,
+          "honesty": 15,
+          "alignment": 6
+        },
+        "qualification": "Not-found means no matching criterion passage located in this source; it is not a claim about activity or disclosure elsewhere.",
+        "passagesSetAside": [
+          {
+            "page": "15–16",
+            "section": "Claude 2.1 appendix / Honesty Evaluations",
+            "reason": "Factual accuracy and acknowledgement of uncertainty are not a stated model-deception or scheming evaluation."
+          }
+        ]
+      }
+    },
+    "93|anthropic-claude-3-5-haiku-sonnet-new:Q02": {
+      "number": 93,
+      "cellId": "anthropic-claude-3-5-haiku-sonnet-new:Q02",
+      "part": "B",
+      "packStatus": "partly",
+      "quotationVerbatim": "yes",
+      "quotationChecks": [
+        {
+          "quotation": 1,
+          "verbatim": "yes",
+          "locator": "Section 2.3 'Vision Capabilities', PDF p. 5",
+          "sourcePages": [5],
+          "wordCount": 10,
+          "quotationSha256": "afae5874e61f8bf3a8ba182914b85db42de961296e782b4bafe6159e857efab6",
+          "normalization": "PDF text whitespace, line wrapping, ligatures and text-layer gaps before punctuation only."
+        },
+        {
+          "quotation": 2,
+          "verbatim": "yes",
+          "locator": "Section 3.2 'Frontier Risk Evaluations', PDF p. 9",
+          "sourcePages": [9],
+          "wordCount": 14,
+          "quotationSha256": "862db6f5265c3acfcd1096f3c7e7a758d23636d5ef25c9ca7b64eb37c4d4d783",
+          "normalization": "PDF text whitespace, line wrapping, ligatures and text-layer gaps before punctuation only."
+        }
+      ],
+      "locatorRight": "yes",
+      "support": "full",
+      "dateAndKind": "not applicable",
+      "misleadAlone": false,
+      "why": "Status and note preserve the question’s policy scope and the developer-account qualification.",
+      "overstatement": null,
+      "policyLevelNote": "Technical evaluation details are not reproduced in this report.",
+      "sourceSha256": "5425dde49b649916000e38fb86c4721cfe31a8bdfe30bbb98e875fa3d654804c"
+    },
+    "94|anthropic-claude-3-5-haiku-sonnet-new:Q04": {
+      "number": 94,
+      "cellId": "anthropic-claude-3-5-haiku-sonnet-new:Q04",
+      "part": "B",
+      "packStatus": "stated",
+      "quotationVerbatim": "yes",
+      "quotationChecks": [
+        {
+          "quotation": 1,
+          "verbatim": "yes",
+          "locator": "References [4], PDF p. 13 (the address breaks across two lines)",
+          "sourcePages": [13],
+          "wordCount": 9,
+          "quotationSha256": "9ceca59c26ce541856101ea30a441357cc1b924bbc810e83ac69844c0b00addb",
+          "normalization": "PDF text whitespace, line wrapping, ligatures and text-layer gaps before punctuation only."
+        }
+      ],
+      "locatorRight": "yes",
+      "support": "full",
+      "dateAndKind": "not applicable",
+      "misleadAlone": false,
+      "why": "Status and note preserve the question’s policy scope and the developer-account qualification.",
+      "overstatement": null,
+      "policyLevelNote": "Technical evaluation details are not reproduced in this report.",
+      "sourceSha256": "5425dde49b649916000e38fb86c4721cfe31a8bdfe30bbb98e875fa3d654804c"
+    },
+    "95|anthropic-claude-3-5-haiku-sonnet-new:Q06": {
+      "number": 95,
+      "cellId": "anthropic-claude-3-5-haiku-sonnet-new:Q06",
+      "part": "B",
+      "packStatus": "partly",
+      "quotationVerbatim": "yes",
+      "quotationChecks": [
+        {
+          "quotation": 1,
+          "verbatim": "yes",
+          "locator": "Section 2.1 'Computer Use', PDF p. 3",
+          "sourcePages": [3],
+          "wordCount": 15,
+          "quotationSha256": "c2ed4288a3bc21a4d9d63a9e472be020ffe11c8b2012088f9f6c0164350a8985",
+          "normalization": "PDF text whitespace, line wrapping, ligatures and text-layer gaps before punctuation only."
+        },
+        {
+          "quotation": 2,
+          "verbatim": "yes",
+          "locator": "Section 3.1.3 'Computer Use Red-Teaming', PDF p. 9",
+          "sourcePages": [9],
+          "wordCount": 18,
+          "quotationSha256": "03ce1ea9ea5811d8dd63661a13c1601362f81e07b05d7f4254e3970d33e568b2",
+          "normalization": "PDF text whitespace, line wrapping, ligatures and text-layer gaps before punctuation only."
+        }
+      ],
+      "locatorRight": "yes",
+      "support": "full",
+      "dateAndKind": "not applicable",
+      "misleadAlone": false,
+      "why": "Status and note preserve the question’s policy scope and the developer-account qualification.",
+      "overstatement": null,
+      "policyLevelNote": "Technical evaluation details are not reproduced in this report.",
+      "sourceSha256": "5425dde49b649916000e38fb86c4721cfe31a8bdfe30bbb98e875fa3d654804c"
+    },
+    "96|anthropic-claude-3-5-haiku-sonnet-new:Q09": {
+      "number": 96,
+      "cellId": "anthropic-claude-3-5-haiku-sonnet-new:Q09",
+      "part": "B",
+      "packStatus": "stated",
+      "quotationVerbatim": "no",
+      "quotationChecks": [
+        {
+          "quotation": 1,
+          "verbatim": "yes",
+          "locator": "Section 3.1.4 'Evaluating Computer Use for the Responsible Scaling Policy', PDF p. 9",
+          "sourcePages": [9],
+          "wordCount": 15,
+          "quotationSha256": "48499eb51a05e8e06deeacbeeb019263b86817c128cc050e54bc477c5f43f851",
+          "normalization": "PDF text whitespace, line wrapping, ligatures and text-layer gaps before punctuation only."
+        },
+        {
+          "quotation": 2,
+          "verbatim": "no",
+          "locator": "Section 3.2.1 'Results', PDF pp. 9–10 (the text layer splits 'ASL-3' across the page break; the ellipsis marks the page number)",
+          "sourcePages": [9, 10],
+          "wordCount": 16,
+          "quotationSha256": "fea3d5dff967c923c49f19ed1259ae9525ee5b991cacdb0aa0816501add984e6",
+          "normalization": "PDF text whitespace, line wrapping, ligatures and text-layer gaps before punctuation only."
+        }
+      ],
+      "locatorRight": "yes",
+      "support": "full",
+      "dateAndKind": "not applicable",
+      "misleadAlone": false,
+      "why": "First quotation matches. Second replaces a page break inside ASL-3 with an ellipsis and omits its hyphen, so it is not a verbatim transcription. The two-page locator and policy conclusion are supported.",
+      "overstatement": "Repair the second transcription to ASL-3; the inserted page number is not omitted source prose.",
+      "policyLevelNote": "Technical evaluation details are not reproduced in this report.",
+      "sourceSha256": "5425dde49b649916000e38fb86c4721cfe31a8bdfe30bbb98e875fa3d654804c",
+      "suggestedQuotation": {
+        "page": "9–10",
+        "section": "3.2.1 Results",
+        "quote": "The model did not demonstrate capabilities requiring ASL-3 safeguards and security in any domain."
+      }
+    },
+    "97|anthropic-claude-3-5-haiku-sonnet-new:Q16": {
+      "number": 97,
+      "cellId": "anthropic-claude-3-5-haiku-sonnet-new:Q16",
+      "part": "B",
+      "packStatus": "stated",
+      "quotationVerbatim": "yes",
+      "quotationChecks": [
+        {
+          "quotation": 1,
+          "verbatim": "yes",
+          "locator": "Section 2.2 'Tool Use & Agentic Tasks', PDF p. 3",
+          "sourcePages": [3],
+          "wordCount": 11,
+          "quotationSha256": "be1f6548b9b9a23c48591feb714313eef8aecf386e571a10e4becdf8e593536f",
+          "normalization": "PDF text whitespace, line wrapping, ligatures and text-layer gaps before punctuation only."
+        },
+        {
+          "quotation": 2,
+          "verbatim": "yes",
+          "locator": "Section 3.1.4 'Evaluating Computer Use for the Responsible Scaling Policy', PDF p. 9",
+          "sourcePages": [9],
+          "wordCount": 8,
+          "quotationSha256": "fe983f3b47f56ed77e67c9a5917df083a850b473177cf511bdc7dc9f065353a3",
+          "normalization": "PDF text whitespace, line wrapping, ligatures and text-layer gaps before punctuation only."
+        }
+      ],
+      "locatorRight": "yes",
+      "support": "full",
+      "dateAndKind": "not applicable",
+      "misleadAlone": false,
+      "why": "Status and note preserve the question’s policy scope and the developer-account qualification.",
+      "overstatement": null,
+      "policyLevelNote": "Technical evaluation details are not reproduced in this report.",
+      "sourceSha256": "5425dde49b649916000e38fb86c4721cfe31a8bdfe30bbb98e875fa3d654804c"
+    },
+    "98|anthropic-claude-opus-4-5:Q09": {
+      "number": 98,
+      "cellId": "anthropic-claude-opus-4-5:Q09",
+      "part": "B",
+      "packStatus": "stated",
+      "quotationVerbatim": "yes",
+      "quotationChecks": [
+        {
+          "quotation": 1,
+          "verbatim": "yes",
+          "locator": "Section 1.2.4.1 'On autonomy risks', PDF p. 13",
+          "sourcePages": [13],
+          "wordCount": 17,
+          "quotationSha256": "239f9a774a4b47061f8b619bf3f90099d63236cf923212691d70a571f77cea4f",
+          "normalization": "PDF text whitespace, line wrapping, ligatures and text-layer gaps before punctuation only."
+        },
+        {
+          "quotation": 2,
+          "verbatim": "yes",
+          "locator": "Section 1.2.3 'AI Safety Level determination process', PDF p. 12",
+          "sourcePages": [12, 134],
+          "wordCount": 19,
+          "quotationSha256": "4fe7ae79ed444fc2a8c6d64ca74164622b03a27b6d6af66146ac408ff5921c6b",
+          "normalization": "PDF text whitespace, line wrapping, ligatures and text-layer gaps before punctuation only."
+        }
+      ],
+      "locatorRight": "yes",
+      "support": "full",
+      "dateAndKind": "not applicable",
+      "misleadAlone": false,
+      "why": "Status and note preserve the question’s policy scope and the developer-account qualification.",
+      "overstatement": null,
+      "policyLevelNote": "Technical evaluation details are not reproduced in this report.",
+      "sourceSha256": "33be92efcb58f901d9d2c17e61bf277afbd514a1ac70a642f21e918c21ca25a8"
+    },
+    "99|anthropic-claude-haiku-5-5:Q07": {
+      "number": 99,
+      "cellId": "anthropic-claude-haiku-5-5:Q07",
+      "part": "B",
+      "status": "excluded",
+      "note": "excluded from this pass by the maintainer",
+      "quotationChecks": [],
+      "comparison": null
+    },
+    "100|anthropic-claude-haiku-5-5:Q13": {
+      "number": 100,
+      "cellId": "anthropic-claude-haiku-5-5:Q13",
+      "part": "B",
+      "packStatus": "stated",
+      "quotationVerbatim": "yes",
+      "quotationChecks": [
+        {
+          "quotation": 1,
+          "verbatim": "yes",
+          "locator": "Section 5.2.2.1 'Coding', PDF p. 51",
+          "sourcePages": [51],
+          "wordCount": 25,
+          "quotationSha256": "6ce1cc4a2f2fa34c1e19772df33409cd989ce02b3b2ca85b6d6903bce9494b81",
+          "normalization": "PDF text whitespace, line wrapping, ligatures and text-layer gaps before punctuation only."
+        }
+      ],
+      "locatorRight": "yes",
+      "support": "full",
+      "dateAndKind": "not applicable",
+      "misleadAlone": false,
+      "why": "Gray Swan is named as testing current models, and Haiku 5.5 is among the reported models. The procedural quotation is not reproduced here; the external-evaluator role is the relevant policy fact.",
+      "overstatement": null,
+      "policyLevelNote": "Technical evaluation details are not reproduced in this report.",
+      "sourceSha256": "d5dbaab6996c02ad6ff28b032ce5a9c7582e59af09b5d1bc0975cf0235535da9"
+    },
+    "101|google-deepmind-gemini-3-flash:Q09": {
+      "number": 101,
+      "cellId": "google-deepmind-gemini-3-flash:Q09",
+      "part": "B",
+      "packStatus": "not-found",
+      "quotationVerbatim": "not applicable",
+      "quotationChecks": [],
+      "locatorRight": "not applicable",
+      "support": "partial",
+      "dateAndKind": "not applicable",
+      "misleadAlone": true,
+      "why": "Not-found is justified for dangerous-capability autonomy evaluation. The unqualified note “No autonomy ... evaluation” can also be read as denying the product-capability agentic evaluations that the card reports.",
+      "overstatement": "Qualify the absence as dangerous-capability evaluation and set aside the product-capability results explicitly.",
+      "policyLevelNote": "Technical evaluation details are not reproduced in this report.",
+      "sourceSha256": "b2800104a47322d76d80a72bfb128ba7f0bacffc419ae9bb630eae289c761ba0",
+      "search": {
+        "sectionsRead": "Whole card.",
+        "termsSearched": [
+          "autonom",
+          "R&D",
+          "machine learning",
+          "self-repl",
+          "self-improv",
+          "agentic"
+        ],
+        "termMatchCounts": {
+          "autonom": 0,
+          "R&D": 0,
+          "machine learning": 0,
+          "self-repl": 0,
+          "self-improv": 0,
+          "agentic": 2
+        },
+        "qualification": "Not-found means no matching criterion passage located in this source; it is not a claim about activity or disclosure elsewhere.",
+        "passagesSetAside": [
+          {
+            "page": "2–6",
+            "section": "Capability results and Frontier Safety Assessment",
+            "reason": "Product agentic benchmarks do not meet dangerous-capability criterion; inherited Pro frontier assessment names no autonomy domain."
+          }
+        ]
+      }
+    },
+    "102|google-deepmind-gemini-4-argon:Q06": {
+      "number": 102,
+      "cellId": "google-deepmind-gemini-4-argon:Q06",
+      "part": "B",
+      "packStatus": "stated",
+      "quotationVerbatim": "yes",
+      "quotationChecks": [
+        {
+          "quotation": 1,
+          "verbatim": "yes",
+          "locator": "Safety & Security, 'Frontier Safety Assessment', PDF p. 11 (printed p. 10)",
+          "sourcePages": [11],
+          "wordCount": 21,
+          "quotationSha256": "352d4ee39b4c62428bb46de1649f3312c839c9150c3c93a04ef5ff1ae7c0e2ea",
+          "normalization": "PDF text whitespace, line wrapping, ligatures and text-layer gaps before punctuation only."
+        },
+        {
+          "quotation": 2,
+          "verbatim": "yes",
+          "locator": "Frontier safety table, Loss of Control row, PDF p. 13 (printed p. 12)",
+          "sourcePages": [13],
+          "wordCount": 20,
+          "quotationSha256": "525d99e156313f3f1a516d11d6c2b4b46cb3088891fab802283c57591ded9230",
+          "normalization": "PDF text whitespace, line wrapping, ligatures and text-layer gaps before punctuation only."
+        }
+      ],
+      "locatorRight": "yes",
+      "support": "partial",
+      "dateAndKind": "not applicable",
+      "misleadAlone": true,
+      "why": "The card ties a safety case and generic safeguards to thresholds, but the quoted passages name no safeguard, protection type or safeguard standard. The note itself acknowledges that the safeguards are not described. A safety case is an assessment, not a named protection.",
+      "overstatement": "Under Q06’s naming criterion, use partly or supply a card passage naming the applied safeguard/standard; retain the developer’s claimed residual-risk qualification.",
+      "policyLevelNote": "Technical evaluation details are not reproduced in this report.",
+      "sourceSha256": "562cd3c5deddf75dd2aff7a59dcf6dcc273277eae7d82fe957b6a607d84f7763",
+      "proposedStatus": "partly"
+    },
+    "103|google-deepmind-gemini-4-argon:Q10": {
+      "number": 103,
+      "cellId": "google-deepmind-gemini-4-argon:Q10",
+      "part": "B",
+      "packStatus": "stated",
+      "quotationVerbatim": "yes",
+      "quotationChecks": [
+        {
+          "quotation": 1,
+          "verbatim": "yes",
+          "locator": "Frontier safety table, Harmful Manipulation row, PDF p. 13 (printed p. 12)",
+          "sourcePages": [13],
+          "wordCount": 11,
+          "quotationSha256": "bf4c749239fd159f0156be1fe4f752e6789488fea01d033613df0fe524f52816",
+          "normalization": "PDF text whitespace, line wrapping, ligatures and text-layer gaps before punctuation only."
+        }
+      ],
+      "locatorRight": "yes",
+      "support": "full",
+      "dateAndKind": "not applicable",
+      "misleadAlone": false,
+      "why": "Status and note preserve the question’s policy scope and the developer-account qualification.",
+      "overstatement": null,
+      "policyLevelNote": "Technical evaluation details are not reproduced in this report.",
+      "sourceSha256": "562cd3c5deddf75dd2aff7a59dcf6dcc273277eae7d82fe957b6a607d84f7763"
+    },
+    "104|meta-llama-3-3:Q02": {
+      "number": 104,
+      "cellId": "meta-llama-3-3:Q02",
+      "part": "B",
+      "packStatus": "stated",
+      "quotationVerbatim": "yes",
+      "quotationChecks": [
+        {
+          "quotation": 1,
+          "verbatim": "yes",
+          "locator": "Model Information, 'Model Release Date'",
+          "sourcePages": [null],
+          "wordCount": 5,
+          "quotationSha256": "07fdac0deb8fab650ee08843bb2959449abb0e8051022b4032eb0d7bb108120f",
+          "normalization": "PDF text whitespace, line wrapping, ligatures and text-layer gaps before punctuation only."
+        },
+        {
+          "quotation": 2,
+          "verbatim": "yes",
+          "locator": "Hardware and Software, 'Training Greenhouse Gas Emissions'",
+          "sourcePages": [null],
+          "wordCount": 7,
+          "quotationSha256": "cac5892d0455293df5ca1ce4895d61d7620f9b905f3d325364eca6d6d7bb7450",
+          "normalization": "PDF text whitespace, line wrapping, ligatures and text-layer gaps before punctuation only."
+        }
+      ],
+      "locatorRight": "yes",
+      "support": "full",
+      "dateAndKind": "yes",
+      "misleadAlone": false,
+      "why": "Status and note preserve the question’s policy scope and the developer-account qualification.",
+      "overstatement": null,
+      "policyLevelNote": "Technical evaluation details are not reproduced in this report.",
+      "sourceSha256": "1bad06e0e2feadf6a195fcce4d6a2f7bca48f05b7a25a71f18c2baa88d292adf"
+    },
+    "105|meta-llama-3-3:Q08": {
+      "number": 105,
+      "cellId": "meta-llama-3-3:Q08",
+      "part": "B",
+      "packStatus": "partly",
+      "quotationVerbatim": "yes",
+      "quotationChecks": [
+        {
+          "quotation": 1,
+          "verbatim": "yes",
+          "locator": "Responsibility & Safety, 'Critical and other risks', item 3 (Cyber attack enablement)",
+          "sourcePages": [null],
+          "wordCount": 20,
+          "quotationSha256": "020c6afd8f60d6fa20beb618b928541aa777583d5b7b48c5e77ba7b4d09dd649",
+          "normalization": "PDF text whitespace, line wrapping, ligatures and text-layer gaps before punctuation only."
+        }
+      ],
+      "locatorRight": "yes",
+      "support": "full",
+      "dateAndKind": "not applicable",
+      "misleadAlone": false,
+      "why": "The passage reports a Llama 3-family cyber evaluation without an outcome. Partly and the family scope are supported; this does not establish a Llama 3.3-specific evaluation.",
+      "overstatement": null,
+      "policyLevelNote": "Technical evaluation details are not reproduced in this report.",
+      "sourceSha256": "1bad06e0e2feadf6a195fcce4d6a2f7bca48f05b7a25a71f18c2baa88d292adf"
+    },
+    "106|meta-muse-spark-1-3:Q13": {
+      "number": 106,
+      "cellId": "meta-muse-spark-1-3:Q13",
+      "part": "B",
+      "packStatus": "stated",
+      "quotationVerbatim": "yes",
+      "quotationChecks": [
+        {
+          "quotation": 1,
+          "verbatim": "yes",
+          "locator": "Section 3.1.4 Third-Party Red Teaming on Jailbreak, Handshake AI Human Red Teaming, PDF p. 59 (printed p. 58)",
+          "sourcePages": [59],
+          "wordCount": 20,
+          "quotationSha256": "eb9c174cad64edbd83f5f71949b4903a3539d69b2dd75e34748e52d81f3f3686",
+          "normalization": "PDF text whitespace, line wrapping, ligatures and text-layer gaps before punctuation only."
+        },
+        {
+          "quotation": 2,
+          "verbatim": "yes",
+          "locator": "Section 3.2.2.3 Third-Party Red Teaming on Prompt Injection, PDF p. 67 (printed p. 66)",
+          "sourcePages": [67],
+          "wordCount": 17,
+          "quotationSha256": "3cfba2b557438c53a452e35ceaf398cc68c108caac23fd17878c61b1b1b583cd",
+          "normalization": "PDF text whitespace, line wrapping, ligatures and text-layer gaps before punctuation only."
+        }
+      ],
+      "locatorRight": "yes",
+      "support": "full",
+      "dateAndKind": "not applicable",
+      "misleadAlone": false,
+      "why": "The quoted passages name external testing roles; the note separately describes Scale AI as a benchmark source rather than asserting that it tested the model.",
+      "overstatement": null,
+      "policyLevelNote": "Technical evaluation details are not reproduced in this report.",
+      "sourceSha256": "84df67c9f4610e574fd82f39227b0e6a266e6e1fd0e6ea21c3420f1661e0835e"
+    },
+    "107|microsoft-phi-2:Q04": {
+      "number": 107,
+      "cellId": "microsoft-phi-2:Q04",
+      "part": "B",
+      "packStatus": "not-applicable",
+      "quotationVerbatim": "not applicable",
+      "quotationChecks": [],
+      "locatorRight": "not applicable",
+      "support": "full",
+      "dateAndKind": "yes",
+      "misleadAlone": false,
+      "why": "Framework-link question is not applicable under the pack’s initial-card chronology. The pinned README’s later revision is a separate date, not a newly established original card date.",
+      "overstatement": null,
+      "policyLevelNote": "Technical evaluation details are not reproduced in this report.",
+      "sourceSha256": "7b7032289b8c9ee247860f210c6ed5c06704403bfdf5487164cd1669c0aaf04f"
+    },
+    "108|microsoft-phi-2:Q13": {
+      "number": 108,
+      "cellId": "microsoft-phi-2:Q13",
+      "part": "B",
+      "packStatus": "not-found",
+      "quotationVerbatim": "not applicable",
+      "quotationChecks": [],
+      "locatorRight": "not applicable",
+      "support": "full",
+      "dateAndKind": "not applicable",
+      "misleadAlone": false,
+      "why": "Status and note preserve the question’s policy scope and the developer-account qualification.",
+      "overstatement": null,
+      "policyLevelNote": "Technical evaluation details are not reproduced in this report.",
+      "sourceSha256": "7b7032289b8c9ee247860f210c6ed5c06704403bfdf5487164cd1669c0aaf04f",
+      "search": {
+        "sectionsRead": "whole card (Markdown file, all sections)",
+        "termsSearched": [
+          "external",
+          "third-party",
+          "independent",
+          "partner",
+          "evaluator"
+        ],
+        "termMatchCounts": {
+          "external": 0,
+          "third-party": 2,
+          "independent": 0,
+          "partner": 0,
+          "evaluator": 0
+        },
+        "qualification": "Not-found means no matching criterion passage located in this source; it is not a claim about activity or disclosure elsewhere.",
+        "passagesSetAside": []
+      }
+    },
+    "109|microsoft-phi-2:Q14": {
+      "number": 109,
+      "cellId": "microsoft-phi-2:Q14",
+      "part": "B",
+      "packStatus": "not-found",
+      "quotationVerbatim": "not applicable",
+      "quotationChecks": [],
+      "locatorRight": "not applicable",
+      "support": "full",
+      "dateAndKind": "not applicable",
+      "misleadAlone": false,
+      "why": "Status and note preserve the question’s policy scope and the developer-account qualification.",
+      "overstatement": null,
+      "policyLevelNote": "Technical evaluation details are not reproduced in this report.",
+      "sourceSha256": "7b7032289b8c9ee247860f210c6ed5c06704403bfdf5487164cd1669c0aaf04f",
+      "search": {
+        "sectionsRead": "whole card (Markdown file, all sections)",
+        "termsSearched": ["government", "institute", "AISI", "CAISI"],
+        "termMatchCounts": {
+          "government": 0,
+          "institute": 0,
+          "AISI": 0,
+          "CAISI": 0
+        },
+        "qualification": "Not-found means no matching criterion passage located in this source; it is not a claim about activity or disclosure elsewhere.",
+        "passagesSetAside": []
+      }
+    },
+    "110|microsoft-phi-2:Q16": {
+      "number": 110,
+      "cellId": "microsoft-phi-2:Q16",
+      "part": "B",
+      "packStatus": "stated",
+      "quotationVerbatim": "yes",
+      "quotationChecks": [
+        {
+          "quotation": 1,
+          "verbatim": "yes",
+          "locator": "Intended Uses, Notes",
+          "sourcePages": [null],
+          "wordCount": 17,
+          "quotationSha256": "3d1e151b4437d1c61768d7959116b2872f551a7f24b48d3ae512fc50609b205d",
+          "normalization": "PDF text whitespace, line wrapping, ligatures and text-layer gaps before punctuation only."
+        }
+      ],
+      "locatorRight": "yes",
+      "support": "full",
+      "dateAndKind": "not applicable",
+      "misleadAlone": false,
+      "why": "The passage explicitly says production-use testing has not been performed. This is a gap in evaluations, rather than merely a product-performance limitation.",
+      "overstatement": null,
+      "policyLevelNote": "Technical evaluation details are not reproduced in this report.",
+      "sourceSha256": "7b7032289b8c9ee247860f210c6ed5c06704403bfdf5487164cd1669c0aaf04f"
+    },
+    "111|microsoft-phi-4:Q08": {
+      "number": 111,
+      "cellId": "microsoft-phi-4:Q08",
+      "part": "B",
+      "packStatus": "not-found",
+      "quotationVerbatim": "not applicable",
+      "quotationChecks": [],
+      "locatorRight": "not applicable",
+      "support": "full",
+      "dateAndKind": "not applicable",
+      "misleadAlone": false,
+      "why": "Status and note preserve the question’s policy scope and the developer-account qualification.",
+      "overstatement": null,
+      "policyLevelNote": "Technical evaluation details are not reproduced in this report.",
+      "sourceSha256": "4cc56faa6a5bcbde6227789b2ef9aedfde481ca660c8a4b686703aae19b00011",
+      "search": {
+        "sectionsRead": "whole card (Markdown file, all sections)",
+        "termsSearched": ["cyber", "hack", "exploit", "malware"],
+        "termMatchCounts": {
+          "cyber": 0,
+          "hack": 0,
+          "exploit": 0,
+          "malware": 1
+        },
+        "qualification": "Not-found means no matching criterion passage located in this source; it is not a claim about activity or disclosure elsewhere.",
+        "passagesSetAside": [
+          {
+            "page": null,
+            "section": "Safety Evaluation and Red-Teaming",
+            "reason": "Generic safety/content red-teaming does not establish an offensive-cyber dangerous-capability evaluation."
+          }
+        ]
+      }
+    },
+    "112|microsoft-phi-4-mini-flash-reasoning:Q07": {
+      "number": 112,
+      "cellId": "microsoft-phi-4-mini-flash-reasoning:Q07",
+      "part": "B",
+      "status": "excluded",
+      "note": "excluded from this pass by the maintainer",
+      "quotationChecks": [],
+      "comparison": null
+    },
+    "113|microsoft-mai-cyber-1-1-flash:Q06": {
+      "number": 113,
+      "cellId": "microsoft-mai-cyber-1-1-flash:Q06",
+      "part": "B",
+      "packStatus": "partly",
+      "quotationVerbatim": "yes",
+      "quotationChecks": [
+        {
+          "quotation": 1,
+          "verbatim": "yes",
+          "locator": "Section 2.8 Responsible AI considerations, PDF p. 4",
+          "sourcePages": [4],
+          "wordCount": 20,
+          "quotationSha256": "34590b7f48bfc05b15a7b5b19b98eb407415205b9e9d9c6bd96009dfb2194248",
+          "normalization": "PDF text whitespace, line wrapping, ligatures and text-layer gaps before punctuation only."
+        }
+      ],
+      "locatorRight": "yes",
+      "support": "full",
+      "dateAndKind": "not applicable",
+      "misleadAlone": false,
+      "why": "Status and note preserve the question’s policy scope and the developer-account qualification.",
+      "overstatement": null,
+      "policyLevelNote": "Technical evaluation details are not reproduced in this report.",
+      "sourceSha256": "d290230d2a967bbd5f76e32d01777fe864c8b8cb083f4cc54fa78dd4f13e2543"
+    },
+    "114|microsoft-mai-cyber-1-1-flash:Q12": {
+      "number": 114,
+      "cellId": "microsoft-mai-cyber-1-1-flash:Q12",
+      "part": "B",
+      "packStatus": "stated",
+      "quotationVerbatim": "yes",
+      "quotationChecks": [
+        {
+          "quotation": 1,
+          "verbatim": "yes",
+          "locator": "Section 3.2 Safety evaluation and red-teaming, PDF p. 7",
+          "sourcePages": [7],
+          "wordCount": 9,
+          "quotationSha256": "3bc9f3b88600edcca6d17c183647b8eff0e37f14f1b00928f23ca239b034ae06",
+          "normalization": "PDF text whitespace, line wrapping, ligatures and text-layer gaps before punctuation only."
+        },
+        {
+          "quotation": 2,
+          "verbatim": "yes",
+          "locator": "Section 3.2 Safety evaluation and red-teaming, PDF p. 7",
+          "sourcePages": [7],
+          "wordCount": 14,
+          "quotationSha256": "ecc3a5ec6d8274717a05a577a48adfad6a43c2921bc63791150d65fd209e2086",
+          "normalization": "PDF text whitespace, line wrapping, ligatures and text-layer gaps before punctuation only."
+        }
+      ],
+      "locatorRight": "yes",
+      "support": "full",
+      "dateAndKind": "not applicable",
+      "misleadAlone": false,
+      "why": "Status and note preserve the question’s policy scope and the developer-account qualification.",
+      "overstatement": null,
+      "policyLevelNote": "Technical evaluation details are not reproduced in this report.",
+      "sourceSha256": "d290230d2a967bbd5f76e32d01777fe864c8b8cb083f4cc54fa78dd4f13e2543"
+    },
+    "115|openai-gpt-4v:Q09": {
+      "number": 115,
+      "cellId": "openai-gpt-4v:Q09",
+      "part": "B",
+      "packStatus": "partly",
+      "quotationVerbatim": "yes",
+      "quotationChecks": [
+        {
+          "quotation": 1,
+          "verbatim": "yes",
+          "locator": "Footnote 2, §2.3, PDF p. 6",
+          "sourcePages": [6],
+          "wordCount": 23,
+          "quotationSha256": "0674c8c3bbb39dc3e5ce7b3e280be9c0f759f495f2839eaf3ad912962c03438a",
+          "normalization": "PDF text whitespace, line wrapping, ligatures and text-layer gaps before punctuation only."
+        },
+        {
+          "quotation": 2,
+          "verbatim": "yes",
+          "locator": "Footnote 2, §2.3, PDF p. 6",
+          "sourcePages": [6],
+          "wordCount": 27,
+          "quotationSha256": "51dcdc8f30f4cdc3c8602eb991521d3e2b0106e549bba4fab4455caf80043cd2",
+          "normalization": "PDF text whitespace, line wrapping, ligatures and text-layer gaps before punctuation only."
+        }
+      ],
+      "locatorRight": "yes",
+      "support": "full",
+      "dateAndKind": "not applicable",
+      "misleadAlone": false,
+      "why": "GPT-4V explicitly inherits an earlier self-replication assessment without restating its outcome. The note preserves this inheritance and does not assert a new GPT-4V dangerous-capability test.",
+      "overstatement": null,
+      "policyLevelNote": "Technical evaluation details are not reproduced in this report.",
+      "sourceSha256": "f5a5a731482b3029e6a998377f7fc693f309c211a0672617c44bec5a076dcf5d"
+    },
+    "116|openai-gpt-4v:Q13": {
+      "number": 116,
+      "cellId": "openai-gpt-4v:Q13",
+      "part": "B",
+      "packStatus": "stated",
+      "quotationVerbatim": "yes",
+      "quotationChecks": [
+        {
+          "quotation": 1,
+          "verbatim": "yes",
+          "locator": "§2.1.1 Be My Eyes, PDF p. 2",
+          "sourcePages": [2],
+          "wordCount": 35,
+          "quotationSha256": "7c510712efbc8f6d8e6023c86646bde55cef4b19c4c05468d1908efcca1e1ca6",
+          "normalization": "PDF text whitespace, line wrapping, ligatures and text-layer gaps before punctuation only."
+        }
+      ],
+      "locatorRight": "yes",
+      "support": "full",
+      "dateAndKind": "not applicable",
+      "misleadAlone": false,
+      "why": "Be My Eyes is identified as testing a GPT-4V-based product with early access, not as performing frontier-risk evaluation. The note preserves that product-testing scope.",
+      "overstatement": null,
+      "policyLevelNote": "Technical evaluation details are not reproduced in this report.",
+      "sourceSha256": "f5a5a731482b3029e6a998377f7fc693f309c211a0672617c44bec5a076dcf5d"
+    },
+    "117|openai-o1:Q01": {
+      "number": 117,
+      "cellId": "openai-o1:Q01",
+      "part": "B",
+      "packStatus": "stated",
+      "quotationVerbatim": "yes",
+      "quotationChecks": [
+        {
+          "quotation": 1,
+          "verbatim": "yes",
+          "locator": "Cover, PDF p. 1",
+          "sourcePages": [1],
+          "wordCount": 8,
+          "quotationSha256": "6a293f17d49c645515c5f1ecc131a3f1ea85072484fbd35437aec5d79b20a2c4",
+          "normalization": "PDF text whitespace, line wrapping, ligatures and text-layer gaps before punctuation only."
+        },
+        {
+          "quotation": 2,
+          "verbatim": "yes",
+          "locator": "§3 Scope of testing, footnote 2, PDF p. 2",
+          "sourcePages": [2],
+          "wordCount": 13,
+          "quotationSha256": "692cf0fadc185de330fef5d7bf99d07bbb99e0f65e8447e69753c45ee56938fe",
+          "normalization": "PDF text whitespace, line wrapping, ligatures and text-layer gaps before punctuation only."
+        },
+        {
+          "quotation": 3,
+          "verbatim": "yes",
+          "locator": "§3 Scope of testing, footnote 3, PDF p. 2",
+          "sourcePages": [2],
+          "wordCount": 7,
+          "quotationSha256": "2470e491776dc7231171ae78a736f0bf5aeb6179ce1e8ddf94c92f11007837e8",
+          "normalization": "PDF text whitespace, line wrapping, ligatures and text-layer gaps before punctuation only."
+        }
+      ],
+      "locatorRight": "yes",
+      "support": "full",
+      "dateAndKind": "yes",
+      "misleadAlone": false,
+      "why": "December 5 is both printed cover date and stated card-release date; December 19 is separately identified as a section-addition date. The retrieved revision is not silently dated December 5.",
+      "overstatement": null,
+      "policyLevelNote": "Technical evaluation details are not reproduced in this report.",
+      "sourceSha256": "3ba7bdbe69e022f6be0527edbfe18ac1becdea48d5be9891ab764ff336c8a033"
+    },
+    "118|openai-o1:Q02": {
+      "number": 118,
+      "cellId": "openai-o1:Q02",
+      "part": "B",
+      "packStatus": "stated",
+      "quotationVerbatim": "yes",
+      "quotationChecks": [
+        {
+          "quotation": 1,
+          "verbatim": "yes",
+          "locator": "§3 Scope of testing, footnote 2, PDF p. 2",
+          "sourcePages": [2],
+          "wordCount": 8,
+          "quotationSha256": "1a173b13ccc38cbe800e4e2055cb7900a96593202745465b9c2745740dd6c516",
+          "normalization": "PDF text whitespace, line wrapping, ligatures and text-layer gaps before punctuation only."
+        },
+        {
+          "quotation": 2,
+          "verbatim": "yes",
+          "locator": "§4.2 Jailbreaks through custom developer messages, PDF p. 6",
+          "sourcePages": [6],
+          "wordCount": 15,
+          "quotationSha256": "31f492bb0b2f9e05d2ae39af07204cca3a97849a599a4a97281a14767e540f81",
+          "normalization": "PDF text whitespace, line wrapping, ligatures and text-layer gaps before punctuation only."
+        }
+      ],
+      "locatorRight": "yes",
+      "support": "full",
+      "dateAndKind": "yes",
+      "misleadAlone": false,
+      "why": "December 17 dates the improved o1 launch, not initial o1 availability. The note preserves that distinction and does not supply a missing initial launch date.",
+      "overstatement": null,
+      "policyLevelNote": "Technical evaluation details are not reproduced in this report.",
+      "sourceSha256": "3ba7bdbe69e022f6be0527edbfe18ac1becdea48d5be9891ab764ff336c8a033"
+    },
+    "119|openai-o1:Q04": {
+      "number": 119,
+      "cellId": "openai-o1:Q04",
+      "part": "B",
+      "packStatus": "stated",
+      "quotationVerbatim": "no",
+      "quotationChecks": [
+        {
+          "quotation": 1,
+          "verbatim": "no",
+          "locator": "References, [28], PDF p. 52",
+          "sourcePages": [],
+          "wordCount": 7,
+          "quotationSha256": "6586ab72f83c4f8b205a9c05c963e8134fb06da43932d3d6d4da0567a9793ef2",
+          "normalization": "PDF text whitespace, line wrapping, ligatures and text-layer gaps before punctuation only."
+        }
+      ],
+      "locatorRight": "yes",
+      "support": "full",
+      "dateAndKind": "yes",
+      "misleadAlone": false,
+      "why": "The title, framework edition and link are present at p.52 and in §5 annotations. The quotation removes the literal https://cdn.openai.com/ prefix from the reference without marking an omission, so its combined text is not verbatim.",
+      "overstatement": "Repair the quotation or quote only the framework title and record the full address separately.",
+      "policyLevelNote": "Technical evaluation details are not reproduced in this report.",
+      "sourceSha256": "3ba7bdbe69e022f6be0527edbfe18ac1becdea48d5be9891ab764ff336c8a033",
+      "suggestedQuotation": {
+        "page": 52,
+        "section": "References [28]",
+        "quote": "Openai preparedness framework (beta)."
+      }
+    },
+    "120|openai-o1:Q10": {
+      "number": 120,
+      "cellId": "openai-o1:Q10",
+      "part": "B",
+      "packStatus": "stated",
+      "quotationVerbatim": "yes",
+      "quotationChecks": [
+        {
+          "quotation": 1,
+          "verbatim": "yes",
+          "locator": "§5.7 Persuasion, PDF p. 29",
+          "sourcePages": [29],
+          "wordCount": 8,
+          "quotationSha256": "d395acd127e293c917fe17bf6a09bee02fce29045633e431f6d714253fe58f9c",
+          "normalization": "PDF text whitespace, line wrapping, ligatures and text-layer gaps before punctuation only."
+        },
+        {
+          "quotation": 2,
+          "verbatim": "yes",
+          "locator": "§5.7 Persuasion, PDF p. 29",
+          "sourcePages": [29],
+          "wordCount": 15,
+          "quotationSha256": "114ee0ca87650852b9403a869d03d8a4caba571e8caec2d67a8116c1582d61c9",
+          "normalization": "PDF text whitespace, line wrapping, ligatures and text-layer gaps before punctuation only."
+        }
+      ],
+      "locatorRight": "yes",
+      "support": "full",
+      "dateAndKind": "not applicable",
+      "misleadAlone": false,
+      "why": "The card states Medium persuasion risk and that the High threshold is not reached. This is OpenAI’s assessment, not an independent capability finding.",
+      "overstatement": null,
+      "policyLevelNote": "Technical evaluation details are not reproduced in this report.",
+      "sourceSha256": "3ba7bdbe69e022f6be0527edbfe18ac1becdea48d5be9891ab764ff336c8a033"
+    },
+    "121|openai-o1:Q12": {
+      "number": 121,
+      "cellId": "openai-o1:Q12",
+      "part": "B",
+      "packStatus": "stated",
+      "quotationVerbatim": "yes",
+      "quotationChecks": [
+        {
+          "quotation": 1,
+          "verbatim": "yes",
+          "locator": "§4.4 External Red Teaming, PDF p. 11",
+          "sourcePages": [11],
+          "wordCount": 29,
+          "quotationSha256": "eca12e0f975e67b9cd395485272980f184effb97fee393aa68dba3a9c355eaaf",
+          "normalization": "PDF text whitespace, line wrapping, ligatures and text-layer gaps before punctuation only."
+        },
+        {
+          "quotation": 2,
+          "verbatim": "yes",
+          "locator": "§4.4 External Red Teaming, PDF p. 11",
+          "sourcePages": [11],
+          "wordCount": 15,
+          "quotationSha256": "396e9a6036e9a2a3273b0062540a980113d21f2b87bba6bc221854f7e39a445c",
+          "normalization": "PDF text whitespace, line wrapping, ligatures and text-layer gaps before punctuation only."
+        }
+      ],
+      "locatorRight": "yes",
+      "support": "full",
+      "dateAndKind": "yes",
+      "misleadAlone": false,
+      "why": "The card expressly calls this external red-teaming, with a testing period and scope. Dates refer to testing, not card publication or model release.",
+      "overstatement": null,
+      "policyLevelNote": "Technical evaluation details are not reproduced in this report.",
+      "sourceSha256": "3ba7bdbe69e022f6be0527edbfe18ac1becdea48d5be9891ab764ff336c8a033"
+    },
+    "122|openai-gpt-5-2-codex:Q14": {
+      "number": 122,
+      "cellId": "openai-gpt-5-2-codex:Q14",
+      "part": "B",
+      "packStatus": "not-found",
+      "quotationVerbatim": "not applicable",
+      "quotationChecks": [],
+      "locatorRight": "not applicable",
+      "support": "full",
+      "dateAndKind": "not applicable",
+      "misleadAlone": false,
+      "why": "Status and note preserve the question’s policy scope and the developer-account qualification.",
+      "overstatement": null,
+      "policyLevelNote": "Technical evaluation details are not reproduced in this report.",
+      "sourceSha256": "5fe918b740727770d0571684fd8c168190172649d2b2e8b7ca4cacad23b3e027",
+      "search": {
+        "sectionsRead": "Whole card",
+        "termsSearched": [
+          "government",
+          "institute",
+          "CAISI",
+          "AISI",
+          "AI Safety Institute",
+          "AI Security Institute",
+          "national"
+        ],
+        "termMatchCounts": {
+          "government": 0,
+          "institute": 0,
+          "CAISI": 0,
+          "AISI": 0,
+          "AI Safety Institute": 0,
+          "AI Security Institute": 0,
+          "national": 0
+        },
+        "qualification": "Not-found means no matching criterion passage located in this source; it is not a claim about activity or disclosure elsewhere.",
+        "passagesSetAside": []
+      }
+    },
+    "123|openai-gpt-5-2-codex:Q16": {
+      "number": 123,
+      "cellId": "openai-gpt-5-2-codex:Q16",
+      "part": "B",
+      "packStatus": "stated",
+      "quotationVerbatim": "yes",
+      "quotationChecks": [
+        {
+          "quotation": 1,
+          "verbatim": "yes",
+          "locator": "§5.1.2 Cybersecurity, PDF p. 12 (printed p. 11)",
+          "sourcePages": [12],
+          "wordCount": 7,
+          "quotationSha256": "47528ba5a4e075ae9cd736638114f6d368202e0169042dd487f69dea4e3a043d",
+          "normalization": "PDF text whitespace, line wrapping, ligatures and text-layer gaps before punctuation only."
+        },
+        {
+          "quotation": 2,
+          "verbatim": "yes",
+          "locator": "§5.1.2 Cybersecurity, PDF p. 13 (printed p. 12)",
+          "sourcePages": [13],
+          "wordCount": 24,
+          "quotationSha256": "bfff27dc2776774a54d8343163789ed73d7e5cc23119c2e9578c20f4c260f419",
+          "normalization": "PDF text whitespace, line wrapping, ligatures and text-layer gaps before punctuation only."
+        }
+      ],
+      "locatorRight": "yes",
+      "support": "full",
+      "dateAndKind": "not applicable",
+      "misleadAlone": false,
+      "why": "The card explicitly states evaluation limitations and says the results are necessary but not sufficient for a High classification. No evaluation methods are copied into this report.",
+      "overstatement": null,
+      "policyLevelNote": "Technical evaluation details are not reproduced in this report.",
+      "sourceSha256": "5fe918b740727770d0571684fd8c168190172649d2b2e8b7ca4cacad23b3e027"
+    },
+    "124|openai-gpt-6-luna-october-29:Q12": {
+      "number": 124,
+      "cellId": "openai-gpt-6-luna-october-29:Q12",
+      "part": "B",
+      "packStatus": "partly",
+      "quotationVerbatim": "yes",
+      "quotationChecks": [
+        {
+          "quotation": 1,
+          "verbatim": "yes",
+          "locator": "§4.2 Prompt Injection, PDF p. 7 (printed p. 6)",
+          "sourcePages": [7],
+          "wordCount": 15,
+          "quotationSha256": "f5f98b540ddb817c338fb8afaf1f540336eafe164bbc86e9901b6a4e2213ac27",
+          "normalization": "PDF text whitespace, line wrapping, ligatures and text-layer gaps before punctuation only."
+        },
+        {
+          "quotation": 2,
+          "verbatim": "yes",
+          "locator": "§4.2 Prompt Injection, PDF p. 7 (printed p. 6)",
+          "sourcePages": [7],
+          "wordCount": 15,
+          "quotationSha256": "baa0accdd9f1fd38aad69ead45708be49949be199a9670914b87e3491072212a",
+          "normalization": "PDF text whitespace, line wrapping, ligatures and text-layer gaps before punctuation only."
+        }
+      ],
+      "locatorRight": "yes",
+      "support": "full",
+      "dateAndKind": "not applicable",
+      "misleadAlone": false,
+      "why": "Partly is supported by a red-teaming agent in training and separately named automated evaluations. It is not a report of a scoped red-teaming test or human red-teaming of the model. Consistent with audit.md’s recorded clarification.",
+      "overstatement": null,
+      "policyLevelNote": "Technical evaluation details are not reproduced in this report.",
+      "sourceSha256": "766262a78fcaeae31534174554bae5b259a418eaffbf9f23a9460343943b9d8e"
+    },
+    "125|xai-grok-4-1:Q02": {
+      "number": 125,
+      "cellId": "xai-grok-4-1:Q02",
+      "part": "B",
+      "packStatus": "partly",
+      "quotationVerbatim": "yes",
+      "quotationChecks": [
+        {
+          "quotation": 1,
+          "verbatim": "yes",
+          "locator": "§1 Introduction, p. 1",
+          "sourcePages": [1],
+          "wordCount": 11,
+          "quotationSha256": "e5a0fcce377b3e485fc179cb1307152ada9f114ed6d248cb5f8996234ad382a3",
+          "normalization": "PDF text whitespace, line wrapping, ligatures and text-layer gaps before punctuation only."
+        }
+      ],
+      "locatorRight": "yes",
+      "support": "full",
+      "dateAndKind": "not applicable",
+      "misleadAlone": false,
+      "why": "Present availability in consumer apps supplies form only, without a release date. Partly is supported.",
+      "overstatement": null,
+      "policyLevelNote": "Technical evaluation details are not reproduced in this report.",
+      "sourceSha256": "635f30c2ea83cd2b4a1ef46bb7626e8330b635e826c53a6e77f07b279780ad6d"
+    },
+    "126|xai-grok-4-1:Q07": {
+      "number": 126,
+      "cellId": "xai-grok-4-1:Q07",
+      "part": "B",
+      "status": "excluded",
+      "note": "excluded from this pass by the maintainer",
+      "quotationChecks": [],
+      "comparison": null
+    },
+    "127|xai-grok-4-1:Q14": {
+      "number": 127,
+      "cellId": "xai-grok-4-1:Q14",
+      "part": "B",
+      "packStatus": "not-found",
+      "quotationVerbatim": "not applicable",
+      "quotationChecks": [],
+      "locatorRight": "not applicable",
+      "support": "full",
+      "dateAndKind": "not applicable",
+      "misleadAlone": false,
+      "why": "Status and note preserve the question’s policy scope and the developer-account qualification.",
+      "overstatement": null,
+      "policyLevelNote": "Technical evaluation details are not reproduced in this report.",
+      "sourceSha256": "635f30c2ea83cd2b4a1ef46bb7626e8330b635e826c53a6e77f07b279780ad6d",
+      "search": {
+        "sectionsRead": "Whole card.",
+        "termsSearched": [
+          "institute",
+          "AISI",
+          "CAISI",
+          "government",
+          "UK",
+          "U.S."
+        ],
+        "termMatchCounts": {
+          "institute": 0,
+          "AISI": 0,
+          "CAISI": 0,
+          "government": 0,
+          "UK": 0,
+          "U.S.": 0
+        },
+        "qualification": "Not-found means no matching criterion passage located in this source; it is not a claim about activity or disclosure elsewhere.",
+        "passagesSetAside": []
+      }
+    },
+    "128|xai-grok-4-7:Q04": {
+      "number": 128,
+      "cellId": "xai-grok-4-7:Q04",
+      "part": "B",
+      "packStatus": "stated",
+      "quotationVerbatim": "yes",
+      "quotationChecks": [
+        {
+          "quotation": 1,
+          "verbatim": "yes",
+          "locator": "References, item 16, PDF p. 29 (printed p. 28)",
+          "sourcePages": [29],
+          "wordCount": 10,
+          "quotationSha256": "58ca0938986de73cc56fcdbc7e6d7f4851eb201ff0432ad9b3c11c27074a57ee",
+          "normalization": "PDF text whitespace, line wrapping, ligatures and text-layer gaps before punctuation only."
+        }
+      ],
+      "locatorRight": "yes",
+      "support": "full",
+      "dateAndKind": "yes",
+      "misleadAlone": false,
+      "why": "The dated framework reference and annotation are present. Link existence is separate from retrievability; the note marks its 404 as a November 2 check date, not a framework publication date. Current target status is checked separately.",
+      "overstatement": null,
+      "policyLevelNote": "Technical evaluation details are not reproduced in this report.",
+      "sourceSha256": "c40541597ac3c461d71a914c922d43b200b468e41434b699fdd11c9a8761c56f",
+      "currentLinkCheck": {
+        "checkedOn": "2026-11-03",
+        "httpStatus": 404
+      }
+    },
+    "129|xai-grok-4-7:Q12": {
+      "number": 129,
+      "cellId": "xai-grok-4-7:Q12",
+      "part": "B",
+      "packStatus": "not-found",
+      "quotationVerbatim": "not applicable",
+      "quotationChecks": [],
+      "locatorRight": "not applicable",
+      "support": "full",
+      "dateAndKind": "not applicable",
+      "misleadAlone": false,
+      "why": "The uses of red-team refer to offensive cyber tasks the model performs, not an evaluator’s red-teaming of this model. Jailbreak testing alone does not meet the question’s explicit description criterion.",
+      "overstatement": null,
+      "policyLevelNote": "Technical evaluation details are not reproduced in this report.",
+      "sourceSha256": "c40541597ac3c461d71a914c922d43b200b468e41434b699fdd11c9a8761c56f",
+      "search": {
+        "sectionsRead": "Whole card.",
+        "termsSearched": [
+          "red team",
+          "red-team",
+          "red-teaming",
+          "adversarial",
+          "jailbreak"
+        ],
+        "termMatchCounts": {
+          "red team": 0,
+          "red-team": 5,
+          "red-teaming": 1,
+          "adversarial": 2,
+          "jailbreak": 14
+        },
+        "qualification": "Not-found means no matching criterion passage located in this source; it is not a claim about activity or disclosure elsewhere.",
+        "passagesSetAside": [
+          {
+            "page": 18,
+            "section": "Cyber task benchmark description",
+            "reason": "Red-team refers to tasks performed by the model, not adversarial testing of the model described as red-teaming."
+          }
+        ]
+      }
+    },
+    "130|xai-grok-4-7:Q16": {
+      "number": 130,
+      "cellId": "xai-grok-4-7:Q16",
+      "part": "B",
+      "packStatus": "stated",
+      "quotationVerbatim": "yes",
+      "quotationChecks": [
+        {
+          "quotation": 1,
+          "verbatim": "yes",
+          "locator": "§7.1 BioSecBench, PDF p. 20 (printed p. 19)",
+          "sourcePages": [20],
+          "wordCount": 18,
+          "quotationSha256": "fe18c1ec189461ca3c4e8b52cff8c6d988f762332ed0bf55206dd3f89f01b7ba",
+          "normalization": "PDF text whitespace, line wrapping, ligatures and text-layer gaps before punctuation only."
+        },
+        {
+          "quotation": 2,
+          "verbatim": "yes",
+          "locator": "§2.3 Terminal-Bench 4.0, PDF p. 9 (printed p. 8)",
+          "sourcePages": [9],
+          "wordCount": 8,
+          "quotationSha256": "f5ee655dc5d40e0ffd3792ed41cabc5707cb5767f5071a7fbdfa0dff479449a0",
+          "normalization": "PDF text whitespace, line wrapping, ligatures and text-layer gaps before punctuation only."
+        }
+      ],
+      "locatorRight": "yes",
+      "support": "partial",
+      "dateAndKind": "not applicable",
+      "misleadAlone": true,
+      "why": "The quotations state evaluation limitations and support stated. The final note additionally treats ongoing monitoring of residual jailbreak failures as an evaluation limit; that is an operational practice, which does not itself satisfy Q16.",
+      "overstatement": "Remove the monitoring clause from the list of limits. This also needs reconciliation with audit.md’s claim that an operational practice was already removed.",
+      "policyLevelNote": "Technical evaluation details are not reproduced in this report.",
+      "sourceSha256": "c40541597ac3c461d71a914c922d43b200b468e41434b699fdd11c9a8761c56f"
+    }
+  },
+  "retrievals": {
+    "anthropic-claude-2-1": {
+      "url": "https://www-cdn.anthropic.com/5c49cc247484cecf107c699baf29250302e5da70/ModelCardClaudev2_with_appendix_v1.pdf",
+      "finalUrl": "https://www-cdn.anthropic.com/5c49cc247484cecf107c699baf29250302e5da70/ModelCardClaudev2_with_appendix_v1.pdf",
+      "httpStatus": 200,
+      "sha256": "e735ad89f95c7aa295459e0ef9153d2c54a7503f16ff39c8e20b9b4f22fd4d56",
+      "preparerSha256": "e735ad89f95c7aa295459e0ef9153d2c54a7503f16ff39c8e20b9b4f22fd4d56",
+      "hashMatches": true,
+      "checkedOn": "2026-11-03",
+      "pages": 16,
+      "failure": null
+    },
+    "anthropic-claude-3-5-haiku-sonnet-new": {
+      "url": "https://www-cdn.anthropic.com/c7822cdc35ad788ec87e14b3a9d45010f1f86c38.pdf",
+      "finalUrl": "https://www-cdn.anthropic.com/c7822cdc35ad788ec87e14b3a9d45010f1f86c38.pdf",
+      "httpStatus": 200,
+      "sha256": "5425dde49b649916000e38fb86c4721cfe31a8bdfe30bbb98e875fa3d654804c",
+      "preparerSha256": "5425dde49b649916000e38fb86c4721cfe31a8bdfe30bbb98e875fa3d654804c",
+      "hashMatches": true,
+      "checkedOn": "2026-11-03",
+      "pages": 14,
+      "failure": null
+    },
+    "anthropic-claude-opus-4-5": {
+      "url": "https://www-cdn.anthropic.com/bf10f64990cfda0ba858290be7b8cc6317685f47.pdf",
+      "finalUrl": "https://www-cdn.anthropic.com/bf10f64990cfda0ba858290be7b8cc6317685f47.pdf",
+      "httpStatus": 200,
+      "sha256": "33be92efcb58f901d9d2c17e61bf277afbd514a1ac70a642f21e918c21ca25a8",
+      "preparerSha256": "33be92efcb58f901d9d2c17e61bf277afbd514a1ac70a642f21e918c21ca25a8",
+      "hashMatches": true,
+      "checkedOn": "2026-11-03",
+      "pages": 153,
+      "failure": null
+    },
+    "anthropic-claude-haiku-5-5": {
+      "url": "https://assets.claude.com/e1080d6bf5ae2018ea3c2f414064be03232f5be5.pdf",
+      "finalUrl": "https://assets.claude.com/e1080d6bf5ae2018ea3c2f414064be03232f5be5.pdf",
+      "httpStatus": 200,
+      "sha256": "d5dbaab6996c02ad6ff28b032ce5a9c7582e59af09b5d1bc0975cf0235535da9",
+      "preparerSha256": "d5dbaab6996c02ad6ff28b032ce5a9c7582e59af09b5d1bc0975cf0235535da9",
+      "hashMatches": true,
+      "checkedOn": "2026-11-03",
+      "pages": 144,
+      "failure": null
+    },
+    "google-deepmind-gemini-3-flash": {
+      "url": "https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-3-Flash-Model-Card.pdf",
+      "finalUrl": "https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-3-Flash-Model-Card.pdf",
+      "httpStatus": 200,
+      "sha256": "b2800104a47322d76d80a72bfb128ba7f0bacffc419ae9bb630eae289c761ba0",
+      "preparerSha256": "b2800104a47322d76d80a72bfb128ba7f0bacffc419ae9bb630eae289c761ba0",
+      "hashMatches": true,
+      "checkedOn": "2026-11-03",
+      "pages": 6,
+      "failure": null
+    },
+    "google-deepmind-gemini-4-argon": {
+      "url": "https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-4-Argon-Model-Card.pdf",
+      "finalUrl": "https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-4-Argon-Model-Card.pdf",
+      "httpStatus": 200,
+      "sha256": "562cd3c5deddf75dd2aff7a59dcf6dcc273277eae7d82fe957b6a607d84f7763",
+      "preparerSha256": "562cd3c5deddf75dd2aff7a59dcf6dcc273277eae7d82fe957b6a607d84f7763",
+      "hashMatches": true,
+      "checkedOn": "2026-11-03",
+      "pages": 14,
+      "failure": null
+    },
+    "meta-llama-2": {
+      "url": "https://raw.githubusercontent.com/meta-llama/llama/1f9a8d774a10fbe41321e530428e91f7eb7eb822/MODEL_CARD.md",
+      "finalUrl": "https://raw.githubusercontent.com/meta-llama/llama/1f9a8d774a10fbe41321e530428e91f7eb7eb822/MODEL_CARD.md",
+      "httpStatus": 200,
+      "sha256": "442c51972233f13b644d8d5eaffd42e74b5bc3d2864ff52a00fbd788f4bee74a",
+      "preparerSha256": "442c51972233f13b644d8d5eaffd42e74b5bc3d2864ff52a00fbd788f4bee74a",
+      "hashMatches": true,
+      "checkedOn": "2026-11-03",
+      "pages": 1,
+      "failure": null
+    },
+    "meta-llama-3-3": {
+      "url": "https://raw.githubusercontent.com/meta-llama/llama-models/8c88b8c0d75dbd136b6895220c4f56ccbe2f2d24/models/llama3_3/MODEL_CARD.md",
+      "finalUrl": "https://raw.githubusercontent.com/meta-llama/llama-models/8c88b8c0d75dbd136b6895220c4f56ccbe2f2d24/models/llama3_3/MODEL_CARD.md",
+      "httpStatus": 200,
+      "sha256": "1bad06e0e2feadf6a195fcce4d6a2f7bca48f05b7a25a71f18c2baa88d292adf",
+      "preparerSha256": "1bad06e0e2feadf6a195fcce4d6a2f7bca48f05b7a25a71f18c2baa88d292adf",
+      "hashMatches": true,
+      "checkedOn": "2026-11-03",
+      "pages": 1,
+      "failure": null
+    },
+    "meta-cwm-preparedness": {
+      "url": "https://scontent-dfw6-2.xx.fbcdn.net/v/t39.2365-6/557601942_1468972530985309_838842257265552803_n.pdf",
+      "finalUrl": "https://scontent.fqlf1-2.fna.fbcdn.net/v/t39.2365-6/557601942_1468972530985309_838842257265552803_n.pdf",
+      "httpStatus": 200,
+      "sha256": "9fb37fa4970f40a0e6ffa4bb260bc72f370b9e5801401dcf281eaabe321bcd7c",
+      "preparerSha256": "9fb37fa4970f40a0e6ffa4bb260bc72f370b9e5801401dcf281eaabe321bcd7c",
+      "hashMatches": true,
+      "checkedOn": "2026-11-03",
+      "pages": 25,
+      "failure": null,
+      "initialSuppliedUrlStatus": 403,
+      "retrievedVia": "Fresh public PDF link from Meta publication page; CDN query string omitted.",
+      "originalBytesAuthenticatedAfterBlindCommit": true
+    },
+    "meta-muse-spark-1-3": {
+      "url": "https://research.meta.ai/static/muse-spark-1-3-evaluation-report",
+      "finalUrl": "https://research.meta.ai/static/muse-spark-1-3-evaluation-report",
+      "httpStatus": 200,
+      "sha256": "84df67c9f4610e574fd82f39227b0e6a266e6e1fd0e6ea21c3420f1661e0835e",
+      "preparerSha256": "84df67c9f4610e574fd82f39227b0e6a266e6e1fd0e6ea21c3420f1661e0835e",
+      "hashMatches": true,
+      "checkedOn": "2026-11-03",
+      "pages": 140,
+      "failure": null
+    },
+    "microsoft-phi-2": {
+      "url": "https://huggingface.co/microsoft/phi-2/raw/810d367871c1d460086d9f82db8696f2e0a0fcd0/README.md",
+      "finalUrl": "https://huggingface.co/microsoft/phi-2/raw/810d367871c1d460086d9f82db8696f2e0a0fcd0/README.md",
+      "httpStatus": 200,
+      "sha256": "7b7032289b8c9ee247860f210c6ed5c06704403bfdf5487164cd1669c0aaf04f",
+      "preparerSha256": "7b7032289b8c9ee247860f210c6ed5c06704403bfdf5487164cd1669c0aaf04f",
+      "hashMatches": true,
+      "checkedOn": "2026-11-03",
+      "pages": 1,
+      "failure": null
+    },
+    "microsoft-phi-4": {
+      "url": "https://huggingface.co/microsoft/phi-4/raw/2db69c1c3e91a05d2c64a3185acfbaf36f744e25/README.md",
+      "finalUrl": "https://huggingface.co/microsoft/phi-4/raw/2db69c1c3e91a05d2c64a3185acfbaf36f744e25/README.md",
+      "httpStatus": 200,
+      "sha256": "4cc56faa6a5bcbde6227789b2ef9aedfde481ca660c8a4b686703aae19b00011",
+      "preparerSha256": "4cc56faa6a5bcbde6227789b2ef9aedfde481ca660c8a4b686703aae19b00011",
+      "hashMatches": true,
+      "checkedOn": "2026-11-03",
+      "pages": 1,
+      "failure": null
+    },
+    "microsoft-phi-4-mini-flash-reasoning": {
+      "url": "https://huggingface.co/microsoft/Phi-4-mini-flash-reasoning/raw/1dff8163d28ec880ca2411c474ddc0a927792810/README.md",
+      "finalUrl": "https://huggingface.co/microsoft/Phi-4-mini-flash-reasoning/raw/1dff8163d28ec880ca2411c474ddc0a927792810/README.md",
+      "httpStatus": 200,
+      "sha256": "38ef838bc08bbfdba10c5144415f4a593ef4d2d85603b4ad366f64cd3c4e4bb5",
+      "preparerSha256": "38ef838bc08bbfdba10c5144415f4a593ef4d2d85603b4ad366f64cd3c4e4bb5",
+      "hashMatches": true,
+      "checkedOn": "2026-11-03",
+      "pages": 1,
+      "failure": null
+    },
+    "microsoft-mai-cyber-1-1-flash": {
+      "url": "https://microsoft.ai/pdf/MAI-Cyber-1.1-Flash-ORA-Model-Card.pdf",
+      "finalUrl": "https://microsoft.ai/pdf/MAI-Cyber-1.1-Flash-ORA-Model-Card.pdf",
+      "httpStatus": 200,
+      "sha256": "d290230d2a967bbd5f76e32d01777fe864c8b8cb083f4cc54fa78dd4f13e2543",
+      "preparerSha256": "d290230d2a967bbd5f76e32d01777fe864c8b8cb083f4cc54fa78dd4f13e2543",
+      "hashMatches": true,
+      "checkedOn": "2026-11-03",
+      "pages": 8,
+      "failure": null
+    },
+    "openai-gpt-4v": {
+      "url": "https://cdn.openai.com/papers/GPTV_System_Card.pdf",
+      "finalUrl": "https://cdn.openai.com/papers/GPTV_System_Card.pdf",
+      "httpStatus": 200,
+      "sha256": "f5a5a731482b3029e6a998377f7fc693f309c211a0672617c44bec5a076dcf5d",
+      "preparerSha256": "f5a5a731482b3029e6a998377f7fc693f309c211a0672617c44bec5a076dcf5d",
+      "hashMatches": true,
+      "checkedOn": "2026-11-03",
+      "pages": 18,
+      "failure": null
+    },
+    "openai-o1": {
+      "url": "https://cdn.openai.com/o1-system-card-20241205.pdf",
+      "finalUrl": "https://cdn.openai.com/o1-system-card-20241205.pdf",
+      "httpStatus": 200,
+      "sha256": "3ba7bdbe69e022f6be0527edbfe18ac1becdea48d5be9891ab764ff336c8a033",
+      "preparerSha256": "3ba7bdbe69e022f6be0527edbfe18ac1becdea48d5be9891ab764ff336c8a033",
+      "hashMatches": true,
+      "checkedOn": "2026-11-03",
+      "pages": 52,
+      "failure": null
+    },
+    "openai-gpt-5-2-codex": {
+      "url": "https://cdn.openai.com/pdf/ac7c37ae-7f4c-4442-b741-2eabdeaf77e0/oai_5_2_Codex.pdf",
+      "finalUrl": "https://cdn.openai.com/pdf/ac7c37ae-7f4c-4442-b741-2eabdeaf77e0/oai_5_2_Codex.pdf",
+      "httpStatus": 200,
+      "sha256": "5fe918b740727770d0571684fd8c168190172649d2b2e8b7ca4cacad23b3e027",
+      "preparerSha256": "5fe918b740727770d0571684fd8c168190172649d2b2e8b7ca4cacad23b3e027",
+      "hashMatches": true,
+      "checkedOn": "2026-11-03",
+      "pages": 22,
+      "failure": null
+    },
+    "openai-gpt-6-luna-october-29": {
+      "url": "https://deploymentsafety.openai.com/gpt-6-luna-october-28-2026-addendum/gpt-6-luna-october-28-2026-addendum.pdf",
+      "finalUrl": "https://deploymentsafety.openai.com/gpt-6-luna-october-28-2026-addendum/gpt-6-luna-october-28-2026-addendum.pdf",
+      "httpStatus": 200,
+      "sha256": "766262a78fcaeae31534174554bae5b259a418eaffbf9f23a9460343943b9d8e",
+      "preparerSha256": "766262a78fcaeae31534174554bae5b259a418eaffbf9f23a9460343943b9d8e",
+      "hashMatches": true,
+      "checkedOn": "2026-11-03",
+      "pages": 16,
+      "failure": null
+    },
+    "xai-grok-4-1": {
+      "url": "https://data.x.ai/2025-11-17-grok-4-1-model-card.pdf",
+      "finalUrl": "https://data.x.ai/2025-11-17-grok-4-1-model-card.pdf",
+      "httpStatus": 200,
+      "sha256": "635f30c2ea83cd2b4a1ef46bb7626e8330b635e826c53a6e77f07b279780ad6d",
+      "preparerSha256": "635f30c2ea83cd2b4a1ef46bb7626e8330b635e826c53a6e77f07b279780ad6d",
+      "hashMatches": true,
+      "checkedOn": "2026-11-03",
+      "pages": 6,
+      "failure": null
+    },
+    "xai-grok-4-7": {
+      "url": "https://media.x.ai/v1/website/card4p7-3a96f40b.pdf",
+      "finalUrl": "https://media.x.ai/v1/website/card4p7-3a96f40b.pdf",
+      "httpStatus": 200,
+      "sha256": "c40541597ac3c461d71a914c922d43b200b468e41434b699fdd11c9a8761c56f",
+      "preparerSha256": "c40541597ac3c461d71a914c922d43b200b468e41434b699fdd11c9a8761c56f",
+      "hashMatches": true,
+      "checkedOn": "2026-11-03",
+      "pages": 30,
+      "failure": null
+    }
+  },
+  "partC": {
+    "checkedOn": "2026-11-03",
+    "scope": "Official index/link and annual-selection check; not a certification of inventory completeness. Dangerous-capability content remains at policy level; excluded Q07 passages are not checked.",
+    "indexes": [
+      {
+        "id": "anthropic-index",
+        "httpStatus": 200,
+        "url": "https://www.anthropic.com/system-cards"
+      },
+      {
+        "id": "anthropic-transparency",
+        "httpStatus": 200,
+        "url": "https://www.anthropic.com/transparency"
+      },
+      {
+        "id": "google-index",
+        "httpStatus": 200,
+        "url": "https://deepmind.google/models/model-cards/"
+      },
+      {
+        "id": "meta-index",
+        "httpStatus": 200,
+        "url": "https://research.meta.ai/"
+      },
+      {
+        "id": "meta-hf-index",
+        "httpStatus": 200,
+        "url": "https://huggingface.co/api/models?author=meta-llama&sort=createdAt&direction=-1&limit=100"
+      },
+      {
+        "id": "microsoft-index",
+        "httpStatus": 200,
+        "url": "https://microsoft.ai/models/"
+      },
+      {
+        "id": "microsoft-news",
+        "httpStatus": 200,
+        "url": "https://microsoft.ai/blog/"
+      },
+      {
+        "id": "openai-index",
+        "httpStatus": 200,
+        "url": "https://deploymentsafety.openai.com/"
+      },
+      {
+        "id": "openai-sitemap",
+        "httpStatus": 200,
+        "url": "https://deploymentsafety.openai.com/sitemap.xml"
+      },
+      {
+        "id": "xai-index",
+        "httpStatus": 403,
+        "url": "https://x.ai/model-card"
+      },
+      {
+        "id": "xai-docs",
+        "httpStatus": 200,
+        "url": "https://docs.x.ai/developers/release-notes"
+      }
+    ],
+    "missingCards": [
+      {
+        "developer": "Google DeepMind",
+        "card": "Gemini Ultra Model Card (Gemini 1.0)",
+        "url": "https://storage.googleapis.com/deepmind-media/gemini/gemini_1_report.pdf#page=71",
+        "locator": "10.1 Gemini Ultra Model Card, physical pp.71–74",
+        "finding": "Official index calls this View model card. Inventory lists Gemini 1.0 as no card located. Treat the expressly labelled card section separately from the parent technical report.",
+        "sha256": "e2ed7c48914289faf666fcbb1de0fcde5d4ec9ae30fe8f28ae8c1f672b9e7765",
+        "dateQualification": "Current card section is present, but absent from the directly retrieved December 6, 2023 archived report (60 pages). Do not assign this appendix a 2023 publication date.",
+        "archiveUrl": "https://web.archive.org/web/20231206151650/https://storage.googleapis.com/deepmind-media/gemini/gemini_1_report.pdf"
+      },
+      {
+        "developer": "Google DeepMind",
+        "card": "Gemini 1.5 Pro and Flash Model Card",
+        "url": "https://storage.googleapis.com/deepmind-media/gemini/gemini_v1_5_report.pdf#page=105",
+        "locator": "12.1 Model Card / Table 45, pp.105–107",
+        "finding": "Official index links directly to the labelled model card; inventory says no card located. Evaluation references point into the same publication, not to another developer’s account.",
+        "sha256": "e9cabd1672ad0d32c2aa9c4e42d04dd55b519ea1945fbc2237bcbcb24b16add0",
+        "dateQualification": "Directly retrieved December 1, 2024 archive has the labelled card at pp.105–107. This establishes availability by that date, not the card’s exact publication date.",
+        "archiveUrl": "https://web.archive.org/web/20241201131622/https://storage.googleapis.com/deepmind-media/gemini/gemini_v1_5_report.pdf"
+      },
+      {
+        "developer": "Google DeepMind",
+        "card": "Gemini Robotics-ER 1.5 and Gemini Robotics 1.5 Model Card",
+        "url": "https://storage.googleapis.com/deepmind-media/gemini-robotics/Gemini-Robotics-1-5-Tech-Report.pdf#page=30",
+        "locator": "Appendix A Model Card / Table 2, physical p.30 onward",
+        "finding": "Official index labels this View model card, updated September 25, 2025. ER model outputs text and needs a population decision under the written rule.",
+        "sha256": "b41a2f732f4755c7564b973bcc6ff8aebf3bb9a9f163328437e89533d372b2f4"
+      },
+      {
+        "developer": "Microsoft",
+        "card": "Fara-7B",
+        "url": "https://huggingface.co/microsoft/Fara-7B/blob/main/README.md",
+        "locator": "Model Summary; 4 Quality and Performance Evaluation; 4.2 Safety Evaluation & Red-Teaming",
+        "finding": "Developer’s own model card has a release date of November 24, 2025 and its own evaluations. Inventory explicitly did not inventory Fara; the written scope contains no Phi/MAI-only family restriction.",
+        "releaseDate": "2025-11-24",
+        "dateKind": "model release, not independently established card publication",
+        "announcementUrl": "https://www.microsoft.com/en-us/research/blog/fara-7b-an-efficient-agentic-model-for-computer-use/",
+        "sha256": "c55441f3f9ddae9d87ff5a138fb772fb0179ce2800cb6e143080fa681c513b3e"
+      },
+      {
+        "developer": "Microsoft",
+        "card": "Fara1.5 (4B, 9B, 27B)",
+        "url": "https://huggingface.co/api/models?author=microsoft&search=Fara&sort=createdAt&direction=-1&limit=100",
+        "finding": "Official repositories located; inventory excludes the Fara family. Repository creation dates are discovery metadata, not release dates; cards not yet inspected."
+      }
+    ],
+    "selectionResultsToChange": [
+      {
+        "developer": "Microsoft",
+        "year": 2025,
+        "action": "Re-run selection after including Fara-7B and other omitted families, unless a narrower family scope is explicitly authorised.",
+        "reason": "Fara-7B’s own card and November 24, 2025 announcement are later than Phi-4-mini-flash-reasoning’s June release. The inventory’s family exclusion is absent from scope.md; do not call the result mechanical until scope is reconciled."
+      },
+      {
+        "developer": "Google DeepMind",
+        "years": [2024],
+        "action": "Restore expressly labelled appendix cards to the inventory and re-run the 2024 selection; do not create a 2023 row from a later appendix.",
+        "reason": "Gemini 1.5’s model-card section is present in a December 2024 capture. The original December 2023 Gemini report has no Gemini model-card section. A blanket no-card-located finding is incorrect, but original card dates still require version history."
+      },
+      {
+        "developer": "Meta",
+        "year": 2026,
+        "action": "Resolve first publication versus dated revision for Muse Spark 1.3 before choosing the annual row.",
+        "reason": "September 2, 2026 official announcement links the same report URL whose current PDF prints October 23, 2026. Inventory itself identifies Muse Spark Open as latest by initial publication (October 15). Open card pinned URL returned 401 here, so no unconditional replacement is certified.",
+        "sources": [
+          "https://research.meta.ai/blog/introducing-muse-spark-1-3",
+          "https://research.meta.ai/static/muse-spark-1-3-evaluation-report"
+        ]
+      },
+      {
+        "developer": "Google DeepMind",
+        "year": 2026,
+        "action": "Retain the unresolved tie between Argon model card and Safety & Security Report rather than treating one as mechanically selected.",
+        "reason": "Written unit permits safety reports as well as model cards; same-month publication does not supply a tie-breaker."
+      }
+    ],
+    "recovered": [
+      {
+        "card": "Muse Spark Safety & Preparedness Report",
+        "url": "https://arxiv.org/pdf/2606.12429",
+        "httpStatus": 200,
+        "sha256": "977d071052e3f5dc267e1022671babf6a7967111f9bf2ad84e88b6419b405e61",
+        "locator": "Cover",
+        "finding": "Developer-authored report now retrieved; cover carries arXiv v1 stamp May 14, 2026, which is a repository-version date."
+      },
+      {
+        "card": "Code World Model Preparedness Report",
+        "url": "https://arxiv.org/pdf/2605.00932",
+        "httpStatus": 200,
+        "sha256": "7df8666233d8d5da2365413931b09b00a35a84eefe80ce5f28d6cfbfbb072050",
+        "finding": "Original preparer expression now retrieved via the fresh public download link on Meta’s own publication page; SHA-256 matches exactly. ArXiv fallback used during blindness was a different expression and remains identified separately.",
+        "originalRecoverySha256": "9fb37fa4970f40a0e6ffa4bb260bc72f370b9e5801401dcf281eaabe321bcd7c"
+      },
+      {
+        "card": "Addendum to OpenAI o3 and o4-mini system card: OpenAI o3 Operator",
+        "url": "https://cdn.openai.com/pdf/4375e605-f9a6-438d-bcc8-190599c183a6/o3_cua_system_card.pdf",
+        "httpStatus": 200,
+        "sha256": "84bbf0059b00461bcace9e859c138162ae15094cb309bdefaaa7183b55cbd4fa",
+        "locator": "p.1 cover",
+        "date": "2025-05-23",
+        "dateKind": "printed card date",
+        "finding": "Developer’s PDF now retrieved; inventory reported 403 and no PDF address. Does not replace the later December 2025 selection."
+      }
+    ],
+    "archives": [
+      {
+        "cardId": "anthropic-claude-2-1",
+        "targetDate": "2023-11-21",
+        "windowDays": 31,
+        "httpStatus": 200,
+        "captures": 0,
+        "closest": null,
+        "note": "CDX discovery only; archived PDF not opened and bytes not authenticated."
+      },
+      {
+        "cardId": "anthropic-claude-3-5-haiku-sonnet-new",
+        "targetDate": "2024-10-22",
+        "windowDays": 31,
+        "httpStatus": 200,
+        "captures": 0,
+        "closest": null,
+        "note": "CDX discovery only; archived PDF not opened and bytes not authenticated."
+      },
+      {
+        "cardId": "anthropic-claude-opus-4-5",
+        "targetDate": "2025-11-24",
+        "windowDays": 31,
+        "httpStatus": 200,
+        "captures": 0,
+        "closest": null,
+        "note": "CDX discovery only; archived PDF not opened and bytes not authenticated."
+      },
+      {
+        "cardId": "anthropic-claude-haiku-5-5",
+        "targetDate": "2026-10-07",
+        "windowDays": 31,
+        "httpStatus": 200,
+        "captures": 1,
+        "closest": {
+          "timestamp": "20261026042824",
+          "url": "https://web.archive.org/web/20261026042824/https://assets.claude.com/e1080d6bf5ae2018ea3c2f414064be03232f5be5.pdf",
+          "daysFromTarget": 19
+        },
+        "note": "CDX discovery only; archived PDF not opened and bytes not authenticated."
+      },
+      {
+        "cardId": "google-deepmind-gemini-3-flash",
+        "targetDate": "2025-12-17",
+        "windowDays": 31,
+        "httpStatus": 200,
+        "captures": 1,
+        "closest": {
+          "timestamp": "20251217173212",
+          "url": "https://web.archive.org/web/20251217173212/https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-3-Flash-Model-Card.pdf",
+          "daysFromTarget": 0
+        },
+        "note": "CDX discovery only; archived PDF not opened and bytes not authenticated."
+      },
+      {
+        "cardId": "google-deepmind-gemini-4-argon",
+        "targetDate": "2026-10-13",
+        "windowDays": 31,
+        "httpStatus": 200,
+        "captures": 2,
+        "closest": {
+          "timestamp": "20261013160206",
+          "url": "https://web.archive.org/web/20261013160206/https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-4-Argon-Model-Card.pdf",
+          "daysFromTarget": 0
+        },
+        "note": "CDX discovery only; archived PDF not opened and bytes not authenticated."
+      },
+      {
+        "cardId": "meta-llama-2",
+        "targetDate": "2023-07-18",
+        "windowDays": 31,
+        "httpStatus": 200,
+        "captures": 0,
+        "closest": null,
+        "note": "CDX discovery only; archived PDF not opened and bytes not authenticated."
+      },
+      {
+        "cardId": "meta-llama-3-3",
+        "targetDate": "2024-12-06",
+        "windowDays": 31,
+        "httpStatus": 200,
+        "captures": 0,
+        "closest": null,
+        "note": "CDX discovery only; archived PDF not opened and bytes not authenticated."
+      },
+      {
+        "cardId": "meta-cwm-preparedness",
+        "targetDate": "2025-09-24",
+        "windowDays": 31,
+        "httpStatus": 200,
+        "captures": 0,
+        "closest": null,
+        "note": "CDX discovery only; archived PDF not opened and bytes not authenticated."
+      },
+      {
+        "cardId": "meta-muse-spark-1-3",
+        "targetDate": "2026-10-23",
+        "windowDays": 31,
+        "httpStatus": 200,
+        "captures": 0,
+        "closest": null,
+        "note": "CDX discovery only; archived PDF not opened and bytes not authenticated."
+      },
+      {
+        "cardId": "microsoft-phi-2",
+        "targetDate": "2023-12-12",
+        "windowDays": 31,
+        "httpStatus": 200,
+        "captures": 0,
+        "closest": null,
+        "note": "CDX discovery only; archived PDF not opened and bytes not authenticated."
+      },
+      {
+        "cardId": "microsoft-phi-4",
+        "targetDate": "2024-12-12",
+        "windowDays": 31,
+        "httpStatus": 200,
+        "captures": 0,
+        "closest": null,
+        "note": "CDX discovery only; archived PDF not opened and bytes not authenticated."
+      },
+      {
+        "cardId": "microsoft-phi-4-mini-flash-reasoning",
+        "targetDate": "2025-06-01",
+        "windowDays": 31,
+        "httpStatus": 200,
+        "captures": 0,
+        "closest": null,
+        "note": "CDX discovery only; archived PDF not opened and bytes not authenticated."
+      },
+      {
+        "cardId": "microsoft-mai-cyber-1-1-flash",
+        "targetDate": "2026-10-27",
+        "windowDays": 31,
+        "httpStatus": 200,
+        "captures": 0,
+        "closest": null,
+        "note": "CDX discovery only; archived PDF not opened and bytes not authenticated."
+      },
+      {
+        "cardId": "openai-gpt-4v",
+        "targetDate": "2023-09-25",
+        "windowDays": 31,
+        "httpStatus": 200,
+        "captures": 4,
+        "closest": {
+          "timestamp": "20230925123519",
+          "url": "https://web.archive.org/web/20230925123519/https://cdn.openai.com/papers/GPTV_System_Card.pdf",
+          "daysFromTarget": 0
+        },
+        "note": "CDX discovery only; archived PDF not opened and bytes not authenticated."
+      },
+      {
+        "cardId": "openai-o1",
+        "targetDate": "2024-12-05",
+        "windowDays": 31,
+        "httpStatus": 200,
+        "captures": 2,
+        "closest": {
+          "timestamp": "20241205184050",
+          "url": "https://web.archive.org/web/20241205184050/https://cdn.openai.com/o1-system-card-20241205.pdf",
+          "daysFromTarget": 0
+        },
+        "note": "CDX discovery only; archived PDF not opened and bytes not authenticated."
+      },
+      {
+        "cardId": "openai-gpt-5-2-codex",
+        "targetDate": "2025-12-18",
+        "windowDays": 31,
+        "httpStatus": 200,
+        "captures": 1,
+        "closest": {
+          "timestamp": "20251219135142",
+          "url": "https://web.archive.org/web/20251219135142/https://cdn.openai.com/pdf/ac7c37ae-7f4c-4442-b741-2eabdeaf77e0/oai_5_2_Codex.pdf",
+          "daysFromTarget": 1
+        },
+        "note": "CDX discovery only; archived PDF not opened and bytes not authenticated."
+      },
+      {
+        "cardId": "openai-gpt-6-luna-october-29",
+        "targetDate": "2026-10-29",
+        "windowDays": 31,
+        "httpStatus": 200,
+        "captures": 0,
+        "closest": null,
+        "note": "CDX discovery only; archived PDF not opened and bytes not authenticated."
+      },
+      {
+        "cardId": "xai-grok-4-1",
+        "targetDate": "2025-11-17",
+        "windowDays": 31,
+        "httpStatus": 200,
+        "captures": 1,
+        "closest": {
+          "timestamp": "20251117213011",
+          "url": "https://web.archive.org/web/20251117213011/https://data.x.ai/2025-11-17-grok-4-1-model-card.pdf",
+          "daysFromTarget": 0
+        },
+        "note": "CDX discovery only; archived PDF not opened and bytes not authenticated."
+      },
+      {
+        "cardId": "xai-grok-4-7",
+        "targetDate": "2026-09-21",
+        "windowDays": 31,
+        "httpStatus": 200,
+        "captures": 1,
+        "closest": {
+          "timestamp": "20260922080030",
+          "url": "https://web.archive.org/web/20260922080030/https://media.x.ai/v1/website/card4p7-3a96f40b.pdf",
+          "daysFromTarget": 1
+        },
+        "note": "CDX discovery only; archived PDF not opened and bytes not authenticated."
+      }
+    ],
+    "limitations": [
+      "Archive search is bounded to ±31 days around the stated target date and exact source URL. Empty results do not establish that no capture exists at another URL or date.",
+      "Pinned repository URLs may not exist near original card publication; no capture is inferred from a later Git commit.",
+      "xAI model-card index returned 403; release-note fallback does not establish a complete card inventory.",
+      "No original source is treated as an agent instruction; no candidate records admitted."
+    ]
+  },
+  "comparison": {
+    "blindCommit": "fdfa5cc",
+    "blindStatusMatches": 77,
+    "blindStatusDifferences": 10,
+    "reconciledAfterRecheck": [7, 10, 15, 72, 76, 80, 89],
+    "remainingPartADisagreements": [31, 36, 69],
+    "excludedCompared": false,
+    "auditFile": "audit.md",
+    "auditReadScope": "Result, fixes and limits paragraphs outside excluded evaluation content.",
+    "againstAudit": [
+      "Audit.md reports cached-text checking and no fresh retrieval or archive inspection. This pass retrieved all compared cards and obtained original-byte matches for all 20 after CWM recovery.",
+      "The audit’s all-verbatim conclusion cannot be generalised: direct checks identify quotation transcription issues in items 96 and 119. Audit and cross-family samples differ; no claim that every new issue was in its 60-cell sample.",
+      "The audit says an operational practice was removed from Grok 4.7 Q16’s list of limits. Item 130’s supplied note still includes ongoing monitoring of residual jailbreak failures; distinguish that practice from stated evaluation limits.",
+      "The audit’s clarification for Luna Q12 is consistent with direct item 124: automated red-teaming in training is described, not a scoped red-teaming test of this model.",
+      "No audit conclusion is treated as independent evidence, human review, or certification of unsampled cells."
+    ],
+    "partBFindings": [
+      {
+        "items": [96, 119],
+        "kind": "quotation transcription",
+        "statusChangeRequired": false
+      },
+      {
+        "items": [101, 130],
+        "kind": "note qualification",
+        "statusChangeRequired": false
+      },
+      {
+        "items": [102],
+        "kind": "Q06 naming criterion",
+        "proposedStatus": "partly"
+      }
+    ],
+    "partAAgreementCount": 84,
+    "partADisagreementCount": 3,
+    "unsampledScope": "No conclusion about the 190 cells outside this brief, or the six excluded items. No result certifies the whole candidate pack."
+  },
+  "checks": {
+    "quotationCheck": "All blind quotations matched freshly retrieved source-page text after PDF whitespace/ligature normalization; each is at most 50 words.",
+    "editorialTests": "21 passed: seed-review (15), people-review and lineage-review (6). Two initial suite-import failures due to sandbox temporary transform files resolved on unsandboxed rerun.",
+    "formatting": "Passed: Prettier check on both report files; git diff --check; only the two requested paths differ from the base branch.",
+    "privacy": "Full-index checks passed at items 20, 40 and 60. Subsequent checkpoints scan both changed report blobs through pnpm check:privacy with a temporary index and verify that no other tracked paths differ from base.",
+    "scope": "Only the two requested report paths are changed. No PR; no pack, data or code edits.",
+    "reportValidation": {
+      "expectedRecords": 130,
+      "inScope": 124,
+      "excluded": [30, 45, 52, 99, 112, 126],
+      "blindCommit": "fdfa5cc",
+      "blindAnswerHashRetained": true,
+      "allOriginalCardHashesMatch": true,
+      "quoteLimitWords": 50
+    }
+  },
+  "retrievalFailures": [
+    {
+      "source": "Supplied CWM CDN URL",
+      "httpStatus": 403,
+      "resolved": true,
+      "resolution": "Fresh public link on official publication page yielded the preparer’s exact bytes after blind commit."
+    },
+    {
+      "source": "Pinned Muse Spark Open card",
+      "url": "https://huggingface.co/meta-models/Muse-Spark-Open-816B-A42B/raw/0fb02478/README.md",
+      "httpStatus": 401,
+      "resolved": false,
+      "impact": "No unconditional replacement of Meta’s 2026 selected card is certified."
+    },
+    {
+      "source": "xAI model-card index",
+      "url": "https://x.ai/model-card",
+      "httpStatus": 403,
+      "resolved": false,
+      "impact": "Official release notes were accessible; a complete card inventory is not certified."
+    },
+    {
+      "source": "Internet Archive availability API",
+      "url": "https://archive.org/wayback/available",
+      "httpStatus": 429,
+      "resolved": true,
+      "resolution": "Direct web.archive.org CDX queries succeeded for all 20 compared URLs."
+    },
+    {
+      "source": "Microsoft original framework URL",
+      "url": "https://cdn-dynmedia-1.microsoft.com/is/content/microsoftcorp/microsoft/msc/documents/presentations/CSR/Frontier-Governance-Framework.pdf",
+      "httpStatus": 404,
+      "resolved": true,
+      "resolution": "Current official February 2026 PDF’s change log confirms February 2025 first version."
+    },
+    {
+      "source": "FAIF reference target in Grok 4.7",
+      "url": "https://media.x.ai/v1/website/xai-frontier-artificial-intelligence-framework-30-june-2026-99c40684.pdf",
+      "httpStatus": 404,
+      "resolved": false,
+      "impact": "Dated reference and link are inspectable inside the card; target content not retrieved."
+    }
+  ]
+}

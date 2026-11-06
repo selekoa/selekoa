@@ -10,6 +10,25 @@ import {
   facetById,
   isComparisonKey,
 } from './framework-comparison';
+import {
+  cardFacetById,
+  cardFacetKey,
+  cardFacetKind,
+  isCardFacetKey,
+} from './model-cards';
+import { isLawFacetKey, lawFacetById, lawFacetKey } from './law-questions';
+import {
+  horizonKinds,
+  normaliseWords,
+  occasionKinds,
+  predictionDisputes,
+  predictionForms,
+  predictionVerdictWords,
+  predictorKinds,
+  quotedFragments,
+  unquoted,
+  yearHorizonKinds,
+} from './prediction-fields';
 
 const id = z.string().regex(/^[a-z][a-z0-9-]+$/);
 const text = z.string().trim().min(1);
@@ -513,6 +532,9 @@ export const claimSchema = z.strictObject({
             // the standing a text claims for itself (voluntary or binding).
             'date',
             'standing',
+            // Schema 2.30: what a model card discloses on one of the card
+            // questions (src/domain/model-cards.ts); card cells only.
+            'disclosure',
           ]),
           key: id,
           parties: z
@@ -539,6 +561,11 @@ export const claimSchema = z.strictObject({
             .strictObject({
               id: text,
               status: z.enum(['stated', 'partly', 'recorded']).optional(),
+              // Schema 2.31. A law cell (src/domain/law-questions.ts) that
+              // rests on a paraphrase with its locator, where quoting would
+              // pass the source's quotation limit or the source's length is
+              // not known: marked on the cell, so the page says so.
+              paraphrased: z.literal(true).optional(),
             })
             .optional(),
           // Schema 2.19. A date the edition does not state but that follows
@@ -745,6 +772,126 @@ export const claimSchema = z.strictObject({
             .optional(),
         })
         .optional(),
+      // Schema 2.32. A dated prediction a text states (`states_prediction`):
+      // its form, who predicts (a survey's figure belongs to the survey; an
+      // unnamed predictor has the reporting author beside it), the event and
+      // the horizon in the text's words (years only where printed; a relative
+      // horizon is never converted), the probability and confidence as
+      // worded, conditions and hedges, and, by form, the survey, the bet or
+      // the dated capture of a platform figure. There is no outcome field.
+      prediction: z
+        .strictObject({
+          form: z.enum(predictionForms),
+          // A statement that reads as a forecast or an aim ("should be able to").
+          mode: z.literal('forecast-or-aim').optional(),
+          predictor: z.strictObject({
+            kind: z.enum(predictorKinds),
+            label: text,
+            entityIds: z.array(id).min(1).optional(),
+            reporter: z
+              .strictObject({ label: text, entityId: id.optional() })
+              .optional(),
+          }),
+          event: z.strictObject({
+            type: z.enum(['quote', 'paraphrase']),
+            text,
+            note: text.optional(),
+          }),
+          horizon: z.strictObject({
+            asStated: text,
+            // The horizon's own words, as they stand in a quoted passage.
+            words: text.optional(),
+            kind: z.enum(horizonKinds),
+            years: z
+              .array(z.number().int().min(1000).max(9999))
+              .min(1)
+              .optional(),
+            interval: z
+              .strictObject({ amount: text, unit: text, from: text })
+              .optional(),
+            relation: text.optional(),
+            precision: text,
+            note: text.optional(),
+          }),
+          // A dated occasion the horizon counts from (an address, a poll).
+          occasion: z
+            .strictObject({
+              date: historicalDate,
+              kind: z.enum(occasionKinds),
+              note: text,
+            })
+            .optional(),
+          probability: z
+            .strictObject({ asStated: text, words: text })
+            .optional(),
+          confidence: z
+            .strictObject({ asStated: text, words: text })
+            .optional(),
+          // Each probability with its own horizon, and its version and date
+          // where a text gives two versions of an estimate.
+          points: z
+            .array(
+              z.strictObject({
+                probability: text.optional(),
+                horizon: text,
+                subject: text.optional(),
+                version: text.optional(),
+                date: historicalDate.optional(),
+              }),
+            )
+            .min(2)
+            .optional(),
+          conditions: text.optional(),
+          hedge: text.optional(),
+          survey: z
+            .strictObject({
+              respondents: text.optional(),
+              conducted: text,
+              statistic: text.optional(),
+              question: text.optional(),
+            })
+            .optional(),
+          bet: z
+            .strictObject({
+              platform: text,
+              parties: z
+                .array(
+                  z.strictObject({
+                    label: text,
+                    entityId: id.optional(),
+                    position: text,
+                  }),
+                )
+                .min(2),
+              stakes: text,
+            })
+            .optional(),
+          // The dated copy a platform figure is read from.
+          capture: z
+            .strictObject({
+              date: checkDate,
+              timestamp: z.string().regex(/^\d{14}$/),
+              url: httpUrl,
+              note: text,
+            })
+            .optional(),
+          // The date from which the quoted wording is known, where it is
+          // later than the text's own date (a live page, a later copy).
+          attested: z
+            .strictObject({ date: historicalDate.optional(), note: text })
+            .optional(),
+          // A later report of an earlier estimate: the record is dated by
+          // the report; `estimateOf` dates the estimate reported.
+          retrospective: z
+            .strictObject({ estimateOf: historicalDate, note: text })
+            .optional(),
+          // A documentary dispute (wording, attribution or version) that makes
+          // the record contested or unresolved; never a dispute about outcome.
+          dispute: z
+            .strictObject({ about: z.enum(predictionDisputes), note: text })
+            .optional(),
+        })
+        .optional(),
       // Schema 2.26. A naming record: the string as the text prints it, how
       // the use stands to the concept's criterion, its role among the located
       // uses, the register, whether the text or only an indexed title was
@@ -933,6 +1080,9 @@ export const evidenceSchema = z.strictObject({
   retrievalRoute: z
     .enum(['direct', 'reader_relay', 'x_syndication'])
     .optional(),
+  // Schema 2.31. Selekoa's working English translation of a quotation in
+  // another language, kept beside the original; not verified by a person.
+  translation: text.max(700).optional(),
   // Schema 2.12. A passage that misleads when shown alone: why, the context
   // it must be shown with, and the records that supply that context.
   contextOnly: z
@@ -978,6 +1128,9 @@ export const datasetSchema = z
         '2.27',
         '2.28',
         '2.29',
+        '2.30',
+        '2.31',
+        '2.32',
       ]),
       updatedAt: checkDate,
       title: text,
@@ -1629,7 +1782,190 @@ export const datasetSchema = z
           path,
           'Provision attributes belong only to provision and version change claims',
         );
-      if (provisionClaim) {
+      // Model-card cells (schema 2.30): a card is a document with an exact
+      // expression, not a framework edition, so its cells follow their own
+      // rules below instead of the edition rules.
+      const card = cardFacetById(provision?.facet?.id ?? '');
+      if (provision?.kind === cardFacetKind && !card)
+        issue(path, 'A disclosure belongs only to model-card cells');
+      if (provision && isCardFacetKey(provision.key) && !card)
+        issue(path, 'A model-card key belongs only to model-card cells');
+      if (card) {
+        const facet = provision!.facet!;
+        const expressions = data.sources.filter(
+          (s) => s.documentId === c.subject,
+        );
+        if (!provisionClaim)
+          issue(path, 'A model-card question belongs only to provision claims');
+        if (subject?.type !== 'document' || !expressions.length)
+          issue(
+            path,
+            'A model-card cell belongs to a document with an exact expression',
+          );
+        if (provision!.kind !== cardFacetKind)
+          issue(path, 'A model-card cell carries the disclosure kind');
+        if (provision!.key !== cardFacetKey(facet.id))
+          issue(path, 'A model-card cell carries its question’s key');
+        if (c.object.kind !== 'literal' || c.object.value !== card.label)
+          issue(path, 'A model-card cell is named by its question’s label');
+        if (provision!.parties || provision!.computed)
+          issue(
+            path,
+            'A model-card cell names no parties and computes no date',
+          );
+        // Dated by the card read: one of its expressions' or its version's
+        // own dates, or unknown when the card prints no date of its own.
+        const v = subject?.documentVersion;
+        const dates = [
+          ...expressions.flatMap((s) => [s.publicationDate, s.versionDate]),
+          v?.publishedAt,
+          v?.revisedAt,
+        ].filter(Boolean);
+        if (
+          dates.length
+            ? c.time.kind !== 'event' ||
+              !['publication', 'revision'].includes(c.time.basis ?? '') ||
+              !dates.includes(c.time.date)
+            : c.time.kind !== 'unknown'
+        )
+          issue(
+            path,
+            'A model-card cell is dated by a publication or revision date of the card read, or is undated when the card prints none',
+          );
+        const fromCard = links.filter(
+          (e) =>
+            e &&
+            e.support === 'supports' &&
+            e.sourceRole === 'primary' &&
+            sources.get(e.sourceId)?.documentId === c.subject,
+        );
+        if (c.predicate === 'states_provision') {
+          if (c.derivation !== 'explicit' || c.resolution !== 'supported')
+            issue(path, 'A stated model-card cell is explicit and supported');
+          if (facet.status !== 'stated' && facet.status !== 'partly')
+            issue(path, 'A stated model-card cell is stated or partly');
+          // Quoted in at most 50 words, or paraphrased with its locator
+          // where the card's quotation limit would be exceeded (2026-11-03).
+          if (!fromCard.some((e) => wordCount(e!.passage) <= 50))
+            issue(
+              path,
+              'A stated model-card cell requires a supporting passage of the card, quoted or paraphrased in at most 50 words',
+            );
+        } else if (c.predicate === 'provision_not_found') {
+          if (c.derivation !== 'inferred')
+            issue(
+              path,
+              'A recorded absence is a negative proposition and must be inferred',
+            );
+          if (facet.status)
+            issue(path, 'A recorded absence has no stated status');
+          if (!fromCard.length)
+            issue(
+              path,
+              'A recorded absence requires evidence giving the inspected scope of the card',
+            );
+        }
+        const cell = `${c.subject} ${facet.id}`;
+        if (comparisonCells.has(cell))
+          issue(path, `One model-card cell per card and question: ${cell}`);
+        comparisonCells.add(cell);
+      }
+      // Law cells (schema 2.31): one per instrument text and law question,
+      // in "Laws compared". Their passages may come from any source the
+      // instrument is read with (an amending regulation, an official record
+      // of its adoption), so they follow their own rules below instead of
+      // the edition rules.
+      const law = card ? undefined : lawFacetById(provision?.facet?.id ?? '');
+      if (provision && isLawFacetKey(provision.key) && !law)
+        issue(path, 'A law-question key belongs only to law cells');
+      if (provision?.facet?.paraphrased && !law)
+        issue(path, 'Only a law cell is marked as paraphrased');
+      if (law) {
+        const facet = provision!.facet!;
+        const v = subject?.documentVersion;
+        if (!provisionClaim)
+          issue(path, 'A law question belongs only to provision claims');
+        if (subject?.type !== 'document' || !v)
+          issue(path, 'A law cell belongs to a versioned document');
+        if (provision!.kind !== law.kind)
+          issue(path, 'A law cell carries the provision kind of its question');
+        if (provision!.key !== lawFacetKey(facet.id))
+          issue(path, 'A law cell carries its question’s key');
+        if (c.object.kind !== 'literal' || c.object.value !== law.label)
+          issue(path, 'A law cell is named by its question’s label');
+        if (provision!.parties || provision!.computed)
+          issue(path, 'A law cell names no parties and computes no date');
+        // Dated by the text compared: one of its version's own dates.
+        const dates = v
+          ? ([
+              ['publication', v.publishedAt],
+              ['effective', v.effectiveAt],
+              ['revision', v.revisedAt],
+            ].filter(([, d]) => d) as [string, string][])
+          : [];
+        if (
+          dates.length
+            ? c.time.kind !== 'event' ||
+              !dates.some(
+                ([basis, d]) =>
+                  c.time.kind === 'event' &&
+                  c.time.basis === basis &&
+                  c.time.date === d,
+              )
+            : c.time.kind !== 'unknown'
+        )
+          issue(
+            path,
+            'A law cell is dated by a date of its text’s version, or is undated when the version has none',
+          );
+        const supporting = links.filter(
+          (e) => e && e.support === 'supports' && e.sourceRole === 'primary',
+        );
+        if (c.predicate === 'states_provision') {
+          if (c.derivation !== 'explicit' || c.resolution !== 'supported')
+            issue(path, 'A stated law cell is explicit and supported');
+          if (facet.status !== 'stated' && facet.status !== 'partly')
+            issue(path, 'A stated law cell is stated or partly');
+          // Quoted in at most 50 words; or, marked on the cell, paraphrased
+          // with its locator where a quotation would pass the source's limit
+          // or the source's length is unknown (2026-11-05).
+          const paraphrased = supporting.some(
+            (e) => e!.passageType === 'paraphrase',
+          );
+          if (!!facet.paraphrased !== paraphrased)
+            issue(
+              path,
+              'A law cell resting on a paraphrase is marked as paraphrased, and only then',
+            );
+          if (!supporting.some((e) => wordCount(e!.passage) <= 50))
+            issue(
+              path,
+              'A stated law cell requires a supporting primary passage of at most 50 words',
+            );
+        } else if (c.predicate === 'provision_not_found') {
+          if (c.derivation !== 'inferred')
+            issue(
+              path,
+              'A recorded absence is a negative proposition and must be inferred',
+            );
+          if (facet.status || facet.paraphrased)
+            issue(path, 'A recorded absence has no stated status');
+          if (
+            !supporting.some(
+              (e) => sources.get(e!.sourceId)?.documentId === c.subject,
+            )
+          )
+            issue(
+              path,
+              'A recorded absence requires evidence giving the inspected scope of the text',
+            );
+        }
+        const cell = `${c.subject} ${facet.id}`;
+        if (comparisonCells.has(cell))
+          issue(path, `One law cell per text and question: ${cell}`);
+        comparisonCells.add(cell);
+      }
+      if (provisionClaim && !card && !law) {
         const edition = subject?.documentVersion;
         // Schema 2.20: a stated provision may also belong to any document
         // with an exact expression, a source whose documentId is the
@@ -1776,8 +2112,8 @@ export const datasetSchema = z
         }
       }
       // Framework comparison cells (schema 2.17).
-      const facet = provision?.facet;
-      if (facet) {
+      const facet = card || law ? undefined : provision?.facet;
+      if (facet && provision) {
         const definition = facetById(facet.id);
         if (!provisionClaim)
           issue(path, 'A comparison question belongs only to provision claims');
@@ -1807,7 +2143,7 @@ export const datasetSchema = z
         if (comparisonCells.has(cell))
           issue(path, `One comparison cell per edition and question: ${cell}`);
         comparisonCells.add(cell);
-      } else if (provision && isComparisonKey(provision.key))
+      } else if (provision && isComparisonKey(provision.key) && !law)
         issue(path, 'A comparison key belongs only to comparison cells');
       if (c.predicate === 'changes_from' && provision) {
         const stated = (doc: string) =>
@@ -2153,6 +2489,155 @@ export const datasetSchema = z
         }
       } else if (thought) {
         issue(path, 'Thought attributes belong only to proposition records');
+      }
+      // Prediction records (schema 2.32).
+      const prediction = c.attributes?.prediction;
+      if ((c.predicate === 'states_prediction') !== !!prediction)
+        issue(
+          path,
+          'A prediction record carries its prediction attributes, and only it',
+        );
+      if (prediction) {
+        const pr = prediction;
+        const supporting = links.filter(
+          (e) => e?.support === 'supports' && e.sourceRole === 'primary',
+        );
+        const quoted = supporting
+          .filter((e) => e!.passageType === 'quote')
+          .map((e) => normaliseWords(e!.passage));
+        const paraphrased = supporting
+          .filter((e) => e!.passageType === 'paraphrase')
+          .flatMap((e) => quotedFragments(e!.passage).map(normaliseWords));
+        // Words a record gives as the text's: inside a quoted passage, or
+        // inside the quoted words of a labelled paraphrase.
+        const inText = (words: string) => {
+          const w = normaliseWords(words);
+          return (
+            quoted.some((q) => q.includes(w)) ||
+            paraphrased.some((q) => q.includes(w))
+          );
+        };
+        if (c.derivation !== 'explicit')
+          issue(path, 'A prediction record documents what a text states');
+        if (c.object.kind !== 'literal' || c.object.value !== pr.event.text)
+          issue(path, 'A prediction record is named by its predicted event');
+        if (c.time.kind !== 'event')
+          issue(path, 'A prediction record is dated by its text');
+        if ((c.resolution !== 'supported') !== !!pr.dispute)
+          issue(
+            path,
+            'A prediction record is contested or unresolved only with a documentary dispute about wording, attribution or version',
+          );
+        if (!supporting.length)
+          issue(
+            path,
+            'A prediction record rests on a supporting primary passage',
+          );
+        if (pr.event.type === 'quote' && !inText(pr.event.text))
+          issue(path, 'A quoted predicted event lies in a quoted passage');
+        if (pr.event.type === 'paraphrase' && !pr.event.note)
+          issue(path, 'A paraphrased predicted event carries a note');
+        const h = pr.horizon;
+        if (h.kind !== 'figure' && (!h.words || !inText(h.words)))
+          issue(path, 'The horizon’s words lie in a quoted passage');
+        if (pr.probability && !inText(pr.probability.words))
+          issue(path, 'The probability’s words lie in a quoted passage');
+        if (pr.confidence && !inText(pr.confidence.words))
+          issue(path, 'The confidence’s words lie in a quoted passage');
+        // Years only where printed, and only for printed-year kinds.
+        if (h.years && !yearHorizonKinds.includes(h.kind))
+          issue(path, 'Only a printed-year horizon carries years');
+        if (h.kind === 'absolute' && !h.years)
+          issue(path, 'An absolute horizon carries its printed years');
+        for (const y of h.years ?? [])
+          if (
+            !h.asStated.includes(String(y)) ||
+            !supporting.some((e) => e!.passage.includes(String(y)))
+          )
+            issue(path, `A horizon year is printed in the text: ${y}`);
+        if (h.kind === 'relative' && !h.interval)
+          issue(path, 'A relative horizon keeps its interval');
+        if (h.interval && h.kind !== 'relative' && h.kind !== 'quantile')
+          issue(
+            path,
+            'Only a relative horizon, or probabilities over a stated span, keep an interval',
+          );
+        if (h.interval?.from === 'occasion' && !pr.occasion)
+          issue(path, 'A horizon that counts from an occasion names it');
+        if (
+          pr.occasion &&
+          c.time.kind === 'event' &&
+          dateBoundary(pr.occasion.date, false) >
+            dateBoundary(c.time.date, true)
+        )
+          issue(path, 'An occasion is not later than the text');
+        if (h.kind === 'quantile' && (h.years?.length ?? 0) > 1 && !pr.points)
+          issue(path, 'A record with several points lists each point');
+        // Form and predictor.
+        const k = pr.predictor.kind;
+        if ((pr.form === 'expert-survey') !== (k === 'survey'))
+          issue(path, 'A survey’s figure belongs to the survey');
+        if ((pr.form === 'expert-survey') !== !!pr.survey)
+          issue(path, 'A survey record, and only it, describes its survey');
+        if ((pr.form === 'platform-question') !== (k === 'platform'))
+          issue(path, 'A platform figure belongs to the platform');
+        if ((pr.form === 'platform-question') !== !!pr.capture)
+          issue(path, 'A platform figure, and only it, has a dated capture');
+        if ((pr.form === 'public-bet') !== !!pr.bet)
+          issue(path, 'A public bet, and only it, names its parties');
+        if ((pr.form === 'reported-statement') !== (k === 'unnamed'))
+          issue(path, 'A reported statement has an unnamed predictor');
+        if ((k === 'unnamed') !== !!pr.predictor.reporter)
+          issue(path, 'An unnamed predictor, and only it, has a reporter');
+        if (pr.mode && pr.form !== 'stated-forecast')
+          issue(path, 'Only a stated forecast is marked as forecast or aim');
+        if (k === 'person' && (pr.predictor.entityIds?.length ?? 0) > 1)
+          issue(path, 'A person predictor names one person');
+        for (const e of [
+          ...(pr.predictor.entityIds ?? []),
+          ...(pr.predictor.reporter?.entityId
+            ? [pr.predictor.reporter.entityId]
+            : []),
+          ...(pr.bet?.parties.flatMap((p) =>
+            p.entityId ? [p.entityId] : [],
+          ) ?? []),
+        ])
+          if (!entities.has(e))
+            issue(path, `A predictor or party is not a record: ${e}`);
+        if (c.time.kind === 'event') {
+          if (
+            pr.attested?.date &&
+            dateBoundary(pr.attested.date, true) <
+              dateBoundary(c.time.date, false)
+          )
+            issue(path, 'An attested date is not earlier than the text’s date');
+          if (
+            pr.retrospective &&
+            dateBoundary(pr.retrospective.estimateOf, false) >
+              dateBoundary(c.time.date, true)
+          )
+            issue(path, 'A retrospective reports an estimate made before it');
+        }
+        // No verdict, ranking or priority in the record's own words.
+        for (const t of [
+          c.statement,
+          c.qualification,
+          c.time.note,
+          pr.event.note,
+          pr.horizon.note,
+          pr.hedge,
+          pr.conditions,
+          pr.attested?.note,
+          pr.retrospective?.note,
+          pr.capture?.note,
+          pr.occasion?.note,
+          ...links.map((e) => e?.note),
+        ])
+          if (t && predictionVerdictWords.test(unquoted(t)))
+            issue(
+              path,
+              `A prediction record does not judge fulfilment, rank or claim priority: ${unquoted(t).match(predictionVerdictWords)![0]}`,
+            );
       }
       if (c.predicate === 'enacted' && c.time.kind !== 'event')
         issue(path, 'Enactment requires an event date');
@@ -2777,6 +3262,17 @@ export const datasetSchema = z
         issue(['evidence', i], 'Machine checks cannot carry a human reviewer');
       if (e.checkedAt > data.meta.updatedAt)
         issue(['evidence', i], 'Evidence checked after dataset update');
+      // Schema 2.31: a translation belongs beside a quotation in another
+      // language than English.
+      if (
+        e.translation &&
+        (e.passageType !== 'quote' ||
+          (sources.get(e.sourceId)?.language ?? 'en').startsWith('en'))
+      )
+        issue(
+          ['evidence', i],
+          'A translation belongs only to a quotation in another language',
+        );
       for (const id of e.contextOnly?.claimIds ?? []) {
         if (!claims.has(id))
           issue(['evidence', i], `Required context is not a record: ${id}`);

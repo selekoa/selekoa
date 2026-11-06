@@ -368,14 +368,14 @@ Recorded after launch. Quality work comes first: apply the absence-claims sweep 
 **Most valuable**
 
 1. **Model cards compared** (the maintainer's first choice). For each frontier model release with a published system or model card, what the card discloses about dangerous-capability evaluations, external testing, framework threshold determinations and safeguards, on the same questions, in the format of Compare frameworks. Every cell quotes the card or records a stated search. Evaluations are recorded at policy level only.
-2. **Laws compared.** Finish it: apply the cross-family check ([brief 07](briefs/07-laws-compared-apply.md)), then admit it as a collection and a page.
+2. **Laws compared.** Admitted with its page at release 0.30.0 ([admission record](../review/laws-compared-admission-2-2026-11-05.md)); the jurisdictions not yet read (Korea first) are a later pack.
 3. Release DOIs (Zenodo), later, as a maintainer decision.
 
 **Most interesting**, in this order:
 
 1. **Pre-history:** antecedent texts on machine intelligence before the modern record (Butler, Lovelace, Turing, Wiener, von Neumann and Ulam, Lem), as their own collection, so other collections need not stretch their periods. Cosmism and the cybernetics strands only where a text explicitly concerns machine intelligence.
 2. **AI and money:** what central banks, the BIS, the IMF, the FSB and supervisors have said about machine intelligence in payments, monetary policy, financial stability and supervision.
-3. **A dated record of AI predictions:** who predicted what, when, with what timeline and in what form (forecast, bet, survey). A prediction is recorded as stated; whether it came true is not judged by Selekoa.
+3. **A dated record of AI predictions:** admitted with its page as "Predictions on record" at release 0.31.0 ([admission record](../review/predictions-admission-2026-11-05.md)). The leads it lists (Simon 1965, Minsky 1967, _Life_ 1970, Michie in _Nature_ 1973, Kurzweil's books) wait for readable copies.
 4. Possibly later: Finland and the Nordics in AI governance.
 
 ### Backlog

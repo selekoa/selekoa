@@ -1,0 +1,182 @@
+{
+  "admissionDate": "2026-11-04",
+  "files": {
+    "pack": "research/laws-compared/pack.json",
+    "verification": "research/laws-compared/verification.json",
+    "check": "research/laws-compared/cross-family-check-2026-11-02.json"
+  },
+  "scope": "The first part of the laws-compared admission (2026-11-04), from a machine-prepared, machine-audited and cross-family-checked candidate pack and under the maintainer's decisions of 2026-11-03 and 2026-11-04, adds the effect rule of the New York RAISE Act as signed in 2025 (Chapter 699), with its date marked as computed, and records the expression of the bill text that the pack read; the nine compared instruments and their standing were already documents and records of the dataset. A computed date is not a finding that the text took effect. All records are seeds.",
+  "snapshotDescription": "Before the first part of the laws-compared admission (2026-11-04): the effect rule of New York Chapter 699 of 2025 with its computed date, and the expression of the S6953-B print read for the pack, on existing predicates. No schema change.",
+  "instruments": {
+    "eu-ai-act": {
+      "entities": ["eu-ai-act-2024", "eu-digital-omnibus-ai-2026"],
+      "sources": ["source-eu-ai-act-2024", "source-eu-digital-omnibus-ai-2026"],
+      "standing": [
+        {
+          "id": "aia-enacted",
+          "predicate": "enacted",
+          "object": "eu-ai-act-2024"
+        }
+      ]
+    },
+    "eu-code-ss": {
+      "entities": ["gpai-code-of-practice-2025"],
+      "sources": ["source-eu-code-safety-security"],
+      "standing": [
+        {
+          "id": "aia-art55-code-reliance",
+          "predicate": "states_provision",
+          "subject": "eu-ai-act-2024"
+        },
+        {
+          "id": "prov-eu-code-ss-adherence-not-conclusive",
+          "predicate": "states_provision",
+          "subject": "gpai-code-of-practice-2025"
+        },
+        {
+          "id": "omni-art56-adequacy-assessment",
+          "predicate": "states_provision",
+          "subject": "eu-digital-omnibus-ai-2026"
+        }
+      ]
+    },
+    "ca-sb53": {
+      "entities": ["california-sb-53"],
+      "sources": ["source-ca-sb53-chaptered"],
+      "standing": [
+        {
+          "id": "sb-enactment-2025-09-29",
+          "predicate": "enacted",
+          "object": "california-sb-53"
+        }
+      ],
+      "heldPassages": [
+        {
+          "quote": "APPROVED 2025-09-29",
+          "reason": "Decision 1a: SB 53 is at its quotation limit, so the approval date is cited from the existing approval record sb-enactment-2025-09-29 instead of being quoted again."
+        }
+      ]
+    },
+    "ny-ch699": {
+      "entities": ["ny-raise-act-chapter-699-2025"],
+      "sources": ["source-ny-s6953b-2025", "source-ny-s6953-assembly-record"],
+      "family": "ny-raise-act",
+      "standing": [
+        {
+          "id": "fl-us-ny-s6953b-signed-chapter-699",
+          "predicate": "enacted",
+          "object": "ny-raise-act-chapter-699-2025"
+        },
+        {
+          "id": "ny-chapter96-signed",
+          "predicate": "enacted",
+          "object": "new-york-raise-act-chapter-96-2026"
+        }
+      ]
+    },
+    "ny-ch96": {
+      "entities": ["new-york-raise-act-chapter-96-2026"],
+      "sources": ["source-ny-s8828-assembly-record"],
+      "family": "ny-raise-act",
+      "standing": [
+        {
+          "id": "ny-chapter96-signed",
+          "predicate": "enacted",
+          "object": "new-york-raise-act-chapter-96-2026"
+        },
+        {
+          "id": "ny-ch96-effective-date",
+          "predicate": "states_provision",
+          "subject": "new-york-raise-act-chapter-96-2026"
+        }
+      ]
+    },
+    "cn-genai-measures": {
+      "entities": ["cn-generative-ai-interim-measures-2023"],
+      "sources": ["source-cn-generative-ai-measures-2023-govcn"],
+      "standing": [
+        {
+          "id": "cn-genai-measures-issued",
+          "predicate": "enacted",
+          "object": "cn-generative-ai-interim-measures-2023"
+        }
+      ]
+    },
+    "cn-labelling-measures": {
+      "entities": ["cn-ai-content-labelling-measures-2025"],
+      "sources": ["source-cn-labelling-measures-2025"],
+      "standing": [
+        {
+          "id": "fl-cn-labelling-issued",
+          "predicate": "enacted",
+          "object": "cn-ai-content-labelling-measures-2025"
+        }
+      ]
+    },
+    "us-eo14110": {
+      "entities": ["us-eo-14110-2023"],
+      "sources": ["source-us-eo-14110-fr", "source-us-eo-14148-fr"],
+      "standing": [
+        {
+          "id": "fl-us-eo14110-revoked",
+          "predicate": "revoked",
+          "subject": "us-eo-14148-2025",
+          "object": "us-eo-14110-2023",
+          "date": "2025-01-20"
+        }
+      ]
+    },
+    "us-bis-ifr": {
+      "entities": ["us-bis-ai-diffusion-ifr-2025"],
+      "sources": [
+        "source-us-bis-ai-diffusion-ifr-fr",
+        "source-us-bis-diffusion-rescission-release-2025"
+      ],
+      "packSourceLinks": {
+        "bis-rescission": "source-us-bis-diffusion-rescission-release-2025"
+      },
+      "standing": [
+        {
+          "id": "fl-us-bis-ai-diffusion-ifr-published",
+          "predicate": "published",
+          "object": "us-bis-ai-diffusion-ifr-2025"
+        },
+        {
+          "id": "fl-us-bis-ai-diffusion-rescission-announced",
+          "predicate": "revoked",
+          "object": "us-bis-ai-diffusion-ifr-2025",
+          "date": "2025-05-13",
+          "announced": true
+        }
+      ]
+    }
+  },
+  "held": {
+    "il-aisma": "Maintainer, 2026-11-04: \"laws without Illinois\". The act follows later, after a Claude check of its row against the act's saved text; its enacted text was not read by the preparer and fourteen of its cells are not retrieved."
+  },
+  "provisions": [
+    {
+      "id": "lc-ny-ch699-effect-computed",
+      "instrument": "ny-ch699",
+      "cell": "Q11",
+      "subject": "ny-raise-act-chapter-699-2025",
+      "source": "source-ny-s6953b-2025",
+      "label": "Takes effect on the ninetieth day after becoming law (computed: 19 March 2026)",
+      "key": "ny-2025-effective-date",
+      "statement": "Section 3 of the bill signed as Chapter 699 of 2025 provides that the act takes effect on the ninetieth day after it becomes law; counted from the signature on 19 December 2025, that day is 19 March 2026.",
+      "date": "2026-03-19",
+      "timeNote": "Computed from the section 3 rule and the signature of 19 December 2025; the text states no calendar date (decision 9a). New York's statutory rules for counting days were not checked.",
+      "rationale": "Premises: (1) section 3 of print S6953-B, the print signed as Chapter 699, provides that the act shall take effect on the ninetieth day after it shall have become a law; (2) the Assembly's bill record dates the signature as Chapter 699 to 19 December 2025. Taking signature as the day the act became law and counting ninety days from the following day gives 19 March 2026. New York's statutory rules for counting days were not checked.",
+      "qualification": "The calendar date is computed; the text states only the rule. It is the rule of the text as signed and not a finding that the text took effect: Chapter 96 of 2026, signed on 27 March 2026, amends this section 3 so that the 2025 chapter takes effect on 1 January 2027, and whether the 2025 text took effect before that amendment is held (maintainer decision 9a of 2026-11-03). The chapter as printed in the session laws was not inspected.",
+      "signature": {
+        "claim": "fl-us-ny-s6953b-signed-chapter-699",
+        "source": "source-ny-s6953-assembly-record",
+        "locator": "Assembly bill record for S06953, Actions, entry 12/19/2025",
+        "paraphrase": "The Assembly's bill record for S06953 lists, on 12/19/2025, the action SIGNED CHAP.699."
+      }
+    }
+  ],
+  "sourceExpressions": {
+    "source-ny-s6953b-2025": "ny-s6953b"
+  }
+}

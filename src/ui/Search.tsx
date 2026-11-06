@@ -122,14 +122,6 @@ export function Search({
   const facets = use(source.facets() as Promise<SearchFacets>);
   const pageIndex = useMemo(() => createPageIndex(facets.pages), [facets]);
   const collections = facets.collections;
-  /** The collections each claim appears in, by title. */
-  const collectionsOf = useMemo(() => {
-    const titles = new Map<string, string[]>();
-    for (const c of collections)
-      for (const id of c.claimIds)
-        titles.set(id, [...(titles.get(id) ?? []), c.title]);
-    return titles;
-  }, [collections]);
   /** Document names shared by more than one document record. */
   const sharedNames = useMemo(() => new Set(facets.sharedNames), [facets]);
   const { organisations, years } = facets;
@@ -184,9 +176,12 @@ export function Search({
   const deferred = useDeferredValue(request);
   const deferredQuery = deferred.query;
   const searching = deferred !== request;
-  const { results, repository, failed } = use(
+  const { results, repository, memberOf, failed } = use(
     source.search(deferred) as Promise<SearchOutcome>,
   );
+  /** The collections a claim in the results appears in, by title. */
+  const collectionsOf = (claimId: string) =>
+    (memberOf.get(claimId) ?? []).map((i) => collections[i].title);
   const data = repository.data;
   /** The page of a record in the results, as the search page links it. */
   const recordHref = (id: string) =>
@@ -317,9 +312,9 @@ export function Search({
             </span>
           )}
           {sourceLine(hit)}
-          {collectionsOf.has(claim.id) && (
+          {collectionsOf(claim.id).length > 0 && (
             <span className="search-hit-collection">
-              In {collectionsOf.get(claim.id)!.join(' · ')}
+              In {collectionsOf(claim.id).join(' · ')}
             </span>
           )}
           <span className="search-hit-open">Inspect evidence ↗</span>

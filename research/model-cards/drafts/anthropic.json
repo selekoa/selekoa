@@ -1,0 +1,1323 @@
+{
+  "group": "anthropic",
+  "drafter": "fresh-context drafting pass, 2026-11-02",
+  "cards": [
+    {
+      "id": "anthropic-claude-2-1",
+      "developer": "Anthropic",
+      "model": "Claude 2.1 (with Claude 2)",
+      "year": 2023,
+      "source": "anthropic-claude-2-1",
+      "frameworkEditions": [],
+      "frameworkEditionNote": "The card names no frontier safety framework. Its main text describes the July 2023 release of Claude 2; its update line is dated November 21, 2023, after the publication the dataset records for RSP v1.0 (rsp-2023, 2023-09-19), so the framework questions are asked and recorded as not found."
+    },
+    {
+      "id": "anthropic-claude-3-5-haiku-sonnet-new",
+      "developer": "Anthropic",
+      "model": "Claude 3.5 Haiku and upgraded Claude 3.5 Sonnet",
+      "year": 2024,
+      "source": "anthropic-claude-3-5-haiku-sonnet-new",
+      "frameworkEditions": ["rsp-v2-0"],
+      "frameworkEditionNote": "The card cites 'Responsible Scaling Policy (RSP) [4]'; reference [4] reads 'Anthropic, “Responsible Scaling Policy.” October, 2024.' with an address ending 'Anthropic-Responsible-Scaling-Policy-2024-10-15.pdf'. The dataset records rsp-v2-0 as the edition effective 2024-10-15."
+    },
+    {
+      "id": "anthropic-claude-opus-4-5",
+      "developer": "Anthropic",
+      "model": "Claude Opus 4.5",
+      "year": 2025,
+      "source": "anthropic-claude-opus-4-5",
+      "frameworkEditions": ["rsp-v2-2"],
+      "frameworkEditionNote": "The card's text names the Responsible Scaling Policy without a version. The PDF's hyperlink on the words 'Responsible Scaling Policy' (PDF p. 12, Section 1.2.3; again p. 117, Section 7.1) points to https://www-cdn.anthropic.com/872c653b2d0501d6ab44cf87f43e1dc4853e4d37.pdf, whose cover, retrieved 2026-11-02, reads 'Version 2.2, Effective May 14, 2025'; the dataset holds that address as source-rsp-2-2 (rsp-v2-2). The link on p. 11 points to Anthropic's announcement page for the updated policy, not to a dated edition. The edition rests on the link annotation, which is not part of the text layer (see open questions)."
+    },
+    {
+      "id": "anthropic-claude-haiku-5-5",
+      "developer": "Anthropic",
+      "model": "Claude Haiku 5.5",
+      "year": 2026,
+      "source": "anthropic-claude-haiku-5-5",
+      "frameworkEditions": [],
+      "frameworkEditionNote": "The card names the Responsible Scaling Policy (RSP) and uses its threshold names (CB-1, CB-2, Autonomy-1, Autonomy-2) and an 'August 2026 Risk Report', without a version or date for the policy; its hyperlink (PDF p. 11) points to the undated page https://www.anthropic.com/responsible-scaling-policy. As context, not as the card's statement, the dataset records rsp-v3-4 (effective 2026-07-08) as the edition published before the card's date. The card also names a 'Frontier Compliance Framework (FCF)', described as its compliance framework for California's SB 53 and the EU General-Purpose AI Code of Practice, with no date or version; it is not in the brief's list of framework identifiers (see open questions)."
+    }
+  ],
+  "cells": [
+    {
+      "card": "anthropic-claude-2-1",
+      "question": "Q01",
+      "status": "partly",
+      "passages": [
+        {
+          "source": "anthropic-claude-2-1",
+          "locator": "Section 1 'Introduction', PDF p. 1",
+          "quote": "Update (November 21, 2023): We have added an appendix section covering Claude 2.1."
+        }
+      ],
+      "note": "The card states a revision date (November 21, 2023, day precision) for the addition of the Claude 2.1 appendix. No issue date of the card is printed; Anthropic's index lists the Claude 2 card under July 2023.",
+      "search": {
+        "read": "Whole text (16 pages), including the title block and the appendix title block (PDF p. 15).",
+        "terms": ["2023", "July", "November", "Update", "date"],
+        "setAside": [
+          {
+            "locator": "References, PDF pp. 12–14",
+            "reason": "Access dates of cited works (2023-07-03 to 2023-07-08), not the card's date."
+          },
+          {
+            "locator": "Section 2 'Model details', PDF p. 1",
+            "reason": "'released in July 2023' is the model's release month (Q02)."
+          }
+        ]
+      }
+    },
+    {
+      "card": "anthropic-claude-2-1",
+      "question": "Q02",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "anthropic-claude-2-1",
+          "locator": "Section 2 'Claude 2 Model Card', 'Model details', PDF p. 1",
+          "quote": "Claude 2 was developed by Anthropic and released in July 2023."
+        },
+        {
+          "source": "anthropic-claude-2-1",
+          "locator": "Claude 2.1 Model Card Appendix, Section 1 'Introduction', PDF p. 15",
+          "quote": "Claude 2.1, a new release which builds additional product features and functionality on top of Claude 2.0"
+        }
+      ],
+      "note": "The card states Claude 2's release month (July 2023). For Claude 2.1 the appendix states a new release without a date; the appendix also states that support at Claude 2.0's initial product launch was 100K tokens and is now 200K. The November 21, 2023 date on PDF p. 1 is the card’s update, not a release date."
+    },
+    {
+      "card": "anthropic-claude-2-1",
+      "question": "Q03",
+      "status": "not-found",
+      "passages": [],
+      "note": "No passage naming a frontier safety framework was found. The card's update line (2023-11-21) postdates the publication the dataset records for RSP v1.0 (2023-09-19), so the question is asked.",
+      "search": {
+        "read": "Whole text (16 pages), including references and the Claude 2.1 appendix.",
+        "terms": [
+          "Responsible Scaling",
+          "RSP",
+          "ASL",
+          "AI Safety Level",
+          "scaling policy",
+          "framework",
+          "commitment"
+        ],
+        "setAside": [
+          {
+            "locator": "Section 2, 'Ethical Considerations', PDF p. 2",
+            "reason": "The Acceptable Use Policy (AUP) is a usage policy, not a frontier safety framework."
+          }
+        ]
+      }
+    },
+    {
+      "card": "anthropic-claude-2-1",
+      "question": "Q04",
+      "status": "not-found",
+      "passages": [],
+      "note": "No framework is named (Q03), and no link or reference to a framework document was found.",
+      "search": {
+        "read": "Whole text, including the reference list (PDF pp. 12–14).",
+        "terms": ["Responsible Scaling", "RSP", "policy", "framework"],
+        "setAside": [
+          {
+            "locator": "References [11], PDF p. 12",
+            "reason": "Reference to the Acceptable Use Policy, not a frontier safety framework."
+          }
+        ]
+      }
+    },
+    {
+      "card": "anthropic-claude-2-1",
+      "question": "Q05",
+      "status": "not-found",
+      "passages": [],
+      "note": "No framework is named (Q03); no outcome stated in a framework's categories was found.",
+      "search": {
+        "read": "Section 2 'Evaluations and Red Teaming' and the whole text.",
+        "terms": ["threshold", "level", "ASL", "determination", "risk"],
+        "setAside": [
+          {
+            "locator": "Section 2 'Evaluations and Red Teaming', PDF p. 2",
+            "reason": "The statement that deployed Claude models are not believed to pose national security or significant safety risks is a risk conclusion, not expressed in a framework's categories."
+          }
+        ]
+      }
+    },
+    {
+      "card": "anthropic-claude-2-1",
+      "question": "Q06",
+      "status": "partly",
+      "passages": [
+        {
+          "source": "anthropic-claude-2-1",
+          "locator": "Section 2 'Evaluations and Red Teaming', PDF p. 2",
+          "quote": "we do not believe any deployed versions of Claude pose national security or significant safety related risks in the areas that we have identified … partly to mitigations that we have put in place"
+        }
+      ],
+      "note": "The card states that mitigations contribute to its risk conclusion, without naming them there or tying them to a framework determination or threshold (no framework is named, Q03). Elsewhere it states Constitution-based training, AUP enforcement and Trust and Safety processes.",
+      "search": {
+        "read": "Section 2 (Ethical Considerations, Evaluations and Red Teaming), Section 3.2.",
+        "terms": ["mitigation", "safeguard", "Trust and Safety", "AUP"],
+        "setAside": []
+      }
+    },
+    {
+      "card": "anthropic-claude-2-1",
+      "question": "Q07",
+      "status": "not-found",
+      "passages": [],
+      "note": "No passage reporting chemical or biological evaluations was found. The card states evaluation and red-teaming for national security risks without naming domains.",
+      "search": {
+        "read": "Whole text.",
+        "terms": [
+          "biolog",
+          "chemical",
+          "CBRN",
+          "weapon",
+          "national security",
+          "dangerous capabilit"
+        ],
+        "setAside": [
+          {
+            "locator": "Section 2 'Evaluations and Red Teaming', PDF p. 2",
+            "reason": "'We evaluated and red-teamed Claude 2 and previous Claude models for several national security and safety related risks' names no domain."
+          }
+        ]
+      }
+    },
+    {
+      "card": "anthropic-claude-2-1",
+      "question": "Q08",
+      "status": "not-found",
+      "passages": [],
+      "note": "No passage reporting offensive cyber evaluations was found.",
+      "search": {
+        "read": "Whole text.",
+        "terms": [
+          "cyber",
+          "hack",
+          "exploit",
+          "vulnerab",
+          "security",
+          "national security"
+        ],
+        "setAside": [
+          {
+            "locator": "Section 2 'Evaluations and Red Teaming', PDF p. 2",
+            "reason": "National security evaluations are stated without naming a domain."
+          },
+          {
+            "locator": "Section 3.4, PDF pp. 5–6",
+            "reason": "'Jailbreaks' are attempts to elicit harmful output, not cyber-offence evaluations."
+          }
+        ]
+      }
+    },
+    {
+      "card": "anthropic-claude-2-1",
+      "question": "Q09",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "anthropic-claude-2-1",
+          "locator": "Section 2 'Evaluations and Red Teaming', PDF p. 2",
+          "quote": "Neither ARC nor we believe that our current Claude models possess the dangerous capabilities (‘autonomous replication’ abilities) that ARC is aiming to detect"
+        }
+      ],
+      "note": "The card states that ARC's safety audits addressed autonomous replication and that neither ARC nor Anthropic believes current Claude models have that capability. This is Anthropic's account; ARC's own report is not part of the card."
+    },
+    {
+      "card": "anthropic-claude-2-1",
+      "question": "Q10",
+      "status": "not-found",
+      "passages": [],
+      "note": "No passage reporting evaluations of persuasion or manipulation of people was found.",
+      "search": {
+        "read": "Whole text.",
+        "terms": [
+          "persua",
+          "manipulat",
+          "influence",
+          "propaganda",
+          "misinformation"
+        ],
+        "setAside": [
+          {
+            "locator": "Section 2 'Evaluations and Red Teaming', PDF p. 2",
+            "reason": "Misinformation is named as a Trust and Safety area for future red-teaming, not an evaluation of persuasive capability."
+          }
+        ]
+      }
+    },
+    {
+      "card": "anthropic-claude-2-1",
+      "question": "Q11",
+      "status": "not-found",
+      "passages": [],
+      "note": "No evaluation of the model's own propensity or capability for deception, scheming, reward hacking or sabotage was found.",
+      "search": {
+        "read": "Section 3 'Alignment Evaluations' (3.1–3.5) and the appendix 'Honesty Evaluations'.",
+        "terms": [
+          "decept",
+          "deceiv",
+          "scheming",
+          "sabotage",
+          "reward hack",
+          "oversight",
+          "honesty",
+          "alignment"
+        ],
+        "setAside": [
+          {
+            "locator": "Section 3 'Alignment Evaluations', PDF pp. 3–7",
+            "reason": "Human preference Elo, BBQ bias, TruthfulQA, harmfulness and HHH evaluations measure helpfulness, harmlessness, bias and truthfulness, not deception or sabotage."
+          },
+          {
+            "locator": "Appendix Section 3 'Honesty Evaluations', PDF p. 16",
+            "reason": "Factual accuracy and faithfulness to documents are accuracy measures, not deception propensity."
+          }
+        ]
+      }
+    },
+    {
+      "card": "anthropic-claude-2-1",
+      "question": "Q12",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "anthropic-claude-2-1",
+          "locator": "Section 2 'Evaluations and Red Teaming', PDF p. 2",
+          "quote": "Before deployment, we also worked with external red teamers, including crowdworker platforms, to test Claude 2 on a range of Trust and Safety related topics"
+        },
+        {
+          "source": "anthropic-claude-2-1",
+          "locator": "Section 2 'Evaluations and Red Teaming', PDF p. 2",
+          "quote": "We evaluated and red-teamed Claude 2 and previous Claude models for several national security and safety related risks."
+        }
+      ],
+      "note": "The card states pre-deployment red-teaming by external red teamers including crowdworker platforms on Trust and Safety topics, and red-teaming for unnamed national security risks. Section 3.1 adds a crowdworker red-teaming task and Section 3.4 automated red-teaming on 328 held-out prompts. No number of testers or period is given."
+    },
+    {
+      "card": "anthropic-claude-2-1",
+      "question": "Q13",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "anthropic-claude-2-1",
+          "locator": "Section 2 'Evaluations and Red Teaming', PDF p. 2",
+          "quote": "We have been working with the Alignment Research Center (ARC) since fall of 2022 to support their safety audits of our AI models."
+        }
+      ],
+      "note": "The card names ARC as conducting safety audits of Anthropic's models; the crowdworker platforms used for red-teaming are not named."
+    },
+    {
+      "card": "anthropic-claude-2-1",
+      "question": "Q14",
+      "status": "not-found",
+      "passages": [],
+      "note": "No government body is named as having tested the model or received access.",
+      "search": {
+        "read": "Whole text.",
+        "terms": [
+          "government",
+          "policymakers",
+          "institute",
+          "AISI",
+          "public sector",
+          "national security"
+        ],
+        "setAside": [
+          {
+            "locator": "Section 2 'Evaluations and Red Teaming', PDF p. 2",
+            "reason": "'We are working with policymakers and other labs to share our findings' concerns sharing findings, not testing or access."
+          }
+        ]
+      }
+    },
+    {
+      "card": "anthropic-claude-2-1",
+      "question": "Q15",
+      "status": "not-found",
+      "passages": [],
+      "note": "No passage stating that a decision to release or deploy was made was found.",
+      "search": {
+        "read": "Sections 1, 2 and 5, and the appendix introduction.",
+        "terms": [
+          "decision",
+          "decide",
+          "deploy",
+          "release",
+          "launch",
+          "approve"
+        ],
+        "setAside": [
+          {
+            "locator": "Section 2 'Model details', PDF p. 1",
+            "reason": "'released in July 2023' states the release as a fact, not a decision."
+          },
+          {
+            "locator": "Section 2 'Evaluations and Red Teaming', PDF p. 2",
+            "reason": "The belief that deployed Claude models do not pose national security risks is a risk conclusion, not a release decision."
+          },
+          {
+            "locator": "Section 4.2 'Long Contexts', PDF p. 9",
+            "reason": "'we will support 100K at launch rather than this full context window' concerns a product setting at launch, not the decision to release."
+          }
+        ]
+      }
+    },
+    {
+      "card": "anthropic-claude-2-1",
+      "question": "Q16",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "anthropic-claude-2-1",
+          "locator": "Section 3.1 'Human Feedback Evaluations and Red-Teaming', PDF p. 3",
+          "quote": "This approach has its limitations–for instance, we know the scenarios created by crowdworkers are not fully representative of the scenarios Claude will encounter out in real-world usage"
+        },
+        {
+          "source": "anthropic-claude-2-1",
+          "locator": "Appendix Section 3 'Honesty Evaluations', PDF p. 16",
+          "quote": "Our internal evaluations for this metric are still in early stages of development"
+        }
+      ],
+      "note": "The card states a limitation of its crowdworker-based human feedback and red-teaming evaluation, and that the Claude 2.1 document-faithfulness evaluation is at an early stage. It also states that it expects to release new findings as its research and evaluations continue (Section 1)."
+    },
+    {
+      "card": "anthropic-claude-3-5-haiku-sonnet-new",
+      "question": "Q01",
+      "status": "not-found",
+      "passages": [],
+      "note": "No date of the card was found in the document. Anthropic's index lists it under October 2024.",
+      "search": {
+        "read": "Title block (PDF p. 1) and whole text, including footnotes and references.",
+        "terms": ["2024", "October", "date", "update", "version"],
+        "setAside": [
+          {
+            "locator": "Section 2.2, footnote 2, PDF p. 3",
+            "reason": "'as of October 22nd, 2024' dates a cited leaderboard reading, not the card."
+          },
+          {
+            "locator": "References [4], PDF p. 13",
+            "reason": "'October, 2024' dates the cited Responsible Scaling Policy, not the card."
+          }
+        ]
+      }
+    },
+    {
+      "card": "anthropic-claude-3-5-haiku-sonnet-new",
+      "question": "Q02",
+      "status": "partly",
+      "passages": [
+        {
+          "source": "anthropic-claude-3-5-haiku-sonnet-new",
+          "locator": "Section 2.3 'Vision Capabilities', PDF p. 5",
+          "quote": "Claude 3.5 Haiku will initially launch as a text-only model"
+        },
+        {
+          "source": "anthropic-claude-3-5-haiku-sonnet-new",
+          "locator": "Section 3.2 'Frontier Risk Evaluations', PDF p. 9",
+          "quote": "we conducted comprehensive safety evaluations on the upgraded Claude 3.5 Sonnet prior to release"
+        }
+      ],
+      "note": "The card states a release form for Claude 3.5 Haiku (initial launch as text-only) and refers to the upgraded Claude 3.5 Sonnet's release, without a release or availability date for either model."
+    },
+    {
+      "card": "anthropic-claude-3-5-haiku-sonnet-new",
+      "question": "Q03",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "anthropic-claude-3-5-haiku-sonnet-new",
+          "locator": "Section 1 'Introduction', PDF p. 1",
+          "quote": "Both models underwent extensive safety evaluations, including comprehensive testing for potential risks in biological, cybersecurity, and autonomous behavior domains, in accordance with our Responsible Scaling Policy (RSP) [4]."
+        },
+        {
+          "source": "anthropic-claude-3-5-haiku-sonnet-new",
+          "locator": "References [4], PDF p. 13 (the address breaks across two lines)",
+          "quote": "[4] Anthropic, “Responsible Scaling Policy.” October, 2024. https://assets.anthropic.com/m/ 24a47b00f10301cd/original/Anthropic-Responsible-Scaling-Policy-2024-10-15.pdf."
+        }
+      ],
+      "note": "The card names the Responsible Scaling Policy and identifies the edition by a dated reference (October 2024) whose address carries the date 2024-10-15, which the dataset records for rsp-v2-0."
+    },
+    {
+      "card": "anthropic-claude-3-5-haiku-sonnet-new",
+      "question": "Q04",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "anthropic-claude-3-5-haiku-sonnet-new",
+          "locator": "References [4], PDF p. 13 (the address breaks across two lines)",
+          "quote": "[4] Anthropic, “Responsible Scaling Policy.” October, 2024. https://assets.anthropic.com/m/ 24a47b00f10301cd/original/Anthropic-Responsible-Scaling-Policy-2024-10-15.pdf."
+        }
+      ],
+      "note": "The card gives a bibliographic reference with the address of the policy document."
+    },
+    {
+      "card": "anthropic-claude-3-5-haiku-sonnet-new",
+      "question": "Q05",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "anthropic-claude-3-5-haiku-sonnet-new",
+          "locator": "Section 3.2.1 'Results', PDF p. 10",
+          "quote": "Based on our analysis, we judge that the upgraded Claude 3.5 Sonnet does not require ASL-3 safeguards at this time."
+        },
+        {
+          "source": "anthropic-claude-3-5-haiku-sonnet-new",
+          "locator": "Section 3.3 'Ongoing Safety Commitment', PDF p. 10",
+          "quote": "While these models did not trigger the full evaluation protocol described in our Responsible Scaling Policy"
+        }
+      ],
+      "note": "The card states for the upgraded Claude 3.5 Sonnet that ASL-3 safeguards are not required, and for both models that they did not trigger the policy's full evaluation protocol. It also states that the computer use capability is classified under the ASL-2 framework (Section 2.1)."
+    },
+    {
+      "card": "anthropic-claude-3-5-haiku-sonnet-new",
+      "question": "Q06",
+      "status": "partly",
+      "passages": [
+        {
+          "source": "anthropic-claude-3-5-haiku-sonnet-new",
+          "locator": "Section 2.1 'Computer Use', PDF p. 3",
+          "quote": "As with all our models, we implement safeguards and continue to monitor for potential misuse."
+        },
+        {
+          "source": "anthropic-claude-3-5-haiku-sonnet-new",
+          "locator": "Section 3.1.3 'Computer Use Red-Teaming', PDF p. 9",
+          "quote": "we are establishing several monitoring protocols and mitigations to ensure a safe and measured release of this capability"
+        }
+      ],
+      "note": "The card states safeguards, monitoring and new classifiers, but does not tie them to the ASL determination in Q05 or name a safeguard standard applied; the determination states that ASL-3 safeguards are not required."
+    },
+    {
+      "card": "anthropic-claude-3-5-haiku-sonnet-new",
+      "question": "Q07",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "anthropic-claude-3-5-haiku-sonnet-new",
+          "locator": "Section 3 'Safety', PDF p. 7",
+          "quote": "We also evaluate frontier risks in accordance with our Responsible Scaling Policy (RSP) [4] in the the areas of Chemical, Biological, Radiological, and Nuclear (CBRN) risks, Cybersecurity, and Autonomous Capabilities."
+        },
+        {
+          "source": "anthropic-claude-3-5-haiku-sonnet-new",
+          "locator": "Section 3.2.1 'Results', PDF pp. 9–10 (the text layer splits 'ASL-3' across the page break; the ellipsis marks the page number)",
+          "quote": "The model did not demonstrate capabilities requiring ASL … 3 safeguards and security in any domain."
+        }
+      ],
+      "note": "The card states CBRN evaluations under the RSP and, for the upgraded Claude 3.5 Sonnet, that no domain showed capabilities requiring ASL-3 safeguards and security. Radiological and nuclear risks are reported together with chemical and biological as CBRN. No domain outcome is stated separately for Claude 3.5 Haiku."
+    },
+    {
+      "card": "anthropic-claude-3-5-haiku-sonnet-new",
+      "question": "Q08",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "anthropic-claude-3-5-haiku-sonnet-new",
+          "locator": "Section 3 'Safety', PDF p. 7",
+          "quote": "We also evaluate frontier risks in accordance with our Responsible Scaling Policy (RSP) [4] in the the areas of Chemical, Biological, Radiological, and Nuclear (CBRN) risks, Cybersecurity, and Autonomous Capabilities."
+        },
+        {
+          "source": "anthropic-claude-3-5-haiku-sonnet-new",
+          "locator": "Section 3.2.1 'Results', PDF pp. 9–10 (the text layer splits 'ASL-3' across the page break; the ellipsis marks the page number)",
+          "quote": "The model did not demonstrate capabilities requiring ASL … 3 safeguards and security in any domain."
+        }
+      ],
+      "note": "The card states cybersecurity evaluations under the RSP and, for the upgraded Claude 3.5 Sonnet, that no domain showed capabilities requiring ASL-3 safeguards and security. Method descriptions in Section 3.2 are not recorded (hazard rule)."
+    },
+    {
+      "card": "anthropic-claude-3-5-haiku-sonnet-new",
+      "question": "Q09",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "anthropic-claude-3-5-haiku-sonnet-new",
+          "locator": "Section 3.1.4 'Evaluating Computer Use for the Responsible Scaling Policy', PDF p. 9",
+          "quote": "we deem our software engineering evaluations as currently sufficient for ruling out ASL-3 autonomy capabilities"
+        },
+        {
+          "source": "anthropic-claude-3-5-haiku-sonnet-new",
+          "locator": "Section 3.2.1 'Results', PDF p. 10",
+          "quote": "Based on our analysis, we judge that the upgraded Claude 3.5 Sonnet does not require ASL-3 safeguards at this time."
+        }
+      ],
+      "note": "The card states autonomy evaluations under the RSP, that its software engineering evaluations suffice to rule out ASL-3 autonomy capabilities, and that the developer judges the upgraded Claude 3.5 Sonnet not to require ASL-3 safeguards.",
+      "crossFamily": {
+        "item": 96,
+        "result": "corrected: the second quotation was not verbatim (an ellipsis replaced a page break inside “ASL-3”); replaced by the verbatim conclusion on PDF p. 10. Status unchanged."
+      }
+    },
+    {
+      "card": "anthropic-claude-3-5-haiku-sonnet-new",
+      "question": "Q10",
+      "status": "not-found",
+      "passages": [],
+      "note": "No passage reporting evaluations of persuasion or manipulation of people was found.",
+      "search": {
+        "read": "Sections 1–3 (whole text).",
+        "terms": ["persua", "manipulat", "influence", "election", "propaganda"],
+        "setAside": [
+          {
+            "locator": "Section 3.1.1 'Model Red-Teaming', PDF p. 7",
+            "reason": "'Elections Integrity' is a Trust & Safety policy area for harmful requests, not an evaluation of persuasive capability."
+          }
+        ]
+      }
+    },
+    {
+      "card": "anthropic-claude-3-5-haiku-sonnet-new",
+      "question": "Q11",
+      "status": "not-found",
+      "passages": [],
+      "note": "No evaluation of the models' own propensity or capability for deception, scheming, reward hacking or sabotage was found.",
+      "search": {
+        "read": "Sections 2.4–2.5 and 3 (whole text).",
+        "terms": [
+          "decept",
+          "deceiv",
+          "scheming",
+          "sabotage",
+          "reward hack",
+          "sandbag",
+          "oversight",
+          "honesty",
+          "alignment"
+        ],
+        "setAside": [
+          {
+            "locator": "Section 3.1.1, Figure 2, PDF p. 8",
+            "reason": "'Honesty' human preference win rates are preference ratings, not an evaluation of deception or scheming."
+          },
+          {
+            "locator": "Section 3.1.2 'Prompt Injection', PDF p. 8",
+            "reason": "Robustness to third-party attacks, not the model's own propensity."
+          },
+          {
+            "locator": "Section 1 'Introduction', PDF p. 1",
+            "reason": "'alignment with Anthropic’s Usage Policy' refers to usage-policy compliance."
+          }
+        ]
+      }
+    },
+    {
+      "card": "anthropic-claude-3-5-haiku-sonnet-new",
+      "question": "Q12",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "anthropic-claude-3-5-haiku-sonnet-new",
+          "locator": "Section 3.1.1 'Model Red-Teaming', PDF p. 7",
+          "quote": "We conducted comprehensive Trust & Safety (T&S) evaluations across fourteen policy areas in six languages"
+        },
+        {
+          "source": "anthropic-claude-3-5-haiku-sonnet-new",
+          "locator": "Section 3.1.3 'Computer Use Red-Teaming', PDF p. 8",
+          "quote": "We conducted specific Trust & Safety red-teaming for computer use to identify potential abuse vectors."
+        },
+        {
+          "source": "anthropic-claude-3-5-haiku-sonnet-new",
+          "locator": "Section 2.1 'Computer Use', PDF p. 2",
+          "quote": "We conducted rigorous first party and independent third party multimodal red-teaming exercises"
+        }
+      ],
+      "note": "The card states Trust & Safety red-teaming across fourteen policy areas in six languages, computer-use red-teaming, and first- and third-party multimodal red-teaming; Section 3.2 also mentions manual red-teaming within CBRN evaluations. No number of testers or period is given."
+    },
+    {
+      "card": "anthropic-claude-3-5-haiku-sonnet-new",
+      "question": "Q13",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "anthropic-claude-3-5-haiku-sonnet-new",
+          "locator": "Section 1 'Introduction', PDF p. 1; repeated in Section 3.2, PDF p. 9",
+          "quote": "We also collaborated with METR [8] to conduct an independent assessment."
+        }
+      ],
+      "note": "The card names METR as conducting an independent assessment; it does not state the assessment's scope or outcome, or which model it covered."
+    },
+    {
+      "card": "anthropic-claude-3-5-haiku-sonnet-new",
+      "question": "Q14",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "anthropic-claude-3-5-haiku-sonnet-new",
+          "locator": "Section 1 'Introduction', PDF p. 1; repeated in Section 3.2, PDF p. 9",
+          "quote": "joint pre-deployment testing of the new Claude 3.5 Sonnet model was conducted by the US AI Safety Institute (US AISI) [6] and the UK AI Safety Institute (UK AISI) [7]."
+        }
+      ],
+      "note": "The card states pre-deployment testing of the upgraded Claude 3.5 Sonnet by the US and UK AI Safety Institutes; no government testing of Claude 3.5 Haiku is stated."
+    },
+    {
+      "card": "anthropic-claude-3-5-haiku-sonnet-new",
+      "question": "Q15",
+      "status": "partly",
+      "passages": [
+        {
+          "source": "anthropic-claude-3-5-haiku-sonnet-new",
+          "locator": "Section 3.2.1 'Results', PDF p. 10",
+          "quote": "Based on our analysis, we judge that the upgraded Claude 3.5 Sonnet does not require ASL-3 safeguards at this time."
+        },
+        {
+          "source": "anthropic-claude-3-5-haiku-sonnet-new",
+          "locator": "Section 3.2 'Frontier Risk Evaluations', PDF p. 9",
+          "quote": "we conducted comprehensive safety evaluations on the upgraded Claude 3.5 Sonnet prior to release"
+        }
+      ],
+      "note": "The card states a safeguards determination in the company's voice and refers to the release, but no passage states that a decision to release was made or by whom.",
+      "search": {
+        "read": "Sections 1, 2.1, 3.1.3, 3.2 and 3.3.",
+        "terms": [
+          "decision",
+          "decide",
+          "deploy",
+          "release",
+          "launch",
+          "Responsible Scaling Officer",
+          "CEO"
+        ],
+        "setAside": [
+          {
+            "locator": "Section 3.1.3, PDF p. 9",
+            "reason": "'a safe and measured release of this capability' concerns monitoring of the computer use feature, not a release decision."
+          }
+        ]
+      }
+    },
+    {
+      "card": "anthropic-claude-3-5-haiku-sonnet-new",
+      "question": "Q16",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "anthropic-claude-3-5-haiku-sonnet-new",
+          "locator": "Section 2.2 'Tool Use & Agentic Tasks', PDF p. 3",
+          "quote": "We believe dedicated scaffolding and prompting can further improve the results."
+        },
+        {
+          "source": "anthropic-claude-3-5-haiku-sonnet-new",
+          "locator": "Section 3.1.4 'Evaluating Computer Use for the Responsible Scaling Policy', PDF p. 9",
+          "quote": "We detail some of our preliminary reasoning below"
+        }
+      ],
+      "note": "The card states that a reported agentic coding result could be improved with dedicated scaffolding and prompting, and describes its reasoning on computer use and RSP threat models as preliminary. No limitation is stated for the Section 3.2 frontier risk results."
+    },
+    {
+      "card": "anthropic-claude-opus-4-5",
+      "question": "Q01",
+      "status": "partly",
+      "passages": [
+        {
+          "source": "anthropic-claude-opus-4-5",
+          "locator": "Cover, PDF p. 1",
+          "quote": "System Card: Claude Opus 4.5 November 2025"
+        },
+        {
+          "source": "anthropic-claude-opus-4-5",
+          "locator": "Changelog, PDF p. 2",
+          "quote": "November 24, 2025 … November 25, 2025 … December 5, 2025"
+        }
+      ],
+      "note": "The card's printed date has month precision (November 2025). Its changelog lists three revision dates (November 24 and 25, December 5, 2025); the first entry refers to a 'previous version' of the card."
+    },
+    {
+      "card": "anthropic-claude-opus-4-5",
+      "question": "Q02",
+      "status": "partly",
+      "passages": [
+        {
+          "source": "anthropic-claude-opus-4-5",
+          "locator": "Abstract, PDF p. 3",
+          "quote": "Informed by the testing described here, we have deployed Claude Opus 4.5 under the AI Safety Level 3 Standard."
+        },
+        {
+          "source": "anthropic-claude-opus-4-5",
+          "locator": "Section 3.2 'Ambiguous context evaluations', PDF p. 41",
+          "quote": "In preparation for this model launch, we were able to reduce this behavior by modifying the system prompt that is applied for conversations on Claude.ai."
+        }
+      ],
+      "note": "The card states that the model has been deployed and refers to its launch, naming Claude.ai as a surface, but gives no release or availability date.",
+      "search": {
+        "read": "Abstract, Sections 1–1.2, and term search across the card.",
+        "terms": [
+          "release date",
+          "available",
+          "availability",
+          "launch",
+          "API",
+          "Claude.ai",
+          "November 2"
+        ],
+        "setAside": [
+          {
+            "locator": "Section 1.2.4, PDF pp. 12–13",
+            "reason": "'We are launching Claude Opus 4.5 with safeguards we believe are appropriate' gives relative timing; the sentence spans a page break in the text layer and is not quoted."
+          }
+        ]
+      }
+    },
+    {
+      "card": "anthropic-claude-opus-4-5",
+      "question": "Q03",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "anthropic-claude-opus-4-5",
+          "locator": "Section 1.2.3 'AI Safety Level determination process', PDF p. 12 (hyperlinked words)",
+          "quote": "For more information on the requirements for these ASL Standards, please see the Responsible Scaling Policy"
+        }
+      ],
+      "note": "The card names the Responsible Scaling Policy; the text gives no version, but the PDF's hyperlink on these words points to a policy PDF whose cover reads 'Version 2.2, Effective May 14, 2025' (rsp-v2-2; see frameworkEditionNote). The printed text does not name the edition."
+    },
+    {
+      "card": "anthropic-claude-opus-4-5",
+      "question": "Q04",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "anthropic-claude-opus-4-5",
+          "locator": "Section 1.2.3 'AI Safety Level determination process', PDF p. 12 (hyperlinked words)",
+          "quote": "For more information on the requirements for these ASL Standards, please see the Responsible Scaling Policy"
+        }
+      ],
+      "note": "The card refers the reader to the policy; the words carry a hyperlink to the RSP v2.2 PDF (also on PDF p. 117). The address is not printed in the text."
+    },
+    {
+      "card": "anthropic-claude-opus-4-5",
+      "question": "Q05",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "anthropic-claude-opus-4-5",
+          "locator": "Section 1.2.4 'Conclusions', PDF p. 12",
+          "quote": "Our determination is that Claude Opus 4.5 does not cross either the AI R&D-4 or CBRN-4 capability threshold."
+        }
+      ],
+      "note": "The card states that the model does not cross the AI R&D-4 or CBRN-4 thresholds and that it is deployed under the ASL-3 Standard. For cyber it states that the policy sets no capability threshold (Q08)."
+    },
+    {
+      "card": "anthropic-claude-opus-4-5",
+      "question": "Q06",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "anthropic-claude-opus-4-5",
+          "locator": "Section 1.2.1 'Overview', PDF p. 11",
+          "quote": "For Claude Opus 4.5, we implemented ASL-3 (AI Safety Level 3) protections based on the model’s demonstrated capabilities."
+        },
+        {
+          "source": "anthropic-claude-opus-4-5",
+          "locator": "Section 1.2.3 'AI Safety Level determination process', PDF p. 12",
+          "quote": "Based on these assessments, we have decided to release Claude Opus 4.5 under the ASL-3 Standard."
+        }
+      ],
+      "note": "The card states that ASL-3 protections were implemented on the basis of the capability assessment. This is the developer's account of the safeguards applied."
+    },
+    {
+      "card": "anthropic-claude-opus-4-5",
+      "question": "Q07",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "anthropic-claude-opus-4-5",
+          "locator": "Section 1.2.4.2 'On chemical, biological, radiological, and nuclear (CBRN) risks', PDF p. 14",
+          "quote": "We determine that Claude Opus 4.5 does not cross the CBRN-4 threshold."
+        },
+        {
+          "source": "anthropic-claude-opus-4-5",
+          "locator": "Section 7.2 'CBRN evaluations', 'Claude Opus 4.5 Results', PDF p. 119",
+          "quote": "As a result, we determined ASL-3 safeguards were appropriate."
+        },
+        {
+          "source": "anthropic-claude-opus-4-5",
+          "locator": "Section 7.2.1 'On chemical risks', PDF p. 120",
+          "quote": "we do not currently run specific evaluations on chemical risks internally"
+        }
+      ],
+      "note": "The card states biological evaluations with the outcome that the CBRN-4 threshold is not crossed and ASL-3 safeguards are appropriate. It states that chemical risks are not evaluated internally, and that radiological and nuclear evaluations are carried out with NNSA and their results are not published by Anthropic. Evaluation details are not recorded (hazard rule)."
+    },
+    {
+      "card": "anthropic-claude-opus-4-5",
+      "question": "Q08",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "anthropic-claude-opus-4-5",
+          "locator": "Section 7.4 'Cyber evaluations', 'Results', PDF p. 145",
+          "quote": "We believe that Claude Opus 4.5 does not demonstrate catastrophically risky capabilities in the cyber domain."
+        },
+        {
+          "source": "anthropic-claude-opus-4-5",
+          "locator": "Section 7.4 'Cyber evaluations', PDF p. 143",
+          "quote": "The Responsible Scaling Policy does not stipulate a capability threshold for cyber capabilities at any ASL level"
+        }
+      ],
+      "note": "The card states cyber evaluations and a conclusion without a policy threshold, which it states the policy does not set for cyber. Evaluation methods and scores are not recorded (hazard rule)."
+    },
+    {
+      "card": "anthropic-claude-opus-4-5",
+      "question": "Q09",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "anthropic-claude-opus-4-5",
+          "locator": "Section 1.2.4.1 'On autonomy risks', PDF p. 13",
+          "quote": "We judge that Claude Opus 4.5 could not fully automate an entry-level, remote-only research role at Anthropic."
+        },
+        {
+          "source": "anthropic-claude-opus-4-5",
+          "locator": "Section 1.2.3 'AI Safety Level determination process', PDF p. 12",
+          "quote": "Claude Opus 4.5 has roughly reached the pre-defined thresholds we set for straightforward ASL-4 rule-out based on benchmark tasks."
+        }
+      ],
+      "note": "The card states AI R&D evaluations, that the AI R&D-4 threshold is not crossed, and that the rule-out drew also on an internal survey and qualitative impressions because benchmark rule-out thresholds were roughly reached."
+    },
+    {
+      "card": "anthropic-claude-opus-4-5",
+      "question": "Q10",
+      "status": "partly",
+      "passages": [
+        {
+          "source": "anthropic-claude-opus-4-5",
+          "locator": "Section 6.1 'Introduction and summary of findings', PDF p. 64",
+          "quote": "attempts to hide dangerous capabilities, and attempts to manipulate users toward certain views"
+        }
+      ],
+      "note": "The card lists attempts to manipulate users toward certain views among the behaviours its alignment assessment tested for; no outcome specific to manipulation or persuasion was found. The overall alignment conclusions are recorded in Q11.",
+      "search": {
+        "read": "Sections 3.5, 6.1–6.2 and term search across the card.",
+        "terms": ["persua", "manipulat", "influence", "sway", "political"],
+        "setAside": [
+          {
+            "locator": "Section 3.5.1 'Political bias', PDF pp. 43–45",
+            "reason": "Even-handedness evaluation measures bias in responses, not persuasive or manipulative capability."
+          }
+        ]
+      }
+    },
+    {
+      "card": "anthropic-claude-opus-4-5",
+      "question": "Q11",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "anthropic-claude-opus-4-5",
+          "locator": "Section 6.1.2 'Overall assessment of high-stakes sabotage risk', PDF p. 66",
+          "quote": "Claude Opus 4.5 is very unlikely to pose a significant risk of catastrophic impacts through the intentional sabotage of human engineering, R&D, or decision-making."
+        },
+        {
+          "source": "anthropic-claude-opus-4-5",
+          "locator": "Section 6.1.1 'Key findings on safety and alignment', PDF p. 66",
+          "quote": "We saw no signs of sandbagging or strategic attempts to tamper with our safety testing in a way that would affect our RSP determinations"
+        }
+      ],
+      "note": "The card states alignment evaluations covering sabotage, deception, sandbagging, reward hacking and evaluation awareness, with the conclusion that high-stakes sabotage risk is low. It also reports two isolated cases of deception by omission in testing earlier snapshots, which it attributes to interventions against prompt injection."
+    },
+    {
+      "card": "anthropic-claude-opus-4-5",
+      "question": "Q12",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "anthropic-claude-opus-4-5",
+          "locator": "Section 7.2.4.10 'ASL-4 red teaming with the CAISI', PDF p. 132",
+          "quote": "We worked with the US Center for AI Standards and Innovation to red-team Claude Opus 4.5 over a one-week window, which included at least 2–3 days of red-teaming."
+        },
+        {
+          "source": "anthropic-claude-opus-4-5",
+          "locator": "Section 7.2 'CBRN evaluations', 'Claude Opus 4.5 Results', PDF p. 119",
+          "quote": "Finally, red-teaming results by various third parties demonstrated some increase in risk, but not enough to require additional protections."
+        }
+      ],
+      "note": "The card states biological red-teaming by third parties, by one external expert over two days (Section 7.2.4.9) and by CAISI over a one-week window; prompt-injection red-teaming with Gray Swan (Section 5.2); and that cyber capabilities are red-teamed (Section 7.4)."
+    },
+    {
+      "card": "anthropic-claude-opus-4-5",
+      "question": "Q13",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "anthropic-claude-opus-4-5",
+          "locator": "Section 5.2.1 'Gray Swan Agent Red Teaming benchmark for tool use', PDF p. 58",
+          "quote": "Gray Swan measured the success rate of prompt injection attacks after a single attempt (k=1)"
+        }
+      ],
+      "note": "The card names Gray Swan, which it calls an external research partner, as measuring prompt-injection attack success. The third parties in biological red-teaming and the external expert are not named; the changelog refers to ARC-AGI scores 'reported by the ARC Foundation'."
+    },
+    {
+      "card": "anthropic-claude-opus-4-5",
+      "question": "Q14",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "anthropic-claude-opus-4-5",
+          "locator": "Section 7.5 'Third party assessments', PDF p. 151",
+          "quote": "pre-deployment testing of Claude Opus 4.5 was conducted by the US Center for AI Standards and Innovation (CAISI) and the UK AI Security Institute (UK AISI)."
+        },
+        {
+          "source": "anthropic-claude-opus-4-5",
+          "locator": "Section 7.2.2 'On radiological and nuclear risks', PDF p. 120",
+          "quote": "Anthropic has maintained a formal partnership with the U.S. Department of Energy’s National Nuclear Security Administration (NNSA) to evaluate our AI models for potential nuclear and radiological risks."
+        }
+      ],
+      "note": "The card states pre-deployment testing by CAISI and the UK AISI (CBRN, cyber, ASL-3 safeguards and misalignment), UK AISI testing of a pre-release snapshot for misalignment (Section 6.13), and an NNSA partnership evaluating models for nuclear and radiological risks."
+    },
+    {
+      "card": "anthropic-claude-opus-4-5",
+      "question": "Q15",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "anthropic-claude-opus-4-5",
+          "locator": "Section 1.2.3 'AI Safety Level determination process', PDF p. 12",
+          "quote": "Consistent with our RSP, the Responsible Scaling Officer and CEO made the ultimate determination on the required ASL Standards."
+        },
+        {
+          "source": "anthropic-claude-opus-4-5",
+          "locator": "Section 1.2.3 'AI Safety Level determination process', PDF p. 12",
+          "quote": "Based on these assessments, we have decided to release Claude Opus 4.5 under the ASL-3 Standard."
+        }
+      ],
+      "note": "The card states a decision to release in the company's voice, and names the Responsible Scaling Officer and CEO as making the ASL determination on which the release rests."
+    },
+    {
+      "card": "anthropic-claude-opus-4-5",
+      "question": "Q16",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "anthropic-claude-opus-4-5",
+          "locator": "Section 1.2.4 'Conclusions', PDF p. 12",
+          "quote": "However, confidently ruling out these thresholds is becoming increasingly difficult."
+        },
+        {
+          "source": "anthropic-claude-opus-4-5",
+          "locator": "Section 1.2.4 'Conclusions', PDF p. 12",
+          "quote": "parts of the AI R&D-4 and CBRN-4 thresholds have fundamental epistemic uncertainty or require more sophisticated forms of measurement"
+        }
+      ],
+      "note": "The card states that ruling out the AI R&D-4 and CBRN-4 thresholds is becoming difficult and that parts of the thresholds carry epistemic uncertainty. It also states limited tools for studying reasoning faithfulness (Section 6.1.1)."
+    },
+    {
+      "card": "anthropic-claude-haiku-5-5",
+      "question": "Q01",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "anthropic-claude-haiku-5-5",
+          "locator": "Cover, PDF p. 1",
+          "quote": "System Card: Claude Haiku 5.5 October 7, 2026"
+        }
+      ],
+      "note": "The card carries a printed date with day precision (October 7, 2026); its kind (issue or publication) is not stated. No changelog or revision date was found."
+    },
+    {
+      "card": "anthropic-claude-haiku-5-5",
+      "question": "Q02",
+      "status": "partly",
+      "passages": [
+        {
+          "source": "anthropic-claude-haiku-5-5",
+          "locator": "Section 1 'Introduction', PDF p. 8",
+          "quote": "Claude Haiku 5.5 is a new large language model from Anthropic, released for general access."
+        }
+      ],
+      "note": "The card states the release form (general access; Section 1.5 also refers to first-party products and the API) but no release or availability date.",
+      "search": {
+        "read": "Executive summary, Section 1 and term search across the card.",
+        "terms": [
+          "release",
+          "available",
+          "availability",
+          "launch",
+          "general access",
+          "October"
+        ],
+        "setAside": [
+          {
+            "locator": "Section 8.9.1, PDF p. 125",
+            "reason": "'as of October 7, 2026' dates a price used for a comparison model, not the release."
+          }
+        ]
+      }
+    },
+    {
+      "card": "anthropic-claude-haiku-5-5",
+      "question": "Q03",
+      "status": "partly",
+      "passages": [
+        {
+          "source": "anthropic-claude-haiku-5-5",
+          "locator": "Section 2.1 'Introduction', PDF p. 11",
+          "quote": "we describe our assessment of Claude Haiku 5.5 for catastrophic risks relevant to our Responsible Scaling Policy (RSP)"
+        }
+      ],
+      "note": "The card names the Responsible Scaling Policy without a version or date; its hyperlink points to the undated policy page. As context, not as the card's statement, the dataset records rsp-v3-4 (effective 2026-07-08) as the edition published before the card's date. The card also names a 'Frontier Compliance Framework (FCF)' (see frameworkEditionNote)."
+    },
+    {
+      "card": "anthropic-claude-haiku-5-5",
+      "question": "Q04",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "anthropic-claude-haiku-5-5",
+          "locator": "Section 2.1 'Introduction', PDF p. 11 (hyperlinked words)",
+          "quote": "we describe our assessment of Claude Haiku 5.5 for catastrophic risks relevant to our Responsible Scaling Policy (RSP)"
+        }
+      ],
+      "note": "The words 'Responsible Scaling Policy (RSP)' carry a hyperlink to https://www.anthropic.com/responsible-scaling-policy, an undated page; the address is not printed in the text."
+    },
+    {
+      "card": "anthropic-claude-haiku-5-5",
+      "question": "Q05",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "anthropic-claude-haiku-5-5",
+          "locator": "Section 2.1 'Introduction', PDF p. 11",
+          "quote": "As such, we determine that Haiku 5.5 does not cross our CB-2 or Autonomy-2 RSP thresholds."
+        },
+        {
+          "source": "anthropic-claude-haiku-5-5",
+          "locator": "Section 2.1 'Introduction', PDF p. 11",
+          "quote": "However, we do treat Haiku 5.5 as meeting our CB-1 and Autonomy-1 thresholds, and we apply the corresponding mitigations from our RSP."
+        }
+      ],
+      "note": "The card states that the model does not cross the CB-2 or Autonomy-2 thresholds and is treated as meeting CB-1 and Autonomy-1. No RSP threshold is named for cyber."
+    },
+    {
+      "card": "anthropic-claude-haiku-5-5",
+      "question": "Q06",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "anthropic-claude-haiku-5-5",
+          "locator": "Section 2.1 'Introduction', PDF p. 11",
+          "quote": "However, we do treat Haiku 5.5 as meeting our CB-1 and Autonomy-1 thresholds, and we apply the corresponding mitigations from our RSP."
+        },
+        {
+          "source": "anthropic-claude-haiku-5-5",
+          "locator": "Section 1.5 'Safeguards', PDF p. 9",
+          "quote": "For chemical and biological (CB) risks, we have deployed the same harmful CB misuse classifiers as for our deployments of Claude Opus 5 and Claude Sonnet 5"
+        }
+      ],
+      "note": "The card states that the mitigations corresponding to the CB-1 and Autonomy-1 thresholds are applied, and lists deployed classifiers for CB, cyber, frontier-LLM development and conventional weapons. This is the developer's account of the safeguards."
+    },
+    {
+      "card": "anthropic-claude-haiku-5-5",
+      "question": "Q07",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "anthropic-claude-haiku-5-5",
+          "locator": "Section 2.1 'Introduction', PDF p. 11",
+          "quote": "As such, we determine that Haiku 5.5 does not cross our CB-2 or Autonomy-2 RSP thresholds."
+        },
+        {
+          "source": "anthropic-claude-haiku-5-5",
+          "locator": "Section 2.2.1 'What we measured', PDF p. 11",
+          "quote": "We did not conduct expert red-teaming sessions, uplift trials, or other resource-intensive evaluations requiring human participants."
+        }
+      ],
+      "note": "The card states automated chemical and biological (CB) evaluations, with the outcome that CB-2 is not crossed and CB-1 is treated as met. No radiological or nuclear evaluation is reported in the RSP section. Evaluation names and results are not recorded (hazard rule).",
+      "crossFamily": {
+        "item": 99,
+        "result": "not cross-family checked: excluded from the pass by the maintainer."
+      }
+    },
+    {
+      "card": "anthropic-claude-haiku-5-5",
+      "question": "Q08",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "anthropic-claude-haiku-5-5",
+          "locator": "Section 3.1 'Introduction', PDF p. 23",
+          "quote": "Claude Haiku 5.5 is not a frontier model, but it is a relatively significant step up in cyber capabilities over Haiku 4.5."
+        },
+        {
+          "source": "anthropic-claude-haiku-5-5",
+          "locator": "Section 3.2 'Mitigations', PDF p. 23",
+          "quote": "Given the relative lack of advanced cybersecurity capabilities, our cyber safeguards for Claude Haiku 5.5 trigger on significantly less activity than other recent releases."
+        }
+      ],
+      "note": "The card states cyber capability evaluations and the conclusion of a relative lack of advanced cybersecurity capabilities, compared with other Claude models; no threshold language is used for cyber. Benchmark contents and scores are not recorded (hazard rule)."
+    },
+    {
+      "card": "anthropic-claude-haiku-5-5",
+      "question": "Q09",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "anthropic-claude-haiku-5-5",
+          "locator": "Section 2.3.1.1 'How Haiku 5.5 affects or changes analysis from our most recent Risk Report', PDF p. 19",
+          "quote": "Autonomy threat model 2 is not applicable to Haiku 5.5."
+        },
+        {
+          "source": "anthropic-claude-haiku-5-5",
+          "locator": "Section 2.3.3 'Conclusion', PDF p. 20",
+          "quote": "As Claude Haiku 5.5 is much less capable than Opus 5.5 and does not push the capability frontier, we draw the same conclusion in this case."
+        }
+      ],
+      "note": "The card states that the Autonomy-2 threshold is not crossed, carrying over the Claude Opus 5.5 System Card's conclusion on the basis of relative capability, and that Autonomy threat model 1 applies (Q11)."
+    },
+    {
+      "card": "anthropic-claude-haiku-5-5",
+      "question": "Q10",
+      "status": "not-found",
+      "passages": [],
+      "note": "No passage reporting evaluations of persuasive or manipulative capability was found.",
+      "search": {
+        "read": "Executive summary, Sections 2, 4.1, 6.1–6.2 and term search across the card.",
+        "terms": [
+          "persua",
+          "manipulat",
+          "influence",
+          "propaganda",
+          "sway",
+          "convinc"
+        ],
+        "setAside": [
+          {
+            "locator": "Section 4.1, PDF p. 30",
+            "reason": "'influence operations' is a domain of multi-turn harmful-request testing (content safety), not an evaluation of the model's persuasive capability."
+          },
+          {
+            "locator": "Section 6.2 metric list, PDF p. 70",
+            "reason": "'Internalized propaganda' is a behavioural-audit metric for promoting politically motivated false claims, not an evaluation of persuasion of people."
+          },
+          {
+            "locator": "Section 6.3.3.4, PDF pp. 83–84",
+            "reason": "'git manipulations' refers to concealing repository changes (Q11), not manipulation of people."
+          }
+        ]
+      }
+    },
+    {
+      "card": "anthropic-claude-haiku-5-5",
+      "question": "Q11",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "anthropic-claude-haiku-5-5",
+          "locator": "Section 2.4.2 'Updated overall assessment of alignment risk', PDF p. 22",
+          "quote": "our overall assessment is that the risk of catastrophic harm caused by misalignment of Claude Haiku 5.5 is also low."
+        },
+        {
+          "source": "anthropic-claude-haiku-5-5",
+          "locator": "Executive summary, PDF p. 3",
+          "quote": "much weaker at covert sabotage than our larger models"
+        }
+      ],
+      "note": "The card states alignment evaluations (behavioural audit, honesty, sandbox escape, covert-capability and sabotage evaluations) with the conclusion that misalignment risk is low."
+    },
+    {
+      "card": "anthropic-claude-haiku-5-5",
+      "question": "Q12",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "anthropic-claude-haiku-5-5",
+          "locator": "Section 5.2.2.1 'Coding', PDF p. 51",
+          "quote": "We use Shade, an external adaptive red-teaming tool from Gray Swan, to evaluate our models’ robustness to prompt injection in coding environments."
+        }
+      ],
+      "note": "The card reports prompt-injection red-teaming under a section titled 'External red teaming' (coding, tool use and computer use surfaces) and adversarial testing by crowd workers (Section 1.2). It states that no expert red-teaming sessions were run for CB (Q07). No number of testers or period is given."
+    },
+    {
+      "card": "anthropic-claude-haiku-5-5",
+      "question": "Q13",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "anthropic-claude-haiku-5-5",
+          "locator": "Section 5.2.2.1 'Coding', PDF p. 51",
+          "quote": "Gray Swan trains the attacker on the test scenarios against earlier Claude models, then runs it unchanged against the latest models on the same scenarios."
+        }
+      ],
+      "note": "The card names Gray Swan as running its attacker against the latest models. Section 1.6 states that external testers ran assessments without naming them there; Irregular is named as the developer of a cyber benchmark, not as a tester."
+    },
+    {
+      "card": "anthropic-claude-haiku-5-5",
+      "question": "Q14",
+      "status": "not-found",
+      "passages": [],
+      "note": "No government body is named as having tested this model or received access to it.",
+      "search": {
+        "read": "Sections 1.6, 2, 3, 5.2 and term search across the card.",
+        "terms": [
+          "AISI",
+          "CAISI",
+          "Center for AI Standards",
+          "Security Institute",
+          "government",
+          "NNSA",
+          "Department of Energy"
+        ],
+        "setAside": [
+          {
+            "locator": "Section 5.2.1 'External red teaming', PDF p. 50",
+            "reason": "The UK AI Security Institute and the US Center for AI Standards and Innovation are named as partners in creating a benchmark that Anthropic used, not as having tested this model."
+          },
+          {
+            "locator": "Section 6 (chain-of-thought controllability), PDF p. 93",
+            "reason": "The UK AI Security Institute is named as the source of a prompt used by the developer, not as having tested or received access to this model."
+          }
+        ]
+      }
+    },
+    {
+      "card": "anthropic-claude-haiku-5-5",
+      "question": "Q15",
+      "status": "partly",
+      "passages": [
+        {
+          "source": "anthropic-claude-haiku-5-5",
+          "locator": "Section 2.2.4 'Conclusions', PDF p. 18",
+          "quote": "As such, we are releasing Haiku 5.5 with the same safeguards we deployed for Sonnet 5 and Opus 5"
+        }
+      ],
+      "note": "The card states, in the company's voice, that the model is being released with a named safeguard set as a consequence of its chemical and biological judgement. It does not describe a decision to release, and names no person, office or committee."
+    },
+    {
+      "card": "anthropic-claude-haiku-5-5",
+      "question": "Q16",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "anthropic-claude-haiku-5-5",
+          "locator": "Section 6.1.2 'Key findings on safety and alignment', PDF p. 56",
+          "quote": "these measures are limited: past assessments have not fully captured the potential severity of misbehavior our models were capable of"
+        },
+        {
+          "source": "anthropic-claude-haiku-5-5",
+          "locator": "Section 2.4.1 'Updates to claims and core argument', PDF p. 21",
+          "quote": "The strength of the evidence provided by our alignment assessment for Haiku 5.5 is somewhat lower than that presented for Claude Mythos 5 in the August 2026 Risk Report"
+        }
+      ],
+      "note": "The card states limits of its alignment measures and of the evidence for this model; it also states that internal testing runs at a smaller scale than deployment (Section 6.1.1) and that CB evaluations were automated, without studies requiring human participants (Q07)."
+    }
+  ],
+  "omissions": [
+    "anthropic-claude-3-5-haiku-sonnet-new Section 3.2 (PDF p. 9): descriptions of the CBRN, cyber and autonomy tests and the per-domain capability changes in Section 3.2.1; not recorded under the hazard rule.",
+    "anthropic-claude-opus-4-5 Sections 7.2.3–7.2.4 (PDF pp. 120–132): biological evaluation designs, uplift-trial figures and expert red-teaming findings; not recorded under the hazard rule. Quotes are limited to the policy-level outcome sentences.",
+    "anthropic-claude-opus-4-5 Section 7.4 (PDF pp. 144–150): cyber environment, tools and challenge results; not recorded under the hazard rule.",
+    "anthropic-claude-opus-4-5 Section 6.13 (PDF pp. 112–113): the UK AISI's own conclusions as quoted in the card; not used, as Q14 records access and testing, and the UK AISI's findings are a third party's account relayed by the card.",
+    "anthropic-claude-opus-4-5 PDF p. 118: 'when our Responsible Scaling Policy was first published' (2023) refers to the first edition's date, not the edition applied; not used for Q03.",
+    "anthropic-claude-haiku-5-5 Sections 2.2.1–2.2.3 and 3.3 (PDF pp. 11–29): CB evaluation portfolio and results, cyber benchmark contents and exploit counts; not recorded under the hazard rule.",
+    "anthropic-claude-haiku-5-5 Section 1.3 (PDF p. 9): 'Frontier Compliance Framework (FCF)' named as a compliance framework; recorded in frameworkEditionNote, not as Q03 evidence.",
+    "anthropic-claude-haiku-5-5 Section 6.1.3 (PDF pp. 57–58): a Claude model's review of the alignment assessment; not an external organisation, not used for Q13.",
+    "anthropic-claude-2-1 Sections 3.1 and 3.4 (PDF pp. 3–6): crowdworker red-teaming task and automated red-teaming on held-out prompts; summarised in the Q12 note, not quoted."
+  ],
+  "retrievalFailures": [],
+  "openQuestions": [
+    "2023 row: the compared document is Anthropic's re-issue of the Claude 2 card with a 'Claude 2.1 Model Card Appendix' (printed update line November 21, 2023), linked from the Claude 2.1 announcement but not from the system-cards index, which links the July 2023 expression already in the dataset (source-eval-i-claude2-card). Because the update postdates RSP v1.0, Q03–Q05 are recorded as not found rather than not applicable. Recommendation: keep this document as the 2023 row under the mechanical rule, and at admission record it as a later expression of the Claude 2 card linked to the existing source.",
+    "2024 row: the October 2024 addendum exists as a standalone PDF (no printed date; index month October 2024) and inside the Claude 3 card re-issued with an update line dated October 22, 2024; both PDFs were created on 2024-10-22. The standalone addendum was compared as the card published in October 2024, the Claude 3 card being the March 2024 card revised. Recommendation: keep; if the rule is to be read as 'latest printed date including revisions', the Claude 3 re-issue (anthropic-claude-3, retrieved) would replace it.",
+    "Opus 4.5 Q03/Q04: the edition (rsp-v2-2) is identified by a PDF link annotation on the words 'Responsible Scaling Policy', not by printed text; the quote check cannot verify the link. Recommendation: accept as 'a link to a dated edition' under Q03's criterion, with the link target and its retrieved cover recorded in frameworkEditionNote; if the pack requires printed identification, downgrade Q03 to partly and Q04 to partly and drop the edition.",
+    "Haiku 5.5 names a 'Frontier Compliance Framework (FCF)' (no date or version) as its compliance framework for SB 53 and the EU GPAI Code of Practice; it is not in the brief's framework list. Recommendation: Q03 is recorded on the RSP; decide whether the FCF belongs in the Compare frameworks collection, and if so add an edition identifier.",
+    "Haiku 5.5 Q15 is recorded as stated on 'we are releasing Haiku 5.5 with the same safeguards …' (company voice, no named decision-maker). Recommendation: confirm that this wording counts as a release decision by the company as such; otherwise partly.",
+    "Nineteen located Anthropic cards are not compared (see inventory). Recommendation: consider a later pack covering the remaining 2025–2026 frontier cards (for example Claude Opus 4.6 and Claude Mythos Preview, the latter described on Anthropic's Transparency hub as 'the first model assessed under RSP v3.0')."
+  ]
+}

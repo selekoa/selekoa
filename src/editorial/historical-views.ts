@@ -11,6 +11,15 @@ import entities from '../../data/entities.json';
 import claims from '../../data/claims.json';
 import sources from '../../data/sources.json';
 import evidence from '../../data/evidence.json';
+import corrections from '../../review/corrections-2026-11-06-before-2026-11-06.json';
+import predictions from '../../review/predictions-admission-before-2026-11-05.json';
+import lawsCompared2 from '../../review/laws-compared-admission-2-before-2026-11-05.json';
+import modelCards4 from '../../review/model-cards-admission-4-before-2026-11-05.json';
+import modelCards3 from '../../review/model-cards-admission-3-before-2026-11-05.json';
+import lawsCompared1 from '../../review/laws-compared-admission-1-before-2026-11-04.json';
+import prehistory from '../../review/prehistory-admission-before-2026-11-04.json';
+import modelCards2 from '../../review/model-cards-admission-2-before-2026-11-04.json';
+import modelCards1 from '../../review/model-cards-admission-1-before-2026-11-03.json';
 import absenceSweepApply2 from '../../review/absence-sweep-apply-2-before-2026-11-03.json';
 import absenceSweepApply1 from '../../review/absence-sweep-apply-1-before-2026-11-02.json';
 import auditSampleFixes from '../../review/audit-sample-fixes-before-2026-11-02.json';
@@ -97,7 +106,12 @@ export function revert<R extends Raw>(raw: R, snapshot: Snapshot): R {
     );
     const kept = rows
       .filter((row) => !added.has(row.id))
-      .map((row) => structuredClone(prior.get(row.id) ?? row))
+      // Unchanged rows are shared with the newer view, not copied: a full
+      // copy per step of the chain outgrew a 2.2 GB heap (2026-11-05).
+      // Views are read-only; restored rows are copies of the snapshot's.
+      .map((row) =>
+        prior.has(row.id) ? structuredClone(prior.get(row.id)!) : row,
+      )
       .concat(
         ((snapshot.removed?.[name] ?? []) as Row[]).map((row) =>
           structuredClone(row),
@@ -115,8 +129,29 @@ export function revert<R extends Raw>(raw: R, snapshot: Snapshot): R {
 
 const current = { meta, entities, claims, sources, evidence };
 
+/** Raw stored rows at schema 2.32 as released in v0.31.0, before the correction release of 2026-11-06. */
+export const preCorrections1106Raw = revert(current, corrections);
+/** Raw stored rows at schema 2.31 as released in v0.30.0, before the admission of "Predictions on record" of 2026-11-05 (schema 2.32). */
+export const prePredictionsRaw = revert(preCorrections1106Raw, predictions);
+/** Raw stored rows at schema 2.30 as released in v0.29.2, before part 2 of the laws-compared admission of 2026-11-05 (schema 2.31). */
+export const preLawsCompared2Raw = revert(prePredictionsRaw, lawsCompared2);
+/** Raw stored rows at schema 2.30 as released in v0.29.1, before part 4 of the model-cards admission of 2026-11-05. */
+export const preModelCards4Raw = revert(preLawsCompared2Raw, modelCards4);
+/** Raw stored rows at schema 2.30 as released in v0.28.1 (and unchanged by the collection registration of v0.29.0), before part 3 of the model-cards admission of 2026-11-05. */
+export const preModelCards3Raw = revert(preModelCards4Raw, modelCards3);
+/** Raw stored rows at schema 2.30 as released in v0.28.0, before part 1 of the laws-compared admission of 2026-11-04. */
+export const preLawsCompared1Raw = revert(preModelCards3Raw, lawsCompared1);
+/** Raw stored rows at schema 2.30 as released in v0.27.0, before the admission of the antecedent-texts collection of 2026-11-04. */
+export const prePrehistoryRaw = revert(preLawsCompared1Raw, prehistory);
+/** Raw stored rows at schema 2.29 as released in v0.26.4, before part 2 of the model-cards admission of 2026-11-04 (schema 2.30). */
+export const preModelCards2Raw = revert(prePrehistoryRaw, modelCards2);
+/** Raw stored rows at schema 2.29 as released in v0.26.3, before part 1 of the model-cards admission of 2026-11-03. */
+export const preModelCards1Raw = revert(preModelCards2Raw, modelCards1);
 /** Raw stored rows at schema 2.29 as released in v0.26.2, before part 2 of the textual absence-claims sweep of 2026-11-02 was applied. */
-export const preAbsenceSweepApply2Raw = revert(current, absenceSweepApply2);
+export const preAbsenceSweepApply2Raw = revert(
+  preModelCards1Raw,
+  absenceSweepApply2,
+);
 /** Raw stored rows at schema 2.29 as released in v0.26.1, before part 1 of the textual absence-claims sweep of 2026-11-02 was applied. */
 export const preAbsenceSweepApply1Raw = revert(
   preAbsenceSweepApply2Raw,

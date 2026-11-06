@@ -244,10 +244,12 @@ export const facetById = (id: string) =>
 /**
  * A comparison cell. Cells repeat passages that edition pages already list as
  * provisions, so provision lists leave them out; the comparison shows them.
+ * Model-card cells (schema 2.30) answer card questions, not framework
+ * questions, and are not comparison cells (src/domain/model-cards.ts).
  */
 export const isComparisonCell = (claim: {
-  attributes?: { provision?: { facet?: unknown } };
-}) => !!claim.attributes?.provision?.facet;
+  attributes?: { provision?: { facet?: { id: string } } };
+}) => !!facetById(claim.attributes?.provision?.facet?.id ?? '');
 
 export type CellStatus =
   | 'stated'

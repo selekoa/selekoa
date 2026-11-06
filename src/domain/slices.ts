@@ -39,6 +39,11 @@ export type PlacedSlice = Slice & {
   at: Record<SliceKind, number[]>;
   version?: string;
   /**
+   * The build the slice was written by (its entry script's file name): a
+   * page's code reads only the fields its own build's slices hold.
+   */
+  build?: string;
+  /**
    * Set when a page drawn from this slice needs the whole relation core as
    * well (a page that counts or draws every record, such as the explorer).
    * Without it the slice stands alone: it holds every record the page
@@ -119,6 +124,7 @@ const slicedPages = new Set([
   'commitments',
   'guide',
   'propositions',
+  'predictions',
   'stances',
   'question',
   'year',
@@ -144,6 +150,15 @@ function hash(text: string) {
 /** The bucket file holding a claim's slice. */
 export const bucketPath = (claimId: string) =>
   `/slices/claims/${hash(claimId) % claimBuckets}.json`;
+
+/**
+ * The file holding the text of a comparison's cells (quotations, locators,
+ * notes, searches), which its page loads after drawing its table from its
+ * slice: the union of its questions' slices (scripts/prerender.ts). Used by
+ * Model cards compared, whose cells are many.
+ */
+export const cellTextPath = (compareId: string) =>
+  `/slices/compare/${compareId}/cells.json`;
 
 /** The file holding a page's slice, or null when the page has none. */
 export function slicePath(path: string): string | null {
@@ -246,6 +261,104 @@ export function mergeSlices(parts: readonly PlacedSlice[]): PlacedSlice {
       sliceKinds.map((k) => [k, sorted[k].map(([at]) => at)]),
     ) as Record<SliceKind, number[]>,
   };
+}
+
+/**
+ * A slice as its file holds it. Each kind's records are stored by field, the
+ * values of one field together, so that gzip finds text repeated from record
+ * to record (a collection's cells share sentences) within its 32 KB window;
+ * positions are stored as the difference from the one before. Nothing is
+ * left out: `unpackSlice` gives back the slice, field for field.
+ */
+export type PackedSlice = Omit<PlacedSlice, SliceKind | 'at'> & {
+  packed: 1;
+  /** Each kind's positions, as differences (they ascend). */
+  at: Record<SliceKind, number[]>;
+  records: Record<
+    SliceKind,
+    {
+      n: number;
+      /** Each field's values, in record order, for the records holding it. */
+      fields: Record<string, unknown[]>;
+      /** For a field some records lack, the positions of those that hold it, as differences. */
+      held?: Record<string, number[]>;
+    }
+  >;
+};
+
+const differences = (list: readonly number[]) =>
+  list.map((v, i) => (i ? v - list[i - 1] : v));
+const sums = (list: readonly number[]) => {
+  let total = 0;
+  return list.map((d) => (total += d));
+};
+
+export function packSlice(slice: PlacedSlice): PackedSlice {
+  const { at, ...rest } = slice;
+  const records = {} as PackedSlice['records'];
+  for (const kind of sliceKinds) {
+    const rows = slice[kind] as Record<string, unknown>[];
+    if (at[kind].some((v, i) => i && v <= at[kind][i - 1]))
+      throw new Error(`Slice positions do not ascend (${kind})`);
+    const names: string[] = [];
+    for (const row of rows)
+      for (const name of Object.keys(row))
+        if (row[name] !== undefined && !names.includes(name)) names.push(name);
+    const fields: Record<string, unknown[]> = {};
+    const held: Record<string, number[]> = {};
+    for (const name of names) {
+      const holding = rows.flatMap((row, i) =>
+        row[name] === undefined ? [] : [i],
+      );
+      fields[name] = holding.map((i) => rows[i][name]);
+      if (holding.length < rows.length) held[name] = differences(holding);
+    }
+    records[kind] = {
+      n: rows.length,
+      fields,
+      ...(Object.keys(held).length ? { held } : {}),
+    };
+  }
+  const kinds = new Set<string>(sliceKinds);
+  return {
+    ...(Object.fromEntries(
+      Object.entries(rest).filter(([key]) => !kinds.has(key)),
+    ) as Omit<PlacedSlice, SliceKind | 'at'>),
+    packed: 1,
+    at: Object.fromEntries(
+      sliceKinds.map((k) => [k, differences(at[k])]),
+    ) as Record<SliceKind, number[]>,
+    records,
+  };
+}
+
+/** A slice file as read: packed (`packSlice`), or a slice as it stands. */
+export function unpackSlice(file: PackedSlice | PlacedSlice): PlacedSlice {
+  if (!('packed' in file)) return file;
+  const { records, at, ...rest } = file;
+  delete (rest as { packed?: 1 }).packed;
+  const slice = {
+    ...rest,
+    at: Object.fromEntries(sliceKinds.map((k) => [k, sums(at[k])])) as Record<
+      SliceKind,
+      number[]
+    >,
+  } as unknown as PlacedSlice;
+  for (const kind of sliceKinds) {
+    const { n, fields, held } = records[kind];
+    const rows = Array.from(
+      { length: n },
+      () => ({}) as Record<string, unknown>,
+    );
+    for (const [name, values] of Object.entries(fields)) {
+      const holding = held?.[name] ? sums(held[name]) : null;
+      values.forEach((value, i) => {
+        rows[holding ? holding[i] : i][name] = value;
+      });
+    }
+    (slice as Record<SliceKind, unknown>)[kind] = rows;
+  }
+  return slice;
 }
 
 /**

@@ -13,12 +13,15 @@ import {
 } from './query';
 import { networkLayout } from '../ui/layout';
 import { relationshipClaims } from './query';
+import corrections from '../../review/corrections-2026-11-06-before-2026-11-06.json';
 import authorPersons from '../../review/author-persons-before-2026-10-27.json';
 import keyPapers1 from '../../review/key-papers-admission-1-before-2026-10-31.json';
 import keyPapers2 from '../../review/key-papers-admission-2-before-2026-10-31.json';
 import keyPapers3 from '../../review/key-papers-admission-3-before-2026-10-31.json';
 import technicalHistory1 from '../../review/technical-history-admission-1-before-2026-10-31.json';
 import technicalHistory2 from '../../review/technical-history-admission-2-before-2026-10-31.json';
+import prehistory from '../../review/prehistory-admission-before-2026-11-04.json';
+import predictions from '../../review/predictions-admission-before-2026-11-05.json';
 
 const filters: Filters = {
   topic: 'all',
@@ -59,15 +62,17 @@ describe('exploration queries', () => {
     // commitments. The 2026-10-17 lab genealogy adds its Anthropic records,
     // the 2026-10-28 frameworks-to-law admission its records naming Anthropic
     // the 2026-10-30 AI and biosecurity admission its evaluation records and
-    // the 2026-10-31 people admission its role record; all four are excluded
-    // here.
+    // the 2026-10-31 people admission its role record and the 2026-11-03
+    // model-cards admission its card publication records; all five are
+    // excluded here.
     expect(
       result.claims.filter(
         (c) =>
           !c.id.startsWith('lg-') &&
           !c.id.startsWith('fl-') &&
           !c.id.startsWith('ab-') &&
-          !c.id.startsWith('pp-'),
+          !c.id.startsWith('pp-') &&
+          !c.id.startsWith('mc-'),
       ).length,
     ).toBe(41);
     expect(result.claims.map((c) => c.id)).toContain(
@@ -82,14 +87,20 @@ describe('exploration queries', () => {
       throughYear: 1965,
     });
     // Authorship records of the 2026-10-27 author-person admission and the
-    // 2026-10-31 key papers and technical history records aside.
+    // 2026-10-31 key papers and technical history records aside, and the
+    // texts before 1965 of the 2026-11-04 antecedent-texts admission and the
+    // predictions of 2026-11-05, and Butler's authorship of 1865 admitted by
+    // the corrections of 2026-11-06.
     const later = new Set([
+      ...corrections.added.claims,
+      ...predictions.added.claims,
       ...authorPersons.added.claims,
       ...keyPapers1.added.claims,
       ...keyPapers2.added.claims,
       ...keyPapers3.added.claims,
       ...technicalHistory1.added.claims,
       ...technicalHistory2.added.claims,
+      ...prehistory.added.claims,
     ]);
     expect(
       result.claims

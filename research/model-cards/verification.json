@@ -1,0 +1,2694 @@
+{
+  "generated": "node research/model-cards/tools.mjs verify",
+  "checkedAgainst": "Cached retrieved text of each card in .local/model-cards/doc (ignored); see the sources in pack.json for address, HTTP status and SHA-256.",
+  "method": "Each quotation is normalised (Unicode compatibility forms, quotation marks, dashes, PDF line-break hyphenation, whitespace, case) and searched for in the normalised text of its card; fragments joined by an ellipsis must occur in order. Structural checks: one cell per card and question, passages for stated and partly cells, search terms for not-found cells, a reason for not-applicable cells, framework edition identifiers present in data/entities.json, and a list of evaluative words absent from notes and set-aside reasons.",
+  "cards": 20,
+  "cells": 320,
+  "quotations": 305,
+  "quotationsFound": 292,
+  "problems": [
+    "meta-cwm-preparedness:Q01 ev1: no cached text for meta-cwm-preparedness",
+    "meta-cwm-preparedness:Q02 ev1: no cached text for meta-cwm-preparedness",
+    "meta-cwm-preparedness:Q03 ev1: no cached text for meta-cwm-preparedness",
+    "meta-cwm-preparedness:Q04 ev1: no cached text for meta-cwm-preparedness",
+    "meta-cwm-preparedness:Q05 ev1: no cached text for meta-cwm-preparedness",
+    "meta-cwm-preparedness:Q06 ev1: no cached text for meta-cwm-preparedness",
+    "meta-cwm-preparedness:Q07 ev1: no cached text for meta-cwm-preparedness",
+    "meta-cwm-preparedness:Q08 ev1: no cached text for meta-cwm-preparedness",
+    "meta-cwm-preparedness:Q11 ev1: no cached text for meta-cwm-preparedness",
+    "meta-cwm-preparedness:Q11 ev2: no cached text for meta-cwm-preparedness",
+    "meta-cwm-preparedness:Q15 ev1: no cached text for meta-cwm-preparedness",
+    "meta-cwm-preparedness:Q16 ev1: no cached text for meta-cwm-preparedness",
+    "meta-cwm-preparedness:Q16 ev2: no cached text for meta-cwm-preparedness"
+  ],
+  "wordingReview": {
+    "method": "Uses of these words in notes and set-aside reasons, listed for a reading by the integrator; each was read on 2026-11-02 and kept where descriptive (for example “month precision only”, “first-party”, “context only”).",
+    "words": ["only", "first", "claims"],
+    "uses": [
+      "anthropic-claude-3-5-haiku-sonnet-new:Q02: “…a release form for Claude 3.5 Haiku (initial launch as text-only) and refers to the upgraded Claude …”",
+      "anthropic-claude-3-5-haiku-sonnet-new:Q12: “…olicy areas in six languages, computer-use red-teaming, and first- and third-party multimodal red-te…”",
+      "anthropic-claude-opus-4-5:Q01: “… revision dates (November 24 and 25, December 5, 2025); the first entry refers to a 'previous versio…”",
+      "anthropic-claude-haiku-5-5:Q02: “…he release form (general access; Section 1.5 also refers to first-party products and the API) but no…”",
+      "anthropic-claude-haiku-5-5:Q10: “…ural-audit metric for promoting politically motivated false claims, not an evaluation of persuasion …”",
+      "google-deepmind-gemini-3-flash:Q01: “…The card carries a publication date at month precision only; the cover repeats it as 'Model car…”",
+      "google-deepmind-gemini-3-flash:Q03: “… without an edition, date or link to the framework. Context only, not the card's statement: the data…”",
+      "google-deepmind-gemini-3-flash:Q16: “… card states that the reported safety results are automated only, are computed with revised evaluati…”",
+      "google-deepmind-gemini-4-argon:Q01: “…The PDF carries a publication date at month precision only and no revision date. The card's HT…”",
+      "meta-cwm-preparedness:Q03: “…ss date of 2025-09-18, without a version number. As context only: the dataset records the Frontier A…”",
+      "meta-cwm-preparedness:Q15: “…rt states the release and ties it to the assessment, in the first person plural; the report is autho…”",
+      "meta-muse-spark-1-3:Q03: “…nce Scaling Framework without a version or date. As context only: the dataset records the Advanced A…”",
+      "xai-grok-4-1:Q03: “…isk Management Framework; its reference gives the year 2025 only, with no version, full date or addr…”",
+      "xai-grok-4-1:Q03: “…g the dataset's framework editions (open question). Context only, not the card's statement: the RMF …”",
+      "xai-grok-4-1:Q04: “…ited in §2 as '[xAI, 2025]'; it gives no address. The PDF's only link annotation points to the Grok …”",
+      "xai-grok-4-1:Q07: “…t the evaluations listed cover biology, chemistry and cyber only. Scores are not recorded (hazard ru…”",
+      "xai-grok-4-7:Q05: “…work's terms for dual-use biological and chemical knowledge only; no FAIF threshold outcome is state…”",
+      "xai-grok-4-7:Q07: “…hold language quoted. Radiological and nuclear items appear only in a refusal evaluation (§9.3). Sco…”"
+    ]
+  },
+  "cellsByQuestionAndStatus": {
+    "Q01": {
+      "partly": 4,
+      "not-found": 7,
+      "stated": 9
+    },
+    "Q02": {
+      "stated": 8,
+      "partly": 11,
+      "not-found": 1
+    },
+    "Q03": {
+      "not-found": 3,
+      "stated": 7,
+      "partly": 5,
+      "not-applicable": 5
+    },
+    "Q04": {
+      "not-found": 3,
+      "stated": 10,
+      "partly": 2,
+      "not-applicable": 5
+    },
+    "Q05": {
+      "not-found": 4,
+      "stated": 10,
+      "not-applicable": 5,
+      "partly": 1
+    },
+    "Q06": {
+      "partly": 13,
+      "stated": 6,
+      "not-found": 1
+    },
+    "Q07": {
+      "not-found": 7,
+      "stated": 11,
+      "partly": 2
+    },
+    "Q08": {
+      "not-found": 6,
+      "stated": 12,
+      "partly": 2
+    },
+    "Q09": {
+      "stated": 8,
+      "not-found": 9,
+      "partly": 3
+    },
+    "Q10": {
+      "not-found": 14,
+      "partly": 2,
+      "stated": 4
+    },
+    "Q11": {
+      "not-found": 11,
+      "stated": 7,
+      "partly": 2
+    },
+    "Q12": {
+      "stated": 12,
+      "not-found": 6,
+      "partly": 2
+    },
+    "Q13": {
+      "stated": 10,
+      "not-found": 8,
+      "partly": 2
+    },
+    "Q14": {
+      "not-found": 17,
+      "stated": 3
+    },
+    "Q15": {
+      "not-found": 9,
+      "partly": 7,
+      "stated": 4
+    },
+    "Q16": {
+      "stated": 20
+    }
+  },
+  "perSource": {
+    "anthropic-claude-2-1": {
+      "quotedNew": 203,
+      "datasetQuoted": 0,
+      "documentWords": 6117,
+      "limit": 400
+    },
+    "anthropic-claude-3-5-haiku-sonnet-new": {
+      "quotedNew": 292,
+      "datasetQuoted": 0,
+      "documentWords": 5421,
+      "limit": 400
+    },
+    "anthropic-claude-opus-4-5": {
+      "quotedNew": 454,
+      "datasetQuoted": 0,
+      "documentWords": 38069,
+      "limit": 800
+    },
+    "anthropic-claude-haiku-5-5": {
+      "quotedNew": 348,
+      "datasetQuoted": 0,
+      "documentWords": 32909,
+      "limit": 800
+    },
+    "google-deepmind-gemini-3-flash": {
+      "quotedNew": 100,
+      "datasetQuoted": 0,
+      "documentWords": 1065,
+      "limit": 106
+    },
+    "google-deepmind-gemini-4-argon": {
+      "quotedNew": 249,
+      "datasetQuoted": 0,
+      "documentWords": 2574,
+      "limit": 400
+    },
+    "meta-llama-2": {
+      "quotedNew": 52,
+      "datasetQuoted": 0,
+      "documentWords": 956,
+      "limit": 95
+    },
+    "meta-llama-3-3": {
+      "quotedNew": 149,
+      "datasetQuoted": 0,
+      "documentWords": 2572,
+      "limit": 400
+    },
+    "meta-cwm-preparedness": {
+      "quotedNew": 178,
+      "datasetQuoted": 0,
+      "documentWords": 10195,
+      "limit": 509
+    },
+    "meta-muse-spark-1-3": {
+      "quotedNew": 335,
+      "datasetQuoted": 0,
+      "documentWords": 52983,
+      "limit": 800
+    },
+    "microsoft-phi-2": {
+      "quotedNew": 62,
+      "datasetQuoted": 0,
+      "documentWords": 1070,
+      "limit": 107
+    },
+    "microsoft-phi-4": {
+      "quotedNew": 60,
+      "datasetQuoted": 0,
+      "documentWords": 1641,
+      "limit": 164
+    },
+    "microsoft-phi-4-mini-flash-reasoning": {
+      "quotedNew": 89,
+      "datasetQuoted": 0,
+      "documentWords": 2710,
+      "limit": 400
+    },
+    "microsoft-mai-cyber-1-1-flash": {
+      "quotedNew": 146,
+      "datasetQuoted": 0,
+      "documentWords": 1651,
+      "limit": 165
+    },
+    "openai-gpt-4v": {
+      "quotedNew": 268,
+      "datasetQuoted": 0,
+      "documentWords": 5990,
+      "limit": 400
+    },
+    "openai-o1": {
+      "quotedNew": 444,
+      "datasetQuoted": 135,
+      "documentWords": 17314,
+      "limit": 800
+    },
+    "openai-gpt-5-2-codex": {
+      "quotedNew": 295,
+      "datasetQuoted": 0,
+      "documentWords": 6183,
+      "limit": 400
+    },
+    "openai-gpt-6-luna-october-29": {
+      "quotedNew": 286,
+      "datasetQuoted": 0,
+      "documentWords": 3056,
+      "limit": 400
+    },
+    "xai-grok-4-1": {
+      "quotedNew": 161,
+      "datasetQuoted": 0,
+      "documentWords": 2333,
+      "limit": 400
+    },
+    "xai-grok-4-7": {
+      "quotedNew": 176,
+      "datasetQuoted": 0,
+      "documentWords": 6294,
+      "limit": 400
+    }
+  },
+  "perQuote": [
+    {
+      "claim": "anthropic-claude-2-1:Q01",
+      "evidence": 1,
+      "source": "anthropic-claude-2-1",
+      "words": 13,
+      "found": true,
+      "pdfPage": 1
+    },
+    {
+      "claim": "anthropic-claude-2-1:Q02",
+      "evidence": 1,
+      "source": "anthropic-claude-2-1",
+      "words": 11,
+      "found": true,
+      "pdfPage": 1
+    },
+    {
+      "claim": "anthropic-claude-2-1:Q02",
+      "evidence": 2,
+      "source": "anthropic-claude-2-1",
+      "words": 17,
+      "found": true,
+      "pdfPage": 15
+    },
+    {
+      "claim": "anthropic-claude-2-1:Q06",
+      "evidence": 1,
+      "source": "anthropic-claude-2-1",
+      "words": 34,
+      "found": true,
+      "pdfPage": 2
+    },
+    {
+      "claim": "anthropic-claude-2-1:Q09",
+      "evidence": 1,
+      "source": "anthropic-claude-2-1",
+      "words": 23,
+      "found": true,
+      "pdfPage": 2
+    },
+    {
+      "claim": "anthropic-claude-2-1:Q12",
+      "evidence": 1,
+      "source": "anthropic-claude-2-1",
+      "words": 25,
+      "found": true,
+      "pdfPage": 2
+    },
+    {
+      "claim": "anthropic-claude-2-1:Q12",
+      "evidence": 2,
+      "source": "anthropic-claude-2-1",
+      "words": 18,
+      "found": true,
+      "pdfPage": 2
+    },
+    {
+      "claim": "anthropic-claude-2-1:Q13",
+      "evidence": 1,
+      "source": "anthropic-claude-2-1",
+      "words": 23,
+      "found": true,
+      "pdfPage": 2
+    },
+    {
+      "claim": "anthropic-claude-2-1:Q16",
+      "evidence": 1,
+      "source": "anthropic-claude-2-1",
+      "words": 27,
+      "found": true,
+      "pdfPage": 3
+    },
+    {
+      "claim": "anthropic-claude-2-1:Q16",
+      "evidence": 2,
+      "source": "anthropic-claude-2-1",
+      "words": 13,
+      "found": true,
+      "pdfPage": 16
+    },
+    {
+      "claim": "anthropic-claude-3-5-haiku-sonnet-new:Q02",
+      "evidence": 1,
+      "source": "anthropic-claude-3-5-haiku-sonnet-new",
+      "words": 10,
+      "found": true,
+      "pdfPage": 5
+    },
+    {
+      "claim": "anthropic-claude-3-5-haiku-sonnet-new:Q02",
+      "evidence": 2,
+      "source": "anthropic-claude-3-5-haiku-sonnet-new",
+      "words": 14,
+      "found": true,
+      "pdfPage": 9
+    },
+    {
+      "claim": "anthropic-claude-3-5-haiku-sonnet-new:Q03",
+      "evidence": 1,
+      "source": "anthropic-claude-3-5-haiku-sonnet-new",
+      "words": 28,
+      "found": true,
+      "pdfPage": 1
+    },
+    {
+      "claim": "anthropic-claude-3-5-haiku-sonnet-new:Q03",
+      "evidence": 2,
+      "source": "anthropic-claude-3-5-haiku-sonnet-new",
+      "words": 9,
+      "found": true,
+      "pdfPage": 13
+    },
+    {
+      "claim": "anthropic-claude-3-5-haiku-sonnet-new:Q04",
+      "evidence": 1,
+      "source": "anthropic-claude-3-5-haiku-sonnet-new",
+      "words": 9,
+      "found": true,
+      "pdfPage": 13
+    },
+    {
+      "claim": "anthropic-claude-3-5-haiku-sonnet-new:Q05",
+      "evidence": 1,
+      "source": "anthropic-claude-3-5-haiku-sonnet-new",
+      "words": 20,
+      "found": true,
+      "pdfPage": 10
+    },
+    {
+      "claim": "anthropic-claude-3-5-haiku-sonnet-new:Q05",
+      "evidence": 2,
+      "source": "anthropic-claude-3-5-haiku-sonnet-new",
+      "words": 16,
+      "found": true,
+      "pdfPage": 10
+    },
+    {
+      "claim": "anthropic-claude-3-5-haiku-sonnet-new:Q06",
+      "evidence": 1,
+      "source": "anthropic-claude-3-5-haiku-sonnet-new",
+      "words": 15,
+      "found": true,
+      "pdfPage": 3
+    },
+    {
+      "claim": "anthropic-claude-3-5-haiku-sonnet-new:Q06",
+      "evidence": 2,
+      "source": "anthropic-claude-3-5-haiku-sonnet-new",
+      "words": 18,
+      "found": true,
+      "pdfPage": 9
+    },
+    {
+      "claim": "anthropic-claude-3-5-haiku-sonnet-new:Q07",
+      "evidence": 1,
+      "source": "anthropic-claude-3-5-haiku-sonnet-new",
+      "words": 30,
+      "found": true,
+      "pdfPage": 7
+    },
+    {
+      "claim": "anthropic-claude-3-5-haiku-sonnet-new:Q07",
+      "evidence": 2,
+      "source": "anthropic-claude-3-5-haiku-sonnet-new",
+      "words": 16,
+      "found": true,
+      "pdfPage": 9
+    },
+    {
+      "claim": "anthropic-claude-3-5-haiku-sonnet-new:Q08",
+      "evidence": 1,
+      "source": "anthropic-claude-3-5-haiku-sonnet-new",
+      "words": 30,
+      "found": true,
+      "pdfPage": 7
+    },
+    {
+      "claim": "anthropic-claude-3-5-haiku-sonnet-new:Q08",
+      "evidence": 2,
+      "source": "anthropic-claude-3-5-haiku-sonnet-new",
+      "words": 16,
+      "found": true,
+      "pdfPage": 9
+    },
+    {
+      "claim": "anthropic-claude-3-5-haiku-sonnet-new:Q09",
+      "evidence": 1,
+      "source": "anthropic-claude-3-5-haiku-sonnet-new",
+      "words": 15,
+      "found": true,
+      "pdfPage": 9
+    },
+    {
+      "claim": "anthropic-claude-3-5-haiku-sonnet-new:Q09",
+      "evidence": 2,
+      "source": "anthropic-claude-3-5-haiku-sonnet-new",
+      "words": 20,
+      "found": true,
+      "pdfPage": 10
+    },
+    {
+      "claim": "anthropic-claude-3-5-haiku-sonnet-new:Q12",
+      "evidence": 1,
+      "source": "anthropic-claude-3-5-haiku-sonnet-new",
+      "words": 15,
+      "found": true,
+      "pdfPage": 7
+    },
+    {
+      "claim": "anthropic-claude-3-5-haiku-sonnet-new:Q12",
+      "evidence": 2,
+      "source": "anthropic-claude-3-5-haiku-sonnet-new",
+      "words": 15,
+      "found": true,
+      "pdfPage": 8
+    },
+    {
+      "claim": "anthropic-claude-3-5-haiku-sonnet-new:Q12",
+      "evidence": 3,
+      "source": "anthropic-claude-3-5-haiku-sonnet-new",
+      "words": 12,
+      "found": true,
+      "pdfPage": 2
+    },
+    {
+      "claim": "anthropic-claude-3-5-haiku-sonnet-new:Q13",
+      "evidence": 1,
+      "source": "anthropic-claude-3-5-haiku-sonnet-new",
+      "words": 11,
+      "found": true,
+      "pdfPage": 1
+    },
+    {
+      "claim": "anthropic-claude-3-5-haiku-sonnet-new:Q14",
+      "evidence": 1,
+      "source": "anthropic-claude-3-5-haiku-sonnet-new",
+      "words": 30,
+      "found": true,
+      "pdfPage": 1
+    },
+    {
+      "claim": "anthropic-claude-3-5-haiku-sonnet-new:Q15",
+      "evidence": 1,
+      "source": "anthropic-claude-3-5-haiku-sonnet-new",
+      "words": 20,
+      "found": true,
+      "pdfPage": 10
+    },
+    {
+      "claim": "anthropic-claude-3-5-haiku-sonnet-new:Q15",
+      "evidence": 2,
+      "source": "anthropic-claude-3-5-haiku-sonnet-new",
+      "words": 14,
+      "found": true,
+      "pdfPage": 9
+    },
+    {
+      "claim": "anthropic-claude-3-5-haiku-sonnet-new:Q16",
+      "evidence": 1,
+      "source": "anthropic-claude-3-5-haiku-sonnet-new",
+      "words": 11,
+      "found": true,
+      "pdfPage": 3
+    },
+    {
+      "claim": "anthropic-claude-3-5-haiku-sonnet-new:Q16",
+      "evidence": 2,
+      "source": "anthropic-claude-3-5-haiku-sonnet-new",
+      "words": 8,
+      "found": true,
+      "pdfPage": 9
+    },
+    {
+      "claim": "anthropic-claude-opus-4-5:Q01",
+      "evidence": 1,
+      "source": "anthropic-claude-opus-4-5",
+      "words": 7,
+      "found": true,
+      "pdfPage": 1
+    },
+    {
+      "claim": "anthropic-claude-opus-4-5:Q01",
+      "evidence": 2,
+      "source": "anthropic-claude-opus-4-5",
+      "words": 11,
+      "found": true,
+      "pdfPage": 2
+    },
+    {
+      "claim": "anthropic-claude-opus-4-5:Q02",
+      "evidence": 1,
+      "source": "anthropic-claude-opus-4-5",
+      "words": 19,
+      "found": true,
+      "pdfPage": 3
+    },
+    {
+      "claim": "anthropic-claude-opus-4-5:Q02",
+      "evidence": 2,
+      "source": "anthropic-claude-opus-4-5",
+      "words": 25,
+      "found": true,
+      "pdfPage": 41
+    },
+    {
+      "claim": "anthropic-claude-opus-4-5:Q03",
+      "evidence": 1,
+      "source": "anthropic-claude-opus-4-5",
+      "words": 16,
+      "found": true,
+      "pdfPage": 12
+    },
+    {
+      "claim": "anthropic-claude-opus-4-5:Q04",
+      "evidence": 1,
+      "source": "anthropic-claude-opus-4-5",
+      "words": 16,
+      "found": true,
+      "pdfPage": 12
+    },
+    {
+      "claim": "anthropic-claude-opus-4-5:Q05",
+      "evidence": 1,
+      "source": "anthropic-claude-opus-4-5",
+      "words": 18,
+      "found": true,
+      "pdfPage": 12
+    },
+    {
+      "claim": "anthropic-claude-opus-4-5:Q06",
+      "evidence": 1,
+      "source": "anthropic-claude-opus-4-5",
+      "words": 18,
+      "found": true,
+      "pdfPage": 11
+    },
+    {
+      "claim": "anthropic-claude-opus-4-5:Q06",
+      "evidence": 2,
+      "source": "anthropic-claude-opus-4-5",
+      "words": 16,
+      "found": true,
+      "pdfPage": 12
+    },
+    {
+      "claim": "anthropic-claude-opus-4-5:Q07",
+      "evidence": 1,
+      "source": "anthropic-claude-opus-4-5",
+      "words": 12,
+      "found": true,
+      "pdfPage": 14
+    },
+    {
+      "claim": "anthropic-claude-opus-4-5:Q07",
+      "evidence": 2,
+      "source": "anthropic-claude-opus-4-5",
+      "words": 9,
+      "found": true,
+      "pdfPage": 119
+    },
+    {
+      "claim": "anthropic-claude-opus-4-5:Q07",
+      "evidence": 3,
+      "source": "anthropic-claude-opus-4-5",
+      "words": 11,
+      "found": true,
+      "pdfPage": 120
+    },
+    {
+      "claim": "anthropic-claude-opus-4-5:Q08",
+      "evidence": 1,
+      "source": "anthropic-claude-opus-4-5",
+      "words": 16,
+      "found": true,
+      "pdfPage": 145
+    },
+    {
+      "claim": "anthropic-claude-opus-4-5:Q08",
+      "evidence": 2,
+      "source": "anthropic-claude-opus-4-5",
+      "words": 17,
+      "found": true,
+      "pdfPage": 143
+    },
+    {
+      "claim": "anthropic-claude-opus-4-5:Q09",
+      "evidence": 1,
+      "source": "anthropic-claude-opus-4-5",
+      "words": 17,
+      "found": true,
+      "pdfPage": 13
+    },
+    {
+      "claim": "anthropic-claude-opus-4-5:Q09",
+      "evidence": 2,
+      "source": "anthropic-claude-opus-4-5",
+      "words": 19,
+      "found": true,
+      "pdfPage": 12
+    },
+    {
+      "claim": "anthropic-claude-opus-4-5:Q10",
+      "evidence": 1,
+      "source": "anthropic-claude-opus-4-5",
+      "words": 13,
+      "found": true,
+      "pdfPage": 64
+    },
+    {
+      "claim": "anthropic-claude-opus-4-5:Q11",
+      "evidence": 1,
+      "source": "anthropic-claude-opus-4-5",
+      "words": 24,
+      "found": true,
+      "pdfPage": 66
+    },
+    {
+      "claim": "anthropic-claude-opus-4-5:Q11",
+      "evidence": 2,
+      "source": "anthropic-claude-opus-4-5",
+      "words": 24,
+      "found": true,
+      "pdfPage": 66
+    },
+    {
+      "claim": "anthropic-claude-opus-4-5:Q12",
+      "evidence": 1,
+      "source": "anthropic-claude-opus-4-5",
+      "words": 28,
+      "found": true,
+      "pdfPage": 132
+    },
+    {
+      "claim": "anthropic-claude-opus-4-5:Q12",
+      "evidence": 2,
+      "source": "anthropic-claude-opus-4-5",
+      "words": 19,
+      "found": true,
+      "pdfPage": 119
+    },
+    {
+      "claim": "anthropic-claude-opus-4-5:Q13",
+      "evidence": 1,
+      "source": "anthropic-claude-opus-4-5",
+      "words": 15,
+      "found": true,
+      "pdfPage": 58
+    },
+    {
+      "claim": "anthropic-claude-opus-4-5:Q14",
+      "evidence": 1,
+      "source": "anthropic-claude-opus-4-5",
+      "words": 26,
+      "found": true,
+      "pdfPage": 151
+    },
+    {
+      "claim": "anthropic-claude-opus-4-5:Q14",
+      "evidence": 2,
+      "source": "anthropic-claude-opus-4-5",
+      "words": 28,
+      "found": true,
+      "pdfPage": 120
+    },
+    {
+      "claim": "anthropic-claude-opus-4-5:Q15",
+      "evidence": 1,
+      "source": "anthropic-claude-opus-4-5",
+      "words": 19,
+      "found": true,
+      "pdfPage": 12
+    },
+    {
+      "claim": "anthropic-claude-opus-4-5:Q15",
+      "evidence": 2,
+      "source": "anthropic-claude-opus-4-5",
+      "words": 16,
+      "found": true,
+      "pdfPage": 12
+    },
+    {
+      "claim": "anthropic-claude-opus-4-5:Q16",
+      "evidence": 1,
+      "source": "anthropic-claude-opus-4-5",
+      "words": 10,
+      "found": true,
+      "pdfPage": 12
+    },
+    {
+      "claim": "anthropic-claude-opus-4-5:Q16",
+      "evidence": 2,
+      "source": "anthropic-claude-opus-4-5",
+      "words": 19,
+      "found": true,
+      "pdfPage": 12
+    },
+    {
+      "claim": "anthropic-claude-haiku-5-5:Q01",
+      "evidence": 1,
+      "source": "anthropic-claude-haiku-5-5",
+      "words": 8,
+      "found": true,
+      "pdfPage": 1
+    },
+    {
+      "claim": "anthropic-claude-haiku-5-5:Q02",
+      "evidence": 1,
+      "source": "anthropic-claude-haiku-5-5",
+      "words": 15,
+      "found": true,
+      "pdfPage": 8
+    },
+    {
+      "claim": "anthropic-claude-haiku-5-5:Q03",
+      "evidence": 1,
+      "source": "anthropic-claude-haiku-5-5",
+      "words": 18,
+      "found": true,
+      "pdfPage": 11
+    },
+    {
+      "claim": "anthropic-claude-haiku-5-5:Q04",
+      "evidence": 1,
+      "source": "anthropic-claude-haiku-5-5",
+      "words": 18,
+      "found": true,
+      "pdfPage": 11
+    },
+    {
+      "claim": "anthropic-claude-haiku-5-5:Q05",
+      "evidence": 1,
+      "source": "anthropic-claude-haiku-5-5",
+      "words": 16,
+      "found": true,
+      "pdfPage": 11
+    },
+    {
+      "claim": "anthropic-claude-haiku-5-5:Q05",
+      "evidence": 2,
+      "source": "anthropic-claude-haiku-5-5",
+      "words": 22,
+      "found": true,
+      "pdfPage": 11
+    },
+    {
+      "claim": "anthropic-claude-haiku-5-5:Q06",
+      "evidence": 1,
+      "source": "anthropic-claude-haiku-5-5",
+      "words": 22,
+      "found": true,
+      "pdfPage": 11
+    },
+    {
+      "claim": "anthropic-claude-haiku-5-5:Q06",
+      "evidence": 2,
+      "source": "anthropic-claude-haiku-5-5",
+      "words": 27,
+      "found": true,
+      "pdfPage": 9
+    },
+    {
+      "claim": "anthropic-claude-haiku-5-5:Q07",
+      "evidence": 1,
+      "source": "anthropic-claude-haiku-5-5",
+      "words": 16,
+      "found": true,
+      "pdfPage": 11
+    },
+    {
+      "claim": "anthropic-claude-haiku-5-5:Q07",
+      "evidence": 2,
+      "source": "anthropic-claude-haiku-5-5",
+      "words": 16,
+      "found": true,
+      "pdfPage": 11
+    },
+    {
+      "claim": "anthropic-claude-haiku-5-5:Q08",
+      "evidence": 1,
+      "source": "anthropic-claude-haiku-5-5",
+      "words": 22,
+      "found": true,
+      "pdfPage": 23
+    },
+    {
+      "claim": "anthropic-claude-haiku-5-5:Q08",
+      "evidence": 2,
+      "source": "anthropic-claude-haiku-5-5",
+      "words": 24,
+      "found": true,
+      "pdfPage": 23
+    },
+    {
+      "claim": "anthropic-claude-haiku-5-5:Q09",
+      "evidence": 1,
+      "source": "anthropic-claude-haiku-5-5",
+      "words": 10,
+      "found": true,
+      "pdfPage": 19
+    },
+    {
+      "claim": "anthropic-claude-haiku-5-5:Q09",
+      "evidence": 2,
+      "source": "anthropic-claude-haiku-5-5",
+      "words": 26,
+      "found": true,
+      "pdfPage": 20
+    },
+    {
+      "claim": "anthropic-claude-haiku-5-5:Q11",
+      "evidence": 1,
+      "source": "anthropic-claude-haiku-5-5",
+      "words": 20,
+      "found": true,
+      "pdfPage": 22
+    },
+    {
+      "claim": "anthropic-claude-haiku-5-5:Q11",
+      "evidence": 2,
+      "source": "anthropic-claude-haiku-5-5",
+      "words": 9,
+      "found": true,
+      "pdfPage": 3
+    },
+    {
+      "claim": "anthropic-claude-haiku-5-5:Q12",
+      "evidence": 1,
+      "source": "anthropic-claude-haiku-5-5",
+      "words": 22,
+      "found": true,
+      "pdfPage": 51
+    },
+    {
+      "claim": "anthropic-claude-haiku-5-5:Q13",
+      "evidence": 1,
+      "source": "anthropic-claude-haiku-5-5",
+      "words": 25,
+      "found": true,
+      "pdfPage": 51
+    },
+    {
+      "claim": "anthropic-claude-haiku-5-5:Q15",
+      "evidence": 1,
+      "source": "anthropic-claude-haiku-5-5",
+      "words": 19,
+      "found": true,
+      "pdfPage": 18
+    },
+    {
+      "claim": "anthropic-claude-haiku-5-5:Q16",
+      "evidence": 1,
+      "source": "anthropic-claude-haiku-5-5",
+      "words": 20,
+      "found": true,
+      "pdfPage": 56
+    },
+    {
+      "claim": "anthropic-claude-haiku-5-5:Q16",
+      "evidence": 2,
+      "source": "anthropic-claude-haiku-5-5",
+      "words": 29,
+      "found": true,
+      "pdfPage": 21
+    },
+    {
+      "claim": "google-deepmind-gemini-3-flash:Q01",
+      "evidence": 1,
+      "source": "google-deepmind-gemini-3-flash",
+      "words": 3,
+      "found": true,
+      "pdfPage": 2
+    },
+    {
+      "claim": "google-deepmind-gemini-3-flash:Q03",
+      "evidence": 1,
+      "source": "google-deepmind-gemini-3-flash",
+      "words": 14,
+      "found": true,
+      "pdfPage": 6
+    },
+    {
+      "claim": "google-deepmind-gemini-3-flash:Q04",
+      "evidence": 1,
+      "source": "google-deepmind-gemini-3-flash",
+      "words": 14,
+      "found": true,
+      "pdfPage": 6
+    },
+    {
+      "claim": "google-deepmind-gemini-3-flash:Q05",
+      "evidence": 1,
+      "source": "google-deepmind-gemini-3-flash",
+      "words": 19,
+      "found": true,
+      "pdfPage": 6
+    },
+    {
+      "claim": "google-deepmind-gemini-3-flash:Q12",
+      "evidence": 1,
+      "source": "google-deepmind-gemini-3-flash",
+      "words": 16,
+      "found": true,
+      "pdfPage": 6
+    },
+    {
+      "claim": "google-deepmind-gemini-3-flash:Q12",
+      "evidence": 2,
+      "source": "google-deepmind-gemini-3-flash",
+      "words": 13,
+      "found": true,
+      "pdfPage": 6
+    },
+    {
+      "claim": "google-deepmind-gemini-3-flash:Q15",
+      "evidence": 1,
+      "source": "google-deepmind-gemini-3-flash",
+      "words": 9,
+      "found": true,
+      "pdfPage": 6
+    },
+    {
+      "claim": "google-deepmind-gemini-3-flash:Q16",
+      "evidence": 1,
+      "source": "google-deepmind-gemini-3-flash",
+      "words": 14,
+      "found": true,
+      "pdfPage": 5
+    },
+    {
+      "claim": "google-deepmind-gemini-3-flash:Q16",
+      "evidence": 2,
+      "source": "google-deepmind-gemini-3-flash",
+      "words": 12,
+      "found": true,
+      "pdfPage": 6
+    },
+    {
+      "claim": "google-deepmind-gemini-4-argon:Q01",
+      "evidence": 1,
+      "source": "google-deepmind-gemini-4-argon",
+      "words": 3,
+      "found": true,
+      "pdfPage": 2
+    },
+    {
+      "claim": "google-deepmind-gemini-4-argon:Q02",
+      "evidence": 1,
+      "source": "google-deepmind-gemini-4-argon",
+      "words": 9,
+      "found": true,
+      "pdfPage": 4
+    },
+    {
+      "claim": "google-deepmind-gemini-4-argon:Q02",
+      "evidence": 2,
+      "source": "google-deepmind-gemini-4-argon",
+      "words": 13,
+      "found": true,
+      "pdfPage": 4
+    },
+    {
+      "claim": "google-deepmind-gemini-4-argon:Q03",
+      "evidence": 1,
+      "source": "google-deepmind-gemini-4-argon",
+      "words": 18,
+      "found": true,
+      "pdfPage": 11
+    },
+    {
+      "claim": "google-deepmind-gemini-4-argon:Q04",
+      "evidence": 1,
+      "source": "google-deepmind-gemini-4-argon",
+      "words": 18,
+      "found": true,
+      "pdfPage": 11
+    },
+    {
+      "claim": "google-deepmind-gemini-4-argon:Q05",
+      "evidence": 1,
+      "source": "google-deepmind-gemini-4-argon",
+      "words": 16,
+      "found": true,
+      "pdfPage": 11
+    },
+    {
+      "claim": "google-deepmind-gemini-4-argon:Q05",
+      "evidence": 2,
+      "source": "google-deepmind-gemini-4-argon",
+      "words": 17,
+      "found": true,
+      "pdfPage": 11
+    },
+    {
+      "claim": "google-deepmind-gemini-4-argon:Q05",
+      "evidence": 3,
+      "source": "google-deepmind-gemini-4-argon",
+      "words": 11,
+      "found": true,
+      "pdfPage": 13
+    },
+    {
+      "claim": "google-deepmind-gemini-4-argon:Q06",
+      "evidence": 1,
+      "source": "google-deepmind-gemini-4-argon",
+      "words": 21,
+      "found": true,
+      "pdfPage": 11
+    },
+    {
+      "claim": "google-deepmind-gemini-4-argon:Q06",
+      "evidence": 2,
+      "source": "google-deepmind-gemini-4-argon",
+      "words": 20,
+      "found": true,
+      "pdfPage": 13
+    },
+    {
+      "claim": "google-deepmind-gemini-4-argon:Q07",
+      "evidence": 1,
+      "source": "google-deepmind-gemini-4-argon",
+      "words": 16,
+      "found": true,
+      "pdfPage": 12
+    },
+    {
+      "claim": "google-deepmind-gemini-4-argon:Q07",
+      "evidence": 2,
+      "source": "google-deepmind-gemini-4-argon",
+      "words": 12,
+      "found": true,
+      "pdfPage": 12
+    },
+    {
+      "claim": "google-deepmind-gemini-4-argon:Q08",
+      "evidence": 1,
+      "source": "google-deepmind-gemini-4-argon",
+      "words": 12,
+      "found": true,
+      "pdfPage": 12
+    },
+    {
+      "claim": "google-deepmind-gemini-4-argon:Q09",
+      "evidence": 1,
+      "source": "google-deepmind-gemini-4-argon",
+      "words": 9,
+      "found": true,
+      "pdfPage": 14
+    },
+    {
+      "claim": "google-deepmind-gemini-4-argon:Q10",
+      "evidence": 1,
+      "source": "google-deepmind-gemini-4-argon",
+      "words": 11,
+      "found": true,
+      "pdfPage": 13
+    },
+    {
+      "claim": "google-deepmind-gemini-4-argon:Q11",
+      "evidence": 1,
+      "source": "google-deepmind-gemini-4-argon",
+      "words": 17,
+      "found": true,
+      "pdfPage": 11
+    },
+    {
+      "claim": "google-deepmind-gemini-4-argon:Q11",
+      "evidence": 2,
+      "source": "google-deepmind-gemini-4-argon",
+      "words": 7,
+      "found": true,
+      "pdfPage": 13
+    },
+    {
+      "claim": "google-deepmind-gemini-4-argon:Q12",
+      "evidence": 1,
+      "source": "google-deepmind-gemini-4-argon",
+      "words": 20,
+      "found": true,
+      "pdfPage": 8
+    },
+    {
+      "claim": "google-deepmind-gemini-4-argon:Q12",
+      "evidence": 2,
+      "source": "google-deepmind-gemini-4-argon",
+      "words": 13,
+      "found": true,
+      "pdfPage": 11
+    },
+    {
+      "claim": "google-deepmind-gemini-4-argon:Q13",
+      "evidence": 1,
+      "source": "google-deepmind-gemini-4-argon",
+      "words": 6,
+      "found": true,
+      "pdfPage": 11
+    },
+    {
+      "claim": "google-deepmind-gemini-4-argon:Q16",
+      "evidence": 1,
+      "source": "google-deepmind-gemini-4-argon",
+      "words": 14,
+      "found": true,
+      "pdfPage": 13
+    },
+    {
+      "claim": "google-deepmind-gemini-4-argon:Q16",
+      "evidence": 2,
+      "source": "google-deepmind-gemini-4-argon",
+      "words": 12,
+      "found": true,
+      "pdfPage": 10
+    },
+    {
+      "claim": "meta-llama-2:Q02",
+      "evidence": 1,
+      "source": "meta-llama-2",
+      "words": 12,
+      "found": true,
+      "pdfPage": null
+    },
+    {
+      "claim": "meta-llama-2:Q02",
+      "evidence": 2,
+      "source": "meta-llama-2",
+      "words": 7,
+      "found": true,
+      "pdfPage": null
+    },
+    {
+      "claim": "meta-llama-2:Q06",
+      "evidence": 1,
+      "source": "meta-llama-2",
+      "words": 15,
+      "found": true,
+      "pdfPage": null
+    },
+    {
+      "claim": "meta-llama-2:Q16",
+      "evidence": 1,
+      "source": "meta-llama-2",
+      "words": 18,
+      "found": true,
+      "pdfPage": null
+    },
+    {
+      "claim": "meta-llama-3-3:Q02",
+      "evidence": 1,
+      "source": "meta-llama-3-3",
+      "words": 5,
+      "found": true,
+      "pdfPage": null
+    },
+    {
+      "claim": "meta-llama-3-3:Q02",
+      "evidence": 2,
+      "source": "meta-llama-3-3",
+      "words": 7,
+      "found": true,
+      "pdfPage": null
+    },
+    {
+      "claim": "meta-llama-3-3:Q06",
+      "evidence": 1,
+      "source": "meta-llama-3-3",
+      "words": 12,
+      "found": true,
+      "pdfPage": null
+    },
+    {
+      "claim": "meta-llama-3-3:Q06",
+      "evidence": 2,
+      "source": "meta-llama-3-3",
+      "words": 9,
+      "found": true,
+      "pdfPage": null
+    },
+    {
+      "claim": "meta-llama-3-3:Q07",
+      "evidence": 1,
+      "source": "meta-llama-3-3",
+      "words": 22,
+      "found": true,
+      "pdfPage": null
+    },
+    {
+      "claim": "meta-llama-3-3:Q08",
+      "evidence": 1,
+      "source": "meta-llama-3-3",
+      "words": 20,
+      "found": true,
+      "pdfPage": null
+    },
+    {
+      "claim": "meta-llama-3-3:Q09",
+      "evidence": 1,
+      "source": "meta-llama-3-3",
+      "words": 20,
+      "found": true,
+      "pdfPage": null
+    },
+    {
+      "claim": "meta-llama-3-3:Q12",
+      "evidence": 1,
+      "source": "meta-llama-3-3",
+      "words": 15,
+      "found": true,
+      "pdfPage": null
+    },
+    {
+      "claim": "meta-llama-3-3:Q12",
+      "evidence": 2,
+      "source": "meta-llama-3-3",
+      "words": 15,
+      "found": true,
+      "pdfPage": null
+    },
+    {
+      "claim": "meta-llama-3-3:Q13",
+      "evidence": 1,
+      "source": "meta-llama-3-3",
+      "words": 11,
+      "found": true,
+      "pdfPage": null
+    },
+    {
+      "claim": "meta-llama-3-3:Q16",
+      "evidence": 1,
+      "source": "meta-llama-3-3",
+      "words": 13,
+      "found": true,
+      "pdfPage": null
+    },
+    {
+      "claim": "meta-cwm-preparedness:Q01",
+      "evidence": 1,
+      "source": "meta-cwm-preparedness",
+      "words": 4,
+      "found": false,
+      "pdfPage": null
+    },
+    {
+      "claim": "meta-cwm-preparedness:Q02",
+      "evidence": 1,
+      "source": "meta-cwm-preparedness",
+      "words": 8,
+      "found": false,
+      "pdfPage": null
+    },
+    {
+      "claim": "meta-cwm-preparedness:Q03",
+      "evidence": 1,
+      "source": "meta-cwm-preparedness",
+      "words": 10,
+      "found": false,
+      "pdfPage": null
+    },
+    {
+      "claim": "meta-cwm-preparedness:Q04",
+      "evidence": 1,
+      "source": "meta-cwm-preparedness",
+      "words": 10,
+      "found": false,
+      "pdfPage": null
+    },
+    {
+      "claim": "meta-cwm-preparedness:Q05",
+      "evidence": 1,
+      "source": "meta-cwm-preparedness",
+      "words": 21,
+      "found": false,
+      "pdfPage": null
+    },
+    {
+      "claim": "meta-cwm-preparedness:Q06",
+      "evidence": 1,
+      "source": "meta-cwm-preparedness",
+      "words": 8,
+      "found": false,
+      "pdfPage": null
+    },
+    {
+      "claim": "meta-cwm-preparedness:Q07",
+      "evidence": 1,
+      "source": "meta-cwm-preparedness",
+      "words": 22,
+      "found": false,
+      "pdfPage": null
+    },
+    {
+      "claim": "meta-cwm-preparedness:Q08",
+      "evidence": 1,
+      "source": "meta-cwm-preparedness",
+      "words": 12,
+      "found": false,
+      "pdfPage": null
+    },
+    {
+      "claim": "meta-cwm-preparedness:Q11",
+      "evidence": 1,
+      "source": "meta-cwm-preparedness",
+      "words": 16,
+      "found": false,
+      "pdfPage": null
+    },
+    {
+      "claim": "meta-cwm-preparedness:Q11",
+      "evidence": 2,
+      "source": "meta-cwm-preparedness",
+      "words": 21,
+      "found": false,
+      "pdfPage": null
+    },
+    {
+      "claim": "meta-cwm-preparedness:Q15",
+      "evidence": 1,
+      "source": "meta-cwm-preparedness",
+      "words": 27,
+      "found": false,
+      "pdfPage": null
+    },
+    {
+      "claim": "meta-cwm-preparedness:Q16",
+      "evidence": 1,
+      "source": "meta-cwm-preparedness",
+      "words": 10,
+      "found": false,
+      "pdfPage": null
+    },
+    {
+      "claim": "meta-cwm-preparedness:Q16",
+      "evidence": 2,
+      "source": "meta-cwm-preparedness",
+      "words": 9,
+      "found": false,
+      "pdfPage": null
+    },
+    {
+      "claim": "meta-muse-spark-1-3:Q01",
+      "evidence": 1,
+      "source": "meta-muse-spark-1-3",
+      "words": 4,
+      "found": true,
+      "pdfPage": 2
+    },
+    {
+      "claim": "meta-muse-spark-1-3:Q02",
+      "evidence": 1,
+      "source": "meta-muse-spark-1-3",
+      "words": 13,
+      "found": true,
+      "pdfPage": 2
+    },
+    {
+      "claim": "meta-muse-spark-1-3:Q03",
+      "evidence": 1,
+      "source": "meta-muse-spark-1-3",
+      "words": 14,
+      "found": true,
+      "pdfPage": 2
+    },
+    {
+      "claim": "meta-muse-spark-1-3:Q04",
+      "evidence": 1,
+      "source": "meta-muse-spark-1-3",
+      "words": 16,
+      "found": true,
+      "pdfPage": 11
+    },
+    {
+      "claim": "meta-muse-spark-1-3:Q05",
+      "evidence": 1,
+      "source": "meta-muse-spark-1-3",
+      "words": 21,
+      "found": true,
+      "pdfPage": 2
+    },
+    {
+      "claim": "meta-muse-spark-1-3:Q05",
+      "evidence": 2,
+      "source": "meta-muse-spark-1-3",
+      "words": 30,
+      "found": true,
+      "pdfPage": 8
+    },
+    {
+      "claim": "meta-muse-spark-1-3:Q06",
+      "evidence": 1,
+      "source": "meta-muse-spark-1-3",
+      "words": 21,
+      "found": true,
+      "pdfPage": 2
+    },
+    {
+      "claim": "meta-muse-spark-1-3:Q07",
+      "evidence": 1,
+      "source": "meta-muse-spark-1-3",
+      "words": 16,
+      "found": true,
+      "pdfPage": 8
+    },
+    {
+      "claim": "meta-muse-spark-1-3:Q08",
+      "evidence": 1,
+      "source": "meta-muse-spark-1-3",
+      "words": 20,
+      "found": true,
+      "pdfPage": 9
+    },
+    {
+      "claim": "meta-muse-spark-1-3:Q09",
+      "evidence": 1,
+      "source": "meta-muse-spark-1-3",
+      "words": 14,
+      "found": true,
+      "pdfPage": 35
+    },
+    {
+      "claim": "meta-muse-spark-1-3:Q10",
+      "evidence": 1,
+      "source": "meta-muse-spark-1-3",
+      "words": 17,
+      "found": true,
+      "pdfPage": 25
+    },
+    {
+      "claim": "meta-muse-spark-1-3:Q10",
+      "evidence": 2,
+      "source": "meta-muse-spark-1-3",
+      "words": 10,
+      "found": true,
+      "pdfPage": 26
+    },
+    {
+      "claim": "meta-muse-spark-1-3:Q11",
+      "evidence": 1,
+      "source": "meta-muse-spark-1-3",
+      "words": 12,
+      "found": true,
+      "pdfPage": 9
+    },
+    {
+      "claim": "meta-muse-spark-1-3:Q11",
+      "evidence": 2,
+      "source": "meta-muse-spark-1-3",
+      "words": 15,
+      "found": true,
+      "pdfPage": 9
+    },
+    {
+      "claim": "meta-muse-spark-1-3:Q11",
+      "evidence": 3,
+      "source": "meta-muse-spark-1-3",
+      "words": 12,
+      "found": true,
+      "pdfPage": 9
+    },
+    {
+      "claim": "meta-muse-spark-1-3:Q12",
+      "evidence": 1,
+      "source": "meta-muse-spark-1-3",
+      "words": 11,
+      "found": true,
+      "pdfPage": 9
+    },
+    {
+      "claim": "meta-muse-spark-1-3:Q12",
+      "evidence": 2,
+      "source": "meta-muse-spark-1-3",
+      "words": 20,
+      "found": true,
+      "pdfPage": 10
+    },
+    {
+      "claim": "meta-muse-spark-1-3:Q13",
+      "evidence": 1,
+      "source": "meta-muse-spark-1-3",
+      "words": 20,
+      "found": true,
+      "pdfPage": 59
+    },
+    {
+      "claim": "meta-muse-spark-1-3:Q13",
+      "evidence": 2,
+      "source": "meta-muse-spark-1-3",
+      "words": 17,
+      "found": true,
+      "pdfPage": 67
+    },
+    {
+      "claim": "meta-muse-spark-1-3:Q16",
+      "evidence": 1,
+      "source": "meta-muse-spark-1-3",
+      "words": 13,
+      "found": true,
+      "pdfPage": 36
+    },
+    {
+      "claim": "meta-muse-spark-1-3:Q16",
+      "evidence": 2,
+      "source": "meta-muse-spark-1-3",
+      "words": 19,
+      "found": true,
+      "pdfPage": 9
+    },
+    {
+      "claim": "microsoft-phi-2:Q02",
+      "evidence": 1,
+      "source": "microsoft-phi-2",
+      "words": 18,
+      "found": true,
+      "pdfPage": null
+    },
+    {
+      "claim": "microsoft-phi-2:Q06",
+      "evidence": 1,
+      "source": "microsoft-phi-2",
+      "words": 7,
+      "found": true,
+      "pdfPage": null
+    },
+    {
+      "claim": "microsoft-phi-2:Q15",
+      "evidence": 1,
+      "source": "microsoft-phi-2",
+      "words": 20,
+      "found": true,
+      "pdfPage": null
+    },
+    {
+      "claim": "microsoft-phi-2:Q16",
+      "evidence": 1,
+      "source": "microsoft-phi-2",
+      "words": 17,
+      "found": true,
+      "pdfPage": null
+    },
+    {
+      "claim": "microsoft-phi-4:Q02",
+      "evidence": 1,
+      "source": "microsoft-phi-4",
+      "words": 6,
+      "found": true,
+      "pdfPage": null
+    },
+    {
+      "claim": "microsoft-phi-4:Q02",
+      "evidence": 2,
+      "source": "microsoft-phi-4",
+      "words": 5,
+      "found": true,
+      "pdfPage": null
+    },
+    {
+      "claim": "microsoft-phi-4:Q06",
+      "evidence": 1,
+      "source": "microsoft-phi-4",
+      "words": 12,
+      "found": true,
+      "pdfPage": null
+    },
+    {
+      "claim": "microsoft-phi-4:Q12",
+      "evidence": 1,
+      "source": "microsoft-phi-4",
+      "words": 25,
+      "found": true,
+      "pdfPage": null
+    },
+    {
+      "claim": "microsoft-phi-4:Q16",
+      "evidence": 1,
+      "source": "microsoft-phi-4",
+      "words": 12,
+      "found": true,
+      "pdfPage": null
+    },
+    {
+      "claim": "microsoft-phi-4-mini-flash-reasoning:Q02",
+      "evidence": 1,
+      "source": "microsoft-phi-4-mini-flash-reasoning",
+      "words": 4,
+      "found": true,
+      "pdfPage": null
+    },
+    {
+      "claim": "microsoft-phi-4-mini-flash-reasoning:Q02",
+      "evidence": 2,
+      "source": "microsoft-phi-4-mini-flash-reasoning",
+      "words": 6,
+      "found": true,
+      "pdfPage": null
+    },
+    {
+      "claim": "microsoft-phi-4-mini-flash-reasoning:Q06",
+      "evidence": 1,
+      "source": "microsoft-phi-4-mini-flash-reasoning",
+      "words": 26,
+      "found": true,
+      "pdfPage": null
+    },
+    {
+      "claim": "microsoft-phi-4-mini-flash-reasoning:Q12",
+      "evidence": 1,
+      "source": "microsoft-phi-4-mini-flash-reasoning",
+      "words": 4,
+      "found": true,
+      "pdfPage": null
+    },
+    {
+      "claim": "microsoft-phi-4-mini-flash-reasoning:Q12",
+      "evidence": 2,
+      "source": "microsoft-phi-4-mini-flash-reasoning",
+      "words": 28,
+      "found": true,
+      "pdfPage": null
+    },
+    {
+      "claim": "microsoft-phi-4-mini-flash-reasoning:Q16",
+      "evidence": 1,
+      "source": "microsoft-phi-4-mini-flash-reasoning",
+      "words": 21,
+      "found": true,
+      "pdfPage": null
+    },
+    {
+      "claim": "microsoft-mai-cyber-1-1-flash:Q02",
+      "evidence": 1,
+      "source": "microsoft-mai-cyber-1-1-flash",
+      "words": 3,
+      "found": true,
+      "pdfPage": 1
+    },
+    {
+      "claim": "microsoft-mai-cyber-1-1-flash:Q02",
+      "evidence": 2,
+      "source": "microsoft-mai-cyber-1-1-flash",
+      "words": 14,
+      "found": true,
+      "pdfPage": 3
+    },
+    {
+      "claim": "microsoft-mai-cyber-1-1-flash:Q06",
+      "evidence": 1,
+      "source": "microsoft-mai-cyber-1-1-flash",
+      "words": 20,
+      "found": true,
+      "pdfPage": 4
+    },
+    {
+      "claim": "microsoft-mai-cyber-1-1-flash:Q08",
+      "evidence": 1,
+      "source": "microsoft-mai-cyber-1-1-flash",
+      "words": 14,
+      "found": true,
+      "pdfPage": 4
+    },
+    {
+      "claim": "microsoft-mai-cyber-1-1-flash:Q08",
+      "evidence": 2,
+      "source": "microsoft-mai-cyber-1-1-flash",
+      "words": 10,
+      "found": true,
+      "pdfPage": 7
+    },
+    {
+      "claim": "microsoft-mai-cyber-1-1-flash:Q10",
+      "evidence": 1,
+      "source": "microsoft-mai-cyber-1-1-flash",
+      "words": 13,
+      "found": true,
+      "pdfPage": 5
+    },
+    {
+      "claim": "microsoft-mai-cyber-1-1-flash:Q12",
+      "evidence": 1,
+      "source": "microsoft-mai-cyber-1-1-flash",
+      "words": 9,
+      "found": true,
+      "pdfPage": 7
+    },
+    {
+      "claim": "microsoft-mai-cyber-1-1-flash:Q12",
+      "evidence": 2,
+      "source": "microsoft-mai-cyber-1-1-flash",
+      "words": 14,
+      "found": true,
+      "pdfPage": 7
+    },
+    {
+      "claim": "microsoft-mai-cyber-1-1-flash:Q13",
+      "evidence": 1,
+      "source": "microsoft-mai-cyber-1-1-flash",
+      "words": 15,
+      "found": true,
+      "pdfPage": 7
+    },
+    {
+      "claim": "microsoft-mai-cyber-1-1-flash:Q15",
+      "evidence": 1,
+      "source": "microsoft-mai-cyber-1-1-flash",
+      "words": 15,
+      "found": true,
+      "pdfPage": 7
+    },
+    {
+      "claim": "microsoft-mai-cyber-1-1-flash:Q16",
+      "evidence": 1,
+      "source": "microsoft-mai-cyber-1-1-flash",
+      "words": 19,
+      "found": true,
+      "pdfPage": 5
+    },
+    {
+      "claim": "openai-gpt-4v:Q01",
+      "evidence": 1,
+      "source": "openai-gpt-4v",
+      "words": 7,
+      "found": true,
+      "pdfPage": 1
+    },
+    {
+      "claim": "openai-gpt-4v:Q02",
+      "evidence": 1,
+      "source": "openai-gpt-4v",
+      "words": 19,
+      "found": true,
+      "pdfPage": 1
+    },
+    {
+      "claim": "openai-gpt-4v:Q02",
+      "evidence": 2,
+      "source": "openai-gpt-4v",
+      "words": 9,
+      "found": true,
+      "pdfPage": 1
+    },
+    {
+      "claim": "openai-gpt-4v:Q06",
+      "evidence": 1,
+      "source": "openai-gpt-4v",
+      "words": 14,
+      "found": true,
+      "pdfPage": 13
+    },
+    {
+      "claim": "openai-gpt-4v:Q06",
+      "evidence": 2,
+      "source": "openai-gpt-4v",
+      "words": 10,
+      "found": true,
+      "pdfPage": 14
+    },
+    {
+      "claim": "openai-gpt-4v:Q07",
+      "evidence": 1,
+      "source": "openai-gpt-4v",
+      "words": 23,
+      "found": true,
+      "pdfPage": 6
+    },
+    {
+      "claim": "openai-gpt-4v:Q07",
+      "evidence": 2,
+      "source": "openai-gpt-4v",
+      "words": 27,
+      "found": true,
+      "pdfPage": 6
+    },
+    {
+      "claim": "openai-gpt-4v:Q07",
+      "evidence": 3,
+      "source": "openai-gpt-4v",
+      "words": 16,
+      "found": true,
+      "pdfPage": 7
+    },
+    {
+      "claim": "openai-gpt-4v:Q08",
+      "evidence": 1,
+      "source": "openai-gpt-4v",
+      "words": 6,
+      "found": true,
+      "pdfPage": 3
+    },
+    {
+      "claim": "openai-gpt-4v:Q08",
+      "evidence": 2,
+      "source": "openai-gpt-4v",
+      "words": 16,
+      "found": true,
+      "pdfPage": 5
+    },
+    {
+      "claim": "openai-gpt-4v:Q09",
+      "evidence": 1,
+      "source": "openai-gpt-4v",
+      "words": 23,
+      "found": true,
+      "pdfPage": 6
+    },
+    {
+      "claim": "openai-gpt-4v:Q09",
+      "evidence": 2,
+      "source": "openai-gpt-4v",
+      "words": 27,
+      "found": true,
+      "pdfPage": 6
+    },
+    {
+      "claim": "openai-gpt-4v:Q12",
+      "evidence": 1,
+      "source": "openai-gpt-4v",
+      "words": 18,
+      "found": true,
+      "pdfPage": 5
+    },
+    {
+      "claim": "openai-gpt-4v:Q12",
+      "evidence": 2,
+      "source": "openai-gpt-4v",
+      "words": 12,
+      "found": true,
+      "pdfPage": 6
+    },
+    {
+      "claim": "openai-gpt-4v:Q13",
+      "evidence": 1,
+      "source": "openai-gpt-4v",
+      "words": 35,
+      "found": true,
+      "pdfPage": 2
+    },
+    {
+      "claim": "openai-gpt-4v:Q15",
+      "evidence": 1,
+      "source": "openai-gpt-4v",
+      "words": 14,
+      "found": true,
+      "pdfPage": 1
+    },
+    {
+      "claim": "openai-gpt-4v:Q15",
+      "evidence": 2,
+      "source": "openai-gpt-4v",
+      "words": 9,
+      "found": true,
+      "pdfPage": 1
+    },
+    {
+      "claim": "openai-gpt-4v:Q16",
+      "evidence": 1,
+      "source": "openai-gpt-4v",
+      "words": 19,
+      "found": true,
+      "pdfPage": 12
+    },
+    {
+      "claim": "openai-gpt-4v:Q16",
+      "evidence": 2,
+      "source": "openai-gpt-4v",
+      "words": 23,
+      "found": true,
+      "pdfPage": 4
+    },
+    {
+      "claim": "openai-o1:Q01",
+      "evidence": 1,
+      "source": "openai-o1",
+      "words": 8,
+      "found": true,
+      "pdfPage": 1
+    },
+    {
+      "claim": "openai-o1:Q01",
+      "evidence": 2,
+      "source": "openai-o1",
+      "words": 13,
+      "found": true,
+      "pdfPage": 2
+    },
+    {
+      "claim": "openai-o1:Q01",
+      "evidence": 3,
+      "source": "openai-o1",
+      "words": 7,
+      "found": true,
+      "pdfPage": 2
+    },
+    {
+      "claim": "openai-o1:Q02",
+      "evidence": 1,
+      "source": "openai-o1",
+      "words": 8,
+      "found": true,
+      "pdfPage": 2
+    },
+    {
+      "claim": "openai-o1:Q02",
+      "evidence": 2,
+      "source": "openai-o1",
+      "words": 15,
+      "found": true,
+      "pdfPage": 6
+    },
+    {
+      "claim": "openai-o1:Q03",
+      "evidence": 1,
+      "source": "openai-o1",
+      "words": 9,
+      "found": true,
+      "pdfPage": 15
+    },
+    {
+      "claim": "openai-o1:Q03",
+      "evidence": 2,
+      "source": "openai-o1",
+      "words": 7,
+      "found": true,
+      "pdfPage": 52
+    },
+    {
+      "claim": "openai-o1:Q04",
+      "evidence": 1,
+      "source": "openai-o1",
+      "words": 5,
+      "found": true,
+      "pdfPage": 52
+    },
+    {
+      "claim": "openai-o1:Q05",
+      "evidence": 1,
+      "source": "openai-o1",
+      "words": 29,
+      "found": true,
+      "pdfPage": 16
+    },
+    {
+      "claim": "openai-o1:Q05",
+      "evidence": 2,
+      "source": "openai-o1",
+      "words": 24,
+      "found": true,
+      "pdfPage": 16
+    },
+    {
+      "claim": "openai-o1:Q06",
+      "evidence": 1,
+      "source": "openai-o1",
+      "words": 19,
+      "found": true,
+      "pdfPage": 17
+    },
+    {
+      "claim": "openai-o1:Q06",
+      "evidence": 2,
+      "source": "openai-o1",
+      "words": 16,
+      "found": true,
+      "pdfPage": 17
+    },
+    {
+      "claim": "openai-o1:Q07",
+      "evidence": 1,
+      "source": "openai-o1",
+      "words": 12,
+      "found": true,
+      "pdfPage": 19
+    },
+    {
+      "claim": "openai-o1:Q07",
+      "evidence": 2,
+      "source": "openai-o1",
+      "words": 17,
+      "found": true,
+      "pdfPage": 27
+    },
+    {
+      "claim": "openai-o1:Q08",
+      "evidence": 1,
+      "source": "openai-o1",
+      "words": 21,
+      "found": true,
+      "pdfPage": 17
+    },
+    {
+      "claim": "openai-o1:Q09",
+      "evidence": 1,
+      "source": "openai-o1",
+      "words": 25,
+      "found": true,
+      "pdfPage": 34
+    },
+    {
+      "claim": "openai-o1:Q10",
+      "evidence": 1,
+      "source": "openai-o1",
+      "words": 8,
+      "found": true,
+      "pdfPage": 29
+    },
+    {
+      "claim": "openai-o1:Q10",
+      "evidence": 2,
+      "source": "openai-o1",
+      "words": 15,
+      "found": true,
+      "pdfPage": 29
+    },
+    {
+      "claim": "openai-o1:Q11",
+      "evidence": 1,
+      "source": "openai-o1",
+      "words": 12,
+      "found": true,
+      "pdfPage": 13
+    },
+    {
+      "claim": "openai-o1:Q11",
+      "evidence": 2,
+      "source": "openai-o1",
+      "words": 35,
+      "found": true,
+      "pdfPage": 13
+    },
+    {
+      "claim": "openai-o1:Q11",
+      "evidence": 3,
+      "source": "openai-o1",
+      "words": 9,
+      "found": true,
+      "pdfPage": 8
+    },
+    {
+      "claim": "openai-o1:Q12",
+      "evidence": 1,
+      "source": "openai-o1",
+      "words": 29,
+      "found": true,
+      "pdfPage": 11
+    },
+    {
+      "claim": "openai-o1:Q12",
+      "evidence": 2,
+      "source": "openai-o1",
+      "words": 15,
+      "found": true,
+      "pdfPage": 11
+    },
+    {
+      "claim": "openai-o1:Q13",
+      "evidence": 1,
+      "source": "openai-o1",
+      "words": 20,
+      "found": true,
+      "pdfPage": 13
+    },
+    {
+      "claim": "openai-o1:Q13",
+      "evidence": 2,
+      "source": "openai-o1",
+      "words": 24,
+      "found": true,
+      "pdfPage": 14
+    },
+    {
+      "claim": "openai-o1:Q13",
+      "evidence": 3,
+      "source": "openai-o1",
+      "words": 18,
+      "found": true,
+      "pdfPage": 12
+    },
+    {
+      "claim": "openai-o1:Q14",
+      "evidence": 1,
+      "source": "openai-o1",
+      "words": 34,
+      "found": true,
+      "pdfPage": 3
+    },
+    {
+      "claim": "openai-o1:Q15",
+      "evidence": 1,
+      "source": "openai-o1",
+      "words": 13,
+      "found": true,
+      "pdfPage": 15
+    },
+    {
+      "claim": "openai-o1:Q15",
+      "evidence": 2,
+      "source": "openai-o1",
+      "words": 17,
+      "found": true,
+      "pdfPage": 42
+    },
+    {
+      "claim": "openai-o1:Q16",
+      "evidence": 1,
+      "source": "openai-o1",
+      "words": 14,
+      "found": true,
+      "pdfPage": 16
+    },
+    {
+      "claim": "openai-o1:Q16",
+      "evidence": 2,
+      "source": "openai-o1",
+      "words": 9,
+      "found": true,
+      "pdfPage": 27
+    },
+    {
+      "claim": "openai-gpt-5-2-codex:Q01",
+      "evidence": 1,
+      "source": "openai-gpt-5-2-codex",
+      "words": 10,
+      "found": true,
+      "pdfPage": 1
+    },
+    {
+      "claim": "openai-gpt-5-2-codex:Q02",
+      "evidence": 1,
+      "source": "openai-gpt-5-2-codex",
+      "words": 10,
+      "found": true,
+      "pdfPage": 4
+    },
+    {
+      "claim": "openai-gpt-5-2-codex:Q02",
+      "evidence": 2,
+      "source": "openai-gpt-5-2-codex",
+      "words": 23,
+      "found": true,
+      "pdfPage": 4
+    },
+    {
+      "claim": "openai-gpt-5-2-codex:Q03",
+      "evidence": 1,
+      "source": "openai-gpt-5-2-codex",
+      "words": 7,
+      "found": true,
+      "pdfPage": 4
+    },
+    {
+      "claim": "openai-gpt-5-2-codex:Q03",
+      "evidence": 2,
+      "source": "openai-gpt-5-2-codex",
+      "words": 9,
+      "found": true,
+      "pdfPage": 12
+    },
+    {
+      "claim": "openai-gpt-5-2-codex:Q04",
+      "evidence": 1,
+      "source": "openai-gpt-5-2-codex",
+      "words": 9,
+      "found": true,
+      "pdfPage": 12
+    },
+    {
+      "claim": "openai-gpt-5-2-codex:Q04",
+      "evidence": 2,
+      "source": "openai-gpt-5-2-codex",
+      "words": 9,
+      "found": true,
+      "pdfPage": 8
+    },
+    {
+      "claim": "openai-gpt-5-2-codex:Q05",
+      "evidence": 1,
+      "source": "openai-gpt-5-2-codex",
+      "words": 36,
+      "found": true,
+      "pdfPage": 8
+    },
+    {
+      "claim": "openai-gpt-5-2-codex:Q05",
+      "evidence": 2,
+      "source": "openai-gpt-5-2-codex",
+      "words": 12,
+      "found": true,
+      "pdfPage": 8
+    },
+    {
+      "claim": "openai-gpt-5-2-codex:Q06",
+      "evidence": 1,
+      "source": "openai-gpt-5-2-codex",
+      "words": 32,
+      "found": true,
+      "pdfPage": 4
+    },
+    {
+      "claim": "openai-gpt-5-2-codex:Q07",
+      "evidence": 1,
+      "source": "openai-gpt-5-2-codex",
+      "words": 30,
+      "found": true,
+      "pdfPage": 9
+    },
+    {
+      "claim": "openai-gpt-5-2-codex:Q08",
+      "evidence": 1,
+      "source": "openai-gpt-5-2-codex",
+      "words": 36,
+      "found": true,
+      "pdfPage": 13
+    },
+    {
+      "claim": "openai-gpt-5-2-codex:Q09",
+      "evidence": 1,
+      "source": "openai-gpt-5-2-codex",
+      "words": 16,
+      "found": true,
+      "pdfPage": 17
+    },
+    {
+      "claim": "openai-gpt-5-2-codex:Q09",
+      "evidence": 2,
+      "source": "openai-gpt-5-2-codex",
+      "words": 13,
+      "found": true,
+      "pdfPage": 17
+    },
+    {
+      "claim": "openai-gpt-5-2-codex:Q13",
+      "evidence": 1,
+      "source": "openai-gpt-5-2-codex",
+      "words": 21,
+      "found": true,
+      "pdfPage": 16
+    },
+    {
+      "claim": "openai-gpt-5-2-codex:Q15",
+      "evidence": 1,
+      "source": "openai-gpt-5-2-codex",
+      "words": 36,
+      "found": true,
+      "pdfPage": 13
+    },
+    {
+      "claim": "openai-gpt-5-2-codex:Q15",
+      "evidence": 2,
+      "source": "openai-gpt-5-2-codex",
+      "words": 32,
+      "found": true,
+      "pdfPage": 4
+    },
+    {
+      "claim": "openai-gpt-5-2-codex:Q16",
+      "evidence": 1,
+      "source": "openai-gpt-5-2-codex",
+      "words": 7,
+      "found": true,
+      "pdfPage": 12
+    },
+    {
+      "claim": "openai-gpt-5-2-codex:Q16",
+      "evidence": 2,
+      "source": "openai-gpt-5-2-codex",
+      "words": 24,
+      "found": true,
+      "pdfPage": 13
+    },
+    {
+      "claim": "openai-gpt-6-luna-october-29:Q01",
+      "evidence": 1,
+      "source": "openai-gpt-6-luna-october-29",
+      "words": 12,
+      "found": true,
+      "pdfPage": 1
+    },
+    {
+      "claim": "openai-gpt-6-luna-october-29:Q02",
+      "evidence": 1,
+      "source": "openai-gpt-6-luna-october-29",
+      "words": 16,
+      "found": true,
+      "pdfPage": 4
+    },
+    {
+      "claim": "openai-gpt-6-luna-october-29:Q03",
+      "evidence": 1,
+      "source": "openai-gpt-6-luna-october-29",
+      "words": 22,
+      "found": true,
+      "pdfPage": 13
+    },
+    {
+      "claim": "openai-gpt-6-luna-october-29:Q04",
+      "evidence": 1,
+      "source": "openai-gpt-6-luna-october-29",
+      "words": 22,
+      "found": true,
+      "pdfPage": 13
+    },
+    {
+      "claim": "openai-gpt-6-luna-october-29:Q05",
+      "evidence": 1,
+      "source": "openai-gpt-6-luna-october-29",
+      "words": 22,
+      "found": true,
+      "pdfPage": 13
+    },
+    {
+      "claim": "openai-gpt-6-luna-october-29:Q05",
+      "evidence": 2,
+      "source": "openai-gpt-6-luna-october-29",
+      "words": 11,
+      "found": true,
+      "pdfPage": 13
+    },
+    {
+      "claim": "openai-gpt-6-luna-october-29:Q06",
+      "evidence": 1,
+      "source": "openai-gpt-6-luna-october-29",
+      "words": 19,
+      "found": true,
+      "pdfPage": 4
+    },
+    {
+      "claim": "openai-gpt-6-luna-october-29:Q06",
+      "evidence": 2,
+      "source": "openai-gpt-6-luna-october-29",
+      "words": 14,
+      "found": true,
+      "pdfPage": 13
+    },
+    {
+      "claim": "openai-gpt-6-luna-october-29:Q07",
+      "evidence": 1,
+      "source": "openai-gpt-6-luna-october-29",
+      "words": 28,
+      "found": true,
+      "pdfPage": 13
+    },
+    {
+      "claim": "openai-gpt-6-luna-october-29:Q08",
+      "evidence": 1,
+      "source": "openai-gpt-6-luna-october-29",
+      "words": 24,
+      "found": true,
+      "pdfPage": 14
+    },
+    {
+      "claim": "openai-gpt-6-luna-october-29:Q09",
+      "evidence": 1,
+      "source": "openai-gpt-6-luna-october-29",
+      "words": 14,
+      "found": true,
+      "pdfPage": 15
+    },
+    {
+      "claim": "openai-gpt-6-luna-october-29:Q09",
+      "evidence": 2,
+      "source": "openai-gpt-6-luna-october-29",
+      "words": 12,
+      "found": true,
+      "pdfPage": 15
+    },
+    {
+      "claim": "openai-gpt-6-luna-october-29:Q11",
+      "evidence": 1,
+      "source": "openai-gpt-6-luna-october-29",
+      "words": 10,
+      "found": true,
+      "pdfPage": 12
+    },
+    {
+      "claim": "openai-gpt-6-luna-october-29:Q11",
+      "evidence": 2,
+      "source": "openai-gpt-6-luna-october-29",
+      "words": 12,
+      "found": true,
+      "pdfPage": 11
+    },
+    {
+      "claim": "openai-gpt-6-luna-october-29:Q12",
+      "evidence": 1,
+      "source": "openai-gpt-6-luna-october-29",
+      "words": 15,
+      "found": true,
+      "pdfPage": 7
+    },
+    {
+      "claim": "openai-gpt-6-luna-october-29:Q12",
+      "evidence": 2,
+      "source": "openai-gpt-6-luna-october-29",
+      "words": 15,
+      "found": true,
+      "pdfPage": 7
+    },
+    {
+      "claim": "openai-gpt-6-luna-october-29:Q15",
+      "evidence": 1,
+      "source": "openai-gpt-6-luna-october-29",
+      "words": 25,
+      "found": true,
+      "pdfPage": 15
+    },
+    {
+      "claim": "openai-gpt-6-luna-october-29:Q16",
+      "evidence": 1,
+      "source": "openai-gpt-6-luna-october-29",
+      "words": 10,
+      "found": true,
+      "pdfPage": 7
+    },
+    {
+      "claim": "openai-gpt-6-luna-october-29:Q16",
+      "evidence": 2,
+      "source": "openai-gpt-6-luna-october-29",
+      "words": 27,
+      "found": true,
+      "pdfPage": 4
+    },
+    {
+      "claim": "xai-grok-4-1:Q01",
+      "evidence": 1,
+      "source": "xai-grok-4-1",
+      "words": 8,
+      "found": true,
+      "pdfPage": 1
+    },
+    {
+      "claim": "xai-grok-4-1:Q02",
+      "evidence": 1,
+      "source": "xai-grok-4-1",
+      "words": 11,
+      "found": true,
+      "pdfPage": 1
+    },
+    {
+      "claim": "xai-grok-4-1:Q03",
+      "evidence": 1,
+      "source": "xai-grok-4-1",
+      "words": 15,
+      "found": true,
+      "pdfPage": 1
+    },
+    {
+      "claim": "xai-grok-4-1:Q03",
+      "evidence": 2,
+      "source": "xai-grok-4-1",
+      "words": 6,
+      "found": true,
+      "pdfPage": 6
+    },
+    {
+      "claim": "xai-grok-4-1:Q04",
+      "evidence": 1,
+      "source": "xai-grok-4-1",
+      "words": 6,
+      "found": true,
+      "pdfPage": 6
+    },
+    {
+      "claim": "xai-grok-4-1:Q06",
+      "evidence": 1,
+      "source": "xai-grok-4-1",
+      "words": 19,
+      "found": true,
+      "pdfPage": 5
+    },
+    {
+      "claim": "xai-grok-4-1:Q07",
+      "evidence": 1,
+      "source": "xai-grok-4-1",
+      "words": 19,
+      "found": true,
+      "pdfPage": 4
+    },
+    {
+      "claim": "xai-grok-4-1:Q08",
+      "evidence": 1,
+      "source": "xai-grok-4-1",
+      "words": 18,
+      "found": true,
+      "pdfPage": 5
+    },
+    {
+      "claim": "xai-grok-4-1:Q10",
+      "evidence": 1,
+      "source": "xai-grok-4-1",
+      "words": 12,
+      "found": true,
+      "pdfPage": 5
+    },
+    {
+      "claim": "xai-grok-4-1:Q11",
+      "evidence": 1,
+      "source": "xai-grok-4-1",
+      "words": 18,
+      "found": true,
+      "pdfPage": 3
+    },
+    {
+      "claim": "xai-grok-4-1:Q16",
+      "evidence": 1,
+      "source": "xai-grok-4-1",
+      "words": 21,
+      "found": true,
+      "pdfPage": 2
+    },
+    {
+      "claim": "xai-grok-4-1:Q16",
+      "evidence": 2,
+      "source": "xai-grok-4-1",
+      "words": 15,
+      "found": true,
+      "pdfPage": 4
+    },
+    {
+      "claim": "xai-grok-4-7:Q01",
+      "evidence": 1,
+      "source": "xai-grok-4-7",
+      "words": 9,
+      "found": true,
+      "pdfPage": 1
+    },
+    {
+      "claim": "xai-grok-4-7:Q02",
+      "evidence": 1,
+      "source": "xai-grok-4-7",
+      "words": 9,
+      "found": true,
+      "pdfPage": 5
+    },
+    {
+      "claim": "xai-grok-4-7:Q02",
+      "evidence": 2,
+      "source": "xai-grok-4-7",
+      "words": 23,
+      "found": true,
+      "pdfPage": 5
+    },
+    {
+      "claim": "xai-grok-4-7:Q03",
+      "evidence": 1,
+      "source": "xai-grok-4-7",
+      "words": 12,
+      "found": true,
+      "pdfPage": 20
+    },
+    {
+      "claim": "xai-grok-4-7:Q03",
+      "evidence": 2,
+      "source": "xai-grok-4-7",
+      "words": 10,
+      "found": true,
+      "pdfPage": 29
+    },
+    {
+      "claim": "xai-grok-4-7:Q04",
+      "evidence": 1,
+      "source": "xai-grok-4-7",
+      "words": 10,
+      "found": true,
+      "pdfPage": 29
+    },
+    {
+      "claim": "xai-grok-4-7:Q05",
+      "evidence": 1,
+      "source": "xai-grok-4-7",
+      "words": 11,
+      "found": true,
+      "pdfPage": 20
+    },
+    {
+      "claim": "xai-grok-4-7:Q06",
+      "evidence": 1,
+      "source": "xai-grok-4-7",
+      "words": 11,
+      "found": true,
+      "pdfPage": 25
+    },
+    {
+      "claim": "xai-grok-4-7:Q07",
+      "evidence": 1,
+      "source": "xai-grok-4-7",
+      "words": 11,
+      "found": true,
+      "pdfPage": 20
+    },
+    {
+      "claim": "xai-grok-4-7:Q08",
+      "evidence": 1,
+      "source": "xai-grok-4-7",
+      "words": 10,
+      "found": true,
+      "pdfPage": 17
+    },
+    {
+      "claim": "xai-grok-4-7:Q11",
+      "evidence": 1,
+      "source": "xai-grok-4-7",
+      "words": 24,
+      "found": true,
+      "pdfPage": 26
+    },
+    {
+      "claim": "xai-grok-4-7:Q13",
+      "evidence": 1,
+      "source": "xai-grok-4-7",
+      "words": 9,
+      "found": true,
+      "pdfPage": 8
+    },
+    {
+      "claim": "xai-grok-4-7:Q13",
+      "evidence": 2,
+      "source": "xai-grok-4-7",
+      "words": 10,
+      "found": true,
+      "pdfPage": 19
+    },
+    {
+      "claim": "xai-grok-4-7:Q13",
+      "evidence": 3,
+      "source": "xai-grok-4-7",
+      "words": 12,
+      "found": true,
+      "pdfPage": 17
+    },
+    {
+      "claim": "xai-grok-4-7:Q16",
+      "evidence": 1,
+      "source": "xai-grok-4-7",
+      "words": 18,
+      "found": true,
+      "pdfPage": 20
+    },
+    {
+      "claim": "xai-grok-4-7:Q16",
+      "evidence": 2,
+      "source": "xai-grok-4-7",
+      "words": 8,
+      "found": true,
+      "pdfPage": 9
+    }
+  ]
+}

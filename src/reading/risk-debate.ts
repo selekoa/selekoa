@@ -1,5 +1,6 @@
 import type { PropositionsCollection } from '../domain/propositions';
 import { riskDebateFrame as frame } from './proposition-frames';
+import { describeGroups } from './describe-groups';
 
 /** The maintainer's decisions of 2026-11-02 on the archive retrieval of held sources. */
 const archiveApply = '2026-11-02';
@@ -24,7 +25,10 @@ export const riskDebate: PropositionsCollection = {
   editorialStatus: frame.editorialStatus,
   introduction:
     'Each argument is recorded as a proposition with one criterion. It is phrased generically and attributed to no one. A text that meets the criterion articulates the proposition. A text that disputes it, or a premise it depends on, contests it, and the record says whether the passage gives a reason or states the contrary only. A text that comes close bears on it, and its record names what is missing. A record says what one text states on its date. It does not place its author in a camp, and one author can have records that articulate and records that contest the same proposition. Texts are listed in date order; the order records no influence between them. The page records what texts say. It does not assess whether any argument is right.',
-  groups: frame.groups,
+  groups: describeGroups(frame.groups, {
+    R1: 'The premises (orthogonality, instrumental convergence, misalignment learned in training, the treacherous turn, fast takeoff, the difficulty of alignment) and the claims of extinction, loss of control and misuse. B1 and A4 are the treacherous-turn and fast-takeoff propositions of the superintelligence collection, shown here with the texts recorded on them from both searches.',
+    R2: 'Whether intelligence brings benevolence or control by design suffices, whether the risk claims are speculative, whether present harms come first, whether capabilities will plateau, whether language models lack agency, whether open models reduce risk, whether takeoff will be gradual and whether incentives will produce safety. The group label says which way a proposition points; it does not classify the people whose texts are recorded.',
+  }),
   searchNote: {
     scope:
       'The collection records published texts dated from 1993 to October 2026 on sixteen propositions of its own and on two propositions it shares with the superintelligence collection (B1 and A4), whose earlier texts, from 1863, also appear here. “Earliest located” means the earliest text found by the searches below that meets the criterion. It is not a claim that no earlier text exists.',

@@ -1,0 +1,521 @@
+{
+  "group": "C",
+  "records": [
+    {
+      "group": "C",
+      "form": "expert-survey",
+      "register": "nonfiction",
+      "id": "pr-c-baum-2011-agi09",
+      "predictor": {
+        "name": "Baum, Goertzel and Goertzel, expert assessment at AGI-09",
+        "kind": "survey"
+      },
+      "sourceDate": {
+        "date": "2011",
+        "kind": "survey-report",
+        "note": "Assessment conducted at the AGI-09 conference (2009)."
+      },
+      "event": "human-level AI to be reached",
+      "horizon": {
+        "asStated": "within upcoming decades",
+        "words": "within upcoming decades",
+        "kind": "vague",
+        "precision": "decades"
+      },
+      "probability": null,
+      "survey": {
+        "respondents": "participants of the AGI-09 conference",
+        "conducted": "2009"
+      },
+      "qualification": "The abstract's summary; the paper's table gives medians by milestone and confidence level, which the text layer of the read file scrambles, so they are not recorded here. The abstract also reports disagreement on \"timing and ordering of key milestones\".",
+      "evidence": [
+        {
+          "source": "baum2011",
+          "locator": "Abstract",
+          "passage": "we did find that most experts expect human-level AI to be reached within upcoming decades",
+          "passageType": "quote",
+          "sourceRole": "primary",
+          "checkedAt": "2026-11-02"
+        }
+      ]
+    },
+    {
+      "group": "C",
+      "form": "expert-survey",
+      "register": "nonfiction",
+      "id": "pr-c-muller-bostrom-2014-hlmi",
+      "predictor": {
+        "name": "Müller and Bostrom, survey of expert opinion",
+        "kind": "survey"
+      },
+      "sourceDate": {
+        "date": "2014",
+        "kind": "survey-report",
+        "note": "File reads \"forthcoming 2014\"; questionnaire distributed 2012/2013; volume published 2016."
+      },
+      "event": "high-level machine intelligence will be developed",
+      "horizon": {
+        "asStated": "50%: around 2040-2050; 90%: by 2075 (median estimates)",
+        "words": "around 2040-2050, rising to a nine in ten chance by 2075",
+        "kind": "quantile",
+        "years": [2040, 2050, 2075],
+        "precision": "year"
+      },
+      "probability": {
+        "asStated": "\"a one in two chance\"; \"a nine in ten chance\"",
+        "words": "a one in two chance"
+      },
+      "survey": {
+        "respondents": "four groups of experts",
+        "conducted": "2012/2013",
+        "statistic": "median of respondents' estimates"
+      },
+      "qualification": "The question asks about \"such HLMI\" as defined in the paper's preceding question. The figure is the median of respondents' estimates across the four groups; the paper reports each group separately.",
+      "evidence": [
+        {
+          "source": "muller-bostrom",
+          "locator": "Abstract (PDF p. 1)",
+          "passage": "The median estimate of respondents was for a one in two chance that high-level machine intelligence will be developed around 2040-2050, rising to a nine in ten chance by 2075.",
+          "passageType": "quote",
+          "sourceRole": "primary",
+          "checkedAt": "2026-11-02"
+        },
+        {
+          "source": "muller-bostrom",
+          "locator": "§3.2 \"When HLMI?\", question 2 (PDF p. 9)",
+          "passage": "For the purposes of this question, assume that human scientific activity continues without major negative disruption.",
+          "passageType": "quote",
+          "sourceRole": "primary",
+          "checkedAt": "2026-11-02"
+        }
+      ],
+      "conditions": "The question assumes \"that human scientific activity continues without major negative disruption\".",
+      "points": [
+        {
+          "probability": "a one in two chance",
+          "horizon": "around 2040-2050"
+        },
+        {
+          "probability": "a nine in ten chance",
+          "horizon": "by 2075"
+        }
+      ]
+    },
+    {
+      "group": "C",
+      "form": "expert-survey",
+      "register": "nonfiction",
+      "id": "pr-c-muller-bostrom-2014-superintelligence",
+      "predictor": {
+        "name": "Müller and Bostrom, survey of expert opinion",
+        "kind": "survey"
+      },
+      "sourceDate": {
+        "date": "2014",
+        "kind": "survey-report"
+      },
+      "event": "systems will move on to superintelligence",
+      "horizon": {
+        "asStated": "in less than 30 years thereafter (after high-level machine intelligence); the question asked for probabilities \"within (2 years / 30 years) thereafter\"",
+        "words": "in less than 30 years thereafter",
+        "kind": "relative",
+        "interval": {
+          "amount": "less than 30",
+          "unit": "years",
+          "from": "high-level machine intelligence"
+        },
+        "precision": "year"
+      },
+      "probability": {
+        "asStated": "Not in the abstract. The body reports, for all respondents, a median of 75% within 30 years and 10% within 2 years (means 62% and 19%), in a table (PDF p. 12), and summarises it as \"a significant probability\"",
+        "words": "a significant probability for superintelligence within 30 years"
+      },
+      "survey": {
+        "respondents": "four groups of experts",
+        "conducted": "2012/2013"
+      },
+      "qualification": "The abstract's sentence summarises answers to a probability question, not a firm expectation: respondents chose a probability for each interval. The interval runs from the arrival of high-level machine intelligence, not from the survey date. The table's figures are given here in paraphrase.",
+      "evidence": [
+        {
+          "source": "muller-bostrom",
+          "locator": "Abstract (PDF p. 1)",
+          "passage": "Experts expect that systems will move on to superintelligence in less than 30 years thereafter.",
+          "passageType": "quote",
+          "sourceRole": "primary",
+          "checkedAt": "2026-11-02"
+        },
+        {
+          "source": "muller-bostrom",
+          "locator": "§3.3 \"From HLMI to superintelligence\", question 3 (PDF p. 11)",
+          "passage": "Assume for the purpose of this question that such HLMI will at some point exist. How likely do you then think it is that within (2 years / 30 years) thereafter",
+          "passageType": "quote",
+          "sourceRole": "primary",
+          "checkedAt": "2026-11-02"
+        },
+        {
+          "source": "muller-bostrom",
+          "locator": "§3.3, text after the table (PDF p. 12)",
+          "passage": "Experts allocate a low probability for a fast takeoff, but a significant probability for superintelligence within 30 years after HLMI.",
+          "passageType": "quote",
+          "sourceRole": "primary",
+          "checkedAt": "2026-11-02"
+        }
+      ],
+      "conditions": "The question assumes that high-level machine intelligence \"will at some point exist\"."
+    },
+    {
+      "group": "C",
+      "form": "expert-survey",
+      "register": "nonfiction",
+      "id": "pr-c-grace-2017-all-tasks",
+      "predictor": {
+        "name": "Grace et al., survey of machine learning researchers (2016)",
+        "kind": "survey"
+      },
+      "sourceDate": {
+        "date": "2017-05-24",
+        "kind": "survey-report",
+        "note": "Survey of researchers who published at NIPS and ICML 2015, conducted in 2016."
+      },
+      "event": "AI outperforming humans in all tasks",
+      "horizon": {
+        "asStated": "50% chance in 45 years",
+        "words": "in 45 years",
+        "kind": "quantile",
+        "interval": {
+          "amount": "45",
+          "unit": "years",
+          "from": "the survey (2016)"
+        },
+        "precision": "year"
+      },
+      "probability": {
+        "asStated": "50%",
+        "words": "50% chance"
+      },
+      "survey": {
+        "respondents": "researchers who published at NIPS and ICML 2015",
+        "conducted": "2016",
+        "statistic": "aggregate forecast (mean of fitted individual distributions)"
+      },
+      "qualification": "The paper's aggregate, not any respondent's view; it reports that Asian respondents expected the event sooner than North American respondents. The interval is not converted to a year.",
+      "evidence": [
+        {
+          "source": "grace2017",
+          "locator": "Abstract",
+          "passage": "Researchers believe there is a 50% chance of AI outperforming humans in all tasks in 45 years and of automating all human jobs in 120 years",
+          "passageType": "quote",
+          "sourceRole": "primary",
+          "checkedAt": "2026-11-02"
+        }
+      ]
+    },
+    {
+      "group": "C",
+      "form": "expert-survey",
+      "register": "nonfiction",
+      "id": "pr-c-grace-2017-all-jobs",
+      "predictor": {
+        "name": "Grace et al., survey of machine learning researchers (2016)",
+        "kind": "survey"
+      },
+      "sourceDate": {
+        "date": "2017-05-24",
+        "kind": "survey-report"
+      },
+      "event": "automating all human jobs",
+      "horizon": {
+        "asStated": "50% chance in 120 years",
+        "words": "in 120 years",
+        "kind": "quantile",
+        "interval": {
+          "amount": "120",
+          "unit": "years",
+          "from": "the survey (2016)"
+        },
+        "precision": "year"
+      },
+      "probability": {
+        "asStated": "50%",
+        "words": "50% chance"
+      },
+      "survey": {
+        "respondents": "researchers who published at NIPS and ICML 2015",
+        "conducted": "2016"
+      },
+      "qualification": "Same sentence as the companion record; a separately framed question (full automation of labour).",
+      "evidence": [
+        {
+          "source": "grace2017",
+          "locator": "Abstract",
+          "passage": "Researchers believe there is a 50% chance of AI outperforming humans in all tasks in 45 years and of automating all human jobs in 120 years",
+          "passageType": "quote",
+          "sourceRole": "primary",
+          "checkedAt": "2026-11-02"
+        }
+      ]
+    },
+    {
+      "group": "C",
+      "form": "expert-survey",
+      "register": "nonfiction",
+      "id": "pr-c-grace-2017-ten-years",
+      "predictor": {
+        "name": "Grace et al., survey of machine learning researchers (2016)",
+        "kind": "survey"
+      },
+      "sourceDate": {
+        "date": "2017-05-24",
+        "kind": "survey-report"
+      },
+      "event": "AI will outperform humans in many activities",
+      "horizon": {
+        "asStated": "in the next ten years (examples: translating languages by 2024, writing high-school essays by 2026, driving a truck by 2027)",
+        "words": "in the next ten years",
+        "kind": "relative",
+        "interval": {
+          "amount": "ten",
+          "unit": "years",
+          "from": "the survey"
+        },
+        "precision": "year"
+      },
+      "probability": null,
+      "survey": {
+        "respondents": "researchers who published at NIPS and ICML 2015",
+        "conducted": "2016"
+      },
+      "qualification": "The abstract does not state the probability level of the listed dates; the paper's body defines the statistic.",
+      "evidence": [
+        {
+          "source": "grace2017",
+          "locator": "Abstract",
+          "passage": "Researchers predict AI will outperform humans in many activities in the next ten years, such as translating languages (by 2024), writing high-school essays (by 2026), driving a truck (by 2027)",
+          "passageType": "quote",
+          "sourceRole": "primary",
+          "checkedAt": "2026-11-02"
+        }
+      ]
+    },
+    {
+      "group": "C",
+      "form": "expert-survey",
+      "register": "nonfiction",
+      "id": "pr-c-zhang-2022-hlmi-2060",
+      "predictor": {
+        "name": "Zhang et al., survey of AI/ML researchers (2019)",
+        "kind": "survey"
+      },
+      "sourceDate": {
+        "date": "2022-06-08",
+        "kind": "survey-report",
+        "note": "Survey conducted in 2019."
+      },
+      "event": "human-level machine intelligence being achieved",
+      "horizon": {
+        "asStated": "50% likelihood by 2060",
+        "words": "by 2060",
+        "kind": "quantile",
+        "years": [2060],
+        "precision": "year"
+      },
+      "probability": {
+        "asStated": "50% likelihood",
+        "words": "50% likelihood"
+      },
+      "survey": {
+        "respondents": "AI/ML researchers",
+        "conducted": "2019",
+        "statistic": "aggregate"
+      },
+      "qualification": "The 2060 result is the cross-sectional sample's. The recontacted panel was asked about \"high-level machine intelligence\" with the 2016 definition (\"every task\") and an assumption that scientific activity continues without major negative disruption; neither belongs to this record. The report compares the result with the 2016 survey of Grace et al. in a separate statement; that comparison is the report's.",
+      "evidence": [
+        {
+          "source": "zhang2022",
+          "locator": "Abstract",
+          "passage": "AI/ML researchers surveyed placed a 50% likelihood of human-level machine intelligence being achieved by 2060",
+          "passageType": "quote",
+          "sourceRole": "primary",
+          "checkedAt": "2026-11-02"
+        },
+        {
+          "source": "zhang2022",
+          "locator": "Appendix B.1, definition for the cross-sectional sample (PDF p. 18)",
+          "passage": "Human-level machine intelligence (HLMI) is reached when machines are collectively able to perform almost all tasks (>90% of all tasks) that are economically relevant",
+          "passageType": "quote",
+          "sourceRole": "primary",
+          "checkedAt": "2026-11-03"
+        }
+      ],
+      "eventNote": "For the cross-sectional sample that gives 2060, the report defines human-level machine intelligence as machines collectively performing \"almost all tasks (>90% of all tasks) that are economically relevant\" better than the median paid human (second quotation).",
+      "crossFamily": {
+        "items": [26],
+        "result": "clarified: the survey's operational definition for the 2060 sample is quoted. The checker withdrew its own blind condition: the nondisruption assumption attaches to the panel, not to this result."
+      }
+    },
+    {
+      "group": "C",
+      "form": "expert-survey",
+      "register": "nonfiction",
+      "id": "pr-c-espai-2022-hlmi-2059",
+      "predictor": {
+        "name": "AI Impacts, 2022 Expert Survey on Progress in AI",
+        "kind": "survey"
+      },
+      "sourceDate": {
+        "date": "2022-08",
+        "kind": "survey-report",
+        "note": "Live wiki page; wording attested from retrieval on 2026-11-02."
+      },
+      "event": "HLMI",
+      "eventNote": "High-level machine intelligence as the survey defines it.",
+      "horizon": {
+        "asStated": "aggregate forecast time to a 50% chance: 37 years, i.e. 2059",
+        "words": "37 years, i.e. 2059",
+        "kind": "quantile",
+        "years": [2059],
+        "precision": "year"
+      },
+      "probability": {
+        "asStated": "50% chance",
+        "words": "50% chance"
+      },
+      "conditions": "Conditional on \"human scientific activity continu[ing] without major negative disruption\" (the page's wording of the question's condition).",
+      "survey": {
+        "conducted": "2022",
+        "statistic": "aggregate forecast"
+      },
+      "qualification": "The calendar year is the page's own. The page notes that the figure excludes the questions on full automation of labour.",
+      "evidence": [
+        {
+          "source": "espai2022",
+          "locator": "Summary of results",
+          "passage": "The aggregate forecast time to a 50% chance of HLMI was 37 years, i.e. 2059",
+          "passageType": "quote",
+          "sourceRole": "primary",
+          "checkedAt": "2026-11-02"
+        },
+        {
+          "source": "espai2022",
+          "locator": "High-level machine intelligence (HLMI) timelines",
+          "passage": "The aggregate forecast time to HLMI was 36.6 years, conditional on \"human scientific activity continu[ing] without major negative disruption.\"",
+          "passageType": "quote",
+          "sourceRole": "primary",
+          "checkedAt": "2026-11-02"
+        }
+      ],
+      "attested": {
+        "date": "2022-08-04",
+        "note": "Internet Archive capture 20220804162728 of the results post at aiimpacts.org, read by the cross-family checker: it carries the \"37 years, i.e. 2059\" summary and the 36.6-year figure with its condition. The record's quotations are from the live wiki page."
+      },
+      "crossFamily": {
+        "items": [27],
+        "result": "agreed; the wording is now attested by a capture of 4 August 2022 (the figure is unchanged)."
+      }
+    },
+    {
+      "group": "C",
+      "form": "expert-survey",
+      "register": "nonfiction",
+      "id": "pr-c-grace-2024-every-task",
+      "predictor": {
+        "name": "Grace et al., survey of AI authors (2023)",
+        "kind": "survey"
+      },
+      "sourceDate": {
+        "date": "2024-01-05",
+        "kind": "survey-report",
+        "note": "Survey conducted in October 2023."
+      },
+      "event": "unaided machines outperforming humans in every possible task",
+      "horizon": {
+        "asStated": "10% by 2027, and 50% by 2047",
+        "words": "10% by 2027, and 50% by 2047",
+        "kind": "quantile",
+        "years": [2027, 2047],
+        "precision": "year"
+      },
+      "probability": {
+        "asStated": "10%; 50%",
+        "words": "10% by 2027"
+      },
+      "conditions": "If science continues undisrupted.",
+      "survey": {
+        "conducted": "2023",
+        "statistic": "aggregate forecast"
+      },
+      "qualification": "The report compares the 50% year with the 2022 survey's; that comparison is the report's.",
+      "evidence": [
+        {
+          "source": "grace2024",
+          "locator": "Abstract",
+          "passage": "If science continues undisrupted, the chance of unaided machines outperforming humans in every possible task was estimated at 10% by 2027, and 50% by 2047.",
+          "passageType": "quote",
+          "sourceRole": "primary",
+          "checkedAt": "2026-11-02"
+        }
+      ],
+      "points": [
+        {
+          "probability": "10%",
+          "horizon": "by 2027"
+        },
+        {
+          "probability": "50%",
+          "horizon": "by 2047"
+        }
+      ]
+    },
+    {
+      "group": "C",
+      "form": "expert-survey",
+      "register": "nonfiction",
+      "id": "pr-c-grace-2024-occupations",
+      "predictor": {
+        "name": "Grace et al., survey of AI authors (2023)",
+        "kind": "survey"
+      },
+      "sourceDate": {
+        "date": "2024-01-05",
+        "kind": "survey-report"
+      },
+      "event": "all human occupations becoming fully automatable",
+      "horizon": {
+        "asStated": "10% by 2037, and 50% as late as 2116",
+        "words": "10% by 2037, and 50% as late as 2116",
+        "kind": "quantile",
+        "years": [2037, 2116],
+        "precision": "year"
+      },
+      "probability": {
+        "asStated": "10%; 50%",
+        "words": "10% by 2037"
+      },
+      "survey": {
+        "conducted": "2023",
+        "statistic": "aggregate forecast"
+      },
+      "qualification": "\"As late as\" is the report's wording.",
+      "evidence": [
+        {
+          "source": "grace2024",
+          "locator": "Abstract",
+          "passage": "the chance of all human occupations becoming fully automatable was forecast to reach 10% by 2037, and 50% as late as 2116",
+          "passageType": "quote",
+          "sourceRole": "primary",
+          "checkedAt": "2026-11-02"
+        }
+      ],
+      "points": [
+        {
+          "probability": "10%",
+          "horizon": "by 2037"
+        },
+        {
+          "probability": "50%",
+          "horizon": "as late as 2116"
+        }
+      ]
+    }
+  ]
+}

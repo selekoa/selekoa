@@ -1,0 +1,1335 @@
+{
+  "group": "openai",
+  "drafter": "fresh-context drafting pass, 2026-11-02",
+  "cards": [
+    {
+      "id": "openai-gpt-4v",
+      "developer": "OpenAI",
+      "model": "GPT-4V (GPT-4 with vision)",
+      "year": 2023,
+      "source": "openai-gpt-4v",
+      "frameworkEditions": [],
+      "frameworkEditionNote": "The card names no framework; it is dated before preparedness-beta-2023 (2023-12-18)."
+    },
+    {
+      "id": "openai-o1",
+      "developer": "OpenAI",
+      "model": "OpenAI o1 (and o1-mini)",
+      "year": 2024,
+      "source": "openai-o1",
+      "frameworkEditions": ["preparedness-beta-2023"],
+      "frameworkEditionNote": "Reference [28] cites “Openai preparedness framework (beta)”, 2023, at cdn.openai.com/openai-preparedness-framework-beta.pdf, and §5 hyperlinks to the same PDF."
+    },
+    {
+      "id": "openai-gpt-5-2-codex",
+      "developer": "OpenAI",
+      "model": "GPT-5.2-Codex",
+      "year": 2025,
+      "source": "openai-gpt-5-2-codex",
+      "frameworkEditions": ["preparedness-v2"],
+      "frameworkEditionNote": "The text says “Preparedness Framework” without a version; a link annotation on PDF p. 12 targets preparedness-framework-v2.pdf, and one on PDF p. 8 targets OpenAI’s announcement of the updated framework."
+    },
+    {
+      "id": "openai-gpt-6-luna-october-29",
+      "developer": "OpenAI",
+      "model": "GPT-6 Luna (October 29)",
+      "year": 2026,
+      "source": "openai-gpt-6-luna-october-29",
+      "frameworkEditions": ["preparedness-v2"],
+      "frameworkEditionNote": "The text says “Preparedness Framework” without a version; a link annotation on PDF p. 13 targets preparedness-framework-v2.pdf. The card does not name frontier-governance-2026 (published 2026-05-28 per the dataset)."
+    }
+  ],
+  "cells": [
+    {
+      "card": "openai-gpt-4v",
+      "question": "Q01",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "openai-gpt-4v",
+          "locator": "Cover, PDF p. 1",
+          "quote": "GPT-4V(ision) System Card OpenAI September 25, 2023"
+        }
+      ],
+      "note": "The card prints September 25, 2023 beneath its title and author line. The date is not labelled as a publication, issue or revision date; it is recorded as the date printed on the card. No revision date was located."
+    },
+    {
+      "card": "openai-gpt-4v",
+      "question": "Q02",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "openai-gpt-4v",
+          "locator": "§1 Introduction, PDF p. 1",
+          "quote": "training of GPT-4V was completed in 2022 and we began providing early access to the system in March 2023"
+        },
+        {
+          "source": "openai-gpt-4v",
+          "locator": "§1 Introduction, PDF p. 1",
+          "quote": "is the latest capability we are making broadly available"
+        }
+      ],
+      "note": "The card dates early access to March 2023 and states that GPT-4V is being made broadly available. It gives no date for broad availability other than its own date.",
+      "search": {
+        "read": "§1 Introduction; §2.1 Learnings from early access",
+        "terms": ["early access", "available", "release", "launch", "alpha"],
+        "setAside": []
+      }
+    },
+    {
+      "card": "openai-gpt-4v",
+      "question": "Q03",
+      "status": "not-applicable",
+      "passages": [],
+      "note": "The card is dated September 25, 2023. The dataset records OpenAI’s Preparedness Framework (Beta), preparedness-beta-2023, as published 2023-12-18, after the card’s date; no earlier OpenAI framework edition is recorded. The card names no framework.",
+      "search": {
+        "read": "Whole card (18 pages)",
+        "terms": ["Preparedness", "framework", "policy", "threshold"],
+        "setAside": [
+          {
+            "locator": "§2 Deployment Preparation, PDF p. 1",
+            "reason": "Section heading describing deployment preparation work, not a framework document."
+          }
+        ]
+      }
+    },
+    {
+      "card": "openai-gpt-4v",
+      "question": "Q04",
+      "status": "not-applicable",
+      "passages": [],
+      "note": "Not applicable because Q03 is not applicable: the card predates every OpenAI framework edition recorded in the dataset."
+    },
+    {
+      "card": "openai-gpt-4v",
+      "question": "Q05",
+      "status": "not-applicable",
+      "passages": [],
+      "note": "Not applicable because Q03 is not applicable: the card predates every OpenAI framework edition recorded in the dataset."
+    },
+    {
+      "card": "openai-gpt-4v",
+      "question": "Q06",
+      "status": "partly",
+      "passages": [
+        {
+          "source": "openai-gpt-4v",
+          "locator": "§2.4.2 Additional Mitigations for High-Risk Areas, PDF p. 13",
+          "quote": "GPT-4V includes carefully designed refusal behavior for some prompts that contain images of people."
+        },
+        {
+          "source": "openai-gpt-4v",
+          "locator": "§2.4.2, PDF p. 14",
+          "quote": "we added system-level mitigations for adversarial images containing overlaid text"
+        }
+      ],
+      "note": "The card states model-level and system-level mitigations. They are not tied to a framework determination or threshold; the card predates OpenAI’s framework editions. Stated safeguards are the developer’s account, not evidence that they work.",
+      "search": {
+        "read": "§2.4 Mitigations; §3 Conclusion and Next Steps",
+        "terms": [
+          "mitigation",
+          "safeguard",
+          "refusal",
+          "moderation",
+          "threshold"
+        ],
+        "setAside": []
+      }
+    },
+    {
+      "card": "openai-gpt-4v",
+      "question": "Q07",
+      "status": "partly",
+      "passages": [
+        {
+          "source": "openai-gpt-4v",
+          "locator": "Footnote 2, §2.3, PDF p. 6",
+          "quote": "In the GPT-4 System Card, we explored additional risk areas of CBRN, weapons development, system interaction, and emergent risky properties such as self-replication."
+        },
+        {
+          "source": "openai-gpt-4v",
+          "locator": "Footnote 2, §2.3, PDF p. 6",
+          "quote": "GPT-4V inherits the assessment in those areas, but this was not a key focus area as image input does not meaningfully alter the capabilities for these categories."
+        },
+        {
+          "source": "openai-gpt-4v",
+          "locator": "§2.3.1 Scientific proficiency, PDF p. 7",
+          "quote": "the model’s generations here can be inaccurate and error prone, limiting its use for such tasks."
+        }
+      ],
+      "note": "The card states that GPT-4V inherits the GPT-4 System Card’s assessment of CBRN risk areas without restating its outcome, and that image input does not meaningfully alter capability in these categories. Red teamers’ scientific-proficiency testing touched on dangerous chemical synthesis; the card states the outputs were inaccurate and error-prone. No evaluation run on GPT-4V with an outcome category or threshold language is reported. Details of the red-team example are not recorded (hazard rule).",
+      "search": {
+        "read": "§2.2 Evaluations; §2.3 External Red Teaming incl. footnote 2; §2.3.1 Scientific proficiency",
+        "terms": [
+          "CBRN",
+          "chemical",
+          "biolog",
+          "weapon",
+          "nuclear",
+          "radiolog"
+        ],
+        "setAside": []
+      }
+    },
+    {
+      "card": "openai-gpt-4v",
+      "question": "Q08",
+      "status": "partly",
+      "passages": [
+        {
+          "source": "openai-gpt-4v",
+          "locator": "§2.2 Evaluations, list of evaluations, PDF p. 3",
+          "quote": "Cybersecurity Performance accuracy CAPTCHA breaking evaluations"
+        },
+        {
+          "source": "openai-gpt-4v",
+          "locator": "§2.2, PDF p. 5",
+          "quote": "a powerful, general purpose CAPTCHA breaker that’s easily accessible can have cybersecurity and AI safety implications."
+        }
+      ],
+      "note": "The card lists CAPTCHA-breaking accuracy evaluations under “Cybersecurity” and states that such a capability can have cybersecurity implications. No outcome or conclusion for these evaluations is stated in the card’s text layer (figure contents are not captured). No other offensive-cyber evaluation is reported.",
+      "search": {
+        "read": "§2.2 Evaluations; §2.3; Appendix A",
+        "terms": ["cyber", "CAPTCHA", "exploit", "hacking", "vulnerab"],
+        "setAside": [
+          {
+            "locator": "Footnote 2, PDF p. 6",
+            "reason": "Refers to “system interaction” assessed in the GPT-4 System Card; no cyber outcome stated for GPT-4V."
+          }
+        ]
+      }
+    },
+    {
+      "card": "openai-gpt-4v",
+      "question": "Q09",
+      "status": "partly",
+      "passages": [
+        {
+          "source": "openai-gpt-4v",
+          "locator": "Footnote 2, §2.3, PDF p. 6",
+          "quote": "In the GPT-4 System Card, we explored additional risk areas of CBRN, weapons development, system interaction, and emergent risky properties such as self-replication."
+        },
+        {
+          "source": "openai-gpt-4v",
+          "locator": "Footnote 2, §2.3, PDF p. 6",
+          "quote": "GPT-4V inherits the assessment in those areas, but this was not a key focus area as image input does not meaningfully alter the capabilities for these categories."
+        }
+      ],
+      "note": "The card states that GPT-4V inherits the GPT-4 System Card’s assessment of emergent risky properties such as self-replication, without restating its outcome; no autonomy or AI R&D evaluation of GPT-4V is reported.",
+      "search": {
+        "read": "Whole card",
+        "terms": [
+          "self-replication",
+          "autonom",
+          "agent",
+          "power-seeking",
+          "R&D"
+        ],
+        "setAside": []
+      }
+    },
+    {
+      "card": "openai-gpt-4v",
+      "question": "Q10",
+      "status": "not-found",
+      "passages": [],
+      "note": "No passage reporting an evaluation of persuasive or manipulative capability was found.",
+      "search": {
+        "read": "Whole card, especially §2.3.4 Disinformation risks",
+        "terms": [
+          "persua",
+          "manipulat",
+          "influence",
+          "convinc",
+          "disinformation"
+        ],
+        "setAside": [
+          {
+            "locator": "§2.3.4 Disinformation risks, PDF pp. 9–11",
+            "reason": "Concerns generating text tailored to images and the model’s ability to detect disinformation; it cites prior studies on belief in image-paired statements and reports no evaluation of the model’s persuasive or manipulative capability."
+          },
+          {
+            "locator": "§2.3.3 Stereotyping and ungrounded inferences, PDF p. 9",
+            "reason": "Concerns biased inferences about people, not persuasion."
+          }
+        ]
+      }
+    },
+    {
+      "card": "openai-gpt-4v",
+      "question": "Q11",
+      "status": "not-found",
+      "passages": [],
+      "note": "No passage reporting an evaluation of misalignment, deception, scheming or sabotage of oversight was found.",
+      "search": {
+        "read": "Whole card",
+        "terms": [
+          "decept",
+          "deceiv",
+          "scheming",
+          "sabotag",
+          "misalign",
+          "oversight",
+          "reward hack",
+          "power-seeking",
+          "alignment"
+        ],
+        "setAside": [
+          {
+            "locator": "Footnote 2, PDF p. 6",
+            "reason": "Refers to “emergent risky properties such as self-replication” assessed in the GPT-4 System Card; recorded under Q09."
+          },
+          {
+            "locator": "§2.2 and §2.4, refusal evaluations",
+            "reason": "Content-safety refusal tests, which the criterion excludes."
+          }
+        ]
+      }
+    },
+    {
+      "card": "openai-gpt-4v",
+      "question": "Q12",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "openai-gpt-4v",
+          "locator": "§2.3 External Red Teaming, PDF p. 5",
+          "quote": "OpenAI worked with external experts to qualitatively assess the limitations and risks associated with the model and system."
+        },
+        {
+          "source": "openai-gpt-4v",
+          "locator": "§2.3, PDF p. 6",
+          "quote": "intended to test risks associated with the multimodal (vision) functionality of GPT-4"
+        }
+      ],
+      "note": "External red teaming focused on the vision functionality; the card names six key risk areas (scientific proficiency, medical advice, stereotyping and ungrounded inferences, disinformation risks, hateful content, visual vulnerabilities). The acknowledgements name 25 individual red teamers. No period is given."
+    },
+    {
+      "card": "openai-gpt-4v",
+      "question": "Q13",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "openai-gpt-4v",
+          "locator": "§2.1.1 Be My Eyes, PDF p. 2",
+          "quote": "Be My Eyes piloted Be My AI from March to early August 2023 with a group of nearly 200 blind and low vision beta testers to hone the safety and user experience of the product."
+        }
+      ],
+      "note": "The card names Be My Eyes as an early-access organisation whose pilot of a GPT-4V-based product it describes as testing. External red teamers are named in the acknowledgements as individuals, without organisations.",
+      "search": {
+        "read": "§2.1 Learnings from early access; §2.3; §4 Acknowledgements",
+        "terms": ["external", "partner", "Be My Eyes", "Microsoft", "red team"],
+        "setAside": [
+          {
+            "locator": "§4 Acknowledgements, PDF p. 15",
+            "reason": "Microsoft is thanked for partnership on safe deployment and safety research; it is not stated to have tested or evaluated the model."
+          }
+        ]
+      }
+    },
+    {
+      "card": "openai-gpt-4v",
+      "question": "Q14",
+      "status": "not-found",
+      "passages": [],
+      "note": "No passage naming a government body that tested or received access to the model was found.",
+      "search": {
+        "read": "Whole card",
+        "terms": [
+          "government",
+          "institute",
+          "AISI",
+          "AI Safety Institute",
+          "NIST",
+          "Department"
+        ],
+        "setAside": [
+          {
+            "locator": "§2.2 Person identification evaluations, PDF p. 4",
+            "reason": "“public servants and politicians” and a dataset of images of members of Congress are evaluation data, not government testers."
+          }
+        ]
+      }
+    },
+    {
+      "card": "openai-gpt-4v",
+      "question": "Q15",
+      "status": "partly",
+      "passages": [
+        {
+          "source": "openai-gpt-4v",
+          "locator": "§1 Introduction, PDF p. 1",
+          "quote": "This system card outlines how OpenAI prepared the vision capabilities of GPT-4 for deployment."
+        },
+        {
+          "source": "openai-gpt-4v",
+          "locator": "§1 Introduction, PDF p. 1",
+          "quote": "is the latest capability we are making broadly available"
+        }
+      ],
+      "note": "The card states that OpenAI is making GPT-4V broadly available and describes its deployment preparation. It does not describe a decision to release or name who made it.",
+      "search": {
+        "read": "§1; §2 Deployment Preparation; §3 Conclusion and Next Steps",
+        "terms": [
+          "decision",
+          "decide",
+          "approv",
+          "deploy",
+          "release",
+          "launch"
+        ],
+        "setAside": []
+      },
+      "crossFamily": {
+        "item": 69,
+        "result": "disagreement, open for the maintainer: the pack records partly, the checker not-found.",
+        "readings": {
+          "pack (Claude)": "partly: the card states that OpenAI is making GPT-4V broadly available and describes its deployment preparation, without describing a decision or its maker.",
+          "checker (Codex)": "not-found: broad availability and deployment preparation do not describe a release decision, a release following from a stated assessment, or a maker; none of the criterion’s partly cases applies."
+        },
+        "criterion": "Partly if a release is stated as following from an assessment without a decision being described (“we therefore release”), if a decision is described without any maker, or if a maker is named only for a capability or safeguards determination and not for the release."
+      }
+    },
+    {
+      "card": "openai-gpt-4v",
+      "question": "Q16",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "openai-gpt-4v",
+          "locator": "§2.3.6 Visual vulnerabilities, PDF p. 12",
+          "quote": "We anticipate there to be many more such vulnerabilities in the model that we discover through its broad usage"
+        },
+        {
+          "source": "openai-gpt-4v",
+          "locator": "§2.2 Evaluations, PDF p. 4",
+          "quote": "even with performance parity, differences in downstream impact and harm could still occur depending on the context of the deployment of such tools."
+        }
+      ],
+      "note": "The card states that red teaming is unlikely to have found all visual vulnerabilities and that parity on its demographic evaluations does not rule out differing downstream harms."
+    },
+    {
+      "card": "openai-o1",
+      "question": "Q01",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "openai-o1",
+          "locator": "Cover, PDF p. 1",
+          "quote": "OpenAI o1 System Card OpenAI December 5, 2024"
+        },
+        {
+          "source": "openai-o1",
+          "locator": "§3 Scope of testing, footnote 2, PDF p. 2",
+          "quote": "The content of this card, released on December 5th, predates this updated model."
+        },
+        {
+          "source": "openai-o1",
+          "locator": "§3 Scope of testing, footnote 3, PDF p. 2",
+          "quote": "Section added after December 5th on 12/19/2024"
+        }
+      ],
+      "note": "Printed cover date December 5, 2024; footnote 2 states the card was released on December 5th. Revision: footnote 3 marks a section added on 12/19/2024, so the retrieved PDF contains content dated after the cover date. The dataset record of the web version (source-o1-card) carries the label “Updated: December 5, 2024”."
+    },
+    {
+      "card": "openai-o1",
+      "question": "Q02",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "openai-o1",
+          "locator": "§3 Scope of testing, footnote 2, PDF p. 2",
+          "quote": "an improved o1 was launched on December 17th"
+        },
+        {
+          "source": "openai-o1",
+          "locator": "§4.2 Jailbreaks through custom developer messages, PDF p. 6",
+          "quote": "the deployment of o1 on the API allows developers to specify a custom developer message"
+        }
+      ],
+      "note": "The card dates the launch of an improved o1 to December 17th (the card itself is dated December 5, 2024) and refers to deployment of o1 on the API. It gives no separate date for the initial availability of o1.",
+      "search": {
+        "read": "§1–§3; §4.2; §6 Conclusion",
+        "terms": ["launch", "release", "available", "deploy", "API", "ChatGPT"],
+        "setAside": []
+      }
+    },
+    {
+      "card": "openai-o1",
+      "question": "Q03",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "openai-o1",
+          "locator": "§5 Preparedness Framework Evaluations, PDF p. 15",
+          "quote": "We evaluated o1 in accordance with our Preparedness Framework."
+        },
+        {
+          "source": "openai-o1",
+          "locator": "References, [28], PDF p. 52",
+          "quote": "OpenAI, “Openai preparedness framework (beta).” openai-preparedness-framework-beta.pdf, 2023."
+        }
+      ],
+      "note": "The card names the Preparedness Framework and cites it as reference [28], titled “(beta)”, 2023, with the address cdn.openai.com/openai-preparedness-framework-beta.pdf; the words “Preparedness Framework” in §5 (PDF p. 15) also carry a hyperlink to that address. Edition: preparedness-beta-2023."
+    },
+    {
+      "card": "openai-o1",
+      "question": "Q04",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "openai-o1",
+          "locator": "References, [28], PDF p. 52",
+          "quote": "OpenAI, “Openai preparedness framework (beta).”"
+        }
+      ],
+      "note": "Bibliographic reference to the framework, with the printed address https://cdn.openai.com/openai-preparedness-framework-beta.pdf (accessed 2024-09-11; the text layer separates the address prefix from the rest of the address). The phrase “The Preparedness Framework is a living document” in §5 (PDF p. 15) carries a hyperlink to the same PDF.",
+      "crossFamily": {
+        "item": 119,
+        "result": "corrected: the quotation dropped the address prefix without an omission mark; it now quotes the title and the note gives the address. Status unchanged."
+      }
+    },
+    {
+      "card": "openai-o1",
+      "question": "Q05",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "openai-o1",
+          "locator": "§5 Preparedness Framework Evaluations, PDF p. 16",
+          "quote": "the Safety Advisory Group … classified the o1 pre-mitigation model as overall medium risk, including medium risk for persuasion and CBRN, and low risk for model autonomy and cybersecurity."
+        },
+        {
+          "source": "openai-o1",
+          "locator": "§5, PDF p. 16",
+          "quote": "The Safety Advisory Group also rated the post-mitigation risk levels the same as the pre-mitigation risk levels, to err on the side of caution."
+        }
+      ],
+      "note": "The card states the Safety Advisory Group’s classification for all four tracked categories, pre- and post-mitigation. The classification passage is already quoted in the dataset (source-o1-card)."
+    },
+    {
+      "card": "openai-o1",
+      "question": "Q06",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "openai-o1",
+          "locator": "§5.3 Mitigations, PDF p. 17",
+          "quote": "given the Medium post-mitigation risk designations for CBRN and Persuasion, we have strengthened our safety mitigations and existing stack"
+        },
+        {
+          "source": "openai-o1",
+          "locator": "§5.3 Mitigations, PDF p. 17",
+          "quote": "We have enhanced our monitoring efforts for both CBRN and Persuasion risks given their Medium designation."
+        }
+      ],
+      "note": "The card ties strengthened mitigations and enhanced monitoring to the Medium designations for CBRN and persuasion. This is the developer’s account, not evidence that the safeguards work."
+    },
+    {
+      "card": "openai-o1",
+      "question": "Q07",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "openai-o1",
+          "locator": "§5.5 Chemical and Biological Threat Creation, PDF p. 19",
+          "quote": "Chemical and Biological Threat Creation Score for o1: Medium (same as o1-preview)"
+        },
+        {
+          "source": "openai-o1",
+          "locator": "§5.6.1 Structured expert probing campaign – radiological & nuclear, PDF p. 27",
+          "quote": "was ultimately designated as earning a “Low” risk under the Preparedness Framework for RN weapon creation capability."
+        }
+      ],
+      "note": "Chemical and biological: Medium. Radiological and nuclear are reported in a separate section, with a Low designation for the post-mitigation model. Evaluation methods, tasks and results are not recorded (hazard rule)."
+    },
+    {
+      "card": "openai-o1",
+      "question": "Q08",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "openai-o1",
+          "locator": "§5.4 Cybersecurity, PDF p. 17",
+          "quote": "Score for o1: Low (same as o1-preview) Summary: o1 does not sufficiently advance real-world vulnerability exploitation capabilities to indicate medium risk."
+        }
+      ],
+      "note": "Cybersecurity: Low. The card reports capture-the-flag evaluations; results are not recorded here."
+    },
+    {
+      "card": "openai-o1",
+      "question": "Q09",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "openai-o1",
+          "locator": "§5.8 Model Autonomy, PDF p. 34",
+          "quote": "Model Autonomy Score for o1: Low (same as o1-preview) Summary: o1 does not advance self-exfiltration, self-improvement, or resource acquisition capabilities sufficiently to indicate medium risk."
+        }
+      ],
+      "note": "Model autonomy: Low. The card also reports METR’s evaluation of an earlier checkpoint on agentic tasks (§4.4.4), with METR’s caveats."
+    },
+    {
+      "card": "openai-o1",
+      "question": "Q10",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "openai-o1",
+          "locator": "§5.7 Persuasion, PDF p. 29",
+          "quote": "Persuasion Score for o1: Medium (same as o1-preview)"
+        },
+        {
+          "source": "openai-o1",
+          "locator": "§5.7 Persuasion, PDF p. 29",
+          "quote": "o1 does not outperform top human writers and does not reach our high risk threshold."
+        }
+      ],
+      "note": "Persuasion: Medium, below the High threshold."
+    },
+    {
+      "card": "openai-o1",
+      "question": "Q11",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "openai-o1",
+          "locator": "§4.4.3 Apollo Research, PDF p. 13",
+          "quote": "Apollo found that o1 has the capability to do basic in-context scheming"
+        },
+        {
+          "source": "openai-o1",
+          "locator": "§4.4.3 Apollo Research, PDF p. 13",
+          "quote": "Subjectively, Apollo Research believes that it is unlikely that such instances would lead to catastrophic outcomes as o1 agentic capabilities do not appear sufficient, but their evaluations were not designed to directly assess this risk."
+        },
+        {
+          "source": "openai-o1",
+          "locator": "§4.3.1 CoT Deception Monitoring, PDF p. 8",
+          "quote": "0.17% of o1’s responses got flagged as being ‘deceptive’."
+        }
+      ],
+      "note": "The card reports Apollo Research’s scheming evaluations with Apollo’s stated conclusion, and OpenAI’s own chain-of-thought deception monitor results. The conclusions are as the card reports them."
+    },
+    {
+      "card": "openai-o1",
+      "question": "Q12",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "openai-o1",
+          "locator": "§4.4 External Red Teaming, PDF p. 11",
+          "quote": "For o1, red teamers had access to various snapshots of the model at different stages of training and safety mitigation maturity starting in October 2024, through early December 2024."
+        },
+        {
+          "source": "openai-o1",
+          "locator": "§4.4 External Red Teaming, PDF p. 11",
+          "quote": "Red teamers covered categories that spanned deceptive alignment, AI R&D capabilities, cybersecurity, content policy violations"
+        }
+      ],
+      "note": "External red teaming by multiple organisations and individuals, October to early December 2024, across the listed categories; it includes a pairwise comparison by members of the Red Teaming Network (§4.4.1) and a jailbreak arena with Gray Swan (§4.4.2)."
+    },
+    {
+      "card": "openai-o1",
+      "question": "Q13",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "openai-o1",
+          "locator": "§4.4.3 Apollo Research, PDF p. 13",
+          "quote": "Apollo Research, an evaluation organization focusing on risks from deceptively aligned AI systems, evaluated capabilities of ‘scheming’ in o1 models."
+        },
+        {
+          "source": "openai-o1",
+          "locator": "§4.4.4 METR, PDF p. 14",
+          "quote": "METR, a research nonprofit that works on assessing whether cutting-edge AI systems could pose catastrophic risks to society, evaluated an earlier checkpoint of o1."
+        },
+        {
+          "source": "openai-o1",
+          "locator": "§4.4.2 Jailbreak Arena, PDF p. 12",
+          "quote": "OpenAI collaborated with Gray Swan to make the o1 model available for jailbreaking in the Gray Swan Arena."
+        }
+      ],
+      "note": "Named external evaluators include Apollo Research, METR and Gray Swan; the card also names Signature Science (§5.5.10) among organisations engaged for expert probing."
+    },
+    {
+      "card": "openai-o1",
+      "question": "Q14",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "openai-o1",
+          "locator": "§4 Observed safety challenges and evaluations, PDF p. 3",
+          "quote": "a set of predeployment evaluations were conducted on a version of the o1 model by the U.S. AI Safety Institute (US AISI) and the UK Safety Institute (UK AISI), not included in this report"
+        }
+      ],
+      "note": "The card names the US AISI and the “UK Safety Institute (UK AISI)” as having conducted pre-deployment evaluations of a version of o1; their results are not included. The passage is already quoted in the dataset (source-o1-card)."
+    },
+    {
+      "card": "openai-o1",
+      "question": "Q15",
+      "status": "partly",
+      "passages": [
+        {
+          "source": "openai-o1",
+          "locator": "§5 Preparedness Framework Evaluations, PDF p. 15",
+          "quote": "Only models with a post-mitigation score of “medium” or below can be deployed"
+        },
+        {
+          "source": "openai-o1",
+          "locator": "§6 Conclusion, PDF p. 42",
+          "quote": "Our deployment of these models reflects our belief that iterative real-world deployment is the most effective way"
+        }
+      ],
+      "note": "The card names the Safety Advisory Group as the maker of the risk classification (Q05) and states the framework’s deployment condition. It refers to the deployment of the models but does not state who decided to release them.",
+      "search": {
+        "read": "§5; §5.1; §6 Conclusion",
+        "terms": [
+          "decision",
+          "decide",
+          "approv",
+          "Safety Advisory Group",
+          "leadership",
+          "Board",
+          "deploy",
+          "launch"
+        ],
+        "setAside": []
+      }
+    },
+    {
+      "card": "openai-o1",
+      "question": "Q16",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "openai-o1",
+          "locator": "§5.2 Preparedness evaluations as a lower bound, PDF p. 16",
+          "quote": "our Preparedness evaluations should still be seen as a lower bound for potential risks."
+        },
+        {
+          "source": "openai-o1",
+          "locator": "§5.6 Radiological and Nuclear Threat Creation, PDF p. 27",
+          "quote": "this assessment is limited by what we can test"
+        }
+      ],
+      "note": "The card states that its Preparedness evaluations are a lower bound and that its radiological and nuclear assessment is limited by what could be tested."
+    },
+    {
+      "card": "openai-gpt-5-2-codex",
+      "question": "Q01",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "openai-gpt-5-2-codex",
+          "locator": "Cover, PDF p. 1",
+          "quote": "Addendum to GPT-5.2 System Card: GPT-5.2-Codex OpenAI December 18, 2025"
+        }
+      ],
+      "note": "Date printed on the cover, not labelled by kind. No revision date was located in the card."
+    },
+    {
+      "card": "openai-gpt-5-2-codex",
+      "question": "Q02",
+      "status": "partly",
+      "passages": [
+        {
+          "source": "openai-gpt-5-2-codex",
+          "locator": "§1 Introduction, PDF p. 4 (printed p. 3)",
+          "quote": "A version of GPT-5.2 optimized for agentic coding in Codex"
+        },
+        {
+          "source": "openai-gpt-5-2-codex",
+          "locator": "§2.1 Disallowed Content Evaluations, PDF p. 4 (printed p. 3)",
+          "quote": "The model is not intended for deployment in any general-purpose chat application, and will not be deployed by OpenAI in any such context."
+        }
+      ],
+      "note": "The card gives the form of deployment (in Codex, not in general-purpose chat). No release or availability date is given apart from the card’s own date.",
+      "search": {
+        "read": "§1; §2.1; §3 Product-Specific Risk Mitigations",
+        "terms": ["release", "launch", "available", "deploy", "API", "today"],
+        "setAside": []
+      }
+    },
+    {
+      "card": "openai-gpt-5-2-codex",
+      "question": "Q03",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "openai-gpt-5-2-codex",
+          "locator": "§1 Introduction, PDF p. 4 (printed p. 3)",
+          "quote": "GPT-5.2-Codex was evaluated under our Preparedness Framework."
+        },
+        {
+          "source": "openai-gpt-5-2-codex",
+          "locator": "§5.1.2 Cybersecurity, PDF p. 12 (printed p. 11)",
+          "quote": "Under our Preparedness Framework, High cybersecurity capability is defined"
+        }
+      ],
+      "note": "The card names the Preparedness Framework without a version number in its text. The word “Preparedness” in the second passage carries a hyperlink to cdn.openai.com/pdf/18a02b5d-6b67-4cec-ab64-68cdfbddebcd/preparedness-framework-v2.pdf, which identifies the edition: preparedness-v2."
+    },
+    {
+      "card": "openai-gpt-5-2-codex",
+      "question": "Q04",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "openai-gpt-5-2-codex",
+          "locator": "§5.1.2 Cybersecurity, PDF p. 12 (printed p. 11)",
+          "quote": "Under our Preparedness Framework, High cybersecurity capability is defined"
+        },
+        {
+          "source": "openai-gpt-5-2-codex",
+          "locator": "§5 Preparedness, PDF p. 8 (printed p. 7)",
+          "quote": "GPT-5.2-Codex frontier capabilities are assessed under the Preparedness Framework."
+        }
+      ],
+      "note": "Hyperlinks (PDF link annotations): on PDF p. 12 to the Preparedness Framework Version 2 PDF; on PDF p. 8 to openai.com/index/updating-our-preparedness-framework/ (OpenAI’s announcement of the updated framework). The reference list does not cite the framework."
+    },
+    {
+      "card": "openai-gpt-5-2-codex",
+      "question": "Q05",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "openai-gpt-5-2-codex",
+          "locator": "§5 Preparedness, PDF p. 8 (printed p. 7)",
+          "quote": "We are treating GPT-5.2-Codex as High risk in the Biological and Chemical domain. While the model’s cybersecurity capabilities are stronger than its predecessors, it does not reach our threshold for High capability in the Cyber domain."
+        },
+        {
+          "source": "openai-gpt-5-2-codex",
+          "locator": "§5 Preparedness, PDF p. 8 (printed p. 7)",
+          "quote": "It also does not reach High capability in the AI self-improvement domain."
+        }
+      ],
+      "note": "Biological and Chemical: treated as High. Cybersecurity: below High. AI self-improvement: below High."
+    },
+    {
+      "card": "openai-gpt-5-2-codex",
+      "question": "Q06",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "openai-gpt-5-2-codex",
+          "locator": "§1 Introduction, PDF p. 4 (printed p. 3)",
+          "quote": "Like other recent models, it is being treated as High capability on biology, and is being deployed with the corresponding suite of safeguards we use for other models in the GPT-5 family."
+        }
+      ],
+      "note": "The card ties deployment with the GPT-5 family’s safeguards to the High biology treatment; §5.1.1 repeats that the corresponding safeguards continue to apply. This is the developer’s account, not evidence that the safeguards work."
+    },
+    {
+      "card": "openai-gpt-5-2-codex",
+      "question": "Q07",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "openai-gpt-5-2-codex",
+          "locator": "§5.1.1 Biological and Chemical, PDF p. 9 (printed p. 8)",
+          "quote": "As we did for other models in the GPT-5 series, we are treating GPT-5.2-Codex as High risk in the Biological and Chemical domain, and continuing to apply the corresponding safeguards."
+        }
+      ],
+      "note": "The card reports four biological and chemical evaluations; outcome category: treated as High. Evaluation contents and results are not recorded (hazard rule)."
+    },
+    {
+      "card": "openai-gpt-5-2-codex",
+      "question": "Q08",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "openai-gpt-5-2-codex",
+          "locator": "§5.1.2 Cybersecurity, PDF p. 13 (printed p. 12)",
+          "quote": "A review of these results and other relevant information by the Safety Advisory Group and OpenAI leadership determined that GPT-5.2-Codex’s performance—while stronger than earlier models—does not meet the level of consistency needed for High cyber capability."
+        }
+      ],
+      "note": "Cybersecurity: below High. The card reports three internal benchmarks and an external evaluation by Irregular; results are not recorded here."
+    },
+    {
+      "card": "openai-gpt-5-2-codex",
+      "question": "Q09",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "openai-gpt-5-2-codex",
+          "locator": "§5.1.3 AI Self-Improvement, PDF p. 17 (printed p. 16)",
+          "quote": "GPT-5.2-Codex performed at a similar capability level to GPT-5.2-Thinking and did not meet our High thresholds."
+        },
+        {
+          "source": "openai-gpt-5-2-codex",
+          "locator": "§5.1.3 AI Self-Improvement, PDF p. 17 (printed p. 16)",
+          "quote": "performance in the evaluations below indicate we can rule this out for GPT-5.2-Codex."
+        }
+      ],
+      "note": "AI self-improvement: below High, with four evaluations reported."
+    },
+    {
+      "card": "openai-gpt-5-2-codex",
+      "question": "Q10",
+      "status": "not-found",
+      "passages": [],
+      "note": "No passage reporting an evaluation of persuasive or manipulative capability was found. The card’s Preparedness section addresses the Biological and Chemical, Cybersecurity and AI Self-Improvement domains.",
+      "search": {
+        "read": "Whole card (22 pages)",
+        "terms": ["persua", "manipulat", "influence", "convinc"],
+        "setAside": [
+          {
+            "locator": "§5.1.2.3 Cyber Range, Table 7, PDF p. 16 (printed p. 15)",
+            "reason": "“LDAP manipulation” names a cyber-range technique, not manipulation of people."
+          }
+        ]
+      }
+    },
+    {
+      "card": "openai-gpt-5-2-codex",
+      "question": "Q11",
+      "status": "not-found",
+      "passages": [],
+      "note": "No passage reporting an evaluation of deception, scheming, reward hacking, sabotage or undermining oversight was found.",
+      "search": {
+        "read": "Whole card",
+        "terms": [
+          "decept",
+          "scheming",
+          "sabotag",
+          "sandbag",
+          "reward hack",
+          "misalign",
+          "oversight",
+          "alignment",
+          "monitor"
+        ],
+        "setAside": [
+          {
+            "locator": "§4.2 Avoid Data-Destructive Actions, PDF p. 8",
+            "reason": "Evaluates avoidance of destructive actions and preservation of user changes; it does not address deception, scheming or undermining oversight."
+          },
+          {
+            "locator": "§5.1.2 Cybersecurity, PDF p. 11 (printed p. 10)",
+            "reason": "“monitoring and enforcement pipeline” concerns misuse by users, not the model’s own conduct."
+          }
+        ]
+      }
+    },
+    {
+      "card": "openai-gpt-5-2-codex",
+      "question": "Q12",
+      "status": "not-found",
+      "passages": [],
+      "note": "No passage describing adversarial testing as red-teaming was found.",
+      "search": {
+        "read": "Whole card",
+        "terms": [
+          "red team",
+          "red-team",
+          "red teaming",
+          "adversarial",
+          "external"
+        ],
+        "setAside": [
+          {
+            "locator": "§2.2 Jailbreaks, PDF p. 5 (printed p. 4)",
+            "reason": "An automated jailbreak benchmark (StrongReject adaptation), not described as red-teaming."
+          },
+          {
+            "locator": "§5.1.2.4 External Evaluations by Irregular, PDF pp. 16–17",
+            "reason": "An external capability evaluation, not described as red-teaming; recorded under Q13."
+          }
+        ]
+      }
+    },
+    {
+      "card": "openai-gpt-5-2-codex",
+      "question": "Q13",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "openai-gpt-5-2-codex",
+          "locator": "§5.1.2.4 External Evaluations by Irregular, PDF p. 16 (printed p. 15)",
+          "quote": "Irregular, an AI security organization focused on frontier cybersecurity risks, evaluated GPT-5.2-Codex on a subset of a suite of cyberoffensive challenges"
+        }
+      ],
+      "note": "Irregular is named as an external evaluator of cyber capability. SecureBio and Gryphon Scientific are named as sources of evaluation datasets, not as testers of this model."
+    },
+    {
+      "card": "openai-gpt-5-2-codex",
+      "question": "Q14",
+      "status": "not-found",
+      "passages": [],
+      "note": "No passage naming a government body that tested or received access to the model was found.",
+      "search": {
+        "read": "Whole card",
+        "terms": [
+          "government",
+          "institute",
+          "CAISI",
+          "AISI",
+          "AI Safety Institute",
+          "AI Security Institute",
+          "national"
+        ],
+        "setAside": []
+      }
+    },
+    {
+      "card": "openai-gpt-5-2-codex",
+      "question": "Q15",
+      "status": "partly",
+      "passages": [
+        {
+          "source": "openai-gpt-5-2-codex",
+          "locator": "§5.1.2 Cybersecurity, PDF p. 13 (printed p. 12)",
+          "quote": "A review of these results and other relevant information by the Safety Advisory Group and OpenAI leadership determined that GPT-5.2-Codex’s performance—while stronger than earlier models—does not meet the level of consistency needed for High cyber capability."
+        },
+        {
+          "source": "openai-gpt-5-2-codex",
+          "locator": "§1 Introduction, PDF p. 4 (printed p. 3)",
+          "quote": "Like other recent models, it is being treated as High capability on biology, and is being deployed with the corresponding suite of safeguards we use for other models in the GPT-5 family."
+        }
+      ],
+      "note": "The card names the Safety Advisory Group and OpenAI leadership as having determined the cyber capability level, and states that the model is being deployed. It does not state who decided to release the model.",
+      "search": {
+        "read": "§1; §5",
+        "terms": [
+          "decision",
+          "decide",
+          "approv",
+          "Safety Advisory Group",
+          "leadership",
+          "deploy",
+          "launch"
+        ],
+        "setAside": []
+      }
+    },
+    {
+      "card": "openai-gpt-5-2-codex",
+      "question": "Q16",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "openai-gpt-5-2-codex",
+          "locator": "§5.1.2 Cybersecurity, PDF p. 12 (printed p. 11)",
+          "quote": "Each of these evaluations has important limitations:"
+        },
+        {
+          "source": "openai-gpt-5-2-codex",
+          "locator": "§5.1.2 Cybersecurity, PDF p. 13 (printed p. 12)",
+          "quote": "Because of these limitations, excelling on all three evaluations is necessary but not sufficient for a model to be considered High in cyber capability."
+        }
+      ],
+      "note": "The card lists limitations of each cyber benchmark and states that results on them are not sufficient to establish High cyber capability."
+    },
+    {
+      "card": "openai-gpt-6-luna-october-29",
+      "question": "Q01",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "openai-gpt-6-luna-october-29",
+          "locator": "Cover, PDF p. 1",
+          "quote": "Addendum to GPT-6 Luna System Card: October 29, 2026 Update OpenAI 2026-10-29"
+        }
+      ],
+      "note": "Date printed on the cover (2026-10-29), not labelled by kind; the title also names October 29, 2026. The hub page states “Published October 29, 2026”, while the hub address and the PDF file name read “october-28-2026-addendum”; the discrepancy is recorded, not resolved. No revision date was located."
+    },
+    {
+      "card": "openai-gpt-6-luna-october-29",
+      "question": "Q02",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "openai-gpt-6-luna-october-29",
+          "locator": "§1 Introduction, PDF p. 4 (printed p. 3)",
+          "quote": "Today, we’re introducing an update to GPT-6 Luna, which we released in ChatGPT on October 7."
+        }
+      ],
+      "note": "The card introduces the updated model “today” (the card is dated 2026-10-29) and dates the release of the earlier GPT-6 Luna in ChatGPT to October 7. §8.2 refers to the updated model’s “public launch”."
+    },
+    {
+      "card": "openai-gpt-6-luna-october-29",
+      "question": "Q03",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "openai-gpt-6-luna-october-29",
+          "locator": "§8 Preparedness, PDF p. 13 (printed p. 12)",
+          "quote": "Under our Preparedness Framework, we are treating GPT-6 Luna (October 29) as High capability in both Cybersecurity and Biological and Chemical domains."
+        }
+      ],
+      "note": "The card names the Preparedness Framework without a version in its text. The words “Preparedness Framework” in this passage carry a hyperlink to cdn.openai.com/pdf/18a02b5d-6b67-4cec-ab64-68cdfbddebcd/preparedness-framework-v2.pdf, which identifies the edition: preparedness-v2. The card does not name the Frontier Governance Framework."
+    },
+    {
+      "card": "openai-gpt-6-luna-october-29",
+      "question": "Q04",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "openai-gpt-6-luna-october-29",
+          "locator": "§8 Preparedness, PDF p. 13 (printed p. 12)",
+          "quote": "Under our Preparedness Framework, we are treating GPT-6 Luna (October 29) as High capability in both Cybersecurity and Biological and Chemical domains."
+        }
+      ],
+      "note": "Hyperlink (PDF link annotation) on “Preparedness Framework,” to the Preparedness Framework Version 2 PDF. No bibliographic reference to the framework."
+    },
+    {
+      "card": "openai-gpt-6-luna-october-29",
+      "question": "Q05",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "openai-gpt-6-luna-october-29",
+          "locator": "§8 Preparedness, PDF p. 13 (printed p. 12)",
+          "quote": "Under our Preparedness Framework, we are treating GPT-6 Luna (October 29) as High capability in both Cybersecurity and Biological and Chemical domains."
+        },
+        {
+          "source": "openai-gpt-6-luna-october-29",
+          "locator": "§8 Preparedness, PDF p. 13 (printed p. 12)",
+          "quote": "The model does not reach our High threshold in AI Self-Improvement."
+        }
+      ],
+      "note": "Cybersecurity and Biological and Chemical: treated as High. AI Self-Improvement: below High. The card states these match the assessments for GPT-6 Luna (October 7)."
+    },
+    {
+      "card": "openai-gpt-6-luna-october-29",
+      "question": "Q06",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "openai-gpt-6-luna-october-29",
+          "locator": "§1 Introduction, PDF p. 4 (printed p. 3)",
+          "quote": "Based on that assessment, GPT-6 Luna (October 29) uses the same safeguards stack as prior GPT-6 Luna (October 7)"
+        },
+        {
+          "source": "openai-gpt-6-luna-october-29",
+          "locator": "§8 Preparedness, PDF p. 13 (printed p. 12)",
+          "quote": "we have implemented the corresponding safeguards described in the GPT-6 Luna (October 7) card."
+        }
+      ],
+      "note": "Safeguards are tied to the High determinations and described by reference to the October 7 card; §8.2 is a public summary of an internal Safeguards Report. This is the developer’s account, not evidence that the safeguards work."
+    },
+    {
+      "card": "openai-gpt-6-luna-october-29",
+      "question": "Q07",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "openai-gpt-6-luna-october-29",
+          "locator": "§8.1.1 Biological and Chemical Capabilities, PDF p. 13 (printed p. 12)",
+          "quote": "We are treating GPT-6 Luna (October 29) as High capability in the Biological and Chemical domain. Below, we report updated results on our High and Critical capability evaluations."
+        }
+      ],
+      "note": "Outcome category: High. The card reports updated results against indicative High and Critical thresholds; results are not recorded (hazard rule)."
+    },
+    {
+      "card": "openai-gpt-6-luna-october-29",
+      "question": "Q08",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "openai-gpt-6-luna-october-29",
+          "locator": "§8.1.2 Cybersecurity Capabilities, PDF p. 14 (printed p. 13)",
+          "quote": "We are treating GPT-6 Luna (October 29) as High capability in the Cybersecurity domain. Below, we report updated results on our High capability evaluations."
+        }
+      ],
+      "note": "Outcome category: High. Results of the two reported evaluations are not recorded here."
+    },
+    {
+      "card": "openai-gpt-6-luna-october-29",
+      "question": "Q09",
+      "status": "partly",
+      "passages": [
+        {
+          "source": "openai-gpt-6-luna-october-29",
+          "locator": "§8.1.3 AI Self-Improvement Capabilities, PDF p. 15 (printed p. 14)",
+          "quote": "In AI Self-Improvement, GPT-6 Sol and GPT-6 Luna do not reach our High threshold."
+        },
+        {
+          "source": "openai-gpt-6-luna-october-29",
+          "locator": "§8.1.3, PDF p. 15 (printed p. 14)",
+          "quote": "please see the AI Self-Improvement Capabilities section in the GPT-6 Astra card."
+        }
+      ],
+      "note": "The card states the outcome (below High) but reports no AI self-improvement evaluation run on the October 29 model; it refers to the GPT-6 Astra card for the evaluations."
+    },
+    {
+      "card": "openai-gpt-6-luna-october-29",
+      "question": "Q10",
+      "status": "not-found",
+      "passages": [],
+      "note": "No passage reporting an evaluation of persuasive or manipulative capability was found.",
+      "search": {
+        "read": "Whole card (16 pages)",
+        "terms": ["persua", "manipulat", "influence", "convinc", "agreeable"],
+        "setAside": [
+          {
+            "locator": "§1 Introduction, PDF p. 4",
+            "reason": "“reduces overly agreeable language” describes a change in the model’s style, not an evaluation of persuasion or manipulation."
+          }
+        ]
+      }
+    },
+    {
+      "card": "openai-gpt-6-luna-october-29",
+      "question": "Q11",
+      "status": "partly",
+      "passages": [
+        {
+          "source": "openai-gpt-6-luna-october-29",
+          "locator": "§7.0.3 Blocker Deception, Figure 6 caption, PDF p. 12 (printed p. 11)",
+          "quote": "Blocker-related disclosure failure rates on coding tasks. Lower is better."
+        },
+        {
+          "source": "openai-gpt-6-luna-october-29",
+          "locator": "§7.0.2 Respecting Warnings, Figure 5 caption, PDF p. 11 (printed p. 10)",
+          "quote": "Conditional failure rates for successful circumvention of environmental restrictions. Lower is better."
+        }
+      ],
+      "note": "The card’s Alignment section reports four evaluations (respecting auto-review, respecting warnings, blocker deception, broken search tool) as figures. The text gives figure captions and states no conclusion; it refers to the GPT-6 Luna (October 7) card for descriptions.",
+      "search": {
+        "read": "§7 Alignment, PDF pp. 10–13",
+        "terms": [
+          "decept",
+          "scheming",
+          "sabotag",
+          "misalign",
+          "oversight",
+          "circumvent",
+          "monitor"
+        ],
+        "setAside": []
+      }
+    },
+    {
+      "card": "openai-gpt-6-luna-october-29",
+      "question": "Q12",
+      "status": "partly",
+      "passages": [
+        {
+          "source": "openai-gpt-6-luna-october-29",
+          "locator": "§4.2 Prompt Injection, PDF p. 7 (printed p. 6)",
+          "quote": "we use adversarial training with an automated red-teaming agent to strengthen resistance to malicious instructions"
+        },
+        {
+          "source": "openai-gpt-6-luna-october-29",
+          "locator": "§4.2 Prompt Injection, PDF p. 7 (printed p. 6)",
+          "quote": "For our evaluations, we use the GPT-Red automated evaluations introduced in the GPT-5.6 system card."
+        }
+      ],
+      "note": "The card describes an automated red-teaming agent used in adversarial training, and automated 'GPT-Red' evaluations of direct and indirect prompt injection. It does not describe adversarial testing of this model as red-teaming, and reports no human red-teaming.",
+      "search": {
+        "read": "Whole card",
+        "terms": [
+          "red team",
+          "red-team",
+          "adversarial",
+          "attacker",
+          "jailbreak"
+        ],
+        "setAside": [
+          {
+            "locator": "§4.1 Jailbreaks, PDF pp. 6–7",
+            "reason": "Reports defender success rates against an automated attacker; not described as red-teaming."
+          }
+        ]
+      }
+    },
+    {
+      "card": "openai-gpt-6-luna-october-29",
+      "question": "Q13",
+      "status": "not-found",
+      "passages": [],
+      "note": "No passage naming an external tester or evaluator was found.",
+      "search": {
+        "read": "Whole card",
+        "terms": [
+          "external",
+          "third-party",
+          "third party",
+          "partner",
+          "evaluated by",
+          "Irregular",
+          "Apollo",
+          "METR",
+          "SecureBio"
+        ],
+        "setAside": [
+          {
+            "locator": "§4.2 Prompt Injection, PDF p. 7",
+            "reason": "“malicious instructions in third-party content” describes an attack type, not a tester."
+          }
+        ]
+      }
+    },
+    {
+      "card": "openai-gpt-6-luna-october-29",
+      "question": "Q14",
+      "status": "not-found",
+      "passages": [],
+      "note": "No passage naming a government body that tested or received access to the model was found.",
+      "search": {
+        "read": "Whole card",
+        "terms": [
+          "government",
+          "institute",
+          "CAISI",
+          "AISI",
+          "AI Safety Institute",
+          "AI Security Institute"
+        ],
+        "setAside": []
+      }
+    },
+    {
+      "card": "openai-gpt-6-luna-october-29",
+      "question": "Q15",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "openai-gpt-6-luna-october-29",
+          "locator": "§8.2 Safeguards, PDF p. 15 (printed p. 14)",
+          "quote": "The internal report informed our Safety Advisory Group’s recommendation and OpenAI leadership’s determination that these safeguards are sufficient for GPT-6 Luna (October 29) public launch."
+        }
+      ],
+      "note": "The card states a determination by OpenAI leadership, informed by a Safety Advisory Group recommendation, that safeguards are sufficient for the model’s public launch."
+    },
+    {
+      "card": "openai-gpt-6-luna-october-29",
+      "question": "Q16",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "openai-gpt-6-luna-october-29",
+          "locator": "§4.1 Jailbreaks, PDF p. 7 (printed p. 6)",
+          "quote": "Our attacker run was cut short due to infrastructure issues"
+        },
+        {
+          "source": "openai-gpt-6-luna-october-29",
+          "locator": "§2 Model Data and Training, PDF p. 4 (printed p. 3)",
+          "quote": "The comparison values for previously launched models that are shown here may reflect later versions of those models, and may vary from the values published at launch."
+        }
+      ],
+      "note": "The card states that the jailbreak evaluation run was incomplete and that comparison values may not match those published at launch."
+    }
+  ],
+  "omissions": [
+    "openai-o1: quantitative results for Apollo Research’s individual scheming evaluations (§4.4.3, PDF pp. 13–14) not quoted; the card’s stated conclusion is used instead.",
+    "openai-o1: §5.5 summary sentence on biological threat planning (already quoted in the dataset) not reused; the policy-level score line is quoted instead under the hazard rule.",
+    "openai-o1: Signature Science expert-probing results (§5.5.10, PDF p. 26) and radiological/nuclear expert counts (§5.6.1) not recorded (hazard rule).",
+    "openai-gpt-5-2-codex: Irregular’s success rates and cost-per-success figures (§5.1.2.4, PDF pp. 16–17) and cyber-range scenario outcomes (Table 7) not recorded (hazard rule).",
+    "openai-gpt-5-2-codex: §1 sentence “We expect current trends of rapidly increasing capability to continue, and for models to cross the High cybersecurity threshold in the near future.” (PDF p. 4) not used; it is a forecast, not a limit of the evaluations.",
+    "openai-gpt-6-luna-october-29: biological, chemical and cyber evaluation tables (§8.1, PDF pp. 14–15) not recorded (hazard rule).",
+    "openai-gpt-6-luna-october-29: PDF metadata gives a creation date of 2025-12-17; not used as a card date (metadata, not printed on the card).",
+    "openai-gpt-4v: red-team example concerning synthesis of a named compound (§2.3.1, PDF p. 7) not recorded (hazard rule)."
+  ],
+  "retrievalFailures": [
+    "openai.com HTML pages return HTTP 403 from this environment (checked 2026-11-02: o3 Operator addendum, Sora system card, gpt-oss-safeguard report page). Card PDFs on cdn.openai.com and deploymentsafety.openai.com returned HTTP 200.",
+    "web.archive.org not attempted (stated as unreachable from this environment); no archive captures checked."
+  ],
+  "openQuestions": [
+    "2026 selection: GPT-Rosalind-6 System Card Addendum (hub publication 2026-10-30; cover “October 2026”) is later than the selected GPT-6 Luna (October 29) addendum and reports its own biological evaluations, but states that GPT-Rosalind-6 uses the same weights as GPT-6 Astra with no added training. It was treated as a product whose card covers no new model (scope.md) and not compared. Recommendation: confirm the exclusion; if it is reversed, the 2026 row becomes GPT-Rosalind-6 (retrieved, cache key openai-gpt-rosalind-6).",
+    "2023 selection: GPT-4V(ision) is a vision-input language model, not an image-generation model; it was kept in the population and selected over the GPT-4 System Card. DALL·E 3 (2023-10-03) was excluded as an image model. Recommendation: confirm that scope.md’s exclusion of image models applies to image-generation models.",
+    "Framework edition by hyperlink: the 2025 and 2026 cards identify the Preparedness Framework edition through a PDF link annotation to preparedness-framework-v2.pdf, not in visible text. Q03 was drafted as stated (the criterion accepts a link to a dated edition). Recommendation: accept, and state in the pack method that link annotations were read.",
+    "Q15 wording for the 2026 card: “OpenAI leadership’s determination that these safeguards are sufficient for … public launch” was drafted as stated (decision-maker named for a launch determination); the 2025 card’s Safety Advisory Group and leadership determination concerns a capability level and was drafted as partly. Recommendation: apply the same reading across developers’ cards at merge.",
+    "o1 datasetSource: the dataset record source-o1-card points to the openai.com web page, while its existing evidence locators cite PDF pages; the pack cites the PDF expression (cdn.openai.com/o1-system-card-20241205.pdf), whose footnote 3 marks a section added 12/19/2024. The budget was counted against source-o1-card. Recommendation: confirm that the web page and PDF are treated as one document, or register the PDF as a separate expression.",
+    "Hub date discrepancies (not affecting selection): the hub lists the o3 and o4-mini System Card as “Published March 1, 2024” while its PDF cover reads April 16, 2025; GPT-5.3 Instant (hub March 2, cover March 3, 2026), GPT-5.5 Instant (hub May 5, cover May 4, 2026), GPT-5.6 Preview (hub June 26, cover 2026-06-25) and GPT-5 (hub August 7, cover August 13, 2025). Recommendation: record cover dates as printed dates and hub dates as publication listings."
+  ]
+}

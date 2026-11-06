@@ -60,6 +60,12 @@ type ShownKind = (typeof shownKinds)[number];
 export type RecordChunk = {
   records: StoredRecord[];
   at: Record<ShownKind, number[]>;
+  /**
+   * The collections each shown claim belongs to, as positions in the
+   * filter's list (`IndexManifest.collections`): a result names them, and
+   * the search page holds no claim IDs of its own.
+   */
+  memberOf: [string, number[]][];
 } & ShownRecords;
 
 /** Sorted words with their records' ordinals, each list delta-encoded. */
@@ -168,6 +174,11 @@ export function buildIndexFiles(
       new Map(data[kind].map((r, i) => [r.id, i] as const)),
     ]),
   ) as Record<ShownKind, Map<string, number>>;
+  const memberships = new Map<string, number[]>();
+  collections.forEach((c, i) => {
+    for (const id of new Set(c.claimIds))
+      memberships.set(id, [...(memberships.get(id) ?? []), i]);
+  });
   const evidenceBySource = new Map<string, Evidence[]>();
   for (const e of data.evidence)
     evidenceBySource.set(e.sourceId, [
@@ -268,6 +279,11 @@ export function buildIndexFiles(
       if (!own.has(`passage:${e.id}`)) return e;
       return without(e, ['passage', 'locator']);
     });
+    current.memberOf = current.claims.flatMap((c) =>
+      memberships.has(c.id!)
+        ? [[c.id!, memberships.get(c.id!)!] as [string, number[]]]
+        : [],
+    );
     current.sources = inOrder('sources', held.sources);
     current.entities = inOrder('entities', held.entities);
     current.at = Object.fromEntries(
@@ -326,6 +342,7 @@ export function buildIndexFiles(
       current = {
         records: [],
         at: { claims: [], evidence: [], sources: [], entities: [] },
+        memberOf: [],
         claims: [],
         evidence: [],
         sources: [],
@@ -485,6 +502,8 @@ export type IndexSearchResult = {
   results: SearchResults;
   /** The records the chunks of the results show, with the fields shown. */
   shown: ShownRecords;
+  /** The collections of the claims shown, as `RecordChunk.memberOf`. */
+  memberOf: Map<string, number[]>;
 };
 
 /**
@@ -500,7 +519,11 @@ export async function searchIndexFiles(
   const terms = parseQuery(query);
   const none = { claims: [], evidence: [], sources: [], entities: [] };
   if (!terms.length)
-    return { results: searchRecords({ records: [] }, query), shown: none };
+    return {
+      results: searchRecords({ records: [] }, query),
+      shown: none,
+      memberOf: new Map(),
+    };
 
   // Records holding a key: one file, rarely two, per key.
   const holding = async ({ key, prefix }: { key: string; prefix: boolean }) => {
@@ -566,7 +589,11 @@ export async function searchIndexFiles(
     query,
     without(filters, ['collectionId', 'organisationId']),
   );
-  return { results, shown: mergeShown(loaded.map(chunkShown)) };
+  return {
+    results,
+    shown: mergeShown(loaded.map(chunkShown)),
+    memberOf: new Map(loaded.flatMap((c) => c.memberOf)),
+  };
 }
 
 /** The chunk holding an ordinal. */

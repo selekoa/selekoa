@@ -25,6 +25,7 @@ export type StartAction =
   | { kind: 'commitments' }
   | { kind: 'guide'; id: string }
   | { kind: 'propositions'; id: string }
+  | { kind: 'predictions'; id: string }
   /** Propositions by author, at the first author with one of these keys. */
   | { kind: 'stances'; id?: string; authors?: string[] }
   | { kind: 'years' }

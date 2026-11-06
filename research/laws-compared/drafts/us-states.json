@@ -1,0 +1,927 @@
+{
+  "group": "us-states",
+  "drafter": "fresh-context drafting pass, 2026-11-01",
+  "cells": [
+    {
+      "instrument": "ca-sb53",
+      "question": "Q01",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "ca-sb53",
+          "locator": "SEC. 2, Bus. & Prof. Code § 22757.11(j)",
+          "quote": "together with its affiliates collectively had annual gross revenues in excess of five hundred million dollars ($500,000,000) in the preceding calendar year.",
+          "datasetClaim": "sb-large-frontier-developer-threshold"
+        },
+        {
+          "source": "ca-sb53",
+          "locator": "SEC. 2, Bus. & Prof. Code § 22757.11(h)",
+          "quote": "has trained, or initiated the training of, a frontier model",
+          "datasetClaim": "sb-frontier-developer-definition"
+        }
+      ],
+      "note": "Two defined terms bear the duties: “frontier developer” (§ 22757.11(h)) and “large frontier developer” (§ 22757.11(j)), a frontier developer whose revenues with affiliates exceeded $500 million in the preceding calendar year. The framework duty (§ 22757.12(a)), the transparency-report summaries of risk assessments (§ 22757.12(c)(2)), internal-use summaries (§ 22757.12(d)) and the anonymous internal process (Lab. Code § 1107.1(e)) fall on large frontier developers; the transparency report (§ 22757.12(c)(1)), incident reporting (§ 22757.13(c)) and the anti-retaliation rule (Lab. Code § 1107.1(a)) fall on all frontier developers."
+    },
+    {
+      "instrument": "ca-sb53",
+      "question": "Q02",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "ca-sb53",
+          "locator": "SEC. 2, Bus. & Prof. Code § 22757.11(i)(1)",
+          "quote": "“Frontier model” means a foundation model that was trained using a quantity of computing power greater than 10^26 integer or floating-point operations.",
+          "datasetClaim": "sb-frontier-model-threshold"
+        },
+        {
+          "source": "ca-sb53",
+          "locator": "SEC. 2, Bus. & Prof. Code § 22757.11(j)",
+          "quote": "together with its affiliates collectively had annual gross revenues in excess of five hundred million dollars ($500,000,000) in the preceding calendar year.",
+          "datasetClaim": "sb-large-frontier-developer-threshold"
+        }
+      ],
+      "note": "Model threshold: training compute greater than 10^26 operations, which under § 22757.11(i)(2) includes the original training run and subsequent fine-tuning, reinforcement learning or other material modifications. Developer tier: annual gross revenues with affiliates above $500 million in the preceding calendar year. § 22757.14 requires the Department of Technology to recommend, on or before 1 January 2027 and annually thereafter, whether and how to update these definitions; it does not itself change them."
+    },
+    {
+      "instrument": "ca-sb53",
+      "question": "Q03",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "ca-sb53",
+          "locator": "SEC. 2, Bus. & Prof. Code § 22757.12(a), opening clause",
+          "quote": "A large frontier developer shall write, implement, comply with, and clearly and conspicuously publish on its internet website a frontier AI framework",
+          "datasetClaim": "sb-framework-duty"
+        },
+        {
+          "source": "ca-sb53",
+          "locator": "SEC. 2, Bus. & Prof. Code § 22757.12(b)(1)",
+          "quote": "review and, as appropriate, update its frontier AI framework at least once per year.",
+          "datasetClaim": "sb-framework-annual-review"
+        }
+      ],
+      "note": "Applies to large frontier developers. “Frontier AI framework” is defined in § 22757.11(g) as documented technical and organizational protocols to manage, assess and mitigate catastrophic risks; § 22757.12(a)(1)–(10) lists the matters the framework describes, including thresholds, mitigations, third-party assessment, cybersecurity, incident response, internal governance and internal use."
+    },
+    {
+      "instrument": "ca-sb53",
+      "question": "Q04",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "ca-sb53",
+          "locator": "SEC. 2, Bus. & Prof. Code § 22757.12(a), opening clause",
+          "quote": "A large frontier developer shall write, implement, comply with, and clearly and conspicuously publish on its internet website a frontier AI framework",
+          "datasetClaim": "sb-framework-duty"
+        },
+        {
+          "source": "ca-sb53",
+          "locator": "SEC. 2, Bus. & Prof. Code § 22757.12(b)(2)",
+          "quote": "publish the modified frontier AI framework and a justification for that modification within 30 days.",
+          "datasetClaim": "sb-framework-modification-30-days"
+        }
+      ],
+      "note": "Publication on the developer’s website; a materially modified framework is published with a justification within 30 days. § 22757.12(f) permits redactions to protect trade secrets, cybersecurity, public safety or national security or to comply with law, with the character and justification of each redaction described and the unredacted information retained for five years. No provision requiring the framework itself to be submitted to a public authority was found."
+    },
+    {
+      "instrument": "ca-sb53",
+      "question": "Q05",
+      "status": "partly",
+      "passages": [
+        {
+          "source": "ca-sb53",
+          "locator": "SEC. 2, Bus. & Prof. Code § 22757.12(a)(2)",
+          "quote": "assess whether a frontier model has capabilities"
+        },
+        {
+          "source": "ca-sb53",
+          "locator": "SEC. 2, Bus. & Prof. Code § 22757.12(a), opening clause",
+          "quote": "A large frontier developer shall write, implement, comply with, and clearly and conspicuously publish on its internet website a frontier AI framework",
+          "datasetClaim": "sb-framework-duty"
+        }
+      ],
+      "note": "The framework, which a large frontier developer must implement and comply with, describes how the developer approaches defining and assessing thresholds to identify and assess whether a frontier model has capabilities that could pose a catastrophic risk (§ 22757.12(a)(2)). The text sets no free-standing duty to test each model; § 22757.12(c)(2)(A)–(B) requires summaries of assessments of catastrophic risks conducted pursuant to the framework, and § 22757.12(d) summaries of any assessment of catastrophic risk from internal use.",
+      "search": {
+        "read": "SEC. 2 in full (Bus. & Prof. Code §§ 22757.10–22757.16); SEC. 4 (Lab. Code §§ 1107–1107.2).",
+        "terms": ["assess", "evaluat", "test"],
+        "setAside": [
+          {
+            "locator": "SEC. 2, Bus. & Prof. Code § 22757.12(c)(2)(A)",
+            "reason": "Requires summaries of assessments in the transparency report; it presupposes assessments under the framework rather than imposing them."
+          },
+          {
+            "locator": "SEC. 2, Bus. & Prof. Code § 22757.12(d)",
+            "reason": "Transmission of summaries of any internal-use assessment to the Office of Emergency Services; no duty to assess is stated."
+          }
+        ]
+      }
+    },
+    {
+      "instrument": "ca-sb53",
+      "question": "Q06",
+      "status": "partly",
+      "passages": [
+        {
+          "source": "ca-sb53",
+          "locator": "SEC. 2, Bus. & Prof. Code § 22757.13(d)",
+          "quote": "shall review critical safety incident reports"
+        }
+      ],
+      "note": "The Office of Emergency Services shall review critical safety incident reports submitted by frontier developers: a review of filings, not of the model. The framework must describe how the developer approaches using third parties to assess catastrophic risks (§ 22757.12(a)(5)), and the transparency report summarises the extent to which third-party evaluators were involved (§ 22757.12(c)(2)(C)); neither requires an outside assessment.",
+      "search": {
+        "read": "SEC. 2 in full; SEC. 3 (Gov. Code § 11546.8); SEC. 4.",
+        "terms": ["third part", "independent", "audit", "review", "evaluat"],
+        "setAside": [
+          {
+            "locator": "SEC. 2, Bus. & Prof. Code § 22757.12(a)(5)",
+            "reason": "Describes the content of the developer’s framework (its approach to using third parties); does not require an outside assessment."
+          },
+          {
+            "locator": "SEC. 2, Bus. & Prof. Code § 22757.12(c)(2)(C)",
+            "reason": "Disclosure of the extent of third-party evaluator involvement; involvement is not required."
+          },
+          {
+            "locator": "SEC. 2, Bus. & Prof. Code § 22757.14(b)(5)",
+            "reason": "Concerns external verifiability of coverage definitions in the Department of Technology’s recommendations, not assessment of a model."
+          }
+        ]
+      }
+    },
+    {
+      "instrument": "ca-sb53",
+      "question": "Q07",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "ca-sb53",
+          "locator": "SEC. 2, Bus. & Prof. Code § 22757.13(c)(1)",
+          "quote": "report any critical safety incident pertaining to one or more of its frontier models to the Office of Emergency Services within 15 days of discovering the critical safety incident.",
+          "datasetClaim": "sb-critical-incident-15-days"
+        },
+        {
+          "source": "ca-sb53",
+          "locator": "SEC. 2, Bus. & Prof. Code § 22757.13(c)(2)",
+          "quote": "the frontier developer shall disclose that incident within 24 hours to an authority, including any law enforcement agency or public safety agency with jurisdiction, that is appropriate based on the nature of that incident and as required by law",
+          "datasetClaim": "sb-critical-incident-24-hours"
+        }
+      ],
+      "note": "Applies to all frontier developers. Fifteen days from discovery to the Office of Emergency Services; 24 hours to an appropriate authority where the incident poses an imminent risk of death or serious physical injury. “Critical safety incident” is defined in § 22757.11(d). § 22757.13(h)–(i) provides that compliance with a designated federal law, regulation or guidance document is deemed compliance with the section (see Q15)."
+    },
+    {
+      "instrument": "ca-sb53",
+      "question": "Q08",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "ca-sb53",
+          "locator": "SEC. 2, Bus. & Prof. Code § 22757.12(c)(1)",
+          "quote": "Before, or concurrently with, deploying a new frontier model or a substantially modified version of an existing frontier model, a frontier developer shall clearly and conspicuously publish on its internet website a transparency report",
+          "datasetClaim": "sb-transparency-report"
+        },
+        {
+          "source": "ca-sb53",
+          "locator": "SEC. 2, Bus. & Prof. Code § 22757.12(d)",
+          "quote": "every three months or pursuant to another reasonable schedule specified by the large frontier developer and communicated in writing to the Office of Emergency Services",
+          "datasetClaim": "sb-internal-use-risk-summaries"
+        }
+      ],
+      "note": "Trigger: before or concurrently with deploying a new or substantially modified frontier model. Contents: website, contact mechanism, release date, languages, output modalities, intended uses and use restrictions (§ 22757.12(c)(1)(A)–(G)); large frontier developers add summaries of catastrophic-risk assessments, results, third-party evaluator involvement and other framework steps (§ 22757.12(c)(2)). Large frontier developers also transmit summaries of internal-use risk assessments to the Office of Emergency Services on the stated schedule (§ 22757.12(d)). No output-labelling duty was seen."
+    },
+    {
+      "instrument": "ca-sb53",
+      "question": "Q09",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "ca-sb53",
+          "locator": "SEC. 4, Lab. Code § 1107.1(a)",
+          "quote": "prevents a covered employee from disclosing, or retaliates against a covered employee for disclosing,",
+          "datasetClaim": "sb-whistleblower-anti-retaliation"
+        },
+        {
+          "source": "ca-sb53",
+          "locator": "SEC. 4, Lab. Code § 1107.1(e)(1)",
+          "quote": "a reasonable internal process through which a covered employee may anonymously disclose information",
+          "datasetClaim": "sb-anonymous-internal-reporting"
+        }
+      ],
+      "note": "Protection covers “covered employees”, defined in Lab. Code § 1107(b) as employees responsible for assessing, managing or addressing risk of critical safety incidents, who disclose to the Attorney General, a federal authority or persons with authority over the matter information on a specific and substantial danger from a catastrophic risk or a violation of the Act. The internal anonymous process (§ 1107.1(e)) is a duty of large frontier developers; § 1107.1(d) requires notice of rights, and § 1107.1(f)–(h) provide attorney’s fees, a burden-of-proof rule and injunctive relief."
+    },
+    {
+      "instrument": "ca-sb53",
+      "question": "Q10",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "ca-sb53",
+          "locator": "CAML record, caml:History (action APPROVED)",
+          "quote": "APPROVED 2025-09-29"
+        }
+      ],
+      "note": "Approval by the Governor, 29 September 2025 (Chapter 138, Statutes of 2025); the same record gives FILED 2025-09-29 (filing with the Secretary of State). These are the Legislative Counsel database’s structured action fields; the printed approval line (“Approved by Governor September 29, 2025”) is in the dataset’s leginfo source (claim sb-enactment-2025-09-29), not in this copy."
+    },
+    {
+      "instrument": "ca-sb53",
+      "question": "Q11",
+      "status": "not-found",
+      "note": "No provision in the chaptered text sets an effective or operative date for the act as a whole or for Chapter 25.1 of the Business and Professions Code. No date is inferred.",
+      "search": {
+        "read": "Whole chaptered text: legislative counsel’s digest, SECTIONS 1–6, including SEC. 3 (Gov. Code § 11546.8) and SEC. 5.",
+        "terms": [
+          "operative",
+          "take effect",
+          "takes effect",
+          "effective",
+          "January 1",
+          "urgency"
+        ],
+        "setAside": [
+          {
+            "locator": "SEC. 3, Gov. Code § 11546.8(k)",
+            "reason": "Makes the CalCompute section operative only upon an appropriation; it governs that section only, not the developer duties compared here."
+          },
+          {
+            "locator": "SEC. 2, Bus. & Prof. Code §§ 22757.13(g)(1), 22757.14(a), 22757.14(d)(1)",
+            "reason": "“Beginning January 1, 2027” / “On or before January 1, 2027” set dates for reports by the Office of Emergency Services, the Department of Technology and the Attorney General, not the act’s effective date."
+          },
+          {
+            "locator": "SEC. 5(f); Legislative Counsel’s digest",
+            "reason": "“On or after January 1, 2025” defines the local rules that are preempted; the digest’s January 1, 2026 date describes existing law."
+          }
+        ]
+      }
+    },
+    {
+      "instrument": "ca-sb53",
+      "question": "Q12",
+      "status": "not-found",
+      "note": "No separate application date or transition period for the developer duties was found. The duties to publish a transparency report are triggered by deployment, not by a date.",
+      "search": {
+        "read": "Whole chaptered text.",
+        "terms": [
+          "operative",
+          "beginning",
+          "on or before",
+          "January 1",
+          "transition",
+          "existing frontier model"
+        ],
+        "setAside": [
+          {
+            "locator": "SEC. 2, Bus. & Prof. Code §§ 22757.13(g)(1), 22757.14(a), 22757.14(d)(1)",
+            "reason": "Dates of 1 January 2027 for reports by public bodies, not developer duties."
+          },
+          {
+            "locator": "SEC. 3, Gov. Code § 11546.8(k)",
+            "reason": "Operative condition for the CalCompute section only."
+          }
+        ]
+      }
+    },
+    {
+      "instrument": "ca-sb53",
+      "question": "Q13",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "ca-sb53",
+          "locator": "SEC. 2, Bus. & Prof. Code § 22757.15(a)",
+          "quote": "does not exceed one million dollars ($1,000,000) per violation.",
+          "datasetClaim": "sb-civil-penalty-cap"
+        }
+      ],
+      "note": "Per violation, in an amount dependent on the severity of the violation. § 22757.15(a) names large frontier developers that fail to publish or transmit a compliant document, make a statement in violation of § 22757.12(e), fail to report an incident under § 22757.13 or fail to comply with their own framework. Whistleblower violations (Lab. Code § 1107.1) carry the civil remedies of that section, not this penalty."
+    },
+    {
+      "instrument": "ca-sb53",
+      "question": "Q14",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "ca-sb53",
+          "locator": "SEC. 2, Bus. & Prof. Code § 22757.15(b)",
+          "quote": "A civil penalty described in this section shall be recovered in a civil action brought only by the Attorney General.",
+          "datasetClaim": "sb-attorney-general-enforcement"
+        },
+        {
+          "source": "ca-sb53",
+          "locator": "SEC. 2, Bus. & Prof. Code § 22757.13(c)(1)",
+          "quote": "report any critical safety incident pertaining to one or more of its frontier models to the Office of Emergency Services within 15 days of discovering the critical safety incident.",
+          "datasetClaim": "sb-critical-incident-15-days"
+        }
+      ],
+      "note": "The Attorney General recovers civil penalties. The Office of Emergency Services receives incident reports and internal-use summaries, reviews incident reports (§ 22757.13(d)) and may designate equivalent federal standards (§ 22757.13(h)); no penalty power is given to it."
+    },
+    {
+      "instrument": "ca-sb53",
+      "question": "Q15",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "ca-sb53",
+          "locator": "SEC. 2, Bus. & Prof. Code § 22757.12(a), opening clause",
+          "quote": "A large frontier developer shall write, implement, comply with, and clearly and conspicuously publish on its internet website a frontier AI framework",
+          "datasetClaim": "sb-framework-duty"
+        },
+        {
+          "source": "ca-sb53",
+          "locator": "SEC. 2, Bus. & Prof. Code § 22757.13(i)(1)",
+          "quote": "shall declare its intent to do so to the Office of Emergency Services.",
+          "datasetClaim": "sb-federal-equivalence-pathway"
+        },
+        {
+          "source": "ca-sb53",
+          "locator": "SEC. 2, Bus. & Prof. Code § 22757.12(c)(3)",
+          "quote": "including a system card or model card, shall be deemed in compliance with the applicable paragraph.",
+          "datasetClaim": "sb-system-card-deemed-compliance"
+        }
+      ],
+      "note": "Requires a developer framework, which describes how the developer approaches incorporating national standards, international standards and industry-consensus best practices (§ 22757.12(a)(1)). A frontier developer that declares its intent to comply with § 22757.13 through a federal law, regulation or guidance document designated by the Office of Emergency Services is “deemed in compliance” with that section to the extent it meets it (§ 22757.13(i)(2)(A)). Publishing transparency-report contents in a system or model card is deemed compliance (§ 22757.12(c)(3)). § 22757.12(c)(4) encourages disclosures consistent with industry best practices."
+    },
+    {
+      "instrument": "ny-ch699",
+      "question": "Q01",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "ny-s6953b",
+          "locator": "Proposed GBL § 1420(9), p. 3, lines 4–6",
+          "quote": "\"Large developer\" means a person that has trained at least one frontier model and has spent over one hundred million dollars in compute costs in aggregate in training frontier models.",
+          "datasetClaim": "fl-us-ny-2025-def-large-developer"
+        }
+      ],
+      "note": "One tier: “large developer”. Accredited colleges and universities engaged in academic research are excluded, and a transferee of full intellectual property rights in a frontier model becomes the large developer (§ 1420(9)). Text as signed in Chapter 699; Chapter 96 of 2026 repeals and re-adds Article 44-B (see ny-ch96)."
+    },
+    {
+      "instrument": "ny-ch699",
+      "question": "Q02",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "ny-s6953b",
+          "locator": "Proposed GBL § 1420(6)(a), p. 2, lines 28–30",
+          "quote": "an artificial intelligence model trained using greater than 10º26 computational operations"
+        },
+        {
+          "source": "ny-s6953b",
+          "locator": "Proposed GBL § 1420(6)(a), p. 2, line 30",
+          "quote": "the compute cost of which exceeds one hundred million dollars",
+          "datasetClaim": "fl-us-ny-2025-def-frontier-model"
+        },
+        {
+          "source": "ny-s6953b",
+          "locator": "Proposed GBL § 1420(9), p. 3, lines 4–6",
+          "quote": "\"Large developer\" means a person that has trained at least one frontier model and has spent over one hundred million dollars in compute costs in aggregate in training frontier models.",
+          "datasetClaim": "fl-us-ny-2025-def-large-developer"
+        }
+      ],
+      "note": "The PDF text layer renders the exponent as “10º26”, i.e. 10^26 operations. Model condition: more than 10^26 operations and compute cost above $100 million; a model produced by knowledge distillation from such a model is also a frontier model where its compute cost exceeds $5 million (§ 1420(6)(b)). Developer condition: over $100 million in aggregate compute costs for training frontier models. § 1424 limits the article to frontier models developed, deployed or operating in whole or in part in New York."
+    },
+    {
+      "instrument": "ny-ch699",
+      "question": "Q03",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "ny-s6953b",
+          "locator": "Proposed GBL § 1421(1)(a), p. 4, lines 10–12",
+          "quote": "Before deploying a frontier model, the large developer of such frontier model shall do all of the following: (a) Implement a written safety and security protocol",
+          "datasetClaim": "fl-us-ny-2025-safety-protocol-duty"
+        }
+      ],
+      "note": "“Safety and security protocol” is defined in § 1420(12) (p. 3) as documented technical and organizational protocols describing protections against critical harm, cybersecurity protections, a testing procedure, compliance and senior responsible personnel. § 1421(3) requires an annual review."
+    },
+    {
+      "instrument": "ny-ch699",
+      "question": "Q04",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "ny-s6953b",
+          "locator": "Proposed GBL § 1421(1)(c)(i), p. 4, lines 18–19",
+          "quote": "Conspicuously publish a copy of the safety and security protocol with appropriate redactions",
+          "datasetClaim": "fl-us-ny-2025-safety-protocol-duty"
+        },
+        {
+          "source": "ny-s6953b",
+          "locator": "Proposed GBL § 1421(1)(c)(i), p. 4, lines 18–21",
+          "quote": "transmit a copy of such redacted safety and security protocol to the attorney general and division of homeland security and emergency services"
+        }
+      ],
+      "note": "Before deploying a frontier model. Publication with “appropriate redactions” (defined in § 1420(1)) and transmission of the redacted copy to the attorney general and the division of homeland security and emergency services; § 1421(1)(c)(ii) adds access upon request (see Q06). Material modifications after annual review are published in the same manner (§ 1421(3))."
+    },
+    {
+      "instrument": "ny-ch699",
+      "question": "Q05",
+      "status": "partly",
+      "passages": [
+        {
+          "source": "ny-s6953b",
+          "locator": "Proposed GBL § 1420(12)(c), p. 3, lines 31–32",
+          "quote": "Describe in detail the testing procedure to evaluate if the frontier model poses an unreasonable risk of critical harm"
+        },
+        {
+          "source": "ny-s6953b",
+          "locator": "Proposed GBL § 1421(1)(d), p. 4, lines 28–30",
+          "quote": "specific tests and test results used in any assessment of the frontier model required by this section or the developer's safety and security protocol"
+        }
+      ],
+      "note": "The protocol the large developer must implement describes a testing procedure to evaluate whether the model poses an unreasonable risk of critical harm, and the developer must record and retain test information. The text sets no free-standing duty to test each model; § 1421(2) prohibits deployment where it would create an unreasonable risk of critical harm.",
+      "search": {
+        "read": "Whole print S6953-B, pp. 1–5.",
+        "terms": ["test", "evaluat", "assess"],
+        "setAside": [
+          {
+            "locator": "Proposed GBL § 1421(2), p. 4",
+            "reason": "A prohibition on deployment, not a duty to evaluate."
+          }
+        ]
+      }
+    },
+    {
+      "instrument": "ny-ch699",
+      "question": "Q06",
+      "status": "partly",
+      "passages": [
+        {
+          "source": "ny-s6953b",
+          "locator": "Proposed GBL § 1421(1)(c)(ii), p. 4, lines 22–25",
+          "quote": "Grant the attorney general and division of homeland security and emergency services or the attorney general access to the safety and security protocol"
+        }
+      ],
+      "note": "Access is granted “upon request”, with redactions only as required by federal law: access to a document, with no assessment by the authority required. § 1421(1)(d) requires test records detailed enough for third parties to replicate the testing procedure but does not require a third-party assessment.",
+      "search": {
+        "read": "Whole print S6953-B, pp. 1–5.",
+        "terms": ["third part", "independent", "audit", "access", "request"],
+        "setAside": [
+          {
+            "locator": "Proposed GBL § 1421(1)(d), p. 4",
+            "reason": "Replicability of tests by third parties is a record-keeping standard; no outside assessment is provided for."
+          },
+          {
+            "locator": "Proposed GBL § 1420(12)(d), p. 3",
+            "reason": "Protocol must enable the developer “or third party” to comply; not an outside assessment."
+          }
+        ]
+      }
+    },
+    {
+      "instrument": "ny-ch699",
+      "question": "Q07",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "ny-s6953b",
+          "locator": "Proposed GBL § 1421(4), p. 4, lines 43–45",
+          "quote": "A large developer shall disclose each safety incident affecting the frontier model to the attorney general and division of homeland security and emergency services within seventy-two hours",
+          "datasetClaim": "fl-us-ny-2025-incident-72-hours"
+        }
+      ],
+      "note": "Seventy-two hours from learning of the incident or of facts sufficient for a reasonable belief that one occurred. “Safety incident” is defined in § 1420(13). The disclosure includes the date, the reasons the incident qualifies and a short statement."
+    },
+    {
+      "instrument": "ny-ch699",
+      "question": "Q08",
+      "status": "not-found",
+      "passages": [],
+      "note": "No duty to publish a report on each model, or to draw up and supply model documentation to an authority or to others, was found. Before deploying a frontier model, the large developer must record and retain information on tests and test results for as long as the model is deployed plus five years; retention is set aside below. The published protocol (Q04) is developer-level. No output-labelling duty was seen.",
+      "search": {
+        "read": "Whole print S6953-B, pp. 1–5.",
+        "terms": [
+          "publish",
+          "report",
+          "transmit",
+          "documentation",
+          "card",
+          "retain",
+          "assessment"
+        ],
+        "setAside": [
+          {
+            "locator": "Proposed GBL § 1421(1)(d), p. 4, lines 28–30",
+            "reason": "“specific tests and test results used in any assessment of the frontier model required by this section or the developer's safety and security protocol”: records to be retained, not published or supplied; does not meet the criterion."
+          },
+          {
+            "locator": "Proposed GBL § 1421(1)(c), p. 4",
+            "reason": "Publication and transmission concern the safety and security protocol, not per-model information."
+          },
+          {
+            "locator": "Proposed GBL § 1421(4), p. 4",
+            "reason": "Disclosure of each safety incident to the attorney general and the division of homeland security and emergency services: incident-triggered, recorded under Q07, not a report on each model."
+          }
+        ]
+      }
+    },
+    {
+      "instrument": "ny-ch699",
+      "question": "Q09",
+      "status": "not-found",
+      "note": "No provision protecting persons who report risks or violations was found in print S6953-B.",
+      "search": {
+        "read": "Whole print S6953-B, pp. 1–5 (§ 1 short title; § 2 adding GBL §§ 1420–1425; § 3 effect).",
+        "terms": ["whistle|retaliat|employee"],
+        "setAside": [
+          {
+            "locator": "Proposed GBL § 1420(1)(d), p. 2",
+            "reason": "“protect employee or customer privacy” is a ground for redaction, not a reporting protection."
+          }
+        ]
+      }
+    },
+    {
+      "instrument": "ny-ch699",
+      "question": "Q10",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "ny-s6953-assembly",
+          "locator": "Assembly bill record for S06953, Actions, entry 12/19/2025",
+          "quote": "12/19/2025 SIGNED CHAP.699"
+        }
+      ],
+      "note": "Signature by the Governor, 19 December 2025, as Chapter 699 of 2025, according to the Assembly’s action list; the list also records delivery to the Governor on 12/09/2025 and an approval memo (APPROVAL MEMO.76) on the same day as signature."
+    },
+    {
+      "instrument": "ny-ch699",
+      "question": "Q11",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "ny-s6953b",
+          "locator": "Bill § 3, p. 5, lines 32–33",
+          "quote": "§ 3. This act shall take effect on the ninetieth day after it shall have become a law."
+        }
+      ],
+      "note": "Rule as signed: the ninetieth day after becoming law. Counted from signature on 19 December 2025 this gives 19 March 2026 (computed; New York’s statutory day-counting rules not checked). Chapter 96 of 2026 amends this section 3, according to its summary line and bill § 3; the amended text is recorded in ny-ch96 Q11."
+    },
+    {
+      "instrument": "ny-ch699",
+      "question": "Q12",
+      "status": "not-found",
+      "note": "No separate application date or transition period for the duties was found. The § 1421(1) duties are triggered by deployment (“Before deploying a frontier model”), not by a date.",
+      "search": {
+        "read": "Whole print S6953-B, pp. 1–5.",
+        "terms": [
+          "take effect",
+          "effective",
+          "apply",
+          "transition",
+          "before deploying"
+        ],
+        "setAside": [
+          {
+            "locator": "Proposed GBL § 1424, p. 5",
+            "reason": "Territorial scope, not an application date."
+          },
+          {
+            "locator": "Bill § 3, p. 5",
+            "reason": "General effect provision, recorded in Q11."
+          }
+        ]
+      }
+    },
+    {
+      "instrument": "ny-ch699",
+      "question": "Q13",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "ny-s6953b",
+          "locator": "Proposed GBL § 1422(1)(a), p. 5, lines 4–7",
+          "quote": "a civil penalty in an amount not exceeding ten million dollars for a first violation and in an amount not exceeding thirty million dollars for any subsequent violation",
+          "datasetClaim": "fl-us-ny-2025-civil-penalty"
+        }
+      ],
+      "note": "For violations of § 1421, determined based on severity of the violation, in a civil action by the attorney general; injunctive or declaratory relief is also available (§ 1422(1)(b)). No private right of action (§ 1422(2))."
+    },
+    {
+      "instrument": "ny-ch699",
+      "question": "Q14",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "ny-s6953b",
+          "locator": "Proposed GBL § 1422(1), p. 5, line 1",
+          "quote": "The attorney general may bring a civil action"
+        }
+      ],
+      "note": "The attorney general enforces through civil action. The division of homeland security and emergency services receives the protocol and incident disclosures alongside the attorney general (§ 1421(1)(c), (4)); no enforcement power is given to it."
+    },
+    {
+      "instrument": "ny-ch699",
+      "question": "Q15",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "ny-s6953b",
+          "locator": "Proposed GBL § 1421(1)(a), p. 4, lines 10–12",
+          "quote": "Before deploying a frontier model, the large developer of such frontier model shall do all of the following: (a) Implement a written safety and security protocol",
+          "datasetClaim": "fl-us-ny-2025-safety-protocol-duty"
+        },
+        {
+          "source": "ny-s6953b",
+          "locator": "Proposed GBL § 1421(3), p. 4, line 38",
+          "quote": "industry best practices"
+        }
+      ],
+      "note": "Requires a developer’s written safety and security protocol. The annual review accounts for changes to model capabilities “and industry best practices” (§ 1421(3)). No code of practice or standard is named as a means of compliance, and no deemed-compliance provision was found."
+    },
+    {
+      "instrument": "ny-ch96",
+      "question": "Q01",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "ny-s8828",
+          "locator": "Bill text, § 2 (GBL § 1420(10) as re-added), p. 3, lines 53–55",
+          "quote": "\"Large frontier developer\" means a frontier developer that … collectively had annual gross revenues in excess … of five hundred million dollars in the preceding calendar year",
+          "datasetClaim": "fl-us-ny-ch96-changes-large-developer"
+        },
+        {
+          "source": "ny-s8828",
+          "locator": "Bill text, § 2 (GBL § 1420(8) as re-added), p. 3, line 41",
+          "quote": "\"Frontier developer\" means a person who has trained, or initiated"
+        }
+      ],
+      "note": "Two defined terms bear the duties: “frontier developer” (transparency report, incident reporting, statements) and “large frontier developer” (framework, internal-use summaries, disclosure statement under § 1428, penalties under § 1427). § 1426 excludes accredited colleges and universities engaged in academic research and the Empire AI consortium. Ellipses in quotes from this record skip omitted words or the printed line numbers. These duties are in Article 44-B as re-added, which takes effect on 1 January 2027 (Q11)."
+    },
+    {
+      "instrument": "ny-ch96",
+      "question": "Q02",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "ny-s8828",
+          "locator": "Bill text, § 2 (GBL § 1420(9)(a) as re-added), p. 3, lines 46–47",
+          "quote": "\"Frontier model\" means a foundation model that was trained … using a quantity of computing power greater than",
+          "datasetClaim": "fl-us-ny-ch96-changes-frontier-model"
+        },
+        {
+          "source": "ny-s8828",
+          "locator": "Bill text, § 2 (GBL § 1420(10) as re-added), p. 3, lines 53–55",
+          "quote": "\"Large frontier developer\" means a frontier developer that … collectively had annual gross revenues in excess … of five hundred million dollars in the preceding calendar year",
+          "datasetClaim": "fl-us-ny-ch96-changes-large-developer"
+        }
+      ],
+      "note": "The Assembly record renders the figure after “greater than” as an unreadable character between “10” and “26” followed by “integer or floating-point operations”; the Senate PDF of S8828 (cross-check copy, not quoted) prints 10º26, i.e. 10^26. Compute includes subsequent fine-tuning, reinforcement learning and other material modifications (§ 1420(9)(b)). Developer tier: revenues with affiliates above $500 million. § 1425 limits the article to models developed, deployed or operating in whole or in part in New York."
+    },
+    {
+      "instrument": "ny-ch96",
+      "question": "Q03",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "ny-s8828",
+          "locator": "Bill text, § 2 (GBL § 1421(1) as re-added), p. 4, lines 14–16",
+          "quote": "A large frontier developer shall … write, implement, comply with, and clearly and conspicuously publish on … its internet website a frontier AI framework"
+        }
+      ],
+      "note": "Same wording as dataset claim ny-ch96-framework-duty, split at the printed line numbers. “Frontier AI framework” is defined in § 1420(7) as documented technical and organizational protocols to manage, assess and mitigate catastrophic risks; § 1421(1)(a)–(j) lists what it describes “in detail”. Annual review under § 1421(2)(a)."
+    },
+    {
+      "instrument": "ny-ch96",
+      "question": "Q04",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "ny-s8828",
+          "locator": "Bill text, § 2 (GBL § 1421(1) as re-added), p. 4, lines 14–16",
+          "quote": "A large frontier developer shall … write, implement, comply with, and clearly and conspicuously publish on … its internet website a frontier AI framework"
+        }
+      ],
+      "note": "Publication on the developer’s website; a materially modified framework and a justification are published within thirty days (§ 1421(2)(b)). Redactions are permitted under § 1421(5). No duty to submit the framework to the office was found; § 1429 allows the office to consider requirements for “the transmission of frontier AI frameworks to the office”."
+    },
+    {
+      "instrument": "ny-ch96",
+      "question": "Q05",
+      "status": "partly",
+      "passages": [
+        {
+          "source": "ny-s8828",
+          "locator": "Bill text, § 2 (GBL § 1421(1)(b) as re-added), p. 4, line 22",
+          "quote": "developer to identify and assess whether a frontier model has"
+        },
+        {
+          "source": "ny-s8828",
+          "locator": "Bill text, § 2 (GBL § 1421(1) as re-added), p. 4, lines 14–16",
+          "quote": "A large frontier developer shall … write, implement, comply with, and clearly and conspicuously publish on … its internet website a frontier AI framework"
+        }
+      ],
+      "note": "The framework, which a large frontier developer must implement and comply with, describes how it handles assessing whether a model has capabilities that could pose a catastrophic risk. No free-standing duty to test each model was found; § 1421(3)(b) requires summaries of assessments conducted under the framework and § 1422(2)(a) summaries of internal-use assessments.",
+      "search": {
+        "read": "Bill text §§ 1–5, including GBL §§ 1420–1429 as re-added.",
+        "terms": ["assess", "evaluat", "test"],
+        "setAside": [
+          {
+            "locator": "GBL § 1421(3)(b)(i)–(ii) as re-added, p. 5",
+            "reason": "Summaries of assessments in the transparency report; presupposes rather than imposes assessment."
+          },
+          {
+            "locator": "GBL § 1422(2)(a) as re-added, p. 5",
+            "reason": "Transmission of internal-use assessment summaries; no duty to assess is stated."
+          }
+        ]
+      }
+    },
+    {
+      "instrument": "ny-ch96",
+      "question": "Q06",
+      "status": "partly",
+      "passages": [
+        {
+          "source": "ny-s8828",
+          "locator": "Bill text, § 2 (GBL § 1422(4) as re-added), p. 6, lines 24–25",
+          "quote": "The office shall review critical safety incident reports submitted"
+        }
+      ],
+      "note": "The office (within the department of financial services, § 1420(16)) reviews incident reports: a review of filings, not of the model. The framework describes the developer’s use of third parties to assess catastrophic risks (§ 1421(1)(e)) and the transparency report the extent of third-party evaluator involvement (§ 1421(3)(b)(iii)); neither requires an outside assessment.",
+      "search": {
+        "read": "Bill text §§ 1–5.",
+        "terms": ["third part", "independent", "audit", "review", "evaluat"],
+        "setAside": [
+          {
+            "locator": "GBL § 1421(1)(e) as re-added, p. 4",
+            "reason": "Content of the developer’s framework, not a required outside assessment."
+          },
+          {
+            "locator": "GBL § 1428(2) as re-added, p. 8",
+            "reason": "Disclosure statement on ownership and contacts, filed with the office; not an assessment of the model or of risk practices."
+          }
+        ]
+      }
+    },
+    {
+      "instrument": "ny-ch96",
+      "question": "Q07",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "ny-s8828",
+          "locator": "Bill text, § 2 (GBL § 1422(3)(a) as re-added), p. 6, lines 9–10",
+          "quote": "shall report any critical safety incident … to the office within seventy-two hours"
+        }
+      ],
+      "note": "Applies to all frontier developers. Seventy-two hours from a determination that an incident occurred or from learning facts sufficient for a reasonable belief that it occurred, to the office; twenty-four hours to an appropriate authority, including law enforcement or public safety agencies, where the incident poses an imminent risk of death or serious physical injury. Compliance through a designated federal standard is deemed compliance (§ 1422(9), see Q15). Article 44-B as re-added takes effect on 1 January 2027 (Q11)."
+    },
+    {
+      "instrument": "ny-ch96",
+      "question": "Q08",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "ny-s8828",
+          "locator": "Bill text, § 2 (GBL § 1421(3)(a) as re-added), p. 4, lines 50–53",
+          "quote": "Before, or concurrently with, deploying a new frontier model or … tier developer shall clearly and conspicuously publish on its internet … website a transparency report"
+        }
+      ],
+      "note": "Trigger: before or concurrently with deploying a new or substantially modified frontier model. Contents listed in § 1421(3)(a)(i)–(vii); large frontier developers add summaries of risk assessments, results, third-party evaluator involvement and other framework steps (§ 1421(3)(b)). Large frontier developers also transmit internal-use assessment summaries to the office (§ 1422(2)(a)) and file a developer-level disclosure statement with the office (§ 1428). No output-labelling duty was seen."
+    },
+    {
+      "instrument": "ny-ch96",
+      "question": "Q09",
+      "status": "not-found",
+      "note": "No provision protecting persons who report risks or violations was found in the bill text of S8828.",
+      "search": {
+        "read": "Bill text §§ 1–5, including GBL §§ 1420–1429 as re-added.",
+        "terms": ["whistle|retaliat|employee"],
+        "setAside": [
+          {
+            "locator": "GBL § 1422(1) as re-added, p. 5",
+            "reason": "A mechanism for frontier developers or members of the public to report critical safety incidents to the office; a general reporting channel, with no protection against retaliation."
+          }
+        ]
+      }
+    },
+    {
+      "instrument": "ny-ch96",
+      "question": "Q10",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "ny-s8828",
+          "locator": "Actions list, final entry",
+          "quote": "03/27/2026 SIGNED CHAP.96"
+        }
+      ],
+      "note": "Signature by the Governor, 27 March 2026, as Chapter 96 of 2026, according to the Assembly’s action list (delivered to the Governor 03/20/2026). The chapter as printed in the session laws was not inspected."
+    },
+    {
+      "instrument": "ny-ch96",
+      "question": "Q11",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "ny-s8828",
+          "locator": "Bill text, § 5, p. 9, lines 40–45",
+          "quote": "This act shall take effect immediately; provided, however that … sections one, two and four of this act shall take … effect on the same date"
+        },
+        {
+          "source": "ny-s8828",
+          "locator": "Bill text, § 3 (text of amended section 3 of Chapter 699), p. 9, lines 31–32",
+          "quote": "§ 3. This act shall take effect [on the ninetieth day after it shall … have become a law] January 1, 2027."
+        }
+      ],
+      "note": "Chapter 96 takes effect immediately, except that sections 1, 2 (Article 44-B as re-added) and 4 take effect with the 2025 chapter (Chapter 699). Its § 3 amends Chapter 699’s effect section: the bracketed words are deleted matter (the former ninetieth-day rule) and the new text reads “January 1, 2027”. The resulting date for Article 44-B, 1 January 2027, follows from reading the two provisions together."
+    },
+    {
+      "instrument": "ny-ch96",
+      "question": "Q12",
+      "status": "not-found",
+      "note": "No application date or transition period for the developer duties separate from the effect provisions in Q11 was found. The transparency-report duty is triggered by deployment.",
+      "search": {
+        "read": "Bill text §§ 1–5.",
+        "terms": ["take effect", "beginning", "January", "transition", "apply"],
+        "setAside": [
+          {
+            "locator": "Bill text § 5 and § 3, p. 9",
+            "reason": "Effect provisions, recorded in Q11."
+          },
+          {
+            "locator": "GBL § 1422(7)(a) as re-added, p. 6",
+            "reason": "“Beginning January first, two thousand twenty-eight” sets the office’s annual report, not developer duties."
+          }
+        ]
+      }
+    },
+    {
+      "instrument": "ny-ch96",
+      "question": "Q13",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "ny-s8828",
+          "locator": "Bill text, § 2 (GBL § 1427(1) as re-added), p. 8, lines 7–10",
+          "quote": "not to exceed one million … dollars for a first violation and in an amount not to exceed three … million dollars per subsequent violation"
+        },
+        {
+          "source": "ny-s8828",
+          "locator": "Bill text, § 2 (GBL § 1428(5)(a) as re-added), p. 9, line 10",
+          "quote": "one thousand dollars for each day"
+        }
+      ],
+      "note": "§ 1427(1): per violation, determined based on severity, where a large frontier developer fails to publish or transmit a compliant document, makes a prohibited statement, fails to report an incident or fails to comply with its own framework; no private right of action (§ 1427(2)). § 1428(5): for failure to file a disclosure statement or to correct false information, $1,000 per day plus assessments owed, levied by the office after notice and hearing."
+    },
+    {
+      "instrument": "ny-ch96",
+      "question": "Q14",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "ny-s8828",
+          "locator": "Bill text, § 2 (GBL § 1427(1) as re-added), p. 8, line 7",
+          "quote": "The attorney general may bring a civil action"
+        },
+        {
+          "source": "ny-s8828",
+          "locator": "Bill text, § 2 (GBL § 1428(5) as re-added), p. 9, line 8",
+          "quote": "the office may, after notice and hearing, levy civil"
+        }
+      ],
+      "note": "The attorney general brings civil actions for penalties under § 1427. “Office” is defined in § 1420(16) as an office within the department of financial services reporting to the superintendent; it receives incident reports and disclosure statements, levies penalties under § 1428(5), assesses developers for operating costs (§ 1428(4)) and may adopt rules (§ 1429)."
+    },
+    {
+      "instrument": "ny-ch96",
+      "question": "Q15",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "ny-s8828",
+          "locator": "Bill text, § 2 (GBL § 1421(1)(a) as re-added), p. 4, line 19",
+          "quote": "incorporating national standards, international standards, and"
+        },
+        {
+          "source": "ny-s8828",
+          "locator": "Bill text, § 2 (GBL § 1422(9)(b)(i) as re-added), p. 7, line 28",
+          "quote": "the frontier developer shall be deemed in compliance with"
+        },
+        {
+          "source": "ny-s8828",
+          "locator": "Bill text, § 2 (GBL § 1421(3)(c) as re-added), p. 5, lines 21–22",
+          "quote": "including a system card or model card, shall be deemed in compliance"
+        }
+      ],
+      "note": "Requires a developer framework (§ 1421(1), Q03) that describes how it handles incorporating national and international standards and industry consensus best practices. A frontier developer that declares its intent to meet § 1422(3) through a federal law, regulation or guidance document designated by the office is deemed in compliance with that subdivision to the extent it meets the standards of, or complies with, the designated federal law, regulation or guidance document, and must copy federal incident reports to the office (§ 1422(9)). Publishing transparency-report contents in a system or model card is deemed compliance (§ 1421(3)(c))."
+    }
+  ],
+  "omissions": [
+    "ca-sb53 § 22757.12(e)(1) false or misleading statements (dataset claim sb-false-statement-prohibition) and § 22757.12(f) redactions: not a question here; mentioned in notes only.",
+    "ca-sb53 SEC. 3 (Gov. Code § 11546.8, CalCompute consortium) and SEC. 5(f) local preemption: outside the fifteen questions.",
+    "ca-sb53 SEC. 1 legislative findings, including (j) naming biological attacks among catastrophic risks: findings, not duties. § 22757.11(c)(1)(A) names chemical, biological, radiological or nuclear weapons in the catastrophic-risk definition; recorded at policy level only, not quoted.",
+    "ny-ch699 § 1421(2) prohibition on deploying a model that creates an unreasonable risk of critical harm, § 1421(5) false statements and § 1420(7) critical harm definition (names chemical, biological, radiological or nuclear weapons): not a question here.",
+    "ny-ch96 § 1428 large frontier developer disclosure statement and pro rata assessment, § 1429 rulemaking, § 1421(4) false statements: noted in Q08, Q13 and Q14 notes only. § 1420(3) catastrophic-risk definition names chemical, biological, radiological or nuclear weapons; not quoted.",
+    "ny-ch96 dataset quotes ny-ch96-framework-duty, ny-ch96-incident-reporting, ny-ch96-civil-penalty, ny-chapter96-signed / ny-ch96-effective-date (section 3 text) and the summary line do not match this cache verbatim because the record interleaves printed line numbers (and renders § as ?); the same wording is quoted with ellipses at the line breaks, without datasetClaim.",
+    "ny-s6953-assembly dataset quotes on passage (06/12/2025) not used: passage is not a Q10 date kind."
+  ],
+  "retrievalFailures": [
+    "ny-s8828 Assembly record: the exponent in GBL § 1420(9)(a) is an invalid byte (0xA7) in the HTML and is unreadable in the text layer; the figure was read in the Senate PDF cross-check copy (ny-s8828-senate), which is not quoted.",
+    "ny-s6953b: printed line numbers are separated from the text in the PDF text layer; line locators were derived by aligning text lines to the printed line count on each page and may be off by one."
+  ],
+  "openQuestions": [
+    "Budget: ca-sb53 new words exceed the remaining budget by 8 words (15 new + 393 dataset of limit 400): Q05 “assess whether a frontier model has capabilities” (7), Q06 “shall review critical safety incident reports” (6), Q10 “APPROVED 2025-09-29” (2). Recommendation: accept the small overrun, or drop Q06 to not-found with the setAside list and keep Q05/Q10, which have no reusable dataset quote.",
+    "Q05 for all three instruments is partly: the duty to assess is carried by the framework or protocol the developer must implement, with no free-standing duty to test each model. Recommendation: keep partly for all three for consistency; reconsider only if other groups treat a framework-borne assessment as stated.",
+    "Q06 for ca-sb53 and ny-ch96 is partly on the strength of an authority’s duty to review incident reports (filings), and for ny-ch699 on access to the protocol upon request. Recommendation: keep partly per the legend’s ‘assessment of filings or documents’ wording.",
+    "ny-ch699 Q08 is partly: test records must be kept but not published or supplied. Recommendation: keep partly, or change to not-found if ‘draw up’ without supply is judged outside the criterion.",
+    "ny-ch699 Q11 gives a computed date of 19 March 2026 (ninetieth day after 19 December 2025), which precedes Chapter 96’s signature on 27 March 2026. Whether Chapter 699 took effect before amendment is not settled by these texts. Recommendation: keep the computed date marked as computed, or drop it and state only the rule; do not state whether Chapter 699 took effect.",
+    "ca-sb53 Q11 is not-found: the chaptered text contains no effective or operative date for the act as a whole. Recommendation: keep not-found; any date from California’s general rule on statutes belongs outside this instrument’s cell.",
+    "ny-ch96 quotes use ellipses where the record interleaves printed line numbers, not only for omitted words. Recommendation: accept, noted in the ny-ch96 Q01 note; or record a convention in FORMAT.md."
+  ]
+}

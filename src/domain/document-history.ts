@@ -1,4 +1,5 @@
 import { isComparisonCell } from './framework-comparison';
+import { isLawCell } from './law-questions';
 import type { Claim, Dataset, Entity } from './schema';
 import { frameworkLabels, frameworkVersions } from './versions';
 
@@ -65,6 +66,8 @@ export const provisionKinds = [
   // standing a text claims for itself.
   'date',
   'standing',
+  // Schema 2.30: what a model card discloses on a card question.
+  'disclosure',
 ] as const;
 export type ProvisionKind = (typeof provisionKinds)[number];
 export const provisionKindLabels: Record<ProvisionKind, string> = {
@@ -79,6 +82,7 @@ export const provisionKindLabels: Record<ProvisionKind, string> = {
   statement: 'Statement',
   date: 'Stated date',
   standing: 'Standing',
+  disclosure: 'Model-card question',
 };
 export const partyRoleLabels = {
   decides: 'Decides',
@@ -120,12 +124,13 @@ export function familyHistory(
       .sort(relationOrder);
     const replaces = about('supersedes_document');
     const changes = about('changes_from');
-    // Comparison cells appear on the comparison page, not in these lists.
+    // Comparison and law cells appear on their comparison pages, not in
+    // these lists.
     const provisions = about('states_provision')
-      .filter((c) => !isComparisonCell(c))
+      .filter((c) => !isComparisonCell(c) && !isLawCell(c))
       .sort(provisionOrder);
     const absences = about('provision_not_found')
-      .filter((c) => !isComparisonCell(c))
+      .filter((c) => !isComparisonCell(c) && !isLawCell(c))
       .sort(provisionOrder);
     // Disputed assessments of a stated provision, kept apart from its text.
     const assessments = about('provision_assessed').sort(provisionOrder);

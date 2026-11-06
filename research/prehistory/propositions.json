@@ -1,0 +1,99 @@
+{
+  "collection": "antecedent-texts",
+  "title": "Antecedent texts: machine intelligence before 1965",
+  "note": "Two new antecedent propositions, drafted because a recurring idea in the located texts before 1965 has no home among the dataset's propositions (checked 2026-11-02 against every proposition in data/entities.json; baseline.json lists them). The letter U is unused for proposition codes in data/, src/, research/, review/ and docs/ on main and on the remote branch (checked 2026-11-02; letters in use include A, B, C, D, E, F, G, H, K, L, M, N, O, OC, P, R, S, T, V, W, X, Y and Z). Each proposition has one criterion: a text that meets it articulates it, a text that disputes it or a premise it depends on contests it, and a text that comes close bears on it. Criteria are worded as claims attributed to no one and imply nothing about their truth. A third proposition, U03 (the technological singularity), was added on 2026-11-03 by maintainer decision 3b: for machine intelligence only, with Vinge (1983, 1993) as the earliest located texts and Ulam's 1958 report of von Neumann as context. Its earliest located text is later than the collection's 1965 boundary; the maintainer's decision places it here.",
+  "groups": [
+    {
+      "id": "UA",
+      "label": "Whether machines can think or originate",
+      "codes": ["U01", "U02"]
+    },
+    {
+      "id": "UB",
+      "label": "A point beyond which human affairs could not continue",
+      "codes": ["U03"]
+    }
+  ],
+  "propositions": [
+    {
+      "code": "U01",
+      "id": "machines-only-do-what-they-are-ordered",
+      "label": "A machine can only do what it is ordered to do",
+      "criterion": "A machine, whether a particular machine or machines in general, cannot originate anything: it does only what it has been ordered, instructed or programmed to do, so that it produces nothing beyond what was put into it or what the people who set it up know how to specify. A statement that machines are at present used only in this way, without saying that they could not do otherwise, does not meet the criterion; nor does a statement about one machine's lack of a particular skill.",
+      "terms": ["Lovelace's objection", "Lady Lovelace's objection"],
+      "termNote": "The usual name of the proposition, as matched by the dataset's validation (case-insensitive substring of an evidence passage). A text that uses the name, for example as a heading, does not thereby state the proposition; the name-use role is separate from articulation.",
+      "overlaps": [
+        {
+          "code": "U02",
+          "id": "machines-could-think",
+          "note": "A text that contests U01 often also articulates U02, but the two are separate: a machine could originate results without being said to think, and a text can hold that machines could think while saying nothing about origination."
+        },
+        {
+          "code": "B6",
+          "id": "control-or-purpose-specification",
+          "note": "B6 concerns people's ability to direct machines or specify their purpose. Some texts that contest U01 do so in order to argue for B6 (Wiener 1960); the records are kept separate."
+        },
+        {
+          "code": "Y15",
+          "id": "tool-without-goals",
+          "note": "Y15 records the later claim that an advanced AI is a tool without wants and therefore safe. U01 is a claim about what a machine can produce, not about its goals or safety; a text is recorded on Y15 only under Y15's own criterion."
+        }
+      ]
+    },
+    {
+      "code": "U02",
+      "id": "machines-could-think",
+      "label": "A machine could think",
+      "criterion": "A machine could think, or could have intelligence, consciousness or a mind in the sense in which these are ascribed to people. The text may state it as a possibility in principle, a prediction or a programme of work, and may state it of machines generally or of a kind of machine. A statement that machines imitate or simulate particular mental operations, without the claim that this is or could amount to thinking, does not meet the criterion; nor does a figure of speech such as 'electronic brain' used without that claim.",
+      "terms": [],
+      "termNote": "No usual name: the phrases in use ('thinking machine', 'machine intelligence', 'can machines think?') occur in texts on every side, so none is recorded as the proposition's name.",
+      "overlaps": [
+        {
+          "code": "C1",
+          "id": "behavioural-tests-as-evidence",
+          "note": "C1 records the claim that behaviour in a test is weak evidence of what a system is. A text can contest U02 on that ground; it is recorded on C1 only if it meets C1's criterion."
+        },
+        {
+          "code": "E02",
+          "id": "machine-intelligence-exceeds-humans-in-all-domains",
+          "note": "E02 requires surpassing humans across essentially all cognitive tasks. U02 requires only that a machine could think at all."
+        },
+        {
+          "code": "W01",
+          "id": "machine-succession",
+          "note": "W01 requires succession as the leading intelligence. A text recorded on W01 is recorded on U02 only where it states that machines could think, have consciousness or a mind."
+        }
+      ]
+    },
+    {
+      "code": "U03",
+      "id": "technological-singularity",
+      "label": "Machine intelligence will bring a singularity",
+      "criterion": "The creation of intelligence greater than human, by machines or by human intelligence amplified with machines, is approaching or would bring a point, called a singularity or described as a discontinuity or transition, beyond which human affairs as they have been known could not continue or could not be understood or foreseen. A statement that technological change in general is accelerating towards such a point, without machine intelligence as its cause or part of it, does not meet the criterion; nor does a prediction of superhuman machine intelligence without the claim of such a point.",
+      "terms": [],
+      "termNote": "The word 'singularity' occurs in Ulam's report of a conversation with von Neumann (1958), which names no machines, and in Vinge (1983, 1993). No name role is assigned in this draft.",
+      "overlaps": [
+        {
+          "code": "A1",
+          "id": "intelligence-explosion",
+          "note": "A1 records a runaway rise in intelligence through a machine's own design or research capacity. U03 records the claim of a point beyond which human affairs could not continue or be foreseen. A text can meet both; each is recorded under its own criterion."
+        },
+        {
+          "code": "A4",
+          "id": "fast-or-hard-takeoff",
+          "note": "A4 concerns the speed of the transition. U03 does not require any stated speed."
+        },
+        {
+          "code": "W01",
+          "id": "machine-succession",
+          "note": "W01 requires succession as the leading intelligence. A text that states a singularity need not state succession; Vinge (1983) also considers amplified human intelligence."
+        },
+        {
+          "code": "G02",
+          "id": "accelerating-growth-from-automated-research",
+          "note": "G02 records an economic argument for accelerating or finite-time growth from automated research. U03 is not an economic claim; a text is recorded on G02 only under G02's criterion."
+        }
+      ]
+    }
+  ]
+}

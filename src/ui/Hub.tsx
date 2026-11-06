@@ -6,6 +6,11 @@ import { NavLink } from './NavLink';
 import { toolById, ToolLink } from './tools';
 import { stancesTitle } from '../reading/proposition-stances-page';
 import { comparisonFacets } from '../domain/framework-comparison';
+import { cardDevelopers, cardFacets } from '../domain/model-card-facets';
+import { modelCardsTitle } from '../reading/model-cards-page';
+import { lawsComparedTitle } from '../reading/laws-compared-page';
+import { predictionsTitle } from '../reading/predictions-page';
+import { lawFacets } from '../domain/law-questions';
 import { chinaScopeNote } from '../reading/china-scope';
 import './reading-first.css';
 import './control-commitments.css';
@@ -283,6 +288,55 @@ function GovernanceEntries({
           described={false}
         />
       </li>
+      <li className="landing-entry">
+        <span className="eyebrow">Tool · comparison</span>
+        <h3>{modelCardsTitle}</h3>
+        <p>
+          The same {cardFacets.length} questions put to system cards, model
+          cards and safety reports from{' '}
+          {cardDevelopers
+            .slice(0, -1)
+            .map((d) => d.name)
+            .join(', ') +
+            ' and ' +
+            cardDevelopers.at(-1)!.name}
+          : the card’s dates, the framework it cites and any determination under
+          it, dangerous-capability and alignment evaluations, red-teaming,
+          external and government testers, the release decision and the limits
+          the card states. Each cell quotes the card with its locator, or
+          records the search that found no passage. A card is the developer’s
+          own account of its model, and the table ranks no one.
+        </p>
+        <ToolLink
+          tool={toolById('model-cards')}
+          ids={summary}
+          onAction={onAction}
+          described={false}
+        />
+      </li>
+      <li className="landing-entry">
+        <span className="eyebrow">Tool · comparison</span>
+        <h3>{lawsComparedTitle}</h3>
+        <p>
+          The same {lawFacets.length} questions put to binding texts that
+          address developers or providers of frontier and general-purpose AI
+          models in the European Union, California, New York, Illinois and
+          China. The EU Code of Practice is shown as a compliance route, and two
+          US federal texts, one revoked and one with a rescission announced,
+          close the table. The questions cover who is covered, thresholds,
+          safety frameworks, risk evaluation, outside assessment, incident
+          reporting, whistleblowers, dates, penalties and the enforcer. Each
+          cell quotes the text with its locator, or records the search that
+          found no passage. A cell records what a text requires, not who
+          complied, and the table ranks no one.
+        </p>
+        <ToolLink
+          tool={toolById('laws-compared')}
+          ids={summary}
+          onAction={onAction}
+          described={false}
+        />
+      </li>
       {guides.map((g) => (
         <li className="landing-entry" key={g.id}>
           <span className="eyebrow">Guided reading</span>
@@ -441,6 +495,25 @@ function IdeasEntries({
           </NavLink>
         </li>
       ))}
+      <li className="landing-entry">
+        <span className="eyebrow">Tool · predictions</span>
+        <h3>{predictionsTitle}</h3>
+        <p>
+          Dated predictions about machine intelligence from 1950 to 2026:
+          forecasts in papers, essays and posts, expert surveys, a public bet
+          and a forecasting platform’s figure. Each record gives the text’s own
+          words for the event, the horizon and any probability, and is dated by
+          when the prediction was made. A chart places predictions with a
+          printed target year; a table lists every record. The collection does
+          not say whether any prediction came true.
+        </p>
+        <ToolLink
+          tool={toolById('predictions')}
+          ids={summary}
+          onAction={onAction}
+          described={false}
+        />
+      </li>
       <li className="landing-entry">
         <span className="eyebrow">Tool · propositions</span>
         <h3>{stancesTitle}</h3>

@@ -1,0 +1,689 @@
+{
+  "group": "eu",
+  "drafter": "fresh-context drafting pass, 2026-11-01",
+  "cells": [
+    {
+      "instrument": "eu-ai-act",
+      "question": "Q01",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "eu-ai-act",
+          "locator": "Article 53(1), chapeau (same words as in Article 101(1), dataset quote aia-art101-gpai-fines)",
+          "quote": "providers of general-purpose AI models"
+        },
+        {
+          "source": "eu-ai-act",
+          "locator": "Article 51(1), chapeau",
+          "quote": "shall be classified as a general-purpose AI model with systemic risk if it meets any of the following conditions",
+          "datasetClaim": "fl-eu-aia-art51-classification-conditions"
+        }
+      ],
+      "note": "The duties in Article 53 fall on providers of general-purpose AI models; Article 55(1) adds duties for providers of general-purpose AI models with systemic risk, the category defined in Article 51 (high-impact capabilities, presumed above a training-compute threshold, or a Commission decision). Article 54 adds an authorised-representative duty for providers established in third countries; Article 53(2) exempts certain open-source models from points (a) and (b), but not models with systemic risk. 'Provider' is defined in Article 3(3) (not quoted)."
+    },
+    {
+      "instrument": "eu-ai-act",
+      "question": "Q02",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "eu-ai-act",
+          "locator": "Article 51(2)",
+          "quote": "presumed to have high impact capabilities pursuant to paragraph 1, point (a), when the cumulative amount of computation used for its training measured in floating point operations is greater than",
+          "datasetClaim": "aia-art51-compute-presumption"
+        },
+        {
+          "source": "eu-ai-act",
+          "locator": "Article 51(2), closing words",
+          "quote": "greater than 1025"
+        },
+        {
+          "source": "eu-ai-act",
+          "locator": "Article 51(1), point (b)",
+          "quote": "based on a decision of the Commission, ex officio or following a qualified alert from the scientific panel",
+          "datasetClaim": "fl-eu-aia-art51-commission-decision"
+        }
+      ],
+      "note": "The figure is 10 to the power 25 floating point operations; the cached text renders the superscript as '1025'. The compute figure is a presumption of high-impact capabilities under Article 51(1)(a); a model can also be classified by Commission decision having regard to the Annex XIII criteria. Article 51(3) empowers the Commission to amend the thresholds by delegated act; Regulation (EU) 2026/1744, Article 1, point (37), restates that delegation in Article 97 without changing Article 51. Articles 52(2) to 52(5) provide for rebuttal and reassessment."
+    },
+    {
+      "instrument": "eu-ai-act",
+      "question": "Q03",
+      "status": "partly",
+      "passages": [
+        {
+          "source": "eu-ai-act",
+          "locator": "Article 55(1), point (b)",
+          "quote": "assess and mitigate possible systemic risks at Union level",
+          "datasetClaim": "aia-art55-assess-mitigate"
+        }
+      ],
+      "note": "Providers of models with systemic risk must assess and mitigate systemic risks; Articles 53 and 55 do not require a written risk framework, policy or protocol. The only written policy required (Article 53(1)(c)) concerns copyright.",
+      "search": {
+        "read": "Chapter V (Articles 51 to 56), Article 3 points (63) to (65), Annexes XI to XIII; Regulation (EU) 2026/1744 Article 1 (all points) for amendments to these provisions",
+        "terms": [
+          "framework",
+          "policy",
+          "protocol",
+          "risk management",
+          "Article 5[1-6]",
+          "general-purpose AI model"
+        ],
+        "setAside": [
+          {
+            "locator": "Article 53(1), point (c)",
+            "reason": "A policy on copyright and related rights, a single other subject."
+          },
+          {
+            "locator": "Article 9",
+            "reason": "Risk management system for high-risk AI systems, not general-purpose AI models."
+          },
+          {
+            "locator": "Annex XI, Section 2, point 1",
+            "reason": "Technical documentation content (description of evaluation strategies), not a risk framework."
+          }
+        ]
+      }
+    },
+    {
+      "instrument": "eu-ai-act",
+      "question": "Q04",
+      "status": "not-applicable",
+      "note": "Not applicable: Q03 finds a risk-management duty but no written framework document, and the Q04 criterion is not applicable where Q03 finds no such document. Technical documentation, which includes evaluation strategies for models with systemic risk, is kept for supply to the AI Office on request (Article 53(1)(a), Annex XI); it is recorded under Q08.",
+      "search": {
+        "read": "Chapter V (Articles 51 to 56), Articles 88 to 94, Annexes XI and XII; Regulation (EU) 2026/1744 Article 1",
+        "terms": [
+          "framework",
+          "publish",
+          "made publicly available",
+          "upon request",
+          "Annex XI"
+        ],
+        "setAside": [
+          {
+            "locator": "Article 53(1), point (a), and Annex XI, Section 2",
+            "reason": "Technical documentation on the model, supplied to the AI Office on request; not a risk framework (see Q08)."
+          },
+          {
+            "locator": "Article 91(1)",
+            "reason": "Commission power to request the documentation drawn up under Articles 53 and 55; not a duty to publish or submit a framework."
+          },
+          {
+            "locator": "Article 52(6)",
+            "reason": "Commission publishes a list of models with systemic risk, not providers' documents."
+          }
+        ]
+      }
+    },
+    {
+      "instrument": "eu-ai-act",
+      "question": "Q05",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "eu-ai-act",
+          "locator": "Article 55(1), point (a)",
+          "quote": "perform model evaluation in accordance with standardised protocols and tools reflecting the state of the art, including conducting and documenting adversarial testing",
+          "datasetClaim": "aia-art55-model-evaluation"
+        }
+      ],
+      "note": "Applies to providers of general-purpose AI models with systemic risk. The provision does not tie the evaluation to a point before or after the model is placed on the market."
+    },
+    {
+      "instrument": "eu-ai-act",
+      "question": "Q06",
+      "status": "partly",
+      "passages": [
+        {
+          "source": "eu-ai-act",
+          "locator": "Article 92(1), chapeau",
+          "quote": "The AI Office, after consulting the Board, may conduct evaluations of the general-purpose AI model concerned",
+          "datasetClaim": "fl-eu-aia-art92-evaluations"
+        },
+        {
+          "source": "eu-ai-act",
+          "locator": "Article 92(3)",
+          "quote": "through APIs or further appropriate technical means and tools, including source code",
+          "datasetClaim": "fl-eu-aia-art92-3-access"
+        }
+      ],
+      "note": "A power, not a requirement: the AI Office may evaluate a model to assess compliance where information under Article 91 is insufficient, or to investigate systemic risks; under Article 92(2) the Commission may appoint independent experts to carry out evaluations. Article 55(1)(a) requires adversarial testing but does not require that it be done by an external party.",
+      "search": {
+        "read": "Articles 55, 56, 88 to 94; Annex XI; Regulation (EU) 2026/1744 Article 1, point (21)",
+        "terms": ["independent", "external", "third party", "evaluat", "audit"],
+        "setAside": [
+          {
+            "locator": "Annex XI, Section 2, point 2",
+            "reason": "Asks for a description of internal and/or external adversarial testing 'where applicable'; does not require external testing."
+          },
+          {
+            "locator": "Article 56(6) as replaced by Regulation (EU) 2026/1744, Article 1, point (21)",
+            "reason": "Commission assessment of the adequacy of codes of practice, not of a model or a provider's practices."
+          }
+        ]
+      }
+    },
+    {
+      "instrument": "eu-ai-act",
+      "question": "Q07",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "eu-ai-act",
+          "locator": "Article 55(1), point (c)",
+          "quote": "report, without undue delay, to the AI Office and, as appropriate, to national competent authorities, relevant information about serious incidents",
+          "datasetClaim": "aia-art55-incident-reporting"
+        }
+      ],
+      "note": "Applies to providers of models with systemic risk. The timing is 'without undue delay'; no number of days is set in the Regulation. 'Serious incident' is defined in Article 3(49) by reference to an AI system (not quoted)."
+    },
+    {
+      "instrument": "eu-ai-act",
+      "question": "Q08",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "eu-ai-act",
+          "locator": "Article 53(1), point (a)",
+          "quote": "draw up and keep up-to-date the technical documentation of the model",
+          "datasetClaim": "aia-art53-technical-documentation"
+        },
+        {
+          "source": "eu-ai-act",
+          "locator": "Article 53(1), point (b)",
+          "quote": "to providers of AI systems who intend to integrate the general-purpose AI model into their AI systems",
+          "datasetClaim": "fl-eu-aia-art53-1-b-downstream"
+        },
+        {
+          "source": "eu-ai-act",
+          "locator": "Article 53(1), point (d)",
+          "quote": "a sufficiently detailed summary about the content used for training of the general-purpose AI model, according to a template provided by the AI Office",
+          "datasetClaim": "fl-eu-aia-art53-1-d-training-summary"
+        }
+      ],
+      "note": "The technical documentation (Annex XI, with added items for models with systemic risk) is kept for supply to the AI Office and national competent authorities on request; information for downstream providers (Annex XII) is made available to them; the training-content summary is made publicly available. Points (a) and (b) do not apply to qualifying open-source models without systemic risk (Article 53(2)). Article 52(1) separately requires notification to the Commission within two weeks once the Article 51(1)(a) condition is met. No labelling duty for model outputs is among the provisions compared (Article 50 concerns AI systems)."
+    },
+    {
+      "instrument": "eu-ai-act",
+      "question": "Q09",
+      "status": "partly",
+      "passages": [
+        {
+          "source": "eu-ai-act",
+          "locator": "Article 87",
+          "quote": "Directive (EU) 2019/1937 shall apply"
+        }
+      ],
+      "note": "Article 87 applies Directive (EU) 2019/1937 to the reporting of infringements of this Regulation and the protection of reporting persons; the protections are set by that Directive, which is not read here. Article 89(2) gives downstream providers a right to lodge a complaint, a complaint mechanism that does not meet the criterion. Partly because the protection is applied by reference to another law, not stated in this Regulation.",
+      "search": {
+        "read": "Articles 85 to 94; Regulation (EU) 2026/1744 Article 1",
+        "terms": [
+          "retaliat",
+          "whistleblow",
+          "Directive \\(EU\\) 2019/1937",
+          "reporting persons",
+          "complaint"
+        ],
+        "setAside": [
+          {
+            "locator": "Article 89(2)",
+            "reason": "Complaint right for downstream providers; a complaint mechanism, not protection of reporting persons."
+          },
+          {
+            "locator": "Article 85",
+            "reason": "Complaints to market surveillance authorities about AI systems."
+          }
+        ]
+      }
+    },
+    {
+      "instrument": "eu-ai-act",
+      "question": "Q10",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "eu-ai-act",
+          "locator": "Closing formula following Article 113",
+          "quote": "Done at Brussels, 13 June 2024.",
+          "datasetClaim": "aia-enacted"
+        },
+        {
+          "source": "eu-omnibus",
+          "locator": "Closing formula",
+          "quote": "Done at Strasbourg, 8 July 2026.",
+          "datasetClaim": "omni-enacted"
+        }
+      ],
+      "note": "Signature dates of Regulation (EU) 2024/1689 and of the amending Regulation (EU) 2026/1744. Publication dates (12.7.2024; 24.7.2026) are from the Official Journal headers and are not adoption dates."
+    },
+    {
+      "instrument": "eu-ai-act",
+      "question": "Q11",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "eu-ai-act",
+          "locator": "Article 113, first paragraph",
+          "quote": "shall enter into force on the twentieth day following that of its publication in the Official Journal of the European Union",
+          "datasetClaim": "fl-eu-aia-art113-entry-into-force"
+        },
+        {
+          "source": "eu-omnibus",
+          "locator": "Article 4, first paragraph",
+          "quote": "This Regulation shall enter into force on the third day following that of its publication in the Official Journal of the European Union.",
+          "datasetClaim": "omni-entry-into-force"
+        }
+      ],
+      "note": "Computed: Regulation (EU) 2024/1689 was published on 12.7.2024, giving entry into force on 1 August 2024 (computed). Regulation (EU) 2026/1744 was published on 24.7.2026, giving 27 July 2026 (computed); among the provisions compared, it amends Article 56(6)."
+    },
+    {
+      "instrument": "eu-ai-act",
+      "question": "Q12",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "eu-ai-act",
+          "locator": "Article 113, third paragraph, point (b)",
+          "quote": "Chapter III Section 4, Chapter V, Chapter VII and Chapter XII and Article 78 shall apply from 2 August 2025, with the exception of Article 101",
+          "datasetClaim": "aia-art113-chapter-v-date"
+        },
+        {
+          "source": "eu-ai-act",
+          "locator": "Article 113, second paragraph",
+          "quote": "It shall apply from 2 August 2026.",
+          "datasetClaim": "aia-art113-general-date"
+        },
+        {
+          "source": "eu-ai-act",
+          "locator": "Article 111(3)",
+          "quote": "shall take the necessary steps in order to comply with the obligations laid down in this Regulation by 2 August 2027",
+          "datasetClaim": "aia-art111-earlier-models"
+        }
+      ],
+      "note": "Chapter V duties apply from 2 August 2025. Article 101 (fines) is excepted from that date; read with the general date in the second paragraph, it applies from 2 August 2026. The text states no separate date for Article 101; this is a reading of the two quoted provisions. Under Article 111(3), providers of models placed on the market before 2 August 2025 have until 2 August 2027. Regulation (EU) 2026/1744, Article 1, point (40), amends Article 113 points (a) and (c) and adds point (d), but leaves point (b) unchanged."
+    },
+    {
+      "instrument": "eu-ai-act",
+      "question": "Q13",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "eu-ai-act",
+          "locator": "Article 101(1), first subparagraph",
+          "quote": "The Commission may impose on providers of general-purpose AI models fines not exceeding 3 % of their annual total worldwide turnover in the preceding financial year or EUR 15 000 000, whichever is higher",
+          "datasetClaim": "aia-art101-gpai-fines"
+        }
+      ],
+      "note": "The maximum is the higher of 3 % of annual total worldwide turnover in the preceding financial year or EUR 15 000 000, where the Commission finds that the provider intentionally or negligently infringed the relevant provisions or failed to comply with requests, measures or access for evaluation (Article 101(1)(a) to (d)). Regulation (EU) 2026/1744 does not amend Article 101; its new SMC paragraph 6a applies to Article 99."
+    },
+    {
+      "instrument": "eu-ai-act",
+      "question": "Q14",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "eu-ai-act",
+          "locator": "Article 101(1), first subparagraph (part)",
+          "quote": "The Commission may impose on providers of general-purpose AI models fines",
+          "datasetClaim": "aia-art101-gpai-fines"
+        },
+        {
+          "source": "eu-ai-act",
+          "locator": "Article 92(1), chapeau",
+          "quote": "The AI Office, after consulting the Board, may conduct evaluations of the general-purpose AI model concerned",
+          "datasetClaim": "fl-eu-aia-art92-evaluations"
+        },
+        {
+          "source": "eu-omnibus",
+          "locator": "Recital (31)",
+          "quote": "The Commission has exclusive competence as regards general-purpose AI models under Article 88 of that Regulation."
+        }
+      ],
+      "note": "Under Article 88(1) the Commission has exclusive powers to supervise and enforce Chapter V and entrusts these tasks to the AI Office; Articles 89 to 93 give the AI Office and Commission monitoring, information, evaluation and measure powers. The new Article 75(1) inserted by Regulation (EU) 2026/1744 concerns AI systems, not models, and is not used here."
+    },
+    {
+      "instrument": "eu-ai-act",
+      "question": "Q15",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "eu-ai-act",
+          "locator": "Article 55(2), first sentence",
+          "quote": "may rely on codes of practice within the meaning of Article 56 to demonstrate compliance",
+          "datasetClaim": "aia-art55-code-reliance"
+        },
+        {
+          "source": "eu-ai-act",
+          "locator": "Article 55(2), third sentence",
+          "quote": "shall demonstrate alternative adequate means of compliance for assessment by the Commission",
+          "datasetClaim": "aia-art55-code-reliance"
+        },
+        {
+          "source": "eu-omnibus",
+          "locator": "Article 1, point (21), replacing Article 56(6) of Regulation (EU) 2024/1689",
+          "quote": "The Commission, taking utmost account of the opinion of the Board, shall assess whether the codes of practice cover the obligations provided for in Articles 53 and 55",
+          "datasetClaim": "omni-art56-adequacy-assessment"
+        }
+      ],
+      "note": "'May rely on' codes of practice, until a harmonised standard is published (Articles 53(4) and 55(2)); compliance with European harmonised standards grants a presumption of conformity to the extent they cover the obligations. Providers that do not adhere to an approved code or comply with a standard demonstrate alternative means. Regulation (EU) 2026/1744 replaced Article 56(6): the Commission, rather than the AI Office and the Board, now assesses codes; its recital (41) states that these codes 'do not grant a presumption of conformity'. The Act does not require a developer's own safety framework."
+    },
+    {
+      "instrument": "eu-code-ss",
+      "question": "Q01",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "eu-cop-ss",
+          "locator": "Recitals, (b) (PDF p. 3)",
+          "quote": "this Safety and Security Chapter (“Chapter”) is only relevant for providers of general-purpose AI models with systemic risk and not AI systems",
+          "datasetClaim": "prov-eu-code-ss-scope"
+        }
+      ],
+      "note": "The commitments are written as commitments of 'Signatories'; the Chapter is stated to be relevant only to providers of general-purpose AI models with systemic risk. The commitments are addressed to providers that sign the Code and choose to rely on it; the Code is not binding in itself (see the row’s standing). Terms defined in Article 3 of the AI Act apply (Glossary, opening paragraph)."
+    },
+    {
+      "instrument": "eu-code-ss",
+      "question": "Q02",
+      "status": "partly",
+      "passages": [
+        {
+          "source": "eu-cop-ss",
+          "locator": "Recitals, (b) (PDF p. 3) (part)",
+          "quote": "providers of general-purpose AI models with systemic risk",
+          "datasetClaim": "prov-eu-code-ss-scope"
+        }
+      ],
+      "note": "The Chapter sets no threshold of its own; its scope is the AI Act category of models with systemic risk, whose conditions are in Article 51 of the Act. Measure 1.1 ties the timing of the Framework to the provider's notification under Article 52(1) of the Act.",
+      "search": {
+        "read": "Whole text: Objectives, Recitals, Commitments 1 to 10 with Measures, Glossary, Appendices 1 to 4",
+        "terms": ["Article 51", "Article 52", "FLOP", "floating", "10\\^"],
+        "setAside": [
+          {
+            "locator": "Measure 1.1, last paragraph (PDF p. 7)",
+            "reason": "Refers to notification under Article 52(1) AI Act as a timing point; sets no condition of its own."
+          },
+          {
+            "locator": "Measure 1.2, point (1)(a) (PDF p. 7)",
+            "reason": "'Trigger points' (e.g. training compute) for lighter-touch evaluations, set by the Signatory; not a scope threshold."
+          }
+        ]
+      }
+    },
+    {
+      "instrument": "eu-code-ss",
+      "question": "Q03",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "eu-cop-ss",
+          "locator": "Commitment 1, first paragraph (PDF p. 6)",
+          "quote": "Signatories commit to adopting a state-of-the-art Safety and Security Framework (“Framework”).",
+          "datasetClaim": "prov-eu-code-ss-framework"
+        }
+      ],
+      "note": "Measure 1.1 lists the Framework's contents (trigger points, systemic risk acceptance criteria and tiers, responsibility allocation, update process); Measure 1.3 requires updates and a Framework assessment at least every 12 months. A commitment of Signatories."
+    },
+    {
+      "instrument": "eu-code-ss",
+      "question": "Q04",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "eu-cop-ss",
+          "locator": "Measure 1.4 (PDF p. 10)",
+          "quote": "Signatories will provide the AI Office with (unredacted) access to their Framework, and updates thereof, within five business days of either being confirmed."
+        },
+        {
+          "source": "eu-cop-ss",
+          "locator": "Measure 10.2, first sentence (PDF p. 28)",
+          "quote": "Signatories will publish (e.g. via their websites) a summarised version of their Framework"
+        }
+      ],
+      "note": "Access for the AI Office within five business days of confirmation. Publication of a summarised version is conditioned 'if and insofar as necessary to assess and/or mitigate systemic risks', allows removals, and is not necessary where all the Signatory's models are 'similarly safe or safer models' (Appendix 2.2)."
+    },
+    {
+      "instrument": "eu-code-ss",
+      "question": "Q05",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "eu-cop-ss",
+          "locator": "Measure 3.2, first paragraph (PDF p. 12)",
+          "quote": "Signatories will conduct at least state-of-the-art model evaluations"
+        },
+        {
+          "source": "eu-cop-ss",
+          "locator": "Measure 1.2, last paragraph (PDF p. 8)",
+          "quote": "at least before placing the model on the market"
+        }
+      ],
+      "note": "A full systemic risk assessment and mitigation process (identification, analysis including model evaluations, acceptance determination, mitigation) is carried out at least before placing on the market and when the Measure 7.6 conditions are met; lighter-touch evaluations and post-market monitoring continue along the model lifecycle (Measures 1.2 and 3.5)."
+    },
+    {
+      "instrument": "eu-code-ss",
+      "question": "Q06",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "eu-cop-ss",
+          "locator": "Appendix 3.5, first paragraph (PDF p. 40)",
+          "quote": "Signatories will ensure that adequately qualified independent external evaluators conduct model evaluations"
+        }
+      ],
+      "note": "Subject to two exceptions in Appendix 3.5: the model is a 'similarly safe or safer model', or the Signatory fails to appoint qualified evaluators despite early search efforts. Measure 3.5 separately provides access for independent external evaluators for post-market monitoring, and Appendix 4.5 refers to security reviews by an independent external party."
+    },
+    {
+      "instrument": "eu-code-ss",
+      "question": "Q07",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "eu-cop-ss",
+          "locator": "Measure 9.3, first paragraph (PDF p. 26)",
+          "quote": "an initial report that is submitted to the AI Office"
+        },
+        {
+          "source": "eu-cop-ss",
+          "locator": "Measure 9.3, point (1) (PDF p. 26)",
+          "quote": "not later than two days after the Signatories become aware of the involvement of their model in the incident",
+          "datasetClaim": "prov-eu-code-ss-incident-reporting-deadlines"
+        }
+      ],
+      "note": "Initial-report deadlines run by type of serious incident: two days (critical infrastructure disruption), five days (serious cybersecurity breach), 10 days (death), 15 days (serious harm to health, fundamental-rights infringement, property or environment), 'save in exceptional circumstances'. Reports go to the AI Office and, as applicable, national competent authorities; intermediate reports at least every four weeks and a final report within 60 days of resolution."
+    },
+    {
+      "instrument": "eu-code-ss",
+      "question": "Q08",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "eu-cop-ss",
+          "locator": "Commitment 7, first paragraph (PDF p. 18)",
+          "quote": "creating a Safety and Security Model Report (“Model Report”) before placing a model on the market"
+        },
+        {
+          "source": "eu-cop-ss",
+          "locator": "Measure 7.7, first paragraph (PDF p. 22)",
+          "quote": "provide the AI Office with access to the Model Report"
+        }
+      ],
+      "note": "The Model Report is due to the AI Office by the time the model is placed on the market, and access to an updated Model Report is given within five business days of a confirmed update; a delay of up to 15 business days is possible under conditions. A summarised version is published 'if and insofar as necessary' (Measure 10.2). Measure 10.1 adds documentation kept for the AI Office on request. Measure 3.5 lists watermarks among example post-market monitoring methods; no output-labelling duty is set."
+    },
+    {
+      "instrument": "eu-code-ss",
+      "question": "Q09",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "eu-cop-ss",
+          "locator": "Measure 3.5, paragraph on independent external evaluators, sentence before conditions (1)–(5) (PDF p. 14)",
+          "quote": "Signatories will not take any legal or technical retaliation against the independent external evaluators"
+        },
+        {
+          "source": "eu-cop-ss",
+          "locator": "Measure 8.3, point (7) (PDF p. 25)",
+          "quote": "not retaliating in any form"
+        }
+      ],
+      "note": "The Measure 3.5 commitment covers independent external evaluators, for their testing and/or publication of findings, as long as they meet five listed conditions. Measure 8.3 lists non-retaliation against persons providing information about systemic risks to competent authorities, and a published whistleblower protection policy, as examples of indicators of a healthy risk culture rather than as separate commitments. Recital (d) states that Measure 8.3 is without prejudice to Directive (EU) 2019/1937 and Article 87 AI Act."
+    },
+    {
+      "instrument": "eu-code-ss",
+      "question": "Q10",
+      "status": "not-found",
+      "note": "The PDF text carries no date of adoption, approval or issue. A publication date for the Code is recorded elsewhere in the dataset, not from this text.",
+      "search": {
+        "read": "Whole text, including the cover page with chair names (PDF p. 1), Objectives and Recitals (PDF pp. 2 to 5) and Glossary",
+        "terms": [
+          "2025",
+          "July",
+          "adopt(ed|ion) of (this|the) Code",
+          "published"
+        ],
+        "setAside": [
+          {
+            "locator": "Measure 3.5 (PDF p. 14)",
+            "reason": "'Signatories will publish suitable criteria' concerns evaluator selection, not a date of the Code."
+          }
+        ]
+      }
+    },
+    {
+      "instrument": "eu-code-ss",
+      "question": "Q11",
+      "status": "not-found",
+      "note": "The Chapter contains no provision on its own entry into force or taking effect.",
+      "search": {
+        "read": "Whole text",
+        "terms": [
+          "entry into force|enter into force|in force",
+          "apply from|applies from|application"
+        ],
+        "setAside": [
+          {
+            "locator": "Appendix 1.3.1 (PDF p. 35), Appendix 1.3.3 (PDF p. 36), Appendix 3.4 (PDF p. 39)",
+            "reason": "'application' used of software interfaces, model applications and evaluator applications; not about effect of the Code."
+          }
+        ]
+      }
+    },
+    {
+      "instrument": "eu-code-ss",
+      "question": "Q12",
+      "status": "not-found",
+      "note": "No separate application date or transition period for the commitments was found, including for models already on the market.",
+      "search": {
+        "read": "Whole text",
+        "terms": [
+          "apply from|applies from|application",
+          "transition|grace period|already (been )?placed on the market",
+          "2025"
+        ],
+        "setAside": [
+          {
+            "locator": "Measure 1.1, last paragraph (PDF p. 7)",
+            "reason": "Framework confirmation deadline per model (four weeks after notification under Article 52(1) AI Act and two weeks before placing on the market); a timing for one commitment, not an application date of the Code."
+          }
+        ]
+      }
+    },
+    {
+      "instrument": "eu-code-ss",
+      "question": "Q13",
+      "status": "not-found",
+      "note": "The Chapter states no penalty for not adhering to its commitments.",
+      "search": {
+        "read": "Whole text",
+        "terms": ["penalt|fines?\\b|sanction", "enforce", "Article 101"],
+        "setAside": [
+          {
+            "locator": "Measure 4.1 (PDF p. 15), Measure 5.1 (PDF p. 17), Measure 6.1 (PDF p. 18), Measure 8.1 (PDF p. 23), Appendix 3.2 (PDF p. 39)",
+            "reason": "Matches on 'define' and 'fine-tuning'; not penalties."
+          },
+          {
+            "locator": "Appendix 4.1 (PDF p. 41), Appendix 4.3 (PDF p. 42)",
+            "reason": "'enforcement'/'enforced' refer to password and access controls."
+          }
+        ]
+      }
+    },
+    {
+      "instrument": "eu-code-ss",
+      "question": "Q14",
+      "status": "partly",
+      "passages": [
+        {
+          "source": "eu-cop-ss",
+          "locator": "Objectives, point B (PDF p. 2)",
+          "quote": "to enable the AI Office to assess compliance of providers of general-purpose AI models who choose to rely on the Code"
+        }
+      ],
+      "note": "The Chapter names the AI Office as the body that receives Frameworks, Model Reports and serious incident reports and that assesses compliance of providers relying on the Code, stated as an objective of the Code. The Code does not itself confer enforcement or penalty powers; those are in the AI Act (see the AI Act row).",
+      "search": {
+        "read": "Whole text",
+        "terms": [
+          "AI Office (will|may|shall)",
+          "enforce",
+          "penalt|fines?\\b|sanction"
+        ],
+        "setAside": [
+          {
+            "locator": "Recitals, (d) (PDF p. 3)",
+            "reason": "Information sent to the AI Office treated under Article 78 AI Act; confidentiality, not supervision."
+          }
+        ]
+      }
+    },
+    {
+      "instrument": "eu-code-ss",
+      "question": "Q15",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "eu-cop-ss",
+          "locator": "Objectives, point A (PDF p. 2)",
+          "quote": "To serve as a guiding document for demonstrating compliance with the obligations provided for in Articles 53 and 55 AI Act"
+        },
+        {
+          "source": "eu-cop-ss",
+          "locator": "Objectives, point A (PDF p. 2)",
+          "quote": "adherence to the Code does not constitute conclusive evidence of compliance with these obligations under the AI Act",
+          "datasetClaim": "prov-eu-code-ss-adherence-not-conclusive"
+        },
+        {
+          "source": "eu-cop-ss",
+          "locator": "Commitment 1, first paragraph (PDF p. 6)",
+          "quote": "Signatories commit to adopting a state-of-the-art Safety and Security Framework (“Framework”).",
+          "datasetClaim": "prov-eu-code-ss-framework"
+        }
+      ],
+      "note": "The Code requires a Signatory's own Framework (Commitment 1) and presents itself as a guiding document for compliance with Articles 53 and 55 AI Act. Recital (d) states that Signatories 'may be able to rely on international standards' to the extent they cover the Chapter's provisions."
+    }
+  ],
+  "omissions": [
+    "AI Act Article 3, points (3), (49), (63) to (65): definitions of provider, serious incident, general-purpose AI model and systemic risk; paraphrased only, to save the per-source budget. Regulation (EU) 2026/1744 amends Article 3 only at point (14) and inserts points (14a) and (14b).",
+    "AI Act Article 52(1) to (5): notification within two weeks, rebuttal, designation and reassessment; mentioned in notes, dataset quotes available (aia-art52-notification, fl-eu-aia-art52-2-rebuttal, fl-eu-aia-art52-4-designation).",
+    "AI Act Article 53(1)(c): copyright policy; set aside under Q03 as a single other subject.",
+    "AI Act Article 55(1)(d): cybersecurity protection; not one of the questions.",
+    "AI Act Article 56(9) and Regulation (EU) 2026/1744 Article 1, point (20) (Article 50(7)): implementing-act fallback for codes; Article 50(7) concerns content-labelling codes, not model duties.",
+    "AI Act Articles 91, 93 and 94: information requests, measures (including commitments and market withdrawal) and procedural rights; paraphrased under Q14.",
+    "AI Act Annex XIII: designation criteria (dataset quotes fl-eu-aia-annex13-criteria, ab-gov-eu-ai-act-annex13-biological-sequences); paraphrased only. Recital 110 CBRN wording not used (hazard rule).",
+    "Regulation (EU) 2026/1744 Article 1, point (37): restates the Commission's delegated powers under Articles 51(3), 52(4), 53(5) and (6) for five years from 1 August 2024; mentioned under Q02 only.",
+    "Regulation (EU) 2026/1744 footnote 4: European Parliament position of 16 June 2026 and Council decision of 29 June 2026; legislative-procedure dates, not used for Q10 (signature date used).",
+    "Regulation (EU) 2026/1744 Article 1, point (31): new Article 75(1) on AI Office competence for AI systems based on general-purpose AI models; concerns systems, not model duties (Q14).",
+    "Code Commitments 4 to 6 and 8 (acceptance determination, safety and security mitigations, responsibility allocation) and Appendices 1 to 4; not among the questions. Appendix 1.4 specified systemic risks (including CBRN) not quoted (hazard rule).",
+    "Code Measure 10.1: additional documentation kept for the AI Office on request; mentioned under Q08."
+  ],
+  "retrievalFailures": [],
+  "openQuestions": [
+    "eu-ai-act Q02 and Q09 add new AI Act words beyond the dataset quotes: 'greater than 1025' (3 words, Article 51(2), needed for the figure) and 'Directive (EU) 2019/1937 shall apply' (5 words, Article 87). About 8 new words against a budget of about 20. Recommendation: accept; both are the shortest passages carrying the figure and the reference.",
+    "eu-ai-act Q01 quotes 'providers of general-purpose AI models' at Article 53(1); the same words are part of dataset quote aia-art101-gpai-fines (Article 101(1)), so the checker counts no new words. Recommendation: accept, or relocate the passage to Article 101(1) if the locator should match the dataset quote's own provision.",
+    "eu-ai-act Q07: 'without undue delay' is a timing standard without a number of days. Recorded as stated with the timing in the note. Recommendation: keep stated; change to partly only if the pack reads 'deadline' as a fixed period.",
+    "eu-ai-act Q09: Article 87 protects reporting persons by applying Directive (EU) 2019/1937, not by its own terms. Recorded as partly, by analogy with Q13's 'by reference to another law'. Recommendation: keep partly unless the maintainer reads incorporation by reference as meeting the criterion.",
+    "eu-ai-act Q04: Q03 is partly (no written document), so Q04 is recorded not-found rather than not-applicable, following the brief's rule that not-applicable is for Q03 not-found. Recommendation: accept; alternatively not-applicable with the same note.",
+    "eu-ai-act Q12: that Article 101 applies from 2 August 2026 is read from the exception in Article 113(b) together with the general date; the text does not state a separate date for Article 101. Recommendation: accept as a reading of the two quoted provisions.",
+    "eu-code-ss Q02: the Code has no threshold of its own and takes its scope from the AI Act category; recorded as partly. Recommendation: partly, or not-found if the pack reserves partly for broad classes only.",
+    "eu-code-ss Q09: Measure 3.5's non-retaliation commitment covers external evaluators who publish findings (conditional); employee non-retaliation in Measure 8.3(7) is only an example indicator. Recorded as stated on Measure 3.5. Recommendation: confirm that evaluators publishing findings count as 'others who disclose risks'; otherwise partly.",
+    "eu-code-ss Q14: the Code names the AI Office as assessor in its objectives but confers no powers; recorded as partly. Recommendation: partly, or not-found if the criterion requires a grant of power."
+  ]
+}

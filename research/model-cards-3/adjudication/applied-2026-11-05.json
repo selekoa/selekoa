@@ -1,0 +1,226 @@
+{
+  "generated": "node research/model-cards-3/adjudication/apply-2026-11-05.mjs",
+  "check": "research/model-cards-3/cross-family-check-2026-11-05.json",
+  "decisions": "review/model-cards-pack-3-2026-11-05.md, Maintainer decisions",
+  "changes": 23,
+  "log": [
+    {
+      "id": "xai-grok-4-20:Q05",
+      "field": "status",
+      "from": "not-found",
+      "to": "partly",
+      "item": "38"
+    },
+    {
+      "id": "xai-grok-4-20:Q05",
+      "field": "passages",
+      "from": null,
+      "to": [
+        {
+          "source": "xai-grok-4-20",
+          "quote": "We release Grok 4.20 with safeguards appropriate for its capability threshold, such as refusal training.",
+          "locator": "§1.3 Release process, PDF p. 2"
+        }
+      ],
+      "item": "38"
+    },
+    {
+      "id": "xai-grok-4-20:Q05",
+      "field": "note",
+      "from": "No determination in the framework’s own categories was found. Risk conclusions and capability comparisons are not promoted to a framework level.",
+      "to": "The card names its framework (§1) and refers to the model’s “capability threshold” without stating which threshold or outcome in the framework’s categories: a determination referred to without its outcome. The conclusions on cybersecurity and manipulation risk (§§4.2.2–4.3.2) are stated as risk views, not in the framework’s categories, and no chemical or biological outcome category is given.",
+      "item": "38"
+    },
+    {
+      "id": "xai-grok-4-20:Q05",
+      "field": "search",
+      "from": {
+        "read": "Whole card, especially §§1.3, 3.3 and 4.1–4.3 and bibliography",
+        "terms": [
+          "threshold",
+          "capability threshold",
+          "level",
+          "category",
+          "FAIF",
+          "risk",
+          "determination"
+        ],
+        "setAside": [
+          {
+            "locator": "§1.3, PDF p. 2",
+            "reason": "“Safeguards appropriate for its capability threshold” names no reached/not-reached threshold or framework category."
+          },
+          {
+            "locator": "§§4.2.2–4.3.2, PDF pp. 6–7",
+            "reason": "Conclusions about cybersecurity and manipulation risks do not state outcomes in the framework’s own categories."
+          }
+        ]
+      },
+      "to": {
+        "read": "Whole card, especially §§1.3, 3.3 and 4.1–4.3 and bibliography",
+        "terms": [
+          "threshold",
+          "capability threshold",
+          "level",
+          "category",
+          "FAIF",
+          "risk",
+          "determination"
+        ],
+        "setAside": [
+          {
+            "locator": "§§4.2.2–4.3.2, PDF pp. 6–7",
+            "reason": "Conclusions about cybersecurity and manipulation risks do not state outcomes in the framework’s own categories."
+          }
+        ]
+      },
+      "item": "38"
+    },
+    {
+      "id": "xai-grok-4-20:Q05",
+      "field": "crossFamily",
+      "from": null,
+      "to": {
+        "item": "38",
+        "result": "material disagreement, decided: the checker read partly (blind), because §1.3 refers to the model’s capability threshold under the framework the card names without stating which, the criterion’s case of a determination made without stating its outcome. The pack had read not found. The maintainer decided for partly (decision a, 2026-11-05)."
+      },
+      "item": "38"
+    },
+    {
+      "id": "anthropic-claude-4:Q02",
+      "field": "note",
+      "from": "The card identifies consumer and API access forms; no calendar release date was found.",
+      "to": "The card implies API access in a passage on a jailbreak prompting technique; it states no release form or release date. The cover’s “May 2025” is the card’s date (Q01), not a release date.",
+      "item": "44"
+    },
+    {
+      "id": "anthropic-claude-4:Q02",
+      "field": "crossFamily",
+      "from": null,
+      "to": {
+        "item": "44",
+        "result": "minor, applied: the passage concerns a prompting technique and implies API access only; the earlier note (“identifies consumer and API access forms”) overstated it."
+      },
+      "item": "44"
+    },
+    {
+      "id": "System Card: Claude Opus 4 & Claude Sonnet 4",
+      "field": "selectionNote",
+      "from": "Pack 3 in the inherited population order; earliest located 2025-05 (index month)",
+      "to": "Pack 3 in the inherited population order; earliest located 2025-05 (printed cover month, “May 2025”)",
+      "item": "Part C"
+    },
+    {
+      "id": "research/model-cards-2/population.md",
+      "field": "text",
+      "from": "| System Card: Claude Opus 4 & Claude Sonnet 4                     | 2025-05          | index month                                       | in population  | names the RSP; ASL-3 and ASL-2 determinations                                                            |  3   |",
+      "to": "| System Card: Claude Opus 4 & Claude Sonnet 4                     | 2025-05          | printed cover month (\"May 2025\"; cross-family check of 2026-11-05)                                       | in population  | names the RSP; ASL-3 and ASL-2 determinations                                                            |  3   |",
+      "item": "Part C"
+    },
+    {
+      "id": "research/model-cards-2/population.mjs",
+      "field": "text",
+      "from": "    'System Card: Claude Opus 4 & Claude Sonnet 4',\n    '2025-05',\n    'index month',",
+      "to": "    'System Card: Claude Opus 4 & Claude Sonnet 4',\n    '2025-05',\n    'printed cover month (\"May 2025\"; cross-family check of 2026-11-05)',",
+      "item": "Part C"
+    },
+    {
+      "id": "review/model-cards-pack-3-2026-11-05.md",
+      "field": "text",
+      "from": "| Anthropic       | System Card: Claude Opus 4 & Claude Sonnet 4 | 2025-05, index month                         | Current PDF, cover May 2025. Page 9's RSP link identifies v2.2, effective 2025-05-14.                               |",
+      "to": "| Anthropic       | System Card: Claude Opus 4 & Claude Sonnet 4 | 2025-05, printed cover month                         | Current PDF, cover May 2025. Page 9's RSP link identifies v2.2, effective 2025-05-14.                               |",
+      "item": "Part C"
+    },
+    {
+      "id": "openai-operator:Q01",
+      "field": "note",
+      "from": "The cover prints the card date. A separate revision/addition is marked “Updated March 11, 2025” in §4.7 (PDF p. 12); the file read therefore contains later wording.",
+      "to": "The cover prints the card date. A separate revision/addition is marked “Updated March 11, 2025” in §4.7 (PDF p. 12); the file read therefore contains later wording. The file read is that revised expression (also created 2025-03-11, by its PDF metadata, in the cross-family check of 2026-11-05); the printed card date of January 23, 2025 stands. An archive capture of 2025-01-23, which would hold the January expression, is located but not retrieved.",
+      "item": "Part C"
+    },
+    {
+      "id": "openai-operator",
+      "field": "archive",
+      "from": {
+        "capture": null,
+        "note": "No capture retrieved in preparation; cross-family archive check requested."
+      },
+      "to": {
+        "capture": null,
+        "located": "https://web.archive.org/web/20250123194555/https://cdn.openai.com/operator_system_card.pdf",
+        "note": "Capture of 2025-01-23 (the printed card date, before the March 11, 2025 update) located through the archive.org availability API in the cross-family check of 2026-11-05; not retrieved and not hashed, because web.archive.org refused the checker."
+      },
+      "item": "Part C"
+    },
+    {
+      "id": "research/model-cards-2/population.mjs",
+      "field": "text",
+      "from": "'latest card before the Risk Management Framework (2025-08-20); not retrieved here (x.ai HTTP 403, web.archive.org refused)'",
+      "to": "'latest card before the Risk Management Framework (2025-08-20); the capture of 2023-11-05 retrieved for pack 3 (2026-11-05)'",
+      "item": "Part C"
+    },
+    {
+      "id": "research/model-cards-2/population.md",
+      "field": "text",
+      "from": "latest card before the Risk Management Framework (2025-08-20); not retrieved here (x.ai HTTP 403, web.archive.org refused)",
+      "to": "latest card before the Risk Management Framework (2025-08-20); the capture of 2023-11-05 retrieved for pack 3 (2026-11-05)",
+      "item": "Part C"
+    },
+    {
+      "id": "google-paligemma",
+      "field": "held",
+      "from": null,
+      "to": "Maintainer decision of 2026-11-05: read only from an archive capture, and none of its sampled cells was cross-family checked because web.archive.org refused the checker. Admitted with a later pack once a reader outside the Codex family can open the capture.",
+      "item": "scope"
+    },
+    {
+      "id": "xai-grok-1",
+      "field": "held",
+      "from": null,
+      "to": "Maintainer decision of 2026-11-05: read only from an archive capture, and none of its sampled cells was cross-family checked because web.archive.org refused the checker. Admitted with a later pack once a reader outside the Codex family can open the capture.",
+      "item": "scope"
+    },
+    {
+      "id": "research/model-cards-2/population.mjs",
+      "field": "text",
+      "from": "const HELD = {};",
+      "to": "const HELD = {\n  'PaliGemma (1) model card':\n    'drafted in pack 3; held from its admission (maintainer decision of 2026-11-05) until a reader outside the Codex family can open the archive capture',\n  'Grok-1 model card (x.ai/model-card)':\n    'drafted in pack 3; held from its admission (maintainer decision of 2026-11-05) until a reader outside the Codex family can open the archive capture',\n};",
+      "item": "scope"
+    },
+    {
+      "id": "research/model-cards-2/population.md",
+      "field": "text",
+      "from": "|  3   | Claude 3.7 Sonnet; Claude Opus 4 & Claude Sonnet 4; PaliGemma; Muse Spark 1.1; o1-preview and o1-mini; Operator; Grok-1; Grok 4.20                                                    |",
+      "to": "|  3   | Claude 3.7 Sonnet; Claude Opus 4 & Claude Sonnet 4; PaliGemma (held); Muse Spark 1.1; o1-preview and o1-mini; Operator; Grok-1; Grok 4.20                                                    |",
+      "item": "scope"
+    },
+    {
+      "id": "research/model-cards-2/population.md",
+      "field": "text",
+      "from": "|  3   | Claude 3.7 Sonnet; Claude Opus 4 & Claude Sonnet 4; PaliGemma (held); Muse Spark 1.1; o1-preview and o1-mini; Operator; Grok-1; Grok 4.20                                                    |",
+      "to": "|  3   | Claude 3.7 Sonnet; Claude Opus 4 & Claude Sonnet 4; PaliGemma (held); Muse Spark 1.1; o1-preview and o1-mini; Operator; Grok-1 (held); Grok 4.20                                                    |",
+      "item": "scope"
+    },
+    {
+      "id": "research/model-cards-2/population.md",
+      "field": "text",
+      "from": "Microsoft has no card left under the rule, so it is skipped (open question P3).",
+      "to": "Microsoft has no card left under the rule, so it is skipped (open question P3). PaliGemma and Grok-1, drafted in pack 3, are held from its admission (maintainer decision of 2026-11-05) until a reader outside the Codex family can open their archive captures; they keep their place in the order and are admitted with a later pack.",
+      "item": "scope"
+    },
+    {
+      "id": "research/model-cards-2/population.md",
+      "field": "text",
+      "from": "| PaliGemma (1) model card                                                       | 2024-05-15       | available by the Internet Archive capture of 2024-05-15 (cross-family check of 2026-11-04); the page prints \"Last updated May 13, 2024\", a revision date, not proof of first publication                                             | in population                          | latest card before FSF v1.0 (2024-05-17) under P2; framework name not found in the capture                                         |  3   |",
+      "to": "| PaliGemma (1) model card                                                       | 2024-05-15       | available by the Internet Archive capture of 2024-05-15 (cross-family check of 2026-11-04); the page prints \"Last updated May 13, 2024\", a revision date, not proof of first publication                                             | in population                          | latest card before FSF v1.0 (2024-05-17) under P2; framework name not found in the capture                                         | 3, held |",
+      "item": "scope"
+    },
+    {
+      "id": "research/model-cards-2/population.md",
+      "field": "text",
+      "from": "| Grok-1 model card (x.ai/model-card) | 2023-11-05       | available by the Internet Archive capture of 2023-11-05 (cross-family check of 2026-11-04); no issue date printed; the capture gives October 2023 for the model release, the live page November 2023 | in population  | latest card before the Risk Management Framework (2025-08-20); the capture of 2023-11-05 retrieved for pack 3 (2026-11-05) |  3   |",
+      "to": "| Grok-1 model card (x.ai/model-card) | 2023-11-05       | available by the Internet Archive capture of 2023-11-05 (cross-family check of 2026-11-04); no issue date printed; the capture gives October 2023 for the model release, the live page November 2023 | in population  | latest card before the Risk Management Framework (2025-08-20); the capture of 2023-11-05 retrieved for pack 3 (2026-11-05) | 3, held |",
+      "item": "scope"
+    }
+  ]
+}

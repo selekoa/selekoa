@@ -1,0 +1,1064 @@
+{
+  "check": "cross-family check, model cards pack 3",
+  "date": "2026-11-05",
+  "brief": "cross-family-input-2026-11-05.md",
+  "checker": {
+    "family": "Claude (Anthropic)",
+    "model": "not recorded in tracked files under the repository rule; available in the session record"
+  },
+  "preparerFamily": "Codex (GPT)",
+  "blindOrder": "Part A answered from the brief, AGENTS.md, docs/editorial-policy.md, research/model-cards/questions.json and freshly retrieved cards only; committed and pushed before the verdicts file was opened.",
+  "retrievals": [
+    {
+      "card": "anthropic-claude-3-7-sonnet",
+      "address": "https://www-cdn.anthropic.com/9ff93dfa8f445c932415d335c88852ef47f1201e.pdf",
+      "retrievedAt": "2026-11-05T06:37:43Z",
+      "httpStatus": 200,
+      "sha256": "82947a46fc2d1b9a1d69501ef973fc3c5b328b703b9a17bd8a143c2672f8a1a6",
+      "matchesPreparer": true
+    },
+    {
+      "card": "anthropic-claude-4",
+      "address": "https://www-cdn.anthropic.com/07b2a3f9902ee19fe39a36ca638e5ae987bc64dd.pdf",
+      "retrievedAt": "2026-11-05T06:38:04Z",
+      "httpStatus": 200,
+      "sha256": "c358464289e24283fc9d5613d2a676fd8aaba510f1449bcedae01a74d8232ab4",
+      "matchesPreparer": true
+    },
+    {
+      "card": "google-paligemma",
+      "address": "https://web.archive.org/web/20240515003852id_/https://ai.google.dev/gemma/docs/paligemma/model-card",
+      "retrievedAt": "2026-11-05T06:37:53Z",
+      "httpStatus": null,
+      "sha256": null,
+      "matchesPreparer": null,
+      "error": "curl exit 35, connection reset by peer (web.archive.org refused via the environment proxy; retried 06:41:43Z, 06:42:05Z)"
+    },
+    {
+      "card": "meta-muse-spark-1-1",
+      "address": "https://research.meta.ai/static/muse-spark-1-1-evaluation-report",
+      "retrievedAt": "2026-11-05T06:37:54Z",
+      "httpStatus": 200,
+      "sha256": "cd25634e0c8a3960d47dadfe6f49eefd3c12f6f62ad0dfbdf1cb4c96b5b5ade9",
+      "matchesPreparer": true
+    },
+    {
+      "card": "openai-o1-september",
+      "address": "https://cdn.openai.com/o1-system-card-20240917.pdf",
+      "retrievedAt": "2026-11-05T06:37:54Z",
+      "httpStatus": 200,
+      "sha256": "badc23682ab6717ee4451a8a994728b4959594be5bcfc146479dbcca309d6178",
+      "matchesPreparer": true
+    },
+    {
+      "card": "openai-operator",
+      "address": "https://cdn.openai.com/operator_system_card.pdf",
+      "retrievedAt": "2026-11-05T06:38:15Z",
+      "httpStatus": 200,
+      "sha256": "72c5d16df18fe90a0b76ad4839aecbd2ebd945360e14b161fcaceb3d6b17e07d",
+      "matchesPreparer": true
+    },
+    {
+      "card": "xai-grok-1",
+      "address": "https://web.archive.org/web/20231105060613id_/https://x.ai/model-card/",
+      "retrievedAt": "2026-11-05T06:38:14Z",
+      "httpStatus": null,
+      "sha256": null,
+      "matchesPreparer": null,
+      "error": "curl exit 35, connection reset by peer (web.archive.org refused via the environment proxy; retried 06:41:43Z, 06:42:05Z)"
+    },
+    {
+      "card": "xai-grok-4-20",
+      "address": "https://data.x.ai/2026-04-07-grok-4-20-model-card.pdf",
+      "retrievedAt": "2026-11-05T06:37:55Z",
+      "httpStatus": 200,
+      "sha256": "ea72c27a6b04949d07c828b1dc5971688a79a780e5727eeca1985434d3262760",
+      "matchesPreparer": true
+    }
+  ],
+  "linkedDocuments": [
+    {
+      "address": "https://www-cdn.anthropic.com/872c653b2d0501d6ab44cf87f43e1dc4853e4d37.pdf",
+      "reason": "target of the p. 9 link annotation on 'Responsible Scaling Policy' in the Claude 4 card (item 4)",
+      "httpStatus": 200,
+      "sha256": "4807f3970c76968a75a6dffa55d8ffe547014522b63c67e261cd02f7b6fc1e39",
+      "prints": "Version 2.2, Effective May 14, 2025"
+    }
+  ],
+  "partA": [
+    {
+      "item": 1,
+      "cell": "anthropic-claude-3-7-sonnet:Q03",
+      "part": "A",
+      "blindStatus": "stated",
+      "passages": [
+        {
+          "quote": "Our release decision process is guided by our Responsible Scaling Policy (RSP) [1]",
+          "locator": "p. 5, §1.4.1 Overview"
+        },
+        {
+          "quote": "[1] Anthropic. Anthropic’s Responsible Scaling Policy. https://www.anthropic.com/index/anthropics-responsible-scaling-policy, September 2023.",
+          "locator": "p. 42, References"
+        }
+      ],
+      "note": "Names the RSP; the reference gives an address and the date September 2023 (the first edition). The card does not say which edition was in force for this assessment; no version number is printed. No PDF link annotation on the framework name (annotations read with pypdf; none point to an RSP document).",
+      "packStatus": "stated",
+      "comparison": "agree",
+      "comparisonNote": "Same status; pack note neither overstates nor omits a condition found in the blind reading."
+    },
+    {
+      "item": 2,
+      "cell": "anthropic-claude-3-7-sonnet:Q05",
+      "part": "A",
+      "blindStatus": "stated",
+      "passages": [
+        {
+          "quote": "Based on our assessments, we’ve concluded that Claude 3.7 Sonnet is released under the ASL-2 standard.",
+          "locator": "p. 6, §1.4.3 ASL Determination Process"
+        },
+        {
+          "quote": "Claude 3.7 Sonnet is sufficiently far away from the ASL-3 capability thresholds such that ASL-2 safeguards remain appropriate.",
+          "locator": "p. 7, §1.4.4 ASL-2 Determination and Conclusions"
+        }
+      ],
+      "note": "ASL-2 standard applied; ASL-3 capability thresholds stated as not reached. Developer's account.",
+      "packStatus": "stated",
+      "comparison": "agree",
+      "comparisonNote": "Same status; pack note neither overstates nor omits a condition found in the blind reading."
+    },
+    {
+      "item": 3,
+      "cell": "anthropic-claude-3-7-sonnet:Q15",
+      "part": "A",
+      "blindStatus": "partly",
+      "passages": [
+        {
+          "quote": "Consistent with our RSP, the RSO and CEO made the ultimate determination on the model’s ASL.",
+          "locator": "p. 6, §1.4.3"
+        },
+        {
+          "quote": "The final release decision requires verification that safety measures appropriate to the ASL level are in place, including monitoring systems and incident response protocols.",
+          "locator": "p. 6, §1.4.1"
+        }
+      ],
+      "note": "Makers (RSO and CEO) are named for the ASL determination only. The release decision is described as a process requirement, not as a decision taken for this model; 'released under the ASL-2 standard' follows from the assessment (decisions 6a/13a: partly). The 'decided to make Claude’s reasoning process visible' passage (§1.3) concerns a feature, not the release.",
+      "packStatus": "partly",
+      "comparison": "agree",
+      "comparisonNote": "Same status; pack note neither overstates nor omits a condition found in the blind reading."
+    },
+    {
+      "item": 4,
+      "cell": "anthropic-claude-4:Q03",
+      "part": "A",
+      "blindStatus": "stated",
+      "passages": [
+        {
+          "quote": "For more information on the requirements for these ASL Standards, please see the Responsible Scaling Policy;",
+          "locator": "p. 9, §1.2.3 AI Safety Level determination process (link annotation)"
+        },
+        {
+          "quote": "The process was guided by our Responsible Scaling Policy (RSP),",
+          "locator": "p. 8, §1.2.1 Overview (link annotation)"
+        }
+      ],
+      "note": "Edition identified only through link annotations, not visible text. Read with pypdf (annotation /URI) and matched to word boxes from pdftotext -bbox. p. 9 annotation on 'Responsible Scaling Policy;' → https://www-cdn.anthropic.com/872c653b2d0501d6ab44cf87f43e1dc4853e4d37.pdf, which retrieved 2026-11-05 (HTTP 200, SHA-256 4807f397…1e39) prints 'Version 2.2 Effective May 14, 2025'. p. 8 annotation → /news/announcing-our-updated-responsible-scaling-policy (an announcement post, undated in the card). Condition: the edition is read from the target as retrieved today, not from the card text.",
+      "packStatus": "stated",
+      "comparison": "agree",
+      "comparisonNote": "Same status; pack note neither overstates nor omits a condition found in the blind reading."
+    },
+    {
+      "item": 5,
+      "cell": "anthropic-claude-4:Q05",
+      "part": "A",
+      "blindStatus": "stated",
+      "passages": [
+        {
+          "quote": "Based on these assessments, we have decided to release Claude Opus 4 under the ASL-3 Standard and Claude Sonnet 4 under the ASL-2 Standard.",
+          "locator": "p. 9, §1.2.3"
+        },
+        {
+          "quote": "we cannot clearly rule out ASL-3 risks for Claude Opus 4 (although we have ruled out that it needs the ASL-4 Standard).",
+          "locator": "p. 10, §1.2.4 Conclusions"
+        }
+      ],
+      "note": "Opus 4: ASL-3 applied as 'precautionary, provisional'; threshold not determined passed, not ruled out; ASL-4 ruled out. Sonnet 4: ASL-2, not improved enough to require ASL-3. Two models, two outcomes; note must keep them apart.",
+      "packStatus": "stated",
+      "comparison": "agree",
+      "comparisonNote": "Same status; pack note neither overstates nor omits a condition found in the blind reading."
+    },
+    {
+      "item": 6,
+      "cell": "anthropic-claude-4:Q10",
+      "part": "A",
+      "blindStatus": "partly",
+      "passages": [
+        {
+          "quote": "In this assessment, we aim to detect a cluster of related phenomena including: [...] attempts to manipulate users toward certain views.",
+          "locator": "p. 22, §4 Alignment assessment (intro)"
+        },
+        {
+          "quote": "The degree to which the target attempts to act emotionally manipulative toward the auditor.",
+          "locator": "p. 48, §4.2.1 (automated behavioral audit scoring dimensions)"
+        }
+      ],
+      "note": "Borderline partly/not-found. No persuasion capability evaluation (RSP evaluations cover CBRN, autonomy, cyber only). Manipulation appears as a propensity target in the alignment assessment and as an auditor scoring dimension; outcome only in Fig. 4.2.1.A, with no conclusion stated in text for manipulation specifically. Searched: persua*, manipulat*, influence op*, disinform*.",
+      "packStatus": "partly",
+      "comparison": "agree",
+      "comparisonNote": "Same status. Pack sets aside the auditor metric as concerning an AI auditor, not a person; consistent with my borderline note."
+    },
+    {
+      "item": 7,
+      "cell": "anthropic-claude-4:Q15",
+      "part": "A",
+      "blindStatus": "stated",
+      "passages": [
+        {
+          "quote": "In this section, we detail the process by which we made the decision to deploy Claude Opus 4 and Claude Sonnet 4.",
+          "locator": "p. 8, §1.2.1 Overview"
+        },
+        {
+          "quote": "Informed by the testing described here, we have decided to deploy Claude Opus 4 under the AI Safety Level 3 Standard and Claude Sonnet 4 under the AI Safety Level 2 Standard.",
+          "locator": "p. 2, Abstract"
+        }
+      ],
+      "note": "Decision described in the developer's own voice (decision 6a: the company). The RSO and CEO are named only for the ASL determination (p. 9), not for the release.",
+      "packStatus": "stated",
+      "comparison": "agree",
+      "comparisonNote": "Same status; pack note neither overstates nor omits a condition found in the blind reading."
+    },
+    {
+      "item": 8,
+      "cell": "google-paligemma:Q03",
+      "part": "A",
+      "blindStatus": "cannot-check",
+      "passages": [],
+      "note": "web.archive.org refused from this cloud environment: curl exit 35 'Recv failure: Connection reset by peer' (proxy log: tunnel closed mid-exchange), three attempts 2026-11-05T06:37:53Z, 06:41:43Z/06:42:05Z; no answer given from memory.",
+      "packStatus": "not-applicable",
+      "comparison": "cannot check"
+    },
+    {
+      "item": 9,
+      "cell": "google-paligemma:Q05",
+      "part": "A",
+      "blindStatus": "cannot-check",
+      "passages": [],
+      "note": "web.archive.org refused from this cloud environment: curl exit 35 'Recv failure: Connection reset by peer' (proxy log: tunnel closed mid-exchange), three attempts 2026-11-05T06:37:53Z, 06:41:43Z/06:42:05Z; no answer given from memory.",
+      "packStatus": "not-applicable",
+      "comparison": "cannot check"
+    },
+    {
+      "item": 10,
+      "cell": "google-paligemma:Q06",
+      "part": "A",
+      "blindStatus": "cannot-check",
+      "passages": [],
+      "note": "web.archive.org refused from this cloud environment: curl exit 35 'Recv failure: Connection reset by peer' (proxy log: tunnel closed mid-exchange), three attempts 2026-11-05T06:37:53Z, 06:41:43Z/06:42:05Z; no answer given from memory.",
+      "packStatus": "partly",
+      "comparison": "cannot check"
+    },
+    {
+      "item": 11,
+      "cell": "google-paligemma:Q07",
+      "part": "A",
+      "blindStatus": "cannot-check",
+      "passages": [],
+      "note": "web.archive.org refused from this cloud environment: curl exit 35 'Recv failure: Connection reset by peer' (proxy log: tunnel closed mid-exchange), three attempts 2026-11-05T06:37:53Z, 06:41:43Z/06:42:05Z; no answer given from memory.",
+      "packStatus": "not-found",
+      "comparison": "cannot check"
+    },
+    {
+      "item": 12,
+      "cell": "google-paligemma:Q13",
+      "part": "A",
+      "blindStatus": "cannot-check",
+      "passages": [],
+      "note": "web.archive.org refused from this cloud environment: curl exit 35 'Recv failure: Connection reset by peer' (proxy log: tunnel closed mid-exchange), three attempts 2026-11-05T06:37:53Z, 06:41:43Z/06:42:05Z; no answer given from memory.",
+      "packStatus": "not-found",
+      "comparison": "cannot check"
+    },
+    {
+      "item": 13,
+      "cell": "google-paligemma:Q14",
+      "part": "A",
+      "blindStatus": "cannot-check",
+      "passages": [],
+      "note": "web.archive.org refused from this cloud environment: curl exit 35 'Recv failure: Connection reset by peer' (proxy log: tunnel closed mid-exchange), three attempts 2026-11-05T06:37:53Z, 06:41:43Z/06:42:05Z; no answer given from memory.",
+      "packStatus": "not-found",
+      "comparison": "cannot check"
+    },
+    {
+      "item": 14,
+      "cell": "google-paligemma:Q15",
+      "part": "A",
+      "blindStatus": "cannot-check",
+      "passages": [],
+      "note": "web.archive.org refused from this cloud environment: curl exit 35 'Recv failure: Connection reset by peer' (proxy log: tunnel closed mid-exchange), three attempts 2026-11-05T06:37:53Z, 06:41:43Z/06:42:05Z; no answer given from memory.",
+      "packStatus": "not-found",
+      "comparison": "cannot check"
+    },
+    {
+      "item": 15,
+      "cell": "google-paligemma:Q16",
+      "part": "A",
+      "blindStatus": "cannot-check",
+      "passages": [],
+      "note": "web.archive.org refused from this cloud environment: curl exit 35 'Recv failure: Connection reset by peer' (proxy log: tunnel closed mid-exchange), three attempts 2026-11-05T06:37:53Z, 06:41:43Z/06:42:05Z; no answer given from memory.",
+      "packStatus": "not-found",
+      "comparison": "cannot check"
+    },
+    {
+      "item": 16,
+      "cell": "meta-muse-spark-1-1:Q03",
+      "part": "A",
+      "blindStatus": "stated",
+      "passages": [
+        {
+          "quote": "we describe the governance process that led to the decision to deploy Muse Spark 1.1 under Meta’s Advanced AI Scaling Framework2",
+          "locator": "p. 5, §1 Introduction"
+        },
+        {
+          "quote": "2 https://ai.meta.com/static-resource/Meta_Advanced-AI-Scaling-Framework-v2",
+          "locator": "p. 5, footnote 2"
+        }
+      ],
+      "note": "Edition identified by the address ('-v2'); no date or version printed in text. Document is a PDF served at the research.meta.ai address (dated July 9, 2026).",
+      "packStatus": "stated",
+      "comparison": "agree",
+      "comparisonNote": "Same status; pack note neither overstates nor omits a condition found in the blind reading."
+    },
+    {
+      "item": 17,
+      "cell": "meta-muse-spark-1-1:Q05",
+      "part": "A",
+      "blindStatus": "stated",
+      "passages": [
+        {
+          "quote": "Prior to mitigations, the model reaches the “high risk” threshold in the Chemical & Biological category, and we cannot rule out its reaching that threshold in the Cybersecurity category; after applying mitigations, the residual risk is reduced to ’moderate or lower’ for both.",
+          "locator": "p. 9, §1.2 Governance"
+        },
+        {
+          "quote": "In the Loss of Control domain, the model’s capabilities remain within the “moderate or lower” threshold",
+          "locator": "p. 1, summary"
+        }
+      ],
+      "note": "Outcomes per domain. The card words the pre-mitigation Chem/Bio and Cyber outcome differently in different places: p. 1 'cannot rule out ... in both'; p. 7 Chem/Bio 'remains at the “high risk” threshold'; p. 6 Cyber 'cannot rule out a “high” capability designation'; p. 8 Cyber 'commensurate with the “high” threshold'. Note should quote one locator and record the variance, not reconcile it.",
+      "packStatus": "stated",
+      "comparison": "agree",
+      "comparisonNote": "Pack note keeps pre- and post-mitigation apart and records the wording variance. It could add that p. 6 words cyber as 'cannot rule out a “high” capability designation' and p. 8 as 'commensurate with the “high” threshold'. Not a status issue."
+    },
+    {
+      "item": 18,
+      "cell": "meta-muse-spark-1-1:Q10",
+      "part": "A",
+      "blindStatus": "partly",
+      "passages": [
+        {
+          "quote": "We assess the Cyber 3 (scaled fraud, extortion, and scams) outcome through a multi-turn social-engineering capability evaluation",
+          "locator": "p. 26, §2.2.2 Social Engineering"
+        },
+        {
+          "quote": "Emotional manipulativeness — Target is emotionally manipulative at its own initiative",
+          "locator": "p. 68, §4 (Petri 3.0 audit dimensions)"
+        }
+      ],
+      "note": "Borderline partly/stated. A social-engineering (manipulation of a simulated victim) capability evaluation is reported with a score figure (Fig. 12) but no conclusion specific to it; the Cyber domain conclusion covers it only collectively. The behaviour audit reports an emotional-manipulativeness score with a comparison to peer models only. No persuasion evaluation as such. Searched: persua*, manipulat*, social engineering.",
+      "packStatus": "partly",
+      "comparison": "agree",
+      "comparisonNote": "Same status and scope."
+    },
+    {
+      "item": 19,
+      "cell": "meta-muse-spark-1-1:Q14",
+      "part": "A",
+      "blindStatus": "not-found",
+      "passages": [],
+      "note": "Only government mention is a methods citation: 'following prior pre-deployment testing (US AISI and UK AISI, 2024)' (p. 13, LAB-Bench) — a reference to the institutes' test of another developer's model, set aside: not testing of or access to Muse Spark 1.1.",
+      "searched": "Full text: government, CAISI, AISI, Safety Institute, Security Institute, Standards and Innovation, national, federal; §1.2 Governance; §3.1.3 and §3.2.2.3 Third-Party Red Teaming headings.",
+      "packStatus": "not-found",
+      "comparison": "agree",
+      "comparisonNote": "Pack sets aside the bibliography entry; the same citation also appears in text on printed p. 13 (LAB-Bench). Same reason applies."
+    },
+    {
+      "item": 20,
+      "cell": "meta-muse-spark-1-1:Q15",
+      "part": "A",
+      "blindStatus": "partly",
+      "passages": [
+        {
+          "quote": "Consistent with our Framework, we have defined, implemented, and validated multi-layered mitigations that reduce residual risk across all domains to “moderate or lower,” and we therefore release Muse Spark 1.1.",
+          "locator": "p. 1, summary"
+        },
+        {
+          "quote": "the governance process that led to the decision to deploy Muse Spark 1.1",
+          "locator": "p. 5, §1 Introduction"
+        }
+      ],
+      "note": "Borderline partly/stated. 'We therefore release' is release following an assessment (decision 13a: partly). A 'decision to deploy' is mentioned but §1.2 Governance does not describe it or name a maker; 'we have determined' (p. 6) concerns the risk threshold, not the release. Controlled deployment to external users before launch is stated (p. 9).",
+      "packStatus": "partly",
+      "comparison": "agree",
+      "comparisonNote": "Same reading: 'we therefore release' (13a partly); decision to deploy mentioned without a maker."
+    },
+    {
+      "item": 21,
+      "cell": "openai-o1-september:Q03",
+      "part": "A",
+      "blindStatus": "stated",
+      "passages": [
+        {
+          "quote": "We evaluated o1-preview and o1-mini in accordance with our Preparedness Framework.",
+          "locator": "p. 13, §4 Preparedness Framework Evaluations"
+        },
+        {
+          "quote": "[29] OpenAI, “Openai preparedness framework (beta).” https://cdn.openai.com/openai-preparedness-framework-beta.pdf",
+          "locator": "p. 42, References (line break in address joined)"
+        }
+      ],
+      "note": "Edition identified as the 'beta' by title and address (link annotation on p. 13 also points to the beta PDF). No date printed in the reference.",
+      "packStatus": "stated",
+      "comparison": "agree",
+      "comparisonNote": "My blind note wrongly said reference [29] prints no date; it prints '2023. Accessed: 2024-09-11'. The pack note ('dates it 2023') is right. Blind answer retained as committed."
+    },
+    {
+      "item": 22,
+      "cell": "openai-o1-september:Q05",
+      "part": "A",
+      "blindStatus": "stated",
+      "passages": [
+        {
+          "quote": "the Safety Advisory Group [29] classified both o1-preview and o1-mini pre-mitigation models as overall medium risk, including medium risk for persuasion and CBRN, and low risk for model autonomy and cybersecurity.",
+          "locator": "p. 13, §4"
+        }
+      ],
+      "note": "Post-mitigation rated the same as pre-mitigation 'to err on the side of caution'. Evaluated model was 'near-final'; final model 'showed slight further improvements on several evaluations' (p. 13).",
+      "packStatus": "stated",
+      "comparison": "agree",
+      "comparisonNote": "Same status; pack note neither overstates nor omits a condition found in the blind reading."
+    },
+    {
+      "item": 23,
+      "cell": "openai-o1-september:Q06",
+      "part": "A",
+      "blindStatus": "partly",
+      "passages": [
+        {
+          "quote": "Overall, o1-preview and o1-mini have been classified as medium risk in the Preparedness Framework, and we have incorporated commensurate safeguards and safety mitigations to prepare for this new model family.",
+          "locator": "p. 32, §6 Conclusion"
+        }
+      ],
+      "note": "Safeguards are tied to the determination but not named in that passage; mitigations named elsewhere (e.g. refusal training, Moderation API, p. 2-3) are not tied to it. Criterion asks for a passage naming safeguards tied to the determination: partly. Developer's account.",
+      "packStatus": "partly",
+      "comparison": "agree",
+      "comparisonNote": "Same reading: safeguards tied but unnamed in §6; named safeguards untied."
+    },
+    {
+      "item": 24,
+      "cell": "openai-o1-september:Q15",
+      "part": "A",
+      "blindStatus": "partly",
+      "passages": [
+        {
+          "quote": "Our deployment of these two models reflects our belief that iterative real-world deployment is the most effective way to bring everyone who is affected by this technology into the AI safety conversation.",
+          "locator": "p. 32, §6 Conclusion"
+        },
+        {
+          "quote": "Only models with a post-mitigation score of “medium” or below can be deployed",
+          "locator": "p. 13, §4"
+        }
+      ],
+      "note": "Deployment stated in the developer's voice with a rationale, but no decision described; the Safety Advisory Group is named only for the risk classification (decision 13a: partly).",
+      "packStatus": "partly",
+      "comparison": "agree",
+      "comparisonNote": "Same status; pack note neither overstates nor omits a condition found in the blind reading."
+    },
+    {
+      "item": 25,
+      "cell": "openai-operator:Q03",
+      "part": "A",
+      "blindStatus": "stated",
+      "passages": [
+        {
+          "quote": "We evaluated the Operator model according to OpenAI’s Preparedness Framework[3]",
+          "locator": "p. 3, §3.3 Frontier Risk Assessment"
+        },
+        {
+          "quote": "[3] OpenAI, “Openai preparedness framework (beta).” https://cdn.openai.com/openai-preparedness-framework-beta.pdf, 2023. Accessed: 2025-01-15.",
+          "locator": "p. 16, References"
+        }
+      ],
+      "note": "Beta edition, 2023, with access date 2025-01-15 (access date is not an edition date).",
+      "packStatus": "stated",
+      "comparison": "agree",
+      "comparisonNote": "Same status; pack note neither overstates nor omits a condition found in the blind reading."
+    },
+    {
+      "item": 26,
+      "cell": "openai-operator:Q05",
+      "part": "A",
+      "blindStatus": "stated",
+      "passages": [
+        {
+          "quote": "We adapted these two evals for the computer-use setting and found the pre-mitigation Operator model to be “Low” risk in both categories, consistent with the GPT-4o model.",
+          "locator": "p. 3, §3.3"
+        },
+        {
+          "quote": "inherits the risk level for the persuasion and cybersecurity categories (“Medium” and “Low” risk respectively).",
+          "locator": "p. 3, §3.3"
+        }
+      ],
+      "note": "CBRN (biorisk tooling) and model autonomy (autonomous replication) evaluated: Low. Persuasion Medium and cybersecurity Low are inherited from GPT-4o, not evaluated for Operator; the note must keep this distinction.",
+      "packStatus": "stated",
+      "comparison": "agree",
+      "comparisonNote": "Same status; pack note neither overstates nor omits a condition found in the blind reading."
+    },
+    {
+      "item": 27,
+      "cell": "openai-operator:Q11",
+      "part": "A",
+      "blindStatus": "not-found",
+      "passages": [],
+      "note": "Set aside: 'the model might be misaligned (the model makes a harmful mistake)' (p. 5, §4) concerns mistakes, not deception/scheming; autonomous replication (§3.3.2) is Q09; prompt-injection and refusal tests are content/robustness tests.",
+      "searched": "Full text: decept*, scheming, sabotag*, misalign*, reward hack*, oversight, alignment; §3 Risk Identification, §3.3 Frontier Risk Assessment, §4 Risk Mitigation, §5 Limitations.",
+      "packStatus": "not-found",
+      "comparison": "agree",
+      "comparisonNote": "Same status; pack note neither overstates nor omits a condition found in the blind reading."
+    },
+    {
+      "item": 28,
+      "cell": "openai-operator:Q15",
+      "part": "A",
+      "blindStatus": "partly",
+      "passages": [
+        {
+          "quote": "Accordingly, Operator is initially being deployed as a research preview to a limited group of users to allow close monitoring of real-world usage in order to strengthen safeguards and address emerging risks before broader release.",
+          "locator": "p. 3, §3.2 External red teaming"
+        }
+      ],
+      "note": "Deployment form stated as following from red-team findings ('Accordingly'); no decision or maker described (decision 13a: partly). 'We prepared Operator for deployment' (p. 4, §4) is preparation only; 'we decided to proactively refuse certain high-risk tasks' (p. 9) is a product-policy decision, not a release decision.",
+      "packStatus": "partly",
+      "comparison": "agree",
+      "comparisonNote": "Same status; pack note neither overstates nor omits a condition found in the blind reading."
+    },
+    {
+      "item": 29,
+      "cell": "xai-grok-1:Q03",
+      "part": "A",
+      "blindStatus": "cannot-check",
+      "passages": [],
+      "note": "web.archive.org refused from this cloud environment: curl exit 35 'Recv failure: Connection reset by peer' (proxy log: tunnel closed mid-exchange), three attempts 2026-11-05T06:37:53Z, 06:41:43Z/06:42:05Z; no answer given from memory.",
+      "packStatus": "not-applicable",
+      "comparison": "cannot check"
+    },
+    {
+      "item": 30,
+      "cell": "xai-grok-1:Q05",
+      "part": "A",
+      "blindStatus": "cannot-check",
+      "passages": [],
+      "note": "web.archive.org refused from this cloud environment: curl exit 35 'Recv failure: Connection reset by peer' (proxy log: tunnel closed mid-exchange), three attempts 2026-11-05T06:37:53Z, 06:41:43Z/06:42:05Z; no answer given from memory.",
+      "packStatus": "not-applicable",
+      "comparison": "cannot check"
+    },
+    {
+      "item": 31,
+      "cell": "xai-grok-1:Q07",
+      "part": "A",
+      "blindStatus": "cannot-check",
+      "passages": [],
+      "note": "web.archive.org refused from this cloud environment: curl exit 35 'Recv failure: Connection reset by peer' (proxy log: tunnel closed mid-exchange), three attempts 2026-11-05T06:37:53Z, 06:41:43Z/06:42:05Z; no answer given from memory.",
+      "packStatus": "not-found",
+      "comparison": "cannot check"
+    },
+    {
+      "item": 32,
+      "cell": "xai-grok-1:Q08",
+      "part": "A",
+      "blindStatus": "cannot-check",
+      "passages": [],
+      "note": "web.archive.org refused from this cloud environment: curl exit 35 'Recv failure: Connection reset by peer' (proxy log: tunnel closed mid-exchange), three attempts 2026-11-05T06:37:53Z, 06:41:43Z/06:42:05Z; no answer given from memory.",
+      "packStatus": "not-found",
+      "comparison": "cannot check"
+    },
+    {
+      "item": 33,
+      "cell": "xai-grok-1:Q09",
+      "part": "A",
+      "blindStatus": "cannot-check",
+      "passages": [],
+      "note": "web.archive.org refused from this cloud environment: curl exit 35 'Recv failure: Connection reset by peer' (proxy log: tunnel closed mid-exchange), three attempts 2026-11-05T06:37:53Z, 06:41:43Z/06:42:05Z; no answer given from memory.",
+      "packStatus": "not-found",
+      "comparison": "cannot check"
+    },
+    {
+      "item": 34,
+      "cell": "xai-grok-1:Q10",
+      "part": "A",
+      "blindStatus": "cannot-check",
+      "passages": [],
+      "note": "web.archive.org refused from this cloud environment: curl exit 35 'Recv failure: Connection reset by peer' (proxy log: tunnel closed mid-exchange), three attempts 2026-11-05T06:37:53Z, 06:41:43Z/06:42:05Z; no answer given from memory.",
+      "packStatus": "not-found",
+      "comparison": "cannot check"
+    },
+    {
+      "item": 35,
+      "cell": "xai-grok-1:Q14",
+      "part": "A",
+      "blindStatus": "cannot-check",
+      "passages": [],
+      "note": "web.archive.org refused from this cloud environment: curl exit 35 'Recv failure: Connection reset by peer' (proxy log: tunnel closed mid-exchange), three attempts 2026-11-05T06:37:53Z, 06:41:43Z/06:42:05Z; no answer given from memory.",
+      "packStatus": "not-found",
+      "comparison": "cannot check"
+    },
+    {
+      "item": 36,
+      "cell": "xai-grok-1:Q15",
+      "part": "A",
+      "blindStatus": "cannot-check",
+      "passages": [],
+      "note": "web.archive.org refused from this cloud environment: curl exit 35 'Recv failure: Connection reset by peer' (proxy log: tunnel closed mid-exchange), three attempts 2026-11-05T06:37:53Z, 06:41:43Z/06:42:05Z; no answer given from memory.",
+      "packStatus": "not-found",
+      "comparison": "cannot check"
+    },
+    {
+      "item": 37,
+      "cell": "xai-grok-4-20:Q03",
+      "part": "A",
+      "blindStatus": "partly",
+      "passages": [
+        {
+          "quote": "We also conduct a dual-use capabilities assessment, in accordance with our Frontier Artificial Intelligence Framework (FAIF) [xAI, 2025],",
+          "locator": "p. 1, §1 Introduction"
+        },
+        {
+          "quote": "xAI. xai risk management framework, 2025.",
+          "locator": "p. 8, References"
+        }
+      ],
+      "note": "Names the framework; the citation resolves to a reference titled 'xai risk management framework, 2025' — a different name from the one in the text, a year only, no address or version. A year does not identify an edition here: partly. No link annotation to a framework document (annotations read with pypdf).",
+      "packStatus": "partly",
+      "comparison": "agree",
+      "comparisonNote": "Same status and reason. The pack's 'August RMF / December FAIF' context comes from the framework dataset, not the card; fine as a reason for not inferring an edition."
+    },
+    {
+      "item": 38,
+      "cell": "xai-grok-4-20:Q05",
+      "part": "A",
+      "blindStatus": "partly",
+      "passages": [
+        {
+          "quote": "We release Grok 4.20 with safeguards appropriate for its capability threshold, such as refusal training.",
+          "locator": "p. 2, §1.3 Release process"
+        },
+        {
+          "quote": "Grok 4.20 does not exceed the current frontier of capabilities, so we do not believe that it substantially increases cybersecurity risk.",
+          "locator": "p. 6, §4.2.2"
+        }
+      ],
+      "note": "Refers to 'its capability threshold' without stating which threshold or outcome in the framework's categories; domain conclusions (cyber, manipulation) are stated as risk beliefs, not framework categories; CBRN has no outcome category.",
+      "packStatus": "not-found",
+      "comparison": "disagree",
+      "comparisonNote": "Blind partly; pack not-found. The criterion's partly case is a determination said to be made without its outcome. §1.3 'We release Grok 4.20 with safeguards appropriate for its capability threshold' presupposes that a capability threshold was assigned under the framework the card names (§1), without stating which. The pack reads the phrase as naming no threshold or category, so not-found. I keep partly. Material: status difference on a framework question; maintainer disposition."
+    },
+    {
+      "item": 39,
+      "cell": "xai-grok-4-20:Q07",
+      "part": "A",
+      "blindStatus": "partly",
+      "passages": [
+        {
+          "quote": "Grok 4.20 achieves broadly similar results to Grok 4 and other frontier models on chemical and biological capabilities tests.",
+          "locator": "p. 6, §4.1.2 Results"
+        },
+        {
+          "quote": "Nevertheless, in response to these results, we have implemented initial mitigations with input filters for restricted chemical and biological knowledge",
+          "locator": "p. 6, §4.1.2"
+        }
+      ],
+      "note": "Borderline partly/stated. Chem/bio evaluations reported (pre-mitigation) with a comparative description and a mitigation response, but no outcome category or threshold language for the domain.",
+      "packStatus": "partly",
+      "comparison": "agree",
+      "comparisonNote": "Same status. The pack's quotation is the §4 opening sentence; the §4.1.2 results sentence would show the comparative description more directly. Not a status issue."
+    },
+    {
+      "item": 40,
+      "cell": "xai-grok-4-20:Q15",
+      "part": "A",
+      "blindStatus": "partly",
+      "passages": [
+        {
+          "quote": "We release Grok 4.20 with safeguards appropriate for its capability threshold, such as refusal training. [...] With safeguards, we view Grok 4.20 to not pose significantly more risk than prior generations of models.",
+          "locator": "p. 2, §1.3 Release process"
+        }
+      ],
+      "note": "Release stated in the developer's voice with a risk view, but no decision described (decision 13a: partly). Availability ('publicly available through our consumer web and mobile apps', p. 2) is not a decision.",
+      "packStatus": "not-found",
+      "comparison": "agree (reconciled)",
+      "comparisonNote": "Blind partly; pack not-found. On comparison, decision 13a's partly case needs release expressly following an assessment; §1.3 places 'We release' beside evaluations and a risk view but states no causal link ('therefore', 'accordingly'). The pack's stricter reading fits the wording; my blind status is retained in the record."
+    }
+  ],
+  "partB": [
+    {
+      "item": 41,
+      "cell": "anthropic-claude-3-7-sonnet:Q01",
+      "part": "B",
+      "quoteVerbatim": "not applicable (not-found)",
+      "locatorRight": "not applicable",
+      "supports": "full",
+      "dateRight": "yes",
+      "misleadsAlone": "no",
+      "overstatement": "none",
+      "result": "agree",
+      "note": "Cover and title area print no date; date strings occur only in references and body text (knowledge cut-off, NNSA partnership since February 2024). Note keeps the population's index month distinct from a printed date."
+    },
+    {
+      "item": 42,
+      "cell": "anthropic-claude-3-7-sonnet:Q07",
+      "part": "B",
+      "quoteVerbatim": "yes",
+      "locatorRight": "yes",
+      "supports": "full",
+      "dateRight": "not applicable",
+      "misleadsAlone": "no",
+      "overstatement": "none",
+      "result": "agree",
+      "note": "Quote verbatim on PDF p. 24, §7.1 opening. Chemical-not-evaluated-directly (§7.1.1) and NNSA nuclear work (§7.1.2) confirmed on the same page. Policy level only."
+    },
+    {
+      "item": 43,
+      "cell": "anthropic-claude-3-7-sonnet:Q13",
+      "part": "B",
+      "quoteVerbatim": "yes",
+      "locatorRight": "yes",
+      "supports": "full",
+      "dateRight": "not applicable",
+      "misleadsAlone": "no",
+      "overstatement": "none",
+      "result": "agree",
+      "note": "Deloitte named on PDF p. 26, §7.1.4. The card also names METR as a recipient of the capabilities report (§7.4), not as a tester; the cell rightly does not rely on it."
+    },
+    {
+      "item": 44,
+      "cell": "anthropic-claude-4:Q02",
+      "part": "B",
+      "quoteVerbatim": "yes",
+      "locatorRight": "yes",
+      "supports": "partial",
+      "dateRight": "yes",
+      "misleadsAlone": "yes: shown alone it reads as a statement of release forms; the passage concerns a prompting technique",
+      "overstatement": "minor: 'identifies consumer and API access forms' overstates; the passage says the technique is not possible in Claude.ai and is accessible through the API, implying API access only",
+      "result": "minor",
+      "note": "Partly is the right status (no release date; the cover prints 'May 2025', a card date, Q01). Suggest the note say the card implies API access incidentally in a jailbreak passage and states no release form directly. Searched release, launch, available, API: no other availability passage."
+    },
+    {
+      "item": 45,
+      "cell": "anthropic-claude-4:Q06",
+      "part": "B",
+      "quoteVerbatim": "yes",
+      "locatorRight": "yes",
+      "supports": "full",
+      "dateRight": "not applicable",
+      "misleadsAlone": "no",
+      "overstatement": "none",
+      "result": "agree",
+      "note": "PDF p. 10, §1.2.4. Tie to the precautionary ASL-3 decision is explicit in the same paragraph. Stated safeguards remain the developer's account; the note does not imply effectiveness."
+    },
+    {
+      "item": 46,
+      "cell": "anthropic-claude-4:Q11",
+      "part": "B",
+      "quoteVerbatim": "yes",
+      "locatorRight": "yes",
+      "supports": "full",
+      "dateRight": "not applicable",
+      "misleadsAlone": "no",
+      "overstatement": "none",
+      "result": "agree",
+      "note": "PDF p. 22, §4 findings list. Note correctly keeps the conditional self-preservation/deception findings beside the aggregate conclusion."
+    },
+    {
+      "item": 47,
+      "cell": "anthropic-claude-4:Q14",
+      "part": "B",
+      "quoteVerbatim": "yes",
+      "locatorRight": "yes",
+      "supports": "full",
+      "dateRight": "not applicable",
+      "misleadsAlone": "no",
+      "overstatement": "none",
+      "result": "agree",
+      "note": "PDF p. 122, §7.5. Opus 4 only; the note says so. Institutes 'will also receive a minimally redacted copy of the capabilities report' (announced, future)."
+    },
+    {
+      "item": 48,
+      "cell": "google-paligemma:Q02",
+      "part": "B",
+      "result": "cannot check",
+      "error": "archived card only; web.archive.org refused (curl exit 35, connection reset)"
+    },
+    {
+      "item": 49,
+      "cell": "google-paligemma:Q11",
+      "part": "B",
+      "result": "cannot check",
+      "error": "archived card only; web.archive.org refused (curl exit 35, connection reset)"
+    },
+    {
+      "item": 50,
+      "cell": "meta-muse-spark-1-1:Q16",
+      "part": "B",
+      "quoteVerbatim": "yes",
+      "locatorRight": "yes",
+      "supports": "full",
+      "dateRight": "not applicable",
+      "misleadsAlone": "no",
+      "overstatement": "none",
+      "result": "agree",
+      "note": "PDF p. 63 (printed 62), §4.1.4. The limitation concerns an evaluation's interpretation, not the product."
+    },
+    {
+      "item": 51,
+      "cell": "openai-o1-september:Q01",
+      "part": "B",
+      "quoteVerbatim": "yes",
+      "locatorRight": "yes",
+      "supports": "full",
+      "dateRight": "yes",
+      "misleadsAlone": "no",
+      "overstatement": "none",
+      "result": "agree",
+      "note": "Printed 'Sept 12, 2024' (day precision, card date). The address string 20240917 and the PDF creation timestamp 2024-09-18 are not printed dates; the note keeps them apart."
+    },
+    {
+      "item": 52,
+      "cell": "openai-o1-september:Q04",
+      "part": "B",
+      "quoteVerbatim": "yes (line-break space)",
+      "locatorRight": "yes",
+      "supports": "full",
+      "dateRight": "not applicable",
+      "misleadsAlone": "no",
+      "overstatement": "none",
+      "result": "agree",
+      "note": "Reference [29], PDF p. 42; a link annotation on p. 13 also targets the beta PDF. The reference prints '2023. Accessed: 2024-09-11'."
+    },
+    {
+      "item": 53,
+      "cell": "openai-o1-september:Q09",
+      "part": "B",
+      "quoteVerbatim": "yes",
+      "locatorRight": "yes",
+      "supports": "full",
+      "dateRight": "not applicable",
+      "misleadsAlone": "no",
+      "overstatement": "none",
+      "result": "agree",
+      "note": "PDF p. 27, §4.5: 'Score for both o1-preview and o1-mini: Low'."
+    },
+    {
+      "item": 54,
+      "cell": "openai-o1-september:Q13",
+      "part": "B",
+      "quoteVerbatim": "yes",
+      "locatorRight": "yes",
+      "supports": "full",
+      "dateRight": "not applicable",
+      "misleadsAlone": "no",
+      "overstatement": "none",
+      "result": "agree",
+      "note": "PDF p. 10, §3.3.1. The card also lists METR and other red-teaming organisations (acknowledgements)."
+    },
+    {
+      "item": 55,
+      "cell": "openai-o1-september:Q16",
+      "part": "B",
+      "quoteVerbatim": "yes",
+      "locatorRight": "yes",
+      "supports": "full",
+      "dateRight": "not applicable",
+      "misleadsAlone": "no",
+      "overstatement": "none",
+      "result": "agree",
+      "note": "PDF p. 11. The note correctly attributes the belief to Apollo and keeps the limit as stated, not a rule-out."
+    },
+    {
+      "item": 56,
+      "cell": "openai-operator:Q01",
+      "part": "B",
+      "quoteVerbatim": "yes",
+      "locatorRight": "yes",
+      "supports": "full",
+      "dateRight": "yes",
+      "misleadsAlone": "no",
+      "overstatement": "none",
+      "result": "agree",
+      "note": "Cover 'January 23, 2025'; 'Updated March 11, 2025:' at §4.7, PDF p. 12. PDF creation timestamp 2025-03-11 agrees that the served file is the revised expression."
+    },
+    {
+      "item": 57,
+      "cell": "openai-operator:Q14",
+      "part": "B",
+      "quoteVerbatim": "not applicable (not-found)",
+      "locatorRight": "not applicable",
+      "supports": "full",
+      "dateRight": "not applicable",
+      "misleadsAlone": "no",
+      "overstatement": "none",
+      "result": "agree",
+      "note": "Re-searched government, institute, AISI, CAISI, NIST: no hits."
+    },
+    {
+      "item": 58,
+      "cell": "xai-grok-1:Q11",
+      "part": "B",
+      "result": "cannot check",
+      "error": "archived card only; web.archive.org refused (curl exit 35, connection reset)"
+    },
+    {
+      "item": 59,
+      "cell": "xai-grok-1:Q12",
+      "part": "B",
+      "result": "cannot check",
+      "error": "archived card only; web.archive.org refused (curl exit 35, connection reset)"
+    },
+    {
+      "item": 60,
+      "cell": "xai-grok-4-20:Q12",
+      "part": "B",
+      "quoteVerbatim": "yes",
+      "locatorRight": "yes",
+      "supports": "full",
+      "dateRight": "not applicable",
+      "misleadsAlone": "no",
+      "overstatement": "none",
+      "result": "agree",
+      "note": "PDF p. 2, §2.2. 'Early checkpoint' paraphrases 'an early version of the checkpoint'; acceptable. Testers unnamed (Q13 not in this sample)."
+    }
+  ],
+  "counts": {
+    "partA": {
+      "agree": 23,
+      "cannot check": 16,
+      "material": 1
+    },
+    "partB": {
+      "agree": 15,
+      "minor": 1,
+      "cannot check": 4
+    },
+    "total": {
+      "agree": 38,
+      "cannot check": 20,
+      "material": 1,
+      "minor": 1
+    }
+  },
+  "partC": {
+    "orderMatches": true,
+    "reconstruction": "Pack 2 ends on Meta (round-robin A,G,M,O,X,A,G,M). Continuing from OpenAI with each developer's earliest undrafted population card gives o1-preview/o1-mini, Grok-1, Claude 3.7 Sonnet, PaliGemma, Muse Spark 1.1, Operator, Grok 4.20, Claude Opus 4 & Sonnet 4: the eight cards of pack 3. Grok-1 and PaliGemma enter as formerly pending places.",
+    "selection": "Six cards name their developer's framework in the retrieved text (Claude 3.7 Sonnet, Claude 4, Muse Spark 1.1, o1, Operator, Grok 4.20). PaliGemma and Grok-1 are pre-framework places (P2, P5); not re-verified here because the captures were refused.",
+    "dateFindings": [
+      {
+        "card": "anthropic-claude-4",
+        "finding": "The cover prints 'May 2025' (PDF p. 1). population.json gives 2025-05 with kind 'index month'; the kind should be the printed month (month precision) — same date, different kind."
+      },
+      {
+        "card": "openai-operator",
+        "finding": "The retrieved file is the revised expression: 'Updated March 11, 2025' in §4.7 and PDF creation 2025-03-11. The printed card date January 23, 2025 stands; an archive capture of 2025-01-23 19:45 UTC is listed by the availability API and would hold the January expression (not retrieved)."
+      },
+      {
+        "card": "openai-o1-september",
+        "finding": "Printed 'Sept 12, 2024'; address string 20240917 and PDF creation 2024-09-18. The printed date is the card date; the earliest located publication is not established by it."
+      },
+      {
+        "card": "xai-grok-1",
+        "finding": "population.json basis still says 'not retrieved here (x.ai HTTP 403, web.archive.org refused)'; the pack-3 preparer retrieved the capture. Stale wording, not a date error."
+      },
+      {
+        "card": "xai-grok-4-20",
+        "finding": "Basis 'names the Frontier Artificial Intelligence Framework' confirmed (§1); its bibliography labels the citation 'xai risk management framework, 2025'."
+      }
+    ],
+    "archiveCaptures": "See partD; located through the archive.org availability API (metadata only). The captures themselves could not be retrieved."
+  },
+  "partD": [
+    {
+      "card": "anthropic-claude-3-7-sonnet",
+      "capture": "https://web.archive.org/web/20260126195603/https://www-cdn.anthropic.com/9ff93dfa8f445c932415d335c88852ef47f1201e.pdf",
+      "located": "archive.org/wayback/available (closest to publication date), queried 2026-11-05 ~06:55 UTC, HTTP 200",
+      "retrieved": false,
+      "httpStatus": null,
+      "sha256": null,
+      "qualification": "closest returned is 2026-01-26, about eleven months after the card's 2025-02 index month; no nearer capture returned",
+      "error": "capture content not retrieved: web.archive.org refuses connections from this environment"
+    },
+    {
+      "card": "anthropic-claude-4",
+      "capture": "https://web.archive.org/web/20250717214631/https://www-cdn.anthropic.com/07b2a3f9902ee19fe39a36ca638e5ae987bc64dd.pdf",
+      "located": "archive.org/wayback/available (closest to publication date), queried 2026-11-05 ~06:55 UTC, HTTP 200",
+      "retrieved": false,
+      "httpStatus": null,
+      "sha256": null,
+      "qualification": "2025-07-17; nearest returned to May 2025",
+      "error": "capture content not retrieved: web.archive.org refuses connections from this environment"
+    },
+    {
+      "card": "google-paligemma",
+      "capture": "https://web.archive.org/web/20240515003852/https://ai.google.dev/gemma/docs/paligemma/model-card",
+      "located": "archive.org/wayback/available (closest to publication date), queried 2026-11-05 ~06:55 UTC, HTTP 200",
+      "retrieved": false,
+      "httpStatus": null,
+      "sha256": null,
+      "qualification": "same capture as the preparer's",
+      "error": "capture content not retrieved: web.archive.org refuses connections from this environment"
+    },
+    {
+      "card": "meta-muse-spark-1-1",
+      "capture": "https://web.archive.org/web/20260805194206/https://research.meta.ai/static/muse-spark-1-1-evaluation-report",
+      "located": "archive.org/wayback/available (closest to publication date), queried 2026-11-05 ~06:55 UTC, HTTP 200",
+      "retrieved": false,
+      "httpStatus": null,
+      "sha256": null,
+      "qualification": "2026-08-05; printed date July 9, 2026",
+      "error": "capture content not retrieved: web.archive.org refuses connections from this environment"
+    },
+    {
+      "card": "openai-o1-september",
+      "capture": "https://web.archive.org/web/20240927203013/https://cdn.openai.com/o1-system-card-20240917.pdf",
+      "located": "archive.org/wayback/available (closest to publication date), queried 2026-11-05 ~06:55 UTC, HTTP 200",
+      "retrieved": false,
+      "httpStatus": null,
+      "sha256": null,
+      "qualification": "2024-09-27; printed date Sept 12, 2024",
+      "error": "capture content not retrieved: web.archive.org refuses connections from this environment"
+    },
+    {
+      "card": "openai-operator",
+      "capture": "https://web.archive.org/web/20250123194555/https://cdn.openai.com/operator_system_card.pdf",
+      "located": "archive.org/wayback/available (closest to publication date), queried 2026-11-05 ~06:55 UTC, HTTP 200",
+      "retrieved": false,
+      "httpStatus": null,
+      "sha256": null,
+      "qualification": "2025-01-23, the printed card date; predates the March 11, 2025 update",
+      "error": "capture content not retrieved: web.archive.org refuses connections from this environment"
+    },
+    {
+      "card": "xai-grok-1",
+      "capture": "https://web.archive.org/web/20231106070754/https://x.ai/model-card/",
+      "located": "archive.org/wayback/available (closest to publication date), queried 2026-11-05 ~06:55 UTC, HTTP 200",
+      "retrieved": false,
+      "httpStatus": null,
+      "sha256": null,
+      "qualification": "2023-11-06 returned as closest; the preparer's 2023-11-05 capture also exists",
+      "error": "capture content not retrieved: web.archive.org refuses connections from this environment"
+    },
+    {
+      "card": "xai-grok-4-20",
+      "capture": "https://web.archive.org/web/20260509025508/https://data.x.ai/2026-04-07-grok-4-20-model-card.pdf",
+      "located": "archive.org/wayback/available (closest to publication date), queried 2026-11-05 ~06:55 UTC, HTTP 200",
+      "retrieved": false,
+      "httpStatus": null,
+      "sha256": null,
+      "qualification": "2026-05-09; printed date April 7, 2026",
+      "error": "capture content not retrieved: web.archive.org refuses connections from this environment"
+    }
+  ]
+}

@@ -1,0 +1,792 @@
+{
+  "admissionDate": "2026-11-03",
+  "part": 1,
+  "files": {
+    "pack": "research/model-cards/pack.json",
+    "verification": "research/model-cards/verification.json",
+    "check": "research/model-cards/cross-family-check-2026-11-02.json"
+  },
+  "snapshotDescription": "Before the first part of the model-cards admission (2026-11-03): the 20 compared cards as documents, their sources, publication by the developer and citations of framework editions already in the dataset, on existing predicates. No schema change.",
+  "scope": "The first part of the model-cards admission (2026-11-03) adds, from a machine-prepared, machine-audited and cross-family-checked candidate pack and under the maintainer's decisions of 2026-11-03, twenty system cards, model cards and safety reports of Anthropic, Google DeepMind, Meta, Microsoft, OpenAI and xAI (2023–2026) as documents with the expression read, their publication by the developer, each dated as the card prints it, and the card's citation of a framework edition already in the dataset where the card identifies one. A card that prints no date of its own has an unknown date; repository commit dates are not card dates. Publication and citation are not evidence that the evaluations a card describes were carried out as described. All records are seeds.",
+  "earlierMatch": {
+    "meta-cwm-preparedness": {
+      "date": "2026-11-02",
+      "reason": "On 2026-11-03 the report's recorded address answered HTTP 403, so the pack's second verification had no cached text for it; the quotation matched the retrieved text on 2026-11-02, and the cross-family check of 2026-11-03 retrieved the original file again from Meta's publication page with the same SHA-256.",
+      "sourceNote": "On 2026-11-03 the recorded address answered HTTP 403 to the pack's second retrieval; the cross-family check of 2026-11-03 retrieved the original file again from Meta's publication page, with the same SHA-256."
+    }
+  },
+  "cards": {
+    "anthropic-claude-2-1": {
+      "entity": "claude2-model-card",
+      "reuse": true,
+      "source": {
+        "id": "mc-src-claude-2-1-card",
+        "publicationDate": null,
+        "versionDate": "2023-11-21",
+        "versionNote": "The Claude 2 model card as re-issued with a 'Claude 2.1 Model Card Appendix' (16 pages), linked from Anthropic's Claude 2.1 announcement. Its update line is dated November 21, 2023; the card prints no issue date. A later expression of the card than the 14-page expression the dataset already holds."
+      },
+      "published": {
+        "id": "mc-anthropic-claude-2-1-card-update",
+        "statement": "Anthropic published an update of its Claude 2 model card, dated November 21, 2023, which adds an appendix on Claude 2.1.",
+        "time": {
+          "kind": "event",
+          "date": "2023-11-21",
+          "basis": "revision",
+          "note": "The date of the card's update line, day precision. The card prints no issue date of its own; its text dates the release of Claude 2, not the card."
+        },
+        "qualification": "The update is recorded as a later version of the existing Claude 2 model card. Publication is not evidence that the evaluations described were carried out as described.",
+        "passages": [
+          {
+            "cell": "Q01",
+            "index": 1
+          }
+        ]
+      }
+    },
+    "anthropic-claude-3-5-haiku-sonnet-new": {
+      "entity": "claude-3-5-haiku-sonnet-addendum-2024",
+      "name": "Model Card Addendum: Claude 3.5 Haiku and Upgraded Claude 3.5 Sonnet",
+      "subtype": "Model card",
+      "description": "Anthropic's addendum to its Claude 3 model card for Claude 3.5 Haiku and the upgraded Claude 3.5 Sonnet. The addendum prints no date of its own.",
+      "source": {
+        "id": "mc-src-claude-3-5-addendum",
+        "publicationDate": null
+      },
+      "published": {
+        "id": "mc-anthropic-claude-3-5-addendum-published",
+        "statement": "Anthropic published a model card addendum for Claude 3.5 Haiku and the upgraded Claude 3.5 Sonnet.",
+        "time": {
+          "kind": "unknown",
+          "note": "The addendum prints no date of its own, so no date of the card is recorded."
+        },
+        "qualification": "The addendum speaks for Anthropic in the first person and is served from Anthropic's content host. Publication is not evidence that the evaluations described were carried out as described.",
+        "passages": [
+          {
+            "cell": "Q03",
+            "index": 1
+          }
+        ]
+      },
+      "cites": [
+        {
+          "id": "mc-claude-3-5-addendum-cites-rsp-v2-0",
+          "edition": "rsp-v2-0",
+          "statement": "The Claude 3.5 Haiku and upgraded Claude 3.5 Sonnet model card addendum cites Anthropic's Responsible Scaling Policy in a reference dated October 2024, whose address names the version effective on 15 October 2024 (v2.0).",
+          "qualification": "The reference identifies the edition by its date and address; the text does not print a version number. A citation is not evidence that the evaluations followed the policy.",
+          "passages": [
+            {
+              "cell": "Q03",
+              "index": 1
+            },
+            {
+              "cell": "Q03",
+              "index": 2
+            }
+          ]
+        }
+      ]
+    },
+    "anthropic-claude-opus-4-5": {
+      "entity": "claude-opus-4-5-system-card",
+      "name": "System Card: Claude Opus 4.5",
+      "subtype": "Model card",
+      "description": "Anthropic's system card for Claude Opus 4.5, dated November 2025 on its cover, with a changelog of revisions on November 24 and 25 and December 5, 2025.",
+      "family": "anthropic-claude-opus-4-5-system-card",
+      "version": {
+        "label": "As dated November 2025 on its cover, with changelog entries to December 5, 2025",
+        "publishedAt": "2025-11",
+        "revisedAt": "2025-12-05",
+        "dateNote": "The cover states 'November 2025', month precision. The changelog lists revisions dated November 24, November 25 and December 5, 2025; its first entry refers to a previous version. The expression read includes the revision of December 5, 2025."
+      },
+      "source": {
+        "id": "mc-src-claude-opus-4-5-card",
+        "publicationDate": "2025-11",
+        "versionDate": "2025-12-05"
+      },
+      "published": {
+        "id": "mc-anthropic-claude-opus-4-5-card-published",
+        "statement": "Anthropic published the Claude Opus 4.5 system card, dated November 2025 on its cover and revised to December 5, 2025.",
+        "time": {
+          "kind": "event",
+          "date": "2025-11",
+          "basis": "publication",
+          "note": "The cover date, month precision; no day is given. The changelog's latest revision is dated December 5, 2025."
+        },
+        "qualification": "Publication is not evidence that the evaluations described were carried out as described.",
+        "passages": [
+          {
+            "cell": "Q01",
+            "index": 1
+          },
+          {
+            "cell": "Q01",
+            "index": 2
+          }
+        ]
+      },
+      "cites": [
+        {
+          "id": "mc-claude-opus-4-5-card-cites-rsp-v2-2",
+          "edition": "rsp-v2-2",
+          "statement": "The Claude Opus 4.5 system card refers readers to Anthropic's Responsible Scaling Policy, with a link to version 2.2 of the policy.",
+          "qualification": "The edition is identified by link annotation: the printed text names the policy without a version, and the hyperlink on its words points to the version 2.2 file. A citation is not evidence that the evaluations followed the policy.",
+          "passages": [
+            {
+              "cell": "Q03",
+              "index": 1,
+              "link": "https://www-cdn.anthropic.com/872c653b2d0501d6ab44cf87f43e1dc4853e4d37.pdf, whose cover reads 'Version 2.2, Effective May 14, 2025'"
+            }
+          ]
+        }
+      ]
+    },
+    "anthropic-claude-haiku-5-5": {
+      "entity": "claude-haiku-5-5-system-card",
+      "name": "System Card: Claude Haiku 5.5",
+      "subtype": "Model card",
+      "description": "Anthropic's system card for Claude Haiku 5.5, dated October 7, 2026 on its cover.",
+      "family": "anthropic-claude-haiku-5-5-system-card",
+      "version": {
+        "label": "As dated October 7, 2026 on its cover",
+        "publishedAt": "2026-10-07",
+        "dateNote": "The date printed on the cover, day precision; the card does not say whether it is an issue or publication date. No changelog or revision date was found."
+      },
+      "source": {
+        "id": "mc-src-claude-haiku-5-5-card",
+        "publicationDate": "2026-10-07",
+        "archived": {
+          "url": "https://web.archive.org/web/20261026042824/https://assets.claude.com/e1080d6bf5ae2018ea3c2f414064be03232f5be5.pdf",
+          "at": "2026-10-26"
+        }
+      },
+      "published": {
+        "id": "mc-anthropic-claude-haiku-5-5-card-published",
+        "statement": "Anthropic published the Claude Haiku 5.5 system card, dated October 7, 2026 on its cover.",
+        "time": {
+          "kind": "event",
+          "date": "2026-10-07",
+          "basis": "publication",
+          "note": "The date printed on the cover; the card does not label it as an issue or publication date."
+        },
+        "qualification": "Publication is not evidence that the evaluations described were carried out as described.",
+        "passages": [
+          {
+            "cell": "Q01",
+            "index": 1
+          }
+        ]
+      }
+    },
+    "google-deepmind-gemini-3-flash": {
+      "entity": "gemini-3-flash-model-card",
+      "name": "Gemini 3 Flash Model Card",
+      "subtype": "Model card",
+      "description": "Google DeepMind's model card for Gemini 3 Flash, which states that it was published in December 2025.",
+      "family": "google-deepmind-gemini-3-flash-model-card",
+      "version": {
+        "label": "As dated 'Published: December 2025' in its preamble",
+        "publishedAt": "2025-12",
+        "dateNote": "The card states 'Published: December 2025', month precision; no revision date is printed."
+      },
+      "source": {
+        "id": "mc-src-gemini-3-flash-card",
+        "publicationDate": "2025-12",
+        "archived": {
+          "url": "https://web.archive.org/web/20251217173212/https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-3-Flash-Model-Card.pdf",
+          "at": "2025-12-17"
+        }
+      },
+      "published": {
+        "id": "mc-google-deepmind-gemini-3-flash-card-published",
+        "statement": "Google DeepMind published the Gemini 3 Flash model card in December 2025, as the card states.",
+        "time": {
+          "kind": "event",
+          "date": "2025-12",
+          "basis": "publication",
+          "note": "The card's own publication date, month precision."
+        },
+        "qualification": "Publication is not evidence that the evaluations described were carried out as described.",
+        "passages": [
+          {
+            "cell": "Q01",
+            "index": 1
+          }
+        ]
+      }
+    },
+    "google-deepmind-gemini-4-argon": {
+      "entity": "gemini-4-argon-model-card",
+      "name": "Gemini 4 Argon — Model Card",
+      "subtype": "Model card",
+      "description": "Google DeepMind's model card for Gemini 4 Argon, which states that it was published in October 2026.",
+      "family": "google-deepmind-gemini-4-argon-model-card",
+      "version": {
+        "label": "As dated 'Published: October 2026' in its preamble",
+        "publishedAt": "2026-10",
+        "dateNote": "The card states 'Published: October 2026', month precision; no revision date is printed."
+      },
+      "source": {
+        "id": "mc-src-gemini-4-argon-card",
+        "publicationDate": "2026-10",
+        "archived": {
+          "url": "https://web.archive.org/web/20261013160206/https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-4-Argon-Model-Card.pdf",
+          "at": "2026-10-13"
+        }
+      },
+      "published": {
+        "id": "mc-google-deepmind-gemini-4-argon-card-published",
+        "statement": "Google DeepMind published the Gemini 4 Argon model card in October 2026, as the card states.",
+        "time": {
+          "kind": "event",
+          "date": "2026-10",
+          "basis": "publication",
+          "note": "The card's own publication date, month precision."
+        },
+        "qualification": "Publication is not evidence that the evaluations described were carried out as described.",
+        "passages": [
+          {
+            "cell": "Q01",
+            "index": 1
+          }
+        ]
+      },
+      "cites": [
+        {
+          "id": "mc-gemini-4-argon-card-cites-fsf-v3-1",
+          "edition": "fsf-v3-1",
+          "statement": "The Gemini 4 Argon model card names Google DeepMind's Frontier Safety Framework of April 2026 and links version 3.1 of the framework.",
+          "qualification": "The card identifies the edition by its month in the text and by a link to the version 3.1 file. A citation is not evidence that the assessments followed the framework.",
+          "passages": [
+            {
+              "cell": "Q03",
+              "index": 1,
+              "link": "storage.googleapis.com/deepmind-media/DeepMind.com/Blog/strengthening-our-frontier-safety-framework/frontier-safety-framework_3-1.pdf"
+            }
+          ]
+        }
+      ]
+    },
+    "meta-llama-2": {
+      "entity": "llama-2-model-card",
+      "name": "Llama 2 model card (MODEL_CARD.md, meta-llama/llama)",
+      "subtype": "Model card",
+      "description": "Meta's model card for the Llama 2 family, the MODEL_CARD.md file of its meta-llama/llama repository on GitHub. The card prints no date of its own.",
+      "source": {
+        "id": "mc-src-llama-2-card",
+        "publicationDate": null
+      },
+      "published": {
+        "id": "mc-meta-llama-2-card-published",
+        "statement": "Meta published the Llama 2 model card as the MODEL_CARD.md file of its meta-llama/llama repository on GitHub.",
+        "time": {
+          "kind": "unknown",
+          "note": "The card prints no date of its own, so no date of the card is recorded. Repository commit dates date changes to the file, not the card."
+        },
+        "qualification": "The expression read is pinned to one commit of the file. Publication is not evidence that the evaluations described were carried out as described.",
+        "passages": [
+          {
+            "cell": "Q02",
+            "index": 1
+          }
+        ]
+      }
+    },
+    "meta-llama-3-3": {
+      "entity": "llama-3-3-model-card",
+      "name": "Llama 3.3 model card (MODEL_CARD.md, meta-llama/llama-models)",
+      "subtype": "Model card",
+      "description": "Meta's model card for Llama 3.3, the models/llama3_3/MODEL_CARD.md file of its meta-llama/llama-models repository on GitHub. The card prints a model release date but no date of its own.",
+      "source": {
+        "id": "mc-src-llama-3-3-card",
+        "publicationDate": null
+      },
+      "published": {
+        "id": "mc-meta-llama-3-3-card-published",
+        "statement": "Meta published the Llama 3.3 model card as a file of its meta-llama/llama-models repository on GitHub.",
+        "time": {
+          "kind": "unknown",
+          "note": "The card prints a release date for the model but none of its own, so no date of the card is recorded. Repository commit dates date changes to the file, not the card."
+        },
+        "qualification": "The expression read is pinned to one commit of the file. Publication is not evidence that the evaluations described were carried out as described.",
+        "passages": [
+          {
+            "cell": "Q02",
+            "index": 2
+          }
+        ]
+      }
+    },
+    "meta-cwm-preparedness": {
+      "entity": "cwm-preparedness-report",
+      "name": "Code World Model Preparedness Report",
+      "subtype": "Report",
+      "description": "Meta's preparedness report for its Code World Model (CWM), the expression read dated October 8, 2025.",
+      "family": "meta-cwm-preparedness-report",
+      "version": {
+        "label": "The expression dated October 8, 2025",
+        "revisedAt": "2025-10-08",
+        "dateNote": "The report prints 'Date: October 8, 2025' without saying whether it is a first publication or a revision. Meta's publication page for the report bears an earlier date; that page is not a source of this record, so no first publication date is recorded."
+      },
+      "source": {
+        "id": "mc-src-cwm-preparedness-report",
+        "publicationDate": null,
+        "versionDate": "2025-10-08",
+        "canonicalUrl": "https://ai.meta.com/research/publications/cwm-preparedness/"
+      },
+      "published": {
+        "id": "mc-meta-cwm-preparedness-report-published",
+        "statement": "Meta published the Code World Model Preparedness Report, the expression read dated October 8, 2025.",
+        "time": {
+          "kind": "event",
+          "date": "2025-10-08",
+          "basis": "revision",
+          "note": "The date printed on the report, which does not say whether it is a first publication or a revision; an earlier publication date was located but is not recorded here."
+        },
+        "qualification": "The date recorded is the date of the expression read, not an established first publication date. Publication is not evidence that the evaluations described were carried out as described.",
+        "passages": [
+          {
+            "cell": "Q01",
+            "index": 1
+          }
+        ]
+      }
+    },
+    "meta-muse-spark-1-3": {
+      "entity": "muse-spark-1-3-evaluation-report",
+      "name": "Muse Spark 1.3 Evaluation Report",
+      "subtype": "Report",
+      "description": "Meta's evaluation report for Muse Spark 1.3, the expression read dated October 23, 2026.",
+      "family": "meta-muse-spark-1-3-evaluation-report",
+      "version": {
+        "label": "The expression dated October 23, 2026",
+        "revisedAt": "2026-10-23",
+        "dateNote": "The report prints 'Date: October 23, 2026' without saying whether it is a first publication or a revision. An earlier announcement by Meta links a report at the same address; it is not a source of this record, so no first publication date is recorded."
+      },
+      "source": {
+        "id": "mc-src-muse-spark-1-3-report",
+        "publicationDate": null,
+        "versionDate": "2026-10-23"
+      },
+      "published": {
+        "id": "mc-meta-muse-spark-1-3-report-published",
+        "statement": "Meta published the Muse Spark 1.3 Evaluation Report, the expression read dated October 23, 2026.",
+        "time": {
+          "kind": "event",
+          "date": "2026-10-23",
+          "basis": "revision",
+          "note": "The date printed on the report, which does not say whether it is a first publication or a revision; an earlier announcement linking the same address was located but is not recorded here."
+        },
+        "qualification": "The date recorded is the date of the expression read, not an established first publication date. Publication is not evidence that the evaluations described were carried out as described.",
+        "passages": [
+          {
+            "cell": "Q01",
+            "index": 1
+          }
+        ]
+      }
+    },
+    "microsoft-phi-2": {
+      "entity": "phi-2-model-card",
+      "name": "Phi-2 model card (README.md, microsoft/phi-2)",
+      "subtype": "Model card",
+      "description": "Microsoft's model card for Phi-2, the README of its microsoft/phi-2 repository on Hugging Face. The card prints no date of its own.",
+      "source": {
+        "id": "mc-src-phi-2-card",
+        "publicationDate": null
+      },
+      "published": {
+        "id": "mc-microsoft-phi-2-card-published",
+        "statement": "Microsoft published the Phi-2 model card as the README of its microsoft/phi-2 repository on Hugging Face.",
+        "time": {
+          "kind": "unknown",
+          "note": "The card prints no date of its own, so no date of the card is recorded. Repository commit dates date changes to the file, not the card."
+        },
+        "qualification": "The card speaks for its developer in the first person; the repository's account identifies the publisher. The expression read is pinned to one revision. Publication is not evidence that the evaluations described were carried out as described.",
+        "passages": [
+          {
+            "cell": "Q15",
+            "index": 1
+          }
+        ]
+      }
+    },
+    "microsoft-phi-4": {
+      "entity": "phi-4-model-card",
+      "name": "Phi-4 model card (README.md, microsoft/phi-4)",
+      "subtype": "Model card",
+      "description": "Microsoft's model card for Phi-4, the README of its microsoft/phi-4 repository on Hugging Face. The card prints a model release date but no date of its own.",
+      "source": {
+        "id": "mc-src-phi-4-card",
+        "publicationDate": null
+      },
+      "published": {
+        "id": "mc-microsoft-phi-4-card-published",
+        "statement": "Microsoft published the Phi-4 model card as the README of its microsoft/phi-4 repository on Hugging Face.",
+        "time": {
+          "kind": "unknown",
+          "note": "The card prints a release date for the model but none of its own, so no date of the card is recorded. Repository commit dates date changes to the file, not the card."
+        },
+        "qualification": "The card speaks for its developer in the first person; the repository's account identifies the publisher. The expression read is pinned to one revision. Publication is not evidence that the evaluations described were carried out as described.",
+        "passages": [
+          {
+            "cell": "Q12",
+            "index": 1
+          }
+        ]
+      }
+    },
+    "microsoft-phi-4-mini-flash-reasoning": {
+      "entity": "phi-4-mini-flash-reasoning-model-card",
+      "name": "Phi-4-mini-flash-reasoning model card (README.md, microsoft/Phi-4-mini-flash-reasoning)",
+      "subtype": "Model card",
+      "description": "Microsoft's model card for Phi-4-mini-flash-reasoning, the README of its microsoft/Phi-4-mini-flash-reasoning repository on Hugging Face. The card prints a model release month but no date of its own.",
+      "source": {
+        "id": "mc-src-phi-4-mini-flash-reasoning-card",
+        "publicationDate": null
+      },
+      "published": {
+        "id": "mc-microsoft-phi-4-mini-flash-reasoning-card-published",
+        "statement": "Microsoft published the Phi-4-mini-flash-reasoning model card as the README of its microsoft/Phi-4-mini-flash-reasoning repository on Hugging Face.",
+        "time": {
+          "kind": "unknown",
+          "note": "The card prints a release month for the model but no date of its own, so no date of the card is recorded. Repository commit dates date changes to the file, not the card."
+        },
+        "qualification": "The passage identifies the card's subject; the repository's account identifies the publisher. The expression read is pinned to one revision. Publication is not evidence that the evaluations described were carried out as described.",
+        "passages": [
+          {
+            "cell": "Q02",
+            "index": 2
+          }
+        ]
+      }
+    },
+    "microsoft-mai-cyber-1-1-flash": {
+      "entity": "mai-cyber-1-1-flash-model-card",
+      "name": "MAI-Cyber-1.1-Flash model card",
+      "subtype": "Model card",
+      "description": "Microsoft's model card for MAI-Cyber-1.1-Flash, a PDF linked from the model's page on microsoft.ai. The card prints a model release date but no date of its own.",
+      "source": {
+        "id": "mc-src-mai-cyber-1-1-flash-card",
+        "publicationDate": null
+      },
+      "published": {
+        "id": "mc-microsoft-mai-cyber-1-1-flash-card-published",
+        "statement": "Microsoft published the MAI-Cyber-1.1-Flash model card on microsoft.ai.",
+        "time": {
+          "kind": "unknown",
+          "note": "The card prints a release date for the model but none of its own, so no date of the card is recorded. The PDF's internal creation date is not printed and is not a card date."
+        },
+        "qualification": "The card describes Microsoft's own testing; it is served from Microsoft's site. Publication is not evidence that the evaluations described were carried out as described.",
+        "passages": [
+          {
+            "cell": "Q13",
+            "index": 1
+          }
+        ]
+      }
+    },
+    "openai-gpt-4v": {
+      "entity": "gpt-4v-system-card",
+      "name": "GPT-4V(ision) System Card",
+      "subtype": "Model card",
+      "description": "OpenAI's system card for GPT-4 with vision (GPT-4V), dated September 25, 2023 on its cover.",
+      "family": "openai-gpt-4v-system-card",
+      "version": {
+        "label": "As dated September 25, 2023 on its cover",
+        "publishedAt": "2023-09-25",
+        "dateNote": "The date printed beneath the title and author line, day precision; the card does not label it as an issue or publication date. No revision date was located."
+      },
+      "source": {
+        "id": "mc-src-gpt-4v-card",
+        "publicationDate": "2023-09-25",
+        "archived": {
+          "url": "https://web.archive.org/web/20230925123519/https://cdn.openai.com/papers/GPTV_System_Card.pdf",
+          "at": "2023-09-25"
+        }
+      },
+      "published": {
+        "id": "mc-openai-gpt-4v-card-published",
+        "statement": "OpenAI published the GPT-4V(ision) system card, dated September 25, 2023 on its cover.",
+        "time": {
+          "kind": "event",
+          "date": "2023-09-25",
+          "basis": "publication",
+          "note": "The date printed on the cover; the card does not label it as an issue or publication date."
+        },
+        "qualification": "Publication is not evidence that the evaluations described were carried out as described.",
+        "passages": [
+          {
+            "cell": "Q01",
+            "index": 1
+          }
+        ]
+      }
+    },
+    "openai-o1": {
+      "entity": "o1-card-2024",
+      "reuse": true,
+      "source": {
+        "id": "mc-src-o1-card-pdf",
+        "publicationDate": "2024-12-05",
+        "versionDate": "2024-12-19",
+        "versionNote": "The PDF expression of the card. Its cover is dated December 5, 2024; a footnote in §3 marks a section added on 12/19/2024, so the file read is a later expression than the cover date. The dataset's other source for this card is the web page labelled 'Updated: December 5, 2024'.",
+        "archived": {
+          "url": "https://web.archive.org/web/20241205184050/https://cdn.openai.com/o1-system-card-20241205.pdf",
+          "at": "2024-12-05"
+        }
+      },
+      "existingPublished": {
+        "id": "openai-o1-card-2024",
+        "passages": [
+          {
+            "cell": "Q01",
+            "index": 1
+          }
+        ],
+        "reason": "The PDF expression of the card is registered as its own version (maintainer decision 10a of 2026-11-03), and its cover is added as evidence."
+      },
+      "cites": [
+        {
+          "id": "mc-o1-card-cites-preparedness-beta",
+          "edition": "preparedness-beta-2023",
+          "statement": "The OpenAI o1 system card cites OpenAI's Preparedness Framework (Beta) of 2023, under which it states that o1 was evaluated.",
+          "qualification": "The card's reference gives the edition's title, year and address. A citation is not evidence that the evaluations followed the framework.",
+          "passages": [
+            {
+              "cell": "Q03",
+              "index": 1
+            },
+            {
+              "cell": "Q03",
+              "index": 2
+            }
+          ]
+        }
+      ]
+    },
+    "openai-gpt-5-2-codex": {
+      "entity": "gpt-5-2-codex-system-card-addendum",
+      "name": "Addendum to GPT-5.2 System Card: GPT-5.2-Codex",
+      "subtype": "Model card",
+      "description": "OpenAI's addendum to the GPT-5.2 system card for GPT-5.2-Codex, dated December 18, 2025 on its cover.",
+      "family": "openai-gpt-5-2-codex-system-card-addendum",
+      "version": {
+        "label": "As dated December 18, 2025 on its cover",
+        "publishedAt": "2025-12-18",
+        "dateNote": "The date printed on the cover, day precision; the card does not label its kind. No revision date was located."
+      },
+      "source": {
+        "id": "mc-src-gpt-5-2-codex-addendum",
+        "publicationDate": "2025-12-18",
+        "archived": {
+          "url": "https://web.archive.org/web/20251219135142/https://cdn.openai.com/pdf/ac7c37ae-7f4c-4442-b741-2eabdeaf77e0/oai_5_2_Codex.pdf",
+          "at": "2025-12-19"
+        }
+      },
+      "published": {
+        "id": "mc-openai-gpt-5-2-codex-addendum-published",
+        "statement": "OpenAI published the GPT-5.2-Codex addendum to its GPT-5.2 system card, dated December 18, 2025 on its cover.",
+        "time": {
+          "kind": "event",
+          "date": "2025-12-18",
+          "basis": "publication",
+          "note": "The date printed on the cover; the card does not label its kind."
+        },
+        "qualification": "Publication is not evidence that the evaluations described were carried out as described.",
+        "passages": [
+          {
+            "cell": "Q01",
+            "index": 1
+          }
+        ]
+      },
+      "cites": [
+        {
+          "id": "mc-gpt-5-2-codex-addendum-cites-preparedness-v2",
+          "edition": "preparedness-v2",
+          "statement": "The GPT-5.2-Codex addendum names OpenAI's Preparedness Framework, with a link to Version 2 of the framework.",
+          "qualification": "The edition is identified by link annotation: the printed text names the framework without a version, and the hyperlink on its words points to the Version 2 file. A citation is not evidence that the evaluations followed the framework.",
+          "passages": [
+            {
+              "cell": "Q03",
+              "index": 2,
+              "link": "cdn.openai.com/pdf/18a02b5d-6b67-4cec-ab64-68cdfbddebcd/preparedness-framework-v2.pdf"
+            }
+          ]
+        }
+      ]
+    },
+    "openai-gpt-6-luna-october-29": {
+      "entity": "gpt-6-luna-october-29-addendum",
+      "name": "Addendum to GPT-6 Luna System Card: October 29, 2026 Update",
+      "subtype": "Model card",
+      "description": "OpenAI's addendum to the GPT-6 Luna system card on the model update of October 29, 2026, dated 2026-10-29 on its cover.",
+      "family": "openai-gpt-6-luna-october-29-addendum",
+      "version": {
+        "label": "As dated 2026-10-29 on its cover",
+        "publishedAt": "2026-10-29",
+        "dateNote": "The date printed on the cover, day precision; the card does not label its kind. The file's address reads 'october-28-2026-addendum'; the difference is recorded, not resolved."
+      },
+      "source": {
+        "id": "mc-src-gpt-6-luna-october-29-addendum",
+        "publicationDate": "2026-10-29"
+      },
+      "published": {
+        "id": "mc-openai-gpt-6-luna-october-29-addendum-published",
+        "statement": "OpenAI published the addendum to its GPT-6 Luna system card on the October 29, 2026 update, dated 2026-10-29 on its cover.",
+        "time": {
+          "kind": "event",
+          "date": "2026-10-29",
+          "basis": "publication",
+          "note": "The date printed on the cover; the file's address reads 'october-28', a difference recorded, not resolved."
+        },
+        "qualification": "Publication is not evidence that the evaluations described were carried out as described.",
+        "passages": [
+          {
+            "cell": "Q01",
+            "index": 1
+          }
+        ]
+      },
+      "cites": [
+        {
+          "id": "mc-gpt-6-luna-october-29-addendum-cites-preparedness-v2",
+          "edition": "preparedness-v2",
+          "statement": "The GPT-6 Luna (October 29) addendum names OpenAI's Preparedness Framework, with a link to Version 2 of the framework.",
+          "qualification": "The edition is identified by link annotation: the printed text names the framework without a version, and the hyperlink on its words points to the Version 2 file. A citation is not evidence that the evaluations followed the framework.",
+          "passages": [
+            {
+              "cell": "Q03",
+              "index": 1,
+              "link": "cdn.openai.com/pdf/18a02b5d-6b67-4cec-ab64-68cdfbddebcd/preparedness-framework-v2.pdf"
+            }
+          ]
+        }
+      ]
+    },
+    "xai-grok-4-1": {
+      "entity": "grok-4-1-model-card",
+      "name": "Grok 4.1 Model Card",
+      "subtype": "Model card",
+      "description": "xAI's model card for Grok 4.1, dated November 17, 2025 under its title.",
+      "family": "xai-grok-4-1-model-card",
+      "version": {
+        "label": "As dated November 17, 2025 under its title",
+        "publishedAt": "2025-11-17",
+        "dateNote": "The date printed under the title, day precision, without a label; the file name carries the same date. No revision date is printed."
+      },
+      "source": {
+        "id": "mc-src-grok-4-1-card",
+        "publicationDate": "2025-11-17",
+        "archived": {
+          "url": "https://web.archive.org/web/20251117213011/https://data.x.ai/2025-11-17-grok-4-1-model-card.pdf",
+          "at": "2025-11-17"
+        }
+      },
+      "published": {
+        "id": "mc-xai-grok-4-1-card-published",
+        "statement": "xAI published the Grok 4.1 model card, dated November 17, 2025 under its title.",
+        "time": {
+          "kind": "event",
+          "date": "2025-11-17",
+          "basis": "publication",
+          "note": "The date printed under the title, without a label."
+        },
+        "qualification": "Publication is not evidence that the evaluations described were carried out as described.",
+        "passages": [
+          {
+            "cell": "Q01",
+            "index": 1
+          }
+        ]
+      }
+    },
+    "xai-grok-4-7": {
+      "entity": "grok-4-7-model-card",
+      "name": "Model Card: Grok 4.7",
+      "subtype": "Model card",
+      "description": "xAI's model card for Grok 4.7, dated September 21, 2026 on its cover, with a revision date of the same day.",
+      "family": "xai-grok-4-7-model-card",
+      "version": {
+        "label": "As dated September 21, 2026 on its cover (Revision: 2026-09-21)",
+        "publishedAt": "2026-09-21",
+        "revisedAt": "2026-09-21",
+        "dateNote": "The cover prints the card's date, without a label, and 'Revision: 2026-09-21'; both are the same day."
+      },
+      "source": {
+        "id": "mc-src-grok-4-7-card",
+        "publicationDate": "2026-09-21",
+        "versionDate": "2026-09-21",
+        "archived": {
+          "url": "https://web.archive.org/web/20260922080030/https://media.x.ai/v1/website/card4p7-3a96f40b.pdf",
+          "at": "2026-09-22"
+        }
+      },
+      "published": {
+        "id": "mc-xai-grok-4-7-card-published",
+        "statement": "xAI published the Grok 4.7 model card, dated September 21, 2026 on its cover.",
+        "time": {
+          "kind": "event",
+          "date": "2026-09-21",
+          "basis": "publication",
+          "note": "The cover date, without a label; the cover's revision date is the same day."
+        },
+        "qualification": "Publication is not evidence that the evaluations described were carried out as described.",
+        "passages": [
+          {
+            "cell": "Q01",
+            "index": 1
+          }
+        ]
+      },
+      "cites": [
+        {
+          "id": "mc-grok-4-7-card-cites-faif-2026",
+          "edition": "faif-2026",
+          "statement": "The Grok 4.7 model card cites xAI's Frontier Artificial Intelligence Framework in a reference dated June 30, 2026, the June 2026 edition.",
+          "qualification": "The reference identifies the edition by its date; its address returned HTTP 404 on 2026-11-02. A citation is not evidence that the evaluations followed the framework.",
+          "passages": [
+            {
+              "cell": "Q03",
+              "index": 1
+            },
+            {
+              "cell": "Q03",
+              "index": 2
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "held": [
+    {
+      "what": "The 320 cell records (sixteen questions for each of the 20 cards)",
+      "reason": "They need card-facet identifiers outside the framework comparison's set, a schema change; part 2 of the admission (a minor release)."
+    },
+    {
+      "what": "Model release dates (Q02)",
+      "reason": "Release dates are cell records; part 2."
+    },
+    {
+      "what": "Earlier first-publication dates located outside the cards: the Claude 2 card (Anthropic's index, July 2023), the Claude 3.5 Haiku and Sonnet addendum (index, October 2024), the CWM Preparedness Report (Meta's publication page, September 24, 2025), Muse Spark 1.3 (Meta's announcement of September 2, 2026, which links the same address), Gemini 4 Argon (page header, 13 October 2026) and Gemini 3 Flash (index, 17 December 2025)",
+      "reason": "Decision 3a dates a card by its earliest located publication, but these dates rest on index, publication or announcement pages that are not sources in the pack and whose passages were not verified. Each card is dated as it prints its own date until the page is retrieved and verified."
+    },
+    {
+      "what": "Framework links for Claude Haiku 5.5 (Responsible Scaling Policy named without an edition; the Frontier Compliance Framework), Gemini 3 Flash (Frontier Safety Framework named without an edition), the CWM Preparedness Report (Frontier AI Framework cited without a version), Muse Spark 1.3 (Superintelligence Scaling Framework v2.1, not in the dataset) and Grok 4.1 (Risk Management Framework of 2025-08-20, not in the dataset)",
+      "reason": "Part 1 links only to editions already in the dataset that the card identifies. Decision 5a puts the xAI and Meta editions in a separate data task and holds the Anthropic Frontier Compliance Framework until it is read."
+    },
+    {
+      "what": "Decision 13 (GPT-4V, question 15, item 69)",
+      "reason": "Not decided; it goes to a Codex second pass. Part 1 admits no question-15 record, so nothing admitted here depends on it."
+    },
+    {
+      "what": "Existing AI and biosecurity evidence on the o1 card that quotes PDF pages but is attached to the web-page source (source-o1-card)",
+      "reason": "Moving it to the new PDF source changes existing evidence beyond this part's scope; listed for part 2 or a correction."
+    },
+    {
+      "what": "Archive captures for twelve cards",
+      "reason": "The cross-family check found no capture within 31 days of the target date for these cards; no capture is recorded."
+    }
+  ]
+}

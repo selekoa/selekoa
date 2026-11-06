@@ -1,0 +1,54 @@
+import type { ModelCardsFrame } from '../domain/model-cards';
+import {
+  modelCardsId,
+  modelCardsQuestion,
+  modelCardsTitle,
+} from './model-cards-page';
+
+// The identity and rows of "Model cards compared", which shared code reads
+// (src/release/collections.ts). Its reader text is in ./model-cards.ts.
+export const modelCardsFrame: ModelCardsFrame = {
+  id: modelCardsId,
+  version: 3,
+  title: modelCardsTitle,
+  question: modelCardsQuestion,
+  editorialStatus: 'machine-proposed',
+  // Developers in alphabetical order, then by the card's date (an undated
+  // card by its earliest located date). Never by any count.
+  cards: [
+    'claude2-model-card',
+    'claude-3-model-card',
+    'claude-3-5-sonnet-addendum-2024',
+    'claude-3-5-haiku-sonnet-addendum-2024',
+    'claude-3-7-sonnet-system-card',
+    'claude-opus-4-sonnet-4-system-card',
+    'claude-opus-4-5-system-card',
+    'claude-haiku-5-5-system-card',
+    'gemini-2-0-flash-lite-model-card',
+    'gemini-2-0-flash-model-card',
+    'gemini-3-flash-model-card',
+    'gemini-4-argon-model-card',
+    'llama-2-model-card',
+    'llama-3-3-model-card',
+    'cwm-model-card',
+    'cwm-preparedness-report',
+    'muse-spark-safety-preparedness-report',
+    'muse-spark-1-1-evaluation-report',
+    'muse-spark-1-3-evaluation-report',
+    'phi-2-model-card',
+    'phi-4-model-card',
+    'phi-4-mini-flash-reasoning-model-card',
+    'mai-cyber-1-1-flash-model-card',
+    'gpt-4v-system-card',
+    'gpt-4o-system-card',
+    'o1-preview-o1-mini-system-card-2024',
+    'o1-card-2024',
+    'operator-system-card',
+    'gpt-5-2-codex-system-card-addendum',
+    'gpt-6-luna-october-29-addendum',
+    'grok-4-model-card',
+    'grok-4-1-model-card',
+    'grok-4-20-system-card',
+    'grok-4-7-model-card',
+  ],
+};

@@ -1,0 +1,1325 @@
+{
+  "group": "google-xai",
+  "drafter": "fresh-context drafting pass, 2026-11-02",
+  "cards": [
+    {
+      "id": "google-deepmind-gemini-3-flash",
+      "developer": "Google DeepMind",
+      "model": "Gemini 3 Flash",
+      "year": 2025,
+      "source": "google-deepmind-gemini-3-flash",
+      "frameworkEditions": [],
+      "frameworkEditionNote": "The card names 'our Frontier Safety Framework' and 'our FSF' without a version, date or link to the framework document (its one frontier-safety hyperlink points to the Gemini 3 Pro Frontier Safety Framework Report). No edition is inferred. Context only, not the card's statement: the dataset records fsf-v3-0 (2025-09-22) as the edition published before the card's date (December 2025)."
+    },
+    {
+      "id": "google-deepmind-gemini-4-argon",
+      "developer": "Google DeepMind",
+      "model": "Gemini 4 Argon",
+      "year": 2026,
+      "source": "google-deepmind-gemini-4-argon",
+      "frameworkEditions": ["fsf-v3-1"],
+      "frameworkEditionNote": "The card writes 'our Frontier Safety Framework (April 2026)' (PDF p. 11) and hyperlinks the framework to storage.googleapis.com/deepmind-media/DeepMind.com/Blog/strengthening-our-frontier-safety-framework/frontier-safety-framework_3-1.pdf, the address the dataset records for fsf-v3-1 (version date 2026-04-17)."
+    },
+    {
+      "id": "xai-grok-4-1",
+      "developer": "xAI",
+      "model": "Grok 4.1",
+      "year": 2025,
+      "source": "xai-grok-4-1",
+      "frameworkEditions": [],
+      "frameworkEditionNote": "The card names xAI's 'Risk Management Framework (RMF)' and cites it as 'xAI. xai risk management framework, 2025.' (References, p. 6), with no version, address or full date. The RMF is not among the dataset's framework editions, so no identifier is given (open question). Context only, not the card's statement: the RMF retrieved from data.x.ai on 2026-11-02 prints 'Last updated: August 20, 2025'."
+    },
+    {
+      "id": "xai-grok-4-7",
+      "developer": "xAI",
+      "model": "Grok 4.7",
+      "year": 2026,
+      "source": "xai-grok-4-7",
+      "frameworkEditions": ["faif-2026"],
+      "frameworkEditionNote": "The card names the 'xAI Frontier Artificial Intelligence Framework (FAIF)' and its reference 16 reads 'xAI, June 30, 2026' with a link to media.x.ai/v1/website/xai-frontier-artificial-intelligence-framework-30-june-2026-99c40684.pdf. The dataset's faif-2026 record (effective date 2026-06-30) names that address as the file formerly served for the June 2026 edition; the address returned HTTP 404 on 2026-11-02."
+    }
+  ],
+  "cells": [
+    {
+      "card": "google-deepmind-gemini-3-flash",
+      "question": "Q01",
+      "status": "partly",
+      "passages": [
+        {
+          "source": "google-deepmind-gemini-3-flash",
+          "locator": "Model card preamble, PDF p. 2 (printed p. 1)",
+          "quote": "Published: December 2025"
+        }
+      ],
+      "note": "The card carries a publication date at month precision only; the cover repeats it as 'Model card published: December, 2025'. The developer's model-card index lists the card as 'Updated 17 December 2025' (index, not the card). No revision date is printed."
+    },
+    {
+      "card": "google-deepmind-gemini-3-flash",
+      "question": "Q02",
+      "status": "not-found",
+      "passages": [],
+      "note": "No release or availability date and no release form was found in the card; its Distribution section refers to the Gemini 3 Pro model card.",
+      "search": {
+        "read": "Whole card (6 PDF pages): cover, preamble, Model Information, Model Data, Implementation and Sustainability, Distribution, Evaluation, Intended Usage and Limitations, Ethics and Content Safety.",
+        "terms": [
+          "release",
+          "launch",
+          "availab",
+          "distribut",
+          "deploy",
+          "API",
+          "preview"
+        ],
+        "setAside": [
+          {
+            "locator": "Distribution, PDF p. 3 (printed p. 2)",
+            "reason": "States that the model 'is distributed similarly to Gemini 3 Pro' and refers to the Gemini 3 Pro model card; gives neither a date nor a release form."
+          },
+          {
+            "locator": "Ethics and Content Safety, 'Frontier Safety Assessment', PDF p. 6 (printed p. 5)",
+            "reason": "States the model was deemed acceptable for deployment (recorded under Q15); no date or form of release."
+          },
+          {
+            "locator": "Evaluation, 'Results', PDF p. 4 (printed p. 3)",
+            "reason": "'Results as of December, 2025' dates the evaluation results, not the release."
+          }
+        ]
+      }
+    },
+    {
+      "card": "google-deepmind-gemini-3-flash",
+      "question": "Q03",
+      "status": "partly",
+      "passages": [
+        {
+          "source": "google-deepmind-gemini-3-flash",
+          "locator": "Ethics and Content Safety, 'Frontier Safety Assessment', PDF p. 6 (printed p. 5)",
+          "quote": "did not reach any critical capability levels (CCLs) outlined in our Frontier Safety Framework"
+        }
+      ],
+      "note": "The card names the Frontier Safety Framework (also 'our FSF') without an edition, date or link to the framework. Context only, not the card's statement: the dataset records fsf-v3-0 (2025-09-22) as the edition published before the card's date.",
+      "search": {
+        "read": "Whole card.",
+        "terms": [
+          "Frontier Safety Framework",
+          "FSF",
+          "version",
+          "edition",
+          "2025"
+        ],
+        "setAside": []
+      }
+    },
+    {
+      "card": "google-deepmind-gemini-3-flash",
+      "question": "Q04",
+      "status": "partly",
+      "passages": [
+        {
+          "source": "google-deepmind-gemini-3-flash",
+          "locator": "Ethics and Content Safety, 'Frontier Safety Assessment', PDF p. 6 (printed p. 5)",
+          "quote": "did not reach any critical capability levels (CCLs) outlined in our Frontier Safety Framework"
+        }
+      ],
+      "note": "The card refers to the framework as a document ('outlined in') without an address or reference. The paragraph's hyperlink (PDF link annotation, p. 6) points to the Gemini 3 Pro Frontier Safety Framework Report (storage.googleapis.com/deepmind-media/gemini/gemini_3_pro_fsf_report.pdf), a model report, not the framework.",
+      "search": {
+        "read": "Whole card and its PDF link annotations (17 links).",
+        "terms": [
+          "Frontier Safety Framework",
+          "FSF",
+          "frontier-safety",
+          "http"
+        ],
+        "setAside": [
+          {
+            "locator": "PDF link annotation, p. 6",
+            "reason": "Target is the Gemini 3 Pro Frontier Safety Framework Report, not the framework document."
+          }
+        ]
+      }
+    },
+    {
+      "card": "google-deepmind-gemini-3-flash",
+      "question": "Q05",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "google-deepmind-gemini-3-flash",
+          "locator": "Ethics and Content Safety, 'Frontier Safety Assessment', PDF p. 6 (printed p. 5)",
+          "quote": "the Gemini 3 Pro model results give us confidence that Gemini 3 Flash is unlikely to reach any CCLs"
+        }
+      ],
+      "note": "The card states that Gemini 3 Pro Preview did not reach any critical capability level and that Gemini 3 Flash, as a less capable model, is unlikely to reach any CCL; it states that it relies on the results reported for Gemini 3 Pro and reports no frontier safety evaluation of Gemini 3 Flash itself. No domain is named."
+    },
+    {
+      "card": "google-deepmind-gemini-3-flash",
+      "question": "Q06",
+      "status": "not-found",
+      "passages": [],
+      "note": "No safeguard tied to the determination was found; the card refers to the Gemini 3 Pro model card for risks and mitigations.",
+      "search": {
+        "read": "Whole card.",
+        "terms": [
+          "safeguard",
+          "mitigation",
+          "protect",
+          "security",
+          "filter",
+          "risk acceptance"
+        ],
+        "setAside": [
+          {
+            "locator": "Ethics and Content Safety, 'Risks and Mitigations', PDF p. 6 (printed p. 5)",
+            "reason": "Refers to the Gemini 3 Pro model card; names no safeguard."
+          },
+          {
+            "locator": "Ethics and Content Safety, 'Frontier Safety Assessment', PDF p. 6 (printed p. 5)",
+            "reason": "Ties the deployment judgement to the FSF's risk acceptance criteria (Q15) but names no safeguard or mitigation."
+          }
+        ]
+      }
+    },
+    {
+      "card": "google-deepmind-gemini-3-flash",
+      "question": "Q07",
+      "status": "not-found",
+      "passages": [],
+      "note": "No chemical or biological evaluation of Gemini 3 Flash was found. The card's frontier safety paragraph reports Gemini 3 Pro Preview's results as a whole (no CCL reached) without naming any domain.",
+      "search": {
+        "read": "Whole card.",
+        "terms": [
+          "CBRN",
+          "chemical",
+          "biolog",
+          "radiolog",
+          "nuclear",
+          "weapon",
+          "CCL",
+          "Frontier Safety"
+        ],
+        "setAside": [
+          {
+            "locator": "Ethics and Content Safety, 'Frontier Safety Assessment', PDF p. 6 (printed p. 5)",
+            "reason": "Reports another model's (Gemini 3 Pro Preview) results without naming domains; recorded under Q05."
+          }
+        ]
+      }
+    },
+    {
+      "card": "google-deepmind-gemini-3-flash",
+      "question": "Q08",
+      "status": "not-found",
+      "passages": [],
+      "note": "No cyber evaluation was found; the term does not occur in the card.",
+      "search": {
+        "read": "Whole card.",
+        "terms": ["cyber", "offens", "exploit", "vulnerab", "CCL"],
+        "setAside": [
+          {
+            "locator": "Ethics and Content Safety, 'Frontier Safety Assessment', PDF p. 6 (printed p. 5)",
+            "reason": "Reports Gemini 3 Pro Preview's results without naming domains; recorded under Q05."
+          }
+        ]
+      }
+    },
+    {
+      "card": "google-deepmind-gemini-3-flash",
+      "question": "Q09",
+      "status": "not-found",
+      "passages": [],
+      "note": "No dangerous-capability evaluation of autonomy, self-improvement or AI R&D was found. The card reports agentic benchmarks as product capability; they are set aside below.",
+      "search": {
+        "read": "Whole card.",
+        "terms": [
+          "autonom",
+          "R&D",
+          "machine learning",
+          "self-repl",
+          "self-improv",
+          "agentic"
+        ],
+        "setAside": [
+          {
+            "locator": "Evaluation, 'Approach', PDF p. 4 (printed p. 3)",
+            "reason": "Lists 'agentic tool use' among capability benchmarks; product capability, not a dangerous-capability evaluation."
+          },
+          {
+            "locator": "Ethics and Content Safety, 'Frontier Safety Assessment', PDF p. 6 (printed p. 5)",
+            "reason": "Reports Gemini 3 Pro Preview's results without naming domains; recorded under Q05."
+          }
+        ]
+      },
+      "crossFamily": {
+        "item": 101,
+        "result": "corrected: the absence note is limited to dangerous-capability evaluations. Status unchanged."
+      }
+    },
+    {
+      "card": "google-deepmind-gemini-3-flash",
+      "question": "Q10",
+      "status": "not-found",
+      "passages": [],
+      "note": "No persuasion or manipulation evaluation was found; the terms do not occur in the card.",
+      "search": {
+        "read": "Whole card.",
+        "terms": ["persua", "manipul", "influence"],
+        "setAside": [
+          {
+            "locator": "Ethics and Content Safety, 'Frontier Safety Assessment', PDF p. 6 (printed p. 5)",
+            "reason": "Reports Gemini 3 Pro Preview's results without naming domains; recorded under Q05."
+          }
+        ]
+      }
+    },
+    {
+      "card": "google-deepmind-gemini-3-flash",
+      "question": "Q11",
+      "status": "not-found",
+      "passages": [],
+      "note": "No evaluation of misalignment, deception, scheming or sabotage was found. The safety evaluations reported are content-safety, tone and refusal measures.",
+      "search": {
+        "read": "Whole card.",
+        "terms": [
+          "decepti",
+          "misalign",
+          "schem",
+          "sabotag",
+          "situational",
+          "stealth",
+          "oversight",
+          "reward hack",
+          "honest"
+        ],
+        "setAside": [
+          {
+            "locator": "Ethics and Content Safety, 'Training and Development Evaluation Results', PDF p. 5 (printed p. 4)",
+            "reason": "Content safety, tone and unjustified-refusal evaluations; content-safety tests do not meet the criterion."
+          }
+        ]
+      }
+    },
+    {
+      "card": "google-deepmind-gemini-3-flash",
+      "question": "Q12",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "google-deepmind-gemini-3-flash",
+          "locator": "Ethics and Content Safety, 'Human Red Teaming Results', PDF p. 6 (printed p. 5)",
+          "quote": "We conduct manual red teaming by specialist teams who sit outside of the model development team"
+        },
+        {
+          "source": "google-deepmind-gemini-3-flash",
+          "locator": "Ethics and Content Safety, 'Human Red Teaming Results', PDF p. 6 (printed p. 5)",
+          "quote": "the scope of red teaming covered potential issues outside of our strict policies"
+        }
+      ],
+      "note": "The card states manual red teaming by Google specialist teams outside the model development team, covering child safety and content safety policies and issues beyond them; it states no number of testers or period."
+    },
+    {
+      "card": "google-deepmind-gemini-3-flash",
+      "question": "Q13",
+      "status": "not-found",
+      "passages": [],
+      "note": "No external tester or evaluator was found.",
+      "search": {
+        "read": "Whole card.",
+        "terms": [
+          "external",
+          "third party",
+          "third-party",
+          "partner",
+          "independent",
+          "vendor",
+          "evaluator"
+        ],
+        "setAside": [
+          {
+            "locator": "Ethics and Content Safety, 'Human Red Teaming Results', PDF p. 6 (printed p. 5)",
+            "reason": "'specialist teams who sit outside of the model development team' are Google teams (Q12), not external organisations."
+          }
+        ]
+      }
+    },
+    {
+      "card": "google-deepmind-gemini-3-flash",
+      "question": "Q14",
+      "status": "not-found",
+      "passages": [],
+      "note": "No government body was found.",
+      "search": {
+        "read": "Whole card.",
+        "terms": ["institute", "AISI", "CAISI", "government", "UK", "U.S."],
+        "setAside": []
+      }
+    },
+    {
+      "card": "google-deepmind-gemini-3-flash",
+      "question": "Q15",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "google-deepmind-gemini-3-flash",
+          "locator": "Ethics and Content Safety, 'Frontier Safety Assessment', PDF p. 6 (printed p. 5)",
+          "quote": "we deemed Gemini 3 Flash was acceptable for deployment"
+        }
+      ],
+      "note": "The card states a deployment judgement in the company's voice ('we'), made 'in line with the risk acceptance criteria outlined in our FSF'. No person, office or committee is named."
+    },
+    {
+      "card": "google-deepmind-gemini-3-flash",
+      "question": "Q16",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "google-deepmind-gemini-3-flash",
+          "locator": "Ethics and Content Safety, 'Training and Development Evaluation Results', PDF p. 5 (printed p. 4)",
+          "quote": "The evaluation results are for automated evaluations and not human evaluation or red teaming"
+        },
+        {
+          "source": "google-deepmind-gemini-3-flash",
+          "locator": "Ethics and Content Safety, 'Training and Development Evaluation Results', PDF p. 6 (printed p. 5)",
+          "quote": "not directly comparable with performance results found in previous Gemini model cards"
+        }
+      ],
+      "note": "The card states that the reported safety results are automated only, are computed with revised evaluations not comparable with earlier cards, and that variation is expected in automated results."
+    },
+    {
+      "card": "google-deepmind-gemini-4-argon",
+      "question": "Q01",
+      "status": "partly",
+      "passages": [
+        {
+          "source": "google-deepmind-gemini-4-argon",
+          "locator": "Model card preamble, PDF p. 2 (printed p. 1)",
+          "quote": "Published: October 2026"
+        }
+      ],
+      "note": "The PDF carries a publication date at month precision only and no revision date. The card's HTML page reads 'Published 13 October 2026' (page header, not the PDF)."
+    },
+    {
+      "card": "google-deepmind-gemini-4-argon",
+      "question": "Q02",
+      "status": "partly",
+      "passages": [
+        {
+          "source": "google-deepmind-gemini-4-argon",
+          "locator": "Distribution, PDF p. 4 (printed p. 3)",
+          "quote": "Gemini 4 Argon is distributed in the following channels"
+        },
+        {
+          "source": "google-deepmind-gemini-4-argon",
+          "locator": "Distribution, PDF p. 4 (printed p. 3)",
+          "quote": "Our models are available to downstream providers via an application program interface (API)"
+        }
+      ],
+      "note": "The card lists release channels (Gemini App, Gemini API, Google AI Studio, Gemini for business, Google Antigravity, Google AI Mode) and API access; it gives no release or availability date.",
+      "search": {
+        "read": "Whole card (14 PDF pages).",
+        "terms": [
+          "release",
+          "launch",
+          "availab",
+          "distribut",
+          "deploy",
+          "October"
+        ],
+        "setAside": [
+          {
+            "locator": "Evaluation Approach, PDF p. 8 (printed p. 7)",
+            "reason": "'Ethics & Safety Reviews were conducted ahead of the model's release' gives relative timing of a review, not of release."
+          },
+          {
+            "locator": "Evaluation, 'Results', PDF p. 5 (printed p. 4)",
+            "reason": "'results as of October, 2026' dates the results, not the release."
+          }
+        ]
+      }
+    },
+    {
+      "card": "google-deepmind-gemini-4-argon",
+      "question": "Q03",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "google-deepmind-gemini-4-argon",
+          "locator": "Safety & Security, 'Frontier Safety Assessment', PDF p. 11 (printed p. 10)",
+          "quote": "In line with our Frontier Safety Framework (April 2026), we conducted critical capability assessments of Gemini 4 Argon"
+        }
+      ],
+      "note": "The card names the framework with the date 'April 2026' and links the v3.1 document (dataset fsf-v3-1, version date 2026-04-17)."
+    },
+    {
+      "card": "google-deepmind-gemini-4-argon",
+      "question": "Q04",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "google-deepmind-gemini-4-argon",
+          "locator": "Safety & Security, 'Frontier Safety Assessment', PDF p. 11 (printed p. 10)",
+          "quote": "In line with our Frontier Safety Framework (April 2026), we conducted critical capability assessments of Gemini 4 Argon"
+        }
+      ],
+      "note": "The PDF's link annotation on p. 11 points to storage.googleapis.com/deepmind-media/DeepMind.com/Blog/strengthening-our-frontier-safety-framework/frontier-safety-framework_3-1.pdf; a link on p. 9 points to deepmind.google/frontier-safety/ (the framework versions page)."
+    },
+    {
+      "card": "google-deepmind-gemini-4-argon",
+      "question": "Q05",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "google-deepmind-gemini-4-argon",
+          "locator": "Safety & Security, 'Frontier Safety Assessment', PDF p. 11 (printed p. 10)",
+          "quote": "We cannot rule out that Gemini 4 Argon has reached this CCL for biological information risk"
+        },
+        {
+          "source": "google-deepmind-gemini-4-argon",
+          "locator": "Safety & Security, 'Frontier Safety Assessment', PDF p. 11 (printed p. 10)",
+          "quote": "Stealth and Situational Awareness TCL: We cannot rule out that Gemini 4 Argon has reached this TCL"
+        },
+        {
+          "source": "google-deepmind-gemini-4-argon",
+          "locator": "Frontier safety table, Harmful Manipulation row, PDF p. 13 (printed p. 12)",
+          "quote": "we assess its overall capabilities to be below the CCL threshold"
+        }
+      ],
+      "note": "The card states an outcome for each domain of its table: CBRN uplift TCL not reached for chemical, radiological and nuclear; biological CCL 'cannot be ruled out'; cybersecurity CCL 'cannot be ruled out'; harmful manipulation CCL not reached; stealth and situational awareness TCL 'cannot be ruled out'; ML R&D acceleration and automation CCLs not reached."
+    },
+    {
+      "card": "google-deepmind-gemini-4-argon",
+      "question": "Q06",
+      "status": "partly",
+      "passages": [
+        {
+          "source": "google-deepmind-gemini-4-argon",
+          "locator": "Safety & Security, 'Frontier Safety Assessment', PDF p. 11 (printed p. 10)",
+          "quote": "we therefore developed a safety case for its biorisk capabilities that we assess lower risk to below the biological CCL level"
+        },
+        {
+          "source": "google-deepmind-gemini-4-argon",
+          "locator": "Frontier safety table, Loss of Control row, PDF p. 13 (printed p. 12)",
+          "quote": "We have deployed safeguards for both internal and external deployments that we assess lower risk to below the TCL level."
+        }
+      ],
+      "note": "The card ties safety cases (biological and cyber CCLs) and a residual risk assessment with safeguards (stealth and situational awareness TCL) to the thresholds it cannot rule out, but names no safeguard, protection type or safeguard standard; it refers to the Gemini 4 Argon Safety & Security Report. Recorded as partly because Q06 asks for named safeguards. The developer's account, not evidence that the safeguards work.",
+      "search": {
+        "read": "Whole card (Safety & Security; Frontier Safety Assessment and its table; Risks and Mitigations).",
+        "terms": ["safeguard", "mitigat", "security level", "deployment"],
+        "setAside": []
+      },
+      "crossFamily": {
+        "item": 102,
+        "result": "corrected: stated to partly; no card passage names the safeguards (checked on the retrieved card for “safeguard”, “mitigat”, “security level”, “deployment”)."
+      }
+    },
+    {
+      "card": "google-deepmind-gemini-4-argon",
+      "question": "Q07",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "google-deepmind-gemini-4-argon",
+          "locator": "Frontier safety table, CBRN row, PDF p. 12 (printed p. 11)",
+          "quote": "We can rule out the TCL for the chemical, radiological, and nuclear domains with reasonable confidence."
+        },
+        {
+          "source": "google-deepmind-gemini-4-argon",
+          "locator": "Frontier safety table, CBRN row, PDF p. 12 (printed p. 11)",
+          "quote": "We cannot rule out that Gemini 4 Argon reaches the biological CCL."
+        }
+      ],
+      "note": "CBRN evaluations reported at policy level: the uplift TCL is stated as ruled out for chemical, radiological and nuclear; the biological uplift level 1 CCL is stated as not ruled out. Evaluation details in the row are not recorded (hazard rule)."
+    },
+    {
+      "card": "google-deepmind-gemini-4-argon",
+      "question": "Q08",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "google-deepmind-gemini-4-argon",
+          "locator": "Frontier safety table, Cybersecurity row, PDF p. 12 (printed p. 11)",
+          "quote": "We cannot rule out that Gemini 4 Argon reaches the cybersecurity CCL."
+        }
+      ],
+      "note": "The card states that the cybersecurity uplift level 1 CCL cannot be ruled out and that safeguards are applied (Q06). Evaluation details are not recorded (hazard rule)."
+    },
+    {
+      "card": "google-deepmind-gemini-4-argon",
+      "question": "Q09",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "google-deepmind-gemini-4-argon",
+          "locator": "Frontier safety table, ML R&D row, PDF p. 14 (printed p. 13)",
+          "quote": "Gemini 4 Argon's performance remains below our CCL threshold."
+        }
+      ],
+      "note": "The table gives 'CCL not reached' for ML R&D acceleration level 1 and ML R&D automation level 1, on the basis of an internal research engineering benchmark. The loss-of-control (stealth and situational awareness) result is recorded under Q11."
+    },
+    {
+      "card": "google-deepmind-gemini-4-argon",
+      "question": "Q10",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "google-deepmind-gemini-4-argon",
+          "locator": "Frontier safety table, Harmful Manipulation row, PDF p. 13 (printed p. 12)",
+          "quote": "we assess its overall capabilities to be below the CCL threshold"
+        }
+      ],
+      "note": "The card reports human behavioural studies for harmful manipulation and states the level 1 CCL as not reached; it describes the area as one whose evaluations it continues to iterate (Q16)."
+    },
+    {
+      "card": "google-deepmind-gemini-4-argon",
+      "question": "Q11",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "google-deepmind-gemini-4-argon",
+          "locator": "Safety & Security, 'Frontier Safety Assessment', PDF p. 11 (printed p. 10)",
+          "quote": "Stealth and Situational Awareness TCL: We cannot rule out that Gemini 4 Argon has reached this TCL"
+        },
+        {
+          "source": "google-deepmind-gemini-4-argon",
+          "locator": "Frontier safety table, Loss of Control row, PDF p. 13 (printed p. 12)",
+          "quote": "stealth (ability to circumvent basic oversight mechanisms)"
+        }
+      ],
+      "note": "The card reports a loss-of-control evaluation of the model's capability for stealth (circumventing basic oversight) and situational awareness, with the stated conclusion that the TCL cannot be ruled out. It reports no propensity evaluation (deception, scheming, sabotage) in the card itself; challenge results are not recorded."
+    },
+    {
+      "card": "google-deepmind-gemini-4-argon",
+      "question": "Q12",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "google-deepmind-gemini-4-argon",
+          "locator": "Safety & Security, 'Evaluation Approach', PDF p. 8 (printed p. 7)",
+          "quote": "Human Red Teaming conducted by specialist teams who sit outside of the model development team, across the policies and desiderata"
+        },
+        {
+          "source": "google-deepmind-gemini-4-argon",
+          "locator": "Safety & Security, 'Human Red Teaming Results', PDF p. 11 (printed p. 10)",
+          "quote": "the scope of red teaming covered potential issues outside of our strict policies"
+        }
+      ],
+      "note": "The card states human red teaming by specialist teams in Google's Trust & Safety organization, outside the model development team, covering child safety, content safety policies and issues beyond them, plus automated red teaming; the frontier safety table also refers to expert red teaming in the biological domain. No number of testers or period is given."
+    },
+    {
+      "card": "google-deepmind-gemini-4-argon",
+      "question": "Q13",
+      "status": "partly",
+      "passages": [
+        {
+          "source": "google-deepmind-gemini-4-argon",
+          "locator": "Safety & Security, 'Frontier Safety Assessment', PDF p. 11 (printed p. 10)",
+          "quote": "drawing on internal and external results"
+        }
+      ],
+      "note": "The card states that its threshold assessments draw on external results but does not name or describe who produced them.",
+      "search": {
+        "read": "Whole card.",
+        "terms": [
+          "external",
+          "third party",
+          "third-party",
+          "partner",
+          "independent",
+          "vendor"
+        ],
+        "setAside": [
+          {
+            "locator": "Safety & Security, 'Evaluation Approach', PDF p. 8 (printed p. 7)",
+            "reason": "'developed in partnership with internal safety, security, and responsibility teams': internal teams."
+          },
+          {
+            "locator": "Frontier safety table, Loss of Control row, PDF p. 13 (printed p. 12)",
+            "reason": "'internal and external deployments' refers to deployment settings, not testers."
+          }
+        ]
+      }
+    },
+    {
+      "card": "google-deepmind-gemini-4-argon",
+      "question": "Q14",
+      "status": "not-found",
+      "passages": [],
+      "note": "No government body was found.",
+      "search": {
+        "read": "Whole card.",
+        "terms": [
+          "institute",
+          "AISI",
+          "CAISI",
+          "government",
+          "UK",
+          "U.S.",
+          "external"
+        ],
+        "setAside": [
+          {
+            "locator": "Safety & Security, 'Frontier Safety Assessment', PDF p. 11 (printed p. 10)",
+            "reason": "'external results' names no body (recorded under Q13)."
+          }
+        ]
+      }
+    },
+    {
+      "card": "google-deepmind-gemini-4-argon",
+      "question": "Q15",
+      "status": "not-found",
+      "passages": [],
+      "note": "No statement that a release or deployment decision was made was found.",
+      "search": {
+        "read": "Whole card.",
+        "terms": [
+          "decision",
+          "decid",
+          "release",
+          "launch",
+          "deploy",
+          "approv",
+          "acceptable"
+        ],
+        "setAside": [
+          {
+            "locator": "Safety & Security, 'Evaluation Approach', PDF p. 8 (printed p. 7)",
+            "reason": "Evaluations conducted 'to help improve the model and inform decision-making' and Ethics & Safety Reviews 'ahead of the model's release': no decision stated."
+          },
+          {
+            "locator": "Safety & Security, 'Frontier Safety Assessment', PDF p. 11 (printed p. 10)",
+            "reason": "Residual risk assessment and safety cases concern risk levels (Q05, Q06), not a release decision."
+          }
+        ]
+      }
+    },
+    {
+      "card": "google-deepmind-gemini-4-argon",
+      "question": "Q16",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "google-deepmind-gemini-4-argon",
+          "locator": "Frontier safety table, Harmful Manipulation row, PDF p. 13 (printed p. 12)",
+          "quote": "As a nascent risk area we continue to iterate on our harmful manipulation evaluations"
+        },
+        {
+          "source": "google-deepmind-gemini-4-argon",
+          "locator": "Safety & Security, 'Training and Development Evaluation Results', PDF p. 10 (printed p. 9)",
+          "quote": "not directly comparable with performance results found in previous Gemini model cards"
+        }
+      ],
+      "note": "The card also states that three thresholds (biological CCL, cybersecurity CCL, stealth and situational awareness TCL) could not be ruled out (Q05) and that the automated safety results are not human evaluation or red teaming."
+    },
+    {
+      "card": "xai-grok-4-1",
+      "question": "Q01",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "xai-grok-4-1",
+          "locator": "Title block, p. 1",
+          "quote": "Grok 4.1 Model Card xAI November 17, 2025"
+        }
+      ],
+      "note": "The card prints a full date under its title without a label (publication or issue not specified). No revision date is printed. The file name (2025-11-17-grok-4-1-model-card.pdf) carries the same date."
+    },
+    {
+      "card": "xai-grok-4-1",
+      "question": "Q02",
+      "status": "partly",
+      "passages": [
+        {
+          "source": "xai-grok-4-1",
+          "locator": "§1 Introduction, p. 1",
+          "quote": "It is publicly available through our web and mobile consumer apps."
+        }
+      ],
+      "note": "The card gives the form of availability (consumer web and mobile apps) in the present tense, with no release date.",
+      "search": {
+        "read": "Whole card (6 pages).",
+        "terms": ["release", "launch", "availab", "deploy", "API"],
+        "setAside": [
+          {
+            "locator": "§1 Introduction, p. 1",
+            "reason": "'pre-deployment safety testing' gives no date."
+          }
+        ]
+      }
+    },
+    {
+      "card": "xai-grok-4-1",
+      "question": "Q03",
+      "status": "partly",
+      "passages": [
+        {
+          "source": "xai-grok-4-1",
+          "locator": "§1 Introduction, p. 1",
+          "quote": "In line with our Risk Management Framework (RMF), we measure safety-relevant behaviors across three categories"
+        },
+        {
+          "source": "xai-grok-4-1",
+          "locator": "References, p. 6",
+          "quote": "xAI. xai risk management framework, 2025."
+        }
+      ],
+      "note": "The card names xAI's Risk Management Framework; its reference gives the year 2025 only, with no version, full date or address. The RMF is not among the dataset's framework editions (open question). Context only, not the card's statement: the RMF served at data.x.ai prints 'Last updated: August 20, 2025'."
+    },
+    {
+      "card": "xai-grok-4-1",
+      "question": "Q04",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "xai-grok-4-1",
+          "locator": "References, p. 6",
+          "quote": "xAI. xai risk management framework, 2025."
+        }
+      ],
+      "note": "A bibliographic reference to the framework (author, title, year), cited in §2 as '[xAI, 2025]'; it gives no address. The PDF's only link annotation points to the Grok 4 model card."
+    },
+    {
+      "card": "xai-grok-4-1",
+      "question": "Q05",
+      "status": "not-found",
+      "passages": [],
+      "note": "No determination in the framework's own categories (a threshold reached or not reached) was found; the card groups its evaluations by the RMF's three risk categories and reports results and conclusions outside threshold language.",
+      "search": {
+        "read": "Whole card.",
+        "terms": [
+          "threshold",
+          "RMF",
+          "Risk Management Framework",
+          "level",
+          "acceptable",
+          "determin"
+        ],
+        "setAside": [
+          {
+            "locator": "§1 Introduction and §2 Evaluations, p. 1",
+            "reason": "RMF named as the basis for grouping evaluations; no outcome stated."
+          },
+          {
+            "locator": "§2.3.2 Results, p. 5",
+            "reason": "'we do not believe it poses risks due to advanced persuasion capabilities' is a conclusion (Q10) not expressed in the framework's categories."
+          }
+        ]
+      }
+    },
+    {
+      "card": "xai-grok-4-1",
+      "question": "Q06",
+      "status": "partly",
+      "passages": [
+        {
+          "source": "xai-grok-4-1",
+          "locator": "§2.3.2 Results, p. 5",
+          "quote": "in response to these results, we have implemented initial mitigations with input filters for restricted chemical and biological knowledge"
+        }
+      ],
+      "note": "The card ties input filters to its chemical and biological evaluation results, not to a framework determination or threshold (none is stated, Q05). It also describes refusal training and input filters in §2.1.1. The developer's account, not evidence that the safeguards work."
+    },
+    {
+      "card": "xai-grok-4-1",
+      "question": "Q07",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "xai-grok-4-1",
+          "locator": "§2.3.2 Results, p. 4",
+          "quote": "Grok 4.1 achieves broadly similar results to Grok 4 and other frontier models on chemical and biological capabilities tests."
+        }
+      ],
+      "note": "Biology and chemistry dual-use evaluations reported, with a stated comparative conclusion and comparisons with human baselines; no threshold language. The section's scope sentence names radiological and nuclear weapons, but the evaluations listed cover biology, chemistry and cyber only. Scores are not recorded (hazard rule).",
+      "crossFamily": {
+        "item": 126,
+        "result": "not cross-family checked: excluded from the pass by the maintainer."
+      }
+    },
+    {
+      "card": "xai-grok-4-1",
+      "question": "Q08",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "xai-grok-4-1",
+          "locator": "§2.3.2 Results, p. 5",
+          "quote": "Grok 4.1 again performs similarly to other frontier models, but substantially below the level of human cybersecurity experiments"
+        }
+      ],
+      "note": "Dual-use cyber knowledge and an agentic capture-the-flag evaluation are reported, with the stated comparative conclusion quoted (the card's wording); no threshold language. Scores are not recorded."
+    },
+    {
+      "card": "xai-grok-4-1",
+      "question": "Q09",
+      "status": "not-found",
+      "passages": [],
+      "note": "No evaluation of autonomy, self-replication, self-improvement or AI R&D was found.",
+      "search": {
+        "read": "Whole card.",
+        "terms": [
+          "autonom",
+          "agentic",
+          "self-",
+          "replicat",
+          "AI R&D",
+          "research and development",
+          "loss of control"
+        ],
+        "setAside": [
+          {
+            "locator": "§2.1.2 Evaluations, p. 2",
+            "reason": "Agentic refusal and prompt-injection evaluations measure misuse refusal and robustness, not autonomy."
+          },
+          {
+            "locator": "§2.3.1 Evaluations, p. 4",
+            "reason": "The agentic capture-the-flag evaluation is a cyber evaluation (Q08)."
+          }
+        ]
+      }
+    },
+    {
+      "card": "xai-grok-4-1",
+      "question": "Q10",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "xai-grok-4-1",
+          "locator": "§2.3.2 Results, p. 5",
+          "quote": "we do not believe it poses risks due to advanced persuasion capabilities"
+        }
+      ],
+      "note": "A persuasion evaluation (MakeMeSay) is reported with the stated conclusion quoted."
+    },
+    {
+      "card": "xai-grok-4-1",
+      "question": "Q11",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "xai-grok-4-1",
+          "locator": "§2.2.1 Deception, p. 3",
+          "quote": "Overall, we find that training the model to be honest drops the rate at which Grok 4.1 lies."
+        }
+      ],
+      "note": "The card reports a deception (lying under pressure) evaluation and a sycophancy evaluation as 'concerning propensities', with the conclusion quoted; its table gives dishonesty rates for Grok 4 and both Grok 4.1 configurations. No scheming, sabotage or oversight evaluation was found."
+    },
+    {
+      "card": "xai-grok-4-1",
+      "question": "Q12",
+      "status": "not-found",
+      "passages": [],
+      "note": "No testing described as red-teaming was found. The card reports adversarial robustness evaluations (jailbreak templates, prompt injection) without calling them red-teaming.",
+      "search": {
+        "read": "Whole card.",
+        "terms": [
+          "red team",
+          "red-team",
+          "red teaming",
+          "adversarial",
+          "jailbreak",
+          "tester"
+        ],
+        "setAside": [
+          {
+            "locator": "§2.1.2 Evaluations, 'Adversarial robustness', p. 2",
+            "reason": "Adversarial testing on internal jailbreak templates and a prompt-injection suite; not described as red-teaming."
+          },
+          {
+            "locator": "§2.1.1 Safety Training Approach, p. 1",
+            "reason": "Adversarial attacks used to train input filters; training, not testing described as red-teaming."
+          }
+        ]
+      }
+    },
+    {
+      "card": "xai-grok-4-1",
+      "question": "Q13",
+      "status": "not-found",
+      "passages": [],
+      "note": "No external organisation named as having tested or evaluated Grok 4.1 was found.",
+      "search": {
+        "read": "Whole card, including references.",
+        "terms": [
+          "external",
+          "third party",
+          "third-parties",
+          "partner",
+          "independent",
+          "evaluator",
+          "RAND"
+        ],
+        "setAside": [
+          {
+            "locator": "§2.3.1 Evaluations and References, pp. 4-6",
+            "reason": "Published benchmarks and human baselines by other authors (including a RAND report) are cited as sources, not as testers of Grok 4.1."
+          },
+          {
+            "locator": "§3.1 Data and Training, p. 5",
+            "reason": "'data produced by third-parties' concerns training data."
+          }
+        ]
+      }
+    },
+    {
+      "card": "xai-grok-4-1",
+      "question": "Q14",
+      "status": "not-found",
+      "passages": [],
+      "note": "No government body was found.",
+      "search": {
+        "read": "Whole card.",
+        "terms": ["institute", "AISI", "CAISI", "government", "UK", "U.S."],
+        "setAside": []
+      }
+    },
+    {
+      "card": "xai-grok-4-1",
+      "question": "Q15",
+      "status": "not-found",
+      "passages": [],
+      "note": "No statement that a release or deployment decision was made was found.",
+      "search": {
+        "read": "Whole card.",
+        "terms": ["decision", "decid", "release", "launch", "deploy", "approv"],
+        "setAside": [
+          {
+            "locator": "§1 Introduction, p. 1",
+            "reason": "'we engage in pre-deployment safety testing' and 'We also deploy these models with safeguards' describe testing and deployment conditions; no decision or decision-maker is stated."
+          }
+        ]
+      }
+    },
+    {
+      "card": "xai-grok-4-1",
+      "question": "Q16",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "xai-grok-4-1",
+          "locator": "§2.1.2 Evaluations, p. 2",
+          "quote": "results in previous model cards were reported with an error in the evaluation settings, where only the English prompts were evaluated"
+        },
+        {
+          "source": "xai-grok-4-1",
+          "locator": "§2.3.2 Results, pp. 4-5",
+          "quote": "the human baselines collected in previous work likely underestimate the … performance of high-context experts"
+        }
+      ],
+      "note": "The card states an error in earlier cards' refusal results, that the new multilingual results are not directly comparable, and that the human baselines used may underestimate expert performance."
+    },
+    {
+      "card": "xai-grok-4-7",
+      "question": "Q01",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "xai-grok-4-7",
+          "locator": "Cover, PDF p. 1",
+          "quote": "Model Card: Grok 4.7 September 21, 2026 Revision: 2026-09-21"
+        }
+      ],
+      "note": "The cover prints the card's date (kind not labelled) and a revision date, both 2026-09-21."
+    },
+    {
+      "card": "xai-grok-4-7",
+      "question": "Q02",
+      "status": "partly",
+      "passages": [
+        {
+          "source": "xai-grok-4-7",
+          "locator": "§1.1 Overview, PDF p. 5 (printed p. 4)",
+          "quote": "It is available for use through the following channels"
+        },
+        {
+          "source": "xai-grok-4-7",
+          "locator": "§1.1 Overview, PDF p. 5 (printed p. 4)",
+          "quote": "SpaceXAI plans to add Grok 4.7 to its consumer surfaces (web, mobile apps, and Grok-in-X on the X platform) at a later date."
+        }
+      ],
+      "note": "The card lists release channels (SpaceXAI API, Grok Build, Cursor, Office add-ins, model gateways) and a planned consumer release 'at a later date'; it gives no release date. The consumer release is announced, not stated as made.",
+      "search": {
+        "read": "Whole card (30 PDF pages).",
+        "terms": ["release", "launch", "availab", "deploy", "September"],
+        "setAside": []
+      }
+    },
+    {
+      "card": "xai-grok-4-7",
+      "question": "Q03",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "xai-grok-4-7",
+          "locator": "§7 Biological and chemical capabilities and safeguards, PDF p. 20 (printed p. 19)",
+          "quote": "treated as safety-threshold evaluations under the xAI Frontier Artificial Intelligence Framework (FAIF)"
+        },
+        {
+          "source": "xai-grok-4-7",
+          "locator": "References, item 16, PDF p. 29 (printed p. 28)",
+          "quote": "xAI Frontier Artificial Intelligence Framework (FAIF). xAI, June 30, 2026."
+        }
+      ],
+      "note": "The card names the framework and its reference gives the edition date June 30, 2026 (dataset faif-2026)."
+    },
+    {
+      "card": "xai-grok-4-7",
+      "question": "Q04",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "xai-grok-4-7",
+          "locator": "References, item 16, PDF p. 29 (printed p. 28)",
+          "quote": "xAI Frontier Artificial Intelligence Framework (FAIF). xAI, June 30, 2026."
+        }
+      ],
+      "note": "The reference carries an address (media.x.ai/v1/website/xai-frontier-artificial-intelligence-framework-30-june-2026-99c40684.pdf), also as a link annotation. That address returned HTTP 404 on 2026-11-02; the dataset's faif-2026 record names it as the file formerly served for the June 2026 edition."
+    },
+    {
+      "card": "xai-grok-4-7",
+      "question": "Q05",
+      "status": "partly",
+      "passages": [
+        {
+          "source": "xai-grok-4-7",
+          "locator": "§7 Biological and chemical capabilities and safeguards, PDF p. 20 (printed p. 19)",
+          "quote": "Grok 4.7 scores below the FAIF safety thresholds on dual-use knowledge"
+        }
+      ],
+      "note": "The card states an outcome in the framework's terms for dual-use biological and chemical knowledge only; no FAIF threshold outcome is stated for cyber or other domains."
+    },
+    {
+      "card": "xai-grok-4-7",
+      "question": "Q06",
+      "status": "partly",
+      "passages": [
+        {
+          "source": "xai-grok-4-7",
+          "locator": "§9.3 CBRN / weapons refusals, PDF p. 25 (printed p. 24)",
+          "quote": "dedicated input and topical filters target biological and chemical weapons-related abuse"
+        }
+      ],
+      "note": "The card describes a layered safeguard stack (safety training, system prompts, runtime input and topical filters on some deployment surfaces, cyber-specific safeguards) without tying it to the FAIF result; it attributes the biological result to training environments and data selection rather than to safeguards. The developer's account, not evidence that the safeguards work."
+    },
+    {
+      "card": "xai-grok-4-7",
+      "question": "Q07",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "xai-grok-4-7",
+          "locator": "§7 Biological and chemical capabilities and safeguards, PDF p. 20 (printed p. 19)",
+          "quote": "Grok 4.7 scores below the FAIF safety thresholds on dual-use knowledge"
+        }
+      ],
+      "note": "Biological and chemical capability evaluations are reported as FAIF safety-threshold evaluations, run without production safeguards, with the threshold language quoted. Radiological and nuclear items appear only in a refusal evaluation (§9.3). Scores are not recorded (hazard rule)."
+    },
+    {
+      "card": "xai-grok-4-7",
+      "question": "Q08",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "xai-grok-4-7",
+          "locator": "§6 Cyber capabilities and safeguards, PDF p. 17 (printed p. 16)",
+          "quote": "Grok 4.7 shows small cybersecurity-relevant capability gains over Grok 4.6"
+        }
+      ],
+      "note": "Offensive cyber capability evaluations are reported, run without production safeguards, with a comparative conclusion; no FAIF threshold language is given for cyber. The card states that third-party evaluators corroborated the internal cyber results (Q13). Scores are not recorded."
+    },
+    {
+      "card": "xai-grok-4-7",
+      "question": "Q09",
+      "status": "not-found",
+      "passages": [],
+      "note": "No dangerous-capability evaluation of autonomy, self-replication, self-improvement or AI R&D was found; the card's autonomy statements concern product capability.",
+      "search": {
+        "read": "Whole card.",
+        "terms": [
+          "autonom",
+          "self-repl",
+          "replicat",
+          "self-improv",
+          "AI R&D",
+          "AI research",
+          "loss of control",
+          "oversight"
+        ],
+        "setAside": [
+          {
+            "locator": "§1 Introduction and §1.1 Overview, PDF p. 4 (printed p. 3)",
+            "reason": "Autonomy described as capability on coding, engineering and office work."
+          },
+          {
+            "locator": "§2 Coding capabilities, PDF pp. 6-11",
+            "reason": "Long-horizon agentic coding benchmarks, one including AI research challenges, reported as product capability."
+          }
+        ]
+      }
+    },
+    {
+      "card": "xai-grok-4-7",
+      "question": "Q10",
+      "status": "not-found",
+      "passages": [],
+      "note": "No persuasion or manipulation evaluation was found; the terms do not occur in the card.",
+      "search": {
+        "read": "Whole card.",
+        "terms": ["persua", "manipul", "influence"],
+        "setAside": []
+      }
+    },
+    {
+      "card": "xai-grok-4-7",
+      "question": "Q11",
+      "status": "partly",
+      "passages": [
+        {
+          "source": "xai-grok-4-7",
+          "locator": "§11.1 MASK-Rectified, PDF p. 26 (printed p. 25)",
+          "quote": "we test whether Grok 4.7 faithfully reports its beliefs when pressured to lie, as a proxy for the model's tendency to assert misleading information"
+        }
+      ],
+      "note": "The card reports an honesty-under-pressure evaluation and a sycophancy evaluation with rates in tables, without a concluding sentence. No scheming, sabotage or oversight evaluation was found."
+    },
+    {
+      "card": "xai-grok-4-7",
+      "question": "Q12",
+      "status": "not-found",
+      "passages": [],
+      "note": "No adversarial testing of the model described as red-teaming was found. The card's uses of 'red-team' describe offensive cyber tasks the model performs; its adversarial testing is described as jailbreak testing.",
+      "search": {
+        "read": "Whole card.",
+        "terms": [
+          "red team",
+          "red-team",
+          "red-teaming",
+          "adversarial",
+          "jailbreak"
+        ],
+        "setAside": [
+          {
+            "locator": "§6.3 and §6.4, PDF pp. 18-19 (printed pp. 17-18)",
+            "reason": "'red-teaming tasks' and 'a red-team cyber evaluation' measure the model's offensive cyber capability (Q08), not adversarial testing of the model."
+          },
+          {
+            "locator": "§7.1 BioSecBench, PDF p. 20 (printed p. 19)",
+            "reason": "'red-team refusal' names a refusal measure within a capability suite; no red-teaming exercise is described."
+          },
+          {
+            "locator": "§8 Jailbreaks and robustness, PDF p. 23 (printed p. 22)",
+            "reason": "Adversarial testing of production safeguards with jailbreak attacks; not described as red-teaming."
+          }
+        ]
+      }
+    },
+    {
+      "card": "xai-grok-4-7",
+      "question": "Q13",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "xai-grok-4-7",
+          "locator": "§2.2 DeepSWE v1.1, note, PDF p. 8 (printed p. 7)",
+          "quote": "Results reported are taken from evaluations conducted by Datacurve."
+        },
+        {
+          "source": "xai-grok-4-7",
+          "locator": "§6.4 CathedralBench, PDF p. 19 (printed p. 18)",
+          "quote": "CathedralBench is an independent, third party evaluation of cyber performance."
+        },
+        {
+          "source": "xai-grok-4-7",
+          "locator": "§6 Cyber capabilities and safeguards, PDF p. 17 (printed p. 16)",
+          "quote": "We additionally provided an unrestricted configuration of Grok 4.7 to third-party evaluators"
+        }
+      ],
+      "note": "The card names Datacurve (and, in a similar note on PDF p. 9, Harbor) as having run evaluations, describes CathedralBench as a third-party evaluation, and thanks nine 'evaluation partners' (Abundant AI, Datacurve, Mecado, Atopile, Harbor, Proximal Labs, Cathedral, LatchBio, Vals AI). The third-party evaluators given unrestricted cyber access are not named."
+    },
+    {
+      "card": "xai-grok-4-7",
+      "question": "Q14",
+      "status": "not-found",
+      "passages": [],
+      "note": "No government body was found.",
+      "search": {
+        "read": "Whole card, including references and acknowledgements.",
+        "terms": ["institute", "AISI", "CAISI", "government", "UK", "U.S."],
+        "setAside": [
+          {
+            "locator": "References, item 5, PDF p. 29 (printed p. 28)",
+            "reason": "'Stanford & Laude Institute' are named as benchmark authors, not a government body."
+          }
+        ]
+      }
+    },
+    {
+      "card": "xai-grok-4-7",
+      "question": "Q15",
+      "status": "not-found",
+      "passages": [],
+      "note": "No statement that a release or deployment decision was made was found.",
+      "search": {
+        "read": "Whole card.",
+        "terms": ["decision", "decid", "release", "launch", "deploy", "approv"],
+        "setAside": [
+          {
+            "locator": "§1.1 Overview, PDF p. 4 (printed p. 3)",
+            "reason": "'final deployed checkpoint' identifies the evaluated checkpoint; 'not intended for autonomous high-stakes decision-making' is a usage limitation. Neither states a release decision."
+          },
+          {
+            "locator": "§1.1 Overview, PDF p. 5",
+            "reason": "Availability channels and a planned consumer release, stated without a decision."
+          }
+        ]
+      }
+    },
+    {
+      "card": "xai-grok-4-7",
+      "question": "Q16",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "xai-grok-4-7",
+          "locator": "§7.1 BioSecBench, PDF p. 20 (printed p. 19)",
+          "quote": "the restricted task sets characterize the tested checkpoint and harness rather than establishing general biological safety or reliability"
+        },
+        {
+          "source": "xai-grok-4-7",
+          "locator": "§2.3 Terminal-Bench 4.0, PDF p. 9 (printed p. 8)",
+          "quote": "absolute scores remain sensitive to the agent harness"
+        }
+      ],
+      "note": "The card also states that a live benchmark suite should be frozen to the evaluated snapshot and that some benchmark versions are not comparable with earlier ones.",
+      "crossFamily": {
+        "item": 130,
+        "result": "corrected: the clause on ongoing monitoring of residual jailbreak failures was removed from the limits. Status unchanged."
+      }
+    }
+  ],
+  "omissions": [
+    "Gemini 4 Argon, frontier safety table (PDF pp. 12-13): evaluation details in the CBRN, cybersecurity and loss-of-control rows (scenario counts, uplift descriptions, challenge pass counts) are not recorded under the hazard rule; only the threshold sentences are quoted.",
+    "Gemini 4 Argon, 'Training and Development Evaluation Results' (PDF pp. 9-10): percentage-point changes in automated content-safety evaluations against Gemini 3.1 Pro; content-safety results do not meet any question's criterion.",
+    "Gemini 3 Flash, 'Training and Development Evaluation Results' (PDF p. 5): automated content-safety deltas against Gemini 2.5 Flash; not used for the same reason.",
+    "Grok 4.1, Tables 1-4 (pp. 2-4): refusal, filter, deception and dual-use scores are not recorded; dual-use scores under the hazard rule.",
+    "Grok 4.7, §5-§7 and §9 (PDF pp. 15-25): capability and refusal scores on biological, chemical, cyber and CBRN suites, and suite descriptions, are not recorded under the hazard rule.",
+    "Grok 4.7, §1 Overview (PDF p. 4): 'We never silently downgrade intelligence or fall back to other models' concerns serving practice, not evaluation."
+  ],
+  "retrievalFailures": [
+    "xAI Grok-1 model card at x.ai/model-card (November 2023, address recalled by the drafter, not confirmed): HTTP 403 (Cloudflare) on 2026-11-02; web.archive.org connection reset on one attempt; not located by web search.",
+    "x.ai pages (x.ai/news, x.ai/safety, x.ai/legal): HTTP 403 (Cloudflare) on 2026-11-02; xAI cards were located through web search and data.x.ai / media.x.ai addresses instead.",
+    "media.x.ai/v1/website/xai-frontier-artificial-intelligence-framework-30-june-2026-99c40684.pdf (FAIF link in the Grok 4.7 card): HTTP 404 on 2026-11-02.",
+    "web.archive.org: connection reset (one attempt, 2026-11-02); no archive captures checked."
+  ],
+  "openQuestions": [
+    "Model cards printed as appendices of technical reports (Gemini 1.0 report §10.1, Gemini 1.5 report §12.1, Gemini Robotics 1.5 report p. 30) are linked as 'View model card' on the developer's index but were recorded as technical reports (no card), following scope.md. If counted as cards they would give Google DeepMind 2023 and 2024 rows. Recommendation: keep them out of this pack and decide in the extension review.",
+    "Selection used the date printed on the version retrieved. Gemma cards first released before 2025 carry only 2025 revision dates (page footer 'Last updated 2025-02-25 UTC'; index 'Updated 25 February 2025'), and the Gemini 3 Pro card (released November 2025) prints 'Last Updated: May 2026'; so no Google DeepMind card dated 2024 was located and Gemini 3 Pro counts as a 2026 card. Recommendation: accept, or authorise retrieval of earlier revisions (Hugging Face commit history, archive captures) in an extension.",
+    "2026 Google DeepMind tie: the Gemini 4 Argon model card and the Gemini 4 Argon Safety & Security Report (218 pages, linked from the card) both print 'October 2026' and were published together; the rule does not separate them, and the model card (the document in the developer's model-card index) was taken as the row. DiffusionGemma's page footer reads 'Last updated 2026-10-26 UTC' but the month ties with Argon's printed 'October 2026' and its index date (10 June 2026) is earlier than Argon's publication (13 October 2026). Recommendation: keep the model card; consider the safety report as a separate row in a later pack.",
+    "2025 Google DeepMind tie: Gemini 2.5 Flash ('Model card published/updated December, 2025') and Gemini 3 Flash ('Published: December 2025') tie at month precision; broken by publication date (Gemini 3 Flash 17 December 2025 on the developer's index; Gemini 2.5 Flash card earlier, index 'Updated 26 September 2025'). Gemini 3 Flash relies on Gemini 3 Pro's results for frontier safety but reports its own benchmark and safety evaluations. Recommendation: accept.",
+    "The Grok 4.1 card cites xAI's 'Risk Management Framework' (2025), which has no dataset identifier; the RMF served at data.x.ai prints 'Last updated: August 20, 2025'. Recommendation: admit an RMF (August 2025) record if framework links for 2025 xAI cards are wanted; until then Q03 stays partly with no identifier.",
+    "The Grok 4.7 card's FAIF link (…-99c40684.pdf) now returns HTTP 404; the dataset's faif-2026 record already identifies it as the earlier file of the June 2026 edition. Recommendation: record faif-2026 as drafted.",
+    "A Grok 4.3 model card is referred to by Microsoft's Azure AI catalog page but was not located; the Grok-1 card (x.ai/model-card, 2023) could not be retrieved. Recommendation: retry from an environment that can reach x.ai and web.archive.org; a confirmed 2023 Grok-1 card that reports its own evaluations would become xAI's 2023 row.",
+    "Q15 for Gemini 3 Flash is drafted as stated with the decision-maker given as the developer's first-person 'we' ('we deemed … acceptable for deployment'). Recommendation: settle across groups whether 'we' counts as 'the company as such' or makes the cell partly.",
+    "Population: Gemma open models and Gemini Robotics models were treated as in the population (they are not image, video, audio or embedding models); Gemini Omni Flash (video output), image, audio, music, video and embedding cards were listed as outside it. Recommendation: confirm."
+  ]
+}

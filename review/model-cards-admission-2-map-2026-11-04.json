@@ -1,0 +1,142 @@
+{
+  "admissionDate": "2026-11-04",
+  "part": 2,
+  "schemaVersion": "2.30",
+  "files": {
+    "pack": "research/model-cards/pack.json",
+    "questions": "research/model-cards/questions.json",
+    "verification": "research/model-cards/verification.json",
+    "check": "research/model-cards/cross-family-check-2026-11-02.json",
+    "secondPass": "research/model-cards/cross-family-second-pass-2026-11-03.md"
+  },
+  "snapshotDescription": "Before the second part of the model-cards admission (2026-11-04): schema 2.30, the 305 card cells (stated, partly or not found) of the twenty compared cards, and five existing o1 evidence rows moved from the card's web-page source to its PDF source.",
+  "scope": "The second part of the model-cards admission (2026-11-04) adds, under schema 2.30 and the maintainer's decisions of 2026-11-03, the collection “Model cards compared”: for each of the twenty cards and sixteen questions of Selekoa's own, one record quoting what the card states (with “stated, partly” where a passage has what the question asks for only in a weaker form) or recording that no passage was found within a stated search. Fifteen questions that do not arise for a card, because it predates every framework edition of its developer, have no record. A card is the developer's own account: a cell is not evidence that an evaluation was run as described, that a safeguard works or that a finding is independent, and dangerous-capability evaluations are recorded at policy level only. Cells are not ranked or summed. All records are seeds.",
+  "cells": {
+    "openai-gpt-4v:Q15": {
+      "decision": "13a",
+      "status": "not-found",
+      "note": "The card states that OpenAI is making GPT-4V broadly available and describes how it prepared the model for deployment. It does not describe a decision to release, say that the release follows from an assessment, or name who decided. Recorded as not found under the question’s criterion as written (maintainer decision 13a, settled when the cross-family second pass of 2026-11-03 held the checker’s reading).",
+      "search": {
+        "read": "§1 Introduction; §2 Deployment Preparation; §3 Conclusion and Next Steps. The cross-family second pass of 2026-11-03 read the whole card again (printed pp. 1 and 14 cited).",
+        "terms": [
+          "decision",
+          "decide",
+          "decided",
+          "approv",
+          "chose",
+          "deemed",
+          "acceptable",
+          "determine",
+          "therefore",
+          "deploy",
+          "release",
+          "launch"
+        ],
+        "setAside": [
+          {
+            "locator": "§1 Introduction, PDF p. 1",
+            "reason": "“This system card outlines how OpenAI prepared the vision capabilities of GPT-4 for deployment.” Deployment preparation, not a release decision."
+          },
+          {
+            "locator": "§1 Introduction, PDF p. 1",
+            "reason": "“is the latest capability we are making broadly available”. States availability; no decision, assessment or maker is described."
+          }
+        ]
+      }
+    }
+  },
+  "notCrossFamilyChecked": [
+    "anthropic-claude-haiku-5-5:Q07",
+    "meta-llama-3-3:Q07",
+    "microsoft-phi-2:Q07",
+    "microsoft-phi-4:Q07",
+    "microsoft-phi-4-mini-flash-reasoning:Q07",
+    "xai-grok-4-1:Q07"
+  ],
+  "moveEvidence": {
+    "ids": [
+      "evidence-ab-ev-o1-card-cb-medium-result-1",
+      "evidence-ab-ev-o1-card-cb-medium-result-2",
+      "evidence-ab-ev-o1-card-cbrn-category-1",
+      "evidence-ab-ev-o1-card-non-expert-statement-1",
+      "evidence-ab-ev-usaisi-openai-o1-engagement-2"
+    ],
+    "from": "source-o1-card",
+    "to": "mc-src-o1-card-pdf",
+    "verification": "research/ai-bio/admission-verification-2026-10-30.json",
+    "verificationSource": "ab-o1-card",
+    "reason": "the locators cite pages of the PDF, and the AI-and-biosecurity admission of 2026-10-30 matched each quotation in the PDF file whose SHA-256 equals that of the model-cards PDF source; the passage and locator are unchanged."
+  },
+  "noteEdits": {
+    "anthropic-claude-opus-4-5:Q03": [
+      [
+        "(rsp-v2-2; see frameworkEditionNote)",
+        "(Responsible Scaling Policy v2.2; identified by link annotation, maintainer decision 4a)"
+      ]
+    ],
+    "anthropic-claude-haiku-5-5:Q03": [
+      [
+        "the dataset records rsp-v3-4 (effective 2026-07-08)",
+        "the dataset records Responsible Scaling Policy v3.4 (effective 2026-07-08)"
+      ],
+      [
+        "(FCF)' (see frameworkEditionNote).",
+        "(FCF)', a compliance document not yet read and not recorded as a framework edition (maintainer decision 5a)."
+      ]
+    ],
+    "anthropic-claude-3-5-haiku-sonnet-new:Q03": [
+      [
+        "which the dataset records for rsp-v2-0.",
+        "which the dataset records for Responsible Scaling Policy v2.0."
+      ]
+    ],
+    "google-deepmind-gemini-3-flash:Q03": [
+      [
+        "the dataset records fsf-v3-0 (2025-09-22)",
+        "the dataset records Frontier Safety Framework v3.0 (2025-09-22)"
+      ]
+    ],
+    "google-deepmind-gemini-4-argon:Q03": [
+      [
+        "(dataset fsf-v3-1, version date 2026-04-17)",
+        "(Frontier Safety Framework v3.1 in the dataset, version date 2026-04-17)"
+      ]
+    ],
+    "meta-cwm-preparedness:Q03": [
+      ["(meta-faf-v1-1, dated 2025-02-03)", "(dated 2025-02-03)"]
+    ],
+    "meta-muse-spark-1-3:Q03": [
+      ["(meta-aasf-v2-0, 2026-04-08)", "(2026-04-08)"]
+    ],
+    "microsoft-phi-4-mini-flash-reasoning:Q03": [
+      ["of February 2025 (ms-fgf-2025) and", "of February 2025 and"]
+    ],
+    "microsoft-mai-cyber-1-1-flash:Q03": [
+      ["February 2026 (ms-fgf-2025, ms-fgf-2026) and", "February 2026 and"]
+    ],
+    "openai-o1:Q01": [
+      [
+        "The dataset record of the web version (source-o1-card) carries",
+        "The dataset’s record of the web version carries"
+      ]
+    ],
+    "openai-o1:Q03": [
+      [
+        "Edition: preparedness-beta-2023.",
+        "Edition: the Preparedness Framework (Beta)."
+      ]
+    ],
+    "openai-o1:Q05": [
+      [
+        "already quoted in the dataset (source-o1-card).",
+        "also quoted in the dataset’s AI and biosecurity records."
+      ]
+    ],
+    "openai-o1:Q14": [
+      [
+        "already quoted in the dataset (source-o1-card).",
+        "also quoted in the dataset’s AI and biosecurity records."
+      ]
+    ]
+  }
+}

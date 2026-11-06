@@ -237,7 +237,8 @@ describe('the propositions collection page and its starter', () => {
     });
     expect(resolveReference('/propositions/unknown', data).target).toBeNull();
     const release = applicationCollections.find(
-      (c) => c.kind === 'propositions',
+      (c) =>
+        c.kind === 'propositions' && c.definition.id === 'superintelligence',
     )!;
     expect(collectionClaimIds(data, release)).toEqual(view.claimIds);
   });

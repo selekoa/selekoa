@@ -1,0 +1,2799 @@
+[
+  {
+    "n": 1,
+    "part": "A",
+    "id": "eu-ai-act:Q02",
+    "status": "stated",
+    "passages": [
+      {
+        "source": "eu-ai-act",
+        "locator": "Article 51(2)",
+        "quote": "presumed to have high impact capabilities pursuant to paragraph 1, point (a), when the cumulative amount of computation used for its training measured in floating point operations is greater than",
+        "datasetClaim": "aia-art51-compute-presumption"
+      },
+      {
+        "source": "eu-ai-act",
+        "locator": "Article 51(2), closing words",
+        "quote": "greater than 1025"
+      },
+      {
+        "source": "eu-ai-act",
+        "locator": "Article 51(1), point (b)",
+        "quote": "based on a decision of the Commission, ex officio or following a qualified alert from the scientific panel",
+        "datasetClaim": "fl-eu-aia-art51-commission-decision"
+      }
+    ],
+    "note": "The figure is 10 to the power 25 floating point operations; the cached text renders the superscript as '1025'. The compute figure is a presumption of high-impact capabilities under Article 51(1)(a); a model can also be classified by Commission decision having regard to the Annex XIII criteria. Article 51(3) empowers the Commission to amend the thresholds by delegated act; Regulation (EU) 2026/1744, Article 1, point (37), restates that delegation in Article 97 without changing Article 51. Articles 52(2) to 52(5) provide for rebuttal and reassessment.",
+    "search": null
+  },
+  {
+    "n": 2,
+    "part": "A",
+    "id": "eu-ai-act:Q03",
+    "status": "partly",
+    "passages": [
+      {
+        "source": "eu-ai-act",
+        "locator": "Article 55(1), point (b)",
+        "quote": "assess and mitigate possible systemic risks at Union level",
+        "datasetClaim": "aia-art55-assess-mitigate"
+      }
+    ],
+    "note": "Providers of models with systemic risk must assess and mitigate systemic risks; Articles 53 and 55 do not require a written risk framework, policy or protocol. The only written policy required (Article 53(1)(c)) concerns copyright.",
+    "search": {
+      "read": "Chapter V (Articles 51 to 56), Article 3 points (63) to (65), Annexes XI to XIII; Regulation (EU) 2026/1744 Article 1 (all points) for amendments to these provisions",
+      "terms": [
+        "framework",
+        "policy",
+        "protocol",
+        "risk management",
+        "Article 5[1-6]",
+        "general-purpose AI model"
+      ],
+      "setAside": [
+        {
+          "locator": "Article 53(1), point (c)",
+          "reason": "A policy on copyright and related rights, a single other subject."
+        },
+        {
+          "locator": "Article 9",
+          "reason": "Risk management system for high-risk AI systems, not general-purpose AI models."
+        },
+        {
+          "locator": "Annex XI, Section 2, point 1",
+          "reason": "Technical documentation content (description of evaluation strategies), not a risk framework."
+        }
+      ]
+    }
+  },
+  {
+    "n": 3,
+    "part": "A",
+    "id": "eu-ai-act:Q04",
+    "status": "not-found",
+    "passages": [],
+    "note": "Q03 found a risk-management duty without a written framework document, so there is no framework whose publication or submission could be located. Technical documentation, which includes evaluation strategies for models with systemic risk, is kept for supply to the AI Office on request (Article 53(1)(a), Annex XI); it is recorded under Q08.",
+    "search": {
+      "read": "Chapter V (Articles 51 to 56), Articles 88 to 94, Annexes XI and XII; Regulation (EU) 2026/1744 Article 1",
+      "terms": [
+        "framework",
+        "publish",
+        "made publicly available",
+        "upon request",
+        "Annex XI"
+      ],
+      "setAside": [
+        {
+          "locator": "Article 53(1), point (a), and Annex XI, Section 2",
+          "reason": "Technical documentation on the model, supplied to the AI Office on request; not a risk framework (see Q08)."
+        },
+        {
+          "locator": "Article 91(1)",
+          "reason": "Commission power to request the documentation drawn up under Articles 53 and 55; not a duty to publish or submit a framework."
+        },
+        {
+          "locator": "Article 52(6)",
+          "reason": "Commission publishes a list of models with systemic risk, not providers' documents."
+        }
+      ]
+    }
+  },
+  {
+    "n": 4,
+    "part": "A",
+    "id": "eu-ai-act:Q06",
+    "status": "partly",
+    "passages": [
+      {
+        "source": "eu-ai-act",
+        "locator": "Article 92(1), chapeau",
+        "quote": "The AI Office, after consulting the Board, may conduct evaluations of the general-purpose AI model concerned",
+        "datasetClaim": "fl-eu-aia-art92-evaluations"
+      },
+      {
+        "source": "eu-ai-act",
+        "locator": "Article 92(3)",
+        "quote": "through APIs or further appropriate technical means and tools, including source code",
+        "datasetClaim": "fl-eu-aia-art92-3-access"
+      }
+    ],
+    "note": "A power, not a requirement: the AI Office may evaluate a model to assess compliance where information under Article 91 is insufficient, or to investigate systemic risks; under Article 92(2) the Commission may appoint independent experts to carry out evaluations. Article 55(1)(a) requires adversarial testing but does not require that it be done by an external party.",
+    "search": {
+      "read": "Articles 55, 56, 88 to 94; Annex XI; Regulation (EU) 2026/1744 Article 1, point (21)",
+      "terms": ["independent", "external", "third party", "evaluat", "audit"],
+      "setAside": [
+        {
+          "locator": "Annex XI, Section 2, point 2",
+          "reason": "Asks for a description of internal and/or external adversarial testing 'where applicable'; does not require external testing."
+        },
+        {
+          "locator": "Article 56(6) as replaced by Regulation (EU) 2026/1744, Article 1, point (21)",
+          "reason": "Commission assessment of the adequacy of codes of practice, not of a model or a provider's practices."
+        }
+      ]
+    }
+  },
+  {
+    "n": 5,
+    "part": "A",
+    "id": "eu-ai-act:Q09",
+    "status": "partly",
+    "passages": [
+      {
+        "source": "eu-ai-act",
+        "locator": "Article 87",
+        "quote": "Directive (EU) 2019/1937 shall apply"
+      }
+    ],
+    "note": "Article 87 applies Directive (EU) 2019/1937 to the reporting of infringements of this Regulation and the protection of reporting persons; the protections are set by that Directive, which is not read here. Article 89(2) gives downstream providers a right to lodge a complaint, a complaint mechanism that does not meet the criterion. Partly because the protection is applied by reference to another law, not stated in this Regulation.",
+    "search": {
+      "read": "Articles 85 to 94; Regulation (EU) 2026/1744 Article 1",
+      "terms": [
+        "retaliat",
+        "whistleblow",
+        "Directive \\(EU\\) 2019/1937",
+        "reporting persons",
+        "complaint"
+      ],
+      "setAside": [
+        {
+          "locator": "Article 89(2)",
+          "reason": "Complaint right for downstream providers; a complaint mechanism, not protection of reporting persons."
+        },
+        {
+          "locator": "Article 85",
+          "reason": "Complaints to market surveillance authorities about AI systems."
+        }
+      ]
+    }
+  },
+  {
+    "n": 6,
+    "part": "A",
+    "id": "eu-ai-act:Q10",
+    "status": "stated",
+    "passages": [
+      {
+        "source": "eu-ai-act",
+        "locator": "Closing formula following Article 113",
+        "quote": "Done at Brussels, 13 June 2024.",
+        "datasetClaim": "aia-enacted"
+      },
+      {
+        "source": "eu-omnibus",
+        "locator": "Closing formula",
+        "quote": "Done at Strasbourg, 8 July 2026.",
+        "datasetClaim": "omni-enacted"
+      }
+    ],
+    "note": "Signature dates of Regulation (EU) 2024/1689 and of the amending Regulation (EU) 2026/1744. Publication dates (12.7.2024; 24.7.2026) are from the Official Journal headers and are not adoption dates.",
+    "search": null
+  },
+  {
+    "n": 7,
+    "part": "A",
+    "id": "eu-ai-act:Q11",
+    "status": "stated",
+    "passages": [
+      {
+        "source": "eu-ai-act",
+        "locator": "Article 113, first paragraph",
+        "quote": "shall enter into force on the twentieth day following that of its publication in the Official Journal of the European Union",
+        "datasetClaim": "fl-eu-aia-art113-entry-into-force"
+      },
+      {
+        "source": "eu-omnibus",
+        "locator": "Article 4, first paragraph",
+        "quote": "This Regulation shall enter into force on the third day following that of its publication in the Official Journal of the European Union.",
+        "datasetClaim": "omni-entry-into-force"
+      }
+    ],
+    "note": "Computed: Regulation (EU) 2024/1689 was published on 12.7.2024, giving entry into force on 1 August 2024 (computed). Regulation (EU) 2026/1744 was published on 24.7.2026, giving 27 July 2026 (computed); among the provisions compared, it amends Article 56(6).",
+    "search": null
+  },
+  {
+    "n": 8,
+    "part": "A",
+    "id": "eu-ai-act:Q12",
+    "status": "stated",
+    "passages": [
+      {
+        "source": "eu-ai-act",
+        "locator": "Article 113, third paragraph, point (b)",
+        "quote": "Chapter III Section 4, Chapter V, Chapter VII and Chapter XII and Article 78 shall apply from 2 August 2025, with the exception of Article 101",
+        "datasetClaim": "aia-art113-chapter-v-date"
+      },
+      {
+        "source": "eu-ai-act",
+        "locator": "Article 113, second paragraph",
+        "quote": "It shall apply from 2 August 2026.",
+        "datasetClaim": "aia-art113-general-date"
+      },
+      {
+        "source": "eu-ai-act",
+        "locator": "Article 111(3)",
+        "quote": "shall take the necessary steps in order to comply with the obligations laid down in this Regulation by 2 August 2027",
+        "datasetClaim": "aia-art111-earlier-models"
+      }
+    ],
+    "note": "Chapter V duties apply from 2 August 2025. Article 101 (fines) is excepted from that date; read with the general date in the second paragraph, it applies from 2 August 2026. The text states no separate date for Article 101; this is a reading of the two quoted provisions. Under Article 111(3), providers of models placed on the market before 2 August 2025 have until 2 August 2027. Regulation (EU) 2026/1744, Article 1, point (40), amends Article 113 points (a) and (c) and adds point (d), but leaves point (b) unchanged.",
+    "search": null
+  },
+  {
+    "n": 9,
+    "part": "A",
+    "id": "eu-ai-act:Q13",
+    "status": "stated",
+    "passages": [
+      {
+        "source": "eu-ai-act",
+        "locator": "Article 101(1), first subparagraph",
+        "quote": "The Commission may impose on providers of general-purpose AI models fines not exceeding 3 % of their annual total worldwide turnover in the preceding financial year or EUR 15 000 000, whichever is higher",
+        "datasetClaim": "aia-art101-gpai-fines"
+      }
+    ],
+    "note": "The maximum is the higher of 3 % of annual total worldwide turnover in the preceding financial year or EUR 15 000 000, where the Commission finds that the provider intentionally or negligently infringed the relevant provisions or failed to comply with requests, measures or access for evaluation (Article 101(1)(a) to (d)). Regulation (EU) 2026/1744 does not amend Article 101; its new SMC paragraph 6a applies to Article 99.",
+    "search": null
+  },
+  {
+    "n": 10,
+    "part": "A",
+    "id": "eu-code-ss:Q02",
+    "status": "partly",
+    "passages": [
+      {
+        "source": "eu-cop-ss",
+        "locator": "Recitals, (b) (PDF p. 3) (part)",
+        "quote": "providers of general-purpose AI models with systemic risk",
+        "datasetClaim": "prov-eu-code-ss-scope"
+      }
+    ],
+    "note": "The Chapter sets no threshold of its own; its scope is the AI Act category of models with systemic risk, whose conditions are in Article 51 of the Act. Measure 1.1 ties the timing of the Framework to the provider's notification under Article 52(1) of the Act.",
+    "search": {
+      "read": "Whole text: Objectives, Recitals, Commitments 1 to 10 with Measures, Glossary, Appendices 1 to 4",
+      "terms": ["Article 51", "Article 52", "FLOP", "floating", "10\\^"],
+      "setAside": [
+        {
+          "locator": "Measure 1.1, last paragraph (PDF p. 7)",
+          "reason": "Refers to notification under Article 52(1) AI Act as a timing point; sets no condition of its own."
+        },
+        {
+          "locator": "Measure 1.2, point (1)(a) (PDF p. 7)",
+          "reason": "'Trigger points' (e.g. training compute) for lighter-touch evaluations, set by the Signatory; not a scope threshold."
+        }
+      ]
+    }
+  },
+  {
+    "n": 11,
+    "part": "A",
+    "id": "eu-code-ss:Q10",
+    "status": "not-found",
+    "passages": [],
+    "note": "The PDF text carries no date of adoption, approval or issue. A publication date for the Code is recorded elsewhere in the dataset, not from this text.",
+    "search": {
+      "read": "Whole text, including the cover page with chair names (PDF p. 1), Objectives and Recitals (PDF pp. 2 to 5) and Glossary",
+      "terms": [
+        "2025",
+        "July",
+        "adopt(ed|ion) of (this|the) Code",
+        "published"
+      ],
+      "setAside": [
+        {
+          "locator": "Measure 3.5 (PDF p. 14)",
+          "reason": "'Signatories will publish suitable criteria' concerns evaluator selection, not a date of the Code."
+        }
+      ]
+    }
+  },
+  {
+    "n": 12,
+    "part": "A",
+    "id": "eu-code-ss:Q11",
+    "status": "not-found",
+    "passages": [],
+    "note": "The Chapter contains no provision on its own entry into force or taking effect.",
+    "search": {
+      "read": "Whole text",
+      "terms": [
+        "entry into force|enter into force|in force",
+        "apply from|applies from|application"
+      ],
+      "setAside": [
+        {
+          "locator": "Appendix 1.3.1 (PDF p. 35), Appendix 1.3.3 (PDF p. 36), Appendix 3.4 (PDF p. 39)",
+          "reason": "'application' used of software interfaces, model applications and evaluator applications; not about effect of the Code."
+        }
+      ]
+    }
+  },
+  {
+    "n": 13,
+    "part": "A",
+    "id": "eu-code-ss:Q12",
+    "status": "not-found",
+    "passages": [],
+    "note": "No separate application date or transition period for the commitments was found, including for models already on the market.",
+    "search": {
+      "read": "Whole text",
+      "terms": [
+        "apply from|applies from|application",
+        "transition|grace period|already (been )?placed on the market",
+        "2025"
+      ],
+      "setAside": [
+        {
+          "locator": "Measure 1.1, last paragraph (PDF p. 7)",
+          "reason": "Framework confirmation deadline per model (four weeks after notification under Article 52(1) AI Act and two weeks before placing on the market); a timing for one commitment, not an application date of the Code."
+        }
+      ]
+    }
+  },
+  {
+    "n": 14,
+    "part": "A",
+    "id": "eu-code-ss:Q13",
+    "status": "not-found",
+    "passages": [],
+    "note": "The Chapter states no penalty for not adhering to its commitments.",
+    "search": {
+      "read": "Whole text",
+      "terms": ["penalt|fines?\\b|sanction", "enforce", "Article 101"],
+      "setAside": [
+        {
+          "locator": "Measure 4.1 (PDF p. 15), Measure 5.1 (PDF p. 17), Measure 6.1 (PDF p. 18), Measure 8.1 (PDF p. 23), Appendix 3.2 (PDF p. 39)",
+          "reason": "Matches on 'define' and 'fine-tuning'; not penalties."
+        },
+        {
+          "locator": "Appendix 4.1 (PDF p. 41), Appendix 4.3 (PDF p. 42)",
+          "reason": "'enforcement'/'enforced' refer to password and access controls."
+        }
+      ]
+    }
+  },
+  {
+    "n": 15,
+    "part": "A",
+    "id": "eu-code-ss:Q14",
+    "status": "partly",
+    "passages": [
+      {
+        "source": "eu-cop-ss",
+        "locator": "Objectives, point B (PDF p. 2)",
+        "quote": "to enable the AI Office to assess compliance of providers of general-purpose AI models who choose to rely on the Code"
+      }
+    ],
+    "note": "The Chapter names the AI Office as the body that receives Frameworks, Model Reports and serious incident reports and that assesses compliance of providers relying on the Code, stated as an objective of the Code. The Code does not itself confer enforcement or penalty powers; those are in the AI Act (see the AI Act row).",
+    "search": {
+      "read": "Whole text",
+      "terms": [
+        "AI Office (will|may|shall)",
+        "enforce",
+        "penalt|fines?\\b|sanction"
+      ],
+      "setAside": [
+        {
+          "locator": "Recitals, (d) (PDF p. 3)",
+          "reason": "Information sent to the AI Office treated under Article 78 AI Act; confidentiality, not supervision."
+        }
+      ]
+    }
+  },
+  {
+    "n": 16,
+    "part": "A",
+    "id": "ca-sb53:Q02",
+    "status": "stated",
+    "passages": [
+      {
+        "source": "ca-sb53",
+        "locator": "SEC. 2, Bus. & Prof. Code § 22757.11(i)(1)",
+        "quote": "“Frontier model” means a foundation model that was trained using a quantity of computing power greater than 10^26 integer or floating-point operations.",
+        "datasetClaim": "sb-frontier-model-threshold"
+      },
+      {
+        "source": "ca-sb53",
+        "locator": "SEC. 2, Bus. & Prof. Code § 22757.11(j)",
+        "quote": "together with its affiliates collectively had annual gross revenues in excess of five hundred million dollars ($500,000,000) in the preceding calendar year.",
+        "datasetClaim": "sb-large-frontier-developer-threshold"
+      }
+    ],
+    "note": "Model threshold: training compute greater than 10^26 operations, which under § 22757.11(i)(2) includes the original training run and subsequent fine-tuning, reinforcement learning or other material modifications. Developer tier: annual gross revenues with affiliates above $500 million in the preceding calendar year. § 22757.14 requires the Department of Technology to recommend, on or before 1 January 2027 and annually thereafter, whether and how to update these definitions; it does not itself change them.",
+    "search": null
+  },
+  {
+    "n": 17,
+    "part": "A",
+    "id": "ca-sb53:Q05",
+    "status": "partly",
+    "passages": [
+      {
+        "source": "ca-sb53",
+        "locator": "SEC. 2, Bus. & Prof. Code § 22757.12(a)(2)",
+        "quote": "assess whether a frontier model has capabilities"
+      },
+      {
+        "source": "ca-sb53",
+        "locator": "SEC. 2, Bus. & Prof. Code § 22757.12(a), opening clause",
+        "quote": "A large frontier developer shall write, implement, comply with, and clearly and conspicuously publish on its internet website a frontier AI framework",
+        "datasetClaim": "sb-framework-duty"
+      }
+    ],
+    "note": "The framework, which a large frontier developer must implement and comply with, describes how the developer approaches defining and assessing thresholds to identify and assess whether a frontier model has capabilities that could pose a catastrophic risk (§ 22757.12(a)(2)). The text sets no free-standing duty to test each model; § 22757.12(c)(2)(A)–(B) requires summaries of assessments of catastrophic risks conducted pursuant to the framework, and § 22757.12(d) summaries of any assessment of catastrophic risk from internal use.",
+    "search": {
+      "read": "SEC. 2 in full (Bus. & Prof. Code §§ 22757.10–22757.16); SEC. 4 (Lab. Code §§ 1107–1107.2).",
+      "terms": ["assess", "evaluat", "test"],
+      "setAside": [
+        {
+          "locator": "SEC. 2, Bus. & Prof. Code § 22757.12(c)(2)(A)",
+          "reason": "Requires summaries of assessments in the transparency report; it presupposes assessments under the framework rather than imposing them."
+        },
+        {
+          "locator": "SEC. 2, Bus. & Prof. Code § 22757.12(d)",
+          "reason": "Transmission of summaries of any internal-use assessment to the Office of Emergency Services; no duty to assess is stated."
+        }
+      ]
+    }
+  },
+  {
+    "n": 18,
+    "part": "A",
+    "id": "ca-sb53:Q06",
+    "status": "partly",
+    "passages": [
+      {
+        "source": "ca-sb53",
+        "locator": "SEC. 2, Bus. & Prof. Code § 22757.13(d)",
+        "quote": "shall review critical safety incident reports"
+      }
+    ],
+    "note": "The Office of Emergency Services shall review critical safety incident reports submitted by frontier developers: a review of filings, not of the model. The framework must describe how the developer approaches using third parties to assess catastrophic risks (§ 22757.12(a)(5)), and the transparency report summarises the extent to which third-party evaluators were involved (§ 22757.12(c)(2)(C)); neither requires an outside assessment.",
+    "search": {
+      "read": "SEC. 2 in full; SEC. 3 (Gov. Code § 11546.8); SEC. 4.",
+      "terms": ["third part", "independent", "audit", "review", "evaluat"],
+      "setAside": [
+        {
+          "locator": "SEC. 2, Bus. & Prof. Code § 22757.12(a)(5)",
+          "reason": "Describes the content of the developer’s framework (its approach to using third parties); does not require an outside assessment."
+        },
+        {
+          "locator": "SEC. 2, Bus. & Prof. Code § 22757.12(c)(2)(C)",
+          "reason": "Disclosure of the extent of third-party evaluator involvement; involvement is not required."
+        },
+        {
+          "locator": "SEC. 2, Bus. & Prof. Code § 22757.14(b)(5)",
+          "reason": "Concerns external verifiability of coverage definitions in the Department of Technology’s recommendations, not assessment of a model."
+        }
+      ]
+    }
+  },
+  {
+    "n": 19,
+    "part": "A",
+    "id": "ca-sb53:Q10",
+    "status": "stated",
+    "passages": [
+      {
+        "source": "ca-sb53",
+        "locator": "CAML record, caml:History (action APPROVED)",
+        "quote": "APPROVED 2025-09-29"
+      }
+    ],
+    "note": "Approval by the Governor, 29 September 2025 (Chapter 138, Statutes of 2025); the same record gives FILED 2025-09-29 (filing with the Secretary of State). These are the Legislative Counsel database’s structured action fields; the printed approval line (“Approved by Governor September 29, 2025”) is in the dataset’s leginfo source (claim sb-enactment-2025-09-29), not in this copy.",
+    "search": null
+  },
+  {
+    "n": 20,
+    "part": "A",
+    "id": "ca-sb53:Q11",
+    "status": "not-found",
+    "passages": [],
+    "note": "No provision in the chaptered text sets an effective or operative date for the act as a whole or for Chapter 25.1 of the Business and Professions Code. No date is inferred.",
+    "search": {
+      "read": "Whole chaptered text: legislative counsel’s digest, SECTIONS 1–6, including SEC. 3 (Gov. Code § 11546.8) and SEC. 5.",
+      "terms": [
+        "operative",
+        "take effect",
+        "takes effect",
+        "effective",
+        "January 1",
+        "urgency"
+      ],
+      "setAside": [
+        {
+          "locator": "SEC. 3, Gov. Code § 11546.8(k)",
+          "reason": "Makes the CalCompute section operative only upon an appropriation; it governs that section only, not the developer duties compared here."
+        },
+        {
+          "locator": "SEC. 2, Bus. & Prof. Code §§ 22757.13(g)(1), 22757.14(a), 22757.14(d)(1)",
+          "reason": "“Beginning January 1, 2027” / “On or before January 1, 2027” set dates for reports by the Office of Emergency Services, the Department of Technology and the Attorney General, not the act’s effective date."
+        },
+        {
+          "locator": "SEC. 5(f); Legislative Counsel’s digest",
+          "reason": "“On or after January 1, 2025” defines the local rules that are preempted; the digest’s January 1, 2026 date describes existing law."
+        }
+      ]
+    }
+  },
+  {
+    "n": 21,
+    "part": "A",
+    "id": "ca-sb53:Q12",
+    "status": "not-found",
+    "passages": [],
+    "note": "No separate application date or transition period for the developer duties was found. The duties to publish a transparency report are triggered by deployment, not by a date.",
+    "search": {
+      "read": "Whole chaptered text.",
+      "terms": [
+        "operative",
+        "beginning",
+        "on or before",
+        "January 1",
+        "transition",
+        "existing frontier model"
+      ],
+      "setAside": [
+        {
+          "locator": "SEC. 2, Bus. & Prof. Code §§ 22757.13(g)(1), 22757.14(a), 22757.14(d)(1)",
+          "reason": "Dates of 1 January 2027 for reports by public bodies, not developer duties."
+        },
+        {
+          "locator": "SEC. 3, Gov. Code § 11546.8(k)",
+          "reason": "Operative condition for the CalCompute section only."
+        }
+      ]
+    }
+  },
+  {
+    "n": 22,
+    "part": "A",
+    "id": "ca-sb53:Q13",
+    "status": "stated",
+    "passages": [
+      {
+        "source": "ca-sb53",
+        "locator": "SEC. 2, Bus. & Prof. Code § 22757.15(a)",
+        "quote": "does not exceed one million dollars ($1,000,000) per violation.",
+        "datasetClaim": "sb-civil-penalty-cap"
+      }
+    ],
+    "note": "Per violation, in an amount dependent on the severity of the violation. § 22757.15(a) names large frontier developers that fail to publish or transmit a compliant document, make a statement in violation of § 22757.12(e), fail to report an incident under § 22757.13 or fail to comply with their own framework. Whistleblower violations (Lab. Code § 1107.1) carry the civil remedies of that section, not this penalty.",
+    "search": null
+  },
+  {
+    "n": 23,
+    "part": "A",
+    "id": "ny-ch699:Q02",
+    "status": "stated",
+    "passages": [
+      {
+        "source": "ny-s6953b",
+        "locator": "Proposed GBL § 1420(6)(a), p. 2, lines 28–30",
+        "quote": "an artificial intelligence model trained using greater than 10º26 computational operations"
+      },
+      {
+        "source": "ny-s6953b",
+        "locator": "Proposed GBL § 1420(6)(a), p. 2, line 30",
+        "quote": "the compute cost of which exceeds one hundred million dollars",
+        "datasetClaim": "fl-us-ny-2025-def-frontier-model"
+      },
+      {
+        "source": "ny-s6953b",
+        "locator": "Proposed GBL § 1420(9), p. 3, lines 4–6",
+        "quote": "\"Large developer\" means a person that has trained at least one frontier model and has spent over one hundred million dollars in compute costs in aggregate in training frontier models.",
+        "datasetClaim": "fl-us-ny-2025-def-large-developer"
+      }
+    ],
+    "note": "The PDF text layer renders the exponent as “10º26”, i.e. 10^26 operations. Model condition: more than 10^26 operations and compute cost above $100 million; a model produced by knowledge distillation from such a model is also a frontier model where its compute cost exceeds $5 million (§ 1420(6)(b)). Developer condition: over $100 million in aggregate compute costs for training frontier models. § 1424 limits the article to frontier models developed, deployed or operating in whole or in part in New York.",
+    "search": null
+  },
+  {
+    "n": 24,
+    "part": "A",
+    "id": "ny-ch699:Q05",
+    "status": "partly",
+    "passages": [
+      {
+        "source": "ny-s6953b",
+        "locator": "Proposed GBL § 1420(12)(c), p. 3, lines 31–32",
+        "quote": "Describe in detail the testing procedure to evaluate if the frontier model poses an unreasonable risk of critical harm"
+      },
+      {
+        "source": "ny-s6953b",
+        "locator": "Proposed GBL § 1421(1)(d), p. 4, lines 28–30",
+        "quote": "specific tests and test results used in any assessment of the frontier model required by this section or the developer's safety and security protocol"
+      }
+    ],
+    "note": "The protocol the large developer must implement describes a testing procedure to evaluate whether the model poses an unreasonable risk of critical harm, and the developer must record and retain test information. The text sets no free-standing duty to test each model; § 1421(2) prohibits deployment where it would create an unreasonable risk of critical harm.",
+    "search": {
+      "read": "Whole print S6953-B, pp. 1–5.",
+      "terms": ["test", "evaluat", "assess"],
+      "setAside": [
+        {
+          "locator": "Proposed GBL § 1421(2), p. 4",
+          "reason": "A prohibition on deployment, not a duty to evaluate."
+        }
+      ]
+    }
+  },
+  {
+    "n": 25,
+    "part": "A",
+    "id": "ny-ch699:Q06",
+    "status": "partly",
+    "passages": [
+      {
+        "source": "ny-s6953b",
+        "locator": "Proposed GBL § 1421(1)(c)(ii), p. 4, lines 22–25",
+        "quote": "Grant the attorney general and division of homeland security and emergency services or the attorney general access to the safety and security protocol"
+      }
+    ],
+    "note": "Access is granted “upon request”, with redactions only as required by federal law: access to a document, with no assessment by the authority required. § 1421(1)(d) requires test records detailed enough for third parties to replicate the testing procedure but does not require a third-party assessment.",
+    "search": {
+      "read": "Whole print S6953-B, pp. 1–5.",
+      "terms": ["third part", "independent", "audit", "access", "request"],
+      "setAside": [
+        {
+          "locator": "Proposed GBL § 1421(1)(d), p. 4",
+          "reason": "Replicability of tests by third parties is a record-keeping standard; no outside assessment is provided for."
+        },
+        {
+          "locator": "Proposed GBL § 1420(12)(d), p. 3",
+          "reason": "Protocol must enable the developer “or third party” to comply; not an outside assessment."
+        }
+      ]
+    }
+  },
+  {
+    "n": 26,
+    "part": "A",
+    "id": "ny-ch699:Q08",
+    "status": "partly",
+    "passages": [
+      {
+        "source": "ny-s6953b",
+        "locator": "Proposed GBL § 1421(1)(d), p. 4, lines 28–30",
+        "quote": "specific tests and test results used in any assessment of the frontier model required by this section or the developer's safety and security protocol"
+      }
+    ],
+    "note": "Before deploying a frontier model, the large developer must record and retain, for as long as the model is deployed plus five years, information on tests and test results for the model. No duty to publish a model report or to supply model documentation to an authority was found; the published protocol (Q04) is developer-level. No output-labelling duty was seen.",
+    "search": {
+      "read": "Whole print S6953-B, pp. 1–5.",
+      "terms": ["publish", "report", "transmit", "documentation", "card"],
+      "setAside": [
+        {
+          "locator": "Proposed GBL § 1421(1)(c), p. 4",
+          "reason": "Publication and transmission concern the safety and security protocol, not per-model information."
+        }
+      ]
+    }
+  },
+  {
+    "n": 27,
+    "part": "A",
+    "id": "ny-ch699:Q09",
+    "status": "not-found",
+    "passages": [],
+    "note": "No provision protecting persons who report risks or violations was found in print S6953-B.",
+    "search": {
+      "read": "Whole print S6953-B, pp. 1–5 (§ 1 short title; § 2 adding GBL §§ 1420–1425; § 3 effect).",
+      "terms": ["whistle|retaliat|employee"],
+      "setAside": [
+        {
+          "locator": "Proposed GBL § 1420(1)(d), p. 2",
+          "reason": "“protect employee or customer privacy” is a ground for redaction, not a reporting protection."
+        }
+      ]
+    }
+  },
+  {
+    "n": 28,
+    "part": "A",
+    "id": "ny-ch699:Q10",
+    "status": "stated",
+    "passages": [
+      {
+        "source": "ny-s6953-assembly",
+        "locator": "Assembly bill record for S06953, Actions, entry 12/19/2025",
+        "quote": "12/19/2025 SIGNED CHAP.699"
+      }
+    ],
+    "note": "Signature by the Governor, 19 December 2025, as Chapter 699 of 2025, according to the Assembly’s action list; the list also records delivery to the Governor on 12/09/2025 and an approval memo (APPROVAL MEMO.76) on the same day as signature.",
+    "search": null
+  },
+  {
+    "n": 29,
+    "part": "A",
+    "id": "ny-ch699:Q11",
+    "status": "stated",
+    "passages": [
+      {
+        "source": "ny-s6953b",
+        "locator": "Bill § 3, p. 5, lines 32–33",
+        "quote": "§ 3. This act shall take effect on the ninetieth day after it shall have become a law."
+      }
+    ],
+    "note": "Rule as signed: the ninetieth day after becoming law. Counted from signature on 19 December 2025 this gives 19 March 2026 (computed; New York’s statutory day-counting rules not checked). Chapter 96 of 2026 amends this section 3, according to its summary line and bill § 3; the amended text is recorded in ny-ch96 Q11.",
+    "search": null
+  },
+  {
+    "n": 30,
+    "part": "A",
+    "id": "ny-ch699:Q12",
+    "status": "not-found",
+    "passages": [],
+    "note": "No separate application date or transition period for the duties was found. The § 1421(1) duties are triggered by deployment (“Before deploying a frontier model”), not by a date.",
+    "search": {
+      "read": "Whole print S6953-B, pp. 1–5.",
+      "terms": [
+        "take effect",
+        "effective",
+        "apply",
+        "transition",
+        "before deploying"
+      ],
+      "setAside": [
+        {
+          "locator": "Proposed GBL § 1424, p. 5",
+          "reason": "Territorial scope, not an application date."
+        },
+        {
+          "locator": "Bill § 3, p. 5",
+          "reason": "General effect provision, recorded in Q11."
+        }
+      ]
+    }
+  },
+  {
+    "n": 31,
+    "part": "A",
+    "id": "ny-ch699:Q13",
+    "status": "stated",
+    "passages": [
+      {
+        "source": "ny-s6953b",
+        "locator": "Proposed GBL § 1422(1)(a), p. 5, lines 4–7",
+        "quote": "a civil penalty in an amount not exceeding ten million dollars for a first violation and in an amount not exceeding thirty million dollars for any subsequent violation",
+        "datasetClaim": "fl-us-ny-2025-civil-penalty"
+      }
+    ],
+    "note": "For violations of § 1421, determined based on severity of the violation, in a civil action by the attorney general; injunctive or declaratory relief is also available (§ 1422(1)(b)). No private right of action (§ 1422(2)).",
+    "search": null
+  },
+  {
+    "n": 32,
+    "part": "A",
+    "id": "ny-ch96:Q02",
+    "status": "stated",
+    "passages": [
+      {
+        "source": "ny-s8828",
+        "locator": "Bill text, § 2 (GBL § 1420(9)(a) as re-added), p. 3, lines 46–47",
+        "quote": "\"Frontier model\" means a foundation model that was trained … using a quantity of computing power greater than",
+        "datasetClaim": "fl-us-ny-ch96-changes-frontier-model"
+      },
+      {
+        "source": "ny-s8828",
+        "locator": "Bill text, § 2 (GBL § 1420(10) as re-added), p. 3, lines 53–55",
+        "quote": "\"Large frontier developer\" means a frontier developer that … collectively had annual gross revenues in excess … of five hundred million dollars in the preceding calendar year",
+        "datasetClaim": "fl-us-ny-ch96-changes-large-developer"
+      }
+    ],
+    "note": "The Assembly record renders the figure after “greater than” as an unreadable character between “10” and “26” followed by “integer or floating-point operations”; the Senate PDF of S8828 (cross-check copy, not quoted) prints 10º26, i.e. 10^26. Compute includes subsequent fine-tuning, reinforcement learning and other material modifications (§ 1420(9)(b)). Developer tier: revenues with affiliates above $500 million. § 1425 limits the article to models developed, deployed or operating in whole or in part in New York.",
+    "search": null
+  },
+  {
+    "n": 33,
+    "part": "A",
+    "id": "ny-ch96:Q05",
+    "status": "partly",
+    "passages": [
+      {
+        "source": "ny-s8828",
+        "locator": "Bill text, § 2 (GBL § 1421(1)(b) as re-added), p. 4, line 22",
+        "quote": "developer to identify and assess whether a frontier model has"
+      },
+      {
+        "source": "ny-s8828",
+        "locator": "Bill text, § 2 (GBL § 1421(1) as re-added), p. 4, lines 14–16",
+        "quote": "A large frontier developer shall … write, implement, comply with, and clearly and conspicuously publish on … its internet website a frontier AI framework"
+      }
+    ],
+    "note": "The framework, which a large frontier developer must implement and comply with, describes how it handles assessing whether a model has capabilities that could pose a catastrophic risk. No free-standing duty to test each model was found; § 1421(3)(b) requires summaries of assessments conducted under the framework and § 1422(2)(a) summaries of internal-use assessments.",
+    "search": {
+      "read": "Bill text §§ 1–5, including GBL §§ 1420–1429 as re-added.",
+      "terms": ["assess", "evaluat", "test"],
+      "setAside": [
+        {
+          "locator": "GBL § 1421(3)(b)(i)–(ii) as re-added, p. 5",
+          "reason": "Summaries of assessments in the transparency report; presupposes rather than imposes assessment."
+        },
+        {
+          "locator": "GBL § 1422(2)(a) as re-added, p. 5",
+          "reason": "Transmission of internal-use assessment summaries; no duty to assess is stated."
+        }
+      ]
+    }
+  },
+  {
+    "n": 34,
+    "part": "A",
+    "id": "ny-ch96:Q06",
+    "status": "partly",
+    "passages": [
+      {
+        "source": "ny-s8828",
+        "locator": "Bill text, § 2 (GBL § 1422(4) as re-added), p. 6, lines 24–25",
+        "quote": "The office shall review critical safety incident reports submitted"
+      }
+    ],
+    "note": "The office (within the department of financial services, § 1420(16)) reviews incident reports: a review of filings, not of the model. The framework describes the developer’s use of third parties to assess catastrophic risks (§ 1421(1)(e)) and the transparency report the extent of third-party evaluator involvement (§ 1421(3)(b)(iii)); neither requires an outside assessment.",
+    "search": {
+      "read": "Bill text §§ 1–5.",
+      "terms": ["third part", "independent", "audit", "review", "evaluat"],
+      "setAside": [
+        {
+          "locator": "GBL § 1421(1)(e) as re-added, p. 4",
+          "reason": "Content of the developer’s framework, not a required outside assessment."
+        },
+        {
+          "locator": "GBL § 1428(2) as re-added, p. 8",
+          "reason": "Disclosure statement on ownership and contacts, filed with the office; not an assessment of the model or of risk practices."
+        }
+      ]
+    }
+  },
+  {
+    "n": 35,
+    "part": "A",
+    "id": "ny-ch96:Q09",
+    "status": "not-found",
+    "passages": [],
+    "note": "No provision protecting persons who report risks or violations was found in the bill text of S8828.",
+    "search": {
+      "read": "Bill text §§ 1–5, including GBL §§ 1420–1429 as re-added.",
+      "terms": ["whistle|retaliat|employee"],
+      "setAside": [
+        {
+          "locator": "GBL § 1422(1) as re-added, p. 5",
+          "reason": "A mechanism for frontier developers or members of the public to report critical safety incidents to the office; a general reporting channel, with no protection against retaliation."
+        }
+      ]
+    }
+  },
+  {
+    "n": 36,
+    "part": "A",
+    "id": "ny-ch96:Q10",
+    "status": "stated",
+    "passages": [
+      {
+        "source": "ny-s8828",
+        "locator": "Actions list, final entry",
+        "quote": "03/27/2026 SIGNED CHAP.96"
+      }
+    ],
+    "note": "Signature by the Governor, 27 March 2026, as Chapter 96 of 2026, according to the Assembly’s action list (delivered to the Governor 03/20/2026). The chapter as printed in the session laws was not inspected.",
+    "search": null
+  },
+  {
+    "n": 37,
+    "part": "A",
+    "id": "ny-ch96:Q11",
+    "status": "stated",
+    "passages": [
+      {
+        "source": "ny-s8828",
+        "locator": "Bill text, § 5, p. 9, lines 40–45",
+        "quote": "This act shall take effect immediately; provided, however that … sections one, two and four of this act shall take … effect on the same date"
+      },
+      {
+        "source": "ny-s8828",
+        "locator": "Bill text, § 3 (text of amended section 3 of Chapter 699), p. 9, lines 31–32",
+        "quote": "§ 3. This act shall take effect [on the ninetieth day after it shall … have become a law] January 1, 2027."
+      }
+    ],
+    "note": "Chapter 96 takes effect immediately, except that sections 1, 2 (Article 44-B as re-added) and 4 take effect with the 2025 chapter (Chapter 699). Its § 3 amends Chapter 699’s effect section: the bracketed words are deleted matter (the former ninetieth-day rule) and the new text reads “January 1, 2027”. The resulting date for Article 44-B, 1 January 2027, follows from reading the two provisions together.",
+    "search": null
+  },
+  {
+    "n": 38,
+    "part": "A",
+    "id": "ny-ch96:Q12",
+    "status": "not-found",
+    "passages": [],
+    "note": "No application date or transition period for the developer duties separate from the effect provisions in Q11 was found. The transparency-report duty is triggered by deployment.",
+    "search": {
+      "read": "Bill text §§ 1–5.",
+      "terms": ["take effect", "beginning", "January", "transition", "apply"],
+      "setAside": [
+        {
+          "locator": "Bill text § 5 and § 3, p. 9",
+          "reason": "Effect provisions, recorded in Q11."
+        },
+        {
+          "locator": "GBL § 1422(7)(a) as re-added, p. 6",
+          "reason": "“Beginning January first, two thousand twenty-eight” sets the office’s annual report, not developer duties."
+        }
+      ]
+    }
+  },
+  {
+    "n": 39,
+    "part": "A",
+    "id": "ny-ch96:Q13",
+    "status": "stated",
+    "passages": [
+      {
+        "source": "ny-s8828",
+        "locator": "Bill text, § 2 (GBL § 1427(1) as re-added), p. 8, lines 7–10",
+        "quote": "not to exceed one million … dollars for a first violation and in an amount not to exceed three … million dollars per subsequent violation"
+      },
+      {
+        "source": "ny-s8828",
+        "locator": "Bill text, § 2 (GBL § 1428(5)(a) as re-added), p. 9, line 10",
+        "quote": "one thousand dollars for each day"
+      }
+    ],
+    "note": "§ 1427(1): per violation, determined based on severity, where a large frontier developer fails to publish or transmit a compliant document, makes a prohibited statement, fails to report an incident or fails to comply with its own framework; no private right of action (§ 1427(2)). § 1428(5): for failure to file a disclosure statement or to correct false information, $1,000 per day plus assessments owed, levied by the office after notice and hearing.",
+    "search": null
+  },
+  {
+    "n": 40,
+    "part": "A",
+    "id": "cn-genai-measures:Q02",
+    "status": "partly",
+    "passages": [
+      {
+        "source": "cn-genai",
+        "locator": "Article 2 (第二条), first paragraph",
+        "quote": "利用生成式人工智能技术向中华人民共和国境内公众提供生成文本、图片、音频、视频等内容的服务（以下称生成式人工智能服务），适用本办法。",
+        "translation": "These Measures apply to services that use generative AI technology to provide content such as text, images, audio and video to the public within the territory of the People's Republic of China (hereinafter 'generative AI services').",
+        "datasetClaim": "cn-genai-measures-scope"
+      },
+      {
+        "source": "cn-genai",
+        "locator": "Article 2 (第二条), third paragraph",
+        "quote": "未向境内公众提供生成式人工智能服务的，不适用本办法的规定",
+        "translation": "where generative AI services are not provided to the public within the territory, the provisions of these Measures do not apply",
+        "datasetClaim": "fl-cn-genai-scope-non-public-rd"
+      }
+    ],
+    "note": "Coverage turns on providing generative AI services to the public in China; there is no compute, revenue, capability or user-number threshold. Article 2(3) excludes research, development and application by industry organisations, enterprises, education and research institutions and others that do not provide services to the public in China; Article 2(2) defers to other rules for news publishing, film and television production and literary and artistic creation. Article 17 adds a further condition (services 'with public-opinion attributes or social mobilisation capacity') for security assessment and algorithm filing only; see Q05.",
+    "search": null
+  },
+  {
+    "n": 41,
+    "part": "A",
+    "id": "cn-genai-measures:Q03",
+    "status": "not-found",
+    "passages": [],
+    "note": "No provision requiring the provider to have a written framework, policy or protocol on the risks of its models was found.",
+    "search": {
+      "read": "Order No. 15 preamble and Articles 1–24 in full (the page repeats the text; the first copy was read and the second spot-checked).",
+      "terms": ["标准", "评估", "制度|管理体系|风险", "规则", "措施"],
+      "setAside": [
+        {
+          "locator": "Article 8 (第八条)",
+          "reason": "Requires 'clear, specific and operable' data-annotation rules (标注规则) and annotation quality assessment: a document on a single other subject (data annotation), not on model risks."
+        },
+        {
+          "locator": "Article 4 (第四条), points (1)–(5)",
+          "reason": "Requires 'effective measures' (有效措施) against prohibited content, discrimination and for transparency and accuracy, addressed to providing and using services; no risk-management system or written document on model risks is required, so not counted as partly. Point (2) requires effective measures against discrimination in algorithm design, training-data selection, model generation and optimisation and service provision: measures on a single other subject (discrimination), not a framework or system on model risks."
+        },
+        {
+          "locator": "Article 15 (第十五条)",
+          "reason": "Complaint and reporting mechanism for the public; not a risk framework."
+        },
+        {
+          "locator": "Article 5 (第五条), second paragraph",
+          "reason": "Supports cooperation on risk prevention (风险防范) among organisations; encouragement, not a duty on providers."
+        }
+      ]
+    }
+  },
+  {
+    "n": 42,
+    "part": "A",
+    "id": "cn-genai-measures:Q05",
+    "status": "partly",
+    "passages": [
+      {
+        "source": "cn-genai",
+        "locator": "Article 17 (第十七条)",
+        "quote": "提供具有舆论属性或者社会动员能力的生成式人工智能服务的，应当按照国家有关规定开展安全评估，并按照《互联网信息服务算法推荐管理规定》履行算法备案和变更、注销备案手续。",
+        "translation": "Those providing generative AI services with public-opinion attributes or social mobilisation capacity shall carry out a security assessment in accordance with relevant state provisions, and complete algorithm filing, modification and cancellation procedures in accordance with the Provisions on the Administration of Algorithmic Recommendation for Internet Information Services.",
+        "datasetClaim": "cn-genai-measures-security-assessment"
+      }
+    ],
+    "note": "The security assessment (安全评估) is required only for services with public-opinion attributes or social mobilisation capacity, and is of the service, by reference to 'relevant state provisions' not set out in the Measures; no duty to evaluate or test the model for risks was found. Article 8 requires annotation quality assessment (set aside: data annotation, not risk).",
+    "search": {
+      "read": "Articles 4, 7, 8, 14, 17 and 19.",
+      "terms": ["评估", "测试", "检测"],
+      "setAside": [
+        {
+          "locator": "Article 8 (第八条)",
+          "reason": "数据标注质量评估 (annotation quality assessment) concerns data annotation, not risks."
+        }
+      ]
+    }
+  },
+  {
+    "n": 43,
+    "part": "A",
+    "id": "cn-genai-measures:Q06",
+    "status": "partly",
+    "passages": [
+      {
+        "source": "cn-genai",
+        "locator": "Article 19 (第十九条), first paragraph",
+        "quote": "开展监督检查",
+        "translation": "carry out supervision and inspection [of generative AI services]"
+      },
+      {
+        "source": "cn-genai",
+        "locator": "Article 19 (第十九条), first paragraph",
+        "quote": "按要求对训练数据来源、规模、类型、标注规则、算法机制机理等予以说明",
+        "translation": "explain, as required, the sources, scale and types of training data, annotation rules, algorithmic mechanisms and principles, and so on",
+        "datasetClaim": "fl-cn-genai-art19-explain-training-data"
+      }
+    ],
+    "note": "Competent authorities (有关主管部门) carry out supervision and inspection of generative AI services 'according to their duties'; providers shall cooperate, explain the listed matters as required and provide necessary technical and data support. The provision is an inspection of the service with explanations from the provider; it does not require an assessment of the model by an outside party. Article 19(2) binds bodies and personnel taking part in security assessment and inspection to confidentiality, without stating who conducts the Article 17 assessment.",
+    "search": {
+      "read": "Articles 16–21.",
+      "terms": ["监督检查", "评估", "第三方|机构"],
+      "setAside": [
+        {
+          "locator": "Article 17 (第十七条)",
+          "reason": "Security assessment is a duty of the provider 'in accordance with relevant state provisions'; the Measures do not say an outside party conducts it."
+        }
+      ]
+    }
+  },
+  {
+    "n": 44,
+    "part": "A",
+    "id": "cn-genai-measures:Q07",
+    "status": "partly",
+    "passages": [
+      {
+        "source": "cn-genai",
+        "locator": "Article 14 (第十四条), first paragraph",
+        "quote": "向有关主管部门报告",
+        "translation": "report to the competent authorities"
+      },
+      {
+        "source": "cn-genai",
+        "locator": "Article 14 (第十四条), first paragraph",
+        "quote": "采取模型优化训练等措施进行整改",
+        "translation": "take measures such as model optimisation training to rectify",
+        "datasetClaim": "fl-cn-genai-art14-illegal-content"
+      }
+    ],
+    "note": "Where a provider discovers illegal content (违法内容), it shall promptly take disposal measures (stopping generation, stopping transmission, deletion), rectify, and report to the competent authorities; Article 14(2) adds a reporting duty where users are found using the service for illegal activities. The Measures do not define incidents; the authority is not named beyond 'competent authorities', and no deadline is stated for the report ('及时' qualifies the disposal measures).",
+    "search": {
+      "read": "Articles 9–15 and 19.",
+      "terms": ["报告", "事件|事故", "及时"],
+      "setAside": []
+    }
+  },
+  {
+    "n": 45,
+    "part": "A",
+    "id": "cn-genai-measures:Q08",
+    "status": "partly",
+    "passages": [
+      {
+        "source": "cn-genai",
+        "locator": "Article 19 (第十九条), first paragraph",
+        "quote": "按要求对训练数据来源、规模、类型、标注规则、算法机制机理等予以说明",
+        "translation": "explain, as required, the sources, scale and types of training data, annotation rules, algorithmic mechanisms and principles, and so on",
+        "datasetClaim": "fl-cn-genai-art19-explain-training-data"
+      },
+      {
+        "source": "cn-genai",
+        "locator": "Article 17 (第十七条)",
+        "quote": "提供具有舆论属性或者社会动员能力的生成式人工智能服务的，应当按照国家有关规定开展安全评估，并按照《互联网信息服务算法推荐管理规定》履行算法备案和变更、注销备案手续。",
+        "translation": "Those providing generative AI services with public-opinion attributes or social mobilisation capacity shall carry out a security assessment in accordance with relevant state provisions, and complete algorithm filing, modification and cancellation procedures in accordance with the Provisions on the Administration of Algorithmic Recommendation for Internet Information Services.",
+        "datasetClaim": "cn-genai-measures-security-assessment"
+      }
+    ],
+    "note": "Information on training data and algorithmic mechanisms is supplied to authorities on request during supervision and inspection (Article 19); for services with public-opinion attributes or social mobilisation capacity, algorithm filing runs under the Algorithmic Recommendation Provisions, whose filing content is not set out in these Measures. No duty to draw up per-model documentation or publish a model report with a deployment trigger was found. Article 10 requires providers to publish the service's intended users, occasions and uses; Article 12 requires labelling of generated images, video and other content under the Deep Synthesis Provisions (an output-labelling duty, noted only).",
+    "search": {
+      "read": "Articles 7–12, 17 and 19.",
+      "terms": ["说明", "公开", "备案", "报告"],
+      "setAside": [
+        {
+          "locator": "Article 10 (第十条)",
+          "reason": "Publication of the service's applicable users, occasions and uses (适用人群、场合、用途): information on the service, not documentation on a model."
+        },
+        {
+          "locator": "Article 12 (第十二条)",
+          "reason": "Labelling of generated content (对图片、视频等生成内容进行标识): an output-labelling duty, excluded by the criterion."
+        }
+      ]
+    }
+  },
+  {
+    "n": 46,
+    "part": "A",
+    "id": "cn-genai-measures:Q09",
+    "status": "not-found",
+    "passages": [],
+    "note": "No provision prohibiting retaliation against people who disclose risks or violations, or requiring a channel for such disclosures by employees or others, was found. A public complaint and reporting mechanism is present (Article 15) and is noted.",
+    "search": {
+      "read": "Articles 1–24 in full.",
+      "terms": ["举报|投诉|报复", "打击报复", "员工|职工|工作人员"],
+      "setAside": [
+        {
+          "locator": "Article 15 (第十五条)",
+          "reason": "Providers must set up complaint and reporting (投诉、举报) mechanisms for the public with published handling procedures and response times: a general complaint mechanism for users, which the criterion excludes."
+        },
+        {
+          "locator": "Article 18 (第十八条)",
+          "reason": "Users who find a service non-compliant have the right to complain or report to the competent authorities; a user complaint right, with no anti-retaliation protection."
+        }
+      ]
+    }
+  },
+  {
+    "n": 47,
+    "part": "A",
+    "id": "cn-genai-measures:Q10",
+    "status": "stated",
+    "passages": [
+      {
+        "source": "cn-genai",
+        "locator": "Order No. 15 (令第15号), date line",
+        "quote": "2023年7月10日",
+        "translation": "10 July 2023",
+        "datasetClaim": "cn-genai-measures-issued"
+      }
+    ],
+    "note": "Date of the order of seven authorities (国家互联网信息办公室, 国家发展和改革委员会, 教育部, 科学技术部, 工业和信息化部, 公安部, 国家广播电视总局), Order No. 15, issuing the Measures (gov.cn 成文日期 2023-07-10). The order also states that the Measures were deliberated and adopted at the 12th office meeting of 2023 of the Cyberspace Administration of China on 23 May 2023, with the agreement of the other six authorities (paraphrase, not quoted to save budget).",
+    "search": null
+  },
+  {
+    "n": 48,
+    "part": "A",
+    "id": "cn-genai-measures:Q11",
+    "status": "stated",
+    "passages": [
+      {
+        "source": "cn-genai",
+        "locator": "Article 24 (第二十四条)",
+        "quote": "本办法自2023年8月15日起施行。",
+        "translation": "These Measures take effect on 15 August 2023.",
+        "datasetClaim": "cn-genai-measures-issued"
+      }
+    ],
+    "note": "Fixed date in the Measures; the order repeats it (现予公布，自2023年8月15日起施行).",
+    "search": null
+  },
+  {
+    "n": 49,
+    "part": "A",
+    "id": "cn-genai-measures:Q12",
+    "status": "not-found",
+    "passages": [],
+    "note": "No separate application date or transition period, including for services already offered, was found.",
+    "search": {
+      "read": "Order No. 15 and Articles 1–24, with attention to Chapter 5 (附则, Articles 22–24).",
+      "terms": ["过渡|之前|已经|存量", "起施行", "日起"],
+      "setAside": [
+        {
+          "locator": "Order No. 15, first paragraph",
+          "reason": "'现予公布，自2023年8月15日起施行' repeats the Article 24 effective date; not a separate application date."
+        }
+      ]
+    }
+  },
+  {
+    "n": 50,
+    "part": "A",
+    "id": "cn-genai-measures:Q13",
+    "status": "partly",
+    "passages": [
+      {
+        "source": "cn-genai",
+        "locator": "Article 21 (第二十一条), first paragraph, closing words",
+        "quote": "责令暂停提供相关服务",
+        "translation": "order suspension of the provision of the relevant services",
+        "datasetClaim": "fl-cn-genai-art21-penalties"
+      }
+    ],
+    "note": "Breaches are penalised by the competent authorities under the Cybersecurity Law, Data Security Law, Personal Information Protection Law, Law on Progress of Science and Technology and other laws and administrative regulations; where those are silent, the authorities may give a warning, circulate a notice of criticism and order correction within a time limit, and, on refusal to correct or in serious cases, order suspension of the relevant services. Article 21(2) refers to public-security administrative penalties and criminal liability. No maximum is stated in the Measures; penalties are by reference to other laws.",
+    "search": {
+      "read": "Articles 20–21.",
+      "terms": ["罚款|处罚|万元"],
+      "setAside": []
+    }
+  },
+  {
+    "n": 51,
+    "part": "A",
+    "id": "cn-genai-measures:Q15",
+    "status": "not-found",
+    "passages": [],
+    "note": "No reference to a provider's own safety framework, a code of practice or a standard was found. The Measures refer to other departmental rules, set aside below.",
+    "search": {
+      "read": "Articles 1–24 in full.",
+      "terms": ["标准", "规范", "指引", "按照《"],
+      "setAside": [
+        {
+          "locator": "Article 17 (第十七条)",
+          "reason": "Refers to 'relevant state provisions' for security assessment and to the Algorithmic Recommendation Provisions for filing: departmental rules, not a code of practice or standard."
+        },
+        {
+          "locator": "Article 12 (第十二条)",
+          "reason": "Labelling under the Deep Synthesis Provisions (《互联网信息服务深度合成管理规定》): a departmental rule, not a code or standard."
+        },
+        {
+          "locator": "Article 16 (第十六条), second paragraph",
+          "reason": "Authorities are to formulate classified and graded supervision rules or guidelines (监管规则或者指引); a direction to authorities, not a document named as a means of compliance."
+        }
+      ]
+    }
+  },
+  {
+    "n": 52,
+    "part": "A",
+    "id": "cn-labelling-measures:Q02",
+    "status": "partly",
+    "passages": [
+      {
+        "source": "cn-labelling",
+        "locator": "Article 2 (第二条)",
+        "quote": "符合…规定情形的网络信息服务提供者（以下简称“服务提供者”）",
+        "translation": "network information service providers that fall within the circumstances provided for in [the three named rules] (hereinafter 'service providers')"
+      }
+    ],
+    "note": "Coverage is defined by reference to the circumstances of three other rules (Algorithmic Recommendation Provisions, Deep Synthesis Provisions, Interim Measures for Generative AI Services), with no model-level threshold. The explicit-labelling duty of Article 4 applies where the service falls within Article 17(1) of the Deep Synthesis Provisions.",
+    "search": null
+  },
+  {
+    "n": 53,
+    "part": "A",
+    "id": "cn-labelling-measures:Q03",
+    "status": "not-found",
+    "passages": [],
+    "note": "No provision requiring a written framework, policy or protocol on model risks was found; the Measures concern content labelling only.",
+    "search": {
+      "read": "Notice 国信办通字〔2025〕2号 and Articles 1–14 in full.",
+      "terms": ["制度|管理体系|风险", "评估", "标准"],
+      "setAside": [
+        {
+          "locator": "Article 8 (第八条)",
+          "reason": "Service providers must state labelling methods and styles in the user service agreement (用户服务协议): a document on a single other subject (content labelling), excluded by the criterion."
+        },
+        {
+          "locator": "Article 9 (第九条)",
+          "reason": "A user agreement (用户协议) setting the user's labelling obligations before unlabelled content is supplied: labelling only."
+        }
+      ]
+    }
+  },
+  {
+    "n": 54,
+    "part": "A",
+    "id": "cn-labelling-measures:Q05",
+    "status": "not-found",
+    "passages": [],
+    "note": "No duty to evaluate or test models for risks, or to assess a service or content category for risks, was found.",
+    "search": {
+      "read": "Articles 1–14 in full.",
+      "terms": ["评估", "测试|检测", "风险", "核验"],
+      "setAside": [
+        {
+          "locator": "Article 6 (第六条), first paragraph, point (1) and (3)",
+          "reason": "Dissemination services check file metadata for implicit labels (核验) and detect explicit labels or other traces: label verification on content, not a risk evaluation."
+        },
+        {
+          "locator": "Article 12 (第十二条)",
+          "reason": "Refers to security assessment (安全评估) procedures under other rules, during which labelling materials are supplied; it does not itself impose an assessment."
+        }
+      ]
+    }
+  },
+  {
+    "n": 55,
+    "part": "A",
+    "id": "cn-labelling-measures:Q06",
+    "status": "partly",
+    "passages": [
+      {
+        "source": "cn-labelling",
+        "locator": "Article 7 (第七条)",
+        "quote": "互联网应用程序分发平台应当核验其生成合成内容标识相关材料",
+        "translation": "the internet application distribution platform shall verify its materials relating to the labelling of generated synthetic content"
+      },
+      {
+        "source": "cn-labelling",
+        "locator": "Article 12 (第十二条)",
+        "quote": "服务提供者在履行算法备案、安全评估等手续时，应当按照本办法提供生成合成内容标识相关材料",
+        "translation": "when completing procedures such as algorithm filing and security assessment, service providers shall provide materials relating to the labelling of generated synthetic content in accordance with these Measures",
+        "datasetClaim": "fl-cn-labelling-filing-materials"
+      }
+    ],
+    "note": "App distribution platforms verify the labelling materials of app service providers that offer AI generation or synthesis services, at listing or launch review (Article 7); labelling materials are supplied in algorithm filing and security assessment procedures under other rules (Article 12). Both concern labelling documents, not an assessment of the model or of risk practices.",
+    "search": {
+      "read": "Articles 6–13.",
+      "terms": ["核验", "评估", "备案"],
+      "setAside": []
+    }
+  },
+  {
+    "n": 56,
+    "part": "A",
+    "id": "cn-labelling-measures:Q07",
+    "status": "not-found",
+    "passages": [],
+    "note": "No duty to report incidents to a public authority was found.",
+    "search": {
+      "read": "Articles 1–14 in full.",
+      "terms": ["报告", "事件|事故", "通报"],
+      "setAside": [
+        {
+          "locator": "Article 12 (第十二条)",
+          "reason": "Service providers are to strengthen sharing of labelling information and support the prevention of and crackdown on related crime; no reporting duty or recipient authority is stated."
+        },
+        {
+          "locator": "Article 9 (第九条)",
+          "reason": "Retention of logs on recipients of unlabelled content for no less than six months (不少于六个月); a retention duty, not a report to an authority."
+        }
+      ]
+    }
+  },
+  {
+    "n": 57,
+    "part": "A",
+    "id": "cn-labelling-measures:Q08",
+    "status": "not-found",
+    "passages": [],
+    "note": "No duty to publish a model report or supply model documentation was found. The Measures impose output-labelling duties (explicit labels, Article 4; implicit labels in file metadata, Article 5), noted only as the criterion excludes them.",
+    "search": {
+      "read": "Articles 1–14 in full.",
+      "terms": ["材料", "备案", "说明", "公开|公布"],
+      "setAside": [
+        {
+          "locator": "Article 12 (第十二条)",
+          "reason": "Labelling-related materials (生成合成内容标识相关材料) supplied in filing and assessment procedures concern labelling, not the model."
+        },
+        {
+          "locator": "Article 7 (第七条)",
+          "reason": "App service providers state to distribution platforms whether they provide AI generation or synthesis services; a statement to a private platform about the service, not model documentation."
+        },
+        {
+          "locator": "Articles 4–5 (第四条、第五条)",
+          "reason": "Explicit and implicit labelling of generated content: output-labelling duties, excluded by the criterion."
+        }
+      ]
+    }
+  },
+  {
+    "n": 58,
+    "part": "A",
+    "id": "cn-labelling-measures:Q09",
+    "status": "not-found",
+    "passages": [],
+    "note": "No anti-retaliation provision or disclosure channel was found.",
+    "search": {
+      "read": "Articles 1–14 in full.",
+      "terms": ["举报|投诉|报复", "员工|职工|工作人员"],
+      "setAside": []
+    }
+  },
+  {
+    "n": 59,
+    "part": "A",
+    "id": "cn-labelling-measures:Q10",
+    "status": "stated",
+    "passages": [
+      {
+        "source": "cn-labelling",
+        "locator": "Notice, date line",
+        "quote": "2025年3月7日",
+        "translation": "7 March 2025"
+      },
+      {
+        "source": "cn-labelling",
+        "locator": "Notice header",
+        "quote": "国信办通字〔2025〕2号",
+        "translation": "Guoxinban Tongzi [2025] No. 2",
+        "datasetClaim": "fl-cn-labelling-issued"
+      }
+    ],
+    "note": "Date of the notice of four authorities (国家互联网信息办公室, 工业和信息化部, 公安部, 国家广播电视总局) issuing (印发) the Measures to provincial-level counterparts (gov.cn 成文日期 2025-03-07).",
+    "search": null
+  },
+  {
+    "n": 60,
+    "part": "A",
+    "id": "cn-labelling-measures:Q11",
+    "status": "stated",
+    "passages": [
+      {
+        "source": "cn-labelling",
+        "locator": "Article 14 (第十四条)",
+        "quote": "本办法自2025年9月1日起施行。",
+        "translation": "These Measures take effect on 1 September 2025.",
+        "datasetClaim": "fl-cn-labelling-effective"
+      }
+    ],
+    "note": "Fixed date in the Measures.",
+    "search": null
+  },
+  {
+    "n": 61,
+    "part": "A",
+    "id": "cn-labelling-measures:Q12",
+    "status": "not-found",
+    "passages": [],
+    "note": "No separate application date or transition period was found.",
+    "search": {
+      "read": "Notice and Articles 1–14 in full.",
+      "terms": ["过渡|之前|已经|存量", "起施行", "日起"],
+      "setAside": []
+    }
+  },
+  {
+    "n": 62,
+    "part": "A",
+    "id": "cn-labelling-measures:Q13",
+    "status": "partly",
+    "passages": [
+      {
+        "source": "cn-labelling",
+        "locator": "Article 13 (第十三条)",
+        "quote": "按照有关法律、行政法规、部门规章的规定予以处理",
+        "translation": "deal with [the breach] in accordance with relevant laws, administrative regulations and departmental rules"
+      }
+    ],
+    "note": "Breaches are dealt with under other laws, administrative regulations and departmental rules; the Measures state no penalty or maximum of their own.",
+    "search": {
+      "read": "Articles 10–14.",
+      "terms": ["罚款|处罚|万元"],
+      "setAside": []
+    }
+  },
+  {
+    "n": 63,
+    "part": "A",
+    "id": "us-eo14110:Q01",
+    "status": "partly",
+    "passages": [
+      {
+        "source": "us-eo14110",
+        "locator": "Sec. 4.2(a), opening words, 88 FR 75197",
+        "quote": "the Secretary of Commerce shall require:"
+      },
+      {
+        "source": "us-eo14110",
+        "locator": "Sec. 4.2(a)(i), 88 FR 75197",
+        "quote": "Companies developing or demonstrating an intent to develop potential dual-use foundation models to provide the Federal Government, on an ongoing basis, with information, reports, or records regarding the following",
+        "datasetClaim": "fl-us-eo14110-sec42a-reporting"
+      }
+    ],
+    "note": "The order does not itself place duties on companies; it directs the Secretary of Commerce, acting under the Defense Production Act, to require “Companies developing or demonstrating an intent to develop potential dual-use foundation models” to report. The term “dual-use foundation model” is defined in Sec. 3(k); Sec. 4.2(a)(ii) separately covers those who acquire, develop or possess a potential large-scale computing cluster.",
+    "search": {
+      "read": "Whole cached text of the Federal Register printing (88 FR 75191–75226), with close reading of Secs. 3, 4.1, 4.2, 12 and 13 and the signature block.",
+      "terms": ["shall require", "Companies", "dual-use foundation model"],
+      "setAside": [
+        {
+          "locator": "Sec. 4.2(c), 88 FR 75197–75198",
+          "reason": "Directs proposed regulations on United States IaaS Providers concerning foreign persons' training runs; not the developer reporting compared here."
+        }
+      ]
+    }
+  },
+  {
+    "n": 64,
+    "part": "A",
+    "id": "us-eo14110:Q02",
+    "status": "stated",
+    "passages": [
+      {
+        "source": "us-eo14110",
+        "locator": "Sec. 4.2(b)(i), 88 FR 75197",
+        "quote": "Until such technical conditions are defined, the Secretary shall require compliance with these reporting requirements for: (i) any model that was trained using a quantity of computing power greater than",
+        "datasetClaim": "fl-us-eo14110-sec42b-threshold"
+      }
+    ],
+    "note": "Interim condition, until the Secretary of Commerce defines technical conditions under Sec. 4.2(b): more than 10^26 integer or floating-point operations, or more than 10^23 for a model trained primarily on biological sequence data. The quote stops before the figures, which the PDF text layer renders without superscript (“1026”, “1023”); the reading follows dataset claim fl-us-eo14110-sec42b-threshold. Sec. 4.2(b)(ii) sets a separate condition for computing clusters.",
+    "search": null
+  },
+  {
+    "n": 65,
+    "part": "A",
+    "id": "us-eo14110:Q03",
+    "status": "not-found",
+    "passages": [],
+    "note": "No provision directing that covered companies write or adopt a framework, policy or protocol on the risks of their models was found.",
+    "search": {
+      "read": "Whole cached text of the Federal Register printing (88 FR 75191–75226), with close reading of Secs. 3, 4.1, 4.2, 12 and 13 and the signature block.",
+      "terms": [
+        "framework",
+        "policy",
+        "protocol",
+        "safety objectives",
+        "risk management"
+      ],
+      "setAside": [
+        {
+          "locator": "Sec. 4.2(a)(i)(C), 88 FR 75197",
+          "reason": "Reporting of “a description of any associated measures the company has taken to meet safety objectives”; a report on measures, not a required written framework."
+        },
+        {
+          "locator": "Sec. 4.1(a)(i)(A), 88 FR 75196",
+          "reason": "Directs NIST to develop a companion resource to the AI Risk Management Framework; guidance, not a duty on companies (recorded under Q15)."
+        },
+        {
+          "locator": "Sec. 4.4(b)(i), 88 FR 75201",
+          "reason": "OSTP framework for synthetic nucleic acid procurement screening; addressed to providers of nucleic acid sequences, not model developers."
+        }
+      ]
+    }
+  },
+  {
+    "n": 66,
+    "part": "A",
+    "id": "us-eo14110:Q05",
+    "status": "partly",
+    "passages": [
+      {
+        "source": "us-eo14110",
+        "locator": "Sec. 4.2(a), opening words, 88 FR 75197",
+        "quote": "the Secretary of Commerce shall require:"
+      },
+      {
+        "source": "us-eo14110",
+        "locator": "Sec. 4.2(a)(i)(C), 88 FR 75197",
+        "quote": "the results of any developed dual-use foundation model’s performance in relevant AI red-team testing"
+      }
+    ],
+    "note": "The Secretary of Commerce is directed to require reports of the results of red-team testing; the order does not itself state a duty to test. Before NIST guidance exists, the description is to include results of any red-team testing the company has conducted on named risk categories, including biological weapons (recorded at policy level only).",
+    "search": {
+      "read": "Whole cached text of the Federal Register printing (88 FR 75191–75226), with close reading of Secs. 3, 4.1, 4.2, 12 and 13 and the signature block.",
+      "terms": ["red-team", "evaluat", "test"],
+      "setAside": [
+        {
+          "locator": "Sec. 4.1(a)(ii), 88 FR 75196",
+          "reason": "Directs NIST guidelines to enable developers to conduct red-teaming tests; guidance, not a duty."
+        }
+      ]
+    }
+  },
+  {
+    "n": 67,
+    "part": "A",
+    "id": "us-eo14110:Q06",
+    "status": "not-found",
+    "passages": [],
+    "note": "No provision requiring or providing for assessment of a covered company's model or practices by an authority or third party was found. Agency evaluation tools and guidance are set aside below.",
+    "search": {
+      "read": "Whole cached text of the Federal Register printing (88 FR 75191–75226), with close reading of Secs. 3, 4.1, 4.2, 12 and 13 and the signature block.",
+      "terms": ["evaluat", "assess", "audit", "third-party", "independent"],
+      "setAside": [
+        {
+          "locator": "Sec. 4.1(b), 88 FR 75196–75197",
+          "reason": "Directs the Secretary of Energy to develop AI model evaluation tools and testbeds; not an assessment of a covered company's model (dataset claim ab-gov-us-eo14110-sec41b-doe-tools)."
+        },
+        {
+          "locator": "Sec. 4.1(a)(i)(C), 88 FR 75196",
+          "reason": "Initiative to create guidance and benchmarks for evaluating and auditing AI capabilities; guidance, not an assessment."
+        },
+        {
+          "locator": "Sec. 4.4(a)(i), 88 FR 75200",
+          "reason": "Directs DHS to evaluate the potential for AI misuse for CBRN threats; a general evaluation, not of a covered company's model."
+        }
+      ]
+    }
+  },
+  {
+    "n": 68,
+    "part": "A",
+    "id": "us-eo14110:Q07",
+    "status": "not-found",
+    "passages": [],
+    "note": "No duty on companies to report incidents to an authority was found.",
+    "search": {
+      "read": "Whole cached text of the Federal Register printing (88 FR 75191–75226), with close reading of Secs. 3, 4.1, 4.2, 12 and 13 and the signature block.",
+      "terms": ["incident", "report"],
+      "setAside": [
+        {
+          "locator": "Sec. 4.3(a)(v), 88 FR 75200",
+          "reason": "Critical-infrastructure agencies' advice on “incident response related to AI usage”; agency task, not a company reporting duty."
+        },
+        {
+          "locator": "Sec. 5.2(d)(i), 88 FR 75207",
+          "reason": "Agency programme on reports of AI-related IP theft; not a company duty."
+        },
+        {
+          "locator": "Sec. 8(b)(iv)(A), 88 FR 75215",
+          "reason": "Common framework for identifying and capturing clinical errors and incidents in health care; agency task."
+        },
+        {
+          "locator": "Sec. 4.2(a)(ii), 88 FR 75197",
+          "reason": "Reporting of computing-cluster acquisition, development or possession; not incidents."
+        }
+      ]
+    }
+  },
+  {
+    "n": 69,
+    "part": "A",
+    "id": "us-eo14110:Q08",
+    "status": "partly",
+    "passages": [
+      {
+        "source": "us-eo14110",
+        "locator": "Sec. 4.2(a), opening words, 88 FR 75197",
+        "quote": "the Secretary of Commerce shall require:"
+      },
+      {
+        "source": "us-eo14110",
+        "locator": "Sec. 4.2(a)(i), 88 FR 75197",
+        "quote": "Companies developing or demonstrating an intent to develop potential dual-use foundation models to provide the Federal Government, on an ongoing basis, with information, reports, or records regarding the following",
+        "datasetClaim": "fl-us-eo14110-sec42a-reporting"
+      },
+      {
+        "source": "us-eo14110",
+        "locator": "Sec. 4.2(a)(i)(C), 88 FR 75197",
+        "quote": "the results of any developed dual-use foundation model’s performance in relevant AI red-team testing"
+      }
+    ],
+    "note": "The Secretary of Commerce is directed to require ongoing reporting to the Federal Government, including on training activities, ownership and protection of model weights, and red-team results; the order does not itself impose the duty. No publication duty and no per-model trigger such as deployment is stated.",
+    "search": null
+  },
+  {
+    "n": 70,
+    "part": "A",
+    "id": "us-eo14110:Q09",
+    "status": "not-found",
+    "passages": [],
+    "note": "No provision on retaliation or on a disclosure channel for employees or others was found.",
+    "search": {
+      "read": "Whole cached text of the Federal Register printing (88 FR 75191–75226), with close reading of Secs. 3, 4.1, 4.2, 12 and 13 and the signature block.",
+      "terms": ["whistle", "retaliat", "disclos", "employee"],
+      "setAside": []
+    }
+  },
+  {
+    "n": 71,
+    "part": "A",
+    "id": "us-eo14110:Q10",
+    "status": "stated",
+    "passages": [
+      {
+        "source": "us-eo14110",
+        "locator": "88 FR 75226, signature block",
+        "quote": "THE WHITE HOUSE, October 30, 2023.",
+        "datasetClaim": "fl-us-eo14110-signed"
+      }
+    ],
+    "note": "Signature date as printed. Published in the Federal Register of 1 November 2023 (dataset claim fl-us-eo14110-published).",
+    "search": null
+  },
+  {
+    "n": 72,
+    "part": "A",
+    "id": "us-eo14110:Q11",
+    "status": "not-found",
+    "passages": [
+      {
+        "source": "us-eo14148",
+        "locator": "Sec. 2(ggg), 90 FR 8240",
+        "quote": "(ggg) Executive Order 14110 of October 30, 2023 (Safe, Secure, and Trustworthy Development and Use of Artificial Intelligence).",
+        "datasetClaim": "fl-us-eo14110-revoked"
+      }
+    ],
+    "note": "No provision of the order on its effective date was found. Context, not an answer to the question: Executive Order 14148 of 20 January 2025, Sec. 2, lists the order among the executive actions “hereby revoked” (passage above).",
+    "search": {
+      "read": "Whole cached text of the Federal Register printing (88 FR 75191–75226), with close reading of Secs. 3, 4.1, 4.2, 12 and 13 and the signature block.",
+      "terms": [
+        "effective",
+        "take effect",
+        "takes effect",
+        "shall be effective"
+      ],
+      "setAside": [
+        {
+          "locator": "Sec. 4.2(a), 88 FR 75197",
+          "reason": "“effective AI” describes AI, not the order's effect."
+        },
+        {
+          "locator": "Sec. 13, 88 FR 75225–75226",
+          "reason": "General provisions on implementation; no effective date."
+        }
+      ]
+    }
+  },
+  {
+    "n": 73,
+    "part": "A",
+    "id": "us-eo14110:Q12",
+    "status": "not-found",
+    "passages": [],
+    "note": "No provision setting a date from which companies’ reporting duties apply was found. The 90-day period in Sec. 4.2(a) is set for the Secretary of Commerce to require the reporting and is set aside.",
+    "search": {
+      "read": "Whole cached text of the Federal Register printing (88 FR 75191–75226), with close reading of Secs. 3, 4.1, 4.2, 12 and 13 and the signature block.",
+      "terms": ["Within 90 days", "date of this order", "ongoing basis"],
+      "setAside": [
+        {
+          "locator": "Sec. 4.2(a), 88 FR 75197",
+          "reason": "“Within 90 days of the date of this order” is the period for the Secretary of Commerce to require reporting; not an application date for companies’ duties."
+        }
+      ]
+    }
+  },
+  {
+    "n": 74,
+    "part": "A",
+    "id": "us-eo14110:Q13",
+    "status": "not-found",
+    "passages": [],
+    "note": "No penalty provision was found. The reporting is to be required under the Defense Production Act, whose penalties the order does not state.",
+    "search": {
+      "read": "Whole cached text of the Federal Register printing (88 FR 75191–75226), with close reading of Secs. 3, 4.1, 4.2, 12 and 13 and the signature block.",
+      "terms": [
+        "penalt",
+        "fine",
+        "sanction",
+        "enforce",
+        "Defense Production Act"
+      ],
+      "setAside": [
+        {
+          "locator": "Sec. 4.2(a), 88 FR 75197",
+          "reason": "Names the Defense Production Act, 50 U.S.C. 4501 et seq., as the basis; states no penalty."
+        },
+        {
+          "locator": "Sec. 13(c), 88 FR 75226",
+          "reason": "States the order creates no right enforceable at law; not a penalty."
+        }
+      ]
+    }
+  },
+  {
+    "n": 75,
+    "part": "A",
+    "id": "us-eo14110:Q14",
+    "status": "partly",
+    "passages": [
+      {
+        "source": "us-eo14110",
+        "locator": "Sec. 4.2(a), opening words, 88 FR 75197",
+        "quote": "the Secretary of Commerce shall require:"
+      }
+    ],
+    "note": "The Secretary of Commerce is the body directed to require the reporting; the order gives no stated power to enforce or penalise breaches.",
+    "search": {
+      "read": "Whole cached text of the Federal Register printing (88 FR 75191–75226), with close reading of Secs. 3, 4.1, 4.2, 12 and 13 and the signature block.",
+      "terms": ["enforce", "Secretary of Commerce", "penalt"],
+      "setAside": []
+    }
+  },
+  {
+    "n": 76,
+    "part": "A",
+    "id": "us-bis-ifr:Q02",
+    "status": "stated",
+    "passages": [
+      {
+        "source": "us-bis-ifr",
+        "locator": "ECCN 4E091 heading, 90 FR 4578 (PDF p. 35)",
+        "quote": "4E091 ‘Parameters’ for an artificial intelligence model trained utilizing"
+      },
+      {
+        "source": "us-bis-ifr",
+        "locator": "Supplementary information, section A, 90 FR 4555",
+        "quote": "ECCN 4E091 excludes from the control any open-weight models",
+        "datasetClaim": "fl-us-bis-ai-diffusion-ifr-model-weights"
+      }
+    ],
+    "note": "The heading continues with a figure that the PDF text layer renders as “1026” before “or more ‘operations’”, read as 10^26 operations; the quote stops before it. Notes 1 and 2 to 4E091 exclude published weights, models derived from them with no more than 2.5 × 10^25 additional operations or 25 percent (whichever is higher), and models trained with fewer operations than needed to match the most advanced published model.",
+    "search": null
+  },
+  {
+    "n": 77,
+    "part": "A",
+    "id": "us-bis-ifr:Q03",
+    "status": "not-found",
+    "passages": [],
+    "note": "No provision requiring a written framework, policy or protocol on the risks of models was found. The rule requires security plans and measures for data centres, including model-weight storage; these are set aside as a single other subject.",
+    "search": {
+      "read": "Federal Register PDF, 90 FR 4544–4584: DATES, SUPPLEMENTARY INFORMATION sections III and IV and Rulemaking Requirements; regulatory text §§ 740.27, 742.6(a)(13) and (b)(14), Supplement No. 10 to part 748 in full, ECCN 4E091 entry; signature and filing lines.",
+      "terms": [
+        "framework",
+        "plan",
+        "policy",
+        "safety",
+        "security requirements"
+      ],
+      "setAside": [
+        {
+          "locator": "§ 740.27(a)(3)(ii), 90 FR 4559 (PDF p. 16)",
+          "reason": "“stored in a facility that complies with paragraphs 14, 15 and 18”: security plans for VEU data centres and model-weight storage (paras. 14, 15 and 18), a single other subject (security of chips, data and weights), not a framework on model risks."
+        },
+        {
+          "locator": "Supplement No. 10 to part 748, para. 14(e), 90 FR 4566 (PDF p. 23)",
+          "reason": "“Plans for the secure operation of data centers supporting a VEU shall be implemented”: security plans for VEU data centres and model-weight storage (paras. 14, 15 and 18), a single other subject (security of chips, data and weights), not a framework on model risks."
+        },
+        {
+          "locator": "Supplement No. 10 to part 748, para. 18(c), 90 FR 4567",
+          "reason": "Insider-threat programme; personnel security, recorded under this cell's note only by reference."
+        },
+        {
+          "locator": "Supplement No. 10 to part 748, para. 16, 90 FR 4567",
+          "reason": "Shipment security plan for chips in transit; not on models."
+        }
+      ]
+    }
+  },
+  {
+    "n": 78,
+    "part": "A",
+    "id": "us-bis-ifr:Q05",
+    "status": "partly",
+    "passages": [
+      {
+        "source": "us-bis-ifr",
+        "locator": "Supplement No. 10 to part 748, para. 14(e)(i), 90 FR 4566 (PDF p. 23)",
+        "quote": "Assess the capabilities, intentions, and opportunity of an adversary"
+      },
+      {
+        "source": "us-bis-ifr",
+        "locator": "Supplement No. 10 to part 748, para. 15(c)(ii), 90 FR 4566 (PDF p. 23)",
+        "quote": "Every interface by which model weights can be accessed, directly or indirectly, must be reviewed"
+      }
+    ],
+    "note": "Assessments required concern data-centre security threats and interfaces to model weights (to set and limit output rates), not the risks of the model itself.",
+    "search": {
+      "read": "Federal Register PDF, 90 FR 4544–4584: DATES, SUPPLEMENTARY INFORMATION sections III and IV and Rulemaking Requirements; regulatory text §§ 740.27, 742.6(a)(13) and (b)(14), Supplement No. 10 to part 748 in full, ECCN 4E091 entry; signature and filing lines.",
+      "terms": ["assess", "evaluat", "test", "review"],
+      "setAside": [
+        {
+          "locator": "Supplement No. 10 to part 748, para. 11, 90 FR 4566",
+          "reason": "“ongoing monitoring, evaluation, and end user due diligence” of compliance with the VEU conditions; not of models."
+        }
+      ]
+    }
+  },
+  {
+    "n": 79,
+    "part": "A",
+    "id": "us-bis-ifr:Q06",
+    "status": "partly",
+    "passages": [
+      {
+        "source": "us-bis-ifr",
+        "locator": "Supplement No. 10 to part 748, para. 14(b), 90 FR 4566 (PDF p. 23)",
+        "quote": "attested annually by a Third-Party Assessment Organization (3PAO) and made available to BIS"
+      },
+      {
+        "source": "us-bis-ifr",
+        "locator": "Supplement No. 10 to part 748, para. 11, 90 FR 4566 (PDF p. 23)",
+        "quote": "cooperate with BIS’s auditing of records and facilities"
+      }
+    ],
+    "note": "Required annual third-party attestation of the data-centre NIST 800–53 compliance, and BIS auditing of VEU records and facilities. These assess the facility's security practices, not the model or a developer's practices as such. Partly because the assessed party is a data-centre end user under a VEU authorisation, not necessarily a model developer, and the subject is facility security.",
+    "search": null
+  },
+  {
+    "n": 80,
+    "part": "A",
+    "id": "us-bis-ifr:Q08",
+    "status": "not-found",
+    "passages": [],
+    "note": "No duty to publish or supply documentation on each model was found.",
+    "search": {
+      "read": "Federal Register PDF, 90 FR 4544–4584: DATES, SUPPLEMENTARY INFORMATION sections III and IV and Rulemaking Requirements; regulatory text §§ 740.27, 742.6(a)(13) and (b)(14), Supplement No. 10 to part 748 in full, ECCN 4E091 entry; signature and filing lines.",
+      "terms": [
+        "classification request",
+        "report",
+        "furnish",
+        "documentation",
+        "model weights"
+      ],
+      "setAside": [
+        {
+          "locator": "ECCN 4E091 Note 2.a, 90 FR 4579",
+          "reason": "An exporter “may” self-classify or request classification from BIS to determine the exclusion; optional, and a classification, not model documentation."
+        },
+        {
+          "locator": "§ 740.27(b)(1), 90 FR 4559 (PDF p. 16)",
+          "reason": "Duty to furnish the ECCN to the ultimate consignee; a classification notice, not model documentation."
+        },
+        {
+          "locator": "Supplement No. 10 to part 748, para. 10, 90 FR 4565",
+          "reason": "Semi-annual reporting of chip installations; chips, not models."
+        }
+      ]
+    }
+  },
+  {
+    "n": 81,
+    "part": "A",
+    "id": "us-bis-ifr:Q09",
+    "status": "not-found",
+    "passages": [],
+    "note": "No provision on retaliation or on a disclosure channel for employees or others was found.",
+    "search": {
+      "read": "Federal Register PDF, 90 FR 4544–4584: DATES, SUPPLEMENTARY INFORMATION sections III and IV and Rulemaking Requirements; regulatory text §§ 740.27, 742.6(a)(13) and (b)(14), Supplement No. 10 to part 748 in full, ECCN 4E091 entry; signature and filing lines.",
+      "terms": ["whistle", "retaliat", "disclos", "employee"],
+      "setAside": [
+        {
+          "locator": "Supplement No. 10 to part 748, para. 18(c), 90 FR 4567",
+          "reason": "Programme for “detecting, assessing, disclosing, and managing insider threats”; security of the facility, not protection of those who report."
+        }
+      ]
+    }
+  },
+  {
+    "n": 82,
+    "part": "A",
+    "id": "us-bis-ifr:Q10",
+    "status": "not-found",
+    "passages": [],
+    "note": "No signature or issue date is printed; the rule is signed by the Assistant Secretary for Export Administration without a date. The filing line gives filing with the Office of the Federal Register on 13 January 2025; publication was on 15 January 2025 (ACTION line and masthead, dataset claim fl-us-bis-ai-diffusion-ifr-published).",
+    "search": {
+      "read": "Federal Register PDF, 90 FR 4544–4584: DATES, SUPPLEMENTARY INFORMATION sections III and IV and Rulemaking Requirements; regulatory text §§ 740.27, 742.6(a)(13) and (b)(14), Supplement No. 10 to part 748 in full, ECCN 4E091 entry; signature and filing lines.",
+      "terms": ["Dated", "signed", "Filed"],
+      "setAside": [
+        {
+          "locator": "Filing line, 90 FR 4584 (PDF p. 41)",
+          "reason": "“FR Doc. 2025–00636 Filed 1–13–25”: the date of filing with the Office of the Federal Register, a publication-process date, not adoption, signature or issue; the signature block is undated."
+        }
+      ]
+    }
+  },
+  {
+    "n": 83,
+    "part": "A",
+    "id": "us-bis-ifr:Q11",
+    "status": "stated",
+    "passages": [
+      {
+        "source": "us-bis-ifr",
+        "locator": "DATES, 90 FR 4544",
+        "quote": "Effective date: This rule is effective January 13. 2025."
+      },
+      {
+        "source": "bis-rescission",
+        "locator": "BIS press release, 13 May 2025, para. 1 (page served 2026-11-01)",
+        "quote": "announced a rescission of the Biden Administration’s AI Diffusion Rule"
+      },
+      {
+        "source": "bis-rescission",
+        "locator": "BIS press release, 13 May 2025, para. 3",
+        "quote": "BIS plans to publish a regulation formalizing the rescission"
+      }
+    ],
+    "note": "Effective 13 January 2025, as printed (with a full stop after “13”); section III of the supplementary information gives “January 13, 2025”. The Department of Commerce announced on 13 May 2025 that it had initiated a rescission and “plans to publish a regulation formalizing the rescission”; no Federal Register rescission was inspected, and the announcement is not recorded as a rescission of the rule.",
+    "search": null
+  },
+  {
+    "n": 84,
+    "part": "A",
+    "id": "us-bis-ifr:Q12",
+    "status": "stated",
+    "passages": [
+      {
+        "source": "us-bis-ifr",
+        "locator": "DATES, 90 FR 4544",
+        "quote": "exporters, reexporters, and transferors are not required to comply with the changes made in this rule until May 15, 2025",
+        "datasetClaim": "fl-us-bis-ai-diffusion-ifr-published"
+      },
+      {
+        "source": "us-bis-ifr",
+        "locator": "DATES, 90 FR 4544",
+        "quote": "paragraphs 14, 15, and 18 of supplement no. 10 to part 748 have a delayed compliance date of January 15, 2026"
+      }
+    ],
+    "note": "Compliance dates separate from the effective date: 15 May 2025 generally; 15 January 2026 for the data-centre security, AI-cybersecurity and personnel-security paragraphs that also apply to model-weight storage. The BIS announcement of 13 May 2025 is recorded under Q11 and Q14.",
+    "search": null
+  },
+  {
+    "n": 85,
+    "part": "A",
+    "id": "us-bis-ifr:Q13",
+    "status": "partly",
+    "passages": [
+      {
+        "source": "us-bis-ifr",
+        "locator": "Supplement No. 10 to part 748, para. 19, 90 FR 4567 (PDF p. 24)",
+        "quote": "other penalties as appropriate under U.S. laws and regulations"
+      }
+    ],
+    "note": "VEU conditions: revocation of VEU status, denial of chip allocations or export licences, and other penalties under other law. No maximum is stated in this rule; the rule cites ECRA (50 U.S.C. 4801–4852) as its authority but does not state penalty amounts.",
+    "search": {
+      "read": "Federal Register PDF, 90 FR 4544–4584: DATES, SUPPLEMENTARY INFORMATION sections III and IV and Rulemaking Requirements; regulatory text §§ 740.27, 742.6(a)(13) and (b)(14), Supplement No. 10 to part 748 in full, ECCN 4E091 entry; signature and filing lines.",
+      "terms": ["penalt", "764", "civil", "criminal", "ECRA"],
+      "setAside": [
+        {
+          "locator": "Rulemaking Requirements para. 2, 90 FR 4556",
+          "reason": "Paperwork Reduction Act statement on penalties for information collections; not a penalty for these duties."
+        }
+      ]
+    }
+  },
+  {
+    "n": 86,
+    "part": "B",
+    "id": "eu-ai-act:Q01",
+    "status": "stated",
+    "passages": [
+      {
+        "source": "eu-ai-act",
+        "locator": "Article 53(1), chapeau (same words as in Article 101(1), dataset quote aia-art101-gpai-fines)",
+        "quote": "providers of general-purpose AI models"
+      },
+      {
+        "source": "eu-ai-act",
+        "locator": "Article 51(1), chapeau",
+        "quote": "shall be classified as a general-purpose AI model with systemic risk if it meets any of the following conditions",
+        "datasetClaim": "fl-eu-aia-art51-classification-conditions"
+      }
+    ],
+    "note": "The duties in Article 53 fall on providers of general-purpose AI models; Article 55(1) adds duties for providers of general-purpose AI models with systemic risk, the tier for the most capable models. Article 54 adds an authorised-representative duty for providers established in third countries; Article 53(2) exempts certain open-source models from points (a) and (b), but not models with systemic risk. 'Provider' is defined in Article 3(3) (not quoted).",
+    "search": null
+  },
+  {
+    "n": 87,
+    "part": "B",
+    "id": "eu-ai-act:Q05",
+    "status": "stated",
+    "passages": [
+      {
+        "source": "eu-ai-act",
+        "locator": "Article 55(1), point (a)",
+        "quote": "perform model evaluation in accordance with standardised protocols and tools reflecting the state of the art, including conducting and documenting adversarial testing",
+        "datasetClaim": "aia-art55-model-evaluation"
+      }
+    ],
+    "note": "Applies to providers of general-purpose AI models with systemic risk. The provision does not tie the evaluation to a point before or after the model is placed on the market.",
+    "search": null
+  },
+  {
+    "n": 88,
+    "part": "B",
+    "id": "eu-ai-act:Q14",
+    "status": "stated",
+    "passages": [
+      {
+        "source": "eu-ai-act",
+        "locator": "Article 101(1), first subparagraph (part)",
+        "quote": "The Commission may impose on providers of general-purpose AI models fines",
+        "datasetClaim": "aia-art101-gpai-fines"
+      },
+      {
+        "source": "eu-ai-act",
+        "locator": "Article 92(1), chapeau",
+        "quote": "The AI Office, after consulting the Board, may conduct evaluations of the general-purpose AI model concerned",
+        "datasetClaim": "fl-eu-aia-art92-evaluations"
+      },
+      {
+        "source": "eu-omnibus",
+        "locator": "Recital (31)",
+        "quote": "The Commission has exclusive competence as regards general-purpose AI models under Article 88 of that Regulation."
+      }
+    ],
+    "note": "Under Article 88(1) the Commission has exclusive powers to supervise and enforce Chapter V and entrusts these tasks to the AI Office; Articles 89 to 93 give the AI Office and Commission monitoring, information, evaluation and measure powers. The new Article 75(1) inserted by Regulation (EU) 2026/1744 concerns AI systems, not models, and is not used here.",
+    "search": null
+  },
+  {
+    "n": 89,
+    "part": "B",
+    "id": "eu-ai-act:Q15",
+    "status": "stated",
+    "passages": [
+      {
+        "source": "eu-ai-act",
+        "locator": "Article 55(2), first sentence",
+        "quote": "may rely on codes of practice within the meaning of Article 56 to demonstrate compliance",
+        "datasetClaim": "aia-art55-code-reliance"
+      },
+      {
+        "source": "eu-ai-act",
+        "locator": "Article 55(2), third sentence",
+        "quote": "shall demonstrate alternative adequate means of compliance for assessment by the Commission",
+        "datasetClaim": "aia-art55-code-reliance"
+      },
+      {
+        "source": "eu-omnibus",
+        "locator": "Article 1, point (21), replacing Article 56(6) of Regulation (EU) 2024/1689",
+        "quote": "The Commission, taking utmost account of the opinion of the Board, shall assess whether the codes of practice cover the obligations provided for in Articles 53 and 55",
+        "datasetClaim": "omni-art56-adequacy-assessment"
+      }
+    ],
+    "note": "'May rely on' codes of practice, until a harmonised standard is published (Articles 53(4) and 55(2)); compliance with European harmonised standards grants a presumption of conformity to the extent they cover the obligations. Providers that do not adhere to an approved code or comply with a standard demonstrate alternative means. Regulation (EU) 2026/1744 replaced Article 56(6): the Commission, rather than the AI Office and the Board, now assesses codes; its recital (41) states that these codes 'do not grant a presumption of conformity'. The Act does not require a developer's own safety framework.",
+    "search": null
+  },
+  {
+    "n": 90,
+    "part": "B",
+    "id": "eu-code-ss:Q01",
+    "status": "stated",
+    "passages": [
+      {
+        "source": "eu-cop-ss",
+        "locator": "Recitals, (b) (PDF p. 3)",
+        "quote": "this Safety and Security Chapter (“Chapter”) is only relevant for providers of general-purpose AI models with systemic risk and not AI systems",
+        "datasetClaim": "prov-eu-code-ss-scope"
+      }
+    ],
+    "note": "The commitments are written as commitments of 'Signatories'; the Chapter is stated to be relevant only to providers of general-purpose AI models with systemic risk. The Code binds only providers that sign and adhere to it. Terms defined in Article 3 of the AI Act apply (Glossary, opening paragraph).",
+    "search": null
+  },
+  {
+    "n": 91,
+    "part": "B",
+    "id": "eu-code-ss:Q05",
+    "status": "stated",
+    "passages": [
+      {
+        "source": "eu-cop-ss",
+        "locator": "Measure 3.2, first paragraph (PDF p. 12)",
+        "quote": "Signatories will conduct at least state-of-the-art model evaluations"
+      },
+      {
+        "source": "eu-cop-ss",
+        "locator": "Measure 1.2, last paragraph (PDF p. 8)",
+        "quote": "at least before placing the model on the market"
+      }
+    ],
+    "note": "A full systemic risk assessment and mitigation process (identification, analysis including model evaluations, acceptance determination, mitigation) is carried out at least before placing on the market and when the Measure 7.6 conditions are met; lighter-touch evaluations and post-market monitoring continue along the model lifecycle (Measures 1.2 and 3.5).",
+    "search": null
+  },
+  {
+    "n": 92,
+    "part": "B",
+    "id": "eu-code-ss:Q06",
+    "status": "stated",
+    "passages": [
+      {
+        "source": "eu-cop-ss",
+        "locator": "Appendix 3.5, first paragraph (PDF p. 40)",
+        "quote": "Signatories will ensure that adequately qualified independent external evaluators conduct model evaluations"
+      }
+    ],
+    "note": "Subject to two exceptions in Appendix 3.5: the model is a 'similarly safe or safer model', or the Signatory fails to appoint qualified evaluators despite early search efforts. Measure 3.5 separately provides access for independent external evaluators for post-market monitoring, and Appendix 4.5 refers to security reviews by an independent external party.",
+    "search": null
+  },
+  {
+    "n": 93,
+    "part": "B",
+    "id": "eu-code-ss:Q07",
+    "status": "stated",
+    "passages": [
+      {
+        "source": "eu-cop-ss",
+        "locator": "Measure 9.3, first paragraph (PDF p. 26)",
+        "quote": "an initial report that is submitted to the AI Office"
+      },
+      {
+        "source": "eu-cop-ss",
+        "locator": "Measure 9.3, point (1) (PDF p. 26)",
+        "quote": "not later than two days after the Signatories become aware of the involvement of their model in the incident",
+        "datasetClaim": "prov-eu-code-ss-incident-reporting-deadlines"
+      }
+    ],
+    "note": "Initial-report deadlines run by type of serious incident: two days (critical infrastructure disruption), five days (serious cybersecurity breach), 10 days (death), 15 days (serious harm to health, fundamental-rights infringement, property or environment), 'save in exceptional circumstances'. Reports go to the AI Office and, as applicable, national competent authorities; intermediate reports at least every four weeks and a final report within 60 days of resolution.",
+    "search": null
+  },
+  {
+    "n": 94,
+    "part": "B",
+    "id": "eu-code-ss:Q08",
+    "status": "stated",
+    "passages": [
+      {
+        "source": "eu-cop-ss",
+        "locator": "Commitment 7, first paragraph (PDF p. 18)",
+        "quote": "creating a Safety and Security Model Report (“Model Report”) before placing a model on the market"
+      },
+      {
+        "source": "eu-cop-ss",
+        "locator": "Measure 7.7, first paragraph (PDF p. 22)",
+        "quote": "provide the AI Office with access to the Model Report"
+      }
+    ],
+    "note": "The Model Report is due to the AI Office by the time the model is placed on the market, with updates within five business days of confirmation; a delay of up to 15 business days is possible under conditions. A summarised version is published 'if and insofar as necessary' (Measure 10.2). Measure 10.1 adds documentation kept for the AI Office on request. Measure 3.5 lists watermarks among example post-market monitoring methods; no output-labelling duty is set.",
+    "search": null
+  },
+  {
+    "n": 95,
+    "part": "B",
+    "id": "eu-code-ss:Q09",
+    "status": "stated",
+    "passages": [
+      {
+        "source": "eu-cop-ss",
+        "locator": "Measure 3.5, paragraph on independent external evaluators, sentence before conditions (1)–(5) (PDF p. 14)",
+        "quote": "Signatories will not take any legal or technical retaliation against the independent external evaluators"
+      },
+      {
+        "source": "eu-cop-ss",
+        "locator": "Measure 8.3, point (7) (PDF p. 25)",
+        "quote": "not retaliating in any form"
+      }
+    ],
+    "note": "The Measure 3.5 commitment covers independent external evaluators, for their testing and/or publication of findings, as long as they meet five listed conditions. Measure 8.3 lists non-retaliation against persons providing information about systemic risks to competent authorities, and a published whistleblower protection policy, as examples of indicators of a healthy risk culture rather than as separate commitments. Recital (d) states that Measure 8.3 is without prejudice to Directive (EU) 2019/1937 and Article 87 AI Act.",
+    "search": null
+  },
+  {
+    "n": 96,
+    "part": "B",
+    "id": "ca-sb53:Q07",
+    "status": "stated",
+    "passages": [
+      {
+        "source": "ca-sb53",
+        "locator": "SEC. 2, Bus. & Prof. Code § 22757.13(c)(1)",
+        "quote": "report any critical safety incident pertaining to one or more of its frontier models to the Office of Emergency Services within 15 days of discovering the critical safety incident.",
+        "datasetClaim": "sb-critical-incident-15-days"
+      },
+      {
+        "source": "ca-sb53",
+        "locator": "SEC. 2, Bus. & Prof. Code § 22757.13(c)(2)",
+        "quote": "the frontier developer shall disclose that incident within 24 hours to an authority, including any law enforcement agency or public safety agency with jurisdiction, that is appropriate based on the nature of that incident and as required by law",
+        "datasetClaim": "sb-critical-incident-24-hours"
+      }
+    ],
+    "note": "Applies to all frontier developers. Fifteen days from discovery to the Office of Emergency Services; 24 hours to an appropriate authority where the incident poses an imminent risk of death or serious physical injury. “Critical safety incident” is defined in § 22757.11(d). § 22757.13(h)–(i) provides that compliance with a designated federal law, regulation or guidance document is deemed compliance with the section (see Q15).",
+    "search": null
+  },
+  {
+    "n": 97,
+    "part": "B",
+    "id": "ca-sb53:Q08",
+    "status": "stated",
+    "passages": [
+      {
+        "source": "ca-sb53",
+        "locator": "SEC. 2, Bus. & Prof. Code § 22757.12(c)(1)",
+        "quote": "Before, or concurrently with, deploying a new frontier model or a substantially modified version of an existing frontier model, a frontier developer shall clearly and conspicuously publish on its internet website a transparency report",
+        "datasetClaim": "sb-transparency-report"
+      },
+      {
+        "source": "ca-sb53",
+        "locator": "SEC. 2, Bus. & Prof. Code § 22757.12(d)",
+        "quote": "every three months or pursuant to another reasonable schedule specified by the large frontier developer and communicated in writing to the Office of Emergency Services",
+        "datasetClaim": "sb-internal-use-risk-summaries"
+      }
+    ],
+    "note": "Trigger: before or concurrently with deploying a new or substantially modified frontier model. Contents: website, contact mechanism, release date, languages, output modalities, intended uses and use restrictions (§ 22757.12(c)(1)(A)–(G)); large frontier developers add summaries of catastrophic-risk assessments, results, third-party evaluator involvement and other framework steps (§ 22757.12(c)(2)). Large frontier developers also transmit summaries of internal-use risk assessments to the Office of Emergency Services on the stated schedule (§ 22757.12(d)). No output-labelling duty was seen.",
+    "search": null
+  },
+  {
+    "n": 98,
+    "part": "B",
+    "id": "ca-sb53:Q09",
+    "status": "stated",
+    "passages": [
+      {
+        "source": "ca-sb53",
+        "locator": "SEC. 4, Lab. Code § 1107.1(a)",
+        "quote": "prevents a covered employee from disclosing, or retaliates against a covered employee for disclosing,",
+        "datasetClaim": "sb-whistleblower-anti-retaliation"
+      },
+      {
+        "source": "ca-sb53",
+        "locator": "SEC. 4, Lab. Code § 1107.1(e)(1)",
+        "quote": "a reasonable internal process through which a covered employee may anonymously disclose information",
+        "datasetClaim": "sb-anonymous-internal-reporting"
+      }
+    ],
+    "note": "Protection covers “covered employees”, defined in Lab. Code § 1107(b) as employees responsible for assessing, managing or addressing risk of critical safety incidents, who disclose to the Attorney General, a federal authority or persons with authority over the matter information on a specific and substantial danger from a catastrophic risk or a violation of the Act. The internal anonymous process (§ 1107.1(e)) is a duty of large frontier developers; § 1107.1(d) requires notice of rights, and § 1107.1(f)–(h) provide attorney’s fees, a burden-of-proof rule and injunctive relief.",
+    "search": null
+  },
+  {
+    "n": 99,
+    "part": "B",
+    "id": "ca-sb53:Q14",
+    "status": "stated",
+    "passages": [
+      {
+        "source": "ca-sb53",
+        "locator": "SEC. 2, Bus. & Prof. Code § 22757.15(b)",
+        "quote": "A civil penalty described in this section shall be recovered in a civil action brought only by the Attorney General.",
+        "datasetClaim": "sb-attorney-general-enforcement"
+      },
+      {
+        "source": "ca-sb53",
+        "locator": "SEC. 2, Bus. & Prof. Code § 22757.13(c)(1)",
+        "quote": "report any critical safety incident pertaining to one or more of its frontier models to the Office of Emergency Services within 15 days of discovering the critical safety incident.",
+        "datasetClaim": "sb-critical-incident-15-days"
+      }
+    ],
+    "note": "The Attorney General recovers civil penalties. The Office of Emergency Services receives incident reports and internal-use summaries, reviews incident reports (§ 22757.13(d)) and may designate equivalent federal standards (§ 22757.13(h)); no penalty power is given to it.",
+    "search": null
+  },
+  {
+    "n": 100,
+    "part": "B",
+    "id": "ca-sb53:Q15",
+    "status": "stated",
+    "passages": [
+      {
+        "source": "ca-sb53",
+        "locator": "SEC. 2, Bus. & Prof. Code § 22757.12(a), opening clause",
+        "quote": "A large frontier developer shall write, implement, comply with, and clearly and conspicuously publish on its internet website a frontier AI framework",
+        "datasetClaim": "sb-framework-duty"
+      },
+      {
+        "source": "ca-sb53",
+        "locator": "SEC. 2, Bus. & Prof. Code § 22757.13(i)(1)",
+        "quote": "shall declare its intent to do so to the Office of Emergency Services.",
+        "datasetClaim": "sb-federal-equivalence-pathway"
+      },
+      {
+        "source": "ca-sb53",
+        "locator": "SEC. 2, Bus. & Prof. Code § 22757.12(c)(3)",
+        "quote": "including a system card or model card, shall be deemed in compliance with the applicable paragraph.",
+        "datasetClaim": "sb-system-card-deemed-compliance"
+      }
+    ],
+    "note": "Requires a developer framework, which describes how the developer approaches incorporating national standards, international standards and industry-consensus best practices (§ 22757.12(a)(1)). A frontier developer that declares its intent to comply with § 22757.13 through a federal law, regulation or guidance document designated by the Office of Emergency Services is “deemed in compliance” with that section to the extent it meets it (§ 22757.13(i)(2)(A)). Publishing transparency-report contents in a system or model card is deemed compliance (§ 22757.12(c)(3)). § 22757.12(c)(4) encourages disclosures consistent with industry best practices.",
+    "search": null
+  },
+  {
+    "n": 101,
+    "part": "B",
+    "id": "ny-ch699:Q03",
+    "status": "stated",
+    "passages": [
+      {
+        "source": "ny-s6953b",
+        "locator": "Proposed GBL § 1421(1)(a), p. 4, lines 10–12",
+        "quote": "Before deploying a frontier model, the large developer of such frontier model shall do all of the following: (a) Implement a written safety and security protocol",
+        "datasetClaim": "fl-us-ny-2025-safety-protocol-duty"
+      }
+    ],
+    "note": "“Safety and security protocol” is defined in § 1420(12) (p. 3) as documented technical and organizational protocols describing protections against critical harm, cybersecurity protections, a testing procedure, compliance and senior responsible personnel. § 1421(3) requires an annual review.",
+    "search": null
+  },
+  {
+    "n": 102,
+    "part": "B",
+    "id": "ny-ch699:Q04",
+    "status": "stated",
+    "passages": [
+      {
+        "source": "ny-s6953b",
+        "locator": "Proposed GBL § 1421(1)(c)(i), p. 4, line 18",
+        "quote": "Conspicuously publish a copy of the safety and security protocol with appropriate redactions",
+        "datasetClaim": "fl-us-ny-2025-safety-protocol-duty"
+      },
+      {
+        "source": "ny-s6953b",
+        "locator": "Proposed GBL § 1421(1)(c)(i), p. 4, lines 18–21",
+        "quote": "transmit a copy of such redacted safety and security protocol to the attorney general and division of homeland security and emergency services"
+      }
+    ],
+    "note": "Before deploying a frontier model. Publication with “appropriate redactions” (defined in § 1420(1)) and transmission of the redacted copy to the attorney general and the division of homeland security and emergency services; § 1421(1)(c)(ii) adds access upon request (see Q06). Material modifications after annual review are published in the same manner (§ 1421(3)).",
+    "search": null
+  },
+  {
+    "n": 103,
+    "part": "B",
+    "id": "ny-ch699:Q15",
+    "status": "stated",
+    "passages": [
+      {
+        "source": "ny-s6953b",
+        "locator": "Proposed GBL § 1421(1)(a), p. 4, lines 10–12",
+        "quote": "Before deploying a frontier model, the large developer of such frontier model shall do all of the following: (a) Implement a written safety and security protocol",
+        "datasetClaim": "fl-us-ny-2025-safety-protocol-duty"
+      },
+      {
+        "source": "ny-s6953b",
+        "locator": "Proposed GBL § 1421(3), p. 4, line 38",
+        "quote": "industry best practices"
+      }
+    ],
+    "note": "Requires a developer’s written safety and security protocol. The annual review accounts for changes to model capabilities “and industry best practices” (§ 1421(3)). No code of practice or standard is named as a means of compliance, and no deemed-compliance provision was found.",
+    "search": null
+  },
+  {
+    "n": 104,
+    "part": "B",
+    "id": "ny-ch96:Q01",
+    "status": "stated",
+    "passages": [
+      {
+        "source": "ny-s8828",
+        "locator": "Bill text, § 2 (GBL § 1420(10) as re-added), p. 3, lines 53–55",
+        "quote": "\"Large frontier developer\" means a frontier developer that … collectively had annual gross revenues in excess … of five hundred million dollars in the preceding calendar year",
+        "datasetClaim": "fl-us-ny-ch96-changes-large-developer"
+      },
+      {
+        "source": "ny-s8828",
+        "locator": "Bill text, § 2 (GBL § 1420(8) as re-added), p. 3, line 41",
+        "quote": "\"Frontier developer\" means a person who has trained, or initiated"
+      }
+    ],
+    "note": "Two defined terms bear the duties: “frontier developer” (transparency report, incident reporting, statements) and “large frontier developer” (framework, internal-use summaries, disclosure statement under § 1428, penalties under § 1427). § 1426 excludes accredited colleges and universities engaged in academic research and the Empire AI consortium. Ellipses in quotes from this record skip omitted words or the printed line numbers.",
+    "search": null
+  },
+  {
+    "n": 105,
+    "part": "B",
+    "id": "ny-ch96:Q07",
+    "status": "stated",
+    "passages": [
+      {
+        "source": "ny-s8828",
+        "locator": "Bill text, § 2 (GBL § 1422(3)(a) as re-added), p. 6, lines 9–10",
+        "quote": "shall report any critical safety incident … to the office within seventy-two hours"
+      }
+    ],
+    "note": "Applies to all frontier developers. Seventy-two hours from a determination that an incident occurred or from learning facts sufficient for a reasonable belief that it occurred, to the office; twenty-four hours to an appropriate authority, including law enforcement or public safety agencies, where the incident poses an imminent risk of death or serious physical injury. Compliance through a designated federal standard is deemed compliance (§ 1422(9), see Q15).",
+    "search": null
+  },
+  {
+    "n": 106,
+    "part": "B",
+    "id": "cn-genai-measures:Q01",
+    "status": "stated",
+    "passages": [
+      {
+        "source": "cn-genai",
+        "locator": "Article 7 (第七条), chapeau",
+        "quote": "生成式人工智能服务提供者（以下称提供者）",
+        "translation": "providers of generative AI services (hereinafter 'providers')"
+      },
+      {
+        "source": "cn-genai",
+        "locator": "Article 22 (第二十二条), point (2)",
+        "quote": "包括通过提供可编程接口等方式提供生成式人工智能服务",
+        "translation": "including providing generative AI services by means such as providing programmable interfaces",
+        "datasetClaim": "fl-cn-genai-art22-provider-definition"
+      }
+    ],
+    "note": "The duties fall on 生成式人工智能服务提供者 (providers of generative AI services), defined in Article 22(2) as organisations and individuals that use generative AI technology to provide generative AI services, including through programmable interfaces. The Measures do not define a developer; they have no tiers. Some provisions (Article 4) address both provision and use; Article 22(3) defines users (使用者). Translations are Selekoa's working translations.",
+    "search": null
+  },
+  {
+    "n": 107,
+    "part": "B",
+    "id": "cn-genai-measures:Q14",
+    "status": "stated",
+    "passages": [
+      {
+        "source": "cn-genai",
+        "locator": "Article 16 (第十六条), first paragraph",
+        "quote": "网信、发展改革、教育、科技、工业和信息化、公安、广播电视、新闻出版等部门",
+        "translation": "the cyberspace, development and reform, education, science and technology, industry and information technology, public security, radio and television, press and publication and other departments"
+      }
+    ],
+    "note": "These departments strengthen the management of generative AI services 'according to their respective duties' (Article 16). Supervision and inspection (Article 19) and penalties (Article 21) are assigned to 'competent authorities' (有关主管部门) without further naming; Article 20 names the national cyberspace department (国家网信部门) for services provided from outside China.",
+    "search": null
+  },
+  {
+    "n": 108,
+    "part": "B",
+    "id": "us-eo14110:Q15",
+    "status": "stated",
+    "passages": [
+      {
+        "source": "us-eo14110",
+        "locator": "Sec. 4.2(a)(i)(C), 88 FR 75197",
+        "quote": "based on guidance developed by NIST pursuant to subsection 4.1(a)(ii) of this section"
+      }
+    ],
+    "note": "Refers to: the red-team results to be reported are those based on NIST guidance that Sec. 4.1(a)(ii) directs NIST to establish. Sec. 4.1(a)(i) also directs NIST companion resources to the AI Risk Management Framework and the Secure Software Development Framework. No developer framework is required or recognised.",
+    "search": null
+  },
+  {
+    "n": 109,
+    "part": "B",
+    "id": "us-bis-ifr:Q15",
+    "status": "stated",
+    "passages": [
+      {
+        "source": "us-bis-ifr",
+        "locator": "Supplement No. 10 to part 748, para. 14, 90 FR 4566 (PDF p. 23)",
+        "quote": "The VEU’s datacenters must be compliant with NIST 800–53"
+      },
+      {
+        "source": "us-bis-ifr",
+        "locator": "Supplement No. 10 to part 748, para. 15(a), 90 FR 4566 (PDF p. 23)",
+        "quote": "Ensure compliance with all best practices in the NSA cybersecurity information sheet"
+      },
+      {
+        "source": "us-bis-ifr",
+        "locator": "ECCN 4E091 Note 2.a.1, 90 FR 4579 (PDF p. 36)",
+        "quote": "technical opinions issued by the U.S. AI Safety Institute"
+      }
+    ],
+    "note": "Requires: VEU data centres, and facilities storing 4E091 weights under License Exception AIA, must comply with NIST 800–53 consistent with FedRAMP High and with the NSA sheet “Deploying AI Systems Securely”. May rely on: an exporter may self-classify for the 4E091 exclusion by relying on BIS guidance or technical opinions of the U.S. AI Safety Institute and the Department of Energy. No developer safety framework is referred to.",
+    "search": null
+  },
+  {
+    "n": 110,
+    "part": "B",
+    "id": "standing:eu-ai-act",
+    "statement": "Standing of Regulation (EU) 2024/1689 (Artificial Intelligence Act): provisions on general-purpose AI models, as amended by Regulation (EU) 2026/1744 where it touches them: A regulation adopted by the European Parliament and the Council.",
+    "passages": [
+      {
+        "source": "eu-ai-act",
+        "locator": "Enacting formula before the recitals",
+        "quote": "HAVE ADOPTED THIS REGULATION:",
+        "datasetClaim": "aia-enacted"
+      }
+    ],
+    "search": null
+  },
+  {
+    "n": 111,
+    "part": "B",
+    "id": "standing:eu-code-ss",
+    "statement": "Standing of General-Purpose AI Code of Practice, Safety and Security chapter (10 July 2025): A code that providers may rely on to demonstrate compliance with the Act; not binding in itself. Its commitments are those of signatories.",
+    "passages": [
+      {
+        "source": "eu-ai-act",
+        "locator": "Article 55(2), first sentence",
+        "quote": "may rely on codes of practice within the meaning of Article 56 to demonstrate compliance",
+        "datasetClaim": "aia-art55-code-reliance"
+      },
+      {
+        "source": "eu-cop-ss",
+        "locator": "Objectives, point A (p. 2)",
+        "quote": "adherence to the Code does not constitute conclusive evidence of compliance with these obligations under the AI Act",
+        "datasetClaim": "prov-eu-code-ss-adherence-not-conclusive"
+      },
+      {
+        "source": "eu-omnibus",
+        "locator": "Recital (41)",
+        "quote": "the codes of practice referred to in Article 50(7) and Article 56(6) have limited legal effect, and in particular do not grant a presumption of conformity",
+        "datasetClaim": "omni-art56-adequacy-assessment"
+      }
+    ],
+    "search": null
+  },
+  {
+    "n": 112,
+    "part": "B",
+    "id": "standing:ca-sb53",
+    "statement": "Standing of California SB 53 (Chapter 138, Statutes of 2025), Transparency in Frontier Artificial Intelligence Act: Approved and chaptered as Chapter 138, Statutes of 2025, according to the record’s structured action and chapter fields.",
+    "passages": [
+      {
+        "source": "ca-sb53",
+        "locator": "CAML record, caml:History, action APPROVED",
+        "quote": "APPROVED 2025-09-29"
+      }
+    ],
+    "search": null
+  },
+  {
+    "n": 113,
+    "part": "B",
+    "id": "standing:ny-ch699",
+    "statement": "Standing of New York RAISE Act as signed: S6953-B, Chapter 699 of 2025: Signed as Chapter 699 of 2025. The Chapter 96 bill's summary line states that it repeals and re-adds Article 44-B and amends section 3 of the 2025 chapter. The cells for this row record the text as signed.",
+    "passages": [
+      {
+        "source": "ny-s6953-assembly",
+        "locator": "Assembly bill record for S06953, Actions, entry 12/19/2025",
+        "quote": "SIGNED CHAP.699",
+        "datasetClaim": "fl-us-ny-s6953b-signed-chapter-699"
+      },
+      {
+        "source": "ny-s8828",
+        "locator": "Summary line (the page as served on 2026-11-01 shows \"??\" where the section signs stand; the fragments are joined around them)",
+        "quote": "Rpld & add Art 44-B … amd … Chap of 2025",
+        "datasetClaim": "ny-chapter96-signed (same wording, quoted in fragments)"
+      }
+    ],
+    "search": null
+  },
+  {
+    "n": 114,
+    "part": "B",
+    "id": "standing:ny-ch96",
+    "statement": "Standing of New York RAISE Act as amended: S8828 / A9449, Chapter 96 of 2026: Signed as Chapter 96 of 2026.",
+    "passages": [
+      {
+        "source": "ny-s8828",
+        "locator": "Actions list, final entry",
+        "quote": "SIGNED CHAP.96",
+        "datasetClaim": "ny-chapter96-signed"
+      }
+    ],
+    "search": null
+  },
+  {
+    "n": 115,
+    "part": "B",
+    "id": "standing:cn-genai-measures",
+    "statement": "Standing of 生成式人工智能服务管理暂行办法 (Interim Measures for the Management of Generative Artificial Intelligence Services), 2023: Promulgated by joint order No. 15 of seven authorities (the order's heading names the Cyberspace Administration of China first).",
+    "passages": [
+      {
+        "source": "cn-genai",
+        "locator": "Order text, first paragraph, last clause",
+        "quote": "现予公布，自2023年8月15日起施行",
+        "translation": "are hereby promulgated and take effect from 15 August 2023 (Selekoa's working translation)",
+        "datasetClaim": "cn-genai-measures-issued"
+      }
+    ],
+    "search": null
+  },
+  {
+    "n": 116,
+    "part": "B",
+    "id": "standing:cn-labelling-measures",
+    "statement": "Standing of 人工智能生成合成内容标识办法 (Measures for Labelling AI-Generated Synthetic Content), 2025: Issued by notice of four authorities (the issuing-authority field lists 国家网信办, 工业和信息化部, 公安部 and 广电总局).",
+    "passages": [
+      {
+        "source": "cn-labelling",
+        "locator": "Page header, document number field (发文字号)",
+        "quote": "国信办通字〔2025〕2号",
+        "translation": "document number Guo Xin Ban Tong Zi [2025] No. 2"
+      }
+    ],
+    "search": null
+  },
+  {
+    "n": 117,
+    "part": "B",
+    "id": "standing:us-eo14110",
+    "statement": "Standing of Executive Order 14110 (30 October 2023), section 4.2 and related provisions: Revoked by Executive Order 14148 of 20 January 2025. A historical row.",
+    "passages": [
+      {
+        "source": "us-eo14148",
+        "locator": "Sec. 2(ggg), 90 FR 8240",
+        "quote": "(ggg) Executive Order 14110 of October 30, 2023 (Safe, Secure, and Trustworthy Development and Use of Artificial Intelligence).",
+        "datasetClaim": "fl-us-eo14110-revoked"
+      },
+      {
+        "source": "us-eo14148",
+        "locator": "Sec. 2, 90 FR 8237",
+        "quote": "The following executive actions are hereby revoked:",
+        "datasetClaim": "fl-us-eo14110-revoked"
+      }
+    ],
+    "search": null
+  },
+  {
+    "n": 118,
+    "part": "B",
+    "id": "standing:us-bis-ifr",
+    "statement": "Standing of Framework for Artificial Intelligence Diffusion (BIS interim final rule, 90 FR 4544, 15 January 2025): An interim final rule. The Department of Commerce announced a rescission; no Federal Register rule formalising it was inspected, so the rule's formal status after May 2025 is not recorded here. The press release was read as served on 2026-11-01.",
+    "passages": [
+      {
+        "source": "us-bis-ifr",
+        "locator": "90 FR 4544, ACTION line",
+        "quote": "ACTION: Interim final rule; request for comments.",
+        "datasetClaim": "fl-us-bis-ai-diffusion-ifr-published"
+      },
+      {
+        "source": "bis-rescission",
+        "locator": "Press release, first paragraph",
+        "quote": "announced a rescission of the Biden Administration’s AI Diffusion Rule"
+      },
+      {
+        "source": "bis-rescission",
+        "locator": "Press release, later paragraph",
+        "quote": "BIS plans to publish a regulation formalizing the rescission"
+      }
+    ],
+    "search": null
+  },
+  {
+    "n": 119,
+    "part": "B",
+    "id": "finding:uk-no-binding-instrument",
+    "statement": "No UK law or other binding instrument placing duties on developers of frontier or general-purpose AI models was located. The 2024 King's Speech said the government would seek such legislation; the 2026 briefing notes contain none of the searched terms; the memoranda with developers state that they are not legally binding; and title searches of legislation.gov.uk for 2023–2026 found one instrument with \"artificial intelligence\" in its title, which places a duty on the Information Commissioner, not on developers.",
+    "passages": [
+      {
+        "source": "uk-ks2024",
+        "locator": "Speech text, after the Employment Rights Bill item",
+        "quote": "It will seek to establish the appropriate legislation to place requirements on those working to develop the most powerful artificial intelligence models.",
+        "datasetClaim": "fl-uk-kings-speech-2024-frontier-legislation"
+      },
+      {
+        "source": "uk-mou-openai",
+        "locator": "Final paragraph",
+        "quote": "This memorandum is voluntary, not legally binding, and without prejudice to any binding agreements.",
+        "datasetClaim": "fl-uk-openai-mou-not-binding"
+      },
+      {
+        "source": "uk-si-2026-425",
+        "locator": "Regulation 2(1)",
+        "quote": "The Commissioner must prepare an appropriate code of practice giving guidance as to good practice in the processing of personal data"
+      }
+    ],
+    "search": {
+      "read": "King's Speech 2026 background briefing notes (whole PDF, 39,000 words); legislation.gov.uk Atom feeds for all legislation with \"artificial intelligence\" in the title, years 2023, 2024, 2025 and 2026, and with \"frontier\" in the title, same years; the one instrument found (SI 2026/425), whole text as made.",
+      "terms": [
+        "frontier",
+        "most powerful",
+        "AI Bill",
+        "Artificial Intelligence Bill",
+        "artificial intelligence",
+        "\\bAI\\b"
+      ],
+      "setAside": [
+        {
+          "locator": "King's Speech 2026 notes, PDF p. 126 (Cyber Security and Resilience Bill item)",
+          "reason": "Mentions AI models' cyber capabilities and the AI Security Institute; places no duty on AI developers in the passage read. The Cyber Security and Resilience Bill is a bill, not law, and its text was not inspected."
+        },
+        {
+          "locator": "SI 2026/425, regulation 2",
+          "reason": "Requires the Information Commissioner to prepare a code of practice on personal-data processing in developing and using AI; the duty falls on the Commissioner, and the code is guidance."
+        },
+        {
+          "locator": "Legislation title search \"frontier\", 2023–2026",
+          "reason": "No entries."
+        }
+      ]
+    }
+  },
+  {
+    "n": 120,
+    "part": "B",
+    "id": "finding:us-federal-other",
+    "statement": "Apart from the two rows, the federal texts on the frameworks-and-law page place no binding duty on developers: Executive Order 14409 of 2 June 2026 provides for a voluntary access framework and states that it authorises no licensing requirement; the others are executive orders directing agencies, voluntary commitments, guidance, a policy plan or proposals.",
+    "passages": [
+      {
+        "source": "us-eo14409",
+        "locator": "Sec. 3(c), 91 FR 34566",
+        "quote": "Nothing in this section shall be construed to authorize the creation of a mandatory governmental licensing, preclearance, or permitting requirement",
+        "datasetClaim": "fl-us-eo14409-no-licensing"
+      }
+    ],
+    "search": null
+  },
+  {
+    "n": 121,
+    "part": "B",
+    "id": "excluded:cn-gb-45438-2025",
+    "statement": "Excluded: A mandatory national standard (GB, not GB/T) on labelling methods for AI-generated content, in force from 1 September 2025 according to its catalogue entry. Its text is offered only through an online viewer and was not retrieved, so no cell can quote it; the labelling-measures row records any reference to standards.",
+    "passages": [
+      {
+        "source": "cn-gb45438",
+        "locator": "Catalogue entry, field 实施日期",
+        "quote": "实施日期 2025-09-01",
+        "translation": "implementation date 2025-09-01"
+      }
+    ],
+    "search": null
+  },
+  {
+    "n": 122,
+    "part": "B",
+    "id": "excluded:cn-cybersecurity-law-amendment-2025",
+    "statement": "Excluded: Binding, but its added article on AI states what the state supports and strengthens; it places no duty on developers in the text read.",
+    "passages": [
+      {
+        "source": "cn-csl",
+        "locator": "Point 3 (三), added Article 20, first paragraph, first two clauses",
+        "quote": "国家支持人工智能基础理论研究和算法等关键技术研发",
+        "translation": "The state supports basic theoretical research in artificial intelligence and research and development of key technologies such as algorithms (Selekoa's working translation)",
+        "datasetClaim": "fl-cn-csl-art20-ai"
+      }
+    ],
+    "search": null
+  }
+]

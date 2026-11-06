@@ -13,6 +13,12 @@ import {
 import type { Entity } from '../domain/schema';
 import { CopyLink } from './ReferenceActions';
 import { ArchiveLink } from './SourceArchive';
+import { cardDeveloper, cardEditions } from '../domain/model-cards-view';
+import { modelCardsFrame } from '../reading/model-cards-frame';
+import {
+  lawsComparedId,
+  lawsComparedTitle,
+} from '../reading/laws-compared-page';
 import { quoted } from './quote';
 import './reading-first.css';
 import './framework-comparison.css';
@@ -33,6 +39,10 @@ type Props = {
   /** Frameworks shown side by side, as in the address; null when not chosen. */
   frameworks: string[] | null;
   onFrameworks: (frameworks: string[] | null) => void;
+  /** Opens Model cards compared at one developer's cards. */
+  onCards?: (developer: string) => void;
+  /** Opens Laws compared. */
+  onLaws?: () => void;
 };
 
 type Layout = 'table' | 'side' | 'question';
@@ -70,6 +80,8 @@ function Cell({
   | 'onEditions'
   | 'frameworks'
   | 'onFrameworks'
+  | 'onCards'
+  | 'onLaws'
 > & {
   editionId: string;
   facetId: string;
@@ -262,6 +274,48 @@ export function FrameworkComparison(props: Props) {
       facet: facetId,
       editions: editions.length ? editions : undefined,
     });
+  // The cards of Model cards compared that cite each edition.
+  const shownCards = new Set(modelCardsFrame.cards);
+  const citedBy = new Map<string, Entity[]>();
+  for (const [card, cited] of cardEditions(
+    repository.data,
+    collection.families,
+  ))
+    if (shownCards.has(card))
+      for (const edition of cited)
+        citedBy.set(edition, [
+          ...(citedBy.get(edition) ?? []),
+          repository.entities.get(card)!,
+        ]);
+  const cardsCiting = (editionId: string) => {
+    const cards = citedBy.get(editionId) ?? [];
+    return cards.length ? (
+      <span className="cmp-cited-by">
+        Model cards citing this edition:{' '}
+        {cards.map((card, i) => {
+          const developer = cardDeveloper(repository.data, card).id;
+          return (
+            <span key={card.id}>
+              {i > 0 && ', '}
+              <NavLink
+                href={referencePath({
+                  kind: 'compare',
+                  id: modelCardsFrame.id,
+                  developer,
+                })}
+                onOpen={() => {
+                  props.onCards?.(developer);
+                  window.scrollTo(0, 0);
+                }}
+              >
+                {card.shortName ?? card.name}
+              </NavLink>
+            </span>
+          );
+        })}
+      </span>
+    ) : null;
+  };
   const sourceOf = (editionId: string) =>
     repository.data.sources.find((s) => s.documentId === editionId);
   const editionLinks = (editionId: string) => {
@@ -304,6 +358,7 @@ export function FrameworkComparison(props: Props) {
                   <span className="cmp-edition-links">
                     {editionLinks(c.edition.id)}
                   </span>
+                  {cardsCiting(c.edition.id)}
                 </th>
               ))}
             </tr>
@@ -395,6 +450,17 @@ export function FrameworkComparison(props: Props) {
         </p>
         <p className="doc-intro">
           {collection.question} {collection.introduction}
+        </p>
+        <p className="cmp-hint">
+          <NavLink
+            href={referencePath({ kind: 'compare', id: lawsComparedId })}
+            onOpen={() => {
+              props.onLaws?.();
+              window.scrollTo(0, 0);
+            }}
+          >
+            How laws treat the same questions: {lawsComparedTitle} →
+          </NavLink>
         </p>
       </header>
       <section className="cmp-controls" aria-label="Choose what to compare">
@@ -546,6 +612,7 @@ export function FrameworkComparison(props: Props) {
                 <p className="cmp-edition-links">
                   {editionLinks(c.edition.id)}
                 </p>
+                {cardsCiting(c.edition.id)}
                 <Cell
                   {...props}
                   editionId={c.edition.id}

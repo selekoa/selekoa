@@ -10,7 +10,10 @@ export function documentSequence(
   claims: Claim[],
 ): Entity[] | null {
   // A commitment text or law that a family edition explicitly links itself
-  // to stays outside the sequence; any other second family means no sequence.
+  // to, and a document of another family (or of none) that cites an edition,
+  // such as a model card citing its framework (2026-11-03), stay outside the
+  // sequence; any other second family means no sequence.
+  const byId = new Map(entities.map((e) => [e.id, e]));
   const linked = new Set(
     claims
       .filter(
@@ -19,6 +22,13 @@ export function documentSequence(
       )
       .map((c) => (c.object.kind === 'entity' ? c.object.entityId : '')),
   );
+  for (const c of claims)
+    if (c.predicate === 'cites' && c.object.kind === 'entity') {
+      const cited = byId.get(c.object.entityId)?.documentVersion;
+      const citing = byId.get(c.subject);
+      if (cited && citing && citing.documentVersion?.family !== cited.family)
+        linked.add(c.subject);
+    }
   const docs = entities.filter((e) => e.documentVersion && !linked.has(e.id));
   if (
     docs.length < 3 ||
@@ -26,7 +36,11 @@ export function documentSequence(
   )
     return null;
   const publishers = new Set(docs.map((e) => e.documentVersion!.publisherId));
-  if (entities.some((e) => !e.documentVersion && !publishers.has(e.id)))
+  if (
+    entities.some(
+      (e) => !e.documentVersion && !publishers.has(e.id) && !linked.has(e.id),
+    )
+  )
     return null;
   const ids = new Set(docs.map((e) => e.id));
   const next = new Map<string, string>(),

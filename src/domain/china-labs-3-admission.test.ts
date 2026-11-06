@@ -1,5 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import pack from '../../research/china-labs-3/pack.json';
+import corrections from '../../review/corrections-2026-11-06-before-2026-11-06.json';
 import map from '../../review/china-labs-3-admission-map-2026-10-31.json';
 import part1 from '../../review/china-labs-3-admission-1-before-2026-10-31.json';
 import part2 from '../../review/china-labs-3-admission-2-before-2026-10-31.json';
@@ -20,8 +21,12 @@ describe('the third Chinese institutions collection (admitted 2026-10-31)', () =
         .filter((id) => !(id in map.holds))
         .sort(),
     );
+    // The corrections of 2026-11-06 admitted the two Tencent statements,
+    // held only for a date, once their filing dated them.
     for (const id of Object.keys(map.holds))
-      expect(repository.claims.has(id)).toBe(false);
+      expect(repository.claims.has(id)).toBe(
+        corrections.added.claims.includes(id),
+      );
     for (const c of admitted) {
       expect(c.editorialState).toBe('seed');
       for (const e of evidenceOf(c.id)) {

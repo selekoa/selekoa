@@ -57,6 +57,7 @@ const families: Record<Predicate, RelationFamily> = {
   articulates_proposition: 'intellectual',
   contests_proposition: 'intellectual',
   bears_on_proposition: 'intellectual',
+  states_prediction: 'intellectual',
   reports_evaluation_of: 'governance',
   states_evaluation_result: 'governance',
   applies_framework: 'governance',

@@ -1,5 +1,6 @@
 import type { PropositionsCollection } from '../domain/propositions';
 import { superintelligenceFrame as frame } from './proposition-frames';
+import { describeGroups } from './describe-groups';
 
 /** The maintainer's decisions of 2026-11-02 on the earliest-located re-check (decisions 1 to 4). */
 const recheckDecisions = '2026-11-02';
@@ -9,6 +10,9 @@ const recheckWithdrawn = '2026-11-02';
 
 /** The maintainer's decision on the pre-launch audit (PA-01, PA-02). */
 const withdrawn = '2026-11-02';
+
+/** The admission of the antecedent-texts collection, with the maintainer's decision 5a. */
+const antecedents = '2026-11-04';
 
 const found = '2026-10-06';
 const candidates = 'the 1996–2022 candidate search';
@@ -21,10 +25,14 @@ export const superintelligencePropositions: PropositionsCollection = {
   editorialStatus: frame.editorialStatus,
   introduction:
     'Each proposition has one criterion. A text that meets it articulates the proposition. A text that disputes it, or a premise it depends on, contests it. A text that comes close bears on it, and its record names what is missing. Every record links to the passage it rests on and gives the text’s register: fiction, satire, a dream frame or a relay of another author is labelled. Texts are listed in date order. The order records no influence between them.',
-  groups: frame.groups,
+  groups: describeGroups(frame.groups, {
+    A: 'Propositions that machine intelligence could rise, or be raced towards, much faster than earlier technological change.',
+    B: 'Propositions that what people can observe of a capable system, or their means of directing it, may stop being adequate as the system becomes more capable.',
+    C: 'Three propositions kept apart from B5, B2 and A6, whose criteria are narrower. They were looked for only before mid-1996.',
+  }),
   searchNote: {
     scope:
-      'The collection records what located texts from 1863 to 2022 say about the propositions below; texts to 2025 on two of them (A4 and B1) come from the collection on catastrophic risk, which shares them. “Earliest located” means the earliest text found by the searches below. It is not a claim that no earlier text exists.',
+      'The collection records what located texts from 1863 to 2022 say about the propositions below; texts to 2025 on two of them (A4 and B1) come from the collection on catastrophic risk, which shares them. One earlier text, Descartes’s Discours de la méthode (1637), is recorded on C1 as context. “Earliest located” means the earliest text found by the searches below. It is not a claim that no earlier text exists.',
     venues: [
       {
         period: '1863 to mid-1996',
@@ -37,6 +45,12 @@ export const superintelligencePropositions: PropositionsCollection = {
           'Vernor Vinge’s 1983 Omni column and 1993 NASA proceedings paper; Hans Moravec (1979, 1989); K. Eric Drexler’s Engines of Creation (1986, read in the 1997 web edition) and 1995 forecast.',
           'Extropy magazine, issues 7–16 (1991–1996): selected articles.',
           'Usenet: ten bundles of the Carnegie Mellon comp.ai and comp.ai.philosophy archives (3,901 files) and one relayed sci.nanotech post.',
+        ],
+      },
+      {
+        period: 'Antecedent texts, 1637 to 1951',
+        items: [
+          'The searches for the collection of antecedent texts (2026-11-02 to 2026-11-04) read Descartes’s Discours de la méthode in page images of the 1637 edition, Jefferson’s Lister Oration in the British Medical Journal of 25 June 1949, Turing’s lecture of about 1951 and Čapek’s R.U.R. in its English version (1923). Their records on B6, C1 and C3 are shown here, with Wiener’s Cybernetics (1948, wording attested 2019) on C3. Descartes’s text is shown on C1 as context; it is the only text here before 1863.',
         ],
       },
       {
@@ -65,14 +79,14 @@ export const superintelligencePropositions: PropositionsCollection = {
       'The Extropians list before 1996-07-25, from 1991, is not in the public archive used and was not searched.',
       'HathiTrust full-text search and the Google Books API refused scripted requests on 2026-10-06 (HTTP 403 and 429), so neither library was searched.',
       'Good’s 1965 chapter cites three earlier texts by Good for the explosion argument: a 1951 review of a book by D. R. Hartree, an IBM report of 1959 (RC-115) and “The social implications of artificial intelligence” (The Scientist Speculates, 1962–63). None was retrieved, nor were Good’s talks and drafts of 1962–64.',
-      'The search before 1863 used Butler’s own wording, so it could not find earlier statements in other words.',
+      'The search before 1863 used Butler’s own wording, so it could not find earlier statements in other words. The searches for the antecedent texts later found Descartes’s Discours de la méthode (1637) on C1, recorded as context.',
       'Google Groups refused requests (HTTP 429), and Usenet beyond the ten Carnegie Mellon bundles was not searched.',
       'LessWrong and the Alignment Forum were not searched in full text; comments and linked posts were not read.',
       'Bostrom’s Superintelligence (2014), which later texts credit for the term “treacherous turn”, was not read in a legally accessible copy. Christiano’s ai-alignment.com posts (2016–2018) were not searched.',
       'Moravec’s Mind Children (1988) and the 1986 printing of Engines of Creation were not obtained.',
       'Many texts survive only in later versions: reprints marked as changed, archive captures and posts edited after posting. Each record names the version checked.',
       'B6 and C1–C3 were looked for only before mid-1996, so no most-developed text is named for them.',
-      'Fiction was not surveyed. Erewhon is the only novel recorded.',
+      'Fiction was not surveyed. Erewhon is the only novel recorded; Čapek’s play R.U.R. (English version, 1923) is recorded on B6 from the searches for the antecedent texts.',
     ],
     corrections:
       'A text found later that is earlier than the earliest located text becomes the new earliest located text. The earlier headline stays on record as a correction.',
@@ -255,6 +269,19 @@ export const superintelligencePropositions: PropositionsCollection = {
       claimIds: ['ts-c1-weizenbaum-1966', 'ts-c1-michie-1968'],
       recordedAt: recheckDecisions,
     },
+    {
+      propositionId: 'behavioural-tests-as-evidence',
+      replaced:
+        'Weizenbaum’s ELIZA article (January 1966), headlined as earliest located.',
+      reason:
+        'Earlier text found on 2026-11-04: Jefferson’s Lister Oration, published in the BMJ on 25 June 1949, says that a machine that typewrites its answers may seem to have learned to write when it does no more than telegraphic systems already do. Descartes’s Discours de la méthode (1637) is earlier and is shown as context: he holds that two tests would always tell such machines from people. A second check by a model of another family read Descartes as meeting the criterion for narrower probes; the maintainer chose Jefferson, and C1’s criterion now says that a text holding a behavioural test reliable does not meet it.',
+      claimIds: [
+        'pre-c1-jefferson-1949',
+        'ts-c1-weizenbaum-1966',
+        'pre-c1-descartes-1637-context',
+      ],
+      recordedAt: antecedents,
+    },
   ],
   limits: [
     '“Earliest located” means the earliest text found by the searches described under “How we searched”. It is not a claim that no earlier text exists.',
@@ -271,6 +298,32 @@ export const superintelligencePropositions: PropositionsCollection = {
         propositionId: 'vast-superiority',
         relation:
           'A different claim in the collection on machine succession, scale and acceleration: the size of the eventual gap, whatever its route.',
+      },
+      {
+        propositionId: 'technological-singularity',
+        relation:
+          'A different claim in the collection of antecedent texts: a point beyond which human affairs could not continue or be foreseen.',
+      },
+    ],
+    'fast-or-hard-takeoff': [
+      {
+        propositionId: 'technological-singularity',
+        relation:
+          'A claim in the collection of antecedent texts that requires no stated speed: a point beyond which human affairs could not continue or be foreseen.',
+      },
+    ],
+    'control-or-purpose-specification': [
+      {
+        propositionId: 'machines-only-do-what-they-are-ordered',
+        relation:
+          'A different claim in the collection of antecedent texts: that a machine can only do what it is ordered to do. Some texts contest it in order to argue B6.',
+      },
+    ],
+    'behavioural-tests-as-evidence': [
+      {
+        propositionId: 'machines-could-think',
+        relation:
+          'A wider claim in the collection of antecedent texts: that a machine could think. A text can contest it on the ground C1 states.',
       },
     ],
     'competition-defeats-restraint': [

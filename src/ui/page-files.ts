@@ -25,11 +25,14 @@ export const pageCode: Record<string, string[]> = {
 
 /**
  * Page code for one address, where it differs from its first segment's: a
- * guided reading that loads only its own component.
+ * page that loads only its own component.
  */
 export const pageCodeById: Record<string, string[]> = {
   'guide/ai-compute-2023-2026': ['ComputeBuildout'],
   'control/side-by-side': ['ControlTimelines'],
+  'compare/model-cards': ['ModelCards'],
+  'compare/laws-compared': ['LawsCompared'],
+  'predictions/predictions-on-record': ['Predictions'],
 };
 
 /** The page code of a path, by name. */
@@ -45,6 +48,7 @@ export function pageCodeOf(path: string) {
  * (src/reading/proposition-loaders.ts).
  */
 export const propositionModules: Record<string, string> = {
+  'antecedent-texts': 'src/reading/antecedent-texts.ts',
   superintelligence: 'src/reading/superintelligence.ts',
   'risk-debate': 'src/reading/risk-debate.ts',
   'yudkowsky-arguments': 'src/reading/yudkowsky-arguments.ts',

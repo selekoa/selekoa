@@ -123,6 +123,33 @@ export const pageTypes: PageType[] = [
     data: [slice('/compare/frontier-safety-frameworks')],
     limitKb: 520,
   },
+  // Set at release 0.29.0 (review/model-cards-page-2026-11-04.md), about 10%
+  // above its first measured weight.
+  {
+    name: 'Model cards',
+    path: '/compare/model-cards',
+    modules: [...workspace, ...core, 'src/ui/ModelCards.tsx'],
+    data: [slice('/compare/model-cards')],
+    limitKb: 330,
+  },
+  // Set at release 0.30.0 (review/laws-compared-admission-2-2026-11-05.md),
+  // about 10% above its first measured weight.
+  {
+    name: 'Laws compared',
+    path: '/compare/laws-compared',
+    modules: [...workspace, ...core, 'src/ui/LawsCompared.tsx'],
+    data: [slice('/compare/laws-compared')],
+    limitKb: 320,
+  },
+  // Set at release 0.31.0 (review/predictions-admission-2026-11-05.md),
+  // about 10% above its first measured weight.
+  {
+    name: 'Predictions',
+    path: '/predictions/predictions-on-record',
+    modules: [...workspace, ...core, 'src/ui/Predictions.tsx'],
+    data: [slice('/predictions/predictions-on-record')],
+    limitKb: 275,
+  },
   {
     name: 'Guide',
     path: '/guide/frontier-frameworks-and-law',

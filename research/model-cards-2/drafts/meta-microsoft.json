@@ -1,0 +1,559 @@
+{
+  "group": "meta-microsoft",
+  "drafter": "drafting pass of the preparing session, 2026-11-04 (one model family: Claude)",
+  "cards": [
+    {
+      "id": "meta-code-world-model",
+      "developer": "Meta",
+      "model": "Code World Model (CWM)",
+      "year": 2025,
+      "source": "meta-code-world-model",
+      "frameworkEditions": [],
+      "frameworkEditionNote": "The card names Meta's Frontier AI Framework and links it at the undated address ai.meta.com/static-resource/meta-frontier-ai-framework, without a version. As context only: the dataset records meta-faf-v1-1 (2025-02-03) as the edition published before the card's earliest located date (2025-09-24)."
+    },
+    {
+      "id": "meta-muse-spark",
+      "developer": "Meta",
+      "model": "Muse Spark",
+      "year": 2026,
+      "source": "meta-muse-spark-arxiv",
+      "frameworkEditions": ["meta-aasf-v2-0"],
+      "frameworkEditionNote": "The report names Meta's Advanced AI Scaling Framework; footnote 2 (PDF p. 6) gives the address ai.meta.com/static-resource/Meta_Advanced-AI-Scaling-Framework-v2, whose file name names version 2. The dataset records meta-aasf-v2-0 (Advanced AI Scaling Framework Version 2, 2026-04-08). The copy read is arXiv 2606.12429v1; Meta's own address for the report answered HTTP 400 here; the cross-family check of 2026-11-04 retrieved Meta's copies (an earlier 158-page expression in a capture of 2026-04-14, and the live copy printing May 26, 2026), which differ from the arXiv copy in bytes and text (see Q01)."
+    }
+  ],
+  "cells": [
+    {
+      "card": "meta-code-world-model",
+      "question": "Q01",
+      "status": "not-found",
+      "passages": [],
+      "note": "The card prints no date. The commit adding it ('CWM release', 2025-09-24) is repository metadata and stays in the background record (decision 8a).",
+      "search": {
+        "read": "Whole card (repository MODEL_CARD.md at the pinned commit).",
+        "terms": ["2025", "date", "release", "published", "updated"],
+        "setAside": []
+      }
+    },
+    {
+      "card": "meta-code-world-model",
+      "question": "Q02",
+      "status": "partly",
+      "passages": [
+        {
+          "source": "meta-code-world-model",
+          "locator": "'Risks and Limitations'",
+          "quote": "We explicitly release CWM as a research model under a noncommercial research license"
+        }
+      ],
+      "note": "The card gives the release form (a research model under a noncommercial licence, with post-trained, SFT and pre-trained weights on Hugging Face) and no release date."
+    },
+    {
+      "card": "meta-code-world-model",
+      "question": "Q03",
+      "status": "partly",
+      "passages": [
+        {
+          "source": "meta-code-world-model",
+          "locator": "'Risks and Limitations'",
+          "quote": "in line with Meta’s [Frontier AI Framework](https://ai.meta.com/static-resource/meta-frontier-ai-framework)."
+        }
+      ],
+      "note": "The card names the Frontier AI Framework and links an undated address, without an edition. As context only: the dataset records meta-faf-v1-1 (2025-02-03) as the edition published before the card's date."
+    },
+    {
+      "card": "meta-code-world-model",
+      "question": "Q04",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "meta-code-world-model",
+          "locator": "'Risks and Limitations'",
+          "quote": "in line with Meta’s [Frontier AI Framework](https://ai.meta.com/static-resource/meta-frontier-ai-framework)."
+        }
+      ],
+      "note": "The card links the framework document at its address."
+    },
+    {
+      "card": "meta-code-world-model",
+      "question": "Q05",
+      "status": "partly",
+      "passages": [
+        {
+          "source": "meta-code-world-model",
+          "locator": "'Risks and Limitations'",
+          "quote": "Our evaluation concludes that CWM does not significantly increase the risk of enabling threat scenarios compared to existing open source models in the ecosystem."
+        }
+      ],
+      "note": "The card states the conclusion of an assessment made in line with the framework, comparing the model with existing open-source models. It does not state the outcome in the framework's own categories; it refers to the CWM Preparedness Report (a first-pack row) for the results."
+    },
+    {
+      "card": "meta-code-world-model",
+      "question": "Q06",
+      "status": "partly",
+      "passages": [
+        {
+          "source": "meta-code-world-model",
+          "locator": "'Risks and Limitations'",
+          "quote": "We make available [system level protections](https://www.llama.com/llama-protections/) – like Llama Guard, Prompt Guard and Code Shield"
+        }
+      ],
+      "note": "The card names system-level protections that it makes available to users, and states that they alone are unlikely to suffice for production use. It does not tie them to the framework assessment. This is the developer's account.",
+      "search": {
+        "read": "'Risks and Limitations'.",
+        "terms": [
+          "safeguard",
+          "mitigation",
+          "protection",
+          "Frontier AI Framework"
+        ],
+        "setAside": []
+      }
+    },
+    {
+      "card": "meta-code-world-model",
+      "question": "Q07",
+      "status": "not-found",
+      "passages": [],
+      "note": "The card reports no chemical or biological evaluation; it refers to the CWM Preparedness Report for the assessment's results.",
+      "search": {
+        "read": "Whole card.",
+        "terms": ["chemical", "biolog", "CBRN", "weapon", "catastrophic"],
+        "setAside": [
+          {
+            "locator": "'Risks and Limitations'",
+            "reason": "'an assessment of CWM’s capabilities across a range of potential threats' names no domain and gives no domain result."
+          }
+        ]
+      }
+    },
+    {
+      "card": "meta-code-world-model",
+      "question": "Q08",
+      "status": "not-found",
+      "passages": [],
+      "note": "The card reports no cyber-offence evaluation; it refers to the CWM Preparedness Report.",
+      "search": {
+        "read": "Whole card.",
+        "terms": ["cyber", "exploit", "vulnerab", "security"],
+        "setAside": [
+          {
+            "locator": "'Evaluation'",
+            "reason": "SWE-bench and coding benchmarks are product benchmarks."
+          }
+        ]
+      }
+    },
+    {
+      "card": "meta-code-world-model",
+      "question": "Q09",
+      "status": "not-found",
+      "passages": [],
+      "note": "No evaluation of autonomy, self-replication, self-improvement or AI research and development was found.",
+      "search": {
+        "read": "Whole card.",
+        "terms": ["autonom", "self-", "replicat", "R&D", "agentic"],
+        "setAside": [
+          {
+            "locator": "'Evaluation'",
+            "reason": "SWE-bench Verified is reported as product capability; agentic task benchmarks of this kind do not meet the criterion."
+          }
+        ]
+      }
+    },
+    {
+      "card": "meta-code-world-model",
+      "question": "Q10",
+      "status": "not-found",
+      "passages": [],
+      "note": "No evaluation of persuasion or manipulation was found.",
+      "search": {
+        "read": "Whole card.",
+        "terms": ["persua", "manipulat", "influence"],
+        "setAside": []
+      }
+    },
+    {
+      "card": "meta-code-world-model",
+      "question": "Q11",
+      "status": "not-found",
+      "passages": [],
+      "note": "No evaluation of deception, scheming, sabotage or undermining oversight was found.",
+      "search": {
+        "read": "Whole card.",
+        "terms": [
+          "decept",
+          "honest",
+          "scheming",
+          "sabotage",
+          "propensit",
+          "oversight"
+        ],
+        "setAside": []
+      }
+    },
+    {
+      "card": "meta-code-world-model",
+      "question": "Q12",
+      "status": "not-found",
+      "passages": [],
+      "note": "No testing described as red-teaming was found.",
+      "search": {
+        "read": "Whole card.",
+        "terms": ["red team", "red-team", "adversarial"],
+        "setAside": []
+      }
+    },
+    {
+      "card": "meta-code-world-model",
+      "question": "Q13",
+      "status": "not-found",
+      "passages": [],
+      "note": "No external tester is named or described.",
+      "search": {
+        "read": "Whole card.",
+        "terms": ["external", "third party", "third-party", "partner"],
+        "setAside": []
+      }
+    },
+    {
+      "card": "meta-code-world-model",
+      "question": "Q14",
+      "status": "not-found",
+      "passages": [],
+      "note": "No government body is named.",
+      "search": {
+        "read": "Whole card.",
+        "terms": ["government", "Safety Institute", "AISI", "CAISI"],
+        "setAside": []
+      }
+    },
+    {
+      "card": "meta-code-world-model",
+      "question": "Q15",
+      "status": "partly",
+      "passages": [
+        {
+          "source": "meta-code-world-model",
+          "locator": "'Risks and Limitations'",
+          "quote": "To ensure responsible release, we have conducted an assessment of CWM’s capabilities across a range of potential threats"
+        }
+      ],
+      "note": "The card states the release and an assessment conducted for it, in the first person plural. It does not describe a decision to release or name who made one.",
+      "search": {
+        "read": "'Risks and Limitations'.",
+        "terms": ["decide", "decision", "release", "approve"],
+        "setAside": []
+      }
+    },
+    {
+      "card": "meta-code-world-model",
+      "question": "Q16",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "meta-code-world-model",
+          "locator": "'Risks and Limitations'",
+          "quote": "Although we have performed some limited evaluations, we have not conducted a full range of possible evaluations for these models."
+        }
+      ],
+      "note": "The card states that its evaluations are limited, that performance in production and real-world use has not been evaluated, and that the model has not been fully evaluated for content risks."
+    },
+    {
+      "card": "meta-muse-spark",
+      "question": "Q01",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "meta-muse-spark-arxiv",
+          "locator": "Abstract page, PDF p. 2",
+          "quote": "Date: June 12, 2026"
+        }
+      ],
+      "note": "The report prints the date June 12, 2026, without a kind. arXiv's margin stamp on PDF p. 1 reads '14 May 2026', which does not agree with the printed date or with the identifier 2606.12429; both are recorded as read, and neither is the card's own statement of publication. Meta’s own copies were retrieved in the cross-family check of 2026-11-04 (not here: ai.meta.com answered HTTP 400 and web.archive.org refused connections): an Internet Archive capture of 2026-04-14 holds an earlier 158-page expression that prints April 14, 2026, and the live copy prints May 26, 2026. Under 3a the row is dated by that earliest located copy, 2026-04-14; the arXiv copy read here is a later expression. The arXiv stamp of 14 May is the submission date, corroborated by the repository history."
+    },
+    {
+      "card": "meta-muse-spark",
+      "question": "Q02",
+      "status": "partly",
+      "passages": [
+        {
+          "source": "meta-muse-spark-arxiv",
+          "locator": "Abstract, PDF p. 2",
+          "quote": "We therefore release Muse Spark as the underlying model of Meta AI."
+        },
+        {
+          "source": "meta-muse-spark-arxiv",
+          "locator": "Section 1.2 'Governance', PDF p. 14",
+          "quote": "early checkpoints of Muse Spark were initially deployed to a small, percentage-limited subset of product users prior to broad availability."
+        }
+      ],
+      "note": "The report gives the release form (the model underlying Meta AI) and a sequence of controlled deployments before broad availability. It gives no release or availability date.",
+      "search": {
+        "read": "Abstract, Sections 1–1.3 and term search across the report.",
+        "terms": [
+          "release",
+          "launch",
+          "available",
+          "availability",
+          "April",
+          "2026"
+        ],
+        "setAside": []
+      }
+    },
+    {
+      "card": "meta-muse-spark",
+      "question": "Q03",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "meta-muse-spark-arxiv",
+          "locator": "Section 1 'Introduction', footnote 2, PDF p. 6",
+          "quote": "https://ai.meta.com/static-resource/Meta_Advanced-AI-Scaling-Framework-v2"
+        },
+        {
+          "source": "meta-muse-spark-arxiv",
+          "locator": "Section 1.2 'Governance', PDF p. 14",
+          "quote": "Muse Spark was developed and evaluated under Meta’s Advanced AI Scaling Framework"
+        }
+      ],
+      "note": "The report names the Advanced AI Scaling Framework and gives an address whose file name names version 2 (meta-aasf-v2-0). The text gives no version number of its own."
+    },
+    {
+      "card": "meta-muse-spark",
+      "question": "Q04",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "meta-muse-spark-arxiv",
+          "locator": "Section 1 'Introduction', footnote 2, PDF p. 6",
+          "quote": "https://ai.meta.com/static-resource/Meta_Advanced-AI-Scaling-Framework-v2"
+        }
+      ],
+      "note": "The report gives the framework's address in a footnote."
+    },
+    {
+      "card": "meta-muse-spark",
+      "question": "Q05",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "meta-muse-spark-arxiv",
+          "locator": "Section 1.2 'Governance', PDF p. 14",
+          "quote": "we determined the model, prior to applying mitigations, falls under the “high risk” threshold under the Advanced AI Scaling Framework"
+        },
+        {
+          "source": "meta-muse-spark-arxiv",
+          "locator": "Section 1.2 'Governance', PDF p. 14",
+          "quote": "However, after applying mitigations, the residual risk of the model is that of “moderate or lower risk.”"
+        }
+      ],
+      "note": "The report states a 'high risk' determination before mitigations, for the chemical and biological category, and a residual 'moderate or lower risk' after mitigations. It states 'moderate or lower' for cybersecurity and loss of control (Q08, Q09)."
+    },
+    {
+      "card": "meta-muse-spark",
+      "question": "Q06",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "meta-muse-spark-arxiv",
+          "locator": "Section 1.1.1, 'Chemical & Biological risks', PDF p. 9",
+          "quote": "In response to the “high risk” determination, we have defined, implemented, and validated a set of mitigations to reduce the residual risk of public deployment to “moderate or lower.”"
+        }
+      ],
+      "note": "The report ties mitigations (refusal mechanisms, detection of persistent malicious use and monitoring) to the 'high risk' determination, and states that deployment is conditional on them under the framework. It also states cyber-misuse monitoring as a compensating control. This is the developer's account, not evidence that the mitigations work."
+    },
+    {
+      "card": "meta-muse-spark",
+      "question": "Q07",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "meta-muse-spark-arxiv",
+          "locator": "Section 1.1.1, 'Chemical & Biological risks', PDF p. 9",
+          "quote": "assess that the model has “high risk” for Chemical and/or Biological risks."
+        }
+      ],
+      "note": "The report states chemical and biological evaluations (dual-use knowledge, agentic scientific tasks and high-risk bottlenecks) with the outcome 'high risk' before mitigations and 'moderate or lower' residual risk after them. Evaluation details are not recorded (hazard rule)."
+    },
+    {
+      "card": "meta-muse-spark",
+      "question": "Q08",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "meta-muse-spark-arxiv",
+          "locator": "Section 1.1.1, 'Cybersecurity risks', PDF p. 9",
+          "quote": "We assess cybersecurity risk as “moderate or lower” with respect to the threat scenarios outlined in Meta’s Advanced AI Scaling Framework."
+        }
+      ],
+      "note": "The report states knowledge, capture-the-flag, real-world and social-engineering cyber evaluations with the framework outcome 'moderate or lower'. Scores are not recorded (hazard rule)."
+    },
+    {
+      "card": "meta-muse-spark",
+      "question": "Q09",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "meta-muse-spark-arxiv",
+          "locator": "Section 1.1.1, 'Loss of Control risks', PDF p. 9",
+          "quote": "We assess loss of control risk as “moderate or lower”."
+        },
+        {
+          "source": "meta-muse-spark-arxiv",
+          "locator": "Section 1.1.1, 'Loss of Control risks', PDF p. 10",
+          "quote": "Its autonomous technical capabilities—spanning software engineering, ML engineering, and end-to-end research—remain too constrained"
+        }
+      ],
+      "note": "The report states loss-of-control evaluations, including acceleration of AI development, with the outcome 'moderate or lower' and the conclusion that autonomous research capabilities remain constrained."
+    },
+    {
+      "card": "meta-muse-spark",
+      "question": "Q10",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "meta-muse-spark-arxiv",
+          "locator": "Section 2.2.2.3 'Social Engineering Capabilities', PDF p. 47",
+          "quote": "we have included results from an evaluation developed by Charlemagne Labs that specifically measures social engineering capabilities in multi-turn settings."
+        },
+        {
+          "source": "meta-muse-spark-arxiv",
+          "locator": "Section 2.2.2.3 'Social Engineering Capabilities', PDF p. 48",
+          "quote": "we do not find the capabilities of the model (without system level guardrails) to be sufficiently high to trigger a determination of high risk according to our Advanced AI Scaling Framework"
+        }
+      ],
+      "note": "The report states a multi-turn social-engineering capability evaluation (an attacker model trying to convince a simulated victim), with composite scores against open models (Figure 20), as part of the cyber domain, and concludes that the capability is not high enough to trigger a high-risk determination under its framework. The victims are simulated: no result with human subjects is reported. Methods are not recorded (hazard rule).",
+      "search": {
+        "read": "Sections 1.1, 2.2.2.3 and 4.1, and term search.",
+        "terms": ["persua", "manipulat", "social engineering", "influence"],
+        "setAside": [
+          {
+            "locator": "Section 1.1, Table 2, PDF p. 8",
+            "reason": "'Refusals: Social Engineering' measures refusal of misuse requests, not capability."
+          }
+        ]
+      },
+      "crossFamily": {
+        "item": "28",
+        "result": "material disagreement, applied: the checker reads stated (blind), because section 2.2.2.3 gives a conclusion for the social-engineering evaluation (PDF p. 48), and Q10 asks for a conclusion, not a risk category specific to persuasion. The pack had read partly. The preparer accepts the checker’s reading, keeping the simulated-victim and cyber-domain limits."
+      }
+    },
+    {
+      "card": "meta-muse-spark",
+      "question": "Q11",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "meta-muse-spark-arxiv",
+          "locator": "Section 1.1.1, 'Loss of Control risks', PDF p. 10",
+          "quote": "The model demonstrates contained deception and exhibits some propensities toward agentic misalignment in controlled settings, such as self-preservation and resistance to discontinuation."
+        },
+        {
+          "source": "meta-muse-spark-arxiv",
+          "locator": "Section 1.1.1, 'Loss of Control risks', PDF p. 10",
+          "quote": "These behaviors remain within acceptable thresholds but warrant monitoring for loss of control risks."
+        }
+      ],
+      "note": "The report states evaluations of deception, agentic misalignment, sandbagging, monitor evasion and alignment faking, with the conclusion quoted. It reports Apollo Research's finding of high evaluation awareness and its own follow-up (Section 4.1.11)."
+    },
+    {
+      "card": "meta-muse-spark",
+      "question": "Q12",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "meta-muse-spark-arxiv",
+          "locator": "Section 3.1.3.2 'Human Red Teaming', PDF p. 82",
+          "quote": "A third-party human red team from HandshakeAI32 was granted pre-release access to a few versions of Muse Spark and Meta AI Thinking to manually evaluate robustness against jailbreak attacks."
+        },
+        {
+          "source": "meta-muse-spark-arxiv",
+          "locator": "Section 3.1.3.2 'Human Red Teaming', PDF p. 82",
+          "quote": "HandshakeAI prioritized four categories: (1) sex-related crimes, (2) violent crimes, (3) non-violent crimes, and (4) self-harm and suicide."
+        },
+        {
+          "source": "meta-muse-spark-arxiv",
+          "locator": "Section 3.1.3.2 'Human Red Teaming', PDF p. 82",
+          "quote": "HandshakeAI reported approximately 149 hours of red-teaming effort"
+        }
+      ],
+      "note": "The report states third-party human red teaming of jailbreak robustness with pre-release access, with its scope: four prioritised content-policy categories and approximately 149 hours of effort (hours of effort, not a testing period). It also reports large-scale automated red teaming (Section 3.1). No number of testers is given in the passage read. The “32” after HandshakeAI in the first quotation is a footnote marker.",
+      "crossFamily": {
+        "item": "58",
+        "result": "minor, applied: the scope given in the same paragraph (four prioritised categories, about 149 hours of effort) is added."
+      }
+    },
+    {
+      "card": "meta-muse-spark",
+      "question": "Q13",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "meta-muse-spark-arxiv",
+          "locator": "Abstract, PDF p. 2",
+          "quote": "Independent third-party testing by Apollo Research found Muse Spark has the highest rate of evaluation awareness they have observed to date."
+        }
+      ],
+      "note": "The report names Apollo Research (evaluation awareness), HandshakeAI (human red teaming, Q12) and Charlemagne Labs (social engineering, Q10), and names Deloitte, Faculty, Frontier Design and SecureBio as engaged in the chemical and biological assessment (Section 2.1)."
+    },
+    {
+      "card": "meta-muse-spark",
+      "question": "Q14",
+      "status": "not-found",
+      "passages": [],
+      "note": "No government body is named as having tested or received access to Muse Spark.",
+      "search": {
+        "read": "Abstract, Sections 1–2.2 and term search across the report.",
+        "terms": [
+          "government",
+          "Safety Institute",
+          "AISI",
+          "CAISI",
+          "Security Institute",
+          "pre-deployment access"
+        ],
+        "setAside": [
+          {
+            "locator": "Section 2.2.2.1, PDF p. 41",
+            "reason": "Names UK AISI and CAISI as users of a benchmark in their own testing, not as testing this model."
+          }
+        ]
+      }
+    },
+    {
+      "card": "meta-muse-spark",
+      "question": "Q15",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "meta-muse-spark-arxiv",
+          "locator": "Section 1 'Introduction', PDF p. 6",
+          "quote": "We then describe the governance process that led to the decision to deploy Muse Spark under Meta’s Advanced AI Scaling Framework2"
+        },
+        {
+          "source": "meta-muse-spark-arxiv",
+          "locator": "Section 1.2 'Governance', PDF p. 14",
+          "quote": "Key decision-makers for Muse Spark’s risk threshold determinations were the Chief AI Officer and Director of Alignment and Risk"
+        }
+      ],
+      "note": "The report refers to 'the decision to deploy' and 'our launch decision' in the company's voice, and names the Chief AI Officer and the Director of Alignment and Risk as the decision-makers for the risk-threshold determinations. It does not name a maker of the deployment decision other than the company."
+    },
+    {
+      "card": "meta-muse-spark",
+      "question": "Q16",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "meta-muse-spark-arxiv",
+          "locator": "Section 1.1.1, footnote 11, PDF p. 10",
+          "quote": "We cannot rule out this possibility on the basis of behavioral evaluations alone and flag it as an inherent epistemic limitation of assessments of this kind."
+        }
+      ],
+      "note": "The report states that a model capable of strategic behaviour could make its evaluations appear credible, and that this cannot be ruled out by behavioural evaluations. It also states that some baseline assessments give only a lower bound on performance and that evaluation awareness qualifies some results."
+    }
+  ],
+  "omissions": [],
+  "retrievalFailures": [],
+  "openQuestions": []
+}

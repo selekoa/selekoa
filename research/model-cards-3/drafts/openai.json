@@ -1,0 +1,581 @@
+{
+  "group": "openai",
+  "drafter": "Codex (GPT family), preparing session, 2026-11-05",
+  "cards": [
+    {
+      "id": "openai-o1-september",
+      "developer": "OpenAI",
+      "model": "o1-preview and o1-mini",
+      "year": 2024,
+      "source": "openai-o1-september",
+      "frameworkEditions": ["preparedness-beta-2023"],
+      "frameworkEditionNote": "The card’s bibliography explicitly names and links the 2023 beta framework."
+    },
+    {
+      "id": "openai-operator",
+      "developer": "OpenAI",
+      "model": "Operator",
+      "year": 2025,
+      "source": "openai-operator",
+      "frameworkEditions": ["preparedness-beta-2023"],
+      "frameworkEditionNote": "The card’s bibliography explicitly names and links the 2023 beta framework."
+    }
+  ],
+  "cells": [
+    {
+      "card": "openai-o1-september",
+      "question": "Q01",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "openai-o1-september",
+          "quote": "Sept 12, 2024",
+          "locator": "Title and date, PDF p. 1"
+        }
+      ],
+      "note": "The card prints a day-precision date. The filename’s 20240917 string is not substituted for the printed date."
+    },
+    {
+      "card": "openai-o1-september",
+      "question": "Q02",
+      "status": "partly",
+      "passages": [
+        {
+          "source": "openai-o1-september",
+          "quote": "our ChatGPT implementation of these models also displays a summarized version of the model’s chain-of-thought to the user.",
+          "locator": "§2 Model data and training, PDF p. 2"
+        }
+      ],
+      "note": "The card identifies a ChatGPT implementation, without a calendar release date. Testers’ API access in §3.3 is not treated as general release.",
+      "search": {
+        "read": "§§1–3, §4 introductory launch references and §6 conclusion; whole-card search",
+        "terms": [
+          "release",
+          "launch",
+          "available",
+          "September",
+          "ChatGPT",
+          "API"
+        ]
+      }
+    },
+    {
+      "card": "openai-o1-september",
+      "question": "Q03",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "openai-o1-september",
+          "quote": "Openai preparedness framework (beta).",
+          "locator": "Reference [29], PDF p. 42"
+        }
+      ],
+      "note": "The bibliography names the beta framework and dates it 2023; it links the beta PDF. Recorded as preparedness-beta-2023."
+    },
+    {
+      "card": "openai-o1-september",
+      "question": "Q04",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "openai-o1-september",
+          "quote": "https://cdn.openai.com/ openai-preparedness-framework-beta.pdf",
+          "locator": "Reference [29], PDF p. 42"
+        }
+      ],
+      "note": "The card supplies the beta framework address; the PDF line break splits the printed URL."
+    },
+    {
+      "card": "openai-o1-september",
+      "question": "Q05",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "openai-o1-september",
+          "quote": "the Safety Advisory Group [29] classified both o1-preview and o1-mini pre-mitigation models as overall medium risk, including medium risk for persuasion and CBRN, and low risk for model autonomy and cybersecurity.",
+          "locator": "§4 Preparedness Framework Evaluations, PDF p. 13"
+        }
+      ],
+      "note": "The card reports all four categories and overall medium risk. The following sentence says the Safety Advisory Group rated post-mitigation risk levels the same, as a precaution."
+    },
+    {
+      "card": "openai-o1-september",
+      "question": "Q06",
+      "status": "partly",
+      "passages": [
+        {
+          "source": "openai-o1-september",
+          "quote": "o1 inherits our earlier safety mitigations of training in refusal behavior for harmful requests and using moderation models for the most egregious content",
+          "locator": "§3.1 Safety Evaluations, PDF p. 2"
+        }
+      ],
+      "note": "The card names refusal training and moderation. §6 ties unspecified commensurate safeguards to overall medium risk, without explicitly identifying these named safeguards as consequences of that determination.",
+      "search": {
+        "read": "§3.1, §4 framework introduction and §6 conclusion",
+        "terms": [
+          "safeguards",
+          "mitigations",
+          "commensurate",
+          "medium risk",
+          "moderation"
+        ]
+      }
+    },
+    {
+      "card": "openai-o1-september",
+      "question": "Q07",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "openai-o1-september",
+          "quote": "Score for both o1-preview and o1-mini: Medium",
+          "locator": "§4.3 Biological Threat Creation, PDF p. 17"
+        }
+      ],
+      "note": "The card reports biological evaluations and this domain category. Chemical contextual evaluations are also mentioned, without treating this as a separate chemical-risk determination."
+    },
+    {
+      "card": "openai-o1-september",
+      "question": "Q08",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "openai-o1-september",
+          "quote": "Neither o1-preview nor o1-mini sufficiently advance real-world vulnerability exploitation capabilities to indicate medium risk.",
+          "locator": "§4.2 Cybersecurity, Summary, PDF p. 14"
+        }
+      ],
+      "note": "The card reports a low cyber-risk category for both models."
+    },
+    {
+      "card": "openai-o1-september",
+      "question": "Q09",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "openai-o1-september",
+          "quote": "Neither o1-preview nor o1-mini advance self-exfiltration, self-improvement, or resource acquisition capabilities sufficiently to indicate medium risk.",
+          "locator": "§4.5 Model Autonomy, Summary, PDF p. 27"
+        }
+      ],
+      "note": "The card reports a low autonomy-risk category for both models."
+    },
+    {
+      "card": "openai-o1-september",
+      "question": "Q10",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "openai-o1-september",
+          "quote": "they do not outperform top human writers and do not reach our high risk threshold.",
+          "locator": "§4.4 Persuasion, Summary, PDF p. 21"
+        }
+      ],
+      "note": "The card rates both models medium in persuasion, reporting human-level written persuasion. This is the developer’s stated conclusion of its evaluations."
+    },
+    {
+      "card": "openai-o1-september",
+      "question": "Q11",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "openai-o1-september",
+          "quote": "Apollo Research believes that o1-preview has the basic capabilities needed to do simple in-context scheming",
+          "locator": "§3.3.1 Apollo Research, PDF p. 11"
+        }
+      ],
+      "note": "The card attributes the conclusion to Apollo and limits it to o1-preview. The paragraph says current evaluations do not definitively rule out catastrophic-harm scheming."
+    },
+    {
+      "card": "openai-o1-september",
+      "question": "Q12",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "openai-o1-september",
+          "quote": "Red teamers had access to various snapshots of the model at different stages of training and mitigation maturity starting in early August through mid-September 2024.",
+          "locator": "§3.3 External Red Teaming, PDF p. 9"
+        }
+      ],
+      "note": "The card reports external red-teaming spanning the stated period and model snapshots, rather than a single final-model test."
+    },
+    {
+      "card": "openai-o1-september",
+      "question": "Q13",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "openai-o1-september",
+          "quote": "Apollo Research, an evaluation organization focusing on risks from deceptively aligned AI systems, evaluated capabilities of ‘scheming’ in o1 models.",
+          "locator": "§3.3.1 Apollo Research, PDF p. 10"
+        }
+      ],
+      "note": "The card names Apollo as an external evaluator."
+    },
+    {
+      "card": "openai-o1-september",
+      "question": "Q14",
+      "status": "not-found",
+      "note": "No passage meeting the criterion was found in the recorded search.",
+      "search": {
+        "read": "§3.3 and its evaluator subsections, §4 government/laboratory references, acknowledgements and bibliography; whole-card search",
+        "terms": [
+          "government",
+          "AISI",
+          "Safety Institute",
+          "Security Institute",
+          "Los Alamos",
+          "pre-deployment",
+          "NIST"
+        ],
+        "setAside": [
+          {
+            "locator": "§3.3.1 Table 5, PDF p. 11",
+            "reason": "UK AISI’s Theory of Mind is an evaluation resource used by Apollo; it does not state government testing or access to these models."
+          },
+          {
+            "locator": "§4.3.5, PDF p. 20",
+            "reason": "Work developing wet-lab evaluations with Los Alamos National Laboratory is described, without saying that it tested these models or received access."
+          }
+        ]
+      }
+    },
+    {
+      "card": "openai-o1-september",
+      "question": "Q15",
+      "status": "partly",
+      "passages": [
+        {
+          "source": "openai-o1-september",
+          "quote": "The Safety Advisory Group also rated the post-mitigation risk levels the same as the pre-mitigation risk levels, to err on the side of caution.",
+          "locator": "§4 Preparedness Framework Evaluations, PDF p. 13"
+        }
+      ],
+      "note": "The named maker is attached to a risk determination, not to the release decision. This meets the criterion’s determination-maker case under 6a. Deployment statements in §6 do not independently establish a decision under 13a.",
+      "search": {
+        "read": "§§3–4 and §6; whole-card decision search",
+        "terms": [
+          "decided",
+          "decision",
+          "release",
+          "launch",
+          "Safety Advisory Group",
+          "deploy"
+        ]
+      }
+    },
+    {
+      "card": "openai-o1-september",
+      "question": "Q16",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "openai-o1-september",
+          "quote": "current evals aren’t designed to definitively rule this out.",
+          "locator": "§3.3.1 Apollo Research, PDF p. 11"
+        }
+      ],
+      "note": "The limitation concerns the preceding statement that Apollo subjectively believes o1-preview cannot engage in scheming leading to catastrophic harms; it is not a demonstrated rule-out."
+    },
+    {
+      "card": "openai-operator",
+      "question": "Q01",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "openai-operator",
+          "quote": "January 23, 2025",
+          "locator": "Title and date, PDF p. 1"
+        },
+        {
+          "source": "openai-operator",
+          "quote": "Updated March 11, 2025:",
+          "locator": "§4.7 API Availability, PDF p. 12"
+        }
+      ],
+      "note": "The cover prints the card date. A separate revision/addition is marked “Updated March 11, 2025” in §4.7 (PDF p. 12); the file read therefore contains later wording. The file read is that revised expression (also created 2025-03-11, by its PDF metadata, in the cross-family check of 2026-11-05); the printed card date of January 23, 2025 stands. An archive capture of 2025-01-23, which would hold the January expression, is located but not retrieved."
+    },
+    {
+      "card": "openai-operator",
+      "question": "Q02",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "openai-operator",
+          "quote": "Updated March 11, 2025: Launching the Computer-Using Agent (CUA) model in the API",
+          "locator": "§4.7 API Availability, PDF p. 12"
+        }
+      ],
+      "note": "The dated addition describes the API launch as computer-use-preview to selected developers. The initial Operator research preview is separately described on p. 3 without a calendar release date."
+    },
+    {
+      "card": "openai-operator",
+      "question": "Q03",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "openai-operator",
+          "quote": "Openai preparedness framework (beta).",
+          "locator": "Reference [3], PDF p. 16"
+        }
+      ],
+      "note": "The card identifies the beta edition in its bibliography and supplies its PDF address."
+    },
+    {
+      "card": "openai-operator",
+      "question": "Q04",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "openai-operator",
+          "quote": "https://cdn.openai.com/ openai-preparedness-framework-beta.pdf",
+          "locator": "Reference [3], PDF p. 16"
+        }
+      ],
+      "note": "The card links the framework itself; the printed URL wraps after the host."
+    },
+    {
+      "card": "openai-operator",
+      "question": "Q05",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "openai-operator",
+          "quote": "found the pre-mitigation Operator model to be “Low” risk in both categories, consistent with the GPT-4o model.",
+          "locator": "§3.3 Frontier Risk Assessment, PDF p. 3"
+        }
+      ],
+      "note": "“Both categories” here are CBRN and model autonomy, which were newly evaluated for computer use. Persuasion medium and cyber low are explicitly inherited from GPT-4o, not newly evaluated Operator results."
+    },
+    {
+      "card": "openai-operator",
+      "question": "Q06",
+      "status": "partly",
+      "passages": [
+        {
+          "source": "openai-operator",
+          "quote": "we implemented safeguards across the whole deployment context: model training, system-level checks, product design choices, and ongoing policy enforcement.",
+          "locator": "§4 Risk Mitigation, PDF p. 5"
+        }
+      ],
+      "note": "The card states deployment safeguards tied to its task, mistake and prompt-injection risk classes, without tying them to the framework category determination.",
+      "search": {
+        "read": "§3.3 and §§4–4.7",
+        "terms": [
+          "safeguards",
+          "mitigations",
+          "Low",
+          "determination",
+          "framework"
+        ]
+      }
+    },
+    {
+      "card": "openai-operator",
+      "question": "Q07",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "openai-operator",
+          "quote": "The two evaluations in our framework that computer-use could plausibly impact are biorisk tooling for CBRN and autonomous replication for model autonomy.",
+          "locator": "§3.3 Frontier Risk Assessment, PDF p. 3"
+        },
+        {
+          "source": "openai-operator",
+          "quote": "found the pre-mitigation Operator model to be “Low” risk in both categories",
+          "locator": "§3.3 Frontier Risk Assessment, PDF p. 3"
+        }
+      ],
+      "note": "The next sentence says these evaluations were adapted for computer use and found the pre-mitigation model low risk in both. Policy-level risk classification is quoted in Q05."
+    },
+    {
+      "card": "openai-operator",
+      "question": "Q08",
+      "status": "not-found",
+      "note": "No new Operator offensive-cyber evaluation was found. The inherited GPT-4o category is recorded in Q05’s note.",
+      "search": {
+        "read": "Whole card, particularly §3.3 and §§4–4.7",
+        "terms": [
+          "cybersecurity",
+          "cyber",
+          "offensive",
+          "evaluation",
+          "inherits"
+        ],
+        "setAside": [
+          {
+            "locator": "§3.3, PDF p. 3",
+            "reason": "The cyber low-risk category is inherited from GPT-4o; it is not a report of offensive-cyber evaluation run on Operator."
+          }
+        ]
+      }
+    },
+    {
+      "card": "openai-operator",
+      "question": "Q09",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "openai-operator",
+          "quote": "Operator is qualified as a \"Low\" risk level in line with GPT-4o as detailed in OpenAI’s Preparedness Framework",
+          "locator": "§3.3.2 Model autonomy, PDF p. 4"
+        }
+      ],
+      "note": "The card reports autonomous-replication/resource-acquisition evaluation and a low-risk conclusion. No technical task contents or performance figures are recorded."
+    },
+    {
+      "card": "openai-operator",
+      "question": "Q10",
+      "status": "not-found",
+      "note": "No passage meeting the criterion was found in the recorded search.",
+      "search": {
+        "read": "Whole card, particularly §3.3 and policy/mitigation sections",
+        "terms": [
+          "persuasion",
+          "persuasive",
+          "manipulation",
+          "social engineering",
+          "deception"
+        ],
+        "setAside": [
+          {
+            "locator": "§3.3, PDF p. 3",
+            "reason": "The persuasion medium-risk category is inherited from GPT-4o, rather than established by a reported Operator evaluation."
+          },
+          {
+            "locator": "§4.1, PDF p. 6",
+            "reason": "Policy prohibitions on deception and manipulation do not report a persuasion evaluation."
+          }
+        ]
+      }
+    },
+    {
+      "card": "openai-operator",
+      "question": "Q11",
+      "status": "not-found",
+      "note": "No passage meeting the criterion was found in the recorded search.",
+      "search": {
+        "read": "Whole card, including §§3.3, 4.1–4.7 and 5",
+        "terms": [
+          "deception",
+          "scheming",
+          "sabotage",
+          "reward hacking",
+          "misalignment",
+          "oversight"
+        ],
+        "setAside": [
+          {
+            "locator": "§4.2, PDF pp. 8–9",
+            "reason": "Testing model mistakes on user tasks measures errors, not deception or sabotage of oversight."
+          },
+          {
+            "locator": "§4.1, PDF pp. 6–7",
+            "reason": "Refusal tests for harmful user requests do not evaluate the model’s own deception."
+          },
+          {
+            "locator": "§4.6, PDF pp. 10–12",
+            "reason": "Prompt-injection testing concerns compliance with adversarial website instructions, rather than the model pursuing covert goals."
+          }
+        ]
+      }
+    },
+    {
+      "card": "openai-operator",
+      "question": "Q12",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "openai-operator",
+          "quote": "OpenAI engaged a cohort of vetted external red teamers located across twenty countries and fluent in two dozen languages",
+          "locator": "§3.2 Red Teaming, PDF p. 2"
+        }
+      ],
+      "note": "The card describes external testing of capabilities and safeguards, preceded by an internal Safety, Security and Product exercise."
+    },
+    {
+      "card": "openai-operator",
+      "question": "Q13",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "openai-operator",
+          "quote": "Red Teaming Organizations ScaleAI, Lysios LLC",
+          "locator": "§6 Acknowledgements, PDF p. 15"
+        }
+      ],
+      "note": "The card names the two external organisations in its red-teaming acknowledgements."
+    },
+    {
+      "card": "openai-operator",
+      "question": "Q14",
+      "status": "not-found",
+      "note": "No passage meeting the criterion was found in the recorded search.",
+      "search": {
+        "read": "Whole card, including §§3.2–3.3, §4.7 and acknowledgements",
+        "terms": [
+          "government",
+          "institute",
+          "AISI",
+          "CAISI",
+          "NIST",
+          "pre-deployment access"
+        ],
+        "setAside": []
+      }
+    },
+    {
+      "card": "openai-operator",
+      "question": "Q15",
+      "status": "partly",
+      "passages": [
+        {
+          "source": "openai-operator",
+          "quote": "Accordingly, Operator is initially being deployed as a research preview to a limited group of users",
+          "locator": "§3.2 Red Teaming, PDF p. 3"
+        }
+      ],
+      "note": "The deployment statement follows the red-teaming findings and additional mitigations (“Accordingly”). It meets 6a’s assessment-followed-by-release case, without describing a decision or naming its maker. Availability alone and the preparation statement in §4 are set aside under 13a.",
+      "search": {
+        "read": "§§3.1–3.3, §4 opening, §4.7 and §5.2; whole-card decision search",
+        "terms": [
+          "decision",
+          "decided",
+          "deploy",
+          "release",
+          "accordingly",
+          "deemed"
+        ],
+        "setAside": [
+          {
+            "locator": "§4, PDF p. 5",
+            "reason": "“We prepared Operator for deployment” describes preparation, not a release decision."
+          },
+          {
+            "locator": "§4.4, PDF p. 10",
+            "reason": "The stated decision to refuse high-risk tasks is a safeguard decision, not a deployment decision."
+          }
+        ]
+      }
+    },
+    {
+      "card": "openai-operator",
+      "question": "Q16",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "openai-operator",
+          "quote": "their findings may not fully capture the worst-case real-world risks",
+          "locator": "§3.2 Red Teaming, PDF p. 3"
+        }
+      ],
+      "note": "The card ties this limitation to the constraint that external testers avoid causing real-world harm."
+    }
+  ],
+  "omissions": [],
+  "retrievalFailures": [],
+  "openQuestions": [
+    "Quick: OK the recommendation. Retain Operator’s March 11 addition separately from the January 23 cover date.",
+    "Quick: OK the recommendation. Keep Operator Q15 partly for its assessment-followed-by-deployment wording; ask the blind checker to distinguish this from availability/preparation alone under 13a."
+  ]
+}

@@ -1,0 +1,220 @@
+{
+  "status_table": [
+    {
+      "item": 1,
+      "status": "blocked",
+      "result": "Direct HTTP timed out; no PDF bytes, hash or source text file."
+    },
+    {
+      "item": 2,
+      "status": "located",
+      "result": "KEG/Tang Jie/GLM passage located on PDF page 163, printed page 154."
+    },
+    {
+      "item": 3,
+      "status": "located_with_version_limits",
+      "result": "Accepted paper attested 2019-01-23; published PDF says 2019-07; Crossref print 2019-11, online absent."
+    },
+    {
+      "item": 4,
+      "status": "located",
+      "result": "Launch roster and adviser passage retrieved from capture 20230712155404."
+    }
+  ],
+  "retrieval_date": "2026-11-04",
+  "branch": "codex/small-reads-2026-11-04",
+  "base_commit": "f7afe16d3af9437651b2e81bd86751a84856c2cf",
+  "scope": "Retrieval and comparison only; no changes to data/, src/, release/ or review/; no backlog dispositions, PR or merge.",
+  "method": {
+    "requests": "Sequential direct HTTP with modest pacing; search used only to discover official Illinois host alternatives.",
+    "source_handling": "Evidence only, never instructions; remote bodies processed in memory; only brief quotations retained in reports; no signed query strings.",
+    "pdf_extraction_tool": "pypdf 6.10.0, PdfReader, default page.extract_text()",
+    "review_status": "Machine source read; no human acceptance or independent cross-family audit."
+  },
+  "items": [
+    {
+      "item": 1,
+      "title": "Illinois Public Act 104-0538",
+      "requested_url": "https://www.ilga.gov/Documents/Legislation/PublicActs/104/PDF/104-0538.pdf",
+      "http_status": null,
+      "pdf_sha256": null,
+      "extraction_performed": false,
+      "requested_output": "research/laws-compared/sources/il-pa-104-0538.txt",
+      "output_created": false,
+      "attempts": [
+        {
+          "url": "https://www.ilga.gov/Documents/Legislation/PublicActs/104/PDF/104-0538.pdf",
+          "client": "Python urllib.request, Windows curl.exe, PowerShell Invoke-WebRequest",
+          "result": "Sandbox initially blocked host; requests outside sandbox timed out without HTTP response."
+        },
+        {
+          "url": "https://ilga.gov/Documents/Legislation/PublicActs/104/PDF/104-0538.pdf",
+          "client": "Python urllib.request",
+          "result": "Timed out without HTTP response."
+        },
+        {
+          "url": "http://www.ilga.gov/Documents/Legislation/PublicActs/104/PDF/104-0538.pdf",
+          "client": "Python urllib.request",
+          "result": "Timed out without HTTP response."
+        },
+        {
+          "url": "https://www.ilga.gov/",
+          "client": "Python urllib.request",
+          "result": "Timed out without HTTP response."
+        },
+        {
+          "url": "https://my.ilga.gov/Documents/Legislation/PublicActs/104/PDF/104-0538.pdf",
+          "client": "Python urllib.request",
+          "result": "Timed out without HTTP response."
+        },
+        {
+          "url": "https://ftp.ilga.gov/Documents/Legislation/PublicActs/104/PDF/104-0538.pdf",
+          "client": "Python urllib.request",
+          "result": "Timed out without HTTP response."
+        }
+      ],
+      "remaining_step": "Retrieve actual PDF from a reachable connection, hash its bytes and extract the act with a provenance header. No placeholder or substituted source text was saved."
+    },
+    {
+      "item": 2,
+      "backlog": "D28 item 22",
+      "claim_id": "lg-cn-tang-jie-zhipu-cofounder",
+      "source_url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2025/1230/2025123000018_c.pdf",
+      "http_status": 200,
+      "publication_date": "2025-12-30",
+      "pdf_pages": 504,
+      "pdf_sha256": "3f187aa4c0c4d09a16ad74791808719a40479e470aeaab0aa76ed13c83e5f046",
+      "same_hash_as_prior_audit": true,
+      "cited_pdf_pages_read_in_full": [35, 160, 163, 189],
+      "account_located": true,
+      "locator": {
+        "pdf_page": 163,
+        "printed_page": "154",
+        "section": "Business, management and advisory team"
+      },
+      "quote": "自2018年以來，KEG與唐傑博士等人工智能領域的國際知名頂尖科學家，共同開創了認知智能研究的先河，並率先開發了GLM大模型框架，代表了中國大模型創新的里程碑。",
+      "quote_normalisation": "Extraction line wrapping and layout spaces normalised.",
+      "working_translation": "Since 2018, KEG and internationally renowned leading AI scientists including Dr Tang Jie jointly pioneered cognitive-intelligence research and took the lead in developing the GLM large-model framework, representing a milestone in Chinese large-model innovation.",
+      "translation_review": "Not human-reviewed.",
+      "cofounder_locator": {
+        "pdf_page": 35,
+        "printed_page": "26",
+        "entry": "唐博士"
+      },
+      "cofounder_quote": "唐傑博士，我們的聯合創始人以及我們的控股股東之一",
+      "comparison": "The earlier audit missed the exact account in the same byte-identical PDF and gave printed page 27 rather than 26 for the Definitions entry. The preceding Li Juanzi leadership sentence is compatible with the Tang Jie account.",
+      "qualification": "Supports an attributed company statement; does not independently establish the company's historical priority claims.",
+      "recommendation_not_applied": "Retain the attributed account and supply PDF page 163 / printed page 154 as its precise locator."
+    },
+    {
+      "item": 3,
+      "backlog": "D28 item 66",
+      "work": "Kwiatkowski et al., Natural Questions: A Benchmark for Question Answering Research",
+      "doi": "10.1162/tacl_a_00276",
+      "earliest_located": {
+        "date": "2019-01-23",
+        "kind": "Public attestation of a paper accepted for TACL publication, linked by a dated author-institution announcement.",
+        "source_url": "https://research.google/blog/natural-questions-a-new-corpus-and-challenge-for-question-answering-research/",
+        "http_status": 200,
+        "quote": "has been accepted for publication in Transactions of the Association for Computational Linguistics",
+        "original_paper_link": "https://ai.google/research/pubs/pub47761",
+        "original_paper_link_http_status": 404,
+        "limit": "Exact acceptance date unknown; January manuscript bytes not recovered and not established as identical to the current manuscript."
+      },
+      "current_author_manuscript": {
+        "entry_url": "https://research.google/pubs/natural-questions-a-benchmark-for-question-answering-research/",
+        "pdf_url": "https://storage.googleapis.com/gweb-research2023-media/pubtools/4852.pdf",
+        "http_status": 200,
+        "year": "2019",
+        "pdf_pages": 14,
+        "pdf_sha256": "1ca22c60950ea77b7dc0d89b1e7e5dc40695626fdb40ac050bf46b6b5028d9d4",
+        "pdf_page_1_quote": "To appear in Transactions of the Association of Computational Linguistics (https://www.transacl.org). Final version.",
+        "pdf_creation_metadata": "D:20190618210502-04'00'",
+        "limit": "File-generation metadata does not establish public availability."
+      },
+      "published_expression": {
+        "pdf_url": "https://aclanthology.org/Q19-1026.pdf",
+        "http_status": 200,
+        "date": "2019-07",
+        "kind": "Publication month printed in the TACL PDF",
+        "locator": { "pdf_page": 1, "printed_page": "453" },
+        "quote": "Submission batch: 4/2018; Revision batch: 6/2018; Published 7/2019.",
+        "limit": "Submission and revision batches do not establish public expression."
+      },
+      "acl_entry": {
+        "url": "https://aclanthology.org/Q19-1026/",
+        "http_status": 200,
+        "year": "2019",
+        "month": null,
+        "volume": "7",
+        "pages": "452–466",
+        "limit": "The retrieved PDF starts at printed page 453."
+      },
+      "crossref": {
+        "url": "https://api.crossref.org/works/10.1162/tacl_a_00276",
+        "http_status": 200,
+        "published_print": "2019-11",
+        "published_online": null,
+        "published": "2019-11",
+        "issued": "2019-11",
+        "accepted": null,
+        "created": "2019-08-02T14:32:33Z",
+        "limit": "Absent online/accepted fields are unknown dates; record creation is not online publication."
+      },
+      "publisher_page": {
+        "url": "https://direct.mit.edu/tacl/article/doi/10.1162/tacl_a_00276/43518/Natural-Questions-A-Benchmark-for-Question-Answering",
+        "http_status": 403,
+        "publication_history_read": false
+      },
+      "comparison": "The earlier audit's July-unsupported finding is contradicted by the cited PDF's first-page footer. Crossref's November print month is preserved separately; ACL's empty month does not override the footer.",
+      "recommendation_not_applied": "Distinguish January's publicly attested accepted paper from July's published expression. Keep dates tied to each record's cited expression instead of assigning all ten records a single work-level date.",
+      "search_scope": "Cited ACL PDF and entry, publisher-deposited Crossref metadata, Google Research publication entry and dated announcement. No absolute first-publication claim."
+    },
+    {
+      "item": 4,
+      "backlog": "D25, PA-29 launch roster follow-up",
+      "claim_id": "lg-xai-founding-stated-2023",
+      "source_url": "https://web.archive.org/web/20230712155404id_/https://x.ai/",
+      "http_status": 200,
+      "capture_timestamp": "20230712155404",
+      "capture_utc": "2023-07-12T15:54:04Z",
+      "memento_datetime": "Wed, 12 Jul 2023 15:54:04 GMT",
+      "displayed_date": "July 12th 2023",
+      "raw_response_bytes": 3113,
+      "raw_response_encoding": "gzip",
+      "raw_response_sha256": "bee337202a8525f711a6643bd911be71fcae3090025a574ca615c4c742e15c3e",
+      "same_hash_as_prior_retrieval": true,
+      "opening_quote": "Today we announce the formation of xAI.",
+      "team_opening_quote": "Our team is led by Elon Musk, CEO of Tesla and SpaceX.",
+      "roster_locator": "Team section, team-member link labels in document order",
+      "roster_quotes": [
+        "Elon Musk",
+        "Igor Babuschkin",
+        "Manuel Kroiss",
+        "Yuhuai (Tony) Wu",
+        "Christian Szegedy",
+        "Jimmy Ba",
+        "Toby Pohlen",
+        "Ross Nordeen",
+        "Kyle Kosic",
+        "Greg Yang",
+        "Guodong Zhang",
+        "Zihang Dai"
+      ],
+      "advisory_locator": "Advisory subsection immediately after team-member roster",
+      "advisory_quote": "Our team is advised by Dan Hendrycks who currently serves as the director of the Center for AI Safety.",
+      "qualification": "Contemporaneous company-stated team and adviser descriptions, not proof of co-founder status, incorporation date or employment intervals. Currently refers to the captured announcement.",
+      "remaining_application": "Adding evidence to the 13 held roster/launch records requires a separate task."
+    }
+  ],
+  "checks": {
+    "required_before_push": [
+      "Report formatting",
+      "JSON parse and Markdown/JSON agreement",
+      "git diff --check",
+      "Changed-path scope",
+      "pnpm check:privacy on staged files"
+    ],
+    "application_tests": "Not applicable to retrieval-only reports; no application, data or review-pack change."
+  }
+}

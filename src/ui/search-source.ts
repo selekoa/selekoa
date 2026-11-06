@@ -23,6 +23,11 @@ export type SearchOutcome = {
   results: SearchResults;
   /** The records the results show, with at least the fields shown. */
   repository: Repository;
+  /**
+   * The collections of the claims shown, as positions in the facets'
+   * collections; claims in none are left out.
+   */
+  memberOf: ReadonlyMap<string, number[]>;
   /** The index could not be loaded; the request is tried again next time. */
   failed?: boolean;
 };
@@ -103,6 +108,7 @@ export function indexSearchSource(
         return settled({
           results: { terms: [], total: 0, groups: [] },
           repository: repositoryOf(emptyData),
+          memberOf: new Map(),
         });
       return track(
         opened()
@@ -113,7 +119,7 @@ export function indexSearchSource(
               collection: once(m.load.collection),
               organisation: once(m.load.organisation),
             };
-            const { results, shown } = await m.search(
+            const { results, shown, memberOf } = await m.search(
               m.manifest,
               loader,
               request.query,
@@ -121,6 +127,7 @@ export function indexSearchSource(
             );
             return {
               results,
+              memberOf,
               repository: repositoryOf({
                 ...emptyData,
                 ...(shown as unknown as Omit<Dataset, 'meta'>),
@@ -134,6 +141,7 @@ export function indexSearchSource(
             return {
               results: { terms: [], total: 0, groups: [] },
               repository: repositoryOf(emptyData),
+              memberOf: new Map(),
               failed: true,
             };
           }),

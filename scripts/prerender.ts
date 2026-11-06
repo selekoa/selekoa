@@ -25,10 +25,13 @@ import { filesLoaded, type Manifest } from '../src/site/bundle-budget.ts';
 import { pageCodeOf, readingModulesOf } from '../src/ui/page-files.ts';
 import {
   dataNeeds,
+  cellTextPath,
   mergeSlices,
+  packSlice,
   slicePath,
   type PlacedSlice,
 } from '../src/domain/slices.ts';
+import { modelCardsId } from '../src/reading/model-cards-page.ts';
 import { machineReadableFiles, readSiteConfig } from './site-config.ts';
 
 type Renderer = typeof import('../src/prerender/render.tsx');
@@ -381,16 +384,33 @@ export async function prerender({
       writeFileSync(path.join(dist, render.pageFile(page)), html!);
     }
   }
-  // Every slice names the version of the records its positions hold in.
+  // The text of the Model cards page's cells, which the page loads once its
+  // table is drawn (src/ui/ModelCards.tsx): every question page's slice
+  // together, each of which holds every card's cell on its question.
+  const questionSlices = [...slices]
+    .filter(([target]) => target.startsWith(`/slices/compare/${modelCardsId}/`))
+    .flatMap(([, parts]) => parts);
+  if (questionSlices.length !== 16 || questionSlices.some((p) => p.core))
+    throw new Error('The Model cards question slices are not as expected');
+  slices.set(cellTextPath(modelCardsId), questionSlices);
+  // Every slice names the version of the records its positions hold in,
+  // and the build whose code reads it (its entry script, src/main.tsx).
   const version = render.core().version;
+  const build = template.match(
+    /<script type="module"[^>]* src="\/assets\/([^"]+\.js)"/,
+  )?.[1];
+  if (!build) throw new Error('The page template names no entry script');
   let sliceBytes = 0;
   for (const [target, parts] of slices) {
     const file = path.join(dist, target.slice(1));
     mkdirSync(path.dirname(file), { recursive: true });
-    const json = JSON.stringify({
-      ...(parts.length === 1 ? parts[0] : mergeSlices(parts)),
-      version,
-    });
+    const json = JSON.stringify(
+      packSlice({
+        ...(parts.length === 1 ? parts[0] : mergeSlices(parts)),
+        version,
+        build,
+      }),
+    );
     sliceBytes += json.length;
     writeFileSync(file, json);
   }

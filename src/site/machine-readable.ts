@@ -97,7 +97,7 @@ export function llmsTxt(c: SiteConfig, manifest: ReleaseManifest) {
     '',
     `- Claims: \`${url('claim/<claim-id>')}\`, with the statement, qualification, dates, review state and the evidence passages with their sources`,
     `- People: \`${url('person/<person-id>')}\`; documents: \`${url('document/<document-id>')}\`; organisations: \`${url('dossier/<organisation-id>')}\``,
-    `- Collections: \`${url('documents/<id>')}\` (document histories), \`${url('compare/<id>')}\` (the framework comparison, with one page per question at \`${url('compare/<id>/<question>')}\` and every cell as CSV at \`${url('compare/<id>.csv')}\`), \`${url('control/<id>')}\` (control structures), \`${url('commitments/<id>')}\`, \`${url('guide/<id>')}\` (readings across collections), \`${url('propositions/<id>')}\` and \`${url('question/<id>')}\` (questions and guided readings)`,
+    `- Collections: \`${url('documents/<id>')}\` (document histories), \`${url('compare/<id>')}\` (the framework comparison, model cards compared and laws compared, each with one page per question at \`${url('compare/<id>/<question>')}\` and every cell as CSV at \`${url('compare/<id>.csv')}\`), \`${url('control/<id>')}\` (control structures), \`${url('commitments/<id>')}\`, \`${url('guide/<id>')}\` (readings across collections), \`${url('propositions/<id>')}\` and \`${url('question/<id>')}\` (questions and guided readings)`,
     `- [Governance](${url('governance')}), [Ideas & debates](${url('ideas')}), [Institutions & people](${url('institutions')}), [Search](${url('search')}) (the search itself runs in the browser)`,
     '',
     '## Before relying on a record',

@@ -291,7 +291,7 @@
     "subtype": "Model card",
     "aliases": ["o1 system card"],
     "description": "The system-card page updated on December 5, 2024, which describes safety evaluations and external red teaming.",
-    "sourceIds": ["source-o1-card"],
+    "sourceIds": ["source-o1-card", "mc-src-o1-card-pdf"],
     "shortName": "o1 system card · 2024"
   },
   {
@@ -604,7 +604,11 @@
     "subtype": "Framework edition",
     "aliases": ["Frontier Safety Framework v2.0"],
     "description": "The v2.0 expression of Google DeepMind’s Frontier Safety Framework. Its stated dates and obligations describe this document, not independently established implementation.",
-    "sourceIds": ["source-fsf-2-0", "source-fsf-archive"],
+    "sourceIds": [
+      "source-fsf-2-0",
+      "source-fsf-archive",
+      "mc-src-fsf-v2-0-linked-file"
+    ],
     "documentVersion": {
       "family": "deepmind-fsf",
       "label": "v2.0",
@@ -1136,7 +1140,10 @@
     "subtype": "Announcement",
     "aliases": [],
     "description": "The dated 2023 research proposal by Jan Leike and Ilya Sutskever. Its discussion of supervision limits does not demonstrate success or continued operation of the team.",
-    "sourceIds": ["source-superalignment-announcement"]
+    "sourceIds": [
+      "source-superalignment-announcement",
+      "source-pr-openai-2023-superalignment-capture"
+    ]
   },
   {
     "id": "chalmers-singularity",
@@ -1336,7 +1343,7 @@
     "subtype": "Report",
     "aliases": [],
     "description": "Content-addressed Claude 2 model card describing collaboration with ARC.",
-    "sourceIds": ["source-eval-i-claude2-card"]
+    "sourceIds": ["source-eval-i-claude2-card", "mc-src-claude-2-1-card"]
   },
   {
     "id": "metr-o1-preview-report",
@@ -3853,7 +3860,7 @@
     "sourceIds": ["source-michie-1986-on-machine-intelligence"],
     "proposition": {
       "code": "C1",
-      "criterion": "An explicit claim that apparent capability, understanding or awareness shown in a behavioural test, such as the imitation game, is weak or misleading evidence of what the system is.",
+      "criterion": "An explicit claim that apparent capability, understanding or awareness shown in a behavioural test, such as the imitation game, is weak or misleading evidence of what the system is. A text that holds that a machine would fail a behavioural test, and that the test therefore reliably tells machines from people, does not meet the criterion, even where it says that narrower performances would not show understanding.",
       "terms": []
     }
   },
@@ -11873,13 +11880,21 @@
   },
   {
     "id": "il-ai-safety-measures-act",
-    "name": "Illinois AI Safety Measures Act",
+    "name": "Illinois Artificial Intelligence Safety Measures Act (Public Act 104-0538)",
     "shortName": "Illinois AI Safety Measures Act",
     "type": "document",
     "subtype": "Statute",
     "aliases": [],
-    "description": "An Illinois act on AI safety, recorded only as the Governor describes it in Executive Order 2026-07 of 22 September 2026. The legislature's record could not be retrieved, so its bill number, dates and text are not recorded.",
-    "sourceIds": ["source-il-eo-2026-07"]
+    "description": "Illinois Public Act 104-0538 (SB 315, 104th General Assembly), the Artificial Intelligence Safety Measures Act: duties on developers of frontier AI models, including a published safety framework, transparency reports, incident reporting and whistleblower protection. Read in a saved copy of the enacted text; the Governor approved it on 6 July 2026, according to the checker's copy of the bill status record.",
+    "sourceIds": ["source-il-eo-2026-07", "source-il-pa-104-0538"],
+    "documentVersion": {
+      "family": "il-public-act-104-0538",
+      "label": "Public Act 104-0538, as enacted (approved 6 July 2026)",
+      "publisherId": "illinois-general-assembly",
+      "publishedAt": "2026-07-06",
+      "effectiveAt": "2027-01-01",
+      "dateNote": "Approval by the Governor on 6 July 2026, recorded as the date of issue, according to the official bill status record as the cross-family checker read it in an Internet Archive capture of 2026-07-31; the preparer could not open the record. Section 99 states that the act takes effect on 1 January 2027; some duties apply from 1 January 2028 (Section 10)."
+    }
   },
   {
     "id": "mi-hb-4668-2025",
@@ -24254,5 +24269,892 @@
     "aliases": [],
     "description": "MiniMax executive Director (from June 2025) and visual model research and engineering leader, per its December 2025 prospectus.",
     "sourceIds": ["lg-src-cn-minimax-prospectus"]
+  },
+  {
+    "id": "claude-3-5-haiku-sonnet-addendum-2024",
+    "name": "Model Card Addendum: Claude 3.5 Haiku and Upgraded Claude 3.5 Sonnet",
+    "type": "document",
+    "subtype": "Model card",
+    "aliases": [],
+    "description": "Anthropic's addendum to its Claude 3 model card for Claude 3.5 Haiku and the upgraded Claude 3.5 Sonnet. The addendum prints no date of its own.",
+    "sourceIds": ["mc-src-claude-3-5-addendum"]
+  },
+  {
+    "id": "claude-opus-4-5-system-card",
+    "name": "System Card: Claude Opus 4.5",
+    "type": "document",
+    "subtype": "Model card",
+    "aliases": [],
+    "description": "Anthropic's system card for Claude Opus 4.5, dated November 2025 on its cover, with a changelog of revisions on November 24 and 25 and December 5, 2025.",
+    "sourceIds": ["mc-src-claude-opus-4-5-card"],
+    "documentVersion": {
+      "family": "anthropic-claude-opus-4-5-system-card",
+      "label": "As dated November 2025 on its cover, with changelog entries to December 5, 2025",
+      "publisherId": "anthropic",
+      "publishedAt": "2025-11",
+      "revisedAt": "2025-12-05",
+      "dateNote": "The cover states 'November 2025', month precision. The changelog lists revisions dated November 24, November 25 and December 5, 2025; its first entry refers to a previous version. The expression read includes the revision of December 5, 2025."
+    }
+  },
+  {
+    "id": "claude-haiku-5-5-system-card",
+    "name": "System Card: Claude Haiku 5.5",
+    "type": "document",
+    "subtype": "Model card",
+    "aliases": [],
+    "description": "Anthropic's system card for Claude Haiku 5.5, dated October 7, 2026 on its cover.",
+    "sourceIds": ["mc-src-claude-haiku-5-5-card"],
+    "documentVersion": {
+      "family": "anthropic-claude-haiku-5-5-system-card",
+      "label": "As dated October 7, 2026 on its cover",
+      "publisherId": "anthropic",
+      "publishedAt": "2026-10-07",
+      "dateNote": "The date printed on the cover, day precision; the card does not say whether it is an issue or publication date. No changelog or revision date was found."
+    }
+  },
+  {
+    "id": "gemini-3-flash-model-card",
+    "name": "Gemini 3 Flash Model Card",
+    "type": "document",
+    "subtype": "Model card",
+    "aliases": [],
+    "description": "Google DeepMind's model card for Gemini 3 Flash, which states that it was published in December 2025.",
+    "sourceIds": ["mc-src-gemini-3-flash-card"],
+    "documentVersion": {
+      "family": "google-deepmind-gemini-3-flash-model-card",
+      "label": "As dated 'Published: December 2025' in its preamble",
+      "publisherId": "google-deepmind",
+      "publishedAt": "2025-12",
+      "dateNote": "The card states 'Published: December 2025', month precision; no revision date is printed."
+    }
+  },
+  {
+    "id": "gemini-4-argon-model-card",
+    "name": "Gemini 4 Argon — Model Card",
+    "type": "document",
+    "subtype": "Model card",
+    "aliases": [],
+    "description": "Google DeepMind's model card for Gemini 4 Argon, which states that it was published in October 2026.",
+    "sourceIds": ["mc-src-gemini-4-argon-card"],
+    "documentVersion": {
+      "family": "google-deepmind-gemini-4-argon-model-card",
+      "label": "As dated 'Published: October 2026' in its preamble",
+      "publisherId": "google-deepmind",
+      "publishedAt": "2026-10",
+      "dateNote": "The card states 'Published: October 2026', month precision; no revision date is printed."
+    }
+  },
+  {
+    "id": "llama-2-model-card",
+    "name": "Llama 2 model card (MODEL_CARD.md, meta-llama/llama)",
+    "type": "document",
+    "subtype": "Model card",
+    "aliases": [],
+    "description": "Meta's model card for the Llama 2 family, the MODEL_CARD.md file of its meta-llama/llama repository on GitHub. The card prints no date of its own.",
+    "sourceIds": ["mc-src-llama-2-card"]
+  },
+  {
+    "id": "llama-3-3-model-card",
+    "name": "Llama 3.3 model card (MODEL_CARD.md, meta-llama/llama-models)",
+    "type": "document",
+    "subtype": "Model card",
+    "aliases": [],
+    "description": "Meta's model card for Llama 3.3, the models/llama3_3/MODEL_CARD.md file of its meta-llama/llama-models repository on GitHub. The card prints a model release date but no date of its own.",
+    "sourceIds": ["mc-src-llama-3-3-card"]
+  },
+  {
+    "id": "cwm-preparedness-report",
+    "name": "Code World Model Preparedness Report",
+    "type": "document",
+    "subtype": "Report",
+    "aliases": [],
+    "description": "Meta's preparedness report for its Code World Model (CWM), the expression read dated October 8, 2025.",
+    "sourceIds": ["mc-src-cwm-preparedness-report"],
+    "documentVersion": {
+      "family": "meta-cwm-preparedness-report",
+      "label": "The expression dated October 8, 2025",
+      "publisherId": "meta",
+      "revisedAt": "2025-10-08",
+      "dateNote": "The report prints 'Date: October 8, 2025' without saying whether it is a first publication or a revision. Meta's publication page for the report bears an earlier date; that page is not a source of this record, so no first publication date is recorded."
+    }
+  },
+  {
+    "id": "muse-spark-1-3-evaluation-report",
+    "name": "Muse Spark 1.3 Evaluation Report",
+    "type": "document",
+    "subtype": "Report",
+    "aliases": [],
+    "description": "Meta's evaluation report for Muse Spark 1.3, the expression read dated October 23, 2026.",
+    "sourceIds": ["mc-src-muse-spark-1-3-report"],
+    "documentVersion": {
+      "family": "meta-muse-spark-1-3-evaluation-report",
+      "label": "The expression dated October 23, 2026",
+      "publisherId": "meta",
+      "revisedAt": "2026-10-23",
+      "dateNote": "The report prints 'Date: October 23, 2026' without saying whether it is a first publication or a revision. An earlier announcement by Meta links a report at the same address; it is not a source of this record, so no first publication date is recorded."
+    }
+  },
+  {
+    "id": "phi-2-model-card",
+    "name": "Phi-2 model card (README.md, microsoft/phi-2)",
+    "type": "document",
+    "subtype": "Model card",
+    "aliases": [],
+    "description": "Microsoft's model card for Phi-2, the README of its microsoft/phi-2 repository on Hugging Face. The card prints no date of its own.",
+    "sourceIds": ["mc-src-phi-2-card"]
+  },
+  {
+    "id": "phi-4-model-card",
+    "name": "Phi-4 model card (README.md, microsoft/phi-4)",
+    "type": "document",
+    "subtype": "Model card",
+    "aliases": [],
+    "description": "Microsoft's model card for Phi-4, the README of its microsoft/phi-4 repository on Hugging Face. The card prints a model release date but no date of its own.",
+    "sourceIds": ["mc-src-phi-4-card"]
+  },
+  {
+    "id": "phi-4-mini-flash-reasoning-model-card",
+    "name": "Phi-4-mini-flash-reasoning model card (README.md, microsoft/Phi-4-mini-flash-reasoning)",
+    "type": "document",
+    "subtype": "Model card",
+    "aliases": [],
+    "description": "Microsoft's model card for Phi-4-mini-flash-reasoning, the README of its microsoft/Phi-4-mini-flash-reasoning repository on Hugging Face. The card prints a model release month but no date of its own.",
+    "sourceIds": ["mc-src-phi-4-mini-flash-reasoning-card"]
+  },
+  {
+    "id": "mai-cyber-1-1-flash-model-card",
+    "name": "MAI-Cyber-1.1-Flash model card",
+    "type": "document",
+    "subtype": "Model card",
+    "aliases": [],
+    "description": "Microsoft's model card for MAI-Cyber-1.1-Flash, a PDF linked from the model's page on microsoft.ai. The card prints a model release date but no date of its own.",
+    "sourceIds": ["mc-src-mai-cyber-1-1-flash-card"]
+  },
+  {
+    "id": "gpt-4v-system-card",
+    "name": "GPT-4V(ision) System Card",
+    "type": "document",
+    "subtype": "Model card",
+    "aliases": [],
+    "description": "OpenAI's system card for GPT-4 with vision (GPT-4V), dated September 25, 2023 on its cover.",
+    "sourceIds": ["mc-src-gpt-4v-card"],
+    "documentVersion": {
+      "family": "openai-gpt-4v-system-card",
+      "label": "As dated September 25, 2023 on its cover",
+      "publisherId": "openai",
+      "publishedAt": "2023-09-25",
+      "dateNote": "The date printed beneath the title and author line, day precision; the card does not label it as an issue or publication date. No revision date was located."
+    }
+  },
+  {
+    "id": "gpt-5-2-codex-system-card-addendum",
+    "name": "Addendum to GPT-5.2 System Card: GPT-5.2-Codex",
+    "type": "document",
+    "subtype": "Model card",
+    "aliases": [],
+    "description": "OpenAI's addendum to the GPT-5.2 system card for GPT-5.2-Codex, dated December 18, 2025 on its cover.",
+    "sourceIds": ["mc-src-gpt-5-2-codex-addendum"],
+    "documentVersion": {
+      "family": "openai-gpt-5-2-codex-system-card-addendum",
+      "label": "As dated December 18, 2025 on its cover",
+      "publisherId": "openai",
+      "publishedAt": "2025-12-18",
+      "dateNote": "The date printed on the cover, day precision; the card does not label its kind. No revision date was located."
+    }
+  },
+  {
+    "id": "gpt-6-luna-october-29-addendum",
+    "name": "Addendum to GPT-6 Luna System Card: October 29, 2026 Update",
+    "type": "document",
+    "subtype": "Model card",
+    "aliases": [],
+    "description": "OpenAI's addendum to the GPT-6 Luna system card on the model update of October 29, 2026, dated 2026-10-29 on its cover.",
+    "sourceIds": ["mc-src-gpt-6-luna-october-29-addendum"],
+    "documentVersion": {
+      "family": "openai-gpt-6-luna-october-29-addendum",
+      "label": "As dated 2026-10-29 on its cover",
+      "publisherId": "openai",
+      "publishedAt": "2026-10-29",
+      "dateNote": "The date printed on the cover, day precision; the card does not label its kind. The file's address reads 'october-28-2026-addendum'; the difference is recorded, not resolved."
+    }
+  },
+  {
+    "id": "grok-4-1-model-card",
+    "name": "Grok 4.1 Model Card",
+    "type": "document",
+    "subtype": "Model card",
+    "aliases": [],
+    "description": "xAI's model card for Grok 4.1, dated November 17, 2025 under its title.",
+    "sourceIds": ["mc-src-grok-4-1-card"],
+    "documentVersion": {
+      "family": "xai-grok-4-1-model-card",
+      "label": "As dated November 17, 2025 under its title",
+      "publisherId": "xai",
+      "publishedAt": "2025-11-17",
+      "dateNote": "The date printed under the title, day precision, without a label; the file name carries the same date. No revision date is printed."
+    }
+  },
+  {
+    "id": "grok-4-7-model-card",
+    "name": "Model Card: Grok 4.7",
+    "type": "document",
+    "subtype": "Model card",
+    "aliases": [],
+    "description": "xAI's model card for Grok 4.7, dated September 21, 2026 on its cover, with a revision date of the same day.",
+    "sourceIds": ["mc-src-grok-4-7-card"],
+    "documentVersion": {
+      "family": "xai-grok-4-7-model-card",
+      "label": "As dated September 21, 2026 on its cover (Revision: 2026-09-21)",
+      "publisherId": "xai",
+      "publishedAt": "2026-09-21",
+      "revisedAt": "2026-09-21",
+      "dateNote": "The cover prints the card's date, without a label, and 'Revision: 2026-09-21'; both are the same day."
+    }
+  },
+  {
+    "id": "capek-rur-1923-english",
+    "name": "R. U. R. (Rossum’s Universal Robots), English version by Paul Selver and Nigel Playfair",
+    "shortName": "Čapek, R. U. R., English version (1923)",
+    "type": "document",
+    "subtype": "Book",
+    "aliases": [],
+    "description": "Karel Čapek’s play R. U. R. in the English acting version by Paul Selver and Nigel Playfair, copyright 1923 (Doubleday, Page and Company), read in the Project Gutenberg transcription (2019) of an undated later Samuel French printing; 1923 is not the date of that printing. The Czech play was printed by Aventinum, Prague, in 1920.",
+    "sourceIds": ["source-pre-capek-rur-1923-english"]
+  },
+  {
+    "id": "descartes-1637-discours",
+    "name": "Discours de la methode pour bien conduire sa raison, & chercher la verité dans les sciences",
+    "shortName": "Descartes, Discours de la méthode (1637)",
+    "type": "document",
+    "subtype": "Book",
+    "aliases": [],
+    "description": "René Descartes’s Discours de la méthode, published without the author’s name at Leiden by Ian Maire in 1637, read in page images of the Bibliothèque nationale de France copy. The year is that of the title-page imprint.",
+    "sourceIds": ["source-pre-descartes-1637-gallica-images"]
+  },
+  {
+    "id": "jefferson-1949-mind-of-mechanical-man",
+    "name": "The Mind of Mechanical Man (Lister Oration)",
+    "shortName": "Jefferson, The Mind of Mechanical Man (1949)",
+    "type": "document",
+    "subtype": "Lecture or talk",
+    "aliases": [],
+    "description": "Geoffrey Jefferson’s Lister Oration, delivered at the Royal College of Surgeons of England on 9 June 1949 and published in the British Medical Journal of 25 June 1949 (vol. 1, no. 4616, pp. 1105–1110), read in page scans in PubMed Central.",
+    "sourceIds": ["source-pre-jefferson-1949-pmc-scans"]
+  },
+  {
+    "id": "hartree-1949-calculating-instruments",
+    "name": "Calculating Instruments and Machines",
+    "shortName": "Hartree, Calculating Instruments and Machines (1949)",
+    "type": "document",
+    "subtype": "Book",
+    "aliases": [],
+    "description": "Douglas R. Hartree’s book Calculating Instruments and Machines (University of Illinois Press, Urbana, 1949), read in an Internet Archive scan of the 1949 printing.",
+    "sourceIds": ["source-pre-hartree-1949-ia"]
+  },
+  {
+    "id": "lovelace-1843-notes",
+    "name": "Notes by the translator to L. F. Menabrea’s Sketch of the Analytical Engine",
+    "shortName": "Lovelace, Notes to Menabrea’s Sketch of the Analytical Engine (1843)",
+    "type": "document",
+    "subtype": "Book chapter",
+    "aliases": [],
+    "description": "The translator’s notes, signed A. A. L. and attributed to Ada Lovelace, to L. F. Menabrea’s Sketch of the Analytical Engine invented by Charles Babbage, in Scientific Memoirs, vol. III (London, 1843), pp. 666–731. The volume prints no fuller name than the initials.",
+    "sourceIds": ["source-pre-lovelace-1843-scientific-memoirs-3"]
+  },
+  {
+    "id": "kolmogorov-1961-letter-to-berg",
+    "name": "Письмо А. И. Бергу (Letter to A. I. Berg)",
+    "shortName": "Kolmogorov, Letter to A. I. Berg (1961)",
+    "type": "document",
+    "subtype": "Letter",
+    "aliases": [],
+    "description": "A. N. Kolmogorov’s undated letter to A. I. Berg, which its editors date to 1961, read in a typeset edition of 2023 published by MCCME. The editors report an earlier publication from A. A. Lyapunov’s papers (Novosibirsk, 2001), not seen.",
+    "sourceIds": ["source-pre-kolmogorov-1961-letter-mccme"]
+  },
+  {
+    "id": "turing-1948-npl-intelligent-machinery",
+    "name": "Intelligent Machinery (National Physical Laboratory report)",
+    "shortName": "Turing, Intelligent Machinery (NPL report, 1948)",
+    "type": "document",
+    "subtype": "Report",
+    "aliases": [],
+    "description": "Alan Turing’s report Intelligent Machinery for the National Physical Laboratory, dated 1948 on its title sheet, read in the laboratory’s facsimile. The undated typescript with Turing’s corrections in the Turing Digital Archive (AMT/C/11) is its draft and is held as a second source.",
+    "sourceIds": [
+      "source-pre-turing-npl-1948-report",
+      "source-pre-turing-amt-c-11"
+    ]
+  },
+  {
+    "id": "wiener-1948-cybernetics",
+    "name": "Cybernetics, or Control and Communication in the Animal and the Machine",
+    "shortName": "Wiener, Cybernetics (1948)",
+    "type": "document",
+    "subtype": "Book",
+    "aliases": [],
+    "description": "Norbert Wiener’s book Cybernetics, or Control and Communication in the Animal and the Machine (1948), read in the MIT Press reissue (2019) of the second edition of 1961, whose Part I is headed “Original Edition (1948)”. The 1948 printing was not read.",
+    "sourceIds": ["source-pre-wiener-cybernetics-2019-reissue"]
+  },
+  {
+    "id": "wiener-1961-cybernetics-second-edition",
+    "name": "Cybernetics, second edition: supplementary chapters IX–X",
+    "shortName": "Wiener, Cybernetics, 2nd edition, chapters IX–X (1961)",
+    "type": "document",
+    "subtype": "Book chapter",
+    "aliases": [],
+    "description": "The two supplementary chapters (IX and X) of the second edition of Norbert Wiener’s Cybernetics (1961), read in the MIT Press reissue (2019), whose Part II is headed “Supplementary Chapters (1961)”. The 1961 printing was not read.",
+    "sourceIds": ["source-pre-wiener-cybernetics-2019-reissue"]
+  },
+  {
+    "id": "machines-only-do-what-they-are-ordered",
+    "name": "A machine can only do what it is ordered to do",
+    "type": "concept",
+    "subtype": "Proposition",
+    "aliases": [],
+    "description": "A proposition about machine intelligence, recorded with one criterion so that texts can be classified against it (code U01 in the collection of antecedent texts). A record says what a text states, not whether the proposition is true.",
+    "sourceIds": [
+      "source-pre-hartree-1949-ia",
+      "source-pre-lovelace-1843-scientific-memoirs-3",
+      "source-pre-turing-amt-c-11"
+    ],
+    "proposition": {
+      "code": "U01",
+      "criterion": "A machine, whether a particular machine or machines in general, cannot originate anything: it does only what it has been ordered, instructed or programmed to do, so that it produces nothing beyond what was put into it or what the people who set it up know how to specify. A statement that machines are at present used only in this way, without saying that they could not do otherwise, does not meet the criterion; nor does a statement about one machine’s lack of a particular skill.",
+      "terms": ["Lovelace's objection", "Lady Lovelace's objection"]
+    }
+  },
+  {
+    "id": "machines-could-think",
+    "name": "A machine could think",
+    "type": "concept",
+    "subtype": "Proposition",
+    "aliases": [],
+    "description": "A proposition about machine intelligence, recorded with one criterion so that texts can be classified against it (code U02 in the collection of antecedent texts). A record says what a text states, not whether the proposition is true.",
+    "sourceIds": [
+      "source-butler-1863-press",
+      "source-erewhon-1872-scan",
+      "source-pre-capek-rur-1923-english"
+    ],
+    "proposition": {
+      "code": "U02",
+      "criterion": "A machine could think, or could have intelligence, consciousness or a mind in the sense in which these are ascribed to people. The text may state it as a possibility in principle, a prediction or a programme of work, and may state it of machines generally or of a kind of machine. A statement that machines imitate or simulate particular mental operations, without the claim that this is or could amount to thinking, does not meet the criterion; nor does a figure of speech such as ‘electronic brain’ used without that claim.",
+      "terms": []
+    }
+  },
+  {
+    "id": "technological-singularity",
+    "name": "Machine intelligence will bring a singularity",
+    "type": "concept",
+    "subtype": "Proposition",
+    "aliases": [],
+    "description": "A proposition about machine intelligence, recorded with one criterion so that texts can be classified against it (code U03 in the collection of antecedent texts). A record says what a text states, not whether the proposition is true.",
+    "sourceIds": ["source-vinge-1983-omni-scan", "source-vinge-1993-ntrs"],
+    "proposition": {
+      "code": "U03",
+      "criterion": "The creation of intelligence greater than human, by machines or by human intelligence amplified with machines, is approaching or would bring a point, called a singularity or described as a discontinuity or transition, beyond which human affairs as they have been known could not continue or could not be understood or foreseen. A statement that technological change in general is accelerating towards such a point, without machine intelligence as its cause or part of it, does not meet the criterion; nor does a prediction of superhuman machine intelligence without the claim of such a point.",
+      "terms": []
+    }
+  },
+  {
+    "id": "claude-3-model-card",
+    "name": "The Claude 3 Model Family: Opus, Sonnet, Haiku",
+    "type": "document",
+    "subtype": "Model card",
+    "aliases": [],
+    "description": "Anthropic's model card for the Claude 3 models (Opus, Sonnet and Haiku). The copy read is the revision with update lines of June 20 and October 22, 2024, which binds in two later addenda that are separate cards.",
+    "sourceIds": ["mc-src-claude-3-card"],
+    "documentVersion": {
+      "family": "anthropic-claude-3-model-card",
+      "label": "The revision with update lines of June 20 and October 22, 2024",
+      "publisherId": "anthropic",
+      "revisedAt": "2024-10-22",
+      "dateNote": "The copy read prints two update lines (June 20 and October 22, 2024) and no issue date of its own. Anthropic's card index gives March 2024; that page is not a source of this record, so no first publication date is recorded. An Internet Archive capture of 2024-03-04 at an earlier address holds the original 42-page expression, which the cross-family check of 2026-11-04 retrieved; it prints no date that was quoted."
+    }
+  },
+  {
+    "id": "claude-3-5-sonnet-addendum-2024",
+    "name": "Claude 3.5 Sonnet Model Card Addendum",
+    "type": "document",
+    "subtype": "Model card",
+    "aliases": [],
+    "description": "Anthropic's addendum to its Claude 3 model card for Claude 3.5 Sonnet. The addendum prints no date of its own.",
+    "sourceIds": ["mc-src-claude-3-5-sonnet-addendum"]
+  },
+  {
+    "id": "gemini-2-0-flash-model-card",
+    "name": "Gemini 2.0 Flash Model Card",
+    "type": "document",
+    "subtype": "Model card",
+    "aliases": [],
+    "description": "Google DeepMind's model card for Gemini 2.0 Flash, which states that it was published on April 15, 2025.",
+    "sourceIds": ["mc-src-gemini-2-0-flash-card"],
+    "documentVersion": {
+      "family": "google-deepmind-gemini-2-0-flash-model-card",
+      "label": "As dated 'Model card published April 15, 2025' in its header",
+      "publisherId": "google-deepmind",
+      "publishedAt": "2025-04-15",
+      "dateNote": "The card states its publication date, day precision; no revision date is printed."
+    }
+  },
+  {
+    "id": "gemini-2-0-flash-lite-model-card",
+    "name": "Gemini 2.0 Flash-Lite Model Card",
+    "type": "document",
+    "subtype": "Model card",
+    "aliases": [],
+    "description": "Google DeepMind's model card for Gemini 2.0 Flash-Lite, which states that it was published on April 10, 2025.",
+    "sourceIds": ["mc-src-gemini-2-0-flash-lite-card"],
+    "documentVersion": {
+      "family": "google-deepmind-gemini-2-0-flash-lite-model-card",
+      "label": "As dated 'Model card published April 10, 2025' in its header",
+      "publisherId": "google-deepmind",
+      "publishedAt": "2025-04-10",
+      "dateNote": "The card states its publication date, day precision; no revision date is printed."
+    }
+  },
+  {
+    "id": "cwm-model-card",
+    "name": "Code World Model model card (MODEL_CARD.md, facebookresearch/cwm)",
+    "type": "document",
+    "subtype": "Model card",
+    "aliases": [],
+    "description": "Meta's model card for its Code World Model (CWM), in the model's GitHub repository. The card prints no date of its own; Meta's Code World Model Preparedness Report is a separate document.",
+    "sourceIds": ["mc-src-cwm-model-card"]
+  },
+  {
+    "id": "muse-spark-safety-preparedness-report",
+    "name": "Muse Spark Safety & Preparedness Report",
+    "type": "document",
+    "subtype": "Report",
+    "aliases": [],
+    "description": "Meta's safety and preparedness report for Muse Spark. The earliest located expression, Meta's own copy, prints April 14, 2026; the copy read, on arXiv (2606.12429v1), prints June 12, 2026.",
+    "sourceIds": [
+      "mc-src-muse-spark-report-arxiv",
+      "mc-src-muse-spark-report-meta"
+    ],
+    "documentVersion": {
+      "family": "meta-muse-spark-safety-preparedness-report",
+      "label": "Earliest located expression printing April 14, 2026; the expression read prints June 12, 2026",
+      "publisherId": "meta",
+      "publishedAt": "2026-04-14",
+      "revisedAt": "2026-06-12",
+      "dateNote": "Meta's own copy in an Internet Archive capture of 2026-04-14, read by the cross-family check of 2026-11-04 and recorded as a source, is a 158-page expression printing April 14, 2026. The copy read here is arXiv 2606.12429v1 (160 pages), which prints 'Date: June 12, 2026' without a kind; arXiv's margin stamp reads 14 May 2026. Meta's live copy prints May 26, 2026. The expressions differ in bytes and text."
+    }
+  },
+  {
+    "id": "gpt-4o-system-card",
+    "name": "GPT-4o System Card",
+    "type": "document",
+    "subtype": "Model card",
+    "aliases": [],
+    "description": "OpenAI's system card for GPT-4o, dated August 8, 2024 under its title.",
+    "sourceIds": ["mc-src-gpt-4o-card"],
+    "documentVersion": {
+      "family": "openai-gpt-4o-system-card",
+      "label": "As dated August 8, 2024 under its title",
+      "publisherId": "openai",
+      "publishedAt": "2024-08-08",
+      "dateNote": "The date printed under the title, day precision, without a label. No revision date is printed. An Internet Archive capture of 2024-08-08 at the same address holds an earlier 32-page expression whose bytes differ from the copy read."
+    }
+  },
+  {
+    "id": "claude-opus-4-sonnet-4-system-card",
+    "name": "System Card: Claude Opus 4 & Claude Sonnet 4",
+    "type": "document",
+    "subtype": "Model card",
+    "aliases": [],
+    "description": "Anthropic's system card for Claude Opus 4 and Claude Sonnet 4, dated May 2025 on its cover.",
+    "sourceIds": ["mc-src-claude-4-card"],
+    "documentVersion": {
+      "family": "anthropic-claude-opus-4-sonnet-4-system-card",
+      "label": "As dated May 2025 on its cover",
+      "publisherId": "anthropic",
+      "publishedAt": "2025-05",
+      "dateNote": "The cover prints 'May 2025', month precision. No day and no revision date are printed."
+    }
+  },
+  {
+    "id": "muse-spark-1-1-evaluation-report",
+    "name": "Muse Spark 1.1 Evaluation Report",
+    "type": "document",
+    "subtype": "Report",
+    "aliases": [],
+    "description": "Meta's evaluation report for Muse Spark 1.1, dated July 9, 2026.",
+    "sourceIds": ["mc-src-muse-spark-1-1-report"],
+    "documentVersion": {
+      "family": "meta-muse-spark-1-1-evaluation-report",
+      "label": "As dated July 9, 2026",
+      "publisherId": "meta",
+      "publishedAt": "2026-07-09",
+      "dateNote": "The report prints 'Date: July 9, 2026', day precision, without saying what kind of date it is. No revision date is printed in the copy read."
+    }
+  },
+  {
+    "id": "o1-preview-o1-mini-system-card-2024",
+    "name": "OpenAI o1 System Card (o1-preview and o1-mini, September 2024)",
+    "type": "document",
+    "subtype": "Model card",
+    "aliases": [],
+    "description": "OpenAI's system card for o1-preview and o1-mini, dated September 12, 2024. It is not the o1 system card of December 2024.",
+    "sourceIds": ["mc-src-o1-preview-card"],
+    "documentVersion": {
+      "family": "openai-o1-preview-o1-mini-system-card",
+      "label": "As dated Sept 12, 2024 under its title",
+      "publisherId": "openai",
+      "publishedAt": "2024-09-12",
+      "dateNote": "The date printed under the title, day precision. The file name's 20240917 is not the card's date. No revision date is printed."
+    }
+  },
+  {
+    "id": "operator-system-card",
+    "name": "Operator System Card",
+    "type": "document",
+    "subtype": "Model card",
+    "aliases": [],
+    "description": "OpenAI's system card for Operator, dated January 23, 2025 on its cover. The copy read includes a section marked as updated on March 11, 2025.",
+    "sourceIds": ["mc-src-operator-card"],
+    "documentVersion": {
+      "family": "openai-operator-system-card",
+      "label": "As dated January 23, 2025 on its cover, with a section updated March 11, 2025",
+      "publisherId": "openai",
+      "publishedAt": "2025-01-23",
+      "revisedAt": "2025-03-11",
+      "dateNote": "The cover prints January 23, 2025, day precision. Section 4.7 of the copy read is marked 'Updated March 11, 2025', so the copy read is that later expression; the cover date stands as the card's date."
+    }
+  },
+  {
+    "id": "grok-4-20-system-card",
+    "name": "Grok 4.20 System Card",
+    "type": "document",
+    "subtype": "Model card",
+    "aliases": [],
+    "description": "xAI's system card for Grok 4.20, dated April 7, 2026.",
+    "sourceIds": ["mc-src-grok-4-20-card"],
+    "documentVersion": {
+      "family": "xai-grok-4-20-system-card",
+      "label": "As dated April 7, 2026 under its title",
+      "publisherId": "xai",
+      "publishedAt": "2026-04-07",
+      "dateNote": "The date printed under the title, day precision. No revision date is printed in the copy read."
+    }
+  },
+  {
+    "id": "illinois-general-assembly",
+    "name": "Illinois General Assembly",
+    "shortName": "Illinois General Assembly",
+    "type": "public_body",
+    "subtype": "Legislature",
+    "aliases": [],
+    "description": "The Senate and House of Representatives of the State of Illinois. Records name it as the publisher of public acts and of the legislative record of their passage, as shown on ilga.gov.",
+    "sourceIds": ["source-il-pa-104-0538"]
+  },
+  {
+    "id": "simon-newell-1958-heuristic-problem-solving",
+    "name": "Heuristic Problem Solving: The Next Advance in Operations Research",
+    "shortName": "Simon and Newell, Heuristic Problem Solving (1958)",
+    "type": "document",
+    "subtype": "Journal article",
+    "aliases": [],
+    "description": "Herbert A. Simon and Allen Newell’s article in Operations Research 6 (1), January–February 1958, pp. 1–10: the text of an address at the banquet of the Twelfth National Meeting of the Operations Research Society of America, Pittsburgh, 14 November 1957.",
+    "sourceIds": ["source-pr-simon-newell-1958-scan"]
+  },
+  {
+    "id": "michie-1973-machines-and-theory-of-intelligence",
+    "name": "Machines and the theory of intelligence",
+    "shortName": "Michie, Machines and the theory of intelligence (1973)",
+    "type": "document",
+    "subtype": "Journal article",
+    "aliases": [],
+    "description": "Donald Michie’s article “Machines and the theory of intelligence”, first published in Nature 241 (1973), pp. 507–512, and reprinted as chapter 11 of his On Machine Intelligence (second edition, 1986).",
+    "sourceIds": ["source-pr-michie-1986-chapter-11"]
+  },
+  {
+    "id": "moravec-1998-when-will-hardware-match-brain",
+    "name": "When will computer hardware match the human brain?",
+    "shortName": "Moravec, When will computer hardware match the human brain? (1998)",
+    "type": "document",
+    "subtype": "Journal article",
+    "aliases": [],
+    "description": "Hans Moravec’s article in the Journal of Evolution and Technology, volume 1 (1998).",
+    "sourceIds": ["source-pr-moravec-1998-jet"]
+  },
+  {
+    "id": "long-bets-1-turing-test-2029",
+    "name": "Long Bet 1: By 2029 no computer - or \"machine intelligence\" - will have passed the Turing Test",
+    "shortName": "Long Bet 1, Kapor and Kurzweil (2002)",
+    "type": "document",
+    "subtype": "Public bet page",
+    "aliases": [],
+    "description": "The page of the first bet on Long Bets, a service of The Long Now Foundation, between Mitchell Kapor and Ray Kurzweil, with its terms, arguments and stakes; the bet runs from 2002 to 2029.",
+    "sourceIds": ["source-pr-long-bets-1"]
+  },
+  {
+    "id": "legg-2011-qa-on-risks-from-ai",
+    "name": "Q&A with Shane Legg on risks from AI",
+    "shortName": "Legg, Q&A on risks from AI (2011)",
+    "type": "document",
+    "subtype": "Forum post",
+    "aliases": [],
+    "description": "Shane Legg’s answers to questions on risks from AI, sent by email and posted on LessWrong by the interviewer (XiXiDu) on 17 June 2011.",
+    "sourceIds": ["source-pr-legg-2011-lesswrong-qa"]
+  },
+  {
+    "id": "baum-goertzel-goertzel-2011-how-long-until-human-level-ai",
+    "name": "How long until human-level AI? Results from an expert assessment",
+    "shortName": "Baum, Goertzel and Goertzel, How long until human-level AI? (2011)",
+    "type": "document",
+    "subtype": "Journal article",
+    "aliases": [],
+    "description": "Seth D. Baum, Ben Goertzel and Ted G. Goertzel’s report of an expert assessment conducted at the AGI-09 conference (2009), in Technological Forecasting & Social Change 78 (1), 2011.",
+    "sourceIds": ["source-pr-baum-goertzel-2011"]
+  },
+  {
+    "id": "muller-bostrom-2014-future-progress-in-ai",
+    "name": "Future Progress in Artificial Intelligence: A Survey of Expert Opinion",
+    "shortName": "Müller and Bostrom, Future Progress in Artificial Intelligence (2014)",
+    "type": "document",
+    "subtype": "Book chapter",
+    "aliases": [],
+    "description": "Vincent C. Müller and Nick Bostrom’s report of a survey of four groups of experts (2012/2013), in Fundamental Issues of Artificial Intelligence (Springer, Synthese Library); the authors’ file reads “forthcoming 2014”.",
+    "sourceIds": ["source-pr-muller-bostrom-2014"]
+  },
+  {
+    "id": "grace-et-al-2017-when-will-ai-exceed-human-performance",
+    "name": "When Will AI Exceed Human Performance? Evidence from AI Experts",
+    "shortName": "Grace et al., When Will AI Exceed Human Performance? (2017)",
+    "type": "document",
+    "subtype": "Preprint",
+    "aliases": [],
+    "description": "Katja Grace, John Salvatier, Allan Dafoe, Baobao Zhang and Owain Evans’s report of a 2016 survey of researchers who published at NIPS and ICML 2015 (arXiv:1705.08807, version 1).",
+    "sourceIds": ["source-pr-grace-2017-arxiv-v1"]
+  },
+  {
+    "id": "zhang-et-al-2022-forecasting-ai-progress",
+    "name": "Forecasting AI Progress: Evidence from a Survey of Machine Learning Researchers",
+    "shortName": "Zhang et al., Forecasting AI Progress (2022)",
+    "type": "document",
+    "subtype": "Preprint",
+    "aliases": [],
+    "description": "Baobao Zhang and co-authors’ report of a 2019 survey of machine learning researchers (arXiv:2206.04132, version 1).",
+    "sourceIds": ["source-pr-zhang-2022-arxiv-v1"]
+  },
+  {
+    "id": "ai-impacts-2022-expert-survey-on-progress-in-ai",
+    "name": "2022 Expert Survey on Progress in AI",
+    "shortName": "AI Impacts, 2022 Expert Survey on Progress in AI",
+    "type": "document",
+    "subtype": "Survey report",
+    "aliases": [],
+    "description": "AI Impacts’ results page for its 2022 Expert Survey on Progress in AI, first published in August 2022 and kept as a wiki page.",
+    "sourceIds": ["source-pr-espai-2022-wiki"]
+  },
+  {
+    "id": "grace-et-al-2024-thousands-of-ai-authors",
+    "name": "Thousands of AI Authors on the Future of AI",
+    "shortName": "Grace et al., Thousands of AI Authors on the Future of AI (2024)",
+    "type": "document",
+    "subtype": "Preprint",
+    "aliases": [],
+    "description": "Katja Grace and co-authors’ report of a survey of authors of AI publications conducted in October 2023 (arXiv:2401.02843, version 1).",
+    "sourceIds": ["source-pr-grace-2024-arxiv-v1"]
+  },
+  {
+    "id": "brooks-2018-my-dated-predictions",
+    "name": "My Dated Predictions",
+    "shortName": "Brooks, My Dated Predictions (2018)",
+    "type": "document",
+    "subtype": "Blog post",
+    "aliases": [],
+    "description": "Rodney Brooks’s post of 1 January 2018 listing dated predictions about self-driving cars, AI and robotics, and space travel, with the conventions “NET” and “BY”.",
+    "sourceIds": ["source-pr-brooks-2018-dated-predictions"]
+  },
+  {
+    "id": "karnofsky-2021-ai-timelines",
+    "name": "AI Timelines: Where the Arguments, and the \"Experts,\" Stand",
+    "shortName": "Karnofsky, AI Timelines (2021)",
+    "type": "document",
+    "subtype": "Blog post",
+    "aliases": [],
+    "description": "Holden Karnofsky’s post on Cold Takes of 7 September 2021 summarising forecasts of transformative AI.",
+    "sourceIds": ["source-pr-karnofsky-2021-ai-timelines"]
+  },
+  {
+    "id": "cotra-2022-two-year-update",
+    "name": "Two-year update on my personal AI timelines",
+    "shortName": "Cotra, Two-year update on my personal AI timelines (2022)",
+    "type": "document",
+    "subtype": "Forum post",
+    "aliases": [],
+    "description": "Ajeya Cotra’s post of 2 August 2022 on LessWrong and the Alignment Forum, updating the estimates of her 2020 draft report on biological anchors.",
+    "sourceIds": ["source-pr-cotra-2022-two-year-update"]
+  },
+  {
+    "id": "amodei-2024-machines-of-loving-grace",
+    "name": "Machines of Loving Grace",
+    "shortName": "Amodei, Machines of Loving Grace (2024)",
+    "type": "document",
+    "subtype": "Essay",
+    "aliases": [],
+    "description": "Dario Amodei’s essay of October 2024 on the possible benefits of powerful AI, published on his website.",
+    "sourceIds": ["source-pr-amodei-2024-machines-of-loving-grace"]
+  },
+  {
+    "id": "altman-2025-reflections",
+    "name": "Reflections",
+    "shortName": "Altman, Reflections (2025)",
+    "type": "document",
+    "subtype": "Blog post",
+    "aliases": [],
+    "description": "Sam Altman’s blog post of 5 January 2025.",
+    "sourceIds": ["source-pr-altman-2025-reflections"]
+  },
+  {
+    "id": "altman-2025-three-observations",
+    "name": "Three Observations",
+    "shortName": "Altman, Three Observations (2025)",
+    "type": "document",
+    "subtype": "Blog post",
+    "aliases": [],
+    "description": "Sam Altman’s blog post of 9 February 2025.",
+    "sourceIds": ["source-pr-altman-2025-three-observations"]
+  },
+  {
+    "id": "anthropic-2025-recommendations-to-ostp",
+    "name": "Anthropic's Recommendations to OSTP for the U.S. AI Action Plan",
+    "shortName": "Anthropic, Recommendations to OSTP (2025)",
+    "type": "document",
+    "subtype": "Announcement",
+    "aliases": [],
+    "description": "Anthropic’s page of 6 March 2025 summarising its submission to the White House Office of Science and Technology Policy for the US AI Action Plan.",
+    "sourceIds": ["source-pr-anthropic-2025-ostp"]
+  },
+  {
+    "id": "ai-2027-scenario",
+    "name": "AI 2027",
+    "shortName": "Kokotajlo et al., AI 2027 (2025)",
+    "type": "document",
+    "subtype": "Scenario report",
+    "aliases": [],
+    "description": "A scenario by Daniel Kokotajlo, Scott Alexander, Thomas Larsen, Eli Lifland and Romeo Dean, published by the AI Futures Project at ai-2027.com on 3 April 2025.",
+    "sourceIds": ["source-pr-ai-2027"]
+  },
+  {
+    "id": "google-deepmind-2025-technical-agi-safety",
+    "name": "An Approach to Technical AGI Safety and Security",
+    "shortName": "Google DeepMind, An Approach to Technical AGI Safety and Security (2025)",
+    "type": "document",
+    "subtype": "Preprint",
+    "aliases": [],
+    "description": "A paper by Rohin Shah and co-authors at Google DeepMind (arXiv:2504.01849, version 1, 2 April 2025).",
+    "sourceIds": ["source-pr-gdm-2025-agi-safety-arxiv-v1"]
+  },
+  {
+    "id": "amodei-2025-urgency-of-interpretability",
+    "name": "The Urgency of Interpretability",
+    "shortName": "Amodei, The Urgency of Interpretability (2025)",
+    "type": "document",
+    "subtype": "Essay",
+    "aliases": [],
+    "description": "Dario Amodei’s essay of April 2025, published on his website.",
+    "sourceIds": ["source-pr-amodei-2025-urgency-of-interpretability"]
+  },
+  {
+    "id": "altman-2025-gentle-singularity",
+    "name": "The Gentle Singularity",
+    "shortName": "Altman, The Gentle Singularity (2025)",
+    "type": "document",
+    "subtype": "Blog post",
+    "aliases": [],
+    "description": "Sam Altman’s blog post of 10 June 2025.",
+    "sourceIds": ["source-pr-altman-2025-gentle-singularity"]
+  },
+  {
+    "id": "amodei-2026-adolescence-of-technology",
+    "name": "The Adolescence of Technology",
+    "shortName": "Amodei, The Adolescence of Technology (2026)",
+    "type": "document",
+    "subtype": "Essay",
+    "aliases": [],
+    "description": "Dario Amodei’s essay of January 2026, published on his website.",
+    "sourceIds": ["source-pr-amodei-2026-adolescence-of-technology"]
+  },
+  {
+    "id": "openai-2023-governance-of-superintelligence",
+    "name": "Governance of superintelligence",
+    "shortName": "OpenAI, Governance of superintelligence (2023)",
+    "type": "document",
+    "subtype": "Announcement",
+    "aliases": [],
+    "description": "OpenAI’s post of 22 May 2023 by Sam Altman, Greg Brockman and Ilya Sutskever.",
+    "sourceIds": ["source-pr-openai-2023-governance-capture"]
+  },
+  {
+    "id": "legg-2009-tick-tock-bing",
+    "name": "Tick, tock, tick, tock… BING",
+    "shortName": "Legg, Tick, tock, tick, tock… BING (2009)",
+    "type": "document",
+    "subtype": "Blog post",
+    "aliases": [],
+    "description": "Shane Legg’s post of 7 December 2009 on his blog, vetta.org.",
+    "sourceIds": ["source-pr-legg-2009-tick-tock"]
+  },
+  {
+    "id": "legg-2010-goodbye-2010",
+    "name": "Goodbye 2010",
+    "shortName": "Legg, Goodbye 2010 (2010)",
+    "type": "document",
+    "subtype": "Blog post",
+    "aliases": [],
+    "description": "Shane Legg’s post of 10 December 2010 on his blog, vetta.org.",
+    "sourceIds": ["source-pr-legg-2010-goodbye-2010"]
+  },
+  {
+    "id": "legg-2011-goodbye-2011",
+    "name": "Goodbye 2011, hello 2012",
+    "shortName": "Legg, Goodbye 2011, hello 2012 (2011)",
+    "type": "document",
+    "subtype": "Blog post",
+    "aliases": [],
+    "description": "Shane Legg’s post of 31 December 2011 on his blog, vetta.org.",
+    "sourceIds": ["source-pr-legg-2011-goodbye-2011"]
+  },
+  {
+    "id": "sandberg-bostrom-2011-machine-intelligence-survey",
+    "name": "Machine Intelligence Survey",
+    "shortName": "Sandberg and Bostrom, Machine Intelligence Survey (2011)",
+    "type": "document",
+    "subtype": "Technical report",
+    "aliases": [],
+    "description": "Anders Sandberg and Nick Bostrom’s Future of Humanity Institute Technical Report 2011-1, reporting an informal poll at the FHI Winter Intelligence conference of 16 January 2011.",
+    "sourceIds": ["source-pr-fhi-2011-1-capture"]
+  },
+  {
+    "id": "openai-2025-ai-progress-and-recommendations",
+    "name": "AI progress and recommendations",
+    "shortName": "OpenAI, AI progress and recommendations (2025)",
+    "type": "document",
+    "subtype": "Announcement",
+    "aliases": [],
+    "description": "OpenAI’s page of 6 November 2025, unsigned and published under the company’s name.",
+    "sourceIds": ["source-pr-openai-2025-progress-capture"]
+  },
+  {
+    "id": "metaculus-5121-capture-2025-01-05",
+    "name": "When will the first general AI system be devised, tested, and publicly announced? (Metaculus question 5121, as captured on 2025-01-05)",
+    "shortName": "Metaculus question 5121 (capture of 2025-01-05)",
+    "type": "document",
+    "subtype": "Forecasting platform question",
+    "aliases": [],
+    "description": "Metaculus question 5121 as it stood in an Internet Archive capture of 5 January 2025, with the community prediction it displayed that day. The question’s title and resolution criteria changed between captures.",
+    "sourceIds": ["source-pr-metaculus-5121-capture-2025-01-05"]
+  },
+  {
+    "id": "ulam-1958-john-von-neumann",
+    "name": "John von Neumann, 1903–1957",
+    "shortName": "Ulam, John von Neumann (1958)",
+    "type": "document",
+    "subtype": "Article",
+    "aliases": [],
+    "description": "Stanislaw Ulam’s memoir of John von Neumann in the Bulletin of the American Mathematical Society 64 (1958), no. 3, part 2, pp. 1–49, read in the publisher’s PDF.",
+    "sourceIds": ["source-pre-ulam-1958-bams"]
   }
 ]

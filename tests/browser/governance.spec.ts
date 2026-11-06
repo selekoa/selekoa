@@ -51,10 +51,13 @@ test('version Inspector exposes predecessor, successor, publisher and family tim
   // questions (schema 2.18; first editions have no stated-changes cell),
   // plus the links of v3.1 to v3.4 to California SB 53 (2026-10-28).
   // The 2026-10-30 AI and biosecurity admission (`ab-` records) adds the
-  // biological provisions of several RSP editions; the earlier records are
-  // counted here.
+  // biological provisions of several RSP editions, and the 2026-11-03
+  // model-cards admission (`mc-` records) two cards' citations of RSP
+  // editions; the earlier records are counted here.
   await expect(
-    timeline.locator('[data-claim-id]:not([data-claim-id^="ab-"])'),
+    timeline.locator(
+      '[data-claim-id]:not([data-claim-id^="ab-"]):not([data-claim-id^="mc-"])',
+    ),
   ).toHaveCount(280);
   const dates = await timeline.locator('.timeline-date').allTextContents();
   expect(dates.map((s) => s.slice(0, 10))).toEqual(
@@ -124,9 +127,13 @@ test('mobile xAI comparison is clearly inferred and presents both exact source e
   // (schema 2.18; the December 2025 edition has no stated-changes cell).
   // The 2026-10-30 AI and biosecurity admission (`ab-` records) adds the
   // December 2025 edition's biological provisions and the June 2026
-  // edition's CBRN record; the earlier records are counted here.
+  // edition's CBRN record, and the 2026-11-03 model-cards admission (`mc-`
+  // records) the Grok 4.7 card's citation of the June 2026 edition; the
+  // earlier records are counted here.
   await expect(
-    timeline.locator('[data-claim-id]:not([data-claim-id^="ab-"])'),
+    timeline.locator(
+      '[data-claim-id]:not([data-claim-id^="ab-"]):not([data-claim-id^="mc-"])',
+    ),
   ).toHaveCount(51);
   await timeline
     .locator('[data-claim-id="faif-2026-compliance-sentence"]')

@@ -34,7 +34,15 @@ const data = datasetSchema.parse(
  * the dataset before the dossier is read. The 2026-11-01 second lab genealogy
  * (`lg2-` records) does the same through the people it adds to an
  * institution (Anthropic gains nine earlier records that way), so its records
- * are taken out too.
+ * are taken out too. The 2026-11-03 model-cards admission (`mc-` records)
+ * adds the cards' publication by their developers and the cards' citations
+ * of framework editions; its records are left out of the earlier count. The
+ * 2026-11-04 antecedent-texts admission (`pre-` records) adds authorship
+ * records for Turing and Wiener; its records are left out too, as are those
+ * of the 2026-11-04 laws-compared admission (`lc-` records), which adds the
+ * effect rule of New York's 2025 RAISE Act text, and those of the
+ * 2026-11-05 predictions admission (`pr-` records), which add predictions
+ * stated in documents the dossiers may already list.
  */
 const beforeKeyPapers = {
   ...data,
@@ -56,7 +64,11 @@ export function dossierCount(id: string, earlier: number) {
       !c.id.startsWith('pp-') &&
       !c.id.startsWith('th-') &&
       !c.id.startsWith('c3-') &&
-      !c.id.startsWith('rd-'),
+      !c.id.startsWith('rd-') &&
+      !c.id.startsWith('mc-') &&
+      !c.id.startsWith('pre-') &&
+      !c.id.startsWith('lc-') &&
+      !c.id.startsWith('pr-'),
   ).length;
   if (before !== earlier)
     throw new Error(`${id}: ${before} earlier records, expected ${earlier}`);

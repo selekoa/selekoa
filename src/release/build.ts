@@ -304,6 +304,7 @@ function csvRow(type: RecordType, r: Row): unknown[] {
       r.note,
       r.contextOnly,
       r.retrievalRoute,
+      r.translation,
     ];
   if (type === 'sources') {
     const words = r.documentWords as Row | undefined;

@@ -1,0 +1,315 @@
+{
+  "description": "Authored map for the admission of the candidate pack research/prehistory as the collection “Antecedent texts: machine intelligence before 1965”, read by scripts/prehistory-admission.ts. It carries the maintainer’s decisions (1a 2a 3b 4a 5a 6a 7a 8a 9a 10a 11a 12a 13a, review/decisions/answers-2026-11-03.md) and the answers of 2026-11-04 to the admission plan’s points to settle (review/prehistory-admission-plan-2026-11-04.md). Every entry must change a record; the script fails otherwise.",
+  "admissionDate": "2026-11-04",
+  "files": {
+    "pack": "research/prehistory/pack.json",
+    "propositions": "research/prehistory/propositions.json",
+    "verification": "research/prehistory/verification.json",
+    "admission": "research/prehistory/admission-verification-2026-11-04.json"
+  },
+  "collectionName": "the collection of antecedent texts",
+  "snapshotDescription": "The dataset before the admission of the antecedent-texts collection (research/prehistory), 2026-11-04: rows added and rows changed, with the base commit.",
+  "scope": "From 2026-11-04 it also holds texts before 1965 that state, contest or bear on whether machines can think or originate anything, from Descartes’s Discours de la méthode (1637) to Kolmogorov’s letter of 1961, with Vinge’s texts of 1983 and 1993 on a singularity brought by machine intelligence; fiction and satire are labelled, and the year 1965 is an editorial boundary. All records are seeds.",
+  "hold": {
+    "pre-u01-samuel-1960": "Decision 9a: only the indexed abstract could be read (the publisher answered HTTP 403 to both model families); an abstract is not the text, and its author is unknown. On the library list.",
+    "pre-u03-ulam-1958-context": "Conditional in the plan: admit only if the admitting session retrieves the publisher PDF with SHA-256 7819f7b4… and reads p. 5. On 2026-11-04 ams.org answered HTTP 403 and web.archive.org reset the connection from this session, so the quotation was never read by the preparing family. Held with its link and its document."
+  },
+  "holdLinks": {
+    "pre-link-vinge-1993-names-ulam-1958": "Its target, Ulam’s memoir (1958), would have no record: the Ulam record is held (no verified copy).",
+    "pre-link-turing-1948-names-sayers": "The target, Sayers’s The Mind of the Maker (1941), would be a new document only for this link, and the book was not read.",
+    "pre-link-wiener-1948-names-butler": "`cites` takes a document object (src/domain/predicates.ts); Wiener names Butler and his image, not a text. Same hold as the machine-succession admission’s links to persons (undecided).",
+    "pre-link-wiener-1960-names-butler": "`cites` takes a document object; Wiener names Butler and his predictions, not a text. Same hold as the machine-succession admission’s links to persons (undecided)."
+  },
+  "propositions": {
+    "U01": "machines-only-do-what-they-are-ordered",
+    "U02": "machines-could-think",
+    "U03": "technological-singularity",
+    "W01": "machine-succession",
+    "W02": "succession-acceptable",
+    "W04": "species-dominance-conflict",
+    "W08": "accelerate-machine-intelligence",
+    "B6": "control-or-purpose-specification",
+    "C1": "behavioural-tests-as-evidence",
+    "C3": "competition-defeats-restraint",
+    "M06a": "automation-lowers-labour-income"
+  },
+  "newPropositions": ["U01", "U02", "U03"],
+  "documentTimes": {
+    "butler-1865-lucubratio-ebria": "ts-b6-butler-1865-contests",
+    "erewhon-1872": "ts-b5-erewhon-1872-context",
+    "butler-1863-darwin-among-machines": "ht-w01-butler-1863-darwin-among-the-machines",
+    "vinge-1983-first-word": "ts-a1-vinge-1983-context",
+    "vinge-1993-coming-technological-singularity": "ts-a1-vinge-1993",
+    "turing-1947-lms-lecture": "ts-a3-turing-1947-context",
+    "turing-1950-computing-machinery": "ts-c1-turing-1950-context",
+    "turing-c1951-heretical-theory": "ht-w01-turing-c1951-heretical-theory",
+    "turing-1951-can-digital-computers-think": "ht-w01-turing-1951-can-digital-computers-think",
+    "wiener-1960-some-moral-technical": "ts-b6-wiener-1960",
+    "th-samuel-1959": "th-ml-samuel-1959-description"
+  },
+  "newTimes": {
+    "capek-rur-1923-english": {
+      "kind": "event",
+      "date": "1923",
+      "note": "Copyright year of the English version as printed; not the date of the printing read."
+    },
+    "descartes-1637-discours": {
+      "kind": "event",
+      "date": "1637",
+      "basis": "publication",
+      "note": "Year in the title-page imprint (Leiden, Ian Maire), read on the page image."
+    },
+    "jefferson-1949-mind-of-mechanical-man": {
+      "kind": "event",
+      "date": "1949-06-25",
+      "basis": "publication",
+      "note": "Issue date in the BMJ masthead; the oration was delivered on 9 June 1949 (footnote, p. 1105)."
+    },
+    "hartree-1949-calculating-instruments": {
+      "kind": "event",
+      "date": "1949",
+      "basis": "publication",
+      "note": "Copyright year of the printing read."
+    },
+    "lovelace-1843-notes": {
+      "kind": "event",
+      "date": "1843",
+      "basis": "publication",
+      "note": "Year on the title page of Scientific Memoirs, vol. III; Note G is on p. 722."
+    },
+    "kolmogorov-1961-letter-to-berg": {
+      "kind": "event",
+      "date": "1961",
+      "note": "Undated letter; 1961 is the editors’ dating (p. 201), from the lecture of spring 1961 and the magazine’s issues of October and November 1961. Exact day unknown."
+    },
+    "turing-1948-npl-intelligent-machinery": {
+      "kind": "event",
+      "date": "1948",
+      "note": "Year typed on the report’s title sheet; exact day unknown."
+    },
+    "wiener-1948-cybernetics": {
+      "kind": "event",
+      "date": "1948",
+      "basis": "publication",
+      "note": "Part I of the reissue is headed “Original Edition (1948)”; the 1948 printing was not read."
+    },
+    "wiener-1961-cybernetics-second-edition": {
+      "kind": "event",
+      "date": "1961",
+      "basis": "publication",
+      "note": "Part II of the reissue is headed “Supplementary Chapters (1961)”; the 1961 printing was not read."
+    }
+  },
+  "claimed": {
+    "jefferson-1949-mind-of-mechanical-man": {
+      "date": "1949-06-09",
+      "note": "Delivered on 9 June 1949 (footnote, p. 1105); the wording read is the published text."
+    }
+  },
+  "attested": {
+    "capek-rur-1923-english": {
+      "date": "2019",
+      "note": "English wording read in the Project Gutenberg transcription (2019) of an undated later Samuel French printing."
+    },
+    "kolmogorov-1961-letter-to-berg": {
+      "date": "2023",
+      "note": "The wording is read in a typeset edition of 2023; the editors report an earlier publication of the letter (Novosibirsk, 2001), not seen. They also say the theses were printed separately before the lecture and opened the collection Vozmozhnoe i nevozmozhnoe v kibernetike; neither was seen."
+    },
+    "wiener-1948-cybernetics": {
+      "date": "2019",
+      "note": "Read in the MIT Press reissue (2019) of the second edition of 1961; the 1948 and 1961 printings were not compared."
+    },
+    "wiener-1961-cybernetics-second-edition": {
+      "date": "2019",
+      "note": "Read in the MIT Press reissue (2019); the 1961 printing was not compared."
+    }
+  },
+  "tier": {
+    "pre-m06a-wiener-1948-cybernetics": {
+      "value": 2,
+      "basis": "A mathematician’s book, not an economist’s scholarly work or a core economics venue, by the collection’s rule of 2026-10-11."
+    }
+  },
+  "roles": {
+    "pre-u02-descartes-1637-contests": ["contesting", "earliest-located"],
+    "pre-u01-turing-1947-contests": ["contesting", "earliest-located"],
+    "pre-c1-jefferson-1949": ["earliest-located"]
+  },
+  "qualifications": {
+    "pre-w01-butler-1865-lucubratio-ebria-contests": "The article frames itself as a dream after a glass of hot whisky and water and closes by leaving ‘our dream’. Its attribution to Butler rests on its close match with the reply to the machine treatise in Erewhon (1872), as the dataset’s entity records. The same passage is the evidence of the article’s record on B6. The quotation is read in the Papers Past OCR text; the newspaper page image could not be checked (image requests were refused with HTTP 403 on 2026-11-03).",
+    "pre-w08-erewhon-1872-contests": "Fiction, voiced by an Erewhonian treatise inside a satirical novel. The same passage is the evidence of the novel’s record on W02.",
+    "pre-w04-erewhon-1872-context": "Fiction. The narrator says the civil war is said to have halved the population; the closing paragraph of the treatise chapters mentions ‘reactionary civil wars’. Recorded as context because the criterion’s object (superhuman machine intelligence) is absent.",
+    "pre-u02-erewhon-1872": "Fiction: the narrator quotes the Erewhonian treatise’s ‘own words’. The passage documents what the novel says, not Butler’s view. The dataset records the same passage on B5 as context. Just before the quoted passage the treatise imagines ‘some new phase of mind’ unlike any consciousness known; a second check by a model of another family read mechanical consciousness as a literal mental state that meets the criterion, with that difference kept. Butler’s satirical letter of 1863, “Darwin among the Machines”, is the earliest located text on this proposition; Erewhon is the earliest located novel.",
+    "pre-w01-capek-rur-1923": "Fiction: a stage play. The Robots are manufactured workers made from a synthetic living substance; the play calls them machines, and the collection counts them as machine intelligence throughout (decided on 2026-11-03). Lines spoken by characters document what the play stages, not Čapek’s view. The Czech printing of 1920 (Aventinum) carries the counterpart passage (pp. [80] and 57), as a second check by a model of another family read it on page images; the English wording is not dated from it.",
+    "pre-b6-capek-rur-1923": "Fiction. The control half of B6, staged as an event: the play’s people cannot stop the Robots they made. Earlier in the play a manager says the Robots have no will of their own. Butler’s letter of 1863 remains B6’s earliest located text. The Robots are manufactured from a synthetic living substance and are counted as machines throughout (decided on 2026-11-03). The evidence is a single line of dialogue whose immediate object is the Robots unloading arms; it is a narrow staged instance, not a general statement about control of machines. The Czech printing of 1920 (Aventinum) carries the counterpart passage (p. 61), as a second check by a model of another family read it on page images; the English wording is not dated from it.",
+    "pre-u02-capek-rur-1923": "Fiction; characters’ lines document what the play stages, not Čapek’s view. The Robots are synthetic organisms made from a living substance; the play calls them machines and ascribes them intelligence, and they are counted as machines throughout (decided on 2026-11-03). Later in the play Dr Gall says that they have ‘ceased to be machines’, one character’s claim. The Czech printing of 1920 (Aventinum) calls them ‘živé a inteligentní pracovní stroje’ (p. 12) and carries the counterpart of the intelligence line (p. 13), as a second check by a model of another family read it on page images; the English wording is not dated from it.",
+    "pre-u02-butler-1863-darwin-among-the-machines": "A satirical letter to a newspaper, signed with a pseudonym; it documents what the letter says, not its author’s view. The letter ascribes minds to future machines and goes on to call for every machine to be destroyed. Erewhon (1872) is the earliest located novel on this proposition and Turing’s lecture of 1947 the earliest located non-fiction text. The quotations were matched against the Papers Past OCR text; the column images were refused (HTTP 403) to the preparing session, and the image readings (‘self-acting’, ‘the’) are those of a second check by a model of another family, made on 2026-11-03 and 2026-11-04.",
+    "pre-u02-descartes-1637-contests": "Stated of machines built to resemble human bodies and imitate human actions; the passage is part of Descartes’s account of the difference between people and animals. Published without the author’s name. The wording is the 1637 edition’s, read on page images; spelling as printed, long s as s. Jefferson (1949) is a later contesting text.",
+    "pre-c1-descartes-1637-context": "Context. A second check by a model of another family read the passage as meeting C1 for narrower probes (a machine’s words in response, or some tasks done as well as people, would not show knowledge) and would have it head C1; the maintainer decided on 2026-11-04 that Jefferson (1949) heads C1 and that this passage is context, and C1’s criterion now says that a text holding a behavioural test reliable does not meet it. Spelling as printed, long s as s.",
+    "pre-c1-jefferson-1949": "The passage concerns a machine that answers in typewriting, which is the form of Turing’s imitation game (1950) but precedes it; Jefferson does not describe a test procedure. The same paragraph says a machine would have to find for itself words for its additions to knowledge. Turing’s paper of 1950, recorded on C1 as context, quotes this oration. Earliest located means the earliest text found by the collection’s searches and the searches for the antecedent texts, not a first statement.",
+    "pre-u01-hartree-1949": "Stated of the equipment Hartree discusses (electronic calculating machines, automatic pilots) and of the machines constructed or projected at the time. The next paragraph leaves open whether electronic equipment could be built that would ‘think for itself’ or learn, and adds ‘Whether this is possible in principle or not’; that is not recorded on U02. Lovelace’s statement is quoted from her notes of 1843, the earliest located text. Turing’s paper of 1950 quotes this page.",
+    "pre-u01-lovelace-1843-notes": "The statement concerns Babbage’s Analytical Engine, and the note introduces it as a guard against ‘exaggerated ideas’ of the engine’s powers. The note does not use the word ‘only’, as Turing (1950, p. 459, note 1) observes. The printed volume signs the notes ‘A. A. L.’; their attribution to Ada Lovelace is not established by this volume, though Turing’s paper of 1950 names her as the memoir’s author. Earliest located means the earliest text found by the collection’s searches, not a first statement.",
+    "pre-u03-vinge-1983-first-word": "Earliest located within the collection’s bounded search, which read Vinge (1983, 1993) and Ulam’s memoir of von Neumann (1958), and within a second check’s search by a model of another family (Good, Turing, Campbell, Descartes, Lucas, Dreyfus); not a claim that no earlier text exists. The column also considers a route through amplification of human intelligence by computers (‘The singularity then becomes the result of a massive amplification of human intelligence’), which the criterion includes. Paraphrase only, as the dataset’s source requires. The dataset already records this column on A1, A4 and B6 as context.",
+    "pre-u01-turing-1947-contests": "The lecture puts its case as a supposition (“Let us suppose we have set up a machine…”). The quoted report of the contested view names no one who held it.",
+    "pre-u02-turing-1947": "The earliest located non-fiction text on this proposition; Butler’s satirical letter (1863) and Erewhon (1872, fiction) are earlier. The lecture also answers the argument from Gödel’s theorem against machine intelligence (pp. 23–24).",
+    "pre-u01-turing-1950-contests": "The section quotes Lovelace’s statement, says that Hartree (1949) also quotes it, and notes (p. 459, note 1) that her statement does not contain the word ‘only’. The use of the proposition’s usual name is a separate role from contesting.",
+    "pre-u02-turing-1950": "In the same paragraph Turing calls the original question ‘Can machines think?’ ‘too meaningless to deserve discussion’. Recorded as context: the prediction alone does not meet the criterion as worded, as a same-family audit and a second check by a model of another family both found.",
+    "pre-u01-turing-1948-npl-contests": "Recorded on the dated report; the undated typescript AMT/C/11 is its draft and carries the same two passages (pp. 2 and 4). On report p. 2 the objection’s label is corrected by hand. Later than Turing’s lecture of 1947, the earliest located contesting text.",
+    "pre-w01-turing-1948-npl-context": "Turing calls objections (a) and (b) ‘purely emotional’ (report p. 2). Recorded on the dated report; the typescript AMT/C/11 is its draft and carries the same passage (p. 1).",
+    "pre-c3-wiener-1948-cybernetics-context": "The developments in question are those of cybernetics and automatic machines, which the book says have ‘great possibilities for good and for evil’. Recorded as context; a broader reading of C3 would make it an articulation dated 1948, with wording attested from 2019.",
+    "pre-w01-wiener-1948-cybernetics-context": "The passage also names Samuel Butler; a naming of a person is not recorded as a link yet.",
+    "pre-u01-wiener-1960-contests": "Wiener contests the assumption in order to argue that machines may be “both effective and dangerous”; that argument is recorded on B6 in the dataset. Samuel’s reply of September 1960 is not recorded: only its indexed abstract could be read.",
+    "pre-u01-samuel-1959-contests": "The article does not mention Lovelace or the objection; that its result is contrary to U01 is Selekoa’s reading, not a claim the article makes: a program that learns to beat its author still follows the learning rules it was given. Read in an undated later reprint that attributes the article to July 1959, whose wording was not compared with the 1959 printing. Samuel’s reply to Wiener (1960) is not recorded: only its indexed abstract could be read.",
+    "pre-link-turing-1950-names-hartree-1949": "A naming records that the later text names the earlier; it is not agreement, influence or lineage beyond what the passage states. Hartree’s p. 70 was read; the addition Turing quotes is there.",
+    "pre-link-turing-1951-names-lovelace-1843": "A naming records that the later text names the earlier; it is not agreement, influence or lineage beyond what the passage states. The script quotes her statement as Hartree had quoted it.",
+    "pre-link-turing-c1951-names-erewhon-1872": "A naming records that the later text names the earlier; it is not agreement, influence or lineage beyond what the passage states. The same sentence is the evidence of the talk’s W01 and B6 records.",
+    "pre-link-wiener-1961-names-samuel-1959": "A naming records that the later text names the earlier; it is not agreement, influence or lineage beyond what the passage states. The chapter cites the article in its notes."
+  },
+  "missing": {
+    "pre-c1-descartes-1637-context": "A claim that apparent capability or understanding shown in a test is weak or misleading evidence. Descartes proposes two tests and holds them reliable for telling machines from people; that some performances would not show knowledge is said of performances, not of evidence from a test."
+  },
+  "evidenceNotes": {
+    "pre-u02-butler-1863-darwin-among-the-machines:0": "Wording as read on the column image by a second check by a model of another family; the OCR text, matched at admission, reads ‘selfacting’ and ‘tho’.",
+    "pre-c1-descartes-1637-context:1": "Read on the page image. Quoted also on the text’s U02 record; counted once.",
+    "pre-u02-turing-c1951:1": "Context: worded as simulation, which U02’s criterion alone does not count.",
+    "pre-u02-capek-rur-1923:0": "The play’s word for the Robots.",
+    "pre-u01-turing-1948-npl-contests:2": "The draft’s wording (typescript AMT/C/11, n.d.).",
+    "pre-link-turing-c1951-names-erewhon-1872:0": "Already quoted in the dataset on the talk’s W01 and B6 records; counted once.",
+    "pre-c1-jefferson-1949:0": "The third-party facsimile read on 2026-11-03 has the same wording.",
+    "pre-u02-jefferson-1949-contests:0": "The third-party facsimile read on 2026-11-03 has the same wording.",
+    "pre-u02-jefferson-1949-contests:1": "The third-party facsimile read on 2026-11-03 has the same wording."
+  },
+  "textReplacements": [
+    ["the cross-family check", "a second check by a model of another family"],
+    ["Read here on", "Read on"],
+    ["read here on", "read on"]
+  ],
+  "changes": {
+    "ts-c1-weizenbaum-1966": {
+      "roles": ["articulation"],
+      "dropSentence": " Earliest located means the earliest text found by the collection’s searches and the cross-family re-check of 2026-11-02, not a first statement.",
+      "reason": "Decision 5a: Jefferson (1949) is C1’s earliest located text."
+    },
+    "ht-w01-lanier-2000-one-half-a-manifesto": {
+      "roles": ["contesting"],
+      "reason": "Decision 4a: Lucubratio Ebria (1865) is W01’s earliest located contesting text."
+    }
+  },
+  "criterionAdditions": {
+    "behavioural-tests-as-evidence": "A text that holds that a machine would fail a behavioural test, and that the test therefore reliably tells machines from people, does not meet the criterion, even where it says that narrower performances would not show understanding."
+  },
+  "newSources": {
+    "capek-rur-1923-english": {
+      "canonicalUrl": "https://www.gutenberg.org/ebooks/59112",
+      "kind": "book"
+    },
+    "descartes-1637-gallica-images": {
+      "kind": "book",
+      "versionNote": "The images are evidence; no Wikipedia article is."
+    },
+    "hartree-1949-ia": {
+      "kind": "book"
+    },
+    "jefferson-1949-pmc-scans": {
+      "kind": "article",
+      "versionNote": "A third-party facsimile of the six pages (https://www.edoardolimone.com/wp-content/uploads/2024/01/Geoffrey-Jefferson-Mind-of-Mechanical-Man.pdf, SHA-256 4e6ea632806197131de18f0bee5d407f7ddb4c4545a395030b13241e0703f1b8), read on 2026-11-03, has the same wording; its host’s permission is not established, so it is not a source."
+    },
+    "lovelace-1843-scientific-memoirs-3": {
+      "canonicalUrl": "https://archive.org/details/india.history.resource.53369",
+      "kind": "paper"
+    },
+    "kolmogorov-1961-letter-mccme": {
+      "kind": "book"
+    },
+    "turing-amt-c-11": {
+      "documentId": "turing-1948-npl-intelligent-machinery",
+      "kind": "report",
+      "versionNote": "The undated, corrected typescript draft of the report; the report’s date does not date the typescript or its corrections."
+    },
+    "turing-npl-1948-report": {
+      "kind": "report"
+    },
+    "wiener-cybernetics-2019-reissue": {
+      "canonicalUrl": "https://archive.org/details/mit_press_book_9780262355902",
+      "kind": "book",
+      "licence": "CC BY-NC-ND 4.0, as the MIT Press reissue states"
+    }
+  },
+  "newDocuments": {
+    "capek-rur-1923-english": {
+      "subtype": "Book",
+      "description": "Karel Čapek’s play R. U. R. in the English acting version by Paul Selver and Nigel Playfair, copyright 1923 (Doubleday, Page and Company), read in the Project Gutenberg transcription (2019) of an undated later Samuel French printing; 1923 is not the date of that printing. The Czech play was printed by Aventinum, Prague, in 1920.",
+      "sources": ["capek-rur-1923-english"]
+    },
+    "descartes-1637-discours": {
+      "subtype": "Book",
+      "description": "René Descartes’s Discours de la méthode, published without the author’s name at Leiden by Ian Maire in 1637, read in page images of the Bibliothèque nationale de France copy. The year is that of the title-page imprint.",
+      "sources": ["descartes-1637-gallica-images"]
+    },
+    "jefferson-1949-mind-of-mechanical-man": {
+      "subtype": "Lecture or talk",
+      "description": "Geoffrey Jefferson’s Lister Oration, delivered at the Royal College of Surgeons of England on 9 June 1949 and published in the British Medical Journal of 25 June 1949 (vol. 1, no. 4616, pp. 1105–1110), read in page scans in PubMed Central.",
+      "sources": ["jefferson-1949-pmc-scans"]
+    },
+    "hartree-1949-calculating-instruments": {
+      "subtype": "Book",
+      "description": "Douglas R. Hartree’s book Calculating Instruments and Machines (University of Illinois Press, Urbana, 1949), read in an Internet Archive scan of the 1949 printing.",
+      "sources": ["hartree-1949-ia"]
+    },
+    "lovelace-1843-notes": {
+      "subtype": "Book chapter",
+      "description": "The translator’s notes, signed A. A. L. and attributed to Ada Lovelace, to L. F. Menabrea’s Sketch of the Analytical Engine invented by Charles Babbage, in Scientific Memoirs, vol. III (London, 1843), pp. 666–731. The volume prints no fuller name than the initials.",
+      "sources": ["lovelace-1843-scientific-memoirs-3"]
+    },
+    "kolmogorov-1961-letter-to-berg": {
+      "subtype": "Letter",
+      "description": "A. N. Kolmogorov’s undated letter to A. I. Berg, which its editors date to 1961, read in a typeset edition of 2023 published by MCCME. The editors report an earlier publication from A. A. Lyapunov’s papers (Novosibirsk, 2001), not seen.",
+      "sources": ["kolmogorov-1961-letter-mccme"]
+    },
+    "turing-1948-npl-intelligent-machinery": {
+      "subtype": "Report",
+      "description": "Alan Turing’s report Intelligent Machinery for the National Physical Laboratory, dated 1948 on its title sheet, read in the laboratory’s facsimile. The undated typescript with Turing’s corrections in the Turing Digital Archive (AMT/C/11) is its draft and is held as a second source.",
+      "sources": ["turing-npl-1948-report", "turing-amt-c-11"]
+    },
+    "wiener-1948-cybernetics": {
+      "subtype": "Book",
+      "description": "Norbert Wiener’s book Cybernetics, or Control and Communication in the Animal and the Machine (1948), read in the MIT Press reissue (2019) of the second edition of 1961, whose Part I is headed “Original Edition (1948)”. The 1948 printing was not read.",
+      "sources": ["wiener-cybernetics-2019-reissue"]
+    },
+    "wiener-1961-cybernetics-second-edition": {
+      "subtype": "Book chapter",
+      "description": "The two supplementary chapters (IX and X) of the second edition of Norbert Wiener’s Cybernetics (1961), read in the MIT Press reissue (2019), whose Part II is headed “Supplementary Chapters (1961)”. The 1961 printing was not read.",
+      "sources": ["wiener-cybernetics-2019-reissue"]
+    }
+  },
+  "authored": [
+    {
+      "person": "alan-turing",
+      "document": "turing-1948-npl-intelligent-machinery",
+      "source": "turing-npl-1948-report",
+      "credit": "A. M. Turing",
+      "title": "Intelligent Machinery",
+      "locator": "Title sheet (PDF page 2)",
+      "passage": "A Report by A. M. Turing",
+      "pageImage": true
+    },
+    {
+      "person": "norbert-wiener",
+      "document": "wiener-1948-cybernetics",
+      "source": "wiener-cybernetics-2019-reissue",
+      "credit": "Norbert Wiener",
+      "title": "Cybernetics, or Control and Communication in the Animal and the Machine",
+      "locator": "Title page of the reissue",
+      "passage": "Norbert Wiener"
+    },
+    {
+      "person": "norbert-wiener",
+      "document": "wiener-1961-cybernetics-second-edition",
+      "source": "wiener-cybernetics-2019-reissue",
+      "credit": "Norbert Wiener",
+      "title": "Cybernetics, second edition: supplementary chapters IX–X",
+      "locator": "Title page of the reissue",
+      "passage": "Norbert Wiener"
+    }
+  ]
+}

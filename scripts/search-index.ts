@@ -54,7 +54,7 @@ export async function searchIndexFiles() {
     const { buildIndexFiles } = await load<
       typeof import('../src/domain/search-index')
     >('/src/domain/search-index.ts');
-    const { searchFacets } = await load<
+    const { searchCollections, searchFacets } = await load<
       typeof import('../src/ui/search-facets')
     >('/src/ui/search-facets.ts');
     const { coreOf, contentOf } = await load<
@@ -62,7 +62,7 @@ export async function searchIndexFiles() {
     >('/src/domain/slices.ts');
     const facets: SearchFacets = searchFacets(repository.data);
     const files: IndexFiles = buildIndexFiles(repository.data, {
-      collections: facets.collections,
+      collections: searchCollections(repository.data),
       organisations: facets.organisations.map((o) => o.id),
     });
     return {

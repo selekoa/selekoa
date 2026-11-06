@@ -13,6 +13,7 @@ import { flushSync } from 'react-dom';
 import { normalisePath } from '../domain/addresses';
 import { dataNeeds } from '../domain/slices';
 import { currentAddress } from './location';
+import { loadAfresh } from './page-failure';
 import { preloadPage } from './page-modules';
 import { partsFor, prefetchParts, recordsHeld } from './records';
 
@@ -82,8 +83,8 @@ export const visitPending = () => pending;
  * Opens the page at an address from its parts alone: after a link
  * (`link`, a new history entry) or a step back or forward (`history`, the
  * browser has already moved). The page in view stays until the next one can
- * be drawn. If its parts cannot be loaded, the browser loads the address
- * itself.
+ * be drawn. If its parts or code cannot be loaded or read, the browser
+ * loads the address itself (src/ui/page-failure.ts).
  */
 export function visit(link: string, how: 'link' | 'history') {
   const turn = ++latest;
@@ -115,13 +116,22 @@ export function visit(link: string, how: 'link' | 'history') {
         ](null, '', address);
       }
       // The store and the workspace change in one render: the page left is
-      // never drawn from the next page's parts.
+      // never drawn from the next page's parts. Parts that cannot be read
+      // (another build's, a file cut short) fail here, after the address
+      // has changed: the browser loads it. A page that fails to draw is
+      // handled by the root (`pageFailed` in src/main.tsx).
       opened += 1;
       resting = true;
-      flushSync(() => {
-        hold();
-        mount!(path);
-      });
+      try {
+        flushSync(() => {
+          hold();
+          mount!(path);
+        });
+      } catch (error) {
+        console.error('The page could not be drawn in place', error);
+        loadAfresh(currentAddress());
+        return;
+      }
       if (how === 'link') arrive(section);
       // A step back or forward returns to where the reader was on that page.
       else
@@ -134,8 +144,7 @@ export function visit(link: string, how: 'link' | 'history') {
       if (turn === latest) pending = false;
       if (stale()) return;
       console.error('The page could not be opened in place', error);
-      if (how === 'link') window.location.assign(link);
-      else window.location.reload();
+      loadAfresh(how === 'link' ? link : currentAddress());
     },
   );
 }

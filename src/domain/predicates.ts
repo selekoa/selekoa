@@ -531,6 +531,15 @@ export const predicates = {
     subjects: ['document'],
     objects: ['concept'],
   },
+  // A dated prediction (schema 2.32). The record documents what a text states
+  // and when; it says nothing about whether the predicted event happened.
+  states_prediction: {
+    label: 'states a prediction',
+    description:
+      'The document states a prediction: an event, by a date or within a horizon, in the document’s own words. The record is dated by the document, never by the target date. It documents what the text states and when; it says nothing about whether the event happened, and it implies no agreement or influence.',
+    subjects: ['document'],
+    objects: ['literal'],
+  },
 } as const;
 
 /** The kinds of an attributed credit (schema 2.25), as a reader reads them. */

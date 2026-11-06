@@ -35,6 +35,8 @@ export type ReferenceTarget =
       editions?: string[];
       /** Two or three frameworks side by side (`?frameworks=a,b`). */
       frameworks?: string[];
+      /** Model cards compared: one developer's cards (`?developer=openai`). */
+      developer?: string;
       inspect?: string;
     }
   | { kind: 'control'; id: string; inspect?: string }
@@ -42,6 +44,8 @@ export type ReferenceTarget =
   /** A guided reading across collections, such as frameworks and law. */
   | { kind: 'guide'; id: string; inspect?: string }
   | { kind: 'propositions'; id: string; inspect?: string }
+  /** Predictions on record: the chart and table of dated predictions. */
+  | { kind: 'predictions'; id: string; inspect?: string }
   /**
    * Propositions by author: the index of the collections (`/stances`), or
    * one collection's stances (`/stances/<collection>`).
@@ -87,6 +91,8 @@ export function referencePath(target: ReferenceTarget) {
     params.set('edition', target.editions.join(','));
   if (target.kind === 'compare' && target.frameworks?.length)
     params.set('frameworks', target.frameworks.join(','));
+  if (target.kind === 'compare' && target.developer)
+    params.set('developer', target.developer);
   if (target.kind === 'dossier' && target.view) params.set('view', target.view);
   if (target.kind !== 'claim' && target.inspect)
     params.set('inspect', target.inspect);
@@ -102,7 +108,7 @@ export function referencePath(target: ReferenceTarget) {
 /** The comparison as a CSV file, written by the build (scripts/comparison-csv.ts). */
 export const comparisonCsvPath = (id: string) => `/compare/${id}.csv`;
 
-/** The path segment of a comparison question: `D3.halt` → `d3-halt`. */
+/** The path segment of a comparison question: `D3.halt` → `d3-halt`, `MC.Q05` → `mc-q05`. */
 export const facetSlug = (facetId: string) =>
   facetId.toLowerCase().replace('.', '-');
 

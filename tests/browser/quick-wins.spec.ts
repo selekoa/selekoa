@@ -36,12 +36,13 @@ test('person page links to the collections that hold the person’s texts', asyn
 test('document page without authorship or date claims says what the source record gives', async ({
   page,
 }) => {
-  // Held from the author-person admission of 2026-10-27: credited only
-  // under a username on the author's blog.
-  await page.goto('/document/christiano-2018-takeoff-speeds');
+  // A text of the AI-in-biology admission with no authorship or dated
+  // record. (Christiano's “Takeoff speeds”, the earlier example, gained its
+  // authorship record in the corrections of 2026-11-06.)
+  await page.goto('/document/aib-doc-arnold-2023');
   const facts = page.locator('.record-facts');
   await expect(facts).toContainText(
-    'No authorship claim recorded yet. The source record lists Paul Christiano.',
+    'No authorship claim recorded yet. The source record lists Carrie Arnold.',
   );
   await expect(facts).toContainText('No date claim recorded yet.');
   await expect(facts).not.toContainText('no authorship record');

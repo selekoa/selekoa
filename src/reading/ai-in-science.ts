@@ -1,5 +1,6 @@
 import type { PropositionsCollection } from '../domain/propositions';
 import { aiInScienceFrame as frame } from './proposition-frames';
+import { describeGroups } from './describe-groups';
 
 /** The maintainer's decisions of 2026-11-02 on the earliest-located re-check (decisions 1 to 4). */
 const recheckDecisions = '2026-11-02';
@@ -24,7 +25,10 @@ export const aiInScience: PropositionsCollection = {
   editorialStatus: frame.editorialStatus,
   introduction:
     'The collection records AI in the sciences field by field: the institutions and programmes, the models and papers, the people credited with them and the claims made about what AI does to the field. It is not a survey of any field. Biology is the first field recorded. This page sets out the claims. Each is a proposition with one criterion, phrased generically and attributed to no one. A text that meets the criterion articulates the proposition. A text that disputes it contests it. A text that comes close bears on it, and its record names what is missing. The institutions, papers and people are recorded as dated statements of the documents that state them, on their own pages. Texts are listed in date order, and the order records no influence between them.',
-  groups: frame.groups,
+  groups: describeGroups(frame.groups, {
+    biology:
+      'Protein structure prediction and drug design, models of the cell, drug candidates found with AI and their clinical trials, the design of new proteins, and biology described as information.',
+  }),
   searchNote: {
     scope:
       'The collection records what located texts say about six propositions on AI in biology. The propositions were written before the search, each with one criterion. “Earliest located” means the earliest text found by the searches below. It is not a claim that no earlier text exists.',

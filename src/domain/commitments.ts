@@ -3,6 +3,7 @@ import { selected } from './memo';
 import { dateOf } from './query';
 import { provisionKinds } from './document-history';
 import type { StopItem } from './control-structures';
+import { isLawCell } from './law-questions';
 
 export type CommitmentsCollection = {
   id: string;
@@ -76,7 +77,10 @@ export function commitmentsView(
       issued: [...toward('published'), ...toward('enacted')].sort(byDate),
       signatories: toward('signed_commitment'),
       declined: toward('declined_commitment'),
-      provisions: about('states_provision').sort(provisionOrder),
+      // Law cells (schema 2.31) belong to "Laws compared".
+      provisions: about('states_provision')
+        .filter((c) => !isLawCell(c))
+        .sort(provisionOrder),
       assessments: [
         ...about('provision_assessed'),
         ...about('control_assessed'),

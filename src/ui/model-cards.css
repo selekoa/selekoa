@@ -1,0 +1,202 @@
+/* Model cards compared. As in Compare frameworks, every status has the same
+   neutral weight: a cell is never marked better or worse. Statuses differ
+   only in their words and in a plain rule for absences. */
+.cmp-table.mc-table td {
+  min-width: 0;
+  max-width: none;
+  padding: 0;
+  vertical-align: middle;
+}
+.cmp-table.mc-table thead th {
+  min-width: 5.5rem;
+  max-width: 7rem;
+  font-size: var(--text-2xs);
+  vertical-align: bottom;
+}
+.cmp-table.mc-table thead th:first-child,
+.cmp-table.mc-table tbody th[scope='row'] {
+  min-width: 14rem;
+  max-width: 16rem;
+}
+.cmp-table.mc-table tbody th[scope='row'] {
+  font-weight: 600;
+}
+.mc-number {
+  display: block;
+  font-variant-numeric: tabular-nums;
+  color: var(--color-text-muted);
+}
+.mc-cell {
+  display: block;
+  width: 100%;
+  min-height: 2.75rem;
+  padding: var(--space-2);
+  font: inherit;
+  font-size: var(--text-2xs);
+  text-align: left;
+  color: var(--color-text);
+  background: none;
+  border: 0;
+  cursor: pointer;
+}
+.mc-cell:disabled {
+  cursor: default;
+}
+.mc-cell:hover:not(:disabled) {
+  background: var(--color-sunken);
+}
+.mc-cell:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: -2px;
+}
+.mc-cell[aria-expanded='true'] {
+  background: var(--color-sunken);
+  box-shadow: inset 0 -2px 0 var(--color-accent);
+}
+.mc-cell.mc-status-not-found,
+.mc-cell.mc-status-not-applicable {
+  color: var(--color-text-muted);
+}
+.mc-edition-link {
+  display: block;
+  margin-top: 2px;
+  font-weight: 400;
+  font-size: var(--text-sm);
+}
+/* An open cell, below its row, as wide as the visible part of the table. */
+.mc-detail-row > td {
+  padding: 0;
+  background: var(--color-sunken);
+}
+.mc-detail {
+  position: sticky;
+  left: 0;
+  box-sizing: border-box;
+  max-width: 100%;
+  padding: var(--space-3) var(--space-4) var(--space-4);
+}
+.mc-detail > * {
+  max-width: 80ch;
+}
+.mc-detail-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-3);
+}
+.mc-detail-head h3 {
+  margin: 0;
+  font-size: var(--text-md);
+}
+.mc-detail .text-button {
+  font: inherit;
+  font-size: var(--text-sm);
+  padding: 0;
+  color: var(--color-accent);
+  text-decoration: underline;
+  background: none;
+  border: 0;
+  cursor: pointer;
+}
+.mc-question-more {
+  display: inline-block;
+  margin-top: var(--space-2);
+  font-size: var(--text-sm);
+}
+.mc-search {
+  display: grid;
+  gap: var(--space-1);
+  margin: var(--space-2) 0 0;
+  font-size: var(--text-sm);
+}
+.mc-search dt {
+  font-weight: 600;
+}
+.mc-search dd {
+  margin: 0 0 0 var(--space-4);
+  color: var(--color-text-muted);
+  overflow-wrap: anywhere;
+}
+.mc-developer {
+  display: inline-flex;
+  align-items: baseline;
+  gap: var(--space-2);
+  font-size: var(--text-sm);
+}
+.mc-developer select {
+  font: inherit;
+  padding: 4px 6px;
+  color: var(--color-text);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border-strong);
+  border-radius: var(--radius-sm);
+}
+.mc-group-name {
+  margin: var(--space-6) 0 0;
+  font-size: var(--text-2xs);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+.mc-group .cmp-rows {
+  margin-top: var(--space-2);
+}
+.mc-group h4 {
+  margin: 0;
+  font-size: var(--text-md);
+}
+/* The list equivalent of the table, below it. */
+.mc-list {
+  max-width: 1080px;
+  margin-top: var(--space-5);
+}
+.mc-list > summary {
+  cursor: pointer;
+  color: var(--color-accent);
+}
+.mc-list h2 {
+  margin: var(--space-5) 0 0;
+  font-size: var(--text-2xs);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+.mc-list-card {
+  border-top: 1px solid var(--color-border);
+  padding-top: var(--space-3);
+  margin-top: var(--space-3);
+}
+.mc-list-card h3 {
+  margin: 0;
+  font-size: var(--text-md);
+}
+.mc-list-card dl {
+  display: grid;
+  gap: var(--space-3);
+  margin: var(--space-2) 0 0;
+}
+.mc-list-card dt {
+  font-weight: 600;
+  font-size: var(--text-sm);
+}
+.mc-list-card dd {
+  margin: 0 0 0 var(--space-4);
+}
+.mc .doc-limits-box > p {
+  max-width: 85ch;
+}
+@media (max-width: 720px) {
+  .cmp-table.mc-table thead th:first-child,
+  .cmp-table.mc-table tbody th[scope='row'] {
+    min-width: 9rem;
+    max-width: 10rem;
+  }
+  .cmp-table.mc-table thead th {
+    min-width: 5rem;
+  }
+}
+@media print {
+  .mc-list {
+    display: none;
+  }
+}

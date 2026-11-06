@@ -1,5 +1,6 @@
 import type { PropositionsCollection } from '../domain/propositions';
 import { machineSuccessionFrame as frame } from './proposition-frames';
+import { describeGroups } from './describe-groups';
 
 /** The maintainer's decisions of 2026-11-02 on the archive retrieval of held sources. */
 const archiveApply = '2026-11-02';
@@ -14,6 +15,9 @@ const recheckWithdrawn = '2026-11-02';
 const withdrawn = '2026-11-02';
 
 const admitted = '2026-11-01';
+
+/** The admission of the antecedent-texts collection, with the maintainer's decision 4a. */
+const antecedents = '2026-11-04';
 const pack = 'the research pack of 2026-10-31';
 
 export const machineSuccession: PropositionsCollection = {
@@ -24,10 +28,14 @@ export const machineSuccession: PropositionsCollection = {
   editorialStatus: frame.editorialStatus,
   introduction:
     'Each proposition is recorded with one criterion. It is phrased generically and attributed to no one. A text that meets the criterion articulates the proposition. A text that disputes it contests it, and the record says whether the passage gives a reason or states the contrary only. A text that comes close bears on it, and its record names what is missing. A record says what one text states on its date. It does not place its author in a school or camp, and the group names describe subjects, not movements. Where a text frames a passage as a story or reports another author’s view, the record says so. Texts are listed in date order; the order records no influence between them. Where a later text names an earlier text or author, that naming is recorded on its own, and it is not agreement. The page records what texts say. It does not assess whether any proposition is right.',
-  groups: frame.groups,
+  groups: describeGroups(frame.groups, {
+    WA: 'Propositions that machines succeed humans as the leading intelligence, that this would be acceptable or desirable, that human minds could move into machines, and that building superhuman machines would bring conflict among humans.',
+    WB: 'Propositions that machine intelligence could exceed human intelligence by many orders of magnitude, that its rise is a physical or cosmic process, and that it spreads beyond Earth.',
+    WC: 'Propositions that capital or the techno-economic process is itself a machine intelligence, that the growth of intelligence is its own end, and that its development should be accelerated rather than restrained.',
+  }),
   searchNote: {
     scope:
-      'The collection records texts dated from 1863 to October 2026 on ten propositions of its own. Its texts before 1979 are Samuel Butler’s letter of 1863 and two texts by Alan Turing of about 1951 (see “How we searched”). “Earliest located” means the earliest text found by the searches below that meets the criterion, judged by the date from which its quoted wording is attested. It is not a claim that no earlier text exists.',
+      'The collection records texts dated from 1863 to October 2026 on ten propositions of its own. Its texts before 1979 are Samuel Butler’s letter of 1863, two texts by Alan Turing of about 1951, and texts of 1865 to 1948 from the searches for the antecedent texts (see “How we searched”). “Earliest located” means the earliest text found by the searches below that meets the criterion, judged by the date from which its quoted wording is attested. It is not a claim that no earlier text exists.',
     venues: [
       {
         period: 'Named authors and texts',
@@ -38,7 +46,8 @@ export const machineSuccession: PropositionsCollection = {
           'Further texts that state or dispute a proposition, found from the named texts and by web search: among them Vernor Vinge (1993), Robin Hanson (1994), Marvin Minsky (1994), Ray Kurzweil (2001, 2011), Nick Bostrom (2003, 2004), David Chalmers (2010), Richard Sutton (2013, 2023), Martin Rees and Frank Tipler (2015) and Daniel Faggella (2023).',
           'Texts on acceleration and effective acceleration that name their predecessors: the #Accelerate manifesto (2013), the e/acc newsletter and its authors’ posts (from 2022), Marc Andreessen’s two essays of 2023, Vitalik Buterin’s essays of 2023 and 2025, and texts that answer them by name.',
           'Texts that dispute a proposition as a text in the collection states it, found from named replies and by web search.',
-          'Samuel Butler’s letter “Darwin among the Machines” (The Press, Christchurch, 13 June 1863), which the dataset already held for the superintelligence collection. A cross-family re-check of 2026-11-02 found that it meets W01 and W09 and contests W02 and W08 before the texts from 1979, and the maintainer widened the period to 1863 on 2026-11-02 to include it. Texts between 1863 and 1979 were not searched for this collection; besides the letter, the only texts recorded from those years are the two by Turing below, which the dataset already held.',
+          'Samuel Butler’s letter “Darwin among the Machines” (The Press, Christchurch, 13 June 1863), which the dataset already held for the superintelligence collection. A cross-family re-check of 2026-11-02 found that it meets W01 and W09 and contests W02 and W08 before the texts from 1979, and the maintainer widened the period to 1863 on 2026-11-02 to include it. Texts between 1863 and 1979 were not searched for this collection; besides the letter, the texts recorded from those years are the two by Turing below, which the dataset already held, and those found by the searches for the antecedent texts.',
+          'The searches for the collection of antecedent texts (2026-11-02 to 2026-11-04) read Butler’s “Lucubratio Ebria” (The Press, 1865, in OCR text) and Erewhon (1872), Čapek’s R.U.R. in its English version (1923), Turing’s report Intelligent Machinery (1948) and Wiener’s Cybernetics (1948, wording attested 2019). Their records on W01, W02, W04 and W08 are shown here; “Lucubratio Ebria” is W01’s earliest located contesting text.',
           'Alan Turing’s lecture typescript “Intelligent Machinery, a Heretical Theory” (c. 1951) and his broadcast script “Can Digital Computers Think?” (1951), held in the Turing Digital Archive (AMT/B/4, AMT/B/5) and already in the dataset for the superintelligence collection. A report of 2026-11-02 by an OpenAI model read both scans against W01–W10; the maintainer admitted the lecture as articulating W01 and the script as bearing on it on 2026-11-02. They come after Butler’s letter, which keeps the earliest located role.',
           'Pseudonymous and collective bylines (“Beff Jezos”, “bayes”, “e/acc”, a LessWrong user name) are recorded as the bylines show. A pseudonym is not joined to a legal name except where the text itself does so.',
         ],
@@ -444,6 +453,18 @@ export const machineSuccession: PropositionsCollection = {
       ],
       recordedAt: archiveApply,
     },
+    {
+      propositionId: 'machine-succession',
+      replaced:
+        'Lanier, One Half of a Manifesto (2000-11-10), headlined as the earliest located text that contests it.',
+      reason:
+        'Earlier text found: the unsigned article “Lucubratio Ebria” (The Press, 29 July 1865) rejects the view that machines are a separate kind of being whose final triumph over mankind should be expected. Its passage is read in the newspaper’s OCR text; the page image could not be checked.',
+      claimIds: [
+        'pre-w01-butler-1865-lucubratio-ebria-contests',
+        'ht-w01-lanier-2000-one-half-a-manifesto',
+      ],
+      recordedAt: antecedents,
+    },
   ],
   limits: [
     '“Earliest located” means the earliest text found by the searches described under “How we searched”. It is not a claim of first use or first statement, and the order of texts records no influence.',
@@ -464,6 +485,16 @@ export const machineSuccession: PropositionsCollection = {
         propositionId: 'machine-intelligence-exceeds-humans-in-all-domains',
         relation:
           'A narrower claim in the economics collection: exceeding humans in all domains, without succession.',
+      },
+      {
+        propositionId: 'machines-could-think',
+        relation:
+          'A narrower claim in the collection of antecedent texts: that a machine could think at all.',
+      },
+      {
+        propositionId: 'technological-singularity',
+        relation:
+          'A different claim in the collection of antecedent texts: a point beyond which human affairs could not continue or be foreseen, which need not involve succession.',
       },
     ],
     'succession-acceptable': [

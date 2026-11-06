@@ -1,0 +1,820 @@
+{
+  "auditor": "Claude (fresh-context subagent, same family as the preparer)",
+  "date": "2026-11-02",
+  "method": "For each of the 44 sampled records (19 targeted, 25 random, from audit-sample.json), every evidence passage was located in the cached source text (tools.mjs text/grep/page) or, for sources without a cache, in the dataset passages for the source's datasetSource in data/evidence.json; a context window of roughly 500-900 characters either side was read, and for surveys the body (question wording, aggregation method, conditions) was searched as needed. Each record was checked on the eight points of the brief. All 53 records' qualification, eventNote, hedge, conditions and date notes were read for rule 8. verification.json and review notes were not opened. Quotation matching was done on whitespace- and quote-normalised lowercase text; PDF text-layer damage is noted per record.",
+  "sampled": [
+    "pr-a-dartmouth-1955-summer",
+    "pr-a-simon-newell-1958-chess",
+    "pr-a-michie-1973-opinion-poll",
+    "pr-a-lighthill-1973-correspondents-1980s",
+    "pr-a-lighthill-1973-correspondents-2000",
+    "pr-b-bostrom-1998-hardware-2004-2008",
+    "pr-b-legg-2011-human-level",
+    "pr-c-baum-2011-agi09",
+    "pr-c-muller-bostrom-2014-hlmi",
+    "pr-c-muller-bostrom-2014-superintelligence",
+    "pr-c-grace-2017-all-tasks",
+    "pr-c-grace-2017-all-jobs",
+    "pr-c-grace-2017-ten-years",
+    "pr-c-zhang-2022-hlmi-2060",
+    "pr-c-espai-2022-hlmi-2059",
+    "pr-c-grace-2024-every-task",
+    "pr-c-grace-2024-occupations",
+    "pr-d-longbets-1-turing-test-2029",
+    "pr-f-amodei-2026-few-years-everything",
+    "pr-f-openai-2023-governance-ten-years",
+    "pr-f-anthropic-2025-late-2026-early-2027",
+    "pr-b-degaris-1989-commonplace",
+    "pr-f-altman-2024-few-thousand-days",
+    "pr-f-amodei-2025-country-of-geniuses",
+    "pr-e-brooks-2018-dog",
+    "pr-b-vinge-1993-thirty-years",
+    "pr-f-amodei-2024-powerful-ai-2026",
+    "pr-b-bostrom-1998-first-third",
+    "pr-f-ai2027-2025-next-decade",
+    "pr-f-openai-2023-superalignment-this-decade",
+    "pr-b-moravec-1999-before-2050",
+    "pr-f-altman-2025-2035-capacity",
+    "pr-e-cotra-2020-bio-anchors-as-reported-2022",
+    "pr-e-karnofsky-2021-transformative-ai",
+    "pr-e-bengio-et-al-2023-this-decade-or-next",
+    "pr-e-aschenbrenner-2024-agi-2027",
+    "pr-b-kurzweil-2001-brain-capacity",
+    "pr-a-turing-1950-imitation-game",
+    "pr-a-turing-1950-end-of-century",
+    "pr-f-google-deepmind-2025-by-2030",
+    "pr-e-cotra-2022-update",
+    "pr-f-altman-2025-robots-2027",
+    "pr-b-yudkowsky-2000-2035-upper-bound",
+    "pr-f-amodei-2026-one-to-two-years"
+  ],
+  "results": [
+    {
+      "id": "pr-a-dartmouth-1955-summer",
+      "found": "yes",
+      "checks": {
+        "locator": "ok",
+        "event": "ok",
+        "horizon": "ok",
+        "probability_hedges_conditions": "ok",
+        "predictor_form": "ok",
+        "source_date": "ok",
+        "wording": "ok"
+      },
+      "severity": "none",
+      "finding": "Both quotations are in the jmc.stanford.edu transcription (text layer drops the \"fi\" ligature: \"signi cant\", \"arti cial\"). Conditional (\"if a carefully selected group ... for a summer\") and hedge (\"We think that\") kept; horizon recorded as worded, with the 1956 summer taken from the first sentence and quoted separately.",
+      "suggested_fix": "None."
+    },
+    {
+      "id": "pr-a-simon-newell-1958-chess",
+      "found": "not retrievable",
+      "checks": {
+        "locator": "ok",
+        "event": "ok",
+        "horizon": "ok",
+        "probability_hedges_conditions": "ok",
+        "predictor_form": "ok",
+        "source_date": "ok",
+        "wording": "ok"
+      },
+      "severity": "none",
+      "finding": "Operations Research article not available; the record is correctly held as awaiting retrieval and says so. The Simon 1998 email (cached) supports the paraphrase: \"Our prediction was made at an ORSA meeting in 1957. It was published as Simon and Newell ... Operations Research 6:1-10 (1958)\" and \"our (four) predictions\". Internally consistent.",
+      "suggested_fix": "Confirm wording and page against the article when retrieved."
+    },
+    {
+      "id": "pr-a-michie-1973-opinion-poll",
+      "found": "yes",
+      "checks": {
+        "locator": "ok",
+        "event": "ok",
+        "horizon": "ok",
+        "probability_hedges_conditions": "ok",
+        "predictor_form": "ok",
+        "source_date": "ok",
+        "wording": "ok"
+      },
+      "severity": "none",
+      "finding": "All three Michie passages are in the 1986 scan (text-layer damage: dropped spaces, \"someofthe\", \"machineintelligence\"; figure legend symbols render as \": ,\"); printed p. 146 matches. The AI Impacts reading is quoted verbatim and labelled secondary. Survey attributed to the poll as reported by Michie, not respondents; horizon not read off the figure, as stated.",
+      "suggested_fix": "None."
+    },
+    {
+      "id": "pr-a-lighthill-1973-correspondents-1980s",
+      "found": "yes",
+      "checks": {
+        "locator": "ok",
+        "event": "ok",
+        "horizon": "ok",
+        "probability_hedges_conditions": "ok",
+        "predictor_form": "ok",
+        "source_date": "ok",
+        "wording": "issue"
+      },
+      "severity": "minor",
+      "finding": "Quotation verbatim. Two wording points: (1) the qualification asserts \"the wording is his paraphrase of the letters\", but the source only reports them in indirect speech without quotation marks, so whether it is paraphrase or close quotation is not established; (2) the preceding sentence frames these as examples of \"wild predictions regarding the future of robot development\" still being made, which the record omits although it changes how the report is read.",
+      "suggested_fix": "Replace \"the wording is his paraphrase of the letters\" with \"reported in indirect speech, without quotation marks\". Add: \"Lighthill introduces the examples as \"wild predictions regarding the future of robot development\" (preceding sentence); that characterisation is his.\""
+    },
+    {
+      "id": "pr-a-lighthill-1973-correspondents-2000",
+      "found": "yes",
+      "checks": {
+        "locator": "ok",
+        "event": "ok",
+        "horizon": "ok",
+        "probability_hedges_conditions": "ok",
+        "predictor_form": "ok",
+        "source_date": "ok",
+        "wording": "issue"
+      },
+      "severity": "minor",
+      "finding": "Quotation verbatim; event and horizon (\"by the year 2000\") as worded; hedge \"awe-inspiring possibilities suggest themselves\" kept. Same wording points as the companion record: \"in his words\" overstates what is known, and Lighthill's framing (\"wild predictions\") is omitted.",
+      "suggested_fix": "As for pr-a-lighthill-1973-correspondents-1980s."
+    },
+    {
+      "id": "pr-b-bostrom-1998-hardware-2004-2008",
+      "found": "yes",
+      "checks": {
+        "locator": "ok",
+        "event": "ok",
+        "horizon": "ok",
+        "probability_hedges_conditions": "ok",
+        "predictor_form": "ok",
+        "source_date": "ok",
+        "wording": "ok"
+      },
+      "severity": "none",
+      "finding": "Verbatim; condition (100 Tops, 12 or 18 month doubling) kept; next sentence (\"the best experimental supercomputers ... not necessarily the computers available to AI researchers\") correctly added.",
+      "suggested_fix": "None."
+    },
+    {
+      "id": "pr-b-legg-2011-human-level",
+      "found": "yes",
+      "checks": {
+        "locator": "ok",
+        "event": "ok",
+        "horizon": "ok",
+        "probability_hedges_conditions": "ok",
+        "predictor_form": "ok",
+        "source_date": "ok",
+        "wording": "ok"
+      },
+      "severity": "none",
+      "finding": "Question and answer verbatim; post dated 2011-06-17 (postedAt 2011-06-17T08:58Z); \"I am emailing experts\" supports the email note. Probability levels and condition correctly attributed to the interviewer's question.",
+      "suggested_fix": "None."
+    },
+    {
+      "id": "pr-c-baum-2011-agi09",
+      "found": "yes",
+      "checks": {
+        "locator": "ok",
+        "event": "ok",
+        "horizon": "ok",
+        "probability_hedges_conditions": "ok",
+        "predictor_form": "ok",
+        "source_date": "ok",
+        "wording": "ok"
+      },
+      "severity": "none",
+      "finding": "Abstract quotation verbatim; vague horizon kept vague; survey attribution correct; the abstract's disagreement note is recorded.",
+      "suggested_fix": "None."
+    },
+    {
+      "id": "pr-c-muller-bostrom-2014-hlmi",
+      "found": "yes",
+      "checks": {
+        "locator": "ok",
+        "event": "ok",
+        "horizon": "ok",
+        "probability_hedges_conditions": "issue",
+        "predictor_form": "ok",
+        "source_date": "ok",
+        "wording": "ok"
+      },
+      "severity": "minor",
+      "finding": "Abstract quotation verbatim (text layer: \"highlevel\"). The survey question was conditional: \"assume that human scientific activity continues without major negative disruption\" (p. 9, p. 17), and HLMI is defined as one \"that can carry out most human professions at least as well as a typical human\" (p. 4); neither is recorded, although the scope asks for question framing where the report states it.",
+      "suggested_fix": "Add conditions: \"Assume ... human scientific activity continues without major negative disruption\" (question 2), and an eventNote with the HLMI definition (p. 4). Optionally note the overall median for 50% is 2040 (p. 10), the abstract's \"2040-2050\" being its own summary."
+    },
+    {
+      "id": "pr-c-muller-bostrom-2014-superintelligence",
+      "found": "yes",
+      "checks": {
+        "locator": "ok",
+        "event": "ok",
+        "horizon": "ok",
+        "probability_hedges_conditions": "issue",
+        "predictor_form": "ok",
+        "source_date": "ok",
+        "wording": "ok"
+      },
+      "severity": "material",
+      "finding": "The abstract's \"Experts expect that systems will move on to superintelligence in less than 30 years thereafter\" summarises a probability answer: the body gives a median of 75% (mean 62%) for \"within 30 years\" and 10% for \"within 2 years\" (p. 12; restated p. 14 \"in 2 years (10%) to 30 years (75%)\"), on a question that begins \"Assume for the purpose of this question that such HLMI will at some point exist\". The record has probability null and no condition, so it reads as a firm expectation.",
+      "suggested_fix": "Set probability to the report's figures (median 75% within 30 years; 10% within 2 years; mean 62% and 19%), add the condition \"Assume ... such HLMI will at some point exist\", and note the question's definition (\"machine intelligence that greatly surpasses the performance of any human in most professions\")."
+    },
+    {
+      "id": "pr-c-grace-2017-all-tasks",
+      "found": "yes",
+      "checks": {
+        "locator": "ok",
+        "event": "ok",
+        "horizon": "ok",
+        "probability_hedges_conditions": "ok",
+        "predictor_form": "ok",
+        "source_date": "ok",
+        "wording": "ok"
+      },
+      "severity": "none",
+      "finding": "Verbatim; \"Taking the mean over each individual, the aggregate forecast gave a 50% chance of HLMI occurring within 45 years\" (p. 2) supports the statistic; interval kept as years from 2016 (figure axis \"Years from 2016\").",
+      "suggested_fix": "None."
+    },
+    {
+      "id": "pr-c-grace-2017-all-jobs",
+      "found": "yes",
+      "checks": {
+        "locator": "ok",
+        "event": "ok",
+        "horizon": "ok",
+        "probability_hedges_conditions": "ok",
+        "predictor_form": "ok",
+        "source_date": "ok",
+        "wording": "ok"
+      },
+      "severity": "none",
+      "finding": "Verbatim; separate question correctly noted.",
+      "suggested_fix": "None."
+    },
+    {
+      "id": "pr-c-grace-2017-ten-years",
+      "found": "yes",
+      "checks": {
+        "locator": "ok",
+        "event": "ok",
+        "horizon": "ok",
+        "probability_hedges_conditions": "ok",
+        "predictor_form": "ok",
+        "source_date": "ok",
+        "wording": "ok"
+      },
+      "severity": "none",
+      "finding": "Verbatim; listed examples and the abstract's silence on probability level correctly recorded.",
+      "suggested_fix": "None."
+    },
+    {
+      "id": "pr-c-zhang-2022-hlmi-2060",
+      "found": "yes",
+      "checks": {
+        "locator": "ok",
+        "event": "ok",
+        "horizon": "ok",
+        "probability_hedges_conditions": "ok",
+        "predictor_form": "ok",
+        "source_date": "ok",
+        "wording": "issue"
+      },
+      "severity": "minor",
+      "finding": "Quotation verbatim. The qualification compresses two separate statements: the abstract says respondents \"newly contacted in 2019 expressed similar beliefs\" to the Grace et al. respondents, and that for recontacted participants the 50% date \"shifted from 2062 to 2076, although this change is not statistically significant likely due to the small size of our panel sample\". \"Does not differ significantly from the 2016 survey\" blurs these.",
+      "suggested_fix": "Replace with: \"The report says newly contacted 2019 respondents expressed similar beliefs to the 2016 survey's; for recontacted panel respondents the 50% year moved from 2062 to 2076, a change it reports as not statistically significant.\""
+    },
+    {
+      "id": "pr-c-espai-2022-hlmi-2059",
+      "found": "yes",
+      "checks": {
+        "locator": "ok",
+        "event": "ok",
+        "horizon": "ok",
+        "probability_hedges_conditions": "ok",
+        "predictor_form": "ok",
+        "source_date": "ok",
+        "wording": "ok"
+      },
+      "severity": "none",
+      "finding": "Both passages verbatim; condition, FAOL exclusion and live-page status recorded; calendar year is the page's own.",
+      "suggested_fix": "None."
+    },
+    {
+      "id": "pr-c-grace-2024-every-task",
+      "found": "yes",
+      "checks": {
+        "locator": "ok",
+        "event": "ok",
+        "horizon": "ok",
+        "probability_hedges_conditions": "ok",
+        "predictor_form": "ok",
+        "source_date": "ok",
+        "wording": "ok"
+      },
+      "severity": "none",
+      "finding": "Verbatim; condition \"If science continues undisrupted\" kept; survey date October 2023 confirmed (Methods).",
+      "suggested_fix": "None."
+    },
+    {
+      "id": "pr-c-grace-2024-occupations",
+      "found": "yes",
+      "checks": {
+        "locator": "ok",
+        "event": "ok",
+        "horizon": "ok",
+        "probability_hedges_conditions": "ok",
+        "predictor_form": "ok",
+        "source_date": "ok",
+        "wording": "ok"
+      },
+      "severity": "none",
+      "finding": "Verbatim; correctly carries no condition: the report states \"only the HLMI questions are preceded by the instruction to 'assume that human scientific activity continues without major negative disruption'\" (p. 7).",
+      "suggested_fix": "Optional: add that sentence to the qualification, since the companion record carries the condition."
+    },
+    {
+      "id": "pr-d-longbets-1-turing-test-2029",
+      "found": "yes",
+      "checks": {
+        "locator": "ok",
+        "event": "ok",
+        "horizon": "ok",
+        "probability_hedges_conditions": "ok",
+        "predictor_form": "ok",
+        "source_date": "ok",
+        "wording": "ok"
+      },
+      "severity": "none",
+      "finding": "Bet statement, parties, positions and stakes match the live page (\"PREDICTOR Mitchell Kapor CHALLENGER Ray Kurzweil STAKES $20,000 ...\"); no outcome recorded; unread detailed terms disclosed.",
+      "suggested_fix": "None."
+    },
+    {
+      "id": "pr-f-amodei-2026-few-years-everything",
+      "found": "yes",
+      "checks": {
+        "locator": "issue",
+        "event": "ok",
+        "horizon": "issue",
+        "probability_hedges_conditions": "ok",
+        "predictor_form": "ok",
+        "source_date": "ok",
+        "wording": "ok"
+      },
+      "severity": "minor",
+      "finding": "Quotation verbatim and the condition is kept. The horizon `words` field is \"more than a few years\", which drops \"cannot possibly be\" and reads, on its own, as the opposite bound (asStated is correct and is what pack.md renders). The locator \"Same section\" is not self-standing.",
+      "suggested_fix": "Set horizon.words to \"it cannot possibly be more than a few years\" (or \"not more than a few years\"); set the locator to \"Opening section, paragraph after the definition of powerful AI\"."
+    },
+    {
+      "id": "pr-f-openai-2023-governance-ten-years",
+      "found": "not retrievable",
+      "checks": {
+        "locator": "ok",
+        "event": "ok",
+        "horizon": "ok",
+        "probability_hedges_conditions": "ok",
+        "predictor_form": "ok",
+        "source_date": "ok",
+        "wording": "ok"
+      },
+      "severity": "none",
+      "finding": "openai.com returned HTTP 403 (cached body is the 403 page). Record internally consistent: held as awaiting retrieval, hedge \"it's conceivable\" and \"Given the picture as we see it now\" retained.",
+      "suggested_fix": "Confirm against an archive capture."
+    },
+    {
+      "id": "pr-f-anthropic-2025-late-2026-early-2027",
+      "found": "yes",
+      "checks": {
+        "locator": "ok",
+        "event": "ok",
+        "horizon": "ok",
+        "probability_hedges_conditions": "ok",
+        "predictor_form": "ok",
+        "source_date": "ok",
+        "wording": "issue"
+      },
+      "severity": "minor",
+      "finding": "Quotation verbatim; date \"Published Mar 6, 2025\" confirmed. The OSTP page attributes \"late 2026 or early 2027\" to Machines of Loving Grace, whose own wording (pr-f-amodei-2024-powerful-ai-2026) is \"as early as 2026, though there are also ways it could take much longer\"; the qualification points to the other record but does not say the horizons differ, so a reader may take the essay to have said \"late 2026 or early 2027\".",
+      "suggested_fix": "Add: \"The essay's own horizon is \"as early as 2026\" (see that record); the two wordings differ.\""
+    },
+    {
+      "id": "pr-b-degaris-1989-commonplace",
+      "found": "yes",
+      "checks": {
+        "locator": "ok",
+        "event": "ok",
+        "horizon": "ok",
+        "probability_hedges_conditions": "ok",
+        "predictor_form": "ok",
+        "source_date": "ok",
+        "wording": "ok"
+      },
+      "severity": "none",
+      "finding": "Matches the dataset passage verbatim (source not retrieved; checked against the dataset passage, as labelled). Event recorded as a change in what people will say.",
+      "suggested_fix": "None."
+    },
+    {
+      "id": "pr-f-altman-2024-few-thousand-days",
+      "found": "yes",
+      "checks": {
+        "locator": "ok",
+        "event": "ok",
+        "horizon": "ok",
+        "probability_hedges_conditions": "ok",
+        "predictor_form": "ok",
+        "source_date": "ok",
+        "wording": "ok"
+      },
+      "severity": "none",
+      "finding": "Verbatim; possibility, timing hedge and confidence all kept.",
+      "suggested_fix": "None."
+    },
+    {
+      "id": "pr-f-amodei-2025-country-of-geniuses",
+      "found": "yes",
+      "checks": {
+        "locator": "ok",
+        "event": "ok",
+        "horizon": "ok",
+        "probability_hedges_conditions": "ok",
+        "predictor_form": "ok",
+        "source_date": "ok",
+        "wording": "ok"
+      },
+      "severity": "none",
+      "finding": "Verbatim; \"as soon as\" lower bound and \"could\" kept. Locator \"Section on timing\" is loose (passage follows the interpretability-timeline paragraph) but findable.",
+      "suggested_fix": "None."
+    },
+    {
+      "id": "pr-e-brooks-2018-dog",
+      "found": "yes",
+      "checks": {
+        "locator": "ok",
+        "event": "ok",
+        "horizon": "ok",
+        "probability_hedges_conditions": "ok",
+        "predictor_form": "ok",
+        "source_date": "ok",
+        "wording": "ok"
+      },
+      "severity": "none",
+      "finding": "Verbatim; NET defined on the page (\"NET some date, meaning 'No Earlier Than' that date\"); page heading \"January 1, 2018 — Dated Predictions\" confirmed.",
+      "suggested_fix": "None."
+    },
+    {
+      "id": "pr-b-vinge-1993-thirty-years",
+      "found": "yes",
+      "checks": {
+        "locator": "ok",
+        "event": "ok",
+        "horizon": "ok",
+        "probability_hedges_conditions": "ok",
+        "predictor_form": "ok",
+        "source_date": "ok",
+        "wording": "ok"
+      },
+      "severity": "none",
+      "finding": "Verbatim on PDF p. 2; basis and hedge kept; companion calendar restatement correctly separated.",
+      "suggested_fix": "None."
+    },
+    {
+      "id": "pr-f-amodei-2024-powerful-ai-2026",
+      "found": "yes",
+      "checks": {
+        "locator": "ok",
+        "event": "ok",
+        "horizon": "ok",
+        "probability_hedges_conditions": "ok",
+        "predictor_form": "ok",
+        "source_date": "ok",
+        "wording": "ok"
+      },
+      "severity": "none",
+      "finding": "Verbatim; \"I think it could\", \"as early as\" and \"there are also ways it could take much longer\" kept; the following sentence correctly summarised.",
+      "suggested_fix": "None."
+    },
+    {
+      "id": "pr-b-bostrom-1998-first-third",
+      "found": "yes",
+      "checks": {
+        "locator": "ok",
+        "event": "ok",
+        "horizon": "ok",
+        "probability_hedges_conditions": "ok",
+        "predictor_form": "ok",
+        "source_date": "issue",
+        "wording": "ok"
+      },
+      "severity": "minor",
+      "finding": "Abstract quotation verbatim. The live page reads \"(1997)\", \"revised 25 October, 1998, and a postscript added\" and postscripts dated 2000, 2005 and 2008; the record and source date note mention only the 1998 journal and 2006 reprint, so the reader is not told that the read text is a revised version carrying a 1997 date.",
+      "suggested_fix": "Add to the source date note: the page itself is dated \"(1997)\", \"revised 25 October, 1998\", with postscripts added 2000–2008; the abstract wording is attested from the live revised page."
+    },
+    {
+      "id": "pr-f-ai2027-2025-next-decade",
+      "found": "yes",
+      "checks": {
+        "locator": "ok",
+        "event": "ok",
+        "horizon": "ok",
+        "probability_hedges_conditions": "ok",
+        "predictor_form": "ok",
+        "source_date": "ok",
+        "wording": "ok"
+      },
+      "severity": "none",
+      "finding": "Verbatim; date \"April 3rd 2025\" on page; \"our best guess\" kept.",
+      "suggested_fix": "None."
+    },
+    {
+      "id": "pr-f-openai-2023-superalignment-this-decade",
+      "found": "not retrievable",
+      "checks": {
+        "locator": "ok",
+        "event": "ok",
+        "horizon": "ok",
+        "probability_hedges_conditions": "issue",
+        "predictor_form": "ok",
+        "source_date": "ok",
+        "wording": "ok"
+      },
+      "severity": "minor",
+      "finding": "openai.com returned HTTP 403; the dataset holds no passage with this wording. Internally, the passage's \"we believe\" and the concessive \"While superintelligence seems far off now\" are present in the quotation but not in the hedge fields, which record only \"could\".",
+      "suggested_fix": "Add hedge: \"Introduced as \"we believe\", after \"While superintelligence seems far off now\".\" Confirm wording against an archive capture."
+    },
+    {
+      "id": "pr-b-moravec-1999-before-2050",
+      "found": "yes",
+      "checks": {
+        "locator": "ok",
+        "event": "ok",
+        "horizon": "ok",
+        "probability_hedges_conditions": "ok",
+        "predictor_form": "ok",
+        "source_date": "ok",
+        "wording": "issue"
+      },
+      "severity": "minor",
+      "finding": "Matches the dataset passage verbatim (source host not retrieved). The qualification asserts what \"It\" refers to (\"the comparison the article draws in the preceding text\"), which cannot be checked from the dataset passage alone and was not read here.",
+      "suggested_fix": "Either confirm the antecedent when the article is retrieved or reword to \"\"It\" refers to preceding text not read in this pass.\""
+    },
+    {
+      "id": "pr-f-altman-2025-2035-capacity",
+      "found": "yes",
+      "checks": {
+        "locator": "ok",
+        "event": "issue",
+        "horizon": "ok",
+        "probability_hedges_conditions": "ok",
+        "predictor_form": "ok",
+        "source_date": "ok",
+        "wording": "ok"
+      },
+      "severity": "minor",
+      "finding": "Verbatim. The sentence follows a passage on policy (\"We are open to strange-sounding ideas like giving some 'compute budget' ...\") and \"should be able to\" can be read as an aim rather than a forecast; the qualification flags the wording but not the ambiguity.",
+      "suggested_fix": "Add: \"\"Should\" follows a passage on policy options and can be read as an aim as well as an expectation; the record does not settle which.\""
+    },
+    {
+      "id": "pr-e-cotra-2020-bio-anchors-as-reported-2022",
+      "found": "yes",
+      "checks": {
+        "locator": "ok",
+        "event": "ok",
+        "horizon": "ok",
+        "probability_hedges_conditions": "issue",
+        "predictor_form": "ok",
+        "source_date": "ok",
+        "wording": "ok"
+      },
+      "severity": "minor",
+      "finding": "Quotations verbatim; retrospective correctly labelled. The same passage qualifies the figures: they were \"bottom line estimates from the bio anchors modeling exercise\", \"roughly close to my all-things-considered probabilities\", and \"my subjective probabilities bounced around quite a lot around these values\"; none of this is in the hedge field.",
+      "suggested_fix": "Add hedge: \"Bottom line of the bio-anchors model, \"roughly close to\" her all-things-considered view; she adds that her probabilities \"bounced around quite a lot around these values\".\""
+    },
+    {
+      "id": "pr-e-karnofsky-2021-transformative-ai",
+      "found": "yes",
+      "checks": {
+        "locator": "ok",
+        "event": "ok",
+        "horizon": "ok",
+        "probability_hedges_conditions": "ok",
+        "predictor_form": "ok",
+        "source_date": "ok",
+        "wording": "ok"
+      },
+      "severity": "none",
+      "finding": "Verbatim; three probabilities, \"more than\", \"~\" and the author's calendar years kept; date Sep 7, 2021 on page.",
+      "suggested_fix": "None."
+    },
+    {
+      "id": "pr-e-bengio-et-al-2023-this-decade-or-next",
+      "found": "yes",
+      "checks": {
+        "locator": "ok",
+        "event": "ok",
+        "horizon": "ok",
+        "probability_hedges_conditions": "issue",
+        "predictor_form": "ok",
+        "source_date": "ok",
+        "wording": "ok"
+      },
+      "severity": "minor",
+      "finding": "Verbatim (PDF p. 2). The sentence opens \"Combined with the ongoing growth and automation in AI R&D, we must take seriously ...\"; that stated basis is cut from the quotation and not recorded.",
+      "suggested_fix": "Begin the quotation at \"Combined with the ongoing growth and automation in AI R&D\" or record it as the stated basis."
+    },
+    {
+      "id": "pr-e-aschenbrenner-2024-agi-2027",
+      "found": "yes",
+      "checks": {
+        "locator": "ok",
+        "event": "ok",
+        "horizon": "ok",
+        "probability_hedges_conditions": "ok",
+        "predictor_form": "ok",
+        "source_date": "ok",
+        "wording": "ok"
+      },
+      "severity": "none",
+      "finding": "Verbatim; basis correctly summarised from the following paragraph.",
+      "suggested_fix": "None."
+    },
+    {
+      "id": "pr-b-kurzweil-2001-brain-capacity",
+      "found": "yes",
+      "checks": {
+        "locator": "ok",
+        "event": "ok",
+        "horizon": "ok",
+        "probability_hedges_conditions": "ok",
+        "predictor_form": "ok",
+        "source_date": "issue",
+        "wording": "ok"
+      },
+      "severity": "minor",
+      "finding": "Quotation verbatim. The source date is given at day precision (2001-03-07) from the dataset while the read page says \"January 2001\"; the conflict is noted but the record still asserts the day-level date as the published date.",
+      "suggested_fix": "Record the date as \"2001\" (or \"2001-01\" per the page) with the dataset's 2001-03-07 as a separately sourced claimed date, or state the basis for 2001-03-07."
+    },
+    {
+      "id": "pr-a-turing-1950-imitation-game",
+      "found": "yes",
+      "checks": {
+        "locator": "ok",
+        "event": "ok",
+        "horizon": "ok",
+        "probability_hedges_conditions": "ok",
+        "predictor_form": "ok",
+        "source_date": "ok",
+        "wording": "ok"
+      },
+      "severity": "none",
+      "finding": "Verbatim on PDF p. 8; \"I believe\", \"about fifty years\" and the 70 per cent threshold correctly handled; transcription status disclosed.",
+      "suggested_fix": "None."
+    },
+    {
+      "id": "pr-a-turing-1950-end-of-century",
+      "found": "yes",
+      "checks": {
+        "locator": "ok",
+        "event": "ok",
+        "horizon": "ok",
+        "probability_hedges_conditions": "ok",
+        "predictor_form": "ok",
+        "source_date": "ok",
+        "wording": "ok"
+      },
+      "severity": "none",
+      "finding": "Verbatim; period horizon not sharpened; context sentence quoted accurately.",
+      "suggested_fix": "None."
+    },
+    {
+      "id": "pr-f-google-deepmind-2025-by-2030",
+      "found": "yes",
+      "checks": {
+        "locator": "ok",
+        "event": "ok",
+        "horizon": "ok",
+        "probability_hedges_conditions": "ok",
+        "predictor_form": "ok",
+        "source_date": "ok",
+        "wording": "ok"
+      },
+      "severity": "none",
+      "finding": "Verbatim, PDF p. 3; \"highly uncertain\" and \"plausible\" kept; framed as an assumption of the approach.",
+      "suggested_fix": "None."
+    },
+    {
+      "id": "pr-e-cotra-2022-update",
+      "found": "yes",
+      "checks": {
+        "locator": "ok",
+        "event": "ok",
+        "horizon": "issue",
+        "probability_hedges_conditions": "issue",
+        "predictor_form": "ok",
+        "source_date": "ok",
+        "wording": "ok"
+      },
+      "severity": "minor",
+      "finding": "Quotations verbatim. The same list continues \"~60% probability by 2050 (a ~1.5x likelihood ratio vs 50%)\", which is omitted from the horizon, and the post adds \"I expect these numbers to be pretty volatile too\"; neither is recorded.",
+      "suggested_fix": "Add \"~60% by 2050\" to horizon/probability and the volatility statement to the hedge, or note their omission."
+    },
+    {
+      "id": "pr-f-altman-2025-robots-2027",
+      "found": "yes",
+      "checks": {
+        "locator": "ok",
+        "event": "ok",
+        "horizon": "ok",
+        "probability_hedges_conditions": "ok",
+        "predictor_form": "ok",
+        "source_date": "ok",
+        "wording": "ok"
+      },
+      "severity": "none",
+      "finding": "Verbatim; \"may\" against the preceding \"will likely\" correctly noted.",
+      "suggested_fix": "None."
+    },
+    {
+      "id": "pr-b-yudkowsky-2000-2035-upper-bound",
+      "found": "yes",
+      "checks": {
+        "locator": "ok",
+        "event": "ok",
+        "horizon": "ok",
+        "probability_hedges_conditions": "issue",
+        "predictor_form": "ok",
+        "source_date": "issue",
+        "wording": "issue"
+      },
+      "severity": "minor",
+      "finding": "Matches the dataset passage. (1) \"given the current rate of progress\" is a stated condition but is recorded in neither conditions nor hedge. (2) The source date kind \"captured\" is used for 2000-08-31, which is the page's \"Updated\" revision date; the capture is 2000-12-04 (the dataset uses basis \"revision\"). (3) \"the author has since repudiated this text, which the dataset records separately\": the dataset claim found (yk-y22-sl4-2000-11-13...) says only that he no longer holds a specific belief about objective morality, not that he repudiated the text or its timeline.",
+      "suggested_fix": "Add condition \"given the current rate of progress\"; set date kind to \"revised\" (Updated 08/31/2000) with capture date 2000-12-04; replace the repudiation clause with the specific dataset claim and its scope, or remove it."
+    },
+    {
+      "id": "pr-f-amodei-2026-one-to-two-years",
+      "found": "yes",
+      "checks": {
+        "locator": "ok",
+        "event": "ok",
+        "horizon": "ok",
+        "probability_hedges_conditions": "ok",
+        "predictor_form": "ok",
+        "source_date": "ok",
+        "wording": "ok"
+      },
+      "severity": "none",
+      "finding": "Verbatim; \"could be\", \"as little as\" and \"although it could also be considerably further out\" kept; restatement of the 2024 essay correctly noted.",
+      "suggested_fix": "None."
+    }
+  ],
+  "wording_sweep": [
+    {
+      "id": "pr-a-lighthill-1973-correspondents-1980s",
+      "issue": "\"the wording is his paraphrase of the letters\" asserts more than the source shows (indirect speech, no quotation marks); Lighthill's own framing of the examples as \"wild predictions\" is omitted.",
+      "suggested_fix": "\"Reported in indirect speech, without quotation marks.\" Add Lighthill's framing, attributed to him."
+    },
+    {
+      "id": "pr-a-lighthill-1973-correspondents-2000",
+      "issue": "\"in his words\" carries the same overstatement.",
+      "suggested_fix": "\"Lighthill's unnamed report of letters he received, in indirect speech.\""
+    },
+    {
+      "id": "pr-b-yudkowsky-2000-2035-upper-bound",
+      "issue": "\"the author has since repudiated this text\" is broader than the dataset record it points to (he no longer holds a specific belief about objective morality); it reads as a statement about the person and the forecast.",
+      "suggested_fix": "Name the specific dataset claim and its scope, or remove the clause."
+    },
+    {
+      "id": "pr-c-zhang-2022-hlmi-2060",
+      "issue": "\"does not differ significantly from the 2016 survey\" merges two statements of the abstract (similar beliefs of new respondents; non-significant 2062-to-2076 shift for the recontacted panel).",
+      "suggested_fix": "State both as the report words them."
+    },
+    {
+      "id": "pr-f-anthropic-2025-late-2026-early-2027",
+      "issue": "Does not say that the cited essay's own horizon (\"as early as 2026\") differs from the submission's (\"late 2026 or early 2027\").",
+      "suggested_fix": "Add the essay's horizon in its words."
+    },
+    {
+      "id": "pr-a-dartmouth-1955-summer",
+      "issue": "\"The statement is part of a funding proposal\" is factual but may be read as implying a motive for the optimism; low priority.",
+      "suggested_fix": "\"The statement is part of the proposal for the 1956 summer study.\" (optional)"
+    },
+    {
+      "id": "(pack-wide)",
+      "issue": "Verbal hedges (\"could\", \"may\", \"we expect\", \"it's conceivable\", \"we find it plausible\", \"strikingly plausible\") are stored in the `probability` field in many forecast records (e.g. pr-f-amodei-2026-one-to-two-years, pr-f-openai-2023-governance-ten-years, pr-f-anthropic-2025-late-2026-early-2027), while other records put comparable wording in `hedge`. pack.md renders them under \"Probability or confidence\", which a reader may take as a stated probability.",
+      "suggested_fix": "Keep `probability` for numerical or explicitly probabilistic statements and move verbal hedges to `hedge`, or relabel the rendered field \"Stated confidence (words)\"."
+    }
+  ],
+  "retrieval_failures": [
+    {
+      "source": "simon-newell-1958",
+      "records": ["pr-a-simon-newell-1958-chess"],
+      "detail": "No cached text (paywalled); quotation unverifiable here. The Simon 1998 email was checked for date and citation only."
+    },
+    {
+      "source": "oai-governance-si",
+      "records": ["pr-f-openai-2023-governance-ten-years"],
+      "detail": "Cache holds an HTTP 403 page from openai.com; no text."
+    },
+    {
+      "source": "oai-superalignment",
+      "records": ["pr-f-openai-2023-superalignment-this-decade"],
+      "detail": "Cache holds an HTTP 403 page from openai.com; the dataset holds no passage with this wording."
+    },
+    {
+      "source": "degaris1989, moravec1999, sits",
+      "records": [
+        "pr-b-degaris-1989-commonplace",
+        "pr-b-moravec-1999-before-2050",
+        "pr-b-yudkowsky-2000-2035-upper-bound"
+      ],
+      "detail": "Not a failure: no cached source text; checked only against the dataset's stored passages, so surrounding context beyond those passages was not read."
+    }
+  ]
+}

@@ -102,7 +102,9 @@ describe('full-text search over the records', () => {
       .find((g) => g.type === 'claim')!
       .hits.find((h) => h.field === 'qualification');
     expect(qualification).toBeDefined();
-    expect(marked(qualification!.snippet)).toContain('whistleblower');
+    expect(
+      marked(qualification!.snippet).map((m) => m.toLowerCase()),
+    ).toContain('whistleblower');
   });
   it('finds an AI Safety Level term in claims and passages, however it is hyphenated', () => {
     const results = searchRecords(index, 'ASL-3');

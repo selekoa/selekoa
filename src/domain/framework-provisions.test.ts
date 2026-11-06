@@ -18,6 +18,7 @@ import {
 } from '../editorial/historical-views';
 import before from '../../review/week4a-before-2026-10-03.json';
 import decisions from '../../review/week4a-stop-case-decisions-2026-10-03.json';
+import { isLawCell } from './law-questions';
 
 const data = repository.data;
 const words = (s: string) => s.trim().split(/\s+/).length;
@@ -39,9 +40,9 @@ describe('schema 2.8 framework provisions', () => {
       expect(sha(preProvisionsRaw[key]), key).toBe(before.sha256[key]);
     expect(sha(preProvisionsRaw.meta)).toBe(before.sha256.meta);
     expect(preProvisionsRaw.meta.schemaVersion).toBe('2.7');
-    // The maintainer's decisions of 2026-11-02 on the earliest-located
-    // re-check moved the current dataset to schema 2.29.
-    expect(data.meta.schemaVersion).toBe('2.29');
+    // The admission of "Predictions on record" (2026-11-05) moved the
+    // current dataset to schema 2.32.
+    expect(data.meta.schemaVersion).toBe('2.32');
   });
 
   it('applies the three stop-case decisions and keeps their history', () => {
@@ -76,9 +77,11 @@ describe('schema 2.8 framework provisions', () => {
   it('quotes every provision from its own edition, briefly', () => {
     expect(provisions.length).toBeGreaterThan(60);
     // Comparison questions given by paraphrase (schema 2.18) quote nothing,
-    // and a statement (schema 2.20) may rest on a paraphrase.
+    // and a statement (schema 2.20) may rest on a paraphrase. Law cells
+    // (schema 2.31) follow their own rules (src/domain/law-comparison.test.ts).
     for (const c of provisions.filter(
       (c) =>
+        !isLawCell(c) &&
         facetById(c.attributes?.provision?.facet?.id ?? '')?.dimension
           .passages !== 'paraphrase' &&
         c.attributes?.provision?.kind !== 'statement',

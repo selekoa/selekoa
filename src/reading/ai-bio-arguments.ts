@@ -1,5 +1,6 @@
 import type { PropositionsCollection } from '../domain/propositions';
 import { aiBioArgumentsFrame as frame } from './proposition-frames';
+import { describeGroups } from './describe-groups';
 
 /** The maintainer's decisions of 2026-11-02 on the earliest-located re-check (decisions 1 to 4). */
 const recheckDecisions = '2026-11-02';
@@ -17,7 +18,10 @@ export const aiBioArguments: PropositionsCollection = {
   editorialStatus: frame.editorialStatus,
   introduction:
     'Each argument is recorded as a proposition with one criterion. It is phrased generically and attributed to no one. A text that meets the criterion articulates the proposition. A text that disputes it contests it. A text that comes close bears on it, and its record names what is missing. Every record stays at the policy and evaluation level: it says what a text argues, not how anything could be done. Texts are listed in date order. The page records what texts say and when; it does not assess whether an argument is right, and it is not evidence about any risk.',
-  groups: frame.groups,
+  groups: describeGroups(frame.groups, {
+    R: 'Whether systems already available increase an actor’s ability, where the binding barrier lies, and what published evaluations of biological capability establish.',
+    G: 'Whether biological design tools are a distinct case, whether screening orders for synthesised nucleic acids is the control point, whether publishing model weights raises the risk, and whether assessment must cover actors who already hold relevant skills.',
+  }),
   searchNote: {
     scope:
       'The collection records what located texts say about seven propositions on AI and biological risk. The propositions were written from the texts the search found, not from a list supplied in advance. “Earliest located” means the earliest text found by the searches below. It is not a claim that no earlier text exists.',

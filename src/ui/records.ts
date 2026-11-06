@@ -26,6 +26,7 @@ import type { Dataset } from '../domain/schema';
 import type { CollectionIndex } from '../domain/collection-index';
 import { settled, track, type Tracked } from './tracked';
 import { remember, type Remembered } from '../domain/memo';
+import { pageFailed } from './page-failure';
 
 /** A repository over part of the dataset. */
 export function repositoryOf(data: Dataset): Repository {
@@ -298,8 +299,8 @@ export function whenData(address: string, change: () => void) {
   else
     loadData(address).then(
       () => flushSync(change),
-      (error: unknown) =>
-        console.error('The records could not be loaded', error),
+      // A change of page that cannot be made is made by the browser.
+      (error: unknown) => pageFailed('The records could not be loaded', error),
     );
 }
 
@@ -308,6 +309,13 @@ export const loadClaim = (claimId: string) =>
   loadPart(bucketPath(claimId)).catch(fallBack);
 export const claimHeld = (claimId: string) =>
   whole || parts.has(bucketPath(claimId));
+
+/**
+ * Loads a further part of a page once the page is drawn, such as the text
+ * of the Model cards page's cells (`cellTextPath`); resolves when held.
+ */
+export const loadFurther = (url: string) => loadPart(url).catch(fallBack);
+export const furtherHeld = (url: string) => whole || parts.has(url);
 
 /** How the browser loads the records chunk (src/main.tsx). */
 export function provideRecords(load: () => Promise<Repository>) {
@@ -344,8 +352,8 @@ export function whenRecords(change: () => void, code?: () => Promise<unknown>) {
       // Drawn at once, as a change made in the event itself would be, so
       // that what the change does next (such as moving focus) finds it.
       () => flushSync(change),
-      (error: unknown) =>
-        console.error('The records could not be loaded', error),
+      // A change of page that cannot be made is made by the browser.
+      (error: unknown) => pageFailed('The records could not be loaded', error),
     );
 }
 

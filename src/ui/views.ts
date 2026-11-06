@@ -15,6 +15,7 @@ export type View =
   | 'commitments'
   | 'guide'
   | 'propositions'
+  | 'predictions'
   | 'year'
   | 'person'
   | 'document'
@@ -36,6 +37,7 @@ export function entityView(view: View, isInstitution: boolean): View {
     case 'commitments':
     case 'guide':
     case 'propositions':
+    case 'predictions':
     case 'year':
     case 'person':
     case 'document':

@@ -1,0 +1,110 @@
+{
+  "group": "lovelace",
+  "preparedAt": "2026-11-02",
+  "propositions": ["U01", "U02"],
+  "sources": [
+    {
+      "key": "lovelace-1843-scientific-memoirs-3",
+      "cacheKey": "lovelace-1843-sm3-djvu",
+      "datasetSource": null,
+      "documentId": "lovelace-1843-notes",
+      "title": "Sketch of the Analytical Engine invented by Charles Babbage Esq. By L. F. Menabrea, of Turin, Officer of the Military Engineers, with notes by the translator (Scientific Memoirs, vol. III, Article XXIX)",
+      "authors": [
+        "L. F. Menabrea (memoir)",
+        "A. A. L. (translation and notes; attributed to Ada Lovelace)"
+      ],
+      "publisher": "Scientific Memoirs, Selected from the Transactions of Foreign Academies of Science and Learned Societies, and from Foreign Journals, vol. III, ed. Richard Taylor (London: Richard and John E. Taylor, 1843), pp. 666–731",
+      "url": "https://archive.org/download/india.history.resource.53369/53369_djvu.txt",
+      "scanUrl": "https://archive.org/details/india.history.resource.53369",
+      "httpStatus": 200,
+      "sha256": "d633c2462f1a7fc282035b2b338b112a2307abc6acf22aaaca574f851d1a441a",
+      "retrievedAt": "2026-11-02",
+      "language": "en",
+      "documentWords": {
+        "count": 31800,
+        "basis": "Whitespace-separated words of Article XXIX (memoir and translator's notes, pp. 666–731) in the Internet Archive OCR text, counted 2026-11-02; the OCR includes tables."
+      },
+      "version": "Internet Archive scan of the 1843 volume (Royal Asiatic Society, Bombay Branch copy; digitised 2016, collection IndiaHistory), read in its OCR text; quotations compared with the OCR, which has scattered character errors.",
+      "kind": "paper"
+    }
+  ],
+  "documents": [
+    {
+      "id": "lovelace-1843-notes",
+      "existingEntity": false,
+      "title": "Notes by the translator to L. F. Menabrea's Sketch of the Analytical Engine",
+      "shortName": "Lovelace, Notes to Menabrea's Sketch of the Analytical Engine (1843)",
+      "subtype": "Book chapter",
+      "authors": ["A. A. L. (attributed to Ada Lovelace)"],
+      "date": "1843",
+      "dateBasis": "publication",
+      "dateNote": "Year on the title page of Scientific Memoirs, vol. III, as scanned. The notes are signed 'A. A. L.'; the volume does not print a fuller name. Menabrea's memoir is dated in the volume from the Bibliothèque Universelle de Genève, no. 82, October 1842."
+    }
+  ],
+  "records": [
+    {
+      "id": "pre-u01-lovelace-1843-notes",
+      "proposition": "U01",
+      "document": "lovelace-1843-notes",
+      "predicate": "articulates_proposition",
+      "statement": "The translator's Note G, signed A. A. L., to Menabrea's memoir in Scientific Memoirs (1843) states that the Analytical Engine “has no pretensions whatever to originate any thing”, that it can do whatever we know how to order it to perform, and that it has no power of anticipating analytical relations or truths.",
+      "time": {
+        "kind": "event",
+        "date": "1843",
+        "basis": "publication",
+        "note": "Scientific Memoirs, vol. III, title page year; Note G is on p. 722."
+      },
+      "attested": null,
+      "claimed": null,
+      "roles": ["earliest-located"],
+      "term": null,
+      "register": "nonfiction",
+      "engagement": null,
+      "missing": null,
+      "hazardNote": null,
+      "qualification": "The statement concerns Babbage's Analytical Engine, and the note introduces it as a guard against 'exaggerated ideas' of the engine's powers. The note does not use the word 'only', as Turing (1950, p. 459, note 1) observes. The printed volume signs the notes 'A. A. L.'; their attribution to Ada Lovelace is not established by this volume, though Turing's paper of 1950 names her as the memoir's author. Earliest located means the earliest text found by this pack's searches, not a first statement.",
+      "datasetLink": null,
+      "evidence": [
+        {
+          "source": "lovelace-1843-scientific-memoirs-3",
+          "locator": "Article XXIX, Note G (keyed to p. 689), p. 722, second paragraph",
+          "passage": "The Analytical Engine has no pretensions whatever to originate any thing. It can do whatever we know how to order it to perform. It can follow analysis; but it has no power of anticipating any analytical relations or truths.",
+          "passageType": "quote",
+          "sourceRole": "primary",
+          "support": "supports",
+          "note": "OCR reads 're- lations' across a line break; the scan's spelling 'any thing' is kept."
+        }
+      ],
+      "crossFamily": {
+        "items": ["A2.11", "F10"],
+        "result": "corrected: locator (second paragraph of Note G); document authors aligned with the source record. Classification agreed."
+      }
+    }
+  ],
+  "links": [],
+  "searchLog": [
+    {
+      "proposition": "U01",
+      "searched": "The translator's notes A–G (pp. 691–731) read in the OCR text of the 1843 volume; the notes searched for 'originate', 'order', 'anticipat', 'compose' and 'think'. Turing's offprint of 1950 (p. 450) and his broadcast script of 1951 (AMT/B/5, p. 1) were used to locate the passage; they quote it from Hartree (1949), which was not retrieved.",
+      "earliestNote": "No earlier text meeting U01 was found; the search before 1843 was not made. Babbage's own writings and Menabrea's French memoir of 1842 were not read for U01."
+    },
+    {
+      "proposition": "U02",
+      "searched": "Note A (p. 694) says the engine 'might compose elaborate and scientific pieces of music' if the relations of pitched sounds were expressed in its notation; Note G limits the engine to what it is ordered to perform.",
+      "earliestNote": "Not recorded on U02: Note A states a capacity of symbol manipulation and does not claim that the engine could think; Note G bears on U02 only through U01."
+    }
+  ],
+  "omissions": [
+    {
+      "item": "Lovelace, Note A (p. 694), on composing music",
+      "reason": "States that the engine could act on other subject matter if expressed in its notation; does not meet U01 or U02. Kept out to avoid stretching."
+    },
+    {
+      "item": "Babbage, Passages from the Life of a Philosopher (1864)",
+      "reason": "Not searched in this pack; a possible source for the attribution of the notes."
+    }
+  ],
+  "retrievalFailures": [],
+  "codexRetrieval": [],
+  "openQuestions": []
+}

@@ -1,0 +1,676 @@
+{
+  "group": "us-federal",
+  "drafter": "fresh-context drafting pass, 2026-11-01",
+  "cells": [
+    {
+      "instrument": "us-eo14110",
+      "question": "Q01",
+      "status": "partly",
+      "passages": [
+        {
+          "source": "us-eo14110",
+          "locator": "Sec. 4.2(a), opening words, 88 FR 75197",
+          "quote": "the Secretary of Commerce shall require:"
+        },
+        {
+          "source": "us-eo14110",
+          "locator": "Sec. 4.2(a)(i), 88 FR 75197",
+          "quote": "Companies developing or demonstrating an intent to develop potential dual-use foundation models to provide the Federal Government, on an ongoing basis, with information, reports, or records regarding the following",
+          "datasetClaim": "fl-us-eo14110-sec42a-reporting"
+        }
+      ],
+      "note": "The order does not itself place duties on companies; it directs the Secretary of Commerce, acting under the Defense Production Act, to require “Companies developing or demonstrating an intent to develop potential dual-use foundation models” to report. The term “dual-use foundation model” is defined in Sec. 3(k); Sec. 4.2(a)(ii) separately covers those who acquire, develop or possess a potential large-scale computing cluster.",
+      "search": {
+        "read": "Whole cached text of the Federal Register printing (88 FR 75191–75226), with close reading of Secs. 3, 4.1, 4.2, 12 and 13 and the signature block.",
+        "terms": ["shall require", "Companies", "dual-use foundation model"],
+        "setAside": [
+          {
+            "locator": "Sec. 4.2(c), 88 FR 75197–75198",
+            "reason": "Directs proposed regulations on United States IaaS Providers concerning foreign persons' training runs; not the developer reporting compared here."
+          }
+        ]
+      }
+    },
+    {
+      "instrument": "us-eo14110",
+      "question": "Q02",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "us-eo14110",
+          "locator": "Sec. 4.2(b)(i), 88 FR 75197",
+          "quote": "Until such technical conditions are defined, the Secretary shall require compliance with these reporting requirements for: (i) any model that was trained using a quantity of computing power greater than",
+          "datasetClaim": "fl-us-eo14110-sec42b-threshold"
+        }
+      ],
+      "note": "Interim condition, until the Secretary of Commerce defines technical conditions under Sec. 4.2(b): more than 10^26 integer or floating-point operations, or more than 10^23 for a model trained primarily on biological sequence data. The quote stops before the figures, which the PDF text layer renders without superscript (“1026”, “1023”); the reading follows dataset claim fl-us-eo14110-sec42b-threshold. Sec. 4.2(b)(ii) sets a separate condition for computing clusters."
+    },
+    {
+      "instrument": "us-eo14110",
+      "question": "Q03",
+      "status": "not-found",
+      "note": "No provision directing that covered companies write or adopt a framework, policy or protocol on the risks of their models was found.",
+      "search": {
+        "read": "Whole cached text of the Federal Register printing (88 FR 75191–75226), with close reading of Secs. 3, 4.1, 4.2, 12 and 13 and the signature block.",
+        "terms": [
+          "framework",
+          "policy",
+          "protocol",
+          "safety objectives",
+          "risk management"
+        ],
+        "setAside": [
+          {
+            "locator": "Sec. 4.2(a)(i)(C), 88 FR 75197",
+            "reason": "Reporting of “a description of any associated measures the company has taken to meet safety objectives”; a report on measures, not a required written framework."
+          },
+          {
+            "locator": "Sec. 4.1(a)(i)(A), 88 FR 75196",
+            "reason": "Directs NIST to develop a companion resource to the AI Risk Management Framework; guidance, not a duty on companies (recorded under Q15)."
+          },
+          {
+            "locator": "Sec. 4.4(b)(i), 88 FR 75201",
+            "reason": "OSTP framework for synthetic nucleic acid procurement screening; addressed to providers of nucleic acid sequences, not model developers."
+          }
+        ]
+      }
+    },
+    {
+      "instrument": "us-eo14110",
+      "question": "Q04",
+      "status": "not-applicable",
+      "note": "Q03 found no framework document whose publication or submission could be asked about."
+    },
+    {
+      "instrument": "us-eo14110",
+      "question": "Q05",
+      "status": "not-found",
+      "passages": [],
+      "note": "No duty on companies to evaluate or test their models was found. The Secretary of Commerce is directed to require reports that include the results of any red-team testing a company has conducted, on named risk categories including biological weapons (recorded at policy level only); a duty to report results of testing conducted is not a duty to test, and is set aside below.",
+      "search": {
+        "read": "Whole cached text of the Federal Register printing (88 FR 75191–75226), with close reading of Secs. 3, 4.1, 4.2, 12 and 13 and the signature block.",
+        "terms": ["red-team", "evaluat", "test", "results", "shall require"],
+        "setAside": [
+          {
+            "locator": "Sec. 4.2(a), opening words, 88 FR 75197",
+            "reason": "“the Secretary of Commerce shall require:”: a reporting duty on results of testing conducted, imposed through the Secretary; no command to conduct testing."
+          },
+          {
+            "locator": "Sec. 4.2(a)(i)(C), 88 FR 75197",
+            "reason": "“the results of any developed dual-use foundation model’s performance in relevant AI red-team testing”: a reporting duty on results of testing conducted, imposed through the Secretary; no command to conduct testing."
+          },
+          {
+            "locator": "Sec. 4.1(a)(ii), 88 FR 75196",
+            "reason": "Directs NIST guidelines to enable developers to conduct red-teaming tests; guidance, not a duty."
+          }
+        ]
+      }
+    },
+    {
+      "instrument": "us-eo14110",
+      "question": "Q06",
+      "status": "not-found",
+      "note": "No provision requiring or providing for assessment of a covered company's model or practices by an authority or third party was found. Agency evaluation tools and guidance are set aside below.",
+      "search": {
+        "read": "Whole cached text of the Federal Register printing (88 FR 75191–75226), with close reading of Secs. 3, 4.1, 4.2, 12 and 13 and the signature block.",
+        "terms": [
+          "evaluat",
+          "assess",
+          "audit",
+          "third-party",
+          "independent",
+          "model capabilities"
+        ],
+        "setAside": [
+          {
+            "locator": "Sec. 4.1(b), 88 FR 75196–75197",
+            "reason": "Directs the Secretary of Energy to develop AI model evaluation tools and testbeds; not an assessment of a covered company's model (dataset claim ab-gov-us-eo14110-sec41b-doe-tools)."
+          },
+          {
+            "locator": "Sec. 4.1(a)(i)(C), 88 FR 75196",
+            "reason": "Initiative to create guidance and benchmarks for evaluating and auditing AI capabilities; guidance, not an assessment."
+          },
+          {
+            "locator": "Sec. 4.4(a)(i), including (A), 88 FR 75200",
+            "reason": "Directs the Secretary of Homeland Security to evaluate the potential for AI to be misused for CBRN threats and, under (A), to consult experts including third-party model evaluators “to evaluate AI model capabilities to present CBRN threats”: a policy-level evaluation by a public authority, not an assessment of a covered company’s model or practices. Read and set aside under decision 6a (2026-11-04): the cross-family second pass agreed that this passage does not meet Q06 (second-pass-codex-report-2026-11-03.md, case 2)."
+          }
+        ]
+      }
+    },
+    {
+      "instrument": "us-eo14110",
+      "question": "Q07",
+      "status": "not-found",
+      "note": "No duty on companies to report incidents to an authority was found.",
+      "search": {
+        "read": "Whole cached text of the Federal Register printing (88 FR 75191–75226), with close reading of Secs. 3, 4.1, 4.2, 12 and 13 and the signature block.",
+        "terms": ["incident", "report"],
+        "setAside": [
+          {
+            "locator": "Sec. 4.3(a)(v), 88 FR 75200",
+            "reason": "Critical-infrastructure agencies' advice on “incident response related to AI usage”; agency task, not a company reporting duty."
+          },
+          {
+            "locator": "Sec. 5.2(d)(i), 88 FR 75207",
+            "reason": "Agency programme on reports of AI-related IP theft; not a company duty."
+          },
+          {
+            "locator": "Sec. 8(b)(iv)(A), 88 FR 75215",
+            "reason": "Common framework for identifying and capturing clinical errors and incidents in health care; agency task."
+          },
+          {
+            "locator": "Sec. 4.2(a)(ii), 88 FR 75197",
+            "reason": "Reporting of computing-cluster acquisition, development or possession; not incidents."
+          }
+        ]
+      }
+    },
+    {
+      "instrument": "us-eo14110",
+      "question": "Q08",
+      "status": "partly",
+      "passages": [
+        {
+          "source": "us-eo14110",
+          "locator": "Sec. 4.2(a), opening words, 88 FR 75197",
+          "quote": "the Secretary of Commerce shall require:"
+        },
+        {
+          "source": "us-eo14110",
+          "locator": "Sec. 4.2(a)(i), 88 FR 75197",
+          "quote": "Companies developing or demonstrating an intent to develop potential dual-use foundation models to provide the Federal Government, on an ongoing basis, with information, reports, or records regarding the following",
+          "datasetClaim": "fl-us-eo14110-sec42a-reporting"
+        },
+        {
+          "source": "us-eo14110",
+          "locator": "Sec. 4.2(a)(i)(C), 88 FR 75197",
+          "quote": "the results of any developed dual-use foundation model’s performance in relevant AI red-team testing"
+        }
+      ],
+      "note": "The Secretary of Commerce is directed to require ongoing reporting to the Federal Government, including on training activities, ownership and protection of model weights, and red-team results; the order does not itself impose the duty. No publication duty and no per-model trigger such as deployment is stated."
+    },
+    {
+      "instrument": "us-eo14110",
+      "question": "Q09",
+      "status": "not-found",
+      "note": "No provision on retaliation or on a disclosure channel for employees or others was found.",
+      "search": {
+        "read": "Whole cached text of the Federal Register printing (88 FR 75191–75226), with close reading of Secs. 3, 4.1, 4.2, 12 and 13 and the signature block.",
+        "terms": ["whistle", "retaliat", "disclos", "employee"],
+        "setAside": []
+      }
+    },
+    {
+      "instrument": "us-eo14110",
+      "question": "Q10",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "us-eo14110",
+          "locator": "88 FR 75226, signature block",
+          "quote": "THE WHITE HOUSE, October 30, 2023.",
+          "datasetClaim": "fl-us-eo14110-signed"
+        }
+      ],
+      "note": "Signature date as printed. Published in the Federal Register of 1 November 2023 (dataset claim fl-us-eo14110-published)."
+    },
+    {
+      "instrument": "us-eo14110",
+      "question": "Q11",
+      "status": "not-found",
+      "passages": [
+        {
+          "source": "us-eo14148",
+          "locator": "Sec. 2(ggg), 90 FR 8240",
+          "quote": "(ggg) Executive Order 14110 of October 30, 2023 (Safe, Secure, and Trustworthy Development and Use of Artificial Intelligence).",
+          "datasetClaim": "fl-us-eo14110-revoked"
+        }
+      ],
+      "note": "No provision of the order on its effective date was found. Context, not an answer to the question: Executive Order 14148 of 20 January 2025, Sec. 2, lists the order among the executive actions “hereby revoked” (passage above).",
+      "search": {
+        "read": "Whole cached text of the Federal Register printing (88 FR 75191–75226), with close reading of Secs. 3, 4.1, 4.2, 12 and 13 and the signature block.",
+        "terms": [
+          "effective",
+          "take effect",
+          "takes effect",
+          "shall be effective"
+        ],
+        "setAside": [
+          {
+            "locator": "Sec. 4.2(a), 88 FR 75197",
+            "reason": "“effective AI” describes AI, not the order's effect."
+          },
+          {
+            "locator": "Sec. 13, 88 FR 75225–75226",
+            "reason": "General provisions on implementation; no effective date."
+          }
+        ]
+      }
+    },
+    {
+      "instrument": "us-eo14110",
+      "question": "Q12",
+      "status": "not-found",
+      "passages": [],
+      "note": "No provision setting a date from which companies’ reporting duties apply was found. The 90-day period in Sec. 4.2(a) is set for the Secretary of Commerce to require the reporting and is set aside.",
+      "search": {
+        "read": "Whole cached text of the Federal Register printing (88 FR 75191–75226), with close reading of Secs. 3, 4.1, 4.2, 12 and 13 and the signature block.",
+        "terms": ["Within 90 days", "date of this order", "ongoing basis"],
+        "setAside": [
+          {
+            "locator": "Sec. 4.2(a), 88 FR 75197",
+            "reason": "“Within 90 days of the date of this order” is the period for the Secretary of Commerce to require reporting; not an application date for companies’ duties."
+          }
+        ]
+      }
+    },
+    {
+      "instrument": "us-eo14110",
+      "question": "Q13",
+      "status": "not-found",
+      "note": "No penalty provision was found. The reporting is to be required under the Defense Production Act, whose penalties the order does not state.",
+      "search": {
+        "read": "Whole cached text of the Federal Register printing (88 FR 75191–75226), with close reading of Secs. 3, 4.1, 4.2, 12 and 13 and the signature block.",
+        "terms": [
+          "penalt",
+          "fine",
+          "sanction",
+          "enforce",
+          "Defense Production Act"
+        ],
+        "setAside": [
+          {
+            "locator": "Sec. 4.2(a), 88 FR 75197",
+            "reason": "Names the Defense Production Act, 50 U.S.C. 4501 et seq., as the basis; states no penalty."
+          },
+          {
+            "locator": "Sec. 13(c), 88 FR 75226",
+            "reason": "States the order creates no right enforceable at law; not a penalty."
+          }
+        ]
+      }
+    },
+    {
+      "instrument": "us-eo14110",
+      "question": "Q14",
+      "status": "partly",
+      "passages": [
+        {
+          "source": "us-eo14110",
+          "locator": "Sec. 4.2(a), opening words, 88 FR 75197",
+          "quote": "the Secretary of Commerce shall require:"
+        }
+      ],
+      "note": "The Secretary of Commerce is the body directed to require the reporting; the order gives no stated power to enforce or penalise breaches.",
+      "search": {
+        "read": "Whole cached text of the Federal Register printing (88 FR 75191–75226), with close reading of Secs. 3, 4.1, 4.2, 12 and 13 and the signature block.",
+        "terms": ["enforce", "Secretary of Commerce", "penalt"],
+        "setAside": []
+      }
+    },
+    {
+      "instrument": "us-eo14110",
+      "question": "Q15",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "us-eo14110",
+          "locator": "Sec. 4.2(a)(i)(C), 88 FR 75197",
+          "quote": "based on guidance developed by NIST pursuant to subsection 4.1(a)(ii) of this section"
+        }
+      ],
+      "note": "Refers to: the red-team results to be reported are those based on NIST guidance that Sec. 4.1(a)(ii) directs NIST to establish. Sec. 4.1(a)(i) also directs NIST companion resources to the AI Risk Management Framework and the Secure Software Development Framework. No developer framework is required or recognised."
+    },
+    {
+      "instrument": "us-bis-ifr",
+      "question": "Q01",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "us-bis-ifr",
+          "locator": "DATES, 90 FR 4544",
+          "quote": "exporters, reexporters, and transferors",
+          "datasetClaim": "fl-us-bis-ai-diffusion-ifr-published"
+        },
+        {
+          "source": "us-bis-ifr",
+          "locator": "Supplement No. 10 to part 748, para. 8, 90 FR 4565 (PDF p. 22)",
+          "quote": "The VEU may only store or transfer the model weights"
+        }
+      ],
+      "note": "An export-control rule: duties fall on exporters, reexporters and transferors of controlled items, including model weights specified in ECCN 4E091 (licence requirement in § 742.6(a)(13); conditions of License Exception AIA in § 740.27), and on Data Center Validated End Users (VEUs) under Supplement No. 10 to part 748. The rule has no category of model developer as such."
+    },
+    {
+      "instrument": "us-bis-ifr",
+      "question": "Q02",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "us-bis-ifr",
+          "locator": "ECCN 4E091 heading, 90 FR 4578 (PDF p. 35)",
+          "quote": "4E091 ‘Parameters’ for an artificial intelligence model trained utilizing"
+        },
+        {
+          "source": "us-bis-ifr",
+          "locator": "Supplementary information, section A, 90 FR 4555",
+          "quote": "ECCN 4E091 excludes from the control any open-weight models",
+          "datasetClaim": "fl-us-bis-ai-diffusion-ifr-model-weights"
+        }
+      ],
+      "note": "The heading continues with a figure that the PDF text layer renders as “1026” before “or more ‘operations’”, read as 10^26 operations; the quote stops before it. Notes 1 and 2 to 4E091 exclude published weights, models derived from them with no more than 2.5 × 10^25 additional operations or 25 percent (whichever is higher), and models trained with fewer operations than needed to match the most advanced published model."
+    },
+    {
+      "instrument": "us-bis-ifr",
+      "question": "Q03",
+      "status": "partly",
+      "passages": [
+        {
+          "source": "us-bis-ifr",
+          "locator": "Supplement No. 10 to part 748, para. 14(e), 90 FR 4566 (PDF p. 23)",
+          "quote": "Plans for the secure operation of data centers supporting a VEU shall be implemented in accordance with a security management defense-in-depth framework"
+        },
+        {
+          "source": "us-bis-ifr",
+          "locator": "Supplement No. 10 to part 748, para. 15, 90 FR 4566 (PDF p. 23)",
+          "quote": "The VEU will establish and bear responsibility for the following additional practices for AI security"
+        }
+      ],
+      "note": "Partly: the rule requires security measures, including AI-specific security practices covering model weights (para. 15), as conditions of validated end-user authorisation and, under § 740.27(a)(3)(ii), for facilities storing specified model weights. No written framework on the risks of models is required, and the data-centre plans are not a developer’s safety framework. The regulated party is the validated end user or facility, not necessarily a model developer. Status applied from the cross-family check; the boundary (whether model-weight security risks count as risks of models) is raised for the maintainer.",
+      "search": {
+        "read": "Federal Register PDF, 90 FR 4544–4584: DATES, SUPPLEMENTARY INFORMATION sections III and IV and Rulemaking Requirements; regulatory text §§ 740.27, 742.6(a)(13) and (b)(14), Supplement No. 10 to part 748 in full, ECCN 4E091 entry; signature and filing lines.",
+        "terms": [
+          "framework",
+          "plan",
+          "policy",
+          "safety",
+          "security requirements"
+        ],
+        "setAside": [
+          {
+            "locator": "§ 740.27(a)(3)(ii), 90 FR 4559 (PDF p. 16)",
+            "reason": "“stored in a facility that complies with paragraphs 14, 15 and 18”: extends the security conditions to facilities storing specified model weights; scope of the measures quoted above, not a written framework on model risks."
+          },
+          {
+            "locator": "Supplement No. 10 to part 748, para. 18(c), 90 FR 4567",
+            "reason": "Insider-threat programme; personnel security, recorded under this cell's note only by reference."
+          },
+          {
+            "locator": "Supplement No. 10 to part 748, para. 16, 90 FR 4567",
+            "reason": "Shipment security plan for chips in transit; not on models."
+          }
+        ]
+      }
+    },
+    {
+      "instrument": "us-bis-ifr",
+      "question": "Q04",
+      "status": "not-applicable",
+      "passages": [],
+      "note": "Q03 finds security measures but no written framework document on model risks. For the data-centre security records, VEU records are to be made available to BIS on request (Supplement No. 10 to part 748, para. 11, quoted in the audit record), and the third-party certification under para. 14(b) is made available to BIS.",
+      "search": null
+    },
+    {
+      "instrument": "us-bis-ifr",
+      "question": "Q05",
+      "status": "partly",
+      "passages": [
+        {
+          "source": "us-bis-ifr",
+          "locator": "Supplement No. 10 to part 748, para. 14(e)(i), 90 FR 4566 (PDF p. 23)",
+          "quote": "Assess the capabilities, intentions, and opportunity of an adversary"
+        },
+        {
+          "source": "us-bis-ifr",
+          "locator": "Supplement No. 10 to part 748, para. 15(c)(ii), 90 FR 4566 (PDF p. 23)",
+          "quote": "Every interface by which model weights can be accessed, directly or indirectly, must be reviewed"
+        }
+      ],
+      "note": "Assessments required concern data-centre security threats and interfaces to model weights (to set and limit output rates), not the risks of the model itself.",
+      "search": {
+        "read": "Federal Register PDF, 90 FR 4544–4584: DATES, SUPPLEMENTARY INFORMATION sections III and IV and Rulemaking Requirements; regulatory text §§ 740.27, 742.6(a)(13) and (b)(14), Supplement No. 10 to part 748 in full, ECCN 4E091 entry; signature and filing lines.",
+        "terms": ["assess", "evaluat", "test", "review"],
+        "setAside": [
+          {
+            "locator": "Supplement No. 10 to part 748, para. 11, 90 FR 4566",
+            "reason": "“ongoing monitoring, evaluation, and end user due diligence” of compliance with the VEU conditions; not of models."
+          }
+        ]
+      }
+    },
+    {
+      "instrument": "us-bis-ifr",
+      "question": "Q06",
+      "status": "partly",
+      "passages": [
+        {
+          "source": "us-bis-ifr",
+          "locator": "Supplement No. 10 to part 748, para. 14(b), 90 FR 4566 (PDF p. 23)",
+          "quote": "attested annually by a Third-Party Assessment Organization (3PAO) and made available to BIS"
+        },
+        {
+          "source": "us-bis-ifr",
+          "locator": "Supplement No. 10 to part 748, para. 11, 90 FR 4566 (PDF p. 23)",
+          "quote": "cooperate with BIS’s auditing of records and facilities"
+        }
+      ],
+      "note": "Required annual third-party attestation of the data-centre NIST 800–53 compliance, and BIS auditing of VEU records and facilities. These assess the facility's security practices, not the model or a developer's practices as such. Partly because the assessed party is a data-centre end user under a VEU authorisation, not necessarily a model developer, and the subject is facility security."
+    },
+    {
+      "instrument": "us-bis-ifr",
+      "question": "Q07",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "us-bis-ifr",
+          "locator": "Supplement No. 10 to part 748, para. 16, 90 FR 4567 (PDF p. 24)",
+          "quote": "reporting any theft, loss, or tampering incidents to BIS within 30 days"
+        }
+      ],
+      "note": "Applies to VEUs, for chips and other export-controlled items in transit under a shipment security plan; it does not concern models. Para. 11 separately requires VEUs to notify BIS if any requirement has not been met, without a stated deadline.",
+      "search": {
+        "read": "Federal Register PDF, 90 FR 4544–4584: DATES, SUPPLEMENTARY INFORMATION sections III and IV and Rulemaking Requirements; regulatory text §§ 740.27, 742.6(a)(13) and (b)(14), Supplement No. 10 to part 748 in full, ECCN 4E091 entry; signature and filing lines.",
+        "terms": ["incident", "report", "notify"],
+        "setAside": [
+          {
+            "locator": "ECCN 4E001 Note 1, 90 FR 4578",
+            "reason": "“cyber incident response” is an exclusion from a technology control, not a reporting duty."
+          }
+        ]
+      }
+    },
+    {
+      "instrument": "us-bis-ifr",
+      "question": "Q08",
+      "status": "not-found",
+      "note": "No duty to publish or supply documentation on each model was found.",
+      "search": {
+        "read": "Federal Register PDF, 90 FR 4544–4584: DATES, SUPPLEMENTARY INFORMATION sections III and IV and Rulemaking Requirements; regulatory text §§ 740.27, 742.6(a)(13) and (b)(14), Supplement No. 10 to part 748 in full, ECCN 4E091 entry; signature and filing lines.",
+        "terms": [
+          "classification request",
+          "report",
+          "furnish",
+          "documentation",
+          "model weights"
+        ],
+        "setAside": [
+          {
+            "locator": "ECCN 4E091 Note 2.a, 90 FR 4579",
+            "reason": "An exporter “may” self-classify or request classification from BIS to determine the exclusion; optional, and a classification, not model documentation."
+          },
+          {
+            "locator": "§ 740.27(b)(1), 90 FR 4559 (PDF p. 16)",
+            "reason": "Duty to furnish the ECCN to the ultimate consignee; a classification notice, not model documentation."
+          },
+          {
+            "locator": "Supplement No. 10 to part 748, para. 10, 90 FR 4565",
+            "reason": "Semi-annual reporting of chip installations; chips, not models."
+          }
+        ]
+      }
+    },
+    {
+      "instrument": "us-bis-ifr",
+      "question": "Q09",
+      "status": "not-found",
+      "note": "No provision on retaliation or on a disclosure channel for employees or others was found.",
+      "search": {
+        "read": "Federal Register PDF, 90 FR 4544–4584: DATES, SUPPLEMENTARY INFORMATION sections III and IV and Rulemaking Requirements; regulatory text §§ 740.27, 742.6(a)(13) and (b)(14), Supplement No. 10 to part 748 in full, ECCN 4E091 entry; signature and filing lines.",
+        "terms": ["whistle", "retaliat", "disclos", "employee"],
+        "setAside": [
+          {
+            "locator": "Supplement No. 10 to part 748, para. 18(c), 90 FR 4567",
+            "reason": "Programme for “detecting, assessing, disclosing, and managing insider threats”; security of the facility, not protection of those who report."
+          }
+        ]
+      }
+    },
+    {
+      "instrument": "us-bis-ifr",
+      "question": "Q10",
+      "status": "not-found",
+      "passages": [],
+      "note": "No signature or issue date is printed; the rule is signed by the Assistant Secretary for Export Administration without a date. The filing line gives filing with the Office of the Federal Register on 13 January 2025; publication was on 15 January 2025 (ACTION line and masthead, dataset claim fl-us-bis-ai-diffusion-ifr-published).",
+      "search": {
+        "read": "Federal Register PDF, 90 FR 4544–4584: DATES, SUPPLEMENTARY INFORMATION sections III and IV and Rulemaking Requirements; regulatory text §§ 740.27, 742.6(a)(13) and (b)(14), Supplement No. 10 to part 748 in full, ECCN 4E091 entry; signature and filing lines.",
+        "terms": ["Dated", "signed", "Filed"],
+        "setAside": [
+          {
+            "locator": "Filing line, 90 FR 4584 (PDF p. 41)",
+            "reason": "“FR Doc. 2025–00636 Filed 1–13–25”: the date of filing with the Office of the Federal Register, a publication-process date, not adoption, signature or issue; the signature block is undated."
+          }
+        ]
+      }
+    },
+    {
+      "instrument": "us-bis-ifr",
+      "question": "Q11",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "us-bis-ifr",
+          "locator": "DATES, 90 FR 4544",
+          "quote": "Effective date: This rule is effective January 13. 2025."
+        },
+        {
+          "source": "bis-rescission",
+          "locator": "BIS press release, 13 May 2025, para. 1 (page served 2026-11-01)",
+          "quote": "announced a rescission of the Biden Administration’s AI Diffusion Rule"
+        },
+        {
+          "source": "bis-rescission",
+          "locator": "BIS press release, 13 May 2025, para. 3",
+          "quote": "BIS plans to publish a regulation formalizing the rescission"
+        }
+      ],
+      "note": "Effective 13 January 2025, as printed (with a full stop after “13”); section III of the supplementary information gives “January 13, 2025”. The Department of Commerce announced on 13 May 2025 that it had initiated a rescission and “plans to publish a regulation formalizing the rescission”; no Federal Register rescission was inspected, and the announcement is not recorded as a rescission of the rule."
+    },
+    {
+      "instrument": "us-bis-ifr",
+      "question": "Q12",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "us-bis-ifr",
+          "locator": "DATES, 90 FR 4544",
+          "quote": "exporters, reexporters, and transferors are not required to comply with the changes made in this rule until May 15, 2025",
+          "datasetClaim": "fl-us-bis-ai-diffusion-ifr-published"
+        },
+        {
+          "source": "us-bis-ifr",
+          "locator": "DATES, 90 FR 4544",
+          "quote": "paragraphs 14, 15, and 18 of supplement no. 10 to part 748 have a delayed compliance date of January 15, 2026"
+        }
+      ],
+      "note": "Compliance dates separate from the effective date: 15 May 2025 generally; 15 January 2026 for the data-centre security, AI-cybersecurity and personnel-security paragraphs that also apply to model-weight storage. The BIS announcement of 13 May 2025 is recorded under Q11 and Q14."
+    },
+    {
+      "instrument": "us-bis-ifr",
+      "question": "Q13",
+      "status": "partly",
+      "passages": [
+        {
+          "source": "us-bis-ifr",
+          "locator": "Supplement No. 10 to part 748, para. 19, 90 FR 4567 (PDF p. 24)",
+          "quote": "other penalties as appropriate under U.S. laws and regulations"
+        }
+      ],
+      "note": "VEU conditions: revocation of VEU status, denial of chip allocations or export licences, and other penalties under other law. No maximum is stated in this rule; the rule cites ECRA (50 U.S.C. 4801–4852) as its authority but does not state penalty amounts.",
+      "search": {
+        "read": "Federal Register PDF, 90 FR 4544–4584: DATES, SUPPLEMENTARY INFORMATION sections III and IV and Rulemaking Requirements; regulatory text §§ 740.27, 742.6(a)(13) and (b)(14), Supplement No. 10 to part 748 in full, ECCN 4E091 entry; signature and filing lines.",
+        "terms": ["penalt", "764", "civil", "criminal", "ECRA"],
+        "setAside": [
+          {
+            "locator": "Rulemaking Requirements para. 2, 90 FR 4556",
+            "reason": "Paperwork Reduction Act statement on penalties for information collections; not a penalty for these duties."
+          }
+        ]
+      }
+    },
+    {
+      "instrument": "us-bis-ifr",
+      "question": "Q14",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "us-bis-ifr",
+          "locator": "Supplement No. 10 to part 748, para. 11, 90 FR 4566 (PDF p. 23)",
+          "quote": "cooperate with BIS’s auditing of records and facilities"
+        },
+        {
+          "source": "us-bis-ifr",
+          "locator": "Supplement No. 10 to part 748, para. 11, 90 FR 4566 (PDF p. 23)",
+          "quote": "Failure to comply with BIS may result in revocation of VEU status"
+        },
+        {
+          "source": "bis-rescission",
+          "locator": "BIS press release, 13 May 2025, para. 4",
+          "quote": "has instructed BIS enforcement officials not to enforce the Biden Administration’s AI Diffusion Rule"
+        }
+      ],
+      "note": "The Bureau of Industry and Security audits VEU records and facilities, may revoke VEU status and decides licence applications for 4E091 items (§ 742.6(b)(14)). The press release passage records an announced instruction on enforcement; it is not a provision of the rule."
+    },
+    {
+      "instrument": "us-bis-ifr",
+      "question": "Q15",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "us-bis-ifr",
+          "locator": "Supplement No. 10 to part 748, para. 14, 90 FR 4566 (PDF p. 23)",
+          "quote": "The VEU’s datacenters must be compliant with NIST 800–53"
+        },
+        {
+          "source": "us-bis-ifr",
+          "locator": "Supplement No. 10 to part 748, para. 15(a), 90 FR 4566 (PDF p. 23)",
+          "quote": "Ensure compliance with all best practices in the NSA cybersecurity information sheet"
+        },
+        {
+          "source": "us-bis-ifr",
+          "locator": "ECCN 4E091 Note 2.a.1, 90 FR 4579 (PDF p. 36)",
+          "quote": "technical opinions issued by the U.S. AI Safety Institute"
+        }
+      ],
+      "note": "Requires: VEU data centres, and facilities storing 4E091 weights under License Exception AIA, must comply with NIST 800–53 consistent with FedRAMP High and with the NSA sheet “Deploying AI Systems Securely”. May rely on: an exporter may self-classify for the 4E091 exclusion by relying on BIS guidance or technical opinions of the U.S. AI Safety Institute and the Department of Energy. No developer safety framework is referred to."
+    }
+  ],
+  "omissions": [
+    "EO 14110 Sec. 4.2(a)(ii) and 4.2(b)(ii) (computing-cluster reporting and interim cluster condition): not a model-developer duty; mentioned in Q01/Q02 notes only.",
+    "EO 14110 Sec. 4.2(c)–(d) (IaaS provider reporting and customer verification regulations): addressed to IaaS providers; not compared.",
+    "EO 14110 Sec. 4.6 (dual-use foundation models with widely available weights): a consultation and report task for Commerce; no duty on developers.",
+    "BIS IFR § 742.6(b)(14) presumption of denial for 4E091 licences: licence review policy, referred to in the Q14 note without a quote.",
+    "BIS IFR Supplement No. 10 para. 7 (no training of 4E091 models outside listed destinations without BIS authorisation) and paras. 1–6, 9, 13, 17: VEU conditions on chips, ownership and use, not mapped to a question.",
+    "BIS IFR 'Exemption for Intentional Publication' after para. 19: noted; not mapped to a question."
+  ],
+  "retrievalFailures": [
+    "Exponents in EO 14110 Sec. 4.2(b) and BIS ECCN 4E091 are rendered without superscript in the cached text layer; figures read as 10^26/10^23 and 10^26, not checked against the printed page image.",
+    "bis-rescission: the page served on 2026-11-01 writes 'SI' where 'AI' would be expected in several sentences; the text as first released was not inspected. The quotes used avoid those sentences."
+  ],
+  "openQuestions": [
+    "EO 14110 Q02 is 'stated' because the order itself states the interim compute condition, although the duties are to be imposed by the Secretary; Q01, Q05, Q08 are 'partly' as directions. Recommendation: keep, and state the convention in the pack introduction.",
+    "EO 14110 Q12 is 'partly' on the 90-day direction to the Secretary; it is a deadline for agency action, not an application date for companies. Recommendation: downgrade to not-found if the pack reserves Q12 for duties on covered parties.",
+    "EO 14110 Q06 is not-found; Sec. 4.1(b) DOE evaluation tools could be read as 'provides for' government assessment. Recommendation: keep not-found, as no assessment of a covered company's model is provided for.",
+    "EO 14110 Q11 carries an EO 14148 passage in a not-found cell as context for the revocation. Recommendation: keep if the pack format allows context passages; otherwise move the quote into the note text.",
+    "BIS IFR Q03/Q05/Q06 are 'partly' on data-centre and model-weight security requirements; Q07 is 'stated' on chip-shipment incidents. These concern security of items, not model risk. Recommendation: keep partly for Q03/Q05/Q06; consider downgrading Q07 to partly or adding a scope marker, since the incident is not model-related.",
+    "BIS IFR Q10 is 'partly' on the Federal Register filing date because no signature date is printed. Recommendation: keep, or mark not-found and give 13 January 2025 (filing) and 15 January 2025 (publication) in the note."
+  ]
+}

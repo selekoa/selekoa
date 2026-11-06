@@ -26,6 +26,15 @@ import aiBio2 from '../../review/ai-bio-admission-2-before-2026-10-30.json';
 import peopleAdmission from '../../review/people-admission-before-2026-10-31.json';
 import auditFollowups from '../../review/audit-followups-before-2026-11-02.json';
 import auditSampleFixes from '../../review/audit-sample-fixes-before-2026-11-02.json';
+import modelCards3 from '../../review/model-cards-admission-3-before-2026-11-05.json';
+import modelCards4 from '../../review/model-cards-admission-4-before-2026-11-05.json';
+import lawsCompared1 from '../../review/laws-compared-admission-1-before-2026-11-04.json';
+import lawsCompared2 from '../../review/laws-compared-admission-2-before-2026-11-05.json';
+import corrections from '../../review/corrections-2026-11-06-before-2026-11-06.json';
+import predictions from '../../review/predictions-admission-before-2026-11-05.json';
+import prehistory from '../../review/prehistory-admission-before-2026-11-04.json';
+import modelCards2 from '../../review/model-cards-admission-2-before-2026-11-04.json';
+import modelCards1 from '../../review/model-cards-admission-1-before-2026-11-03.json';
 import absenceSweepApply2 from '../../review/absence-sweep-apply-2-before-2026-11-03.json';
 import absenceSweepApply1 from '../../review/absence-sweep-apply-1-before-2026-11-02.json';
 import archiveFetchApply from '../../review/archive-fetch-apply-before-2026-11-02.json';
@@ -289,6 +298,15 @@ describe('capital and compute transaction semantics', () => {
         ...peopleAdmission.added.claims,
         ...auditFollowups.added.claims,
         ...auditSampleFixes.added.claims,
+        ...modelCards3.added.claims,
+        ...modelCards4.added.claims,
+        ...lawsCompared1.added.claims,
+        ...lawsCompared2.added.claims,
+        ...predictions.added.claims,
+        ...corrections.added.claims,
+        ...prehistory.added.claims,
+        ...modelCards2.added.claims,
+        ...modelCards1.added.claims,
         ...absenceSweepApply2.added.claims,
         ...absenceSweepApply1.added.claims,
         ...archiveFetchApply.added.claims,

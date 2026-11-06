@@ -2,6 +2,7 @@ import type { Claim, Dataset, Entity } from './schema';
 import { dateOf } from './query';
 import { selected } from './memo';
 import { provisionKinds } from './document-history';
+import { isLawCell } from './law-questions';
 import { frameworkVersions, frameworkLabels } from './versions';
 
 /**
@@ -295,9 +296,15 @@ export function frameworksLawView(
           throw new Error(
             `Standing record ${c.id} is not about the page's texts`,
           );
+      // Law cells (schema 2.31) belong to "Laws compared", not to this page.
       const about = (predicate: Claim['predicate']) =>
         data.claims
-          .filter((c) => c.predicate === predicate && c.subject === entity.id)
+          .filter(
+            (c) =>
+              c.predicate === predicate &&
+              c.subject === entity.id &&
+              !isLawCell(c),
+          )
           .sort(byDate);
       const toward = (predicate: Claim['predicate']) =>
         data.claims

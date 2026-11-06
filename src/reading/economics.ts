@@ -1,5 +1,6 @@
 import type { PropositionsCollection } from '../domain/propositions';
 import { economicsFrame as frame } from './proposition-frames';
+import { describeGroups } from './describe-groups';
 
 /** The maintainer's decisions of 2026-11-02 on the archive retrieval of held sources. */
 const archiveApply = '2026-11-02';
@@ -22,11 +23,15 @@ export const economicsOfMachineIntelligence: PropositionsCollection = {
   editorialStatus: frame.editorialStatus,
   introduction:
     'Each proposition has one criterion. It is phrased generically and attributed to no one. A text that meets the criterion articulates the proposition. A text that disputes it, or a premise it depends on, contests it, and the record says whether the passage gives a reason against a premise or states the contrary only. A text that comes close bears on it, and its record names what is missing. A result from a formal model is shown with the conditions under which the model derives it. Each text carries a tier: tier 1 for scholarly work by economists and for the core economics journals and working-paper series, tier 2 for other texts. Texts are listed in date order. The page records what texts say and when. It does not assess whether an argument or a model is right.',
-  groups: frame.groups,
+  groups: describeGroups(frame.groups, {
+    G: 'Whether machine intelligence could make growth far faster than historical rates, the constraints argued against it, the evidence offered on both sides, and each text’s own estimate. Thirteen texts from 1994 to 2024.',
+    M: 'How economists and economics venues treated automation, computers and AI from 1952 to 2024: as ordinary technical change, as the automation of tasks, as a general-purpose technology or as cheaper prediction, and what they said about wages, policy, measurement and the field itself. M06 is split into M06a and M06b. M09 states the prior that mainstream economics took up machine intelligence only recently; it is tested against the dated record, not confirmed.',
+    E: 'Whether economists took up machine intelligence that improves itself, machine intelligence beyond human level in essentially all domains and existential risk from AI, how developers’ incentives bear on safety, and what texts say about the state of economics on these questions. Texts from 1998 to 2026, mostly NBER working papers, with Robin Hanson’s texts of 1998 to 2000 and posts from his 2008 debate with Eliezer Yudkowsky. E05 counts only explicit statements about the state of economics; economists’ engagement itself is recorded under E01 to E04.',
+  }),
   tiers: frame.tiers,
   searchNote: {
     scope:
-      'The collection records what located texts from 1952 to 2026 say about the propositions below. “Earliest located” means the earliest text found by the searches below, within tier 1 unless the page says tier 2. It is not a claim that no earlier text exists.',
+      'The collection records what located texts from 1952 to 2026 say about the propositions below, and one earlier text: Wiener’s Cybernetics (1948, wording attested 2019), recorded on M06a in tier 2 from the searches for the collection of antecedent texts. “Earliest located” means the earliest text found by the searches below, within tier 1 unless the page says tier 2. It is not a claim that no earlier text exists.',
     venues: [
       {
         period: 'The explosive-growth debate, 1994 to 2024',
@@ -391,6 +396,18 @@ export const economicsOfMachineIntelligence: PropositionsCollection = {
         propositionId: 'machine-succession',
         relation:
           'A wider claim in the collection on machine succession, scale and acceleration: that machines succeed humans as the leading intelligence.',
+      },
+      {
+        propositionId: 'machines-could-think',
+        relation:
+          'A weaker claim in the collection of antecedent texts: that a machine could think at all.',
+      },
+    ],
+    'accelerating-growth-from-automated-research': [
+      {
+        propositionId: 'technological-singularity',
+        relation:
+          'A claim in the collection of antecedent texts that is not economic: a point beyond which human affairs could not continue or be foreseen.',
       },
     ],
   },
