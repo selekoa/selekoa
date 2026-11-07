@@ -42,7 +42,10 @@ const data = datasetSchema.parse(
  * of the 2026-11-04 laws-compared admission (`lc-` records), which adds the
  * effect rule of New York's 2025 RAISE Act text, and those of the
  * 2026-11-05 predictions admission (`pr-` records), which add predictions
- * stated in documents the dossiers may already list.
+ * stated in documents the dossiers may already list. The 2026-11-06 AI and
+ * money admission (`am-` records) and its held items (among them the UK
+ * government's launch of the AI Safety Institute, `uk-aisi-launched-2023`)
+ * are left out too.
  */
 const beforeKeyPapers = {
   ...data,
@@ -68,7 +71,9 @@ export function dossierCount(id: string, earlier: number) {
       !c.id.startsWith('mc-') &&
       !c.id.startsWith('pre-') &&
       !c.id.startsWith('lc-') &&
-      !c.id.startsWith('pr-'),
+      !c.id.startsWith('pr-') &&
+      !c.id.startsWith('am-') &&
+      c.id !== 'uk-aisi-launched-2023',
   ).length;
   if (before !== earlier)
     throw new Error(`${id}: ${before} earlier records, expected ${earlier}`);

@@ -68,7 +68,7 @@ test('compute guide: reached from the institutions hub, read by timeline and sec
 
   // The timeline: one row per record, in date order, each with its basis.
   const rows = page.locator('.cb-row');
-  await expect(rows).toHaveCount(165);
+  await expect(rows).toHaveCount(167);
   const dates = await rows.locator('time').allTextContents();
   expect(dates).toEqual([...dates].sort());
   expect(dates[0] >= '2023').toBe(true);
@@ -213,12 +213,12 @@ test.describe('without JavaScript', () => {
   }) => {
     await page.goto(path);
     await expect(page.getByRole('heading', { level: 1 })).toHaveText(title);
-    await expect(page.locator('.cb-row')).toHaveCount(165);
+    await expect(page.locator('.cb-row')).toHaveCount(167);
     expect(await page.locator('.cb-stated-rows > li').count()).toBeGreaterThan(
       40,
     );
     await expect(page.locator('.cb-section .record-rows > li')).toHaveCount(
-      165,
+      167,
     );
     const sitemap = await page.request.get('/sitemap.xml');
     expect(await sitemap.text()).toContain(path);

@@ -258,6 +258,19 @@ const statusPredicates = new Set<string>([
 ]);
 export type Tier = (typeof tiers)[number];
 /**
+ * Schema 2.33. Who a text speaks for, in a collection that records it: the
+ * institution that publishes it as its own, one official (a speech, remarks
+ * or testimony), its staff authors (a working paper or staff note) or a
+ * committee (a report issued in the committee's name).
+ */
+export const voices = [
+  'institution',
+  'official',
+  'staff',
+  'committee',
+] as const;
+export type Voice = (typeof voices)[number];
+/**
  * Schema 2.26. How a naming record's use stands to its concept's criterion:
  * it meets it, it uses the name in another sense, or its sense could not be
  * checked (a title read only in an index).
@@ -750,6 +763,10 @@ export const claimSchema = z.strictObject({
               basis: text,
             })
             .optional(),
+          // Schema 2.33. Who the text speaks for (`voices`). A speech is its
+          // speaker's, a staff paper its authors', a committee report the
+          // committee's; only an institution's own text is the institution's.
+          voice: z.enum(voices).optional(),
           // Schema 2.13. The model assumptions or stated conditions under
           // which the passage holds; a conditional result is never an
           // unconditional forecast.
@@ -1131,6 +1148,7 @@ export const datasetSchema = z
         '2.30',
         '2.31',
         '2.32',
+        '2.33',
       ]),
       updatedAt: checkDate,
       title: text,
@@ -1426,6 +1444,7 @@ export const datasetSchema = z
       );
     });
     const comparisonCells = new Set<string>();
+    const textVoices = new Map<string, Voice | null>();
     data.claims.forEach((c, i) => {
       const path = ['claims', i];
       const subject = entities.get(c.subject);
@@ -2487,6 +2506,17 @@ export const datasetSchema = z
               );
           }
         }
+        // Schema 2.33: a text speaks with one voice in every record of it.
+        if (thought) {
+          const voice = thought.voice ?? null;
+          const seen = textVoices.get(c.subject);
+          if (seen !== undefined && seen !== voice)
+            issue(
+              path,
+              'Every proposition record of a text gives the same voice',
+            );
+          textVoices.set(c.subject, voice);
+        }
       } else if (thought) {
         issue(path, 'Thought attributes belong only to proposition records');
       }
@@ -3016,11 +3046,13 @@ export const datasetSchema = z
           const tier = role === 'earliest-located' ? '' : ' in tier 2';
           // In a tiered collection a relay record reports a view its author
           // does not state as their own: it never holds earliest located, and
-          // its date does not decide which record does (2026-10-16).
+          // its date does not decide which record does (2026-10-16). Schema
+          // 2.33: the same holds where a collection records each text's voice
+          // (decision 6a of "AI and money", 2026-11-03).
           const own = (c: Claim) =>
             !(
               c.attributes?.thought?.register === 'relay' &&
-              c.attributes.thought.tier
+              (c.attributes.thought.tier || c.attributes.thought.voice)
             );
           for (const c of group)
             if (!own(c) && has(c, role))

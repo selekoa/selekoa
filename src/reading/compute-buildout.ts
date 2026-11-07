@@ -8,7 +8,7 @@ import type { ComputeBuildoutCollection } from '../domain/compute-buildout';
  */
 export const computeBuildout: ComputeBuildoutCollection = {
   id: 'ai-compute-2023-2026',
-  version: 2,
+  version: 3,
   title: 'AI compute: data centres, power, chips and rules, 2023–2026',
   question:
     'Which data-centre sites, power agreements, chip supply agreements, government measures, export-control rules and plans for computing in orbit do the records document from 2023 to 2026, with what figures, at what stage and dated by what?',
@@ -188,7 +188,11 @@ export const computeBuildout: ComputeBuildoutCollection = {
         {
           id: 'plans',
           heading: 'Plans announced',
-          claimIds: ['cpo-pw-meta-nuclear-rfp', 'cpo-pw-uae-campus-energy-mix'],
+          claimIds: [
+            'cpo-pw-meta-nuclear-rfp',
+            'cpo-pw-uae-campus-energy-mix',
+            'cpo-pw-constellation-crane-restart-target-2027',
+          ],
         },
       ],
     },
@@ -372,6 +376,7 @@ export const computeBuildout: ComputeBuildoutCollection = {
           id: 'orbit-launches',
           heading: 'Launches and status as stated',
           claimIds: [
+            'cpo-orb-three-body-launch-stated',
             'cpo-orb-three-body-composition',
             'cpo-orb-starcloud-1-launch-stated',
             'cpo-orb-axiom-odc-launch-stated',
@@ -444,12 +449,6 @@ export const computeBuildout: ComputeBuildoutCollection = {
       id: 'h20',
       category: 'held',
       text: 'NVIDIA’s statements on a US licence requirement for its H20 chip (April 2025) and on no H20 sales to China (August 2025). They are held until a BIS letter or rule stating the requirement is retrieved.',
-      claimIds: [],
-    },
-    {
-      id: 'ada-space',
-      category: 'held',
-      text: 'ADA Space’s own statement of the launch of the Three-Body Computing Constellation. Its homepage now serves a suspension notice, so the statement could not be read again at admission.',
       claimIds: [],
     },
     {

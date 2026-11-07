@@ -25,4 +25,5 @@ export const propositionLoaders: Record<
   'ai-bio-arguments': () =>
     import('./ai-bio-arguments').then((m) => m.aiBioArguments),
   'ai-in-science': () => import('./ai-in-science').then((m) => m.aiInScience),
+  'ai-and-money': () => import('./ai-and-money').then((m) => m.aiAndMoney),
 };

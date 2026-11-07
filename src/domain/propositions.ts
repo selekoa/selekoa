@@ -11,6 +11,7 @@ import type {
   Source,
   ThoughtRole,
   Tier,
+  Voice,
 } from './schema';
 import { propositionStances } from './predicates';
 import { isPropositionRecord } from './query';
@@ -92,6 +93,21 @@ export type PropositionsCollection = {
    * earliest separately.
    */
   tiers?: Record<Tier, string>;
+  /**
+   * Schema 2.33. Institutional events the collection lists beside its
+   * propositions: each a `status_stated` or `announced_plan` record, with the
+   * stage the text states. Announced stays announced, and work stated as
+   * under way is never shown as done.
+   */
+  events?: { claimId: string; stage: EventStage }[];
+};
+
+/** Schema 2.33: the stage an authority's own text states for its work. */
+export type EventStage = 'announced' | 'under-way' | 'stated-done';
+export const eventStageLabels: Record<EventStage, string> = {
+  announced: 'Announced',
+  'under-way': 'Stated as under way',
+  'stated-done': 'Stated as done',
 };
 
 /**
@@ -108,6 +124,7 @@ export type PropositionsText = Pick<
   | 'openPremises'
   | 'related'
   | 'exchanges'
+  | 'events'
 >;
 export type PropositionsFrame = Omit<
   PropositionsCollection,
@@ -139,6 +156,13 @@ export const roleLabels: Record<ThoughtRole, string> = {
   'earliest-located-tier-2': 'Earliest located in tier 2',
 };
 export const tierLabels: Record<Tier, string> = { 1: 'Tier 1', 2: 'Tier 2' };
+/** Schema 2.33: who a text speaks for. */
+export const voiceLabels: Record<Voice, string> = {
+  institution: 'Institution’s own text',
+  official: 'Speech or remarks',
+  staff: 'Staff paper',
+  committee: 'Committee report',
+};
 export const engagementLabels: Record<Engagement, string> = {
   'engages-premise': 'Engages a premise',
   'contrary-only': 'States the contrary',
@@ -191,6 +215,8 @@ export type PropositionRecord = {
   retrospective?: { from?: string; until?: string; note: string };
   /** Schema 2.13: the text's tier, model conditions and stated estimates. */
   tier?: { value: Tier; basis: string };
+  /** Schema 2.33: who the text speaks for. */
+  voice?: Voice;
   conditions?: string;
   estimates?: {
     holder: string;
@@ -239,6 +265,7 @@ function record(
     engagement: thought.engagement,
     retrospective: thought.retrospective,
     tier: thought.tier,
+    voice: thought.voice,
     conditions: thought.conditions,
     estimates: thought.estimates,
   };
@@ -353,6 +380,23 @@ export function propositionsView<C extends PropositionsFrame>(
               r.stance === 'contests' &&
               r.roles.includes('earliest-located-tier-2'),
           ) ?? null,
+        // Schema 2.33: where texts carry a voice, the earliest located text
+        // in an institution's own voice, derived by the date of its wording
+        // (a relay never counts); shown beside a headline that a speech, a
+        // staff paper or a committee report holds.
+        earliestInstitution: list.some((r) => r.voice)
+          ? (list
+              .filter(
+                (r) =>
+                  r.stance === 'articulates' &&
+                  r.voice === 'institution' &&
+                  r.register !== 'relay' &&
+                  !!r.wording,
+              )
+              .sort(
+                (a, b) => a.wording!.localeCompare(b.wording!) || byDate(a, b),
+              )[0] ?? null)
+          : null,
         // Schema 2.16: the reason an earliest located role is withheld.
         earliestWithheld:
           entity.proposition.withheld?.find(
@@ -393,10 +437,31 @@ export function propositionsView<C extends PropositionsFrame>(
       return d ? [d] : [];
     }),
   }));
+  // Schema 2.33: the institutional events, in date order.
+  const wanted = new Set((text.events ?? []).map((e) => e.claimId));
+  const byId = new Map(
+    wanted.size
+      ? data.claims.filter((c) => wanted.has(c.id)).map((c) => [c.id, c])
+      : [],
+  );
+  const events = (text.events ?? [])
+    .flatMap(({ claimId, stage }) => {
+      const claim = byId.get(claimId);
+      if (!claim) return [];
+      const body = entities.get(claim.subject);
+      return [{ claim, stage, body: body?.shortName ?? body?.name ?? '' }];
+    })
+    .sort(
+      (a, b) =>
+        (a.claim.time.kind === 'event' ? a.claim.time.date : '').localeCompare(
+          b.claim.time.kind === 'event' ? b.claim.time.date : '',
+        ) || a.claim.id.localeCompare(b.claim.id),
+    );
   return {
     collection,
     groups,
     exchanges,
+    events,
     claimIds,
     documentIds: [...new Set(shown.map((r) => r.document.id))],
     sourceIds: [...new Set(shown.flatMap((r) => r.sources.map((s) => s.id)))],

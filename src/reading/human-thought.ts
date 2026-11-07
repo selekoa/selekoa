@@ -7,6 +7,7 @@ import { aiInScience } from './ai-in-science';
 import { riskDebate } from './risk-debate';
 import { machineSuccession } from './machine-succession';
 import { antecedentTexts } from './antecedent-texts';
+import { aiAndMoney } from './ai-and-money';
 
 export { superintelligencePropositions };
 
@@ -26,4 +27,5 @@ export const propositionCollections = [
   orbitalCompute,
   aiBioArguments,
   aiInScience,
+  aiAndMoney,
 ];

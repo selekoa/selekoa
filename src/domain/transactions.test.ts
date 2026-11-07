@@ -30,6 +30,7 @@ import modelCards3 from '../../review/model-cards-admission-3-before-2026-11-05.
 import modelCards4 from '../../review/model-cards-admission-4-before-2026-11-05.json';
 import lawsCompared1 from '../../review/laws-compared-admission-1-before-2026-11-04.json';
 import lawsCompared2 from '../../review/laws-compared-admission-2-before-2026-11-05.json';
+import aiMoney from '../../review/ai-money-admission-before-2026-11-06.json';
 import corrections from '../../review/corrections-2026-11-06-before-2026-11-06.json';
 import predictions from '../../review/predictions-admission-before-2026-11-05.json';
 import prehistory from '../../review/prehistory-admission-before-2026-11-04.json';
@@ -303,6 +304,7 @@ describe('capital and compute transaction semantics', () => {
         ...lawsCompared1.added.claims,
         ...lawsCompared2.added.claims,
         ...predictions.added.claims,
+        ...aiMoney.added.claims,
         ...corrections.added.claims,
         ...prehistory.added.claims,
         ...modelCards2.added.claims,

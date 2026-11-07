@@ -110,7 +110,7 @@ describe('the compute guide', () => {
     const placed = view.records.map((r) => r.claim.id);
     expect(new Set(placed).size).toBe(placed.length);
     expect([...placed].sort()).toEqual(pack);
-    expect(placed).toHaveLength(165);
+    expect(placed).toHaveLength(167);
     expect(placed.some((id) => argumentIds.has(id))).toBe(false);
     expect(
       collection.notCovered.some((n) => n.claimIds.includes(earlier)),
@@ -250,7 +250,7 @@ describe('the compute guide', () => {
       s.groups.flatMap((g) => g.records.flatMap((r) => r.figures)),
     );
     expect(figures).toHaveLength(view.figures.length);
-    expect(starter.computeBuildout.timeline).toHaveLength(165);
+    expect(starter.computeBuildout.timeline).toHaveLength(167);
     expect(starter.computeBuildout.statedDates).toHaveLength(
       view.stated.length,
     );

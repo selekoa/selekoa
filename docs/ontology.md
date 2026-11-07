@@ -463,3 +463,12 @@ Schema 2.32 adds `states_prediction` for the collection "Predictions on record",
 - Validation requires the event's, horizon's, probability's and confidence's words in a quoted passage of the record (or in the quoted words of a labelled paraphrase), years printed in the horizon and its passages, the form's own fields and no others, and no fulfilment, ranking or priority words outside quotation marks in the record's own text.
 
 Prediction records are never counted by outcome, scored, ranked or combined.
+
+## Voice and institutional statements (schema 2.33)
+
+Schema 2.33 adds `attributes.thought.voice` for the collection "AI and money", admitted on 2026-11-06 from the candidate pack in `research/ai-money/` under the maintainer's decisions (`review/decisions/ai-money.md`, answers of 2026-11-03 and 2026-11-04).
+
+- **Voice.** An `institution` text is the authority's own. An `official` text (speech, remarks, testimony) is the speaker's, attributed to the speaker and the office as published, with any views disclaimer as a context evidence row; it is never the institution's policy unless the institution's own text says so. A `staff` text is its authors', under its series disclaimer. A `committee` report is the committee's. Every proposition record of a text gives the same voice.
+- **Earliest located across voices.** One earliest located record per proposition, by the date of its wording among texts of every voice; the earliest located institutional text is derived on the collection's page, never stored as a role. A relay (a report of others' views) never holds earliest located, and its date does not decide which text does.
+- **Institutional events.** An authority's statement that its own work is done or under way is a `status_stated` record (public body → literal, dated by the statement); work stated as under way says so in its literal and is never recorded as completed. An announced plan is `announced_plan`. Neither is evidence that the work was carried out.
+- **Launch by a public body.** `launched` may have a public body as subject or object, for a government's stated launch of an institute.

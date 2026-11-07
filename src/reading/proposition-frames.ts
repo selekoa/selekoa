@@ -450,6 +450,65 @@ export const aiInScienceFrame = {
   mostDevelopedEmpty: null,
 } satisfies PropositionsFrame;
 
+/** The frame of `aiAndMoney` (src/reading/ai-and-money.ts). */
+export const aiAndMoneyFrame = {
+  id: 'ai-and-money',
+  version: 1,
+  title:
+    'AI and money: what central banks and financial authorities have said, 1997–2026',
+  question:
+    'Which located texts by central banks, the BIS, the FSB, the IMF, standard setters and supervisors, from 1997 to 2026, state, contest or bear on propositions about machine intelligence in financial stability, monetary policy, payments and supervision? For each proposition, which text is the earliest located, whoever speaks in it, and which is the earliest located text in an institution’s own voice? Which institutional events do these bodies state?',
+  editorialStatus: 'machine-proposed',
+  groups: [
+    {
+      id: 'JA',
+      label: 'Machine intelligence and financial stability',
+      propositionIds: [
+        'ai-correlated-behaviour-financial-stability',
+        'ai-provider-concentration-risk',
+        'ai-cyber-fraud-operational-risk',
+        'ai-opacity-limits-accountability',
+      ],
+    },
+    {
+      id: 'JB',
+      label: 'Monetary policy and the economy',
+      propositionIds: [
+        'ai-improves-nowcasting-policy-analysis',
+        'ai-matters-for-monetary-policy',
+      ],
+    },
+    {
+      id: 'JC',
+      label: 'Payments and money',
+      propositionIds: [
+        'ai-agents-change-payments',
+        'ai-agents-tokenised-money',
+      ],
+    },
+    {
+      id: 'JD',
+      label: 'Supervision, risk management and central banks’ own work',
+      propositionIds: [
+        'supervisors-should-use-ai',
+        'ai-improves-financial-risk-management',
+        'central-banks-build-ai-capacity',
+        'existing-frameworks-cover-ai',
+      ],
+    },
+  ],
+  axis: {
+    from: 1995,
+    to: 2027,
+    ticks: ['1997', '2004', '2015', '2020', '2026'],
+  },
+  landing:
+    '{propositions} propositions on what central banks and financial authorities have said about machine intelligence, and {records} records from {texts} texts, 1997–2026, that state, contest or bear on them, with institutional events. Each text is labelled by whom it speaks for: the institution, an official, its staff or a committee. The page can be downloaded as a research starter, with the original sources first.',
+  landingAction: 'Read AI and money →',
+  mostDevelopedEmpty: null,
+  earliestEmpty: 'No located text meets the criterion.',
+} satisfies PropositionsFrame;
+
 export const propositionFrames: readonly PropositionsFrame[] = [
   antecedentTextsFrame,
   superintelligenceFrame,
@@ -460,4 +519,5 @@ export const propositionFrames: readonly PropositionsFrame[] = [
   orbitalComputeFrame,
   aiBioArgumentsFrame,
   aiInScienceFrame,
+  aiAndMoneyFrame,
 ];

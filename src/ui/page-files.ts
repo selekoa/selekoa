@@ -57,6 +57,7 @@ export const propositionModules: Record<string, string> = {
   'orbital-compute-arguments': 'src/reading/orbital-compute.ts',
   'ai-bio-arguments': 'src/reading/ai-bio-arguments.ts',
   'ai-in-science': 'src/reading/ai-in-science.ts',
+  'ai-and-money': 'src/reading/ai-and-money.ts',
 };
 
 /** The ID of the propositions collection a path names, if any. */

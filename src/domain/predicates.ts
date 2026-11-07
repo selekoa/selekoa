@@ -229,8 +229,10 @@ export const predicates = {
     label: 'publicly launched',
     description:
       'A public organisational launch by the named actor. This date does not establish legal incorporation or sole founding.',
-    subjects: ['person'],
-    objects: ['organisation'],
+    // Schema 2.33: a public body may launch, or be launched (a government
+    // launching an institute).
+    subjects: ['person', 'public_body'],
+    objects: ['organisation', 'public_body'],
   },
   acquired: {
     label: 'acquired',

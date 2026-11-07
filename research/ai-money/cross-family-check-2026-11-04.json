@@ -1,0 +1,1840 @@
+{
+  "title": "AI and money cross-family check, second round",
+  "date": "2026-11-04",
+  "checker": {
+    "family": "OpenAI GPT",
+    "agent": "Codex",
+    "humanAcceptance": false
+  },
+  "base": "909bcb4",
+  "branch": "codex/ai-money-check-2",
+  "blindOrder": {
+    "strictRequestedOrderKept": false,
+    "a1BeforeA2Inspection": false,
+    "deviation": "Initial broad Get-Content returned the whole brief, exposing the source list and some A2 passages before A1. A1 is therefore not fully blind. No prohibited answer file was intentionally opened before Part A commitment. Worktree checkout mechanically materialised all tracked files before answering; their contents were not inspected through checkout output.",
+    "mechanicalReads": [
+      {
+        "operation": "git worktree add",
+        "timing": "Before A1; checkout materialised all 2,173 tracked files from base without displaying prohibited bodies."
+      },
+      {
+        "operation": "pnpm check:privacy",
+        "timing": "Full-index scan started 2026-11-04T14:47:19Z, after all 19 Part A answers were frozen and before commit cdce4f2; passed for 2,175 indexed files. It mechanically read all indexed prohibited answer paths through git show without printing or semantically inspecting their bodies."
+      }
+    ],
+    "a1SavedBeforeFurtherA2Inspection": "2026-11-04T14:38:21.696Z",
+    "partAFrozenAt": "2026-11-04T14:45:17.357Z",
+    "privacyScanPlan": "Full-index pnpm check:privacy is run after freezing answers and before Part A commit. It mechanically reads all indexed prohibited files without printing their bodies; exact timing is recorded before commit.",
+    "partAAnswersSha256": "08d51b2817493e0212c5e49d1c46fcd1a33be2ed921bb34cf7dc1338a1cb2034",
+    "blindCommit": "cdce4f2",
+    "blindPushBeforeForbiddenAnswerInspection": true,
+    "firstForbiddenAnswerInspection": {
+      "file": "research/ai-money/cross-family-verdicts-2026-11-04.json",
+      "timing": "After Part A cdce4f2 and Parts B–C 28a3d8e were committed and pushed, during the final comparison phase. No verdict body had been semantically inspected before these checkpoints."
+    },
+    "laterComparisonReads": [
+      {
+        "file": "research/ai-money/pack.json",
+        "timing": "After both checkpoint pushes; parsed in full mechanically, with only keys, the U07 WP 1194 record and U05 record-role summaries emitted for semantic comparison."
+      }
+    ],
+    "prohibitedFilesNotSemanticallyInspected": [
+      "research/ai-money/pack.md",
+      "research/ai-money/verification.json",
+      "research/ai-money/drafts/",
+      "research/ai-money/adjudication/",
+      "review/ai-money-pack-2026-11-02.md",
+      "review/decisions/"
+    ],
+    "partAAnswersUnchanged": true,
+    "aCommittedBeforeSemanticForbiddenAnswerInspection": true
+  },
+  "items": [
+    {
+      "number": 1,
+      "part": "A1",
+      "proposition": "U05",
+      "source": "ecb352",
+      "document": "Forecasting inflation with thick models and neural networks, ECB Working Paper 352",
+      "voice": "staff authors",
+      "authors": ["Paul McNelis", "Peter McAdam"],
+      "date": "2004-04",
+      "dateKind": "publication; month precision on PDF",
+      "locator": "Abstract, printed p. 4 / PDF p. 5; non-technical summary p. 5",
+      "quote": "They outperform the best performing linear models",
+      "answer": "Articulates. Comparative neural-network inflation forecasts for the euro area, Japan and USA; not a general claim of universal superiority. Author disclaimer: opinions not necessarily those of the ECB. Earliest in this bounded retrieved set.",
+      "searches": [
+        "site.ecb.europa.eu neural networks inflation forecasting 2004 McNelis McAdam thick models 352",
+        "site.federalreserve.gov neural networks forecasting 1995 1996 working paper",
+        "site.ecb.europa.eu neural networks 2001 forecast",
+        "site.bankofengland.co.uk neural networks working paper 1998",
+        "site.imf.org neural networks forecasting 1997",
+        "site.bankofengland.co.uk neural networks forecasting 1999 working paper"
+      ],
+      "scope": "Pre-2016 included. Bank of Canada 99-3 and CNB 2005 are outside this revised named-body list; no promotion. Search is bounded, not a first-statement claim.",
+      "comparison": {
+        "verdict": "agree",
+        "finding": "ECB WP 352, April 2004, staff authors and disclaimer match. Earlier out-of-scope Bank of Canada lead does not change the scoped answer.",
+        "packRecordId": "am-u05-ecb-wp-352",
+        "packDate": "2004-04"
+      }
+    },
+    {
+      "number": 2,
+      "part": "A1",
+      "proposition": "U06",
+      "source": "haldane",
+      "document": "Labour’s Share",
+      "voice": "official speech",
+      "authors": ["Andrew G Haldane"],
+      "date": "2015-11-12",
+      "dateKind": "delivery; day precision, PDF cover",
+      "locator": "PDF/printed pp. 13–18, especially p. 16 policy transition and p. 17 Second Machine Age mechanism",
+      "quote": "what if any implications do these labour market trends carry for the economy and monetary policy?",
+      "answer": "Qualified articulation at whole-text level. Explicit AI and cognitive automation discussion leads through labour substitution, wage weakness and labour share into an alternative inflation projection and monetary-policy stance. The bridge spans pages and is not an isolated AI-policy sentence. Views not necessarily those of the Bank or MPC; hypothetical mechanism, not demonstrated causation.",
+      "searches": [
+        "site.bankofengland.co.uk artificial intelligence monetary policy 2015 Haldane",
+        "artificial intelligence monetary policy before:2015"
+      ],
+      "scope": "No earlier in-scope text verified in this bounded search. No absence claim.",
+      "comparison": {
+        "verdict": "agree",
+        "finding": "Haldane 12 November 2015 matches, with a whole-text AI/labour-substitution bridge to the monetary-policy scenario; speaker disclaimer retained.",
+        "packRecordId": "am-u06-boe-2015-haldane-labours-share",
+        "packDate": "2015-11-12"
+      }
+    },
+    {
+      "number": 3,
+      "part": "A1",
+      "proposition": "U07",
+      "source": "bis1194pdf",
+      "document": "Intelligent financial system: how AI is transforming finance, BIS Working Paper 1194",
+      "voice": "staff authors",
+      "authors": [
+        "Iñaki Aldasoro",
+        "Leonardo Gambacorta",
+        "Anton Korinek",
+        "Vatsala Shreeti",
+        "Merlin Stein"
+      ],
+      "date": "2024-06-13",
+      "dateKind": "publication day on official landing page; PDF cover June 2024",
+      "locator": "Table 1, printed p. 11 / PDF p. 14; AI Agents discussion pp. 12–13 / PDF pp. 15–16",
+      "quote": "Faster payment flows, fraud prevention",
+      "answer": "Qualified articulation at whole-document level: table explicitly puts faster payment flows under AI-agent opportunities, and surrounding discussion says agents can autonomously sell financial products and services. This is an earlier candidate under the transactions limb; it does not explicitly say an agent initiates a retail payment. Under a stricter payment-initiation-only reading, bears on and hold earliest role pending decision. BIS 1310 November 2025 provides a stronger later operational payment-sequencing example. Author disclaimer, not institutional policy.",
+      "searches": [
+        "site.bis.org agents payments 2024 artificial intelligence",
+        "site.ecb.europa.eu artificial intelligence agents payments 2025 2024",
+        "site.bis.org agents payments 1194",
+        "AI agents payments central bank before:2025",
+        "agentic payments site:bis.org before:2025-11-01",
+        "agentic payments site:mas.gov.sg before:2025-11-01"
+      ],
+      "scope": "ECB April 2025 fintech dialogue relays participants, so earliest role excluded by the brief. BIS 2025 tokenisation/compliance context and generic delegated tasks alone do not establish agent payment execution. No first-statement claim.",
+      "comparison": {
+        "verdict": "material",
+        "finding": "Pack selects BIS WP 1310 (manuscript 10 November 2025). Frozen answer proposes BIS WP 1194 (June 2024) using autonomous financial-product sales plus its AI-agent/faster-payment-flows table. Post-blind pack record am-u07-bis-wp-1194 already treats the table as bears on because it lacks explicit agent payment execution. This is a criterion-boundary disagreement, not discovery of an absent record. Table alone is insufficient; adjudicate the additional surrounding transactions evidence and keep the role on hold if payment initiation must be explicit.",
+        "packRecordId": "am-u07-bis-wp-1310",
+        "packDate": "2025-11-10"
+      }
+    },
+    {
+      "number": 4,
+      "part": "A1",
+      "proposition": "U09",
+      "source": "bcbs4pdf",
+      "document": "Supervisory risk assessment and early warning systems, BCBS Working Paper 4",
+      "voice": "staff authors",
+      "authors": ["Ranjana Sahajwala", "Paul Van den Bergh"],
+      "date": "2000-12",
+      "dateKind": "publication wording month on PDF; official landing page dates publication 2000-12-27",
+      "locator": "Section 4, printed p. 13 / PDF p. 20; UK TRAM printed p. 31 / PDF p. 38",
+      "quote": "the artificial intelligence that is used to replicate the financial analysis that an examiner would perform on-site within a banking institution",
+      "answer": "Articulates: describes AI expert systems as supervisory assessment tools, with an applied TRAM example. Authors’ views explicitly do not represent BCBS, member institutions or BIS. Earliest verified in this bounded search; describing a system in 2000 does not date that wording to its earlier implementation.",
+      "searches": [
+        "site.bis.org neural networks supervisory 2000",
+        "site.bis.org neural networks supervisors before:2001",
+        "site.bis.org supervision neural networks 1999",
+        "site.federalreserve.gov artificial intelligence supervision 1997",
+        "site.bankofengland.co.uk expert systems supervision"
+      ],
+      "scope": "Phillips 1997 concerns AI underwriting by banks, not AI used by supervisors; not earlier U09 evidence. SEC is outside revised scope except IOSCO. No absence claim.",
+      "comparison": {
+        "verdict": "minor",
+        "finding": "December 2000 BCBS staff text agrees. Checker’s frozen A1 locators were wrong: section 4 is printed p. 13 / PDF p. 19, TRAM printed p. 35 / PDF p. 41. Pack’s supplied pp. 19/45 are correct. Corrected independently in frozen A2 item 13; no earliest-role disagreement.",
+        "packRecordId": "am-u09-bcbs-2000-wp4-early-warning",
+        "packDate": "2000-12"
+      }
+    },
+    {
+      "number": 5,
+      "part": "A1",
+      "proposition": "U12",
+      "source": "dnb2019retry",
+      "document": "General principles for the use of Artificial Intelligence in the financial sector",
+      "voice": "institutional discussion paper; named author Joost van der Burgt",
+      "date": "2019-07-25",
+      "dateKind": "publication day from official DNB notice; PDF copyright 2019",
+      "locator": "Section 4, printed/PDF p. 33; Practical information p. 5",
+      "quote": "many of the prerequisites for a responsible application of AI are already covered by existing regulations",
+      "answer": "Articulates with qualification: many prerequisites covered, particularly sound/controlled operations. DNB presents its preliminary view despite named authorship. Same paragraph allows loopholes and AI-specific future policy, so this is broad applicability, not universal sufficiency or a permanent rejection of new rules.",
+      "searches": [
+        "site.dnb.nl artificial intelligence existing 2019 principles",
+        "site.fsb.org 2017 artificial intelligence existing regulation",
+        "site.fsb.org artificial intelligence regulation before:2019",
+        "site.dnb.nl DNB komt met richtlijnen 25 juli 2019"
+      ],
+      "scope": "FSB November 2017 and earlier-rule searches supplied no earlier institutional passage expressly asserting broad AI-framework coverage in the texts checked. This bounded result does not establish absence.",
+      "comparison": {
+        "verdict": "minor",
+        "finding": "Institutional DNB comparator agrees. Official release refines pack’s year-only date to 25 July 2019. Preserve preliminary view, possible loopholes and future AI-specific policy.",
+        "packRecordId": "am-u12-dnb-2019-ai-principles",
+        "packDate": "2019"
+      }
+    },
+    {
+      "number": 6,
+      "part": "A2",
+      "proposition": "U12",
+      "classification": "bears on",
+      "answer": "Committee voice, published 2025-08-13 per official release; report itself dated August 2025. All four quotes and locators verified in the byte-identical MediaNama mirror. Paragraph 3.2.3.5 acknowledges incremental gaps; p. 55 requests amendments where needed. Paragraph 4.4.33 proposes a standing committee and an AI-safety institutional spoke, not unambiguously a separate regulatory regime. Under decision 18a these do not alone dispute broad existing-rule coverage. Missing: an explicit denial of broad coverage/sufficiency or a requirement for a separate AI regulatory framework. Section 4.1.4 is stronger on the need for an appropriate framework but does not settle whether existing rules plus targeted measures supply it. No RBI adoption inferred.",
+      "evidence": [
+        {
+          "item": 6,
+          "source": "rbi-2025-free-ai-report",
+          "locator": "Chapter 3, paragraph 3.2.3.5, PDF p. 34",
+          "match": true,
+          "quotationVerified": true,
+          "copySource": "rbimirror"
+        },
+        {
+          "item": 6,
+          "source": "rbi-2025-free-ai-report",
+          "locator": "Chapter 4, recommendations on policy, PDF p. 55",
+          "match": true,
+          "quotationVerified": true,
+          "copySource": "rbimirror"
+        },
+        {
+          "item": 6,
+          "source": "rbi-2025-free-ai-report",
+          "locator": "Chapter 4, paragraph 4.1.5, PDF p. 44",
+          "match": true,
+          "quotationVerified": true,
+          "copySource": "rbimirror"
+        },
+        {
+          "item": 6,
+          "source": "rbi-2025-free-ai-report",
+          "locator": "Chapter 4, paragraph 4.4.33, PDF p. 59",
+          "match": true,
+          "quotationVerified": true,
+          "copySource": "rbimirror"
+        }
+      ],
+      "voiceAndDateChecked": true,
+      "comparison": {
+        "verdict": "material",
+        "finding": "Pack contests U12 on a dedicated framework; frozen answer bears on. The dedicated institutional framework on PDF p. 59 is an AI-safety/coordination institution and standing committee, which is not automatically a separate regulatory regime. Incremental amendments alone are excluded by decision 18a. Adjudicate this institutional-versus-regulatory-framework distinction rather than inferring a broad rejection of existing-rule coverage.",
+        "packRecordId": "am-u12-rbi-2025-free-ai-report-contests",
+        "packPredicate": "contests_proposition"
+      }
+    },
+    {
+      "number": 7,
+      "part": "A2",
+      "proposition": "U05",
+      "classification": "articulates",
+      "answer": "Both quotations and paragraph locator verified. Governor Ida Wolden Bache, official speech, publication 2026-05-21. Surrounding text links ML forecast weighting and reduced forecast error to the Monetary Policy and Financial Stability Committee’s assessment base. Preliminary promising work; no claim of completed production deployment.",
+      "evidence": [
+        {
+          "item": 7,
+          "source": "nb-2026-bache-models",
+          "locator": "Paragraph beginning ‘We are currently exploring’",
+          "match": true,
+          "quotationVerified": true,
+          "copySource": "nb-2026-bache-models"
+        },
+        {
+          "item": 7,
+          "source": "nb-2026-bache-models",
+          "locator": "Same paragraph",
+          "match": true,
+          "quotationVerified": true,
+          "copySource": "nb-2026-bache-models"
+        }
+      ],
+      "voiceAndDateChecked": true,
+      "comparison": {
+        "verdict": "agree",
+        "finding": "Articulation and official speech voice agree; preliminary work in progress, not adopted model.",
+        "packRecordId": "am-u05-nb-2026-bache-models",
+        "packPredicate": "articulates_proposition"
+      }
+    },
+    {
+      "number": 8,
+      "part": "A2",
+      "proposition": "U12",
+      "classification": "contests",
+      "answer": "Quotation, section and 2026-06-30 publication verified. Sarah Breeden’s official speech questions continuing sufficiency specifically because existing frameworks did not contemplate autonomous agents and human-in-loop reliance may fail. Following sentence allows more sophisticated governance/accountability frameworks. Qualified prospective contest of sufficiency, not denial that current rules apply.",
+      "evidence": [
+        {
+          "item": 8,
+          "source": "boe-2026-breeden-agents-of-change",
+          "locator": "Section “Agentic payments and commerce”, final paragraph",
+          "match": true,
+          "quotationVerified": true,
+          "copySource": "boe-2026-breeden-agents-of-change"
+        }
+      ],
+      "voiceAndDateChecked": true,
+      "comparison": {
+        "verdict": "material",
+        "finding": "Pack bears on; frozen answer is a qualified prospective contest. Checker treats the human-in-loop premise and frameworks not designed for autonomous agents as an argument against continuing sufficiency. Pack reasonably distinguishes a question/possible adaptation from an express broad-coverage rejection under decision 18a. Preserve this uncertainty; do not automatically override context classification.",
+        "packRecordId": "am-u12-boe-2026-breeden-agents-of-change-context",
+        "packPredicate": "bears_on_proposition"
+      }
+    },
+    {
+      "number": 9,
+      "part": "A2",
+      "proposition": "U07",
+      "classification": "articulates",
+      "answer": "Both abstract quotations and PDF p. 3 verified; hyphenation of cash-management crosses a line. Whole text experiments have the agent prioritise, schedule and defer wholesale payments subject to liquidity constraints. Staff authors Aldasoro and Desai, with BIS/BoC disclaimer. November 10, 2025 is the manuscript/title-page date; cover gives November. Do not automatically label it the publisher’s release date. Stylised simulations, not realised deployment or payment-network performance.",
+      "evidence": [
+        {
+          "item": 9,
+          "source": "bis1310",
+          "locator": "PDF p. 3, abstract",
+          "match": true,
+          "quotationVerified": true,
+          "copySource": "bis1310"
+        },
+        {
+          "item": 9,
+          "source": "bis1310",
+          "locator": "PDF p. 3, abstract",
+          "match": true,
+          "quotationVerified": true,
+          "copySource": "bis1310"
+        }
+      ],
+      "voiceAndDateChecked": true,
+      "comparison": {
+        "verdict": "minor",
+        "finding": "Articulation, staff disclaimer and simulation limits agree. PDF title is dated 10 November 2025; official BIS page gives publication 26 November. Keep manuscript/wording date and publisher release distinct instead of calling 10 November the verified publication day.",
+        "packRecordId": "am-u07-bis-wp-1310",
+        "packPredicate": "articulates_proposition"
+      }
+    },
+    {
+      "number": 10,
+      "part": "A2",
+      "proposition": "U06",
+      "classification": "articulates",
+      "answer": "All three quotations and page locators verified. Official speaker Ole Christian Bech-Moen; delivery 2026-01-29 confirmed by official landing page, published 2026-02-02. English speaking notes are explicitly ChatGPT-generated and Norges Bank post-edited; English wording’s contemporaneous availability on the delivery date is not independently attested. PDF p. 8 directly links AI, productivity and neutral-rate assessment; surrounding model simulations are conditional.",
+      "evidence": [
+        {
+          "item": 10,
+          "source": "nb-2026-bech-moen-speech",
+          "locator": "PDF p. 8, slide ‘“Real-time” estimates and model estimates of the neutral real rate’",
+          "match": true,
+          "quotationVerified": true,
+          "copySource": "nb-2026-bech-moen-speech"
+        },
+        {
+          "item": 10,
+          "source": "nb-2026-bech-moen-speech",
+          "locator": "PDF p. 8, same passage",
+          "match": true,
+          "quotationVerified": true,
+          "copySource": "nb-2026-bech-moen-speech"
+        },
+        {
+          "item": 10,
+          "source": "nb-2026-bech-moen-speech",
+          "locator": "PDF p. 1, heading",
+          "match": true,
+          "quotationVerified": true,
+          "copySource": "nb-2026-bech-moen-speech"
+        }
+      ],
+      "voiceAndDateChecked": true,
+      "comparison": {
+        "verdict": "minor",
+        "finding": "Articulation and delivery date agree. Official Norwegian notes recovered: Norwegian page published 29 January, English page 2 February. Record original-language and machine-translated/post-edited versions separately; no verbatim English delivery claim.",
+        "packRecordId": "am-u06-nb-2026-bech-moen-speech",
+        "packPredicate": "articulates_proposition"
+      }
+    },
+    {
+      "number": 11,
+      "part": "A2",
+      "proposition": "U12",
+      "classification": "bears on",
+      "answer": "All three quotes occur in Chapter 3 F, printed p. 19 / PDF p. 22 in official IMF PDF; supplied eLibrary HTML is blocked (403). Staff voice with disclaimer; October 2021 PDF and 2021-10-22 landing-page date. Gaps are conditional, especially outside regulatory perimeters; clear standards/guidelines do not alone contest broad coverage under decision 18a. Sufficiency is reported as other jurisdictions’ conclusion, not the authors’ own articulation. Missing: authors’ explicit broad sufficiency claim or explicit denial of it. Cover credits Boukherouaa and Ghiath Shabsigh in collaboration with six others; brief’s five-name list is incomplete.",
+      "evidence": [
+        {
+          "item": 11,
+          "source": "imf2021pdf",
+          "locator": "Chapter 3, section F, final bullet (HTML)",
+          "match": true,
+          "quotationVerified": true,
+          "copySource": "imf2021pdf"
+        },
+        {
+          "item": 11,
+          "source": "imf2021pdf",
+          "locator": "Chapter 3, section F (HTML)",
+          "match": true,
+          "quotationVerified": true,
+          "copySource": "imf2021pdf"
+        },
+        {
+          "item": 11,
+          "source": "imf2021pdf",
+          "locator": "Chapter 3, section F (HTML)",
+          "match": true,
+          "quotationVerified": true,
+          "copySource": "imf2021pdf"
+        }
+      ],
+      "voiceAndDateChecked": true,
+      "comparison": {
+        "verdict": "minor",
+        "finding": "Bears-on classification agrees with decision 18a. Official IMF PDF verifies passages despite blocked eLibrary. Brief/statement credits omit Ghiath Shabsigh, Ebru S. Iskender and Alin T. Mirestean: cover credits two preparers in collaboration with six others. Correct attribution metadata; no stance change.",
+        "packRecordId": "am-u12-imf-2021-dp-ai-finance-context",
+        "packPredicate": "bears_on_proposition"
+      }
+    },
+    {
+      "number": 12,
+      "part": "A2",
+      "proposition": "U06",
+      "classification": "articulates",
+      "answer": "Qualified whole-text articulation, matching A1’s answer. All four quotations, cover disclaimer and delivery 2015-11-12 verified. AI/cognitive automation pp. 13–15 connects to labour substitution and inflation/policy pp. 16–18. This is a cross-page causal scenario, not a single direct AI-monetary-policy assertion or an empirical causal finding. Speaker voice only.",
+      "evidence": [
+        {
+          "item": 12,
+          "source": "haldane",
+          "locator": "PDF p. 13 (printed p. 13)",
+          "match": true,
+          "quotationVerified": true,
+          "copySource": "haldane"
+        },
+        {
+          "item": 12,
+          "source": "haldane",
+          "locator": "PDF p. 16 (printed p. 16)",
+          "match": true,
+          "quotationVerified": true,
+          "copySource": "haldane"
+        },
+        {
+          "item": 12,
+          "source": "haldane",
+          "locator": "PDF p. 17 (printed p. 17)",
+          "match": true,
+          "quotationVerified": true,
+          "copySource": "haldane"
+        },
+        {
+          "item": 12,
+          "source": "haldane",
+          "locator": "PDF p. 17 (printed p. 17)",
+          "match": true,
+          "quotationVerified": true,
+          "copySource": "haldane"
+        }
+      ],
+      "voiceAndDateChecked": true,
+      "comparison": {
+        "verdict": "agree",
+        "finding": "Qualified whole-text articulation and earliest role agree, including speaker disclaimer and scenario rather than realised causation.",
+        "packRecordId": "am-u06-boe-2015-haldane-labours-share",
+        "packPredicate": "articulates_proposition"
+      }
+    },
+    {
+      "number": 13,
+      "part": "A2",
+      "proposition": "U09",
+      "classification": "articulates",
+      "answer": "All three quotations and PDF pp. 19/45 locators verified. Staff authors Sahajwala and Van den Bergh; December 2000 publication wording, official landing-page publication 27 December. PDF p. 4 disclaimer verified. Conclusions explicitly support AI-assisted accurate bank risk assessment and supervisory use. Actual past implementation dates do not antedate this document’s wording. A1’s extra locator notes contain slips: section 4 is printed 13 / PDF 19, TRAM printed 35 / PDF 41.",
+      "evidence": [
+        {
+          "item": 13,
+          "source": "bcbs4pdf",
+          "locator": "PDF p. 19, section on financial ratio and peer group analysis",
+          "match": true,
+          "quotationVerified": true,
+          "copySource": "bcbs4pdf"
+        },
+        {
+          "item": 13,
+          "source": "bcbs4pdf",
+          "locator": "PDF p. 45, ‘Conclusions’",
+          "match": true,
+          "quotationVerified": true,
+          "copySource": "bcbs4pdf"
+        },
+        {
+          "item": 13,
+          "source": "bcbs4pdf",
+          "locator": "PDF p. 45, ‘Conclusions’",
+          "match": true,
+          "quotationVerified": true,
+          "copySource": "bcbs4pdf"
+        }
+      ],
+      "voiceAndDateChecked": true,
+      "comparison": {
+        "verdict": "agree",
+        "finding": "Staff voice, December 2000 wording date, expert-system meaning and articulation agree; exact conclusion and section locators verified.",
+        "packRecordId": "am-u09-bcbs-2000-wp4-early-warning",
+        "packPredicate": "articulates_proposition"
+      }
+    },
+    {
+      "number": 14,
+      "part": "A2",
+      "proposition": "U05",
+      "classification": "articulates",
+      "answer": "Both quotes and PDF pp. 5/6 locators verified, together with PDF p. 3 disclaimer. Staff authors McNelis and McAdam, April 2004 month precision. Non-technical summary limits gains by index, country and structural-instability setting; no universal advantage.",
+      "evidence": [
+        {
+          "item": 14,
+          "source": "ecb352",
+          "locator": "PDF p. 5, abstract",
+          "match": true,
+          "quotationVerified": true,
+          "copySource": "ecb352"
+        },
+        {
+          "item": 14,
+          "source": "ecb352",
+          "locator": "PDF p. 6, non-technical summary",
+          "match": true,
+          "quotationVerified": true,
+          "copySource": "ecb352"
+        }
+      ],
+      "voiceAndDateChecked": true,
+      "comparison": {
+        "verdict": "agree",
+        "finding": "April 2004 staff articulation agrees. Gains are index/country/period specific; forecasts can converge without structural change.",
+        "packRecordId": "am-u05-ecb-wp-352",
+        "packPredicate": "articulates_proposition"
+      }
+    },
+    {
+      "number": 15,
+      "part": "A2",
+      "proposition": "U10",
+      "classification": "articulates",
+      "answer": "Main quote on PDF p. 3 and complementary Bundesbank consultation-page quote verified. Joint BaFin/Bundesbank institutional consultation, dated 2021-07-15 on official listing. Quantifying risks more accurately explicitly supplies improved risk management. Consultation, not binding final requirements.",
+      "evidence": [
+        {
+          "item": 15,
+          "source": "buba-2021-ml-risk-models-consultation",
+          "locator": "PDF p. 3, chapter I ‘Machine learning is advancing’",
+          "match": true,
+          "quotationVerified": true,
+          "copySource": "buba-2021-ml-risk-models-consultation"
+        },
+        {
+          "item": 15,
+          "source": "buba-ml-methods-page",
+          "locator": "Section ‘Consultation 11/2021’",
+          "match": true,
+          "quotationVerified": true,
+          "copySource": "buba-ml-methods-page"
+        }
+      ],
+      "voiceAndDateChecked": true,
+      "comparison": {
+        "verdict": "agree",
+        "finding": "Joint institutional consultation articulates possible improved firm risk management; no measured performance claim.",
+        "packRecordId": "am-u10-buba-2021-ml-risk-models-consultation",
+        "packPredicate": "articulates_proposition"
+      }
+    },
+    {
+      "number": 16,
+      "part": "A2",
+      "proposition": "U12",
+      "classification": "articulates",
+      "answer": "All three quotes and PDF pp. 5/33 locators verified. Institutional preliminary DNB view despite named author Joost van der Burgt. Official release notice refines 2019 to 2019-07-25. Existing regulations cover many prerequisites; possible loopholes/future AI-specific policy coexist. Does not assert complete coverage or rule out future changes.",
+      "evidence": [
+        {
+          "item": 16,
+          "source": "dnb2019retry",
+          "locator": "PDF p. 5, ‘Practical information’",
+          "match": true,
+          "quotationVerified": true,
+          "copySource": "dnb2019retry"
+        },
+        {
+          "item": 16,
+          "source": "dnb2019retry",
+          "locator": "PDF p. 33, chapter 4 ‘General principles for the use of AI by financial institutions (‘SAFEST’)’",
+          "match": true,
+          "quotationVerified": true,
+          "copySource": "dnb2019retry"
+        },
+        {
+          "item": 16,
+          "source": "dnb2019retry",
+          "locator": "PDF p. 33, same paragraph",
+          "match": true,
+          "quotationVerified": true,
+          "copySource": "dnb2019retry"
+        }
+      ],
+      "voiceAndDateChecked": true,
+      "comparison": {
+        "verdict": "minor",
+        "finding": "Institutional preliminary-view articulation agrees. Refine year-only metadata using the official 25 July 2019 notice; preserve loopholes and prospective regulation.",
+        "packRecordId": "am-u12-dnb-2019-ai-principles",
+        "packPredicate": "articulates_proposition"
+      }
+    },
+    {
+      "number": 17,
+      "part": "A2",
+      "proposition": "U12",
+      "classification": "articulates",
+      "answer": "PDF p. 4 quotation and complementary Bundesbank page quotation verified. Joint institutional consultation, 2021-07-15, limited to ML in prudential risk models for banks/insurers. Largely transferable technology-neutral foundations directly meet broad applicability, while few adaptations remain possible.",
+      "evidence": [
+        {
+          "item": 17,
+          "source": "buba-2021-ml-risk-models-consultation",
+          "locator": "PDF p. 4, chapter I ‘Machine learning is advancing’",
+          "match": true,
+          "quotationVerified": true,
+          "copySource": "buba-2021-ml-risk-models-consultation"
+        },
+        {
+          "item": 17,
+          "source": "buba-ml-methods-page",
+          "locator": "Section ‘Consultation 11/2021’",
+          "match": true,
+          "quotationVerified": true,
+          "copySource": "buba-ml-methods-page"
+        }
+      ],
+      "voiceAndDateChecked": true,
+      "comparison": {
+        "verdict": "agree",
+        "finding": "Joint consultation’s broad transferability of technology-neutral foundations and few possible adaptations match.",
+        "packRecordId": "am-u12-buba-2021-ml-risk-models-consultation",
+        "packPredicate": "articulates_proposition"
+      }
+    },
+    {
+      "number": 18,
+      "part": "A2",
+      "proposition": "U05",
+      "classification": "articulates",
+      "answer": "Danish quotation and summary locator verified verbatim. Institutional Nationalbank publication page, 2019-01-21; original Danish kept as evidence, supplied English translation is faithful. Page places ML text analysis and improved bankruptcy-probability accuracy under financial stability and financial risks: central-bank economic/risk analysis rather than a claim about private firms adopting it. Full report attachment was not retrieved; this check covers the institutional landing summary only.",
+      "evidence": [
+        {
+          "item": 18,
+          "source": "dn-2019-text-ml-bankruptcy",
+          "locator": "Landing page, summary paragraph",
+          "match": true,
+          "quotationVerified": true,
+          "copySource": "dn-2019-text-ml-bankruptcy"
+        }
+      ],
+      "voiceAndDateChecked": true,
+      "comparison": {
+        "verdict": "minor",
+        "finding": "U05 articulation agrees. Later full PDF retrieval adds analyst credits Hvid/Mølgaard and editorial-close date; no staff-views disclaimer located. Do not make an automatic institution-to-staff switch from footer names alone.",
+        "packRecordId": "am-u05-dn-2019-text-ml-bankruptcy",
+        "packPredicate": "articulates_proposition"
+      }
+    },
+    {
+      "number": 19,
+      "part": "A2",
+      "proposition": "U04",
+      "classification": "articulates",
+      "answer": "PDF p. 13 quotation and complementary Bundesbank page quotation verified. Joint BaFin/Bundesbank institutional consultation, 2021-07-15. Reduced transparency explicitly impedes validators/supervisors’ comprehension and output checks. Following paragraphs require weighing better predictive ability against model risk and explainability; no claim all black-box models are prohibited.",
+      "evidence": [
+        {
+          "item": 19,
+          "source": "buba-2021-ml-risk-models-consultation",
+          "locator": "PDF p. 13, chapter III.3 ‘Focus on explainability’",
+          "match": true,
+          "quotationVerified": true,
+          "copySource": "buba-2021-ml-risk-models-consultation"
+        },
+        {
+          "item": 19,
+          "source": "buba-ml-methods-page",
+          "locator": "Section ‘Consultation 11/2021’",
+          "match": true,
+          "quotationVerified": true,
+          "copySource": "buba-ml-methods-page"
+        }
+      ],
+      "voiceAndDateChecked": true,
+      "comparison": {
+        "verdict": "agree",
+        "finding": "U04 articulation agrees; reduced transparency obstructs comprehension/output validation, with model-performance trade-offs retained.",
+        "packRecordId": "am-u04-buba-2021-ml-risk-models-consultation",
+        "packPredicate": "articulates_proposition"
+      }
+    },
+    {
+      "number": 20,
+      "part": "B",
+      "id": "am-event-rb-2025-ai-policy",
+      "source": "rb-2025-ai-policy-decision",
+      "verdict": "agree",
+      "voice": "institutional Executive Board decision",
+      "date": "2025-05-26",
+      "dateKind": "decision day",
+      "locator": "PDF p. 1, Riksbankens beslut and Skälen för beslutet",
+      "quote": "Riksbanken fastställer AI-policy för Sveriges riksbank i enlighet med bilaga.",
+      "answer": "Both Swedish quotations are verbatim at the supplied locators. Adoption is stated done on 26 May; entry into force is separately 1 June 2025. Annex sets purposes, principles and governance of internal AI use. No inference of implementation or effectiveness; dated status treatment is appropriate."
+    },
+    {
+      "number": 21,
+      "part": "B",
+      "id": "am-event-fsb-2017-ai-ml-monitoring",
+      "source": "fsb-2017-fintech-fs",
+      "verdict": "agree",
+      "voice": "institutional report",
+      "date": "2017-06-27",
+      "dateKind": "publication day",
+      "locator": "Annex G, Description, printed p. 55 / PDF p. 59",
+      "quote": "The FSB is conducting ongoing monitoring of AI and machine learning in financial services.",
+      "answer": "Quotation verbatim. Following sentences identify initial, preliminary findings subject to change. Under-way status is correct; no commencement or completion date is supplied. The observation date must not be converted into a project start date."
+    },
+    {
+      "number": 22,
+      "part": "B",
+      "id": "am-event-fsb-2024-ai-report-update",
+      "source": "fsb-2024-knot-ai-page",
+      "verdict": "minor",
+      "voice": "official speech, Klaas Knot as FSB Chair",
+      "date": "2024-07-11",
+      "dateKind": "speech/publication day; work observed in 2024",
+      "locator": "Paragraph beginning This year, we are updating",
+      "quote": "This year, we are updating an FSB paper",
+      "answer": "Full supplied quotation is verbatim. Under-way stage, year precision and attributed official statement are supported. Disclaimer expressly excludes necessary agreement by FSB/members; later paragraph calls the work purely analytical, without policy-option development then. The project-launched type is an over-strong taxonomy label for update-in-progress evidence: use an ongoing-work/status type at admission or keep its explicit no-launch-date qualification. No actual launch is demonstrated."
+    },
+    {
+      "number": 23,
+      "part": "B",
+      "id": "am-event-fsb-2026-frontier-ai-cyber-work",
+      "source": "fsb-2026-bailey-g20-letter",
+      "verdict": "agree",
+      "voice": "official Chair letter, Andrew Bailey",
+      "date": "2026-08-28",
+      "dateKind": "letter date, not filename date",
+      "locator": "Frontier AI section, PDF p. 2",
+      "quote": "the FSB is exploring particular issues",
+      "answer": "Full quoted passage is verbatim across PDF lines. Surrounding text also states exploration of response/recovery capabilities for significant operational disruption. Under-way status is supported; no realised results, commencement or completion date. Letter date is 28 August although URL says P310826."
+    },
+    {
+      "number": 24,
+      "part": "B",
+      "id": "dnb-document-date-voice",
+      "source": "dnbrelease",
+      "document": "General principles for the use of Artificial Intelligence in the financial sector",
+      "verdict": "minor",
+      "date": "2019-07-25",
+      "dateKind": "official publication notice day",
+      "locator": "DNB release date label; discussion paper PDF pp. 5 and 33",
+      "answer": "Official DNB notice explicitly dates publication 25 July 2019. Refine the year-only record to that day. Institutional voice is supported by DNB presenting its preliminary view on p. 5; retain named author Joost van der Burgt and consultation/preliminary status. The English report wording is not independently authenticated by a July 2019 archive in this task."
+    },
+    {
+      "number": 25,
+      "part": "B",
+      "id": "dn-document-voice",
+      "source": "dn2019pdf",
+      "document": "Tekstbaseret machine learning forbedrer konkursmodellering",
+      "verdict": "minor",
+      "date": "2019-01-21",
+      "dateKind": "publication day; editorial close separately 2019-01-18",
+      "locator": "PDF pp. 1, 2 and 7, including visually inspected p. 7 credits",
+      "answer": "PDF p. 7 names Anna Kirstine Hvid and Pia Mølgaard, both Quantitative Risk Analyst, Financial Stability. It carries no located author-views/staff disclaimer in its seven pages; the series description presents Nationalbank analyses of economic and financial conditions, with Danish prevailing over English in translation doubt. Record those named staff credits. Names alone do not establish staff-only voice: unlike an explicit working-paper disclaimer, these footer credits do not disown institutional responsibility. Retaining qualified institutional analytical-series voice is defensible; do not claim anonymity or that the PDF proves staff-only voice. Page 2 distinguishes the underlying November 2018 Working Paper, whose authorship/voice is a separate document question."
+    },
+    {
+      "number": 26,
+      "part": "B",
+      "id": "nb-document-version",
+      "source": "nbbechnorwegiannotes",
+      "document": "Hvordan kan KI påvirke pengepolitikken? / How can AI affect monetary policy?",
+      "verdict": "minor",
+      "voice": "official speaker Ole Christian Bech-Moen",
+      "date": "2026-01-29",
+      "dateKind": "delivery and Norwegian publication day; English landing publication 2026-02-02",
+      "locator": "Norwegian speaking notes PDF p. 8; English notes PDF pp. 1 and 8; both official landing pages",
+      "quote": "kan KI bidra til en oppgang i den nøytrale renten.",
+      "answer": "Yes: a Norwegian text exists, linked as Talepunkter til presentasjonen, and directly supports the AI/productivity/neutral-rate proposition. Its page is published 29 January 2026 16:00; English page is published 2 February 12:05. The quoted English is the explicitly ChatGPT-generated, post-edited translation, not a verbatim English delivery on 29 January. Record Norwegian as the original published expression alongside delivery date, and the English translation as a separate version. This checks published notes, not an audio transcript of every delivered word."
+    },
+    {
+      "number": 27,
+      "part": "B",
+      "id": "bcbs-document-voice-date",
+      "source": "bcbs4pdf",
+      "document": "Supervisory risk assessment and early warning systems",
+      "verdict": "agree",
+      "voice": "staff authors Sahajwala and Van den Bergh",
+      "date": "2000-12",
+      "dateKind": "publication month in PDF; official landing day 2000-12-27",
+      "locator": "PDF pp. 1/3 authors and cover date; PDF p. 4 disclaimer; BIS landing date",
+      "answer": "Staff voice is explicitly warranted by two named authors and the series disclaimer, which is verbatim as supplied. December 2000 correctly preserves the PDF’s wording date; 27 December is the official landing-page publication metadata. These may coexist without falsely claiming day-level wording authentication."
+    },
+    {
+      "number": 28,
+      "part": "C",
+      "id": "dnb-pdf-retrieval",
+      "source": "dnb2019retry",
+      "verdict": "agree",
+      "locator": "PDF pp. 5 and 33",
+      "answer": "Recovered by direct Windows curl, HTTP 200 on 2026-11-04; SHA-256 38c6ad434f68bdd0075a52dc31b360a05d6c8719c420c5491ed423167562228c, matching supplied copy. Earlier urllib request returned 403; keep both outcomes. Both requested quotations verified, with p. 33’s loopholes and potential AI-specific policies retained. Resolves this environment’s old PDF access gap."
+    },
+    {
+      "number": 29,
+      "part": "C",
+      "id": "dnb-release-retrieval",
+      "source": "dnbrelease",
+      "verdict": "minor",
+      "locator": "DNB news release heading/date and report link",
+      "answer": "Recovered official DNB notice, HTTP 200 on 2026-11-04; SHA-256 c14bb551bb6e043f5c7d1fcd2ab526ab8114c513125e79dfac676743abd7f7d7. Publication label gives 25 July 2019. Resolves date hold; supports refining document metadata as in item 24, not altering the substantive U12 qualification."
+    },
+    {
+      "number": 30,
+      "part": "C",
+      "id": "dn-pdf-retrieval",
+      "source": "dn2019pdf",
+      "verdict": "minor",
+      "locator": "Analysis No. 3, PDF p. 7 credits/series statement; p. 1 publication date",
+      "answer": "Located by bounded title search and retrieved official PDF, HTTP 200 on 2026-11-04; SHA-256 c9522edff1ce7caa7d691c8d3b107b3381879f2d9203280a2165e14021586f66. Names Anna Kirstine Hvid and Pia Mølgaard as Quantitative Risk Analysts. No staff-views disclaimer located in full seven-page text; final credits page also visually inspected. Add credits and separate editorial-close date 18 January from publication 21 January. Institutional-series voice remains qualified; see item 25. Resolves missing-PDF gap."
+    },
+    {
+      "number": 31,
+      "part": "C",
+      "id": "fed-roundtable-posting-date",
+      "source": "fed2026roundtable",
+      "verdict": "cannot check",
+      "locator": "One-page meeting note; Waller speech dated 2026-09-29, footnote 7",
+      "answer": "PDF retrieved, HTTP 200 on 2026-11-04; SHA-256 36e311cfd5cdcc3cd75780de27c89166541b48d94123d5df0e5d74227d7c66c8. Printed 26 May 2026 is the meeting date, not publication. Official Waller speech links it in footnote 7 and is dated/last-updated 29 September 2026 despite filename waller20260928a. That is a dated link on a live page, not an exact original posting date for the PDF. No Board page explicitly giving its posting day was located by exact-filename search and the linked speech. Keep publication unknown; do not substitute the supplied Last-Modified header or filename. Passage/meeting are checkable; requested posting date is unresolved."
+    },
+    {
+      "number": 32,
+      "part": "C",
+      "proposition": "U05",
+      "id": "boe-one-bank-discussion",
+      "source": "boe2015discussionarchive",
+      "verdict": "material",
+      "document": "One Bank Research Agenda, Discussion Paper",
+      "voice": "institutional research agenda",
+      "date": "2015-02",
+      "dateKind": "paper month, official launch 2015-02-25; archived original captured 2015-03-19",
+      "locator": "Theme 4, printed pp. 23–24 / PDF pp. 24–25, especially p. 24",
+      "quote": "textual information has been quantified systematically using machine-learning algorithms",
+      "answer": "Recovered full 50-page paper from a March 2015 archive capture of the official URL: HTTP 200 on 2026-11-04, SHA-256 a1963d083b2d45b092c2bd129d96c8130b85f8abe892cd35bf48de5cfb2e15e2. Explicitly discusses AI/ML methods analysing central-bank policy communications, then endorses their potential to inform sentiment assessment. Meets U05 at whole-section level and provides a 2015 institutional candidate, though not earlier than ECB 2004 staff text. Do not claim the adjacent Google-query nowcasting example necessarily uses ML; FCA transaction-data monitoring alone does not establish AI suptech. Legacy official URL and guessed migrated full-paper URL returned 404. Official summary PDF was retrieved separately and lacks the full passage. A labelled 50-page mirror was also retrieved (HTTP 200, SHA-256 7eb285db56902ed530a9885d7ed01c3b89a8fcd43f4a6b0c2a0811b09f286b91); byte hashes and complete extracted texts differ, so only the archived original is used for this finding."
+    },
+    {
+      "number": 33,
+      "part": "C",
+      "id": "canada-99-3-retrieval",
+      "source": "canada993oarpdf",
+      "verdict": "agree",
+      "document": "Forecasting GDP Growth Using Artificial Neural Networks, Bank of Canada Working Paper 99-3",
+      "voice": "staff authors Greg Tkacz and Sarah Hu",
+      "date": "1999-01",
+      "dateKind": "publication month, PDF p. 3",
+      "locator": "PDF p. 3 title/date/disclaimer; abstract printed p. v / PDF p. 7",
+      "quote": "At the 4-quarter horizon, however, the improved forecast accuracy is statistically significant.",
+      "answer": "Recovered official Bank of Canada repository PDF by a bounded direct file-path attempt, HTTP 200 on 2026-11-04; SHA-256 165a1394abdf4085aff1599a558455c029db823f21b6a06c8f7aa4699db6ed95. Legacy bank URL still redirects through DOI to an empty repository landing response (202). Direct record/825/files/wp99-3.pdf redirects to its downloadable nanna file with ordinary metadata/download parameters. Explicit authors’ views disclaimer; neural networks improve four-quarter GDP forecasts, not significantly one-quarter forecasts. It is an inspected earlier lead, but Bank of Canada is outside revised named-body bounds under decision 16a: no in-scope earliest-role promotion. Government deposit URL returned an archived-page wrapper, not PDF; no evidence claim from that wrapper."
+    }
+  ],
+  "retrievals": [
+    {
+      "id": "ecb352",
+      "hops": [],
+      "preparerSha256": "4252bd524ee1f3ccc3a2a90541ff30556c5f75ed77c2244c78e56cfdb0e32dce",
+      "hashMatchesPreparer": false,
+      "error": "Initial Python urllib certificate-chain failure; later Windows curl succeeded."
+    },
+    {
+      "id": "haldane",
+      "hops": [
+        {
+          "url": "https://www.bankofengland.co.uk/-/media/boe/files/speech/2015/labours-share.pdf",
+          "at": "2026-11-04T14:33:36Z",
+          "status": 200,
+          "contentType": "application/pdf",
+          "bytes": 781793,
+          "sha256": "e9c2a56b63807fb43d6e395015d380c9beb3d02f79b6ef75e1a9cbe4a13e9ed0"
+        }
+      ],
+      "preparerSha256": "e9c2a56b63807fb43d6e395015d380c9beb3d02f79b6ef75e1a9cbe4a13e9ed0",
+      "hashMatchesPreparer": true
+    },
+    {
+      "id": "bcbs4",
+      "hops": [
+        {
+          "url": "https://www.bis.org/publ/bcbs_wp4.pdf",
+          "at": "2026-11-04T14:33:38Z",
+          "status": 301,
+          "contentType": "text/html; charset=iso-8859-1",
+          "bytes": 334,
+          "sha256": "d22c82ded7120909c22ab66938402d31459b5af012d15bc27355bcf02dd2da4a"
+        },
+        {
+          "url": "https://www.bis.org/publications/supervisory-risk-assessment-and-early-warning-systems",
+          "at": "2026-11-04T14:33:47Z",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "bytes": 128213,
+          "sha256": "086ac9e0983f9b8acce4536ba53d836ebeefe73c5a3ed0b91cfade451f67d6f6"
+        }
+      ]
+    },
+    {
+      "id": "dnb2019",
+      "hops": [
+        {
+          "url": "https://www.dnb.nl/media/jkbip2jc/general-principles-for-the-use-of-artificial-intelligence-in-the-financial-sector.pdf",
+          "at": "2026-11-04T14:33:47Z",
+          "status": 403,
+          "contentType": "text/html",
+          "bytes": 518,
+          "sha256": "cac966fb9579ee975f27ff42cf756125b4a98ad461352ce03639282e1f72ee38"
+        }
+      ]
+    },
+    {
+      "id": "bis1194",
+      "hops": [
+        {
+          "url": "https://www.bis.org/publ/work1194.pdf",
+          "at": "2026-11-04T14:33:55Z",
+          "status": 301,
+          "contentType": "text/html; charset=iso-8859-1",
+          "bytes": 356,
+          "sha256": "ebfb82f88906b813cd303b499d0748eed8e77f1c4c619e3e062ad8f83d5d7a78"
+        },
+        {
+          "url": "https://www.bis.org/publications/working-paper-1194-intelligent-financial-system-how-ai-transforming-finance",
+          "at": "2026-11-04T14:34:03Z",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "bytes": 131740,
+          "sha256": "26290fadc3bbb20c5c3d6c9dc40996646c72d171ac04331c234465c87ca45d22"
+        }
+      ]
+    },
+    {
+      "id": "ecb352",
+      "hops": [
+        {
+          "url": "https://www.ecb.europa.eu/pub/pdf/scpwps/ecbwp352.pdf",
+          "at": "2026-11-04T14:35:15Z",
+          "status": 200,
+          "contentType": "application/pdf",
+          "bytes": 731663,
+          "sha256": "4252bd524ee1f3ccc3a2a90541ff30556c5f75ed77c2244c78e56cfdb0e32dce"
+        }
+      ],
+      "preparerSha256": "4252bd524ee1f3ccc3a2a90541ff30556c5f75ed77c2244c78e56cfdb0e32dce",
+      "hashMatchesPreparer": true
+    },
+    {
+      "id": "bcbs4pdf",
+      "hops": [
+        {
+          "url": "https://www.bis.org/publications/supervisory-risk-assessment-and-early-warning-systems.pdf",
+          "at": "2026-11-04T14:35:17Z",
+          "status": 200,
+          "contentType": "application/pdf",
+          "bytes": 241660,
+          "sha256": "cdcf187b479b3d9b13dd0a9c9887dcc9234d324ed5d288ed655a2ec317d25916"
+        }
+      ],
+      "preparerSha256": "cdcf187b479b3d9b13dd0a9c9887dcc9234d324ed5d288ed655a2ec317d25916",
+      "hashMatchesPreparer": true
+    },
+    {
+      "id": "dnb2019retry",
+      "hops": [
+        {
+          "url": "https://www.dnb.nl/media/jkbip2jc/general-principles-for-the-use-of-artificial-intelligence-in-the-financial-sector.pdf",
+          "at": "2026-11-04T14:35:25Z",
+          "status": 200,
+          "contentType": "application/pdf",
+          "bytes": 2183439,
+          "sha256": "38c6ad434f68bdd0075a52dc31b360a05d6c8719c420c5491ed423167562228c"
+        }
+      ],
+      "preparerSha256": "38c6ad434f68bdd0075a52dc31b360a05d6c8719c420c5491ed423167562228c",
+      "hashMatchesPreparer": true
+    },
+    {
+      "id": "bis1194pdf",
+      "hops": [
+        {
+          "url": "https://www.bis.org/publications/working-paper-1194-intelligent-financial-system-how-ai-transforming-finance.pdf",
+          "at": "2026-11-04T14:35:27Z",
+          "status": 200,
+          "contentType": "application/pdf",
+          "bytes": 985785,
+          "sha256": "708484671f6b6304466e8d4c257e993aaad725cb14abeabe253cb5281ae416fd"
+        }
+      ]
+    },
+    {
+      "id": "fsb2017",
+      "hops": [
+        {
+          "url": "https://www.fsb.org/uploads/P011117.pdf",
+          "at": "2026-11-04T14:35:34Z",
+          "status": 200,
+          "contentType": "application/pdf",
+          "bytes": 638497,
+          "sha256": "25c70dafbd365900355dc39968f5c0be52117f52e246d29bb91c395d82701e93"
+        }
+      ]
+    },
+    {
+      "id": "ecb2025fintech",
+      "hops": [
+        {
+          "url": "https://www.ecb.europa.eu/paym/retail/retail_payments_strategy/shared/pdf/20250415-European_Fintech_Payments_Dialogue_Summary_Note.pdf",
+          "at": "2026-11-04T14:35:48Z",
+          "status": 200,
+          "contentType": "application/pdf",
+          "bytes": 183955,
+          "sha256": "79e2886dcd93b80a4fabfb2d0ee81080d5037a8d77013b82df2ee04d49532b2e"
+        }
+      ]
+    },
+    {
+      "id": "dnbrelease",
+      "hops": [
+        {
+          "url": "https://www.dnb.nl/algemeen-nieuws/nieuws-2019/dnb-komt-met-richtlijnen-voor-gebruik-kunstmatige-intelligentie/",
+          "at": "2026-11-04T14:37:19Z",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "bytes": 255767,
+          "sha256": "c14bb551bb6e043f5c7d1fcd2ab526ab8114c513125e79dfac676743abd7f7d7"
+        }
+      ]
+    },
+    {
+      "id": "frb1997",
+      "hops": [
+        {
+          "url": "https://www.federalreserve.gov/boarddocs/speeches/1997/19971104.htm",
+          "at": "2026-11-04T14:37:20Z",
+          "status": 200,
+          "contentType": "text/html",
+          "bytes": 23633,
+          "sha256": "44783ce786e0e18ecf2c10303575806ea9086d89a1f6bd279325b67307113887"
+        }
+      ]
+    },
+    {
+      "id": "bis1310",
+      "hops": [
+        {
+          "url": "https://www.bis.org/publications/working-paper-1310-ai-agents-cash-management-payment-systems.pdf",
+          "at": "2026-11-04T14:37:21Z",
+          "status": 200,
+          "contentType": "application/pdf",
+          "bytes": 825010,
+          "sha256": "a56a159c6d816432aabdf8d43366522bba69ce6485eb89f91c802a5e50683d35"
+        }
+      ],
+      "preparerSha256": "a56a159c6d816432aabdf8d43366522bba69ce6485eb89f91c802a5e50683d35",
+      "hashMatchesPreparer": true
+    },
+    {
+      "id": "boe-2026-breeden-agents-of-change",
+      "hops": [
+        {
+          "url": "https://www.bankofengland.co.uk/speech/2026/june/sarah-breeden-panel-at-the-european-central-bank-forum-on-central-banking-2026",
+          "at": "2026-11-04T14:38:48Z",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "bytes": 119294,
+          "sha256": "7799be71218a6a87e612f3e2857d2aff2bb9393088dd7117438a92201f13d6d9"
+        }
+      ],
+      "preparerSha256": "3b1840e27f6bc917262e857ffcd965fe345b22942b431f535aec37449f0fe00f",
+      "hashMatchesPreparer": false
+    },
+    {
+      "id": "buba-2021-ml-risk-models-consultation",
+      "hops": [
+        {
+          "url": "https://www.bundesbank.de/resource/blob/793670/61532e24c3298d8b24d4d15a34f503a8/472B63F073F071307366337C94F8C870/2021-07-15-ml-konsultationspapier-data.pdf",
+          "at": "2026-11-04T14:38:49Z",
+          "status": 200,
+          "contentType": "application/pdf;charset=UTF-8",
+          "bytes": 512050,
+          "sha256": "3dae0409deb26f8b8e0778b2eee0bf3f07d629aef04df4803023cb3354e8e9a1"
+        }
+      ],
+      "preparerSha256": "3dae0409deb26f8b8e0778b2eee0bf3f07d629aef04df4803023cb3354e8e9a1",
+      "hashMatchesPreparer": true
+    },
+    {
+      "id": "buba-ml-methods-page",
+      "hops": [
+        {
+          "url": "https://www.bundesbank.de/en/tasks/banking-supervision/individual-aspects/risk-management/machine-learning-methods",
+          "at": "2026-11-04T14:38:57Z",
+          "status": 301,
+          "contentType": "",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "url": "https://www.bundesbank.de/en/tasks/financial-supervision/individual-aspects/risk-management/machine-learning-methods",
+          "at": "2026-11-04T14:39:05Z",
+          "status": 200,
+          "contentType": "text/html;charset=UTF-8",
+          "bytes": 290483,
+          "sha256": "3fe9af3fccdd4bf88a06560153d317b40057dca77793d91ac0ec6f33a46770a0"
+        }
+      ],
+      "preparerSha256": "48a7f82c7e165a25459f1473afb5cfb58ce8493bc170869f48451e57841606d3",
+      "hashMatchesPreparer": false
+    },
+    {
+      "id": "dn-2019-text-ml-bankruptcy",
+      "hops": [
+        {
+          "url": "https://www.nationalbanken.dk/da/viden-og-nyheder/publikationer-og-taler/arkiv-publikationer/2019/tekstbaseret-machine-learning-forbedrer-konkursmodellering",
+          "at": "2026-11-04T14:39:06Z",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "bytes": 32263,
+          "sha256": "ea65818567557cfdae8889c3bd5af7d5639c52bf594a5f1cfce99bc8c00162e3"
+        }
+      ],
+      "preparerSha256": "ea65818567557cfdae8889c3bd5af7d5639c52bf594a5f1cfce99bc8c00162e3",
+      "hashMatchesPreparer": true
+    },
+    {
+      "id": "imf-2021-dp-ai-finance",
+      "hops": [
+        {
+          "url": "https://www.elibrary.imf.org/view/journals/087/2021/024/article-A001-en.xml",
+          "at": "2026-11-04T14:39:08Z",
+          "status": 403,
+          "contentType": "text/html",
+          "bytes": 919,
+          "sha256": "761824133ca73c22c3d55ecfe8adf34f681e620dbfd52e017ed6a1a66078aacc"
+        }
+      ],
+      "preparerSha256": "90973ad87869f334410b993b16c30df44e9a78e1107954eab82e0609a67d0651",
+      "hashMatchesPreparer": false
+    },
+    {
+      "id": "nb-2026-bache-models",
+      "hops": [
+        {
+          "url": "https://www.norges-bank.no/en/news-events/news/Speeches/2026/2026-05-21-bache/",
+          "at": "2026-11-04T14:39:08Z",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "bytes": 46559,
+          "sha256": "2382c3f57cd9881729e9b9da4f76abc88871461bcd883e54fd8ec383007684d8"
+        }
+      ],
+      "preparerSha256": "a9f62d78fd1cc15afefc927c159f1fa0147421642733af22944991f13f998934",
+      "hashMatchesPreparer": false
+    },
+    {
+      "id": "nb-2026-bech-moen-speech",
+      "hops": [
+        {
+          "url": "https://www.norges-bank.no/contentassets/93003c5a459f4961bad556a1c444a8e2/speech_valutaseminaret2026.pdf",
+          "at": "2026-11-04T14:39:16Z",
+          "status": 301,
+          "contentType": "",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "url": "https://www.norges-bank.no/contentassets/93003c5a459f4961bad556a1c444a8e2/speech_valutaseminaret2026.pdf?v=03022026122340",
+          "at": "2026-11-04T14:39:25Z",
+          "status": 200,
+          "contentType": "application/pdf",
+          "bytes": 187910,
+          "sha256": "d9055ad34e750a2fb836303ecefcff3efb4043140128694b15ac0af2be33eded"
+        }
+      ],
+      "preparerSha256": "d9055ad34e750a2fb836303ecefcff3efb4043140128694b15ac0af2be33eded",
+      "hashMatchesPreparer": true
+    },
+    {
+      "id": "rbi-2025-free-ai-report",
+      "hops": [],
+      "preparerSha256": "569d0385ebac89a629f647522cca5772f822dcc39270515d9426083b699419d8",
+      "hashMatchesPreparer": false,
+      "error": "curl TLS-close error (56); no completed response retained."
+    },
+    {
+      "id": "imf2021pdf",
+      "hops": [
+        {
+          "url": "https://www.imf.org/-/media/files/publications/dp/2021/english/pdeoraifea.pdf",
+          "at": "2026-11-04T14:40:15Z",
+          "status": 200,
+          "contentType": "application/pdf",
+          "bytes": 860503,
+          "sha256": "1c331597155263949e804d936735ca13bfc0ca1f69b32c75b806eac70349dc71"
+        }
+      ],
+      "preparerSha256": "90973ad87869f334410b993b16c30df44e9a78e1107954eab82e0609a67d0651",
+      "hashMatchesPreparer": false
+    },
+    {
+      "id": "rbiindex",
+      "hops": [
+        {
+          "url": "https://m.rbi.org.in/Scripts/BS_ViewPublicationReport.aspx",
+          "at": "2026-11-04T14:40:21Z",
+          "status": 302,
+          "contentType": "text/html; charset=utf-8",
+          "bytes": 103627,
+          "sha256": "8d7d23f7c55d55a0e093df4719ab82a38d1a242ea83cdbbede2b046b2a9ef13d"
+        },
+        {
+          "url": "https://rbi.org.in/",
+          "at": "2026-11-04T14:40:23Z",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "bytes": 151056,
+          "sha256": "ed45e619cf4b9cc8b73665b8599433f677a736a7bf4f4137107f13a497413832"
+        }
+      ]
+    },
+    {
+      "id": "rbiretry",
+      "hops": [],
+      "error": "curl TLS-close error (56); no completed response retained."
+    },
+    {
+      "id": "nbbechpage",
+      "hops": [
+        {
+          "url": "https://www.norges-bank.no/en/news-events/news/Speeches/2026/2026-01-29-bech-moen/",
+          "at": "2026-11-04T14:40:27Z",
+          "status": 404,
+          "contentType": "text/html; charset=utf-8",
+          "bytes": 19303,
+          "sha256": "2eab903f7de3fe4cc341d91c76c5d48e6730a1ce02ad72374cd6ae985c33fe6b"
+        }
+      ]
+    },
+    {
+      "id": "rbi200body",
+      "hops": [],
+      "error": "curl TLS-close error (56); no completed response retained."
+    },
+    {
+      "id": "nbbechdate",
+      "hops": [
+        {
+          "url": "https://www.norges-bank.no/en/news-events/news/Speeches/2026/2026-01-29-ocbm/",
+          "at": "2026-11-04T14:41:14Z",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "bytes": 33786,
+          "transportWarning": null,
+          "sha256": "c8326be2e141d0cc7bab2a857c5e5e2ccc80d185e27d3bdc04c87ee295b7683a"
+        }
+      ]
+    },
+    {
+      "id": "rbihtml",
+      "hops": [
+        {
+          "url": "https://www.rbi.org.in/Scripts/PublicationReportDetails.aspx?UrlPage=&ID=1414",
+          "at": "2026-11-04T14:41:15Z",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "bytes": 108714,
+          "transportWarning": null,
+          "sha256": "970fd6a8c42f4d0f19b131f3d24a7eaa0e4ed21531d58582863859cd0cd2ff43"
+        }
+      ]
+    },
+    {
+      "id": "rbimirror",
+      "hops": [
+        {
+          "url": "https://www.medianama.com/wp-content/uploads/2025/08/Framework-for-Responsible-and-Ethical-Enablement-of-Artificial-Intelligence-FREE-AI-RBI-Report.pdf",
+          "at": "2026-11-04T14:42:05Z",
+          "status": 200,
+          "contentType": "application/pdf",
+          "bytes": 2807420,
+          "transportWarning": null,
+          "sha256": "569d0385ebac89a629f647522cca5772f822dcc39270515d9426083b699419d8"
+        }
+      ],
+      "preparerSha256": "569d0385ebac89a629f647522cca5772f822dcc39270515d9426083b699419d8",
+      "hashMatchesPreparer": true
+    },
+    {
+      "id": "rbirelease",
+      "hops": [
+        {
+          "url": "https://www.rbi.org.in/Scripts/BS_PressReleaseDisplay.aspx?prid=61018",
+          "at": "2026-11-04T14:42:12Z",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "bytes": 113333,
+          "transportWarning": null,
+          "sha256": "2e3c2581229caf055683d2a5d111292083a9856964f1450a54eee31f4a4cecc4"
+        }
+      ]
+    },
+    {
+      "id": "bis1310page",
+      "hops": [
+        {
+          "url": "https://www.bis.org/publications/working-paper-1310-ai-agents-cash-management-payment-systems",
+          "at": "2026-11-04T14:45:15Z",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "bytes": 129429,
+          "transportWarning": null,
+          "sha256": "ec1bbe94af9a24f450c87ea29e5541615a9dd1b3aa9496d0ed5333e75560c4ba"
+        }
+      ]
+    },
+    {
+      "id": "imf2021page",
+      "hops": [
+        {
+          "url": "https://www.imf.org/en/publications/departmental-papers-policy-papers/issues/2021/10/21/powering-the-digital-economy-opportunities-and-risks-of-artificial-intelligence-in-finance-494717",
+          "at": "2026-11-04T14:45:16Z",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "bytes": 9486,
+          "transportWarning": null,
+          "sha256": "50021fa3508ea50450def9b3ce563a4f9f0a60d116a70fcb2bd50391af204ea5"
+        }
+      ]
+    },
+    {
+      "id": "fsb-2017-fintech-fs",
+      "hops": [
+        {
+          "url": "https://www.fsb.org/uploads/R270617.pdf",
+          "at": "2026-11-04T14:48:04Z",
+          "status": 200,
+          "contentType": "application/pdf",
+          "bytes": 990832,
+          "transportWarning": null,
+          "sha256": "700f5d772032e790ff4e67d7d6f5941584a427678ef23a56e7b9407d0c827243"
+        }
+      ],
+      "preparerSha256": "700f5d772032e790ff4e67d7d6f5941584a427678ef23a56e7b9407d0c827243",
+      "hashMatchesPreparer": true
+    },
+    {
+      "id": "fsb-2024-knot-ai-page",
+      "hops": [
+        {
+          "url": "https://www.fsb.org/2024/07/the-ai-adventure-how-artificial-intelligence-may-shape-the-economy-and-the-financial-system/",
+          "at": "2026-11-04T14:48:13Z",
+          "status": 200,
+          "contentType": "text/html; charset=UTF-8",
+          "bytes": 416950,
+          "transportWarning": null,
+          "sha256": "5326acb5317fadd1075b70f14b8b930989e0b2433d8528b5a60036c88fd3ffb0"
+        }
+      ],
+      "preparerSha256": "12e07da54b2a4b4373f89809ce31ddd7868b19c6831fa8d78c3d8a7cb79393c8",
+      "hashMatchesPreparer": false
+    },
+    {
+      "id": "fsb-2026-bailey-g20-letter",
+      "hops": [
+        {
+          "url": "https://www.fsb.org/uploads/P310826.pdf",
+          "at": "2026-11-04T14:48:21Z",
+          "status": 200,
+          "contentType": "application/pdf",
+          "bytes": 102416,
+          "transportWarning": null,
+          "sha256": "5b80b2c023bb4f99c63a106c0355c3e5ac5ac468a508d18c9e797c5f7ca4251d"
+        }
+      ],
+      "preparerSha256": "5b80b2c023bb4f99c63a106c0355c3e5ac5ac468a508d18c9e797c5f7ca4251d",
+      "hashMatchesPreparer": true
+    },
+    {
+      "id": "rb-2025-ai-policy-decision",
+      "hops": [
+        {
+          "url": "https://www.riksbank.se/globalassets/media/dagordningar--protokoll/protokoll/direktionen/2025/250526/protokollsbilaga-d-beslut-ai-policy-for-sveriges-riksbank.pdf",
+          "at": "2026-11-04T14:48:24Z",
+          "status": 200,
+          "contentType": "application/pdf",
+          "bytes": 360100,
+          "transportWarning": null,
+          "sha256": "fd0d5eecb0df9e789c3c99f677834afeb7add3b1a57e8088cc73adb794d92014"
+        }
+      ],
+      "preparerSha256": "fd0d5eecb0df9e789c3c99f677834afeb7add3b1a57e8088cc73adb794d92014",
+      "hashMatchesPreparer": true
+    },
+    {
+      "id": "fed2026roundtable",
+      "hops": [
+        {
+          "url": "https://www.federalreserve.gov/paymentsystems/files/payments-innovation-roundtable-meeting-20260526.pdf",
+          "at": "2026-11-04T14:48:25Z",
+          "status": 200,
+          "contentType": "application/pdf",
+          "bytes": 99818,
+          "transportWarning": null,
+          "sha256": "36e311cfd5cdcc3cd75780de27c89166541b48d94123d5df0e5d74227d7c66c8"
+        }
+      ]
+    },
+    {
+      "id": "canada993",
+      "hops": [
+        {
+          "url": "https://www.bankofcanada.ca/wp-content/uploads/2010/05/wp99-3.pdf",
+          "at": "2026-11-04T14:48:26Z",
+          "status": 301,
+          "contentType": "text/html; charset=UTF-8",
+          "bytes": 0,
+          "transportWarning": null,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "url": "https://doi.org/10.34989/swp-1999-3",
+          "at": "2026-11-04T14:48:26Z",
+          "status": 302,
+          "contentType": "text/html;charset=utf-8",
+          "bytes": 189,
+          "transportWarning": null,
+          "sha256": "67549f313add2673e6d51947a5b333e7ed475276298236016233f33532a11611"
+        },
+        {
+          "url": "https://www.oar-rao.bank-banque-canada.ca/record/825",
+          "at": "2026-11-04T14:48:27Z",
+          "status": 202,
+          "contentType": "text/html; charset=UTF-8",
+          "bytes": 0,
+          "transportWarning": null,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ]
+    },
+    {
+      "id": "dn2019pdf",
+      "hops": [
+        {
+          "url": "https://www.nationalbanken.dk/media/wksfsbkg/analyse-nr-3-tekstbaseret-machine-learning-forbedrer-konkursmodellering.pdf",
+          "at": "2026-11-04T14:49:06Z",
+          "status": 200,
+          "contentType": "application/pdf",
+          "bytes": 207000,
+          "transportWarning": null,
+          "sha256": "c9522edff1ce7caa7d691c8d3b107b3381879f2d9203280a2165e14021586f66"
+        }
+      ]
+    },
+    {
+      "id": "boe2015agenda",
+      "hops": [
+        {
+          "url": "https://www.bankofengland.co.uk/-/media/boe/files/research/one-bank-research-agenda---summary.pdf",
+          "at": "2026-11-04T14:49:07Z",
+          "status": 200,
+          "contentType": "application/pdf",
+          "bytes": 285540,
+          "transportWarning": null,
+          "sha256": "b7abb0b535e78c5535415ce1df177e7e423ab8565f9a1c5c8fe5e525a834d160"
+        }
+      ]
+    },
+    {
+      "id": "boe2015launch",
+      "hops": [
+        {
+          "url": "https://www.bankofengland.co.uk/news/2015/february/one-bank-research-agenda-launched-today",
+          "at": "2026-11-04T14:49:15Z",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "bytes": 75678,
+          "transportWarning": null,
+          "sha256": "91ad2cc3f850677fbbe08d4bc331ce78a8981cb17c534a8da25da48b2790eb7d"
+        }
+      ]
+    },
+    {
+      "id": "fed2026waller",
+      "hops": [
+        {
+          "url": "https://www.federalreserve.gov/newsevents/speech/waller20260928a.htm",
+          "at": "2026-11-04T14:49:16Z",
+          "status": 200,
+          "contentType": "text/html",
+          "bytes": 97779,
+          "transportWarning": null,
+          "sha256": "53e8a09e058df5519a7dd118ecbe3a4bd232bcfaf8ff29717a83d8eff60dfe75"
+        }
+      ]
+    },
+    {
+      "id": "nbbechnorwegian",
+      "hops": [
+        {
+          "url": "https://www.norges-bank.no/aktuelt/nyheter/Foredrag-og-taler/2026/2026-01-29-ocbm/",
+          "at": "2026-11-04T14:49:16Z",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "bytes": 33729,
+          "transportWarning": null,
+          "sha256": "e26534811c4cd97087350e51389901be64693ca4cb77cf6fcef96cf8394e3a2b"
+        }
+      ]
+    },
+    {
+      "id": "canada993gov",
+      "hops": [
+        {
+          "url": "https://publications.gc.ca/collections/Collection/FB3-2-99-3E.pdf",
+          "at": "2026-11-04T14:49:17Z",
+          "status": 307,
+          "contentType": "",
+          "bytes": 136,
+          "transportWarning": null,
+          "sha256": "fe9a7cce7c1aecd75be265c35eaabf58fa2412a7faf48f7885acd4f484fd9cff"
+        },
+        {
+          "url": "https://publications.gc.ca/site/archivee-archived.html?url=https%3A%2F%2Fpublications.gc.ca%2Fcollections%2FCollection%2FFB3-2-99-3E.pdf",
+          "at": "2026-11-04T14:49:25Z",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "bytes": 18415,
+          "transportWarning": null,
+          "sha256": "ead69c6e0116b03956bf6470f73f518347e0e53f1998fae7429e63c45e6d549b"
+        }
+      ]
+    },
+    {
+      "id": "nbbechnorwegiannotes",
+      "hops": [
+        {
+          "url": "https://www.norges-bank.no/contentassets/93003c5a459f4961bad556a1c444a8e2/talepunkter_valutaseminaret2026-002.pdf",
+          "at": "2026-11-04T14:50:51Z",
+          "status": 301,
+          "contentType": "",
+          "bytes": 0,
+          "transportWarning": null,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "url": "https://www.norges-bank.no/contentassets/93003c5a459f4961bad556a1c444a8e2/talepunkter_valutaseminaret2026-002.pdf?v=29012026160421",
+          "at": "2026-11-04T14:50:59Z",
+          "status": 200,
+          "contentType": "application/pdf",
+          "bytes": 158058,
+          "transportWarning": null,
+          "sha256": "5e44d9fd01730542c551cc37afd38a154febcfe3d2c4171e19bed081aab23a5c"
+        }
+      ]
+    },
+    {
+      "id": "canada993oarpdf",
+      "hops": [
+        {
+          "url": "https://www.oar-rao.bank-banque-canada.ca/record/825/files/wp99-3.pdf",
+          "at": "2026-11-04T14:51:00Z",
+          "status": 302,
+          "contentType": "",
+          "bytes": 175,
+          "transportWarning": null,
+          "sha256": "32f617701b9666729a92bc09be40a31157cb2900fb001f3abc881d9aef2abd82"
+        },
+        {
+          "url": "https://www.oar-rao.bank-banque-canada.ca/nanna/record/825/files/wp99-3.pdf?withWatermark=0&withMetadata=0&registerDownload=1&version=1",
+          "at": "2026-11-04T14:51:09Z",
+          "status": 200,
+          "contentType": "application/pdf",
+          "bytes": 211607,
+          "transportWarning": null,
+          "sha256": "165a1394abdf4085aff1599a558455c029db823f21b6a06c8f7aa4699db6ed95"
+        }
+      ]
+    },
+    {
+      "id": "canada993catalog",
+      "hops": [
+        {
+          "url": "https://publications.gc.ca/site/eng/9.571705/publication.html",
+          "at": "2026-11-04T14:51:12Z",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "bytes": 92339,
+          "transportWarning": null,
+          "sha256": "fe03be2e3c2036920e5c69dd84f5ee3f903761c2b165b2409350de80586d39d9"
+        }
+      ]
+    },
+    {
+      "id": "boe2015discussionold",
+      "hops": [
+        {
+          "url": "https://www.bankofengland.co.uk/research/Documents/onebank/discussion.pdf",
+          "at": "2026-11-04T14:51:19Z",
+          "status": 404,
+          "contentType": "text/html",
+          "bytes": 55919,
+          "transportWarning": null,
+          "sha256": "02ced85dd3069af650324a50ee45430d31032fe8856fc13229857f4845351f0b"
+        }
+      ]
+    },
+    {
+      "id": "boe2015discussion",
+      "hops": [
+        {
+          "url": "https://www.bankofengland.co.uk/-/media/boe/files/research/one-bank-research-agenda---discussion-paper.pdf",
+          "at": "2026-11-04T14:51:27Z",
+          "status": 302,
+          "contentType": "text/html; charset=utf-8",
+          "bytes": 132,
+          "transportWarning": null,
+          "sha256": "d7d178da02a4cafe26d5ea9652c4b49cf6ee3077a29a04bcee9ec5cf0502f3bb"
+        },
+        {
+          "url": "https://www.bankofengland.co.uk/error/404.html",
+          "at": "2026-11-04T14:51:35Z",
+          "status": 404,
+          "contentType": "text/html",
+          "bytes": 55919,
+          "transportWarning": null,
+          "sha256": "a8b5994d90d45f05fb7f93dafb27fcd4e8cfaa938c96a6defd300ddf9361d5ed"
+        }
+      ]
+    },
+    {
+      "id": "boe2015archiveindex",
+      "hops": [
+        {
+          "url": "https://web.archive.org/cdx/search/cdx?url=bankofengland.co.uk/research/Documents/onebank/discussion.pdf&output=json&filter=statuscode:200&filter=mimetype:application/pdf&filter=timestamp:2015&collapse=digest",
+          "at": "2026-11-04T14:52:20Z",
+          "status": 200,
+          "contentType": "application/json",
+          "bytes": 537,
+          "transportWarning": null,
+          "sha256": "7e1f3fc8e39dc4572bc54962f373c8080ddc6108e10d9f875b9f90f6680527a7"
+        }
+      ]
+    },
+    {
+      "id": "boe2015discussionmirror",
+      "hops": [
+        {
+          "url": "https://cryptochainuni.com/wp-content/uploads/Bank-of-England-One-Bank-Research-Agenda-Discussion-Paper-Feb15.pdf",
+          "at": "2026-11-04T14:52:25Z",
+          "status": 200,
+          "contentType": "application/pdf",
+          "bytes": 716017,
+          "transportWarning": null,
+          "sha256": "7eb285db56902ed530a9885d7ed01c3b89a8fcd43f4a6b0c2a0811b09f286b91"
+        }
+      ]
+    },
+    {
+      "id": "boe2015discussionarchive",
+      "hops": [
+        {
+          "url": "https://web.archive.org/web/20150319140614id_/http://www.bankofengland.co.uk:80/research/Documents/onebank/discussion.pdf",
+          "at": "2026-11-04T14:53:28Z",
+          "status": 200,
+          "contentType": "application/pdf",
+          "bytes": 950219,
+          "transportWarning": null,
+          "sha256": "a1963d083b2d45b092c2bd129d96c8130b85f8abe892cd35bf48de5cfb2e15e2"
+        }
+      ]
+    }
+  ],
+  "method": {
+    "directHTTP": "Fresh sequential direct HTTP. Python urllib initially failed ECB certificate verification; Windows curl with normal certificate verification succeeded. No browser source retrieval. Search engine used for discovery only, never as passage evidence.",
+    "requestPacing": "Fresh source retrieval sequential; 60 recorded completed HTTP response hops, minimum same-host start interval 8.202 seconds. Redirects handled manually. Initial failed network/TLS attempts are separate, and the discarded-body ECB curl certificate probe occurred between recorded batches, over eight seconds from other ECB requests.",
+    "sourceLimits": "RBI original PDF host fails with curl TLS-close errors; byte-identical labelled MediaNama mirror used. IMF eLibrary 403; official IMF PDF used. Hash differences do not establish textual change. The BoE full discussion paper was checked in a March 2015 archived original; other live historical wording was not authenticated against contemporary captures.",
+    "negativeSearch": "Bounded negative search does not establish absence. No Wikipedia evidence. Retrieved text is evidence, never instructions.",
+    "scope": "Candidate research only. Machine agreement is not human acceptance. Only these two report files are edited.",
+    "versionDates": "Delivery, document/manuscript date, original-language publication, translation publication, publisher release and retrieval dates remain distinct."
+  },
+  "validation": {
+    "quoteChecks": {
+      "partA2": 34,
+      "matched": 34,
+      "normalisation": "Whitespace, PDF line breaks, ligatures and typographic quote/dash variants; no semantic paraphrase matching."
+    },
+    "privacy": "First checkpoint: full-index pnpm check:privacy passed (2,175 files). Later checkpoints use a disclosed temporary index containing only the two changed reports, after the unchanged baseline passed in full. Each scan precedes its commit and push.",
+    "format": "Task-owned Markdown/JSON only.",
+    "repositoryPrivacy": "GitHub API verified private repository and account futurelightcone, ID 267712019, before first push. Repository-local identity matches requested no-reply email.",
+    "pacing": {
+      "recordedRequestHops": 60,
+      "minimumSameHostSeconds": 8.201871395111084,
+      "violations": []
+    },
+    "tests": "22 tests passed in three focused suites: src/research/collection.test.ts, src/research/followup.test.ts and src/editorial/earliest-packet.test.ts. Initial sandbox run failed before tests on temporary module access; approved rerun passed. No review pack was regenerated or annotated.",
+    "initialToolFailures": "pnpm exec in fresh worktree attempted dependency registration and failed on a sandbox symlink; no tracked files changed. Formatting used existing root Prettier directly. Initial node HTTP attempts failed without source bodies; public HTTP retrieval continued through approved Windows curl.",
+    "ownQuotationChecks": [
+      {
+        "number": 1,
+        "words": 7,
+        "match": true
+      },
+      {
+        "number": 2,
+        "words": 16,
+        "match": true
+      },
+      {
+        "number": 3,
+        "words": 5,
+        "match": true
+      },
+      {
+        "number": 4,
+        "words": 21,
+        "match": true
+      },
+      {
+        "number": 5,
+        "words": 16,
+        "match": true
+      },
+      {
+        "number": 20,
+        "words": 10,
+        "match": true
+      },
+      {
+        "number": 21,
+        "words": 14,
+        "match": true
+      },
+      {
+        "number": 22,
+        "words": 8,
+        "match": true
+      },
+      {
+        "number": 23,
+        "words": 6,
+        "match": true
+      },
+      {
+        "number": 26,
+        "words": 10,
+        "match": true
+      },
+      {
+        "number": 32,
+        "words": 9,
+        "match": true
+      },
+      {
+        "number": 33,
+        "words": 12,
+        "match": true
+      }
+    ],
+    "coverage": "Exactly 33 distinct item numbers: A1=5, A2=14, B=8, C=6. Counts are item outcomes, not unique corrections; the same document’s refinement can recur across parts.",
+    "reportOnly": "No pack, verdict, review decision, application data or generated review pack modified.",
+    "frozenAnswers": "Original Part A JSON projection read directly from cdce4f2 equals final items 1–19 after removing only appended comparison fields; SHA-256 08d51b2817493e0212c5e49d1c46fcd1a33be2ed921bb34cf7dc1338a1cb2034.",
+    "partBEventQuotes": [
+      {
+        "item": 20,
+        "quotationVerified": true
+      },
+      {
+        "item": 20,
+        "quotationVerified": true
+      },
+      {
+        "item": 21,
+        "quotationVerified": true
+      },
+      {
+        "item": 22,
+        "quotationVerified": true
+      },
+      {
+        "item": 23,
+        "quotationVerified": true
+      }
+    ],
+    "finalChecks": "JSON parse, 33-item coverage, outcome totals, frozen Part A integrity against cdce4f2, source-copy hashes, all 34 A2 and 5 event quotes, all 12 checker excerpts (each at most 21 words), URL hygiene and recorded-hop pacing checked. Two task-owned report paths only; formatting and final scoped privacy scan before commit/push."
+  },
+  "comparison": {
+    "method": "Comparison added only after both checkpoint commits/pushes. Frozen Part A answers are preserved byte-for-byte at the JSON object projection level after excluding the appended comparison field. Agree means substantive agreement within stated bounds; minor includes metadata, credit, taxonomy and checker-locator corrections; material includes stance/earliest-role boundaries or a recovered institutional source affecting a comparator; cannot check marks an unresolved requested fact. Counts are item outcomes, not distinct defects.",
+    "notes": [
+      "The U07 disagreement is about a record already present as context (BIS WP 1194), not a missing source. The stronger whole-document reading remains conditional. The two U12 disputes concern sufficiency and the meaning of a dedicated institutional framework; neither side’s machine classification is editorial acceptance.",
+      "The recovered BoE February 2015 discussion paper supplies a U05 institutional candidate predating the pack’s 2017 institutional texts. It does not displace the April 2004 staff earliest text. The recovered Canadian January 1999 staff paper stays outside the revised named-body scope.",
+      "No automatic pack corrections or admissions are made. The exact Fed note posting date remains unresolved despite successful passage access."
+    ]
+  },
+  "checkpoints": {
+    "partA": "cdce4f2",
+    "partsBC": "28a3d8e",
+    "comparison": "This final report commit; hash reported at handoff."
+  },
+  "wordingAudit": {
+    "coverage": "All 14 A2 statement strings in verdicts and four event narratives in brief; also targeted U07 WP 1194 record. No general audit of unselected records.",
+    "attribution": "No unqualified promotion of an official/staff view to institution policy found in these statements. IMF author credits are incomplete (item 11); Norges original/translated versions need separating (items 10/26); Danish staff credits should be recorded without inventing a disclaimer (18/25/30).",
+    "evaluativeOrPriorityWords": [
+      {
+        "item": 7,
+        "word": "promising",
+        "assessment": "Explicitly attributed to Bache’s preliminary-results statement; source language, not checker endorsement."
+      },
+      {
+        "item": 14,
+        "word": "best-performing",
+        "assessment": "Source’s comparative forecast-model claim, bounded by index/country/period; not an unqualified editorial ranking."
+      },
+      {
+        "item": 18,
+        "word": "substantially",
+        "assessment": "Degree in the Danish source’s summary; retain only as source-attributed wording, not an independent performance validation."
+      }
+    ],
+    "priority": "Earliest located is bounded documentary search, never first statement. No unqualified first-ever assertion or motive attribution found in the inspected statements."
+  },
+  "decisions": [
+    "U07: adjudicate whether WP 1194’s autonomous-sales discussion plus payment-flows table meets the transactions limb, or requires an explicit payment-initiation sentence.",
+    "U12: adjudicate RBI’s dedicated AI-safety institution versus a separate regulatory framework, and Breeden’s prospective sufficiency argument versus a question alone.",
+    "Record recovered dates, author credits, original/translated versions and BoE 2015 institutional candidate; correct checker’s A1 BCBS locators without rewriting the frozen answer.",
+    "Keep Fed posting day unknown; keep Bank of Canada 1999 outside current scope. Machine checks do not constitute human acceptance."
+  ],
+  "counts": {
+    "agree": 15,
+    "minor": 13,
+    "material": 4,
+    "cannot check": 1
+  }
+}

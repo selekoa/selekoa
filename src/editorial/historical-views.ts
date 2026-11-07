@@ -11,6 +11,7 @@ import entities from '../../data/entities.json';
 import claims from '../../data/claims.json';
 import sources from '../../data/sources.json';
 import evidence from '../../data/evidence.json';
+import aiMoney from '../../review/ai-money-admission-before-2026-11-06.json';
 import corrections from '../../review/corrections-2026-11-06-before-2026-11-06.json';
 import predictions from '../../review/predictions-admission-before-2026-11-05.json';
 import lawsCompared2 from '../../review/laws-compared-admission-2-before-2026-11-05.json';
@@ -129,8 +130,10 @@ export function revert<R extends Raw>(raw: R, snapshot: Snapshot): R {
 
 const current = { meta, entities, claims, sources, evidence };
 
+/** Raw stored rows at schema 2.32 as released in v0.31.1, before the admission of "AI and money" of 2026-11-06 (schema 2.33). */
+export const preAiMoneyRaw = revert(current, aiMoney);
 /** Raw stored rows at schema 2.32 as released in v0.31.0, before the correction release of 2026-11-06. */
-export const preCorrections1106Raw = revert(current, corrections);
+export const preCorrections1106Raw = revert(preAiMoneyRaw, corrections);
 /** Raw stored rows at schema 2.31 as released in v0.30.0, before the admission of "Predictions on record" of 2026-11-05 (schema 2.32). */
 export const prePredictionsRaw = revert(preCorrections1106Raw, predictions);
 /** Raw stored rows at schema 2.30 as released in v0.29.2, before part 2 of the laws-compared admission of 2026-11-05 (schema 2.31). */

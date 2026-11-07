@@ -207,6 +207,16 @@ or version), required for a contested or unresolved record. There is no outcome 
 The collection kind `predictions` is added for the collection's page
 (`/predictions/<id>`). No file or column changes, so the format version stays 1.10.
 
+Dataset schema 2.33 (2026-11-06) adds, inside `attributes.thought`, an optional `voice`
+for "AI and money": who a text speaks for, `institution` (the authority's own text),
+`official` (a speech, remarks or testimony, the speaker's), `staff` (a working or staff
+paper, its authors') or `committee` (a report issued in a committee's name). Every
+proposition record of one text gives the same voice. A `relay` record in such a
+collection, as in a tiered one, never holds an earliest located role and its date does
+not decide which record does. The predicate `launched` may also have a public body as
+subject or object (a government launching an institute). The voice is a provisional
+nested value, so the format version stays 1.10.
+
 A release is never overwritten. `pnpm release` refuses an existing or earlier version,
 and `pnpm release <version> --check` regenerates an existing release and compares it
 byte for byte while the data is unchanged. A release states the dataset schema version

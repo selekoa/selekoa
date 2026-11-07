@@ -12,7 +12,7 @@ import { readSiteConfig } from './site-config.ts';
 const load = <T>(file: string): Promise<T> =>
   tsImport(pathToFileURL(path.resolve(file)).href, import.meta.url);
 
-/** Each file's published path and its text: Compare frameworks, model cards, laws, then predictions. */
+/** Each file's published path and its text: Compare frameworks, model cards, laws, predictions, then AI and money. */
 export async function comparisonCsvFiles() {
   const data = await loadDataset();
   const { comparisonCsv } = await load<
@@ -42,6 +42,12 @@ export async function comparisonCsvFiles() {
   const { predictionsCsvPath } = await load<
     typeof import('../src/reading/predictions-page')
   >('src/reading/predictions-page.ts');
+  const { propositionsCsv, propositionsCsvPath } = await load<
+    typeof import('../src/domain/propositions-csv')
+  >('src/domain/propositions-csv.ts');
+  const { aiAndMoney } = await load<
+    typeof import('../src/reading/ai-and-money')
+  >('src/reading/ai-and-money.ts');
   const { comparisonCsvPath } = await load<
     typeof import('../src/domain/addresses')
   >('src/domain/addresses.ts');
@@ -68,6 +74,10 @@ export async function comparisonCsvFiles() {
       fileName: predictionsCsvPath.slice(1),
       source: predictionsCsv(data, predictionsOnRecord, baseUrl),
     },
+    {
+      fileName: propositionsCsvPath(aiAndMoney.id).slice(1),
+      source: propositionsCsv(data, aiAndMoney, baseUrl),
+    },
   ];
 }
 
@@ -82,7 +92,11 @@ export function comparisonCsvModule(): Plugin {
     },
     configureServer(server) {
       server.middlewares.use((req, res, next) => {
-        if (!/^\/(compare|predictions)\/[^/]+\.csv$/.test(req.url ?? ''))
+        if (
+          !/^\/(compare|predictions|propositions)\/[^/]+\.csv$/.test(
+            req.url ?? '',
+          )
+        )
           return next();
         void comparisonCsvFiles().then((files) => {
           const file = files.find((f) => `/${f.fileName}` === req.url);

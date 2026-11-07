@@ -242,7 +242,7 @@ test('economics page names tier-1 and tier-2 earliest texts and shows conditions
   );
   await expect(headlines).toContainText('Earliest located, tier 2');
   await expect(headlines).toContainText(
-    'If Uploads Come First: The Crack of a Future Dawn · 1994-03-08 · wording attested 1998-02-20',
+    'If Uploads Come First: The Crack of a Future Dawn · 1994 · wording attested 1998-02-20',
   );
   await expect(
     g07.locator(

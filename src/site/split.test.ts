@@ -335,6 +335,7 @@ describe('propositions collections without their text', () => {
       'openPremises',
       'related',
       'exchanges',
+      'events',
     ];
     propositionCollections.forEach((whole, i) => {
       const frame = propositionFrames[i] as Record<string, unknown>;

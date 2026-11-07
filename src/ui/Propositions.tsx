@@ -10,6 +10,8 @@ import {
   roleLabels,
   stanceLabels,
   tierLabels,
+  voiceLabels,
+  eventStageLabels,
   type PropositionEntry,
   type PropositionRecord,
   type PropositionsCollection,
@@ -24,6 +26,7 @@ import { ReviewMarkers } from './ReviewMarkers';
 import { startIds } from './start-ids';
 import { startHref, type StartAction } from './SiteChrome';
 import { stancesTitle } from '../reading/proposition-stances-page';
+import { propositionsCsvPath } from '../domain/propositions-csv';
 import './reading-first.css';
 import './control-commitments.css';
 import './propositions.css';
@@ -42,6 +45,7 @@ function recordKind(r: PropositionRecord) {
     .map((role) => roleLabels[role]);
   return [
     stanceLabels[r.stance],
+    ...(r.voice ? [voiceLabels[r.voice]] : []),
     ...roles,
     ...(r.tier ? [tierLabels[r.tier.value]] : []),
     ...(isModelScenario(r) ? ['Model scenario'] : []),
@@ -227,6 +231,7 @@ function Headline({
             {...props}
           >
             {record.label} · {recordDates(record)}
+            {record.voice ? ` · ${voiceLabels[record.voice]}` : ''}
             {record.term ? ` · “${record.term}”` : ''}
           </InspectLink>
         ) : (
@@ -288,6 +293,14 @@ function PropositionSection({
           }
           {...props}
         />
+        {entry.earliest?.voice && entry.earliest.voice !== 'institution' && (
+          <Headline
+            label="Earliest located institutional text"
+            record={entry.earliestInstitution}
+            empty="No located text in an institution’s own voice meets the criterion."
+            {...props}
+          />
+        )}
         {!entry.earliestTier2 && entry.earliestTier2Withheld && (
           <Headline
             label="Earliest located, tier 2"
@@ -460,6 +473,47 @@ function SearchNote({ view }: { view: PropositionsView }) {
   );
 }
 
+/**
+ * Schema 2.33: institutional events, as dated statements of status or
+ * announced plans, in date order. A list, so it reads the same without
+ * JavaScript and with a keyboard.
+ */
+function Events({ view, ...props }: ClaimProps & { view: PropositionsView }) {
+  if (!view.events.length) return null;
+  return (
+    <section className="prop-events" aria-labelledby="prop-events-title">
+      <h2 id="prop-events-title">Institutional events</h2>
+      <p className="doc-family-note">
+        What an authority’s own text, or one of its officials, states about its
+        work on AI: a plan announced, work stated as under way, or work stated
+        as done. Each is dated by the text that states it. A statement is not
+        evidence that the work was carried out or what it achieved.
+      </p>
+      <ol className="record-rows prop-rows">
+        {view.events.map((e) => (
+          <li key={e.claim.id}>
+            <InspectLink
+              claim={e.claim}
+              label={`Inspect: ${e.claim.statement}`}
+              {...props}
+            >
+              <span className="record-row-heading">
+                <span className="control-kind">
+                  {eventStageLabels[e.stage]} · {e.body}
+                </span>
+                <span className="control-route">
+                  {e.claim.time.kind === 'event' ? e.claim.time.date : ''}
+                </span>
+              </span>
+              <span className="dossier-statement">{e.claim.statement}</span>
+            </InspectLink>
+          </li>
+        ))}
+      </ol>
+    </section>
+  );
+}
+
 /** Published exchanges between recorded texts, as a reading list. */
 function Exchanges({
   view,
@@ -525,6 +579,7 @@ function ReadingKey({ view }: { view: PropositionsView }) {
   const conditions = records.some((r) => r.conditions);
   const estimates = records.some((r) => r.estimates);
   const scenario = records.some(isModelScenario);
+  const voices = records.some((r) => r.voice);
   return (
     <details className="doc-limits-box prop-key">
       <summary>How to read a record</summary>
@@ -643,6 +698,20 @@ function ReadingKey({ view }: { view: PropositionsView }) {
           survives only in a later copy. “Claimed” gives an earlier talk, draft
           or presentation that does not date the wording.
         </dd>
+        {voices && (
+          <>
+            <dt>Voice: who a text speaks for</dt>
+            <dd>
+              An institution’s own text is the institution’s. A speech or
+              remarks are the speaker’s, attributed to the speaker and the
+              office, with any statement that the views are the speaker’s own. A
+              staff paper is its authors’. A committee report is the
+              committee’s. Where a speech, a staff paper or a committee report
+              is earliest located, the earliest located institutional text is
+              shown beside it.
+            </dd>
+          </>
+        )}
         <dt>Register: the kind of text</dt>
         <dd>
           Fiction, satire, a dream frame or a relay of another author is
@@ -725,6 +794,15 @@ export function Propositions({
             target={{ kind: 'propositions', id: collection.id }}
             label="Copy link to this page"
           />
+          {collection.events && (
+            <a
+              className="cmp-download"
+              href={propositionsCsvPath(collection.id)}
+              download
+            >
+              Download CSV
+            </a>
+          )}
         </div>
         {onAction && (
           <p className="prop-stances-link">
@@ -797,6 +875,7 @@ export function Propositions({
           ))}
         </section>
       ))}
+      <Events view={view} {...props} />
       <Exchanges view={view} onDocument={onEntity} />
     </article>
   );
