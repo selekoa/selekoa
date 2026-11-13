@@ -22,9 +22,12 @@ import {
 import pack1 from '../../research/model-cards/pack.json';
 import pack2 from '../../research/model-cards-2/pack.json';
 import pack3 from '../../research/model-cards-3/pack.json';
+import pack4 from '../../research/model-cards-4/pack.json';
+import pack5 from '../../research/model-cards-5/pack.json';
 import map1 from '../../review/model-cards-admission-1-map-2026-11-03.json';
 import map3 from '../../review/model-cards-admission-3-map-2026-11-05.json';
 import map4 from '../../review/model-cards-admission-4-map-2026-11-05.json';
+import map5 from '../../review/model-cards-admission-5-map-2026-11-10.json';
 import questions from '../../research/model-cards/questions.json';
 
 const data = repository.data;
@@ -36,17 +39,25 @@ const issues = (d: Dataset) => {
   return result.success ? [] : result.error.issues.map((i) => i.message);
 };
 const cellOf = (d: Dataset, id: string) => d.claims.find((c) => c.id === id)!;
-// The three admitted packs (parts 1–2, part 3 and part 4, without the cards
-// the maintainer held) and each card's document.
+// The admitted packs (parts 1–2, part 3, part 4 without the cards the
+// maintainer held, and part 5 with packs 4 and 5) and each card's document.
 const held = new Set<string>(map4.held);
-const packCards = [...pack1.cards, ...pack2.cards, ...pack3.cards].filter(
-  (c) => !held.has(c.id),
-);
-const packCells = [...pack1.cells, ...pack2.cells, ...pack3.cells].filter(
-  (c) => !held.has(c.card),
-);
+const packCards = [
+  ...pack1.cards,
+  ...pack2.cards,
+  ...pack3.cards,
+  ...pack4.cards,
+  ...pack5.cards,
+].filter((c) => !held.has(c.id));
+const packCells = [
+  ...pack1.cells,
+  ...pack2.cells,
+  ...pack3.cells,
+  ...pack4.cells,
+  ...pack5.cells,
+].filter((c) => !held.has(c.card));
 const entityOf = new Map<string, string>(
-  [map1.cards, map3.cards, map4.cards].flatMap((m) =>
+  [map1.cards, map3.cards, map4.cards, map5.cards].flatMap((m) =>
     Object.entries(m as Record<string, { entity: string }>).map(
       ([card, plan]) => [card, plan.entity],
     ),
@@ -72,12 +83,15 @@ describe('model cards compared (schema 2.30)', () => {
     expect([...view.claimIds].sort()).toEqual(cells.map((c) => c.id).sort());
   });
 
-  it('keeps the adjudicated pack status of every cell, with decision 13a', () => {
+  it('keeps the adjudicated pack status of every cell, with decisions 13a and B', () => {
     for (const c of packCells) {
+      // Gemini 3 Flash Q05 is re-read as partly (decision B of 2026-11-10).
       const expected =
         c.card === 'openai-gpt-4v' && c.question === 'Q15'
           ? 'not-found'
-          : c.status;
+          : c.card === 'google-deepmind-gemini-3-flash' && c.question === 'Q05'
+            ? 'partly'
+            : c.status;
       expect(
         view.cell(entityOf.get(c.card)!, 'MC.' + c.question).status,
         `${c.card} ${c.question}`,

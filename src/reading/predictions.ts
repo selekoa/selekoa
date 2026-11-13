@@ -90,6 +90,7 @@ export const predictionsOnRecord: PredictionsCollection = {
       'Every quotation was matched mechanically against the retrieved text, or against the dataset’s own checked passage, or read on a page image where the copy has no text layer. A fresh retrieval at admission on 2026-11-05 matched again every quotation whose source could be retrieved.',
       'Copies the preparing assistant could not reach (Internet Archive copies, some publisher pages) were read by a model from a different family, OpenAI’s GPT; each record says whose reading it rests on.',
       'A fresh-context audit by a Claude model re-read the records. Two checks by an OpenAI model followed, each answering blind before it compared its answers with the records. The maintainer decided the open questions on 2026-11-04 and 2026-11-05.',
+      'After admission, a blind audit by an OpenAI model of a sample of admitted records (2026-11-09) led to corrections applied on 2026-11-10: a distribution’s mean and mode are no longer shown as probabilities (Legg, 2009 to 2011), and Turing’s and de Garis’s locators and wording follow the printed copies cited.',
       'Where a source’s length is not known, or a quotation would pass the source’s quotation limit, the passage is a labelled paraphrase with the text’s own words in quotation marks.',
     ],
     gaps: [

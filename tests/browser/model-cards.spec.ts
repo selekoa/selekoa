@@ -40,7 +40,7 @@ test('the table opens from the Governance hub: cards as rows, questions as colum
   await expect(table.locator('thead th').nth(1)).toContainText('Q01');
   await expect(table.locator('thead th').nth(16)).toContainText('Q16');
   // Twenty-eight cards under six developers, alphabetical.
-  await expect(table.locator('tbody th[scope="row"]')).toHaveCount(34);
+  await expect(table.locator('tbody th[scope="row"]')).toHaveCount(50);
   await expect(table.locator('.cmp-dimension-row')).toHaveText([
     'Anthropic',
     'Google DeepMind',
@@ -105,16 +105,16 @@ test('the developer filter keeps one developer’s cards, in the address', async
   await page.getByLabel('Developer').selectOption('openai');
   await expect(page).toHaveURL(/\/compare\/model-cards\?developer=openai$/);
   const rows = page.locator('.mc-table tbody th[scope="row"]');
-  await expect(rows).toHaveCount(7);
+  await expect(rows).toHaveCount(11);
   await expect(page.locator('.mc-table .cmp-dimension-row')).toHaveText([
     'OpenAI',
   ]);
-  await expect(page.getByText('Showing 7 of 34 cards')).toBeVisible();
+  await expect(page.getByText('Showing 11 of 50 cards')).toBeVisible();
   // The address opens the same filter afresh.
   await page.goto('/compare/model-cards?developer=xai');
-  await expect(rows).toHaveCount(4);
+  await expect(rows).toHaveCount(5);
   await page.getByLabel('Developer').selectOption('');
-  await expect(rows).toHaveCount(34);
+  await expect(rows).toHaveCount(50);
 });
 
 test('every cell is also listed card by card, by keyboard', async ({
@@ -126,9 +126,9 @@ test('every cell is also listed card by card, by keyboard', async ({
   await list.locator('summary').focus();
   await page.keyboard.press('Enter');
   await expect(list).toHaveAttribute('open', '');
-  await expect(list.locator('.mc-list-card')).toHaveCount(34);
+  await expect(list.locator('.mc-list-card')).toHaveCount(50);
   await expect(list.locator('.mc-list-card > dl > div > dt')).toHaveCount(
-    34 * 16,
+    50 * 16,
   );
   await expect(
     list.locator('.mc-list-card').first().locator('dt').first(),
@@ -143,7 +143,7 @@ test('each question has a page listing every card’s cell', async ({ page }) =>
   await expect(page.locator('#mc-question-title')).toContainText(
     'Release decision',
   );
-  await expect(page.locator('.cmp-question .cmp-rows > li')).toHaveCount(34);
+  await expect(page.locator('.cmp-question .cmp-rows > li')).toHaveCount(50);
   await expect(page.locator('.cmp-question .cmp-criterion')).toContainText(
     'Criterion:',
   );
@@ -163,12 +163,12 @@ test('the CSV link downloads one row per cell', async ({ page, request }) => {
   expect(response.ok()).toBe(true);
   const text = await response.text();
   expect(text.startsWith('card_id,developer,card,card_date,')).toBe(true);
-  // A header row and 544 cells; quoted fields may hold line breaks.
+  // A header row and 800 cells; quoted fields may hold line breaks.
   expect(
     text.match(
       /\r\n(?=[a-z0-9-]+,(Anthropic|Google DeepMind|Meta|Microsoft|OpenAI|xAI),)/g,
     ),
-  ).toHaveLength(544);
+  ).toHaveLength(800);
 });
 
 test('cards link to the edition they cite, and editions to the cards that cite them', async ({
@@ -191,7 +191,7 @@ test('cards link to the edition they cite, and editions to the cards that cite t
   await expect(page).toHaveURL(
     /\/compare\/model-cards\?developer=google-deepmind$/,
   );
-  await expect(page.locator('.mc-table tbody th[scope="row"]')).toHaveCount(4);
+  await expect(page.locator('.mc-table tbody th[scope="row"]')).toHaveCount(8);
 });
 
 for (const width of [1440, 390])
@@ -235,9 +235,9 @@ test.describe('without JavaScript', () => {
   }) => {
     await page.goto('/compare/model-cards');
     await expect(page.locator('.mc-table tbody th[scope="row"]')).toHaveCount(
-      34,
+      50,
     );
-    await expect(page.locator('.mc-list .mc-list-card')).toHaveCount(34);
+    await expect(page.locator('.mc-list .mc-list-card')).toHaveCount(50);
     await page.goto('/compare/model-cards/mc-q05');
     await expect(
       page.locator('.cmp-question blockquote').first(),

@@ -1,0 +1,551 @@
+{
+  "group": "openai",
+  "drafter": "Claude (preparing session), 2026-11-06",
+  "cards": [
+    {
+      "id": "openai-o3-mini",
+      "developer": "OpenAI",
+      "model": "o3-mini",
+      "year": 2025,
+      "source": "openai-o3-mini",
+      "frameworkEditions": ["preparedness-beta-2023"],
+      "frameworkEditionNote": "Reference [20] (PDF p. 36) cites “Openai preparedness framework (beta)”, 2023, with the address of the beta PDF; the card’s “[20]” citation follows the Safety Advisory Group’s classification (§5, PDF p. 7).",
+      "earliestLocated": "2025-01-31"
+    },
+    {
+      "id": "openai-deep-research",
+      "developer": "OpenAI",
+      "model": "Deep research",
+      "year": 2025,
+      "source": "openai-deep-research",
+      "frameworkEditions": ["preparedness-beta-2023"],
+      "frameworkEditionNote": "Reference [3] (PDF p. 35) cites “Openai preparedness framework beta”, 2023, with the address of the beta PDF; the card cites [3] at the Safety Advisory Group’s classification (§3.4, PDF p. 11). A table on PDF p. 3 lists tracked categories with High and Critical capability thresholds and safeguard guidelines without naming an edition; no edition is inferred from it.",
+      "earliestLocated": "2025-02-25"
+    }
+  ],
+  "cells": [
+    {
+      "card": "openai-o3-mini",
+      "question": "Q01",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "openai-o3-mini",
+          "locator": "Title block, PDF p. 1",
+          "quote": "OpenAI o3-mini System Card OpenAI January 31, 2025"
+        }
+      ],
+      "note": "The card prints a day-precision date with its title; no revision date was found. The file name of the address (“feb10”) is not a printed date."
+    },
+    {
+      "card": "openai-o3-mini",
+      "question": "Q02",
+      "status": "partly",
+      "passages": [
+        {
+          "source": "openai-o3-mini",
+          "locator": "§4.2 Jailbreaks through custom developer messages, PDF p. 5",
+          "quote": "the deployment of OpenAI o3-mini in the API allows developers to specify a custom developer message"
+        }
+      ],
+      "note": "The card names API deployment as a release form, without a release date. Its statement that the post-mitigation model was the final checkpoint as of 31 January 2025 (§5, PDF p. 8) dates a checkpoint, not a release.",
+      "search": {
+        "read": "Whole card (36 pages): §§1–7, appendix and references",
+        "terms": [
+          "release",
+          "launch",
+          "available",
+          "API",
+          "ChatGPT",
+          "January"
+        ],
+        "setAside": [
+          {
+            "locator": "§5, PDF p. 8",
+            "reason": "“the final model checkpoint as of Jan 31, 2025” dates the evaluated checkpoint, not a release."
+          }
+        ]
+      }
+    },
+    {
+      "card": "openai-o3-mini",
+      "question": "Q03",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "openai-o3-mini",
+          "locator": "Reference [20], PDF p. 36",
+          "quote": "Openai preparedness framework (beta)."
+        }
+      ],
+      "note": "The card names the Preparedness Framework and cites the beta edition in its bibliography, with its address."
+    },
+    {
+      "card": "openai-o3-mini",
+      "question": "Q04",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "openai-o3-mini",
+          "locator": "Reference [20], PDF p. 36",
+          "quote": "openai-preparedness-framework-beta.pdf, 2023. Accessed: 2024-09-11."
+        }
+      ],
+      "note": "The reference gives the beta PDF’s address at cdn.openai.com, wrapped across lines in the text layer."
+    },
+    {
+      "card": "openai-o3-mini",
+      "question": "Q05",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "openai-o3-mini",
+          "locator": "§1 Introduction, PDF p. 1",
+          "quote": "recommended classifying the OpenAI o3-mini (Pre-Mitigation) model as Medium risk overall. It scores Medium risk for Persuasion, CBRN (chemical, biological, radiological, nuclear), and Model Autonomy, and Low risk for Cybersecurity."
+        }
+      ],
+      "note": "The Safety Advisory Group’s recommended classification; the card adds that the post-mitigation levels were rated the same as the pre-mitigation levels (§5, PDF p. 7)."
+    },
+    {
+      "card": "openai-o3-mini",
+      "question": "Q06",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "openai-o3-mini",
+          "locator": "§5.2 Mitigations, PDF p. 9",
+          "quote": "Heightened monitoring and detection efforts for CBRN and persuasion risks given their Medium risk levels."
+        }
+      ],
+      "note": "The card ties strengthened mitigations to the Medium designations for CBRN, persuasion and model autonomy, and lists new mitigations for cybersecurity. A stated safeguard is the developer’s account."
+    },
+    {
+      "card": "openai-o3-mini",
+      "question": "Q07",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "openai-o3-mini",
+          "locator": "§5.4 Chemical and Biological Threat Creation, PDF p. 11",
+          "quote": "Our evaluations found that o3-mini can help experts with the operational planning of reproducing a known biological threat, which meets our medium risk threshold."
+        }
+      ],
+      "note": "Outcome category: Medium. The card also reports radiological and nuclear evaluations (§5.5). Evaluation details are not recorded (hazard rule)."
+    },
+    {
+      "card": "openai-o3-mini",
+      "question": "Q08",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "openai-o3-mini",
+          "locator": "§5.3 Cybersecurity, PDF p. 9",
+          "quote": "o3-mini does not sufficiently advance real-world vulnerability exploitation capabilities to indicate medium risk."
+        }
+      ],
+      "note": "Outcome category: Low."
+    },
+    {
+      "card": "openai-o3-mini",
+      "question": "Q09",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "openai-o3-mini",
+          "locator": "§5.7 Model Autonomy, PDF p. 25",
+          "quote": "which elevates it to Medium."
+        }
+      ],
+      "note": "Outcome category: Medium, on the strength of software-engineering performance; the card says the model still performs poorly on evaluations of real-world ML research relevant to self-improvement, which a High classification would require (§1)."
+    },
+    {
+      "card": "openai-o3-mini",
+      "question": "Q10",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "openai-o3-mini",
+          "locator": "§5.6 Persuasion, PDF p. 21",
+          "quote": "o3-mini does not outperform top human writers and does not reach our high risk threshold."
+        }
+      ],
+      "note": "Outcome category: Medium. The card reports human-level written persuasion."
+    },
+    {
+      "card": "openai-o3-mini",
+      "question": "Q11",
+      "status": "partly",
+      "passages": [
+        {
+          "source": "openai-o3-mini",
+          "locator": "§5.6.4 MakeMeSay, PDF p. 24",
+          "quote": "MakeMeSay is an automated contextual evaluation designed to measure models’ deception capabilities"
+        }
+      ],
+      "note": "The card reports a deception-capability evaluation within the persuasion category, against a model simulating a human, without a conclusion specific to deception. No evaluation of scheming, sabotage or undermining oversight was found.",
+      "search": {
+        "read": "Whole card (36 pages): §§1–7, appendix and references",
+        "terms": [
+          "scheming",
+          "decept",
+          "sabotage",
+          "oversight",
+          "Apollo",
+          "alignment"
+        ],
+        "setAside": []
+      }
+    },
+    {
+      "card": "openai-o3-mini",
+      "question": "Q12",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "openai-o3-mini",
+          "locator": "§4.3.1 Pairwise safety comparison, PDF p. 6",
+          "quote": "Pairwise red teaming was performed against an earlier variant, o3-mini-near-final-checkpoint."
+        },
+        {
+          "source": "openai-o3-mini",
+          "locator": "§4.3.2 Jailbreak Arena, PDF p. 7",
+          "quote": "OpenAI collaborated with Gray Swan to make the o3-mini-near-final-checkpoint model available for jailbreaking in the Gray Swan Arena."
+        }
+      ],
+      "note": "Scope: external red teaming of a near-final checkpoint (pairwise comparison with GPT-4o and o1, with web browsing and code execution) and a public jailbreak arena from 4 January 2025 focused on illicit advice and other harms."
+    },
+    {
+      "card": "openai-o3-mini",
+      "question": "Q13",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "openai-o3-mini",
+          "locator": "§4.3.2 Jailbreak Arena, PDF p. 7",
+          "quote": "OpenAI collaborated with Gray Swan to make the o3-mini-near-final-checkpoint model available for jailbreaking in the Gray Swan Arena."
+        }
+      ],
+      "note": "Gray Swan ran the jailbreak arena. Scale is named for human-sourced jailbreak data (§4.1.2)."
+    },
+    {
+      "card": "openai-o3-mini",
+      "question": "Q14",
+      "status": "not-found",
+      "search": {
+        "read": "Whole card (36 pages): §§1–7, appendix and references",
+        "terms": [
+          "government",
+          "AI Safety Institute",
+          "AISI",
+          "CAISI",
+          "U.S.",
+          "UK"
+        ],
+        "setAside": [
+          {
+            "locator": "§5.5 Radiological and Nuclear Threat Creation, PDF p. 19",
+            "reason": "Says a fuller nuclear evaluation “will require collaboration with the U.S. Department of Energy”: a future collaborator, not a body stated to have tested the model."
+          }
+        ]
+      }
+    },
+    {
+      "card": "openai-o3-mini",
+      "question": "Q15",
+      "status": "partly",
+      "passages": [
+        {
+          "source": "openai-o3-mini",
+          "locator": "§5, PDF p. 7",
+          "quote": "SAG also rated the post-mitigation risk levels the same as the pre-mitigation risk levels, to err on the side of caution."
+        }
+      ],
+      "note": "The named maker (the Safety Advisory Group) is attached to the risk classification, not to a release decision. The card’s conclusion refers to “our deployment of these models” without describing a decision (§7). Maintainer decision 6a.",
+      "search": {
+        "read": "Whole card (36 pages): §§1–7, appendix and references",
+        "terms": ["decision", "decid", "deploy", "launch", "release"],
+        "setAside": [
+          {
+            "locator": "§7 Conclusion, PDF p. 32",
+            "reason": "“Our deployment of these models reflects our belief …” gives a reason for deployment, not a described decision."
+          }
+        ]
+      }
+    },
+    {
+      "card": "openai-o3-mini",
+      "question": "Q16",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "openai-o3-mini",
+          "locator": "§5.1 Preparedness evaluations as a lower bound, PDF p. 8",
+          "quote": "our evaluations should still be seen as a lower bound for potential risks."
+        }
+      ],
+      "note": "The card adds that confidence intervals can underestimate uncertainty for small datasets (§5, PDF p. 8)."
+    },
+    {
+      "card": "openai-deep-research",
+      "question": "Q01",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "openai-deep-research",
+          "locator": "Title block, PDF p. 1",
+          "quote": "Deep Research System Card OpenAI∗ February 25, 2025"
+        },
+        {
+          "source": "openai-deep-research",
+          "locator": "§3.4.7, SWE-Lancer note, PDF p. 33",
+          "quote": "SWE-Lancer Note (Monday, July 28th)"
+        }
+      ],
+      "note": "The card prints a day-precision date. The copy read also carries a later note on one evaluation, headed “Monday, July 28th” and referring to an update of July 17, 2025, so it is a revised expression of the February card."
+    },
+    {
+      "card": "openai-deep-research",
+      "question": "Q02",
+      "status": "partly",
+      "passages": [
+        {
+          "source": "openai-deep-research",
+          "locator": "§1 Introduction, PDF p. 1",
+          "quote": "Before launching deep research and making it available to our Pro users, we conducted rigorous safety testing, Preparedness evaluations and governance reviews."
+        }
+      ],
+      "note": "The card names the release form (availability to ChatGPT Pro users), without a release date.",
+      "search": {
+        "read": "Whole card (36 pages): §§1–4, acknowledgements and references",
+        "terms": ["release", "launch", "available", "Pro", "February"],
+        "setAside": []
+      }
+    },
+    {
+      "card": "openai-deep-research",
+      "question": "Q03",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "openai-deep-research",
+          "locator": "Reference [3], PDF p. 35",
+          "quote": "Openai preparedness framework beta,"
+        }
+      ],
+      "note": "The card names the Preparedness Framework and cites the beta edition (2023) in its bibliography, with its address.",
+      "search": {
+        "read": "Whole card (36 pages): §§1–4, acknowledgements and references",
+        "terms": ["Preparedness Framework", "version", "beta"],
+        "setAside": [
+          {
+            "locator": "Table, PDF p. 3",
+            "reason": "Lists tracked categories with High and Critical capability thresholds and safeguard guidelines without naming an edition; not used to identify one."
+          }
+        ]
+      }
+    },
+    {
+      "card": "openai-deep-research",
+      "question": "Q04",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "openai-deep-research",
+          "locator": "Reference [3], PDF p. 35",
+          "quote": "openai-preparedness-framework-beta.pdf. https://cdn.openai.com/"
+        }
+      ],
+      "note": "The reference gives the beta PDF’s address, split across lines in the text layer."
+    },
+    {
+      "card": "openai-deep-research",
+      "question": "Q05",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "openai-deep-research",
+          "locator": "§3.4 Preparedness Framework Evaluations, PDF p. 11",
+          "quote": "the Safety Advisory Group [3] classified the deep research model as overall medium risk, including medium risk for cybersecurity, persuasion, CBRN, model autonomy."
+        }
+      ],
+      "note": "The card states Medium in all four tracked categories."
+    },
+    {
+      "card": "openai-deep-research",
+      "question": "Q06",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "openai-deep-research",
+          "locator": "§3.4.2 Preparedness Mitigations, PDF p. 12",
+          "quote": "given the Medium post-mitigation risk designations across all four risk areas evaluated, we have strengthened"
+        },
+        {
+          "source": "openai-deep-research",
+          "locator": "§3.4.2, PDF p. 13",
+          "quote": "Additional monitoring and targeted investigations of suspected abuses relating to Influence Operations, extremism, and improper political activities to address persuasion risks."
+        }
+      ],
+      "note": "The card ties strengthened mitigations to the Medium designations and lists them. A stated safeguard is the developer’s account."
+    },
+    {
+      "card": "openai-deep-research",
+      "question": "Q07",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "openai-deep-research",
+          "locator": "§3.4.4 Chemical and Biological Threat Creation, PDF p. 17",
+          "quote": "which meets our medium risk threshold."
+        }
+      ],
+      "note": "Outcome category: Medium. The summary’s finding is help to experts with operational planning; the card adds that several biology evaluations indicate models on the cusp of helping novices. Details are not recorded (hazard rule)."
+    },
+    {
+      "card": "openai-deep-research",
+      "question": "Q08",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "openai-deep-research",
+          "locator": "§3.4.3 Cybersecurity, PDF p. 13",
+          "quote": "Deep research sufficiently advances real-world vulnerability exploitation capabilities to indicate Medium risk."
+        }
+      ],
+      "note": "Outcome category: Medium; the card says no tested model meets the High threshold."
+    },
+    {
+      "card": "openai-deep-research",
+      "question": "Q09",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "openai-deep-research",
+          "locator": "§3.4.7 Model Autonomy, PDF p. 27",
+          "quote": "which elevates it to Medium risk level."
+        }
+      ],
+      "note": "Outcome category: Medium, on the strength of software-engineering performance."
+    },
+    {
+      "card": "openai-deep-research",
+      "question": "Q10",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "openai-deep-research",
+          "locator": "§3.4.6 Persuasion, PDF p. 24",
+          "quote": "Score for deep research: Medium"
+        }
+      ],
+      "note": "Outcome category: Medium. The card says it is reconsidering how to assess real-world persuasion risks."
+    },
+    {
+      "card": "openai-deep-research",
+      "question": "Q11",
+      "status": "partly",
+      "passages": [
+        {
+          "source": "openai-deep-research",
+          "locator": "§3.4.6 Persuasion, MakeMeSay, PDF p. 26",
+          "quote": "MakeMeSay is an automated contextual evaluation designed to measure models’ deception capabilities"
+        }
+      ],
+      "note": "The card reports a deception-capability evaluation within the persuasion category, against a model simulating a human, without a conclusion specific to deception. No evaluation of scheming, sabotage or undermining oversight was found.",
+      "search": {
+        "read": "Whole card (36 pages): §§1–4, acknowledgements and references",
+        "terms": [
+          "scheming",
+          "decept",
+          "sabotage",
+          "oversight",
+          "Apollo",
+          "alignment"
+        ],
+        "setAside": []
+      }
+    },
+    {
+      "card": "openai-deep-research",
+      "question": "Q12",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "openai-deep-research",
+          "locator": "§3.1 External red teaming methodology, PDF p. 2",
+          "quote": "OpenAI worked with groups of external red teamers to assess key risks associated with the capabilities of deep research."
+        }
+      ],
+      "note": "Scope: personal information and privacy, disallowed content, regulated advice, risky advice, prompt injections and jailbreaks; a targeted red-teaming campaign on risky advice is also reported (§3.3)."
+    },
+    {
+      "card": "openai-deep-research",
+      "question": "Q13",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "openai-deep-research",
+          "locator": "Acknowledgements, PDF p. 35",
+          "quote": "Red teaming organization: Lysios LLC"
+        }
+      ],
+      "note": "The card names Lysios LLC as a red-teaming organisation; individual red teamers are also listed."
+    },
+    {
+      "card": "openai-deep-research",
+      "question": "Q14",
+      "status": "not-found",
+      "search": {
+        "read": "Whole card (36 pages): §§1–4, acknowledgements and references",
+        "terms": [
+          "government",
+          "AI Safety Institute",
+          "AISI",
+          "CAISI",
+          "U.S.",
+          "UK"
+        ],
+        "setAside": [
+          {
+            "locator": "§3.4.5 Radiological and Nuclear Threat Creation, PDF p. 22",
+            "reason": "Says a fuller nuclear evaluation “will require collaboration with the U.S. Department of Energy”: a future collaborator, not a body stated to have tested the model."
+          }
+        ]
+      }
+    },
+    {
+      "card": "openai-deep-research",
+      "question": "Q15",
+      "status": "partly",
+      "passages": [
+        {
+          "source": "openai-deep-research",
+          "locator": "§1 Introduction, PDF p. 1",
+          "quote": "Before launching deep research and making it available to our Pro users, we conducted rigorous safety testing, Preparedness evaluations and governance reviews."
+        }
+      ],
+      "note": "The launch is stated as following safety testing and governance reviews, without a decision being described; the Safety Advisory Group is named only for the risk classification (§3.4). Maintainer decision 6a.",
+      "search": {
+        "read": "Whole card (36 pages): §§1–4, acknowledgements and references",
+        "terms": ["decision", "decid", "deploy", "launch", "release"],
+        "setAside": []
+      }
+    },
+    {
+      "card": "openai-deep-research",
+      "question": "Q16",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "openai-deep-research",
+          "locator": "§3.4, Preparedness evaluations as a lower bound, PDF p. 11",
+          "quote": "our Preparedness evaluations should still be seen as a lower bound for potential capabilities."
+        }
+      ],
+      "note": "The card also states that browsing can contaminate evaluation results and make them harder to interpret (§3.4.1)."
+    }
+  ],
+  "omissions": [],
+  "retrievalFailures": [],
+  "openQuestions": []
+}

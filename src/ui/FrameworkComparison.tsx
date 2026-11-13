@@ -289,6 +289,30 @@ export function FrameworkComparison(props: Props) {
         ]);
   const cardsCiting = (editionId: string) => {
     const cards = citedBy.get(editionId) ?? [];
+    // More than two cards are named by their count, so the column heading
+    // stays short enough for the first question to start on the first screen;
+    // they share one developer, so one link opens them all.
+    if (cards.length > 2) {
+      const developer = cardDeveloper(repository.data, cards[0]).id;
+      return (
+        <span className="cmp-cited-by">
+          Cited by{' '}
+          <NavLink
+            href={referencePath({
+              kind: 'compare',
+              id: modelCardsFrame.id,
+              developer,
+            })}
+            onOpen={() => {
+              props.onCards?.(developer);
+              window.scrollTo(0, 0);
+            }}
+          >
+            {cards.length} model cards
+          </NavLink>
+        </span>
+      );
+    }
     return cards.length ? (
       <span className="cmp-cited-by">
         Model cards citing this edition:{' '}

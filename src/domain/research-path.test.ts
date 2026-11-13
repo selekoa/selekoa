@@ -31,6 +31,7 @@ import labGenealogy2 from '../../review/lab-genealogy-2-admission-before-2026-11
 import modelCards1 from '../../review/model-cards-admission-1-before-2026-11-03.json';
 import modelCards3 from '../../review/model-cards-admission-3-before-2026-11-05.json';
 import modelCards4 from '../../review/model-cards-admission-4-before-2026-11-05.json';
+import modelCards5 from '../../review/model-cards-admission-5-before-2026-11-10.json';
 const data = repository.data;
 // Records of the 2026-10-17 lab genealogy, left out of the earlier counts.
 // The genealogy records, including the five admitted on 2026-10-26, and the
@@ -55,11 +56,12 @@ const fromGenealogy = new Set([
   // The 2026-11-01 lab genealogy 2 records (founders, moves and rounds,
   // 2023–2026) are left out of the frozen counts too.
   ...labGenealogy2.added.claims,
-  // The 2026-11-03 and 2026-11-05 model-cards records (card publication,
-  // citations and cells).
+  // The 2026-11-03, 2026-11-05 and 2026-11-10 model-cards records (card
+  // publication, citations and cells).
   ...modelCards1.added.claims,
   ...modelCards3.added.claims,
   ...modelCards4.added.claims,
+  ...modelCards5.added.claims,
   // The 2026-11-02 audit follow-ups (Christiano's initial-Trustee snapshot).
   ...auditFollowups.added.claims,
 ]);

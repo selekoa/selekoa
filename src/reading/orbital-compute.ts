@@ -7,6 +7,9 @@ const recheckWithdrawn = '2026-11-02';
 
 const admitted = '2026-10-30';
 
+/** The maintainer's answers of 2026-11-07 on the re-check sheet and the reads of that day. */
+const settled = '2026-11-07';
+
 export const orbitalCompute: PropositionsCollection = {
   id: frame.id,
   version: frame.version,
@@ -126,6 +129,37 @@ export const orbitalCompute: PropositionsCollection = {
         'Withdrawn on 2026-11-02 by the maintainer’s decision to withdraw every headline the cross-family re-check proposes to move or could not decide, pending adjudication; no record holds the headline meanwhile. The re-check proposes an earlier text the dataset holds: Lumen’s held 2024 text already identifies orbital-debris mitigation and collision probability as hurdles for large data centers and links their large size to avoidance responsibilities. This meets the collision/debris arm of the criterion before Aili’s October 2025 publication and November proof witness. It does not establish an astronomical-observation finding.',
       claimIds: ['cpo-orb-oc11-aili-2025'],
       recordedAt: recheckWithdrawn,
+    },
+    {
+      propositionId: 'oc6-heat-rejection-limit',
+      replaced:
+        'No earliest located headline: under re-check from 2026-11-02. Before that, Google Research’s Project Suncatcher post (2025) was headlined.',
+      reason:
+        'Moved on 2026-11-07 to the Lumen Orbit white paper (2024), by the maintainer’s decision on the re-check sheet (decision 5a), after the cross-family re-check of 2026-11-02 (role 160): it requires very large radiators because heat can leave only by radiation. Its record, context until then, now states the proposition, with the qualification that the paper argues the requirement can be met.',
+      claimIds: ['cpo-orb-oc6-lumen-2024', 'cpo-orb-oc6-suncatcher-blog-2025'],
+      recordedAt: settled,
+    },
+    {
+      propositionId: 'oc11-sky-and-debris',
+      replaced:
+        'No earliest located headline: under re-check from 2026-11-02. Before that, Aili, Choi, Ong and Wen’s Perspective (2025) was headlined.',
+      reason:
+        'Moved on 2026-11-07 to the Lumen Orbit white paper (2024), by the maintainer’s decision on the re-check sheet (decision 6c), after the cross-family re-check of 2026-11-02 (role 165): it names debris mitigation and collision probability as hurdles for large orbital data centres. A second record states that debris part; the paper’s contesting record, on the night sky, stays.',
+      claimIds: [
+        'cpo-orb-oc11-lumen-2024-states',
+        'cpo-orb-oc11-lumen-2024',
+        'cpo-orb-oc11-aili-2025',
+      ],
+      recordedAt: settled,
+    },
+    {
+      propositionId: 'oc3-terrestrial-constraints',
+      replaced:
+        'The Lumen Orbit white paper (2024), headlined as earliest located.',
+      reason:
+        'Moved on 2026-11-07 to Periola and Kolawole’s article of 2019, by the maintainer’s decision of 2026-11-06 (held item 11a), applied once both model families had read its abstract: constraints on hosting data centres on Earth motivate placing them in space. Recorded from the abstract only.',
+      claimIds: ['cpo-orb-oc3-periola-kolawole-2019', 'cpo-orb-oc3-lumen-2024'],
+      recordedAt: settled,
     },
   ],
   limits: [

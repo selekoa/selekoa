@@ -131,6 +131,7 @@ describe('schema 2.7 source language and archive captures', () => {
       'source-cn-csl-amendment-2025',
       'source-cn-csl-presidential-order-61',
       'source-cn-gb-45438-2025-catalogue',
+      'source-cn-gb-45438-2025-text',
       'source-cn-gbt-45654-2025-catalogue',
       'source-cn-generative-ai-measures-2023',
       'source-cn-generative-ai-measures-2023-govcn',

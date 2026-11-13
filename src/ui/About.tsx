@@ -19,6 +19,7 @@ const sections = [
   ['about-why', 'Why machine-first'],
   ['about-built', 'How this was built'],
   ['about-what', 'What Selekoa is'],
+  ['about-elsewhere', 'Where else to look'],
   ['about-coverage', 'Current coverage'],
   ['about-method', 'How this was checked'],
   ['about-labels', 'What the labels mean'],
@@ -29,6 +30,57 @@ const sections = [
   ['about-privacy', 'Privacy'],
   ['about-keyboard', 'Keyboard use'],
 ] as const;
+
+/**
+ * Free resources that answer questions Selekoa does not try to answer,
+ * each inspected on the stated date against the inclusion bar in
+ * docs/adjacent-projects.md (review/where-else-to-look-2026-11-08.md).
+ */
+const elsewhere = [
+  {
+    question:
+      'For estimates of training compute, model and hardware trends, and the data behind them',
+    name: 'Epoch AI',
+    href: 'https://epoch.ai/data',
+  },
+  {
+    question:
+      'For measured capabilities of frontier models on long autonomous tasks, and independent risk assessments',
+    name: 'METR',
+    href: 'https://metr.org/research',
+  },
+  {
+    question:
+      'For yearly indicators on AI research, technical performance, investment, policy and public opinion',
+    name: 'the Stanford AI Index',
+    href: 'https://hai.stanford.edu/ai-index',
+  },
+  {
+    question:
+      'For national AI strategies and public policy initiatives from more than 80 jurisdictions and organisations',
+    name: 'the OECD.AI Policy Navigator',
+    href: 'https://oecd.ai/en/dashboards/overview',
+  },
+  {
+    question:
+      'For reported incidents in which AI systems caused or nearly caused harm, with the reports behind each',
+    name: 'the AI Incident Database',
+    href: 'https://incidentdatabase.ai/',
+  },
+  {
+    question:
+      'For a classification of AI risks by cause and domain, drawn from published frameworks',
+    name: 'the MIT AI Risk Repository',
+    href: 'https://airisk.mit.edu/',
+  },
+  {
+    question:
+      'For English translations of Chinese policy documents, and data on AI research, patents and investment by country',
+    name: 'CSET and its Emerging Technology Observatory',
+    href: 'https://cset.georgetown.edu/',
+  },
+] as const;
+const elsewhereChecked = '2026-11-08';
 
 /** The public source repository, where the operating guide is published. */
 const publicSource = 'https://github.com/selekoa/selekoa';
@@ -260,6 +312,29 @@ export function About({
             </>
           )}
         </p>
+      </section>
+
+      <section aria-labelledby="about-elsewhere">
+        <h2 id="about-elsewhere" tabIndex={-1}>
+          Where else to look
+        </h2>
+        <p>
+          Selekoa is for one kind of question: you need the source behind a
+          statement about machine intelligence, its date and version, and how it
+          was checked. It does not collect measurements, benchmark results,
+          policy inventories or incident reports. For those and the other
+          questions below, these free resources hold the material, and each
+          states its own sources or methods:
+        </p>
+        <ul>
+          {elsewhere.map((r) => (
+            <li key={r.href}>
+              {r.question}: <a href={r.href}>{r.name}</a>
+              <span aria-hidden="true"> ↗</span>
+            </li>
+          ))}
+        </ul>
+        <p>Each was inspected on {elsewhereChecked}.</p>
       </section>
 
       <section aria-labelledby="about-coverage">

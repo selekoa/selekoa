@@ -84,8 +84,9 @@ export function chinaScope(data: Dataset) {
   if (!listings) throw new Error('No CAC listing');
   const china = guide.sections.find((s) => s.id === 'china');
   if (!china) throw new Error('No China section on the guide');
-  if (!guide.notCovered.some((n) => n.id === 'gb-45438-scope'))
-    throw new Error('GB 45438-2025 scope no longer held');
+  // Held until 2026-11-07, when the standard's own scope clause was read.
+  if (!data.claims.some((c) => c.id === 'fl-cn-gb45438-scope'))
+    throw new Error('GB 45438-2025 scope not recorded');
   return {
     dossiers: landingDossiers(data).filter(
       (d) => d.group === 'Chinese AI histories',

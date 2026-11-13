@@ -79,9 +79,14 @@ test('frameworks and law: reached from the governance hub, with a timeline built
   await expect(page.locator('.fl-link-table thead th').first()).toHaveText(
     'Framework',
   );
-  await expect(page.locator('#fl-not-covered')).toContainText(
+  // The guide's last held item, GB 45438-2025's scope, was admitted on
+  // 2026-11-07; nothing on it is held now.
+  await expect(page.locator('#fl-not-covered')).not.toContainText(
     'Held at admission',
   );
+  await expect(
+    page.locator('.fl-instrument', { hasText: 'GB 45438-2025' }).first(),
+  ).toBeVisible();
 
   // Every internal link on the page resolves to a built page.
   const hrefs = await page

@@ -10,6 +10,9 @@ const recheckWithdrawn = '2026-11-02';
 
 const admitted = '2026-10-30';
 
+/** The maintainer's answers of 2026-11-07 on the re-check sheet and the reads of that day. */
+const settled = '2026-11-07';
+
 export const aiBioArguments: PropositionsCollection = {
   id: frame.id,
   version: frame.version,
@@ -154,6 +157,36 @@ export const aiBioArguments: PropositionsCollection = {
         'ab-arg-d6-seger-articulates',
       ],
       recordedAt: recheckDecisions,
+    },
+    {
+      propositionId: 'ab-prop-evaluation-validity',
+      replaced:
+        'No earliest located headline: under re-check from 2026-11-02. Before that, Peppin and others (December 2024) was headlined.',
+      reason:
+        'Moved on 2026-11-07 to OpenAI’s GPT-4 System Card (March 2023), by the maintainer’s decision on the re-check sheet (decision 12a), after the cross-family re-check of 2026-11-02 (role 173): the card states that its red team assessed capabilities, not the likelihood of misuse, and that access to the model alone is insufficient for proliferation. It is a caveat about the card’s own evaluation, and the record says so.',
+      claimIds: [
+        'ab-arg-d3-gpt4-card-articulates',
+        'ab-arg-d3-peppin-articulates',
+      ],
+      recordedAt: settled,
+    },
+    {
+      propositionId: 'ab-prop-synthesis-screening-control-point',
+      replaced:
+        'No earliest located headline: under re-check from 2026-11-02. Before that, Sandbrink’s preprint of 24 June 2023 was headlined.',
+      reason:
+        'Moved on 2026-11-07 to Soice and others, version 1 of 6 June 2023, by the maintainer’s decision on the re-check sheet (decision 7a), after the cross-family re-check of 2026-11-02 (role 169): it recommends verifiable screening of synthesised DNA as a control against misuse enabled by language models. Its record, context from admission, now states the proposition.',
+      claimIds: ['ab-arg-d5-soice-context', 'ab-arg-d5-sandbrink-articulates'],
+      recordedAt: settled,
+    },
+    {
+      propositionId: 'ab-prop-skilled-actor-scope',
+      replaced:
+        'No earliest located headline: under re-check from 2026-11-02. Before that, Brent and McKelvey (June 2025) was headlined.',
+      reason:
+        'Moved on 2026-11-07 to Sandbrink’s preprint, version 1 of June 2023, by the maintainer’s decision on the re-check sheet (decision 8a), after the cross-family re-check of 2026-11-02 (role 174): it separates help to non-experts from gains for sophisticated actors and asks for monitoring of design tools. It is not evidence that earlier evaluations covered skilled actors.',
+      claimIds: ['ab-arg-d7-sandbrink-context', 'ab-arg-d7-brent-articulates'],
+      recordedAt: settled,
     },
   ],
   limits: [

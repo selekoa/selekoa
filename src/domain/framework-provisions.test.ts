@@ -40,9 +40,9 @@ describe('schema 2.8 framework provisions', () => {
       expect(sha(preProvisionsRaw[key]), key).toBe(before.sha256[key]);
     expect(sha(preProvisionsRaw.meta)).toBe(before.sha256.meta);
     expect(preProvisionsRaw.meta.schemaVersion).toBe('2.7');
-    // The admission of "Predictions on record" (2026-11-05) moved the
-    // current dataset to schema 2.32.
-    expect(data.meta.schemaVersion).toBe('2.33');
+    // The audit corrections of 2026-11-10 moved the current dataset to
+    // schema 2.34.
+    expect(data.meta.schemaVersion).toBe('2.34');
   });
 
   it('applies the three stop-case decisions and keeps their history', () => {

@@ -11,6 +11,9 @@ import entities from '../../data/entities.json';
 import claims from '../../data/claims.json';
 import sources from '../../data/sources.json';
 import evidence from '../../data/evidence.json';
+import modelCards5 from '../../review/model-cards-admission-5-before-2026-11-10.json';
+import auditCorrections from '../../review/audit-corrections-2026-11-10-before-2026-11-10.json';
+import recheckReads from '../../review/recheck-and-reads-2026-11-07-before-2026-11-07.json';
 import aiMoney from '../../review/ai-money-admission-before-2026-11-06.json';
 import corrections from '../../review/corrections-2026-11-06-before-2026-11-06.json';
 import predictions from '../../review/predictions-admission-before-2026-11-05.json';
@@ -130,8 +133,20 @@ export function revert<R extends Raw>(raw: R, snapshot: Snapshot): R {
 
 const current = { meta, entities, claims, sources, evidence };
 
+/** Raw stored rows at schema 2.34, after the audit corrections of 2026-11-10 and before part 5 of the model-cards admission of the same day (both released together). */
+export const preModelCards5Raw = revert(current, modelCards5);
+/** Raw stored rows at schema 2.33 as released in v0.32.1, before the corrections of the blind audit of 2026-11-09, applied on 2026-11-10 (schema 2.34). */
+export const preAuditCorrections1110Raw = revert(
+  preModelCards5Raw,
+  auditCorrections,
+);
+/** Raw stored rows at schema 2.33 as released in v0.32.0, before the re-check settlement and reads of 2026-11-07. */
+export const preRecheckReads1107Raw = revert(
+  preAuditCorrections1110Raw,
+  recheckReads,
+);
 /** Raw stored rows at schema 2.32 as released in v0.31.1, before the admission of "AI and money" of 2026-11-06 (schema 2.33). */
-export const preAiMoneyRaw = revert(current, aiMoney);
+export const preAiMoneyRaw = revert(preRecheckReads1107Raw, aiMoney);
 /** Raw stored rows at schema 2.32 as released in v0.31.0, before the correction release of 2026-11-06. */
 export const preCorrections1106Raw = revert(preAiMoneyRaw, corrections);
 /** Raw stored rows at schema 2.31 as released in v0.30.0, before the admission of "Predictions on record" of 2026-11-05 (schema 2.32). */

@@ -77,7 +77,7 @@ export const shareCard = {
   path: 'og/selekoa-card.png',
   width: 1200,
   height: 627,
-  alt: 'selekoa. A documentary history of machine intelligence. Machines find the sources, quote them and check each other’s work. What they leave to you is the human part: the question, the point of view, the stance.',
+  alt: 'selekoa. A documentary history of machine intelligence. Machines find the sources, quote them and check each other’s work. What they leave to you is the human part: the question, the point of view and the judgement.',
 } as const;
 
 /** Applies the launch settings to index.html. Throws if the template changed shape. */

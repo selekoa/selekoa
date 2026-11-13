@@ -1,0 +1,538 @@
+{
+  "group": "openai",
+  "drafter": "Claude (preparing session), 2026-11-06",
+  "cards": [
+    {
+      "id": "openai-gpt-4-5",
+      "developer": "OpenAI",
+      "model": "GPT-4.5",
+      "year": 2025,
+      "source": "openai-gpt-4-5",
+      "frameworkEditions": [],
+      "frameworkEditionNote": "The card names the Preparedness Framework without a version, date, reference or link. As context only, the dataset records the beta edition (2023-12-18) as the edition published before the card; Version 2 is dated 2025-04-15, after it.",
+      "earliestLocated": "2025-02-27"
+    },
+    {
+      "id": "openai-o3-o4-mini",
+      "developer": "OpenAI",
+      "model": "o3 and o4-mini",
+      "year": 2025,
+      "source": "openai-o3-o4-mini",
+      "frameworkEditions": ["preparedness-v2"],
+      "frameworkEditionNote": "The card states that it is released under “Version 2” of the Preparedness Framework (PDF p. 1), and its link annotation on “Preparedness” targets https://cdn.openai.com/pdf/18a02b5d-6b67-4cec-ab64-68cdfbddebcd/preparedness-framework-v2.pdf, whose first page reads “Version 2. Last updated: 15th April, 2025” (retrieved 2026-11-06).",
+      "earliestLocated": "2025-04-16"
+    }
+  ],
+  "cells": [
+    {
+      "card": "openai-gpt-4-5",
+      "question": "Q01",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "openai-gpt-4-5",
+          "locator": "Title block, PDF p. 1",
+          "quote": "OpenAI GPT-4.5 System Card OpenAI February 27, 2025"
+        }
+      ],
+      "note": "The card prints a day-precision date; no revision date was found."
+    },
+    {
+      "card": "openai-gpt-4-5",
+      "question": "Q02",
+      "status": "partly",
+      "passages": [
+        {
+          "source": "openai-gpt-4-5",
+          "locator": "§1 Introduction, PDF p. 1",
+          "quote": "We’re sharing GPT-4.5 as a research preview to better understand its strengths and limitations."
+        }
+      ],
+      "note": "The card names the release form (a research preview), without a release date.",
+      "search": {
+        "read": "Whole card (about 30 pages): §§1–6, appendix",
+        "terms": [
+          "release",
+          "launch",
+          "available",
+          "API",
+          "preview",
+          "February"
+        ],
+        "setAside": []
+      }
+    },
+    {
+      "card": "openai-gpt-4-5",
+      "question": "Q03",
+      "status": "partly",
+      "passages": [
+        {
+          "source": "openai-gpt-4-5",
+          "locator": "§1 Introduction, PDF p. 1",
+          "quote": "following OpenAI’s safety process and Preparedness Framework."
+        }
+      ],
+      "note": "The card names the framework without an edition, reference or link. As context only: the dataset records the beta edition (2023-12-18) as the edition published before the card.",
+      "search": {
+        "read": "Whole card (about 30 pages): §§1–6, appendix; references and link annotations",
+        "terms": [
+          "Preparedness Framework",
+          "beta",
+          "version",
+          "preparedness-framework"
+        ],
+        "setAside": []
+      }
+    },
+    {
+      "card": "openai-gpt-4-5",
+      "question": "Q04",
+      "status": "partly",
+      "passages": [
+        {
+          "source": "openai-gpt-4-5",
+          "locator": "§1 Introduction, PDF p. 1",
+          "quote": "following OpenAI’s safety process and Preparedness Framework."
+        }
+      ],
+      "note": "The card refers to the framework by name, without an address or bibliographic reference; no link annotation on it was found.",
+      "search": {
+        "read": "Whole card (about 30 pages): §§1–6, appendix; references and link annotations",
+        "terms": ["Preparedness Framework", "http", "cdn.openai.com"],
+        "setAside": []
+      }
+    },
+    {
+      "card": "openai-gpt-4-5",
+      "question": "Q05",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "openai-gpt-4-5",
+          "locator": "§4 Preparedness Framework Evaluations, PDF p. 8",
+          "quote": "the Safety Advisory Group classified GPT-4.5 as overall medium risk, including medium risk for CBRN and persuasion and low for cybersecurity and model autonomy."
+        }
+      ],
+      "note": "The card states the post-mitigation designations in the same terms (§4.1); its conclusion calls the medium ratings for persuasion and CBRN pre-mitigation ratings (§6, PDF p. 26)."
+    },
+    {
+      "card": "openai-gpt-4-5",
+      "question": "Q06",
+      "status": "partly",
+      "passages": [
+        {
+          "source": "openai-gpt-4-5",
+          "locator": "§4.1 Preparedness Mitigations, PDF p. 8",
+          "quote": "CBRN and Persuasion reached a Medium post-mitigation risk designation, while cyber and model autonomy received a low designation."
+        },
+        {
+          "source": "openai-gpt-4-5",
+          "locator": "§4.1 Preparedness Mitigations, PDF p. 8",
+          "quote": "Dedicated monitoring and detection efforts for CBRN, Persuasion, and Cyber tasks."
+        }
+      ],
+      "note": "The card states the designations in §4.1 and lists Preparedness mitigations in the list that follows, without saying that they are applied because of the designations. A stated safeguard is the developer’s account.",
+      "crossFamily": {
+        "item": "87",
+        "result": "minor, applied: the note places the safeguards in the list after the designations, not in their paragraph. Status agrees."
+      }
+    },
+    {
+      "card": "openai-gpt-4-5",
+      "question": "Q07",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "openai-gpt-4-5",
+          "locator": "§4.3 Chemical and Biological Threat Creation, PDF p. 10",
+          "quote": "Our evaluations found that GPT-4.5 can help experts with the operational planning of reproducing a known biological threat, which meets our medium risk threshold."
+        }
+      ],
+      "note": "Outcome category: Medium. Radiological and nuclear evaluations are also reported (§4.4). Details are not recorded (hazard rule)."
+    },
+    {
+      "card": "openai-gpt-4-5",
+      "question": "Q08",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "openai-gpt-4-5",
+          "locator": "§4.2 Cybersecurity, PDF p. 9",
+          "quote": "GPT-4.5 does not sufficiently advance real-world vulnerability exploitation capabilities to indicate medium risk."
+        }
+      ],
+      "note": "Outcome category: Low."
+    },
+    {
+      "card": "openai-gpt-4-5",
+      "question": "Q09",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "openai-gpt-4-5",
+          "locator": "§4.6 Model Autonomy, PDF p. 18",
+          "quote": "GPT-4.5 does not advance self-exfiltration, self-improvement, or resource acquisition capabilities sufficiently to indicate medium risk."
+        }
+      ],
+      "note": "Outcome category: Low. METR’s external evaluation of autonomy and AI R&D tasks is also summarised; it was of an earlier checkpoint of GPT-4.5 (§3.4, PDF p. 6).",
+      "crossFamily": {
+        "item": "88",
+        "result": "minor, applied: the note says that METR evaluated an earlier checkpoint. Status agrees."
+      }
+    },
+    {
+      "card": "openai-gpt-4-5",
+      "question": "Q10",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "openai-gpt-4-5",
+          "locator": "§4.5 Persuasion, PDF p. 16",
+          "quote": "GPT-4.5 demonstrates state-of-the-art performance on our contextual persuasion evals."
+        }
+      ],
+      "note": "Outcome category: Medium (Score for GPT-4.5: Medium)."
+    },
+    {
+      "card": "openai-gpt-4-5",
+      "question": "Q11",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "openai-gpt-4-5",
+          "locator": "§3.3 Apollo Research, PDF p. 6",
+          "quote": "Thus, they believe that the scheming-related risk from GPT-4.5 is lower than that of o1."
+        }
+      ],
+      "note": "The conclusion is Apollo Research’s, as reported by the card; details are in Appendix 7.2."
+    },
+    {
+      "card": "openai-gpt-4-5",
+      "question": "Q12",
+      "status": "partly",
+      "passages": [
+        {
+          "source": "openai-gpt-4-5",
+          "locator": "§3.2 Red Teaming Evaluations, PDF p. 6",
+          "quote": "The decision to prioritize red teaming evaluations (rather than direct human red teaming)"
+        }
+      ],
+      "note": "The card reports evaluations built from earlier red-teaming campaigns (for o3-mini and deep research), covering illicit advice, extremism and hate crimes, political persuasion, self-harm and risky advice, instead of direct human red teaming of GPT-4.5.",
+      "search": {
+        "read": "Whole card (about 30 pages): §§1–6, appendix",
+        "terms": ["red team", "red-team", "external"],
+        "setAside": []
+      }
+    },
+    {
+      "card": "openai-gpt-4-5",
+      "question": "Q13",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "openai-gpt-4-5",
+          "locator": "§3.4 METR, PDF p. 6",
+          "quote": "METR evaluated an earlier checkpoint of GPT-4.5 and was given access to that checkpoint for 7 days"
+        }
+      ],
+      "note": "Apollo Research is also named as having tested the model (§3.3)."
+    },
+    {
+      "card": "openai-gpt-4-5",
+      "question": "Q14",
+      "status": "not-found",
+      "search": {
+        "read": "Whole card (about 30 pages): §§1–6, appendix",
+        "terms": [
+          "government",
+          "AI Safety Institute",
+          "AISI",
+          "CAISI",
+          "U.S.",
+          "UK"
+        ],
+        "setAside": []
+      }
+    },
+    {
+      "card": "openai-gpt-4-5",
+      "question": "Q15",
+      "status": "partly",
+      "passages": [
+        {
+          "source": "openai-gpt-4-5",
+          "locator": "§4 Preparedness Framework Evaluations, PDF p. 8",
+          "quote": "the Safety Advisory Group classified GPT-4.5 as overall medium risk, including medium risk for CBRN and persuasion and low for cybersecurity and model autonomy."
+        }
+      ],
+      "note": "The named maker (the Safety Advisory Group) is attached to the risk classification, not to a release decision. The conclusion states the rating “with appropriate safeguards in place” and refers to deployment without describing a decision (§6). Maintainer decision 6a.",
+      "search": {
+        "read": "Whole card (about 30 pages): §§1–6, appendix",
+        "terms": ["decision", "decid", "deploy", "launch", "release"],
+        "setAside": [
+          {
+            "locator": "§3.2, PDF p. 6",
+            "reason": "“The decision to prioritize red teaming evaluations” concerns test design, not release."
+          },
+          {
+            "locator": "§6 Conclusion, PDF p. 26",
+            "reason": "“Overall, GPT-4.5 is rated medium risk, with appropriate safeguards in place.” is a rating, not a release decision."
+          }
+        ]
+      }
+    },
+    {
+      "card": "openai-gpt-4-5",
+      "question": "Q16",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "openai-gpt-4-5",
+          "locator": "§4 Preparedness Framework Evaluations, PDF p. 8",
+          "quote": "Preparedness evaluations represent a lower bound for potential capabilities"
+        }
+      ],
+      "note": "METR’s summary adds that post-training evaluations allow third parties only limited safety assurances (§3.4)."
+    },
+    {
+      "card": "openai-o3-o4-mini",
+      "question": "Q01",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "openai-o3-o4-mini",
+          "locator": "Title block, PDF p. 1",
+          "quote": "OpenAI o3 and o4-mini System Card OpenAI April 16, 2025"
+        }
+      ],
+      "note": "The card prints a day-precision date; no revision date was found."
+    },
+    {
+      "card": "openai-o3-o4-mini",
+      "question": "Q02",
+      "status": "partly",
+      "passages": [
+        {
+          "source": "openai-o3-o4-mini",
+          "locator": "§3.7, PDF p. 7",
+          "quote": "The deployment of OpenAI o3 and o4-mini in the API allows developers to specify a custom developer message"
+        }
+      ],
+      "note": "The card names API deployment as a release form and refers to the launch, without a release date.",
+      "search": {
+        "read": "Whole card (about 30 pages): §§1–6, appendix",
+        "terms": ["release", "launch", "available", "API", "ChatGPT", "April"],
+        "setAside": []
+      }
+    },
+    {
+      "card": "openai-o3-o4-mini",
+      "question": "Q03",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "openai-o3-o4-mini",
+          "locator": "§1 Introduction, PDF p. 1",
+          "quote": "This is the first launch and system card to be released under Version 2 of our Preparedness Framework."
+        }
+      ],
+      "note": "The card identifies the edition by version number; its link annotation targets the Version 2 PDF of 15 April 2025."
+    },
+    {
+      "card": "openai-o3-o4-mini",
+      "question": "Q04",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "openai-o3-o4-mini",
+          "locator": "§1 Introduction, PDF p. 1 (link annotation on “Preparedness”)",
+          "quote": "This is the first launch and system card to be released under Version 2 of our Preparedness Framework."
+        }
+      ],
+      "note": "The words link to https://cdn.openai.com/pdf/18a02b5d-6b67-4cec-ab64-68cdfbddebcd/preparedness-framework-v2.pdf; §4 also links an announcement of the updated framework (PDF p. 11)."
+    },
+    {
+      "card": "openai-o3-o4-mini",
+      "question": "Q05",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "openai-o3-o4-mini",
+          "locator": "§1 Introduction, PDF p. 1",
+          "quote": "determined that OpenAI o3 and o4-mini do not reach the High threshold in any of our three Tracked Categories: Biological and Chemical Capability, Cybersecurity, and AI Self-improvement."
+        }
+      ],
+      "note": "The determination is attributed to OpenAI’s Safety Advisory Group (SAG)."
+    },
+    {
+      "card": "openai-o3-o4-mini",
+      "question": "Q06",
+      "status": "partly",
+      "passages": [
+        {
+          "source": "openai-o3-o4-mini",
+          "locator": "§4 Preparedness, PDF p. 11",
+          "quote": "they did not trigger a Safeguards Report under our framework. Nonetheless, we have deployed significant mitigations in Preparedness risk areas"
+        }
+      ],
+      "note": "The card states that the determination did not trigger the framework’s Safeguards Report and that mitigations were deployed regardless; the mitigations are not stated as required by, or applied because of, the determination.",
+      "search": {
+        "read": "Whole card (about 30 pages): §§1–6, appendix",
+        "terms": ["Safeguards Report", "mitigation", "safeguard", "monitoring"],
+        "setAside": []
+      }
+    },
+    {
+      "card": "openai-o3-o4-mini",
+      "question": "Q07",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "openai-o3-o4-mini",
+          "locator": "§1 Introduction, PDF p. 1",
+          "quote": "determined that OpenAI o3 and o4-mini do not reach the High threshold in any of our three Tracked Categories: Biological and Chemical Capability, Cybersecurity, and AI Self-improvement."
+        },
+        {
+          "source": "openai-o3-o4-mini",
+          "locator": "§4.2 Biological and Chemical, PDF p. 12",
+          "quote": "Our evaluations found that OpenAI o3 and o4-mini can help experts with the operational planning of reproducing a known biological threat."
+        }
+      ],
+      "note": "Outcome category: High threshold not reached for Biological and Chemical. The card says it expects models to cross this threshold in the near future and is intensifying investment in safeguards (§4.2). Details are not recorded (hazard rule)."
+    },
+    {
+      "card": "openai-o3-o4-mini",
+      "question": "Q08",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "openai-o3-o4-mini",
+          "locator": "§4.3 Cybersecurity, PDF p. 15",
+          "quote": "Neither OpenAI o3 nor o4-mini met the High threshold for cybersecurity."
+        }
+      ],
+      "note": "Pattern Labs’ external cyber evaluation is also summarised (§3.9.3)."
+    },
+    {
+      "card": "openai-o3-o4-mini",
+      "question": "Q09",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "openai-o3-o4-mini",
+          "locator": "§4.4 AI Self-improvement, PDF p. 22",
+          "quote": "suggesting they lack the capabilities required for a High classification."
+        }
+      ],
+      "note": "METR’s external autonomy evaluation is also summarised (§3.9.1)."
+    },
+    {
+      "card": "openai-o3-o4-mini",
+      "question": "Q10",
+      "status": "not-found",
+      "note": "No persuasion evaluation was found. The card lists three Tracked Categories under Version 2 (biological and chemical, cybersecurity, AI self-improvement); it does not say that persuasion was removed.",
+      "search": {
+        "read": "Whole card (about 30 pages): §§1–6, appendix",
+        "terms": ["persua", "manipul", "influenc"],
+        "setAside": [
+          {
+            "locator": "§4 Preparedness, PDF p. 11",
+            "reason": "The list of three Tracked Categories does not include persuasion; no statement on the domain was found."
+          }
+        ]
+      }
+    },
+    {
+      "card": "openai-o3-o4-mini",
+      "question": "Q11",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "openai-o3-o4-mini",
+          "locator": "§3.9.2 Apollo Research, PDF p. 10",
+          "quote": "They found that OpenAI o3 and o4-mini score lower than o1 on in-context scheming evaluations, but they still exhibit deceptive tendencies against their developers and users"
+        }
+      ],
+      "note": "The conclusion is Apollo Research’s, as reported by the card; METR’s report of reward hacking is also summarised (§3.9.1)."
+    },
+    {
+      "card": "openai-o3-o4-mini",
+      "question": "Q12",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "openai-o3-o4-mini",
+          "locator": "§3.5 Vision Vulnerabilities, PDF p. 5",
+          "quote": "OpenAI provided external red teamers access to OpenAI o3 and o4-mini to assess vulnerabilities related to vision capabilities."
+        }
+      ],
+      "note": "Scope: vision vulnerabilities, pairwise comparison with GPT-4o and o1 over multiple checkpoints."
+    },
+    {
+      "card": "openai-o3-o4-mini",
+      "question": "Q13",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "openai-o3-o4-mini",
+          "locator": "§3.9.3 Pattern Labs, PDF p. 10",
+          "quote": "Pattern Labs, an AI Security organization that addresses and mitigates frontier cybersecurity risks, evaluated OpenAI o3 and o4-mini’s ability to solve three types of cyberoffensive challenges"
+        }
+      ],
+      "note": "METR (§3.9.1) and Apollo Research (§3.9.2) are also named."
+    },
+    {
+      "card": "openai-o3-o4-mini",
+      "question": "Q14",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "openai-o3-o4-mini",
+          "locator": "§3.9 Third Party Assessments, PDF p. 9",
+          "quote": "to the U.S. AI Safety Institute to conduct evaluations of the models’ cyber and biological capabilities, and to the U.K. AI Security Institute to conduct evaluations of cyber, chemical and biological, and autonomy capabilities"
+        }
+      ],
+      "note": "The card states that versions of the models were provided to both institutes; it reports no findings from them."
+    },
+    {
+      "card": "openai-o3-o4-mini",
+      "question": "Q15",
+      "status": "partly",
+      "passages": [
+        {
+          "source": "openai-o3-o4-mini",
+          "locator": "§1 Introduction, PDF p. 1",
+          "quote": "determined that OpenAI o3 and o4-mini do not reach the High threshold in any of our three Tracked Categories: Biological and Chemical Capability, Cybersecurity, and AI Self-improvement."
+        }
+      ],
+      "note": "The named maker (the Safety Advisory Group) is attached to the capability determination, not to a release decision; the card refers to the launch without describing a decision. Maintainer decision 6a.",
+      "search": {
+        "read": "Whole card (about 30 pages): §§1–6, appendix",
+        "terms": ["decision", "decid", "deploy", "launch", "release"],
+        "setAside": [
+          {
+            "locator": "§6 Conclusion, PDF p. 26",
+            "reason": "States the SAG determination and that mitigations have been deployed, not a release decision."
+          }
+        ]
+      }
+    },
+    {
+      "card": "openai-o3-o4-mini",
+      "question": "Q16",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "openai-o3-o4-mini",
+          "locator": "§4.1 Capabilities Assessment, PDF p. 12",
+          "quote": "evaluations represent a lower bound for potential capabilities"
+        }
+      ],
+      "note": "METR’s summary adds that post-training evaluations allow third parties only limited safety assurances (§3.9.1)."
+    }
+  ],
+  "omissions": [],
+  "retrievalFailures": [],
+  "openQuestions": []
+}

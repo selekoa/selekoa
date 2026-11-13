@@ -39,7 +39,8 @@ export type StartAction =
   | { kind: 'explore' }
   | { kind: 'about' }
   | { kind: 'how-checked' }
-  | { kind: 'not-covered' };
+  | { kind: 'not-covered' }
+  | { kind: 'elsewhere' };
 
 /** The address of each primary navigation item. */
 export const navHref: Record<NavTarget, string> = {
@@ -74,6 +75,8 @@ export function startHref(action: StartAction, ids: StartIds): string {
       return referencePath({ kind: 'search', q: action.q });
     case 'how-checked':
       return referencePath({ kind: 'about' }) + '#about-built';
+    case 'elsewhere':
+      return referencePath({ kind: 'about' }) + '#about-elsewhere';
     case 'about':
     case 'not-covered':
       return referencePath({ kind: 'about' });

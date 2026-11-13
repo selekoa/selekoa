@@ -1464,7 +1464,11 @@ export default function Workspace({
                                           ? showAboutSection(
                                               'about-not-covered',
                                             )
-                                          : openAbout();
+                                          : action.kind === 'elsewhere'
+                                            ? showAboutSection(
+                                                'about-elsewhere',
+                                              )
+                                            : openAbout();
   // A start-page link followed while the records loaded opens once.
   const pendingStart = useRef(start);
   useEffect(() => {

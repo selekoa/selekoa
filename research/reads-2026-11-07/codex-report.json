@@ -1,0 +1,495 @@
+{
+  "statusTable": [
+    {
+      "id": "1",
+      "item": "Bank of England, One Bank Research Agenda",
+      "status": "Read archived original",
+      "note": "Theme 4 documents use of machine learning to study central-bank policy communication and discusses AI, big data and sentiment research. The Google-query nowcasting example gives no machine-learning method."
+    },
+    {
+      "id": "2",
+      "item": "Periola and Kolawole (2019)",
+      "status": "Read publisher abstract",
+      "note": "DOI and Springer served the abstract. Crossref supplies matching bibliographic metadata. The typeset PDF and the received and accepted dates were unavailable."
+    },
+    {
+      "id": "3",
+      "item": "GB 45438-2025",
+      "status": "Read government PDF",
+      "note": "Clause 1 was verified in the same Xiongan PDF. The main text and annexes contain 4,565 Han characters in the extractable text layer."
+    },
+    {
+      "id": "4a",
+      "item": "NRC Amendment No. 307",
+      "status": "Amendment blocked; notice read",
+      "note": "The operative text and effective-date clause remain unread. The Federal Register notice confirms the issuance date, accession and fuel/source scope."
+    },
+    {
+      "id": "4b",
+      "item": "NVIDIA H20",
+      "status": "No BIS letter or rule located",
+      "note": "The bounded search found NVIDIA’s descriptions of the licence notification and sales outcome. The H20-specific BIS instrument remains unlocated."
+    },
+    {
+      "id": "4c.1",
+      "item": "Gwern, Good scan (archive row 554)",
+      "status": "Capture blocked; live scan read",
+      "note": "The live scan supplies the design-feedback passage. The capture’s PDF bytes could not be compared."
+    },
+    {
+      "id": "4c.2",
+      "item": "Gwern, Michie scan (archive row 614)",
+      "status": "Capture rate-limited; live scan read",
+      "note": "The live scan supplies Michie’s response to the conversational-program example. The capture’s PDF bytes could not be compared."
+    },
+    {
+      "id": "4c.3",
+      "item": "Gwern, Vinge scan (archive row 701)",
+      "status": "Capture blocked; live scan read",
+      "note": "The live scan supplies Vinge’s singularity passage. The capture’s PDF bytes could not be compared."
+    }
+  ],
+  "retrievedOn": "2026-11-07",
+  "method": [
+    "Direct HTTP GETs were made sequentially with at least 1.3 seconds between requests. HTTP status is the final response after redirects. SHA-256 covers the saved, content-decoded response body, including any HTML error or challenge page. The response notes identify the bytes that carry source text. Transient redirect parameters and signed queries are omitted.",
+    "Capture timestamps are UTC and come from the replay address. A failed replay records the requested timestamp and hashes its response body. Live scans are separate witnesses.",
+    "The Gwern addresses are absent from research/held-records-2026-11-04/codex-report.md and its JSON companion. This report uses the three blocked Gwern rows in research/archive-batch-2026-11-04/codex-report.md, also listed in research/archive-verification-2026-10-28/codex-report.md."
+  ],
+  "items": [
+    {
+      "id": "1",
+      "item": "Bank of England, One Bank Research Agenda",
+      "status": "Read archived original",
+      "note": "Theme 4 documents use of machine learning to study central-bank policy communication and discusses AI, big data and sentiment research. The Google-query nowcasting example gives no machine-learning method.",
+      "passages": [
+        {
+          "source": "boe",
+          "locator": "Theme 4, question 1 heading, printed p. 23 / PDF p. 24",
+          "text": "How can the potential of big data and other new data sets best be realised?"
+        },
+        {
+          "source": "boe",
+          "locator": "Theme 4, question 1, paragraph spanning printed pp. 23–24, excerpt on printed p. 24 / PDF p. 25",
+          "text": "artificial intelligence techniques and big data offer ways to find interesting new empirical relationships"
+        },
+        {
+          "source": "boe",
+          "locator": "Theme 4, question 1, same paragraph, printed p. 24 / PDF p. 25",
+          "text": "And textual information has been quantified systematically using machine-learning algorithms to assess a wide variety of questions about the communication of central bank policy decisions and the propagation of ideas and policy messages"
+        },
+        {
+          "source": "boe",
+          "locator": "Theme 4, question 1, same paragraph, printed p. 24 / PDF p. 25",
+          "text": "Such analysis could help inform how consumer and financial sentiment evolves."
+        }
+      ],
+      "responses": [
+        {
+          "id": "boe",
+          "address": "https://web.archive.org/web/20150319140614id_/http://www.bankofengland.co.uk:80/research/Documents/onebank/discussion.pdf",
+          "httpStatus": 200,
+          "sha256": "a1963d083b2d45b092c2bd129d96c8130b85f8abe892cd35bf48de5cfb2e15e2",
+          "contentType": "application/pdf",
+          "captureTimestampUtc": "2015-03-19T14:06:14Z",
+          "replayReturnedDocument": true,
+          "note": "Original 50-page discussion paper. SHA-256 matches the prior J05 read."
+        },
+        {
+          "id": "boe-live",
+          "address": "https://www.bankofengland.co.uk/research/Documents/onebank/discussion.pdf",
+          "httpStatus": 404,
+          "sha256": "751cd50092d343dff3dab303f82fa1231af8ca635f232f2e46d48f62c13157ac",
+          "contentType": "text/html",
+          "note": "The legacy live document address returned a Bank of England 404 page."
+        },
+        {
+          "id": "boe-launch",
+          "address": "https://www.bankofengland.co.uk/news/2015/february/one-bank-research-agenda-launched-today",
+          "httpStatus": 200,
+          "sha256": "51a9455f5ec9d4b53419150169cc8ea179ea7d5b18e743646dd0751bd074aa2b",
+          "contentType": "text/html; charset=utf-8",
+          "note": "Official launch announcement, dated 25 February 2015. Identifies the five themes."
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "item": "Periola and Kolawole (2019)",
+      "status": "Read publisher abstract",
+      "note": "DOI and Springer served the abstract. Crossref supplies matching bibliographic metadata. The typeset PDF and the received and accepted dates were unavailable.",
+      "passages": [
+        {
+          "source": "springer",
+          "locator": "Abstract, second and third sentences; article starts on p. 95",
+          "text": "reliance on further hosting of terrestrial data centres becomes problematic in densely populated regions. This leads to exploring space as hosting centres"
+        }
+      ],
+      "bibliography": {
+        "title": "Space-Based Data Centres: A Paradigm for Data Processing and Scientific Investigations",
+        "authors": ["A. A. Periola", "M. O. Kolawole"],
+        "journal": "Wireless Personal Communications",
+        "volume": 107,
+        "issue": 1,
+        "pages": "95–119",
+        "received": null,
+        "accepted": null,
+        "publishedOnline": "2019-03-11",
+        "versionOfRecord": "2019-03-11",
+        "springerIssueDate": "2019-07-01",
+        "crossrefPrintMonth": "2019-07",
+        "doi": "10.1007/s11277-019-06242-z",
+        "locator": "Springer article header, About this article, and citation metadata; Crossref message fields."
+      },
+      "abstractSummary": "The authors motivate space hosting with storage and access demand and constraints on expanding terrestrial capacity in densely populated regions. They propose satellite integration and cognitive computing, describe applications, and compare siting costs. The abstract reports a model for the opportunity cost of land and application latency. Its simulations report average land-cost reductions ranging from 3.3% to 66.3%, and 45.7% lower latency on average. The closing sentence speculates about applications to the search for extraterrestrial intelligence.",
+      "quotationLimit": "One verbatim excerpt plus a summary for the copyrighted abstract. The typeset first-page transcription in the indexed ResearchGate view agrees on the quoted wording after line-break and ligature normalization. Its issue label is 107(3), whereas Springer and Crossref both give 107(1).",
+      "responses": [
+        {
+          "id": "doi",
+          "address": "https://link.springer.com/article/10.1007/s11277-019-06242-z",
+          "requestUrl": "https://doi.org/10.1007/s11277-019-06242-z",
+          "httpStatus": 200,
+          "sha256": "6d12ac873aeb0bf983df443b3384760de84e58e5e362f25400497f39302efbb8",
+          "contentType": "text/html; charset=utf-8",
+          "note": "Resolved to Springer’s HTML article. Its visible abstract matches the direct Springer response."
+        },
+        {
+          "id": "springer",
+          "address": "https://link.springer.com/article/10.1007/s11277-019-06242-z",
+          "httpStatus": 200,
+          "sha256": "f62b7c1b3faed6a542759dc2d297c9a11fdb07d9ad4ea0de164f3acb12f97f38",
+          "contentType": "text/html; charset=utf-8",
+          "note": "Publisher’s HTML contains the abstract and publication dates. The received and accepted fields are absent."
+        },
+        {
+          "id": "crossref",
+          "address": "https://api.crossref.org/works/10.1007/s11277-019-06242-z",
+          "httpStatus": 200,
+          "sha256": "710c87e1f7a67226028818c2530ce6fe78e7e05ad16d1e96f2504f6155f0e6d9",
+          "contentType": "application/json",
+          "note": "Crossref confirms the citation and date precision. Its record has no abstract, received date or accepted date."
+        },
+        {
+          "id": "springer-pdf",
+          "address": "https://link.springer.com/article/10.1007/s11277-019-06242-z",
+          "requestUrl": "https://link.springer.com/content/pdf/10.1007/s11277-019-06242-z.pdf",
+          "httpStatus": 200,
+          "sha256": "eed607eec1bde88a5da478d907fb345fe8be9afc06f9008f3d4e8d693095f2f1",
+          "contentType": "text/html; charset=utf-8",
+          "note": "The advertised PDF address redirected to the same article in HTML."
+        },
+        {
+          "id": "springer-print-witness",
+          "address": "https://www.researchgate.net/publication/331666663_Space-Based_Data_Centres_A_Paradigm_for_Data_Processing_and_Scientific_Investigations",
+          "httpStatus": 403,
+          "sha256": "253f95880b9cc0af74118a43324006230e4fad478bb6eb1ea69d5697062c2e5b",
+          "contentType": "text/html;charset=utf-8",
+          "note": "Direct retrieval returned a challenge. A separate indexed view of the typeset first page shows the online date and abstract, with no received or accepted dates visible."
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "item": "GB 45438-2025",
+      "status": "Read government PDF",
+      "note": "Clause 1 was verified in the same Xiongan PDF. The main text and annexes contain 4,565 Han characters in the extractable text layer.",
+      "passages": [
+        {
+          "source": "gb",
+          "locator": "Clause 1 范围, printed p. 1 / PDF p. 5",
+          "text": "本文件规定了人工智能生成合成内容标识方法。"
+        },
+        {
+          "source": "gb",
+          "locator": "Clause 1 范围, printed p. 1 / PDF p. 5",
+          "text": "本文件适用于生成合成服务提供者和内容传播服务提供者开展人工智能生成合成内容标识活动。"
+        }
+      ],
+      "count": {
+        "unit": "Han characters",
+        "bodyAndAnnexes": 4565,
+        "wholePdfTextLayer": 4937,
+        "scope": 61,
+        "method": "Extract each PDF page with PyMuPDF get_text() and count characters whose Unicode name contains CJK UNIFIED IDEOGRAPH. Main text includes clauses 1–6 and Annexes A–F, printed pp. 1–15 / PDF pp. 5–19. The whole-file count includes the cover, contents, foreword and introduction. Punctuation, Latin letters, digits and whitespace contribute zero. Labels embedded only in figure images are outside the extractable text layer."
+      },
+      "responses": [
+        {
+          "id": "gb",
+          "address": "https://www.xiongan.gov.cn/20250617/99e8309670814bdba91b3bcbfaca4e6c/2025061799e8309670814bdba91b3bcbfaca4e6c_38598ff9004470443c9195f1655adb29a0.pdf",
+          "httpStatus": 200,
+          "sha256": "bb704324cbfeb19e98df040cf08a0912475ed5cb4a80782108b74e634e51c8c3",
+          "contentType": "application/pdf",
+          "note": "This 19-page file has the same SHA-256 as the government copy read on 4 November. Clause 1 specifies both the subject and the covered activities."
+        }
+      ]
+    },
+    {
+      "id": "4a",
+      "item": "NRC Amendment No. 307",
+      "status": "Amendment blocked; notice read",
+      "note": "The operative text and effective-date clause remain unread. The Federal Register notice confirms the issuance date, accession and fuel/source scope.",
+      "passages": [
+        {
+          "source": "nrc-notice",
+          "locator": "License Amendment Issuances, Crane entry, 91 FR 49456 / PDF p. 5, Brief Description of Amendment",
+          "text": "allow receipt and possession of new reactor fuel and new sealed neutron sources"
+        }
+      ],
+      "responses": [
+        {
+          "id": "nrc",
+          "address": "https://www.nrc.gov/docs/ML2613/ML26135A004.pdf",
+          "httpStatus": 403,
+          "sha256": "57440bd0ebe6fdb4db1633609ba12dd5fd22dc728056350b8173e697e538f131",
+          "contentType": "text/html",
+          "note": "The NRC PDF route returned an access-denied page."
+        },
+        {
+          "id": "nrc-pbad",
+          "address": "https://pbadupws.nrc.gov/docs/ML2613/ML26135A004.pdf",
+          "httpStatus": 403,
+          "sha256": "91c5345dc1ef402510ab2ff31e853e367257dd59e5e65773b05595f8eb01d2ce",
+          "contentType": "text/html",
+          "note": "The alternate NRC PDF host returned an access-denied page."
+        },
+        {
+          "id": "nrc-adams",
+          "address": "https://www.nrc.gov/docs/ML2613/ML26135A004.pdf",
+          "requestUrl": "https://adamswebsearch2.nrc.gov/webSearch2/main.jsp?AccessionNumber=ML26135A004",
+          "httpStatus": 403,
+          "sha256": "c5704052e04a2b3ed064b8fbd3dfc6cf738fbb8a0cb9d32f500ba293ad61b01b",
+          "contentType": "text/html",
+          "note": "Legacy ADAMS redirected to the denied NRC PDF route."
+        },
+        {
+          "id": "nrc-api",
+          "address": "https://adams-api.nrc.gov/announcements/v2/documents/ML26135A004",
+          "httpStatus": 404,
+          "sha256": "3494d22a0b9ae1678a72df5841b7a6ec60e75499b91341f9763a556d6b8cb1f9",
+          "contentType": "application/json",
+          "note": "The announcements route returned a resource-not-found response."
+        },
+        {
+          "id": "nrc-aps",
+          "address": "https://adams-api.nrc.gov/aps/api/search/ML26135A004",
+          "httpStatus": 401,
+          "sha256": "c90468927fb778dd15b9da44a4dfec94fa8544d9746a59183f1bd413f87ac52a",
+          "contentType": "application/json",
+          "note": "The documented ADAMS Public Search API requires a subscription key and returned 401."
+        },
+        {
+          "id": "nrc-cdx",
+          "address": "https://web.archive.org/cdx/search/cdx?url=www.nrc.gov/docs/ML2613/ML26135A004.pdf&output=json&filter=statuscode:200&fl=timestamp,original&filter=mimetype:application/pdf",
+          "httpStatus": 200,
+          "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+          "contentType": "application/json",
+          "note": "The CDX query for HTTP 200 PDF captures of the www.nrc.gov address returned an empty array."
+        },
+        {
+          "id": "nrc-facility",
+          "address": "https://www.nrc.gov/facilities-safety/facility-finder/reactors/ccec",
+          "httpStatus": 403,
+          "sha256": "e8487578d9ab0020c7a9b3721e00be6101043247413377e41792ae4436bc6024",
+          "contentType": "text/html",
+          "note": "Direct retrieval of the facility overview was denied."
+        },
+        {
+          "id": "nrc-notice",
+          "address": "https://www.govinfo.gov/content/pkg/FR-2026-08-04/pdf/2026-15750.pdf",
+          "httpStatus": 200,
+          "sha256": "b3e839df46a0dc769b66497fe2a2489a2bd2b460f8049c9969ed91fe28e078ff",
+          "contentType": "application/pdf",
+          "note": "Official issuance notice, dated 4 August 2026. Its Crane entry identifies Amendment 307, dated 1 July 2026, accession ML26135A004."
+        }
+      ]
+    },
+    {
+      "id": "4b",
+      "item": "NVIDIA H20",
+      "status": "No BIS letter or rule located",
+      "note": "The bounded search found NVIDIA’s descriptions of the licence notification and sales outcome. The H20-specific BIS instrument remains unlocated.",
+      "passages": [
+        {
+          "source": "nvidia-q1",
+          "locator": "28 May 2025 results release, opening results paragraphs",
+          "text": "On April 9, 2025, NVIDIA was informed by the U.S. government that a license is required for exports of its H20 products into the China market."
+        },
+        {
+          "source": "nvidia-q2",
+          "locator": "27 August 2025 results release, opening results paragraphs",
+          "text": "There were no H20 sales to China-based customers in the second quarter."
+        }
+      ],
+      "responses": [
+        {
+          "id": "fr-h20",
+          "address": "https://www.federalregister.gov/api/v1/documents.json?conditions%5Bterm%5D=%22H20%22&conditions%5Bagencies%5D%5B%5D=industry-and-security-bureau&per_page=20",
+          "httpStatus": 200,
+          "sha256": "f433aebe030b451000b34b8eb59093ab1ade3fef2c9efd4b4e994248bc5863ad",
+          "contentType": "application/json; charset=utf-8",
+          "note": "Federal Register exact-term query scoped to BIS returned count 0. Its coverage is limited to the queried index."
+        },
+        {
+          "id": "bis-2025",
+          "address": "https://www.bis.gov/press-release/department-commerce-announces-rescission-biden-era-artificial-intelligence-diffusion-rule-strengthens",
+          "httpStatus": 200,
+          "sha256": "3be15143f8d609e016df1bd0e2bf2bb135f055b5e3b7b0a989e76992c1946125",
+          "contentType": "text/html; charset=utf-8",
+          "note": "The 13 May 2025 BIS announcement discusses chip controls without naming H20 in the announcement text."
+        },
+        {
+          "id": "nvidia-edgar",
+          "address": "https://www.sec.gov/Archives/edgar/data/1045810/000104581025000082/nvda-20250409.htm",
+          "httpStatus": 403,
+          "sha256": "1960f0351be579f2620d2b09e35e340b7f5b23d69d41d37a350076db6f586fd6",
+          "contentType": "text/html",
+          "note": "SEC denied the direct request. An indexed view of the 15 April 2025 Form 8-K shows Item 8.01, NVIDIA’s account of 9 and 14 April notifications."
+        },
+        {
+          "id": "nvidia-q1",
+          "address": "https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-first-quarter-fiscal-2026",
+          "httpStatus": 200,
+          "sha256": "7193133774c202962e8b19f44ffd2a65de6e399cffb2dea10534a77d72270a52",
+          "contentType": "text/html; charset=utf-8",
+          "note": "Company results describe the notification and resulting charges."
+        },
+        {
+          "id": "nvidia-q2",
+          "address": "https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-second-quarter-fiscal-2026",
+          "httpStatus": 200,
+          "sha256": "5145256000e92fa1c73f1236a69d5f6914389903d6d1e2868291516e127c01fa",
+          "contentType": "text/html; charset=utf-8",
+          "note": "Company results give the reported sales outcome for the fiscal quarter ended 27 July 2025."
+        }
+      ]
+    },
+    {
+      "id": "4c.1",
+      "item": "Gwern, Good scan (archive row 554)",
+      "status": "Capture blocked; live scan read",
+      "note": "The live scan supplies the design-feedback passage. The capture’s PDF bytes could not be compared.",
+      "passages": [
+        {
+          "source": "good-live",
+          "locator": "Section 2, printed p. 33 / PDF p. 3, first paragraph",
+          "text": "an ultraintelligent machine could design even better machines"
+        }
+      ],
+      "responses": [
+        {
+          "id": "good-archive",
+          "address": "https://web.archive.org/web/20261030051429id_/https://gwern.net/doc/ai/1966-good.pdf",
+          "httpStatus": 403,
+          "sha256": "2cdb9af8c24384513fa680a856b79ddad504ab8f45072db19ea540aee07a9ce8",
+          "contentType": "text/html",
+          "captureTimestampUtc": "2026-10-30T05:14:29Z",
+          "replayReturnedDocument": false,
+          "note": "Raw replay returned HTML with HTTP 403."
+        },
+        {
+          "id": "good-replay",
+          "address": "https://web.archive.org/web/20261030051429/https://gwern.net/doc/ai/1966-good.pdf",
+          "httpStatus": 403,
+          "sha256": "bb6060b36fca8aa3b146def7bd6261bbfe5bc29d58fa2ab75bb39f0935405c3b",
+          "contentType": "text/html",
+          "captureTimestampUtc": "2026-10-30T05:14:29Z",
+          "replayReturnedDocument": false,
+          "note": "Standard replay returned HTML with HTTP 403."
+        },
+        {
+          "id": "good-live",
+          "address": "https://gwern.net/doc/ai/1966-good.pdf",
+          "httpStatus": 200,
+          "sha256": "7c0e6fb6bdc73147e77c67d5aabf71a5da3838b6824cecf0aad3b6ad82f6c272",
+          "contentType": "application/pdf",
+          "note": "Live 58-page scan read at the cited passage."
+        }
+      ]
+    },
+    {
+      "id": "4c.2",
+      "item": "Gwern, Michie scan (archive row 614)",
+      "status": "Capture rate-limited; live scan read",
+      "note": "The live scan supplies Michie’s response to the conversational-program example. The capture’s PDF bytes could not be compared.",
+      "passages": [
+        {
+          "source": "michie-live",
+          "locator": "Chapter 20, printed p. 242 / PDF p. 247, second paragraph",
+          "text": "So Turing’s test has to be refined if it is going to be useful in the way intended."
+        }
+      ],
+      "responses": [
+        {
+          "id": "michie-archive",
+          "address": "https://web.archive.org/web/20261030051457id_/https://gwern.net/doc/ai/1986-michie-onmachineintelligence.pdf",
+          "httpStatus": 429,
+          "sha256": "e859c18f0c0cc71ffed35c4e7ebc87cbb4f136116156f2de1588aeb71449533e",
+          "contentType": "text/html",
+          "captureTimestampUtc": "2026-10-30T05:14:57Z",
+          "replayReturnedDocument": false,
+          "note": "Raw replay returned HTTP 429."
+        },
+        {
+          "id": "michie-replay",
+          "address": "https://web.archive.org/web/20261030051457/https://gwern.net/doc/ai/1986-michie-onmachineintelligence.pdf",
+          "httpStatus": 429,
+          "sha256": "e859c18f0c0cc71ffed35c4e7ebc87cbb4f136116156f2de1588aeb71449533e",
+          "contentType": "text/html",
+          "captureTimestampUtc": "2026-10-30T05:14:57Z",
+          "replayReturnedDocument": false,
+          "note": "Standard replay returned HTTP 429."
+        },
+        {
+          "id": "michie-live",
+          "address": "https://gwern.net/doc/ai/1986-michie-onmachineintelligence.pdf",
+          "httpStatus": 200,
+          "sha256": "e48b1ffdaf417b1358941347b6fe61ad75bd17c6ad973ee3284f4533f9bd623f",
+          "contentType": "application/pdf",
+          "note": "Live 276-page scan read at the cited passage."
+        }
+      ]
+    },
+    {
+      "id": "4c.3",
+      "item": "Gwern, Vinge scan (archive row 701)",
+      "status": "Capture blocked; live scan read",
+      "note": "The live scan supplies Vinge’s singularity passage. The capture’s PDF bytes could not be compared.",
+      "passages": [
+        {
+          "source": "vinge-live",
+          "locator": "First Word, Omni printed p. 10 / PDF p. 1, middle column",
+          "text": "When this happens, human history will have reached a kind of singularity"
+        }
+      ],
+      "responses": [
+        {
+          "id": "vinge-archive",
+          "address": "https://web.archive.org/web/20261030051526id_/https://gwern.net/doc/transhumanism/1983-vinge.pdf",
+          "httpStatus": 403,
+          "sha256": "f21d579d815ba1db4d964d841794307b19244c99e9fa5f26b56d6e593d7b4034",
+          "contentType": "text/html",
+          "captureTimestampUtc": "2026-10-30T05:15:26Z",
+          "replayReturnedDocument": false,
+          "note": "Raw replay returned HTML with HTTP 403."
+        },
+        {
+          "id": "vinge-replay",
+          "address": "https://web.archive.org/web/20261030051526/https://gwern.net/doc/transhumanism/1983-vinge.pdf",
+          "httpStatus": 429,
+          "sha256": "e859c18f0c0cc71ffed35c4e7ebc87cbb4f136116156f2de1588aeb71449533e",
+          "contentType": "text/html",
+          "captureTimestampUtc": "2026-10-30T05:15:26Z",
+          "replayReturnedDocument": false,
+          "note": "Standard replay returned HTTP 429."
+        },
+        {
+          "id": "vinge-live",
+          "address": "https://gwern.net/doc/transhumanism/1983-vinge.pdf",
+          "httpStatus": 200,
+          "sha256": "6d2f9a0afec5bf4ca347e78c4326c88799d0e69e274197f669a121aca5c7d8a4",
+          "contentType": "application/pdf",
+          "note": "Live one-page Omni scan read at the cited passage."
+        }
+      ]
+    }
+  ]
+}

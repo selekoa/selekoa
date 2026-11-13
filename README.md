@@ -4,7 +4,7 @@
 
 [selekoa.org](https://selekoa.org) · [About and method](https://selekoa.org/about) · [How it was built](https://selekoa.org/about#about-built) · [Dataset releases](release/CHANGELOG.md)
 
-Selekoa records who built what in machine intelligence, who controlled which lab and when, what the labs' safety frameworks say edition by edition, how laws and governments responded, and what people have argued about it. Every statement links to the passage in the source it rests on. Machines found the sources, quoted them and checked each other's work. The question, the point of view and the stance are left to the reader.
+Selekoa records who built what in machine intelligence, who controlled which lab and when, what the labs' safety frameworks say edition by edition, how laws and governments responded, and what people have argued about it. Every statement links to the passage in the source it rests on. Machines found the sources, quoted them and checked each other's work. The question, the point of view and the judgement are left to the reader.
 
 This repository holds the site's source code and the full dataset.
 

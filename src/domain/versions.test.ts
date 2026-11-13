@@ -30,6 +30,9 @@ import modelCards3 from '../../review/model-cards-admission-3-before-2026-11-05.
 import modelCards4 from '../../review/model-cards-admission-4-before-2026-11-05.json';
 import lawsCompared1 from '../../review/laws-compared-admission-1-before-2026-11-04.json';
 import lawsCompared2 from '../../review/laws-compared-admission-2-before-2026-11-05.json';
+import modelCards5 from '../../review/model-cards-admission-5-before-2026-11-10.json';
+import auditCorrections from '../../review/audit-corrections-2026-11-10-before-2026-11-10.json';
+import recheckReads from '../../review/recheck-and-reads-2026-11-07-before-2026-11-07.json';
 import aiMoney from '../../review/ai-money-admission-before-2026-11-06.json';
 import corrections from '../../review/corrections-2026-11-06-before-2026-11-06.json';
 import predictions from '../../review/predictions-admission-before-2026-11-05.json';
@@ -292,10 +295,12 @@ describe('governance version history', () => {
       ...compareMoreFacets.added.claims,
       // The 2026-11-03 model cards' citations of RSP editions, and the
       // 2026-11-05 citations by the Claude 3 and Claude 3.7 Sonnet cards (RSP v1.0)
-      // and the Claude 4 card (RSP v2.2).
+      // and the Claude 4 card (RSP v2.2), and the 2026-11-10 citations by the
+      // Claude Sonnet 4.5, Haiku 4.5 and Opus 4.6 cards (RSP v2.2).
       ...modelCards1.added.claims,
       ...modelCards3.added.claims,
       ...modelCards4.added.claims,
+      ...modelCards5.added.claims,
     ]);
     const prior = (claims: typeof data.claims) =>
       claims.filter((c) => !added.has(c.id));
@@ -369,6 +374,9 @@ describe('governance version history', () => {
         ...lawsCompared1.added.claims,
         ...lawsCompared2.added.claims,
         ...predictions.added.claims,
+        ...recheckReads.added.claims,
+        ...auditCorrections.added.claims,
+        ...modelCards5.added.claims,
         ...aiMoney.added.claims,
         ...corrections.added.claims,
         ...prehistory.added.claims,

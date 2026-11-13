@@ -12,7 +12,10 @@
 // run, under the same rules, with the maintainer's answers of 2026-11-04.
 // Part 4 admits the third pack (research/model-cards-3, prepared by Codex and
 // checked by Claude) in the same way, without the cards the maintainer held
-// (map "held"), with the answers of 2026-11-05.
+// (map "held"), with the answers of 2026-11-05. Part 5 admits packs 4 and 5
+// (research/model-cards-4 and -5, prepared by Claude and checked by Codex in
+// one cross-family check) together, with the answers of 2026-11-10, and
+// applies the map's "corrections" to admitted cells (decision B).
 //
 //   pnpm tsx scripts/model-cards-admission.ts --part 1            write the records and the before-snapshot
 //   pnpm tsx scripts/model-cards-admission.ts --part 1 --check    compare with the stored records
@@ -42,7 +45,7 @@ const read = (path: string) => JSON.parse(readFileSync(path, 'utf8'));
 const args = process.argv.slice(2);
 const check = args.includes('--check');
 const part = args.includes('--part') ? args[args.indexOf('--part') + 1] : '1';
-if (!['1', '2', '3', '4'].includes(part))
+if (!['1', '2', '3', '4', '5'].includes(part))
   throw new Error('Unknown part: ' + part);
 const mapFile = readdirSync('review').find((f) =>
   f.startsWith(`model-cards-admission-${part}-map-`),
@@ -55,8 +58,33 @@ const dir: string = map.files.dir ?? 'research/model-cards';
 const checkDate: string = map.crossFamily?.date ?? '2026-11-03';
 const adjudicatedOn: string = map.crossFamily?.adjudicatedOn ?? '2026-11-03';
 const decidedOn: string = map.decidedOn ?? '2026-11-03';
-const pack: Json = read(map.files.pack);
-const verification: Json = read(map.files.verification);
+const findingText: string =
+  map.crossFamily?.findingText ??
+  `its finding was applied at the adjudication of ${adjudicatedOn}`;
+// Part 5 reads two packs, checked together: their cards, sources, cells and
+// verified quotations are taken as one pack.
+const packs: Json[] = (map.files.packs ?? [map.files.pack]).map(read);
+const pack: Json = {
+  ...packs[0],
+  cards: packs.flatMap((p) => p.cards),
+  sources: packs.flatMap((p) => p.sources),
+  cells: packs.flatMap((p) => p.cells),
+};
+if (packs.some((p) => p.checkDate !== pack.checkDate))
+  throw new Error('The packs differ in their check date');
+const verifications: Json[] = (
+  map.files.verifications ?? [map.files.verification]
+).map(read);
+const verification: Json = {
+  perQuote: verifications.flatMap((v) => v.perQuote),
+  problems: verifications.flatMap((v) => v.problems),
+};
+// The folder of each card's pack.
+const dirOf = new Map<string, string>(
+  packs.flatMap((p, i) =>
+    (p.cards as Json[]).map((c) => [c.id, map.files.dirs?.[i] ?? dir]),
+  ),
+);
 const crossCheck: Json = read(map.files.check);
 const snapshotPath = `review/model-cards-admission-${part}-before-${date}.json`;
 
@@ -234,10 +262,28 @@ const perQuote = new Map<string, Json>(
 );
 // The third pack's check lists its items by part, with the outcome in
 // "comparison" (Part A) or "result" (Part B); "agree (reconciled)" is an
-// agreement reached at comparison.
+// agreement reached at comparison. The check of packs 4 and 5 keys each
+// numbered item by its cell, with the severity in "comparison" (Part A) or
+// "direct" (Part B).
+const nested = (x: Json) => x.cellId === undefined;
 const itemOf = new Map<string, Json>(
   crossCheck.items
-    ? Object.values(crossCheck.items as Json).map((x: Json) => [x.cellId, x])
+    ? Object.values(crossCheck.items as Json).map((x: Json) => {
+        if (!nested(x)) return [x.cellId, x];
+        const [cellId, y] = Object.entries(x as Json)[0] as [string, Json];
+        if (Object.keys(x).length !== 1 || y.cellId !== cellId)
+          throw new Error('Unexpected check item: ' + cellId);
+        const severity = (y.comparison ?? y.direct)?.severity;
+        if (!severity) throw new Error('No severity: ' + cellId);
+        return [
+          cellId,
+          {
+            number: y.item,
+            cellId,
+            outcome: severity === 'agree' ? 'agree' : severity,
+          },
+        ];
+      })
     : [...(crossCheck.partA as Json[]), ...(crossCheck.partB as Json[])].map(
         (x: Json) => [
           x.cell,
@@ -308,11 +354,12 @@ function evidenceRow(
   const s = packSources.get(packCards.get(cardId)!.source)!;
   const item = itemOf.get(`${cardId}:${p.cell}`);
   const verdict = item?.comparison?.verdict ?? item?.outcome;
+  const dirOfCard = dirOf.get(cardId) ?? dir;
   const matched = v?.found
     ? `The quotation (${words(quote)} words) matched the card’s text retrieved for the candidate pack on ${s.retrievedAt} (SHA-256 ${s.sha256}) ${map.matchedAgain ?? 'and again on 2026-11-03 in a fresh retrieval with the same SHA-256'}.${v.textLayer ? ` It was matched in the raw reading order of the PDF text (${v.textLayer}), because the default text layer interleaves the printed lines.` : ''}`
     : `The quotation (${words(quote)} words) matched the card’s text retrieved for the candidate pack on ${earlier.date} (SHA-256 ${s.sha256}). ${earlier.reason}`;
   const note = [
-    `Candidate pack passage, model cards compared (${dir}).`,
+    `Candidate pack passage, model cards compared (${dirOfCard}).`,
     matched,
     'Matching ignored differences of whitespace, case, quotation marks, dashes, PDF line-break hyphens and Unicode compatibility forms, so the source’s typography can differ.',
     /…/.test(quote)
@@ -324,7 +371,7 @@ function evidenceRow(
     item
       ? item.status === 'excluded'
         ? `The maintainer excluded this passage’s cell from the cross-family machine check of ${checkDate} (item ${item.number}).`
-        : `A cross-family machine check (${checkDate}, item ${item.number}) checked this passage’s cell${verdict === 'agree' ? ' and agreed with the pack' : `; its finding was applied at the adjudication of ${adjudicatedOn}`}.`
+        : `A cross-family machine check (${checkDate}, item ${item.number}) checked this passage’s cell${verdict === 'agree' ? ' and agreed with the pack' : `; ${findingText}`}.`
       : '',
     extra,
     map.roles ?? '',
@@ -655,7 +702,7 @@ function admitCards() {
  */
 function admitExpressions() {
   const retrievals = new Map<string, Json>(
-    (crossCheck.retrievals as Json[]).map((r) => [r.id, r]),
+    ((crossCheck.retrievals ?? []) as Json[]).map((r) => [r.id, r]),
   );
   for (const x of (map.expressions ?? []) as Json[]) {
     keysOk('expression', x, x.id);
@@ -751,12 +798,19 @@ function admitCells() {
   const find = (n: Name, id: string) =>
     added[n].find((r) => r.id === id) ?? existing(n, id);
   const applied = new Set<string>();
+  let emptyNotes = 0;
   for (const packCell of pack.cells as Json[]) {
     if (held.has(packCell.card)) continue;
     const cellId = `${packCell.card}:${packCell.question}`;
     const o = overrides[cellId];
     const cell: Json = o ? { ...packCell, ...o } : { ...packCell };
     if (o) applied.add(cellId);
+    // A recorded absence the pack left without a note takes the sentence the
+    // third pack used for such cells (map "emptyNote", part 5).
+    if (map.emptyNote && cell.status === 'not-found' && !cell.note?.trim()) {
+      cell.note = map.emptyNote;
+      emptyNotes += 1;
+    }
     // Exact replacements in a cell's note, each of which must apply.
     for (const [from, to] of (map.noteEdits?.[cellId] ?? []) as string[][]) {
       if (!cell.note.includes(from))
@@ -811,10 +865,17 @@ function admitCells() {
               basis: 'revision',
               note: 'Dated as the card read is dated: the date of its revision, as the card’s version records it.',
             }
-          : {
-              kind: 'unknown',
-              note: 'The card prints no date of its own, so its cells carry no date.',
-            };
+          : (card.documentVersion as Json | undefined)?.publishedAt
+            ? {
+                kind: 'event',
+                date: (card.documentVersion as Json).publishedAt,
+                basis: 'publication',
+                note: 'Dated as the card read is dated: its printed date, as the card’s version records it.',
+              }
+            : {
+                kind: 'unknown',
+                note: 'The card prints no date of its own, so its cells carry no date.',
+              };
     const item = itemOf.get(cellId);
     const marked = unmarked.delete(cellId);
     if (
@@ -917,7 +978,7 @@ function admitCells() {
         throw new Error('A recorded absence without its search: ' + cellId);
       const evId = `mc-ev-cell-${cell.card}-${cell.question.toLowerCase()}`;
       const checked = item
-        ? ` A cross-family machine check (${checkDate}, item ${item.number}) checked this cell${o?.decision ? '; after its second pass of 2026-11-03 the cell follows the checker’s reading' : (item.comparison?.verdict ?? item.outcome) === 'agree' ? ' and agreed with the pack' : `; its finding was applied at the adjudication of ${adjudicatedOn}`}.`
+        ? ` A cross-family machine check (${checkDate}, item ${item.number}) checked this cell${o?.decision ? '; after its second pass of 2026-11-03 the cell follows the checker’s reading' : (item.comparison?.verdict ?? item.outcome) === 'agree' ? ' and agreed with the pack' : `; ${findingText}`}.`
         : '';
       addOnce('evidence', {
         id: evId,
@@ -930,7 +991,7 @@ function admitCells() {
         passageType: 'paraphrase',
         verification: 'machine_checked',
         checkedAt: item ? checkDate : pack.checkDate,
-        note: `Absence recorded for the model-cards candidate pack (${dir}) on ${pack.checkDate} ${map.absenceBy ?? 'by an automated research assistant and audited in a fresh context by the same model family'}.${checked} No human editorial review.`,
+        note: `Absence recorded for the model-cards candidate pack (${dirOf.get(cell.card) ?? dir}) on ${pack.checkDate} ${map.absenceBy ?? 'by an automated research assistant and audited in a fresh context by the same model family'}.${checked} No human editorial review.`,
         retrievalRoute: 'direct',
       });
       addOnce('claims', {
@@ -954,6 +1015,10 @@ function admitCells() {
       });
     } else throw new Error(`Unknown status ${cell.status}: ${cellId}`);
   }
+  if (map.emptyNote && emptyNotes !== map.emptyNoteCount)
+    throw new Error(
+      `${emptyNotes} absences without a note, not ${map.emptyNoteCount}`,
+    );
   // Every card's entry added its cells.
   for (const e of packEntities)
     if (
@@ -1002,12 +1067,37 @@ function admitCells() {
   }
 }
 
+// ---------------------------------------------------------------- corrections (part 5)
+/**
+ * Corrections to admitted records that the part's decisions call for
+ * (decision B of 2026-11-10): each sets one field whose stored value must be
+ * the entry's `old`, and must change it.
+ */
+function applyCorrections() {
+  for (const e of (map.corrections ?? []) as Json[]) {
+    const row = change(e.table as Name, e.id);
+    const path = (e.path as string).split('.');
+    const parent = path
+      .slice(0, -1)
+      .reduce<Json | undefined>((v, k) => v?.[k], row);
+    const key = path.at(-1)!;
+    if (!parent || JSON.stringify(parent[key]) !== JSON.stringify(e.old))
+      throw new Error(
+        `${e.key}: ${e.id} ${e.path} is not the entry's old value`,
+      );
+    if (JSON.stringify(e.old) === JSON.stringify(e.new))
+      throw new Error(`${e.key}: the entry changes nothing`);
+    parent[key] = structuredClone(e.new);
+  }
+}
+
 if (part === '1') admitCards();
 else if (part === '2') admitCells();
 else {
   admitCards();
   admitExpressions();
   admitCells();
+  applyCorrections();
 }
 
 // ---------------------------------------------------------------- limits

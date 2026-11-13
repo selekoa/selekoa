@@ -13,7 +13,7 @@ import type { PropositionsFrame } from '../domain/propositions';
 /** The frame of `superintelligencePropositions` (src/reading/superintelligence.ts). */
 export const superintelligenceFrame = {
   id: 'superintelligence',
-  version: 5,
+  version: 6,
   title: 'Propositions about superintelligence, 1863–2025',
   question:
     'Which located texts from 1863 to 2025, and one earlier text, of 1637, recorded on C1 as context, state, dispute or bear on propositions about machine intelligence? The propositions concern intelligence rising faster than earlier change, and people’s means of observing and directing it becoming inadequate. For each, which text is the earliest located?',
@@ -64,7 +64,7 @@ export const superintelligenceFrame = {
 /** The frame of `riskDebate` (src/reading/risk-debate.ts). */
 export const riskDebateFrame = {
   id: 'risk-debate',
-  version: 7,
+  version: 8,
   title: 'Arguments about catastrophic risk from advanced AI, 1863–2026',
   question:
     'Which published texts, from 1993 to 2026 and, on the two propositions shared with the superintelligence collection, from 1863, state, contest or bear on the arguments that advanced AI could cause catastrophe or human extinction, and on the arguments that the risk is lower, later, placed elsewhere or better handled otherwise? Which texts answer one another? For each proposition, which text is the earliest located?',
@@ -118,7 +118,7 @@ export const riskDebateFrame = {
 /** The frame of `yudkowskyArguments` (src/reading/yudkowsky-arguments.ts). */
 export const yudkowskyArgumentsFrame = {
   id: 'yudkowsky-arguments',
-  version: 6,
+  version: 7,
   title: 'Eliezer Yudkowsky’s arguments on common claims about AI, 1996–2026',
   question:
     'Which located texts by Eliezer Yudkowsky, from 1996 to 2026, state, contest or bear on 29 claims often made about advanced AI? For each claim, which of his located texts is the earliest to contest it, and which earlier views of his did later texts of his contest?',
@@ -178,7 +178,7 @@ export const yudkowskyArgumentsFrame = {
 /** The frame of `machineSuccession` (src/reading/machine-succession.ts). */
 export const machineSuccessionFrame = {
   id: 'machine-succession',
-  version: 8,
+  version: 9,
   title:
     'Machine succession, scale and acceleration: propositions in located texts, 1863–2026',
   question:
@@ -264,7 +264,7 @@ export const antecedentTextsFrame = {
 /** The frame of `economicsOfMachineIntelligence` (src/reading/economics.ts). */
 export const economicsFrame = {
   id: 'economics-of-machine-intelligence',
-  version: 7,
+  version: 8,
   title:
     'Economics of machine intelligence: texts from 1952 to 2026 that state, contest or bear on its propositions',
   question:
@@ -334,7 +334,7 @@ export const economicsFrame = {
 /** The frame of `orbitalCompute` (src/reading/orbital-compute.ts). */
 export const orbitalComputeFrame = {
   id: 'orbital-compute-arguments',
-  version: 3,
+  version: 4,
   title: 'Arguments about compute in orbit',
   question:
     'Which located texts, from 1989 to 2026, state, contest or bear on the reasons given for placing computing in orbit and on the limits and objections raised against it? For each proposition, which text is the earliest located?',
@@ -379,7 +379,7 @@ export const orbitalComputeFrame = {
 /** The frame of `aiBioArguments` (src/reading/ai-bio-arguments.ts). */
 export const aiBioArgumentsFrame = {
   id: 'ai-bio-arguments',
-  version: 3,
+  version: 4,
   title: 'Arguments about AI and biological risk',
   question:
     'Which located texts, from 2023 to 2026, state, contest or bear on the published arguments about AI and biological risk: whether current systems already help an actor seeking biological harm, where the binding barrier lies, what published evaluations establish, whether design tools are a distinct case, whether synthesis screening is the control point, whether open weights raise the risk, and whom assessment must cover? For each proposition, which text is the earliest located?',
@@ -453,7 +453,7 @@ export const aiInScienceFrame = {
 /** The frame of `aiAndMoney` (src/reading/ai-and-money.ts). */
 export const aiAndMoneyFrame = {
   id: 'ai-and-money',
-  version: 1,
+  version: 3,
   title:
     'AI and money: what central banks and financial authorities have said, 1997–2026',
   question:

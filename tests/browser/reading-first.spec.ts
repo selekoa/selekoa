@@ -69,7 +69,7 @@ test('start page leads with search, three hubs and one review-status line', asyn
     'A documentary history of machine intelligence.',
   );
   await expect(page.locator('.landing-lede .landing-deck')).toHaveText(
-    'Selekoa is a documentary history of machine intelligence and of human thought about it. Machines built it: they find the sources, quote them and check each other’s work, and every statement links to the passage it rests on. What they leave to you is the human part: the question, the point of view, the stance.',
+    'Selekoa is a documentary history of machine intelligence and of human thought about it. Machines built it: they find the sources, quote them and check each other’s work, and every statement links to the passage it rests on. What they leave to you is the human part: the question, the point of view and the judgement.',
   );
   // The heading carries the tagline, so the header omits it on this page.
   await expect(
@@ -426,5 +426,50 @@ test('the theme follows the system until chosen, and only the choice is stored',
   await setTheme(blocked, 'dark');
   await setTheme(blocked, 'light');
   expect(blockedErrors).toEqual([]);
+  expect(errors).toEqual([]);
+});
+
+test('start page links to Where else to look, which lists external resources', async ({
+  page,
+}) => {
+  const errors = collectErrors(page);
+  await page.goto('/');
+  const lede = page.locator('.landing-lede');
+  const toElsewhere = lede.getByRole('link', { name: 'Where else to look →' });
+  // Without scripts the link still lands on the section.
+  await expect(toElsewhere).toHaveAttribute('href', '/about#about-elsewhere');
+  await toElsewhere.click();
+  await expect(page).toHaveURL(/\/about$/);
+  const heading = page.locator('#about-elsewhere');
+  await expect(heading).toBeFocused();
+  await expect(heading).toHaveText('Where else to look');
+  const section = page.locator('section[aria-labelledby="about-elsewhere"]');
+  await expect(section).toContainText('you need the source behind a');
+  const links = section.getByRole('link');
+  expect(await links.count()).toBeGreaterThanOrEqual(5);
+  await expect(links.first()).toHaveText('Epoch AI');
+  for (const href of await links.evaluateAll((as) =>
+    as.map((a) => a.getAttribute('href') ?? ''),
+  )) {
+    expect(href).toMatch(/^https:\/\//);
+    // Ordinary links: no tracking parameters, no new window.
+    expect(href).not.toMatch(/[?&](utm_|ref=)/);
+  }
+  await expect(section.locator('a[target]')).toHaveCount(0);
+  // The prerendered page carries the section without scripts.
+  const direct = await page.request.get('/about');
+  expect(await direct.text()).toContain('id="about-elsewhere"');
+  // The table of contents leads to it as well.
+  await page.goto('/about');
+  await page
+    .getByRole('navigation', { name: 'On this page' })
+    .getByRole('button', { name: 'Where else to look' })
+    .click();
+  await expect(heading).toBeFocused();
+  for (const width of [1440, 390]) {
+    await page.setViewportSize({ width, height: 900 });
+    expect(await fitsViewport(page)).toBe(true);
+  }
+  await noViolations(page);
   expect(errors).toEqual([]);
 });

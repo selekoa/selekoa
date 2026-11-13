@@ -10,7 +10,7 @@ import { externalCommitments } from './commitments';
  */
 export const frontierFrameworksAndLaw: FrameworksLawCollection = {
   id: 'frontier-frameworks-and-law',
-  version: 1,
+  version: 2,
   title: 'Frontier AI frameworks and law, 2023–2026',
   question:
     'What did frontier AI developers’ safety frameworks say, what did laws and government texts on frontier or general-purpose models state, with what standing and when, and which frameworks name which texts?',
@@ -478,12 +478,6 @@ export const frontierFrameworksAndLaw: FrameworksLawCollection = {
       category: 'gap',
       text: 'Developers’ compliance and transparency documents under these laws are left for a separate pass. Anthropic announced its Frontier Compliance Framework for SB 53 on 19 December 2025; the framework’s own text has not been inspected.',
       claimIds: ['sb-anthropic-fcf-published'],
-    },
-    {
-      id: 'gb-45438-scope',
-      category: 'held',
-      text: 'The scope of the mandatory standard GB 45438-2025 is held: a provision record must quote the standard itself, and its text was not retrieved. The standard’s publication is recorded.',
-      claimIds: ['fl-cn-gb45438-published'],
     },
     {
       id: 'michigan-status',

@@ -240,6 +240,7 @@ test('About & method states coverage, labels, citation and corrections', async (
     'Why machine-first',
     'How this was built',
     'What Selekoa is',
+    'Where else to look',
     'Current coverage',
     'How this was checked',
     'What the labels mean',

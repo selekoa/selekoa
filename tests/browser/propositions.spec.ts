@@ -69,7 +69,7 @@ test('propositions page names earliest located texts, keeps dates apart and labe
   const a3 = page.locator('#proposition-a3');
   await a3.locator('details.prop-context summary').click();
   await expect(
-    a3.locator('.prop-rows [data-claim-id="ts-a3-good-1965-context"]'),
+    a3.locator('.prop-rows [data-claim-id="ts-a3-turing-1950-context"]'),
   ).toContainText('Missing:');
   // Keyboard: a headline opens the record in the inspector.
   await headlines

@@ -1,0 +1,505 @@
+{
+  "group": "meta",
+  "drafter": "Claude (preparing session), 2026-11-06",
+  "cards": [
+    {
+      "id": "meta-muse-glimmer",
+      "developer": "Meta",
+      "model": "Muse Glimmer",
+      "year": 2026,
+      "source": "meta-muse-glimmer",
+      "frameworkEditions": [],
+      "frameworkEditionNote": "The card names Meta’s Advanced AI Scaling Framework (AAISF) without a version, date or address. As context only, the dataset records the Advanced AI Scaling Framework v2.0 (2026-04-08) as an edition published before the card; the card does not say so.",
+      "earliestLocated": "2026-08-10"
+    },
+    {
+      "id": "meta-muse-wonder-and-muse-wonder-full",
+      "developer": "Meta",
+      "model": "Muse Wonder and Muse Wonder Full",
+      "year": 2026,
+      "source": "meta-muse-wonder-and-muse-wonder-full",
+      "frameworkEditions": [],
+      "frameworkEditionNote": "The card names the Meta Superintelligence Scaling Framework and prints its address (https://research.meta.ai/static/meta-superintelligence-scaling-framework), which carries no version. That framework is not in the dataset; maintainer decision 5a holds its v2.1 (October 2026) for a separate data task. No edition is recorded or inferred. In the cross-family check of 2026-11-07, the printed address served a PDF printing version 2.1, October 2026 (changelog: v2.1, 2 October 2026), byte-identical to its capture of 2026-10-13; this is what the address served, not an edition the card names, so Q03 stays partly.",
+      "earliestLocated": "2026-10-12"
+    }
+  ],
+  "cells": [
+    {
+      "card": "meta-muse-glimmer",
+      "question": "Q01",
+      "status": "not-found",
+      "note": "No date of the card itself was found; the date printed is the model’s release month (Q02). Under maintainer decision 8a, repository dates stay in the background record: the population cites repository creation on 2026-08-09, and the inventory notes that the README was last modified on 2026-10-22.",
+      "search": {
+        "read": "Whole card (Hugging Face README, revision cec94fcf): front matter, overview, benchmarks, Trust and Safety, Preparedness, Train-Time Mitigations, Intended Use, Considerations and Limitations",
+        "terms": ["date", "updated", "2026", "version"],
+        "setAside": [
+          {
+            "locator": "Header",
+            "reason": "“Model Release Date: August 2026” is the release date (Q02), not a date of the card."
+          }
+        ]
+      }
+    },
+    {
+      "card": "meta-muse-glimmer",
+      "question": "Q02",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "meta-muse-glimmer",
+          "locator": "Header",
+          "quote": "**Model Release Date:** August 2026"
+        },
+        {
+          "source": "meta-muse-glimmer",
+          "locator": "Released Artifacts",
+          "quote": "All artifacts are released under Apache 2.0"
+        }
+      ],
+      "note": "The card gives the release month and the release form (artifacts under an open licence, for local deployment)."
+    },
+    {
+      "card": "meta-muse-glimmer",
+      "question": "Q03",
+      "status": "partly",
+      "passages": [
+        {
+          "source": "meta-muse-glimmer",
+          "locator": "Preparedness",
+          "quote": "Muse Glimmer does not fall under the definition of “Frontier AI” in Meta’s Advanced AI Scaling Framework (AAISF), since it is generally less capable than Muse Spark."
+        }
+      ],
+      "note": "The card names the framework without a version, date or address. As context only: the dataset records the Advanced AI Scaling Framework v2.0 (2026-04-08) as published before the card."
+    },
+    {
+      "card": "meta-muse-glimmer",
+      "question": "Q04",
+      "status": "partly",
+      "passages": [
+        {
+          "source": "meta-muse-glimmer",
+          "locator": "Preparedness",
+          "quote": "Muse Glimmer does not fall under the definition of “Frontier AI” in Meta’s Advanced AI Scaling Framework (AAISF), since it is generally less capable than Muse Spark."
+        }
+      ],
+      "note": "The card refers to the framework as a document containing a definition, without an address or reference.",
+      "search": {
+        "read": "Whole card (Hugging Face README, revision cec94fcf): front matter, overview, benchmarks, Trust and Safety, Preparedness, Train-Time Mitigations, Intended Use, Considerations and Limitations",
+        "terms": ["Scaling Framework", "AAISF", "http", "ai.meta.com"],
+        "setAside": []
+      }
+    },
+    {
+      "card": "meta-muse-glimmer",
+      "question": "Q05",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "meta-muse-glimmer",
+          "locator": "Preparedness",
+          "quote": "Muse Glimmer does not fall under the definition of “Frontier AI” in Meta’s Advanced AI Scaling Framework (AAISF), since it is generally less capable than Muse Spark."
+        },
+        {
+          "source": "meta-muse-glimmer",
+          "locator": "Preparedness",
+          "quote": "Chem/Bio: Moderate or lower risk;"
+        }
+      ],
+      "note": "The card states that the model is outside the framework’s definition of frontier AI and, “as a matter of prudence”, gives risk designations of moderate or lower in three domains; the cyber and loss-of-control designations are inferred from Muse Spark 1.0."
+    },
+    {
+      "card": "meta-muse-glimmer",
+      "question": "Q06",
+      "status": "partly",
+      "passages": [
+        {
+          "source": "meta-muse-glimmer",
+          "locator": "Train-Time Mitigations",
+          "quote": "Safety SFT:** Curated examples demonstrating correct safety behavior"
+        }
+      ],
+      "note": "The card lists train-time mitigations (safety fine-tuning, safety reinforcement learning, information-flow training) and recommends system guardrails, without tying them to the risk designations.",
+      "search": {
+        "read": "Whole card (Hugging Face README, revision cec94fcf): front matter, overview, benchmarks, Trust and Safety, Preparedness, Train-Time Mitigations, Intended Use, Considerations and Limitations",
+        "terms": ["mitigation", "safeguard", "guardrail"],
+        "setAside": []
+      }
+    },
+    {
+      "card": "meta-muse-glimmer",
+      "question": "Q07",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "meta-muse-glimmer",
+          "locator": "Preparedness",
+          "quote": "here, our evaluation rated its risk rating at moderate or lower as well."
+        }
+      ],
+      "note": "The card reports chemical and biological knowledge and wet-lab benchmarks and a bottleneck-focused suite, with the designation “moderate or lower”. Scores are not recorded (hazard rule)."
+    },
+    {
+      "card": "meta-muse-glimmer",
+      "question": "Q08",
+      "status": "not-found",
+      "note": "No cyber evaluation of Muse Glimmer was found.",
+      "search": {
+        "read": "Whole card (Hugging Face README, revision cec94fcf): front matter, overview, benchmarks, Trust and Safety, Preparedness, Train-Time Mitigations, Intended Use, Considerations and Limitations",
+        "terms": ["cyber", "CTF", "evaluat"],
+        "setAside": [
+          {
+            "locator": "Preparedness",
+            "reason": "The cyber designation (“Moderate or lower risk (inferred)”) is inferred from Muse Spark 1.0’s designation; the card reports no cyber evaluation of this model."
+          }
+        ]
+      }
+    },
+    {
+      "card": "meta-muse-glimmer",
+      "question": "Q09",
+      "status": "not-found",
+      "note": "No autonomy or AI R&D evaluation of Muse Glimmer was found.",
+      "search": {
+        "read": "Whole card (Hugging Face README, revision cec94fcf): front matter, overview, benchmarks, Trust and Safety, Preparedness, Train-Time Mitigations, Intended Use, Considerations and Limitations",
+        "terms": ["autonom", "loss of control", "R&D", "self-"],
+        "setAside": [
+          {
+            "locator": "Preparedness",
+            "reason": "The loss-of-control designation is inferred from Muse Spark 1.0’s designation, without an evaluation of this model."
+          }
+        ]
+      }
+    },
+    {
+      "card": "meta-muse-glimmer",
+      "question": "Q10",
+      "status": "not-found",
+      "search": {
+        "read": "Whole card (Hugging Face README, revision cec94fcf): front matter, overview, benchmarks, Trust and Safety, Preparedness, Train-Time Mitigations, Intended Use, Considerations and Limitations",
+        "terms": ["persua", "manipul", "influenc"],
+        "setAside": []
+      }
+    },
+    {
+      "card": "meta-muse-glimmer",
+      "question": "Q11",
+      "status": "not-found",
+      "note": "No misalignment or deception evaluation of Muse Glimmer was found.",
+      "search": {
+        "read": "Whole card (Hugging Face README, revision cec94fcf): front matter, overview, benchmarks, Trust and Safety, Preparedness, Train-Time Mitigations, Intended Use, Considerations and Limitations",
+        "terms": [
+          "deceptive",
+          "misalign",
+          "scheming",
+          "sabotage",
+          "loss of control"
+        ],
+        "setAside": [
+          {
+            "locator": "Preparedness",
+            "reason": "The loss-of-control designation is inferred from Muse Spark 1.0, without an evaluation of this model."
+          }
+        ]
+      }
+    },
+    {
+      "card": "meta-muse-glimmer",
+      "question": "Q12",
+      "status": "not-found",
+      "search": {
+        "read": "Whole card (Hugging Face README, revision cec94fcf): front matter, overview, benchmarks, Trust and Safety, Preparedness, Train-Time Mitigations, Intended Use, Considerations and Limitations",
+        "terms": ["red team", "red-team", "adversarial"],
+        "setAside": [
+          {
+            "locator": "Trust and Safety, Evaluations",
+            "reason": "Dedicated adversarial evaluation datasets are described, not testing described as red-teaming."
+          }
+        ]
+      }
+    },
+    {
+      "card": "meta-muse-glimmer",
+      "question": "Q13",
+      "status": "not-found",
+      "search": {
+        "read": "Whole card (Hugging Face README, revision cec94fcf): front matter, overview, benchmarks, Trust and Safety, Preparedness, Train-Time Mitigations, Intended Use, Considerations and Limitations",
+        "terms": ["external", "third part", "vendor", "partner"],
+        "setAside": [
+          {
+            "locator": "Model overview table, Training Data",
+            "reason": "External vendor networks are named for training-data curation, not for testing."
+          }
+        ]
+      }
+    },
+    {
+      "card": "meta-muse-glimmer",
+      "question": "Q14",
+      "status": "not-found",
+      "search": {
+        "read": "Whole card (Hugging Face README, revision cec94fcf): front matter, overview, benchmarks, Trust and Safety, Preparedness, Train-Time Mitigations, Intended Use, Considerations and Limitations",
+        "terms": ["government", "AI Safety Institute", "AISI", "CAISI"],
+        "setAside": []
+      }
+    },
+    {
+      "card": "meta-muse-glimmer",
+      "question": "Q15",
+      "status": "partly",
+      "passages": [
+        {
+          "source": "meta-muse-glimmer",
+          "locator": "Preparedness",
+          "quote": "our Preparedness Team assessed Muse Glimmer’s risk profile and determined that it would receive the following designations"
+        }
+      ],
+      "note": "A maker (the Preparedness Team) is named for the risk designations only; the card states no decision to release and no maker of one.",
+      "search": {
+        "read": "Whole card (Hugging Face README, revision cec94fcf): front matter, overview, benchmarks, Trust and Safety, Preparedness, Train-Time Mitigations, Intended Use, Considerations and Limitations",
+        "terms": ["decision", "decid", "release", "deploy"],
+        "setAside": [
+          {
+            "locator": "Preparedness",
+            "reason": "The card says the results suggest the model is unlikely to materially enable new threats upon release; that is an assessment, not a release decision."
+          }
+        ]
+      }
+    },
+    {
+      "card": "meta-muse-glimmer",
+      "question": "Q16",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "meta-muse-glimmer",
+          "locator": "Considerations and Limitations",
+          "quote": "Testing conducted to date has not, and could not, cover all scenarios."
+        }
+      ],
+      "note": "The card also states that two of its three risk designations are inferred from Muse Spark 1.0 rather than evaluated (Preparedness)."
+    },
+    {
+      "card": "meta-muse-wonder-and-muse-wonder-full",
+      "question": "Q01",
+      "status": "partly",
+      "passages": [
+        {
+          "source": "meta-muse-wonder-and-muse-wonder-full",
+          "locator": "§4 Cyber Capability Evaluations, note, PDF p. 7",
+          "quote": "Updated ExploitGym Evaluations (23 October 2026)"
+        }
+      ],
+      "note": "The card carries no date of its own other than this update note on one evaluation (a revision date). Its “Date of Release” is the model’s (Q02)."
+    },
+    {
+      "card": "meta-muse-wonder-and-muse-wonder-full",
+      "question": "Q02",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "meta-muse-wonder-and-muse-wonder-full",
+          "locator": "§1 The models, PDF p. 1",
+          "quote": "Date of Release October 12, 2026"
+        }
+      ],
+      "note": "The card gives the release date. Its terms of use name the Meta Model API (§6)."
+    },
+    {
+      "card": "meta-muse-wonder-and-muse-wonder-full",
+      "question": "Q03",
+      "status": "partly",
+      "passages": [
+        {
+          "source": "meta-muse-wonder-and-muse-wonder-full",
+          "locator": "§5 Trust and Safety, PDF p. 11",
+          "quote": "Consistent with the Meta Superintelligence Scaling Framework (https://research.meta.ai/static/meta-superintelligence-scaling-framework)"
+        }
+      ],
+      "note": "The card names the framework and prints an address without a version. The framework is not in the dataset (maintainer decision 5a); no edition is inferred."
+    },
+    {
+      "card": "meta-muse-wonder-and-muse-wonder-full",
+      "question": "Q04",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "meta-muse-wonder-and-muse-wonder-full",
+          "locator": "§5 Trust and Safety, PDF p. 11",
+          "quote": "Consistent with the Meta Superintelligence Scaling Framework (https://research.meta.ai/static/meta-superintelligence-scaling-framework)"
+        }
+      ],
+      "note": "The card prints the framework’s address. The address names no version; what it serves now was not retrieved."
+    },
+    {
+      "card": "meta-muse-wonder-and-muse-wonder-full",
+      "question": "Q05",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "meta-muse-wonder-and-muse-wonder-full",
+          "locator": "§4 Risk assessments, PDF p. 7",
+          "quote": "Without mitigations, we do not rule out the model reaching this threshold in the Chemical & Biological domain."
+        },
+        {
+          "source": "meta-muse-wonder-and-muse-wonder-full",
+          "locator": "§4 Risk assessments, PDF p. 7",
+          "quote": "we reach the same “moderate or lower” level across all domains, which supports our decision to deploy."
+        }
+      ],
+      "note": "The card states that the high-risk threshold is not ruled out for the unmitigated model in the chemical and biological domain, “moderate or lower” for cybersecurity and loss of control before mitigations, and “moderate or lower” in all domains with mitigations. Results are from Muse Wonder Full."
+    },
+    {
+      "card": "meta-muse-wonder-and-muse-wonder-full",
+      "question": "Q06",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "meta-muse-wonder-and-muse-wonder-full",
+          "locator": "§4 Risk assessments, PDF p. 7",
+          "quote": "Because of that, we apply mitigations designed for this domain, including safety post-training and system-level classifiers."
+        }
+      ],
+      "note": "The card ties these mitigations to the chemical and biological determination, and names a weight-security programme (§5). A stated safeguard is the developer’s account."
+    },
+    {
+      "card": "meta-muse-wonder-and-muse-wonder-full",
+      "question": "Q07",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "meta-muse-wonder-and-muse-wonder-full",
+          "locator": "§4 Risk assessments, PDF p. 7",
+          "quote": "Without mitigations, we do not rule out the model reaching this threshold in the Chemical & Biological domain."
+        }
+      ],
+      "note": "Outcome category: high-risk threshold not ruled out without mitigations; “moderate or lower” with them. The card reports proxy capability and refusal evaluations; scores are not recorded (hazard rule)."
+    },
+    {
+      "card": "meta-muse-wonder-and-muse-wonder-full",
+      "question": "Q08",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "meta-muse-wonder-and-muse-wonder-full",
+          "locator": "§4 Risk assessments, PDF p. 7",
+          "quote": "Our evaluations put the unmitigated model at “moderate or lower” for both Cybersecurity and Loss of Control before applying our mitigations."
+        }
+      ],
+      "note": "An update of 23 October 2026 to one cyber evaluation states that it does not change the “moderate or lower” threshold."
+    },
+    {
+      "card": "meta-muse-wonder-and-muse-wonder-full",
+      "question": "Q09",
+      "status": "not-found",
+      "note": "No autonomy, self-replication or AI R&D evaluation was found. The loss-of-control domain is evaluated with an honesty benchmark and an agentic misalignment benchmark (Q11).",
+      "search": {
+        "read": "Whole card (12 pages): §§1–6 and the appendix",
+        "terms": ["autonom", "R&D", "self-", "replicat", "loss of control"],
+        "setAside": [
+          {
+            "locator": "§4 Loss of Control Evaluations, PDF p. 10",
+            "reason": "The two evaluations named measure honesty under pressure and harmful actions to avoid replacement; they are not autonomy or AI R&D capability evaluations."
+          }
+        ]
+      }
+    },
+    {
+      "card": "meta-muse-wonder-and-muse-wonder-full",
+      "question": "Q10",
+      "status": "not-found",
+      "search": {
+        "read": "Whole card (12 pages): §§1–6 and the appendix",
+        "terms": ["persua", "manipul", "influenc"],
+        "setAside": []
+      }
+    },
+    {
+      "card": "meta-muse-wonder-and-muse-wonder-full",
+      "question": "Q11",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "meta-muse-wonder-and-muse-wonder-full",
+          "locator": "§4 Loss of Control Evaluations, PDF p. 10",
+          "quote": "We evaluate Muse Wonder on two evaluations for this domain."
+        },
+        {
+          "source": "meta-muse-wonder-and-muse-wonder-full",
+          "locator": "§4 Risk assessments, PDF p. 7",
+          "quote": "Our evaluations put the unmitigated model at “moderate or lower” for both Cybersecurity and Loss of Control before applying our mitigations."
+        }
+      ],
+      "note": "The loss-of-control evaluations are MASK (honesty under pressure) and Agentic Misalignment (harmful actions to avoid replacement or shutdown); the domain conclusion is “moderate or lower”."
+    },
+    {
+      "card": "meta-muse-wonder-and-muse-wonder-full",
+      "question": "Q12",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "meta-muse-wonder-and-muse-wonder-full",
+          "locator": "§5 Trust and Safety, PDF p. 11",
+          "quote": "we ran extensive evaluations, including red-teaming, across the Framework's catastrophic risk domains of Cybersecurity, Chemical & Biological, and Loss of Control."
+        }
+      ],
+      "note": "Scope: the framework’s three catastrophic-risk domains. No number of testers or period is given."
+    },
+    {
+      "card": "meta-muse-wonder-and-muse-wonder-full",
+      "question": "Q13",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "meta-muse-wonder-and-muse-wonder-full",
+          "locator": "§3 Capabilities evaluations, DeepSWE, PDF p. 6",
+          "quote": "The scorecard uses Datacurve’s third-party results for Muse Wonder, Muse Wonder Full, and Claude Opus 5.5"
+        }
+      ],
+      "note": "Datacurve, Artificial Analysis and other result sources are named for capability benchmarks. No external safety tester is named; third parties are said to have helped develop and license risk-evaluation benchmarks, and outside experts to have taken part in threat modelling (§5)."
+    },
+    {
+      "card": "meta-muse-wonder-and-muse-wonder-full",
+      "question": "Q14",
+      "status": "not-found",
+      "search": {
+        "read": "Whole card (12 pages): §§1–6 and the appendix",
+        "terms": ["government", "AI Safety Institute", "AISI", "CAISI"],
+        "setAside": [
+          {
+            "locator": "§5 Trust and Safety, PDF p. 11",
+            "reason": "Unnamed government entities are said to have given input that informed evaluations and requirements; they are not said to have tested the model or received access."
+          }
+        ]
+      }
+    },
+    {
+      "card": "meta-muse-wonder-and-muse-wonder-full",
+      "question": "Q15",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "meta-muse-wonder-and-muse-wonder-full",
+          "locator": "§5 Trust and Safety, PDF p. 11",
+          "quote": "Our internal governance process reviewed that assessment before we reached a deployment decision."
+        }
+      ],
+      "note": "The developer, in its own voice, states a deployment decision after an internal governance review; no person, office or committee is named."
+    },
+    {
+      "card": "meta-muse-wonder-and-muse-wonder-full",
+      "question": "Q16",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "meta-muse-wonder-and-muse-wonder-full",
+          "locator": "§6 Considerations and Limitations, PDF p. 11",
+          "quote": "Testing conducted to date has not covered, and could not cover, all scenarios."
+        }
+      ],
+      "note": "The card’s opening says it describes “the limits of that testing” (PDF p. 1)."
+    }
+  ],
+  "omissions": [],
+  "retrievalFailures": [],
+  "openQuestions": []
+}

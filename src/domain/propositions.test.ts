@@ -107,7 +107,7 @@ describe('propositions and proposition records (schema 2.11)', () => {
 
   it('names the missing element of a context record and the term of a term record', () => {
     const d = clone();
-    delete thought(d, 'ts-a3-good-1965-context').missing;
+    delete thought(d, 'ts-a3-turing-1950-context').missing;
     expect(issues(d)).toContain(
       'A context record, and only a context record, names the missing element',
     );

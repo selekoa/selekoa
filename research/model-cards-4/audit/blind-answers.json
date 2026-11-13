@@ -1,0 +1,384 @@
+[
+  {
+    "n": 1,
+    "id": "anthropic-claude-opus-4-1:Q05",
+    "status": "stated",
+    "passages": [
+      {
+        "locator": "§6 Responsible Scaling Policy (RSP) evaluations, PDF p. 18",
+        "quote": "Like Claude Opus 4, the model is deployed under the ASL-3 Standard as a precautionary measure, and its capabilities remain below ASL-4 thresholds in all evaluated domains."
+      },
+      {
+        "locator": "§1.1 Responsible Scaling Policy compliance, PDF p. 4",
+        "quote": "Claude Opus 4.1 does not meet either criterion relative to Claude Opus 4."
+      }
+    ],
+    "note": "The card states two outcomes in RSP terms: the model is below the RSP's “notably more capable” standard relative to Claude Opus 4, so new RSP evaluations were “not required”; and its capabilities “remain below ASL-4 thresholds in all evaluated domains”, with ASL-3 applied as a precaution. The developer's account; the evaluations were voluntary and automated only (§6.1).",
+    "search": "Read whole card (24 PDF pages)."
+  },
+  {
+    "n": 2,
+    "id": "gdm-gemini-2-5-flash-lite:Q05",
+    "status": "stated",
+    "passages": [
+      {
+        "locator": "Ethics and Safety, Frontier Safety Assessment, PDF p. 8",
+        "quote": "As Gemini 2.5 Flash-Lite is less capable than Gemini 2.5 Pro Preview, and the Gemini 2.5 Pro model results give us confidence that Gemini 2.5 Flash-Lite is unlikely to reach critical capability levels, we are using Frontier Safety evaluations reported for Gemini 2.5 Pro Preview."
+      }
+    ],
+    "note": "Outcome in the framework's categories (critical capability levels), stated as “unlikely to reach”, and derived from evaluations of Gemini 2.5 Pro Preview, not from evaluations of Flash-Lite reported in this card. Borderline with partly: the outcome is stated for all domains but by inference from another model; the criterion's partly cases (no outcome; some domains only) do not apply.",
+    "search": "Read whole card (10 PDF pages)."
+  },
+  {
+    "n": 3,
+    "id": "gdm-gemini-2-5-pro:Q05",
+    "status": "stated",
+    "passages": [
+      {
+        "locator": "Frontier Safety Critical Capability Evaluations, CCL Evaluation Results, PDF pp. 10–11",
+        "quote": "we find that Gemini 2.5 Pro Preview does not reach any of the FSF CCLs. The evaluations did reach an alert threshold for the Cyber Uplift 1 CCL, suggesting that models may reach the CCL in the foreseeable future."
+      },
+      {
+        "locator": "Same section, Update for Gemini 2.5 Pro GA, PDF p. 11",
+        "quote": "We repeated our most essential evaluations on Gemini 2.5 Pro GA, and found no changes in the alert thresholds/CCLs reached (note: Deceptive Alignment, evaluations are not yet completed)."
+      }
+    ],
+    "note": "CCLs not reached for Pro Preview (03-25); alert threshold reached for Cyber Uplift Level 1; for the GA version, Deceptive Alignment evaluations stated as not yet completed.",
+    "search": "Read Frontier Safety section (PDF pp. 10–20); grep CCL, alert threshold."
+  },
+  {
+    "n": 4,
+    "id": "meta-muse-glimmer:Q05",
+    "status": "stated",
+    "passages": [
+      {
+        "locator": "README, Trust and Safety › Preparedness (Markdown, no pages)",
+        "quote": "Muse Glimmer does not fall under the definition of “Frontier AI” in Meta’s Advanced AI Scaling Framework (AAISF), since it is generally less capable than Muse Spark."
+      },
+      {
+        "locator": "Same section",
+        "quote": "our Preparedness Team assessed Muse Glimmer’s risk profile and determined that it would receive the following designations: * Chem/Bio: Moderate or lower risk; * Cyber: Moderate or lower risk (inferred); * Loss of Control: Moderate or lower risk (inferred)."
+      }
+    ],
+    "note": "Two outcomes: outside the AAISF's “Frontier AI” definition; and, “as a matter of prudence”, designations of moderate or lower for three domains, two of them inferred from Muse Spark 1.0's designation. The card does not say in so many words that the designations are AAISF categories. Borderline with partly.",
+    "search": "Read whole README."
+  },
+  {
+    "n": 5,
+    "id": "meta-muse-wonder-and-muse-wonder-full:Q05",
+    "status": "stated",
+    "passages": [
+      {
+        "locator": "§4 Risk assessments under the Meta Superintelligence Scaling Framework, PDF p. 6",
+        "quote": "Without mitigations, we do not rule out the model reaching this threshold in the Chemical & Biological domain."
+      },
+      {
+        "locator": "Same section, PDF p. 6",
+        "quote": "Our evaluations put the unmitigated model at “moderate or lower” for both Cybersecurity and Loss of Control before applying our mitigations. With mitigations and system-level safeguards in place, we reach the same “moderate or lower” level across all domains"
+      }
+    ],
+    "note": "High risk threshold not ruled out for Chemical & Biological without mitigations; moderate or lower for Cybersecurity and Loss of Control unmitigated; moderate or lower across all domains with mitigations. Assessed on Muse Wonder Full and applied to the family. The developer's account.",
+    "search": "Read whole card (13 PDF pages)."
+  },
+  {
+    "n": 6,
+    "id": "openai-deep-research:Q05",
+    "status": "stated",
+    "passages": [
+      {
+        "locator": "§3.4 Preparedness Framework Evaluations, PDF p. 11",
+        "quote": "After reviewing the results from the Preparedness evaluations, the Safety Advisory Group [3] classified the deep research model as overall medium risk, including medium risk for cybersecurity, persuasion, CBRN, model autonomy."
+      }
+    ],
+    "note": "Medium in all four tracked categories, as classified by the Safety Advisory Group. Reference [3] is the Preparedness Framework (Beta), 2023. The p. 3 table uses later category names (High/Critical thresholds, AI Self-improvement); the copy read is a revised expression (July 2025 note).",
+    "search": "Read §1, §3.1–3.4 and §4–5; grep Score for, Safety Advisory, Medium."
+  },
+  {
+    "n": 7,
+    "id": "openai-o3-mini:Q05",
+    "status": "stated",
+    "passages": [
+      {
+        "locator": "§1 Introduction, PDF p. 1",
+        "quote": "Under the Preparedness Framework, OpenAI’s Safety Advisory Group (SAG) recommended classifying the OpenAI o3-mini (Pre-Mitigation) model as Medium risk overall. It scores Medium risk for Persuasion, CBRN (chemical, biological, radiological, nuclear), and Model Autonomy, and Low risk for Cybersecurity."
+      },
+      {
+        "locator": "§5 Preparedness Framework Evaluations, PDF p. 7",
+        "quote": "SAG also rated the post-mitigation risk levels the same as the pre-mitigation risk levels, to err on the side of caution."
+      }
+    ],
+    "note": "Pre-mitigation: Medium overall; Medium for Persuasion, CBRN and Model Autonomy; Low for Cybersecurity. Post-mitigation rated the same. SAG “recommended” the classification.",
+    "search": "Read §1, §3, §5–5.2, §7."
+  },
+  {
+    "n": 8,
+    "id": "xai-grok-4-6:Q05",
+    "status": "partly",
+    "passages": [
+      {
+        "locator": "§8 Biological and chemical capabilities and safeguards, PDF p. 32 (printed p. 31)",
+        "quote": "Grok 4.6 scores below the FAIF safety thresholds on dual-use knowledge, indicating limited actionable uplift for an already-trained actor."
+      }
+    ],
+    "note": "An outcome under the FAIF (reference 29, dated June 30, 2026) is stated only for biological and chemical dual-use knowledge. The cyber section (§7) and the honesty evaluation (§12) state no outcome in FAIF terms.",
+    "search": "grep threshold, FAIF, framework, loss of control, risk level across the card; read §7 (PDF pp. 29–31), §8 (pp. 32–34)."
+  },
+  {
+    "n": 9,
+    "id": "anthropic-claude-opus-4-1:Q10",
+    "status": "not-found",
+    "passages": [],
+    "note": "No persuasion or manipulation-of-people evaluation is reported. Set aside: §3.2 (p. 8) concerns prompt injections that “manipulate the model”, not the model's manipulation of people.",
+    "search": "Read whole card; grep persua, manipulat, influence."
+  },
+  {
+    "n": 10,
+    "id": "openai-o3-mini:Q14",
+    "status": "not-found",
+    "passages": [],
+    "note": "No government body is named as having tested or received access to the model. Set aside: §5.5 (PDF pp. 18–19) says a comprehensive nuclear evaluation “will require collaboration with the U.S. Department of Energy” — a future need, not testing.",
+    "search": "grep government, U.S., UK, Institute, AISI, CAISI; read §4.3, §5, acknowledgments (p. 33)."
+  },
+  {
+    "n": 11,
+    "id": "anthropic-claude-opus-4-1:Q14",
+    "status": "not-found",
+    "passages": [],
+    "note": "No government body is named. Set aside: §6.6 (p. 23) states “we did not conduct new pre-deployment evaluations with external government partners for this release” and refers to the Claude 4 system card for earlier assessments.",
+    "search": "Read whole card; grep government, Institute, AISI, CAISI, external."
+  },
+  {
+    "n": 12,
+    "id": "meta-muse-glimmer:Q11",
+    "status": "not-found",
+    "passages": [],
+    "note": "No evaluation of deception, scheming, reward hacking, sabotage or undermining oversight is reported for this model. Set aside: the Loss of Control designation “Moderate or lower risk (inferred)” is inferred from Muse Spark 1.0, not from an evaluation of Muse Glimmer; “Agentic risk” covers prompt-injection resistance and action-confirmation policies.",
+    "search": "Read whole README; grep decept, deceiv, scheming, sabotag, reward hack, misalign, loss of control, oversight."
+  },
+  {
+    "n": 13,
+    "id": "gdm-gemini-2-5-flash-lite:Q10",
+    "status": "not-found",
+    "passages": [],
+    "note": "No persuasion or manipulation evaluation is reported. The Frontier Safety Assessment (p. 8) refers to the Gemini 2.5 Pro Preview card's evaluations without naming domains.",
+    "search": "Read whole card; grep persua, manipul, decept."
+  },
+  {
+    "n": 14,
+    "id": "meta-muse-glimmer:Q14",
+    "status": "not-found",
+    "passages": [],
+    "note": "No government body is mentioned.",
+    "search": "Read whole README; grep government, institute, AISI, CAISI, external, third part, partner."
+  },
+  {
+    "n": 15,
+    "id": "openai-deep-research:Q10",
+    "status": "stated",
+    "passages": [
+      {
+        "locator": "§3.4.6 Persuasion, PDF p. 24",
+        "quote": "Score for deep research: Medium"
+      },
+      {
+        "locator": "§3.4 Preparedness Framework Evaluations, PDF p. 11",
+        "quote": "classified the deep research model as overall medium risk, including medium risk for cybersecurity, persuasion, CBRN, model autonomy."
+      }
+    ],
+    "note": "Persuasion evaluations (ChangeMyView, MakeMePay, MakeMeSay; pp. 24–27) are reported with a Medium score. The card also says OpenAI is “currently reconsidering our approach to better assess real-world persuasion risks” (p. 24).",
+    "search": "Read §3.4.6 (PDF pp. 24–27)."
+  },
+  {
+    "n": 16,
+    "id": "openai-deep-research:Q06",
+    "status": "stated",
+    "passages": [
+      {
+        "locator": "§3.4.2 Preparedness Mitigations, PDF p. 12",
+        "quote": "In response to these increases, and given the Medium post-mitigation risk designations across all four risk areas evaluated, we have strengthened our safety mitigations and existing stack and continue to invest in new mitigations and alignment techniques like deliberative alignment."
+      },
+      {
+        "locator": "§4 Conclusion, PDF p. 35",
+        "quote": "Overall, deep research has been classified as medium risk in the Preparedness Framework, and we have incorporated commensurate safeguards and safety mitigations to prepare for this model."
+      }
+    ],
+    "note": "Mitigations listed in §3.4.2 (pre-training filtering, deliberative alignment, monitoring for CBRN and persuasion, cyber threat monitoring, security investment) are tied to the Medium designations. The developer's account, not evidence that they work.",
+    "search": "Read §3.4.2 (PDF pp. 12–13) and conclusion."
+  },
+  {
+    "n": 17,
+    "id": "meta-muse-glimmer:Q08",
+    "status": "not-found",
+    "passages": [],
+    "note": "No cyber-offence evaluation of Muse Glimmer is reported. Set aside: the designation “Cyber: Moderate or lower risk (inferred)” is inferred from Muse Spark 1.0's designation, not from an evaluation reported in the card; CI Memories and Siren AgentDojo (“Security and Privacy” benchmarks) measure privacy and prompt-injection robustness. Borderline with partly if an inferred designation is read as a stated outcome.",
+    "search": "Read whole README; grep cyber, exploit, CTF, security."
+  },
+  {
+    "n": 18,
+    "id": "anthropic-claude-opus-4-1:Q09",
+    "status": "stated",
+    "passages": [
+      {
+        "locator": "§6.4.1 Autonomy results summary, PDF p. 22",
+        "quote": "Claude Opus 4.1 demonstrated similar performance to Claude Opus 4, with evaluation scores slightly lower than Claude Opus 4 in a few cases. It remained below critical thresholds in all non-saturated evals."
+      }
+    ],
+    "note": "Autonomy (software engineering and AI research) evaluations run; below thresholds. Internal AI Research Evaluation Suite 2 and the internal model use survey were not run for this release.",
+    "search": "Read §6.4 (PDF pp. 21–22)."
+  },
+  {
+    "n": 19,
+    "id": "openai-o3-mini:Q15",
+    "status": "partly",
+    "passages": [
+      {
+        "locator": "§7 Conclusion, PDF p. 32",
+        "quote": "Overall, o3-mini, like OpenAI o1, has been classified as medium risk in the Preparedness Framework, and we have incorporated commensurate safeguards and safety mitigations to prepare for this new model family. Our deployment of these models reflects our belief that iterative real-world deployment is the most effective way"
+      },
+      {
+        "locator": "§5 Preparedness Framework Evaluations, PDF p. 7",
+        "quote": "Only models with a post-mitigation score of Medium or below can be deployed"
+      }
+    ],
+    "note": "The deployment is stated with the developer's reason and follows from the Medium classification under the rule that Medium or below can be deployed; no decision to deploy is described. The Safety Advisory Group is named only for the risk classification (“recommended classifying”). Partly under both the assessment-without-decision and maker-for-determination-only cases.",
+    "search": "grep decid, decision, approv, chose, deploy, launch, release, leadership; read §1, §5, §7."
+  },
+  {
+    "n": 20,
+    "id": "anthropic-claude-opus-4-1:Q06",
+    "status": "stated",
+    "passages": [
+      {
+        "locator": "§1.1 Responsible Scaling Policy compliance, PDF p. 4",
+        "quote": "Like Claude Opus 4, Claude Opus 4.1 is deployed under the AI Safety Level 3 (ASL-3) Standard under Anthropic’s Responsible Scaling Policy (RSP) as a precautionary measure."
+      },
+      {
+        "locator": "§6, PDF p. 18",
+        "quote": "RSP safeguards applied to Claude Opus 4.1: ASL-3 Standard"
+      }
+    ],
+    "note": "A framework safeguard standard (ASL-3) applied in line with the RSP determination, as a precaution. The card refers to the Claude 4 system card for the decision; it does not describe the ASL-3 measures. The developer's account.",
+    "search": "Read §1.1, §3, §6."
+  },
+  {
+    "n": 21,
+    "id": "openai-o3-mini:Q08",
+    "status": "stated",
+    "passages": [
+      {
+        "locator": "§5.3 Cybersecurity, PDF p. 9",
+        "quote": "Score for OpenAI o3-mini: Low Summary: o3-mini does not sufficiently advance real-world vulnerability exploitation capabilities to indicate medium risk."
+      }
+    ],
+    "note": "Cyber evaluations run; Low.",
+    "search": "Read §5.3 (PDF pp. 9–11)."
+  },
+  {
+    "n": 22,
+    "id": "meta-muse-glimmer:Q12",
+    "status": "not-found",
+    "passages": [],
+    "note": "No testing described as red-teaming. Set aside: “We built dedicated, adversarial evaluation datasets” (Trust and Safety › Evaluations) is adversarial testing not described as red-teaming.",
+    "search": "Read whole README; grep red team, red-team, adversarial."
+  },
+  {
+    "n": 23,
+    "id": "meta-muse-wonder-and-muse-wonder-full:Q09",
+    "status": "not-found",
+    "passages": [],
+    "note": "No evaluation of autonomy, self-replication, self-improvement or AI R&D is reported. Set aside: the Loss of Control evaluations (MASK, Agentic Misalignment; §4, PDF p. 9) test honesty and harmful-action propensity, which fall under Q11; the agentic and coding benchmarks of §3 are reported as product capability. Borderline: a reader who counts the framework's Loss of Control domain as autonomy would read stated (“moderate or lower”).",
+    "search": "Read whole card; grep autonom, self-repl, self-improv, R&D, research and development."
+  },
+  {
+    "n": 24,
+    "id": "openai-o3-mini:Q02",
+    "status": "partly",
+    "passages": [
+      {
+        "locator": "§4.2 Jailbreaks through custom developer messages, PDF p. 5",
+        "quote": "Similar to OpenAI o1, the deployment of OpenAI o3-mini in the API allows developers to specify a custom developer message"
+      },
+      {
+        "locator": "§3 Scope of testing, PDF p. 2",
+        "quote": "o3-mini (the launched checkpoint)"
+      }
+    ],
+    "note": "Release form (API deployment; launched checkpoint) without a release date. The card's date (January 31, 2025) is the card's own date, and “final model checkpoint as of Jan 31, 2025” (p. 8) dates a checkpoint, not a release. A planned ChatGPT search use is stated (p. 2).",
+    "search": "grep release, launch, available, deploy, January, February."
+  },
+  {
+    "n": 25,
+    "id": "openai-deep-research:Q09",
+    "status": "stated",
+    "passages": [
+      {
+        "locator": "§3.4.7 Model Autonomy, PDF p. 27",
+        "quote": "Score for deep research: Medium"
+      },
+      {
+        "locator": "Same section, PDF p. 27",
+        "quote": "the model still performs poorly on evaluations designed to test real-world ML research capabilities relevant for self improvement, suggesting that it lacks the open-ended ML research capabilities required for a High risk classification."
+      }
+    ],
+    "note": "Model autonomy evaluations run; Medium, not High.",
+    "search": "Read §3.4.7 (PDF pp. 27–34)."
+  },
+  {
+    "n": 26,
+    "id": "meta-muse-glimmer:Q07",
+    "status": "stated",
+    "passages": [
+      {
+        "locator": "README, Trust and Safety › Preparedness",
+        "quote": "Chem/Bio: Moderate or lower risk;"
+      },
+      {
+        "locator": "Same section",
+        "quote": "We also evaluated it on our suite that focuses on the unique set of bottlenecks that would otherwise deter or limit the success of real-world threat actors; here, our evaluation rated its risk rating at moderate or lower as well."
+      }
+    ],
+    "note": "Chem/bio benchmarks run on Muse Glimmer; moderate or lower. The method is described in the Muse Spark report, not in the card.",
+    "search": "Read whole README."
+  },
+  {
+    "n": 27,
+    "id": "openai-o3-mini:Q07",
+    "status": "stated",
+    "passages": [
+      {
+        "locator": "§5.4 Chemical and Biological Threat Creation, PDF p. 11",
+        "quote": "Score for OpenAI o3-mini: Medium"
+      },
+      {
+        "locator": "Same section, PDF p. 11",
+        "quote": "The models do not enable non-experts to create biological threats"
+      }
+    ],
+    "note": "Chemical and biological evaluations run; Medium (the card says the medium threshold is met). Radiological and nuclear evaluations are reported separately in §5.5 (PDF pp. 18–19) with the developer's view that the model “cannot meaningfully assist”, limited by the absence of classified information.",
+    "search": "Read §5.4–5.5 summaries."
+  },
+  {
+    "n": 28,
+    "id": "anthropic-claude-opus-4-1:Q12",
+    "status": "not-found",
+    "passages": [],
+    "note": "No red-teaming reported for this model. Set aside: §6.1 (PDF p. 18) states “We did not conduct human uplift trials, expert red-teaming sessions, or other resource-intensive evaluations that require human participants.”",
+    "search": "Read whole card; grep red team, red-team, adversarial."
+  },
+  {
+    "n": 29,
+    "id": "openai-deep-research:Q14",
+    "status": "not-found",
+    "passages": [],
+    "note": "No government body is named as having tested or received access. Set aside: §3.4.5 (PDF p. 22) says a comprehensive nuclear evaluation “will require collaboration with the U.S. Department of Energy” — a future need, not testing.",
+    "search": "grep government, U.S., Institute, AISI, CAISI, external, third-party; read acknowledgments (p. 35)."
+  },
+  {
+    "n": 30,
+    "id": "meta-muse-glimmer:Q13",
+    "status": "not-found",
+    "passages": [],
+    "note": "No external tester or evaluator is named or described. Set aside: “data provided by third parties” and “external vendor networks” concern training data; the Muse Spark report link concerns methodology.",
+    "search": "Read whole README; grep external, third part, partner, independent."
+  }
+]

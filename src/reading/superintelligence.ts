@@ -17,6 +17,9 @@ const antecedents = '2026-11-04';
 const found = '2026-10-06';
 const candidates = 'the 1996–2022 candidate search';
 
+/** The maintainer's answers of 2026-11-07 on the re-check sheet and the reads of that day. */
+const settled = '2026-11-07';
+
 export const superintelligencePropositions: PropositionsCollection = {
   id: frame.id,
   version: frame.version,
@@ -281,6 +284,27 @@ export const superintelligencePropositions: PropositionsCollection = {
         'pre-c1-descartes-1637-context',
       ],
       recordedAt: antecedents,
+    },
+    {
+      propositionId: 'recursive-self-improvement',
+      replaced:
+        'No earliest located headline: under re-check from 2026-11-02. Before that, Clemmensen’s message of 3 September 1996 was headlined.',
+      reason:
+        'Moved on 2026-11-07 to Good’s chapter of 1965, by the maintainer’s decision on the re-check sheet (decision 2a), after the cross-family re-check of 2026-11-02 (role 39): the chapter has the same machine improve itself by acquiring equipment, which the criterion asks for. Its record, context until then, now states the proposition; the qualification says the chapter also describes a better successor.',
+      claimIds: ['ts-a3-good-1965-context', 'ts-a3-clemmensen-1996-09-03'],
+      recordedAt: settled,
+    },
+    {
+      propositionId: 'treacherous-turn',
+      replaced:
+        'No headline for the earliest located use of the name: under re-check from 2026-11-02. Before that, Grace’s reading-group page of 31 August 2014 was headlined.',
+      reason:
+        'Set on 2026-11-07 to Bostrom’s Superintelligence (3 July 2014), by the maintainer’s decision on the re-check sheet (decision 15a), after a witness check by a model of another family that read the book’s first impression (pp. 116–119). Selekoa has not read the book; the record rests on that reading and says so. Grace’s page is not shown to carry the wording by its posting date, and Danaher’s post (first captured 8 August 2014) takes the term from the book.',
+      claimIds: [
+        'ts-b1-bostrom-2014-superintelligence',
+        'ts-b1-grace-2014-schedule-context',
+      ],
+      recordedAt: settled,
     },
   ],
   limits: [

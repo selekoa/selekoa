@@ -17,6 +17,9 @@ const withdrawn = '2026-11-02';
 const admitted = '2026-10-31';
 const pack = 'the research pack of 2026-10-29';
 
+/** The maintainer's answers of 2026-11-07 on the re-check sheet and the reads of that day. */
+const settled = '2026-11-07';
+
 export const riskDebate: PropositionsCollection = {
   id: frame.id,
   version: frame.version,
@@ -80,6 +83,7 @@ export const riskDebate: PropositionsCollection = {
       'An archive retrieval of 2026-11-02 by an OpenAI model read Drexler’s chapter in its capture of 9 July 1997 and gave the passages verbatim with the capture’s SHA-256 hash. The records admitted from it quote those passages; the session that applied them could not reach the archive and did not retrieve them again.',
     ],
     gaps: [
+      'R15’s criterion covers model weights or source code from version 8 (2026-11-07). Its earliest located contesting text, Yudkowsky’s SL4 message of 12 April 2001, was found by the searches for the collection “Yudkowsky’s arguments”, not by this collection’s own searches, which looked for texts on open models.',
       'The records are not balanced proposition by proposition. Texts contesting R09 (misuse), R17 (incentives) and R03 (misalignment learned in training) are few, and so are texts articulating some counter-propositions. The causes are the search: LessWrong and the Alignment Forum refused direct retrieval during the search, and much published disagreement about extinction and misuse risk is in posts on X, interviews and debates without transcripts, which were out of scope. The imbalance is a result of the search, not a finding.',
       'Not recorded yet, though located: “On the Dangers of Stochastic Parrots” (2021), Chollet’s essay of November 2017 on intelligence explosion (recorded only as the text Yudkowsky’s reply answers), LeCun’s position paper of June 2022 and his written Senate testimony of September 2023. A check retrieved them from archive captures after the search; they await a separate decision.',
       'Four texts the research pack recorded on its fast-takeoff proposition (Yudkowsky 2017, Drexler 2019, Eth and Davidson 2025, the AI 2027 scenario) do not meet A4’s criterion as worded, which names only a hard or fast takeoff or a period of hours to months. They are not recorded on A4 until a decision on where they belong; Yudkowsky’s post of 2017 is recorded here as contesting gradual takeoff.',
@@ -763,6 +767,27 @@ export const riskDebate: PropositionsCollection = {
         'rd-r07-joy-2000-why-the-future',
       ],
       recordedAt: archiveApply,
+    },
+    {
+      propositionId: 'open-models-reduce-risk',
+      replaced:
+        'No earliest located headline: under re-check from 2026-11-02. Before that, Goertzel and Pitt’s paper of February 2012 was headlined.',
+      reason:
+        'Restored on 2026-11-07 by the maintainer’s decision on the re-check sheet (decision 13a): the criterion now reads “weights or source code” (collection version 8), because the arguments about open code are the same debate before model weights were a separate object. The paper argues for an open AGI codebase.',
+      claimIds: ['rd-r15-goertzel-pitt-2012-open-source-agi'],
+      recordedAt: settled,
+    },
+    {
+      propositionId: 'open-models-reduce-risk',
+      replaced:
+        'No earliest located contesting headline: under re-check from 2026-11-02. Before that, Alexander’s post of 17 December 2015 was headlined.',
+      reason:
+        'Moved on 2026-11-07 to Yudkowsky’s SL4 message of 12 April 2001, by the maintainer’s decision on the re-check sheet (decision 13a), after the cross-family re-check of 2026-11-02 (role 66): under the reworded criterion, his reasons for keeping an AI project closed-source contest the proposition. It is recorded as a paraphrase, because the message’s quotable words are already used.',
+      claimIds: [
+        'rd-r15-yudkowsky-2001-open-source-friendly-ai',
+        'rd-r15-alexander-2015-should-ai-be-open',
+      ],
+      recordedAt: settled,
     },
   ],
   limits: [

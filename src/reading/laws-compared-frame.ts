@@ -10,7 +10,7 @@ import {
 // ./laws-compared.ts.
 export const lawsComparedFrame: LawsComparedFrame = {
   id: lawsComparedId,
-  version: 1,
+  version: 2,
   title: lawsComparedTitle,
   question: lawsComparedQuestion,
   editorialStatus: 'machine-proposed',

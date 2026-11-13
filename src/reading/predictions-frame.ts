@@ -10,7 +10,7 @@ import {
 // record (src/domain/predictions.ts); its reader text is in ./predictions.ts.
 export const predictionsFrame: PredictionsFrame = {
   id: predictionsId,
-  version: 1,
+  version: 2,
   title: predictionsTitle,
   question: predictionsQuestion,
   editorialStatus: 'machine-proposed',

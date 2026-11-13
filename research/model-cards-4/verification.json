@@ -1,0 +1,1578 @@
+{
+  "generated": "node research/model-cards-4/tools.mjs verify",
+  "checkedAgainst": "Cached retrieved bytes and text of each card in .local/model-cards/doc (ignored); see the sources in pack.json for address, HTTP status and SHA-256.",
+  "method": "Each quotation is normalised (Unicode compatibility forms, quotation marks, dashes, PDF line-break hyphenation, whitespace, case) and searched for in the normalised text of its card; fragments joined by an ellipsis must occur in order; a quotation not found in the default PDF text layer is searched again in pdftotext’s raw reading order, and marked so (textLayer). Retrieval bytes are hashed again and matched with the source registry and cache metadata. Every quoted PDF passage is also checked on its cited PDF page. Structural checks: one cell per card and question, passages for stated and partly cells, search terms for not-found cells, a reason for not-applicable cells, framework edition identifiers present in data/entities.json, and a list of evaluative words absent from notes and set-aside reasons.",
+  "cards": 8,
+  "cells": 128,
+  "quotations": 109,
+  "quotationsFound": 109,
+  "problems": [],
+  "cellsDigest": {
+    "anthropic-claude-opus-4-1": "7890a0f43c0c3dbbb9a7900bfffb4cfc85adea73f1dba8942c32a641d1111ecc",
+    "gdm-gemini-2-5-flash-lite": "e61559efca4ce5678d52910d6ce95f022774f91a970890bb1963095b5845dc9b",
+    "gdm-gemini-2-5-pro": "38255431e91e17b54e173033fae037c2dde497d863cb4308b174c36dc53b2045",
+    "meta-muse-glimmer": "a3978a87dbdfc08683773c42df549a3218b7f5a6b73c851dc2bc3ddc7644064a",
+    "meta-muse-wonder-and-muse-wonder-full": "76a275a006a5625fa7aa9665ca7a56e91be5f8f0b8ab9afc3e034a60afc6e646",
+    "openai-deep-research": "5fd89d4612de6c8dd939d58c507aa3113b98c2432ed39ce69354fc6fe9dcabf6",
+    "openai-o3-mini": "7b1b754a8dc7dbd9b7690ee3da82bcb2f0606c05fbf1b1b3c5d5b2b4f944e874",
+    "xai-grok-4-6": "3683b34f01601586909a85586a2a159547602ff8a2c24dac0d9834bcc87a25eb"
+  },
+  "wordingReview": {
+    "method": "Uses of these words in notes and set-aside reasons, listed for a reading by the integrator; each was read on 2026-11-06 and kept where descriptive (for example “month precision only”, “first-party”, “context only”).",
+    "words": ["only", "first", "claims"],
+    "uses": [
+      "anthropic-claude-opus-4-1:Q01: “…The cover carries a month only. The changelog gives a revision dat…”",
+      "anthropic-claude-opus-4-1:Q03: “…ithout a version, date or link to a policy file. As context only: the dataset records RSP v2.2 (effe…”",
+      "anthropic-claude-opus-4-1:Q16: “…The card also states that the RSP assessment was automated only, without human uplift trials or exp…”",
+      "gdm-gemini-2-5-pro:Q01: “…The card prints a revision date only. It covers three versions (Experime…”",
+      "gdm-gemini-2-5-pro:Q01: “…ree versions (Experimental 03-25, Preview 05-06 and GA); no first publication date is printed. The p…”",
+      "gdm-gemini-2-5-pro:Q13: “… named; the card presents results from internal evaluations only. The external providers of benchmar…”",
+      "meta-muse-glimmer:Q03: “…he framework without a version, date or address. As context only: the dataset records the Advanced A…”",
+      "meta-muse-glimmer:Q15: “… (the Preparedness Team) is named for the risk designations only; the card states no decision to rel…”",
+      "openai-deep-research:Q15: “…ecision being described; the Safety Advisory Group is named only for the risk classification (§3.4).…”",
+      "xai-grok-4-6:Q05: “…amework outcome for the biological and chemical evaluations only; no FAIF threshold outcome was foun…”"
+    ]
+  },
+  "cellsByQuestionAndStatus": {
+    "Q01": {
+      "partly": 3,
+      "stated": 4,
+      "not-found": 1
+    },
+    "Q02": {
+      "partly": 5,
+      "stated": 3
+    },
+    "Q03": {
+      "partly": 3,
+      "stated": 5
+    },
+    "Q04": {
+      "partly": 2,
+      "stated": 6
+    },
+    "Q05": {
+      "stated": 6,
+      "partly": 2
+    },
+    "Q06": {
+      "stated": 4,
+      "partly": 4
+    },
+    "Q07": {
+      "stated": 7,
+      "not-found": 1
+    },
+    "Q08": {
+      "partly": 2,
+      "stated": 4,
+      "not-found": 2
+    },
+    "Q09": {
+      "stated": 4,
+      "not-found": 3,
+      "partly": 1
+    },
+    "Q10": {
+      "not-found": 6,
+      "stated": 2
+    },
+    "Q11": {
+      "stated": 3,
+      "not-found": 2,
+      "partly": 3
+    },
+    "Q12": {
+      "not-found": 3,
+      "stated": 5
+    },
+    "Q13": {
+      "not-found": 3,
+      "partly": 1,
+      "stated": 4
+    },
+    "Q14": {
+      "not-found": 8
+    },
+    "Q15": {
+      "partly": 4,
+      "stated": 2,
+      "not-found": 2
+    },
+    "Q16": {
+      "stated": 7,
+      "not-found": 1
+    }
+  },
+  "sourceChecks": [
+    {
+      "source": "anthropic-claude-opus-4-1",
+      "hashAndRetrievalMatch": true,
+      "httpStatus": 200,
+      "sameBytesRetrievedAt": "2026-11-09T18:44:01.833Z"
+    },
+    {
+      "source": "gdm-gemini-2-5-flash-lite",
+      "hashAndRetrievalMatch": true,
+      "httpStatus": 200,
+      "sameBytesRetrievedAt": "2026-11-09T18:44:18.704Z"
+    },
+    {
+      "source": "gdm-gemini-2-5-pro",
+      "hashAndRetrievalMatch": true,
+      "httpStatus": 200,
+      "sameBytesRetrievedAt": "2026-11-09T18:44:10.329Z"
+    },
+    {
+      "source": "meta-muse-glimmer",
+      "hashAndRetrievalMatch": true,
+      "httpStatus": 200,
+      "sameBytesRetrievedAt": "2026-11-09T18:44:26.895Z"
+    },
+    {
+      "source": "meta-muse-wonder-and-muse-wonder-full",
+      "hashAndRetrievalMatch": true,
+      "httpStatus": 200,
+      "sameBytesRetrievedAt": "2026-11-09T18:44:35.355Z"
+    },
+    {
+      "source": "openai-deep-research",
+      "hashAndRetrievalMatch": true,
+      "httpStatus": 200,
+      "sameBytesRetrievedAt": "2026-11-09T18:44:52.964Z"
+    },
+    {
+      "source": "openai-o3-mini",
+      "hashAndRetrievalMatch": true,
+      "httpStatus": 200,
+      "sameBytesRetrievedAt": "2026-11-09T18:44:44.206Z"
+    },
+    {
+      "source": "xai-grok-4-6",
+      "hashAndRetrievalMatch": true,
+      "httpStatus": 200,
+      "sameBytesRetrievedAt": "2026-11-09T18:45:01.353Z"
+    }
+  ],
+  "locatorChecks": [
+    {
+      "cell": "anthropic-claude-opus-4-1:Q01",
+      "pdfPage": 1,
+      "found": true
+    },
+    {
+      "cell": "anthropic-claude-opus-4-1:Q01",
+      "pdfPage": 2,
+      "found": true
+    },
+    {
+      "cell": "anthropic-claude-opus-4-1:Q02",
+      "pdfPage": 4,
+      "found": true
+    },
+    {
+      "cell": "anthropic-claude-opus-4-1:Q03",
+      "pdfPage": 4,
+      "found": true
+    },
+    {
+      "cell": "anthropic-claude-opus-4-1:Q04",
+      "pdfPage": 4,
+      "found": true
+    },
+    {
+      "cell": "anthropic-claude-opus-4-1:Q05",
+      "pdfPage": 18,
+      "found": true
+    },
+    {
+      "cell": "anthropic-claude-opus-4-1:Q06",
+      "pdfPage": 18,
+      "found": true
+    },
+    {
+      "cell": "anthropic-claude-opus-4-1:Q07",
+      "pdfPage": 19,
+      "found": true
+    },
+    {
+      "cell": "anthropic-claude-opus-4-1:Q08",
+      "pdfPage": 23,
+      "found": true
+    },
+    {
+      "cell": "anthropic-claude-opus-4-1:Q09",
+      "pdfPage": 22,
+      "found": true
+    },
+    {
+      "cell": "anthropic-claude-opus-4-1:Q11",
+      "pdfPage": 10,
+      "found": true
+    },
+    {
+      "cell": "anthropic-claude-opus-4-1:Q11",
+      "pdfPage": 15,
+      "found": true
+    },
+    {
+      "cell": "anthropic-claude-opus-4-1:Q15",
+      "pdfPage": 4,
+      "found": true
+    },
+    {
+      "cell": "anthropic-claude-opus-4-1:Q16",
+      "pdfPage": 12,
+      "found": true
+    },
+    {
+      "cell": "gdm-gemini-2-5-pro:Q01",
+      "pdfPage": 1,
+      "found": true
+    },
+    {
+      "cell": "gdm-gemini-2-5-pro:Q01",
+      "pdfPage": 2,
+      "found": true
+    },
+    {
+      "cell": "gdm-gemini-2-5-pro:Q02",
+      "pdfPage": 2,
+      "found": true
+    },
+    {
+      "cell": "gdm-gemini-2-5-pro:Q03",
+      "pdfPage": 10,
+      "found": true
+    },
+    {
+      "cell": "gdm-gemini-2-5-pro:Q04",
+      "pdfPage": 8,
+      "found": true
+    },
+    {
+      "cell": "gdm-gemini-2-5-pro:Q05",
+      "pdfPage": 12,
+      "found": true
+    },
+    {
+      "cell": "gdm-gemini-2-5-pro:Q06",
+      "pdfPage": 11,
+      "found": true
+    },
+    {
+      "cell": "gdm-gemini-2-5-pro:Q07",
+      "pdfPage": 13,
+      "found": true
+    },
+    {
+      "cell": "gdm-gemini-2-5-pro:Q08",
+      "pdfPage": 11,
+      "found": true
+    },
+    {
+      "cell": "gdm-gemini-2-5-pro:Q09",
+      "pdfPage": 17,
+      "found": true
+    },
+    {
+      "cell": "gdm-gemini-2-5-pro:Q11",
+      "pdfPage": 19,
+      "found": true
+    },
+    {
+      "cell": "gdm-gemini-2-5-pro:Q12",
+      "pdfPage": 7,
+      "found": true
+    },
+    {
+      "cell": "gdm-gemini-2-5-pro:Q13",
+      "pdfPage": 12,
+      "found": true
+    },
+    {
+      "cell": "gdm-gemini-2-5-pro:Q15",
+      "pdfPage": 8,
+      "found": true
+    },
+    {
+      "cell": "gdm-gemini-2-5-pro:Q16",
+      "pdfPage": 17,
+      "found": true
+    },
+    {
+      "cell": "gdm-gemini-2-5-pro:Q16",
+      "pdfPage": 8,
+      "found": true
+    },
+    {
+      "cell": "gdm-gemini-2-5-flash-lite:Q01",
+      "pdfPage": 2,
+      "found": true
+    },
+    {
+      "cell": "gdm-gemini-2-5-flash-lite:Q02",
+      "pdfPage": 2,
+      "found": true
+    },
+    {
+      "cell": "gdm-gemini-2-5-flash-lite:Q03",
+      "pdfPage": 7,
+      "found": true
+    },
+    {
+      "cell": "gdm-gemini-2-5-flash-lite:Q04",
+      "pdfPage": 7,
+      "found": true
+    },
+    {
+      "cell": "gdm-gemini-2-5-flash-lite:Q05",
+      "pdfPage": 8,
+      "found": true
+    },
+    {
+      "cell": "gdm-gemini-2-5-flash-lite:Q06",
+      "pdfPage": 9,
+      "found": true
+    },
+    {
+      "cell": "gdm-gemini-2-5-flash-lite:Q06",
+      "pdfPage": 9,
+      "found": true
+    },
+    {
+      "cell": "gdm-gemini-2-5-flash-lite:Q12",
+      "pdfPage": 6,
+      "found": true
+    },
+    {
+      "cell": "gdm-gemini-2-5-flash-lite:Q16",
+      "pdfPage": 7,
+      "found": true
+    },
+    {
+      "cell": "meta-muse-wonder-and-muse-wonder-full:Q01",
+      "pdfPage": 7,
+      "found": true
+    },
+    {
+      "cell": "meta-muse-wonder-and-muse-wonder-full:Q02",
+      "pdfPage": 1,
+      "found": true
+    },
+    {
+      "cell": "meta-muse-wonder-and-muse-wonder-full:Q03",
+      "pdfPage": 11,
+      "found": true
+    },
+    {
+      "cell": "meta-muse-wonder-and-muse-wonder-full:Q04",
+      "pdfPage": 11,
+      "found": true
+    },
+    {
+      "cell": "meta-muse-wonder-and-muse-wonder-full:Q05",
+      "pdfPage": 7,
+      "found": true
+    },
+    {
+      "cell": "meta-muse-wonder-and-muse-wonder-full:Q05",
+      "pdfPage": 7,
+      "found": true
+    },
+    {
+      "cell": "meta-muse-wonder-and-muse-wonder-full:Q06",
+      "pdfPage": 7,
+      "found": true
+    },
+    {
+      "cell": "meta-muse-wonder-and-muse-wonder-full:Q07",
+      "pdfPage": 7,
+      "found": true
+    },
+    {
+      "cell": "meta-muse-wonder-and-muse-wonder-full:Q08",
+      "pdfPage": 7,
+      "found": true
+    },
+    {
+      "cell": "meta-muse-wonder-and-muse-wonder-full:Q11",
+      "pdfPage": 10,
+      "found": true
+    },
+    {
+      "cell": "meta-muse-wonder-and-muse-wonder-full:Q11",
+      "pdfPage": 7,
+      "found": true
+    },
+    {
+      "cell": "meta-muse-wonder-and-muse-wonder-full:Q12",
+      "pdfPage": 11,
+      "found": true
+    },
+    {
+      "cell": "meta-muse-wonder-and-muse-wonder-full:Q13",
+      "pdfPage": 6,
+      "found": true
+    },
+    {
+      "cell": "meta-muse-wonder-and-muse-wonder-full:Q15",
+      "pdfPage": 11,
+      "found": true
+    },
+    {
+      "cell": "meta-muse-wonder-and-muse-wonder-full:Q16",
+      "pdfPage": 11,
+      "found": true
+    },
+    {
+      "cell": "openai-o3-mini:Q01",
+      "pdfPage": 1,
+      "found": true
+    },
+    {
+      "cell": "openai-o3-mini:Q02",
+      "pdfPage": 5,
+      "found": true
+    },
+    {
+      "cell": "openai-o3-mini:Q03",
+      "pdfPage": 36,
+      "found": true
+    },
+    {
+      "cell": "openai-o3-mini:Q04",
+      "pdfPage": 36,
+      "found": true
+    },
+    {
+      "cell": "openai-o3-mini:Q05",
+      "pdfPage": 1,
+      "found": true
+    },
+    {
+      "cell": "openai-o3-mini:Q06",
+      "pdfPage": 9,
+      "found": true
+    },
+    {
+      "cell": "openai-o3-mini:Q07",
+      "pdfPage": 11,
+      "found": true
+    },
+    {
+      "cell": "openai-o3-mini:Q08",
+      "pdfPage": 9,
+      "found": true
+    },
+    {
+      "cell": "openai-o3-mini:Q09",
+      "pdfPage": 25,
+      "found": true
+    },
+    {
+      "cell": "openai-o3-mini:Q10",
+      "pdfPage": 21,
+      "found": true
+    },
+    {
+      "cell": "openai-o3-mini:Q11",
+      "pdfPage": 24,
+      "found": true
+    },
+    {
+      "cell": "openai-o3-mini:Q12",
+      "pdfPage": 6,
+      "found": true
+    },
+    {
+      "cell": "openai-o3-mini:Q12",
+      "pdfPage": 7,
+      "found": true
+    },
+    {
+      "cell": "openai-o3-mini:Q13",
+      "pdfPage": 7,
+      "found": true
+    },
+    {
+      "cell": "openai-o3-mini:Q15",
+      "pdfPage": 7,
+      "found": true
+    },
+    {
+      "cell": "openai-o3-mini:Q16",
+      "pdfPage": 8,
+      "found": true
+    },
+    {
+      "cell": "openai-deep-research:Q01",
+      "pdfPage": 1,
+      "found": true
+    },
+    {
+      "cell": "openai-deep-research:Q01",
+      "pdfPage": 33,
+      "found": true
+    },
+    {
+      "cell": "openai-deep-research:Q02",
+      "pdfPage": 1,
+      "found": true
+    },
+    {
+      "cell": "openai-deep-research:Q03",
+      "pdfPage": 35,
+      "found": true
+    },
+    {
+      "cell": "openai-deep-research:Q04",
+      "pdfPage": 35,
+      "found": true
+    },
+    {
+      "cell": "openai-deep-research:Q05",
+      "pdfPage": 11,
+      "found": true
+    },
+    {
+      "cell": "openai-deep-research:Q06",
+      "pdfPage": 12,
+      "found": true
+    },
+    {
+      "cell": "openai-deep-research:Q06",
+      "pdfPage": 13,
+      "found": true
+    },
+    {
+      "cell": "openai-deep-research:Q07",
+      "pdfPage": 17,
+      "found": true
+    },
+    {
+      "cell": "openai-deep-research:Q08",
+      "pdfPage": 13,
+      "found": true
+    },
+    {
+      "cell": "openai-deep-research:Q09",
+      "pdfPage": 27,
+      "found": true
+    },
+    {
+      "cell": "openai-deep-research:Q10",
+      "pdfPage": 24,
+      "found": true
+    },
+    {
+      "cell": "openai-deep-research:Q11",
+      "pdfPage": 26,
+      "found": true
+    },
+    {
+      "cell": "openai-deep-research:Q12",
+      "pdfPage": 2,
+      "found": true
+    },
+    {
+      "cell": "openai-deep-research:Q13",
+      "pdfPage": 35,
+      "found": true
+    },
+    {
+      "cell": "openai-deep-research:Q15",
+      "pdfPage": 1,
+      "found": true
+    },
+    {
+      "cell": "openai-deep-research:Q16",
+      "pdfPage": 11,
+      "found": true
+    },
+    {
+      "cell": "xai-grok-4-6:Q01",
+      "pdfPage": 1,
+      "found": true
+    },
+    {
+      "cell": "xai-grok-4-6:Q02",
+      "pdfPage": 7,
+      "found": true
+    },
+    {
+      "cell": "xai-grok-4-6:Q02",
+      "pdfPage": 7,
+      "found": true
+    },
+    {
+      "cell": "xai-grok-4-6:Q03",
+      "pdfPage": 42,
+      "found": true
+    },
+    {
+      "cell": "xai-grok-4-6:Q04",
+      "pdfPage": 42,
+      "found": true
+    },
+    {
+      "cell": "xai-grok-4-6:Q05",
+      "pdfPage": 32,
+      "found": true
+    },
+    {
+      "cell": "xai-grok-4-6:Q06",
+      "pdfPage": 36,
+      "found": true
+    },
+    {
+      "cell": "xai-grok-4-6:Q07",
+      "pdfPage": 32,
+      "found": true
+    },
+    {
+      "cell": "xai-grok-4-6:Q08",
+      "pdfPage": 29,
+      "found": true
+    },
+    {
+      "cell": "xai-grok-4-6:Q09",
+      "pdfPage": 24,
+      "found": true
+    },
+    {
+      "cell": "xai-grok-4-6:Q11",
+      "pdfPage": 38,
+      "found": true
+    },
+    {
+      "cell": "xai-grok-4-6:Q13",
+      "pdfPage": 12,
+      "found": true
+    }
+  ],
+  "perSource": {
+    "anthropic-claude-opus-4-1": {
+      "quotedNew": 205,
+      "datasetQuoted": 0,
+      "documentWords": 5256,
+      "limit": 400
+    },
+    "gdm-gemini-2-5-pro": {
+      "quotedNew": 215,
+      "datasetQuoted": 0,
+      "documentWords": 7146,
+      "limit": 400
+    },
+    "gdm-gemini-2-5-flash-lite": {
+      "quotedNew": 105,
+      "datasetQuoted": 0,
+      "documentWords": 2246,
+      "limit": 400
+    },
+    "meta-muse-glimmer": {
+      "quotedNew": 94,
+      "datasetQuoted": 0,
+      "documentWords": 2618,
+      "limit": 400
+    },
+    "meta-muse-wonder-and-muse-wonder-full": {
+      "quotedNew": 165,
+      "datasetQuoted": 0,
+      "documentWords": 2814,
+      "limit": 400
+    },
+    "openai-o3-mini": {
+      "quotedNew": 208,
+      "datasetQuoted": 0,
+      "documentWords": 12106,
+      "limit": 605
+    },
+    "openai-deep-research": {
+      "quotedNew": 180,
+      "datasetQuoted": 0,
+      "documentWords": 11737,
+      "limit": 586
+    },
+    "xai-grok-4-6": {
+      "quotedNew": 139,
+      "datasetQuoted": 0,
+      "documentWords": 7782,
+      "limit": 400
+    }
+  },
+  "perQuote": [
+    {
+      "claim": "anthropic-claude-opus-4-1:Q01",
+      "evidence": 1,
+      "source": "anthropic-claude-opus-4-1",
+      "words": 8,
+      "found": true,
+      "pdfPage": 1
+    },
+    {
+      "claim": "anthropic-claude-opus-4-1:Q01",
+      "evidence": 2,
+      "source": "anthropic-claude-opus-4-1",
+      "words": 4,
+      "found": true,
+      "pdfPage": 2
+    },
+    {
+      "claim": "anthropic-claude-opus-4-1:Q02",
+      "evidence": 1,
+      "source": "anthropic-claude-opus-4-1",
+      "words": 11,
+      "found": true,
+      "pdfPage": 4
+    },
+    {
+      "claim": "anthropic-claude-opus-4-1:Q03",
+      "evidence": 1,
+      "source": "anthropic-claude-opus-4-1",
+      "words": 19,
+      "found": true,
+      "pdfPage": 4
+    },
+    {
+      "claim": "anthropic-claude-opus-4-1:Q04",
+      "evidence": 1,
+      "source": "anthropic-claude-opus-4-1",
+      "words": 8,
+      "found": true,
+      "pdfPage": 4
+    },
+    {
+      "claim": "anthropic-claude-opus-4-1:Q05",
+      "evidence": 1,
+      "source": "anthropic-claude-opus-4-1",
+      "words": 23,
+      "found": true,
+      "pdfPage": 18
+    },
+    {
+      "claim": "anthropic-claude-opus-4-1:Q06",
+      "evidence": 1,
+      "source": "anthropic-claude-opus-4-1",
+      "words": 9,
+      "found": true,
+      "pdfPage": 18
+    },
+    {
+      "claim": "anthropic-claude-opus-4-1:Q07",
+      "evidence": 1,
+      "source": "anthropic-claude-opus-4-1",
+      "words": 16,
+      "found": true,
+      "pdfPage": 19
+    },
+    {
+      "claim": "anthropic-claude-opus-4-1:Q08",
+      "evidence": 1,
+      "source": "anthropic-claude-opus-4-1",
+      "words": 16,
+      "found": true,
+      "pdfPage": 23
+    },
+    {
+      "claim": "anthropic-claude-opus-4-1:Q09",
+      "evidence": 1,
+      "source": "anthropic-claude-opus-4-1",
+      "words": 9,
+      "found": true,
+      "pdfPage": 22
+    },
+    {
+      "claim": "anthropic-claude-opus-4-1:Q11",
+      "evidence": 1,
+      "source": "anthropic-claude-opus-4-1",
+      "words": 12,
+      "found": true,
+      "pdfPage": 10
+    },
+    {
+      "claim": "anthropic-claude-opus-4-1:Q11",
+      "evidence": 2,
+      "source": "anthropic-claude-opus-4-1",
+      "words": 13,
+      "found": true,
+      "pdfPage": 15
+    },
+    {
+      "claim": "anthropic-claude-opus-4-1:Q15",
+      "evidence": 1,
+      "source": "anthropic-claude-opus-4-1",
+      "words": 31,
+      "found": true,
+      "pdfPage": 4
+    },
+    {
+      "claim": "anthropic-claude-opus-4-1:Q16",
+      "evidence": 1,
+      "source": "anthropic-claude-opus-4-1",
+      "words": 26,
+      "found": true,
+      "pdfPage": 12
+    },
+    {
+      "claim": "gdm-gemini-2-5-pro:Q01",
+      "evidence": 1,
+      "source": "gdm-gemini-2-5-pro",
+      "words": 6,
+      "found": true,
+      "pdfPage": 1
+    },
+    {
+      "claim": "gdm-gemini-2-5-pro:Q01",
+      "evidence": 2,
+      "source": "gdm-gemini-2-5-pro",
+      "words": 5,
+      "found": true,
+      "pdfPage": 2
+    },
+    {
+      "claim": "gdm-gemini-2-5-pro:Q02",
+      "evidence": 1,
+      "source": "gdm-gemini-2-5-pro",
+      "words": 12,
+      "found": true,
+      "pdfPage": 2
+    },
+    {
+      "claim": "gdm-gemini-2-5-pro:Q03",
+      "evidence": 1,
+      "source": "gdm-gemini-2-5-pro",
+      "words": 17,
+      "found": true,
+      "pdfPage": 10
+    },
+    {
+      "claim": "gdm-gemini-2-5-pro:Q04",
+      "evidence": 1,
+      "source": "gdm-gemini-2-5-pro",
+      "words": 15,
+      "found": true,
+      "pdfPage": 8
+    },
+    {
+      "claim": "gdm-gemini-2-5-pro:Q05",
+      "evidence": 1,
+      "source": "gdm-gemini-2-5-pro",
+      "words": 17,
+      "found": true,
+      "pdfPage": 12
+    },
+    {
+      "claim": "gdm-gemini-2-5-pro:Q06",
+      "evidence": 1,
+      "source": "gdm-gemini-2-5-pro",
+      "words": 21,
+      "found": true,
+      "pdfPage": 11
+    },
+    {
+      "claim": "gdm-gemini-2-5-pro:Q07",
+      "evidence": 1,
+      "source": "gdm-gemini-2-5-pro",
+      "words": 12,
+      "found": true,
+      "pdfPage": 13
+    },
+    {
+      "claim": "gdm-gemini-2-5-pro:Q08",
+      "evidence": 1,
+      "source": "gdm-gemini-2-5-pro",
+      "words": 14,
+      "found": true,
+      "pdfPage": 11
+    },
+    {
+      "claim": "gdm-gemini-2-5-pro:Q09",
+      "evidence": 1,
+      "source": "gdm-gemini-2-5-pro",
+      "words": 16,
+      "found": true,
+      "pdfPage": 17
+    },
+    {
+      "claim": "gdm-gemini-2-5-pro:Q11",
+      "evidence": 1,
+      "source": "gdm-gemini-2-5-pro",
+      "words": 14,
+      "found": true,
+      "pdfPage": 19
+    },
+    {
+      "claim": "gdm-gemini-2-5-pro:Q12",
+      "evidence": 1,
+      "source": "gdm-gemini-2-5-pro",
+      "words": 12,
+      "found": true,
+      "pdfPage": 7
+    },
+    {
+      "claim": "gdm-gemini-2-5-pro:Q13",
+      "evidence": 1,
+      "source": "gdm-gemini-2-5-pro",
+      "words": 11,
+      "found": true,
+      "pdfPage": 12
+    },
+    {
+      "claim": "gdm-gemini-2-5-pro:Q15",
+      "evidence": 1,
+      "source": "gdm-gemini-2-5-pro",
+      "words": 16,
+      "found": true,
+      "pdfPage": 8
+    },
+    {
+      "claim": "gdm-gemini-2-5-pro:Q16",
+      "evidence": 1,
+      "source": "gdm-gemini-2-5-pro",
+      "words": 13,
+      "found": true,
+      "pdfPage": 17
+    },
+    {
+      "claim": "gdm-gemini-2-5-pro:Q16",
+      "evidence": 2,
+      "source": "gdm-gemini-2-5-pro",
+      "words": 14,
+      "found": true,
+      "pdfPage": 8
+    },
+    {
+      "claim": "gdm-gemini-2-5-flash-lite:Q01",
+      "evidence": 1,
+      "source": "gdm-gemini-2-5-flash-lite",
+      "words": 4,
+      "found": true,
+      "pdfPage": 2
+    },
+    {
+      "claim": "gdm-gemini-2-5-flash-lite:Q02",
+      "evidence": 1,
+      "source": "gdm-gemini-2-5-flash-lite",
+      "words": 14,
+      "found": true,
+      "pdfPage": 2
+    },
+    {
+      "claim": "gdm-gemini-2-5-flash-lite:Q03",
+      "evidence": 1,
+      "source": "gdm-gemini-2-5-flash-lite",
+      "words": 15,
+      "found": true,
+      "pdfPage": 7
+    },
+    {
+      "claim": "gdm-gemini-2-5-flash-lite:Q04",
+      "evidence": 1,
+      "source": "gdm-gemini-2-5-flash-lite",
+      "words": 13,
+      "found": true,
+      "pdfPage": 7
+    },
+    {
+      "claim": "gdm-gemini-2-5-flash-lite:Q05",
+      "evidence": 1,
+      "source": "gdm-gemini-2-5-flash-lite",
+      "words": 20,
+      "found": true,
+      "pdfPage": 8
+    },
+    {
+      "claim": "gdm-gemini-2-5-flash-lite:Q06",
+      "evidence": 1,
+      "source": "gdm-gemini-2-5-flash-lite",
+      "words": 7,
+      "found": true,
+      "pdfPage": 9
+    },
+    {
+      "claim": "gdm-gemini-2-5-flash-lite:Q06",
+      "evidence": 2,
+      "source": "gdm-gemini-2-5-flash-lite",
+      "words": 6,
+      "found": true,
+      "pdfPage": 9
+    },
+    {
+      "claim": "gdm-gemini-2-5-flash-lite:Q12",
+      "evidence": 1,
+      "source": "gdm-gemini-2-5-flash-lite",
+      "words": 12,
+      "found": true,
+      "pdfPage": 6
+    },
+    {
+      "claim": "gdm-gemini-2-5-flash-lite:Q16",
+      "evidence": 1,
+      "source": "gdm-gemini-2-5-flash-lite",
+      "words": 14,
+      "found": true,
+      "pdfPage": 7
+    },
+    {
+      "claim": "meta-muse-glimmer:Q02",
+      "evidence": 1,
+      "source": "meta-muse-glimmer",
+      "words": 5,
+      "found": true,
+      "pdfPage": null
+    },
+    {
+      "claim": "meta-muse-glimmer:Q02",
+      "evidence": 2,
+      "source": "meta-muse-glimmer",
+      "words": 7,
+      "found": true,
+      "pdfPage": null
+    },
+    {
+      "claim": "meta-muse-glimmer:Q03",
+      "evidence": 1,
+      "source": "meta-muse-glimmer",
+      "words": 27,
+      "found": true,
+      "pdfPage": null
+    },
+    {
+      "claim": "meta-muse-glimmer:Q04",
+      "evidence": 1,
+      "source": "meta-muse-glimmer",
+      "words": 27,
+      "found": true,
+      "pdfPage": null
+    },
+    {
+      "claim": "meta-muse-glimmer:Q05",
+      "evidence": 1,
+      "source": "meta-muse-glimmer",
+      "words": 27,
+      "found": true,
+      "pdfPage": null
+    },
+    {
+      "claim": "meta-muse-glimmer:Q05",
+      "evidence": 2,
+      "source": "meta-muse-glimmer",
+      "words": 5,
+      "found": true,
+      "pdfPage": null
+    },
+    {
+      "claim": "meta-muse-glimmer:Q06",
+      "evidence": 1,
+      "source": "meta-muse-glimmer",
+      "words": 8,
+      "found": true,
+      "pdfPage": null
+    },
+    {
+      "claim": "meta-muse-glimmer:Q07",
+      "evidence": 1,
+      "source": "meta-muse-glimmer",
+      "words": 13,
+      "found": true,
+      "pdfPage": null
+    },
+    {
+      "claim": "meta-muse-glimmer:Q15",
+      "evidence": 1,
+      "source": "meta-muse-glimmer",
+      "words": 17,
+      "found": true,
+      "pdfPage": null
+    },
+    {
+      "claim": "meta-muse-glimmer:Q16",
+      "evidence": 1,
+      "source": "meta-muse-glimmer",
+      "words": 12,
+      "found": true,
+      "pdfPage": null
+    },
+    {
+      "claim": "meta-muse-wonder-and-muse-wonder-full:Q01",
+      "evidence": 1,
+      "source": "meta-muse-wonder-and-muse-wonder-full",
+      "words": 6,
+      "found": true,
+      "pdfPage": 7
+    },
+    {
+      "claim": "meta-muse-wonder-and-muse-wonder-full:Q02",
+      "evidence": 1,
+      "source": "meta-muse-wonder-and-muse-wonder-full",
+      "words": 6,
+      "found": true,
+      "pdfPage": 1
+    },
+    {
+      "claim": "meta-muse-wonder-and-muse-wonder-full:Q03",
+      "evidence": 1,
+      "source": "meta-muse-wonder-and-muse-wonder-full",
+      "words": 8,
+      "found": true,
+      "pdfPage": 11
+    },
+    {
+      "claim": "meta-muse-wonder-and-muse-wonder-full:Q04",
+      "evidence": 1,
+      "source": "meta-muse-wonder-and-muse-wonder-full",
+      "words": 8,
+      "found": true,
+      "pdfPage": 11
+    },
+    {
+      "claim": "meta-muse-wonder-and-muse-wonder-full:Q05",
+      "evidence": 1,
+      "source": "meta-muse-wonder-and-muse-wonder-full",
+      "words": 18,
+      "found": true,
+      "pdfPage": 7
+    },
+    {
+      "claim": "meta-muse-wonder-and-muse-wonder-full:Q05",
+      "evidence": 2,
+      "source": "meta-muse-wonder-and-muse-wonder-full",
+      "words": 17,
+      "found": true,
+      "pdfPage": 7
+    },
+    {
+      "claim": "meta-muse-wonder-and-muse-wonder-full:Q06",
+      "evidence": 1,
+      "source": "meta-muse-wonder-and-muse-wonder-full",
+      "words": 16,
+      "found": true,
+      "pdfPage": 7
+    },
+    {
+      "claim": "meta-muse-wonder-and-muse-wonder-full:Q07",
+      "evidence": 1,
+      "source": "meta-muse-wonder-and-muse-wonder-full",
+      "words": 18,
+      "found": true,
+      "pdfPage": 7
+    },
+    {
+      "claim": "meta-muse-wonder-and-muse-wonder-full:Q08",
+      "evidence": 1,
+      "source": "meta-muse-wonder-and-muse-wonder-full",
+      "words": 21,
+      "found": true,
+      "pdfPage": 7
+    },
+    {
+      "claim": "meta-muse-wonder-and-muse-wonder-full:Q11",
+      "evidence": 1,
+      "source": "meta-muse-wonder-and-muse-wonder-full",
+      "words": 10,
+      "found": true,
+      "pdfPage": 10
+    },
+    {
+      "claim": "meta-muse-wonder-and-muse-wonder-full:Q11",
+      "evidence": 2,
+      "source": "meta-muse-wonder-and-muse-wonder-full",
+      "words": 21,
+      "found": true,
+      "pdfPage": 7
+    },
+    {
+      "claim": "meta-muse-wonder-and-muse-wonder-full:Q12",
+      "evidence": 1,
+      "source": "meta-muse-wonder-and-muse-wonder-full",
+      "words": 21,
+      "found": true,
+      "pdfPage": 11
+    },
+    {
+      "claim": "meta-muse-wonder-and-muse-wonder-full:Q13",
+      "evidence": 1,
+      "source": "meta-muse-wonder-and-muse-wonder-full",
+      "words": 16,
+      "found": true,
+      "pdfPage": 6
+    },
+    {
+      "claim": "meta-muse-wonder-and-muse-wonder-full:Q15",
+      "evidence": 1,
+      "source": "meta-muse-wonder-and-muse-wonder-full",
+      "words": 13,
+      "found": true,
+      "pdfPage": 11
+    },
+    {
+      "claim": "meta-muse-wonder-and-muse-wonder-full:Q16",
+      "evidence": 1,
+      "source": "meta-muse-wonder-and-muse-wonder-full",
+      "words": 13,
+      "found": true,
+      "pdfPage": 11
+    },
+    {
+      "claim": "openai-o3-mini:Q01",
+      "evidence": 1,
+      "source": "openai-o3-mini",
+      "words": 8,
+      "found": true,
+      "pdfPage": 1
+    },
+    {
+      "claim": "openai-o3-mini:Q02",
+      "evidence": 1,
+      "source": "openai-o3-mini",
+      "words": 16,
+      "found": true,
+      "pdfPage": 5
+    },
+    {
+      "claim": "openai-o3-mini:Q03",
+      "evidence": 1,
+      "source": "openai-o3-mini",
+      "words": 4,
+      "found": true,
+      "pdfPage": 36
+    },
+    {
+      "claim": "openai-o3-mini:Q04",
+      "evidence": 1,
+      "source": "openai-o3-mini",
+      "words": 4,
+      "found": true,
+      "pdfPage": 36
+    },
+    {
+      "claim": "openai-o3-mini:Q05",
+      "evidence": 1,
+      "source": "openai-o3-mini",
+      "words": 30,
+      "found": true,
+      "pdfPage": 1
+    },
+    {
+      "claim": "openai-o3-mini:Q06",
+      "evidence": 1,
+      "source": "openai-o3-mini",
+      "words": 15,
+      "found": true,
+      "pdfPage": 9
+    },
+    {
+      "claim": "openai-o3-mini:Q07",
+      "evidence": 1,
+      "source": "openai-o3-mini",
+      "words": 24,
+      "found": true,
+      "pdfPage": 11
+    },
+    {
+      "claim": "openai-o3-mini:Q08",
+      "evidence": 1,
+      "source": "openai-o3-mini",
+      "words": 13,
+      "found": true,
+      "pdfPage": 9
+    },
+    {
+      "claim": "openai-o3-mini:Q09",
+      "evidence": 1,
+      "source": "openai-o3-mini",
+      "words": 5,
+      "found": true,
+      "pdfPage": 25
+    },
+    {
+      "claim": "openai-o3-mini:Q10",
+      "evidence": 1,
+      "source": "openai-o3-mini",
+      "words": 15,
+      "found": true,
+      "pdfPage": 21
+    },
+    {
+      "claim": "openai-o3-mini:Q11",
+      "evidence": 1,
+      "source": "openai-o3-mini",
+      "words": 12,
+      "found": true,
+      "pdfPage": 24
+    },
+    {
+      "claim": "openai-o3-mini:Q12",
+      "evidence": 1,
+      "source": "openai-o3-mini",
+      "words": 10,
+      "found": true,
+      "pdfPage": 6
+    },
+    {
+      "claim": "openai-o3-mini:Q12",
+      "evidence": 2,
+      "source": "openai-o3-mini",
+      "words": 18,
+      "found": true,
+      "pdfPage": 7
+    },
+    {
+      "claim": "openai-o3-mini:Q13",
+      "evidence": 1,
+      "source": "openai-o3-mini",
+      "words": 18,
+      "found": true,
+      "pdfPage": 7
+    },
+    {
+      "claim": "openai-o3-mini:Q15",
+      "evidence": 1,
+      "source": "openai-o3-mini",
+      "words": 21,
+      "found": true,
+      "pdfPage": 7
+    },
+    {
+      "claim": "openai-o3-mini:Q16",
+      "evidence": 1,
+      "source": "openai-o3-mini",
+      "words": 13,
+      "found": true,
+      "pdfPage": 8
+    },
+    {
+      "claim": "openai-deep-research:Q01",
+      "evidence": 1,
+      "source": "openai-deep-research",
+      "words": 8,
+      "found": true,
+      "pdfPage": 1
+    },
+    {
+      "claim": "openai-deep-research:Q01",
+      "evidence": 2,
+      "source": "openai-deep-research",
+      "words": 5,
+      "found": true,
+      "pdfPage": 33
+    },
+    {
+      "claim": "openai-deep-research:Q02",
+      "evidence": 1,
+      "source": "openai-deep-research",
+      "words": 22,
+      "found": true,
+      "pdfPage": 1
+    },
+    {
+      "claim": "openai-deep-research:Q03",
+      "evidence": 1,
+      "source": "openai-deep-research",
+      "words": 4,
+      "found": true,
+      "pdfPage": 35
+    },
+    {
+      "claim": "openai-deep-research:Q04",
+      "evidence": 1,
+      "source": "openai-deep-research",
+      "words": 2,
+      "found": true,
+      "pdfPage": 35
+    },
+    {
+      "claim": "openai-deep-research:Q05",
+      "evidence": 1,
+      "source": "openai-deep-research",
+      "words": 23,
+      "found": true,
+      "pdfPage": 11
+    },
+    {
+      "claim": "openai-deep-research:Q06",
+      "evidence": 1,
+      "source": "openai-deep-research",
+      "words": 15,
+      "found": true,
+      "pdfPage": 12
+    },
+    {
+      "claim": "openai-deep-research:Q06",
+      "evidence": 2,
+      "source": "openai-deep-research",
+      "words": 21,
+      "found": true,
+      "pdfPage": 13
+    },
+    {
+      "claim": "openai-deep-research:Q07",
+      "evidence": 1,
+      "source": "openai-deep-research",
+      "words": 6,
+      "found": true,
+      "pdfPage": 17
+    },
+    {
+      "claim": "openai-deep-research:Q08",
+      "evidence": 1,
+      "source": "openai-deep-research",
+      "words": 12,
+      "found": true,
+      "pdfPage": 13
+    },
+    {
+      "claim": "openai-deep-research:Q09",
+      "evidence": 1,
+      "source": "openai-deep-research",
+      "words": 7,
+      "found": true,
+      "pdfPage": 27
+    },
+    {
+      "claim": "openai-deep-research:Q10",
+      "evidence": 1,
+      "source": "openai-deep-research",
+      "words": 5,
+      "found": true,
+      "pdfPage": 13
+    },
+    {
+      "claim": "openai-deep-research:Q11",
+      "evidence": 1,
+      "source": "openai-deep-research",
+      "words": 12,
+      "found": true,
+      "pdfPage": 26
+    },
+    {
+      "claim": "openai-deep-research:Q12",
+      "evidence": 1,
+      "source": "openai-deep-research",
+      "words": 19,
+      "found": true,
+      "pdfPage": 2
+    },
+    {
+      "claim": "openai-deep-research:Q13",
+      "evidence": 1,
+      "source": "openai-deep-research",
+      "words": 5,
+      "found": true,
+      "pdfPage": 35
+    },
+    {
+      "claim": "openai-deep-research:Q15",
+      "evidence": 1,
+      "source": "openai-deep-research",
+      "words": 22,
+      "found": true,
+      "pdfPage": 1
+    },
+    {
+      "claim": "openai-deep-research:Q16",
+      "evidence": 1,
+      "source": "openai-deep-research",
+      "words": 14,
+      "found": true,
+      "pdfPage": 11
+    },
+    {
+      "claim": "xai-grok-4-6:Q01",
+      "evidence": 1,
+      "source": "xai-grok-4-6",
+      "words": 9,
+      "found": true,
+      "pdfPage": 1
+    },
+    {
+      "claim": "xai-grok-4-6:Q02",
+      "evidence": 1,
+      "source": "xai-grok-4-6",
+      "words": 9,
+      "found": true,
+      "pdfPage": 7
+    },
+    {
+      "claim": "xai-grok-4-6:Q02",
+      "evidence": 2,
+      "source": "xai-grok-4-6",
+      "words": 8,
+      "found": true,
+      "pdfPage": 7
+    },
+    {
+      "claim": "xai-grok-4-6:Q03",
+      "evidence": 1,
+      "source": "xai-grok-4-6",
+      "words": 10,
+      "found": true,
+      "pdfPage": 42
+    },
+    {
+      "claim": "xai-grok-4-6:Q04",
+      "evidence": 1,
+      "source": "xai-grok-4-6",
+      "words": 1,
+      "found": true,
+      "pdfPage": 42
+    },
+    {
+      "claim": "xai-grok-4-6:Q05",
+      "evidence": 1,
+      "source": "xai-grok-4-6",
+      "words": 19,
+      "found": true,
+      "pdfPage": 32
+    },
+    {
+      "claim": "xai-grok-4-6:Q06",
+      "evidence": 1,
+      "source": "xai-grok-4-6",
+      "words": 8,
+      "found": true,
+      "pdfPage": 36
+    },
+    {
+      "claim": "xai-grok-4-6:Q07",
+      "evidence": 1,
+      "source": "xai-grok-4-6",
+      "words": 19,
+      "found": true,
+      "pdfPage": 32
+    },
+    {
+      "claim": "xai-grok-4-6:Q08",
+      "evidence": 1,
+      "source": "xai-grok-4-6",
+      "words": 21,
+      "found": true,
+      "pdfPage": 29
+    },
+    {
+      "claim": "xai-grok-4-6:Q09",
+      "evidence": 1,
+      "source": "xai-grok-4-6",
+      "words": 21,
+      "found": true,
+      "pdfPage": 24
+    },
+    {
+      "claim": "xai-grok-4-6:Q11",
+      "evidence": 1,
+      "source": "xai-grok-4-6",
+      "words": 24,
+      "found": true,
+      "pdfPage": 38
+    },
+    {
+      "claim": "xai-grok-4-6:Q13",
+      "evidence": 1,
+      "source": "xai-grok-4-6",
+      "words": 9,
+      "found": true,
+      "pdfPage": 12
+    }
+  ]
+}

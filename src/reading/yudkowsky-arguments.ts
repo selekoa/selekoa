@@ -17,6 +17,9 @@ const withdrawn = '2026-11-02';
 /** The maintainer's decisions of 2026-11-02 on the cross-family audit sample. */
 const auditSample = '2026-11-02';
 
+/** The maintainer's answers of 2026-11-07 on the re-check sheet and the reads of that day. */
+const settled = '2026-11-07';
+
 export const yudkowskyArguments: PropositionsCollection = {
   id: frame.id,
   version: frame.version,
@@ -271,6 +274,78 @@ export const yudkowskyArguments: PropositionsCollection = {
         'yk-y13-ai-positive-negative-factor-global-risk-c',
       ],
       recordedAt: archiveApply,
+    },
+    {
+      propositionId: 'feedback-instils-values',
+      replaced:
+        'No earliest located contesting headline: under re-check from 2026-11-02. Before that, his Extropians message 1587 of 4 August 1999 was headlined.',
+      reason:
+        'Moved on 2026-11-07 to his message 1589 of the same day, by the maintainer’s decision on the re-check sheet (decision 9a), after the cross-family re-check of 2026-11-02 (role 81). The two near-identical messages are dated by day; the send times their headers print (18:47:55 and 18:48:10) put 1589 first, and both records now give them.',
+      claimIds: [
+        'yk-y05-extropians-1999-08-04-yudkowsky-1589-c',
+        'yk-y05-extropians-1999-08-04-yudkowsky-1587-c',
+      ],
+      recordedAt: settled,
+    },
+    {
+      propositionId: 'warning-signs-in-time',
+      replaced:
+        'No earliest located contesting headline: under re-check from 2026-11-02. Before that, his Extropians message of 6 January 1999 was headlined.',
+      reason:
+        'Set on 2026-11-07 to “Artificial Intelligence as a Positive and Negative Factor in Global Risk” (draft of 5 February 2006), by the maintainer’s decision on the re-check sheet (decision 18a). A witness check by a model of another family read the remaining contesting records in date order: his SL4 message of 13 July 2005 does not say whether a warning would come before danger, so it is now recorded as bearing on the proposition; the 2006 chapter meets the criterion.',
+      claimIds: [
+        'yk-y08-ai-positive-negative-factor-global-risk-c',
+        'yk-y08-sl4-2005-07-13-yudkowsky-0507-11477-c',
+      ],
+      recordedAt: settled,
+    },
+    {
+      propositionId: 'build-superintelligence-fast',
+      replaced:
+        'No earliest located contesting headline: under re-check from 2026-11-02. Before that, his SL4 message of 13 November 2000 was headlined.',
+      reason:
+        'Moved on 2026-11-07 to his Extropians message of 1 August 1999, by the maintainer’s decision on the re-check sheet (decision 10a), after the cross-family re-check of 2026-11-02 (role 99): the message withdraws his belief that the outcome would be good by default, the proposition’s premise. A challenge to the premise is counted as contesting, as elsewhere in the dataset.',
+      claimIds: [
+        'yk-y22-extropians-1999-08-01-yudkowsky-1386-c',
+        'yk-y22-sl4-2000-11-13-yudkowsky-0011-0181-c',
+      ],
+      recordedAt: settled,
+    },
+    {
+      propositionId: 'interpretability-reads-its-mind',
+      replaced:
+        'No earliest located contesting headline: under re-check from 2026-11-02. Before that, his SL4 message of 22 May 2003 was headlined.',
+      reason:
+        'Moved on 2026-11-07 to “Creating Friendly AI” (2001), by the maintainer’s decision on the re-check sheet (decision 3a), after the cross-family re-check of 2026-11-02 (role 102): its flight-recorder section states three conditions under which reading an AI’s intentions from a record works. A new contesting record quotes that passage; the document’s table of design assumptions stays recorded as context.',
+      claimIds: [
+        'yk-y25-creating-friendly-ai-2001-c',
+        'yk-y25-sl4-2003-05-22-yudkowsky-0305-6783-c',
+      ],
+      recordedAt: settled,
+    },
+    {
+      propositionId: 'developers-know-what-they-are-doing',
+      replaced:
+        'No earliest located headline: under re-check from 2026-11-02. Before that, “Creating Friendly AI” (2001) was headlined.',
+      reason:
+        'Moved on 2026-11-07 to his Extropians message of 29 September 2000, by the maintainer’s decision on the re-check sheet (decision 4a), after the cross-family re-check of 2026-11-02 (role 105): it gives builders’ understanding and sustained work on Friendliness as reasons to defer to their safety judgment. Its record, context until then, now states the proposition.',
+      claimIds: [
+        'yk-y28-extropians-2000-09-29-yudkowsky-6073-b',
+        'yk-y28-creating-friendly-ai-2001-a',
+      ],
+      recordedAt: settled,
+    },
+    {
+      propositionId: 'developers-know-what-they-are-doing',
+      replaced:
+        'No earliest located contesting headline: under re-check from 2026-11-02. Before that, his SL4 message of 1 August 2001 was headlined.',
+      reason:
+        'Moved on 2026-11-07 to his SL4 message of 12 April 2001, by the maintainer’s decision on the re-check sheet (decision 1a), after the cross-family re-check of 2026-11-02 (role 106): it says anyone could outrace the main project just by adding computing power. It is recorded as a paraphrase, because the message’s quotable words are already used.',
+      claimIds: [
+        'yk-y28-sl4-2001-04-12-yudkowsky-0104-1076-c',
+        'yk-y28-sl4-2001-08-01-yudkowsky-0108-2031-c',
+      ],
+      recordedAt: settled,
     },
   ],
   limits: [

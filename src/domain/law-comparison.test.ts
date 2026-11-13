@@ -51,7 +51,15 @@ describe('laws compared (schema 2.31)', () => {
     for (const c of pack.cells) {
       const cell = view.cell(rows[c.instrument], 'L.' + c.question);
       // Illinois Q05 was held and decided partly (decision 1a of 2026-11-05).
-      expect(cell.status).toBe(c.status);
+      // Two cells were corrected after the blind audit of 2026-11-09 (F1, F6;
+      // review/audit-corrections-and-model-cards-5-2026-11-10.md).
+      const corrected: Record<string, string> = {
+        'lc-cell-ny-ch96-q09': 'stated',
+        'lc-cell-cn-genai-measures-q03': 'partly',
+      };
+      expect(cell.status).toBe(
+        (cell.claim && corrected[cell.claim.id]) || c.status,
+      );
     }
     expect(cells).toHaveLength(150 - 5 - 1);
     expect(
@@ -154,6 +162,8 @@ describe('laws compared (schema 2.31)', () => {
       'lc-cell-ca-sb53-q10',
       'lc-cell-eu-ai-act-q09',
       'lc-cell-il-aisma-q10',
+      // Stated as a paraphrase after the audit of 2026-11-09 (F1).
+      'lc-cell-ny-ch96-q09',
       'lc-cell-ny-ch96-q13',
       'lc-cell-ny-ch96-q14',
       'lc-cell-us-bis-ifr-q14',

@@ -30,7 +30,8 @@ export function Landing({
           thought about it. Machines built it: they find the sources, quote them
           and check each other’s work, and every statement links to the passage
           it rests on. What they leave to <strong>you</strong> is the{' '}
-          <em>human part</em>: the question, the point of view, the stance.
+          <em>human part</em>: the question, the point of view and the
+          judgement.
         </p>
         <form
           className="landing-search"
@@ -54,6 +55,17 @@ export function Landing({
           />
           <button type="submit">Search</button>
         </form>
+        <p className="landing-elsewhere">
+          Looking for compute data, model evaluations, AI policy by country or
+          incidents?{' '}
+          <NavLink
+            className="text-button"
+            href={startHref({ kind: 'elsewhere' }, summary)}
+            onOpen={() => onAction({ kind: 'elsewhere' })}
+          >
+            Where else to look →
+          </NavLink>
+        </p>
       </section>
       <nav className="ways-in" aria-labelledby="ways-in-title">
         <h2 id="ways-in-title">Ways in</h2>

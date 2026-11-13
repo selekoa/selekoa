@@ -20,6 +20,9 @@ const admitted = '2026-11-01';
 const antecedents = '2026-11-04';
 const pack = 'the research pack of 2026-10-31';
 
+/** The maintainer's answers of 2026-11-07 on the re-check sheet and the reads of that day. */
+const settled = '2026-11-07';
+
 export const machineSuccession: PropositionsCollection = {
   id: frame.id,
   version: frame.version,
@@ -464,6 +467,18 @@ export const machineSuccession: PropositionsCollection = {
         'ht-w01-lanier-2000-one-half-a-manifesto',
       ],
       recordedAt: antecedents,
+    },
+    {
+      propositionId: 'succession-acceptable',
+      replaced:
+        'No earliest located headline: under re-check from 2026-11-02. Before that, Minsky’s article of October 1994, with wording attested from January 1997, was headlined.',
+      reason:
+        'Set on 2026-11-07 to Moravec’s chapter of 1989, by the maintainer’s decision on the re-check sheet (decision 16a). A witness check by a model of another family read its opening, p. 167, in the publisher’s copy of the printed volume; that print attests the wording of the record’s first passage, which had been known only from the author’s file of 2001. Minsky’s magazine pages were read only in a copy Selekoa does not cite, as was Moravec’s essay of February 1979, whose wording stays attested from 2001.',
+      claimIds: [
+        'ht-w02-moravec-1989-genetic-takeover',
+        'ht-w02-minsky-1994-will-robots-inherit-the-earth',
+      ],
+      recordedAt: settled,
     },
   ],
   limits: [

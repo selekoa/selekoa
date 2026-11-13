@@ -1,0 +1,959 @@
+{
+  "generated": "node research/model-cards-4/adjudication/apply-2026-11-09.mjs",
+  "check": "research/model-cards-4/cross-family-check-2026-11-07.json",
+  "changes": 88,
+  "log": [
+    {
+      "id": "gdm-gemini-2-5-flash-lite:Q05",
+      "field": "status",
+      "from": "stated",
+      "to": "partly",
+      "item": "6"
+    },
+    {
+      "id": "gdm-gemini-2-5-flash-lite:Q05",
+      "field": "note",
+      "from": "The card relies on the frontier safety evaluations reported for Gemini 2.5 Pro Preview, which it says reached no critical capability level; it reports no frontier safety evaluation of this model.",
+      "to": "The card states an expectation for this model that rests on another model’s results: Gemini 2.5 Pro Preview was evaluated and reached no critical capability level, and, as Flash-Lite is less capable, Flash-Lite is unlikely to reach one. It reports no frontier safety evaluation of Flash-Lite and no outcome for it in the framework’s own categories.",
+      "item": "6"
+    },
+    {
+      "id": "gdm-gemini-2-5-flash-lite:Q05",
+      "field": "crossFamily",
+      "from": null,
+      "to": {
+        "item": "6",
+        "result": "material disagreement, applied: the checker reads partly (blind), because PDF p. 8 gives a proxy-based expectation for Flash-Lite and the no-CCL result is Gemini 2.5 Pro Preview’s. The pack had read stated, with the reliance in the note, as for Gemini 3 Flash in the first pack (open question 2). The preparer applies the checker’s reading; the admitted Gemini 3 Flash cell, which reads the same wording as stated, goes to the maintainer."
+      },
+      "item": "6"
+    },
+    {
+      "id": "gdm-gemini-2-5-flash:Q05",
+      "field": "status",
+      "from": "stated",
+      "to": "partly",
+      "item": "50"
+    },
+    {
+      "id": "gdm-gemini-2-5-flash:Q05",
+      "field": "note",
+      "from": "The card relies on the frontier safety evaluations reported for Gemini 2.5 Pro Preview, which it says reached no critical capability level; it reports no frontier safety evaluation of this model.",
+      "to": "The card states an expectation for this model that rests on another model’s results: Gemini 2.5 Pro Preview was evaluated and reached no critical capability level, and, as Flash is less capable, Flash is unlikely to reach one. It reports no frontier safety evaluation of Flash and no outcome for it in the framework’s own categories. The card also covers Gemini 2.5 Flash Image and Audio, with no separate statement for them.",
+      "item": "50"
+    },
+    {
+      "id": "gdm-gemini-2-5-flash:Q05",
+      "field": "crossFamily",
+      "from": null,
+      "to": {
+        "item": "50",
+        "result": "material disagreement, applied: the checker reads partly (blind), because PDF p. 10 gives a proxy-based expectation for Flash and the no-CCL result is Gemini 2.5 Pro Preview’s, with no separate determination for Image or Audio. The pack had read stated, with the reliance in the note (open question 2). The preparer applies the checker’s reading; see item 6 for the admitted Gemini 3 Flash cell."
+      },
+      "item": "50"
+    },
+    {
+      "id": "anthropic-claude-sonnet-4-5:Q03",
+      "field": "status",
+      "from": "partly",
+      "to": "stated",
+      "item": "38"
+    },
+    {
+      "id": "anthropic-claude-sonnet-4-5:Q03",
+      "field": "passages",
+      "from": [
+        {
+          "source": "anthropic-claude-sonnet-4-5",
+          "locator": "§1.2.1 Overview, PDF p. 9",
+          "quote": "it did not meet the “notably more capable” threshold, described in our Responsible Scaling Policy"
+        }
+      ],
+      "to": [
+        {
+          "source": "anthropic-claude-sonnet-4-5",
+          "locator": "§9.1 Process, PDF p. 125 (printed p. 124)",
+          "quote": "The Responsible Scaling Policy (RSP) evaluation process"
+        }
+      ],
+      "item": "38"
+    },
+    {
+      "id": "anthropic-claude-sonnet-4-5:Q03",
+      "field": "note",
+      "from": "The card names the RSP without a version or date. Its links on the policy name point to an announcement page, the undated policy page and the 2023 announcement, not to a dated edition. As context only: the dataset records RSP v2.2 (effective 2025-05-14) as the edition in force before the card’s month.",
+      "to": "The text gives no edition. The link annotation on the policy’s name in §9.1 (PDF p. 125) targets the fixed RSP file whose cover reads “Version 2.2, Effective May 14, 2025”, the file targeted by Claude Haiku 4.5 and Claude Opus 4.6 (maintainer decision 4a). The links on the name on PDF pp. 9, 33 and 41 target an announcement, the undated policy page and the 2023 announcement.",
+      "item": "38"
+    },
+    {
+      "id": "anthropic-claude-sonnet-4-5:Q03",
+      "field": "search",
+      "from": {
+        "read": "§1.2, §5.3, §9, link annotations on the policy name",
+        "terms": ["Responsible Scaling Policy", "RSP", "version", "v2"],
+        "setAside": [
+          {
+            "locator": "Link annotation, PDF p. 9",
+            "reason": "Targets an announcement of an updated policy, not a dated edition file."
+          },
+          {
+            "locator": "Link annotation, PDF p. 41",
+            "reason": "Targets the 2023 announcement page."
+          }
+        ]
+      },
+      "to": null,
+      "item": "38"
+    },
+    {
+      "id": "anthropic-claude-sonnet-4-5:Q03",
+      "field": "crossFamily",
+      "from": null,
+      "to": {
+        "item": "38",
+        "result": "material disagreement, applied: the checker reads stated (blind) under decision 4a, from the link annotation in §9.1, PDF p. 125, to the fixed RSP v2.2 file. The pack had read partly, having checked the annotations on PDF pp. 9, 33 and 41 but not this one. The preparer accepts the checker’s reading on rereading the annotations (pypdf, 2026-11-09)."
+      },
+      "item": "38"
+    },
+    {
+      "id": "anthropic-claude-sonnet-4-5",
+      "field": "frameworkEditions",
+      "from": [],
+      "to": ["rsp-v2-2"],
+      "item": "38"
+    },
+    {
+      "id": "anthropic-claude-sonnet-4-5",
+      "field": "frameworkEditionNote",
+      "from": "The card names the Responsible Scaling Policy without a version or date. Its link annotations on the policy’s name point to an announcement of an updated policy (PDF p. 9), to the policy’s undated web page (PDF p. 33) and to the 2023 announcement (PDF p. 41); none targets a dated edition file. No edition is recorded.",
+      "to": "RSP v2.2, effective 2025-05-14, identified by link annotation (maintainer decision 4a): the words “Responsible Scaling Policy” in §9.1 (PDF p. 125) link to https://www-cdn.anthropic.com/872c653b2d0501d6ab44cf87f43e1dc4853e4d37.pdf, whose cover reads “Version 2.2, Effective May 14, 2025” (the file retrieved for Claude Haiku 4.5). Found by the cross-family check of 2026-11-07. The other links on the policy’s name point to an announcement of an updated policy (PDF p. 9), to the policy’s undated web page (PDF p. 33) and to the 2023 announcement (PDF p. 41).",
+      "item": "38"
+    },
+    {
+      "id": "meta-muse-spark-open:Q05",
+      "field": "status",
+      "from": "partly",
+      "to": "not-found",
+      "item": "55"
+    },
+    {
+      "id": "meta-muse-spark-open:Q05",
+      "field": "passages",
+      "from": [
+        {
+          "source": "meta-muse-spark-open",
+          "locator": "Safety and Preparedness",
+          "quote": "met our safety criteria for release based on model evaluations and an assessment of residual risks"
+        }
+      ],
+      "to": [],
+      "item": "55"
+    },
+    {
+      "id": "meta-muse-spark-open:Q05",
+      "field": "note",
+      "from": "The card says the model met its safety criteria after a residual-risk assessment, without stating an outcome in the framework’s categories (such as a risk level).",
+      "to": "No determination in the framework’s categories was found. The card says the model met Meta’s safety criteria for release, and that preparedness evaluations (chemical and biological, cyber, loss of control) were run in line with the Meta Superintelligence Scaling Framework; it states no risk level or threshold outcome and does not say a framework determination was made.",
+      "item": "55"
+    },
+    {
+      "id": "meta-muse-spark-open:Q05",
+      "field": "search",
+      "from": {
+        "read": "Whole card (Hugging Face README, revision 0fb02478): licence front matter, overview table, Model Access, Benchmarks, Safety and Preparedness, Considerations and Limitations",
+        "terms": [
+          "high risk",
+          "moderate",
+          "threshold",
+          "risk level",
+          "determin"
+        ],
+        "setAside": []
+      },
+      "to": {
+        "read": "Whole card (Hugging Face README, revision 0fb02478): licence front matter, overview table, Model Access, Benchmarks, Safety and Preparedness, Considerations and Limitations",
+        "terms": [
+          "high risk",
+          "moderate",
+          "threshold",
+          "risk level",
+          "determin",
+          "framework",
+          "tier",
+          "residual risk"
+        ],
+        "setAside": [
+          {
+            "locator": "Safety and Preparedness, introduction",
+            "reason": "The model “met our safety criteria for release”: release criteria, not an outcome in the framework’s categories; recorded under Q15."
+          },
+          {
+            "locator": "Safety and Preparedness, item 4 (Preparedness)",
+            "reason": "Evaluations “in line with” the framework, reported as refusal and misalignment results, not as framework categories."
+          }
+        ]
+      },
+      "item": "55"
+    },
+    {
+      "id": "meta-muse-spark-open:Q05",
+      "field": "crossFamily",
+      "from": null,
+      "to": {
+        "item": "55",
+        "result": "material disagreement, applied: the checker reads not found (blind): the README applies the framework to evaluations and finds Meta’s release criteria met, but states no framework determination and does not say one was made; a release-acceptability judgement belongs to Q15. The pack had read partly, as a determination made without its outcome. The preparer applies the checker’s reading."
+      },
+      "item": "55"
+    },
+    {
+      "id": "meta-muse-spark-open:Q15",
+      "field": "status",
+      "from": "partly",
+      "to": "stated",
+      "item": "58"
+    },
+    {
+      "id": "meta-muse-spark-open:Q15",
+      "field": "note",
+      "from": "The release is stated as following from an assessment, without a decision being described or a maker named (maintainer decision 6a).",
+      "to": "Meta, in its own voice (“our safety criteria”), states that the model met its safety criteria for release after evaluations and an assessment of residual risks: a judgement that the release was acceptable, made by the company. No person, office or committee is named, and no decision date is given.",
+      "item": "58"
+    },
+    {
+      "id": "meta-muse-spark-open:Q15",
+      "field": "crossFamily",
+      "from": null,
+      "to": {
+        "item": "58",
+        "result": "material disagreement, applied: the checker reads stated (blind) under the criterion’s “deemed acceptable for deployment”: meeting the company’s own release criteria after a residual-risk assessment is an acceptability judgement in the developer’s voice (decision 6a). The pack had read partly, as a release following an assessment. The preparer applies the checker’s reading."
+      },
+      "item": "58"
+    },
+    {
+      "id": "xai-grok-4-6:Q09",
+      "field": "crossFamily",
+      "from": null,
+      "to": {
+        "item": "32",
+        "result": "material disagreement, held for the maintainer: the checker’s recorded status is not found (blind), while its comparison says the pack’s partly is better supported for the earlier-checkpoint evaluation in §5 if that scope is kept explicit. The cell keeps the pack’s status until the maintainer decides. Recommendation: partly.",
+        "readings": {
+          "pack (Claude)": "partly: §5 (PDF p. 24) reports a test of autonomous AI-development acceleration on an earlier Grok 4.6 checkpoint, without an outcome category, threshold or risk conclusion.",
+          "checker (Codex)": "not-found (blind): the research-capability benchmarks are product capability, and the framework-linked threshold in §8 concerns biology and chemistry. On comparison: the §5 earlier-checkpoint test “supports partly if labeled as an earlier-checkpoint evaluation with no frontier risk outcome”."
+        },
+        "criterion": "The card reports that evaluations in any of these domains were run and states their outcome category or threshold language (policy level only). Partly if evaluations are reported without any outcome or conclusion. Agentic task benchmarks reported only as product capability do not meet it."
+      },
+      "item": "32"
+    },
+    {
+      "id": "gdm-gemini-2-5-flash-lite:Q03",
+      "field": "passages[Evaluation Approach].quote",
+      "from": "In addition, we perform testing following the guidelines in Google DeepMind’s Frontier Safety",
+      "to": "In addition, we perform testing following the guidelines in Google DeepMind’s Frontier Safety Framework (FSF).",
+      "item": "5"
+    },
+    {
+      "id": "gdm-gemini-2-5-flash-lite:Q03",
+      "field": "crossFamily",
+      "from": null,
+      "to": {
+        "item": "5",
+        "result": "minor, applied: the quotation now runs through the framework’s full name. Status and edition agree."
+      },
+      "item": "5"
+    },
+    {
+      "id": "gdm-gemini-2-5-flash:Q03",
+      "field": "passages[Evaluation Approach].quote",
+      "from": "In addition, we performed testing following the guidelines in Google DeepMind’s Frontier Safety",
+      "to": "In addition, we performed testing following the guidelines in Google DeepMind’s Frontier Safety Framework (FSF).",
+      "item": "49"
+    },
+    {
+      "id": "gdm-gemini-2-5-flash:Q03",
+      "field": "crossFamily",
+      "from": null,
+      "to": {
+        "item": "49",
+        "result": "minor, applied: the quotation now runs through the framework’s full name. Status and edition agree."
+      },
+      "item": "49"
+    },
+    {
+      "id": "gdm-gemini-2-5-flash-lite:Q06",
+      "field": "passages",
+      "from": [
+        {
+          "source": "gdm-gemini-2-5-flash-lite",
+          "locator": "Risks and Mitigations, PDF p. 9",
+          "quote": "Mitigations include, but are not limited to:"
+        }
+      ],
+      "to": [
+        {
+          "source": "gdm-gemini-2-5-flash-lite",
+          "locator": "Risks and Mitigations, PDF p. 9",
+          "quote": "Mitigations include, but are not limited to:"
+        },
+        {
+          "source": "gdm-gemini-2-5-flash-lite",
+          "locator": "Risks and Mitigations, PDF p. 9",
+          "quote": "product-level mitigations such as safety filtering"
+        }
+      ],
+      "item": "7"
+    },
+    {
+      "id": "gdm-gemini-2-5-flash-lite:Q06",
+      "field": "note",
+      "from": "The card lists mitigations across training and deployment without tying any of them to a framework determination.",
+      "to": "The card lists mitigations across training and deployment (dataset filtering, conditional pre-training, fine-tuning, reinforcement learning, safety policies and product-level safety filtering) without tying any of them to the frontier safety assessment.",
+      "item": "7"
+    },
+    {
+      "id": "gdm-gemini-2-5-flash-lite:Q06",
+      "field": "crossFamily",
+      "from": null,
+      "to": {
+        "item": "7",
+        "result": "minor, applied: a named mitigation from the same list is quoted beside the list’s introduction. Status agrees."
+      },
+      "item": "7"
+    },
+    {
+      "id": "gdm-gemini-2-5-flash:Q06",
+      "field": "passages",
+      "from": [
+        {
+          "source": "gdm-gemini-2-5-flash",
+          "locator": "Risks and Mitigations, PDF p. 11",
+          "quote": "Mitigations include, but are not limited to:"
+        }
+      ],
+      "to": [
+        {
+          "source": "gdm-gemini-2-5-flash",
+          "locator": "Risks and Mitigations, PDF p. 11",
+          "quote": "Mitigations include, but are not limited to:"
+        },
+        {
+          "source": "gdm-gemini-2-5-flash",
+          "locator": "Risks and Mitigations, PDF p. 11",
+          "quote": "product-level mitigations such as safety filtering"
+        }
+      ],
+      "item": "83"
+    },
+    {
+      "id": "gdm-gemini-2-5-flash:Q06",
+      "field": "note",
+      "from": "The card lists mitigations across training and deployment without tying any of them to a framework determination.",
+      "to": "The card lists mitigations across training and deployment (dataset filtering, conditional pre-training, fine-tuning, reinforcement learning, safety policies and product-level safety filtering) without tying any of them to the frontier safety assessment.",
+      "item": "83"
+    },
+    {
+      "id": "gdm-gemini-2-5-flash:Q06",
+      "field": "crossFamily",
+      "from": null,
+      "to": {
+        "item": "83",
+        "result": "minor, applied: a named mitigation from the same list is quoted beside the list’s introduction. Status agrees."
+      },
+      "item": "83"
+    },
+    {
+      "id": "gdm-gemini-2-5-pro:Q05",
+      "field": "note",
+      "from": "The card also states that the evaluations reached the alert threshold for the Cyber Uplift Level 1 CCL (PDF pp. 10–11), and that deceptive-alignment evaluations of the GA version were not completed (PDF p. 20).",
+      "to": "The direct evaluation across all framework domains is of Gemini 2.5 Pro Experimental (03-25). For Preview (05-06) and GA, the card relies on those results and repeats a subset of evaluations: the Cyber Uplift Level 1 evaluations for Preview, and the “most essential” evaluations for GA, whose deceptive-alignment evaluations were not yet completed (PDF p. 11). The evaluations reached the alert threshold for Cyber Uplift Level 1, which is not the CCL (PDF pp. 10–11).",
+      "item": "14"
+    },
+    {
+      "id": "gdm-gemini-2-5-pro:Q05",
+      "field": "crossFamily",
+      "from": null,
+      "to": {
+        "item": "14",
+        "result": "minor, applied: the note now says which variant the direct all-domain evaluation covers and how the Preview and GA evidence was added. Status agrees."
+      },
+      "item": "14"
+    },
+    {
+      "id": "gdm-gemini-2-5-deep-think:Q15",
+      "field": "passages",
+      "from": [
+        {
+          "source": "gdm-gemini-2-5-deep-think",
+          "locator": "Evaluation Approach, PDF p. 5",
+          "quote": "The RSC also reviewed data on the model’s performance via assurance evaluations and made release decisions."
+        }
+      ],
+      "to": [
+        {
+          "source": "gdm-gemini-2-5-deep-think",
+          "locator": "Evaluation Approach, PDF p. 5",
+          "quote": "The RSC also reviewed data on the model’s performance via assurance evaluations and made release decisions."
+        },
+        {
+          "source": "gdm-gemini-2-5-deep-think",
+          "locator": "Frontier Safety Summary, PDF p. 20",
+          "quote": "an internal safety case based on these mitigations and red teaming results was developed and reviewed by Google DeepMind’s Responsibility and Safety Council (RSC) before launch."
+        }
+      ],
+      "item": "48"
+    },
+    {
+      "id": "gdm-gemini-2-5-deep-think:Q15",
+      "field": "note",
+      "from": "The card names Google DeepMind’s Responsibility and Safety Council, its internal governance body, as the maker of release decisions. The passage does not describe a particular decision for this model or date one.",
+      "to": "The card names Google DeepMind’s Responsibility and Safety Council, its internal governance body, as the maker of release decisions (PDF p. 5), and says that the council reviewed this model’s internal safety case before launch (PDF p. 20). Neither passage gives the text or date of a decision.",
+      "item": "48"
+    },
+    {
+      "id": "gdm-gemini-2-5-deep-think:Q15",
+      "field": "crossFamily",
+      "from": null,
+      "to": {
+        "item": "48",
+        "result": "minor, applied: the model-specific passage on the RSC’s pre-launch review of the safety case is added. Status and maker agree."
+      },
+      "item": "48"
+    },
+    {
+      "id": "gdm-gemini-2-5-pro:Q13",
+      "field": "note",
+      "from": "External testers are described but not named; the card reports internal evaluations only.",
+      "to": "External testers are described but not named; the card presents results from internal evaluations only. The external providers of benchmarks and challenges are not described as testers of the model.",
+      "item": "67"
+    },
+    {
+      "id": "gdm-gemini-2-5-pro:Q13",
+      "field": "crossFamily",
+      "from": null,
+      "to": {
+        "item": "67",
+        "result": "minor, applied: “reports internal evaluations only” becomes “presents results from internal evaluations only”, since the card says external testers evaluated CBRN."
+      },
+      "item": "67"
+    },
+    {
+      "id": "gdm-gemini-2-5-pro:Q14",
+      "field": "search",
+      "from": {
+        "read": "Whole card (21 pages): Model Information, Evaluation, Ethics and Safety, Frontier Safety sections",
+        "terms": ["government", "AI Safety Institute", "AISI", "CAISI"],
+        "setAside": []
+      },
+      "to": {
+        "read": "Whole card (21 pages): Model Information, Evaluation, Ethics and Safety, Frontier Safety sections",
+        "terms": ["government", "AI Safety Institute", "AISI", "CAISI"],
+        "setAside": [
+          {
+            "locator": "Cybersecurity, Overview, footnote 8, PDF p. 15",
+            "reason": "Names the UK AI Safety Institute’s evaluation framework Inspect, with which the open-sourced CTF suite can be run; it does not say the institute tested or received the model."
+          }
+        ]
+      },
+      "item": "68"
+    },
+    {
+      "id": "gdm-gemini-2-5-pro:Q14",
+      "field": "crossFamily",
+      "from": null,
+      "to": {
+        "item": "68",
+        "result": "minor, applied: the footnote naming the UK AI Safety Institute is recorded as set aside. Status agrees."
+      },
+      "item": "68"
+    },
+    {
+      "id": "xai-grok-4-6:Q12",
+      "field": "search",
+      "from": {
+        "read": "Whole card (42 pages): changelog, §§1–12 and references",
+        "terms": ["red team", "red-team", "adversarial"],
+        "setAside": [
+          {
+            "locator": "§7.4 HackerBench, PDF p. 30",
+            "reason": "“red-teaming tasks” are a task type in an internal cyber benchmark, not adversarial testing of the model described as red-teaming."
+          },
+          {
+            "locator": "§9.1 Jailbreaks, PDF p. 34",
+            "reason": "Jailbreak stress tests of the refusal safeguards are not described as red-teaming."
+          }
+        ]
+      },
+      "to": {
+        "read": "Whole card (42 pages): changelog, §§1–12 and references",
+        "terms": ["red team", "red-team", "adversarial"],
+        "setAside": [
+          {
+            "locator": "§7.4 HackerBench, PDF p. 31",
+            "reason": "“red-teaming tasks” are a task type in an internal cyber benchmark, not adversarial testing of the model described as red-teaming."
+          },
+          {
+            "locator": "§9.1 Jailbreaks, PDF p. 35",
+            "reason": "Jailbreak stress tests of the refusal safeguards are not described as red-teaming."
+          }
+        ]
+      },
+      "item": "77"
+    },
+    {
+      "id": "xai-grok-4-6:Q12",
+      "field": "crossFamily",
+      "from": null,
+      "to": {
+        "item": "77",
+        "result": "minor, applied: the set-aside locators gave printed page numbers as PDF pages; they now give the physical pages (31 and 35). Status agrees."
+      },
+      "item": "77"
+    },
+    {
+      "id": "anthropic-claude-sonnet-4-5:Q11",
+      "field": "passages[§7 Alignment assessment].quote",
+      "from": "We saw roughly a 60% improvement on our primary misalignment metric over Claude Sonnet 4, our safest prior model.",
+      "to": "We saw roughly a 60% improvement on our primary misalignment metric over Claude Sonnet 4",
+      "item": "80"
+    },
+    {
+      "id": "anthropic-claude-sonnet-4-5:Q11",
+      "field": "crossFamily",
+      "from": null,
+      "to": {
+        "item": "80",
+        "result": "minor, applied: the quotation stops before the developer’s characterisation of the earlier model. Status agrees."
+      },
+      "item": "80"
+    },
+    {
+      "id": "anthropic-claude-opus-4-6:Q08",
+      "field": "note",
+      "from": "The card reports cyber evaluations, which the model saturated, and a CAISI cyber assessment (§8.4.8), and states that the RSP defines no formal cyber threshold. No conclusion in threshold or risk terms was found for cyber.",
+      "to": "The card reports cyber evaluations, which the model saturated, and a CAISI cyber assessment (§8.4.8), and states that the RSP defines no formal cyber threshold. §8.4 gives a qualitative assessment that the model has meaningfully improved cyber capabilities and ties enhanced safeguards against cyber misuse to it (PDF p. 197); no outcome category or threshold is stated for cyber.",
+      "item": "81"
+    },
+    {
+      "id": "anthropic-claude-opus-4-6:Q08",
+      "field": "search",
+      "from": {
+        "read": "§1.2.4.3, §8.4 and its subsections",
+        "terms": ["cyber", "threshold", "conclu", "catastroph"],
+        "setAside": [
+          {
+            "locator": "§8.4.8 Assessment by the CAISI, PDF pp. 203–204",
+            "reason": "Describes the assessment and vulnerabilities found, without a stated conclusion on risk."
+          }
+        ]
+      },
+      "to": {
+        "read": "§1.2.4.3, §8.4 and its subsections",
+        "terms": ["cyber", "threshold", "conclu", "catastroph"],
+        "setAside": [
+          {
+            "locator": "§8.4, results summary, PDF p. 197",
+            "reason": "A qualitative capability assessment with enhanced safeguards tied to it, not a category or threshold under the RSP; given in the note."
+          },
+          {
+            "locator": "§8.4.8 Assessment by the CAISI, PDF pp. 203–204",
+            "reason": "Describes the assessment and vulnerabilities found, without a stated conclusion on risk."
+          }
+        ]
+      },
+      "item": "81"
+    },
+    {
+      "id": "anthropic-claude-opus-4-6:Q08",
+      "field": "crossFamily",
+      "from": null,
+      "to": {
+        "item": "81",
+        "result": "minor, applied: the qualitative cyber assessment of §8.4 (PDF p. 197) is given in the note and set aside as not a formal category. Status agrees (open question 3)."
+      },
+      "item": "81"
+    },
+    {
+      "id": "anthropic-claude-opus-4-6:Q09",
+      "field": "note",
+      "from": "For AI R&D-4 the card says the model has roughly reached its benchmark rule-out thresholds, so the rule-out rests on qualitative impressions and an internal survey of 16 participants (§1.2.3, §1.2.4.1).",
+      "to": "The card qualifies the AI R&D-4 rule-out: the model has roughly reached the benchmark thresholds set for a straightforward rule-out, so the determination rests on a wider judgement (§1.2.4, PDF p. 13), and the card calls the margin to the threshold unclear (§8.3, PDF p. 185).",
+      "item": "82"
+    },
+    {
+      "id": "anthropic-claude-opus-4-6:Q09",
+      "field": "crossFamily",
+      "from": null,
+      "to": {
+        "item": "82",
+        "result": "minor, applied: the note keeps the distinction between the benchmark rule-out thresholds and the final judgement, without evaluation-design detail. Status agrees."
+      },
+      "item": "82"
+    },
+    {
+      "id": "openai-gpt-4-5:Q06",
+      "field": "note",
+      "from": "The card lists Preparedness mitigations in the paragraph that states the designations, without saying that they are applied because of them. A stated safeguard is the developer’s account.",
+      "to": "The card states the designations in §4.1 and lists Preparedness mitigations in the list that follows, without saying that they are applied because of the designations. A stated safeguard is the developer’s account.",
+      "item": "87"
+    },
+    {
+      "id": "openai-gpt-4-5:Q06",
+      "field": "crossFamily",
+      "from": null,
+      "to": {
+        "item": "87",
+        "result": "minor, applied: the note places the safeguards in the list after the designations, not in their paragraph. Status agrees."
+      },
+      "item": "87"
+    },
+    {
+      "id": "openai-gpt-4-5:Q09",
+      "field": "note",
+      "from": "Outcome category: Low. METR’s external evaluation of autonomy and AI R&D tasks is also summarised (§3.4).",
+      "to": "Outcome category: Low. METR’s external evaluation of autonomy and AI R&D tasks is also summarised; it was of an earlier checkpoint of GPT-4.5 (§3.4, PDF p. 6).",
+      "item": "88"
+    },
+    {
+      "id": "openai-gpt-4-5:Q09",
+      "field": "crossFamily",
+      "from": null,
+      "to": {
+        "item": "88",
+        "result": "minor, applied: the note says that METR evaluated an earlier checkpoint. Status agrees."
+      },
+      "item": "88"
+    },
+    {
+      "id": "anthropic-claude-opus-4-1",
+      "field": "earliestLocated",
+      "from": null,
+      "to": "2025-08",
+      "item": "Part C"
+    },
+    {
+      "id": "gdm-gemini-2-5-pro",
+      "field": "earliestLocated",
+      "from": null,
+      "to": "2025-06-27",
+      "item": "Part C"
+    },
+    {
+      "id": "gdm-gemini-2-5-flash-lite",
+      "field": "earliestLocated",
+      "from": null,
+      "to": "2025-07-22",
+      "item": "Part C"
+    },
+    {
+      "id": "meta-muse-glimmer",
+      "field": "earliestLocated",
+      "from": null,
+      "to": "2026-08-10",
+      "item": "Part C"
+    },
+    {
+      "id": "meta-muse-wonder-and-muse-wonder-full",
+      "field": "earliestLocated",
+      "from": null,
+      "to": "2026-10-12",
+      "item": "Part C"
+    },
+    {
+      "id": "openai-o3-mini",
+      "field": "earliestLocated",
+      "from": null,
+      "to": "2025-01-31",
+      "item": "Part C"
+    },
+    {
+      "id": "openai-deep-research",
+      "field": "earliestLocated",
+      "from": null,
+      "to": "2025-02-25",
+      "item": "Part C"
+    },
+    {
+      "id": "xai-grok-4-6",
+      "field": "earliestLocated",
+      "from": null,
+      "to": "2026-08-12",
+      "item": "Part C"
+    },
+    {
+      "id": "anthropic-claude-sonnet-4-5",
+      "field": "earliestLocated",
+      "from": null,
+      "to": "2025-09",
+      "item": "Part C"
+    },
+    {
+      "id": "anthropic-claude-haiku-4-5",
+      "field": "earliestLocated",
+      "from": null,
+      "to": "2025-10",
+      "item": "Part C"
+    },
+    {
+      "id": "anthropic-claude-opus-4-6",
+      "field": "earliestLocated",
+      "from": null,
+      "to": "2026-02",
+      "item": "Part C"
+    },
+    {
+      "id": "gdm-gemini-2-5-deep-think",
+      "field": "earliestLocated",
+      "from": null,
+      "to": "2025-08-01",
+      "item": "Part C"
+    },
+    {
+      "id": "gdm-gemini-2-5-flash",
+      "field": "earliestLocated",
+      "from": null,
+      "to": "2025-08-30",
+      "item": "Part C"
+    },
+    {
+      "id": "meta-muse-spark-open",
+      "field": "earliestLocated",
+      "from": null,
+      "to": "2026-10-15",
+      "item": "Part C"
+    },
+    {
+      "id": "openai-gpt-4-5",
+      "field": "earliestLocated",
+      "from": null,
+      "to": "2025-02-27",
+      "item": "Part C"
+    },
+    {
+      "id": "openai-o3-o4-mini",
+      "field": "earliestLocated",
+      "from": null,
+      "to": "2025-04-16",
+      "item": "Part C"
+    },
+    {
+      "id": "anthropic-claude-opus-4-1",
+      "field": "archive",
+      "from": {
+        "capture": null,
+        "note": "Not checked: web.archive.org reset the connection from this environment on 2026-11-06 (curl: Recv failure). Requested in Part D of the cross-family brief."
+      },
+      "to": {
+        "capture": "https://web.archive.org/web/20260126205516id_/https://www-cdn.anthropic.com/9fa30625273bafdf5af82c93719d7ca606485a16.pdf",
+        "note": "Capture of 2026-01-26, retrieved in the cross-family check of 2026-11-07: the same bytes as the copy read, including the changelog of 2025-09-15. No expression before the changelog was read."
+      },
+      "item": "Part D"
+    },
+    {
+      "id": "anthropic-claude-haiku-4-5",
+      "field": "archive",
+      "from": {
+        "capture": null,
+        "note": "Not checked: web.archive.org reset the connection from this environment on 2026-11-06 (curl: Recv failure). Requested in Part D of the cross-family brief."
+      },
+      "to": {
+        "capture": "https://web.archive.org/web/20260124111405id_/https://www-cdn.anthropic.com/7aad69bf12627d42234e01ee7c36305dc2f6a970.pdf",
+        "note": "Capture of 2026-01-24, retrieved in the cross-family check of 2026-11-07: the same bytes as the copy read."
+      },
+      "item": "Part D"
+    },
+    {
+      "id": "meta-muse-wonder-and-muse-wonder-full",
+      "field": "archive",
+      "from": {
+        "capture": null,
+        "note": "Not checked: web.archive.org reset the connection from this environment on 2026-11-06 (curl: Recv failure). Requested in Part D of the cross-family brief."
+      },
+      "to": {
+        "capture": "https://web.archive.org/web/20261013013207id_/https://research.meta.ai/static/muse-wonder-model-card",
+        "note": "Capture of 2026-10-13 (01:32 UTC), retrieved in the cross-family check of 2026-11-07: an earlier expression without the evaluation correction of 23 October 2026 (PDF p. 7). The card was available by that capture. The checker found the sampled quotations at the same physical pages and the Q03 address, Q05 assessment, Q06 tie, Q14 absence, Q15 decision and Q16 limit unchanged."
+      },
+      "item": "Part D"
+    },
+    {
+      "id": "gdm-gemini-2-5-flash-lite",
+      "field": "archive",
+      "from": {
+        "capture": null,
+        "note": "Not checked: web.archive.org reset the connection from this environment on 2026-11-06 (curl: Recv failure). Requested in Part D of the cross-family brief."
+      },
+      "to": {
+        "capture": null,
+        "note": "Not read here (web.archive.org reset the connection on 2026-11-06). In the cross-family check of 2026-11-07: the capture of 2025-07-31 (“Published: July 22, 2025”, recorded by the check of 2026-11-04) answered HTTP 429 on replay, so the sampled cells were not compared with the July expression."
+      },
+      "item": "Part D"
+    },
+    {
+      "id": "gdm-gemini-2-5-flash",
+      "field": "archive",
+      "from": {
+        "capture": null,
+        "note": "Not checked: web.archive.org reset the connection from this environment on 2026-11-06 (curl: Recv failure). Requested in Part D of the cross-family brief."
+      },
+      "to": {
+        "capture": null,
+        "note": "Not read here (web.archive.org reset the connection on 2026-11-06). In the cross-family check of 2026-11-07: the capture of 2025-08-30 (revision “Aug 27, 2025”, recorded by the check of 2026-11-04) answered HTTP 429 on replay, so the sampled cells were not compared with the August expression. The capture is an availability bound, not a publication date."
+      },
+      "item": "Part D"
+    },
+    {
+      "id": "gdm-gemini-2-5-pro",
+      "field": "archive",
+      "from": {
+        "capture": null,
+        "note": "Not checked: web.archive.org reset the connection from this environment on 2026-11-06 (curl: Recv failure). Requested in Part D of the cross-family brief."
+      },
+      "to": {
+        "capture": null,
+        "note": "Not read here (web.archive.org reset the connection on 2026-11-06). In the cross-family check of 2026-11-07: the nearest indexed capture (2025-10-07) answered HTTP 429 on replay."
+      },
+      "item": "Part D"
+    },
+    {
+      "id": "gdm-gemini-2-5-deep-think",
+      "field": "archive",
+      "from": {
+        "capture": null,
+        "note": "Not checked: web.archive.org reset the connection from this environment on 2026-11-06 (curl: Recv failure). Requested in Part D of the cross-family brief."
+      },
+      "to": {
+        "capture": null,
+        "note": "Not read here (web.archive.org reset the connection on 2026-11-06). In the cross-family check of 2026-11-07: the availability lookup returned no capture of this address."
+      },
+      "item": "Part D"
+    },
+    {
+      "id": "openai-deep-research",
+      "field": "archive",
+      "from": {
+        "capture": null,
+        "note": "Not checked: web.archive.org reset the connection from this environment on 2026-11-06 (curl: Recv failure). Requested in Part D of the cross-family brief."
+      },
+      "to": {
+        "capture": null,
+        "note": "Not read here (web.archive.org reset the connection on 2026-11-06). In the cross-family check of 2026-11-07: the capture of 2025-02-25 answered HTTP 429 on replay and the publisher’s card page HTTP 403, so the sampled cells were not compared with the February expression. The copy read keeps the printed date of February 25, 2025; its July 2025 note and PDF creation date are separate events."
+      },
+      "item": "Part D"
+    },
+    {
+      "id": "openai-o3-mini",
+      "field": "archive",
+      "from": {
+        "capture": null,
+        "note": "Not checked: web.archive.org reset the connection from this environment on 2026-11-06 (curl: Recv failure). Requested in Part D of the cross-family brief."
+      },
+      "to": {
+        "capture": null,
+        "note": "Not read here (web.archive.org reset the connection on 2026-11-06). In the cross-family check of 2026-11-07: the availability lookup returned no capture of this address; the address without the “-feb10” suffix answered HTTP 404."
+      },
+      "item": "Part D"
+    },
+    {
+      "id": "openai-gpt-4-5",
+      "field": "archive",
+      "from": {
+        "capture": null,
+        "note": "Not checked: web.archive.org reset the connection from this environment on 2026-11-06 (curl: Recv failure). Requested in Part D of the cross-family brief."
+      },
+      "to": {
+        "capture": null,
+        "note": "Not read here (web.archive.org reset the connection on 2026-11-06). In the cross-family check of 2026-11-07: the capture of 2025-02-28 answered HTTP 429 on replay."
+      },
+      "item": "Part D"
+    },
+    {
+      "id": "openai-o3-o4-mini",
+      "field": "archive",
+      "from": {
+        "capture": null,
+        "note": "Not checked: web.archive.org reset the connection from this environment on 2026-11-06 (curl: Recv failure). Requested in Part D of the cross-family brief."
+      },
+      "to": {
+        "capture": null,
+        "note": "Not read here (web.archive.org reset the connection on 2026-11-06). In the cross-family check of 2026-11-07: the capture of 2025-04-16 answered HTTP 429 on replay."
+      },
+      "item": "Part D"
+    },
+    {
+      "id": "xai-grok-4-6",
+      "field": "archive",
+      "from": {
+        "capture": null,
+        "note": "Not checked: web.archive.org reset the connection from this environment on 2026-11-06 (curl: Recv failure). Requested in Part D of the cross-family brief."
+      },
+      "to": {
+        "capture": null,
+        "note": "Not read here (web.archive.org reset the connection on 2026-11-06). In the cross-family check of 2026-11-07: the availability lookup returned no capture near 2026-08-12; no expression before the revision of 2026-08-17 was located."
+      },
+      "item": "Part D"
+    },
+    {
+      "id": "anthropic-claude-sonnet-4-5",
+      "field": "archive",
+      "from": {
+        "capture": null,
+        "note": "Not checked: web.archive.org reset the connection from this environment on 2026-11-06 (curl: Recv failure). Requested in Part D of the cross-family brief."
+      },
+      "to": {
+        "capture": null,
+        "note": "Not read here (web.archive.org reset the connection on 2026-11-06). In the cross-family check of 2026-11-07: the nearest indexed capture (2026-01-24) postdates both changelog entries and answered HTTP 429 on replay; no expression before the changelog was read."
+      },
+      "item": "Part D"
+    },
+    {
+      "id": "anthropic-claude-opus-4-6",
+      "field": "archive",
+      "from": {
+        "capture": null,
+        "note": "Not checked: web.archive.org reset the connection from this environment on 2026-11-06 (curl: Recv failure). Requested in Part D of the cross-family brief."
+      },
+      "to": {
+        "capture": null,
+        "note": "Not read here (web.archive.org reset the connection on 2026-11-06). In the cross-family check of 2026-11-07: the availability lookup returned no capture of the PDF or of the publisher’s permalink; no expression before the changelog was located."
+      },
+      "item": "Part D"
+    },
+    {
+      "id": "meta-muse-spark-open",
+      "field": "archive",
+      "from": {
+        "capture": null,
+        "note": "Not checked: web.archive.org reset the connection from this environment on 2026-11-06 (curl: Recv failure). Requested in Part D of the cross-family brief."
+      },
+      "to": {
+        "capture": null,
+        "note": "Not read here (web.archive.org reset the connection on 2026-11-06). In the cross-family check of 2026-11-07: no capture of the pinned address; the repository page’s capture of 2026-10-16 answered HTTP 429 and the publisher’s history endpoint HTTP 401."
+      },
+      "item": "Part D"
+    },
+    {
+      "id": "meta-muse-glimmer",
+      "field": "archive",
+      "from": {
+        "capture": null,
+        "note": "Not checked: web.archive.org reset the connection from this environment on 2026-11-06 (curl: Recv failure). Requested in Part D of the cross-family brief."
+      },
+      "to": {
+        "capture": null,
+        "note": "Not read here (web.archive.org reset the connection on 2026-11-06). In the cross-family check of 2026-11-07: no capture of the pinned address; the repository page’s capture of 2026-08-11 answered HTTP 429. The checker read two earlier README revisions from the publisher’s history: 5f5a77e8 (committed 2026-08-09 22:52 UTC), whose section is headed “Catastrophic risk”, so the locators for Q03, Q05 and Q15 differ while the deciding language is the same; and f84ecc3a (2026-08-10 08:15 UTC), whose Trust and Safety text is the same as the copy read. Commit times do not fix first public availability."
+      },
+      "item": "Part D"
+    },
+    {
+      "id": "meta-muse-wonder-and-muse-wonder-full",
+      "field": "frameworkEditionNote",
+      "from": "The card names the Meta Superintelligence Scaling Framework and prints its address (https://research.meta.ai/static/meta-superintelligence-scaling-framework), which carries no version. That framework is not in the dataset; maintainer decision 5a holds its v2.1 (October 2026) for a separate data task. No edition is recorded or inferred.",
+      "to": "The card names the Meta Superintelligence Scaling Framework and prints its address (https://research.meta.ai/static/meta-superintelligence-scaling-framework), which carries no version. That framework is not in the dataset; maintainer decision 5a holds its v2.1 (October 2026) for a separate data task. No edition is recorded or inferred. In the cross-family check of 2026-11-07, the printed address served a PDF printing version 2.1, October 2026 (changelog: v2.1, 2 October 2026), byte-identical to its capture of 2026-10-13; this is what the address served, not an edition the card names, so Q03 stays partly.",
+      "item": "Part D"
+    },
+    {
+      "id": "xai-grok-4-6",
+      "field": "frameworkEditionNote",
+      "from": "Reference 29 (PDF p. 42) cites “xAI Frontier Artificial Intelligence Framework (FAIF). xAI, June 30, 2026.” with the address of a file named for 30 June 2026; the dataset records the June 2026 edition (effective 2026-06-30) as faif-2026. The linked file was not retrieved.",
+      "to": "Reference 29 (PDF p. 42) cites “xAI Frontier Artificial Intelligence Framework (FAIF). xAI, June 30, 2026.” with the address of a file named for 30 June 2026; the dataset records the June 2026 edition (effective 2026-06-30) as faif-2026. In the cross-family check of 2026-11-07, the linked file answered HTTP 404 and its captures HTTP 429; a publisher file of the same dated name with a different suffix prints an effective date of June 30, 2026 and no version number on its first page. The card’s dated citation supports Q03.",
+      "item": "Part D"
+    }
+  ]
+}

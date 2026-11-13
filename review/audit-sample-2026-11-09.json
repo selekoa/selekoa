@@ -1,0 +1,2487 @@
+{
+  "summary": {
+    "laws": {
+      "total": 40,
+      "correct": 12,
+      "minor slip": 22,
+      "material error": 1,
+      "cannot check": 5
+    },
+    "predictions": {
+      "total": 30,
+      "correct": 24,
+      "minor slip": 3,
+      "material error": 1,
+      "cannot check": 2
+    },
+    "money": {
+      "total": 40,
+      "correct": 38,
+      "minor slip": 0,
+      "material error": 2,
+      "cannot check": 0
+    },
+    "targeted": {
+      "total": 10,
+      "correct": 3,
+      "minor slip": 3,
+      "material error": 3,
+      "cannot check": 1
+    }
+  },
+  "date": "2026-11-09",
+  "branch": "codex/audit-sample-2026-11-09",
+  "base": "d402db7cfa5f6a8763b4845030508b5a2fc22329",
+  "sampling": {
+    "seed": 20261109,
+    "generator": "Mulberry32",
+    "algorithm": "One shared 32-bit stream. Sort each pool by ascending claim ID using code-unit order. In laws, predictions, then AI-and-money order, perform the first n forward Fisher–Yates swaps. At step i swap i with i + floor(random × (N − i)); retain the first n records in draw order.",
+    "pools": {
+      "laws": {
+        "size": 144,
+        "rule": "attributes.provision.facet.id matches ^L\\.Q\\d+$",
+        "draw": 40,
+        "illinois": 4
+      },
+      "predictions": {
+        "size": 65,
+        "rule": "predicate equals states_prediction",
+        "draw": 30
+      },
+      "money": {
+        "size": 204,
+        "rule": "ID matches ^am-(u\\d{2}|event)-",
+        "draw": 40,
+        "events": 9
+      },
+      "targeted": {
+        "draw": 10,
+        "rule": "Judgment sample drawn after the seeded draw, excluding all seeded IDs."
+      }
+    }
+  },
+  "blindOrder": [
+    "Fetched origin and branched from origin/main. Before finalising the verdicts I used the user-supplied project instructions, permitted dataset files and collection criteria, and the cited sources or explicitly identified alternate copies.",
+    "Drew the three seeded strata, then selected ten distinct targeted records based on the risks visible in the admitted data. I opened no file in review/ or research/ and did not open docs/backlog.md or release/CHANGELOG.md before the blind push.",
+    "Attempted fresh direct HTTP sequentially with at least eight seconds from the end of one request to the next on the same hostname. Used the cited capture for archive-specific records and as a fallback when live retrieval failed. Cleaned signed query parameters and used no Wikipedia evidence.",
+    "Validated the two reports in scratch space before writing them to review/. The blind reports are the first commit. The privacy scan and any reading of excluded repository material follow the first push."
+  ],
+  "limits": [
+    "A material error changes the claim’s documentary meaning, criterion outcome, voice, or structured semantics. Minor slips preserve the substantive conclusion. Cannot check identifies a missing expression or missing evidence for a necessary check.",
+    "I compared wording and locators in retrieved HTML and PDFs, allowing line wraps and typesetting where they preserve wording. I used fresh page-image OCR for Dartmouth, Turing and Simon–Newell, checked relevant context and documented differing expressions. A successful HTTP status can still be an access challenge or service error.",
+    "Dates refer to the cited expression, statement or act. An as-enacted law’s approval date can be right even when the metadata date kind is wrong. Earliest-located checks assess the cited witness and its assigned role under the collection’s scope. I did not rerun the original discovery searches.",
+    "Every sampled prediction record preserves the distinction between prediction and fulfilment. The audit assesses the documentary record only.",
+    "California’s official bill text returned HTTP 403 and its cited capture returned HTTP 429. An indexed mirror gave partial corroboration. I did not retrieve the bulk legislative archive or treat the index as a fresh check of that expression."
+  ],
+  "records": [
+    {
+      "order": 1,
+      "stratum": "laws",
+      "id": "lc-cell-il-aisma-q10",
+      "verdict": "cannot check",
+      "reason": "Official Actions page timed out and its archive was rate-limited. The indexed approval row corroborates July 6, but I could not inspect both cited action rows.",
+      "sources": [
+        {
+          "id": "source-il-sb315-bill-status",
+          "citedUrl": "https://web.archive.org/web/20260731225100id_/https://www.ilga.gov/Legislation/BillStatus?DocNum=315&GAID=18&DocTypeID=SB&LegId=157797&SessionID=114",
+          "retrieval": "unavailable",
+          "locators": [
+            "Actions table, “Governor Approved” row (checker’s copy)",
+            "Actions table, “Passed Both Houses” row (checker’s copy)"
+          ]
+        }
+      ]
+    },
+    {
+      "order": 2,
+      "stratum": "laws",
+      "id": "lc-cell-cn-labelling-measures-q06",
+      "verdict": "minor slip",
+      "reason": "Articles 7 and 12 support document review and the translations. The March 7 notice date is labelled publication in the claim.",
+      "passage": {
+        "locator": "Issuing notice 国信办通字〔2025〕2号, date line",
+        "text": "2025年3月7日"
+      },
+      "sources": [
+        {
+          "id": "source-cn-labelling-measures-2025",
+          "citedUrl": "https://www.gov.cn/zhengce/zhengceku/202503/content_7014286.htm",
+          "retrieval": "live",
+          "retrievedUrl": "https://www.gov.cn/zhengce/zhengceku/202503/content_7014286.htm",
+          "locators": [
+            "Article 7 (第七条)",
+            "Article 12 (第十二条)"
+          ]
+        }
+      ]
+    },
+    {
+      "order": 3,
+      "stratum": "laws",
+      "id": "lc-cell-ny-ch96-q04",
+      "verdict": "minor slip",
+      "reason": "§ 1421 requires website publication and allows redaction. The claim labels the March 27 signature as publication.",
+      "passage": {
+        "locator": "New York Assembly Actions, final entry",
+        "text": "03/27/2026 SIGNED CHAP.96"
+      },
+      "sources": [
+        {
+          "id": "source-ny-s8828-assembly-record",
+          "citedUrl": "https://nyassembly.gov/leg/?default_fld=&leg_video=&bn=S8828&term=2025&Summary=Y&Actions=Y&Text=Y",
+          "retrieval": "live",
+          "retrievedUrl": "https://nyassembly.gov/leg/?default_fld=&leg_video=&bn=S8828&term=2025&Summary=Y&Actions=Y&Text=Y",
+          "locators": [
+            "Bill text, § 2 (GBL § 1421(1) as re-added), p. 4, lines 14–16"
+          ]
+        }
+      ]
+    },
+    {
+      "order": 4,
+      "stratum": "laws",
+      "id": "lc-cell-eu-ai-act-q02",
+      "verdict": "minor slip",
+      "reason": "Article 51 supports the status and figure, but the verbatim display flattens 10²⁵ to 1025.",
+      "passage": {
+        "locator": "Article 51(2), closing words",
+        "text": "greater than 10²⁵"
+      },
+      "sources": [
+        {
+          "id": "source-eu-ai-act-2024",
+          "citedUrl": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=OJ:L_202401689",
+          "retrieval": "live",
+          "retrievedUrl": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=OJ:L_202401689",
+          "locators": [
+            "Article 51(2)",
+            "Article 51(2), closing words",
+            "Article 51(1), point (b)"
+          ]
+        }
+      ]
+    },
+    {
+      "order": 5,
+      "stratum": "laws",
+      "id": "lc-cell-eu-code-ss-q04",
+      "verdict": "correct",
+      "reason": "Measures 1.4 and 10.2 require AI Office access and conditional public disclosure by signatories.",
+      "sources": [
+        {
+          "id": "source-eu-code-safety-security",
+          "citedUrl": "https://ec.europa.eu/newsroom/dae/redirection/document/118119",
+          "retrieval": "live",
+          "retrievedUrl": "https://ec.europa.eu/newsroom/dae/redirection/document/118119",
+          "locators": [
+            "Measure 1.4 (PDF p. 10)",
+            "Measure 10.2, first sentence (PDF p. 28)"
+          ]
+        }
+      ]
+    },
+    {
+      "order": 6,
+      "stratum": "laws",
+      "id": "lc-cell-ny-ch96-q09",
+      "verdict": "material error",
+      "reason": "The published Q09 criterion accepts a mandatory disclosure channel. This statutory critical-safety-incident mechanism is specific to reportable risks and violations even though it offers no retaliation protection.",
+      "passage": {
+        "locator": "GBL § 1422(1), S8828 p. 5, lines 42–44",
+        "text": "The office shall establish a mechanism to be used by a frontier developer or a member of the public to report a critical safety incident"
+      },
+      "sources": [
+        {
+          "id": "source-ny-s8828-assembly-record",
+          "citedUrl": "https://nyassembly.gov/leg/?default_fld=&leg_video=&bn=S8828&term=2025&Summary=Y&Actions=Y&Text=Y",
+          "retrieval": "live",
+          "retrievedUrl": "https://nyassembly.gov/leg/?default_fld=&leg_video=&bn=S8828&term=2025&Summary=Y&Actions=Y&Text=Y",
+          "locators": [
+            "New York RAISE Act, Chapter 96 (2026): Bill text §§ 1–5, including GBL §§ 1420–1429 as re-added."
+          ]
+        }
+      ]
+    },
+    {
+      "order": 7,
+      "stratum": "laws",
+      "id": "lc-cell-ca-sb53-q12",
+      "verdict": "cannot check",
+      "reason": "Official chaptered text and cited archive refused access, so the whole-instrument absence is unverified.",
+      "sources": [
+        {
+          "id": "source-ca-sb53-chaptered",
+          "citedUrl": "https://leginfo.legislature.ca.gov/faces/billTextClient.xhtml?bill_id=202520260SB53",
+          "retrieval": "unavailable",
+          "locators": [
+            "California SB 53: Whole chaptered text."
+          ]
+        }
+      ]
+    },
+    {
+      "order": 8,
+      "stratum": "laws",
+      "id": "lc-cell-ny-ch96-q01",
+      "verdict": "minor slip",
+      "reason": "Both defined terms appear in § 1420. The claim labels the March 27 signature as publication.",
+      "passage": {
+        "locator": "New York Assembly Actions, final entry",
+        "text": "03/27/2026 SIGNED CHAP.96"
+      },
+      "sources": [
+        {
+          "id": "source-ny-s8828-assembly-record",
+          "citedUrl": "https://nyassembly.gov/leg/?default_fld=&leg_video=&bn=S8828&term=2025&Summary=Y&Actions=Y&Text=Y",
+          "retrieval": "live",
+          "retrievedUrl": "https://nyassembly.gov/leg/?default_fld=&leg_video=&bn=S8828&term=2025&Summary=Y&Actions=Y&Text=Y",
+          "locators": [
+            "Bill text, § 2 (GBL § 1420(10) as re-added), p. 3, lines 53–55",
+            "Bill text, § 2 (GBL § 1420(8) as re-added), p. 3, line 41"
+          ]
+        }
+      ]
+    },
+    {
+      "order": 9,
+      "stratum": "laws",
+      "id": "lc-cell-us-eo14110-q10",
+      "verdict": "correct",
+      "reason": "The signature block says October 30 and the Federal Register issue is dated November 1.",
+      "sources": [
+        {
+          "id": "source-us-eo-14110-fr",
+          "citedUrl": "https://www.govinfo.gov/content/pkg/FR-2023-11-01/pdf/2023-24283.pdf",
+          "retrieval": "live",
+          "retrievedUrl": "https://www.govinfo.gov/content/pkg/FR-2023-11-01/pdf/2023-24283.pdf",
+          "locators": [
+            "88 FR 75226, signature block"
+          ]
+        }
+      ]
+    },
+    {
+      "order": 10,
+      "stratum": "laws",
+      "id": "lc-cell-eu-code-ss-q08",
+      "verdict": "correct",
+      "reason": "Commitment 7 and Measure 7.7 support the report and access triggers.",
+      "sources": [
+        {
+          "id": "source-eu-code-safety-security",
+          "citedUrl": "https://ec.europa.eu/newsroom/dae/redirection/document/118119",
+          "retrieval": "live",
+          "retrievedUrl": "https://ec.europa.eu/newsroom/dae/redirection/document/118119",
+          "locators": [
+            "Commitment 7, first paragraph (PDF p. 18)",
+            "Measure 7.7, first paragraph (PDF p. 22)"
+          ]
+        }
+      ]
+    },
+    {
+      "order": 11,
+      "stratum": "laws",
+      "id": "lc-cell-ny-ch96-q10",
+      "verdict": "minor slip",
+      "reason": "The Actions list confirms March 27 as signature, while claim time labels it publication.",
+      "passage": {
+        "locator": "Assembly Actions, final entry",
+        "text": "03/27/2026 SIGNED CHAP.96"
+      },
+      "sources": [
+        {
+          "id": "source-ny-s8828-assembly-record",
+          "citedUrl": "https://nyassembly.gov/leg/?default_fld=&leg_video=&bn=S8828&term=2025&Summary=Y&Actions=Y&Text=Y",
+          "retrieval": "live",
+          "retrievedUrl": "https://nyassembly.gov/leg/?default_fld=&leg_video=&bn=S8828&term=2025&Summary=Y&Actions=Y&Text=Y",
+          "locators": [
+            "Actions list, final entry"
+          ]
+        }
+      ]
+    },
+    {
+      "order": 12,
+      "stratum": "laws",
+      "id": "lc-cell-eu-ai-act-q14",
+      "verdict": "correct",
+      "reason": "Articles 92 and 101 identify evaluation and enforcement powers and the Omnibus recital confirms Commission competence.",
+      "sources": [
+        {
+          "id": "source-eu-ai-act-2024",
+          "citedUrl": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=OJ:L_202401689",
+          "retrieval": "live",
+          "retrievedUrl": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=OJ:L_202401689",
+          "locators": [
+            "Article 101(1), first subparagraph (part)",
+            "Article 92(1), chapeau"
+          ]
+        },
+        {
+          "id": "source-eu-digital-omnibus-ai-2026",
+          "citedUrl": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=OJ:L_202601744",
+          "retrieval": "live",
+          "retrievedUrl": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=OJ:L_202601744",
+          "locators": [
+            "Recital (31)"
+          ]
+        }
+      ]
+    },
+    {
+      "order": 13,
+      "stratum": "laws",
+      "id": "lc-cell-cn-labelling-measures-q05",
+      "verdict": "minor slip",
+      "reason": "Articles 6 and 12 address label checks and procedural submissions without imposing model-risk testing. March 7 dates the notice rather than its publication.",
+      "passage": {
+        "locator": "Issuing notice 国信办通字〔2025〕2号, date line",
+        "text": "2025年3月7日"
+      },
+      "sources": [
+        {
+          "id": "source-cn-labelling-measures-2025",
+          "citedUrl": "https://www.gov.cn/zhengce/zhengceku/202503/content_7014286.htm",
+          "retrieval": "live",
+          "retrievedUrl": "https://www.gov.cn/zhengce/zhengceku/202503/content_7014286.htm",
+          "locators": [
+            "China AI-generated content labelling measures (2025): Articles 1–14 in full."
+          ]
+        }
+      ]
+    },
+    {
+      "order": 14,
+      "stratum": "laws",
+      "id": "lc-cell-cn-genai-measures-q10",
+      "verdict": "minor slip",
+      "reason": "The date line supports issuance on July 10. The claim time labels it publication rather than issuance.",
+      "passage": {
+        "locator": "Order No. 15, date line",
+        "text": "2023年7月10日"
+      },
+      "sources": [
+        {
+          "id": "source-cn-generative-ai-measures-2023",
+          "citedUrl": "https://www.cac.gov.cn/2023-07/13/c_1690898327029107.htm",
+          "retrieval": "live",
+          "retrievedUrl": "https://www.cac.gov.cn/2023-07/13/c_1690898327029107.htm",
+          "locators": [
+            "Order No. 15 (令第15号), date line"
+          ]
+        }
+      ]
+    },
+    {
+      "order": 15,
+      "stratum": "laws",
+      "id": "lc-cell-cn-genai-measures-q12",
+      "verdict": "minor slip",
+      "reason": "Article 24 and the order give the general effective date with no distinct application provision located. July 10 is the order date rather than publication.",
+      "passage": {
+        "locator": "Order No. 15, dated signature block",
+        "text": "2023年7月10日"
+      },
+      "sources": [
+        {
+          "id": "source-cn-generative-ai-measures-2023-govcn",
+          "citedUrl": "https://www.gov.cn/zhengce/zhengceku/202307/content_6891752.htm",
+          "retrieval": "live",
+          "retrievedUrl": "https://www.gov.cn/zhengce/zhengceku/202307/content_6891752.htm",
+          "locators": [
+            "China generative AI interim measures (2023): Order No. 15 and Articles 1–24, with attention to Chapter 5 (附则, Articles 22–24)."
+          ]
+        }
+      ]
+    },
+    {
+      "order": 16,
+      "stratum": "laws",
+      "id": "lc-cell-eu-ai-act-q05",
+      "verdict": "correct",
+      "reason": "Article 55(1)(a) directly requires model evaluation and adversarial testing of systemic-risk models.",
+      "sources": [
+        {
+          "id": "source-eu-ai-act-2024",
+          "citedUrl": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=OJ:L_202401689",
+          "retrieval": "live",
+          "retrievedUrl": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=OJ:L_202401689",
+          "locators": [
+            "Article 55(1), point (a)"
+          ]
+        }
+      ]
+    },
+    {
+      "order": 17,
+      "stratum": "laws",
+      "id": "lc-cell-us-eo14110-q05",
+      "verdict": "correct",
+      "reason": "Sections 4.1 and 4.2 distinguish NIST testing guidance and reporting of results from a developer duty to test.",
+      "sources": [
+        {
+          "id": "source-us-eo-14110-fr",
+          "citedUrl": "https://www.govinfo.gov/content/pkg/FR-2023-11-01/pdf/2023-24283.pdf",
+          "retrieval": "live",
+          "retrievedUrl": "https://www.govinfo.gov/content/pkg/FR-2023-11-01/pdf/2023-24283.pdf",
+          "locators": [
+            "EO 14110 (2023): Whole cached text of the Federal Register printing (88 FR 75191–75226), with close reading of Secs. 3, 4.1, 4.2, 12 and 13 and the signature block."
+          ]
+        }
+      ]
+    },
+    {
+      "order": 18,
+      "stratum": "laws",
+      "id": "lc-cell-ny-ch96-q13",
+      "verdict": "minor slip",
+      "reason": "§§ 1427–1428 support the maxima and penalty bases. March 27 is labelled publication rather than signature.",
+      "passage": {
+        "locator": "New York Assembly Actions, final entry",
+        "text": "03/27/2026 SIGNED CHAP.96"
+      },
+      "sources": [
+        {
+          "id": "source-ny-s8828-assembly-record",
+          "citedUrl": "https://nyassembly.gov/leg/?default_fld=&leg_video=&bn=S8828&term=2025&Summary=Y&Actions=Y&Text=Y",
+          "retrieval": "live",
+          "retrievedUrl": "https://nyassembly.gov/leg/?default_fld=&leg_video=&bn=S8828&term=2025&Summary=Y&Actions=Y&Text=Y",
+          "locators": [
+            "Bill text, § 2 (GBL § 1427(1) as re-added), p. 8, lines 7–10",
+            "Bill text, § 2 (GBL § 1428(5)(a) as re-added), p. 9, line 10"
+          ]
+        }
+      ]
+    },
+    {
+      "order": 19,
+      "stratum": "laws",
+      "id": "lc-cell-cn-genai-measures-q01",
+      "verdict": "minor slip",
+      "reason": "Articles 7 and 22 identify providers, including API providers. July 10 dates the order rather than publication.",
+      "passage": {
+        "locator": "Order No. 15, dated signature block",
+        "text": "2023年7月10日"
+      },
+      "sources": [
+        {
+          "id": "source-cn-generative-ai-measures-2023-govcn",
+          "citedUrl": "https://www.gov.cn/zhengce/zhengceku/202307/content_6891752.htm",
+          "retrieval": "live",
+          "retrievedUrl": "https://www.gov.cn/zhengce/zhengceku/202307/content_6891752.htm",
+          "locators": [
+            "Article 7 (第七条), chapeau",
+            "Article 22 (第二十二条), point (2)"
+          ]
+        }
+      ]
+    },
+    {
+      "order": 20,
+      "stratum": "laws",
+      "id": "lc-cell-eu-ai-act-q01",
+      "verdict": "correct",
+      "reason": "Articles 53 and 55 impose the duties on providers of GPAI models and systemic-risk GPAI models.",
+      "sources": [
+        {
+          "id": "source-eu-ai-act-2024",
+          "citedUrl": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=OJ:L_202401689",
+          "retrieval": "live",
+          "retrievedUrl": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=OJ:L_202401689",
+          "locators": [
+            "Article 53(1), chapeau (same words as in Article 101(1), dataset quote aia-art101-gpai-fines)",
+            "Article 51(1), chapeau"
+          ]
+        }
+      ]
+    },
+    {
+      "order": 21,
+      "stratum": "laws",
+      "id": "lc-cell-eu-ai-act-q06",
+      "verdict": "correct",
+      "reason": "Article 92 permits AI Office evaluation and independent experts without mandating outside testing.",
+      "sources": [
+        {
+          "id": "source-eu-ai-act-2024",
+          "citedUrl": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=OJ:L_202401689",
+          "retrieval": "live",
+          "retrievedUrl": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=OJ:L_202401689",
+          "locators": [
+            "Article 92(1), chapeau",
+            "Article 92(3)"
+          ]
+        }
+      ]
+    },
+    {
+      "order": 22,
+      "stratum": "laws",
+      "id": "lc-cell-eu-code-ss-q05",
+      "verdict": "correct",
+      "reason": "Measures 1.2 and 3.2 require evaluation and specify pre-market timing for the full process.",
+      "sources": [
+        {
+          "id": "source-eu-code-safety-security",
+          "citedUrl": "https://ec.europa.eu/newsroom/dae/redirection/document/118119",
+          "retrieval": "live",
+          "retrievedUrl": "https://ec.europa.eu/newsroom/dae/redirection/document/118119",
+          "locators": [
+            "Measure 3.2, first paragraph (PDF p. 12)",
+            "Measure 1.2, last paragraph (PDF p. 8)"
+          ]
+        }
+      ]
+    },
+    {
+      "order": 23,
+      "stratum": "laws",
+      "id": "lc-cell-ca-sb53-q06",
+      "verdict": "cannot check",
+      "reason": "Official chaptered text and cited archive refused access, so the review duty and scope cannot be checked against that expression.",
+      "sources": [
+        {
+          "id": "source-ca-sb53-chaptered",
+          "citedUrl": "https://leginfo.legislature.ca.gov/faces/billTextClient.xhtml?bill_id=202520260SB53",
+          "retrieval": "unavailable",
+          "locators": [
+            "SEC. 2, Bus. & Prof. Code § 22757.13(d)"
+          ]
+        }
+      ]
+    },
+    {
+      "order": 24,
+      "stratum": "laws",
+      "id": "lc-cell-cn-genai-measures-q02",
+      "verdict": "minor slip",
+      "reason": "Article 2 supports the public-service scope without a model threshold. July 10 dates the order rather than publication.",
+      "passage": {
+        "locator": "Order No. 15, dated signature block",
+        "text": "2023年7月10日"
+      },
+      "sources": [
+        {
+          "id": "source-cn-generative-ai-measures-2023",
+          "citedUrl": "https://www.cac.gov.cn/2023-07/13/c_1690898327029107.htm",
+          "retrieval": "live",
+          "retrievedUrl": "https://www.cac.gov.cn/2023-07/13/c_1690898327029107.htm",
+          "locators": [
+            "Article 2 (第二条), first paragraph"
+          ]
+        },
+        {
+          "id": "source-cn-generative-ai-measures-2023-govcn",
+          "citedUrl": "https://www.gov.cn/zhengce/zhengceku/202307/content_6891752.htm",
+          "retrieval": "live",
+          "retrievedUrl": "https://www.gov.cn/zhengce/zhengceku/202307/content_6891752.htm",
+          "locators": [
+            "Article 2 (第二条), third paragraph"
+          ]
+        }
+      ]
+    },
+    {
+      "order": 25,
+      "stratum": "laws",
+      "id": "lc-cell-ny-ch699-q08",
+      "verdict": "minor slip",
+      "reason": "§ 1421 requires retention of model test material and transmission of the developer protocol, so the scoped absence stands. December 19 is signature, labelled publication.",
+      "passage": {
+        "locator": "New York Senate S6953B, Actions entry for signature",
+        "text": "SIGNED CHAP.699"
+      },
+      "sources": [
+        {
+          "id": "source-ny-s6953b-2025",
+          "citedUrl": "https://legislation.nysenate.gov/pdf/bills/2025/S6953B",
+          "retrieval": "live",
+          "retrievedUrl": "https://legislation.nysenate.gov/pdf/bills/2025/S6953B",
+          "locators": [
+            "NY RAISE Act, Chapter 699 (2025): Whole print S6953-B, pp. 1–5."
+          ]
+        }
+      ]
+    },
+    {
+      "order": 26,
+      "stratum": "laws",
+      "id": "lc-cell-il-aisma-q13",
+      "verdict": "minor slip",
+      "reason": "Sections 18 and 25 support the maxima and triggers. July 6 dates gubernatorial approval rather than publication.",
+      "passage": {
+        "locator": "Illinois General Assembly, SB 315 Actions table, indexed row",
+        "text": "7/06/2026 Senate Governor Approved"
+      },
+      "sources": [
+        {
+          "id": "source-il-pa-104-0538",
+          "citedUrl": "https://web.archive.org/web/20260908054441id_/https://www.ilga.gov/Documents/Legislation/PublicActs/104/PDF/104-0538.pdf",
+          "retrieval": "archive",
+          "retrievedUrl": "https://web.archive.org/web/20260908054441/https://www.ilga.gov/Documents/Legislation/PublicActs/104/PDF/104-0538.pdf",
+          "locators": [
+            "Section 25(a), PDF p. 22",
+            "Section 18(e)(1), PDF p. 19"
+          ]
+        }
+      ]
+    },
+    {
+      "order": 27,
+      "stratum": "laws",
+      "id": "lc-cell-us-bis-ifr-q02",
+      "verdict": "minor slip",
+      "reason": "The 4E091 heading and notes support the threshold and exemptions. The record supplies the correct figure in its note but the threshold quote stops before it, although Q02 asks for the figure in the quote.",
+      "passage": {
+        "locator": "90 FR 4578, ECCN 4E091 heading",
+        "text": "10²⁶ or more ‘operations’"
+      },
+      "sources": [
+        {
+          "id": "source-us-bis-ai-diffusion-ifr-fr",
+          "citedUrl": "https://www.govinfo.gov/content/pkg/FR-2025-01-15/pdf/2025-00636.pdf",
+          "retrieval": "live",
+          "retrievedUrl": "https://www.govinfo.gov/content/pkg/FR-2025-01-15/pdf/2025-00636.pdf",
+          "locators": [
+            "ECCN 4E091 heading, 90 FR 4578 (PDF p. 35)",
+            "Supplementary information, section A, 90 FR 4555"
+          ]
+        }
+      ]
+    },
+    {
+      "order": 28,
+      "stratum": "laws",
+      "id": "lc-cell-ca-sb53-q10",
+      "verdict": "cannot check",
+      "reason": "The cited CAML history and capture could not be opened.",
+      "sources": [
+        {
+          "id": "source-ca-sb53-chaptered",
+          "citedUrl": "https://leginfo.legislature.ca.gov/faces/billTextClient.xhtml?bill_id=202520260SB53",
+          "retrieval": "unavailable",
+          "locators": [
+            "CAML record, caml:History (action APPROVED)"
+          ]
+        }
+      ]
+    },
+    {
+      "order": 29,
+      "stratum": "laws",
+      "id": "lc-cell-cn-genai-measures-q09",
+      "verdict": "minor slip",
+      "reason": "Articles 15 and 18 concern public complaints and reporting without whistleblower safeguards. July 10 dates the order rather than publication.",
+      "passage": {
+        "locator": "Order No. 15, dated signature block",
+        "text": "2023年7月10日"
+      },
+      "sources": [
+        {
+          "id": "source-cn-generative-ai-measures-2023-govcn",
+          "citedUrl": "https://www.gov.cn/zhengce/zhengceku/202307/content_6891752.htm",
+          "retrieval": "live",
+          "retrievedUrl": "https://www.gov.cn/zhengce/zhengceku/202307/content_6891752.htm",
+          "locators": [
+            "China generative AI interim measures (2023): Articles 1–24 in full."
+          ]
+        }
+      ]
+    },
+    {
+      "order": 30,
+      "stratum": "laws",
+      "id": "lc-cell-il-aisma-q07",
+      "verdict": "minor slip",
+      "reason": "Section 15(c) confirms the two deadlines and recipients. July 6 dates approval rather than publication.",
+      "passage": {
+        "locator": "Illinois General Assembly, SB 315 Actions table, indexed row",
+        "text": "7/06/2026 Senate Governor Approved"
+      },
+      "sources": [
+        {
+          "id": "source-il-pa-104-0538",
+          "citedUrl": "https://web.archive.org/web/20260908054441id_/https://www.ilga.gov/Documents/Legislation/PublicActs/104/PDF/104-0538.pdf",
+          "retrieval": "archive",
+          "retrievedUrl": "https://web.archive.org/web/20260908054441/https://www.ilga.gov/Documents/Legislation/PublicActs/104/PDF/104-0538.pdf",
+          "locators": [
+            "Section 15(c), first sentence, PDF pp. 12–13",
+            "Section 15(c), third sentence, PDF p. 13"
+          ]
+        }
+      ]
+    },
+    {
+      "order": 31,
+      "stratum": "laws",
+      "id": "lc-cell-ny-ch699-q12",
+      "verdict": "minor slip",
+      "reason": "Bill § 3 gives the general effect rule and § 1421 sets deployment triggers. December 19 is signature, labelled publication.",
+      "passage": {
+        "locator": "New York Senate S6953B, Actions entry for signature",
+        "text": "SIGNED CHAP.699"
+      },
+      "sources": [
+        {
+          "id": "source-ny-s6953b-2025",
+          "citedUrl": "https://legislation.nysenate.gov/pdf/bills/2025/S6953B",
+          "retrieval": "live",
+          "retrievedUrl": "https://legislation.nysenate.gov/pdf/bills/2025/S6953B",
+          "locators": [
+            "NY RAISE Act, Chapter 699 (2025): Whole print S6953-B, pp. 1–5."
+          ]
+        }
+      ]
+    },
+    {
+      "order": 32,
+      "stratum": "laws",
+      "id": "lc-cell-ca-sb53-q01",
+      "verdict": "cannot check",
+      "reason": "Official chaptered text and cited archive refused access, so both cited definitions remain unchecked.",
+      "sources": [
+        {
+          "id": "source-ca-sb53-chaptered",
+          "citedUrl": "https://leginfo.legislature.ca.gov/faces/billTextClient.xhtml?bill_id=202520260SB53",
+          "retrieval": "unavailable",
+          "locators": [
+            "SEC. 2, Bus. & Prof. Code § 22757.11(j)",
+            "SEC. 2, Bus. & Prof. Code § 22757.11(h)"
+          ]
+        }
+      ]
+    },
+    {
+      "order": 33,
+      "stratum": "laws",
+      "id": "lc-cell-ny-ch699-q04",
+      "verdict": "minor slip",
+      "reason": "§ 1421(1)(c)(i) supports publication and transmission, with line numbers and a line-end hyphen removed. December 19 is signature, labelled publication.",
+      "passage": {
+        "locator": "New York Senate S6953B, Actions entry for signature",
+        "text": "SIGNED CHAP.699"
+      },
+      "sources": [
+        {
+          "id": "source-ny-s6953b-2025",
+          "citedUrl": "https://legislation.nysenate.gov/pdf/bills/2025/S6953B",
+          "retrieval": "live",
+          "retrievedUrl": "https://legislation.nysenate.gov/pdf/bills/2025/S6953B",
+          "locators": [
+            "Proposed GBL § 1421(1)(c)(i), p. 4, lines 18–19",
+            "Proposed GBL § 1421(1)(c)(i), p. 4, lines 18–21"
+          ]
+        }
+      ]
+    },
+    {
+      "order": 34,
+      "stratum": "laws",
+      "id": "lc-cell-ny-ch96-q06",
+      "verdict": "minor slip",
+      "reason": "§ 1422 mandates review of filings while § 1421 describes third-party use without requiring it. March 27 is signature, labelled publication.",
+      "passage": {
+        "locator": "New York Assembly Actions, final entry",
+        "text": "03/27/2026 SIGNED CHAP.96"
+      },
+      "sources": [
+        {
+          "id": "source-ny-s8828-assembly-record",
+          "citedUrl": "https://nyassembly.gov/leg/?default_fld=&leg_video=&bn=S8828&term=2025&Summary=Y&Actions=Y&Text=Y",
+          "retrieval": "live",
+          "retrievedUrl": "https://nyassembly.gov/leg/?default_fld=&leg_video=&bn=S8828&term=2025&Summary=Y&Actions=Y&Text=Y",
+          "locators": [
+            "Bill text, § 2 (GBL § 1422(4) as re-added), p. 6, lines 24–25"
+          ]
+        }
+      ]
+    },
+    {
+      "order": 35,
+      "stratum": "laws",
+      "id": "lc-cell-eu-code-ss-q02",
+      "verdict": "correct",
+      "reason": "The recital imports the Act’s scope and Measure 1.2 leaves evaluation triggers to signatories.",
+      "sources": [
+        {
+          "id": "source-eu-code-safety-security",
+          "citedUrl": "https://ec.europa.eu/newsroom/dae/redirection/document/118119",
+          "retrieval": "live",
+          "retrievedUrl": "https://ec.europa.eu/newsroom/dae/redirection/document/118119",
+          "locators": [
+            "Recitals, (b) (PDF p. 3) (part)"
+          ]
+        }
+      ]
+    },
+    {
+      "order": 36,
+      "stratum": "laws",
+      "id": "lc-cell-us-bis-ifr-q13",
+      "verdict": "correct",
+      "reason": "Supplement 10 paragraph 19 provides VEU consequences and refers to other penalties without giving a maximum.",
+      "sources": [
+        {
+          "id": "source-us-bis-ai-diffusion-ifr-fr",
+          "citedUrl": "https://www.govinfo.gov/content/pkg/FR-2025-01-15/pdf/2025-00636.pdf",
+          "retrieval": "live",
+          "retrievedUrl": "https://www.govinfo.gov/content/pkg/FR-2025-01-15/pdf/2025-00636.pdf",
+          "locators": [
+            "Supplement No. 10 to part 748, para. 19, 90 FR 4567 (PDF p. 24)"
+          ]
+        }
+      ]
+    },
+    {
+      "order": 37,
+      "stratum": "laws",
+      "id": "lc-cell-cn-genai-measures-q15",
+      "verdict": "minor slip",
+      "reason": "Articles 12, 16 and 17 cross-reference rules and direct future guidance without identifying a provider compliance code or standard. July 10 dates issuance rather than publication.",
+      "passage": {
+        "locator": "Order No. 15, dated signature block",
+        "text": "2023年7月10日"
+      },
+      "sources": [
+        {
+          "id": "source-cn-generative-ai-measures-2023-govcn",
+          "citedUrl": "https://www.gov.cn/zhengce/zhengceku/202307/content_6891752.htm",
+          "retrieval": "live",
+          "retrievedUrl": "https://www.gov.cn/zhengce/zhengceku/202307/content_6891752.htm",
+          "locators": [
+            "China generative AI interim measures (2023): Articles 1–24 in full."
+          ]
+        }
+      ]
+    },
+    {
+      "order": 38,
+      "stratum": "laws",
+      "id": "lc-cell-eu-ai-act-q09",
+      "verdict": "correct",
+      "reason": "Article 87 expressly applies the whistleblower directive by reference.",
+      "sources": [
+        {
+          "id": "source-eu-ai-act-2024",
+          "citedUrl": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=OJ:L_202401689",
+          "retrieval": "live",
+          "retrievedUrl": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=OJ:L_202401689",
+          "locators": [
+            "Article 87"
+          ]
+        }
+      ]
+    },
+    {
+      "order": 39,
+      "stratum": "laws",
+      "id": "lc-cell-ny-ch699-q13",
+      "verdict": "minor slip",
+      "reason": "§ 1422(1)(a) confirms both maxima after removing printed line numbers. December 19 is signature, labelled publication.",
+      "passage": {
+        "locator": "New York Senate S6953B, Actions entry for signature",
+        "text": "SIGNED CHAP.699"
+      },
+      "sources": [
+        {
+          "id": "source-ny-s6953b-2025",
+          "citedUrl": "https://legislation.nysenate.gov/pdf/bills/2025/S6953B",
+          "retrieval": "live",
+          "retrievedUrl": "https://legislation.nysenate.gov/pdf/bills/2025/S6953B",
+          "locators": [
+            "Proposed GBL § 1422(1)(a), p. 5, lines 4–7"
+          ]
+        }
+      ]
+    },
+    {
+      "order": 40,
+      "stratum": "laws",
+      "id": "lc-cell-il-aisma-q08",
+      "verdict": "minor slip",
+      "reason": "Section 10(c) confirms the model-specific report and deployment trigger. July 6 dates approval rather than publication.",
+      "passage": {
+        "locator": "Illinois General Assembly, SB 315 Actions table, indexed row",
+        "text": "7/06/2026 Senate Governor Approved"
+      },
+      "sources": [
+        {
+          "id": "source-il-pa-104-0538",
+          "citedUrl": "https://web.archive.org/web/20260908054441id_/https://www.ilga.gov/Documents/Legislation/PublicActs/104/PDF/104-0538.pdf",
+          "retrieval": "archive",
+          "retrievedUrl": "https://web.archive.org/web/20260908054441/https://www.ilga.gov/Documents/Legislation/PublicActs/104/PDF/104-0538.pdf",
+          "locators": [
+            "Section 10(c)(1), opening clause, PDF p. 6"
+          ]
+        }
+      ]
+    },
+    {
+      "order": 41,
+      "stratum": "predictions",
+      "id": "pr-a-lighthill-1973-correspondents-2000",
+      "verdict": "correct",
+      "reason": "Lighthill’s 1973 report attributes the printed 2000 horizon to unnamed correspondents and dates the underlying predictions to 1972.",
+      "sources": [
+        {
+          "id": "source-th-a-lighthill-1973",
+          "citedUrl": "http://www.chilton-computing.org.uk/inf/literature/reports/lighthill_report/p001.htm",
+          "retrieval": "live",
+          "retrievedUrl": "http://www.chilton-computing.org.uk/inf/literature/reports/lighthill_report/p001.htm",
+          "locators": [
+            "Part I, §3 \"Past disappointments\""
+          ]
+        }
+      ]
+    },
+    {
+      "order": 42,
+      "stratum": "predictions",
+      "id": "pr-f-amodei-2025-country-of-geniuses",
+      "verdict": "correct",
+      "reason": "The April 2025 essay gives the stated 2026 or 2027 horizon and the modal wording without assigning numerical odds.",
+      "sources": [
+        {
+          "id": "source-pr-amodei-2025-urgency-of-interpretability",
+          "citedUrl": "https://darioamodei.com/post/the-urgency-of-interpretability",
+          "retrieval": "live",
+          "retrievedUrl": "https://darioamodei.com/post/the-urgency-of-interpretability",
+          "locators": [
+            "Section on timing"
+          ]
+        }
+      ]
+    },
+    {
+      "order": 43,
+      "stratum": "predictions",
+      "id": "pr-e-aschenbrenner-2024-agi-2027",
+      "verdict": "correct",
+      "reason": "The dated chapter opening gives AGI by 2027 and the qualitative plausibility in the author’s words.",
+      "sources": [
+        {
+          "id": "source-rd-aschenbrenner-2024-gpt4-to-agi",
+          "citedUrl": "https://situational-awareness.ai/from-gpt-4-to-agi/",
+          "retrieval": "live",
+          "retrievedUrl": "https://situational-awareness.ai/from-gpt-4-to-agi/",
+          "locators": [
+            "Chapter I, opening sentence"
+          ]
+        }
+      ]
+    },
+    {
+      "order": 44,
+      "stratum": "predictions",
+      "id": "pr-b-bostrom-1998-first-third",
+      "verdict": "correct",
+      "reason": "The author-hosted abstract gives the relative period and the case-for-believing hedge. The record qualifies when the wording was seen.",
+      "sources": [
+        {
+          "id": "source-th-e-bostrom-how-long-before-si",
+          "citedUrl": "https://nickbostrom.com/superintelligence.html",
+          "retrieval": "live",
+          "retrievedUrl": "https://nickbostrom.com/papers/how-long-before-superintelligence/",
+          "locators": [
+            "Abstract"
+          ]
+        }
+      ]
+    },
+    {
+      "order": 45,
+      "stratum": "predictions",
+      "id": "pr-f-altman-2025-robots-2027",
+      "verdict": "correct",
+      "reason": "The dated Altman post says 2027 may see the stated robot capability, without numerical odds.",
+      "sources": [
+        {
+          "id": "source-pr-altman-2025-gentle-singularity",
+          "citedUrl": "https://blog.samaltman.com/the-gentle-singularity",
+          "retrieval": "live",
+          "retrievedUrl": "https://blog.samaltman.com/the-gentle-singularity",
+          "locators": [
+            "Section on the coming years"
+          ]
+        }
+      ]
+    },
+    {
+      "order": 46,
+      "stratum": "predictions",
+      "id": "pr-a-lighthill-1973-correspondents-1980s",
+      "verdict": "correct",
+      "reason": "Lighthill reports his unnamed correspondents’ 1980s possibility and the quoted human-scale knowledge-base wording.",
+      "sources": [
+        {
+          "id": "source-th-a-lighthill-1973",
+          "citedUrl": "http://www.chilton-computing.org.uk/inf/literature/reports/lighthill_report/p001.htm",
+          "retrieval": "live",
+          "retrievedUrl": "http://www.chilton-computing.org.uk/inf/literature/reports/lighthill_report/p001.htm",
+          "locators": [
+            "Part I, §3 \"Past disappointments\""
+          ]
+        }
+      ]
+    },
+    {
+      "order": 47,
+      "stratum": "predictions",
+      "id": "pr-f-amodei-2026-few-years-everything",
+      "verdict": "correct",
+      "reason": "The January 2026 essay states a few years under the explicit exponential-continuation condition.",
+      "sources": [
+        {
+          "id": "source-pr-amodei-2026-adolescence-of-technology",
+          "citedUrl": "https://darioamodei.com/essay/the-adolescence-of-technology",
+          "retrieval": "live",
+          "retrievedUrl": "https://darioamodei.com/essay/the-adolescence-of-technology",
+          "locators": [
+            "Section on the timing of powerful AI, paragraph on the exponential"
+          ]
+        }
+      ]
+    },
+    {
+      "order": 48,
+      "stratum": "predictions",
+      "id": "pr-c-espai-2022-hlmi-2059",
+      "verdict": "correct",
+      "reason": "The survey’s own results page prints 50%, 37 years and 2059, and states the condition on continuing scientific activity.",
+      "sources": [
+        {
+          "id": "source-pr-espai-2022-wiki",
+          "citedUrl": "https://wiki.aiimpacts.org/ai_timelines/predictions_of_human-level_ai_timelines/ai_timeline_surveys/2022_expert_survey_on_progress_in_ai",
+          "retrieval": "live",
+          "retrievedUrl": "https://wiki.aiimpacts.org/ai_timelines/predictions_of_human-level_ai_timelines/ai_timeline_surveys/2022_expert_survey_on_progress_in_ai",
+          "locators": [
+            "Summary of results",
+            "High-level machine intelligence (HLMI) timelines"
+          ]
+        }
+      ]
+    },
+    {
+      "order": 49,
+      "stratum": "predictions",
+      "id": "pr-f-amodei-2024-powerful-ai-2026",
+      "verdict": "correct",
+      "reason": "The October 2024 essay gives 2026 as the earliest possibility and explicitly allows a much longer horizon.",
+      "sources": [
+        {
+          "id": "source-pr-amodei-2024-machines-of-loving-grace",
+          "citedUrl": "https://darioamodei.com/essay/machines-of-loving-grace",
+          "retrieval": "live",
+          "retrievedUrl": "https://darioamodei.com/essay/machines-of-loving-grace",
+          "locators": [
+            "Basic assumptions and framework"
+          ]
+        }
+      ]
+    },
+    {
+      "order": 50,
+      "stratum": "predictions",
+      "id": "pr-b-vinge-1993-2005-2030",
+      "verdict": "correct",
+      "reason": "The NTRS proceedings expression gives 2005 and 2030 as the two boundaries and identifies the event in the previous sentence.",
+      "sources": [
+        {
+          "id": "source-vinge-1993-ntrs",
+          "citedUrl": "https://ntrs.nasa.gov/api/citations/19940022856/downloads/19940022856.pdf",
+          "retrieval": "live",
+          "retrievedUrl": "https://ntrs.nasa.gov/api/citations/19940022856/downloads/19940022856.pdf",
+          "locators": [
+            "Same paragraph (PDF p. 2)"
+          ]
+        }
+      ]
+    },
+    {
+      "order": 51,
+      "stratum": "predictions",
+      "id": "pr-e-cotra-2020-bio-anchors-as-reported-2022",
+      "verdict": "correct",
+      "reason": "The 2022 post reports both 2020 numbers verbatim and distinguishes the date of the estimate from the date of the restatement.",
+      "sources": [
+        {
+          "id": "source-pr-cotra-2022-two-year-update",
+          "citedUrl": "https://www.lesswrong.com/posts/AfH2oPHCApdKicM4m/two-year-update-on-my-personal-ai-timelines",
+          "retrieval": "live",
+          "retrievedUrl": "https://www.lesswrong.com/posts/AfH2oPHCApdKicM4m/two-year-update-on-my-personal-ai-timelines",
+          "locators": [
+            "Opening section, bottom line estimates, first item",
+            "Same list, second item"
+          ]
+        }
+      ]
+    },
+    {
+      "order": 52,
+      "stratum": "predictions",
+      "id": "pr-a-turing-1950-end-of-century",
+      "verdict": "minor slip",
+      "reason": "The words match § 6 of the cited Mind offprint. The locator refers to a different transcription and page.",
+      "passage": {
+        "locator": "Mind offprint, § 6, printed p. 442, scan 10",
+        "text": "Nevertheless I believe that at the end of the century"
+      },
+      "sources": [
+        {
+          "id": "source-turing-1950-amt-b-19",
+          "citedUrl": "https://turingarchive.kings.cam.ac.uk/publications-lectures-and-talks-amtb/amt-b-19",
+          "retrieval": "alternate expression or endpoint",
+          "retrievedUrl": "https://mediadepot.kings.cam.ac.uk/getmedia/81/be4a3d910d5d58e3911315113c60a09f6293fa896a5e3795998fa6b4fb72b71446336e3c7c92d5e08fd0fb2762b6f663279ba799d7fd562480b4bf63c63e02b9",
+          "locators": [
+            "§6, second paragraph (transcription PDF p. 8)"
+          ]
+        }
+      ]
+    },
+    {
+      "order": 53,
+      "stratum": "predictions",
+      "id": "pr-b-kurzweil-2001-1000-dollars-2023",
+      "verdict": "correct",
+      "reason": "The author-hosted model section gives the cost, capability and “around” horizon. January 2001 is the page’s own dating, with the later wording attestation qualified.",
+      "sources": [
+        {
+          "id": "source-ht-kurzweil-2001-loar",
+          "citedUrl": "https://www.writingsbyraykurzweil.com/the-law-of-accelerating-returns",
+          "retrieval": "live",
+          "retrievedUrl": "https://www.writingsbyraykurzweil.com/the-law-of-accelerating-returns",
+          "locators": [
+            "Model section, \"Some prominent dates from this analysis\""
+          ]
+        }
+      ]
+    },
+    {
+      "order": 54,
+      "stratum": "predictions",
+      "id": "pr-c-grace-2024-every-task",
+      "verdict": "correct",
+      "reason": "The arXiv v1 abstract states both probability–year pairs and its uninterrupted-science condition.",
+      "sources": [
+        {
+          "id": "source-pr-grace-2024-arxiv-v1",
+          "citedUrl": "https://arxiv.org/pdf/2401.02843v1",
+          "retrieval": "live",
+          "retrievedUrl": "https://arxiv.org/pdf/2401.02843v1",
+          "locators": [
+            "Abstract"
+          ]
+        }
+      ]
+    },
+    {
+      "order": 55,
+      "stratum": "predictions",
+      "id": "pr-c-grace-2017-ten-years",
+      "verdict": "correct",
+      "reason": "The v1 abstract gives the relative ten years and examples. Its abstract does not assign a probability to the example dates.",
+      "sources": [
+        {
+          "id": "source-pr-grace-2017-arxiv-v1",
+          "citedUrl": "https://arxiv.org/pdf/1705.08807v1",
+          "retrieval": "live",
+          "retrievedUrl": "https://arxiv.org/pdf/1705.08807v1",
+          "locators": [
+            "Abstract"
+          ]
+        }
+      ]
+    },
+    {
+      "order": 56,
+      "stratum": "predictions",
+      "id": "pr-b-vinge-1993-thirty-years",
+      "verdict": "correct",
+      "reason": "The proceedings text prints “during the next thirty years” and the record leaves it relative.",
+      "sources": [
+        {
+          "id": "source-vinge-1993-ntrs",
+          "citedUrl": "https://ntrs.nasa.gov/api/citations/19940022856/downloads/19940022856.pdf",
+          "retrieval": "live",
+          "retrievedUrl": "https://ntrs.nasa.gov/api/citations/19940022856/downloads/19940022856.pdf",
+          "locators": [
+            "Section \"What is the Singularity?\" (proceedings p. 12; PDF p. 2)"
+          ]
+        }
+      ]
+    },
+    {
+      "order": 57,
+      "stratum": "predictions",
+      "id": "pr-f-openai-2025-more-significant-discoveries",
+      "verdict": "cannot check",
+      "reason": "The cited 7 November capture and direct publisher fetch were blocked. The indexed current publisher text corroborates the wording without dating the captured expression.",
+      "sources": [
+        {
+          "id": "source-pr-openai-2025-progress-capture",
+          "citedUrl": "https://web.archive.org/web/20251107162450/https://openai.com/index/ai-progress-and-recommendations/",
+          "retrieval": "unavailable",
+          "locators": [
+            "Next sentence"
+          ]
+        }
+      ]
+    },
+    {
+      "order": 58,
+      "stratum": "predictions",
+      "id": "pr-a-turing-1950-imitation-game",
+      "verdict": "minor slip",
+      "reason": "The cited offprint prints 10⁹ and “per cent.”. The transcription flattens the exponent and points to a different page. The record’s qualification explains the exponent and correctly treats 70% as an event threshold.",
+      "passage": {
+        "locator": "Mind offprint, § 6, printed p. 442, scan 10",
+        "text": "with a storage capacity of about 10⁹"
+      },
+      "sources": [
+        {
+          "id": "source-turing-1950-amt-b-19",
+          "citedUrl": "https://turingarchive.kings.cam.ac.uk/publications-lectures-and-talks-amtb/amt-b-19",
+          "retrieval": "alternate expression or endpoint",
+          "retrievedUrl": "https://mediadepot.kings.cam.ac.uk/getmedia/81/be4a3d910d5d58e3911315113c60a09f6293fa896a5e3795998fa6b4fb72b71446336e3c7c92d5e08fd0fb2762b6f663279ba799d7fd562480b4bf63c63e02b9",
+          "locators": [
+            "§6, second paragraph (transcription PDF p. 8)",
+            "Same sentence"
+          ]
+        }
+      ]
+    },
+    {
+      "order": 59,
+      "stratum": "predictions",
+      "id": "pr-c-zhang-2022-hlmi-2060",
+      "verdict": "correct",
+      "reason": "The v1 abstract states 50% by 2060 and appendix B.1 supplies the cross-sectional definition.",
+      "sources": [
+        {
+          "id": "source-pr-zhang-2022-arxiv-v1",
+          "citedUrl": "https://arxiv.org/pdf/2206.04132v1",
+          "retrieval": "live",
+          "retrievedUrl": "https://arxiv.org/pdf/2206.04132v1",
+          "locators": [
+            "Abstract",
+            "Appendix B.1, definition for the cross-sectional sample (PDF p. 18)"
+          ]
+        }
+      ]
+    },
+    {
+      "order": 60,
+      "stratum": "predictions",
+      "id": "pr-a-dartmouth-1955-summer",
+      "verdict": "correct",
+      "reason": "The dated typescript and author-hosted transcription give the conditional advance and summer duration, with the 1956 study date separate.",
+      "sources": [
+        {
+          "id": "source-dartmouth-1955-facsimile",
+          "citedUrl": "https://raysolomonoff.com/dartmouth/boxa/dart564propsmisssingps.pdf",
+          "retrieval": "live",
+          "retrievedUrl": "https://raysolomonoff.com/dartmouth/boxa/dart564propsmisssingps.pdf",
+          "locators": [
+            "Opening paragraph, last sentence (PDF p. 2, printed page number 2; p. 1 is the title page)",
+            "Opening paragraph, first sentence (PDF p. 2)"
+          ]
+        }
+      ]
+    },
+    {
+      "order": 61,
+      "stratum": "predictions",
+      "id": "pr-e-legg-2010-log-normal",
+      "verdict": "material error",
+      "reason": "The author gives a distribution mean and mode. Neither is a quantile or probability, but the record encodes both as probability points under a quantile horizon. The live dated post confirms the wording. The archived capture was unavailable.",
+      "passage": {
+        "locator": "Goodbye 2010, human-level AGI paragraph",
+        "text": "a log-normal distribution with a mean of 2028, and a mode of 2025"
+      },
+      "sources": [
+        {
+          "id": "source-pr-legg-2010-goodbye-2010",
+          "citedUrl": "https://web.archive.org/web/20101214110948/http://www.vetta.org:80/2010/12/goodbye-2010/",
+          "retrieval": "alternate expression or endpoint",
+          "retrievedUrl": "https://www.vetta.org/2010/12/goodbye-2010/",
+          "locators": [
+            "Main post, human-level AGI paragraph",
+            "Human-level AGI paragraph, first sentence",
+            "Same paragraph, later sentence"
+          ]
+        }
+      ]
+    },
+    {
+      "order": 62,
+      "stratum": "predictions",
+      "id": "pr-e-cotra-2022-update",
+      "verdict": "correct",
+      "reason": "Cotra’s dated update states all four revised points with approximate language and keeps the earlier median separate.",
+      "sources": [
+        {
+          "id": "source-pr-cotra-2022-two-year-update",
+          "citedUrl": "https://www.lesswrong.com/posts/AfH2oPHCApdKicM4m/two-year-update-on-my-personal-ai-timelines",
+          "retrieval": "live",
+          "retrievedUrl": "https://www.lesswrong.com/posts/AfH2oPHCApdKicM4m/two-year-update-on-my-personal-ai-timelines",
+          "locators": [
+            "Section on the updated estimates",
+            "Same list",
+            "Opening section",
+            "Same list, last item"
+          ]
+        }
+      ]
+    },
+    {
+      "order": 63,
+      "stratum": "predictions",
+      "id": "pr-f-google-deepmind-2025-by-2030",
+      "verdict": "correct",
+      "reason": "The dated preprint calls development by 2030 plausible under high uncertainty, in an explicitly labelled assumption.",
+      "sources": [
+        {
+          "id": "source-pr-gdm-2025-agi-safety-arxiv-v1",
+          "citedUrl": "https://arxiv.org/pdf/2504.01849v1",
+          "retrieval": "live",
+          "retrievedUrl": "https://arxiv.org/pdf/2504.01849v1",
+          "locators": [
+            "Executive summary, assumption 2 \"Timelines\" (PDF p. 3)"
+          ]
+        }
+      ]
+    },
+    {
+      "order": 64,
+      "stratum": "predictions",
+      "id": "pr-c-baum-2011-agi09",
+      "verdict": "correct",
+      "reason": "The published assessment abstract reports a horizon of decades and describes the expert result as a majority, without an invented probability.",
+      "sources": [
+        {
+          "id": "source-pr-baum-goertzel-2011",
+          "citedUrl": "https://sethbaum.com/ac/2011_AI-Experts.pdf",
+          "retrieval": "live",
+          "retrievedUrl": "https://sethbaum.com/ac/2011_AI-Experts.pdf",
+          "locators": [
+            "Abstract"
+          ]
+        }
+      ]
+    },
+    {
+      "order": 65,
+      "stratum": "predictions",
+      "id": "pr-a-simon-newell-1958-theorem",
+      "verdict": "correct",
+      "reason": "Printed p. 7 gives the ten-year theorem forecast. The footnote dates Simon’s delivery and identifies the paper’s content as joint.",
+      "sources": [
+        {
+          "id": "source-pr-simon-newell-1958-scan",
+          "citedUrl": "https://doi.org/10.1287/opre.6.1.1",
+          "retrieval": "alternate expression or endpoint",
+          "retrievedUrl": "https://cse.buffalo.edu/~rapaport/584/S07/02Feb2007Readings.pdf",
+          "locators": [
+            "Printed p. 7 / bundle PDF p. 13, prediction 2",
+            "Printed p. 7 / bundle PDF p. 13"
+          ]
+        }
+      ]
+    },
+    {
+      "order": 66,
+      "stratum": "predictions",
+      "id": "pr-b-degaris-1989-commonplace",
+      "verdict": "minor slip",
+      "reason": "The quoted words and relative horizon match the journal PDF, but the locator points to another dataset record rather than the source’s page and section.",
+      "passage": {
+        "locator": "AI Magazine 10(2), printed p. 20, “As Machines Grow Smarter”",
+        "text": "In 20 years time, it will be commonplace to say"
+      },
+      "sources": [
+        {
+          "id": "source-ht-degaris-1989-what-if-ai-succeeds",
+          "citedUrl": "https://ojs.aaai.org/aimagazine/index.php/aimagazine/article/download/741/659",
+          "retrieval": "live",
+          "retrievedUrl": "https://ojs.aaai.org/aimagazine/index.php/aimagazine/article/download/741/659",
+          "locators": [
+            "Article text (as in the dataset record ht-w01-degaris-1989-what-if-ai-succeeds)"
+          ]
+        }
+      ]
+    },
+    {
+      "order": 67,
+      "stratum": "predictions",
+      "id": "pr-c-grace-2024-occupations",
+      "verdict": "correct",
+      "reason": "The v1 abstract prints both probability–year pairs and distinguishes occupation automation from task performance.",
+      "sources": [
+        {
+          "id": "source-pr-grace-2024-arxiv-v1",
+          "citedUrl": "https://arxiv.org/pdf/2401.02843v1",
+          "retrieval": "live",
+          "retrievedUrl": "https://arxiv.org/pdf/2401.02843v1",
+          "locators": [
+            "Abstract"
+          ]
+        }
+      ]
+    },
+    {
+      "order": 68,
+      "stratum": "predictions",
+      "id": "pr-f-amodei-2026-one-to-two-years",
+      "verdict": "correct",
+      "reason": "The January 2026 essay explicitly restates the 1–2-year possibility and says it could be further out.",
+      "sources": [
+        {
+          "id": "source-pr-amodei-2026-adolescence-of-technology",
+          "citedUrl": "https://darioamodei.com/essay/the-adolescence-of-technology",
+          "retrieval": "live",
+          "retrievedUrl": "https://darioamodei.com/essay/the-adolescence-of-technology",
+          "locators": [
+            "Section defining powerful AI"
+          ]
+        }
+      ]
+    },
+    {
+      "order": 69,
+      "stratum": "predictions",
+      "id": "pr-f-openai-2023-superalignment-this-decade",
+      "verdict": "cannot check",
+      "reason": "The cited 5 July archive and direct publisher fetch were blocked. The indexed current publisher text corroborates the relative decade, without dating the captured expression.",
+      "sources": [
+        {
+          "id": "source-pr-openai-2023-superalignment-capture",
+          "citedUrl": "https://web.archive.org/web/20230705170451/https://openai.com/blog/introducing-superalignment",
+          "retrieval": "unavailable",
+          "locators": [
+            "Opening section"
+          ]
+        }
+      ]
+    },
+    {
+      "order": 70,
+      "stratum": "predictions",
+      "id": "pr-f-altman-2025-novel-insights-2026",
+      "verdict": "correct",
+      "reason": "Altman’s dated post prints 2026 and “will likely see” in the same forecast.",
+      "sources": [
+        {
+          "id": "source-pr-altman-2025-gentle-singularity",
+          "citedUrl": "https://blog.samaltman.com/the-gentle-singularity",
+          "retrieval": "live",
+          "retrievedUrl": "https://blog.samaltman.com/the-gentle-singularity",
+          "locators": [
+            "Section on the coming years"
+          ]
+        }
+      ]
+    },
+    {
+      "order": 71,
+      "stratum": "money",
+      "id": "am-u02-boe-2022-dp5-22",
+      "verdict": "correct",
+      "reason": "Joint BoE/PRA and FCA discussion paper § 3.23 identifies a systemic single point of failure from third-party AI dependence.",
+      "sources": [
+        {
+          "id": "source-am-boe-2022-dp5-22",
+          "citedUrl": "https://www.bankofengland.co.uk/prudential-regulation/publication/2022/october/artificial-intelligence",
+          "retrieval": "live",
+          "retrievedUrl": "https://www.bankofengland.co.uk/prudential-regulation/publication/2022/october/artificial-intelligence",
+          "locators": [
+            "Chapter 3, para 3.23"
+          ]
+        }
+      ]
+    },
+    {
+      "order": 72,
+      "stratum": "money",
+      "id": "am-u09-pbc-2021-fintech-plan-2022-2025",
+      "verdict": "correct",
+      "reason": "Item 22 requires NLP and pattern-recognition work in supervision, and the notice dates and translations distinguish a task from completed work.",
+      "sources": [
+        {
+          "id": "source-am-pbc-2021-fintech-plan-2022-2025",
+          "citedUrl": "https://www.pbc.gov.cn/zhengwugongkai/4081330/4406346/4693549/4470403/index.html",
+          "retrieval": "live",
+          "retrievedUrl": "https://www.pbc.gov.cn/zhengwugongkai/4081330/4406346/4693549/4470403/index.html",
+          "locators": [
+            "Attachment, item （二十二）加快监管科技全方位应用",
+            "Same item"
+          ]
+        }
+      ]
+    },
+    {
+      "order": 73,
+      "stratum": "money",
+      "id": "am-u09-ssm-2024-mccaul-data-to-decisions",
+      "verdict": "correct",
+      "reason": "McCaul’s attributed article explicitly urges supervisory use and names Athena as an application.",
+      "sources": [
+        {
+          "id": "source-am-ssm-2024-mccaul-data-to-decisions",
+          "citedUrl": "https://www.bankingsupervision.europa.eu/press/interviews/date/2024/html/ssm.in240226~c6f7fc9251.en.html",
+          "retrieval": "live",
+          "retrievedUrl": "https://www.bankingsupervision.europa.eu/press/interviews/date/2024/html/ssm.in240226~c6f7fc9251.en.html",
+          "locators": [
+            "Paragraph beginning “The short answer”",
+            "Paragraph beginning “Currently, our AI applications”"
+          ]
+        }
+      ]
+    },
+    {
+      "order": 74,
+      "stratum": "money",
+      "id": "am-u03-boe-2026-bailey-mansion-house",
+      "verdict": "correct",
+      "reason": "Bailey’s dated speech connects frontier models’ exploit capabilities to systems security and financial stability.",
+      "sources": [
+        {
+          "id": "source-am-boe-2026-bailey-mansion-house",
+          "citedUrl": "https://www.bankofengland.co.uk/speech/2026/july/andrew-bailey-speech-at-manison-house",
+          "retrieval": "live",
+          "retrievedUrl": "https://www.bankofengland.co.uk/speech/2026/july/andrew-bailey-speech-at-manison-house",
+          "locators": [
+            "Section on frontier AI, paragraph beginning “Let me turn to another aspect of AI”",
+            "Following paragraph"
+          ]
+        }
+      ]
+    },
+    {
+      "order": 75,
+      "stratum": "money",
+      "id": "am-u01-boe-2017-carney-promise-fintech-context",
+      "verdict": "correct",
+      "reason": "Carney’s speech describes correlated algorithms without an AI-specific link in that passage, fitting context.",
+      "sources": [
+        {
+          "id": "source-am-boe-2017-carney-promise-fintech",
+          "citedUrl": "https://www.bankofengland.co.uk/-/media/boe/files/speech/2017/the-promise-of-fintech-something-new-under-the-sun.pdf",
+          "retrieval": "live",
+          "retrievedUrl": "https://www.bankofengland.co.uk/-/media/boe/files/speech/2017/the-promise-of-fintech-something-new-under-the-sun.pdf",
+          "locators": [
+            "PDF p. 11 (printed p. 11), section on systemic risks of fintech"
+          ]
+        }
+      ]
+    },
+    {
+      "order": 76,
+      "stratum": "money",
+      "id": "am-u02-boe-2025-fsif-ai",
+      "verdict": "material error",
+      "reason": "The report expressly presents the Financial Policy Committee’s view. The claim text names the FPC correctly, but the institutional voice label treats a committee view as the authority’s own text under the published voice rule.",
+      "passage": {
+        "locator": "Publisher page, introductory description",
+        "text": "The Financial Stability in Focus sets out the Financial Policy Committee’s view on specific topics related to financial stability."
+      },
+      "sources": [
+        {
+          "id": "source-am-boe-2025-fsif-ai",
+          "citedUrl": "https://www.bankofengland.co.uk/financial-stability-in-focus/2025/april-2025",
+          "retrieval": "live",
+          "retrievedUrl": "https://www.bankofengland.co.uk/financial-stability-in-focus/2025/april-2025",
+          "locators": [
+            "Executive summary, “Operational risks in relation to AI service providers”",
+            "Section “Operational risks in relation to AI service providers”"
+          ]
+        }
+      ]
+    },
+    {
+      "order": 77,
+      "stratum": "money",
+      "id": "am-u05-ecb-2024-cipollone-ai-central-bank",
+      "verdict": "correct",
+      "reason": "Cipollone’s dated keynote explicitly describes AI nowcasting and data classification by ECB staff.",
+      "sources": [
+        {
+          "id": "source-am-ecb-2024-cipollone-ai-central-bank",
+          "citedUrl": "https://www.ecb.europa.eu/press/key/date/2024/html/ecb.sp240704_1~e348c05894.en.html",
+          "retrieval": "live",
+          "retrievedUrl": "https://www.ecb.europa.eu/press/key/date/2024/html/ecb.sp240704_1~e348c05894.en.html",
+          "locators": [
+            "Section “Economic analysis”",
+            "Section “Economic analysis”"
+          ]
+        }
+      ]
+    },
+    {
+      "order": 78,
+      "stratum": "money",
+      "id": "am-u10-bis-2019-aer-ch3",
+      "verdict": "correct",
+      "reason": "BIS Box III.B describes the default-prediction comparison and preserves the authors’ caveat about bank models and business cycles.",
+      "sources": [
+        {
+          "id": "source-am-bis-2019-aer-ch3",
+          "citedUrl": "https://www.bis.org/publications/aer-2019/big-tech-finance-opportunities-risks",
+          "retrieval": "live",
+          "retrievedUrl": "https://www.bis.org/publications/aer-2019/big-tech-finance-opportunities-risks",
+          "locators": [
+            "Box III.B ‘Big tech credit assessment: big data and artificial intelligence’, paragraph beginning ‘Further, the internal rating system’",
+            "Same paragraph"
+          ]
+        }
+      ]
+    },
+    {
+      "order": 79,
+      "stratum": "money",
+      "id": "am-u01-frb-2025-barr-scenarios",
+      "verdict": "correct",
+      "reason": "Barr’s conclusion frames GenAI herding as a possibility and footnote 1 confirms personal voice.",
+      "sources": [
+        {
+          "id": "source-am-frb-2025-barr-scenarios",
+          "citedUrl": "https://www.federalreserve.gov/newsevents/speech/barr20250218a.htm",
+          "retrieval": "live",
+          "retrievedUrl": "https://www.federalreserve.gov/newsevents/speech/barr20250218a.htm",
+          "locators": [
+            "Section ‘What Should We Do?’, paragraph beginning ‘We need to be attuned to the risk in finance’",
+            "Footnote 1"
+          ]
+        }
+      ]
+    },
+    {
+      "order": 80,
+      "stratum": "money",
+      "id": "am-event-hkma-2026-project-sage",
+      "verdict": "correct",
+      "reason": "The dated HKMA release announces the launch and confirms that it has established the expert group.",
+      "sources": [
+        {
+          "id": "source-am-hkma-2026-project-sage-release",
+          "citedUrl": "https://www.hkma.gov.hk/eng/news-and-media/press-releases/2026/11/20261102-4/",
+          "retrieval": "live",
+          "retrievedUrl": "https://www.hkma.gov.hk/eng/news-and-media/press-releases/2026/11/20261102-4/",
+          "locators": [
+            "First paragraph",
+            "Paragraph after the list of focus areas"
+          ]
+        }
+      ]
+    },
+    {
+      "order": 81,
+      "stratum": "money",
+      "id": "am-u12-fsb-2024-ai",
+      "verdict": "correct",
+      "reason": "The FSB conclusion says existing frameworks address many vulnerabilities and explicitly leaves open the need for additional work.",
+      "sources": [
+        {
+          "id": "source-am-fsb-2024-ai",
+          "citedUrl": "https://www.fsb.org/uploads/P14112024.pdf",
+          "retrieval": "live",
+          "retrievedUrl": "https://www.fsb.org/uploads/P14112024.pdf",
+          "locators": [
+            "Section 5 “Conclusions”, PDF p. 33 (printed p. 29)",
+            "Section 5, PDF p. 33 (printed p. 29)"
+          ]
+        }
+      ]
+    },
+    {
+      "order": 82,
+      "stratum": "money",
+      "id": "am-u06-frb-2025-jefferson-ai",
+      "verdict": "correct",
+      "reason": "Jefferson explicitly links potential productivity gains to monetary policy and hedges the implication, with a personal-views disclaimer.",
+      "sources": [
+        {
+          "id": "source-am-frb-2025-jefferson-ai",
+          "citedUrl": "https://www.federalreserve.gov/newsevents/speech/jefferson20251107a.htm",
+          "retrieval": "live",
+          "retrievedUrl": "https://www.federalreserve.gov/newsevents/speech/jefferson20251107a.htm",
+          "locators": [
+            "Section ‘Implications for monetary policy’, second paragraph",
+            "Section ‘Implications for monetary policy’, first paragraph",
+            "Footnote 1"
+          ]
+        }
+      ]
+    },
+    {
+      "order": 83,
+      "stratum": "money",
+      "id": "am-u06-bis-2024-aer-ch3",
+      "verdict": "correct",
+      "reason": "The BIS report links AI-driven economic changes to price stability and central-bank concerns.",
+      "sources": [
+        {
+          "id": "source-am-bis-2024-aer-ch3",
+          "citedUrl": "https://www.bis.org/publications/aer-2024/artificial-intelligence-economy-implications-central-banks",
+          "retrieval": "live",
+          "retrievedUrl": "https://www.bis.org/publications/aer-2024/artificial-intelligence-economy-implications-central-banks",
+          "locators": [
+            "Section ‘Introduction’, paragraph beginning ‘First, AI will influence central banks’ core activities’",
+            "Same paragraph, last sentence"
+          ]
+        }
+      ]
+    },
+    {
+      "order": 84,
+      "stratum": "money",
+      "id": "am-event-ecb-2026-innovation-platform-ai-payments",
+      "verdict": "correct",
+      "reason": "The ECB’s call schedules exploration workshops in future quarters, supporting announced work.",
+      "sources": [
+        {
+          "id": "source-am-ecb-2026-ip-call-ai-agents",
+          "citedUrl": "https://www.ecb.europa.eu/press/intro/news/html/ecb.mipnews260928.en.html",
+          "retrieval": "live",
+          "retrievedUrl": "https://www.ecb.europa.eu/press/intro/news/html/ecb.mipnews260928.en.html",
+          "locators": [
+            "Opening paragraph",
+            "Section on the exploration workstream"
+          ]
+        }
+      ]
+    },
+    {
+      "order": 85,
+      "stratum": "money",
+      "id": "am-event-mas-2018-feat-principles",
+      "verdict": "correct",
+      "reason": "The 2020 archive capture of the 12 November 2018 MAS release confirms the opening release statement and guidance scope.",
+      "sources": [
+        {
+          "id": "source-am-mas-2018-feat-release",
+          "citedUrl": "https://www.mas.gov.sg/news/media-releases/2018/mas-introduces-new-feat-principles-to-promote-responsible-use-of-ai-and-data-analytics",
+          "retrieval": "archive",
+          "retrievedUrl": "https://web.archive.org/web/20200613230601/https://www.mas.gov.sg/news/media-releases/2018/mas-introduces-new-feat-principles-to-promote-responsible-use-of-ai-and-data-analytics",
+          "locators": [
+            "Paragraph 1"
+          ]
+        }
+      ]
+    },
+    {
+      "order": 86,
+      "stratum": "money",
+      "id": "am-u05-frb-2023-cook-genai-context",
+      "verdict": "correct",
+      "reason": "Cook’s conditional reservation about unexplained forecasts supports context, and the source gives her own views.",
+      "sources": [
+        {
+          "id": "source-am-frb-2023-cook-genai",
+          "citedUrl": "https://www.federalreserve.gov/newsevents/speech/cook20230922a.htm",
+          "retrieval": "live",
+          "retrievedUrl": "https://www.federalreserve.gov/newsevents/speech/cook20230922a.htm",
+          "locators": [
+            "Section ‘Choice Behavior’, paragraph beginning ‘Policymakers, too, at all levels of government’",
+            "Footnote 1"
+          ]
+        }
+      ]
+    },
+    {
+      "order": 87,
+      "stratum": "money",
+      "id": "am-u07-ecb-2025-de-ip-outcome-report",
+      "verdict": "correct",
+      "reason": "The ECB workshop report describes automatic payments as participants’ ideas, consistent with the explicit relay register and no earliest role.",
+      "sources": [
+        {
+          "id": "source-am-ecb-2025-de-ip-outcome-report",
+          "citedUrl": "https://www.ecb.europa.eu/euro/digital_euro/timeline/profuse/shared/pdf/ecb.deprep250926_innovationplatform.en.pdf",
+          "retrieval": "live",
+          "retrievedUrl": "https://www.ecb.europa.eu/euro/digital_euro/timeline/profuse/shared/pdf/ecb.deprep250926_innovationplatform.en.pdf",
+          "locators": [
+            "PDF p. 17 (printed p. 16), section 3.2.4 “Artificial intelligence and the digital euro” (margin caption “AI-powered wallets for smarter, more efficient transactions”)",
+            "Same section"
+          ]
+        }
+      ]
+    },
+    {
+      "order": 88,
+      "stratum": "money",
+      "id": "am-u04-ssm-2026-machado-ai-governance",
+      "verdict": "correct",
+      "reason": "Machado’s keynote connects intelligibility to control of bank models and speaks in his official capacity.",
+      "sources": [
+        {
+          "id": "source-am-ssm-2026-machado-ai-governance",
+          "citedUrl": "https://www.bankingsupervision.europa.eu/press/speeches/date/2026/html/ssm.sp260224~6c5b64a77a.en.html",
+          "retrieval": "live",
+          "retrievedUrl": "https://www.bankingsupervision.europa.eu/press/speeches/date/2026/html/ssm.sp260224~6c5b64a77a.en.html",
+          "locators": [
+            "Paragraph after “First, explainability.”"
+          ]
+        }
+      ]
+    },
+    {
+      "order": 89,
+      "stratum": "money",
+      "id": "am-u12-frb-2018-brainard-ai",
+      "verdict": "material error",
+      "reason": "The speech identifies potentially relevant existing rules as a starting point and explicitly leaves adequacy to assessment. This fits context rather than the J12 earliest articulation that existing rules broadly suffice without a separate framework.",
+      "passage": {
+        "locator": "Current Regulatory and Supervisory Approaches, paragraph beginning “It is incumbent on regulators”",
+        "text": "Our existing regulatory and supervisory guardrails are a good place to start as we assess the appropriate approach for AI processes."
+      },
+      "sources": [
+        {
+          "id": "source-am-frb-2018-brainard-ai",
+          "citedUrl": "https://www.federalreserve.gov/newsevents/speech/brainard20181113a.htm",
+          "retrieval": "live",
+          "retrievedUrl": "https://www.federalreserve.gov/newsevents/speech/brainard20181113a.htm",
+          "locators": [
+            "Section ‘Current Regulatory and Supervisory Approaches’, paragraph beginning ‘It is incumbent on regulators’",
+            "Same section, paragraph beginning ‘Second, our guidance on vendor risk management’",
+            "Footnote 1"
+          ]
+        }
+      ]
+    },
+    {
+      "order": 90,
+      "stratum": "money",
+      "id": "am-u04-fsb-2017-ai-ml",
+      "verdict": "correct",
+      "reason": "The FSB conclusion links opacity to predictability and macro-level supervisory risk under stated conditions.",
+      "sources": [
+        {
+          "id": "source-am-fsb-2017-ai-ml",
+          "citedUrl": "https://www.fsb.org/uploads/P011117.pdf",
+          "retrieval": "live",
+          "retrievedUrl": "https://www.fsb.org/uploads/P011117.pdf",
+          "locators": [
+            "Section 6 “Conclusions”, PDF p. 37 (printed p. 33)",
+            "Section 6, PDF p. 38 (printed p. 34)"
+          ]
+        }
+      ]
+    },
+    {
+      "order": 91,
+      "stratum": "money",
+      "id": "am-event-rb-2025-ai-policy",
+      "verdict": "correct",
+      "reason": "The Riksbank board decision and Swedish wording distinguish adoption on 26 May from entry into force on 1 June.",
+      "sources": [
+        {
+          "id": "source-am-rb-2025-ai-policy-decision",
+          "citedUrl": "https://www.riksbank.se/globalassets/media/dagordningar--protokoll/protokoll/direktionen/2025/250526/protokollsbilaga-d-beslut-ai-policy-for-sveriges-riksbank.pdf",
+          "retrieval": "live",
+          "retrievedUrl": "https://www.riksbank.se/globalassets/media/dagordningar--protokoll/protokoll/direktionen/2025/250526/protokollsbilaga-d-beslut-ai-policy-for-sveriges-riksbank.pdf",
+          "locators": [
+            "PDF p. 1, ‘Riksbankens beslut’",
+            "PDF p. 1, ‘Skälen för beslutet’"
+          ]
+        }
+      ]
+    },
+    {
+      "order": 92,
+      "stratum": "money",
+      "id": "am-u02-ecb-2024-fsr-ai",
+      "verdict": "correct",
+      "reason": "The bylined staff feature describes supplier concentration as a conditional risk rather than an observed failure.",
+      "sources": [
+        {
+          "id": "source-am-ecb-2024-fsr-ai",
+          "citedUrl": "https://www.ecb.europa.eu/press/financial-stability-publications/fsr/special/html/ecb.fsrart202405_02~58c3ce5246.en.html",
+          "retrieval": "live",
+          "retrievedUrl": "https://www.ecb.europa.eu/press/financial-stability-publications/fsr/special/html/ecb.fsrart202405_02~58c3ce5246.en.html",
+          "locators": [
+            "Section “Financial stability implications of AI”",
+            "Section “Financial stability implications of AI”"
+          ]
+        }
+      ]
+    },
+    {
+      "order": 93,
+      "stratum": "money",
+      "id": "am-event-ecb-2024-ai-action-plan",
+      "verdict": "correct",
+      "reason": "Cipollone’s speech says the action plan was developed and states its aims, with no claim of implementation.",
+      "sources": [
+        {
+          "id": "source-am-ecb-2024-cipollone-ai-central-bank",
+          "citedUrl": "https://www.ecb.europa.eu/press/key/date/2024/html/ecb.sp240704_1~e348c05894.en.html",
+          "retrieval": "live",
+          "retrievedUrl": "https://www.ecb.europa.eu/press/key/date/2024/html/ecb.sp240704_1~e348c05894.en.html",
+          "locators": [
+            "Section “Market infrastructures and payments”, closing paragraph of the section on AI at the ECB"
+          ]
+        }
+      ]
+    },
+    {
+      "order": 94,
+      "stratum": "money",
+      "id": "am-event-fsb-2024-ai-report-update",
+      "verdict": "correct",
+      "reason": "Knot’s dated speech describes an update in progress and the qualification preserves its speaker and disclaimer.",
+      "sources": [
+        {
+          "id": "source-am-fsb-2024-knot-ai-page",
+          "citedUrl": "https://www.fsb.org/2024/07/the-ai-adventure-how-artificial-intelligence-may-shape-the-economy-and-the-financial-system/",
+          "retrieval": "live",
+          "retrievedUrl": "https://www.fsb.org/2024/07/the-ai-adventure-how-artificial-intelligence-may-shape-the-economy-and-the-financial-system/",
+          "locators": [
+            "Speech text, paragraph beginning “This year, we are updating”"
+          ]
+        }
+      ]
+    },
+    {
+      "order": 95,
+      "stratum": "money",
+      "id": "am-u10-bcbs-2018-sound-practices-fintech",
+      "verdict": "correct",
+      "reason": "The Basel Committee’s own standard-setting report directly links AI and machine learning to monitoring suspicious transactions.",
+      "sources": [
+        {
+          "id": "source-am-bcbs-2018-sound-practices-fintech",
+          "citedUrl": "https://www.bis.org/publications/201802-practices-sound-practices-implications-fintech-developments-banks-and-bank-supervisors.pdf",
+          "retrieval": "live",
+          "retrievedUrl": "https://www.bis.org/publications/201802-practices-sound-practices-implications-fintech-developments-banks-and-bank-supervisors.pdf",
+          "locators": [
+            "PDF p. 30 (printed p. 29), section on AML/CFT, paragraph on regtech solutions"
+          ]
+        }
+      ]
+    },
+    {
+      "order": 96,
+      "stratum": "money",
+      "id": "am-u10-buba-2021-ml-risk-models-consultation",
+      "verdict": "correct",
+      "reason": "The joint institutional consultation directly describes potential risk-measurement gains, with no measured effect asserted.",
+      "sources": [
+        {
+          "id": "source-am-buba-2021-ml-risk-models-consultation",
+          "citedUrl": "https://www.bundesbank.de/resource/blob/793670/61532e24c3298d8b24d4d15a34f503a8/472B63F073F071307366337C94F8C870/2021-07-15-ml-konsultationspapier-data.pdf",
+          "retrieval": "live",
+          "retrievedUrl": "https://www.bundesbank.de/resource/blob/793670/61532e24c3298d8b24d4d15a34f503a8/472B63F073F071307366337C94F8C870/2021-07-15-ml-konsultationspapier-data.pdf",
+          "locators": [
+            "PDF p. 3, chapter I ‘Machine learning is advancing’"
+          ]
+        },
+        {
+          "id": "source-am-buba-ml-methods-page",
+          "citedUrl": "https://www.bundesbank.de/en/tasks/banking-supervision/individual-aspects/risk-management/machine-learning-methods",
+          "retrieval": "live",
+          "retrievedUrl": "https://www.bundesbank.de/en/tasks/financial-supervision/individual-aspects/risk-management/machine-learning-methods",
+          "locators": [
+            "Section ‘Consultation 11/2021’"
+          ]
+        }
+      ]
+    },
+    {
+      "order": 97,
+      "stratum": "money",
+      "id": "am-u05-frb-2024-bowman-ai",
+      "verdict": "correct",
+      "reason": "Bowman’s own-view speech suggests an AI reliability check for policy data and retains the possibility language.",
+      "sources": [
+        {
+          "id": "source-am-frb-2024-bowman-ai",
+          "citedUrl": "https://www.federalreserve.gov/newsevents/speech/bowman20241122a.htm",
+          "retrieval": "live",
+          "retrievedUrl": "https://www.federalreserve.gov/newsevents/speech/bowman20241122a.htm",
+          "locators": [
+            "Section ‘Innovation and Competitiveness’, subsection ‘Innovation’, paragraph beginning ‘AI also has promise to improve public sector operations’",
+            "Footnote 1"
+          ]
+        }
+      ]
+    },
+    {
+      "order": 98,
+      "stratum": "money",
+      "id": "am-u05-ifc-2017-bulletin-44-overview",
+      "verdict": "correct",
+      "reason": "Tissot’s staff overview attributes the nowcasting result to Aruba presenters and carries the author-only disclaimer.",
+      "sources": [
+        {
+          "id": "source-am-ifc-2017-bulletin-44",
+          "citedUrl": "https://www.bis.org/publications/ifc-bulletin-44-big-data.pdf",
+          "retrieval": "live",
+          "retrievedUrl": "https://www.bis.org/publications/ifc-bulletin-44-big-data.pdf",
+          "locators": [
+            "PDF p. 11, overview section 3, paragraph beginning ‘A presentation by the Central Bank of Aruba’",
+            "PDF p. 5, note 1 to the overview"
+          ]
+        }
+      ]
+    },
+    {
+      "order": 99,
+      "stratum": "money",
+      "id": "am-event-pbc-2022-ai-algorithm-evaluation-standard",
+      "verdict": "correct",
+      "reason": "The Chinese reply attests issuance and evaluation dimensions. The reply’s date remains separate from the standard’s issue date.",
+      "sources": [
+        {
+          "id": "source-am-pbc-2022-cppcc-reply-03114",
+          "citedUrl": "https://www.pbc.gov.cn/zhengwugongkai/4081330/4081344/4081419/4081727/2025080819055985616/index.html",
+          "retrieval": "live",
+          "retrievedUrl": "https://www.pbc.gov.cn/zhengwugongkai/4081330/4081344/4081419/4081727/2025080819055985616/index.html",
+          "locators": [
+            "Section 三、关于数据治理与算法管理问题, item 三"
+          ]
+        }
+      ]
+    },
+    {
+      "order": 100,
+      "stratum": "money",
+      "id": "am-u06-nb-2026-bech-moen-speech",
+      "verdict": "correct",
+      "reason": "The original Norwegian and attributed English notes agree on a conditional increase in the neutral rate, and the record separates event and translation dates.",
+      "sources": [
+        {
+          "id": "source-am-nb-2026-bech-moen-speech",
+          "citedUrl": "https://www.norges-bank.no/contentassets/93003c5a459f4961bad556a1c444a8e2/speech_valutaseminaret2026.pdf",
+          "retrieval": "live",
+          "retrievedUrl": "https://www.norges-bank.no/contentassets/93003c5a459f4961bad556a1c444a8e2/speech_valutaseminaret2026.pdf?v=03022026122340",
+          "locators": [
+            "PDF p. 8, slide ‘“Real-time” estimates and model estimates of the neutral real rate’",
+            "PDF p. 8, same passage",
+            "PDF p. 1, heading"
+          ]
+        },
+        {
+          "id": "source-am-nb-2026-bech-moen-notes-no",
+          "citedUrl": "https://www.norges-bank.no/contentassets/93003c5a459f4961bad556a1c444a8e2/talepunkter_valutaseminaret2026-002.pdf",
+          "retrieval": "live",
+          "retrievedUrl": "https://www.norges-bank.no/contentassets/93003c5a459f4961bad556a1c444a8e2/talepunkter_valutaseminaret2026-002.pdf?v=29012026160421",
+          "locators": [
+            "PDF p. 8, plansje on the neutral real rate (Norwegian speaking notes)"
+          ]
+        }
+      ]
+    },
+    {
+      "order": 101,
+      "stratum": "money",
+      "id": "am-u04-bcbs-2024-digitalisation",
+      "verdict": "correct",
+      "reason": "The Basel Committee report and footnote directly connect model opacity to assessing conceptual soundness.",
+      "sources": [
+        {
+          "id": "source-am-bcbs-2024-digitalisation",
+          "citedUrl": "https://www.bis.org/publications/digitalisation-finance.pdf",
+          "retrieval": "live",
+          "retrievedUrl": "https://www.bis.org/publications/digitalisation-finance.pdf",
+          "locators": [
+            "PDF p. 26 (printed p. 22), Box 8 ‘Generative AI risks’, bullet ‘Explainability’",
+            "PDF p. 22 (printed p. 18), footnote 36"
+          ]
+        }
+      ]
+    },
+    {
+      "order": 102,
+      "stratum": "money",
+      "id": "am-u02-fsb-2017-ai-ml",
+      "verdict": "correct",
+      "reason": "The FSB’s 2017 report links a few providers to systemic vulnerability and qualifies it as prospective.",
+      "sources": [
+        {
+          "id": "source-am-fsb-2017-ai-ml",
+          "citedUrl": "https://www.fsb.org/uploads/P011117.pdf",
+          "retrieval": "live",
+          "retrievedUrl": "https://www.fsb.org/uploads/P011117.pdf",
+          "locators": [
+            "Section 5.1, PDF p. 33 (printed p. 29)",
+            "Section 6 “Conclusions”, PDF p. 37 (printed p. 33)",
+            "Section 6, PDF p. 37 (printed p. 33)"
+          ]
+        }
+      ]
+    },
+    {
+      "order": 103,
+      "stratum": "money",
+      "id": "am-u07-bis-wp-1310",
+      "verdict": "correct",
+      "reason": "The staff paper distinguishes simulation and recommendations from execution. Section 2 also describes agents executing predefined payment processes as a possibility.",
+      "sources": [
+        {
+          "id": "source-am-bis-wp-1310",
+          "citedUrl": "https://www.bis.org/publications/working-paper-1310-ai-agents-cash-management-payment-systems.pdf",
+          "retrieval": "live",
+          "retrievedUrl": "https://www.bis.org/publications/working-paper-1310-ai-agents-cash-management-payment-systems.pdf",
+          "locators": [
+            "PDF p. 3, abstract",
+            "PDF p. 3, abstract",
+            "PDF p. 3, note to the title"
+          ]
+        }
+      ]
+    },
+    {
+      "order": 104,
+      "stratum": "money",
+      "id": "am-u12-buba-2022-wuermeling-brontobytes",
+      "verdict": "correct",
+      "reason": "Wuermeling’s speech explicitly rejects new ML-specific rules in its stated risk-model scope and gives his own view.",
+      "sources": [
+        {
+          "id": "source-am-buba-2022-wuermeling-brontobytes",
+          "citedUrl": "https://www.bundesbank.de/en/press/speeches/machine-learning-in-risk-models-brontobytes-and-brontosauruses-891260",
+          "retrieval": "live",
+          "retrievedUrl": "https://www.bundesbank.de/en/press/speeches/machine-learning-in-risk-models-brontobytes-and-brontosauruses-891260",
+          "locators": [
+            "Section 3 “Supervisory approaches: a question of characteristics and explainability”",
+            "Same section"
+          ]
+        }
+      ]
+    },
+    {
+      "order": 105,
+      "stratum": "money",
+      "id": "am-event-eiopa-2025-ai-opinion",
+      "verdict": "correct",
+      "reason": "The EIOPA opinion describes the guidance it issues and the supervisory expectations it sets.",
+      "sources": [
+        {
+          "id": "source-am-eiopa-2025-ai-opinion",
+          "citedUrl": "https://www.eiopa.europa.eu/document/download/88342342-a17f-4f88-842f-bf62c93012d6_en",
+          "retrieval": "live",
+          "retrievedUrl": "https://www.eiopa.europa.eu/document/download/88342342-a17f-4f88-842f-bf62c93012d6_en",
+          "locators": [
+            "Section 2, paragraph 2.9, PDF p. 4"
+          ]
+        }
+      ]
+    },
+    {
+      "order": 106,
+      "stratum": "money",
+      "id": "am-u10-fsb-2017-ai-ml",
+      "verdict": "correct",
+      "reason": "FSB § 4.2 directly states the measurement benefit and distinguishes potential from testing in changing conditions.",
+      "sources": [
+        {
+          "id": "source-am-fsb-2017-ai-ml",
+          "citedUrl": "https://www.fsb.org/uploads/P011117.pdf",
+          "retrieval": "live",
+          "retrievedUrl": "https://www.fsb.org/uploads/P011117.pdf",
+          "locators": [
+            "Section 4.2, item b), PDF p. 29 (printed p. 25)",
+            "Section 4.2, item b), PDF p. 29 (printed p. 25)"
+          ]
+        }
+      ]
+    },
+    {
+      "order": 107,
+      "stratum": "money",
+      "id": "am-event-pbc-2021-fintech-plan-2022-2025",
+      "verdict": "correct",
+      "reason": "The dated Chinese notice says the plan is now issued and calls for implementation, without claiming it occurred.",
+      "sources": [
+        {
+          "id": "source-am-pbc-2021-fintech-plan-2022-2025",
+          "citedUrl": "https://www.pbc.gov.cn/zhengwugongkai/4081330/4406346/4693549/4470403/index.html",
+          "retrieval": "live",
+          "retrievedUrl": "https://www.pbc.gov.cn/zhengwugongkai/4081330/4406346/4693549/4470403/index.html",
+          "locators": [
+            "Notice text, first paragraph"
+          ]
+        }
+      ]
+    },
+    {
+      "order": 108,
+      "stratum": "money",
+      "id": "am-u10-eba-2023-ml-irb",
+      "verdict": "correct",
+      "reason": "The EBA report’s executive summary supports potential predictive gains and the narrower IRB credit-risk setting.",
+      "sources": [
+        {
+          "id": "source-am-eba-2023-ml-irb",
+          "citedUrl": "https://www.eba.europa.eu/sites/default/files/document_library/Publications/Reports/2023/1061483/Follow-up%20report%20on%20machine%20learning%20for%20IRB%20models.pdf",
+          "retrieval": "live",
+          "retrievedUrl": "https://www.eba.europa.eu/sites/default/files/document_library/Publications/Reports/2023/1061483/Follow-up%20report%20on%20machine%20learning%20for%20IRB%20models.pdf",
+          "locators": [
+            "Section 1 “Executive Summary”, PDF p. 3"
+          ]
+        }
+      ]
+    },
+    {
+      "order": 109,
+      "stratum": "money",
+      "id": "am-u12-esrb-2025-asc-ai-contests",
+      "verdict": "correct",
+      "reason": "The committee report, with author disclaimer, explicitly entertains reforms beyond the current framework while preserving its countervailing qualification.",
+      "sources": [
+        {
+          "id": "source-am-esrb-2025-asc-ai",
+          "citedUrl": "https://www.esrb.europa.eu/pub/pdf/asc/esrb.ascreport202512_AIandsystemicrisk.en.pdf",
+          "retrieval": "live",
+          "retrievedUrl": "https://www.esrb.europa.eu/pub/pdf/asc/esrb.ascreport202512_AIandsystemicrisk.en.pdf",
+          "locators": [
+            "Section 4.1, PDF p. 44 (printed p. 43)",
+            "Section 4.2, PDF p. 45 (printed p. 44)",
+            "Section 4.2, PDF p. 44 (printed p. 43)",
+            "PDF p. 67, imprint page, “Note”"
+          ]
+        }
+      ]
+    },
+    {
+      "order": 110,
+      "stratum": "money",
+      "id": "am-u01-rbi-2025-free-ai-report",
+      "verdict": "correct",
+      "reason": "The RBI-hosted HTML of the committee report confirms the wording in § 2.2.8 and its 13 August publication. The PDF endpoint returned a challenge page.",
+      "sources": [
+        {
+          "id": "source-am-rbi-2025-free-ai-report",
+          "citedUrl": "https://rbidocs.rbi.org.in/rdocs/PublicationReport/Pdfs/FREEAIR130820250A24FF2D4578453F824C72ED9F5D5851.PDF",
+          "retrieval": "alternate expression or endpoint",
+          "retrievedUrl": "https://www.rbi.org.in/scripts/FS_Publications.aspx?id=1306",
+          "locators": [
+            "Chapter 2, section 2.2.8 ‘Potential Impact on Financial Stability’, PDF p. 21"
+          ]
+        }
+      ]
+    },
+    {
+      "order": 111,
+      "stratum": "targeted",
+      "id": "am-u01-boj-2017-kuroda-ai",
+      "verdict": "correct",
+      "reason": "Kuroda relays the original concern but adds his own conditional AI-intensification conclusion in the same paragraph.",
+      "targetReason": "Earliest located overall depends on whether conditional remarks adopt or merely relay a concern.",
+      "sources": [
+        {
+          "id": "source-am-boj-2017-kuroda-ai",
+          "citedUrl": "https://www.boj.or.jp/en/about/press/koen_2017/ko170413a.htm",
+          "retrieval": "live",
+          "retrievedUrl": "https://www.boj.or.jp/en/about/press/koen_2017/ko170413a.htm",
+          "locators": [
+            "Section on new issues for market stakeholders and policymakers, paragraph beginning ‘High-frequency trading (HFT) and algorithmic trading’",
+            "Same paragraph"
+          ]
+        }
+      ]
+    },
+    {
+      "order": 112,
+      "stratum": "targeted",
+      "id": "am-u06-boe-2015-haldane-labours-share",
+      "verdict": "correct",
+      "reason": "Haldane links AI to the Second Machine Age labour-substitution mechanism and then tests its implications for MPC projections, with scope and disclaimer preserved.",
+      "targetReason": "Earliest located overall may rely on broad technology language that does not establish the AI-specific link.",
+      "sources": [
+        {
+          "id": "source-am-boe-2015-haldane-labours-share",
+          "citedUrl": "https://www.bankofengland.co.uk/-/media/boe/files/speech/2015/labours-share.pdf",
+          "retrieval": "live",
+          "retrievedUrl": "https://www.bankofengland.co.uk/-/media/boe/files/speech/2015/labours-share.pdf",
+          "locators": [
+            "PDF p. 13 (printed p. 13)",
+            "PDF p. 16 (printed p. 16)",
+            "PDF p. 17 (printed p. 17)",
+            "PDF p. 17 (printed p. 17)",
+            "PDF p. 1, cover page"
+          ]
+        }
+      ]
+    },
+    {
+      "order": 113,
+      "stratum": "targeted",
+      "id": "am-u05-boe-2015-one-bank-research-agenda",
+      "verdict": "cannot check",
+      "reason": "A fresh mirror of the Bank’s paper supports the Theme 4 paraphrase and the Bank confirms publication on 25 February. I could not inspect the cited 19 March capture to verify wording attestation for the earliest institutional role.",
+      "targetReason": "Earliest institutional voice relies on an attested later capture and a paraphrase of a research agenda.",
+      "sources": [
+        {
+          "id": "source-am-boe-2015-one-bank-research-agenda",
+          "citedUrl": "https://web.archive.org/web/20150319140614/http://www.bankofengland.co.uk:80/research/Documents/onebank/discussion.pdf",
+          "retrieval": "alternate expression or endpoint",
+          "retrievedUrl": "https://cryptochainuni.com/wp-content/uploads/Bank-of-England-One-Bank-Research-Agenda-Discussion-Paper-Feb15.pdf",
+          "locators": [
+            "Theme 4, question 1 (“How can the potential of big data and other new data sets best be realised?”), paragraph spanning printed pp. 23–24"
+          ]
+        }
+      ]
+    },
+    {
+      "order": 114,
+      "stratum": "targeted",
+      "id": "am-u12-pbc-2019-fintech-plan-contests",
+      "verdict": "material error",
+      "reason": "The plan calls for studying and formulating rules and promoting a policy system. It does not take a position on whether existing frameworks broadly apply or whether a separate framework is required, so the passage supports context rather than earliest contesting.",
+      "targetReason": "Earliest contesting headline and translated policy language may conflate planned rule changes with a rejection of adequacy.",
+      "passage": {
+        "locator": "Part III, item (六), PDF and printed p. 14",
+        "text": "研究制定人工智能金融应用监管规则"
+      },
+      "sources": [
+        {
+          "id": "source-am-pbc-2019-fintech-plan",
+          "citedUrl": "https://www.pbc.gov.cn/zhengwugongkai/4081330/4406346/4693549/4085169/2019090617242730910.pdf",
+          "retrieval": "live",
+          "retrievedUrl": "https://www.pbc.gov.cn/zhengwugongkai/4081330/4406346/4693549/4085169/2019090617242730910.pdf",
+          "locators": [
+            "第三章 重点任务, 第二节, item （六）稳步应用人工智能, PDF p. 14 (printed p. 14)",
+            "Same item, PDF p. 14"
+          ]
+        }
+      ]
+    },
+    {
+      "order": 115,
+      "stratum": "targeted",
+      "id": "lc-cell-il-aisma-q06",
+      "verdict": "minor slip",
+      "reason": "Section 10(d) expressly requires an annual independent compliance audit of developer practices. July 6 dates approval rather than publication.",
+      "targetReason": "Check whether an independent compliance audit actually meets the external assessment threshold.",
+      "passage": {
+        "locator": "Illinois General Assembly, SB 315 Actions table, indexed row",
+        "text": "7/06/2026 Senate Governor Approved"
+      },
+      "sources": [
+        {
+          "id": "source-il-pa-104-0538",
+          "citedUrl": "https://web.archive.org/web/20260908054441id_/https://www.ilga.gov/Documents/Legislation/PublicActs/104/PDF/104-0538.pdf",
+          "retrieval": "archive",
+          "retrievedUrl": "https://web.archive.org/web/20260908054441/https://www.ilga.gov/Documents/Legislation/PublicActs/104/PDF/104-0538.pdf",
+          "locators": [
+            "Section 10(d), first sentence, PDF p. 8"
+          ]
+        }
+      ]
+    },
+    {
+      "order": 116,
+      "stratum": "targeted",
+      "id": "lc-cell-cn-genai-measures-q07",
+      "verdict": "minor slip",
+      "reason": "Article 14 ties promptness to disposal measures and names only competent authorities. July 10 dates issuance rather than publication.",
+      "targetReason": "Translated reporting duty may concern illegal content and user conduct rather than defined incidents, and timing may attach to a different verb.",
+      "passage": {
+        "locator": "Order No. 15, dated signature block",
+        "text": "2023年7月10日"
+      },
+      "sources": [
+        {
+          "id": "source-cn-generative-ai-measures-2023-govcn",
+          "citedUrl": "https://www.gov.cn/zhengce/zhengceku/202307/content_6891752.htm",
+          "retrieval": "live",
+          "retrievedUrl": "https://www.gov.cn/zhengce/zhengceku/202307/content_6891752.htm",
+          "locators": [
+            "Article 14 (第十四条), first paragraph",
+            "Article 14 (第十四条), first paragraph"
+          ]
+        }
+      ]
+    },
+    {
+      "order": 117,
+      "stratum": "targeted",
+      "id": "lc-cell-cn-genai-measures-q03",
+      "verdict": "material error",
+      "reason": "Q03 expressly allows partly where risk-management measures are required without a written framework. Article 4(2) mandates anti-discrimination measures in model development, and Article 14 requires corrective measures including model optimisation training.",
+      "targetReason": "Search bounded by scope could miss regulator-facing written security assessments or model-risk measures.",
+      "passage": {
+        "locator": "Articles 4(2) and 14(1)",
+        "text": "采取模型优化训练等措施进行整改"
+      },
+      "sources": [
+        {
+          "id": "source-cn-generative-ai-measures-2023-govcn",
+          "citedUrl": "https://www.gov.cn/zhengce/zhengceku/202307/content_6891752.htm",
+          "retrieval": "live",
+          "retrievedUrl": "https://www.gov.cn/zhengce/zhengceku/202307/content_6891752.htm",
+          "locators": [
+            "China generative AI interim measures (2023): Order No. 15 preamble and Articles 1–24 in full (the page repeats the text; the first copy was read and the second spot-checked)."
+          ]
+        }
+      ]
+    },
+    {
+      "order": 118,
+      "stratum": "targeted",
+      "id": "lc-cell-cn-labelling-measures-q07",
+      "verdict": "minor slip",
+      "reason": "Articles 9 and 12 require logs and information sharing without incident notification. March 7 dates the notice rather than publication.",
+      "targetReason": "An absence cell can overlook duties to notify authorities in cross-referenced enforcement or incident provisions.",
+      "passage": {
+        "locator": "Issuing notice 国信办通字〔2025〕2号, date line",
+        "text": "2025年3月7日"
+      },
+      "sources": [
+        {
+          "id": "source-cn-labelling-measures-2025",
+          "citedUrl": "https://www.gov.cn/zhengce/zhengceku/202503/content_7014286.htm",
+          "retrieval": "live",
+          "retrievedUrl": "https://www.gov.cn/zhengce/zhengceku/202503/content_7014286.htm",
+          "locators": [
+            "China AI-generated content labelling measures (2025): Articles 1–14 in full."
+          ]
+        }
+      ]
+    },
+    {
+      "order": 119,
+      "stratum": "targeted",
+      "id": "am-event-fsb-2017-ai-ml-monitoring",
+      "verdict": "correct",
+      "reason": "Annex G directly says that monitoring is ongoing and reports initial findings, supporting under-way status at publication.",
+      "targetReason": "Under-way status could turn a forward-looking monitoring agenda into an activity already in progress.",
+      "sources": [
+        {
+          "id": "source-am-fsb-2017-fintech-fs",
+          "citedUrl": "https://www.fsb.org/uploads/R270617.pdf",
+          "retrieval": "live",
+          "retrievedUrl": "https://www.fsb.org/uploads/R270617.pdf",
+          "locators": [
+            "Annex G, “Description”, PDF p. 59 (printed p. 55)"
+          ]
+        }
+      ]
+    },
+    {
+      "order": 120,
+      "stratum": "targeted",
+      "id": "am-event-ecb-2026-ai-research-lab",
+      "verdict": "material error",
+      "reason": "The speaker says the lab is being established, which describes establishment in progress. The announced stage misses that status. The wording leaves the start of operations open and the disclaimer keeps the voice with Lane.",
+      "targetReason": "A speech with personal-view disclaimer reports a lab being established, testing both voice and the announced/under-way boundary.",
+      "passage": {
+        "locator": "AI at the ECB, second pillar",
+        "text": "Second, we are also establishing an AI research lab"
+      },
+      "sources": [
+        {
+          "id": "source-am-ecb-2026-ai-euro-area-economy",
+          "citedUrl": "https://www.ecb.europa.eu/press/key/date/2026/html/ecb.sp260323_1~1e06784a89.en.html",
+          "retrieval": "live",
+          "retrievedUrl": "https://www.ecb.europa.eu/press/key/date/2026/html/ecb.sp260323_1~1e06784a89.en.html",
+          "locators": [
+            "Section “AI at the ECB”"
+          ]
+        }
+      ]
+    }
+  ]
+}

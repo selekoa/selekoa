@@ -193,28 +193,28 @@ it needs a schema change (minor).
   canonical address. Source: `review/link-health-2026-10-29.md` §
   Recommended next steps 3–5; § Changed.
 - **D17. Single held records** (S each · Claude or archive).
-  - GB 45438-2025 scope: the standard's own text is read (Codex,
-    2026-11-04); admission waits on a length count or a paraphrase
-    (decision). `review/corrections-2026-11-06.md` § Held.
   - AI Magazine 2006 date (15 Dec against 1 Dec): decide.
     `review/followups-2026-10-28.md` § Open for the maintainer 2.
   - Shanghai AI Lab founding (a laboratory reprint gives July 2020; no
     founding or registration text).
     `review/china-labs-3-admission-2026-10-31.md` § Held;
     `review/corrections-2026-11-06.md` § Held.
-  - NVIDIA H20 statements (a BIS letter or rule); ADA Space Three-Body
+  - NVIDIA H20 statements (no BIS letter or rule found by the Codex reads
+    of 2026-11-07); ADA Space Three-Body
     launch; Starcloud-1 "Gemini" or "Gemma".
     `review/cpo-admission-2-2026-10-30.md` § Held; Corrections.
-  - O3 and O10 orbital leads (could replace two earliest-located texts).
-    `review/cpo-admission-1-2026-10-30.md` § Open 1.
+  - O10: no located text states which workloads ground links limit; the
+    next orbital-compute pass searches for one (decision 14a of 2026-11-07).
+    `review/recheck-and-reads-2026-11-07.md` § Left open.
   - Michigan HB 4668 after 2026-03-28 (the latest capture read).
     `review/frameworks-to-law-admission-2-2026-10-28.md` § Open 3.
   - Hanson 1994 base records dated by a heading (1994-03-08; the printed
     issue is the third quarter of 1994).
     `review/heterodox-admission-2026-11-01.md` § Open 4;
     `review/corrections-2026-11-06.md` § Held.
-  - NRC Amendment No. 307 text; Constellation's 2027 restart target as a new
-    record (decision). `review/crane-nrc-fix-2026-11-01.md`.
+  - NRC Amendment No. 307 text (still 403 on 2026-11-07; the Federal
+    Register notice confirms its date and scope). `review/crane-nrc-fix-2026-11-01.md`;
+    `review/recheck-and-reads-2026-11-07.md` § Left open.
   - Audit holds: `cncert` typing, working-paper/journal pairs, the UK AI
     Security Institute launch claim (all now read; decisions).
     `review/audit-fixes-2026-10-29.md` § Held, and why;
@@ -277,17 +277,11 @@ it needs a schema change (minor).
     for the archive (roles 55, 70, 89, 110, 113, 119, 122, 125, 132) were
     admitted on 2026-11-02 from Codex's archive retrieval
     (`review/archive-fetch-apply-2026-11-02.md`); machine succession now runs
-    from 1863. **18 remain under re-check**:
-    - 1 agreed move blocked by the quotation limit: role 106 (SL4 message of
-      2001-04-12, 212 words, its 21 quotable words already used). Needs a
-      decision: a paraphrase-only record, or freeing a quoted passage
-      (maintainer);
-    - stance reclassifications (roles 39, 102, 105, 160, 165, 169, 174),
-      sense or date-precision questions (81, 99, 139, 173) and criteria (R15
-      weights versus code, roles 65, 66; OC10, role 162) (maintainer,
-      decisions 5 to 7, not yet decided);
-    - undecidables (roles 5, 112, 126, and 65, 66, 162 above): new witnesses
-      needed (archive reads, Codex).
+    from 1863. The remaining 19 headlines were settled on 2026-11-07
+    (`review/recheck-and-reads-2026-11-07.md`) except two: W10 (the February
+    1979 _Analog_ print read only in a copy Selekoa does not cite) and O10
+    (no text states a workload limit). The gwern.net capture comparisons
+    (Good, Michie, Vinge) are still blocked.
   - Leads outside the dataset from the re-check (add no records until an
     admission): Schaff and others (September 1997), which uses “virtual cell”
     for a cell-model framework (role 8; P2's term headline); Chollet's dated
@@ -351,8 +345,6 @@ it needs a schema change (minor).
     2026-11-04 found the published PDF's footer gives July 2019, and a dated
     announcement attests the accepted paper on 2019-01-23 (decision:
     `review/corrections-2026-11-06.md` § Held).
-  - Item 117 follow-up: Y08 has no earliest located contesting text. Recheck
-    the bounded Y08 candidate sequence before setting one.
   - The sample certifies no unsampled record. The Codex sweep of absence
     claims is applied: part 1 in v0.26.2
     ([record](../review/absence-sweep-apply-part1-2026-11-02.md)), part 2 in
@@ -367,6 +359,15 @@ it needs a schema change (minor).
 
   Source: `review/cross-family-audit-sample-2026-11-02.md`;
   `review/audit-sample-fixes-2026-11-02.md` § Held.
+
+- **D29. Blind audit of 2026-11-09: items left open** (S · Codex +
+  archive). The adjudicated corrections were applied in v0.33.0
+  ([record](../review/audit-corrections-and-model-cards-5-2026-11-10.md)).
+  Still open: the eight cannot-check items (California SB 53 Q01, Q06, Q10,
+  Q12; Illinois Q10; the two OpenAI prediction captures; the 2015 One Bank
+  Research Agenda capture) and the Michie, Vinge and Analog (W10) reads, for
+  the next Codex brief with library access. Source:
+  `review/audit-2026-11-09-adjudication.md` § Cannot check, § Next step.
 
 ## 3. Interface follow-ups
 
@@ -577,7 +578,7 @@ Each is pack → Codex check → adjudication → admission
 
 ## Suggested order
 
-1. D25's re-check results, then P3 and H1 decisions, which cost the maintainer
+1. P3 and H1 decisions, which cost the maintainer
    a few words each.
 2. I1 merged; H2 and H3 in one housekeeping session.
 3. One schema decision sitting (D1, D2, D3, D20, D9), then one minor release

@@ -217,6 +217,15 @@ not decide which record does. The predicate `launched` may also have a public bo
 subject or object (a government launching an institute). The voice is a provisional
 nested value, so the format version stays 1.10.
 
+Dataset schema 2.34 (2026-11-10) lets a law cell, or a provision record of a framework
+or law edition, dated by the version's date of issue (`publishedAt`), give that date's
+kind as `signature` (a signature, approval or order date) or give no kind, where the
+text shows a date of issue but not what kind of date it is; until 2.33 that date could
+only carry the kind `publication`. It applies the corrections of the blind audit of
+2026-11-09 (`review/audit-corrections-and-model-cards-5-2026-11-10.md`). No field
+changes, so the format version stays 1.10; the CSV column `time_basis` is then
+`signature` or blank.
+
 A release is never overwritten. `pnpm release` refuses an existing or earlier version,
 and `pnpm release <version> --check` regenerates an existing release and compares it
 byte for byte while the data is unchanged. A release states the dataset schema version

@@ -1149,6 +1149,7 @@ export const datasetSchema = z
         '2.31',
         '2.32',
         '2.33',
+        '2.34',
       ]),
       updatedAt: checkDate,
       title: text,
@@ -1915,9 +1916,14 @@ export const datasetSchema = z
         if (provision!.parties || provision!.computed)
           issue(path, 'A law cell names no parties and computes no date');
         // Dated by the text compared: one of its version's own dates.
+        // Schema 2.34: the version's date of issue (`publishedAt`) may be a
+        // signature or approval date, kind `signature`, or a date of issue
+        // whose kind the text does not show, with no basis.
         const dates = v
           ? ([
               ['publication', v.publishedAt],
+              ['signature', v.publishedAt],
+              ['', v.publishedAt],
               ['effective', v.effectiveAt],
               ['revision', v.revisedAt],
             ].filter(([, d]) => d) as [string, string][])
@@ -1928,7 +1934,7 @@ export const datasetSchema = z
               !dates.some(
                 ([basis, d]) =>
                   c.time.kind === 'event' &&
-                  c.time.basis === basis &&
+                  (c.time.basis ?? '') === basis &&
                   c.time.date === d,
               )
             : c.time.kind !== 'unknown'
@@ -2025,7 +2031,9 @@ export const datasetSchema = z
             );
         } else if (
           c.time.kind !== 'event' ||
-          !c.time.basis ||
+          // Schema 2.34: an edition's own date may carry no basis, where the
+          // text shows a date of issue but not its kind.
+          (!c.time.basis && !edition) ||
           c.time.basis === 'announcement' ||
           !(
             edition

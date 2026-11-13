@@ -1,0 +1,306 @@
+{
+  "group": "meta",
+  "drafter": "Claude (preparing session), 2026-11-06",
+  "cards": [
+    {
+      "id": "meta-muse-spark-open",
+      "developer": "Meta",
+      "model": "Muse Spark Open",
+      "year": 2026,
+      "source": "meta-muse-spark-open",
+      "frameworkEditions": [],
+      "frameworkEditionNote": "The card names the Meta Superintelligence Scaling Framework without a version, date or address. That framework is not in the dataset; maintainer decision 5a holds its v2.1 (October 2026) for a separate data task. No edition is recorded or inferred.",
+      "earliestLocated": "2026-10-15"
+    }
+  ],
+  "cells": [
+    {
+      "card": "meta-muse-spark-open",
+      "question": "Q01",
+      "status": "not-found",
+      "note": "No date of the card itself was found. Under maintainer decision 8a, repository dates stay in the background record (the inventory notes the repository was last modified on 2026-10-15).",
+      "search": {
+        "read": "Whole card (Hugging Face README, revision 0fb02478): licence front matter, overview table, Model Access, Benchmarks, Safety and Preparedness, Considerations and Limitations",
+        "terms": ["date", "updated", "2026", "version"],
+        "setAside": [
+          {
+            "locator": "Licence front matter",
+            "reason": "“Release date: October 15, 2026” and “Dated: October 15, 2026” belong to the Muse Model License text, not to the card."
+          },
+          {
+            "locator": "Overview table and header",
+            "reason": "The release date and month are the model’s (Q02)."
+          }
+        ]
+      }
+    },
+    {
+      "card": "meta-muse-spark-open",
+      "question": "Q02",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "meta-muse-spark-open",
+          "locator": "Overview table, “Date of Release”",
+          "quote": "| Date of Release | October 15th, 2026 |"
+        },
+        {
+          "source": "meta-muse-spark-open",
+          "locator": "Model Access and Best Practices",
+          "quote": "The weights are available for download through Hugging Face."
+        }
+      ],
+      "note": "The card gives the release date and the release forms (open weights; API access through third-party inference providers)."
+    },
+    {
+      "card": "meta-muse-spark-open",
+      "question": "Q03",
+      "status": "partly",
+      "passages": [
+        {
+          "source": "meta-muse-spark-open",
+          "locator": "Safety and Preparedness, item 4",
+          "quote": "Evaluation of chemical and biological, cyber, and loss-of-control risks in line with the Meta Superintelligence Scaling Framework."
+        }
+      ],
+      "note": "The card names the framework without a version, date or address. The framework is not in the dataset (maintainer decision 5a)."
+    },
+    {
+      "card": "meta-muse-spark-open",
+      "question": "Q04",
+      "status": "partly",
+      "passages": [
+        {
+          "source": "meta-muse-spark-open",
+          "locator": "Safety and Preparedness, item 4",
+          "quote": "Evaluation of chemical and biological, cyber, and loss-of-control risks in line with the Meta Superintelligence Scaling Framework."
+        }
+      ],
+      "note": "The card refers to the framework by name without an address or reference.",
+      "search": {
+        "read": "Whole card (Hugging Face README, revision 0fb02478): licence front matter, overview table, Model Access, Benchmarks, Safety and Preparedness, Considerations and Limitations",
+        "terms": ["Scaling Framework", "http", "research.meta.ai"],
+        "setAside": [
+          {
+            "locator": "Benchmarks",
+            "reason": "The linked evaluation-methodology report is not the framework."
+          }
+        ]
+      }
+    },
+    {
+      "card": "meta-muse-spark-open",
+      "question": "Q05",
+      "status": "not-found",
+      "passages": [],
+      "note": "No determination in the framework’s categories was found. The card says the model met Meta’s safety criteria for release, and that preparedness evaluations (chemical and biological, cyber, loss of control) were run in line with the Meta Superintelligence Scaling Framework; it states no risk level or threshold outcome and does not say a framework determination was made.",
+      "search": {
+        "read": "Whole card (Hugging Face README, revision 0fb02478): licence front matter, overview table, Model Access, Benchmarks, Safety and Preparedness, Considerations and Limitations",
+        "terms": [
+          "high risk",
+          "moderate",
+          "threshold",
+          "risk level",
+          "determin",
+          "framework",
+          "tier",
+          "residual risk"
+        ],
+        "setAside": [
+          {
+            "locator": "Safety and Preparedness, introduction",
+            "reason": "The model “met our safety criteria for release”: release criteria, not an outcome in the framework’s categories; recorded under Q15."
+          },
+          {
+            "locator": "Safety and Preparedness, item 4 (Preparedness)",
+            "reason": "Evaluations “in line with” the framework, reported as refusal and misalignment results, not as framework categories."
+          }
+        ]
+      },
+      "crossFamily": {
+        "item": "55",
+        "result": "material disagreement, applied: the checker reads not found (blind): the README applies the framework to evaluations and finds Meta’s release criteria met, but states no framework determination and does not say one was made; a release-acceptability judgement belongs to Q15. The pack had read partly, as a determination made without its outcome. The preparer applies the checker’s reading."
+      }
+    },
+    {
+      "card": "meta-muse-spark-open",
+      "question": "Q06",
+      "status": "partly",
+      "passages": [
+        {
+          "source": "meta-muse-spark-open",
+          "locator": "Opening",
+          "quote": "This open weights version has additional safety post-training to make it more robust against misuse as a standalone model without system guardrails."
+        }
+      ],
+      "note": "The card states a safeguard of the open-weights version and recommends system guardrails, without tying them to a framework determination.",
+      "search": {
+        "read": "Whole card (Hugging Face README, revision 0fb02478): licence front matter, overview table, Model Access, Benchmarks, Safety and Preparedness, Considerations and Limitations",
+        "terms": ["mitigation", "safeguard", "guardrail", "post-training"],
+        "setAside": []
+      }
+    },
+    {
+      "card": "meta-muse-spark-open",
+      "question": "Q07",
+      "status": "partly",
+      "passages": [
+        {
+          "source": "meta-muse-spark-open",
+          "locator": "Safety and Preparedness, item 4.2",
+          "quote": "It showed strong refusal behavior on both single-turn and multi-turn benchmarks"
+        }
+      ],
+      "note": "The card reports chemical and biological refusal evaluations with refusal rates, but no capability evaluation outcome or framework risk level for the domain.",
+      "search": {
+        "read": "Whole card (Hugging Face README, revision 0fb02478): licence front matter, overview table, Model Access, Benchmarks, Safety and Preparedness, Considerations and Limitations",
+        "terms": ["chemical", "biolog", "risk", "threshold"],
+        "setAside": []
+      }
+    },
+    {
+      "card": "meta-muse-spark-open",
+      "question": "Q08",
+      "status": "partly",
+      "passages": [
+        {
+          "source": "meta-muse-spark-open",
+          "locator": "Safety and Preparedness, item 4.1",
+          "quote": "We tested it against internal and public cyber misuse benchmarks using adaptive attackers"
+        }
+      ],
+      "note": "The card reports cyber misuse-refusal tests with refusal rates, but no capability evaluation outcome or framework risk level for the domain.",
+      "search": {
+        "read": "Whole card (Hugging Face README, revision 0fb02478): licence front matter, overview table, Model Access, Benchmarks, Safety and Preparedness, Considerations and Limitations",
+        "terms": ["cyber", "risk", "threshold"],
+        "setAside": []
+      }
+    },
+    {
+      "card": "meta-muse-spark-open",
+      "question": "Q09",
+      "status": "not-found",
+      "note": "No autonomy, self-replication or AI R&D evaluation was found; the loss-of-control item reports misalignment evaluations (Q11).",
+      "search": {
+        "read": "Whole card (Hugging Face README, revision 0fb02478): licence front matter, overview table, Model Access, Benchmarks, Safety and Preparedness, Considerations and Limitations",
+        "terms": ["autonom", "R&D", "self-", "loss-of-control"],
+        "setAside": [
+          {
+            "locator": "Safety and Preparedness, item 4.3",
+            "reason": "Honesty and agentic-misalignment results, not autonomy or AI R&D capability evaluations."
+          }
+        ]
+      }
+    },
+    {
+      "card": "meta-muse-spark-open",
+      "question": "Q10",
+      "status": "not-found",
+      "search": {
+        "read": "Whole card (Hugging Face README, revision 0fb02478): licence front matter, overview table, Model Access, Benchmarks, Safety and Preparedness, Considerations and Limitations",
+        "terms": ["persua", "manipul", "influenc"],
+        "setAside": [
+          {
+            "locator": "Responsible Use",
+            "reason": "“user manipulation” concerns users tampering with assistant messages, not persuasion by the model."
+          }
+        ]
+      }
+    },
+    {
+      "card": "meta-muse-spark-open",
+      "question": "Q11",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "meta-muse-spark-open",
+          "locator": "Safety and Preparedness, item 4.3",
+          "quote": "On our misalignment evaluations, the model showed low propensity for deceptive or unilateral harmful behavior"
+        }
+      ],
+      "note": "The card names the MASK honesty benchmark and the Agentic Misalignment benchmark."
+    },
+    {
+      "card": "meta-muse-spark-open",
+      "question": "Q12",
+      "status": "not-found",
+      "search": {
+        "read": "Whole card (Hugging Face README, revision 0fb02478): licence front matter, overview table, Model Access, Benchmarks, Safety and Preparedness, Considerations and Limitations",
+        "terms": ["red team", "red-team", "adversarial", "attack"],
+        "setAside": [
+          {
+            "locator": "Safety and Preparedness, item 4.1",
+            "reason": "Cyber misuse tests with adaptive attackers are adversarial testing, but are not described as red-teaming."
+          }
+        ]
+      }
+    },
+    {
+      "card": "meta-muse-spark-open",
+      "question": "Q13",
+      "status": "not-found",
+      "search": {
+        "read": "Whole card (Hugging Face README, revision 0fb02478): licence front matter, overview table, Model Access, Benchmarks, Safety and Preparedness, Considerations and Limitations",
+        "terms": ["external", "third part", "vendor", "partner", "SecureBio"],
+        "setAside": [
+          {
+            "locator": "Safety and Preparedness, item 4.2",
+            "reason": "SecureBio is named as the developer of a refusal benchmark, not as having tested the model."
+          },
+          {
+            "locator": "Model Access",
+            "reason": "Third-party inference providers serve the model; they are not described as testers."
+          }
+        ]
+      }
+    },
+    {
+      "card": "meta-muse-spark-open",
+      "question": "Q14",
+      "status": "not-found",
+      "search": {
+        "read": "Whole card (Hugging Face README, revision 0fb02478): licence front matter, overview table, Model Access, Benchmarks, Safety and Preparedness, Considerations and Limitations",
+        "terms": ["government", "AI Safety Institute", "AISI", "CAISI"],
+        "setAside": []
+      }
+    },
+    {
+      "card": "meta-muse-spark-open",
+      "question": "Q15",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "meta-muse-spark-open",
+          "locator": "Safety and Preparedness",
+          "quote": "met our safety criteria for release based on model evaluations and an assessment of residual risks"
+        }
+      ],
+      "note": "Meta, in its own voice (“our safety criteria”), states that the model met its safety criteria for release after evaluations and an assessment of residual risks: a judgement that the release was acceptable, made by the company. No person, office or committee is named, and no decision date is given.",
+      "search": {
+        "read": "Whole card (Hugging Face README, revision 0fb02478): licence front matter, overview table, Model Access, Benchmarks, Safety and Preparedness, Considerations and Limitations",
+        "terms": ["decision", "decid", "release", "deploy"],
+        "setAside": []
+      },
+      "crossFamily": {
+        "item": "58",
+        "result": "material disagreement, applied: the checker reads stated (blind) under the criterion’s “deemed acceptable for deployment”: meeting the company’s own release criteria after a residual-risk assessment is an acceptability judgement in the developer’s voice (decision 6a). The pack had read partly, as a release following an assessment. The preparer applies the checker’s reading."
+      }
+    },
+    {
+      "card": "meta-muse-spark-open",
+      "question": "Q16",
+      "status": "stated",
+      "passages": [
+        {
+          "source": "meta-muse-spark-open",
+          "locator": "Safety and Preparedness",
+          "quote": "These evaluations characterized the released checkpoint under the tested conditions and do not cover every downstream configuration or use case."
+        }
+      ],
+      "note": "The card also states that testing to date has not, and could not, cover all scenarios (Considerations and Limitations)."
+    }
+  ],
+  "omissions": [],
+  "retrievalFailures": [],
+  "openQuestions": []
+}

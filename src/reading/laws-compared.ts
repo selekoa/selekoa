@@ -240,6 +240,7 @@ export const lawsCompared: LawsComparedCollection = {
     'Illinois: the act’s official website refused the preparer’s requests, and the Internet Archive reset the connections. The cross-family checker’s session saved the enacted text from an Internet Archive capture of the official PDF (2026-09-08), and the cells were drafted from that saved text. The two model families read the act independently and agreed on the status of 13 of 15 cells. The approval date rests on the checker’s copy of the official bill status record, which the preparer could not open; it is given as a paraphrase, labelled as that copy.',
     'Texts were read in official copies: the EU texts through the Publications Office’s repository, because EUR-Lex returned empty responses; California SB 53 from the Legislative Counsel’s database file, because its website refused requests; New York’s chapters in the Senate print and the Assembly’s bill records, not the session laws; the Chinese measures in the gov.cn policy library. Six web pages served changed bytes between retrievals; every quotation still matched.',
     'Roles: one model family (Claude) drafted the cells, audited 50 of them in a fresh context and adjudicated. A model from another family (GPT, through Codex) checked 122 items, answering 85 of them blind before seeing the drafted answers. Where it disagreed, its status was applied. One cell it disputed (Executive Order 14110, Q06) was settled as not found after its second pass. For Illinois the roles were reversed: the checker read the act first, blind, and the drafter then wrote all fifteen cells without seeing its answers. The maintainer decided the remaining questions, including the four rules for “partly” and Illinois Q05 (partly, as for California’s identical wording). No person has checked the cells against the texts.',
+    'After admission, a blind audit by an OpenAI model of a sample of cells (2026-11-09) led to corrections applied on 2026-11-10: New York Chapter 96 Q09 is stated (the office’s mechanism for reporting critical safety incidents), China’s generative AI measures Q03 is partly, two compute figures are quoted with their exponents, and the dates of the New York, Illinois and Chinese texts are labelled as signature, approval or order dates, or, for the labelling measures, as a date of issue with no kind shown.',
   ],
   notApplicable: [
     {
@@ -252,7 +253,7 @@ export const lawsCompared: LawsComparedCollection = {
       textId: 'cn-generative-ai-interim-measures-2023',
       facetIds: ['L.Q04'],
       reason:
-        'Q03 found no framework document whose publication or submission could be asked about. Article 17 algorithm filing is recorded under Q05 and Q08.',
+        'Q03 finds required risk measures but no written framework document, so there is no document whose publication or submission could be asked about. Article 17 algorithm filing is recorded under Q05 and Q08.',
     },
     {
       textId: 'cn-ai-content-labelling-measures-2025',

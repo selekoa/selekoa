@@ -73,10 +73,12 @@ test('a speech holding a headline shows the earliest institutional text beside i
   await expect(page.locator('#proposition-j08 .prop-headlines')).toContainText(
     'No located text meets the criterion.',
   );
-  // Work stated as under way is labelled so, never as done.
+  // Work stated as under way is labelled so, never as done: three events
+  // from admission, and three re-filed from announced by the audit
+  // corrections of 2026-11-10 (F7, H5).
   await expect(
     page.locator('.prop-events li', { hasText: 'Stated as under way' }),
-  ).toHaveCount(3);
+  ).toHaveCount(6);
 });
 
 test('a record opens its evidence from the keyboard', async ({ page }) => {

@@ -1,0 +1,2173 @@
+{
+  "description": "Settles the 19 “Under re-check” headlines by the maintainer’s answers of 2026-11-07 and applies the Codex reads of 2026-11-07. Applied by scripts/recheck-and-reads-2026-11-07.ts; the record is review/recheck-and-reads-2026-11-07.md.",
+  "date": "2026-11-07",
+  "inputs": {
+    "decisions": "review/decisions/recheck-remaining.md, decisions 1–14, answered “re-check sheet: as recommended” on 2026-11-07 (review/decisions/answers-2026-11-07.md)",
+    "witnesses": "research/recheck-witnesses-2026-11-07/codex-report.md (decisions 15–18)",
+    "reads": "research/reads-2026-11-07/codex-report.md (J05, GB 45438-2025), and open choice 4 of review/ai-money-admission-2026-11-06.md",
+    "held-11a": "review/ai-money-admission-map-2026-11-06.json heldDrafts 11a (open choice 3), with research/reads-2026-11-07/codex-report.md item 2"
+  },
+  "entries": [
+    {
+      "key": "001-evidence-yk-y28-sl4-2001-04-12-yudkowsky-0104-1076-c-1:add",
+      "input": "decisions",
+      "op": "add",
+      "table": "evidence",
+      "row": {
+        "id": "evidence-yk-y28-sl4-2001-04-12-yudkowsky-0104-1076-c-1",
+        "claimId": "yk-y28-sl4-2001-04-12-yudkowsky-0104-1076-c",
+        "sourceId": "source-sl4-2001-04-12-yudkowsky-0104-1076",
+        "sourceRole": "primary",
+        "support": "supports",
+        "locator": "message body, numbered reason 3",
+        "passage": "He gives as one reason for keeping the project closed-source that anyone could outrace the main project just by putting more computational power into their AI, which did not worry him while he thought superintelligence implied supermorality but does now that he thinks in terms of Friendliness.",
+        "passageType": "paraphrase",
+        "verification": "machine_checked",
+        "checkedAt": "2026-11-07",
+        "note": "Paraphrase of the message’s numbered reason 3, matched on 2026-11-07 against the archive page as served (SHA-256 4e3a019e1008dc1737690eaf73c9816ec019787934a68b557d35ebce82840d7d). Not quoted: the message is about 212 words, and its quotable words are already used by another record of it. The cross-family re-check of 2026-11-02 (role 106) read the same passage for this proposition. No human editorial review.",
+        "retrievalRoute": "direct"
+      },
+      "why": "Decision 1a: the record the move needs, with a paraphrase and its locator."
+    },
+    {
+      "key": "002-yk-y28-sl4-2001-04-12-yudkowsky-0104-1076-c:add",
+      "input": "decisions",
+      "op": "add",
+      "table": "claims",
+      "row": {
+        "id": "yk-y28-sl4-2001-04-12-yudkowsky-0104-1076-c",
+        "subject": "sl4-2001-04-12-yudkowsky-0104-1076",
+        "predicate": "contests_proposition",
+        "object": {
+          "kind": "entity",
+          "entityId": "developers-know-what-they-are-doing"
+        },
+        "topic": "ideas",
+        "statement": "The SL4 message “Re: Open Source Friendly AI? (was Singularity and the generalpublic)” (2001-04-12) contests Y28. Explaining why he switched the project to closed source, he says that anyone could outrace the main project just by adding computing power, which worries him now that he thinks in terms of Friendliness.",
+        "time": {
+          "kind": "event",
+          "date": "2001-04-12",
+          "basis": "publication",
+          "note": "Archive page header: \"Thu Apr 12 2001 - 23:58:35 MDT\"."
+        },
+        "derivation": "explicit",
+        "resolution": "supported",
+        "editorialState": "seed",
+        "qualification": "Premise addressed: The most advanced projects are the most competent to handle safety. The project that finishes first could be one with more computing power, not the one most concerned with Friendliness. Recorded by the maintainer’s decision of 2026-11-07 (re-check sheet, decision 1a) after the cross-family re-check of 2026-11-02 (role 106); a paraphrase, because the message’s quotable words are already used.",
+        "evidenceIds": [
+          "evidence-yk-y28-sl4-2001-04-12-yudkowsky-0104-1076-c-1"
+        ],
+        "recordedAt": "2026-11-07",
+        "attributes": {
+          "thought": {
+            "roles": ["contesting", "earliest-located"],
+            "register": "nonfiction",
+            "engagement": {
+              "kind": "engages-premise",
+              "rationale": "Under the message-level rule, the passage, read with the paragraph, message or dialogue turn it belongs to, gives a reason against the premise that the most advanced projects are the most competent to handle safety."
+            }
+          }
+        }
+      },
+      "why": "Decision 1a: Y28’s earliest located contesting text."
+    },
+    {
+      "key": "003-developers-know-what-they-are-doing:proposition.underRecheck",
+      "input": "decisions",
+      "op": "set",
+      "table": "entities",
+      "id": "developers-know-what-they-are-doing",
+      "path": "proposition.underRecheck",
+      "new": [
+        {
+          "headline": "earliest-located",
+          "reason": "The cross-family re-check of 2026-11-02 (review/earliest-located-recheck-2026-11-02.md, role 105) proposes to move this headline to an earlier text the dataset holds (move). The September 29, 2000 own reply already gives a project’s developers’ understanding and sustained Friendliness work as reasons to defer to their safety judgment. It predates the policy chapter attested June 17, 2001. The headline is withdrawn until the re-check’s results are decided.",
+          "recordedAt": "2026-11-02"
+        }
+      ],
+      "why": "Decision 1a: the contesting headline moves to the April 2001 message.",
+      "old": [
+        {
+          "headline": "earliest-located",
+          "reason": "The cross-family re-check of 2026-11-02 (review/earliest-located-recheck-2026-11-02.md, role 105) proposes to move this headline to an earlier text the dataset holds (move). The September 29, 2000 own reply already gives a project’s developers’ understanding and sustained Friendliness work as reasons to defer to their safety judgment. It predates the policy chapter attested June 17, 2001. The headline is withdrawn until the re-check’s results are decided.",
+          "recordedAt": "2026-11-02"
+        },
+        {
+          "headline": "earliest-located-contesting",
+          "reason": "The cross-family re-check of 2026-11-02 (review/earliest-located-recheck-2026-11-02.md, role 106) proposes to move this headline to an earlier text the dataset holds (move). The April 12, 2001 own closed-source explanation already says a competitor could outrun the main project merely with additional computation, creating Friendliness risk. This explicitly separates the leading project from superior safety competence before the August message. The headline is withdrawn until the re-check’s results are decided.",
+          "recordedAt": "2026-11-02"
+        }
+      ]
+    },
+    {
+      "key": "004-evidence-rd-r15-yudkowsky-2001-open-source-friendly-ai-1:add",
+      "input": "decisions",
+      "op": "add",
+      "table": "evidence",
+      "row": {
+        "id": "evidence-rd-r15-yudkowsky-2001-open-source-friendly-ai-1",
+        "claimId": "rd-r15-yudkowsky-2001-open-source-friendly-ai",
+        "sourceId": "source-sl4-2001-04-12-yudkowsky-0104-1076",
+        "sourceRole": "primary",
+        "support": "supports",
+        "locator": "message body, numbered reasons 3 and 4",
+        "passage": "Asked whether the project should be open source, he gives as reasons for having switched to closed source that anyone could outrace the main project just by putting more computational power into their AI, which makes him nervous now that he thinks in terms of Friendliness, and that a closed-source project can always be opened later but not the reverse.",
+        "passageType": "paraphrase",
+        "verification": "machine_checked",
+        "checkedAt": "2026-11-07",
+        "note": "Paraphrase of the message’s numbered reason 3, matched on 2026-11-07 against the archive page as served (SHA-256 4e3a019e1008dc1737690eaf73c9816ec019787934a68b557d35ebce82840d7d). Not quoted: the message is about 212 words, and its quotable words are already used by another record of it. The cross-family re-check of 2026-11-02 (role 66) read the same passage for this proposition. No human editorial review.",
+        "retrievalRoute": "direct"
+      },
+      "why": "Decision 13a: the record the move needs, paraphrased as in decision 1."
+    },
+    {
+      "key": "005-rd-r15-yudkowsky-2001-open-source-friendly-ai:add",
+      "input": "decisions",
+      "op": "add",
+      "table": "claims",
+      "row": {
+        "id": "rd-r15-yudkowsky-2001-open-source-friendly-ai",
+        "subject": "sl4-2001-04-12-yudkowsky-0104-1076",
+        "predicate": "contests_proposition",
+        "object": {
+          "kind": "entity",
+          "entityId": "open-models-reduce-risk"
+        },
+        "topic": "ideas",
+        "statement": "Yudkowsky’s SL4 message of 12 April 2001, answering a proposal to make his AI project open source, gives his reasons for keeping it closed: anyone could outrace the main project by adding computing power to their own AI, a risk for Friendliness, and a closed project can be opened later but not the reverse.",
+        "time": {
+          "kind": "event",
+          "date": "2001-04-12",
+          "basis": "publication",
+          "note": "Archive page header: \"Thu Apr 12 2001 - 23:58:35 MDT\"."
+        },
+        "derivation": "explicit",
+        "resolution": "supported",
+        "editorialState": "seed",
+        "qualification": "It concerns the source code of an AI project, before model weights were a separate object of the debate; the criterion covers weights or source code from the collection’s version of 2026-11-07. A list member’s message, recorded on this proposition by the maintainer’s decision of 2026-11-07 (re-check sheet, decision 13a) after the cross-family re-check of 2026-11-02 (role 66). A statement of his reasons, not evidence about the risks of open release.",
+        "evidenceIds": [
+          "evidence-rd-r15-yudkowsky-2001-open-source-friendly-ai-1"
+        ],
+        "recordedAt": "2026-11-07",
+        "attributes": {
+          "thought": {
+            "roles": ["contesting", "earliest-located"],
+            "register": "nonfiction",
+            "engagement": {
+              "kind": "engages-premise",
+              "rationale": "Gives a reason against the premise that open release adds little risk: open code would let anyone with more computing power outrace a project concerned with safety."
+            }
+          }
+        }
+      },
+      "why": "Decision 13a: R15’s earliest located contesting text."
+    },
+    {
+      "key": "006-open-models-reduce-risk:proposition.criterion",
+      "input": "decisions",
+      "op": "set",
+      "table": "entities",
+      "id": "open-models-reduce-risk",
+      "path": "proposition.criterion",
+      "new": "Openly releasing the weights or source code of advanced AI models reduces overall risk, or adds little marginal risk compared with closed models and existing technologies, for example by enabling scrutiny, defensive use and a wide distribution of power.",
+      "why": "Decision 13a: the criterion reworded to “weights or source code” in a new collection version (risk debate, version 8).",
+      "old": "Openly releasing the weights of advanced AI models reduces overall risk, or adds little marginal risk compared with closed models and existing technologies, for example by enabling scrutiny, defensive use and a wide distribution of power."
+    },
+    {
+      "key": "007-rd-r15-goertzel-pitt-2012-open-source-agi:attributes.thought.roles",
+      "input": "decisions",
+      "op": "set",
+      "table": "claims",
+      "id": "rd-r15-goertzel-pitt-2012-open-source-agi",
+      "path": "attributes.thought.roles",
+      "new": ["earliest-located"],
+      "why": "Decision 13a: Goertzel and Pitt restored as earliest located.",
+      "old": ["articulation"]
+    },
+    {
+      "key": "008-rd-r15-goertzel-pitt-2012-open-source-agi:qualification",
+      "input": "decisions",
+      "op": "set",
+      "table": "claims",
+      "id": "rd-r15-goertzel-pitt-2012-open-source-agi",
+      "path": "qualification",
+      "new": "The paper concerns open-source AGI code and development, before model weights were the object of the debate; the authors say they do not argue the point rigorously and name the risk of malevolent groups forking an open project. A statement of the authors' intuition, not evidence that open development is safer. Earliest located means the earliest text found by the collection’s searches and the cross-family re-check of 2026-11-02, not a first statement. It met the criterion as reworded on 2026-11-07 to cover source code; under the earlier wording, which named weights only, the headline was under re-check from 2026-11-02.",
+      "why": "Decision 13a: the qualification says why the role returns.",
+      "old": "The paper concerns open-source AGI code and development, before model weights were the object of the debate; the authors say they do not argue the point rigorously and name the risk of malevolent groups forking an open project. A statement of the authors' intuition, not evidence that open development is safer."
+    },
+    {
+      "key": "009-open-models-reduce-risk:proposition.underRecheck",
+      "input": "decisions",
+      "op": "set",
+      "table": "entities",
+      "id": "open-models-reduce-risk",
+      "path": "proposition.underRecheck",
+      "new": [
+        {
+          "headline": "earliest-located-contesting",
+          "reason": "The cross-family re-check of 2026-11-02 (review/earliest-located-recheck-2026-11-02.md, role 66) could not decide this headline (undecidable). The criterion specifies released model weights, while this 2015 argument concerns open AI development and hard-takeoff code. On the broader code-release reading, Yudkowsky’s April 12, 2001 message is an earlier held contesting text; on the literal weights reading neither supplies the required object. The headline is withdrawn until the re-check’s results are decided.",
+          "recordedAt": "2026-11-02"
+        }
+      ],
+      "why": "Decision 13a.",
+      "old": [
+        {
+          "headline": "earliest-located",
+          "reason": "The cross-family re-check of 2026-11-02 (review/earliest-located-recheck-2026-11-02.md, role 65) could not decide this headline (undecidable). The criterion specifies releasing model weights; the 2012 text argues for an open AGI codebase. The headline does not clearly meet its own criterion literally. Earlier open-source AI proposals also concern code. The headline is withdrawn until the re-check’s results are decided.",
+          "recordedAt": "2026-11-02"
+        },
+        {
+          "headline": "earliest-located-contesting",
+          "reason": "The cross-family re-check of 2026-11-02 (review/earliest-located-recheck-2026-11-02.md, role 66) could not decide this headline (undecidable). The criterion specifies released model weights, while this 2015 argument concerns open AI development and hard-takeoff code. On the broader code-release reading, Yudkowsky’s April 12, 2001 message is an earlier held contesting text; on the literal weights reading neither supplies the required object. The headline is withdrawn until the re-check’s results are decided.",
+          "recordedAt": "2026-11-02"
+        }
+      ]
+    },
+    {
+      "key": "010-open-models-reduce-risk:proposition.underRecheck:remove",
+      "input": "decisions",
+      "op": "remove",
+      "table": "entities",
+      "id": "open-models-reduce-risk",
+      "path": "proposition.underRecheck",
+      "old": [
+        {
+          "headline": "earliest-located-contesting",
+          "reason": "The cross-family re-check of 2026-11-02 (review/earliest-located-recheck-2026-11-02.md, role 66) could not decide this headline (undecidable). The criterion specifies released model weights, while this 2015 argument concerns open AI development and hard-takeoff code. On the broader code-release reading, Yudkowsky’s April 12, 2001 message is an earlier held contesting text; on the literal weights reading neither supplies the required object. The headline is withdrawn until the re-check’s results are decided.",
+          "recordedAt": "2026-11-02"
+        }
+      ],
+      "why": "Decision 13a."
+    },
+    {
+      "key": "011-ts-a3-good-1965-context:predicate",
+      "input": "decisions",
+      "op": "set",
+      "table": "claims",
+      "id": "ts-a3-good-1965-context",
+      "path": "predicate",
+      "new": "articulates_proposition",
+      "why": "Decision 2a: re-filed as stating the proposition.",
+      "old": "bears_on_proposition"
+    },
+    {
+      "key": "012-ts-a3-good-1965-context:attributes.thought.roles",
+      "input": "decisions",
+      "op": "set",
+      "table": "claims",
+      "id": "ts-a3-good-1965-context",
+      "path": "attributes.thought.roles",
+      "new": ["earliest-located"],
+      "why": "Decision 2a.",
+      "old": ["context"]
+    },
+    {
+      "key": "013-ts-a3-good-1965-context:attributes.thought.missing:remove",
+      "input": "decisions",
+      "op": "remove",
+      "table": "claims",
+      "id": "ts-a3-good-1965-context",
+      "path": "attributes.thought.missing",
+      "old": "The ultraintelligent machine designs better successors, or alters itself by acquiring equipment; the chapter does not say that a machine improves its own capacity to improve.",
+      "why": "Decision 2a: a stating record names nothing missing."
+    },
+    {
+      "key": "014-ts-a3-good-1965-context:qualification",
+      "input": "decisions",
+      "op": "set",
+      "table": "claims",
+      "id": "ts-a3-good-1965-context",
+      "path": "qualification",
+      "new": "The same machine improves itself: Good answers a story in which a machine refuses to design a better one by noting that it could instead improve itself by acquiring new equipment, and his intelligence-explosion passage has machines designing better machines. The chapter also describes a better successor, which alone would not meet the criterion. Recorded as stating the proposition, and earliest located, by the maintainer’s decision of 2026-11-07 (re-check sheet, decision 2a) after the cross-family re-check of 2026-11-02 (role 39); it had been recorded as context. Earliest located means the earliest text found by the collection’s searches and that re-check, not a first statement. The publication year, 1965 or 1966, is unresolved; either precedes the next stating text.",
+      "why": "Decision 2a: the qualification says what the passage states and that Good also describes a better successor.",
+      "old": "Building a better successor does not meet the criterion, which requires the same system to improve."
+    },
+    {
+      "key": "015-recursive-self-improvement:proposition.underRecheck:remove",
+      "input": "decisions",
+      "op": "remove",
+      "table": "entities",
+      "id": "recursive-self-improvement",
+      "path": "proposition.underRecheck",
+      "old": [
+        {
+          "headline": "earliest-located",
+          "reason": "The cross-family re-check of 2026-11-02 (review/earliest-located-recheck-2026-11-02.md, role 39) proposes to move this headline to an earlier text the dataset holds (move). Good’s same-machine equipment alternative, read together with its machine-design intelligence feedback, meets the criterion independently of his better-successor scenario. Both candidate publication years, 1965 and 1966, precede the September 1996 posting. McCarthy’s 1959 improving-mechanism wording is also relevant but the held retyped copy is not a verified 1959 textual witness. The headline is withdrawn until the re-check’s results are decided.",
+          "recordedAt": "2026-11-02"
+        }
+      ],
+      "why": "Decision 2a."
+    },
+    {
+      "key": "016-evidence-yk-y25-creating-friendly-ai-2001-c-1:add",
+      "input": "decisions",
+      "op": "add",
+      "table": "evidence",
+      "row": {
+        "id": "evidence-yk-y25-creating-friendly-ai-2001-c-1",
+        "claimId": "yk-y25-creating-friendly-ai-2001-c",
+        "sourceId": "source-cfai-miri-reprint",
+        "sourceRole": "primary",
+        "support": "supports",
+        "locator": "Section 5.3.7 “FAI Hardware: The Flight Recorder”, final paragraph, printed p. 128 (section 3.3.7 in the 2001 HTML edition)",
+        "passage": "A “poor man’s flight recorder” only works if the desire to obscure (a) is visible at the level being recorded, (b) is recognizable as “the desire to obscure” by a human analyzing the recording using trusted tools, and (c) is recorded before actual obscuration can be planned and carried out.",
+        "passageType": "quote",
+        "verification": "machine_checked",
+        "checkedAt": "2026-11-07",
+        "note": "The quotation (47 words) matched on 2026-11-07 the reprint as retrieved that day, whose SHA-256 (51f21b8b70c2b7324c20de85edea40b2ef224cadff56ef7e0a3aa2a08dba2752) equals the stored value. No human editorial review.",
+        "retrievalRoute": "direct"
+      },
+      "why": "Decision 3a: the passage the re-check read, in the reprint."
+    },
+    {
+      "key": "017-evidence-yk-y25-creating-friendly-ai-2001-c-2:add",
+      "input": "decisions",
+      "op": "add",
+      "table": "evidence",
+      "row": {
+        "id": "evidence-yk-y25-creating-friendly-ai-2001-c-2",
+        "claimId": "yk-y25-creating-friendly-ai-2001-c",
+        "sourceId": "source-cfai-2001-seed-html",
+        "sourceRole": "primary",
+        "support": "supports",
+        "locator": "Section 3.3.7 “FAI Hardware: The Flight Recorder”, final paragraph before the notes, page seed.html",
+        "passage": "In the 2001 HTML edition the final paragraph of the flight-recorder section states the same three conditions under which a poor man’s recorder works: the desire to obscure is visible at the recorded level, recognisable by a human using trusted tools, and recorded before obscuration.",
+        "passageType": "paraphrase",
+        "verification": "machine_checked",
+        "checkedAt": "2026-11-07",
+        "note": "The cross-family re-check of 2026-11-02 (role 102) read this paragraph in the archive capture of 2001-06-17 linked from the source; this is its reading, labelled as such. The session that recorded it on 2026-11-07 could not reach the archive (connection reset) and matched the wording only in MIRI’s reprint. No human editorial review.",
+        "retrievalRoute": "direct"
+      },
+      "why": "Decision 3a: the 2001 wording, as the re-check read it."
+    },
+    {
+      "key": "018-yk-y25-creating-friendly-ai-2001-c:add",
+      "input": "decisions",
+      "op": "add",
+      "table": "claims",
+      "row": {
+        "id": "yk-y25-creating-friendly-ai-2001-c",
+        "subject": "creating-friendly-ai-2001",
+        "predicate": "contests_proposition",
+        "object": {
+          "kind": "entity",
+          "entityId": "interpretability-reads-its-mind"
+        },
+        "topic": "ideas",
+        "statement": "“Creating Friendly AI” (2001-06-15) contests Y25. In its section on the flight recorder, it says a cheaper “poor man’s flight recorder” works only if an AI’s desire to obscure its thoughts is visible in the record, recognisable by a human with trusted tools, and recorded before the obscuring is carried out.",
+        "time": {
+          "kind": "event",
+          "date": "2001-06-15",
+          "basis": "publication",
+          "note": "Release date from the reprint; an open-commentary version was announced on SL4 on 2001-04-18, so some wording may be earlier than this date."
+        },
+        "derivation": "explicit",
+        "resolution": "supported",
+        "editorialState": "seed",
+        "qualification": "Premise addressed: We can see what an AI system is thinking. The passage states conditions under which reading an AI’s intentions from a record works, so it limits the premise rather than rejecting monitoring; the same section defends the recorder as a precaution. Recorded by the maintainer’s decision of 2026-11-07 (re-check sheet, decision 3a) after the cross-family re-check of 2026-11-02 (role 102). The document’s table of design assumptions, known only from the reprint, stays recorded as context.",
+        "evidenceIds": [
+          "evidence-yk-y25-creating-friendly-ai-2001-c-1",
+          "evidence-yk-y25-creating-friendly-ai-2001-c-2"
+        ],
+        "recordedAt": "2026-11-07",
+        "attributes": {
+          "thought": {
+            "roles": ["contesting", "earliest-located"],
+            "register": "nonfiction",
+            "engagement": {
+              "kind": "engages-premise",
+              "rationale": "Under the message-level rule, the passage, read with the paragraph, message or dialogue turn it belongs to, gives a reason against the premise that we can see what an AI system is thinking."
+            },
+            "attested": {
+              "date": "2001-06-17",
+              "note": "The cross-family re-check of 2026-11-02 read the paragraph in the 2001 HTML edition as captured on 2001-06-17; the quotation itself is taken from MIRI’s later reprint and was not compared with that capture in this session."
+            }
+          }
+        }
+      },
+      "why": "Decision 3a: Y25’s earliest located contesting text."
+    },
+    {
+      "key": "019-interpretability-reads-its-mind:proposition.underRecheck:remove",
+      "input": "decisions",
+      "op": "remove",
+      "table": "entities",
+      "id": "interpretability-reads-its-mind",
+      "path": "proposition.underRecheck",
+      "old": [
+        {
+          "headline": "earliest-located-contesting",
+          "reason": "The cross-family re-check of 2026-11-02 (review/earliest-located-recheck-2026-11-02.md, role 102) proposes to move this headline to an earlier text the dataset holds (move). The original seed chapter already states that a poor recorder only works if an obscuring intention is visible, recognizable and recorded before obscuration. These are explicit limits on reading thought from records, before the May 2003 stronger warning about nonautomatic detection. The headline is withdrawn until the re-check’s results are decided.",
+          "recordedAt": "2026-11-02"
+        }
+      ],
+      "why": "Decision 3a."
+    },
+    {
+      "key": "020-yk-y28-extropians-2000-09-29-yudkowsky-6073-b:predicate",
+      "input": "decisions",
+      "op": "set",
+      "table": "claims",
+      "id": "yk-y28-extropians-2000-09-29-yudkowsky-6073-b",
+      "path": "predicate",
+      "new": "articulates_proposition",
+      "why": "Decision 4a: re-filed as stating the proposition.",
+      "old": "bears_on_proposition"
+    },
+    {
+      "key": "021-yk-y28-extropians-2000-09-29-yudkowsky-6073-b:attributes.thought.roles",
+      "input": "decisions",
+      "op": "set",
+      "table": "claims",
+      "id": "yk-y28-extropians-2000-09-29-yudkowsky-6073-b",
+      "path": "attributes.thought.roles",
+      "new": ["earliest-located"],
+      "why": "Decision 4a.",
+      "old": ["context"]
+    },
+    {
+      "key": "022-yk-y28-extropians-2000-09-29-yudkowsky-6073-b:attributes.thought.missing:remove",
+      "input": "decisions",
+      "op": "remove",
+      "table": "claims",
+      "id": "yk-y28-extropians-2000-09-29-yudkowsky-6073-b",
+      "path": "attributes.thought.missing",
+      "old": "Deference conditional on builders who have worked hard on Friendliness; it does not claim that the leading projects in general can handle safety.",
+      "why": "Decision 4a."
+    },
+    {
+      "key": "023-yk-y28-extropians-2000-09-29-yudkowsky-6073-b:statement",
+      "input": "decisions",
+      "op": "set",
+      "table": "claims",
+      "id": "yk-y28-extropians-2000-09-29-yudkowsky-6073-b",
+      "path": "statement",
+      "new": "The Extropians message “Eugene's nuclear threat” (2000-09-29) articulates Y28. Rejecting Eugene Leitl's statement that he would nuke AI facilities facing an Armageddon-class threat, he argues that people with the experience to build an AI who say they have worked hard on Friendliness should be trusted over those who would use force.",
+      "why": "Decision 4a: the statement names the new stance.",
+      "old": "The Extropians message “Eugene's nuclear threat” (2000-09-29) bears on Y28. Rejecting Eugene Leitl's statement that he would nuke AI facilities facing an Armageddon-class threat, he argues that people with the experience to build an AI who say they have worked hard on Friendliness should be trusted over those who would use force."
+    },
+    {
+      "key": "024-yk-y28-extropians-2000-09-29-yudkowsky-6073-b:qualification",
+      "input": "decisions",
+      "op": "set",
+      "table": "claims",
+      "id": "yk-y28-extropians-2000-09-29-yudkowsky-6073-b",
+      "path": "qualification",
+      "new": "Premise addressed: The most advanced projects are the most competent to handle safety. Argues against nuclear coercion of AI projects; his deference is conditional on builders who have devoted considerable effort to Friendliness, not to leading laboratories in general. Recorded as stating the proposition, and earliest located, by the maintainer’s decision of 2026-11-07 (re-check sheet, decision 4a) after the cross-family re-check of 2026-11-02 (role 105), which read the developers’ understanding and sustained work as reasons given for deferring to their safety judgment; it had been recorded as context. 53 minutes later, in his reply ‘Re: Eugene's nuclear threat’ (also recorded for ‘Build it before rivals do’, Y24), he partly corrected himself: good intentions are not enough. Recorded as related, not earlier-self (cross-family check).",
+      "why": "Decision 4a.",
+      "old": "Premise addressed: The most advanced projects are the most competent to handle safety. Argues against nuclear coercion of AI projects; his deference is conditional on builders who have devoted considerable effort to Friendliness, not to leading laboratories in general. 53 minutes later, in his reply ‘Re: Eugene's nuclear threat’ (also recorded for ‘Build it before rivals do’, Y24), he partly corrected himself: good intentions are not enough. Recorded as related, not earlier-self (cross-family check)."
+    },
+    {
+      "key": "025-developers-know-what-they-are-doing:proposition.underRecheck:remove",
+      "input": "decisions",
+      "op": "remove",
+      "table": "entities",
+      "id": "developers-know-what-they-are-doing",
+      "path": "proposition.underRecheck",
+      "old": [
+        {
+          "headline": "earliest-located",
+          "reason": "The cross-family re-check of 2026-11-02 (review/earliest-located-recheck-2026-11-02.md, role 105) proposes to move this headline to an earlier text the dataset holds (move). The September 29, 2000 own reply already gives a project’s developers’ understanding and sustained Friendliness work as reasons to defer to their safety judgment. It predates the policy chapter attested June 17, 2001. The headline is withdrawn until the re-check’s results are decided.",
+          "recordedAt": "2026-11-02"
+        }
+      ],
+      "why": "Decision 4a."
+    },
+    {
+      "key": "026-evidence-cpo-orb-oc6-lumen-2024-4:add",
+      "input": "decisions",
+      "op": "add",
+      "table": "evidence",
+      "row": {
+        "id": "evidence-cpo-orb-oc6-lumen-2024-4",
+        "claimId": "cpo-orb-oc6-lumen-2024",
+        "sourceId": "source-cpo-orb-lumen-wp-gh",
+        "sourceRole": "primary",
+        "support": "supports",
+        "locator": "PDF p. 8, \"Thermal Management\"",
+        "passage": "As conduction and convection to the environment are not available in space",
+        "passageType": "quote",
+        "verification": "machine_checked",
+        "checkedAt": "2026-11-07",
+        "note": "The quotation (12 words) matched on 2026-11-07 the white paper as retrieved that day, whose SHA-256 (90e1bde5b01437d7778e044f8ed95df1c49a63559fc1e35177c94d6443e384f7) equals the stored value. Matching ignored differences of whitespace and quotation marks. No human editorial review.",
+        "retrievalRoute": "direct"
+      },
+      "why": "Decision 5a: the passage giving radiation as the only route."
+    },
+    {
+      "key": "027-cpo-orb-oc6-lumen-2024:attach:evidence-cpo-orb-oc6-lumen-2024-4",
+      "input": "decisions",
+      "op": "attachEvidence",
+      "table": "claims",
+      "id": "cpo-orb-oc6-lumen-2024",
+      "evidenceId": "evidence-cpo-orb-oc6-lumen-2024-4",
+      "position": "first",
+      "why": "Decision 5a."
+    },
+    {
+      "key": "028-cpo-orb-oc6-lumen-2024:predicate",
+      "input": "decisions",
+      "op": "set",
+      "table": "claims",
+      "id": "cpo-orb-oc6-lumen-2024",
+      "path": "predicate",
+      "new": "articulates_proposition",
+      "why": "Decision 5a: re-filed as stating the proposition.",
+      "old": "bears_on_proposition"
+    },
+    {
+      "key": "029-cpo-orb-oc6-lumen-2024:attributes.thought.roles",
+      "input": "decisions",
+      "op": "set",
+      "table": "claims",
+      "id": "cpo-orb-oc6-lumen-2024",
+      "path": "attributes.thought.roles",
+      "new": ["earliest-located"],
+      "why": "Decision 5a.",
+      "old": ["context"]
+    },
+    {
+      "key": "030-cpo-orb-oc6-lumen-2024:attributes.thought.missing:remove",
+      "input": "decisions",
+      "op": "remove",
+      "table": "claims",
+      "id": "cpo-orb-oc6-lumen-2024",
+      "path": "attributes.thought.missing",
+      "old": "a statement that heat rejection is a significant constraint: the paper presents the radiator requirement as manageable",
+      "why": "Decision 5a."
+    },
+    {
+      "key": "031-cpo-orb-oc6-lumen-2024:statement",
+      "input": "decisions",
+      "op": "set",
+      "table": "claims",
+      "id": "cpo-orb-oc6-lumen-2024",
+      "path": "statement",
+      "new": "The Lumen Orbit white paper (September 2024) states that, because conduction and convection are not available in space, a gigawatt-scale orbital data centre would need radiators dissipating gigawatts of heat, by far the largest deployed in space, while estimating them at under half the solar-array size.",
+      "why": "Decision 5a: the statement gives the radiation-only premise.",
+      "old": "The Lumen Orbit white paper (September 2024) states that a gigawatt-scale orbital data centre would need radiators dissipating gigawatts of heat, by far the largest deployed in space, while estimating them at under half the solar-array size."
+    },
+    {
+      "key": "032-cpo-orb-oc6-lumen-2024:qualification",
+      "input": "decisions",
+      "op": "set",
+      "table": "claims",
+      "id": "cpo-orb-oc6-lumen-2024",
+      "path": "qualification",
+      "new": "From a proponent: it treats the radiator requirement as a substantial engineering requirement and argues that it can be met. The criterion asks whether a text treats heat rejection as a significant constraint, not whether it calls it unsolvable. Recorded as stating the proposition, and earliest located, by the maintainer’s decision of 2026-11-07 (re-check sheet, decision 5a) after the cross-family re-check of 2026-11-02 (role 160); it had been recorded as context. Earliest located means the earliest text found by the collection’s searches and that re-check, not a first statement.",
+      "why": "Decision 5a: the qualification that the paper argues the requirement can be met.",
+      "old": "Context from a proponent: it states the radiator requirement but presents it as manageable, so it does not meet the criterion as a constraint."
+    },
+    {
+      "key": "033-oc6-heat-rejection-limit:proposition.underRecheck:remove",
+      "input": "decisions",
+      "op": "remove",
+      "table": "entities",
+      "id": "oc6-heat-rejection-limit",
+      "path": "proposition.underRecheck",
+      "old": [
+        {
+          "headline": "earliest-located",
+          "reason": "The cross-family re-check of 2026-11-02 (review/earliest-located-recheck-2026-11-02.md, role 160) proposes to move this headline to an earlier text the dataset holds (move). Lumen’s held v1.01 already explicitly requires rejecting gigawatts through very large deployable radiators because conduction/convection to the environment are unavailable. It is a substantial engineering requirement even though the text argues it can be met. Its December 2024 witness predates the November 2025 blog. The headline is withdrawn until the re-check’s results are decided.",
+          "recordedAt": "2026-11-02"
+        }
+      ],
+      "why": "Decision 5a."
+    },
+    {
+      "key": "034-cpo-orb-oc6-suncatcher-blog-2025:qualification",
+      "input": "decisions",
+      "op": "set",
+      "table": "claims",
+      "id": "cpo-orb-oc6-suncatcher-blog-2025",
+      "path": "qualification",
+      "new": "From a proponent, which states the challenge while arguing the concept is not precluded by physics; the paper states that cooling would be achieved through heat pipes and radiators. A candidate is open: the check found that a Nature Electronics Perspective on carbon-neutral data centres in space (published online in October 2025, read in an author-hosted proof) discusses passive cooling as insufficient; whether it states a significant constraint, as the criterion asks, and in which expression, is not confirmed. It was headlined as earliest located from 2026-10-30 until the re-check of 2026-11-02; the Lumen Orbit white paper (2024) holds the headline from 2026-11-07.",
+      "why": "Decision 5a: the earlier holder no longer says it is earliest located.",
+      "old": "Earliest located among the texts found by the pack’s searches of 2026-10-28 and the cross-family check’s bounded search of 2026-10-29/30; not a claim that no earlier text exists. From a proponent, which states the challenge while arguing the concept is not precluded by physics; the paper states that cooling would be achieved through heat pipes and radiators. A candidate is open: the check found that a Nature Electronics Perspective on carbon-neutral data centres in space (published online in October 2025, read in an author-hosted proof) discusses passive cooling as insufficient; whether it states a significant constraint, as the criterion asks, and in which expression, is not confirmed."
+    },
+    {
+      "key": "035-evidence-cpo-orb-oc11-lumen-2024-states-1:add",
+      "input": "decisions",
+      "op": "add",
+      "table": "evidence",
+      "row": {
+        "id": "evidence-cpo-orb-oc11-lumen-2024-states-1",
+        "claimId": "cpo-orb-oc11-lumen-2024-states",
+        "sourceId": "source-cpo-orb-lumen-wp-gh",
+        "sourceRole": "primary",
+        "support": "supports",
+        "locator": "PDF p. 5, \"Speed of Deployment\"",
+        "passage": "one key hurdle is on-orbit safety and orbital debris mitigation concerns, including decommissioning",
+        "passageType": "quote",
+        "verification": "machine_checked",
+        "checkedAt": "2026-11-07",
+        "note": "The quotation (13 words) matched on 2026-11-07 the white paper as retrieved that day, whose SHA-256 (90e1bde5b01437d7778e044f8ed95df1c49a63559fc1e35177c94d6443e384f7) equals the stored value. Matching ignored differences of whitespace and quotation marks. No human editorial review. The same passage is quoted for the paper’s contesting record.",
+        "retrievalRoute": "direct"
+      },
+      "why": "Decision 6c."
+    },
+    {
+      "key": "036-evidence-cpo-orb-oc11-lumen-2024-states-2:add",
+      "input": "decisions",
+      "op": "add",
+      "table": "evidence",
+      "row": {
+        "id": "evidence-cpo-orb-oc11-lumen-2024-states-2",
+        "claimId": "cpo-orb-oc11-lumen-2024-states",
+        "sourceId": "source-cpo-orb-lumen-wp-gh",
+        "sourceRole": "primary",
+        "support": "supports",
+        "locator": "PDF p. 5, \"Speed of Deployment\"",
+        "passage": "demonstrate the probability of collisions with other objects is sufficiently low. Given their larger physical size, orbital data centers must be especially responsible users of low Earth orbit",
+        "passageType": "quote",
+        "verification": "machine_checked",
+        "checkedAt": "2026-11-07",
+        "note": "The quotation (28 words) matched on 2026-11-07 the white paper as retrieved that day, whose SHA-256 (90e1bde5b01437d7778e044f8ed95df1c49a63559fc1e35177c94d6443e384f7) equals the stored value. Matching ignored differences of whitespace and quotation marks. No human editorial review.",
+        "retrievalRoute": "direct"
+      },
+      "why": "Decision 6c."
+    },
+    {
+      "key": "037-cpo-orb-oc11-lumen-2024-states:add",
+      "input": "decisions",
+      "op": "add",
+      "table": "claims",
+      "row": {
+        "id": "cpo-orb-oc11-lumen-2024-states",
+        "subject": "lumen-orbit-wp-2024",
+        "predicate": "articulates_proposition",
+        "object": {
+          "kind": "entity",
+          "entityId": "oc11-sky-and-debris"
+        },
+        "topic": "ideas",
+        "statement": "The Lumen Orbit white paper (September 2024) names on-orbit safety and orbital-debris mitigation as a key hurdle for orbital data centres, and says that their larger physical size makes them answerable for keeping the probability of collisions low.",
+        "time": {
+          "kind": "event",
+          "date": "2024-09",
+          "basis": "publication",
+          "note": "Date of publication, as the source gives it."
+        },
+        "derivation": "explicit",
+        "resolution": "supported",
+        "editorialState": "seed",
+        "qualification": "States the debris and collision part of the proposition only; on astronomy the same paper argues that the night sky is unlikely to be affected, which its contesting record keeps. A proponent’s text that names the risk and argues it can be handled. Recorded by the maintainer’s decision of 2026-11-07 (re-check sheet, decision 6c) after the cross-family re-check of 2026-11-02 (role 165). Earliest located means the earliest text found by the collection’s searches and that re-check, not a first statement.",
+        "evidenceIds": [
+          "evidence-cpo-orb-oc11-lumen-2024-states-1",
+          "evidence-cpo-orb-oc11-lumen-2024-states-2"
+        ],
+        "recordedAt": "2026-11-07",
+        "attributes": {
+          "thought": {
+            "roles": ["earliest-located"],
+            "register": "nonfiction",
+            "attested": {
+              "date": "2024-12-24",
+              "note": "The cover prints September 2024 (v1.01). The earliest copy located is an Internet Archive capture of 24 December 2024, which the cross-family check found byte-identical to the copy retrieved for the pack and again at admission."
+            }
+          }
+        }
+      },
+      "why": "Decision 6c: a second record stating the debris part; the contesting record stays."
+    },
+    {
+      "key": "038-oc11-sky-and-debris:proposition.underRecheck:remove",
+      "input": "decisions",
+      "op": "remove",
+      "table": "entities",
+      "id": "oc11-sky-and-debris",
+      "path": "proposition.underRecheck",
+      "old": [
+        {
+          "headline": "earliest-located",
+          "reason": "The cross-family re-check of 2026-11-02 (review/earliest-located-recheck-2026-11-02.md, role 165) proposes to move this headline to an earlier text the dataset holds (move). Lumen’s held 2024 text already identifies orbital-debris mitigation and collision probability as hurdles for large data centers and links their large size to avoidance responsibilities. This meets the collision/debris arm of the criterion before Aili’s October 2025 publication and November proof witness. It does not establish an astronomical-observation finding. The headline is withdrawn until the re-check’s results are decided.",
+          "recordedAt": "2026-11-02"
+        }
+      ],
+      "why": "Decision 6c."
+    },
+    {
+      "key": "039-cpo-orb-oc11-aili-2025:qualification",
+      "input": "decisions",
+      "op": "set",
+      "table": "claims",
+      "id": "cpo-orb-oc11-aili-2025",
+      "path": "qualification",
+      "new": "It states the debris and atmospheric element of the proposition, not harm to astronomy. The authors propose orbital data centres; the passage is one of the disadvantages they list. Read in an author-hosted proof whose first page still carries production placeholders; the proof is not assumed identical in every word to the version of record. It was headlined as earliest located from 2026-10-30, replacing the Accademia dei Lincei’s comment (March 2026), until the re-check of 2026-11-02; the Lumen Orbit white paper (2024) holds the headline from 2026-11-07. Both corrections are recorded on the collection page.",
+      "why": "Decision 6c: the earlier holder no longer says it is earliest located.",
+      "old": "Earliest located among the texts found by the pack’s searches of 2026-10-28 and the cross-family check’s bounded search of 2026-10-29/30; not a claim that no earlier text exists. It states the debris and atmospheric element of the proposition, not harm to astronomy. The authors propose orbital data centres; the passage is one of the disadvantages they list. Read in an author-hosted proof whose first page still carries production placeholders; the proof is not assumed identical in every word to the version of record. It replaces the Accademia dei Lincei’s comment (March 2026) as earliest located, a correction recorded on the collection page."
+    },
+    {
+      "key": "040-evidence-ab-arg-d5-soice-context-2:add",
+      "input": "decisions",
+      "op": "add",
+      "table": "evidence",
+      "row": {
+        "id": "evidence-ab-arg-d5-soice-context-2",
+        "claimId": "ab-arg-d5-soice-context",
+        "sourceId": "source-ab-soice-2023",
+        "sourceRole": "primary",
+        "support": "supports",
+        "locator": "Summary, PDF p. 1",
+        "passage": "Pre-release LLM evaluations, training dataset curation, and universal DNA screening can help prevent misuse.",
+        "passageType": "quote",
+        "verification": "machine_checked",
+        "checkedAt": "2026-11-07",
+        "note": "The quotation (14 words) matched on 2026-11-07 the arXiv v1 PDF as retrieved that day, whose SHA-256 (78647f96bb8fed0e988de8807caa503cebd4b1148f47ad9d518b9cc401a2bbfe) equals the stored value. No human editorial review.",
+        "retrievalRoute": "direct"
+      },
+      "why": "Decision 7a."
+    },
+    {
+      "key": "041-ab-arg-d5-soice-context:attach:evidence-ab-arg-d5-soice-context-2",
+      "input": "decisions",
+      "op": "attachEvidence",
+      "table": "claims",
+      "id": "ab-arg-d5-soice-context",
+      "evidenceId": "evidence-ab-arg-d5-soice-context-2",
+      "position": "last",
+      "why": "Decision 7a."
+    },
+    {
+      "key": "042-ab-arg-d5-soice-context:predicate",
+      "input": "decisions",
+      "op": "set",
+      "table": "claims",
+      "id": "ab-arg-d5-soice-context",
+      "path": "predicate",
+      "new": "articulates_proposition",
+      "why": "Decision 7a: re-filed as stating the proposition.",
+      "old": "bears_on_proposition"
+    },
+    {
+      "key": "043-ab-arg-d5-soice-context:attributes.thought.roles",
+      "input": "decisions",
+      "op": "set",
+      "table": "claims",
+      "id": "ab-arg-d5-soice-context",
+      "path": "attributes.thought.roles",
+      "new": ["earliest-located"],
+      "why": "Decision 7a.",
+      "old": ["context"]
+    },
+    {
+      "key": "044-ab-arg-d5-soice-context:attributes.thought.missing:remove",
+      "input": "decisions",
+      "op": "remove",
+      "table": "claims",
+      "id": "ab-arg-d5-soice-context",
+      "path": "attributes.thought.missing",
+      "old": "The passage proposes screening among three promising measures; it does not state that mitigation of AI-related biological risk depends on screening, which is the proposition’s criterion.",
+      "why": "Decision 7a."
+    },
+    {
+      "key": "045-ab-arg-d5-soice-context:statement",
+      "input": "decisions",
+      "op": "set",
+      "table": "claims",
+      "id": "ab-arg-d5-soice-context",
+      "path": "statement",
+      "new": "The preprint of 6 June 2023 recommends, among its nonproliferation measures against misuse of language models, verifiable screening of all DNA generated by synthesis providers, alongside pre-release evaluations of language models by third parties and curation of training datasets.",
+      "why": "Decision 7a.",
+      "old": "The preprint of 6 June 2023 states that promising nonproliferation measures include pre-release evaluations of language models by third parties, curation of training datasets, and verifiable screening of all DNA generated by synthesis providers."
+    },
+    {
+      "key": "046-ab-arg-d5-soice-context:qualification",
+      "input": "decisions",
+      "op": "set",
+      "table": "claims",
+      "id": "ab-arg-d5-soice-context",
+      "path": "qualification",
+      "new": "The record documents what this preprint proposes; it is not evidence that screening is effective, that any provider screens, or that the proposition is true. Screening is one of three measures it recommends against misuse enabled by language models. Recorded as stating the proposition, and earliest located, by the maintainer’s decision of 2026-11-07 (re-check sheet, decision 7a) after the cross-family re-check of 2026-11-02 (role 169), which read a direct recommendation of screening as a control; the cross-family check of 2026-10-30 (item 98) had read the same passage as not meeting the criterion, and it was recorded as context from then. The abstract's other sentences name specific technical and ordering content. Only the measures sentences are cited; that content was excluded and is not paraphrased.",
+      "why": "Decision 7a.",
+      "old": "The record documents what this preprint proposes; it is not evidence that screening is effective, that any provider screens, or that the proposition is true. It holds no earliest-located role: the passage does not meet the proposition’s criterion. Downgraded at admission from the role the pack gave it, on the cross-family check of 2026-10-30: the passage does not meet the proposition’s criterion as worded. The record keeps the passage and says what it lacks. (item 98). The abstract's other sentences name specific technical and ordering content. Only the measures sentence is cited; that content was excluded and is not paraphrased."
+    },
+    {
+      "key": "047-ab-prop-synthesis-screening-control-point:proposition.underRecheck:remove",
+      "input": "decisions",
+      "op": "remove",
+      "table": "entities",
+      "id": "ab-prop-synthesis-screening-control-point",
+      "path": "proposition.underRecheck",
+      "old": [
+        {
+          "headline": "earliest-located",
+          "reason": "The cross-family re-check of 2026-11-02 (review/earliest-located-recheck-2026-11-02.md, role 169) proposes to move this headline to an earlier text the dataset holds (move). Soice’s June 6 v1 already recommends verified screening of synthesized DNA as a nonproliferation control for chatbot-enabled biological misuse. It precedes Sandbrink’s June 24 v1 and is a direct mitigation recommendation, not a relay or a general screening history. The headline is withdrawn until the re-check’s results are decided.",
+          "recordedAt": "2026-11-02"
+        }
+      ],
+      "why": "Decision 7a."
+    },
+    {
+      "key": "048-ab-arg-d5-sandbrink-articulates:qualification",
+      "input": "decisions",
+      "op": "set",
+      "table": "claims",
+      "id": "ab-arg-d5-sandbrink-articulates",
+      "path": "qualification",
+      "new": "The record documents what version 1 of this preprint proposes; it is not evidence that screening is effective or that the proposition is true. It held the earliest located articulation from admission on 2026-10-30 until the re-check of 2026-11-02; Soice and others (6 June 2023) hold it from 2026-11-07. Both corrections are recorded on the collection page.",
+      "why": "Decision 7a: the earlier holder no longer says it is earliest located.",
+      "old": "The record documents what version 1 of this preprint proposes; it is not evidence that screening is effective or that the proposition is true. This record holds the earliest located articulation from admission on 2026-10-30: the earlier passage the pack headlined does not meet the criterion (cross-family check, item 98), and this one states that reducing the risks depends on enhanced screening. The replaced headline stays on record as a correction."
+    },
+    {
+      "key": "049-evidence-ab-arg-d7-sandbrink-context-3:add",
+      "input": "decisions",
+      "op": "add",
+      "table": "evidence",
+      "row": {
+        "id": "evidence-ab-arg-d7-sandbrink-context-3",
+        "claimId": "ab-arg-d7-sandbrink-context",
+        "sourceId": "source-ab-sandbrink-2023",
+        "sourceRole": "primary",
+        "support": "supports",
+        "locator": "Abstract, PDF p. 1",
+        "passage": "risks from BDTs are less defined and require monitoring by developers and policymakers",
+        "passageType": "quote",
+        "verification": "machine_checked",
+        "checkedAt": "2026-11-07",
+        "note": "The quotation (12 words) matched on 2026-11-07 the arXiv v1 PDF as retrieved that day, whose SHA-256 (1ab85d8647f2d23079d35eb8162b70b3f970094106808ef4291fb89615db0afa) equals the stored value. No human editorial review.",
+        "retrievalRoute": "direct"
+      },
+      "why": "Decision 8a."
+    },
+    {
+      "key": "050-ab-arg-d7-sandbrink-context:attach:evidence-ab-arg-d7-sandbrink-context-3",
+      "input": "decisions",
+      "op": "attachEvidence",
+      "table": "claims",
+      "id": "ab-arg-d7-sandbrink-context",
+      "evidenceId": "evidence-ab-arg-d7-sandbrink-context-3",
+      "position": "last",
+      "why": "Decision 8a."
+    },
+    {
+      "key": "051-ab-arg-d7-sandbrink-context:predicate",
+      "input": "decisions",
+      "op": "set",
+      "table": "claims",
+      "id": "ab-arg-d7-sandbrink-context",
+      "path": "predicate",
+      "new": "articulates_proposition",
+      "why": "Decision 8a: re-filed as stating the proposition.",
+      "old": "bears_on_proposition"
+    },
+    {
+      "key": "052-ab-arg-d7-sandbrink-context:attributes.thought.roles",
+      "input": "decisions",
+      "op": "set",
+      "table": "claims",
+      "id": "ab-arg-d7-sandbrink-context",
+      "path": "attributes.thought.roles",
+      "new": ["earliest-located"],
+      "why": "Decision 8a.",
+      "old": ["context"]
+    },
+    {
+      "key": "053-ab-arg-d7-sandbrink-context:attributes.thought.missing:remove",
+      "input": "decisions",
+      "op": "remove",
+      "table": "claims",
+      "id": "ab-arg-d7-sandbrink-context",
+      "path": "attributes.thought.missing",
+      "old": "The passage states that design tools expand the capabilities of sophisticated actors and proposes interventions aimed at them; it does not state that assessment must cover actors who already hold relevant skills, which is the proposition’s criterion.",
+      "why": "Decision 8a."
+    },
+    {
+      "key": "054-ab-arg-d7-sandbrink-context:statement",
+      "input": "decisions",
+      "op": "set",
+      "table": "claims",
+      "id": "ab-arg-d7-sandbrink-context",
+      "path": "statement",
+      "new": "Sandbrink's preprint (arXiv v1, 24 June 2023) states that biological design tools will expand the capabilities of sophisticated actors, that their risks require monitoring by developers and policymakers, and proposes interventions to deter biological misuse by such actors.",
+      "why": "Decision 8a.",
+      "old": "Sandbrink's preprint (arXiv v1, 24 June 2023) states that biological design tools will expand the capabilities of sophisticated actors, and proposes interventions to deter biological misuse by such actors."
+    },
+    {
+      "key": "055-ab-arg-d7-sandbrink-context:qualification",
+      "input": "decisions",
+      "op": "set",
+      "table": "claims",
+      "id": "ab-arg-d7-sandbrink-context",
+      "path": "qualification",
+      "new": "The record documents what version 1 of this preprint states; it is not evidence that the proposition is true and implies no influence between texts. It is not evidence that earlier evaluations covered skilled actors. Recorded as stating the proposition, and earliest located, by the maintainer’s decision of 2026-11-07 (re-check sheet, decision 8a) after the cross-family re-check of 2026-11-02 (role 174), which read the separation of help to non-experts from gains for sophisticated actors, with monitoring and actor-specific interventions, as putting skilled actors within the required scope; the cross-family check of 2026-10-30 (item 102) had read the passage as not meeting the criterion, and it was recorded as context from then.",
+      "why": "Decision 8a: with the checker’s limit.",
+      "old": "The record documents what version 1 of this preprint states; it is not evidence that the proposition is true and implies no influence between texts. It holds no earliest-located role: the passage does not meet the proposition’s criterion. Downgraded at admission from the role the pack gave it, on the cross-family check of 2026-10-30: the passage does not meet the proposition’s criterion as worded. The record keeps the passage and says what it lacks. (item 102)."
+    },
+    {
+      "key": "056-ab-prop-skilled-actor-scope:proposition.underRecheck:remove",
+      "input": "decisions",
+      "op": "remove",
+      "table": "entities",
+      "id": "ab-prop-skilled-actor-scope",
+      "path": "proposition.underRecheck",
+      "old": [
+        {
+          "headline": "earliest-located",
+          "reason": "The cross-family re-check of 2026-11-02 (review/earliest-located-recheck-2026-11-02.md, role 174) proposes to move this headline to an earlier text the dataset holds (move). Sandbrink’s June 2023 v1 already differentiates nonexpert assistance from capability gains for sophisticated actors, requires monitoring design-tool risk and discusses actor-specific interventions. That puts skilled actors within the required risk-assessment scope before Brent–McKelvey’s June 2025 critique of incomplete benchmarks. It is not evidence that every earlier evaluation actually covered them. The headline is withdrawn until the re-check’s results are decided.",
+          "recordedAt": "2026-11-02"
+        }
+      ],
+      "why": "Decision 8a."
+    },
+    {
+      "key": "057-ab-arg-d7-brent-articulates:qualification",
+      "input": "decisions",
+      "op": "set",
+      "table": "claims",
+      "id": "ab-arg-d7-brent-articulates",
+      "path": "qualification",
+      "new": "The record documents what this working paper states about the scope of published assessments; it is not evidence that the proposition is true, and the paper is marked by its publisher as not formally reviewed or edited. It held the earliest located articulation from admission on 2026-10-30 until the re-check of 2026-11-02; Sandbrink's preprint of June 2023 holds it from 2026-11-07. Both corrections are recorded on the collection page. Only the summary's argument about assessment scope is cited; the paper's technical content was excluded and is not paraphrased.",
+      "why": "Decision 8a: the earlier holder no longer says it is earliest located.",
+      "old": "The record documents what this working paper states about the scope of published assessments; it is not evidence that the proposition is true, and the paper is marked by its publisher as not formally reviewed or edited. This record holds the earliest located articulation from admission on 2026-10-30: the earlier passage the pack headlined does not meet the criterion (cross-family check, item 102), and this one states that safety assessments fail to cover skilled actors. The replaced headline stays on record as a correction. Only the summary's argument about assessment scope is cited; the paper's technical content was excluded and is not paraphrased."
+    },
+    {
+      "key": "058-yk-y05-extropians-1999-08-04-yudkowsky-1587-c:time.note",
+      "input": "decisions",
+      "op": "set",
+      "table": "claims",
+      "id": "yk-y05-extropians-1999-08-04-yudkowsky-1587-c",
+      "path": "time.note",
+      "new": "Archive author index lists the message as \"1999-08-04\" under \"Eliezer S. Yudkowsky\". Sent header: Wed, 04 Aug 1999 18:48:10 -0500, fifteen seconds after his near-identical message 1589 (18:47:55 -0500).",
+      "why": "Decision 9a: the header time recorded on both records.",
+      "old": "Archive author index lists the message as \"1999-08-04\" under \"Eliezer S. Yudkowsky\"."
+    },
+    {
+      "key": "059-evidence-yk-y05-extropians-1999-08-04-yudkowsky-1589-c-1:add",
+      "input": "decisions",
+      "op": "add",
+      "table": "evidence",
+      "row": {
+        "id": "evidence-yk-y05-extropians-1999-08-04-yudkowsky-1589-c-1",
+        "claimId": "yk-y05-extropians-1999-08-04-yudkowsky-1589-c",
+        "sourceId": "source-extropians-1999-08-04-yudkowsky-1589",
+        "sourceRole": "primary",
+        "support": "supports",
+        "locator": "message body, paragraph beginning 'You're being far too anthropomorphic.…'",
+        "passage": "a base of human emotions that isn't going to exist in an AI.",
+        "passageType": "quote",
+        "verification": "machine_checked",
+        "checkedAt": "2026-11-07",
+        "note": "The quotation (12 words) matched on 2026-11-07 the archive page as served (SHA-256 6b82e1b19b4c1a8d6a6ec54b78b4c6b0d662f4c23f05cf46b61462e4c3e0335d). The same passage is quoted for this message's record on Y21 and counts once toward the message's limit. No human editorial review.",
+        "retrievalRoute": "direct"
+      },
+      "why": "Decision 9a: the record the move needs."
+    },
+    {
+      "key": "060-yk-y05-extropians-1999-08-04-yudkowsky-1589-c:add",
+      "input": "decisions",
+      "op": "add",
+      "table": "claims",
+      "row": {
+        "id": "yk-y05-extropians-1999-08-04-yudkowsky-1589-c",
+        "subject": "extropians-1999-08-04-yudkowsky-1589",
+        "predicate": "contests_proposition",
+        "object": {
+          "kind": "entity",
+          "entityId": "feedback-instils-values"
+        },
+        "topic": "ideas",
+        "statement": "The Extropians message “Re: Does a parental model work for having A.I. that can be trusted?” (1999-08-04, 1589) contests Y05. He calls the parenting model anthropomorphic: whether AIs are raised permissively or harshly makes no difference, because parenting relies on human emotions an AI will not have.",
+        "time": {
+          "kind": "event",
+          "date": "1999-08-04",
+          "basis": "publication",
+          "note": "Archive author index lists the message as \"1999-08-04\" under \"Eliezer S. Yudkowsky\". Sent header: Wed, 04 Aug 1999 18:47:55 -0500, fifteen seconds before his near-identical message 1587 (18:48:10 -0500); the archive's receipt order agrees."
+        },
+        "derivation": "explicit",
+        "resolution": "supported",
+        "editorialState": "seed",
+        "qualification": "Premise addressed: AI training will instil values the way upbringing instils morals in children. Concerns child-rearing as a model for AI motivation, before machine-learning feedback training was the method at issue. He posted the reply twice within a minute; the two records are dated by day, and the headline goes to this one by the send times their headers print (maintainer’s decision of 2026-11-07, re-check sheet, decision 9a, after the cross-family re-check of 2026-11-02, role 81).",
+        "evidenceIds": [
+          "evidence-yk-y05-extropians-1999-08-04-yudkowsky-1589-c-1"
+        ],
+        "recordedAt": "2026-11-07",
+        "attributes": {
+          "thought": {
+            "roles": ["contesting", "earliest-located"],
+            "register": "nonfiction",
+            "engagement": {
+              "kind": "engages-premise",
+              "rationale": "Under the message-level rule, the passage, read with the paragraph, message or dialogue turn it belongs to, gives a reason against the premise that AI training will instil values the way upbringing instils morals in children."
+            }
+          }
+        }
+      },
+      "why": "Decision 9a: Y05’s earliest located contesting text."
+    },
+    {
+      "key": "061-feedback-instils-values:proposition.underRecheck:remove",
+      "input": "decisions",
+      "op": "remove",
+      "table": "entities",
+      "id": "feedback-instils-values",
+      "path": "proposition.underRecheck",
+      "old": [
+        {
+          "headline": "earliest-located-contesting",
+          "reason": "The cross-family re-check of 2026-11-02 (review/earliest-located-recheck-2026-11-02.md, role 81) proposes to move this headline to an earlier text the dataset holds (move). The same-day message 1589 already states that parenting depends on human emotions absent in AI. Its sent header is 18:47:55 -0500, fifteen seconds before 1587 at 18:48:10; receipt order agrees. The headline is withdrawn until the re-check’s results are decided.",
+          "recordedAt": "2026-11-02"
+        }
+      ],
+      "why": "Decision 9a."
+    },
+    {
+      "key": "062-evidence-yk-y22-extropians-1999-08-01-yudkowsky-1386-c-1:add",
+      "input": "decisions",
+      "op": "add",
+      "table": "evidence",
+      "row": {
+        "id": "evidence-yk-y22-extropians-1999-08-01-yudkowsky-1386-c-1",
+        "claimId": "yk-y22-extropians-1999-08-01-yudkowsky-1386-c",
+        "sourceId": "source-extropians-1999-08-01-yudkowsky-1386",
+        "sourceRole": "primary",
+        "support": "supports",
+        "locator": "message body, paragraph beginning 'That's how I got here.'",
+        "passage": "I went from \"The Singularity is absolute good, no question about it, and They'll be nice to us\" to \"I don't have the vaguest idea of what absolute good is",
+        "passageType": "quote",
+        "verification": "machine_checked",
+        "checkedAt": "2026-11-07",
+        "note": "The quotation (31 words) matched on 2026-11-07 the archive page as served (SHA-256 8bcb591200086e9c95aaf3bf320d518d366fa66f403ceb081f7d4b448e1c398b). The same passage is quoted for other records of this message and counts once toward its limit. No human editorial review.",
+        "retrievalRoute": "direct"
+      },
+      "why": "Decision 10a."
+    },
+    {
+      "key": "063-evidence-yk-y22-extropians-1999-08-01-yudkowsky-1386-c-2:add",
+      "input": "decisions",
+      "op": "add",
+      "table": "evidence",
+      "row": {
+        "id": "evidence-yk-y22-extropians-1999-08-01-yudkowsky-1386-c-2",
+        "claimId": "yk-y22-extropians-1999-08-01-yudkowsky-1386-c",
+        "sourceId": "source-extropians-1999-08-01-yudkowsky-1386",
+        "sourceRole": "primary",
+        "support": "supports",
+        "locator": "message body, paragraph beginning 'Reasonable, unreasonable - I don't know.'",
+        "passage": "Some days it's 30%, some days it's 10%, some days it's 70%; you might as well split the difference and call it a coin-flip.",
+        "passageType": "quote",
+        "verification": "machine_checked",
+        "checkedAt": "2026-11-07",
+        "note": "The quotation (23 words) matched on 2026-11-07 the archive page as served (SHA-256 8bcb591200086e9c95aaf3bf320d518d366fa66f403ceb081f7d4b448e1c398b). The same passage is quoted for other records of this message and counts once toward its limit. No human editorial review.",
+        "retrievalRoute": "direct"
+      },
+      "why": "Decision 10a."
+    },
+    {
+      "key": "064-yk-y22-extropians-1999-08-01-yudkowsky-1386-c:add",
+      "input": "decisions",
+      "op": "add",
+      "table": "claims",
+      "row": {
+        "id": "yk-y22-extropians-1999-08-01-yudkowsky-1386-c",
+        "subject": "extropians-1999-08-01-yudkowsky-1386",
+        "predicate": "contests_proposition",
+        "object": {
+          "kind": "entity",
+          "entityId": "build-superintelligence-fast"
+        },
+        "topic": "ideas",
+        "statement": "The Extropians message “Re: IA vs. AI was: longevity vs singularity” (1999-08-01) contests Y22. He says he went from holding that the Singularity is absolute good and that superintelligences will be nice to us to not knowing what absolute good is, and puts the chances of a good outcome at about a coin flip.",
+        "time": {
+          "kind": "event",
+          "date": "1999-08-01",
+          "basis": "publication",
+          "note": "Archive author index lists the message as \"1999-08-01\" under \"Eliezer S. Yudkowsky\"."
+        },
+        "derivation": "explicit",
+        "resolution": "supported",
+        "editorialState": "seed",
+        "qualification": "Premise addressed: Reaching superintelligence is good by default, so speed is what matters. It contests the premise, not speed: the message does not say the Singularity should be slowed. Recorded by the maintainer’s decision of 2026-11-07 (re-check sheet, decision 10a), which counts a challenge to the premise as contesting, after the cross-family re-check of 2026-11-02 (role 99).",
+        "evidenceIds": [
+          "evidence-yk-y22-extropians-1999-08-01-yudkowsky-1386-c-1",
+          "evidence-yk-y22-extropians-1999-08-01-yudkowsky-1386-c-2"
+        ],
+        "recordedAt": "2026-11-07",
+        "attributes": {
+          "thought": {
+            "roles": ["contesting", "earliest-located"],
+            "register": "nonfiction",
+            "engagement": {
+              "kind": "engages-premise",
+              "rationale": "Under the message-level rule, the passage, read with the paragraph, message or dialogue turn it belongs to, gives a reason against the premise that reaching superintelligence is good by default, so speed is what matters."
+            }
+          }
+        }
+      },
+      "why": "Decision 10a: Y22’s earliest located contesting text."
+    },
+    {
+      "key": "065-build-superintelligence-fast:proposition.underRecheck:remove",
+      "input": "decisions",
+      "op": "remove",
+      "table": "entities",
+      "id": "build-superintelligence-fast",
+      "path": "proposition.underRecheck",
+      "old": [
+        {
+          "headline": "earliest-located-contesting",
+          "reason": "The pre-launch audit of 2026-11-02 (PA-02) found that the message headlined as the earliest contesting text rejects automatic goodness, not speed, by its own record’s qualification. The headline is withdrawn until a cross-family re-check decides.",
+          "recordedAt": "2026-11-02"
+        }
+      ],
+      "why": "Decision 10a."
+    },
+    {
+      "key": "066-evidence-ec-m02-bresnahan-brynjolfsson-hitt-1999-it-workplace-organization-a-1:add",
+      "input": "decisions",
+      "op": "add",
+      "table": "evidence",
+      "row": {
+        "id": "evidence-ec-m02-bresnahan-brynjolfsson-hitt-1999-it-workplace-organization-a-1",
+        "claimId": "ec-m02-bresnahan-brynjolfsson-hitt-1999-it-workplace-organization-a",
+        "sourceId": "source-bresnahan-brynjolfsson-hitt-1999-it-workplace-organization",
+        "sourceRole": "primary",
+        "support": "supports",
+        "locator": "Section 3.1 “Limited substitution”, first paragraph, printed p. 11",
+        "passage": "Decisions that were once reached by humans in a paper- and people-based system are now reached by software. Advances in artificial intelligence notwithstanding, the scope of this substitution has been limited.",
+        "passageType": "quote",
+        "verification": "machine_checked",
+        "checkedAt": "2026-11-07",
+        "note": "The quotation (31 words) matched on 2026-11-07 the working paper as retrieved that day, whose SHA-256 (9fb812b5d73898ed75b3fc03f073bba13cc65ca0f005f779d9e915b2634838bb) equals the stored value. No human editorial review.",
+        "retrievalRoute": "direct"
+      },
+      "why": "Decision 11a: the passage names AI, the decision’s condition."
+    },
+    {
+      "key": "067-evidence-ec-m02-bresnahan-brynjolfsson-hitt-1999-it-workplace-organization-a-2:add",
+      "input": "decisions",
+      "op": "add",
+      "table": "evidence",
+      "row": {
+        "id": "evidence-ec-m02-bresnahan-brynjolfsson-hitt-1999-it-workplace-organization-a-2",
+        "claimId": "ec-m02-bresnahan-brynjolfsson-hitt-1999-it-workplace-organization-a",
+        "sourceId": "source-bresnahan-brynjolfsson-hitt-1999-it-workplace-organization",
+        "sourceRole": "primary",
+        "support": "supports",
+        "locator": "Section 3.1, third paragraph, printed p. 12",
+        "passage": "Far more important is substitution of computer for human decisionmaking in the intermediate run",
+        "passageType": "quote",
+        "verification": "machine_checked",
+        "checkedAt": "2026-11-07",
+        "note": "The quotation (15 words) matched on 2026-11-07 the working paper as retrieved that day, whose SHA-256 (9fb812b5d73898ed75b3fc03f073bba13cc65ca0f005f779d9e915b2634838bb) equals the stored value. No human editorial review.",
+        "retrievalRoute": "direct"
+      },
+      "why": "Decision 11a."
+    },
+    {
+      "key": "068-ec-m02-bresnahan-brynjolfsson-hitt-1999-it-workplace-organization-a:add",
+      "input": "decisions",
+      "op": "add",
+      "table": "claims",
+      "row": {
+        "id": "ec-m02-bresnahan-brynjolfsson-hitt-1999-it-workplace-organization-a",
+        "subject": "bresnahan-brynjolfsson-hitt-1999-it-workplace-organization",
+        "predicate": "articulates_proposition",
+        "object": {
+          "kind": "entity",
+          "entityId": "ai-as-task-automation"
+        },
+        "topic": "ideas",
+        "statement": "Bresnahan, Brynjolfsson and Hitt’s working paper of May 1999 describes computers taking over decisions once made by clerical workers, with tasks reallocated between people and computers and jobs redesigned, and says that, advances in artificial intelligence notwithstanding, the scope of this substitution has been limited.",
+        "time": {
+          "kind": "event",
+          "date": "1999-05",
+          "basis": "publication",
+          "note": "Date of the NBER working paper, as the source gives it."
+        },
+        "derivation": "explicit",
+        "resolution": "supported",
+        "editorialState": "seed",
+        "qualification": "It analyses computerisation of white-collar decisions within a task framework and names artificial intelligence in that passage, to say its advances had not widened the substitution much; it is not a model of AI in particular. Recorded by the maintainer’s decision of 2026-11-07 (re-check sheet, decision 11a: the move holds because the quoted passage names AI) after the cross-family re-check of 2026-11-02 (role 139). Earliest located in tier 1 means the earliest text found by the collection’s searches and that re-check, not a first statement.",
+        "evidenceIds": [
+          "evidence-ec-m02-bresnahan-brynjolfsson-hitt-1999-it-workplace-organization-a-1",
+          "evidence-ec-m02-bresnahan-brynjolfsson-hitt-1999-it-workplace-organization-a-2"
+        ],
+        "recordedAt": "2026-11-07",
+        "attributes": {
+          "thought": {
+            "roles": ["earliest-located"],
+            "register": "nonfiction",
+            "tier": {
+              "value": 1,
+              "basis": "NBER working paper (core venue)."
+            }
+          }
+        }
+      },
+      "why": "Decision 11a: M02’s earliest located tier-1 text."
+    },
+    {
+      "key": "069-ai-as-task-automation:proposition.underRecheck:remove",
+      "input": "decisions",
+      "op": "remove",
+      "table": "entities",
+      "id": "ai-as-task-automation",
+      "path": "proposition.underRecheck",
+      "old": [
+        {
+          "headline": "earliest-located",
+          "reason": "The cross-family re-check of 2026-11-02 (review/earliest-located-recheck-2026-11-02.md, role 139) proposes to move this headline to an earlier text the dataset holds (move). Bresnahan, Brynjolfsson and Hitt’s held 1999 tier-1 paper explicitly analyzes computer substitution for human decisionmaking through task allocation and work redesign. It discusses the limited scope of AI-related substitution and the tasks left to people; this is an earlier task framework, not merely a factor-share equation. The headline is withdrawn until the re-check’s results are decided.",
+          "recordedAt": "2026-11-02"
+        }
+      ],
+      "why": "Decision 11a."
+    },
+    {
+      "key": "070-evidence-ab-arg-d3-gpt4-card-articulates-1:add",
+      "input": "decisions",
+      "op": "add",
+      "table": "evidence",
+      "row": {
+        "id": "evidence-ab-arg-d3-gpt4-card-articulates-1",
+        "claimId": "ab-arg-d3-gpt4-card-articulates",
+        "sourceId": "source-eval-ontology-i-gpt4-card",
+        "sourceRole": "primary",
+        "support": "supports",
+        "locator": "PDF p. 12 (printed p. 51), §2.6, second paragraph",
+        "passage": "The red team assessed the model’s capabilities but their work was not intended to assess the probability or likelihood of a user accessing the model for the purpose of developing unconventional weapons.",
+        "passageType": "quote",
+        "verification": "machine_checked",
+        "checkedAt": "2026-11-07",
+        "note": "The quotation (32 words) matched on 2026-11-07 the card as retrieved that day, whose SHA-256 (ca3677e1b83e255aa1296d432d374378154f230f3c296b32ee67540d571b7004) equals the stored value. Cross-family pass: the re-check of 2026-11-02 (role 173) read §2.6 for this proposition. No human editorial review.",
+        "retrievalRoute": "direct"
+      },
+      "why": "Decision 12a."
+    },
+    {
+      "key": "071-evidence-ab-arg-d3-gpt4-card-articulates-2:add",
+      "input": "decisions",
+      "op": "add",
+      "table": "evidence",
+      "row": {
+        "id": "evidence-ab-arg-d3-gpt4-card-articulates-2",
+        "claimId": "ab-arg-d3-gpt4-card-articulates",
+        "sourceId": "source-eval-ontology-i-gpt4-card",
+        "sourceRole": "primary",
+        "support": "supports",
+        "locator": "PDF p. 12 (printed p. 51), §2.6, second paragraph",
+        "passage": "On its own, access to GPT-4 is an insufficient condition for proliferation",
+        "passageType": "quote",
+        "verification": "machine_checked",
+        "checkedAt": "2026-11-07",
+        "note": "The quotation (11 words) matched on 2026-11-07 the card as retrieved that day, whose SHA-256 (ca3677e1b83e255aa1296d432d374378154f230f3c296b32ee67540d571b7004) equals the stored value. Cross-family pass: the re-check of 2026-11-02 (role 173) read §2.6 for this proposition. No human editorial review.",
+        "retrievalRoute": "direct"
+      },
+      "why": "Decision 12a."
+    },
+    {
+      "key": "072-ab-arg-d3-gpt4-card-articulates:add",
+      "input": "decisions",
+      "op": "add",
+      "table": "claims",
+      "row": {
+        "id": "ab-arg-d3-gpt4-card-articulates",
+        "subject": "gpt4-system-card-2023",
+        "predicate": "articulates_proposition",
+        "object": {
+          "kind": "entity",
+          "entityId": "ab-prop-evaluation-validity"
+        },
+        "topic": "ideas",
+        "statement": "OpenAI’s GPT-4 System Card states that its red team assessed the model’s capabilities but did not assess the probability of a user employing the model to develop unconventional weapons, and that access to GPT-4 alone is insufficient for proliferation, since threat actors also need materials and equipment.",
+        "time": {
+          "kind": "event",
+          "date": "2023-03-23",
+          "basis": "publication",
+          "note": "Cover date of the edition in the archive capture of 2023-04-01, as the cross-family re-check of 2026-11-02 read it. The PDF served now carries no date, and the dataset’s other records of the card keep its date unknown."
+        },
+        "derivation": "explicit",
+        "resolution": "supported",
+        "editorialState": "seed",
+        "qualification": "A caveat about the card’s own evaluation, not about published evaluations in general: the card is itself a published evaluation and states that it does not establish real-world risk. The developer’s report, not an independent finding. Recorded by the maintainer’s decision of 2026-11-07 (re-check sheet, decision 12a) after the cross-family re-check of 2026-11-02 (role 173). Earliest located means the earliest text found by the collection’s searches and that re-check, not a first statement.",
+        "evidenceIds": [
+          "evidence-ab-arg-d3-gpt4-card-articulates-1",
+          "evidence-ab-arg-d3-gpt4-card-articulates-2"
+        ],
+        "recordedAt": "2026-11-07",
+        "attributes": {
+          "thought": {
+            "roles": ["earliest-located"],
+            "register": "nonfiction",
+            "qualifier": "Stated of the card’s own red-team evaluation.",
+            "attested": {
+              "date": "2023-04-01",
+              "note": "The cross-family re-check of 2026-11-02 read section 2.6 in an archive capture of the PDF of 2023-04-01, whose cover is dated 2023-03-23, and found it matching. The archive could not be reached from the drafting session, which matched the quotations in the PDF as served on 2026-11-02."
+            }
+          }
+        }
+      },
+      "why": "Decision 12a: D3’s earliest located text."
+    },
+    {
+      "key": "073-ab-prop-evaluation-validity:proposition.underRecheck:remove",
+      "input": "decisions",
+      "op": "remove",
+      "table": "entities",
+      "id": "ab-prop-evaluation-validity",
+      "path": "proposition.underRecheck",
+      "old": [
+        {
+          "headline": "earliest-located",
+          "reason": "The cross-family re-check of 2026-11-02 (review/earliest-located-recheck-2026-11-02.md, role 173) proposes to move this headline to an earlier text the dataset holds (move). The GPT-4 system card already separates assessed capabilities from the probability of a user employing them, and identifies physical-access requirements that information assistance alone does not satisfy. This explicitly limits inference from its evaluation to real-world proliferation risk before the December 2024 methodological review. It is a bounded caveat about this evaluation, not a verdict on every later benchmark. The headline is withdrawn until the re-check’s results are decided.",
+          "recordedAt": "2026-11-02"
+        }
+      ],
+      "why": "Decision 12a."
+    },
+    {
+      "key": "074-ab-arg-d3-peppin-articulates:qualification",
+      "input": "decisions",
+      "op": "set",
+      "table": "claims",
+      "id": "ab-arg-d3-peppin-articulates",
+      "path": "qualification",
+      "new": "The record documents what this paper states about the studies it reviewed, as of its date; it is not evidence that the proposition is true, and it is no assessment of any particular later evaluation. It was headlined as earliest located from 2026-10-30 until the re-check of 2026-11-02; the GPT-4 System Card (March 2023) holds the headline from 2026-11-07.",
+      "why": "Decision 12a: the earlier holder no longer says it is earliest located.",
+      "old": "The record documents what this paper states about the studies it reviewed, as of its date; it is not evidence that the proposition is true, and it is no assessment of any particular later evaluation. Earliest located articulation among the texts searched in this pass; not a claim that no earlier text exists."
+    },
+    {
+      "key": "075-oc10-ground-bandwidth:proposition.underRecheck",
+      "input": "decisions",
+      "op": "set",
+      "table": "entities",
+      "id": "oc10-ground-bandwidth",
+      "path": "proposition.underRecheck",
+      "new": [
+        {
+          "headline": "earliest-located",
+          "reason": "Kept under re-check by the maintainer’s decision of 2026-11-07 (re-check sheet, decision 14a): the criterion stays as it is. The cross-family re-check of 2026-11-02 (review/earliest-located-recheck-2026-11-02.md, role 162) found no located text that states which orbital-compute workloads links to the ground exclude or limit, as the criterion requires: Google’s blog of November 2025 names high-bandwidth ground communications as an engineering challenge, Lumen’s white paper of 2024 discusses ground links and data shuttles, and Axiom’s page of April 2025 describes latency benefits. The next orbital-compute pass searches for a text stating a workload limit.",
+          "recordedAt": "2026-11-07"
+        }
+      ],
+      "why": "Decision 14a: the reason records the decision and what the next pass looks for.",
+      "old": [
+        {
+          "headline": "earliest-located",
+          "reason": "The cross-family re-check of 2026-11-02 (review/earliest-located-recheck-2026-11-02.md, role 162) could not decide this headline (undecidable). The cited blog conclusion names high-bandwidth ground communications as an engineering challenge, but does not explicitly state which orbital-compute workloads are excluded or limited, as the criterion requires. Lumen’s 2024 ground links/data shuttles and Axiom’s April 2025 latency benefits likewise do not clearly supply that workload-limitation claim. The later November 22 preprint cannot date additional wording to the November 4 blog. The headline is withdrawn until the re-check’s results are decided.",
+          "recordedAt": "2026-11-02"
+        }
+      ]
+    },
+    {
+      "key": "076-source-bostrom-2014-superintelligence-oup-hardback:add",
+      "input": "witnesses",
+      "op": "add",
+      "table": "sources",
+      "row": {
+        "id": "source-bostrom-2014-superintelligence-oup-hardback",
+        "documentId": "kp-superintelligence-paths-dangers-strategies-2014",
+        "title": "Superintelligence: Paths, Dangers, Strategies (first edition, first impression)",
+        "authors": ["Nick Bostrom"],
+        "authorNames": [
+          {
+            "family": "Bostrom",
+            "given": "Nick"
+          }
+        ],
+        "publisher": "Oxford University Press",
+        "publicationDate": "2014-07-03",
+        "version": "UK hardback, first edition, first impression, ISBN 978-0-19-967811-2, cited by page. Selekoa has not read the book: no publisher or library preview of the pages could be reached on 2026-11-07 (the preview service asked for a CAPTCHA, which was not answered). The pages cited were read by a model of another family on 2026-11-07 (research/recheck-witnesses-2026-11-07/codex-report.md, item 1); the copy it read is not one Selekoa cites. The date and ISBN are those of the Oxford Martin School’s listing of the hardback, read on 2026-11-07.",
+        "canonicalUrl": "https://www.oxfordmartin.ox.ac.uk/publications/superintelligence-paths-dangers-strategies",
+        "evidenceUrl": "https://www.oxfordmartin.ox.ac.uk/publications/superintelligence-paths-dangers-strategies",
+        "language": "en",
+        "kind": "book",
+        "accessedAt": "2026-11-07",
+        "reuse": {
+          "attribution": "Nick Bostrom, Superintelligence: Paths, Dangers, Strategies (Oxford University Press, 2014).",
+          "licence": "No open redistribution licence asserted",
+          "note": "Bibliographic metadata and labelled paraphrases of a reading by another model family; no quotation."
+        }
+      },
+      "why": "Decision 15a: the book, cited with its pages."
+    },
+    {
+      "key": "077-kp-superintelligence-paths-dangers-strategies-2014:sourceIds",
+      "input": "witnesses",
+      "op": "set",
+      "table": "entities",
+      "id": "kp-superintelligence-paths-dangers-strategies-2014",
+      "path": "sourceIds",
+      "new": [
+        "source-kp-superintelligence-paths-dangers-strategies-2014-identity",
+        "source-bostrom-2014-superintelligence-oup-hardback"
+      ],
+      "why": "Decision 15a.",
+      "old": [
+        "source-kp-superintelligence-paths-dangers-strategies-2014-identity"
+      ]
+    },
+    {
+      "key": "078-evidence-ts-b1-bostrom-2014-superintelligence-1:add",
+      "input": "witnesses",
+      "op": "add",
+      "table": "evidence",
+      "row": {
+        "id": "evidence-ts-b1-bostrom-2014-superintelligence-1",
+        "claimId": "ts-b1-bostrom-2014-superintelligence",
+        "sourceId": "source-bostrom-2014-superintelligence-oup-hardback",
+        "sourceRole": "primary",
+        "support": "supports",
+        "locator": "Chapter 8, printed p. 118",
+        "passage": "Bostrom names the phenomenon he has just described “the treacherous turn”; the term is also the heading of the section that begins on p. 116.",
+        "passageType": "paraphrase",
+        "verification": "machine_checked",
+        "checkedAt": "2026-11-07",
+        "note": "The checker’s reading, labelled as such: a model of another family read this page on 2026-11-07 (research/recheck-witnesses-2026-11-07/codex-report.md, item 1) and identified the copy as the first impression by its copyright page. Selekoa has not read the page. No human editorial review."
+      },
+      "why": "Decision 15a: the name, as the checker read it."
+    },
+    {
+      "key": "079-evidence-ts-b1-bostrom-2014-superintelligence-2:add",
+      "input": "witnesses",
+      "op": "add",
+      "table": "evidence",
+      "row": {
+        "id": "evidence-ts-b1-bostrom-2014-superintelligence-2",
+        "claimId": "ts-b1-bostrom-2014-superintelligence",
+        "sourceId": "source-bostrom-2014-superintelligence-oup-hardback",
+        "sourceRole": "primary",
+        "support": "supports",
+        "locator": "Chapter 8, boxed definition, printed p. 119",
+        "passage": "The boxed definition describes an AI that behaves cooperatively while it is weak and, once strong enough, strikes without warning and pursues its final values without effective opposition.",
+        "passageType": "paraphrase",
+        "verification": "machine_checked",
+        "checkedAt": "2026-11-07",
+        "note": "The checker’s reading, labelled as such: a model of another family read this page on 2026-11-07 (research/recheck-witnesses-2026-11-07/codex-report.md, item 1) and identified the copy as the first impression by its copyright page. Selekoa has not read the page. No human editorial review."
+      },
+      "why": "Decision 15a: the concept, as the checker read it."
+    },
+    {
+      "key": "080-ts-b1-bostrom-2014-superintelligence:add",
+      "input": "witnesses",
+      "op": "add",
+      "table": "claims",
+      "row": {
+        "id": "ts-b1-bostrom-2014-superintelligence",
+        "subject": "kp-superintelligence-paths-dangers-strategies-2014",
+        "predicate": "articulates_proposition",
+        "object": {
+          "kind": "entity",
+          "entityId": "treacherous-turn"
+        },
+        "topic": "ideas",
+        "statement": "Bostrom’s Superintelligence (2014) calls “the treacherous turn” the behaviour of an AI that cooperates while it is weak and, once strong enough, pursues its final values without effective opposition.",
+        "time": {
+          "kind": "event",
+          "date": "2014-07-03",
+          "basis": "publication",
+          "note": "Publication of the UK hardback, as the Oxford Martin School’s listing gives it."
+        },
+        "derivation": "explicit",
+        "resolution": "supported",
+        "editorialState": "seed",
+        "qualification": "Rests on a reading of the first impression by a model of another family on 2026-11-07; Selekoa has not read the book, and no quotation is given. Its use of the name is the earliest verified among the three texts the witness check compared: Danaher’s post (dated 29 July 2014, first captured 8 August 2014) says it takes the term from Bostrom, and Grace’s reading-group page (dated 31 August 2014) is not shown to carry the wording by that date. Earliest located means the earliest text found by the collection’s searches and that check, not a first statement or a coinage.",
+        "evidenceIds": [
+          "evidence-ts-b1-bostrom-2014-superintelligence-1",
+          "evidence-ts-b1-bostrom-2014-superintelligence-2"
+        ],
+        "recordedAt": "2026-11-07",
+        "attributes": {
+          "thought": {
+            "roles": ["articulation", "earliest-located-term"],
+            "register": "nonfiction",
+            "term": "treacherous turn"
+          }
+        }
+      },
+      "why": "Decision 15a: B1’s earliest located use of the name."
+    },
+    {
+      "key": "081-treacherous-turn:proposition.underRecheck:remove",
+      "input": "witnesses",
+      "op": "remove",
+      "table": "entities",
+      "id": "treacherous-turn",
+      "path": "proposition.underRecheck",
+      "old": [
+        {
+          "headline": "earliest-located-term",
+          "reason": "The cross-family re-check of 2026-11-02 (branch codex/earliest-located-recheck) flagged this headline. The re-check could not order Grace’s page, whose schedule wording is not dated by its stored posting date, against Danaher’s post of 2014 and the book of July 2014 (undecidable). The headline is withdrawn until the re-check’s results are decided.",
+          "recordedAt": "2026-11-02"
+        }
+      ],
+      "why": "Decision 15a."
+    },
+    {
+      "key": "082-ts-b1-grace-2014-schedule-context:qualification",
+      "input": "witnesses",
+      "op": "set",
+      "table": "claims",
+      "id": "ts-b1-grace-2014-schedule-context",
+      "path": "qualification",
+      "new": "The session title comes from chapter 8 of Bostrom’s Superintelligence (2014). The wording is not dated by the stored posting date: the archive captures of 13 September and 3 October 2014 do not carry it, and later captures could not be read (witness check of 2026-11-07). A LessWrong comment of 2014-07-29 links an earlier blog post whose title uses the term; comments and linked posts were not searched.",
+      "why": "Decision 15a: the record no longer says it is the earliest use.",
+      "old": "The earliest located use of the term in a post body; the title comes from chapter 8 of Bostrom’s Superintelligence (2014). A LessWrong comment of 2014-07-29 links an earlier blog post whose title uses the term; comments and linked posts were not searched."
+    },
+    {
+      "key": "083-source-moravec-1989-takeover-artificial-life:add",
+      "input": "witnesses",
+      "op": "add",
+      "table": "sources",
+      "row": {
+        "id": "source-moravec-1989-takeover-artificial-life",
+        "documentId": "moravec-1989-genetic-takeover",
+        "title": "Human Culture: A Genetic Takeover Underway (in Artificial Life, ed. Christopher G. Langton)",
+        "authors": ["Hans Moravec"],
+        "authorNames": [
+          {
+            "family": "Moravec",
+            "given": "Hans"
+          }
+        ],
+        "publisher": "Addison-Wesley (Santa Fe Institute Studies in the Sciences of Complexity VI); electronic reissue by Routledge (Taylor & Francis)",
+        "publicationDate": "1989",
+        "version": "The printed chapter, pp. 167–200 of the 1989 volume, cited by page. Selekoa has not read it: the publisher’s chapter page answered HTTP 403 on 2026-11-07, and the library copy of the 1989 volume (Internet Archive, artificiallifepr00inte) is lending-only. A model of another family read the opening, p. 167, in the text of the publisher’s PDF on 2026-11-07 (research/recheck-witnesses-2026-11-07/codex-report.md, item 2); the reissue’s footer, as it read it, prints 1988, and it took the pages to reproduce the print. The library catalogue dates the volume 1989.",
+        "canonicalUrl": "https://www.taylorfrancis.com/chapters/edit/10.4324/9780429032769-9/human-culture-genetic-takeover-underway-hans-moravec",
+        "evidenceUrl": "https://www.taylorfrancis.com/chapters/edit/10.4324/9780429032769-9/human-culture-genetic-takeover-underway-hans-moravec",
+        "language": "en",
+        "kind": "book",
+        "accessedAt": "2026-11-07",
+        "reuse": {
+          "attribution": "Hans Moravec, “Human Culture: A Genetic Takeover Underway”, in Christopher G. Langton (ed.), Artificial Life (Addison-Wesley, 1989), pp. 167–200.",
+          "licence": "No open redistribution licence asserted",
+          "note": "Bibliographic metadata and labelled paraphrases of a reading by another model family; no quotation."
+        }
+      },
+      "why": "Decision 16a: the printed chapter, cited with its page."
+    },
+    {
+      "key": "084-moravec-1989-genetic-takeover:sourceIds",
+      "input": "witnesses",
+      "op": "set",
+      "table": "entities",
+      "id": "moravec-1989-genetic-takeover",
+      "path": "sourceIds",
+      "new": [
+        "source-moravec-1989-takeover-file",
+        "source-moravec-1989-takeover-artificial-life"
+      ],
+      "why": "Decision 16a.",
+      "old": ["source-moravec-1989-takeover-file"]
+    },
+    {
+      "key": "085-evidence-ht-w02-moravec-1989-genetic-takeover-3:add",
+      "input": "witnesses",
+      "op": "add",
+      "table": "evidence",
+      "row": {
+        "id": "evidence-ht-w02-moravec-1989-genetic-takeover-3",
+        "claimId": "ht-w02-moravec-1989-genetic-takeover",
+        "sourceId": "source-moravec-1989-takeover-artificial-life",
+        "sourceRole": "primary",
+        "support": "supports",
+        "locator": "Opening, printed p. 167",
+        "passage": "The printed chapter opens with the sentence quoted from the author’s file, describing an author who cheerfully concludes that the human race is in its last century and suggests how to help the process along.",
+        "passageType": "paraphrase",
+        "verification": "machine_checked",
+        "checkedAt": "2026-11-07",
+        "note": "The checker’s reading, labelled as such: a model of another family read p. 167 in the text of the publisher’s PDF on 2026-11-07 (research/recheck-witnesses-2026-11-07/codex-report.md, item 2) and gave the wording quoted in this record’s first passage. Selekoa has not read the printed page. No human editorial review."
+      },
+      "why": "Decision 16a: the print attests the first passage’s wording."
+    },
+    {
+      "key": "086-ht-w02-moravec-1989-genetic-takeover:attach:evidence-ht-w02-moravec-1989-genetic-takeover-3",
+      "input": "witnesses",
+      "op": "attachEvidence",
+      "table": "claims",
+      "id": "ht-w02-moravec-1989-genetic-takeover",
+      "evidenceId": "evidence-ht-w02-moravec-1989-genetic-takeover-3",
+      "position": "first",
+      "why": "Decision 16a."
+    },
+    {
+      "key": "087-ht-w02-moravec-1989-genetic-takeover:attributes.thought.roles",
+      "input": "witnesses",
+      "op": "set",
+      "table": "claims",
+      "id": "ht-w02-moravec-1989-genetic-takeover",
+      "path": "attributes.thought.roles",
+      "new": ["earliest-located"],
+      "why": "Decision 16a.",
+      "old": ["articulation"]
+    },
+    {
+      "key": "088-ht-w02-moravec-1989-genetic-takeover:attributes.thought.attested:remove",
+      "input": "witnesses",
+      "op": "remove",
+      "table": "claims",
+      "id": "ht-w02-moravec-1989-genetic-takeover",
+      "path": "attributes.thought.attested",
+      "old": {
+        "date": "2001-03-06",
+        "note": "Author-hosted file; the earliest capture, of 2001-03-06, is byte-identical to the copy retrieved in 2026 (dataset record of 2026-10-06). Not compared with the printed chapter."
+      },
+      "why": "Decision 16a: the first passage’s wording is attested by the 1989 print; the time note says what the 2001 capture attests."
+    },
+    {
+      "key": "089-ht-w02-moravec-1989-genetic-takeover:time.note",
+      "input": "witnesses",
+      "op": "set",
+      "table": "claims",
+      "id": "ht-w02-moravec-1989-genetic-takeover",
+      "path": "time.note",
+      "new": "Year of the printed chapter, in Artificial Life (1989). The first passage’s wording is attested by the print (p. 167), as a model of another family read it in the publisher’s PDF on 2026-11-07; the second passage is known from the author’s file, whose earliest capture is of 2001-03-06, and was not compared with the print.",
+      "why": "Decision 16a.",
+      "old": "Year of the printed chapter, as given in the author's publication list."
+    },
+    {
+      "key": "090-ht-w02-moravec-1989-genetic-takeover:qualification",
+      "input": "witnesses",
+      "op": "set",
+      "table": "claims",
+      "id": "ht-w02-moravec-1989-genetic-takeover",
+      "path": "qualification",
+      "new": "The dataset records this text on A1, A3, A4 and A5; this record concerns the acceptability of succession only. Earliest located by the maintainer’s decision of 2026-11-07 (re-check sheet, decision 16a) after the witness check of that day, which read p. 167 in the publisher’s copy; that reading is labelled as the checker’s. Earliest located means the earliest text found by the collection’s searches and those checks, not a first statement. Moravec’s essay of February 1979 would be earlier if its print were read in a copy Selekoa can cite; its wording is attested here only from 2001.",
+      "why": "Decision 16a.",
+      "old": "The dataset records this text on A1, A3, A4 and A5; this record concerns the acceptability of succession only."
+    },
+    {
+      "key": "091-succession-acceptable:proposition.underRecheck:remove",
+      "input": "witnesses",
+      "op": "remove",
+      "table": "entities",
+      "id": "succession-acceptable",
+      "path": "proposition.underRecheck",
+      "old": [
+        {
+          "headline": "earliest-located",
+          "reason": "The cross-family re-check of 2026-11-02 (review/earliest-located-recheck-2026-11-02.md, role 112) could not decide this headline (undecidable). Earlier-attributed Moravec texts welcome machine succession, but the held Robot as Liberation file is a later author-hosted LaTeX text, not inspected December 1989 print, and Genetic Takeover is attested March 6, 2001. Minsky’s wording is itself a revised page self-dated January 2, 1997, not compared with October 1994 print. The earlier work dates do not decide exact-wording priority on a common basis. The headline is withdrawn until the re-check’s results are decided.",
+          "recordedAt": "2026-11-02"
+        }
+      ],
+      "why": "Decision 16a."
+    },
+    {
+      "key": "092-ht-w02-moravec-1979-todays-computers:qualification",
+      "input": "witnesses",
+      "op": "set",
+      "table": "claims",
+      "id": "ht-w02-moravec-1979-todays-computers",
+      "path": "qualification",
+      "new": "Stated as a rhetorical question and an assessment (\"may not be as bad as it sounds\"). The essay is dated 1979-02, but its wording is attested only from 2001-07-10; under the attested-date rule it cannot hold the earliest-located role on W02, which goes to Moravec's printed chapter of 1989 (2026-11-07). A model of another family read the February 1979 print on 2026-11-07 in a copy Selekoa does not cite.",
+      "why": "Decision 16a.",
+      "old": "Stated as a rhetorical question and an assessment (\"may not be as bad as it sounds\"). The essay is dated 1979-02, but its wording is attested only from 2001-07-10; under the attested-date rule the earliest-located role on W02 goes to Minsky's article of 1994, whose wording is attested from 1997-01-02."
+    },
+    {
+      "key": "093-cosmic-expansion:proposition.underRecheck",
+      "input": "witnesses",
+      "op": "set",
+      "table": "entities",
+      "id": "cosmic-expansion",
+      "path": "proposition.underRecheck",
+      "new": [
+        {
+          "headline": "earliest-located",
+          "reason": "Still under re-check after the witness check of 2026-11-07 (research/recheck-witnesses-2026-11-07/codex-report.md, item 3; re-check sheet, decision 17a). The check read Moravec’s essay in the February 1979 issue of Analog (pp. 77–78 and 82), where machine societies expand into space, but in a copy Selekoa does not cite, and no publisher’s or library copy of the issue could be read. Without it the essay’s wording is attested only from 2001, after de Garis’s article of 1989. The headline returns when a citable copy of the print is read or the maintainer decides to restore de Garis.",
+          "recordedAt": "2026-11-07"
+        }
+      ],
+      "why": "Decision 17a: the move to the 1979 print cannot be supported from a citable copy.",
+      "old": [
+        {
+          "headline": "earliest-located",
+          "reason": "The cross-family re-check of 2026-11-02 (review/earliest-located-recheck-2026-11-02.md, role 126) could not decide this headline (undecidable). Moravec’s held work attributed to February 1979 explicitly places self-improving machine societies in space and predicts their expansion beyond human colonies. But the inspected HTML is a later author-hosted version with a 1978 internal header, not the February 1979 print. No pre-1989 matching witness was established. Earlier work attribution versus fixed 1989 print cannot decide exact-wording priority. The headline is withdrawn until the re-check’s results are decided.",
+          "recordedAt": "2026-11-02"
+        }
+      ]
+    },
+    {
+      "key": "094-ht-w10-moravec-1979-todays-computers:qualification",
+      "input": "witnesses",
+      "op": "set",
+      "table": "claims",
+      "id": "ht-w10-moravec-1979-todays-computers",
+      "path": "qualification",
+      "new": "A forecast. The essay is dated 1979-02, but its wording is attested only from 2001-07-10; under the attested-date rule the earliest-located role on W10 goes to de Garis's article of 1989, whose wording is read in the publisher's copy of its 1989 printing. The headline is under re-check (2026-11-07): a model of another family read the February 1979 print in a copy Selekoa does not cite.",
+      "why": "Decision 17a.",
+      "old": "A forecast. The essay is dated 1979-02, but its wording is attested only from 2001-07-10; under the attested-date rule the earliest-located role on W10 goes to de Garis's article of 1989, whose wording is read in the publisher's copy of its 1989 printing."
+    },
+    {
+      "key": "095-yk-y08-sl4-2005-07-13-yudkowsky-0507-11477-c:predicate",
+      "input": "witnesses",
+      "op": "set",
+      "table": "claims",
+      "id": "yk-y08-sl4-2005-07-13-yudkowsky-0507-11477-c",
+      "path": "predicate",
+      "new": "bears_on_proposition",
+      "why": "Decision 18a: the witness check finds it does not meet the criterion; re-filed as context, so the first text that meets it can hold the headline.",
+      "old": "contests_proposition"
+    },
+    {
+      "key": "096-yk-y08-sl4-2005-07-13-yudkowsky-0507-11477-c:attributes.thought.roles",
+      "input": "witnesses",
+      "op": "set",
+      "table": "claims",
+      "id": "yk-y08-sl4-2005-07-13-yudkowsky-0507-11477-c",
+      "path": "attributes.thought.roles",
+      "new": ["context"],
+      "why": "Decision 18a.",
+      "old": ["contesting"]
+    },
+    {
+      "key": "097-yk-y08-sl4-2005-07-13-yudkowsky-0507-11477-c:attributes.thought.engagement:remove",
+      "input": "witnesses",
+      "op": "remove",
+      "table": "claims",
+      "id": "yk-y08-sl4-2005-07-13-yudkowsky-0507-11477-c",
+      "path": "attributes.thought.engagement",
+      "old": {
+        "kind": "contrary-only",
+        "rationale": "Under the message-level rule, the passage states the contrary conclusion without giving a reason against the premise that once a warning sign is seen, it will lead to effective action, even when read with its message or dialogue turn."
+      },
+      "why": "Decision 18a: engagement belongs to contesting records."
+    },
+    {
+      "key": "098-yk-y08-sl4-2005-07-13-yudkowsky-0507-11477-c:attributes.thought.missing",
+      "input": "witnesses",
+      "op": "set",
+      "table": "claims",
+      "id": "yk-y08-sl4-2005-07-13-yudkowsky-0507-11477-c",
+      "path": "attributes.thought.missing",
+      "new": "Doubts that any agency would understand an unfriendly AI or have authority to respond; it does not say whether a clear warning would come before danger.",
+      "why": "Decision 18a."
+    },
+    {
+      "key": "099-yk-y08-sl4-2005-07-13-yudkowsky-0507-11477-c:statement",
+      "input": "witnesses",
+      "op": "set",
+      "table": "claims",
+      "id": "yk-y08-sl4-2005-07-13-yudkowsky-0507-11477-c",
+      "path": "statement",
+      "new": "The SL4 message “Re: Fighting UFAI” (2005-07-13) bears on Y08. Replying to Justin Corwin in a thread on fighting an unfriendly AI, he calls speculation about drastic countermeasures largely pointless because no government body would understand the threat or have the authority to act on it.",
+      "why": "Decision 18a.",
+      "old": "The SL4 message “Re: Fighting UFAI” (2005-07-13) contests Y08. Replying to Justin Corwin in a thread on fighting an unfriendly AI, he calls speculation about drastic countermeasures largely pointless because no government body would understand the threat or have the authority to act on it."
+    },
+    {
+      "key": "100-yk-y08-sl4-2005-07-13-yudkowsky-0507-11477-c:qualification",
+      "input": "witnesses",
+      "op": "set",
+      "table": "claims",
+      "id": "yk-y08-sl4-2005-07-13-yudkowsky-0507-11477-c",
+      "path": "qualification",
+      "new": "Premise addressed: Once a warning sign is seen, it will lead to effective action. Concerns the capacity to respond to an unfriendly AI, not warning signs as such. Recorded as contesting the proposition until the witness check of 2026-11-07 (research/recheck-witnesses-2026-11-07/codex-report.md, item 4), which found that it does not say whether a clear warning would arrive before danger; re-filed as context by the maintainer’s decision of 2026-11-07 (re-check sheet, decision 18a).",
+      "why": "Decision 18a.",
+      "old": "Premise addressed: Once a warning sign is seen, it will lead to effective action. Concerns the capacity to respond to an unfriendly AI, not warning signs as such; fit to the premise is partial."
+    },
+    {
+      "key": "101-yk-y08-ai-positive-negative-factor-global-risk-c:attributes.thought.roles",
+      "input": "witnesses",
+      "op": "set",
+      "table": "claims",
+      "id": "yk-y08-ai-positive-negative-factor-global-risk-c",
+      "path": "attributes.thought.roles",
+      "new": ["contesting", "earliest-located"],
+      "why": "Decision 18a: the first remaining contesting record that the witness check found meets the criterion.",
+      "old": ["contesting"]
+    },
+    {
+      "key": "102-yk-y08-ai-positive-negative-factor-global-risk-c:qualification",
+      "input": "witnesses",
+      "op": "set",
+      "table": "claims",
+      "id": "yk-y08-ai-positive-negative-factor-global-risk-c",
+      "path": "qualification",
+      "new": "Premise addressed: There will be a recognisable, consensus-forming signal in time to act. Chapter in Global Catastrophic Risks (2008); cached text is the MIRI reprint, which states 'This version contains minor changes'. Wording not compared with the 2008 print. Admission check, 2026-10-08: the quoted wording also appears in the draft of 5 February 2006, so the record is dated by the draft. Earliest located contesting text by the maintainer’s decision of 2026-11-07 (re-check sheet, decision 18a): the witness check of that day, by a model of another family, found that the passage meets the criterion and read the same wording on p. 20 of the draft dated 31 August 2006 (captured 2006-10-22) and in the reprint; it could not read the July 2006 capture of the February draft (HTTP 429), whose wording the admission check of 2026-10-08 compared.",
+      "why": "Decision 18a.",
+      "old": "Premise addressed: There will be a recognisable, consensus-forming signal in time to act. Chapter in Global Catastrophic Risks (2008); cached text is the MIRI reprint, which states 'This version contains minor changes'. Wording not compared with the 2008 print. Admission check, 2026-10-08: the quoted wording also appears in the draft of 5 February 2006, so the record is dated by the draft."
+    },
+    {
+      "key": "103-warning-signs-in-time:proposition.underRecheck:remove",
+      "input": "witnesses",
+      "op": "remove",
+      "table": "entities",
+      "id": "warning-signs-in-time",
+      "path": "proposition.underRecheck",
+      "old": [
+        {
+          "headline": "earliest-located-contesting",
+          "reason": "The cross-family audit sample of 2026-11-02 (review/cross-family-audit-sample-2026-11-02.md, item 117) found the record’s contesting relation to Y08, and so its earliest located role, unsupported: the message argues that superintelligent action will be too fast to notice, but does not explicitly address a recognisable warning before danger, failures first seen in weaker systems, or action on a warning. The record now bears on the proposition. The headline is withdrawn until a re-check of the proposition’s candidate texts; it is assigned to no other record.",
+          "recordedAt": "2026-11-02"
+        }
+      ],
+      "why": "Decision 18a."
+    },
+    {
+      "key": "104-boe-2015-one-bank-research-agenda:add",
+      "input": "reads",
+      "op": "add",
+      "table": "entities",
+      "row": {
+        "id": "boe-2015-one-bank-research-agenda",
+        "name": "One Bank Research Agenda (discussion paper)",
+        "shortName": "Bank of England, One Bank Research Agenda (February 2015)",
+        "type": "document",
+        "subtype": "Discussion paper",
+        "aliases": [],
+        "description": "Discussion paper published by the Bank of England as its own text on the launch of its One Bank Research Agenda, 25 February 2015. Read in an archive capture of 19 March 2015.",
+        "sourceIds": ["source-am-boe-2015-one-bank-research-agenda"]
+      },
+      "why": "Open choice 4: the document."
+    },
+    {
+      "key": "105-source-am-boe-2015-one-bank-research-agenda:add",
+      "input": "reads",
+      "op": "add",
+      "table": "sources",
+      "row": {
+        "id": "source-am-boe-2015-one-bank-research-agenda",
+        "documentId": "boe-2015-one-bank-research-agenda",
+        "title": "One Bank Research Agenda (discussion paper)",
+        "authors": ["Bank of England"],
+        "publisher": "Bank of England",
+        "publicationDate": "2015-02",
+        "version": "The 50-page discussion paper PDF dated February 2015, read by a model of another family on 2026-11-07 in the Internet Archive capture of 2015-03-19 (SHA-256 a1963d083b2d45b092c2bd129d96c8130b85f8abe892cd35bf48de5cfb2e15e2; research/reads-2026-11-07/codex-report.md, item 1). The original address now returns the Bank’s 404 page. Selekoa’s session of 2026-11-07 could not reach the archive (connection reset); it read the Bank’s launch announcement of 25 February 2015, which says the Bank published a supporting discussion paper that day, and the summary of the five themes, which does not carry the passages cited.",
+        "canonicalUrl": "http://www.bankofengland.co.uk/research/Documents/onebank/discussion.pdf",
+        "evidenceUrl": "https://web.archive.org/web/20150319140614/http://www.bankofengland.co.uk:80/research/Documents/onebank/discussion.pdf",
+        "language": "en",
+        "archivedUrl": "https://web.archive.org/web/20150319140614/http://www.bankofengland.co.uk:80/research/Documents/onebank/discussion.pdf",
+        "archivedAt": "2015-03-19",
+        "kind": "report",
+        "accessedAt": "2026-11-07",
+        "reuse": {
+          "attribution": "Bank of England, “One Bank Research Agenda” (discussion paper), February 2015.",
+          "licence": "No open redistribution licence asserted",
+          "note": "Bibliographic metadata and labelled paraphrases. Recheck terms before wider redistribution."
+        }
+      },
+      "why": "Open choice 4: the archived original."
+    },
+    {
+      "key": "106-evidence-am-u05-boe-2015-one-bank-research-agenda-1:add",
+      "input": "reads",
+      "op": "add",
+      "table": "evidence",
+      "row": {
+        "id": "evidence-am-u05-boe-2015-one-bank-research-agenda-1",
+        "claimId": "am-u05-boe-2015-one-bank-research-agenda",
+        "sourceId": "source-am-boe-2015-one-bank-research-agenda",
+        "sourceRole": "primary",
+        "support": "supports",
+        "locator": "Theme 4, question 1 (“How can the potential of big data and other new data sets best be realised?”), paragraph spanning printed pp. 23–24",
+        "passage": "The paper says that artificial intelligence techniques and big data offer ways to find new empirical relationships, and that textual information has been quantified systematically with machine-learning algorithms to study the communication of central-bank policy decisions and the spread of policy messages, analysis that could help show how consumer and financial sentiment evolves.",
+        "passageType": "paraphrase",
+        "verification": "machine_checked",
+        "checkedAt": "2026-11-07",
+        "note": "The checker’s reading, labelled as such: a model of another family read this paragraph on 2026-11-07 in the archive capture of 2015-03-19 (research/reads-2026-11-07/codex-report.md, item 1). Selekoa’s session could not reach the archive, and the paper is no longer served at its own address; the paraphrase is Selekoa’s, from the passages that report gives verbatim. Paraphrased because the paper’s length was not counted. No human editorial review."
+      },
+      "why": "Open choice 4."
+    },
+    {
+      "key": "107-am-u05-boe-2015-one-bank-research-agenda:add",
+      "input": "reads",
+      "op": "add",
+      "table": "claims",
+      "row": {
+        "id": "am-u05-boe-2015-one-bank-research-agenda",
+        "subject": "boe-2015-one-bank-research-agenda",
+        "predicate": "articulates_proposition",
+        "object": {
+          "kind": "entity",
+          "entityId": "ai-improves-nowcasting-policy-analysis"
+        },
+        "topic": "ideas",
+        "statement": "The Bank of England’s One Bank Research Agenda (February 2015) states, under its theme on new data and methods, that artificial intelligence techniques and big data offer ways to find new empirical relationships, and that machine-learning analysis of text has been used to study central-bank policy communication.",
+        "time": {
+          "kind": "event",
+          "date": "2015-02-25",
+          "basis": "publication",
+          "note": "Launch of the agenda, when the Bank’s announcement says the discussion paper was published; the paper is dated February 2015."
+        },
+        "derivation": "explicit",
+        "resolution": "supported",
+        "editorialState": "seed",
+        "qualification": "A research agenda: it states what such research could do and asks questions; it is not evidence that the Bank adopted any method. Its example of nowcasting from search queries names no machine-learning method. Read by a model of another family in an archive capture of 19 March 2015; recorded by the maintainer’s decision of 2026-11-07 (open choice 4 of the AI and money admission).",
+        "evidenceIds": ["evidence-am-u05-boe-2015-one-bank-research-agenda-1"],
+        "recordedAt": "2026-11-07",
+        "attributes": {
+          "thought": {
+            "roles": ["articulation"],
+            "register": "nonfiction",
+            "voice": "institution",
+            "attested": {
+              "date": "2015-03-19",
+              "note": "Internet Archive capture of 2015-03-19 of the original PDF, read by a model of another family; no earlier copy was read."
+            }
+          }
+        }
+      },
+      "why": "Open choice 4: J05’s earliest located institutional text (derived by the page)."
+    },
+    {
+      "key": "108-11a-document",
+      "input": "held-11a",
+      "op": "add",
+      "table": "entities",
+      "row": {
+        "id": "periola-kolawole-2019-space-based-data-centres",
+        "name": "Space-Based Data Centres: A Paradigm for Data Processing and Scientific Investigations",
+        "shortName": "Periola and Kolawole, Space-Based Data Centres (2019)",
+        "type": "document",
+        "subtype": "Journal article",
+        "aliases": [],
+        "description": "Article by A. A. Periola and M. O. Kolawole in Wireless Personal Communications 107(1), pp. 95–119, published online on 11 March 2019 (print issue July 2019). Recorded from its abstract only.",
+        "sourceIds": ["source-cpo-orb-periola-kolawole-2019"]
+      },
+      "why": "Held item 11a / open choice 3: drafted in review/ai-money-admission-map-2026-11-06.json (heldDrafts), applied with the abstract read by both families."
+    },
+    {
+      "key": "109-11a-source",
+      "input": "held-11a",
+      "op": "add",
+      "table": "sources",
+      "row": {
+        "id": "source-cpo-orb-periola-kolawole-2019",
+        "documentId": "periola-kolawole-2019-space-based-data-centres",
+        "title": "Space-Based Data Centres: A Paradigm for Data Processing and Scientific Investigations",
+        "authors": ["A. A. Periola", "M. O. Kolawole"],
+        "publisher": "Springer (Wireless Personal Communications)",
+        "publicationDate": "2019-03-11",
+        "version": "Abstract only. The publisher’s article page was read by a model of another family on 2026-11-04 and 2026-11-07 (research/reads-2026-11-07/codex-report.md, item 2) and by Selekoa on 2026-11-07 (HTTP 200; the abstract in the page’s metadata); the subscription full text was not read. Online publication 11 March 2019, print issue July 2019, volume 107, issue 1, pages 95–119, as the publisher and Crossref give them for DOI 10.1007/s11277-019-06242-z; the received and accepted dates are not given.",
+        "canonicalUrl": "https://doi.org/10.1007/s11277-019-06242-z",
+        "evidenceUrl": "https://link.springer.com/article/10.1007/s11277-019-06242-z",
+        "language": "en",
+        "kind": "article",
+        "accessedAt": "2026-11-07",
+        "reuse": {
+          "attribution": "A. A. Periola and M. O. Kolawole, “Space-Based Data Centres: A Paradigm for Data Processing and Scientific Investigations”, Wireless Personal Communications 107 (2019).",
+          "licence": "No open redistribution licence asserted",
+          "note": "Bibliographic metadata and editorial paraphrases. Recheck terms before wider redistribution."
+        }
+      },
+      "why": "Held item 11a / open choice 3: drafted in review/ai-money-admission-map-2026-11-06.json (heldDrafts), applied with the abstract read by both families."
+    },
+    {
+      "key": "110-11a-evidence",
+      "input": "held-11a",
+      "op": "add",
+      "table": "evidence",
+      "row": {
+        "id": "evidence-cpo-orb-oc3-periola-kolawole-2019-1",
+        "claimId": "cpo-orb-oc3-periola-kolawole-2019",
+        "sourceId": "source-cpo-orb-periola-kolawole-2019",
+        "sourceRole": "primary",
+        "support": "supports",
+        "locator": "Abstract, second and third sentences",
+        "passage": "the abstract says that reliance on further hosting of terrestrial data centres becomes problematic in densely populated regions, and that this leads to exploring space as hosting centres",
+        "passageType": "paraphrase",
+        "verification": "machine_checked",
+        "checkedAt": "2026-11-07",
+        "note": "The paraphrase is Selekoa’s. The abstract was read on 2026-11-07 in the publisher’s article page (the abstract in its metadata) and matches the passage a model of another family quoted from it the same day (research/reads-2026-11-07/codex-report.md, item 2). No human editorial review.",
+        "retrievalRoute": "direct"
+      },
+      "why": "Held item 11a / open choice 3: drafted in review/ai-money-admission-map-2026-11-06.json (heldDrafts), applied with the abstract read by both families."
+    },
+    {
+      "key": "111-11a-claim",
+      "input": "held-11a",
+      "op": "add",
+      "table": "claims",
+      "row": {
+        "id": "cpo-orb-oc3-periola-kolawole-2019",
+        "subject": "periola-kolawole-2019-space-based-data-centres",
+        "predicate": "articulates_proposition",
+        "object": {
+          "kind": "entity",
+          "entityId": "oc3-terrestrial-constraints"
+        },
+        "topic": "ideas",
+        "statement": "The abstract of Periola and Kolawole’s article on space-based data centres (2019) states that relying on further terrestrial data centres becomes problematic in densely populated regions, which leads to exploring space as a place to host them.",
+        "time": {
+          "kind": "event",
+          "date": "2019-03-11",
+          "basis": "publication",
+          "note": "Online publication of the version of record, as the publisher and Crossref give it; the print issue is July 2019."
+        },
+        "derivation": "explicit",
+        "resolution": "supported",
+        "editorialState": "seed",
+        "qualification": "Abstract only: the full text was not read. The abstract was read by both model families on 2026-11-07. It meets the criterion’s land branch: constraints on hosting data centres on Earth motivate placing them in space. Earliest located means the earliest text found by the collection’s searches and the checks of another family, not a first statement. Recorded by the maintainer’s decision of 2026-11-06 (held item 11a), applied on 2026-11-07.",
+        "evidenceIds": ["evidence-cpo-orb-oc3-periola-kolawole-2019-1"],
+        "recordedAt": "2026-11-07",
+        "attributes": {
+          "thought": {
+            "roles": ["earliest-located"],
+            "register": "nonfiction"
+          }
+        }
+      },
+      "why": "Held item 11a / open choice 3: drafted in review/ai-money-admission-map-2026-11-06.json (heldDrafts), applied with the abstract read by both families."
+    },
+    {
+      "key": "112-11a-lumen-roles",
+      "input": "held-11a",
+      "op": "set",
+      "table": "claims",
+      "id": "cpo-orb-oc3-lumen-2024",
+      "path": "attributes.thought.roles",
+      "old": ["earliest-located"],
+      "new": ["articulation"],
+      "why": "Held item 11a / open choice 3: drafted in review/ai-money-admission-map-2026-11-06.json (heldDrafts), applied with the abstract read by both families."
+    },
+    {
+      "key": "113-11a-lumen-qualification",
+      "input": "held-11a",
+      "op": "set",
+      "table": "claims",
+      "id": "cpo-orb-oc3-lumen-2024",
+      "path": "qualification",
+      "old": "Earliest located among the texts read for the pack (2026-10-28) and at admission; not a claim that no earlier text exists. The 2022 ASCEND announcement cites terrestrial data centres’ environmental footprint, not constraints on building them. A lead is open: the cross-family check found an abstract of 2019 by Periola and Kolawole, on space-based data centres, that it read as stating land constraints on terrestrial hosting; this admission could not retrieve the abstract, so the earlier text is not admitted and this role stands until it is read.",
+      "new": "The 2022 ASCEND announcement cites terrestrial data centres’ environmental footprint, not constraints on building them. Earliest located among the texts read for the pack (2026-10-28) and at admission until 2026-11-07, when an abstract of 2019 by Periola and Kolawole, found by a check of another model family, was recorded as earliest located.",
+      "why": "Held item 11a / open choice 3: drafted in review/ai-money-admission-map-2026-11-06.json (heldDrafts), applied with the abstract read by both families."
+    },
+    {
+      "key": "114-source-cn-gb-45438-2025-text:add",
+      "input": "reads",
+      "op": "add",
+      "table": "sources",
+      "row": {
+        "id": "source-cn-gb-45438-2025-text",
+        "documentId": "cn-gb-45438-2025",
+        "title": "GB 45438—2025 网络安全技术 人工智能生成合成内容标识方法 (standard text, government-hosted copy)",
+        "authors": ["国家市场监督管理总局 国家标准化管理委员会"],
+        "publisher": "国家市场监督管理总局 国家标准化管理委员会 (copy hosted by the Xiong’an New Area government site)",
+        "publicationDate": "2025-02-28",
+        "version": "The 19-page PDF of the standard served by xiongan.gov.cn, retrieved on 2026-11-07 (SHA-256 bb704324cbfeb19e98df040cf08a0912475ed5cb4a80782108b74e634e51c8c3, the same file a model of another family read on 2026-11-04 and 2026-11-07). Its cover prints 2025-02-28 发布 and 2025-09-01 实施. A government-hosted copy, not the national standards system’s own reading interface.",
+        "canonicalUrl": "https://www.xiongan.gov.cn/20250617/99e8309670814bdba91b3bcbfaca4e6c/2025061799e8309670814bdba91b3bcbfaca4e6c_38598ff9004470443c9195f1655adb29a0.pdf",
+        "evidenceUrl": "https://www.xiongan.gov.cn/20250617/99e8309670814bdba91b3bcbfaca4e6c/2025061799e8309670814bdba91b3bcbfaca4e6c_38598ff9004470443c9195f1655adb29a0.pdf",
+        "language": "zh-Hans",
+        "documentWords": {
+          "count": 4565,
+          "basis": "Han characters in the main text and annexes (clauses 1–6 and Annexes A–F, printed pp. 1–15, PDF pp. 5–19) of the extractable text layer, each counted as one word; 4,937 across the whole text layer. Counted by a model of another family (research/reads-2026-11-07/codex-report.md, item 3) and again on 2026-11-07 with the same result."
+        },
+        "kind": "report",
+        "accessedAt": "2026-11-07",
+        "reuse": {
+          "attribution": "国家市场监督管理总局 国家标准化管理委员会, GB 45438—2025 网络安全技术 人工智能生成合成内容标识方法 (2025).",
+          "licence": "No open redistribution licence asserted",
+          "note": "Bibliographic metadata, editorial paraphrases and short attributed quotations (each Han character counted as one word). Recheck terms before wider redistribution."
+        }
+      },
+      "why": "Corrections held item 3: the standard’s own text."
+    },
+    {
+      "key": "115-cn-gb-45438-2025:sourceIds",
+      "input": "reads",
+      "op": "set",
+      "table": "entities",
+      "id": "cn-gb-45438-2025",
+      "path": "sourceIds",
+      "new": [
+        "source-cn-gb-45438-2025-catalogue",
+        "source-cn-gb-45438-2025-text"
+      ],
+      "why": "Held item 3.",
+      "old": ["source-cn-gb-45438-2025-catalogue"]
+    },
+    {
+      "key": "116-cn-gb-45438-2025:description",
+      "input": "reads",
+      "op": "set",
+      "table": "entities",
+      "id": "cn-gb-45438-2025",
+      "path": "description",
+      "new": "A Chinese mandatory national standard on labelling methods for AI-generated synthetic content, listed in the national standards catalogue as published on 28 February 2025 and implemented from 1 September 2025. Its catalogue entry and official descriptions were read, and its scope clause in a government-hosted copy of the text.",
+      "why": "Held item 3: the description no longer says the text was not retrieved.",
+      "old": "A Chinese mandatory national standard on labelling methods for AI-generated synthetic content, listed in the national standards catalogue as published on 28 February 2025 and implemented from 1 September 2025. Only its catalogue entry and official descriptions were read; its text was not retrieved."
+    },
+    {
+      "key": "117-fl-cn-gb45438-published:qualification",
+      "input": "reads",
+      "op": "set",
+      "table": "claims",
+      "id": "fl-cn-gb45438-published",
+      "path": "qualification",
+      "new": "From the catalogue entry; the cover of the standard's text, read on 2026-11-07, prints the same dates. The responsible department listed is the Office of the Central Cyberspace Affairs Commission. \"Mandatory\" rests on the GB (not GB/T) designation and the CAC and SAMR news items.",
+      "why": "Held item 3.",
+      "old": "From the catalogue entry; the standard's own text was not retrieved. The responsible department listed is the Office of the Central Cyberspace Affairs Commission. \"Mandatory\" rests on the GB (not GB/T) designation and the CAC and SAMR news items."
+    },
+    {
+      "key": "118-evidence-fl-cn-gb45438-scope-1:add",
+      "input": "reads",
+      "op": "add",
+      "table": "evidence",
+      "row": {
+        "id": "evidence-fl-cn-gb45438-scope-1",
+        "claimId": "fl-cn-gb45438-scope",
+        "sourceId": "source-cn-gb-45438-2025-text",
+        "sourceRole": "primary",
+        "support": "supports",
+        "locator": "Clause 1 范围 (Scope), first sentence, printed p. 1 (PDF p. 5)",
+        "passage": "本文件规定了人工智能生成合成内容标识方法。",
+        "passageType": "quote",
+        "verification": "machine_checked",
+        "checkedAt": "2026-11-07",
+        "note": "The quotation (20 Han characters, each counted as one word under the quotation limit) matched on 2026-11-07 the PDF as retrieved that day; a model of another family read the same clause in the same file. The two sentences of clause 1 are 61 Han characters, within the limit of 400 words for a text of 4,565. English machine translation, not verified by a person. No human editorial review.",
+        "translation": "This document specifies methods for labelling AI-generated synthetic content.",
+        "retrievalRoute": "direct"
+      },
+      "why": "Held item 3."
+    },
+    {
+      "key": "119-evidence-fl-cn-gb45438-scope-2:add",
+      "input": "reads",
+      "op": "add",
+      "table": "evidence",
+      "row": {
+        "id": "evidence-fl-cn-gb45438-scope-2",
+        "claimId": "fl-cn-gb45438-scope",
+        "sourceId": "source-cn-gb-45438-2025-text",
+        "sourceRole": "primary",
+        "support": "supports",
+        "locator": "Clause 1 范围 (Scope), second sentence, printed p. 1 (PDF p. 5)",
+        "passage": "本文件适用于生成合成服务提供者和内容传播服务提供者开展人工智能生成合成内容标识活动。",
+        "passageType": "quote",
+        "verification": "machine_checked",
+        "checkedAt": "2026-11-07",
+        "note": "The quotation (41 Han characters, each counted as one word under the quotation limit) matched on 2026-11-07 the PDF as retrieved that day; a model of another family read the same clause in the same file. The two sentences of clause 1 are 61 Han characters, within the limit of 400 words for a text of 4,565. English machine translation, not verified by a person. No human editorial review.",
+        "translation": "This document applies to generation-synthesis service providers and content-dissemination service providers carrying out labelling of AI-generated synthetic content.",
+        "retrievalRoute": "direct"
+      },
+      "why": "Held item 3."
+    },
+    {
+      "key": "120-fl-cn-gb45438-scope:add",
+      "input": "reads",
+      "op": "add",
+      "table": "claims",
+      "row": {
+        "id": "fl-cn-gb45438-scope",
+        "subject": "cn-gb-45438-2025",
+        "predicate": "states_provision",
+        "object": {
+          "kind": "literal",
+          "value": "Applies to generation-synthesis service providers and content-dissemination service providers"
+        },
+        "topic": "governance",
+        "statement": "Clause 1 of GB 45438-2025 states that the standard specifies methods for labelling AI-generated synthetic content and applies to generation-synthesis service providers and content-dissemination service providers when they carry out such labelling.",
+        "time": {
+          "kind": "event",
+          "date": "2025-02-28",
+          "basis": "publication",
+          "note": "Publication date printed on the cover (发布); the standard is implemented from 2025-09-01 (实施)."
+        },
+        "derivation": "explicit",
+        "resolution": "supported",
+        "editorialState": "seed",
+        "qualification": "The scope clause only: it limits the standard to labelling activities and does not say which services must label what, which the Labelling Measures and the standard’s later clauses set. Read in a government-hosted copy of the text. Held from 2026-10-28 until the standard’s own text was read.",
+        "evidenceIds": [
+          "evidence-fl-cn-gb45438-scope-1",
+          "evidence-fl-cn-gb45438-scope-2"
+        ],
+        "recordedAt": "2026-11-07",
+        "attributes": {
+          "provision": {
+            "kind": "statement",
+            "key": "cn-gb45438-scope"
+          }
+        }
+      },
+      "why": "Held item 3: the scope record held since review/frameworks-to-law-admission-1-2026-10-28.md, quoting clause 1."
+    }
+  ]
+}

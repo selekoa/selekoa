@@ -15,6 +15,9 @@ const growthChecked = '2026-10-10';
 const mainstreamChecked = '2026-10-12';
 const recheckDecided = '2026-10-25';
 
+/** The maintainer's answers of 2026-11-07 on the re-check sheet and the reads of that day. */
+const settled = '2026-11-07';
+
 export const economicsOfMachineIntelligence: PropositionsCollection = {
   id: frame.id,
   version: frame.version,
@@ -373,6 +376,18 @@ export const economicsOfMachineIntelligence: PropositionsCollection = {
         'ec-g04-nordhaus-2015-economic-singularity-a',
       ],
       recordedAt: archiveApply,
+    },
+    {
+      propositionId: 'ai-as-task-automation',
+      replaced:
+        'No earliest located tier-1 headline: under re-check from 2026-11-02. Before that, Frey and Osborne (2013) was headlined.',
+      reason:
+        'Moved on 2026-11-07 to Bresnahan, Brynjolfsson and Hitt’s working paper of May 1999, by the maintainer’s decision on the re-check sheet (decision 11a), after the cross-family re-check of 2026-11-02 (role 139). The decision held only if the quoted passage names AI: it does, in “Advances in artificial intelligence notwithstanding, the scope of this substitution has been limited.” The criterion is unchanged.',
+      claimIds: [
+        'ec-m02-bresnahan-brynjolfsson-hitt-1999-it-workplace-organization-a',
+        'ec-m02-frey-osborne-2013-future-of-employment-a',
+      ],
+      recordedAt: settled,
     },
   ],
   limits: [
